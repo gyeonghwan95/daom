@@ -1,0 +1,71 @@
+import type { Metadata } from "next";
+import { Noto_Sans_KR } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
+import { FloatingCTA } from "@/components/consultation/FloatingCTA";
+import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
+import { homeMetadata } from "@/lib/seo/metadata";
+import { getSiteVerificationMetadata } from "@/lib/seo/verification";
+import { seoBrand } from "@/lib/seo/brand";
+import { siteImages } from "@/lib/site-images";
+import "./globals.css";
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-noto-sans-kr",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://daom-law.com",
+  ),
+  ...homeMetadata,
+  authors: [{ name: seoBrand.representative, url: "/about" }],
+  creator: seoBrand.representative,
+  publisher: seoBrand.siteName,
+  category: "법률 서비스",
+  verification: getSiteVerificationMetadata(),
+  icons: {
+    icon: [{ url: siteImages.logo.src, type: "image/png" }],
+    apple: siteImages.logo.src,
+  },
+  alternates: {
+    ...(homeMetadata.alternates ?? {}),
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
+  formatDetection: {
+    telephone: true,
+    email: false,
+    address: false,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ko" className={`${notoSansKr.variable} h-full`}>
+      <body className="has-mobile-cta min-h-full flex flex-col font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
+        >
+          본문 바로가기
+        </a>
+        <GlobalJsonLd />
+        <Header />
+        {children}
+        <Footer />
+        <MobileBottomCTA />
+        <FloatingCTA />
+      </body>
+    </html>
+  );
+}
