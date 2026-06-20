@@ -11,6 +11,7 @@ import {
 } from "@/lib/contact";
 import { siteImages } from "@/lib/site-images";
 import { homeHero } from "@/lib/home-content";
+import { scrollToNextHomeSection } from "@/lib/home-scroll";
 import { heroTransition } from "@/lib/motion";
 
 const stagger = {
@@ -31,10 +32,7 @@ function HeroScrollHint() {
   const reduced = useReducedMotion();
 
   function scrollToNext() {
-    document.getElementById("home-services")?.scrollIntoView({
-      behavior: reduced ? "auto" : "smooth",
-      block: "start",
-    });
+    scrollToNextHomeSection(reduced ? 0 : 750);
   }
 
   return (
@@ -91,7 +89,7 @@ export function HomeHero() {
   const lines = homeHero.headline.split("\n");
 
   return (
-    <section className="home-hero relative flex min-h-dvh flex-col overflow-hidden">
+    <section className="home-hero relative flex h-full min-h-full flex-col overflow-hidden">
       <div className="home-hero__ambient" aria-hidden>
         <div className="home-hero__orb home-hero__orb--1" />
         <div className="home-hero__orb home-hero__orb--2" />
