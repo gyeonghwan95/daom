@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ChatIcon } from "@/components/consultation/ConsultationIcons";
-import { getPrimaryConsultationChannels } from "@/lib/contact";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 export function FloatingCTA() {
   const [open, setOpen] = useState(false);
-  const channels = getPrimaryConsultationChannels();
+  const channels = getDirectConsultationChannels();
 
   return (
     <div
@@ -19,7 +19,7 @@ export function FloatingCTA() {
           <div className="absolute bottom-full right-0 mb-3 w-72 rounded-2xl border border-beige-dark bg-white p-4 shadow-xl">
             <p className="text-sm font-semibold text-navy">상담 방법 선택</p>
             <p className="mt-1 text-xs leading-relaxed text-navy/65">
-              전화, 카카오톡, 네이버 톡톡, 오시는 길 중 편한 방법을 선택해 주세요.
+              전화걸기, 카카오톡, 네이버 톡톡 중 편한 방법을 선택해 주세요.
             </p>
             <div className="mt-3">
               <ConsultationButtons

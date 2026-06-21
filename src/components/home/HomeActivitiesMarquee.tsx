@@ -18,7 +18,7 @@ export function HomeActivitiesMarquee() {
           title={homeShowcaseIntro.activities.title}
           description={homeShowcaseIntro.activities.description}
           action={
-            <HomeSectionActionLink href="/media" label="활동 전체 보기" />
+            <HomeSectionActionLink href="/media" label="대외활동 더보기 →" />
           }
         />
 

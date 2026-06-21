@@ -8,14 +8,22 @@ type BlogCardProps = {
   href: string;
   date?: string;
   image?: SiteImageAsset;
+  external?: boolean;
 };
 
-export function BlogCard({ title, excerpt, href, date, image }: BlogCardProps) {
-  return (
-    <Link
-      href={href}
-      className="card-surface group block overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg hover:shadow-navy/5"
-    >
+export function BlogCard({
+  title,
+  excerpt,
+  href,
+  date,
+  image,
+  external = false,
+}: BlogCardProps) {
+  const className =
+    "card-surface group block overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg hover:shadow-navy/5";
+
+  const content = (
+    <>
       {image && (
         <div className="relative aspect-[16/10] overflow-hidden border-b border-beige-dark">
           <SiteImage
@@ -35,9 +43,28 @@ export function BlogCard({ title, excerpt, href, date, image }: BlogCardProps) {
         </h2>
         <p className="mt-2 text-base leading-relaxed text-navy/75">{excerpt}</p>
         <span className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-navy-light">
-          읽어보기 →
+          {external ? "네이버 블로그에서 보기 →" : "읽어보기 →"}
         </span>
       </div>
+    </>
+  );
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {content}
     </Link>
   );
 }

@@ -58,6 +58,8 @@ type YoutubeVideoSectionProps = {
   featuredId?: string;
   showAllInGrid?: boolean;
   footerLink?: { href: string; label: string };
+  /** 홈 fullpage 등 세로 공간이 좁을 때 컴팩트 레이아웃 */
+  density?: "default" | "compact";
   className?: string;
 };
 
@@ -67,9 +69,11 @@ export function YoutubeVideoSection({
   featuredId,
   showAllInGrid = false,
   footerLink,
+  density = "default",
   className = "",
 }: YoutubeVideoSectionProps) {
   const isDark = variant === "dark";
+  const isCompact = density === "compact";
   const featured =
     videos.find((v) => v.id === featuredId) ??
     videos.find((v) => v.featured) ??
@@ -85,21 +89,43 @@ export function YoutubeVideoSection({
     : "text-navy-light hover:text-navy";
 
   return (
-    <div className={`space-y-8 ${className}`}>
-      <div className={featured && !showAllInGrid ? "mx-auto max-w-4xl" : ""}>
+    <div className={`${isCompact ? "space-y-4" : "space-y-8"} ${className}`}>
+      <div
+        className={
+          featured && !showAllInGrid
+            ? isCompact
+              ? "mx-auto max-w-xl"
+              : "mx-auto max-w-4xl"
+            : ""
+        }
+      >
         <YoutubeEmbed video={featured} featured variant={variant} />
-        <div className={`mt-4 ${!showAllInGrid ? "text-center" : ""}`}>
-          <h3 className={`text-base font-semibold leading-snug md:text-lg ${titleClass}`}>
+        <div className={`${isCompact ? "mt-2" : "mt-4"} ${!showAllInGrid ? "text-center" : ""}`}>
+          <h3
+            className={`font-semibold leading-snug ${titleClass} ${
+              isCompact
+                ? "line-clamp-2 text-sm md:text-base"
+                : "text-base md:text-lg"
+            }`}
+          >
             {featured.title}
           </h3>
-          <p className={`mt-2 text-sm leading-relaxed ${descClass}`}>
+          <p
+            className={`leading-relaxed ${descClass} ${
+              isCompact
+                ? "mt-1 line-clamp-2 text-xs md:text-sm"
+                : "mt-2 text-sm"
+            }`}
+          >
             {featured.description}
           </p>
           <a
             href={parseYoutubeUrl(featured.youtubeUrl)?.watchUrl ?? featured.youtubeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`mt-3 inline-flex text-sm font-medium underline-offset-4 hover:underline ${linkClass}`}
+            className={`inline-flex font-medium underline-offset-4 hover:underline ${linkClass} ${
+              isCompact ? "mt-1.5 text-xs md:text-sm" : "mt-3 text-sm"
+            }`}
           >
             YouTube에서 보기 →
           </a>
@@ -107,21 +133,35 @@ export function YoutubeVideoSection({
       </div>
 
       {others.length > 0 && (
-        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
+        <div
+          className={`mx-auto grid max-w-5xl ${
+            isCompact ? "gap-3 sm:grid-cols-2" : "gap-6 sm:grid-cols-2"
+          }`}
+        >
           {others.map((video) => (
             <div key={video.id}>
               <YoutubeEmbed video={video} variant={variant} />
-              <h3 className={`mt-4 text-base font-semibold leading-snug ${titleClass}`}>
+              <h3
+                className={`font-semibold leading-snug ${titleClass} ${
+                  isCompact
+                    ? "mt-2 line-clamp-2 text-xs sm:text-sm"
+                    : "mt-4 text-base"
+                }`}
+              >
                 {video.title}
               </h3>
-              <p className={`mt-1 text-sm leading-relaxed ${descClass}`}>
-                {video.description}
-              </p>
+              {!isCompact && (
+                <p className={`mt-1 text-sm leading-relaxed ${descClass}`}>
+                  {video.description}
+                </p>
+              )}
               <a
                 href={parseYoutubeUrl(video.youtubeUrl)?.watchUrl ?? video.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`mt-2 inline-flex text-xs font-medium hover:underline ${linkClass}`}
+                className={`inline-flex font-medium hover:underline ${linkClass} ${
+                  isCompact ? "mt-1 text-[0.6875rem] sm:text-xs" : "mt-2 text-xs"
+                }`}
               >
                 YouTube →
               </a>

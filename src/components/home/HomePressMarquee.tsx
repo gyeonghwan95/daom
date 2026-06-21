@@ -17,7 +17,7 @@ export function HomePressMarquee() {
           title={homeShowcaseIntro.press.title}
           description={homeShowcaseIntro.press.description}
           action={
-            <HomeSectionActionLink href="/media" label="언론·기사 더 보기" />
+            <HomeSectionActionLink href="/media#press" label="언론·활동 더 보기" />
           }
         />
 

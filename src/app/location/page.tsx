@@ -4,7 +4,6 @@ import { LocationSection } from "@/components/sections/LocationSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { getOfficeLocationWithAccess, officeLocation } from "@/lib/office-location";
-import { siteImages } from "@/lib/site-images";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { siteConfig } from "@/lib/site";
 
@@ -20,7 +19,6 @@ export default function LocationPage() {
           { label: "오시는 길" },
         ]}
         currentPath="/location"
-        coverImage={siteImages.location.header}
         intro={`${siteConfig.name}는 ${getOfficeLocationWithAccess()}에 있습니다. ${officeLocation.visitNoticeDetail}`}
         relatedLinks={[
           { href: "/contact", label: "상담 신청" },

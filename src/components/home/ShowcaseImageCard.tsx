@@ -40,11 +40,6 @@ export function ShowcaseImageCard({
           sizes={`${width}px`}
         />
         <div className="showcase-card__shine pointer-events-none absolute inset-0" aria-hidden />
-        {image.placeholder && (
-          <span className="absolute left-3 top-3 rounded-full bg-navy/75 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-            임시
-          </span>
-        )}
         <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-navy backdrop-blur-sm">
           {category}
         </span>
@@ -64,8 +59,21 @@ export function ShowcaseImageCard({
   );
 
   if (href && href !== "#") {
+    if (href.startsWith("http")) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block cursor-pointer"
+        >
+          {inner}
+        </a>
+      );
+    }
+
     return (
-      <Link href={href} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
+      <Link href={href} className="block cursor-pointer">
         {inner}
       </Link>
     );

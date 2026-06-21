@@ -6,12 +6,13 @@
  * public/image/
  * ├── home/          hero, heroSlides, trust, activities/, press/
  * ├── about/         profile
- * ├── office/        exterior, nameplate, map, direction-*, parking
+ * ├── office/        exterior, nameplate, map, direction-*, parking, gallery
  * ├── media/         community, policy, education, gallery-*
  * ├── services/      cover + {slug}.jpg
  * ├── blog/          cover, default-thumb, posts/{slug}.jpg
  * ├── cases/         cover, default-thumb, items/{slug}.jpg
- * ├── contact/       consult
+ * ├── contact/       상담_top, 전화·대면·출장 상담
+ * ├── press/         언론보도 기사 이미지
  * ├── location/      header
  * └── faq/           cover
  */
@@ -21,7 +22,7 @@ export type SiteImageAsset = {
   alt: string;
   width: number;
   height: number;
-  /** true면 '임시' 배지 표시 — 실제 사진 교체 후 false로 변경 */
+  /** @deprecated 배지 미사용 — 하위 호환용 */
   placeholder?: boolean;
 };
 
@@ -30,7 +31,7 @@ function img(
   alt: string,
   width = 1200,
   height = 800,
-  placeholder = true,
+  placeholder = false,
 ): SiteImageAsset {
   return { src, alt, width, height, placeholder };
 }
@@ -87,6 +88,57 @@ export const siteImages = {
 
   about: {
     profile: img("/image/about/profile.jpg", "안윤정 법무사 프로필", 800, 1000),
+    nameplate: img(
+      "/image/about/명판.png",
+      "안윤정 법무사 명판",
+      800,
+      600,
+      false,
+    ),
+    policy: {
+      barAssociationAward: img(
+        "/image/about/policy/bar-association-award.jpg",
+        "대한법무사협회 표창",
+        800,
+        600,
+        false,
+      ),
+      youthBudgetAdvisory: img(
+        "/image/about/policy/youth-budget-advisory.jpg",
+        "기획예산처 청년자문단",
+        800,
+        600,
+        false,
+      ),
+      busanYouthPolicy: img(
+        "/image/about/policy/busan-youth-policy.jpg",
+        "부산광역시 청년정책조정위원회",
+        800,
+        600,
+        false,
+      ),
+      haewoondaePolicy: img(
+        "/image/about/policy/haewoondae-policy.jpg",
+        "해운대구 정책자문위원회",
+        800,
+        600,
+        false,
+      ),
+      peaceUnification: img(
+        "/image/about/policy/peace-unification.jpg",
+        "민주평화통일자문회의",
+        800,
+        600,
+        false,
+      ),
+      citizenJury: img(
+        "/image/about/policy/citizen-jury.jpg",
+        "부산시민배심원단",
+        800,
+        600,
+        false,
+      ),
+    },
   },
 
   office: {
@@ -96,6 +148,13 @@ export const siteImages = {
     direction01: img("/image/office/direction-01.png", "찾아오시는 길 안내 1", 1200, 900),
     direction02: img("/image/office/direction-02.png", "찾아오시는 길 안내 2", 1200, 900),
     parking: img("/image/office/parking.png", "주차 안내", 1200, 900),
+    /** 사무소 페이지 상단 갤러리 — interior* 는 교체 전 목업 */
+    gallery: [
+      img("/image/photo/명패.png", "다옴법무사사무소 명패", 1200, 800),
+      img("/image/office/명판가로.jpg", "다옴법무사사무소 명판", 800, 600),
+      img("/image/office/office.jpg", "사무소", 1200, 900),
+      img("/image/office/doc.jpg", "사무소", 1200, 900),
+    ],
   },
 
   media: {
@@ -123,11 +182,39 @@ export const siteImages = {
   },
 
   contact: {
-    consult: img("/image/contact/consult.jpg", "상담 문의", 1200, 700),
+    top: img("/image/contact/상담_top.jpg", "상담 안내", 1400, 600, false),
+    phoneConsult: img("/image/contact/전화상담.png", "전화 상담", 800, 600, false),
+    inPersonConsult: img("/image/contact/대면상담.png", "대면 상담", 800, 600, false),
+    onSiteConsult: img("/image/contact/출장상담.png", "출장 상담", 800, 600, false),
+  },
+
+  press: {
+    busanIlbo260608: img(
+      "/image/press/부산일보260608.jpg",
+      "부산일보 — 부산지방법무사회 제64회 정기총회",
+      1200,
+      800,
+      false,
+    ),
+    kukjeSinmun260603: img(
+      "/image/press/국제신문260603.jpg",
+      "국제신문 — 부산지방법무사회 정기총회",
+      1200,
+      800,
+      false,
+    ),
+    beopryulSinmun260602: img(
+      "/image/press/법률신문260602.png",
+      "법률신문 — 부산지방법무사회 제64회 정기총회",
+      1200,
+      800,
+      false,
+    ),
+    cover: img("/image/press/부산일보260608.jpg", "언론보도", 1400, 600, false),
   },
 
   location: {
-    header: img("/image/location/header.jpg", "오시는 길", 1400, 600),
+    header: img("/image/location/지도.png", "오시는 길", 1400, 600),
   },
 
   faq: {

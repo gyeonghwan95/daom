@@ -57,7 +57,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/centum-ownership-transfer-case",
+      href: "/services/cases/centum-ownership-transfer-case",
       label: "센텀 소유권이전등기 사례",
     },
     relatedLinks: [
@@ -123,7 +123,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/centum-ownership-transfer-case",
+      href: "/services/cases/centum-ownership-transfer-case",
       label: "센텀 소유권이전등기 사례",
     },
     relatedLinks: [
@@ -190,7 +190,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/yeonje-director-change-case",
+      href: "/services/cases/yeonje-director-change-case",
       label: "연제구 임원변경등기 사례",
     },
     relatedLinks: [
@@ -257,7 +257,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/suyeong-company-establishment-case",
+      href: "/services/cases/suyeong-company-establishment-case",
       label: "수영구 법인설립등기 사례",
     },
     relatedLinks: [
@@ -323,7 +323,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/yeonje-director-change-case",
+      href: "/services/cases/yeonje-director-change-case",
       label: "연제구 임원변경등기 사례",
     },
     relatedLinks: [
@@ -394,7 +394,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/busan-personal-rehabilitation-consultation",
+      href: "/services/cases/busan-personal-rehabilitation-consultation",
       label: "부산 개인회생 상담 사례",
     },
     relatedLinks: [
@@ -460,7 +460,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/busan-personal-rehabilitation-consultation",
+      href: "/services/cases/busan-personal-rehabilitation-consultation",
       label: "부산 개인회생 상담 사례",
     },
     relatedLinks: [

@@ -19,9 +19,11 @@ type ConsultationButtonsProps = {
 function getButtonClass(
   id: ConsultationChannelId,
   theme: "dark" | "light",
+  compactRow = false,
 ): string {
-  const base =
-    "inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl px-2.5 text-xs font-semibold transition-colors sm:min-h-12 sm:gap-2 sm:px-4 sm:text-sm";
+  const base = compactRow
+    ? "inline-flex min-h-11 w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-xl px-1 py-2.5 text-[11px] font-semibold leading-tight transition-colors sm:min-h-12 sm:flex-row sm:gap-2 sm:px-3 sm:text-sm"
+    : "inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl px-2.5 text-xs font-semibold transition-colors sm:min-h-12 sm:gap-2 sm:px-4 sm:text-sm";
 
   if (theme === "dark") {
     switch (id) {
@@ -129,8 +131,16 @@ export function ConsultationButtons({
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
 
-  const gridClass =
-    layout === "grid"
+  const isDirectRow =
+    layout === "grid" &&
+    channels.length === 3 &&
+    channels.every((channel) =>
+      ["phone", "kakao", "naver"].includes(channel.id),
+    );
+
+  const gridClass = isDirectRow
+    ? "grid grid-cols-3 gap-1.5 sm:gap-2"
+    : layout === "grid"
       ? "grid grid-cols-2 gap-2 sm:gap-3"
       : "flex flex-col gap-2.5 sm:gap-3";
 
@@ -141,7 +151,7 @@ export function ConsultationButtons({
           key={channel.id}
           channel={channel}
           label={labelFor(channel)}
-          className={getButtonClass(channel.id, theme)}
+          className={getButtonClass(channel.id, theme, isDirectRow)}
         />
       ))}
     </div>

@@ -4,6 +4,7 @@ import {
   getContentMeta,
   getContentSlugs,
 } from "@/lib/content/loader";
+import { getPressArticleSlugs, getPressArticle } from "@/lib/press-articles";
 import { getAllSitePaths } from "@/lib/seo/routes";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site";
@@ -17,7 +18,13 @@ function pathToLastModified(path: string): Date {
     if (meta) return new Date(meta.date);
   }
 
-  const caseMatch = path.match(/^\/cases\/(.+)$/);
+  const pressMatch = path.match(/^\/media\/(.+)$/);
+  if (pressMatch) {
+    const article = getPressArticle(pressMatch[1]);
+    if (article) return new Date(article.publishedAt);
+  }
+
+  const caseMatch = path.match(/^\/services\/cases\/(.+)$/);
   if (caseMatch) {
     const meta = getContentMeta("cases", caseMatch[1]);
     if (meta) return new Date(meta.date);
@@ -38,7 +45,7 @@ function pathPriority(path: string): number {
   if (path === "/") return 1;
   if (path.startsWith("/services/")) return 0.9;
   if (path.startsWith("/faq/")) return 0.85;
-  if (path.startsWith("/blog/") || path.startsWith("/cases/")) return 0.8;
+  if (path.startsWith("/blog/") || path.startsWith("/services/cases/") || path.startsWith("/media/")) return 0.8;
   if (path === "/contact" || path === "/location") return 0.85;
   return 0.75;
 }
@@ -50,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     getContentSlugs("blog"),
     getContentSlugs("cases"),
     faqSlugs,
+    getPressArticleSlugs(),
   );
 
   return paths.map((path) => ({

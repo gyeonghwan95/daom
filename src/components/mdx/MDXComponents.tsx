@@ -1,15 +1,22 @@
 import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
 
+import { extractTextContent, slugifySectionId } from "@/lib/section-nav/slugify";
+
 export const mdxComponents: MDXComponents = {
-  h2: ({ children, ...props }) => (
-    <h2
-      className="mt-10 border-b border-beige-dark pb-2 text-xl font-semibold text-navy md:mt-12 md:text-2xl"
-      {...props}
-    >
-      {children}
-    </h2>
-  ),
+  h2: ({ children, id: propsId, ...props }) => {
+    const id = propsId ?? slugifySectionId(extractTextContent(children));
+
+    return (
+      <h2
+        {...props}
+        id={id}
+        className="section-anchor mt-10 scroll-mt-[calc(var(--header-height)+1rem)] border-b border-beige-dark pb-2 text-xl font-semibold text-navy md:mt-12 md:text-2xl"
+      >
+        {children}
+      </h2>
+    );
+  },
   h3: ({ children, ...props }) => (
     <h3 className="mt-6 text-lg font-semibold text-navy" {...props}>
       {children}

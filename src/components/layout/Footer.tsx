@@ -2,14 +2,15 @@ import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { Container } from "@/components/layout/Container";
 import { consultationCopy } from "@/lib/consultation";
-import { getContactInfo, getPhoneHref, getPrimaryConsultationChannels } from "@/lib/contact";
+import { getContactInfo, getDirectConsultationChannels, getNaverBlogUrl, getPhoneHref } from "@/lib/contact";
 import { officeLocation } from "@/lib/office-location";
 import { mainNavigation } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
   const { phone } = getContactInfo();
-  const channels = getPrimaryConsultationChannels();
+  const naverBlog = getNaverBlogUrl();
+  const channels = getDirectConsultationChannels();
 
   return (
     <footer className="border-t border-beige-dark bg-navy text-white">
@@ -58,7 +59,6 @@ export function Footer() {
                 channels={channels}
                 theme="dark"
                 layout="grid"
-                showLabels="short"
               />
             </div>
             <ul className="mt-4 space-y-1 text-sm text-white/70">
@@ -71,6 +71,16 @@ export function Footer() {
                 <Link href="/faq" className="inline-flex min-h-10 items-center hover:text-white">
                   자주 묻는 질문
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={naverBlog}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-10 items-center hover:text-white"
+                >
+                  네이버 블로그
+                </a>
               </li>
             </ul>
           </div>

@@ -8,10 +8,21 @@ export type ActivityHighlight = {
 export type ActivityRole = {
   title: string;
   period: string;
+  subtitle?: string;
+  image?: SiteImageAsset;
+};
+
+export type ExternalActivityItem = {
+  id: string;
+  category: string;
+  title: string;
+  subtitle: string;
+  period: string;
+  image: SiteImageAsset;
 };
 
 export type LawyerActivitySection = {
-  id: "community" | "policy" | "education";
+  id: "community" | "external" | "education";
   title: string;
   subtitle: string;
   homeSummary: string;
@@ -20,6 +31,114 @@ export type LawyerActivitySection = {
   roles?: ActivityRole[];
 };
 
+export const lawyerExternalActivitiesIntro = {
+  title: "대외활동",
+  subtitle:
+    "기업·공공기관과의 협력, 정책 자문, 지역사회 법률 지원 등 법률 전문가로서 지역과 함께하고 있습니다.",
+} as const;
+
+function mockActivityImage(
+  index: number,
+  alt: string,
+): SiteImageAsset {
+  const slot =
+    siteImages.home.activities[index % siteImages.home.activities.length] ??
+    siteImages.home.activities[0];
+  return { ...slot, alt };
+}
+
+export const lawyerExternalActivities: ExternalActivityItem[] = [
+  {
+    id: "mou",
+    category: "기업 협력",
+    title: "명례일반산업단지 MOU",
+    subtitle: "83개 기업 법률지원 협약 체결·자문",
+    period: "2024",
+    image: mockActivityImage(0, "기업 MOU 법률지원"),
+  },
+  {
+    id: "lh",
+    category: "공공기관",
+    title: "LH · 부산창경 협업",
+    subtitle: "청년·시민 법률 지원 프로그램",
+    period: "2025",
+    image: mockActivityImage(1, "공공기관 협업"),
+  },
+  {
+    id: "youth-space",
+    category: "청년 지원",
+    title: "해운대 청년채움공간",
+    subtitle: "청년 JOB성장카페 법률 상담·강의",
+    period: "2025",
+    image: mockActivityImage(2, "청년 법률 지원"),
+  },
+  {
+    id: "intl",
+    category: "국제 교류",
+    title: "나가사키 사법서사회",
+    subtitle: "부산법무사회 자매결연 행사 사회·통역",
+    period: "2025",
+    image: mockActivityImage(6, "국제 법무 교류"),
+  },
+  {
+    id: "award",
+    category: "수상",
+    title: "대한법무사협회장 표창",
+    subtitle: "법무 업무 성실 수행·지역 기여",
+    period: "2026.05.28",
+    image: siteImages.about.policy.barAssociationAward,
+  },
+  {
+    id: "budget-youth",
+    category: "정책 자문",
+    title: "기획예산처 1기 청년자문단",
+    subtitle: "청년 정책 자문 참여",
+    period: "2026.06 ~",
+    image: siteImages.about.policy.youthBudgetAdvisory,
+  },
+  {
+    id: "busan-youth",
+    category: "정책 자문",
+    title: "부산광역시 청년정책조정위원회",
+    subtitle: "전문가 위원 활동",
+    period: "2026.04 ~ 2028.03",
+    image: siteImages.about.policy.busanYouthPolicy,
+  },
+  {
+    id: "haewoondae-policy",
+    category: "정책 자문",
+    title: "해운대구정 정책자문위원회",
+    subtitle: "자문위원 활동",
+    period: "2025.10 ~ 2027.10",
+    image: siteImages.about.policy.haewoondaePolicy,
+  },
+  {
+    id: "peace-unification",
+    category: "정책 자문",
+    title: "제22기 민주평화통일자문회의",
+    subtitle: "자문위원 활동",
+    period: "2025.11 ~ 2027.10",
+    image: siteImages.about.policy.peaceUnification,
+  },
+  {
+    id: "citizen-jury",
+    category: "시민 참여",
+    title: "부산시민배심원단",
+    subtitle: "시민배심원 활동",
+    period: "2025.10",
+    image: siteImages.about.policy.citizenJury,
+  },
+];
+
+function externalActivitiesToRoles(): ActivityRole[] {
+  return lawyerExternalActivities.map((item) => ({
+    title: item.title,
+    period: item.period,
+    subtitle: item.subtitle,
+    image: item.image,
+  }));
+}
+
 export const lawyerQualifications = [
   "법무사",
   "공인중개사",
@@ -27,6 +146,30 @@ export const lawyerQualifications = [
   "교육대학원 석사 (정식 교사 자격)",
   "대한법무사협회장 표창 (2026.05.28)",
 ] as const;
+
+export type LawyerQualificationCategory = "license" | "education" | "award";
+
+export type LawyerQualificationItem = {
+  title: string;
+  detail?: string;
+  category: LawyerQualificationCategory;
+};
+
+export const lawyerQualificationItems: LawyerQualificationItem[] = [
+  { title: "법무사", category: "license" },
+  { title: "공인중개사", category: "license" },
+  { title: "신용관리사", category: "license" },
+  {
+    title: "교육대학원 석사",
+    detail: "정식 교사 자격",
+    category: "education",
+  },
+  {
+    title: "대한법무사협회장 표창",
+    detail: "2026.05.28",
+    category: "award",
+  },
+];
 
 export const lawyerActivitySections: LawyerActivitySection[] = [
   {
@@ -53,30 +196,13 @@ export const lawyerActivitySections: LawyerActivitySection[] = [
     ],
   },
   {
-    id: "policy",
-    title: "정책으로 기여하는 법률 전문가",
-    subtitle:
-      "법률 실무를 넘어 부산, 대한민국의 발전을 위한 정책 자문 활동에도 적극 참여하고 있습니다.",
+    id: "external",
+    title: lawyerExternalActivitiesIntro.title,
+    subtitle: lawyerExternalActivitiesIntro.subtitle,
     homeSummary:
-      "협회 표창과 각종 정책자문위원 활동으로 지역과 국가에 기여합니다.",
+      "기업 MOU·공공기관 협업부터 정책 자문·수상까지, 지역과 함께하는 활동입니다.",
     image: siteImages.media.policy,
-    roles: [
-      { title: "대한법무사협회 표창", period: "2026.05.28" },
-      { title: "기획예산처 1기 청년자문단", period: "2026.06 ~" },
-      {
-        title: "부산광역시 청년정책조정위원회 전문가 위원",
-        period: "2026.04.01 ~ 2028.03.31",
-      },
-      {
-        title: "해운대구정 정책자문위원회 자문위원",
-        period: "2025.10.31 ~ 2027.10.30",
-      },
-      {
-        title: "제22기 민주평화통일자문회의 자문위원",
-        period: "2025.11.01 ~ 2027.10.31",
-      },
-      { title: "부산시민배심원단", period: "2025.10" },
-    ],
+    roles: externalActivitiesToRoles(),
   },
   {
     id: "education",

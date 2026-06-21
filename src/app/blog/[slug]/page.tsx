@@ -43,7 +43,7 @@ export default async function BlogDetailPage({ params }: Props) {
   const image = getBlogPostImage(meta.slug).src;
 
   return (
-    <MdxArticleLayout meta={meta} listLabel="블로그" listHref="/blog">
+    <MdxArticleLayout meta={meta} listLabel="포스팅" listHref="/blog">
       <JsonLd data={buildArticleSchema(meta, image)} />
       {content}
     </MdxArticleLayout>

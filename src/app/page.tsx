@@ -15,7 +15,7 @@ export const metadata: Metadata = homeMetadata;
 
 export default function Home() {
   return (
-    <main id="main-content" className="home-page flex-1 overflow-x-hidden">
+    <main id="main-content" className="home-page flex min-h-0 flex-1 flex-col overflow-x-hidden">
       <HomeFullpageSwiper>
         <HomeHero />
         <HomeServices />

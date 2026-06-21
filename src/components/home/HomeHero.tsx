@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { HeroBrand } from "@/components/home/HeroBrand";
 import { HeroContactBlock } from "@/components/home/HeroContactBlock";
 import { HeroImageMarquee } from "@/components/home/HeroImageMarquee";
 import { Container } from "@/components/layout/Container";
@@ -89,24 +90,28 @@ export function HomeHero() {
   const lines = homeHero.headline.split("\n");
 
   return (
-    <section className="home-hero relative flex h-full min-h-full flex-col overflow-hidden">
+    <section className="home-hero relative flex min-h-full flex-col">
       <div className="home-hero__ambient" aria-hidden>
         <div className="home-hero__orb home-hero__orb--1" />
         <div className="home-hero__orb home-hero__orb--2" />
         <div className="home-hero__grid" />
       </div>
 
-      <Container className="relative flex w-full flex-1 items-center py-6 pb-16 md:py-8 md:pb-20">
-        <div className="grid w-full items-stretch gap-6 lg:grid-cols-12 lg:gap-8">
-          <motion.div
-            className="lg:col-span-7"
-            variants={reduced ? undefined : stagger}
-            initial={reduced ? false : "hidden"}
-            animate="visible"
-          >
+      <Container className="home-hero__container relative w-full flex-1">
+        <motion.div
+          className="home-hero__body grid w-full min-h-0 items-center gap-5 lg:grid-cols-12 lg:gap-8"
+          variants={reduced ? undefined : stagger}
+          initial={reduced ? false : "hidden"}
+          animate="visible"
+        >
+          <motion.div className="min-h-0 lg:col-span-7">
+            <motion.div variants={item}>
+              <HeroBrand />
+            </motion.div>
+
             <motion.h1
               variants={item}
-              className="text-[1.85rem] font-bold leading-[1.15] tracking-tight text-navy sm:text-[2.15rem] lg:text-[2.75rem] xl:text-[3rem]"
+              className="mt-3 text-[1.65rem] font-bold leading-[1.18] tracking-tight text-navy sm:text-[2rem] lg:mt-4 lg:text-[2.5rem] xl:text-[2.85rem]"
             >
               {lines.map((line, i) => (
                 <span key={line} className={i > 0 ? "block" : undefined}>
@@ -117,14 +122,14 @@ export function HomeHero() {
 
             <motion.p
               variants={item}
-              className="mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-navy/75 md:text-base"
+              className="mt-2.5 max-w-xl text-[0.875rem] leading-relaxed text-navy/75 sm:text-[0.9375rem] md:text-base"
             >
               {homeHero.sub}
             </motion.p>
 
             <motion.ul
               variants={item}
-              className="mt-3 flex flex-wrap gap-1.5"
+              className="mt-2.5 flex flex-wrap gap-1.5"
               aria-label="주요 업무"
             >
               {homeHero.serviceTags.map((tag) => (
@@ -141,23 +146,23 @@ export function HomeHero() {
               {homeHero.locationHint}
             </motion.p>
 
-            <motion.div variants={item} className="mt-5">
+            <motion.div variants={item} className="mt-4 sm:mt-5">
               <HeroContactBlock phone={phone} channels={channels} />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative flex h-full min-h-[17.5rem] lg:col-span-5"
+            className="relative flex min-h-[12.5rem] sm:min-h-[14rem] lg:col-span-5 lg:min-h-0 lg:h-full"
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...heroTransition, delay: 0.25 }}
           >
             <HeroImageMarquee
               slides={siteImages.home.heroSlides}
-              className="h-full w-full"
+              className="h-full w-full max-h-[15rem] sm:max-h-[17.5rem] lg:max-h-none"
             />
           </motion.div>
-        </div>
+        </motion.div>
       </Container>
 
       <div className="home-hero__scroll-bottom">

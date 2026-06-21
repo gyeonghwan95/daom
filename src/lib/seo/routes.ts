@@ -3,8 +3,8 @@ export const staticRoutes = [
   "/about",
   "/office",
   "/services",
-  "/cases",
   "/blog",
+  "/reviews",
   "/faq",
   "/media",
   "/contact",
@@ -16,12 +16,14 @@ export function getAllSitePaths(
   blogSlugs: string[] = [],
   caseSlugs: string[] = [],
   faqSlugs: string[] = [],
+  pressSlugs: string[] = [],
 ): string[] {
   return [
     ...staticRoutes,
     ...serviceSlugs.map((slug) => `/services/${slug}`),
     ...blogSlugs.map((slug) => `/blog/${slug}`),
-    ...caseSlugs.map((slug) => `/cases/${slug}`),
+    ...caseSlugs.map((slug) => `/services/cases/${slug}`),
     ...faqSlugs.map((slug) => `/faq/${slug}`),
+    ...pressSlugs.map((slug) => `/media/${slug}`),
   ];
 }

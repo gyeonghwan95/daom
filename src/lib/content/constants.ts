@@ -8,7 +8,7 @@ export const CONTENT_BASE_PATH: Record<
   string
 > = {
   blog: "/blog",
-  cases: "/cases",
+  cases: "/services/cases",
   faq: "/faq",
   services: "/services",
 };

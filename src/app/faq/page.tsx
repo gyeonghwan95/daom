@@ -27,11 +27,16 @@ export default function FaqPage() {
         relatedLinks={[
           { href: "/services", label: "업무안내" },
           { href: "/contact", label: "상담 신청" },
-          { href: "/blog", label: "블로그" },
+          { href: "/blog", label: "포스팅" },
           { href: "/location", label: "오시는 길" },
         ]}
       >
-        <FAQAccordion items={faqs} />
+        <section
+          id="faq-list"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <FAQAccordion items={faqs} />
+        </section>
       </PageContentSection>
     </PageContainer>
   );

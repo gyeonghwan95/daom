@@ -3,7 +3,7 @@ import { ConsultationButtons } from "@/components/consultation/ConsultationButto
 import { PageContainer } from "@/components/layout/PageContainer";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildSeoTitle } from "@/lib/seo/metadata";
-import { getPrimaryConsultationChannels } from "@/lib/contact";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 export const metadata = createPageMetadata({
   title: buildSeoTitle("페이지를 찾을 수 없습니다", { includeRepresentative: false }),
@@ -14,7 +14,7 @@ export const metadata = createPageMetadata({
 });
 
 export default function NotFound() {
-  const channels = getPrimaryConsultationChannels();
+  const channels = getDirectConsultationChannels();
 
   return (
     <PageContainer>
@@ -47,8 +47,8 @@ export default function NotFound() {
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
             {[
               { href: "/services", label: "업무안내" },
-              { href: "/blog", label: "법률칼럼" },
-              { href: "/cases", label: "업무 사례" },
+              { href: "/blog", label: "포스팅" },
+              { href: "/services#cases", label: "업무 사례" },
               { href: "/faq", label: "자주 묻는 질문" },
               { href: "/location", label: "오시는 길" },
             ].map((item) => (

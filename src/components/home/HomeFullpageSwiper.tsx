@@ -1,11 +1,12 @@
 "use client";
 
-import { Children, useMemo, useState, type ReactNode } from "react";
+import { Children, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Keyboard, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HomeSwiperProgress } from "@/components/home/HomeSwiperProgress";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { bindHomeSlideNestedScroll } from "@/lib/home-slide-scroll";
 import { HOME_SECTION_IDS, setHomeSwiper, scrollToHomeSection } from "@/lib/home-scroll";
 
 import "swiper/css";
@@ -18,7 +19,20 @@ export function HomeFullpageSwiper({ children }: HomeFullpageSwiperProps) {
   const reduced = useReducedMotion();
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const unbindSlideScrollRef = useRef<(() => void) | null>(null);
   const slides = useMemo(() => Children.toArray(children), [children]);
+
+  useEffect(() => {
+    if (!swiper) return;
+
+    unbindSlideScrollRef.current?.();
+    unbindSlideScrollRef.current = bindHomeSlideNestedScroll(swiper);
+
+    return () => {
+      unbindSlideScrollRef.current?.();
+      unbindSlideScrollRef.current = null;
+    };
+  }, [swiper]);
 
   if (slides.length !== HOME_SECTION_IDS.length) {
     console.warn(
@@ -72,6 +86,8 @@ export function HomeFullpageSwiper({ children }: HomeFullpageSwiperProps) {
           setActiveIndex(instance.activeIndex ?? 0);
         }}
         onDestroy={() => {
+          unbindSlideScrollRef.current?.();
+          unbindSlideScrollRef.current = null;
           setHomeSwiper(null);
           setSwiper(null);
           setActiveIndex(0);

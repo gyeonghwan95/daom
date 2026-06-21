@@ -7,8 +7,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-rss.mjs",
+    "prebuild": "node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs",
+    "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
+    "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "next build",
+    "build:static": "node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/build-static.mjs",
     "start": "next start",
     "lint": "eslint",
     "preview": "npx --yes serve@14 out -p 3000"

@@ -72,12 +72,12 @@ export function HeroImageMarquee({
           animationDirection: direction === "down" ? "reverse" : "normal",
         }}
       >
-        <div className="marquee-v-set flex flex-col gap-3">
+        <div className="marquee-v-set">
           {slides.map((image, index) => (
             <HeroSlide key={image.src} image={image} priority={index === 0} />
           ))}
         </div>
-        <div className="marquee-v-set flex flex-col gap-3" aria-hidden>
+        <div className="marquee-v-set" aria-hidden>
           {slides.map((image) => (
             <HeroSlide key={`dup-${image.src}`} image={image} />
           ))}

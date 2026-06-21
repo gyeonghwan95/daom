@@ -17,14 +17,19 @@ type ServiceDetailContentProps = {
 };
 
 function ContentBlock({
+  id,
   title,
   children,
 }: {
+  id: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section>
+    <section
+      id={id}
+      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+    >
       <h2 className="section-heading">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
@@ -65,13 +70,13 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         <p className="body-text mt-4 max-w-3xl md:mt-5">{service.intro}</p>
       </header>
 
-      <ContentBlock title="어떤 경우에 필요한가요">
+      <ContentBlock id="when-needed" title="어떤 경우에 필요한가요">
         <p className="text-base leading-relaxed text-navy/80 md:text-lg">
           {service.whenNeeded}
         </p>
       </ContentBlock>
 
-      <ContentBlock title="절차">
+      <ContentBlock id="procedures" title="절차">
         <ol className="space-y-3">
           {service.procedures.map((step, index) => (
             <li
@@ -89,7 +94,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </ol>
       </ContentBlock>
 
-      <ContentBlock title="준비 서류">
+      <ContentBlock id="documents" title="준비 서류">
         <ul className="grid gap-2 sm:grid-cols-2">
           {service.documents.map((doc) => (
             <li
@@ -113,7 +118,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         description="준비 서류가 막막하시면 다옴법무사사무소 안윤정 법무사에게 현재 상황을 알려주세요. 필요한 서류와 순서를 차분히 안내해 드립니다."
       />
 
-      <ContentBlock title="자주 발생하는 문제">
+      <ContentBlock id="common-issues" title="자주 발생하는 문제">
         <ul className="space-y-3">
           {service.commonIssues.map((issue) => (
             <li
@@ -126,7 +131,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </ul>
       </ContentBlock>
 
-      <ContentBlock title="다옴법무사사무소의 진행 방식">
+      <ContentBlock id="our-approach" title="다옴법무사사무소의 진행 방식">
         <div className="card-surface bg-beige p-6 md:p-8">
           <p className="text-base leading-relaxed text-navy/80 md:text-lg">
             {service.ourApproach}
@@ -134,12 +139,15 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </div>
       </ContentBlock>
 
-      <ContentBlock title="자주 묻는 질문">
+      <ContentBlock id="service-faq" title="자주 묻는 질문">
         <FAQAccordion items={service.faqs} />
       </ContentBlock>
 
       {service.relatedCase && (
-        <section className="card-surface border-navy/10 bg-cream p-5 md:p-6">
+        <section
+          id="related-case"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] card-surface border-navy/10 bg-cream p-5 md:p-6"
+        >
           <h2 className="text-base font-semibold text-navy md:text-lg">
             관련 사례
           </h2>
@@ -156,7 +164,12 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </section>
       )}
 
-      <CTASection description={consultationCopy.default} />
+      <div
+        id="consultation"
+        className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+      >
+        <CTASection description={consultationCopy.default} />
+      </div>
 
       <RelatedLinks title="관련 업무" links={service.relatedLinks} />
     </article>

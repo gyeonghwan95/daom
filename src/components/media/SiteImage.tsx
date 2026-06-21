@@ -6,7 +6,6 @@ type SiteImageProps = SiteImageAsset & {
   fill?: boolean;
   priority?: boolean;
   sizes?: string;
-  showPlaceholderBadge?: boolean;
 };
 
 export function SiteImage({
@@ -14,24 +13,14 @@ export function SiteImage({
   alt,
   width,
   height,
-  placeholder = true,
   className = "",
   fill = false,
   priority = false,
   sizes,
-  showPlaceholderBadge = true,
 }: SiteImageProps) {
-  const badge =
-    placeholder && showPlaceholderBadge ? (
-      <span className="absolute left-3 top-3 z-10 rounded-full bg-navy/75 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-        임시
-      </span>
-    ) : null;
-
   if (fill) {
     return (
-      <div className={`relative overflow-hidden ${className}`}>
-        {badge}
+      <div className={`relative h-full w-full overflow-hidden ${className}`}>
         <Image
           src={src}
           alt={alt}
@@ -45,8 +34,7 @@ export function SiteImage({
   }
 
   return (
-    <div className={`relative inline-block overflow-hidden ${className}`}>
-      {badge}
+    <div className={`relative block w-full overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}

@@ -1,23 +1,18 @@
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import { consultationCopy } from "@/lib/consultation";
-import { getConsultationChannels } from "@/lib/contact";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 type CTASectionProps = {
   title?: string;
   description?: string;
-  showInquiryForm?: boolean;
 };
 
 export function CTASection({
   title = "상담 문의",
   description,
-  showInquiryForm = true,
 }: CTASectionProps) {
-  const channels = getConsultationChannels().filter((channel) => {
-    if (!showInquiryForm && channel.id === "inquiry") return false;
-    return true;
-  });
+  const channels = getDirectConsultationChannels();
 
   return (
     <section className="card-surface bg-navy p-5 text-white sm:p-6 md:p-8 lg:p-10">

@@ -9,13 +9,13 @@ import { youtubeVideos } from "@/lib/youtube-videos";
 
 export function HomeYoutube() {
   return (
-    <section className="home-youtube relative w-full overflow-hidden py-14 md:py-28">
+    <section className="home-youtube home-section-compact relative w-full overflow-hidden">
       <div className="home-youtube__mesh" aria-hidden />
       <Container className="relative">
         <HomeSectionHeader
           label={homeShowcaseIntro.youtube.label}
           title={homeShowcaseIntro.youtube.title}
-          description={homeShowcaseIntro.youtube.description}
+          description="강의·인터뷰·법률 정보 영상입니다."
           dark
           action={
             <HomeSectionActionLink
@@ -26,8 +26,12 @@ export function HomeYoutube() {
           }
         />
 
-        <div className="mt-12">
-          <YoutubeVideoSection videos={youtubeVideos} variant="dark" />
+        <div className="mt-6 md:mt-8">
+          <YoutubeVideoSection
+            videos={youtubeVideos}
+            variant="dark"
+            density="compact"
+          />
         </div>
       </Container>
     </section>

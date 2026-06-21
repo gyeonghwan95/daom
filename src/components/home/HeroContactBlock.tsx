@@ -14,11 +14,11 @@ type HeroContactBlockProps = {
 
 const channelMeta: Record<
   "phone" | "kakao" | "naver",
-  { label: string; shortLabel: string }
+  { label: string }
 > = {
-  phone: { label: "전화", shortLabel: "전화" },
-  kakao: { label: "카카오톡", shortLabel: "카카오" },
-  naver: { label: "네이버 톡톡", shortLabel: "톡톡" },
+  phone: { label: "전화걸기" },
+  kakao: { label: "카카오톡" },
+  naver: { label: "네이버 톡톡" },
 };
 
 function ChannelIcon({ id }: { id: "phone" | "kakao" | "naver" }) {
@@ -53,7 +53,7 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
           const content = (
             <>
               <ChannelIcon id={id} />
-              <span className="hero-contact__chip-label">{meta.shortLabel}</span>
+              <span className="hero-contact__chip-label">{meta.label}</span>
             </>
           );
 

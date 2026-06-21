@@ -57,7 +57,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/haeundae-inheritance-registration-case",
+      href: "/services/cases/haeundae-inheritance-registration-case",
       label: "해운대구 상속등기 사례",
     },
     relatedLinks: [
@@ -122,7 +122,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/jaesong-inheritance-renunciation-consultation",
+      href: "/services/cases/jaesong-inheritance-renunciation-consultation",
       label: "재송동 상속포기 상담 사례",
     },
     relatedLinks: [
@@ -187,7 +187,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedCase: {
-      href: "/cases/dongnae-qualified-acceptance-consultation",
+      href: "/services/cases/dongnae-qualified-acceptance-consultation",
       label: "동래구 한정승인 상담 사례",
     },
     relatedLinks: [

@@ -1,4 +1,4 @@
-import { defaultContact } from "@/lib/contact";
+import { defaultContact, getNaverBlogUrl } from "@/lib/contact";
 import { getNaverMapSearchUrl } from "@/lib/office-location";
 import { siteConfig } from "@/lib/site";
 
@@ -14,6 +14,7 @@ export function getSocialProfileUrls(): string[] {
   return [
     kakao,
     naverTalk,
+    getNaverBlogUrl(),
     getNaverMapSearchUrl(),
     `${siteConfig.url}/contact`,
     `${siteConfig.url}/location`,

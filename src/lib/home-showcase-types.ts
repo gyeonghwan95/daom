@@ -35,12 +35,12 @@ export const homeShowcaseIntro = {
     label: "Activities",
     title: "대외활동",
     description:
-      "기업·공공기관·지역사회와 함께한 법률 지원과 교육 활동입니다.",
+      "기업·공공기관 협력, 정책 자문, 지역사회 법률 지원 등 대외 활동입니다.",
   },
   press: {
     label: "Press",
-    title: "언론·기사",
-    description: "언론 보도와 기사 스크랩을 모았습니다.",
+    title: "언론보도",
+    description: "언론 보도와 기사를 모았습니다.",
   },
   youtube: {
     label: "Media",

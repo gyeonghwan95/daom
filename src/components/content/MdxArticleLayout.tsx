@@ -97,7 +97,12 @@ export function MdxArticleLayout({
 
         <div className="py-8 md:py-10">{children}</div>
 
-        <CTASection description={consultationCopy.default} />
+        <div
+          id="consultation"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <CTASection description={consultationCopy.default} />
+        </div>
 
         {relatedLinks.length > 0 && (
           <div className="pb-8">

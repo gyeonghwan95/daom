@@ -16,7 +16,7 @@ export const staticPageSeo = {
   },
   services: {
     title: buildSeoTitle("부산 등기·상속·회생 업무안내"),
-    description: `${seoBrand.siteName} ${seoBrand.representative}의 업무 안내. 부산 상속등기, 상속포기, 한정승인, 부동산등기, 법인등기, 개인회생, 파산 등 법무사 업무 전반.`,
+    description: `${seoBrand.siteName} ${seoBrand.representative}의 업무 안내. 부산 상속등기, 상속포기, 한정승인, 부동산등기, 법인등기, 개인회생, 파산 등 법무사 업무와 실무 사례.`,
     path: "/services",
     keywords: [
       "부산 상속등기",
@@ -29,14 +29,20 @@ export const staticPageSeo = {
   cases: {
     title: buildSeoTitle("부산 등기·상속 업무 사례"),
     description: `${seoBrand.siteName} ${seoBrand.representative}의 상속등기, 부동산등기, 법인등기, 한정승인 사례 유형을 소개합니다. 부산 해운대·센텀 지역 실무 경험.`,
-    path: "/cases",
+    path: "/services#cases",
     keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사"],
   },
   blog: {
-    title: buildSeoTitle("부산 법률 정보 블로그"),
-    description: `${seoBrand.representative}가 정리하는 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보. ${seoBrand.siteName} 공식 블로그.`,
+    title: buildSeoTitle("부산 법률 정보 포스팅"),
+    description: `${seoBrand.representative}가 정리하는 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보. ${seoBrand.siteName} 공식 포스팅과 네이버 블로그.`,
     path: "/blog",
     keywords: ["부산 상속등기", "부산 법인등기", "부산 개인회생", "부산 법무사"],
+  },
+  reviews: {
+    title: buildSeoTitle("고객후기"),
+    description: `${seoBrand.siteName} ${seoBrand.representative} 네이버 플레이스 방문자 리뷰. 부산 상속·등기·회생 법률 상담 실제 후기.`,
+    path: "/reviews",
+    keywords: ["부산 법무사", "해운대 법무사", "고객후기", seoBrand.siteName],
   },
   faq: {
     title: buildSeoTitle("부산 법무사 FAQ"),
@@ -46,9 +52,9 @@ export const staticPageSeo = {
   },
   media: {
     title: buildSeoTitle("언론·활동"),
-    description: `${seoBrand.representative}의 기업·공공기관 법률 지원, 정책 자문, 생활 법률 강의 등 대외 활동. 대한법무사협회장 표창, 청년정책·해운대구 정책자문 참여.`,
+    description: `${seoBrand.representative}의 기업·공공기관 법률 지원, 정책 자문, 생활 법률 강의, 언론 보도 등 대외 활동. 대한법무사협회장 표창, 청년정책·해운대구 정책자문 참여.`,
     path: "/media",
-    keywords: ["안윤정 법무사", "부산 법무사", "부산 법률 강의", seoBrand.siteName],
+    keywords: ["안윤정 법무사", "부산 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
   },
   contact: {
     title: buildSeoTitle("부산 법무사 상담 문의"),

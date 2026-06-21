@@ -9,19 +9,19 @@ import { ConsultationButtons } from "@/components/consultation/ConsultationButto
 import { Reveal } from "@/components/motion/Reveal";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { consultationCopy } from "@/lib/consultation";
-import { getConsultationChannels, getContactInfo, getPhoneHref } from "@/lib/contact";
+import { getContactInfo, getDirectConsultationChannels, getPhoneHref } from "@/lib/contact";
 import { homeClosing } from "@/lib/home-content";
 import { easeOutSoft } from "@/lib/motion";
 import { siteConfig } from "@/lib/site";
 
 export function HomeContactClosing() {
-  const channels = getConsultationChannels();
+  const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
   const reduced = useReducedMotion();
   const titleLines = homeClosing.title.split("\n");
 
   return (
-    <section className="home-closing relative w-full overflow-hidden py-14 md:py-28">
+    <section className="home-closing relative w-full overflow-hidden py-8 md:py-16 lg:py-20">
       <Container>
         <Reveal variant="scaleIn">
           <div className="home-closing__inner relative rounded-2xl px-5 py-8 text-white sm:px-6 sm:py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
