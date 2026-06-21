@@ -6,8 +6,8 @@ const withMDX = createMDX({
 });
 
 /**
- * Default build: Node/server (admin API, on-demand 네이버 블로그 갱신).
- * Static export (`npm run build:static`): `out/` — API·관리자 갱신 미포함.
+ * Default build: static export → out/ (Cloudflare Pages 등).
+ * Server build (admin API): `npm run build:server`
  */
 const isStaticExport = process.env.STATIC_EXPORT === "true";
 
