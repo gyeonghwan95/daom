@@ -1,4 +1,5 @@
 import { getPrimaryInquiryForm } from "@/lib/consultation";
+import { getNaverPlaceUrl } from "@/lib/office-location";
 
 export const defaultContact = {
   phone: "070-4172-8056",
@@ -124,4 +125,36 @@ export function getDirectConsultationChannels(): ConsultationChannel[] {
   return getPrimaryConsultationChannels().filter((channel) =>
     ["phone", "kakao", "naver"].includes(channel.id),
   );
+}
+
+/** 모바일 하단 고정: 전화하기 · 카카오톡 · 길찾기 */
+export function getMobileBottomChannels(): ConsultationChannel[] {
+  const { phone, kakao } = getContactInfo();
+
+  return [
+    {
+      id: "phone",
+      label: "전화 상담",
+      shortLabel: "전화하기",
+      href: phone ? getPhoneHref(phone) : "/contact",
+      external: false,
+      configured: Boolean(phone),
+    },
+    {
+      id: "kakao",
+      label: "카카오톡 상담",
+      shortLabel: "카카오톡",
+      href: kakao || "/contact",
+      external: Boolean(kakao),
+      configured: Boolean(kakao),
+    },
+    {
+      id: "location",
+      label: "길찾기",
+      shortLabel: "길찾기",
+      href: getNaverPlaceUrl(),
+      external: true,
+      configured: true,
+    },
+  ];
 }

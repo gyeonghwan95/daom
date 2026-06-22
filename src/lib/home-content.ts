@@ -55,7 +55,6 @@ export const homeClosing = {
   title: "지금 상황을 말씀해 주시면,\n다음 절차부터 안내해 드립니다.",
   description:
     "전화, 카카오톡, 네이버 톡톡 중 편한 방법으로 연락해 주세요. 사무소 방문은 예약 후 이용해 주시면 됩니다. 부담 없이 현재 상황만 알려주셔도 됩니다.",
-  address: "부산광역시 해운대구 센텀동로 200 D동 1층 LAB9호",
 } as const;
 
 export const homeSeoKeywords = [

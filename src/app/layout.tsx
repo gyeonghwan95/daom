@@ -6,7 +6,7 @@ import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
 import { FloatingCTA } from "@/components/consultation/FloatingCTA";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
-import { siteImages } from "@/lib/site-images";
+import { siteFavicon } from "@/lib/site-images";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
@@ -34,8 +34,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: siteImages.logo.src, type: "image/png" }],
-    apple: siteImages.logo.src,
+    icon: [{ url: siteFavicon, type: "image/png" }],
+    shortcut: siteFavicon,
+    apple: siteFavicon,
   },
   alternates: {
     types: {
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   },
   formatDetection: {
     telephone: true,
-    email: false,
+    email: true,
     address: false,
   },
 };

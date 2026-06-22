@@ -10,6 +10,7 @@ export const HOME_SECTION_IDS = [
   "home-youtube",
   "home-insights",
   "home-faq",
+  "home-place-guide",
   "home-contact",
 ] as const;
 

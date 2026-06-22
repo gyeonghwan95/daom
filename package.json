@@ -6,8 +6,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev",
-    "prebuild": "node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs",
+    "dev": "node scripts/sync-favicon.mjs && next dev",
+    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs",
     "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
     "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "node scripts/build-static.mjs",

@@ -80,5 +80,54 @@ function assertSitemapSources() {
   console.log(`[validate-seo] sitemap.ts + robots.ts OK (${SITE_URL}/sitemap.xml)`);
 }
 
+function assertNapConsistency() {
+  const officeFile = path.join(ROOT, "src/lib/office-location.ts");
+  const businessFile = path.join(ROOT, "src/lib/business-info.ts");
+  const brandFile = path.join(ROOT, "src/lib/seo/brand.ts");
+  const homeContentFile = path.join(ROOT, "src/lib/home-content.ts");
+
+  const office = fs.readFileSync(officeFile, "utf8");
+  const business = fs.readFileSync(businessFile, "utf8");
+  const brand = fs.readFileSync(brandFile, "utf8");
+  const homeContent = fs.readFileSync(homeContentFile, "utf8");
+
+  const addressMatch = office.match(
+    /fullAddress:\s*"([^"]+)"/,
+  );
+  const fullAddress = addressMatch?.[1];
+  if (!fullAddress) {
+    fail("office-location.ts must define fullAddress");
+  }
+
+  if (homeContent.includes(fullAddress)) {
+    fail(
+      "home-content.ts must not duplicate full address — use getNapInfo() in components",
+    );
+  }
+
+  if (!business.includes("officeLocation.fullAddress")) {
+    fail("business-info.ts must source address from officeLocation.fullAddress");
+  }
+
+  const latMatch = office.match(/lat:\s*([\d.]+)/);
+  const lngMatch = office.match(/lng:\s*([\d.]+)/);
+  const brandLat = brand.match(/latitude:\s*([\d.]+)/)?.[1];
+  const brandLng = brand.match(/longitude:\s*([\d.]+)/)?.[1];
+
+  if (latMatch?.[1] !== brandLat || lngMatch?.[1] !== brandLng) {
+    fail(
+      "seo/brand.ts geo must match officeCoordinates in office-location.ts",
+    );
+  }
+
+  const phone = "070-4172-8056";
+  if (!business.includes(phone) && !business.includes("getContactInfo")) {
+    fail("business-info.ts must source phone from getContactInfo()");
+  }
+
+  console.log(`[validate-seo] NAP consistency OK (${fullAddress}, ${phone})`);
+}
+
 assertRss();
 assertSitemapSources();
+assertNapConsistency();

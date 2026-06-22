@@ -47,11 +47,12 @@ export const seoBrand = {
     addressLocality: "해운대구",
     addressRegion: "부산광역시",
     streetAddress: "센텀동로 200 D동 1층 LAB9호",
-    addressCountry: "KR",
+  addressCountry: "KR",
+    postalCode: "48058",
   },
   geo: {
-    latitude: 35.1689,
-    longitude: 129.131,
+    latitude: 35.1838851,
+    longitude: 129.1209835,
   },
 } as const;
 

@@ -1,5 +1,5 @@
 import { defaultContact, getNaverBlogUrl } from "@/lib/contact";
-import { getNaverMapSearchUrl } from "@/lib/office-location";
+import { getNaverPlaceUrl } from "@/lib/office-location";
 import { siteConfig } from "@/lib/site";
 
 /** JSON-LD sameAs, AI·검색엔진 신뢰 신호 */
@@ -12,10 +12,10 @@ export function getSocialProfileUrls(): string[] {
     defaultContact.naverTalk;
 
   return [
+    getNaverPlaceUrl(),
     kakao,
     naverTalk,
     getNaverBlogUrl(),
-    getNaverMapSearchUrl(),
     `${siteConfig.url}/contact`,
     `${siteConfig.url}/location`,
   ].filter(Boolean);

@@ -51,8 +51,10 @@ const SERVICE_SLUGS = [
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 
+export const siteFavicon = "/image/logo.png";
+
 export const siteImages = {
-  logo: img("/image/logo.png", "다옴법무사사무소 로고", 400, 120, false),
+  logo: img(siteFavicon, "다옴법무사사무소 로고", 400, 120, false),
 
   seo: {
     defaultOg: img("/image/home/hero.jpg", "다옴법무사사무소", 1200, 630, true),

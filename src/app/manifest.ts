@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { seoBrand } from "@/lib/seo/brand";
-import { siteImages } from "@/lib/site-images";
+import { siteFavicon } from "@/lib/site-images";
 
 export const dynamic = "force-static";
 
@@ -17,7 +17,7 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     icons: [
       {
-        src: siteImages.logo.src,
+        src: siteFavicon,
         sizes: "512x512",
         type: "image/png",
         purpose: "any",

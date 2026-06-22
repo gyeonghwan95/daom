@@ -10,13 +10,14 @@ import { Reveal } from "@/components/motion/Reveal";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { consultationCopy } from "@/lib/consultation";
 import { getContactInfo, getDirectConsultationChannels, getPhoneHref } from "@/lib/contact";
+import { getNapInfo } from "@/lib/business-info";
 import { homeClosing } from "@/lib/home-content";
 import { easeOutSoft } from "@/lib/motion";
-import { siteConfig } from "@/lib/site";
 
 export function HomeContactClosing() {
   const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
+  const nap = getNapInfo();
   const reduced = useReducedMotion();
   const titleLines = homeClosing.title.split("\n");
 
@@ -61,8 +62,9 @@ export function HomeContactClosing() {
               </div>
 
               <div className="mt-8 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-white/55 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
-                <span>{siteConfig.name}</span>
-                <span>{homeClosing.address}</span>
+                <span>{nap.tradeName}</span>
+                <span>{nap.address}</span>
+                <span>{nap.phone}</span>
                 <Link href="/about" className="text-white/70 hover:text-white">
                   법무사 소개 →
                 </Link>

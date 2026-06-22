@@ -1,8 +1,13 @@
 import { seoBrand } from "@/lib/seo/brand";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
-import { getContactInfo, getPhoneHref } from "@/lib/contact";
-import { getNaverMapSearchUrl } from "@/lib/office-location";
+import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
+import { getContactInfo } from "@/lib/contact";
+import {
+  getNaverPlaceUrl,
+  officeHours,
+  officeCoordinates,
+} from "@/lib/office-location";
 import { siteImages } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
@@ -37,6 +42,7 @@ function postalAddress() {
     streetAddress: seoBrand.address.streetAddress,
     addressLocality: seoBrand.address.addressLocality,
     addressRegion: seoBrand.address.addressRegion,
+    postalCode: seoBrand.address.postalCode,
     addressCountry: seoBrand.address.addressCountry,
   };
 }
@@ -44,14 +50,27 @@ function postalAddress() {
 function geoCoordinates() {
   return {
     "@type": "GeoCoordinates",
-    latitude: seoBrand.geo.latitude,
-    longitude: seoBrand.geo.longitude,
+    latitude: officeCoordinates.lat,
+    longitude: officeCoordinates.lng,
   };
+}
+
+function openingHoursSpecification() {
+  return officeHours.specifications.map((spec) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [...spec.dayOfWeek],
+    opens: spec.opens,
+    closes: spec.closes,
+  }));
 }
 
 function telephone(): string | undefined {
   const { phone } = getContactInfo();
-  return phone ? getPhoneHref(phone).replace("tel:", "") : undefined;
+  return phone ? formatPhoneForDisplay(phone) : undefined;
+}
+
+function contactEmail(): string {
+  return getBusinessEmail();
 }
 
 function areaServedPlaces() {
@@ -75,6 +94,8 @@ export function buildOrganizationSchema(): SchemaObject {
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     description: seoBrand.defaultDescription,
     address: postalAddress(),
+    telephone: telephone(),
+    email: contactEmail(),
     founder: { "@id": schemaIds.person },
     employee: { "@id": schemaIds.person },
     areaServed: {
@@ -124,7 +145,7 @@ export function buildLegalServiceSchema(): SchemaObject {
 export function buildLocalBusinessSchema(): SchemaObject {
   return compact({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LegalService", "LocalBusiness"],
     "@id": schemaIds.localBusiness,
     name: seoBrand.siteName,
     description: seoBrand.defaultDescription,
@@ -132,7 +153,10 @@ export function buildLocalBusinessSchema(): SchemaObject {
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     logo: getAbsoluteAssetUrl(siteImages.logo.src),
     telephone: telephone(),
-    hasMap: getNaverMapSearchUrl(),
+    email: contactEmail(),
+    openingHours: officeHours.openingHoursText,
+    openingHoursSpecification: openingHoursSpecification(),
+    hasMap: getNaverPlaceUrl(),
     address: postalAddress(),
     geo: geoCoordinates(),
     areaServed: {

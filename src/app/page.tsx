@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomeActivitiesMarquee } from "@/components/home/HomeActivitiesMarquee";
 import { HomeContactClosing } from "@/components/home/HomeContactClosing";
+import { HomePlaceGuide } from "@/components/home/HomePlaceGuide";
 import { HomeFaqTeaser } from "@/components/home/HomeFaqTeaser";
 import { HomeFullpageSwiper } from "@/components/home/HomeFullpageSwiper";
 import { HomeHero } from "@/components/home/HomeHero";
@@ -27,6 +28,7 @@ export default function Home() {
         <HomeYoutube />
         <HomeInsights />
         <HomeFaqTeaser />
+        <HomePlaceGuide />
         <HomeContactClosing />
       </HomeFullpageSwiper>
     </main>

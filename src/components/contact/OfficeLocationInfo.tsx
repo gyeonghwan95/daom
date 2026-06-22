@@ -2,17 +2,10 @@ import Link from "next/link";
 import { CopyAddressButton } from "@/components/contact/CopyAddressButton";
 import { VisitNoticeBanner } from "@/components/contact/VisitNoticeBanner";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { NapInfoBlock } from "@/components/layout/NapInfoBlock";
 import { SiteImage } from "@/components/media/SiteImage";
-import {
-  getDirectConsultationChannels,
-  getPhoneHref,
-  getContactInfo,
-} from "@/lib/contact";
-import {
-  getNaverMapSearchUrl,
-  officeLocation,
-} from "@/lib/office-location";
-import { siteConfig } from "@/lib/site";
+import { getDirectConsultationChannels } from "@/lib/contact";
+import { getNaverPlaceUrl, officeLocation } from "@/lib/office-location";
 import type { SiteImageAsset } from "@/lib/site-images";
 
 type OfficeLocationInfoProps = {
@@ -26,56 +19,34 @@ export function OfficeLocationInfo({
   showVisitNotice = true,
   sideImage,
 }: OfficeLocationInfoProps) {
-  const { phone } = getContactInfo();
   const channels = getDirectConsultationChannels();
+  const naverPlaceUrl = getNaverPlaceUrl();
 
   const infoBlock = (
-    <dl className="space-y-4 text-base text-navy/80">
-      <div>
-        <dt className="font-semibold text-navy">사무소명</dt>
-        <dd className="mt-1">{siteConfig.name}</dd>
-      </div>
-      <div>
-        <dt className="font-semibold text-navy">대표</dt>
-        <dd className="mt-1">{siteConfig.representative}</dd>
-      </div>
-      <div>
-        <dt className="font-semibold text-navy">주소</dt>
-        <dd className="mt-1 leading-relaxed">{officeLocation.fullAddress}</dd>
-        <dd className="mt-3 flex flex-wrap gap-2">
-          <CopyAddressButton />
-          <a
-            href={getNaverMapSearchUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-10 items-center rounded-lg border border-navy/15 bg-white px-3 text-sm font-medium text-navy transition-colors hover:border-navy/30 hover:bg-beige/40"
-          >
-            네이버 지도 열기
-          </a>
-        </dd>
-      </div>
-      <div>
-        <dt className="font-semibold text-navy">교통·주차</dt>
-        <dd className="mt-1 leading-relaxed">
-          {officeLocation.parking}
-          <br />
-          {officeLocation.subway}
-        </dd>
-      </div>
-      {phone && (
+    <div>
+      <NapInfoBlock variant="contact" />
+      <dl className="mt-4 space-y-3 text-base text-navy/80">
         <div>
-          <dt className="font-semibold text-navy">전화 상담</dt>
-          <dd className="mt-1">
-            <a
-              href={getPhoneHref(phone)}
-              className="inline-flex min-h-12 items-center font-medium text-navy-light underline-offset-2 hover:underline"
-            >
-              {phone}
-            </a>
+          <dt className="font-semibold text-navy">교통·주차</dt>
+          <dd className="mt-1 leading-relaxed">
+            {officeLocation.parking}
+            <br />
+            {officeLocation.subway}
           </dd>
         </div>
-      )}
-    </dl>
+      </dl>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <CopyAddressButton />
+        <a
+          href={naverPlaceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-10 items-center rounded-lg border border-navy/15 bg-white px-3 text-sm font-medium text-navy transition-colors hover:border-navy/30 hover:bg-beige/40"
+        >
+          네이버 플레이스 열기
+        </a>
+      </div>
+    </div>
   );
 
   return (

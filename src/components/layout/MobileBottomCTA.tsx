@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  getDirectConsultationChannels,
+  getMobileBottomChannels,
   type ConsultationChannel,
 } from "@/lib/contact";
 import {
@@ -65,14 +65,14 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
 }
 
 export function MobileBottomCTA() {
-  const channels = getDirectConsultationChannels();
+  const channels = getMobileBottomChannels();
 
   return (
     <div
       className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-4px_24px_rgba(30,58,95,0.12)] lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
-      aria-label="빠른 상담"
+      aria-label="빠른 연락"
     >
       <div className="grid grid-cols-3">
         {channels.map((channel, index) => (

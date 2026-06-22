@@ -3,13 +3,12 @@ import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { Container } from "@/components/layout/Container";
 import { consultationCopy } from "@/lib/consultation";
-import { getContactInfo, getDirectConsultationChannels, getNaverBlogUrl, getPhoneHref } from "@/lib/contact";
-import { officeLocation } from "@/lib/office-location";
+import { getDirectConsultationChannels, getNaverBlogUrl } from "@/lib/contact";
+import { getNapInfo } from "@/lib/business-info";
 import { mainNavigation } from "@/lib/navigation";
-import { siteConfig } from "@/lib/site";
 
 export function Footer() {
-  const { phone } = getContactInfo();
+  const nap = getNapInfo();
   const naverBlog = getNaverBlogUrl();
   const channels = getDirectConsultationChannels();
 
@@ -18,20 +17,13 @@ export function Footer() {
       <Container className="py-10 md:py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div>
-            <p className="text-lg font-bold">{siteConfig.name}</p>
-            <p className="mt-1 text-base text-white/80">{siteConfig.representative}</p>
+            <p className="text-lg font-bold">{nap.tradeName}</p>
+            <p className="mt-1 text-base text-white/80">{nap.representative}</p>
             <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
               부산 해운대·센텀 상속등기·부동산등기·법인등기·개인회생 전문
             </p>
-            <p className="mt-2 text-sm text-white/60">{officeLocation.fullAddress}</p>
-            {phone && (
-              <a
-                href={getPhoneHref(phone)}
-                className="mt-4 inline-flex min-h-10 items-center text-sm font-medium text-beige hover:text-white sm:text-base"
-              >
-                전화 {phone}
-              </a>
-            )}
+            <p className="mt-2 text-sm text-white/60">{nap.address}</p>
+            <p className="mt-2 text-sm text-white/60">{nap.phone}</p>
           </div>
 
           <div>
@@ -90,7 +82,7 @@ export function Footer() {
         <FooterBusinessInfo />
 
         <p className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/60 md:text-left">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          © {new Date().getFullYear()} {nap.tradeName}. All rights reserved.
         </p>
       </Container>
     </footer>
