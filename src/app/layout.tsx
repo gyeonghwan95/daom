@@ -9,6 +9,7 @@ import { homeMetadata } from "@/lib/seo/metadata";
 import { getSiteVerificationMetadata } from "@/lib/seo/verification";
 import { seoBrand } from "@/lib/seo/brand";
 import { siteImages } from "@/lib/site-images";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -19,9 +20,7 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://daom-law.com",
-  ),
+  metadataBase: new URL(getSiteUrl()),
   ...homeMetadata,
   authors: [{ name: seoBrand.representative, url: "/about" }],
   creator: seoBrand.representative,

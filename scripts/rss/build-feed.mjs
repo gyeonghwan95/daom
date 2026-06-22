@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { getSiteUrl } from "../lib/site-url.mjs";
 
 const ROOT = process.cwd();
 const CONTENT_ROOT = path.join(ROOT, "src/content");
@@ -15,7 +16,7 @@ const OUT = path.join(ROOT, "public/rss.xml");
 const SITE = {
   name: "다옴법무사사무소",
   representative: "안윤정 법무사",
-  url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://daom-law.com",
+  url: getSiteUrl(),
   description:
     "부산 해운대·센텀 다옴법무사사무소 안윤정 법무사의 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보, FAQ, 업무 사례, 언론 보도.",
   blogLink: "/blog",

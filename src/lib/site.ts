@@ -1,10 +1,11 @@
 import { seoBrand } from "@/lib/seo/brand";
+import { getSiteUrl } from "@/lib/site-url";
 
 export const siteConfig = {
   name: seoBrand.siteName,
   representative: seoBrand.representative,
   description: seoBrand.defaultDescription,
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://daom-law.com",
+  url: getSiteUrl(),
   locale: "ko_KR",
   region: {
     city: "부산광역시",
