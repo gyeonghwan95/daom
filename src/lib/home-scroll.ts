@@ -4,6 +4,7 @@ export const HOME_SECTION_IDS = [
   "home-hero",
   "home-services",
   "home-trust",
+  "home-lawyer-eeat",
   "home-activities",
   "home-press",
   "home-youtube",

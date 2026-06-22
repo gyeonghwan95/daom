@@ -46,7 +46,7 @@ export function PageContentSection({
         </>
       )}
 
-      {coverImage && <PageCoverBanner image={coverImage} />}
+      {coverImage && <PageCoverBanner image={coverImage} priority />}
 
       <header>
         {introSideImage ? (

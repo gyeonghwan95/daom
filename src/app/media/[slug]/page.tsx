@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PressArticleLayout } from "@/components/press/PressArticleLayout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildSeoTitle } from "@/lib/seo/metadata";
+import { buildNewsArticleSchema } from "@/lib/seo/json-ld";
 import {
   getPressArticle,
   getPressArticleSlugs,
@@ -37,5 +39,10 @@ export default async function MediaPressArticlePage({ params }: Props) {
   const article = getPressArticle(slug);
   if (!article) notFound();
 
-  return <PressArticleLayout article={article} />;
+  return (
+    <>
+      <JsonLd data={buildNewsArticleSchema(article)} />
+      <PressArticleLayout article={article} />
+    </>
+  );
 }

@@ -2,7 +2,8 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CaseCard } from "@/components/cards/CaseCard";
 import { ServiceDetailContent } from "@/components/services/ServiceDetailContent";
-import { PageContentSection } from "@/components/page/PageContentSection";
+import { RelatedLinks } from "@/components/page/RelatedLinks";
+import { getAllServiceLinks, serviceHubLinks } from "@/lib/seo/internal-links";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllContent } from "@/lib/content/loader";
 import { createPageMetadata } from "@/lib/metadata";
@@ -90,6 +91,14 @@ export function ServicesIndexTemplate() {
             ))}
           </ul>
         </section>
+
+        <div className="space-y-8">
+          <RelatedLinks title="업무 분야" links={getAllServiceLinks()} />
+          <RelatedLinks
+            title="사무소 안내"
+            links={serviceHubLinks}
+          />
+        </div>
       </PageContentSection>
     </PageContainer>
   );
@@ -102,7 +111,7 @@ export function getServicePageMetadata(service: ServiceDetail) {
   const primary = seo?.primaryKeyword ?? service.title;
 
   return createPageMetadata({
-    title: buildSeoTitle(`${primary} | ${service.title} 안내`),
+    title: buildSeoTitle(primary),
     description: service.description,
     path: `/services/${service.slug}`,
     keywords: seo?.keywords ?? [primary, "부산 법무사", "다옴법무사사무소"],

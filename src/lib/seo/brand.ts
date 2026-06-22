@@ -3,8 +3,9 @@ export const seoBrand = {
   representative: "안윤정 법무사",
   representativeName: "안윤정",
   jobTitle: "법무사",
+  primaryRegion: "부산광역시",
   areaServed: [
-    "부산",
+    "부산광역시",
     "해운대구",
     "센텀",
     "센텀시티",
@@ -15,14 +16,16 @@ export const seoBrand = {
     "동래구",
     "기장군",
   ],
+  /** JSON-LD serviceType / knowsAbout 전문분야 */
   services: [
     "상속등기",
     "상속포기",
     "한정승인",
     "부동산등기",
-    "법인등기",
+    "법인설립등기",
+    "임원변경등기",
     "개인회생",
-    "파산",
+    "개인파산",
   ],
   targetKeywords: [
     "부산 법무사",
@@ -33,12 +36,13 @@ export const seoBrand = {
     "부산 상속포기",
     "부산 한정승인",
     "부산 부동산등기",
-    "부산 법인등기",
+    "부산 법인설립등기",
+    "부산 임원변경등기",
     "부산 개인회생",
-    "부산 파산",
+    "부산 개인파산",
   ],
   defaultDescription:
-    "부산 해운대·센텀 다옴법무사사무소 안윤정 법무사. 상속등기, 부동산등기, 법인등기, 개인회생·파산 전문 상담.",
+    "부산 해운대·센텀 소재 다옴법무사사무소. 상속등기, 상속포기, 한정승인, 부동산등기, 법인설립등기, 임원변경등기 상담.",
   address: {
     addressLocality: "해운대구",
     addressRegion: "부산광역시",

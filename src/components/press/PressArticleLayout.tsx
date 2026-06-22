@@ -46,19 +46,25 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
           />
         </div>
 
-        <div
+        <section
           id="article"
-          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] space-y-5 py-8 md:space-y-6 md:py-10"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] py-8 md:space-y-6 md:py-10"
+          aria-labelledby="press-article-heading"
         >
-          {article.paragraphs.map((paragraph, index) => (
-            <p
-              key={index}
-              className="body-text text-base leading-relaxed text-navy/85 md:text-lg"
-            >
-              <PressHighlightText text={paragraph} />
-            </p>
-          ))}
-        </div>
+          <h2 id="press-article-heading" className="section-heading">
+            기사 본문
+          </h2>
+          <div className="mt-6 space-y-5 md:space-y-6">
+            {article.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="body-text text-base leading-relaxed text-navy/85 md:text-lg"
+              >
+                <PressHighlightText text={paragraph} />
+              </p>
+            ))}
+          </div>
+        </section>
 
         <RelatedLinks
           title="관련 페이지"

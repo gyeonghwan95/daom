@@ -26,9 +26,9 @@ export function PressCard({ article }: PressCardProps) {
         </span>
       </div>
       <div className="p-5 md:p-6">
-        <h2 className="line-clamp-2 text-base font-semibold leading-snug text-navy group-hover:text-navy-light md:text-lg">
+        <h3 className="line-clamp-2 text-base font-semibold leading-snug text-navy group-hover:text-navy-light md:text-lg">
           {article.title}
-        </h2>
+        </h3>
         <p className="mt-2 text-sm text-navy/60">
           {article.publishedAtDisplay}
           {article.reporter ? ` · ${article.reporter}` : ""}

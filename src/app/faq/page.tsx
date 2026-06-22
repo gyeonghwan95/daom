@@ -35,7 +35,10 @@ export default function FaqPage() {
           id="faq-list"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >
-          <FAQAccordion items={faqs} />
+          <h2 className="section-heading">질문 목록</h2>
+          <div className="mt-6">
+            <FAQAccordion items={faqs} />
+          </div>
         </section>
       </PageContentSection>
     </PageContainer>

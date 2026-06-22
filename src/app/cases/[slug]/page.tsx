@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getContentSlugs } from "@/lib/content/loader";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+};
 
 type Props = {
   params: Promise<{ slug: string }>;

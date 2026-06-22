@@ -69,7 +69,7 @@ export function MdxArticleLayout({
         />
 
         <div className="mt-6">
-          <PageCoverBanner image={getArticleCover(meta)} />
+          <PageCoverBanner image={getArticleCover(meta)} priority />
         </div>
 
         <header className="mt-8 border-b border-beige-dark pb-8">
@@ -95,7 +95,16 @@ export function MdxArticleLayout({
           </p>
         </header>
 
-        <div className="py-8 md:py-10">{children}</div>
+        <section
+          id="content"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] py-8 md:py-10"
+          aria-labelledby="article-content-heading"
+        >
+          <h2 id="article-content-heading" className="section-heading">
+            상세 안내
+          </h2>
+          <div className="mt-6">{children}</div>
+        </section>
 
         <div
           id="consultation"

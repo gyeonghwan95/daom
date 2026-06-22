@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { RelatedLinks } from "@/components/page/RelatedLinks";
+import { ServiceInternalLinks } from "@/components/services/ServiceInternalLinks";
 import { buildFaqPageSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
 import { consultationCopy } from "@/lib/consultation";
 import { getServiceImage } from "@/lib/site-images";
@@ -171,7 +171,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         <CTASection description={consultationCopy.default} />
       </div>
 
-      <RelatedLinks title="관련 업무" links={service.relatedLinks} />
+      <ServiceInternalLinks currentSlug={service.slug} />
     </article>
   );
 }

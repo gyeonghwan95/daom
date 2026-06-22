@@ -27,7 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: meta.seoDescription ?? meta.description,
     path: meta.href,
     keywords: [...meta.tags, meta.category, "부산 법무사", "FAQ"],
-    openGraphType: "article",
     publishedTime: meta.date,
     authors: [meta.author],
   });

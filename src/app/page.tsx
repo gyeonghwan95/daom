@@ -7,6 +7,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomePressMarquee } from "@/components/home/HomePressMarquee";
 import { HomeServices } from "@/components/home/HomeServices";
+import { HomeLawyerEeat } from "@/components/home/HomeLawyerEeat";
 import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { homeMetadata } from "@/lib/seo/metadata";
@@ -20,6 +21,7 @@ export default function Home() {
         <HomeHero />
         <HomeServices />
         <HomeTrust />
+        <HomeLawyerEeat />
         <HomeActivitiesMarquee />
         <HomePressMarquee />
         <HomeYoutube />

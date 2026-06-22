@@ -4,9 +4,14 @@ import type { SiteImageAsset } from "@/lib/site-images";
 type PageCoverBannerProps = {
   image: SiteImageAsset;
   className?: string;
+  priority?: boolean;
 };
 
-export function PageCoverBanner({ image, className = "" }: PageCoverBannerProps) {
+export function PageCoverBanner({
+  image,
+  className = "",
+  priority = false,
+}: PageCoverBannerProps) {
   return (
     <div
       className={`relative aspect-[16/9] min-h-[140px] overflow-hidden rounded-xl border border-beige-dark bg-beige sm:min-h-[180px] sm:rounded-2xl md:aspect-[2.8/1] ${className}`}
@@ -14,6 +19,7 @@ export function PageCoverBanner({ image, className = "" }: PageCoverBannerProps)
       <SiteImage
         {...image}
         fill
+        priority={priority}
         sizes="(max-width: 768px) 100vw, 1200px"
         className="h-full w-full"
       />

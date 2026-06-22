@@ -5,8 +5,9 @@ import { ActivitySectionBlock } from "@/components/profile/ActivitySectionBlock"
 import { LawyerQualificationsSection } from "@/components/profile/LawyerQualificationsSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerEeatProfile } from "@/components/profile/LawyerEeatProfile";
 import { createPageMetadata } from "@/lib/metadata";
-import { buildPersonSchema } from "@/lib/seo/json-ld";
+import { buildLawyerAboutSchemas } from "@/lib/seo/json-ld";
 import { lawyerActivitySections } from "@/lib/lawyer-activities";
 import { siteImages } from "@/lib/site-images";
 import { staticPageSeo } from "@/lib/seo/page-seo";
@@ -16,7 +17,7 @@ export const metadata: Metadata = createPageMetadata(staticPageSeo.about);
 export default function AboutPage() {
   return (
     <PageContainer>
-      <JsonLd data={buildPersonSchema()} />
+      <JsonLd data={buildLawyerAboutSchemas()} />
       <PageContentSection
         h1="안윤정 법무사 소개"
         breadcrumbs={[
@@ -35,6 +36,7 @@ export default function AboutPage() {
         consultationDescription="안윤정 법무사에게 직접 상담을 요청하세요. 사건 내용을 듣고 진행 가능 여부와 예상 절차를 안내해 드립니다."
       >
         <div className="space-y-8">
+          <LawyerEeatProfile />
           <LawyerQualificationsSection profileImage={siteImages.about.profile} />
 
           {lawyerActivitySections.map((section, index) =>

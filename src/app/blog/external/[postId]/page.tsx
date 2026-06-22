@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NaverBlogExternalLayout } from "@/components/blog/NaverBlogExternalLayout";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildSeoTitle } from "@/lib/seo/metadata";
+import { buildExternalBlogArticleSchema } from "@/lib/seo/json-ld";
 import { getNaverBlogExternalPath } from "@/lib/naver-blog/urls";
 import {
   getNaverBlogExternalPostIds,
@@ -37,5 +39,15 @@ export default async function NaverBlogExternalPage({ params }: Props) {
   const post = getNaverBlogPostByPostId(postId);
   if (!post) notFound();
 
-  return <NaverBlogExternalLayout post={post} />;
+  return (
+    <>
+      <JsonLd
+        data={buildExternalBlogArticleSchema(
+          post,
+          getNaverBlogExternalPath(postId),
+        )}
+      />
+      <NaverBlogExternalLayout post={post} />
+    </>
+  );
 }

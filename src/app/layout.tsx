@@ -5,8 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
 import { FloatingCTA } from "@/components/consultation/FloatingCTA";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
-import { homeMetadata } from "@/lib/seo/metadata";
-import { getSiteVerificationMetadata } from "@/lib/seo/verification";
 import { seoBrand } from "@/lib/seo/brand";
 import { siteImages } from "@/lib/site-images";
 import { getSiteUrl } from "@/lib/site-url";
@@ -21,24 +19,25 @@ const notoSansKr = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
-  ...homeMetadata,
   authors: [{ name: seoBrand.representative, url: "/about" }],
   creator: seoBrand.representative,
   publisher: seoBrand.siteName,
   category: "법률 서비스",
   verification: {
-    google: "googlee2ec15533e61c1d2",
+    google:
+      process.env.GOOGLE_SITE_VERIFICATION?.trim() ||
+      "googlee2ec15533e61c1d2",
     other: {
-      "naver-site-verification": "124ba44be3fa9cde20730093315f661f9520e911",
+      "naver-site-verification":
+        process.env.NAVER_SITE_VERIFICATION?.trim() ||
+        "124ba44be3fa9cde20730093315f661f9520e911",
     },
-    ...getSiteVerificationMetadata(),
   },
   icons: {
     icon: [{ url: siteImages.logo.src, type: "image/png" }],
     apple: siteImages.logo.src,
   },
   alternates: {
-    ...(homeMetadata.alternates ?? {}),
     types: {
       "application/rss+xml": [
         {

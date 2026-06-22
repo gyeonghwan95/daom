@@ -38,9 +38,9 @@ export function BlogCard({
         {date && (
           <span className="text-sm font-medium text-navy-light">{date}</span>
         )}
-        <h2 className="mt-1 text-base font-semibold text-navy md:text-lg">
+        <h3 className="mt-1 text-base font-semibold text-navy md:text-lg">
           {title}
-        </h2>
+        </h3>
         <p className="mt-2 text-base leading-relaxed text-navy/75">{excerpt}</p>
         <span className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-navy-light">
           {external ? "네이버 블로그에서 보기 →" : "읽어보기 →"}

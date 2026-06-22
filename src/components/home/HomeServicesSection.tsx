@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
+import { HomeServiceAllLinks } from "@/components/home/HomeServiceAllLinks";
 import { HomeReviewsMarquee } from "@/components/home/HomeReviewsMarquee";
 import { HomeSectionActionLink } from "@/components/home/HomeSectionActionLink";
 import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
@@ -60,6 +61,7 @@ export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
                 </StaggerItem>
               ))}
             </Stagger>
+            <HomeServiceAllLinks />
           </div>
 
           <div className="min-h-[22rem] lg:min-h-0">

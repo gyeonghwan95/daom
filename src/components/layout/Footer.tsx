@@ -1,3 +1,4 @@
+import { FooterBusinessInfo } from "@/components/layout/FooterBusinessInfo";
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { Container } from "@/components/layout/Container";
@@ -85,6 +86,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        <FooterBusinessInfo />
 
         <p className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/60 md:text-left">
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.

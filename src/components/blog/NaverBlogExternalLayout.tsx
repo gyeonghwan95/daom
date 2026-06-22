@@ -36,9 +36,18 @@ export function NaverBlogExternalLayout({ post }: NaverBlogExternalLayoutProps) 
         </header>
 
         {post.description ? (
-          <p className="body-text mt-8 text-base leading-relaxed text-navy/85 md:text-lg">
-            {post.description}
-          </p>
+          <section
+            id="summary"
+            className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] mt-8"
+            aria-labelledby="naver-blog-summary-heading"
+          >
+            <h2 id="naver-blog-summary-heading" className="section-heading">
+              글 요약
+            </h2>
+            <p className="body-text mt-4 text-base leading-relaxed text-navy/85 md:text-lg">
+              {post.description}
+            </p>
+          </section>
         ) : null}
 
         <div className="mt-10 rounded-xl border border-beige-dark bg-beige/40 p-6 md:p-8">

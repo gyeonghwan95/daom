@@ -9,13 +9,20 @@ export function JsonLd({ data }: JsonLdProps) {
 
   return (
     <>
-      {schemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
+      {schemas.map((schema) => {
+        const key =
+          typeof schema["@id"] === "string"
+            ? schema["@id"]
+            : JSON.stringify(schema["@type"]);
+
+        return (
+          <script
+            key={key}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        );
+      })}
     </>
   );
 }

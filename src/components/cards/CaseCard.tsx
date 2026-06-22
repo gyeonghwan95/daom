@@ -35,9 +35,9 @@ export function CaseCard({
             {category}
           </span>
         )}
-        <h2 className={`text-base font-semibold text-navy md:text-lg ${category ? "mt-3" : ""}`}>
+        <h3 className={`text-base font-semibold text-navy md:text-lg ${category ? "mt-3" : ""}`}>
           {title}
-        </h2>
+        </h3>
         <p className="mt-2 text-base leading-relaxed text-navy/75">{summary}</p>
         {href && (
           <span className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-navy-light">

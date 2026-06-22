@@ -6,7 +6,7 @@ import { buildSeoTitle } from "@/lib/seo/metadata";
 import { getDirectConsultationChannels } from "@/lib/contact";
 
 export const metadata = createPageMetadata({
-  title: buildSeoTitle("페이지를 찾을 수 없습니다", { includeRepresentative: false }),
+  title: buildSeoTitle("페이지를 찾을 수 없습니다"),
   description:
     "요청하신 페이지를 찾을 수 없습니다. 다옴법무사사무소 홈페이지 메뉴에서 원하시는 정보를 찾아보시거나 상담을 문의해 주세요.",
   path: "/404",
