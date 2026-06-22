@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   category: "법률 서비스",
   verification: {
     google: "googlee2ec15533e61c1d2",
+    other: {
+      "naver-site-verification": "124ba44be3fa9cde20730093315f661f9520e911",
+    },
     ...getSiteVerificationMetadata(),
   },
   icons: {
