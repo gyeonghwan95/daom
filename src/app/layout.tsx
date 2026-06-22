@@ -27,7 +27,10 @@ export const metadata: Metadata = {
   creator: seoBrand.representative,
   publisher: seoBrand.siteName,
   category: "법률 서비스",
-  verification: getSiteVerificationMetadata(),
+  verification: {
+    google: "googlee2ec15533e61c1d2",
+    ...getSiteVerificationMetadata(),
+  },
   icons: {
     icon: [{ url: siteImages.logo.src, type: "image/png" }],
     apple: siteImages.logo.src,
