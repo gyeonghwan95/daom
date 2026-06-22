@@ -7,9 +7,11 @@ import {
 import { getPressArticleSlugs, getPressArticle } from "@/lib/press-articles";
 import {
   getNaverBlogExternalPath,
+} from "@/lib/naver-blog/urls";
+import {
   getNaverBlogExternalPostIds,
   getNaverBlogPostByPostId,
-} from "@/lib/naver-blog/urls";
+} from "@/lib/naver-blog/urls.server";
 import { getAllSitePaths } from "@/lib/seo/routes";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site";

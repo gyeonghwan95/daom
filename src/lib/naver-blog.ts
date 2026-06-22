@@ -23,7 +23,9 @@ export function getNaverBlogRssUrl(): string {
 export {
   extractNaverPostId,
   getNaverBlogExternalPath,
-  getNaverBlogExternalPostIds,
   getNaverBlogInternalHref,
-  getNaverBlogPostByPostId,
 } from "@/lib/naver-blog/urls";
+export {
+  getNaverBlogExternalPostIds,
+  getNaverBlogPostByPostId,
+} from "@/lib/naver-blog/urls.server";

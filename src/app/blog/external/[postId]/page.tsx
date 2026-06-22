@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { NaverBlogExternalLayout } from "@/components/blog/NaverBlogExternalLayout";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildSeoTitle } from "@/lib/seo/metadata";
+import { getNaverBlogExternalPath } from "@/lib/naver-blog/urls";
 import {
   getNaverBlogExternalPostIds,
-  getNaverBlogExternalPath,
   getNaverBlogPostByPostId,
-} from "@/lib/naver-blog/urls";
+} from "@/lib/naver-blog/urls.server";
 
 type Props = {
   params: Promise<{ postId: string }>;
