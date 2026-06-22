@@ -33,6 +33,8 @@ function getButtonClass(
         return `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`;
       case "naver":
         return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+      case "reservation":
+        return `${base} bg-[#03C75A] text-white hover:opacity-90`;
       case "location":
         return `${base} border-2 border-white/40 text-white hover:bg-white/10`;
       case "inquiry":
@@ -48,6 +50,8 @@ function getButtonClass(
     case "kakao":
       return `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`;
     case "naver":
+      return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+    case "reservation":
       return `${base} bg-[#03C75A] text-white hover:opacity-90`;
     case "location":
       return `${base} border-2 border-beige-muted bg-white text-navy hover:border-navy-light hover:bg-beige`;
@@ -67,6 +71,8 @@ function ChannelIcon({ id }: { id: ConsultationChannelId }) {
     case "kakao":
       return <KakaoIcon className={className} />;
     case "naver":
+      return <NaverIcon className={className} />;
+    case "reservation":
       return <NaverIcon className={className} />;
     case "location":
       return <LocationIcon className={className} />;
@@ -135,7 +141,7 @@ export function ConsultationButtons({
     layout === "grid" &&
     channels.length === 3 &&
     channels.every((channel) =>
-      ["phone", "kakao", "naver"].includes(channel.id),
+      ["phone", "kakao", "naver", "reservation"].includes(channel.id),
     );
 
   const gridClass = isDirectRow

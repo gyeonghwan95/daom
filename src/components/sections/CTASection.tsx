@@ -1,18 +1,20 @@
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import { consultationCopy } from "@/lib/consultation";
+import type { ConsultationChannel } from "@/lib/contact";
 import { getDirectConsultationChannels } from "@/lib/contact";
 
 type CTASectionProps = {
+  channels?: ConsultationChannel[];
   title?: string;
   description?: string;
 };
 
 export function CTASection({
+  channels = getDirectConsultationChannels(),
   title = "상담 문의",
   description,
 }: CTASectionProps) {
-  const channels = getDirectConsultationChannels();
 
   return (
     <section className="card-surface bg-navy p-5 text-white sm:p-6 md:p-8 lg:p-10">

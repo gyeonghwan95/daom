@@ -20,6 +20,7 @@ export type ConsultationChannelId =
   | "phone"
   | "kakao"
   | "naver"
+  | "reservation"
   | "location"
   | "inquiry";
 
@@ -125,6 +126,39 @@ export function getDirectConsultationChannels(): ConsultationChannel[] {
   return getPrimaryConsultationChannels().filter((channel) =>
     ["phone", "kakao", "naver"].includes(channel.id),
   );
+}
+
+/** 지역 랜딩 등 전환 페이지: 전화 · 카카오톡 · 네이버 예약 */
+export function getConversionConsultationChannels(): ConsultationChannel[] {
+  const { phone, kakao } = getContactInfo();
+  const reservation = getNaverReservationUrl();
+
+  return [
+    {
+      id: "phone",
+      label: "전화 상담",
+      shortLabel: "전화하기",
+      href: phone ? getPhoneHref(phone) : "/contact",
+      external: false,
+      configured: Boolean(phone),
+    },
+    {
+      id: "kakao",
+      label: "카카오톡 상담",
+      shortLabel: "카카오톡",
+      href: kakao || "/contact",
+      external: Boolean(kakao),
+      configured: Boolean(kakao),
+    },
+    {
+      id: "reservation",
+      label: "상담 예약",
+      shortLabel: "예약",
+      href: reservation || "/contact",
+      external: Boolean(reservation),
+      configured: Boolean(reservation),
+    },
+  ];
 }
 
 /** 모바일 하단 고정: 전화하기 · 카카오톡 · 길찾기 */

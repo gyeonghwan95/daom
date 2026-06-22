@@ -12,6 +12,7 @@ import {
   getNaverBlogExternalPostIds,
   getNaverBlogPostByPostId,
 } from "@/lib/naver-blog/urls.server";
+import { getAllLocalLandingSlugs } from "@/lib/local-landing";
 import { getAllSitePaths } from "@/lib/seo/routes";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site";
@@ -56,6 +57,8 @@ function pathToLastModified(path: string): Date {
 
 function pathPriority(path: string): number {
   if (path === "/") return 1;
+  const localPaths = new Set(getAllLocalLandingSlugs().map((slug) => `/${slug}`));
+  if (localPaths.has(path)) return 0.88;
   if (path.startsWith("/services/")) return 0.9;
   if (path.startsWith("/faq/")) return 0.85;
   if (path.startsWith("/blog/") || path.startsWith("/services/cases/") || path.startsWith("/media/")) return 0.8;
@@ -75,6 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       getContentSlugs("cases"),
       faqSlugs,
       getPressArticleSlugs(),
+      getAllLocalLandingSlugs(),
     ),
     ...naverBlogPaths,
   ];

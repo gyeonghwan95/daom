@@ -18,6 +18,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
       {channel.id === "phone" && <PhoneIcon className={iconClass} />}
       {channel.id === "kakao" && <KakaoIcon className={iconClass} />}
       {channel.id === "naver" && <NaverIcon className={iconClass} />}
+      {channel.id === "reservation" && <NaverIcon className={iconClass} />}
       {channel.id === "location" && <LocationIcon className={iconClass} />}
       <span className="text-xs font-semibold leading-tight sm:text-sm">
         {channel.shortLabel}
@@ -32,6 +33,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
     phone: "bg-navy text-white",
     kakao: "bg-[#FEE500] text-[#191919]",
     naver: "bg-[#03C75A] text-white",
+    reservation: "bg-[#03C75A] text-white",
     location: "bg-white text-navy",
     inquiry: "bg-white text-navy",
   };

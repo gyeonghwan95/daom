@@ -17,9 +17,11 @@ export function getAllSitePaths(
   caseSlugs: string[] = [],
   faqSlugs: string[] = [],
   pressSlugs: string[] = [],
+  localLandingSlugs: string[] = [],
 ): string[] {
   return [
     ...staticRoutes,
+    ...localLandingSlugs.map((slug) => `/${slug}`),
     ...serviceSlugs.map((slug) => `/services/${slug}`),
     ...blogSlugs.map((slug) => `/blog/${slug}`),
     ...caseSlugs.map((slug) => `/services/cases/${slug}`),

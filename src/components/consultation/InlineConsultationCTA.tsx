@@ -1,17 +1,19 @@
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { consultationCopy } from "@/lib/consultation";
+import type { ConsultationChannel } from "@/lib/contact";
 import { getDirectConsultationChannels } from "@/lib/contact";
 
 type InlineConsultationCTAProps = {
+  channels?: ConsultationChannel[];
   description?: string;
   title?: string;
 };
 
 export function InlineConsultationCTA({
+  channels = getDirectConsultationChannels(),
   description = consultationCopy.inline,
   title = "지금 상담이 필요하신가요?",
 }: InlineConsultationCTAProps) {
-  const channels = getDirectConsultationChannels();
 
   return (
     <aside

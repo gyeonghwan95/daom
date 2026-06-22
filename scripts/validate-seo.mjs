@@ -128,6 +128,19 @@ function assertNapConsistency() {
   console.log(`[validate-seo] NAP consistency OK (${fullAddress}, ${phone})`);
 }
 
+function assertLocalLandingPages() {
+  const configFile = path.join(ROOT, "src/lib/local-landing/config.ts");
+  const config = fs.readFileSync(configFile, "utf8");
+  const slugCount = (config.match(/slug:\s*"/g) ?? []).length;
+
+  if (slugCount < 50) {
+    fail(`local landing pages: expected at least 50, found ${slugCount}`);
+  }
+
+  console.log(`[validate-seo] local landing pages OK (${slugCount} configured)`);
+}
+
 assertRss();
 assertSitemapSources();
 assertNapConsistency();
+assertLocalLandingPages();
