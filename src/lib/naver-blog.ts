@@ -19,3 +19,11 @@ export function getNaverBlogRssUrl(): string {
   const blogId = extractNaverBlogId(blogUrl);
   return `https://rss.blog.naver.com/${blogId}.xml`;
 }
+
+export {
+  extractNaverPostId,
+  getNaverBlogExternalPath,
+  getNaverBlogExternalPostIds,
+  getNaverBlogInternalHref,
+  getNaverBlogPostByPostId,
+} from "@/lib/naver-blog/urls";

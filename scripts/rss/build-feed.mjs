@@ -8,6 +8,10 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { getSiteUrl } from "../lib/site-url.mjs";
+import {
+  extractNaverPostId,
+  getNaverBlogExternalPath,
+} from "../lib/naver-blog-url.mjs";
 
 const ROOT = process.cwd();
 const CONTENT_ROOT = path.join(ROOT, "src/content");
@@ -89,8 +93,35 @@ function toRfc822(dateInput) {
 }
 
 function absoluteUrl(pathname) {
-  if (pathname.startsWith("http")) return pathname;
+  if (pathname.startsWith("http")) {
+    const url = new URL(pathname);
+    if (url.origin !== new URL(SITE.url).origin) {
+      throw new Error(`External URL is not allowed in RSS: ${pathname}`);
+    }
+    return pathname;
+  }
   return `${SITE.url}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
+}
+
+function getMimeType(imagePath) {
+  const lower = imagePath.toLowerCase();
+  if (lower.endsWith(".png")) return "image/png";
+  if (lower.endsWith(".webp")) return "image/webp";
+  if (lower.endsWith(".gif")) return "image/gif";
+  return "image/jpeg";
+}
+
+function getEnclosureLength(relativePath) {
+  try {
+    const normalized = relativePath.replace(/^\//, "");
+    const filePath = path.join(ROOT, "public", normalized);
+    if (fs.existsSync(filePath)) {
+      return fs.statSync(filePath).size;
+    }
+  } catch {
+    // fall through
+  }
+  return 0;
 }
 
 function publicFileExists(relativePath) {
@@ -101,7 +132,11 @@ function publicFileExists(relativePath) {
 function resolveImageUrl(candidates) {
   for (const candidate of candidates) {
     if (publicFileExists(candidate)) {
-      return absoluteUrl(candidate);
+      return {
+        url: absoluteUrl(candidate),
+        length: getEnclosureLength(candidate),
+        type: getMimeType(candidate),
+      };
     }
   }
   return null;
@@ -243,20 +278,30 @@ function loadNaverBlogItems() {
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     const items = Array.isArray(data.items) ? data.items : [];
 
-    return items.slice(0, 8).map((post) => ({
-      id: `naver:${post.link}`,
-      title: `[네이버 블로그] ${post.title}`,
-      description: post.description || "",
-      link: post.link,
-      guid: post.link,
-      date: post.pubDate || new Date().toISOString(),
-      author: SITE.representative,
-      feedLabel: "네이버 블로그",
-      categories: ["네이버 블로그", post.category].filter(Boolean),
-      bodyExcerpt: post.description || "",
-      imageUrl: null,
-      isExternal: true,
-    }));
+    return items
+      .slice(0, 8)
+      .map((post) => {
+        const postId = extractNaverPostId(post.link);
+        if (!postId) return null;
+
+        const internalPath = getNaverBlogExternalPath(postId);
+        const link = absoluteUrl(internalPath);
+
+        return {
+          id: `naver:${postId}`,
+          title: `[네이버 블로그] ${post.title}`,
+          description: post.description || "",
+          link,
+          guid: link,
+          date: post.pubDate || new Date().toISOString(),
+          author: SITE.representative,
+          feedLabel: "네이버 블로그",
+          categories: ["네이버 블로그", post.category].filter(Boolean),
+          bodyExcerpt: post.description || "",
+          imageUrl: resolveImageUrl(["/image/blog/default-thumb.jpg"]),
+        };
+      })
+      .filter(Boolean);
   } catch {
     return [];
   }
@@ -266,8 +311,8 @@ function getSortScore(item) {
   const timestamp = new Date(item.date).getTime();
   if (Number.isNaN(timestamp)) return 0;
 
-  // 자사 도메인 콘텐츠(칼럼·FAQ·사례·언론)를 최신성 판단 시 우선
-  const ownContentBoost = item.isExternal ? 0 : 1000 * 60 * 60 * 24 * 21;
+  // 자사 도메인 콘텐츠(칼럼·FAQ·사례·언론·네이버 블로그 랜딩)를 최신성 판단 시 우선
+  const ownContentBoost = 1000 * 60 * 60 * 24 * 21;
   return timestamp + ownContentBoost;
 }
 
@@ -292,15 +337,13 @@ function renderCategories(categories) {
 
 function renderItem(item) {
   const enclosure = item.imageUrl
-    ? `      <enclosure url="${escapeXml(item.imageUrl)}" type="image/jpeg" />\n`
-  : "";
-
-  const guidPermaLink = item.isExternal ? "false" : "true";
+    ? `      <enclosure url="${escapeXml(item.imageUrl.url)}" length="${item.imageUrl.length}" type="${escapeXml(item.imageUrl.type)}" />\n`
+    : "";
 
   return `    <item>
       <title>${escapeXml(item.title)}</title>
       <link>${escapeXml(item.link)}</link>
-      <guid isPermaLink="${guidPermaLink}">${escapeXml(item.guid)}</guid>
+      <guid isPermaLink="true">${escapeXml(item.guid)}</guid>
       <pubDate>${toRfc822(item.date)}</pubDate>
       <description>${escapeXml(item.description)}</description>
       <content:encoded><![CDATA[${buildContentEncoded(item)}]]></content:encoded>

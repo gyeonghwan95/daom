@@ -5,6 +5,11 @@ import {
   getContentSlugs,
 } from "@/lib/content/loader";
 import { getPressArticleSlugs, getPressArticle } from "@/lib/press-articles";
+import {
+  getNaverBlogExternalPath,
+  getNaverBlogExternalPostIds,
+  getNaverBlogPostByPostId,
+} from "@/lib/naver-blog/urls";
 import { getAllSitePaths } from "@/lib/seo/routes";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site";
@@ -14,7 +19,13 @@ export const dynamic = "force-static";
 function pathToLastModified(path: string): Date {
   const blogMatch = path.match(/^\/blog\/(.+)$/);
   if (blogMatch) {
-    const meta = getContentMeta("blog", blogMatch[1]);
+    const blogSlug = blogMatch[1];
+    if (blogSlug.startsWith("external/")) {
+      const postId = blogSlug.replace(/^external\//, "");
+      const post = getNaverBlogPostByPostId(postId);
+      if (post) return new Date(post.pubDate);
+    }
+    const meta = getContentMeta("blog", blogSlug);
     if (meta) return new Date(meta.date);
   }
 
@@ -52,13 +63,19 @@ function pathPriority(path: string): number {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const faqSlugs = getContentSlugs("faq");
-  const paths = getAllSitePaths(
-    getAllServiceSlugs(),
-    getContentSlugs("blog"),
-    getContentSlugs("cases"),
-    faqSlugs,
-    getPressArticleSlugs(),
+  const naverBlogPaths = getNaverBlogExternalPostIds().map((postId) =>
+    getNaverBlogExternalPath(postId),
   );
+  const paths = [
+    ...getAllSitePaths(
+      getAllServiceSlugs(),
+      getContentSlugs("blog"),
+      getContentSlugs("cases"),
+      faqSlugs,
+      getPressArticleSlugs(),
+    ),
+    ...naverBlogPaths,
+  ];
 
   return paths.map((path) => ({
     url: path === "/" ? siteConfig.url : `${siteConfig.url}${path}`,

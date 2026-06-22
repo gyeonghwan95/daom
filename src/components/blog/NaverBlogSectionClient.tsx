@@ -8,6 +8,7 @@ import {
   formatNaverBlogDate,
 } from "@/lib/naver-blog/format";
 import type { NaverBlogFeed } from "@/lib/naver-blog/types";
+import { getNaverBlogInternalHref } from "@/lib/naver-blog/urls";
 
 type NaverBlogSectionClientProps = {
   initialFeed: NaverBlogFeed;
@@ -91,21 +92,25 @@ export function NaverBlogSectionClient({
       </div>
 
       <ul className="listing-card-grid mt-8">
-        {posts.map((post) => (
-          <li key={post.link}>
-            <BlogCard
-              title={post.title}
-              excerpt={post.description}
-              href={post.link}
-              external
-              date={
-                post.category
-                  ? `${formatNaverBlogDate(post.pubDate)} · ${post.category}`
-                  : formatNaverBlogDate(post.pubDate)
-              }
-            />
-          </li>
-        ))}
+        {posts.map((post) => {
+          const href = getNaverBlogInternalHref(post);
+          if (!href) return null;
+
+          return (
+            <li key={post.link}>
+              <BlogCard
+                title={post.title}
+                excerpt={post.description}
+                href={href}
+                date={
+                  post.category
+                    ? `${formatNaverBlogDate(post.pubDate)} · ${post.category}`
+                    : formatNaverBlogDate(post.pubDate)
+                }
+              />
+            </li>
+          );
+        })}
       </ul>
 
       <p className="mt-6 text-center text-sm text-navy/55 sm:text-left">
