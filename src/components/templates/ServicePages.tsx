@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageContentSection } from "@/components/page/PageContentSection";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CaseCard } from "@/components/cards/CaseCard";
 import { ServiceDetailContent } from "@/components/services/ServiceDetailContent";
