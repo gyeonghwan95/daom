@@ -41,7 +41,12 @@ export const metadata: Metadata = {
   alternates: {
     ...(homeMetadata.alternates ?? {}),
     types: {
-      "application/rss+xml": "/rss.xml",
+      "application/rss+xml": [
+        {
+          url: "/rss.xml",
+          title: `${seoBrand.siteName} RSS`,
+        },
+      ],
     },
   },
   formatDetection: {

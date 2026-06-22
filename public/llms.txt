@@ -51,7 +51,7 @@
 
 ## 콘텐츠
 
-- RSS (블로그): https://daom-law.com/rss.xml
+- RSS (칼럼·FAQ·업무사례·언론·네이버 블로그 통합): https://daom-law.com/rss.xml
 - Sitemap: https://daom-law.com/sitemap.xml
 
 ## AI·검색엔진 안내
