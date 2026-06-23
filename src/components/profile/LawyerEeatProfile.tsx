@@ -24,11 +24,11 @@ type LawyerEeatProfileProps = {
 
 function EeatFactList({ items }: { items: EeatFact[] }) {
   return (
-    <dl className="mt-4 space-y-3">
+    <dl className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
       {items.map((item) => (
         <div
           key={`${item.term}-${item.meta ?? ""}`}
-          className="rounded-xl border border-beige-dark bg-white px-4 py-4 md:px-5"
+          className="h-full rounded-xl border border-beige-dark bg-white px-4 py-4 md:px-5"
         >
           <dt className="text-base font-semibold text-navy md:text-lg">
             {item.href ? (

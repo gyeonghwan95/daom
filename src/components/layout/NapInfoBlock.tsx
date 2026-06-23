@@ -29,7 +29,7 @@ export function NapInfoBlock({
       className={
         isFooter
           ? "mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3"
-          : "grid gap-4 sm:grid-cols-2"
+          : "grid gap-x-4 gap-y-5 sm:grid-cols-2"
       }
     >
       <div>
@@ -76,11 +76,21 @@ export function NapInfoBlock({
         </dd>
       </div>
       {showOpeningHours ? (
-        <div className={isFooter ? "sm:col-span-2 lg:col-span-3" : "sm:col-span-2"}>
+        <div
+          className={
+            isFooter
+              ? "sm:col-span-2 lg:col-span-3"
+              : "sm:col-span-2 border-t border-beige-dark pt-5"
+          }
+        >
           <dt className={labelClass}>운영시간</dt>
-          <dd className={`${isFooter ? "mt-3" : "mt-4"}`}>
+          <dd className={isFooter ? "mt-3" : "mt-3"}>
             <OfficeHoursDetail variant={isFooter ? "footer" : "default"} />
-            <span className={isFooter ? "mt-3 block text-white/60" : "mt-3 block text-navy/60"}>
+            <span
+              className={
+                isFooter ? "mt-3 block text-white/60" : "mt-3 block text-navy/60"
+              }
+            >
               {nap.openingHoursNote}
             </span>
           </dd>

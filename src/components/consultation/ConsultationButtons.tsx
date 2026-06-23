@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ConsultationChannel, ConsultationChannelId } from "@/lib/contact";
+import { ConsultationPanel } from "@/components/consultation/ConsultationPanel";
 import {
   FormIcon,
   KakaoIcon,
@@ -13,17 +14,16 @@ type ConsultationButtonsProps = {
   theme?: "dark" | "light";
   layout?: "grid" | "stack";
   showLabels?: "full" | "short";
+  showQrCodes?: boolean;
   className?: string;
 };
 
 function getButtonClass(
   id: ConsultationChannelId,
   theme: "dark" | "light",
-  compactRow = false,
 ): string {
-  const base = compactRow
-    ? "inline-flex min-h-11 w-full cursor-pointer flex-col items-center justify-center gap-1 rounded-xl px-1 py-2.5 text-[11px] font-semibold leading-tight transition-colors sm:min-h-12 sm:flex-row sm:gap-2 sm:px-3 sm:text-sm"
-    : "inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl px-2.5 text-xs font-semibold transition-colors sm:min-h-12 sm:gap-2 sm:px-4 sm:text-sm";
+  const base =
+    "inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition-colors";
 
   if (theme === "dark") {
     switch (id) {
@@ -132,34 +132,48 @@ export function ConsultationButtons({
   theme = "light",
   layout = "grid",
   showLabels = "full",
+  showQrCodes,
   className = "",
 }: ConsultationButtonsProps) {
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
 
-  const isDirectRow =
+  const wantsQrPanel =
+    (showQrCodes ?? layout === "grid") &&
     layout === "grid" &&
-    channels.length === 3 &&
-    channels.every((channel) =>
-      ["phone", "kakao", "naver", "reservation"].includes(channel.id),
+    channels.some(
+      (channel) =>
+        (channel.id === "kakao" || channel.id === "naver") && channel.configured,
     );
 
-  const gridClass = isDirectRow
-    ? "grid grid-cols-3 gap-1.5 sm:gap-2"
-    : layout === "grid"
+  if (wantsQrPanel) {
+    return (
+      <ConsultationPanel
+        channels={channels}
+        theme={theme}
+        showLabels={showLabels}
+        className={className}
+      />
+    );
+  }
+
+  const gridClass =
+    layout === "grid"
       ? "grid grid-cols-2 gap-2 sm:gap-3"
       : "flex flex-col gap-2.5 sm:gap-3";
 
   return (
-    <div className={`${gridClass} ${className}`}>
-      {channels.map((channel) => (
-        <ChannelLink
-          key={channel.id}
-          channel={channel}
-          label={labelFor(channel)}
-          className={getButtonClass(channel.id, theme, isDirectRow)}
-        />
-      ))}
+    <div className={className}>
+      <div className={gridClass}>
+        {channels.map((channel) => (
+          <ChannelLink
+            key={channel.id}
+            channel={channel}
+            label={labelFor(channel)}
+            className={getButtonClass(channel.id, theme)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

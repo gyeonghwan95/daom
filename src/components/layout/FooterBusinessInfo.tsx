@@ -7,7 +7,7 @@ export function FooterBusinessInfo() {
 
   return (
     <div className="mt-10 border-t border-white/15 pt-8">
-      <p className="text-sm font-semibold text-beige">사업자 · 연락처 정보 (NAP)</p>
+      <p className="text-sm font-semibold text-beige">사업자 · 연락처 정보</p>
       <NapInfoBlock variant="footer" showBusinessRegistration />
       <p className="mt-4 text-xs leading-relaxed text-white/50">
         <a

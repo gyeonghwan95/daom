@@ -1,5 +1,5 @@
 import { getPrimaryInquiryForm } from "@/lib/consultation";
-import { getNaverPlaceUrl } from "@/lib/office-location";
+import { getNaverMapSearchUrl } from "@/lib/office-location";
 
 export const defaultContact = {
   phone: "070-4172-8056",
@@ -9,6 +9,23 @@ export const defaultContact = {
   naverReservation:
     "https://map.naver.com/p/entry/place/2035745096?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5",
 } as const;
+
+export const consultationQrCodes = {
+  kakao: {
+    src: "/qrCode/QR-카카오톡.png",
+    alt: "카카오톡 채널 QR코드",
+    label: "카카오톡",
+    hint: "스마트폰으로 스캔해 채널 추가",
+  },
+  naver: {
+    src: "/qrCode/QR-네이버톡톡.png",
+    alt: "네이버 톡톡 QR코드",
+    label: "네이버 톡톡",
+    hint: "스마트폰으로 스캔해 상담 시작",
+  },
+} as const;
+
+export type ConsultationQrChannelId = keyof typeof consultationQrCodes;
 
 export type ContactInfo = {
   phone: string;
@@ -161,15 +178,15 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
   ];
 }
 
-/** 모바일 하단 고정: 전화하기 · 카카오톡 · 길찾기 */
+/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버 톡톡 · 네이버 지도 */
 export function getMobileBottomChannels(): ConsultationChannel[] {
-  const { phone, kakao } = getContactInfo();
+  const { phone, kakao, naverTalk } = getContactInfo();
 
   return [
     {
       id: "phone",
       label: "전화 상담",
-      shortLabel: "전화하기",
+      shortLabel: "전화",
       href: phone ? getPhoneHref(phone) : "/contact",
       external: false,
       configured: Boolean(phone),
@@ -177,16 +194,24 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
     {
       id: "kakao",
       label: "카카오톡 상담",
-      shortLabel: "카카오톡",
+      shortLabel: "카카오",
       href: kakao || "/contact",
       external: Boolean(kakao),
       configured: Boolean(kakao),
     },
     {
+      id: "naver",
+      label: "네이버 톡톡",
+      shortLabel: "톡톡",
+      href: naverTalk || "/contact",
+      external: Boolean(naverTalk),
+      configured: Boolean(naverTalk),
+    },
+    {
       id: "location",
-      label: "길찾기",
-      shortLabel: "길찾기",
-      href: getNaverPlaceUrl(),
+      label: "네이버 지도",
+      shortLabel: "지도",
+      href: getNaverMapSearchUrl(),
       external: true,
       configured: true,
     },

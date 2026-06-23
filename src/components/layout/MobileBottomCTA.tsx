@@ -5,63 +5,83 @@ import {
 } from "@/lib/contact";
 import {
   KakaoIcon,
-  LocationIcon,
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 
 function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
-  const iconClass = "h-5 w-5 shrink-0";
+  const linkProps = channel.external
+    ? { target: "_blank" as const, rel: "noopener noreferrer" as const }
+    : {};
 
-  const content = (
-    <>
-      {channel.id === "phone" && <PhoneIcon className={iconClass} />}
-      {channel.id === "kakao" && <KakaoIcon className={iconClass} />}
-      {channel.id === "naver" && <NaverIcon className={iconClass} />}
-      {channel.id === "reservation" && <NaverIcon className={iconClass} />}
-      {channel.id === "location" && <LocationIcon className={iconClass} />}
-      <span className="text-xs font-semibold leading-tight sm:text-sm">
-        {channel.shortLabel}
-      </span>
-    </>
-  );
-
-  const baseClass =
-    "flex min-h-[3.5rem] cursor-pointer flex-col items-center justify-center gap-1 px-1 text-center transition-colors active:scale-[0.98]";
-
-  const colorClass: Record<ConsultationChannel["id"], string> = {
-    phone: "bg-navy text-white",
-    kakao: "bg-[#FEE500] text-[#191919]",
-    naver: "bg-[#03C75A] text-white",
-    reservation: "bg-[#03C75A] text-white",
-    location: "bg-white text-navy",
-    inquiry: "bg-white text-navy",
-  };
-
-  if (channel.external) {
-    return (
-      <a
-        href={channel.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${baseClass} ${colorClass[channel.id]}`}
-      >
-        {content}
-      </a>
-    );
+  switch (channel.id) {
+    case "phone":
+      return (
+        <a
+          href={channel.href}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--phone"
+          aria-label={channel.label}
+          {...linkProps}
+        >
+          <PhoneIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+        </a>
+      );
+    case "kakao":
+      return (
+        <a
+          href={channel.href}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--kakao"
+          aria-label={channel.label}
+          {...linkProps}
+        >
+          <KakaoIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+        </a>
+      );
+    case "naver":
+      return (
+        <a
+          href={channel.href}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-talk"
+          aria-label={channel.label}
+          {...linkProps}
+        >
+          <NaverIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+        </a>
+      );
+    case "location":
+      return (
+        <a
+          href={channel.href}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-map"
+          aria-label={channel.label}
+          {...linkProps}
+        >
+          <span className="mobile-bottom-cta__map-icon" aria-hidden>
+            <NaverIcon className="h-4 w-4 text-white" />
+          </span>
+          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+        </a>
+      );
+    default:
+      break;
   }
+
+  const baseClass = "mobile-bottom-cta__btn bg-white text-navy";
 
   if (channel.href.startsWith("/")) {
     return (
-      <Link href={channel.href} className={`${baseClass} ${colorClass[channel.id]}`}>
-        {content}
+      <Link href={channel.href} className={baseClass} aria-label={channel.label}>
+        <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
       </Link>
     );
   }
 
   return (
-    <a href={channel.href} className={`${baseClass} ${colorClass[channel.id]}`}>
-      {content}
+    <a href={channel.href} className={baseClass} aria-label={channel.label} {...linkProps}>
+      <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
     </a>
   );
 }
@@ -71,19 +91,14 @@ export function MobileBottomCTA() {
 
   return (
     <div
-      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-4px_24px_rgba(30,58,95,0.12)] lg:hidden"
+      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"
     >
-      <div className="grid grid-cols-3">
-        {channels.map((channel, index) => (
-          <div
-            key={channel.id}
-            className={index < channels.length - 1 ? "border-r border-beige-dark" : ""}
-          >
-            <MobileChannelButton channel={channel} />
-          </div>
+      <div className="grid grid-cols-4 divide-x divide-beige-dark">
+        {channels.map((channel) => (
+          <MobileChannelButton key={channel.id} channel={channel} />
         ))}
       </div>
     </div>

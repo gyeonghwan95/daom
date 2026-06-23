@@ -52,6 +52,7 @@ export function Footer() {
                 channels={channels}
                 theme="dark"
                 layout="grid"
+                showQrCodes={false}
               />
             </div>
             <ul className="mt-4 space-y-1 text-sm text-white/70">
