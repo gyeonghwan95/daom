@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteFavicon } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 
 export function HeroBrand() {
@@ -6,7 +7,7 @@ export function HeroBrand() {
     <div className="home-hero__brand">
       <div className="home-hero__brand-mark" aria-hidden>
         <Image
-          src="/image/logo.png"
+          src={siteFavicon}
           alt=""
           width={72}
           height={72}

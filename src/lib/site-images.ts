@@ -1,20 +1,7 @@
 /**
- * 사이트 이미지 경로 레지스트리
+ * 사이트 이미지 경로 레지스트리 (public/image/ 단일 폴더, 한글 파일명)
  *
  * 실제 사진 교체: public/image/ 아래 동일 파일명으로 덮어쓰기
- *
- * public/image/
- * ├── home/          hero, heroSlides, trust, activities/, press/
- * ├── about/         profile
- * ├── office/        exterior, nameplate, map, direction-*, parking, gallery
- * ├── media/         community, policy, education, gallery-*
- * ├── services/      cover + {slug}.jpg
- * ├── blog/          cover, default-thumb, posts/{slug}.jpg
- * ├── cases/         cover, default-thumb, items/{slug}.jpg
- * ├── contact/       상담_top, 전화·대면·출장 상담
- * ├── press/         언론보도 기사 이미지
- * ├── location/      header
- * └── faq/           cover
  */
 
 export type SiteImageAsset = {
@@ -51,90 +38,192 @@ const SERVICE_SLUGS = [
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 
-export const siteFavicon = "/image/logo.png";
+/** RSS·빌드 스크립트와 공유하는 평탄화 경로 */
+export const imagePaths = {
+  logo: "/image/로고.png",
+  officeExterior: "/image/사무소-전경.jpg",
+  homeTrust: "/image/홈-신뢰안내.png",
+  officeNameplate: "/image/사무소-명판.png",
+  officeNameplateHorizontal: "/image/사무소-명판가로.jpg",
+  officeInterior: "/image/사무소-내부.jpg",
+  officeDocuments: "/image/사무소-서류.jpg",
+  officeLocationMap: "/image/사무소-위치지도.png",
+  locationHeaderMap: "/image/오시는길-지도.png",
+  officeDirectionStep1: "/image/사무소-찾아오는길1.png",
+  officeDirectionStep2: "/image/사무소-찾아오는길2.png",
+  officeParking: "/image/사무소-주차.png",
+  officeNameBadge: "/image/사무소-명패.png",
+  appointmentCertificate: "/image/위촉장.jpg",
+  activityBarAssociationAward: "/image/활동-법무사협회표창.jpg",
+  activityYouthBudgetAdvisory: "/image/활동-청년예산자문단.jpg",
+  activityBusanYouthPolicy: "/image/활동-부산청년정책위원.jpg",
+  activityHaeundaePolicy: "/image/활동-해운대정책자문.jpg",
+  activityPeaceUnification: "/image/활동-민주평통자문.jpg",
+  activityCitizenJury: "/image/활동-시민배심원단.jpg",
+  activityMou: "/image/활동-명례일반산업단지MOU.png",
+  activityLhCollab: "/image/활동-LH부산창경협업.png",
+  activityYouthSpace: "/image/활동-해운대청년채움공간강의.jpg",
+  activityNagasaki: "/image/활동-나가사키사법서사회.jpg",
+  contactConsultationHero: "/image/상담-메인.jpg",
+  contactPhoneConsult: "/image/상담-전화.png",
+  contactInPersonConsult: "/image/상담-대면.png",
+  contactOnSiteConsult: "/image/상담-출장.png",
+  pressBusanIlbo20260608: "/image/언론-부산일보-260608.jpg",
+  pressKukjeSinmun20260603: "/image/언론-국제신문-260603.jpg",
+  pressBeopryulSinmun20260602: "/image/언론-법률신문-260602.png",
+  stockLegalDocuments: "/image/썸네일-서류등기.jpg",
+  stockLegalConsultation: "/image/썸네일-상담협의.jpg",
+  stockLegalContract: "/image/썸네일-계약임원.jpg",
+  stockLegalOffice: "/image/썸네일-사무실.jpg",
+  stockLegalCourthouse: "/image/썸네일-법원절차.jpg",
+  thumbMajorBook: "/image/썸네일-전공책.jpg",
+  thumbNotaryBook: "/image/썸네일-법무사책.png",
+  thumbCivilLitigationBook: "/image/썸네일-민사소송책.png",
+  thumbObject: "/image/썸네일-오브제.jpg",
+  thumbDocumentReview: "/image/썸네일-서류확인.jpg",
+  thumbEastDistrictCourt: "/image/썸네일-동부지원.jpg",
+  thumbRegistryOffice: "/image/썸네일-등기소.jpg",
+  lectureBusanSelfSupportJeonse:
+    "/image/강의-부산광역시자립지원전담기관전세사기예방.jpg",
+  lectureHousingContractGuide: "/image/강의-주거계약실전가이드.jpg",
+  lectureYangsanHighSchool: "/image/강의-양산제일고.jpg",
+  lectureFourWeekComplete: "/image/강의-4주완성.png",
+  lectureMoneyPropertyDispute: "/image/강의-돈부동산관계분쟁미리막는방법.jpg",
+  lectureHaeundaeSuyeongDongnae:
+    "/image/강의-해운대수영동래청년전세계약등기부등본.jpg",
+  lectureJeonseLegalEducation: "/image/강의-전세사기피하는법률교육특강.jpg",
+  lectureYouthMostSoughtJeonse: "/image/강의-부산전세사기청년들이가장많이찾은.jpg",
+  lectureYouthJeonsePrevention: "/image/강의-부산법무사의청년전세사기예방특강.jpg",
+  lectureOnlineSurvival: "/image/강의-온라인세상에서살아남기.jpg",
+  lectureJeonseVaccination: "/image/강의-청년전세사기예방접종.jpg",
+  lectureMistakeCrime: "/image/강의-실수로범죄가되는순간들.jpg",
+  lectureLawEssential: "/image/강의-법없이도살수없어요.jpg",
+} as const;
+
+const STOCK = imagePaths;
+
+const serviceImageBySlug: Record<ServiceSlug, string> = {
+  "inheritance-registration": STOCK.thumbRegistryOffice,
+  "inheritance-renunciation": STOCK.thumbCivilLitigationBook,
+  "qualified-acceptance": STOCK.thumbDocumentReview,
+  "real-estate-registration": STOCK.thumbObject,
+  "ownership-transfer": STOCK.thumbDocumentReview,
+  "corporate-registration": STOCK.thumbNotaryBook,
+  "company-establishment": STOCK.thumbMajorBook,
+  "director-change": STOCK.stockLegalContract,
+  "personal-rehabilitation": STOCK.thumbEastDistrictCourt,
+  bankruptcy: STOCK.stockLegalCourthouse,
+};
+
+const blogPostImageBySlug: Record<string, string> = {
+  "busan-inheritance-registration-procedure-documents":
+    STOCK.thumbRegistryOffice,
+  "inheritance-renunciation-vs-qualified-acceptance":
+    STOCK.thumbCivilLitigationBook,
+  "delaying-inheritance-registration-risks": STOCK.stockLegalDocuments,
+  "real-estate-ownership-transfer-procedure": STOCK.thumbObject,
+  "director-change-registration-deadline-penalty": STOCK.thumbNotaryBook,
+  "company-establishment-registration-checklist": STOCK.thumbMajorBook,
+  "personal-rehabilitation-before-application": STOCK.thumbEastDistrictCourt,
+  "bankruptcy-vs-personal-rehabilitation": STOCK.stockLegalCourthouse,
+  "busan-lawyer-consultation-documents": STOCK.thumbDocumentReview,
+  "jeonse-right-vs-lease-registration-order": STOCK.thumbRegistryOffice,
+};
+
+const caseImageBySlug: Record<string, string> = {
+  "gijang-land-inheritance-case": STOCK.thumbRegistryOffice,
+  "haeundae-inheritance-registration-case": STOCK.stockLegalDocuments,
+  "jaesong-inheritance-renunciation-consultation":
+    STOCK.thumbCivilLitigationBook,
+  "dongnae-qualified-acceptance-consultation": STOCK.thumbDocumentReview,
+  "centum-ownership-transfer-case": STOCK.thumbObject,
+  "suyeong-company-establishment-case": STOCK.thumbMajorBook,
+  "yeonje-director-change-case": STOCK.stockLegalContract,
+  "busan-personal-rehabilitation-consultation": STOCK.thumbEastDistrictCourt,
+};
+
+const stockShowcaseImages = [
+  STOCK.stockLegalDocuments,
+  STOCK.stockLegalConsultation,
+  STOCK.stockLegalContract,
+  STOCK.stockLegalOffice,
+  STOCK.stockLegalCourthouse,
+] as const;
+
+export const siteFavicon = imagePaths.logo;
 
 export const siteImages = {
-  logo: img(siteFavicon, "다옴법무사사무소 로고", 400, 120, false),
+  logo: img(imagePaths.logo, "다옴법무사사무소 로고", 400, 120, false),
 
   seo: {
-    defaultOg: img("/image/home/hero.jpg", "다옴법무사사무소", 1200, 630, true),
+    defaultOg: img(imagePaths.officeExterior, "다옴법무사사무소", 1200, 630, true),
   },
 
   home: {
-    hero: img("/image/home/hero.jpg", "다옴법무사사무소 전경", 1200, 900),
-    /** 홈 히어로 우측 세로 슬라이드 — 항목 추가·순서 변경 시 이 배열만 수정 */
+    hero: img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 900),
+    /** 홈 히어로 우측 세로 슬라이드 */
     heroSlides: [
-      img("/image/home/hero.jpg", "다옴법무사사무소 전경", 1200, 900),
-      img("/image/home/trust.png", "안윤정 법무사 상담", 1000, 800),
-      img("/image/office/exterior.jpg", "다옴법무사사무소 외관", 1200, 800),
+      img(imagePaths.officeNameBadge, "다옴법무사사무소 명패", 1200, 600),
+      img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
+      img(imagePaths.appointmentCertificate, "위원 위촉장", 1200, 800),
+      img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
     ],
-    trust: img("/image/home/trust.png", "안윤정 법무사 상담", 1000, 800),
+    trust: img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
     activities: [
-      img("/image/home/activities/01.jpg", "기업 MOU 법률지원", 800, 600),
-      img("/image/home/activities/02.jpg", "공공기관 협업", 800, 600),
-      img("/image/home/activities/03.jpg", "청년 법률 지원", 800, 600),
-      img("/image/home/activities/04.jpg", "협회장 표창", 800, 600),
-      img("/image/home/activities/05.jpg", "정책 자문 활동", 800, 600),
-      img("/image/home/activities/06.jpg", "법률 강의", 800, 600),
-      img("/image/home/activities/07.jpg", "국제 법무 교류", 800, 600),
+      img(imagePaths.activityMou, "기업 MOU 법률지원", 800, 600),
+      img(imagePaths.activityLhCollab, "공공기관 협업", 800, 600),
+      img(imagePaths.activityYouthSpace, "청년 법률 지원", 800, 600),
+      img(imagePaths.activityBarAssociationAward, "협회장 표창", 800, 600),
+      img(imagePaths.activityBusanYouthPolicy, "정책 자문 활동", 800, 600),
+      img(imagePaths.activityNagasaki, "국제 법무 교류", 800, 600),
+      img(imagePaths.activityPeaceUnification, "법률 강의", 800, 600),
     ],
-    press: [
-      img("/image/home/press/01.jpg", "언론 보도 1", 800, 600),
-      img("/image/home/press/02.jpg", "언론 보도 2", 800, 600),
-      img("/image/home/press/03.jpg", "언론 보도 3", 800, 600),
-      img("/image/home/press/04.jpg", "언론 보도 4", 800, 600),
-      img("/image/home/press/05.jpg", "언론 보도 5", 800, 600),
-      img("/image/home/press/06.jpg", "언론 보도 6", 800, 600),
-    ],
+    press: stockShowcaseImages.map((src, index) =>
+      img(src, `언론 보도 ${index + 1}`, 800, 600),
+    ),
   },
 
   about: {
-    profile: img("/image/about/profile.jpg", "안윤정 법무사 프로필", 800, 1000),
-    nameplate: img(
-      "/image/about/명판.png",
-      "안윤정 법무사 명판",
-      800,
-      600,
-      false,
-    ),
+    profile: img(imagePaths.officeExterior, "안윤정 법무사 프로필", 800, 1000),
+    nameplate: img(imagePaths.officeNameplate, "안윤정 법무사 명판", 800, 600, false),
     policy: {
       barAssociationAward: img(
-        "/image/about/policy/bar-association-award.jpg",
+        imagePaths.activityBarAssociationAward,
         "대한법무사협회 표창",
         800,
         600,
         false,
       ),
       youthBudgetAdvisory: img(
-        "/image/about/policy/youth-budget-advisory.jpg",
+        imagePaths.activityYouthBudgetAdvisory,
         "기획예산처 청년자문단",
         800,
         600,
         false,
       ),
       busanYouthPolicy: img(
-        "/image/about/policy/busan-youth-policy.jpg",
+        imagePaths.activityBusanYouthPolicy,
         "부산광역시 청년정책조정위원회",
         800,
         600,
         false,
       ),
       haewoondaePolicy: img(
-        "/image/about/policy/haewoondae-policy.jpg",
+        imagePaths.activityHaeundaePolicy,
         "해운대구 정책자문위원회",
         800,
         600,
         false,
       ),
       peaceUnification: img(
-        "/image/about/policy/peace-unification.jpg",
+        imagePaths.activityPeaceUnification,
         "민주평화통일자문회의",
         800,
         600,
         false,
       ),
       citizenJury: img(
-        "/image/about/policy/citizen-jury.jpg",
+        imagePaths.activityCitizenJury,
         "부산시민배심원단",
         800,
         600,
@@ -144,114 +233,115 @@ export const siteImages = {
   },
 
   office: {
-    exterior: img("/image/office/exterior.jpg", "다옴법무사사무소 전경", 1200, 800),
-    nameplate: img("/image/office/nameplate.png", "다옴법무사사무소 명판", 800, 600),
-    map: img("/image/office/map.png", "사무소 위치 지도", 1200, 900),
-    direction01: img("/image/office/direction-01.png", "찾아오시는 길 안내 1", 1200, 900),
-    direction02: img("/image/office/direction-02.png", "찾아오시는 길 안내 2", 1200, 900),
-    parking: img("/image/office/parking.png", "주차 안내", 1200, 900),
-    /** 사무소 페이지 상단 갤러리 — interior* 는 교체 전 목업 */
+    exterior: img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
+    nameplate: img(imagePaths.officeNameplate, "다옴법무사사무소 명판", 800, 600),
+    map: img(imagePaths.officeLocationMap, "사무소 위치 지도", 1200, 900),
+    direction01: img(
+      imagePaths.officeDirectionStep1,
+      "찾아오시는 길 안내 1",
+      1200,
+      900,
+    ),
+    direction02: img(
+      imagePaths.officeDirectionStep2,
+      "찾아오시는 길 안내 2",
+      1200,
+      900,
+    ),
+    parking: img(imagePaths.officeParking, "주차 안내", 1200, 900),
     gallery: [
-      img("/image/photo/명패.png", "다옴법무사사무소 명패", 1200, 800),
-      img("/image/office/명판가로.jpg", "다옴법무사사무소 명판", 800, 600),
-      img("/image/office/office.jpg", "사무소", 1200, 900),
-      img("/image/office/doc.jpg", "사무소", 1200, 900),
+      img(imagePaths.officeNameBadge, "다옴법무사사무소 명패", 1200, 800),
+      img(imagePaths.officeNameplateHorizontal, "다옴법무사사무소 명판", 800, 600),
+      img(imagePaths.officeInterior, "사무소", 1200, 900),
+      img(imagePaths.officeDocuments, "사무소", 1200, 900),
     ],
   },
 
   media: {
-    community: img("/image/media/community.jpg", "기업·지역사회 활동", 1200, 800),
-    policy: img("/image/media/policy.png", "정책·표창 활동", 1200, 800),
-    education: img("/image/media/education.png", "법률 강의 활동", 1200, 800),
+    community: img(imagePaths.stockLegalOffice, "기업·지역사회 활동", 1200, 800),
+    policy: img(imagePaths.officeNameBadge, "정책·표창 활동", 1200, 800),
+    education: img(imagePaths.stockLegalConsultation, "법률 강의 활동", 1200, 800),
     gallery: [
-      img("/image/media/gallery-01.jpg", "활동 사진 1", 1200, 800),
-      img("/image/media/gallery-02.jpg", "활동 사진 2", 1200, 800),
+      img(imagePaths.stockLegalContract, "활동 사진 1", 1200, 800),
+      img(imagePaths.stockLegalCourthouse, "활동 사진 2", 1200, 800),
     ],
   },
 
   services: {
-    cover: img("/image/services/cover.jpg", "업무안내", 1400, 600),
+    cover: img(imagePaths.officeExterior, "업무안내", 1400, 600),
   },
 
   blog: {
-    cover: img("/image/blog/cover.jpg", "법률 정보 블로그", 1400, 600),
-    defaultThumb: img("/image/blog/default-thumb.jpg", "블로그 썸네일", 800, 500),
+    cover: img(imagePaths.thumbMajorBook, "법률 정보 블로그", 1400, 600),
+    defaultThumb: img(imagePaths.thumbNotaryBook, "블로그 썸네일", 800, 500),
   },
 
   cases: {
-    cover: img("/image/cases/cover.jpg", "업무 사례", 1400, 600),
-    defaultThumb: img("/image/cases/default-thumb.jpg", "사례 썸네일", 800, 500),
+    cover: img(imagePaths.stockLegalContract, "업무 사례", 1400, 600),
+    defaultThumb: img(imagePaths.thumbNotaryBook, "사례 썸네일", 800, 500),
   },
 
   contact: {
-    top: img("/image/contact/상담_top.jpg", "상담 안내", 1400, 600, false),
-    phoneConsult: img("/image/contact/전화상담.png", "전화 상담", 800, 600, false),
-    inPersonConsult: img("/image/contact/대면상담.png", "대면 상담", 800, 600, false),
-    onSiteConsult: img("/image/contact/출장상담.png", "출장 상담", 800, 600, false),
+    top: img(imagePaths.contactConsultationHero, "상담 안내", 1400, 600, false),
+    phoneConsult: img(imagePaths.contactPhoneConsult, "전화 상담", 800, 600, false),
+    inPersonConsult: img(
+      imagePaths.contactInPersonConsult,
+      "대면 상담",
+      800,
+      600,
+      false,
+    ),
+    onSiteConsult: img(imagePaths.contactOnSiteConsult, "출장 상담", 800, 600, false),
   },
 
   press: {
     busanIlbo260608: img(
-      "/image/press/부산일보260608.jpg",
+      imagePaths.pressBusanIlbo20260608,
       "부산일보 — 부산지방법무사회 제64회 정기총회",
       1200,
       800,
       false,
     ),
     kukjeSinmun260603: img(
-      "/image/press/국제신문260603.jpg",
+      imagePaths.pressKukjeSinmun20260603,
       "국제신문 — 부산지방법무사회 정기총회",
       1200,
       800,
       false,
     ),
     beopryulSinmun260602: img(
-      "/image/press/법률신문260602.png",
+      imagePaths.pressBeopryulSinmun20260602,
       "법률신문 — 부산지방법무사회 제64회 정기총회",
       1200,
       800,
       false,
     ),
-    cover: img("/image/press/부산일보260608.jpg", "언론보도", 1400, 600, false),
+    cover: img(imagePaths.pressBusanIlbo20260608, "언론보도", 1400, 600, false),
   },
 
   location: {
-    header: img("/image/location/지도.png", "오시는 길", 1400, 600),
+    header: img(imagePaths.locationHeaderMap, "오시는 길", 1400, 600),
   },
 
   faq: {
-    cover: img("/image/faq/cover.jpg", "자주 묻는 질문", 1400, 600),
+    cover: img(imagePaths.stockLegalCourthouse, "자주 묻는 질문", 1400, 600),
   },
 } as const;
 
 export function getServiceImage(slug: string): SiteImageAsset {
-  if (SERVICE_SLUGS.includes(slug as ServiceSlug)) {
-    return img(
-      `/image/services/${slug}.jpg`,
-      `${slug} 업무 안내`,
-      1200,
-      700,
-    );
-  }
-  return siteImages.services.cover;
+  const src =
+    serviceImageBySlug[slug as ServiceSlug] ?? imagePaths.officeExterior;
+  return img(src, `${slug} 업무 안내`, 1200, 700);
 }
 
 export function getBlogPostImage(slug: string): SiteImageAsset {
-  return img(
-    `/image/blog/posts/${slug}.jpg`,
-    "블로그 글 썸네일",
-    800,
-    500,
-  );
+  const src = blogPostImageBySlug[slug] ?? imagePaths.stockLegalDocuments;
+  return img(src, "블로그 글 썸네일", 800, 500);
 }
 
 export function getCaseImage(slug: string): SiteImageAsset {
-  return img(
-    `/image/cases/items/${slug}.jpg`,
-    "업무 사례 썸네일",
-    800,
-    500,
-  );
+  const src = caseImageBySlug[slug] ?? imagePaths.stockLegalOffice;
+  return img(src, "업무 사례 썸네일", 800, 500);
 }
 
 /** @deprecated siteImages.media 사용 */

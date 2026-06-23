@@ -24,7 +24,7 @@ const SITE = {
   description:
     "부산 해운대·센텀 다옴법무사사무소 안윤정 법무사의 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보, FAQ, 업무 사례, 언론 보도.",
   blogLink: "/blog",
-  logo: "/image/logo.png",
+  logo: "/image/로고.png",
   keywords: [
     "부산 법무사",
     "해운대 법무사",
@@ -46,8 +46,8 @@ const MDX_SOURCES = [
     basePath: "/blog",
     feedLabel: "칼럼",
     imageCandidates: (slug) => [
-      `/image/blog/posts/${slug}.jpg`,
-      "/image/blog/default-thumb.jpg",
+      BLOG_POST_IMAGES[slug] ?? STOCK_IMAGES.documents,
+      STOCK_IMAGES.documents,
     ],
   },
   {
@@ -55,7 +55,7 @@ const MDX_SOURCES = [
     dir: "faq",
     basePath: "/faq",
     feedLabel: "FAQ",
-    imageCandidates: () => ["/image/faq/cover.jpg", "/image/blog/default-thumb.jpg"],
+    imageCandidates: () => [STOCK_IMAGES.courthouse, STOCK_IMAGES.documents],
   },
   {
     type: "cases",
@@ -63,16 +63,57 @@ const MDX_SOURCES = [
     basePath: "/services/cases",
     feedLabel: "업무사례",
     imageCandidates: (slug) => [
-      `/image/cases/items/${slug}.jpg`,
-      "/image/cases/default-thumb.jpg",
+      CASE_IMAGES[slug] ?? STOCK_IMAGES.office,
+      STOCK_IMAGES.office,
     ],
   },
 ];
 
+const STOCK_IMAGES = {
+  documents: "/image/썸네일-서류등기.jpg",
+  consultation: "/image/썸네일-상담협의.jpg",
+  contract: "/image/썸네일-계약임원.jpg",
+  office: "/image/썸네일-사무실.jpg",
+  courthouse: "/image/썸네일-법원절차.jpg",
+  majorBook: "/image/썸네일-전공책.jpg",
+  notaryBook: "/image/썸네일-법무사책.png",
+  civilLitigationBook: "/image/썸네일-민사소송책.png",
+  object: "/image/썸네일-오브제.jpg",
+  documentReview: "/image/썸네일-서류확인.jpg",
+  eastDistrictCourt: "/image/썸네일-동부지원.jpg",
+  registryOffice: "/image/썸네일-등기소.jpg",
+};
+
+const BLOG_POST_IMAGES = {
+  "busan-inheritance-registration-procedure-documents":
+    STOCK_IMAGES.registryOffice,
+  "inheritance-renunciation-vs-qualified-acceptance":
+    STOCK_IMAGES.civilLitigationBook,
+  "delaying-inheritance-registration-risks": STOCK_IMAGES.documents,
+  "real-estate-ownership-transfer-procedure": STOCK_IMAGES.object,
+  "director-change-registration-deadline-penalty": STOCK_IMAGES.notaryBook,
+  "company-establishment-registration-checklist": STOCK_IMAGES.majorBook,
+  "personal-rehabilitation-before-application": STOCK_IMAGES.eastDistrictCourt,
+  "bankruptcy-vs-personal-rehabilitation": STOCK_IMAGES.courthouse,
+  "busan-lawyer-consultation-documents": STOCK_IMAGES.documentReview,
+  "jeonse-right-vs-lease-registration-order": STOCK_IMAGES.registryOffice,
+};
+
+const CASE_IMAGES = {
+  "gijang-land-inheritance-case": STOCK_IMAGES.documents,
+  "haeundae-inheritance-registration-case": STOCK_IMAGES.consultation,
+  "busan-personal-rehabilitation-consultation": STOCK_IMAGES.contract,
+  "jaesong-inheritance-renunciation-consultation": STOCK_IMAGES.contract,
+  "centum-ownership-transfer-case": STOCK_IMAGES.office,
+  "suyeong-company-establishment-case": STOCK_IMAGES.office,
+  "dongnae-qualified-acceptance-consultation": STOCK_IMAGES.courthouse,
+  "yeonje-director-change-case": STOCK_IMAGES.courthouse,
+};
+
 const PRESS_IMAGE_BY_KEY = {
-  busanIlbo260608: "/image/press/부산일보260608.jpg",
-  kukjeSinmun260603: "/image/press/국제신문260603.jpg",
-  beopryulSinmun260602: "/image/press/법률신문260602.png",
+  busanIlbo260608: "/image/언론-부산일보-260608.jpg",
+  kukjeSinmun260603: "/image/언론-국제신문-260603.jpg",
+  beopryulSinmun260602: "/image/언론-법률신문-260602.png",
 };
 
 function escapeXml(value) {
@@ -298,7 +339,7 @@ function loadNaverBlogItems() {
           feedLabel: "네이버 블로그",
           categories: ["네이버 블로그", post.category].filter(Boolean),
           bodyExcerpt: post.description || "",
-          imageUrl: resolveImageUrl(["/image/blog/default-thumb.jpg"]),
+          imageUrl: resolveImageUrl([STOCK_IMAGES.documents]),
         };
       })
       .filter(Boolean);

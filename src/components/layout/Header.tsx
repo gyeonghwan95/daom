@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { NavMenuLink } from "@/components/layout/NavMenuLink";
 import { mainNavigation } from "@/lib/navigation";
+import { siteFavicon } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 
 function MobileMenu({
@@ -114,7 +115,7 @@ export function Header() {
             onClick={closeMenu}
           >
             <Image
-              src="/image/logo.png"
+              src={siteFavicon}
               alt={siteConfig.name}
               width={44}
               height={44}

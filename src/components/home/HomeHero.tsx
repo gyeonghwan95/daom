@@ -152,14 +152,14 @@ export function HomeHero() {
           </motion.div>
 
           <motion.div
-            className="relative flex min-h-[12.5rem] sm:min-h-[14rem] lg:col-span-5 lg:min-h-0 lg:h-full"
+            className="relative flex min-h-[16rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-0 lg:h-full"
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...heroTransition, delay: 0.25 }}
           >
             <HeroImageMarquee
               slides={siteImages.home.heroSlides}
-              className="h-full w-full max-h-[15rem] sm:max-h-[17.5rem] lg:max-h-none"
+              className="h-full w-full max-h-[19rem] sm:max-h-[22rem] lg:max-h-none"
             />
           </motion.div>
         </motion.div>

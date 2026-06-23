@@ -1,4 +1,4 @@
-import { siteImages, type SiteImageAsset } from "@/lib/site-images";
+import { imagePaths, siteImages, type SiteImageAsset } from "@/lib/site-images";
 
 export type ActivityHighlight = {
   title: string;
@@ -37,24 +37,55 @@ export const lawyerExternalActivitiesIntro = {
     "기업·공공기관과의 협력, 정책 자문, 지역사회 법률 지원 등 법률 전문가로서 지역과 함께하고 있습니다.",
 } as const;
 
-function mockActivityImage(
-  index: number,
+function activityImage(
+  src: string,
   alt: string,
+  width = 800,
+  height = 600,
 ): SiteImageAsset {
-  const slot =
-    siteImages.home.activities[index % siteImages.home.activities.length] ??
-    siteImages.home.activities[0];
-  return { ...slot, alt };
+  return { src, alt, width, height };
 }
 
-export const lawyerExternalActivities: ExternalActivityItem[] = [
+/** period 문자열에서 정렬용 시작일(YYYY-MM-DD) 추출 */
+export function parseActivitySortKey(period: string): string {
+  const head = period.replace(/\s*~\s*.*$/, "").trim();
+  const dotted = head.match(/^(\d{4})\.(\d{1,2})(?:\.(\d{1,2}))?/);
+  if (dotted) {
+    const year = dotted[1];
+    const month = dotted[2].padStart(2, "0");
+    const day = (dotted[3] ?? "1").padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+  const yearOnly = head.match(/^(\d{4})$/);
+  if (yearOnly) {
+    return `${yearOnly[1]}-01-01`;
+  }
+  return "1970-01-01";
+}
+
+function sortExternalActivitiesByNewest(
+  items: ExternalActivityItem[],
+): ExternalActivityItem[] {
+  return [...items].sort((a, b) => {
+    const byDate = parseActivitySortKey(b.period).localeCompare(
+      parseActivitySortKey(a.period),
+    );
+    if (byDate !== 0) return byDate;
+    return a.title.localeCompare(b.title, "ko");
+  });
+}
+
+const externalActivityEntries: ExternalActivityItem[] = [
   {
     id: "mou",
     category: "기업 협력",
     title: "명례일반산업단지 MOU",
     subtitle: "83개 기업 법률지원 협약 체결·자문",
     period: "2024",
-    image: mockActivityImage(0, "기업 MOU 법률지원"),
+    image: activityImage(
+      imagePaths.activityMou,
+      "명례일반산업단지 MOU 법률지원 협약",
+    ),
   },
   {
     id: "lh",
@@ -62,7 +93,10 @@ export const lawyerExternalActivities: ExternalActivityItem[] = [
     title: "LH · 부산창경 협업",
     subtitle: "청년·시민 법률 지원 프로그램",
     period: "2025",
-    image: mockActivityImage(1, "공공기관 협업"),
+    image: activityImage(
+      imagePaths.activityLhCollab,
+      "LH 부산창조경제혁신센터 협업",
+    ),
   },
   {
     id: "youth-space",
@@ -70,7 +104,10 @@ export const lawyerExternalActivities: ExternalActivityItem[] = [
     title: "해운대 청년채움공간",
     subtitle: "청년 JOB성장카페 법률 상담·강의",
     period: "2025",
-    image: mockActivityImage(2, "청년 법률 지원"),
+    image: activityImage(
+      imagePaths.activityYouthSpace,
+      "해운대 청년채움공간 법률 강의",
+    ),
   },
   {
     id: "intl",
@@ -78,7 +115,10 @@ export const lawyerExternalActivities: ExternalActivityItem[] = [
     title: "나가사키 사법서사회",
     subtitle: "부산법무사회 자매결연 행사 사회·통역",
     period: "2025",
-    image: mockActivityImage(6, "국제 법무 교류"),
+    image: activityImage(
+      imagePaths.activityNagasaki,
+      "나가사키 사법서사회 국제 교류",
+    ),
   },
   {
     id: "award",
@@ -107,7 +147,7 @@ export const lawyerExternalActivities: ExternalActivityItem[] = [
   {
     id: "haewoondae-policy",
     category: "정책 자문",
-    title: "해운대구정 정책자문위원회",
+    title: "해운대구정책자문위원회",
     subtitle: "자문위원 활동",
     period: "2025.10 ~ 2027.10",
     image: siteImages.about.policy.haewoondaePolicy,
@@ -129,6 +169,9 @@ export const lawyerExternalActivities: ExternalActivityItem[] = [
     image: siteImages.about.policy.citizenJury,
   },
 ];
+
+export const lawyerExternalActivities =
+  sortExternalActivitiesByNewest(externalActivityEntries);
 
 function externalActivitiesToRoles(): ActivityRole[] {
   return lawyerExternalActivities.map((item) => ({
