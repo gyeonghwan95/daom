@@ -130,14 +130,34 @@ function assertNapConsistency() {
 
 function assertLocalLandingPages() {
   const configFile = path.join(ROOT, "src/lib/local-landing/config.ts");
-  const config = fs.readFileSync(configFile, "utf8");
-  const slugCount = (config.match(/slug:\s*"/g) ?? []).length;
+  const expansionFile = path.join(
+    ROOT,
+    "src/lib/local-landing/expansion/config-expansion.ts",
+  );
+  const hubFile = path.join(ROOT, "src/lib/topic-hubs/config.ts");
 
-  if (slugCount < 50) {
-    fail(`local landing pages: expected at least 50, found ${slugCount}`);
+  const config = fs.readFileSync(configFile, "utf8");
+  const expansion = fs.existsSync(expansionFile)
+    ? fs.readFileSync(expansionFile, "utf8")
+    : "";
+  const hubs = fs.existsSync(hubFile) ? fs.readFileSync(hubFile, "utf8") : "";
+
+  const slugCount =
+    (config.match(/slug:\s*"/g) ?? []).length +
+    (expansion.match(/slug:\s*"/g) ?? []).length;
+  const hubCount = (hubs.match(/slug:\s*"/g) ?? []).length;
+
+  if (slugCount < 105) {
+    fail(`local landing pages: expected at least 105, found ${slugCount}`);
   }
 
-  console.log(`[validate-seo] local landing pages OK (${slugCount} configured)`);
+  if (hubCount < 10) {
+    fail(`topic hub pages: expected at least 10, found ${hubCount}`);
+  }
+
+  console.log(
+    `[validate-seo] local landing pages OK (${slugCount} configured, ${hubCount} topic hubs)`,
+  );
 }
 
 assertRss();

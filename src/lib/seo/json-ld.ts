@@ -290,6 +290,29 @@ export function buildServicePageSchema(serviceName: string, path: string): Schem
   });
 }
 
+export function buildLandingPageArticleSchema(
+  title: string,
+  description: string,
+  path: string,
+): SchemaObject {
+  return compact({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: getCanonicalUrl(path),
+    image: [getAbsoluteAssetUrl(siteImages.seo.defaultOg.src)],
+    inLanguage: "ko-KR",
+    author: { "@id": schemaIds.person },
+    publisher: { "@id": schemaIds.organization },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": getCanonicalUrl(path),
+    },
+    about: { "@id": schemaIds.legalService },
+  });
+}
+
 type PressArticleInput = {
   slug: string;
   source: string;

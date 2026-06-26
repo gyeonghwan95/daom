@@ -1,6 +1,7 @@
 import type { LocalLandingConfig } from "@/types/local-landing";
+import { expansionLandingConfigs } from "./expansion/config-expansion";
 
-export const localLandingConfigs: LocalLandingConfig[] = [
+const baseLandingConfigs: LocalLandingConfig[] = [
   { slug: "부산상속등기", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "센텀", "재송동", "수영구", "연제구"], caseAngle: "형제 상속인 간 분쟁 없이 해운대 아파트 상속등기 완료", relatedCaseSlug: "haeundae-inheritance-registration-case" },
   { slug: "부산상속포기", serviceSlug: "inheritance-renunciation", regionKey: "busan", regionLabel: "부산", neighborhoods: ["동래구", "북구", "사상구"], caseAngle: "채무가 재산보다 많아 상속포기 신고 진행", relatedCaseSlug: "jaesong-inheritance-renunciation-consultation" },
   { slug: "부산한정승인", serviceSlug: "qualified-acceptance", regionKey: "busan", regionLabel: "부산", neighborhoods: ["연제구", "금정구"], caseAngle: "모르는 채무가 있어 한정승인으로 상속 범위 제한", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
@@ -52,6 +53,11 @@ export const localLandingConfigs: LocalLandingConfig[] = [
   { slug: "연제구한정승인", serviceSlug: "qualified-acceptance", regionKey: "yeonje", regionLabel: "연제구", neighborhoods: ["연산동"], caseAngle: "연제구 상속 부동산은 유지하고 채무만 한정", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
   { slug: "수영구상속포기", serviceSlug: "inheritance-renunciation", regionKey: "suyeong", regionLabel: "수영구", neighborhoods: ["광안동", "민락동"], caseAngle: "수영구 거주 상속인의 상속포기 가정법원 신고", relatedCaseSlug: "jaesong-inheritance-renunciation-consultation" },
   { slug: "동래구부동산등기", serviceSlug: "real-estate-registration", regionKey: "dongnae", regionLabel: "동래구", neighborhoods: ["온천동", "사직동"], caseAngle: "동래구 재건축 전 아파트 매매 등기", relatedCaseSlug: "centum-ownership-transfer-case" },
+];
+
+export const localLandingConfigs: LocalLandingConfig[] = [
+  ...baseLandingConfigs,
+  ...expansionLandingConfigs,
 ];
 
 export function getAllLocalLandingSlugs(): string[] {

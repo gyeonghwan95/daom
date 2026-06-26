@@ -4,7 +4,7 @@ import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CaseCard } from "@/components/cards/CaseCard";
 import { ServiceDetailContent } from "@/components/services/ServiceDetailContent";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
-import { getAllServiceLinks, serviceHubLinks } from "@/lib/seo/internal-links";
+import { getAllServiceLinks, getAllTopicHubLinks, serviceHubLinks } from "@/lib/seo/internal-links";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllContent } from "@/lib/content/loader";
 import { createPageMetadata } from "@/lib/metadata";
@@ -91,6 +91,20 @@ export function ServicesIndexTemplate() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section
+          id="topic-hubs"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">업무별 종합 안내</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            상속·법인등기·부동산등기·개인회생·민사소송·임대차·창업 등 업무별로
+            관련 절차·서류·비용·지역 안내를 모았습니다.
+          </p>
+          <div className="mt-4">
+            <RelatedLinks title="토픽 허브" links={getAllTopicHubLinks()} />
+          </div>
         </section>
 
         <div className="space-y-8">

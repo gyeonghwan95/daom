@@ -50,20 +50,22 @@ export function PageContentSection({
 
       <header>
         {introSideImage ? (
-          <div className="grid gap-6 lg:grid-cols-[2fr_1fr] lg:items-stretch lg:gap-8 xl:gap-10">
-            <div className="max-w-sm lg:max-w-none">
+          <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,18rem)] lg:items-start lg:gap-8 xl:grid-cols-[1fr_minmax(0,20rem)]">
+            <div>
               <h1 className="page-title">{h1}</h1>
               <p className="body-text mt-4 text-[0.9375rem] leading-relaxed md:mt-5 md:text-base">
                 {intro}
               </p>
             </div>
-            <div className="flex min-h-0 items-stretch self-stretch lg:pt-1">
-              <SiteImage
-                {...introSideImage}
-                className="h-full w-full overflow-hidden rounded-xl border border-beige-dark bg-beige/40 shadow-sm sm:rounded-2xl [&_img]:h-full [&_img]:max-h-full [&_img]:object-contain"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                priority
-              />
+            <div className="w-full max-w-xs justify-self-center sm:max-w-sm lg:max-w-none lg:justify-self-end">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-beige-dark bg-beige/30 shadow-sm sm:rounded-2xl">
+                <SiteImage
+                  {...introSideImage}
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 40vw, 20rem"
+                  priority
+                />
+              </div>
             </div>
           </div>
         ) : (

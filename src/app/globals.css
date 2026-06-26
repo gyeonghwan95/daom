@@ -280,6 +280,143 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply relative aspect-square w-[7.5rem];
   }
 
+  /* 플로팅 상담 CTA — 패널 내 영업 상태 */
+  .floating-cta__panel-status {
+    @apply flex items-start gap-2 border-b border-beige-dark px-3.5 py-3;
+  }
+
+  .floating-cta__panel-status--live {
+    @apply bg-emerald-50 text-emerald-950;
+  }
+
+  .floating-cta__panel-status--away {
+    @apply bg-orange-50 text-navy;
+  }
+
+  .floating-cta__panel-label {
+    @apply block text-sm font-semibold leading-tight;
+  }
+
+  .floating-cta__panel-hint {
+    @apply mt-0.5 block text-xs leading-snug;
+  }
+
+  .floating-cta__panel-status--live .floating-cta__panel-hint {
+    @apply text-emerald-900/75;
+  }
+
+  .floating-cta__panel-status--away .floating-cta__panel-hint {
+    @apply text-navy/70;
+  }
+
+  .floating-cta__dot {
+    @apply mt-[0.35rem] h-2 w-2 shrink-0 rounded-full;
+  }
+
+  .floating-cta__dot--live {
+    @apply bg-[#03c75a];
+  }
+
+  .floating-cta__dot--away {
+    @apply bg-orange-500;
+  }
+
+  .floating-cta__dot--pulse {
+    box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
+    animation: floating-cta-pulse-live 1.8s ease-out infinite;
+  }
+
+  .floating-cta__dot--away-pulse {
+    box-shadow: 0 0 0 0 rgb(249 115 22 / 0.55);
+    animation: floating-cta-pulse-away 1.8s ease-out infinite;
+  }
+
+  @keyframes floating-cta-pulse-live {
+    0% {
+      box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
+    }
+
+    70% {
+      box-shadow: 0 0 0 7px rgb(3 199 90 / 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgb(3 199 90 / 0);
+    }
+  }
+
+  @keyframes floating-cta-pulse-away {
+    0% {
+      box-shadow: 0 0 0 0 rgb(249 115 22 / 0.55);
+    }
+
+    70% {
+      box-shadow: 0 0 0 7px rgb(249 115 22 / 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgb(249 115 22 / 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-cta__dot--pulse {
+      animation: none;
+      box-shadow: 0 0 0 2px rgb(3 199 90 / 0.3);
+    }
+
+    .floating-cta__dot--away-pulse {
+      animation: none;
+      box-shadow: 0 0 0 2px rgb(249 115 22 / 0.35);
+    }
+  }
+
+  .floating-cta__trigger-label {
+    @apply relative inline-block;
+  }
+
+  .floating-cta__badge {
+    @apply absolute -right-2 -top-1.5 h-2 w-2 rounded-full;
+    animation: floating-cta-badge-blink 1.5s ease-in-out infinite;
+  }
+
+  .floating-cta__badge--live {
+    @apply bg-[#03c75a];
+    box-shadow: 0 0 6px rgb(3 199 90 / 0.65);
+  }
+
+  .floating-cta__badge--away {
+    @apply bg-orange-500;
+    box-shadow: 0 0 6px rgb(249 115 22 / 0.55);
+  }
+
+  .floating-cta__badge--static {
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @keyframes floating-cta-badge-blink {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-cta__badge:not(.floating-cta__badge--static) {
+      animation: none;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   /* 목록 카드 — 1열(모바일) ~ 4열(데스크톱) */
   .listing-card-grid {
     @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;

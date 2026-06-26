@@ -13,6 +13,7 @@ import {
   getNaverBlogPostByPostId,
 } from "@/lib/naver-blog/urls.server";
 import { getAllLocalLandingSlugs } from "@/lib/local-landing";
+import { getAllTopicHubSlugs } from "@/lib/topic-hubs";
 import { getAllSitePaths } from "@/lib/seo/routes";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site";
@@ -80,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       getPressArticleSlugs(),
       getAllLocalLandingSlugs(),
     ),
+    ...getAllTopicHubSlugs().map((slug) => `/${slug}`),
     ...naverBlogPaths,
   ];
 

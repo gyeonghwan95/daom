@@ -9,10 +9,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { LocalLandingInternalLinks } from "@/components/local-landing/LocalLandingInternalLinks";
 import { RelatedBlogPosts } from "@/components/local-landing/RelatedBlogPosts";
-import { buildFaqPageSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
-import { consultationCopy } from "@/lib/consultation";
+import { buildFaqPageSchema, buildLandingPageArticleSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
 import { getConversionConsultationChannels } from "@/lib/contact";
-import { getServiceImage } from "@/lib/site-images";
+import { getServiceImage, siteImages } from "@/lib/site-images";
 import type { LocalLandingPage } from "@/types/local-landing";
 
 type LocalLandingContentProps = {
@@ -39,6 +38,13 @@ function ContentBlock({
   );
 }
 
+function getCoverImage(page: LocalLandingPage) {
+  if (page.pageType === "court-registry") {
+    return siteImages.faq.cover;
+  }
+  return getServiceImage(page.serviceSlug);
+}
+
 export function LocalLandingContent({ page }: LocalLandingContentProps) {
   const conversionChannels = getConversionConsultationChannels();
   const breadcrumbs = [
@@ -53,11 +59,12 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
       <JsonLd
         data={[
           buildServicePageSchema(page.title, page.path),
+          buildLandingPageArticleSchema(page.title, page.description, page.path),
           buildFaqPageSchema(page.faqs),
         ]}
       />
 
-      <PageCoverBanner image={getServiceImage(page.serviceSlug)} />
+      <PageCoverBanner image={getCoverImage(page)} />
 
       <header>
         <p className="text-sm font-medium text-navy-light">
@@ -67,28 +74,68 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.problemStatement}</p>
       </header>
 
-      <ContentBlock id="consultation-case" title="실제 상담 사례">
-        <div className="card-surface bg-beige p-6 md:p-8">
-          <h3 className="text-lg font-semibold text-navy">{page.consultationCase.title}</h3>
-          <p className="mt-3 text-base leading-relaxed text-navy/80">
-            {page.consultationCase.summary}
-          </p>
-          {page.consultationCase.href ? (
-            <Link
-              href={page.consultationCase.href}
-              className="mt-4 inline-flex min-h-10 items-center text-sm font-semibold text-navy-light hover:underline"
-            >
-              관련 사례 자세히 보기 →
-            </Link>
-          ) : null}
-        </div>
-      </ContentBlock>
-
       <InlineConsultationCTA
         channels={conversionChannels}
         title={`${page.regionLabel} ${page.title} 지금 상담`}
-        description={`${page.regionLabel}에서 ${page.title.replace(page.regionLabel, "").trim()}가 필요하시면 전화·카카오톡·네이버 예약으로 편하게 문의해 주세요.`}
+        description={page.ctaDescription}
       />
+
+      <ContentBlock id="when-needed" title="어떤 경우 필요한 업무인가요?">
+        <ul className="space-y-3">
+          {page.whenNeeded.map((item) => (
+            <li
+              key={item}
+              className="card-surface px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ContentBlock>
+
+      <ContentBlock id="jurisdiction" title="관할 법원·등기소 안내">
+        <div className="card-surface bg-cream p-6 md:p-8">
+          <h3 className="text-lg font-semibold text-navy">{page.jurisdictionGuide.title}</h3>
+          {page.jurisdictionGuide.address ? (
+            <p className="mt-2 text-base text-navy/80">{page.jurisdictionGuide.address}</p>
+          ) : null}
+          {page.jurisdictionGuide.accessNote ? (
+            <p className="mt-2 text-sm text-navy/70">{page.jurisdictionGuide.accessNote}</p>
+          ) : null}
+          <p className="mt-4 text-base leading-relaxed text-navy/80">
+            {page.jurisdictionGuide.jurisdictionNote}
+          </p>
+          <ul className="mt-4 space-y-2">
+            {page.jurisdictionGuide.practicalNotes.map((note) => (
+              <li key={note} className="flex gap-2 text-sm text-navy/70">
+                <span aria-hidden="true">·</span>
+                {note}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ContentBlock>
+
+      <ContentBlock id="consultation-cases" title="실제 상담 사례">
+        <div className="space-y-4">
+          {page.consultationCases.map((caseItem) => (
+            <div key={caseItem.title} className="card-surface bg-beige p-6 md:p-8">
+              <h3 className="text-lg font-semibold text-navy">{caseItem.title}</h3>
+              <p className="mt-3 text-base leading-relaxed text-navy/80">
+                {caseItem.summary}
+              </p>
+              {caseItem.href ? (
+                <Link
+                  href={caseItem.href}
+                  className="mt-4 inline-flex min-h-10 items-center text-sm font-semibold text-navy-light hover:underline"
+                >
+                  관련 사례 자세히 보기 →
+                </Link>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </ContentBlock>
 
       <ContentBlock id="legal-issues" title="법적 쟁점">
         <ul className="space-y-3">
@@ -154,6 +201,19 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         description="카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다."
       />
 
+      <ContentBlock id="precautions" title="주의사항">
+        <ul className="space-y-3">
+          {page.precautions.map((item) => (
+            <li
+              key={item}
+              className="rounded-lg border border-amber-200/80 bg-amber-50/60 px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ContentBlock>
+
       <ContentBlock id="local-faq" title="자주 묻는 질문">
         <FAQAccordion items={page.faqs} />
       </ContentBlock>
@@ -174,6 +234,16 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
 
       <RelatedBlogPosts posts={page.relatedBlogHrefs} />
 
+      <ContentBlock id="directions" title="오시는 길">
+        <p className="text-base leading-relaxed text-navy/80">{page.directionsNote}</p>
+        <Link
+          href="/location"
+          className="mt-4 inline-flex min-h-10 items-center rounded-lg bg-navy px-5 py-2 text-sm font-semibold text-white hover:bg-navy/90"
+        >
+          오시는 길 자세히 보기
+        </Link>
+      </ContentBlock>
+
       <div
         id="consultation"
         className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
@@ -181,7 +251,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         <CTASection
           channels={conversionChannels}
           title={`${page.regionLabel} ${page.title} 상담 신청`}
-          description={consultationCopy.default}
+          description={page.ctaDescription}
         />
       </div>
 
@@ -190,6 +260,9 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         regionKey={page.regionKey}
         serviceSlug={page.serviceSlug}
         regionLabel={page.regionLabel}
+        pageType={page.pageType}
+        relatedServiceLinks={page.relatedServiceLinks}
+        relatedRegionLinks={page.relatedRegionLinks}
       />
     </article>
   );

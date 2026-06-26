@@ -1,9 +1,17 @@
+import { extraDistrictProfiles } from "@/lib/local-landing/expansion/districts-extra";
+
 export type DistrictProfile = {
   key: string;
   label: string;
   type: "city" | "district";
   neighborhoods: string[];
   context: string;
+  registryOffice?: string;
+  registryAddress?: string;
+  courtNote?: string;
+  demandNotes?: string[];
+  caseAngles?: string[];
+  directionsFromOffice?: string;
 };
 
 export const districtProfiles: Record<string, DistrictProfile> = {
@@ -104,7 +112,23 @@ export const districtProfiles: Record<string, DistrictProfile> = {
     neighborhoods: ["센텀시티", "재송동", "우동"],
     context:
       "센텀은 해운대구 핵심 업무지구로 법인 사옥·스타트업·고급 오피스가 밀집해 법인설립·임원변경·부동산 등기 수요가 집중되는 지역입니다.",
+    registryOffice: "남부산등기소·동부지원 등기과",
+    registryAddress: "부산광역시 남구 수영로 312 등",
+    courtNote: "민사·형사 일부는 부산지방법원 동부지원, 회생·파산은 부산회생법원 관할",
+    demandNotes: [
+      "센텀 법인 사옥 본점 이전·임원변경",
+      "재송·우동 아파트 상속·매매 등기",
+      "스타트업 설립 후 정관·등기 정리",
+    ],
+    caseAngles: [
+      "센텀 IT 법인 대표이사 변경 등기",
+      "재송 아파트 형제 공동상속 등기",
+      "센텀 오피스 매매 소유권이전등기",
+    ],
+    directionsFromOffice:
+      "다옴법무사사무소는 센텀시티역·벡스코 인근에 있어 센텀·재송 의뢰인은 지하철·버스로 방문하기 편합니다.",
   },
+  ...extraDistrictProfiles,
 };
 
 export const serviceLabels: Record<string, string> = {

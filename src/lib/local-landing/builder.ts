@@ -1,10 +1,13 @@
 import { getAllContent } from "@/lib/content/loader";
+import { consultationCopy } from "@/lib/consultation";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
+import { officeLocation } from "@/lib/office-location";
 import { getServiceBySlug } from "@/lib/services-data";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import type { ServiceFaq } from "@/types/service";
 import { getLocalLandingConfig, localLandingConfigs } from "./config";
 import { districtProfiles, serviceLabels } from "./districts";
+import { buildExpansionLandingPage } from "./expansion/builder-expansion";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -242,11 +245,24 @@ export function buildLocalLandingPage(
 
   const consultationCase = {
     title: `${config.regionLabel} ${serviceLabel} 상담 사례`,
-    summary: `최근 ${config.regionLabel}에서 상담한 사례입니다. ${config.caseAngle}. 의뢰인 상황에 맞춰 필요 서류·예상 기간·비용을 단계별로 안내하고 진행했습니다.`,
+    summary: `최근 ${config.regionLabel}에서 상담한 사례입니다. ${config.caseAngle ?? `${serviceLabel} 진행`}. 의뢰인 상황에 맞춰 필요 서류·예상 기간·비용을 단계별로 안내하고 진행했습니다.`,
     href: config.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug}`
       : undefined,
   };
+
+  const consultationCases = [
+    consultationCase,
+    {
+      title: `${config.regionLabel} 서류 준비 상담`,
+      summary: `등기부·가족관계증명서를 미리 검토해 누락 서류를 줄이고 접수 일정을 맞춘 사례입니다.`,
+    },
+    {
+      title: `${config.regionLabel} 원격 진행 사례`,
+      summary: `카카오톡 상담 후 방문 없이 서류를 받아 진행한 사례입니다.`,
+      href: consultationCase.href,
+    },
+  ];
 
   const legalIssues = (legalIssuesByService[config.serviceSlug] ?? []).map(
     (issue) => `${config.regionLabel} 사건에서도 ${issue}`,
@@ -270,9 +286,31 @@ export function buildLocalLandingPage(
 
   const description = `${config.regionLabel} ${serviceLabel} 전문 — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
 
+  const jurisdictionGuide = {
+    title: district.registryOffice ?? "부산 관할 등기소",
+    address: district.registryAddress ?? "부동산·법인 소재지 기준 관할 등기소 확인 필요",
+    accessNote: district.courtNote,
+    jurisdictionNote:
+      district.courtNote ??
+      "부동산 소재지·법인 본점 주소에 따라 남부산·북부산·중부산·부산진 등기소 관할이 달라집니다.",
+    practicalNotes: (legalIssuesByService[config.serviceSlug] ?? []).slice(0, 3),
+  };
+
+  const whenNeeded = [
+    `${config.regionLabel}에서 ${serviceLabel}가 필요한 경우`,
+    `상속·매매·법인 변경 일정이 겹쳐 순서를 정리해야 할 때`,
+    `관할 등기소·법원을 확인하고 싶을 때`,
+    `기한(3개월·등기 기한)이 임박했을 때`,
+  ];
+
+  const directionsNote =
+    district.directionsFromOffice ??
+    `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. ${config.regionLabel}에서 센텀시티역·벡스코 인근으로 방문하실 수 있으며, 네이버 예약 후 상담해 주세요.`;
+
   return {
     slug: config.slug,
     path,
+    pageType: config.pageType ?? "service-region",
     serviceSlug: config.serviceSlug,
     title,
     h1: `${config.regionLabel} ${serviceLabel} 법무사 상담`,
@@ -281,8 +319,16 @@ export function buildLocalLandingPage(
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
     problemStatement,
+    whenNeeded,
+    jurisdictionGuide,
     consultationCase,
+    consultationCases,
     legalIssues,
+    precautions: [
+      "관할 등기소·법원을 사전에 확인하지 않으면 접수가 지연될 수 있습니다.",
+      "상속·임원변경 등은 법정 기한이 있으니 서류 준비를 서두르는 것이 좋습니다.",
+      "인터넷 정보만으로 서류를 준비하면 보정명령이 발생할 수 있습니다.",
+    ],
     procedures: service.procedures.map(
       (step, i) =>
         i === 0
@@ -297,18 +343,30 @@ export function buildLocalLandingPage(
       serviceLabel,
       config.neighborhoods,
     ),
+    directionsNote,
+    ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
+    relatedServiceLinks: [],
+    relatedRegionLinks: [],
   };
+}
+
+function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage | null {
+  const pageType = config.pageType ?? "service-region";
+  if (pageType !== "service-region") {
+    return buildExpansionLandingPage(config);
+  }
+  return buildLocalLandingPage(config);
 }
 
 export function getLocalLandingBySlug(slug: string): LocalLandingPage | null {
   const config = getLocalLandingConfig(slug);
   if (!config) return null;
-  return buildLocalLandingPage(config);
+  return resolveLocalLandingPage(config);
 }
 
 export function getAllLocalLandingPages(): LocalLandingPage[] {
   return localLandingConfigs
-    .map((c) => buildLocalLandingPage(c))
+    .map((c) => resolveLocalLandingPage(c))
     .filter((p): p is LocalLandingPage => p !== null);
 }

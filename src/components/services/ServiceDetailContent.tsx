@@ -7,8 +7,10 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { ServiceInternalLinks } from "@/components/services/ServiceInternalLinks";
+import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { buildFaqPageSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
 import { consultationCopy } from "@/lib/consultation";
+import { getTopicHubLinkForService } from "@/lib/seo/internal-links";
 import { getServiceImage } from "@/lib/site-images";
 import type { ServiceDetail } from "@/types/service";
 
@@ -38,6 +40,7 @@ function ContentBlock({
 
 export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
   const path = `/services/${service.slug}`;
+  const hubLink = getTopicHubLinkForService(service.slug);
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -69,6 +72,10 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         <h1 className="page-title">{service.title}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{service.intro}</p>
       </header>
+
+      {hubLink ? (
+        <RelatedLinks title="업무 종합 허브" links={[hubLink]} />
+      ) : null}
 
       <ContentBlock id="when-needed" title="어떤 경우에 필요한가요">
         <p className="text-base leading-relaxed text-navy/80 md:text-lg">
