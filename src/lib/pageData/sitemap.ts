@@ -116,6 +116,7 @@ export function getSitemapPriority(page: PageData): number {
   if (
     CORE_HUB_SLUGS.has(page.slug) ||
     page.category === "pillar" ||
+    page.category === "diagnosis" ||
     page.path === "/services"
   ) {
     return 0.9;

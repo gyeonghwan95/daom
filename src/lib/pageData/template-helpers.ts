@@ -144,6 +144,8 @@ export type CreatePageDataInput = {
   sections?: PageSection[];
   primaryKeywords: string[];
   ogImage?: string;
+  ctaTitle?: string;
+  ctaText?: string;
   includeFaqSchema?: boolean;
   openGraphType?: "website" | "article";
   serviceSlug?: string;
@@ -222,8 +224,8 @@ export function createPageData(input: CreatePageDataInput): PageData {
     primaryKeywords: input.primaryKeywords,
     internalLinks,
     relatedLinks: [...internalLinks, ...getStandardContactLinks()],
-    ctaTitle: STANDARD_CTA_TITLE,
-    ctaText: STANDARD_CTA_TEXT,
+    ctaTitle: input.ctaTitle ?? STANDARD_CTA_TITLE,
+    ctaText: input.ctaText ?? STANDARD_CTA_TEXT,
     ogImage: input.ogImage,
     includeFaqSchema: input.includeFaqSchema ?? input.category === "faq",
     openGraphType: input.openGraphType,

@@ -362,6 +362,139 @@ body.mobile-menu-open .mobile-bottom-cta {
     }
   }
 
+  /* 자가진단 위저드 */
+  .diagnosis-wizard__progress-track {
+    @apply h-1.5 overflow-hidden rounded-full bg-white/80 shadow-inner;
+  }
+
+  .diagnosis-wizard__progress-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-navy to-navy-light transition-all duration-500 ease-out;
+  }
+
+  .diagnosis-wizard__step-dot {
+    @apply h-1.5 flex-1 rounded-full bg-navy/10 transition-colors duration-300;
+  }
+
+  .diagnosis-wizard__step-dot--done {
+    @apply bg-navy/35;
+  }
+
+  .diagnosis-wizard__step-dot--active {
+    @apply bg-navy;
+  }
+
+  .diagnosis-option {
+    @apply flex min-h-[3.25rem] w-full cursor-pointer items-center gap-3.5 rounded-xl border border-beige-dark/90 bg-white px-4 py-3.5 text-left transition-[border-color,background-color,box-shadow,transform] duration-200 ease-out hover:border-navy/20 hover:bg-beige/25 active:scale-[0.995];
+  }
+
+  .diagnosis-option--selected {
+    @apply border-navy/30 bg-gradient-to-r from-beige/60 to-cream shadow-[inset_0_0_0_1px_rgba(26,39,68,0.08)] ring-2 ring-navy/10;
+  }
+
+  .diagnosis-option__marker {
+    @apply flex h-5 w-5 shrink-0 items-center justify-center border border-navy/25 text-[0.65rem] font-bold text-white transition-colors duration-200;
+  }
+
+  .diagnosis-option__marker--radio {
+    @apply rounded-full;
+  }
+
+  .diagnosis-option__marker--check {
+    @apply rounded-md;
+  }
+
+  .diagnosis-option__marker--on {
+    @apply border-navy bg-navy;
+  }
+
+  .diagnosis-option__label {
+    @apply text-base leading-snug text-navy/90;
+  }
+
+  .diagnosis-wizard__input {
+    @apply w-full min-h-12 rounded-xl border border-beige-dark bg-white px-4 py-3 text-base text-navy shadow-sm transition-[border-color,box-shadow] duration-200 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15;
+  }
+
+  .diagnosis-wizard__input--textarea {
+    @apply min-h-[7rem] resize-y;
+  }
+
+  .diagnosis-wizard__btn {
+    @apply inline-flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-xl px-5 text-sm font-semibold transition-[border-color,background-color,box-shadow,transform] duration-200 ease-out active:scale-[0.995] sm:flex-none;
+  }
+
+  .diagnosis-wizard__btn--primary {
+    @apply bg-navy text-white hover:bg-navy-dark;
+  }
+
+  .diagnosis-wizard__btn--secondary {
+    @apply border border-navy/15 bg-white text-navy hover:border-navy/25 hover:bg-beige/40;
+  }
+
+  .diagnosis-result__risk {
+    @apply rounded-2xl border-2 bg-gradient-to-br from-white to-cream p-5 sm:p-6;
+  }
+
+  .diagnosis-result__risk-symbol {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-current bg-white text-lg font-bold text-navy shadow-sm;
+  }
+
+  .diagnosis-result__hero {
+    @apply rounded-2xl border border-navy/8 bg-beige/25 px-5 py-6 sm:px-6;
+  }
+
+  .diagnosis-result__caution {
+    @apply rounded-2xl border border-amber-300/80 bg-gradient-to-br from-amber-50 to-amber-50/40 px-5 py-4;
+  }
+
+  .diagnosis-result__section-title {
+    @apply text-sm font-semibold tracking-wide text-navy;
+  }
+
+  .diagnosis-result__list-item {
+    @apply rounded-xl border border-beige-dark bg-cream/80 px-4 py-3.5 text-sm leading-relaxed text-navy/80;
+  }
+
+  .diagnosis-result__list-item--light {
+    @apply bg-white;
+  }
+
+  .diagnosis-result__doc-list {
+    @apply space-y-2 rounded-xl border border-beige-dark bg-white px-5 py-4 text-sm leading-relaxed text-navy/75;
+  }
+
+  .diagnosis-result__doc-list li {
+    @apply relative pl-4 before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-navy/35;
+  }
+
+  .diagnosis-result__step {
+    @apply flex gap-3 rounded-xl border border-beige-dark bg-cream/60 px-4 py-3.5 text-sm leading-relaxed text-navy/80;
+  }
+
+  .diagnosis-result__step-num {
+    @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-semibold text-white;
+  }
+
+  .diagnosis-result__cta-message {
+    @apply rounded-2xl border border-navy/10 bg-gradient-to-r from-beige/50 to-cream px-5 py-4 text-sm leading-relaxed text-navy/75;
+  }
+
+  .diagnosis-sticky-cta__btn {
+    @apply flex min-h-11 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-xl px-3 text-sm font-semibold transition-[background-color,transform,opacity] duration-200 ease-out active:scale-[0.995];
+  }
+
+  .diagnosis-sticky-cta__btn--phone {
+    @apply bg-navy text-white;
+  }
+
+  .diagnosis-sticky-cta__btn--kakao {
+    @apply bg-[#FEE500] text-[#191919];
+  }
+
+  .diagnosis-sticky-cta__btn--contact {
+    @apply border border-navy/15 bg-white text-navy;
+  }
+
   /* 플로팅 상담 CTA — 패널 내 영업 상태 */
   .floating-cta__panel-status {
     @apply flex items-start gap-2 border-b border-beige-dark px-3.5 py-3;

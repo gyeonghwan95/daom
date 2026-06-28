@@ -9,6 +9,7 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { getConversionConsultationChannels } from "@/lib/contact";
+import { getTopicHubDiagnosisLinks } from "@/data/diagnosis-hub-meta";
 import {
   buildFaqPageSchema,
   buildLandingPageArticleSchema,
@@ -98,6 +99,15 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
       </header>
 
       <TopicHubQuickLinks page={page} />
+
+      {getTopicHubDiagnosisLinks(page.slug).length > 0 ? (
+        <ContentBlock id="diagnosis" title="관련 자가진단">
+          <p className="mb-4 text-base leading-relaxed text-navy/80">
+            상담 전 현재 상황을 간단히 점검해 보세요. 절차·서류·기한 방향을 안내받을 수 있습니다.
+          </p>
+          <RelatedLinks title="자가진단 바로가기" links={getTopicHubDiagnosisLinks(page.slug)} />
+        </ContentBlock>
+      ) : null}
 
       <InlineConsultationCTA
         channels={channels}

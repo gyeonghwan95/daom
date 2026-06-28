@@ -19,7 +19,8 @@
     "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
     "check:routes": "node scripts/check-routes.mjs",
     "check:seo": "node scripts/check-seo.mjs",
-    "verify": "npm run build && npm run check:routes && npm run check:seo",
+    "check:diagnosis": "node scripts/check-diagnosis-pages.mjs",
+    "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },
   "dependencies": {

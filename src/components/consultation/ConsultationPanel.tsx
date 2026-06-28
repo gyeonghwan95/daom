@@ -13,6 +13,7 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { trackCTA, type CTAType } from "@/lib/analytics/track-cta";
 
 const qrChannelIds = new Set<ConsultationQrChannelId>(["kakao", "naver"]);
 
@@ -25,7 +26,32 @@ type ConsultationPanelProps = {
   theme?: "dark" | "light";
   showLabels?: "full" | "short";
   className?: string;
+  pageSlug?: string;
 };
+
+function channelCtaType(id: ConsultationChannelId): CTAType | undefined {
+  switch (id) {
+    case "phone":
+      return "phone";
+    case "kakao":
+      return "kakao";
+    case "naver":
+    case "reservation":
+      return "naver-talk";
+    case "location":
+      return "location";
+    case "inquiry":
+      return "contact";
+    default:
+      return undefined;
+  }
+}
+
+function trackChannelClick(id: ConsultationChannelId, pageSlug?: string) {
+  if (!pageSlug) return;
+  const type = channelCtaType(id);
+  if (type) trackCTA(type, pageSlug);
+}
 
 function ChannelIcon({ id }: { id: ConsultationChannelId }) {
   const className = "h-5 w-5 shrink-0";
@@ -51,10 +77,12 @@ function SimpleChannelButton({
   channel,
   label,
   theme,
+  pageSlug,
 }: {
   channel: ConsultationChannel;
   label: string;
   theme: "dark" | "light";
+  pageSlug?: string;
 }) {
   const isDark = theme === "dark";
   const base =
@@ -91,6 +119,14 @@ function SimpleChannelButton({
     </>
   );
 
+  const ctaType = channelCtaType(channel.id);
+  const trackingProps = pageSlug && ctaType
+    ? {
+        "data-cta": ctaType,
+        onClick: () => trackChannelClick(channel.id, pageSlug),
+      }
+    : {};
+
   if (channel.external) {
     return (
       <a
@@ -98,6 +134,7 @@ function SimpleChannelButton({
         target="_blank"
         rel="noopener noreferrer"
         className={className}
+        {...trackingProps}
       >
         {content}
       </a>
@@ -106,14 +143,14 @@ function SimpleChannelButton({
 
   if (channel.href.startsWith("/")) {
     return (
-      <Link href={channel.href} className={className}>
+      <Link href={channel.href} className={className} {...trackingProps}>
         {content}
       </Link>
     );
   }
 
   return (
-    <a href={channel.href} className={className}>
+    <a href={channel.href} className={className} {...trackingProps}>
       {content}
     </a>
   );
@@ -122,9 +159,11 @@ function SimpleChannelButton({
 function ConsultationPhoneStrip({
   channel,
   theme,
+  pageSlug,
 }: {
   channel: ConsultationChannel;
   theme: "dark" | "light";
+  pageSlug?: string;
 }) {
   const { phone } = getContactInfo();
   const isDark = theme === "dark";
@@ -137,6 +176,8 @@ function ConsultationPhoneStrip({
           ? "consultation-panel__phone consultation-panel__phone--on-dark"
           : "consultation-panel__phone"
       }
+      data-cta={pageSlug ? "phone" : undefined}
+      onClick={pageSlug ? () => trackCTA("phone", pageSlug) : undefined}
     >
       <span className="consultation-panel__phone-icon" aria-hidden>
         <PhoneIcon className="h-6 w-6" />
@@ -157,6 +198,7 @@ export function ConsultationPanel({
   theme = "light",
   showLabels = "full",
   className = "",
+  pageSlug,
 }: ConsultationPanelProps) {
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
@@ -172,7 +214,11 @@ export function ConsultationPanel({
   return (
     <div className={`consultation-panel ${className}`.trim()}>
       {phoneChannel ? (
-        <ConsultationPhoneStrip channel={phoneChannel} theme={theme} />
+        <ConsultationPhoneStrip
+          channel={phoneChannel}
+          theme={theme}
+          pageSlug={pageSlug}
+        />
       ) : null}
 
       {chatChannels.length > 0 ? (
@@ -185,6 +231,7 @@ export function ConsultationPanel({
               channel={channel}
               channelId={channel.id as ConsultationQrChannelId}
               label={labelFor(channel)}
+              pageSlug={pageSlug}
             />
           ))}
         </div>
@@ -202,6 +249,7 @@ export function ConsultationPanel({
               channel={channel}
               label={labelFor(channel)}
               theme={theme}
+              pageSlug={pageSlug}
             />
           ))}
         </div>

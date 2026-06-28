@@ -30,7 +30,10 @@ export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
           title={homeServicesIntro.title}
           description={homeServicesIntro.description}
           action={
-            <HomeSectionActionLink href="/services" label="전체 업무 보기" />
+            <div className="flex flex-wrap items-center gap-3">
+              <HomeSectionActionLink href="/자가진단" label="자가진단 시작" />
+              <HomeSectionActionLink href="/services" label="전체 업무 보기" />
+            </div>
           }
         />
 

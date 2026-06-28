@@ -108,6 +108,45 @@ function readSeoLandingPaths() {
   return (data.paths ?? []).map((routePath) => normalizeRouteSlug(routePath));
 }
 
+function readDiagnosisSlugs() {
+  const slugs = new Set();
+  const dataDir = path.join(ROOT, "src/data");
+  const mainFile = path.join(dataDir, "diagnosis.ts");
+  const pagesDir = path.join(dataDir, "diagnosis-pages");
+
+  if (fs.existsSync(mainFile)) {
+    const text = fs.readFileSync(mainFile, "utf8");
+    if (text.includes('slug: "자가진단"')) {
+      slugs.add(normalizeRouteSlug("자가진단"));
+    }
+  }
+
+  if (fs.existsSync(pagesDir)) {
+    for (const file of fs.readdirSync(pagesDir)) {
+      if (!file.endsWith(".ts")) continue;
+      const text = fs.readFileSync(path.join(pagesDir, file), "utf8");
+
+      for (const match of text.matchAll(/slug:\s*"([^"]+자가진단)"/g)) {
+        slugs.add(normalizeRouteSlug(match[1]));
+      }
+
+      for (const match of text.matchAll(
+        /simplifiedDiagnosis\(\s*[^,]+,\s*"([^"]+자가진단)"/g,
+      )) {
+        slugs.add(normalizeRouteSlug(match[1]));
+      }
+
+      for (const match of text.matchAll(
+        /baseRealEstate\(\s*[^,]+,\s*"([^"]+자가진단)"/g,
+      )) {
+        slugs.add(normalizeRouteSlug(match[1]));
+      }
+    }
+  }
+
+  return [...slugs];
+}
+
 /** 색인·검증용 전체 공개 경로 (site-routes.ts와 동일 구성) */
 export function getAllPublishedPaths() {
   const blogSlugs = readSlugsFromDir("src/content/blog");
@@ -115,11 +154,13 @@ export function getAllPublishedPaths() {
   const faqSlugs = readSlugsFromDir("src/content/faq");
   const landingSlugs = readLandingSlugs();
   const topicHubSlugs = readTopicHubSlugs();
+  const diagnosisSlugs = readDiagnosisSlugs();
   const seoLandingPaths = readSeoLandingPaths();
   const naverBlogPaths = readNaverBlogExternalPaths();
 
   return [
     ...staticRoutes,
+    ...diagnosisSlugs.map((slug) => `/${slug}`),
     ...landingSlugs.map((slug) => `/${slug}`),
     ...topicHubSlugs.map((slug) => `/${slug}`),
     ...seoLandingPaths,

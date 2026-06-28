@@ -3,6 +3,7 @@ import { PageContentSection } from "@/components/page/PageContentSection";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CaseCard } from "@/components/cards/CaseCard";
 import { ServiceDetailContent } from "@/components/services/ServiceDetailContent";
+import { getFeaturedDiagnosisLinks } from "@/lib/diagnosis/result-links";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { getAllServiceLinks, getAllTopicHubLinks, getMainLandingHubLinks, serviceHubLinks } from "@/lib/seo/internal-links";
 import { SERVICE_HUB_SECTIONS } from "@/lib/hub/home-sections";
@@ -43,7 +44,8 @@ export function ServicesIndexTemplate() {
         ]}
         currentPath="/services"
         relatedLinks={[
-          ...getMainLandingHubLinks().slice(0, 8),
+          ...getFeaturedDiagnosisLinks(),
+          ...getMainLandingHubLinks().slice(0, 6),
           { href: "/about", label: "법무사 소개" },
           { href: "/location", label: "오시는 길" },
           { href: "/faq", label: "자주 묻는 질문" },
@@ -112,6 +114,20 @@ export function ServicesIndexTemplate() {
                 links={section.links}
               />
             ))}
+          </div>
+        </section>
+
+        <section
+          id="diagnosis"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">업무별 자가진단</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            상속·법인·부동산·회생·전세 등 업무별로 현재 상황을 점검할 수 있습니다.
+            질문에 답하면 절차·서류·비용·기한 방향을 안내받을 수 있습니다.
+          </p>
+          <div className="mt-4">
+            <RelatedLinks title="자가진단" links={getFeaturedDiagnosisLinks()} />
           </div>
         </section>
 

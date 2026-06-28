@@ -1,3 +1,5 @@
+import { getRawDiagnosisBySlug } from "@/data/diagnosis-registry";
+import { buildPageDataFromDiagnosis } from "@/lib/diagnosis/builder";
 import { getLocalLandingBySlug } from "@/lib/local-landing";
 import { getSeoLandingPageDataBySlug } from "@/lib/seo-landing";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
@@ -8,6 +10,11 @@ export function resolveKoreanLandingPageData(
   slug: string,
 ): ReturnType<typeof getPageDataByPath> {
   const normalized = normalizeRouteSlug(slug);
+
+  const diagnosis = getRawDiagnosisBySlug(normalized);
+  if (diagnosis) {
+    return buildPageDataFromDiagnosis(diagnosis);
+  }
 
   const hub = getTopicHubBySlug(normalized);
   if (hub) {

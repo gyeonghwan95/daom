@@ -16,6 +16,7 @@ type ConsultationButtonsProps = {
   showLabels?: "full" | "short";
   showQrCodes?: boolean;
   className?: string;
+  pageSlug?: string;
 };
 
 function getButtonClass(
@@ -134,6 +135,7 @@ export function ConsultationButtons({
   showLabels = "full",
   showQrCodes,
   className = "",
+  pageSlug,
 }: ConsultationButtonsProps) {
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
@@ -153,6 +155,7 @@ export function ConsultationButtons({
         theme={theme}
         showLabels={showLabels}
         className={className}
+        pageSlug={pageSlug}
       />
     );
   }

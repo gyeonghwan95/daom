@@ -14,6 +14,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "부산 법무사 주요 업무",
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
     links: [
+      { href: "/자가진단", label: "업무별 자가진단" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부산상속포기", label: "부산 상속포기" },
       { href: "/부산한정승인", label: "부산 한정승인" },

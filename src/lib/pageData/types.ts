@@ -13,7 +13,8 @@ export type PageCategory =
   | "case"
   | "faq"
   | "media"
-  | "external";
+  | "external"
+  | "diagnosis";
 
 export type PageRelatedLink = {
   href: string;

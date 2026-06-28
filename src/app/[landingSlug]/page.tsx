@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import {
+  DiagnosisHubView,
+  DiagnosisPageView,
+} from "@/components/diagnosis/DiagnosisPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import {
+  diagnosisTopicPages,
+  getRawDiagnosisBySlug,
+} from "@/data/diagnosis-registry";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
@@ -28,8 +36,27 @@ export async function generateMetadata({
 
 export default async function LocalLandingPage({ params }: PageProps) {
   const { landingSlug } = await params;
-  const page = resolveKoreanLandingPageData(normalizeRouteSlug(landingSlug));
+  const slug = normalizeRouteSlug(landingSlug);
+  const page = resolveKoreanLandingPageData(slug);
   if (!page) notFound();
+
+  const diagnosis = getRawDiagnosisBySlug(slug);
+
+  if (diagnosis?.isHub) {
+    return (
+      <PageContainer>
+        <DiagnosisHubView page={page} topics={diagnosisTopicPages} />
+      </PageContainer>
+    );
+  }
+
+  if (diagnosis) {
+    return (
+      <PageContainer>
+        <DiagnosisPageView page={page} diagnosis={diagnosis} />
+      </PageContainer>
+    );
+  }
 
   return (
     <PageContainer>

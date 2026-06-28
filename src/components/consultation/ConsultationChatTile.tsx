@@ -5,11 +5,13 @@ import {
   type ConsultationQrChannelId,
 } from "@/lib/contact";
 import { KakaoIcon, NaverIcon } from "@/components/consultation/ConsultationIcons";
+import { trackCTA } from "@/lib/analytics/track-cta";
 
 type ConsultationChatTileProps = {
   channel: ConsultationChannel;
   channelId: ConsultationQrChannelId;
   label: string;
+  pageSlug?: string;
 };
 
 const brand = {
@@ -31,10 +33,12 @@ export function ConsultationChatTile({
   channel,
   channelId,
   label,
+  pageSlug,
 }: ConsultationChatTileProps) {
   const qr = consultationQrCodes[channelId];
   const style = brand[channelId];
   const Icon = channelId === "kakao" ? KakaoIcon : NaverIcon;
+  const ctaType = channelId === "kakao" ? "kakao" : "naver-talk";
 
   return (
     <a
@@ -43,6 +47,8 @@ export function ConsultationChatTile({
       rel="noopener noreferrer"
       className="consultation-chat-tile group"
       aria-label={`${label} 상담`}
+      data-cta={pageSlug ? ctaType : undefined}
+      onClick={pageSlug ? () => trackCTA(ctaType, pageSlug) : undefined}
     >
       {/* 모바일: 가로형 탭 카드 */}
       <div className="consultation-chat-tile__mobile sm:hidden">

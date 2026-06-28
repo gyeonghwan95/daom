@@ -2,12 +2,14 @@
  * 사이트 전체 URL 중앙 PageData 레지스트리
  *
  * 카테고리: core, service, local, cost, court, businessDistrict,
- *           realEstate, pillar, blog, case, faq, media, external
+ *           realEstate, pillar, diagnosis, blog, case, faq, media, external
  *
  * 전체 path 목록: `npm run validate:page-data` 또는
  * `scripts/output/page-manifest.json` (prebuild 시 생성)
  */
+import { allDiagnosisPages } from "@/data/diagnosis-registry";
 import { getContentMeta, getContentSlugs } from "@/lib/content/loader";
+import { buildPageDataFromDiagnosis } from "@/lib/diagnosis/builder";
 import {
   getAllLocalLandingPages,
   getLocalLandingBySlug,
@@ -54,6 +56,10 @@ function buildAllPageData(): PageData[] {
 
   for (const key of coreKeys) {
     pages.push(buildCorePageData(key));
+  }
+
+  for (const diagnosis of allDiagnosisPages) {
+    pages.push(buildPageDataFromDiagnosis(diagnosis));
   }
 
   for (const page of getAllLocalLandingPages()) {

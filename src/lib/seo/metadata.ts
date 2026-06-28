@@ -48,7 +48,10 @@ export function getCanonicalUrl(path: string): string {
   if (normalized === "/") {
     return siteConfig.url;
   }
-  return `${siteConfig.url}${normalized}`;
+
+  const segments = normalized.split("/").filter(Boolean);
+  const encoded = segments.map((segment) => encodeURIComponent(segment)).join("/");
+  return `${siteConfig.url}/${encoded}`;
 }
 
 export function getAbsoluteImageUrl(path: string): string {
