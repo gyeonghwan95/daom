@@ -1,4 +1,5 @@
 import type { TopicHubConfig } from "./types";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 export const topicHubConfigs: TopicHubConfig[] = [
   {
@@ -484,7 +485,8 @@ export const topicHubConfigs: TopicHubConfig[] = [
 ];
 
 export function getTopicHubConfig(slug: string) {
-  return topicHubConfigs.find((c) => c.slug === slug);
+  const key = normalizeRouteSlug(slug);
+  return topicHubConfigs.find((c) => normalizeRouteSlug(c.slug) === key);
 }
 
 export function getAllTopicHubSlugs(): string[] {

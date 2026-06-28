@@ -49,8 +49,8 @@ export function CaseCard({
   );
 
   const cardClass = image
-    ? "card-surface group block overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg hover:shadow-navy/5"
-    : "card-surface block p-5 transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:bg-beige/50 hover:shadow-lg hover:shadow-navy/5 md:p-6";
+    ? "interactive-surface card-surface group block overflow-hidden p-0 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy/5"
+    : "interactive-surface card-surface block p-5 hover:bg-beige/50 hover:shadow-lg hover:shadow-navy/5 md:p-6";
 
   if (href) {
     return (

@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "node scripts/sync-favicon.mjs && next dev",
-    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs",
+    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-blog.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && node scripts/generate-seo-pages.mjs",
     "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
     "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "node scripts/build-static.mjs",
@@ -15,6 +15,11 @@
     "build:static": "npm run build",
     "start": "next start",
     "lint": "eslint",
+    "validate:page-data": "node scripts/validate-page-data.mjs",
+    "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
+    "check:routes": "node scripts/check-routes.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "verify": "npm run build && npm run check:routes && npm run check:seo",
     "preview": "npx --yes serve@14 out -p 3000"
   },
   "dependencies": {

@@ -4,7 +4,8 @@ import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CaseCard } from "@/components/cards/CaseCard";
 import { ServiceDetailContent } from "@/components/services/ServiceDetailContent";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
-import { getAllServiceLinks, getAllTopicHubLinks, serviceHubLinks } from "@/lib/seo/internal-links";
+import { getAllServiceLinks, getAllTopicHubLinks, getMainLandingHubLinks, serviceHubLinks } from "@/lib/seo/internal-links";
+import { SERVICE_HUB_SECTIONS } from "@/lib/hub/home-sections";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllContent } from "@/lib/content/loader";
 import { createPageMetadata } from "@/lib/metadata";
@@ -42,6 +43,7 @@ export function ServicesIndexTemplate() {
         ]}
         currentPath="/services"
         relatedLinks={[
+          ...getMainLandingHubLinks().slice(0, 8),
           { href: "/about", label: "법무사 소개" },
           { href: "/location", label: "오시는 길" },
           { href: "/faq", label: "자주 묻는 질문" },
@@ -91,6 +93,26 @@ export function ServicesIndexTemplate() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section
+          id="service-hubs"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">업무 허브</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            상속·부동산·법인·개인회생 등 업무별 허브 페이지에서 비용·서류·기간·지역 안내로
+            연결됩니다.
+          </p>
+          <div className="mt-6 space-y-8">
+            {SERVICE_HUB_SECTIONS.map((section) => (
+              <RelatedLinks
+                key={section.title}
+                title={section.title}
+                links={section.links}
+              />
+            ))}
+          </div>
         </section>
 
         <section

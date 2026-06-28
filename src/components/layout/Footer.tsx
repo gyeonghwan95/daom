@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="inline-flex min-h-10 items-center text-white/80 hover:text-white"
+                    className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -57,12 +57,12 @@ export function Footer() {
             </div>
             <ul className="mt-4 space-y-1 text-sm text-white/70">
               <li>
-                <Link href="/contact" className="inline-flex min-h-10 items-center hover:text-white">
+                <Link href="/contact" className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white">
                   상담 문의 페이지
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="inline-flex min-h-10 items-center hover:text-white">
+                <Link href="/faq" className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white">
                   자주 묻는 질문
                 </Link>
               </li>
@@ -71,7 +71,7 @@ export function Footer() {
                   href={naverBlog}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-10 items-center hover:text-white"
+                  className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
                 >
                   네이버 블로그
                 </a>

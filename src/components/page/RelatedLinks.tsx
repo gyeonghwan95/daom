@@ -15,7 +15,7 @@ export function RelatedLinks({
   links,
 }: RelatedLinksProps) {
   const linkClassName =
-    "card-surface flex min-h-12 items-center px-4 py-3 text-base text-navy/80 transition-colors hover:border-navy/20 hover:bg-beige/50 md:px-5 md:py-4";
+    "interactive-surface card-surface flex min-h-12 items-center px-4 py-3 text-base text-navy/80 hover:bg-beige/50 md:px-5 md:py-4";
 
   return (
     <section

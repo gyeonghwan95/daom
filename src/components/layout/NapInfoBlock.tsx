@@ -21,8 +21,8 @@ export function NapInfoBlock({
     ? "mt-1 font-medium text-white/90"
     : "mt-1 text-navy/80";
   const linkClass = isFooter
-    ? "font-medium text-white/90 hover:text-white"
-    : "font-medium text-navy-light underline-offset-2 hover:underline";
+    ? "font-medium text-white/90 transition-colors duration-200 hover:text-white"
+    : "font-medium text-navy-light underline-offset-2 transition-colors duration-200 hover:text-navy hover:underline";
 
   return (
     <dl

@@ -1,6 +1,7 @@
 import { serviceDetailsPart2 } from "@/lib/service-details-part2";
 import { serviceDetails } from "@/lib/service-details-part1";
 import type { ServiceDetail } from "@/types/service";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 export const allServiceDetails: ServiceDetail[] = [
   ...serviceDetails,
@@ -8,7 +9,8 @@ export const allServiceDetails: ServiceDetail[] = [
 ];
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
-  return allServiceDetails.find((s) => s.slug === slug);
+  const key = normalizeRouteSlug(slug);
+  return allServiceDetails.find((s) => normalizeRouteSlug(s.slug) === key);
 }
 
 export function getAllServiceSlugs(): string[] {

@@ -20,7 +20,7 @@ export function BlogCard({
   external = false,
 }: BlogCardProps) {
   const className =
-    "card-surface group block overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg hover:shadow-navy/5";
+    "interactive-surface card-surface group block overflow-hidden p-0 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy/5";
 
   const content = (
     <>

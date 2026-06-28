@@ -1,4 +1,5 @@
 import type { LocalLandingConfig } from "@/types/local-landing";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { expansionLandingConfigs } from "./expansion/config-expansion";
 
 const baseLandingConfigs: LocalLandingConfig[] = [
@@ -67,5 +68,8 @@ export function getAllLocalLandingSlugs(): string[] {
 export function getLocalLandingConfig(
   slug: string,
 ): LocalLandingConfig | undefined {
-  return localLandingConfigs.find((item) => item.slug === slug);
+  const key = normalizeRouteSlug(slug);
+  return localLandingConfigs.find(
+    (item) => normalizeRouteSlug(item.slug) === key,
+  );
 }

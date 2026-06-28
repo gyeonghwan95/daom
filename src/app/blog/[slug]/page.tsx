@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MdxArticleLayout } from "@/components/content/MdxArticleLayout";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getCompiledContent, getContentSlugs } from "@/lib/content/loader";
-import { createPageMetadata } from "@/lib/metadata";
-import { resolveContentSeoTitle } from "@/lib/seo/metadata";
+import { pageDataToMetadata } from "@/lib/pageData/metadata";
+import { resolveBlogPageData } from "@/lib/pageData/resolvers";
 import { buildArticleSchema } from "@/lib/seo/json-ld";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { getBlogPostImage } from "@/lib/site-images";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getContentSlugs("blog").map((slug) => ({ slug }));
@@ -18,34 +22,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getCompiledContent("blog", slug);
-  if (!post) return {};
-
-  const { meta } = post;
-  return createPageMetadata({
-    title: resolveContentSeoTitle(meta.title, meta.seoTitle),
-    description: meta.seoDescription ?? meta.description,
-    path: `/blog/${meta.slug}`,
-    keywords: [...meta.tags, meta.category, "부산 법무사"],
-    ogImage: getBlogPostImage(meta.slug).src,
-    openGraphType: "article",
-    publishedTime: meta.date,
-    authors: [meta.author],
-  });
+  const page = resolveBlogPageData(normalizeRouteSlug(slug));
+  if (!page) return {};
+  return pageDataToMetadata(page);
 }
 
 export default async function BlogDetailPage({ params }: Props) {
   const { slug } = await params;
-  const post = await getCompiledContent("blog", slug);
-  if (!post) notFound();
+  const normalized = normalizeRouteSlug(slug);
+  const page = resolveBlogPageData(normalized);
+  const post = await getCompiledContent("blog", normalized);
+  if (!page || !post) notFound();
 
   const { meta, content } = post;
-  const image = getBlogPostImage(meta.slug).src;
 
   return (
-    <MdxArticleLayout meta={meta} listLabel="포스팅" listHref="/blog">
-      <JsonLd data={buildArticleSchema(meta, image)} />
-      {content}
-    </MdxArticleLayout>
+    <PageContainer>
+      <JsonLd data={buildArticleSchema(meta, getBlogPostImage(meta.slug).src)} />
+      <PageDataTemplate page={page}>{content}</PageDataTemplate>
+    </PageContainer>
   );
 }

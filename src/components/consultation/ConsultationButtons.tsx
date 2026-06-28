@@ -23,7 +23,7 @@ function getButtonClass(
   theme: "dark" | "light",
 ): string {
   const base =
-    "inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition-colors";
+    "interactive-surface inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold";
 
   if (theme === "dark") {
     switch (id) {

@@ -1,9 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { mdxComponents } from "@/components/mdx/MDXComponents";
 import { CONTENT_BASE_PATH, CONTENT_DEFAULTS } from "@/lib/content/constants";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 import type { ContentMeta, ContentType } from "@/types/content-mdx";
 
 const CONTENT_ROOT = path.join(process.cwd(), "src/content");
@@ -44,13 +43,22 @@ function normalizeFrontmatter(
   };
 }
 
+function resolveContentSlug(type: ContentType, slug: string): string | null {
+  const key = normalizeRouteSlug(slug);
+  return (
+    getContentSlugs(type).find((item) => normalizeRouteSlug(item) === key) ??
+    null
+  );
+}
+
 function readMdxFile(type: ContentType, slug: string) {
-  const filePath = path.join(getContentDir(type), `${slug}.mdx`);
+  const resolved = resolveContentSlug(type, slug) ?? slug;
+  const filePath = path.join(getContentDir(type), `${resolved}.mdx`);
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
   return {
-    meta: normalizeFrontmatter(data as Record<string, unknown>, type, slug),
+    meta: normalizeFrontmatter(data as Record<string, unknown>, type, resolved),
     body: content,
   };
 }
@@ -83,6 +91,11 @@ export async function getCompiledContent(
 ) {
   const file = readMdxFile(type, slug);
   if (!file) return null;
+
+  const [{ compileMDX }, { mdxComponents }] = await Promise.all([
+    import("next-mdx-remote/rsc"),
+    import("@/components/mdx/MDXComponents"),
+  ]);
 
   const { content } = await compileMDX({
     source: file.body,

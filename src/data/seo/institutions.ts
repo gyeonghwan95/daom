@@ -1,0 +1,148 @@
+import { seoEntity } from "./helpers";
+import type { SeoIntentEntity } from "./types";
+
+/**
+ * 법원·등기소 키워드 DB
+ */
+export const seoInstitutions: SeoIntentEntity[] = [
+  seoEntity({
+    id: "inst-busan-district-court",
+    name: "부산지방법원",
+    slug: "inst-busan-district-court",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산지방법원", "부산지방법원 법무사", "센텀 법원"],
+    description:
+      "부산·울산·경남 일부 민사·형사 1심 관할 법원입니다. 지급명령·가압류 등 민사 절차와 연계됩니다.",
+    relatedServices: ["payment-order", "inheritance-registration", "debt-collection"],
+    relatedRegions: ["busan", "haeundae-gu", "centum"],
+    searchIntent: "institution-proximity",
+    priority: 82,
+  }),
+  seoEntity({
+    id: "inst-busan-registry-office",
+    name: "부산지방법원 등기국",
+    slug: "inst-busan-registry-office",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산지방법원 등기국", "연제 등기국", "부산 등기국"],
+    description:
+      "부산 연제구 법원로에 위치한 중앙 등기 접수 기관입니다. 관할에 따라 지원·지역 등기소로 분산됩니다.",
+    relatedServices: ["real-estate-registration", "corporate-registration", "inheritance-registration"],
+    relatedRegions: ["busan", "yeonje-gu"],
+    searchIntent: "institution-proximity",
+    priority: 84,
+  }),
+  seoEntity({
+    id: "inst-busan-east-branch-court",
+    name: "부산지방법원 동부지원",
+    slug: "inst-busan-east-branch-court",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산지방법원 동부지원", "동부지원 법무사", "해운대 법원"],
+    description:
+      "해운대·수영·기장 등 동부 지역 관련 일부 민사·형사 사건을 관할합니다.",
+    relatedServices: ["payment-order", "debt-collection"],
+    relatedRegions: ["busan", "haeundae-gu", "centum"],
+    searchIntent: "institution-proximity",
+    priority: 80,
+  }),
+  seoEntity({
+    id: "inst-busan-east-registry",
+    name: "동부지원 등기과",
+    slug: "inst-busan-east-registry",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["동부지원 등기과", "부산 동부 등기", "센텀 등기소"],
+    description:
+      "부산지방법원 동부지원 내 등기 접수 창구입니다. 동부권 부동산·법인 등기가 접수됩니다.",
+    relatedServices: ["real-estate-registration", "corporate-registration"],
+    relatedRegions: ["busan", "haeundae-gu", "centum"],
+    searchIntent: "institution-proximity",
+    priority: 78,
+  }),
+  seoEntity({
+    id: "inst-busan-rehab-court",
+    name: "부산회생법원",
+    slug: "inst-busan-rehab-court",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산회생법원", "회생법원 법무사", "부산 개인회생 법원"],
+    description:
+      "부산·경남 일대 개인회생·개인파산·법인회생 사건을 관할하는 전문 법원입니다.",
+    relatedServices: ["personal-rehabilitation", "bankruptcy"],
+    relatedRegions: ["busan", "yeonje-gu"],
+    searchIntent: "institution-proximity",
+    priority: 86,
+  }),
+  seoEntity({
+    id: "inst-busan-family-court",
+    name: "부산가정법원",
+    slug: "inst-busan-family-court",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산가정법원", "가정법원 상속포기", "부산 가정법원 법무사"],
+    description:
+      "상속포기·한정승인·성년후견 등 가사 사건을 관할하는 법원입니다.",
+    relatedServices: ["inheritance-renunciation", "qualified-acceptance", "adult-guardianship"],
+    relatedRegions: ["busan", "yeonje-gu"],
+    searchIntent: "institution-proximity",
+    priority: 84,
+  }),
+  seoEntity({
+    id: "inst-nam-busan-registry",
+    name: "남부산등기소",
+    slug: "inst-nam-busan-registry",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["남부산등기소", "남구 등기소", "수영로 등기소"],
+    description:
+      "남구·수영·해운대 일부 부동산 관할 등기소입니다.",
+    relatedServices: ["real-estate-registration", "ownership-transfer"],
+    relatedRegions: ["busan", "nam-gu", "suyeong-gu", "haeundae-gu"],
+    searchIntent: "institution-proximity",
+    priority: 80,
+  }),
+  seoEntity({
+    id: "inst-buk-busan-registry",
+    name: "북부산등기소",
+    slug: "inst-buk-busan-registry",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["북부산등기소", "북구 등기소", "덕천 등기소"],
+    description:
+      "북구·금정·강서 일부 부동산 관할 등기소입니다.",
+    relatedServices: ["inheritance-registration", "real-estate-registration"],
+    relatedRegions: ["busan", "buk-gu", "geumjeong-gu", "gangseo-gu"],
+    searchIntent: "institution-proximity",
+    priority: 78,
+  }),
+  seoEntity({
+    id: "inst-jung-busan-registry",
+    name: "중부산등기소",
+    slug: "inst-jung-busan-registry",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["중부산등기소", "동래 등기소", "연제 등기"],
+    description:
+      "동래·연제·북구 일부 부동산·법인 등기 관할 등기소입니다.",
+    relatedServices: ["corporate-registration", "director-change", "real-estate-registration"],
+    relatedRegions: ["busan", "dongnae-gu", "yeonje-gu"],
+    searchIntent: "institution-proximity",
+    priority: 78,
+  }),
+  seoEntity({
+    id: "inst-busanjin-registry",
+    name: "부산진등기소",
+    slug: "inst-busanjin-registry",
+    type: "institution",
+    parentRegion: "busan",
+    keywords: ["부산진등기소", "서면 등기소", "부전동 등기"],
+    description:
+      "부산진구·서면 일대 상가·오피스·주택 등기가 집중 접수되는 등기소입니다.",
+    relatedServices: ["real-estate-registration", "ownership-transfer"],
+    relatedRegions: ["busan", "busanjin-gu", "seomyeon"],
+    searchIntent: "institution-proximity",
+    priority: 82,
+  }),
+];

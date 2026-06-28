@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MdxArticleLayout } from "@/components/content/MdxArticleLayout";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getCompiledContent, getContentSlugs } from "@/lib/content/loader";
-import { createPageMetadata } from "@/lib/metadata";
-import { resolveContentSeoTitle } from "@/lib/seo/metadata";
-import { buildSingleFaqSchema } from "@/lib/seo/json-ld";
 import { faqs } from "@/lib/faq-data";
+import { pageDataToMetadata } from "@/lib/pageData/metadata";
+import { resolveFaqPageData } from "@/lib/pageData/resolvers";
+import { buildSingleFaqSchema } from "@/lib/seo/json-ld";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getContentSlugs("faq").map((slug) => ({ slug }));
@@ -18,36 +22,34 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = await getCompiledContent("faq", slug);
-  if (!item) return {};
-
-  const { meta } = item;
-  return createPageMetadata({
-    title: resolveContentSeoTitle(meta.title, meta.seoTitle),
-    description: meta.seoDescription ?? meta.description,
-    path: meta.href,
-    keywords: [...meta.tags, meta.category, "부산 법무사", "FAQ"],
-    publishedTime: meta.date,
-    authors: [meta.author],
-  });
+  const page = resolveFaqPageData(normalizeRouteSlug(slug));
+  if (!page) return {};
+  return pageDataToMetadata(page);
 }
 
 export default async function FaqDetailPage({ params }: Props) {
   const { slug } = await params;
-  const item = await getCompiledContent("faq", slug);
-  if (!item) notFound();
+  const normalized = normalizeRouteSlug(slug);
+  const page = resolveFaqPageData(normalized);
+  const item = await getCompiledContent("faq", normalized);
+  if (!page || !item) notFound();
 
   const { meta, content } = item;
-  const faqEntry = faqs.find((f) => f.slug === slug);
+  const faqEntry = faqs.find((f) => f.slug === normalized);
 
   return (
-    <MdxArticleLayout meta={meta} listLabel="FAQ" listHref="/faq">
+    <PageContainer>
       <JsonLd
         data={buildSingleFaqSchema(
-          faqEntry ?? { question: meta.title, answer: meta.description, slug, href: meta.href },
+          faqEntry ?? {
+            question: meta.title,
+            answer: meta.description,
+            slug: normalized,
+            href: meta.href,
+          },
         )}
       />
-      {content}
-    </MdxArticleLayout>
+      <PageDataTemplate page={page}>{content}</PageDataTemplate>
+    </PageContainer>
   );
 }

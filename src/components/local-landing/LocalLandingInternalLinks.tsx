@@ -76,7 +76,7 @@ export function LocalLandingInternalLinks({
       <RelatedLinks title="사무소 안내" links={serviceHubLinks} />
       <p className="text-sm text-navy/60">
         전국 업무 안내는{" "}
-        <Link href={`/services/${serviceSlug}`} className="font-medium text-navy-light hover:underline">
+        <Link href={`/services/${serviceSlug}`} className="font-medium text-navy-light transition-colors duration-200 hover:text-navy hover:underline">
           {serviceLabels[serviceSlug] ?? serviceSlug} 업무 상세
         </Link>
         에서도 확인하실 수 있습니다.

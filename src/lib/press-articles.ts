@@ -1,5 +1,6 @@
 import type { SiteImageAsset } from "@/lib/site-images";
 import { siteImages } from "@/lib/site-images";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 export type PressArticle = {
   slug: string;
@@ -75,7 +76,8 @@ export function getAllPressArticles(): PressArticle[] {
 }
 
 export function getPressArticle(slug: string): PressArticle | undefined {
-  return pressArticles.find((article) => article.slug === slug);
+  const key = normalizeRouteSlug(slug);
+  return pressArticles.find((article) => normalizeRouteSlug(article.slug) === key);
 }
 
 export function getPressArticleSlugs(): string[] {

@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
-import { isAdminConfigured } from "@/lib/admin/config";
-import { getAdminSessionFromRequest } from "@/lib/admin/request";
+import {
+  getAdminSessionFromRequest,
+  isAdminAvailable,
+} from "@/lib/admin/request";
 import { fetchNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews/fetch";
 import { writeNaverPlaceReviewsToDisk } from "@/lib/naver-place-reviews/store";
 
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  if (!isAdminConfigured()) {
+  if (!isAdminAvailable(request)) {
     return NextResponse.json(
       { error: "관리자 기능이 설정되지 않았습니다." },
       { status: 503 },

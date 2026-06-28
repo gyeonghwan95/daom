@@ -55,7 +55,7 @@ export function ConsultationChatTile({
           <span className="block text-sm font-semibold text-navy">{label}</span>
           <span className="block text-xs text-navy/55">탭하여 바로 상담</span>
         </span>
-        <span className="text-navy/30" aria-hidden>
+        <span className="consultation-chat-tile__chevron" aria-hidden>
           →
         </span>
       </div>
@@ -72,7 +72,7 @@ export function ConsultationChatTile({
               src={qr.src}
               alt={qr.alt}
               fill
-              className="object-contain p-1.5"
+              className="pointer-events-none object-contain p-1.5"
               sizes="120px"
             />
           </div>

@@ -13,8 +13,13 @@ export function getAdminPassword(): string | null {
   return password && password.length >= 12 ? password : null;
 }
 
-export function isAdminConfigured(): boolean {
+export function isAdminEnvConfigured(): boolean {
   return Boolean(getAdminSessionSecret() && getAdminPassword());
+}
+
+/** @deprecated API 라우트에서는 isAdminAvailable(request) 사용 */
+export function isAdminConfigured(): boolean {
+  return isAdminEnvConfigured();
 }
 
 export function isStaticExportBuild(): boolean {

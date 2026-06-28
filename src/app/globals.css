@@ -89,10 +89,17 @@ body {
   }
 
   iframe,
-  img,
   video,
   canvas {
     cursor: default;
+  }
+
+  /* 링크·버튼 안 이미지(QR 등)는 부모의 pointer 커서를 따름 */
+  a[href] img,
+  button img,
+  label[for] img,
+  [role="button"] img {
+    cursor: inherit;
   }
 }
 
@@ -151,6 +158,19 @@ body.mobile-menu-open .mobile-bottom-cta {
   opacity: 0.9;
 }
 
+.mobile-bottom-cta__btn:hover {
+  filter: brightness(0.97);
+}
+
+.mobile-bottom-cta__btn--phone:hover {
+  background: var(--navy-dark);
+  filter: none;
+}
+
+.mobile-bottom-cta__btn--naver-map:hover {
+  background: #f5f0e8;
+}
+
 .mobile-bottom-cta__btn--phone {
   background: var(--navy);
   color: #fff;
@@ -203,6 +223,29 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 @layer components {
+  /* 클릭 가능 카드·타일 — 사이트 공통 호버 톤 */
+  .interactive-surface {
+    @apply cursor-pointer transition-[border-color,background-color,box-shadow,transform,opacity] duration-200 ease-out;
+  }
+
+  .interactive-surface:hover {
+    @apply border-navy/20;
+  }
+
+  .interactive-surface:active {
+    @apply scale-[0.995];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .interactive-surface:active {
+      transform: none;
+    }
+
+    .interactive-surface:hover {
+      transform: none;
+    }
+  }
+
   .btn-primary {
     @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg bg-navy px-6 text-base font-medium text-white;
   }
@@ -211,12 +254,20 @@ body.mobile-menu-open .mobile-bottom-cta {
     background-color: var(--navy-dark);
   }
 
+  .btn-primary:active {
+    transform: scale(0.99);
+  }
+
   .btn-secondary {
     @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg border-2 border-beige-muted bg-white px-6 text-base font-medium text-navy;
   }
 
   .btn-secondary:hover {
     @apply border-navy-light bg-beige;
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.99);
   }
 
   .card-surface {
@@ -229,7 +280,11 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   /* 상담 패널 — 전화 스트립 + 채팅 QR 타일 */
   .consultation-panel__phone {
-    @apply flex items-center gap-3 rounded-2xl bg-navy px-4 py-3.5 text-white shadow-sm transition-colors hover:bg-navy-dark;
+    @apply flex cursor-pointer items-center gap-3 rounded-2xl bg-navy px-4 py-3.5 text-white shadow-sm transition-[background-color,box-shadow,transform] duration-200 ease-out hover:bg-navy-dark hover:shadow-md;
+  }
+
+  .consultation-panel__phone:active {
+    @apply scale-[0.995] shadow-sm;
   }
 
   .consultation-panel__phone--on-dark {
@@ -253,11 +308,28 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .consultation-chat-tile {
-    @apply block overflow-hidden rounded-2xl border border-beige-dark bg-white shadow-sm transition-shadow hover:shadow-md;
+    @apply block cursor-pointer overflow-hidden rounded-2xl border border-beige-dark bg-white shadow-sm transition-[border-color,background-color,box-shadow,transform] duration-200 ease-out;
+  }
+
+  .consultation-chat-tile:hover {
+    @apply shadow-md;
+    transform: translateY(-2px);
+  }
+
+  .consultation-chat-tile:active {
+    transform: translateY(0);
+    @apply shadow-sm;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .consultation-chat-tile:hover,
+    .consultation-chat-tile:active {
+      transform: none;
+    }
   }
 
   .consultation-chat-tile__mobile {
-    @apply flex items-center gap-3 px-4 py-3.5;
+    @apply flex items-center gap-3 px-4 py-3.5 transition-colors duration-200 group-hover:bg-beige/30;
   }
 
   .consultation-chat-tile__icon-wrap {
@@ -273,11 +345,21 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .consultation-chat-tile__body {
-    @apply flex flex-col items-center px-4 pb-5 pt-2;
+    @apply flex flex-col items-center px-4 pb-5 pt-2 transition-colors duration-200 group-hover:bg-beige/20;
   }
 
   .consultation-chat-tile__qr {
-    @apply relative aspect-square w-[7.5rem];
+    @apply relative aspect-square w-[7.5rem] transition-transform duration-200 group-hover:scale-[1.02];
+  }
+
+  .consultation-chat-tile__chevron {
+    @apply text-navy/30 transition-[color,transform] duration-200 group-hover:translate-x-0.5 group-hover:text-navy/55;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .consultation-chat-tile__qr {
+      transform: none;
+    }
   }
 
   /* 플로팅 상담 CTA — 패널 내 영업 상태 */

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { LocationRegionHubLinks } from "@/components/location/LocationRegionHubLinks";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
+import { getMainLandingHubLinks } from "@/lib/seo/internal-links";
 import { getOfficeLocationWithAccess, officeLocation } from "@/lib/office-location";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { siteConfig } from "@/lib/site";
@@ -21,6 +23,7 @@ export default function LocationPage() {
         currentPath="/location"
         intro={`${siteConfig.name}는 ${getOfficeLocationWithAccess()}에 있습니다. ${officeLocation.visitNoticeDetail}`}
         relatedLinks={[
+          ...getMainLandingHubLinks().slice(0, 8),
           { href: "/contact", label: "상담 신청" },
           { href: "/office", label: "사무소 소개" },
           { href: "/services", label: "업무안내" },
@@ -29,6 +32,7 @@ export default function LocationPage() {
         consultationDescription="찾아오시기 어려우시면 전화·카카오톡·네이버 톡톡으로도 상담 가능합니다."
       >
         <LocationSection />
+        <LocationRegionHubLinks />
       </PageContentSection>
     </PageContainer>
   );

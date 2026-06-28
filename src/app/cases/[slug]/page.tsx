@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { StaticRedirect } from "@/components/seo/StaticRedirect";
 import { getContentSlugs } from "@/lib/content/loader";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 export const metadata: Metadata = {
+  title: "사례 상세 이동 | 다옴법무사사무소",
+  description: "다옴법무사사무소 사례 상세 페이지로 이동합니다.",
   robots: { index: false, follow: true },
 };
 
@@ -16,5 +20,14 @@ export function generateStaticParams() {
 
 export default async function LegacyCaseDetailPage({ params }: Props) {
   const { slug } = await params;
-  redirect(`/services/cases/${slug}`);
+  const normalized = normalizeRouteSlug(slug);
+
+  return (
+    <PageContainer>
+      <StaticRedirect
+        targetPath={`/services/cases/${normalized}`}
+        message="사례 상세 페이지로 이동합니다."
+      />
+    </PageContainer>
+  );
 }

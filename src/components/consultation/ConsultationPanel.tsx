@@ -58,7 +58,7 @@ function SimpleChannelButton({
 }) {
   const isDark = theme === "dark";
   const base =
-    "inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition-colors";
+    "interactive-surface inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold";
 
   const colorById: Partial<Record<ConsultationChannelId, string>> = isDark
     ? {
@@ -177,9 +177,7 @@ export function ConsultationPanel({
 
       {chatChannels.length > 0 ? (
         <div
-          className={`grid gap-3 ${phoneChannel ? "mt-3" : ""} ${
-            chatChannels.length > 1 ? "sm:grid-cols-2" : "sm:max-w-sm"
-          }`}
+          className={`grid gap-3 ${phoneChannel ? "mt-3" : ""} sm:grid-cols-2`}
         >
           {chatChannels.map((channel) => (
             <ConsultationChatTile
@@ -194,9 +192,9 @@ export function ConsultationPanel({
 
       {otherChannels.length > 0 ? (
         <div
-          className={`grid gap-2 sm:grid-cols-2 ${
+          className={`grid gap-2 ${
             phoneChannel || chatChannels.length > 0 ? "mt-3" : ""
-          }`}
+          } ${otherChannels.length === 1 ? "grid-cols-1" : "sm:grid-cols-2"}`}
         >
           {otherChannels.map((channel) => (
             <SimpleChannelButton

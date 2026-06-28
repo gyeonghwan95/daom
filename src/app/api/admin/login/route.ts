@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyAdminPassword } from "@/lib/admin/auth";
-import { isAdminConfigured } from "@/lib/admin/config";
+import { isAdminEnvConfigured } from "@/lib/admin/config";
+import { isLocalAdminRequest } from "@/lib/admin/local-dev";
 import {
   clearLoginAttempts,
   getClientIp,
@@ -16,7 +17,7 @@ import {
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  if (!isAdminConfigured()) {
+  if (!isAdminEnvConfigured() && !isLocalAdminRequest(request)) {
     return NextResponse.json(
       { error: "관리자 기능이 설정되지 않았습니다." },
       { status: 503 },

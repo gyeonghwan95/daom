@@ -6,6 +6,7 @@ type AdminSessionState = {
   loading: boolean;
   authenticated: boolean;
   configured: boolean;
+  localDev: boolean;
 };
 
 async function fetchAdminSession(): Promise<Omit<AdminSessionState, "loading">> {
@@ -16,20 +17,22 @@ async function fetchAdminSession(): Promise<Omit<AdminSessionState, "loading">> 
     });
 
     if (!response.ok) {
-      return { authenticated: false, configured: false };
+      return { authenticated: false, configured: false, localDev: false };
     }
 
     const data = (await response.json()) as {
       authenticated?: boolean;
       configured?: boolean;
+      localDev?: boolean;
     };
 
     return {
       authenticated: Boolean(data.authenticated),
       configured: Boolean(data.configured),
+      localDev: Boolean(data.localDev),
     };
   } catch {
-    return { authenticated: false, configured: false };
+    return { authenticated: false, configured: false, localDev: false };
   }
 }
 
@@ -38,6 +41,7 @@ export function useAdminSession() {
     loading: true,
     authenticated: false,
     configured: false,
+    localDev: false,
   });
 
   const refresh = useCallback(async () => {

@@ -47,7 +47,7 @@ export function HomeContactClosing() {
               {phone && (
                 <a
                   href={getPhoneHref(phone)}
-                  className="mt-6 inline-block break-all text-xl font-semibold tracking-tight text-white transition-opacity hover:text-white/90 sm:mt-8 sm:text-2xl md:text-3xl"
+                  className="mt-6 inline-block break-all text-xl font-semibold tracking-tight text-white transition-[opacity,color] duration-200 hover:text-white/90 sm:mt-8 sm:text-2xl md:text-3xl"
                 >
                   {phone}
                 </a>
@@ -65,13 +65,13 @@ export function HomeContactClosing() {
                 <span>{nap.tradeName}</span>
                 <span>{nap.address}</span>
                 <span>{nap.phone}</span>
-                <Link href="/about" className="text-white/70 hover:text-white">
+                <Link href="/about" className="text-white/70 transition-colors duration-200 hover:text-white">
                   법무사 소개 →
                 </Link>
-                <Link href="/contact" className="text-white/70 hover:text-white">
+                <Link href="/contact" className="text-white/70 transition-colors duration-200 hover:text-white">
                   상담 문의 →
                 </Link>
-                <Link href="/location" className="text-white/70 hover:text-white">
+                <Link href="/location" className="text-white/70 transition-colors duration-200 hover:text-white">
                   오시는 길 →
                 </Link>
               </div>

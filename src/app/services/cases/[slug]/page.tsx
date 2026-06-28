@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MdxArticleLayout } from "@/components/content/MdxArticleLayout";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getCompiledContent, getContentSlugs } from "@/lib/content/loader";
-import { createPageMetadata } from "@/lib/metadata";
-import { resolveContentSeoTitle } from "@/lib/seo/metadata";
+import { pageDataToMetadata } from "@/lib/pageData/metadata";
+import { resolveCasePageData } from "@/lib/pageData/resolvers";
 import { buildArticleSchema } from "@/lib/seo/json-ld";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { getCaseImage } from "@/lib/site-images";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getContentSlugs("cases").map((slug) => ({ slug }));
@@ -18,38 +22,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = await getCompiledContent("cases", slug);
-  if (!item) return {};
-
-  const { meta } = item;
-  return createPageMetadata({
-    title: resolveContentSeoTitle(meta.title, meta.seoTitle),
-    description: meta.seoDescription ?? meta.description,
-    path: `/services/cases/${meta.slug}`,
-    keywords: [...meta.tags, meta.category, "부산 법무사"],
-    ogImage: getCaseImage(meta.slug).src,
-    openGraphType: "article",
-    publishedTime: meta.date,
-    authors: [meta.author],
-  });
+  const page = resolveCasePageData(normalizeRouteSlug(slug));
+  if (!page) return {};
+  return pageDataToMetadata(page);
 }
 
 export default async function CaseDetailPage({ params }: Props) {
   const { slug } = await params;
-  const item = await getCompiledContent("cases", slug);
-  if (!item) notFound();
+  const normalized = normalizeRouteSlug(slug);
+  const page = resolveCasePageData(normalized);
+  const item = await getCompiledContent("cases", normalized);
+  if (!page || !item) notFound();
 
   const { meta, content } = item;
-  const image = getCaseImage(meta.slug).src;
 
   return (
-    <MdxArticleLayout
-      meta={meta}
-      listLabel="업무안내"
-      listHref="/services#cases"
-    >
-      <JsonLd data={buildArticleSchema(meta, image)} />
-      {content}
-    </MdxArticleLayout>
+    <PageContainer>
+      <JsonLd data={buildArticleSchema(meta, getCaseImage(meta.slug).src)} />
+      <PageDataTemplate page={page}>{content}</PageDataTemplate>
+    </PageContainer>
   );
 }

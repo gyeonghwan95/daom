@@ -18,7 +18,7 @@ export function ServiceCard({
   return (
     <Link
       href={href}
-      className="card-surface group flex min-h-[7rem] flex-col overflow-hidden p-0 transition-colors hover:border-navy/20 hover:shadow-md hover:shadow-navy/5"
+      className="interactive-surface card-surface group flex min-h-[7rem] flex-col overflow-hidden p-0 hover:shadow-md hover:shadow-navy/5"
     >
       {image && (
         <div className="relative aspect-[16/9] overflow-hidden border-b border-beige-dark">

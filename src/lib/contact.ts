@@ -145,9 +145,9 @@ export function getDirectConsultationChannels(): ConsultationChannel[] {
   );
 }
 
-/** 지역 랜딩 등 전환 페이지: 전화 · 카카오톡 · 네이버 예약 */
+/** 지역 랜딩 등 전환 페이지: 전화 · 카카오톡 · 네이버 톡톡 · 네이버 예약 */
 export function getConversionConsultationChannels(): ConsultationChannel[] {
-  const { phone, kakao } = getContactInfo();
+  const { phone, kakao, naverTalk } = getContactInfo();
   const reservation = getNaverReservationUrl();
 
   return [
@@ -166,6 +166,14 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
       href: kakao || "/contact",
       external: Boolean(kakao),
       configured: Boolean(kakao),
+    },
+    {
+      id: "naver",
+      label: "네이버 톡톡 상담",
+      shortLabel: "네이버 톡톡",
+      href: naverTalk || "/contact",
+      external: Boolean(naverTalk),
+      configured: Boolean(naverTalk),
     },
     {
       id: "reservation",

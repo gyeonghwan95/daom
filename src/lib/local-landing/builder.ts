@@ -3,6 +3,7 @@ import { consultationCopy } from "@/lib/consultation";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
 import { officeLocation } from "@/lib/office-location";
 import { getServiceBySlug } from "@/lib/services-data";
+import { normalizeRouteSlug } from "@/lib/seo/slug";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import type { ServiceFaq } from "@/types/service";
 import { getLocalLandingConfig, localLandingConfigs } from "./config";
@@ -235,7 +236,11 @@ export function buildLocalLandingPage(
   if (!service || !district) return null;
 
   const serviceLabel = serviceLabels[config.serviceSlug] ?? service.title;
-  const title = `${config.regionLabel} ${serviceLabel}`;
+  const defaultSlug = normalizeRouteSlug(`${config.regionLabel}${serviceLabel}`);
+  const title =
+    normalizeRouteSlug(config.slug) !== defaultSlug
+      ? config.slug
+      : `${config.regionLabel} ${serviceLabel}`;
   const path = `/${config.slug}`;
   const neighborhoodText = [...new Set([...config.neighborhoods, ...district.neighborhoods])]
     .slice(0, 6)
