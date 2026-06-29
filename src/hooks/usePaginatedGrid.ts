@@ -29,6 +29,8 @@ export function usePaginatedGrid(
 
   const [columns, setColumns] = useState(1);
   const [page, setPage] = useState(1);
+  const [prevColumns, setPrevColumns] = useState(columns);
+  const [prevItemCount, setPrevItemCount] = useState(itemCount);
 
   useEffect(() => {
     const updateColumns = () => {
@@ -44,26 +46,28 @@ export function usePaginatedGrid(
   const totalPages = Math.max(1, Math.ceil(itemCount / pageSize));
   const showPagination = itemCount > pageSize;
 
-  useEffect(() => {
-    setPage((current) => Math.min(current, totalPages));
-  }, [totalPages]);
-
-  useEffect(() => {
+  if (prevColumns !== columns) {
+    setPrevColumns(columns);
     setPage(1);
-  }, [columns]);
-
-  useEffect(() => {
+  }
+  if (prevItemCount !== itemCount) {
+    setPrevItemCount(itemCount);
     setPage(1);
-  }, [itemCount]);
+  }
+  if (page > totalPages) {
+    setPage(totalPages);
+  }
+
+  const visiblePage = Math.min(page, totalPages);
 
   const visibleItems = useMemo(() => {
-    const start = (page - 1) * pageSize;
+    const start = (visiblePage - 1) * pageSize;
     return { start, end: start + pageSize };
-  }, [page, pageSize]);
+  }, [visiblePage, pageSize]);
 
   return {
     columns,
-    page,
+    page: visiblePage,
     setPage,
     totalPages,
     pageSize,

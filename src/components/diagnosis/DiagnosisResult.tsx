@@ -1,17 +1,25 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { DiagnosisCTA } from "@/components/diagnosis/DiagnosisCTA";
-import { DiagnosisRelatedLinks } from "@/components/diagnosis/DiagnosisRelatedLinks";
-import { RISK_LEVEL_META } from "@/components/diagnosis/constants";
+import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
+import { DiagnosisResultRecommendations } from "@/components/diagnosis/DiagnosisResultRecommendations";
+import { DiagnosisResultSeo } from "@/components/diagnosis/DiagnosisResultSeo";
 import type { Diagnosis } from "@/data/diagnosis";
-import type { DiagnosisEvaluation } from "@/lib/diagnosis/evaluate";
-import { getDiagnosisResultLinks } from "@/lib/diagnosis/result-links";
+import type { DiagnosisAnswers, DiagnosisEvaluation } from "@/lib/diagnosis/evaluate";
+import {
+  buildSituationSummary,
+  getImmediateChecks,
+  getResultDocuments,
+  mapToDisplayRisk,
+} from "@/lib/diagnosis/result-enrichment";
+import type { DiagnosisRecommendationGroups } from "@/lib/diagnosis/result-recommendations";
 
 type DiagnosisResultProps = {
   diagnosis: Diagnosis;
   evaluation: DiagnosisEvaluation;
+  answers: DiagnosisAnswers;
   onReset: () => void;
+  recommendationGroups: DiagnosisRecommendationGroups;
 };
 
 function ResultSection({
@@ -33,13 +41,41 @@ function ResultSection({
   );
 }
 
+function Checklist({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex gap-3 rounded-xl border border-beige-dark bg-white px-4 py-3.5 text-sm leading-relaxed text-navy/80"
+        >
+          <span
+            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-navy/15 text-[0.6rem] font-bold text-navy/45"
+            aria-hidden
+          >
+            ✓
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function DiagnosisResult({
   diagnosis,
   evaluation,
+  answers,
   onReset,
+  recommendationGroups,
 }: DiagnosisResultProps) {
-  const risk = RISK_LEVEL_META[evaluation.outcome.riskLevel];
-  const warnings = [...evaluation.optionWarnings, ...evaluation.tagWarnings];
+  const risk = mapToDisplayRisk(
+    evaluation.outcome.riskLevel,
+    evaluation.urgentOverride,
+  );
+  const summary = buildSituationSummary(diagnosis, answers, evaluation);
+  const immediateChecks = getImmediateChecks(diagnosis, evaluation);
+  const documents = getResultDocuments(diagnosis, evaluation);
 
   return (
     <div
@@ -49,27 +85,42 @@ export function DiagnosisResult({
       aria-atomic="true"
       aria-labelledby="diagnosis-result-heading"
     >
-      <div className={`diagnosis-result__risk ${risk.borderClass}`}>
+      <DiagnosisResultSeo diagnosis={diagnosis} evaluation={evaluation} />
+
+      <ResultSection id="diagnosis-situation-summary" title="현재 상황 요약">
+        <div className="rounded-2xl border border-beige-dark bg-cream/50 px-5 py-4 sm:px-6">
+          <p className="text-sm leading-relaxed text-navy/80 sm:text-base">
+            {summary.narrative}
+          </p>
+          {summary.highlights.length > 0 ? (
+            <ul className="mt-4 space-y-2 border-t border-beige-dark/80 pt-4">
+              {summary.highlights.map((item) => (
+                <li key={item} className="text-sm text-navy/65">
+                  · {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </ResultSection>
+
+      <div className={`diagnosis-result__risk rounded-2xl border p-5 sm:p-6 ${risk.panelClass}`}>
         <div className="flex flex-wrap items-start gap-3">
-          <span className="diagnosis-result__risk-symbol" aria-hidden>
-            {risk.symbol}
+          <span
+            className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold ${risk.badgeClass}`}
+          >
+            위험도: {risk.label}
           </span>
-          <div className="min-w-0 flex-1">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy/50">
-              Risk Level
-            </p>
-            <p className="mt-1 text-base font-bold text-navy sm:text-lg">
-              <span className="sr-only">위험도: </span>
-              {risk.label}
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-navy/70">{risk.hint}</p>
-          </div>
           {evaluation.urgentOverride ? (
-            <span className="rounded-full border border-red-300 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-900">
-              <span aria-hidden>!</span> 긴급 확인 요소 포함
+            <span className="rounded-full border border-rose-200/80 bg-rose-50/80 px-3 py-1 text-xs font-semibold text-rose-900">
+              추가로 빠른 확인이 필요할 수 있는 요소가 있습니다
             </span>
           ) : null}
         </div>
+        <p className="mt-3 text-sm leading-relaxed text-navy/75">{risk.hint}</p>
+        <p className="mt-2 text-xs leading-relaxed text-navy/55">
+          법률적 결론이 아닌 참고 안내이며, 사실관계·서류에 따라 달라질 수 있습니다.
+        </p>
       </div>
 
       <div className="diagnosis-result__hero">
@@ -86,48 +137,30 @@ export function DiagnosisResult({
 
       {evaluation.outcome.caution ? (
         <div className="diagnosis-result__caution" role="note">
-          <p className="text-sm font-semibold text-navy">주의사항</p>
+          <p className="text-sm font-semibold text-navy">참고 사항</p>
           <p className="mt-1.5 text-sm leading-relaxed text-navy/80">
             {evaluation.outcome.caution}
           </p>
         </div>
       ) : null}
 
-      {warnings.length > 0 ? (
-        <ResultSection id="diagnosis-extra-warnings" title="추가 확인이 필요한 사항">
-          <ul className="space-y-2">
-            {warnings.map((item) => (
-              <li key={item} className="diagnosis-result__list-item">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </ResultSection>
-      ) : null}
+      <ResultSection id="diagnosis-immediate-checks" title="지금 바로 확인할 것">
+        <Checklist items={immediateChecks} />
+      </ResultSection>
 
-      {evaluation.recommendations.length > 0 ? (
-        <ResultSection id="diagnosis-recommendations" title="권장 확인 사항">
-          <ul className="space-y-2">
-            {evaluation.recommendations.map((item) => (
-              <li key={item} className="diagnosis-result__list-item diagnosis-result__list-item--light">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </ResultSection>
-      ) : null}
+      <ResultSection id="diagnosis-documents" title="준비 서류">
+        <p className="mb-3 text-sm text-navy/60">
+          업무·상황에 따라 추가 서류가 필요할 수 있습니다. 아래는 우선 확인하면 좋은
+          항목입니다.
+        </p>
+        <ul className="diagnosis-result__doc-list">
+          {documents.map((doc) => (
+            <li key={doc}>{doc}</li>
+          ))}
+        </ul>
+      </ResultSection>
 
-      {evaluation.outcome.documents.length > 0 ? (
-        <ResultSection id="diagnosis-documents" title="우선 준비 서류">
-          <ul className="diagnosis-result__doc-list">
-            {evaluation.outcome.documents.map((doc) => (
-              <li key={doc}>{doc}</li>
-            ))}
-          </ul>
-        </ResultSection>
-      ) : null}
-
-      <ResultSection id="diagnosis-next-steps" title="다음 절차">
+      <ResultSection id="diagnosis-next-steps" title="예상 절차">
         <ol className="space-y-2">
           {evaluation.outcome.nextSteps.map((item, index) => (
             <li key={item} className="diagnosis-result__step">
@@ -140,19 +173,17 @@ export function DiagnosisResult({
         </ol>
       </ResultSection>
 
+      <DiagnosisResultRecommendations groups={recommendationGroups} />
+
       <p className="diagnosis-result__cta-message">
         {evaluation.outcome.ctaMessage ?? diagnosis.ctaText}
       </p>
 
-      <DiagnosisRelatedLinks
-        links={getDiagnosisResultLinks(diagnosis)}
-        title="관련 안내"
-      />
-
-      <DiagnosisCTA
-        title={diagnosis.ctaTitle}
-        description="아래 채널로 연락 주시면 서류와 사실관계를 함께 검토해 드립니다."
+      <PageConversionCTA
+        pageType="diagnosis-result"
+        variant="bottom"
         pageSlug={diagnosis.slug}
+        showSecondaryLinks
       />
 
       <button

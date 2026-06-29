@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site";
 
 /** 색인 대상 path (레거시 리다이렉트·noindex 제외) */
 export function isIndexablePagePath(path: string): boolean {
-  if (path === "/cases" || path.startsWith("/cases/")) return false;
+  if (path.startsWith("/cases/")) return false;
   if (path === "/press" || path.startsWith("/press/")) return false;
   return true;
 }
@@ -117,7 +117,15 @@ export function getSitemapPriority(page: PageData): number {
     CORE_HUB_SLUGS.has(page.slug) ||
     page.category === "pillar" ||
     page.category === "diagnosis" ||
-    page.path === "/services"
+    page.category === "situation" ||
+    page.category === "tool" ||
+    page.category === "glossary" ||
+    page.path === "/services" ||
+    page.path === "/situations" ||
+    page.path === "/tools" ||
+    page.path === "/glossary" ||
+    page.path === "/cases" ||
+    page.path === "/busan-legal-map"
   ) {
     return 0.9;
   }

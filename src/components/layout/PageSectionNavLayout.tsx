@@ -42,12 +42,22 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
     () => getSectionsForPath(pathname),
     [pathname],
   );
-  const [sections, setSections] = useState<SectionNavItem[]>(staticSections);
+  const [dynamicSections, setDynamicSections] = useState<SectionNavItem[] | null>(
+    null,
+  );
+  const [prevStaticSections, setPrevStaticSections] =
+    useState(staticSections);
   const dynamicDiscovery = usesDynamicSectionDiscovery(pathname);
 
-  useEffect(() => {
-    setSections(staticSections);
-  }, [staticSections]);
+  if (prevStaticSections !== staticSections) {
+    setPrevStaticSections(staticSections);
+    setDynamicSections(null);
+  }
+
+  const sections =
+    dynamicDiscovery && dynamicSections && dynamicSections.length >= 2
+      ? dynamicSections
+      : staticSections;
 
   useEffect(() => {
     if (!dynamicDiscovery) return;
@@ -55,7 +65,7 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
     const updateSections = () => {
       const discovered = discoverMdxSections();
       if (discovered.length >= 2) {
-        setSections(discovered);
+        setDynamicSections(discovered);
       }
     };
 

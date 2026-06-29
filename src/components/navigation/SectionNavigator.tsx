@@ -132,11 +132,11 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
     };
   }, [availableSections]);
 
-  useEffect(() => {
-    if (!availableSections.some((section) => section.id === activeId)) {
-      setActiveId(availableSections[0]?.id ?? "");
-    }
-  }, [availableSections, activeId]);
+  const resolvedActiveId = availableSections.some(
+    (section) => section.id === activeId,
+  )
+    ? activeId
+    : (availableSections[0]?.id ?? "");
 
   if (availableSections.length < 2) return null;
 
@@ -164,7 +164,7 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
         </p>
         <ul className="space-y-1 border-l border-beige-dark/90">
           {availableSections.map((section) => {
-            const isActive = section.id === activeId;
+            const isActive = section.id === resolvedActiveId;
 
             return (
               <li key={section.id}>

@@ -1,11 +1,12 @@
 import type { RelatedLink } from "@/types/content";
+import type { ContentRelations } from "@/types/content-relations";
 
 export type ServiceFaq = {
   question: string;
   answer: string;
 };
 
-export type ServiceDetail = {
+export type ServiceDetail = ContentRelations & {
   slug: string;
   title: string;
   description: string;

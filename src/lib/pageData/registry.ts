@@ -21,6 +21,22 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { allServiceDetails } from "@/lib/services-data";
 import { getAllTopicHubSlugs, getTopicHubBySlug } from "@/lib/topic-hubs";
 import {
+  buildSituationsHubPageData,
+  getAllSituationPages,
+  buildPageDataFromSituation,
+} from "@/lib/situations";
+import { buildBusanLegalMapHubPageData } from "@/lib/busan-legal-map/builder";
+import {
+  buildAllGlossaryTermPageData,
+  buildGlossaryHubPageData,
+} from "@/lib/glossary";
+import { buildCasesHubPageData } from "@/lib/cases/builder";
+import {
+  buildToolsHubPageData,
+  getAllToolDefinitions,
+  buildPageDataFromTool,
+} from "@/lib/tools";
+import {
   buildCorePageData,
   buildHomePageData,
   buildLegacyRedirectPageData,
@@ -77,6 +93,18 @@ function buildAllPageData(): PageData[] {
     }
   }
 
+  pages.push(buildSituationsHubPageData());
+
+  for (const situation of getAllSituationPages()) {
+    pages.push(buildPageDataFromSituation(situation));
+  }
+
+  pages.push(buildToolsHubPageData());
+
+  for (const tool of getAllToolDefinitions()) {
+    pages.push(buildPageDataFromTool(tool));
+  }
+
   for (const service of allServiceDetails) {
     pages.push(buildPageDataFromService(service));
   }
@@ -109,15 +137,12 @@ function buildAllPageData(): PageData[] {
     }
   }
 
-  pages.push(
-    buildLegacyRedirectPageData(
-      "cases",
-      "/cases",
-      "/services#cases",
-      "사례 안내",
-      "업무 사례 목록은 업무안내 페이지에서 확인하실 수 있습니다.",
-    ),
-  );
+  pages.push(buildCasesHubPageData());
+
+  pages.push(buildBusanLegalMapHubPageData());
+
+  pages.push(buildGlossaryHubPageData());
+  pages.push(...buildAllGlossaryTermPageData());
 
   for (const slug of getContentSlugs("cases")) {
     pages.push(

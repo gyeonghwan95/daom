@@ -117,9 +117,10 @@ export function Header() {
             <Image
               src={siteFavicon}
               alt={siteConfig.name}
-              width={44}
-              height={44}
-              className="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11"
+              width={56}
+              height={56}
+              priority
+              className="h-12 w-12 shrink-0 object-contain sm:h-[3.25rem] sm:w-[3.25rem] md:h-14 md:w-14"
             />
             <div className="min-w-0">
               <p className="truncate text-sm font-bold text-navy sm:text-base md:text-lg">

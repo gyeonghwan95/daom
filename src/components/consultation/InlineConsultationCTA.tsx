@@ -1,32 +1,36 @@
-import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
-import { consultationCopy } from "@/lib/consultation";
-import type { ConsultationChannel } from "@/lib/contact";
-import { getDirectConsultationChannels } from "@/lib/contact";
+import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
+import type { ConversionPageType } from "@/lib/conversion-cta";
 
 type InlineConsultationCTAProps = {
-  channels?: ConsultationChannel[];
   description?: string;
   title?: string;
+  pageType?: ConversionPageType;
+  pageSlug?: string;
+  documentsHref?: string;
+  diagnosisHref?: string;
+  serviceSlug?: string;
 };
 
 export function InlineConsultationCTA({
-  channels = getDirectConsultationChannels(),
-  description = consultationCopy.inline,
-  title = "지금 상담이 필요하신가요?",
+  description,
+  title,
+  pageType = "default",
+  pageSlug,
+  documentsHref,
+  diagnosisHref,
+  serviceSlug,
 }: InlineConsultationCTAProps) {
-
   return (
-    <aside
-      className="rounded-2xl border border-navy/10 bg-gradient-to-br from-beige to-cream p-5 md:p-6"
-      aria-label="상담 안내"
-    >
-      <h2 className="text-base font-semibold text-navy md:text-lg">{title}</h2>
-      <p className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
-        {description}
-      </p>
-      <div className="mt-4">
-        <ConsultationButtons channels={channels} theme="light" layout="grid" />
-      </div>
-    </aside>
+    <PageConversionCTA
+      pageType={pageType}
+      variant="mid"
+      title={title}
+      description={description}
+      pageSlug={pageSlug}
+      documentsHref={documentsHref}
+      diagnosisHref={diagnosisHref}
+      serviceSlug={serviceSlug}
+      showFeeNotice={false}
+    />
   );
 }

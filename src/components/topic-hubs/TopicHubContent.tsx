@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { getConversionConsultationChannels } from "@/lib/contact";
 import { getTopicHubDiagnosisLinks } from "@/data/diagnosis-hub-meta";
 import {
   buildFaqPageSchema,
@@ -71,7 +70,7 @@ function TopicHubQuickLinks({ page }: { page: TopicHubPage }) {
 }
 
 export function TopicHubContent({ page }: TopicHubContentProps) {
-  const channels = getConversionConsultationChannels();
+  const diagnosisLinks = getTopicHubDiagnosisLinks(page.slug);
   const breadcrumbs = [
     { label: "홈", href: "/" },
     { label: "업무안내", href: "/services" },
@@ -110,9 +109,12 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
       ) : null}
 
       <InlineConsultationCTA
-        channels={channels}
+        pageType="service"
+        serviceSlug={page.primaryServiceSlug}
+        pageSlug={page.slug}
         title={`${page.title} 지금 상담`}
         description={page.ctaDescription}
+        diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
       />
 
       {page.sections.map((section) => (
@@ -127,12 +129,6 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
           <RelatedLinks title="관련 안내" links={section.links} />
         </ContentBlock>
       ))}
-
-      <InlineConsultationCTA
-        channels={channels}
-        title="절차·서류가 막막하신가요?"
-        description={page.ctaDescription}
-      />
 
       {page.faqs.length > 0 ? (
         <ContentBlock id="hub-faq" title="자주 묻는 질문">
@@ -160,7 +156,13 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         id="consultation"
         className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
       >
-        <CTASection channels={channels} description={page.ctaDescription} />
+        <CTASection
+          pageType="service"
+          serviceSlug={page.primaryServiceSlug}
+          pageSlug={page.slug}
+          description={page.ctaDescription}
+          diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
+        />
       </div>
     </article>
   );

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { DiagnosisPage } from "@/components/diagnosis/DiagnosisPage";
-import { DiagnosisCTA } from "@/components/diagnosis/DiagnosisCTA";
+import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { DiagnosisRelatedLinks } from "@/components/diagnosis/DiagnosisRelatedLinks";
 import { DiagnosisSeoProse } from "@/components/diagnosis/DiagnosisSeoProse";
@@ -8,6 +8,9 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import { recommendationFromDiagnosis } from "@/lib/internal-links";
+import { getDiagnosisResultRecommendations } from "@/lib/diagnosis/result-recommendations";
 import type { Diagnosis } from "@/data/diagnosis";
 import { getDiagnosisCtaCopy } from "@/lib/diagnosis/builder";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -79,6 +82,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
     diagnosis.busanConsultationTypes ?? diagnosis.targetUsers;
   const resultExplanation = diagnosis.resultExplanation ?? [];
   const conceptParagraphs = diagnosis.conceptParagraphs ?? [];
+  const recommendationGroups = getDiagnosisResultRecommendations(diagnosis);
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -96,7 +100,10 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
       </header>
 
       <ContentBlock id="diagnosis" title="자가진단 시작하기">
-        <DiagnosisPage diagnosis={diagnosis} />
+        <DiagnosisPage
+          diagnosis={diagnosis}
+          recommendationGroups={recommendationGroups}
+        />
       </ContentBlock>
 
       {resultExplanation.length > 0 ? (
@@ -120,6 +127,16 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
       <ContentBlock id="documents" title="필요서류 체크리스트">
         <Checklist items={diagnosis.requiredDocuments} />
       </ContentBlock>
+
+      <PageConversionCTA
+        pageType="default"
+        variant="mid"
+        pageSlug={diagnosis.slug}
+        diagnosisHref={`/${diagnosis.slug}`}
+        documentsHref="#documents"
+        title="자가진단 전에 서류를 먼저 확인해 보세요"
+        description="아래 체크리스트를 보신 뒤 자가진단을 시작하거나, 편한 방법으로 상담해 보세요."
+      />
 
       <ContentBlock id="procedures" title="절차 안내">
         <Checklist items={diagnosis.processSteps} ordered />
@@ -157,8 +174,19 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
 
       <DiagnosisRelatedLinks links={page.internalLinks} />
 
+      <RelatedRecommendations source={recommendationFromDiagnosis(diagnosis)} />
+
       <div id="consultation">
-        <DiagnosisCTA title={cta.title} description={cta.text} pageSlug={diagnosis.slug} />
+        <PageConversionCTA
+          pageType="default"
+          variant="bottom"
+          title={cta.title}
+          description={cta.text}
+          pageSlug={diagnosis.slug}
+          diagnosisHref={`/${diagnosis.slug}`}
+          documentsHref="#documents"
+          showSecondaryLinks
+        />
       </div>
     </article>
   );

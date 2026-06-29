@@ -8,6 +8,7 @@ import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveBlogPageData } from "@/lib/pageData/resolvers";
 import { buildArticleSchema } from "@/lib/seo/json-ld";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { recommendationFromContentMeta } from "@/lib/internal-links";
 import { getBlogPostImage } from "@/lib/site-images";
 
 type Props = {
@@ -39,7 +40,12 @@ export default async function BlogDetailPage({ params }: Props) {
   return (
     <PageContainer>
       <JsonLd data={buildArticleSchema(meta, getBlogPostImage(meta.slug).src)} />
-      <PageDataTemplate page={page}>{content}</PageDataTemplate>
+      <PageDataTemplate
+        page={page}
+        recommendationSource={recommendationFromContentMeta(meta, "blog")}
+      >
+        {content}
+      </PageDataTemplate>
     </PageContainer>
   );
 }

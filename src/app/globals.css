@@ -19,7 +19,7 @@
   --beige-muted: #d4c9b8;
   --cream: #faf8f5;
   --mobile-cta-height: 3.5rem;
-  --header-height: 3.75rem;
+  --header-height: 4rem;
   --home-hero-bottom-space: 4.75rem;
 }
 
@@ -39,9 +39,15 @@
   --breakpoint-xl: 80rem;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 48rem) {
   :root {
     --header-height: 4.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-height: 5rem;
   }
 }
 

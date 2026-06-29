@@ -287,8 +287,7 @@ export function buildPageDataFromCaseMeta(meta: ContentMeta): PageData {
     intro: meta.description,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "업무안내", href: "/services" },
-      { label: "사례", href: "/services#cases" },
+      { label: "사례 탐색기", href: "/cases" },
       { label: meta.title },
     ],
     introParagraphs: [
@@ -303,7 +302,7 @@ export function buildPageDataFromCaseMeta(meta: ContentMeta): PageData {
         href: `/services/${slug}`,
         label: getServiceLabel(slug),
       })),
-      { href: "/services#cases", label: "사례 목록" },
+      { href: "/cases", label: "사례 탐색기" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },
     ],

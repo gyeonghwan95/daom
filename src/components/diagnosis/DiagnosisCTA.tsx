@@ -1,6 +1,6 @@
 "use client";
 
-import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
+import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 
 type DiagnosisCTAProps = {
   title?: string;
@@ -8,24 +8,29 @@ type DiagnosisCTAProps = {
   compact?: boolean;
   className?: string;
   pageSlug?: string;
+  variant?: "mid" | "bottom";
+  pageType?: "diagnosis-result" | "default";
 };
 
 export function DiagnosisCTA({
-  title = "법무사 상담 안내",
-  description = "진단 결과는 일반적인 안내입니다. 서류와 사실관계 확인이 필요합니다.",
+  title,
+  description,
   compact = false,
   className = "",
   pageSlug = "자가진단",
+  variant = "bottom",
+  pageType = "diagnosis-result",
 }: DiagnosisCTAProps) {
   return (
-    <LawyerConsultationGuide
+    <PageConversionCTA
+      pageType={pageType}
+      variant={variant}
       title={title}
       description={description}
-      showFeeNotice={!compact}
-      showSecondaryLinks
-      compact={compact}
-      className={className}
       pageSlug={pageSlug}
+      showFeeNotice={!compact && variant === "bottom"}
+      showSecondaryLinks={variant === "bottom"}
+      className={className}
     />
   );
 }

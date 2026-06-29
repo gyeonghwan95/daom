@@ -1,14 +1,12 @@
 import type { PageFaqItem, PageRelatedLink } from "@/lib/pageData/types";
-export {
-  DIAGNOSIS_CTA_TEXT,
-  DIAGNOSIS_CTA_TITLE,
-  DIAGNOSIS_SEO_KEYWORDS,
-} from "./diagnosis-constants";
+import type { ContentRelations } from "@/types/content-relations";
 import {
   DIAGNOSIS_CTA_TEXT,
   DIAGNOSIS_CTA_TITLE,
   DIAGNOSIS_SEO_KEYWORDS,
 } from "./diagnosis-constants";
+
+export { DIAGNOSIS_CTA_TEXT, DIAGNOSIS_CTA_TITLE, DIAGNOSIS_SEO_KEYWORDS };
 
 export type QuestionType = "single" | "multiple" | "number" | "date" | "text";
 
@@ -50,7 +48,7 @@ export type DiagnosisCaseExample = {
   body: string;
 };
 
-export type Diagnosis = {
+export type Diagnosis = ContentRelations & {
   id: string;
   slug: string;
   title: string;

@@ -8,12 +8,19 @@ import { DiagnosisResult } from "@/components/diagnosis/DiagnosisResult";
 import { isQuestionAnswered } from "@/components/diagnosis/constants";
 import { evaluateDiagnosis } from "@/lib/diagnosis/evaluate";
 
+import type { DiagnosisRecommendationGroups } from "@/lib/diagnosis/result-recommendations";
+
 type DiagnosisFormProps = {
   diagnosis: Diagnosis;
   onPhaseChange?: (phase: "questions" | "result") => void;
+  recommendationGroups: DiagnosisRecommendationGroups;
 };
 
-export function DiagnosisForm({ diagnosis, onPhaseChange }: DiagnosisFormProps) {
+export function DiagnosisForm({
+  diagnosis,
+  onPhaseChange,
+  recommendationGroups,
+}: DiagnosisFormProps) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
   const [finished, setFinished] = useState(false);
@@ -129,7 +136,9 @@ export function DiagnosisForm({ diagnosis, onPhaseChange }: DiagnosisFormProps) 
           <DiagnosisResult
             diagnosis={diagnosis}
             evaluation={evaluation}
+            answers={answers}
             onReset={reset}
+            recommendationGroups={recommendationGroups}
           />
         ) : null}
       </div>

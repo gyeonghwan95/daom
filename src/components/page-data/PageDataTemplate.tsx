@@ -1,6 +1,7 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
+import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -8,16 +9,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
-import { getConversionConsultationChannels } from "@/lib/contact";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
+import type { RecommendationSource } from "@/lib/internal-links";
 import { PageDataNapSection } from "./PageDataNapSection";
 
 type PageDataTemplateProps = {
   page: PageData;
   children?: ReactNode;
   showCover?: boolean;
+  recommendationSource?: RecommendationSource;
 };
 
 function ContentBlock({
@@ -88,8 +90,8 @@ export function PageDataTemplate({
   page,
   children,
   showCover = true,
+  recommendationSource,
 }: PageDataTemplateProps) {
-  const conversionChannels = getConversionConsultationChannels();
   const cover = getCoverImageForPageData(page);
   const displayFaqs = page.faqs.slice(0, 3);
 
@@ -111,12 +113,6 @@ export function PageDataTemplate({
           ))}
         </div>
       </header>
-
-      <InlineConsultationCTA
-        channels={conversionChannels}
-        title={page.ctaTitle}
-        description={page.ctaText}
-      />
 
       <ContentBlock id="procedures" title="핵심 절차">
         <ol className="space-y-3">
@@ -150,6 +146,13 @@ export function PageDataTemplate({
           안내드립니다.
         </p>
       </ContentBlock>
+
+      <InlineConsultationCTA
+        pageType="faq"
+        title={page.ctaTitle}
+        description={page.ctaText}
+        pageSlug={page.slug}
+      />
 
       {page.consultationPoints.length > 0 ? (
         <ContentBlock id="consultation-points" title="상담 포인트">
@@ -189,10 +192,16 @@ export function PageDataTemplate({
 
       <RelatedLinks title="관련 페이지" links={page.internalLinks} />
 
+      {recommendationSource ? (
+        <RelatedRecommendations source={recommendationSource} />
+      ) : null}
+
       <div id="consultation">
         <CTASection
+          pageType="faq"
           title={page.ctaTitle}
           description={page.ctaText}
+          pageSlug={page.slug}
         />
       </div>
 

@@ -7,7 +7,6 @@ import { formatNaverBlogDate } from "@/lib/naver-blog/format";
 import type { NaverBlogPost } from "@/lib/naver-blog/types";
 import { getNaverBlogExternalPath } from "@/lib/naver-blog/urls";
 import { getBlogPostRelatedLinks } from "@/lib/topic-hubs/blog-links";
-import { getConversionConsultationChannels } from "@/lib/contact";
 
 type NaverBlogExternalLayoutProps = {
   post: NaverBlogPost & { postId: string };
@@ -54,7 +53,8 @@ export function NaverBlogExternalLayout({ post }: NaverBlogExternalLayoutProps) 
         ) : null}
 
         <InlineConsultationCTA
-          channels={getConversionConsultationChannels()}
+          pageType="default"
+          pageSlug={`blog-external-${post.postId}`}
           title="이 주제로 상담이 필요하신가요?"
           description="블로그 글과 관련된 등기·상속·법인·채무 절차는 사건마다 다릅니다. 다옴법무사사무소 안윤정 법무사가 확인해드리겠습니다."
         />

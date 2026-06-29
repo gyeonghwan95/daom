@@ -28,6 +28,7 @@ const CTA_SOURCE_FILES = [
   "src/components/consultation/ConsultationPanel.tsx",
   "src/components/consultation/ConsultationChatTile.tsx",
   "src/components/diagnosis/StickyMobileCTA.tsx",
+  "src/components/diagnosis/DiagnosisResultConsultCTA.tsx",
 ];
 
 const REQUIRED_DATA_CTA = ["phone", "kakao", "contact"];

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { ServiceCard } from "@/components/cards/ServiceCard";
@@ -76,14 +77,24 @@ export function ServicesIndexTemplate() {
           id="cases"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >
-          <h2 className="section-heading">업무 사례</h2>
-          <p className="body-text mt-3 max-w-3xl">
-            다옴법무사사무소 안윤정 법무사가 처리한 사례를 소개합니다. 개인정보
-            보호를 위해 구체적 의뢰인 정보는 비공개하며, 사건 유형과 처리 과정
-            위주로 안내합니다.
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="section-heading">업무 사례</h2>
+              <p className="body-text mt-3 max-w-3xl">
+                다옴법무사사무소 안윤정 법무사가 처리한 사례를 소개합니다. 개인정보
+                보호를 위해 구체적 의뢰인 정보는 비공개하며, 사건 유형과 처리 과정
+                위주로 안내합니다.
+              </p>
+            </div>
+            <Link
+              href="/cases"
+              className="interactive-surface shrink-0 rounded-xl border border-navy/15 bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-beige/40"
+            >
+              사례 탐색기 →
+            </Link>
+          </div>
           <ul className="listing-card-grid mt-4">
-            {cases.map((item) => (
+            {cases.slice(0, 4).map((item) => (
               <li key={item.slug}>
                 <CaseCard
                   title={item.title}

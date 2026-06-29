@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import { PageContainer } from "@/components/layout/PageContainer";
-import { StaticRedirect } from "@/components/seo/StaticRedirect";
+import { CasesExplorerView } from "@/components/cases/CasesExplorerView";
+import { getAllCaseRecords } from "@/lib/cases";
+import { resolveCasesHubPageData } from "@/lib/cases/builder";
+import { pageDataToMetadata } from "@/lib/pageData/metadata";
 
-export const metadata: Metadata = {
-  title: "사례 안내 이동 | 다옴법무사사무소",
-  description: "다옴법무사사무소 사례 페이지로 이동합니다.",
-  robots: { index: false, follow: true },
-};
+export function generateMetadata(): Metadata {
+  const page = resolveCasesHubPageData();
+  return pageDataToMetadata(page);
+}
 
-export default function LegacyCasesIndexPage() {
+export default function CasesExplorerPage() {
+  const page = resolveCasesHubPageData();
+  const cases = getAllCaseRecords();
+
   return (
     <PageContainer>
-      <StaticRedirect
-        targetPath="/services#cases"
-        message="사례 안내 페이지로 이동합니다."
-      />
+      <CasesExplorerView page={page} cases={cases} />
     </PageContainer>
   );
 }

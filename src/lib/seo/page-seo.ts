@@ -30,11 +30,11 @@ export const staticPageSeo = {
     ],
   },
   cases: {
-    title: buildSeoTitle("부산 등기·상속 업무 사례"),
+    title: buildSeoTitle("사례 탐색기 — 부산 법무사 실무 사례"),
     description:
-      "해운대·센텀·연제·동래 등 부산 지역 상속등기, 부동산등기, 법인등기, 한정승인 사건 유형별 처리 과정 소개.",
-    path: "/services#cases",
-    keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사"],
+      "상속·부동산등기·법인등기·전세보증금·민사서류·회생파산 등 업무별 사례를 카테고리·상황·지역으로 찾아볼 수 있습니다.",
+    path: "/cases",
+    keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사", "부산 법무사 사례"],
   },
   blog: {
     title: buildSeoTitle("부산 법률 정보 포스팅"),

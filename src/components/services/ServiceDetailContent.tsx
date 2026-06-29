@@ -122,7 +122,9 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
       </ContentBlock>
 
       <InlineConsultationCTA
-        description="준비 서류가 막막하시면 다옴법무사사무소 안윤정 법무사에게 현재 상황을 알려주세요. 필요한 서류와 순서를 차분히 안내해 드립니다."
+        pageType="service"
+        serviceSlug={service.slug}
+        pageSlug={service.slug}
       />
 
       <ContentBlock id="common-issues" title="자주 발생하는 문제">
@@ -175,7 +177,12 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         id="consultation"
         className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
       >
-        <CTASection description={consultationCopy.default} />
+        <CTASection
+          pageType="service"
+          serviceSlug={service.slug}
+          pageSlug={service.slug}
+          description={consultationCopy.default}
+        />
       </div>
 
       <ServiceInternalLinks currentSlug={service.slug} />

@@ -10,7 +10,6 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { LocalLandingInternalLinks } from "@/components/local-landing/LocalLandingInternalLinks";
 import { RelatedBlogPosts } from "@/components/local-landing/RelatedBlogPosts";
 import { buildFaqPageSchema, buildLandingPageArticleSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
-import { getConversionConsultationChannels } from "@/lib/contact";
 import { getServiceImage, siteImages } from "@/lib/site-images";
 import type { LocalLandingPage } from "@/types/local-landing";
 
@@ -46,7 +45,6 @@ function getCoverImage(page: LocalLandingPage) {
 }
 
 export function LocalLandingContent({ page }: LocalLandingContentProps) {
-  const conversionChannels = getConversionConsultationChannels();
   const breadcrumbs = [
     { label: "홈", href: "/" },
     { label: page.title },
@@ -75,7 +73,9 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
       </header>
 
       <InlineConsultationCTA
-        channels={conversionChannels}
+        pageType="service"
+        serviceSlug={page.serviceSlug}
+        pageSlug={page.slug}
         title={`${page.regionLabel} ${page.title} 지금 상담`}
         description={page.ctaDescription}
       />
@@ -196,7 +196,9 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
       </ContentBlock>
 
       <InlineConsultationCTA
-        channels={conversionChannels}
+        pageType="service"
+        serviceSlug={page.serviceSlug}
+        pageSlug={page.slug}
         title="비용·절차가 궁금하신가요?"
         description="카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다."
       />
@@ -249,7 +251,9 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
       >
         <CTASection
-          channels={conversionChannels}
+          pageType="service"
+          serviceSlug={page.serviceSlug}
+          pageSlug={page.slug}
           title={`${page.regionLabel} ${page.title} 상담 신청`}
           description={page.ctaDescription}
         />

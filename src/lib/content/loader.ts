@@ -37,9 +37,20 @@ function normalizeFrontmatter(
     author: String(data.author ?? CONTENT_DEFAULTS.author),
     office: String(data.office ?? CONTENT_DEFAULTS.office),
     relatedServices: toStringArray(data.relatedServices),
+    relatedSituations: toStringArray(data.relatedSituations),
+    relatedFaqs: toStringArray(data.relatedFaqs),
+    relatedCases: toStringArray(data.relatedCases),
+    relatedTools: toStringArray(data.relatedTools),
+    relatedGlossary: toStringArray(data.relatedGlossary),
+    relatedDiagnosis: toStringArray(data.relatedDiagnosis),
+    relatedBlogs: toStringArray(data.relatedBlogs),
     area: data.area ? String(data.area) : undefined,
+    caseCategory: data.caseCategory ? String(data.caseCategory) : undefined,
+    situationTags: toStringArray(data.situationTags),
+    region: data.region ? String(data.region) : undefined,
     seoTitle: data.seoTitle ? String(data.seoTitle) : undefined,
     seoDescription: data.seoDescription ? String(data.seoDescription) : undefined,
+    searchIntent: data.searchIntent ? String(data.searchIntent) : undefined,
   };
 }
 

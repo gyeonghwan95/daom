@@ -5,7 +5,8 @@ import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveServicePageData } from "@/lib/pageData/resolvers";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
-import { getAllServiceSlugs } from "@/lib/services-data";
+import { getAllServiceSlugs, getServiceBySlug } from "@/lib/services-data";
+import { recommendationFromService } from "@/lib/internal-links";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -26,12 +27,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const page = resolveServicePageData(normalizeRouteSlug(slug));
-  if (!page) notFound();
+  const normalized = normalizeRouteSlug(slug);
+  const page = resolveServicePageData(normalized);
+  const service = getServiceBySlug(normalized);
+  if (!page || !service) notFound();
 
   return (
     <PageContainer>
-      <PageDataTemplate page={page} />
+      <PageDataTemplate
+        page={page}
+        recommendationSource={recommendationFromService(service)}
+      />
     </PageContainer>
   );
 }

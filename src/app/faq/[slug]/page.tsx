@@ -8,6 +8,7 @@ import { faqs } from "@/lib/faq-data";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveFaqPageData } from "@/lib/pageData/resolvers";
 import { buildSingleFaqSchema } from "@/lib/seo/json-ld";
+import { recommendationFromContentMeta } from "@/lib/internal-links";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 type Props = {
@@ -49,7 +50,12 @@ export default async function FaqDetailPage({ params }: Props) {
           },
         )}
       />
-      <PageDataTemplate page={page}>{content}</PageDataTemplate>
+      <PageDataTemplate
+        page={page}
+        recommendationSource={recommendationFromContentMeta(meta, "faq")}
+      >
+        {content}
+      </PageDataTemplate>
     </PageContainer>
   );
 }
