@@ -1,17 +1,13 @@
 #!/usr/bin/env node
 /**
  * SEO 최적화 RSS 2.0 피드 생성
- * - 사이트 칼럼·FAQ·업무사례·언론보도·네이버 블로그 최신 글 통합
+ * - 사이트 칼럼·FAQ·업무사례·언론보도 통합
  * - content:encoded, dc:creator, category, enclosure, channel image
  */
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { getSiteUrl } from "../lib/site-url.mjs";
-import {
-  extractNaverPostId,
-  getNaverBlogExternalPath,
-} from "../lib/naver-blog-url.mjs";
 
 const ROOT = process.cwd();
 const CONTENT_ROOT = path.join(ROOT, "src/content");
@@ -311,58 +307,17 @@ function loadPressArticles() {
     .filter(Boolean);
 }
 
-function loadNaverBlogItems() {
-  const filePath = path.join(ROOT, "public/data/naver-blog-posts.json");
-  if (!fs.existsSync(filePath)) return [];
-
-  try {
-    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    const items = Array.isArray(data.items) ? data.items : [];
-
-    return items
-      .slice(0, 8)
-      .map((post) => {
-        const postId = extractNaverPostId(post.link);
-        if (!postId) return null;
-
-        const internalPath = getNaverBlogExternalPath(postId);
-        const link = absoluteUrl(internalPath);
-
-        return {
-          id: `naver:${postId}`,
-          title: `[네이버 블로그] ${post.title}`,
-          description: post.description || "",
-          link,
-          guid: link,
-          date: post.pubDate || new Date().toISOString(),
-          author: SITE.representative,
-          feedLabel: "네이버 블로그",
-          categories: ["네이버 블로그", post.category].filter(Boolean),
-          bodyExcerpt: post.description || "",
-          imageUrl: resolveImageUrl([STOCK_IMAGES.documents]),
-        };
-      })
-      .filter(Boolean);
-  } catch {
-    return [];
-  }
-}
-
 function getSortScore(item) {
   const timestamp = new Date(item.date).getTime();
   if (Number.isNaN(timestamp)) return 0;
 
-  // 자사 도메인 콘텐츠(칼럼·FAQ·사례·언론·네이버 블로그 랜딩)를 최신성 판단 시 우선
+  // 자사 도메인 콘텐츠(칼럼·FAQ·사례·언론)를 최신성 판단 시 우선
   const ownContentBoost = 1000 * 60 * 60 * 24 * 21;
   return timestamp + ownContentBoost;
 }
 
 function collectFeedItems() {
-  const items = [
-    ...MDX_SOURCES.flatMap(loadMdxItems),
-    ...loadPressArticles(),
-    ...loadNaverBlogItems(),
-  ];
+  const items = [...MDX_SOURCES.flatMap(loadMdxItems), ...loadPressArticles()];
 
   return items
     .sort((a, b) => getSortScore(b) - getSortScore(a))

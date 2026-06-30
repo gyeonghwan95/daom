@@ -22,7 +22,7 @@ export default function ReviewsPage() {
           { href: "/contact", label: "상담 신청" },
           { href: "/services", label: "업무안내" },
           { href: "/media", label: "언론·활동" },
-          { href: "/blog", label: "포스팅" },
+          { href: "/blog", label: "블로그" },
         ]}
         showConsultationCTA
       >

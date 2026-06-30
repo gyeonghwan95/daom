@@ -31,7 +31,7 @@ export default function FaqPage() {
           ...getMainLandingHubLinks().slice(0, 6),
           { href: "/services", label: "업무안내" },
           { href: "/contact", label: "상담 신청" },
-          { href: "/blog", label: "포스팅" },
+          { href: "/blog", label: "블로그" },
           { href: "/location", label: "오시는 길" },
         ]}
       >

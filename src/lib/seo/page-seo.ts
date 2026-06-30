@@ -37,11 +37,11 @@ export const staticPageSeo = {
     keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사", "부산 법무사 사례"],
   },
   blog: {
-    title: buildSeoTitle("부산 법률 정보 포스팅"),
+    title: buildSeoTitle("다옴법무사사무소 네이버 블로그 안내"),
     description:
-      "상속·부동산·법인·회생 관련 법률 칼럼과 네이버 블로그 최신 글 요약. 부산 지역 실무 기준으로 정리합니다.",
+      "다옴법무사사무소 공식 네이버 블로그 안내 페이지입니다. 최신 법률정보와 상담 사례는 네이버 블로그에서 확인하실 수 있습니다.",
     path: "/blog",
-    keywords: ["부산 상속등기", "부산 법인등기", "부산 개인회생", "부산 법무사"],
+    keywords: ["다옴법무사사무소", "부산 법무사", seoBrand.siteName],
   },
   reviews: {
     title: buildSeoTitle("고객후기"),

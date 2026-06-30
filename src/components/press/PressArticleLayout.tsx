@@ -72,7 +72,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
             { href: "/media#press", label: "언론보도 목록" },
             { href: "/media", label: "언론·활동" },
             { href: "/about", label: "법무사 소개" },
-            { href: "/blog", label: "포스팅" },
+            { href: "/blog", label: "블로그" },
             { href: "/contact", label: "상담 신청" },
           ]}
         />

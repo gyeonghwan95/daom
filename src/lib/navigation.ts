@@ -7,7 +7,7 @@ export const mainNavigation = [
   { href: "/busan-legal-map", label: "부산 법률지도" },
   { href: "/glossary", label: "법률 용어사전" },
   { href: "/자가진단", label: "자가진단" },
-  { href: "/blog", label: "포스팅" },
+  { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
   { href: "/reviews", label: "고객후기" },
   { href: "/faq", label: "FAQ" },

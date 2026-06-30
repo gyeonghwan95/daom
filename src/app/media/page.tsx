@@ -29,7 +29,7 @@ export default function MediaPage() {
         relatedLinks={[
           { href: "/about", label: "법무사 소개" },
           { href: "/office", label: "사무소 소개" },
-          { href: "/blog", label: "포스팅" },
+          { href: "/blog", label: "블로그" },
           { href: "/contact", label: "상담 신청" },
         ]}
       >

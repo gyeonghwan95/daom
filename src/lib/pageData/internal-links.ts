@@ -251,7 +251,7 @@ export function getThematicInternalLinks(
   if (input.category === "blog" || input.category === "case" || input.category === "faq") {
     links.push({ href: "/services", label: "업무안내" });
     links.push({ href: "/faq", label: "FAQ" });
-    links.push({ href: "/blog", label: "정보 포스팅" });
+    links.push({ href: "/blog", label: "블로그 안내" });
   }
 
   return links;

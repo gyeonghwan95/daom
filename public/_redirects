@@ -3,3 +3,4 @@
 /cases/* /services/cases/:splat 301
 /press /media 301
 /press/* /media/:splat 301
+/blog/external/* https://blog.naver.com/law-yoon-91 301

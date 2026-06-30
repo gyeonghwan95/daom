@@ -8,13 +8,13 @@ import { getLocalLandingConfig } from "@/lib/local-landing/config";
 import { getAllPageData } from "@/lib/pageData/registry";
 import type { PageData } from "@/lib/pageData/types";
 import { getPressArticle } from "@/lib/press-articles";
-import { getNaverBlogPostByPostId } from "@/lib/naver-blog/urls.server";
 import { siteConfig } from "@/lib/site";
 
 /** 색인 대상 path (레거시 리다이렉트·noindex 제외) */
 export function isIndexablePagePath(path: string): boolean {
   if (path.startsWith("/cases/")) return false;
   if (path === "/press" || path.startsWith("/press/")) return false;
+  if (path.startsWith("/blog/external/")) return false;
   return true;
 }
 
@@ -65,13 +65,7 @@ function pathToLastModified(page: PageData): Date {
 
   const blogMatch = path.match(/^\/blog\/(.+)$/);
   if (blogMatch) {
-    const blogSlug = blogMatch[1];
-    if (blogSlug.startsWith("external/")) {
-      const postId = blogSlug.replace(/^external\//, "");
-      const post = getNaverBlogPostByPostId(postId);
-      if (post) return new Date(post.pubDate);
-    }
-    const meta = getContentMeta("blog", blogSlug);
+    const meta = getContentMeta("blog", blogMatch[1]);
     if (meta) return new Date(meta.date);
   }
 
@@ -153,8 +147,7 @@ export function getSitemapPriority(page: PageData): number {
     page.category === "blog" ||
     page.category === "case" ||
     page.category === "faq" ||
-    page.category === "media" ||
-    page.category === "external"
+    page.category === "media"
   ) {
     return 0.7;
   }

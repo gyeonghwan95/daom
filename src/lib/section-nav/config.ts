@@ -45,8 +45,8 @@ export const sectionNavByPath: Record<string, SectionNavItem[]> = {
     ...PAGE_END_SECTIONS,
   ],
   "/blog": [
+    { id: "naver-blog", label: "네이버 블로그 안내" },
     { id: "site-columns", label: "사이트 칼럼" },
-    { id: "naver-blog", label: "네이버 블로그" },
     ...PAGE_END_SECTIONS,
   ],
   "/reviews": [

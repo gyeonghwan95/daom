@@ -41,7 +41,7 @@ export function HomeInsights() {
           action={
             <>
               <HomeSectionActionLink href="/services#cases" label="사례 더 보기" />
-              <HomeSectionActionLink href="/blog" label="포스팅 더 보기" />
+              <HomeSectionActionLink href="/blog" label="블로그 안내" />
               <HomeSectionActionLink
                 href={getNaverBlogUrl()}
                 label="네이버 블로그"

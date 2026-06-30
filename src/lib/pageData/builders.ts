@@ -242,7 +242,7 @@ export function buildPageDataFromBlogMeta(meta: ContentMeta): PageData {
     intro: meta.description,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "포스팅", href: "/blog" },
+      { label: "블로그", href: "/blog" },
       { label: meta.title },
     ],
     introParagraphs: [
@@ -255,7 +255,7 @@ export function buildPageDataFromBlogMeta(meta: ContentMeta): PageData {
         href: `/services/${slug}`,
         label: getServiceLabel(slug),
       })),
-      { href: "/blog", label: "포스팅 목록" },
+      { href: "/blog", label: "블로그 안내" },
       { href: "/faq", label: "FAQ" },
       { href: "/contact", label: "상담 문의" },
     ],
@@ -348,7 +348,7 @@ export function buildPageDataFromFaqMeta(meta: ContentMeta): PageData {
         label: getServiceLabel(slug),
       })),
       { href: "/faq", label: "FAQ 목록" },
-      { href: "/blog", label: "정보 포스팅" },
+      { href: "/blog", label: "블로그 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     sections: [
@@ -431,12 +431,12 @@ export function buildPageDataFromNaverExternal(
     intro: post.description,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "포스팅", href: "/blog" },
+      { label: "블로그", href: "/blog" },
       { label: "네이버 블로그" },
       { label: post.title },
     ],
     internalLinks: [
-      { href: "/blog", label: "포스팅 목록" },
+      { href: "/blog", label: "블로그 안내" },
       { href: post.link, label: "네이버 블로그 원문" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },
@@ -465,7 +465,7 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   office: "해운대·센텀 법무사 사무소",
   services: "부산 등기·상속·회생 업무안내",
   cases: "부산 등기·상속 업무 사례",
-  blog: "부산 법률 정보 포스팅",
+  blog: "다옴법무사사무소 네이버 블로그",
   reviews: "고객후기",
   faq: "부산 법무사 FAQ",
   media: "언론·활동",

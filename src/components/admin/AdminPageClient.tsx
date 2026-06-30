@@ -5,14 +5,10 @@ import { AdminRefreshPanel } from "@/components/admin/AdminRefreshPanel";
 import { useAdminSession } from "@/components/admin/useAdminSession";
 
 type AdminPageClientProps = {
-  blogFetchedAt: string | null;
   reviewsFetchedAt: string | null;
 };
 
-export function AdminPageClient({
-  blogFetchedAt,
-  reviewsFetchedAt,
-}: AdminPageClientProps) {
+export function AdminPageClient({ reviewsFetchedAt }: AdminPageClientProps) {
   const { loading, authenticated, configured, localDev, refresh } = useAdminSession();
 
   async function handleLogout() {
@@ -91,10 +87,7 @@ export function AdminPageClient({
         </p>
       </div>
 
-      <AdminRefreshPanel
-        blogFetchedAt={blogFetchedAt}
-        reviewsFetchedAt={reviewsFetchedAt}
-      />
+      <AdminRefreshPanel reviewsFetchedAt={reviewsFetchedAt} />
 
       {!localDev ? (
         <button

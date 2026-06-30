@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { NaverBlogSection } from "@/components/blog/NaverBlogSection";
+import { NaverBlogLinkHub } from "@/components/blog/NaverBlogLinkHub";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { formatContentDate, getAllContent } from "@/lib/content/loader";
-import { getNaverBlogUrl } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildArticleListSchema } from "@/lib/seo/json-ld";
 import { getMainLandingHubLinks } from "@/lib/seo/internal-links";
@@ -21,27 +20,31 @@ export default function BlogPage() {
     <PageContainer>
       <JsonLd data={buildArticleListSchema(posts)} />
       <PageContentSection
-        h1="포스팅"
+        h1="다옴법무사사무소 네이버 블로그"
         breadcrumbs={[
           { label: "홈", href: "/" },
-          { label: "포스팅" },
+          { label: "블로그" },
         ]}
         currentPath="/blog"
-        intro="다옴법무사사무소 안윤정 법무사가 상속·등기·회생 등 실생활에 필요한 법률 정보를 정리합니다. 사이트 칼럼과 함께 네이버 블로그에서도 최신 글을 확인하실 수 있습니다. 구체적 사안은 상담을 통해 확인하시기 바랍니다."
+        intro="다옴법무사사무소의 최신 법률정보와 실제 상담 사례, 강의 소식은 네이버 블로그에서 확인하실 수 있습니다. 아래 버튼을 눌러 공식 블로그로 이동해 주세요."
         relatedLinks={[
           ...getMainLandingHubLinks().slice(0, 8),
-          { href: getNaverBlogUrl(), label: "네이버 블로그" },
           { href: "/faq", label: "자주 묻는 질문" },
           { href: "/services", label: "업무안내" },
           { href: "/services#cases", label: "업무 사례" },
           { href: "/contact", label: "상담 신청" },
         ]}
       >
+        <NaverBlogLinkHub />
+
         <section
           id="site-columns"
-          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] mt-12 border-t border-beige-dark pt-10 md:mt-16 md:pt-12"
         >
           <h2 className="section-heading">사이트 칼럼</h2>
+          <p className="mt-2 text-sm leading-relaxed text-navy/65 sm:text-base">
+            다옴법무사사무소가 직접 작성한 법률 안내 글입니다.
+          </p>
           <ul className="listing-card-grid mt-6">
             {posts.map((post) => (
               <li key={post.slug}>
@@ -56,8 +59,6 @@ export default function BlogPage() {
             ))}
           </ul>
         </section>
-
-        <NaverBlogSection />
       </PageContentSection>
     </PageContainer>
   );

@@ -14,7 +14,6 @@ import {
   getAllLocalLandingPages,
   getLocalLandingBySlug,
 } from "@/lib/local-landing";
-import { getNaverBlogExternalPostIds, getNaverBlogPostByPostId } from "@/lib/naver-blog/urls.server";
 import { getAllPressArticles } from "@/lib/press-articles";
 import { getAllSeoLandingPageData } from "@/lib/seo-landing";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
@@ -44,7 +43,6 @@ import {
   buildPageDataFromCaseMeta,
   buildPageDataFromFaqMeta,
   buildPageDataFromLocalLanding,
-  buildPageDataFromNaverExternal,
   buildPageDataFromPress,
   buildPageDataFromService,
   buildPageDataFromTopicHub,
@@ -128,13 +126,6 @@ function buildAllPageData(): PageData[] {
 
   for (const article of getAllPressArticles()) {
     pages.push(buildPageDataFromPress(article));
-  }
-
-  for (const postId of getNaverBlogExternalPostIds()) {
-    const post = getNaverBlogPostByPostId(postId);
-    if (post) {
-      pages.push(buildPageDataFromNaverExternal(post));
-    }
   }
 
   pages.push(buildCasesHubPageData());

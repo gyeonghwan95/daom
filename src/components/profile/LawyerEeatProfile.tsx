@@ -97,7 +97,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
     })),
     {
       term: "법률 칼럼·실무 사례",
-      meta: "다옴법무사사무소 공식 포스팅",
+      meta: "다옴법무사사무소 네이버 블로그",
       description: "상속·부동산·법인·회생 관련 법률 정보와 실무 사례를 게시합니다.",
       href: "/blog",
     },

@@ -47,7 +47,7 @@ export default function NotFound() {
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
             {[
               { href: "/services", label: "업무안내" },
-              { href: "/blog", label: "포스팅" },
+              { href: "/blog", label: "블로그" },
               { href: "/services#cases", label: "업무 사례" },
               { href: "/faq", label: "자주 묻는 질문" },
               { href: "/location", label: "오시는 길" },
