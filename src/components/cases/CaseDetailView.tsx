@@ -1,10 +1,22 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
-import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import {
+  ChecklistBox,
+  ConsultationCTA,
+  ContentSection,
+  InfoCard,
+  KeywordBadges,
+  PageHero,
+  PageTableOfContents,
+  ProseParagraphs,
+  RelatedContentGrid,
+  StepTimeline,
+  SummaryBox,
+  WarningBox,
+} from "@/components/readability";
 import { recommendationFromCaseRecord } from "@/lib/internal-links";
 import { formatContentDate, getServiceLabel } from "@/lib/content/loader";
 import { CASE_DISCLAIMER } from "@/lib/cases/types";
@@ -18,87 +30,6 @@ type CaseDetailViewProps = {
   faqLinks: { href: string; label: string }[];
 };
 
-function DetailSection({
-  id,
-  title,
-  children,
-}: {
-  id: string;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <section
-      id={id}
-      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-    >
-      <h2 className="section-heading">{title}</h2>
-      <div className="mt-4">{children}</div>
-    </section>
-  );
-}
-
-function ItemList({ items }: { items: string[] }) {
-  if (items.length === 0) return null;
-  return (
-    <ul className="space-y-2.5">
-      {items.map((item) => (
-        <li
-          key={item}
-          className="flex gap-3 rounded-xl border border-beige-dark bg-white px-4 py-3.5 text-sm leading-relaxed text-navy/80 md:text-base"
-        >
-          <span
-            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-navy/15 text-[0.6rem] font-bold text-navy/45"
-            aria-hidden
-          >
-            ✓
-          </span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function OrderedList({ items }: { items: string[] }) {
-  if (items.length === 0) return null;
-  return (
-    <ol className="space-y-2.5">
-      {items.map((item, index) => (
-        <li
-          key={item}
-          className="flex gap-3 rounded-xl border border-beige-dark bg-cream/60 px-4 py-3.5 text-sm leading-relaxed text-navy/80 md:text-base"
-        >
-          <span
-            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-semibold text-white"
-            aria-hidden
-          >
-            {index + 1}
-          </span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
-function LinkGrid({ links }: { links: { href: string; label: string }[] }) {
-  return (
-    <ul className="grid gap-2.5 sm:grid-cols-2">
-      {links.map((link) => (
-        <li key={link.href}>
-          <Link
-            href={link.href}
-            className="interactive-surface card-surface flex min-h-11 items-center px-4 py-3 text-sm font-semibold text-navy hover:bg-beige/40"
-          >
-            {link.label} →
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) {
   const cover = getCoverImageForPageData(page);
   const { sections } = record;
@@ -108,117 +39,161 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
     label: getServiceLabel(slug),
   }));
 
+  const summaryBullets = [
+    page.intro,
+    sections.background
+      ? sections.background.length > 100
+        ? `${sections.background.slice(0, 97)}…`
+        : sections.background
+      : null,
+    sections.concerns[0] ? `의뢰인 우려: ${sections.concerns[0]}` : null,
+    sections.procedures[0] ? `진행 절차: ${sections.procedures[0]}` : null,
+    sections.outcome
+      ? `처리 결과: ${sections.outcome.length > 80 ? `${sections.outcome.slice(0, 77)}…` : sections.outcome}`
+      : null,
+  ].filter((item): item is string => Boolean(item)).slice(0, 5);
+
+  const tocItems = [
+    ...(sections.background ? [{ id: "case-background", label: "사건 배경" }] : []),
+    ...(sections.concerns.length > 0
+      ? [{ id: "case-concerns", label: "의뢰인이 처음 걱정한 점" }]
+      : []),
+    ...(sections.issues.length > 0 ? [{ id: "case-issues", label: "쟁점" }] : []),
+    ...(sections.documents.length > 0
+      ? [{ id: "case-documents", label: "준비서류" }]
+      : []),
+    ...(sections.procedures.length > 0
+      ? [{ id: "case-procedures", label: "진행 절차" }]
+      : []),
+    ...(sections.outcome ? [{ id: "case-outcome", label: "결과" }] : []),
+    ...(sections.cautions.length > 0
+      ? [{ id: "case-cautions", label: "비슷한 상황에서 주의할 점" }]
+      : []),
+    ...(serviceLinks.length > 0 ? [{ id: "case-services", label: "관련 서비스" }] : []),
+    ...(faqLinks.length > 0 ? [{ id: "case-faqs", label: "관련 FAQ" }] : []),
+    { id: "consultation", label: "상담 문의" },
+  ];
+
+  const badgeKeywords = [
+    record.caseCategory,
+    record.region,
+    ...record.situationTags.slice(0, 4),
+  ];
+
   return (
     <article className="space-y-8 md:space-y-12">
       <Breadcrumb items={page.breadcrumbs} />
 
       <PageCoverBanner image={cover} />
 
-      <header>
-        <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-navy px-3 py-1 text-xs font-semibold text-white">
-            {record.caseCategory}
-          </span>
-          <span className="rounded-full bg-beige px-3 py-1 text-xs font-medium text-navy-light">
-            {record.region}
-          </span>
-          {record.situationTags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-navy/10 bg-cream/60 px-3 py-1 text-xs font-medium text-navy/70"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <h1 className="page-title mt-4">{page.h1}</h1>
-        <p className="body-text mt-3 max-w-3xl">{page.intro}</p>
-        <p className="mt-3 text-sm text-navy/55">
-          {formatContentDate(record.date)} · {record.category}
-        </p>
-      </header>
-
-      <p
-        className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-4 py-3.5 text-sm leading-relaxed text-navy/75"
-        role="note"
+      <PageHero
+        h1={page.h1}
+        intro={page.intro}
+        keywords={page.primaryKeywords}
+        eyebrow="Case Study"
+        ctaLabel="비슷한 상황 상담하기"
       >
-        {CASE_DISCLAIMER}
-      </p>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <KeywordBadges keywords={badgeKeywords} max={8} />
+          <p className="text-sm text-navy/55">
+            {formatContentDate(record.date)} · {record.category}
+          </p>
+        </div>
+      </PageHero>
+
+      <WarningBox title="사례 안내">
+        <p>{CASE_DISCLAIMER}</p>
+      </WarningBox>
+
+      <SummaryBox items={summaryBullets} />
+
+      <PageTableOfContents items={tocItems} />
 
       {sections.background ? (
-        <DetailSection id="case-background" title="사건 배경">
-          <p className="body-text whitespace-pre-line">{sections.background}</p>
-        </DetailSection>
+        <ContentSection id="case-background" title="사건 배경">
+          <ProseParagraphs
+            paragraphs={sections.background.split(/\n\n+/).filter(Boolean)}
+          />
+        </ContentSection>
       ) : null}
 
       {sections.concerns.length > 0 ? (
-        <DetailSection id="case-concerns" title="의뢰인이 처음 걱정한 점">
-          <ItemList items={sections.concerns} />
-        </DetailSection>
+        <ContentSection id="case-concerns" title="의뢰인이 처음 걱정한 점">
+          <ChecklistBox items={sections.concerns} />
+        </ContentSection>
       ) : null}
 
       {sections.issues.length > 0 ? (
-        <DetailSection id="case-issues" title="쟁점">
-          <ItemList items={sections.issues} />
-        </DetailSection>
+        <ContentSection id="case-issues" title="쟁점">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {sections.issues.map((item) => (
+              <InfoCard key={item}>
+                <p className="text-sm leading-relaxed text-navy/85 md:text-base">
+                  {item}
+                </p>
+              </InfoCard>
+            ))}
+          </div>
+        </ContentSection>
       ) : null}
 
       {sections.documents.length > 0 ? (
-        <DetailSection id="case-documents" title="준비서류">
-          <ItemList items={sections.documents} />
-        </DetailSection>
+        <ContentSection id="case-documents" title="준비서류">
+          <ChecklistBox items={sections.documents} />
+        </ContentSection>
       ) : null}
 
-      <PageConversionCTA
-        pageType="case"
-        variant="mid"
-        pageSlug={record.slug}
-        documentsHref="#case-documents"
+      <ConsultationCTA
+        title="비슷한 상황이라면 서류부터 확인해 보세요"
+        description="준비서류를 먼저 점검한 뒤 상담을 요청하시면 검토가 수월합니다."
+        buttonLabel="상담 문의하기"
       />
 
       {sections.procedures.length > 0 ? (
-        <DetailSection id="case-procedures" title="진행 절차">
-          <OrderedList items={sections.procedures} />
-        </DetailSection>
+        <ContentSection id="case-procedures" title="진행 절차">
+          <StepTimeline steps={sections.procedures} />
+        </ContentSection>
       ) : null}
 
       {sections.outcome ? (
-        <DetailSection id="case-outcome" title="결과">
-          <p className="rounded-xl border border-beige-dark bg-beige/30 px-4 py-4 text-sm leading-relaxed text-navy/85 md:text-base">
-            {sections.outcome}
-          </p>
-          <p className="mt-3 text-sm text-navy/60">
-            위 결과는 해당 사건의 처리 경과를 참고용으로 정리한 것이며, 유사 사례에서도
-            보장되지 않습니다.
-          </p>
-        </DetailSection>
+        <ContentSection id="case-outcome" title="결과">
+          <InfoCard variant="highlight">
+            <p className="text-sm leading-relaxed text-navy/85 md:text-base">
+              {sections.outcome}
+            </p>
+          </InfoCard>
+          <WarningBox title="결과 안내">
+            <p>
+              위 결과는 해당 사건의 처리 경과를 참고용으로 정리한 것이며, 유사
+              사례에서도 동일한 결과가 보장되지는 않습니다. 사안에 따라 달라질
+              수 있습니다.
+            </p>
+          </WarningBox>
+        </ContentSection>
       ) : null}
 
       {sections.cautions.length > 0 ? (
-        <DetailSection id="case-cautions" title="비슷한 상황에서 주의할 점">
+        <ContentSection id="case-cautions" title="비슷한 상황에서 주의할 점">
           <div className="space-y-3">
             {sections.cautions.map((item) => (
-              <p
-                key={item}
-                className="rounded-xl border border-navy/10 bg-gradient-to-r from-beige/40 to-cream px-4 py-3.5 text-sm leading-relaxed text-navy/85 md:text-base"
-              >
-                {item}
-              </p>
+              <WarningBox key={item} title="주의사항">
+                <p>{item}</p>
+              </WarningBox>
             ))}
           </div>
-        </DetailSection>
+        </ContentSection>
       ) : null}
 
       {serviceLinks.length > 0 ? (
-        <DetailSection id="case-services" title="관련 서비스">
-          <LinkGrid links={serviceLinks} />
-        </DetailSection>
+        <ContentSection id="case-services" title="관련 서비스">
+          <RelatedContentGrid links={serviceLinks} />
+        </ContentSection>
       ) : null}
 
       {faqLinks.length > 0 ? (
-        <DetailSection id="case-faqs" title="관련 FAQ">
-          <LinkGrid links={faqLinks} />
-        </DetailSection>
+        <ContentSection id="case-faqs" title="관련 FAQ">
+          <RelatedContentGrid links={faqLinks} />
+        </ContentSection>
       ) : null}
 
       <RelatedRecommendations source={recommendationFromCaseRecord(record)} />
@@ -239,12 +214,19 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
       </div>
 
       <div id="consultation">
-        <LawyerConsultationGuide
-          pageType="case"
-          showSecondaryLinks
-          pageSlug={record.slug}
-          documentsHref="#case-documents"
+        <ConsultationCTA
+          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
+          description={page.ctaText}
+          buttonLabel="상담 문의하기"
         />
+        <div className="mt-6">
+          <LawyerConsultationGuide
+            pageType="case"
+            showSecondaryLinks
+            pageSlug={record.slug}
+            documentsHref="#case-documents"
+          />
+        </div>
       </div>
     </article>
   );

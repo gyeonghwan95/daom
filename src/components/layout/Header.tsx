@@ -104,36 +104,40 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
+        className={`sticky top-0 w-full border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
           menuOpen ? "z-[100]" : "z-40"
         }`}
       >
-        <Container className="flex items-center justify-between gap-3 py-2.5 md:gap-4 md:py-4">
+        <Container
+          fullWidth
+          className="flex items-center justify-between gap-3 py-2.5 md:py-3 lg:gap-6"
+        >
           <Link
             href="/"
-            className="flex min-h-11 min-w-0 flex-1 items-center gap-2.5 sm:gap-3"
+            className="site-header__brand flex min-h-11 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 lg:flex-none lg:shrink-0"
             onClick={closeMenu}
           >
-            <Image
-              src={siteFavicon}
-              alt={siteConfig.name}
-              width={56}
-              height={56}
-              priority
-              className="h-12 w-12 shrink-0 object-contain sm:h-[3.25rem] sm:w-[3.25rem] md:h-14 md:w-14"
-            />
-            <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-navy sm:text-base md:text-lg">
-                {siteConfig.name}
-              </p>
-              <p className="truncate text-xs text-navy/70 sm:text-sm">
-                {siteConfig.representative}
-              </p>
+            <span className="site-header__brand-mark" aria-hidden>
+              <Image
+                src={siteFavicon}
+                alt=""
+                width={56}
+                height={56}
+                priority
+                className="site-header__brand-logo"
+              />
+            </span>
+            <div className="site-header__brand-text min-w-0">
+              <p className="site-header__brand-name">{siteConfig.name}</p>
+              <p className="site-header__brand-rep">{siteConfig.representative}</p>
             </div>
           </Link>
 
-          <nav className="hidden lg:block" aria-label="주 메뉴">
-            <ul className="flex flex-wrap items-center gap-x-1 gap-y-2">
+          <nav
+            className="hidden min-w-0 flex-1 justify-end lg:block"
+            aria-label="주 메뉴"
+          >
+            <ul className="flex flex-wrap items-center justify-end gap-x-0.5 gap-y-1 xl:gap-x-1">
               {mainNavigation.map((item) => (
                 <li key={item.href}>
                   <NavMenuLink item={item} variant="desktop" />

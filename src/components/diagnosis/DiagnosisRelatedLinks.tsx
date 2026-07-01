@@ -12,12 +12,5 @@ export function DiagnosisRelatedLinks({
 }: DiagnosisRelatedLinksProps) {
   if (links.length === 0) return null;
 
-  return (
-    <section aria-labelledby="diagnosis-related-heading">
-      <h2 id="diagnosis-related-heading" className="sr-only">
-        {title}
-      </h2>
-      <RelatedLinks title={title} links={links} />
-    </section>
-  );
+  return <RelatedLinks title={title} links={links} />;
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
+import { GlossaryExplorer, type GlossarySearchItem } from "@/components/glossary/GlossaryExplorer";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -28,14 +29,41 @@ const CATEGORY_ORDER: GlossaryCategory[] = [
   "tax-fee",
 ];
 
+const POPULAR_SLUGS = [
+  "inheritance-registration",
+  "qualified-acceptance",
+  "jeonse-right",
+  "payment-order",
+  "company-establishment-registration",
+  "personal-rehabilitation",
+];
+
+function toSearchItem(term: ReturnType<typeof getAllGlossaryTerms>[number]): GlossarySearchItem {
+  return {
+    slug: term.slug,
+    path: term.path,
+    term: term.term,
+    category: term.category,
+    categoryLabel: GLOSSARY_CATEGORY_LABELS[term.category],
+    cardDescription: term.cardDescription,
+    oneLineDefinition: term.oneLineDefinition,
+  };
+}
+
 export function GlossaryHubView({ page }: GlossaryHubViewProps) {
   const cover = getCoverImageForPageData(page);
   const terms = getAllGlossaryTerms();
+  const searchItems = terms.map(toSearchItem);
+
   const grouped = CATEGORY_ORDER.map((category) => ({
     category,
     label: GLOSSARY_CATEGORY_LABELS[category],
-    terms: terms.filter((t) => t.category === category),
+    terms: searchItems.filter((t) => t.category === category),
   })).filter((g) => g.terms.length > 0);
+
+  const popularTerms = POPULAR_SLUGS.map((slug) =>
+    searchItems.find((item) => item.slug === slug),
+  ).filter((item): item is GlossarySearchItem => Boolean(item));
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -62,31 +90,7 @@ export function GlossaryHubView({ page }: GlossaryHubViewProps) {
         </ul>
       </section>
 
-      {grouped.map((group) => (
-        <section key={group.category} id={`glossary-${group.category}`}>
-          <h2 className="section-heading">{group.label}</h2>
-          <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {group.terms.map((term) => (
-              <li key={term.slug}>
-                <Link
-                  href={term.path}
-                  className="interactive-surface group flex h-full flex-col rounded-2xl border border-navy/10 bg-gradient-to-br from-white via-cream/30 to-beige/40 p-5 shadow-[0_4px_24px_rgba(26,39,68,0.05)] hover:border-navy/20 hover:shadow-[0_8px_32px_rgba(26,39,68,0.08)] sm:p-6"
-                >
-                  <h3 className="text-lg font-semibold text-navy group-hover:text-navy-dark">
-                    {term.term}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-navy/65">
-                    {term.cardDescription}
-                  </p>
-                  <span className="mt-4 text-sm font-semibold text-navy-light group-hover:text-navy">
-                    뜻과 절차 보기 →
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+      <GlossaryExplorer groups={grouped} popularTerms={popularTerms} />
 
       <section id="related-hubs" className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">
         <h2 className="text-base font-semibold text-navy sm:text-lg">함께 보면 좋은 안내</h2>

@@ -1,10 +1,20 @@
 import Link from "next/link";
-import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import {
+  ChecklistBox,
+  ConsultationCTA,
+  ContentSection,
+  InfoCard,
+  PageHero,
+  PageTableOfContents,
+  ProseParagraphs,
+  RelatedContentGrid,
+  SummaryBox,
+} from "@/components/readability";
 import { recommendationFromGlossaryTerm } from "@/lib/internal-links";
 import { getGlossaryTermBySlug } from "@/lib/glossary";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -15,39 +25,32 @@ type GlossaryTermViewProps = {
   slug: string;
 };
 
-function LinkGrid({
-  title,
-  links,
-}: {
-  title: string;
-  links: { href: string; label: string }[];
-}) {
-  if (links.length === 0) return null;
-
-  return (
-    <section className="rounded-2xl border border-navy/10 bg-white p-5 sm:p-6">
-      <h2 className="text-base font-semibold text-navy sm:text-lg">{title}</h2>
-      <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className="interactive-surface card-surface flex min-h-11 items-center px-4 py-3 text-sm font-semibold text-navy hover:bg-beige/50"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
 export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
   const term = getGlossaryTermBySlug(slug);
   const cover = getCoverImageForPageData(page);
 
   if (!term) return null;
+
+  const summaryBullets = [
+    term.oneLineDefinition,
+    term.plainExplanation.length > 120
+      ? `${term.plainExplanation.slice(0, 117)}…`
+      : term.plainExplanation,
+    term.whenItMatters[0] ? `관련 상황: ${term.whenItMatters[0]}` : null,
+    term.checks[0] ? `확인 사항: ${term.checks[0]}` : null,
+  ].filter((item): item is string => Boolean(item)).slice(0, 5);
+
+  const tocItems = [
+    { id: "glossary-plain", label: "쉽게 풀어쓴 설명" },
+    { id: "glossary-matters", label: "언제 문제가 되는지" },
+    { id: "glossary-checks", label: "준비서류 또는 확인사항" },
+    { id: "glossary-diagnosis", label: "관련 자가진단" },
+    { id: "glossary-services", label: "관련 서비스" },
+    { id: "glossary-faq", label: "관련 FAQ" },
+    { id: "glossary-cases", label: "관련 사례" },
+    { id: "faq", label: "자주 묻는 질문" },
+    { id: "consultation", label: "상담 문의" },
+  ];
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -55,86 +58,92 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
 
       <PageCoverBanner image={cover} />
 
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-          Legal Glossary
-        </p>
-        <h1 className="page-title mt-2">{page.h1}</h1>
-        <p className="body-text mt-4 max-w-3xl md:mt-5 text-lg font-medium text-navy">
-          {term.oneLineDefinition}
-        </p>
-      </header>
-
-      <section className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">
-        <h2 className="text-base font-semibold text-navy sm:text-lg">쉽게 풀어쓴 설명</h2>
-        <p className="mt-3 text-sm leading-relaxed text-navy/80 sm:text-base">
-          {term.plainExplanation}
-        </p>
-      </section>
-
-      <PageConversionCTA
-        pageType="glossary"
-        variant="mid"
-        pageSlug={slug}
-        diagnosisHref={term.diagnosisLinks[0]?.href ?? "/자가진단"}
+      <PageHero
+        h1={page.h1}
+        intro={term.oneLineDefinition}
+        keywords={page.primaryKeywords}
+        eyebrow="Legal Glossary"
+        ctaLabel="용어 관련 상담하기"
       />
 
-      <section className="rounded-2xl border border-navy/10 bg-white p-5 sm:p-6">
-        <h2 className="text-base font-semibold text-navy sm:text-lg">언제 문제가 되는지</h2>
-        <ul className="mt-4 space-y-2 text-sm leading-relaxed text-navy/75">
-          {term.whenItMatters.map((item) => (
-            <li key={item}>· {item}</li>
-          ))}
-        </ul>
-      </section>
+      <SummaryBox items={summaryBullets} />
 
-      <section
-        id="glossary-checks"
-        className="rounded-2xl border border-navy/10 bg-white p-5 sm:p-6"
-      >
-        <h2 className="text-base font-semibold text-navy sm:text-lg">준비서류 또는 확인사항</h2>
-        <ul className="mt-4 space-y-2 text-sm leading-relaxed text-navy/75">
-          {term.checks.map((item) => (
-            <li key={item}>· {item}</li>
-          ))}
-        </ul>
-      </section>
+      <PageTableOfContents items={tocItems} />
 
-      <LinkGrid title="관련 자가진단" links={term.diagnosisLinks} />
-      <LinkGrid title="관련 서비스" links={term.serviceLinks} />
-      <LinkGrid title="관련 FAQ" links={term.faqLinks} />
-      <LinkGrid title="관련 사례" links={term.caseLinks} />
+      <ContentSection id="glossary-plain" title="쉽게 풀어쓴 설명">
+        <InfoCard variant="highlight">
+          <ProseParagraphs paragraphs={[term.plainExplanation]} />
+        </InfoCard>
+      </ContentSection>
+
+      <ConsultationCTA
+        title="용어와 관련해 절차가 궁금하신가요?"
+        description="자가진단으로 상황을 점검하거나, 상담을 통해 서류와 절차를 확인해 보실 수 있습니다."
+        buttonLabel="상담 문의하기"
+      />
+
+      <ContentSection id="glossary-matters" title="언제 문제가 되는지">
+        <ChecklistBox items={term.whenItMatters} />
+      </ContentSection>
+
+      <ContentSection id="glossary-checks" title="준비서류 또는 확인사항">
+        <ChecklistBox
+          items={term.checks}
+          note="사안에 따라 추가로 확인할 항목이 있을 수 있습니다."
+        />
+      </ContentSection>
+
+      <ContentSection id="glossary-diagnosis" title="관련 자가진단">
+        <RelatedContentGrid links={term.diagnosisLinks} />
+      </ContentSection>
+
+      <ContentSection id="glossary-services" title="관련 서비스">
+        <RelatedContentGrid links={term.serviceLinks} />
+      </ContentSection>
+
+      <ContentSection id="glossary-faq" title="관련 FAQ">
+        <RelatedContentGrid links={term.faqLinks} />
+      </ContentSection>
+
+      <ContentSection id="glossary-cases" title="관련 사례">
+        <RelatedContentGrid links={term.caseLinks} />
+      </ContentSection>
 
       <RelatedRecommendations source={recommendationFromGlossaryTerm(term)} />
 
-      <section className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">
-        <div className="flex flex-wrap gap-2">
-          <Link
-            href="/glossary"
-            className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
-          >
-            ← 법률 용어사전 목록
-          </Link>
-          <Link
-            href="/situations"
-            className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
-          >
-            상황별 법률문제
-          </Link>
-        </div>
-      </section>
+      <div className="flex flex-wrap gap-2">
+        <Link
+          href="/glossary"
+          className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
+        >
+          ← 법률 용어사전 목록
+        </Link>
+        <Link
+          href="/situations"
+          className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
+        >
+          상황별 법률문제
+        </Link>
+      </div>
 
       <DiagnosisFAQ items={page.faqs} />
 
       <div id="consultation">
-        <LawyerConsultationGuide
-          pageType="glossary"
-          title={page.ctaTitle}
+        <ConsultationCTA
+          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={page.ctaText}
-          showSecondaryLinks
-          pageSlug={slug}
-          diagnosisHref={term.diagnosisLinks[0]?.href ?? "/자가진단"}
+          buttonLabel="상담 문의하기"
         />
+        <div className="mt-6">
+          <LawyerConsultationGuide
+            pageType="glossary"
+            title={page.ctaTitle}
+            description={page.ctaText}
+            showSecondaryLinks
+            pageSlug={slug}
+            diagnosisHref={term.diagnosisLinks[0]?.href ?? "/자가진단"}
+          />
+        </div>
       </div>
     </article>
   );

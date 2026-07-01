@@ -7,6 +7,14 @@ import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendationsDisplay } from "@/components/internal-links/RelatedRecommendationsDisplay";
+import {
+  ConsultationCTA,
+  ContentSection,
+  PageHero,
+  PageTableOfContents,
+  SummaryBox,
+  WarningBox,
+} from "@/components/readability";
 import type { RecommendationGroups } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
@@ -41,6 +49,20 @@ export function ToolCalculatorView({
 
   const calculatorType = tool.calculatorType;
 
+  const summaryBullets = [
+    page.intro,
+    "일반적인 기한·비용·서류 방향을 빠르게 점검할 수 있습니다.",
+    "관할·서류·당사자 상황에 따라 실제 결과는 달라질 수 있습니다.",
+    "자가진단·업무안내·상담으로 이어서 확인하는 것이 좋습니다.",
+  ].slice(0, 5);
+
+  const tocItems = [
+    { id: "calculator", label: "대략 검토하기" },
+    { id: "tool-info", label: "이 계산기로 알 수 있는 것" },
+    { id: "faq", label: "자주 묻는 질문" },
+    { id: "consultation", label: "상담 문의" },
+  ];
+
   function handleCalculate() {
     setResult(runToolCalculator(calculatorType, input));
   }
@@ -56,50 +78,60 @@ export function ToolCalculatorView({
 
       <PageCoverBanner image={cover} />
 
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-          Legal Calculator
-        </p>
-        <h1 className="page-title mt-2">{page.h1}</h1>
-        <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
-      </header>
+      <PageHero
+        h1={page.h1}
+        intro={page.intro}
+        keywords={page.primaryKeywords}
+        eyebrow="Legal Calculator"
+        ctaLabel="계산 결과 상담하기"
+      />
 
-      <section
-        id="calculator"
-        className="rounded-2xl border border-navy/10 bg-gradient-to-br from-white via-cream/20 to-beige/30 p-5 shadow-[0_4px_24px_rgba(26,39,68,0.05)] sm:p-6"
-      >
-        <h2 className="section-heading">대략 검토하기</h2>
-        <p className="mt-2 text-sm text-navy/65">
+      <SummaryBox items={summaryBullets} />
+
+      <PageTableOfContents items={tocItems} />
+
+      <ContentSection id="calculator" title="대략 검토하기">
+        <p className="text-sm text-navy/65 md:text-base">
           아래 정보를 입력하면 참고용 결과를 안내합니다. 확정 산출이 아닙니다.
         </p>
-        <div className="mt-5">
+        <WarningBox title="계산기 안내">
+          <p>
+            본 계산기는 참고용이며, 사안에 따라 결과가 달라질 수 있습니다.
+            확정적인 법률 판단이나 금액 산정을 대신하지 않습니다.
+          </p>
+        </WarningBox>
+        <div className="rounded-2xl border border-navy/10 bg-gradient-to-br from-white via-cream/20 to-beige/30 p-5 sm:p-6">
           <ToolDisclaimer />
+          <div className="mt-5">
+            {result ? (
+              <ToolCalculatorResultView
+                tool={tool}
+                result={result}
+                onReset={handleReset}
+                recommendationGroups={recommendationGroups}
+              />
+            ) : (
+              <ToolCalculatorForm
+                calculatorType={tool.calculatorType}
+                input={input}
+                onChange={setInput}
+                onSubmit={handleCalculate}
+              />
+            )}
+          </div>
         </div>
-        <div className="mt-5">
-          {result ? (
-            <ToolCalculatorResultView
-              tool={tool}
-              result={result}
-              onReset={handleReset}
-              recommendationGroups={recommendationGroups}
-            />
-          ) : (
-            <ToolCalculatorForm
-              calculatorType={tool.calculatorType}
-              input={input}
-              onChange={setInput}
-              onSubmit={handleCalculate}
-            />
-          )}
-        </div>
-      </section>
+      </ContentSection>
 
-      <section id="tool-info" className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">
-        <h2 className="text-base font-semibold text-navy sm:text-lg">이 계산기로 알 수 있는 것</h2>
-        <ul className="mt-4 space-y-2 text-sm leading-relaxed text-navy/75">
-          <li>· 일반적인 기한·비용·서류 방향을 빠르게 점검할 수 있습니다.</li>
-          <li>· 관할·서류·당사자 상황에 따라 실제 결과는 달라질 수 있습니다.</li>
-          <li>· 자가진단·업무안내·상담으로 이어서 확인하는 것이 좋습니다.</li>
+      <ContentSection id="tool-info" title="이 계산기로 알 수 있는 것">
+        <ul className="space-y-3">
+          {summaryBullets.slice(1).map((item) => (
+            <li
+              key={item}
+              className="rounded-xl border border-beige-dark bg-white px-4 py-3.5 text-sm leading-relaxed text-navy/80 md:text-base"
+            >
+              {item}
+            </li>
+          ))}
         </ul>
         <div className="mt-4 flex flex-wrap gap-2">
           <Link
@@ -109,7 +141,7 @@ export function ToolCalculatorView({
             ← 법률 계산기 목록
           </Link>
         </div>
-      </section>
+      </ContentSection>
 
       <DiagnosisFAQ items={page.faqs} />
 
@@ -117,12 +149,19 @@ export function ToolCalculatorView({
         <>
           <RelatedRecommendationsDisplay groups={recommendationGroups} />
           <div id="consultation">
-          <LawyerConsultationGuide
-            title={page.ctaTitle}
-            description={page.ctaText}
-            showSecondaryLinks
-            pageSlug={slug}
-          />
+            <ConsultationCTA
+              title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
+              description={page.ctaText}
+              buttonLabel="상담 문의하기"
+            />
+            <div className="mt-6">
+              <LawyerConsultationGuide
+                title={page.ctaTitle}
+                description={page.ctaText}
+                showSecondaryLinks
+                pageSlug={slug}
+              />
+            </div>
           </div>
         </>
       ) : null}

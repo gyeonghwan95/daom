@@ -1,14 +1,26 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
-import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
-import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import {
+  buildPageSummaryBullets,
+  buildPageTocItems,
+  ChecklistBox,
+  ConsultationCTA,
+  ContentSection,
+  InfoCard,
+  PageHero,
+  PageTableOfContents,
+  ProseParagraphs,
+  RelatedContentGrid,
+  StepTimeline,
+  SummaryBox,
+  WarningBox,
+} from "@/components/readability";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
@@ -22,65 +34,35 @@ type PageDataTemplateProps = {
   recommendationSource?: RecommendationSource;
 };
 
-function ContentBlock({
-  id,
-  title,
-  children,
-}: {
-  id: string;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <section
-      id={id}
-      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-    >
-      <h2 className="section-heading">{title}</h2>
-      <div className="mt-4">{children}</div>
-    </section>
-  );
-}
-
 function ExtraSections({ sections }: { sections: PageSection[] }) {
   if (sections.length === 0) return null;
 
   return (
     <>
       {sections.map((section, index) => (
-        <ContentBlock
+        <ContentSection
           key={`${section.title}-${index}`}
           id={`section-${index}`}
           title={section.title}
         >
-          <p className="body-text">{section.body}</p>
+          <ProseParagraphs paragraphs={[section.body]} />
           {section.items && section.items.length > 0 ? (
-            <ul className="mt-4 space-y-3">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {section.items.map((item) => (
-                <li
-                  key={item}
-                  className="card-surface px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
-                >
-                  {item}
-                </li>
+                <InfoCard key={item}>
+                  <p className="text-sm leading-relaxed text-navy/85 md:text-base">
+                    {item}
+                  </p>
+                </InfoCard>
               ))}
-            </ul>
+            </div>
           ) : null}
           {section.links && section.links.length > 0 ? (
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {section.links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="card-surface flex min-h-12 items-center px-4 py-3 text-base text-navy/80 hover:border-navy/20 hover:bg-beige/50 md:px-5 md:py-4"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4">
+              <RelatedContentGrid links={section.links} />
+            </div>
           ) : null}
-        </ContentBlock>
+        </ContentSection>
       ))}
     </>
   );
@@ -94,6 +76,10 @@ export function PageDataTemplate({
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
   const displayFaqs = page.faqs.slice(0, 3);
+  const summaryBullets = buildPageSummaryBullets(page);
+  const tocItems = buildPageTocItems(page, {
+    hasDetailContent: Boolean(children),
+  });
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -103,106 +89,97 @@ export function PageDataTemplate({
 
       {showCover ? <PageCoverBanner image={cover} /> : null}
 
-      <header>
-        <h1 className="page-title">{page.h1}</h1>
-        <div className="mt-4 max-w-3xl space-y-4 md:mt-5">
-          {page.introParagraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)} className="body-text">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </header>
+      <PageHero
+        h1={page.h1}
+        introParagraphs={page.introParagraphs}
+        keywords={page.primaryKeywords}
+        ctaLabel="상담 문의하기"
+      />
 
-      <ContentBlock id="procedures" title="핵심 절차">
-        <ol className="space-y-3">
-          {page.procedures.map((step, index) => (
-            <li
-              key={step}
-              className="card-surface flex gap-3 px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
-            >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-sm font-semibold text-white">
-                {index + 1}
-              </span>
-              <span>{step}</span>
-            </li>
-          ))}
-        </ol>
-      </ContentBlock>
+      <SummaryBox items={summaryBullets} />
 
-      <ContentBlock id="documents" title="필요 서류">
-        <ul className="space-y-3">
-          {page.documents.map((doc) => (
-            <li
-              key={doc}
-              className="card-surface px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
-            >
-              {doc}
-            </li>
-          ))}
-        </ul>
-        <p className="body-text mt-4 text-sm text-navy/65">
-          사건마다 추가 서류가 필요할 수 있습니다. 상담 시 체크리스트로
-          안내드립니다.
-        </p>
-      </ContentBlock>
+      <PageTableOfContents items={tocItems} />
 
-      <InlineConsultationCTA
-        pageType="faq"
+      <ContentSection id="procedures" title="핵심 절차">
+        <StepTimeline steps={page.procedures} />
+        <WarningBox title="절차 안내">
+          <p>
+            위 순서는 일반적인 흐름을 정리한 것입니다. 사안에 따라 단계나
+            소요 기간이 달라질 수 있으니 상담 시 확인해 보시면 좋습니다.
+          </p>
+        </WarningBox>
+      </ContentSection>
+
+      <ContentSection id="documents" title="필요 서류">
+        <ChecklistBox
+          items={page.documents}
+          note="사건마다 추가 서류가 필요할 수 있습니다. 상담 전에 체크리스트를 확인해 두시면 준비가 수월합니다."
+        />
+      </ContentSection>
+
+      <ConsultationCTA
         title={page.ctaTitle}
         description={page.ctaText}
-        pageSlug={page.slug}
+        buttonLabel="내 상황에 맞게 상담하기"
       />
 
       {page.consultationPoints.length > 0 ? (
-        <ContentBlock id="consultation-points" title="상담 포인트">
-          <ul className="space-y-3">
+        <ContentSection id="consultation-points" title="상담 포인트">
+          <div className="grid gap-3 sm:grid-cols-2">
             {page.consultationPoints.map((point) => (
-              <li
-                key={point}
-                className="card-surface px-4 py-3 text-base leading-relaxed text-navy/80 md:px-5 md:py-4"
-              >
-                {point}
-              </li>
+              <InfoCard key={point} variant="highlight">
+                <p className="text-sm leading-relaxed text-navy/85 md:text-base">
+                  {point}
+                </p>
+              </InfoCard>
             ))}
-          </ul>
-        </ContentBlock>
+          </div>
+        </ContentSection>
       ) : null}
 
-      <ContentBlock id="consultation-example" title="실제 상담 상황 예시">
-        <div className="card-surface bg-cream p-6 md:p-8">
+      <ContentSection id="consultation-example" title="실제 상담 상황 예시">
+        <InfoCard variant="highlight">
           <h3 className="text-lg font-semibold text-navy">
             {page.consultationExample.title}
           </h3>
           <p className="body-text mt-3">{page.consultationExample.body}</p>
-        </div>
-      </ContentBlock>
+        </InfoCard>
+      </ContentSection>
 
       <ExtraSections sections={page.sections} />
 
       {children ? (
-        <ContentBlock id="detail-content" title="상세 안내">
+        <ContentSection id="detail-content" title="상세 안내">
           <div className="mdx-content">{children}</div>
-        </ContentBlock>
+        </ContentSection>
       ) : null}
 
-      <ContentBlock id="faq" title="자주 묻는 질문">
+      <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />
-      </ContentBlock>
+      </ContentSection>
 
-      <RelatedLinks title="관련 페이지" links={page.internalLinks} />
+      <ContentSection id="related" title="관련 페이지">
+        <RelatedContentGrid links={page.internalLinks} />
+      </ContentSection>
 
       {recommendationSource ? (
         <RelatedRecommendations source={recommendationSource} />
       ) : null}
 
       <div id="consultation">
-        <CTASection
-          pageType="faq"
-          title={page.ctaTitle}
+        <ConsultationCTA
+          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={page.ctaText}
-          pageSlug={page.slug}
+          buttonLabel="상담 문의하기"
         />
+        <div className="mt-6">
+          <CTASection
+            pageType="faq"
+            title={page.ctaTitle}
+            description={page.ctaText}
+            pageSlug={page.slug}
+          />
+        </div>
       </div>
 
       <PageDataNapSection
