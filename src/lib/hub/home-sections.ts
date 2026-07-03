@@ -163,6 +163,7 @@ export const LOCATION_HUB_LINKS: RelatedLink[] = [
   { href: "/반여동법무사", label: "반여동 법무사" },
   { href: "/서면법무사", label: "서면 법무사" },
   { href: "/연산동법무사", label: "연산동 법무사" },
+  { href: "/광안리법무사", label: "광안리 법무사" },
   { href: "/광안동법무사", label: "광안동 법무사" },
   { href: "/센텀시티역법무사", label: "센텀시티역 법무사" },
   { href: "/서면역법무사", label: "서면역 법무사" },

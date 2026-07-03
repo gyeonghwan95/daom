@@ -2,6 +2,22 @@ import type { DistrictProfile } from "@/lib/local-landing/districts";
 
 /** SEO 확장용 추가 지역 프로필 */
 export const extraDistrictProfiles: Record<string, DistrictProfile> = {
+  donggu: {
+    key: "donggu",
+    label: "동구",
+    type: "district",
+    neighborhoods: ["부산역", "초량동", "수정동", "범일동"],
+    context:
+      "동구는 부산역·초량·범일 일대 KTX·항만·상가가 밀집한 관문 지역으로, 역세권 상가·주택의 매매·상속등기와 소규모 법인·채권(지급명령·공탁) 문의가 함께 이어집니다.",
+    registryOffice: "중부산등기소",
+    registryAddress: "부산광역시 동래구 중앙대로 1333",
+    courtNote: "민사·가사 일부는 부산지방법원 본원, 등기는 부동산 소재지 관할",
+    demandNotes: [
+      "부산역 인근 상가·오피스 매매 등기",
+      "초량동 다세대·상가 상속등기",
+      "역세권 법인 사무실 설립·변경등기",
+    ],
+  },
   busanjin: {
     key: "busanjin",
     label: "부산진구",
@@ -9,6 +25,20 @@ export const extraDistrictProfiles: Record<string, DistrictProfile> = {
     neighborhoods: ["서면", "부전동", "범천동", "전포동"],
     context:
       "부산진구는 서면·부전·전포 일대 상업지와 오피스·상가 밀집 지역으로, 매매·상속·법인등기와 채무 관련 상담이 많이 이어지는 곳입니다.",
+  },
+  gwanganri: {
+    key: "gwanganri",
+    label: "광안리",
+    type: "district",
+    neighborhoods: ["광안동", "민락동", "광안리"],
+    context:
+      "광안리·광안동은 해변 인근 아파트·상가·전세 밀집 지역으로, 매매·전세권·상속등기 문의가 계절·학기와 함께 늘어나는 생활권입니다.",
+    registryOffice: "남부산등기소",
+    demandNotes: [
+      "광안리 인근 아파트·상가 매매 등기",
+      "전세권 설정·말소 등기",
+      "광안동 오래된 주택 상속등기",
+    ],
   },
   namgu: {
     key: "namgu",

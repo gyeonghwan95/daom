@@ -9,6 +9,8 @@ import type { ServiceFaq } from "@/types/service";
 import { getLocalLandingConfig, localLandingConfigs } from "./config";
 import { districtProfiles, serviceLabels } from "./districts";
 import { buildExpansionLandingPage } from "./expansion/builder-expansion";
+import { buildKeywordHubPage } from "./keyword-builder";
+import { buildNeighborhoodHubPage } from "./neighborhood-hub-builder";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -358,6 +360,12 @@ export function buildLocalLandingPage(
 
 function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage | null {
   const pageType = config.pageType ?? "service-region";
+  if (pageType === "keyword-hub") {
+    return buildKeywordHubPage(config);
+  }
+  if (pageType === "neighborhood-hub") {
+    return buildNeighborhoodHubPage(config);
+  }
   if (pageType !== "service-region") {
     return buildExpansionLandingPage(config);
   }

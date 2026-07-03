@@ -142,9 +142,26 @@ function assertLocalLandingPages() {
     : "";
   const hubs = fs.existsSync(hubFile) ? fs.readFileSync(hubFile, "utf8") : "";
 
+  const keywordFile = path.join(
+    ROOT,
+    "src/lib/local-landing/keyword-landing-config.ts",
+  );
+  const neighborhoodFile = path.join(
+    ROOT,
+    "src/lib/local-landing/neighborhood-hub-config.ts",
+  );
+  const keyword = fs.existsSync(keywordFile)
+    ? fs.readFileSync(keywordFile, "utf8")
+    : "";
+  const neighborhood = fs.existsSync(neighborhoodFile)
+    ? fs.readFileSync(neighborhoodFile, "utf8")
+    : "";
+
   const slugCount =
     (config.match(/slug:\s*"/g) ?? []).length +
-    (expansion.match(/slug:\s*"/g) ?? []).length;
+    (expansion.match(/slug:\s*"/g) ?? []).length +
+    (keyword.match(/slug:\s*"/g) ?? []).length +
+    (neighborhood.match(/slug:\s*"/g) ?? []).length;
   const hubCount = (hubs.match(/slug:\s*"/g) ?? []).length;
 
   if (slugCount < 105) {

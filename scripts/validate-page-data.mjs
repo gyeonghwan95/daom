@@ -61,6 +61,12 @@ function validateKoreanSlugOverlap() {
           "src/lib/local-landing/expansion/config-expansion.ts",
         ),
       ),
+      ...readSlugsFromConfig(
+        path.join(ROOT, "src/lib/local-landing/keyword-landing-config.ts"),
+      ),
+      ...readSlugsFromConfig(
+        path.join(ROOT, "src/lib/local-landing/neighborhood-hub-config.ts"),
+      ),
     ]),
   ];
   const hubs = [

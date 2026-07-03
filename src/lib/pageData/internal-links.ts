@@ -29,10 +29,34 @@ function toPageLink(link: RelatedLink): PageRelatedLink {
   return { href: link.href, label: link.label };
 }
 
+function neighborhoodHubLinks(excludeSlug?: string, limit = 8): PageRelatedLink[] {
+  return localLandingConfigs
+    .filter((c) => c.pageType === "neighborhood-hub" && c.slug !== excludeSlug)
+    .slice(0, limit)
+    .map((c) => ({
+      href: `/${c.slug}`,
+      label: c.slug,
+    }));
+}
+
+function keywordHubLinks(excludeSlug?: string, limit = 6): PageRelatedLink[] {
+  return localLandingConfigs
+    .filter((c) => c.pageType === "keyword-hub" && c.slug !== excludeSlug)
+    .slice(0, limit)
+    .map((c) => ({
+      href: `/${c.slug}`,
+      label: c.slug,
+    }));
+}
+
 function localLandingTitle(config: (typeof localLandingConfigs)[number]): string {
   switch (config.pageType) {
     case "region-hub":
       return `${config.regionLabel} 법무사`;
+    case "keyword-hub":
+      return config.slug;
+    case "neighborhood-hub":
+      return config.slug;
     case "conversion":
     case "court-registry":
     case "business-zone":
@@ -234,6 +258,12 @@ export function getThematicInternalLinks(
 
     if (pageType === "region-hub" && regionKey) {
       links.push(...regionLandingsForRegion(regionKey, input.slug, 6));
+    } else if (pageType === "keyword-hub") {
+      links.push(...keywordHubLinks(input.slug, 6));
+      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+    } else if (pageType === "neighborhood-hub") {
+      links.push(...neighborhoodHubLinks(input.slug, 6));
+      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
     } else if (pageType === "conversion") {
       links.push(...conversionLinksForService(serviceSlug, input.slug));
       links.push(...localLandingsForService(serviceSlug, input.slug, 3));

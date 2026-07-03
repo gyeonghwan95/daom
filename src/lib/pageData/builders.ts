@@ -36,6 +36,8 @@ export function mapLandingPageTypeToCategory(
     case "real-estate-dev":
       return "realEstate";
     case "region-hub":
+    case "keyword-hub":
+    case "neighborhood-hub":
     case "service-region":
     default:
       return "local";
@@ -43,6 +45,63 @@ export function mapLandingPageTypeToCategory(
 }
 
 function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
+  if (page.pageType === "keyword-hub") {
+    return [
+      {
+        title: "이런 경우 필요한 등기입니다",
+        body: `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
+        items: page.whenNeeded,
+      },
+      {
+        title: "비용이 달라지는 요소",
+        body: page.costGuide,
+        items: page.costFactors ?? page.precautions,
+      },
+      {
+        title: "법무사 상담이 필요한 경우",
+        body: `다음과 같은 상황에서는 혼자 진행하기보다 ${page.regionLabel} 등기 법무사와 상담하시는 것이 안전합니다. 기한·순서·서류 오류를 줄이는 데 도움이 됩니다.`,
+        items: page.legalIssues,
+      },
+      {
+        title: "관할·접근 안내",
+        body: page.jurisdictionGuide.jurisdictionNote,
+        items: page.jurisdictionGuide.practicalNotes,
+      },
+      {
+        title: "법무사 의견",
+        body: page.lawyerOpinion,
+      },
+    ];
+  }
+
+  if (page.pageType === "neighborhood-hub") {
+    return [
+      {
+        title: "지역 생활권 안내",
+        body: page.neighborhoodLivingArea ?? page.problemStatement,
+      },
+      {
+        title: "많이 발생하는 상담 유형",
+        body: `${page.regionLabel} 생활권에서 아래와 같은 등기·송무 상담이 자주 이어집니다. 사건마다 필요 서류와 관할이 달라지므로 상담 시 확인합니다.`,
+        items: page.whenNeeded,
+      },
+      {
+        title: "관할·등기소 안내",
+        body: page.jurisdictionGuide.jurisdictionNote,
+        items: page.jurisdictionGuide.practicalNotes,
+      },
+      {
+        title: "법무사 상담이 필요한 경우",
+        body: `등기부 권리관계·가족 협의·채무·기한이 얽히면 ${page.regionLabel} 사건도 전문가 상담이 도움이 됩니다.`,
+        items: page.legalIssues,
+      },
+      {
+        title: "법무사 의견",
+        body: page.lawyerOpinion,
+      },
+    ];
+  }
+
   return [
     {
       title: "비용 안내",
@@ -66,9 +125,33 @@ export function buildPageDataFromLocalLanding(
   const category = mapLandingPageTypeToCategory(page.pageType);
 
   const metaTitle =
-    page.pageType === "court-registry" && page.slug.endsWith("법무사")
+    page.metaTitle ??
+    (page.pageType === "court-registry" && page.slug.endsWith("법무사")
       ? buildMetaTitle(`${page.slug.replace(/법무사$/, "")} 법무사 안내`)
-      : buildMetaTitle(`${page.title} 안내`);
+      : buildMetaTitle(`${page.title} 안내`));
+
+  const introParagraphs =
+    page.summaryParagraphs && page.summaryParagraphs.length > 0
+      ? page.summaryParagraphs
+      : [
+          page.description,
+          `${page.regionLabel} ${page.neighborhoods.slice(0, 3).join("·")} 일대에서 상속등기·부동산등기·법인등기·개인회생 등을 상담합니다.`,
+        ];
+
+  const consultationPoints =
+    page.pageType === "keyword-hub" || page.pageType === "neighborhood-hub"
+      ? page.legalIssues.slice(0, 6)
+      : [...page.legalIssues, ...page.precautions].slice(0, 6);
+
+  const primaryKeywords =
+    page.primaryKeywords && page.primaryKeywords.length > 0
+      ? page.primaryKeywords
+      : [
+          page.regionLabel,
+          "부산 법무사",
+          "부산법무사",
+          page.title.replace(page.regionLabel, "").trim(),
+        ].filter(Boolean);
 
   return createPageData({
     slug: page.slug,
@@ -83,13 +166,10 @@ export function buildPageDataFromLocalLanding(
       { label: "홈", href: "/" },
       { label: page.title },
     ],
-    introParagraphs: [
-      page.description,
-      `${page.regionLabel} ${page.neighborhoods.slice(0, 3).join("·")} 일대에서 상속등기·부동산등기·법인등기·개인회생 등을 상담합니다.`,
-    ],
+    introParagraphs,
     procedures: page.procedures,
     documents: page.documents,
-    consultationPoints: [...page.legalIssues, ...page.precautions].slice(0, 6),
+    consultationPoints,
     faqs: page.faqs.slice(0, 3).map((f) => ({
       question: f.question,
       answer: f.answer,
@@ -107,12 +187,7 @@ export function buildPageDataFromLocalLanding(
         : []),
     ],
     sections: sectionsFromLocalLanding(page),
-    primaryKeywords: [
-      page.regionLabel,
-      "부산 법무사",
-      "부산법무사",
-      page.title.replace(page.regionLabel, "").trim(),
-    ].filter(Boolean),
+    primaryKeywords,
     serviceSlug: page.serviceSlug,
     landingPageType: page.pageType,
     regionKey: page.regionKey,

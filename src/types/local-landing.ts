@@ -3,6 +3,8 @@ import type { ServiceFaq } from "@/types/service";
 export type LocalLandingPageType =
   | "service-region"
   | "region-hub"
+  | "keyword-hub"
+  | "neighborhood-hub"
   | "conversion"
   | "court-registry"
   | "business-zone"
@@ -12,6 +14,12 @@ export type LocalLandingConfig = {
   /** URL 경로 (예: 부산상속등기) */
   slug: string;
   pageType?: LocalLandingPageType;
+  /** keyword-hub 전용 콘텐츠 키 (기본값: slug) */
+  keywordKey?: string;
+  /** neighborhood-hub 전용 콘텐츠 키 (기본값: slug) */
+  neighborhoodKey?: string;
+  /** region-hub에서 연결할 동네 법무사 페이지 slug */
+  linkedNeighborhoodSlugs?: string[];
   serviceSlug: string;
   regionKey: string;
   /** H1·타이틀용 (예: 해운대구) */
@@ -48,7 +56,16 @@ export type LocalLandingPage = {
   serviceSlug: string;
   title: string;
   h1: string;
+  /** SEO title (keyword-hub 등에서 직접 지정) */
+  metaTitle?: string;
   description: string;
+  /** 상단 요약·히어로용 문단 (keyword-hub) */
+  summaryParagraphs?: string[];
+  /** 비용 변동 요인 (keyword-hub) */
+  costFactors?: string[];
+  /** 동네 생활권 설명 (neighborhood-hub) */
+  neighborhoodLivingArea?: string;
+  primaryKeywords?: string[];
   regionLabel: string;
   regionKey: string;
   neighborhoods: string[];

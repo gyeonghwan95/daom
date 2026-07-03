@@ -68,7 +68,7 @@ const registryByRegionKey: Record<string, Partial<LocalLandingJurisdictionGuide>
   },
 };
 
-function getJurisdictionGuide(
+export function getJurisdictionGuide(
   config: LocalLandingConfig,
   institutionKey?: string,
 ): LocalLandingJurisdictionGuide {
@@ -228,7 +228,10 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
     relatedServiceLinks: [],
-    relatedRegionLinks: [],
+    relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
+      href: `/${slug}`,
+      label: slug,
+    })),
   };
 }
 
