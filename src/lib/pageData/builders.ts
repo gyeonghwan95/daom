@@ -38,6 +38,8 @@ export function mapLandingPageTypeToCategory(
     case "region-hub":
     case "keyword-hub":
     case "neighborhood-hub":
+    case "preservation-registration":
+    case "public-agency-registration":
     case "service-region":
     default:
       return "local";
@@ -45,8 +47,35 @@ export function mapLandingPageTypeToCategory(
 }
 
 function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
+  if (page.pageType === "preservation-registration" || page.pageType === "public-agency-registration") {
+    return [];
+  }
+
   if (page.pageType === "keyword-hub") {
-    return [
+    const sections: PageSection[] = [];
+    if (page.slug === "부산등기법무사") {
+      sections.push({
+        title: "신축건물 보존등기",
+        body: "신축 건물·집합건물·상가·오피스텔은 사용승인 후 보존등기로 등기부를 처음 만드는 경우가 많습니다. 건축주·건축사사무소·시행사가 고객에게 안내하기 좋은 전문 페이지로 연결됩니다.",
+        links: [
+          {
+            href: "/부산신축건물보존등기",
+            label: "부산 신축건물 보존등기 절차·서류 안내",
+          },
+        ],
+      });
+      sections.push({
+        title: "공공기관 등기업무",
+        body: "공기업·지방공기업·출자·출연기관·공사·공단 담당자를 위한 법인등기·부동산등기·촉탁등기 안내입니다. 내부 결재와 등기 실무를 함께 검토할 때 참고할 수 있습니다.",
+        links: [
+          {
+            href: "/공공기관등기업무",
+            label: "공공기관 등기업무 종합 안내",
+          },
+        ],
+      });
+    }
+    sections.push(
       {
         title: "이런 경우 필요한 등기입니다",
         body: `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
@@ -71,7 +100,8 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
         title: "법무사 의견",
         body: page.lawyerOpinion,
       },
-    ];
+    );
+    return sections;
   }
 
   if (page.pageType === "neighborhood-hub") {
@@ -139,7 +169,10 @@ export function buildPageDataFromLocalLanding(
         ];
 
   const consultationPoints =
-    page.pageType === "keyword-hub" || page.pageType === "neighborhood-hub"
+    page.pageType === "keyword-hub" ||
+    page.pageType === "neighborhood-hub" ||
+    page.pageType === "preservation-registration" ||
+    page.pageType === "public-agency-registration"
       ? page.legalIssues.slice(0, 6)
       : [...page.legalIssues, ...page.precautions].slice(0, 6);
 
@@ -152,6 +185,56 @@ export function buildPageDataFromLocalLanding(
           "부산법무사",
           page.title.replace(page.regionLabel, "").trim(),
         ].filter(Boolean);
+
+  const specialLandingFaqs =
+    page.pageType === "preservation-registration" ||
+    page.pageType === "public-agency-registration"
+      ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+      : page.faqs.slice(0, 3).map((f) => ({
+          question: f.question,
+          answer: f.answer,
+        }));
+
+  const extraSections = [...sectionsFromLocalLanding(page)];
+  if (page.slug === "부산부동산등기") {
+    extraSections.unshift({
+      title: "공공기관 부동산등기·촉탁등기",
+      body: "공유재산 취득·처분, 공공사업 보상, 기부채납, 도시개발·산업단지 관련 부동산 등기는 원인서류와 촉탁 가능 여부를 함께 검토합니다. 공공기관 담당자는 내부 결재·공문과 등기 실무를 맞춰 진행하는 것이 좋습니다.",
+      links: [
+        {
+          href: "/공공기관등기업무",
+          label: "공공기관 등기업무 안내",
+        },
+      ],
+    });
+    extraSections.unshift({
+      title: "신축 소유권보존등기",
+      body: "신축 건물·집합건물·상가·오피스텔은 사용승인 후 보존등기로 등기부를 처음 만드는 경우가 많습니다. 이후 매매·담보대출·분양·소유권이전의 기초가 되므로, 건축물대장과 소유권 서류를 사용승인 직후부터 정리하는 것이 좋습니다.",
+      links: [
+        {
+          href: "/부산신축건물보존등기",
+          label: "부산 신축건물 보존등기 안내",
+        },
+        {
+          href: "/부산신축아파트소유권이전등기",
+          label: "신축 아파트 소유권이전등기",
+        },
+      ],
+    });
+  }
+  if (page.slug === "부산법인등기") {
+    extraSections.unshift({
+      title: "공공기관 법인등기",
+      body: "공기업·지방공기업·출자·출연기관의 임원변경, 본점이전, 명칭·목적 변경, 해산·청산 등 법인등기는 내부 의결서와 정관을 함께 확인합니다. 등기기한과 과태료도 사전에 검토하는 것이 좋습니다.",
+      links: [
+        {
+          href: "/공공기관등기업무",
+          label: "공공기관 법인등기·등기업무 안내",
+        },
+        { href: "/부산임원변경등기", label: "부산 임원변경등기" },
+      ],
+    });
+  }
 
   return createPageData({
     slug: page.slug,
@@ -170,10 +253,10 @@ export function buildPageDataFromLocalLanding(
     procedures: page.procedures,
     documents: page.documents,
     consultationPoints,
-    faqs: page.faqs.slice(0, 3).map((f) => ({
-      question: f.question,
-      answer: f.answer,
-    })),
+    faqs: specialLandingFaqs,
+    includeFaqSchema:
+      page.pageType === "preservation-registration" ||
+      page.pageType === "public-agency-registration",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,
@@ -186,7 +269,7 @@ export function buildPageDataFromLocalLanding(
         ? [{ href: page.consultationCase.href, label: "관련 사례 보기" }]
         : []),
     ],
-    sections: sectionsFromLocalLanding(page),
+    sections: extraSections,
     primaryKeywords,
     serviceSlug: page.serviceSlug,
     landingPageType: page.pageType,

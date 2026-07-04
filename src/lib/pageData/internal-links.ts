@@ -184,6 +184,8 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산법인등기", label: "부산 법인등기" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },
+    { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
+    { href: "/공공기관등기업무", label: "공공기관 등기업무" },
     { href: "/부산개인회생", label: "부산 개인회생" },
     { href: "/부산법무사비용", label: "부산 법무사 비용" },
     { href: "/부산지방법원등기국", label: "부산 법원·등기소 안내" },
@@ -261,6 +263,22 @@ export function getThematicInternalLinks(
     } else if (pageType === "keyword-hub") {
       links.push(...keywordHubLinks(input.slug, 6));
       links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+    } else if (pageType === "preservation-registration") {
+      links.push(
+        { href: "/부산등기법무사", label: "부산 등기 법무사" },
+        { href: "/부산부동산등기", label: "부산 부동산등기" },
+        { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+        { href: "/공공기관등기업무", label: "공공기관 등기업무" },
+      );
+      links.push(...keywordHubLinks(input.slug, 4));
+    } else if (pageType === "public-agency-registration") {
+      links.push(
+        { href: "/부산등기법무사", label: "부산 등기 법무사" },
+        { href: "/부산법인등기", label: "부산 법인등기" },
+        { href: "/부산부동산등기", label: "부산 부동산등기" },
+        { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
+      );
+      links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "neighborhood-hub") {
       links.push(...neighborhoodHubLinks(input.slug, 6));
       links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });

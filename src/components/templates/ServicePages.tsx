@@ -74,6 +74,46 @@ export function ServicesIndexTemplate() {
         </section>
 
         <section
+          id="preservation-registration"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">신축건물 보존등기</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            사용승인 후 처음 등기부를 만드는 보존등기 안내입니다. 건축주·건축사사무소·시행사·상가·오피스텔 소유자에게 링크로 전달하기 좋습니다.
+          </p>
+          <ul className="listing-card-grid mt-4">
+            <li>
+              <ServiceCard
+                title="신축건물 보존등기"
+                description="부산 신축건물·집합건물·상가·오피스텔 보존등기 절차와 건축주 준비서류 안내"
+                href="/부산신축건물보존등기"
+                image={getServiceImage("real-estate-registration")}
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section
+          id="public-agency-registration"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">공공기관 등기업무</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            공기업·지방공기업·출자·출연기관·공사·공단 담당자를 위한 법인등기·부동산등기·촉탁등기 안내입니다. 나라장터·조달청 검토 전 내부 검토용으로도 활용할 수 있습니다.
+          </p>
+          <ul className="listing-card-grid mt-4">
+            <li>
+              <ServiceCard
+                title="공공기관 등기업무"
+                description="공공기관·공기업 법인등기·부동산등기·촉탁등기 절차와 담당자 체크리스트"
+                href="/공공기관등기업무"
+                image={getServiceImage("corporate-registration")}
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section
           id="cases"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >

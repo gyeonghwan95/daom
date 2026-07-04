@@ -61,18 +61,27 @@ export function HomeContactClosing() {
                 <VisitNoticeBanner variant="compact" theme="dark" />
               </div>
 
-              <div className="mt-8 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-white/55 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+              <div className="mt-8 flex flex-wrap gap-2 border-t border-white/15 pt-6">
+                <Link
+                  href="/contact"
+                  className="home-closing__nav-btn"
+                >
+                  상담 안내
+                </Link>
+                <Link
+                  href="/location"
+                  className="home-closing__nav-btn"
+                >
+                  오시는 길
+                </Link>
+              </div>
+
+              <div className="mt-4 flex flex-col gap-2 text-sm text-white/55 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
                 <span>{nap.tradeName}</span>
                 <span>{nap.address}</span>
                 <span>{nap.phone}</span>
                 <Link href="/about" className="text-white/70 transition-colors duration-200 hover:text-white">
                   법무사 소개 →
-                </Link>
-                <Link href="/contact" className="text-white/70 transition-colors duration-200 hover:text-white">
-                  상담 문의 →
-                </Link>
-                <Link href="/location" className="text-white/70 transition-colors duration-200 hover:text-white">
-                  오시는 길 →
                 </Link>
               </div>
             </motion.div>

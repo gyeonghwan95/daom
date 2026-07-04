@@ -148,6 +148,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/부산재개발등기", label: "부산 재개발등기 절차 안내" },
           { href: "/부산재건축등기", label: "부산 재건축등기 안내" },
+          { href: "/부산신축건물보존등기", label: "부산 신축건물 보존등기 안내" },
           { href: "/부산신축아파트소유권이전등기", label: "신축아파트 소유권이전등기 안내" },
           { href: "/부산오피스텔소유권이전등기", label: "부산 오피스텔 등기 안내" },
           { href: "/부산상가등기", label: "부산 상가등기·매매 안내" },

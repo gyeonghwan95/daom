@@ -73,7 +73,7 @@ export function HomePlaceGuide() {
               <h3 id="home-directions-heading" className="section-heading">
                 오시는 길
               </h3>
-              <HomeSectionActionLink href="/location" label="상세 안내" />
+              <HomeSectionActionLink href="/location" label="상세 안내" variant="button" />
             </div>
 
             <div className="mt-4">
@@ -113,7 +113,7 @@ export function HomePlaceGuide() {
               <h3 id="home-consultation-heading" className="section-heading">
                 상담 안내
               </h3>
-              <HomeSectionActionLink href="/contact" label="상담 문의" />
+              <HomeSectionActionLink href="/contact" label="상담 문의" variant="button" />
             </div>
 
             <ul className="mt-6 space-y-4">

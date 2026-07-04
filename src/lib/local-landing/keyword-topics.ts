@@ -32,6 +32,14 @@ const sharedKeywordLinks = {
   inheritanceLawyer: { href: "/부산상속법무사", label: "부산 상속 법무사" },
   corporateLawyer: { href: "/부산법인법무사", label: "부산 법인 법무사" },
   ownership: { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+  preservation: {
+    href: "/부산신축건물보존등기",
+    label: "부산 신축건물 보존등기",
+  },
+  publicAgency: {
+    href: "/공공기관등기업무",
+    label: "공공기관 등기업무",
+  },
   mortgageSetup: { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
   mortgageCancel: { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
   jeonseSetup: { href: "/부산전세권설정등기", label: "부산 전세권설정등기" },
@@ -72,6 +80,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       "대출 상환 후 근저당말소등기를 해야 매매·증여가 가능한 경우",
       "전세금 보호를 위해 전세권설정등기를 검토하는 경우",
       "전세 계약 종료 후 전세권말소등기가 필요한 경우",
+      "신축 건물·집합건물 사용승인 후 보존등기가 필요한 경우",
+      "건축사사무소·시행사에서 건축주에게 보존등기 안내가 필요한 경우",
     ],
     procedures: [
       "상담: 등기부등본·계약서·가족관계증명서 등을 확인해 필요한 등기 종류와 순서를 정합니다.",
@@ -153,6 +163,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.inheritanceLawyer,
       sharedKeywordLinks.corporateLawyer,
       sharedKeywordLinks.ownership,
+      sharedKeywordLinks.preservation,
+      sharedKeywordLinks.publicAgency,
       sharedKeywordLinks.mortgageSetup,
       sharedKeywordLinks.jeonseSetup,
     ],

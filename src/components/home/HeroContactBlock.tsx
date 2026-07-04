@@ -90,9 +90,22 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
       </div>
 
       <div className="hero-contact__footer">
-        <Link href="/contact" className="hero-contact__more">
-          상담 안내·오시는 길
-        </Link>
+        <div className="hero-contact__row hero-contact__row--guide" role="list">
+          <Link
+            href="/contact"
+            className="hero-contact__chip hero-contact__chip--contact"
+            role="listitem"
+          >
+            <span className="hero-contact__chip-label">상담 안내</span>
+          </Link>
+          <Link
+            href="/location"
+            className="hero-contact__chip hero-contact__chip--location"
+            role="listitem"
+          >
+            <span className="hero-contact__chip-label">오시는 길</span>
+          </Link>
+        </div>
         <ConsultationFeeNotice className="mt-2" />
       </div>
     </div>

@@ -8,7 +8,9 @@ export type LocalLandingPageType =
   | "conversion"
   | "court-registry"
   | "business-zone"
-  | "real-estate-dev";
+  | "real-estate-dev"
+  | "preservation-registration"
+  | "public-agency-registration";
 
 export type LocalLandingConfig = {
   /** URL 경로 (예: 부산상속등기) */

@@ -1344,7 +1344,27 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .hero-contact__footer {
-    @apply mt-2.5 flex flex-col items-center border-t border-beige-dark pt-2.5 text-center;
+    @apply mt-2.5 flex flex-col items-stretch border-t border-beige-dark pt-2.5;
+  }
+
+  .hero-contact__row--guide {
+    @apply w-full;
+  }
+
+  .hero-contact__chip--contact {
+    @apply border-2 border-beige-muted bg-white text-navy;
+  }
+
+  .hero-contact__chip--contact:hover {
+    @apply border-navy-light bg-beige;
+  }
+
+  .hero-contact__chip--location {
+    @apply border-2 border-navy/15 bg-navy/5 text-navy;
+  }
+
+  .hero-contact__chip--location:hover {
+    @apply border-navy-light bg-navy/10;
   }
 
   .hero-contact__more {
@@ -1376,6 +1396,18 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-closing__inner {
     background: linear-gradient(145deg, var(--navy) 0%, var(--navy-dark) 100%);
     box-shadow: 0 32px 64px -16px rgba(30, 58, 95, 0.35);
+  }
+
+  .home-closing__nav-btn {
+    @apply inline-flex min-h-10 cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-white/10 px-5 text-sm font-semibold text-white transition-all duration-200;
+  }
+
+  .home-closing__nav-btn:hover {
+    @apply border-white/50 bg-white/15;
+  }
+
+  .home-closing__nav-btn:active {
+    transform: scale(0.99);
   }
 
   .home-section-label {

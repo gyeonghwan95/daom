@@ -11,6 +11,8 @@ type PageHeroProps = {
   eyebrow?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  secondaryCta?: { href: string; label: string };
+  showDiagnosisCta?: boolean;
   children?: ReactNode;
 };
 
@@ -22,6 +24,8 @@ export function PageHero({
   eyebrow,
   ctaHref = "/contact",
   ctaLabel = "상담 문의하기",
+  secondaryCta,
+  showDiagnosisCta = true,
   children,
 }: PageHeroProps) {
   const descriptions =
@@ -48,17 +52,31 @@ export function PageHero({
         </div>
       ) : null}
       {children}
-      <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
-        <Link href={ctaHref} className="btn-primary inline-flex min-h-12 items-center justify-center px-6">
-          {ctaLabel}
-        </Link>
-        <Link
-          href="/자가진단"
-          className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-        >
-          자가진단 보기
-        </Link>
-      </div>
+      {ctaLabel ? (
+        <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
+          <Link
+            href={ctaHref}
+            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+          >
+            {ctaLabel}
+          </Link>
+          {secondaryCta ? (
+            <Link
+              href={secondaryCta.href}
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              {secondaryCta.label}
+            </Link>
+          ) : showDiagnosisCta ? (
+            <Link
+              href="/자가진단"
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              자가진단 보기
+            </Link>
+          ) : null}
+        </div>
+      ) : null}
     </header>
   );
 }

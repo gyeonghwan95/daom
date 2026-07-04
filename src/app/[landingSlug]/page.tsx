@@ -4,6 +4,8 @@ import {
   DiagnosisHubView,
   DiagnosisPageView,
 } from "@/components/diagnosis/DiagnosisPageView";
+import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
+import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import {
@@ -12,6 +14,7 @@ import {
 } from "@/data/diagnosis-registry";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
+import { getLocalLandingConfig } from "@/lib/local-landing/config";
 import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
@@ -54,6 +57,23 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <DiagnosisPageView page={page} diagnosis={diagnosis} />
+      </PageContainer>
+    );
+  }
+
+  const landingConfig = getLocalLandingConfig(slug);
+  if (landingConfig?.pageType === "preservation-registration") {
+    return (
+      <PageContainer>
+        <PreservationRegistrationPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "public-agency-registration") {
+    return (
+      <PageContainer>
+        <PublicAgencyRegistrationPageView page={page} />
       </PageContainer>
     );
   }

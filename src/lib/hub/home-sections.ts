@@ -25,6 +25,20 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     ],
   },
   {
+    id: "popular-registration",
+    title: "많이 찾는 등기 업무",
+    description: "신축·매매·상속·법인 등 자주 검색하는 등기 안내입니다.",
+    links: [
+      { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
+      { href: "/공공기관등기업무", label: "공공기관 등기업무" },
+      { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+      { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
+      { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
+      { href: "/부산임원변경등기", label: "부산 임원변경등기" },
+      { href: "/부산신축아파트소유권이전등기", label: "신축 아파트 소유권이전등기" },
+    ],
+  },
+  {
     id: "popular-consult",
     title: "많이 찾는 상담",
     description: "의뢰인이 자주 검색하는 상담 주제입니다.",
@@ -129,6 +143,8 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
   {
     title: "부동산·개발",
     links: [
+      { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
+      { href: "/공공기관등기업무", label: "공공기관 등기업무" },
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산재개발등기", label: "부산 재개발·재건축 등기" },
       { href: "/부동산등기", label: "부동산등기 허브" },

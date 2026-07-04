@@ -17,6 +17,7 @@ export const staticRoutes = [
   "/faq",
   "/media",
   "/contact",
+  "/contact/inquiry",
   "/location",
 ];
 

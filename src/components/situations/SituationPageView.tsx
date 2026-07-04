@@ -1,4 +1,5 @@
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
+import { ServiceConversionEnhancements } from "@/components/conversion";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -83,6 +84,16 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         ctaLabel="상담 문의하기"
       />
 
+      {slug === "payment-order-certified-mail" ? (
+        <>
+          <ServiceConversionEnhancements
+            conversionKey={slug}
+            pageSlug={slug}
+            placement="top"
+          />
+        </>
+      ) : null}
+
       <SummaryBox items={summaryBullets} />
 
       <PageTableOfContents items={tocItems} />
@@ -119,6 +130,14 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
           note="사안에 따라 추가 서류가 필요할 수 있습니다. 상담 전에 목록을 확인해 두시면 좋습니다."
         />
       </ContentSection>
+
+      {slug === "payment-order-certified-mail" ? (
+        <ServiceConversionEnhancements
+          conversionKey={slug}
+          pageSlug={slug}
+          placement="mid"
+        />
+      ) : null}
 
       <ConsultationCTA
         title="비슷한 상황이라면 먼저 점검해 보세요"
@@ -158,6 +177,26 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
       ) : null}
 
       <DiagnosisFAQ items={page.faqs} />
+
+      {slug === "payment-order-certified-mail" ? (
+        <>
+          <ServiceConversionEnhancements
+            conversionKey={slug}
+            pageSlug={slug}
+            placement="detail"
+          />
+          <ServiceConversionEnhancements
+            conversionKey={slug}
+            pageSlug={slug}
+            placement="post-faq"
+          />
+          <ServiceConversionEnhancements
+            conversionKey={slug}
+            pageSlug={slug}
+            placement="footer"
+          />
+        </>
+      ) : null}
 
       <RelatedRecommendations source={recommendationFromSituation(situation)} />
 

@@ -1,9 +1,9 @@
-import {
-  buildFaqPageSchema,
+import { buildFaqPageSchema,
   buildLegalServiceSchema,
   buildLocalBusinessSchema,
   buildServicePageSchema,
 } from "@/lib/seo/json-ld";
+import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "./types";
 
 export function buildJsonLdForPageData(page: PageData): Record<string, unknown>[] {
@@ -13,8 +13,12 @@ export function buildJsonLdForPageData(page: PageData): Record<string, unknown>[
     buildServicePageSchema(page.title, page.path),
   ];
 
-  if (page.includeFaqSchema && page.faqs.length > 0) {
-    schemas.push(buildFaqPageSchema(page.faqs));
+  if (page.includeFaqSchema) {
+    const conversionFaqs = getConversionFaqsForPage(page.slug, page.path);
+    const allFaqs = [...page.faqs, ...conversionFaqs];
+    if (allFaqs.length > 0) {
+      schemas.push(buildFaqPageSchema(allFaqs));
+    }
   }
 
   return schemas;

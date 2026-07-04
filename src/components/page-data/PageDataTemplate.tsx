@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import { ServiceConversionEnhancements } from "@/components/conversion";
+import { resolveConversionKey } from "@/lib/service-conversion";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -80,6 +82,17 @@ export function PageDataTemplate({
   const tocItems = buildPageTocItems(page, {
     hasDetailContent: Boolean(children),
   });
+  const conversionKey = resolveConversionKey(page);
+
+  const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
+    conversionKey ? (
+      <ServiceConversionEnhancements
+        conversionKey={conversionKey}
+        pageSlug={page.slug}
+        serviceSlug={page.category === "service" ? page.slug : undefined}
+        placement={placement}
+      />
+    ) : null;
 
   return (
     <article className="space-y-8 md:space-y-12">
@@ -95,6 +108,8 @@ export function PageDataTemplate({
         keywords={page.primaryKeywords}
         ctaLabel="상담 문의하기"
       />
+
+      {conversionBlock("top")}
 
       <SummaryBox items={summaryBullets} />
 
@@ -116,6 +131,8 @@ export function PageDataTemplate({
           note="사건마다 추가 서류가 필요할 수 있습니다. 상담 전에 체크리스트를 확인해 두시면 준비가 수월합니다."
         />
       </ContentSection>
+
+      {conversionBlock("mid")}
 
       <ConsultationCTA
         title={page.ctaTitle}
@@ -146,6 +163,8 @@ export function PageDataTemplate({
         </InfoCard>
       </ContentSection>
 
+      {conversionBlock("detail")}
+
       <ExtraSections sections={page.sections} />
 
       {children ? (
@@ -158,9 +177,13 @@ export function PageDataTemplate({
         <FAQAccordion items={displayFaqs} />
       </ContentSection>
 
+      {conversionBlock("post-faq")}
+
       <ContentSection id="related" title="관련 페이지">
         <RelatedContentGrid links={page.internalLinks} />
       </ContentSection>
+
+      {conversionBlock("footer")}
 
       {recommendationSource ? (
         <RelatedRecommendations source={recommendationSource} />

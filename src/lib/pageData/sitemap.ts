@@ -153,7 +153,7 @@ export function getSitemapPriority(page: PageData): number {
   }
 
   if (
-    ["/contact", "/location", "/about", "/office"].includes(page.path)
+    ["/contact", "/contact/inquiry", "/location", "/about", "/office"].includes(page.path)
   ) {
     return 0.85;
   }

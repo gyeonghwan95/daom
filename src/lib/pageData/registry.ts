@@ -72,6 +72,13 @@ function buildAllPageData(): PageData[] {
     pages.push(buildCorePageData(key));
   }
 
+  pages.push(
+    buildCorePageData("contact", {
+      pathOverride: "/contact/inquiry",
+      slugOverride: "contact-inquiry",
+    }),
+  );
+
   for (const diagnosis of allDiagnosisPages) {
     pages.push(buildPageDataFromDiagnosis(diagnosis));
   }
