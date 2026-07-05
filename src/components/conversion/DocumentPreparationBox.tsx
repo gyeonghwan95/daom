@@ -1,4 +1,5 @@
 import { ChecklistBox, ContentSection } from "@/components/readability";
+import { DOCUMENT_PREP_RELAXED } from "@/lib/service-conversion/copy";
 
 type DocumentPreparationBoxProps = {
   documents: string[];
@@ -15,8 +16,8 @@ export function DocumentPreparationBox({
       title="상담 전 준비하면 좋은 것"
     >
       <p className="body-text max-w-3xl text-navy/75">
-        {serviceName} 상담 시 아래 서류가 있으면 검토가 수월합니다. 모두
-        갖추지 못하셔도 괜찮습니다.
+        {serviceName} 상담 시 아래 서류가 있으면 검토가 수월합니다.{" "}
+        {DOCUMENT_PREP_RELAXED}
       </p>
       <div className="mt-4">
         <ChecklistBox

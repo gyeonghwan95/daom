@@ -6,6 +6,7 @@ import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages } from "@/lib/site-images";
 import { staticPageSeo } from "@/lib/seo/page-seo";
+import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 
 export const metadata: Metadata = createPageMetadata(staticPageSeo.contact);
 
@@ -34,8 +35,8 @@ export default function ContactPage() {
         <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
           <h2 className="section-heading">상담 신청서로 문의하기</h2>
           <p className="body-text mt-3 max-w-3xl text-navy/80">
-            이름·연락처·상담 분야·현재 상황을 적어 보내 주시면 검토가 수월합니다.
-            서류를 모두 준비하지 못하셔도 작성하실 수 있습니다.
+            이름·연락처·상담 분야·현재 상황을 적어 보내 주시면 검토가 수월합니다.{" "}
+            {INQUIRY_RELAXED_NOTE}
           </p>
           <Link
             href="/contact/inquiry"

@@ -74,7 +74,7 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
     return () => window.clearTimeout(timer);
   }, [dynamicDiscovery, pathname]);
 
-  if (isSectionNavExcluded(pathname) || sections.length < 2) {
+  if (isSectionNavExcluded(pathname)) {
     return <div className="min-w-0">{children}</div>;
   }
 

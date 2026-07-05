@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { SidebarConsultationPanelFixed } from "@/components/consultation/SidebarConsultationPanelFixed";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { filterAvailableSections } from "@/lib/section-nav/filter-available-sections";
 import {
@@ -25,6 +26,8 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const [layout, setLayout] = useState<NavLayout>({ left: 0, width: 0 });
   const [isReady, setIsReady] = useState(false);
+
+  const showToc = availableSections.length >= 2;
 
   useEffect(() => {
     const updateAvailable = () => {
@@ -83,7 +86,7 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
   );
 
   useEffect(() => {
-    if (availableSections.length === 0) return;
+    if (!showToc) return;
 
     const visibleIds = new Set<string>();
     let observer: IntersectionObserver | null = null;
@@ -130,15 +133,13 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
       window.removeEventListener("resize", attachObserver);
       observer?.disconnect();
     };
-  }, [availableSections]);
+  }, [availableSections, showToc]);
 
   const resolvedActiveId = availableSections.some(
     (section) => section.id === activeId,
   )
     ? activeId
     : (availableSections[0]?.id ?? "");
-
-  if (availableSections.length < 2) return null;
 
   return (
     <>
@@ -148,43 +149,53 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
         aria-hidden
       />
 
-      <nav
-        aria-label="페이지 목차"
-        className={`fixed z-30 hidden max-h-[calc(100dvh-var(--header-height)-2.5rem)] overflow-y-auto pr-1 lg:block ${
-          isReady ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        style={{
-          top: "calc(var(--header-height) + 1.25rem)",
-          left: layout.left,
-          width: layout.width,
-        }}
-      >
-        <p className="mb-3 text-xs font-semibold tracking-wide text-navy-light/80">
-          페이지 목차
-        </p>
-        <ul className="space-y-1 border-l border-beige-dark/90">
-          {availableSections.map((section) => {
-            const isActive = section.id === resolvedActiveId;
+      {showToc ? (
+        <nav
+          aria-label="페이지 목차"
+          className={`fixed z-30 hidden overflow-y-auto pr-1 lg:block ${
+            isReady ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          style={{
+            top: "calc(var(--header-height) + 1.25rem)",
+            left: layout.left,
+            width: layout.width,
+            maxHeight:
+              "calc(100dvh - var(--header-height) - var(--sidebar-consult-panel-reserve, 21.5rem))",
+          }}
+        >
+          <p className="mb-3 text-xs font-semibold tracking-wide text-navy-light/80">
+            페이지 목차
+          </p>
+          <ul className="space-y-1 border-l border-beige-dark/90">
+            {availableSections.map((section) => {
+              const isActive = section.id === resolvedActiveId;
 
-            return (
-              <li key={section.id}>
-                <button
-                  type="button"
-                  onClick={() => scrollToSection(section.id)}
-                  aria-current={isActive ? "true" : undefined}
-                  className={`block w-full border-l-2 py-1.5 pl-3 text-left text-[13px] leading-snug transition-colors duration-300 ${
-                    isActive
-                      ? "border-navy font-semibold text-navy"
-                      : "border-transparent text-navy/55 hover:border-navy/25 hover:text-navy"
-                  }`}
-                >
-                  {section.label}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+              return (
+                <li key={section.id}>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection(section.id)}
+                    aria-current={isActive ? "true" : undefined}
+                    className={`block w-full border-l-2 py-1.5 pl-3 text-left text-[13px] leading-snug transition-colors duration-300 ${
+                      isActive
+                        ? "border-navy font-semibold text-navy"
+                        : "border-transparent text-navy/55 hover:border-navy/25 hover:text-navy"
+                    }`}
+                  >
+                    {section.label}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      ) : null}
+
+      <SidebarConsultationPanelFixed
+        left={layout.left}
+        width={layout.width}
+        isReady={isReady}
+      />
     </>
   );
 }

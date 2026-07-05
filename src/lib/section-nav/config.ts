@@ -50,7 +50,8 @@ export const sectionNavByPath: Record<string, SectionNavItem[]> = {
     ...PAGE_END_SECTIONS,
   ],
   "/reviews": [
-    { id: "reviews", label: "방문자 리뷰" },
+    { id: "naver-place-reviews", label: "네이버 플레이스 후기" },
+    { id: "review-guide", label: "후기 안내" },
     ...PAGE_END_SECTIONS,
   ],
   "/faq": [

@@ -1,4 +1,5 @@
 import { ContentSection, InfoCard } from "@/components/readability";
+import { CASE_EXAMPLES_INTRO } from "@/lib/service-conversion/copy";
 import type { ServiceConversionCaseExample } from "@/lib/service-conversion/types";
 
 type CaseExampleCardsProps = {
@@ -9,8 +10,7 @@ export function CaseExampleCards({ examples }: CaseExampleCardsProps) {
   return (
     <ContentSection id="conversion-cases" title="실제 상담 유형 예시">
       <p className="body-text max-w-3xl text-navy/70">
-        개인정보를 제외한 유형별 사례입니다. 본인 상황과 같다고 해서 같은
-        결과가 보장되지는 않습니다.
+        {CASE_EXAMPLES_INTRO}
       </p>
       <ul className="mt-4 grid gap-4 md:grid-cols-2">
         {examples.map((example) => (

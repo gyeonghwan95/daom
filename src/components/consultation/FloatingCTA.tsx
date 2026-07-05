@@ -34,11 +34,7 @@ export function FloatingCTA() {
               }
             >
               <span
-                className={
-                  isOpen
-                    ? `floating-cta__dot floating-cta__dot--live${reducedMotion ? "" : " floating-cta__dot--pulse"}`
-                    : `floating-cta__dot floating-cta__dot--away${reducedMotion ? "" : " floating-cta__dot--away-pulse"}`
-                }
+                className={`floating-cta__dot floating-cta__dot--${isOpen ? "live" : "away"}${reducedMotion ? "" : " floating-cta__dot--pulse"}`}
                 aria-hidden
               />
               <span className="min-w-0 flex-1">
@@ -79,11 +75,7 @@ export function FloatingCTA() {
             {open ? "닫기" : "상담하기"}
             {!open ? (
               <span
-                className={
-                  isOpen
-                    ? `floating-cta__badge floating-cta__badge--live${reducedMotion ? " floating-cta__badge--static" : ""}`
-                    : `floating-cta__badge floating-cta__badge--away${reducedMotion ? " floating-cta__badge--static" : ""}`
-                }
+                className={`floating-cta__badge floating-cta__badge--${isOpen ? "live" : "away"}${reducedMotion ? " floating-cta__badge--static" : ""}`}
                 aria-hidden
               />
             ) : null}

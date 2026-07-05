@@ -1,4 +1,5 @@
 import { consultationCopy } from "@/lib/consultation";
+import { CASE_CTA_HINT } from "@/lib/service-conversion/copy";
 
 export type ConversionPageType =
   | "service"
@@ -81,8 +82,8 @@ const PAGE_MESSAGES: Record<
     mid: {
       title: "유사 사례 상담하기",
       description:
-        "사례와 비슷해도 사실관계·서류·기한에 따라 절차가 달라질 수 있습니다. 먼저 서류를 확인하신 뒤 상담해 보세요.",
-      hint: "유사하다고 해서 같은 결과가 보장되지는 않습니다.",
+        "사례와 비슷한 상황이시라면 서류·기한부터 함께 확인해 드립니다. 준비 서류를 먼저 보신 뒤 상담해 보세요.",
+      hint: CASE_CTA_HINT,
     },
     bottom: {
       title: "비슷한 상황이시라면",

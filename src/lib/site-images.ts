@@ -4,6 +4,11 @@
  * 실제 사진 교체: public/image/ 아래 동일 파일명으로 덮어쓰기
  */
 
+import {
+  THUMBNAIL_IMAGE_PATHS,
+  pickThumbnailImagePath,
+} from "@/lib/thumbnail-images";
+
 export type SiteImageAsset = {
   src: string;
   alt: string;
@@ -83,6 +88,13 @@ export const imagePaths = {
   thumbDocumentReview: "/image/썸네일-서류확인.jpg",
   thumbEastDistrictCourt: "/image/썸네일-동부지원.jpg",
   thumbRegistryOffice: "/image/썸네일-등기소.jpg",
+  thumbDongnaeDistrict: "/image/썸네일-동래구청.jpg",
+  thumbSuyeongDistrict: "/image/썸네일-수영구청.jpg",
+  thumbEastDistrictCourt2: "/image/썸네일-동부지원2.jpg",
+  thumbComputerWork: "/image/썸네일-컴퓨터작업.png",
+  thumbDrafting: "/image/썸네일-작성중.png",
+  thumbPortraitBelow: "/image/썸네일-아래.jpg",
+  thumbPortraitFront: "/image/썸네일-정면.jpg",
   lectureBusanSelfSupportJeonse:
     "/image/강의-부산광역시자립지원전담기관전세사기예방.jpg",
   lectureHousingContractGuide: "/image/강의-주거계약실전가이드.jpg",
@@ -103,31 +115,16 @@ export const imagePaths = {
 const STOCK = imagePaths;
 
 const serviceImageBySlug: Record<ServiceSlug, string> = {
-  "inheritance-registration": STOCK.thumbRegistryOffice,
-  "inheritance-renunciation": STOCK.thumbCivilLitigationBook,
-  "qualified-acceptance": STOCK.thumbDocumentReview,
-  "real-estate-registration": STOCK.thumbObject,
-  "ownership-transfer": STOCK.thumbDocumentReview,
-  "corporate-registration": STOCK.thumbNotaryBook,
-  "company-establishment": STOCK.thumbMajorBook,
-  "director-change": STOCK.stockLegalContract,
-  "personal-rehabilitation": STOCK.thumbEastDistrictCourt,
-  bankruptcy: STOCK.stockLegalCourthouse,
-};
-
-const blogPostImageBySlug: Record<string, string> = {
-  "busan-inheritance-registration-procedure-documents":
-    STOCK.thumbRegistryOffice,
-  "inheritance-renunciation-vs-qualified-acceptance":
-    STOCK.thumbCivilLitigationBook,
-  "delaying-inheritance-registration-risks": STOCK.stockLegalDocuments,
-  "real-estate-ownership-transfer-procedure": STOCK.thumbObject,
-  "director-change-registration-deadline-penalty": STOCK.thumbNotaryBook,
-  "company-establishment-registration-checklist": STOCK.thumbMajorBook,
-  "personal-rehabilitation-before-application": STOCK.thumbEastDistrictCourt,
-  "bankruptcy-vs-personal-rehabilitation": STOCK.stockLegalCourthouse,
-  "busan-lawyer-consultation-documents": STOCK.thumbDocumentReview,
-  "jeonse-right-vs-lease-registration-order": STOCK.thumbRegistryOffice,
+  "inheritance-registration": THUMBNAIL_IMAGE_PATHS[0],
+  "inheritance-renunciation": THUMBNAIL_IMAGE_PATHS[1],
+  "qualified-acceptance": THUMBNAIL_IMAGE_PATHS[2],
+  "real-estate-registration": THUMBNAIL_IMAGE_PATHS[5],
+  "ownership-transfer": THUMBNAIL_IMAGE_PATHS[4],
+  "corporate-registration": THUMBNAIL_IMAGE_PATHS[7],
+  "company-establishment": THUMBNAIL_IMAGE_PATHS[6],
+  "director-change": THUMBNAIL_IMAGE_PATHS[9],
+  "personal-rehabilitation": THUMBNAIL_IMAGE_PATHS[12],
+  bankruptcy: THUMBNAIL_IMAGE_PATHS[10],
 };
 
 const caseImageBySlug: Record<string, string> = {
@@ -268,12 +265,17 @@ export const siteImages = {
   },
 
   services: {
-    cover: img(imagePaths.officeExterior, "업무안내", 1400, 600),
+    cover: img(THUMBNAIL_IMAGE_PATHS[3], "업무안내", 1400, 600),
   },
 
   blog: {
-    cover: img(imagePaths.thumbMajorBook, "법률 정보 블로그", 1400, 600),
-    defaultThumb: img(imagePaths.thumbNotaryBook, "블로그 썸네일", 800, 500),
+    cover: img(THUMBNAIL_IMAGE_PATHS[6], "법률 정보 블로그", 1400, 600),
+    defaultThumb: img(
+      pickThumbnailImagePath("blog-default"),
+      "블로그 썸네일",
+      800,
+      500,
+    ),
   },
 
   cases: {
@@ -330,12 +332,12 @@ export const siteImages = {
 
 export function getServiceImage(slug: string): SiteImageAsset {
   const src =
-    serviceImageBySlug[slug as ServiceSlug] ?? imagePaths.officeExterior;
+    serviceImageBySlug[slug as ServiceSlug] ?? pickThumbnailImagePath(slug);
   return img(src, `${slug} 업무 안내`, 1200, 700);
 }
 
 export function getBlogPostImage(slug: string): SiteImageAsset {
-  const src = blogPostImageBySlug[slug] ?? imagePaths.stockLegalDocuments;
+  const src = pickThumbnailImagePath(slug);
   return img(src, "블로그 글 썸네일", 800, 500);
 }
 

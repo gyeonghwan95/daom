@@ -9,6 +9,7 @@ import {
   getInquiryFieldLabel,
   type InquiryFieldValue,
 } from "@/lib/service-conversion/inquiry-fields";
+import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 import { getBusinessEmail } from "@/lib/business-info";
 import { getContactInfo, getDirectConsultationChannels, getPhoneHref } from "@/lib/contact";
 import { getPrimaryInquiryForm } from "@/lib/consultation";
@@ -126,8 +127,7 @@ export function ConsultationInquiryForm({
       <div>
         <h2 className="section-heading">상담 신청</h2>
         <p className="body-text mt-2 text-navy/75">
-          {consultationCopy.contact} 서류를 모두 준비하지 못하셔도 작성하실 수
-          있습니다.
+          {consultationCopy.contact} {INQUIRY_RELAXED_NOTE}
         </p>
       </div>
 

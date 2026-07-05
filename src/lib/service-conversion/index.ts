@@ -3,8 +3,16 @@ export {
   getServiceConversionConfig,
   getConversionFaqsForPage,
   serviceConversionConfigs,
-  RELAXED_INTRO,
 } from "./configs";
+export {
+  RELAXED_INTRO,
+  MID_CTA_HINT,
+  CASE_EXAMPLES_INTRO,
+  CASE_RESULT_NOTICE,
+  CASE_CTA_HINT,
+  INQUIRY_RELAXED_NOTE,
+  DOCUMENT_PREP_RELAXED,
+} from "./copy";
 export {
   INQUIRY_FIELD_OPTIONS,
   getInquiryFieldLabel,

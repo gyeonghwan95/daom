@@ -1,10 +1,8 @@
 import type { ServiceConversionConfig } from "./types";
+import { RELAXED_INTRO } from "./copy";
 
 const TRUST_MESSAGE =
   "다옴법무사사무소는 상담 단계에서 사건의 기본 구조와 필요한 서류를 직접 확인한 뒤 진행 방향을 안내드립니다.";
-
-const RELAXED_INTRO =
-  "처음부터 의뢰하지 않으셔도 괜찮습니다. 현재 상황에서 어떤 서류와 절차가 필요한지 먼저 확인해드릴 수 있습니다.";
 
 const COMMON_FAQS = [
   {
@@ -57,7 +55,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       serviceName: "상속등기",
       mainKeyword: "부산 상속등기",
       conversionIntro:
-        "상속등기는 가족관계, 협의 여부, 부동산 수에 따라 절차가 달라집니다. 서류를 모두 준비하지 못하셨더라도 현재 상황부터 확인해보셔도 됩니다.",
+        "상속등기는 가족관계, 협의 여부, 부동산 수에 따라 절차가 달라집니다. 서류가 아직 없어도 현재 상황부터 함께 확인해 드립니다.",
       painPoints: [
         "상속등기 기한이 지나 걱정되는 경우",
         "가족 간 협의가 아직 끝나지 않은 경우",
@@ -105,7 +103,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "내 상황도 해당되는지 애매하다면",
         description:
-          "등기부등본이나 기본 증명서를 기준으로 먼저 확인해보셔도 됩니다. 의뢰 전에 필요한 순서만 정리해 드릴 수 있습니다.",
+          "등기부등본이나 기본 증명서가 있으면 검토가 수월합니다. 지금 알고 계신 상황만 알려주셔도 필요한 순서를 정리해 드립니다.",
         buttonLabel: "내 상황 먼저 확인하기",
       },
       ctaMessages: [
@@ -941,5 +939,3 @@ export function getConversionFaqsForPage(
   const byPath = getServiceConversionConfig(pathKey);
   return byPath?.additionalFaqs ?? [];
 }
-
-export { RELAXED_INTRO };

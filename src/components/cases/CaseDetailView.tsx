@@ -3,6 +3,7 @@ import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsult
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import { CASE_RESULT_NOTICE } from "@/lib/service-conversion/copy";
 import {
   ChecklistBox,
   ConsultationCTA,
@@ -163,11 +164,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
             </p>
           </InfoCard>
           <WarningBox title="결과 안내">
-            <p>
-              위 결과는 해당 사건의 처리 경과를 참고용으로 정리한 것이며, 유사
-              사례에서도 동일한 결과가 보장되지는 않습니다. 사안에 따라 달라질
-              수 있습니다.
-            </p>
+            <p>{CASE_RESULT_NOTICE}</p>
           </WarningBox>
         </ContentSection>
       ) : null}

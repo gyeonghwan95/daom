@@ -5,6 +5,7 @@ import { ConsultationInquiryForm } from "@/components/conversion/ConsultationInq
 import { InquiryFormLoader } from "@/components/conversion/InquiryFormLoader";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
+import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 
 export const metadata: Metadata = createPageMetadata({
   title: "상담 신청",
@@ -24,7 +25,7 @@ export default function ContactInquiryPage() {
           { label: "상담 신청" },
         ]}
         currentPath="/contact/inquiry"
-        intro="이름·연락처·상담 분야·현재 상황을 적어 주시면 검토가 수월합니다. 서류를 모두 준비하지 못하셔도 괜찮습니다."
+        intro={`이름·연락처·상담 분야·현재 상황을 적어 주시면 검토가 수월합니다. ${INQUIRY_RELAXED_NOTE}`}
         relatedLinks={[
           { href: "/contact", label: "상담 안내" },
           { href: "/location", label: "오시는 길" },

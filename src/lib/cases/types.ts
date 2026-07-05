@@ -1,7 +1,7 @@
 import type { ContentRelations } from "@/types/content-relations";
 
 export const CASE_DISCLAIMER =
-  "본 사례는 일반적인 안내를 위한 것이며, 유사한 사례에서도 사실관계에 따라 절차·결과가 달라질 수 있습니다. 개인정보 보호를 위해 구체적 의뢰인 정보는 비공개합니다.";
+  "본 사례는 참고용으로 정리한 내용입니다. 비슷한 상황이라도 서류·기한·관계에 따라 절차가 달라질 수 있으니, 본인 사건은 상담으로 확인하시면 좋습니다. 개인정보 보호를 위해 구체적 의뢰인 정보는 비공개합니다.";
 
 export const CASE_CATEGORIES = [
   "상속",

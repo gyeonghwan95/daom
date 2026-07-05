@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
+import { MID_CTA_HINT } from "@/lib/service-conversion/copy";
 import type { ServiceConversionMidCta } from "@/lib/service-conversion/types";
 
 type ContactCTASectionProps = {
@@ -28,7 +29,7 @@ export function ContactCTASection({
         variant="mid"
         title={midCta.title}
         description={midCta.description}
-        hint="강한 광고가 아니라, 지금 상황만 알려주셔도 1차로 정리해 드립니다."
+        hint={MID_CTA_HINT}
         serviceSlug={serviceSlug}
         pageSlug={pageSlug}
         diagnosisHref={diagnosisHref}
