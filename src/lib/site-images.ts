@@ -91,7 +91,7 @@ export const imagePaths = {
   thumbDongnaeDistrict: "/image/썸네일-동래구청.jpg",
   thumbSuyeongDistrict: "/image/썸네일-수영구청.jpg",
   thumbEastDistrictCourt2: "/image/썸네일-동부지원2.jpg",
-  thumbComputerWork: "/image/썸네일-컴퓨터작업.png",
+  thumbComputerWork: "/image/썸네일-컴퓨터.png",
   thumbDrafting: "/image/썸네일-작성중.png",
   thumbPortraitBelow: "/image/썸네일-아래.jpg",
   thumbPortraitFront: "/image/썸네일-정면.jpg",

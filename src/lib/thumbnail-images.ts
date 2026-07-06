@@ -15,7 +15,7 @@ export const THUMBNAIL_IMAGE_PATHS = [
   "/image/썸네일-동부지원2.jpg",
   "/image/썸네일-동래구청.jpg",
   "/image/썸네일-수영구청.jpg",
-  "/image/썸네일-컴퓨터작업.png",
+  "/image/썸네일-컴퓨터.png",
   "/image/썸네일-작성중.png",
   "/image/썸네일-아래.jpg",
   "/image/썸네일-정면.jpg",
