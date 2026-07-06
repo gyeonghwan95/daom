@@ -139,8 +139,8 @@ async function main() {
     );
     if (fallback.items.length === 0) {
       writeFeed(fallback);
+      process.exitCode = 1;
     }
-    process.exitCode = 1;
   }
 }
 

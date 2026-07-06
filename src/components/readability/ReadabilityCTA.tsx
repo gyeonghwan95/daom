@@ -17,7 +17,11 @@ export function ReadabilityCTA({
     <aside className="readability-cta">
       <h2 className="readability-cta__title">{title}</h2>
       <p className="readability-cta__description">{description}</p>
-      <Link href={href} className="btn-primary readability-cta__button">
+      <Link
+        href={href}
+        className="btn-primary readability-cta__button"
+        data-cta="contact"
+      >
         {buttonLabel}
       </Link>
     </aside>

@@ -8,6 +8,16 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PUBLIC_DATA_PATH = path.join(ROOT, "public/data/naver-place-reviews.json");
+
+function readExistingFeed() {
+  if (!fs.existsSync(PUBLIC_DATA_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(PUBLIC_DATA_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
 const DEFAULT_PLACE_ID =
   process.env.NEXT_PUBLIC_NAVER_PLACE_ID?.trim() ||
   process.env.NAVER_PLACE_ID?.trim() ||
@@ -127,17 +137,30 @@ async function fetchFeed(placeId) {
 
 async function main() {
   const placeId = DEFAULT_PLACE_ID;
-  const feed = await fetchFeed(placeId);
+  const fallback = readExistingFeed();
 
-  fs.mkdirSync(path.dirname(PUBLIC_DATA_PATH), { recursive: true });
-  fs.writeFileSync(PUBLIC_DATA_PATH, `${JSON.stringify(feed, null, 2)}\n`, "utf8");
-
-  console.log(
-    `Fetched ${feed.items.length} Naver place reviews (total ${feed.stats.totalCount}) → ${PUBLIC_DATA_PATH}`,
-  );
+  try {
+    const feed = await fetchFeed(placeId);
+    fs.mkdirSync(path.dirname(PUBLIC_DATA_PATH), { recursive: true });
+    fs.writeFileSync(
+      PUBLIC_DATA_PATH,
+      `${JSON.stringify(feed, null, 2)}\n`,
+      "utf8",
+    );
+    console.log(
+      `Fetched ${feed.items.length} Naver place reviews (total ${feed.stats.totalCount}) → ${PUBLIC_DATA_PATH}`,
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (fallback?.items?.length) {
+      console.warn(
+        `Naver place reviews fetch failed (${message}). Keeping previous data (${fallback.items.length} reviews).`,
+      );
+      return;
+    }
+    console.error(message);
+    process.exit(1);
+  }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
-  process.exit(1);
-});
+main();
