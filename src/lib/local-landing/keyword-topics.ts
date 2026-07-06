@@ -182,8 +182,11 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     serviceSlug: "real-estate-registration",
     primaryKeywords: [
       "부산 부동산등기 법무사",
+      "부산 부동산등기 법무사 추천",
       "부산 소유권이전등기 법무사",
       "부산 아파트 등기 법무사",
+      "부산 근저당말소 법무사",
+      "부산 전세권설정 법무사",
     ],
     summaryParagraphs: [
       "부산 부동산등기 법무사를 찾으시는 분들은 잔금 후 소유권이전등기 일정, 근저당 말소, 취득세 신고를 한 번에 정리하고 싶어 하십니다. 다옴법무사사무소는 매매·증여·상속·신축보존·근저당·전세권 등기를 원인별로 안내합니다.",
@@ -274,6 +277,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.mortgageCancel,
       sharedKeywordLinks.jeonseSetup,
       sharedKeywordLinks.busanRealEstate,
+      { href: "/부산부동산등기전문", label: "부산 부동산등기 상담 확인" },
+      { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
     ],
     relatedCaseSlug: "centum-ownership-transfer-case",
     caseAngle: "해운대 아파트 매매 소유권이전등기",
@@ -289,7 +294,9 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     serviceSlug: "inheritance-registration",
     primaryKeywords: [
       "부산 상속 법무사",
+      "부산 상속 법무사 추천",
       "부산 상속등기 법무사",
+      "부산 상속등기 법무사 추천",
       "부산 상속포기 법무사",
       "부산 한정승인 법무사",
     ],
@@ -383,6 +390,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.inheritanceLawyer,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.busanInheritance,
+      { href: "/부산상속등기전문", label: "부산 상속등기 상담 확인" },
+      { href: "/부산법무사추천", label: "부산 법무사 추천 기준" },
     ],
     relatedCaseSlug: "haeundae-inheritance-registration-case",
     caseAngle: "형제 공동상속 아파트 상속등기",
@@ -399,7 +408,9 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     primaryKeywords: [
       "부산 법인 법무사",
       "부산 법인등기 법무사",
+      "부산 법인등기 법무사 추천",
       "부산 법인설립 법무사",
+      "부산 임원변경등기 법무사",
     ],
     summaryParagraphs: [
       "부산 법인 법무사 상담은 센텀·해운대·연제 등 스타트업·중소기업 밀집 지역에서 설립·임원변경·본점이전 수요가 많습니다. 다옴법무사사무소는 법인설립·임원변경·본점이전·목적변경·상호변경·해산청산 등기를 안내합니다.",
@@ -486,6 +497,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.registryLawyer,
       sharedKeywordLinks.directorChange,
       sharedKeywordLinks.busanCorporate,
+      { href: "/부산법인등기전문", label: "부산 법인등기 상담 확인" },
+      { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
     ],
     relatedCaseSlug: "suyeong-company-establishment-case",
     caseAngle: "센텀 스타트업 법인 설립 등기",

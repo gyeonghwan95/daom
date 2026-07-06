@@ -39,6 +39,26 @@ function neighborhoodHubLinks(excludeSlug?: string, limit = 8): PageRelatedLink[
     }));
 }
 
+function selectionHubLinks(excludeSlug?: string, limit = 6): PageRelatedLink[] {
+  const labels: Record<string, string> = {
+    부산법무사추천: "부산 법무사 추천 기준",
+    부산등기법무사추천: "부산 등기 법무사 선택 기준",
+    부산상속등기전문: "부산 상속등기 상담 확인",
+    부산부동산등기전문: "부산 부동산등기 상담 확인",
+    부산법인등기전문: "부산 법인등기 상담 확인",
+    부산법무사상담: "부산 법무사 상담 준비",
+    부산법무사후기: "부산 법무사 후기 확인 기준",
+    부산법무사비교: "부산 법무사 비교 기준",
+  };
+  return localLandingConfigs
+    .filter((c) => c.pageType === "selection-hub" && c.slug !== excludeSlug)
+    .slice(0, limit)
+    .map((c) => ({
+      href: `/${c.slug}`,
+      label: labels[c.slug] ?? c.slug,
+    }));
+}
+
 function keywordHubLinks(excludeSlug?: string, limit = 6): PageRelatedLink[] {
   return localLandingConfigs
     .filter((c) => c.pageType === "keyword-hub" && c.slug !== excludeSlug)
@@ -54,6 +74,8 @@ function localLandingTitle(config: (typeof localLandingConfigs)[number]): string
     case "region-hub":
       return `${config.regionLabel} 법무사`;
     case "keyword-hub":
+      return config.slug;
+    case "selection-hub":
       return config.slug;
     case "neighborhood-hub":
       return config.slug;
@@ -263,6 +285,11 @@ export function getThematicInternalLinks(
     } else if (pageType === "keyword-hub") {
       links.push(...keywordHubLinks(input.slug, 6));
       links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push(...selectionHubLinks(input.slug, 4));
+    } else if (pageType === "selection-hub") {
+      links.push(...selectionHubLinks(input.slug, 6));
+      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "preservation-registration") {
       links.push(
         { href: "/부산등기법무사", label: "부산 등기 법무사" },
@@ -282,6 +309,7 @@ export function getThematicInternalLinks(
     } else if (pageType === "neighborhood-hub") {
       links.push(...neighborhoodHubLinks(input.slug, 6));
       links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push({ href: "/부산법무사추천", label: "부산 법무사 추천 기준" });
     } else if (pageType === "conversion") {
       links.push(...conversionLinksForService(serviceSlug, input.slug));
       links.push(...localLandingsForService(serviceSlug, input.slug, 3));

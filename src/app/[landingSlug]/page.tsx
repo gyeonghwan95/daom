@@ -6,6 +6,7 @@ import {
 } from "@/components/diagnosis/DiagnosisPageView";
 import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
+import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import {
@@ -74,6 +75,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <PublicAgencyRegistrationPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "selection-hub") {
+    return (
+      <PageContainer>
+        <SelectionHubPageView page={page} />
       </PageContainer>
     );
   }

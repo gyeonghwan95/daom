@@ -3,6 +3,7 @@ export { PageHero } from "./PageHero";
 export { KeywordBadges } from "./KeywordBadges";
 export { SummaryBox } from "./SummaryBox";
 export { ChecklistBox } from "./ChecklistBox";
+export { ComparisonTable } from "./ComparisonTable";
 export { StepTimeline } from "./StepTimeline";
 export { WarningBox } from "./WarningBox";
 export { RelatedContentGrid } from "./RelatedContentGrid";

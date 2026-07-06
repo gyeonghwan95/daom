@@ -13,6 +13,7 @@ import { buildKeywordHubPage } from "./keyword-builder";
 import { buildNeighborhoodHubPage } from "./neighborhood-hub-builder";
 import { buildPreservationRegistrationPage } from "./preservation-registration-builder";
 import { buildPublicAgencyRegistrationPage } from "./public-agency-registration-builder";
+import { buildSelectionHubPage } from "./selection-builder";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -373,6 +374,9 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
   }
   if (pageType === "public-agency-registration") {
     return buildPublicAgencyRegistrationPage(config);
+  }
+  if (pageType === "selection-hub") {
+    return buildSelectionHubPage(config);
   }
   if (pageType !== "service-region") {
     return buildExpansionLandingPage(config);

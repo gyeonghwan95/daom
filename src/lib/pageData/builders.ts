@@ -40,6 +40,7 @@ export function mapLandingPageTypeToCategory(
     case "neighborhood-hub":
     case "preservation-registration":
     case "public-agency-registration":
+    case "selection-hub":
     case "service-region":
     default:
       return "local";
@@ -47,7 +48,11 @@ export function mapLandingPageTypeToCategory(
 }
 
 function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
-  if (page.pageType === "preservation-registration" || page.pageType === "public-agency-registration") {
+  if (
+    page.pageType === "preservation-registration" ||
+    page.pageType === "public-agency-registration" ||
+    page.pageType === "selection-hub"
+  ) {
     return [];
   }
 
@@ -172,7 +177,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "keyword-hub" ||
     page.pageType === "neighborhood-hub" ||
     page.pageType === "preservation-registration" ||
-    page.pageType === "public-agency-registration"
+    page.pageType === "public-agency-registration" ||
+    page.pageType === "selection-hub"
       ? page.legalIssues.slice(0, 6)
       : [...page.legalIssues, ...page.precautions].slice(0, 6);
 
@@ -188,7 +194,8 @@ export function buildPageDataFromLocalLanding(
 
   const specialLandingFaqs =
     page.pageType === "preservation-registration" ||
-    page.pageType === "public-agency-registration"
+    page.pageType === "public-agency-registration" ||
+    page.pageType === "selection-hub"
       ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : page.faqs.slice(0, 3).map((f) => ({
           question: f.question,
@@ -235,6 +242,30 @@ export function buildPageDataFromLocalLanding(
       ],
     });
   }
+  if (page.slug === "부산법무사") {
+    extraSections.unshift({
+      title: "부산 법무사 추천을 검색했다면 먼저 확인할 기준",
+      body: "추천·잘하는 곳·후기 검색 전에 업무 범위·서류 안내·기한 설명·비용 구분을 확인하는 기준을 정리해 두었습니다. 특정 사무소를 대신 골라 주는 페이지가 아니라, 상담 전 스스로 비교할 체크리스트입니다.",
+      links: [
+        { href: "/부산법무사추천", label: "부산 법무사 추천 선택 기준" },
+        { href: "/부산법무사비교", label: "부산 법무사 비교 기준" },
+        { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+        { href: "/부산법무사후기", label: "후기를 볼 때 확인할 기준" },
+      ],
+    });
+  }
+  if (page.slug === "부산등기법무사") {
+    extraSections.unshift({
+      title: "등기 법무사 선택 기준",
+      body: "부산 등기 법무사 추천을 검색하실 때 부동산·상속·법인·근저당 등 업무별로 확인할 점이 다릅니다. 등기부·계약서를 준비한 뒤 아래 선택 기준 페이지를 참고해 상담하시면 비교가 수월합니다.",
+      links: [
+        { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
+        { href: "/부산부동산등기전문", label: "부산 부동산등기 상담 확인사항" },
+        { href: "/부산상속등기전문", label: "부산 상속등기 상담 확인사항" },
+        { href: "/부산법인등기전문", label: "부산 법인등기 상담 확인사항" },
+      ],
+    });
+  }
 
   return createPageData({
     slug: page.slug,
@@ -256,7 +287,8 @@ export function buildPageDataFromLocalLanding(
     faqs: specialLandingFaqs,
     includeFaqSchema:
       page.pageType === "preservation-registration" ||
-      page.pageType === "public-agency-registration",
+      page.pageType === "public-agency-registration" ||
+      page.pageType === "selection-hub",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

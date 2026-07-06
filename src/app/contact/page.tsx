@@ -33,6 +33,34 @@ export default function ContactPage() {
       >
         <ContactSection />
         <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
+          <h2 className="section-heading">방문상담 전 준비사항</h2>
+          <p className="body-text mt-3 max-w-3xl text-navy/80">
+            방문 상담은 네이버 예약 후 이용해 주세요. 사전에 아래 자료를 준비하시면
+            상담이 더 구체적입니다. 자료가 없어도 전화·카카오톡으로 먼저 상황을
+            남기실 수 있습니다.
+          </p>
+          <ul className="body-text mt-4 max-w-3xl list-disc space-y-2 pl-5 text-navy/80">
+            <li>등기부등본·등기사항전부증명서(해당 시)</li>
+            <li>가족관계증명서·계약서(상속·매매 해당 시)</li>
+            <li>기한 메모(사망일·잔금일·임원 취임일 등)</li>
+            <li>신분증·연락처</li>
+          </ul>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/부산법무사상담"
+              className="btn-secondary inline-flex min-h-12 items-center px-6"
+            >
+              상담 준비 안내 보기
+            </Link>
+            <Link
+              href="/location"
+              className="btn-secondary inline-flex min-h-12 items-center px-6"
+            >
+              오시는 길·주차 안내
+            </Link>
+          </div>
+        </section>
+        <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
           <h2 className="section-heading">상담 신청서로 문의하기</h2>
           <p className="body-text mt-3 max-w-3xl text-navy/80">
             이름·연락처·상담 분야·현재 상황을 적어 보내 주시면 검토가 수월합니다.{" "}

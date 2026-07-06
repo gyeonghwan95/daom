@@ -124,6 +124,27 @@ function buildDirectionsNote(config: LocalLandingConfig): string {
   return `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. ${config.regionLabel}에서 오시는 경우 센텀시티역·벡스코 인근이며, 방문 상담은 네이버 예약 후 이용해 주세요. 주차·대중교통 안내는 오시는 길 페이지에서 확인하실 수 있습니다.`;
 }
 
+const regionRecommendKeywords: Record<string, string[]> = {
+  해운대법무사: ["해운대 법무사 추천", "해운대 등기 상담"],
+  센텀법무사: ["센텀 법무사 추천", "센텀 법인등기"],
+  재송동법무사: ["재송동 법무사 추천", "재송동 상속등기"],
+  반여동법무사: ["반여동 법무사 추천"],
+  수영구법무사: ["수영구 법무사 추천", "광안동 법무사"],
+  광안동법무사: ["광안동 법무사 추천", "광안동 부동산등기"],
+  연제구법무사: ["연제구 법무사 추천", "연산동 법무사"],
+  연산동법무사: ["연산동 법무사 추천"],
+  동래역법무사: ["동래 법무사 추천", "동래구 상속등기"],
+  남천동법무사: ["남구 법무사 추천", "남천동 법무사"],
+  대연동법무사: ["대연동 법무사 추천", "남구 법무사"],
+  부산진구법무사: ["부산진구 법무사 추천", "서면 법무사"],
+  서면법무사: ["서면 법무사 추천", "서면 부동산등기"],
+  사상법무사: ["사상 법무사 추천", "사상구 법무사"],
+  기장법무사: ["기장 법무사 추천", "기장군 상속등기"],
+  정관법무사: ["정관 법무사 추천"],
+  명지법무사: ["명지 법무사 추천"],
+  강서구법무사: ["강서구 법무사 추천", "명지 법무사"],
+};
+
 function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null {
   const district = districtProfiles[config.regionKey];
   if (!district) return null;
@@ -139,7 +160,11 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     `${config.regionLabel} 부동산 매매·소유권이전등기`,
   ];
 
-  const problemStatement = `${config.regionLabel}(${neighborhoodText})에서 등기·상속·법인·채무 문제로 법무사를 찾으시는 분들이 많습니다. ${district.context} 부동산 가액·가족 관계·채무 유무에 따라 필요한 절차가 달라지고, 관할 등기소·법원도 사건마다 다릅니다. 막연히 인터넷 정보만으로 진행하다 보면 서류 누락·기한 경과·보정명령으로 일정이 늘어나는 경우가 있습니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${config.regionLabel} 의뢰인의 상속등기·상속포기·한정승인·법인등기·부동산등기·개인회생 사건을 직접 상담합니다.`;
+  const problemStatement = `${config.regionLabel}(${neighborhoodText})에서 등기·상속·법인·채무 문제로 법무사를 찾으시는 분들이 많습니다. ${district.context} 부동산 가액·가족 관계·채무 유무에 따라 필요한 절차가 달라지고, 관할 등기소·법원도 사건마다 다릅니다. 막연히 인터넷 정보만으로 진행하다 보면 서류 누락·기한 경과·보정명령으로 일정이 늘어나는 경우가 있습니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${config.regionLabel} 의뢰인의 상속등기·상속포기·한정승인·법인등기·부동산등기·개인회생 사건을 직접 상담합니다.${
+    regionRecommendKeywords[config.slug]
+      ? ` ‘${regionRecommendKeywords[config.slug][0]}’을 검색하신 분도 상담 전 선택 기준(/부산법무사추천)을 참고하시면 비교에 도움이 됩니다.`
+      : ""
+  }`;
 
   const whenNeeded = demandNotes.map((note) => `${config.regionLabel}에서 ${note}가 필요한 경우`);
 
@@ -194,6 +219,11 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     title,
     h1: `${config.regionLabel} 법무사 상담 — 다옴법무사사무소`,
     description: `${config.regionLabel}(${neighborhoodText}) 법무사 — 상속등기·법인등기·부동산등기·개인회생. 다옴법무사사무소 안윤정 법무사. 전화·카카오톡·네이버 예약.`,
+    primaryKeywords: regionRecommendKeywords[config.slug] ?? [
+      `${config.regionLabel} 법무사`,
+      "부산 법무사",
+      "부산법무사",
+    ],
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,

@@ -10,6 +10,19 @@ export type HomeHubSection = {
 
 export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
+    id: "selection-guides",
+    title: "추천·비용·상담 검색 안내",
+    description: "추천·후기·비용·상담 키워드 검색 전 확인할 선택 기준 페이지입니다.",
+    links: [
+      { href: "/부산법무사추천", label: "부산 법무사 추천 기준" },
+      { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택" },
+      { href: "/부산법무사비교", label: "부산 법무사 비교" },
+      { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+      { href: "/부산법무사후기", label: "후기 확인 기준" },
+      { href: "/부산상속등기전문", label: "상속등기 상담 확인" },
+    ],
+  },
+  {
     id: "main-services",
     title: "부산 법무사 주요 업무",
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",

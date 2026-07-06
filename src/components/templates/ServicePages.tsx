@@ -114,6 +114,68 @@ export function ServicesIndexTemplate() {
         </section>
 
         <section
+          id="popular-first-visit"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">처음 방문자가 많이 찾는 업무</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            추천·비용·상담 준비를 검색하신 분들을 위한 선택 기준·절차 안내 페이지입니다.
+            특정 사무소를 대신 골라 주는 광고가 아니라, 상담 전 확인할 체크리스트로
+            활용하실 수 있습니다.
+          </p>
+          <ul className="listing-card-grid mt-4">
+            <li>
+              <ServiceCard
+                title="부산 법무사 추천 기준"
+                description="상담 전 확인할 7가지 선택 기준·업무별 체크포인트"
+                href="/부산법무사추천"
+                image={getServiceImage("inheritance-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 등기 법무사 선택"
+                description="부동산·상속·법인등기별 확인 기준과 서류 안내"
+                href="/부산등기법무사추천"
+                image={getServiceImage("real-estate-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 상속등기 상담"
+                description="상속포기·한정승인·공동상속인 체크리스트"
+                href="/부산상속등기전문"
+                image={getServiceImage("inheritance-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 부동산등기 상담"
+                description="매매·말소·전세권·보존등기 절차 확인"
+                href="/부산부동산등기전문"
+                image={getServiceImage("ownership-transfer")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 법인등기 상담"
+                description="설립·임원변경·본점이전·과태료 기한"
+                href="/부산법인등기전문"
+                image={getServiceImage("corporate-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 법무사 상담 준비"
+                description="전화·방문·카카오톡 상담 전 준비자료"
+                href="/부산법무사상담"
+                image={getServiceImage("personal-rehabilitation")}
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section
           id="cases"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >

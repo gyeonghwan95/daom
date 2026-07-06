@@ -136,6 +136,10 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/local-landing/keyword-landing-config.ts",
   );
+  const selectionConfigPath = path.join(
+    ROOT,
+    "src/lib/local-landing/selection-landing-config.ts",
+  );
   const neighborhoodConfigPath = path.join(
     ROOT,
     "src/lib/local-landing/neighborhood-hub-config.ts",
@@ -143,6 +147,10 @@ function readLandingSlugs() {
   const keyword =
     fs.existsSync(keywordConfigPath)
       ? fs.readFileSync(keywordConfigPath, "utf8")
+      : "";
+  const selection =
+    fs.existsSync(selectionConfigPath)
+      ? fs.readFileSync(selectionConfigPath, "utf8")
       : "";
   const neighborhood =
     fs.existsSync(neighborhoodConfigPath)
@@ -152,6 +160,7 @@ function readLandingSlugs() {
     ...(config.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(expansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(keyword.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(selection.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(neighborhood.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
