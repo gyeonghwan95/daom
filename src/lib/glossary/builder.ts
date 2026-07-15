@@ -117,7 +117,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
     ],
     consultationExample: {
       title: `${t.term} 관련 상담`,
-      body: `${t.term}이 본인 사건과 맞는지, 다음에 무엇을 준비해야 하는지 사실관계를 알려주시면 부산 해운대·센텀 사무소에서 안내해 드립니다.`,
+      body: `${t.term}이 본인 사건과 맞는지, 다음에 무엇을 준비해야 하는지 사실관계를 알려주시면 부산 해운대구·센텀 사무소에서 안내해 드립니다.`,
     },
     internalLinks: [
       ...t.serviceLinks,

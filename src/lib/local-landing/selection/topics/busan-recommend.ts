@@ -138,6 +138,20 @@ export const 부산법무사추천: SelectionHubContent = {
         "상담 시 ‘무엇이 포함되는지’—등기부 확인, 세금 신고 안내, 말소·이전 순서 조율, 보정 대응—를 함께 확인하시면 비교가 쉬워집니다.",
       ],
     },
+    {
+      id: "search-intent-more",
+      title: "더 구체적인 검색의도 안내",
+      paragraphs: [
+        "‘잘하는 곳·수임료·복대리·집단등기·체크리스트’처럼 더 구체적인 키워드로 검색하셨다면 검색의도 허브에서 관련 안내를 이어서 확인하실 수 있습니다. 기존 추천·비교·상담 페이지 URL은 그대로 유지됩니다.",
+      ],
+      links: [
+        { href: "/search-guides", label: "검색의도 안내 허브" },
+        { href: "/부산법무사잘하는곳", label: "부산 법무사 잘하는 곳" },
+        { href: "/부산법무사수임료", label: "부산 법무사 수임료" },
+        { href: "/상속등기실수모음", label: "상속등기 실수 모음" },
+        { href: "/상속등기체크리스트", label: "상속등기 체크리스트" },
+      ],
+    },
   ],
   relatedLinks: [
     L.busanLawyer,
@@ -149,6 +163,7 @@ export const 부산법무사추천: SelectionHubContent = {
     L.realEstateGuide,
     L.corporateGuide,
     L.busanReviews,
+    { href: "/search-guides", label: "검색의도 안내 허브" },
     L.contact,
   ],
   faqs: [
@@ -186,6 +201,11 @@ export const 부산법무사추천: SelectionHubContent = {
       question: "방문 없이 상담·진행이 가능한가요?",
       answer:
         "가능한 사건은 카카오톡·우편으로 서류를 받아 진행합니다. 초기 상담은 전화·메시지로도 가능하며, 방문은 예약 후 이용하시면 됩니다.",
+    },
+    {
+      question: "검색의도 안내 허브는 무엇인가요?",
+      answer:
+        "추천·비용·복대리·집단등기·회생·공공기관·보존등기처럼 실제 검색어를 모아 둔 허브입니다. 기존 URL은 바꾸지 않고, 새 키워드만 추가로 연결합니다.",
     },
   ],
   bottomCtaText:

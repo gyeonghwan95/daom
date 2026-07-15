@@ -12,7 +12,7 @@ export const staticPageSeo = {
   office: {
     title: buildSeoTitle("해운대·센텀 법무사 사무소"),
     description:
-      "센텀시티역 도보 5분, 해운대구 센텀동로 200 법무사 사무소 내부·주차·상담 공간 안내. 방문 상담 예약 필수.",
+      "동해선 재송역, 센텀역 도보 5분, 해운대구 센텀동로 200 법무사 사무소 내부·주차·상담 공간 안내. 방문 상담 예약 필수.",
     path: "/office",
     keywords: ["해운대 법무사", "부산 법무사", "센텀 법무사", seoBrand.siteName],
   },
@@ -77,6 +77,20 @@ export const staticPageSeo = {
       "부산 해운대구 센텀동로 200 D동 1층 위치, 센텀시티역·주차·건물 안내, 네이버 예약 링크.",
     path: "/location",
     keywords: ["해운대 법무사", "센텀 법무사", "부산 법무사", seoBrand.siteName],
+  },
+  searchGuides: {
+    title: buildSeoTitle("검색의도 안내 — 추천·비용·서류·기한"),
+    description:
+      "부산 법무사 추천·비용·후기·등기 복대리·집단등기·개인회생·공공기관·보존등기 등 실제 검색 키워드별 상담 전 체크포인트 허브.",
+    path: "/search-guides",
+    keywords: [
+      "부산 법무사 추천",
+      "부산 법무사 비용",
+      "등기 복대리",
+      "집단등기",
+      "부산 개인회생",
+      seoBrand.siteName,
+    ],
   },
 } as const;
 

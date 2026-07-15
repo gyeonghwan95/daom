@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { HeroBrand } from "@/components/home/HeroBrand";
 import { HeroContactBlock } from "@/components/home/HeroContactBlock";
 import { HeroImageMarquee } from "@/components/home/HeroImageMarquee";
+import { PhoneIcon } from "@/components/consultation/ConsultationIcons";
 import { Container } from "@/components/layout/Container";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
   getContactInfo,
   getDirectConsultationChannels,
+  getPhoneHref,
 } from "@/lib/contact";
 import { siteImages } from "@/lib/site-images";
 import { homeHero } from "@/lib/home-content";
@@ -17,11 +19,11 @@ import { heroTransition } from "@/lib/motion";
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.08 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
@@ -88,6 +90,7 @@ export function HomeHero() {
   const channels = getDirectConsultationChannels();
   const reduced = useReducedMotion();
   const lines = homeHero.headline.split("\n");
+  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
 
   return (
     <section className="home-hero relative flex min-h-full flex-col">
@@ -99,20 +102,21 @@ export function HomeHero() {
 
       <Container className="home-hero__container relative w-full flex-1">
         <motion.div
-          className="home-hero__body grid w-full min-h-0 items-center gap-5 lg:grid-cols-12 lg:gap-8"
+          className="home-hero__body flex w-full min-h-0 flex-col lg:grid lg:grid-cols-12 lg:items-center"
           variants={reduced ? undefined : stagger}
           initial={reduced ? false : "hidden"}
           animate="visible"
         >
-          <motion.div className="min-h-0 lg:col-span-7">
-            <motion.div variants={item}>
+          <motion.div className="home-hero__copy min-h-0 shrink-0 lg:col-span-7">
+            <motion.div variants={item} className="hidden lg:block">
               <HeroBrand />
             </motion.div>
 
-            <motion.h1
-              variants={item}
-              className="mt-3 text-[1.65rem] font-bold leading-[1.18] tracking-tight text-navy sm:text-[2rem] lg:mt-4 lg:text-[2.5rem] xl:text-[2.85rem]"
-            >
+            <motion.p variants={item} className="home-hero__eyebrow">
+              {homeHero.eyebrow}
+            </motion.p>
+
+            <motion.h1 variants={item} className="home-hero__title">
               {lines.map((line, i) => (
                 <span key={line} className={i > 0 ? "block" : undefined}>
                   {line}
@@ -120,16 +124,17 @@ export function HomeHero() {
               ))}
             </motion.h1>
 
-            <motion.p
-              variants={item}
-              className="mt-2.5 max-w-xl text-[0.875rem] leading-relaxed text-navy/75 sm:text-[0.9375rem] md:text-base"
-            >
+            <motion.p variants={item} className="home-hero__sub">
               {homeHero.sub}
+            </motion.p>
+
+            <motion.p variants={item} className="home-hero__promise">
+              {homeHero.promise}
             </motion.p>
 
             <motion.ul
               variants={item}
-              className="mt-2.5 flex flex-wrap gap-1.5"
+              className="home-hero__tags"
               aria-label="주요 업무"
             >
               {homeHero.serviceTags.map((tag) => (
@@ -139,28 +144,34 @@ export function HomeHero() {
               ))}
             </motion.ul>
 
-            <motion.p
-              variants={item}
-              className="mt-2 text-sm text-navy/55"
-            >
+            <motion.p variants={item} className="home-hero__location">
               {homeHero.locationHint}
             </motion.p>
 
-            <motion.div variants={item} className="mt-4 sm:mt-5">
+            <motion.div variants={item} className="home-hero__mobile-convert lg:hidden">
+              <a
+                href={phoneHref}
+                className="home-hero__mobile-cta"
+                aria-label={homeHero.mobileCta}
+              >
+                <PhoneIcon className="home-hero__mobile-cta-icon" />
+                <span>{homeHero.mobileCta}</span>
+              </a>
+              <p className="home-hero__mobile-cta-note">{homeHero.mobileCtaNote}</p>
+            </motion.div>
+
+            <motion.div variants={item} className="home-hero__desktop-contact hidden lg:block">
               <HeroContactBlock phone={phone} channels={channels} />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative flex min-h-[16rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-0 lg:h-full"
-            initial={reduced ? false : { opacity: 0, y: 20 }}
+            className="home-hero__marquee lg:col-span-5"
+            initial={reduced ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ ...heroTransition, delay: 0.25 }}
+            transition={{ ...heroTransition, delay: 0.22 }}
           >
-            <HeroImageMarquee
-              slides={siteImages.home.heroSlides}
-              className="h-full w-full max-h-[19rem] sm:max-h-[22rem] lg:max-h-none"
-            />
+            <HeroImageMarquee slides={siteImages.home.heroSlides} />
           </motion.div>
         </motion.div>
       </Container>

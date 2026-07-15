@@ -101,7 +101,7 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     includeFaqSchema: true,
     ctaTitle: "지금 상황, 함께 정리해 드립니다",
     ctaText:
-      "위 내용은 일반적인 안내입니다. 사실관계·서류·기한은 사건마다 다릅니다. 부산 해운대·센텀 다옴법무사사무소에 연락 주시면 다음에 무엇을 해야 할지부터 정리해 드립니다.",
+      "위 내용은 일반적인 안내입니다. 사실관계·서류·기한은 사건마다 다릅니다. 부산 해운대구·센텀 다옴법무사사무소에 연락 주시면 다음에 무엇을 해야 할지부터 정리해 드립니다.",
   });
 }
 
@@ -128,7 +128,7 @@ export function buildSituationsHubPageData(): PageData {
     faqs: situationsHub.faqs,
     consultationExample: {
       title: "상황만 말씀해 주셔도 됩니다",
-      body: "업무명을 몰라도 괜찮습니다. ‘부모님이 돌아가셨다’, ‘전세금을 못 받았다’처럼 겪고 계신 상황을 말씀해 주시면, 부산 해운대·센텀 사무소에서 절차와 서류를 안내해 드립니다.",
+      body: "업무명을 몰라도 괜찮습니다. ‘부모님이 돌아가셨다’, ‘전세금을 못 받았다’처럼 겪고 계신 상황을 말씀해 주시면, 부산 해운대구·센텀 사무소에서 절차와 서류를 안내해 드립니다.",
     },
     internalLinks: [
       ...situationCards,

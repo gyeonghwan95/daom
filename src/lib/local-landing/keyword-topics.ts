@@ -177,8 +177,8 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     title: "부산 부동산등기 법무사",
     metaTitle: "부산 부동산등기 법무사｜아파트·소유권이전등기",
     metaDescription:
-      "부산 부동산등기 법무사. 매매·증여·상속·신축보존·근저당·전세권 등기 안내. 아파트 소유권이전등기 전문 상담 — 해운대 다옴법무사.",
-    h1: "부산 부동산등기 법무사 — 매매·증여·신축 등기 전문",
+      "부산 부동산등기 법무사. 매매·증여·상속·신축보존·근저당·전세권 등기 안내. 아파트 소유권이전등기 절차·서류 상담 — 해운대 다옴법무사.",
+    h1: "부산 부동산등기 법무사 — 매매·증여·신축 등기 실무 안내",
     serviceSlug: "real-estate-registration",
     primaryKeywords: [
       "부산 부동산등기 법무사",

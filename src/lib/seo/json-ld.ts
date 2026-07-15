@@ -280,7 +280,7 @@ export function buildServicePageSchema(serviceName: string, path: string): Schem
     "@context": "https://schema.org",
     "@type": "Service",
     name: serviceName,
-    description: `${seoBrand.siteName} ${serviceName} 전문 상담`,
+    description: `${seoBrand.siteName} ${serviceName} 상담·절차 안내`,
     url: getCanonicalUrl(path),
     provider: { "@id": schemaIds.legalService },
     areaServed: {

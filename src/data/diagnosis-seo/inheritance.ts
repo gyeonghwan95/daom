@@ -2,7 +2,7 @@ import type { DiagnosisSeoPack } from "./types";
 
 const busanFaqTail = [
   {
-    question: "부산 해운대·센텀에서 방문 상담이 가능한가요?",
+    question: "부산 해운대구·센텀에서 방문 상담이 가능한가요?",
     answer:
       "센텀 사무소에서 예약 방문 상담이 가능합니다. 서류가 많으면 카카오톡·이메일로 먼저 보내주시면 대기 시간을 줄일 수 있습니다.",
   },

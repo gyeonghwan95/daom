@@ -1,7 +1,7 @@
 import type { SituationPage, SituationsHubConfig } from "./types";
 
 const LOCAL_CONTEXT =
-  "부산 해운대·센텀, 재송동·반여동 일대에서도 전화·카카오톡·방문(예약) 상담이 가능합니다.";
+  "부산 해운대구·센텀, 재송동·반여동 일대에서도 전화·카카오톡·방문(예약) 상담이 가능합니다.";
 
 export const situationsHub: SituationsHubConfig = {
   slug: "situations",

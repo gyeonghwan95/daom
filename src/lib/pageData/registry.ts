@@ -66,6 +66,7 @@ function buildAllPageData(): PageData[] {
     "media",
     "contact",
     "location",
+    "searchGuides",
   ] as const;
 
   for (const key of coreKeys) {

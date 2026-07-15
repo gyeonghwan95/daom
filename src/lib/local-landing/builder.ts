@@ -14,6 +14,7 @@ import { buildNeighborhoodHubPage } from "./neighborhood-hub-builder";
 import { buildPreservationRegistrationPage } from "./preservation-registration-builder";
 import { buildPublicAgencyRegistrationPage } from "./public-agency-registration-builder";
 import { buildSelectionHubPage } from "./selection-builder";
+import { buildSearchIntentPage } from "./search-intent-builder";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -294,7 +295,7 @@ export function buildLocalLandingPage(
     ...serviceRegionFaqs,
   ].slice(0, 12);
 
-  const description = `${config.regionLabel} ${serviceLabel} 전문 — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
+  const description = `${config.regionLabel} ${serviceLabel} 실무 안내 — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
 
   const jurisdictionGuide = {
     title: district.registryOffice ?? "부산 관할 등기소",
@@ -377,6 +378,9 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
   }
   if (pageType === "selection-hub") {
     return buildSelectionHubPage(config);
+  }
+  if (pageType === "search-intent") {
+    return buildSearchIntentPage(config);
   }
   if (pageType !== "service-region") {
     return buildExpansionLandingPage(config);

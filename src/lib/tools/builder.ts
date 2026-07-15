@@ -41,7 +41,7 @@ export function buildPageDataFromTool(tool: ToolDefinition): PageData {
     faqs: tool.faqs,
     consultationExample: {
       title: `${tool.cardTitle} — 상담 예시`,
-      body: "계산 결과를 바탕으로 전화·카카오톡으로 상황을 보내 주시면, 부산 해운대·센텀 사무소에서 서류·기한을 함께 검토해 드립니다.",
+      body: "계산 결과를 바탕으로 전화·카카오톡으로 상황을 보내 주시면, 부산 해운대구·센텀 사무소에서 서류·기한을 함께 검토해 드립니다.",
     },
     internalLinks: collectInternalLinks(tool),
     sections: [

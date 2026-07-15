@@ -18,7 +18,7 @@ const SITE = {
   representative: "안윤정 법무사",
   url: getSiteUrl(),
   description:
-    "부산 해운대·센텀 다옴법무사사무소 안윤정 법무사의 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보, FAQ, 업무 사례, 언론 보도.",
+    "부산 해운대구·센텀 다옴법무사사무소 안윤정 법무사의 상속등기, 부동산등기, 법인등기, 개인회생·파산 법률 정보, FAQ, 업무 사례, 언론 보도.",
   blogLink: "/blog",
   logo: "/image/로고.png",
   keywords: [

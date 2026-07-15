@@ -257,7 +257,7 @@ export const lawyerActivitySections: LawyerActivitySection[] = [
     image: siteImages.media.education,
     highlights: [
       {
-        title: "검증된 전문가",
+        title: "실무 경험과 상담",
         body: "박문각 유튜브 합격 인터뷰(1·2편)를 통해 현실적인 수험법과 만점 공부법을 공유한 바 있습니다.",
       },
       {

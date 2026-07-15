@@ -19,6 +19,7 @@ export const staticRoutes = [
   "/contact",
   "/contact/inquiry",
   "/location",
+  "/search-guides",
 ];
 
 const toolSlugs = [
@@ -140,6 +141,14 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/local-landing/selection-landing-config.ts",
   );
+  const searchIntentConfigPath = path.join(
+    ROOT,
+    "src/lib/local-landing/search-intent-landing-config.ts",
+  );
+  const searchIntentSeedsPath = path.join(
+    ROOT,
+    "src/lib/local-landing/search-intent/seeds.ts",
+  );
   const neighborhoodConfigPath = path.join(
     ROOT,
     "src/lib/local-landing/neighborhood-hub-config.ts",
@@ -152,6 +161,14 @@ function readLandingSlugs() {
     fs.existsSync(selectionConfigPath)
       ? fs.readFileSync(selectionConfigPath, "utf8")
       : "";
+  const searchIntent =
+    fs.existsSync(searchIntentConfigPath)
+      ? fs.readFileSync(searchIntentConfigPath, "utf8")
+      : "";
+  const searchIntentSeeds =
+    fs.existsSync(searchIntentSeedsPath)
+      ? fs.readFileSync(searchIntentSeedsPath, "utf8")
+      : "";
   const neighborhood =
     fs.existsSync(neighborhoodConfigPath)
       ? fs.readFileSync(neighborhoodConfigPath, "utf8")
@@ -161,6 +178,8 @@ function readLandingSlugs() {
     ...(expansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(keyword.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(selection.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(searchIntent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(searchIntentSeeds.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(neighborhood.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];

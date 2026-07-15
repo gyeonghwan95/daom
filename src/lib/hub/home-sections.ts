@@ -10,16 +10,30 @@ export type HomeHubSection = {
 
 export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
+    id: "search-intent-guides",
+    title: "검색의도·실제 검색 키워드",
+    description:
+      "추천·비용·복대리·집단등기·회생·공공기관·보존등기 등 고객이 실제로 검색하는 키워드 안내입니다.",
+    links: [
+      { href: "/search-guides", label: "검색의도 안내 허브" },
+      { href: "/등기실무", label: "등기 실무 허브" },
+      { href: "/부산등기복대리", label: "부산 등기 복대리" },
+      { href: "/부산집단등기", label: "부산 집단등기" },
+      { href: "/특수등기의뢰", label: "특수 등기 의뢰" },
+      { href: "/법무사협업", label: "법무사 협업" },
+    ],
+  },
+  {
     id: "selection-guides",
     title: "추천·비용·상담 검색 안내",
     description: "추천·후기·비용·상담 키워드 검색 전 확인할 선택 기준 페이지입니다.",
     links: [
       { href: "/부산법무사추천", label: "부산 법무사 추천 기준" },
+      { href: "/부산법무사비용", label: "부산 법무사 비용·수임료" },
+      { href: "/부산잔금일법무사", label: "부산 잔금일 법무사" },
       { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택" },
       { href: "/부산법무사비교", label: "부산 법무사 비교" },
-      { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
-      { href: "/부산법무사후기", label: "후기 확인 기준" },
-      { href: "/부산상속등기전문", label: "상속등기 상담 확인" },
+      { href: "/개인회생파산", label: "개인회생·파산 허브" },
     ],
   },
   {

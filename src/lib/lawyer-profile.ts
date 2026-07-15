@@ -8,7 +8,7 @@ export const lawyerProfileMeta = {
   jobTitle: seoBrand.jobTitle,
   organization: seoBrand.siteName,
   region: seoBrand.primaryRegion,
-  officeArea: "부산 해운대·센텀",
+  officeArea: "부산 해운대구·센텀",
   canonicalPath: "/about",
   canonicalUrl: `${siteConfig.url}/about`,
   practiceAreas: seoBrand.services,
@@ -48,7 +48,7 @@ export const lawyerExperience: LawyerExperience[] = [
     period: "현재",
     title: "다옴법무사사무소 대표 법무사",
     description:
-      "부산 해운대·센텀 사무소에서 상속등기·상속포기·한정승인·부동산등기·법인등기·개인회생·파산 사건을 직접 상담하고 진행합니다.",
+      "부산 해운대구·센텀 사무소에서 상속등기·상속포기·한정승인·부동산등기·법인등기·개인회생·파산 사건을 직접 상담하고 진행합니다.",
   },
   {
     period: "2024 ~",

@@ -41,6 +41,7 @@ export function mapLandingPageTypeToCategory(
     case "preservation-registration":
     case "public-agency-registration":
     case "selection-hub":
+    case "search-intent":
     case "service-region":
     default:
       return "local";
@@ -51,7 +52,8 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
   if (
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
-    page.pageType === "selection-hub"
+    page.pageType === "selection-hub" ||
+    page.pageType === "search-intent"
   ) {
     return [];
   }
@@ -61,7 +63,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
     if (page.slug === "부산등기법무사") {
       sections.push({
         title: "신축건물 보존등기",
-        body: "신축 건물·집합건물·상가·오피스텔은 사용승인 후 보존등기로 등기부를 처음 만드는 경우가 많습니다. 건축주·건축사사무소·시행사가 고객에게 안내하기 좋은 전문 페이지로 연결됩니다.",
+        body: "신축 건물·집합건물·상가·오피스텔은 사용승인 후 보존등기로 등기부를 처음 만드는 경우가 많습니다. 건축주·건축사사무소·시행사가 고객에게 안내하기 좋은 전용 페이지로 연결됩니다.",
         links: [
           {
             href: "/부산신축건물보존등기",
@@ -178,7 +180,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "neighborhood-hub" ||
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
-    page.pageType === "selection-hub"
+    page.pageType === "selection-hub" ||
+    page.pageType === "search-intent"
       ? page.legalIssues.slice(0, 6)
       : [...page.legalIssues, ...page.precautions].slice(0, 6);
 
@@ -195,7 +198,8 @@ export function buildPageDataFromLocalLanding(
   const specialLandingFaqs =
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
-    page.pageType === "selection-hub"
+    page.pageType === "selection-hub" ||
+    page.pageType === "search-intent"
       ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : page.faqs.slice(0, 3).map((f) => ({
           question: f.question,
@@ -266,6 +270,84 @@ export function buildPageDataFromLocalLanding(
       ],
     });
   }
+  if (page.slug === "부산개인회생" || page.slug === "부산개인파산") {
+    extraSections.unshift({
+      title: "회생·파산 관련 검색의도 안내",
+      body: "개인회생·파산 법무사·상담·신청·면책·비용 등 세부 검색어는 검색의도 허브와 아래 페이지에서 이어서 확인하실 수 있습니다. 기존 URL은 그대로 유지됩니다.",
+      links: [
+        { href: "/search-guides#guide-rehab", label: "개인회생·파산 검색의도" },
+        { href: "/부산개인회생법무사", label: "부산 개인회생 법무사" },
+        { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
+        { href: "/개인회생체크리스트", label: "개인회생 체크리스트" },
+        { href: "/왜개인회생비용이다를까", label: "왜 개인회생 비용이 다를까" },
+      ],
+    });
+  }
+  if (page.slug === "공공기관등기업무") {
+    extraSections.unshift({
+      title: "공공기관·촉탁등기 세부 키워드",
+      body: "공공기관 법인등기·부동산등기·촉탁등기·지방공기업 등기 등 세부 검색어 안내를 추가했습니다. 종합 안내는 이 페이지를 기준으로 보시면 됩니다.",
+      links: [
+        { href: "/search-guides#guide-public", label: "공공기관 검색의도" },
+        { href: "/촉탁등기", label: "촉탁등기" },
+        { href: "/공공기관법인등기", label: "공공기관 법인등기" },
+        { href: "/공공기관부동산등기", label: "공공기관 부동산등기" },
+      ],
+    });
+  }
+  if (page.slug === "부산신축건물보존등기") {
+    extraSections.unshift({
+      title: "건축주·보존등기 검색의도",
+      body: "신축·건물·집합건물·오피스텔·상가 보존등기, 건축주 준비서류, 사용승인 후 등기 등 세부 키워드는 아래 검색의도 페이지에서 이어서 확인하세요.",
+      links: [
+        { href: "/search-guides#guide-builder", label: "건축주 검색의도" },
+        { href: "/신축보존등기", label: "신축 보존등기" },
+        { href: "/건축주준비서류", label: "건축주 준비서류" },
+        { href: "/신축보존등기체크리스트", label: "신축 보존등기 체크리스트" },
+      ],
+    });
+  }
+  if (page.slug === "부산법무사비용" || page.slug === "부산법무사보수표") {
+    extraSections.unshift({
+      title: "수임료·보수·세금·공과금의 차이",
+      body: "법무사 수임료(보수)와 취득세·등록면허세·국민주택채권·인지·등기신청수수료는 성격이 다릅니다. 견적을 받을 때는 무엇이 포함되고 무엇이 별도인지 항목별로 확인하세요. 보정·출장·복대리가 있으면 추가될 수 있습니다.",
+      items: [
+        "수임료·착수금·잔금(사건별 약정)",
+        "등록면허세·취득세 등 세금",
+        "국민주택채권·인지·증지",
+        "등기신청수수료·송달료",
+        "보정·출장·복대리 등 실비성 비용",
+      ],
+      links: [
+        { href: "/부산법무사보수표", label: "부산 법무사 보수표 안내" },
+        { href: "/부산법무사수임료", label: "수임료 키워드 안내" },
+        { href: "/등기비용", label: "등기 비용 항목" },
+        { href: "/왜상속등기비용이다를까", label: "왜 상속등기 비용이 다를까" },
+        { href: "/contact", label: "견적 문의" },
+      ],
+    });
+    extraSections.unshift({
+      title: "견적을 받을 때 알려 주시면 좋은 정보",
+      body: "사건 유형, 부동산·법인 정보, 명의·대출·말소 여부, 기한, 보유 서류를 알려 주시면 항목별 안내가 수월합니다. 근거 없는 고정 가격은 표시하지 않습니다.",
+      links: [
+        { href: "/법무사상담전준비", label: "상담 전 준비" },
+        { href: "/자가진단", label: "업무별 자가진단" },
+      ],
+    });
+  }
+  if (page.slug === "부산개인회생" || page.slug === "개인회생파산") {
+    extraSections.push({
+      title: "개인회생·파산 검색의도 더 보기",
+      body: "법무사·신청자격·보정권고·면책 등 세부 의도는 관련 안내 페이지와 자가진단에서 이어서 확인하세요. 인가·면책은 보장하지 않습니다.",
+      links: [
+        { href: "/부산개인회생법무사", label: "부산 개인회생 법무사" },
+        { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
+        { href: "/개인회생체크리스트", label: "개인회생 체크리스트" },
+        { href: "/개인회생자가진단", label: "개인회생 자가진단" },
+        { href: "/개인파산자가진단", label: "개인파산 자가진단" },
+      ],
+    });
+  }
 
   return createPageData({
     slug: page.slug,
@@ -276,10 +358,14 @@ export function buildPageDataFromLocalLanding(
     metaDescription: buildMetaDescription(page.description),
     h1: page.h1,
     intro: page.problemStatement,
-    breadcrumbs: [
-      { label: "홈", href: "/" },
-      { label: page.title },
-    ],
+    breadcrumbs:
+      page.pageType === "search-intent"
+        ? [
+            { label: "홈", href: "/" },
+            { label: "검색의도 안내", href: "/search-guides" },
+            { label: page.title },
+          ]
+        : [{ label: "홈", href: "/" }, { label: page.title }],
     introParagraphs,
     procedures: page.procedures,
     documents: page.documents,
@@ -288,7 +374,8 @@ export function buildPageDataFromLocalLanding(
     includeFaqSchema:
       page.pageType === "preservation-registration" ||
       page.pageType === "public-agency-registration" ||
-      page.pageType === "selection-hub",
+      page.pageType === "selection-hub" ||
+      page.pageType === "search-intent",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,
@@ -661,6 +748,7 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   media: "언론·활동",
   contact: "부산 법무사 상담 문의",
   location: "오시는 길 · 센텀",
+  searchGuides: "검색의도 SEO 안내",
 };
 
 export function buildCorePageData(
@@ -706,7 +794,7 @@ export function buildHomePageData(): PageData {
     title: "다옴법무사사무소",
     metaTitle: HOME_METADATA_TITLE,
     metaDescription: buildMetaDescription(HOME_METADATA_DESCRIPTION),
-    h1: "부산 해운대·센텀 법무사 상담",
+    h1: "부산 해운대구·센텀 법무사 상담",
     intro: HOME_METADATA_DESCRIPTION,
     breadcrumbs: [{ label: "홈" }],
     internalLinks: [

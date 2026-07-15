@@ -45,7 +45,7 @@ export function HeroImageMarquee({
   if (slides.length === 1 || reduced) {
     return (
       <div
-        className={`home-hero__frame home-hero__frame--static relative h-full min-h-[22rem] overflow-hidden rounded-2xl ${className}`}
+        className={`home-hero__frame home-hero__frame--static relative h-full min-h-0 overflow-hidden rounded-2xl ${className}`}
       >
         <Image
           src={slides[0].src}
@@ -62,7 +62,7 @@ export function HeroImageMarquee({
 
   return (
     <div
-      className={`marquee-v-root home-hero__frame h-full min-h-[22rem] ${pauseOnHover ? "marquee-v-root--pause" : ""} ${className}`}
+      className={`marquee-v-root home-hero__frame h-full min-h-0 ${pauseOnHover ? "marquee-v-root--pause" : ""} ${className}`}
       aria-label="사무소 사진"
     >
       <div

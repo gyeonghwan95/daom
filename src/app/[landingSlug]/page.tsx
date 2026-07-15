@@ -7,6 +7,8 @@ import {
 import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
+import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPageView";
+import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import {
@@ -16,6 +18,7 @@ import {
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
+import { practiceHubDefs } from "@/lib/local-landing/practice-hubs";
 import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
@@ -83,6 +86,28 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <SelectionHubPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "search-intent") {
+    const hub = practiceHubDefs[slug];
+    if (hub) {
+      return (
+        <PageContainer>
+          <PracticeHubPageView
+            page={page}
+            intro={hub.intro}
+            cards={hub.cards}
+            note={hub.note}
+          />
+        </PageContainer>
+      );
+    }
+
+    return (
+      <PageContainer>
+        <SearchIntentPageView page={page} />
       </PageContainer>
     );
   }

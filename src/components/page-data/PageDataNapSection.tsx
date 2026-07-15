@@ -22,7 +22,7 @@ export function PageDataNapSection({ contactLinks }: PageDataNapSectionProps) {
     >
       <h2 className="section-heading">다옴법무사사무소 안내</h2>
       <p className="body-text mt-3">
-        부산 해운대·센텀 인근에 위치한 다옴법무사사무소입니다. 안윤정 법무사가
+        부산 해운대구·센텀 인근에 위치한 다옴법무사사무소입니다. 안윤정 법무사가
         상속등기·부동산등기·법인등기·개인회생·파산 사건을 상담합니다.
       </p>
 
