@@ -52,10 +52,17 @@ for (const dir of dirsToScan) {
 }
 
 const contentPath = join(root, "src/lib/lectures/content.ts");
+const expansionPath = join(
+  root,
+  "src/lib/lectures/content-institution-expansion.ts",
+);
 const historyPath = join(root, "src/data/lectures/history.ts");
 const intentsPath = join(root, "src/data/lectures/search-intents.ts");
 
-const contentText = readFileSync(contentPath, "utf8");
+const contentText = [
+  readFileSync(contentPath, "utf8"),
+  existsSync(expansionPath) ? readFileSync(expansionPath, "utf8") : "",
+].join("\n");
 const historyText = readFileSync(historyPath, "utf8");
 const intentsText = readFileSync(intentsPath, "utf8");
 

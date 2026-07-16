@@ -162,6 +162,10 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/lectures/content.ts",
   );
+  const lectureExpansionPath = path.join(
+    ROOT,
+    "src/lib/lectures/content-institution-expansion.ts",
+  );
   const businessContentPath = path.join(
     ROOT,
     "src/lib/business/content.ts",
@@ -198,6 +202,10 @@ function readLandingSlugs() {
     fs.existsSync(lectureContentPath)
       ? fs.readFileSync(lectureContentPath, "utf8")
       : "";
+  const lectureExpansion =
+    fs.existsSync(lectureExpansionPath)
+      ? fs.readFileSync(lectureExpansionPath, "utf8")
+      : "";
   const businessContent =
     fs.existsSync(businessContentPath)
       ? fs.readFileSync(businessContentPath, "utf8")
@@ -216,6 +224,7 @@ function readLandingSlugs() {
     ...(neighborhood.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(lectureLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(lectureContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(lectureExpansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
