@@ -14,6 +14,8 @@ import { buildNeighborhoodHubPage } from "./neighborhood-hub-builder";
 import { buildPreservationRegistrationPage } from "./preservation-registration-builder";
 import { buildPublicAgencyRegistrationPage } from "./public-agency-registration-builder";
 import { buildSelectionHubPage } from "./selection-builder";
+import { buildLecturePage } from "@/lib/lectures/builder";
+import { buildBusinessPage } from "@/lib/business/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
 
 const legalIssuesByService: Record<string, string[]> = {
@@ -364,28 +366,61 @@ export function buildLocalLandingPage(
 
 function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage | null {
   const pageType = config.pageType ?? "service-region";
+  let page: LocalLandingPage | null = null;
+
   if (pageType === "keyword-hub") {
-    return buildKeywordHubPage(config);
+    page = buildKeywordHubPage(config);
+  } else if (pageType === "neighborhood-hub") {
+    page = buildNeighborhoodHubPage(config);
+  } else if (pageType === "preservation-registration") {
+    page = buildPreservationRegistrationPage(config);
+  } else if (pageType === "public-agency-registration") {
+    page = buildPublicAgencyRegistrationPage(config);
+  } else if (pageType === "selection-hub") {
+    page = buildSelectionHubPage(config);
+  } else if (pageType === "search-intent") {
+    page = buildSearchIntentPage(config);
+  } else if (pageType === "lecture") {
+    page = buildLecturePage(config);
+  } else if (pageType === "business") {
+    page = buildBusinessPage(config);
+  } else if (pageType !== "service-region") {
+    page = buildExpansionLandingPage(config);
+  } else {
+    page = buildLocalLandingPage(config);
   }
-  if (pageType === "neighborhood-hub") {
-    return buildNeighborhoodHubPage(config);
-  }
-  if (pageType === "preservation-registration") {
-    return buildPreservationRegistrationPage(config);
-  }
-  if (pageType === "public-agency-registration") {
-    return buildPublicAgencyRegistrationPage(config);
-  }
-  if (pageType === "selection-hub") {
-    return buildSelectionHubPage(config);
-  }
-  if (pageType === "search-intent") {
-    return buildSearchIntentPage(config);
-  }
-  if (pageType !== "service-region") {
-    return buildExpansionLandingPage(config);
-  }
-  return buildLocalLandingPage(config);
+
+  return page ? enrichBusinessCrossLinks(page) : null;
+}
+
+/** 기업 법률실무 허브와 기존 법인·공공 페이지 상호링크 */
+function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
+  const extras: Record<string, { href: string; label: string }[]> = {
+    부산법인등기: [
+      { href: "/부산기업법률자문", label: "기업 운영 단계별 법률실무 지원" },
+      { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
+      { href: "/부산기업부동산등기", label: "기업 부동산등기" },
+      { href: "/기업업무문의", label: "기업 업무 문의" },
+    ],
+    부산법인설립등기: [
+      { href: "/부산기업법률자문", label: "기업 법률실무 허브" },
+      { href: "/창업법률교육", label: "창업 법률교육" },
+    ],
+    공탁채권회수: [
+      { href: "/부산기업채권관리", label: "기업 미수금·매출채권 관련 업무" },
+    ],
+  };
+
+  const add = extras[page.slug];
+  if (!add?.length) return page;
+
+  const existing = new Set(page.relatedServiceLinks.map((link) => link.href));
+  const merged = [
+    ...add.filter((link) => !existing.has(link.href)),
+    ...page.relatedServiceLinks,
+  ];
+
+  return { ...page, relatedServiceLinks: merged };
 }
 
 export function getLocalLandingBySlug(slug: string): LocalLandingPage | null {

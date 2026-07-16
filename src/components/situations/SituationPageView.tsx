@@ -10,7 +10,6 @@ import {
   ChecklistBox,
   ConsultationCTA,
   ContentSection,
-  InfoCard,
   PageHero,
   PageTableOfContents,
   RelatedContentGrid,
@@ -106,23 +105,13 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         <ChecklistBox items={situation.firstChecks} />
       </ContentSection>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <ContentSection id="self-handle" title="혼자 처리해도 되는 경우">
-          <ChecklistBox items={situation.selfHandleCases} />
-        </ContentSection>
+      <ContentSection id="self-handle" title="혼자 처리해도 되는 경우">
+        <ChecklistBox items={situation.selfHandleCases} />
+      </ContentSection>
 
-        <ContentSection id="lawyer-needed" title="법무사 상담이 필요한 경우">
-          <div className="space-y-3">
-            {situation.lawyerNeededCases.map((item) => (
-              <InfoCard key={item} variant="highlight">
-                <p className="text-sm leading-relaxed text-navy/85 md:text-base">
-                  {item}
-                </p>
-              </InfoCard>
-            ))}
-          </div>
-        </ContentSection>
-      </div>
+      <ContentSection id="lawyer-needed" title="법무사 상담이 필요한 경우">
+        <ChecklistBox items={situation.lawyerNeededCases} />
+      </ContentSection>
 
       <ContentSection id="documents" title="필요한 서류">
         <ChecklistBox

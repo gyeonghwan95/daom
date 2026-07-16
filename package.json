@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "node scripts/sync-favicon.mjs && next dev",
-    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && node scripts/generate-seo-pages.mjs",
+    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && node scripts/generate-seo-pages.mjs && npm run build:search",
     "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
     "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "node scripts/build-static.mjs",
@@ -20,6 +20,11 @@
     "check:routes": "node scripts/check-routes.mjs",
     "check:seo": "node scripts/check-seo.mjs",
     "check:diagnosis": "node scripts/check-diagnosis-pages.mjs",
+    "build:search": "npx --yes tsx scripts/build-search-index.ts",
+    "check:search": "npx --yes tsx scripts/check-search-index.ts",
+    "check:lecture-history": "npx --yes tsx scripts/check-lecture-history.ts",
+    "check:business-scope": "npx --yes tsx scripts/check-business-scope.ts",
+    "audit:business-pages": "npx --yes tsx scripts/audit-business-pages.ts",
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },

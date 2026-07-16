@@ -1,6 +1,6 @@
 import { consultationCopy } from "@/lib/consultation";
 import { officeLocation } from "@/lib/office-location";
-import { getLectureContent } from "@/lib/lectures/pages";
+import { getLectureContent } from "@/lib/lectures/content";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 
 export function buildLecturePage(
@@ -63,7 +63,7 @@ export function buildLecturePage(
     faqs: content.faqs,
     lawyerOpinion: content.heroParagraphs[0] ?? content.heroIntro,
     directionsNote: `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. 강의는 기관 장소 출강 또는 온라인으로 진행할 수 있습니다.`,
-    ctaDescription: content.ctaText || consultationCopy.footerNote,
+    ctaDescription: content.ctaText || consultationCopy.contact,
     relatedBlogHrefs: [],
     relatedServiceLinks: content.relatedServiceLinks,
     relatedRegionLinks: content.relatedLectureLinks,

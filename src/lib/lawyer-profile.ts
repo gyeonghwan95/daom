@@ -176,6 +176,20 @@ export const lawyerLectures: LawyerLecture[] = [
     summary: "해운대 청년채움공간 연계 청년 취업·주거 관련 법률 교육.",
   },
   {
+    venue: "창원청년비전센터",
+    topic: "청년 생활법률 특강",
+    period: "2025",
+    audience: "청년",
+    summary: "창원 지역 청년 대상 생활법률·예방 교육.",
+  },
+  {
+    venue: "양산제일고등학교",
+    topic: "법무사 진로특강",
+    period: "2025",
+    audience: "고등학생",
+    summary: "법무사 직업·진로와 생활 속 법률 기초 안내.",
+  },
+  {
     venue: "LH · 부산창조경제혁신센터",
     topic: "청년·시민 생활 법률",
     period: "2025",

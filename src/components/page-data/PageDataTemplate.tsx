@@ -49,14 +49,8 @@ function ExtraSections({ sections }: { sections: PageSection[] }) {
         >
           <ProseParagraphs paragraphs={[section.body]} />
           {section.items && section.items.length > 0 ? (
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {section.items.map((item) => (
-                <InfoCard key={item}>
-                  <p className="text-sm leading-relaxed text-navy/85 md:text-base">
-                    {item}
-                  </p>
-                </InfoCard>
-              ))}
+            <div className="mt-4">
+              <ChecklistBox items={section.items} />
             </div>
           ) : null}
           {section.links && section.links.length > 0 ? (
@@ -142,15 +136,7 @@ export function PageDataTemplate({
 
       {page.consultationPoints.length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
-          <div className="grid gap-3 sm:grid-cols-2">
-            {page.consultationPoints.map((point) => (
-              <InfoCard key={point} variant="highlight">
-                <p className="text-sm leading-relaxed text-navy/85 md:text-base">
-                  {point}
-                </p>
-              </InfoCard>
-            ))}
-          </div>
+          <ChecklistBox items={page.consultationPoints} />
         </ContentSection>
       ) : null}
 

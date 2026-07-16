@@ -28,6 +28,9 @@ export default function MediaPage() {
         intro="안윤정 법무사의 대외 활동과 언론 보도를 소개합니다. 기업·공공기관과의 법률 지원 협력, 정책 자문 참여, 생활 법률 강의, 언론 기사 등 법률 전문가로서 지역과 사회에 기여하는 활동을 이어가고 있습니다."
         relatedLinks={[
           { href: "/about", label: "법무사 소개" },
+          { href: "/법률강의", label: "법률 강의·특강" },
+          { href: "/전세사기예방교육", label: "전세사기 예방교육" },
+          { href: "/강의문의", label: "강의 문의" },
           { href: "/office", label: "사무소 소개" },
           { href: "/blog", label: "블로그" },
           { href: "/contact", label: "상담 신청" },

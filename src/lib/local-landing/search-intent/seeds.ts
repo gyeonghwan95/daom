@@ -43,8 +43,10 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     serviceSlug: "inheritance-registration",
     keywords: [
       "부산 상속 법무사 추천",
+      "부산 상속전문 법무사 추천",
       "부산 상속등기 법무사 추천",
-      "부산 상속 법무사",
+      "부산 상속 상담",
+      "부산 상속 법무사 비용",
     ],
     focus: "상속등기·포기·한정승인 상담",
     includeLawyerScopeFaq: true,

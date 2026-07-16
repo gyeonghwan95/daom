@@ -42,6 +42,7 @@ export function mapLandingPageTypeToCategory(
     case "public-agency-registration":
     case "selection-hub":
     case "search-intent":
+    case "lecture":
     case "service-region":
     default:
       return "local";
@@ -53,7 +54,8 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
     page.pageType === "selection-hub" ||
-    page.pageType === "search-intent"
+    page.pageType === "search-intent" ||
+    page.pageType === "lecture"
   ) {
     return [];
   }
@@ -181,7 +183,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
     page.pageType === "selection-hub" ||
-    page.pageType === "search-intent"
+    page.pageType === "search-intent" ||
+    page.pageType === "lecture"
       ? page.legalIssues.slice(0, 6)
       : [...page.legalIssues, ...page.precautions].slice(0, 6);
 
@@ -199,7 +202,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
     page.pageType === "selection-hub" ||
-    page.pageType === "search-intent"
+    page.pageType === "search-intent" ||
+    page.pageType === "lecture"
       ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : page.faqs.slice(0, 3).map((f) => ({
           question: f.question,
@@ -359,13 +363,21 @@ export function buildPageDataFromLocalLanding(
     h1: page.h1,
     intro: page.problemStatement,
     breadcrumbs:
-      page.pageType === "search-intent"
-        ? [
-            { label: "홈", href: "/" },
-            { label: "검색의도 안내", href: "/search-guides" },
-            { label: page.title },
-          ]
-        : [{ label: "홈", href: "/" }, { label: page.title }],
+      page.pageType === "lecture"
+        ? page.slug === "법률강의"
+          ? [{ label: "홈", href: "/" }, { label: page.title }]
+          : [
+              { label: "홈", href: "/" },
+              { label: "법률 강의", href: "/법률강의" },
+              { label: page.title },
+            ]
+        : page.pageType === "search-intent"
+          ? [
+              { label: "홈", href: "/" },
+              { label: "검색의도 안내", href: "/search-guides" },
+              { label: page.title },
+            ]
+          : [{ label: "홈", href: "/" }, { label: page.title }],
     introParagraphs,
     procedures: page.procedures,
     documents: page.documents,
@@ -375,7 +387,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "preservation-registration" ||
       page.pageType === "public-agency-registration" ||
       page.pageType === "selection-hub" ||
-      page.pageType === "search-intent",
+      page.pageType === "search-intent" ||
+      page.pageType === "lecture",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

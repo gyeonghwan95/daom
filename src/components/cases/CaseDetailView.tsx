@@ -126,15 +126,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
 
       {sections.issues.length > 0 ? (
         <ContentSection id="case-issues" title="쟁점">
-          <div className="grid gap-3 sm:grid-cols-2">
-            {sections.issues.map((item) => (
-              <InfoCard key={item}>
-                <p className="text-sm leading-relaxed text-navy/85 md:text-base">
-                  {item}
-                </p>
-              </InfoCard>
-            ))}
-          </div>
+          <ChecklistBox items={sections.issues} />
         </ContentSection>
       ) : null}
 

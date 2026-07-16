@@ -51,6 +51,37 @@
   }
 }
 
+/* Site search drawer — Header 아래 서랍 */
+.site-search-drawer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-search-drawer--open {
+  animation: site-search-drawer-in 200ms ease;
+}
+
+.site-search-drawer--reduced {
+  animation: none;
+}
+
+@keyframes site-search-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-search-drawer--open {
+    animation: none;
+  }
+}
+
 /* Site header brand — 좌측 로고·사무소명 */
 .site-header__brand {
   text-decoration: none;
@@ -1989,19 +2020,19 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .readability-checklist {
-    @apply rounded-xl border border-beige-dark bg-white p-4 md:p-5;
+    @apply space-y-0;
   }
 
   .readability-checklist__list {
-    @apply space-y-3;
+    @apply space-y-2.5 border-l border-navy/15 pl-4 md:pl-5;
   }
 
   .readability-checklist__item {
-    @apply flex gap-3 text-sm leading-relaxed text-navy/85 md:text-base;
+    @apply flex gap-2.5 text-sm leading-relaxed text-navy/85 md:text-base;
   }
 
   .readability-checklist__mark {
-    @apply mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-navy/20 text-[0.65rem] font-bold text-navy/55;
+    @apply mt-[0.15em] shrink-0 text-[0.85em] font-semibold text-navy/45;
   }
 
   .readability-checklist__note {
@@ -2355,5 +2386,28 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero__scroll-dot,
   .home-hero__scroll-chevron {
     animation: none !important;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .mobile-bottom-cta,
+  .print\:hidden,
+  nav,
+  .home-back-to-top {
+    display: none !important;
+  }
+
+  .lecture-print-profile {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .lecture-page a {
+    text-decoration: none;
+    color: inherit;
   }
 }

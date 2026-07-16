@@ -11,7 +11,6 @@ import {
   ComparisonTable,
   ConsultationCTA,
   ContentSection,
-  InfoCard,
   PageHero,
   PageTableOfContents,
   ProseParagraphs,
@@ -112,23 +111,16 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
       </ContentSection>
 
       <ContentSection id="service-checkpoints" title="업무별 체크포인트">
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-6">
           {content.serviceCheckpoints.map((block) => (
-            <InfoCard key={block.title} variant="highlight">
+            <div key={block.title}>
               <h3 className="text-base font-semibold text-navy md:text-lg">
                 {block.title}
               </h3>
-              <ul className="mt-3 space-y-2">
-                {block.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm leading-relaxed text-navy/85 md:text-base"
-                  >
-                    · {item}
-                  </li>
-                ))}
-              </ul>
-            </InfoCard>
+              <div className="mt-3">
+                <ChecklistBox items={block.items} />
+              </div>
+            </div>
           ))}
         </div>
       </ContentSection>

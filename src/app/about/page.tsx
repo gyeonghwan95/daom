@@ -30,6 +30,8 @@ export default function AboutPage() {
         relatedLinks={[
           { href: "/office", label: "사무소 소개" },
           { href: "/services", label: "업무안내" },
+          { href: "/법률강의", label: "법률 강의·특강" },
+          { href: "/강사소개", label: "강사 소개" },
           { href: "/media", label: "언론·활동" },
           { href: "/contact", label: "상담 신청" },
         ]}

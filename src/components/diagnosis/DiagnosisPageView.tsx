@@ -135,15 +135,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
       </ContentSection>
 
       <ContentSection id="cost-factors" title="비용이 달라지는 이유">
-        <div className="grid gap-3 sm:grid-cols-2">
-          {diagnosis.costFactors.map((item) => (
-            <InfoCard key={item}>
-              <p className="text-sm leading-relaxed text-navy/85 md:text-base">
-                {item}
-              </p>
-            </InfoCard>
-          ))}
-        </div>
+        <ChecklistBox items={diagnosis.costFactors} />
       </ContentSection>
 
       <ContentSection id="deadlines" title="기간·기한·과태료 주의사항">

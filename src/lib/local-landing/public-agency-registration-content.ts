@@ -466,6 +466,7 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     },
   ],
   internalLinks: [
+    { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
     { href: "/부산등기법무사", label: "부산 등기 법무사" },
     { href: "/부산법인등기", label: "부산 법인등기" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },

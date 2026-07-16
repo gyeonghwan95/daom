@@ -16,6 +16,7 @@ import {
   institutionTopics,
   realEstateDevTopics,
 } from "./institutions";
+import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
 
 const defaultRegistryGuide: LocalLandingJurisdictionGuide = {
   title: "부산 관할 등기소 안내",
@@ -146,6 +147,10 @@ const regionRecommendKeywords: Record<string, string[]> = {
 };
 
 function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null {
+  if (config.slug === "부산법무사") {
+    return buildBusanLawyerFlagshipPage(config);
+  }
+
   const district = districtProfiles[config.regionKey];
   if (!district) return null;
 

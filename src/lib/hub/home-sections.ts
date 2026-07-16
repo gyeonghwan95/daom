@@ -10,6 +10,25 @@ export type HomeHubSection = {
 
 export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
+    id: "lecture-education",
+    title: "법률 강의·기관 출강",
+    description:
+      "기관·학교·기업 대상 생활법률·전세사기 예방·청년 특강 안내입니다. 법정의무교육은 포함하지 않습니다.",
+    links: [
+      { href: "/법률강의", label: "법률 강의 허브" },
+      { href: "/강의이력", label: "강의 이력" },
+      { href: "/부산법률강사", label: "부산 법률 강사 섭외" },
+      { href: "/부산법무사강의", label: "부산 법무사 강의" },
+      { href: "/부산기관법률특강", label: "기관·단체 법률특강" },
+      { href: "/부산도서관법률특강", label: "도서관 법률특강" },
+      { href: "/전세사기예방교육", label: "전세사기 예방교육" },
+      { href: "/청년생활법률특강", label: "청년 생활법률 특강" },
+      { href: "/기업법률교육", label: "기업 법률교육" },
+      { href: "/강사소개", label: "강사 소개" },
+      { href: "/강의문의", label: "강의 문의" },
+    ],
+  },
+  {
     id: "search-intent-guides",
     title: "검색의도·실제 검색 키워드",
     description:
@@ -41,14 +60,14 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "부산 법무사 주요 업무",
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
     links: [
-      { href: "/자가진단", label: "업무별 자가진단" },
-      { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부산상속포기", label: "부산 상속포기" },
-      { href: "/부산한정승인", label: "부산 한정승인" },
-      { href: "/부산법인등기", label: "부산 법인등기" },
-      { href: "/부산부동산등기", label: "부산 부동산등기" },
+      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/부산상속법무사", label: "부산 상속전문 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인전문 법무사" },
+      { href: "/부산등기법무사", label: "부산 등기 전문 법무사" },
+      { href: "/부산부동산등기전문", label: "부산 부동산등기 전문" },
       { href: "/부산개인회생", label: "부산 개인회생" },
-      { href: "/services", label: "업무안내 전체 보기" },
+      { href: "/부산법무사비용", label: "부산 법무사 비용" },
+      { href: "/부산법무사추천", label: "부산 법무사 추천" },
     ],
   },
   {
@@ -181,7 +200,9 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
   {
     title: "법인·기업",
     links: [
+      { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
       { href: "/부산법인등기", label: "부산 법인등기" },
+      { href: "/부산기업채권관리", label: "기업 채권관리" },
       { href: "/명례산업단지법인등기", label: "산업단지 법인등기" },
       { href: "/법인등기", label: "법인등기 허브" },
       { href: "/services/corporate-registration", label: "법인등기 업무 상세" },

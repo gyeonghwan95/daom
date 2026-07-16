@@ -110,6 +110,11 @@ export const imagePaths = {
   lectureJeonseVaccination: "/image/강의-청년전세사기예방접종.jpg",
   lectureMistakeCrime: "/image/강의-실수로범죄가되는순간들.jpg",
   lectureLawEssential: "/image/강의-법없이도살수없어요.jpg",
+  lectureCitizenLibraryWeek1: "/image/강의-시민도서관1주차.jpg",
+  lectureCitizenLibraryWeek2: "/image/강의-시민도서관2주차.jpg",
+  lectureCitizenLibraryWeek3: "/image/강의-시민도서관3주차.jpg",
+  lectureCitizenLibraryWeek4: "/image/강의-시민도서관4주차.jpg",
+  lectureChangwonYouthVision: "/image/강의-창원청년비전센터.jpg",
 } as const;
 
 const STOCK = imagePaths;
@@ -182,6 +187,8 @@ export const siteImages = {
 
   about: {
     profile: img(imagePaths.officeExterior, "안윤정 법무사 프로필", 800, 1000),
+    /** 안윤정 법무사 대표 인물 사진 */
+    portrait: img(imagePaths.thumbPortraitFront, "안윤정 법무사", 720, 960),
     nameplate: img(imagePaths.officeNameplate, "안윤정 법무사 명판", 800, 600, false),
     policy: {
       barAssociationAward: img(

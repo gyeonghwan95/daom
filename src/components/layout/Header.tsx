@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useSyncExternalStore, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { NavMenuLink } from "@/components/layout/NavMenuLink";
+import { SiteSearchControls } from "@/components/search/SiteSearchControls";
 import { mainNavigation } from "@/lib/navigation";
 import { siteFavicon } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
@@ -79,6 +80,7 @@ function MobileMenu({
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -101,11 +103,21 @@ export function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const openSearch = useCallback(() => {
+    setMenuOpen(false);
+    setSearchOpen(true);
+  }, []);
+
+  const openMenu = useCallback(() => {
+    setSearchOpen(false);
+    setMenuOpen((prev) => !prev);
+  }, []);
+
   return (
     <>
       <header
         className={`sticky top-0 w-full border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
-          menuOpen ? "z-[100]" : "z-40"
+          menuOpen || searchOpen ? "z-[100]" : "z-40"
         }`}
       >
         <Container
@@ -115,7 +127,10 @@ export function Header() {
           <Link
             href="/"
             className="site-header__brand flex min-h-11 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 lg:flex-none lg:shrink-0"
-            onClick={closeMenu}
+            onClick={() => {
+              closeMenu();
+              setSearchOpen(false);
+            }}
           >
             <span className="site-header__brand-mark" aria-hidden>
               <Image
@@ -146,34 +161,42 @@ export function Header() {
             </ul>
           </nav>
 
-          <button
-            type="button"
-            className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-beige-dark bg-beige text-navy lg:hidden"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            {menuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M6 6l12 12M18 6L6 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M4 7h16M4 12h16M4 17h16"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            )}
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            <SiteSearchControls
+              searchOpen={searchOpen}
+              onSearchOpenChange={setSearchOpen}
+              onOpenSearch={openSearch}
+            />
+
+            <button
+              type="button"
+              className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-beige-dark bg-beige text-navy lg:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+              onClick={openMenu}
+            >
+              {menuOpen ? (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M6 6l12 12M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </Container>
       </header>
 

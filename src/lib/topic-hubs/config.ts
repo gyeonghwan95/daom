@@ -4,10 +4,10 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 export const topicHubConfigs: TopicHubConfig[] = [
   {
     slug: "상속",
-    title: "부산 상속 법무 종합 안내",
-    h1: "부산 상속등기·상속포기·한정승인 상담",
+    title: "부산 상속전문 법무 종합 안내",
+    h1: "부산 상속등기·상속포기·한정승인·재산분할 상담",
     description:
-      "부산 상속등기·상속포기·한정승인·유증등기·상속채무 정리. 다옴법무사사무소 안윤정 법무사가 해운대·센텀에서 상속 절차·서류·비용·기한을 실무 기준으로 안내합니다.",
+      "부산 상속전문 법무사 안내. 상속등기·상속포기·한정승인·상속재산분할. 다옴법무사사무소 안윤정 법무사가 해운대·센텀에서 절차·서류·비용·기한을 실무 기준으로 안내합니다.",
     primaryServiceSlug: "inheritance-registration",
     intro:
       "상속이 발생하면 등기·가정법원 신고·채무 조사를 어떤 순서로 진행해야 할지 막막한 경우가 많습니다. 부산에서는 해운대·센텀·연제·동래·기장 등 지역마다 관할 등기소와 가정법원이 달라질 수 있고, 상속인 수·부동산 유무·채무 규모에 따라 상속등기·상속포기·한정승인 중 선택이 달라집니다. 상속 개시 후 3개월 기한과 과태료 리스크도 함께 검토해야 합니다. 다옴법무사사무소는 부산 전역 상속 사건을 전화·카카오톡·방문(예약)으로 상담하며, 필요 서류와 비용을 항목별로 설명합니다.",
@@ -27,13 +27,15 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "상속 절차별 안내",
         intro: "상속 개시 후 선택지는 단순승인·한정승인·상속포기·상속등기로 이어집니다. 채무가 우려되면 포기·한정승인을 먼저 검토하는 것이 안전합니다.",
         links: [
+          { href: "/부산상속법무사", label: "부산 상속전문 법무사 안내" },
+          { href: "/부산상속재산분할법무사", label: "부산 상속재산분할 법무사" },
+          { href: "/부산상속법무사추천", label: "부산 상속 법무사 추천" },
           { href: "/services/inheritance-registration", label: "부산 상속등기 절차 보기" },
           { href: "/services/inheritance-renunciation", label: "상속포기 신고 절차 확인" },
           { href: "/services/qualified-acceptance", label: "상속포기와 한정승인 차이 확인" },
           { href: "/faq/qualified-acceptance-vs-simple-acceptance", label: "특별한정승인·단순승인 비교 안내" },
           { href: "/faq/multiple-heirs-inheritance-registration", label: "상속재산분할협의서 작성 안내" },
           { href: "/faq/when-to-file-inheritance-registration", label: "협의분할·법정상속등기 기한 확인" },
-          { href: "/services/inheritance-registration", label: "유증등기·유언 이후 등기 상담" },
         ],
       },
       {
@@ -303,6 +305,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
       {
         title: "전세사기 예방",
         links: [
+          { href: "/전세사기예방교육", label: "전세사기 예방교육·특강 안내" },
           { href: "/contact", label: "전세사기 예방·계약 검토 상담" },
           { href: "/about", label: "전세사기 예방 특강 경력 확인" },
           { href: "/faq/jeonse-registration-faq", label: "확정일자·대항력 확인 안내" },

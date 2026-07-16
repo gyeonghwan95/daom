@@ -20,6 +20,7 @@ export const staticRoutes = [
   "/contact/inquiry",
   "/location",
   "/search-guides",
+  "/search",
 ];
 
 const toolSlugs = [
@@ -153,6 +154,22 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/local-landing/neighborhood-hub-config.ts",
   );
+  const lectureLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/lectures/landing-config.ts",
+  );
+  const lectureContentPath = path.join(
+    ROOT,
+    "src/lib/lectures/content.ts",
+  );
+  const businessContentPath = path.join(
+    ROOT,
+    "src/lib/business/content.ts",
+  );
+  const businessLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/business/landing-config.ts",
+  );
   const keyword =
     fs.existsSync(keywordConfigPath)
       ? fs.readFileSync(keywordConfigPath, "utf8")
@@ -173,6 +190,22 @@ function readLandingSlugs() {
     fs.existsSync(neighborhoodConfigPath)
       ? fs.readFileSync(neighborhoodConfigPath, "utf8")
       : "";
+  const lectureLanding =
+    fs.existsSync(lectureLandingConfigPath)
+      ? fs.readFileSync(lectureLandingConfigPath, "utf8")
+      : "";
+  const lectureContent =
+    fs.existsSync(lectureContentPath)
+      ? fs.readFileSync(lectureContentPath, "utf8")
+      : "";
+  const businessContent =
+    fs.existsSync(businessContentPath)
+      ? fs.readFileSync(businessContentPath, "utf8")
+      : "";
+  const businessLanding =
+    fs.existsSync(businessLandingConfigPath)
+      ? fs.readFileSync(businessLandingConfigPath, "utf8")
+      : "";
   const slugs = [
     ...(config.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(expansion.match(/slug:\s*"([^"]+)"/g) ?? []),
@@ -181,6 +214,10 @@ function readLandingSlugs() {
     ...(searchIntent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(searchIntentSeeds.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(neighborhood.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(lectureLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(lectureContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(businessContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
 }
@@ -208,6 +245,19 @@ function readNaverBlogExternalPaths() {
       return match ? `/blog/external/${match[1]}` : null;
     })
     .filter(Boolean);
+}
+
+function readLectureHistoryPaths() {
+  const historyPath = path.join(ROOT, "src/data/lectures/history.ts");
+  if (!fs.existsSync(historyPath)) return ["/강의이력"];
+  const text = fs.readFileSync(historyPath, "utf8");
+  const slugs = [
+    ...text.matchAll(/slug:\s*"([^"]+)"/g),
+  ].map((match) => normalizeRouteSlug(match[1]));
+  return [
+    "/강의이력",
+    ...[...new Set(slugs)].map((slug) => `/강의이력/${slug}`),
+  ];
 }
 
 function readSeoLandingPaths() {
@@ -266,6 +316,7 @@ export function getAllPublishedPaths() {
   const diagnosisSlugs = readDiagnosisSlugs();
   const seoLandingPaths = readSeoLandingPaths();
   const naverBlogPaths = readNaverBlogExternalPaths();
+  const lectureHistoryPaths = readLectureHistoryPaths();
 
   return [
     ...staticRoutes,
@@ -282,6 +333,7 @@ export function getAllPublishedPaths() {
     ...faqSlugs.map((slug) => `/faq/${slug}`),
     ...pressSlugs.map((slug) => `/media/${slug}`),
     ...naverBlogPaths,
+    ...lectureHistoryPaths,
     "/cases",
     ...caseSlugs.map((slug) => `/cases/${slug}`),
     "/press",

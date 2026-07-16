@@ -4,9 +4,9 @@ import { selectionCoreLinks as L } from "../shared-links";
 export const 부산부동산등기전문: SelectionHubContent = {
   slug: "부산부동산등기전문",
   title: "부산 부동산등기 실무 안내",
-  metaTitle: "부산 부동산등기 실무 안내｜소유권이전·근저당·전세권 등기",
+  metaTitle: "부산 부동산등기 전문｜매매·증여·보존·말소 상담 확인",
   metaDescription:
-    "부산 부동산등기 상담 전 확인할 매매·증여·상속·보존·근저당·전세권 등기 절차와 서류. 잔금일 등기 진행 흐름 안내.",
+    "부산 부동산등기 전문 상담 전 확인할 매매·증여·상속·보존·근저당·전세권 절차와 서류. 선택 기준과 업무 페이지 연결.",
   h1: "부산 부동산등기 상담 전 확인해야 할 절차와 서류",
   eyebrow: "부동산등기 실무·절차 안내",
   heroParagraphs: [

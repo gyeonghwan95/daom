@@ -19,6 +19,32 @@ const MDX_END_SECTIONS: SectionNavItem[] = [
   { id: "related", label: "관련 안내" },
 ];
 
+/** 「이 글에서 확인할 내용」 목차 → 좌측 페이지 목차 */
+function discoverPageTocSections(): SectionNavItem[] {
+  const links = document.querySelectorAll<HTMLAnchorElement>(
+    "[data-page-toc] a[href^='#']",
+  );
+
+  const seen = new Set<string>();
+  const items: SectionNavItem[] = [];
+
+  for (const link of Array.from(links)) {
+    const href = link.getAttribute("href");
+    if (!href || href.length < 2) continue;
+    const id = href.slice(1);
+    if (!id || seen.has(id)) continue;
+    if (!document.getElementById(id)) continue;
+
+    seen.add(id);
+    items.push({
+      id,
+      label: link.textContent?.trim() || id,
+    });
+  }
+
+  return items;
+}
+
 function discoverMdxSections(): SectionNavItem[] {
   const headings = document.querySelectorAll<HTMLElement>(
     "#main-content article h2[id]",
@@ -45,34 +71,44 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
   const [dynamicSections, setDynamicSections] = useState<SectionNavItem[] | null>(
     null,
   );
-  const [prevStaticSections, setPrevStaticSections] =
-    useState(staticSections);
-  const dynamicDiscovery = usesDynamicSectionDiscovery(pathname);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  const mdxDiscovery = usesDynamicSectionDiscovery(pathname);
 
-  if (prevStaticSections !== staticSections) {
-    setPrevStaticSections(staticSections);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setDynamicSections(null);
   }
 
   const sections =
-    dynamicDiscovery && dynamicSections && dynamicSections.length >= 2
+    dynamicSections && dynamicSections.length >= 2
       ? dynamicSections
       : staticSections;
 
   useEffect(() => {
-    if (!dynamicDiscovery) return;
+    if (isSectionNavExcluded(pathname)) return;
 
     const updateSections = () => {
-      const discovered = discoverMdxSections();
-      if (discovered.length >= 2) {
-        setDynamicSections(discovered);
+      const fromToc = discoverPageTocSections();
+      if (fromToc.length >= 2) {
+        setDynamicSections(fromToc);
+        return;
       }
+
+      if (mdxDiscovery) {
+        const discovered = discoverMdxSections();
+        if (discovered.length >= 2) {
+          setDynamicSections(discovered);
+          return;
+        }
+      }
+
+      setDynamicSections(null);
     };
 
     updateSections();
-    const timer = window.setTimeout(updateSections, 120);
+    const timer = window.setTimeout(updateSections, 160);
     return () => window.clearTimeout(timer);
-  }, [dynamicDiscovery, pathname]);
+  }, [mdxDiscovery, pathname]);
 
   if (isSectionNavExcluded(pathname)) {
     return <div className="min-w-0">{children}</div>;

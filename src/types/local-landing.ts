@@ -12,7 +12,9 @@ export type LocalLandingPageType =
   | "preservation-registration"
   | "public-agency-registration"
   | "selection-hub"
-  | "search-intent";
+  | "search-intent"
+  | "lecture"
+  | "business";
 
 export type LocalLandingConfig = {
   /** URL 경로 (예: 부산상속등기) */

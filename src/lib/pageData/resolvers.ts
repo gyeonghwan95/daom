@@ -4,12 +4,20 @@ import { getLocalLandingBySlug } from "@/lib/local-landing";
 import { getSeoLandingPageDataBySlug } from "@/lib/seo-landing";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { getTopicHubBySlug } from "@/lib/topic-hubs";
+import {
+  buildLectureHistoryHubPageData,
+  getLectureHistoryPageDataBySlug,
+} from "@/lib/lectures/history-page-data";
 import { getPageDataByPath } from "./registry";
 
 export function resolveKoreanLandingPageData(
   slug: string,
 ): ReturnType<typeof getPageDataByPath> {
   const normalized = normalizeRouteSlug(slug);
+
+  if (normalized === "강의이력") {
+    return buildLectureHistoryHubPageData();
+  }
 
   const diagnosis = getRawDiagnosisBySlug(normalized);
   if (diagnosis) {
@@ -32,6 +40,10 @@ export function resolveKoreanLandingPageData(
   }
 
   return undefined;
+}
+
+export function resolveLectureHistoryDetailPageData(slug: string) {
+  return getLectureHistoryPageDataBySlug(normalizeRouteSlug(slug));
 }
 
 export function resolveServicePageData(slug: string) {

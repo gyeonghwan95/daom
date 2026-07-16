@@ -35,6 +35,7 @@ import {
   getAllToolDefinitions,
   buildPageDataFromTool,
 } from "@/lib/tools";
+import { buildAllLectureHistoryPageData } from "@/lib/lectures/history-page-data";
 import {
   buildCorePageData,
   buildHomePageData,
@@ -142,6 +143,8 @@ function buildAllPageData(): PageData[] {
 
   pages.push(buildGlossaryHubPageData());
   pages.push(...buildAllGlossaryTermPageData());
+
+  pages.push(...buildAllLectureHistoryPageData());
 
   for (const slug of getContentSlugs("cases")) {
     pages.push(
