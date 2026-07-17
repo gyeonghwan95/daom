@@ -12,9 +12,10 @@ import {
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { encodePublicSrc } from "@/lib/encode-public-src";
 import { seoBrand } from "@/lib/seo/brand";
 
-const PORTRAIT_SRC = "/image/썸네일-정면.jpg";
+const PORTRAIT_SRC = encodePublicSrc("/image/썸네일-정면.jpg");
 
 type ChannelItem = {
   id: string;

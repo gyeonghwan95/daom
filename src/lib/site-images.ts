@@ -8,6 +8,7 @@ import {
   THUMBNAIL_IMAGE_PATHS,
   pickThumbnailImagePath,
 } from "@/lib/thumbnail-images";
+import { encodePublicSrc } from "@/lib/encode-public-src";
 
 export type SiteImageAsset = {
   src: string;
@@ -25,7 +26,14 @@ function img(
   height = 800,
   placeholder = false,
 ): SiteImageAsset {
-  return { src, alt, width, height, placeholder };
+  return {
+    // Link preload 헤더 ByteString 오류 방지 — 한글 파일명 percent-encode
+    src: encodePublicSrc(src),
+    alt,
+    width,
+    height,
+    placeholder,
+  };
 }
 
 const SERVICE_SLUGS = [
@@ -152,7 +160,7 @@ const stockShowcaseImages = [
   STOCK.stockLegalCourthouse,
 ] as const;
 
-export const siteFavicon = imagePaths.logo;
+export const siteFavicon = "/icon.png";
 
 export const siteImages = {
   logo: img(imagePaths.logo, "다옴법무사사무소 로고", 400, 120, false),

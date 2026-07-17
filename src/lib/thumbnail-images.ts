@@ -1,4 +1,6 @@
 /** public/image/ 썸네일-* — 카드·목록 썸네일 풀 */
+import { encodePublicSrc } from "@/lib/encode-public-src";
+
 export const THUMBNAIL_IMAGE_PATHS = [
   "/image/썸네일-등기소.jpg",
   "/image/썸네일-서류등기.jpg",
@@ -31,7 +33,9 @@ function hashSlug(slug: string): number {
   return hash >>> 0;
 }
 
-/** slug 기준으로 풀에서 안정적으로 썸네일 경로 선택 */
-export function pickThumbnailImagePath(slug: string): ThumbnailImagePath {
-  return THUMBNAIL_IMAGE_PATHS[hashSlug(slug) % THUMBNAIL_IMAGE_PATHS.length];
+/** slug 기준으로 풀에서 안정적으로 썸네일 경로 선택 (헤더 안전 percent-encode) */
+export function pickThumbnailImagePath(slug: string): string {
+  const raw =
+    THUMBNAIL_IMAGE_PATHS[hashSlug(slug) % THUMBNAIL_IMAGE_PATHS.length];
+  return encodePublicSrc(raw);
 }

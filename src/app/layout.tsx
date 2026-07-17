@@ -6,7 +6,6 @@ import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
 import { FloatingCTA } from "@/components/consultation/FloatingCTA";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
-import { siteFavicon } from "@/lib/site-images";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
@@ -33,17 +32,15 @@ export const metadata: Metadata = {
         "124ba44be3fa9cde20730093315f661f9520e911",
     },
   },
-  icons: {
-    icon: [{ url: siteFavicon, type: "image/png" }],
-    shortcut: siteFavicon,
-    apple: siteFavicon,
-  },
+  // icons: app/icon.png · apple-icon.png · public/favicon.ico (ASCII 경로)
+  // metadata.icons에 한글 파일명(/image/로고.png)을 넣으면 Link 헤더 ByteString 오류 발생
   alternates: {
     types: {
+      // Link 헤더는 ASCII만 허용 — 한글 title은 ByteString 오류를 유발함
       "application/rss+xml": [
         {
           url: "/rss.xml",
-          title: `${seoBrand.siteName} RSS`,
+          title: "DAOM RSS",
         },
       ],
     },

@@ -26,5 +26,7 @@ export function getAbsoluteAssetUrl(path: string): string {
     return path;
   }
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return `${siteConfig.url}${normalized}`;
+  const segments = normalized.split("/").filter(Boolean);
+  const encoded = segments.map((segment) => encodeURIComponent(segment)).join("/");
+  return encoded ? `${siteConfig.url}/${encoded}` : siteConfig.url;
 }

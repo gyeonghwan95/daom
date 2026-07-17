@@ -25,6 +25,13 @@
     "check:lecture-history": "npx --yes tsx scripts/check-lecture-history.ts",
     "check:business-scope": "npx --yes tsx scripts/check-business-scope.ts",
     "audit:business-pages": "npx --yes tsx scripts/audit-business-pages.ts",
+    "audit:real-estate-intents": "npx --yes tsx scripts/audit-real-estate-intents.ts",
+    "check:route-duplicates": "npx --yes tsx scripts/check-route-duplicates.ts",
+    "check:content-similarity": "npx --yes tsx scripts/check-content-similarity.ts",
+    "check:metadata-duplicates": "npx --yes tsx scripts/check-metadata-duplicates.ts",
+    "check:internal-links": "npx --yes tsx scripts/check-internal-links.ts",
+    "check:thin-pages": "npx --yes tsx scripts/check-thin-pages.ts",
+    "audit:real-estate": "npm run audit:real-estate-intents && npm run check:route-duplicates && npm run check:metadata-duplicates && npm run check:thin-pages && npm run check:content-similarity && npm run check:internal-links",
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },

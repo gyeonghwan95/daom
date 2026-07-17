@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { SiteImageAsset } from "@/lib/site-images";
+import { encodePublicSrc } from "@/lib/encode-public-src";
 
 type SiteImageProps = SiteImageAsset & {
   className?: string;
@@ -18,11 +19,13 @@ export function SiteImage({
   priority = false,
   sizes,
 }: SiteImageProps) {
+  const encodedSrc = encodePublicSrc(src);
+
   if (fill) {
     return (
       <div className={`relative h-full w-full overflow-hidden ${className}`}>
         <Image
-          src={src}
+          src={encodedSrc}
           alt={alt}
           fill
           className="object-cover"
@@ -36,7 +39,7 @@ export function SiteImage({
   return (
     <div className={`relative block w-full overflow-hidden ${className}`}>
       <Image
-        src={src}
+        src={encodedSrc}
         alt={alt}
         width={width}
         height={height}

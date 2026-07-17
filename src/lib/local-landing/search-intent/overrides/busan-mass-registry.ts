@@ -141,6 +141,7 @@ export const 부산집단등기Override: SearchIntentContent = {
   ],
   relatedServiceLinks: [
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+    { href: "/부산입주등기", label: "부산 입주등기(개인 관점)" },
     { href: "/부산신축건물보존등기", label: "신축 보존등기" },
     { href: "/신축보존등기체크리스트", label: "신축 보존등기 체크리스트" },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },

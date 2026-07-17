@@ -194,10 +194,9 @@ export function SiteSearchDrawer({
       ref={panelRef}
       role="search"
       aria-label="사이트 전체 검색"
-      className={`site-search-drawer site-search-drawer--open fixed inset-x-0 z-[45] border-b border-beige-dark bg-white/98 shadow-[0_12px_28px_rgba(30,58,95,0.08)] backdrop-blur-sm ${
+      className={`site-search-drawer site-search-drawer--open relative z-[45] w-full border-t border-beige-dark bg-white/98 shadow-[0_12px_28px_rgba(30,58,95,0.08)] backdrop-blur-sm ${
         reducedMotion ? "site-search-drawer--reduced" : ""
       }`}
-      style={{ top: "var(--header-height)" }}
     >
       <Container className="py-3 md:py-4">
         <div className="flex items-start gap-2 md:gap-3">

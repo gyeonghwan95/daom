@@ -5,28 +5,24 @@ import { usePathname } from "next/navigation";
 import { SiteSearchButton } from "./SiteSearchButton";
 import { SiteSearchDrawer } from "./SiteSearchDrawer";
 
-type SiteSearchControlsProps = {
-  onOpenSearch: () => void;
+type HeaderSearchProps = {
   searchOpen: boolean;
   onSearchOpenChange: (open: boolean) => void;
+  onOpenSearch: () => void;
 };
 
-export function SiteSearchControls({
-  onOpenSearch,
+/** 헤더 상단바 버튼 + 헤더 하단 드로어를 분리해 배치 */
+export function useHeaderSearch({
   searchOpen,
   onSearchOpenChange,
-}: SiteSearchControlsProps) {
+  onOpenSearch,
+}: HeaderSearchProps) {
   const pathname = usePathname();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [query, setQuery] = useState("");
-  const [prevPathname, setPrevPathname] = useState(pathname);
-
-  if (prevPathname !== pathname) {
-    setPrevPathname(pathname);
-    setQuery("");
-  }
 
   useEffect(() => {
+    setQuery("");
     onSearchOpenChange(false);
   }, [pathname, onSearchOpenChange]);
 
@@ -39,22 +35,24 @@ export function SiteSearchControls({
     onOpenSearch();
   }, [onOpenSearch, onSearchOpenChange, searchOpen]);
 
-  return (
-    <>
-      <SiteSearchButton
-        ref={buttonRef}
-        open={searchOpen}
-        onClick={toggle}
-        id="site-search-button"
-      />
-
-      <SiteSearchDrawer
-        open={searchOpen}
-        onClose={() => onSearchOpenChange(false)}
-        returnFocusRef={buttonRef}
-        query={query}
-        onQueryChange={setQuery}
-      />
-    </>
+  const button = (
+    <SiteSearchButton
+      ref={buttonRef}
+      open={searchOpen}
+      onClick={toggle}
+      id="site-search-button"
+    />
   );
+
+  const drawer = (
+    <SiteSearchDrawer
+      open={searchOpen}
+      onClose={() => onSearchOpenChange(false)}
+      returnFocusRef={buttonRef}
+      query={query}
+      onQueryChange={setQuery}
+    />
+  );
+
+  return { button, drawer };
 }
