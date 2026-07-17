@@ -6,7 +6,7 @@ import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
 import { FloatingCTA } from "@/components/consultation/FloatingCTA";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
-import { getSiteUrl } from "@/lib/site-url";
+import { getMetadataBaseUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -17,7 +17,7 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()),
+  metadataBase: new URL(getMetadataBaseUrl()),
   authors: [{ name: seoBrand.representative, url: "/about" }],
   creator: seoBrand.representative,
   publisher: seoBrand.siteName,
