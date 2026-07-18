@@ -184,6 +184,16 @@ NEXT_PUBLIC_INQUIRY_FORM_GOOGLE=https://...
 
 5. **Save and Deploy** → `main` push 시 자동 재배포
 
+### IndexNow (Bing·Naver 등 자동 알림)
+
+`main`에 push하면 GitHub Actions **IndexNow** 워크플로가 Cloudflare 배포 완료를 기다린 뒤  
+색인 대상 URL 전체를 IndexNow API로 제출합니다.
+
+- 키 파일: `public/dc56e361ff344411bd1493b60a7d1ef7.txt`  
+  → `https://다옴법무사사무소.kr/dc56e361ff344411bd1493b60a7d1ef7.txt`
+- 수동 실행: `npm run indexnow` / 배포 대기형: `npm run indexnow:deploy`
+- 일시 중지: Actions에서 워크플로 disable, 또는 `INDEXNOW_DISABLED=1`
+
 ### Node.js 버전
 
 Cloudflare Pages 환경 변수에 추가 (권장):

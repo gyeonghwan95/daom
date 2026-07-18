@@ -34,6 +34,7 @@
     "audit:real-estate": "npm run audit:real-estate-intents && npm run check:route-duplicates && npm run check:metadata-duplicates && npm run check:thin-pages && npm run check:content-similarity && npm run check:internal-links",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "indexnow:dry": "node scripts/submit-indexnow.mjs --dry-run",
+    "indexnow:deploy": "node scripts/submit-indexnow.mjs --wait-for-key --soft --retries=30 --retry-delay=20",
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },

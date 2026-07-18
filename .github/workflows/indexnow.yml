@@ -1,0 +1,35 @@
+name: IndexNow
+
+# main 배포(Cloudflare Pages) 이후 IndexNow에 전체 색인 URL 자동 제출
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    # Cloudflare Pages 배포와 겹치므로 키 파일이 라이브될 때까지 대기
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Submit IndexNow (wait for live key)
+        run: npm run indexnow:deploy
+        env:
+          NEXT_PUBLIC_SITE_URL: https://다옴법무사사무소.kr
