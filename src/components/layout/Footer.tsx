@@ -5,12 +5,23 @@ import { Container } from "@/components/layout/Container";
 import { consultationCopy } from "@/lib/consultation";
 import { getDirectConsultationChannels, getNaverBlogUrl } from "@/lib/contact";
 import { getNapInfo } from "@/lib/business-info";
+import { footerCollaborationLinks } from "@/lib/b2b/collaboration-registry";
 import { mainNavigation } from "@/lib/navigation";
+
+const FOOTER_COLLAB_LABELS: Record<string, string> = {
+  "/partners": "협업문의 안내",
+  "/부산법무사복대리": "법무사 복대리",
+  "/부산부동산협력법무사": "부동산 협업",
+  "/부산집단등기": "집단등기",
+  "/공공기관등기업무": "기업·기관 등기",
+  "/협업문의": "협업 문의서",
+};
 
 export function Footer() {
   const nap = getNapInfo();
   const naverBlog = getNaverBlogUrl();
   const channels = getDirectConsultationChannels();
+  const collabLinks = footerCollaborationLinks();
 
   return (
     <footer className="border-t border-beige-dark bg-navy text-white">
@@ -43,6 +54,40 @@ export function Footer() {
           </div>
 
           <div>
+            <p className="font-semibold text-beige">협업문의</p>
+            <ul className="mt-3 space-y-1 text-sm text-white/70">
+              {collabLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+                  >
+                    {FOOTER_COLLAB_LABELS[link.href] ?? link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/부산시행사등기"
+                  className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+                >
+                  건축·시행사 등기
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/partners#all-services"
+                  className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+                >
+                  전체 협업업무 보기
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-3">
+          <div className="lg:col-span-2">
             <p className="font-semibold text-beige">상담 안내</p>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               {consultationCopy.default}

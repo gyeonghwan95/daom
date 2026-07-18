@@ -174,6 +174,7 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/business/landing-config.ts",
   );
+  const b2bPagesDir = path.join(ROOT, "src/lib/b2b/pages");
   const keyword =
     fs.existsSync(keywordConfigPath)
       ? fs.readFileSync(keywordConfigPath, "utf8")
@@ -214,6 +215,14 @@ function readLandingSlugs() {
     fs.existsSync(businessLandingConfigPath)
       ? fs.readFileSync(businessLandingConfigPath, "utf8")
       : "";
+  let b2bPages = "";
+  if (fs.existsSync(b2bPagesDir)) {
+    b2bPages = fs
+      .readdirSync(b2bPagesDir)
+      .filter((f) => f.endsWith(".ts"))
+      .map((f) => fs.readFileSync(path.join(b2bPagesDir, f), "utf8"))
+      .join("\n");
+  }
   const slugs = [
     ...(config.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(expansion.match(/slug:\s*"([^"]+)"/g) ?? []),
@@ -227,6 +236,7 @@ function readLandingSlugs() {
     ...(lectureExpansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(b2bPages.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
 }

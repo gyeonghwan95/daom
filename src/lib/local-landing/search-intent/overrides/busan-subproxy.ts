@@ -158,13 +158,15 @@ export const 부산등기복대리Override: SearchIntentContent = {
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    { href: "/부산법무사복대리", label: "부산 법무사 복대리(협업 안내)" },
     { href: "/부산부동산등기", label: "부산 부동산등기 안내" },
     { href: "/부산법인등기", label: "부산 법인등기 안내" },
     { href: "/특수등기의뢰", label: "특수 등기·협업 의뢰 허브" },
+    { href: "/partners", label: "전문직·기업 협업 안내" },
     { href: "/법무사협업", label: "법무사 협업 문의" },
     { href: "/등기보정", label: "등기 보정 안내" },
     { href: "/전자등기", label: "전자등기 안내" },
-    { href: "/contact", label: "상담·협업 문의" },
+    { href: "/협업문의?partner=legal-professional", label: "협업 문의" },
   ],
   relatedGuideLinks: [
     { href: "/등기실무", label: "등기 실무 허브" },
@@ -173,6 +175,6 @@ export const 부산등기복대리Override: SearchIntentContent = {
     { href: "/search-guides", label: "검색의도 안내" },
   ],
   bottomCtaText:
-    "관할과 접수일·서류 현황을 알려 주시면 복대리·접수 지원 가능 여부를 안내해 드립니다.",
+    "관할과 접수일·서류 현황을 알려 주시면 복대리·접수 지원 가능 여부를 안내해 드립니다. 타지역 법무사 협업은 ‘부산 법무사 복대리’ 안내와 협업 문의로도 연락할 수 있습니다.",
   serviceSlug: "real-estate-registration",
 };

@@ -20,6 +20,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { getPreservationRegistrationContent } from "@/lib/local-landing/preservation-registration-content";
+import { PreservationB2BSections } from "@/components/b2b/PreservationB2BSections";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -204,6 +205,8 @@ export function PreservationRegistrationPageView({
           를 참고하시면 좋습니다.
         </p>
       </ContentSection>
+
+      <PreservationB2BSections />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

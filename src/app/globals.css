@@ -2395,7 +2395,9 @@ body.mobile-menu-open .mobile-bottom-cta {
   .mobile-bottom-cta,
   .print\:hidden,
   nav,
-  .home-back-to-top {
+  .home-back-to-top,
+  .b2b-share-bar,
+  .floating-cta {
     display: none !important;
   }
 
@@ -2409,5 +2411,18 @@ body.mobile-menu-open .mobile-bottom-cta {
   .lecture-page a {
     text-decoration: none;
     color: inherit;
+  }
+
+  .b2b-print-guide {
+    display: block !important;
+  }
+
+  .b2b-page .btn-primary,
+  .b2b-page .btn-secondary {
+    display: none !important;
+  }
+
+  .preservation-print-root {
+    break-inside: avoid;
   }
 }

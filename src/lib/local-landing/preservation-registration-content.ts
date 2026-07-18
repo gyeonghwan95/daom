@@ -257,6 +257,8 @@ export const preservationRegistrationContent: PreservationRegistrationContent = 
     { href: "/services", label: "업무안내" },
     { href: "/contact", label: "상담 문의" },
     { href: "/공공기관등기업무", label: "공공기관 등기업무" },
+    { href: "/partners", label: "건축·시행사 등기 협업" },
+    { href: "/부산집단등기", label: "여러 건의 등기업무 문의" },
     { href: "/faq/preservation-registration-faq", label: "보존등기 FAQ" },
   ],
   primaryKeywords: [

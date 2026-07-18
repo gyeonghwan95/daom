@@ -1,3 +1,6 @@
+import { buildCollaborationNavGroups } from "@/lib/b2b/collaboration-registry";
+import { isCollaborationPath } from "@/lib/b2b/collaboration-registry";
+
 export type NavLink = {
   href: string;
   label: string;
@@ -13,6 +16,8 @@ export type NavItem = {
   label: string;
   /** 하위 메뉴(있을 때만 드롭다운/아코디언) */
   groups?: NavGroup[];
+  /** 협업문의 메가메뉴(5열+CTA) */
+  megaMenu?: boolean;
 };
 
 export const lectureNavGroups: NavGroup[] = [
@@ -47,7 +52,28 @@ export const lectureNavGroups: NavGroup[] = [
 export const mainNavigation: NavItem[] = [
   { href: "/about", label: "소개" },
   { href: "/office", label: "사무소" },
-  { href: "/services", label: "업무안내" },
+  {
+    href: "/services",
+    label: "업무안내",
+    groups: [
+      {
+        title: "주요 업무",
+        links: [
+          { href: "/services", label: "업무안내 전체" },
+          { href: "/부산부동산등기", label: "부동산등기" },
+          { href: "/부산법인등기", label: "법인등기" },
+          { href: "/부산상속등기", label: "상속등기" },
+          { href: "/부산개인회생", label: "개인회생" },
+        ],
+      },
+    ],
+  },
+  {
+    href: "/partners",
+    label: "협업문의",
+    megaMenu: true,
+    groups: buildCollaborationNavGroups(),
+  },
   {
     href: "/법률강의",
     label: "강의·특강",
@@ -70,6 +96,9 @@ export const mainNavigation: NavItem[] = [
 export function isNavItemActive(pathname: string, href: string): boolean {
   const normalized = pathname.split("?")[0].split("#")[0];
   if (href === "/") return normalized === "/";
+  if (href === "/partners") {
+    return isCollaborationPath(normalized);
+  }
   if (href === "/법률강의") {
     return (
       normalized === href ||
@@ -88,6 +117,12 @@ export function isNavItemActive(pathname: string, href: string): boolean {
       normalized === "/학교법률교육" ||
       normalized === "/공공기관법률교육" ||
       normalized === "/법무사진로특강"
+    );
+  }
+  if (href === "/services") {
+    return (
+      normalized === href ||
+      normalized.startsWith("/services/")
     );
   }
   return normalized === href || normalized.startsWith(`${href}/`);

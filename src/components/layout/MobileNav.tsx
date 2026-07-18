@@ -264,7 +264,15 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </div>
 
         <div className="shrink-0 border-t border-beige-dark p-4">
-          {submenu ? (
+          {submenu?.megaMenu ? (
+            <Link
+              href="/협업문의"
+              className="btn-primary w-full"
+              onClick={onClose}
+            >
+              협업 문의서 작성
+            </Link>
+          ) : submenu ? (
             <Link
               href={submenu.href}
               className="btn-secondary w-full"
@@ -292,6 +300,12 @@ function MobileNavSubmenu({
   pathname: string;
   onClose: () => void;
 }) {
+  const isCollab = Boolean(item.megaMenu);
+  const hubLabel = isCollab ? "협업문의 종합안내" : `${item.label} 홈`;
+  const hubHint = isCollab
+    ? "전문직·기업·기관 협업 분야 전체 보기"
+    : "관련 안내 페이지로 이동";
+
   return (
     <div className="px-3 pt-3">
       <Link
@@ -304,11 +318,9 @@ function MobileNavSubmenu({
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-[0.9375rem] font-semibold text-navy">
-            {item.label} 홈
+            {hubLabel}
           </span>
-          <span className="mt-0.5 block text-xs text-navy/50">
-            관련 안내 페이지로 이동
-          </span>
+          <span className="mt-0.5 block text-xs text-navy/50">{hubHint}</span>
         </span>
         <span className="text-navy/35" aria-hidden>
           <ChevronRightIcon />
@@ -328,41 +340,59 @@ function MobileNavSubmenu({
               {group.title}
             </h2>
             <ul className="overflow-hidden rounded-2xl border border-beige-dark bg-white">
-              {group.links.map((link, index) => {
-                const linkActive =
-                  pathname === link.href ||
-                  pathname.startsWith(`${link.href}/`);
-                const isLast = index === group.links.length - 1;
-                return (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={onClose}
-                      aria-current={linkActive ? "page" : undefined}
-                      className={[
-                        "flex min-h-12 items-center gap-3 px-4 text-[0.9375rem] no-underline transition-colors",
-                        !isLast ? "border-b border-beige-dark/80" : "",
-                        linkActive
-                          ? "bg-beige/70 font-semibold text-navy"
-                          : "font-medium text-navy/80 active:bg-beige/50",
-                      ].join(" ")}
-                    >
-                      <span className="min-w-0 flex-1 leading-snug">
-                        {link.label}
-                      </span>
-                      {linkActive ? (
-                        <span className="shrink-0 text-[0.625rem] font-semibold tracking-wide text-navy/55">
-                          현재
+              {group.links
+                .filter((link) => !(isCollab && link.href === "/partners"))
+                .slice(0, isCollab ? 5 : undefined)
+                .map((link, index, arr) => {
+                  const pathOnly = link.href.split("#")[0];
+                  const linkActive =
+                    pathname === pathOnly ||
+                    pathname.startsWith(`${pathOnly}/`);
+                  const isLast = index === arr.length - 1;
+                  return (
+                    <li key={`${group.title}-${link.href}-${link.label}`}>
+                      <Link
+                        href={link.href}
+                        onClick={onClose}
+                        aria-current={linkActive ? "page" : undefined}
+                        className={[
+                          "flex min-h-12 items-center gap-3 px-4 text-[0.9375rem] no-underline transition-colors",
+                          !isLast ? "border-b border-beige-dark/80" : "",
+                          linkActive
+                            ? "bg-beige/70 font-semibold text-navy"
+                            : "font-medium text-navy/80 active:bg-beige/50",
+                        ].join(" ")}
+                      >
+                        <span className="min-w-0 flex-1 leading-snug">
+                          {link.label}
                         </span>
-                      ) : (
-                        <span className="shrink-0 text-navy/25" aria-hidden>
-                          <ChevronRightIcon size={16} />
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
+                        {linkActive ? (
+                          <span className="shrink-0 text-[0.625rem] font-semibold tracking-wide text-navy/55">
+                            현재
+                          </span>
+                        ) : (
+                          <span className="shrink-0 text-navy/25" aria-hidden>
+                            <ChevronRightIcon size={16} />
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              {isCollab ? (
+                <li>
+                  <Link
+                    href="/partners#all-services"
+                    onClick={onClose}
+                    className="flex min-h-12 items-center gap-3 border-t border-beige-dark/80 px-4 text-[0.9375rem] font-medium text-navy no-underline active:bg-beige/50"
+                  >
+                    전체 보기
+                    <span className="ml-auto text-navy/25" aria-hidden>
+                      <ChevronRightIcon size={16} />
+                    </span>
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </section>
         ))}

@@ -43,6 +43,8 @@ export function mapLandingPageTypeToCategory(
     case "selection-hub":
     case "search-intent":
     case "lecture":
+    case "b2b-collaboration":
+    case "business":
     case "service-region":
     default:
       return "local";
@@ -55,7 +57,9 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
     page.pageType === "public-agency-registration" ||
     page.pageType === "selection-hub" ||
     page.pageType === "search-intent" ||
-    page.pageType === "lecture"
+    page.pageType === "lecture" ||
+    page.pageType === "business" ||
+    page.pageType === "b2b-collaboration"
   ) {
     return [];
   }
@@ -377,7 +381,24 @@ export function buildPageDataFromLocalLanding(
               { label: "검색의도 안내", href: "/search-guides" },
               { label: page.title },
             ]
-          : [{ label: "홈", href: "/" }, { label: page.title }],
+          : page.pageType === "b2b-collaboration"
+            ? page.slug === "partners"
+              ? [
+                  { label: "홈", href: "/" },
+                  { label: "협업문의" },
+                ]
+              : page.slug === "협업문의"
+                ? [
+                    { label: "홈", href: "/" },
+                    { label: "협업문의", href: "/partners" },
+                    { label: "협업 문의서" },
+                  ]
+                : [
+                    { label: "홈", href: "/" },
+                    { label: "협업문의", href: "/partners" },
+                    { label: page.title },
+                  ]
+            : [{ label: "홈", href: "/" }, { label: page.title }],
     introParagraphs,
     procedures: page.procedures,
     documents: page.documents,

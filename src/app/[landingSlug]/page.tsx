@@ -12,6 +12,7 @@ import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageV
 import { LecturePageView } from "@/components/lectures/LecturePageView";
 import { LectureHistoryHubView } from "@/components/lectures/history/LectureHistoryHubView";
 import { BusinessPageView } from "@/components/business/BusinessPageView";
+import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -131,6 +132,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <BusinessPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "b2b-collaboration") {
+    return (
+      <PageContainer>
+        <B2BPageView page={page} />
       </PageContainer>
     );
   }

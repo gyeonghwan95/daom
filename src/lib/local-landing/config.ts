@@ -6,6 +6,7 @@ import { neighborhoodHubConfigs } from "./neighborhood-hub-config";
 import { selectionLandingConfigs } from "./selection-landing-config";
 import { lectureLandingConfigs } from "@/lib/lectures/landing-config";
 import { businessLandingConfigs } from "@/lib/business/landing-config";
+import { b2bLandingConfigs } from "@/lib/b2b/landing-config";
 import { searchIntentLandingConfigs } from "./search-intent-landing-config";
 
 const baseLandingConfigs: LocalLandingConfig[] = [
@@ -71,6 +72,7 @@ export const localLandingConfigs: LocalLandingConfig[] = [
   ...neighborhoodHubConfigs,
   ...lectureLandingConfigs,
   ...businessLandingConfigs,
+  ...b2bLandingConfigs,
 ];
 
 export function getAllLocalLandingSlugs(): string[] {

@@ -94,6 +94,43 @@ export function ServicesIndexTemplate() {
         </section>
 
         <section
+          id="collaboration"
+          className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h2 className="section-heading">협업·프로젝트</h2>
+          <p className="body-text mt-3 max-w-3xl">
+            복대리·부동산 협업·집단등기·기관업무는 일반 상담과 구분해 업무 범위부터
+            확인합니다. 전문직·기업·기관 담당자용 안내입니다.
+          </p>
+          <ul className="listing-card-grid mt-4">
+            <li>
+              <ServiceCard
+                title="협업 안내"
+                description="법무사·중개사·건축·시행·기업·기관 협업의 중심 허브"
+                href="/partners"
+                image={getServiceImage("real-estate-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="부산 법무사 복대리"
+                description="타지역 법무사·법무법인을 위한 부산 현지 등기 협업"
+                href="/부산법무사복대리"
+                image={getServiceImage("real-estate-registration")}
+              />
+            </li>
+            <li>
+              <ServiceCard
+                title="집단·대량등기"
+                description="여러 호실·필지 프로젝트의 일정·자료 검토 안내"
+                href="/부산집단등기"
+                image={getServiceImage("ownership-transfer")}
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section
           id="public-agency-registration"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >

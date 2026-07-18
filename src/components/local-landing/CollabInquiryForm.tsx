@@ -13,28 +13,22 @@ const WORK_TYPES = [
   "기타",
 ] as const;
 
+function toService(workType: string): string {
+  if (workType.includes("복대리")) return "delegation";
+  if (workType.includes("집단")) return "bulk";
+  if (workType.includes("잔금")) return "transfer-collab";
+  if (workType.includes("보존")) return "preservation";
+  if (workType.includes("공공")) return "public";
+  return "other";
+}
+
 export function CollabInquiryForm() {
   const [workType, setWorkType] = useState<string>(WORK_TYPES[0]);
-  const [volume, setVolume] = useState("");
-  const [jurisdiction, setJurisdiction] = useState("");
-  const [schedule, setSchedule] = useState("");
-  const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    // 실제 API 연동 전: 상담 페이지로 요약 전달을 위해 query 구성
-    const summary = [
-      `협업유형: ${workType}`,
-      volume ? `예상건수: ${volume}` : "",
-      jurisdiction ? `관할: ${jurisdiction}` : "",
-      schedule ? `희망일정: ${schedule}` : "",
-      contact ? `회신연락처: ${contact}` : "",
-    ]
-      .filter(Boolean)
-      .join(" / ");
-
-    const url = `/contact/inquiry?topic=${encodeURIComponent("법무사협업")}&memo=${encodeURIComponent(summary)}`;
+    const url = `/협업문의?service=${encodeURIComponent(toService(workType))}&type=quote`;
     window.location.href = url;
     setSent(true);
   }
@@ -47,8 +41,8 @@ export function CollabInquiryForm() {
     >
       <h2 className="text-lg font-semibold text-navy">협업 문의 (간단 양식)</h2>
       <p className="text-sm text-navy/70">
-        사건 상세·민감정보는 초기 단계에서 받지 않습니다. 업무 범위·건수·관할·일정만
-        알려 주세요.
+        업무 유형을 고르면 협업 문의 페이지로 이동합니다. 사건 상세·민감정보는
+        초기 단계에서 받지 않습니다.
       </p>
 
       <label className="block text-sm font-medium text-navy">
@@ -66,60 +60,25 @@ export function CollabInquiryForm() {
         </select>
       </label>
 
-      <label className="block text-sm font-medium text-navy">
-        예상 건수
-        <input
-          className="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-3 text-sm"
-          value={volume}
-          onChange={(e) => setVolume(e.target.value)}
-          placeholder="예: 월 5건, 단지 300세대"
-        />
-      </label>
-
-      <label className="block text-sm font-medium text-navy">
-        대상 관할
-        <input
-          className="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-3 text-sm"
-          value={jurisdiction}
-          onChange={(e) => setJurisdiction(e.target.value)}
-          placeholder="예: 남부산등기소, 해운대구"
-        />
-      </label>
-
-      <label className="block text-sm font-medium text-navy">
-        희망 일정
-        <input
-          className="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-3 text-sm"
-          value={schedule}
-          onChange={(e) => setSchedule(e.target.value)}
-          placeholder="예: 다음 주, 입주월"
-        />
-      </label>
-
-      <label className="block text-sm font-medium text-navy">
-        회신 연락처
-        <input
-          className="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-3 text-sm"
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
-          placeholder="전화 또는 이메일"
-          required
-        />
-      </label>
-
-      <button
-        type="submit"
-        className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-navy px-4 text-sm font-semibold text-white hover:bg-navy/90"
-      >
-        {sent ? "문의 페이지로 이동 중…" : "업무범위와 예상 건수 협의하기"}
+      <button type="submit" className="btn-primary min-h-12 w-full sm:w-auto">
+        협업 문의로 이동
       </button>
 
-      <p className="text-xs text-navy/55">
-        바로 상담이 필요하시면{" "}
-        <Link href="/contact" className="underline">
-          상담 페이지
+      {sent ? (
+        <p className="text-sm text-navy/70" aria-live="polite">
+          협업 문의 페이지로 이동합니다…
+        </p>
+      ) : null}
+
+      <p className="text-sm text-navy/60">
+        바로 보기:{" "}
+        <Link href="/partners" className="underline">
+          협업 허브
         </Link>
-        를 이용하세요.
+        {" · "}
+        <Link href="/협업문의" className="underline">
+          협업 문의
+        </Link>
       </p>
     </form>
   );

@@ -22,6 +22,7 @@ import {
 import { recommendationFromService } from "@/lib/internal-links";
 import { getSearchIntentContent } from "@/lib/local-landing/search-intent";
 import { subproxyJurisdictionData } from "@/lib/local-landing/search-intent";
+import { MassRegistryB2BAddon } from "@/components/b2b/MassRegistryB2BAddon";
 import { allServiceDetails } from "@/lib/services-data";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -151,6 +152,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />
       </ContentSection>
+
+      {page.slug === "부산집단등기" ? <MassRegistryB2BAddon /> : null}
 
       <ContentSection id="related-cases" title="관련 사례">
         {content.relatedCaseLinks.length > 0 ? (

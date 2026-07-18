@@ -16,6 +16,7 @@ import { buildPublicAgencyRegistrationPage } from "./public-agency-registration-
 import { buildSelectionHubPage } from "./selection-builder";
 import { buildLecturePage } from "@/lib/lectures/builder";
 import { buildBusinessPage } from "@/lib/business/builder";
+import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
 
 const legalIssuesByService: Record<string, string[]> = {
@@ -384,6 +385,8 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     page = buildLecturePage(config);
   } else if (pageType === "business") {
     page = buildBusinessPage(config);
+  } else if (pageType === "b2b-collaboration") {
+    page = buildB2BCollaborationPage(config);
   } else if (pageType !== "service-region") {
     page = buildExpansionLandingPage(config);
   } else {
@@ -401,10 +404,28 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
       { href: "/부산기업부동산등기", label: "기업 부동산등기" },
       { href: "/기업업무문의", label: "기업 업무 문의" },
+      { href: "/partners", label: "전문직·기업 협업 안내" },
     ],
     부산법인설립등기: [
       { href: "/부산기업법률자문", label: "기업 법률실무 허브" },
       { href: "/창업법률교육", label: "창업 법률교육" },
+      { href: "/partners", label: "협업·프로젝트 문의" },
+    ],
+    부산부동산등기: [
+      { href: "/partners", label: "부산 현지 등기 협업" },
+      { href: "/부산부동산협력법무사", label: "부동산 협력 법무사" },
+    ],
+    부산소유권이전등기: [
+      { href: "/부산부동산협력법무사", label: "잔금·이전등기 협업" },
+      { href: "/partners", label: "전문직·기업 협업 안내" },
+    ],
+    부산재개발등기: [
+      { href: "/partners", label: "여러 건의 등기업무 문의" },
+      { href: "/부산집단등기", label: "집단·대량등기" },
+    ],
+    부산재건축등기: [
+      { href: "/partners", label: "건축·시행사 등기 협업" },
+      { href: "/부산집단등기", label: "집단·대량등기" },
     ],
     공탁채권회수: [
       { href: "/부산기업채권관리", label: "기업 미수금·매출채권 관련 업무" },

@@ -476,6 +476,8 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     { href: "/부산법무사", label: "부산 법무사" },
     { href: "/services", label: "업무안내" },
     { href: "/contact", label: "상담 문의" },
+    { href: "/partners", label: "전문직·기업 협업 안내" },
+    { href: "/협업문의?partner=public", label: "기관 등기업무 문의" },
     { href: "/faq/public-agency-registration-faq", label: "공공기관 등기 FAQ" },
   ],
   primaryKeywords: [

@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   getMobileBottomChannels,
   type ConsultationChannel,
 } from "@/lib/contact";
+import { isB2BPath } from "@/lib/b2b/options";
 import {
   KakaoIcon,
   NaverIcon,
@@ -87,11 +91,38 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
 }
 
 export function MobileBottomCTA() {
+  const pathname = usePathname() ?? "/";
+  const b2b = isB2BPath(pathname);
   const channels = getMobileBottomChannels();
+
+  if (b2b) {
+    const phone = channels.find((c) => c.id === "phone");
+    const kakao = channels.find((c) => c.id === "kakao");
+    return (
+      <div
+        className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+        role="region"
+        aria-label="협업 빠른 연락"
+      >
+        <div className="grid grid-cols-3 divide-x divide-beige-dark">
+          {phone ? <MobileChannelButton channel={phone} /> : null}
+          <Link
+            href="/협업문의"
+            className="mobile-bottom-cta__btn bg-navy text-white"
+            aria-label="협업 문의"
+          >
+            <span className="mobile-bottom-cta__label">협업 문의</span>
+          </Link>
+          {kakao ? <MobileChannelButton channel={kakao} /> : null}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
-      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden"
+      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"

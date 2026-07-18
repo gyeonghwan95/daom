@@ -18,6 +18,7 @@
     "validate:page-data": "node scripts/validate-page-data.mjs",
     "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
     "check:routes": "node scripts/check-routes.mjs",
+    "check:existing-routes": "node scripts/check-existing-routes.mjs",
     "check:seo": "node scripts/check-seo.mjs",
     "check:diagnosis": "node scripts/check-diagnosis-pages.mjs",
     "build:search": "npx --yes tsx scripts/build-search-index.ts",

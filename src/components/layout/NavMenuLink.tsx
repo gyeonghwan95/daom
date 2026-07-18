@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CollaborationMegaMenu } from "@/components/layout/CollaborationMegaMenu";
 import { isNavItemActive, type NavItem } from "@/lib/navigation";
 
 type NavMenuLinkProps = {
@@ -16,9 +17,19 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
   const active = isNavItemActive(pathname, item.href);
   const [open, setOpen] = useState(false);
   const hasGroups = Boolean(item.groups?.length);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const panelId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   if (variant === "mobile") {
-    // 그룹 메뉴는 MobileNav 드릴다운에서 처리
     return (
       <Link
         href={item.href}
@@ -29,6 +40,10 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
         {item.label}
       </Link>
     );
+  }
+
+  if (item.megaMenu) {
+    return <CollaborationMegaMenu label={item.label} href={item.href} />;
   }
 
   if (!hasGroups) {
@@ -45,6 +60,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
 
   return (
     <div
+      ref={rootRef}
       className="relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
@@ -53,13 +69,16 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
         href={item.href}
         aria-current={active ? "page" : undefined}
         aria-expanded={open}
+        aria-controls={panelId}
         aria-haspopup="true"
         className={desktopLinkClass(active || open)}
+        onFocus={() => setOpen(true)}
       >
         {item.label}
       </Link>
       {open ? (
         <div
+          id={panelId}
           className="absolute right-0 top-full z-50 min-w-[22rem] rounded-xl border border-beige-dark bg-white p-4 shadow-lg"
           role="menu"
         >
@@ -76,6 +95,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
                         href={link.href}
                         role="menuitem"
                         className="block rounded-lg px-2 py-1.5 text-sm text-navy/80 no-underline hover:bg-beige hover:text-navy"
+                        onClick={() => setOpen(false)}
                       >
                         {link.label}
                       </Link>

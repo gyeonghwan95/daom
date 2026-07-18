@@ -20,6 +20,7 @@ import {
 } from "@/components/readability";
 import type { AgencyTaskCard } from "@/lib/local-landing/public-agency-registration-content";
 import { getPublicAgencyRegistrationContent } from "@/lib/local-landing/public-agency-registration-content";
+import { PublicAgencyB2BSections } from "@/components/b2b/PublicAgencyB2BSections";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -240,6 +241,8 @@ export function PublicAgencyRegistrationPageView({
         <ProseParagraphs paragraphs={content.busanParagraphs} />
       </ContentSection>
 
+      <PublicAgencyB2BSections />
+
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />
       </ContentSection>
@@ -255,14 +258,20 @@ export function PublicAgencyRegistrationPageView({
           buttonLabel="공공기관 등기 상담하기"
         />
         <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="/contact" className="btn-primary inline-flex min-h-12 items-center px-6">
-            공공기관 등기 상담하기
+          <Link href="/협업문의?partner=public&service=public" className="btn-primary inline-flex min-h-12 items-center px-6">
+            기관 등기업무 문의
+          </Link>
+          <Link
+            href="/협업문의?partner=public&service=quote"
+            className="btn-secondary inline-flex min-h-12 items-center px-6"
+          >
+            견적 검토 요청
           </Link>
           <Link
             href="/contact"
             className="btn-secondary inline-flex min-h-12 items-center px-6"
           >
-            준비서류 검토 문의하기
+            일반 상담 안내
           </Link>
         </div>
         <div className="mt-6">

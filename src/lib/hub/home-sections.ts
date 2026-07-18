@@ -37,6 +37,8 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/search-guides", label: "검색의도 안내 허브" },
       { href: "/등기실무", label: "등기 실무 허브" },
       { href: "/부산등기복대리", label: "부산 등기 복대리" },
+      { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
+      { href: "/partners", label: "협업·프로젝트 안내" },
       { href: "/부산집단등기", label: "부산 집단등기" },
       { href: "/특수등기의뢰", label: "특수 등기 의뢰" },
       { href: "/법무사협업", label: "법무사 협업" },
