@@ -32,6 +32,8 @@
     "check:internal-links": "npx --yes tsx scripts/check-internal-links.ts",
     "check:thin-pages": "npx --yes tsx scripts/check-thin-pages.ts",
     "audit:real-estate": "npm run audit:real-estate-intents && npm run check:route-duplicates && npm run check:metadata-duplicates && npm run check:thin-pages && npm run check:content-similarity && npm run check:internal-links",
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "indexnow:dry": "node scripts/submit-indexnow.mjs --dry-run",
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },
