@@ -87,7 +87,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 w-full border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
+        className={`sticky top-0 w-full overflow-visible border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
           menuOpen || searchOpen ? "z-[100]" : "z-40"
         }`}
       >

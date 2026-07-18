@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CollaborationMegaMenu } from "@/components/layout/CollaborationMegaMenu";
+import { DesktopNavFlyout } from "@/components/layout/DesktopNavFlyout";
 import { isNavItemActive, type NavItem } from "@/lib/navigation";
 
 type NavMenuLinkProps = {
@@ -18,16 +19,56 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
   const [open, setOpen] = useState(false);
   const hasGroups = Boolean(item.groups?.length);
   const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLAnchorElement>(null);
   const panelId = useId();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const openMenu = useCallback(() => {
+    clearCloseTimer();
+    setOpen(true);
+  }, [clearCloseTimer]);
+
+  const scheduleClose = useCallback(() => {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => setOpen(false), 160);
+  }, [clearCloseTimer]);
+
+  const closeMenu = useCallback(() => {
+    clearCloseTimer();
+    setOpen(false);
+  }, [clearCloseTimer]);
 
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        closeMenu();
+        triggerRef.current?.focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, closeMenu]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) {
+        const panel = document.getElementById(panelId);
+        if (panel?.contains(event.target as Node)) return;
+        closeMenu();
+      }
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    return () => document.removeEventListener("mousedown", onPointerDown);
+  }, [open, closeMenu, panelId]);
 
   if (variant === "mobile") {
     return (
@@ -62,51 +103,60 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
     <div
       ref={rootRef}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
     >
       <Link
+        ref={triggerRef}
         href={item.href}
         aria-current={active ? "page" : undefined}
         aria-expanded={open}
         aria-controls={panelId}
         aria-haspopup="true"
         className={desktopLinkClass(active || open)}
-        onFocus={() => setOpen(true)}
+        onFocus={openMenu}
       >
         {item.label}
       </Link>
-      {open ? (
+
+      <DesktopNavFlyout
+        open={open}
+        panelId={panelId}
+        ariaLabel={`${item.label} 하위 메뉴`}
+        triggerRef={triggerRef}
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
+      >
         <div
-          id={panelId}
-          className="absolute right-0 top-full z-50 min-w-[22rem] rounded-xl border border-beige-dark bg-white p-4 shadow-lg"
+          className={[
+            "grid gap-5",
+            item.groups!.length > 1 ? "sm:grid-cols-2" : "grid-cols-1",
+          ].join(" ")}
           role="menu"
         >
-          <div className="grid gap-4 sm:grid-cols-2">
-            {item.groups!.map((group) => (
-              <div key={group.title}>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-navy/50">
-                  {group.title}
-                </p>
-                <ul className="space-y-1">
-                  {group.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        role="menuitem"
-                        className="block rounded-lg px-2 py-1.5 text-sm text-navy/80 no-underline hover:bg-beige hover:text-navy"
-                        onClick={() => setOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {item.groups!.map((group) => (
+            <div key={group.title} className="min-w-0">
+              <p className="mb-2 border-b border-beige-dark pb-1.5 text-xs font-semibold tracking-wide text-navy/50">
+                {group.title}
+              </p>
+              <ul className="space-y-0.5">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      role="menuitem"
+                      className="block rounded-lg px-2 py-1.5 text-sm text-navy/80 no-underline hover:bg-beige hover:text-navy"
+                      onClick={closeMenu}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      ) : null}
+      </DesktopNavFlyout>
     </div>
   );
 }
