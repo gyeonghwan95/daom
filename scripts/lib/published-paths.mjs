@@ -337,6 +337,8 @@ export function getAllPublishedPaths() {
   const naverBlogPaths = readNaverBlogExternalPaths();
   const lectureHistoryPaths = readLectureHistoryPaths();
 
+  const caseRegionPaths = readCaseRegionPaths();
+
   return [
     ...staticRoutes,
     ...diagnosisSlugs.map((slug) => `/${slug}`),
@@ -355,9 +357,52 @@ export function getAllPublishedPaths() {
     ...lectureHistoryPaths,
     "/cases",
     ...caseSlugs.map((slug) => `/cases/${slug}`),
+    ...caseRegionPaths,
     "/press",
     ...pressSlugs.map((slug) => `/press/${slug}`),
   ];
+}
+
+/** /업무사례/* 지역 랜딩 경로 */
+function readCaseRegionPaths() {
+  const dir = path.join(ROOT, "src/lib/case-regions");
+  if (!fs.existsSync(dir)) return [];
+
+  const paths = new Set([
+    "/업무사례",
+    "/업무사례/지역별",
+    "/업무사례/업무별",
+    "/업무사례/부산법무사",
+  ]);
+
+  const districtsPath = path.join(dir, "districts.ts");
+  if (fs.existsSync(districtsPath)) {
+    const text = fs.readFileSync(districtsPath, "utf8");
+    for (const match of text.matchAll(/slug:\s*"([^"]+법무사)"/g)) {
+      paths.add(`/업무사례/${match[1]}`);
+    }
+    for (const block of text.matchAll(/dongs:\s*\[([\s\S]*?)\]/g)) {
+      for (const name of block[1].matchAll(/"([^"]+)"/g)) {
+        paths.add(`/업무사례/부산${name[1]}법무사`);
+      }
+    }
+    for (const block of text.matchAll(/adminDongs:\s*\[([\s\S]*?)\]/g)) {
+      for (const name of block[1].matchAll(/"([^"]+)"/g)) {
+        paths.add(`/업무사례/부산${name[1]}법무사`);
+      }
+    }
+  }
+
+  for (const file of ["living-areas.ts", "industrial.ts", "courts.ts"]) {
+    const filePath = path.join(dir, file);
+    if (!fs.existsSync(filePath)) continue;
+    const text = fs.readFileSync(filePath, "utf8");
+    for (const match of text.matchAll(/slug:\s*"([^"]+법무사)"/g)) {
+      paths.add(`/업무사례/${match[1]}`);
+    }
+  }
+
+  return [...paths];
 }
 
 /** out/ 폴더에서 기대하는 상대 경로 */

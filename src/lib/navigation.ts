@@ -75,6 +75,20 @@ export const mainNavigation: NavItem[] = [
     groups: buildCollaborationNavGroups(),
   },
   {
+    href: "/업무사례",
+    label: "업무 사례",
+    groups: [
+      {
+        title: "사례 안내",
+        links: [
+          { href: "/cases", label: "전체 업무 사례" },
+          { href: "/업무사례/지역별", label: "지역별 업무 사례" },
+          { href: "/업무사례/업무별", label: "업무별 업무 사례" },
+        ],
+      },
+    ],
+  },
+  {
     href: "/법률강의",
     label: "강의·특강",
     groups: lectureNavGroups,
@@ -98,6 +112,15 @@ export function isNavItemActive(pathname: string, href: string): boolean {
   if (href === "/") return normalized === "/";
   if (href === "/partners") {
     return isCollaborationPath(normalized);
+  }
+  if (href === "/업무사례") {
+    return (
+      normalized === "/업무사례" ||
+      normalized.startsWith("/업무사례/") ||
+      normalized === "/cases" ||
+      normalized.startsWith("/cases/") ||
+      normalized.startsWith("/services/cases/")
+    );
   }
   if (href === "/법률강의") {
     return (

@@ -11,6 +11,7 @@ import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPag
 import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageView";
 import { LecturePageView } from "@/components/lectures/LecturePageView";
 import { LectureHistoryHubView } from "@/components/lectures/history/LectureHistoryHubView";
+import { CaseRegionsHubView } from "@/components/case-regions/CaseRegionHubViews";
 import { BusinessPageView } from "@/components/business/BusinessPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -73,6 +74,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
           />
           <LectureHistoryHubView />
         </article>
+      </PageContainer>
+    );
+  }
+
+  if (slug === "업무사례") {
+    return (
+      <PageContainer>
+        <CaseRegionsHubView page={page} />
       </PageContainer>
     );
   }

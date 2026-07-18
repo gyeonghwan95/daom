@@ -5,6 +5,7 @@ import {
 } from "@/lib/content/loader";
 import { CORE_HUB_SLUGS } from "@/lib/hub/registry";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
+import { getCaseRegionBySlug } from "@/lib/case-regions";
 import { getAllPageData } from "@/lib/pageData/registry";
 import type { PageData } from "@/lib/pageData/types";
 import { getPressArticle } from "@/lib/press-articles";
@@ -15,6 +16,15 @@ export function isIndexablePagePath(path: string): boolean {
   if (path.startsWith("/cases/")) return false;
   if (path === "/press" || path.startsWith("/press/")) return false;
   if (path.startsWith("/blog/external/")) return false;
+  if (path.startsWith("/업무사례/")) {
+    const slug = decodeURIComponent(path.slice("/업무사례/".length));
+    if (slug === "지역별" || slug === "업무별") return true;
+    const entry = getCaseRegionBySlug(slug);
+    if (entry) {
+      if (!entry.indexable) return false;
+      if (entry.canonicalSlug && entry.canonicalSlug !== entry.slug) return false;
+    }
+  }
   return true;
 }
 
@@ -119,6 +129,8 @@ export function getSitemapPriority(page: PageData): number {
     page.path === "/tools" ||
     page.path === "/glossary" ||
     page.path === "/cases" ||
+    page.path === "/업무사례" ||
+    page.path === "/업무사례/지역별" ||
     page.path === "/busan-legal-map"
   ) {
     return 0.9;

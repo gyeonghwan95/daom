@@ -12,6 +12,7 @@ export function getAllKoreanLandingSlugs(): string[] {
     ...getAllTopicHubSlugs(),
     ...getAllSeoLandingSlugs(),
     "강의이력",
+    "업무사례",
   ];
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
 }

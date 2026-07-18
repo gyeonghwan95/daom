@@ -31,6 +31,13 @@ import {
 } from "@/lib/glossary";
 import { buildCasesHubPageData } from "@/lib/cases/builder";
 import {
+  buildCaseRegionPageData,
+  buildCaseRegionsByAreaPageData,
+  buildCaseRegionsByServicePageData,
+  buildCaseRegionsHubPageData,
+} from "@/lib/case-regions/builder";
+import { getAllCaseRegionEntries } from "@/lib/case-regions";
+import {
   buildToolsHubPageData,
   getAllToolDefinitions,
   buildPageDataFromTool,
@@ -138,6 +145,12 @@ function buildAllPageData(): PageData[] {
   }
 
   pages.push(buildCasesHubPageData());
+  pages.push(buildCaseRegionsHubPageData());
+  pages.push(buildCaseRegionsByAreaPageData());
+  pages.push(buildCaseRegionsByServicePageData());
+  for (const entry of getAllCaseRegionEntries()) {
+    pages.push(buildCaseRegionPageData(entry));
+  }
 
   pages.push(buildBusanLegalMapHubPageData());
 

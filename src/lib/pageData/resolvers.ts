@@ -4,6 +4,7 @@ import { getLocalLandingBySlug } from "@/lib/local-landing";
 import { getSeoLandingPageDataBySlug } from "@/lib/seo-landing";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { getTopicHubBySlug } from "@/lib/topic-hubs";
+import { buildCaseRegionsHubPageData } from "@/lib/case-regions/builder";
 import {
   buildLectureHistoryHubPageData,
   getLectureHistoryPageDataBySlug,
@@ -17,6 +18,10 @@ export function resolveKoreanLandingPageData(
 
   if (normalized === "강의이력") {
     return buildLectureHistoryHubPageData();
+  }
+
+  if (normalized === "업무사례") {
+    return buildCaseRegionsHubPageData();
   }
 
   const diagnosis = getRawDiagnosisBySlug(normalized);
