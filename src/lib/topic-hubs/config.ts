@@ -4,13 +4,13 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 export const topicHubConfigs: TopicHubConfig[] = [
   {
     slug: "상속",
-    title: "부산 상속전문 법무 종합 안내",
-    h1: "부산 상속등기·상속포기·한정승인·재산분할 상담",
+    title: "상속 법무 종합 안내",
+    h1: "상속등기·상속포기·한정승인·전국 상속 상담",
     description:
-      "부산 상속전문 법무사 안내. 상속등기·상속포기·한정승인·상속재산분할. 다옴법무사사무소 안윤정 법무사가 해운대·센텀에서 절차·서류·비용·기한을 실무 기준으로 안내합니다.",
+      "상속 법무 종합 안내. 전국 상속등기·유증등기, 부산 상속포기·한정승인·재산분할. 다옴법무사사무소 안윤정 법무사가 절차·서류·비용·기한을 실무 기준으로 안내합니다.",
     primaryServiceSlug: "inheritance-registration",
     intro:
-      "상속이 발생하면 등기·가정법원 신고·채무 조사를 어떤 순서로 진행해야 할지 막막한 경우가 많습니다. 부산에서는 해운대·센텀·연제·동래·기장 등 지역마다 관할 등기소와 가정법원이 달라질 수 있고, 상속인 수·부동산 유무·채무 규모에 따라 상속등기·상속포기·한정승인 중 선택이 달라집니다. 상속 개시 후 3개월 기한과 과태료 리스크도 함께 검토해야 합니다. 다옴법무사사무소는 부산 전역 상속 사건을 전화·카카오톡·방문(예약)으로 상담하며, 필요 서류와 비용을 항목별로 설명합니다.",
+      "상속이 발생하면 등기·가정법원 신고·채무 조사를 어떤 순서로 진행해야 할지 막막한 경우가 많습니다. 부동산이 부산에 있지 않아도 전국 상속등기를 상담할 수 있고, 상속포기·한정승인은 법정 관할을 지키면서 비대면으로 진행할 수 있습니다. 상속 개시 후 3개월은 주로 포기·한정승인 검토와 관련된 기간이며, 상속등기·취득세 신고기한과 혼동하지 않도록 구분해 안내합니다. 다옴법무사사무소는 전화·카카오톡·방문(예약)으로 상담하며 필요 서류와 비용을 항목별로 설명합니다.",
     ctaDescription:
       "상속 절차는 상속인 구성·채무·부동산 유무에 따라 필요한 서류와 순서가 달라질 수 있습니다. 다옴법무사사무소 안윤정 법무사가 현재 상황을 차분히 확인해드리겠습니다.",
     jurisdictionHref: "/부산가정법원상속",
@@ -24,13 +24,26 @@ export const topicHubConfigs: TopicHubConfig[] = [
     relatedHubSlugs: ["부동산등기", "가족후견", "개인회생파산"],
     sections: [
       {
+        title: "어디 지역 상속인가요?",
+        intro:
+          "부산 지역 상담과 전국 상속·유증·여러 지역 부동산을 구분해 선택하세요.",
+        links: [
+          { href: "/부산상속등기", label: "부산 지역 상속 상담" },
+          { href: "/전국상속등기", label: "전국 상속등기" },
+          { href: "/전국유증등기", label: "전국 유증등기" },
+          { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
+          { href: "/services/inheritance-renunciation", label: "상속포기·한정승인" },
+          { href: "/contact/inquiry?from=nationwide", label: "해외 거주 상속인 상담" },
+        ],
+      },
+      {
         title: "상속 절차별 안내",
         intro: "상속 개시 후 선택지는 단순승인·한정승인·상속포기·상속등기로 이어집니다. 채무가 우려되면 포기·한정승인을 먼저 검토하는 것이 안전합니다.",
         links: [
-          { href: "/부산상속법무사", label: "부산 상속전문 법무사 안내" },
+          { href: "/부산상속법무사", label: "부산 상속 법무사 안내" },
           { href: "/부산상속재산분할법무사", label: "부산 상속재산분할 법무사" },
           { href: "/부산상속법무사추천", label: "부산 상속 법무사 추천" },
-          { href: "/services/inheritance-registration", label: "부산 상속등기 절차 보기" },
+          { href: "/services/inheritance-registration", label: "상속등기 절차 보기" },
           { href: "/services/inheritance-renunciation", label: "상속포기 신고 절차 확인" },
           { href: "/services/qualified-acceptance", label: "상속포기와 한정승인 차이 확인" },
           { href: "/faq/qualified-acceptance-vs-simple-acceptance", label: "특별한정승인·단순승인 비교 안내" },
@@ -44,7 +57,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/상속등기비용", label: "상속등기 비용·수수료 안내" },
           { href: "/상속등기필요서류", label: "상속등기 필요서류 체크리스트" },
-          { href: "/상속등기기간", label: "상속등기 기간·3개월 기한 확인" },
+          { href: "/상속등기기간", label: "상속 기한·포기·등기 일정 확인" },
           { href: "/faq/inheritance-registration-cost", label: "상속등기 비용 FAQ 확인" },
           { href: "/faq/inheritance-registration-with-mortgage", label: "저당권 있는 상속등기 안내" },
         ],
@@ -79,6 +92,20 @@ export const topicHubConfigs: TopicHubConfig[] = [
     faqServiceSlugs: ["company-establishment", "director-change", "corporate-registration"],
     relatedHubSlugs: ["창업법무", "부동산등기"],
     sections: [
+      {
+        title: "타지역 법인도 비대면으로 진행할 수 있습니다",
+        intro:
+          "법인등기의 법정 관할은 유지됩니다. 다만 설립·변경·본점이전 상담과 서류 조율은 전화·카카오톡으로 시작할 수 있습니다.",
+        links: [
+          { href: "/전국법인본점이전등기", label: "타지역 본점이전" },
+          { href: "/전국법인본점이전등기", label: "부산으로 본점이전" },
+          { href: "/전국법인본점이전등기", label: "부산에서 타지역으로 본점이전" },
+          { href: "/services/company-establishment", label: "전국 법인설립 상담" },
+          { href: "/services/director-change", label: "임원변경·목적변경·증자" },
+          { href: "/공공기관등기업무", label: "기업·기관의 여러 지역 등기업무" },
+          { href: "/전국업무", label: "전국 업무 종합 안내" },
+        ],
+      },
       {
         title: "설립·변경 등기",
         intro: "법인 설립·임원변경·본점이전·목적·상호 변경은 사건마다 결의 기관과 첨부 서류가 다릅니다.",

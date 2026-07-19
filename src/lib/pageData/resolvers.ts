@@ -9,6 +9,7 @@ import {
   buildLectureHistoryHubPageData,
   getLectureHistoryPageDataBySlug,
 } from "@/lib/lectures/history-page-data";
+import { getNationwidePageDataBySlug } from "@/lib/nationwide";
 import { getPageDataByPath } from "./registry";
 
 export function resolveKoreanLandingPageData(
@@ -22,6 +23,11 @@ export function resolveKoreanLandingPageData(
 
   if (normalized === "업무사례") {
     return buildCaseRegionsHubPageData();
+  }
+
+  const nationwide = getNationwidePageDataBySlug(normalized);
+  if (nationwide) {
+    return nationwide;
   }
 
   const diagnosis = getRawDiagnosisBySlug(normalized);

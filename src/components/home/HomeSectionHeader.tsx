@@ -31,7 +31,7 @@ export function HomeSectionHeader({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className={`min-w-0 max-w-3xl ${textAlign}`}>
           <motion.p
-            className={`home-section-label ${dark ? "text-white/50" : "text-navy-light"}`}
+            className={`home-section-label ${dark ? "text-white/70" : "text-[var(--text-muted)]"}`}
             initial={reduced ? false : { opacity: 0, letterSpacing: "0.3em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.22em" }}
             viewport={{ once: true }}
@@ -41,7 +41,7 @@ export function HomeSectionHeader({
           </motion.p>
           <h2
             className={`mt-3 text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl ${
-              dark ? "text-white" : "text-navy"
+              dark ? "text-white" : "text-[var(--text-primary)]"
             }`}
           >
             {title}
@@ -49,7 +49,7 @@ export function HomeSectionHeader({
           {description && (
             <p
               className={`mt-4 max-w-3xl text-base leading-relaxed md:text-lg ${
-                dark ? "text-white/70" : "text-navy/65"
+                dark ? "text-white/85" : "text-[var(--text-secondary)]"
               }`}
             >
               {description}

@@ -31,16 +31,16 @@ export function CaseCard({
       )}
       <div className={image ? "p-5 md:p-6" : ""}>
         {category && (
-          <span className="inline-block rounded-full bg-beige px-3 py-1 text-sm font-medium text-navy-light">
+          <span className="inline-block rounded-md bg-beige px-2.5 py-1 text-sm font-semibold text-[var(--text-secondary)]">
             {category}
           </span>
         )}
-        <h3 className={`text-base font-semibold text-navy md:text-lg ${category ? "mt-3" : ""}`}>
+        <h3 className={`text-base font-bold text-[var(--text-primary)] md:text-lg ${category ? "mt-3" : ""}`}>
           {title}
         </h3>
-        <p className="mt-2 text-base leading-relaxed text-navy/75">{summary}</p>
+        <p className="mt-2 text-base leading-relaxed text-[var(--text-body)]">{summary}</p>
         {href && (
-          <span className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-navy-light">
+          <span className="mt-3 inline-flex min-h-10 items-center text-sm font-semibold text-navy">
             사례 보기 →
           </span>
         )}

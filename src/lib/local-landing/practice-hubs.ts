@@ -13,6 +13,12 @@ export const practiceHubDefs: Record<
       "일반 의뢰인과 법무사·금융·건축·기업 담당자가 함께 볼 수 있는 등기 실무 안내입니다. 업무명보다 접수·보정·서류·협업 흐름을 기준으로 연결합니다.",
     note: "결과는 보장하지 않으며, 관할·서류에 따라 절차가 달라질 수 있습니다.",
     cards: [
+      { href: "/전국업무", title: "전국 등기 실무", description: "관할 특례·비대면 수임 구분" },
+      { href: "/전국상속등기", title: "전국 상속등기", description: "타지역 상속등기 상담" },
+      { href: "/전국유증등기", title: "전국 유증등기", description: "유언에 따른 이전" },
+      { href: "/여러지역상속부동산등기", title: "여러 지역 상속부동산", description: "흩어진 부동산 정리" },
+      { href: "/전국공동담보등기", title: "전국 공동담보등기", description: "복수 지역 근저당" },
+      { href: "/전국법인본점이전등기", title: "전국 본점이전", description: "타관할 본점이전등기" },
       { href: "/부산부동산등기", title: "부동산등기 접수", description: "매매·증여·이전 등기 절차" },
       { href: "/부산법인등기", title: "법인등기 접수", description: "설립·임원·본점 변경" },
       { href: "/등기보정", title: "등기 보정 대응", description: "보정 통지·보완 안내" },

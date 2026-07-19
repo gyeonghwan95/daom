@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveServicePageData } from "@/lib/pageData/resolvers";
@@ -32,11 +33,28 @@ export default async function ServiceDetailPage({ params }: Props) {
   const service = getServiceBySlug(normalized);
   if (!page || !service) notFound();
 
+  const nationwideType =
+    normalized === "inheritance-registration"
+      ? ("jurisdiction-exception" as const)
+      : normalized === "corporate-registration" ||
+          normalized === "company-establishment" ||
+          normalized === "director-change"
+        ? ("remote-accept" as const)
+        : normalized === "inheritance-renunciation" ||
+            normalized === "qualified-acceptance"
+          ? ("remote-accept" as const)
+          : null;
+
   return (
     <PageContainer>
       <PageDataTemplate
         page={page}
         recommendationSource={recommendationFromService(service)}
+        heroAddon={
+          nationwideType ? (
+            <NationwideServiceNotice type={nationwideType} />
+          ) : null
+        }
       />
     </PageContainer>
   );

@@ -27,11 +27,12 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
 import type { RecommendationSource } from "@/lib/internal-links";
-import { PageDataNapSection } from "./PageDataNapSection";
 
 type PageDataTemplateProps = {
   page: PageData;
   children?: ReactNode;
+  /** H1·인트로 바로 아래(첫 화면)에 붙는 안내 — 전국 수임 배지 등 */
+  heroAddon?: ReactNode;
   showCover?: boolean;
   recommendationSource?: RecommendationSource;
 };
@@ -67,6 +68,7 @@ function ExtraSections({ sections }: { sections: PageSection[] }) {
 export function PageDataTemplate({
   page,
   children,
+  heroAddon,
   showCover = true,
   recommendationSource,
 }: PageDataTemplateProps) {
@@ -89,7 +91,7 @@ export function PageDataTemplate({
     ) : null;
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
@@ -101,7 +103,10 @@ export function PageDataTemplate({
         introParagraphs={page.introParagraphs}
         keywords={page.primaryKeywords}
         ctaLabel="상담 문의하기"
+        showDiagnosisCta={false}
       />
+
+      {heroAddon}
 
       {conversionBlock("top")}
 
@@ -128,12 +133,13 @@ export function PageDataTemplate({
 
       {conversionBlock("mid")}
 
-      <ConsultationCTA
-        title={page.ctaTitle}
-        description={page.ctaText}
-        buttonLabel="내 상황에 맞게 상담하기"
-      />
-
+      {!conversionKey ? (
+        <ConsultationCTA
+          title={page.ctaTitle}
+          description={page.ctaText}
+          buttonLabel="내 상황에 맞게 상담하기"
+        />
+      ) : null}
       {page.consultationPoints.length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
           <ChecklistBox items={page.consultationPoints} />
@@ -141,10 +147,8 @@ export function PageDataTemplate({
       ) : null}
 
       <ContentSection id="consultation-example" title="실제 상담 상황 예시">
-        <InfoCard variant="highlight">
-          <h3 className="text-lg font-semibold text-navy">
-            {page.consultationExample.title}
-          </h3>
+        <InfoCard variant="plain">
+          <h3 className="section-subheading">{page.consultationExample.title}</h3>
           <p className="body-text mt-3">{page.consultationExample.body}</p>
         </InfoCard>
       </ContentSection>
@@ -155,7 +159,7 @@ export function PageDataTemplate({
 
       {children ? (
         <ContentSection id="detail-content" title="상세 안내">
-          <div className="mdx-content">{children}</div>
+          <div className="mdx-content prose-measure">{children}</div>
         </ContentSection>
       ) : null}
 
@@ -175,30 +179,15 @@ export function PageDataTemplate({
         <RelatedRecommendations source={recommendationSource} />
       ) : null}
 
-      <div id="consultation">
-        <ConsultationCTA
-          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
+      <div id="consultation" className="space-y-6">
+        <CTASection
+          pageType="faq"
+          title={page.ctaTitle}
           description={page.ctaText}
-          buttonLabel="상담 문의하기"
+          pageSlug={page.slug}
+          showChannelButtons={false}
         />
-        <div className="mt-6">
-          <CTASection
-            pageType="faq"
-            title={page.ctaTitle}
-            description={page.ctaText}
-            pageSlug={page.slug}
-          />
-        </div>
       </div>
-
-      <PageDataNapSection
-        contactLinks={page.relatedLinks.filter((link) =>
-          link.href.startsWith("tel:") ||
-          link.label.includes("카카오") ||
-          link.label.includes("톡톡") ||
-          link.href === "/location",
-        )}
-      />
     </article>
   );
 }

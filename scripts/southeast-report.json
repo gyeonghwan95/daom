@@ -1,0 +1,612 @@
+{
+  "totalAll": 65,
+  "published": 61,
+  "unpublishedCount": 4,
+  "byGroup": {
+    "울산": 21,
+    "대구": 24,
+    "경북": 16
+  },
+  "collisions": [],
+  "gunwiInGb": [],
+  "low": [],
+  "dupTitles": [],
+  "unpublished": [
+    {
+      "slug": "울산방어동상속등기",
+      "score": 78,
+      "reason": "published:false"
+    },
+    {
+      "slug": "영주상속등기법무사",
+      "score": 78,
+      "reason": "published:false"
+    },
+    {
+      "slug": "울릉도상속등기법무사",
+      "score": 78,
+      "reason": "published:false"
+    },
+    {
+      "slug": "울산상속포기한정승인",
+      "score": 88,
+      "reason": "published:false"
+    }
+  ],
+  "publishedList": [
+    {
+      "slug": "울산법무사업무",
+      "score": 100,
+      "title": "울산 법무사 업무 안내｜상속등기·법인등기 부산 방문 상담",
+      "h1": "울산에서도 맡길 수 있는 상속·부동산·법인등기 업무",
+      "group": "울산",
+      "pageType": "region-hub"
+    },
+    {
+      "slug": "울산중구상속등기법무사",
+      "score": 100,
+      "title": "울산 중구 상속등기 법무사｜태화·우정·성안 부동산 상담",
+      "h1": "울산 중구 상속부동산의 비용과 필요서류",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산동구상속등기법무사",
+      "score": 100,
+      "title": "울산 동구 상속등기 법무사｜방어·일산·전하·남목 상담",
+      "h1": "울산 동구의 주택·아파트 상속등기",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산북구상속등기법무사",
+      "score": 100,
+      "title": "울산 북구 상속등기 법무사｜송정·매곡·호계·강동 상담",
+      "h1": "울산 북구 신축 아파트와 토지 상속등기",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산삼산동상속등기",
+      "score": 100,
+      "title": "울산 삼산동 상속등기｜아파트·상가 비용과 절차",
+      "h1": "울산 삼산동 아파트·상가 상속등기 비용과 절차",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산달동상속등기",
+      "score": 100,
+      "title": "울산 달동 상속등기｜상속 후 매도 예정인 경우",
+      "h1": "울산 달동 상속등기 — 상속 후 매도 예정인 경우",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산옥동상속등기",
+      "score": 100,
+      "title": "울산 옥동 상속등기｜공동상속인 필요서류",
+      "h1": "울산 옥동 공동상속인 상속등기 필요서류",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산송정동상속등기",
+      "score": 100,
+      "title": "울산 송정동 상속등기｜신축 아파트 비용과 서류",
+      "h1": "울산 송정동 신축 아파트 상속등기 비용과 서류",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산매곡동상속등기",
+      "score": 100,
+      "title": "울산 매곡동 상속등기｜아파트와 공장 부동산 상속",
+      "h1": "울산 매곡동 아파트·공장 부동산 상속등기",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울주범서상속등기",
+      "score": 100,
+      "title": "울주군 범서 상속등기｜구영·천상 아파트와 토지",
+      "h1": "울주군 범서 구영·천상 아파트·토지 상속등기",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울주언양상속등기",
+      "score": 100,
+      "title": "울주군 언양 상속등기｜주택·상가·토지 필요서류",
+      "h1": "울주군 언양 주택·상가·토지 상속등기 서류",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울주삼남상속등기",
+      "score": 100,
+      "title": "울주군 삼남 상속등기｜울산역 인근 아파트와 토지",
+      "h1": "울주군 삼남 울산역 인근 아파트·토지 상속등기",
+      "group": "울산",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "울산상속등기비용",
+      "score": 100,
+      "title": "울산 상속등기 비용｜취득세·채권·법무사 보수 구분",
+      "h1": "울산 상속등기 비용 — 취득세·채권·법무사 보수 구분",
+      "group": "울산",
+      "pageType": "inheritance-cost"
+    },
+    {
+      "slug": "울산상속등기필요서류",
+      "score": 100,
+      "title": "울산 상속등기 필요서류｜상속인별 준비자료 정리",
+      "h1": "울산 상속등기 필요서류 — 상속인별 준비자료",
+      "group": "울산",
+      "pageType": "inheritance-documents"
+    },
+    {
+      "slug": "울산아파트상속등기",
+      "score": 100,
+      "title": "울산 아파트 상속등기｜협의분할부터 취득세까지",
+      "h1": "울산 아파트 상속등기 — 협의분할부터 취득세까지",
+      "group": "울산",
+      "pageType": "apartment-inheritance"
+    },
+    {
+      "slug": "울산토지상속등기",
+      "score": 100,
+      "title": "울산 토지 상속등기｜울주군 농지·임야 여러 필지",
+      "h1": "울산·울주군 토지 상속등기 — 농지·임야 여러 필지",
+      "group": "울산",
+      "pageType": "land-inheritance"
+    },
+    {
+      "slug": "울산공장상속등기",
+      "score": 100,
+      "title": "울산 공장 상속등기｜산업단지 토지·건물과 사업승계",
+      "h1": "울산 공장 상속등기 — 산업단지 토지·건물과 사업승계",
+      "group": "울산",
+      "pageType": "factory-inheritance"
+    },
+    {
+      "slug": "울산유증등기법무사",
+      "score": 100,
+      "title": "울산 유증등기 법무사｜유언공정증서 부동산 이전",
+      "h1": "울산 유증등기 — 유언공정증서 부동산 이전",
+      "group": "울산",
+      "pageType": "bequest"
+    },
+    {
+      "slug": "울산에서부산법인본점이전",
+      "score": 100,
+      "title": "울산에서 부산 법인 본점이전｜타관할 이전등기 절차",
+      "h1": "울산 본점 법인을 부산으로 옮기는 등기",
+      "group": "울산",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "부산에서울산법인본점이전",
+      "score": 100,
+      "title": "부산에서 울산 법인 본점이전｜등록면허세와 결의서류",
+      "h1": "부산 본점 법인을 울산으로 옮기는 등기",
+      "group": "울산",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "부산울산공동근저당권",
+      "score": 100,
+      "title": "부산·울산 부동산 공동근저당권 설정",
+      "h1": "부산·울산 여러 부동산 공동근저당권",
+      "group": "울산",
+      "pageType": "joint-mortgage"
+    },
+    {
+      "slug": "대구법무사업무",
+      "score": 100,
+      "title": "대구 법무사 업무 안내｜상속등기·법인등기 비대면 상담",
+      "h1": "대구 전 지역에서 맡길 수 있는 법무사 업무",
+      "group": "대구",
+      "pageType": "region-hub"
+    },
+    {
+      "slug": "대구중구상속등기법무사",
+      "score": 100,
+      "title": "대구 중구 상속등기 법무사｜아파트·상가 비대면 상담",
+      "h1": "대구 중구 아파트·상가 상속등기를 어디에 맡길까",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구동구상속등기법무사",
+      "score": 100,
+      "title": "대구 동구 상속등기 법무사｜주택·아파트 상속 절차",
+      "h1": "대구 동구 주택·아파트 상속등기 절차 정리",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구서구상속등기법무사",
+      "score": 100,
+      "title": "대구 서구 상속등기 법무사｜아파트·토지 비대면 상담",
+      "h1": "대구 서구 아파트·토지 상속등기 상담",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구남구상속등기법무사",
+      "score": 100,
+      "title": "대구 남구 상속등기 법무사｜아파트·주택 상속 안내",
+      "h1": "대구 남구 아파트·주택 상속등기 안내",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구북구상속등기법무사",
+      "score": 100,
+      "title": "대구 북구 상속등기 법무사｜아파트·토지 상속 절차",
+      "h1": "대구 북구 아파트·토지 상속등기 절차",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구달성군상속등기법무사",
+      "score": 100,
+      "title": "대구 달성군 상속등기 법무사｜토지·아파트 상속 안내",
+      "h1": "대구 달성군 토지·아파트 상속등기 안내",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구군위군상속등기법무사",
+      "score": 100,
+      "title": "대구 군위군 상속등기 법무사｜토지·주택 상속 안내",
+      "h1": "대구 군위군 토지·주택 상속등기 — 대구 기준 안내",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구범어동상속등기",
+      "score": 100,
+      "title": "대구 범어동 상속등기｜수성구 아파트 상속 비용·서류",
+      "h1": "대구 범어동 아파트 상속등기 비용과 필요서류",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구만촌동상속등기",
+      "score": 100,
+      "title": "대구 만촌동 상속등기｜아파트 상속 절차와 비용",
+      "h1": "대구 만촌동 아파트 상속등기 절차와 비용",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구시지상속등기",
+      "score": 100,
+      "title": "대구 시지 상속등기｜신축·구축 아파트 상속 안내",
+      "h1": "대구 시지 아파트 상속등기 — 신축·구축 구분",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구월성동상속등기",
+      "score": 100,
+      "title": "대구 월성동 상속등기｜달서구 아파트 상속 절차",
+      "h1": "대구 월성동 아파트 상속등기 절차",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구상인동상속등기",
+      "score": 100,
+      "title": "대구 상인동 상속등기｜아파트·상가 상속 안내",
+      "h1": "대구 상인동 아파트·상가 상속등기 안내",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구성서상속등기",
+      "score": 100,
+      "title": "대구 성서 상속등기｜신도시 아파트 상속 절차",
+      "h1": "대구 성서 신도시 아파트 상속등기 절차",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구다사상속등기",
+      "score": 100,
+      "title": "대구 다사 상속등기｜아파트·토지 상속 안내",
+      "h1": "대구 다사 아파트·토지 상속등기 안내",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구현풍상속등기",
+      "score": 100,
+      "title": "대구 현풍 상속등기｜토지·농지 상속 절차",
+      "h1": "대구 현풍 토지·농지 상속등기 절차",
+      "group": "대구",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "대구상속등기비용",
+      "score": 100,
+      "title": "대구 상속등기 비용｜법무사 보수·취득세·채권 구분",
+      "h1": "대구 상속등기 비용 — 보수·취득세·채권 구분",
+      "group": "대구",
+      "pageType": "inheritance-cost"
+    },
+    {
+      "slug": "대구상속등기필요서류",
+      "score": 100,
+      "title": "대구 상속등기 필요서류｜가족관계·인감·협의서 체크리스트",
+      "h1": "대구 상속등기 필요서류 — 가족관계·인감·협의서",
+      "group": "대구",
+      "pageType": "inheritance-documents"
+    },
+    {
+      "slug": "대구아파트상속등기",
+      "score": 100,
+      "title": "대구 아파트 상속등기｜협의분할·취득세·국민주택채권",
+      "h1": "대구 아파트 상속등기 — 협의분할과 취득세",
+      "group": "대구",
+      "pageType": "apartment-inheritance"
+    },
+    {
+      "slug": "대구토지상속등기",
+      "score": 100,
+      "title": "대구 토지 상속등기｜다필지·농지·지목별 취득세",
+      "h1": "대구 토지 상속등기 — 다필지·지목별 정리",
+      "group": "대구",
+      "pageType": "land-inheritance"
+    },
+    {
+      "slug": "대구유증등기법무사",
+      "score": 100,
+      "title": "대구 유증등기 법무사｜유언공정증서에 따른 부동산 이전",
+      "h1": "대구 부동산 유증등기 — 유언공정증서에 따른 이전",
+      "group": "대구",
+      "pageType": "bequest"
+    },
+    {
+      "slug": "대구에서부산법인본점이전",
+      "score": 100,
+      "title": "대구에서 부산 법인 본점이전｜등기·세무 절차 안내",
+      "h1": "대구 본점 법인을 부산으로 옮기는 등기",
+      "group": "대구",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "부산에서대구법인본점이전",
+      "score": 100,
+      "title": "부산에서 대구 법인 본점이전｜등기소·세무 관할 변경",
+      "h1": "부산 본점 법인을 대구로 옮기는 등기",
+      "group": "대구",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "대구부산공동근저당권",
+      "score": 100,
+      "title": "대구·부산 공동근저당권 설정｜여러 지역 부동산 담보",
+      "h1": "대구·부산 여러 부동산 공동근저당권",
+      "group": "대구",
+      "pageType": "joint-mortgage"
+    },
+    {
+      "slug": "경북법무사업무",
+      "score": 100,
+      "title": "경북 법무사 업무 안내｜상속등기·토지상속·법인등기 상담",
+      "h1": "경북 22개 시·군의 상속·부동산·법인 업무",
+      "group": "경북",
+      "pageType": "region-hub"
+    },
+    {
+      "slug": "안동상속등기법무사",
+      "score": 100,
+      "title": "안동 상속등기 법무사｜토지·농지·주택 비대면 상담",
+      "h1": "안동 토지·농지·주택 상속등기를 어디에 맡길까",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "예천상속등기법무사",
+      "score": 100,
+      "title": "예천 상속등기 법무사｜농지·답·임야 상속 절차",
+      "h1": "예천군 농지·답·임야 상속등기 절차",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "김천상속등기법무사",
+      "score": 100,
+      "title": "김천 상속등기 법무사｜아파트·토지·공장 상속 안내",
+      "h1": "김천 아파트·토지·공장 상속등기 안내",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "칠곡상속등기법무사",
+      "score": 100,
+      "title": "칠곡 상속등기 법무사｜아파트·토지·농지 상속 절차",
+      "h1": "칠곡군 아파트·토지·농지 상속등기 절차",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "경북상속등기비용",
+      "score": 100,
+      "title": "경북 상속등기 비용｜법무사 보수·취득세·채권 구분",
+      "h1": "경북 상속등기 비용 — 보수·취득세·채권 구분",
+      "group": "경북",
+      "pageType": "inheritance-cost"
+    },
+    {
+      "slug": "경북상속등기필요서류",
+      "score": 100,
+      "title": "경북 상속등기 필요서류｜가족관계·인감·협의서 체크리스트",
+      "h1": "경북 상속등기 필요서류 — 가족관계·인감·협의서",
+      "group": "경북",
+      "pageType": "inheritance-documents"
+    },
+    {
+      "slug": "경북토지상속등기",
+      "score": 100,
+      "title": "경북 토지 상속등기｜다필지·지목별 취득세 정리",
+      "h1": "경북 토지 상속등기 — 다필지·지목별 정리",
+      "group": "경북",
+      "pageType": "land-inheritance"
+    },
+    {
+      "slug": "경북농지상속등기",
+      "score": 100,
+      "title": "경북 농지 상속등기｜답·과수원·지목별 취득세",
+      "h1": "경북 농지 상속등기 — 답·과수원·지목별 취득세",
+      "group": "경북",
+      "pageType": "farmland-inheritance"
+    },
+    {
+      "slug": "경북임야상속등기",
+      "score": 100,
+      "title": "경북 임야 상속등기｜산림·다필지·지목별 정리",
+      "h1": "경북 임야 상속등기 — 산림·다필지 정리",
+      "group": "경북",
+      "pageType": "forest-inheritance"
+    },
+    {
+      "slug": "경북오래된상속등기",
+      "score": 100,
+      "title": "경북 오래된 상속등기｜미등기·오래된 사망·서류 정리",
+      "h1": "경북 오래된 상속등기 — 미등기·오래된 사망 정리",
+      "group": "경북",
+      "pageType": "complex-inheritance"
+    },
+    {
+      "slug": "경북조부모명의토지상속",
+      "score": 100,
+      "title": "경북 조부모 명의 토지 상속｜등기부·지적·가족관계 정리",
+      "h1": "경북 조부모 명의 토지 상속 — 등기부·지적 정리",
+      "group": "경북",
+      "pageType": "legacy"
+    },
+    {
+      "slug": "경북법인등기법무사",
+      "score": 100,
+      "title": "경북 법인등기 법무사｜포항·구미·안동 기업 비대면 상담",
+      "h1": "경북 포항·구미·안동 기업 법인등기 상담",
+      "group": "경북",
+      "pageType": "corporate"
+    },
+    {
+      "slug": "포항에서부산법인본점이전",
+      "score": 100,
+      "title": "포항에서 부산 법인 본점이전｜등기·세무 절차 안내",
+      "h1": "포항 본점 법인을 부산으로 옮기는 등기",
+      "group": "경북",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "구미에서부산법인본점이전",
+      "score": 100,
+      "title": "구미에서 부산 법인 본점이전｜등기소·세무 관할 변경",
+      "h1": "구미 본점 법인을 부산으로 옮기는 등기",
+      "group": "경북",
+      "pageType": "corporate-relocation"
+    },
+    {
+      "slug": "대구경북공동담보등기",
+      "score": 100,
+      "title": "대구·경북 공동담보등기｜여러 지역 부동산 담보 설정",
+      "h1": "대구·경북 여러 부동산 공동담보등기",
+      "group": "경북",
+      "pageType": "joint-mortgage"
+    }
+  ],
+  "failDetails": [
+    {
+      "slug": "울산방어동상속등기",
+      "score": 78,
+      "reason": "published:false",
+      "breakdown": {
+        "uniqueTitle": 8,
+        "uniqueMeta": 8,
+        "uniqueH1": 8,
+        "uniqueIntro": 0,
+        "scenarios": 12,
+        "propertyOrIssue": 0,
+        "faqs": 10,
+        "regionLinks": 6,
+        "serviceLinks": 6,
+        "disclosure": 5,
+        "practical": 10,
+        "conversion": 5,
+        "total": 78
+      },
+      "publishedFlag": false
+    },
+    {
+      "slug": "영주상속등기법무사",
+      "score": 78,
+      "reason": "published:false",
+      "breakdown": {
+        "uniqueTitle": 8,
+        "uniqueMeta": 8,
+        "uniqueH1": 8,
+        "uniqueIntro": 0,
+        "scenarios": 12,
+        "propertyOrIssue": 0,
+        "faqs": 10,
+        "regionLinks": 6,
+        "serviceLinks": 6,
+        "disclosure": 5,
+        "practical": 10,
+        "conversion": 5,
+        "total": 78
+      },
+      "publishedFlag": false
+    },
+    {
+      "slug": "울릉도상속등기법무사",
+      "score": 78,
+      "reason": "published:false",
+      "breakdown": {
+        "uniqueTitle": 8,
+        "uniqueMeta": 8,
+        "uniqueH1": 8,
+        "uniqueIntro": 0,
+        "scenarios": 12,
+        "propertyOrIssue": 0,
+        "faqs": 10,
+        "regionLinks": 6,
+        "serviceLinks": 6,
+        "disclosure": 5,
+        "practical": 10,
+        "conversion": 5,
+        "total": 78
+      },
+      "publishedFlag": false
+    },
+    {
+      "slug": "울산상속포기한정승인",
+      "score": 88,
+      "reason": "published:false",
+      "breakdown": {
+        "uniqueTitle": 8,
+        "uniqueMeta": 8,
+        "uniqueH1": 8,
+        "uniqueIntro": 0,
+        "scenarios": 12,
+        "propertyOrIssue": 10,
+        "faqs": 10,
+        "regionLinks": 6,
+        "serviceLinks": 6,
+        "disclosure": 5,
+        "practical": 10,
+        "conversion": 5,
+        "total": 88
+      },
+      "publishedFlag": false
+    }
+  ]
+}

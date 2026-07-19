@@ -37,6 +37,11 @@ import {
   buildCaseRegionsHubPageData,
 } from "@/lib/case-regions/builder";
 import { getAllCaseRegionEntries } from "@/lib/case-regions";
+import { buildAllNationwidePageData } from "@/lib/nationwide";
+import { buildAllPublishedNationwideCasePageData } from "@/lib/nationwide-cases";
+import { buildAllPublishedGyeongnamPageData } from "@/lib/gyeongnam-cases";
+import { buildAllPublishedSoutheastPageData } from "@/lib/southeast-cases";
+
 import {
   buildToolsHubPageData,
   getAllToolDefinitions,
@@ -151,6 +156,11 @@ function buildAllPageData(): PageData[] {
   for (const entry of getAllCaseRegionEntries()) {
     pages.push(buildCaseRegionPageData(entry));
   }
+
+  pages.push(...buildAllNationwidePageData());
+  pages.push(...buildAllPublishedNationwideCasePageData());
+  pages.push(...buildAllPublishedGyeongnamPageData());
+  pages.push(...buildAllPublishedSoutheastPageData());
 
   pages.push(buildBusanLegalMapHubPageData());
 

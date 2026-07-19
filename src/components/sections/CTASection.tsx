@@ -9,6 +9,8 @@ type CTASectionProps = {
   documentsHref?: string;
   diagnosisHref?: string;
   serviceSlug?: string;
+  /** false면 푸터와 중복되는 전화·카카오·톡톡 버튼을 숨기고 상담 문의 CTA만 표시 */
+  showChannelButtons?: boolean;
 };
 
 export function CTASection({
@@ -19,6 +21,7 @@ export function CTASection({
   documentsHref,
   diagnosisHref,
   serviceSlug,
+  showChannelButtons = true,
 }: CTASectionProps) {
   return (
     <PageConversionCTA
@@ -32,6 +35,7 @@ export function CTASection({
       diagnosisHref={diagnosisHref}
       serviceSlug={serviceSlug}
       showFeeNotice
+      showChannelButtons={showChannelButtons}
     />
   );
 }

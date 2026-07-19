@@ -19,11 +19,14 @@ export function isIndexablePagePath(path: string): boolean {
   if (path.startsWith("/업무사례/")) {
     const slug = decodeURIComponent(path.slice("/업무사례/".length));
     if (slug === "지역별" || slug === "업무별") return true;
+    // 필터·검색 파라미터가 붙은 URL은 sitemap에 넣지 않음(path 자체는 허브만)
     const entry = getCaseRegionBySlug(slug);
     if (entry) {
       if (!entry.indexable) return false;
       if (entry.canonicalSlug && entry.canonicalSlug !== entry.slug) return false;
+      return true;
     }
+    // 전국·지역 랜딩은 registry에 published 페이지만 등록됨
   }
   return true;
 }

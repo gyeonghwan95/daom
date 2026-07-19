@@ -9,15 +9,37 @@
 */
 
 :root {
-  --background: #faf8f5;
-  --foreground: #1e3a5f;
+  /* Brand surfaces */
+  --background: #f7f4ef;
+  --foreground: #152a45;
   --navy: #1e3a5f;
-  --navy-dark: #152a45;
+  --navy-dark: #0f1f33;
   --navy-light: #2d4f7c;
-  --beige: #f5f0e8;
-  --beige-dark: #ebe4d8;
-  --beige-muted: #d4c9b8;
-  --cream: #faf8f5;
+  --beige: #f0ebe3;
+  --beige-dark: #ddd4c6;
+  --beige-muted: #c4b7a3;
+  --cream: #f7f4ef;
+  --surface: #ffffff;
+  --surface-muted: #f3eee6;
+
+  /* Text hierarchy (WCAG-oriented on cream) */
+  --text-primary: #152a45;
+  --text-body: #1a314f;
+  --text-secondary: #334e6e;
+  --text-muted: #4a617c;
+  --text-subtle: #5c728a;
+
+  /* Semantic accents — limited palette */
+  --accent: #1e3a5f;
+  --accent-soft: rgba(30, 58, 95, 0.08);
+  --warning-bg: #fbf3e6;
+  --warning-border: #e2c48a;
+  --warning-text: #5c4318;
+  --focus-ring: #1e3a5f;
+
+  /* Layout */
+  --prose-width: 42rem;
+  --content-gap: 1.75rem;
   --mobile-cta-height: 3.5rem;
   --header-height: 4rem;
   --home-hero-bottom-space: 4.75rem;
@@ -33,6 +55,8 @@
   --color-beige-dark: var(--beige-dark);
   --color-beige-muted: var(--beige-muted);
   --color-cream: var(--cream);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
   --font-sans: var(--font-noto-sans-kr), "Malgun Gothic", sans-serif;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -204,14 +228,31 @@ html {
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-size: 1rem;
-  line-height: 1.625;
+  color: var(--text-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
   overflow-x: hidden;
   cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 48rem) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
 }
 
 @layer base {
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
   a[href],
   button:not(:disabled),
   summary,
@@ -392,7 +433,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg bg-navy px-6 text-base font-medium text-white;
+    @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg bg-navy px-6 text-base font-semibold text-white;
   }
 
   .btn-primary:hover {
@@ -403,16 +444,26 @@ body.mobile-menu-open .mobile-bottom-cta {
     transform: scale(0.99);
   }
 
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+
   .btn-secondary {
-    @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg border-2 border-beige-muted bg-white px-6 text-base font-medium text-navy;
+    @apply inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-lg border-2 border-beige-muted bg-white px-6 text-base font-semibold text-navy;
   }
 
   .btn-secondary:hover {
-    @apply border-navy-light bg-beige;
+    @apply border-navy bg-beige;
   }
 
   .btn-secondary:active {
     transform: scale(0.99);
+  }
+
+  .btn-secondary:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
   }
 
   .card-surface {
@@ -420,7 +471,13 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .section-heading {
-    @apply text-xl font-semibold text-navy md:text-2xl;
+    color: var(--text-primary);
+    @apply text-[1.375rem] font-bold tracking-tight md:text-2xl lg:text-[1.75rem];
+  }
+
+  .section-subheading {
+    color: var(--text-primary);
+    @apply text-lg font-semibold tracking-tight md:text-xl;
   }
 
   /* 상담 패널 — 전화 스트립 + 채팅 QR 타일 */
@@ -900,11 +957,29 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .page-title {
-    @apply text-2xl font-bold tracking-tight text-navy md:text-3xl lg:text-4xl;
+    color: var(--text-primary);
+    @apply text-[1.75rem] font-bold tracking-tight md:text-3xl lg:text-[2.375rem] lg:leading-[1.25];
   }
 
   .body-text {
-    @apply text-base leading-relaxed text-navy/80 md:text-lg;
+    color: var(--text-body);
+    @apply text-[1.0625rem] leading-[1.8] md:text-lg md:leading-[1.8];
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .text-subtle {
+    color: var(--text-subtle);
+  }
+
+  .prose-measure {
+    max-width: var(--prose-width);
+  }
+
+  .content-stack {
+    @apply space-y-7 md:space-y-10;
   }
 
   /* ── Home fullpage (Swiper) ── */
@@ -1964,47 +2039,57 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   /* Readability — 콘텐츠 페이지 공통 UI */
   .readability-hero {
-    @apply rounded-2xl border border-beige-dark bg-gradient-to-br from-white via-cream/40 to-beige/30 p-5 md:p-8;
+    @apply border-b border-beige-dark pb-6 md:pb-8;
   }
 
   .readability-hero__eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.14em] text-navy-light;
+    color: var(--text-muted);
+    @apply mb-2 text-xs font-semibold uppercase tracking-[0.12em];
   }
 
   .readability-badges__item {
-    @apply inline-flex rounded-full border border-navy/10 bg-white px-3 py-1.5 text-xs font-medium text-navy/75 md:text-sm;
+    color: var(--text-secondary);
+    @apply inline-flex rounded-md border border-beige-dark bg-white px-2.5 py-1 text-xs font-medium md:text-sm;
   }
 
   .readability-summary {
-    @apply rounded-2xl border border-navy/12 bg-gradient-to-br from-beige/50 via-cream to-white p-5 md:p-6;
+    border-color: var(--beige-dark);
+    background: var(--surface);
+    @apply rounded-xl border-l-4 border-l-navy border-y border-r p-5 md:p-6;
   }
 
   .readability-summary__title {
-    @apply text-lg font-semibold text-navy md:text-xl;
+    color: var(--text-primary);
+    @apply text-lg font-bold md:text-xl;
   }
 
   .readability-summary__list {
-    @apply mt-4 space-y-2.5;
+    @apply mt-4 space-y-3;
   }
 
   .readability-summary__item {
-    @apply relative pl-5 text-sm leading-relaxed text-navy/85 before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-navy/70 md:text-base;
+    color: var(--text-body);
+    @apply relative pl-5 text-[1.015rem] leading-[1.7] before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-navy md:text-base;
   }
 
   .readability-summary__note {
-    @apply mt-4 text-sm leading-relaxed text-navy/60;
+    color: var(--text-muted);
+    @apply mt-4 text-sm leading-relaxed;
   }
 
   .readability-toc {
-    @apply rounded-2xl border border-beige-dark bg-white p-4 md:p-5;
+    background: var(--surface-muted);
+    @apply rounded-lg border border-beige-dark p-4 md:p-5;
   }
 
   .readability-toc__title {
-    @apply text-sm font-semibold text-navy md:text-base;
+    color: var(--text-primary);
+    @apply text-sm font-bold md:text-base;
   }
 
   .readability-toc__summary {
-    @apply cursor-pointer list-none text-sm font-semibold text-navy marker:content-none md:text-base;
+    color: var(--text-primary);
+    @apply cursor-pointer list-none text-sm font-bold marker:content-none md:text-base;
   }
 
   .readability-toc__summary::-webkit-details-marker {
@@ -2012,11 +2097,17 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .readability-toc__list {
-    @apply mt-3 space-y-2 border-t border-beige-dark pt-3;
+    @apply mt-3 space-y-1 border-t border-beige-dark pt-3;
   }
 
   .readability-toc__link {
-    @apply block rounded-lg px-2 py-2 text-sm leading-snug text-navy/75 transition-colors hover:bg-beige/50 hover:text-navy md:text-base;
+    color: var(--text-secondary);
+    @apply block rounded-md px-2 py-2.5 text-sm leading-snug transition-colors hover:bg-white hover:text-[var(--text-primary)] md:text-base;
+  }
+
+  .readability-toc__link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 1px;
   }
 
   .readability-checklist {
@@ -2024,19 +2115,22 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .readability-checklist__list {
-    @apply space-y-2.5 border-l border-navy/15 pl-4 md:pl-5;
+    @apply space-y-3 border-l-2 border-navy/25 pl-4 md:pl-5;
   }
 
   .readability-checklist__item {
-    @apply flex gap-2.5 text-sm leading-relaxed text-navy/85 md:text-base;
+    color: var(--text-body);
+    @apply flex gap-2.5 text-[1.015rem] leading-[1.7] md:text-base;
   }
 
   .readability-checklist__mark {
-    @apply mt-[0.15em] shrink-0 text-[0.85em] font-semibold text-navy/45;
+    color: var(--navy);
+    @apply mt-[0.15em] shrink-0 text-[0.9em] font-bold;
   }
 
   .readability-checklist__note {
-    @apply mt-4 text-sm leading-relaxed text-navy/60;
+    color: var(--text-muted);
+    @apply mt-4 text-sm leading-relaxed;
   }
 
   .readability-timeline {
@@ -2044,71 +2138,189 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .readability-timeline__step {
-    @apply relative flex gap-4 border-l-2 border-beige-dark pb-6 pl-6 last:border-l-transparent last:pb-0;
+    @apply relative flex gap-4 border-l-2 border-beige-dark pb-7 pl-7 last:border-l-transparent last:pb-0;
   }
 
   .readability-timeline__number {
-    @apply absolute -left-[0.9375rem] top-0 flex h-7 w-7 items-center justify-center rounded-full bg-navy text-sm font-semibold text-white;
+    @apply absolute -left-[1.05rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-navy text-sm font-bold text-white;
   }
 
   .readability-timeline__text {
-    @apply pt-0.5 text-sm leading-relaxed text-navy/85 md:text-base;
+    color: var(--text-body);
+    @apply pt-1 text-[1.015rem] leading-[1.7] md:text-base;
   }
 
   .readability-warning {
-    @apply rounded-xl border border-amber-200/80 bg-amber-50/70 px-4 py-4 md:px-5 md:py-5;
+    background: var(--warning-bg);
+    border-color: var(--warning-border);
+    @apply rounded-lg border px-4 py-4 md:px-5 md:py-5;
   }
 
   .readability-warning__title {
-    @apply text-sm font-semibold text-navy md:text-base;
+    color: var(--warning-text);
+    @apply text-sm font-bold md:text-base;
   }
 
   .readability-warning__body {
-    @apply mt-2 space-y-2 text-sm leading-relaxed text-navy/75 md:text-base;
+    color: var(--warning-text);
+    @apply mt-2 space-y-2 text-sm leading-relaxed md:text-base;
+  }
+
+  .readability-link-list {
+    @apply divide-y divide-beige-dark border-y border-beige-dark;
   }
 
   .readability-link-card {
-    @apply flex min-h-12 cursor-pointer items-center justify-between gap-3 rounded-xl border border-beige-dark bg-white px-4 py-3.5 text-sm font-medium text-navy/85 transition-[border-color,background-color,box-shadow,transform,opacity] duration-200 ease-out hover:border-navy/20 hover:bg-beige/40 md:px-5 md:text-base;
+    color: var(--text-primary);
+    @apply flex min-h-12 cursor-pointer items-center justify-between gap-3 bg-transparent px-1 py-3.5 text-[0.975rem] font-semibold transition-colors duration-150 hover:bg-beige/50 md:px-2 md:text-base;
   }
 
-  .readability-link-card:active {
-    @apply scale-[0.995];
+  .readability-link-card:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .readability-link-card__meta {
+    color: var(--text-muted);
+    @apply mt-0.5 block text-sm font-normal leading-snug;
   }
 
   .readability-link-card__arrow {
-    @apply shrink-0 text-navy/40;
+    color: var(--text-muted);
+    @apply shrink-0 text-base font-normal;
   }
 
   .readability-cta {
-    @apply rounded-2xl border border-navy/12 bg-gradient-to-br from-navy/5 via-cream to-beige/40 p-6 text-center md:p-8;
+    background: var(--surface);
+    @apply rounded-xl border border-beige-dark border-l-4 border-l-navy p-6 text-left md:p-8;
   }
 
   .readability-cta__title {
-    @apply text-lg font-semibold text-navy md:text-xl;
+    color: var(--text-primary);
+    @apply text-lg font-bold md:text-xl;
   }
 
   .readability-cta__description {
-    @apply mx-auto mt-3 max-w-xl text-sm leading-relaxed text-navy/75 md:text-base;
+    color: var(--text-secondary);
+    @apply mt-3 max-w-2xl text-[1.015rem] leading-[1.7] md:text-base;
   }
 
   .readability-cta__button {
     @apply mt-5 w-full sm:w-auto;
   }
 
+  /* 상호작용 카드(선택·비교·이동) — 본문 설명용 아님 */
   .readability-info-card {
-    @apply rounded-xl border border-beige-dark bg-white p-5 md:p-6;
+    background: var(--surface);
+    @apply rounded-lg border border-beige-dark p-5 md:p-6;
   }
 
   .readability-info-card--highlight {
-    @apply border-navy/15 bg-gradient-to-br from-cream via-white to-beige/30;
+    @apply border-l-4 border-l-navy border-y border-r bg-[var(--surface-muted)];
+  }
+
+  .readability-info-card--plain {
+    @apply rounded-none border-0 bg-transparent p-0;
   }
 
   .readability-info-card__title {
-    @apply text-base font-semibold text-navy md:text-lg;
+    color: var(--text-primary);
+    @apply text-base font-bold md:text-lg;
+  }
+
+  .readability-section {
+    @apply max-w-none;
+  }
+
+  .readability-section__body {
+    max-width: 46rem;
+  }
+
+  .readability-section__body:has(.readability-link-list),
+  .readability-section__body:has(.faq-accordion),
+  .readability-section__body:has(.comparison-table-wrap),
+  .readability-section__body:has(.comparison-cards) {
+    max-width: 40rem;
   }
 
   .readability-section__body > * + * {
+    @apply mt-5;
+  }
+
+  .readability-prose {
+    max-width: var(--prose-width);
+  }
+
+  .readability-prose p + p {
     @apply mt-4;
+  }
+
+  .faq-accordion {
+    @apply divide-y divide-beige-dark border-y border-beige-dark;
+  }
+
+  .faq-accordion__item {
+    @apply bg-transparent;
+  }
+
+  .faq-accordion__summary {
+    color: var(--text-primary);
+    @apply flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold marker:content-none md:py-5 md:text-lg;
+  }
+
+  .faq-accordion__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-accordion__summary:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .faq-accordion__icon {
+    color: var(--text-muted);
+    @apply shrink-0 text-xl font-normal leading-none transition-transform duration-150 group-open:rotate-45;
+  }
+
+  .faq-accordion__body {
+    color: var(--text-body);
+    @apply pb-5 text-[1.015rem] leading-[1.75] md:text-base;
+  }
+
+  .comparison-table-wrap {
+    @apply -mx-1 overflow-x-auto rounded-lg border border-beige-dark;
+  }
+
+  .comparison-table-wrap table {
+    @apply min-w-[36rem] w-full text-left text-sm md:min-w-0 md:text-base;
+  }
+
+  .comparison-cards {
+    @apply space-y-3 md:hidden;
+  }
+
+  .comparison-card {
+    background: var(--surface);
+    @apply rounded-lg border border-beige-dark p-4;
+  }
+
+  .comparison-card__title {
+    color: var(--text-primary);
+    @apply mb-3 border-b border-beige-dark pb-2 text-base font-bold;
+  }
+
+  .comparison-card__row {
+    @apply grid grid-cols-[7rem_1fr] gap-2 py-1.5 text-sm;
+  }
+
+  .comparison-card__label {
+    color: var(--text-muted);
+    @apply font-medium;
+  }
+
+  .comparison-card__value {
+    color: var(--text-body);
+    @apply leading-snug;
   }
 
   /* Glossary search hub */

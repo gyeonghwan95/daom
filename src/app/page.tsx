@@ -6,6 +6,7 @@ import { HomeFaqTeaser } from "@/components/home/HomeFaqTeaser";
 import { HomeFullpageSwiper } from "@/components/home/HomeFullpageSwiper";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeHubGuide } from "@/components/home/HomeHubGuide";
+import { HomeNationwideSection } from "@/components/home/HomeNationwideSection";
 import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomePressMarquee } from "@/components/home/HomePressMarquee";
@@ -25,6 +26,7 @@ export default function Home() {
       <HomeFullpageSwiper>
         <HomeHero />
         <HomeServices />
+        <HomeNationwideSection />
         <HomeB2BSection />
         <HomePopularSearches />
         <HomeHubGuide />

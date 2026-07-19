@@ -338,6 +338,14 @@ export function getAllPublishedPaths() {
   const lectureHistoryPaths = readLectureHistoryPaths();
 
   const caseRegionPaths = readCaseRegionPaths();
+  const nationwidePaths = [
+    "/전국업무",
+    "/전국상속등기",
+    "/전국유증등기",
+    "/여러지역상속부동산등기",
+    "/전국법인본점이전등기",
+    "/전국공동담보등기",
+  ];
 
   return [
     ...staticRoutes,
@@ -358,6 +366,7 @@ export function getAllPublishedPaths() {
     "/cases",
     ...caseSlugs.map((slug) => `/cases/${slug}`),
     ...caseRegionPaths,
+    ...nationwidePaths,
     "/press",
     ...pressSlugs.map((slug) => `/press/${slug}`),
   ];
@@ -399,6 +408,79 @@ function readCaseRegionPaths() {
     const text = fs.readFileSync(filePath, "utf8");
     for (const match of text.matchAll(/slug:\s*"([^"]+법무사)"/g)) {
       paths.add(`/업무사례/${match[1]}`);
+    }
+  }
+
+  // 전국·지역 상속등기 랜딩 (nationwide-cases)
+  // city()/metro() 헬퍼는 published:true 고정. service-defs는 published:false면 제외.
+  const nationwideDir = path.join(ROOT, "src/lib/nationwide-cases");
+  if (fs.existsSync(nationwideDir)) {
+    for (const file of [
+      "service-defs.ts",
+      "metro-defs.ts",
+      "city-defs.ts",
+    ]) {
+      const filePath = path.join(nationwideDir, file);
+      if (!fs.existsSync(filePath)) continue;
+      const text = fs.readFileSync(filePath, "utf8");
+
+      if (file === "service-defs.ts") {
+        for (const chunk of text.split(/\},\s*\{/)) {
+          const slugMatch = chunk.match(/slug:\s*"([^"]+)"/);
+          if (!slugMatch) continue;
+          if (/published:\s*false/.test(chunk)) continue;
+          paths.add(`/업무사례/${slugMatch[1]}`);
+        }
+      } else {
+        for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+          paths.add(`/업무사례/${match[1]}`);
+        }
+      }
+    }
+  }
+
+  // 경남 전용 랜딩 (gyeongnam-cases) — published:true 만
+  const gyeongnamDir = path.join(ROOT, "src/lib/gyeongnam-cases");
+  if (fs.existsSync(gyeongnamDir)) {
+    for (const file of ["phase1-defs.ts", "phase2-defs.ts"]) {
+      const filePath = path.join(gyeongnamDir, file);
+      if (!fs.existsSync(filePath)) continue;
+      const text = fs.readFileSync(filePath, "utf8");
+      for (const chunk of text.split(/\},\s*(?:draft\()?\{/)) {
+        const slugMatch = chunk.match(/slug:\s*"([^"]+)"/);
+        if (!slugMatch) continue;
+        if (/published:\s*false/.test(chunk)) continue;
+        // phase2 draft() defaults published false — skip if file is phase2
+        if (file === "phase2-defs.ts") continue;
+        paths.add(`/업무사례/${slugMatch[1]}`);
+      }
+    }
+    // phase1: all slugs (helper forces published true)
+    const phase1 = path.join(gyeongnamDir, "phase1-defs.ts");
+    if (fs.existsSync(phase1)) {
+      const text = fs.readFileSync(phase1, "utf8");
+      for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+        paths.add(`/업무사례/${match[1]}`);
+      }
+    }
+  }
+
+  // 울산·대구·경북 전용 랜딩 (southeast-cases) — published:true 만
+  const southeastDir = path.join(ROOT, "src/lib/southeast-cases");
+  if (fs.existsSync(southeastDir)) {
+    for (const file of [
+      "ulsan-phase1.ts",
+      "daegu-phase1.ts",
+      "gyeongbuk-phase1.ts",
+      "phase2-defs.ts",
+    ]) {
+      const filePath = path.join(southeastDir, file);
+      if (!fs.existsSync(filePath)) continue;
+      if (file === "phase2-defs.ts") continue;
+      const text = fs.readFileSync(filePath, "utf8");
+      for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+        paths.add(`/업무사례/${match[1]}`);
+      }
     }
   }
 

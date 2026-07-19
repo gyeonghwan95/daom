@@ -488,14 +488,21 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
 }
 
 export function buildPageDataFromService(service: ServiceDetail): PageData {
+  const isInheritanceRegistration = service.slug === "inheritance-registration";
   return createPageData({
     slug: service.slug,
     path: `/services/${service.slug}`,
     category: "service",
     title: service.title,
-    metaTitle: buildMetaTitle(`${service.title} 업무 안내`),
+    metaTitle: buildMetaTitle(
+      isInheritanceRegistration
+        ? "전국 상속등기 법무사｜부산 방문 없이 타지역 부동산도 진행"
+        : `${service.title} 업무 안내`,
+    ),
     metaDescription: buildMetaDescription(service.description),
-    h1: `부산 ${service.title} 상담`,
+    h1: isInheritanceRegistration
+      ? "전국 상속등기 상담"
+      : `부산 ${service.title} 상담`,
     intro: service.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },

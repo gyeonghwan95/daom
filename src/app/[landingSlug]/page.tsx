@@ -12,6 +12,7 @@ import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageV
 import { LecturePageView } from "@/components/lectures/LecturePageView";
 import { LectureHistoryHubView } from "@/components/lectures/history/LectureHistoryHubView";
 import { CaseRegionsHubView } from "@/components/case-regions/CaseRegionHubViews";
+import { NationwidePageView } from "@/components/nationwide/NationwidePageView";
 import { BusinessPageView } from "@/components/business/BusinessPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -29,8 +30,13 @@ import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
 import { practiceHubDefs } from "@/lib/local-landing/practice-hubs";
+import {
+  getNationwidePageType,
+  NATIONWIDE_PAGE_SLUGS,
+} from "@/lib/nationwide";
 import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import type { NationwidePageSlug } from "@/lib/nationwide";
 
 type PageProps = {
   params: Promise<{ landingSlug: string }>;
@@ -82,6 +88,28 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <CaseRegionsHubView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if ((NATIONWIDE_PAGE_SLUGS as readonly string[]).includes(slug)) {
+    const noticeType = getNationwidePageType(slug as NationwidePageSlug);
+    return (
+      <PageContainer>
+        <NationwidePageView
+          page={page}
+          noticeType={noticeType}
+          showServiceCards={slug === "전국업무"}
+          ctaLabel={
+            slug === "여러지역상속부동산등기"
+              ? "여러 지역 부동산 한 번에 문의하기"
+              : slug === "전국법인본점이전등기"
+                ? "방문 없이 진행 가능한지 확인하기"
+                : slug === "전국공동담보등기"
+                  ? "여러 지역 공동담보 가능 여부 확인하기"
+                  : undefined
+          }
+        />
       </PageContainer>
     );
   }

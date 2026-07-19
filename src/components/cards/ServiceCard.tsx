@@ -18,7 +18,7 @@ export function ServiceCard({
   return (
     <Link
       href={href}
-      className="interactive-surface card-surface group flex min-h-[7rem] flex-col overflow-hidden p-0 hover:shadow-md hover:shadow-navy/5"
+      className="interactive-surface card-surface group flex min-h-[7rem] flex-col overflow-hidden p-0 hover:border-navy/25"
     >
       {image && (
         <div className="relative aspect-[16/9] overflow-hidden border-b border-beige-dark">
@@ -31,11 +31,11 @@ export function ServiceCard({
         </div>
       )}
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="text-base font-semibold text-navy md:text-lg">{title}</h3>
-        <p className="mt-2 line-clamp-2 flex-1 text-base text-navy/70">
+        <h3 className="text-base font-bold text-[var(--text-primary)] md:text-lg">{title}</h3>
+        <p className="mt-2 line-clamp-2 flex-1 text-base leading-relaxed text-[var(--text-secondary)]">
           {description}
         </p>
-        <span className="mt-3 text-sm font-medium text-navy-light">
+        <span className="mt-3 text-sm font-semibold text-navy">
           자세히 보기 →
         </span>
       </div>

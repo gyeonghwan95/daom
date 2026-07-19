@@ -19,7 +19,7 @@ export function ContentSection({
       className={`readability-section section-anchor scroll-mt-[calc(var(--header-height)+1rem)] ${className}`.trim()}
     >
       <h2 className="section-heading">{title}</h2>
-      <div className="readability-section__body mt-4 md:mt-5">{children}</div>
+      <div className="readability-section__body mt-5 md:mt-6">{children}</div>
     </section>
   );
 }

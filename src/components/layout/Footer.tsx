@@ -87,6 +87,36 @@ export function Footer() {
         </div>
 
         <div className="mt-8 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-3">
+          <div>
+            <p className="font-semibold text-beige">전국 의뢰 업무</p>
+            <ul className="mt-3 space-y-1 text-sm text-white/70">
+              {[
+                { href: "/업무사례/경남법무사업무", label: "경남 지역 업무사례" },
+                { href: "/업무사례/울산법무사업무", label: "울산 지역 업무사례" },
+                { href: "/업무사례/대구법무사업무", label: "대구 지역 업무사례" },
+                { href: "/업무사례/경북법무사업무", label: "경북 지역 업무사례" },
+                { href: "/업무사례/경남상속등기법무사", label: "경남 상속등기" },
+                { href: "/업무사례/전국업무사례", label: "전국 업무사례" },
+                { href: "/업무사례/전국상속등기법무사", label: "전국 상속등기(업무사례)" },
+                { href: "/업무사례/지역별상속등기법무사", label: "지역별 상속등기" },
+                { href: "/전국업무", label: "전국 업무 안내" },
+                { href: "/전국상속등기", label: "전국 상속등기" },
+                { href: "/전국유증등기", label: "전국 유증등기" },
+                { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
+                { href: "/전국법인본점이전등기", label: "전국 법인 본점이전" },
+                { href: "/전국공동담보등기", label: "전국 공동담보등기" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="lg:col-span-2">
             <p className="font-semibold text-beige">상담 안내</p>
             <p className="mt-2 text-sm leading-relaxed text-white/70">

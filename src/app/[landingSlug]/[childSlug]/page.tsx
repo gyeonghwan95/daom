@@ -15,6 +15,9 @@ import {
   getAllLectureHistorySlugs,
   getLectureHistoryBySlug,
 } from "@/data/lectures/history";
+import { NationwideCasePageView } from "@/components/nationwide-cases/NationwideCasePageView";
+import { GyeongnamCasePageView } from "@/components/gyeongnam-cases/GyeongnamCasePageView";
+import { SoutheastCasePageView } from "@/components/southeast-cases/SoutheastCasePageView";
 import {
   buildCaseRegionPageData,
   buildCaseRegionsByAreaPageData,
@@ -27,7 +30,30 @@ import {
   getChildrenOfDistrict,
   type DistrictKey,
 } from "@/lib/case-regions";
+import {
+  GYEONGNAM_CORE_CITY_LINKS,
+  GYEONGNAM_HUB_FILTERS,
+  getGyeongnamBySlug,
+  getGyeongnamPageDataBySlug,
+  getPublishedGyeongnamDefs,
+  getPublishedGyeongnamSlugs,
+} from "@/lib/gyeongnam-cases";
 import { buildLectureHistoryDetailPageData } from "@/lib/lectures/history-page-data";
+import {
+  getNationwideCaseBySlug,
+  getNationwideCasePageDataBySlug,
+  getPublishedNationwideCaseDefs,
+  getPublishedNationwideCaseSlugs,
+  getRegionHubGroups,
+} from "@/lib/nationwide-cases";
+import {
+  SOUTHEAST_HUB_LINKS,
+  getPublishedSoutheastDefs,
+  getPublishedSoutheastSlugs,
+  getSoutheastBySlug,
+  getSoutheastHubFilters,
+  getSoutheastPageDataBySlug,
+} from "@/lib/southeast-cases";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
@@ -60,7 +86,31 @@ export function generateStaticParams() {
     childSlug: entry.slug,
   }));
 
-  return [...lectureParams, ...caseHubParams, ...caseRegionParams];
+  const nationwideCaseParams = getPublishedNationwideCaseSlugs().map(
+    (slug) => ({
+      landingSlug: "업무사례",
+      childSlug: slug,
+    }),
+  );
+
+  const gyeongnamCaseParams = getPublishedGyeongnamSlugs().map((slug) => ({
+    landingSlug: "업무사례",
+    childSlug: slug,
+  }));
+
+  const southeastCaseParams = getPublishedSoutheastSlugs().map((slug) => ({
+    landingSlug: "업무사례",
+    childSlug: slug,
+  }));
+
+  return [
+    ...lectureParams,
+    ...caseHubParams,
+    ...caseRegionParams,
+    ...nationwideCaseParams,
+    ...gyeongnamCaseParams,
+    ...southeastCaseParams,
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -80,6 +130,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
     if (child === "업무별") {
       return pageDataToMetadata(buildCaseRegionsByServicePageData());
+    }
+
+    const nationwidePage = getNationwideCasePageDataBySlug(child);
+    if (nationwidePage) {
+      const meta = pageDataToMetadata(nationwidePage);
+      return {
+        ...meta,
+        alternates: {
+          ...meta.alternates,
+          canonical: getCanonicalUrl(nationwidePage.path),
+        },
+      };
+    }
+
+    const gyeongnamPage = getGyeongnamPageDataBySlug(child);
+    if (gyeongnamPage) {
+      const meta = pageDataToMetadata(gyeongnamPage);
+      return {
+        ...meta,
+        alternates: {
+          ...meta.alternates,
+          canonical: getCanonicalUrl(gyeongnamPage.path),
+        },
+      };
+    }
+
+    const southeastPage = getSoutheastPageDataBySlug(child);
+    if (southeastPage) {
+      const meta = pageDataToMetadata(southeastPage);
+      return {
+        ...meta,
+        alternates: {
+          ...meta.alternates,
+          canonical: getCanonicalUrl(southeastPage.path),
+        },
+      };
     }
 
     const entry = getCaseRegionBySlug(child);
@@ -141,6 +227,96 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
       return (
         <PageContainer>
           <CaseRegionsByServiceView page={buildCaseRegionsByServicePageData()} />
+        </PageContainer>
+      );
+    }
+
+    const nationwideDef = getNationwideCaseBySlug(child);
+    const nationwidePage = getNationwideCasePageDataBySlug(child);
+    if (nationwideDef && nationwidePage) {
+      const explorerItems = getPublishedNationwideCaseDefs()
+        .filter((d) => d.kind === "region")
+        .map((d) => ({
+          slug: d.slug,
+          regionName: d.regionName,
+          parentRegion: d.parentRegion,
+          primaryKeyword: d.primaryKeyword,
+          h1: d.h1,
+          priority: d.priority,
+          keywords: [d.primaryKeyword, ...d.secondaryKeywords, d.slug],
+        }));
+
+      return (
+        <PageContainer>
+          <NationwideCasePageView
+            page={nationwidePage}
+            def={nationwideDef}
+            explorerItems={explorerItems}
+            explorerGroups={getRegionHubGroups()}
+          />
+        </PageContainer>
+      );
+    }
+
+    const gyeongnamDef = getGyeongnamBySlug(child);
+    const gyeongnamPage = getGyeongnamPageDataBySlug(child);
+    if (gyeongnamDef && gyeongnamPage) {
+      const explorerItems = getPublishedGyeongnamDefs().map((d) => ({
+        slug: d.slug,
+        regionName: d.regionName,
+        parentRegion: d.parentRegion,
+        primaryKeyword: d.primaryKeyword,
+        h1: d.h1,
+        pageType: d.pageType,
+        keywords: [d.primaryKeyword, ...d.secondaryKeywords, d.slug, d.pageType],
+      }));
+
+      return (
+        <PageContainer>
+          <GyeongnamCasePageView
+            page={gyeongnamPage}
+            def={gyeongnamDef}
+            explorerItems={explorerItems}
+            explorerFilters={GYEONGNAM_HUB_FILTERS.map((f) => ({
+              id: f.id,
+              label: f.label,
+            }))}
+            coreLinks={[...GYEONGNAM_CORE_CITY_LINKS]}
+          />
+        </PageContainer>
+      );
+    }
+
+    const southeastDef = getSoutheastBySlug(child);
+    const southeastPage = getSoutheastPageDataBySlug(child);
+    if (southeastDef && southeastPage) {
+      const explorerItems = getPublishedSoutheastDefs()
+        .filter((d) => d.regionGroup === southeastDef.regionGroup)
+        .map((d) => ({
+          slug: d.slug,
+          regionName: d.regionName,
+          parentRegion: d.parentRegion,
+          primaryKeyword: d.primaryKeyword,
+          h1: d.h1,
+          pageType: d.pageType,
+          keywords: [
+            d.primaryKeyword,
+            ...d.secondaryKeywords,
+            d.slug,
+            d.pageType,
+            d.regionGroup,
+          ],
+        }));
+
+      return (
+        <PageContainer>
+          <SoutheastCasePageView
+            page={southeastPage}
+            def={southeastDef}
+            explorerItems={explorerItems}
+            explorerFilters={getSoutheastHubFilters(southeastDef.regionGroup)}
+            coreLinks={[...SOUTHEAST_HUB_LINKS[southeastDef.regionGroup]]}
+          />
         </PageContainer>
       );
     }

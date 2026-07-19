@@ -12,7 +12,8 @@ import {
 type ConsultationButtonsProps = {
   channels: ConsultationChannel[];
   theme?: "dark" | "light";
-  layout?: "grid" | "stack";
+  /** grid: 2열 / stack: 세로 / equal: 채널 수만큼 균등 열 / tile: 아이콘 위·라벨 아래 타일 */
+  layout?: "grid" | "stack" | "equal" | "tile";
   showLabels?: "full" | "short";
   showQrCodes?: boolean;
   className?: string;
@@ -22,9 +23,12 @@ type ConsultationButtonsProps = {
 function getButtonClass(
   id: ConsultationChannelId,
   theme: "dark" | "light",
+  layout: ConsultationButtonsProps["layout"] = "grid",
 ): string {
-  const base =
-    "interactive-surface inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold";
+  const isTile = layout === "tile";
+  const base = isTile
+    ? "interactive-surface inline-flex min-h-[4.75rem] w-full flex-col items-center justify-center gap-1.5 rounded-xl px-2 py-3 text-center text-xs font-semibold leading-tight sm:min-h-[5.25rem] sm:gap-2 sm:text-sm"
+    : "interactive-surface inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-3 text-sm font-semibold sm:px-4";
 
   if (theme === "dark") {
     switch (id) {
@@ -88,12 +92,32 @@ function ChannelLink({
   channel,
   label,
   className,
+  tile = false,
 }: {
   channel: ConsultationChannel;
   label: string;
   className: string;
+  tile?: boolean;
 }) {
-  const content = (
+  const iconWrap =
+    channel.id === "phone"
+      ? "bg-white/15 text-white"
+      : channel.id === "naver" || channel.id === "reservation"
+        ? "bg-white/20 text-white"
+        : channel.id === "kakao"
+          ? "bg-black/5 text-[#191919]"
+          : "bg-black/5";
+
+  const content = tile ? (
+    <>
+      <span
+        className={`flex h-9 w-9 items-center justify-center rounded-lg sm:h-10 sm:w-10 ${iconWrap}`}
+      >
+        <ChannelIcon id={channel.id} />
+      </span>
+      <span className="max-w-full px-0.5 break-keep">{label}</span>
+    </>
+  ) : (
     <>
       <ChannelIcon id={channel.id} />
       <span className="truncate">{label}</span>
@@ -160,10 +184,21 @@ export function ConsultationButtons({
     );
   }
 
+  const count = Math.max(channels.length, 1);
   const gridClass =
-    layout === "grid"
-      ? "grid grid-cols-2 gap-2 sm:gap-3"
-      : "flex flex-col gap-2.5 sm:gap-3";
+    layout === "stack"
+      ? "flex flex-col gap-2.5 sm:gap-3"
+      : layout === "equal" || layout === "tile"
+        ? `grid gap-2 sm:gap-3 ${
+            count === 1
+              ? "grid-cols-1"
+              : count === 2
+                ? "grid-cols-2"
+                : "grid-cols-3"
+          }`
+        : "grid grid-cols-2 gap-2 sm:gap-3";
+
+  const isTile = layout === "tile";
 
   return (
     <div className={className}>
@@ -173,7 +208,8 @@ export function ConsultationButtons({
             key={channel.id}
             channel={channel}
             label={labelFor(channel)}
-            className={getButtonClass(channel.id, theme)}
+            className={getButtonClass(channel.id, theme, layout)}
+            tile={isTile}
           />
         ))}
       </div>

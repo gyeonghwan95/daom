@@ -22,6 +22,8 @@ type PageConversionCTAProps = {
   pageSlug?: string;
   showFeeNotice?: boolean;
   showSecondaryLinks?: boolean;
+  /** false면 전화·카카오·톡톡 등 채널 그리드 대신 상담 문의 버튼만 표시 */
+  showChannelButtons?: boolean;
   tone?: "light" | "dark";
   className?: string;
 };
@@ -41,6 +43,7 @@ export function PageConversionCTA({
   pageSlug,
   showFeeNotice,
   showSecondaryLinks = false,
+  showChannelButtons = true,
   tone,
   className = "",
 }: PageConversionCTAProps) {
@@ -62,25 +65,30 @@ export function PageConversionCTA({
 
   const shellClass = isBottom
     ? theme === "dark"
-      ? "card-surface bg-navy p-5 text-white sm:p-6 md:p-8 lg:p-10"
-      : "overflow-hidden rounded-2xl border border-navy/10 bg-gradient-to-br from-beige/80 via-cream to-white p-5 shadow-[0_8px_32px_rgba(26,39,68,0.06)] sm:p-6 md:p-8"
-    : "rounded-2xl border border-beige-dark bg-beige/20 p-5 sm:p-6";
+      ? "rounded-xl bg-navy p-5 text-white sm:p-6 md:p-8"
+      : "rounded-xl border border-beige-dark border-l-4 border-l-navy bg-white p-5 sm:p-6 md:p-8"
+    : "rounded-xl border border-beige-dark bg-[var(--surface-muted)] p-5 sm:p-6";
 
   const titleClass = isBottom
     ? theme === "dark"
-      ? "text-lg font-semibold sm:text-xl md:text-2xl"
-      : "text-lg font-semibold text-navy sm:text-xl"
-    : "text-base font-semibold text-navy sm:text-lg";
+      ? "text-lg font-bold sm:text-xl md:text-2xl"
+      : "text-lg font-bold text-[var(--text-primary)] sm:text-xl"
+    : "text-base font-bold text-[var(--text-primary)] sm:text-lg";
 
   const bodyClass =
     theme === "dark"
-      ? "mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base"
-      : "mt-2 text-sm leading-relaxed text-navy/75 sm:text-base";
+      ? "mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base"
+      : "mt-2 text-[1.015rem] leading-[1.7] text-[var(--text-secondary)] sm:text-base";
 
   const hintClass =
     theme === "dark"
-      ? "mt-2 text-sm font-medium text-white/75"
-      : "mt-2 text-sm font-medium text-navy/65";
+      ? "mt-2 text-sm font-medium text-white/80"
+      : "mt-2 text-sm font-medium text-[var(--text-muted)]";
+
+  const primaryBtnClass =
+    theme === "dark"
+      ? "btn-primary inline-flex min-h-12 w-full items-center justify-center bg-white px-6 text-navy hover:bg-beige sm:w-auto"
+      : "btn-primary inline-flex min-h-12 w-full items-center justify-center px-6 sm:w-auto";
 
   return (
     <aside
@@ -88,8 +96,8 @@ export function PageConversionCTA({
       aria-label="상담 안내"
     >
       {!isBottom || theme === "dark" ? null : (
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-          Consultation
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--text-muted)]">
+          상담 안내
         </p>
       )}
 
@@ -100,12 +108,37 @@ export function PageConversionCTA({
       </header>
 
       <div className="mt-5">
-        <ConversionActionButtons
-          documentsHref={config.documentsHref}
-          diagnosisHref={config.diagnosisHref}
-          theme={theme}
-          pageSlug={slug}
-        />
+        {showChannelButtons ? (
+          <ConversionActionButtons
+            documentsHref={config.documentsHref}
+            diagnosisHref={config.diagnosisHref}
+            theme={theme}
+            pageSlug={slug}
+          />
+        ) : (
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/contact"
+              data-cta="contact"
+              onClick={() => trackCTA("contact", slug)}
+              className={primaryBtnClass}
+            >
+              상담 문의하기
+            </Link>
+            <Link
+              href="/contact/inquiry"
+              data-cta="contact"
+              onClick={() => trackCTA("contact", slug)}
+              className={
+                theme === "dark"
+                  ? "inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white/40 px-6 text-sm font-semibold text-white hover:bg-white/10"
+                  : "btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              }
+            >
+              상담 신청서 작성
+            </Link>
+          </div>
+        )}
       </div>
 
       {feeNotice ? (

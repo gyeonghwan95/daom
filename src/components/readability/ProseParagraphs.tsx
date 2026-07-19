@@ -10,9 +10,9 @@ export function ProseParagraphs({
   if (paragraphs.length === 0) return null;
 
   return (
-    <div className={`readability-prose max-w-3xl space-y-3 md:space-y-4 ${className}`.trim()}>
+    <div className={`readability-prose space-y-4 ${className}`.trim()}>
       {paragraphs.map((paragraph) => (
-        <p key={paragraph.slice(0, 48)} className="body-text text-[0.9375rem] leading-relaxed md:text-base">
+        <p key={paragraph.slice(0, 48)} className="body-text">
           {paragraph}
         </p>
       ))}

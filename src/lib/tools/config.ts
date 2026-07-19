@@ -63,7 +63,7 @@ export const toolDefinitions: ToolDefinition[] = [
       {
         question: "상속등기에 법정 기한이 있나요?",
         answer:
-          "상속포기·한정승인은 3개월 기한이 알려져 있습니다. 상속등기 자체는 사안마다 다르지만 지연 시 과태료 등을 검토해야 할 수 있습니다.",
+          "상속포기·한정승인은 3개월 기한이 알려져 있습니다. 상속등기·취득세 신고는 별도 기준으로 확인하며, 지연 시 매매·담보 등 실무상 제약이 생길 수 있습니다.",
       },
     ],
     serviceSlug: "inheritance-registration",
