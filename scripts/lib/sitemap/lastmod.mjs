@@ -22,14 +22,31 @@ function fileMtime(filePath) {
   }
 }
 
+function isContentMdxFile(filename) {
+  return filename.endsWith(".mdx") && !filename.startsWith("_");
+}
+
+function safeMatter(raw, filePath) {
+  try {
+    return matter(raw);
+  } catch (err) {
+    console.warn(
+      `[sitemap:lastmod] skip invalid frontmatter in ${filePath}: ${err instanceof Error ? err.message : err}`,
+    );
+    return null;
+  }
+}
+
 function mdxDate(dir, slug) {
   const dirPath = path.join(CONTENT, dir);
   if (!fs.existsSync(dirPath)) return null;
   for (const file of fs.readdirSync(dirPath)) {
-    if (!file.endsWith(".mdx")) continue;
+    if (!isContentMdxFile(file)) continue;
     const filePath = path.join(dirPath, file);
     const raw = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(raw);
+    const parsed = safeMatter(raw, filePath);
+    if (!parsed) continue;
+    const { data } = parsed;
     const fileSlug = String(data.slug ?? file.replace(/\.mdx$/, ""));
     if (fileSlug === slug) {
       const date = data.date ?? data.updated ?? data.modified;
@@ -160,6 +177,7 @@ export function getLastmodForPath(routePath) {
       const full = path.join(ROOT, rel);
       if (fs.existsSync(full) && fs.statSync(full).isDirectory()) {
         for (const f of fs.readdirSync(full)) {
+          if (f.endsWith(".mdx") && f.startsWith("_")) continue;
           const m = fileMtime(path.join(full, f));
           if (m && (!best || m > best)) best = m;
         }
