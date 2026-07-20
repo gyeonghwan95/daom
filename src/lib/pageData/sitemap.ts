@@ -1,32 +1,30 @@
-import type { MetadataRoute } from "next";
 import {
   getContentMeta,
   getAllContent,
 } from "@/lib/content/loader";
-import { CORE_HUB_SLUGS } from "@/lib/hub/registry";
-import { getLocalLandingConfig } from "@/lib/local-landing/config";
 import { getCaseRegionBySlug } from "@/lib/case-regions";
 import { getAllPageData } from "@/lib/pageData/registry";
 import type { PageData } from "@/lib/pageData/types";
 import { getPressArticle } from "@/lib/press-articles";
 import { siteConfig } from "@/lib/site";
 
-/** 색인 대상 path (레거시 리다이렉트·noindex 제외) */
+/** 색인 대상 path (레거시 리다이렉트·noindex 제외) — sitemap manifest 생성과 동일 기준 */
 export function isIndexablePagePath(path: string): boolean {
   if (path.startsWith("/cases/")) return false;
   if (path === "/press" || path.startsWith("/press/")) return false;
   if (path.startsWith("/blog/external/")) return false;
+  if (path === "/search") return false;
+  if (path === "/cases" || path === "/press") return false;
+  if (path.startsWith("/admin") || path.startsWith("/api/")) return false;
   if (path.startsWith("/업무사례/")) {
     const slug = decodeURIComponent(path.slice("/업무사례/".length));
     if (slug === "지역별" || slug === "업무별") return true;
-    // 필터·검색 파라미터가 붙은 URL은 sitemap에 넣지 않음(path 자체는 허브만)
     const entry = getCaseRegionBySlug(slug);
     if (entry) {
       if (!entry.indexable) return false;
       if (entry.canonicalSlug && entry.canonicalSlug !== entry.slug) return false;
       return true;
     }
-    // 전국·지역 랜딩은 registry에 published 페이지만 등록됨
   }
   return true;
 }
@@ -73,9 +71,8 @@ export function decodeSitemapUrl(url: string): string {
   return `/${decoded}`;
 }
 
-function pathToLastModified(page: PageData): Date {
-  const { path } = page;
-
+/** 콘텐츠 날짜 기반 lastmod (알 수 없으면 undefined) */
+export function pathToLastModified(path: string): Date | undefined {
   const blogMatch = path.match(/^\/blog\/(.+)$/);
   if (blogMatch) {
     const meta = getContentMeta("blog", blogMatch[1]);
@@ -101,90 +98,11 @@ function pathToLastModified(page: PageData): Date {
   }
 
   if (path === "/") {
-    return new Date(getAllContent("blog")[0]?.date ?? Date.now());
+    const latest = getAllContent("blog")[0]?.date;
+    if (latest) return new Date(latest);
   }
 
-  return new Date();
-}
-
-function pathChangeFrequency(
-  page: PageData,
-): MetadataRoute.Sitemap[number]["changeFrequency"] {
-  if (page.path === "/") return "weekly";
-  if (page.category === "blog" || page.category === "faq") return "monthly";
-  if (page.category === "media" || page.category === "external") return "yearly";
-  return "monthly";
-}
-
-/** sitemap priority 규칙 */
-export function getSitemapPriority(page: PageData): number {
-  if (page.path === "/") return 1;
-
-  if (
-    CORE_HUB_SLUGS.has(page.slug) ||
-    page.category === "pillar" ||
-    page.category === "diagnosis" ||
-    page.category === "situation" ||
-    page.category === "tool" ||
-    page.category === "glossary" ||
-    page.path === "/services" ||
-    page.path === "/situations" ||
-    page.path === "/tools" ||
-    page.path === "/glossary" ||
-    page.path === "/cases" ||
-    page.path === "/업무사례" ||
-    page.path === "/업무사례/지역별" ||
-    page.path === "/busan-legal-map"
-  ) {
-    return 0.9;
-  }
-
-  if (
-    page.category === "local" ||
-    page.category === "court" ||
-    page.category === "businessDistrict" ||
-    page.category === "realEstate" ||
-    (page.category === "service" && !page.path.includes("/cases/"))
-  ) {
-    return 0.8;
-  }
-
-  if (page.category === "cost") {
-    return 0.75;
-  }
-
-  const config = getLocalLandingConfig(page.slug);
-  if (config?.pageType === "conversion") {
-    return 0.75;
-  }
-
-  if (
-    page.category === "blog" ||
-    page.category === "case" ||
-    page.category === "faq" ||
-    page.category === "media"
-  ) {
-    return 0.7;
-  }
-
-  if (
-    ["/contact", "/contact/inquiry", "/location", "/about", "/office"].includes(page.path)
-  ) {
-    return 0.85;
-  }
-
-  return 0.75;
-}
-
-export function buildSitemapEntries(): MetadataRoute.Sitemap {
-  const pages = getIndexablePageData();
-
-  return pages.map((page) => ({
-    url: pathToSitemapUrl(page.path),
-    lastModified: pathToLastModified(page),
-    changeFrequency: pathChangeFrequency(page),
-    priority: getSitemapPriority(page),
-  }));
+  return undefined;
 }
 
 export const EXPECTED_SITEMAP_URL_COUNT = (): number =>

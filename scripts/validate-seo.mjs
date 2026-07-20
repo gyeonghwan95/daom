@@ -34,7 +34,7 @@ function assertRss() {
 
   const itemLinks = [...xml.matchAll(/<link>([^<]+)<\/link>/g)]
     .map((match) => match[1])
-    .filter((link) => link.includes("/blog/") || link.includes("/faq/"));
+    .filter((link) => link.includes("/blog/") || link.includes("/services/cases/"));
 
   for (const link of itemLinks) {
     if (!link.startsWith(SITE_URL)) {
@@ -44,6 +44,9 @@ function assertRss() {
       if (pattern.test(link)) {
         fail(`rss.xml contains disallowed URL: ${link}`);
       }
+    }
+    if (link.includes("/faq/") || link.includes("/media/")) {
+      fail(`rss.xml must be blog+cases only: ${link}`);
     }
   }
 
@@ -63,11 +66,25 @@ function assertRss() {
 }
 
 function assertSitemapSources() {
-  const routesFile = path.join(ROOT, "src/lib/seo/routes.ts");
-  const sitemapFile = path.join(ROOT, "src/app/sitemap.ts");
+  const indexPath = path.join(ROOT, "public/sitemap.xml");
+  const manifestPath = path.join(ROOT, "scripts/output/sitemap-manifest.json");
+  const generateScript = path.join(ROOT, "scripts/generate-sitemaps.mjs");
 
-  if (!fs.existsSync(routesFile) || !fs.existsSync(sitemapFile)) {
-    fail("sitemap source files missing");
+  if (!fs.existsSync(generateScript)) {
+    fail("scripts/generate-sitemaps.mjs missing");
+  }
+
+  if (!fs.existsSync(indexPath)) {
+    fail("public/sitemap.xml not found — run npm run sitemap:generate");
+  }
+
+  const indexXml = fs.readFileSync(indexPath, "utf8");
+  if (!indexXml.includes("<sitemapindex")) {
+    fail("public/sitemap.xml must be a sitemap index");
+  }
+
+  if (!fs.existsSync(manifestPath)) {
+    fail("scripts/output/sitemap-manifest.json not found");
   }
 
   const robotsFile = path.join(ROOT, "src/app/robots.ts");
@@ -77,7 +94,7 @@ function assertSitemapSources() {
     fail("robots.ts must reference sitemap.xml");
   }
 
-  console.log(`[validate-seo] sitemap.ts + robots.ts OK (${SITE_URL}/sitemap.xml)`);
+  console.log(`[validate-seo] sitemap index + manifest OK (${SITE_URL}/sitemap.xml)`);
 }
 
 function assertNapConsistency() {

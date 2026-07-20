@@ -2,7 +2,6 @@ import { isCoreHubSlug } from "@/lib/hub";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getAllPageData } from "@/lib/pageData/registry";
 import {
-  getSitemapPriority,
   isIndexablePagePath,
   pathToSitemapUrl,
 } from "@/lib/pageData/sitemap";
@@ -25,7 +24,6 @@ export type SeoPageExport = {
   relatedLinks: string[];
   jsonLdCount: number;
   isCoreHub: boolean;
-  sitemapPriority: number;
   sitemapUrl: string;
 };
 
@@ -48,7 +46,6 @@ function exportSeoPages(): SeoPageExport[] {
       relatedLinks: page.relatedLinks.map((link) => link.href),
       jsonLdCount: buildJsonLdForPageData(page).length,
       isCoreHub: isCoreHubSlug(page.slug),
-      sitemapPriority: getSitemapPriority(page),
       sitemapUrl: pathToSitemapUrl(page.path),
     }));
 }

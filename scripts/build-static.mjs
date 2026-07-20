@@ -122,7 +122,12 @@ try {
     cwd: ROOT,
   });
 
-  execSync("node scripts/validate-sitemap.mjs", {
+  execSync("node scripts/validate-sitemap.mjs --out", {
+    stdio: "inherit",
+    cwd: ROOT,
+  });
+
+  execSync("node scripts/seo-validate.mjs", {
     stdio: "inherit",
     cwd: ROOT,
   });

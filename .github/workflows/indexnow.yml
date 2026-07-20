@@ -1,6 +1,6 @@
 name: IndexNow
 
-# main 배포(Cloudflare Pages) 이후 IndexNow에 전체 색인 URL 자동 제출
+# main 배포(Cloudflare Pages) 이후 IndexNow에 변경 URL만 제출 (Naver 기본, Google 미사용)
 on:
   push:
     branches:

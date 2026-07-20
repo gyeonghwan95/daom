@@ -43,9 +43,10 @@ const NON_INDEXABLE_CASE_REGIONS = nonIndexableCaseRegionSlugs();
 export function getIndexablePaths() {
   return getAllPublishedPaths().filter((routePath) => {
     if (routePath === "/search") return false;
-    if (routePath.startsWith("/cases/")) return false;
+    if (routePath === "/cases" || routePath.startsWith("/cases/")) return false;
     if (routePath === "/press" || routePath.startsWith("/press/")) return false;
     if (routePath.startsWith("/blog/external/")) return false;
+    if (routePath.startsWith("/admin") || routePath.startsWith("/api/")) return false;
     if (routePath.startsWith("/업무사례/")) {
       const slug = routePath.slice("/업무사례/".length);
       if (slug === "지역별" || slug === "업무별") return true;

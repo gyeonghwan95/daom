@@ -16,6 +16,7 @@ import { getSiteUrl } from "./lib/site-url.mjs";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_DIR = path.join(ROOT, "out");
 const SEO_MANIFEST = path.join(ROOT, "scripts/output/seo-pages-manifest.json");
+const SITEMAP_MANIFEST = path.join(ROOT, "scripts/output/sitemap-manifest.json");
 const SITEMAP_PATH = path.join(OUT_DIR, "sitemap.xml");
 const ROBOTS_PATH = path.join(OUT_DIR, "robots.txt");
 const SITE_URL = getSiteUrl().replace(/\/$/, "");
@@ -226,63 +227,56 @@ function checkSitemap(pages) {
     return;
   }
 
-  const indexablePaths = getIndexablePaths().map(normalizePath);
-  const indexableSet = new Set(indexablePaths.map(normalizeRouteSlug));
+  if (!fs.existsSync(SITEMAP_MANIFEST)) {
+    fail("sitemap-manifest.json 없음 — npm run sitemap:generate");
+    return;
+  }
 
-  if (pages.length !== indexablePaths.length) {
+  const sitemapManifest = JSON.parse(fs.readFileSync(SITEMAP_MANIFEST, "utf8"));
+  const indexXml = fs.readFileSync(SITEMAP_PATH, "utf8");
+
+  if (!indexXml.includes("<sitemapindex")) {
+    fail("out/sitemap.xml must be a sitemap index");
+    return;
+  }
+
+  const allLocs = [];
+  for (const sub of sitemapManifest.subSitemaps ?? []) {
+    const subPath = path.join(OUT_DIR, "sitemaps", sub.filename);
+    if (!fs.existsSync(subPath)) {
+      fail(`out/sitemaps/${sub.filename} 없음`);
+      continue;
+    }
+    const subXml = fs.readFileSync(subPath, "utf8");
+    allLocs.push(...[...subXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+  }
+
+  if (allLocs.length !== sitemapManifest.totalUrls) {
     fail(
-      `SEO manifest(${pages.length}) ≠ 색인 경로(${indexablePaths.length})`,
+      `tier sitemap URL 수(${allLocs.length}) ≠ manifest(${sitemapManifest.totalUrls})`,
     );
   }
 
-  const xml = fs.readFileSync(SITEMAP_PATH, "utf8");
-  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  const sitemapPaths = locs.map(decodeSitemapUrl);
+  const sitemapSet = new Set(allLocs.map((loc) => normalizeRouteSlug(decodeSitemapUrl(loc))));
 
-  if (sitemapPaths.length !== indexablePaths.length) {
-    fail(
-      `sitemap URL 수(${sitemapPaths.length}) ≠ 색인(${indexablePaths.length})`,
-    );
-  }
-
-  const sitemapSet = new Set(sitemapPaths.map(normalizeRouteSlug));
-  const missingFromSitemap = indexablePaths.filter(
-    (p) => !sitemapSet.has(normalizeRouteSlug(p)),
-  );
-  if (missingFromSitemap.length > 0) {
-    fail(
-      `sitemap 누락 ${missingFromSitemap.length}건: ${missingFromSitemap.slice(0, 10).join(", ")}`,
-    );
-  }
-
-  for (const page of pages) {
-    const expected = pathToSitemapUrl(page.path);
-    if (!locs.includes(expected)) {
-      const hasNonAscii = /[^\x00-\x7F]/.test(page.path);
+  for (const entry of sitemapManifest.entries ?? []) {
+    const key = normalizeRouteSlug(entry.path);
+    if (!sitemapSet.has(key)) {
+      fail(`sitemap 누락: ${entry.path}`);
+    }
+    const expected = pathToSitemapUrl(entry.path);
+    if (!allLocs.includes(expected) && !allLocs.includes(entry.loc)) {
+      const hasNonAscii = /[^\x00-\x7F]/.test(entry.path);
       if (hasNonAscii) {
-        fail(
-          `sitemap 한글 URL 인코딩 누락: ${page.path} (기대: ${expected})`,
-        );
+        fail(`sitemap 한글 URL 인코딩 누락: ${entry.path} (기대: ${expected})`);
       }
     }
   }
 
-  const priorityByPath = new Map(
-    pages.map((p) => [normalizeRouteSlug(p.path), p.sitemapPriority]),
-  );
-
-  for (const match of xml.matchAll(
-    /<loc>([^<]+)<\/loc>\s*<lastmod>[^<]*<\/lastmod>\s*<changefreq>[^<]*<\/changefreq>\s*<priority>([^<]+)<\/priority>/g,
-  )) {
-    const loc = match[1];
-    const priority = Number(match[2]);
-    const routePath = normalizeRouteSlug(decodeSitemapUrl(loc));
-    const expected = priorityByPath.get(routePath);
-    if (expected !== undefined && Math.abs(expected - priority) > 0.001) {
-      fail(
-        `sitemap priority 불일치 ${routePath}: XML=${priority}, pageData=${expected}`,
-      );
-    }
+  if (pages.length !== sitemapManifest.totalUrls) {
+    warn(
+      `SEO manifest(${pages.length}) vs sitemap manifest(${sitemapManifest.totalUrls}) — redirect/noindex 경로 차이 가능`,
+    );
   }
 }
 

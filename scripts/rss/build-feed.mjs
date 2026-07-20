@@ -35,6 +35,7 @@ const SITE = {
 
 const MAX_ITEMS = 50;
 
+/** RSS: 블로그·업무사례(MDX)만 — FAQ·언론·지역 랜딩 제외 */
 const MDX_SOURCES = [
   {
     type: "blog",
@@ -45,13 +46,6 @@ const MDX_SOURCES = [
       BLOG_POST_IMAGES[slug] ?? STOCK_IMAGES.documents,
       STOCK_IMAGES.documents,
     ],
-  },
-  {
-    type: "faq",
-    dir: "faq",
-    basePath: "/faq",
-    feedLabel: "FAQ",
-    imageCandidates: () => [STOCK_IMAGES.courthouse, STOCK_IMAGES.documents],
   },
   {
     type: "cases",
@@ -317,7 +311,7 @@ function getSortScore(item) {
 }
 
 function collectFeedItems() {
-  const items = [...MDX_SOURCES.flatMap(loadMdxItems), ...loadPressArticles()];
+  const items = MDX_SOURCES.flatMap(loadMdxItems);
 
   return items
     .sort((a, b) => getSortScore(b) - getSortScore(a))
@@ -370,7 +364,7 @@ export function buildRssXml() {
   xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
   <channel>
-    <title>${escapeXml(`${SITE.name} — 법률 정보·FAQ·업무 사례`)}</title>
+    <title>${escapeXml(`${SITE.name} — 칼럼·업무 사례`)}</title>
     <link>${escapeXml(channelLink)}</link>
     <description>${escapeXml(SITE.description)}</description>
     <language>ko-KR</language>

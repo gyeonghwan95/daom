@@ -51,12 +51,12 @@ export {
 } from "./resolvers";
 export { getCoverImageForPageData } from "./cover-image";
 export {
-  buildSitemapEntries,
   getIndexablePageData,
   getIndexablePagePaths,
-  getSitemapPriority,
   isIndexablePagePath,
   pathToSitemapUrl,
+  pathToLastModified,
+  EXPECTED_SITEMAP_URL_COUNT,
 } from "./sitemap";
 export {
   getMainLandingHubLinks,

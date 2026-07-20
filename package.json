@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "node scripts/sync-favicon.mjs && next dev",
-    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && node scripts/generate-seo-pages.mjs && npm run build:search",
+    "prebuild": "node scripts/sync-favicon.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemaps.mjs && node scripts/generate-index-priority-list.mjs && node scripts/validate-sitemap.mjs && node scripts/seo-validate.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && node scripts/generate-seo-pages.mjs && npm run build:search",
     "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
     "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "node scripts/build-static.mjs",
@@ -36,6 +36,9 @@
     "indexnow": "node scripts/submit-indexnow.mjs",
     "indexnow:dry": "node scripts/submit-indexnow.mjs --dry-run",
     "indexnow:deploy": "node scripts/submit-indexnow.mjs --wait-for-key --soft --retries=30 --retry-delay=20",
+    "sitemap:generate": "node scripts/generate-sitemaps.mjs && node scripts/generate-index-priority-list.mjs",
+    "sitemap:validate": "node scripts/validate-sitemap.mjs",
+    "seo:validate": "node scripts/seo-validate.mjs && node scripts/validate-sitemap.mjs",
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000"
   },

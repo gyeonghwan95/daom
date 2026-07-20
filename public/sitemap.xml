@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-2-hubs.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-3-tools.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-4-regions.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-5-local.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-6-keywords.xml</loc>
+    <lastmod>2026-07-19</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-7-blog.xml</loc>
+    <lastmod>2026-06-30</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://다옴법무사사무소.kr/sitemaps/tier-8-media.xml</loc>
+    <lastmod>2026-07-16</lastmod>
+  </sitemap>
+</sitemapindex>
