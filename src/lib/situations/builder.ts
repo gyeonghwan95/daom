@@ -3,18 +3,32 @@ import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import { createPageData } from "@/lib/pageData/template-helpers";
 import type { PageData } from "@/lib/pageData/types";
 import {
+  getSituationCategoryById,
+  getSituationCategoryBySlug,
+  SITUATION_CATEGORY_ORDER,
+  type SituationCategoryId,
+} from "./categories";
+import {
   getAllSituationPages,
+  getRelatedSituationLinks,
   getSituationBySlug,
+  getSituationsByCategory,
   situationsHub,
 } from "./config";
 import type { SituationPage } from "./types";
 
 function collectInternalLinks(page: SituationPage) {
+  const relatedSituations = getRelatedSituationLinks(page);
   return [
+    ...relatedSituations,
     ...page.serviceLinks,
     ...page.diagnosisLinks,
     ...page.faqLinks,
     ...page.extraLinks,
+    {
+      href: getSituationCategoryById(page.situationCategory).path,
+      label: `${getSituationCategoryById(page.situationCategory).label} 허브`,
+    },
     { href: "/situations", label: "상황별 법률문제" },
     { href: "/자가진단", label: "자가진단" },
     { href: "/services", label: "업무안내" },
@@ -24,16 +38,31 @@ function collectInternalLinks(page: SituationPage) {
 }
 
 export function buildPageDataFromSituation(page: SituationPage): PageData {
+  const category = getSituationCategoryById(page.situationCategory);
+  const relatedSituations = getRelatedSituationLinks(page);
+
   const sections = [
+    {
+      title: "핵심 결론",
+      body: page.conclusion,
+    },
     {
       title: "이런 상황인가요?",
       body: "아래에 해당하면 이 안내가 도움이 될 수 있습니다.",
       items: page.situationChecklist,
     },
     {
-      title: "먼저 확인해야 할 것",
+      title: "지금 가장 먼저 할 일",
       body: "절차를 시작하기 전에 아래 항목을 순서대로 점검해 보세요.",
       items: page.firstChecks,
+    },
+    {
+      title: "가능한 해결 방법",
+      body: "상황에 따라 선택지가 달라집니다. 각 방법의 선택 기준을 함께 확인하세요.",
+      items: page.solutions.map(
+        (solution) =>
+          `${solution.title}: ${solution.body} (선택 기준: ${solution.whenToChoose})`,
+      ),
     },
     {
       title: "혼자 처리해도 되는 경우",
@@ -44,6 +73,16 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
       title: "법무사 상담이 필요한 경우",
       body: "아래에 해당하면 사실관계·서류·기한을 함께 검토하는 것이 안전합니다.",
       items: page.lawyerNeededCases,
+    },
+    {
+      title: "비용·기간에 영향을 주는 요소",
+      body: "사건마다 다르지만, 아래 요소가 수임료·등기·법원 비용에 영향을 줍니다.",
+      items: page.costFactors,
+    },
+    {
+      title: "자주 하는 실수",
+      body: "아래 실수는 기한·권리를 놓치거나 분쟁을 키우는 경우가 많습니다.",
+      items: page.commonMistakes,
     },
     {
       title: "관련 자가진단",
@@ -60,6 +99,15 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
       body: "자주 묻는 질문에서 세부 내용을 확인하세요.",
       links: page.faqLinks,
     },
+    ...(relatedSituations.length > 0
+      ? [
+          {
+            title: "비슷한 상황 안내",
+            body: "같은 분류 또는 연관된 상황 페이지입니다.",
+            links: relatedSituations,
+          },
+        ]
+      : []),
   ];
 
   return createPageData({
@@ -67,33 +115,25 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     path: page.path,
     category: "situation",
     title: page.cardTitle,
-    metaTitle: buildMetaTitle(page.h1.replace(/\?.*$/, "").slice(0, 24)),
+    metaTitle: buildMetaTitle(page.h1.replace(/\?.*$/, "").slice(0, 28)),
     metaDescription: buildMetaDescription(page.metaDescriptionBase),
     h1: page.h1,
     intro: page.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "상황별 법률문제", href: "/situations" },
+      { label: category.label, href: category.path },
       { label: page.cardTitle },
     ],
-    introParagraphs: [page.intro],
+    introParagraphs: [page.conclusion, page.intro],
     procedures: page.procedures,
     documents: page.documents,
     consultationPoints: page.lawyerNeededCases.slice(0, 5),
     faqs: page.faqs,
-    consultationExample: {
-      title: `${page.cardTitle} — 부산 상담 예시`,
-      body: `해운대·센텀 사무소에서 전화·카카오톡으로 상황을 듣고, 필요 서류와 다음 단계를 안내해 드립니다. 재송동·반여동 등 부산 전역 사건도 원격 진행이 가능합니다.`,
-    },
+    consultationExample: page.caseExample,
     internalLinks: collectInternalLinks(page),
     sections,
-    primaryKeywords: [
-      page.cardTitle,
-      "부산 법무사",
-      "해운대 법무사",
-      "센텀 법무사",
-      "부산법무사",
-    ],
+    primaryKeywords: [page.cardTitle, page.searchIntent, category.label],
     serviceSlug: page.serviceSlug,
     ogImage: page.serviceSlug
       ? getServiceImage(page.serviceSlug).src
@@ -101,7 +141,7 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     includeFaqSchema: true,
     ctaTitle: "지금 상황, 함께 정리해 드립니다",
     ctaText:
-      "위 내용은 일반적인 안내입니다. 사실관계·서류·기한은 사건마다 다릅니다. 부산 해운대구·센텀 다옴법무사사무소에 연락 주시면 다음에 무엇을 해야 할지부터 정리해 드립니다.",
+      "위 내용은 일반적인 안내이며, 법률·절차는 사건마다 달라질 수 있습니다. 사실관계·서류·기한을 확인한 뒤 다음 단계를 정하는 것이 좋습니다. 부산 해운대구·센텀 다옴법무사사무소에 연락 주시면 우선순위부터 정리해 드립니다.",
   });
 }
 
@@ -110,6 +150,11 @@ export function buildSituationsHubPageData(): PageData {
     href: page.path,
     label: page.cardTitle,
   }));
+
+  const categoryLinks = SITUATION_CATEGORY_ORDER.map((id) => {
+    const cat = getSituationCategoryById(id);
+    return { href: cat.path, label: cat.label };
+  });
 
   return createPageData({
     slug: situationsHub.slug,
@@ -131,15 +176,20 @@ export function buildSituationsHubPageData(): PageData {
       body: "업무명을 몰라도 괜찮습니다. ‘부모님이 돌아가셨다’, ‘전세금을 못 받았다’처럼 겪고 계신 상황을 말씀해 주시면, 부산 해운대구·센텀 사무소에서 절차와 서류를 안내해 드립니다.",
     },
     internalLinks: [
+      ...categoryLinks,
       ...situationCards,
       { href: "/자가진단", label: "자가진단" },
       { href: "/services", label: "업무안내" },
       { href: "/faq", label: "FAQ" },
       { href: "/contact", label: "상담 문의" },
-      { href: "/해운대법무사", label: "해운대 법무사" },
-      { href: "/센텀법무사", label: "센텀 법무사" },
+      { href: "/glossary", label: "법률용어사전" },
     ],
     sections: [
+      {
+        title: "분류별 안내",
+        body: "겪고 계신 문제와 가까운 분류를 선택하세요.",
+        links: categoryLinks,
+      },
       {
         title: "상황별 안내 목록",
         body: "지금 겪고 계신 문제에 가까운 항목을 선택하세요.",
@@ -148,16 +198,93 @@ export function buildSituationsHubPageData(): PageData {
     ],
     primaryKeywords: [
       "상황별 법률문제",
-      "부산 법무사",
-      "해운대 법무사",
-      "센텀 법무사",
       "법률 상담",
+      "상속",
+      "전세",
+      "개인회생",
+      "채권회수",
     ],
     includeFaqSchema: true,
     ctaTitle: "막막할 때, 다음 한 걸음부터",
     ctaText:
       "혼자 검색하다 보면 용어만 늘어날 수 있습니다. 전화·카카오톡·네이버 톡톡으로 상황을 말씀해 주시면, 부산 다옴법무사사무소에서 우선순위를 함께 정리해 드립니다.",
   });
+}
+
+export function buildSituationCategoryHubPageData(
+  categoryId: SituationCategoryId,
+): PageData {
+  const category = getSituationCategoryById(categoryId);
+  const pages = getSituationsByCategory(categoryId);
+  const pageLinks = pages.map((page) => ({
+    href: page.path,
+    label: page.cardTitle,
+  }));
+
+  return createPageData({
+    slug: `situations-category-${category.id}`,
+    path: category.path,
+    category: "situation",
+    title: category.label,
+    metaTitle: buildMetaTitle(`${category.label} 상황별 안내`),
+    metaDescription: buildMetaDescription(
+      `${category.description} 검색 의도별 체크리스트·절차·관련 업무·FAQ 링크를 제공합니다.`,
+    ),
+    h1: `${category.label} — 지금 겪는 문제부터 확인하기`,
+    intro: category.hubIntro,
+    breadcrumbs: [
+      { label: "홈", href: "/" },
+      { label: "상황별 법률문제", href: "/situations" },
+      { label: category.label },
+    ],
+    introParagraphs: [category.hubIntro],
+    faqs: [
+      {
+        question: `${category.label} 상담은 어떻게 시작하나요?`,
+        answer:
+          "겪고 계신 상황을 말씀해 주시면, 관련 안내 페이지·자가진단·필요 서류를 함께 정리해 드립니다. 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+      },
+      {
+        question: "업무명을 몰라도 괜찮은가요?",
+        answer:
+          "네. 이 분류는 법률 업무명 대신 실제 생활 상황·검색 질문을 기준으로 구성했습니다. 가장 가까운 상황 페이지를 선택하시면 됩니다.",
+      },
+    ],
+    internalLinks: [
+      ...pageLinks,
+      { href: "/situations", label: "상황별 법률문제 전체" },
+      { href: "/자가진단", label: "자가진단" },
+      { href: "/services", label: "업무안내" },
+      { href: "/faq", label: "FAQ" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    sections: [
+      {
+        title: `${category.label} 안내 목록`,
+        body: "아래에서 지금 상황과 가장 가까운 항목을 선택하세요.",
+        links: pageLinks,
+      },
+    ],
+    primaryKeywords: [category.label, category.shortLabel, "상황별 법률문제"],
+    includeFaqSchema: true,
+    ctaTitle: `${category.shortLabel} 문제, 다음 단계부터`,
+    ctaText:
+      "위 안내는 일반적인 참고용입니다. 사실관계·기한·서류는 사건마다 달라질 수 있으니, 막막할 때는 상담으로 우선순위를 함께 정해 보세요.",
+  });
+}
+
+export function resolveSituationCategoryHubPageData(
+  categorySlug: string,
+): PageData | undefined {
+  const category = getSituationCategoryBySlug(categorySlug);
+  if (!category) return undefined;
+  return buildSituationCategoryHubPageData(category.id);
+}
+
+export function buildAllSituationCategoryHubPageData(): PageData[] {
+  return SITUATION_CATEGORY_ORDER.map((id) =>
+    buildSituationCategoryHubPageData(id),
+  );
 }
 
 export function resolveSituationPageData(slug: string): PageData | undefined {
@@ -174,5 +301,21 @@ export {
   getAllSituationPages,
   getAllSituationSlugs,
   getSituationBySlug,
+  getSituationsByCategory,
+  getUrgentSituations,
+  getPopularSituations,
+  getRecentSituations,
+  getRelatedSituationLinks,
   situationsHub,
 } from "./config";
+
+export {
+  getAllSituationCategorySlugs,
+  getSituationCategoryBySlug,
+  getSituationCategoryById,
+  SITUATION_CATEGORIES,
+  SITUATION_CATEGORY_ORDER,
+  SITUATION_CATEGORY_LABELS,
+} from "./categories";
+
+export type { SituationPage, SituationsHubConfig } from "./types";

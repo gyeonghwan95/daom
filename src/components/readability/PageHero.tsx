@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
 import { KeywordBadges } from "./KeywordBadges";
 import { ProseParagraphs } from "./ProseParagraphs";
 import type { SiteImageAsset } from "@/lib/site-images";
@@ -15,7 +16,10 @@ type PageHeroProps = {
   ctaLabel?: string;
   secondaryCta?: { href: string; label: string };
   showDiagnosisCta?: boolean;
-  /** 히어로 우측(데스크톱) 대표 이미지 */
+  /** 단일 상담 CTA일 때 '안윤정 법무사는 누구일까?' 버튼 표시 */
+  showAboutLawyerCta?: boolean;
+  /** H1 위 좌측 — 전국 업무 가능 chip */
+  showNationwideChip?: boolean;
   sideImage?: SiteImageAsset;
   children?: ReactNode;
 };
@@ -30,21 +34,22 @@ export function PageHero({
   ctaLabel = "상담 문의하기",
   secondaryCta,
   showDiagnosisCta = true,
+  showAboutLawyerCta = true,
+  showNationwideChip = false,
   sideImage,
   children,
 }: PageHeroProps) {
   const descriptions =
-    introParagraphs.length > 0
-      ? introParagraphs
-      : intro
-        ? [intro]
-        : [];
+    introParagraphs.length > 0 ? introParagraphs : intro ? [intro] : [];
 
   const textBlock = (
     <>
-      {eyebrow ? (
-        <p className="readability-hero__eyebrow">{eyebrow}</p>
+      {showNationwideChip ? (
+        <div className="readability-hero__chip-row">
+          <NationwideRegionChip />
+        </div>
       ) : null}
+      {eyebrow ? <p className="readability-hero__eyebrow">{eyebrow}</p> : null}
       <h1 className="page-title">{h1}</h1>
       {descriptions.length > 0 ? (
         <div className="mt-4 md:mt-5">
@@ -60,32 +65,38 @@ export function PageHero({
     </>
   );
 
-  const ctaBlock =
-    ctaLabel ? (
-      <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
+  const aboutCta =
+    showAboutLawyerCta && !secondaryCta && !showDiagnosisCta
+      ? { href: "/about", label: "안윤정 법무사는 누구일까?" }
+      : null;
+
+  const resolvedSecondary = secondaryCta ?? aboutCta;
+
+  const ctaBlock = ctaLabel ? (
+    <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
+      <Link
+        href={ctaHref}
+        className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+      >
+        {ctaLabel}
+      </Link>
+      {resolvedSecondary ? (
         <Link
-          href={ctaHref}
-          className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+          href={resolvedSecondary.href}
+          className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
         >
-          {ctaLabel}
+          {resolvedSecondary.label}
         </Link>
-        {secondaryCta ? (
-          <Link
-            href={secondaryCta.href}
-            className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-          >
-            {secondaryCta.label}
-          </Link>
-        ) : showDiagnosisCta ? (
-          <Link
-            href="/자가진단"
-            className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-          >
-            자가진단 보기
-          </Link>
-        ) : null}
-      </div>
-    ) : null;
+      ) : showDiagnosisCta ? (
+        <Link
+          href="/자가진단"
+          className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+        >
+          자가진단 보기
+        </Link>
+      ) : null}
+    </div>
+  ) : null;
 
   if (!sideImage) {
     return (
@@ -110,6 +121,7 @@ export function PageHero({
               alt={sideImage.alt}
               fill
               priority
+              quality={72}
               className="object-cover object-[center_18%]"
               sizes="(max-width: 1024px) 15rem, 14rem"
             />

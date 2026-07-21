@@ -10,6 +10,7 @@ import {
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
+import { HeaderConsultationStatus } from "@/components/consultation/HeaderConsultationStatus";
 import { Container } from "@/components/layout/Container";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavMenuLink } from "@/components/layout/NavMenuLink";
@@ -94,11 +95,11 @@ export function Header() {
         <div ref={headerBarRef}>
           <Container
             fullWidth
-            className="flex items-center justify-between gap-3 py-2.5 md:py-3 lg:gap-6"
+            className="header-bar flex items-center justify-between gap-3 py-2.5 sm:gap-4 md:py-3 lg:gap-6"
           >
             <Link
               href="/"
-              className="site-header__brand flex min-h-11 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 lg:flex-none lg:shrink-0"
+              className="site-header__brand header-bar__brand flex min-h-11 min-w-0 shrink-0 items-center gap-2.5 sm:gap-3 lg:flex-none"
               onClick={() => {
                 closeMenu();
                 setSearchOpen(false);
@@ -123,7 +124,7 @@ export function Header() {
             </Link>
 
             <nav
-              className="hidden min-w-0 flex-1 justify-end lg:block"
+              className="hidden min-w-0 flex-1 lg:flex lg:justify-end"
               aria-label="주 메뉴"
             >
               <ul className="flex flex-wrap items-center justify-end gap-x-0.5 gap-y-1 xl:gap-x-1">
@@ -135,7 +136,11 @@ export function Header() {
               </ul>
             </nav>
 
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="header-bar__status min-w-0 flex-1 lg:hidden">
+              <HeaderConsultationStatus />
+            </div>
+
+            <div className="header-bar__actions flex shrink-0 items-center gap-1.5 sm:gap-2">
               {searchButton}
 
               <button

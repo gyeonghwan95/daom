@@ -54,7 +54,7 @@ export function LecturePageView({ page }: LecturePageViewProps) {
   };
 
   return (
-    <article className="lecture-page space-y-8 md:space-y-10">
+    <article className="lecture-page content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />

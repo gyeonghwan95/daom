@@ -16,7 +16,7 @@ export function SearchGuidesHubView() {
 
   return (
     <PageContainer>
-      <article className="space-y-10 md:space-y-14">
+      <article className="content-stack">
         <Breadcrumb items={breadcrumbs} />
         <BreadcrumbJsonLd items={breadcrumbs} currentPath="/search-guides" />
 

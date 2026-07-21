@@ -66,7 +66,7 @@ export function GlossaryHubView({ page }: GlossaryHubViewProps) {
   ).filter((item): item is GlossarySearchItem => Boolean(item));
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { ServiceConversionEnhancements } from "@/components/conversion";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
@@ -18,7 +19,11 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { recommendationFromSituation } from "@/lib/internal-links";
-import { getSituationBySlug } from "@/lib/situations";
+import {
+  getRelatedSituationLinks,
+  getSituationBySlug,
+  getSituationCategoryById,
+} from "@/lib/situations";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -34,32 +39,38 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
   if (!situation) return null;
 
+  const category = getSituationCategoryById(situation.situationCategory);
+  const relatedSituations = getRelatedSituationLinks(situation);
+
   const summaryBullets = [
-    page.intro,
-    situation.situationChecklist[0]
-      ? `이런 상황이라면: ${situation.situationChecklist[0]}`
-      : null,
-    situation.firstChecks[0]
-      ? `먼저 확인: ${situation.firstChecks[0]}`
+    situation.conclusion,
+    situation.firstChecks[0] ? `먼저 확인: ${situation.firstChecks[0]}` : null,
+    situation.solutions[0]
+      ? `선택지: ${situation.solutions[0].title}`
       : null,
     situation.procedures[0]
       ? `예상 절차: ${situation.procedures[0]}`
       : null,
-    situation.documents[0]
-      ? `준비 서류: ${situation.documents[0]}`
-      : null,
-  ].filter((item): item is string => Boolean(item)).slice(0, 5);
+  ].filter((item): item is string => Boolean(item)).slice(0, 4);
 
   const tocItems = [
+    { id: "conclusion", label: "핵심 결론" },
     { id: "situation-check", label: "이런 상황인가요?" },
-    { id: "first-checks", label: "먼저 확인해야 할 것" },
+    { id: "first-checks", label: "지금 가장 먼저 할 일" },
+    { id: "solutions", label: "해결 방법과 선택 기준" },
     { id: "self-handle", label: "혼자 처리해도 되는 경우" },
     { id: "lawyer-needed", label: "법무사 상담이 필요한 경우" },
+    { id: "cost-factors", label: "비용·기간 요소" },
+    { id: "common-mistakes", label: "자주 하는 실수" },
+    { id: "case-example", label: "상담 사례" },
     { id: "documents", label: "필요한 서류" },
     { id: "procedures", label: "예상 절차" },
     { id: "diagnosis-links", label: "관련 자가진단" },
     { id: "service-links", label: "관련 서비스·허브" },
     { id: "faq-links", label: "관련 FAQ" },
+    ...(relatedSituations.length > 0
+      ? [{ id: "related-situations", label: "비슷한 상황" }]
+      : []),
     ...(situation.extraLinks.length > 0
       ? [{ id: "more-links", label: "더 보기" }]
       : []),
@@ -68,7 +79,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
   ];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
@@ -79,30 +90,62 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         h1={page.h1}
         intro={page.intro}
         keywords={page.primaryKeywords}
-        eyebrow="Situation Guide"
+        eyebrow={`${category.label} · 상황 안내`}
         ctaLabel="상담 문의하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
       />
 
       {slug === "payment-order-certified-mail" ? (
-        <>
-          <ServiceConversionEnhancements
-            conversionKey={slug}
-            pageSlug={slug}
-            placement="top"
-          />
-        </>
+        <ServiceConversionEnhancements
+          conversionKey={slug}
+          pageSlug={slug}
+          placement="top"
+        />
       ) : null}
 
       <SummaryBox items={summaryBullets} />
 
       <PageTableOfContents items={tocItems} />
 
+      <ContentSection id="conclusion" title="핵심 결론">
+        <p className="text-base leading-relaxed text-navy md:text-lg">
+          {situation.conclusion}
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-navy/65">
+          <Link href={category.path} className="font-semibold text-navy-light hover:text-navy">
+            {category.label} 허브
+          </Link>
+          에서 비슷한 상황도 함께 확인할 수 있습니다.
+        </p>
+      </ContentSection>
+
       <ContentSection id="situation-check" title="이런 상황인가요?">
         <ChecklistBox items={situation.situationChecklist} />
       </ContentSection>
 
-      <ContentSection id="first-checks" title="먼저 확인해야 할 것">
+      <ContentSection id="first-checks" title="지금 가장 먼저 할 일">
         <ChecklistBox items={situation.firstChecks} />
+      </ContentSection>
+
+      <ContentSection id="solutions" title="가능한 해결 방법과 선택 기준">
+        <ul className="space-y-4">
+          {situation.solutions.map((solution) => (
+            <li
+              key={solution.title}
+              className="rounded-xl border border-navy/10 bg-white p-4 sm:p-5"
+            >
+              <h3 className="font-semibold text-navy">{solution.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/75 sm:text-base">
+                {solution.body}
+              </p>
+              <p className="mt-2 text-sm text-navy/60">
+                <span className="font-semibold text-navy/75">선택 기준: </span>
+                {solution.whenToChoose}
+              </p>
+            </li>
+          ))}
+        </ul>
       </ContentSection>
 
       <ContentSection id="self-handle" title="혼자 처리해도 되는 경우">
@@ -111,6 +154,29 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
       <ContentSection id="lawyer-needed" title="법무사 상담이 필요한 경우">
         <ChecklistBox items={situation.lawyerNeededCases} />
+      </ContentSection>
+
+      <ContentSection id="cost-factors" title="절차·기간·비용에 영향을 주는 요소">
+        <ChecklistBox items={situation.costFactors} />
+        <WarningBox title="비용·기간 안내">
+          <p>
+            등기·법원·공탁 비용과 법무사 수임료는 사건 복잡도에 따라 달라집니다.
+            위 항목을 기준으로 상담 시 구분해 안내드립니다.
+          </p>
+        </WarningBox>
+      </ContentSection>
+
+      <ContentSection id="common-mistakes" title="자주 하는 실수와 주의사항">
+        <ChecklistBox items={situation.commonMistakes} />
+      </ContentSection>
+
+      <ContentSection id="case-example" title="현실적인 상담 사례">
+        <div className="rounded-xl border border-beige-dark bg-beige/20 p-4 sm:p-5">
+          <h3 className="font-semibold text-navy">{situation.caseExample.title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-navy/75 sm:text-base">
+            {situation.caseExample.body}
+          </p>
+        </div>
       </ContentSection>
 
       <ContentSection id="documents" title="필요한 서류">
@@ -136,10 +202,10 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
       <ContentSection id="procedures" title="예상 절차">
         <StepTimeline steps={situation.procedures} />
-        <WarningBox title="절차 안내">
+        <WarningBox title="법률·절차 고지">
           <p>
-            위 순서는 일반적인 흐름입니다. 관할·서류·당사자 관계에 따라
-            달라질 수 있으니 참고용으로 확인해 주세요.
+            위 순서는 일반적인 흐름입니다. 관할·서류·당사자 관계·시점에 따라
+            달라질 수 있으며, 본 안내는 법률 자문을 대체하지 않습니다.
           </p>
         </WarningBox>
       </ContentSection>
@@ -151,13 +217,19 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         <RelatedContentGrid links={situation.diagnosisLinks} />
       </ContentSection>
 
-      <ContentSection id="service-links" title="관련 서비스·허브">
+      <ContentSection id="service-links" title="관련 업무·허브">
         <RelatedContentGrid links={situation.serviceLinks} />
       </ContentSection>
 
       <ContentSection id="faq-links" title="관련 FAQ">
         <RelatedContentGrid links={situation.faqLinks} />
       </ContentSection>
+
+      {relatedSituations.length > 0 ? (
+        <ContentSection id="related-situations" title="비슷한 상황 안내">
+          <RelatedContentGrid links={relatedSituations} />
+        </ContentSection>
+      ) : null}
 
       {situation.extraLinks.length > 0 ? (
         <ContentSection id="more-links" title="더 보기">

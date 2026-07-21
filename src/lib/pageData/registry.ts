@@ -23,6 +23,7 @@ import {
   buildSituationsHubPageData,
   getAllSituationPages,
   buildPageDataFromSituation,
+  buildAllSituationCategoryHubPageData,
 } from "@/lib/situations";
 import { buildBusanLegalMapHubPageData } from "@/lib/busan-legal-map/builder";
 import {
@@ -113,6 +114,10 @@ function buildAllPageData(): PageData[] {
   }
 
   pages.push(buildSituationsHubPageData());
+
+  for (const page of buildAllSituationCategoryHubPageData()) {
+    pages.push(page);
+  }
 
   for (const situation of getAllSituationPages()) {
     pages.push(buildPageDataFromSituation(situation));

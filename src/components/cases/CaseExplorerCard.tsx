@@ -19,6 +19,7 @@ export function CaseExplorerCard({ record }: CaseExplorerCardProps) {
         <SiteImage
           {...image}
           fill
+          variant="thumbnail"
           sizes="(max-width: 640px) 100vw, 400px"
           className="h-full w-full"
         />

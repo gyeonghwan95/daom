@@ -43,22 +43,14 @@ export function FloatingCTA() {
               </span>
             </div>
 
-            <div className="p-4">
-              <p className="text-base font-semibold text-navy">상담 방법 선택</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-navy/75">
-                {isOpen
-                  ? "전화·카카오톡·네이버 톡톡 중 편한 방법으로 연결해 드립니다."
-                  : "지금 문의하셔도 영업 시간에 순서대로 확인해 드립니다."}
-              </p>
-              <div className="mt-4">
-                <ConsultationButtons
-                  channels={channels}
-                  theme="light"
-                  layout="stack"
-                  showLabels="full"
-                  showQrCodes={false}
-                />
-              </div>
+            <div className="p-4 pt-3">
+              <ConsultationButtons
+                channels={channels}
+                theme="light"
+                layout="stack"
+                showLabels="full"
+                showQrCodes={false}
+              />
             </div>
           </div>
         ) : null}

@@ -51,7 +51,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
   ];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
       <JsonLd

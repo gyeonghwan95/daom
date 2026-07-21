@@ -14,12 +14,13 @@ export function PageCoverBanner({
 }: PageCoverBannerProps) {
   return (
     <div
-      className={`relative aspect-[16/9] min-h-[140px] overflow-hidden rounded-xl border border-beige-dark bg-beige sm:min-h-[180px] sm:rounded-2xl md:aspect-[2.8/1] ${className}`}
+      className={`page-cover-banner relative aspect-[16/9] min-h-[140px] overflow-hidden rounded-xl border border-beige-dark bg-beige sm:min-h-[180px] sm:rounded-2xl md:aspect-[2.8/1] ${className}`}
     >
       <SiteImage
         {...image}
         fill
         priority={priority}
+        variant="cover"
         sizes="(max-width: 768px) 100vw, 1200px"
         className="h-full w-full"
       />

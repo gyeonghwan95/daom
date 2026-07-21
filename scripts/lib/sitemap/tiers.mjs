@@ -105,6 +105,7 @@ export function tierOf(routePath) {
   if (TIER2.has(routePath)) return 2;
 
   if (routePath.includes("자가진단") || routePath === "/자가진단") return 3;
+  if (routePath.startsWith("/situations/분류/")) return 2;
   if (routePath.startsWith("/situations/")) return 3;
   if (routePath.startsWith("/tools/")) return 3;
   if (routePath.startsWith("/glossary/")) return 3;

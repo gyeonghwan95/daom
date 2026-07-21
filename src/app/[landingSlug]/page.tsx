@@ -69,7 +69,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
         <Breadcrumb items={page.breadcrumbs} />
         <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
         <JsonLd data={buildJsonLdForPageData(page)} />
-        <article className="space-y-8 md:space-y-12">
+        <article className="content-stack">
           <PageHero
             h1={page.h1}
             eyebrow="Speaker track record"

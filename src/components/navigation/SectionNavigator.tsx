@@ -8,6 +8,10 @@ import {
   computeSectionNavFixedLayout,
   getSectionNavRootMargin,
 } from "@/lib/section-nav/scroll-spy";
+import {
+  getMaxHeightAboveFooter,
+  isTopFixedVisibleAboveFooter,
+} from "@/lib/section-nav/footer-boundary";
 import type { SectionNavItem } from "@/lib/section-nav/types";
 
 type SectionNavigatorProps = {
@@ -22,10 +26,15 @@ type NavLayout = {
 export function SectionNavigator({ sections }: SectionNavigatorProps) {
   const reduced = useReducedMotion();
   const anchorRef = useRef<HTMLDivElement>(null);
+  const tocRef = useRef<HTMLElement>(null);
   const [availableSections, setAvailableSections] = useState(sections);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const [layout, setLayout] = useState<NavLayout>({ left: 0, width: 0 });
   const [isReady, setIsReady] = useState(false);
+  const [tocVisible, setTocVisible] = useState(true);
+  const [tocMaxHeight, setTocMaxHeight] = useState<number | undefined>(
+    undefined,
+  );
 
   const showToc = availableSections.length >= 2;
 
@@ -70,6 +79,56 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
       resizeObserver.disconnect();
     };
   }, [availableSections.length]);
+
+  useEffect(() => {
+    if (!showToc) return;
+
+    const syncTocFooter = () => {
+      const nav = tocRef.current;
+      if (!nav) return;
+
+      const top = nav.getBoundingClientRect().top;
+      const height = nav.scrollHeight;
+      const footerMax = getMaxHeightAboveFooter(top);
+
+      if (footerMax === null) {
+        setTocVisible(true);
+        setTocMaxHeight(undefined);
+        return;
+      }
+
+      if (footerMax <= 0) {
+        setTocVisible(false);
+        setTocMaxHeight(0);
+        return;
+      }
+
+      setTocVisible(isTopFixedVisibleAboveFooter(top, height));
+      setTocMaxHeight(footerMax);
+    };
+
+    syncTocFooter();
+    const timer = window.setTimeout(syncTocFooter, 160);
+
+    window.addEventListener("scroll", syncTocFooter, { passive: true });
+    window.addEventListener("resize", syncTocFooter);
+
+    const footer = document.querySelector("footer");
+    const resizeObserver = new ResizeObserver(syncTocFooter);
+    if (tocRef.current) {
+      resizeObserver.observe(tocRef.current);
+    }
+    if (footer instanceof HTMLElement) {
+      resizeObserver.observe(footer);
+    }
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", syncTocFooter);
+      window.removeEventListener("resize", syncTocFooter);
+      resizeObserver.disconnect();
+    };
+  }, [showToc, availableSections.length, isReady]);
 
   const scrollToSection = useCallback(
     (id: string) => {
@@ -141,6 +200,8 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
     ? activeId
     : (availableSections[0]?.id ?? "");
 
+  const showTocNav = showToc && isReady && tocVisible;
+
   return (
     <>
       <div
@@ -151,17 +212,21 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
 
       {showToc ? (
         <nav
+          ref={tocRef}
           aria-label="페이지 목차"
-          className={`fixed z-30 hidden overflow-y-auto pr-1 lg:block ${
-            isReady ? "opacity-100" : "pointer-events-none opacity-0"
+          className={`fixed z-30 hidden overflow-y-auto pr-1 transition-opacity duration-200 lg:block ${
+            showTocNav ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
           style={{
             top: "calc(var(--header-height) + 1.25rem)",
             left: layout.left,
             width: layout.width,
             maxHeight:
-              "calc(100dvh - var(--header-height) - var(--sidebar-consult-panel-reserve, 21.5rem))",
+              tocMaxHeight !== undefined
+                ? `min(calc(100dvh - var(--header-height) - var(--sidebar-consult-panel-reserve, 21.5rem)), ${Math.max(0, Math.floor(tocMaxHeight))}px)`
+                : "calc(100dvh - var(--header-height) - var(--sidebar-consult-panel-reserve, 21.5rem))",
           }}
+          aria-hidden={showTocNav ? undefined : true}
         >
           <p className="mb-3 text-xs font-semibold tracking-wide text-navy-light/80">
             페이지 목차

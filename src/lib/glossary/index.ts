@@ -14,6 +14,11 @@ export {
   GLOSSARY_TERMS,
 } from "./terms";
 export {
+  getGlossaryPlainParagraphs,
+  GLOSSARY_PLAIN_EXPLANATIONS,
+} from "./plain-explanations";
+export { isGlossaryNationwideTerm } from "./nationwide-term";
+export {
   GLOSSARY_CATEGORY_LABELS,
   type GlossaryCategory,
   type GlossaryHubConfig,

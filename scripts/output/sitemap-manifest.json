@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-20T14:00:38.636Z",
+  "generatedAt": "2026-07-21T13:16:22.728Z",
   "siteUrl": "https://다옴법무사사무소.kr",
-  "totalUrls": 1265,
+  "totalUrls": 1300,
   "tierCounts": {
     "1": 18,
-    "2": 19,
-    "3": 174,
+    "2": 26,
+    "3": 202,
     "4": 487,
     "5": 119,
     "6": 382,
@@ -578,21 +578,21 @@
   "subSitemaps": [
     {
       "loc": "https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-07-19",
+      "lastmod": "2026-07-21",
       "filename": "tier-1-core.xml",
       "count": 18
     },
     {
       "loc": "https://다옴법무사사무소.kr/sitemaps/tier-2-hubs.xml",
-      "lastmod": "2026-07-19",
+      "lastmod": "2026-07-21",
       "filename": "tier-2-hubs.xml",
-      "count": 19
+      "count": 26
     },
     {
       "loc": "https://다옴법무사사무소.kr/sitemaps/tier-3-tools.xml",
-      "lastmod": "2026-07-19",
+      "lastmod": "2026-07-21",
       "filename": "tier-3-tools.xml",
-      "count": 174
+      "count": 202
     },
     {
       "loc": "https://다옴법무사사무소.kr/sitemaps/tier-4-regions.xml",
@@ -648,7 +648,7 @@
       "path": "/업무사례",
       "tier": 1,
       "loc": "https://다옴법무사사무소.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
-      "lastmod": "2026-07-19"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/업무사례/부산법무사",
@@ -841,6 +841,48 @@
       "tier": 2,
       "loc": "https://다옴법무사사무소.kr/situations",
       "lastmod": null
+    },
+    {
+      "path": "/situations/분류/가족-사망-상속",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EA%B0%80%EC%A1%B1-%EC%82%AC%EB%A7%9D-%EC%83%81%EC%86%8D",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/개인채무-회생-파산",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EA%B0%9C%EC%9D%B8%EC%B1%84%EB%AC%B4-%ED%9A%8C%EC%83%9D-%ED%8C%8C%EC%82%B0",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/계약-일상-분쟁",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EA%B3%84%EC%95%BD-%EC%9D%BC%EC%83%81-%EB%B6%84%EC%9F%81",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/돈을-받지-못한-경우",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EB%8F%88%EC%9D%84-%EB%B0%9B%EC%A7%80-%EB%AA%BB%ED%95%9C-%EA%B2%BD%EC%9A%B0",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/법인-사업-운영",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EB%B2%95%EC%9D%B8-%EC%82%AC%EC%97%85-%EC%9A%B4%EC%98%81",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/부동산-매매-증여-등기",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EB%B6%80%EB%8F%99%EC%82%B0-%EB%A7%A4%EB%A7%A4-%EC%A6%9D%EC%97%AC-%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/분류/전세-임대차-보증금",
+      "tier": 2,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B6%84%EB%A5%98/%EC%A0%84%EC%84%B8-%EC%9E%84%EB%8C%80%EC%B0%A8-%EB%B3%B4%EC%A6%9D%EA%B8%88",
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/tools",
@@ -1797,52 +1839,220 @@
       "lastmod": "2026-07-19"
     },
     {
+      "path": "/situations/개인회생-가능-여부",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D-%EA%B0%80%EB%8A%A5-%EC%97%AC%EB%B6%80",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/계약금-반환-분쟁",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B3%84%EC%95%BD%EA%B8%88-%EB%B0%98%ED%99%98-%EB%B6%84%EC%9F%81",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/공동명의-정리",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B3%B5%EB%8F%99%EB%AA%85%EC%9D%98-%EC%A0%95%EB%A6%AC",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/공사대금-못-받음",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B3%B5%EC%82%AC%EB%8C%80%EA%B8%88-%EB%AA%BB-%EB%B0%9B%EC%9D%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/근저당-말소-지연",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B7%BC%EC%A0%80%EB%8B%B9-%EB%A7%90%EC%86%8C-%EC%A7%80%EC%97%B0",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/급여-압류-빚",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EA%B8%89%EC%97%AC-%EC%95%95%EB%A5%98-%EB%B9%9A",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/내용증명-받았을-때",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%82%B4%EC%9A%A9%EC%A6%9D%EB%AA%85-%EB%B0%9B%EC%95%98%EC%9D%84-%EB%95%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/대여금-못-받음",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%8C%80%EC%97%AC%EA%B8%88-%EB%AA%BB-%EB%B0%9B%EC%9D%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/대표자-사망-법인",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%8C%80%ED%91%9C%EC%9E%90-%EC%82%AC%EB%A7%9D-%EB%B2%95%EC%9D%B8",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/법인-설립-처음",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B2%95%EC%9D%B8-%EC%84%A4%EB%A6%BD-%EC%B2%98%EC%9D%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/보증채무-부담",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B3%B4%EC%A6%9D%EC%B1%84%EB%AC%B4-%EB%B6%80%EB%8B%B4",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/본점-이전-등기",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B3%B8%EC%A0%90-%EC%9D%B4%EC%A0%84-%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/빚-감당-어려울-때",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EB%B9%9A-%EA%B0%90%EB%8B%B9-%EC%96%B4%EB%A0%A4%EC%9A%B8-%EB%95%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/상속등기-지연-과태료",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0-%EC%A7%80%EC%97%B0-%EA%B3%BC%ED%83%9C%EB%A3%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/상속재산-조회",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0-%EC%A1%B0%ED%9A%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/상속포기-한정승인-선택",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0-%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8-%EC%84%A0%ED%83%9D",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/셀프등기-실수",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%85%80%ED%94%84%EB%93%B1%EA%B8%B0-%EC%8B%A4%EC%88%98",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/손해배상-청구",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%86%90%ED%95%B4%EB%B0%B0%EC%83%81-%EC%B2%AD%EA%B5%AC",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/임원-임기-만료",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%9E%84%EC%9B%90-%EC%9E%84%EA%B8%B0-%EB%A7%8C%EB%A3%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/임차권등기명령-필요할-때",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9-%ED%95%84%EC%9A%94%ED%95%A0-%EB%95%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/잔금-후-소유권이전-거부",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%9E%94%EA%B8%88-%ED%9B%84-%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84-%EA%B1%B0%EB%B6%80",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/전세-경매-진행",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%A0%84%EC%84%B8-%EA%B2%BD%EB%A7%A4-%EC%A7%84%ED%96%89",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/전입신고-확정일자-없음",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EC%97%86%EC%9D%8C",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/중고거래-분쟁",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98-%EB%B6%84%EC%9F%81",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/집주인-연락-두절",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%A7%91%EC%A3%BC%EC%9D%B8-%EC%97%B0%EB%9D%BD-%EB%91%90%EC%A0%88",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/채무자-재산-모름",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%EC%B1%84%EB%AC%B4%EC%9E%90-%EC%9E%AC%EC%82%B0-%EB%AA%A8%EB%A6%84",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/판결-후-강제집행",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%ED%8C%90%EA%B2%B0-%ED%9B%84-%EA%B0%95%EC%A0%9C%EC%A7%91%ED%96%89",
+      "lastmod": "2026-07-21"
+    },
+    {
+      "path": "/situations/해외-거주-상속인",
+      "tier": 3,
+      "loc": "https://다옴법무사사무소.kr/situations/%ED%95%B4%EC%99%B8-%EA%B1%B0%EC%A3%BC-%EC%83%81%EC%86%8D%EC%9D%B8",
+      "lastmod": "2026-07-21"
+    },
+    {
       "path": "/situations/corporate-officer-address-change",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/corporate-officer-address-change",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/inheritance-unknown-debt",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/inheritance-unknown-debt",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/jeonse-deposit-unpaid",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/jeonse-deposit-unpaid",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/parent-passed-away",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/parent-passed-away",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/payment-order-certified-mail",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/payment-order-certified-mail",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/personal-rehabilitation-bankruptcy",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/personal-rehabilitation-bankruptcy",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/real-estate-sale-registration",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/real-estate-sale-registration",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/situations/siblings-not-cooperating",
       "tier": 3,
       "loc": "https://다옴법무사사무소.kr/situations/siblings-not-cooperating",
-      "lastmod": "2026-06-29"
+      "lastmod": "2026-07-21"
     },
     {
       "path": "/tools/director-change-penalty-deadline",

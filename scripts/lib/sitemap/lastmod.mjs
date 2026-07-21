@@ -137,7 +137,7 @@ export function getLastmodForPath(routePath) {
   }
 
   if (routePath.startsWith("/situations/")) {
-    return fileMtime(path.join(ROOT, "src/app/situations/[slug]/page.tsx"));
+    return fileMtime(path.join(ROOT, "src/app/situations/[...slug]/page.tsx"));
   }
   if (routePath.startsWith("/tools/")) {
     return fileMtime(path.join(ROOT, "src/app/tools/[slug]/page.tsx"));

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SidebarConsultationPanel } from "@/components/consultation/SidebarConsultationPanel";
+import { computeBottomFixedAboveFooter } from "@/lib/section-nav/footer-boundary";
 
 type SidebarConsultationPanelFixedProps = {
   left: number;
@@ -9,71 +10,59 @@ type SidebarConsultationPanelFixedProps = {
   isReady: boolean;
 };
 
-/** footer와 패널 사이 여백 */
-const PANEL_GAP_PX = 20;
-/** 패널 대략 높이 (toc reserve와 동일 계열) */
-const PANEL_RESERVE_PX = 344;
-/** 헤더 + 여백 대략치 */
-const TOP_RESERVE_PX = 96;
-
-function computeBottomAboveFooter(): number {
-  const minBottom = PANEL_GAP_PX;
-  const maxBottom = Math.max(
-    minBottom,
-    window.innerHeight - PANEL_RESERVE_PX - TOP_RESERVE_PX,
-  );
-
-  const footer = document.querySelector("footer");
-  if (!(footer instanceof HTMLElement)) {
-    return minBottom;
-  }
-
-  const footerTop = footer.getBoundingClientRect().top;
-  // footer가 뷰포트 하단에 가까워지면 bottom을 올려 footer 위에 멈춤
-  const lift = window.innerHeight - footerTop + PANEL_GAP_PX;
-  return Math.min(Math.max(minBottom, lift), maxBottom);
-}
-
 export function SidebarConsultationPanelFixed({
   left,
   width,
   isReady,
 }: SidebarConsultationPanelFixedProps) {
-  const [bottom, setBottom] = useState(PANEL_GAP_PX);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [layout, setLayout] = useState(() =>
+    computeBottomFixedAboveFooter(0),
+  );
 
   useEffect(() => {
-    const syncBottom = () => {
-      setBottom(computeBottomAboveFooter());
+    const sync = () => {
+      const panelHeight = panelRef.current?.getBoundingClientRect().height ?? 0;
+      setLayout(computeBottomFixedAboveFooter(panelHeight));
     };
 
-    syncBottom();
-    window.addEventListener("scroll", syncBottom, { passive: true });
-    window.addEventListener("resize", syncBottom);
+    sync();
+    const timer = window.setTimeout(sync, 160);
+
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
 
     const footer = document.querySelector("footer");
-    const resizeObserver =
-      footer instanceof HTMLElement ? new ResizeObserver(syncBottom) : null;
+    const resizeObserver = new ResizeObserver(sync);
+    if (panelRef.current) {
+      resizeObserver.observe(panelRef.current);
+    }
     if (footer instanceof HTMLElement) {
-      resizeObserver?.observe(footer);
+      resizeObserver.observe(footer);
     }
 
     return () => {
-      window.removeEventListener("scroll", syncBottom);
-      window.removeEventListener("resize", syncBottom);
-      resizeObserver?.disconnect();
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", sync);
+      window.removeEventListener("resize", sync);
+      resizeObserver.disconnect();
     };
   }, []);
 
+  const show = isReady && layout.visible;
+
   return (
     <div
-      className={`fixed z-30 hidden lg:block ${
-        isReady ? "opacity-100" : "pointer-events-none opacity-0"
+      ref={panelRef}
+      className={`fixed z-30 hidden transition-opacity duration-200 lg:block ${
+        show ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
       style={{
-        bottom,
+        bottom: layout.bottom,
         left,
         width,
       }}
+      aria-hidden={show ? undefined : true}
     >
       <SidebarConsultationPanel />
     </div>

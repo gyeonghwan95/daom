@@ -23,6 +23,7 @@ import { formatContentDate, getServiceLabel } from "@/lib/content/loader";
 import { CASE_DISCLAIMER } from "@/lib/cases/types";
 import type { CaseRecord } from "@/lib/cases/types";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import type { PageData } from "@/lib/pageData/types";
 
 type CaseDetailViewProps = {
@@ -82,7 +83,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
   ];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
 
       <PageCoverBanner image={cover} />
@@ -93,6 +94,9 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         keywords={page.primaryKeywords}
         eyebrow="Case Study"
         ctaLabel="비슷한 상황 상담하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
+        showNationwideChip={shouldShowNationwideRegionChip(page.path, page.slug)}
       >
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <KeywordBadges keywords={badgeKeywords} max={8} />

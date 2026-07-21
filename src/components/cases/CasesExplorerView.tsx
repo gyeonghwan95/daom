@@ -21,7 +21,7 @@ export function CasesExplorerView({ page, cases }: CasesExplorerViewProps) {
   const cover = getCoverImageForPageData(page);
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />

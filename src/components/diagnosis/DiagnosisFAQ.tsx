@@ -1,4 +1,5 @@
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
+import { ContentSection } from "@/components/readability/ContentSection";
 import type { PageFaqItem } from "@/lib/pageData/types";
 
 type DiagnosisFAQProps = {
@@ -13,17 +14,8 @@ export function DiagnosisFAQ({
   if (items.length === 0) return null;
 
   return (
-    <section
-      id="faq"
-      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-      aria-labelledby="diagnosis-faq-heading"
-    >
-      <h2 id="diagnosis-faq-heading" className="section-heading">
-        {title}
-      </h2>
-      <div className="mt-4">
-        <FAQAccordion items={items} />
-      </div>
-    </section>
+    <ContentSection id="faq" title={title}>
+      <FAQAccordion items={items} />
+    </ContentSection>
   );
 }

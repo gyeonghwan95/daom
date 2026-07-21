@@ -3,6 +3,7 @@ import { buildSeoTitle } from "@/lib/seo/metadata";
 import { createPageData } from "@/lib/pageData/template-helpers";
 import type { PageData } from "@/lib/pageData/types";
 import { glossaryHub } from "./config";
+import { getGlossaryPlainParagraphs } from "./plain-explanations";
 import { getAllGlossaryTerms, getGlossaryTermBySlug } from "./terms";
 import type { GlossaryTerm } from "./types";
 
@@ -87,6 +88,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
   if (!t) return null;
 
   const relatedTerms = buildRelatedTermLinks(t);
+  const plainParagraphs = getGlossaryPlainParagraphs(t.slug, t.plainExplanation);
 
   return createPageData({
     slug: t.slug,
@@ -102,7 +104,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
       { label: "법률 용어사전", href: "/glossary" },
       { label: t.term },
     ],
-    introParagraphs: [t.plainExplanation],
+    introParagraphs: plainParagraphs.slice(0, 2),
     documents: t.checks,
     consultationPoints: t.whenItMatters,
     faqs: [
@@ -135,7 +137,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
       },
       {
         title: "쉽게 풀어쓴 설명",
-        body: t.plainExplanation,
+        body: plainParagraphs.join("\n\n"),
       },
       {
         title: "언제 문제가 되는지",

@@ -29,7 +29,7 @@ export function PracticeHubPageView({
   const cover = getCoverImageForPageData(page);
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <PageCoverBanner image={cover} />

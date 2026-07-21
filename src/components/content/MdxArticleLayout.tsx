@@ -51,7 +51,7 @@ export function MdxArticleLayout({
 
   return (
     <PageContainer>
-      <article className="mx-auto max-w-3xl">
+      <article className="content-stack">
         <Breadcrumb
           items={[
             { label: "홈", href: "/" },

@@ -1,4 +1,11 @@
-import type { SituationPage, SituationsHubConfig } from "./types";
+import type {
+  LegacySituationPageInput,
+  SituationPage,
+  SituationsHubConfig,
+} from "./types";
+import type { SituationCategoryId } from "./categories";
+import { normalizeAllSituationPages, normalizeSituationPage } from "./normalize";
+import { newSituationPages } from "./pages";
 
 const LOCAL_CONTEXT =
   "부산 해운대구·센텀, 재송동·반여동 일대에서도 전화·카카오톡·방문(예약) 상담이 가능합니다.";
@@ -30,7 +37,7 @@ export const situationsHub: SituationsHubConfig = {
   ],
 };
 
-export const situationPages: SituationPage[] = [
+const legacySituationPages: LegacySituationPageInput[] = [
   {
     slug: "parent-passed-away",
     path: "/situations/parent-passed-away",
@@ -655,6 +662,13 @@ export const situationPages: SituationPage[] = [
   },
 ];
 
+export const situationPages: SituationPage[] = normalizeAllSituationPages([
+  ...legacySituationPages.map((page) =>
+    normalizeSituationPage(page as SituationPage),
+  ),
+  ...newSituationPages,
+]);
+
 export function getSituationBySlug(slug: string): SituationPage | undefined {
   return situationPages.find((page) => page.slug === slug);
 }
@@ -665,4 +679,45 @@ export function getAllSituationSlugs(): string[] {
 
 export function getAllSituationPages(): SituationPage[] {
   return situationPages;
+}
+
+export function getSituationsByCategory(
+  categoryId: SituationCategoryId,
+): SituationPage[] {
+  return situationPages
+    .filter((page) => page.situationCategory === categoryId)
+    .sort((a, b) => b.priority - a.priority);
+}
+
+export function getUrgentSituations(limit = 6): SituationPage[] {
+  return [...situationPages]
+    .filter((page) => page.urgent)
+    .sort((a, b) => b.priority - a.priority)
+    .slice(0, limit);
+}
+
+export function getPopularSituations(limit = 8): SituationPage[] {
+  return [...situationPages]
+    .sort((a, b) => b.priority - a.priority)
+    .slice(0, limit);
+}
+
+export function getRecentSituations(limit = 6): SituationPage[] {
+  return [...situationPages]
+    .filter((page) => page.isNew)
+    .sort((a, b) => (b.addedAt ?? "").localeCompare(a.addedAt ?? ""))
+    .slice(0, limit);
+}
+
+export function getRelatedSituationLinks(
+  page: SituationPage,
+): { href: string; label: string }[] {
+  const slugs = page.relatedSituationSlugs ?? [];
+  return slugs
+    .map((relatedSlug) => {
+      const related = getSituationBySlug(relatedSlug);
+      if (!related) return null;
+      return { href: related.path, label: related.cardTitle };
+    })
+    .filter((item): item is { href: string; label: string } => Boolean(item));
 }

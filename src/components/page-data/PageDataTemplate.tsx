@@ -23,10 +23,11 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
-import type { RecommendationSource } from "@/lib/internal-links";
+import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 
 type PageDataTemplateProps = {
   page: PageData;
@@ -104,6 +105,8 @@ export function PageDataTemplate({
         keywords={page.primaryKeywords}
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
+        showAboutLawyerCta
+        showNationwideChip={shouldShowNationwideRegionChip(page.path, page.slug)}
       />
 
       {heroAddon}

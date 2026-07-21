@@ -10,7 +10,7 @@ import type { PageData } from "@/lib/pageData/types";
 
 export function CaseRegionsHubView({ page }: { page: PageData }) {
   return (
-    <article className="space-y-8 md:space-y-10">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
@@ -62,7 +62,7 @@ export function CaseRegionsHubView({ page }: { page: PageData }) {
 
 export function CaseRegionsByAreaView({ page }: { page: PageData }) {
   return (
-    <article className="space-y-8 md:space-y-10">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
@@ -88,7 +88,7 @@ export function CaseRegionsByServiceView({ page }: { page: PageData }) {
   const links = page.sections[0]?.links ?? [];
 
   return (
-    <article className="space-y-8 md:space-y-10">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />

@@ -4,11 +4,11 @@ import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
+import { GlossaryNationwideNotice } from "@/components/glossary/GlossaryNationwideNotice";
 import {
   ChecklistBox,
   ConsultationCTA,
   ContentSection,
-  InfoCard,
   PageHero,
   PageTableOfContents,
   ProseParagraphs,
@@ -16,7 +16,7 @@ import {
   SummaryBox,
 } from "@/components/readability";
 import { recommendationFromGlossaryTerm } from "@/lib/internal-links";
-import { getGlossaryTermBySlug } from "@/lib/glossary";
+import { getGlossaryPlainParagraphs, getGlossaryTermBySlug, isGlossaryNationwideTerm } from "@/lib/glossary";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 
@@ -31,14 +31,23 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
 
   if (!term) return null;
 
+  const plainParagraphs = getGlossaryPlainParagraphs(
+    term.slug,
+    term.plainExplanation,
+  );
+
   const summaryBullets = [
     term.oneLineDefinition,
-    term.plainExplanation.length > 120
-      ? `${term.plainExplanation.slice(0, 117)}…`
-      : term.plainExplanation,
+    plainParagraphs[0]
+      ? plainParagraphs[0].length > 120
+        ? `${plainParagraphs[0].slice(0, 117)}…`
+        : plainParagraphs[0]
+      : null,
     term.whenItMatters[0] ? `관련 상황: ${term.whenItMatters[0]}` : null,
     term.checks[0] ? `확인 사항: ${term.checks[0]}` : null,
-  ].filter((item): item is string => Boolean(item)).slice(0, 5);
+  ]
+    .filter((item): item is string => Boolean(item))
+    .slice(0, 5);
 
   const tocItems = [
     { id: "glossary-plain", label: "쉽게 풀어쓴 설명" },
@@ -53,7 +62,7 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
   ];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
 
       <PageCoverBanner image={cover} />
@@ -64,6 +73,9 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
         keywords={page.primaryKeywords}
         eyebrow="Legal Glossary"
         ctaLabel="용어 관련 상담하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
+        showNationwideChip={isGlossaryNationwideTerm(slug)}
       />
 
       <SummaryBox items={summaryBullets} />
@@ -71,9 +83,12 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="glossary-plain" title="쉽게 풀어쓴 설명">
-        <InfoCard variant="highlight">
-          <ProseParagraphs paragraphs={[term.plainExplanation]} />
-        </InfoCard>
+        <div className="glossary-prose">
+          <ProseParagraphs paragraphs={plainParagraphs} />
+        </div>
+        {isGlossaryNationwideTerm(slug) ? (
+          <GlossaryNationwideNotice termLabel={term.term} />
+        ) : null}
       </ContentSection>
 
       <ConsultationCTA

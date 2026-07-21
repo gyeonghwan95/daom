@@ -29,6 +29,7 @@ export function BlogCard({
           <SiteImage
             {...image}
             fill
+            variant="thumbnail"
             sizes="(max-width: 640px) 100vw, 400px"
             className="h-full w-full transition-transform duration-500 group-hover:scale-105"
           />

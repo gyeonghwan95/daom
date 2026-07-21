@@ -43,7 +43,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
   const hubLink = getTopicHubLinkForService(service.slug);
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb
         items={[
           { label: "홈", href: "/" },

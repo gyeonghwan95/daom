@@ -78,7 +78,7 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
   ];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
       <JsonLd

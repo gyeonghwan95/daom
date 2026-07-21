@@ -58,12 +58,13 @@ export function HomeInsights() {
                 className="group flex h-full flex-col overflow-hidden rounded-xl border border-beige-dark bg-white transition-all duration-300 hover:border-navy/15 hover:shadow-md hover:shadow-navy/5"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <SiteImage
-                    {...item.image}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-                  />
+          <SiteImage
+            {...item.image}
+            fill
+            variant="thumbnail"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+          />
                 </div>
                 <div className="flex flex-1 flex-col p-4 md:p-5">
                   <span className="text-[0.6875rem] font-semibold uppercase tracking-wider text-navy-light sm:text-xs">

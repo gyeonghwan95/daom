@@ -64,7 +64,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
     : [];
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
@@ -79,6 +79,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         ctaHref="/contact"
         ctaLabel="상담 문의하기"
         secondaryCta={{ href: "/부산법무사상담", label: "상담 전 준비사항" }}
+        showDiagnosisCta={false}
       />
 
       {conversionKey ? (

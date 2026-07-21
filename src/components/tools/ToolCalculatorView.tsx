@@ -73,7 +73,7 @@ export function ToolCalculatorView({
   }
 
   return (
-    <article className="space-y-8 md:space-y-12">
+    <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
 
       <PageCoverBanner image={cover} />
@@ -84,6 +84,8 @@ export function ToolCalculatorView({
         keywords={page.primaryKeywords}
         eyebrow="Legal Calculator"
         ctaLabel="계산 결과 상담하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
       />
 
       <SummaryBox items={summaryBullets} />

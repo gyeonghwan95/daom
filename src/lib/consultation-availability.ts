@@ -4,6 +4,8 @@ const OPEN_MINUTES = 9 * 60;
 const WEEKDAY_CLOSE_MINUTES = 19 * 60;
 const WEEKEND_CLOSE_MINUTES = 14 * 60;
 
+const CLOSED_STATUS_LABEL = "현재 카카오·네이버톡톡만 가능";
+
 export type ConsultationAvailability = {
   isOpen: boolean;
   statusLabel: string;
@@ -57,48 +59,37 @@ function isConsultationOpen(weekday: number, minutes: number): boolean {
   return false;
 }
 
+/** 영업 외 시간 — 전화 가능 시점만 하위 멘트로 안내 */
+function getPhoneAvailabilityHint(weekday: number, minutes: number): string {
+  if (minutes < OPEN_MINUTES) {
+    return "전화상담은 오늘 9시부터 가능";
+  }
+
+  if (weekday === 5) {
+    return "전화상담은 토요일 9시부터 가능";
+  }
+
+  if (weekday === 6) {
+    return "전화상담은 일요일 9시부터 가능";
+  }
+
+  if (weekday === 0) {
+    return "전화상담은 월요일 9시부터 가능";
+  }
+
+  return "전화상담은 내일 9시부터 가능";
+}
+
 function getClosedAvailability(
   weekday: number,
   minutes: number,
 ): ConsultationAvailability {
-  const hint = "지금 문의하시면 영업 시간에 순서대로 확인해 드려요";
-
-  if (minutes < OPEN_MINUTES) {
-    return {
-      isOpen: false,
-      statusLabel: "오전 9시부터 답변",
-      statusHint: "남겨주신 문의는 영업 시작 후 확인해 드립니다",
-    };
-  }
-
-  if (weekday === 5) {
-    return {
-      isOpen: false,
-      statusLabel: "토요일 9시부터 답변",
-      statusHint: hint,
-    };
-  }
-
-  if (weekday === 6) {
-    return {
-      isOpen: false,
-      statusLabel: "일요일 9시부터 답변",
-      statusHint: hint,
-    };
-  }
-
-  if (weekday === 0) {
-    return {
-      isOpen: false,
-      statusLabel: "월요일 9시에 확인",
-      statusHint: hint,
-    };
-  }
+  const phoneHint = getPhoneAvailabilityHint(weekday, minutes);
 
   return {
     isOpen: false,
-    statusLabel: "내일 9시부터 답변",
-    statusHint: hint,
+    statusLabel: CLOSED_STATUS_LABEL,
+    statusHint: `${phoneHint} · 지금 메시지 주시면 확인해 드려요`,
   };
 }
 

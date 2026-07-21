@@ -91,7 +91,7 @@ export function B2BPageView({ page }: B2BPageViewProps) {
             : null;
 
   return (
-    <article className="b2b-page space-y-8 md:space-y-12">
+    <article className="b2b-page content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />

@@ -19,7 +19,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
 
   return (
     <PageContainer>
-      <article className="mx-auto max-w-3xl">
+      <article className="content-stack">
         <Breadcrumb items={breadcrumbs} />
         <BreadcrumbJsonLd
           items={breadcrumbs}

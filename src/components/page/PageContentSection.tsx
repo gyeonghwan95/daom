@@ -36,7 +36,7 @@ export function PageContentSection({
   children,
 }: PageContentSectionProps) {
   return (
-    <article className="space-y-6 md:space-y-10">
+    <article className="content-stack">
       {breadcrumbs && breadcrumbs.length > 0 && (
         <>
           <Breadcrumb items={breadcrumbs} />
