@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePauseMarqueeWhileScrolling } from "@/hooks/usePauseMarqueeWhileScrolling";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { SiteImageAsset } from "@/lib/site-images";
 
@@ -37,6 +38,7 @@ export function HeroImageMarquee({
   pauseOnHover = true,
 }: HeroImageMarqueeProps) {
   const reduced = useReducedMotion();
+  const rootRef = usePauseMarqueeWhileScrolling<HTMLDivElement>();
 
   if (slides.length === 0) {
     return null;
@@ -62,6 +64,7 @@ export function HeroImageMarquee({
 
   return (
     <div
+      ref={rootRef}
       className={`marquee-v-root home-hero__frame h-full min-h-0 ${pauseOnHover ? "marquee-v-root--pause" : ""} ${className}`}
       aria-label="사무소 사진"
     >

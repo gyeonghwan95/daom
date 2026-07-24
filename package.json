@@ -40,7 +40,9 @@
     "sitemap:validate": "node scripts/validate-sitemap.mjs",
     "seo:validate": "node scripts/seo-validate.mjs && node scripts/validate-sitemap.mjs",
     "verify": "npm run build && npm run check:diagnosis",
-    "preview": "npx --yes serve@14 out -p 3000"
+    "preview": "npx --yes serve@14 out -p 3000",
+    "preview:cf": "npx --yes wrangler@4 pages dev out --port 8788",
+    "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

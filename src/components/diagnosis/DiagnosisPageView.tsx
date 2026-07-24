@@ -18,7 +18,9 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { recommendationFromDiagnosis } from "@/lib/internal-links";
+import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { getDiagnosisResultRecommendations } from "@/lib/diagnosis/result-recommendations";
 import type { Diagnosis } from "@/data/diagnosis";
 import { getDiagnosisCtaCopy } from "@/lib/diagnosis/builder";
@@ -86,7 +88,20 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         intro={diagnosis.intro[0] ?? page.intro}
         keywords={page.primaryKeywords}
         ctaLabel="자가진단 후 상담하기"
+        showNationwideChip={shouldShowNationwideRegionChip(
+          page.path,
+          page.slug,
+          page.serviceSlug,
+        )}
       />
+
+      {shouldShowNationwideRegionChip(
+        page.path,
+        page.slug,
+        page.serviceSlug,
+      ) ? (
+        <NationwideRemoteBanner />
+      ) : null}
 
       <SummaryBox items={summaryBullets} />
 

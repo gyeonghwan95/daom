@@ -2,7 +2,7 @@
 export function NationwideRegionChip() {
   return (
     <span className="nationwide-region-chip" role="status">
-      전 지역 업무 가능
+      전 지역 · 방문 없이 가능
     </span>
   );
 }

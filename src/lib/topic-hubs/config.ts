@@ -4,7 +4,7 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 export const topicHubConfigs: TopicHubConfig[] = [
   {
     slug: "상속",
-    title: "상속 법무 종합 안내",
+    title: "상속등기·포기·한정승인｜전국·부산 상담",
     h1: "상속등기·상속포기·한정승인·전국 상속 상담",
     description:
       "상속 법무 종합 안내. 전국 상속등기·유증등기, 부산 상속포기·한정승인·재산분할. 다옴법무사사무소 안윤정 법무사가 절차·서류·비용·기한을 실무 기준으로 안내합니다.",
@@ -77,7 +77,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "법인등기",
-    title: "부산 법인등기 종합 안내",
+    title: "법인설립·임원변경·본점이전｜부산 법인등기",
     h1: "부산 법인설립·임원변경·본점이전 등기 상담",
     description:
       "부산 법인설립등기·임원변경등기·본점이전·증자·해산청산. 센텀·문현·명지 법인 등기 실무. 다옴법무사사무소 안윤정 법무사.",
@@ -144,7 +144,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "부동산등기",
-    title: "부산 부동산등기 종합 안내",
+    title: "부동산등기·소유권이전｜매매·증여 절차",
     h1: "부산 부동산등기·소유권이전·매매등기 상담",
     description:
       "부산 부동산등기·소유권이전등기·매매·증여·상속·재개발·전세권 등기. 해운대·서면·남부산등기소 관할 안내. 다옴법무사사무소.",
@@ -200,7 +200,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "개인회생파산",
-    title: "부산 개인회생·파산 종합 안내",
+    title: "개인회생·파산·면책｜소득·채무별 선택",
     h1: "부산 개인회생·개인파산·면책 상담",
     description:
       "부산 개인회생·개인파산·채무조정·면책·변제계획안. 부산회생법원 관할 안내. 다옴법무사사무소 안윤정 법무사.",
@@ -253,7 +253,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "민사소송",
-    title: "부산 민사·소송서류 종합 안내",
+    title: "지급명령·가압류·소장｜채권 회수 절차",
     h1: "부산 지급명령·소장·가압류·가처분 상담",
     description:
       "부산 지급명령·대여금·물품대금·손해배상·가압류·가처분·민사집행. 부산지방법원 관할 안내. 다옴법무사사무소.",
@@ -302,7 +302,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "임대차전세",
-    title: "부산 임대차·전세보증금 종합 안내",
+    title: "전세보증금·임차권등기명령｜미반환 대응",
     h1: "부산 전세보증금반환·임차권등기명령 상담",
     description:
       "부산 전세보증금반환·임차권등기명령·전세권설정·전세사기예방. 해운대·수영·북구 임대차 분쟁. 다옴법무사사무소.",
@@ -352,7 +352,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "공탁채권회수",
-    title: "부산 공탁·채권회수 종합 안내",
+    title: "공탁·채권압류·추심｜회수 절차 안내",
     h1: "부산 변제공탁·채권압류·추심명령 상담",
     description:
       "부산 변제공탁·집행공탁·채권압류·추심명령·미수금회수. 부산지방법원 공탁·민사집행 안내. 다옴법무사사무소.",
@@ -389,7 +389,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "가족후견",
-    title: "부산 가족·후견·가사비송 종합 안내",
+    title: "성년후견·가사비송｜가족·상속 특별대리",
     h1: "부산 성년후견·가사비송·상속특별대리인 상담",
     description:
       "부산 성년후견·한정후견·임의후견·가사비송·상속특별대리인. 부산가정법원 관할 안내. 다옴법무사사무소.",
@@ -427,7 +427,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "특수등기",
-    title: "부산 특수등기·기타등기 종합 안내",
+    title: "선박·비영리·종중·외국인｜특수등기 안내",
     h1: "부산 선박·비영리법인·종중·외국인 부동산등기 상담",
     description:
       "부산 선박등기·비영리법인·종중·교회·외국인 부동산등기·재외국민 상속. 다옴법무사사무소.",
@@ -465,7 +465,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "창업법무",
-    title: "부산 창업·소상공인 법무 종합 안내",
+    title: "스타트업·소상공인｜법인설립·운영 법무",
     h1: "부산 스타트업·소상공인·법인설립 법무 상담",
     description:
       "부산 창업법무·스타트업·소상공인·법인설립·정관·임원변경·폐업청산. 센텀·명지·에코델타 창업 등기. 다옴법무사사무소.",

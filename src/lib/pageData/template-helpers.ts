@@ -229,6 +229,7 @@ export function createPageData(input: CreatePageDataInput): PageData {
     ogImage: input.ogImage,
     includeFaqSchema: input.includeFaqSchema ?? input.category === "faq",
     openGraphType: input.openGraphType,
+    serviceSlug: input.serviceSlug,
   };
 
   return ensureMinContent(page);

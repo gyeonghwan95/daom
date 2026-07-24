@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
+import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   SituationExplorer,
   type SituationSearchItem,
@@ -142,6 +143,11 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
       </section>
 
       <DiagnosisFAQ items={page.faqs} />
+
+      <QuickInquiryInlineCard
+        pageTitle={page.h1 || page.title}
+        pageUrl={page.path}
+      />
 
       <div id="consultation">
         <LawyerConsultationGuide

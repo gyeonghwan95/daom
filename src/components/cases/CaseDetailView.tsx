@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
+import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
@@ -23,6 +24,7 @@ import { formatContentDate, getServiceLabel } from "@/lib/content/loader";
 import { CASE_DISCLAIMER } from "@/lib/cases/types";
 import type { CaseRecord } from "@/lib/cases/types";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import type { PageData } from "@/lib/pageData/types";
 
@@ -96,7 +98,11 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         ctaLabel="비슷한 상황 상담하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
-        showNationwideChip={shouldShowNationwideRegionChip(page.path, page.slug)}
+        showNationwideChip={shouldShowNationwideRegionChip(
+          page.path,
+          page.slug,
+          page.serviceSlug,
+        )}
       >
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <KeywordBadges keywords={badgeKeywords} max={8} />
@@ -105,6 +111,14 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
           </p>
         </div>
       </PageHero>
+
+      {shouldShowNationwideRegionChip(
+        page.path,
+        page.slug,
+        page.serviceSlug,
+      ) ? (
+        <NationwideRemoteBanner />
+      ) : null}
 
       <WarningBox title="사례 안내">
         <p>{CASE_DISCLAIMER}</p>
@@ -144,6 +158,11 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         title="비슷한 상황이라면 서류부터 확인해 보세요"
         description="준비서류를 먼저 점검한 뒤 상담을 요청하시면 검토가 수월합니다."
         buttonLabel="상담 문의하기"
+      />
+
+      <QuickInquiryInlineCard
+        pageTitle={page.h1 || page.title}
+        pageUrl={page.path}
       />
 
       {sections.procedures.length > 0 ? (

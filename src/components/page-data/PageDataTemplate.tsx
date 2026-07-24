@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   buildPageSummaryBullets,
   buildPageTocItems,
@@ -27,7 +28,13 @@ import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
-import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
+import {
+  getNationwideBannerHeadline,
+  NATIONWIDE_SERVICE_SLUGS,
+  shouldShowNationwideRegionChip,
+} from "@/lib/nationwide/show-region-chip";
+import { shouldShowQuickInquiryInline } from "@/lib/quick-inquiry/placements";
 
 type PageDataTemplateProps = {
   page: PageData;
@@ -80,6 +87,25 @@ export function PageDataTemplate({
     hasDetailContent: Boolean(children),
   });
   const conversionKey = resolveConversionKey(page);
+  const showNationwide = shouldShowNationwideRegionChip(
+    page.path,
+    page.slug,
+    page.serviceSlug,
+  );
+  const isDedicatedNationwideHub =
+    page.path.startsWith("/전국") ||
+    page.path === "/여러지역상속부동산등기" ||
+    page.slug === "전국업무";
+  /** 업무안내·전국허브는 NationwideServiceNotice가 있어 배너 중복 생략 */
+  const showRemoteBanner =
+    showNationwide &&
+    !isDedicatedNationwideHub &&
+    !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
+  const showQuickInquiry = shouldShowQuickInquiryInline({
+    category: page.category,
+    slug: page.slug,
+    serviceSlug: page.serviceSlug ?? (page.category === "service" ? page.slug : undefined),
+  });
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
     conversionKey ? (
@@ -106,8 +132,14 @@ export function PageDataTemplate({
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
-        showNationwideChip={shouldShowNationwideRegionChip(page.path, page.slug)}
+        showNationwideChip={showNationwide}
       />
+
+      {showRemoteBanner ? (
+        <NationwideRemoteBanner
+          headline={getNationwideBannerHeadline(page.slug)}
+        />
+      ) : null}
 
       {heroAddon}
 
@@ -143,6 +175,11 @@ export function PageDataTemplate({
           buttonLabel="내 상황에 맞게 상담하기"
         />
       ) : null}
+
+      {showQuickInquiry ? (
+        <QuickInquiryInlineCard pageTitle={page.h1 || page.title} pageUrl={page.path} />
+      ) : null}
+
       {page.consultationPoints.length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
           <ChecklistBox items={page.consultationPoints} />

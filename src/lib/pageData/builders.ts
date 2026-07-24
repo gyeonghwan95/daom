@@ -487,22 +487,66 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
   });
 }
 
+const SERVICE_PAGE_SEO: Record<
+  string,
+  { metaTitle: string; h1: string }
+> = {
+  "inheritance-registration": {
+    metaTitle: "전국 상속등기 법무사｜부산 방문 없이 타지역 부동산도 진행",
+    h1: "전국 상속등기 상담",
+  },
+  "inheritance-renunciation": {
+    metaTitle: "상속포기 절차·3개월 기한｜가정법원 신고·주의사항",
+    h1: "상속포기 — 3개월 기한·채무 승계 차단",
+  },
+  "qualified-acceptance": {
+    metaTitle: "한정승인 절차｜재산 범위 내 채무·재산목록",
+    h1: "한정승인 — 재산 범위 내 채무만 책임질 때",
+  },
+  "real-estate-registration": {
+    metaTitle: "부동산등기 절차·서류｜소유권·담보·말소",
+    h1: "부동산등기 — 소유권·담보·말소 상담",
+  },
+  "ownership-transfer": {
+    metaTitle: "소유권이전등기｜매매·잔금 후 명의이전 서류",
+    h1: "소유권이전등기 — 매매·증여 명의변경",
+  },
+  "corporate-registration": {
+    metaTitle: "법인등기｜설립·임원변경·본점이전 절차",
+    h1: "법인등기 — 설립·임원·본점 변경 상담",
+  },
+  "company-establishment": {
+    metaTitle: "법인설립등기 서류·절차｜정관·납입·인감",
+    h1: "법인설립등기 — 준비서류와 설립 순서",
+  },
+  "director-change": {
+    metaTitle: "임원변경등기 기한·과태료｜대표이사·이사 변경",
+    h1: "임원변경등기 — 임기 만료·과태료 주의",
+  },
+  "personal-rehabilitation": {
+    metaTitle: "개인회생 가능 여부｜소득·채무·변제계획 기준",
+    h1: "개인회생 — 빚을 감당하기 어려울 때 판단 기준",
+  },
+  bankruptcy: {
+    metaTitle: "개인파산·면책｜신청 자격·회생과의 선택",
+    h1: "개인파산·면책 — 신청 자격과 절차",
+  },
+};
+
 export function buildPageDataFromService(service: ServiceDetail): PageData {
-  const isInheritanceRegistration = service.slug === "inheritance-registration";
+  const seo = SERVICE_PAGE_SEO[service.slug] ?? {
+    metaTitle: `${service.title} 절차·서류·비용｜부산 법무사`,
+    h1: `부산 ${service.title} — 절차·서류 상담`,
+  };
+
   return createPageData({
     slug: service.slug,
     path: `/services/${service.slug}`,
     category: "service",
     title: service.title,
-    metaTitle: buildMetaTitle(
-      isInheritanceRegistration
-        ? "전국 상속등기 법무사｜부산 방문 없이 타지역 부동산도 진행"
-        : `${service.title} 업무 안내`,
-    ),
+    metaTitle: buildMetaTitle(seo.metaTitle),
     metaDescription: buildMetaDescription(service.description),
-    h1: isInheritanceRegistration
-      ? "전국 상속등기 상담"
-      : `부산 ${service.title} 상담`,
+    h1: seo.h1,
     intro: service.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },

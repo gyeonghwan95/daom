@@ -5,6 +5,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { GlossaryNationwideNotice } from "@/components/glossary/GlossaryNationwideNotice";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import {
   ChecklistBox,
   ConsultationCTA,
@@ -77,6 +78,8 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
         showAboutLawyerCta
         showNationwideChip={isGlossaryNationwideTerm(slug)}
       />
+
+      {isGlossaryNationwideTerm(slug) ? <NationwideRemoteBanner /> : null}
 
       <SummaryBox items={summaryBullets} />
 

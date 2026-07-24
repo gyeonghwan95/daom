@@ -2,11 +2,11 @@ import { getServiceImage } from "@/lib/site-images";
 import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import { createPageData } from "@/lib/pageData/template-helpers";
 import type { PageData } from "@/lib/pageData/types";
+import type { SituationCategoryId } from "./categories";
 import {
   getSituationCategoryById,
   getSituationCategoryBySlug,
   SITUATION_CATEGORY_ORDER,
-  type SituationCategoryId,
 } from "./categories";
 import {
   getAllSituationPages,
@@ -16,6 +16,16 @@ import {
   situationsHub,
 } from "./config";
 import type { SituationPage } from "./types";
+
+const SITUATION_CATEGORY_META_TITLES: Record<SituationCategoryId, string> = {
+  "inheritance-death": "가족 사망·상속｜상속등기·포기·한정승인 상황별",
+  "jeonse-lease": "전세·보증금｜미반환·임차권등기명령 상황별",
+  "real-estate-trade": "부동산 매매·증여·등기｜잔금·말소·명의 상황별",
+  "debt-rehab": "개인채무·회생·파산｜빚·압류·신청 가능 여부",
+  "corporate-business": "법인·사업 운영｜설립·임원·본점이전 상황별",
+  "debt-collection": "돈을 받지 못한 경우｜지급명령·강제집행 상황별",
+  "contract-dispute": "계약·일상 분쟁｜계약금·내용증명·합의 상황별",
+};
 
 function collectInternalLinks(page: SituationPage) {
   const relatedSituations = getRelatedSituationLinks(page);
@@ -115,7 +125,9 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     path: page.path,
     category: "situation",
     title: page.cardTitle,
-    metaTitle: buildMetaTitle(page.h1.replace(/\?.*$/, "").slice(0, 28)),
+    metaTitle: buildMetaTitle(
+      `${page.cardTitle}｜${page.searchIntent}`.slice(0, 40),
+    ),
     metaDescription: buildMetaDescription(page.metaDescriptionBase),
     h1: page.h1,
     intro: page.intro,
@@ -161,7 +173,7 @@ export function buildSituationsHubPageData(): PageData {
     path: situationsHub.path,
     category: "situation",
     title: "상황별 법률문제",
-    metaTitle: buildMetaTitle("상황별 법률문제 안내"),
+    metaTitle: buildMetaTitle("상황별 법률문제｜상속·전세·법인·채무"),
     metaDescription: buildMetaDescription(situationsHub.metaDescriptionBase),
     h1: situationsHub.h1,
     intro: situationsHub.intro,
@@ -226,9 +238,12 @@ export function buildSituationCategoryHubPageData(
     path: category.path,
     category: "situation",
     title: category.label,
-    metaTitle: buildMetaTitle(`${category.label} 상황별 안내`),
+    metaTitle: buildMetaTitle(
+      SITUATION_CATEGORY_META_TITLES[category.id] ??
+        `${category.label}｜상황별 절차·확인사항`,
+    ),
     metaDescription: buildMetaDescription(
-      `${category.description} 검색 의도별 체크리스트·절차·관련 업무·FAQ 링크를 제공합니다.`,
+      `${category.description} 지금 겪는 상황에서 먼저 확인할 일·절차·서류·관련 업무를 정리했습니다.`,
     ),
     h1: `${category.label} — 지금 겪는 문제부터 확인하기`,
     intro: category.hubIntro,

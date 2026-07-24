@@ -69,4 +69,6 @@ export type PageData = {
   ogImage?: string;
   includeFaqSchema?: boolean;
   openGraphType?: "website" | "article";
+  /** 연관 업무 슬러그 (전국 배너·내부링크용) */
+  serviceSlug?: string;
 };

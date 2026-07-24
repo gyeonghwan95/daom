@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
 import { FloatingCTA } from "@/components/consultation/FloatingCTA";
+import { QuickInquiryRoot } from "@/components/quick-inquiry";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
@@ -60,18 +61,20 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${notoSansKr.variable} h-full`}>
       <body className="has-mobile-cta min-h-full flex flex-col font-sans antialiased">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
-        >
-          본문 바로가기
-        </a>
-        <GlobalJsonLd />
-        <Header />
-        {children}
-        <Footer />
-        <MobileBottomCTA />
-        <FloatingCTA />
+        <QuickInquiryRoot>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
+          >
+            본문 바로가기
+          </a>
+          <GlobalJsonLd />
+          <Header />
+          {children}
+          <Footer />
+          <MobileBottomCTA />
+          <FloatingCTA />
+        </QuickInquiryRoot>
       </body>
     </html>
   );

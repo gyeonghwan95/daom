@@ -16,7 +16,7 @@ export function FloatingCTA() {
 
   return (
     <div
-      className="fixed bottom-6 right-4 z-40 hidden lg:block"
+      className="floating-cta fixed bottom-6 right-4 z-40 hidden lg:block"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
     >
       <div className="relative">

@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  getContactInfo,
   getMobileBottomChannels,
+  getPhoneHref,
   type ConsultationChannel,
 } from "@/lib/contact";
 import { isB2BPath } from "@/lib/b2b/options";
@@ -12,6 +14,8 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { quickInquiryCopy as copy } from "@/lib/quick-inquiry/copy";
+import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
 
 function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
   const linkProps = channel.external
@@ -94,10 +98,13 @@ export function MobileBottomCTA() {
   const pathname = usePathname() ?? "/";
   const b2b = isB2BPath(pathname);
   const channels = getMobileBottomChannels();
+  const inquiry = useOptionalQuickInquiry();
+  const phone = getContactInfo().phone;
+  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
+  const kakao = channels.find((c) => c.id === "kakao");
 
   if (b2b) {
-    const phone = channels.find((c) => c.id === "phone");
-    const kakao = channels.find((c) => c.id === "kakao");
+    const phoneChannel = channels.find((c) => c.id === "phone");
     return (
       <div
         className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
@@ -106,7 +113,7 @@ export function MobileBottomCTA() {
         aria-label="협업 빠른 연락"
       >
         <div className="grid grid-cols-3 divide-x divide-beige-dark">
-          {phone ? <MobileChannelButton channel={phone} /> : null}
+          {phoneChannel ? <MobileChannelButton channel={phoneChannel} /> : null}
           <Link
             href="/협업문의"
             className="mobile-bottom-cta__btn bg-navy text-white"
@@ -122,15 +129,32 @@ export function MobileBottomCTA() {
 
   return (
     <div
-      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+      className="mobile-bottom-cta mobile-bottom-cta--inquiry fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"
     >
-      <div className="grid grid-cols-4 divide-x divide-beige-dark">
-        {channels.map((channel) => (
-          <MobileChannelButton key={channel.id} channel={channel} />
-        ))}
+      <div className="mobile-bottom-cta__inquiry-grid">
+        <a
+          href={phoneHref}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--phone"
+          aria-label="전화 상담"
+        >
+          <PhoneIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">전화</span>
+        </a>
+
+        <button
+          type="button"
+          className="mobile-bottom-cta__inquiry"
+          aria-haspopup="dialog"
+          onClick={() => inquiry?.openInquiry({ source: "mobile" })}
+        >
+          <span className="mobile-bottom-cta__inquiry-label">{copy.mobileLabel}</span>
+          <span className="mobile-bottom-cta__inquiry-hint">{copy.mobileHint}</span>
+        </button>
+
+        {kakao ? <MobileChannelButton channel={kakao} /> : null}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { usePauseMarqueeWhileScrolling } from "@/hooks/usePauseMarqueeWhileScrolling";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type InfiniteVerticalMarqueeProps = {
@@ -21,6 +22,7 @@ export function InfiniteVerticalMarquee({
   ariaLabel,
 }: InfiniteVerticalMarqueeProps) {
   const reduced = useReducedMotion();
+  const rootRef = usePauseMarqueeWhileScrolling<HTMLDivElement>();
 
   if (reduced) {
     return (
@@ -35,6 +37,7 @@ export function InfiniteVerticalMarquee({
 
   return (
     <div
+      ref={rootRef}
       className={`marquee-v-root h-full ${pauseOnHover ? "marquee-v-root--pause" : ""} ${className}`}
       aria-label={ariaLabel}
     >

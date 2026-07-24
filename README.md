@@ -207,7 +207,7 @@ NODE_VERSION=20
 ### 무료 호스팅 운영 참고
 
 - Cloudflare Pages 무료 플랜: 월 빌드·대역폭 한도 내 무제한 정적 호스팅
-- 서버리스 함수·DB 불필요 (문의폼은 Google Forms 등 외부 링크)
+- 간편 문의는 Pages Function(`/api/quick-inquiry`) + Telegram(선택 Resend) — DB 미저장. 설정: `docs/QUICK_INQUIRY.md`
 - 빌드 실패 시 GitHub Actions CI 로그와 Cloudflare Build 로그를 함께 확인
 
 ### Vercel로 이전할 때
@@ -319,11 +319,15 @@ NEXT_PUBLIC_PHONE=
 NEXT_PUBLIC_KAKAO_CHANNEL=
 NEXT_PUBLIC_NAVER_BOOKING=
 
-# 온라인 문의 (외부 링크, DB 저장 없음)
+# 온라인 문의 (외부 링크, DB 저장 없음) — 선택
 NEXT_PUBLIC_INQUIRY_FORM_GOOGLE=
 NEXT_PUBLIC_INQUIRY_FORM_TALLY=
 NEXT_PUBLIC_INQUIRY_FORM_NAVER=
 NEXT_PUBLIC_INQUIRY_FORM_PRIMARY=google
+
+# 간편 문의 (Pages Function) — docs/QUICK_INQUIRY.md
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=
+# Runtime(Functions): TELEGRAM_*, TURNSTILE_SECRET_KEY, RESEND_* …
 ```
 
 모든 `NEXT_PUBLIC_*` 변수는 **빌드 시점**에 번들에 포함됩니다. 값 변경 후 **재배포**가 필요합니다.

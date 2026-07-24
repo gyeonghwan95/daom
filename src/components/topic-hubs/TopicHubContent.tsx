@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
+import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
@@ -15,6 +16,7 @@ import {
   buildServicePageSchema,
 } from "@/lib/seo/json-ld";
 import { getServiceImage } from "@/lib/site-images";
+import { shouldShowQuickInquiryInline } from "@/lib/quick-inquiry/placements";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
 
 type TopicHubContentProps = {
@@ -116,6 +118,10 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         description={page.ctaDescription}
         diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
       />
+
+      {shouldShowQuickInquiryInline({ slug: page.slug }) ? (
+        <QuickInquiryInlineCard pageTitle={page.h1 || page.title} pageUrl={page.path} />
+      ) : null}
 
       {page.sections.map((section) => (
         <ContentBlock

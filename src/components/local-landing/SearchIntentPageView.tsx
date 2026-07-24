@@ -25,6 +25,7 @@ import { subproxyJurisdictionData } from "@/lib/local-landing/search-intent";
 import { MassRegistryB2BAddon } from "@/components/b2b/MassRegistryB2BAddon";
 import { allServiceDetails } from "@/lib/services-data";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -76,8 +77,20 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
-        showNationwideChip={shouldShowNationwideRegionChip(page.path, page.slug)}
+        showNationwideChip={shouldShowNationwideRegionChip(
+          page.path,
+          page.slug,
+          page.serviceSlug,
+        )}
       />
+
+      {shouldShowNationwideRegionChip(
+        page.path,
+        page.slug,
+        page.serviceSlug,
+      ) ? (
+        <NationwideRemoteBanner />
+      ) : null}
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(1)} />
 

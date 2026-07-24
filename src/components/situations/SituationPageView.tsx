@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { ServiceConversionEnhancements } from "@/components/conversion";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
+import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -18,7 +19,9 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { recommendationFromSituation } from "@/lib/internal-links";
+import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import {
   getRelatedSituationLinks,
   getSituationBySlug,
@@ -94,7 +97,20 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
+        showNationwideChip={shouldShowNationwideRegionChip(
+          page.path,
+          page.slug,
+          situation.serviceSlug,
+        )}
       />
+
+      {shouldShowNationwideRegionChip(
+        page.path,
+        page.slug,
+        situation.serviceSlug,
+      ) ? (
+        <NationwideRemoteBanner />
+      ) : null}
 
       {slug === "payment-order-certified-mail" ? (
         <ServiceConversionEnhancements
@@ -198,6 +214,11 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         title="비슷한 상황이라면 먼저 점검해 보세요"
         description="자가진단으로 위험도와 다음 절차를 확인한 뒤, 필요하면 상담을 요청하실 수 있습니다."
         buttonLabel="상담 문의하기"
+      />
+
+      <QuickInquiryInlineCard
+        pageTitle={page.h1 || page.title}
+        pageUrl={page.path}
       />
 
       <ContentSection id="procedures" title="예상 절차">
