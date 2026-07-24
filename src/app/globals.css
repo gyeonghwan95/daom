@@ -2948,6 +2948,36 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 /* Quick Inquiry */
+
+body.quick-inquiry-open .mobile-bottom-cta {
+  display: none;
+}
+
+body.quick-inquiry-open {
+  padding-bottom: 0;
+}
+
+.quick-inquiry-panel__handle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0 0.15rem;
+}
+
+.quick-inquiry-panel__handle-bar {
+  width: 2.5rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: var(--beige-muted);
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry-panel__handle {
+    display: none;
+  }
+}
+
 .quick-inquiry-float {
   display: none;
 }
@@ -3030,27 +3060,35 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 .quick-inquiry-panel {
+  --qi-keyboard-inset: 0px;
   position: relative;
   z-index: 1;
   display: flex;
   width: 100%;
-  max-width: 28rem;
-  max-height: min(92svh, 40rem);
+  max-width: none;
+  max-height: min(94svh, 44rem);
+  height: auto;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 1.25rem 1.25rem 0 0;
+  border-radius: 1.35rem 1.35rem 0 0;
   border: 1px solid var(--beige-dark);
+  border-bottom: 0;
   background: var(--surface);
-  box-shadow: 0 -8px 32px rgba(30, 58, 95, 0.16);
+  box-shadow: 0 -12px 40px rgba(30, 58, 95, 0.2);
   animation: quick-inquiry-sheet-in 0.28s ease;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--qi-keyboard-inset));
 }
 
 @media (min-width: 64rem) {
   .quick-inquiry-panel {
+    width: 100%;
+    max-width: 26rem;
     max-height: min(88vh, 38rem);
     border-radius: 1.25rem;
+    border-bottom: 1px solid var(--beige-dark);
     box-shadow: 0 24px 48px -16px rgba(30, 58, 95, 0.28);
     animation: quick-inquiry-slide-in 0.28s ease;
+    padding-bottom: 0;
   }
 }
 
@@ -3091,8 +3129,15 @@ body.mobile-menu-open .mobile-bottom-cta {
   flex-shrink: 0;
   border-bottom: 1px solid var(--beige-dark);
   background: var(--cream);
-  padding: 1.15rem 1.25rem 1rem;
+  padding: 0.35rem 1.1rem 0.9rem;
   padding-right: 3rem;
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry-panel__chrome {
+    padding: 1.15rem 1.25rem 1rem;
+    padding-right: 3rem;
+  }
 }
 
 .quick-inquiry-panel__close {
@@ -3119,31 +3164,81 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 .quick-inquiry-panel__title {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.35;
   color: var(--text-primary);
 }
 
+@media (min-width: 64rem) {
+  .quick-inquiry-panel__title {
+    font-size: 1.125rem;
+  }
+}
+
 .quick-inquiry-panel__desc {
-  margin-top: 0.45rem;
-  font-size: 0.875rem;
-  line-height: 1.55;
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--text-secondary);
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry-panel__desc {
+    margin-top: 0.45rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
 }
 
 .quick-inquiry-panel__body {
   flex: 1 1 auto;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom, 0px));
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   -webkit-overflow-scrolling: touch;
 }
 
 .quick-inquiry__form {
   display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0;
+}
+
+.quick-inquiry__fields {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 0.85rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.9rem 1.1rem 0.75rem;
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry__fields {
+    padding: 1rem 1.25rem 0.85rem;
+  }
+}
+
+.quick-inquiry__footer {
+  flex-shrink: 0;
+  border-top: 1px solid var(--beige-dark);
+  background: var(--surface);
+  padding: 0.75rem 1.1rem;
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry__footer {
+    padding: 0.85rem 1.25rem 1.1rem;
+    border-top: 0;
+    background: transparent;
+  }
 }
 
 .quick-inquiry__field {
@@ -3172,8 +3267,14 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 .quick-inquiry__textarea {
-  min-height: 7rem;
+  min-height: 5.5rem;
   resize: vertical;
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry__textarea {
+    min-height: 7rem;
+  }
 }
 
 .quick-inquiry__textarea:focus,
@@ -3234,8 +3335,21 @@ body.mobile-menu-open .mobile-bottom-cta {
   width: 100%;
   min-height: 2.75rem;
   justify-content: center;
-  position: sticky;
-  bottom: 0;
+}
+
+.quick-inquiry__form--inline .quick-inquiry__fields {
+  overflow: visible;
+  padding: 0;
+}
+
+.quick-inquiry__form--inline .quick-inquiry__footer {
+  border-top: 0;
+  background: transparent;
+  padding: 0.35rem 0 0;
+}
+
+.quick-inquiry__form--inline .quick-inquiry__textarea {
+  min-height: 7rem;
 }
 
 .quick-inquiry__hp {
@@ -3253,14 +3367,72 @@ body.mobile-menu-open .mobile-bottom-cta {
 .quick-inquiry__success {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: stretch;
+  gap: 0.85rem;
+  padding: 1.15rem 1.1rem 1.25rem;
+}
+
+@media (min-width: 64rem) {
+  .quick-inquiry__success {
+    padding: 1.25rem 1.25rem 1.35rem;
+  }
+}
+
+.quick-inquiry__success-badge {
+  display: flex;
+  justify-content: center;
+  color: var(--navy);
+}
+
+.quick-inquiry__success-check {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.quick-inquiry__success-title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-primary);
 }
 
 .quick-inquiry__success-text {
   margin: 0;
-  font-size: 0.95rem;
+  text-align: center;
+  font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-body);
+}
+
+.quick-inquiry__success-phone-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border: 1px solid var(--beige-dark);
+  border-radius: 0.9rem;
+  background: var(--cream);
+  padding: 0.85rem 0.95rem;
+}
+
+.quick-inquiry__success-phone-hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.quick-inquiry__success-call {
+  width: 100%;
+  min-height: 2.75rem;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.quick-inquiry__success-phone-num {
+  font-weight: 650;
+  letter-spacing: 0.01em;
 }
 
 .quick-inquiry__success-actions {
@@ -3293,4 +3465,3 @@ body.mobile-menu-open .mobile-bottom-cta {
   margin-top: 0.9rem;
   min-height: 2.75rem;
 }
-

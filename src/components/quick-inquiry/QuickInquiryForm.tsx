@@ -115,7 +115,12 @@ export function QuickInquiryForm({
       else if (result.field === "contact") fieldErrors.contact = result.message;
       else if (result.field === "consent") fieldErrors.consent = result.message;
       else if (result.field === "turnstile") fieldErrors.turnstile = result.message;
-      else fieldErrors.form = result.message;
+      else {
+        fieldErrors.form = result.message;
+        if ("hint" in result && result.hint) {
+          fieldErrors.form = `${result.message} (${result.hint})`;
+        }
+      }
       setErrors(fieldErrors);
       setResetSignal((n) => n + 1);
       setToken("");
@@ -131,11 +136,34 @@ export function QuickInquiryForm({
   if (done) {
     return (
       <div className="quick-inquiry__success" role="status" aria-live="polite">
+        <div className="quick-inquiry__success-badge" aria-hidden>
+          <svg
+            className="quick-inquiry__success-check"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12" />
+            <path
+              d="M7.5 12.5l3 3 6-6.5"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <h3 className="quick-inquiry__success-title">{copy.successTitle}</h3>
         <p className="quick-inquiry__success-text">{copy.success}</p>
-        <div className="quick-inquiry__success-actions">
-          <a href={phoneHref} className="btn-primary min-h-11 justify-center">
+        <div className="quick-inquiry__success-phone-card">
+          <p className="quick-inquiry__success-phone-hint">{copy.successPhoneHint}</p>
+          <a href={phoneHref} className="btn-primary quick-inquiry__success-call">
             {copy.callNow}
+            {phone ? (
+              <span className="quick-inquiry__success-phone-num">{phone}</span>
+            ) : null}
           </a>
+        </div>
+        <div className="quick-inquiry__success-actions">
           {onClose ? (
             <button type="button" className="btn-secondary min-h-11" onClick={onClose}>
               {copy.close}
@@ -152,132 +180,139 @@ export function QuickInquiryForm({
       onSubmit={onSubmit}
       noValidate
     >
-      <div className="quick-inquiry__field">
-        <label htmlFor={ids.messageId} className="quick-inquiry__label">
-          {copy.messageLabel}
-        </label>
-        <textarea
-          id={ids.messageId}
-          name="message"
-          rows={4}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder={copy.messagePlaceholder}
-          className="quick-inquiry__textarea"
-          aria-invalid={Boolean(errors.message)}
-          aria-describedby={`${ids.cautionId}${errors.message ? ` ${ids.errorId}-message` : ""}`}
-          maxLength={MESSAGE_MAX + 50}
-          disabled={submitting}
-          required
-        />
-        {errors.message ? (
-          <p id={`${ids.errorId}-message`} className="quick-inquiry__error" role="alert">
-            {errors.message}
-          </p>
-        ) : null}
-      </div>
-
-      <div className="quick-inquiry__field">
-        <label htmlFor={ids.contactId} className="quick-inquiry__label">
-          {copy.contactLabel}
-        </label>
-        <input
-          id={ids.contactId}
-          name="contact"
-          type="text"
-          inputMode="email"
-          autoComplete="tel email"
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
-          placeholder={copy.contactPlaceholder}
-          className="quick-inquiry__input"
-          aria-invalid={Boolean(errors.contact)}
-          aria-describedby={errors.contact ? `${ids.errorId}-contact` : undefined}
-          disabled={submitting}
-          required
-        />
-        {errors.contact ? (
-          <p id={`${ids.errorId}-contact`} className="quick-inquiry__error" role="alert">
-            {errors.contact}
-          </p>
-        ) : null}
-      </div>
-
-      <p id={ids.cautionId} className="quick-inquiry__caution">
-        {copy.caution}
-      </p>
-
-      <div className="quick-inquiry__consent">
-        <input
-          id={ids.consentId}
-          name="consent"
-          type="checkbox"
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          className="quick-inquiry__checkbox"
-          disabled={submitting}
-          aria-invalid={Boolean(errors.consent)}
-        />
-        <label htmlFor={ids.consentId} className="quick-inquiry__consent-label">
-          {copy.consent}
-        </label>
-      </div>
-      {errors.consent ? (
-        <p className="quick-inquiry__error" role="alert">
-          {errors.consent}
-        </p>
-      ) : null}
-
-      {/* honeypot */}
-      <div className="quick-inquiry__hp" aria-hidden="true">
-        <label htmlFor={`${ids.messageId}-hp`}>회사 웹사이트</label>
-        <input
-          id={`${ids.messageId}-hp`}
-          name={HONEYPOT_FIELD}
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
-        />
-      </div>
-
-      <TurnstileWidget
-        onToken={setToken}
-        onError={() =>
-          setErrors((prev) => ({
-            ...prev,
-            turnstile: "보안 확인을 불러오지 못했습니다.",
-          }))
-        }
-        resetSignal={resetSignal}
-      />
-      {errors.turnstile ? (
-        <p className="quick-inquiry__error" role="alert">
-          {errors.turnstile}
-        </p>
-      ) : null}
-
-      <div aria-live="polite" className="sr-only">
-        {submitting ? copy.submitting : ""}
-      </div>
-
-      {errors.form ? (
-        <div className="quick-inquiry__form-error" role="alert">
-          <p>{errors.form}</p>
-          <a href={phoneHref} className="btn-secondary mt-3 inline-flex min-h-11 items-center justify-center">
-            {copy.callNow}
-          </a>
+      <div className="quick-inquiry__fields">
+        <div className="quick-inquiry__field">
+          <label htmlFor={ids.messageId} className="quick-inquiry__label">
+            {copy.messageLabel}
+          </label>
+          <textarea
+            id={ids.messageId}
+            name="message"
+            rows={4}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder={copy.messagePlaceholder}
+            className="quick-inquiry__textarea"
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby={`${ids.cautionId}${errors.message ? ` ${ids.errorId}-message` : ""}`}
+            maxLength={MESSAGE_MAX + 50}
+            disabled={submitting}
+            required
+          />
+          {errors.message ? (
+            <p id={`${ids.errorId}-message`} className="quick-inquiry__error" role="alert">
+              {errors.message}
+            </p>
+          ) : null}
         </div>
-      ) : null}
 
-      <button
-        type="submit"
-        className="btn-primary quick-inquiry__submit"
-        disabled={submitting}
-      >
-        {submitting ? copy.submitting : copy.submit}
-      </button>
+        <div className="quick-inquiry__field">
+          <label htmlFor={ids.contactId} className="quick-inquiry__label">
+            {copy.contactLabel}
+          </label>
+          <input
+            id={ids.contactId}
+            name="contact"
+            type="text"
+            inputMode="email"
+            autoComplete="tel email"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            placeholder={copy.contactPlaceholder}
+            className="quick-inquiry__input"
+            aria-invalid={Boolean(errors.contact)}
+            aria-describedby={errors.contact ? `${ids.errorId}-contact` : undefined}
+            disabled={submitting}
+            required
+          />
+          {errors.contact ? (
+            <p id={`${ids.errorId}-contact`} className="quick-inquiry__error" role="alert">
+              {errors.contact}
+            </p>
+          ) : null}
+        </div>
+
+        <p id={ids.cautionId} className="quick-inquiry__caution">
+          {copy.caution}
+        </p>
+
+        <div className="quick-inquiry__consent">
+          <input
+            id={ids.consentId}
+            name="consent"
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="quick-inquiry__checkbox"
+            disabled={submitting}
+            aria-invalid={Boolean(errors.consent)}
+          />
+          <label htmlFor={ids.consentId} className="quick-inquiry__consent-label">
+            {copy.consent}
+          </label>
+        </div>
+        {errors.consent ? (
+          <p className="quick-inquiry__error" role="alert">
+            {errors.consent}
+          </p>
+        ) : null}
+
+        {/* honeypot */}
+        <div className="quick-inquiry__hp" aria-hidden="true">
+          <label htmlFor={`${ids.messageId}-hp`}>회사 웹사이트</label>
+          <input
+            id={`${ids.messageId}-hp`}
+            name={HONEYPOT_FIELD}
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </div>
+
+        <TurnstileWidget
+          onToken={setToken}
+          onError={() =>
+            setErrors((prev) => ({
+              ...prev,
+              turnstile: "보안 확인을 불러오지 못했습니다.",
+            }))
+          }
+          resetSignal={resetSignal}
+        />
+        {errors.turnstile ? (
+          <p className="quick-inquiry__error" role="alert">
+            {errors.turnstile}
+          </p>
+        ) : null}
+
+        <div aria-live="polite" className="sr-only">
+          {submitting ? copy.submitting : ""}
+        </div>
+
+        {errors.form ? (
+          <div className="quick-inquiry__form-error" role="alert">
+            <p>{errors.form}</p>
+            <a
+              href={phoneHref}
+              className="btn-secondary mt-3 inline-flex min-h-11 items-center justify-center"
+            >
+              {copy.callNow}
+            </a>
+          </div>
+        ) : null}
+      </div>
+
+      <div className="quick-inquiry__footer">
+        <button
+          type="submit"
+          className="btn-primary quick-inquiry__submit"
+          disabled={submitting}
+        >
+          {submitting ? copy.submitting : copy.submit}
+        </button>
+      </div>
     </form>
   );
 }

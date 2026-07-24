@@ -11,10 +11,13 @@ export const quickInquiryCopy = {
     "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다.",
   submit: "법무사에게 문의 보내기",
   submitting: "보내는 중…",
+  successTitle: "문의가 전달되었습니다",
   success:
-    "문의가 정상적으로 전달되었습니다. 업무시간에 확인 후 남겨주신 연락처로 연락드리겠습니다.",
+    "업무시간에 확인한 뒤, 남겨주신 연락처로 연락드리겠습니다.",
+  successPhoneHint:
+    "급하시거나 예상 비용이 궁금하시면 전화로 문의해 주세요. 바로 비용 안내까지 받으실 수 있습니다.",
   close: "닫기",
-  callNow: "전화로 바로 문의하기",
+  callNow: "전화로 비용·상담 문의하기",
   floatingLabel: "간편 문의",
   mobileLabel: "간단히 문의 남기기",
   mobileHint: "메모와 연락처만 남겨주세요",

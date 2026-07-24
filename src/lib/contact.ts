@@ -1,5 +1,4 @@
 import { getPrimaryInquiryForm } from "@/lib/consultation";
-import { getNaverMapSearchUrl } from "@/lib/office-location";
 
 export const defaultContact = {
   phone: "070-4172-8056",
@@ -186,9 +185,10 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
   ];
 }
 
-/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버 톡톡 · 네이버 지도 */
+/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버 톡톡 · 예약 */
 export function getMobileBottomChannels(): ConsultationChannel[] {
   const { phone, kakao, naverTalk } = getContactInfo();
+  const reservation = getNaverReservationUrl();
 
   return [
     {
@@ -216,12 +216,12 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
       configured: Boolean(naverTalk),
     },
     {
-      id: "location",
-      label: "네이버 지도",
-      shortLabel: "지도",
-      href: getNaverMapSearchUrl(),
-      external: true,
-      configured: true,
+      id: "reservation",
+      label: "상담 예약",
+      shortLabel: "예약",
+      href: reservation || "/contact",
+      external: Boolean(reservation),
+      configured: Boolean(reservation),
     },
   ];
 }

@@ -3,19 +3,36 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  getContactInfo,
   getMobileBottomChannels,
-  getPhoneHref,
   type ConsultationChannel,
 } from "@/lib/contact";
 import { isB2BPath } from "@/lib/b2b/options";
 import {
+  FormIcon,
   KakaoIcon,
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
-import { quickInquiryCopy as copy } from "@/lib/quick-inquiry/copy";
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
+
+function CalendarIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M8 3v2M16 3v2M4 9h16M6 5h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
   const linkProps = channel.external
@@ -59,6 +76,18 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
         </a>
       );
+    case "reservation":
+      return (
+        <a
+          href={channel.href}
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--reservation"
+          aria-label={channel.label}
+          {...linkProps}
+        >
+          <CalendarIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+        </a>
+      );
     case "location":
       return (
         <a
@@ -99,12 +128,10 @@ export function MobileBottomCTA() {
   const b2b = isB2BPath(pathname);
   const channels = getMobileBottomChannels();
   const inquiry = useOptionalQuickInquiry();
-  const phone = getContactInfo().phone;
-  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
-  const kakao = channels.find((c) => c.id === "kakao");
 
   if (b2b) {
-    const phoneChannel = channels.find((c) => c.id === "phone");
+    const phone = channels.find((c) => c.id === "phone");
+    const kakao = channels.find((c) => c.id === "kakao");
     return (
       <div
         className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
@@ -113,7 +140,7 @@ export function MobileBottomCTA() {
         aria-label="협업 빠른 연락"
       >
         <div className="grid grid-cols-3 divide-x divide-beige-dark">
-          {phoneChannel ? <MobileChannelButton channel={phoneChannel} /> : null}
+          {phone ? <MobileChannelButton channel={phone} /> : null}
           <Link
             href="/협업문의"
             className="mobile-bottom-cta__btn bg-navy text-white"
@@ -129,32 +156,25 @@ export function MobileBottomCTA() {
 
   return (
     <div
-      className="mobile-bottom-cta mobile-bottom-cta--inquiry fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"
     >
-      <div className="mobile-bottom-cta__inquiry-grid">
-        <a
-          href={phoneHref}
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--phone"
-          aria-label="전화 상담"
-        >
-          <PhoneIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">전화</span>
-        </a>
-
+      <div className="grid grid-cols-5 divide-x divide-beige-dark">
+        {channels.map((channel) => (
+          <MobileChannelButton key={channel.id} channel={channel} />
+        ))}
         <button
           type="button"
-          className="mobile-bottom-cta__inquiry"
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry"
           aria-haspopup="dialog"
+          aria-label="간편 문의"
           onClick={() => inquiry?.openInquiry({ source: "mobile" })}
         >
-          <span className="mobile-bottom-cta__inquiry-label">{copy.mobileLabel}</span>
-          <span className="mobile-bottom-cta__inquiry-hint">{copy.mobileHint}</span>
+          <FormIcon className="mobile-bottom-cta__icon" />
+          <span className="mobile-bottom-cta__label">문의</span>
         </button>
-
-        {kakao ? <MobileChannelButton channel={kakao} /> : null}
       </div>
     </div>
   );
