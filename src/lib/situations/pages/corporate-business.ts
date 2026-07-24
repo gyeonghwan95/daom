@@ -528,4 +528,136 @@ export const corporateBusinessPages = [
     addedAt: "2026-07-21",
     serviceSlug: "corporate-registration",
   }),
+
+  defineSituationPage({
+    slug: "임원변경-기한-임박",
+    cardTitle: "임원변경 기한 임박",
+    cardDescription: "과태료 전 등기 체크",
+    h1: "법인 임원변경 등기 기한이 임박했는데 어떻게 하나요?",
+    metaDescriptionBase:
+      "임원변경·취임 등기 기한 임박 시 할 일. 의사록·취임승낙·과태료 예방 순서를 정리합니다. 부산·센텀 법인등기 상담.",
+    intro:
+      "임원 취임·변경·중임은 결의·취임일 기준으로 등기 기한이 있습니다. 기한을 넘기면 과태료 위험이 있어, 서류가 덜 갖춰져도 ‘기한·누락 항목’부터 확인하는 것이 우선입니다. 부산 센텀·해운대에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+    situationCategory: "corporate-business",
+    searchIntent: "임원변경 등기 기한 임박",
+    conclusion:
+      "기한 임박 시에는 취임일·결의일·필요 서류를 당일 점검하고, 접수 가능한 범위부터 진행하세요.",
+    situationChecklist: [
+      "임원변경 등기 기한이 며칠 안 남았다",
+      "의사록·취임승낙서가 아직 없다",
+      "과태료가 나올까 봐 불안하다",
+      "대표이사·이사·감사 중 누가 바뀌는지 정리가 안 됐다",
+      "센텀·해운대 법인 등기를 급히 맡기고 싶다",
+    ],
+    firstChecks: [
+      "취임·변경·퇴임·중임 일자와 등기 기한 계산",
+      "등기사항전부증명서·정관으로 임원 현황 확인",
+      "주주총회·이사회 의사록 필요 여부",
+      "취임승낙서·인감·주민등록번호 기재 요건",
+      "접수 관할 등기소·인터넷등기 가능 여부",
+    ],
+    solutions: solutions([
+      {
+        title: "기한 내 최소 접수",
+        body: "필수 서류부터 맞춰 기한 내 접수하고, 보정은 안내에 따라 보완합니다.",
+        whenToChoose: "기한이 매우 촉박한 경우",
+      },
+      {
+        title: "결의·취임 서류 동시 정리",
+        body: "의사록·취임승낙·인감을 한 번에 점검해 반려 사유를 줄입니다.",
+        whenToChoose: "서류가 거의 준비된 경우",
+      },
+      {
+        title: "과태료·지연 대응 상담",
+        body: "이미 기한을 넘긴 경우 현황을 보고 가능한 조치를 안내합니다.",
+        whenToChoose: "기한을 이미 경과한 경우",
+      },
+    ]),
+    selfHandleCases: [
+      "1인 주주·단순 중임으로 서류가 단순한 경우",
+      "인터넷등기 경험이 있고 서식이 준비된 경우",
+    ],
+    lawyerNeededCases: [
+      "기한이 임박하거나 이미 지난 경우",
+      "다수 임원·정관과 실제 구성이 다른 경우",
+      "취임·퇴임·중임이 한꺼번에 있는 경우",
+      "보정·과태료 통지를 받은 경우",
+    ],
+    costFactors: [
+      "변경 임원 수·항목",
+      "급행·보정 대응 여부",
+      "정관·의사록 작성 범위",
+      "등록면허세·수수료",
+    ],
+    commonMistakes: [
+      "취임일과 등기 신청일을 혼동하는 경우",
+      "정관상 임원 수와 다르게 선임하는 경우",
+      "취임승낙·인감 없이 접수하려는 경우",
+    ],
+    caseExample: {
+      title: "센텀 법인 임원변경 기한 대응",
+      body: "대표이사 변경 후 등기 기한이 임박해 상담한 사건에서, 의사록·취임승낙서를 점검해 기한 내 접수한 사례입니다.",
+    },
+    documents: [
+      "등기사항전부증명서",
+      "정관",
+      "주주총회·이사회 의사록",
+      "취임승낙서·인감증명",
+      "취임·변경 일자 메모",
+    ],
+    procedures: [
+      "기한·변경 내용 확인",
+      "결의·취임 서류 점검",
+      "신청서 작성",
+      "등기소·인터넷 접수",
+      "보정 대응(해당 시)",
+      "등기 완료·증명서 확인",
+    ],
+    diagnosisLinks: [
+      { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
+      { href: "/법인등기자가진단", label: "법인등기 자가진단" },
+      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    serviceLinks: [
+      { href: "/services/director-change", label: "임원변경등기 안내" },
+      { href: "/services/corporate-registration", label: "법인등기 안내" },
+      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqLinks: [
+      { href: "/faq/director-change-deadline-faq", label: "임원변경 기한 FAQ" },
+      { href: "/faq/company-establishment-documents-faq", label: "법인설립 서류" },
+      { href: "/faq/corporate-address-change-faq", label: "본점이전 FAQ" },
+      { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
+    ],
+    extraLinks: [
+      { href: "/부산법무사", label: "부산 법무사 종합 안내" },
+      { href: "/부산법무사비대면상담", label: "비대면상담 안내" },
+      { href: "/blog/director-change-registration-deadline-penalty", label: "임원변경 과태료" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqs: [
+      {
+        question: "기한이 지나면 무조건 과태료인가요?",
+        answer:
+          "지연 등기 시 과태료 부과 대상이 될 수 있습니다. 경과 기간·사유에 따라 달라지므로 현황을 알려 주시면 안내합니다.",
+      },
+      {
+        question: "서류가 없어도 상담할 수 있나요?",
+        answer:
+          "네. 취임일과 변경 내용만 알려 주셔도 기한과 필요 서류 방향을 바로 짚을 수 있습니다.",
+      },
+    ],
+    relatedSituationSlugs: [
+      "임원-임기-만료",
+      "corporate-officer-address-change",
+      "본점-이전-등기",
+      "법인-설립-처음",
+    ],
+    priority: 92,
+    isNew: true,
+    addedAt: "2026-07-25",
+    serviceSlug: "corporate-registration",
+  }),
 ];

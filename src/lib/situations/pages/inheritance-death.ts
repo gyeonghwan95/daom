@@ -536,4 +536,134 @@ export const inheritanceDeathPages = [
     addedAt: "2026-07-21",
     serviceSlug: "inheritance-registration",
   }),
+
+  defineSituationPage({
+    slug: "상속-후-첫-절차",
+    cardTitle: "상속 후 무엇을 먼저?",
+    cardDescription: "사망 직후 7일·30일 체크",
+    h1: "부모님 사망 후, 상속 절차는 무엇을 먼저 해야 하나요?",
+    metaDescriptionBase:
+      "상속 개시 후 첫 절차. 사망신고·재산조회·3개월 기한·등기 순서를 정리합니다. 부산·해운대 법무사 상담 안내.",
+    intro: `사망 직후에는 장례와 함께 행정·상속 절차가 한꺼번에 몰립니다. 등기보다 먼저 확인할 것은 상속인 범위, 재산·채무 개요, 그리고 상속포기·한정승인의 3개월 기한입니다. ${LOCAL}`,
+    situationCategory: "inheritance-death",
+    searchIntent: "상속 후 첫 절차",
+    conclusion:
+      "상속 후 첫 절차는 ‘조회 → 승인·포기 방향 → 등기’ 순서입니다. 기한이 촉박하면 등기보다 승인·포기부터 상담하세요.",
+    situationChecklist: [
+      "사망 직후 무엇을 먼저 해야 할지 모르겠다",
+      "상속등기부터 해야 하는지 포기부터인지 헷갈린다",
+      "형제와 연락이 안 되어 절차가 멈췄다",
+      "빚이 있는지 모르는데 등기를 해도 되는지 불안하다",
+      "부산·해운대에서 상담 순서를 잡고 싶다",
+    ],
+    firstChecks: [
+      "사망신고·가족관계증명서로 상속인 범위 확인",
+      "부동산·금융·보험·채무 조회 계획 세우기",
+      "상속 개시(사망)일부터 3개월 기한 달력에 표시",
+      "등기부등본(말소사항 포함)으로 명의 부동산 확인",
+      "단순승인으로 보일 수 있는 행위(처분·사용) 주의",
+    ],
+    solutions: solutions([
+      {
+        title: "조회 우선",
+        body: "재산·채무를 먼저 파악한 뒤 단순승인·한정승인·포기를 정합니다.",
+        whenToChoose: "채무·재산 규모가 불분명한 경우",
+      },
+      {
+        title: "기한 우선(포기·한정)",
+        body: "3개월이 임박하면 등기보다 가정법원 신고 준비를 우선합니다.",
+        whenToChoose: "기한이 촉박하거나 채무가 의심되는 경우",
+      },
+      {
+        title: "등기 일정 설계",
+        body: "승인 방향이 정해지면 상속등기·말소·세금 순서를 잡습니다.",
+        whenToChoose: "재산이 명확하고 상속인 협의가 되는 경우",
+      },
+    ]),
+    selfHandleCases: [
+      "상속인이 적고 채무가 없으며 재산이 단순한 경우",
+      "조회 기관 신청을 직접 진행할 수 있는 경우",
+    ],
+    lawyerNeededCases: [
+      "채무가 의심되거나 기한이 임박한 경우",
+      "상속인 간 연락·협의가 어려운 경우",
+      "부동산·금융이 여러 지역에 분산된 경우",
+      "해외 상속인이 있는 경우",
+    ],
+    costFactors: [
+      "조회·목록 정리 범위",
+      "포기·한정승인 포함 여부",
+      "상속등기 건수·말소 동반 여부",
+      "상속인 수·공증·해외 서류",
+    ],
+    commonMistakes: [
+      "조회 없이 등기부터 진행하는 경우",
+      "3개월 기한을 등기 기한과 혼동하는 경우",
+      "형제 일부만 진행해 나중에 분쟁이 생기는 경우",
+    ],
+    caseExample: {
+      title: "사망 직후 순서 정리 상담",
+      body: "해운대 거주 의뢰인이 부모님 사망 직후 등기부터 알아보다가, 채무 조회와 3개월 기한을 먼저 점검하도록 순서를 바꾼 사례입니다.",
+    },
+    documents: [
+      "피상속인 기본증명서·가족관계증명서",
+      "상속인 신분증",
+      "등기부등본(가능 시)",
+      "사망일·상속인 연락처 메모",
+    ],
+    procedures: [
+      "상속인·기한 확인",
+      "재산·채무 조회",
+      "승인·포기·한정 방향 결정",
+      "필요 시 가정법원 신고",
+      "상속등기·세금·말소 일정",
+      "완료 확인",
+    ],
+    diagnosisLinks: [
+      { href: "/상속등기자가진단", label: "상속등기 자가진단" },
+      { href: "/한정승인자가진단", label: "한정승인 자가진단" },
+      { href: "/상속포기자가진단", label: "상속포기 자가진단" },
+      { href: "/자가진단", label: "자가진단 허브" },
+    ],
+    serviceLinks: [
+      { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
+      { href: "/services/qualified-acceptance", label: "한정승인 안내" },
+      { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+      { href: "/상속", label: "상속 종합 허브" },
+    ],
+    faqLinks: [
+      { href: "/faq/when-to-file-inheritance-registration", label: "상속등기 시기" },
+      { href: "/faq/what-is-qualified-acceptance", label: "한정승인이란" },
+      { href: "/faq/who-needs-inheritance-registration", label: "상속등기가 필요한 경우" },
+      { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
+    ],
+    extraLinks: [
+      { href: "/부산법무사", label: "부산 법무사 종합 안내" },
+      { href: "/부산법무사서류준비", label: "서류 준비 체크리스트" },
+      { href: "/blog/three-months-after-death-inheritance", label: "사망 후 3개월" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqs: [
+      {
+        question: "사망 후 가장 먼저 할 일은 무엇인가요?",
+        answer:
+          "상속인 범위 확인과 재산·채무 조회, 그리고 3개월 기한 확인입니다. 등기는 그다음인 경우가 많습니다.",
+      },
+      {
+        question: "빚이 없어도 조회가 필요한가요?",
+        answer:
+          "겉으로 빚이 없어 보여도 보증·카드·세금 체납이 있을 수 있습니다. 간단한 조회라도 해 두는 편이 안전합니다.",
+      },
+    ],
+    relatedSituationSlugs: [
+      "상속재산-조회",
+      "상속포기-한정승인-선택",
+      "parent-passed-away",
+      "inheritance-unknown-debt",
+    ],
+    priority: 90,
+    isNew: true,
+    addedAt: "2026-07-25",
+    serviceSlug: "inheritance-registration",
+  }),
 ];

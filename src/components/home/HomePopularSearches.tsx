@@ -4,6 +4,11 @@ import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
 
 const POPULAR_SEARCH_CARDS = [
   {
+    href: "/부산법무사",
+    label: "부산 법무사",
+    hint: "상속·등기·법인·회생 종합",
+  },
+  {
     href: "/search-guides",
     label: "검색의도 안내",
     hint: "추천·비용·복대리·집단등기",
@@ -22,11 +27,6 @@ const POPULAR_SEARCH_CARDS = [
     href: "/부산상속등기전문",
     label: "부산 상속등기 상담",
     hint: "절차·서류·기한",
-  },
-  {
-    href: "/부산집단등기",
-    label: "부산 집단등기",
-    hint: "신축·아파트 일괄 등기",
   },
   {
     href: "/부산법무사비용",

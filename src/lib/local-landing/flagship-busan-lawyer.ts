@@ -37,6 +37,11 @@ export function buildBusanLawyerFlagshipPage(
         "비용·수임료·공과금 구분은 부산 법무사 비용 페이지에서, 협회 보수 기준 참고는 부산 법무사 보수표 페이지에서 안내합니다. 확정 금액은 사건 확인 후 견적합니다.",
     },
     {
+      question: "사무소 위치·서류·방문·비대면은 어디서 보나요?",
+      answer:
+        "사무소 NAP·업무 범위는 부산 법무사무소, 서류 목록은 서류 준비, 예약·동선은 방문상담, 원격 가능 여부는 비대면상담 페이지에 나눠 두었습니다.",
+    },
+    {
       question: "상속포기·한정승인 기한은 얼마인가요?",
       answer:
         "상속 개시를 안 날부터 3개월입니다. 기한이 임박하면 등기보다 승인·포기 방식을 먼저 상담하는 것이 안전합니다.",
@@ -183,8 +188,20 @@ export function buildBusanLawyerFlagshipPage(
         href: "/blog/busan-lawyer-consultation-documents",
         label: "부산 법무사 상담 준비 서류",
       },
+      {
+        href: "/blog/busan-lawyer-jurisdiction-checklist",
+        label: "관할 등기소·법원 확인법",
+      },
+      {
+        href: "/blog/centum-lawyer-visit-day-flow",
+        label: "센텀 방문상담 하루 흐름",
+      },
     ],
     relatedServiceLinks: [
+      { href: "/부산법무사무소", label: "부산 법무사무소 안내" },
+      { href: "/부산법무사서류준비", label: "서류 준비 체크리스트" },
+      { href: "/부산법무사방문상담", label: "방문상담 안내" },
+      { href: "/부산법무사비대면상담", label: "비대면상담 안내" },
       { href: "/부산상속법무사", label: "부산 상속전문 법무사 안내" },
       { href: "/부산법인법무사", label: "부산 법인전문 법무사 안내" },
       { href: "/부산부동산등기전문", label: "부산 부동산등기 전문 안내" },

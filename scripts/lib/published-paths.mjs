@@ -107,6 +107,10 @@ const situationSlugs = [
   "중고거래-분쟁",
   "내용증명-받았을-때",
   "손해배상-청구",
+  "상속-후-첫-절차",
+  "잔금일-소유권이전",
+  "임원변경-기한-임박",
+  "회생-파산-선택-고민",
 ];
 
 const situationCategoryHubPaths = [

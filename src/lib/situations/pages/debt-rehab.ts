@@ -529,4 +529,135 @@ export const debtRehabPages = [
     addedAt: "2026-07-21",
     serviceSlug: "personal-rehabilitation",
   }),
+
+  defineSituationPage({
+    slug: "회생-파산-선택-고민",
+    cardTitle: "회생 vs 파산 고민",
+    cardDescription: "소득·재산 기준 비교",
+    h1: "개인회생과 파산, 나에게 맞는 쪽은 무엇인가요?",
+    metaDescriptionBase:
+      "개인회생·파산 선택 기준. 소득·재산·변제·면책 차이를 비교하고 상담 전 체크포인트를 정리합니다. 부산 회생·파산 법무사 안내.",
+    intro:
+      "빚이 감당되지 않을 때 회생과 파산 중 무엇을 볼지부터 막히는 경우가 많습니다. 소득이 있으면 회생, 없으면 파산처럼 단순하지 않고, 재산·부양가족·담보·최근 거래도 함께 봅니다. 부산에서도 전화·카카오톡·방문(예약)으로 1차 방향을 상담할 수 있습니다.",
+    situationCategory: "debt-rehab",
+    searchIntent: "개인회생 파산 선택",
+    conclusion:
+      "회생·파산은 소득·재산·변제 여력을 기준으로 비교합니다. 인터넷 평균 사례만으로 정하지 말고, 본인 숫자로 상담하세요.",
+    situationChecklist: [
+      "회생과 파산 중 무엇을 신청해야 할지 모르겠다",
+      "소득은 있지만 빚이 너무 많다",
+      "재산이 있어 파산이 어려울까 불안하다",
+      "압류·독촉이 있어 급하다",
+      "부산에서 서류·관할을 먼저 확인하고 싶다",
+    ],
+    firstChecks: [
+      "월 소득·필수생계비·부양가족 개요",
+      "채권자별 채무 원금·이자·연체",
+      "부동산·차량·예금 등 재산 목록",
+      "담보대출·보증·사업자 채무 여부",
+      "압류·소송·급여압류 진행 여부",
+    ],
+    solutions: solutions([
+      {
+        title: "개인회생 검토",
+        body: "일정 소득으로 변제계획을 세워 채무를 조정하는 절차를 검토합니다.",
+        whenToChoose: "지속 소득이 있고 변제 여력이 있는 경우",
+      },
+      {
+        title: "개인파산·면책 검토",
+        body: "변제 여력이 부족할 때 파산·면책 가능 여부를 재산·소득과 함께 봅니다.",
+        whenToChoose: "소득이 없거나 현저히 부족한 경우",
+      },
+      {
+        title: "긴급 대응 후 선택",
+        body: "압류·경매가 임박하면 중단·유예 가능성을 먼저 보고 본신청 방향을 정합니다.",
+        whenToChoose: "강제집행이 진행 중인 경우",
+      },
+    ]),
+    selfHandleCases: [
+      "채무·소득이 단순하고 공식 안내만으로 충분히 이해할 수 있는 경우",
+    ],
+    lawyerNeededCases: [
+      "회생·파산 중 선택이 갈리는 경우",
+      "재산·사업·보증이 섞인 경우",
+      "압류·급여압류가 진행 중인 경우",
+      "최근 재산 처분·가족 명의 이슈가 있는 경우",
+    ],
+    costFactors: [
+      "채무·채권자 수",
+      "재산·소득 조사 범위",
+      "신청서·보정 대응",
+      "관할·긴급 대응 필요성",
+    ],
+    commonMistakes: [
+      "인터넷 후기만 보고 제도를 고르는 경우",
+      "재산·소득을 축소·누락해 상담하는 경우",
+      "압류를 방치한 채 신청만 미루는 경우",
+    ],
+    caseExample: {
+      title: "회생·파산 방향 1차 정리",
+      body: "급여 소득과 카드·신용대출이 겹친 의뢰인에게 변제 여력과 재산 규모를 구분해, 회생 검토를 우선으로 안내한 상담 사례입니다.",
+    },
+    documents: [
+      "신분증·연락처",
+      "채무 목록 초안(채권자·금액)",
+      "급여명세서·소득 자료(가능 시)",
+      "통장·카드 내역(가능 범위)",
+      "압류·소송 관련 서류(해당 시)",
+    ],
+    procedures: [
+      "소득·재산·채무 개요 정리",
+      "회생·파산 적합 여부 1차 비교",
+      "긴급 집행 대응 필요성 확인",
+      "서류 목록·관할 안내",
+      "신청 준비·접수",
+      "보정·변제·면책 진행",
+    ],
+    diagnosisLinks: [
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
+      { href: "/개인파산자가진단", label: "개인파산 자가진단" },
+      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/자가진단", label: "자가진단 허브" },
+    ],
+    serviceLinks: [
+      { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
+      { href: "/services/bankruptcy", label: "개인파산 안내" },
+      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqLinks: [
+      { href: "/faq/bankruptcy-vs-rehabilitation-faq", label: "회생 vs 파산" },
+      { href: "/faq/personal-rehabilitation-eligibility-faq", label: "개인회생 자격" },
+      { href: "/faq/who-can-file-bankruptcy-faq", label: "파산 신청 자격" },
+      { href: "/faq/personal-rehabilitation-documents-faq", label: "개인회생 서류" },
+    ],
+    extraLinks: [
+      { href: "/부산법무사", label: "부산 법무사 종합 안내" },
+      { href: "/부산법무사상담", label: "상담 준비" },
+      { href: "/blog/bankruptcy-vs-personal-rehabilitation", label: "회생·파산 비교 글" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqs: [
+      {
+        question: "소득이 있으면 무조건 회생인가요?",
+        answer:
+          "아닙니다. 소득·생계비·재산·채무 구조를 함께 봅니다. 상담 시 숫자로 비교하는 것이 좋습니다.",
+      },
+      {
+        question: "파산을 하면 모든 빚이 없어지나요?",
+        answer:
+          "면책 범위·비면책 채권·담보권 등은 별도입니다. 일반론만으로 단정하지 말고 사건별로 확인하세요.",
+      },
+    ],
+    relatedSituationSlugs: [
+      "개인회생-가능-여부",
+      "빚-감당-어려울-때",
+      "personal-rehabilitation-bankruptcy",
+      "급여-압류-빚",
+    ],
+    priority: 91,
+    isNew: true,
+    addedAt: "2026-07-25",
+    serviceSlug: "personal-rehabilitation",
+  }),
 ];

@@ -531,4 +531,136 @@ export const realEstateTradePages = [
     addedAt: "2026-07-21",
     serviceSlug: "real-estate-registration",
   }),
+
+  defineSituationPage({
+    slug: "잔금일-소유권이전",
+    cardTitle: "잔금일 소유권이전",
+    cardDescription: "잔금·말소·이전 하루 일정",
+    h1: "잔금일에 소유권이전등기, 어떤 순서로 진행하나요?",
+    metaDescriptionBase:
+      "매매 잔금일 소유권이전등기 순서. 근저당 말소·취득세·서류·당일 일정을 정리합니다. 부산·센텀 부동산등기 상담.",
+    intro:
+      "잔금일과 소유권이전등기를 같은 날 맞추려면 말소·취득세·서류·접수 순서를 미리 잡아야 합니다. 등기부 근저당·가압류를 잔금 직전에야 확인하면 일정이 무너질 수 있습니다. 부산 해운대·센텀에서도 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+    situationCategory: "real-estate-trade",
+    searchIntent: "잔금일 소유권이전등기",
+    conclusion:
+      "잔금일 등기는 ‘등기부 점검 → 말소·세금 → 이전 접수’ 순서가 핵심입니다. 잔금 전 최소 수일 전에 서류를 맞춰 두세요.",
+    situationChecklist: [
+      "잔금일이 다가오는데 등기 순서를 모르겠다",
+      "매도인 대출(근저당) 말소와 이전이 겹친다",
+      "취득세 신고와 등기 접수 순서가 헷갈린다",
+      "서류가 빠져 잔금일에 접수가 불안하다",
+      "부산 아파트·상가 매매 등기 일정을 잡고 싶다",
+    ],
+    firstChecks: [
+      "최신 등기부등본으로 근저당·가압류·전세권 확인",
+      "잔금일·은행·중개 일정과 등기 접수 가능 시간 조율",
+      "매도·매수 서류(인감·위임·계약서) 목록 확정",
+      "취득세·등록면허세 신고 일정 확인",
+      "말소와 이전을 같은 날 할지 분리할지 결정",
+    ],
+    solutions: solutions([
+      {
+        title: "당일 연속 처리",
+        body: "말소·이전을 잔금일에 연속 접수하도록 은행·서류·세금을 사전 세팅합니다.",
+        whenToChoose: "잔금·인도·등기를 하루로 맞춰야 하는 경우",
+      },
+      {
+        title: "사전 말소 후 이전",
+        body: "매도인 대출 말소를 먼저 끝내고 잔금일에 이전만 접수합니다.",
+        whenToChoose: "말소 서류·은행 협의가 여유 있는 경우",
+      },
+      {
+        title: "보정 대비 일정",
+        body: "서류 누락·보정 가능성을 남겨 잔금 전 예비일을 둡니다.",
+        whenToChoose: "공동명의·상속 매도·법인 매도 등 복잡한 경우",
+      },
+    ]),
+    selfHandleCases: [
+      "등기부 하자가 없고 서류가 단순한 개인 간 매매",
+      "중개·법무사 없이 인터넷등기 경험이 충분한 경우",
+    ],
+    lawyerNeededCases: [
+      "근저당·가압류·전세권이 있는 경우",
+      "잔금일 당일 말소·이전이 필요한 경우",
+      "법인·상속인 매도 등 서류가 복잡한 경우",
+      "취득세·대출·일정이 맞물린 경우",
+    ],
+    costFactors: [
+      "말소·이전 건수",
+      "시가표준액·취득세·등록면허세",
+      "당일 연속 처리·보정 가능성",
+      "공동명의·대리인 수",
+    ],
+    commonMistakes: [
+      "잔금 직전에야 등기부를 확인하는 경우",
+      "말소 없이 이전만 접수하려다 반려되는 경우",
+      "취득세 신고와 등기 순서를 뒤집는 경우",
+    ],
+    caseExample: {
+      title: "수영구 아파트 잔금일 연속 처리",
+      body: "잔금일·근저당 말소·이전등기 일정을 맞춰 당일 연속 접수를 준비한 사례입니다. 사전 등기부 점검으로 말소 서류를 먼저 확정했습니다.",
+    },
+    documents: [
+      "매매계약서·잔금 증빙",
+      "등기부등본",
+      "매도·매수 인감증명·위임장(해당 시)",
+      "취득세 신고 자료",
+      "말소 관련 은행·채권자 서류",
+    ],
+    procedures: [
+      "등기부·권리 하자 점검",
+      "서류·세금·은행 일정 확정",
+      "말소 준비(해당 시)",
+      "잔금·인도",
+      "소유권이전 접수",
+      "등기 완료 확인",
+    ],
+    diagnosisLinks: [
+      { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
+      { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
+      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    serviceLinks: [
+      { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
+      { href: "/services/real-estate-registration", label: "부동산등기 안내" },
+      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqLinks: [
+      { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },
+      { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
+      { href: "/faq/jeonse-registration-faq", label: "전세·임차 등기 FAQ" },
+      { href: "/faq/lawyer-fee-and-remote-faq", label: "수임료·원격" },
+    ],
+    extraLinks: [
+      { href: "/부산법무사", label: "부산 법무사 종합 안내" },
+      { href: "/부산법무사방문상담", label: "방문상담 안내" },
+      { href: "/blog/delayed-ownership-transfer-after-balance", label: "잔금 후 이전 지연" },
+      { href: "/contact", label: "상담 문의" },
+    ],
+    faqs: [
+      {
+        question: "잔금 당일에 등기가 꼭 끝나야 하나요?",
+        answer:
+          "계약·대출 조건에 따라 다릅니다. 다만 인도·잔금과 명의 이전이 어긋나면 위험이 커지므로, 사전 일정 설계가 중요합니다.",
+      },
+      {
+        question: "근저당이 있으면 이전이 안 되나요?",
+        answer:
+          "말소와 이전을 순서에 맞게 처리하면 가능합니다. 은행·채권자 서류와 접수 순서를 맞춰야 합니다.",
+      },
+    ],
+    relatedSituationSlugs: [
+      "잔금-후-소유권이전-거부",
+      "근저당-말소-지연",
+      "real-estate-sale-registration",
+      "셀프등기-실수",
+    ],
+    priority: 90,
+    isNew: true,
+    addedAt: "2026-07-25",
+    serviceSlug: "real-estate-registration",
+  }),
 ];
