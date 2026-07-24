@@ -69,9 +69,15 @@ npm run build
 npx wrangler pages dev out --port 8788
 ```
 
-## 6. 배포 후 확인
+## 7. 배포 후 403 (Origin)
 
-1. 모바일: 하단 「간단히 문의 남기기」→ 시트 열림 → 제출
-2. 데스크톱: 우측 「간편 문의」→ 패널 열림
-3. Telegram에 `[홈페이지 신규 문의]` 수신
-4. 잘못된 연락처 / 동의 미체크 / 연속 클릭 / GET `/api/quick-inquiry` (405) 확인
+브라우저는 한글 도메인을 punycode(`https://xn--....kr`) Origin으로 보냅니다.
+서버는 Origin을 정규화해 비교하며, 현재 배포 호스트도 허용합니다.
+
+그래도 403이면 Cloudflare Pages Runtime에 다음을 추가한 뒤 **재배포**하세요.
+
+```text
+ALLOWED_ORIGINS=https://다옴법무사사무소.kr,https://xn--2j1br1na42lvxja38mk8r.kr
+```
+
+www를 쓰면 www 주소도 쉼표로 추가합니다.

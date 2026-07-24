@@ -106,11 +106,38 @@ console.log("quick-inquiry handler");
 
 {
   const res = await handleQuickInquiry(
-    new Request("http://evil.example/api/quick-inquiry", {
+    new Request("https://xn--2j1br1na42lvxja38mk8r.kr/api/quick-inquiry", {
       method: "POST",
       headers: {
-        Origin: "https://evil.example",
+        Origin: "https://xn--2j1br1na42lvxja38mk8r.kr",
         "Content-Type": "application/json",
+        "CF-Connecting-IP": "203.0.113.20",
+      },
+      body: JSON.stringify({
+        message: "정상적인 길이의 문의 내용입니다",
+        contact: "01012345678",
+        consent: true,
+        website: "",
+        pageTitle: "홈",
+        pageUrl: "/",
+      }),
+    }),
+    {},
+  );
+  assert.equal(res.status, 503);
+  const data = await res.json();
+  assert.equal(data.code, "no_channel");
+  ok("punycode origin allowed (no channel → 503)");
+}
+
+{
+  const res = await handleQuickInquiry(
+    new Request("http://localhost:3000/api/quick-inquiry", {
+      method: "POST",
+      headers: {
+        Origin: "http://evil.example",
+        "Content-Type": "application/json",
+        "CF-Connecting-IP": "203.0.113.21",
       },
       body: JSON.stringify({
         message: "정상적인 길이의 문의 내용입니다",
@@ -131,10 +158,11 @@ console.log("quick-inquiry handler");
       headers: {
         Origin: "http://localhost:3000",
         "Content-Type": "application/json",
+        "CF-Connecting-IP": "203.0.113.22",
       },
       body: JSON.stringify({
-        message: "정상적인 길이의 문의 내용입니다",
-        contact: "01012345678",
+        message: "채널 미설정 시 오류 코드 확인용 문의입니다",
+        contact: "01022223333",
         consent: true,
         website: "",
         pageTitle: "홈",

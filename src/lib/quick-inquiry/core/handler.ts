@@ -30,6 +30,8 @@ function defaultAllowedOrigins(env: QuickInquiryHandlerEnv): string[] {
     site,
     "https://다옴법무사사무소.kr",
     "https://www.다옴법무사사무소.kr",
+    "https://xn--2j1br1na42lvxja38mk8r.kr",
+    "https://www.xn--2j1br1na42lvxja38mk8r.kr",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8788",
@@ -38,23 +40,47 @@ function defaultAllowedOrigins(env: QuickInquiryHandlerEnv): string[] {
   return Array.from(new Set(bases));
 }
 
-function isAllowedOrigin(request: Request, env: QuickInquiryHandlerEnv): boolean {
-  const origin = request.headers.get("Origin");
-  const allowed = defaultAllowedOrigins(env);
-  if (!origin) {
-    // same-origin navigations may omit Origin; require Sec-Fetch-Site or Referer
-    const site = request.headers.get("Sec-Fetch-Site");
-    if (site === "same-origin" || site === "same-site") return true;
-    const referer = request.headers.get("Referer");
-    if (!referer) return false;
-    try {
-      const refOrigin = new URL(referer).origin;
-      return allowed.includes(refOrigin);
-    } catch {
-      return false;
-    }
+/** IDN(한글 도메인) ↔ punycode 를 같은 origin으로 맞춤 */
+function normalizeOrigin(value: string): string | null {
+  try {
+    return new URL(value).origin;
+  } catch {
+    return null;
   }
-  return allowed.includes(origin);
+}
+
+function buildAllowedOriginSet(
+  request: Request,
+  env: QuickInquiryHandlerEnv,
+): Set<string> {
+  const set = new Set<string>();
+  for (const raw of defaultAllowedOrigins(env)) {
+    const normalized = normalizeOrigin(raw);
+    if (normalized) set.add(normalized);
+  }
+  // 현재 배포 호스트(pages.dev·커스텀 도메인)는 항상 허용
+  const selfOrigin = normalizeOrigin(request.url);
+  if (selfOrigin) set.add(selfOrigin);
+  return set;
+}
+
+function isAllowedOrigin(request: Request, env: QuickInquiryHandlerEnv): boolean {
+  const allowed = buildAllowedOriginSet(request, env);
+  const originHeader = request.headers.get("Origin");
+
+  if (originHeader) {
+    const origin = normalizeOrigin(originHeader);
+    return origin !== null && allowed.has(origin);
+  }
+
+  // Origin 생략 시(일부 브라우저/프록시): same-site 또는 Referer
+  const fetchSite = request.headers.get("Sec-Fetch-Site");
+  if (fetchSite === "same-origin" || fetchSite === "same-site") return true;
+
+  const referer = request.headers.get("Referer");
+  if (!referer) return false;
+  const refOrigin = normalizeOrigin(referer);
+  return refOrigin !== null && allowed.has(refOrigin);
 }
 
 async function verifyTurnstile(
