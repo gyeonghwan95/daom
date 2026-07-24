@@ -27,14 +27,39 @@ CF Function: `functions/api/quick-inquiry.ts`
 로컬에서 Secret이 없으면 Turnstile 검증을 건너뜁니다.  
 Secret이 있으면 토큰 검증이 필수입니다.
 
-## 3. Resend (선택)
+## 3. Resend (이메일 알림)
 
 1. [resend.com](https://resend.com) 가입 후 API Key 발급 → `RESEND_API_KEY`
-2. 도메인 DNS 인증 후 발신 주소 → `INQUIRY_FROM_EMAIL` (예: `noreply@your-domain.com`)
-3. 수신 주소 → `INQUIRY_TO_EMAIL` (법무사 이메일)
+2. Domains에 사이트 도메인 추가·DNS 인증 → **Verified**
+3. 환경변수:
 
-Telegram만 있어도 동작하고, Resend만 있어도 동작합니다.  
+| 변수 | 올바른 예 | 잘못된 예 |
+|------|-----------|-----------|
+| `INQUIRY_FROM_EMAIL` | `noreply@xn--2j1br1na42lvxja38mk8r.kr` | `xn--2j1br1na42lvxja38mk8r.kr` (도메인만 넣으면 실패) |
+| `INQUIRY_TO_EMAIL` | `lawyoonjung@naver.com` | — |
+| `RESEND_API_KEY` | `re_...` | — |
+
+FROM은 **Resend에 Verified된 도메인**의 주소여야 합니다.  
+한글 도메인 사이트라면 punycode 형태를 권장합니다.
+
+```text
+INQUIRY_FROM_EMAIL=noreply@xn--2j1br1na42lvxja38mk8r.kr
+```
+
+또는 표시 이름 포함:
+
+```text
+INQUIRY_FROM_EMAIL=다옴법무사사무소 <noreply@xn--2j1br1na42lvxja38mk8r.kr>
+```
+
+Telegram만 / Resend만 / 둘 다 가능합니다.  
 둘 다 실패할 때만 사용자에게 오류 + 전화 대체 CTA를 보여줍니다.
+
+### 502 delivery_failed 점검
+
+1. Resend → **Emails / Logs** 에 실패 기록이 있는지 확인
+2. 브라우저 개발자도구 → Network → `quick-inquiry` 응답 JSON의 `hint` 확인
+3. `INQUIRY_FROM_EMAIL`이 Verified 도메인과 일치하는지 확인 후 **재배포**
 
 ## 4. Cloudflare Pages 환경변수 위치
 

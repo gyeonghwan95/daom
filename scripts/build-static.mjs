@@ -100,6 +100,14 @@ function restoreApiRoutes() {
 stashApiRoutes();
 
 try {
+  // Pages Functions용 공용 로직 동기화 (src → functions/_lib)
+  const coreSrc = path.join(ROOT, "src/lib/quick-inquiry/core");
+  const coreDest = path.join(ROOT, "functions/_lib/quick-inquiry");
+  if (fs.existsSync(coreSrc)) {
+    fs.mkdirSync(coreDest, { recursive: true });
+    fs.cpSync(coreSrc, coreDest, { recursive: true });
+  }
+
   const nextDir = path.join(ROOT, ".next");
   if (fs.existsSync(nextDir)) {
     fs.rmSync(nextDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });

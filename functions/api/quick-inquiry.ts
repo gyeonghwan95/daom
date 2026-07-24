@@ -1,4 +1,4 @@
-import { handleQuickInquiry } from "../../src/lib/quick-inquiry/core/handler";
+import { handleQuickInquiry } from "../_lib/quick-inquiry/handler";
 
 type Env = {
   TELEGRAM_BOT_TOKEN?: string;
@@ -11,21 +11,21 @@ type Env = {
   NEXT_PUBLIC_SITE_URL?: string;
 };
 
-function methodNotAllowed(): Response {
+function jsonError(status: number, code: string, message: string, hint?: string): Response {
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+  };
+  if (status === 405) headers.Allow = "POST";
+
   return new Response(
     JSON.stringify({
       ok: false,
-      code: "method_not_allowed",
-      message: "허용되지 않은 요청입니다.",
+      code,
+      message,
+      ...(hint ? { hint } : {}),
     }),
-    {
-      status: 405,
-      headers: {
-        Allow: "POST",
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "no-store",
-      },
-    },
+    { status, headers },
   );
 }
 
@@ -33,7 +33,18 @@ export async function onRequestPost(context: {
   request: Request;
   env: Env;
 }): Promise<Response> {
-  return handleQuickInquiry(context.request, context.env);
+  try {
+    return await handleQuickInquiry(context.request, context.env);
+  } catch (error) {
+    const hint =
+      error instanceof Error ? error.message.slice(0, 160) : "unknown_function_error";
+    return jsonError(
+      500,
+      "server_error",
+      "일시적인 오류가 발생했습니다. 전화로 문의해 주세요.",
+      hint,
+    );
+  }
 }
 
 export async function onRequest(context: {
@@ -41,7 +52,7 @@ export async function onRequest(context: {
   env: Env;
 }): Promise<Response> {
   if (context.request.method !== "POST") {
-    return methodNotAllowed();
+    return jsonError(405, "method_not_allowed", "허용되지 않은 요청입니다.");
   }
   return onRequestPost(context);
 }

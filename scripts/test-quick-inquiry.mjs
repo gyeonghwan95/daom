@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { validateInquiryBody } from "../src/lib/quick-inquiry/core/validate.ts";
 import { parseContact } from "../src/lib/quick-inquiry/core/sanitize.ts";
 import { handleQuickInquiry } from "../src/lib/quick-inquiry/core/handler.ts";
+import { normalizeSenderAddress } from "../src/lib/quick-inquiry/core/notify.ts";
 
 function ok(name) {
   console.log(`  ✓ ${name}`);
@@ -91,6 +92,18 @@ console.log("quick-inquiry validation");
   assert.equal(v.ok, false);
   assert.equal(v.error.code, "honeypot");
   ok("honeypot blocked");
+}
+
+{
+  assert.equal(
+    normalizeSenderAddress("noreply@다옴법무사사무소.kr"),
+    "noreply@xn--2j1br1na42lvxja38mk8r.kr",
+  );
+  assert.equal(
+    normalizeSenderAddress("다옴 문의 <noreply@다옴법무사사무소.kr>"),
+    "다옴 문의 <noreply@xn--2j1br1na42lvxja38mk8r.kr>",
+  );
+  ok("from address punycode normalize");
 }
 
 console.log("quick-inquiry handler");
