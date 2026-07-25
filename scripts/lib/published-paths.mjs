@@ -184,6 +184,14 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/local-landing/selection-landing-config.ts",
   );
+  const consultLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/local-landing/consult-landing-config.ts",
+  );
+  const consultLandingsPath = path.join(
+    ROOT,
+    "src/lib/consult-wizard/landings.ts",
+  );
   const searchIntentConfigPath = path.join(
     ROOT,
     "src/lib/local-landing/search-intent-landing-config.ts",
@@ -224,6 +232,14 @@ function readLandingSlugs() {
   const selection =
     fs.existsSync(selectionConfigPath)
       ? fs.readFileSync(selectionConfigPath, "utf8")
+      : "";
+  const consultLanding =
+    fs.existsSync(consultLandingConfigPath)
+      ? fs.readFileSync(consultLandingConfigPath, "utf8")
+      : "";
+  const consultLandings =
+    fs.existsSync(consultLandingsPath)
+      ? fs.readFileSync(consultLandingsPath, "utf8")
       : "";
   const searchIntent =
     fs.existsSync(searchIntentConfigPath)
@@ -270,6 +286,8 @@ function readLandingSlugs() {
     ...(expansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(keyword.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(selection.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(consultLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(consultLandings.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(searchIntent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(searchIntentSeeds.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(neighborhood.match(/slug:\s*"([^"]+)"/g) ?? []),

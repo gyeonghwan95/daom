@@ -25,11 +25,12 @@ export default function ContactInquiryPage() {
           { label: "상담 신청" },
         ]}
         currentPath="/contact/inquiry"
-        intro={`이름·연락처·상담 분야·현재 상황을 적어 주시면 검토가 수월합니다. ${INQUIRY_RELAXED_NOTE}`}
+        intro={`이름·연락처·상담 분야·현재 상황을 남겨 주시면 사무소 이메일로 전달됩니다. ${INQUIRY_RELAXED_NOTE}`}
         relatedLinks={[
           { href: "/contact", label: "상담 안내" },
           { href: "/location", label: "오시는 길" },
           { href: "/services", label: "업무안내" },
+          { href: "/상담", label: "약 1분 간편 상담" },
         ]}
         showConsultationCTA={false}
       >

@@ -8,6 +8,7 @@ import { lectureLandingConfigs } from "@/lib/lectures/landing-config";
 import { businessLandingConfigs } from "@/lib/business/landing-config";
 import { b2bLandingConfigs } from "@/lib/b2b/landing-config";
 import { searchIntentLandingConfigs } from "./search-intent-landing-config";
+import { consultLandingConfigs } from "./consult-landing-config";
 
 const baseLandingConfigs: LocalLandingConfig[] = [
   { slug: "부산상속등기", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "센텀", "재송동", "수영구", "연제구"], caseAngle: "형제 상속인 간 분쟁 없이 해운대 아파트 상속등기 완료", relatedCaseSlug: "haeundae-inheritance-registration-case" },
@@ -69,6 +70,7 @@ export const localLandingConfigs: LocalLandingConfig[] = [
   ...keywordLandingConfigs,
   ...selectionLandingConfigs,
   ...searchIntentLandingConfigs,
+  ...consultLandingConfigs,
   ...neighborhoodHubConfigs,
   ...lectureLandingConfigs,
   ...businessLandingConfigs,

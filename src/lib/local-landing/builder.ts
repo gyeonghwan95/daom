@@ -14,6 +14,7 @@ import { buildNeighborhoodHubPage } from "./neighborhood-hub-builder";
 import { buildPreservationRegistrationPage } from "./preservation-registration-builder";
 import { buildPublicAgencyRegistrationPage } from "./public-agency-registration-builder";
 import { buildSelectionHubPage } from "./selection-builder";
+import { buildConsultLandingPage } from "./consult-landing-builder";
 import { buildLecturePage } from "@/lib/lectures/builder";
 import { buildBusinessPage } from "@/lib/business/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
@@ -379,6 +380,8 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     page = buildPublicAgencyRegistrationPage(config);
   } else if (pageType === "selection-hub") {
     page = buildSelectionHubPage(config);
+  } else if (pageType === "consult-landing") {
+    page = buildConsultLandingPage(config);
   } else if (pageType === "search-intent") {
     page = buildSearchIntentPage(config);
   } else if (pageType === "lecture") {

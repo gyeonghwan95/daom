@@ -15,7 +15,8 @@ export type LocalLandingPageType =
   | "search-intent"
   | "lecture"
   | "business"
-  | "b2b-collaboration";
+  | "b2b-collaboration"
+  | "consult-landing";
 
 export type LocalLandingConfig = {
   /** URL 경로 (예: 부산상속등기) */

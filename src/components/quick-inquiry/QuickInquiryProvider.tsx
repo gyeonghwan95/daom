@@ -8,11 +8,16 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
+import { suggestSituationsFromPath } from "@/lib/consult-wizard/catalog";
+import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 
 export type QuickInquiryOpenOptions = {
   pageTitle?: string;
   pageUrl?: string;
-  source?: "floating" | "mobile" | "inline" | "other";
+  source?: "floating" | "mobile" | "inline" | "landing" | "cta" | "other";
+  /** 페이지 맥락으로 미리 선택할 상황 (변경 가능) */
+  presetSituationIds?: ConsultSituationId[];
 };
 
 type QuickInquiryContextValue = {
@@ -20,6 +25,7 @@ type QuickInquiryContextValue = {
   pageTitle: string;
   pageUrl: string;
   source: QuickInquiryOpenOptions["source"];
+  presetSituationIds: ConsultSituationId[];
   openInquiry: (options?: QuickInquiryOpenOptions) => void;
   closeInquiry: () => void;
 };
@@ -31,6 +37,7 @@ function resolvePageMeta(options?: QuickInquiryOpenOptions) {
     return {
       pageTitle: options?.pageTitle ?? "",
       pageUrl: options?.pageUrl ?? "",
+      path: "",
     };
   }
 
@@ -39,9 +46,17 @@ function resolvePageMeta(options?: QuickInquiryOpenOptions) {
     pageUrl = `${window.location.origin}${pageUrl}`;
   }
 
+  let path = "";
+  try {
+    path = new URL(pageUrl).pathname;
+  } catch {
+    path = window.location.pathname;
+  }
+
   return {
     pageTitle: options?.pageTitle?.trim() || document.title || "",
     pageUrl,
+    path,
   };
 }
 
@@ -49,14 +64,31 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [pageTitle, setPageTitle] = useState("");
   const [pageUrl, setPageUrl] = useState("");
-  const [source, setSource] = useState<QuickInquiryOpenOptions["source"]>("other");
+  const [source, setSource] =
+    useState<QuickInquiryOpenOptions["source"]>("other");
+  const [presetSituationIds, setPresetSituationIds] = useState<
+    ConsultSituationId[]
+  >([]);
 
   const openInquiry = useCallback((options?: QuickInquiryOpenOptions) => {
     const meta = resolvePageMeta(options);
+    const presets =
+      options?.presetSituationIds?.length
+        ? options.presetSituationIds
+        : suggestSituationsFromPath(meta.path);
+
     setPageTitle(meta.pageTitle);
     setPageUrl(meta.pageUrl);
     setSource(options?.source ?? "other");
+    setPresetSituationIds(presets);
     setOpen(true);
+
+    trackConsultEvent({
+      event: "consult_start",
+      source: options?.source ?? "other",
+      pagePath: meta.path,
+      situationIds: presets,
+    });
   }, []);
 
   const closeInquiry = useCallback(() => {
@@ -69,14 +101,25 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
       pageTitle,
       pageUrl,
       source,
+      presetSituationIds,
       openInquiry,
       closeInquiry,
     }),
-    [open, pageTitle, pageUrl, source, openInquiry, closeInquiry],
+    [
+      open,
+      pageTitle,
+      pageUrl,
+      source,
+      presetSituationIds,
+      openInquiry,
+      closeInquiry,
+    ],
   );
 
   return (
-    <QuickInquiryContext.Provider value={value}>{children}</QuickInquiryContext.Provider>
+    <QuickInquiryContext.Provider value={value}>
+      {children}
+    </QuickInquiryContext.Provider>
   );
 }
 
@@ -88,7 +131,6 @@ export function useQuickInquiry() {
   return ctx;
 }
 
-/** Provider 밖(선택)에서도 안전하게 쓰기 위한 훅 */
 export function useOptionalQuickInquiry() {
   return useContext(QuickInquiryContext);
 }

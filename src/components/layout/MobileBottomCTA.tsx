@@ -162,19 +162,26 @@ export function MobileBottomCTA() {
       aria-label="빠른 연락"
     >
       <div className="grid grid-cols-5 divide-x divide-beige-dark">
-        {channels.map((channel) => (
-          <MobileChannelButton key={channel.id} channel={channel} />
-        ))}
+        {channels
+          .filter((channel) => channel.id !== "reservation")
+          .map((channel) => (
+            <MobileChannelButton key={channel.id} channel={channel} />
+          ))}
         <button
           type="button"
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry"
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
           aria-haspopup="dialog"
-          aria-label="간편 문의"
+          aria-label="상담하기"
           onClick={() => inquiry?.openInquiry({ source: "mobile" })}
         >
           <FormIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">문의</span>
+          <span className="mobile-bottom-cta__label">상담</span>
         </button>
+        {channels
+          .filter((channel) => channel.id === "reservation")
+          .map((channel) => (
+            <MobileChannelButton key={channel.id} channel={channel} />
+          ))}
       </div>
     </div>
   );

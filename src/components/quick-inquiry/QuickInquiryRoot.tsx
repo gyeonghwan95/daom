@@ -1,25 +1,22 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { QuickInquiryProvider } from "./QuickInquiryProvider";
+import { QuickInquiryProvider } from "@/components/quick-inquiry/QuickInquiryProvider";
 
-const QuickInquiryShell = dynamic(
-  () => import("./QuickInquiryShell").then((m) => m.QuickInquiryShell),
-  { ssr: false },
-);
-
-const QuickInquiryFloatingButton = dynamic(
+const ConsultWizardShell = dynamic(
   () =>
-    import("./QuickInquiryFloatingButton").then((m) => m.QuickInquiryFloatingButton),
+    import("@/components/consult-wizard/ConsultWizardShell").then(
+      (m) => m.ConsultWizardShell,
+    ),
   { ssr: false },
 );
 
+/** 간편 문의 플로팅은 제거하고 단계형 상담 셸만 마운트 */
 export function QuickInquiryRoot({ children }: { children: React.ReactNode }) {
   return (
     <QuickInquiryProvider>
       {children}
-      <QuickInquiryFloatingButton />
-      <QuickInquiryShell />
+      <ConsultWizardShell />
     </QuickInquiryProvider>
   );
 }

@@ -7,6 +7,7 @@ import {
 import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
+import { ConsultLandingPageView } from "@/components/consult-wizard/ConsultLandingPageView";
 import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPageView";
 import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageView";
 import { LecturePageView } from "@/components/lectures/LecturePageView";
@@ -153,6 +154,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <SelectionHubPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "consult-landing") {
+    return (
+      <PageContainer>
+        <ConsultLandingPageView page={page} />
       </PageContainer>
     );
   }
