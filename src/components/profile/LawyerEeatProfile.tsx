@@ -10,12 +10,22 @@ import {
   lawyerProfileMeta,
 } from "@/lib/lawyer-profile";
 import { getAllPressArticles, getPressArticleHref } from "@/lib/press-articles";
+import {
+  eeatAppointmentThumbs,
+  eeatAwardThumbs,
+  eeatExperienceThumbs,
+  eeatLectureThumbs,
+  eeatPressExtraThumbs,
+  type EeatThumbImage,
+} from "@/lib/lawyer-eeat-images";
+import { EeatFactThumb } from "@/components/profile/EeatFactThumb";
 
 type EeatFact = {
   term: string;
   description: string;
   meta?: string;
   href?: string;
+  image?: EeatThumbImage;
 };
 
 type LawyerEeatProfileProps = {
@@ -24,32 +34,35 @@ type LawyerEeatProfileProps = {
 
 function EeatFactList({ items }: { items: EeatFact[] }) {
   return (
-    <dl className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+    <dl className="eeat-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
       {items.map((item) => (
         <div
           key={`${item.term}-${item.meta ?? ""}`}
-          className="h-full rounded-xl border border-beige-dark bg-white px-4 py-4 md:px-5"
+          className="eeat-fact flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4"
         >
-          <dt className="text-base font-semibold text-navy md:text-lg">
-            {item.href ? (
-              <Link
-                href={item.href}
-                className="underline-offset-4 hover:text-navy-light hover:underline"
-              >
-                {item.term}
-              </Link>
-            ) : (
-              item.term
-            )}
-          </dt>
-          {item.meta ? (
-            <dd className="mt-1 text-xs font-medium text-navy-light md:text-sm">
-              {item.meta}
+          <div className="min-w-0 flex-1">
+            <dt className="text-base font-semibold leading-snug text-navy md:text-lg">
+              {item.href ? (
+                <Link
+                  href={item.href}
+                  className="underline-offset-4 hover:text-navy-light hover:underline"
+                >
+                  {item.term}
+                </Link>
+              ) : (
+                item.term
+              )}
+            </dt>
+            {item.meta ? (
+              <dd className="mt-1 text-xs font-medium text-navy-light md:text-sm">
+                {item.meta}
+              </dd>
+            ) : null}
+            <dd className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
+              {item.description}
             </dd>
-          ) : null}
-          <dd className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
-            {item.description}
-          </dd>
+          </div>
+          <EeatFactThumb image={item.image} />
         </div>
       ))}
     </dl>
@@ -94,18 +107,24 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       meta: `${article.source} · ${article.publishedAtDisplay}`,
       description: article.seoDescription ?? article.paragraphs[0] ?? "",
       href: getPressArticleHref(article.slug),
+      image: {
+        src: article.image.src,
+        alt: article.image.alt,
+      },
     })),
     {
       term: "법률 칼럼·실무 사례",
       meta: "다옴법무사사무소 네이버 블로그",
       description: "상속·부동산·법인·회생 관련 법률 정보와 실무 사례를 게시합니다.",
       href: "/blog",
+      image: eeatPressExtraThumbs["법률 칼럼·실무 사례"],
     },
     {
       term: "네이버 블로그",
       meta: "안윤정 법무사",
       description: "부산 지역 법률 실무와 생활 법률 정보를 정기적으로 기고합니다.",
       href: naverBlog,
+      image: eeatPressExtraThumbs["네이버 블로그"],
     },
   ];
 
@@ -158,6 +177,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                 term: item.title,
                 meta: item.period,
                 description: item.description,
+                image: eeatExperienceThumbs[item.title],
               }))}
             />
           </EeatSection>
@@ -180,6 +200,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                 term: item.name,
                 meta: [item.year, item.category].filter(Boolean).join(" · "),
                 description: item.detail ?? "",
+                image: eeatAwardThumbs[item.name],
               }))}
             />
           </EeatSection>
@@ -190,6 +211,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                 term: item.title,
                 meta: [item.organization, item.period].filter(Boolean).join(" · "),
                 description: item.summary,
+                image: eeatAppointmentThumbs[item.title],
               }))}
             />
           </EeatSection>
@@ -202,6 +224,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                   .filter(Boolean)
                   .join(" · "),
                 description: item.summary,
+                image: eeatLectureThumbs[item.venue],
               }))}
             />
           </EeatSection>

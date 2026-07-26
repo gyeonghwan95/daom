@@ -1,0 +1,521 @@
+{
+  "generatedAt": "2026-07-26T10:32:33.422Z",
+  "missingExisting": [],
+  "presentPlanned": [],
+  "rows": [
+    {
+      "id": "home",
+      "url": "/",
+      "pathChecked": "/image/사무소-전경.jpg",
+      "exists": true,
+      "bytes": 1050074,
+      "note": "existing ok"
+    },
+    {
+      "id": "home:planned",
+      "url": "/",
+      "pathChecked": "/image/seo/seo-home-busan-lawyer.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "services-hub",
+      "url": "/services",
+      "pathChecked": "/image/썸네일-상담협의.jpg",
+      "exists": true,
+      "bytes": 1181621,
+      "note": "existing ok"
+    },
+    {
+      "id": "services-hub:planned",
+      "url": "/services",
+      "pathChecked": "/image/seo/seo-services-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-inheritance-registration",
+      "url": "/services/inheritance-registration",
+      "pathChecked": "/image/썸네일-등기필증_상속.jpg",
+      "exists": true,
+      "bytes": 287626,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-inheritance-registration:planned",
+      "url": "/services/inheritance-registration",
+      "pathChecked": "/image/seo/seo-svc-inheritance-registration.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-inheritance-renunciation",
+      "url": "/services/inheritance-renunciation",
+      "pathChecked": "/image/썸네일-민사소송책.png",
+      "exists": true,
+      "bytes": 2567313,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-inheritance-renunciation:planned",
+      "url": "/services/inheritance-renunciation",
+      "pathChecked": "/image/seo/seo-svc-inheritance-renunciation.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-qualified-acceptance",
+      "url": "/services/qualified-acceptance",
+      "pathChecked": "/image/썸네일-서류확인.jpg",
+      "exists": true,
+      "bytes": 1763573,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-qualified-acceptance:planned",
+      "url": "/services/qualified-acceptance",
+      "pathChecked": "/image/seo/seo-svc-qualified-acceptance.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-real-estate-registration",
+      "url": "/services/real-estate-registration",
+      "pathChecked": "/image/썸네일-등기소.jpg",
+      "exists": true,
+      "bytes": 3775758,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-real-estate-registration:planned",
+      "url": "/services/real-estate-registration",
+      "pathChecked": "/image/seo/seo-svc-real-estate-registration.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-ownership-transfer",
+      "url": "/services/ownership-transfer",
+      "pathChecked": "/image/썸네일-등기필증_매매증여.jpg",
+      "exists": true,
+      "bytes": 1836219,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-ownership-transfer:planned",
+      "url": "/services/ownership-transfer",
+      "pathChecked": "/image/seo/seo-svc-ownership-transfer.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-corporate-registration",
+      "url": "/services/corporate-registration",
+      "pathChecked": "/image/썸네일-계약임원.jpg",
+      "exists": true,
+      "bytes": 1561578,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-corporate-registration:planned",
+      "url": "/services/corporate-registration",
+      "pathChecked": "/image/seo/seo-svc-corporate-registration.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-company-establishment",
+      "url": "/services/company-establishment",
+      "pathChecked": "/image/썸네일-작성중.png",
+      "exists": true,
+      "bytes": 2106813,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-company-establishment:planned",
+      "url": "/services/company-establishment",
+      "pathChecked": "/image/seo/seo-svc-company-establishment.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-director-change",
+      "url": "/services/director-change",
+      "pathChecked": "/image/썸네일-컴퓨터.png",
+      "exists": true,
+      "bytes": 1163679,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-director-change:planned",
+      "url": "/services/director-change",
+      "pathChecked": "/image/seo/seo-svc-director-change.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-personal-rehabilitation",
+      "url": "/services/personal-rehabilitation",
+      "pathChecked": "/image/썸네일-동부지원.jpg",
+      "exists": true,
+      "bytes": 4381412,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-personal-rehabilitation:planned",
+      "url": "/services/personal-rehabilitation",
+      "pathChecked": "/image/seo/seo-svc-personal-rehabilitation.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "svc-bankruptcy",
+      "url": "/services/bankruptcy",
+      "pathChecked": "/image/썸네일-서부지원.jpg",
+      "exists": true,
+      "bytes": 3412579,
+      "note": "existing ok"
+    },
+    {
+      "id": "svc-bankruptcy:planned",
+      "url": "/services/bankruptcy",
+      "pathChecked": "/image/seo/seo-svc-bankruptcy.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-busan-lawyer",
+      "url": "/부산법무사",
+      "pathChecked": "/image/사무소-전경.jpg",
+      "exists": true,
+      "bytes": 1050074,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-busan-lawyer:planned",
+      "url": "/부산법무사",
+      "pathChecked": "/image/seo/seo-local-busan-lawyer.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-busan-inheritance",
+      "url": "/부산상속등기",
+      "pathChecked": "/image/썸네일-등기필증_상속.jpg",
+      "exists": true,
+      "bytes": 287626,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-busan-inheritance:planned",
+      "url": "/부산상속등기",
+      "pathChecked": "/image/seo/seo-local-busan-inheritance.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-busan-real-estate",
+      "url": "/부산부동산등기",
+      "pathChecked": "/image/썸네일-등기소.jpg",
+      "exists": true,
+      "bytes": 3775758,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-busan-real-estate:planned",
+      "url": "/부산부동산등기",
+      "pathChecked": "/image/seo/seo-local-busan-real-estate.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-busan-corporate",
+      "url": "/부산법인등기",
+      "pathChecked": "/image/썸네일-계약임원.jpg",
+      "exists": true,
+      "bytes": 1561578,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-busan-corporate:planned",
+      "url": "/부산법인등기",
+      "pathChecked": "/image/seo/seo-local-busan-corporate.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-busan-rehab",
+      "url": "/부산개인회생",
+      "pathChecked": "/image/썸네일-동부지원.jpg",
+      "exists": true,
+      "bytes": 4381412,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-busan-rehab:planned",
+      "url": "/부산개인회생",
+      "pathChecked": "/image/seo/seo-local-busan-rehab.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "local-haeundae-lawyer",
+      "url": "/해운대법무사",
+      "pathChecked": "/image/사무소-명패.png",
+      "exists": true,
+      "bytes": 589799,
+      "note": "existing ok"
+    },
+    {
+      "id": "local-haeundae-lawyer:planned",
+      "url": "/해운대법무사",
+      "pathChecked": "/image/seo/seo-local-haeundae-lawyer.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "nationwide-hub:planned",
+      "url": "/전국업무",
+      "pathChecked": "/image/seo/seo-nationwide-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "nationwide-inheritance:planned",
+      "url": "/전국상속등기",
+      "pathChecked": "/image/seo/seo-nationwide-inheritance.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "about",
+      "url": "/about",
+      "pathChecked": "/image/썸네일-정면.jpg",
+      "exists": true,
+      "bytes": 1050074,
+      "note": "existing ok"
+    },
+    {
+      "id": "about:planned",
+      "url": "/about",
+      "pathChecked": "/image/seo/seo-about-lawyer.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "office",
+      "url": "/office",
+      "pathChecked": "/image/사무소-내부.jpg",
+      "exists": true,
+      "bytes": 3706000,
+      "note": "existing ok"
+    },
+    {
+      "id": "office:planned",
+      "url": "/office",
+      "pathChecked": "/image/seo/seo-office.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "contact",
+      "url": "/contact",
+      "pathChecked": "/image/상담-메인.jpg",
+      "exists": true,
+      "bytes": 808899,
+      "note": "existing ok"
+    },
+    {
+      "id": "contact:planned",
+      "url": "/contact",
+      "pathChecked": "/image/seo/seo-contact.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "consult-hub:planned",
+      "url": "/상담",
+      "pathChecked": "/image/seo/seo-consult-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "lecture-hub",
+      "url": "/법률강의",
+      "pathChecked": "/image/강의-시민도서관1주차.jpg",
+      "exists": true,
+      "bytes": 93005,
+      "note": "existing ok"
+    },
+    {
+      "id": "lecture-hub:planned",
+      "url": "/법률강의",
+      "pathChecked": "/image/seo/seo-lecture-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "lecture-jeonse",
+      "url": "/전세사기예방교육",
+      "pathChecked": "/image/강의-전세사기피하는법률교육특강.jpg",
+      "exists": true,
+      "bytes": 139282,
+      "note": "existing ok"
+    },
+    {
+      "id": "lecture-jeonse:planned",
+      "url": "/전세사기예방교육",
+      "pathChecked": "/image/seo/seo-lecture-jeonse.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "lecture-youth",
+      "url": "/청년생활법률특강",
+      "pathChecked": "/image/강의-청년전세사기예방접종.jpg",
+      "exists": true,
+      "bytes": 98064,
+      "note": "existing ok"
+    },
+    {
+      "id": "lecture-youth:planned",
+      "url": "/청년생활법률특강",
+      "pathChecked": "/image/seo/seo-lecture-youth.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "lecture-speaker",
+      "url": "/강사소개",
+      "pathChecked": "/image/썸네일-정면.jpg",
+      "exists": true,
+      "bytes": 1050074,
+      "note": "existing ok"
+    },
+    {
+      "id": "lecture-speaker:planned",
+      "url": "/강사소개",
+      "pathChecked": "/image/seo/seo-lecture-speaker.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "cases-hub",
+      "url": "/업무사례",
+      "pathChecked": "/image/썸네일-등기운영과.jpg",
+      "exists": true,
+      "bytes": 967341,
+      "note": "existing ok"
+    },
+    {
+      "id": "cases-hub:planned",
+      "url": "/업무사례",
+      "pathChecked": "/image/seo/seo-cases-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "situations-hub:planned",
+      "url": "/situations",
+      "pathChecked": "/image/seo/seo-situations-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "diagnosis-hub:planned",
+      "url": "/자가진단",
+      "pathChecked": "/image/seo/seo-diagnosis-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "search-guides:planned",
+      "url": "/search-guides",
+      "pathChecked": "/image/seo/seo-search-guides.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "b2b-hub",
+      "url": "/협업문의",
+      "pathChecked": "/image/활동-명례일반산업단지MOU.png",
+      "exists": true,
+      "bytes": 315966,
+      "note": "existing ok"
+    },
+    {
+      "id": "b2b-hub:planned",
+      "url": "/협업문의",
+      "pathChecked": "/image/seo/seo-b2b-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "mortgage-cancel",
+      "url": "/services/real-estate-registration",
+      "pathChecked": "/image/썸네일-등기필증_근저당.jpg",
+      "exists": true,
+      "bytes": 2102955,
+      "note": "existing ok"
+    },
+    {
+      "id": "mortgage-cancel:planned",
+      "url": "/services/real-estate-registration",
+      "pathChecked": "/image/seo/seo-mortgage-cancel.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "faq-hub",
+      "url": "/faq",
+      "pathChecked": "/image/썸네일-법원절차.jpg",
+      "exists": true,
+      "bytes": 3046735,
+      "note": "existing ok"
+    },
+    {
+      "id": "faq-hub:planned",
+      "url": "/faq",
+      "pathChecked": "/image/seo/seo-faq-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "glossary-hub",
+      "url": "/glossary",
+      "pathChecked": "/image/썸네일-법무사책.png",
+      "exists": true,
+      "bytes": 4462797,
+      "note": "existing ok"
+    },
+    {
+      "id": "glossary-hub:planned",
+      "url": "/glossary",
+      "pathChecked": "/image/seo/seo-glossary-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "tools-hub:planned",
+      "url": "/tools",
+      "pathChecked": "/image/seo/seo-tools-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "media-hub",
+      "url": "/media",
+      "pathChecked": "/image/언론-부산일보-260608.jpg",
+      "exists": true,
+      "bytes": 352653,
+      "note": "existing ok"
+    },
+    {
+      "id": "media-hub:planned",
+      "url": "/media",
+      "pathChecked": "/image/seo/seo-media-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    }
+  ]
+}

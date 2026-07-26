@@ -15,6 +15,7 @@ import { LectureHistoryHubView } from "@/components/lectures/history/LectureHist
 import { CaseRegionsHubView } from "@/components/case-regions/CaseRegionHubViews";
 import { NationwidePageView } from "@/components/nationwide/NationwidePageView";
 import { BusinessPageView } from "@/components/business/BusinessPageView";
+import { CounselIntentPageView } from "@/components/counsel/CounselIntentPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
@@ -178,6 +179,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <BusinessPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "counsel-intent") {
+    return (
+      <PageContainer>
+        <CounselIntentPageView page={page} />
       </PageContainer>
     );
   }

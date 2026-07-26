@@ -17,6 +17,7 @@ import { buildSelectionHubPage } from "./selection-builder";
 import { buildConsultLandingPage } from "./consult-landing-builder";
 import { buildLecturePage } from "@/lib/lectures/builder";
 import { buildBusinessPage } from "@/lib/business/builder";
+import { buildCounselIntentPage } from "@/lib/counsel-intent/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
 
@@ -388,6 +389,8 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     page = buildLecturePage(config);
   } else if (pageType === "business") {
     page = buildBusinessPage(config);
+  } else if (pageType === "counsel-intent") {
+    page = buildCounselIntentPage(config);
   } else if (pageType === "b2b-collaboration") {
     page = buildB2BCollaborationPage(config);
   } else if (pageType !== "service-region") {
@@ -415,6 +418,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/partners", label: "협업·프로젝트 문의" },
     ],
     부산부동산등기: [
+      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
       { href: "/partners", label: "부산 현지 등기 협업" },
       { href: "/부산부동산협력법무사", label: "부동산 협력 법무사" },
     ],
@@ -432,6 +436,22 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     ],
     공탁채권회수: [
       { href: "/부산기업채권관리", label: "기업 미수금·매출채권 관련 업무" },
+    ],
+    부산상속등기: [
+      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
+      { href: "/상담", label: "상황 선택형 상담" },
+    ],
+    상담: [
+      { href: "/부산법률상담", label: "부산 법률상담 — 검색의도 안내" },
+      { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+    ],
+    부산법무사상담: [
+      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
+      { href: "/상담", label: "상황 선택형 상담" },
+    ],
+    부산법무사: [
+      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
+      { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
     ],
   };
 

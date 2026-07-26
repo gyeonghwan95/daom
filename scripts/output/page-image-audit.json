@@ -1,0 +1,659 @@
+{
+  "generatedAt": "2026-07-26T10:32:31.216Z",
+  "manifestStatus": {
+    "total": 38,
+    "byStatus": {
+      "existing-review": 18,
+      "needed": 20
+    },
+    "ready": 0
+  },
+  "seoFolderFileCount": 1,
+  "unsafeApprovedMissingFiles": [],
+  "neededCount": 20,
+  "existingReviewCount": 18,
+  "inventorySummaryLoaded": true,
+  "inventory": {
+    "generatedAt": "2026-07-26T10:32:11.093Z",
+    "totalPages": 1455,
+    "indexablePages": 1324,
+    "menuLinkedPages": 73,
+    "publicImageCount": 79,
+    "ogImageMissing": 0,
+    "byPriority": {
+      "critical": 15,
+      "medium": 1199,
+      "high": 26,
+      "low": 215
+    },
+    "byAction": {
+      "create-image": 41,
+      "replace-image": 1381,
+      "keep-current": 11,
+      "reuse-existing": 22
+    },
+    "topDuplicateImages": [
+      {
+        "src": "/image/사무소-전경.jpg",
+        "count": 477
+      },
+      {
+        "src": "/image/썸네일-사무실.jpg",
+        "count": 355
+      },
+      {
+        "src": "/image/썸네일-등기소.jpg",
+        "count": 177
+      },
+      {
+        "src": "/image/썸네일-등기필증_상속.jpg",
+        "count": 156
+      },
+      {
+        "src": "/image/썸네일-계약임원.jpg",
+        "count": 55
+      },
+      {
+        "src": "/image/썸네일-등기필증_매매증여.jpg",
+        "count": 49
+      },
+      {
+        "src": "/image/썸네일-법원절차.jpg",
+        "count": 35
+      },
+      {
+        "src": "/image/썸네일-동부지원.jpg",
+        "count": 20
+      },
+      {
+        "src": "/image/썸네일-컴퓨터.png",
+        "count": 18
+      },
+      {
+        "src": "/image/썸네일-민사소송책.png",
+        "count": 17
+      },
+      {
+        "src": "/image/썸네일-작성중.png",
+        "count": 16
+      },
+      {
+        "src": "/image/썸네일-재송동행정복지센터.jpg",
+        "count": 16
+      },
+      {
+        "src": "/image/썸네일-서류확인.jpg",
+        "count": 11
+      },
+      {
+        "src": "/image/썸네일-서부지원.jpg",
+        "count": 10
+      },
+      {
+        "src": "/image/썸네일-등기필증_근저당.jpg",
+        "count": 10
+      },
+      {
+        "src": "/image/썸네일-동래구청.jpg",
+        "count": 6
+      },
+      {
+        "src": "/image/썸네일-기장군청.jpg",
+        "count": 6
+      },
+      {
+        "src": "/image/썸네일-동부지원2.jpg",
+        "count": 5
+      },
+      {
+        "src": "/image/썸네일-수영구청.jpg",
+        "count": 5
+      },
+      {
+        "src": "/image/썸네일-연제구청.jpg",
+        "count": 3
+      },
+      {
+        "src": "/image/썸네일-등기운영과.jpg",
+        "count": 2
+      },
+      {
+        "src": "/image/썸네일-금정구청.jpg",
+        "count": 2
+      },
+      {
+        "src": "/image/언론-부산일보-260608.jpg",
+        "count": 1
+      },
+      {
+        "src": "/image/언론-국제신문-260603.jpg",
+        "count": 1
+      },
+      {
+        "src": "/image/언론-법률신문-260602.png",
+        "count": 1
+      }
+    ],
+    "manifestWave1Count": 38,
+    "criticalSample": [
+      {
+        "url": "/",
+        "title": "부산 해운대구·센텀 법무사 상담",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/services",
+        "title": "부산 등기·상속·회생 업무안내",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/contact",
+        "title": "부산 법무사 상담 문의",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/contact/inquiry",
+        "title": "부산 법무사 상담 문의",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/부산상속등기",
+        "title": "부산 상속등기 법무사 상담",
+        "dup": 156,
+        "og": "/image/썸네일-등기필증_상속.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/부산법무사",
+        "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
+        "dup": 156,
+        "og": "/image/썸네일-등기필증_상속.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/해운대법무사",
+        "title": "해운대 법무사 상담 — 다옴법무사사무소",
+        "dup": 156,
+        "og": "/image/썸네일-등기필증_상속.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/services/inheritance-registration",
+        "title": "전국 상속등기 상담",
+        "dup": 156,
+        "og": "/image/썸네일-등기필증_상속.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/services/inheritance-renunciation",
+        "title": "상속포기 — 3개월 기한·채무 승계 차단",
+        "dup": 17,
+        "og": "/image/썸네일-민사소송책.png",
+        "action": "create-image"
+      },
+      {
+        "url": "/services/qualified-acceptance",
+        "title": "한정승인 — 재산 범위 내 채무만 책임질 때",
+        "dup": 11,
+        "og": "/image/썸네일-서류확인.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/services/real-estate-registration",
+        "title": "부동산등기 — 소유권·담보·말소 상담",
+        "dup": 177,
+        "og": "/image/썸네일-등기소.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/services/corporate-registration",
+        "title": "법인등기 — 설립·임원·본점 변경 상담",
+        "dup": 55,
+        "og": "/image/썸네일-계약임원.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/업무사례",
+        "title": "부산 법무사 업무 사례를 지역과 업무로 찾아보세요",
+        "dup": 355,
+        "og": "/image/썸네일-사무실.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/전국업무",
+        "title": "부산에 방문하지 않아도 맡길 수 있는 전국 법무사 업무",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      },
+      {
+        "url": "/전국상속등기",
+        "title": "전국 어디서나 맡길 수 있는 상속등기",
+        "dup": 477,
+        "og": "/image/사무소-전경.jpg",
+        "action": "create-image"
+      }
+    ]
+  },
+  "manifestIssues": [
+    {
+      "id": "home",
+      "url": "/",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-home-busan-lawyer.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/사무소-전경.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "services-hub",
+      "url": "/services",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-services-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-상담협의.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-inheritance-registration",
+      "url": "/services/inheritance-registration",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-inheritance-registration.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기필증_상속.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-inheritance-renunciation",
+      "url": "/services/inheritance-renunciation",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-svc-inheritance-renunciation.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-민사소송책.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-qualified-acceptance",
+      "url": "/services/qualified-acceptance",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-svc-qualified-acceptance.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-서류확인.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-real-estate-registration",
+      "url": "/services/real-estate-registration",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-real-estate-registration.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기소.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-ownership-transfer",
+      "url": "/services/ownership-transfer",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-ownership-transfer.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기필증_매매증여.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-corporate-registration",
+      "url": "/services/corporate-registration",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-corporate-registration.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-계약임원.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-company-establishment",
+      "url": "/services/company-establishment",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-svc-company-establishment.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-작성중.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-director-change",
+      "url": "/services/director-change",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-svc-director-change.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-컴퓨터.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-personal-rehabilitation",
+      "url": "/services/personal-rehabilitation",
+      "priority": "critical",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-personal-rehabilitation.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-동부지원.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "svc-bankruptcy",
+      "url": "/services/bankruptcy",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-svc-bankruptcy.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-서부지원.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-busan-lawyer",
+      "url": "/부산법무사",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-busan-lawyer.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/사무소-전경.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-busan-inheritance",
+      "url": "/부산상속등기",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-busan-inheritance.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기필증_상속.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-busan-real-estate",
+      "url": "/부산부동산등기",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-busan-real-estate.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기소.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-busan-corporate",
+      "url": "/부산법인등기",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-busan-corporate.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-계약임원.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-busan-rehab",
+      "url": "/부산개인회생",
+      "priority": "critical",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-busan-rehab.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-동부지원.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "local-haeundae-lawyer",
+      "url": "/해운대법무사",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-local-haeundae-lawyer.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/사무소-명패.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "nationwide-hub",
+      "url": "/전국업무",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-nationwide-hub.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "nationwide-inheritance",
+      "url": "/전국상속등기",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-nationwide-inheritance.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "about",
+      "url": "/about",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-about-lawyer.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-정면.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "office",
+      "url": "/office",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-office.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/사무소-내부.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "contact",
+      "url": "/contact",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-contact.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/상담-메인.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "consult-hub",
+      "url": "/상담",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-consult-hub.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "lecture-hub",
+      "url": "/법률강의",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-lecture-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/강의-시민도서관1주차.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "lecture-jeonse",
+      "url": "/전세사기예방교육",
+      "priority": "high",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-lecture-jeonse.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/강의-전세사기피하는법률교육특강.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "lecture-youth",
+      "url": "/청년생활법률특강",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-lecture-youth.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/강의-청년전세사기예방접종.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "lecture-speaker",
+      "url": "/강사소개",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-lecture-speaker.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-정면.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "cases-hub",
+      "url": "/업무사례",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-cases-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기운영과.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "situations-hub",
+      "url": "/situations",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-situations-hub.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "diagnosis-hub",
+      "url": "/자가진단",
+      "priority": "high",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-diagnosis-hub.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "search-guides",
+      "url": "/search-guides",
+      "priority": "medium",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-search-guides.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "b2b-hub",
+      "url": "/협업문의",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-b2b-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/활동-명례일반산업단지MOU.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "mortgage-cancel",
+      "url": "/services/real-estate-registration",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-mortgage-cancel.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-등기필증_근저당.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "faq-hub",
+      "url": "/faq",
+      "priority": "medium",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-faq-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-법원절차.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "glossary-hub",
+      "url": "/glossary",
+      "priority": "low",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-glossary-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/썸네일-법무사책.png",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "tools-hub",
+      "url": "/tools",
+      "priority": "low",
+      "status": "needed",
+      "plannedPath": "/image/seo/seo-tools-hub.webp",
+      "plannedFileExists": false,
+      "existingFileExists": null,
+      "unsafeIfApplied": false
+    },
+    {
+      "id": "media-hub",
+      "url": "/media",
+      "priority": "medium",
+      "status": "existing-review",
+      "plannedPath": "/image/seo/seo-media-hub.webp",
+      "plannedFileExists": false,
+      "existingImage": "/image/언론-부산일보-260608.jpg",
+      "existingFileExists": true,
+      "unsafeIfApplied": false
+    }
+  ]
+}

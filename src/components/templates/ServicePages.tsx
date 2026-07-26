@@ -17,6 +17,12 @@ import { serviceSeoMap, staticPageSeo } from "@/lib/seo/page-seo";
 import { getCaseImage, getServiceImage } from "@/lib/site-images";
 import { allServiceDetails } from "@/lib/services-data";
 import type { ServiceDetail } from "@/types/service";
+import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
+import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
+import {
+  getApprovedCarouselHubData,
+  resolveCarouselOgImage,
+} from "@/lib/seo/carousel-images";
 
 type ServiceDetailTemplateProps = {
   service: ServiceDetail;
@@ -32,10 +38,13 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
 
 export function ServicesIndexTemplate() {
   const cases = getAllContent("cases");
+  // 승인(approved|applied)된 대표이미지가 4개 이상일 때만 노출된다.
+  const seoCarousel = getApprovedCarouselHubData("/services");
 
   return (
     <PageContainer>
       <JsonLd data={buildArticleListSchema(cases)} />
+      {seoCarousel ? <SeoCarouselJsonLd items={seoCarousel.items} /> : null}
       <PageContentSection
         h1="부산 등기·상속·법인·회생 업무안내"
         intro="다옴법무사사무소 안윤정 법무사는 상속등기, 부동산등기, 법인등기, 개인회생·파산 등 법무사 업무 전반을 수행합니다. 해운대·센텀·재송동을 중심으로 부산 전역의 의뢰인을 맞이하며, 사건별 맞춤 상담을 제공합니다. 방문이 어렵다면 전화·카카오톡으로 전국 비대면 상담도 가능합니다."
@@ -72,6 +81,14 @@ export function ServicesIndexTemplate() {
             ))}
           </ul>
         </section>
+
+        {seoCarousel ? (
+          <SeoContentCarousel
+            heading={seoCarousel.heading}
+            description="자주 찾는 업무를 대표이미지와 함께 확인하세요."
+            items={seoCarousel.items}
+          />
+        ) : null}
 
         <section
           id="preservation-registration"
@@ -307,17 +324,22 @@ export function ServicesIndexTemplate() {
   );
 }
 
-export const servicesIndexMetadata = createPageMetadata(staticPageSeo.services);
+// 승인된 캐러셀 대표이미지가 있으면 OG로 사용, 없으면 기존 로직 유지
+export const servicesIndexMetadata = createPageMetadata({
+  ...staticPageSeo.services,
+  ogImage: resolveCarouselOgImage("/services")?.src,
+});
 
 export function getServicePageMetadata(service: ServiceDetail) {
   const seo = serviceSeoMap[service.slug];
   const primary = seo?.primaryKeyword ?? service.title;
+  const carouselOg = resolveCarouselOgImage(`/services/${service.slug}`);
 
   return createPageMetadata({
     title: buildSeoTitle(primary),
     description: service.description,
     path: `/services/${service.slug}`,
     keywords: seo?.keywords ?? [primary, "부산 법무사", "다옴법무사사무소"],
-    ogImage: getServiceImage(service.slug).src,
+    ogImage: carouselOg?.src ?? getServiceImage(service.slug).src,
   });
 }

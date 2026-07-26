@@ -42,6 +42,13 @@
     "verify": "npm run build && npm run check:diagnosis",
     "preview": "npx --yes serve@14 out -p 3000",
     "preview:cf": "npx --yes wrangler@4 pages dev out --port 8788",
+    "audit:page-images": "npx --yes tsx scripts/generate-page-image-inventory.ts && npx --yes tsx scripts/audit-page-images.ts",
+    "check:og-images": "npx --yes tsx scripts/check-og-images.ts",
+    "check:carousel-images": "npx --yes tsx scripts/check-carousel-images.ts",
+    "generate:carousel-images": "npx --yes tsx scripts/generate-carousel-images.ts",
+    "audit:attorney-photos": "npx --yes tsx scripts/audit-attorney-photos.ts",
+    "check:profession-misrepresentation": "npx --yes tsx scripts/check-profession-misrepresentation.ts",
+    "check:business-scope": "npx --yes tsx scripts/check-business-scope.ts",
     "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs"
   },
   "dependencies": {
@@ -64,6 +71,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

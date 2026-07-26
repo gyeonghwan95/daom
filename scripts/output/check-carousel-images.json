@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-07-26T11:17:52.216Z",
+  "sitemapChecked": true,
+  "items": [
+    {
+      "id": "hub-services",
+      "pageUrl": "/services",
+      "urlExists": true,
+      "source": "/image/홈-신뢰안내.png",
+      "output": "/images/generated/carousel/hub/services-hub.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 47,
+      "status": "approved"
+    },
+    {
+      "id": "svc-inheritance-registration",
+      "pageUrl": "/services/inheritance-registration",
+      "urlExists": true,
+      "source": "/image/썸네일-등기필증_상속.jpg",
+      "output": "/images/generated/carousel/inheritance/inheritance-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 53,
+      "status": "approved"
+    },
+    {
+      "id": "svc-inheritance-renunciation",
+      "pageUrl": "/services/inheritance-renunciation",
+      "urlExists": true,
+      "source": "/image/썸네일-법원절차.jpg",
+      "output": "/images/generated/carousel/inheritance/inheritance-renunciation.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 47,
+      "status": "approved"
+    },
+    {
+      "id": "svc-qualified-acceptance",
+      "pageUrl": "/services/qualified-acceptance",
+      "urlExists": true,
+      "source": "/image/썸네일-아래.jpg",
+      "output": "/images/generated/carousel/inheritance/qualified-acceptance.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 41,
+      "status": "approved"
+    },
+    {
+      "id": "svc-real-estate",
+      "pageUrl": "/services/real-estate-registration",
+      "urlExists": true,
+      "source": "/image/썸네일-등기소.jpg",
+      "output": "/images/generated/carousel/real-estate/real-estate-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 62,
+      "status": "approved"
+    },
+    {
+      "id": "svc-ownership-transfer",
+      "pageUrl": "/services/ownership-transfer",
+      "urlExists": true,
+      "source": "/image/썸네일-등기필증_매매증여.jpg",
+      "output": "/images/generated/carousel/real-estate/ownership-transfer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 73,
+      "status": "approved"
+    },
+    {
+      "id": "svc-corporate",
+      "pageUrl": "/services/corporate-registration",
+      "urlExists": true,
+      "source": "/image/썸네일-계약임원.jpg",
+      "output": "/images/generated/carousel/corporate/corporate-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 50,
+      "status": "approved"
+    },
+    {
+      "id": "svc-company-establishment",
+      "pageUrl": "/services/company-establishment",
+      "urlExists": true,
+      "source": null,
+      "output": "/images/generated/carousel/corporate/company-establishment.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 10,
+      "status": "approved"
+    },
+    {
+      "id": "svc-director-change",
+      "pageUrl": "/services/director-change",
+      "urlExists": true,
+      "source": null,
+      "output": "/images/generated/carousel/corporate/director-change.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 13,
+      "status": "approved"
+    },
+    {
+      "id": "svc-rehabilitation",
+      "pageUrl": "/services/personal-rehabilitation",
+      "urlExists": true,
+      "source": "/image/썸네일-동부지원.jpg",
+      "output": "/images/generated/carousel/rehabilitation/personal-rehabilitation.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 94,
+      "status": "approved"
+    },
+    {
+      "id": "svc-bankruptcy",
+      "pageUrl": "/services/bankruptcy",
+      "urlExists": true,
+      "source": "/image/썸네일-서부지원.jpg",
+      "output": "/images/generated/carousel/rehabilitation/bankruptcy.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 60,
+      "status": "approved"
+    },
+    {
+      "id": "local-busan-lawyer",
+      "pageUrl": "/부산법무사",
+      "urlExists": true,
+      "source": "/image/썸네일-정면.jpg",
+      "output": "/images/generated/carousel/hub/busan-lawyer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 52,
+      "status": "approved"
+    },
+    {
+      "id": "local-busan-inheritance",
+      "pageUrl": "/부산상속등기",
+      "urlExists": true,
+      "source": "/image/썸네일-등기운영과.jpg",
+      "output": "/images/generated/carousel/inheritance/busan-inheritance.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 62,
+      "status": "approved"
+    },
+    {
+      "id": "lecture-hub",
+      "pageUrl": "/법률강의",
+      "urlExists": true,
+      "source": "/image/강의-시민도서관1주차.jpg",
+      "output": "/images/generated/carousel/lecture/lecture-hub.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 67,
+      "status": "approved"
+    },
+    {
+      "id": "lecture-jeonse",
+      "pageUrl": "/전세사기예방교육",
+      "urlExists": true,
+      "source": "/image/강의-부산광역시자립지원전담기관전세사기예방.jpg",
+      "output": "/images/generated/carousel/lecture/lecture-jeonse.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 53,
+      "status": "approved"
+    }
+  ],
+  "hubs": [
+    {
+      "hubUrl": "/services",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/법률강의",
+      "totalItems": 2,
+      "approvedItems": 2,
+      "itemListEligible": false
+    }
+  ],
+  "warnings": [],
+  "problems": []
+}

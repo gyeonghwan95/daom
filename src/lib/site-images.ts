@@ -5,8 +5,8 @@
  */
 
 import {
-  THUMBNAIL_IMAGE_PATHS,
   pickThumbnailImagePath,
+  thumbnailPath,
 } from "@/lib/thumbnail-images";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 
@@ -68,7 +68,7 @@ export const imagePaths = {
   officeNameBadge: "/image/사무소-명패.png",
   appointmentCertificate: "/image/위촉장.jpg",
   activityBarAssociationAward: "/image/활동-법무사협회표창.jpg",
-  activityYouthBudgetAdvisory: "/image/활동-청년예산자문단.jpg",
+  activityYouthBudgetAdvisory: "/image/활동-기획예산처청년자문단위촉.jpg",
   activityBusanYouthPolicy: "/image/활동-부산청년정책위원.jpg",
   activityHaeundaePolicy: "/image/활동-해운대정책자문.jpg",
   activityPeaceUnification: "/image/활동-민주평통자문.jpg",
@@ -95,10 +95,20 @@ export const imagePaths = {
   thumbObject: "/image/썸네일-오브제.jpg",
   thumbDocumentReview: "/image/썸네일-서류확인.jpg",
   thumbEastDistrictCourt: "/image/썸네일-동부지원.jpg",
+  thumbEastDistrictCourt2: "/image/썸네일-동부지원2.jpg",
+  thumbWestDistrictCourt: "/image/썸네일-서부지원.jpg",
   thumbRegistryOffice: "/image/썸네일-등기소.jpg",
+  thumbRegistryOps: "/image/썸네일-등기운영과.jpg",
+  thumbCertificateInheritance: "/image/썸네일-등기필증_상속.jpg",
+  thumbCertificateTransfer: "/image/썸네일-등기필증_매매증여.jpg",
+  thumbCertificateMortgage: "/image/썸네일-등기필증_근저당.jpg",
   thumbDongnaeDistrict: "/image/썸네일-동래구청.jpg",
   thumbSuyeongDistrict: "/image/썸네일-수영구청.jpg",
-  thumbEastDistrictCourt2: "/image/썸네일-동부지원2.jpg",
+  thumbYeonjeDistrict: "/image/썸네일-연제구청.jpg",
+  thumbGijangDistrict: "/image/썸네일-기장군청.jpg",
+  thumbJaesongCenter: "/image/썸네일-재송동행정복지센터.jpg",
+  thumbGeumjeongDistrict: "/image/썸네일-금정구청.jpg",
+  thumbSahaDistrict: "/image/썸네일-사하구청.jpg",
   thumbComputerWork: "/image/썸네일-컴퓨터.png",
   thumbDrafting: "/image/썸네일-작성중.png",
   thumbPortraitBelow: "/image/썸네일-아래.jpg",
@@ -127,29 +137,30 @@ export const imagePaths = {
 
 const STOCK = imagePaths;
 
+/** 업무안내 — 항목마다 다른 연관 썸네일 */
 const serviceImageBySlug: Record<ServiceSlug, string> = {
-  "inheritance-registration": THUMBNAIL_IMAGE_PATHS[0],
-  "inheritance-renunciation": THUMBNAIL_IMAGE_PATHS[1],
-  "qualified-acceptance": THUMBNAIL_IMAGE_PATHS[2],
-  "real-estate-registration": THUMBNAIL_IMAGE_PATHS[5],
-  "ownership-transfer": THUMBNAIL_IMAGE_PATHS[4],
-  "corporate-registration": THUMBNAIL_IMAGE_PATHS[7],
-  "company-establishment": THUMBNAIL_IMAGE_PATHS[6],
-  "director-change": THUMBNAIL_IMAGE_PATHS[9],
-  "personal-rehabilitation": THUMBNAIL_IMAGE_PATHS[12],
-  bankruptcy: THUMBNAIL_IMAGE_PATHS[10],
+  "inheritance-registration": thumbnailPath("등기필증_상속"),
+  "inheritance-renunciation": thumbnailPath("민사소송책"),
+  "qualified-acceptance": thumbnailPath("서류확인"),
+  "real-estate-registration": thumbnailPath("등기소"),
+  "ownership-transfer": thumbnailPath("등기필증_매매증여"),
+  "corporate-registration": thumbnailPath("계약임원"),
+  "company-establishment": thumbnailPath("작성중"),
+  "director-change": thumbnailPath("컴퓨터"),
+  "personal-rehabilitation": thumbnailPath("동부지원"),
+  bankruptcy: thumbnailPath("서부지원"),
 };
 
+/** 업무사례 — 지역·주제 맞춤, 서로 겹치지 않게 */
 const caseImageBySlug: Record<string, string> = {
-  "gijang-land-inheritance-case": STOCK.thumbRegistryOffice,
-  "haeundae-inheritance-registration-case": STOCK.stockLegalDocuments,
-  "jaesong-inheritance-renunciation-consultation":
-    STOCK.thumbCivilLitigationBook,
-  "dongnae-qualified-acceptance-consultation": STOCK.thumbDocumentReview,
-  "centum-ownership-transfer-case": STOCK.thumbObject,
-  "suyeong-company-establishment-case": STOCK.thumbMajorBook,
-  "yeonje-director-change-case": STOCK.stockLegalContract,
-  "busan-personal-rehabilitation-consultation": STOCK.thumbEastDistrictCourt,
+  "gijang-land-inheritance-case": STOCK.thumbGijangDistrict,
+  "haeundae-inheritance-registration-case": STOCK.thumbCertificateInheritance,
+  "jaesong-inheritance-renunciation-consultation": STOCK.thumbJaesongCenter,
+  "dongnae-qualified-acceptance-consultation": STOCK.thumbDongnaeDistrict,
+  "centum-ownership-transfer-case": STOCK.thumbCertificateTransfer,
+  "suyeong-company-establishment-case": STOCK.thumbSuyeongDistrict,
+  "yeonje-director-change-case": STOCK.thumbYeonjeDistrict,
+  "busan-personal-rehabilitation-consultation": STOCK.thumbEastDistrictCourt2,
 };
 
 const stockShowcaseImages = [
@@ -208,7 +219,7 @@ export const siteImages = {
       ),
       youthBudgetAdvisory: img(
         imagePaths.activityYouthBudgetAdvisory,
-        "기획예산처 청년자문단",
+        "기획예산처 청년자문단 위촉",
         800,
         600,
         false,
@@ -280,11 +291,11 @@ export const siteImages = {
   },
 
   services: {
-    cover: img(THUMBNAIL_IMAGE_PATHS[3], "업무안내", 1400, 600),
+    cover: img(thumbnailPath("상담협의"), "업무안내", 1400, 600),
   },
 
   blog: {
-    cover: img(THUMBNAIL_IMAGE_PATHS[6], "법률 정보 블로그", 1400, 600),
+    cover: img(thumbnailPath("법무사책"), "법률 정보 블로그", 1400, 600),
     defaultThumb: img(
       pickThumbnailImagePath("blog-default"),
       "블로그 썸네일",
@@ -294,7 +305,7 @@ export const siteImages = {
   },
 
   cases: {
-    cover: img(imagePaths.stockLegalContract, "업무 사례", 1400, 600),
+    cover: img(thumbnailPath("등기운영과"), "업무 사례", 1400, 600),
     defaultThumb: img(imagePaths.thumbNotaryBook, "사례 썸네일", 800, 500),
   },
 
@@ -357,7 +368,7 @@ export function getBlogPostImage(slug: string): SiteImageAsset {
 }
 
 export function getCaseImage(slug: string): SiteImageAsset {
-  const src = caseImageBySlug[slug] ?? imagePaths.stockLegalOffice;
+  const src = caseImageBySlug[slug] ?? pickThumbnailImagePath(slug);
   return img(src, "업무 사례 썸네일", 800, 500);
 }
 

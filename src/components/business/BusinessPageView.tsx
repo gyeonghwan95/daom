@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { CTASection } from "@/components/sections/CTASection";
 import { BusinessInquiryForm } from "@/components/business/BusinessInquiryForm";
+import { IntentSelector } from "@/components/counsel/IntentSelector";
 import {
   ContentSection,
   PageHero,
@@ -19,6 +20,7 @@ import { getBusinessContent } from "@/lib/business/content";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import type { BusinessScopeLevel } from "@/lib/business/types";
+import { siteImages } from "@/lib/site-images";
 
 const SCOPE_LABELS: Record<BusinessScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -38,6 +40,7 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
     { id: "summary", label: "핵심 요약" },
     content.situations.length ? { id: "situations", label: "이런 상황" } : null,
     content.stageCards.length ? { id: "stages", label: "단계별 실무" } : null,
+    content.kind === "hub" ? { id: "selector", label: "업무 선택기" } : null,
     { id: "support", label: "지원 업무" },
     { id: "scope", label: "업무범위" },
     content.recurringChecks?.length
@@ -71,9 +74,19 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={content.primaryKeywords}
-        ctaLabel="기업 업무 문의"
+        ctaLabel="기업 업무 문의하기"
         ctaHref="/기업업무문의"
+        secondaryCta={{ href: "/부산법률상담", label: "개인·가족 절차 안내" }}
+        showDiagnosisCta={false}
+        showAboutLawyerCta={false}
+        sideImage={content.kind === "hub" ? siteImages.home.trust : undefined}
       />
+
+      {content.kind === "hub" ? (
+        <p className="text-sm font-medium text-navy">
+          다옴법무사사무소 안윤정 법무사 · 부산 해운대·센텀
+        </p>
+      ) : null}
 
       <div className="flex flex-wrap gap-2">
         <Link href="/기업업무문의" className="btn-primary">
@@ -144,6 +157,16 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
               </li>
             ))}
           </ul>
+        </ContentSection>
+      ) : null}
+
+      {content.kind === "hub" ? (
+        <ContentSection id="selector" title="업무 선택기">
+          <p className="mb-3 text-sm text-navy/70">
+            기업 법률자문이라는 넓은 검색어로 들어왔다면, 가까운 업무를 선택해
+            관련 안내로 이동하세요.
+          </p>
+          <IntentSelector variant="business" />
         </ContentSection>
       ) : null}
 
