@@ -1,0 +1,62 @@
+{
+  "response": {
+    "header": { "resultCode": "00", "resultMsg": "NORMAL SERVICE." },
+    "body": {
+      "pageNo": 1,
+      "numOfRows": 100,
+      "totalCount": 3,
+      "items": [
+        {
+          "bidNtceNo": "P20260726001",
+          "bidNtceOrd": "00",
+          "bidNtceClsfc": "용역",
+          "nticeDt": "2026-07-25 11:00:00",
+          "ntceNm": "OO아파트 소유권이전등기 법무사 선정 용역",
+          "ntceDivNm": "일반공고",
+          "ntceInsttNm": "OO아파트 관리사무소",
+          "bidMethdNm": "전자입찰",
+          "cntrctMthdNm": "제한경쟁",
+          "bidQlfctNm": "법무사",
+          "bidBeginDt": "2026-07-28 09:00:00",
+          "bidClseDt": "2026-08-10 18:00:00",
+          "opengDt": "2026-08-11 11:00:00",
+          "refAmt": "28000000",
+          "asignBdgtAmt": "28000000",
+          "rgnLmtDivNm": "부산광역시",
+          "aptHsmpNm": "해운대센텀OO아파트",
+          "aptCeoAdrs": "부산광역시 해운대구",
+          "aptHshldNum": "512",
+          "ntceSpecDocUrl1": "https://www.g2b.go.kr/doc/nuri-1.hwp",
+          "ntceSpecDocNm1": "과업지시서.hwp",
+          "rgstDt": "2026-07-25 10:30:00"
+        },
+        {
+          "bidNtceNo": "P20260726002",
+          "bidNtceOrd": "00",
+          "bidNtceClsfc": "용역",
+          "nticeDt": "2026-07-24 15:00:00",
+          "ntceNm": "입주자대표회의 법률자문 및 등기업무 대행 용역",
+          "ntceDivNm": "일반공고",
+          "ntceInsttNm": "△△단지 입주자대표회의",
+          "bidClseDt": "2026-08-15 17:00:00",
+          "refAmt": "15000000",
+          "rgnLmtDivNm": "부산광역시, 경상남도",
+          "aptHsmpNm": "양산△△아파트",
+          "aptHshldNum": "320"
+        },
+        {
+          "bidNtceNo": "P20260726003",
+          "bidNtceOrd": "00",
+          "bidNtceClsfc": "용역",
+          "nticeDt": "2026-07-25 09:00:00",
+          "ntceNm": "아파트 승강기 유지보수 용역",
+          "ntceDivNm": "일반공고",
+          "ntceInsttNm": "□□아파트 관리사무소",
+          "bidClseDt": "2026-08-20 18:00:00",
+          "refAmt": "80000000",
+          "aptHsmpNm": "□□아파트"
+        }
+      ]
+    }
+  }
+}

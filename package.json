@@ -49,7 +49,12 @@
     "audit:attorney-photos": "npx --yes tsx scripts/audit-attorney-photos.ts",
     "check:profession-misrepresentation": "npx --yes tsx scripts/check-profession-misrepresentation.ts",
     "check:business-scope": "npx --yes tsx scripts/check-business-scope.ts",
-    "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs"
+    "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs",
+    "bid:run": "npx --yes tsx collector/main.ts",
+    "bid:dry": "npx --yes tsx collector/main.ts --dry-run",
+    "bid:sample": "npx --yes tsx collector/main.ts --dry-run --fixture collector/tests/fixtures/g2b-servc-sample.json",
+    "bid:sample:nuri": "npx --yes tsx collector/main.ts --dry-run --fixture collector/tests/fixtures/nuri-servc-sample.json",
+    "bid:test": "npx --yes tsx collector/tests/run-tests.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

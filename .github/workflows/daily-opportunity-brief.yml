@@ -1,0 +1,81 @@
+name: Daily Opportunity Brief
+
+on:
+  schedule:
+    # Asia/Seoul 07:30 = UTC 22:30 (전날). 한국은 서머타임이 없어 고정.
+    # GitHub Actions 스케줄은 지연될 수 있으므로 메일 본문의 "수집 기준시각"이
+    # 실제 실행시각을 표시한다.
+    - cron: "30 22 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "이메일을 발송하지 않고 미리보기만 생성"
+        type: boolean
+        default: false
+      force_email:
+        description: "당일 중복 발송 방지 무시"
+        type: boolean
+        default: false
+
+concurrency:
+  group: daily-opportunity-brief
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit tests
+        run: npm run bid:test
+
+      # 실행 간 상태(중복 제거·정정 추적·중복 메일 방지)를 cache로 유지.
+      # 공개 저장소에 DB를 커밋하지 않는다.
+      - name: Restore collector state
+        uses: actions/cache/restore@v4
+        with:
+          path: collector/data
+          key: bid-collector-state-${{ github.run_id }}
+          restore-keys: |
+            bid-collector-state-
+
+      - name: Collect and send briefing
+        run: npm run bid:run -- ${{ inputs.dry_run && '--dry-run' || '' }} ${{ inputs.force_email && '--force-email' || '' }}
+        env:
+          G2B_SERVICE_KEY: ${{ secrets.G2B_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          BID_EMAIL_FROM: ${{ secrets.BID_EMAIL_FROM }}
+          BID_EMAIL_TO: ${{ secrets.BID_EMAIL_TO }}
+          BID_LOOKBACK_DAYS: "3"
+          BID_WEEKDAYS_ONLY: "false"
+
+      - name: Save collector state
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: collector/data
+          key: bid-collector-state-${{ github.run_id }}
+
+      - name: Upload briefing artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: briefing-${{ github.run_id }}
+          path: collector/output/
+          retention-days: 14
+          if-no-files-found: ignore
