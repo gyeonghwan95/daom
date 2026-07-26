@@ -1,0 +1,160 @@
+{
+  "robots": {
+    "https://다옴법무사사무소.kr": {
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "length": 2245,
+      "hasSitemapDirective": true,
+      "mentionsGooglebot": true,
+      "disallowRoot": true,
+      "disallowSitemaps": false,
+      "contentSignals": true,
+      "preview": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a Content-Signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a Content-Signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a Content-Signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via Content-Signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and providing search results (e.g., returning\n#           hyperlinks and short excerpts from your website's contents). Search does not\n#           include providing AI-generated search summaries.\n# ai-input: inputting content into one or more AI models (e.g., retrieval\n#           augmented generation, grounding, or other real-time taking of content for\n#           generative AI search answers).\n# ai-train: training or fine-tuning AI models.\n# use:      how AI systems may consume the content (immediate, reference, or full).\n\n# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF\n# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT\n# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.\n\n# BEGIN Cloudflare Managed content\n\nUser-agent: *\nContent-Signal: search=yes,ai-train=no,use=reference\nAllow: /\n\nUser-agent: Amazonbot\nDisallow: /\n\nUser-agent: Applebo",
+      "full": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a Content-Signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a Content-Signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a Content-Signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via Content-Signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and providing search results (e.g., returning\n#           hyperlinks and short excerpts from your website's contents). Search does not\n#           include providing AI-generated search summaries.\n# ai-input: inputting content into one or more AI models (e.g., retrieval\n#           augmented generation, grounding, or other real-time taking of content for\n#           generative AI search answers).\n# ai-train: training or fine-tuning AI models.\n# use:      how AI systems may consume the content (immediate, reference, or full).\n\n# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF\n# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT\n# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.\n\n# BEGIN Cloudflare Managed content\n\nUser-agent: *\nContent-Signal: search=yes,ai-train=no,use=reference\nAllow: /\n\nUser-agent: Amazonbot\nDisallow: /\n\nUser-agent: Applebot-Extended\nDisallow: /\n\nUser-agent: Bytespider\nDisallow: /\n\nUser-agent: CCBot\nDisallow: /\n\nUser-agent: ClaudeBot\nDisallow: /\n\nUser-agent: CloudflareBrowserRenderingCrawler\nDisallow: /\n\nUser-agent: Google-Extended\nDisallow: /\n\nUser-agent: GPTBot\nDisallow: /\n\nUser-agent: meta-externalagent\nDisallow: /\n\n# END Cloudflare Managed Content\n\nUser-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Googlebot\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Yeti\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nSitemap: https://다옴법무사사무소.kr/sitemap.xml\n"
+    },
+    "https://xn--2j1br1na42lvxja38mk8r.kr": {
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "length": 2245,
+      "hasSitemapDirective": true,
+      "mentionsGooglebot": true,
+      "disallowRoot": true,
+      "disallowSitemaps": false,
+      "contentSignals": true,
+      "preview": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a Content-Signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a Content-Signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a Content-Signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via Content-Signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and providing search results (e.g., returning\n#           hyperlinks and short excerpts from your website's contents). Search does not\n#           include providing AI-generated search summaries.\n# ai-input: inputting content into one or more AI models (e.g., retrieval\n#           augmented generation, grounding, or other real-time taking of content for\n#           generative AI search answers).\n# ai-train: training or fine-tuning AI models.\n# use:      how AI systems may consume the content (immediate, reference, or full).\n\n# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF\n# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT\n# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.\n\n# BEGIN Cloudflare Managed content\n\nUser-agent: *\nContent-Signal: search=yes,ai-train=no,use=reference\nAllow: /\n\nUser-agent: Amazonbot\nDisallow: /\n\nUser-agent: Applebo",
+      "full": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a Content-Signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a Content-Signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a Content-Signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via Content-Signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and providing search results (e.g., returning\n#           hyperlinks and short excerpts from your website's contents). Search does not\n#           include providing AI-generated search summaries.\n# ai-input: inputting content into one or more AI models (e.g., retrieval\n#           augmented generation, grounding, or other real-time taking of content for\n#           generative AI search answers).\n# ai-train: training or fine-tuning AI models.\n# use:      how AI systems may consume the content (immediate, reference, or full).\n\n# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF\n# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT\n# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.\n\n# BEGIN Cloudflare Managed content\n\nUser-agent: *\nContent-Signal: search=yes,ai-train=no,use=reference\nAllow: /\n\nUser-agent: Amazonbot\nDisallow: /\n\nUser-agent: Applebot-Extended\nDisallow: /\n\nUser-agent: Bytespider\nDisallow: /\n\nUser-agent: CCBot\nDisallow: /\n\nUser-agent: ClaudeBot\nDisallow: /\n\nUser-agent: CloudflareBrowserRenderingCrawler\nDisallow: /\n\nUser-agent: Google-Extended\nDisallow: /\n\nUser-agent: GPTBot\nDisallow: /\n\nUser-agent: meta-externalagent\nDisallow: /\n\n# END Cloudflare Managed Content\n\nUser-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Googlebot\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Yeti\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nSitemap: https://다옴법무사사무소.kr/sitemap.xml\n"
+    }
+  },
+  "sitemap": {
+    "https://다옴법무사사무소.kr": {
+      "status": 200,
+      "contentType": "application/xml",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "isIndex": true,
+      "locCount": 8,
+      "preview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml</loc>\n    <lastmod>2026-07-26</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-2-hubs.xml</loc>\n    <lastmod>2026-07-26</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-3"
+    },
+    "https://xn--2j1br1na42lvxja38mk8r.kr": {
+      "status": 200,
+      "contentType": "application/xml",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "isIndex": true,
+      "locCount": 8,
+      "preview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml</loc>\n    <lastmod>2026-07-26</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-2-hubs.xml</loc>\n    <lastmod>2026-07-26</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://다옴법무사사무소.kr/sitemaps/tier-3"
+    }
+  },
+  "pages": [
+    {
+      "url": "https://다옴법무사사무소.kr/",
+      "ua": "daom-diagnose",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/부산법무사",
+      "ua": "daom-diagnose",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/부산법무사",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://xn--2j1br1na42lvxja38mk8r.kr/부산법무사",
+      "ua": "daom-diagnose",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://xn--2j1br1na42lvxja38mk8r.kr/부산법무사",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+      "bodyStart": "<!DOCTYPE html><html lang=\"ko\" class=\"noto_sans_kr_5def19ff-module__O4w_rq__variable h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml",
+      "ua": "daom-diagnose",
+      "status": 200,
+      "location": null,
+      "contentType": "application/xml",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": null,
+      "bodyStart": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"> <url> <loc>https://다옴법무사사무소.kr</loc> <lastmod>2026-07-26</lastmod> <"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/sitemaps/tier-1-core.xml",
+      "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "status": 200,
+      "location": null,
+      "contentType": "application/xml",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "cfCache": "DYNAMIC",
+      "canonical": null,
+      "bodyStart": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"> <url> <loc>https://다옴법무사사무소.kr</loc> <lastmod>2026-07-26</lastmod> <"
+    }
+  ],
+  "localOutSample": [
+    {
+      "file": "out/index.html",
+      "exists": true,
+      "expected": "https://다옴법무사사무소.kr/",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr",
+      "robotsMeta": "index, follow"
+    },
+    {
+      "file": "out/부산법무사.html",
+      "exists": true,
+      "expected": "https://다옴법무사사무소.kr/부산법무사",
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+      "robotsMeta": "index, follow"
+    },
+    {
+      "file": "out/부산법무사/index.html",
+      "exists": false,
+      "expected": "https://다옴법무사사무소.kr/부산법무사"
+    }
+  ],
+  "localRobotsTxt": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Googlebot\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nUser-Agent: Yeti\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\nDisallow: /search\nDisallow: /blog/external/\n\nSitemap: https://다옴법무사사무소.kr/sitemap.xml\n"
+}

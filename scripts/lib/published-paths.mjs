@@ -224,6 +224,14 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/business/landing-config.ts",
   );
+  const counselIntentContentPath = path.join(
+    ROOT,
+    "src/lib/counsel-intent/content.ts",
+  );
+  const counselIntentLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/counsel-intent/landing-config.ts",
+  );
   const b2bPagesDir = path.join(ROOT, "src/lib/b2b/pages");
   const keyword =
     fs.existsSync(keywordConfigPath)
@@ -273,6 +281,14 @@ function readLandingSlugs() {
     fs.existsSync(businessLandingConfigPath)
       ? fs.readFileSync(businessLandingConfigPath, "utf8")
       : "";
+  const counselIntentContent =
+    fs.existsSync(counselIntentContentPath)
+      ? fs.readFileSync(counselIntentContentPath, "utf8")
+      : "";
+  const counselIntentLanding =
+    fs.existsSync(counselIntentLandingConfigPath)
+      ? fs.readFileSync(counselIntentLandingConfigPath, "utf8")
+      : "";
   let b2bPages = "";
   if (fs.existsSync(b2bPagesDir)) {
     b2bPages = fs
@@ -296,6 +312,8 @@ function readLandingSlugs() {
     ...(lectureExpansion.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(counselIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(counselIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(b2bPages.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
