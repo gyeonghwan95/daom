@@ -51,48 +51,52 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
   const category = getSituationCategoryById(page.situationCategory);
   const relatedSituations = getRelatedSituationLinks(page);
 
+  const solutionProse = page.solutions
+    .slice(0, 3)
+    .map(
+      (s) =>
+        `「${s.title}」은 ${s.body} 선택 기준으로는 ${s.whenToChoose}`,
+    )
+    .join(" ");
+
+  const bodyProse = [
+    page.conclusion,
+    page.situationChecklist.length > 0
+      ? `이런 상황으로 검색·상담을 찾는 경우가 많습니다. ${page.situationChecklist.slice(0, 4).join(" ")}`
+      : "",
+    page.firstChecks.length > 0
+      ? `준비가 덜 된 상태라면 지금 확인 가능한 것부터 정리하는 편이 안전합니다. ${page.firstChecks
+          .slice(0, 3)
+          .map((item, i) => `${i + 1}) ${item}`)
+          .join(" ")}`
+      : "",
+    solutionProse
+      ? `비슷해 보이는 선택지도 조건에 따라 갈립니다. ${solutionProse}`
+      : "",
+    [
+      page.selfHandleCases[0]
+        ? `혼자 서류·절차를 진행해 볼 수 있는 경우로는 ${page.selfHandleCases.slice(0, 2).join(" ")} 정도가 있습니다.`
+        : "",
+      page.lawyerNeededCases[0]
+        ? `반면 ${page.lawyerNeededCases.slice(0, 2).join(" ")}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" "),
+    page.commonMistakes.length > 0
+      ? `지연하거나 잘못 처리하면 보정·재신청·과태료·기한 문제로 이어질 수 있습니다. 특히 ${page.commonMistakes.slice(0, 3).join(", ")} 같은 실수를 피해야 합니다.`
+      : "",
+  ].filter((p) => p.trim().length > 0);
+
   const sections = [
     {
-      title: "핵심 결론",
-      body: page.conclusion,
-    },
-    {
-      title: "이런 상황인가요?",
-      body: "아래에 해당하면 이 안내가 도움이 될 수 있습니다.",
-      items: page.situationChecklist,
-    },
-    {
-      title: "지금 가장 먼저 할 일",
-      body: "절차를 시작하기 전에 아래 항목을 순서대로 점검해 보세요.",
-      items: page.firstChecks,
-    },
-    {
-      title: "가능한 해결 방법",
-      body: "상황에 따라 선택지가 달라집니다. 각 방법의 선택 기준을 함께 확인하세요.",
-      items: page.solutions.map(
-        (solution) =>
-          `${solution.title}: ${solution.body} (선택 기준: ${solution.whenToChoose})`,
-      ),
-    },
-    {
-      title: "혼자 처리해도 되는 경우",
-      body: "다음에 해당하면 서류만 갖추고 직접 진행할 수 있는 경우가 많습니다.",
-      items: page.selfHandleCases,
-    },
-    {
-      title: "법무사 상담이 필요한 경우",
-      body: "아래에 해당하면 사실관계·서류·기한을 함께 검토하는 것이 안전합니다.",
-      items: page.lawyerNeededCases,
+      title: "상황 이해하기",
+      body: bodyProse.join("\n\n"),
     },
     {
       title: "비용·기간에 영향을 주는 요소",
       body: "사건마다 다르지만, 아래 요소가 수임료·등기·법원 비용에 영향을 줍니다.",
       items: page.costFactors,
-    },
-    {
-      title: "자주 하는 실수",
-      body: "아래 실수는 기한·권리를 놓치거나 분쟁을 키우는 경우가 많습니다.",
-      items: page.commonMistakes,
     },
     {
       title: "관련 자가진단",
@@ -137,7 +141,7 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
       { label: category.label, href: category.path },
       { label: page.cardTitle },
     ],
-    introParagraphs: [page.conclusion, page.intro],
+    introParagraphs: [page.intro, ...bodyProse],
     procedures: page.procedures,
     documents: page.documents,
     consultationPoints: page.lawyerNeededCases.slice(0, 5),

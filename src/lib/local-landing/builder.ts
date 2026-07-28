@@ -18,6 +18,8 @@ import { buildConsultLandingPage } from "./consult-landing-builder";
 import { buildLecturePage } from "@/lib/lectures/builder";
 import { buildBusinessPage } from "@/lib/business/builder";
 import { buildCounselIntentPage } from "@/lib/counsel-intent/builder";
+import { buildCorporateIntentPage } from "@/lib/corporate-intent/builder";
+import { buildSpecialEntityIntentPage } from "@/lib/special-entity-intent/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
 
@@ -391,6 +393,10 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     page = buildBusinessPage(config);
   } else if (pageType === "counsel-intent") {
     page = buildCounselIntentPage(config);
+  } else if (pageType === "corporate-intent") {
+    page = buildCorporateIntentPage(config);
+  } else if (pageType === "special-entity-intent") {
+    page = buildSpecialEntityIntentPage(config);
   } else if (pageType === "b2b-collaboration") {
     page = buildB2BCollaborationPage(config);
   } else if (pageType !== "service-region") {
@@ -406,6 +412,10 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
 function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
   const extras: Record<string, { href: string; label: string }[]> = {
     부산법인등기: [
+      { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 허브" },
+      { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
+      { href: "/법인변경등기", label: "법인 변경등기 허브" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법률자문", label: "기업 운영 단계별 법률실무 지원" },
       { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
       { href: "/부산기업부동산등기", label: "기업 부동산등기" },
@@ -452,6 +462,13 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     부산법무사: [
       { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
       { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
+    ],
+    부산법인법무사: [
+      { href: "/법인변경등기", label: "법인 변경등기 허브" },
+      { href: "/부산대표이사변경등기", label: "대표이사 변경등기" },
+      { href: "/부산본점이전등기", label: "본점이전등기" },
+      { href: "/부산유상증자등기", label: "유상증자 등기" },
+      { href: "/부산법인해산청산등기", label: "해산·청산등기" },
     ],
   };
 

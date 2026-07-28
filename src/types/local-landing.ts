@@ -16,6 +16,8 @@ export type LocalLandingPageType =
   | "lecture"
   | "business"
   | "counsel-intent"
+  | "corporate-intent"
+  | "special-entity-intent"
   | "b2b-collaboration"
   | "consult-landing";
 

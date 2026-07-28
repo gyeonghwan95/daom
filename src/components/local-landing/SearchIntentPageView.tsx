@@ -8,15 +8,14 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
+  ArticleSummary,
   ChecklistBox,
   ConsultationCTA,
   ContentSection,
   PageHero,
   PageTableOfContents,
-  ProseParagraphs,
   RelatedContentGrid,
   StepTimeline,
-  SummaryBox,
   WarningBox,
 } from "@/components/readability";
 import { recommendationFromService } from "@/lib/internal-links";
@@ -25,7 +24,7 @@ import { subproxyJurisdictionData } from "@/lib/local-landing/search-intent";
 import { MassRegistryB2BAddon } from "@/components/b2b/MassRegistryB2BAddon";
 import { allServiceDetails } from "@/lib/services-data";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
-import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -49,9 +48,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
   };
 
   const tocItems = [
-    { id: "summary", label: "핵심 요약" },
-    { id: "search-intents", label: "이런 분들이 많이 검색합니다" },
-    { id: "when-needed", label: "언제 필요한가" },
+    { id: "article-body", label: "본문 안내" },
     { id: "documents", label: "준비서류" },
     { id: "procedures", label: "절차" },
     { id: "mistakes", label: "자주 하는 실수" },
@@ -60,6 +57,22 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     { id: "related-services", label: "관련 서비스" },
     { id: "consultation", label: "상담 문의" },
   ];
+
+  const showNationwide = shouldShowNationwideRegionChip(
+    page.path,
+    page.slug,
+    page.serviceSlug,
+  );
+
+  const bodyParagraphs = [
+    ...content.heroParagraphs.slice(1),
+    content.searchIntents.length > 0
+      ? `이런 검색·상담이 많습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
+      : "",
+    content.whenNeeded.length > 0
+      ? `언제 필요한지부터 보면 판단이 쉬워집니다. ${content.whenNeeded.slice(0, 3).join(" ")}`
+      : "",
+  ].filter((p) => p.trim().length > 0);
 
   return (
     <article className="content-stack">
@@ -77,22 +90,29 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
-        showNationwideChip={shouldShowNationwideRegionChip(
-          page.path,
-          page.slug,
-          page.serviceSlug,
-        )}
+        showNationwideChip={showNationwide}
       />
 
-      {shouldShowNationwideRegionChip(
-        page.path,
-        page.slug,
-        page.serviceSlug,
-      ) ? (
-        <NationwideRemoteBanner />
-      ) : null}
+      {showNationwide ? <NationwideServiceCard /> : null}
 
-      <ProseParagraphs paragraphs={content.heroParagraphs.slice(1)} />
+      <ArticleSummary
+        conclusion={
+          content.summaryBullets.slice(0, 2).join(" ") ||
+          content.heroParagraphs[0]
+        }
+        checkItems={content.documents.slice(0, 3)}
+        consultTriggers={content.whenNeeded.slice(0, 3)}
+      />
+
+      {bodyParagraphs.length > 0 ? (
+        <ContentSection id="article-body" title="자세히 알아보기">
+          <div className="article-body">
+            {bodyParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
 
       {conversionKey ? (
         <ServiceConversionEnhancements
@@ -102,19 +122,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         />
       ) : null}
 
-      <ContentSection id="summary" title="핵심 요약">
-        <SummaryBox items={content.summaryBullets} />
-      </ContentSection>
-
       <PageTableOfContents items={tocItems} />
-
-      <ContentSection id="search-intents" title="이런 분들이 많이 검색합니다">
-        <ChecklistBox items={content.searchIntents} />
-      </ContentSection>
-
-      <ContentSection id="when-needed" title="언제 필요한가">
-        <ChecklistBox items={content.whenNeeded} />
-      </ContentSection>
 
       {page.slug === "부산등기복대리" ? (
         <ContentSection id="jurisdictions" title="관할별 안내(사전 확인)">
@@ -198,9 +206,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       <div id="consultation">
         <ConsultationCTA
-          title="상담 문의"
-          description={content.bottomCtaText}
-          buttonLabel="상담 신청하기"
+          title="현재 상황에 필요한 절차부터 확인해보세요"
+          description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+          buttonLabel="상담 내용 남기기"
+          inquiryField={content.serviceSlug ?? page.serviceSlug}
         />
         <div className="mt-6">
           <CTASection
@@ -208,6 +217,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
             title="부산 법무사 상담"
             description={content.bottomCtaText}
             pageSlug={page.slug}
+            serviceSlug={content.serviceSlug ?? page.serviceSlug}
           />
         </div>
       </div>

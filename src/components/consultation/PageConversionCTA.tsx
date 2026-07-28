@@ -126,7 +126,11 @@ export function PageConversionCTA({
               상담 문의하기
             </Link>
             <Link
-              href="/contact/inquiry"
+              href={
+                serviceSlug
+                  ? `/contact/inquiry?field=${encodeURIComponent(serviceSlug)}`
+                  : "/contact/inquiry"
+              }
               data-cta="contact"
               onClick={() => trackCTA("contact", slug)}
               className={

@@ -1,0 +1,782 @@
+{
+  "generatedAt": "2026-07-28T16:01:18.845Z",
+  "threshold": 1500,
+  "method": "콘텐츠 객체 필드 합산(가능 시) 또는 슬러그 블록 문자열 근사. SSR 렌더 글자 수와 다를 수 있음.",
+  "totalPages": 114,
+  "shortCount": 105,
+  "shortPages": [
+    {
+      "slug": "공익법인임원변경등기",
+      "path": "/공익법인임원변경등기",
+      "approxChars": 457,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "교회사단법인설립",
+      "path": "/교회사단법인설립",
+      "approxChars": 496,
+      "source": "special-entity-intent/phase3-religion.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "학교법인임원변경등기",
+      "path": "/학교법인임원변경등기",
+      "approxChars": 511,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "의료법인임원변경등기",
+      "path": "/의료법인임원변경등기",
+      "approxChars": 519,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "체육단체사단법인설립",
+      "path": "/체육단체사단법인설립",
+      "approxChars": 528,
+      "source": "special-entity-intent/phase2-sector.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "의료법인주사무소이전등기",
+      "path": "/의료법인주사무소이전등기",
+      "approxChars": 538,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사회복지법인임원변경등기",
+      "path": "/사회복지법인임원변경등기",
+      "approxChars": 552,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "환경단체사단법인설립",
+      "path": "/환경단체사단법인설립",
+      "approxChars": 555,
+      "source": "special-entity-intent/phase2-sector.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "국제교류단체사단법인설립",
+      "path": "/국제교류단체사단법인설립",
+      "approxChars": 555,
+      "source": "special-entity-intent/phase3-religion-extension.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사회복지법인해산청산등기",
+      "path": "/사회복지법인해산청산등기",
+      "approxChars": 560,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "문화예술단체사단법인설립",
+      "path": "/문화예술단체사단법인설립",
+      "approxChars": 562,
+      "source": "special-entity-intent/phase2-sector.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사회적기업과법인설립차이",
+      "path": "/사회적기업과법인설립차이",
+      "approxChars": 563,
+      "source": "special-entity-intent/phase3-social-redev.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "협동조합과주식회사차이",
+      "path": "/협동조합과주식회사차이",
+      "approxChars": 567,
+      "source": "special-entity-intent/phase2-comparisons.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "복지단체사단법인설립",
+      "path": "/복지단체사단법인설립",
+      "approxChars": 572,
+      "source": "special-entity-intent/phase2-sector.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "협회사단법인설립",
+      "path": "/협회사단법인설립",
+      "approxChars": 573,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "재단법인과공익법인차이",
+      "path": "/재단법인과공익법인차이",
+      "approxChars": 574,
+      "source": "special-entity-intent/phase3-social-redev.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사회적협동조합과사단법인차이",
+      "path": "/사회적협동조합과사단법인차이",
+      "approxChars": 579,
+      "source": "special-entity-intent/phase2-comparisons.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사회적기업과사회적협동조합차이",
+      "path": "/사회적기업과사회적협동조합차이",
+      "approxChars": 583,
+      "source": "special-entity-intent/phase2-comparisons.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산협회단체법인설립",
+      "path": "/부산협회단체법인설립",
+      "approxChars": 636,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "농업회사법인과영농조합법인차이",
+      "path": "/농업회사법인과영농조합법인차이",
+      "approxChars": 640,
+      "source": "special-entity-intent/phase2-comparisons.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "사단법인과협동조합차이",
+      "path": "/사단법인과협동조합차이",
+      "approxChars": 655,
+      "source": "special-entity-intent/phase2-comparisons.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "노무법인설립등기",
+      "path": "/노무법인설립등기",
+      "approxChars": 660,
+      "source": "special-entity-intent/phase2-professional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "세무법인설립등기",
+      "path": "/세무법인설립등기",
+      "approxChars": 681,
+      "source": "special-entity-intent/phase2-professional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "영농조합법인설립",
+      "path": "/영농조합법인설립",
+      "approxChars": 686,
+      "source": "special-entity-intent/phase2-agriculture.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "비영리법인임원변경등기",
+      "path": "/비영리법인임원변경등기",
+      "approxChars": 690,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산학교법인등기",
+      "path": "/부산학교법인등기",
+      "approxChars": 695,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "법무사법인설립등기",
+      "path": "/법무사법인설립등기",
+      "approxChars": 697,
+      "source": "special-entity-intent/phase2-professional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "어업회사법인설립",
+      "path": "/어업회사법인설립",
+      "approxChars": 701,
+      "source": "special-entity-intent/phase2-agriculture.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "영어조합법인설립",
+      "path": "/영어조합법인설립",
+      "approxChars": 705,
+      "source": "special-entity-intent/phase2-agriculture.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "경남재단법인설립",
+      "path": "/경남재단법인설립",
+      "approxChars": 706,
+      "source": "special-entity-intent/phase3-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "관세법인설립등기",
+      "path": "/관세법인설립등기",
+      "approxChars": 710,
+      "source": "special-entity-intent/phase3-professional-corps.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "대표자사망시법인등기",
+      "path": "/대표자사망시법인등기",
+      "approxChars": 710,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산체육단체법인설립",
+      "path": "/부산체육단체법인설립",
+      "approxChars": 718,
+      "source": "special-entity-intent/phase3-busan-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "특허법인설립등기",
+      "path": "/특허법인설립등기",
+      "approxChars": 719,
+      "source": "special-entity-intent/phase3-professional-corps.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산문화예술단체법인설립",
+      "path": "/부산문화예술단체법인설립",
+      "approxChars": 720,
+      "source": "special-entity-intent/phase3-busan-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "감정평가법인설립등기",
+      "path": "/감정평가법인설립등기",
+      "approxChars": 720,
+      "source": "special-entity-intent/phase3-professional-corps.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "창원비영리법인설립",
+      "path": "/창원비영리법인설립",
+      "approxChars": 720,
+      "source": "special-entity-intent/phase3-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "수영구비영리법인설립",
+      "path": "/수영구비영리법인설립",
+      "approxChars": 722,
+      "source": "special-entity-intent/phase3-busan-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산진구비영리법인설립",
+      "path": "/부산진구비영리법인설립",
+      "approxChars": 728,
+      "source": "special-entity-intent/phase3-busan-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산의료법인등기",
+      "path": "/부산의료법인등기",
+      "approxChars": 734,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산유상증자등기",
+      "path": "/부산유상증자등기",
+      "approxChars": 736,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산법인해산청산등기",
+      "path": "/부산법인해산청산등기",
+      "approxChars": 738,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "해운대비영리법인설립",
+      "path": "/해운대비영리법인설립",
+      "approxChars": 740,
+      "source": "special-entity-intent/phase3-busan-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "학교법인설립등기",
+      "path": "/학교법인설립등기",
+      "approxChars": 749,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산사회복지법인등기",
+      "path": "/부산사회복지법인등기",
+      "approxChars": 767,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "부산법인등기과태료",
+      "path": "/부산법인등기과태료",
+      "approxChars": 771,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "의료법인설립등기",
+      "path": "/의료법인설립등기",
+      "approxChars": 781,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "경남사단법인설립",
+      "path": "/경남사단법인설립",
+      "approxChars": 795,
+      "source": "special-entity-intent/phase3-regional.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "재건축조합임원변경등기",
+      "path": "/재건축조합임원변경등기",
+      "approxChars": 797,
+      "source": "special-entity-intent/phase3-social-redev.ts",
+      "recommendation": "본문 보강 우선 또는 상위 허브 통합·noindex 검토"
+    },
+    {
+      "slug": "장학재단설립",
+      "path": "/장학재단설립",
+      "approxChars": 804,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "농어업법인설립등기",
+      "path": "/농어업법인설립등기",
+      "approxChars": 814,
+      "source": "special-entity-intent/phase2-hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "공익법인설립등기",
+      "path": "/공익법인설립등기",
+      "approxChars": 814,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "사단법인과재단법인차이",
+      "path": "/사단법인과재단법인차이",
+      "approxChars": 817,
+      "source": "special-entity-intent/comparisons.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산협동조합설립등기",
+      "path": "/부산협동조합설립등기",
+      "approxChars": 831,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "회계법인설립등기",
+      "path": "/회계법인설립등기",
+      "approxChars": 837,
+      "source": "special-entity-intent/phase3-professional-corps.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산사업목적변경등기",
+      "path": "/부산사업목적변경등기",
+      "approxChars": 854,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "중고거래-분쟁",
+      "path": "/situations/중고거래-분쟁",
+      "approxChars": 861,
+      "source": "situations/contract-dispute.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "종교단체사단법인설립",
+      "path": "/종교단체사단법인설립",
+      "approxChars": 862,
+      "source": "special-entity-intent/phase3-religion.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "사회복지법인설립등기",
+      "path": "/사회복지법인설립등기",
+      "approxChars": 867,
+      "source": "special-entity-intent/phase2-special-law.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "주무관청허가후설립등기",
+      "path": "/주무관청허가후설립등기",
+      "approxChars": 878,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "손해배상-청구",
+      "path": "/situations/손해배상-청구",
+      "approxChars": 887,
+      "source": "situations/contract-dispute.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "종교재단설립",
+      "path": "/종교재단설립",
+      "approxChars": 893,
+      "source": "special-entity-intent/phase3-religion-extension.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "판결-후-강제집행",
+      "path": "/situations/판결-후-강제집행",
+      "approxChars": 894,
+      "source": "situations/debt-collection.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산조합협동조합등기",
+      "path": "/부산조합협동조합등기",
+      "approxChars": 905,
+      "source": "special-entity-intent/hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "공사대금-못-받음",
+      "path": "/situations/공사대금-못-받음",
+      "approxChars": 911,
+      "source": "situations/debt-collection.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "채무자-재산-모름",
+      "path": "/situations/채무자-재산-모름",
+      "approxChars": 919,
+      "source": "situations/debt-collection.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산농업회사법인설립",
+      "path": "/부산농업회사법인설립",
+      "approxChars": 925,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "본점-이전-등기",
+      "path": "/situations/본점-이전-등기",
+      "approxChars": 925,
+      "source": "situations/corporate-business.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산임원임기만료등기",
+      "path": "/부산임원임기만료등기",
+      "approxChars": 930,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "내용증명-받았을-때",
+      "path": "/situations/내용증명-받았을-때",
+      "approxChars": 937,
+      "source": "situations/contract-dispute.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산본점이전등기",
+      "path": "/부산본점이전등기",
+      "approxChars": 969,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산사회적협동조합설립",
+      "path": "/부산사회적협동조합설립",
+      "approxChars": 971,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산비영리법인변경등기",
+      "path": "/부산비영리법인변경등기",
+      "approxChars": 972,
+      "source": "special-entity-intent/hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "대여금-못-받음",
+      "path": "/situations/대여금-못-받음",
+      "approxChars": 977,
+      "source": "situations/debt-collection.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "비영리민간단체와사단법인차이",
+      "path": "/비영리민간단체와사단법인차이",
+      "approxChars": 1019,
+      "source": "special-entity-intent/comparisons.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "계약금-반환-분쟁",
+      "path": "/situations/계약금-반환-분쟁",
+      "approxChars": 1032,
+      "source": "situations/contract-dispute.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "대표자-사망-법인",
+      "path": "/situations/대표자-사망-법인",
+      "approxChars": 1037,
+      "source": "situations/corporate-business.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산재단법인설립",
+      "path": "/부산재단법인설립",
+      "approxChars": 1040,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "법인-설립-처음",
+      "path": "/situations/법인-설립-처음",
+      "approxChars": 1049,
+      "source": "situations/corporate-business.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산특수법인등기",
+      "path": "/부산특수법인등기",
+      "approxChars": 1064,
+      "source": "special-entity-intent/hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "특별법법인설립등기",
+      "path": "/특별법법인설립등기",
+      "approxChars": 1064,
+      "source": "special-entity-intent/phase2-hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "빚-감당-어려울-때",
+      "path": "/situations/빚-감당-어려울-때",
+      "approxChars": 1070,
+      "source": "situations/debt-rehab.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "보증채무-부담",
+      "path": "/situations/보증채무-부담",
+      "approxChars": 1084,
+      "source": "situations/debt-rehab.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "임원-임기-만료",
+      "path": "/situations/임원-임기-만료",
+      "approxChars": 1087,
+      "source": "situations/corporate-business.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "공동명의-정리",
+      "path": "/situations/공동명의-정리",
+      "approxChars": 1125,
+      "source": "situations/real-estate-trade.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "전문직법인등기",
+      "path": "/전문직법인등기",
+      "approxChars": 1157,
+      "source": "special-entity-intent/phase2-hubs.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "셀프등기-실수",
+      "path": "/situations/셀프등기-실수",
+      "approxChars": 1160,
+      "source": "situations/real-estate-trade.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산사단법인설립",
+      "path": "/부산사단법인설립",
+      "approxChars": 1175,
+      "source": "special-entity-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "부산대표이사변경등기",
+      "path": "/부산대표이사변경등기",
+      "approxChars": 1191,
+      "source": "corporate-intent/intents.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "기타전문직법인설립등기",
+      "path": "/기타전문직법인설립등기",
+      "approxChars": 1204,
+      "source": "special-entity-intent/phase3-professional-boundary.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "근저당-말소-지연",
+      "path": "/situations/근저당-말소-지연",
+      "approxChars": 1236,
+      "source": "situations/real-estate-trade.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "회생-파산-선택-고민",
+      "path": "/situations/회생-파산-선택-고민",
+      "approxChars": 1247,
+      "source": "situations/debt-rehab.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "개인회생-가능-여부",
+      "path": "/situations/개인회생-가능-여부",
+      "approxChars": 1253,
+      "source": "situations/debt-rehab.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "급여-압류-빚",
+      "path": "/situations/급여-압류-빚",
+      "approxChars": 1264,
+      "source": "situations/debt-rehab.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "상속-후-첫-절차",
+      "path": "/situations/상속-후-첫-절차",
+      "approxChars": 1281,
+      "source": "situations/inheritance-death.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "임원변경-기한-임박",
+      "path": "/situations/임원변경-기한-임박",
+      "approxChars": 1323,
+      "source": "situations/corporate-business.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "전입신고-확정일자-없음",
+      "path": "/situations/전입신고-확정일자-없음",
+      "approxChars": 1370,
+      "source": "situations/jeonse-lease.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "사단법인목적변경등기",
+      "path": "/사단법인목적변경등기",
+      "approxChars": 1395,
+      "source": "special-entity-intent/phase2-change.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "전세-경매-진행",
+      "path": "/situations/전세-경매-진행",
+      "approxChars": 1396,
+      "source": "situations/jeonse-lease.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "잔금-후-소유권이전-거부",
+      "path": "/situations/잔금-후-소유권이전-거부",
+      "approxChars": 1397,
+      "source": "situations/real-estate-trade.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "집주인-연락-두절",
+      "path": "/situations/집주인-연락-두절",
+      "approxChars": 1400,
+      "source": "situations/jeonse-lease.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "재단법인기본재산변경등기",
+      "path": "/재단법인기본재산변경등기",
+      "approxChars": 1421,
+      "source": "special-entity-intent/phase2-change.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "임차권등기명령-필요할-때",
+      "path": "/situations/임차권등기명령-필요할-때",
+      "approxChars": 1422,
+      "source": "situations/jeonse-lease.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "잔금일-소유권이전",
+      "path": "/situations/잔금일-소유권이전",
+      "approxChars": 1425,
+      "source": "situations/real-estate-trade.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    },
+    {
+      "slug": "협동조합임원변경등기",
+      "path": "/협동조합임원변경등기",
+      "approxChars": 1498,
+      "source": "special-entity-intent/phase2-change.ts",
+      "recommendation": "본문 줄글 보강 권장"
+    }
+  ],
+  "okSample": [
+    {
+      "slug": "협동조합해산청산등기",
+      "approxChars": 1500
+    },
+    {
+      "slug": "비영리법인해산청산등기",
+      "approxChars": 1503
+    },
+    {
+      "slug": "부산비영리법인설립등기",
+      "approxChars": 1507
+    },
+    {
+      "slug": "상속등기-지연-과태료",
+      "approxChars": 1535
+    },
+    {
+      "slug": "해외-거주-상속인",
+      "approxChars": 1617
+    },
+    {
+      "slug": "상속포기-한정승인-선택",
+      "approxChars": 1629
+    },
+    {
+      "slug": "사단법인주사무소이전등기",
+      "approxChars": 1665
+    },
+    {
+      "slug": "상속재산-조회",
+      "approxChars": 1833
+    },
+    {
+      "slug": "특수비영리법인등기",
+      "approxChars": 2553
+    }
+  ]
+}

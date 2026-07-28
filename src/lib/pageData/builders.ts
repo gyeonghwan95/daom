@@ -46,6 +46,8 @@ export function mapLandingPageTypeToCategory(
     case "b2b-collaboration":
     case "business":
     case "counsel-intent":
+    case "corporate-intent":
+    case "special-entity-intent":
     case "service-region":
     default:
       return "local";
@@ -61,6 +63,8 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
     page.pageType === "lecture" ||
     page.pageType === "business" ||
     page.pageType === "counsel-intent" ||
+    page.pageType === "corporate-intent" ||
+    page.pageType === "special-entity-intent" ||
     page.pageType === "b2b-collaboration"
   ) {
     return [];

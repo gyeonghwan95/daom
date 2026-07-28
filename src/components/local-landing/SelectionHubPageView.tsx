@@ -7,6 +7,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import {
+  ArticleSummary,
   ChecklistBox,
   ComparisonTable,
   ConsultationCTA,
@@ -15,9 +16,10 @@ import {
   PageTableOfContents,
   ProseParagraphs,
   RelatedContentGrid,
-  SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
+import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { getSelectionHubContent } from "@/lib/local-landing/selection";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -41,8 +43,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
   };
 
   const tocItems = [
-    { id: "summary", label: "핵심 요약" },
-    { id: "search-intents", label: "이런 분들이 검색합니다" },
+    { id: "article-body", label: "본문 안내" },
     { id: "selection-criteria", label: "선택 전 확인할 기준" },
     { id: "service-checkpoints", label: "업무별 체크포인트" },
     ...(content.comparisonRows
@@ -54,6 +55,22 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
     { id: "faq", label: "자주 묻는 질문" },
     { id: "consultation", label: "상담 문의" },
   ];
+
+  const showNationwide = shouldShowNationwideRegionChip(
+    page.path,
+    page.slug,
+    page.serviceSlug,
+  );
+
+  const bodyParagraphs = [
+    ...content.heroParagraphs.slice(1),
+    content.searchIntents.length > 0
+      ? `이런 분들이 이 페이지를 찾습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
+      : "",
+    content.selectionCriteria.length > 0
+      ? `추천·후기·비용만으로 결정하기 전, ${content.selectionCriteria.slice(0, 2).join(" ")} 같은 기준을 먼저 확인해 보시면 상담이 구체적입니다.`
+      : "",
+  ].filter((p) => p.trim().length > 0);
 
   const comparisonColumns = content.comparisonRows
     ? [
@@ -80,7 +97,10 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         ctaLabel="상담 문의하기"
         secondaryCta={{ href: "/부산법무사상담", label: "상담 전 준비사항" }}
         showDiagnosisCta={false}
+        showNationwideChip={showNationwide}
       />
+
+      {showNationwide ? <NationwideServiceCard /> : null}
 
       {conversionKey ? (
         <ServiceConversionEnhancements
@@ -90,24 +110,28 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         />
       ) : null}
 
-      <div id="summary">
-        <SummaryBox items={content.summaryBullets} />
-      </div>
+      <ArticleSummary
+        conclusion={
+          content.summaryBullets.slice(0, 2).join(" ") ||
+          content.heroParagraphs[0]
+        }
+        checkItems={content.selectionCriteria.slice(0, 3)}
+        consultTriggers={content.searchIntents.slice(0, 3)}
+      />
+
+      {bodyParagraphs.length > 0 ? (
+        <ContentSection id="article-body" title="자세히 알아보기">
+          <div className="article-body">
+            {bodyParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
 
       <PageTableOfContents items={tocItems} />
 
-      <ContentSection id="search-intents" title="이런 분들이 검색합니다">
-        <p className="body-text mb-4 max-w-3xl text-navy/80">
-          아래와 비슷한 상황이라면 이 페이지의 선택 기준을 참고하신 뒤 상담해
-          보시면 좋습니다.
-        </p>
-        <ChecklistBox items={content.searchIntents} />
-      </ContentSection>
-
       <ContentSection id="selection-criteria" title="선택 전 확인할 기준">
-        <p className="body-text mb-4 max-w-3xl text-navy/80">
-          추천·후기·비용만으로 결정하기 전, 상담에서 아래 항목을 확인해 보세요.
-        </p>
         <ChecklistBox items={content.selectionCriteria} />
       </ContentSection>
 
@@ -167,9 +191,10 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         />
         <div className="mt-6">
           <ConsultationCTA
-            title="상담 문의"
-            description={content.preparationNote}
-            buttonLabel="상담 문의하기"
+            title="현재 상황에 필요한 절차부터 확인해보세요"
+            description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+            buttonLabel="상담 내용 남기기"
+            inquiryField={page.serviceSlug}
           />
         </div>
       </ContentSection>

@@ -10,8 +10,8 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
-  buildPageSummaryBullets,
   buildPageTocItems,
+  ArticleSummary,
   ChecklistBox,
   ConsultationCTA,
   ContentSection,
@@ -21,14 +21,13 @@ import {
   ProseParagraphs,
   RelatedContentGrid,
   StepTimeline,
-  SummaryBox,
   WarningBox,
 } from "@/components/readability";
 import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
-import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
   getNationwideBannerHeadline,
   NATIONWIDE_SERVICE_SLUGS,
@@ -82,7 +81,6 @@ export function PageDataTemplate({
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
   const displayFaqs = page.faqs.slice(0, 3);
-  const summaryBullets = buildPageSummaryBullets(page);
   const tocItems = buildPageTocItems(page, {
     hasDetailContent: Boolean(children),
   });
@@ -136,7 +134,7 @@ export function PageDataTemplate({
       />
 
       {showRemoteBanner ? (
-        <NationwideRemoteBanner
+        <NationwideServiceCard
           headline={getNationwideBannerHeadline(page.slug)}
         />
       ) : null}
@@ -145,7 +143,25 @@ export function PageDataTemplate({
 
       {conversionBlock("top")}
 
-      <SummaryBox items={summaryBullets} />
+      <ArticleSummary
+        conclusion={
+          page.introParagraphs[0]?.trim() ||
+          page.intro.trim() ||
+          `${page.h1}에 대한 핵심 절차와 준비사항을 정리했습니다.`
+        }
+        checkItems={[
+          page.procedures[0] ? `진행: ${page.procedures[0]}` : "",
+          page.documents[0] ? `서류: ${page.documents[0]}` : "",
+          page.consultationPoints[0] || "",
+        ].filter(Boolean)}
+        consultTriggers={page.consultationPoints.slice(0, 3)}
+      />
+
+      {page.introParagraphs.length > 1 ? (
+        <ContentSection id="article-body" title="자세히 알아보기">
+          <ProseParagraphs paragraphs={page.introParagraphs.slice(1)} />
+        </ContentSection>
+      ) : null}
 
       <PageTableOfContents items={tocItems} />
 
@@ -170,9 +186,13 @@ export function PageDataTemplate({
 
       {!conversionKey ? (
         <ConsultationCTA
-          title={page.ctaTitle}
-          description={page.ctaText}
-          buttonLabel="내 상황에 맞게 상담하기"
+          title="현재 상황에 필요한 절차부터 확인해보세요"
+          description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+          buttonLabel="상담 내용 남기기"
+          inquiryField={
+            page.serviceSlug ??
+            (page.category === "service" ? page.slug : undefined)
+          }
         />
       ) : null}
 

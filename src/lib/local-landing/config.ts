@@ -7,6 +7,8 @@ import { selectionLandingConfigs } from "./selection-landing-config";
 import { lectureLandingConfigs } from "@/lib/lectures/landing-config";
 import { businessLandingConfigs } from "@/lib/business/landing-config";
 import { counselIntentLandingConfigs } from "@/lib/counsel-intent/landing-config";
+import { corporateIntentLandingConfigs } from "@/lib/corporate-intent/landing-config";
+import { specialEntityIntentLandingConfigs } from "@/lib/special-entity-intent/landing-config";
 import { b2bLandingConfigs } from "@/lib/b2b/landing-config";
 import { searchIntentLandingConfigs } from "./search-intent-landing-config";
 import { consultLandingConfigs } from "./consult-landing-config";
@@ -76,6 +78,8 @@ export const localLandingConfigs: LocalLandingConfig[] = [
   ...lectureLandingConfigs,
   ...businessLandingConfigs,
   ...counselIntentLandingConfigs,
+  ...corporateIntentLandingConfigs,
+  ...specialEntityIntentLandingConfigs,
   ...b2bLandingConfigs,
 ];
 

@@ -6,15 +6,16 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { CTASection } from "@/components/sections/CTASection";
 import { IntentSelector } from "@/components/counsel/IntentSelector";
 import {
+  ArticleSummary,
+  ChecklistBox,
   ContentSection,
   PageHero,
   PageTableOfContents,
-  ProseParagraphs,
   RelatedContentGrid,
   StepTimeline,
-  SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { getCounselContent } from "@/lib/counsel-intent/content";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -31,19 +32,55 @@ type CounselIntentPageViewProps = {
   page: PageData;
 };
 
+function buildCounselBody(
+  content: NonNullable<ReturnType<typeof getCounselContent>>,
+): string[] {
+  const paragraphs = [...content.heroParagraphs];
+
+  if (content.situationCards.length > 0) {
+    paragraphs.push(
+      `이런 상황으로 상담을 찾는 경우가 많습니다. ${content.situationCards
+        .slice(0, 3)
+        .map((c) => c.description)
+        .join(" ")}`,
+    );
+  }
+
+  if (content.supportItems.length > 0) {
+    paragraphs.push(
+      `법무사가 직접 지원할 수 있는 범위는 사안마다 다르지만, 대표적으로는 ${content.supportItems
+        .slice(0, 3)
+        .join(", ")} 등을 먼저 확인합니다.`,
+    );
+  }
+
+  if (content.commonMistakes.length > 0) {
+    paragraphs.push(
+      `준비가 덜 된 상태에서 진행하면 ${content.commonMistakes
+        .slice(0, 2)
+        .join(", ")} 같은 실수를 하기 쉽습니다. 업무명을 몰라도 현재 상황만 정리해 두시면 필요한 절차부터 안내드릴 수 있습니다.`,
+    );
+  }
+
+  return paragraphs.filter((p) => p.trim().length > 0);
+}
+
 export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
   const content = getCounselContent(page.slug);
   if (!content) return null;
 
+  const bodyParagraphs = buildCounselBody(content);
+  const showNationwide =
+    page.slug.includes("상담") ||
+    page.slug.includes("전국") ||
+    page.path.includes("상담");
+
   const tocItems = [
-    { id: "summary", label: "핵심 요약" },
-    { id: "situations", label: "이런 상황" },
-    { id: "support", label: "지원 업무" },
+    { id: "article-body", label: "본문 안내" },
     { id: "scope", label: "업무범위" },
     { id: "selector", label: "업무 선택기" },
     { id: "documents", label: "준비자료" },
     { id: "process", label: "진행 절차" },
-    { id: "mistakes", label: "실수 주의" },
     { id: "cost", label: "비용 요인" },
     { id: "faq", label: "FAQ" },
   ];
@@ -65,71 +102,42 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={content.primaryKeywords}
-        ctaLabel="필요한 업무 확인하기"
-        ctaHref="#selector"
-        secondaryCta={{ href: "/contact", label: "상담 가능 업무 문의하기" }}
+        ctaLabel="상담 내용 남기기"
+        ctaHref="/contact/inquiry"
+        secondaryCta={{ href: "#selector", label: "필요한 업무 확인하기" }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
+        showNationwideChip={showNationwide}
         sideImage={siteImages.home.trust}
       />
 
+      {showNationwide ? (
+        <NationwideServiceCard headline="부산에 방문하지 않아도 상담과 진행이 가능합니다" />
+      ) : null}
+
       <p className="text-sm font-medium text-navy">{content.officeLine}</p>
-
-      <div className="flex flex-wrap gap-2">
-        <Link href="#selector" className="btn-primary">
-          필요한 업무 확인하기
-        </Link>
-        <Link href="/contact" className="btn-secondary">
-          상담 가능 업무 문의하기
-        </Link>
-        <Link href="/자가진단" className="btn-secondary">
-          준비서류 먼저 확인하기
-        </Link>
-      </div>
-
-      <ProseParagraphs paragraphs={content.heroParagraphs} />
 
       <WarningBox title="업무범위 안내">
         <p>{content.scopeNotice}</p>
       </WarningBox>
 
+      <ArticleSummary
+        conclusion={
+          content.summaryItems.map((item) => `${item.label}: ${item.value}`).join(" ") ||
+          content.heroIntro
+        }
+        checkItems={content.documents.slice(0, 3)}
+        consultTriggers={content.situationCards.slice(0, 3).map((c) => c.title)}
+      />
+
       <PageTableOfContents items={tocItems} />
 
-      <ContentSection id="summary" title="30초 핵심 요약">
-        <dl className="grid gap-3 sm:grid-cols-2">
-          {content.summaryItems.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-xl border border-beige-dark bg-cream/40 px-4 py-3"
-            >
-              <dt className="text-xs text-navy/55">{item.label}</dt>
-              <dd className="mt-1 text-sm font-medium text-navy">{item.value}</dd>
-            </div>
+      <ContentSection id="article-body" title="자세히 알아보기">
+        <div className="article-body">
+          {bodyParagraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
-        </dl>
-      </ContentSection>
-
-      <ContentSection id="situations" title="어떤 상황에서 이 페이지를 찾나요?">
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {content.situationCards.map((card) => (
-            <li
-              key={card.title}
-              className="rounded-2xl border border-beige-dark bg-white p-4"
-            >
-              <Link
-                href={card.href}
-                className="block no-underline hover:opacity-90"
-              >
-                <h3 className="font-semibold text-navy">{card.title}</h3>
-                <p className="mt-1 text-sm text-navy/70">{card.description}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </ContentSection>
-
-      <ContentSection id="support" title="법무사가 지원할 수 있는 업무">
-        <SummaryBox items={content.supportItems} />
+        </div>
       </ContentSection>
 
       <ContentSection id="scope" title="지원 가능한 업무와 별도 검토가 필요한 업무">
@@ -170,19 +178,26 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
       </ContentSection>
 
       <ContentSection id="documents" title="준비자료">
-        <SummaryBox items={content.documents} />
+        <ChecklistBox items={content.documents} />
       </ContentSection>
 
       <ContentSection id="process" title="일반적인 진행절차">
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
-      <ContentSection id="mistakes" title="자주 하는 실수">
-        <SummaryBox items={content.commonMistakes} />
-      </ContentSection>
-
       <ContentSection id="cost" title="비용이 달라지는 요소">
-        <SummaryBox items={content.costFactors} />
+        <ChecklistBox items={content.costFactors} />
+        {content.commonMistakes.length > 0 ? (
+          <div className="mt-4">
+            <WarningBox title="자주 하는 실수">
+              <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-navy/85">
+                {content.commonMistakes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </WarningBox>
+          </div>
+        ) : null}
       </ContentSection>
 
       <ContentSection id="related" title="관련 기존 페이지">
@@ -193,7 +208,17 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         <FAQAccordion items={content.faqs} />
       </ContentSection>
 
-      <CTASection title={content.ctaTitle} description={content.ctaText} />
+      <CTASection
+        title="현재 상황에 필요한 절차부터 확인해보세요"
+        description={content.ctaText}
+        pageSlug={page.slug}
+      />
+
+      <p className="text-center text-sm text-navy/60">
+        <Link href="/contact/inquiry" className="font-semibold text-navy-light">
+          상담 내용 남기기
+        </Link>
+      </p>
     </article>
   );
 }

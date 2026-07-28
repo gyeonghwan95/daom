@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages } from "@/lib/site-images";
@@ -31,6 +32,7 @@ export default function ContactPage() {
         ]}
         showConsultationCTA={false}
       >
+        <NationwideServiceCard />
         <ContactSection />
         <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
           <h2 className="section-heading">방문상담 전 준비사항</h2>

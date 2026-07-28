@@ -16,6 +16,8 @@ import { CaseRegionsHubView } from "@/components/case-regions/CaseRegionHubViews
 import { NationwidePageView } from "@/components/nationwide/NationwidePageView";
 import { BusinessPageView } from "@/components/business/BusinessPageView";
 import { CounselIntentPageView } from "@/components/counsel/CounselIntentPageView";
+import { CorporateIntentPageView } from "@/components/corporate/CorporateIntentPageView";
+import { SpecialEntityIntentPageView } from "@/components/special-entity/SpecialEntityIntentPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
@@ -187,6 +189,22 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <CounselIntentPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "corporate-intent") {
+    return (
+      <PageContainer>
+        <CorporateIntentPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+  if (landingConfig?.pageType === "special-entity-intent") {
+    return (
+      <PageContainer>
+        <SpecialEntityIntentPageView page={page} />
       </PageContainer>
     );
   }

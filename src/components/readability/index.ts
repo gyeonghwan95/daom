@@ -2,6 +2,7 @@ export { ContentSection } from "./ContentSection";
 export { PageHero } from "./PageHero";
 export { KeywordBadges } from "./KeywordBadges";
 export { SummaryBox } from "./SummaryBox";
+export { ArticleSummary } from "./ArticleSummary";
 export { ChecklistBox } from "./ChecklistBox";
 export { ComparisonTable } from "./ComparisonTable";
 export { StepTimeline } from "./StepTimeline";

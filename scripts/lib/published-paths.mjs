@@ -232,6 +232,46 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/counsel-intent/landing-config.ts",
   );
+  const corporateIntentContentPath = path.join(
+    ROOT,
+    "src/lib/corporate-intent/content/index.ts",
+  );
+  const corporateIntentHubPath = path.join(
+    ROOT,
+    "src/lib/corporate-intent/content/hub.ts",
+  );
+  const corporateIntentIntentsPath = path.join(
+    ROOT,
+    "src/lib/corporate-intent/content/intents.ts",
+  );
+  const corporateIntentLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/corporate-intent/landing-config.ts",
+  );
+  const specialEntityContentPath = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/content/index.ts",
+  );
+  const specialEntityHubsPath = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/content/hubs.ts",
+  );
+  const specialEntityIntentsPath = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/content/intents.ts",
+  );
+  const specialEntityComparisonsPath = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/content/comparisons.ts",
+  );
+  const specialEntityLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/landing-config.ts",
+  );
+  const specialEntityContentDir = path.join(
+    ROOT,
+    "src/lib/special-entity-intent/content",
+  );
   const b2bPagesDir = path.join(ROOT, "src/lib/b2b/pages");
   const keyword =
     fs.existsSync(keywordConfigPath)
@@ -289,6 +329,51 @@ function readLandingSlugs() {
     fs.existsSync(counselIntentLandingConfigPath)
       ? fs.readFileSync(counselIntentLandingConfigPath, "utf8")
       : "";
+  const corporateIntentContent =
+    fs.existsSync(corporateIntentContentPath)
+      ? fs.readFileSync(corporateIntentContentPath, "utf8")
+      : "";
+  const corporateIntentHub =
+    fs.existsSync(corporateIntentHubPath)
+      ? fs.readFileSync(corporateIntentHubPath, "utf8")
+      : "";
+  const corporateIntentIntents =
+    fs.existsSync(corporateIntentIntentsPath)
+      ? fs.readFileSync(corporateIntentIntentsPath, "utf8")
+      : "";
+  const corporateIntentLanding =
+    fs.existsSync(corporateIntentLandingConfigPath)
+      ? fs.readFileSync(corporateIntentLandingConfigPath, "utf8")
+      : "";
+  const specialEntityContent =
+    fs.existsSync(specialEntityContentPath)
+      ? fs.readFileSync(specialEntityContentPath, "utf8")
+      : "";
+  const specialEntityHubs =
+    fs.existsSync(specialEntityHubsPath)
+      ? fs.readFileSync(specialEntityHubsPath, "utf8")
+      : "";
+  const specialEntityIntents =
+    fs.existsSync(specialEntityIntentsPath)
+      ? fs.readFileSync(specialEntityIntentsPath, "utf8")
+      : "";
+  const specialEntityComparisons =
+    fs.existsSync(specialEntityComparisonsPath)
+      ? fs.readFileSync(specialEntityComparisonsPath, "utf8")
+      : "";
+  const specialEntityLanding =
+    fs.existsSync(specialEntityLandingConfigPath)
+      ? fs.readFileSync(specialEntityLandingConfigPath, "utf8")
+      : "";
+  const specialEntityPhaseContent = fs.existsSync(specialEntityContentDir)
+    ? fs
+        .readdirSync(specialEntityContentDir)
+        .filter((name) => name.endsWith(".ts") && name !== "index.ts" && name !== "shared.ts")
+        .map((name) =>
+          fs.readFileSync(path.join(specialEntityContentDir, name), "utf8"),
+        )
+        .join("\n")
+    : "";
   let b2bPages = "";
   if (fs.existsSync(b2bPagesDir)) {
     b2bPages = fs
@@ -314,6 +399,16 @@ function readLandingSlugs() {
     ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(counselIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(counselIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentHub.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentIntents.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityHubs.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityIntents.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityComparisons.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityPhaseContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(specialEntityLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(b2bPages.match(/slug:\s*"([^"]+)"/g) ?? []),
   ].map((m) => m.replace(/slug:\s*"/, "").replace(/"$/, ""));
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];

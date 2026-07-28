@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
+  ArticleSummary,
   ChecklistBox,
   ConsultationCTA,
   ContentSection,
@@ -16,10 +17,9 @@ import {
   PageTableOfContents,
   RelatedContentGrid,
   StepTimeline,
-  SummaryBox,
   WarningBox,
 } from "@/components/readability";
-import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
+import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { recommendationFromSituation } from "@/lib/internal-links";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import {
@@ -36,6 +36,72 @@ type SituationPageViewProps = {
   slug: string;
 };
 
+/** 상황 데이터를 자연스러운 줄글 문단으로 조합 (카드 반복 대신) */
+function buildSituationBodyParagraphs(situation: NonNullable<
+  ReturnType<typeof getSituationBySlug>
+>): string[] {
+  const paragraphs: string[] = [];
+
+  paragraphs.push(situation.conclusion);
+
+  if (situation.situationChecklist.length > 0) {
+    paragraphs.push(
+      `이런 상황으로 검색·상담을 찾는 경우가 많습니다. ${situation.situationChecklist
+        .slice(0, 4)
+        .join(" ")} 위와 비슷한지 먼저 짚어 보시면, 아래 절차·서류 안내가 더 잘 맞습니다.`,
+    );
+  }
+
+  if (situation.firstChecks.length > 0) {
+    paragraphs.push(
+      `준비가 덜 된 상태라면 한꺼번에 서류를 모으기보다, 지금 확인 가능한 것부터 정리하는 편이 안전합니다. ${situation.firstChecks
+        .slice(0, 3)
+        .map((item, i) => `${i + 1}) ${item}`)
+        .join(" ")}`,
+    );
+  }
+
+  if (situation.solutions.length > 0) {
+    const solutionLines = situation.solutions
+      .slice(0, 3)
+      .map(
+        (s) =>
+          `「${s.title}」은 ${s.body} 선택 기준으로는 ${s.whenToChoose}`,
+      )
+      .join(" ");
+    paragraphs.push(
+      `비슷해 보이는 선택지도 조건에 따라 갈립니다. ${solutionLines}`,
+    );
+  }
+
+  if (situation.selfHandleCases.length > 0 || situation.lawyerNeededCases.length > 0) {
+    const self = situation.selfHandleCases.slice(0, 2).join(" ");
+    const lawyer = situation.lawyerNeededCases.slice(0, 2).join(" ");
+    paragraphs.push(
+      [
+        self
+          ? `혼자 서류·절차를 진행해 볼 수 있는 경우로는 ${self} 정도가 있습니다.`
+          : null,
+        lawyer
+          ? `반면 ${lawyer}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
+          : null,
+      ]
+        .filter(Boolean)
+        .join(" "),
+    );
+  }
+
+  if (situation.commonMistakes.length > 0) {
+    paragraphs.push(
+      `지연하거나 잘못 처리하면 보정·재신청·과태료·기한 문제로 이어질 수 있습니다. 특히 ${situation.commonMistakes
+        .slice(0, 3)
+        .join(", ")} 같은 실수를 피해야 합니다.`,
+    );
+  }
+
+  return paragraphs.filter((p) => p.trim().length > 0);
+}
+
 export function SituationPageView({ page, slug }: SituationPageViewProps) {
   const situation = getSituationBySlug(slug);
   const cover = getCoverImageForPageData(page);
@@ -44,38 +110,23 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
   const category = getSituationCategoryById(situation.situationCategory);
   const relatedSituations = getRelatedSituationLinks(situation);
-
-  const summaryBullets = [
-    situation.conclusion,
-    situation.firstChecks[0] ? `먼저 확인: ${situation.firstChecks[0]}` : null,
-    situation.solutions[0]
-      ? `선택지: ${situation.solutions[0].title}`
-      : null,
-    situation.procedures[0]
-      ? `예상 절차: ${situation.procedures[0]}`
-      : null,
-  ].filter((item): item is string => Boolean(item)).slice(0, 4);
+  const showNationwide = shouldShowNationwideRegionChip(
+    page.path,
+    page.slug,
+    situation.serviceSlug,
+  );
+  const bodyParagraphs = buildSituationBodyParagraphs(situation);
 
   const tocItems = [
-    { id: "conclusion", label: "핵심 결론" },
-    { id: "situation-check", label: "이런 상황인가요?" },
-    { id: "first-checks", label: "지금 가장 먼저 할 일" },
-    { id: "solutions", label: "해결 방법과 선택 기준" },
-    { id: "self-handle", label: "혼자 처리해도 되는 경우" },
-    { id: "lawyer-needed", label: "법무사 상담이 필요한 경우" },
-    { id: "cost-factors", label: "비용·기간 요소" },
-    { id: "common-mistakes", label: "자주 하는 실수" },
-    { id: "case-example", label: "상담 사례" },
+    { id: "article-body", label: "본문 안내" },
     { id: "documents", label: "필요한 서류" },
     { id: "procedures", label: "예상 절차" },
+    { id: "cost-factors", label: "비용·기간 요소" },
+    { id: "case-example", label: "상담 사례" },
     { id: "diagnosis-links", label: "관련 자가진단" },
     { id: "service-links", label: "관련 서비스·허브" },
-    { id: "faq-links", label: "관련 FAQ" },
     ...(relatedSituations.length > 0
       ? [{ id: "related-situations", label: "비슷한 상황" }]
-      : []),
-    ...(situation.extraLinks.length > 0
-      ? [{ id: "more-links", label: "더 보기" }]
       : []),
     { id: "faq", label: "자주 묻는 질문" },
     { id: "consultation", label: "상담 문의" },
@@ -97,19 +148,13 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
-        showNationwideChip={shouldShowNationwideRegionChip(
-          page.path,
-          page.slug,
-          situation.serviceSlug,
-        )}
+        showNationwideChip={showNationwide}
       />
 
-      {shouldShowNationwideRegionChip(
-        page.path,
-        page.slug,
-        situation.serviceSlug,
-      ) ? (
-        <NationwideRemoteBanner />
+      {showNationwide ? (
+        <NationwideServiceCard
+          headline="부산에 방문하지 않아도 상담과 진행이 가능합니다"
+        />
       ) : null}
 
       {slug === "payment-order-certified-mail" ? (
@@ -120,56 +165,46 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         />
       ) : null}
 
-      <SummaryBox items={summaryBullets} />
+      <ArticleSummary
+        conclusion={situation.conclusion}
+        checkItems={situation.firstChecks.slice(0, 3)}
+        consultTriggers={situation.lawyerNeededCases.slice(0, 3)}
+      />
 
       <PageTableOfContents items={tocItems} />
 
-      <ContentSection id="conclusion" title="핵심 결론">
-        <p className="text-base leading-relaxed text-navy md:text-lg">
-          {situation.conclusion}
-        </p>
-        <p className="mt-4 text-sm leading-relaxed text-navy/65">
-          <Link href={category.path} className="font-semibold text-navy-light hover:text-navy">
+      <ContentSection id="article-body" title="상황 이해하기">
+        <div className="article-body">
+          {bodyParagraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+        </div>
+        <p className="mt-6 text-sm leading-relaxed text-navy/65">
+          <Link
+            href={category.path}
+            className="font-semibold text-navy-light hover:text-navy"
+          >
             {category.label} 허브
           </Link>
           에서 비슷한 상황도 함께 확인할 수 있습니다.
         </p>
       </ContentSection>
 
-      <ContentSection id="situation-check" title="이런 상황인가요?">
-        <ChecklistBox items={situation.situationChecklist} />
+      <ContentSection id="documents" title="필요한 서류">
+        <ChecklistBox
+          items={situation.documents}
+          note="사안에 따라 추가 서류가 필요할 수 있습니다. 상담 전에 목록을 확인해 두시면 좋습니다."
+        />
       </ContentSection>
 
-      <ContentSection id="first-checks" title="지금 가장 먼저 할 일">
-        <ChecklistBox items={situation.firstChecks} />
-      </ContentSection>
-
-      <ContentSection id="solutions" title="가능한 해결 방법과 선택 기준">
-        <ul className="space-y-4">
-          {situation.solutions.map((solution) => (
-            <li
-              key={solution.title}
-              className="rounded-xl border border-navy/10 bg-white p-4 sm:p-5"
-            >
-              <h3 className="font-semibold text-navy">{solution.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy/75 sm:text-base">
-                {solution.body}
-              </p>
-              <p className="mt-2 text-sm text-navy/60">
-                <span className="font-semibold text-navy/75">선택 기준: </span>
-                {solution.whenToChoose}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </ContentSection>
-
-      <ContentSection id="self-handle" title="혼자 처리해도 되는 경우">
-        <ChecklistBox items={situation.selfHandleCases} />
-      </ContentSection>
-
-      <ContentSection id="lawyer-needed" title="법무사 상담이 필요한 경우">
-        <ChecklistBox items={situation.lawyerNeededCases} />
+      <ContentSection id="procedures" title="예상 절차">
+        <StepTimeline steps={situation.procedures} />
+        <WarningBox title="법률·절차 고지">
+          <p>
+            위 순서는 일반적인 흐름입니다. 관할·서류·당사자 관계·시점에 따라
+            달라질 수 있으며, 본 안내는 법률 자문을 대체하지 않습니다.
+          </p>
+        </WarningBox>
       </ContentSection>
 
       <ContentSection id="cost-factors" title="절차·기간·비용에 영향을 주는 요소">
@@ -182,26 +217,6 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         </WarningBox>
       </ContentSection>
 
-      <ContentSection id="common-mistakes" title="자주 하는 실수와 주의사항">
-        <ChecklistBox items={situation.commonMistakes} />
-      </ContentSection>
-
-      <ContentSection id="case-example" title="현실적인 상담 사례">
-        <div className="rounded-xl border border-beige-dark bg-beige/20 p-4 sm:p-5">
-          <h3 className="font-semibold text-navy">{situation.caseExample.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-navy/75 sm:text-base">
-            {situation.caseExample.body}
-          </p>
-        </div>
-      </ContentSection>
-
-      <ContentSection id="documents" title="필요한 서류">
-        <ChecklistBox
-          items={situation.documents}
-          note="사안에 따라 추가 서류가 필요할 수 있습니다. 상담 전에 목록을 확인해 두시면 좋습니다."
-        />
-      </ContentSection>
-
       {slug === "payment-order-certified-mail" ? (
         <ServiceConversionEnhancements
           conversionKey={slug}
@@ -210,25 +225,13 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         />
       ) : null}
 
-      <ConsultationCTA
-        title="비슷한 상황이라면 먼저 점검해 보세요"
-        description="자가진단으로 위험도와 다음 절차를 확인한 뒤, 필요하면 상담을 요청하실 수 있습니다."
-        buttonLabel="상담 문의하기"
-      />
-
-      <QuickInquiryInlineCard
-        pageTitle={page.h1 || page.title}
-        pageUrl={page.path}
-      />
-
-      <ContentSection id="procedures" title="예상 절차">
-        <StepTimeline steps={situation.procedures} />
-        <WarningBox title="법률·절차 고지">
-          <p>
-            위 순서는 일반적인 흐름입니다. 관할·서류·당사자 관계·시점에 따라
-            달라질 수 있으며, 본 안내는 법률 자문을 대체하지 않습니다.
+      <ContentSection id="case-example" title="현실적인 상담 사례">
+        <div className="rounded-xl border border-beige-dark/80 bg-white p-4 sm:p-5">
+          <h3 className="font-semibold text-navy">{situation.caseExample.title}</h3>
+          <p className="mt-2 text-[1.015rem] leading-[1.85] text-navy/80 md:text-[1.0625rem]">
+            {situation.caseExample.body}
           </p>
-        </WarningBox>
+        </div>
       </ContentSection>
 
       <ContentSection id="diagnosis-links" title="관련 자가진단">
@@ -258,7 +261,9 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         </ContentSection>
       ) : null}
 
-      <DiagnosisFAQ items={page.faqs} />
+      <div id="faq">
+        <DiagnosisFAQ items={page.faqs} />
+      </div>
 
       {slug === "payment-order-certified-mail" ? (
         <>
@@ -282,11 +287,17 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
       <RelatedRecommendations source={recommendationFromSituation(situation)} />
 
+      <QuickInquiryInlineCard
+        pageTitle={page.h1 || page.title}
+        pageUrl={page.path}
+      />
+
       <div id="consultation">
         <ConsultationCTA
-          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
-          description={page.ctaText}
-          buttonLabel="상담 문의하기"
+          title="현재 상황에 필요한 절차부터 확인해보세요"
+          description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+          buttonLabel="상담 내용 남기기"
+          inquiryField={situation.serviceSlug}
         />
         <div className="mt-6">
           <LawyerConsultationGuide

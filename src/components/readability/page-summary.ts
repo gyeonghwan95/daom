@@ -41,6 +41,9 @@ export function buildPageTocItems(
 ): { id: string; label: string }[] {
   const items: { id: string; label: string }[] = [];
 
+  if (page.introParagraphs.length > 1) {
+    items.push({ id: "article-body", label: "자세히 알아보기" });
+  }
   if (page.procedures.length > 0) {
     items.push({ id: "procedures", label: "핵심 절차" });
   }
