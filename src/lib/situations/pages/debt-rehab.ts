@@ -241,8 +241,9 @@ export const debtRehabPages = [
     extraLinks: [
       { href: "/blog/personal-rehabilitation-before-application", label: "신청 전 체크" },
       { href: "/blog/bankruptcy-vs-personal-rehabilitation", label: "회생·파산 비교" },
-      { href: "/부산개인회생", label: "부산 개인회생" },
-      { href: "/contact", label: "상담 문의" },
+      { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },
+      { href: "/부산개인회생", label: "부산 개인회생 업무 허브" },
+      { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
       {

@@ -23,6 +23,8 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const headerBarRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const wasMenuOpen = useRef(false);
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -78,12 +80,19 @@ export function Header() {
     };
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   const openMenu = useCallback(() => {
     setSearchOpen(false);
     setMenuOpen((prev) => !prev);
   }, []);
+
+  useEffect(() => {
+    if (wasMenuOpen.current && !menuOpen) {
+      menuButtonRef.current?.focus();
+    }
+    wasMenuOpen.current = menuOpen;
+  }, [menuOpen]);
 
   return (
     <>
@@ -144,6 +153,7 @@ export function Header() {
               {searchButton}
 
               <button
+                ref={menuButtonRef}
                 type="button"
                 className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-beige-dark bg-beige text-navy lg:hidden"
                 aria-expanded={menuOpen}

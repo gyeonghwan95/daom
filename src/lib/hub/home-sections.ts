@@ -66,7 +66,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산상속법무사", label: "부산 상속전문 법무사" },
       { href: "/부산법인법무사", label: "부산 법인전문 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 전문 법무사" },
-      { href: "/부산부동산등기전문", label: "부산 부동산등기 전문" },
+      { href: "/부산부동산등기전문", label: "부산 부동산등기 상담 확인" },
       { href: "/부산개인회생", label: "부산 개인회생" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
       { href: "/부산법무사추천", label: "부산 법무사 추천" },

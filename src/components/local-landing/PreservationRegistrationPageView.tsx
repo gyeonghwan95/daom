@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import {
   ChecklistBox,
   ConsultationCTA,
@@ -94,6 +95,13 @@ export function PreservationRegistrationPageView({
         <ProseParagraphs paragraphs={content.whatIsParagraphs} />
       </ContentSection>
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <ContentSection id="building-types" title="어떤 건물에 필요할까요?">
         <p className="body-text mb-4 max-w-3xl">
           건물 용도와 집합건물 여부에 따라 보존등기 절차와 서류가 달라질 수
@@ -158,6 +166,13 @@ export function PreservationRegistrationPageView({
       <ContentSection id="documents" title="건축주가 준비해야 할 서류">
         <ChecklistBox items={content.documents} note={content.documentsNote} />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="procedures" title="보존등기 진행 절차">
         <StepTimeline steps={content.procedures} />

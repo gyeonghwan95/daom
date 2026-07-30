@@ -33,6 +33,9 @@ import {
   부산토지매매등기Override,
   부산확정일자전세권비교Override,
 } from "./overrides/busan-real-estate-p2";
+import { 부산개인회생법무사Override } from "./overrides/busan-personal-rehabilitation-lawyer";
+import { 부산상속전문법무사Override } from "./overrides/busan-inheritance-specialist-lawyer";
+import { 부산회생법무사Override } from "./overrides/busan-rehabilitation-lawyer";
 
 export type {
   SearchGuideEntry,
@@ -51,6 +54,9 @@ export { searchIntentSeeds } from "./seeds";
 export { subproxyJurisdictionData } from "./overrides/busan-subproxy";
 
 const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
+  부산개인회생법무사: 부산개인회생법무사Override,
+  부산상속전문법무사: 부산상속전문법무사Override,
+  부산회생법무사: 부산회생법무사Override,
   부산등기복대리: 부산등기복대리Override,
   부산집단등기: 부산집단등기Override,
   부산매매등기법무사: 부산매매등기법무사Override,

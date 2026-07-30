@@ -3,6 +3,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { CollabInquiryForm } from "@/components/local-landing/CollabInquiryForm";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
@@ -41,6 +42,13 @@ export function PracticeHubPageView({
           <p className="mt-3 text-sm text-navy/65">{note}</p>
         ) : null}
       </header>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => (

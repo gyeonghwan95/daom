@@ -217,11 +217,12 @@ export const corporateIntentPages: CorporatePageContent[] = [
     heroParagraphs: [
       "부산 내 구·동 이동이라도 관할 등기소가 달라질 수 있습니다. 타 시·도로 이전하면 관할 등기소·세무서가 바뀌는 경우가 많아 절차가 더 복잡해집니다.",
       "임대차 계약상 등기 협조 조항, 건축물대장상 용도, 사용승인 여부가 등기 가능성에 영향을 줍니다.",
+      "임원변경·목적변경과 같은 날 접수할지, 본점만 먼저 옮길지는 대출·입찰·사업자등록 일정에 맞춰 정합니다. 법인등기 허브가 변경 유형 전반을 다루고, 이 페이지는 관할·주소에 집중합니다.",
     ],
     officeLine: CORPORATE_OFFICE_LINE,
     scopeNotice: CORPORATE_SCOPE_NOTICE,
     conclusion:
-      "본점이전등기는 이사회·주주총회 결의 후 새 본점 주소로 변경등기를 신청합니다. 관할 등기소가 바뀌면 이전 관할과 신 관할 절차가 달라질 수 있으며, 사업자등록·세무·4대보험 주소도 연계 정리가 필요합니다.",
+      "본점이전등기는 이사회·주주총회 결의 후 새 본점 주소로 변경등기를 신청합니다. 관할 등기소가 바뀌면 이전 관할과 신 관할 절차가 달라질 수 있으며, 사업자등록·세무·4대보험 주소도 연계 정리가 필요합니다. 결과는 개별 사정에 따라 달라질 수 있습니다. 검토일 2026-07-30.",
     primaryKeyword: "부산 본점이전등기",
     secondaryKeywords: [
       "부산 법인 본점이전",
@@ -287,6 +288,8 @@ export const corporateIntentPages: CorporatePageContent[] = [
       },
     ],
     relatedLinks: [
+      { href: "/부산법인등기", label: "부산 법인등기" },
+      { href: "/부산법무사", label: "부산 법무사" },
       { href: "/전국법인본점이전등기", label: "전국 본점이전등기" },
       { href: "/본점이전등기비용", label: "본점이전등기 비용" },
       { href: "/faq/corporate-address-change-faq", label: "본점이전 FAQ" },

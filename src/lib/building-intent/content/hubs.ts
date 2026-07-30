@@ -394,6 +394,8 @@ export const buildingHubPages: BuildingPageContent[] = [
     ],
     relatedLinks: [
       BUILDING_HUB_LINKS.main,
+      BUILDING_HUB_LINKS.realEstate,
+      { href: "/부산법무사", label: "부산 법무사" },
       BUILDING_HUB_LINKS.preservation,
       BUILDING_HUB_LINKS.display,
       BUILDING_HUB_LINKS.situations,

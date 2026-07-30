@@ -108,8 +108,9 @@ export const corporateBusinessPages = [
     extraLinks: [
       { href: "/blog/director-change-registration-deadline-penalty", label: "임원변경 과태료" },
       { href: "/services/cases/yeonje-director-change-case", label: "임원변경 사례" },
-      { href: "/센텀법인등기", label: "센텀 법인등기" },
-      { href: "/부산법인등기", label: "부산 법인등기" },
+      { href: "/부산임원변경등기", label: "부산 임원변경등기 — 임기·과태료" },
+      { href: "/부산법인등기", label: "부산 법인등기 허브" },
+      { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
       {
@@ -239,9 +240,9 @@ export const corporateBusinessPages = [
     ],
     extraLinks: [
       { href: "/services/cases/suyeong-company-establishment-case", label: "법인설립 사례" },
-      { href: "/센텀법인등기", label: "센텀 법인등기" },
-      { href: "/부산법인등기", label: "부산 법인등기" },
-      { href: "/contact", label: "상담 문의" },
+      { href: "/부산법인설립등기", label: "부산 법인설립등기 — 정관·자본금" },
+      { href: "/부산법인등기", label: "부산 법인등기 — 변경 허브" },
+      { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
       {

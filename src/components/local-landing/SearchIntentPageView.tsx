@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
   ArticleSummary,
@@ -114,6 +115,13 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       {conversionKey ? (
         <ServiceConversionEnhancements
           conversionKey={conversionKey}
@@ -123,6 +131,13 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : null}
 
       <PageTableOfContents items={tocItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       {page.slug === "부산등기복대리" ? (
         <ContentSection id="jurisdictions" title="관할별 안내(사전 확인)">

@@ -14,6 +14,7 @@ import {
   StepTimeline,
   WarningBox,
 } from "@/components/readability";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { getSpecialEntityContent } from "@/lib/special-entity-intent/content";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
@@ -188,6 +189,13 @@ export function SpecialEntityIntentPageView({
         consultTriggers={content.whoNeedsThis.slice(0, 3)}
       />
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug ?? "corporate-registration"}
+      />
+
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="article-body" title="자세히 알아보기">
@@ -324,6 +332,13 @@ export function SpecialEntityIntentPageView({
       <ContentSection id="documents" title="준비서류">
         <ChecklistBox items={content.documents} />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug ?? "corporate-registration"}
+      />
 
       <ContentSection id="process" title="진행 절차">
         <StepTimeline steps={content.procedures} />

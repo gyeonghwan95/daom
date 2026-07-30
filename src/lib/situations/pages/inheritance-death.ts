@@ -242,9 +242,11 @@ export const inheritanceDeathPages = [
     ],
     extraLinks: [
       { href: "/blog/inheritance-renunciation-vs-qualified-acceptance", label: "상속포기 vs 한정승인" },
-      { href: "/부산한정승인", label: "부산 한정승인" },
+      { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
+      { href: "/부산한정승인", label: "부산 한정승인 신청 기한 확인" },
+      { href: "/부산상속포기", label: "부산 상속포기 후순위 효과" },
       { href: "/services/cases/dongnae-qualified-acceptance-consultation", label: "한정승인 상담 사례" },
-      { href: "/contact", label: "상담 문의" },
+      { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
       {
@@ -509,9 +511,10 @@ export const inheritanceDeathPages = [
     ],
     extraLinks: [
       { href: "/blog/busan-inheritance-registration-procedure-documents", label: "상속등기 절차·서류" },
-      { href: "/부산상속등기", label: "부산 상속등기" },
+      { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
+      { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/services/cases/haeundae-inheritance-registration-case", label: "상속등기 사례" },
-      { href: "/contact", label: "상담 문의" },
+      { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
       {

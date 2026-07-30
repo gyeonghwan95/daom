@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   buildPageTocItems,
@@ -163,7 +164,21 @@ export function PageDataTemplate({
         </ContentSection>
       ) : null}
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="procedures" title="핵심 절차">
         <StepTimeline steps={page.procedures} />
@@ -205,6 +220,13 @@ export function PageDataTemplate({
           <ChecklistBox items={page.consultationPoints} />
         </ContentSection>
       ) : null}
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-example"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="consultation-example" title="실제 상담 상황 예시">
         <InfoCard variant="plain">

@@ -19,6 +19,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { getSelectionHubContent } from "@/lib/local-landing/selection";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -129,7 +130,21 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="selection-criteria" title="선택 전 확인할 기준">
         <ChecklistBox items={content.selectionCriteria} />

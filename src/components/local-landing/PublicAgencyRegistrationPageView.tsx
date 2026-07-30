@@ -18,6 +18,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import type { AgencyTaskCard } from "@/lib/local-landing/public-agency-registration-content";
 import { getPublicAgencyRegistrationContent } from "@/lib/local-landing/public-agency-registration-content";
 import { PublicAgencyB2BSections } from "@/components/b2b/PublicAgencyB2BSections";
@@ -121,6 +122,13 @@ export function PublicAgencyRegistrationPageView({
         <SummaryBox items={content.summaryBullets} />
       </div>
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="what-is" title="공공기관 등기업무란?">
@@ -218,6 +226,13 @@ export function PublicAgencyRegistrationPageView({
         </p>
         <ChecklistBox items={content.documents} note={content.documentsNote} />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="procedures" title="공공기관 등기 진행 절차">
         <StepTimeline steps={content.procedures} />

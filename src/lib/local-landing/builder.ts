@@ -23,6 +23,12 @@ import { buildBuildingIntentPage } from "@/lib/building-intent/builder";
 import { buildSpecialEntityIntentPage } from "@/lib/special-entity-intent/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
+import { buildBusanQualifiedAcceptancePage } from "./qualified-acceptance-busan";
+import { buildBusanCorporateRegistrationPage } from "./corporate-registration-busan";
+import { buildBusanInheritanceRegistrationPage } from "./inheritance-registration-busan";
+import { buildBusanInheritanceRenunciationPage } from "./inheritance-renunciation-busan";
+import { buildBusanRealEstateRegistrationPage } from "./real-estate-registration-busan";
+import { buildBusanCompanyEstablishmentPage } from "./company-establishment-busan";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -371,6 +377,32 @@ export function buildLocalLandingPage(
 }
 
 function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage | null {
+  // 대표 URL: 템플릿 service-region 대신 의도별 커스텀 본문 (1·2차)
+  if (config.slug === "부산한정승인") {
+    const custom = buildBusanQualifiedAcceptancePage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+  if (config.slug === "부산법인등기") {
+    const custom = buildBusanCorporateRegistrationPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+  if (config.slug === "부산상속등기") {
+    const custom = buildBusanInheritanceRegistrationPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+  if (config.slug === "부산상속포기") {
+    const custom = buildBusanInheritanceRenunciationPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+  if (config.slug === "부산부동산등기") {
+    const custom = buildBusanRealEstateRegistrationPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+  if (config.slug === "부산법인설립등기") {
+    const custom = buildBusanCompanyEstablishmentPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
+
   const pageType = config.pageType ?? "service-region";
   let page: LocalLandingPage | null = null;
 

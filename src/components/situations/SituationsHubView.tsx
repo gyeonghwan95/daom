@@ -10,6 +10,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import {
   getAllSituationPages,
   getPopularSituations,
@@ -78,6 +79,12 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
         <h1 className="page-title mt-2">{page.h1}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
       </header>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+      />
 
       <section aria-label="분류별 안내">
         <h2 className="section-heading">분류별로 찾기</h2>

@@ -12,6 +12,7 @@ import { PartnerTypeGrid } from "@/components/b2b/PartnerTypeGrid";
 import { ProjectBriefForm } from "@/components/b2b/ProjectBriefForm";
 import { SharePrintBar } from "@/components/b2b/SharePrintBar";
 import { WorkPurposeGrid } from "@/components/b2b/WorkPurposeGrid";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { RelatedContentGrid } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -126,6 +127,13 @@ export function B2BPageView({ page }: B2BPageViewProps) {
           </p>
         ))}
       </div>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       {isHub ? (
         <>

@@ -12,6 +12,7 @@ import { RelatedLectureHistory } from "@/components/lectures/history/RelatedLect
 import { SpeakerHistoryList } from "@/components/lectures/SpeakerHistoryList";
 import { SpeakerLectureGallery } from "@/components/lectures/SpeakerLectureGallery";
 import { SpeakerProfileSection } from "@/components/lectures/SpeakerProfileSection";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import {
   ContentSection,
   PageHero,
@@ -60,9 +61,9 @@ export function LecturePageView({ page }: LecturePageViewProps) {
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       {content.kind === "speaker" ? (
-        <SpeakerLayout content={content} />
+        <SpeakerLayout content={content} page={page} />
       ) : content.kind === "inquiry" ? (
-        <InquiryLayout content={content} />
+        <InquiryLayout content={content} page={page} />
       ) : content.kind === "hiring" ? (
         <HiringLayout content={content} page={page} />
       ) : content.kind === "hub" ? (
@@ -74,7 +75,13 @@ export function LecturePageView({ page }: LecturePageViewProps) {
   );
 }
 
-function SpeakerLayout({ content }: { content: LecturePageContent }) {
+function SpeakerLayout({
+  content,
+  page,
+}: {
+  content: LecturePageContent;
+  page: PageData;
+}) {
   return (
     <>
       <PageHero
@@ -106,6 +113,13 @@ function SpeakerLayout({ content }: { content: LecturePageContent }) {
       </dl>
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 2)} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug="lecture"
+      />
 
       <SpeakerHistoryList title="주요 출강 이력" limit={8} />
 
@@ -179,6 +193,13 @@ function HiringLayout({
       />
 
       <SummaryGrid items={content.summaryItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug="lecture"
+      />
 
       <SpeakerLectureGallery compact dualRow={false} />
 
@@ -258,6 +279,13 @@ function HubLayout({
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 2)} />
       <SummaryGrid items={content.summaryItems.slice(0, 4)} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug="lecture"
+      />
 
       {content.topicCards.length ? (
         <ContentSection id="topics" title="주요 강의 주제">
@@ -381,7 +409,13 @@ function HubLayout({
   );
 }
 
-function InquiryLayout({ content }: { content: LecturePageContent }) {
+function InquiryLayout({
+  content,
+  page,
+}: {
+  content: LecturePageContent;
+  page: PageData;
+}) {
   return (
     <>
       <PageHero
@@ -394,6 +428,13 @@ function InquiryLayout({ content }: { content: LecturePageContent }) {
       />
 
       <SummaryGrid items={content.summaryItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug="lecture"
+      />
 
       <ContentSection id="inquiry" title={content.ctaTitle}>
         <p className="mb-4 text-sm text-navy/75">{content.ctaText}</p>
@@ -450,6 +491,13 @@ function TopicLayout({
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 2)} />
       <SummaryGrid items={content.summaryItems.slice(0, 4)} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug="lecture"
+      />
 
       {history.length ? (
         <ContentSection id="history" title="이 주제의 실제 강의">

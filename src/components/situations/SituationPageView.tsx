@@ -20,6 +20,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { recommendationFromSituation } from "@/lib/internal-links";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import {
@@ -171,6 +172,13 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         consultTriggers={situation.lawyerNeededCases.slice(0, 3)}
       />
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={situation.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="article-body" title="상황 이해하기">
@@ -196,6 +204,13 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
           note="사안에 따라 추가 서류가 필요할 수 있습니다. 상담 전에 목록을 확인해 두시면 좋습니다."
         />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={situation.serviceSlug}
+      />
 
       <ContentSection id="procedures" title="예상 절차">
         <StepTimeline steps={situation.procedures} />

@@ -109,7 +109,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedServiceLinks: [
       { href: "/부산기업법률자문", label: "부산 기업 법률실무 지원" },
-      { href: "/부산법인법무사", label: "부산 법인전문 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산스타트업법무사", label: "부산 스타트업 법무사" },
       { href: "/부산법인등기비용", label: "부산 법인등기 비용" },
       { href: "/부산임원변경등기", label: "부산 임원변경등기" },
@@ -234,7 +234,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedServiceLinks: [
       { href: "/부산법인설립등기", label: "부산 법인설립등기" },
-      { href: "/부산법인법무사", label: "부산 법인전문 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법무사", label: "부산 기업 법무사" },
       { href: "/창업법무", label: "창업법무 허브" },
       { href: "/법인설립등기비용", label: "법인설립등기 비용" },
@@ -481,7 +481,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     relatedServiceLinks: [
       { href: "/법인등기비용", label: "법인등기 비용 안내" },
       { href: "/법인설립등기비용", label: "법인설립등기 비용" },
-      { href: "/부산법인법무사", label: "부산 법인전문 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산법무사보수표", label: "부산 법무사 보수표" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
     ],

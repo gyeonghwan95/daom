@@ -15,6 +15,7 @@ import {
   StepTimeline,
   WarningBox,
 } from "@/components/readability";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { getCounselContent } from "@/lib/counsel-intent/content";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -130,6 +131,13 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         consultTriggers={content.situationCards.slice(0, 3).map((c) => c.title)}
       />
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="article-body" title="자세히 알아보기">
@@ -180,6 +188,13 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
       <ContentSection id="documents" title="준비자료">
         <ChecklistBox items={content.documents} />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="process" title="일반적인 진행절차">
         <StepTimeline steps={content.procedures} />

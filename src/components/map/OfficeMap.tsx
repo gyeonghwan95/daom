@@ -57,12 +57,37 @@ function OpenStreetMapFallback() {
 }
 
 export function OfficeMap() {
+  const rootRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const appKey = getKakaoMapAppKey();
   const [mode, setMode] = useState<MapMode>(() => (appKey ? "loading" : "fallback"));
+  const [shouldLoad, setShouldLoad] = useState(!appKey);
 
   useEffect(() => {
-    if (!appKey) return;
+    if (!appKey || shouldLoad) return;
+    const el = rootRef.current;
+    if (!el) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [appKey, shouldLoad]);
+
+  useEffect(() => {
+    if (!appKey || !shouldLoad) return;
 
     let cancelled = false;
 
@@ -97,10 +122,10 @@ export function OfficeMap() {
     return () => {
       cancelled = true;
     };
-  }, [appKey]);
+  }, [appKey, shouldLoad]);
 
   return (
-    <div>
+    <div ref={rootRef}>
       <div className="relative overflow-hidden rounded-xl border border-beige-dark bg-beige/20">
         <div
           className="relative h-[min(420px,62vh)] min-h-[280px] w-full"

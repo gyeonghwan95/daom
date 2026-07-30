@@ -16,6 +16,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getBusinessContent } from "@/lib/business/content";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -102,6 +103,13 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
 
       <ProseParagraphs paragraphs={content.heroParagraphs} />
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug ?? "corporate-registration"}
+      />
+
       {content.scopeNotice ? (
         <WarningBox title="업무범위 안내">
           <p>{content.scopeNotice}</p>
@@ -111,6 +119,13 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
       {tocItems.length >= 3 ? (
         <PageTableOfContents items={tocItems} />
       ) : null}
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug ?? "corporate-registration"}
+      />
 
       <ContentSection id="summary" title="기업 담당자를 위한 핵심 요약">
         <dl className="grid gap-3 sm:grid-cols-2">

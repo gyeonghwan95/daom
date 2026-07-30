@@ -16,6 +16,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { ConsultStartButton } from "@/components/consult-wizard/ConsultStartButton";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -76,7 +77,21 @@ export function ConsultLandingPageView({ page }: ConsultLandingPageViewProps) {
         <SummaryBox title="이런 분께 맞춰 두었습니다" items={content.bullets} />
       </div>
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="how" title="상담은 이렇게 진행됩니다">
         <ProseParagraphs

@@ -19,6 +19,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { recommendationFromDiagnosis } from "@/lib/internal-links";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { getDiagnosisResultRecommendations } from "@/lib/diagnosis/result-recommendations";
@@ -105,6 +106,13 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
 
       <SummaryBox items={summaryBullets} />
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="diagnosis" title="자가진단 시작하기">
@@ -143,6 +151,13 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         title="자가진단 전에 서류를 먼저 확인해 보세요"
         description="아래 체크리스트를 보신 뒤 자가진단을 시작하거나, 편한 방법으로 상담해 보세요."
         buttonLabel="상담 문의하기"
+      />
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
       />
 
       <ContentSection id="procedures" title="절차 안내">

@@ -5,6 +5,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -63,6 +64,13 @@ export function CaseRegionPageView({
           </p>
         ))}
       </div>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       {page.sections.map((section) => (
         <section key={section.title} className="space-y-3">

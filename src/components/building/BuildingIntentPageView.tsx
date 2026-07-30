@@ -15,6 +15,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getBuildingContent } from "@/lib/building-intent/content";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -173,6 +174,13 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
         </div>
       </ContentSection>
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       {isHub && content.topicClusters ? (
         <ContentSection id="clusters" title="검색 의도별 건물등기 안내">
           <div className="grid gap-6">
@@ -213,6 +221,13 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
       <ContentSection id="documents" title="준비서류">
         <ChecklistBox items={content.documents} />
       </ContentSection>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <ContentSection id="process" title="진행 절차">
         <StepTimeline steps={content.procedures} />
