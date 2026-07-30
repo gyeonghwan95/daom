@@ -19,6 +19,7 @@ import { buildLecturePage } from "@/lib/lectures/builder";
 import { buildBusinessPage } from "@/lib/business/builder";
 import { buildCounselIntentPage } from "@/lib/counsel-intent/builder";
 import { buildCorporateIntentPage } from "@/lib/corporate-intent/builder";
+import { buildBuildingIntentPage } from "@/lib/building-intent/builder";
 import { buildSpecialEntityIntentPage } from "@/lib/special-entity-intent/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
@@ -395,6 +396,8 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     page = buildCounselIntentPage(config);
   } else if (pageType === "corporate-intent") {
     page = buildCorporateIntentPage(config);
+  } else if (pageType === "building-intent") {
+    page = buildBuildingIntentPage(config);
   } else if (pageType === "special-entity-intent") {
     page = buildSpecialEntityIntentPage(config);
   } else if (pageType === "b2b-collaboration") {

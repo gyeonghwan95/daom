@@ -1,11 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
-import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
-import { getBusinessEmail } from "@/lib/business-info";
+import { useCallback, useId, useMemo, useState } from "react";
+import { InquiryDeliverySuccess } from "@/components/quick-inquiry/InquiryDeliverySuccess";
+import {
+  isTurnstileConfigured,
+  TurnstileWidget,
+} from "@/components/quick-inquiry/TurnstileWidget";
 import { getContactInfo, getDirectConsultationChannels } from "@/lib/contact";
-import { getPrimaryInquiryForm } from "@/lib/consultation";
+import {
+  clientParseContact,
+  submitQuickInquiry,
+} from "@/lib/quick-inquiry/client";
+import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
 
 const COMPANY_TYPES = [
   "중소기업",
@@ -64,6 +70,17 @@ const initialState: FormState = {
   agreed: false,
 };
 
+type FieldErrors = {
+  companyName?: string;
+  contactName?: string;
+  phone?: string;
+  workType?: string;
+  summary?: string;
+  agreed?: string;
+  turnstile?: string;
+  form?: string;
+};
+
 function buildBody(form: FormState): string {
   return [
     "[다옴법무사사무소 기업 업무 문의]",
@@ -85,98 +102,213 @@ function buildBody(form: FormState): string {
 }
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-beige-dark bg-white px-3 py-2.5 text-sm text-navy outline-none ring-navy/20 focus:ring-2";
+  "w-full rounded-lg border border-beige-dark bg-white px-3 py-2.5 text-sm text-navy outline-none ring-navy/20 focus:ring-2 disabled:bg-beige/40 disabled:opacity-70";
 
 export function BusinessInquiryForm() {
   const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
-  const email = getBusinessEmail();
-  const primaryForm = getPrimaryInquiryForm();
   const kakao = channels.find((channel) => channel.id === "kakao");
+  const formId = useId();
   const [form, setForm] = useState<FormState>(initialState);
+  const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [token, setToken] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [resetSignal, setResetSignal] = useState(0);
 
-  const mailtoHref = useMemo(() => {
-    if (!email) return null;
-    const subject = encodeURIComponent(
-      `[기업문의] ${form.workType || form.companyName || "업무 문의"}`,
-    );
-    return `mailto:${email}?subject=${subject}&body=${encodeURIComponent(buildBody(form))}`;
-  }, [email, form]);
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (primaryForm) {
-      window.open(primaryForm.url, "_blank", "noopener,noreferrer");
+  const pageMeta = useMemo(() => {
+    if (typeof window === "undefined") {
+      return {
+        pageTitle: "기업업무문의",
+        pageUrl: "https://다옴법무사사무소.kr/기업업무문의",
+      };
     }
-    setSubmitted(true);
+    return {
+      pageTitle: document.title || "기업업무문의",
+      pageUrl: window.location.href,
+    };
+  }, []);
+
+  const handleTurnstileToken = useCallback((nextToken: string) => {
+    setToken(nextToken);
+    if (!nextToken) return;
+    setErrors((prev) => {
+      if (!prev.turnstile) return prev;
+      const rest = { ...prev };
+      delete rest.turnstile;
+      return rest;
+    });
+  }, []);
+
+  const handleTurnstileError = useCallback(() => {
+    setErrors((prev) => ({
+      ...prev,
+      turnstile: "보안 확인을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.",
+    }));
+  }, []);
+
+  function validateLocal(): FieldErrors {
+    const next: FieldErrors = {};
+    if (!form.companyName.trim()) next.companyName = "회사명을 입력해 주세요.";
+    if (!form.contactName.trim()) next.contactName = "담당자명을 입력해 주세요.";
+    if (!clientParseContact(form.phone)) {
+      next.phone = "전화번호 또는 이메일 형식을 확인해 주세요.";
+    }
+    if (!form.workType) next.workType = "문의 업무를 선택해 주세요.";
+    if (form.summary.trim().length < 5) {
+      next.summary = "문의 요약을 조금 더 구체적으로 적어 주세요.";
+    }
+    if (!form.agreed) {
+      next.agreed = "개인정보 수집·이용에 동의해 주세요.";
+    }
+    if (isTurnstileConfigured() && !token) {
+      next.turnstile = "보안 확인을 완료해 주세요.";
+    }
+    return next;
+  }
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting) return;
+
+    const localErrors = validateLocal();
+    if (Object.keys(localErrors).length > 0) {
+      setErrors(localErrors);
+      return;
+    }
+
+    setSubmitting(true);
+    setErrors({});
+
+    try {
+      const result = await submitQuickInquiry({
+        message: buildBody(form),
+        contact: form.phone.trim(),
+        consent: form.agreed,
+        turnstileToken: token,
+        website: honeypot,
+        pageTitle: pageMeta.pageTitle,
+        pageUrl: pageMeta.pageUrl,
+      });
+
+      if (result.ok) {
+        setSubmitted(true);
+        setToken("");
+        setResetSignal((n) => n + 1);
+        return;
+      }
+
+      const fieldErrors: FieldErrors = {};
+      if (result.field === "contact") fieldErrors.phone = result.message;
+      else if (result.field === "consent") fieldErrors.agreed = result.message;
+      else if (result.field === "turnstile") fieldErrors.turnstile = result.message;
+      else if (result.field === "message") fieldErrors.summary = result.message;
+      else fieldErrors.form = result.message;
+      setErrors(fieldErrors);
+      setToken("");
+      setResetSignal((n) => n + 1);
+    } catch {
+      setErrors({
+        form: "네트워크 연결을 확인해 주세요. 작성하신 내용은 그대로 유지됩니다.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
     return (
-      <div className="space-y-4 rounded-2xl border border-beige-dark bg-cream/40 p-5">
-        <p className="font-semibold text-navy">문의 내용을 확인했습니다.</p>
-        <p className="text-sm text-navy/75">
-          아래 채널로도 바로 연락하실 수 있습니다. 민감정보는 보내지 마세요.
-        </p>
-        {mailtoHref ? (
-          <a href={mailtoHref} className="btn-primary inline-flex">
-            이메일로 내용 보내기
-          </a>
-        ) : null}
-        <ConsultationButtons channels={channels} theme="light" layout="grid" />
-        <Link href="/부산기업법률자문" className="text-sm font-medium text-navy underline-offset-2 hover:underline">
-          기업 법률실무 허브로 돌아가기
-        </Link>
-      </div>
+      <InquiryDeliverySuccess
+        title="기업 업무 문의가 정상적으로 전달되었습니다"
+        description="남겨주신 내용을 확인한 뒤 담당자가 연락드립니다. 메일 앱을 열 필요 없이 사무소로 바로 전달됩니다."
+        detail={form.workType || undefined}
+        secondaryHref="/부산기업법률자문"
+        secondaryLabel="기업 법률실무 허브로 돌아가기"
+        resetLabel="새 기업 문의 작성"
+        onReset={() => {
+          setSubmitted(false);
+          setForm(initialState);
+          setErrors({});
+          setHoneypot("");
+          setToken("");
+          setResetSignal((n) => n + 1);
+        }}
+      />
     );
   }
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={(e) => void handleSubmit(e)}
       className="space-y-4 rounded-2xl border border-beige-dark bg-white p-5 md:p-6"
+      noValidate
+      aria-busy={submitting}
     >
-      <p className="text-sm text-navy/70">
-        주민등록번호, 법인인감 비밀번호, 금융·인증서 정보, 통장 전체 사본은
-        기재하지 마세요.
-      </p>
+      <header className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy/50">
+          이메일 문의 접수
+        </p>
+        <h2 className="text-lg font-semibold text-navy">기업 업무 문의</h2>
+        <p className="text-sm text-navy/70">
+          제출하시면 사무소 이메일로 안전하게 전달됩니다. 주민등록번호, 법인인감
+          비밀번호, 금융·인증서 정보, 통장 전체 사본은 기재하지 마세요.
+        </p>
+      </header>
+
+      {errors.form ? (
+        <div
+          role="alert"
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900"
+        >
+          {errors.form}
+        </div>
+      ) : null}
+
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="회사명" required>
+        <Field label="회사명" required error={errors.companyName}>
           <input
             required
+            disabled={submitting}
             value={form.companyName}
             onChange={(e) => setForm({ ...form, companyName: e.target.value })}
             className={INPUT_CLASS}
+            aria-invalid={Boolean(errors.companyName)}
           />
         </Field>
-        <Field label="담당자명" required>
+        <Field label="담당자명" required error={errors.contactName}>
           <input
             required
+            disabled={submitting}
             value={form.contactName}
             onChange={(e) => setForm({ ...form, contactName: e.target.value })}
             className={INPUT_CLASS}
+            aria-invalid={Boolean(errors.contactName)}
           />
         </Field>
         <Field label="부서">
           <input
+            disabled={submitting}
             value={form.department}
             onChange={(e) => setForm({ ...form, department: e.target.value })}
             className={INPUT_CLASS}
             placeholder="경영지원·총무·재무 등"
           />
         </Field>
-        <Field label="연락처" required>
+        <Field label="연락처" required error={errors.phone}>
           <input
             required
+            disabled={submitting}
             type="tel"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             className={INPUT_CLASS}
+            aria-invalid={Boolean(errors.phone)}
           />
         </Field>
         <Field label="이메일">
           <input
+            disabled={submitting}
             type="email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -185,6 +317,7 @@ export function BusinessInquiryForm() {
         </Field>
         <Field label="기업 유형">
           <select
+            disabled={submitting}
             value={form.companyType}
             onChange={(e) => setForm({ ...form, companyType: e.target.value })}
             className={INPUT_CLASS}
@@ -197,12 +330,14 @@ export function BusinessInquiryForm() {
             ))}
           </select>
         </Field>
-        <Field label="문의 업무" required>
+        <Field label="문의 업무" required error={errors.workType}>
           <select
             required
+            disabled={submitting}
             value={form.workType}
             onChange={(e) => setForm({ ...form, workType: e.target.value })}
             className={INPUT_CLASS}
+            aria-invalid={Boolean(errors.workType)}
           >
             <option value="">선택</option>
             {WORK_OPTIONS.map((item) => (
@@ -214,6 +349,7 @@ export function BusinessInquiryForm() {
         </Field>
         <Field label="관련 기한">
           <input
+            disabled={submitting}
             value={form.deadline}
             onChange={(e) => setForm({ ...form, deadline: e.target.value })}
             className={INPUT_CLASS}
@@ -223,38 +359,92 @@ export function BusinessInquiryForm() {
       </div>
       <Field label="보유 서류">
         <input
+          disabled={submitting}
           value={form.documents}
           onChange={(e) => setForm({ ...form, documents: e.target.value })}
           className={INPUT_CLASS}
           placeholder="등기부등본, 계약서, 세금계산서 등 (목록만)"
         />
       </Field>
-      <Field label="문의 요약" required>
+      <Field label="문의 요약" required error={errors.summary}>
         <textarea
           required
+          disabled={submitting}
           rows={5}
           value={form.summary}
           onChange={(e) => setForm({ ...form, summary: e.target.value })}
           className={INPUT_CLASS}
           placeholder="상황과 확인하고 싶은 점을 간단히 적어 주세요."
+          aria-invalid={Boolean(errors.summary)}
         />
       </Field>
       <label className="flex items-start gap-2 text-sm text-navy/80">
         <input
           type="checkbox"
           required
+          disabled={submitting}
           checked={form.agreed}
           onChange={(e) => setForm({ ...form, agreed: e.target.checked })}
           className="mt-1"
+          aria-invalid={Boolean(errors.agreed)}
         />
         <span>
           상담 연락을 위한 개인정보 수집·이용에 동의합니다. 민감정보는 제출하지
           않습니다.
+          {errors.agreed ? (
+            <span className="mt-1 block text-red-700">{errors.agreed}</span>
+          ) : null}
         </span>
       </label>
+
+      <label className="inquiry-form__hp" htmlFor={`${formId}-hp`}>
+        웹사이트
+        <input
+          id={`${formId}-hp`}
+          name={HONEYPOT_FIELD}
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </label>
+
+      {isTurnstileConfigured() ? (
+        <div>
+          <TurnstileWidget
+            onToken={handleTurnstileToken}
+            onError={handleTurnstileError}
+            resetSignal={resetSignal}
+          />
+          {errors.turnstile ? (
+            <p className="mt-2 text-sm text-red-700" role="alert">
+              {errors.turnstile}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {submitting ? (
+        <p className="flex items-center gap-2 text-sm text-navy/70" aria-live="polite">
+          <span className="inquiry-form__spinner" aria-hidden />
+          문의 내용을 안전하게 전달하는 중입니다…
+        </p>
+      ) : null}
+
       <div className="flex flex-wrap gap-2">
-        <button type="submit" className="btn-primary">
-          기업 업무 문의하기
+        <button
+          type="submit"
+          disabled={submitting}
+          className="btn-primary inline-flex min-h-11 items-center gap-2 disabled:opacity-60"
+        >
+          {submitting ? (
+            <>
+              <span className="inquiry-form__spinner inquiry-form__spinner--button" aria-hidden />
+              전송 중…
+            </>
+          ) : (
+            "기업 업무 문의 보내기"
+          )}
         </button>
         {phone ? (
           <a href={`tel:${phone.replace(/-/g, "")}`} className="btn-secondary">
@@ -279,10 +469,12 @@ export function BusinessInquiryForm() {
 function Field({
   label,
   required,
+  error,
   children,
 }: {
   label: string;
   required?: boolean;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -292,6 +484,11 @@ function Field({
         {required ? <span className="text-red-700"> *</span> : null}
       </span>
       {children}
+      {error ? (
+        <span className="mt-1 block text-sm text-red-700" role="alert">
+          {error}
+        </span>
+      ) : null}
     </label>
   );
 }

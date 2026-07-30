@@ -136,6 +136,7 @@ try {
 try {
   const corp = loadTsViaJiti("src/lib/corporate-intent/content/index.ts");
   const list =
+    corp?.corporatePages ||
     corp?.corporateIntentPages ||
     corp?.allCorporateContent ||
     corp?.default ||
@@ -154,6 +155,28 @@ try {
   }
 } catch (e) {
   console.warn("[audit] corporate jiti failed:", e.message);
+}
+
+try {
+  const building = loadTsViaJiti("src/lib/building-intent/content/index.ts");
+  const list =
+    building?.buildingPages ||
+    building?.default ||
+    [];
+  const pages = Array.isArray(list) ? list : Object.values(list).flat();
+  for (const c of pages) {
+    if (!c?.slug) continue;
+    const chars = measureIntentContent(c);
+    rows.push({
+      slug: c.slug,
+      path: `/${c.slug}`,
+      source: "building-intent",
+      approxChars: chars,
+      short: chars < 1500,
+    });
+  }
+} catch (e) {
+  console.warn("[audit] building jiti failed:", e.message);
 }
 
 try {

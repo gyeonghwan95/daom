@@ -61,7 +61,9 @@ export const mainNavigation: NavItem[] = [
         links: [
           { href: "/services", label: "업무안내 전체" },
           { href: "/부산부동산등기", label: "부동산등기" },
+          { href: "/부산건물등기", label: "건물·건축물등기" },
           { href: "/부산법인등기", label: "법인등기" },
+          { href: "/법인변경등기", label: "법인 변경등기" },
           { href: "/부산상속등기", label: "상속등기" },
           { href: "/부산개인회생", label: "개인회생" },
         ],

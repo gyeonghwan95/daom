@@ -244,9 +244,21 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/corporate-intent/content/intents.ts",
   );
+  const corporateIntentGapsPath = path.join(
+    ROOT,
+    "src/lib/corporate-intent/content/phase-gaps.ts",
+  );
   const corporateIntentLandingConfigPath = path.join(
     ROOT,
     "src/lib/corporate-intent/landing-config.ts",
+  );
+  const buildingIntentContentDir = path.join(
+    ROOT,
+    "src/lib/building-intent/content",
+  );
+  const buildingIntentLandingConfigPath = path.join(
+    ROOT,
+    "src/lib/building-intent/landing-config.ts",
   );
   const specialEntityContentPath = path.join(
     ROOT,
@@ -341,10 +353,27 @@ function readLandingSlugs() {
     fs.existsSync(corporateIntentIntentsPath)
       ? fs.readFileSync(corporateIntentIntentsPath, "utf8")
       : "";
+  const corporateIntentGaps =
+    fs.existsSync(corporateIntentGapsPath)
+      ? fs.readFileSync(corporateIntentGapsPath, "utf8")
+      : "";
   const corporateIntentLanding =
     fs.existsSync(corporateIntentLandingConfigPath)
       ? fs.readFileSync(corporateIntentLandingConfigPath, "utf8")
       : "";
+  const buildingIntentLanding =
+    fs.existsSync(buildingIntentLandingConfigPath)
+      ? fs.readFileSync(buildingIntentLandingConfigPath, "utf8")
+      : "";
+  const buildingIntentPhaseContent = fs.existsSync(buildingIntentContentDir)
+    ? fs
+        .readdirSync(buildingIntentContentDir)
+        .filter((name) => name.endsWith(".ts") && name !== "index.ts" && name !== "shared.ts")
+        .map((name) =>
+          fs.readFileSync(path.join(buildingIntentContentDir, name), "utf8"),
+        )
+        .join("\n")
+    : "";
   const specialEntityContent =
     fs.existsSync(specialEntityContentPath)
       ? fs.readFileSync(specialEntityContentPath, "utf8")
@@ -402,7 +431,10 @@ function readLandingSlugs() {
     ...(corporateIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(corporateIntentHub.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(corporateIntentIntents.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentGaps.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(corporateIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(buildingIntentPhaseContent.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(buildingIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(specialEntityContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(specialEntityHubs.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(specialEntityIntents.match(/slug:\s*"([^"]+)"/g) ?? []),

@@ -1,6 +1,7 @@
 /** 문의 본문·연락처 길이 제한 (서버·클라이언트 공통) */
 export const MESSAGE_MIN = 5;
-export const MESSAGE_MAX = 2000;
+/** 협업·기업·강의 등 구조화 문의 본문까지 수용 */
+export const MESSAGE_MAX = 4000;
 export const CONTACT_MAX = 120;
 
 /** 동일 내용 중복 제출 차단 창 (ms) */

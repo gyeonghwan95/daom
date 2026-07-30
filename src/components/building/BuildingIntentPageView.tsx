@@ -15,21 +15,20 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
-import { getCorporateContent } from "@/lib/corporate-intent/content";
+import { getBuildingContent } from "@/lib/building-intent/content";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { siteImages } from "@/lib/site-images";
 
-type CorporateIntentPageViewProps = {
+type BuildingIntentPageViewProps = {
   page: PageData;
 };
 
-function buildCorporateBody(content: NonNullable<ReturnType<typeof getCorporateContent>>) {
-  const paragraphs = [
-    content.conclusion,
-    ...content.heroParagraphs,
-  ];
+function buildBuildingBody(
+  content: NonNullable<ReturnType<typeof getBuildingContent>>,
+) {
+  const paragraphs = [content.conclusion, ...content.heroParagraphs];
 
   if (content.whoNeedsThis.length) {
     paragraphs.push(
@@ -39,13 +38,13 @@ function buildCorporateBody(content: NonNullable<ReturnType<typeof getCorporateC
 
   if (content.whenAndDeadline.length) {
     paragraphs.push(
-      `등기 시점과 기한을 먼저 보면 우선순위가 분명해집니다. ${content.whenAndDeadline.slice(0, 3).join(" ")}`,
+      `등기 시점과 순서를 먼저 보면 판단이 쉬워집니다. ${content.whenAndDeadline.slice(0, 3).join(" ")}`,
     );
   }
 
   if (content.decisionBodies.length) {
     paragraphs.push(
-      `결의기관과 의사결정 구조를 확인하지 않으면 서류가 어긋나기 쉽습니다. ${content.decisionBodies.slice(0, 3).join(" ")}`,
+      `신청 주체와 확인 서류를 맞추지 않으면 접수가 어긋나기 쉽습니다. ${content.decisionBodies.slice(0, 3).join(" ")}`,
     );
   }
 
@@ -57,7 +56,7 @@ function buildCorporateBody(content: NonNullable<ReturnType<typeof getCorporateC
 
   if (content.procedures.length) {
     paragraphs.push(
-      `실제 진행은 보통 ${content.procedures.join(" → ")} 흐름입니다. 정관·등기부·결의 일자가 맞지 않으면 보정으로 일정이 밀릴 수 있습니다.`,
+      `실제 진행은 보통 ${content.procedures.join(" → ")} 흐름입니다. 건축물대장·등기부·소유관계가 맞지 않으면 보정으로 일정이 밀릴 수 있습니다.`,
     );
   }
 
@@ -74,7 +73,7 @@ function buildCorporateBody(content: NonNullable<ReturnType<typeof getCorporateC
           ? `직접 진행할 때 ${content.diyErrors.slice(0, 2).join(", ")} 같은 실수가 생기기 쉽습니다.`
           : null,
         content.penaltyRisks[0]
-          ? `지연하거나 누락하면 ${content.penaltyRisks.slice(0, 2).join(", ")} 위험이 있습니다.`
+          ? `미루거나 누락하면 ${content.penaltyRisks.slice(0, 2).join(", ")} 위험이 있습니다.`
           : null,
       ]
         .filter(Boolean)
@@ -98,12 +97,13 @@ function buildCorporateBody(content: NonNullable<ReturnType<typeof getCorporateC
   return paragraphs.filter((p) => p.trim().length > 0);
 }
 
-export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) {
-  const content = getCorporateContent(page.slug);
+export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
+  const content = getBuildingContent(page.slug);
   if (!content) return null;
 
   const isHub = content.kind === "hub";
-  const bodyParagraphs = buildCorporateBody(content);
+  const bodyParagraphs = buildBuildingBody(content);
+  const inquiryHref = `/contact/inquiry?field=${encodeURIComponent("real-estate-registration")}&from=${encodeURIComponent(content.slug)}`;
   const showNationwide =
     isHub ||
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
@@ -111,8 +111,8 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
   const tocItems = [
     { id: "article-body", label: "본문 안내" },
     ...(isHub ? [{ id: "clusters", label: "업무별 안내" }] : []),
-    { id: "deadline", label: "시점·기한" },
-    { id: "decision", label: "결의·의사결정" },
+    { id: "deadline", label: "시점·순서" },
+    { id: "decision", label: "확인 사항" },
     { id: "documents", label: "준비서류" },
     { id: "process", label: "진행 절차" },
     { id: "cost", label: "비용 요인" },
@@ -139,8 +139,8 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         intro={content.heroIntro}
         keywords={[content.primaryKeyword, ...content.secondaryKeywords.slice(0, 4)]}
         ctaLabel={content.ctaTitle}
-        ctaHref={`/contact/inquiry?field=${encodeURIComponent("corporate-registration")}&from=${encodeURIComponent(content.slug)}`}
-        secondaryCta={{ href: "/법인변경등기", label: "변경등기 허브 보기" }}
+        ctaHref={inquiryHref}
+        secondaryCta={{ href: "/부산건물등기", label: "건물등기 허브 보기" }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}
@@ -148,7 +148,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       />
 
       {showNationwide ? (
-        <NationwideServiceCard headline="타 지역 법인도 비대면으로 등기 상담이 가능합니다" />
+        <NationwideServiceCard headline="타 지역 건물등기도 비대면으로 상담이 가능합니다" />
       ) : null}
 
       <p className="text-sm font-medium text-navy">{content.officeLine}</p>
@@ -174,7 +174,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       </ContentSection>
 
       {isHub && content.topicClusters ? (
-        <ContentSection id="clusters" title="검색 의도별 변경등기 안내">
+        <ContentSection id="clusters" title="검색 의도별 건물등기 안내">
           <div className="grid gap-6">
             {content.topicClusters.map((cluster) => (
               <div
@@ -202,11 +202,11 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         </ContentSection>
       ) : null}
 
-      <ContentSection id="deadline" title="등기 시점과 기한">
+      <ContentSection id="deadline" title="등기 시점과 순서">
         <ChecklistBox items={content.whenAndDeadline} />
       </ContentSection>
 
-      <ContentSection id="decision" title="결의기관과 의사결정 구조">
+      <ContentSection id="decision" title="먼저 확인할 사항">
         <ChecklistBox items={content.decisionBodies} />
       </ContentSection>
 
@@ -239,10 +239,10 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       </ContentSection>
 
       <CTASection
-        title="현재 상황에 필요한 절차부터 확인해보세요"
+        title="건축물대장과 등기부가 준비되어 있다면 필요한 등기부터 확인할 수 있습니다"
         description={content.ctaText}
         pageSlug={content.slug}
-        serviceSlug="corporate-registration"
+        serviceSlug="real-estate-registration"
       />
     </article>
   );

@@ -143,6 +143,16 @@ export const corporateHubPage: CorporatePageContent = {
           label: "대표자 사망 시 법인등기",
           description: "승계·임원 정비 순서",
         },
+        {
+          href: "/부산임원사임해임등기",
+          label: "부산 임원 사임·해임등기",
+          description: "사임·해임·퇴임 결의와 등기",
+        },
+        {
+          href: "/부산공동대표변경등기",
+          label: "부산 공동대표 변경등기",
+          description: "공동·각자대표 설정·해제",
+        },
       ],
     },
     {
@@ -160,25 +170,50 @@ export const corporateHubPage: CorporatePageContent = {
           description: "업종 추가·정관 개정",
         },
         {
+          href: "/부산지점설치등기",
+          label: "부산 법인 지점설치등기",
+          description: "지점 설치와 영업소 차이",
+        },
+        {
+          href: "/부산지점폐지등기",
+          label: "부산 법인 지점폐지등기",
+          description: "지점 폐지·등기 정리",
+        },
+        {
+          href: "/부산상호변경등기",
+          label: "부산 법인 상호변경등기",
+          description: "상호 변경·동일상호 확인",
+        },
+        {
+          href: "/녹산산단법인본점지점",
+          label: "녹산산단 본점·지점 등기",
+          description: "공장 이전과 본점·지점 동시 처리",
+        },
+        {
           href: "/전국법인본점이전등기",
           label: "전국 법인 본점이전등기",
           description: "타 지역 관할 이전",
-        },
-        {
-          href: "/faq/corporate-address-change-faq",
-          label: "본점이전 FAQ",
-          description: "사업자등록 연계",
         },
       ],
     },
     {
       title: "자본금·주식",
-      intro: "유상증자는 등기사항 변경이며, 주식 양도 계약과 구분해야 합니다.",
+      intro: "유상증자·무상증자·감자는 결의·서류·등기 요건이 서로 다릅니다.",
       links: [
         {
           href: "/부산유상증자등기",
           label: "부산 유상증자 등기",
           description: "신주발행·납입·등기 순서",
+        },
+        {
+          href: "/부산무상증자등기",
+          label: "부산 무상증자 등기",
+          description: "준비금 자본전입",
+        },
+        {
+          href: "/부산감자등기",
+          label: "부산 자본금 감자등기",
+          description: "유상·무상 감자 절차",
         },
         {
           href: "/faq/capital-increase-registration-faq",
@@ -188,8 +223,8 @@ export const corporateHubPage: CorporatePageContent = {
       ],
     },
     {
-      title: "해산·청산·과태료",
-      intro: "사업자등록 폐업과 법인 해산·청산은 별개입니다.",
+      title: "해산·청산·휴면·과태료",
+      intro: "사업자등록 폐업과 법인 해산·청산·휴면 계속은 별개입니다.",
       links: [
         {
           href: "/부산법인해산청산등기",
@@ -197,14 +232,24 @@ export const corporateHubPage: CorporatePageContent = {
           description: "해산 결의부터 말소까지",
         },
         {
+          href: "/부산법인해산전확인사항",
+          label: "해산 전 확인사항",
+          description: "폐업만 한 법인 정리 전 체크",
+        },
+        {
+          href: "/부산휴면법인계속등기",
+          label: "휴면법인 계속등기",
+          description: "직권해산·휴면 후 회복",
+        },
+        {
+          href: "/부산개인사업자법인전환",
+          label: "개인사업자 법인전환",
+          description: "전환 설립과 승계 점검",
+        },
+        {
           href: "/부산법인등기과태료",
           label: "부산 법인등기 과태료",
           description: "지연 등기·예방 체크",
-        },
-        {
-          href: "/임원변경등기과태료",
-          label: "임원변경등기 과태료",
-          description: "임원 변경 지연 시",
         },
       ],
     },

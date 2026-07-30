@@ -27,6 +27,15 @@ export function resolveNotifyChannels(env: NotifyEnv): NotifyChannels {
   };
 }
 
+function buildEmailSubject(pageTitle: string): string {
+  const title = pageTitle.replace(/\s+/g, " ").trim();
+  if (!title || title === "제목 없음" || title === "-") {
+    return "[다옴] 홈페이지 신규 문의";
+  }
+  const short = title.length > 48 ? `${title.slice(0, 48)}…` : title;
+  return `[다옴] ${short}`;
+}
+
 function buildPlainBody(
   data: ValidatedInquiry,
   channels: ("telegram" | "email")[],
@@ -156,7 +165,7 @@ export async function sendResendEmail(
       body: JSON.stringify({
         from,
         to: [to],
-        subject: `[다옴] 홈페이지 신규 문의`,
+        subject: buildEmailSubject(data.pageTitle),
         text: plain,
       }),
     });
