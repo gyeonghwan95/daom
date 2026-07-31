@@ -82,6 +82,58 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
     tone: "dark",
   },
 
+  // 상속 생애주기 검색 유입
+  {
+    path: "/부모님사망후해야할일",
+    slot: "after-intro",
+    assetId: "docReviewDesk",
+    alt: "사망 후 상속 절차 서류를 정리하는 모습",
+    overlayText: "장례 직후부터 순서를 잡습니다",
+    aspectRatio: "4:3",
+    overlayPosition: "left",
+    tone: "dark",
+  },
+  {
+    path: "/사망자재산채무조회",
+    slot: "after-intro",
+    assetId: "inheritanceRegCert",
+    alt: "재산·채무 조회와 연결되는 상속 관련 서류",
+    overlayText: "재산과 빚을 함께 확인합니다",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+  {
+    path: "/부모빚상속방법",
+    slot: "after-intro",
+    assetId: "docReviewDesk",
+    alt: "상속포기·한정승인 선택을 위해 자료를 검토하는 모습",
+    overlayText: "등기보다 승인 방식부터",
+    aspectRatio: "4:3",
+    overlayPosition: "right",
+    tone: "dark",
+  },
+  {
+    path: "/방문없이준비하는상속등기",
+    slot: "after-intro",
+    assetId: "consultTalk",
+    alt: "전화·카카오톡으로 상속등기 준비를 안내하는 상담 장면",
+    overlayText: "방문 전에도 준비가 가능합니다",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+  {
+    path: "/상속",
+    slot: "after-intro",
+    assetId: "inheritanceRegCert",
+    alt: "상속등기·포기·한정승인 종합 안내와 연결되는 등기 서류",
+    overlayText: "단계별로 이어지는 상속 안내",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+
   // /부산한정승인
   {
     path: "/부산한정승인",

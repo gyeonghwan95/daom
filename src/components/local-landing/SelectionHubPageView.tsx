@@ -1,4 +1,5 @@
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
+import Link from "next/link";
 import { ServiceConversionEnhancements } from "@/components/conversion";
 import { resolveConversionKey } from "@/lib/service-conversion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -74,12 +75,23 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
   ].filter((p) => p.trim().length > 0);
 
   const comparisonColumns = content.comparisonRows
-    ? [
-        { key: "aspect", header: "항목" },
-        { key: "left", header: "흔한 선택" },
-        { key: "right", header: "확인할 기준" },
-      ]
+    ? page.slug === "부산법무사상담"
+      ? [
+          { key: "aspect", header: "구분" },
+          { key: "left", header: "안내·확인 내용" },
+          { key: "right", header: "함께 볼 내용" },
+        ]
+      : [
+          { key: "aspect", header: "항목" },
+          { key: "left", header: "흔한 선택" },
+          { key: "right", header: "확인할 기준" },
+        ]
     : [];
+
+  const isConsultPrep = page.slug === "부산법무사상담";
+  const inquiryBase = `/contact/inquiry?from=${encodeURIComponent(page.slug)}&field=${encodeURIComponent(page.serviceSlug ?? "inheritance-registration")}`;
+  const inquiryCost = `${inquiryBase}&intent=${encodeURIComponent("준비서류와 비용 확인")}`;
+  const inquirySituation = `${inquiryBase}&intent=${encodeURIComponent("현재 상황 안내")}`;
 
   return (
     <article className="content-stack">
@@ -94,9 +106,13 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
-        ctaHref="/contact"
-        ctaLabel="상담 문의하기"
-        secondaryCta={{ href: "/부산법무사상담", label: "상담 전 준비사항" }}
+        ctaHref={isConsultPrep ? inquiryBase : "/contact"}
+        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "상담 문의하기"}
+        secondaryCta={
+          isConsultPrep
+            ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }
+            : { href: "/부산법무사상담", label: "상담 전 준비사항" }
+        }
         showDiagnosisCta={false}
         showNationwideChip={showNationwide}
       />
@@ -204,14 +220,16 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           items={content.preparationDocs}
           note={content.preparationNote}
         />
-        <div className="mt-6">
-          <ConsultationCTA
-            title="현재 상황에 필요한 절차부터 확인해보세요"
-            description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-            buttonLabel="상담 내용 남기기"
-            inquiryField={page.serviceSlug}
-          />
-        </div>
+        {isConsultPrep ? null : (
+          <div className="mt-6">
+            <ConsultationCTA
+              title="현재 상황에 필요한 절차부터 확인해보세요"
+              description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+              buttonLabel="상담 내용 남기기"
+              inquiryField={page.serviceSlug}
+            />
+          </div>
+        )}
       </ContentSection>
 
       <ContentSection id="related" title="관련 페이지">
@@ -224,10 +242,31 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
 
       <div id="consultation">
         <ConsultationCTA
-          title="상담 문의"
+          title={isConsultPrep ? "업무 가능 여부부터 확인해 보세요" : "상담 문의"}
           description={content.bottomCtaText}
-          buttonLabel="상담 신청하기"
+          buttonLabel={
+            isConsultPrep ? "업무 가능 여부 확인하기" : "상담 신청하기"
+          }
+          inquiryField={page.serviceSlug}
+          fromPage={page.slug}
+          intent={isConsultPrep ? "업무 가능 여부 확인" : undefined}
         />
+        {isConsultPrep ? (
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+            <Link
+              href={inquiryCost}
+              className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
+            >
+              준비서류와 비용 문의하기
+            </Link>
+            <Link
+              href={inquirySituation}
+              className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
+            >
+              현재 상황 남기기
+            </Link>
+          </div>
+        ) : null}
         <div className="mt-6">
           <CTASection
             pageType="faq"

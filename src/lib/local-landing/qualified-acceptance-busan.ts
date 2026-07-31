@@ -167,21 +167,15 @@ export function buildBusanQualifiedAcceptancePage(
       },
     ],
     relatedServiceLinks: [
+      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
+      { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
+      { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택 안내" },
       { href: "/부산상속포기", label: "부산 상속포기 안내" },
       { href: "/부산상속등기", label: "부산 상속등기 서류·진행 순서" },
-      {
-        href: "/situations/inheritance-unknown-debt",
-        label: "상속채무를 모를 때",
-      },
-      {
-        href: "/situations/상속포기-한정승인-선택",
-        label: "상속포기·한정승인 선택",
-      },
+      { href: "/상속", label: "상속 종합 허브" },
       { href: "/한정승인자가진단", label: "한정승인 자가진단" },
-      { href: "/services/qualified-acceptance", label: "한정승인 업무안내" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry?field=qualified-acceptance", label: "상속 절차 먼저 확인하기" },
     ],
     relatedRegionLinks: [
       { href: "/동래구한정승인", label: "동래구 한정승인" },

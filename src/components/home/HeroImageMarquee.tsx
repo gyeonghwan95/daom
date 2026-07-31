@@ -21,8 +21,8 @@ function HeroSlide({ image, priority = false }: { image: SiteImageAsset; priorit
         src={image.src}
         alt={image.alt}
         fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 100vw, 42vw"
+        className="object-cover object-[center_22%] lg:object-center"
+        sizes="(max-width: 1023px) 92vw, 42vw"
         priority={priority}
       />
       <div className="home-hero__frame-border" aria-hidden />
@@ -53,8 +53,8 @@ export function HeroImageMarquee({
           src={slides[0].src}
           alt={slides[0].alt}
           fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 42vw"
+          className="object-cover object-[center_22%] lg:object-center"
+          sizes="(max-width: 1023px) 92vw, 42vw"
           priority
         />
         <div className="home-hero__frame-border" aria-hidden />

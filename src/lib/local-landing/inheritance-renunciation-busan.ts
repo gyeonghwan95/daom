@@ -159,16 +159,15 @@ export function buildBusanInheritanceRenunciationPage(
       "사망일, 상속인 구성, 확인된 채무를 남겨주시면 포기·한정승인 중 먼저 볼 절차를 정리할 수 있습니다.",
     relatedBlogHrefs: [],
     relatedServiceLinks: [
+      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
+      { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
+      { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
       { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      {
-        href: "/situations/상속포기-한정승인-선택",
-        label: "상속포기·한정승인 선택",
-      },
+      { href: "/상속", label: "상속 종합 허브" },
       { href: "/상속포기자가진단", label: "상속포기 자가진단" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속 절차 먼저 확인하기" },
     ],
     relatedRegionLinks: [
       { href: "/동래구상속포기", label: "동래구 상속포기" },

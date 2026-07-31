@@ -1,3 +1,9 @@
+import {
+  InheritanceCostGuide,
+  InheritanceJourneyNav,
+  RemoteInheritanceProcess,
+} from "@/components/inheritance";
+import { isInheritanceJourneyPage } from "@/lib/inheritance/journey";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ServiceConversionEnhancements } from "@/components/conversion";
 import { resolveConversionKey } from "@/lib/service-conversion";
@@ -15,6 +21,7 @@ import {
   ContentSection,
   PageHero,
   PageTableOfContents,
+  ProseParagraphs,
   RelatedContentGrid,
   StepTimeline,
   WarningBox,
@@ -48,10 +55,25 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     includeFaqSchema: true,
   };
 
+  const showJourney =
+    content.showInheritanceJourney !== false &&
+    isInheritanceJourneyPage(page.slug);
+
   const tocItems = [
+    ...(showJourney
+      ? [{ id: "inheritance-journey", label: "절차 여정" }]
+      : []),
     { id: "article-body", label: "본문 안내" },
+    ...(content.proseSections?.map((s) => ({ id: s.id, label: s.title })) ??
+      []),
     { id: "documents", label: "준비서류" },
     { id: "procedures", label: "절차" },
+    ...(content.showRemoteInheritance
+      ? [{ id: "remote-inheritance", label: "비대면 진행" }]
+      : []),
+    ...(content.showInheritanceCostGuide
+      ? [{ id: "inheritance-cost-guide", label: "비용 안내" }]
+      : []),
     { id: "mistakes", label: "자주 하는 실수" },
     { id: "faq", label: "자주 묻는 질문" },
     { id: "related-cases", label: "관련 사례" },
@@ -88,7 +110,11 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         eyebrow={content.eyebrow}
         intro={content.heroParagraphs[0]}
         keywords={content.primaryKeywords}
-        ctaLabel="상담 문의하기"
+        ctaLabel={
+          content.showRemoteInheritance || content.showInheritanceCostGuide
+            ? "업무 가능 여부 확인하기"
+            : "상담 문의하기"
+        }
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}
@@ -105,6 +131,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         consultTriggers={content.whenNeeded.slice(0, 3)}
       />
 
+      {showJourney ? (
+        <InheritanceJourneyNav currentSlug={page.slug} />
+      ) : null}
+
       {bodyParagraphs.length > 0 ? (
         <ContentSection id="article-body" title="자세히 알아보기">
           <div className="article-body">
@@ -114,6 +144,12 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           </div>
         </ContentSection>
       ) : null}
+
+      {content.proseSections?.map((section) => (
+        <ContentSection key={section.id} id={section.id} title={section.title}>
+          <ProseParagraphs paragraphs={section.paragraphs} />
+        </ContentSection>
+      ))}
 
       <ArticleVisualSlot
         path={page.path}
@@ -179,6 +215,14 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
+      {content.showRemoteInheritance ? (
+        <RemoteInheritanceProcess fromPage={page.slug} />
+      ) : null}
+
+      {content.showInheritanceCostGuide ? (
+        <InheritanceCostGuide fromPage={page.slug} />
+      ) : null}
+
       <ContentSection id="mistakes" title="자주 하는 실수">
         <WarningBox title="상담 전에 자주 놓치는 부분">
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-navy/85 md:text-base">
@@ -222,9 +266,23 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       <div id="consultation">
         <ConsultationCTA
           title="현재 상황에 필요한 절차부터 확인해보세요"
-          description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-          buttonLabel="상담 내용 남기기"
+          description={content.bottomCtaText}
+          buttonLabel={
+            content.showRemoteInheritance ||
+            content.showInheritanceCostGuide ||
+            page.slug.includes("증여")
+              ? "업무 가능 여부 확인하기"
+              : "상담 내용 남기기"
+          }
           inquiryField={content.serviceSlug ?? page.serviceSlug}
+          fromPage={page.slug}
+          intent={
+            page.slug.includes("증여")
+              ? "증여등기 서류·비용 구성 확인"
+              : content.showInheritanceCostGuide || content.showRemoteInheritance
+                ? "상속 절차·비용 확인"
+                : undefined
+          }
         />
         <div className="mt-6">
           <CTASection

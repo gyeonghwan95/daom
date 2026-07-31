@@ -50,7 +50,7 @@ export const NATIONWIDE_BANNER_HEADLINES: Record<string, string> = {
   "inheritance-registration-cost":
     "상속등기 비용 상담도, 부산 방문 없이 전국 비대면으로 가능합니다",
   "when-to-file-inheritance-registration":
-    "상속등기 시기 안내도 전국 어디서나 비대면으로 상담할 수 있습니다",
+    "상속등기 시기 안내도 전국 어디서나 비대면으로 끝까지 진행할 수 있습니다",
   "who-needs-inheritance-registration":
     "상속등기가 필요한지, 방문 없이 전국에서 먼저 확인해 보세요",
   "multiple-heirs-inheritance-registration":

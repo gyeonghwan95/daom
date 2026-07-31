@@ -59,6 +59,7 @@ function OpenStreetMapFallback() {
 export function OfficeMap() {
   const rootRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<kakao.maps.Map | null>(null);
   const appKey = getKakaoMapAppKey();
   const [mode, setMode] = useState<MapMode>(() => (appKey ? "loading" : "fallback"));
   const [shouldLoad, setShouldLoad] = useState(!appKey);
@@ -93,7 +94,10 @@ export function OfficeMap() {
 
     loadKakaoMaps(appKey)
       .then(() => {
-        if (cancelled || !containerRef.current || !window.kakao?.maps) return;
+        if (cancelled || !containerRef.current || !window.kakao?.maps) {
+          if (!cancelled) setMode("fallback");
+          return;
+        }
 
         const { lat, lng } = officeCoordinates;
         const center = new window.kakao.maps.LatLng(lat, lng);
@@ -101,6 +105,8 @@ export function OfficeMap() {
           center,
           level: 3,
         });
+        mapRef.current = map;
+
         const marker = new window.kakao.maps.Marker({ position: center });
         marker.setMap(map);
 
@@ -113,7 +119,13 @@ export function OfficeMap() {
         });
         infoWindow.open(map, marker);
 
-        if (!cancelled) setMode("kakao");
+        // 스와이퍼·레이아웃 직후 0크기 초기화를 피하기 위해 relayout
+        requestAnimationFrame(() => {
+          if (cancelled) return;
+          map.relayout();
+          map.setCenter(center);
+          setMode("kakao");
+        });
       })
       .catch(() => {
         if (!cancelled) setMode("fallback");
@@ -121,8 +133,23 @@ export function OfficeMap() {
 
     return () => {
       cancelled = true;
+      mapRef.current = null;
     };
   }, [appKey, shouldLoad]);
+
+  useEffect(() => {
+    if (mode !== "kakao" || !mapRef.current || !window.kakao?.maps) return;
+    const map = mapRef.current;
+    const center = new window.kakao.maps.LatLng(
+      officeCoordinates.lat,
+      officeCoordinates.lng,
+    );
+    const id = requestAnimationFrame(() => {
+      map.relayout();
+      map.setCenter(center);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [mode]);
 
   return (
     <div ref={rootRef}>
@@ -131,20 +158,24 @@ export function OfficeMap() {
           className="relative h-[min(420px,62vh)] min-h-[280px] w-full"
           aria-label={`${siteConfig.name} 위치 지도`}
         >
-          {mode === "loading" && (
-            <div className="absolute inset-0 flex items-center justify-center bg-beige/30 text-sm text-navy/55">
-              지도를 불러오는 중…
-            </div>
+          {mode === "fallback" ? (
+            <OpenStreetMapFallback />
+          ) : (
+            <>
+              {mode === "loading" && (
+                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-beige/30 text-sm text-navy/55">
+                  지도를 불러오는 중…
+                </div>
+              )}
+              {/* display:none 이면 카카오맵이 빈 화면이 됨 — 항상 레이아웃에 둠 */}
+              <div
+                ref={containerRef}
+                className="h-full w-full"
+                role="region"
+                aria-hidden={mode !== "kakao"}
+              />
+            </>
           )}
-
-          {mode === "fallback" && <OpenStreetMapFallback />}
-
-          <div
-            ref={containerRef}
-            className={`h-full w-full ${mode === "kakao" ? "block" : "hidden"}`}
-            role="region"
-            aria-hidden={mode !== "kakao"}
-          />
         </div>
       </div>
 

@@ -1490,7 +1490,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.65rem;
   }
 
   .home-hero__mobile-cta {
@@ -1498,12 +1498,12 @@ body.mobile-menu-open .mobile-bottom-cta {
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    min-height: 3rem;
+    min-height: 3.15rem;
     padding: 0.75rem 1.15rem;
     border-radius: 0.9rem;
     background: linear-gradient(165deg, #243f66 0%, var(--navy) 55%, #152a45 100%);
     color: #fff;
-    font-size: 0.9875rem;
+    font-size: 1.02rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     box-shadow:
@@ -1538,15 +1538,31 @@ body.mobile-menu-open .mobile-bottom-cta {
     margin-top: 1.25rem;
   }
 
+  .home-hero__contact-lead {
+    margin: 0 0 0.65rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: rgba(30, 58, 95, 0.62);
+  }
+
+  .home-hero__marquee-mobile,
+  .home-hero__marquee-desktop {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
   /* 모바일: 마키 — 카피·CTA와 균형 맞춘 높이 */
   .home-hero__marquee {
     position: relative;
     display: flex;
     width: 100%;
     flex: 0 0 auto;
-    height: clamp(17.5rem, 34svh, 24rem);
-    min-height: 17.5rem;
+    height: clamp(15.5rem, 30svh, 21rem);
+    min-height: 15.5rem;
     margin-top: 0.15rem;
+    order: -1;
   }
 
   .home-hero__marquee > .marquee-v-root,
@@ -1570,8 +1586,8 @@ body.mobile-menu-open .mobile-bottom-cta {
     }
 
     .home-hero__marquee {
-      height: clamp(20rem, 38svh, 28rem);
-      min-height: 20rem;
+      height: clamp(17rem, 34svh, 24rem);
+      min-height: 17rem;
     }
   }
 
@@ -1585,8 +1601,9 @@ body.mobile-menu-open .mobile-bottom-cta {
     }
 
     .home-hero__marquee {
-      height: clamp(22rem, 40svh, 30rem);
-      min-height: 22rem;
+      height: clamp(18rem, 36svh, 26rem);
+      min-height: 18rem;
+      order: 0;
     }
   }
 
@@ -1646,7 +1663,8 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero__brand {
     display: flex;
     align-items: center;
-    gap: 0.875rem;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
   }
 
   .home-hero__brand-mark {
@@ -1654,9 +1672,9 @@ body.mobile-menu-open .mobile-bottom-cta {
     shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 3.75rem;
-    height: 3.75rem;
-    border-radius: 1rem;
+    width: 3.15rem;
+    height: 3.15rem;
+    border-radius: 0.9rem;
     border: 1px solid rgba(30, 58, 95, 0.08);
     background: linear-gradient(145deg, #ffffff 0%, #f5f0e8 100%);
     box-shadow:
@@ -1903,23 +1921,25 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .home-reviews-marquee.marquee-v-root {
-    border-radius: 1rem;
+    border-radius: 0.75rem;
+    height: 100%;
   }
 
   .home-reviews-marquee .marquee-v-set {
-    gap: 1rem;
+    gap: 0.65rem;
   }
 
   .home-hero__slide {
     height: auto;
-    aspect-ratio: 4 / 3;
-    min-height: 11rem;
-    max-height: 18rem;
+    aspect-ratio: 3 / 4;
+    min-height: 12rem;
+    max-height: 20rem;
     box-shadow: 0 12px 32px -8px rgba(30, 58, 95, 0.12);
   }
 
   @media (min-width: 48rem) {
     .home-hero__slide {
+      aspect-ratio: 4 / 3;
       min-height: 12rem;
       max-height: 20rem;
     }
@@ -1930,6 +1950,10 @@ body.mobile-menu-open .mobile-bottom-cta {
       aspect-ratio: 5 / 4;
       min-height: 11rem;
       max-height: 18.5rem;
+    }
+
+    .home-hero__marquee {
+      order: 0;
     }
   }
 
@@ -3045,7 +3069,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-marquee__card {
-    @apply flex w-[14rem] shrink-0 flex-col gap-2 rounded-xl border border-[#03C75A]/15 bg-white p-4 no-underline shadow-[0_8px_22px_rgba(3,199,90,0.1)] transition-[transform,box-shadow,border-color] duration-300 group-hover:-translate-y-1 group-hover:border-[#03C75A]/35 group-hover:shadow-[0_14px_30px_rgba(3,199,90,0.16)] sm:w-[15rem];
+    @apply flex w-[12.5rem] shrink-0 flex-col gap-1.5 rounded-xl border border-[#03C75A]/15 bg-white p-3.5 no-underline shadow-[0_8px_22px_rgba(3,199,90,0.1)] transition-[transform,box-shadow,border-color] duration-300 group-hover:-translate-y-1 group-hover:border-[#03C75A]/35 group-hover:shadow-[0_14px_30px_rgba(3,199,90,0.16)] sm:w-[13.5rem];
   }
 
   .naver-place-reviews-marquee__card-head {
@@ -3065,7 +3089,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-marquee__body {
-    @apply line-clamp-4 whitespace-pre-line text-xs leading-relaxed text-navy/75;
+    @apply text-xs leading-snug text-navy/75;
   }
 
   .naver-place-reviews-marquee__more {

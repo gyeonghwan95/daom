@@ -1,8 +1,11 @@
-/** 공개 사이트 URL (sitemap·canonical·RSS·JSON-LD) — ASCII(punycode)로 통일 */
+/** 공개 사이트 URL — 한글 도메인(사람·연락처 표기용) */
 export const DEFAULT_SITE_URL = "https://다옴법무사사무소.kr";
 
 /** HTTP 헤더·metadataBase·sitemap loc용 ASCII(punycode) — 한글 도메인과 동일 호스트 */
 export const DEFAULT_SITE_URL_ASCII = "https://xn--2j1br1na42lvxja38mk8r.kr";
+
+const PUNYCODE_HOST = "xn--2j1br1na42lvxja38mk8r.kr";
+const KOREAN_HOST = "다옴법무사사무소.kr";
 
 /**
  * IDN(한글) 호스트를 punycode origin으로 정규화한다.
@@ -24,7 +27,26 @@ export function toAsciiSiteUrl(raw: string): string {
 }
 
 /**
- * 사이트 절대 URL의 단일 출처.
+ * 사무소 연락처·푸터·화면에 보이는 홈페이지 링크용.
+ * punycode(xn--)가 아니라 한글 도메인으로 표기한다.
+ */
+export function getHumanSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL;
+  try {
+    const withProtocol = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+    const url = new URL(withProtocol);
+    const host = url.hostname.replace(/^www\./i, "").toLowerCase();
+    if (host === PUNYCODE_HOST || host === KOREAN_HOST) {
+      return DEFAULT_SITE_URL;
+    }
+    return url.origin.replace(/\/$/, "");
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
+/**
+ * 사이트 절대 URL의 단일 출처(기술용).
  * 환경변수에 한글 도메인이 들어와도 punycode로 정규화해
  * sitemap · robots · canonical · metadataBase가 같은 호스트를 쓰게 한다.
  */

@@ -32,6 +32,14 @@ export type ConsultationInquiryFormProps = {
   nationwideMode?: boolean;
   /** 지역 랜딩에서 넘어온 부동산 소재 지역 */
   defaultPropertyRegion?: string;
+  /** 유입 페이지 slug */
+  sourcePage?: string;
+  /** 확인하고 싶은 내용 */
+  intentHint?: string;
+  /** 준비된 서류 힌트 */
+  preparedDocsHint?: string;
+  /** 비용 안내 요청 여부 */
+  costGuideRequested?: boolean;
 };
 
 type FormState = {
@@ -74,7 +82,17 @@ const initialState: FormState = {
   contactTime: "",
 };
 
-function buildInquiryBody(form: FormState, nationwideMode: boolean): string {
+function buildInquiryBody(
+  form: FormState,
+  nationwideMode: boolean,
+  meta: {
+    sourcePage?: string;
+    intentHint?: string;
+    preparedDocsHint?: string;
+    costGuideRequested?: boolean;
+    pageUrl?: string;
+  },
+): string {
   const fieldLabel = form.field ? getInquiryFieldLabel(form.field) : "미선택";
   const lines = [
     nationwideMode
@@ -84,6 +102,12 @@ function buildInquiryBody(form: FormState, nationwideMode: boolean): string {
     `연락처: ${form.phone.trim()}`,
     `상담 분야: ${fieldLabel}`,
     `서류 보유: ${form.hasDocuments ? "있음" : "없음/일부만 있음"}`,
+    `유입 페이지: ${meta.sourcePage?.trim() || "-"}`,
+    `문의 지역: ${form.propertyRegion.trim() || form.clientRegion.trim() || "부산(기본)"}`,
+    `확인하고 싶은 내용: ${meta.intentHint?.trim() || "-"}`,
+    `준비된 서류: ${meta.preparedDocsHint?.trim() || (form.hasDocuments ? "있음(상세는 본문)" : "없음/일부")}`,
+    `비용 안내 요청: ${meta.costGuideRequested ? "예" : "아니오(본문 참고)"}`,
+    `제출 URL: ${meta.pageUrl ?? "-"}`,
   ];
 
   if (nationwideMode) {
@@ -105,16 +129,29 @@ export function ConsultationInquiryForm({
   defaultField,
   nationwideMode = false,
   defaultPropertyRegion,
+  sourcePage,
+  intentHint,
+  preparedDocsHint,
+  costGuideRequested = false,
 }: ConsultationInquiryFormProps) {
   const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
   const phoneHref = phone ? getPhoneHref(phone) : "/contact";
   const formId = useId();
 
+  const intentPrefix = [
+    intentHint ? `확인하고 싶은 내용: ${intentHint}` : "",
+    preparedDocsHint ? `준비된 서류: ${preparedDocsHint}` : "",
+    costGuideRequested ? "비용 안내 요청: 예" : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
   const [form, setForm] = useState<FormState>({
     ...initialState,
     field: (defaultField as InquiryFieldValue) || "",
     propertyRegion: defaultPropertyRegion ?? "",
+    situation: intentPrefix ? `${intentPrefix}\n\n` : "",
   });
   const [errors, setErrors] = useState<FieldErrors>({});
   const [token, setToken] = useState("");
@@ -187,7 +224,14 @@ export function ConsultationInquiryForm({
     setErrors({});
 
     try {
-      const message = buildInquiryBody(form, nationwideMode);
+      const message = buildInquiryBody(form, nationwideMode, {
+        sourcePage,
+        intentHint,
+        preparedDocsHint,
+        costGuideRequested:
+          costGuideRequested || form.situation.includes("비용"),
+        pageUrl: pageMeta.pageUrl,
+      });
       const result = await submitQuickInquiry({
         message,
         contact: form.phone.trim(),

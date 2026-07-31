@@ -108,6 +108,10 @@ export const inheritanceDeathPages = [
       { href: "/faq/inheritance-registration-cost", label: "상속등기 비용" },
     ],
     extraLinks: [
+      { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
+      { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
+      { href: "/안심상속원스톱서비스이후", label: "안심상속 신청 후 할 일" },
+      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
       { href: "/blog/busan-inheritance-registration-procedure-documents", label: "부산 상속등기 절차·서류" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/services/cases/haeundae-inheritance-registration-case", label: "해운대 상속등기 사례" },
@@ -241,11 +245,13 @@ export const inheritanceDeathPages = [
       { href: "/faq/inheritance-renunciation-deadline", label: "상속포기 기한" },
     ],
     extraLinks: [
+      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
+      { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
+      { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
       { href: "/blog/inheritance-renunciation-vs-qualified-acceptance", label: "상속포기 vs 한정승인" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산한정승인", label: "부산 한정승인 신청 기한 확인" },
       { href: "/부산상속포기", label: "부산 상속포기 후순위 효과" },
-      { href: "/services/cases/dongnae-qualified-acceptance-consultation", label: "한정승인 상담 사례" },
       { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
@@ -377,9 +383,11 @@ export const inheritanceDeathPages = [
       { href: "/faq/inheritance-registration-with-mortgage", label: "근저당 있는 부동산" },
     ],
     extraLinks: [
+      { href: "/오래된상속토지정리", label: "오래된 상속토지 정리" },
+      { href: "/부산상속후매매등기", label: "상속 후 매매등기" },
+      { href: "/연락두절상속인", label: "연락두절 상속인" },
       { href: "/blog/busan-inheritance-registration-procedure-documents", label: "부산 상속등기 절차" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/해운대구상속등기", label: "해운대구 상속등기" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqs: [
@@ -510,10 +518,11 @@ export const inheritanceDeathPages = [
       { href: "/faq/qualified-acceptance-procedure", label: "한정승인 절차" },
     ],
     extraLinks: [
+      { href: "/해외거주상속인", label: "해외 거주 상속인 — 서명·위임 순서" },
+      { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
       { href: "/blog/busan-inheritance-registration-procedure-documents", label: "상속등기 절차·서류" },
       { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
-      { href: "/services/cases/haeundae-inheritance-registration-case", label: "상속등기 사례" },
       { href: "/contact/inquiry", label: "상담 신청" },
     ],
     faqs: [
@@ -641,8 +650,11 @@ export const inheritanceDeathPages = [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
     ],
     extraLinks: [
+      { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
+      { href: "/장례후재산채무정리", label: "장례 후 재산·채무 정리" },
+      { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
+      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
       { href: "/부산법무사", label: "부산 법무사 종합 안내" },
-      { href: "/부산법무사서류준비", label: "서류 준비 체크리스트" },
       { href: "/blog/three-months-after-death-inheritance", label: "사망 후 3개월" },
       { href: "/contact", label: "상담 문의" },
     ],

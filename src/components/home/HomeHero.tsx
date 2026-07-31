@@ -4,13 +4,11 @@ import { motion } from "framer-motion";
 import { HeroBrand } from "@/components/home/HeroBrand";
 import { HeroContactBlock } from "@/components/home/HeroContactBlock";
 import { HeroImageMarquee } from "@/components/home/HeroImageMarquee";
-import { PhoneIcon } from "@/components/consultation/ConsultationIcons";
 import { Container } from "@/components/layout/Container";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
   getContactInfo,
   getDirectConsultationChannels,
-  getPhoneHref,
 } from "@/lib/contact";
 import { siteImages } from "@/lib/site-images";
 import { homeHero } from "@/lib/home-content";
@@ -90,7 +88,6 @@ export function HomeHero() {
   const channels = getDirectConsultationChannels();
   const reduced = useReducedMotion();
   const lines = homeHero.headline.split("\n");
-  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
 
   return (
     <section className="home-hero relative flex min-h-full flex-col">
@@ -108,7 +105,7 @@ export function HomeHero() {
           animate="visible"
         >
           <motion.div className="home-hero__copy min-h-0 shrink-0 lg:col-span-7">
-            <motion.div variants={item} className="hidden lg:block">
+            <motion.div variants={item}>
               <HeroBrand />
             </motion.div>
 
@@ -149,18 +146,13 @@ export function HomeHero() {
             </motion.p>
 
             <motion.div variants={item} className="home-hero__mobile-convert lg:hidden">
-              <a
-                href={phoneHref}
-                className="home-hero__mobile-cta"
-                aria-label={homeHero.mobileCta}
-              >
-                <PhoneIcon className="home-hero__mobile-cta-icon" />
-                <span>{homeHero.mobileCta}</span>
-              </a>
+              <p className="home-hero__contact-lead">{homeHero.contactSub}</p>
+              <HeroContactBlock phone={phone} channels={channels} />
               <p className="home-hero__mobile-cta-note">{homeHero.mobileCtaNote}</p>
             </motion.div>
 
             <motion.div variants={item} className="home-hero__desktop-contact hidden lg:block">
+              <p className="home-hero__contact-lead">{homeHero.contactSub}</p>
               <HeroContactBlock phone={phone} channels={channels} />
             </motion.div>
           </motion.div>
@@ -171,7 +163,18 @@ export function HomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...heroTransition, delay: 0.22 }}
           >
-            <HeroImageMarquee slides={siteImages.home.heroSlides} />
+            <div className="home-hero__marquee-mobile lg:hidden">
+              <HeroImageMarquee
+                slides={siteImages.home.heroSlidesMobile}
+                speed={26}
+              />
+            </div>
+            <div className="home-hero__marquee-desktop hidden lg:block h-full min-h-0">
+              <HeroImageMarquee
+                slides={siteImages.home.heroSlidesDesktop}
+                speed={24}
+              />
+            </div>
           </motion.div>
         </motion.div>
       </Container>

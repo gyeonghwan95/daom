@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { InfiniteMarquee } from "@/components/motion/InfiniteMarquee";
 import {
+  getSpeakerGalleryRowA,
+  getSpeakerGalleryRowB,
   speakerLectureGallery,
   type SpeakerGalleryItem,
 } from "@/lib/lectures/speaker-media";
@@ -16,11 +18,8 @@ export function SpeakerLectureGallery({
   compact = false,
   dualRow = true,
 }: SpeakerLectureGalleryProps) {
-  const gallery = [
-    ...speakerLectureGallery,
-    ...speakerLectureGallery.slice(0, 6),
-  ];
-  const reverse = [...gallery].reverse();
+  const rowA = dualRow ? getSpeakerGalleryRowA() : speakerLectureGallery;
+  const rowB = getSpeakerGalleryRowB();
 
   return (
     <div className="space-y-3">
@@ -31,7 +30,8 @@ export function SpeakerLectureGallery({
               실제 강의 현장
             </p>
             <p className="mt-1 text-sm text-navy/65">
-              도서관·청년기관·학교 등 확인된 출강 사진입니다.
+              도서관·청년기관·학교·공공 협업 등 확인된 출강 사진입니다. (
+              {speakerLectureGallery.length}장면)
             </p>
           </div>
           <Link
@@ -43,10 +43,10 @@ export function SpeakerLectureGallery({
         </div>
       ) : null}
       <div className="-mx-4 space-y-3 overflow-hidden md:mx-0">
-        <InfiniteMarquee speed={62} direction="left" className="px-4 md:px-0">
-          {gallery.map((item, index) => (
+        <InfiniteMarquee speed={68} direction="left" className="px-4 md:px-0">
+          {rowA.map((item) => (
             <LecturePhotoCard
-              key={`row-a-${item.id}-${index}`}
+              key={`row-a-${item.id}`}
               item={item}
               compact={compact}
             />
@@ -54,13 +54,13 @@ export function SpeakerLectureGallery({
         </InfiniteMarquee>
         {dualRow ? (
           <InfiniteMarquee
-            speed={72}
+            speed={78}
             direction="right"
             className="px-4 md:px-0"
           >
-            {reverse.map((item, index) => (
+            {rowB.map((item) => (
               <LecturePhotoCard
-                key={`row-b-${item.id}-${index}`}
+                key={`row-b-${item.id}`}
                 item={item}
                 compact={compact}
               />

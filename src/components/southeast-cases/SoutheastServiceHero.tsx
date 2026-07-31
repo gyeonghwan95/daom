@@ -15,8 +15,8 @@ export function SoutheastServiceHero({ def }: Props) {
     <div className="space-y-4">
       <p className="inline-flex items-center rounded-md bg-navy px-2.5 py-1 text-xs font-semibold tracking-wide text-white">
         {def.pageType === "region-hub"
-          ? `${def.regionGroup} 전 지역 상담 가능 여부 확인`
-          : `${def.regionName} 상담 가능 여부 확인`}
+          ? `${def.regionGroup} 전 지역 바로 상담·진행`
+          : `${def.regionName} 바로 상담·진행`}
       </p>
       <aside
         className="rounded-xl border border-beige-dark border-l-4 border-l-navy bg-white p-4 md:p-5"
@@ -29,8 +29,8 @@ export function SoutheastServiceHero({ def }: Props) {
           {def.officeDisclosure}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
-          관할·서류 조건이 맞으면 검토할 수 있지만, 현재 상황을 상담으로 말씀해
-          주시면 가능 여부를 안내해 드립니다.
+          관할·서류만 맞으면 방문 없이 끝까지 진행할 수 있습니다. 지금 상황만 남겨
+          주시면 바로 진행 방법을 안내해 드립니다.
         </p>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {[

@@ -149,7 +149,7 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
       />
 
       {showNationwide ? (
-        <NationwideServiceCard headline="타 지역 건물등기도 비대면으로 상담이 가능합니다" />
+        <NationwideServiceCard headline="타 지역 건물등기도 비대면으로 끝까지 진행할 수 있습니다" />
       ) : null}
 
       <p className="text-sm font-medium text-navy">{content.officeLine}</p>

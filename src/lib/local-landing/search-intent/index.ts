@@ -5,6 +5,12 @@ import { 부산등기복대리Override } from "./overrides/busan-subproxy";
 import { 부산집단등기Override } from "./overrides/busan-mass-registry";
 import { 부산매매등기법무사Override } from "./overrides/busan-sale-registration";
 import { 부산증여등기Override } from "./overrides/busan-gift-registration";
+import {
+  부산공동명의지분증여등기Override,
+  부산부모자녀아파트증여등기Override,
+  부산부부간증여등기Override,
+  부산부담부증여등기Override,
+} from "./overrides/busan-gift-situations";
 import { 부산명의변경등기Override } from "./overrides/busan-name-change";
 import { 부산아파트매매등기Override } from "./overrides/busan-apartment-sale";
 import { 부산전세보증금반환법무사Override } from "./overrides/busan-jeonse-deposit-return";
@@ -36,6 +42,26 @@ import {
 import { 부산개인회생법무사Override } from "./overrides/busan-personal-rehabilitation-lawyer";
 import { 부산상속전문법무사Override } from "./overrides/busan-inheritance-specialist-lawyer";
 import { 부산회생법무사Override } from "./overrides/busan-rehabilitation-lawyer";
+import {
+  부모님사망후해야할일Override,
+  방문없이준비하는상속등기Override,
+  부모빚상속방법Override,
+  사망신고와상속등기차이Override,
+  사망자재산채무조회Override,
+  상속상담전준비서류와비용Override,
+  안심상속원스톱서비스이후Override,
+  장례후재산채무정리Override,
+} from "./overrides/inheritance-lifecycle-phase1";
+import {
+  고인계좌장례비사용Override,
+  미성년상속인Override,
+  사망후3개월지난상속Override,
+  오래된상속토지정리Override,
+  해외거주상속인Override,
+  연락두절상속인Override,
+  임대인사망전세계약Override,
+  재혼가정상속Override,
+} from "./overrides/inheritance-lifecycle-phase2";
 
 export type {
   SearchGuideEntry,
@@ -61,6 +87,10 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   부산집단등기: 부산집단등기Override,
   부산매매등기법무사: 부산매매등기법무사Override,
   부산증여등기: 부산증여등기Override,
+  부산부모자녀아파트증여등기: 부산부모자녀아파트증여등기Override,
+  부산부부간증여등기: 부산부부간증여등기Override,
+  부산부담부증여등기: 부산부담부증여등기Override,
+  부산공동명의지분증여등기: 부산공동명의지분증여등기Override,
   부산명의변경등기: 부산명의변경등기Override,
   부산아파트매매등기: 부산아파트매매등기Override,
   부산전세보증금반환법무사: 부산전세보증금반환법무사Override,
@@ -87,6 +117,22 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   부산등기명의인표시변경: 부산등기명의인표시변경Override,
   부산공매낙찰등기: 부산공매낙찰등기Override,
   부산신탁등기: 부산신탁등기Override,
+  부모님사망후해야할일: 부모님사망후해야할일Override,
+  장례후재산채무정리: 장례후재산채무정리Override,
+  사망신고와상속등기차이: 사망신고와상속등기차이Override,
+  안심상속원스톱서비스이후: 안심상속원스톱서비스이후Override,
+  사망자재산채무조회: 사망자재산채무조회Override,
+  부모빚상속방법: 부모빚상속방법Override,
+  방문없이준비하는상속등기: 방문없이준비하는상속등기Override,
+  상속상담전준비서류와비용: 상속상담전준비서류와비용Override,
+  오래된상속토지정리: 오래된상속토지정리Override,
+  연락두절상속인: 연락두절상속인Override,
+  미성년상속인: 미성년상속인Override,
+  재혼가정상속: 재혼가정상속Override,
+  고인계좌장례비사용: 고인계좌장례비사용Override,
+  사망후3개월지난상속: 사망후3개월지난상속Override,
+  해외거주상속인: 해외거주상속인Override,
+  임대인사망전세계약: 임대인사망전세계약Override,
 };
 
 const contentCache = new Map<string, SearchIntentContent>();

@@ -11,6 +11,15 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
+  InheritanceCostGuide,
+  InheritanceJourneyNav,
+  RemoteInheritanceProcess,
+} from "@/components/inheritance";
+import {
+  isInheritanceFlagshipPage,
+  isInheritanceJourneyPage,
+} from "@/lib/inheritance/journey";
+import {
   buildPageTocItems,
   ArticleSummary,
   ChecklistBox,
@@ -105,6 +114,8 @@ export function PageDataTemplate({
     slug: page.slug,
     serviceSlug: page.serviceSlug ?? (page.category === "service" ? page.slug : undefined),
   });
+  const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
+  const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
     conversionKey ? (
@@ -128,7 +139,9 @@ export function PageDataTemplate({
         h1={page.h1}
         introParagraphs={page.introParagraphs}
         keywords={page.primaryKeywords}
-        ctaLabel="상담 문의하기"
+        ctaLabel={
+          showInheritanceExtras ? "업무 가능 여부 확인하기" : "상담 문의하기"
+        }
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}
@@ -141,6 +154,10 @@ export function PageDataTemplate({
       ) : null}
 
       {heroAddon}
+
+      {showInheritanceJourney ? (
+        <InheritanceJourneyNav currentSlug={page.slug} />
+      ) : null}
 
       {conversionBlock("top")}
 
@@ -197,16 +214,35 @@ export function PageDataTemplate({
         />
       </ContentSection>
 
+      {showInheritanceExtras ? (
+        <>
+          <RemoteInheritanceProcess fromPage={page.slug} />
+          <InheritanceCostGuide fromPage={page.slug} />
+        </>
+      ) : null}
+
       {conversionBlock("mid")}
 
       {!conversionKey ? (
         <ConsultationCTA
           title="현재 상황에 필요한 절차부터 확인해보세요"
-          description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-          buttonLabel="상담 내용 남기기"
+          description={
+            showInheritanceExtras
+              ? "업무명을 몰라도 괜찮습니다. 사망일·상속인·확인된 재산·채무만 남겨 주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+              : "업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
+          }
+          buttonLabel={
+            showInheritanceExtras
+              ? "업무 가능 여부 확인하기"
+              : "상담 내용 남기기"
+          }
           inquiryField={
             page.serviceSlug ??
             (page.category === "service" ? page.slug : undefined)
+          }
+          fromPage={page.slug}
+          intent={
+            showInheritanceExtras ? "상속 절차·비용 확인" : undefined
           }
         />
       ) : null}

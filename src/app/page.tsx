@@ -26,10 +26,6 @@ export default function Home() {
       <HomeFullpageSwiper>
         <HomeHero />
         <HomeServices />
-        <HomeNationwideSection />
-        <HomeB2BSection />
-        <HomePopularSearches />
-        <HomeHubGuide />
         <HomeTrust />
         <HomeLawyerEeat />
         <HomeLectureHistorySection />
@@ -40,6 +36,10 @@ export default function Home() {
         <HomeFaqTeaser />
         <HomePlaceGuide />
         <HomeContactClosing />
+        <HomeNationwideSection />
+        <HomeB2BSection />
+        <HomePopularSearches />
+        <HomeHubGuide />
       </HomeFullpageSwiper>
     </main>
   );

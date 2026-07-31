@@ -189,6 +189,19 @@ export const siteImages = {
       img(imagePaths.appointmentCertificate, "위원 위촉장", 1200, 800),
       img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
     ],
+    /** 모바일 히어로 — 인물·상담 중심 (세로 프레임) */
+    heroSlidesMobile: [
+      img(imagePaths.thumbPortraitFront, "안윤정 법무사", 720, 960),
+      img(imagePaths.contactConsultationHero, "상담을 준비하는 안윤정 법무사", 1000, 750),
+      img(imagePaths.thumbDocumentReview, "서류를 검토하는 안윤정 법무사", 900, 1200),
+    ],
+    /** PC 히어로 — 사무소·신뢰 분위기 (가로 프레임) */
+    heroSlidesDesktop: [
+      img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
+      img(imagePaths.officeNameBadge, "다옴법무사사무소 명패", 1200, 600),
+      img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
+      img(imagePaths.appointmentCertificate, "위원 위촉장", 1200, 800),
+    ],
     trust: img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
     activities: [
       img(imagePaths.activityMou, "기업 MOU 법률지원", 800, 600),
@@ -348,7 +361,7 @@ export const siteImages = {
   },
 
   location: {
-    header: img(imagePaths.locationHeaderMap, "오시는 길", 1400, 600),
+    header: img(imagePaths.locationHeaderMap, "오시는 길", 1405, 1059),
   },
 
   faq: {

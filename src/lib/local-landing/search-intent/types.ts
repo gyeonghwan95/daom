@@ -45,6 +45,18 @@ export type SearchIntentContent = {
   relatedGuideLinks: { href: string; label: string }[];
   bottomCtaText: string;
   serviceSlug: string;
+  /** 비대면 상속 절차 안내 컴포넌트 표시 */
+  showRemoteInheritance?: boolean;
+  /** 상속 비용 안내 컴포넌트 표시 */
+  showInheritanceCostGuide?: boolean;
+  /** 상속 여정 네비 표시 (기본: journey 맵에 있으면 자동) */
+  showInheritanceJourney?: boolean;
+  /** 요약 카드 이후 고유 소제목 줄글 — 카드 나열 대신 문단 중심 */
+  proseSections?: {
+    id: string;
+    title: string;
+    paragraphs: string[];
+  }[];
 };
 
 export type SearchIntentSeed = {

@@ -2,6 +2,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
 import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
+import {
+  InheritanceCostGuide,
+  InheritanceJourneyNav,
+  RemoteInheritanceProcess,
+} from "@/components/inheritance";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
@@ -17,6 +23,10 @@ import {
 } from "@/lib/seo/json-ld";
 import { getServiceImage } from "@/lib/site-images";
 import { shouldShowQuickInquiryInline } from "@/lib/quick-inquiry/placements";
+import {
+  isInheritanceFlagshipPage,
+  isInheritanceJourneyPage,
+} from "@/lib/inheritance/journey";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
 
 type TopicHubContentProps = {
@@ -78,6 +88,8 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
     { label: "업무안내", href: "/services" },
     { label: page.title },
   ];
+  const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
+  const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
 
   return (
     <article className="content-stack">
@@ -101,6 +113,18 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
 
       <TopicHubQuickLinks page={page} />
 
+      {showInheritanceJourney ? (
+        <InheritanceJourneyNav currentSlug={page.slug} />
+      ) : null}
+
+      {showInheritanceExtras ? (
+        <ArticleVisualSlot
+          path={page.path}
+          slot="after-intro"
+          serviceSlug={page.primaryServiceSlug}
+        />
+      ) : null}
+
       {getTopicHubDiagnosisLinks(page.slug).length > 0 ? (
         <ContentBlock id="diagnosis" title="관련 자가진단">
           <p className="mb-4 text-base leading-relaxed text-navy/80">
@@ -118,6 +142,13 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         description={page.ctaDescription}
         diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
       />
+
+      {showInheritanceExtras ? (
+        <>
+          <RemoteInheritanceProcess fromPage={page.slug} />
+          <InheritanceCostGuide fromPage={page.slug} />
+        </>
+      ) : null}
 
       {shouldShowQuickInquiryInline({ slug: page.slug }) ? (
         <QuickInquiryInlineCard pageTitle={page.h1 || page.title} pageUrl={page.path} />

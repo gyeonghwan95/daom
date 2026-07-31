@@ -1,4 +1,7 @@
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
+import { truncateWithEllipsis } from "@/lib/text";
+
+const REVIEW_PREVIEW_MAX = 50;
 
 type CustomerReviewCardProps = {
   review: NaverPlaceReview;
@@ -10,12 +13,13 @@ export function CustomerReviewCard({
   variant = "default",
 }: CustomerReviewCardProps) {
   const isCompact = variant === "compact";
+  const preview = truncateWithEllipsis(review.body, REVIEW_PREVIEW_MAX);
 
   return (
     <article
       className={
         isCompact
-          ? "w-full shrink-0 rounded-2xl border border-beige-dark bg-white p-4 shadow-sm shadow-navy/5"
+          ? "w-full shrink-0 rounded-xl border border-beige-dark bg-white px-3.5 py-3 shadow-sm shadow-navy/5"
           : "card-surface flex h-full flex-col p-5 md:p-6"
       }
     >
@@ -37,11 +41,12 @@ export function CustomerReviewCard({
       <p
         className={
           isCompact
-            ? "mt-3 line-clamp-5 whitespace-pre-line text-sm leading-relaxed text-navy/80"
-            : "mt-4 flex-1 whitespace-pre-line text-sm leading-relaxed text-navy/80 md:text-base"
+            ? "mt-2 text-sm leading-snug text-navy/80"
+            : "mt-4 flex-1 text-sm leading-relaxed text-navy/80 md:text-base"
         }
+        title={review.body}
       >
-        {review.body}
+        {preview}
       </p>
 
       {!isCompact && review.reply && (

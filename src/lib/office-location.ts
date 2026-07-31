@@ -43,11 +43,12 @@ export const officeHours = {
 
 export const defaultNaverPlaceId = "2035745096";
 
-export function getNaverPlaceUrl(
-  placeId: string = process.env.NEXT_PUBLIC_NAVER_PLACE_ID?.trim() ||
-    defaultNaverPlaceId,
-): string {
-  return `https://map.naver.com/p/entry/place/${placeId}`;
+/** 네이버 플레이스 단축 링크 (오시는 길·플레이스 열기 공통) */
+export const defaultNaverPlaceShortUrl = "https://naver.me/58j9SzPA";
+
+export function getNaverPlaceUrl(): string {
+  const override = process.env.NEXT_PUBLIC_NAVER_PLACE_URL?.trim();
+  return override || defaultNaverPlaceShortUrl;
 }
 
 /** 센텀동로 200 (재송동 339-3) — 지도 마커용 */
@@ -64,10 +65,9 @@ export function getOfficeLocationWithAccess(): string {
   return `${officeLocation.fullAddress} (${officeLocation.accessSummary})`;
 }
 
-export function getNaverMapSearchUrl(
-  query: string = officeLocation.fullAddress,
-): string {
-  return `https://map.naver.com/v5/search/${encodeURIComponent(query)}`;
+/** 오시는 길·「네이버 지도에서 보기」는 getNaverPlaceUrl()과 동일합니다. */
+export function getNaverMapSearchUrl(): string {
+  return getNaverPlaceUrl();
 }
 
 export function getKakaoMapPlaceUrl(

@@ -1,0 +1,44 @@
+# 신규 URL — 색인 등록용 (2026-08-01)
+
+이번 SEO 작업에서 **새로 추가된** 페이지만 정리했습니다.
+(기존 URL 개선분: `/부산법무사상담`, `/부산법무사비용`, `/부산법률상담`, `/무슨법률업무인지모를때`, `/부산증여등기` 제외)
+
+## 경로 (사이트맵·내부용)
+
+```
+/부산부모자녀아파트증여등기
+/부산부부간증여등기
+/부산부담부증여등기
+/부산공동명의지분증여등기
+```
+
+## 절대 URL (한글 도메인)
+
+```
+https://다옴법무사사무소.kr/부산부모자녀아파트증여등기
+https://다옴법무사사무소.kr/부산부부간증여등기
+https://다옴법무사사무소.kr/부산부담부증여등기
+https://다옴법무사사무소.kr/부산공동명의지분증여등기
+```
+
+## 절대 URL (punycode — IndexNow·일부 도구용)
+
+```
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%AA%A8%EC%9E%90%EB%85%80%EC%95%84%ED%8C%8C%ED%8A%B8%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%B6%80%EA%B0%84%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8B%B4%EB%B6%80%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B3%B5%EB%8F%99%EB%AA%85%EC%9D%98%EC%A7%80%EB%B6%84%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0
+```
+
+## 권장 순서 (네이버 우선 수집)
+
+1. https://다옴법무사사무소.kr/부산부모자녀아파트증여등기
+2. https://다옴법무사사무소.kr/부산부부간증여등기
+3. https://다옴법무사사무소.kr/부산부담부증여등기
+4. https://다옴법무사사무소.kr/부산공동명의지분증여등기
+
+## 참고
+
+- sitemap: `tier-4-regions`에 포함됨 (`scripts/output/sitemap-manifest.json` 확인)
+- 배포 후 IndexNow: `npm run indexnow` (또는 `--endpoint=naver`)
+- 대표 허브 `/부산증여등기`는 기존 URL 개선이므로 위 신규 목록에는 넣지 않음 (재수집이 필요하면 별도 요청)

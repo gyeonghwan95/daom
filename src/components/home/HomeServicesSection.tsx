@@ -69,7 +69,7 @@ export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
             <HomeLandingHubLinks />
           </div>
 
-          <div className="min-h-[22rem] lg:min-h-0">
+          <div className="lg:self-start">
             <HomeReviewsMarquee reviews={reviews} />
           </div>
         </div>

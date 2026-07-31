@@ -9,6 +9,8 @@ import { LectureInlineCta } from "@/components/lectures/LectureInlineCta";
 import { TopicRecommendationForm } from "@/components/lectures/TopicRecommendationForm";
 import { FeaturedLectureHistory } from "@/components/lectures/history/FeaturedLectureHistory";
 import { RelatedLectureHistory } from "@/components/lectures/history/RelatedLectureHistory";
+import { LectureHistoryGrid } from "@/components/lectures/history/LectureHistoryGrid";
+import { LectureTrackRecordSummaryView } from "@/components/lectures/history/LectureTrackRecordSummary";
 import { SpeakerHistoryList } from "@/components/lectures/SpeakerHistoryList";
 import { SpeakerLectureGallery } from "@/components/lectures/SpeakerLectureGallery";
 import { SpeakerProfileSection } from "@/components/lectures/SpeakerProfileSection";
@@ -82,6 +84,9 @@ function SpeakerLayout({
   content: LecturePageContent;
   page: PageData;
 }) {
+  const trackSummary = buildLectureTrackRecordSummary();
+  const featuredHistory = getFeaturedLectureHistory().slice(0, 6);
+
   return (
     <>
       <PageHero
@@ -89,12 +94,14 @@ function SpeakerLayout({
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="강의 일정 문의하기"
-        ctaHref="/강의문의"
-        secondaryCta={{ href: "/강의이력", label: "출강 이력 보기" }}
+        ctaLabel="30초 강의 문의"
+        ctaHref="#inquiry"
+        secondaryCta={{ href: "/강의이력", label: "확인된 출강 이력" }}
         showDiagnosisCta={false}
         sideImage={siteImages.about.portrait}
       />
+
+      <LectureTrackRecordSummaryView summary={trackSummary} compact />
 
       <SpeakerLectureGallery compact dualRow />
 
@@ -121,11 +128,35 @@ function SpeakerLayout({
         serviceSlug="lecture"
       />
 
-      <SpeakerHistoryList title="주요 출강 이력" limit={8} />
+      {featuredHistory.length ? (
+        <section className="space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-semibold text-navy md:text-xl">
+                대표 출강 · 확인된 현장
+              </h2>
+              <p className="mt-1 text-sm text-navy/70">
+                기관·주제·현장이 확인된 대표 출강입니다.
+              </p>
+            </div>
+            <Link
+              href="/강의이력"
+              className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+            >
+              전체 이력 보기
+            </Link>
+          </div>
+          <LectureHistoryGrid items={featuredHistory} />
+        </section>
+      ) : null}
+
+      <SpeakerHistoryList title="주요 출강 이력" limit={14} />
 
       <LectureInlineCta
-        title="기관 교육에 맞는지 먼저 확인해 보세요"
-        text="대상·주제·희망 일정만 남겨 주시면, 맞춤 구성과 가능 여부를 회신합니다."
+        title="기관 교육, 지금 바로 일정을 물어보세요"
+        text="연락처와 희망 주제만 남겨 주시면 맞춤 구성과 가능 여부를 메일로 회신합니다."
+        primaryLabel="이메일로 문의하기"
+        primaryHref="#inquiry"
         secondaryLabel="강의 주제 둘러보기"
         secondaryHref="/법률강의"
       />
@@ -179,6 +210,8 @@ function HiringLayout({
   content: LecturePageContent;
   page: PageData;
 }) {
+  const trackSummary = buildLectureTrackRecordSummary();
+
   return (
     <>
       <PageHero
@@ -186,11 +219,13 @@ function HiringLayout({
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="강사 섭외 문의"
-        ctaHref="/강의문의"
+        ctaLabel="30초 섭외 문의"
+        ctaHref="#inquiry"
         secondaryCta={{ href: "/강사소개", label: "강사 프로필" }}
         showDiagnosisCta={false}
       />
+
+      <LectureTrackRecordSummaryView summary={trackSummary} compact />
 
       <SummaryGrid items={content.summaryItems} />
 
@@ -201,13 +236,15 @@ function HiringLayout({
         serviceSlug="lecture"
       />
 
-      <SpeakerLectureGallery compact dualRow={false} />
+      <SpeakerLectureGallery compact dualRow />
 
-      <SpeakerHistoryList title="확인된 출강 이력" limit={6} />
+      <SpeakerHistoryList title="확인된 출강 이력" limit={12} />
 
       <LectureInlineCta
         title="교육 목적에 맞는 강사인지 바로 확인해 보세요"
-        text="기관 유형·대상·목표만 남겨 주시면 구성안을 안내합니다."
+        text="연락처와 희망 주제만 남겨 주시면 구성안을 메일로 안내합니다."
+        primaryLabel="이메일로 섭외 문의"
+        primaryHref="#inquiry"
       />
 
       {content.topicCards.length ? (

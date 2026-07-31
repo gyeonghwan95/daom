@@ -9,6 +9,7 @@ declare global {
     class Map {
       constructor(container: HTMLElement, options: MapOptions);
       setCenter(latlng: LatLng): void;
+      relayout(): void;
     }
 
     class Marker {

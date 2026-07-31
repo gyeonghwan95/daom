@@ -2,6 +2,9 @@
 
 import { InfiniteMarquee } from "@/components/motion/InfiniteMarquee";
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
+import { truncateWithEllipsis } from "@/lib/text";
+
+const REVIEW_PREVIEW_MAX = 50;
 
 type NaverPlaceReviewsMarqueeProps = {
   reviews: NaverPlaceReview[];
@@ -15,6 +18,8 @@ function ReviewPreviewCard({
   review: NaverPlaceReview;
   reviewUrl: string;
 }) {
+  const preview = truncateWithEllipsis(review.body, REVIEW_PREVIEW_MAX);
+
   return (
     <a
       href={reviewUrl}
@@ -30,7 +35,7 @@ function ReviewPreviewCard({
       <span className="naver-place-reviews-marquee__nickname">
         {review.nickname}
       </span>
-      <span className="naver-place-reviews-marquee__body">{review.body}</span>
+      <span className="naver-place-reviews-marquee__body">{preview}</span>
       <span className="naver-place-reviews-marquee__more">플레이스에서 전체 보기</span>
     </a>
   );

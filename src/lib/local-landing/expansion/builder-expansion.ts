@@ -289,16 +289,16 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
 
   const consultationCases = [
     {
-      title: `${topic.title} 상담 사례`,
-      summary: `최근 부산 ${neighborhoods} 거주 의뢰인이 ${serviceLabel} 비용을 문의하셨습니다. ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 수임료·등기 수수료·세금을 항목별로 안내하고 진행 여부를 결정하셨습니다.`,
+      title: `${topic.title} — 이해를 위한 예시`,
+      summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 보수·등기 수수료·세금을 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
     },
     {
-      title: `복합 사건 견적 사례`,
-      summary: `상속등기와 저당권 말소가 함께 필요한 사건에서 단계별 비용을 미리 안내해 일정과 예산을 맞춘 사례입니다.`,
+      title: `복합 사건 견적 — 이해를 위한 예시`,
+      summary: `상속등기와 저당권 말소가 함께 필요한 사건에서 단계별 비용 구성을 미리 안내해 일정과 예산을 맞추는 경우가 있습니다. 실제 금액은 사건별 확인이 필요합니다.`,
     },
     {
-      title: `원격 상담 후 견적 사례`,
-      summary: `카카오톡으로 등기부·가족관계증명서를 보내주신 뒤 대략 견적을 드리고, 방문 없이 진행한 사례입니다.`,
+      title: `비대면 견적 문의 — 이해를 위한 예시`,
+      summary: `카카오톡으로 등기부·가족관계증명서를 보내주신 뒤 대략적인 구성을 안내하고, 방문 없이 진행하는 경우도 있습니다. 확정 견적은 서류 확인 후입니다.`,
     },
   ];
 
@@ -329,32 +329,44 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     })),
   ];
 
+  const isLawyerFeeBusan = topic.key === "lawyer-fee-busan";
+  const feeProblemStatement = isLawyerFeeBusan
+    ? `부산 법무사 비용·수수료를 검색하시는 분들은 대개 ‘얼마가 드는지’보다 ‘무엇을 내는 돈인지’를 먼저 알고 싶어 하십니다. 법무사 보수와 취득세·등록면허세·국민주택채권·증명서·등기신청수수료는 성격이 다릅니다. 같은 업무라도 부동산 가액, 상속인 수, 법인 변경사항, 채권자 수, 말소·보정 병행 여부에 따라 달라지며, 전화로는 대략적인 구성만 안내하고 확정 금액은 서류 확인 후에 안내하는 경우가 많습니다. 다옴법무사사무소는 ${neighborhoods} 일대를 포함한 부산 전역 의뢰인에게 항목별 구성을 구분해 설명합니다. 근거 없는 고정 단가나 ‘최저’ 금액만으로 비교하도록 유도하지 않습니다.`
+    : problemStatement;
+
   return {
     slug: config.slug,
     path: `/${config.slug}`,
     pageType: "conversion",
     serviceSlug: topic.serviceSlug,
     title: topic.title,
-    h1: `${topic.title} 안내 — 부산 다옴법무사사무소`,
-    description: `부산 ${topic.title} — 법무사 수임료·등기 수수료·세금 항목별 안내. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담 가능.`,
+    metaTitle: isLawyerFeeBusan
+      ? "부산 법무사 비용은 어떻게 정해질까｜보수·세금·공과금을 구분해서 확인하세요"
+      : undefined,
+    h1: isLawyerFeeBusan
+      ? "부산 법무사 비용은 어떻게 정해질까"
+      : `${topic.title} 안내 — 부산 다옴법무사사무소`,
+    description: isLawyerFeeBusan
+      ? "부산 법무사 비용·수수료는 보수와 세금·공과금이 다릅니다. 같은 업무라도 달라지는 이유, 전화 안내와 서류 확인 후 확정의 차이, 견적 전 준비자료를 안내합니다."
+      : `부산 ${topic.title} — 법무사 수임료·등기 수수료·세금 항목별 안내. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담 가능.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
-    problemStatement,
+    problemStatement: feeProblemStatement,
     whenNeeded,
     jurisdictionGuide: getJurisdictionGuide(config),
     consultationCase: consultationCases[0],
     consultationCases,
     legalIssues: topic.costFactors.map((f) => `비용 산정 시 ${f}`),
     precautions: [
-      "최저가만 비교하기보다 포함 항목(말소·보정·세금 신고 등)을 확인하세요.",
+      "지나치게 낮은 금액만으로 비교하기보다 포함 항목(말소·보정·출장·복대리)을 확인하세요.",
       "인터넷 평균 비용과 실제 사건 비용은 차이가 날 수 있습니다.",
-      "견적은 사건 내용 확인 후에만 유효합니다.",
+      "견적은 사건 내용 확인 후에만 유효하며, 확정되지 않은 금액은 사건별 확인이 필요합니다.",
     ],
     procedures: [
-      "상담(전화·카카오톡·방문)",
+      "상담(전화·카카오톡·방문)으로 업무·기한·보유 서류 확인",
       "등기부·관련 서류 확인",
-      "항목별 견적 안내",
+      "보수·세금·공과금을 구분해 항목별 안내",
       "진행 여부 결정 후 서류 준비",
       "접수·완료",
     ],
@@ -363,9 +375,18 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     faqs: faqs.slice(0, 10),
     lawyerOpinion: buildLawyerOpinion("부산", topic.title),
     directionsNote: buildDirectionsNote(config),
-    ctaDescription: "비용·절차가 궁금하시면 카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다.",
+    ctaDescription: isLawyerFeeBusan
+      ? "확인하고 싶은 비용 항목과 준비된 자료를 남겨 주시면, 접수 가능 여부와 보수·공과금의 대략적 구성을 먼저 안내합니다. 확정 견적은 서류 확인 후입니다."
+      : "비용·절차가 궁금하시면 카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다.",
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
-    relatedServiceLinks: [],
+    relatedServiceLinks: isLawyerFeeBusan
+      ? [
+          { href: "/부산법무사상담", label: "상담 전 비용·준비서류 안내" },
+          { href: "/부산법무사보수표", label: "부산 법무사 보수표 참고" },
+          { href: "/부산법률상담", label: "부산 법률상담 절차" },
+          { href: "/등기비용", label: "등기 비용 항목" },
+        ]
+      : [],
     relatedRegionLinks: [],
   };
 }

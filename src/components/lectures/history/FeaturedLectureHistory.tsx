@@ -35,7 +35,7 @@ export function FeaturedLectureHistory({
             전체 이력 보기
           </Link>
         </div>
-        <LectureHistoryGrid items={featured.slice(0, 3)} />
+        <LectureHistoryGrid items={featured.slice(0, 6)} />
       </section>
       {recent.length ? (
         <p className="text-sm text-navy/65">

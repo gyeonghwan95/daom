@@ -6,7 +6,7 @@ import {
 } from "@/lib/office-location";
 import { seoBrand } from "@/lib/seo/brand";
 import { siteConfig } from "@/lib/site";
-import { getSiteUrl } from "@/lib/site-url";
+import { getHumanSiteUrl } from "@/lib/site-url";
 
 export const defaultBusinessRegistrationNumber = "657-51-00996";
 export const defaultBusinessEmail = "lawyoonjung@naver.com";
@@ -55,7 +55,7 @@ export function getNapInfo(): NapInfo {
     address: officeLocation.fullAddress,
     phone,
     email: getBusinessEmail(),
-    websiteUrl: getSiteUrl(),
+    websiteUrl: getHumanSiteUrl(),
     naverPlaceUrl: getNaverPlaceUrl(),
     openingHoursSummary: officeHours.summary,
     openingHoursWeekday: officeHours.weekday,
