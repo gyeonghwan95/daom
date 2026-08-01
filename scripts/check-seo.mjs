@@ -235,9 +235,20 @@ function checkSitemap(pages) {
   const sitemapManifest = JSON.parse(fs.readFileSync(SITEMAP_MANIFEST, "utf8"));
   const indexXml = fs.readFileSync(SITEMAP_PATH, "utf8");
 
-  if (!indexXml.includes("<sitemapindex")) {
-    fail("out/sitemap.xml must be a sitemap index");
+  if (!indexXml.includes("<urlset")) {
+    fail("out/sitemap.xml must be a urlset");
     return;
+  }
+  if (indexXml.includes("<sitemapindex")) {
+    fail("out/sitemap.xml must not be a sitemapindex");
+    return;
+  }
+
+  const rootLocs = [...indexXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  if (rootLocs.length !== sitemapManifest.totalUrls) {
+    fail(
+      `root sitemap URL 수(${rootLocs.length}) ≠ manifest(${sitemapManifest.totalUrls})`,
+    );
   }
 
   const allLocs = [];

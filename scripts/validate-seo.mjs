@@ -79,12 +79,24 @@ function assertSitemapSources() {
   }
 
   const indexXml = fs.readFileSync(indexPath, "utf8");
-  if (!indexXml.includes("<sitemapindex")) {
-    fail("public/sitemap.xml must be a sitemap index");
+  if (!indexXml.includes("<urlset")) {
+    fail("public/sitemap.xml must be a urlset listing all indexable URLs");
+  }
+  if (indexXml.includes("<sitemapindex")) {
+    fail("public/sitemap.xml must not be a sitemapindex");
   }
 
   if (!fs.existsSync(manifestPath)) {
     fail("scripts/output/sitemap-manifest.json not found");
+  }
+
+  const tierIndexPath = path.join(ROOT, "public/sitemaps/index.xml");
+  if (!fs.existsSync(tierIndexPath)) {
+    fail("public/sitemaps/index.xml not found — run npm run sitemap:generate");
+  }
+  const tierIndexXml = fs.readFileSync(tierIndexPath, "utf8");
+  if (!tierIndexXml.includes("<sitemapindex")) {
+    fail("public/sitemaps/index.xml must be a sitemap index");
   }
 
   const robotsFile = path.join(ROOT, "src/app/robots.ts");
@@ -94,7 +106,7 @@ function assertSitemapSources() {
     fail("robots.ts must reference sitemap.xml");
   }
 
-  console.log(`[validate-seo] sitemap index + manifest OK (${SITE_URL}/sitemap.xml)`);
+  console.log(`[validate-seo] sitemap urlset + tier index OK (${SITE_URL}/sitemap.xml)`);
 }
 
 function assertNapConsistency() {

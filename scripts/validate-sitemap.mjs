@@ -38,22 +38,48 @@ function read(filePath) {
   return fs.readFileSync(filePath, "utf8");
 }
 
-function main() {
-  const indexPath = path.join(OUT_ROOT, "sitemap.xml");
-  const indexXml = read(indexPath);
-  assertValidXmlPrologue(indexXml);
+function assertUrlEntry(loc, allUrls) {
+  assertCanonicalSiteUrl(loc);
+  if (allUrls.has(loc)) {
+    fail(`duplicate URL across sitemaps: ${loc}`);
+  }
+  allUrls.add(loc);
 
-  if (!indexXml.includes("<sitemapindex")) {
-    fail("sitemap.xml must be a sitemap index (<sitemapindex>)");
+  const decoded = normalizeRoutePath(decodeUrlPath(loc, SITE));
+  const expected = pathToAbsoluteUrl(decoded, SITE);
+  if (loc !== expected) {
+    fail(`encoding mismatch for ${decoded}: expected ${expected}, got ${loc}`);
+  }
+}
+
+function main() {
+  const rootPath = path.join(OUT_ROOT, "sitemap.xml");
+  const rootXml = read(rootPath);
+  assertValidXmlPrologue(rootXml);
+
+  // GSC 발견 0 이슈 회피: 루트는 urlset(전체 URL). sitemapindex는 /sitemaps/index.xml 보조.
+  if (!rootXml.includes("<urlset")) {
+    fail("sitemap.xml must be a urlset (<urlset>) listing all indexable URLs");
+  }
+  if (rootXml.includes("<sitemapindex")) {
+    fail("sitemap.xml must not be a sitemapindex — use public/sitemaps/index.xml for tier index");
   }
 
-  if (indexXml.includes("<priority>") || indexXml.includes("<changefreq>")) {
+  if (rootXml.includes("<priority>") || rootXml.includes("<changefreq>")) {
     fail("sitemap must not include priority or changefreq");
   }
 
-  const indexLocs = parseLocTags(indexXml);
-  if (indexLocs.length === 0) {
-    fail("sitemap index has no sub-sitemaps");
+  const rootLocs = parseLocTags(rootXml);
+  if (rootLocs.length === 0) {
+    fail("sitemap.xml urlset has no URLs");
+  }
+
+  if (rootLocs.length > 50000) {
+    fail(`sitemap.xml exceeds 50,000 URL limit (${rootLocs.length})`);
+  }
+
+  if (Buffer.byteLength(rootXml, "utf8") > 50 * 1024 * 1024) {
+    fail("sitemap.xml exceeds 50MB size limit");
   }
 
   if (!fs.existsSync(MANIFEST)) {
@@ -70,6 +96,17 @@ function main() {
   let totalFromFiles = 0;
   const tierCountsFromFiles = {};
 
+  for (const loc of rootLocs) {
+    assertUrlEntry(loc, allUrls);
+  }
+
+  if (rootLocs.length !== manifest.totalUrls) {
+    fail(
+      `root sitemap URL count mismatch: file ${rootLocs.length}, manifest ${manifest.totalUrls}`,
+    );
+  }
+
+  const tierUrls = new Set();
   for (const sub of manifest.subSitemaps) {
     const rel = sub.filename;
     const tier = Object.entries(TIER_FILES).find(([, f]) => f === rel)?.[0];
@@ -99,10 +136,14 @@ function main() {
 
     for (const loc of locs) {
       assertCanonicalSiteUrl(loc);
-      if (allUrls.has(loc)) {
-        fail(`duplicate URL across sitemaps: ${loc}`);
+      if (tierUrls.has(loc)) {
+        fail(`duplicate URL across tier sitemaps: ${loc}`);
       }
-      allUrls.add(loc);
+      tierUrls.add(loc);
+
+      if (!allUrls.has(loc)) {
+        fail(`tier sitemap URL missing from root sitemap.xml: ${loc}`);
+      }
 
       const decoded = normalizeRoutePath(decodeUrlPath(loc, SITE));
       const expected = pathToAbsoluteUrl(decoded, SITE);
@@ -113,7 +154,13 @@ function main() {
   }
 
   if (totalFromFiles !== manifest.totalUrls) {
-    fail(`total URL count mismatch: files ${totalFromFiles}, manifest ${manifest.totalUrls}`);
+    fail(`total URL count mismatch: tier files ${totalFromFiles}, manifest ${manifest.totalUrls}`);
+  }
+
+  if (tierUrls.size !== allUrls.size) {
+    fail(
+      `root vs tier URL set size mismatch: root ${allUrls.size}, tiers ${tierUrls.size}`,
+    );
   }
 
   for (const required of TIER1_REQUIRED) {
@@ -123,17 +170,22 @@ function main() {
     }
   }
 
-  const indexSubPaths = indexLocs.map((loc) => loc.replace(`${SITE}/`, ""));
+  const tierIndexPath = path.join(OUT_ROOT, "sitemaps", "index.xml");
+  const tierIndexXml = read(tierIndexPath);
+  assertValidXmlPrologue(tierIndexXml);
+  if (!tierIndexXml.includes("<sitemapindex")) {
+    fail("sitemaps/index.xml must be a sitemap index (<sitemapindex>)");
+  }
+  const tierIndexLocs = parseLocTags(tierIndexXml);
   for (const sub of manifest.subSitemaps) {
     const expectedLoc = `${SITE}/sitemaps/${sub.filename}`;
-    if (!indexLocs.includes(expectedLoc)) {
-      fail(`sitemap index missing sub-sitemap: ${expectedLoc}`);
+    if (!tierIndexLocs.includes(expectedLoc)) {
+      fail(`tier sitemap index missing sub-sitemap: ${expectedLoc}`);
     }
   }
-
-  if (indexLocs.length !== manifest.subSitemaps.length) {
+  if (tierIndexLocs.length !== manifest.subSitemaps.length) {
     fail(
-      `index sub-sitemap count mismatch: index ${indexLocs.length}, manifest ${manifest.subSitemaps.length}`,
+      `tier index sub-sitemap count mismatch: index ${tierIndexLocs.length}, manifest ${manifest.subSitemaps.length}`,
     );
   }
 
@@ -145,7 +197,9 @@ function main() {
     }
   }
 
-  console.log(`[sitemap:validate] OK — ${totalFromFiles} URLs in ${manifest.subSitemaps.length} tier sitemaps`);
+  console.log(
+    `[sitemap:validate] OK — root urlset ${rootLocs.length} URLs + ${manifest.subSitemaps.length} tier sitemaps`,
+  );
   console.log("[sitemap:validate] Tier counts:", tierCountsFromFiles);
   if (manifest.excluded?.length) {
     console.log(`[sitemap:validate] excluded ${manifest.excluded.length} paths (see sitemap-manifest.json)`);

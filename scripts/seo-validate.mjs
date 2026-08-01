@@ -122,6 +122,19 @@ function assertSitemapManifest() {
 
   const indexXml = fs.readFileSync(indexPath, "utf8");
   assertNoForbiddenUrls(indexXml, "sitemap.xml");
+  if (!indexXml.includes("<urlset")) {
+    fail("public/sitemap.xml must be a urlset");
+  }
+  if (indexXml.includes("<sitemapindex")) {
+    fail("public/sitemap.xml must not be a sitemapindex");
+  }
+
+  const rootLocs = parseLocTags(indexXml);
+  if (rootLocs.length !== manifest.totalUrls) {
+    fail(
+      `root sitemap URL count mismatch: file ${rootLocs.length}, manifest ${manifest.totalUrls}`,
+    );
+  }
 
   const allLocs = [];
   for (const sub of manifest.subSitemaps ?? []) {
@@ -133,7 +146,7 @@ function assertSitemapManifest() {
   }
 
   if (allLocs.length !== manifest.totalUrls) {
-    fail(`URL count mismatch: files ${allLocs.length}, manifest ${manifest.totalUrls}`);
+    fail(`URL count mismatch: tier files ${allLocs.length}, manifest ${manifest.totalUrls}`);
   }
 
   console.log(

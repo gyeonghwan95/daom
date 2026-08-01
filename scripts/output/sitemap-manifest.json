@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-08-01T06:02:11.330Z",
+  "generatedAt": "2026-08-01T14:40:08.153Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1518,
+  "totalUrls": 1519,
+  "format": "urlset",
   "tierCounts": {
     "1": 18,
     "2": 26,
@@ -9,7 +10,7 @@
     "4": 538,
     "5": 119,
     "6": 534,
-    "7": 52,
+    "7": 53,
     "8": 25
   },
   "excluded": [
@@ -583,6 +584,7 @@
     }
   ],
   "sitemapIndex": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemap.xml",
+  "tierSitemapIndex": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/index.xml",
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
@@ -622,9 +624,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
-      "lastmod": "2026-07-25",
+      "lastmod": "2026-08-01",
       "filename": "tier-7-blog.xml",
-      "count": 52
+      "count": 53
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-8-media.xml",
@@ -638,7 +640,7 @@
       "path": "/",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-01"
     },
     {
       "path": "/부산법무사",
@@ -9327,6 +9329,12 @@
       "tier": 7,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-jurisdiction-checklist",
       "lastmod": "2026-07-25"
+    },
+    {
+      "path": "/blog/busan-lawyer-recommend-office-consult",
+      "tier": 7,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-recommend-office-consult",
+      "lastmod": "2026-08-01"
     },
     {
       "path": "/blog/busan-real-estate-registration-documents",

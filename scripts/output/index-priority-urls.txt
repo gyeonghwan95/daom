@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-01T06:02:27.734Z
+# 생성: 2026-08-01T14:40:26.997Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1518 (제외 142)
+# 총 URL: 1519 (제외 142)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -10,7 +10,7 @@
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 538개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 119개
 # Tier 6 — 순차 (기타 키워드 랜딩): 534개
-# Tier 7 — 후순위 (블로그): 52개
+# Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 25개
 
 ========================================================================
@@ -1481,7 +1481,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (534개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/partners	/partners
 
 ────────────────────────────────────────────────────────────────────────
-Tier 7 — 후순위 (블로그) (52개)
+Tier 7 — 후순위 (블로그) (53개)
 ────────────────────────────────────────────────────────────────────────
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog	/blog
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/bankruptcy-vs-discharge-difference	/blog/bankruptcy-vs-discharge-difference
@@ -1491,6 +1491,7 @@ Tier 7 — 후순위 (블로그) (52개)
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-inheritance-registration-procedure-documents	/blog/busan-inheritance-registration-procedure-documents
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-consultation-documents	/blog/busan-lawyer-consultation-documents
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-jurisdiction-checklist	/blog/busan-lawyer-jurisdiction-checklist
+[T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-recommend-office-consult	/blog/busan-lawyer-recommend-office-consult
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-real-estate-registration-documents	/blog/busan-real-estate-registration-documents
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/business-owner-rehabilitation-pre-check	/blog/business-owner-rehabilitation-pre-check
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/centum-lawyer-visit-day-flow	/blog/centum-lawyer-visit-day-flow

@@ -1,0 +1,96 @@
+{
+  "pageInfo": [
+    {
+      "url": "https://다옴법무사사무소.kr/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr"
+    },
+    {
+      "url": "https://xn--2j1br1na42lvxja38mk8r.kr/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr"
+    },
+    {
+      "url": "https://다옴법무사사무소.kr/부산법무사",
+      "status": 200,
+      "location": null,
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC"
+    },
+    {
+      "url": "https://xn--2j1br1na42lvxja38mk8r.kr/부산법무사",
+      "status": 200,
+      "location": null,
+      "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC"
+    }
+  ],
+  "rss": {
+    "status": 200,
+    "itemCount": 50,
+    "linkSamples": [
+      "https://xn--2j1br1na42lvxja38mk8r.kr/blog",
+      "https://xn--2j1br1na42lvxja38mk8r.kr/",
+      "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-recommend-office-consult",
+      "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-jurisdiction-checklist",
+      "https://xn--2j1br1na42lvxja38mk8r.kr/blog/centum-lawyer-visit-day-flow"
+    ],
+    "hasPuny": true,
+    "hasHangulHost": false
+  },
+  "sitemapIndex": {
+    "status": 200,
+    "children": 8
+  },
+  "childStats": [
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
+      "status": 200,
+      "urls": 18,
+      "bytes": 2523
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-2-hubs.xml",
+      "status": 200,
+      "urls": 26,
+      "bytes": 4181
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
+      "status": 200,
+      "urls": 206,
+      "bytes": 35677
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
+      "status": 200,
+      "urls": 538,
+      "bytes": 96416
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
+      "status": 200,
+      "urls": 119,
+      "bytes": 26717
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
+      "status": 200,
+      "urls": 534,
+      "bytes": 78017
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
+      "status": 200,
+      "urls": 53,
+      "bytes": 7830
+    },
+    {
+      "child": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-8-media.xml",
+      "status": 200,
+      "urls": 25,
+      "bytes": 4239
+    }
+  ],
+  "totalUrls": 1519
+}
