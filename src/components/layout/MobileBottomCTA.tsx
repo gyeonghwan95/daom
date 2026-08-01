@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -31,16 +30,6 @@ function CalendarIcon({ className = "h-5 w-5" }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-function MoreIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <circle cx="6" cy="12" r="1.6" fill="currentColor" />
-      <circle cx="12" cy="12" r="1.6" fill="currentColor" />
-      <circle cx="18" cy="12" r="1.6" fill="currentColor" />
     </svg>
   );
 }
@@ -139,14 +128,13 @@ export function MobileBottomCTA() {
   const b2b = isB2BPath(pathname);
   const channels = getMobileBottomChannels();
   const inquiry = useOptionalQuickInquiry();
-  const [expanded, setExpanded] = useState(false);
 
   if (b2b) {
     const phone = channels.find((c) => c.id === "phone");
     const kakao = channels.find((c) => c.id === "kakao");
     return (
       <div
-        className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+        className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
         style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
         role="region"
         aria-label="협업 빠른 연락"
@@ -166,32 +154,21 @@ export function MobileBottomCTA() {
     );
   }
 
-  const phone = channels.find((c) => c.id === "phone");
-  const quickChannels = channels.filter((c) =>
-    ["kakao", "naver", "reservation"].includes(c.id),
+  const rowChannels = channels.filter((c) =>
+    ["phone", "kakao", "naver", "reservation"].includes(c.id),
   );
 
   return (
     <div
-      className="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+      className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"
     >
-      {expanded ? (
-        <div
-          className="grid grid-cols-3 divide-x divide-beige-dark border-b border-beige-dark bg-cream/40"
-          role="group"
-          aria-label="추가 연락 방법"
-        >
-          {quickChannels.map((channel) => (
-            <MobileChannelButton key={channel.id} channel={channel} />
-          ))}
-        </div>
-      ) : null}
-
-      <div className="grid grid-cols-3 divide-x divide-beige-dark">
-        {phone ? <MobileChannelButton channel={phone} /> : null}
+      <div className="grid grid-cols-5 divide-x divide-beige-dark">
+        {rowChannels.map((channel) => (
+          <MobileChannelButton key={channel.id} channel={channel} />
+        ))}
         <button
           type="button"
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
@@ -200,24 +177,8 @@ export function MobileBottomCTA() {
           onClick={() => inquiry?.openInquiry({ source: "mobile" })}
         >
           <FormIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">상담하기</span>
+          <span className="mobile-bottom-cta__label">상담</span>
         </button>
-        <button
-          type="button"
-          className="mobile-bottom-cta__btn bg-white text-navy"
-          aria-expanded={expanded}
-          aria-controls="mobile-cta-more"
-          aria-label={expanded ? "추가 연락 닫기" : "카카오·톡톡 더보기"}
-          onClick={() => setExpanded((v) => !v)}
-        >
-          <MoreIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">
-            {expanded ? "닫기" : "더보기"}
-          </span>
-        </button>
-      </div>
-      <div id="mobile-cta-more" className="sr-only" aria-hidden>
-        {expanded ? "추가 연락 채널이 열려 있습니다." : ""}
       </div>
     </div>
   );
