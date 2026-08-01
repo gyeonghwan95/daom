@@ -1317,4 +1317,22 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     focus: "임대인 사망과 전세보증금",
     ...inheritanceCase,
   },
+  {
+    slug: "경상도비대면상속등기",
+    label: "경상도 비대면 상속등기",
+    category: "concern",
+    serviceSlug: "inheritance-registration",
+    keywords: ["경상도 비대면 상속등기", "경남 비대면 상속등기", "경상도 방문 없는 상속등기"],
+    focus: "경남·울산·경북 비대면 준비와 한계",
+    ...inheritanceCase,
+  },
+  {
+    slug: "타지역상속인경상도부동산",
+    label: "타지역 상속인과 경상도 부동산",
+    category: "concern",
+    serviceSlug: "inheritance-registration",
+    keywords: ["타지역 상속인 경상도 부동산", "경남 부동산 부산 거주 상속인", "상속인 거주지 부동산 소재지 다를 때"],
+    focus: "상속인 거주지와 부동산 소재지가 다를 때",
+    ...inheritanceCase,
+  },
 ];

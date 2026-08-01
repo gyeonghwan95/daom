@@ -56,14 +56,18 @@ export const topicHubConfigs: TopicHubConfig[] = [
       {
         title: "어디 지역 상속인가요?",
         intro:
-          "부산 지역 상담과 전국 상속·유증·여러 지역 부동산을 구분해 선택하세요.",
+          "부산·기장과 경남·울산·경북 비대면 상속, 전국 상속을 구분해 선택하세요.",
         links: [
           { href: "/부산상속등기", label: "부산 지역 상속 상담" },
+          { href: "/기장군상속등기", label: "기장군 상속등기" },
+          { href: "/기장군상속포기", label: "기장 상속포기" },
+          { href: "/경상도비대면상속등기", label: "경상도 비대면 상속등기" },
+          { href: "/타지역상속인경상도부동산", label: "타지역 상속인의 경상도 부동산" },
+          { href: "/업무사례/통영상속등기법무사", label: "통영 상속등기" },
+          { href: "/업무사례/거제상속등기법무사", label: "거제 상속등기" },
+          { href: "/업무사례/울주군상속등기법무사", label: "울주군 상속등기" },
           { href: "/전국상속등기", label: "전국 상속등기" },
-          { href: "/전국유증등기", label: "전국 유증등기" },
           { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
-          { href: "/services/inheritance-renunciation", label: "상속포기·한정승인" },
-          { href: "/contact/inquiry?from=nationwide", label: "해외 거주 상속인 상담" },
         ],
       },
       {

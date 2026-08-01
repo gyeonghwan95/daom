@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
+import {
+  InheritanceCostGuide,
+  RegionalRemoteInheritance,
+} from "@/components/inheritance";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import {
   NationwideRegionExplorer,
@@ -33,6 +37,10 @@ export function NationwideCasePageView({
   if (region) inquiryQs.set("region", region);
   inquiryQs.set("field", "inheritance-registration");
   const inquiryHref = `/contact/inquiry?${inquiryQs.toString()}`;
+  const showRemote =
+    def.kind !== "hub" ||
+    def.primaryKeyword.includes("상속") ||
+    def.regionName === "전국";
 
   return (
     <PageDataTemplate
@@ -58,6 +66,18 @@ export function NationwideCasePageView({
         </div>
       }
     >
+      {showRemote && def.primaryKeyword.includes("상속") ? (
+        <div className="space-y-6">
+          <RegionalRemoteInheritance
+            regionLabel={def.regionName}
+            inquiryRegion={region || undefined}
+            fromPage={def.slug}
+            description={def.localIntro?.slice(0, 220)}
+          />
+          <InheritanceCostGuide fromPage={def.slug} />
+        </div>
+      ) : null}
+
       {def.kind === "region-hub" ? (
         <Suspense fallback={<p className="text-sm text-navy/60">지역 목록 준비 중…</p>}>
           <NationwideRegionExplorer

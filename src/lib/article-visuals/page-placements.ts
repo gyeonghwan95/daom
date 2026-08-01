@@ -133,6 +133,26 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
     overlayPosition: "center",
     tone: "dark",
   },
+  {
+    path: "/경상도비대면상속등기",
+    slot: "after-intro",
+    assetId: "consultTalk",
+    alt: "경남·울산·경북 상속을 비대면으로 안내하는 상담 장면",
+    overlayText: "방문 전에도 절차를 확인할 수 있습니다",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+  {
+    path: "/기장군상속포기",
+    slot: "after-intro",
+    assetId: "docReviewDesk",
+    alt: "기장군 상속포기·채무 확인을 위해 서류를 검토하는 모습",
+    overlayText: "재산과 채무를 함께 확인합니다",
+    aspectRatio: "4:3",
+    overlayPosition: "left",
+    tone: "dark",
+  },
 
   // /부산한정승인
   {

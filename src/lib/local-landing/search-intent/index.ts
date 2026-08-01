@@ -62,6 +62,10 @@ import {
   임대인사망전세계약Override,
   재혼가정상속Override,
 } from "./overrides/inheritance-lifecycle-phase2";
+import {
+  경상도비대면상속등기Override,
+  타지역상속인경상도부동산Override,
+} from "./overrides/gyeongsang-remote-inheritance";
 
 export type {
   SearchGuideEntry,
@@ -133,6 +137,8 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   사망후3개월지난상속: 사망후3개월지난상속Override,
   해외거주상속인: 해외거주상속인Override,
   임대인사망전세계약: 임대인사망전세계약Override,
+  경상도비대면상속등기: 경상도비대면상속등기Override,
+  타지역상속인경상도부동산: 타지역상속인경상도부동산Override,
 };
 
 const contentCache = new Map<string, SearchIntentContent>();

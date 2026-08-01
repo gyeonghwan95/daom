@@ -58,6 +58,8 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
       "양산상속등기법무사",
       "창원상속등기법무사",
       "장유상속등기법무사",
+      "통영상속등기법무사",
+      "경남비대면상속안내",
     ],
     relatedServiceSlugs: ["전국상속등기법무사", "전국비대면법무사", "부산상속등기"],
     ctaTitle: "경남 업무 가능 여부 확인",

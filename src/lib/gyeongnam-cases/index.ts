@@ -1,5 +1,6 @@
 import { phase1GyeongnamDefs } from "./phase1-defs";
 import { phase2GyeongnamDefs } from "./phase2-defs";
+import { phaseRemoteGyeongnamDefs } from "./phase-remote-inheritance";
 import { isGyeongnamPublishable, scoreGyeongnamLanding } from "./quality";
 import {
   buildAllGyeongnamPageData,
@@ -21,7 +22,11 @@ export {
 } from "./quality";
 
 function allDefsRaw(): GyeongnamLandingDef[] {
-  return [...phase1GyeongnamDefs, ...phase2GyeongnamDefs];
+  return [
+    ...phase1GyeongnamDefs,
+    ...phase2GyeongnamDefs,
+    ...phaseRemoteGyeongnamDefs,
+  ];
 }
 
 let cachedAll: GyeongnamLandingDef[] | null = null;

@@ -43,6 +43,8 @@ const baseLandingConfigs: LocalLandingConfig[] = [
   { slug: "동래구한정승인", serviceSlug: "qualified-acceptance", regionKey: "dongnae", regionLabel: "동래구", neighborhoods: ["사직동"], caseAngle: "동래구 상속 채무 조사 후 한정승인", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
   { slug: "동래구임원변경등기", serviceSlug: "director-change", regionKey: "dongnae", regionLabel: "동래구", neighborhoods: ["온천동"], caseAngle: "동래구 소재 법인 대표이사 변경", relatedCaseSlug: "yeonje-director-change-case" },
   { slug: "기장군상속등기", serviceSlug: "inheritance-registration", regionKey: "gijang", regionLabel: "기장군", neighborhoods: ["기장읍", "정관읍"], caseAngle: "기장군 토지·주택 상속등기", relatedCaseSlug: "gijang-land-inheritance-case" },
+  { slug: "기장군상속포기", serviceSlug: "inheritance-renunciation", regionKey: "gijang", regionLabel: "기장군", neighborhoods: ["기장읍", "정관읍", "일광읍"], caseAngle: "기장군 거주·부동산과 연결된 상속포기 검토", relatedCaseSlug: "jaesong-inheritance-renunciation-consultation" },
+  { slug: "기장군한정승인", serviceSlug: "qualified-acceptance", regionKey: "gijang", regionLabel: "기장군", neighborhoods: ["기장읍", "정관읍"], caseAngle: "기장군 토지·채무가 섞인 한정승인 검토", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
   { slug: "기장군법인등기", serviceSlug: "corporate-registration", regionKey: "gijang", regionLabel: "기장군", neighborhoods: ["정관읍", "일광읍"], caseAngle: "기장군 공장 법인 본점 이전 등기" },
   { slug: "기장군부동산등기", serviceSlug: "real-estate-registration", regionKey: "gijang", regionLabel: "기장군", neighborhoods: ["기장읍"], caseAngle: "기장군 농지 매매 등기", relatedCaseSlug: "gijang-land-inheritance-case" },
   // 2차 우선순위 20페이지 — 북구·사상구·금정구·센텀 + 기존 구역 보강

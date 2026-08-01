@@ -1,4 +1,5 @@
 import { ulsanPhase1Defs } from "./ulsan-phase1";
+import { ulsanRemoteInheritanceDefs } from "./ulsan-remote-inheritance";
 import { daeguPhase1Defs } from "./daegu-phase1";
 import { gyeongbukPhase1Defs } from "./gyeongbuk-phase1";
 import { southeastPhase2Defs } from "./phase2-defs";
@@ -29,6 +30,7 @@ export {
 function allDefsRaw(): SoutheastLandingDef[] {
   return [
     ...ulsanPhase1Defs,
+    ...ulsanRemoteInheritanceDefs,
     ...daeguPhase1Defs,
     ...gyeongbukPhase1Defs,
     ...southeastPhase2Defs,

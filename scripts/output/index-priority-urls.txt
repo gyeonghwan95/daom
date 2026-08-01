@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-07-31T16:44:45.005Z
+# 생성: 2026-08-01T03:29:11.198Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1486 (제외 140)
+# 총 URL: 1488 (제외 142)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -9,7 +9,7 @@
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 206개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 538개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 119개
-# Tier 6 — 순차 (기타 키워드 랜딩): 502개
+# Tier 6 — 순차 (기타 키워드 랜딩): 504개
 # Tier 7 — 후순위 (블로그): 52개
 # Tier 8 — 후순위 (언론·강의): 25개
 
@@ -943,7 +943,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (119개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (502개)
+Tier 6 — 순차 (기타 키워드 랜딩) (504개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -996,6 +996,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (502개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B1%B4%EC%B6%95%EC%A3%BC%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98	/건축주준비서류
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EB%82%A8%EC%82%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/경남사단법인설립
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EB%82%A8%EC%9E%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/경남재단법인설립
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EC%83%81%EB%8F%84%EB%B9%84%EB%8C%80%EB%A9%B4%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/경상도비대면상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%A0%EC%9D%B8%EA%B3%84%EC%A2%8C%EC%9E%A5%EB%A1%80%EB%B9%84%EC%82%AC%EC%9A%A9	/고인계좌장례비사용
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B3%B5%EA%B8%B0%EA%B4%80%EB%93%B1%EA%B8%B0%EC%97%85%EB%AC%B4	/공공기관등기업무
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B3%B5%EA%B8%B0%EA%B4%80%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1	/공공기관법률교육
@@ -1416,6 +1417,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (502개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B2%B4%EC%9C%A1%EB%8B%A8%EC%B2%B4%EC%82%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/체육단체사단법인설립
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B4%89%ED%83%81%EB%93%B1%EA%B8%B0	/촉탁등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B7%A8%EB%93%9D%EC%84%B8	/취득세
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%83%80%EC%A7%80%EC%97%AD%EC%83%81%EC%86%8D%EC%9D%B8%EA%B2%BD%EC%83%81%EB%8F%84%EB%B6%80%EB%8F%99%EC%82%B0	/타지역상속인경상도부동산
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%86%A0%EC%A7%80%EC%86%8C%EC%9C%A0%EC%9E%90%EC%99%80%EA%B1%B4%EC%B6%95%EC%A3%BC%EB%8B%A4%EB%A5%B8%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0	/토지소유자와건축주다른보존등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EB%B3%84%EB%B2%95%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/특별법법인설립등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%93%B1%EA%B8%B0	/특수등기
@@ -1534,7 +1536,9 @@ Tier 8 — 후순위 (언론·강의) (25개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (140)
+# 제외 (142)
+# [EXCLUDED:duplicate] /기장군상속포기
+# [EXCLUDED:duplicate] /기장군한정승인
 # [EXCLUDED:non-indexable-registry] /업무사례/부산가야역법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산강서서부지원법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산개금역법무사
