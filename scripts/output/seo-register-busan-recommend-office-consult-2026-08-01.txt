@@ -1,0 +1,18 @@
+# SEO 색인 — 부산 법무사 추천·사무실·상담 (2026-08-01)
+# 배포·200 확인 후 IndexNow / Search Console
+
+## CREATE
+https://다옴법무사사무소.kr/blog/busan-lawyer-recommend-office-consult
+
+## IMPROVE 재크롤
+https://다옴법무사사무소.kr/부산법무사추천
+https://다옴법무사사무소.kr/부산법무사무소
+https://다옴법무사사무소.kr/부산법무사상담
+https://다옴법무사사무소.kr/부산법무사
+
+## 경로만
+/blog/busan-lawyer-recommend-office-consult
+/부산법무사추천
+/부산법무사무소
+/부산법무사상담
+/부산법무사

@@ -67,6 +67,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/faq/how-to-book-consultation-faq", "법무사 상담 예약 방법"),
       s("/faq/lawyer-fee-and-remote-faq", "법무사 수임료·비대면 상담"),
       s("/blog/busan-lawyer-consultation-documents", "부산 법무사 상담 준비 서류"),
+      s("/blog/busan-lawyer-recommend-office-consult", "추천·사무실·상담 구분 가이드"),
       s("/contact", "부산 법무사 상담 문의"),
     ],
   },

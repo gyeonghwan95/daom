@@ -185,7 +185,7 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
   ];
 }
 
-/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버 톡톡 · 예약 */
+/** 모바일 하단 고정: 전화 · 카카오 · 톡톡 · 예약 (+ UI에서 상담) */
 export function getMobileBottomChannels(): ConsultationChannel[] {
   const { phone, kakao, naverTalk } = getContactInfo();
   const reservation = getNaverReservationUrl();
