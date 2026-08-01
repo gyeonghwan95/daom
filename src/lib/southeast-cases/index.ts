@@ -2,6 +2,8 @@ import { ulsanPhase1Defs } from "./ulsan-phase1";
 import { ulsanRemoteInheritanceDefs } from "./ulsan-remote-inheritance";
 import { daeguPhase1Defs } from "./daegu-phase1";
 import { gyeongbukPhase1Defs } from "./gyeongbuk-phase1";
+import { gyeongbukRemotePhase2Defs } from "./gyeongbuk-remote-phase2";
+import { gyeongbukPhase3RemoteDefs } from "./gyeongbuk-phase3-remote";
 import { southeastPhase2Defs } from "./phase2-defs";
 import { isSoutheastPublishable, scoreSoutheastLanding } from "./quality";
 import {
@@ -33,6 +35,8 @@ function allDefsRaw(): SoutheastLandingDef[] {
     ...ulsanRemoteInheritanceDefs,
     ...daeguPhase1Defs,
     ...gyeongbukPhase1Defs,
+    ...gyeongbukRemotePhase2Defs,
+    ...gyeongbukPhase3RemoteDefs,
     ...southeastPhase2Defs,
   ];
 }

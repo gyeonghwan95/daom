@@ -77,8 +77,23 @@ export const 오래된상속토지정리Override: SearchIntentContent = {
   relatedServiceLinks: [
     hub,
     { href: "/부산상속등기", label: "부산 상속등기" },
+    { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
+    {
+      href: "/상속인이여러지역에있는경우",
+      label: "상속인이 여러 지역에 있는 경우",
+    },
+    { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
     { href: "/연락두절상속인", label: "연락두절 상속인" },
+    { href: "/해외거주상속인", label: "해외 거주 상속인" },
+    {
+      href: "/등기권리증없이소유권이전",
+      label: "권리증 없이 매도·이전(확인서면)",
+    },
     { href: "/부모님사망후해야할일", label: "사망 후 해야 할 일" },
+    {
+      href: "/업무사례/경남오래된상속등기",
+      label: "경남 오래된 상속등기 사례",
+    },
   ],
   relatedGuideLinks: [consult],
   bottomCtaText:
@@ -86,20 +101,29 @@ export const 오래된상속토지정리Override: SearchIntentContent = {
   serviceSlug: "inheritance-registration",
   showRemoteInheritance: true,
   showInheritanceCostGuide: true,
+  showRemoteLegalProcess: true,
   proseSections: [
     {
       id: "why-stalled",
       title: "오래된 상속토지가 방치되는 흔한 이유",
       paragraphs: [
         "등기부 명의가 조부모·증조 세대이거나, 상속인 수가 많아 협의가 늦어지거나, 주소·사망일이 불명확하면 서류 수집만으로도 시간이 걸립니다. ‘한 번에 팔기’만 생각하고 승인·협의 순서를 미루면 더 오래 남을 수 있습니다.",
-        "제적등본·가족관계·폐쇄등기부 확인 순서를 먼저 잡고, 연락두절·해외 상속인이 있으면 해당 안내와 함께 보시면 중복 작업을 줄일 수 있습니다.",
+        "제적등본·가족관계·폐쇄등기부 확인 순서를 먼저 잡고, 연락두절·해외 상속인이 있으면 해당 안내와 함께 보시면 중복 작업을 줄일 수 있습니다. ‘여러 세대가 지난 상속’·‘연속상속’ 검색도 이 페이지가 담당합니다.",
+      ],
+    },
+    {
+      id: "chain-order",
+      title: "중간 세대가 이미 사망한 연속상속을 보는 순서",
+      paragraphs: [
+        "현재 세대만 보고 등기를 신청하면 중간 사망·상속인 누락으로 보정·반려가 날 수 있습니다. 등기부 명의인부터 아래로 사망 시점과 상속인 범위를 표로 정리한 뒤, 제적·가족관계를 맞추는 편이 안전합니다.",
+        "상속인 중 일부가 다시 사망한 경우에도 같은 방식으로 세대를 나눠 봅니다. 전국에 상속인이 흩어져 있으면 사람 분산 안내와, 부동산이 여러 시·도에 있으면 물건 분산 안내를 함께 연결합니다.",
       ],
     },
     {
       id: "sell-later",
       title: "정리 후 매도까지 보려면",
       paragraphs: [
-        "명의이전이 끝나면 상속 후 매매등기 안내로 이어질 수 있습니다. 매도만 급해도 상속인 범위와 채무 확인을 건너뛰면 위험합니다.",
+        "명의이전이 끝나면 상속 후 매매등기 안내로 이어질 수 있습니다. 매도만 급해도 상속인 범위와 채무 확인을 건너뛰면 위험합니다. 권리증이 없는 매도·이전이라면 확인서면 안내와 역할을 구분하세요.",
         "토지 위치·등기부 사본·알고 있는 상속인만 남겨 주셔도 확인 순서부터 안내할 수 있습니다.",
       ],
     },
@@ -606,7 +630,20 @@ export const 해외거주상속인Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
     { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
+    {
+      href: "/상속인이여러지역에있는경우",
+      label: "상속인이 여러 지역에 있는 경우",
+    },
+    {
+      href: "/사진전자파일우편으로서류전달",
+      label: "사진·파일·우편 서류 전달",
+    },
+    {
+      href: "/해외서류가필요한증여등기",
+      label: "해외서류가 필요한 증여등기",
+    },
     { href: "/situations/해외-거주-상속인", label: "상황별: 해외 거주 상속인" },
     { href: "/blog/overseas-heir-inheritance-busan", label: "해외 상속인 안내(블로그)" },
     { href: "/전국상속등기", label: "전국 상속등기" },

@@ -813,7 +813,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     ],
     summaryParagraphs: [
       "부산 근저당말소등기는 대출을 전액 상환하거나 채권자가 말소에 동의했을 때 등기부에서 근저당권을 지우는 절차입니다. 매매·증여·상속 전에 말소가 안 되면 소유권이전등기가 막힙니다.",
-      "은행말소는 대출 해지 확인서·말소 위임장·인감증명서를 은행에서 받아 진행합니다. 개인 간 근저당은 채권자 직접 동의가 필요합니다.",
+      "은행말소는 대출 해지 확인서·말소 위임장·인감증명서를 은행에서 받아 진행합니다. 개인 간 근저당은 채권자 직접 동의가 필요합니다. 은행 서류를 받은 뒤 방문 없이 목록부터 확인하려면 방문 없이 준비하는 근저당말소 안내를 함께 보세요.",
       "잔금 당일 말소와 소유권이전을 연속 처리하는 일정이 일반적이며, 부산 전역 사건을 상담합니다.",
     ],
     problemStatement:
@@ -892,6 +892,10 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.mortgageSetup,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.realEstateLawyer,
+      {
+        href: "/방문없이준비하는근저당말소",
+        label: "방문 없이 준비하는 근저당말소",
+      },
     ],
     caseAngle: "대출 상환 후 근저당말소등기",
   },
@@ -1083,6 +1087,10 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     relatedKeywordLinks: [
       sharedKeywordLinks.jeonseSetup,
       sharedKeywordLinks.realEstateLawyer,
+      {
+        href: "/방문없이준비하는전세권말소",
+        label: "방문 없이 준비하는 전세권말소",
+      },
     ],
     caseAngle: "보증금 반환 후 전세권말소등기",
   },
@@ -1226,6 +1234,14 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     relatedKeywordLinks: [
       sharedKeywordLinks.corporateLawyer,
       sharedKeywordLinks.busanCorporate,
+      {
+        href: "/방문없이준비하는임원변경",
+        label: "방문 없이 준비하는 임원변경",
+      },
+      {
+        href: "/해외대표이사주주법인등기",
+        label: "해외 대표이사·주주 법인등기",
+      },
     ],
     relatedCaseSlug: "yeonje-director-change-case",
     caseAngle: "대표이사 교체에 따른 임원변경등기",

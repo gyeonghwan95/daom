@@ -129,6 +129,10 @@ export const 부산이혼재산분할등기Override: SearchIntentContent = {
     { href: "/부산명의변경등기", label: "부산 명의변경등기" },
     { href: "/부산공동명의등기", label: "부산 공동명의등기" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+    {
+      href: "/이혼재산분할등기서류준비",
+      label: "이혼 재산분할등기 서류 준비",
+    },
   ],
   relatedGuideLinks: [
     {

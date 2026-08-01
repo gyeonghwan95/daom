@@ -137,6 +137,11 @@ export const 부산임차권등기명령Override: SearchIntentContent = {
   relatedServiceLinks: [
     { href: "/임차권등기명령비용", label: "임차권등기명령 비용" },
     { href: "/임차권등기명령필요서류", label: "임차권등기명령 필요서류" },
+    {
+      href: "/이사후임차권등기명령준비",
+      label: "이사 후·타지역 임차권등기 준비",
+    },
+    { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산전세보증금반환법무사", label: "부산 전세보증금 반환 법무사" },
     { href: "/부산법무사", label: "부산 법무사 종합 허브" },

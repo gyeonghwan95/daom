@@ -1,11 +1,11 @@
 {
-  "totalAll": 65,
-  "published": 61,
-  "unpublishedCount": 4,
+  "totalAll": 74,
+  "published": 71,
+  "unpublishedCount": 3,
   "byGroup": {
-    "울산": 21,
+    "울산": 22,
     "대구": 24,
-    "경북": 16
+    "경북": 25
   },
   "collisions": [],
   "gunwiInGb": [],
@@ -14,11 +14,6 @@
   "unpublished": [
     {
       "slug": "울산방어동상속등기",
-      "score": 78,
-      "reason": "published:false"
-    },
-    {
-      "slug": "영주상속등기법무사",
       "score": 78,
       "reason": "published:false"
     },
@@ -201,6 +196,14 @@
       "h1": "부산·울산 여러 부동산 공동근저당권",
       "group": "울산",
       "pageType": "joint-mortgage"
+    },
+    {
+      "slug": "울주군상속포기한정승인",
+      "score": 100,
+      "title": "울주 상속포기 법무사｜사망 후 3개월 안에 확인할 재산과 채무",
+      "h1": "울산 울주군 상속포기·한정승인, 사망 후 확인할 순서",
+      "group": "울산",
+      "pageType": "renunciation"
     },
     {
       "slug": "대구법무사업무",
@@ -521,32 +524,83 @@
       "h1": "대구·경북 여러 부동산 공동담보등기",
       "group": "경북",
       "pageType": "joint-mortgage"
+    },
+    {
+      "slug": "영천상속등기법무사",
+      "score": 100,
+      "title": "영천 상속등기 법무사｜과수원·농지·주택 상속 정리",
+      "h1": "영천 상속부동산, 과수원·농지부터 정리하는 방법",
+      "group": "경북",
+      "pageType": "farmland-inheritance"
+    },
+    {
+      "slug": "안동오래된토지상속등기",
+      "score": 100,
+      "title": "안동 오래된 토지 상속등기｜조부모 명의·제적등본 정리",
+      "h1": "안동 조부모 명의 토지, 제적등본부터 확인하는 이유",
+      "group": "경북",
+      "pageType": "legacy"
+    },
+    {
+      "slug": "경주오래된토지상속등기",
+      "score": 100,
+      "title": "경주 오래된 토지 상속등기｜조부모 명의·다세대 미정리 토지",
+      "h1": "경주 조부모 명의 토지, 여러 세대에 걸쳐 정리하는 방법",
+      "group": "경북",
+      "pageType": "legacy"
+    },
+    {
+      "slug": "포항상속포기한정승인",
+      "score": 100,
+      "title": "포항 상속포기 법무사｜부모님 채무가 걱정될 때 확인할 순서",
+      "h1": "포항에서 상속포기·한정승인을 검토하는 순서",
+      "group": "경북",
+      "pageType": "renunciation"
+    },
+    {
+      "slug": "문경상속등기법무사",
+      "score": 100,
+      "title": "문경 상속등기 법무사｜문경새재 인근 전원주택·농지, 충북 상속인도 가능",
+      "h1": "문경 전원주택·농지 상속, 충북 거주 상속인이 확인할 순서",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "상주상속등기법무사",
+      "score": 100,
+      "title": "상주 농지 상속등기｜넓은 농지 여러 필지 한 번에 목록화",
+      "h1": "상주 넓은 농지 상속, 여러 필지를 한 번에 정리하는 순서",
+      "group": "경북",
+      "pageType": "farmland-inheritance"
+    },
+    {
+      "slug": "청도상속등기법무사",
+      "score": 100,
+      "title": "청도 상속등기 법무사｜대구 거주 상속인의 청도 농지·과수원 정리",
+      "h1": "청도 농지·과수원 상속, 대구 거주 상속인이 확인할 순서",
+      "group": "경북",
+      "pageType": "farmland-inheritance"
+    },
+    {
+      "slug": "울진상속등기법무사",
+      "score": 100,
+      "title": "울진 비대면 상속등기｜동해안 원거리 지역 방문 부담 줄이는 준비",
+      "h1": "울진 상속등기, 동해안 원거리 방문 부담부터 줄이는 방법",
+      "group": "경북",
+      "pageType": "inheritance"
+    },
+    {
+      "slug": "영주상속등기법무사",
+      "score": 100,
+      "title": "영주 상속등기 법무사｜경북 영주시 주택·농지, 부산 영주동과 다른 지역",
+      "h1": "경북 영주 상속부동산, 부산 영주동과 헷갈리지 않게 정리하기",
+      "group": "경북",
+      "pageType": "inheritance"
     }
   ],
   "failDetails": [
     {
       "slug": "울산방어동상속등기",
-      "score": 78,
-      "reason": "published:false",
-      "breakdown": {
-        "uniqueTitle": 8,
-        "uniqueMeta": 8,
-        "uniqueH1": 8,
-        "uniqueIntro": 0,
-        "scenarios": 12,
-        "propertyOrIssue": 0,
-        "faqs": 10,
-        "regionLinks": 6,
-        "serviceLinks": 6,
-        "disclosure": 5,
-        "practical": 10,
-        "conversion": 5,
-        "total": 78
-      },
-      "publishedFlag": false
-    },
-    {
-      "slug": "영주상속등기법무사",
       "score": 78,
       "reason": "published:false",
       "breakdown": {

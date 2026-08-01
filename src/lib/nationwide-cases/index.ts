@@ -1,6 +1,7 @@
 import { nationwideServiceDefs } from "./service-defs";
 import { metroRegionDefs } from "./metro-defs";
 import { cityRegionDefs } from "./city-defs";
+import { phase4CityRegionDefs } from "./phase4-city-defs";
 import { isPublishable, scoreRegionLanding } from "./quality";
 import {
   buildAllNationwideCasePageData,
@@ -14,7 +15,12 @@ export { CASE_BASE, caseNationwidePath } from "./types";
 export { scoreRegionLanding, QUALITY_PUBLISH_THRESHOLD } from "./quality";
 
 function allDefsRaw(): RegionLandingDef[] {
-  return [...nationwideServiceDefs, ...metroRegionDefs, ...cityRegionDefs];
+  return [
+    ...nationwideServiceDefs,
+    ...metroRegionDefs,
+    ...cityRegionDefs,
+    ...phase4CityRegionDefs,
+  ];
 }
 
 let cachedAll: RegionLandingDef[] | null = null;

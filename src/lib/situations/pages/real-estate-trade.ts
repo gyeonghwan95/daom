@@ -228,9 +228,12 @@ export const realEstateTradePages = [
     ],
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
-      { href: "/services/real-estate-registration", label: "부동산등기 안내" },
+      { href: "/공유물분할등기서류준비", label: "공유물분할등기 서류 준비" },
+      {
+        href: "/이혼재산분할등기서류준비",
+        label: "이혼 재산분할등기 서류 준비",
+      },
       { href: "/부동산등기", label: "부동산등기 허브" },
-      { href: "/상속", label: "상속 허브" },
     ],
     faqLinks: [
       { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },

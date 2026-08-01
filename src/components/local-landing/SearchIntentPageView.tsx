@@ -3,6 +3,10 @@ import {
   InheritanceJourneyNav,
   RemoteInheritanceProcess,
 } from "@/components/inheritance";
+import {
+  RemoteCostChecklist,
+  RemoteLegalProcess,
+} from "@/components/remote";
 import { isInheritanceJourneyPage } from "@/lib/inheritance/journey";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ServiceConversionEnhancements } from "@/components/conversion";
@@ -71,8 +75,14 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     ...(content.showRemoteInheritance
       ? [{ id: "remote-inheritance", label: "비대면 진행" }]
       : []),
+    ...(content.showRemoteLegalProcess
+      ? [{ id: "remote-legal-process", label: "방문 전 확인" }]
+      : []),
     ...(content.showInheritanceCostGuide
       ? [{ id: "inheritance-cost-guide", label: "비용 안내" }]
+      : []),
+    ...(content.showRemoteCostChecklist
+      ? [{ id: "remote-cost-checklist", label: "비용 확인 정보" }]
       : []),
     { id: "mistakes", label: "자주 하는 실수" },
     { id: "faq", label: "자주 묻는 질문" },
@@ -111,7 +121,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         intro={content.heroParagraphs[0]}
         keywords={content.primaryKeywords}
         ctaLabel={
-          content.showRemoteInheritance || content.showInheritanceCostGuide
+          content.showRemoteInheritance ||
+          content.showInheritanceCostGuide ||
+          content.showRemoteLegalProcess ||
+          content.showRemoteCostChecklist
             ? "업무 가능 여부 확인하기"
             : "상담 문의하기"
         }
@@ -219,8 +232,23 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         <RemoteInheritanceProcess fromPage={page.slug} />
       ) : null}
 
+      {content.showRemoteLegalProcess ? (
+        <RemoteLegalProcess
+          fromPage={page.slug}
+          inquiryField={content.serviceSlug}
+        />
+      ) : null}
+
       {content.showInheritanceCostGuide ? (
         <InheritanceCostGuide fromPage={page.slug} />
+      ) : null}
+
+      {content.showRemoteCostChecklist ? (
+        <RemoteCostChecklist
+          fromPage={page.slug}
+          inquiryField={content.serviceSlug}
+          variant={content.remoteCostChecklistVariant ?? "inheritance"}
+        />
       ) : null}
 
       <ContentSection id="mistakes" title="자주 하는 실수">

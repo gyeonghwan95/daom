@@ -126,9 +126,14 @@ export const 부산등기권리증분실Override: SearchIntentContent = {
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    {
+      href: "/등기권리증없이소유권이전",
+      label: "등기권리증 없이 소유권이전(전국)",
+    },
     { href: "/부산매매등기법무사", label: "부산 매매등기 법무사" },
     { href: "/부산잔금일법무사", label: "부산 잔금일 법무사" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+    { href: "/오래된상속토지정리", label: "오래된 상속토지 정리" },
   ],
   relatedGuideLinks: [
     {

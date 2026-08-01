@@ -49,6 +49,16 @@ export type SearchIntentContent = {
   showRemoteInheritance?: boolean;
   /** 상속 비용 안내 컴포넌트 표시 */
   showInheritanceCostGuide?: boolean;
+  /** 전국·원격 공통 RemoteLegalProcess 표시 */
+  showRemoteLegalProcess?: boolean;
+  /** 비용 확인 체크리스트 표시 */
+  showRemoteCostChecklist?: boolean;
+  /** RemoteCostChecklist 업무 유형 */
+  remoteCostChecklistVariant?:
+    | "inheritance"
+    | "corporate"
+    | "real-estate"
+    | "civil";
   /** 상속 여정 네비 표시 (기본: journey 맵에 있으면 자동) */
   showInheritanceJourney?: boolean;
   /** 요약 카드 이후 고유 소제목 줄글 — 카드 나열 대신 문단 중심 */

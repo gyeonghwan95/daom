@@ -1,6 +1,8 @@
 import { phase1GyeongnamDefs } from "./phase1-defs";
 import { phase2GyeongnamDefs } from "./phase2-defs";
 import { phaseRemoteGyeongnamDefs } from "./phase-remote-inheritance";
+import { phase2RemoteGyeongnamDefs } from "./phase2-remote-inheritance";
+import { phase3InlandGyeongnamDefs } from "./phase3-inland-inheritance";
 import { isGyeongnamPublishable, scoreGyeongnamLanding } from "./quality";
 import {
   buildAllGyeongnamPageData,
@@ -26,6 +28,8 @@ function allDefsRaw(): GyeongnamLandingDef[] {
     ...phase1GyeongnamDefs,
     ...phase2GyeongnamDefs,
     ...phaseRemoteGyeongnamDefs,
+    ...phase2RemoteGyeongnamDefs,
+    ...phase3InlandGyeongnamDefs,
   ];
 }
 

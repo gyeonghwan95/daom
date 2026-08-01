@@ -212,6 +212,7 @@ export const phaseRemoteGyeongnamDefs: GyeongnamLandingDef[] = [
     secondaryKeywords: [
       "경남 상속등기 비대면",
       "김해 양산 창원 통영 거제 상속",
+      "사천 고성 남해 밀양 하동 상속",
       "경남 상속인 타지역",
       "경남 방문 없는 상속등기",
     ],
@@ -253,7 +254,18 @@ export const phaseRemoteGyeongnamDefs: GyeongnamLandingDef[] = [
         answer: "없습니다. 부산 해운대 사무소에서 경남 각 지역 상속등기 상담·서류 검토를 진행합니다.",
       },
     ],
-    relatedRegionSlugs: ["통영상속등기법무사", "경남법무사업무"],
+    relatedRegionSlugs: [
+      "통영상속등기법무사",
+      "경남법무사업무",
+      "사천상속등기법무사",
+      "고성군상속등기법무사",
+      "남해상속등기법무사",
+      "밀양상속등기법무사",
+      "하동상속등기법무사",
+      "거창상속등기법무사",
+      "함양상속등기법무사",
+      "합천상속등기법무사",
+    ],
     relatedServiceSlugs: [
       "경남상속등기법무사",
       "김해상속등기법무사",

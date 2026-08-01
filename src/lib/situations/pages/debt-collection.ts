@@ -96,8 +96,11 @@ export const debtCollectionPages = [
     serviceLinks: [
       { href: "/민사소송", label: "민사·채권 허브" },
       { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
-      { href: "/contact", label: "상담 문의" },
-      { href: "/faq", label: "FAQ" },
+      { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
+      {
+        href: "/방문없이준비하는지급명령서류",
+        label: "지급명령 서류 원격 준비",
+      },
     ],
     faqLinks: [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
@@ -107,9 +110,9 @@ export const debtCollectionPages = [
     ],
     extraLinks: [
       { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
-      { href: "/부산지방법원채권회수", label: "부산 채권회수" },
+      { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
+      { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
       { href: "/blog/certified-mail-before-sending", label: "내용증명 보내기 전" },
-      { href: "/contact", label: "상담 문의" },
     ],
     faqs: [
       {
@@ -226,8 +229,8 @@ export const debtCollectionPages = [
     serviceLinks: [
       { href: "/민사소송", label: "민사·채권 허브" },
       { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
-      { href: "/contact", label: "상담 문의" },
-      { href: "/faq", label: "FAQ" },
+      { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
+      { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
     ],
     faqLinks: [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
@@ -238,8 +241,11 @@ export const debtCollectionPages = [
     extraLinks: [
       { href: "/부산지방법원채권회수", label: "부산 채권회수" },
       { href: "/부산지방법원지급명령", label: "지급명령 안내" },
+      {
+        href: "/방문없이준비하는지급명령서류",
+        label: "지급명령 서류 원격 준비",
+      },
       { href: "/blog/certified-mail-before-sending", label: "내용증명" },
-      { href: "/contact", label: "상담 문의" },
     ],
     faqs: [
       {
@@ -486,8 +492,8 @@ export const debtCollectionPages = [
     serviceLinks: [
       { href: "/민사소송", label: "민사·채권 허브" },
       { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
-      { href: "/contact", label: "상담 문의" },
-      { href: "/faq", label: "FAQ" },
+      { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
+      { href: "/압류말소등기서류준비", label: "압류말소등기 서류 준비" },
     ],
     faqLinks: [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
@@ -497,9 +503,12 @@ export const debtCollectionPages = [
     ],
     extraLinks: [
       { href: "/부산지방법원채권회수", label: "부산 채권회수" },
-      { href: "/부산지방법원지급명령", label: "지급명령" },
-      { href: "/blog/certified-mail-before-sending", label: "내용증명" },
-      { href: "/contact", label: "상담 문의" },
+      { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
+      { href: "/가처분신청서류준비", label: "가처분 신청 서류 준비" },
+      {
+        href: "/방문없이준비하는지급명령서류",
+        label: "지급명령 서류 원격 준비",
+      },
     ],
     faqs: [
       {

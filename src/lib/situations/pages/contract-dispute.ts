@@ -356,8 +356,8 @@ export const contractDisputePages = [
     serviceLinks: [
       { href: "/민사소송", label: "민사·채권 허브" },
       { href: "/임대차전세", label: "임대차·전세" },
-      { href: "/contact", label: "상담 문의" },
-      { href: "/faq", label: "FAQ" },
+      { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
+      { href: "/변제공탁서류준비", label: "변제공탁 서류 준비" },
     ],
     faqLinks: [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약" },
@@ -369,7 +369,10 @@ export const contractDisputePages = [
       { href: "/blog/certified-mail-before-sending", label: "내용증명 보내기 전" },
       { href: "/blog/jeonse-deposit-return-certified-mail", label: "전세 내용증명" },
       { href: "/부산지방법원지급명령", label: "지급명령" },
-      { href: "/contact", label: "상담 문의" },
+      {
+        href: "/방문없이준비하는지급명령서류",
+        label: "지급명령 서류 원격 준비",
+      },
     ],
     faqs: [
       {

@@ -92,6 +92,14 @@ export const 부산부모자녀아파트증여등기Override: SearchIntentConten
   ],
   relatedServiceLinks: [
     ...hubLinks,
+    {
+      href: "/부모자녀다른지역증여등기",
+      label: "부모·자녀가 다른 지역에 사는 증여",
+    },
+    {
+      href: "/해외서류가필요한증여등기",
+      label: "해외서류가 필요한 증여등기",
+    },
     { href: "/부산부담부증여등기", label: "부담부증여 시 확인할 권리관계" },
     { href: "/부산공동명의지분증여등기", label: "지분만 이전할 때" },
     { href: "/부산상속등기", label: "상속과 생전증여의 등기 차이" },
@@ -291,6 +299,10 @@ export const 부산부담부증여등기Override: SearchIntentContent = {
     ...hubLinks,
     { href: "/부산근저당설정등기", label: "근저당 설정·말소" },
     { href: "/부산전세권설정등기", label: "전세권 설정·말소" },
+    {
+      href: "/방문없이준비하는부담부증여",
+      label: "방문 없이 준비하는 부담부증여",
+    },
     { href: "/부산부모자녀아파트증여등기", label: "부모 자녀 아파트 증여" },
   ],
   relatedGuideLinks: [

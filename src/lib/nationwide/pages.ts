@@ -17,11 +17,24 @@ const TRUST_ITEMS = [
 function hubLinks() {
   return [
     { href: "/전국업무", label: "전국 업무 전체 보기" },
+    {
+      href: "/방문없이준비하는법무사업무",
+      label: "방문 없이 준비하는 법무사 업무",
+    },
     { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
+    {
+      href: "/상속인이여러지역에있는경우",
+      label: "상속인이 여러 지역에 있는 경우",
+    },
+    {
+      href: "/부동산과거주지가다른상속등기",
+      label: "부동산과 거주지가 다른 상속등기",
+    },
     { href: "/전국유증등기", label: "전국 유증등기 필요서류" },
     { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산 정리" },
     { href: "/전국법인본점이전등기", label: "타지역 법인 본점이전 절차" },
     { href: "/전국공동담보등기", label: "전국 공동담보등기 안내" },
+    { href: "/법무사비용먼저확인하는방법", label: "법무사 비용 먼저 확인" },
     { href: "/contact/inquiry?from=nationwide", label: "예상 비용과 필요서류 확인하기" },
   ];
 }
@@ -129,6 +142,18 @@ export function buildNationwideHubPageData(): PageData {
           { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
           { href: "/전국유증등기", label: "전국 유증등기 안내" },
           { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산 정리" },
+          {
+            href: "/상속인이여러지역에있는경우",
+            label: "상속인이 여러 지역에 있는 경우",
+          },
+          {
+            href: "/부동산과거주지가다른상속등기",
+            label: "부동산과 거주지가 다른 상속등기",
+          },
+          {
+            href: "/방문없이준비하는법무사업무",
+            label: "방문 없이 준비하는 법무사 업무",
+          },
         ],
       },
       {
@@ -136,8 +161,26 @@ export function buildNationwideHubPageData(): PageData {
         body: "상속포기·한정승인, 법인설립·변경, 개인회생 등은 신청 관할이 정해져 있어도 상담·서류 조율은 비대면으로 진행할 수 있습니다.",
         links: [
           { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+          {
+            href: "/방문없이준비하는상속포기한정승인",
+            label: "상속포기·한정승인 방문 전 준비",
+          },
           { href: "/법인등기", label: "법인등기 허브" },
           { href: "/부산개인회생", label: "개인회생 안내" },
+        ],
+      },
+      {
+        title: "서류 전달과 비용 확인",
+        body: "사진·전자파일로 개요를 확인하고, 원본은 단계에서 안내합니다. 비용은 보수와 공과금을 구분합니다.",
+        links: [
+          {
+            href: "/사진전자파일우편으로서류전달",
+            label: "사진·파일·우편 서류 전달",
+          },
+          {
+            href: "/법무사비용먼저확인하는방법",
+            label: "법무사 비용 먼저 확인하는 방법",
+          },
         ],
       },
       {
@@ -473,6 +516,7 @@ export function buildMultiRegionInheritancePageData(): PageData {
     ],
     introParagraphs: [
       "여러 시·도에 아파트·토지·상가가 있으면 부동산마다 등기부·시가표준액·취득세 신고 단위가 달라질 수 있습니다. 협의분할을 여러 부동산에 동일하게 적용할지, 일부만 특정 상속인이 받을지도 처음부터 맞춰야 합니다.",
+      "상속인이 여러 지역에 흩어진 문제(사람 분산)는 별도 안내를 보세요. 이 페이지는 부동산 소재지가 여러 곳인 경우(물건 분산)에 집중합니다.",
       "일부 부동산을 먼저 매도해야 하는 일정이 있으면 등기 순서도 함께 설계합니다.",
       DISCLAIMER,
     ],
@@ -566,6 +610,19 @@ export function buildMultiRegionInheritancePageData(): PageData {
     ],
     internalLinks: [
       { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
+      {
+        href: "/상속인이여러지역에있는경우",
+        label: "상속인이 여러 지역에 있는 경우",
+      },
+      {
+        href: "/부동산과거주지가다른상속등기",
+        label: "부동산과 거주지가 다른 상속등기",
+      },
+      { href: "/오래된상속토지정리", label: "오래된·여러 세대 상속토지" },
+      {
+        href: "/업무사례/전국상속부동산일괄등기",
+        label: "전국 상속부동산 일괄등기 사례",
+      },
       { href: "/상속등기필요서류", label: "상속등기 필요서류" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },

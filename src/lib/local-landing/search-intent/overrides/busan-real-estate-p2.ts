@@ -83,6 +83,7 @@ const restrictionLinks = [
   { href: "/부산부동산등기", label: "부산 부동산등기" },
   { href: "/부산근저당말소등기", label: "근저당 말소등기" },
   { href: "/부산매매등기법무사", label: "매매등기와 말소 순서" },
+  { href: "/압류말소등기서류준비", label: "압류말소등기 서류 준비" },
   { href: "/부산법무사비용", label: "비용·수임료 안내" },
 ];
 
@@ -1007,6 +1008,10 @@ export const 부산상속후매매등기Override = buildRemainingRealEstateConte
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산매매등기법무사", label: "부산 매매등기 법무사" },
     { href: "/부산지분이전등기", label: "상속 지분이전" },
+    {
+      href: "/상속등기후매매서류준비",
+      label: "상속등기 후 매매 서류 준비",
+    },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },
   ],
 });
