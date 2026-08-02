@@ -1,17 +1,17 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-01T14:40:26.997Z
+# 생성: 2026-08-02T15:37:23.462Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1519 (제외 142)
+# 총 URL: 1523 (제외 142)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
-# Tier 2 — 1주차 (지역·전국 허브): 26개
+# Tier 2 — 1주차 (지역·전국 허브): 28개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 206개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 538개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 119개
 # Tier 6 — 순차 (기타 키워드 랜딩): 534개
 # Tier 7 — 후순위 (블로그): 53개
-# Tier 8 — 후순위 (언론·강의): 25개
+# Tier 8 — 후순위 (언론·강의): 27개
 
 ========================================================================
 
@@ -38,14 +38,16 @@ Tier 1 — 즉시 (핵심 전환·허브) (18개)
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/real-estate-registration	/services/real-estate-registration
 
 ────────────────────────────────────────────────────────────────────────
-Tier 2 — 1주차 (지역·전국 허브) (26개)
+Tier 2 — 1주차 (지역·전국 허브) (28개)
 ────────────────────────────────────────────────────────────────────────
+[T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8	/개인정보처리방침
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EB%82%A8%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/경남법무사업무
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EB%B6%81%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/경북법무사업무
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%8C%80%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/대구법무사업무
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%9A%B8%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/울산법무사업무
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%A0%84%EA%B5%AD%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80	/업무사례/전국업무사례
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%AC%EB%9F%AC%EC%A7%80%EC%97%AD%EC%83%81%EC%86%8D%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/여러지역상속부동산등기
+[T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80	/이용약관
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EA%B3%B5%EB%8F%99%EB%8B%B4%EB%B3%B4%EB%93%B1%EA%B8%B0	/전국공동담보등기
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EB%B2%95%EC%9D%B8%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/전국법인본점이전등기
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%9C%A0%EC%A6%9D%EB%93%B1%EA%B8%B0	/전국유증등기
@@ -1538,7 +1540,7 @@ Tier 7 — 후순위 (블로그) (53개)
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/when-to-consult-real-estate-registration-lawyer	/blog/when-to-consult-real-estate-registration-lawyer
 
 ────────────────────────────────────────────────────────────────────────
-Tier 8 — 후순위 (언론·강의) (25개)
+Tier 8 — 후순위 (언론·강의) (27개)
 ────────────────────────────────────────────────────────────────────────
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EB%AC%B8%EC%9D%98	/강의문의
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5	/강의이력
@@ -1547,9 +1549,11 @@ Tier 8 — 후순위 (언론·강의) (25개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-2	/강의이력/busan-citizen-library-week-2
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-3	/강의이력/busan-citizen-library-week-3
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-4	/강의이력/busan-citizen-library-week-4
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival	/강의이력/busan-self-support-daily-dispute-survival
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention	/강의이력/busan-self-support-jeonse-prevention
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center	/강의이력/changwon-youth-vision-center
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-job-growth-cafe	/강의이력/haeundae-youth-job-growth-cafe
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07	/강의이력/haeundae-youth-space-startup-law-2026-07
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/lh-busan-ccei-life-law	/강의이력/lh-busan-ccei-life-law
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk	/강의이력/yangsan-jeil-high-career-talk
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide	/강의이력/youth-digital-law-guide
