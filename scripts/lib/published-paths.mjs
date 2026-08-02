@@ -21,6 +21,8 @@ export const staticRoutes = [
   "/location",
   "/search-guides",
   "/search",
+  "/개인정보처리방침",
+  "/이용약관",
 ];
 
 const toolSlugs = [

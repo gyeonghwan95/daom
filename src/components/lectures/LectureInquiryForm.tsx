@@ -13,6 +13,7 @@ import {
   submitQuickInquiry,
 } from "@/lib/quick-inquiry/client";
 import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 const TOPICS = [
   "전세사기 예방",
@@ -274,7 +275,10 @@ export function LectureInquiryForm() {
               개인정보 수집 동의
               <RequiredBadge />
             </span>
-            문의 회신을 위한 연락처 수집에 동의합니다. (민감정보 제외)
+            <PrivacyConsentLabel
+              lead="문의 회신을 위한"
+              suffix="(민감정보 제외)"
+            />
             {errors.agreed ? (
               <span className="mt-1 block text-red-700">{errors.agreed}</span>
             ) : null}

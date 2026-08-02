@@ -25,6 +25,10 @@ export function resolveKoreanLandingPageData(
     return buildCaseRegionsHubPageData();
   }
 
+  if (normalized === "개인정보처리방침" || normalized === "이용약관") {
+    return getPageDataByPath(`/${normalized}`);
+  }
+
   const nationwide = getNationwidePageDataBySlug(normalized);
   if (nationwide) {
     return nationwide;

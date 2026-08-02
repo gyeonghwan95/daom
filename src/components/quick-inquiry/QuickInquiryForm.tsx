@@ -11,6 +11,7 @@ import {
 } from "@/lib/quick-inquiry/shared";
 import { TurnstileWidget, isTurnstileConfigured } from "./TurnstileWidget";
 import { useDialogIds } from "./useDialogA11y";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 type QuickInquiryFormProps = {
   pageTitle: string;
@@ -248,7 +249,7 @@ export function QuickInquiryForm({
             aria-invalid={Boolean(errors.consent)}
           />
           <label htmlFor={ids.consentId} className="quick-inquiry__consent-label">
-            {copy.consent}
+            <PrivacyConsentLabel linkClassName="font-medium underline underline-offset-2" />
           </label>
         </div>
         {errors.consent ? (

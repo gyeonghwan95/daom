@@ -58,6 +58,16 @@ export const eeatExperienceThumbs: Record<string, EeatThumbImage> = {
     "정책·위원 위촉 활동",
     imagePaths.appointmentCertificate,
   ),
+  "부산교육대학교 소프트웨어교육사업단 연구원": thumb(
+    "소개-경력-공공청년지원.jpg",
+    "부산교육대학교 소프트웨어교육사업단",
+    imagePaths.activityYouthSpace,
+  ),
+  "동서대학교 교수학습개발센터 연구원": thumb(
+    "소개-경력-공공청년지원.jpg",
+    "동서대학교 교수학습개발센터",
+    imagePaths.thumbMajorBook,
+  ),
 };
 
 /** 수상내역 — name 키 */
@@ -76,19 +86,19 @@ export const eeatAppointmentThumbs: Record<string, EeatThumbImage> = {
     "민주평화통일자문회의 자문위원",
     imagePaths.activityPeaceUnification,
   ),
-  "청년정책조정위원회 전문가 위원": thumb(
+  "부산광역시 청년정책조정위원회 전문가 자문위원": thumb(
     "소개-위원-청년정책조정.jpg",
     "부산광역시 청년정책조정위원회",
     imagePaths.activityBusanYouthPolicy,
   ),
-  청년자문단: thumb(
+  "기획예산처 1기 청년자문단 자문위원": thumb(
     "소개-위원-청년자문단.jpg",
     "기획예산처 청년자문단",
     imagePaths.activityYouthBudgetAdvisory,
   ),
-  정책자문위원: thumb(
+  "해운대구구정 정책자문위원회 자문위원": thumb(
     "소개-위원-해운대정책.jpg",
-    "해운대구 정책자문위원회",
+    "해운대구구정 정책자문위원회",
     imagePaths.activityHaeundaePolicy,
   ),
 };
@@ -108,6 +118,16 @@ export const eeatLectureThumbs: Record<string, EeatThumbImage> = {
   "해운대 청년 JOB성장카페": thumb(
     "소개-강의-해운대청년.jpg",
     "해운대 청년채움공간 법률 강의",
+    imagePaths.activityYouthSpace,
+  ),
+  해운대청년채움공간: thumb(
+    "소개-강의-해운대청년.jpg",
+    "해운대청년채움공간 법률 강의",
+    imagePaths.activityYouthSpace,
+  ),
+  "부산청년 JOB카페": thumb(
+    "소개-강의-해운대청년.jpg",
+    "부산청년 JOB카페 법률 특강",
     imagePaths.activityYouthSpace,
   ),
   창원청년비전센터: thumb(
@@ -143,6 +163,11 @@ export const eeatPressExtraThumbs: Record<string, EeatThumbImage> = {
     "소개-언론-네이버블로그.jpg",
     "네이버 블로그",
     imagePaths.homeTrust,
+  ),
+  "부산 MBC NEWS 전문가 출연": thumb(
+    "소개-언론-법률칼럼.jpg",
+    "부산 MBC NEWS 전문가 출연",
+    imagePaths.stockLegalConsultation,
   ),
 };
 

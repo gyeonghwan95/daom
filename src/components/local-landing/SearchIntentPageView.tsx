@@ -6,6 +6,7 @@ import {
 import {
   RemoteCostChecklist,
   RemoteLegalProcess,
+  RemoteServiceMatrixTable,
 } from "@/components/remote";
 import { isInheritanceJourneyPage } from "@/lib/inheritance/journey";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -77,6 +78,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       : []),
     ...(content.showRemoteLegalProcess
       ? [{ id: "remote-legal-process", label: "방문 전 확인" }]
+      : []),
+    ...(content.showRemoteServiceMatrix
+      ? [{ id: "remote-service-matrix", label: "원격 적합도" }]
       : []),
     ...(content.showInheritanceCostGuide
       ? [{ id: "inheritance-cost-guide", label: "비용 안내" }]
@@ -237,6 +241,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           fromPage={page.slug}
           inquiryField={content.serviceSlug}
         />
+      ) : null}
+
+      {content.showRemoteServiceMatrix ? (
+        <RemoteServiceMatrixTable />
       ) : null}
 
       {content.showInheritanceCostGuide ? (

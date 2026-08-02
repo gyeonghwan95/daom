@@ -20,12 +20,18 @@ import { CorporateIntentPageView } from "@/components/corporate/CorporateIntentP
 import { BuildingIntentPageView } from "@/components/building/BuildingIntentPageView";
 import { SpecialEntityIntentPageView } from "@/components/special-entity/SpecialEntityIntentPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
+import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHero } from "@/components/readability";
+import {
+  getPrivacyPolicyDocument,
+  getTermsOfUseDocument,
+  LEGAL_PATHS,
+} from "@/lib/legal";
 import {
   diagnosisTopicPages,
   getRawDiagnosisBySlug,
@@ -94,6 +100,24 @@ export default async function LocalLandingPage({ params }: PageProps) {
       <PageContainer>
         <CaseRegionsHubView page={page} />
       </PageContainer>
+    );
+  }
+
+  if (slug === "개인정보처리방침") {
+    return (
+      <LegalDocumentView
+        document={getPrivacyPolicyDocument()}
+        counterpart={{ href: LEGAL_PATHS.terms, label: "이용약관" }}
+      />
+    );
+  }
+
+  if (slug === "이용약관") {
+    return (
+      <LegalDocumentView
+        document={getTermsOfUseDocument()}
+        counterpart={{ href: LEGAL_PATHS.privacy, label: "개인정보처리방침" }}
+      />
     );
   }
 

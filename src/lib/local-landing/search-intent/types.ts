@@ -53,6 +53,8 @@ export type SearchIntentContent = {
   showRemoteLegalProcess?: boolean;
   /** 비용 확인 체크리스트 표시 */
   showRemoteCostChecklist?: boolean;
+  /** 원격 적합도 A/B/C 표 (허브용) */
+  showRemoteServiceMatrix?: boolean;
   /** RemoteCostChecklist 업무 유형 */
   remoteCostChecklistVariant?:
     | "inheritance"

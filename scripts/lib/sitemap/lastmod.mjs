@@ -96,6 +96,11 @@ const STATIC_PAGE_FILES = {
   "/contact/inquiry": ["src/app/contact/inquiry/page.tsx"],
   "/services": ["src/app/services/page.tsx"],
   "/faq": ["src/app/faq/page.tsx"],
+  "/개인정보처리방침": [
+    "src/app/개인정보처리방침/page.tsx",
+    "src/lib/legal/privacy-policy.ts",
+  ],
+  "/이용약관": ["src/app/이용약관/page.tsx", "src/lib/legal/terms-of-use.ts"],
   "/blog": ["src/app/blog/page.tsx"],
   "/media": ["src/lib/press-articles.ts"],
   "/업무사례": ["src/app/[landingSlug]/page.tsx", "src/lib/case-regions"],

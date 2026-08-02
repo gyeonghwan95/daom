@@ -5,7 +5,7 @@ export const staticPageSeo = {
   about: {
     title: buildSeoTitle("부산 법무사 소개"),
     description:
-      "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사 자격, 대한법무사협회 표창, 청년정책 자문, 부산 시민도서관·자립지원전담기관 법률 강의.",
+      "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학, 대한법무사협회 표창, 기획예산처·부산시·해운대구·민주평통 자문, 시민도서관·청년기관 법률 강의.",
     path: "/about",
     keywords: ["부산 법무사", "부산법무사", "안윤정 법무사", seoBrand.siteName],
   },
@@ -77,6 +77,20 @@ export const staticPageSeo = {
       "부산 해운대구 센텀동로 200 D동 1층 위치, 센텀시티역·주차·건물 안내, 네이버 예약 링크.",
     path: "/location",
     keywords: ["해운대 법무사", "센텀 법무사", "부산 법무사", seoBrand.siteName],
+  },
+  privacy: {
+    title: buildSeoTitle("개인정보처리방침"),
+    description:
+      "다옴법무사사무소 개인정보처리방침. 문의·상담 시 수집 항목, 이용 목적, 보유 기간, 제3자 제공, 파기, 정보주체 권리를 안내합니다.",
+    path: "/개인정보처리방침",
+    keywords: ["개인정보처리방침", "부산 법무사", seoBrand.siteName],
+  },
+  terms: {
+    title: buildSeoTitle("이용약관"),
+    description:
+      "다옴법무사사무소 웹사이트 이용약관. 법률정보 일반 안내의 범위, 상담 한계, 지적재산권, 책임의 제한을 안내합니다.",
+    path: "/이용약관",
+    keywords: ["이용약관", "부산 법무사", seoBrand.siteName],
   },
   searchGuides: {
     title: buildSeoTitle("검색의도 안내 — 추천·비용·서류·기한"),

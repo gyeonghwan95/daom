@@ -40,6 +40,31 @@ const nextConfig: NextConfig = {
         destination: "/media/:slug",
         permanent: true,
       },
+      {
+        source: "/privacy",
+        destination: "/개인정보처리방침",
+        permanent: true,
+      },
+      {
+        source: "/privacy-policy",
+        destination: "/개인정보처리방침",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/이용약관",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service",
+        destination: "/이용약관",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-use",
+        destination: "/이용약관",
+        permanent: true,
+      },
     ];
   },
 };

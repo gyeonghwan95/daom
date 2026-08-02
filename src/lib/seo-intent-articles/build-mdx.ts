@@ -38,7 +38,7 @@ function formatFaq(faq: SeoIntentArticle["sections"]["faq"]): string {
   return faq
     .map(
       (item) =>
-        `**Q. ${item.question}**  \n${item.answer}`,
+        `Q. ${item.question}  \n${item.answer}`,
     )
     .join("\n\n");
 }
@@ -116,7 +116,7 @@ export function buildSeoIntentArticleMdx(article: SeoIntentArticle): string {
     "",
     "## 상담 안내",
     "",
-    `**${article.cta.title}**`,
+    article.cta.title,
     "",
     article.cta.description,
     "",

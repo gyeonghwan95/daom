@@ -27,6 +27,7 @@ import {
   submitQuickInquiry,
 } from "@/lib/quick-inquiry/client";
 import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 type FormState = {
   partner: PartnerType | "";
@@ -473,8 +474,10 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
               required
             />
             <span>
-              문의 처리를 위한 개인정보 수집·이용에 동의합니다. 민감 원본서류는
-              초기 문의에 첨부하지 않습니다.
+              <PrivacyConsentLabel
+                lead="문의 처리를 위한"
+                suffix="민감 원본서류는 초기 문의에 첨부하지 않습니다."
+              />
             </span>
           </label>
         </fieldset>

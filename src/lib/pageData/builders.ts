@@ -853,6 +853,8 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   media: "언론·활동",
   contact: "부산 법무사 상담 문의",
   location: "오시는 길 · 센텀",
+  privacy: "개인정보처리방침",
+  terms: "이용약관",
   searchGuides: "검색의도 SEO 안내",
 };
 

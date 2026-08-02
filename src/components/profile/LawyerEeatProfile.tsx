@@ -102,6 +102,13 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
   const naverBlog = getNaverBlogUrl();
 
   const pressItems: EeatFact[] = [
+    {
+      term: "부산 MBC NEWS 전문가 출연",
+      meta: "2026.06.24 · 고유가 피해지원금 제도",
+      description:
+        "고유가 피해지원금 제도 관련 전문가 촬영에 참여했습니다.",
+      image: eeatPressExtraThumbs["부산 MBC NEWS 전문가 출연"],
+    },
     ...sliceItems(pressArticles, compact, 3).map((article) => ({
       term: article.title,
       meta: `${article.source} · ${article.publishedAtDisplay}`,
@@ -159,8 +166,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
               {lawyerProfileMeta.organization} 대표로 {lawyerProfileMeta.region}{" "}
               {lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래는
-              실무경력·자격·수상·위원 위촉·강의·언론 활동·전문분야를 정리한 공식
-              프로필입니다.
+              실무경력·자격·수상·위원 위촉·강의·언론 활동을 정리한 공식 프로필이며,
+              일자별 위원회·강의 실적 표는 이어서 확인하실 수 있습니다.
             </p>
           </div>
           {compact ? (
@@ -184,10 +191,10 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
 
           <EeatSection id="credentials" title="자격사항">
             <EeatFactList
-              items={sliceItems(getLawyerQualifications(), compact, 4).map(
+              items={sliceItems(getLawyerQualifications(), compact, 6).map(
                 (item) => ({
                   term: item.name,
-                  meta: item.category,
+                  meta: [item.year, item.category].filter(Boolean).join(" · "),
                   description: item.detail ?? item.name,
                 }),
               )}

@@ -94,6 +94,12 @@ function buildAllPageData(): PageData[] {
     }),
   );
 
+  // 한글 정식 URL — [landingSlug] 에서 LegalDocumentView 로 렌더
+  pages.push(
+    buildCorePageData("privacy", { slugOverride: "개인정보처리방침" }),
+    buildCorePageData("terms", { slugOverride: "이용약관" }),
+  );
+
   for (const diagnosis of allDiagnosisPages) {
     pages.push(buildPageDataFromDiagnosis(diagnosis));
   }

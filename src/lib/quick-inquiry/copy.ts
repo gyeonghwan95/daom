@@ -8,7 +8,7 @@ export const quickInquiryCopy = {
   contactPlaceholder: "010-0000-0000 또는 email@example.com",
   caution: "주민등록번호, 계좌 비밀번호 등 민감한 개인정보는 작성하지 마세요.",
   consent:
-    "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다.",
+    "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다. 개인정보처리방침을 확인하세요.",
   submit: "법무사에게 문의 보내기",
   submitting: "보내는 중…",
   successTitle: "문의가 전달되었습니다",

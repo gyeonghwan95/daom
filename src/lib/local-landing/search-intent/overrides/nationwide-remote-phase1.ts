@@ -211,6 +211,7 @@ export const 방문없이준비하는법무사업무Override: SearchIntentConten
   serviceSlug: "inheritance-registration",
   showRemoteLegalProcess: true,
   showRemoteCostChecklist: true,
+  showRemoteServiceMatrix: true,
   remoteCostChecklistVariant: "inheritance",
   proseSections: [
     {

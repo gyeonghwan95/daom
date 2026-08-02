@@ -38,6 +38,7 @@ import {
   submitQuickInquiry,
 } from "@/lib/quick-inquiry/client";
 import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 type Phase = "form" | "success" | "review";
 
@@ -659,7 +660,9 @@ export function ConsultWizardShell() {
                   onChange={(e) => update({ consent: e.target.checked })}
                   disabled={submitting}
                 />
-                <span>{copy.consentLabel}</span>
+                <span>
+                  <PrivacyConsentLabel suffix="(필수)" />
+                </span>
               </label>
               {errors.consent ? (
                 <p className="quick-inquiry__error" role="alert">

@@ -6,6 +6,7 @@ import { LawyerQualificationsSection } from "@/components/profile/LawyerQualific
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LawyerEeatProfile } from "@/components/profile/LawyerEeatProfile";
+import { LawyerTrackRecordTables } from "@/components/profile/LawyerTrackRecordTables";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildLawyerAboutSchemas } from "@/lib/seo/json-ld";
 import { lawyerActivitySections } from "@/lib/lawyer-activities";
@@ -25,12 +26,13 @@ export default function AboutPage() {
           { label: "소개" },
         ]}
         currentPath="/about"
-        intro="다옴법무사사무소를 이끄는 안윤정 법무사는 부산 해운대구·센텀에서 상속등기, 부동산등기, 법인등기, 개인회생·파산 업무를 수행합니다. 법무사·공인중개사·신용관리사 자격을 모두 갖추었고, 교육대학원 석사 과정을 통해 정식 교사 자격까지 보유한 법률 에듀케이터입니다. 개인 의뢰인 상담과 함께 기업·공공기관·지역사회를 위한 법률 지원, 정책 자문, 생활 법률 강의에도 적극 참여하고 있습니다."
-        introSideImage={siteImages.about.nameplate}
+        intro="다옴법무사사무소를 이끄는 안윤정 법무사는 부산 해운대구·센텀에서 상속등기, 부동산등기, 법인등기, 개인회생·파산 업무를 수행합니다. 법무사·공인중개사·신용관리사·직업상담사 자격과 중등 교사 자격을 갖추었고, 교육대학원 석사에 이어 부산대학교 행정대학원 석사 과정(재학)으로 공공·정책 이해를 더하고 있습니다. 개인 의뢰인 상담과 함께 기업·공공기관·지역사회를 위한 법률 지원, 정책 자문, 생활 법률 강의에도 적극 참여하고 있습니다."
+        introSideImage={siteImages.home.trust}
         relatedLinks={[
           { href: "/office", label: "사무소 소개" },
           { href: "/services", label: "업무안내" },
           { href: "/법률강의", label: "법률 강의·특강" },
+          { href: "/강의이력", label: "강의 이력" },
           { href: "/강사소개", label: "강사 소개" },
           { href: "/media", label: "언론·활동" },
           { href: "/contact", label: "상담 신청" },
@@ -39,6 +41,7 @@ export default function AboutPage() {
       >
         <div className="space-y-8">
           <LawyerEeatProfile />
+          <LawyerTrackRecordTables />
           <LawyerQualificationsSection profileImage={siteImages.about.profile} />
 
           {lawyerActivitySections.map((section, index) =>

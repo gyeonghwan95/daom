@@ -4,3 +4,8 @@
 /press /media 301
 /press/* /media/:splat 301
 /blog/external/* https://blog.naver.com/law-yoon-91 301
+/privacy /개인정보처리방침 301
+/terms /이용약관 301
+/privacy-policy /개인정보처리방침 301
+/terms-of-service /이용약관 301
+/terms-of-use /이용약관 301

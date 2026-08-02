@@ -23,7 +23,8 @@ export const consultWizardCopy = {
   contactHint: "둘 중 하나만 남겨주셔도 됩니다.",
   prefLabel: "선호 연락 방법",
   timeLabel: "연락하기 편한 시간",
-  consentLabel: "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다. (필수)",
+  consentLabel:
+    "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다. 개인정보처리방침을 확인하세요. (필수)",
   step4Title: "내용을 확인해 주세요",
   submit: "이 내용으로 상담 신청하기",
   submitting: "보내는 중…",

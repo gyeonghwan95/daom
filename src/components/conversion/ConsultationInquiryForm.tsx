@@ -25,6 +25,7 @@ import {
   submitQuickInquiry,
 } from "@/lib/quick-inquiry/client";
 import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 export type ConsultationInquiryFormProps = {
   defaultField?: string;
@@ -599,11 +600,10 @@ export function ConsultationInquiryForm({
           aria-invalid={Boolean(errors.agreed)}
         />
         <span>
-          문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다. 상담 목적 외
-          사용하지 않으며, 사이트 서버에 저장하지 않습니다.{" "}
-          <Link href="/contact" className="inquiry-form__link">
-            상담 안내
-          </Link>
+          <PrivacyConsentLabel
+            linkClassName="inquiry-form__link"
+            suffix="상담 목적 외 사용하지 않으며, 사이트 서버에 저장하지 않습니다."
+          />
         </span>
       </label>
       {errors.agreed ? (

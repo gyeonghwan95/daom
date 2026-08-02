@@ -32,6 +32,8 @@ export const TIER2 = new Set([
   "/tools",
   "/glossary",
   "/busan-legal-map",
+  "/개인정보처리방침",
+  "/이용약관",
   "/업무사례/울산법무사업무",
   "/업무사례/대구법무사업무",
   "/업무사례/경북법무사업무",

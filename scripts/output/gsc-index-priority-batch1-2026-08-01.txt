@@ -1,0 +1,136 @@
+# Google Search Console — 1순위 색인 요청 리스트
+# 작성: 2026-08-01T14:58:03.757Z
+# 속성: https://다옴법무사사무소.kr/
+# sitemap 발견: 1,519 (성공) — 다음은 '색인 생성 요청' 우선순위
+#
+# 사용법
+# 1) GSC 상단 URL 검사 → URL 붙여넣기 → 실제 URL 테스트 → 색인 생성 요청
+# 2) 하루 할당량 있으면 BATCH A(18) 먼저, 다음날 BATCH B → C
+# 3) 발견(Discovered) ≠ 색인(Indexed). 이 파일은 색인 우선 요청용
+#
+# BATCH A = Tier1 18 | BATCH B = Tier2 26 | BATCH C = 고의도 9
+
+========================================================================
+## BATCH A — 즉시 (Tier 1 핵심, 18개)
+========================================================================
+1. https://다옴법무사사무소.kr/
+2. https://다옴법무사사무소.kr/부산법무사
+3. https://다옴법무사사무소.kr/부산상속등기
+4. https://다옴법무사사무소.kr/업무사례
+5. https://다옴법무사사무소.kr/업무사례/부산법무사
+6. https://다옴법무사사무소.kr/업무사례/업무별
+7. https://다옴법무사사무소.kr/업무사례/지역별
+8. https://다옴법무사사무소.kr/전국상속등기
+9. https://다옴법무사사무소.kr/전국업무
+10. https://다옴법무사사무소.kr/해운대법무사
+11. https://다옴법무사사무소.kr/contact
+12. https://다옴법무사사무소.kr/contact/inquiry
+13. https://다옴법무사사무소.kr/services
+14. https://다옴법무사사무소.kr/services/corporate-registration
+15. https://다옴법무사사무소.kr/services/inheritance-registration
+16. https://다옴법무사사무소.kr/services/inheritance-renunciation
+17. https://다옴법무사사무소.kr/services/qualified-acceptance
+18. https://다옴법무사사무소.kr/services/real-estate-registration
+
+========================================================================
+## BATCH B — 이번 주 (Tier 2 허브, 26개)
+========================================================================
+1. https://다옴법무사사무소.kr/업무사례/경남법무사업무
+2. https://다옴법무사사무소.kr/업무사례/경북법무사업무
+3. https://다옴법무사사무소.kr/업무사례/대구법무사업무
+4. https://다옴법무사사무소.kr/업무사례/울산법무사업무
+5. https://다옴법무사사무소.kr/업무사례/전국업무사례
+6. https://다옴법무사사무소.kr/여러지역상속부동산등기
+7. https://다옴법무사사무소.kr/전국공동담보등기
+8. https://다옴법무사사무소.kr/전국법인본점이전등기
+9. https://다옴법무사사무소.kr/전국유증등기
+10. https://다옴법무사사무소.kr/about
+11. https://다옴법무사사무소.kr/busan-legal-map
+12. https://다옴법무사사무소.kr/faq
+13. https://다옴법무사사무소.kr/glossary
+14. https://다옴법무사사무소.kr/location
+15. https://다옴법무사사무소.kr/office
+16. https://다옴법무사사무소.kr/reviews
+17. https://다옴법무사사무소.kr/search-guides
+18. https://다옴법무사사무소.kr/situations
+19. https://다옴법무사사무소.kr/situations/분류/가족-사망-상속
+20. https://다옴법무사사무소.kr/situations/분류/개인채무-회생-파산
+21. https://다옴법무사사무소.kr/situations/분류/계약-일상-분쟁
+22. https://다옴법무사사무소.kr/situations/분류/돈을-받지-못한-경우
+23. https://다옴법무사사무소.kr/situations/분류/법인-사업-운영
+24. https://다옴법무사사무소.kr/situations/분류/부동산-매매-증여-등기
+25. https://다옴법무사사무소.kr/situations/분류/전세-임대차-보증금
+26. https://다옴법무사사무소.kr/tools
+
+========================================================================
+## BATCH C — 고의도 보강 (Tier3+, 9개)
+========================================================================
+1. https://다옴법무사사무소.kr/부산법무사추천
+2. https://다옴법무사사무소.kr/부산법무사상담
+3. https://다옴법무사사무소.kr/부산법무사무소
+4. https://다옴법무사사무소.kr/부산법무사비용
+5. https://다옴법무사사무소.kr/부산상속법무사
+6. https://다옴법무사사무소.kr/부산상속포기
+7. https://다옴법무사사무소.kr/부산한정승인
+8. https://다옴법무사사무소.kr/센텀법무사
+9. https://다옴법무사사무소.kr/blog/busan-lawyer-recommend-office-consult
+
+## 경로만 (스프레드시트·자동화용)
+--- A ---
+/
+/부산법무사
+/부산상속등기
+/업무사례
+/업무사례/부산법무사
+/업무사례/업무별
+/업무사례/지역별
+/전국상속등기
+/전국업무
+/해운대법무사
+/contact
+/contact/inquiry
+/services
+/services/corporate-registration
+/services/inheritance-registration
+/services/inheritance-renunciation
+/services/qualified-acceptance
+/services/real-estate-registration
+--- B ---
+/업무사례/경남법무사업무
+/업무사례/경북법무사업무
+/업무사례/대구법무사업무
+/업무사례/울산법무사업무
+/업무사례/전국업무사례
+/여러지역상속부동산등기
+/전국공동담보등기
+/전국법인본점이전등기
+/전국유증등기
+/about
+/busan-legal-map
+/faq
+/glossary
+/location
+/office
+/reviews
+/search-guides
+/situations
+/situations/분류/가족-사망-상속
+/situations/분류/개인채무-회생-파산
+/situations/분류/계약-일상-분쟁
+/situations/분류/돈을-받지-못한-경우
+/situations/분류/법인-사업-운영
+/situations/분류/부동산-매매-증여-등기
+/situations/분류/전세-임대차-보증금
+/tools
+--- C ---
+/부산법무사추천
+/부산법무사상담
+/부산법무사무소
+/부산법무사비용
+/부산상속법무사
+/부산상속포기
+/부산한정승인
+/센텀법무사
+/blog/busan-lawyer-recommend-office-consult
+
+# END

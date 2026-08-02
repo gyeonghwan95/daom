@@ -12,6 +12,7 @@ import {
   submitQuickInquiry,
 } from "@/lib/quick-inquiry/client";
 import { HONEYPOT_FIELD } from "@/lib/quick-inquiry/shared";
+import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 const COMPANY_TYPES = [
   "중소기업",
@@ -389,8 +390,10 @@ export function BusinessInquiryForm() {
           aria-invalid={Boolean(errors.agreed)}
         />
         <span>
-          상담 연락을 위한 개인정보 수집·이용에 동의합니다. 민감정보는 제출하지
-          않습니다.
+          <PrivacyConsentLabel
+            lead="상담 연락을 위한"
+            suffix="민감정보는 제출하지 않습니다."
+          />
           {errors.agreed ? (
             <span className="mt-1 block text-red-700">{errors.agreed}</span>
           ) : null}
