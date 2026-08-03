@@ -9,6 +9,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   InheritanceCostGuide,
@@ -174,6 +175,8 @@ export function PageDataTemplate({
         ].filter(Boolean)}
         consultTriggers={page.consultationPoints.slice(0, 3)}
       />
+
+      <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
       {page.introParagraphs.length > 1 ? (
         <ContentSection id="article-body" title="자세히 알아보기">

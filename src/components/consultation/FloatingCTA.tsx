@@ -79,7 +79,9 @@ export function FloatingCTA() {
                   <ChatIcon className="h-5 w-5 shrink-0" />
                   {copy.floatingLabel}
                 </button>
-                <p className="floating-cta__section-note">
+                <p
+                  className={`floating-cta__section-note${reducedMotion ? "" : " floating-cta__section-note--emphasis"}`}
+                >
                   서류·업무명을 몰라도 약 1분이면 남길 수 있습니다
                 </p>
               </div>

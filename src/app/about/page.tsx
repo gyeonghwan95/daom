@@ -7,6 +7,7 @@ import { PageContentSection } from "@/components/page/PageContentSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LawyerEeatProfile } from "@/components/profile/LawyerEeatProfile";
 import { LawyerTrackRecordTables } from "@/components/profile/LawyerTrackRecordTables";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildLawyerAboutSchemas } from "@/lib/seo/json-ld";
 import { lawyerActivitySections } from "@/lib/lawyer-activities";
@@ -43,6 +44,14 @@ export default function AboutPage() {
           <LawyerEeatProfile />
           <LawyerTrackRecordTables />
           <LawyerQualificationsSection profileImage={siteImages.about.profile} />
+
+          <BusinessCredentialSlot
+            forceDisplay
+            fixed={{ variant: "panel", copyGroup: "general" }}
+            panelTitle="전문자격뿐 아니라 기업 운영의 기본 요건도 갖추었습니다"
+            panelBody="다옴법무사사무소는 여성기업확인서·중소기업확인서·창업기업확인서를 보유하고 있습니다. 법무사로서 등기와 법원 제출 업무를 수행하는 동시에, 여성 대표자이자 창업기업 운영자로서 기업이 설립 이후 마주하는 변경등기와 행정적인 부담을 현실적으로 이해하고 있습니다. 공공·기업·조합 협업에서 확인서류가 필요한 경우 상담을 통해 제출 가능 여부와 유효기간을 안내합니다."
+            showSearchNameNote
+          />
 
           {lawyerActivitySections.map((section, index) =>
             section.id === "external" ? (

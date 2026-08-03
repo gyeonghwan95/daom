@@ -19,6 +19,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import type { AgencyTaskCard } from "@/lib/local-landing/public-agency-registration-content";
 import { getPublicAgencyRegistrationContent } from "@/lib/local-landing/public-agency-registration-content";
 import { PublicAgencyB2BSections } from "@/components/b2b/PublicAgencyB2BSections";
@@ -121,6 +122,12 @@ export function PublicAgencyRegistrationPageView({
       <div id="summary">
         <SummaryBox items={content.summaryBullets} />
       </div>
+
+      <BusinessCredentialSlot
+        fixed={{ variant: "panel", copyGroup: "partnership" }}
+        panelTitle="공공·기업 협업을 위한 기업확인서류 보유"
+        panelBody="다옴법무사사무소는 여성기업·중소기업·창업기업 확인서를 보유하고 있습니다. 공공기관·출연기관과의 계약 및 증빙 절차에서 확인서류가 필요한 경우 유효한 서류를 제출할 수 있습니다. 계약상 혜택·가점 여부는 각 공고와 적용 법령에 따라 달라질 수 있어 별도 확인이 필요합니다."
+      />
 
       <ArticleVisualSlot
         path={page.path}

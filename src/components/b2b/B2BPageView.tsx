@@ -13,6 +13,7 @@ import { ProjectBriefForm } from "@/components/b2b/ProjectBriefForm";
 import { SharePrintBar } from "@/components/b2b/SharePrintBar";
 import { WorkPurposeGrid } from "@/components/b2b/WorkPurposeGrid";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { RelatedContentGrid } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -133,6 +134,12 @@ export function B2BPageView({ page }: B2BPageViewProps) {
         slot="after-intro"
         category={page.category}
         serviceSlug={page.serviceSlug}
+      />
+
+      <BusinessCredentialSlot
+        fixed={{ variant: "panel", copyGroup: "partnership" }}
+        panelTitle="공공·기업 협업을 위한 기업확인서류 보유"
+        panelBody="다옴법무사사무소는 여성기업·중소기업·창업기업 확인서를 보유하고 있습니다. 공공기관, 정비사업조합, 법인, 법무법인, 법무사사무소, 공인중개사사무소 등과의 협업 과정에서 계약상 확인서류가 필요한 경우 유효한 서류를 제출할 수 있습니다. 계약상 혜택·가점·수의계약 가능 여부는 각 공고와 적용 법령에 따라 달라질 수 있어 별도 확인이 필요합니다."
       />
 
       {isHub ? (

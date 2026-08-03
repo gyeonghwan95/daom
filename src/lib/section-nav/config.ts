@@ -14,6 +14,7 @@ export const sectionNavByPath: Record<string, SectionNavItem[]> = {
     ...PAGE_END_SECTIONS,
   ],
   "/office": [
+    { id: "about-recommend", label: "안윤정 법무사 소개" },
     { id: "office-gallery", label: "사무소 사진" },
     { id: "office-video", label: "사무소 영상" },
     { id: "office-map", label: "위치 한눈에 보기" },

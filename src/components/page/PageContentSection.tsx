@@ -17,6 +17,8 @@ type PageContentSectionProps = {
   introSideImage?: SiteImageAsset;
   relatedLinks: RelatedLink[];
   relatedTitle?: string;
+  /** 소개 문단 바로 다음에 렌더 (예: 소개 페이지 추천) */
+  afterIntro?: React.ReactNode;
   consultationDescription?: string;
   showConsultationCTA?: boolean;
   children?: React.ReactNode;
@@ -31,6 +33,7 @@ export function PageContentSection({
   introSideImage,
   relatedLinks,
   relatedTitle,
+  afterIntro,
   consultationDescription,
   showConsultationCTA = true,
   children,
@@ -75,6 +78,8 @@ export function PageContentSection({
           </>
         )}
       </header>
+
+      {afterIntro}
 
       {children}
 

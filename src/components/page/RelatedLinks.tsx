@@ -11,15 +11,22 @@ function isExternalHref(href: string): boolean {
 type RelatedLinksProps = {
   title?: string;
   links: RelatedLink[];
+  id?: string;
+  linkLabelClassName?: string;
 };
 
 export function RelatedLinks({
   title = "관련 안내",
   links,
+  id = "related",
+  linkLabelClassName,
 }: RelatedLinksProps) {
   return (
-    <ContentSection id="related" title={title}>
-      <RelatedContentGrid links={links} />
+    <ContentSection id={id} title={title}>
+      <RelatedContentGrid
+        links={links}
+        labelClassName={linkLabelClassName}
+      />
     </ContentSection>
   );
 }

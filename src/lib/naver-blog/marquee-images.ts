@@ -31,6 +31,9 @@ const FALLBACK_MARQUEE_IMAGES: Omit<NaverBlogMarqueeSlide, "href" | "label">[] =
 ];
 
 function imageForPost(post: NaverBlogPost): string {
+  if (/MBC/i.test(post.title)) {
+    return imagePaths.pressMbcInterview;
+  }
   if (post.category && CATEGORY_IMAGE[post.category]) {
     return CATEGORY_IMAGE[post.category];
   }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 
 export function HomeB2BSection() {
   return (
@@ -6,6 +7,12 @@ export function HomeB2BSection() {
       className="home-b2b-section mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-12"
       aria-labelledby="home-b2b-heading"
     >
+      <BusinessCredentialSlot
+        fixed="home"
+        linkHref="/about"
+        linkLabel="사무소 소개"
+        className="mb-8 rounded-2xl border border-beige-dark"
+      />
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy/50">
         Business & Professional Collaboration
       </p>

@@ -15,6 +15,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { getCorporateContent } from "@/lib/corporate-intent/content";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
@@ -163,6 +164,8 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         checkItems={content.whenAndDeadline.slice(0, 3)}
         consultTriggers={content.whoNeedsThis.slice(0, 3)}
       />
+
+      <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
       <ArticleVisualSlot
         path={page.path}

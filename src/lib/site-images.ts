@@ -84,6 +84,7 @@ export const imagePaths = {
   pressBusanIlbo20260608: "/image/언론-부산일보-260608.jpg",
   pressKukjeSinmun20260603: "/image/언론-국제신문-260603.jpg",
   pressBeopryulSinmun20260602: "/image/언론-법률신문-260602.png",
+  pressMbcInterview: "/image/썸네일-MBC인터뷰.png",
   stockLegalDocuments: "/image/썸네일-서류등기.jpg",
   stockLegalConsultation: "/image/썸네일-상담협의.jpg",
   stockLegalContract: "/image/썸네일-계약임원.jpg",

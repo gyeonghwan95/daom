@@ -11,6 +11,7 @@ type RelatedContentGridProps = {
   columns?: 1 | 2;
   /** list: 구분선 링크 목록(기본) / cards: 2열 간결 카드 */
   variant?: "list" | "cards";
+  labelClassName?: string;
 };
 
 function isExternalHref(href: string): boolean {
@@ -20,13 +21,15 @@ function isExternalHref(href: string): boolean {
 function LinkBody({
   label,
   description,
+  labelClassName,
 }: {
   label: string;
   description?: string;
+  labelClassName?: string;
 }) {
   return (
     <span className="min-w-0 flex-1">
-      <span className="block">{label}</span>
+      <span className={`block ${labelClassName ?? ""}`.trim()}>{label}</span>
       {description ? (
         <span className="readability-link-card__meta">{description}</span>
       ) : null}
@@ -38,6 +41,7 @@ export function RelatedContentGrid({
   links,
   columns = 2,
   variant = "list",
+  labelClassName,
 }: RelatedContentGridProps) {
   if (links.length === 0) return null;
 
@@ -55,7 +59,11 @@ export function RelatedContentGrid({
                 rel="noopener noreferrer"
                 className="readability-link-card rounded-lg border border-beige-dark bg-white px-4"
               >
-                <LinkBody label={link.label} description={link.description} />
+                <LinkBody
+                  label={link.label}
+                  description={link.description}
+                  labelClassName={labelClassName}
+                />
                 <span className="readability-link-card__arrow" aria-hidden>
                   →
                 </span>
@@ -65,7 +73,11 @@ export function RelatedContentGrid({
                 href={link.href}
                 className="readability-link-card rounded-lg border border-beige-dark bg-white px-4"
               >
-                <LinkBody label={link.label} description={link.description} />
+                <LinkBody
+                  label={link.label}
+                  description={link.description}
+                  labelClassName={labelClassName}
+                />
                 <span className="readability-link-card__arrow" aria-hidden>
                   →
                 </span>
@@ -88,14 +100,22 @@ export function RelatedContentGrid({
               rel="noopener noreferrer"
               className="readability-link-card"
             >
-              <LinkBody label={link.label} description={link.description} />
+              <LinkBody
+                label={link.label}
+                description={link.description}
+                labelClassName={labelClassName}
+              />
               <span className="readability-link-card__arrow" aria-hidden>
                 →
               </span>
             </a>
           ) : (
             <Link href={link.href} className="readability-link-card">
-              <LinkBody label={link.label} description={link.description} />
+              <LinkBody
+                label={link.label}
+                description={link.description}
+                labelClassName={labelClassName}
+              />
               <span className="readability-link-card__arrow" aria-hidden>
                 →
               </span>

@@ -165,9 +165,9 @@ export const eeatPressExtraThumbs: Record<string, EeatThumbImage> = {
     imagePaths.homeTrust,
   ),
   "부산 MBC NEWS 전문가 출연": thumb(
-    "소개-언론-법률칼럼.jpg",
+    "썸네일-MBC인터뷰.png",
     "부산 MBC NEWS 전문가 출연",
-    imagePaths.stockLegalConsultation,
+    imagePaths.pressMbcInterview,
   ),
 };
 
@@ -190,4 +190,5 @@ export const EEAT_DROP_IN_FILENAMES = [
   "소개-강의-찾아가는교육.jpg",
   "소개-언론-법률칼럼.jpg",
   "소개-언론-네이버블로그.jpg",
+  "썸네일-MBC인터뷰.png",
 ] as const;

@@ -15,6 +15,7 @@ import { SpeakerHistoryList } from "@/components/lectures/SpeakerHistoryList";
 import { SpeakerLectureGallery } from "@/components/lectures/SpeakerLectureGallery";
 import { SpeakerProfileSection } from "@/components/lectures/SpeakerProfileSection";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import {
   ContentSection,
   PageHero,
@@ -61,6 +62,8 @@ export function LecturePageView({ page }: LecturePageViewProps) {
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
+
+      <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
       {content.kind === "speaker" ? (
         <SpeakerLayout content={content} page={page} />
