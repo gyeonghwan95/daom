@@ -173,6 +173,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       sharedKeywordLinks.inheritanceLawyer,
       sharedKeywordLinks.corporateLawyer,
       { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
+      { href: "/부산등기전문법무사", label: "부산 등기전문 법무사 검색 안내" },
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.preservation,
     ],
