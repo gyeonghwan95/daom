@@ -42,6 +42,7 @@ import {
 import { 부산개인회생법무사Override } from "./overrides/busan-personal-rehabilitation-lawyer";
 import { 부산상속전문법무사Override } from "./overrides/busan-inheritance-specialist-lawyer";
 import { specialistLawyerOverrides } from "./overrides/busan-specialist-lawyers";
+import { specialistLawyerPhase2Overrides } from "./overrides/busan-specialist-lawyers-phase2";
 import { 부산회생법무사Override } from "./overrides/busan-rehabilitation-lawyer";
 import {
   부모님사망후해야할일Override,
@@ -130,6 +131,7 @@ export { subproxyJurisdictionData } from "./overrides/busan-subproxy";
 
 const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...specialistLawyerOverrides,
+  ...specialistLawyerPhase2Overrides,
   부산개인회생법무사: 부산개인회생법무사Override,
   부산상속전문법무사: 부산상속전문법무사Override,
   부산회생법무사: 부산회생법무사Override,
