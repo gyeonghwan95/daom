@@ -1,10 +1,10 @@
 {
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "updatedAt": "2026-08-01T11:20:22.534Z",
+  "updatedAt": "2026-08-04T14:00:15.626Z",
   "urls": {
     "/": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/부산법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -16,7 +16,7 @@
     },
     "/업무사례": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
-      "lastmod": "2026-07-30"
+      "lastmod": "2026-08-02"
     },
     "/업무사례/부산법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -74,6 +74,10 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/services/real-estate-registration",
       "lastmod": "2026-07-19"
     },
+    "/개인정보처리방침": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8",
+      "lastmod": "2026-08-02"
+    },
     "/업무사례/경남법무사업무": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EB%82%A8%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4",
       "lastmod": "2026-08-01"
@@ -98,6 +102,10 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%AC%EB%9F%AC%EC%A7%80%EC%97%AD%EC%83%81%EC%86%8D%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
       "lastmod": "2026-08-01"
     },
+    "/이용약관": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80",
+      "lastmod": "2026-08-02"
+    },
     "/전국공동담보등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EA%B3%B5%EB%8F%99%EB%8B%B4%EB%B3%B4%EB%93%B1%EA%B8%B0",
       "lastmod": "2026-08-01"
@@ -112,7 +120,7 @@
     },
     "/about": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/about",
-      "lastmod": "2026-07-15"
+      "lastmod": "2026-08-02"
     },
     "/busan-legal-map": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/busan-legal-map",
@@ -1352,7 +1360,7 @@
     },
     "/부산법률강사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EA%B0%95%EC%82%AC",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/부산법률상담": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EC%83%81%EB%8B%B4",
@@ -3656,7 +3664,7 @@
     },
     "/강사소개": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%82%AC%EC%86%8C%EA%B0%9C",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강서구공장멸실등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%84%9C%EA%B5%AC%EA%B3%B5%EC%9E%A5%EB%A9%B8%EC%8B%A4%EB%93%B1%EA%B8%B0",
@@ -3856,7 +3864,7 @@
     },
     "/공공기관법률교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B3%B5%EA%B8%B0%EA%B4%80%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/공공기관법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B3%B5%EA%B8%B0%EA%B4%80%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -3980,7 +3988,7 @@
     },
     "/기업법률교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%97%85%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/기업업무문의": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%97%85%EC%97%85%EB%AC%B4%EB%AC%B8%EC%9D%98",
@@ -4240,7 +4248,7 @@
     },
     "/디지털법률교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%94%94%EC%A7%80%ED%84%B8%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/멸실등기없이토지매도": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%A9%B8%EC%8B%A4%EB%93%B1%EA%B8%B0%EC%97%86%EC%9D%B4%ED%86%A0%EC%A7%80%EB%A7%A4%EB%8F%84",
@@ -4360,7 +4368,7 @@
     },
     "/법률강의": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%A5%A0%EA%B0%95%EC%9D%98",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/법무사맡기면달라지는점": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%AC%B4%EC%82%AC%EB%A7%A1%EA%B8%B0%EB%A9%B4%EB%8B%AC%EB%9D%BC%EC%A7%80%EB%8A%94%EC%A0%90",
@@ -4400,7 +4408,7 @@
     },
     "/법무사진로특강": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%AC%B4%EC%82%AC%EC%A7%84%EB%A1%9C%ED%8A%B9%EA%B0%95",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/법무사협업": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%AC%B4%EC%82%AC%ED%98%91%EC%97%85",
@@ -5432,7 +5440,7 @@
     },
     "/전세사기예방교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EC%84%B8%EC%82%AC%EA%B8%B0%EC%98%88%EB%B0%A9%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/전자등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EC%9E%90%EB%93%B1%EA%B8%B0",
@@ -5592,7 +5600,7 @@
     },
     "/창업법률교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B0%BD%EC%97%85%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/창업법무": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B0%BD%EC%97%85%EB%B2%95%EB%AC%B4",
@@ -5612,7 +5620,7 @@
     },
     "/청년생활법률특강": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B2%AD%EB%85%84%EC%83%9D%ED%99%9C%EB%B2%95%EB%A5%A0%ED%8A%B9%EA%B0%95",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/체육단체사단법인설립": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B2%B4%EC%9C%A1%EB%8B%A8%EC%B2%B4%EC%82%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -5656,7 +5664,7 @@
     },
     "/학교법률교육": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%99%EA%B5%90%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/학교법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%99%EA%B5%90%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -5797,6 +5805,10 @@
     "/blog/busan-lawyer-jurisdiction-checklist": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-jurisdiction-checklist",
       "lastmod": "2026-07-25"
+    },
+    "/blog/busan-lawyer-recommend-office-consult": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-recommend-office-consult",
+      "lastmod": "2026-08-01"
     },
     "/blog/busan-real-estate-registration-documents": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-real-estate-registration-documents",
@@ -5976,7 +5988,7 @@
     },
     "/강의문의": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EB%AC%B8%EC%9D%98",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5",
@@ -5984,83 +5996,91 @@
     },
     "/강의이력/busan-citizen-library-life-law": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-life-law",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/busan-citizen-library-week-1": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-1",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/busan-citizen-library-week-2": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-2",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/busan-citizen-library-week-3": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-3",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/busan-citizen-library-week-4": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-4",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
+    },
+    "/강의이력/busan-self-support-daily-dispute-survival": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival",
+      "lastmod": "2026-08-02"
     },
     "/강의이력/busan-self-support-jeonse-prevention": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/changwon-youth-vision-center": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/haeundae-youth-job-growth-cafe": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-job-growth-cafe",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
+    },
+    "/강의이력/haeundae-youth-space-startup-law-2026-07": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07",
+      "lastmod": "2026-08-02"
     },
     "/강의이력/lh-busan-ccei-life-law": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/lh-busan-ccei-life-law",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/yangsan-jeil-high-career-talk": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-digital-law-guide": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-housing-contract-guide": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-jeonse-legal-education": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-jeonse-most-sought": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-jeonse-offline-session": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-jeonse-prevention-series": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-prevention-series",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-jeonse-vaccination": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-life-law-basics": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-mistake-crime-lecture": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/강의이력/youth-money-property-dispute": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute",
-      "lastmod": "2026-07-31"
+      "lastmod": "2026-08-02"
     },
     "/media/beopryul-sinmun-bar-association-64th-general-assembly": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/media/beopryul-sinmun-bar-association-64th-general-assembly",
