@@ -68,18 +68,6 @@ export const lawyerExperience: LawyerExperience[] = [
     description:
       "기획예산처 청년자문단, 부산광역시 청년정책조정위원회, 해운대구구정 정책자문위원회, 민주평화통일자문회의 자문위원으로 활동합니다.",
   },
-  {
-    period: "2020.03 ~ 2021.02",
-    title: "부산교육대학교 소프트웨어교육사업단 연구원",
-    description:
-      "기획처 소프트웨어교육사업단에서 SW·AI 교육 프로그램 개발·운영과 사업 기획·행정 업무를 담당했습니다.",
-  },
-  {
-    period: "2017.08 ~ 2019.02",
-    title: "동서대학교 교수학습개발센터 연구원",
-    description:
-      "교무처 교수학습개발센터에서 학습 프로그램 개발·운영과 연구·행정 업무를 수행했습니다.",
-  },
 ];
 
 export const lawyerCredentials: LawyerCredential[] = [

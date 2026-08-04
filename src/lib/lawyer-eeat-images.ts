@@ -58,16 +58,6 @@ export const eeatExperienceThumbs: Record<string, EeatThumbImage> = {
     "정책·위원 위촉 활동",
     imagePaths.appointmentCertificate,
   ),
-  "부산교육대학교 소프트웨어교육사업단 연구원": thumb(
-    "소개-경력-공공청년지원.jpg",
-    "부산교육대학교 소프트웨어교육사업단",
-    imagePaths.activityYouthSpace,
-  ),
-  "동서대학교 교수학습개발센터 연구원": thumb(
-    "소개-경력-공공청년지원.jpg",
-    "동서대학교 교수학습개발센터",
-    imagePaths.thumbMajorBook,
-  ),
 };
 
 /** 수상내역 — name 키 */
