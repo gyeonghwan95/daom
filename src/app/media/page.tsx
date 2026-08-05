@@ -77,7 +77,7 @@ export default function MediaPage() {
             <p className="mt-2 text-sm text-navy/65">
               다옴법무사사무소 안윤정 법무사 관련 언론 보도와 기사입니다.
             </p>
-            <ul className="listing-card-grid mt-6">
+            <ul className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8">
               {articles.map((article) => (
                 <li key={article.slug}>
                   <PressCard article={article} />

@@ -1,5 +1,6 @@
 import type { ServiceFaq } from "@/types/service";
 import { neighborhoodTopicsPhase2 } from "./neighborhood-hub-topics-phase2";
+import { neighborhoodTopicsPhase3 } from "./neighborhood-hub-topics-phase3";
 
 export type NeighborhoodTopic = {
   slug: string;
@@ -35,6 +36,7 @@ const core = {
 
 export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   ...neighborhoodTopicsPhase2,
+  ...neighborhoodTopicsPhase3,
   부산역법무사: {
     slug: "부산역법무사",
     title: "부산역 법무사",

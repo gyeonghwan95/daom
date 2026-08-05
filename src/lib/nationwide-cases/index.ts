@@ -2,6 +2,7 @@ import { nationwideServiceDefs } from "./service-defs";
 import { metroRegionDefs } from "./metro-defs";
 import { cityRegionDefs } from "./city-defs";
 import { phase4CityRegionDefs } from "./phase4-city-defs";
+import { phase5RemoteMissingDefs } from "./phase5-remote-missing";
 import { isPublishable, scoreRegionLanding } from "./quality";
 import {
   buildAllNationwideCasePageData,
@@ -20,6 +21,7 @@ function allDefsRaw(): RegionLandingDef[] {
     ...metroRegionDefs,
     ...cityRegionDefs,
     ...phase4CityRegionDefs,
+    ...phase5RemoteMissingDefs,
   ];
 }
 

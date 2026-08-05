@@ -13,9 +13,77 @@ export type PressArticle = {
   paragraphs: string[];
   image: SiteImageAsset;
   seoDescription?: string;
+  /** 목록·카드에 날짜 옆에 표시할 주제 (예: 고유가 피해지원금 제도) */
+  topic?: string;
+  /** 언론사 원문 URL */
+  originalUrl?: string;
 };
 
+function isYoutubeUrl(url: string): boolean {
+  return /youtu\.be\/|youtube\.com\//i.test(url);
+}
+
+function isNaverBlogUrl(url: string): boolean {
+  return /blog\.naver\.com/i.test(url);
+}
+
+/** 원문 링크 표시 문구 */
+export function getPressOriginalLinkLabel(
+  article: Pick<PressArticle, "source" | "originalUrl">,
+  variant: "short" | "cta" | "inline" = "short",
+): string {
+  const url = article.originalUrl ?? "";
+  if (isYoutubeUrl(url)) {
+    if (variant === "cta") return "방송 영상 보기 →";
+    if (variant === "inline") return "방송 영상";
+    return "방송 영상 보기";
+  }
+  if (isNaverBlogUrl(url)) {
+    if (variant === "cta") return "관련 블로그 글 보기 →";
+    if (variant === "inline") return "관련 블로그 글";
+    return "관련 블로그 글 보기";
+  }
+  if (variant === "cta") return `${article.source} 원문 기사 보기 →`;
+  if (variant === "inline") return `${article.source} 원문 기사`;
+  return `${article.source} 원문 보기`;
+}
+
 const pressArticles: PressArticle[] = [
+  {
+    slug: "weeklypeople-youth-judicial-scrivener-ahn",
+    source: "주간인물",
+    title: "지역 법조계에 활력이 되는 청년 법무사! - 안윤정 다옴법무사사무소 대표 법무사",
+    publishedAt: "2026-08-04T00:00:00",
+    publishedAtDisplay: "2026-08-04",
+    reporter: "박미희 기자",
+    image: siteImages.press.weeklyPeople260804,
+    originalUrl: "http://www.weeklypeople.co.kr/news/view.php?no=6075",
+    seoDescription:
+      "주간인물 인터뷰. 안윤정 다옴법무사사무소 대표 법무사 — 대한법무사협회 표창, 해운대 센텀 청년채움공간 개소, 생활법률 강연·정책 자문 활동.",
+    paragraphs: [
+      "최근 안윤정 법무사가 대한법무사협회 표창을 수상했다. 부산 해운대구 센텀동로에서 다옴법무사사무소를 운영하는 안 법무사는 열린 법무사 사무실을 표방하며, 전세사기 예방 안내를 비롯한 생활 법률 강연과 무료 법률 상담으로 법률 사각지대에 있는 이웃을 돕고 있다.",
+      "부산광역시 청년정책조정위원회 전문가 위원, 해운대구정정책자문위원단 자문위원, 기획예산처 1기 청년자문단 등 다양한 활동을 통해 현장의 목소리를 정책에 전하고 있다. 주간인물은 지역 법조계에 활력이 되는 청년 법무사, 안윤정 법무사의 이야기를 담았다.",
+      "안 법무사는 비법대 출신으로 2년 6개월 만에 제30회 법무사 시험에 합격했다. 통상 법원 앞에 밀집한 법무사 사무실과 달리, 해운대구 센텀동로 청년채움공간에 사무소를 개소해 창업자·상속·부동산·법인·회생 등 생활 법률 상담의 문턱을 낮추고 있다. 상담부터 서류 준비·접수까지 직접 진행하는 방식을 강조한다.",
+      "부산광역시립시민도서관·부산광역시 자립지원전담기관 등에서 전·월세 계약과 전세사기 예방, 생활 속 분쟁을 주제로 강연하고 있으며, 2025년에는 명례일반산업단지 기업들과 법률 지원 MOU를 체결해 등기·계약·분쟁 예방 자문을 수행했다. 민주평화통일자문회의 자문위원 등 대외 활동도 이어가며, 의뢰인 현장과 정책 사이의 공백을 줄이는 데 기여하겠다는 뜻을 밝혔다.",
+    ],
+  },
+  {
+    slug: "busan-mbc-news-fuel-price-relief-expert",
+    source: "부산 MBC NEWS",
+    title: "부산 MBC NEWS 전문가 출연",
+    publishedAt: "2026-06-24T00:00:00",
+    publishedAtDisplay: "2026.06.24",
+    topic: "고유가 피해지원금 제도",
+    image: siteImages.press.mbcInterview260624,
+    originalUrl: "https://youtu.be/QNJ1Wn9gcxs",
+    seoDescription:
+      "부산 MBC NEWS 고유가 피해지원금 제도 관련 전문가 촬영. 안윤정 법무사 출연.",
+    paragraphs: [
+      "안윤정 법무사가 부산 MBC NEWS 고유가 피해지원금 제도 관련 전문가 촬영에 참여했습니다. 고유가 피해지원금과 관련해 실무 현장에서 확인되는 상담 사례와 제도 이용 시 유의점을 전달했습니다.",
+      "방송 출연은 제도 안내를 넘어, 일상에서 법률 문제로 어려움을 겪는 시민이 상담을 통해 절차를 이해하고 다음 단계를 준비할 수 있도록 돕는 법무사의 역할을 강조하는 계기가 됐습니다.",
+      "고유가 피해지원금·생활 법률 문의는 상담을 통해 개별 상황에 맞는 서류와 신청 절차를 확인하시면 됩니다. 관련 영상은 YouTube에서 확인하실 수 있습니다.",
+    ],
+  },
   {
     slug: "busan-ilbo-bar-association-64th-general-assembly",
     source: "부산일보",
@@ -24,6 +92,8 @@ const pressArticles: PressArticle[] = [
     publishedAtDisplay: "2026-06-08 14:53",
     reporter: "김동주 기자",
     image: siteImages.press.busanIlbo260608,
+    originalUrl:
+      "https://www.busan.com/view/busan/view.php?code=2026060813093104520",
     seoDescription:
       "부산지방법무사회 제64회 정기총회 개최. 안윤정 법무사 대한법무사협회 표창 수상.",
     paragraphs: [
@@ -41,6 +111,8 @@ const pressArticles: PressArticle[] = [
     publishedAtDisplay: "2026-06-03 23:26",
     reporter: "임훈 기자",
     image: siteImages.press.kukjeSinmun260603,
+    originalUrl:
+      "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2100&key=20260604.22017000978",
     seoDescription:
       "부산지방법무사회 제64회 정기총회. 공익 법률서비스 확대 강화. 안윤정 법무사 대한법무사협회 표창.",
     paragraphs: [
@@ -56,7 +128,9 @@ const pressArticles: PressArticle[] = [
     title: "부산지방법무사회, 제64회 정기총회 개최",
     publishedAt: "2026-06-02T20:53:00",
     publishedAtDisplay: "2026.06.02 20:53",
+    reporter: "안재명 기자",
     image: siteImages.press.beopryulSinmun260602,
+    originalUrl: "https://www.lawtimes.co.kr/news/articleView.html?idxno=221506",
     seoDescription:
       "부산지방법무사회 제64회 정기총회 개최. 안윤정 법무사 대한법무사협회 표창패 수상.",
     paragraphs: [

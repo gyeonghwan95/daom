@@ -101,8 +101,8 @@ const CASE_IMAGES = {
 };
 
 const PRESS_IMAGE_BY_KEY = {
-  busanIlbo260608: "/image/언론-부산일보-260608.jpg",
-  kukjeSinmun260603: "/image/언론-국제신문-260603.jpg",
+  busanIlbo260608: "/image/언론-부산일보-260608.png",
+  kukjeSinmun260603: "/image/언론-국제신문-260603.png",
   beopryulSinmun260602: "/image/언론-법률신문-260602.png",
 };
 

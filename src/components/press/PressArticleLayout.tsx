@@ -4,7 +4,10 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { SiteImage } from "@/components/media/SiteImage";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { PressHighlightText } from "@/components/press/PressHighlightText";
-import type { PressArticle } from "@/lib/press-articles";
+import {
+  getPressOriginalLinkLabel,
+  type PressArticle,
+} from "@/lib/press-articles";
 
 type PressArticleLayoutProps = {
   article: PressArticle;
@@ -16,6 +19,15 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
     { label: "언론·활동", href: "/media" },
     { label: article.title },
   ];
+  const originalCta = article.originalUrl
+    ? getPressOriginalLinkLabel(article, "cta")
+    : null;
+  const originalInline = article.originalUrl
+    ? getPressOriginalLinkLabel(article, "inline")
+    : null;
+  const originalShort = article.originalUrl
+    ? getPressOriginalLinkLabel(article, "short")
+    : null;
 
   return (
     <PageContainer>
@@ -33,8 +45,24 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
           <h1 className="page-title mt-4">{article.title}</h1>
           <p className="mt-4 text-sm text-navy/60 md:text-base">
             {article.publishedAtDisplay}
-            {article.reporter ? ` · ${article.reporter}` : ""}
+            {article.topic
+              ? ` · ${article.topic}`
+              : article.reporter
+                ? ` · ${article.reporter}`
+                : ""}
           </p>
+          {article.originalUrl && originalCta ? (
+            <p className="mt-4">
+              <a
+                href={article.originalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-10 items-center text-sm font-semibold text-navy-light underline-offset-4 hover:underline md:text-base"
+              >
+                {originalCta}
+              </a>
+            </p>
+          ) : null}
         </header>
 
         <div className="mt-8 overflow-hidden rounded-xl border border-beige-dark">
@@ -64,11 +92,33 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
               </p>
             ))}
           </div>
+          {article.originalUrl && originalInline ? (
+            <p className="mt-8 rounded-lg border border-beige-dark bg-beige/40 px-4 py-3 text-sm text-navy/80 md:text-base">
+              이 페이지는 보도·출연 내용을 요약한 안내입니다.{" "}
+              <a
+                href={article.originalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-navy-light underline-offset-4 hover:underline"
+              >
+                {originalInline}
+              </a>
+              에서 더 자세히 확인하실 수 있습니다.
+            </p>
+          ) : null}
         </section>
 
         <RelatedLinks
           title="관련 페이지"
           links={[
+            ...(article.originalUrl && originalShort
+              ? [
+                  {
+                    href: article.originalUrl,
+                    label: originalShort,
+                  },
+                ]
+              : []),
             { href: "/media#press", label: "언론보도 목록" },
             { href: "/media", label: "언론·활동" },
             { href: "/about", label: "법무사 소개" },

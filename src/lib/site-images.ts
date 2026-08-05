@@ -81,8 +81,9 @@ export const imagePaths = {
   contactPhoneConsult: "/image/상담-전화.png",
   contactInPersonConsult: "/image/상담-대면.png",
   contactOnSiteConsult: "/image/상담-출장.png",
-  pressBusanIlbo20260608: "/image/언론-부산일보-260608.jpg",
-  pressKukjeSinmun20260603: "/image/언론-국제신문-260603.jpg",
+  pressWeeklyPeople20260804: "/image/언론-주간인물-260804.png",
+  pressBusanIlbo20260608: "/image/언론-부산일보-260608.png",
+  pressKukjeSinmun20260603: "/image/언론-국제신문-260603.png",
   pressBeopryulSinmun20260602: "/image/언론-법률신문-260602.png",
   pressMbcInterview: "/image/썸네일-MBC인터뷰.png",
   stockLegalDocuments: "/image/썸네일-서류등기.jpg",
@@ -337,6 +338,20 @@ export const siteImages = {
   },
 
   press: {
+    weeklyPeople260804: img(
+      imagePaths.pressWeeklyPeople20260804,
+      "주간인물 — 지역 법조계에 활력이 되는 청년 법무사 안윤정",
+      1200,
+      800,
+      false,
+    ),
+    mbcInterview260624: img(
+      imagePaths.pressMbcInterview,
+      "부산 MBC NEWS — 고유가 피해지원금 제도 전문가 출연",
+      1200,
+      800,
+      false,
+    ),
     busanIlbo260608: img(
       imagePaths.pressBusanIlbo20260608,
       "부산일보 — 부산지방법무사회 제64회 정기총회",
@@ -358,7 +373,7 @@ export const siteImages = {
       800,
       false,
     ),
-    cover: img(imagePaths.pressBusanIlbo20260608, "언론보도", 1400, 600, false),
+    cover: img(imagePaths.pressWeeklyPeople20260804, "언론보도", 1400, 600, false),
   },
 
   location: {

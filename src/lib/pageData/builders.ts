@@ -3,6 +3,7 @@ import type { LocalLandingPage } from "@/types/local-landing";
 import type { ServiceDetail } from "@/types/service";
 import type { ContentMeta } from "@/types/content-mdx";
 import type { PressArticle } from "@/lib/press-articles";
+import { getPressOriginalLinkLabel } from "@/lib/press-articles";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
 import type { NaverBlogPost } from "@/lib/naver-blog/types";
 import { getServiceLabel } from "@/lib/content/loader";
@@ -773,15 +774,39 @@ export function buildPageDataFromPress(article: PressArticle): PageData {
       body: "언론 보도 내용은 당시 활동을 기록한 것이며, 개별 법률 사건 상담과는 별도입니다. 상속·등기·회생 등 구체적 문의는 상담 채널을 이용해 주세요.",
     },
     internalLinks: [
+      ...(article.originalUrl
+        ? [
+            {
+              href: article.originalUrl,
+              label: getPressOriginalLinkLabel(article, "short"),
+            },
+          ]
+        : []),
       { href: "/media", label: "언론·활동 목록" },
       { href: "/about", label: "법무사 소개" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },
     ],
-    sections: article.paragraphs.map((paragraph, index) => ({
-      title: index === 0 ? "보도 내용" : `이어지는 내용`,
-      body: paragraph,
-    })),
+    sections: [
+      ...(article.originalUrl
+        ? [
+            {
+              title: "원문 기사",
+              body: `${article.source} 원문(또는 방송)을 아래 링크에서 확인하실 수 있습니다.`,
+              links: [
+                {
+                  href: article.originalUrl,
+                  label: getPressOriginalLinkLabel(article, "short"),
+                },
+              ],
+            },
+          ]
+        : []),
+      ...article.paragraphs.map((paragraph, index) => ({
+        title: index === 0 ? "보도 내용" : `이어지는 내용`,
+        body: paragraph,
+      })),
+    ],
     primaryKeywords: [
       article.source,
       "안윤정 법무사",

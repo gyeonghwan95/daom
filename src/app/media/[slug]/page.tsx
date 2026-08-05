@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageContainer } from "@/components/layout/PageContainer";
-import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import { PressArticleLayout } from "@/components/press/PressArticleLayout";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveMediaPageData } from "@/lib/pageData/resolvers";
@@ -37,9 +36,9 @@ export default async function MediaPressArticlePage({ params }: Props) {
   if (!page || !article) notFound();
 
   return (
-    <PageContainer>
+    <>
       <JsonLd data={buildNewsArticleSchema(article)} />
-      <PageDataTemplate page={page} />
-    </PageContainer>
+      <PressArticleLayout article={article} />
+    </>
   );
 }

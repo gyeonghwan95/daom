@@ -884,7 +884,7 @@ export const PAGE_IMAGE_MANIFEST: PageImageManifestItem[] = [
     bodyImageRequired: false,
     cardImageRequired: false,
     carouselCandidate: false,
-    existingImage: "/image/언론-부산일보-260608.jpg",
+    existingImage: "/image/언론-부산일보-260608.png",
     status: "existing-review",
   }),
 ];

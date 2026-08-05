@@ -165,6 +165,14 @@ export const lawyerActivities: LawyerActivity[] = [
     summary: "동부지원 무료법률상담에 참여해 시민 법률 접근성을 높입니다.",
   },
   {
+    title: "주간인물 인터뷰",
+    organization: "주간인물",
+    category: "언론",
+    period: "2026.08.04",
+    summary:
+      "지역 법조계에 활력이 되는 청년 법무사로 소개됐습니다. 대한법무사협회 표창, 센텀 청년채움공간 개소, 생활법률 강연·정책 자문 활동이 조명됐습니다.",
+  },
+  {
     title: "부산 MBC NEWS 전문가 출연",
     organization: "부산 MBC NEWS",
     category: "언론",

@@ -4,6 +4,7 @@ import { daeguPhase1Defs } from "./daegu-phase1";
 import { gyeongbukPhase1Defs } from "./gyeongbuk-phase1";
 import { gyeongbukRemotePhase2Defs } from "./gyeongbuk-remote-phase2";
 import { gyeongbukPhase3RemoteDefs } from "./gyeongbuk-phase3-remote";
+import { gyeongbukPhase4RemoteDefs } from "./gyeongbuk-phase4-remote";
 import { southeastPhase2Defs } from "./phase2-defs";
 import { isSoutheastPublishable, scoreSoutheastLanding } from "./quality";
 import {
@@ -37,6 +38,7 @@ function allDefsRaw(): SoutheastLandingDef[] {
     ...gyeongbukPhase1Defs,
     ...gyeongbukRemotePhase2Defs,
     ...gyeongbukPhase3RemoteDefs,
+    ...gyeongbukPhase4RemoteDefs,
     ...southeastPhase2Defs,
   ];
 }

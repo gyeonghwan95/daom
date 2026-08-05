@@ -33,8 +33,8 @@ const RENAME_MAP = {
   "contact-phone-consult.png": "상담-전화.png",
   "contact-in-person-consult.png": "상담-대면.png",
   "contact-on-site-consult.png": "상담-출장.png",
-  "press-busan-ilbo-20260608.jpg": "언론-부산일보-260608.jpg",
-  "press-kukje-sinmun-20260603.jpg": "언론-국제신문-260603.jpg",
+  "press-busan-ilbo-20260608.jpg": "언론-부산일보-260608.png",
+  "press-kukje-sinmun-20260603.jpg": "언론-국제신문-260603.png",
   "press-beopryul-sinmun-20260602.png": "언론-법률신문-260602.png",
   "stock-legal-documents.jpg": "썸네일-서류등기.jpg",
   "stock-legal-consultation.jpg": "썸네일-상담협의.jpg",
@@ -58,8 +58,8 @@ const RENAME_MAP = {
   "office/명판가로.jpg": "사무소-명판가로.jpg",
   "office/doc.jpg": "사무소-서류.jpg",
   "office/office.jpg": "사무소-내부.jpg",
-  "press/부산일보260608.jpg": "언론-부산일보-260608.jpg",
-  "press/국제신문260603.jpg": "언론-국제신문-260603.jpg",
+  "press/부산일보260608.jpg": "언론-부산일보-260608.png",
+  "press/국제신문260603.jpg": "언론-국제신문-260603.png",
   "press/법률신문260602.png": "언론-법률신문-260602.png",
 };
 

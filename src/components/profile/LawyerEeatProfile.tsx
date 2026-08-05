@@ -73,20 +73,41 @@ function EeatSection({
   id,
   title,
   children,
+  moreHref,
+  showMore = false,
 }: {
   id: string;
   title: string;
   children: ReactNode;
+  moreHref?: string;
+  showMore?: boolean;
 }) {
+  const headingId = `${id}-heading`;
+  const more = Boolean(showMore && moreHref);
+
   return (
     <section
       id={id}
       className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-      aria-labelledby={`${id}-heading`}
+      aria-labelledby={headingId}
     >
-      <h3 id={`${id}-heading`} className="text-lg font-bold text-navy md:text-xl">
-        {title}
-      </h3>
+      <div className="eeat-section-head">
+        <h3 id={headingId} className="eeat-section-title">
+          {title}
+        </h3>
+        {more ? (
+          <Link
+            href={moreHref!}
+            className="eeat-section-more"
+            aria-label={`${title} 더보기`}
+          >
+            <span className="eeat-section-more__label">더보기</span>
+            <span className="eeat-section-more__chevron" aria-hidden="true">
+              ›
+            </span>
+          </Link>
+        ) : null}
+      </div>
       {children}
     </section>
   );
@@ -96,29 +117,33 @@ function sliceItems<T>(items: T[], compact: boolean, limit = 2): T[] {
   return compact ? items.slice(0, limit) : items;
 }
 
+function hasMoreItems(total: number, compact: boolean, limit = 2): boolean {
+  return compact && total > limit;
+}
+
 export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) {
   const compact = variant === "compact";
   const pressArticles = getAllPressArticles();
   const naverBlog = getNaverBlogUrl();
 
-  const pressItems: EeatFact[] = [
-    {
-      term: "부산 MBC NEWS 전문가 출연",
-      meta: "2026.06.24 · 고유가 피해지원금 제도",
-      description:
-        "고유가 피해지원금 제도 관련 전문가 촬영에 참여했습니다.",
-      image: eeatPressExtraThumbs["부산 MBC NEWS 전문가 출연"],
+  const pressFromArticles: EeatFact[] = pressArticles.map((article) => ({
+    term: article.title,
+    meta: [
+      article.source,
+      article.publishedAtDisplay,
+      article.topic,
+    ]
+      .filter(Boolean)
+      .join(" · "),
+    description: article.seoDescription ?? article.paragraphs[0] ?? "",
+    href: getPressArticleHref(article.slug),
+    image: {
+      src: article.image.src,
+      alt: article.image.alt,
     },
-    ...sliceItems(pressArticles, compact, 3).map((article) => ({
-      term: article.title,
-      meta: `${article.source} · ${article.publishedAtDisplay}`,
-      description: article.seoDescription ?? article.paragraphs[0] ?? "",
-      href: getPressArticleHref(article.slug),
-      image: {
-        src: article.image.src,
-        alt: article.image.alt,
-      },
-    })),
+  }));
+
+  const pressExtras: EeatFact[] = [
     {
       term: "법률 칼럼·실무 사례",
       meta: "다옴법무사사무소 네이버 블로그",
@@ -135,9 +160,10 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
     },
   ];
 
-  if (compact) {
-    pressItems.splice(3);
-  }
+  // 메인(compact)에서는 등록된 언론 기사 전체를 노출하고, 소개 페이지에서는 기고까지 포함
+  const pressItems: EeatFact[] = compact
+    ? pressFromArticles
+    : [...pressFromArticles, ...pressExtras];
 
   return (
     <section
@@ -178,7 +204,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
         </div>
 
         <div className={`space-y-8 ${compact ? "mt-10" : "mt-8"}`}>
-          <EeatSection id="experience" title="실무경력">
+          <EeatSection
+            id="experience"
+            title="실무경력"
+            moreHref="/about#experience"
+            showMore={hasMoreItems(lawyerExperience.length, compact)}
+          >
             <EeatFactList
               items={sliceItems(lawyerExperience, compact).map((item) => ({
                 term: item.title,
@@ -189,7 +220,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             />
           </EeatSection>
 
-          <EeatSection id="credentials" title="자격사항">
+          <EeatSection
+            id="credentials"
+            title="자격사항"
+            moreHref="/about#credentials"
+            showMore={hasMoreItems(getLawyerQualifications().length, compact, 6)}
+          >
             <EeatFactList
               items={sliceItems(getLawyerQualifications(), compact, 6).map(
                 (item) => ({
@@ -201,9 +237,14 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             />
           </EeatSection>
 
-          <EeatSection id="awards" title="수상내역">
+          <EeatSection
+            id="awards"
+            title="수상내역"
+            moreHref="/about#awards"
+            showMore={hasMoreItems(getLawyerAwards().length, compact)}
+          >
             <EeatFactList
-              items={getLawyerAwards().map((item) => ({
+              items={sliceItems(getLawyerAwards(), compact).map((item) => ({
                 term: item.name,
                 meta: [item.year, item.category].filter(Boolean).join(" · "),
                 description: item.detail ?? "",
@@ -212,7 +253,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             />
           </EeatSection>
 
-          <EeatSection id="appointments" title="위원 위촉">
+          <EeatSection
+            id="appointments"
+            title="위원 위촉"
+            moreHref="/about#appointments"
+            showMore={hasMoreItems(getLawyerAppointments().length, compact)}
+          >
             <EeatFactList
               items={sliceItems(getLawyerAppointments(), compact).map((item) => ({
                 term: item.title,
@@ -223,7 +269,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             />
           </EeatSection>
 
-          <EeatSection id="lectures" title="강의활동">
+          <EeatSection
+            id="lectures"
+            title="강의활동"
+            moreHref="/강의이력"
+            showMore={hasMoreItems(lawyerLectures.length, compact)}
+          >
             <EeatFactList
               items={sliceItems(lawyerLectures, compact).map((item) => ({
                 term: item.venue,
@@ -236,7 +287,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             />
           </EeatSection>
 
-          <EeatSection id="press" title="언론 및 기고">
+          <EeatSection
+            id="press"
+            title="언론 및 기고"
+            moreHref="/media#press"
+            showMore={compact}
+          >
             <EeatFactList items={pressItems} />
           </EeatSection>
 

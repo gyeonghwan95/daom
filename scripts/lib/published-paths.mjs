@@ -627,6 +627,8 @@ function readCaseRegionPaths() {
       "service-defs.ts",
       "metro-defs.ts",
       "city-defs.ts",
+      "phase4-city-defs.ts",
+      "phase5-remote-missing.ts",
     ]) {
       const filePath = path.join(nationwideDir, file);
       if (!fs.existsSync(filePath)) continue;
@@ -650,7 +652,13 @@ function readCaseRegionPaths() {
   // 경남 전용 랜딩 (gyeongnam-cases) — published:true 만
   const gyeongnamDir = path.join(ROOT, "src/lib/gyeongnam-cases");
   if (fs.existsSync(gyeongnamDir)) {
-    for (const file of ["phase1-defs.ts", "phase2-defs.ts"]) {
+    for (const file of [
+      "phase1-defs.ts",
+      "phase-remote-inheritance.ts",
+      "phase2-remote-inheritance.ts",
+      "phase3-inland-inheritance.ts",
+      "phase4-uireong.ts",
+    ]) {
       const filePath = path.join(gyeongnamDir, file);
       if (!fs.existsSync(filePath)) continue;
       const text = fs.readFileSync(filePath, "utf8");
@@ -658,19 +666,10 @@ function readCaseRegionPaths() {
         const slugMatch = chunk.match(/slug:\s*"([^"]+)"/);
         if (!slugMatch) continue;
         if (/published:\s*false/.test(chunk)) continue;
-        // phase2 draft() defaults published false — skip if file is phase2
-        if (file === "phase2-defs.ts") continue;
         paths.add(`/업무사례/${slugMatch[1]}`);
       }
     }
-    // phase1: all slugs (helper forces published true)
-    const phase1 = path.join(gyeongnamDir, "phase1-defs.ts");
-    if (fs.existsSync(phase1)) {
-      const text = fs.readFileSync(phase1, "utf8");
-      for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
-        paths.add(`/업무사례/${match[1]}`);
-      }
-    }
+    // phase2-defs.ts is draft-heavy — skip (existing behavior)
   }
 
   // 울산·대구·경북 전용 랜딩 (southeast-cases) — published:true 만
@@ -678,13 +677,15 @@ function readCaseRegionPaths() {
   if (fs.existsSync(southeastDir)) {
     for (const file of [
       "ulsan-phase1.ts",
+      "ulsan-remote-inheritance.ts",
       "daegu-phase1.ts",
       "gyeongbuk-phase1.ts",
-      "phase2-defs.ts",
+      "gyeongbuk-remote-phase2.ts",
+      "gyeongbuk-phase3-remote.ts",
+      "gyeongbuk-phase4-remote.ts",
     ]) {
       const filePath = path.join(southeastDir, file);
       if (!fs.existsSync(filePath)) continue;
-      if (file === "phase2-defs.ts") continue;
       const text = fs.readFileSync(filePath, "utf8");
       for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
         paths.add(`/업무사례/${match[1]}`);

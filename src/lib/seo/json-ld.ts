@@ -321,6 +321,7 @@ type PressArticleInput = {
   paragraphs: string[];
   image: { src: string; alt?: string };
   seoDescription?: string;
+  originalUrl?: string;
 };
 
 export function buildNewsArticleSchema(article: PressArticleInput): SchemaObject {
@@ -340,6 +341,9 @@ export function buildNewsArticleSchema(article: PressArticleInput): SchemaObject
     publisher: { "@id": schemaIds.organization },
     articleSection: article.source,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    ...(article.originalUrl
+      ? { isBasedOn: article.originalUrl, sameAs: [article.originalUrl] }
+      : {}),
   });
 }
 
