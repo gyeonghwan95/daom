@@ -32,6 +32,20 @@ type LawyerEeatProfileProps = {
   variant?: "full" | "compact";
 };
 
+function EeatFactTerm({ item }: { item: EeatFact }) {
+  if (item.href) {
+    return (
+      <Link
+        href={item.href}
+        className="underline-offset-4 hover:text-navy-light hover:underline"
+      >
+        {item.term}
+      </Link>
+    );
+  }
+  return item.term;
+}
+
 function EeatFactList({ items }: { items: EeatFact[] }) {
   return (
     <dl className="eeat-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -42,16 +56,7 @@ function EeatFactList({ items }: { items: EeatFact[] }) {
         >
           <div className="min-w-0 flex-1">
             <dt className="text-base font-semibold leading-snug text-navy md:text-lg">
-              {item.href ? (
-                <Link
-                  href={item.href}
-                  className="underline-offset-4 hover:text-navy-light hover:underline"
-                >
-                  {item.term}
-                </Link>
-              ) : (
-                item.term
-              )}
+              <EeatFactTerm item={item} />
             </dt>
             {item.meta ? (
               <dd className="mt-1 text-xs font-medium text-navy-light md:text-sm">
@@ -66,6 +71,57 @@ function EeatFactList({ items }: { items: EeatFact[] }) {
         </div>
       ))}
     </dl>
+  );
+}
+
+/** 제목 100% → 하위 본문·이미지를 기존 비율(flex-1 : 썸네일)로 병렬 배치 */
+function EeatStackedFactList({ items }: { items: EeatFact[] }) {
+  return (
+    <dl className="eeat-stacked-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      {items.map((item) => (
+        <div
+          key={`${item.term}-${item.meta ?? ""}`}
+          className="eeat-stacked-fact flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4"
+        >
+          <dt className="w-full text-base font-semibold leading-snug text-navy md:text-lg">
+            <EeatFactTerm item={item} />
+          </dt>
+          <div className="eeat-stacked-fact__body mt-2 flex min-h-0 flex-1 items-center gap-3 md:gap-4">
+            <div className="min-w-0 flex-1">
+              {item.meta ? (
+                <dd className="text-xs font-medium text-navy-light md:text-sm">
+                  {item.meta}
+                </dd>
+              ) : null}
+              <dd
+                className={
+                  item.meta
+                    ? "mt-2 text-sm leading-relaxed text-navy/75 md:text-base"
+                    : "text-sm leading-relaxed text-navy/75 md:text-base"
+                }
+              >
+                {item.description}
+              </dd>
+            </div>
+            <EeatFactThumb image={item.image} />
+          </div>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function EeatProfileFactList({
+  items,
+  stacked,
+}: {
+  items: EeatFact[];
+  stacked: boolean;
+}) {
+  return stacked ? (
+    <EeatStackedFactList items={items} />
+  ) : (
+    <EeatFactList items={items} />
   );
 }
 
@@ -210,7 +266,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/about#experience"
             showMore={hasMoreItems(lawyerExperience.length, compact)}
           >
-            <EeatFactList
+            <EeatProfileFactList
+              stacked={!compact}
               items={sliceItems(lawyerExperience, compact).map((item) => ({
                 term: item.title,
                 meta: item.period,
@@ -259,7 +316,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/about#appointments"
             showMore={hasMoreItems(getLawyerAppointments().length, compact)}
           >
-            <EeatFactList
+            <EeatProfileFactList
+              stacked={!compact}
               items={sliceItems(getLawyerAppointments(), compact).map((item) => ({
                 term: item.title,
                 meta: [item.organization, item.period].filter(Boolean).join(" · "),
@@ -275,7 +333,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/강의이력"
             showMore={hasMoreItems(lawyerLectures.length, compact)}
           >
-            <EeatFactList
+            <EeatProfileFactList
+              stacked={!compact}
               items={sliceItems(lawyerLectures, compact).map((item) => ({
                 term: item.venue,
                 meta: [item.topic, item.period, item.audience && `대상: ${item.audience}`]
@@ -293,7 +352,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/media#press"
             showMore={compact}
           >
-            <EeatFactList items={pressItems} />
+            <EeatProfileFactList stacked={!compact} items={pressItems} />
           </EeatSection>
 
           <EeatSection id="practice-areas" title="전문분야">
