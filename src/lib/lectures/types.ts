@@ -167,6 +167,11 @@ export type LectureModule = {
   bullets?: string[];
 };
 
+export type LectureBodySection = {
+  title: string;
+  paragraphs: string[];
+};
+
 export type LecturePageContent = {
   slug: string;
   kind: LecturePageKind;
@@ -177,6 +182,8 @@ export type LecturePageContent = {
   eyebrow: string;
   heroIntro: string;
   heroParagraphs: string[];
+  /** 요약 이후 본문 — 담당자가 읽을 수 있는 설명문 */
+  bodySections?: LectureBodySection[];
   summaryItems: LectureSummaryItem[];
   topicCards: LectureTopicCard[];
   audienceCards: LectureAudienceCard[];
@@ -197,7 +204,10 @@ export type LecturePageContent = {
   showInquiryForm?: boolean;
   showRecommendTool?: boolean;
   showPrintProfile?: boolean;
+  showFormatGuide?: boolean;
+  showTopicFinder?: boolean;
   primaryKeywords?: string[];
+  secondaryKeywords?: string[];
 };
 
 export const LECTURE_INSTITUTION_TYPE_LABELS: Record<

@@ -17,6 +17,11 @@ const serviceBySlug: Record<string, string> = {
   부산도서관법률특강: "inheritance-registration",
   부산법무사강의: "inheritance-registration",
   부산기관법률특강: "corporate-registration",
+  부산사회복지기관강사: "inheritance-registration",
+  부산강사섭외비용: "inheritance-registration",
+  부산강사섭외체크리스트: "inheritance-registration",
+  기관특강주제추천: "inheritance-registration",
+  강의시간별구성: "inheritance-registration",
 };
 
 export const lectureLandingConfigs: LocalLandingConfig[] =

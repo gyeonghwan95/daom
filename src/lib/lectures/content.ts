@@ -2,6 +2,11 @@ import type { LecturePageContent } from "@/lib/lectures/types";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { institutionExpansionPages } from "@/lib/lectures/content-institution-expansion";
 import {
+  getHiringHubBodySections,
+  hiringHubEnrichment,
+  speakerExpansionPages,
+} from "@/lib/lectures/content-speaker-expansion";
+import {
   commonDisclaimer,
   durationOptionsDefault,
   lectureFormatsDefault,
@@ -190,96 +195,140 @@ const hub: LecturePageContent = {
 const hiring: LecturePageContent = {
   slug: "부산법률강사",
   kind: "hiring",
-  title: "부산 법률 강사 섭외",
-  metaTitle: "부산 법률 강사 섭외｜기관·도서관·학교·기업 생활법률 특강",
+  title: "부산 강사 초빙",
+  metaTitle: "부산 강사 초빙｜기관·기업·청년 대상 사례 중심 실무 특강",
   metaDescription:
-    "부산 법률 강사 섭외·법무사 출강. 도서관·기관·학교·기업 생활법률 특강. 전세사기 예방·청년·창업 교육을 기관 목적에 맞춰 기획합니다.",
-  h1: "부산 법률 강사 섭외｜대상과 목적에 맞춘 생활법률 특강",
-  eyebrow: "기관 담당자 강사 검토",
+    "공공기관·기업·청년기관·도서관·사회복지기관을 대상으로 생활분쟁, 주거안전, 창업·기업 법률, 상속과 재산정리 등 사례 중심 교육을 진행합니다. 대상과 시간에 맞춘 강의주제, 커리큘럼과 출강 가능 일정을 확인할 수 있습니다.",
+  h1: "부산에서 실무형 특강 강사를 찾고 계신가요?",
+  eyebrow: "부산 강사 초빙 · 출강 · 섭외",
   heroIntro:
-    "교육 목적에 맞는지 바로 검토할 수 있도록, 확인된 이력·주제·프로필만 짧게 모았습니다. 부산에서 법률 강사·법무사 강의를 찾는 담당자용입니다.",
+    "부산을 중심으로 공공기관·기업·청년기관·도서관·복지기관의 출강 문의를 받고 있습니다. 교육 대상과 목적에 따라 60분 특강부터 2시간 사례형 교육, 집중과정까지 주제를 조정할 수 있습니다.",
   heroParagraphs: [
-    "공공·학교·청년기관·기업 교육담당자용입니다. 확인된 강의 이력만 제시합니다.",
+    "기관 담당자가 ‘부산 강사 초빙’, ‘부산 특강 강사’, ‘외부강사 섭외’로 검색할 때 먼저 확인하는 것은 지역과 교육 목적입니다. 이 페이지는 안윤정 법무사의 확인된 강의 이력·가능 주제·진행 방식·문의 절차를 한곳에 모아, 우리 기관에 맞는지 빠르게 판단할 수 있도록 구성했습니다.",
+    "법률 용어 중심의 일방 설명이 아니라, 등기부·계약서·카카오톡·통화녹음처럼 현실에서 마주치는 자료를 기준으로 사례형 교육을 설계합니다. 대상·시간에 따라 커리큘럼을 조정하며, 강의 후 바로 활용할 수 있는 체크리스트를 남기는 방식을 우선합니다.",
+    "리더십·마케팅·재테크·세무·노무처럼 법무사 업무 범위를 벗어난 주제는 다루지 않습니다. 청렴·성희롱예방 등 법정 지정교육도 범위에 넣지 않습니다. 확인되지 않은 출강 횟수나 만족도 표현은 사용하지 않습니다.",
   ],
+  bodySections: getHiringHubBodySections(),
   summaryItems: [
-    { label: "적합 목표", value: "예방교육 · 실무 기초 · 진로 특강" },
-    { label: "비대상", value: "법정 지정교육(청렴·성희롱예방 등)" },
-    { label: "형식", value: "특강 · 워크숍 · 온라인 협의" },
-    { label: "지역", value: "부산 · 인근(협의)" },
+    { label: "출강지역", value: "부산 중심 · 인근·온라인 협의" },
+    { label: "주요 대상", value: "공공 · 기업 · 청년 · 시민 · 종사자" },
+    { label: "기본 시간", value: "60분 · 90~120분 · 3~4시간" },
+    { label: "자료", value: "프로필·강의계획서 요청 가능" },
   ],
   topicCards: hub.topicCards,
-  audienceCards: [],
-  institutionCards: [],
-  formats: [],
-  durationOptions: [],
-  modules: [],
-  processSteps: [],
-  preparationChecklist: [],
-  materialExamples: [],
+  audienceCards: [
+    { title: "공공기관", description: "직원·상담·시민 대상 실무교육" },
+    { title: "기업·협회", description: "계약·미수금·법인 실무" },
+    { title: "청년기관", description: "주거·계약·금전관리" },
+    { title: "도서관·시민", description: "생활법률·연속강좌" },
+    { title: "복지·자립지원", description: "종사자·이용자 현장교육" },
+    { title: "학교·진로", description: "생활법률·진로 특강(제안)" },
+  ],
+  institutionCards: [
+    {
+      title: "기관 유형별 바로가기",
+      topics: [
+        "공공기관 법률교육",
+        "기업 법률교육",
+        "청년 생활법률",
+        "사회복지기관 강사",
+        "도서관 법률특강",
+      ],
+    },
+  ],
+  formats: lectureFormatsDefault,
+  durationOptions: durationOptionsDefault,
+  modules: [
+    "생활분쟁·계약·증거관리",
+    "전세·주거 안전과 등기부 확인",
+    "창업·법인·미수금 기초",
+    "상속·가족재산 개요(대상에 맞게)",
+    "종사자용 초기 안내와 전문기관 구분",
+  ],
+  processSteps: processStepsDefault,
+  preparationChecklist: preparationDefault,
+  materialExamples: ["강사 프로필", "강의 개요·계획서", "체크리스트"],
   faqs: [
     {
-      question: "어떤 기관에서 많이 문의하나요?",
+      question: "부산 강사 초빙·출강·섭외 문의는 어디서 하나요?",
       answer:
-        "청년·자립지원·도서관·학교·공공 협업 프로그램·창업·기업 교육 담당자의 문의가 이어집니다. 특정 기관 배정은 없습니다.",
+        "이 페이지 하단 강의문의 또는 강의문의 페이지에 기관명·대상·주제·희망일을 남겨 주시면 가능 여부와 구성안을 안내합니다.",
     },
     {
-      question: "생활법률 강사와 사건 수임 법무사의 차이는?",
+      question: "어떤 기관에서 출강한 이력이 있나요?",
       answer:
-        "본 페이지는 교육·특강 기획용입니다. 개별 사건 대리는 별도 상담·수임 절차입니다.",
+        "부산광역시립시민도서관, 부산광역시 자립지원전담기관, 해운대청년채움공간, 창원청년비전센터, 양산제일고 등 확인된 이력은 강의 이력 페이지에서 볼 수 있습니다.",
     },
     {
-      question: "강사 프로필만 먼저 받을 수 있나요?",
+      question: "프로필과 강의계획서만 먼저 받을 수 있나요?",
       answer:
-        "가능합니다. 강사 소개 페이지의 인쇄용 요약을 활용하거나, 강의 문의로 요청해 주세요.",
+        "가능합니다. 강사 소개 페이지의 인쇄용 요약과 함께, 문의 시 기관 양식에 맞춘 개요를 요청해 주세요.",
     },
     {
-      question: "여러 주제를 하루 일정에 묶을 수 있나요?",
-      answer: "시간·난이도에 맞게 모듈을 재조합할 수 있습니다. 사전 협의가 필요합니다.",
+      question: "출강료는 얼마인가요?",
+      answer:
+        "시간·대상·인원·장소·자료 범위에 따라 달라 금액을 미리 단정하지 않습니다. 부산 강사 섭외 비용 안내와 함께, 기관 기준표를 주시면 맞춰 검토합니다.",
     },
     {
-      question: "소규모 워크숍만 가능한가요?",
-      answer: "소수 인원 상담형·토론형도 협의 가능합니다.",
+      question: "온라인 강의도 가능한가요?",
+      answer: "기관 환경에 맞춰 협의합니다. 오프라인 출강을 기본으로 합니다.",
+    },
+    {
+      question: "법정 지정교육도 하나요?",
+      answer:
+        "청렴·성희롱예방 등 별도 자격·지정요건이 있는 법정의무교육은 범위에 포함하지 않습니다.",
+    },
+    {
+      question: "해운대·수영구 등 구 단위로도 출강하나요?",
+      answer:
+        "구·동 전용 페이지는 두지 않으며, 부산 전역 기관 위치를 기준으로 출강 가능 여부를 협의합니다.",
     },
     {
       question: "강의 가능 일정은 언제 알 수 있나요?",
       answer: "희망일을 알려주시면 가능 여부를 회신합니다. 성사를 보장하지는 않습니다.",
     },
-    {
-      question: "실제 강의 사진은 어디서 보나요?",
-      answer:
-        "언론·활동의 강의 사진 모음과 이 페이지의 이력 카드에서 확인할 수 있습니다.",
-    },
-    {
-      question: "부산 강사 섭외만 가능한가요?",
-      answer: "부산 중심이며 인근·온라인은 협의합니다.",
-    },
   ],
   relatedLectureLinks: [
     { href: "/법률강의", label: "법률 강의 허브" },
-    { href: "/부산법무사강의", label: "부산 법무사 강의" },
     { href: "/강사소개", label: "강사 소개" },
+    { href: "/강의이력", label: "확인된 출강 이력" },
+    { href: "/공공기관법률교육", label: "공공기관 강사·교육" },
+    { href: "/기업법률교육", label: "기업·직원교육 강사" },
+    { href: "/청년생활법률특강", label: "청년 특강 강사" },
+    { href: "/창업법률교육", label: "창업교육 강사" },
+    { href: "/부산사회복지기관강사", label: "사회복지기관 강사" },
+    { href: "/부산도서관법률특강", label: "도서관·시민강좌 강사" },
+    ...hiringHubEnrichment.relatedGuideLinks,
     { href: "/강의문의", label: "강의 문의" },
-    { href: "/전세사기예방교육", label: "전세사기 예방교육" },
-    { href: "/부산기관법률특강", label: "기관 법률특강" },
   ],
   relatedServiceLinks: [
     { href: "/about", label: "법무사 소개" },
     { href: "/media#lectures", label: "강의 사진" },
   ],
   historyIds: hub.historyIds,
-  ctaTitle: "연락처만 남겨도 섭외 문의가 됩니다",
-  ctaText: "희망 주제와 연락처만 남겨 주시면 구성안을 메일로 안내합니다.",
+  ctaTitle: "강의 가능 일정·맞춤 제안을 문의하세요",
+  ctaText:
+    "주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다.",
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   showPrintProfile: true,
+  showFormatGuide: true,
+  showTopicFinder: true,
   primaryKeywords: [
-    "부산 법률 강사",
-    "법률 강사 섭외",
-    "생활법률 강사",
-    "법무사 강사",
+    "부산 강사 초빙",
+    "부산 강사 출강",
+    "부산 강사 섭외",
+    "부산 특강 강사",
+    "부산 외부강사",
     "부산 법무사 강사",
-    "법무사 강사 섭외",
-    "기관 출강",
+    "부산 여성 강사",
+  ],
+  secondaryKeywords: [
+    "부산 강연 강사",
+    "부산 교육 강사",
+    "부산 기관 강사",
+    "생활법률 강사",
+    "법률 강사 섭외",
   ],
 };
 
@@ -410,17 +459,17 @@ const jeonse: LecturePageContent = {
 const youth: LecturePageContent = {
   slug: "청년생활법률특강",
   kind: "topic",
-  title: "부산 청년 생활법률 특강",
-  metaTitle: "부산 청년 생활법률 특강｜계약·금전·주거·온라인 분쟁 예방교육",
+  title: "부산 청년 특강 강사",
+  metaTitle: "부산 청년 특강 강사｜주거·돈거래·계약에서 나를 지키는 실전교육",
   metaDescription:
-    "부산 청년 생활법률 특강. 주거·근로·금전·온라인 분쟁 예방을 사례로 안내합니다. 청년센터·학교·기관 맞춤.",
-  h1: "부산 청년 생활법률 특강｜사회생활 전 꼭 알아야 할 법률상식",
-  eyebrow: "청년·사회초년생",
+    "부산 청년·사회초년생·자립준비청년 대상 특강. 임대차계약, 전세사기, 가족·친구 사이 돈거래, 카카오톡·통화녹음 증거를 사례 중심으로 안내합니다.",
+  h1: "부산 청년 특강 강사｜주거·돈거래·계약에서 나를 지키는 방법",
+  eyebrow: "청년센터 · 자립 · 사회초년생",
   heroIntro:
-    "검색만으로 헷갈리기 쉬운 생활법률을, 청년 눈높이의 사례와 체크리스트로 정리합니다.",
+    "청년이 실제로 겪는 주거·금전·계약 상황에서 질문을 모아, 어렵지 않은 설명으로 확인 순서를 남기는 특강입니다. 청년센터·자립지원·대학 프로그램에 맞춰 시간을 조정합니다.",
   heroParagraphs: [
-    "해운대 청년 JOB성장카페·청년채움공간 연계 교육과 청년 대상 오프라인 특강 이력을 바탕으로 구성합니다.",
-    "공포를 조장하지 않고, 지금 확인할 행동 중심으로 설명합니다.",
+    "처음 독립할 때 확인할 임대차계약, 전세사기와 등기부등본, 가족·친구 사이 돈거래, 취업·창업 과정의 계약, 카카오톡과 통화녹음처럼 현장에서 질문이 많은 주제를 우선합니다.",
+    "해운대 청년 JOB성장카페·청년채움공간·자립지원전담기관 등 확인된 출강 이력을 바탕으로 구성합니다. 공포를 조장하지 않고, 지금 확인할 행동 중심으로 설명합니다.",
   ],
   summaryItems: [
     { label: "대상", value: "청년센터·대학·취업준비·사회초년생" },
@@ -500,6 +549,7 @@ const youth: LecturePageContent = {
     { href: "/전세사기예방교육", label: "전세사기 예방교육" },
     { href: "/디지털법률교육", label: "디지털 법률교육" },
     { href: "/법률강의", label: "강의 허브" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [{ href: "/media#lectures", label: "강의 사진" }],
@@ -513,7 +563,14 @@ const youth: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   primaryKeywords: [
-    "부산 청년 법률특강",
+    "부산 청년 특강 강사",
+    "부산 청년교육 강사",
+    "부산 청년센터 강사",
+    "부산 자립청년 교육",
+    "부산 사회초년생 교육",
+  ],
+  secondaryKeywords: [
+    "부산 청년 생활법률 특강",
     "청년 생활법률 교육",
     "청년센터 법률 강사",
   ],
@@ -522,17 +579,17 @@ const youth: LecturePageContent = {
 const startup: LecturePageContent = {
   slug: "창업법률교육",
   kind: "topic",
-  title: "부산 창업 법률교육",
-  metaTitle: "부산 창업 법률교육｜법인설립·계약·지분·상표·분쟁 예방특강",
+  title: "부산 창업교육 강사",
+  metaTitle: "부산 창업교육 강사｜예비창업자가 놓치기 쉬운 계약·법인·채권관리",
   metaDescription:
-    "부산 창업 법률교육. 법인설립·공동창업·계약·등기기한 등 예비창업자·초기기업 실무특강.",
-  h1: "부산 창업 법률교육｜예비창업자와 초기기업을 위한 실무특강",
-  eyebrow: "창업지원·초기기업",
+    "부산 예비창업자·초기기업 대상 교육. 개인·법인 차이, 공동창업 합의, 거래계약·미수금, 법인변경등기를 실무 범위에서 안내합니다. 세무·노무·투자유치 전략은 다루지 않습니다.",
+  h1: "부산 창업교육 강사｜예비창업자가 놓치기 쉬운 법률 실수",
+  eyebrow: "창업지원 · 예비창업 · 초기기업",
   heroIntro:
-    "창업 초기에 놓치기 쉬운 법인·계약·기한 리스크를 실무 언어로 정리합니다.",
+    "사업 시작 단계에서 대표자가 결정해야 할 상호·목적·자본·임원, 계약과 미수금, 법인설립 이후 변경등기처럼 놓치기 쉬운 실무를 사례로 정리합니다.",
   heroParagraphs: [
-    "법무사 법인등기 실무와 공공·창업 협업 경험을 바탕으로, 예방교육 범위에서 안내합니다.",
-    "투자 유치 전문 법률자문이나 결과 보장으로 오인되지 않도록 기초·체크리스트 중심으로 구성합니다.",
+    "법무사 법인등기 실무와 해운대청년채움공간 창업법률 특강 등 확인된 이력을 바탕으로, 예방교육 범위에서 안내합니다.",
+    "세무·회계·노무·투자유치 전략은 법무사 업무 범위를 벗어나므로 다루지 않습니다. 투자 유치 전문 법률자문이나 결과 보장으로 오인되지 않도록 기초·체크리스트 중심으로 구성합니다.",
   ],
   summaryItems: [
     { label: "대상", value: "예비창업·초기기업·로컬·소상공인 프로그램" },
@@ -610,6 +667,7 @@ const startup: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/기업법률교육", label: "기업 법률교육" },
     { href: "/법률강의", label: "강의 허브" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [
@@ -622,23 +680,29 @@ const startup: LecturePageContent = {
   ctaText: "프로그램명·대상·시간만 남겨 주세요.",
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
-  primaryKeywords: ["부산 창업 법률교육", "창업 법률특강", "법인설립 특강"],
+  primaryKeywords: [
+    "부산 창업교육 강사",
+    "부산 예비창업자 강사",
+    "부산 창업 특강",
+    "부산 스타트업 강사",
+  ],
+  secondaryKeywords: ["부산 창업 법률교육", "법인설립 특강", "청년창업 교육"],
 };
 
 const enterprise: LecturePageContent = {
   slug: "기업법률교육",
   kind: "topic",
-  title: "부산 기업 법률교육",
-  metaTitle: "부산 기업 법률교육｜임직원 계약·채권·개인정보·법률 리스크 특강",
+  title: "부산 기업교육 강사",
+  metaTitle: "부산 기업교육 강사｜계약·미수금·증거관리와 법인 실무 특강",
   metaDescription:
-    "부산 기업 법률교육. 임직원 계약·채권·개인정보·SNS 리스크 등 실무 예방특강. 법정의무교육 대체 아님.",
-  h1: "부산 기업 법률교육｜임직원이 알아야 할 실무 법률 리스크",
-  eyebrow: "기업·산업단지·중소기업",
+    "부산 기업·직원교육 강사 안내. 계약서 확인, 미수금·증거관리, 법인 임원·변경등기 기초를 사례로 구성합니다. 리더십·마케팅 강의가 아니며 법정 지정교육은 포함하지 않습니다.",
+  h1: "부산 기업교육 강사｜계약·미수금·증거관리와 법인 실무",
+  eyebrow: "기업교육 · 직원교육 · 사내특강",
   heroIntro:
-    "공인 준법교육이 아니라, 임직원이 일하다 마주치는 계약·채권·정보·표시 리스크를 예방하는 실무특강입니다.",
+    "임직원과 대표가 구분해서 알아야 할 계약·미수금·증거·법인변경 실무를 예방 교육으로 정리합니다. 리더십·조직문화·세일즈 강의가 아닙니다.",
   heroParagraphs: [
-    "명례일반산업단지 기업 법률지원 MOU 등 지역 기업 협업 경험을 바탕으로 눈높이를 맞춥니다.",
-    "컴플라이언스 인증·법정의무교육으로 오인되지 않도록 범위를 명확히 합니다.",
+    "계약서를 작성하기 전 확인할 사항, 거래처 미수금과 증거관리, 카카오톡·전자메일·통화녹음의 활용, 법인 임원 임기와 변경등기, 대표자에게 문제가 생겼을 때 확인할 절차를 중심으로 구성합니다.",
+    "명례일반산업단지 기업 법률지원 MOU 등 지역 기업 협업 경험을 바탕으로 눈높이를 맞춥니다. 컴플라이언스 인증·법정의무교육으로 오인되지 않도록 범위를 명확히 합니다.",
   ],
   summaryItems: [
     { label: "대상", value: "신입·관리자·영업·총무" },
@@ -716,6 +780,7 @@ const enterprise: LecturePageContent = {
     { href: "/창업법률교육", label: "창업 법률교육" },
     { href: "/공공기관법률교육", label: "공공기관 법률교육" },
     { href: "/부산기관법률특강", label: "기관 법률특강" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [
@@ -729,11 +794,15 @@ const enterprise: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   primaryKeywords: [
+    "부산 기업교육 강사",
+    "부산 직원교육 강사",
+    "부산 사내교육 강사",
+    "부산 실무교육 강사",
+  ],
+  secondaryKeywords: [
     "부산 기업 법률교육",
     "임직원 법률교육",
     "사내 특강 강사",
-    "부산 업체 법률교육",
-    "부산 사내특강",
   ],
 };
 
@@ -792,11 +861,11 @@ const speaker: LecturePageContent = {
     },
   ],
   relatedLectureLinks: [
-    { href: "/법률강의", label: "법률 강의 안내" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
+    { href: "/강사소개", label: "강사 소개" },
+    { href: "/법률강의", label: "법률 강의 허브" },
     { href: "/강의이력", label: "강의 이력" },
     { href: "/강의문의", label: "강의 문의" },
-    { href: "/부산법률강사", label: "강사 섭외" },
-    { href: "/부산법무사강의", label: "부산 법무사 강의" },
   ],
   relatedServiceLinks: [
     { href: "/about", label: "법무사 소개" },
@@ -828,7 +897,7 @@ const inquiry: LecturePageContent = {
   h1: "기관·단체 담당자를 위한 부산 법률 강의 문의",
   eyebrow: "맞춤 제안 요청",
   heroIntro:
-    "연락처와 희망 주제만 남겨 주세요. 사무소 메일로 바로 접수되며, 민감정보(주민등록번호·사건 상세 등)는 받지 않습니다.",
+    "강의 가능 일정·맞춤 제안을 문의하세요. 주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다. 사무소 메일로 접수되며, 민감정보(주민등록번호·사건 상세 등)는 받지 않습니다.",
   heroParagraphs: [],
   summaryItems: [
     { label: "필수", value: "연락처 · 개인정보 동의" },
@@ -882,9 +951,9 @@ const inquiry: LecturePageContent = {
   relatedLectureLinks: relatedAll.filter((l) => l.href !== "/강의문의"),
   relatedServiceLinks: [{ href: "/contact", label: "일반 상담" }],
   historyIds: [],
-  ctaTitle: "연락처만 남겨도 됩니다",
+  ctaTitle: "강의 가능 일정·맞춤 제안을 문의하세요",
   ctaText:
-    "희망 주제와 연락처만 보내 주시면, 맞춤 구성과 가능 여부를 메일로 회신합니다.",
+    "주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다.",
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   showRecommendTool: false,
@@ -982,6 +1051,7 @@ const digital: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/청년생활법률특강", label: "청년 생활법률" },
     { href: "/학교법률교육", label: "학교 법률교육" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [],
@@ -1070,6 +1140,7 @@ const school: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/법무사진로특강", label: "진로특강" },
     { href: "/디지털법률교육", label: "디지털" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [{ href: "/about", label: "강사(법무사) 소개" }],
@@ -1084,16 +1155,17 @@ const school: LecturePageContent = {
 const publicEdu: LecturePageContent = {
   slug: "공공기관법률교육",
   kind: "topic",
-  title: "공공기관 법률교육",
-  metaTitle: "부산 공공기관 법률교육｜공기업·지자체 임직원 맞춤형 특강",
+  title: "부산 공공기관 강사",
+  metaTitle: "부산 공공기관 강사｜직원·상담사·시민 대상 사례 중심 실무교육",
   metaDescription:
-    "공공기관·공기업 임직원 맞춤 생활·실무 법률교육. 청렴 등 법정교육은 포함하지 않습니다.",
-  h1: "부산 공공기관·공기업 임직원을 위한 맞춤형 법률교육",
-  eyebrow: "공공·공기업·출자출연·지자체",
+    "부산 공공기관·공기업·지자체 외부강사 안내. 직원교육과 시민교육을 구분해 생활분쟁·계약·증거·상속 초기 안내를 사례 중심으로 구성합니다. 법정 지정교육은 포함하지 않습니다.",
+  h1: "부산 공공기관 강사｜직원·상담사·시민을 위한 실무교육",
+  eyebrow: "공공기관 · 기관교육 · 외부강사",
   heroIntro:
-    "계약·채권·개인정보·생활·디지털 등 실무 예방교육입니다. 청렴·이해충돌·청탁금지 등 별도 지정교육은 다루지 않습니다. 부산 지자체·공기업 교육담당자용 안내입니다.",
+    "공공기관 담당자가 외부강사를 찾을 때 먼저 확인하는 것은 직원교육인지 시민교육인지, 그리고 법정 지정교육과 겹치지 않는지입니다. 본 안내는 생활·실무 예방교육 범위로, 청렴·이해충돌·청탁금지 등 별도 지정교육은 다루지 않습니다.",
   heroParagraphs: [
-    "LH·부산창조경제혁신센터 협업 프로그램 경험을 참고하되, 법정의무교육으로 표시하지 않습니다.",
+    "직원교육에서는 계약·채권·개인정보·생활분쟁처럼 업무와 연결되는 기초를, 시민·이용자 대상 프로그램에서는 주거·금전·가족재산처럼 바로 적용할 수 있는 확인 순서를 중심으로 구성합니다. 상담·지원 업무 종사자에게는 법률판단을 대신하지 않으면서 초기 안내와 전문기관을 구분하는 기준을 함께 정리합니다.",
+    "LH·부산창조경제혁신센터 협업 프로그램 등 확인된 공공 협업 경험을 참고하되, 법정의무교육으로 표시하지 않습니다. 대상·시간에 따라 난이도를 조정하며, 프로필·강의계획서·견적에 필요한 정보는 문의 시 요청해 주세요.",
   ],
   summaryItems: [
     { label: "가능", value: "생활법률·계약·채권·디지털·전세사기(직원)" },
@@ -1163,6 +1235,7 @@ const publicEdu: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/기업법률교육", label: "기업 법률교육" },
     { href: "/부산기관법률특강", label: "기관 법률특강" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [
@@ -1174,11 +1247,15 @@ const publicEdu: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   primaryKeywords: [
+    "부산 공공기관 강사",
+    "부산 공공기관 특강",
+    "부산 기관교육 강사",
+    "부산 공공기관 직원교육",
+  ],
+  secondaryKeywords: [
     "부산 공공기관 법률교육",
     "공기업 법률교육",
     "지자체 법률특강",
-    "부산 지자체 법률교육",
-    "공단 법률특강",
   ],
 };
 
@@ -1260,6 +1337,7 @@ const career: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/학교법률교육", label: "학교 법률교육" },
     { href: "/강사소개", label: "강사 소개" },
+    { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
   relatedServiceLinks: [{ href: "/about", label: "법무사 소개" }],
@@ -1285,6 +1363,7 @@ export const lecturePages: LecturePageContent[] = [
   publicEdu,
   career,
   ...institutionExpansionPages,
+  ...speakerExpansionPages,
 ];
 
 

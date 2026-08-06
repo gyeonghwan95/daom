@@ -168,6 +168,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/부산법인법무사", label: "부산 법인 법무사" },
           { href: "/법인변경등기", label: "법인 변경등기 허브" },
+          { href: "/부산법인정기점검", label: "법인등기 정기점검" },
           { href: "/부산대표이사변경등기", label: "대표이사 변경등기" },
           { href: "/부산임원임기만료등기", label: "임원 임기만료 등기" },
           { href: "/부산본점이전등기", label: "부산 본점이전등기" },

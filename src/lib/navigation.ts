@@ -25,7 +25,7 @@ export const lectureNavGroups: NavGroup[] = [
     title: "강의 안내",
     links: [
       { href: "/법률강의", label: "전체 강의 안내" },
-      { href: "/부산법률강사", label: "법률 강사 섭외" },
+      { href: "/부산법률강사", label: "부산 강사 초빙" },
       { href: "/부산법무사강의", label: "부산 법무사 강의" },
       { href: "/강사소개", label: "강사 소개" },
       { href: "/강의이력", label: "강의 이력" },
@@ -36,15 +36,25 @@ export const lectureNavGroups: NavGroup[] = [
     title: "주제·기관별",
     links: [
       { href: "/전세사기예방교육", label: "전세사기 예방" },
-      { href: "/청년생활법률특강", label: "청년 생활법률" },
-      { href: "/부산도서관법률특강", label: "도서관 법률특강" },
+      { href: "/청년생활법률특강", label: "청년 특강" },
+      { href: "/부산도서관법률특강", label: "도서관·시민강좌" },
       { href: "/부산기관법률특강", label: "기관·단체 특강" },
+      { href: "/부산사회복지기관강사", label: "사회복지기관 강사" },
       { href: "/디지털법률교육", label: "디지털 법률" },
-      { href: "/창업법률교육", label: "창업 법률" },
-      { href: "/기업법률교육", label: "기업 법률" },
-      { href: "/공공기관법률교육", label: "공공기관 법률" },
+      { href: "/창업법률교육", label: "창업교육" },
+      { href: "/기업법률교육", label: "기업·직원교육" },
+      { href: "/공공기관법률교육", label: "공공기관 강사" },
       { href: "/학교법률교육", label: "학교·진로" },
       { href: "/법무사진로특강", label: "법무사 진로특강" },
+    ],
+  },
+  {
+    title: "담당자 가이드",
+    links: [
+      { href: "/부산강사섭외체크리스트", label: "강사 섭외 체크리스트" },
+      { href: "/부산강사섭외비용", label: "출강료·비용 안내" },
+      { href: "/기관특강주제추천", label: "기관 특강 주제 추천" },
+      { href: "/강의시간별구성", label: "강의시간별 구성" },
     ],
   },
 ];
@@ -159,6 +169,11 @@ export function isNavItemActive(pathname: string, href: string): boolean {
       normalized === "/부산법무사강의" ||
       normalized === "/부산도서관법률특강" ||
       normalized === "/부산기관법률특강" ||
+      normalized === "/부산사회복지기관강사" ||
+      normalized === "/부산강사섭외비용" ||
+      normalized === "/부산강사섭외체크리스트" ||
+      normalized === "/기관특강주제추천" ||
+      normalized === "/강의시간별구성" ||
       normalized === "/전세사기예방교육" ||
       normalized === "/청년생활법률특강" ||
       normalized === "/디지털법률교육" ||
