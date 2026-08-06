@@ -214,6 +214,8 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/lectures/content.ts",
   );
+  /** institution / speaker 등 content-*.ts 확장 파일을 모두 수집 (누락 시 sitemap에서 빠짐) */
+  const lectureContentDir = path.join(ROOT, "src/lib/lectures");
   const lectureExpansionPath = path.join(
     ROOT,
     "src/lib/lectures/content-institution-expansion.ts",
@@ -234,21 +236,9 @@ function readLandingSlugs() {
     ROOT,
     "src/lib/counsel-intent/landing-config.ts",
   );
-  const corporateIntentContentPath = path.join(
+  const corporateIntentContentDir = path.join(
     ROOT,
-    "src/lib/corporate-intent/content/index.ts",
-  );
-  const corporateIntentHubPath = path.join(
-    ROOT,
-    "src/lib/corporate-intent/content/hub.ts",
-  );
-  const corporateIntentIntentsPath = path.join(
-    ROOT,
-    "src/lib/corporate-intent/content/intents.ts",
-  );
-  const corporateIntentGapsPath = path.join(
-    ROOT,
-    "src/lib/corporate-intent/content/phase-gaps.ts",
+    "src/lib/corporate-intent/content",
   );
   const corporateIntentLandingConfigPath = path.join(
     ROOT,
@@ -323,10 +313,24 @@ function readLandingSlugs() {
     fs.existsSync(lectureContentPath)
       ? fs.readFileSync(lectureContentPath, "utf8")
       : "";
+  const lectureExpansionFiles = fs.existsSync(lectureContentDir)
+    ? fs
+        .readdirSync(lectureContentDir)
+        .filter(
+          (name) =>
+            name.startsWith("content-") &&
+            name.endsWith(".ts") &&
+            name !== "content.ts",
+        )
+        .map((name) => fs.readFileSync(path.join(lectureContentDir, name), "utf8"))
+        .join("\n")
+    : "";
+  /** 하위 호환: institution-expansion 단독 경로도 유지 */
   const lectureExpansion =
-    fs.existsSync(lectureExpansionPath)
+    lectureExpansionFiles ||
+    (fs.existsSync(lectureExpansionPath)
       ? fs.readFileSync(lectureExpansionPath, "utf8")
-      : "";
+      : "");
   const businessContent =
     fs.existsSync(businessContentPath)
       ? fs.readFileSync(businessContentPath, "utf8")
@@ -343,22 +347,19 @@ function readLandingSlugs() {
     fs.existsSync(counselIntentLandingConfigPath)
       ? fs.readFileSync(counselIntentLandingConfigPath, "utf8")
       : "";
-  const corporateIntentContent =
-    fs.existsSync(corporateIntentContentPath)
-      ? fs.readFileSync(corporateIntentContentPath, "utf8")
-      : "";
-  const corporateIntentHub =
-    fs.existsSync(corporateIntentHubPath)
-      ? fs.readFileSync(corporateIntentHubPath, "utf8")
-      : "";
-  const corporateIntentIntents =
-    fs.existsSync(corporateIntentIntentsPath)
-      ? fs.readFileSync(corporateIntentIntentsPath, "utf8")
-      : "";
-  const corporateIntentGaps =
-    fs.existsSync(corporateIntentGapsPath)
-      ? fs.readFileSync(corporateIntentGapsPath, "utf8")
-      : "";
+  /** hub/intents/cluster-phase1 등 content/*.ts 전부 — index·shared 제외 */
+  const corporateIntentPhaseContent = fs.existsSync(corporateIntentContentDir)
+    ? fs
+        .readdirSync(corporateIntentContentDir)
+        .filter(
+          (name) =>
+            name.endsWith(".ts") && name !== "index.ts" && name !== "shared.ts",
+        )
+        .map((name) =>
+          fs.readFileSync(path.join(corporateIntentContentDir, name), "utf8"),
+        )
+        .join("\n")
+    : "";
   const corporateIntentLanding =
     fs.existsSync(corporateIntentLandingConfigPath)
       ? fs.readFileSync(corporateIntentLandingConfigPath, "utf8")
@@ -430,10 +431,7 @@ function readLandingSlugs() {
     ...(businessLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(counselIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(counselIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
-    ...(corporateIntentContent.match(/slug:\s*"([^"]+)"/g) ?? []),
-    ...(corporateIntentHub.match(/slug:\s*"([^"]+)"/g) ?? []),
-    ...(corporateIntentIntents.match(/slug:\s*"([^"]+)"/g) ?? []),
-    ...(corporateIntentGaps.match(/slug:\s*"([^"]+)"/g) ?? []),
+    ...(corporateIntentPhaseContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(corporateIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(buildingIntentPhaseContent.match(/slug:\s*"([^"]+)"/g) ?? []),
     ...(buildingIntentLanding.match(/slug:\s*"([^"]+)"/g) ?? []),
