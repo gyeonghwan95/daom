@@ -113,6 +113,8 @@ export const corporateHubPage: CorporatePageContent = {
     CORPORATE_HUB_LINKS.pillar,
     CORPORATE_HUB_LINKS.establishment,
     CORPORATE_HUB_LINKS.director,
+    CORPORATE_HUB_LINKS.charterHub,
+    CORPORATE_HUB_LINKS.notaryPrep,
     CORPORATE_HUB_LINKS.contact,
   ],
   ctaTitle: "변경 항목부터 확인하기",
@@ -271,6 +273,38 @@ export const corporateHubPage: CorporatePageContent = {
           href: "/비영리법인임원변경등기",
           label: "비영리법인 임원변경등기",
           description: "사단·재단 임원 변경",
+        },
+      ],
+    },
+    {
+      title: "정관·공증 준비",
+      intro:
+        "정관 작성과 공증(인증) 준비는 등기 유형과 연결됩니다. 공증 자체는 공증인이 수행합니다.",
+      links: [
+        {
+          href: "/법인정관업무",
+          label: "법인 정관 업무",
+          description: "작성·변경·등기 연결 개요",
+        },
+        {
+          href: "/법인정관변경",
+          label: "정관 변경 필요 여부",
+          description: "본점·목적·상호 체크표",
+        },
+        {
+          href: "/법인공증준비",
+          label: "법인 공증 준비",
+          description: "정관·의사록·등기 전 확인",
+        },
+        {
+          href: "/법인정관인증확인",
+          label: "정관 인증 필요 여부",
+          description: "설립 전 인증 기준",
+        },
+        {
+          href: "/법인의사록공증준비",
+          label: "의사록 공증 준비",
+          description: "주주총회·이사회 인증",
         },
       ],
     },

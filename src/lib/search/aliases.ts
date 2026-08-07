@@ -416,7 +416,8 @@ export const PATH_ALIAS_RULES: Array<{ match: RegExp; aliases: string[] }> = [
     aliases: ["명지", "강서구"],
   },
   {
-    match: /정관|기장/,
+    // 기장군 지명 ‘정관’만 매칭. ‘법인정관*’(회사 定款) 경로는 제외
+    match: /(?<!법인)정관|기장/,
     aliases: ["정관", "기장군"],
   },
 ];
@@ -446,6 +447,10 @@ export function collectAliasesForPath(path: string, slug: string): string[] {
   }
 
   for (const [key, values] of Object.entries(REGION_ALIASES)) {
+    // 회사 정관(定款) 페이지에 기장군 지역 별칭이 붙지 않도록 제외
+    if (key === "정관" && /법인정관/.test(haystack)) {
+      continue;
+    }
     if (haystack.includes(key)) {
       for (const value of values) aliases.add(value);
       aliases.add(key);

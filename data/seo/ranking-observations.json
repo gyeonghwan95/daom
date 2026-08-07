@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산 상속 전문 법무사",
+    "observedPosition": "4페이지 이후",
+    "url": null,
+    "note": "사용자 수동 확인. ranking URL 미확인 — 추측 금지"
+  },
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산상속법무사",
+    "observedPosition": "1페이지",
+    "url": null,
+    "note": "사용자 수동 확인. ranking URL 미확인 — 추측 금지"
+  },
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산 상속 법무사",
+    "observedPosition": "비교적 높은 위치(1페이지 가능)",
+    "url": null,
+    "note": "사용자 진술 기반. URL 미확정"
+  },
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산 상속등기 법무사",
+    "observedPosition": "높은 위치 가능",
+    "url": null,
+    "note": "사용자 진술 기반. URL 미확정"
+  },
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산 상속등기",
+    "observedPosition": "높은 위치 가능",
+    "url": null,
+    "note": "사용자 진술 기반. URL 미확정"
+  },
+  {
+    "date": "2026-08-07",
+    "engine": "naver",
+    "query": "부산 법무사",
+    "observedPosition": "높은 위치 가능",
+    "url": null,
+    "note": "사용자 진술 기반. URL 미확정"
+  }
+]

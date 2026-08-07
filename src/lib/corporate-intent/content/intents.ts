@@ -217,6 +217,7 @@ export const corporateIntentPages: CorporatePageContent[] = [
     heroParagraphs: [
       "부산 내 구·동 이동이라도 관할 등기소가 달라질 수 있습니다. 타 시·도로 이전하면 관할 등기소·세무서가 바뀌는 경우가 많아 절차가 더 복잡해집니다.",
       "임대차 계약상 등기 협조 조항, 건축물대장상 용도, 사용승인 여부가 등기 가능성에 영향을 줍니다.",
+      "정관에 본점 소재지를 구체적으로 적어 둔 경우, 이전과 함께 정관 개정 결의가 필요한지 먼저 확인합니다. 항목별 정관 변경 여부는 `/법인정관변경` 체크표를 참고하세요.",
       "임원변경·목적변경과 같은 날 접수할지, 본점만 먼저 옮길지는 대출·입찰·사업자등록 일정에 맞춰 정합니다. 법인등기 허브가 변경 유형 전반을 다루고, 이 페이지는 관할·주소에 집중합니다.",
     ],
     officeLine: CORPORATE_OFFICE_LINE,
@@ -286,10 +287,22 @@ export const corporateIntentPages: CorporatePageContent[] = [
         question: "타 지역으로 이전하면?",
         answer: "`/전국법인본점이전등기` 페이지에서 관할 변경 절차를 확인하세요.",
       },
+      {
+        question: "본점 이전 시 정관도 바꿔야 하나요?",
+        answer:
+          "정관에 본점 소재지 조항이 구체적으로 적혀 있으면 정관 개정과 연결되는 경우가 많습니다. `/법인정관변경`에서 본점이전 행을 확인하세요.",
+      },
+      {
+        question: "의사록 공증은 어떻게 확인하나요?",
+        answer:
+          "등기용 주주총회 의사록은 인증이 필요한 경우가 있습니다. 공증은 공증인이 담당하며, `/법인의사록공증준비`에서 준비 포인트를 볼 수 있습니다.",
+      },
     ],
     relatedLinks: [
       { href: "/부산법인등기", label: "부산 법인등기" },
       { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/법인정관변경", label: "정관 변경 필요 여부" },
+      { href: "/법인의사록공증준비", label: "의사록 공증 준비" },
       { href: "/전국법인본점이전등기", label: "전국 본점이전등기" },
       { href: "/본점이전등기비용", label: "본점이전등기 비용" },
       { href: "/faq/corporate-address-change-faq", label: "본점이전 FAQ" },
@@ -312,6 +325,8 @@ export const corporateIntentPages: CorporatePageContent[] = [
     heroParagraphs: [
       "사업목적 변경은 단순 문구 수정이 아니라, 주주총회 결의와 정관 개정·등기가 연결됩니다. 목적 추가와 기존 목적 삭제·통합은 결의 내용이 달라집니다.",
       "사업자등록 업종 코드와 법인 정관 목적은 별도 체계이므로 각각 맞춰야 합니다.",
+      "현재 정관의 목적 조항과 등기부 목적을 먼저 대조한 뒤, 새 목적 문구·주주총회·변경등기·사업자등록 후속 순으로 맞춥니다. 인허가 업종은 등기만으로 영업이 가능해지지 않을 수 있습니다.",
+      "정관 변경이 목적 외 항목(상호·본점 등)과 겹치면 `/법인정관변경` 체크표로 범위를 나누고, 의사록 인증이 필요한지는 `/법인의사록공증준비`에서 확인하세요.",
     ],
     officeLine: CORPORATE_OFFICE_LINE,
     scopeNotice: CORPORATE_SCOPE_NOTICE,
@@ -368,9 +383,27 @@ export const corporateIntentPages: CorporatePageContent[] = [
         answer:
           "과도하게 넓은 목적은 오히려 실사·세무에서 질문받을 수 있습니다. 실제 사업과 균형을 맞춥니다.",
       },
+      {
+        question: "사업목적을 추가하면 정관도 변경해야 하나요?",
+        answer:
+          "등기된 목적과 다른 업종을 본격적으로 하려면 정관 목적 조항 변경과 목적변경등기가 함께 필요한 경우가 많습니다.",
+      },
+      {
+        question: "정관 업무 안내와 이 페이지의 차이는?",
+        answer:
+          "`/법인정관업무`는 정관 전반을, `/법인정관변경`은 여러 변경 항목의 정관 개정 여부를 다룹니다. 이 페이지는 사업목적·업종 추가의 등기 실무에 집중합니다.",
+      },
+      {
+        question: "의사록 공증은 필요한가요?",
+        answer:
+          "등기용 주주총회 의사록은 인증이 필요할 수 있습니다. 공증은 공증인이 수행하며, `/법인의사록공증준비`에서 준비 순서를 확인하세요.",
+      },
     ],
     relatedLinks: [
       { href: "/blog/corporate-purpose-change-registration", label: "목적변경 관련 글" },
+      { href: "/법인정관변경", label: "정관 변경 필요 여부" },
+      { href: "/법인정관업무", label: "법인 정관 업무" },
+      { href: "/법인의사록공증준비", label: "의사록 공증 준비" },
       { href: "/services/corporate-registration", label: "법인등기 업무안내" },
       ...baseRelated,
     ],

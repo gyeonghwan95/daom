@@ -1,6 +1,7 @@
 import { createPageData } from "@/lib/pageData/template-helpers";
 import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import type { PageData, PageSection } from "@/lib/pageData/types";
+import { getGyeongnamBySlug } from "@/lib/gyeongnam-cases";
 import {
   FAQS,
   PROPERTY_TYPES,
@@ -54,12 +55,24 @@ function resolveRelatedLinks(
       if (slug === "부산상속등기") {
         return { href: "/부산상속등기", label: "부산 상속등기" };
       }
+      if (slug.startsWith("/")) {
+        return { href: slug, label: slug.replace(/^\//, "") };
+      }
       const target = catalog.get(slug);
-      if (!target) return linkLabel(slug, slug);
-      return {
-        href: caseNationwidePath(slug),
-        label: target.primaryKeyword,
-      };
+      if (target) {
+        return {
+          href: caseNationwidePath(slug),
+          label: target.primaryKeyword,
+        };
+      }
+      const gn = getGyeongnamBySlug(slug);
+      if (gn) {
+        return {
+          href: caseNationwidePath(slug),
+          label: gn.primaryKeyword,
+        };
+      }
+      return linkLabel(slug, slug);
     })
     .filter((l, i, arr) => arr.findIndex((x) => x.href === l.href) === i);
 }

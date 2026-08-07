@@ -6,6 +6,13 @@ export type CorporateTopicCluster = {
   links: { href: string; label: string; description: string }[];
 };
 
+export type CorporateInfoTable = {
+  title: string;
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+};
+
 export type CorporatePageContent = {
   slug: string;
   kind: "hub" | "intent";
@@ -18,6 +25,11 @@ export type CorporatePageContent = {
   heroParagraphs: string[];
   officeLine: string;
   scopeNotice: string;
+  /** 공증·인증 안내 페이지용. 공증 수행 주체를 명확히 구분 */
+  notaryBoundaryNote?: string;
+  /** 페이지별 고유 표·체크리스트 모듈 */
+  infoTables?: CorporateInfoTable[];
+  reviewedAt?: string;
   /** 첫 화면에서 검색 질문에 대한 명확한 결론 */
   conclusion: string;
   primaryKeyword: string;

@@ -31,7 +31,13 @@ export type GyeongnamPageType =
   | "corporate"
   | "corporate-relocation"
   | "joint-mortgage"
-  | "rehabilitation";
+  | "rehabilitation"
+  | "gift"
+  | "real-estate"
+  | "mortgage-cancel"
+  | "demolition"
+  | "preservation"
+  | "payment-order";
 
 export type GyeongnamLandingDef = {
   slug: string;

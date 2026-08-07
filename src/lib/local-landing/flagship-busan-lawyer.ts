@@ -205,6 +205,7 @@ export function buildBusanLawyerFlagshipPage(
       { href: "/부산부동산등기", label: "부산 부동산등기 — 매매·이전" },
       { href: "/부산법인등기", label: "부산 법인등기 — 임원·본점·목적 변경" },
       { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },
+      { href: "/업무사례/양산법무사업무", label: "양산 법무사 — 인접 시 업무 허브" },
       { href: "/부산법무사무소", label: "부산 법무사무소 안내" },
       { href: "/부산법무사서류준비", label: "서류 준비 체크리스트" },
       { href: "/부산법무사방문상담", label: "방문상담 안내" },
@@ -222,6 +223,7 @@ export function buildBusanLawyerFlagshipPage(
       { href: "/해운대법무사", label: "해운대 법무사" },
       { href: "/센텀법무사", label: "센텀 법무사" },
       { href: "/재송동법무사", label: "재송동 법무사" },
+      { href: "/업무사례/경남법무사업무", label: "경남 법무사 업무" },
     ],
   };
 }

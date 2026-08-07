@@ -652,6 +652,7 @@ function readCaseRegionPaths() {
   if (fs.existsSync(gyeongnamDir)) {
     for (const file of [
       "phase1-defs.ts",
+      "phase-yangsan-cluster.ts",
       "phase-remote-inheritance.ts",
       "phase2-remote-inheritance.ts",
       "phase3-inland-inheritance.ts",

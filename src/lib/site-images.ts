@@ -271,27 +271,32 @@ export const siteImages = {
   },
 
   office: {
-    exterior: img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
-    nameplate: img(imagePaths.officeNameplate, "다옴법무사사무소 명판", 800, 600),
+    exterior: img(imagePaths.officeExterior, "안윤정 법무사", 1200, 800),
+    nameplate: img(imagePaths.officeNameplate, "다옴법무사사무소 현판", 800, 600),
     map: img(imagePaths.officeLocationMap, "사무소 위치 지도", 1200, 900),
     direction01: img(
       imagePaths.officeDirectionStep1,
-      "찾아오시는 길 안내 1",
+      "센텀동로 200 D동 창조관 LAB9호 찾아오시는 길",
       1200,
       900,
     ),
     direction02: img(
       imagePaths.officeDirectionStep2,
-      "찾아오시는 길 안내 2",
+      "사무소 입구 안내 (옆문)",
       1200,
       900,
     ),
-    parking: img(imagePaths.officeParking, "주차 안내", 1200, 900),
+    parking: img(imagePaths.officeParking, "청년채움공간 주차장 입구", 1200, 900),
     gallery: [
-      img(imagePaths.officeNameBadge, "다옴법무사사무소 명패", 1200, 800),
-      img(imagePaths.officeNameplateHorizontal, "다옴법무사사무소 명판", 800, 600),
-      img(imagePaths.officeInterior, "사무소", 1200, 900),
-      img(imagePaths.officeDocuments, "사무소", 1200, 900),
+      img(imagePaths.officeNameBadge, "안윤정 법무사 명패", 1200, 800),
+      img(imagePaths.officeNameplateHorizontal, "다옴법무사사무소 현판", 800, 600),
+      img(
+        imagePaths.officeInterior,
+        "해운대 청년채움공간 · 사무소가 있는 건물",
+        1200,
+        900,
+      ),
+      img(imagePaths.officeDocuments, "자격·수료증", 1200, 900),
     ],
   },
 

@@ -16,7 +16,7 @@ import {
   type GyeongnamLandingDef,
 } from "@/lib/gyeongnam-cases";
 
-const INHERITANCE_TYPES = new Set([
+const INHERITANCE_REMOTE_TYPES = new Set([
   "inheritance",
   "inheritance-cost",
   "inheritance-documents",
@@ -28,6 +28,41 @@ const INHERITANCE_TYPES = new Set([
   "limited-acceptance",
   "region-hub",
 ]);
+
+const INHERITANCE_COST_TYPES = new Set([
+  "inheritance",
+  "inheritance-cost",
+  "inheritance-documents",
+  "inheritance-property",
+  "complex-inheritance",
+  "residence-mismatch",
+  "legacy",
+]);
+
+function inquiryFieldForDef(def: GyeongnamLandingDef): string {
+  if (def.pageType.startsWith("corporate")) return "corporate-registration";
+  if (
+    def.pageType === "renunciation" ||
+    def.pageType === "limited-acceptance"
+  ) {
+    return "inheritance-renunciation";
+  }
+  if (def.pageType === "rehabilitation") return "personal-rehabilitation";
+  if (def.pageType === "preservation") return "preservation-registration";
+  if (def.pageType === "mortgage-cancel" || def.pageType === "joint-mortgage") {
+    return "mortgage";
+  }
+  if (
+    def.pageType === "gift" ||
+    def.pageType === "real-estate" ||
+    def.pageType === "demolition"
+  ) {
+    return "real-estate-registration";
+  }
+  if (def.pageType === "payment-order") return "civil-debt";
+  if (def.pageType === "region-hub") return "other";
+  return "inheritance-registration";
+}
 
 type Props = {
   page: PageData;
@@ -44,11 +79,9 @@ export function GyeongnamCasePageView({
   explorerFilters = [],
   coreLinks = [],
 }: Props) {
-  const showRemote = INHERITANCE_TYPES.has(def.pageType);
-  const inquiryField =
-    def.pageType === "renunciation" || def.pageType === "limited-acceptance"
-      ? "inheritance-renunciation"
-      : "inheritance-registration";
+  const showRemote = INHERITANCE_REMOTE_TYPES.has(def.pageType);
+  const showCostGuide = INHERITANCE_COST_TYPES.has(def.pageType);
+  const inquiryField = inquiryFieldForDef(def);
   const region = inquiryRegionFromDef(def);
 
   return (
@@ -65,7 +98,7 @@ export function GyeongnamCasePageView({
             inquiryField={inquiryField}
             description={def.remoteHint}
           />
-          <InheritanceCostGuide fromPage={def.slug} />
+          {showCostGuide ? <InheritanceCostGuide fromPage={def.slug} /> : null}
         </div>
       ) : null}
       {def.pageType === "region-hub" ? (

@@ -12,7 +12,7 @@ export const staticPageSeo = {
   office: {
     title: buildSeoTitle("해운대·센텀 법무사 사무소"),
     description:
-      "동해선 재송역, 센텀역 도보 5분, 해운대구 센텀동로 200 법무사 사무소 내부·주차·상담 공간 안내. 방문 상담 예약 필수.",
+      "부산 해운대구 센텀 다옴법무사사무소. 주소·운영시간·주차·상담 방식과 방문 전 준비사항을 안내합니다. 안윤정 법무사가 직접 상담하며, 예약 후 방문해 주세요.",
     path: "/office",
     keywords: ["해운대 법무사", "부산 법무사", "센텀 법무사", seoBrand.siteName],
   },

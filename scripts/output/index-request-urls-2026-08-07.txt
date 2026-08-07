@@ -1,0 +1,58 @@
+# 2026-08-07 색인 등록 대상 URL
+# 배포 후 IndexNow / 네이버 서치어드바이저 수집요청용
+# 도메인: https://xn--2j1br1na42lvxja38mk8r.kr (다옴법무사사무소)
+
+## P0 — 신규 (필수, 8)
+/업무사례/양산법무사업무
+/업무사례/양산상속포기한정승인
+/업무사례/양산증여등기법무사
+/업무사례/양산부동산등기법무사
+/업무사례/양산근저당말소
+/업무사례/양산건물멸실등기
+/업무사례/양산신축건물보존등기
+/업무사례/양산개인회생법무사
+
+## P0 — 신규 법인 정관·공증 준비 클러스터 (필수, 5)
+/법인정관업무
+/법인정관변경
+/법인공증준비
+/법인정관인증확인
+/법인의사록공증준비
+
+## P1 — 실질 수정 (재수집 권장, 3)
+/부산상속법무사
+/업무사례/양산법인등기법무사
+/부산법무사
+
+## P2 — 내부링크·관련 보강 (선택, 7)
+/업무사례/양산상속등기법무사
+/업무사례/물금상속등기법무사
+/업무사례/증산상속등기법무사
+/업무사례/사송상속등기법무사
+/업무사례/부산거주양산부동산상속
+/업무사례/양산거주부산부동산상속
+/업무사례/경남법무사업무
+
+## 합계
+- 필수(P0): 13
+- 권장(P1): 3
+- 선택(P2): 7
+- 전체 제출 권장: 23
+
+## Absolute URL (P0+P1, IndexNow용)
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EA%B1%B4%EB%AC%BC%EB%A9%B8%EC%8B%A4%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EC%8B%A0%EC%B6%95%EA%B1%B4%EB%AC%BC%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%A0%95%EA%B4%80%EC%97%85%EB%AC%B4
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%A0%95%EA%B4%80%EB%B3%80%EA%B2%BD
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EA%B3%B5%EC%A6%9D%EC%A4%80%EB%B9%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%A0%95%EA%B4%80%EC%9D%B8%EC%A6%9D%ED%99%95%EC%9D%B8
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%9D%98%EC%82%AC%EB%A1%9D%EA%B3%B5%EC%A6%9D%EC%A4%80%EB%B9%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC

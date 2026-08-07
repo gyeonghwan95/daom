@@ -7,6 +7,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import {
   ArticleSummary,
   ChecklistBox,
+  ComparisonTable,
   ContentSection,
   PageHero,
   PageTableOfContents,
@@ -110,9 +111,15 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
     isHub ||
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
+  const hasInfoTables = Boolean(content.infoTables?.length);
+  const hasTopicClusters = Boolean(content.topicClusters?.length);
   const tocItems = [
     { id: "article-body", label: "본문 안내" },
-    ...(isHub ? [{ id: "clusters", label: "업무별 안내" }] : []),
+    ...(content.notaryBoundaryNote
+      ? [{ id: "notary-boundary", label: "공증·등기 구분" }]
+      : []),
+    ...(hasInfoTables ? [{ id: "info-tables", label: "표·체크리스트" }] : []),
+    ...(hasTopicClusters ? [{ id: "clusters", label: "업무별 안내" }] : []),
     { id: "deadline", label: "시점·기한" },
     { id: "decision", label: "결의·의사결정" },
     { id: "documents", label: "준비서류" },
@@ -159,6 +166,18 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         <p>{content.scopeNotice}</p>
       </WarningBox>
 
+      {content.notaryBoundaryNote ? (
+        <WarningBox title="공증과 법인등기 구분">
+          <p>{content.notaryBoundaryNote}</p>
+        </WarningBox>
+      ) : null}
+
+      {content.reviewedAt ? (
+        <p className="text-sm text-navy/70">
+          작성·확인: 안윤정 법무사(다옴법무사사무소) · 최종 확인일 {content.reviewedAt}
+        </p>
+      ) : null}
+
       <ArticleSummary
         conclusion={content.conclusion}
         checkItems={content.whenAndDeadline.slice(0, 3)}
@@ -184,8 +203,46 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         </div>
       </ContentSection>
 
-      {isHub && content.topicClusters ? (
-        <ContentSection id="clusters" title="검색 의도별 변경등기 안내">
+      {content.notaryBoundaryNote ? (
+        <ContentSection id="notary-boundary" title="공증과 법인등기를 구분하는 이유">
+          <p className="text-[1.015rem] leading-[1.85] text-navy/80">
+            {content.notaryBoundaryNote}
+          </p>
+        </ContentSection>
+      ) : null}
+
+      {hasInfoTables && content.infoTables ? (
+        <ContentSection id="info-tables" title="표·체크리스트">
+          <div className="grid gap-8">
+            {content.infoTables.map((table) => (
+              <div key={table.title}>
+                <h3 className="mb-3 text-lg font-semibold text-navy">{table.title}</h3>
+                {table.caption ? (
+                  <p className="mb-3 text-sm text-navy/65">{table.caption}</p>
+                ) : null}
+                <ComparisonTable
+                  caption={table.caption ?? table.title}
+                  columns={table.headers.map((header, index) => ({
+                    key: `c${index}`,
+                    header,
+                  }))}
+                  rows={table.rows.map((row) =>
+                    Object.fromEntries(
+                      row.map((cell, index) => [`c${index}`, cell]),
+                    ),
+                  )}
+                />
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
+
+      {hasTopicClusters && content.topicClusters ? (
+        <ContentSection
+          id="clusters"
+          title={isHub ? "검색 의도별 변경등기 안내" : "이어지는 안내"}
+        >
           <div className="grid gap-6">
             {content.topicClusters.map((cluster) => (
               <div
@@ -257,7 +314,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       </ContentSection>
 
       <CTASection
-        title="현재 상황에 필요한 절차부터 확인해보세요"
+        title={content.ctaTitle}
         description={content.ctaText}
         pageSlug={content.slug}
         serviceSlug="corporate-registration"

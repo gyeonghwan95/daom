@@ -4,6 +4,7 @@ import { phaseRemoteGyeongnamDefs } from "./phase-remote-inheritance";
 import { phase2RemoteGyeongnamDefs } from "./phase2-remote-inheritance";
 import { phase3InlandGyeongnamDefs } from "./phase3-inland-inheritance";
 import { phase4UireongGyeongnamDefs } from "./phase4-uireong";
+import { phaseYangsanClusterDefs } from "./phase-yangsan-cluster";
 import { isGyeongnamPublishable, scoreGyeongnamLanding } from "./quality";
 import {
   buildAllGyeongnamPageData,
@@ -27,6 +28,7 @@ export {
 function allDefsRaw(): GyeongnamLandingDef[] {
   return [
     ...phase1GyeongnamDefs,
+    ...phaseYangsanClusterDefs,
     ...phase2GyeongnamDefs,
     ...phaseRemoteGyeongnamDefs,
     ...phase2RemoteGyeongnamDefs,
@@ -185,9 +187,22 @@ export const GYEONGNAM_HUB_FILTERS: GyeongnamHubFilter[] = [
 export const GYEONGNAM_CORE_CITY_LINKS = [
   { href: "/업무사례/경남상속등기법무사", label: "경남 상속등기" },
   { href: "/업무사례/김해상속등기법무사", label: "김해 상속등기" },
+  { href: "/업무사례/양산법무사업무", label: "양산 법무사 업무" },
   { href: "/업무사례/양산상속등기법무사", label: "양산 상속등기" },
   { href: "/업무사례/창원상속등기법무사", label: "창원 상속등기" },
   { href: "/업무사례/거제상속등기법무사", label: "거제 상속등기" },
   { href: "/업무사례/진주상속등기법무사", label: "진주 상속등기" },
   { href: "/부산상속등기", label: "부산 상속등기" },
+] as const;
+
+/** 양산 시 허브 전용 핵심 링크 */
+export const YANGSAN_CORE_LINKS = [
+  { href: "/업무사례/양산법무사업무", label: "양산 법무사 업무" },
+  { href: "/업무사례/양산상속등기법무사", label: "양산 상속등기" },
+  { href: "/업무사례/양산상속포기한정승인", label: "양산 상속포기·한정승인" },
+  { href: "/업무사례/양산부동산등기법무사", label: "양산 부동산등기" },
+  { href: "/업무사례/양산증여등기법무사", label: "양산 증여등기" },
+  { href: "/업무사례/양산법인등기법무사", label: "양산 법인등기" },
+  { href: "/업무사례/양산근저당말소", label: "양산 근저당 말소" },
+  { href: "/부산법무사", label: "부산 법무사" },
 ] as const;

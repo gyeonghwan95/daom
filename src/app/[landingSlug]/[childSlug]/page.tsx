@@ -33,6 +33,7 @@ import {
 import {
   GYEONGNAM_CORE_CITY_LINKS,
   GYEONGNAM_HUB_FILTERS,
+  YANGSAN_CORE_LINKS,
   getGyeongnamBySlug,
   getGyeongnamPageDataBySlug,
   getPublishedGyeongnamDefs,
@@ -271,6 +272,11 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
         keywords: [d.primaryKeyword, ...d.secondaryKeywords, d.slug, d.pageType],
       }));
 
+      const coreLinks =
+        gyeongnamDef.slug === "양산법무사업무"
+          ? [...YANGSAN_CORE_LINKS]
+          : [...GYEONGNAM_CORE_CITY_LINKS];
+
       return (
         <PageContainer>
           <GyeongnamCasePageView
@@ -281,7 +287,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
               id: f.id,
               label: f.label,
             }))}
-            coreLinks={[...GYEONGNAM_CORE_CITY_LINKS]}
+            coreLinks={coreLinks}
           />
         </PageContainer>
       );

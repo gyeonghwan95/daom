@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "updated": "2026-08-07",
+  "notes": "URL은 프로젝트 내부 ranking 확정이 없으면 비워 둔다. 추측으로 채우지 않는다. protected=true인 query의 후보 URL은 title/H1/canonical/noindex를 자동 변경하지 않는다.",
+  "champion": {
+    "slug": "부산상속법무사",
+    "path": "/부산상속법무사",
+    "role": "INHERITANCE_CHAMPION",
+    "reason": "부산 상속 업무 선택 허브(등기·포기·한정승인). 이미 부산상속법무사/부산 상속 법무사 의도에 맞게 구성됨. 공개 문구에 전문 표방 없음."
+  },
+  "queries": [
+    {
+      "query": "부산상속법무사",
+      "reason": "사용자 확인: 네이버 1페이지 노출",
+      "protected": true,
+      "urls": [],
+      "candidateUrls": ["/부산상속법무사", "/부산상속등기", "/부산법무사"]
+    },
+    {
+      "query": "부산 상속 법무사",
+      "reason": "사용자 확인: 비교적 높은 위치 가능",
+      "protected": true,
+      "urls": [],
+      "candidateUrls": ["/부산상속법무사", "/부산상속등기"]
+    },
+    {
+      "query": "부산 상속 전문 법무사",
+      "reason": "사용자 확인: 약 4페이지 뒤. 분석용 query. 공개 페이지에 exact phrase 삽입 금지.",
+      "protected": false,
+      "targetChampion": "/부산상속법무사",
+      "urls": [],
+      "candidateUrls": [
+        "/부산상속법무사",
+        "/부산상속전문법무사",
+        "/부산상속등기",
+        "/부산법무사"
+      ],
+      "riskNote": "/부산상속전문법무사 가 exact-ish 표현을 사용 중이나 title/H1 변경은 HIGH RISK로 별도 승인 필요"
+    },
+    {
+      "query": "부산 상속등기 법무사",
+      "protected": true,
+      "urls": [],
+      "candidateUrls": ["/부산상속등기"]
+    },
+    {
+      "query": "부산 상속등기",
+      "protected": true,
+      "urls": [],
+      "candidateUrls": ["/부산상속등기"]
+    },
+    {
+      "query": "부산 법무사",
+      "protected": true,
+      "urls": [],
+      "candidateUrls": ["/부산법무사"]
+    }
+  ],
+  "rules": {
+    "forbidPublicPhrases": [
+      "전문 법무사",
+      "상속 전문 법무사",
+      "상속전문법무사",
+      "부산 1위",
+      "최고",
+      "유일"
+    ],
+    "autoApply": ["SAFE"],
+    "requireApproval": ["CAUTION", "HIGH_RISK"]
+  }
+}

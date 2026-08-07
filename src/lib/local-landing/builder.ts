@@ -459,6 +459,8 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     ],
     부산법인설립등기: [
       { href: "/부산기업법률자문", label: "기업 법률실무 허브" },
+      { href: "/법인정관업무", label: "법인 정관 업무" },
+      { href: "/법인정관인증확인", label: "정관 인증 필요 여부" },
       { href: "/창업법률교육", label: "창업 법률교육" },
       { href: "/partners", label: "협업·프로젝트 문의" },
     ],
@@ -500,6 +502,8 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     ],
     부산법인법무사: [
       { href: "/법인변경등기", label: "법인 변경등기 허브" },
+      { href: "/법인정관업무", label: "법인 정관 업무" },
+      { href: "/법인공증준비", label: "법인 공증 준비" },
       { href: "/부산대표이사변경등기", label: "대표이사 변경등기" },
       { href: "/부산본점이전등기", label: "본점이전등기" },
       { href: "/부산유상증자등기", label: "유상증자 등기" },

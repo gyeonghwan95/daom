@@ -5,6 +5,13 @@ import { officeLocation } from "@/lib/office-location";
 import { districtProfiles } from "./districts";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
+import {
+  championExtraFaqs,
+  championExtraRelatedLinks,
+  championExtraSummaryParagraphs,
+  championExtraWhenNeeded,
+  championSituationMap,
+} from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
 
 function getRelatedBlogPosts(
@@ -65,12 +72,40 @@ export function buildKeywordHubPage(
     },
   ];
 
+  const isInheritanceChampion = topic.slug === "부산상속법무사";
+
+  const summaryParagraphs = isInheritanceChampion
+    ? [...topic.summaryParagraphs, ...championExtraSummaryParagraphs]
+    : topic.summaryParagraphs;
+  const whenNeeded = isInheritanceChampion
+    ? [...topic.whenNeeded, ...championExtraWhenNeeded]
+    : topic.whenNeeded;
+  const procedures = isInheritanceChampion
+    ? [
+        "상황별 필요 절차 가리기(아래 선택표)",
+        ...championSituationMap,
+        ...topic.procedures,
+      ]
+    : topic.procedures;
+  const faqs = isInheritanceChampion
+    ? [...topic.faqs, ...championExtraFaqs]
+    : topic.faqs;
+
   const internalLinks = [
     ...topic.relatedServiceLinks,
+    ...(isInheritanceChampion ? championExtraRelatedLinks : []),
     ...topic.relatedFaqLinks,
     ...topic.relatedCaseLinks,
     ...topic.relatedKeywordLinks,
   ];
+
+  const lawyerOpinion = isInheritanceChampion
+    ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-08-07.`
+    : buildLawyerOpinion(config.regionLabel, topic.title);
+
+  const ctaDescription = isInheritanceChampion
+    ? "내 상속 상황에 필요한 절차를 확인하고 싶으시면 사망일·상속인·확인된 재산·채무만 남겨 주세요. 준비서류와 다음 단계부터 안내합니다."
+    : consultationCopy.default;
 
   return {
     slug: config.slug,
@@ -81,26 +116,26 @@ export function buildKeywordHubPage(
     h1: topic.h1,
     metaTitle: topic.metaTitle,
     description: topic.metaDescription,
-    summaryParagraphs: topic.summaryParagraphs,
+    summaryParagraphs,
     costFactors: topic.costFactors,
     primaryKeywords: topic.primaryKeywords,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
     problemStatement: topic.problemStatement,
-    whenNeeded: topic.whenNeeded,
+    whenNeeded,
     jurisdictionGuide: getJurisdictionGuide(config),
     consultationCase,
     consultationCases,
     legalIssues: topic.lawyerNeededCases,
     precautions: topic.precautions,
-    procedures: topic.procedures,
+    procedures,
     documents: topic.documents,
     costGuide: topic.costGuide,
-    faqs: topic.faqs,
-    lawyerOpinion: buildLawyerOpinion(config.regionLabel, topic.title),
+    faqs,
+    lawyerOpinion,
     directionsNote: buildDirectionsNote(config),
-    ctaDescription: consultationCopy.default,
+    ctaDescription,
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
     relatedServiceLinks: internalLinks,
     relatedRegionLinks: [],
