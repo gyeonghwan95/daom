@@ -110,7 +110,7 @@ export function PublicAgencyRegistrationPageView({
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
-        ctaHref="/contact"
+        ctaHref="/contact/inquiry"
         ctaLabel="공공기관 등기 상담하기"
         secondaryCta={{
           href: "#documents",

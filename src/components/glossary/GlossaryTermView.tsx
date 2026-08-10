@@ -97,7 +97,7 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
       <ConsultationCTA
         title="용어와 관련해 절차가 궁금하신가요?"
         description="자가진단으로 상황을 점검하거나, 상담을 통해 서류와 절차를 확인해 보실 수 있습니다."
-        buttonLabel="상담 문의하기"
+        buttonLabel="1분만에 상담 신청하기"
       />
 
       <ContentSection id="glossary-matters" title="언제 문제가 되는지">
@@ -150,7 +150,7 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
         <ConsultationCTA
           title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={page.ctaText}
-          buttonLabel="상담 문의하기"
+          buttonLabel="1분만에 상담 신청하기"
         />
         <div className="mt-6">
           <LawyerConsultationGuide

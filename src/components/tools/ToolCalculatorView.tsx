@@ -154,7 +154,7 @@ export function ToolCalculatorView({
             <ConsultationCTA
               title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
               description={page.ctaText}
-              buttonLabel="상담 문의하기"
+              buttonLabel="1분만에 상담 신청하기"
             />
             <div className="mt-6">
               <LawyerConsultationGuide

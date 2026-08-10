@@ -157,7 +157,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
       <ConsultationCTA
         title="비슷한 상황이라면 서류부터 확인해 보세요"
         description="준비서류를 먼저 점검한 뒤 상담을 요청하시면 검토가 수월합니다."
-        buttonLabel="상담 문의하기"
+        buttonLabel="1분만에 상담 신청하기"
       />
 
       <QuickInquiryInlineCard
@@ -229,7 +229,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         <ConsultationCTA
           title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={page.ctaText}
-          buttonLabel="상담 문의하기"
+          buttonLabel="1분만에 상담 신청하기"
         />
         <div className="mt-6">
           <LawyerConsultationGuide

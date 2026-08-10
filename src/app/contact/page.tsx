@@ -10,6 +10,10 @@ import { createPageMetadata } from "@/lib/metadata";
 import { siteImages } from "@/lib/site-images";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
+import {
+  CONTACT_INQUIRY_PATH,
+  consultationInquiryCopy,
+} from "@/lib/consultation-inquiry";
 
 export const metadata: Metadata = createPageMetadata(staticPageSeo.contact);
 
@@ -23,10 +27,10 @@ export default function ContactPage() {
           { label: "상담" },
         ]}
         currentPath="/contact"
-        intro="상속·등기·회생 등 법률 문제로 고민이 있으시면 다옴법무사사무소 안윤정 법무사에게 연락해 주세요. 전화, 카카오톡, 네이버 톡톡 중 편한 방법으로 상담하실 수 있으며, 사무소 방문은 예약 후 이용해 주세요."
+        intro={`상속·등기·회생 등 법률 문제로 고민이 있으시면 다옴법무사사무소 안윤정 법무사에게 연락해 주세요. 전화, 카카오톡, 네이버 톡톡 중 편한 방법으로 상담하실 수 있으며, ${consultationInquiryCopy.oneMinuteShort} 사무소 방문은 예약 후 이용해 주세요.`}
         introSideImage={siteImages.contact.top}
         relatedLinks={[
-          { href: "/contact/inquiry", label: "상담 신청서 작성" },
+          { href: CONTACT_INQUIRY_PATH, label: consultationInquiryCopy.ctaShort },
           { href: "/location", label: "오시는 길" },
           { href: "/services", label: "업무안내" },
           { href: "/faq", label: "자주 묻는 질문" },
@@ -69,14 +73,14 @@ export default function ContactPage() {
         <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
           <h2 className="section-heading">상담 신청서로 문의하기</h2>
           <p className="body-text mt-3 max-w-3xl text-navy/80">
-            이름·연락처·상담 분야·현재 상황을 적어 보내 주시면 검토가 수월합니다.{" "}
-            {INQUIRY_RELAXED_NOTE}
+            {consultationInquiryCopy.oneMinute} 이름·연락처·상담 분야·현재 상황을
+            적어 보내 주시면 검토가 수월합니다. {INQUIRY_RELAXED_NOTE}
           </p>
           <Link
-            href="/contact/inquiry"
+            href={CONTACT_INQUIRY_PATH}
             className="btn-primary mt-5 inline-flex min-h-12 items-center px-6"
           >
-            상담 신청서 작성하기
+            {consultationInquiryCopy.ctaPrimary}
           </Link>
         </section>
       </PageContentSection>

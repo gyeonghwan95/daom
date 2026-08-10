@@ -5,6 +5,8 @@ import type { InquiryResult } from "./types";
 
 export type QuickInquiryHandlerEnv = NotifyEnv & {
   TURNSTILE_SECRET_KEY?: string;
+  /** 로컬 전용. "1"이면 Secret 없이 통과(배포에서는 설정 금지). */
+  TURNSTILE_ALLOW_BYPASS?: string;
   ALLOWED_ORIGINS?: string;
   NEXT_PUBLIC_SITE_URL?: string;
 };
@@ -192,12 +194,26 @@ export async function handleQuickInquiry(
   }
 
   const turnstileSecret = env.TURNSTILE_SECRET_KEY?.trim();
+  const allowBypass = env.TURNSTILE_ALLOW_BYPASS === "1";
   const token =
     body && typeof body === "object" && "turnstileToken" in body
       ? String((body as { turnstileToken?: unknown }).turnstileToken ?? "")
       : "";
 
-  if (turnstileSecret) {
+  if (!turnstileSecret) {
+    if (!allowBypass) {
+      return json(
+        {
+          ok: false,
+          code: "turnstile",
+          field: "turnstile",
+          message:
+            "보안 설정이 완료되지 않았습니다. 전화로 문의해 주시거나 잠시 후 다시 시도해 주세요.",
+        },
+        503,
+      );
+    }
+  } else {
     if (!token) {
       return json(
         {

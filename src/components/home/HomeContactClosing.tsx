@@ -63,6 +63,12 @@ export function HomeContactClosing() {
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-white/15 pt-6">
                 <Link
+                  href="/contact/inquiry"
+                  className="home-closing__nav-btn"
+                >
+                  1분만에 상담 신청하기
+                </Link>
+                <Link
                   href="/contact"
                   className="home-closing__nav-btn"
                 >

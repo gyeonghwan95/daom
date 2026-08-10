@@ -9,6 +9,10 @@ import {
   type ConversionVariant,
 } from "@/lib/conversion-cta";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import {
+  consultationInquiryCopy,
+  contactInquiryHref,
+} from "@/lib/consultation-inquiry";
 
 type PageConversionCTAProps = {
   pageType?: ConversionPageType;
@@ -118,19 +122,19 @@ export function PageConversionCTA({
         ) : (
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
             <Link
-              href="/contact"
+              href={
+                serviceSlug
+                  ? contactInquiryHref({ field: serviceSlug })
+                  : contactInquiryHref()
+              }
               data-cta="contact"
               onClick={() => trackCTA("contact", slug)}
               className={primaryBtnClass}
             >
-              상담 문의하기
+              {consultationInquiryCopy.ctaPrimary}
             </Link>
             <Link
-              href={
-                serviceSlug
-                  ? `/contact/inquiry?field=${encodeURIComponent(serviceSlug)}`
-                  : "/contact/inquiry"
-              }
+              href="/contact"
               data-cta="contact"
               onClick={() => trackCTA("contact", slug)}
               className={
@@ -139,7 +143,7 @@ export function PageConversionCTA({
                   : "btn-secondary inline-flex min-h-12 items-center justify-center px-6"
               }
             >
-              상담 신청서 작성
+              연락처·상담 안내
             </Link>
           </div>
         )}

@@ -141,7 +141,7 @@ export function PageDataTemplate({
         introParagraphs={page.introParagraphs}
         keywords={page.primaryKeywords}
         ctaLabel={
-          showInheritanceExtras ? "업무 가능 여부 확인하기" : "상담 문의하기"
+          showInheritanceExtras ? "업무 가능 여부 확인하기" : "1분만에 상담 신청하기"
         }
         showDiagnosisCta={false}
         showAboutLawyerCta

@@ -88,7 +88,8 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
         }
         widgetIdRef.current = window.turnstile.render(hostRef.current, {
           sitekey: siteKey,
-          appearance: "interaction-only",
+          // always: 팝업·인라인 폼에서 위젯이 보이도록 (interaction-only는 UI가 안 나와 검증 누락으로 이어짐)
+          appearance: "always",
           size: "flexible",
           theme: "light",
           callback: handleToken,
@@ -130,12 +131,15 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
 
   return (
     <div className="quick-inquiry__turnstile">
-      <div ref={hostRef} />
+      <p className="quick-inquiry__turnstile-label mb-2 text-xs font-medium text-navy/70">
+        보안 확인 <span className="text-navy/45">(필수)</span>
+      </p>
+      <div ref={hostRef} className="quick-inquiry__turnstile-host min-h-[65px]" />
       {!ready && !failed ? (
-        <p className="text-xs text-navy/55">보안 확인 준비 중…</p>
+        <p className="mt-1 text-xs text-navy/55">보안 확인 준비 중…</p>
       ) : null}
       {failed ? (
-        <p className="text-xs text-red-700" role="alert">
+        <p className="mt-1 text-xs text-red-700" role="alert">
           보안 확인을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.
         </p>
       ) : null}

@@ -70,7 +70,7 @@ export function PreservationRegistrationPageView({
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
-        ctaHref="/contact"
+        ctaHref="/contact/inquiry"
         ctaLabel="보존등기 상담하기"
         secondaryCta={{
           href: "#documents",

@@ -18,14 +18,17 @@ export function GlossaryNationwideNotice({ termLabel }: { termLabel: string }) {
         하시는 것을 권합니다.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
-        <Link href="/contact" className="btn-primary inline-flex min-h-12 items-center px-6">
-          비용·상담 문의하기
-        </Link>
         <Link
           href="/contact/inquiry"
+          className="btn-primary inline-flex min-h-12 items-center px-6"
+        >
+          1분만에 상담 신청하기
+        </Link>
+        <Link
+          href="/contact"
           className="btn-secondary inline-flex min-h-12 items-center px-6"
         >
-          상담 신청서 작성
+          비용·연락처 안내
         </Link>
       </div>
     </aside>

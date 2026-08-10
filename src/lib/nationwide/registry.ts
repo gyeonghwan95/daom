@@ -21,7 +21,7 @@ export function getNationwideNotice(
   type: NationwideServiceType,
   options?: { ctaLabel?: string; ctaHref?: string },
 ): NationwideNoticeConfig {
-  const ctaLabel = options?.ctaLabel ?? "지금 바로 상담하기";
+  const ctaLabel = options?.ctaLabel ?? "1분만에 상담 신청하기";
   const ctaHref = options?.ctaHref ?? "/contact/inquiry?from=nationwide";
 
   if (type === "jurisdiction-exception") {

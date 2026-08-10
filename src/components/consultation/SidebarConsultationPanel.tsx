@@ -74,8 +74,8 @@ export function SidebarConsultationPanel() {
       : []),
     {
       id: "inquiry",
-      label: "상담 신청서",
-      hint: "상황만 적어 보내기",
+      label: "1분 상담 신청",
+      hint: "약 1분 · 상황만 적어 보내기",
       href: "/contact/inquiry",
       variant: "inquiry" as const,
       icon: <FormIcon className="h-4 w-4 shrink-0" />,
@@ -126,7 +126,8 @@ export function SidebarConsultationPanel() {
           바로 상담하기
         </p>
         <p className="sidebar-consult-panel__lead">
-          지금 알고 계신 상황만 알려주셔도 필요한 순서부터 정리해 드립니다.
+          약 1분이면 상담 신청을 남길 수 있습니다. 지금 알고 계신 상황만
+          알려주셔도 필요한 순서부터 정리해 드립니다.
         </p>
 
         <ul className="sidebar-consult-panel__channels">

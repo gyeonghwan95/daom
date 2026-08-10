@@ -82,7 +82,7 @@ export function FloatingCTA() {
                 <p
                   className={`floating-cta__section-note${reducedMotion ? "" : " floating-cta__section-note--emphasis"}`}
                 >
-                  서류·업무명을 몰라도 약 1분이면 남길 수 있습니다
+                  서류·업무명을 몰라도 약 1분이면 상담 신청을 남길 수 있습니다
                 </p>
               </div>
             </div>

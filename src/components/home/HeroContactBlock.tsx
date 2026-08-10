@@ -92,6 +92,13 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
       <div className="hero-contact__footer">
         <div className="hero-contact__row hero-contact__row--guide" role="list">
           <Link
+            href="/contact/inquiry"
+            className="hero-contact__chip hero-contact__chip--contact"
+            role="listitem"
+          >
+            <span className="hero-contact__chip-label">1분 상담 신청</span>
+          </Link>
+          <Link
             href="/contact"
             className="hero-contact__chip hero-contact__chip--contact"
             role="listitem"

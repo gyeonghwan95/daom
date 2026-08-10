@@ -2,6 +2,10 @@ import Link from "next/link";
 import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 import { MID_CTA_HINT } from "@/lib/service-conversion/copy";
 import type { ServiceConversionMidCta } from "@/lib/service-conversion/types";
+import {
+  consultationInquiryCopy,
+  contactInquiryHref,
+} from "@/lib/consultation-inquiry";
 
 type ContactCTASectionProps = {
   serviceSlug?: string;
@@ -19,8 +23,8 @@ export function ContactCTASection({
   diagnosisHref,
 }: ContactCTASectionProps) {
   const inquiryHref = inquiryField
-    ? `/contact/inquiry?field=${encodeURIComponent(inquiryField)}`
-    : "/contact/inquiry";
+    ? contactInquiryHref({ field: inquiryField })
+    : contactInquiryHref();
 
   return (
     <section id="conversion-mid-cta" className="space-y-4">
@@ -39,15 +43,18 @@ export function ContactCTASection({
           href={inquiryHref}
           className="btn-primary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
         >
-          {midCta.buttonLabel}
+          {consultationInquiryCopy.ctaPrimary}
         </Link>
         <Link
           href={inquiryHref}
           className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
         >
-          상담 신청서 작성하기
+          {consultationInquiryCopy.ctaForm}
         </Link>
       </div>
+      <p className="text-center text-sm text-navy/65">
+        {consultationInquiryCopy.oneMinuteShort}
+      </p>
     </section>
   );
 }

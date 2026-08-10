@@ -4,6 +4,10 @@ import {
   getDirectConsultationChannels,
   getPhoneHref,
 } from "@/lib/contact";
+import {
+  CONTACT_INQUIRY_PATH,
+  consultationInquiryCopy,
+} from "@/lib/consultation-inquiry";
 
 type NationwideServiceCardProps = {
   /** 업무 맥락 한 줄 제목 (없으면 기본 문구) */
@@ -42,9 +46,10 @@ export function NationwideServiceCard({
           <h2 className="nationwide-service-card__title">{title}</h2>
           <p className="nationwide-service-card__lead">
             거주지가 부산이 아니거나 부동산·법인이 다른 지역에 있어도
-            상담부터 신청까지 원활히 진행할 수 있습니다. 전화·카카오톡·네이버
-            톡톡으로 바로 시작하고, 서류는 사진·우편·전자 방식으로 전달하면
-            됩니다.
+            상담부터 신청까지 원활히 진행할 수 있습니다.{" "}
+            {consultationInquiryCopy.oneMinuteShort} 전화·카카오톡·네이버
+            톡톡으로도 바로 시작할 수 있고, 서류는 사진·우편·전자 방식으로
+            전달하면 됩니다.
           </p>
         </div>
 
@@ -80,10 +85,10 @@ export function NationwideServiceCard({
 
       <div className="nationwide-service-card__actions">
         <Link
-          href="/contact"
+          href={CONTACT_INQUIRY_PATH}
           className="btn-primary inline-flex min-h-12 items-center justify-center px-5"
         >
-          지금 바로 상담하기
+          {consultationInquiryCopy.ctaPrimary}
         </Link>
         {showChannelButtons ? (
           <div className="nationwide-service-card__channels">

@@ -19,7 +19,7 @@ export function ReadabilityCTA({
   title,
   description,
   href,
-  buttonLabel = "상담 내용 남기기",
+  buttonLabel = "1분만에 상담 신청하기",
   inquiryField,
   fromPage,
   intent,

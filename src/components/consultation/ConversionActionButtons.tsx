@@ -14,6 +14,10 @@ import {
   getPhoneHref,
 } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import {
+  CONTACT_INQUIRY_PATH,
+  consultationInquiryCopy,
+} from "@/lib/consultation-inquiry";
 
 type ConversionActionButtonsProps = {
   documentsHref?: string;
@@ -65,6 +69,29 @@ export function ConversionActionButtons({
 
   return (
     <div className={`space-y-3 ${className}`.trim()}>
+      <Link
+        href={CONTACT_INQUIRY_PATH}
+        data-cta="contact"
+        onClick={() => trackCTA("contact", slug)}
+        className={
+          theme === "dark"
+            ? `${primaryBase} w-full bg-white text-navy hover:bg-beige`
+            : `${primaryBase} w-full bg-navy text-white hover:bg-navy-dark`
+        }
+      >
+        <FormIcon className="h-5 w-5 shrink-0" />
+        <span>{consultationInquiryCopy.ctaPrimary}</span>
+      </Link>
+      <p
+        className={
+          theme === "dark"
+            ? "text-center text-xs text-white/75"
+            : "text-center text-xs text-navy/60"
+        }
+      >
+        {consultationInquiryCopy.oneMinuteShort}
+      </p>
+
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
         {phone ? (
           <a

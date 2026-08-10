@@ -106,8 +106,8 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
-        ctaHref={isConsultPrep ? inquiryBase : "/contact"}
-        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "상담 문의하기"}
+        ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
+        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "1분만에 상담 신청하기"}
         secondaryCta={
           isConsultPrep
             ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }

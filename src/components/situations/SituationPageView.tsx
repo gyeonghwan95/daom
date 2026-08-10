@@ -146,7 +146,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         intro={page.intro}
         keywords={page.primaryKeywords}
         eyebrow={`${category.label} · 상황 안내`}
-        ctaLabel="상담 문의하기"
+        ctaLabel="1분만에 상담 신청하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}

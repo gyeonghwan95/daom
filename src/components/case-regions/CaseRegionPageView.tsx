@@ -45,8 +45,8 @@ export function CaseRegionPageView({
         <h1 className="page-title max-w-4xl">{page.h1}</h1>
         <p className="body-text max-w-3xl text-navy/80">{page.intro}</p>
         <div className="flex flex-wrap gap-3 pt-2">
-          <Link href="/contact" className="btn-primary min-h-11 px-5 text-sm">
-            상담 문의하기
+          <Link href="/contact/inquiry" className="btn-primary min-h-11 px-5 text-sm">
+            1분만에 상담 신청하기
           </Link>
           <Link
             href="/업무사례/지역별"
@@ -130,8 +130,8 @@ export function CaseRegionPageView({
           />
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="/contact" className="btn-primary min-h-11 px-5 text-sm">
-            상담 신청
+          <Link href="/contact/inquiry" className="btn-primary min-h-11 px-5 text-sm">
+            1분만에 상담 신청하기
           </Link>
           <Link href="/cases" className="btn-secondary min-h-11 px-5 text-sm">
             전체 업무 사례
