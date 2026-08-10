@@ -24,7 +24,8 @@ CF Function: `functions/api/quick-inquiry.ts`
 4. Site Key → `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (**빌드 시** 클라이언트에 포함)  
 5. Secret Key → `TURNSTILE_SECRET_KEY` (Pages **런타임** 환경변수, 공개 금지)
 
-로컬에서 Secret이 없으면 Turnstile 검증을 건너뜁니다.  
+로컬에서 Secret이 없으면 **기본적으로 문의를 거절**합니다(fail-closed).  
+로컬 개발만 `TURNSTILE_ALLOW_BYPASS=1`로 우회할 수 있습니다. **배포(Production/Preview)에는 우회 플래그를 넣지 마세요.**  
 Secret이 있으면 토큰 검증이 필수입니다.
 
 ## 3. Resend (이메일 알림)
@@ -70,6 +71,7 @@ Cloudflare Dashboard → **Workers & Pages** → 해당 프로젝트 → **Setti
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | ✅ | ✅ | **Build**에도 필요 |
 | `NEXT_PUBLIC_SITE_URL` | ✅ | ✅ | Build |
 | `TURNSTILE_SECRET_KEY` | ✅ | ✅ | Runtime (Functions) |
+| `TURNSTILE_ALLOW_BYPASS` | ❌ | ❌ | 로컬만 `"1"` (배포 금지) |
 | `TELEGRAM_BOT_TOKEN` | ✅ | ✅ | Runtime |
 | `TELEGRAM_CHAT_ID` | ✅ | ✅ | Runtime |
 | `RESEND_API_KEY` | 선택 | 선택 | Runtime |

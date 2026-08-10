@@ -328,7 +328,7 @@ const districts: SeoIntentEntity[] = [
     "수영구",
     "region-suyeong-gu",
     ["수영구 법무사", "광안동 법무사", "민락동 법무사"],
-    "광안리·민락·망미 일대 전월세·매매·상속이 겹치는 부동산 등기 수요가 많습니다.",
+    "광안리·민락·망미 일대에서 전월세·매매·상속이 겹치는 부동산 등기 상담을 안내합니다.",
     ["gwangan", "millak"],
     ["real-estate-registration", "jeonse-registration", "inheritance-registration"],
     [INSTITUTION_IDS.namRegistry],
@@ -360,16 +360,16 @@ const districts: SeoIntentEntity[] = [
 /** 주요 동·생활권 (필수 포함 목록) */
 const livingAreasAndNeighborhoods: SeoIntentEntity[] = [
   livingArea("centum", "센텀", "living-centum", "haeundae-gu", ["센텀 법무사", "센텀시티 법무사", "센텀 법인등기"], "센텀시티·벡스코·마린시티 인근 법인·부동산 등기 핵심 생활권입니다.", ["corporate-registration", "company-establishment", "real-estate-registration"], 90),
-  neighborhood("jaesong", "재송동", "hood-jaesong", "haeundae-gu", ["재송동 법무사", "재송 상속등기"], "재송동 아파트·상가 상속·매매 등기 수요가 많은 동입니다.", ["inheritance-registration", "ownership-transfer"]),
+  neighborhood("jaesong", "재송동", "hood-jaesong", "haeundae-gu", ["재송동 법무사", "재송 상속등기"], "재송동 아파트·상가 상속·매매 등기를 안내하는 동입니다.", ["inheritance-registration", "ownership-transfer"]),
   neighborhood("banyeo", "반여동", "hood-banyeo", "haeundae-gu", ["반여동 법무사", "반여 상속등기"], "반여·반송 일대 주택·상가 등기 문의가 이어지는 동입니다.", ["inheritance-registration", "real-estate-registration"]),
   neighborhood("udong", "우동", "hood-udong", "haeundae-gu", ["우동 법무사", "마린시티 등기"], "마린시티·우동 고급 주거·상가 등기 수요가 있는 동입니다.", ["real-estate-registration", "ownership-transfer"]),
   neighborhood("jwadong", "좌동", "hood-jwadong", "haeundae-gu", ["좌동 법무사", "좌동 상속등기"], "좌동 대단지 아파트 상속·매매 등기가 많은 동입니다.", ["inheritance-registration", "ownership-transfer"]),
   neighborhood("jungdong-haeundae", "중동", "hood-jungdong-haeundae", "haeundae-gu", ["해운대 중동 법무사", "해운대역 인근 등기"], "해운대 해수욕장·중동 상권 인근 부동산 등기 수요가 있습니다.", ["real-estate-registration"]),
   neighborhood("songjeong", "송정동", "hood-songjeong", "haeundae-gu", ["송정동 법무사", "송정 해변 인근 등기"], "송정 일대 주택·펜션·상가 상속·등기 문의가 있는 동입니다.", ["inheritance-registration"]),
-  neighborhood("gwangan", "광안동", "hood-gwangan", "suyeong-gu", ["광안동 법무사", "광안리 등기"], "광안리 해변 인근 아파트·상가 전세·매매·상속 등기 수요가 많습니다.", ["jeonse-registration", "real-estate-registration"], 80),
+  neighborhood("gwangan", "광안동", "hood-gwangan", "suyeong-gu", ["광안동 법무사", "광안리 등기"], "광안리 해변 인근 아파트·상가 전세·매매·상속 등기를 안내하는 동입니다.", ["jeonse-registration", "real-estate-registration"], 80),
   neighborhood("namcheon", "남천동", "hood-namcheon", "suyeong-gu", ["남천동 법무사", "남천동 상속등기"], "남천동 실거주 아파트 상속·매매 등기가 있는 동입니다.", ["inheritance-registration"]),
   neighborhood("millak", "민락동", "hood-millak", "suyeong-gu", ["민락동 법무사", "민락수변공원 인근"], "민락·수변공원 인근 주택·상가 등기 문의가 있는 동입니다.", ["real-estate-registration"]),
-  neighborhood("yeonsan", "연산동", "hood-yeonsan", "yeonje-gu", ["연산동 법무사", "연산 상속등기"], "연산동 대단지·상가 상속·법인 사무실 등기 수요가 많습니다.", ["inheritance-registration", "corporate-registration"], 80),
+  neighborhood("yeonsan", "연산동", "hood-yeonsan", "yeonje-gu", ["연산동 법무사", "연산 상속등기"], "연산동 대단지·상가 상속·법인 사무실 등기를 안내하는 동입니다.", ["inheritance-registration", "corporate-registration"], 80),
   neighborhood("geoje", "거제동", "hood-geoje", "yeonje-gu", ["거제동 법무사", "거제동 등기"], "거제동 주택·상가 상속·등기 문의가 있는 동입니다.", ["inheritance-registration"]),
   livingArea("seomyeon", "서면", "living-seomyeon", "busanjin-gu", ["서면 법무사", "서면역 법무사", "부산 서면 등기"], "부산 최대 상권 서면·부전 일대 상가·오피스 등기 핵심 생활권입니다.", ["real-estate-registration", "corporate-registration"], 88),
   neighborhood("bujeon", "부전동", "hood-bujeon", "busanjin-gu", ["부전동 법무사", "부전동 상가등기"], "부전동 상가·오피스텔 매매 등기 수요가 있는 동입니다.", ["ownership-transfer"]),
@@ -391,9 +391,9 @@ const livingAreasAndNeighborhoods: SeoIntentEntity[] = [
 
 /** 주요 역세권 */
 const stationAreas: SeoIntentEntity[] = [
-  stationArea("centum-city-station", "센텀시티역", "station-centum-city", "haeundae-gu", ["센텀시티역 법무사", "센텀역 인근 법무사"], "2호선 센텀시티역·벡스코 인근 법인·부동산 등기 검색 수요가 많습니다.", ["corporate-registration", "inheritance-registration"], 82),
-  stationArea("seomyeon-station", "서면역", "station-seomyeon", "busanjin-gu", ["서면역 법무사", "서면역 인근 등기"], "1·2호선 서면역 최대 환승역 인근 상가·오피스 등기 수요가 집중됩니다.", ["real-estate-registration", "corporate-registration"], 84),
-  stationArea("haeundae-station", "해운대역", "station-haeundae", "haeundae-gu", ["해운대역 법무사", "해운대역 인근"], "해운대역·중동 인근 주거·상가 등기 검색이 많습니다.", ["real-estate-registration"]),
+  stationArea("centum-city-station", "센텀시티역", "station-centum-city", "haeundae-gu", ["센텀시티역 법무사", "센텀역 인근 법무사"], "2호선 센텀시티역·벡스코 인근 법인·부동산 등기 상담을 안내합니다.", ["corporate-registration", "inheritance-registration"], 82),
+  stationArea("seomyeon-station", "서면역", "station-seomyeon", "busanjin-gu", ["서면역 법무사", "서면역 인근 등기"], "1·2호선 서면역 환승역 인근 상가·오피스 등기를 안내합니다.", ["real-estate-registration", "corporate-registration"], 84),
+  stationArea("haeundae-station", "해운대역", "station-haeundae", "haeundae-gu", ["해운대역 법무사", "해운대역 인근"], "해운대역·중동 인근 주거·상가 등기 상담을 안내합니다.", ["real-estate-registration"]),
   stationArea("gwangan-station", "광안역", "station-gwangan", "suyeong-gu", ["광안역 법무사", "광안역 인근"], "광안역·광안리 인근 전세·매매 등기 수요가 있습니다.", ["jeonse-registration"]),
   stationArea("yeonsan-station", "연산역", "station-yeonsan", "yeonje-gu", ["연산역 법무사", "연산역 인근"], "연산역 인근 아파트·상가 상속·등기 문의가 많습니다.", ["inheritance-registration"]),
   stationArea("sasang-station", "사상역", "station-sasang", "sasang-gu", ["사상역 법무사", "사상역 인근"], "사상역·서부산 유통지구 인근 등기·회생 상담이 있습니다.", ["personal-rehabilitation"]),

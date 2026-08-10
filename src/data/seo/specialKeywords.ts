@@ -13,7 +13,7 @@ export const seoSpecialKeywords: SeoIntentEntity[] = [
     parentRegion: "busan",
     keywords: ["부산 여성 법무사", "여성 법무사 부산", "부산 여자 법무사"],
     description:
-      "부산에서 여성 법무사에게 상담받고 싶은 검색 의도입니다. 상속·가사·부동산 사건 상담 수요가 많습니다.",
+      "부산에서 여성 법무사에게 상담받고 싶은 검색 의도입니다. 상속·가사·부동산 등기·회생 절차를 안내합니다.",
     relatedServices: ["inheritance-registration", "personal-rehabilitation"],
     relatedRegions: ["busan", "haeundae-gu"],
     searchIntent: "demographic",

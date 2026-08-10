@@ -158,6 +158,20 @@ async function main() {
       );
       return;
     }
+    // Soft-fail: prebuild가 스크래핑 실패로 막히지 않도록 빈 피드 유지
+    const soft = process.env.NAVER_REVIEWS_SOFT !== "0";
+    if (soft && fallback) {
+      console.warn(
+        `Naver place reviews fetch failed (${message}). Keeping previous feed (soft mode).`,
+      );
+      return;
+    }
+    if (soft) {
+      console.warn(
+        `Naver place reviews fetch failed (${message}). Soft mode: continuing without fresh reviews.`,
+      );
+      return;
+    }
     console.error(message);
     process.exit(1);
   }

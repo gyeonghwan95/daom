@@ -1,0 +1,56 @@
+# 2026-08-10 Google 색인 우선 요청 큐
+# 제약: 기존 URL 삭제·변경 금지. Champion·허브만 재요청.
+# 도메인: https://xn--2j1br1na42lvxja38mk8r.kr
+# 참고: docs/seo/GOOGLE_INDEXING_DIAGNOSIS_2026-08.md
+
+## P0 — Champion (GSC 색인 생성 요청 최우선)
+/부산법무사
+/부산상속법무사
+/부산법인법무사
+/부산상속포기
+/부산상속등기
+/부산법인등기
+/부산부동산등기
+/해운대법무사
+/센텀법무사
+/부산법무사추천
+/부산등기법무사
+/부산개인회생
+/부산여성법무사
+/office
+/contact
+/
+
+## P1 — 허브·전환 (P0 이후)
+/부산법무사비용
+/부산상속등기전문
+/부산부동산등기전문
+/부산법인등기전문
+/상속
+/법인등기
+/services
+/location
+/about
+
+## 운영 규칙
+- 하루 GSC 수동 요청 한도 내에서 P0부터만
+- thin 동·역·전문검색 URL은 요청 큐에 넣지 않음 (URL은 유지, 크롤은 Champion 우선)
+- 배포 후 IndexNow는 P0 absolute URL만 (선택)
+
+## Absolute URL (P0)
+https://xn--2j1br1na42lvxja38mk8r.kr/
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AC%EC%84%B1%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/office
+https://xn--2j1br1na42lvxja38mk8r.kr/contact

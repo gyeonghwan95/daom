@@ -200,6 +200,9 @@ function topicHubLink(serviceSlug: string): PageRelatedLink | undefined {
 export function getMainLandingHubLinks(): RelatedLink[] {
   return [
     { href: "/부산법무사", label: "부산 법무사" },
+    { href: "/부산상속법무사", label: "부산 상속 법무사" },
+    { href: "/부산법인법무사", label: "부산 법인 법무사" },
+    { href: "/부산상속포기", label: "부산 상속포기" },
     { href: "/해운대법무사", label: "해운대 법무사" },
     { href: "/센텀법무사", label: "센텀 법무사" },
     { href: "/부산여성법무사", label: "부산 여성 법무사" },
@@ -217,6 +220,26 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/상속", label: "상속 종합 허브" },
     { href: "/법인등기", label: "법인등기 종합 허브" },
   ];
+}
+
+function championLinkForService(
+  serviceSlug: string,
+  selfPath: string,
+): PageRelatedLink | null {
+  let link: PageRelatedLink | null = null;
+  if ((INHERITANCE_SERVICES as readonly string[]).includes(serviceSlug)) {
+    link = { href: "/부산상속법무사", label: "부산 상속 법무사" };
+  } else if ((CORPORATE_SERVICES as readonly string[]).includes(serviceSlug)) {
+    link = { href: "/부산법인법무사", label: "부산 법인 법무사" };
+  } else if ((REAL_ESTATE_SERVICES as readonly string[]).includes(serviceSlug)) {
+    link = { href: "/부산부동산등기", label: "부산 부동산등기" };
+  } else if ((REHAB_SERVICES as readonly string[]).includes(serviceSlug)) {
+    link = { href: "/부산개인회생", label: "부산 개인회생" };
+  } else {
+    link = { href: "/부산법무사", label: "부산 법무사 종합 안내" };
+  }
+  if (!link || link.href === selfPath) return null;
+  return link;
 }
 
 export type ThematicLinkInput = {
@@ -240,6 +263,8 @@ export function getThematicInternalLinks(
 
   if (input.category === "service" && serviceSlug) {
     const hub = topicHubLink(serviceSlug);
+    const champion = championLinkForService(serviceSlug, input.path);
+    if (champion) links.push(champion);
     if (hub) links.push(hub);
     links.push(...serviceDetailLinks(serviceSlug, input.path));
     links.push(...localLandingsForService(serviceSlug, undefined, 4));
@@ -270,6 +295,9 @@ export function getThematicInternalLinks(
   }
 
   if (serviceSlug) {
+    const champion = championLinkForService(serviceSlug, input.path);
+    if (champion) links.push(champion);
+
     const hub = topicHubLink(serviceSlug);
     if (hub) links.push(hub);
 

@@ -24,9 +24,9 @@ const POPULAR_SEARCH_CARDS = [
     hint: "등기 업무별 확인",
   },
   {
-    href: "/부산상속등기전문",
-    label: "부산 상속등기 상담",
-    hint: "절차·서류·기한",
+    href: "/부산상속법무사",
+    label: "부산 상속 법무사",
+    hint: "등기·포기·한정승인 선택",
   },
   {
     href: "/부산법무사비용",

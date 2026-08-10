@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-08-10",
-  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex 자동 변경 금지. 관측 URL은 확정 전까지 비워 둔다.",
+  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex 자동 변경 금지. URL 삭제·슬러그 변경 금지. GSC 색인 요청은 Tier1 Champion 우선(docs/seo/GOOGLE_INDEXING_DIAGNOSIS_2026-08.md).",
   "assets": [
     {
       "path": "/부산상속법무사",

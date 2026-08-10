@@ -56,7 +56,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["법인등기", "부산 법인등기", "본점이전등기", "법인 변경등기"],
     description:
-      "주식회사·유한회사 등 법인의 설립 이후 변경·이전 등기를 처리합니다. 센텀·서면 일대 법인 수요가 많습니다.",
+      "주식회사·유한회사 등 법인의 설립 이후 변경·이전 등기를 처리합니다. 센텀·서면 일대 법인 설립·임원변경·본점이전을 안내합니다.",
     relatedServices: ["company-establishment", "director-change", "head-office-transfer"],
     relatedRegions: ["busan", "haeundae-gu", "centum"],
     searchIntent: "procedure",
@@ -322,7 +322,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["선박등기", "부산 선박등기", "어선 등기", "해운 선박 등기"],
     description:
-      "선박·어선 소유권 이전·저당 등 선박 등기를 지원합니다. 부산 항만·해운 업체 수요가 많습니다.",
+      "선박·어선 소유권 이전·저당 등 선박 등기를 지원합니다. 부산 항만·해운 업체 상담을 안내합니다.",
     relatedServices: ["corporate-registration", "ownership-transfer"],
     relatedRegions: ["busan", "yeongdo-gu", "gangseo-gu"],
     searchIntent: "industry",
