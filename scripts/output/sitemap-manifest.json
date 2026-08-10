@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T12:52:47.619Z",
+  "generatedAt": "2026-08-10T11:35:51.112Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1637,
   "format": "urlset",
@@ -14,22 +14,6 @@
     "8": 28
   },
   "excluded": [
-    {
-      "path": "/거제동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/문현동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/부곡동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/사직동법무사",
-      "reason": "duplicate"
-    },
     {
       "path": "/업무사례/부산가야역법무사",
       "reason": "non-indexable-registry"
@@ -503,22 +487,6 @@
       "reason": "non-indexable-registry"
     },
     {
-      "path": "/우동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/전포동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/좌동법무사",
-      "reason": "duplicate"
-    },
-    {
-      "path": "/화명동법무사",
-      "reason": "duplicate"
-    },
-    {
       "path": "/blog/external/224323008309",
       "reason": "redirect"
     },
@@ -868,7 +836,7 @@
       "path": "/office",
       "tier": 2,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/office",
-      "lastmod": "2026-08-03"
+      "lastmod": "2026-08-07"
     },
     {
       "path": "/reviews",

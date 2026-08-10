@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-07T12:53:12.379Z
+# 생성: 2026-08-10T11:36:16.424Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1637 (제외 148)
+# 총 URL: 1637 (제외 140)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -1685,11 +1685,7 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (148)
-# [EXCLUDED:duplicate] /거제동법무사
-# [EXCLUDED:duplicate] /문현동법무사
-# [EXCLUDED:duplicate] /부곡동법무사
-# [EXCLUDED:duplicate] /사직동법무사
+# 제외 (140)
 # [EXCLUDED:non-indexable-registry] /업무사례/부산가야역법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산강서서부지원법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산개금역법무사
@@ -1808,10 +1804,6 @@ Tier 8 — 후순위 (언론·강의) (28개)
 # [EXCLUDED:non-indexable-registry] /업무사례/부산화명역법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산회동석대도시첨단산업단지법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산BIFC법무사
-# [EXCLUDED:duplicate] /우동법무사
-# [EXCLUDED:duplicate] /전포동법무사
-# [EXCLUDED:duplicate] /좌동법무사
-# [EXCLUDED:duplicate] /화명동법무사
 # [EXCLUDED:redirect] /blog/external/224323008309
 # [EXCLUDED:redirect] /blog/external/224324132853
 # [EXCLUDED:redirect] /blog/external/224325288121

@@ -1,0 +1,47 @@
+[
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 법인 법무사",
+    "status": "poor-or-not-visible",
+    "observedUrl": null,
+    "notes": "순위 URL 미확인 — 추측하지 않음"
+  },
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 법인전문 법무사",
+    "status": "poor-or-not-visible",
+    "observedUrl": null,
+    "notes": "분석용 query. 공개 페이지 exact phrase 삽입 금지"
+  },
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 법무사 법인전문",
+    "status": "poor-or-not-visible",
+    "observedUrl": null,
+    "notes": "분석용 query. Champion은 /부산법인법무사"
+  },
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 상속포기 법무사",
+    "status": "poor-or-not-visible",
+    "observedUrl": null
+  },
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 상속 법무사 추천",
+    "status": "poor-or-not-visible",
+    "observedUrl": null
+  },
+  {
+    "date": "2026-08-10",
+    "engine": "naver",
+    "query": "부산 법무사 추천",
+    "status": "poor-or-not-visible",
+    "observedUrl": null
+  }
+]

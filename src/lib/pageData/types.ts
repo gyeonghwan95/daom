@@ -25,6 +25,8 @@ export type PageRelatedLink = {
 };
 
 export type PageSection = {
+  /** 앵커 id (station-seomyeon 등). 없으면 section-{index} */
+  id?: string;
   title: string;
   body: string;
   items?: string[];

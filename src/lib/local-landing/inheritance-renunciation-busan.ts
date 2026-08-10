@@ -2,10 +2,17 @@ import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing
 import type { ServiceFaq } from "@/types/service";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
 import { officeLocation } from "@/lib/office-location";
+import {
+  renunciationChampionExtraFaqs,
+  renunciationChampionExtraRelatedLinks,
+  renunciationChampionExtraSummaryParagraphs,
+  renunciationChampionExtraWhenNeeded,
+  renunciationChampionTimeline,
+} from "./renunciation-champion-modules";
 
 /**
  * `/부산상속포기` — 상속포기 신고 대표 (한정승인·등기와 의도 분리).
- * 검토일: 2026-07-30
+ * 검토일: 2026-07-30 / SAFE 보강: 2026-08-10
  */
 export function buildBusanInheritanceRenunciationPage(
   config: LocalLandingConfig,
@@ -61,6 +68,7 @@ export function buildBusanInheritanceRenunciationPage(
       answer:
         "본인이 포기한 상속분에 대한 등기는 하지 않습니다. 다른 상속인은 자신의 지분 범위에서 등기·협의를 진행할 수 있습니다.",
     },
+    ...renunciationChampionExtraFaqs,
   ];
 
   return {
@@ -78,6 +86,7 @@ export function buildBusanInheritanceRenunciationPage(
       "다옴법무사사무소는 가정법원 신고 서류와 가족 조율 포인트를 안내합니다. 재산이 남아 채무만 제한하려면 부산 한정승인을 함께 보세요.",
       "배우자와 자녀의 선택이 다르거나, 후순위에게 채무가 넘어가는 것이 부담이면 신고 전에 가족 회의 포인트를 정리하는 것이 좋습니다.",
       "포기 신고 후 다른 상속인이 등기·협의를 진행할 때는 ‘누가 어떤 상속분을 받는지’를 가족끼리 먼저 맞춰 두면 분쟁을 줄일 수 있습니다. 안심상속 원스톱서비스 등으로 채무·재산을 조회한 뒤 선택하는 것이 안전합니다.",
+      ...renunciationChampionExtraSummaryParagraphs,
     ],
     primaryKeywords: [
       "부산 상속포기 법무사",
@@ -95,6 +104,7 @@ export function buildBusanInheritanceRenunciationPage(
       "3개월 기한이 임박했을 때",
       "후순위에게 넘어가는 효과를 확인하고 싶을 때",
       "미성년·해외 상속인의 포기를 검토할 때",
+      ...renunciationChampionExtraWhenNeeded,
     ],
     jurisdictionGuide: {
       title: "부산 상속포기 관할",
@@ -136,6 +146,8 @@ export function buildBusanInheritanceRenunciationPage(
       "검토·작성: 안윤정 법무사(다옴법무사사무소). 검토일 2026-07-30.",
     ],
     procedures: [
+      "상속포기 준비 타임라인(아래)",
+      ...renunciationChampionTimeline,
       "인지일·상속인·채무·처분 이력 확인",
       "포기 vs 한정승인 비교",
       "신고서·첨부서류 준비",
@@ -153,10 +165,10 @@ export function buildBusanInheritanceRenunciationPage(
       "상속포기 수임료는 상속인 수·미성년·해외 여부·동시 진행 건수에 따라 달라집니다. 법원 수수료는 별도이며, 확정 금액은 상담 후 견적합니다. 한정승인·상속등기를 같은 가족에서 병행하면 항목별로 견적을 나눠 안내합니다. 기한이 임박해 긴급 접수가 필요하면 일정에 따라 달라질 수 있습니다. 이해를 위한 가상 예시로, 상속인 4명 중 2명만 포기하고 2명은 한정승인을 검토하면 신고서·첨부서류가 각각 달라집니다. 실제 결과는 개별 사정에 따라 달라질 수 있습니다.",
     costFactors: ["상속인 수", "특별대리 필요", "기한 임박 여부", "병행 절차"],
     faqs,
-    lawyerOpinion: `${lawyerProfileMeta.fullTitle}는 상속포기 상담에서 후순위 효과를 빠뜨리지 않도록 먼저 설명합니다. 재산이 남아 채무만 제한할 때는 한정승인도 함께 비교합니다. 다옴법무사사무소는 3개월 기한·처분 이력·가족 조율 포인트를 같은 상담에서 정리합니다. 검토일 2026-07-30.`,
+    lawyerOpinion: `${lawyerProfileMeta.fullTitle}는 상속포기 상담에서 후순위 효과를 빠뜨리지 않도록 먼저 설명합니다. 재산이 남아 채무만 제한할 때는 한정승인도 함께 비교합니다. 다옴법무사사무소는 3개월 기한·처분 이력·가족 조율 포인트를 같은 상담에서 정리합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-08-10.`,
     directionsNote: `사무소는 ${officeLocation.fullAddress}입니다.`,
     ctaDescription:
-      "사망일, 상속인 구성, 확인된 채무를 남겨주시면 포기·한정승인 중 먼저 볼 절차를 정리할 수 있습니다.",
+      "상속관계와 기한을 확인하고 싶으시면 사망일·상속인 구성·확인된 채무만 남겨 주세요.",
     relatedBlogHrefs: [],
     relatedServiceLinks: [
       { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
@@ -167,7 +179,8 @@ export function buildBusanInheritanceRenunciationPage(
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/상속포기자가진단", label: "상속포기 자가진단" },
-      { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속 절차 먼저 확인하기" },
+      ...renunciationChampionExtraRelatedLinks,
+      { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 준비서류 확인하기" },
     ],
     relatedRegionLinks: [
       { href: "/동래구상속포기", label: "동래구 상속포기" },

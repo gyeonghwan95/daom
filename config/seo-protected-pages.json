@@ -1,7 +1,25 @@
 {
   "version": 1,
-  "updated": "2026-08-07",
+  "updated": "2026-08-10",
   "notes": "URL은 프로젝트 내부 ranking 확정이 없으면 비워 둔다. 추측으로 채우지 않는다. protected=true인 query의 후보 URL은 title/H1/canonical/noindex를 자동 변경하지 않는다.",
+  "champions": {
+    "inheritance": {
+      "path": "/부산상속법무사",
+      "role": "INHERITANCE_CHAMPION"
+    },
+    "corporate": {
+      "path": "/부산법인법무사",
+      "role": "CORPORATE_CHAMPION"
+    },
+    "renunciation": {
+      "path": "/부산상속포기",
+      "role": "RENUNCIATION_CHAMPION"
+    },
+    "busanMain": {
+      "path": "/부산법무사",
+      "role": "BUSAN_MAIN_CHAMPION"
+    }
+  },
   "champion": {
     "slug": "부산상속법무사",
     "path": "/부산상속법무사",
@@ -54,6 +72,47 @@
       "protected": true,
       "urls": [],
       "candidateUrls": ["/부산법무사"]
+    },
+    {
+      "query": "부산 법인 법무사",
+      "protected": false,
+      "targetChampion": "/부산법인법무사",
+      "urls": [],
+      "candidateUrls": ["/부산법인법무사", "/부산법인등기", "/부산법인전문법무사"]
+    },
+    {
+      "query": "부산 법인전문 법무사",
+      "protected": false,
+      "targetChampion": "/부산법인법무사",
+      "urls": [],
+      "candidateUrls": ["/부산법인법무사", "/부산법인전문법무사"],
+      "riskNote": "분석용 query. Champion 공개 문구에 exact phrase 삽입 금지"
+    },
+    {
+      "query": "부산 법무사 법인전문",
+      "protected": false,
+      "targetChampion": "/부산법인법무사",
+      "urls": []
+    },
+    {
+      "query": "부산 상속포기 법무사",
+      "protected": false,
+      "targetChampion": "/부산상속포기",
+      "urls": []
+    },
+    {
+      "query": "부산 상속 법무사 추천",
+      "protected": false,
+      "targetChampion": "/부산상속법무사",
+      "urls": [],
+      "candidateUrls": ["/부산상속법무사", "/부산상속법무사추천"]
+    },
+    {
+      "query": "부산 법무사 추천",
+      "protected": false,
+      "targetChampion": "/부산법무사",
+      "urls": [],
+      "candidateUrls": ["/부산법무사", "/부산법무사추천"]
     }
   ],
   "rules": {
@@ -61,6 +120,7 @@
       "전문 법무사",
       "상속 전문 법무사",
       "상속전문법무사",
+      "법인전문 법무사",
       "부산 1위",
       "최고",
       "유일"

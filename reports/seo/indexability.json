@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-08-10T10:57:38.350Z",
+  "rows": [
+    {
+      "path": "/부산법인법무사",
+      "published": true,
+      "inSitemap": true,
+      "robotsHint": "default allow (no noindex applied in this change set)",
+      "status": "OK"
+    },
+    {
+      "path": "/부산상속포기",
+      "published": true,
+      "inSitemap": true,
+      "robotsHint": "default allow (no noindex applied in this change set)",
+      "status": "OK"
+    },
+    {
+      "path": "/부산상속법무사",
+      "published": true,
+      "inSitemap": true,
+      "robotsHint": "default allow (no noindex applied in this change set)",
+      "status": "OK"
+    },
+    {
+      "path": "/부산법무사",
+      "published": true,
+      "inSitemap": true,
+      "robotsHint": "default allow (no noindex applied in this change set)",
+      "status": "OK"
+    },
+    {
+      "path": "/부산법인등기",
+      "published": true,
+      "inSitemap": true,
+      "robotsHint": "default allow (no noindex applied in this change set)",
+      "status": "OK"
+    }
+  ],
+  "policy": "sitemap URL 삭제 금지. lastmod 무조건 now 금지."
+}

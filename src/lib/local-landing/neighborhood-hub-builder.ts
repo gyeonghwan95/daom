@@ -6,6 +6,7 @@ import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing
 import { districtProfiles } from "./districts";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import { getNeighborhoodTopic } from "./neighborhood-hub-topics";
+import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -113,5 +114,6 @@ export function buildNeighborhoodHubPage(
     relatedServiceLinks: internalLinks,
     relatedRegionLinks: [],
     neighborhoodLivingArea: topic.livingAreaBody,
+    stationSections: buildStationSectionsForHost(`/${config.slug}`),
   };
 }

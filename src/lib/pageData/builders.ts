@@ -125,7 +125,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
   }
 
   if (page.pageType === "neighborhood-hub") {
-    return [
+    const sections: PageSection[] = [
       {
         title: "지역 생활권 안내",
         body: page.neighborhoodLivingArea ?? page.problemStatement,
@@ -149,10 +149,18 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
         title: "법무사 의견",
         body: page.lawyerOpinion,
       },
+      ...(page.stationSections ?? []).map((s) => ({
+        id: s.id,
+        title: s.title,
+        body: s.body,
+        items: s.items,
+        links: s.links,
+      })),
     ];
+    return sections;
   }
 
-  return [
+  const baseSections: PageSection[] = [
     {
       title: "비용 안내",
       body: page.costGuide,
@@ -166,7 +174,15 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
       title: "법무사 의견",
       body: page.lawyerOpinion,
     },
+    ...(page.stationSections ?? []).map((s) => ({
+      id: s.id,
+      title: s.title,
+      body: s.body,
+      items: s.items,
+      links: s.links,
+    })),
   ];
+  return baseSections;
 }
 
 export function buildPageDataFromLocalLanding(

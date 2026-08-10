@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "updated": "2026-08-10",
+  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex 자동 변경 금지. 관측 URL은 확정 전까지 비워 둔다.",
+  "assets": [
+    {
+      "path": "/부산상속법무사",
+      "role": "INHERITANCE_HUB_CHAMPION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "protectedCanonical": true,
+      "knownSuccessfulQueries": ["부산상속법무사", "부산 상속 법무사"],
+      "targetQueriesAnalytical": ["부산 상속 법무사 추천", "부산 상속 전문 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산상속등기",
+      "role": "INHERITANCE_REGISTRATION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "knownSuccessfulQueries": ["부산 상속등기", "부산 상속등기 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산상속포기",
+      "role": "INHERITANCE_RENUNCIATION_CHAMPION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "targetQueriesAnalytical": ["부산 상속포기 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산법무사",
+      "role": "BUSAN_MAIN_CHAMPION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "knownSuccessfulQueries": ["부산 법무사"],
+      "targetQueriesAnalytical": ["부산 법무사 추천"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산법인법무사",
+      "role": "CORPORATE_HUB_CHAMPION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "targetQueriesAnalytical": [
+        "부산 법인 법무사",
+        "부산 법인전문 법무사",
+        "부산 법무사 법인전문"
+      ],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산법인등기",
+      "role": "CORPORATE_REGISTRY",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/서면법무사",
+      "role": "NEIGHBORHOOD_HOST_STATION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "notes": "Station Entity Host (서면역). title에 역명 덤프 금지",
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/센텀법무사",
+      "role": "REGION_HOST_STATION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "notes": "Station Entity Host (센텀시티역·벡스코역)",
+      "modificationRisk": "HIGH"
+    }
+  ],
+  "rules": {
+    "forbidNewPublicPhrases": [
+      "전문 법무사",
+      "법인전문 법무사",
+      "상속전문 법무사",
+      "최고 법무사",
+      "1위 법무사"
+    ],
+    "autoApply": ["SAFE"],
+    "requireApproval": ["CAUTION", "HIGH_RISK"]
+  }
+}

@@ -1,0 +1,582 @@
+{
+  "generatedAt": "2026-08-10T11:34:14.004Z",
+  "totals": {
+    "entities": 30,
+    "verified": 30,
+    "phase1Sections": 22,
+    "publishedPaths": 1777
+  },
+  "existingThinStationUrls": [
+    {
+      "path": "/서면역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/연산역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/센텀시티역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/해운대역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/광안역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/사상역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    },
+    {
+      "path": "/명지역법무사",
+      "published": true,
+      "policy": "KEEP — 삭제 금지. 신규 확장·복제 금지. DOORWAY-RISK 관찰"
+    }
+  ],
+  "hostAssignments": [
+    {
+      "stationId": "seomyeon",
+      "stationName": "서면역",
+      "hostPage": "/서면법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "yeonsan",
+      "stationName": "연산역",
+      "hostPage": "/연산동법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "dongnae",
+      "stationName": "동래역",
+      "hostPage": "/동래역법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "busan-station",
+      "stationName": "부산역",
+      "hostPage": "/부산역법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "suyeong",
+      "stationName": "수영역",
+      "hostPage": "/수영구법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "centum-city",
+      "stationName": "센텀시티역",
+      "hostPage": "/센텀법무사",
+      "priority": "critical",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "haeundae",
+      "stationName": "해운대역",
+      "hostPage": "/해운대법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "jangsan",
+      "stationName": "장산역",
+      "hostPage": "/좌동법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "sasang",
+      "stationName": "사상역",
+      "hostPage": "/사상법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "gyodae",
+      "stationName": "교대역",
+      "hostPage": "/거제동법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "jaesong",
+      "stationName": "재송역",
+      "hostPage": "/재송동법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "bexco",
+      "stationName": "벡스코역",
+      "hostPage": "/센텀법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "gwangan",
+      "stationName": "광안역",
+      "hostPage": "/광안리법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "jeonpo",
+      "stationName": "전포역",
+      "hostPage": "/전포동법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "nampo",
+      "stationName": "남포역",
+      "hostPage": "/중구법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "jagalchi",
+      "stationName": "자갈치역",
+      "hostPage": "/중구법무사",
+      "priority": "medium",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "minam",
+      "stationName": "미남역",
+      "hostPage": "/동래구법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "city-hall",
+      "stationName": "시청역",
+      "hostPage": "/연제구법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "bujeon",
+      "stationName": "부전역",
+      "hostPage": "/부산진구법무사",
+      "priority": "high",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "jungang",
+      "stationName": "중앙역",
+      "hostPage": "/중구법무사",
+      "priority": "medium",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "dongbaek",
+      "stationName": "동백역",
+      "hostPage": "/해운대법무사",
+      "priority": "medium",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "millak",
+      "stationName": "민락역",
+      "hostPage": "/수영구법무사",
+      "priority": "medium",
+      "action": "ADD-SECTION"
+    },
+    {
+      "stationId": "nopo",
+      "stationName": "노포역",
+      "hostPage": "/금정구법무사",
+      "priority": "low",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "pnu",
+      "stationName": "부산대역",
+      "hostPage": "/금정구법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "gupo",
+      "stationName": "구포역",
+      "hostPage": "/북구법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "deokcheon",
+      "stationName": "덕천역",
+      "hostPage": "/북구법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "hadan",
+      "stationName": "하단역",
+      "hostPage": "/사하구법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "mangmi",
+      "stationName": "망미역",
+      "hostPage": "/망미동법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "geoje",
+      "stationName": "거제역",
+      "hostPage": "/거제동법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    },
+    {
+      "stationId": "middong",
+      "stationName": "중동역",
+      "hostPage": "/해운대법무사",
+      "priority": "medium",
+      "action": "MAP-TO-HUB",
+      "notes": "Host 매핑만. Phase2 이후 섹션 검토"
+    }
+  ],
+  "coverage": [
+    {
+      "station": "서면역",
+      "lines": "1호선,2호선",
+      "district": "부산진구",
+      "primaryHost": "/서면법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-seomyeon",
+      "status": "COVERED"
+    },
+    {
+      "station": "연산역",
+      "lines": "1호선,3호선",
+      "district": "연제구",
+      "primaryHost": "/연산동법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-yeonsan",
+      "status": "COVERED"
+    },
+    {
+      "station": "동래역",
+      "lines": "1호선,4호선",
+      "district": "동래구",
+      "primaryHost": "/동래역법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-dongnae",
+      "status": "COVERED"
+    },
+    {
+      "station": "부산역",
+      "lines": "1호선",
+      "district": "동구",
+      "primaryHost": "/부산역법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-busan",
+      "status": "COVERED"
+    },
+    {
+      "station": "수영역",
+      "lines": "2호선,3호선",
+      "district": "수영구",
+      "primaryHost": "/수영구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-suyeong",
+      "status": "COVERED"
+    },
+    {
+      "station": "센텀시티역",
+      "lines": "2호선",
+      "district": "해운대구",
+      "primaryHost": "/센텀법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-centum-city",
+      "status": "COVERED"
+    },
+    {
+      "station": "해운대역",
+      "lines": "2호선",
+      "district": "해운대구",
+      "primaryHost": "/해운대법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-haeundae",
+      "status": "COVERED"
+    },
+    {
+      "station": "장산역",
+      "lines": "2호선",
+      "district": "해운대구",
+      "primaryHost": "/좌동법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-jangsan",
+      "status": "COVERED"
+    },
+    {
+      "station": "사상역",
+      "lines": "2호선",
+      "district": "사상구",
+      "primaryHost": "/사상법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-sasang",
+      "status": "COVERED"
+    },
+    {
+      "station": "교대역",
+      "lines": "1호선",
+      "district": "연제구",
+      "primaryHost": "/거제동법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-gyodae",
+      "status": "COVERED"
+    },
+    {
+      "station": "재송역",
+      "lines": "동해선",
+      "district": "해운대구",
+      "primaryHost": "/재송동법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-jaesong",
+      "status": "COVERED"
+    },
+    {
+      "station": "벡스코역",
+      "lines": "2호선",
+      "district": "해운대구",
+      "primaryHost": "/센텀법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-bexco",
+      "status": "COVERED"
+    },
+    {
+      "station": "광안역",
+      "lines": "2호선",
+      "district": "수영구",
+      "primaryHost": "/광안리법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-gwangan",
+      "status": "COVERED"
+    },
+    {
+      "station": "전포역",
+      "lines": "2호선",
+      "district": "부산진구",
+      "primaryHost": "/전포동법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-jeonpo",
+      "status": "COVERED"
+    },
+    {
+      "station": "남포역",
+      "lines": "1호선",
+      "district": "중구",
+      "primaryHost": "/중구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-nampo",
+      "status": "COVERED"
+    },
+    {
+      "station": "자갈치역",
+      "lines": "1호선",
+      "district": "중구",
+      "primaryHost": "/중구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-jagalchi",
+      "status": "COVERED"
+    },
+    {
+      "station": "미남역",
+      "lines": "3호선,4호선",
+      "district": "동래구",
+      "primaryHost": "/동래구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-minam",
+      "status": "COVERED"
+    },
+    {
+      "station": "시청역",
+      "lines": "1호선",
+      "district": "연제구",
+      "primaryHost": "/연제구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-city-hall",
+      "status": "COVERED"
+    },
+    {
+      "station": "부전역",
+      "lines": "1호선",
+      "district": "부산진구",
+      "primaryHost": "/부산진구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-bujeon",
+      "status": "COVERED"
+    },
+    {
+      "station": "중앙역",
+      "lines": "1호선",
+      "district": "중구",
+      "primaryHost": "/중구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-jungang",
+      "status": "COVERED"
+    },
+    {
+      "station": "동백역",
+      "lines": "2호선",
+      "district": "해운대구",
+      "primaryHost": "/해운대법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-dongbaek",
+      "status": "COVERED"
+    },
+    {
+      "station": "민락역",
+      "lines": "2호선",
+      "district": "수영구",
+      "primaryHost": "/수영구법무사",
+      "hostPublished": true,
+      "section": true,
+      "sectionId": "station-millak",
+      "status": "COVERED"
+    }
+  ],
+  "hostBloat": [
+    {
+      "host": "/중구법무사",
+      "count": 3,
+      "risk": "OK"
+    },
+    {
+      "host": "/수영구법무사",
+      "count": 2,
+      "risk": "OK"
+    },
+    {
+      "host": "/센텀법무사",
+      "count": 2,
+      "risk": "OK"
+    },
+    {
+      "host": "/해운대법무사",
+      "count": 2,
+      "risk": "OK"
+    },
+    {
+      "host": "/서면법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/연산동법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/동래역법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/부산역법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/좌동법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/사상법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/거제동법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/재송동법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/광안리법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/전포동법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/동래구법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/연제구법무사",
+      "count": 1,
+      "risk": "OK"
+    },
+    {
+      "host": "/부산진구법무사",
+      "count": 1,
+      "risk": "OK"
+    }
+  ],
+  "similarityPairs": [],
+  "rewriteRequired": [],
+  "policy": {
+    "noNewStationUrls": true,
+    "noUrlDelete": true,
+    "noTitleStationDump": true
+  }
+}

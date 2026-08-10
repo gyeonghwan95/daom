@@ -98,4 +98,12 @@ export type LocalLandingPage = {
   relatedBlogHrefs: { href: string; label: string }[];
   relatedServiceLinks: { href: string; label: string }[];
   relatedRegionLinks: { href: string; label: string }[];
+  /** 역세권 Entity 섹션 (기존 Host에만 추가, 신규 URL 아님) */
+  stationSections?: {
+    id: string;
+    title: string;
+    body: string;
+    items?: string[];
+    links?: { href: string; label: string }[];
+  }[];
 };

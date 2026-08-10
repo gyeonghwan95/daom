@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-08-10T10:57:29.121Z",
+  "computedPairs": [
+    {
+      "urlA": "/부산법인법무사",
+      "urlB": "/부산상속법무사",
+      "titleSimilarity": 14,
+      "h1Similarity": 7,
+      "bodySimilarity": 3,
+      "intentSimilarity": 33,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    },
+    {
+      "urlA": "/부산법인법무사",
+      "urlB": "/부산법무사",
+      "titleSimilarity": 14,
+      "h1Similarity": 7,
+      "bodySimilarity": 7,
+      "intentSimilarity": 0,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    },
+    {
+      "urlA": "/부산법인법무사",
+      "urlB": "/부산상속포기",
+      "titleSimilarity": 13,
+      "h1Similarity": 8,
+      "bodySimilarity": 2,
+      "intentSimilarity": 0,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    },
+    {
+      "urlA": "/부산상속법무사",
+      "urlB": "/부산법무사",
+      "titleSimilarity": 23,
+      "h1Similarity": 15,
+      "bodySimilarity": 8,
+      "intentSimilarity": 0,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    },
+    {
+      "urlA": "/부산상속법무사",
+      "urlB": "/부산상속포기",
+      "titleSimilarity": 29,
+      "h1Similarity": 17,
+      "bodySimilarity": 8,
+      "intentSimilarity": 33,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    },
+    {
+      "urlA": "/부산법무사",
+      "urlB": "/부산상속포기",
+      "titleSimilarity": 29,
+      "h1Similarity": 18,
+      "bodySimilarity": 7,
+      "intentSimilarity": 0,
+      "risk": "LOW",
+      "action": "KEEP-BOTH"
+    }
+  ],
+  "curatedPairs": [
+    {
+      "a": "/부산법인법무사",
+      "b": "/부산법인전문법무사",
+      "intentSimilarity": 0.85,
+      "note": "동일 Provider Selection. Champion 집중, 브리지 삭제 금지",
+      "action": "STRENGTHEN-HUB"
+    },
+    {
+      "a": "/부산법인법무사",
+      "b": "/부산기업법무사",
+      "intentSimilarity": 0.7,
+      "note": "기업 vs 법인 허브 유사",
+      "action": "INTERNAL-LINK-TO-CHAMPION"
+    },
+    {
+      "a": "/부산상속법무사",
+      "b": "/부산상속전문법무사",
+      "intentSimilarity": 0.8,
+      "note": "전문 브리지 — title HIGH RISK",
+      "action": "STRENGTHEN-HUB"
+    },
+    {
+      "a": "/부산상속법무사",
+      "b": "/부산상속법무사추천",
+      "intentSimilarity": 0.75,
+      "note": "추천 Spoke KEEP, Champion=/부산상속법무사",
+      "action": "INTERNAL-LINK-TO-CHAMPION"
+    },
+    {
+      "a": "/부산법무사",
+      "b": "/부산법무사추천",
+      "intentSimilarity": 0.7,
+      "note": "추천 Spoke KEEP",
+      "action": "INTERNAL-LINK-TO-CHAMPION"
+    },
+    {
+      "a": "/부산상속포기",
+      "b": "/부산한정승인",
+      "intentSimilarity": 0.45,
+      "note": "Intent 분리 PASS",
+      "action": "KEEP-BOTH"
+    }
+  ],
+  "policy": "DELETE/REDIRECT 자동 수행 금지. HIGH도 MANUAL-REVIEW."
+}

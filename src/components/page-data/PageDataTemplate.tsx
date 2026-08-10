@@ -63,7 +63,7 @@ function ExtraSections({ sections }: { sections: PageSection[] }) {
       {sections.map((section, index) => (
         <ContentSection
           key={`${section.title}-${index}`}
-          id={`section-${index}`}
+          id={section.id ?? `section-${index}`}
           title={section.title}
         >
           <ProseParagraphs paragraphs={[section.body]} />

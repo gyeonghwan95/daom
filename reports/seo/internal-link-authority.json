@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-10T10:57:36.541Z",
+  "publishedCount": 1785,
+  "championMentionCountsInManifest": {
+    "/부산법인법무사": 1,
+    "/부산상속포기": 1,
+    "/부산상속법무사": 2,
+    "/부산법무사": 17
+  },
+  "policy": "링크 수만 늘리지 않음. 관련 Spoke→Champion 자연 링크.",
+  "champions": [
+    "/부산법인법무사",
+    "/부산상속포기",
+    "/부산상속법무사",
+    "/부산법무사"
+  ]
+}

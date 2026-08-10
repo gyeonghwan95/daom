@@ -17,6 +17,8 @@ import {
   realEstateDevTopics,
 } from "./institutions";
 import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
+import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
+import { getPhase1Stations } from "@/data/geo/busan-rail-stations";
 
 const defaultRegistryGuide: LocalLandingJurisdictionGuide = {
   title: "부산 관할 등기소 안내",
@@ -148,7 +150,37 @@ const regionRecommendKeywords: Record<string, string[]> = {
 
 function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null {
   if (config.slug === "부산법무사") {
-    return buildBusanLawyerFlagshipPage(config);
+    const page = buildBusanLawyerFlagshipPage(config);
+    const phase1 = getPhase1Stations();
+    const byLine = new Map<string, typeof phase1>();
+    for (const st of phase1) {
+      const line = st.lines[0] ?? "기타";
+      const list = byLine.get(line) ?? [];
+      list.push(st);
+      byLine.set(line, list);
+    }
+    const navItems = [...byLine.entries()].flatMap(([line, stations]) =>
+      stations.map(
+        (st) =>
+          `${line} ${st.name} → ${st.hostPage}${st.stationSectionId ? `#${st.stationSectionId}` : ""}`,
+      ),
+    );
+    return {
+      ...page,
+      stationSections: [
+        {
+          id: "station-rail-nav",
+          title: "부산 지역별 도시철도·전철 안내",
+          body: "역 이름으로 법무사 업무를 찾으셨다면, 해당 생활권 안내로 이동해 업무를 고르시면 됩니다. 역마다 별도 SEO 페이지를 늘리지 않고, 기존 지역·동네 안내의 역 섹션으로 연결합니다.",
+          items: navItems,
+          links: [
+            { href: "/부산상속법무사", label: "상속 업무 선택" },
+            { href: "/부산법인법무사", label: "법인 업무 선택" },
+            { href: "/부산부동산등기", label: "부동산등기" },
+          ],
+        },
+      ],
+    };
   }
 
   const district = districtProfiles[config.regionKey];
@@ -267,6 +299,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
       href: `/${slug}`,
       label: slug,
     })),
+    stationSections: buildStationSectionsForHost(`/${config.slug}`),
   };
 }
 
