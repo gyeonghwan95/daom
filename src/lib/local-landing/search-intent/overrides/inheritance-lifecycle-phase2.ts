@@ -541,6 +541,7 @@ export const 사망후3개월지난상속Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    { href: "/특별한정승인", label: "특별한정승인 절차·서류 안내" },
     { href: "/blog/three-months-after-death-inheritance", label: "3개월 경과 안내(블로그)" },
     { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
     { href: "/부산한정승인", label: "부산 한정승인" },

@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-08-11T14:24:36.537Z",
+  "inventory": "reports/seo/content-inventory.json",
+  "contentMap": "docs/seo/CURRENT_CONTENT_MAP.md",
+  "gapReport": "docs/seo/NAVER_KEYWORD_GAP_REPORT.md",
+  "intentRegistry": "src/data/seo/search-intent-registry.ts",
+  "opportunityLog": "data/internal/content-opportunity-log.json",
+  "trendStatus": "TREND_DATA_UNAVAILABLE",
+  "note": "Auto-publish is forbidden. Review gap report before creating pages."
+}

@@ -112,6 +112,7 @@ import {
   압류말소등기서류준비Override,
   이혼재산분할등기서류준비Override,
 } from "./overrides/nationwide-remote-phase5b";
+import { keywordGapBatch1Overrides } from "./overrides/keyword-gap-batch1";
 
 export type {
   SearchGuideEntry,
@@ -132,6 +133,7 @@ export { subproxyJurisdictionData } from "./overrides/busan-subproxy";
 const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...specialistLawyerOverrides,
   ...specialistLawyerPhase2Overrides,
+  ...keywordGapBatch1Overrides,
   부산개인회생법무사: 부산개인회생법무사Override,
   부산상속전문법무사: 부산상속전문법무사Override,
   부산회생법무사: 부산회생법무사Override,

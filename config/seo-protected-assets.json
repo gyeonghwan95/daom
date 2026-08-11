@@ -1,7 +1,182 @@
 {
-  "version": 1,
-  "updated": "2026-08-10",
-  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex 자동 변경 금지. URL 삭제·슬러그 변경 금지. GSC 색인 요청은 Tier1 Champion 우선(docs/seo/GOOGLE_INDEXING_DIAGNOSIS_2026-08.md).",
+  "version": 2,
+  "updated": "2026-08-11",
+  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex/URL 자동 변경 금지. ranking-observations.json의 url이 null인 query는 추측으로 확정하지 않고 candidate만 보호. FULL = known ranking signal + champion.",
+  "pages": [
+    {
+      "url": "/부산상속법무사",
+      "reason": "known-ranking",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "INHERITANCE_HUB_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "knownSuccessfulQueries": ["부산상속법무사", "부산 상속 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산상속등기",
+      "reason": "known-ranking",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "INHERITANCE_REGISTRATION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "knownSuccessfulQueries": ["부산 상속등기", "부산 상속등기 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산상속포기",
+      "reason": "champion-hub",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "INHERITANCE_RENUNCIATION_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산법무사",
+      "reason": "known-ranking",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_MAIN_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "knownSuccessfulQueries": ["부산 법무사"],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산법인법무사",
+      "reason": "champion-hub",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "CORPORATE_HUB_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산법인등기",
+      "reason": "champion-hub",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "CORPORATE_REGISTRY",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산한정승인",
+      "reason": "champion-hub",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "QUALIFIED_ACCEPTANCE_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/해운대법무사",
+      "reason": "tier1-local-host",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "REGION_HOST",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/서면법무사",
+      "reason": "station-host",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "NEIGHBORHOOD_HOST_STATION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/센텀법무사",
+      "reason": "station-host",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "REGION_HOST_STATION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "modificationRisk": "HIGH"
+    }
+  ],
   "assets": [
     {
       "path": "/부산상속법무사",
@@ -11,7 +186,6 @@
       "protectedUrl": true,
       "protectedCanonical": true,
       "knownSuccessfulQueries": ["부산상속법무사", "부산 상속 법무사"],
-      "targetQueriesAnalytical": ["부산 상속 법무사 추천", "부산 상속 전문 법무사"],
       "modificationRisk": "HIGH"
     },
     {
@@ -20,6 +194,7 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
+      "protectedCanonical": true,
       "knownSuccessfulQueries": ["부산 상속등기", "부산 상속등기 법무사"],
       "modificationRisk": "HIGH"
     },
@@ -29,7 +204,7 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
-      "targetQueriesAnalytical": ["부산 상속포기 법무사"],
+      "protectedCanonical": true,
       "modificationRisk": "HIGH"
     },
     {
@@ -38,8 +213,8 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
+      "protectedCanonical": true,
       "knownSuccessfulQueries": ["부산 법무사"],
-      "targetQueriesAnalytical": ["부산 법무사 추천"],
       "modificationRisk": "HIGH"
     },
     {
@@ -48,11 +223,7 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
-      "targetQueriesAnalytical": [
-        "부산 법인 법무사",
-        "부산 법인전문 법무사",
-        "부산 법무사 법인전문"
-      ],
+      "protectedCanonical": true,
       "modificationRisk": "HIGH"
     },
     {
@@ -61,6 +232,25 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
+      "protectedCanonical": true,
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산한정승인",
+      "role": "QUALIFIED_ACCEPTANCE_CHAMPION",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "protectedCanonical": true,
+      "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/해운대법무사",
+      "role": "REGION_HOST",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "protectedCanonical": true,
       "modificationRisk": "HIGH"
     },
     {
@@ -69,6 +259,7 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
+      "protectedCanonical": true,
       "notes": "Station Entity Host (서면역). title에 역명 덤프 금지",
       "modificationRisk": "HIGH"
     },
@@ -78,8 +269,36 @@
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
+      "protectedCanonical": true,
       "notes": "Station Entity Host (센텀시티역·벡스코역)",
       "modificationRisk": "HIGH"
+    }
+  ],
+  "unconfirmedRankingCandidates": [
+    {
+      "query": "부산상속법무사",
+      "observedPosition": "1페이지",
+      "confirmedUrl": null,
+      "candidateUrls": ["/부산상속법무사", "/부산상속등기", "/부산법무사"],
+      "note": "URL 미확정 — 추측으로 ranking URL 확정 금지. 후보는 SEO_PROTECTED로 취급."
+    },
+    {
+      "query": "부산 상속 법무사",
+      "observedPosition": "비교적 높은 위치",
+      "confirmedUrl": null,
+      "candidateUrls": ["/부산상속법무사", "/부산상속등기"]
+    },
+    {
+      "query": "부산 상속등기",
+      "observedPosition": "높은 위치 가능",
+      "confirmedUrl": null,
+      "candidateUrls": ["/부산상속등기"]
+    },
+    {
+      "query": "부산 법무사",
+      "observedPosition": "높은 위치 가능",
+      "confirmedUrl": null,
+      "candidateUrls": ["/부산법무사"]
     }
   ],
   "rules": {
@@ -90,7 +309,19 @@
       "최고 법무사",
       "1위 법무사"
     ],
-    "autoApply": ["SAFE"],
-    "requireApproval": ["CAUTION", "HIGH_RISK"]
+    "autoApply": ["LEVEL_0", "LEVEL_1", "SAFE"],
+    "requireApproval": ["LEVEL_2", "LEVEL_3", "CAUTION", "HIGH_RISK"],
+    "forbidAuto": [
+      "url-change",
+      "slug-change",
+      "redirect",
+      "merge",
+      "noindex",
+      "protected-title",
+      "protected-h1",
+      "protected-canonical",
+      "protected-og-replace-when-good"
+    ],
+    "defaultUnknownPerformance": "SEO_PROTECTED"
   }
 }

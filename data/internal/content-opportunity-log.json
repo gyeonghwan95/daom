@@ -1,0 +1,112 @@
+[
+  {
+    "date": "2026-08-11",
+    "intent": "대습상속 등기",
+    "keywordGroup": ["대습상속등기", "대습상속", "손자 상속등기"],
+    "url": "/대습상속등기",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 88,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "특별한정승인",
+    "keywordGroup": ["특별한정승인", "3개월 후 한정승인"],
+    "url": "/특별한정승인",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 86,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "전세사기 피해 대응",
+    "keywordGroup": ["전세사기 피해 대응", "전세사기 임차권등기"],
+    "url": "/전세사기피해대응절차",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 85,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "신용회복 vs 개인회생",
+    "keywordGroup": ["신용회복 개인회생 차이", "워크아웃 개인회생"],
+    "url": "/신용회복과개인회생차이",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 84,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "법무사와 변호사 차이",
+    "keywordGroup": ["법무사 변호사 차이"],
+    "url": "/법무사와변호사차이",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 82,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "유류분과 상속등기",
+    "keywordGroup": ["유류분 상속등기", "유류분"],
+    "url": "/유류분과상속등기",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 81,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "상속 취득세와 등기 순서",
+    "keywordGroup": ["상속 취득세", "상속등기 세금"],
+    "url": "/상속취득세와등기순서",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 80,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "분양권 명의이전",
+    "keywordGroup": ["분양권 명의이전", "입주권 이전"],
+    "url": "/분양권명의이전등기",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 78,
+    "status": "published",
+    "trendStatus": "TREND_DATA_UNAVAILABLE"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "사망 후 3개월",
+    "keywordGroup": ["사망 후 3개월", "상속포기 기한"],
+    "url": "/사망후3개월지난상속",
+    "action": "STRENGTHEN",
+    "trendScore": null,
+    "opportunityScore": 72,
+    "status": "strengthen-existing",
+    "note": "related link to /특별한정승인 only"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "임원변경 aliases",
+    "keywordGroup": ["법인 이사 변경", "임원변경등기"],
+    "url": "/부산법인등기",
+    "action": "DO_NOT_CREATE",
+    "trendScore": null,
+    "opportunityScore": 40,
+    "status": "rejected",
+    "note": "Keyword ≠ Page; cannibalization risk high"
+  }
+]

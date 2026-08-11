@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-08-11T14:24:36.513Z",
+  "status": "TREND_DATA_UNAVAILABLE",
+  "reason": "NAVER_CLIENT_ID / NAVER_CLIENT_SECRET not set. No fabricated volumes.",
+  "note": "Relative trendIndex only when API succeeds. Never invent monthly search counts.",
+  "api": "https://openapi.naver.com/v1/datalab/search",
+  "groupsPrepared": [
+    {
+      "groupName": "상속등기",
+      "keywords": [
+        "상속등기",
+        "부산 상속등기",
+        "상속등기 비용"
+      ]
+    },
+    {
+      "groupName": "상속포기",
+      "keywords": [
+        "상속포기",
+        "부산 상속포기",
+        "상속포기 3개월"
+      ]
+    },
+    {
+      "groupName": "한정승인",
+      "keywords": [
+        "한정승인",
+        "특별한정승인",
+        "부산 한정승인"
+      ]
+    },
+    {
+      "groupName": "법인등기",
+      "keywords": [
+        "법인등기",
+        "임원변경등기",
+        "법인설립"
+      ]
+    },
+    {
+      "groupName": "부동산등기",
+      "keywords": [
+        "소유권이전등기",
+        "근저당 말소",
+        "임차권등기명령"
+      ]
+    }
+  ],
+  "results": []
+}
