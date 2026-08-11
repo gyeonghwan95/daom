@@ -2004,19 +2004,6 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     ...inheritanceCase,
   },
   {
-    slug: "법무사와변호사차이",
-    label: "법무사와 변호사의 차이",
-    category: "checklist",
-    serviceSlug: "inheritance-registration",
-    keywords: [
-      "법무사 변호사 차이",
-      "법무사와 변호사",
-      "등기는 법무사",
-    ],
-    focus: "직역·업무 범위 비교",
-    includeLawyerScopeFaq: true,
-  },
-  {
     slug: "신용회복과개인회생차이",
     label: "신용회복과 개인회생 차이",
     category: "rehab",

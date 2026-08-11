@@ -414,7 +414,7 @@ export const 유류분과상속등기Override: SearchIntentContent = {
       href: "/glossary/statutory-reserve-share",
       label: "유류분 용어 안내",
     },
-    { href: "/법무사와변호사차이", label: "법무사와 변호사의 업무 차이" },
+    { href: "/부산법무사", label: "부산 법무사 안내" },
   ],
   relatedGuideLinks: [inheritanceConsult],
   bottomCtaText:
@@ -574,133 +574,6 @@ export const 상속취득세와등기순서Override: SearchIntentContent = {
   ],
 };
 
-export const 법무사와변호사차이Override: SearchIntentContent = {
-  slug: "법무사와변호사차이",
-  category: "checklist",
-  title: "법무사와 변호사의 차이",
-  metaTitle:
-    "법무사와 변호사의 업무 차이｜등기·서류·신청은 누구에게 맡길까",
-  metaDescription:
-    "등기·공탁·법원 제출서류·개인회생·파산 신청과 소송 대리의 차이를 기준으로 법무사와 변호사 역할을 안내합니다. 우열·추천 광고 없이 선택 기준만 제시합니다.",
-  h1: "법무사와 변호사, 업무가 어떻게 다를까",
-  eyebrow: "역할 비교 · 선택 기준",
-  heroParagraphs: [
-    "‘법무사 변호사 차이’ 검색의 목적은 보통 우열을 가리려는 것이 아니라, 내 일이 등기·신청인지 소송·대리인지 가르려는 것입니다. 이 페이지는 누가 더 낫다고 말하지 않습니다.",
-    "법무사법 제2조상 법무사는 등기·공탁 신청 대리, 관련 서류 작성, 개인회생·파산 신청 대리(기일 진술 대리 제외) 등을 수행합니다. 소송 수행·법정 대리 중심 업무는 변호사 영역인 경우가 많습니다.",
-    reviewed,
-  ],
-  summaryBullets: [
-    "등기·신청·서류 ↔ 소송·법정 대리를 기준으로 가릅니다.",
-    "‘전문·최고·1위’ 표방 없이 업무 적합만 안내합니다.",
-    "경계가 모호하면 협업 가능성을 명시합니다.",
-  ],
-  primaryKeywords: [
-    "법무사 변호사 차이",
-    "법무사와 변호사",
-    "등기는 법무사",
-    "상속등기 법무사",
-  ],
-  searchIntents: [
-    "등기·신청을 누구에게 맡길지 확인",
-    "소송이 필요한지 서류·등기인지 구분",
-  ],
-  whenNeeded: [
-    "부동산·법인 등기가 필요한 경우",
-    "상속포기·한정승인·회생 신청을 검토하는 경우",
-    "분쟁·소송이 예상되는 경우",
-  ],
-  documents: [
-    "하고 싶은 결과(명의이전·신고·소송 등)",
-    "이미 받은 내용증명·소장·등기부(있으면)",
-    "기한·잔금일·법원기일 메모",
-  ],
-  documentsNote:
-    "목표만 명확해도 1차로 법무사 범위인지 변호사 범위인지 가늠할 수 있습니다.",
-  procedures: [
-    "원하는 결과(등기·신고·소송)를 한 문장으로 적습니다.",
-    "상대방과의 다툼·기일·소장 유무를 확인합니다.",
-    "법무사 직접 업무 / 관련 안내 / 변호사 협업을 가름합니다.",
-    "해당 서비스·상담 CTA로 연결합니다.",
-  ],
-  commonMistakes: [
-    "등기 사건을 소송 의뢰로만 접근하는 경우",
-    "소송이 필요한데 등기만으로 해결된다고 단정하는 경우",
-    "‘전문’ 광고 문구만으로 선택하는 경우",
-  ],
-  faqs: [
-    {
-      question: "상속등기는 법무사와 변호사 중 누구에게 맡기나요?",
-      answer:
-        "상속부동산 명의이전등기는 등기 신청 대리 업무로 법무사가 수행하는 경우가 많습니다. 분쟁·소송이 주이면 변호사 상담이 필요할 수 있습니다.",
-    },
-    {
-      question: "개인회생은 법무사가 할 수 있나요?",
-      answer:
-        "법무사법상 개인회생·파산 신청 대리가 가능합니다. 다만 각종 기일 진술 대리는 제외되며, 포괄적 소송형 수행과 혼동하지 않도록 범위를 안내합니다.",
-    },
-    {
-      question: "유류분 소송도 법무사에게 맡기면 되나요?",
-      answer:
-        "유류분 반환 소송은 변호사 영역인 경우가 많습니다. 등기·협의 전 확인은 법무사 안내가 가능합니다.",
-    },
-    {
-      question: "둘 다 만나야 하나요?",
-      answer:
-        "사건 단계에 따라 협업이 필요할 수 있습니다. 처음부터 범위를 나누면 비용·일정이 명확해집니다.",
-    },
-    {
-      question: "부산 법무사 추천 검색과는 어떻게 다른가요?",
-      answer:
-        "추천 검색은 사무소 선택 기준이고, 이 페이지는 직역(역할) 차이입니다. 부산법무사 안내와 함께 보시면 됩니다.",
-    },
-    {
-      question: "어느 쪽이 ‘더 싸다/더 낫다’인가요?",
-      answer:
-        "우열을 단정하지 않습니다. 업무 적합·기한·서류 범위로 선택하는 것이 안전합니다.",
-    },
-  ],
-  relatedCaseLinks: [],
-  relatedServiceLinks: [
-    { href: "/부산법무사", label: "부산 법무사 안내" },
-    { href: "/부산상속법무사", label: "부산 상속 업무" },
-    { href: "/부산법인법무사", label: "부산 법인 업무" },
-    { href: "/유류분과상속등기", label: "유류분과 상속등기" },
-    { href: "/신용회복과개인회생차이", label: "신용회복과 개인회생 차이" },
-  ],
-  relatedGuideLinks: [
-    {
-      href: "/contact/inquiry",
-      label: "업무 범위 먼저 확인하기",
-    },
-  ],
-  bottomCtaText:
-    "하고 싶은 결과(예: 명의이전, 포기 신고, 회생 신청, 소송)를 한 줄로 남겨 주시면 법무사 범위인지부터 안내합니다.",
-  serviceSlug: "inheritance-registration",
-  proseSections: [
-    {
-      id: "compare-table",
-      title: "한눈에 보는 역할 구분",
-      paragraphs: [
-        "법무사 중심: 부동산·법인 등기, 공탁, 상속포기·한정승인 서류, 개인회생·파산 신청 대리, 지급명령·가압류 등 서류 작성. 변호사 중심: 소송 수행, 법정 대리, 기일 진술, 분쟁 전략. 경계 사건: 유류분·복잡한 가사·형사 등은 협업.",
-      ],
-    },
-    {
-      id: "decision",
-      title: "30초 결정 질문",
-      paragraphs: [
-        "① 등기부등본·설립·이전인가? ② 가정·회생법원 신청서인가? ③ 소장·기일·상대방 다툼인가? ①②면 법무사 상담부터, ③이면 변호사 또는 협업을 검토하세요.",
-      ],
-    },
-    {
-      id: "ethics",
-      title: "광고·표현에서 피하는 것",
-      paragraphs: [
-        "법적 근거 없는 ‘전문 법무사’ 남용, ‘최고·1위·추천 보장’ 표현은 쓰지 않습니다. 실제 업무 깊이와 절차로 선택지를 제시합니다.",
-      ],
-    },
-  ],
-};
-
 export const 신용회복과개인회생차이Override: SearchIntentContent = {
   slug: "신용회복과개인회생차이",
   category: "rehab",
@@ -798,7 +671,7 @@ export const 신용회복과개인회생차이Override: SearchIntentContent = {
     { href: "/부산개인회생법무사", label: "부산 개인회생 법무사" },
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-    { href: "/법무사와변호사차이", label: "법무사와 변호사 차이" },
+    { href: "/부산개인회생법무사", label: "부산 개인회생 안내" },
   ],
   relatedGuideLinks: [rehabConsult],
   bottomCtaText:
@@ -923,7 +796,6 @@ export const 전세사기피해대응절차Override: SearchIntentContent = {
     { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
     { href: "/부산전세보증금반환법무사", label: "전세보증금 반환 안내" },
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
-    { href: "/법무사와변호사차이", label: "법무사와 변호사 차이" },
   ],
   relatedGuideLinks: [realEstateConsult],
   bottomCtaText:
@@ -1090,7 +962,6 @@ export const keywordGapBatch1Overrides: Record<string, SearchIntentContent> = {
   대습상속등기: 대습상속등기Override,
   유류분과상속등기: 유류분과상속등기Override,
   상속취득세와등기순서: 상속취득세와등기순서Override,
-  법무사와변호사차이: 법무사와변호사차이Override,
   신용회복과개인회생차이: 신용회복과개인회생차이Override,
   전세사기피해대응절차: 전세사기피해대응절차Override,
   분양권명의이전등기: 분양권명의이전등기Override,

@@ -125,7 +125,6 @@ export const 지급명령이의신청준비Override: SearchIntentContent = {
   relatedServiceLinks: [
     { href: "/방문없이준비하는지급명령서류", label: "지급명령 신청 서류 준비" },
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
-    { href: "/법무사와변호사차이", label: "법무사와 변호사 업무 차이" },
     { href: "/situations/내용증명-받았을-때", label: "내용증명을 받았을 때" },
   ],
   relatedGuideLinks: [civilConsult],
@@ -760,7 +759,6 @@ export const 경매낙찰후전세권확인Override: SearchIntentContent = {
     { href: "/부산공매낙찰등기", label: "부산 공매 낙찰등기" },
     { href: "/부산전세권말소등기", label: "전세권 말소등기" },
     { href: "/부산임차권등기명령", label: "임차권등기명령" },
-    { href: "/법무사와변호사차이", label: "법무사와 변호사 차이" },
   ],
   relatedGuideLinks: [realEstateConsult],
   bottomCtaText:

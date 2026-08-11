@@ -51,8 +51,9 @@
     "action": "CREATE_NEW",
     "trendScore": null,
     "opportunityScore": 82,
-    "status": "published",
-    "trendStatus": "TREND_DATA_UNAVAILABLE"
+    "status": "rejected",
+    "trendStatus": "TREND_DATA_UNAVAILABLE",
+    "note": "Removed 2026-08-12 per request; absorb into /부산법무사"
   },
   {
     "date": "2026-08-11",
