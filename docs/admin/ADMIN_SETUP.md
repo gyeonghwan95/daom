@@ -2,13 +2,23 @@
 
 ## 1. Cloudflare 설정 (필수)
 
-1. **KV namespace 생성**  
-   Workers & Pages → KV → Create → 예: `daom-admin`
+> **중요:** 이 프로젝트는 `wrangler.toml`로 바인딩을 관리합니다.  
+> Dashboard → Settings → Bindings에 “Bindings for this project are being managed through wrangler.toml”이 보이면 **대시보드에서 KV를 추가해도 적용되지 않습니다.**  
+> `wrangler.toml`의 `[[kv_namespaces]]`를 수정한 뒤 **재배포**하세요.
 
-2. **Pages 프로젝트에 바인딩**  
-   프로젝트 → Settings → Functions → KV namespace bindings  
-   - Variable name: **`ADMIN_KV`** (이름 고정)  
-   - Namespace: 위에서 만든 KV
+1. **KV namespace**  
+   Workers & Pages → KV  
+   - Production: `gyeonghwan` (`a70f572c…`)  
+   - Preview: `gyeonghwan-preview` (`6143c87e…`)  
+   바인딩 이름(Variable name)은 반드시 **`ADMIN_KV`**.
+
+2. **`wrangler.toml` 확인**
+   ```toml
+   [[kv_namespaces]]
+   binding = "ADMIN_KV"
+   id = "<production-namespace-id>"
+   preview_id = "<preview-namespace-id>"
+   ```
 
 3. **Secrets (Production / Preview)**  
    Settings → Variables and secrets → Encrypt:
@@ -22,7 +32,8 @@
    기존 문의용 `RESEND_*` / `TELEGRAM_*` / Turnstile 시크릿은 그대로 유지.
 
 4. **재배포**  
-   바인딩·시크릿 변경 후 반드시 새 배포.
+   바인딩·시크릿·`wrangler.toml` 변경 후 반드시 새 배포.  
+   배포 후 `/api/admin/session` JSON에서 `storageConfigured: true`인지 확인.
 
 ## 2. 로컬 확인
 
@@ -32,10 +43,7 @@ npm run preview:cf
 # http://localhost:8788/admin
 ```
 
-`wrangler.toml`에 KV preview id를 넣거나, Dashboard binding과 동일하게 로컬 바인딩을 지정한다.  
-KV 없이 실행하면 로그인 UI는 뜨지만 통계·공지 저장은 “미측정/저장소 없음”으로 표시된다.
-
-`next dev`만으로는 Pages Function(`/api/admin/*` 신규)이 동작하지 않을 수 있다. 운영 검증은 `preview:cf` 또는 실제 Pages를 사용한다.
+`next dev`만으로는 Pages Function(`/api/admin/*`)이 동작하지 않을 수 있다. 운영 검증은 `preview:cf` 또는 실제 Pages를 사용한다.
 
 ## 3. 사용법 요약
 
@@ -56,11 +64,15 @@ KV 없이 실행하면 로그인 UI는 뜨지만 통계·공지 저장은 “미
 | 기능 | 조건 |
 |------|------|
 | 로그인 | `ADMIN_PASSWORD` + `ADMIN_SESSION_SECRET` |
-| 통계·공지·메일로그 | `ADMIN_KV` |
+| 통계·공지·메일로그 | `ADMIN_KV` (`wrangler.toml` 바인딩) |
 | 공개 공지 | KV + active/scheduled 시간 범위 |
 
 ## 5. 장애 시
 
-- 공지 API 실패 → 홈은 공지 없이 정상
-- analytics 실패 → 문의/CTA 정상
-- 메일 실패 → `/admin/email` + Resend/Telegram 설정 확인
+| 증상 | 확인 |
+|------|------|
+| `storageConfigured: false` | `wrangler.toml`에 `ADMIN_KV` 있는지 → 재배포 |
+| 로그인 UI 안 뜸 / not_configured | Secrets `ADMIN_PASSWORD`(12+) · `ADMIN_SESSION_SECRET`(32+) |
+| 공지 API 실패 | 홈은 공지 없이 정상 |
+| analytics 실패 | 문의/CTA 정상 |
+| 메일 실패 | `/admin/email` + Resend/Telegram 설정 확인 |

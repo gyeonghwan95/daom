@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { EmailLogEntry } from "@/lib/admin-ops/types";
 
 export default function AdminEmailPage() {
@@ -9,18 +10,17 @@ export default function AdminEmailPage() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/admin/email", { credentials: "include" })
-      .then(async (res) => {
-        const json = (await res.json()) as {
-          data?: { logs?: EmailLogEntry[]; message?: string };
-        };
-        if (cancelled) return;
-        setLogs(json.data?.logs || []);
-        setMessage(json.data?.message || null);
-      })
-      .catch(() => {
-        if (!cancelled) setMessage("불러오기 실패");
-      });
+    adminFetchJson<{ logs?: EmailLogEntry[]; message?: string }>(
+      "/api/admin/email",
+    ).then((result) => {
+      if (cancelled) return;
+      if (!result.ok) {
+        setMessage(result.message);
+        return;
+      }
+      setLogs(result.data?.logs || []);
+      setMessage(result.data?.message || null);
+    });
     return () => {
       cancelled = true;
     };

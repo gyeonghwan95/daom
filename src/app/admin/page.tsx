@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
 function fmt(n: number | null | undefined): string {
@@ -15,23 +16,14 @@ export default function AdminDashboardPage() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/admin/dashboard", { credentials: "include" })
-      .then(async (res) => {
-        const json = (await res.json()) as {
-          ok?: boolean;
-          data?: DashboardPayload;
-          message?: string;
-        };
-        if (cancelled) return;
-        if (!res.ok || !json.ok || !json.data) {
-          setError(json.message || "대시보드를 불러오지 못했습니다.");
-          return;
-        }
-        setData(json.data);
-      })
-      .catch(() => {
-        if (!cancelled) setError("네트워크 오류");
-      });
+    adminFetchJson<DashboardPayload>("/api/admin/dashboard").then((result) => {
+      if (cancelled) return;
+      if (!result.ok) {
+        setError(result.message);
+        return;
+      }
+      setData(result.data);
+    });
     return () => {
       cancelled = true;
     };
@@ -239,7 +231,8 @@ export default function AdminDashboardPage() {
       {!data.storageConfigured ? (
         <p className="admin-alert admin-alert--info" style={{ marginTop: 16 }}>
           ADMIN_KV가 연결되지 않아 통계·공지·메일 로그가 저장되지 않습니다. 숫자
-          “—”는 데이터 없음을 의미합니다(가짜 0 아님).
+          “—”는 데이터 없음을 의미합니다(가짜 0 아님). wrangler.toml 바인딩 확인 후
+          재배포하세요.
         </p>
       ) : null}
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
 type DayRow = {
@@ -19,22 +20,20 @@ export default function AdminAnalyticsPage() {
   useEffect(() => {
     let cancelled = false;
     Promise.all([
-      fetch("/api/admin/analytics?days=14", { credentials: "include" }).then(
-        (r) => r.json(),
+      adminFetchJson<{ days?: DayRow[]; message?: string }>(
+        "/api/admin/analytics?days=14",
       ),
-      fetch("/api/admin/dashboard", { credentials: "include" }).then((r) =>
-        r.json(),
-      ),
+      adminFetchJson<DashboardPayload>("/api/admin/dashboard"),
     ])
-      .then(([analyticsJson, dashJson]) => {
+      .then(([analytics, dash]) => {
         if (cancelled) return;
-        const a = analyticsJson as {
-          data?: { days?: DayRow[]; message?: string };
-        };
-        const d = dashJson as { ok?: boolean; data?: DashboardPayload };
-        setDays(a.data?.days || []);
-        setMessage(a.data?.message || null);
-        if (d.ok && d.data) setDash(d.data);
+        if (!analytics.ok) {
+          setMessage(analytics.message);
+          return;
+        }
+        setDays(analytics.data?.days || []);
+        setMessage(analytics.data?.message || null);
+        if (dash.ok) setDash(dash.data);
       })
       .catch(() => {
         if (!cancelled) setMessage("불러오기 실패");

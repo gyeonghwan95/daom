@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type Row = {
   path: string;
@@ -16,18 +17,17 @@ export default function AdminPagesPage() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/admin/pages", { credentials: "include" })
-      .then(async (res) => {
-        const json = (await res.json()) as {
-          data?: { rows?: Row[]; message?: string };
-        };
+    adminFetchJson<{ rows?: Row[]; message?: string }>("/api/admin/pages").then(
+      (result) => {
         if (cancelled) return;
-        setRows(json.data?.rows || []);
-        setMessage(json.data?.message || null);
-      })
-      .catch(() => {
-        if (!cancelled) setMessage("불러오기 실패");
-      });
+        if (!result.ok) {
+          setMessage(result.message);
+          return;
+        }
+        setRows(result.data?.rows || []);
+        setMessage(result.data?.message || null);
+      },
+    );
     return () => {
       cancelled = true;
     };

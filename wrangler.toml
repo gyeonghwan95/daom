@@ -1,14 +1,14 @@
-# Cloudflare Pages project hints for local `wrangler pages dev`.
-# Production KV binding is configured in the Cloudflare Dashboard
-# (Settings → Functions → KV bindings → Variable name: ADMIN_KV).
-# Do not commit real account secrets here.
+# Cloudflare Pages — bindings are managed here (Dashboard “Add binding” is disabled
+# when wrangler.toml is present). Redeploy after changing bindings or secrets.
+# Do not commit ADMIN_PASSWORD / ADMIN_SESSION_SECRET here — use Pages Secrets.
 
 name = "daom"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "out"
 
-# Uncomment and set ids after creating a KV namespace:
-# [[kv_namespaces]]
-# binding = "ADMIN_KV"
-# id = "a70f572cf56f4365b264c0e34b885922"
-# preview_id = "6143c87eff49434e97913f0d3fcafcd9"
+# Variable name must be ADMIN_KV (see functions/_lib/admin-ops/store.ts).
+# Namespaces: gyeonghwan (prod) / gyeonghwan-preview (preview).
+[[kv_namespaces]]
+binding = "ADMIN_KV"
+id = "a70f572cf56f4365b264c0e34b885922"
+preview_id = "6143c87eff49434e97913f0d3fcafcd9"

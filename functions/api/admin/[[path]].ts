@@ -100,6 +100,22 @@ function routeKey(params) {
 }
 
 export async function onRequest(context) {
+  try {
+    return await handleAdminRequest(context);
+  } catch (err) {
+    console.error("[api/admin]", err);
+    return json(
+      {
+        ok: false,
+        code: "internal_error",
+        message: "관리자 API 처리 중 오류가 발생했습니다.",
+      },
+      500,
+    );
+  }
+}
+
+async function handleAdminRequest(context) {
   const { request, env, params } = context;
   const method = request.method.toUpperCase();
   const key = routeKey(params);
