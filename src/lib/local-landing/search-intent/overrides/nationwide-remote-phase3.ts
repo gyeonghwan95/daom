@@ -97,6 +97,7 @@ export const 사업자폐업후법인정리Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     remoteHub,
+    { href: "/해산간주확인절차", label: "해산간주 확인 절차" },
     { href: "/법인등기", label: "법인등기 허브" },
     { href: "/부산법인해산청산등기", label: "부산 법인해산·청산등기" },
     { href: "/부산법인해산전확인사항", label: "해산 전 확인사항" },

@@ -108,5 +108,104 @@
     "opportunityScore": 40,
     "status": "rejected",
     "note": "Keyword ≠ Page; cannibalization risk high"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "지급명령 이의신청",
+    "keywordGroup": ["지급명령 이의", "지급명령 받음"],
+    "url": "/지급명령이의신청준비",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 86,
+    "status": "published",
+    "searchVolume": "SEARCH_VOLUME_UNKNOWN",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "해산간주 확인",
+    "keywordGroup": ["해산간주", "폐업만 함"],
+    "url": "/해산간주확인절차",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 85,
+    "status": "published",
+    "searchVolume": "SEARCH_VOLUME_UNKNOWN",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "등기 반려·보정",
+    "keywordGroup": ["등기 반려", "보정명령"],
+    "url": "/등기신청반려와보정",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 84,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "상속재산분할협의서",
+    "keywordGroup": ["상속재산분할협의서", "형제 상속 합의"],
+    "url": "/상속재산분할협의서준비",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 83,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "대표만 남는 임원구성",
+    "keywordGroup": ["이사 2명 사임", "대표만 남음"],
+    "url": "/대표이사한명만남는경우",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 82,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "경매 낙찰 후 전세권",
+    "keywordGroup": ["낙찰 후 전세권", "말소기준권리"],
+    "url": "/경매낙찰후전세권확인",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 81,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "본점이전 후 사업자등록",
+    "keywordGroup": ["회사 주소 변경 사업자"],
+    "url": "/본점이전후사업자등록순서",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 80,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "상속포기 후 다음 순위",
+    "keywordGroup": ["포기하면 자녀", "손자 상속포기"],
+    "url": "/상속포기후다음순위확인",
+    "action": "CREATE_NEW",
+    "trendScore": null,
+    "opportunityScore": 80,
+    "status": "published",
+    "batch": "situation-intent-batch1"
+  },
+  {
+    "date": "2026-08-11",
+    "intent": "동별 상속등기 복제",
+    "keywordGroup": ["서면상속등기", "연산상속등기"],
+    "url": null,
+    "action": "DO_NOT_CREATE",
+    "status": "rejected",
+    "note": "THIN_LOCAL_RISK"
   }
 ]
