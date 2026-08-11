@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
 import { KeywordBadges } from "./KeywordBadges";
 import { ProseParagraphs } from "./ProseParagraphs";
@@ -20,9 +21,20 @@ type PageHeroProps = {
   showAboutLawyerCta?: boolean;
   /** H1 위 좌측 — 전국 업무 가능 chip */
   showNationwideChip?: boolean;
+  /** 상담 신청 CTA 옆 네이버 예약 (기본: 상담/문의 경로일 때) */
+  showNaverReservation?: boolean;
   sideImage?: SiteImageAsset;
   children?: ReactNode;
 };
+
+function isConsultCtaHref(href: string): boolean {
+  return (
+    href.startsWith("/contact") ||
+    href.includes("inquiry") ||
+    href === "/상담" ||
+    href.startsWith("/상담?")
+  );
+}
 
 export function PageHero({
   h1,
@@ -36,6 +48,7 @@ export function PageHero({
   showDiagnosisCta = true,
   showAboutLawyerCta = true,
   showNationwideChip = false,
+  showNaverReservation,
   sideImage,
   children,
 }: PageHeroProps) {
@@ -71,29 +84,43 @@ export function PageHero({
       : null;
 
   const resolvedSecondary = secondaryCta ?? aboutCta;
+  const naverOn =
+    showNaverReservation ?? (Boolean(ctaLabel) && isConsultCtaHref(ctaHref));
 
   const ctaBlock = ctaLabel ? (
-    <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
-      <Link
-        href={ctaHref}
-        className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
-      >
-        {ctaLabel}
-      </Link>
-      {resolvedSecondary ? (
-        <Link
-          href={resolvedSecondary.href}
-          className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-        >
-          {resolvedSecondary.label}
-        </Link>
-      ) : showDiagnosisCta ? (
-        <Link
-          href="/자가진단"
-          className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-        >
-          자가진단 보기
-        </Link>
+    <div className="mt-5 flex flex-col gap-3 md:mt-6">
+      <InquiryNaverCtaPair
+        placement="page_hero"
+        layout="row"
+        size="md"
+        showNaver={naverOn}
+        inquiry={
+          <Link
+            href={ctaHref}
+            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+          >
+            {ctaLabel}
+          </Link>
+        }
+      />
+      {resolvedSecondary || showDiagnosisCta ? (
+        <div className="flex flex-wrap gap-3">
+          {resolvedSecondary ? (
+            <Link
+              href={resolvedSecondary.href}
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              {resolvedSecondary.label}
+            </Link>
+          ) : showDiagnosisCta ? (
+            <Link
+              href="/자가진단"
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              자가진단 보기
+            </Link>
+          ) : null}
+        </div>
       ) : null}
     </div>
   ) : null;

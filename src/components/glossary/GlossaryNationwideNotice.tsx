@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 
 /** 법률용어 — 전국 수임·비용 문의 안내 (게시글 본문 하단) */
 export function GlossaryNationwideNotice({ termLabel }: { termLabel: string }) {
@@ -17,13 +18,20 @@ export function GlossaryNationwideNotice({ termLabel }: { termLabel: string }) {
         </strong>
         하시는 것을 권합니다.
       </p>
-      <div className="mt-5 flex flex-wrap gap-3">
-        <Link
-          href="/contact/inquiry"
-          className="btn-primary inline-flex min-h-12 items-center px-6"
-        >
-          1분만에 상담 신청하기
-        </Link>
+      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
+        <InquiryNaverCtaPair
+          placement="other"
+          layout="row"
+          size="md"
+          inquiry={
+            <Link
+              href="/contact/inquiry"
+              className="btn-primary inline-flex min-h-12 items-center px-6"
+            >
+              1분만에 상담 신청하기
+            </Link>
+          }
+        />
         <Link
           href="/contact"
           className="btn-secondary inline-flex min-h-12 items-center px-6"

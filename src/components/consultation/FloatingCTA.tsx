@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ChatIcon } from "@/components/consultation/ConsultationIcons";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { consultWizardCopy as copy } from "@/lib/consult-wizard/copy";
+import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 
 /**
- * 데스크톱 플로팅: 바로 연락 채널 + 상황 선택형 상담하기
+ * 데스크톱 플로팅: 바로 연락 채널 + 상황 선택형 상담하기 + 네이버 예약
  */
 export function FloatingCTA() {
   const [open, setOpen] = useState(false);
@@ -72,17 +74,31 @@ export function FloatingCTA() {
                 <p className="floating-cta__section-label">상황 선택 상담</p>
                 <button
                   type="button"
-                  className="btn-primary flex min-h-11 w-full items-center justify-center gap-2"
+                  className="btn-primary flex min-h-11 w-full items-center justify-center gap-2 rounded-lg"
                   onClick={startConsult}
                   disabled={!inquiry}
                 >
                   <ChatIcon className="h-5 w-5 shrink-0" />
                   {copy.floatingLabel}
                 </button>
+                {isNaverSmartPlaceConfigured() ? (
+                  <div className="mt-2">
+                    <NaverSmartPlaceCta
+                      variant="reservation"
+                      placement="floating_panel"
+                      tone="brand"
+                      size="md"
+                      fullWidth
+                      label="네이버 예약"
+                      className="!min-h-11 !rounded-lg"
+                    />
+                  </div>
+                ) : null}
                 <p
                   className={`floating-cta__section-note${reducedMotion ? "" : " floating-cta__section-note--emphasis"}`}
                 >
-                  서류·업무명을 몰라도 약 1분이면 상담 신청을 남길 수 있습니다
+                  채팅·신청서 상담과 별도로, 방문은 네이버에서 일정을 확인할 수
+                  있습니다
                 </p>
               </div>
             </div>

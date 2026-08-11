@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   CONTACT_INQUIRY_PATH,
   consultationInquiryCopy,
@@ -15,6 +16,8 @@ type ConsultStartButtonProps = {
   presetSituationIds?: ConsultSituationId[];
   className?: string;
   children?: React.ReactNode;
+  /** false면 상담 버튼만 (네이버 예약 미표시) */
+  showNaverReservation?: boolean;
 };
 
 /**
@@ -27,14 +30,23 @@ export function ConsultStartButton({
   presetSituationIds: _presetSituationIds,
   className = "btn-primary min-h-11",
   children,
+  showNaverReservation = true,
 }: ConsultStartButtonProps) {
   void pageTitle;
   void pageUrl;
   void _presetSituationIds;
   return (
-    <Link href={CONTACT_INQUIRY_PATH} className={className}>
-      {children ?? consultationInquiryCopy.ctaPrimary}
-    </Link>
+    <InquiryNaverCtaPair
+      placement="consult_page"
+      layout="row"
+      size="md"
+      showNaver={showNaverReservation}
+      inquiry={
+        <Link href={CONTACT_INQUIRY_PATH} className={className}>
+          {children ?? consultationInquiryCopy.ctaPrimary}
+        </Link>
+      }
+    />
   );
 }
 

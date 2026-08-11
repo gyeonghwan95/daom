@@ -8,11 +8,8 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
-import {
-  getContactInfo,
-  getNaverReservationUrl,
-  getPhoneHref,
-} from "@/lib/contact";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import {
   CONTACT_INQUIRY_PATH,
@@ -61,27 +58,30 @@ export function ConversionActionButtons({
   className = "",
 }: ConversionActionButtonsProps) {
   const { phone, kakao, naverTalk } = getContactInfo();
-  const reservation = getNaverReservationUrl();
   const slug = pageSlug ?? "conversion-cta";
-
-  const visitHref = reservation || "/location";
-  const visitExternal = Boolean(reservation);
 
   return (
     <div className={`space-y-3 ${className}`.trim()}>
-      <Link
-        href={CONTACT_INQUIRY_PATH}
-        data-cta="contact"
-        onClick={() => trackCTA("contact", slug)}
-        className={
-          theme === "dark"
-            ? `${primaryBase} w-full bg-white text-navy hover:bg-beige`
-            : `${primaryBase} w-full bg-navy text-white hover:bg-navy-dark`
+      <InquiryNaverCtaPair
+        placement="conversion_actions"
+        layout="row"
+        size="md"
+        inquiry={
+          <Link
+            href={CONTACT_INQUIRY_PATH}
+            data-cta="contact"
+            onClick={() => trackCTA("contact", slug)}
+            className={
+              theme === "dark"
+                ? `${primaryBase} w-full bg-white text-navy hover:bg-beige`
+                : `${primaryBase} w-full bg-navy text-white hover:bg-navy-dark`
+            }
+          >
+            <FormIcon className="h-5 w-5 shrink-0" />
+            <span>{consultationInquiryCopy.ctaPrimary}</span>
+          </Link>
         }
-      >
-        <FormIcon className="h-5 w-5 shrink-0" />
-        <span>{consultationInquiryCopy.ctaPrimary}</span>
-      </Link>
+      />
       <p
         className={
           theme === "dark"
@@ -89,7 +89,8 @@ export function ConversionActionButtons({
             : "text-center text-xs text-navy/60"
         }
       >
-        {consultationInquiryCopy.oneMinuteShort}
+        {consultationInquiryCopy.oneMinuteShort} 방문은 네이버 예약으로도
+        가능합니다.
       </p>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
@@ -135,29 +136,15 @@ export function ConversionActionButtons({
       </div>
 
       <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
-        {visitExternal ? (
-          <a
-            href={visitHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="location"
-            onClick={() => trackCTA("location", slug)}
-            className={secondaryClass(theme)}
-          >
-            <LocationIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">방문 상담 안내</span>
-          </a>
-        ) : (
-          <Link
-            href="/location"
-            data-cta="location"
-            onClick={() => trackCTA("location", slug)}
-            className={secondaryClass(theme)}
-          >
-            <LocationIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">방문 상담 안내</span>
-          </Link>
-        )}
+        <Link
+          href="/location"
+          data-cta="location"
+          onClick={() => trackCTA("location", slug)}
+          className={secondaryClass(theme)}
+        >
+          <LocationIcon className="h-5 w-5 shrink-0" />
+          <span className="truncate">방문 상담 안내</span>
+        </Link>
 
         <a href={documentsHref} className={secondaryClass(theme)}>
           <FormIcon className="h-5 w-5 shrink-0" />
@@ -165,7 +152,8 @@ export function ConversionActionButtons({
         </a>
 
         <Link href={diagnosisHref} className={secondaryClass(theme)}>
-          <span className="truncate">자가진단 먼저 해보기</span>
+          <FormIcon className="h-5 w-5 shrink-0" />
+          <span className="truncate">자가진단 보기</span>
         </Link>
       </div>
     </div>

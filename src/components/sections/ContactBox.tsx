@@ -1,14 +1,13 @@
 import { VisitNoticeBanner } from "@/components/contact/VisitNoticeBanner";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
-import { NaverIcon } from "@/components/consultation/ConsultationIcons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { consultationCopy, getInquiryForms } from "@/lib/consultation";
-import { getDirectConsultationChannels, getNaverReservationUrl } from "@/lib/contact";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 export function ContactBox() {
   const channels = getDirectConsultationChannels();
   const inquiryForms = getInquiryForms();
-  const naverReservationUrl = getNaverReservationUrl();
 
   return (
     <div className="space-y-6">
@@ -20,7 +19,7 @@ export function ContactBox() {
           {consultationCopy.default}
         </p>
         <p className="mt-2 text-sm font-medium text-navy/80">
-          전화 · 카카오톡 · 네이버 톡톡 중 편한 방법을 선택해 주세요.
+          전화 · 카카오톡 · 네이버 톡톡(채팅) 중 편한 방법을 선택해 주세요.
         </p>
         <div className="mt-5">
           <ConsultationButtons channels={channels} theme="light" layout="grid" />
@@ -30,23 +29,29 @@ export function ContactBox() {
 
       <section className="card-surface overflow-hidden">
         <div className="border-b border-beige-dark bg-beige/40 px-5 py-4 sm:px-6 md:px-8">
-          <h2 className="section-heading">온라인 문의 · 예약</h2>
+          <h2 className="section-heading">온라인 문의 · 네이버 예약</h2>
         </div>
 
         <div className="space-y-5 p-5 sm:p-6 md:p-8">
           <p className="text-sm leading-relaxed text-navy/75 sm:text-base">
             {consultationCopy.inquiryNotice}
           </p>
+          <p className="text-sm leading-relaxed text-navy/65">
+            <strong className="font-semibold text-navy/80">네이버 톡톡</strong>은
+            채팅 문의이고,{" "}
+            <strong className="font-semibold text-navy/80">네이버 상담 예약</strong>
+            은 플레이스에서 방문상담 일정을 확인하는 경로입니다.
+          </p>
 
-          <a
-            href={naverReservationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#03C75A] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:text-base"
-          >
-            <NaverIcon className="h-5 w-5 shrink-0" />
-            네이버 예약 이동 →
-          </a>
+          <NaverSmartPlaceCta
+            variant="reservation"
+            placement="contact_page"
+            tone="brand"
+            fullWidth
+            size="md"
+            label="네이버 예약"
+            showHint
+          />
 
           {inquiryForms.length > 0 && (
             <div className="space-y-2 border-t border-beige-dark pt-5">

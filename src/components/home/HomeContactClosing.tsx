@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { VisitNoticeBanner } from "@/components/contact/VisitNoticeBanner";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { Container } from "@/components/layout/Container";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { Reveal } from "@/components/motion/Reveal";
@@ -61,23 +62,24 @@ export function HomeContactClosing() {
                 <VisitNoticeBanner variant="compact" theme="dark" />
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-2 border-t border-white/15 pt-6">
-                <Link
-                  href="/contact/inquiry"
-                  className="home-closing__nav-btn"
-                >
-                  1분만에 상담 신청하기
-                </Link>
-                <Link
-                  href="/contact"
-                  className="home-closing__nav-btn"
-                >
+              <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 sm:flex-row sm:flex-wrap sm:items-stretch">
+                <InquiryNaverCtaPair
+                  placement="homepage_closing"
+                  layout="row"
+                  size="sm"
+                  inquiry={
+                    <Link
+                      href="/contact/inquiry"
+                      className="home-closing__nav-btn"
+                    >
+                      1분만에 상담 신청하기
+                    </Link>
+                  }
+                />
+                <Link href="/contact" className="home-closing__nav-btn">
                   상담 안내
                 </Link>
-                <Link
-                  href="/location"
-                  className="home-closing__nav-btn"
-                >
+                <Link href="/location" className="home-closing__nav-btn">
                   오시는 길
                 </Link>
               </div>

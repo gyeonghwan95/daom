@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { OfficeHoursDetail } from "@/components/contact/OfficeHoursDetail";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { Container } from "@/components/layout/Container";
 import { HomeSectionActionLink } from "@/components/home/HomeSectionActionLink";
 import { OfficeMap } from "@/components/map/OfficeMap";
@@ -145,12 +146,21 @@ export function HomePlaceGuide() {
                     </a>
                   ) : null}
                   {option.action === "visit" ? (
-                    <Link
-                      href="/contact"
-                      className="mt-3 inline-flex min-h-10 items-center text-sm font-semibold text-navy-light hover:underline"
-                    >
-                      방문 예약 문의
-                    </Link>
+                    <div className="mt-3 flex flex-wrap gap-3">
+                      <NaverSmartPlaceCta
+                        variant="reservation"
+                        placement="homepage_location"
+                        tone="brand"
+                        size="sm"
+                        label="네이버 예약"
+                      />
+                      <Link
+                        href="/location"
+                        className="inline-flex min-h-10 items-center text-sm font-semibold text-navy-light hover:underline"
+                      >
+                        오시는 길 자세히
+                      </Link>
+                    </div>
                   ) : null}
                 </li>
               ))}

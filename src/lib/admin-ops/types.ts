@@ -18,7 +18,8 @@ export type AnalyticsEventType =
   | "notice_impression"
   | "notice_click"
   | "notice_dismiss"
-  | "search_used";
+  | "search_used"
+  | "naver_place_click";
 
 export type AnalyticsEventInput = {
   type: AnalyticsEventType;
@@ -137,6 +138,9 @@ export type DashboardPayload = {
     emailFailedToday: number | null;
     activeNotices: number;
     alertCount: number;
+    naverPlaceToday?: number | null;
+    naverPlace7d?: number | null;
+    naverReservationToday?: number | null;
   };
   summaryLine: string;
   alerts: Array<{
@@ -146,9 +150,22 @@ export type DashboardPayload = {
     detail: string;
   }>;
   topPathsToday: Array<{ path: string; visits: number; cta: number }>;
-  visitsByDay: Array<{ date: string; visits: number; submits: number }>;
+  visitsByDay: Array<{
+    date: string;
+    visits: number;
+    submits: number;
+    naverPlace?: number;
+  }>;
   emailRecent: EmailLogEntry[];
   activeNotices: FloatingNotice[];
   health: HealthCard[];
   recentAudit: AdminAuditLog[];
+  naverPlaceByPlacement?: Array<{ placement: string; count: number }>;
+  naverPlaceTopPaths?: Array<{
+    path: string;
+    visits: number;
+    naverPlace: number;
+    reservation: number;
+    ctr: number | null;
+  }>;
 };

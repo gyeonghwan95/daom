@@ -26,8 +26,14 @@ function emptyDay(date) {
     cta: 0,
     consultStart: 0,
     consultSubmit: 0,
+    naverPlace: 0,
+    naverPlaceReservation: 0,
+    naverPlaceMap: 0,
+    naverPlaceReview: 0,
+    naverPlaceOther: 0,
     paths: {},
     sources: {},
+    naverPlacePlacements: {},
   };
 }
 
@@ -40,6 +46,8 @@ function emptyPath() {
     naver: 0,
     consultStart: 0,
     consultSubmit: 0,
+    naverPlace: 0,
+    naverPlaceReservation: 0,
   };
 }
 
@@ -165,6 +173,26 @@ export async function recordAnalyticsEvent(env, event) {
       day.consultSubmit += 1;
       row.consultSubmit += 1;
       break;
+    case "naver_place_click": {
+      day.naverPlace = (day.naverPlace || 0) + 1;
+      row.naverPlace = (row.naverPlace || 0) + 1;
+      const variant = String(event.meta?.variant || "place");
+      const placement = String(event.meta?.placement || "other").slice(0, 40);
+      if (variant === "reservation") {
+        day.naverPlaceReservation = (day.naverPlaceReservation || 0) + 1;
+        row.naverPlaceReservation = (row.naverPlaceReservation || 0) + 1;
+      } else if (variant === "map") {
+        day.naverPlaceMap = (day.naverPlaceMap || 0) + 1;
+      } else if (variant === "review") {
+        day.naverPlaceReview = (day.naverPlaceReview || 0) + 1;
+      } else {
+        day.naverPlaceOther = (day.naverPlaceOther || 0) + 1;
+      }
+      if (!day.naverPlacePlacements) day.naverPlacePlacements = {};
+      day.naverPlacePlacements[placement] =
+        (day.naverPlacePlacements[placement] || 0) + 1;
+      break;
+    }
     default:
       break;
   }
@@ -221,6 +249,11 @@ export async function buildDashboard(env) {
   let emailRecent = [];
   let recentAudit = [];
   let notices = [];
+  let naverPlaceToday = null;
+  let naverPlace7d = null;
+  let naverReservationToday = null;
+  let naverPlaceByPlacement = [];
+  let naverPlaceTopPaths = [];
 
   if (storageConfigured) {
     const dayToday = await getDaily(env, today);
@@ -228,14 +261,23 @@ export async function buildDashboard(env) {
     visitsToday = dayToday.visits;
     visitsYesterday = dayY.visits;
     consultSubmitToday = dayToday.consultSubmit;
+    naverPlaceToday = dayToday.naverPlace || 0;
+    naverReservationToday = dayToday.naverPlaceReservation || 0;
 
     let v7 = 0;
     let vp = 0;
+    let np7 = 0;
     const series = [];
     for (const d of last7) {
       const day = await getDaily(env, d);
       v7 += day.visits;
-      series.push({ date: d, visits: day.visits, submits: day.consultSubmit });
+      np7 += day.naverPlace || 0;
+      series.push({
+        date: d,
+        visits: day.visits,
+        submits: day.consultSubmit,
+        naverPlace: day.naverPlace || 0,
+      });
     }
     for (const d of prev7) {
       const day = await getDaily(env, d);
@@ -243,12 +285,32 @@ export async function buildDashboard(env) {
     }
     visits7d = v7;
     visitsPrev7d = vp;
+    naverPlace7d = np7;
     visitsByDay = series;
 
     topPathsToday = Object.entries(dayToday.paths)
       .map(([path, s]) => ({ path, visits: s.visits, cta: s.cta }))
       .sort((a, b) => b.visits - a.visits)
       .slice(0, 10);
+
+    naverPlaceTopPaths = Object.entries(dayToday.paths)
+      .map(([path, s]) => ({
+        path,
+        visits: s.visits || 0,
+        naverPlace: s.naverPlace || 0,
+        reservation: s.naverPlaceReservation || 0,
+        ctr:
+          s.visits > 0
+            ? Math.round(((s.naverPlace || 0) / s.visits) * 1000) / 10
+            : null,
+      }))
+      .filter((r) => r.naverPlace > 0)
+      .sort((a, b) => b.naverPlace - a.naverPlace)
+      .slice(0, 15);
+
+    naverPlaceByPlacement = Object.entries(dayToday.naverPlacePlacements || {})
+      .map(([placement, count]) => ({ placement, count }))
+      .sort((a, b) => b.count - a.count);
 
     emailRecent = await listEmailLogs(env, 20);
     const allEmail = await listEmailLogs(env, 200);
@@ -322,6 +384,7 @@ export async function buildDashboard(env) {
   const summaryParts = [
     `오늘 방문 ${visitsToday ?? "—"}`,
     `상담제출 ${consultSubmitToday ?? "—"}`,
+    `네이버이동 ${naverPlaceToday ?? "—"}`,
     `메일실패 ${emailFailedToday ?? "—"}`,
     `경고 ${alerts.length}`,
   ];
@@ -340,6 +403,9 @@ export async function buildDashboard(env) {
       emailFailedToday,
       activeNotices: activeNotices.length,
       alertCount: alerts.length,
+      naverPlaceToday,
+      naverPlace7d,
+      naverReservationToday,
     },
     summaryLine: summaryParts.join(" · "),
     alerts,
@@ -349,6 +415,8 @@ export async function buildDashboard(env) {
     activeNotices,
     health,
     recentAudit,
+    naverPlaceByPlacement,
+    naverPlaceTopPaths,
   };
 }
 

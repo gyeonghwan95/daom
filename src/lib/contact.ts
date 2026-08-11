@@ -1,12 +1,16 @@
 import { getPrimaryInquiryForm } from "@/lib/consultation";
+import {
+  getNaverSmartPlaceUrl,
+  isNaverSmartPlaceEnabled,
+} from "@/config/external-links";
 
 export const defaultContact = {
   phone: "070-4172-8056",
   kakao: "http://pf.kakao.com/_Bvhxnn/chat",
   naverTalk: "https://talk.naver.com/ct/w661kd4",
   naverBlog: "https://blog.naver.com/law-yoon-91",
-  naverReservation:
-    "https://map.naver.com/p/entry/place/2035745096?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5",
+  /** @deprecated Use getNaverReservationUrl() → SmartPlace SSOT */
+  naverReservation: "https://naver.me/58j9SzPA",
 } as const;
 
 export const consultationQrCodes = {
@@ -58,10 +62,11 @@ export function getNaverBlogUrl(): string {
 }
 
 export function getNaverReservationUrl(): string {
-  return (
-    readEnv("NEXT_PUBLIC_NAVER_RESERVATION") ||
-    defaultContact.naverReservation
-  );
+  // Single destination with SmartPlace SSOT (naver.me). Env override optional.
+  if (!isNaverSmartPlaceEnabled()) return "";
+  const override = process.env.NEXT_PUBLIC_NAVER_RESERVATION?.trim();
+  if (override) return override;
+  return getNaverSmartPlaceUrl() || defaultContact.naverReservation;
 }
 
 export function getContactInfo(): ContactInfo {
@@ -176,8 +181,8 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
     },
     {
       id: "reservation",
-      label: "상담 예약",
-      shortLabel: "예약",
+      label: "네이버 상담 예약",
+      shortLabel: "네이버 예약",
       href: reservation || "/contact",
       external: Boolean(reservation),
       configured: Boolean(reservation),
@@ -217,7 +222,7 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
     },
     {
       id: "reservation",
-      label: "상담 예약",
+      label: "네이버 상담 예약",
       shortLabel: "예약",
       href: reservation || "/contact",
       external: Boolean(reservation),

@@ -9,10 +9,12 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
+import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 import { seoBrand } from "@/lib/seo/brand";
 
 const PORTRAIT_SRC = encodePublicSrc("/image/썸네일-정면.jpg");
@@ -32,6 +34,7 @@ export function SidebarConsultationPanel() {
   const availability = useConsultationAvailability();
   const reducedMotion = useReducedMotion();
   const { isOpen, statusLabel, statusHint } = availability;
+  const showNaverReservation = isNaverSmartPlaceConfigured();
 
   const channels: ChannelItem[] = [
     ...(phone
@@ -173,6 +176,23 @@ export function SidebarConsultationPanel() {
             );
           })}
         </ul>
+
+        {showNaverReservation ? (
+          <div className="sidebar-consult-panel__naver">
+            <NaverSmartPlaceCta
+              variant="reservation"
+              placement="sidebar"
+              tone="brand"
+              size="sm"
+              fullWidth
+              label="네이버 예약"
+              className="!min-h-10 !rounded-lg"
+            />
+            <p className="sidebar-consult-panel__naver-hint">
+              방문 상담은 네이버에서 일정을 확인할 수 있습니다
+            </p>
+          </div>
+        ) : null}
 
         <Link href="/contact" className="sidebar-consult-panel__more">
           상담 안내 보기

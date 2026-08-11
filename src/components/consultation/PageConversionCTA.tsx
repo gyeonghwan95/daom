@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import { ConversionActionButtons } from "@/components/consultation/ConversionActionButtons";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   resolveConversionCTAConfig,
   type ConversionPageType,
@@ -121,18 +122,25 @@ export function PageConversionCTA({
           />
         ) : (
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-            <Link
-              href={
-                serviceSlug
-                  ? contactInquiryHref({ field: serviceSlug })
-                  : contactInquiryHref()
+            <InquiryNaverCtaPair
+              placement="page_conversion"
+              layout="row"
+              size="md"
+              inquiry={
+                <Link
+                  href={
+                    serviceSlug
+                      ? contactInquiryHref({ field: serviceSlug })
+                      : contactInquiryHref()
+                  }
+                  data-cta="contact"
+                  onClick={() => trackCTA("contact", slug)}
+                  className={primaryBtnClass}
+                >
+                  {consultationInquiryCopy.ctaPrimary}
+                </Link>
               }
-              data-cta="contact"
-              onClick={() => trackCTA("contact", slug)}
-              className={primaryBtnClass}
-            >
-              {consultationInquiryCopy.ctaPrimary}
-            </Link>
+            />
             <Link
               href="/contact"
               data-cta="contact"

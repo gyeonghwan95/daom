@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   CONTACT_INQUIRY_PATH,
   consultationInquiryCopy,
@@ -13,7 +14,7 @@ type ConsultInlineCardProps = {
 };
 
 /**
- * 인라인 상담 카드 — 신청서 페이지로 이동 (플로팅 팝업 제외).
+ * 인라인 상담 카드 — 신청서 + 네이버 예약
  */
 export function ConsultInlineCard({
   pageTitle: _pageTitle,
@@ -35,9 +36,20 @@ export function ConsultInlineCard({
         {consultationInquiryCopy.oneMinute} 업무명을 모르셔도 현재 상황만 적어
         주시면 됩니다.
       </p>
-      <Link href={CONTACT_INQUIRY_PATH} className="btn-primary consult-inline__btn">
-        {consultationInquiryCopy.ctaPrimary}
-      </Link>
+      <InquiryNaverCtaPair
+        placement="consult_inline"
+        layout="stack"
+        size="md"
+        className="mt-4"
+        inquiry={
+          <Link
+            href={CONTACT_INQUIRY_PATH}
+            className="btn-primary consult-inline__btn"
+          >
+            {consultationInquiryCopy.ctaPrimary}
+          </Link>
+        }
+      />
     </aside>
   );
 }

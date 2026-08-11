@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 
 type SearchEmptyStateProps = {
   query: string;
@@ -16,7 +17,7 @@ export function SearchEmptyState({ query, onNavigate }: SearchEmptyStateProps) {
         <li>업무명이나 지역명으로 검색해보세요.</li>
         <li>상담이 필요한 경우 문의 페이지를 이용할 수 있습니다.</li>
       </ul>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         <Link
           href="/services"
           onClick={onNavigate}
@@ -31,13 +32,20 @@ export function SearchEmptyState({ query, onNavigate }: SearchEmptyStateProps) {
         >
           자가진단 보기
         </Link>
-        <Link
-          href="/contact/inquiry"
-          onClick={onNavigate}
-          className="rounded-lg border border-beige-dark bg-navy px-3 py-2 text-xs font-medium text-white no-underline hover:bg-navy-light"
-        >
-          1분만에 상담 신청하기
-        </Link>
+        <InquiryNaverCtaPair
+          placement="search_empty"
+          layout="row"
+          size="sm"
+          inquiry={
+            <Link
+              href="/contact/inquiry"
+              onClick={onNavigate}
+              className="inline-flex items-center justify-center rounded-lg border border-beige-dark bg-navy px-3 py-2 text-xs font-medium text-white no-underline hover:bg-navy-light"
+            >
+              1분만에 상담 신청하기
+            </Link>
+          }
+        />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { getContactInfo, getDirectConsultationChannels } from "@/lib/contact";
 import {
   getNationwideNotice,
@@ -59,12 +60,19 @@ export function NationwideServiceNotice({
       </ol>
 
       <div className="mt-5 space-y-3 border-t border-beige-dark pt-4">
-        <Link
-          href={notice.ctaHref}
-          className="btn-primary flex w-full min-h-12 items-center justify-center px-4 text-sm sm:text-base"
-        >
-          {notice.ctaLabel}
-        </Link>
+        <InquiryNaverCtaPair
+          placement="nationwide_card"
+          layout="stack"
+          size="md"
+          inquiry={
+            <Link
+              href={notice.ctaHref}
+              className="btn-primary flex w-full min-h-12 items-center justify-center px-4 text-sm sm:text-base"
+            >
+              {notice.ctaLabel}
+            </Link>
+          }
+        />
 
         <div className="rounded-lg border border-beige-dark bg-[var(--surface-muted)] p-3 sm:p-3.5">
           <div className="mb-2.5 flex flex-wrap items-end justify-between gap-x-3 gap-y-1">

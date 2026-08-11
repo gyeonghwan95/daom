@@ -421,6 +421,14 @@ body.mobile-menu-open .mobile-bottom-cta {
   color: #fff;
 }
 
+.mobile-bottom-cta__btn--reservation:hover {
+  filter: brightness(0.95);
+}
+
+.mobile-bottom-cta__btn--naver-talk:hover {
+  filter: brightness(0.95);
+}
+
 .mobile-bottom-cta__btn--inquiry {
   background: #1e3a5f;
   color: #fff;
@@ -508,6 +516,59 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .btn-secondary:hover {
     @apply border-navy bg-beige;
+  }
+
+  /* 1분 상담 + 네이버 예약 페어 */
+  .inquiry-naver-pair {
+    @apply flex flex-wrap gap-3;
+  }
+
+  .inquiry-naver-pair--stack {
+    @apply w-full flex-col;
+  }
+
+  .inquiry-naver-pair--row {
+    @apply w-full flex-row items-stretch;
+  }
+
+  .inquiry-naver-pair__inquiry {
+    @apply min-w-0 flex-1 basis-[min(100%,14rem)] sm:flex-initial sm:basis-auto;
+  }
+
+  .inquiry-naver-pair__inquiry > a,
+  .inquiry-naver-pair__inquiry > button {
+    @apply w-full sm:w-auto;
+  }
+
+  .inquiry-naver-pair__naver {
+    @apply min-w-0 flex-1 basis-[min(100%,12rem)] sm:flex-initial sm:basis-auto;
+  }
+
+  .inquiry-naver-pair__naver-btn {
+    border-radius: 0.5rem !important; /* btn-primary rounded-lg 와 정렬 */
+    min-height: 3rem;
+    width: 100%;
+  }
+
+  .inquiry-naver-pair--sm .inquiry-naver-pair__naver-btn {
+    min-height: 2.5rem;
+  }
+
+  .inquiry-naver-pair--lg .inquiry-naver-pair__naver-btn {
+    min-height: 3.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .inquiry-naver-pair--row .inquiry-naver-pair__naver-btn {
+      width: auto;
+      min-width: 9.5rem;
+    }
+  }
+
+  .inquiry-naver-pair--stack .inquiry-naver-pair__inquiry > a,
+  .inquiry-naver-pair--stack .inquiry-naver-pair__inquiry > button,
+  .inquiry-naver-pair--stack .inquiry-naver-pair__naver-btn {
+    width: 100%;
   }
 
   .btn-secondary:active {
@@ -1248,6 +1309,14 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .sidebar-consult-panel__channel--inquiry .sidebar-consult-panel__channel-icon {
     @apply border border-beige-dark bg-white text-navy;
+  }
+
+  .sidebar-consult-panel__naver {
+    @apply space-y-1.5 pt-0.5;
+  }
+
+  .sidebar-consult-panel__naver-hint {
+    @apply px-0.5 text-[10px] leading-snug text-navy/50;
   }
 
   .sidebar-consult-panel__more {
@@ -2199,6 +2268,16 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .hero-contact__chip--naver:hover {
+    filter: brightness(0.95);
+  }
+
+  /* SmartPlace 예약 칩 — 톡톡과 동일 톤 */
+  .hero-contact__chip.naver-smartplace-chip,
+  a.hero-contact__chip[data-cta-variant="reservation"] {
+    @apply bg-[#03C75A] text-white;
+  }
+
+  a.hero-contact__chip[data-cta-variant="reservation"]:hover {
     filter: brightness(0.95);
   }
 

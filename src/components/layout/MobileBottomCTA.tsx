@@ -14,25 +14,7 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
-
-function CalendarIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M8 3v2M16 3v2M4 9h16M6 5h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 
 function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
   const linkProps = channel.external
@@ -82,9 +64,18 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--reservation"
           aria-label={channel.label}
+          data-cta="naver-place"
+          data-cta-variant="reservation"
+          data-cta-placement="mobile_bottom"
+          onClick={() =>
+            trackNaverPlaceClick({
+              variant: "reservation",
+              placement: "mobile_bottom",
+            })
+          }
           {...linkProps}
         >
-          <CalendarIcon className="mobile-bottom-cta__icon" />
+          <NaverIcon className="mobile-bottom-cta__icon" />
           <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
         </a>
       );

@@ -4,17 +4,14 @@ import type { ReactNode } from "react";
 import { CopyAddressButton } from "@/components/contact/CopyAddressButton";
 import { VisitNoticeBanner } from "@/components/contact/VisitNoticeBanner";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import {
   getMailtoHref,
   getNapInfo,
 } from "@/lib/business-info";
 import { getDirectConsultationChannels, getPhoneHref } from "@/lib/contact";
-import {
-  getNaverPlaceUrl,
-  officeHours,
-  officeLocation,
-} from "@/lib/office-location";
+import { officeHours, officeLocation } from "@/lib/office-location";
 import type { SiteImageAsset } from "@/lib/site-images";
 
 type OfficeLocationInfoProps = {
@@ -29,7 +26,6 @@ export function OfficeLocationInfo({
   sideImage,
 }: OfficeLocationInfoProps) {
   const channels = getDirectConsultationChannels();
-  const naverPlaceUrl = getNaverPlaceUrl();
   const nap = getNapInfo();
 
   return (
@@ -49,14 +45,13 @@ export function OfficeLocationInfo({
           </div>
           <div className="flex flex-wrap gap-2">
             <CopyAddressButton />
-            <a
-              href={naverPlaceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-10 items-center rounded-lg border border-navy/15 bg-white px-3 text-sm font-medium text-navy transition-colors hover:border-navy/30 hover:bg-beige/40"
-            >
-              네이버 지도에서 보기
-            </a>
+            <NaverSmartPlaceCta
+              variant="map"
+              placement="location_page"
+              tone="soft"
+              size="sm"
+              label="네이버 지도"
+            />
           </div>
         </div>
 
@@ -144,6 +139,19 @@ export function OfficeLocationInfo({
               <p className="mt-4 rounded-lg bg-beige/60 px-3 py-2.5 text-sm leading-relaxed text-navy/70">
                 {officeHours.note}
               </p>
+              {!showQuickContact ? (
+                <div className="mt-4">
+                  <NaverSmartPlaceCta
+                    variant="reservation"
+                    placement="location_page"
+                    tone="brand"
+                    fullWidth
+                    size="md"
+                    label="네이버 예약"
+                    showHint
+                  />
+                </div>
+              ) : null}
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -174,10 +182,21 @@ export function OfficeLocationInfo({
           <h2 className="section-heading">예약·상담 바로가기</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/70 sm:text-base">
             전화는 바로 연결되고, 카카오톡·네이버 톡톡은 채팅으로 편하게 문의하실 수
-            있습니다.
+            있습니다. 방문이 필요하면 네이버에서 일정을 확인해 주세요.
           </p>
           <div className="mt-5">
             <ConsultationButtons channels={channels} theme="light" layout="grid" />
+          </div>
+          <div className="mt-4">
+            <NaverSmartPlaceCta
+              variant="reservation"
+              placement="location_page"
+              tone="brand"
+              fullWidth
+              size="md"
+              label="네이버 예약"
+              showHint
+            />
           </div>
           <p className="mt-4 text-sm text-navy/60">
             <Link

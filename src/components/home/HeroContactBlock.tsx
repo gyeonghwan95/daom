@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   KakaoIcon,
@@ -5,7 +7,9 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { getPhoneHref, type ConsultationChannel } from "@/lib/contact";
+import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 
 type HeroContactBlockProps = {
   phone: string;
@@ -105,13 +109,26 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
           >
             <span className="hero-contact__chip-label">상담 안내</span>
           </Link>
-          <Link
-            href="/location"
-            className="hero-contact__chip hero-contact__chip--location"
-            role="listitem"
-          >
-            <span className="hero-contact__chip-label">오시는 길</span>
-          </Link>
+          {isNaverSmartPlaceConfigured() ? (
+            <span role="listitem" className="contents">
+              <NaverSmartPlaceCta
+                variant="reservation"
+                placement="homepage_hero"
+                tone="chip"
+                size="sm"
+                label="네이버 예약"
+                className="hero-contact__chip"
+              />
+            </span>
+          ) : (
+            <Link
+              href="/location"
+              className="hero-contact__chip hero-contact__chip--location"
+              role="listitem"
+            >
+              <span className="hero-contact__chip-label">오시는 길</span>
+            </Link>
+          )}
         </div>
         <ConsultationFeeNotice className="mt-2" />
       </div>

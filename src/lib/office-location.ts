@@ -1,3 +1,8 @@
+import {
+  EXTERNAL_LINKS,
+  getNaverSmartPlaceUrl,
+} from "@/config/external-links";
+
 export const officeLocation = {
   fullAddress: "부산광역시 해운대구 센텀동로 200 D동 1층 LAB9호",
   shortAddress: "부산광역시 해운대구 센텀동로 200",
@@ -43,12 +48,11 @@ export const officeHours = {
 
 export const defaultNaverPlaceId = "2035745096";
 
-/** 네이버 플레이스 단축 링크 (오시는 길·플레이스 열기 공통) */
-export const defaultNaverPlaceShortUrl = "https://naver.me/58j9SzPA";
+/** @deprecated Prefer EXTERNAL_LINKS.naverSmartPlace / getNaverSmartPlaceUrl() */
+export const defaultNaverPlaceShortUrl = EXTERNAL_LINKS.naverSmartPlace;
 
 export function getNaverPlaceUrl(): string {
-  const override = process.env.NEXT_PUBLIC_NAVER_PLACE_URL?.trim();
-  return override || defaultNaverPlaceShortUrl;
+  return getNaverSmartPlaceUrl();
 }
 
 /** 센텀동로 200 (재송동 339-3) — 지도 마커용 */

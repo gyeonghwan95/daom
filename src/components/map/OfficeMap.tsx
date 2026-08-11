@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { KakaoIcon, NaverIcon } from "@/components/consultation/ConsultationIcons";
+import { KakaoIcon } from "@/components/consultation/ConsultationIcons";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { loadKakaoMaps } from "@/lib/kakao-map-loader";
 import {
   getKakaoMapAppKey,
   getKakaoMapPlaceUrl,
-  getNaverMapSearchUrl,
   getOpenStreetMapEmbedUrl,
   officeCoordinates,
   officeLocation,
@@ -21,15 +21,14 @@ const mapLinkBase =
 function MapExternalLinks() {
   return (
     <div className="mt-3 grid gap-2 sm:grid-cols-2">
-      <a
-        href={getNaverMapSearchUrl()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${mapLinkBase} bg-[#03C75A] text-white hover:opacity-90`}
-      >
-        <NaverIcon className="h-5 w-5 shrink-0" />
-        네이버 지도에서 보기
-      </a>
+      <NaverSmartPlaceCta
+        variant="map"
+        placement="map_widget"
+        tone="brand"
+        fullWidth
+        size="md"
+        label="네이버 지도"
+      />
       <a
         href={getKakaoMapPlaceUrl(siteConfig.name)}
         target="_blank"
@@ -70,8 +69,8 @@ export function OfficeMap() {
     if (!el) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setShouldLoad(true);
-      return;
+      const t = window.setTimeout(() => setShouldLoad(true), 0);
+      return () => window.clearTimeout(t);
     }
 
     const observer = new IntersectionObserver(

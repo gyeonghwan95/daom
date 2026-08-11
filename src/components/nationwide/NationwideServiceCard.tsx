@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   getContactInfo,
   getDirectConsultationChannels,
@@ -84,12 +85,19 @@ export function NationwideServiceCard({
       </div>
 
       <div className="nationwide-service-card__actions">
-        <Link
-          href={CONTACT_INQUIRY_PATH}
-          className="btn-primary inline-flex min-h-12 items-center justify-center px-5"
-        >
-          {consultationInquiryCopy.ctaPrimary}
-        </Link>
+        <InquiryNaverCtaPair
+          placement="nationwide_card"
+          layout="row"
+          size="md"
+          inquiry={
+            <Link
+              href={CONTACT_INQUIRY_PATH}
+              className="btn-primary inline-flex min-h-12 items-center justify-center px-5"
+            >
+              {consultationInquiryCopy.ctaPrimary}
+            </Link>
+          }
+        />
         {showChannelButtons ? (
           <div className="nationwide-service-card__channels">
             <a

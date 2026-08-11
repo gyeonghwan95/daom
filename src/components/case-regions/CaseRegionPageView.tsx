@@ -5,6 +5,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -44,10 +45,20 @@ export function CaseRegionPageView({
         </p>
         <h1 className="page-title max-w-4xl">{page.h1}</h1>
         <p className="body-text max-w-3xl text-navy/80">{page.intro}</p>
-        <div className="flex flex-wrap gap-3 pt-2">
-          <Link href="/contact/inquiry" className="btn-primary min-h-11 px-5 text-sm">
-            1분만에 상담 신청하기
-          </Link>
+        <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-stretch">
+          <InquiryNaverCtaPair
+            placement="case_region"
+            layout="row"
+            size="sm"
+            inquiry={
+              <Link
+                href="/contact/inquiry"
+                className="btn-primary min-h-11 px-5 text-sm"
+              >
+                1분만에 상담 신청하기
+              </Link>
+            }
+          />
           <Link
             href="/업무사례/지역별"
             className="btn-secondary min-h-11 px-5 text-sm"
@@ -129,10 +140,20 @@ export function CaseRegionPageView({
             showQrCodes={false}
           />
         </div>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="/contact/inquiry" className="btn-primary min-h-11 px-5 text-sm">
-            1분만에 상담 신청하기
-          </Link>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
+          <InquiryNaverCtaPair
+            placement="case_region"
+            layout="row"
+            size="sm"
+            inquiry={
+              <Link
+                href="/contact/inquiry"
+                className="btn-primary min-h-11 px-5 text-sm"
+              >
+                1분만에 상담 신청하기
+              </Link>
+            }
+          />
           <Link href="/cases" className="btn-secondary min-h-11 px-5 text-sm">
             전체 업무 사례
           </Link>

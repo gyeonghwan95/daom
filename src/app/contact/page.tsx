@@ -6,6 +6,7 @@ import { NationwideServiceCard } from "@/components/nationwide/NationwideService
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages } from "@/lib/site-images";
 import { staticPageSeo } from "@/lib/seo/page-seo";
@@ -76,12 +77,21 @@ export default function ContactPage() {
             {consultationInquiryCopy.oneMinute} 이름·연락처·상담 분야·현재 상황을
             적어 보내 주시면 검토가 수월합니다. {INQUIRY_RELAXED_NOTE}
           </p>
-          <Link
-            href={CONTACT_INQUIRY_PATH}
-            className="btn-primary mt-5 inline-flex min-h-12 items-center px-6"
-          >
-            {consultationInquiryCopy.ctaPrimary}
-          </Link>
+          <div className="mt-5">
+            <InquiryNaverCtaPair
+              placement="contact_page"
+              layout="row"
+              size="md"
+              inquiry={
+                <Link
+                  href={CONTACT_INQUIRY_PATH}
+                  className="btn-primary inline-flex min-h-12 items-center px-6"
+                >
+                  {consultationInquiryCopy.ctaPrimary}
+                </Link>
+              }
+            />
+          </div>
         </section>
       </PageContentSection>
     </PageContainer>

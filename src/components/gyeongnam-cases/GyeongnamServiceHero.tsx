@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import type { GyeongnamLandingDef } from "@/lib/gyeongnam-cases";
 import { inquiryRegionFromDef } from "@/lib/gyeongnam-cases";
 
@@ -51,10 +52,17 @@ export function GyeongnamServiceHero({ def }: Props) {
             </li>
           ))}
         </ul>
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-          <Link href={inquiry} className="btn-primary min-h-12 px-5 text-sm">
-            {def.ctaTitle}
-          </Link>
+        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-stretch">
+          <InquiryNaverCtaPair
+            placement="case_region"
+            layout="row"
+            size="md"
+            inquiry={
+              <Link href={inquiry} className="btn-primary min-h-12 px-5 text-sm">
+                {def.ctaTitle}
+              </Link>
+            }
+          />
           <Link href={inquiry} className="btn-secondary min-h-12 px-5 text-sm">
             상담 신청서 작성
           </Link>

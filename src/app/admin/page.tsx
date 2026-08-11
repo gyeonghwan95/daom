@@ -103,6 +103,13 @@ export default function AdminDashboardPage() {
           <div className="admin-kpi__value">{fmt(k.consultSubmitToday)}</div>
         </div>
         <div className="admin-kpi">
+          <div className="admin-kpi__label">네이버 플레이스 이동</div>
+          <div className="admin-kpi__value">{fmt(k.naverPlaceToday)}</div>
+          <div style={{ fontSize: 12, color: "#64748b" }}>
+            오늘 예약 CTA {fmt(k.naverReservationToday)} · 7일 {fmt(k.naverPlace7d)}
+          </div>
+        </div>
+        <div className="admin-kpi">
           <div className="admin-kpi__label">메일 성공 / 실패</div>
           <div className="admin-kpi__value">
             {fmt(k.emailSuccessToday)}/{fmt(k.emailFailedToday)}
@@ -140,6 +147,37 @@ export default function AdminDashboardPage() {
                     <td>{r.path}</td>
                     <td>{r.visits}</td>
                     <td>{r.cta}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </section>
+
+        <section className="admin-card">
+          <h2 style={{ margin: "0 0 10px", fontSize: 15 }}>네이버 플레이스 이동 (오늘)</h2>
+          <p style={{ color: "#94a3b8", fontSize: 12, marginTop: 0 }}>
+            사이트 outbound 클릭 · 네이버 실방문자와 동일하지 않음
+          </p>
+          {!data.naverPlaceTopPaths?.length ? (
+            <p style={{ color: "#64748b", fontSize: 13 }}>아직 측정되지 않음</p>
+          ) : (
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>경로</th>
+                  <th>클릭</th>
+                  <th>예약</th>
+                  <th>CTR%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.naverPlaceTopPaths.map((r) => (
+                  <tr key={r.path}>
+                    <td>{r.path}</td>
+                    <td>{r.naverPlace}</td>
+                    <td>{r.reservation}</td>
+                    <td>{r.ctr ?? "—"}</td>
                   </tr>
                 ))}
               </tbody>

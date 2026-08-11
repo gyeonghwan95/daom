@@ -10,5 +10,5 @@ pages_build_output_dir = "out"
 # Uncomment and set ids after creating a KV namespace:
 # [[kv_namespaces]]
 # binding = "ADMIN_KV"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-# preview_id = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+# id = "a70f572cf56f4365b264c0e34b885922"
+# preview_id = "6143c87eff49434e97913f0d3fcafcd9"

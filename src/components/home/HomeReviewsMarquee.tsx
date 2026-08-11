@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CustomerReviewCard } from "@/components/cards/CustomerReviewCard";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { InfiniteVerticalMarquee } from "@/components/motion/InfiniteVerticalMarquee";
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
 
@@ -17,12 +18,21 @@ export function HomeReviewsMarquee({ reviews }: HomeReviewsMarqueeProps) {
         <p className="mt-2 text-sm leading-relaxed text-navy/65">
           네이버 플레이스 방문자 리뷰를 준비 중입니다.
         </p>
-        <Link
-          href="/reviews"
-          className="mt-4 inline-flex min-h-10 items-center justify-center text-sm font-semibold text-navy-light underline-offset-4 hover:text-navy hover:underline"
-        >
-          고객후기 페이지 보기 →
-        </Link>
+        <div className="mt-4 flex flex-col items-center gap-2">
+          <NaverSmartPlaceCta
+            variant="place"
+            placement="homepage_reviews"
+            tone="text"
+            size="sm"
+            label="네이버에서 사무소 정보 확인"
+          />
+          <Link
+            href="/reviews"
+            className="inline-flex min-h-10 items-center justify-center text-sm font-semibold text-navy-light underline-offset-4 hover:text-navy hover:underline"
+          >
+            고객후기 페이지 보기 →
+          </Link>
+        </div>
       </div>
     );
   }
@@ -36,12 +46,21 @@ export function HomeReviewsMarquee({ reviews }: HomeReviewsMarqueeProps) {
             고객 후기
           </h3>
         </div>
-        <Link
-          href="/reviews"
-          className="shrink-0 text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
-        >
-          후기 더보기 →
-        </Link>
+        <div className="flex shrink-0 flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-3">
+          <NaverSmartPlaceCta
+            variant="place"
+            placement="homepage_reviews"
+            tone="text"
+            size="sm"
+            label="네이버에서 확인"
+          />
+          <Link
+            href="/reviews"
+            className="text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
+          >
+            후기 더보기 →
+          </Link>
+        </div>
       </div>
 
       <div className="relative min-h-0 flex-1 overflow-hidden rounded-xl">
@@ -52,7 +71,11 @@ export function HomeReviewsMarquee({ reviews }: HomeReviewsMarqueeProps) {
           className="home-reviews-marquee"
         >
           {reviews.map((review) => (
-            <CustomerReviewCard key={review.id} review={review} variant="compact" />
+            <CustomerReviewCard
+              key={review.id}
+              review={review}
+              variant="compact"
+            />
           ))}
         </InfiniteVerticalMarquee>
       </div>

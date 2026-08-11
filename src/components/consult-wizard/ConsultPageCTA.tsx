@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   CONTACT_INQUIRY_PATH,
   consultationInquiryCopy,
@@ -14,7 +15,7 @@ type ConsultPageCTAProps = {
   className?: string;
 };
 
-/** 페이지당 최대 1회 배치용 문맥형 CTA — 상담 신청서로 이동 */
+/** 페이지당 최대 1회 배치용 문맥형 CTA — 상담 신청서 + 네이버 예약 */
 export function ConsultPageCTA({
   pageTitle: _pageTitle,
   pageUrl: _pageUrl,
@@ -42,12 +43,20 @@ export function ConsultPageCTA({
         <li>준비된 서류가 없어도 문의할 수 있습니다</li>
         <li>{consultationInquiryCopy.oneMinuteShort}</li>
       </ul>
-      <Link
-        href={CONTACT_INQUIRY_PATH}
-        className="btn-primary consult-page-cta__btn"
-      >
-        {consultationInquiryCopy.ctaPrimary}
-      </Link>
+      <InquiryNaverCtaPair
+        placement="consult_page"
+        layout="stack"
+        size="md"
+        className="mt-4"
+        inquiry={
+          <Link
+            href={CONTACT_INQUIRY_PATH}
+            className="btn-primary consult-page-cta__btn"
+          >
+            {consultationInquiryCopy.ctaPrimary}
+          </Link>
+        }
+      />
     </section>
   );
 }

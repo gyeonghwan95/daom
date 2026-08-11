@@ -1,11 +1,7 @@
-import Link from "next/link";
 import { PageConversionCTA } from "@/components/consultation/PageConversionCTA";
 import { MID_CTA_HINT } from "@/lib/service-conversion/copy";
 import type { ServiceConversionMidCta } from "@/lib/service-conversion/types";
-import {
-  consultationInquiryCopy,
-  contactInquiryHref,
-} from "@/lib/consultation-inquiry";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type ContactCTASectionProps = {
   serviceSlug?: string;
@@ -19,13 +15,8 @@ export function ContactCTASection({
   serviceSlug,
   pageSlug,
   midCta,
-  inquiryField,
   diagnosisHref,
 }: ContactCTASectionProps) {
-  const inquiryHref = inquiryField
-    ? contactInquiryHref({ field: inquiryField })
-    : contactInquiryHref();
-
   return (
     <section id="conversion-mid-cta" className="space-y-4">
       <PageConversionCTA
@@ -38,22 +29,9 @@ export function ContactCTASection({
         pageSlug={pageSlug}
         diagnosisHref={diagnosisHref}
       />
-      <div className="flex flex-col gap-2 sm:flex-row">
-        <Link
-          href={inquiryHref}
-          className="btn-primary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
-        >
-          {consultationInquiryCopy.ctaPrimary}
-        </Link>
-        <Link
-          href={inquiryHref}
-          className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"
-        >
-          {consultationInquiryCopy.ctaForm}
-        </Link>
-      </div>
       <p className="text-center text-sm text-navy/65">
-        {consultationInquiryCopy.oneMinuteShort}
+        {consultationInquiryCopy.oneMinuteShort} 방문이 필요하면 네이버 예약도
+        이용하실 수 있습니다.
       </p>
     </section>
   );

@@ -33,6 +33,7 @@ const ALLOWED = new Set([
   "notice_click",
   "notice_dismiss",
   "search_used",
+  "naver_place_click",
 ]);
 
 export async function onRequestPost(context) {
@@ -79,6 +80,14 @@ export async function onRequestPost(context) {
     deviceType: body?.deviceType === "mobile" || body?.deviceType === "desktop"
       ? body.deviceType
       : "unknown",
+    meta:
+      body?.meta && typeof body.meta === "object"
+        ? Object.fromEntries(
+            Object.entries(body.meta)
+              .slice(0, 8)
+              .map(([k, v]) => [String(k).slice(0, 40), String(v).slice(0, 80)]),
+          )
+        : undefined,
   });
 
   return json({ ok: true, stored: result.ok });
