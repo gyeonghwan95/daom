@@ -201,7 +201,6 @@ export async function handleQuickInquiry(
       : "";
 
   if (!turnstileSecret) {
-    // Production/preview: secret 없으면 fail-closed. 로컬만 TURNSTILE_ALLOW_BYPASS=1.
     if (!allowBypass) {
       return json(
         {

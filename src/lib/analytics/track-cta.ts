@@ -1,3 +1,5 @@
+import { trackCtaEvent } from "@/lib/admin-ops/track-client";
+
 export type CTAType =
   | "phone"
   | "kakao"
@@ -6,11 +8,12 @@ export type CTAType =
   | "location";
 
 /**
- * CTA 클릭 전환 추적 훅.
- * Google Analytics / 네이버 애널리틱스 연동 전까지는 개발 환경에서만 로그합니다.
+ * CTA 클릭 전환 추적.
+ * Admin Ops(`/api/analytics/collect`)로 익명 집계. PII 없음.
  */
 export function trackCTA(type: CTAType, pageSlug: string): void {
   if (process.env.NODE_ENV === "development") {
     console.debug("[trackCTA]", { type, pageSlug });
   }
+  trackCtaEvent(type, pageSlug);
 }

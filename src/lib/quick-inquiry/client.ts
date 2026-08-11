@@ -1,3 +1,4 @@
+import { trackEvent } from "@/lib/admin-ops/beacon";
 import { parseContact } from "@/lib/quick-inquiry/shared";
 import type { InquiryResult } from "@/lib/quick-inquiry/shared";
 
@@ -15,6 +16,16 @@ export type SubmitQuickInquiryResult = InquiryResult;
 
 export function clientParseContact(value: string) {
   return parseContact(value);
+}
+
+function resolveInquiryPath(pageUrl?: string): string {
+  if (typeof window === "undefined") return "/";
+  try {
+    if (pageUrl) return new URL(pageUrl, window.location.origin).pathname;
+  } catch {
+    /* ignore */
+  }
+  return window.location.pathname;
 }
 
 export async function submitQuickInquiry(
@@ -47,6 +58,14 @@ export async function submitQuickInquiry(
       code: "delivery_failed",
       message: "문의 전달에 실패했습니다. 전화로 바로 문의해 주세요.",
     };
+  }
+
+  // Analytics must never block or alter inquiry UX (no PII).
+  if (data.ok) {
+    void trackEvent({
+      type: "consultation_submit",
+      path: resolveInquiryPath(input.pageUrl),
+    });
   }
 
   return data;

@@ -2,15 +2,33 @@
 
 import { Suspense, useEffect, useState, type ReactNode } from "react";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { NavigationProgress } from "@/components/ux/NavigationProgress";
 import {
   QuickInquiryProvider,
   useOptionalQuickInquiry,
 } from "@/components/quick-inquiry/QuickInquiryProvider";
+import { isAdminPath } from "@/components/layout/PublicOnly";
 
 const FloatingCTA = dynamic(
   () =>
     import("@/components/consultation/FloatingCTA").then((m) => m.FloatingCTA),
+  { ssr: false },
+);
+
+const FloatingNoticeHost = dynamic(
+  () =>
+    import("@/components/notices/FloatingNoticeHost").then(
+      (m) => m.FloatingNoticeHost,
+    ),
+  { ssr: false },
+);
+
+const AnalyticsBeacon = dynamic(
+  () =>
+    import("@/components/admin-ops/AnalyticsBeacon").then(
+      (m) => m.AnalyticsBeacon,
+    ),
   { ssr: false },
 );
 
@@ -34,8 +52,10 @@ function DeferredConsultWizard() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (inquiry?.open) setLoaded(true);
-  }, [inquiry?.open]);
+    if (!inquiry?.open || loaded) return;
+    const timer = window.setTimeout(() => setLoaded(true), 0);
+    return () => window.clearTimeout(timer);
+  }, [inquiry?.open, loaded]);
 
   if (!loaded) return null;
   return <ConsultWizardShell />;
@@ -43,6 +63,7 @@ function DeferredConsultWizard() {
 
 /** 첫 페인트 이후 idle에 CTA 마운트 — LCP/INP 간섭 완화 */
 function IdleDeferredChrome() {
+  const pathname = usePathname();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -69,12 +90,14 @@ function IdleDeferredChrome() {
     };
   }, []);
 
-  if (!ready) return null;
+  if (!ready || isAdminPath(pathname)) return null;
 
   return (
     <>
       <MobileBottomCTA />
       <FloatingCTA />
+      <FloatingNoticeHost />
+      <AnalyticsBeacon />
     </>
   );
 }
@@ -83,6 +106,8 @@ function IdleDeferredChrome() {
  * 루트 클라이언트 셸: progress + 지연 로딩 CTA/상담.
  */
 export function AppClientShell({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     // 브라우저 기본 스크롤 복원 유지 (뒤로가기 UX)
     if ("scrollRestoration" in history) {
@@ -96,7 +121,7 @@ export function AppClientShell({ children }: { children: ReactNode }) {
         <NavigationProgress />
       </Suspense>
       {children}
-      <DeferredConsultWizard />
+      {!isAdminPath(pathname) ? <DeferredConsultWizard /> : null}
       <IdleDeferredChrome />
     </QuickInquiryProvider>
   );

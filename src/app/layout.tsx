@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { PublicOnly } from "@/components/layout/PublicOnly";
 import { AppClientShell } from "@/components/ux/AppClientShell";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
@@ -62,16 +63,20 @@ export default function RootLayout({
     <html lang="ko" className={`${notoSansKr.variable} h-full`}>
       <body className="has-mobile-cta min-h-full flex flex-col font-sans antialiased">
         <AppClientShell>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
-          >
-            본문 바로가기
-          </a>
-          <GlobalJsonLd />
-          <Header />
+          <PublicOnly>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
+            >
+              본문 바로가기
+            </a>
+            <GlobalJsonLd />
+            <Header />
+          </PublicOnly>
           {children}
-          <Footer />
+          <PublicOnly>
+            <Footer />
+          </PublicOnly>
         </AppClientShell>
       </body>
     </html>

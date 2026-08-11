@@ -1,0 +1,14 @@
+# Cloudflare Pages project hints for local `wrangler pages dev`.
+# Production KV binding is configured in the Cloudflare Dashboard
+# (Settings → Functions → KV bindings → Variable name: ADMIN_KV).
+# Do not commit real account secrets here.
+
+name = "daom"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "out"
+
+# Uncomment and set ids after creating a KV namespace:
+# [[kv_namespaces]]
+# binding = "ADMIN_KV"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# preview_id = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"

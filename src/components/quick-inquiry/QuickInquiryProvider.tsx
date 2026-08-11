@@ -10,6 +10,7 @@ import {
 } from "react";
 import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
 import { suggestSituationsFromPath } from "@/lib/consult-wizard/catalog";
+import { trackEvent } from "@/lib/admin-ops/beacon";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 
 export type QuickInquiryOpenOptions = {
@@ -88,6 +89,11 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
       source: options?.source ?? "other",
       pagePath: meta.path,
       situationIds: presets,
+    });
+    void trackEvent({
+      type: "consultation_start",
+      path: meta.path || "/",
+      meta: { source: options?.source ?? "other" },
     });
   }, []);
 
