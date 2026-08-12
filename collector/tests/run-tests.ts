@@ -344,6 +344,8 @@ test("누리장터 아파트 법무사 선정은 후보·고득점", () => {
     parserId: "nuri",
   };
   const notice = normalizeNuriItem(page.items[0], source)!;
+  // fixture 마감일은 고정값이라 시간이 지나면 urgency 감점으로 깨짐 → 상대 마감으로 고정
+  notice.applicationDeadline = inFiveDays;
   const cls = classifyNotice(notice);
   assert.ok(isCandidate(cls));
   const score = scoreNotice(notice, cls);

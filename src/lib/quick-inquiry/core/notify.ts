@@ -36,6 +36,10 @@ function buildEmailSubject(pageTitle: string): string {
   return `[다옴] ${short}`;
 }
 
+function channelLabel(channels: ("telegram" | "email")[]): string {
+  return channels.map((c) => (c === "telegram" ? "Telegram" : "Email")).join(" / ");
+}
+
 function buildPlainBody(
   data: ValidatedInquiry,
   channels: ("telegram" | "email")[],
@@ -47,8 +51,87 @@ function buildPlainBody(
     `유입 페이지: ${data.pageTitle}`,
     `URL: ${data.pageUrl}`,
     `접수 시각: ${formatKstNow()}`,
-    `알림 경로: ${channels.map((c) => (c === "telegram" ? "Telegram" : "Email")).join(" / ")}`,
+    `알림 경로: ${channelLabel(channels)}`,
   ].join("\n");
+}
+
+/** 트랜잭션 HTML — 외부 이미지·웹폰트 없이 인라인 스타일만 사용 */
+function buildHtmlBody(
+  data: ValidatedInquiry,
+  channels: ("telegram" | "email")[],
+): string {
+  const receivedAt = formatKstNow();
+  const contactHref =
+    data.contactKind === "phone"
+      ? `tel:${data.contact.replace(/\D/g, "")}`
+      : `mailto:${escapeHtml(data.contact)}`;
+  const pageHref = data.pageUrl.startsWith("http") ? escapeHtml(data.pageUrl) : "";
+  const messageHtml = escapeHtml(data.message).replace(/\n/g, "<br>");
+
+  const pageBlock = pageHref
+    ? `<a href="${pageHref}" style="color:#0f766e;font-weight:600;text-decoration:none;">${escapeHtml(data.pageTitle)}</a>
+       <div style="margin-top:6px;font-size:12px;color:#64748b;word-break:break-all;">${pageHref}</div>`
+    : `<div style="font-weight:600;color:#0f172a;">${escapeHtml(data.pageTitle)}</div>
+       <div style="margin-top:6px;font-size:12px;color:#64748b;word-break:break-all;">${escapeHtml(data.pageUrl)}</div>`;
+
+  return `<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>홈페이지 신규 문의</title>
+</head>
+<body style="margin:0;padding:0;background:#f1f5f9;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
+          <tr>
+            <td style="background:#0f766e;padding:22px 24px;">
+              <div style="font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);">다옴법무사사무소</div>
+              <div style="font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">홈페이지 신규 문의</div>
+              <div style="font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:13px;color:rgba(255,255,255,0.85);margin-top:8px;">접수 ${escapeHtml(receivedAt)} (KST)</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:22px 24px;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;">
+              <div style="font-size:12px;font-weight:700;color:#0f766e;letter-spacing:0.04em;margin-bottom:8px;">문의 내용</div>
+              <div style="font-size:15px;line-height:1.7;color:#0f172a;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">${messageHtml}</div>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:20px;">
+                <tr>
+                  <td style="padding:0 0 14px;border-bottom:1px solid #e2e8f0;">
+                    <div style="font-size:12px;font-weight:700;color:#64748b;margin-bottom:4px;">연락처</div>
+                    <a href="${contactHref}" style="font-size:16px;font-weight:700;color:#0f766e;text-decoration:none;">${escapeHtml(data.contact)}</a>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:4px;">${data.contactKind === "phone" ? "전화" : "이메일"}</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 0;border-bottom:1px solid #e2e8f0;">
+                    <div style="font-size:12px;font-weight:700;color:#64748b;margin-bottom:4px;">유입 페이지</div>
+                    ${pageBlock}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 0 0;">
+                    <div style="font-size:12px;font-weight:700;color:#64748b;margin-bottom:4px;">알림 경로</div>
+                    <div style="font-size:14px;color:#334155;">${escapeHtml(channelLabel(channels))}</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:14px 24px 20px;background:#f8fafc;border-top:1px solid #e2e8f0;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;color:#94a3b8;line-height:1.6;">
+              사이트 DB에는 문의 원문을 저장하지 않습니다. 본 메일은 접수 알림용입니다.
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
 }
 
 /**
@@ -154,6 +237,7 @@ export async function sendResendEmail(
 
   const from = normalizeSenderAddress(fromRaw);
   const plain = buildPlainBody(data, channels);
+  const html = buildHtmlBody(data, channels);
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -166,6 +250,7 @@ export async function sendResendEmail(
         from,
         to: [to],
         subject: buildEmailSubject(data.pageTitle),
+        html,
         text: plain,
       }),
     });

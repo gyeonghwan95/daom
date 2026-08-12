@@ -117,11 +117,12 @@ export function renderText(data: BriefingData): string {
 // ── HTML ──
 
 const STYLE = {
-  card: "border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:0 0 12px;",
+  card: "border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin:0 0 12px;background:#ffffff;",
   badge:
-    "display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:700;",
-  muted: "color:#64748b;font-size:13px;",
-  h2: "font-size:16px;margin:24px 0 10px;color:#0f172a;border-bottom:2px solid #0f766e;padding-bottom:6px;",
+    "display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.4;",
+  muted: "color:#64748b;font-size:13px;line-height:1.55;",
+  h2: "font-size:15px;margin:28px 0 12px;color:#0f172a;border-bottom:2px solid #0f766e;padding-bottom:8px;font-weight:800;",
+  link: "color:#0f766e;font-weight:600;font-size:13px;text-decoration:none;",
 };
 
 function badgeColor(score: number): string {
@@ -152,7 +153,7 @@ function htmlItem(opp: Opportunity): string {
   <div style="${STYLE.muted}">${escapeHtml(opp.organization)} · 마감: ${escapeHtml(deadlineLabel(opp))} · ${escapeHtml(formatAmount(opp.estimatedAmount))}${region}</div>
   ${reasons}${risks}${attachments}
   <div style="margin-top:8px;">
-    <a href="${escapeHtml(opp.originalUrl)}" style="color:#0f766e;font-weight:600;font-size:13px;">공고 원문 보기 →</a>
+    <a href="${escapeHtml(opp.originalUrl)}" style="${STYLE.link}">공고 원문 보기 →</a>
   </div>
 </div>`;
 }
@@ -170,7 +171,7 @@ function htmlChanges(changes: OpportunityChange[]): string {
   <div style="font-weight:700;font-size:14px;">${escapeHtml(c.title)}</div>
   <div style="${STYLE.muted}">${escapeHtml(c.organization)}</div>
   <div style="font-size:13px;color:#b45309;margin-top:4px;">${c.changes.map(escapeHtml).join(" / ")}</div>
-  <a href="${escapeHtml(c.originalUrl)}" style="color:#0f766e;font-size:13px;">원문 확인 →</a>
+  <a href="${escapeHtml(c.originalUrl)}" style="${STYLE.link}">원문 확인 →</a>
 </div>`,
     )
     .join("");
@@ -186,7 +187,7 @@ export function renderHtml(data: BriefingData): string {
   const manual = getManualLinkSources()
     .map(
       (src) =>
-        `<li><a href="${escapeHtml(src.baseUrl)}" style="color:#0f766e;">${escapeHtml(src.name)}</a> — ${escapeHtml(src.collectionMethod)}</li>`,
+        `<li><a href="${escapeHtml(src.baseUrl)}" style="${STYLE.link}">${escapeHtml(src.name)}</a> — ${escapeHtml(src.collectionMethod)}</li>`,
     )
     .join("");
 
@@ -199,17 +200,33 @@ export function renderHtml(data: BriefingData): string {
 
   return `<!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>다옴 업무기회 데일리 브리핑</title></head>
 <body style="margin:0;padding:0;background:#f1f5f9;">
 <div style="max-width:640px;margin:0 auto;padding:24px 16px;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;">
-  <div style="background:#0f766e;color:#fff;border-radius:10px 10px 0 0;padding:20px 24px;">
-    <div style="font-size:18px;font-weight:800;">다옴 업무기회 데일리 브리핑</div>
-    <div style="font-size:13px;opacity:.85;margin-top:4px;">수집 기준시각: ${escapeHtml(data.generatedAtKst)} (KST)</div>
+  <div style="background:#0f766e;color:#fff;border-radius:12px 12px 0 0;padding:22px 24px;">
+    <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:.75;">다옴법무사사무소</div>
+    <div style="font-size:20px;font-weight:800;margin-top:6px;">업무기회 데일리 브리핑</div>
+    <div style="font-size:13px;opacity:.85;margin-top:8px;">수집 기준시각: ${escapeHtml(data.generatedAtKst)} (KST)</div>
+    <div style="font-size:12px;opacity:.75;margin-top:4px;">조회기간 ${escapeHtml(data.collectionWindow.from)} ~ ${escapeHtml(data.collectionWindow.to)}</div>
   </div>
-  <div style="background:#ffffff;border-radius:0 0 10px 10px;padding:20px 24px;">
-    <h2 style="${STYLE.h2}margin-top:0;">오늘의 요약</h2>
-    <ul style="font-size:14px;color:#334155;padding-left:18px;margin:0;line-height:1.9;">
-      <li>신규 수집 <strong>${s.fetchedTotal}</strong>건 · 관련 후보 <strong>${s.candidateTotal}</strong>건 · 우선 검토 <strong style="color:#b91c1c;">${s.priorityCount}</strong>건</li>
+  <div style="background:#ffffff;border-radius:0 0 12px 12px;padding:20px 24px;border:1px solid #e2e8f0;border-top:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 8px;border-collapse:separate;border-spacing:8px 0;">
+      <tr>
+        <td style="width:33%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 10px;text-align:center;">
+          <div style="font-size:11px;color:#64748b;">신규 수집</div>
+          <div style="font-size:22px;font-weight:800;color:#0f172a;margin-top:4px;">${s.fetchedTotal}</div>
+        </td>
+        <td style="width:33%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 10px;text-align:center;">
+          <div style="font-size:11px;color:#64748b;">관련 후보</div>
+          <div style="font-size:22px;font-weight:800;color:#0f172a;margin-top:4px;">${s.candidateTotal}</div>
+        </td>
+        <td style="width:33%;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 10px;text-align:center;">
+          <div style="font-size:11px;color:#b91c1c;">우선 검토</div>
+          <div style="font-size:22px;font-weight:800;color:#b91c1c;margin-top:4px;">${s.priorityCount}</div>
+        </td>
+      </tr>
+    </table>
+    <ul style="font-size:14px;color:#334155;padding-left:18px;margin:12px 0 0;line-height:1.9;">
       <li>마감 임박(7일 이내) ${s.deadlineSoonCount}건 · 정정·취소·변경 ${s.changedCount}건</li>
       ${failedHtml}
     </ul>
@@ -224,7 +241,7 @@ export function renderHtml(data: BriefingData): string {
     <ul style="font-size:13px;color:#475569;padding-left:18px;line-height:1.9;">${manual}</ul>
     <h2 style="${STYLE.h2}">수집 상태</h2>
     <ul style="font-size:13px;color:#475569;padding-left:18px;line-height:1.9;">${runsHtml}</ul>
-    <div style="margin-top:20px;padding:12px 14px;background:#f8fafc;border-radius:8px;font-size:12px;color:#64748b;line-height:1.8;">
+    <div style="margin-top:20px;padding:12px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;font-size:12px;color:#64748b;line-height:1.8;">
       본 브리핑은 후보를 알려주는 참고자료입니다. 참가자격·지역제한·마감일은 반드시 공고 원문에서 확인하세요.
       법무사 업무범위를 벗어난 공고는 “협업 필요”로 분류되며 단독 수임 대상이 아닙니다.
     </div>

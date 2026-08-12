@@ -108,6 +108,8 @@ robots·이용약관을 검토하지 않은 사이트를 자동수집으로 전�
 | `G2B API resultCode 30` | 인증키 오류. Decoding 키인지 확인 |
 | HTTP 429 | 트래픽 제한. 자동 백오프 후 재시도됨. 빈도 조정은 `BID_LOOKBACK_DAYS` 축소 |
 | 이메일 미발송 로그 | `RESEND_API_KEY`/`BID_EMAIL_FROM`/`BID_EMAIL_TO` Secrets 확인 |
+| Actions는 성공인데 메일만 없음 | 로그에 `이미 발송됨`·`주말`·환경변수 미설정 문구 확인. artifact의 `briefing-*.html`로 본문 확인 |
+| 단위 테스트만 실패 | fixture 마감일 등 시간 의존 테스트. 워크플로는 발송 후 테스트를 돌리므로 메일과 분리됨 |
 | 특정 소스만 실패 | 다른 소스와 브리핑은 정상 진행됨. 메일 하단 "수집 상태"에서 마지막 정상 수집시각 확인 |
 | 엔드포인트 이관 공지 | `G2B_API_BASE` 환경변수 또는 `sources.ts`의 `apiUrl`만 수정 |
 

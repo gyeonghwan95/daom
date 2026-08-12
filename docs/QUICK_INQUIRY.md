@@ -2,6 +2,7 @@
 
 정적 Next.js(`out/`) + Cloudflare Pages Functions(`functions/`) 구성입니다.
 문의 내용은 DB에 저장하지 않고 Telegram(필수 권장) / Resend(선택)로만 전달합니다.
+Resend 메일은 HTML + plain text로 발송합니다.
 
 서버 공용 로직 위치: `src/lib/quick-inquiry/core/`  
 CF Function: `functions/api/quick-inquiry.ts`
