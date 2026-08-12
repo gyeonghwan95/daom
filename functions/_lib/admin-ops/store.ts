@@ -748,7 +748,7 @@ function isSameKstDay(timestamp, ymd) {
   return digits === compact;
 }
 
-export { emptyDay, KEYS, newId, formatKstDateTime, formatKstDate, kstDateRange, mergePathStats };
+export { emptyDay, KEYS, newId, formatKstDateTime, formatKstDate, kstDateRange };
 
 export async function buildPagesReport(env, days = 30) {
   if (!hasKv(env)) {
