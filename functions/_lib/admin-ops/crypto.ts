@@ -58,13 +58,33 @@ export function classifyReferrer(host) {
 
 export function normalizePath(raw) {
   try {
-    if (String(raw).startsWith("http")) return new URL(raw).pathname || "/";
+    if (String(raw).startsWith("http")) return normalizePath(new URL(raw).pathname || "/");
   } catch {
     /* ignore */
   }
-  const path = String(raw || "/").split("?")[0].split("#")[0] || "/";
-  const p = path.startsWith("/") ? path : `/${path}`;
-  return p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p;
+  let path = String(raw || "/").split("?")[0].split("#")[0] || "/";
+  if (!path.startsWith("/")) path = `/${path}`;
+  if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+  if (path.includes("%")) {
+    try {
+      const decoded = decodeURIComponent(path);
+      if (decoded.startsWith("/")) path = decoded;
+    } catch {
+      /* keep raw — invalid encoding */
+    }
+  }
+  return path;
+}
+
+/** KST hour bucket 0–23 */
+export function getKstHour(d = new Date()) {
+  return Number(
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Seoul",
+      hour: "2-digit",
+      hour12: false,
+    }).format(d),
+  );
 }
 
 export function isSafeCtaUrl(url) {
@@ -81,6 +101,14 @@ export function isSafeCtaUrl(url) {
   } catch {
     return false;
   }
+}
+
+export function sanitizeNoticeText(input, maxLen) {
+  return String(input || "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "")
+    .trim()
+    .slice(0, maxLen);
 }
 
 export function newId(prefix) {

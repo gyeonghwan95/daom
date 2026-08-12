@@ -15,6 +15,7 @@ export const staticRoutes = [
   "/blog",
   "/reviews",
   "/faq",
+  "/공지사항",
   "/media",
   "/contact",
   "/contact/inquiry",

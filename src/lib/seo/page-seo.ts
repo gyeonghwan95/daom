@@ -57,6 +57,13 @@ export const staticPageSeo = {
     path: "/faq",
     keywords: ["부산 법무사", "부산 상속등기", "부산 개인회생", seoBrand.siteName],
   },
+  notices: {
+    title: buildSeoTitle("공지사항"),
+    description:
+      "다옴법무사사무소 운영 공지, 휴무·일정 변경 등 안내사항을 확인하실 수 있습니다.",
+    path: "/공지사항",
+    keywords: ["다옴법무사사무소", "공지사항", seoBrand.siteName],
+  },
   media: {
     title: buildSeoTitle("언론·활동"),
     description:

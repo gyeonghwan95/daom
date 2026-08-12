@@ -29,6 +29,10 @@ export function resolveKoreanLandingPageData(
     return getPageDataByPath(`/${normalized}`);
   }
 
+  if (normalized === "공지사항") {
+    return getPageDataByPath("/공지사항");
+  }
+
   const nationwide = getNationwidePageDataBySlug(normalized);
   if (nationwide) {
     return nationwide;

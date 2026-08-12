@@ -1,5 +1,5 @@
 import type { AnalyticsEventInput } from "@/lib/admin-ops/types";
-import { classifyReferrer } from "@/lib/admin-ops/utils";
+import { classifyReferrer, normalizePath } from "@/lib/admin-ops/utils";
 
 /**
  * Fire-and-forget analytics. Never throws into UI flows.
@@ -8,7 +8,7 @@ import { classifyReferrer } from "@/lib/admin-ops/utils";
 export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
   try {
     if (typeof window === "undefined") return;
-    const path = input.path || window.location.pathname;
+    const path = normalizePath(input.path || window.location.pathname);
     if (path.startsWith("/admin")) return;
 
     let referrerHost: string | undefined;

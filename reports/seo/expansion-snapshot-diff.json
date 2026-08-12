@@ -1,0 +1,526 @@
+{
+  "existingUrlsBefore": 1639,
+  "existingUrlsAfter": 1654,
+  "removed": 0,
+  "added": 15,
+  "urlChanged": 0,
+  "protectedTitleChanges": 0,
+  "protectedH1Changes": 0,
+  "protectedCanonicalChanges": 0,
+  "sitemapRemoved": 0,
+  "sitemapRemovedUrls": [],
+  "modifiedRows": [
+    {
+      "url": "/강서구선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/동래구법인설립등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/동래구상속포기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/동래구재건축등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/명례산업단지법인등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/민락동법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/부산법무사비용",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/부산선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/부산여성법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/사망후3개월지난상속",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/사업자폐업후법인정리",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기과태료",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기기간",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기기한",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기보수표",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기비용",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기준비서류",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기필요서류",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/센텀법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": true
+    },
+    {
+      "url": "/양정동법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/영도구선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/해운대법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": true
+    },
+    {
+      "url": "/해운대역법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/해운대역부동산등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/해운회사법인등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    }
+  ],
+  "summary": [
+    {
+      "url": "/강서구선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/경매낙찰후전세권확인",
+      "change": "ADDED"
+    },
+    {
+      "url": "/대습상속등기",
+      "change": "ADDED"
+    },
+    {
+      "url": "/대표이사한명만남는경우",
+      "change": "ADDED"
+    },
+    {
+      "url": "/동래구법인설립등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/동래구상속포기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/동래구재건축등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/등기신청반려와보정",
+      "change": "ADDED"
+    },
+    {
+      "url": "/명례산업단지법인등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/민락동법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/본점이전후사업자등록순서",
+      "change": "ADDED"
+    },
+    {
+      "url": "/부산법무사비용",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/부산선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/부산여성법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/분양권명의이전등기",
+      "change": "ADDED"
+    },
+    {
+      "url": "/사망후3개월지난상속",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/사업자폐업후법인정리",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/상속재산분할협의서준비",
+      "change": "ADDED"
+    },
+    {
+      "url": "/상속취득세와등기순서",
+      "change": "ADDED"
+    },
+    {
+      "url": "/상속포기후다음순위확인",
+      "change": "ADDED"
+    },
+    {
+      "url": "/선박등기과태료",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기기간",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기기한",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기보수표",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기비용",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기준비서류",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/선박등기필요서류",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/센텀법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": true
+    },
+    {
+      "url": "/신용회복과개인회생차이",
+      "change": "ADDED"
+    },
+    {
+      "url": "/양정동법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/영도구선박등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/유류분과상속등기",
+      "change": "ADDED"
+    },
+    {
+      "url": "/전세사기피해대응절차",
+      "change": "ADDED"
+    },
+    {
+      "url": "/지급명령이의신청준비",
+      "change": "ADDED"
+    },
+    {
+      "url": "/특별한정승인",
+      "change": "ADDED"
+    },
+    {
+      "url": "/해산간주확인절차",
+      "change": "ADDED"
+    },
+    {
+      "url": "/해운대법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": true
+    },
+    {
+      "url": "/해운대역법무사",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/해운대역부동산등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    },
+    {
+      "url": "/해운회사법인등기",
+      "change": "MODIFIED",
+      "titleChanged": false,
+      "h1Changed": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": true,
+      "protected": false
+    }
+  ]
+}

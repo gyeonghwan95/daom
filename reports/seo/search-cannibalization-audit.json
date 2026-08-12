@@ -1,0 +1,823 @@
+{
+  "generatedAt": "2026-08-12T14:57:35.163Z",
+  "queryCount": 24,
+  "cannibalizationFlags": 15,
+  "rows": [
+    {
+      "query": "민락 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/민락동법무사",
+      "topCandidates": [
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "민락동 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/민락동법무사",
+      "topCandidates": [
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "민락역 법무사",
+      "intent": "station-local-selection",
+      "champion": "/민락동법무사",
+      "topCandidates": [
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "장산 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/좌동법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "장산역 법무사",
+      "intent": "station-local-selection",
+      "champion": "/좌동법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "전포동 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/전포동법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "전포역 법무사",
+      "intent": "station-local-selection",
+      "champion": "/전포동법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "양정 법무",
+      "intent": "local-provider-selection",
+      "champion": "/양정동법무사",
+      "topCandidates": [
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/부산진구부동산등기",
+          "title": "부산진구 부동산등기",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        },
+        {
+          "path": "/부산법무사추천",
+          "title": "/부산법무사추천",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "양정 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/양정동법무사",
+      "topCandidates": [
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산진구부동산등기",
+          "title": "부산진구 부동산등기",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "양정역 법무사",
+      "intent": "station-local-selection",
+      "champion": "/양정동법무사",
+      "topCandidates": [
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "복산동 법무사",
+      "intent": "local-provider-selection",
+      "champion": "/동래구법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/동래구법무사",
+          "title": "/동래구법무사",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "동래 복산동 법무사",
+      "intent": "local-alias-selection",
+      "champion": "/동래구법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 33.3
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/동래구법무사",
+          "title": "/동래구법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 법무사",
+      "intent": "broad-provider-selection",
+      "champion": "/부산법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 100
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 100
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "부산 저렴한 법무사",
+      "intent": "cost-comparison",
+      "champion": "/부산법무사비용",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 법무사 비용",
+      "intent": "cost-transparency",
+      "champion": "/부산법무사비용",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 66.7
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 법무사 추천",
+      "intent": "selection-research",
+      "champion": "/부산법무사추천",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 은행 법무사",
+      "intent": "finance-registration-mixed",
+      "champion": "/부산잔금대출근저당",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 은행 등기 법무사",
+      "intent": "finance-registration-closing",
+      "champion": "/부산잔금대출근저당",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 75
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 75
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 25
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "부산 잔금 법무사",
+      "intent": "closing-day-registration",
+      "champion": "/부산잔금일법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 100
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CHAMPION_SIGNAL_WEAK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "부산 근저당 법무사",
+      "intent": "mortgage-registration",
+      "champion": "/부산근저당말소등기",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 100
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CHAMPION_SIGNAL_WEAK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "부산 아파트 잔금 등기",
+      "intent": "inferred",
+      "champion": "/부산잔금대출근저당",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 100
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 75
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 25
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 25
+        }
+      ],
+      "cannibalizationRisk": "CHAMPION_SIGNAL_WEAK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "부산 주택담보대출 등기",
+      "intent": "inferred",
+      "champion": "/부산잔금대출근저당",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 66.7
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 33.3
+        },
+        {
+          "path": "/좌동상속등기",
+          "title": "좌동 상속등기",
+          "score": 33.3
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 33.3
+        }
+      ],
+      "cannibalizationRisk": "CANNIBALIZATION_RISK",
+      "action": "STRENGTHEN_CHAMPION_INTERNAL_LINKS"
+    },
+    {
+      "query": "대출 다 갚았는데 근저당",
+      "intent": "inferred",
+      "champion": "/부산법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 66.7
+        },
+        {
+          "path": "/부산법무사비용",
+          "title": "/부산법무사비용",
+          "score": 0
+        },
+        {
+          "path": "/부산법무사추천",
+          "title": "/부산법무사추천",
+          "score": 0
+        },
+        {
+          "path": "/부산잔금대출근저당",
+          "title": "/부산잔금대출근저당",
+          "score": 0
+        },
+        {
+          "path": "/부산잔금일법무사",
+          "title": "/부산잔금일법무사",
+          "score": 0
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    },
+    {
+      "query": "잔금날 등기",
+      "intent": "inferred",
+      "champion": "/부산법무사",
+      "topCandidates": [
+        {
+          "path": "/부산법무사",
+          "title": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준",
+          "score": 50
+        },
+        {
+          "path": "/민락동법무사",
+          "title": "민락동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/양정동법무사",
+          "title": "양정동 법무사",
+          "score": 50
+        },
+        {
+          "path": "/부산진구부동산등기",
+          "title": "부산진구 부동산등기",
+          "score": 50
+        },
+        {
+          "path": "/온천동법무사",
+          "title": "온천동 법무사",
+          "score": 50
+        }
+      ],
+      "cannibalizationRisk": "OK",
+      "action": "KEEP_CHAMPION"
+    }
+  ]
+}

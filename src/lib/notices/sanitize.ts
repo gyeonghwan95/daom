@@ -1,0 +1,9 @@
+/** Plain-text sanitize for notice fields — no HTML. */
+
+export function sanitizeNoticeText(input: string, maxLen: number): string {
+  return String(input || "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "")
+    .trim()
+    .slice(0, maxLen);
+}

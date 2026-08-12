@@ -77,6 +77,7 @@ function buildAllPageData(): PageData[] {
     "blog",
     "reviews",
     "faq",
+    "notices",
     "media",
     "contact",
     "location",

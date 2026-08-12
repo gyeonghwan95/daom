@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-08-12T14:57:28.483Z",
+  "status": "TREND_DATA_UNAVAILABLE",
+  "reason": "NAVER_CLIENT_ID / NAVER_CLIENT_SECRET not set",
+  "groups": [
+    {
+      "groupName": "local-provider",
+      "keywords": [
+        "민락 법무사",
+        "장산 법무사",
+        "전포동 법무사",
+        "양정 법무사",
+        "부산 법무사"
+      ]
+    },
+    {
+      "groupName": "cost-selection",
+      "keywords": [
+        "부산 법무사 비용",
+        "부산 법무사 추천",
+        "부산 저렴한 법무사"
+      ]
+    },
+    {
+      "groupName": "finance-registration",
+      "keywords": [
+        "부산 잔금 법무사",
+        "부산 근저당 법무사",
+        "부산 은행 등기 법무사",
+        "부산 아파트 잔금 등기"
+      ]
+    }
+  ],
+  "results": []
+}

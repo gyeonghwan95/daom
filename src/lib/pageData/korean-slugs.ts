@@ -17,6 +17,7 @@ export function getAllKoreanLandingSlugs(): string[] {
     "업무사례",
     "개인정보처리방침",
     "이용약관",
+    "공지사항",
   ];
   return [...new Set(slugs.map((slug) => normalizeRouteSlug(slug)))];
 }

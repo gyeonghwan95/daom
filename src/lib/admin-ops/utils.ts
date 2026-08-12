@@ -64,14 +64,23 @@ export function normalizePath(raw: string): string {
   try {
     if (raw.startsWith("http")) {
       const u = new URL(raw);
-      return u.pathname || "/";
+      return normalizePath(u.pathname || "/");
     }
   } catch {
     /* ignore */
   }
-  const path = raw.split("?")[0]?.split("#")[0] || "/";
-  if (!path.startsWith("/")) return `/${path}`;
-  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+  let path = raw.split("?")[0]?.split("#")[0] || "/";
+  if (!path.startsWith("/")) path = `/${path}`;
+  if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+  if (path.includes("%")) {
+    try {
+      const decoded = decodeURIComponent(path);
+      if (decoded.startsWith("/")) path = decoded;
+    } catch {
+      /* keep raw */
+    }
+  }
+  return path;
 }
 
 export function isSafeCtaUrl(url: string): boolean {

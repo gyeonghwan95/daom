@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminSection } from "@/components/admin/MetricCard";
 import type { HealthCard } from "@/lib/admin-ops/types";
 
 type AlertRow = {
@@ -8,6 +10,7 @@ type AlertRow = {
   level: string;
   title: string;
   detail: string;
+  href?: string;
 };
 
 export default function AdminMonitoringPage() {
@@ -35,33 +38,76 @@ export default function AdminMonitoringPage() {
 
   return (
     <div>
-      <h1 style={{ fontSize: "1.35rem", fontWeight: 800 }}>모니터링</h1>
-      <p style={{ color: "#64748b", fontSize: 14 }}>
+      <AdminPageHeader title="모니터링" />
+      <p className="admin-prose">
         실제 확인 가능한 항목만 표시합니다. 가짜 health는 만들지 않습니다.
       </p>
-      {alerts.map((a) => (
-        <div key={a.id} className={`admin-alert admin-alert--${a.level}`}>
-          <strong>{a.title}</strong>
-          <div>{a.detail}</div>
-        </div>
-      ))}
-      <div className="admin-card" style={{ marginTop: 12 }}>
-        <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
+
+      <AdminSection title="확인할 사항">
+        {alerts.length === 0 ? (
+          <p className="admin-empty">현재 긴급하게 확인할 항목이 없습니다.</p>
+        ) : (
+          alerts.map((a) => (
+            <div key={a.id} className={`admin-alert admin-alert--${a.level}`}>
+              <strong>{a.title}</strong>
+              <div>{a.detail}</div>
+            </div>
+          ))
+        )}
+      </AdminSection>
+
+      <AdminSection title="시스템 상태">
+        <ul className="admin-health-list">
           {health.map((h) => (
             <li key={h.id}>
-              <strong>{h.label}</strong> — {h.status}: {h.detail}
+              <span className={`admin-badge admin-badge--${h.status}`}>
+                {h.status}
+              </span>{" "}
+              <strong>{h.label}</strong> — {h.detail}
             </li>
           ))}
         </ul>
-      </div>
-      <div className="admin-card" style={{ marginTop: 12 }}>
-        <h2 style={{ fontSize: 15, marginTop: 0 }}>자동화(참고)</h2>
-        <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.6 }}>
-          IndexNow·입찰 브리핑·sitemap 생성은 GitHub Actions / prebuild에서
-          실행됩니다. Actions 실행 이력은 GitHub에서 확인하세요. 콘솔 수동 실행은
-          위험 작업을 피하기 위해 제공하지 않습니다.
-        </p>
-      </div>
+      </AdminSection>
+
+      <AdminSection title="자동화 (참고)">
+        <div className="admin-panel" style={{ padding: 0, border: 0 }}>
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>작업</th>
+                <th>실행 위치</th>
+                <th>관리자 수동 실행</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SEO audit / regression</td>
+                <td>CI / prebuild</td>
+                <td>금지 (로컬 npm만)</td>
+              </tr>
+              <tr>
+                <td>Sitemap 생성</td>
+                <td>prebuild</td>
+                <td>금지</td>
+              </tr>
+              <tr>
+                <td>IndexNow</td>
+                <td>GitHub Actions</td>
+                <td>금지</td>
+              </tr>
+              <tr>
+                <td>입찰 브리핑</td>
+                <td>GitHub Actions</td>
+                <td>금지</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="admin-prose" style={{ marginTop: 8 }}>
+            Actions 실행 이력은 GitHub에서 확인하세요. 배포·DB 마이그레이션·데이터
+            삭제는 관리자 콘솔에서 실행하지 않습니다.
+          </p>
+        </div>
+      </AdminSection>
     </div>
   );
 }

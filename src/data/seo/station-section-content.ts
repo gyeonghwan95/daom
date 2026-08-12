@@ -156,6 +156,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     nextStep:
       "좌동·송정 쪽 주소와 등기 원인만 남겨 주시면 서류 목록을 안내합니다.",
     serviceLinks: [
+      { href: "/좌동법무사", label: "좌동·장산 생활권" },
       { href: "/해운대법무사", label: "해운대 법무사 안내" },
       { href: "/부산상속등기", label: "상속등기 서류·순서" },
       { href: "/부산소유권이전등기", label: "소유권이전등기" },
@@ -364,14 +365,38 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "2호선 민락역 인근에서 등기를 준비할 때는 민락동 소재인지, 광안·남천 등 인접동인지에 따라 생활권 안내만 달리하고 법률 절차는 업무 페이지에서 통일합니다.",
     localContext:
-      "민락은 수영구 허브의 역 섹션입니다. 전세·매매·상속 중 무엇을 준비하는지 먼저 고르면 됩니다.",
+      "민락은 수영구의 Local Champion 페이지에서 역·동 검색을 함께 다룹니다. 전세·매매·상속 중 무엇을 준비하는지 먼저 고르면 됩니다.",
     nextStep:
       "계약 유형과 주소를 남겨 주세요.",
     serviceLinks: [
-      { href: "/수영구법무사", label: "수영구 법무사" },
+      { href: "/민락동법무사", label: "민락동 법무사" },
       { href: "/수영구부동산등기", label: "수영구 부동산등기" },
-      { href: "/수영구상속등기", label: "수영구 상속등기" },
+      { href: "/부산부동산등기", label: "부산 부동산등기" },
     ],
+  },
+  yangjeong: {
+    stationId: "yangjeong",
+    heading: "양정역·양정동에서 등기를 준비하는 경우",
+    intro:
+      "1·2호선 환승인 양정역 생활권에서는 주택·상가 매매등기와 상속 명의이전, 잔금·대출 연동 등기 문의가 이어집니다. ‘양정 법무’처럼 짧게 검색하셔도 같은 안내입니다.",
+    localContext:
+      "양정동 법무사 안내가 역·동 Cluster의 Primary Host입니다. 서면·개금·연지와 인접하므로 소재지 행정동을 기준으로 관할을 확인합니다.",
+    nextStep:
+      "부동산 주소와 매매·상속·법인 중 해당하는 것을 알려주세요.",
+    serviceLinks: [
+      { href: "/양정동법무사", label: "양정동 법무사" },
+      { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
+      { href: "/부산잔금대출근저당", label: "잔금·대출 등기 연동" },
+    ],
+    checklist: [
+      "등기부·계약서·잔금일",
+      "대출·말소 필요 여부",
+    ],
+    faq: {
+      question: "양정역과 양정동 안내가 다른 페이지인가요?",
+      answer:
+        "같은 생활권 Cluster입니다. 역 이름으로 검색하셔도 양정동 안내와 연결되는 업무 페이지를 보시면 됩니다.",
+    },
   },
 };
 

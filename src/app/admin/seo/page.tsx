@@ -1,31 +1,213 @@
+"use client";
+
+import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminSection } from "@/components/admin/MetricCard";
+import { PageIdentity } from "@/components/admin/PageIdentity";
+import summary from "@/generated/admin-seo-summary.json";
+
+type SeoSummary = {
+  generatedAt: string;
+  searchConsoleConnected: boolean;
+  kpis: {
+    publicUrls: number | null;
+    sitemapUrls: number | null;
+    critical: number;
+    warning: number;
+    info: number;
+    protectedPageCount: number;
+    regressionOk: boolean | null;
+  };
+  issues: Array<{
+    id: string;
+    severity: "critical" | "warning" | "info";
+    title: string;
+    detail: string;
+    count: number;
+    samples?: string[];
+  }>;
+  protectedPages: Array<{
+    path: string;
+    level?: string;
+    role?: string;
+    risk?: string;
+  }>;
+  indexabilitySample: Array<{
+    path: string;
+    status: string;
+    inSitemap?: boolean;
+  }>;
+  notes: string[];
+};
+
+const data = summary as SeoSummary;
+
 export default function AdminSeoPage() {
+  const k = data.kpis;
+
   return (
     <div>
-      <h1 style={{ fontSize: "1.35rem", fontWeight: 800 }}>SEO 상태</h1>
-      <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.6 }}>
-        Search Console API 미연결 — 순위·클릭 수치를 추정·생성하지 않습니다.
+      <AdminPageHeader title="SEO 상태" />
+      <p className="admin-prose">
+        빌드 시점 audit 보고서 기준입니다. Search Console API 미연결 — 순위·클릭
+        수치를 추정하지 않습니다.
       </p>
-      <div className="admin-card" style={{ marginTop: 16 }}>
-        <h2 style={{ fontSize: 15, marginTop: 0 }}>로컬/CI에서 확인</h2>
-        <ul style={{ lineHeight: 1.8, fontSize: 14 }}>
+      <p className="admin-page-header__meta">
+        보고서 생성:{" "}
+        {new Date(data.generatedAt).toLocaleString("ko-KR", {
+          timeZone: "Asia/Seoul",
+        })}
+      </p>
+
+      <div className="admin-metric-grid">
+        <div className="admin-metric">
+          <div className="admin-metric__label">공개 URL</div>
+          <div className="admin-metric__value">
+            {k.publicUrls ?? "—"}
+          </div>
+        </div>
+        <div className="admin-metric">
+          <div className="admin-metric__label">Sitemap URL</div>
+          <div className="admin-metric__value">
+            {k.sitemapUrls ?? "—"}
+          </div>
+        </div>
+        <div className="admin-metric">
+          <div className="admin-metric__label">Critical</div>
+          <div className="admin-metric__value">{k.critical}</div>
+        </div>
+        <div className="admin-metric">
+          <div className="admin-metric__label">Warning</div>
+          <div className="admin-metric__value">{k.warning}</div>
+        </div>
+        <div className="admin-metric">
+          <div className="admin-metric__label">보호 페이지</div>
+          <div className="admin-metric__value">{k.protectedPageCount}</div>
+        </div>
+        <div className="admin-metric">
+          <div className="admin-metric__label">Regression</div>
+          <div className="admin-metric__value">
+            {k.regressionOk == null ? "—" : k.regressionOk ? "PASS" : "FAIL"}
+          </div>
+        </div>
+      </div>
+
+      <AdminSection title="SEO 이슈">
+        {data.issues.length === 0 ? (
+          <p className="admin-empty">
+            현재 audit 보고서 기준 긴급 SEO 이슈가 없습니다.
+          </p>
+        ) : (
+          <ul className="admin-seo-issues">
+            {data.issues.map((issue) => (
+              <li
+                key={issue.id}
+                className={`admin-alert admin-alert--${
+                  issue.severity === "critical"
+                    ? "critical"
+                    : issue.severity === "warning"
+                      ? "warning"
+                      : "info"
+                }`}
+              >
+                <strong>{issue.title}</strong>
+                <div>{issue.detail}</div>
+                {issue.samples?.length ? (
+                  <ul style={{ marginTop: 6, paddingLeft: 18, fontSize: 12 }}>
+                    {issue.samples.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        )}
+      </AdminSection>
+
+      <div className="admin-two-col">
+        <AdminSection title="SEO 보호 페이지">
+          {!data.protectedPages.length ? (
+            <p className="admin-empty">보호 목록 없음</p>
+          ) : (
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>페이지</th>
+                  <th>등급</th>
+                  <th>위험</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.protectedPages.map((p) => (
+                  <tr key={p.path}>
+                    <td>
+                      <PageIdentity path={p.path} />
+                      {p.role ? (
+                        <div style={{ fontSize: 11, color: "#94a3b8" }}>
+                          {p.role}
+                        </div>
+                      ) : null}
+                    </td>
+                    <td>
+                      <span className="admin-badge admin-badge--stable">
+                        SEO 보호
+                      </span>
+                    </td>
+                    <td>{p.risk || p.level || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          <p className="admin-prose" style={{ marginTop: 8 }}>
+            Title/H1/URL 변경 제한 — 관리자가 수동으로 신중히 처리하세요.
+          </p>
+        </AdminSection>
+
+        <AdminSection title="Indexability 샘플">
+          {!data.indexabilitySample?.length ? (
+            <p className="admin-empty">샘플 없음</p>
+          ) : (
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>페이지</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.indexabilitySample.map((r) => (
+                  <tr key={r.path}>
+                    <td>
+                      <PageIdentity path={r.path} />
+                    </td>
+                    <td>{r.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </AdminSection>
+      </div>
+
+      <AdminSection title="로컬/CI 재실행">
+        <ul style={{ lineHeight: 1.8, fontSize: 14, margin: 0 }}>
           <li>
             <code>npm run seo:audit:priority</code>
           </li>
           <li>
+            <code>npm run seo:regression</code>
+          </li>
+          <li>
             <code>npm run sitemap:validate</code>
           </li>
-          <li>
-            진단 문서: <code>docs/seo/GOOGLE_INDEXING_DIAGNOSIS_2026-08.md</code>
-          </li>
-          <li>
-            색인 요청 큐:{" "}
-            <code>scripts/output/index-request-urls-2026-08-10.txt</code>
-          </li>
         </ul>
-        <p style={{ fontSize: 13, color: "#64748b" }}>
-          관리자 경로·API는 robots/sitemap에서 제외되어 있습니다.
-        </p>
-      </div>
+        {data.notes.map((n) => (
+          <p key={n} className="admin-prose">
+            {n}
+          </p>
+        ))}
+      </AdminSection>
     </div>
   );
 }

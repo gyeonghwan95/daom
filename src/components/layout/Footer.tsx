@@ -50,6 +50,22 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/공지사항"
+                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
+                >
+                  공지사항
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 

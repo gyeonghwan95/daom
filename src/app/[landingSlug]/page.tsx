@@ -21,6 +21,7 @@ import { BuildingIntentPageView } from "@/components/building/BuildingIntentPage
 import { SpecialEntityIntentPageView } from "@/components/special-entity/SpecialEntityIntentPageView";
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
+import { NoticesPageView } from "@/components/notices/NoticesPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -119,6 +120,10 @@ export default async function LocalLandingPage({ params }: PageProps) {
         counterpart={{ href: LEGAL_PATHS.privacy, label: "개인정보처리방침" }}
       />
     );
+  }
+
+  if (slug === "공지사항") {
+    return <NoticesPageView />;
   }
 
   if ((NATIONWIDE_PAGE_SLUGS as readonly string[]).includes(slug)) {

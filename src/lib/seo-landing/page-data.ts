@@ -1,7 +1,9 @@
 import { getSeoEntityById } from "@/data/seo";
+import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
 import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import { createPageData, ensureMinContent } from "@/lib/pageData/template-helpers";
 import type { PageData, PageRelatedLink } from "@/lib/pageData/types";
+import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 import { getServiceImage } from "@/lib/site-images";
 import { getLawyerSlugLabel, resolveServiceSiteSlug } from "./labels";
 import { buildSeoLandingContent } from "./content";
@@ -100,6 +102,26 @@ function mapLandingPageType(spec: SeoLandingSpec) {
 export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
   const content = buildSeoLandingContent(spec);
   const siteSlug = resolveServiceSiteSlug(spec.serviceId ?? "");
+  const overlay = getLocalChampionOverlay(spec.regionId, spec.slug);
+  const stationSections = buildStationSectionsForHost(spec.path);
+  const sections = [
+    ...stationSections.map((s) => ({
+      title: s.title,
+      body: s.body,
+      items: s.items,
+      links: s.links,
+    })),
+    ...content.sections,
+  ];
+
+  const internalLinks = relatedLinksFor(spec);
+  if (overlay?.serviceLinks) {
+    for (const link of overlay.serviceLinks) {
+      if (!internalLinks.some((l) => l.href === link.href)) {
+        internalLinks.unshift(link);
+      }
+    }
+  }
 
   const page = createPageData({
     slug: spec.slug,
@@ -120,8 +142,8 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     consultationPoints: content.consultationPoints,
     faqs: content.faqs,
     consultationExample: content.consultationExample,
-    internalLinks: relatedLinksFor(spec),
-    sections: content.sections,
+    internalLinks,
+    sections,
     primaryKeywords: [...spec.keywords, "부산 법무사", "다옴법무사"],
     ogImage: getServiceImage(siteSlug ?? "inheritance-registration").src,
     serviceSlug: siteSlug,

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-12T14:57:31.745Z",
+  "method": "jaccard-after-region-name-strip",
+  "documentCount": 3,
+  "highRiskCount": 0,
+  "reviewCount": 0,
+  "topPairs": [
+    {
+      "a": "/민락동법무사",
+      "b": "/양정동법무사",
+      "similarity": 18.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/양정동법무사",
+      "b": "/동래구법무사",
+      "similarity": 15.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/민락동법무사",
+      "b": "/동래구법무사",
+      "similarity": 14.3,
+      "band": "acceptable"
+    }
+  ],
+  "highRisk": []
+}

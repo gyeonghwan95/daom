@@ -15,6 +15,7 @@ import {
   getAllLectureHistorySlugs,
   getLectureHistoryBySlug,
 } from "@/data/lectures/history";
+import { NoticeDetailPageView } from "@/components/notices/NoticeDetailPageView";
 import { NationwideCasePageView } from "@/components/nationwide-cases/NationwideCasePageView";
 import { GyeongnamCasePageView } from "@/components/gyeongnam-cases/GyeongnamCasePageView";
 import { SoutheastCasePageView } from "@/components/southeast-cases/SoutheastCasePageView";
@@ -104,6 +105,10 @@ export function generateStaticParams() {
     childSlug: slug,
   }));
 
+  const noticeDetailParams = [
+    { landingSlug: "공지사항", childSlug: "보기" },
+  ];
+
   return [
     ...lectureParams,
     ...caseHubParams,
@@ -111,6 +116,7 @@ export function generateStaticParams() {
     ...nationwideCaseParams,
     ...gyeongnamCaseParams,
     ...southeastCaseParams,
+    ...noticeDetailParams,
   ];
 }
 
@@ -118,6 +124,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { landingSlug, childSlug } = await params;
   const parent = normalizeRouteSlug(landingSlug);
   const child = normalizeRouteSlug(childSlug);
+
+  if (parent === "공지사항" && child === "보기") {
+    return {
+      title: { absolute: "공지사항 상세 | 다옴법무사사무소" },
+      description: "다옴법무사사무소 공지사항 상세 안내입니다.",
+      robots: { index: false, follow: true },
+      alternates: { canonical: getCanonicalUrl("/공지사항/보기") },
+    };
+  }
 
   if (parent === "강의이력") {
     const entry = getLectureHistoryBySlug(child);
@@ -196,6 +211,10 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
   const { landingSlug, childSlug } = await params;
   const parent = normalizeRouteSlug(landingSlug);
   const child = normalizeRouteSlug(childSlug);
+
+  if (parent === "공지사항" && child === "보기") {
+    return <NoticeDetailPageView />;
+  }
 
   if (parent === "강의이력") {
     const entry = getLectureHistoryBySlug(child);

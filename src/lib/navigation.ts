@@ -139,6 +139,7 @@ export const mainNavigation: NavItem[] = [
   { href: "/media", label: "언론·활동" },
   { href: "/reviews", label: "고객후기" },
   { href: "/faq", label: "FAQ" },
+  { href: "/공지사항", label: "공지사항" },
   { href: "/contact", label: "상담" },
   { href: "/location", label: "오시는 길" },
 ];

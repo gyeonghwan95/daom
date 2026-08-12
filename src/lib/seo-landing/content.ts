@@ -4,6 +4,7 @@ import { resolvePageTheme } from "@/lib/hub/resolve";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
 import { officeLocation } from "@/lib/office-location";
 import type { PageFaqItem, PageSection } from "@/lib/pageData/types";
+import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
 import type { SeoLandingSpec } from "./types";
 
 function hashSeed(seed: string): number {
@@ -260,6 +261,39 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
         "확정 후 집행 검토",
       ],
       minContentLength: 2200,
+    };
+  }
+
+  const localOverlay = getLocalChampionOverlay(spec.regionId, spec.slug);
+  if (localOverlay && spec.type === "region-lawyer") {
+    return {
+      intro: localOverlay.introParagraphs[0] ?? introForSpec(spec),
+      introParagraphs: localOverlay.introParagraphs,
+      sections: localOverlay.sections,
+      faqs: localOverlay.faqs ?? buildFaqs(spec),
+      consultationExample: {
+        title: `${spec.regionLabel ?? "부산"} ${spec.title} 상담 예시`,
+        body: `${spec.regionLabel ?? "부산"} 생활권에서 등기·상속·법인 문의가 있었습니다. 소재지와 등기 원인을 먼저 확인한 뒤, 관할·서류·기한을 항목별로 안내했습니다. 잔금·대출이 겹치면 연동 순서도 함께 정리했습니다.`,
+      },
+      procedures: [
+        "관할 등기소·법원 확인",
+        "등기 원인·당사자·권리관계 정리",
+        "필요 서류·기한 안내",
+        "접수·보정·완료까지 단계별 진행",
+      ],
+      documents: [
+        "등기부등본(최신)",
+        "신분증·인감증명서",
+        "매매·임대차·증여 계약서(해당 시)",
+        "가족관계·상속 관련 서류(해당 시)",
+      ],
+      consultationPoints: [
+        "부동산·본점 주소",
+        "잔금일·상속 개시일·법인 변경일",
+        "근저당·전세권·가압류 유무",
+        "준비된 서류",
+      ],
+      minContentLength: 2400,
     };
   }
 

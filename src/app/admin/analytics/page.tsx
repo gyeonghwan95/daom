@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
+import { PageIdentity } from "@/components/admin/PageIdentity";
+import { getSourceLabel } from "@/lib/analytics/referrer";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
@@ -10,6 +14,8 @@ type DayRow = {
   cta: number;
   consultSubmit: number;
   naverPlace?: number;
+  sources?: Record<string, number>;
+  devices?: { mobile: number; desktop: number; unknown: number };
 };
 
 export default function AdminAnalyticsPage() {
@@ -25,7 +31,7 @@ export default function AdminAnalyticsPage() {
       ),
       adminFetchJson<DashboardPayload>("/api/admin/dashboard"),
     ])
-      .then(([analytics, dash]) => {
+      .then(([analytics, dashboard]) => {
         if (cancelled) return;
         if (!analytics.ok) {
           setMessage(analytics.message);
@@ -33,7 +39,7 @@ export default function AdminAnalyticsPage() {
         }
         setDays(analytics.data?.days || []);
         setMessage(analytics.data?.message || null);
-        if (dash.ok) setDash(dash.data);
+        if (dashboard.ok) setDash(dashboard.data);
       })
       .catch(() => {
         if (!cancelled) setMessage("불러오기 실패");
@@ -47,52 +53,38 @@ export default function AdminAnalyticsPage() {
 
   return (
     <div>
-      <h1 style={{ fontSize: "1.35rem", fontWeight: 800 }}>유입·전환</h1>
-      <p style={{ color: "#64748b", fontSize: 14 }}>
-        page_view → CTA → 상담 제출 · 네이버 플레이스 이동 클릭(개인정보 없음)
-      </p>
-      <p style={{ color: "#94a3b8", fontSize: 12, marginTop: 4 }}>
-        “네이버 플레이스 이동 클릭”은 사이트에서 나간 클릭 수입니다. 네이버 내부
-        실제 방문자·예약완료와는 다릅니다.
+      <AdminPageHeader title="유입 분석" />
+      <p className="admin-prose">
+        page_view → CTA → 문의 · 네이버 플레이스 이동 클릭(개인정보 없음)
       </p>
       {message ? (
         <p className="admin-alert admin-alert--info">{message}</p>
       ) : null}
 
-      <section className="admin-kpi-grid" style={{ marginTop: 16 }} aria-label="네이버 KPI">
-        <div className="admin-kpi">
-          <div className="admin-kpi__label">오늘 SmartPlace 클릭</div>
-          <div className="admin-kpi__value">
-            {k?.naverPlaceToday == null ? "—" : k.naverPlaceToday}
-          </div>
-        </div>
-        <div className="admin-kpi">
-          <div className="admin-kpi__label">오늘 예약 CTA</div>
-          <div className="admin-kpi__value">
-            {k?.naverReservationToday == null ? "—" : k.naverReservationToday}
-          </div>
-        </div>
-        <div className="admin-kpi">
-          <div className="admin-kpi__label">7일 SmartPlace 클릭</div>
-          <div className="admin-kpi__value">
-            {k?.naverPlace7d == null ? "—" : k.naverPlace7d}
-          </div>
-        </div>
-      </section>
+      <div className="admin-metric-grid">
+        <MetricCard
+          label="오늘 SmartPlace 클릭"
+          value={k?.naverPlaceToday ?? null}
+        />
+        <MetricCard
+          label="오늘 예약 CTA"
+          value={k?.naverReservationToday ?? null}
+        />
+        <MetricCard label="7일 SmartPlace" value={k?.naverPlace7d ?? null} />
+      </div>
 
-      <div className="admin-card" style={{ marginTop: 16 }}>
-        <h2 style={{ fontSize: 15, marginTop: 0 }}>일별 방문·전환</h2>
+      <AdminSection title="방문 추이 (일별)">
         {days.length === 0 ? (
-          <p style={{ color: "#64748b" }}>아직 측정되지 않음</p>
+          <p className="admin-empty">아직 측정되지 않음</p>
         ) : (
           <table className="admin-table">
             <thead>
               <tr>
                 <th>날짜</th>
-                <th>방문</th>
+                <th>페이지뷰</th>
                 <th>CTA</th>
                 <th>제출</th>
-                <th>네이버이동</th>
+                <th>네이버</th>
               </tr>
             </thead>
             <tbody>
@@ -102,76 +94,92 @@ export default function AdminAnalyticsPage() {
                   <td>{d.visits}</td>
                   <td>{d.cta}</td>
                   <td>{d.consultSubmit}</td>
-                  <td>{d.naverPlace ?? 0}</td>
+                  <td>{d.naverPlace ?? "—"}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         )}
-      </div>
+      </AdminSection>
 
-      <div
-        style={{
-          display: "grid",
-          gap: 12,
-          marginTop: 16,
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-        }}
-      >
-        <section className="admin-card">
-          <h2 style={{ fontSize: 15, marginTop: 0 }}>페이지별 SmartPlace</h2>
-          {!dash?.naverPlaceTopPaths?.length ? (
-            <p style={{ color: "#64748b", fontSize: 13 }}>아직 측정되지 않음</p>
+      <div className="admin-two-col">
+        <AdminSection title="유입 Source (오늘)">
+          {!dash?.sourcesToday?.length ? (
+            <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
             <table className="admin-table">
               <thead>
                 <tr>
-                  <th>페이지</th>
-                  <th>방문</th>
-                  <th>클릭</th>
-                  <th>예약</th>
-                  <th>CTR%</th>
+                  <th>Source</th>
+                  <th>페이지뷰</th>
                 </tr>
               </thead>
               <tbody>
-                {dash.naverPlaceTopPaths.map((r) => (
-                  <tr key={r.path}>
-                    <td>{r.path}</td>
-                    <td>{r.visits}</td>
-                    <td>{r.naverPlace}</td>
-                    <td>{r.reservation}</td>
-                    <td>{r.ctr ?? "—"}</td>
+                {dash.sourcesToday.map((s) => (
+                  <tr key={s.source}>
+                    <td>{getSourceLabel(s.source)}</td>
+                    <td>{s.count}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           )}
-        </section>
+        </AdminSection>
 
-        <section className="admin-card">
-          <h2 style={{ fontSize: 15, marginTop: 0 }}>Placement별 (오늘)</h2>
-          {!dash?.naverPlaceByPlacement?.length ? (
-            <p style={{ color: "#64748b", fontSize: 13 }}>아직 측정되지 않음</p>
+        <AdminSection title="Device (오늘)">
+          {!dash?.devicesToday ? (
+            <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
             <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>위치</th>
-                  <th>클릭</th>
-                </tr>
-              </thead>
               <tbody>
-                {dash.naverPlaceByPlacement.map((r) => (
-                  <tr key={r.placement}>
-                    <td>{r.placement}</td>
-                    <td>{r.count}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td>Mobile</td>
+                  <td>{dash.devicesToday.mobile}</td>
+                </tr>
+                <tr>
+                  <td>Desktop</td>
+                  <td>{dash.devicesToday.desktop}</td>
+                </tr>
+                <tr>
+                  <td>Unknown</td>
+                  <td>{dash.devicesToday.unknown}</td>
+                </tr>
               </tbody>
             </table>
           )}
-        </section>
+        </AdminSection>
       </div>
+
+      <AdminSection title="네이버 SmartPlace · 페이지별">
+        {!dash?.naverPlaceTopPaths?.length ? (
+          <p className="admin-empty">아직 측정되지 않음</p>
+        ) : (
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>페이지</th>
+                <th>페이지뷰</th>
+                <th>클릭</th>
+                <th>예약</th>
+                <th>CTR%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dash.naverPlaceTopPaths.map((r) => (
+                <tr key={r.path}>
+                  <td>
+                    <PageIdentity path={r.path} />
+                  </td>
+                  <td>{r.visits}</td>
+                  <td>{r.naverPlace}</td>
+                  <td>{r.reservation}</td>
+                  <td>{r.ctr ?? "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </AdminSection>
     </div>
   );
 }

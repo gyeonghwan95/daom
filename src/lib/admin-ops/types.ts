@@ -43,16 +43,23 @@ export type FloatingNotice = {
   title: string;
   message: string;
   status: FloatingNoticeStatus;
+  /** Public display / sort date (ISO). Falls back to createdAt. */
+  publishedAt?: string;
   startAt?: string;
   endAt?: string;
   displayScope: "home" | "all" | "selected-pages";
   selectedPaths?: string[];
+  /** @deprecated Corner toast positions — popup is always centered modal. */
   position: "bottom-left" | "bottom-right" | "top";
   style: "info" | "notice" | "important" | "event";
   ctaLabel?: string;
   ctaUrl?: string;
   dismissible: boolean;
   priority: number;
+  /** Show centered popup when active. Default true. */
+  showPopup?: boolean;
+  /** Appear on public /공지사항 archive when expired/archived. Default true. */
+  isPublicArchive?: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -62,13 +69,22 @@ export type PublicFloatingNotice = {
   id: string;
   title: string;
   message: string;
-  position: FloatingNotice["position"];
   style: FloatingNotice["style"];
   ctaLabel?: string;
   ctaUrl?: string;
   dismissible: boolean;
   priority: number;
+  publishedAt: string;
   updatedAt: string;
+  detailPath: string;
+};
+
+export type PublicNoticeListItem = {
+  id: string;
+  title: string;
+  publishedAt: string;
+  status: "active" | "expired" | "archived";
+  summary: string;
 };
 
 export type EmailLogStatus = "success" | "failed" | "skipped";
@@ -133,6 +149,8 @@ export type DashboardPayload = {
     visitsYesterday: number | null;
     visits7d: number | null;
     visitsPrev7d: number | null;
+    ctaToday?: number | null;
+    consultStartToday?: number | null;
     consultSubmitToday: number | null;
     emailSuccessToday: number | null;
     emailFailedToday: number | null;
@@ -141,6 +159,7 @@ export type DashboardPayload = {
     naverPlaceToday?: number | null;
     naverPlace7d?: number | null;
     naverReservationToday?: number | null;
+    visitsSameHourVs7DayAvgPct?: number | null;
   };
   summaryLine: string;
   alerts: Array<{
@@ -148,12 +167,20 @@ export type DashboardPayload = {
     level: "critical" | "warning" | "info";
     title: string;
     detail: string;
+    href?: string;
   }>;
-  topPathsToday: Array<{ path: string; visits: number; cta: number }>;
+  topPathsToday: Array<{
+    path: string;
+    visits: number;
+    cta: number;
+    consultSubmit?: number;
+    naverPlace?: number;
+  }>;
   visitsByDay: Array<{
     date: string;
     visits: number;
     submits: number;
+    cta?: number;
     naverPlace?: number;
   }>;
   emailRecent: EmailLogEntry[];
@@ -168,4 +195,36 @@ export type DashboardPayload = {
     reservation: number;
     ctr: number | null;
   }>;
+  sourcesToday?: Array<{ source: string; count: number }>;
+  devicesToday?: { mobile: number; desktop: number; unknown: number };
+  hourlyToday?: Array<{
+    hour: number;
+    pageViews: number;
+    cta: number;
+    consultSubmit: number;
+    naverPlace: number;
+  }>;
+  hourly7DayAvg?: Array<{ hour: number; pageViews: number }>;
+  hourlyInsights?: {
+    peakHourToday: number | null;
+    peakViewsToday: number;
+    peakHour7DayAvg: number | null;
+    visitsSameHourVs7DayAvgPct: number | null;
+  } | null;
+  recentActivity?: Array<{
+    id: string;
+    at: string;
+    path: string;
+    eventType: string;
+    referrerType: string;
+    meta?: Record<string, string>;
+  }>;
+  funnelToday?: {
+    pageViews: number;
+    cta: number;
+    consultStart: number;
+    consultSubmit: number;
+    mailSuccess: number | null;
+  } | null;
+  lastEventAt?: string | null;
 };

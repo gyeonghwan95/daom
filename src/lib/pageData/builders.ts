@@ -20,6 +20,7 @@ import {
   getServiceImage,
   siteImages,
 } from "@/lib/site-images";
+import { getFinanceSectionsForSlug } from "@/data/seo/finance-intent-modules";
 import { buildMetaDescription, buildMetaTitle } from "./seo";
 import { createPageData } from "./template-helpers";
 import type { PageCategory, PageData, PageSection } from "./types";
@@ -392,6 +393,10 @@ export function buildPageDataFromLocalLanding(
         { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       ],
     });
+  }
+
+  for (const section of getFinanceSectionsForSlug(page.slug)) {
+    extraSections.unshift(section);
   }
 
   return createPageData({
@@ -891,6 +896,7 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   blog: "다옴법무사사무소 네이버 블로그",
   reviews: "고객후기",
   faq: "부산 법무사 FAQ",
+  notices: "공지사항",
   media: "언론·활동",
   contact: "부산 법무사 상담 문의",
   location: "오시는 길 · 센텀",

@@ -13,14 +13,19 @@ import {
   newId,
   normalizePath,
   parseCookie,
+  sanitizeNoticeText,
   sessionCookieHeader,
   verifyPassword,
   verifySessionToken,
 } from "../../_lib/admin-ops/crypto";
 import {
   appendAudit,
+  buildConversionsReport,
   buildDashboard,
+  buildPagesReport,
+  deleteNotice,
   getDaily,
+  getNoticeStatsMap,
   hasKv,
   kstDateRange,
   listEmailLogs,
@@ -221,24 +226,14 @@ async function handleAdminRequest(context) {
   }
 
   if (key === "pages" && method === "GET") {
-    if (!hasKv(env)) {
-      return json({ ok: true, data: { rows: [], message: "아직 측정되지 않음" } });
-    }
-    const today = await getDaily(env, formatKstDate());
-    const rows = Object.entries(today.paths).map(([path, s]) => ({
-      path,
-      visits: s.visits,
-      cta: s.cta,
-      phone: s.phone,
-      kakao: s.kakao,
-      naver: s.naver,
-      consultStart: s.consultStart,
-      consultSubmit: s.consultSubmit,
-      conversionRate:
-        s.visits > 0 ? Math.round((s.consultSubmit / s.visits) * 1000) / 10 : null,
-    }));
-    rows.sort((a, b) => b.visits - a.visits);
-    return json({ ok: true, data: { date: today.date, rows } });
+    const days = Number(new URL(request.url).searchParams.get("days") || "30");
+    const data = await buildPagesReport(env, days);
+    return json({ ok: true, data });
+  }
+
+  if (key === "conversions" && method === "GET") {
+    const data = await buildConversionsReport(env);
+    return json({ ok: true, data });
   }
 
   if (key === "email" && method === "GET") {
@@ -260,10 +255,22 @@ async function handleAdminRequest(context) {
   if (key === "notices" && method === "GET") {
     const notices = await listNotices(env);
     const now = new Date();
+    const stats = await getNoticeStatsMap(env, 7);
     return json({
       ok: true,
       data: {
-        notices: notices.map((n) => ({ ...n, status: resolveNoticeStatus(n, now) })),
+        notices: notices.map((n) => {
+          const s = stats[n.id] || { impression: 0, click: 0, dismiss: 0 };
+          const ctr =
+            s.impression > 0
+              ? Math.round((s.click / s.impression) * 1000) / 10
+              : null;
+          return {
+            ...n,
+            status: resolveNoticeStatus(n, now),
+            stats7d: { ...s, ctr },
+          };
+        }),
         storageConfigured: hasKv(env),
       },
     });
@@ -279,8 +286,8 @@ async function handleAdminRequest(context) {
     } catch {
       return json({ ok: false, code: "bad_request" }, 400);
     }
-    const title = String(body?.title || "").trim().slice(0, 80);
-    const message = String(body?.message || "").trim().slice(0, 500);
+    const title = sanitizeNoticeText(body?.title, 80);
+    const message = sanitizeNoticeText(body?.message, 2000);
     if (!title || !message) {
       return json({ ok: false, code: "validation", message: "제목과 내용이 필요합니다." }, 400);
     }
@@ -289,23 +296,36 @@ async function handleAdminRequest(context) {
       return json({ ok: false, code: "validation", message: "CTA URL이 허용되지 않습니다." }, 400);
     }
     const nowIso = new Date().toISOString();
+    const publishedAt = body?.publishedAt
+      ? String(body.publishedAt)
+      : nowIso;
+    let status = body?.publishNow ? "active" : String(body?.status || "draft");
+    if (body?.startAt && !body?.publishNow && status === "draft") {
+      const startMs = Date.parse(body.startAt);
+      if (!Number.isNaN(startMs) && startMs > Date.now()) status = "scheduled";
+    }
     const notice = {
       id: newId("notice"),
       title,
       message,
-      status: body?.publishNow ? "active" : String(body?.status || "draft"),
-      startAt: body?.startAt || undefined,
+      status,
+      publishedAt,
+      startAt: body?.startAt || (status === "active" ? nowIso : undefined),
       endAt: body?.endAt || undefined,
-      displayScope: body?.displayScope || "home",
+      displayScope: body?.displayScope || "all",
       selectedPaths: Array.isArray(body?.selectedPaths)
         ? body.selectedPaths.map(normalizePath).slice(0, 30)
         : undefined,
       position: body?.position || "bottom-left",
       style: body?.style || "notice",
-      ctaLabel: body?.ctaLabel ? String(body.ctaLabel).slice(0, 40) : undefined,
+      ctaLabel: body?.ctaLabel
+        ? sanitizeNoticeText(body.ctaLabel, 40)
+        : undefined,
       ctaUrl: ctaUrl || undefined,
       dismissible: body?.dismissible !== false,
       priority: Number(body?.priority) || 0,
+      showPopup: body?.showPopup !== false,
+      isPublicArchive: body?.isPublicArchive !== false,
       createdAt: nowIso,
       updatedAt: nowIso,
     };
@@ -323,6 +343,26 @@ async function handleAdminRequest(context) {
     return json({ ok: true, data: notice });
   }
 
+  if (key.startsWith("notices/") && method === "DELETE") {
+    if (!hasKv(env)) {
+      return json({ ok: false, code: "no_storage" }, 503);
+    }
+    const id = key.slice("notices/".length).split("/")[0];
+    const notices = await listNotices(env);
+    const found = notices.find((n) => n.id === id);
+    if (!found) return json({ ok: false, code: "not_found" }, 404);
+    await deleteNotice(env, id);
+    await appendAudit(env, {
+      id: newId("audit"),
+      action: "notice_delete",
+      entityType: "notice",
+      entityId: id,
+      createdAt: new Date().toISOString(),
+      summary: `공지 삭제: ${found.title}`,
+    });
+    return json({ ok: true });
+  }
+
   if (key.startsWith("notices/") && (method === "PATCH" || method === "POST")) {
     if (!hasKv(env)) {
       return json({ ok: false, code: "no_storage" }, 503);
@@ -332,7 +372,9 @@ async function handleAdminRequest(context) {
       ? "publish"
       : key.includes("/archive")
         ? "archive"
-        : "patch";
+        : key.includes("/unpublish")
+          ? "unpublish"
+          : "patch";
     const notices = await listNotices(env);
     const idx = notices.findIndex((n) => n.id === id);
     if (idx < 0) return json({ ok: false, code: "not_found" }, 404);
@@ -353,18 +395,27 @@ async function handleAdminRequest(context) {
     if (action === "publish") {
       next.status = "active";
       next.startAt = next.startAt || nowIso;
+      next.publishedAt = next.publishedAt || nowIso;
     } else if (action === "archive") {
       next.status = "archived";
+    } else if (action === "unpublish") {
+      next.status = "archived";
+      next.endAt = nowIso;
     } else {
-      if (body.title != null) next.title = String(body.title).trim().slice(0, 80);
-      if (body.message != null) next.message = String(body.message).trim().slice(0, 500);
+      if (body.title != null) next.title = sanitizeNoticeText(body.title, 80);
+      if (body.message != null) next.message = sanitizeNoticeText(body.message, 2000);
       if (body.status != null) next.status = String(body.status);
+      if (body.publishedAt !== undefined) next.publishedAt = body.publishedAt || undefined;
       if (body.startAt !== undefined) next.startAt = body.startAt || undefined;
       if (body.endAt !== undefined) next.endAt = body.endAt || undefined;
       if (body.displayScope != null) next.displayScope = body.displayScope;
       if (body.position != null) next.position = body.position;
       if (body.style != null) next.style = body.style;
-      if (body.ctaLabel !== undefined) next.ctaLabel = body.ctaLabel || undefined;
+      if (body.ctaLabel !== undefined) {
+        next.ctaLabel = body.ctaLabel
+          ? sanitizeNoticeText(body.ctaLabel, 40)
+          : undefined;
+      }
       if (body.ctaUrl !== undefined) {
         const u = body.ctaUrl ? String(body.ctaUrl).trim() : "";
         if (u && !isSafeCtaUrl(u)) {
@@ -374,6 +425,8 @@ async function handleAdminRequest(context) {
       }
       if (body.dismissible != null) next.dismissible = Boolean(body.dismissible);
       if (body.priority != null) next.priority = Number(body.priority) || 0;
+      if (body.showPopup != null) next.showPopup = Boolean(body.showPopup);
+      if (body.isPublicArchive != null) next.isPublicArchive = Boolean(body.isPublicArchive);
       if (Array.isArray(body.selectedPaths)) {
         next.selectedPaths = body.selectedPaths.map(normalizePath).slice(0, 30);
       }
