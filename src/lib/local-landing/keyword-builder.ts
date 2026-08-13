@@ -12,13 +12,6 @@ import {
   championExtraWhenNeeded,
   championSituationMap,
 } from "./inheritance-champion-modules";
-import {
-  corporateChampionExtraFaqs,
-  corporateChampionExtraRelatedLinks,
-  corporateChampionExtraSummaryParagraphs,
-  corporateChampionExtraWhenNeeded,
-  corporateChampionSituationMap,
-} from "./corporate-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
 
 function getRelatedBlogPosts(
@@ -80,41 +73,27 @@ export function buildKeywordHubPage(
   ];
 
   const isInheritanceChampion = topic.slug === "부산상속법무사";
-  const isCorporateChampion = topic.slug === "부산법인법무사";
 
   const summaryParagraphs = isInheritanceChampion
     ? [...topic.summaryParagraphs, ...championExtraSummaryParagraphs]
-    : isCorporateChampion
-      ? [...topic.summaryParagraphs, ...corporateChampionExtraSummaryParagraphs]
-      : topic.summaryParagraphs;
+    : topic.summaryParagraphs;
   const whenNeeded = isInheritanceChampion
     ? [...topic.whenNeeded, ...championExtraWhenNeeded]
-    : isCorporateChampion
-      ? [...topic.whenNeeded, ...corporateChampionExtraWhenNeeded]
-      : topic.whenNeeded;
+    : topic.whenNeeded;
   const procedures = isInheritanceChampion
     ? [
         "상황별 필요 절차 가리기(아래 선택표)",
         ...championSituationMap,
         ...topic.procedures,
       ]
-    : isCorporateChampion
-      ? [
-          "회사 상황별 필요 등기 가리기(아래 선택표)",
-          ...corporateChampionSituationMap,
-          ...topic.procedures,
-        ]
-      : topic.procedures;
+    : topic.procedures;
   const faqs = isInheritanceChampion
     ? [...topic.faqs, ...championExtraFaqs]
-    : isCorporateChampion
-      ? [...topic.faqs, ...corporateChampionExtraFaqs]
-      : topic.faqs;
+    : topic.faqs;
 
   const internalLinks = [
     ...topic.relatedServiceLinks,
     ...(isInheritanceChampion ? championExtraRelatedLinks : []),
-    ...(isCorporateChampion ? corporateChampionExtraRelatedLinks : []),
     ...topic.relatedFaqLinks,
     ...topic.relatedCaseLinks,
     ...topic.relatedKeywordLinks,
@@ -122,15 +101,11 @@ export function buildKeywordHubPage(
 
   const lawyerOpinion = isInheritanceChampion
     ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-08-07.`
-    : isCorporateChampion
-      ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 법인설립·임원변경·본점이전·목적변경·증자·해산·청산 등 상업·법인등기 절차를 사안에 따라 확인합니다. 정관·등기부·결의 요건을 함께 보며 등기기한과 준비서류를 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-08-10.`
-      : buildLawyerOpinion(config.regionLabel, topic.title);
+    : buildLawyerOpinion(config.regionLabel, topic.title);
 
   const ctaDescription = isInheritanceChampion
     ? "내 상속 상황에 필요한 절차를 확인하고 싶으시면 사망일·상속인·확인된 재산·채무만 남겨 주세요. 준비서류와 다음 단계부터 안내합니다."
-    : isCorporateChampion
-      ? "우리 회사에 필요한 등기를 확인하고 싶으시면 변경 사유·일자와 등기부·정관 보유 여부만 남겨 주세요. 준비서류와 일정을 안내합니다."
-      : consultationCopy.default;
+    : consultationCopy.default;
 
   return {
     slug: config.slug,

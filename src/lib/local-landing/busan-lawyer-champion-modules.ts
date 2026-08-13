@@ -4,6 +4,8 @@
  * - 기존 문단 삭제 없음 (추가만)
  * - 자기 자신을 「추천 법무사」로 단정하지 않음
  * 검토일: 2026-08-10
+ * 2026-08-13 Recovery: Flagship에 병합하지 않음 (Page Identity 희석 위험).
+ * 파일은 보관만. 자동 재적용 금지.
  */
 import type { ServiceFaq } from "@/types/service";
 

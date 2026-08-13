@@ -49,12 +49,12 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "추천·비용·상담 검색 안내",
     description: "추천·후기·비용·상담 키워드 검색 전 확인할 선택 기준 페이지입니다.",
     links: [
-      { href: "/부산법무사추천", label: "부산 법무사 추천 기준" },
+      { href: "/부산법무사", label: "부산 법무사 — 업무·선택 안내" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경 안내" },
+      { href: "/부산법무사추천", label: "선택 기준 자세히 보기" },
       { href: "/부산법무사비용", label: "부산 법무사 비용·수임료" },
       { href: "/부산잔금일법무사", label: "부산 잔금일 법무사" },
-      { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택" },
       { href: "/부산법무사비교", label: "부산 법무사 비교" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
     ],
   },
   {
@@ -70,7 +70,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산개인회생", label: "부산 개인회생" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
-      { href: "/부산법무사추천", label: "부산 법무사 추천" },
+      { href: "/부산법무사추천", label: "법무사 선택 기준" },
     ],
   },
   {

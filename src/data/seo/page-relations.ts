@@ -96,7 +96,8 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
       "/해운대법무사",
       "/센텀법무사",
     ],
-    notes: "SEO_PROTECTED — additive sections only",
+    notes:
+      "SEO_PROTECTED / BUSAN_GENERAL_CHAMPION. Queries: 부산 법무사, 부산 법무사 추천. title/H1/canonical immutable.",
   },
   {
     path: COST_CHAMPION,
@@ -115,6 +116,8 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
     parentHub: BUSAN_LEGAL_SCRIVENER_CHAMPION,
     role: "SELECTION_CHAMPION",
     situations: ["provider-selection", "recommendation-research"],
+    notes:
+      "Spoke only. 「부산 법무사 추천」 Primary Champion은 /부산법무사. 이 URL은 선택 기준 상세 Spoke.",
     relatedPages: [
       "/부산법무사비교",
       "/부산법무사상담",

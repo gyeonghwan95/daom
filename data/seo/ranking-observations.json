@@ -46,5 +46,37 @@
     "observedPosition": "높은 위치 가능",
     "url": null,
     "note": "사용자 진술 기반. URL 미확정"
+  },
+  {
+    "date": "2026-08-13",
+    "engine": "naver",
+    "query": "부산 법무사",
+    "observedPosition": "최근 급락 (과거 최상위권)",
+    "url": null,
+    "note": "사용자 진술. ranking URL 미확인 — 내부 Champion 후보 /부산법무사"
+  },
+  {
+    "date": "2026-08-13",
+    "engine": "naver",
+    "query": "부산 법무사 추천",
+    "observedPosition": "최근 급락 (과거 최상위권)",
+    "url": null,
+    "note": "사용자 진술. URL 미확정. Primary Champion 후보는 /부산법무사"
+  },
+  {
+    "date": "2026-08-13",
+    "engine": "naver",
+    "query": "부산 법인 법무사",
+    "observedPosition": "최근 급락 (과거 최상위권)",
+    "url": null,
+    "note": "사용자 진술. URL 미확정. Primary Champion 후보는 /부산법인법무사"
+  },
+  {
+    "date": "2026-08-13",
+    "engine": "naver",
+    "query": "부산 법인 법무사 추천",
+    "observedPosition": "최근 급락 (과거 최상위권)",
+    "url": null,
+    "note": "사용자 진술. URL 미확정. Primary Champion 후보는 /부산법인법무사"
   }
 ]

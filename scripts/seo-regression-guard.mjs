@@ -22,6 +22,7 @@ const AFTER_ROUTES = path.join(REPORTS, "routes-after-serp-upgrade.json");
 const BEFORE_SNAP = path.join(REPORTS, "serp-before-snapshot.json");
 const AFTER_SNAP = path.join(REPORTS, "serp-after-snapshot.json");
 const SAFETY = path.join(REPORTS, "serp-regression-safety.json");
+const KNOWN_GOOD = path.join(REPORTS, "known-good-baseline.json");
 const PATHS_JSON = path.join(ROOT, "scripts", "output", "seo-paths.json");
 const MANIFEST = path.join(ROOT, "scripts", "output", "seo-pages-manifest.json");
 const PROTECTED = path.join(ROOT, "config", "seo-protected-assets.json");
@@ -285,6 +286,26 @@ function main() {
   const noindexAdded = 0;
   const unexpectedRedirects = 0;
 
+  const knownGood = readJson(KNOWN_GOOD);
+  const championGuard = [];
+  if (knownGood?.pages?.length) {
+    const afterMap = new Map((afterSnap?.pages || []).map((p) => [normalizePath(p.url), p]));
+    for (const page of knownGood.pages) {
+      if (!page.url || page.url === "/") continue;
+      const now = afterMap.get(normalizePath(page.url));
+      if (!now) {
+        championGuard.push({ url: page.url, issue: "missing-from-snapshot" });
+        continue;
+      }
+      if (page.title && now.title && page.title !== now.title) {
+        championGuard.push({ url: page.url, issue: "title-drift", before: page.title, after: now.title });
+      }
+      if (page.h1 && now.h1 && page.h1 !== now.h1) {
+        championGuard.push({ url: page.url, issue: "h1-drift", before: page.h1, after: now.h1 });
+      }
+    }
+  }
+
   const fail =
     routeDiff.removed.length > 0 ||
     routeDiff.changed.length > 0 ||
@@ -294,7 +315,8 @@ function main() {
     snapDiff.linksRemoved > 0 ||
     noindexAdded > 0 ||
     unexpectedRedirects > 0 ||
-    snapDiff.protectedContentPreservationPct < 95;
+    snapDiff.protectedContentPreservationPct < 95 ||
+    championGuard.length > 0;
 
   const safety = {
     generatedAt: new Date().toISOString(),
@@ -322,6 +344,7 @@ function main() {
     removedUrls: routeDiff.removed,
     addedUrls: routeDiff.added,
     protectedDiffRows: snapDiff.rows,
+    championGuard,
   };
 
   writeJson(SAFETY, safety);

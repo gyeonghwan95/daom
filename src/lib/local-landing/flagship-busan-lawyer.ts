@@ -2,17 +2,12 @@ import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing
 import type { ServiceFaq } from "@/types/service";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
 import { officeLocation } from "@/lib/office-location";
-import {
-  busanLawyerChampionExtraFaqs,
-  busanLawyerChampionExtraSummaryParagraphs,
-  busanLawyerChampionExtraWhenNeeded,
-  busanLawyerChampionSituationMap,
-} from "./busan-lawyer-champion-modules";
 
 /**
  * `/부산법무사` 네이버 검색 대표 페이지 — 템플릿 region-hub 대신 고의도 콘텐츠.
  * 비용·수임료 의도는 `/부산법무사비용`·`/부산법무사보수표`로 분리.
- * 2026-08-10: 「부산 법무사 추천」 Intent SAFE 모듈 추가(title/H1/meta 유지).
+ * 2026-08-13 Recovery: Aug 10 extra SEO modules reverted (title/H1/meta 유지).
+ * 「부산 법무사 추천」 Intent는 이 Flagship이 담당. 별도 추천 URL은 Spoke.
  */
 export function buildBusanLawyerFlagshipPage(
   config: LocalLandingConfig,
@@ -68,11 +63,10 @@ export function buildBusanLawyerFlagshipPage(
         "네. 안윤정 법무사가 여성 법무사로서 상속·가사·회생 등도 상담합니다. 부산 여성 법무사 안내 페이지도 참고하세요.",
     },
     {
-      question: "상담 전에 무엇을 준비하면 되나요?",
+      question:       "상담 전에 무엇을 준비하면 되나요?",
       answer:
         "최신 등기부등본(또는 등기사항전부증명서), 가족관계증명서·기본증명서(상속), 정관·의사록(법인), 계약서(매매·증여)만 있어도 1차 순서를 잡을 수 있습니다.",
     },
-    ...busanLawyerChampionExtraFaqs,
   ];
 
   return {
@@ -90,7 +84,6 @@ export function buildBusanLawyerFlagshipPage(
       "다옴법무사사무소는 해운대·센텀에서 부산 전역 의뢰인의 상속·부동산·법인·개인회생 사건을 안윤정 법무사가 직접 상담합니다. 업무명을 정확히 모르셔도 현재 상황과 준비된 자료만 남겨 주시면 됩니다.",
       "이 페이지는 사무소 소개만 나열하지 않습니다. 부산에서 법무사 업무를 언제 의뢰하는지, 비슷한 절차를 어떻게 구별하는지, 상담 전에 무엇을 준비하면 되는지를 먼저 정리한 뒤 세부 허브로 연결합니다.",
       "전화·카카오톡·네이버 예약으로 1차 상담만 받아도 ‘지금 할 일’과 ‘나중 할 일’을 나눌 수 있습니다. 서류가 부족해도 등기부·가족관계·정관·계약서 중 하나만 있으면 순서를 잡을 수 있습니다.",
-      ...busanLawyerChampionExtraSummaryParagraphs,
     ],
     primaryKeywords: [
       "부산 법무사",
@@ -111,7 +104,6 @@ export function buildBusanLawyerFlagshipPage(
       "부산 법무사 추천·비교를 검색하다 선택 기준이 필요할 때",
       "해운대·센텀·재송동 등 인근에서 방문 상담을 원할 때",
       "전화·카카오톡으로 1차 절차만 먼저 확인하고 싶을 때",
-      ...busanLawyerChampionExtraWhenNeeded,
     ],
     jurisdictionGuide: {
       title: "부산 관할 법원·등기소",
@@ -167,8 +159,6 @@ export function buildBusanLawyerFlagshipPage(
     ],
     procedures: [
       "부산에서 법무사를 찾는 상황 확인(상속·매매·법인·회생)",
-      "업무별 확인 사항(아래 선택표)",
-      ...busanLawyerChampionSituationMap,
       "업무별 차이 설명 및 우선 기한(3개월·임원변경 등) 점검",
       "관할 법원·등기소와 준비서류 안내",
       "법무사 수임료·공과금·세금 구분 견적",

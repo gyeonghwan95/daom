@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-08-13T10:28:30.390Z",
+  "note": "Threshold ≥8 exact phrase hits per source file. Not a density target.",
+  "flaggedFileCount": 18,
+  "rows": [
+    {
+      "file": "src/lib/local-landing/flagship-busan-lawyer.ts",
+      "hits": {
+        "부산 법무사": 26
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/keyword-topics.ts",
+      "hits": {
+        "부산 법무사": 8,
+        "최고": 12
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/neighborhood-hub-topics.ts",
+      "hits": {
+        "부산 법무사": 13
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/hub-catalog.ts",
+      "hits": {
+        "부산 법무사": 9
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/overrides/busan-inheritance-specialist-lawyer.ts",
+      "hits": {
+        "전문 법무사": 12
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/overrides/busan-real-estate-p2.ts",
+      "hits": {
+        "최고": 8
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/overrides/busan-specialist-lawyers-phase2.ts",
+      "hits": {
+        "전문 법무사": 109
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/overrides/busan-specialist-lawyers.ts",
+      "hits": {
+        "부산 법인 법무사": 10,
+        "전문 법무사": 76,
+        "최고": 13
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/search-intent/seeds.ts",
+      "hits": {
+        "부산 법무사": 10,
+        "전문 법무사": 41
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/shared-links.ts",
+      "hits": {
+        "부산 법무사": 11
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/topics/busan-compare.ts",
+      "hits": {
+        "부산 법무사": 12
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/topics/busan-consult.ts",
+      "hits": {
+        "부산 법무사": 26
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/topics/busan-office.ts",
+      "hits": {
+        "부산 법무사": 20
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/topics/busan-recommend.ts",
+      "hits": {
+        "부산 법무사": 29,
+        "부산 법무사 추천": 16
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/local-landing/selection/topics/busan-reviews.ts",
+      "hits": {
+        "부산 법무사": 9
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/hub/home-sections.ts",
+      "hits": {
+        "부산 법무사": 13
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/lib/hub/registry.ts",
+      "hits": {
+        "부산 법무사": 12
+      },
+      "risk": "REVIEW"
+    },
+    {
+      "file": "src/data/seo/page-image-manifest.ts",
+      "hits": {
+        "부산 법무사": 12
+      },
+      "risk": "REVIEW"
+    }
+  ]
+}

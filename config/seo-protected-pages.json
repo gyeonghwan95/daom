@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-08-10",
+  "updated": "2026-08-13",
   "notes": "URL은 프로젝트 내부 ranking 확정이 없으면 비워 둔다. 추측으로 채우지 않는다. protected=true인 query의 후보 URL은 title/H1/canonical/noindex를 자동 변경하지 않는다.",
   "champions": {
     "inheritance": {
@@ -9,7 +9,7 @@
     },
     "corporate": {
       "path": "/부산법인법무사",
-      "role": "CORPORATE_CHAMPION"
+      "role": "BUSAN_CORPORATE_CHAMPION"
     },
     "renunciation": {
       "path": "/부산상속포기",
@@ -17,7 +17,7 @@
     },
     "busanMain": {
       "path": "/부산법무사",
-      "role": "BUSAN_MAIN_CHAMPION"
+      "role": "BUSAN_GENERAL_CHAMPION"
     }
   },
   "champion": {
@@ -75,7 +75,7 @@
     },
     {
       "query": "부산 법인 법무사",
-      "protected": false,
+      "protected": true,
       "targetChampion": "/부산법인법무사",
       "urls": [],
       "candidateUrls": ["/부산법인법무사", "/부산법인등기", "/부산법인전문법무사"]
@@ -109,10 +109,17 @@
     },
     {
       "query": "부산 법무사 추천",
-      "protected": false,
+      "protected": true,
       "targetChampion": "/부산법무사",
       "urls": [],
       "candidateUrls": ["/부산법무사", "/부산법무사추천"]
+    },
+    {
+      "query": "부산 법인 법무사 추천",
+      "protected": true,
+      "targetChampion": "/부산법인법무사",
+      "urls": [],
+      "candidateUrls": ["/부산법인법무사", "/부산법인등기"]
     }
   ],
   "rules": {
