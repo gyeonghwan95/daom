@@ -4,7 +4,6 @@ import { ServiceConversionEnhancements } from "@/components/conversion";
 import { resolveConversionKey } from "@/lib/service-conversion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import {
@@ -107,7 +106,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
         ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
-        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "1분만에 상담 신청하기"}
+        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "상담 문의하기"}
         secondaryCta={
           isConsultPrep
             ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }
@@ -220,16 +219,6 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           items={content.preparationDocs}
           note={content.preparationNote}
         />
-        {isConsultPrep ? null : (
-          <div className="mt-6">
-            <ConsultationCTA
-              title="현재 상황에 필요한 절차부터 확인해보세요"
-              description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-              buttonLabel="상담 내용 남기기"
-              inquiryField={page.serviceSlug}
-            />
-          </div>
-        )}
       </ContentSection>
 
       <ContentSection id="related" title="관련 페이지">
@@ -245,7 +234,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           title={isConsultPrep ? "업무 가능 여부부터 확인해 보세요" : "상담 문의"}
           description={content.bottomCtaText}
           buttonLabel={
-            isConsultPrep ? "업무 가능 여부 확인하기" : "상담 신청하기"
+            isConsultPrep ? "업무 가능 여부 확인하기" : "상담 내용 남기기"
           }
           inquiryField={page.serviceSlug}
           fromPage={page.slug}
@@ -267,14 +256,6 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
             </Link>
           </div>
         ) : null}
-        <div className="mt-6">
-          <CTASection
-            pageType="faq"
-            title="부산 법무사 상담"
-            description={content.bottomCtaText}
-            pageSlug={page.slug}
-          />
-        </div>
       </div>
 
       {conversionKey ? (

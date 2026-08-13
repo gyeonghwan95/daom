@@ -4,7 +4,6 @@ import {
 } from "@/lib/service-conversion";
 import { CaseExampleCards } from "./CaseExampleCards";
 import { ConsultationSituationBox } from "./ConsultationSituationBox";
-import { ContactCTASection } from "./ContactCTASection";
 import { CostGuideBox } from "./CostGuideBox";
 import { DocumentPreparationBox } from "./DocumentPreparationBox";
 import { RelatedServiceLinks } from "./RelatedServiceLinks";
@@ -46,15 +45,8 @@ export function ServiceConversionEnhancements({
         </>
       );
     case "mid":
-      return (
-        <ContactCTASection
-          serviceSlug={serviceSlug ?? config.key}
-          pageSlug={pageSlug}
-          midCta={config.midCta}
-          inquiryField={config.inquiryField}
-          diagnosisHref={config.diagnosisHref}
-        />
-      );
+      // 본문 중간 상담·예약 버튼은 광고처럼 보여 비활성. 히어로·하단만 사용.
+      return null;
     case "detail":
       return (
         <>

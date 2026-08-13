@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { ServiceConversionEnhancements } from "@/components/conversion";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
-import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -146,7 +144,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         intro={page.intro}
         keywords={page.primaryKeywords}
         eyebrow={`${category.label} · 상황 안내`}
-        ctaLabel="1분만에 상담 신청하기"
+        ctaLabel="상담 문의하기"
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}
@@ -302,11 +300,6 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
       <RelatedRecommendations source={recommendationFromSituation(situation)} />
 
-      <QuickInquiryInlineCard
-        pageTitle={page.h1 || page.title}
-        pageUrl={page.path}
-      />
-
       <div id="consultation">
         <ConsultationCTA
           title="현재 상황에 필요한 절차부터 확인해보세요"
@@ -314,16 +307,6 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
           buttonLabel="상담 내용 남기기"
           inquiryField={situation.serviceSlug}
         />
-        <div className="mt-6">
-          <LawyerConsultationGuide
-            pageType="situation"
-            title={page.ctaTitle}
-            description={page.ctaText}
-            showSecondaryLinks
-            pageSlug={slug}
-            diagnosisHref={situation.diagnosisLinks[0]?.href ?? "/자가진단"}
-          />
-        </div>
       </div>
     </article>
   );

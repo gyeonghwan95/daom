@@ -20,6 +20,25 @@ export type ComparisonRow = {
   general: string;
 };
 
+export type AgencyRoleIntentCard = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+};
+
+export type AgencyScopeRow = {
+  topic: string;
+  classification: "DIRECT" | "SUPPORT" | "INFORMATION_ONLY" | "OUT_OF_SCOPE";
+  note: string;
+};
+
+export type AgencyQuoteCheckItem = {
+  label: string;
+  hint: string;
+};
+
 export type PublicAgencyRegistrationContent = {
   slug: string;
   metaTitle: string;
@@ -35,10 +54,20 @@ export type PublicAgencyRegistrationContent = {
   realEstateTasks: AgencyTaskCard[];
   comparisonRows: ComparisonRow[];
   comparisonNote: string;
+  roleIntentIntro: string;
+  roleIntentCards: AgencyRoleIntentCard[];
+  staffMinuteIntro: string;
+  staffMinuteChecklist: string[];
   preChecklist: string[];
   documents: string[];
   documentsNote: string;
   procedures: string[];
+  inquiryProcessIntro: string;
+  inquiryProcessSteps: string[];
+  scopeIntro: string;
+  scopeRows: AgencyScopeRow[];
+  quoteIntro: string;
+  quoteCheckItems: AgencyQuoteCheckItem[];
   commonProblems: string[];
   procurementTitle: string;
   procurementParagraphs: string[];
@@ -332,22 +361,80 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     },
   ],
   comparisonNote:
-    "촉탁등기에 해당하는지 여부는 기관 성격, 등기 원인, 관련 법령, 관할 등기소 실무에 따라 달라질 수 있습니다. 사전에 등기 목적과 보유 서류를 정리해 검토하는 것이 좋습니다.",
+    "촉탁등기에 해당하는지 여부는 기관 성격, 등기 원인, 관련 법령, 관할 등기소 실무에 따라 달라질 수 있습니다. 사전에 등기 목적과 보유 서류를 정리해 검토하는 것이 좋습니다. 법무사가 모든 관공서 촉탁등기를 대행한다고 안내하지 않습니다.",
+  roleIntentIntro:
+    "기관·단체의 등기 및 법무사 업무 문의는 담당 과업에 따라 확인 포인트가 다릅니다. 아래 중 지금 맡은 업무에 가까운 항목을 고르면 됩니다.",
+  roleIntentCards: [
+    {
+      id: "real-estate",
+      title: "부동산·재산 등기",
+      description:
+        "토지·건물 취득, 신축 보존, 처분, 근저당 설정·말소 등 재산관리·시설 담당 업무입니다.",
+      href: "/공공기관부동산등기",
+      ctaLabel: "부동산등기 안내",
+    },
+    {
+      id: "corporate",
+      title: "법인·임원 변경",
+      description:
+        "대표자·임원·소재지·목적 변경 등. 기관 법적 형태에 따라 등기 대상 여부가 다를 수 있습니다.",
+      href: "/공공기관법인등기",
+      ctaLabel: "법인 변경 안내",
+    },
+    {
+      id: "compensation",
+      title: "보상 관련 소유권이전",
+      description:
+        "협의취득·공공사업 보상으로 토지를 이전할 때 원인서류와 등기 순서를 확인합니다.",
+      href: "/공공기관이전등기",
+      ctaLabel: "이전·보상등기 안내",
+    },
+    {
+      id: "court-docs",
+      title: "공탁·법원서류",
+      description:
+        "공탁·법원 제출서류는 사건 성격에 따라 등기와 별개일 수 있습니다. 가능 범위부터 확인합니다.",
+      href: "/협업문의?partner=public&service=public",
+      ctaLabel: "법원서류 문의",
+    },
+    {
+      id: "quote",
+      title: "법무사 용역·견적",
+      description:
+        "선정·용역·견적 검토 시 업무종류·건수·일정·산출물을 먼저 정리하면 범위 안내가 빨라집니다.",
+      href: "/협업문의?partner=public&service=quote",
+      ctaLabel: "업무범위·견적 문의",
+    },
+    {
+      id: "lecture",
+      title: "법률교육·특강",
+      description:
+        "직원·공무원·이용자 대상 생활법률 특강입니다. 등기업무 안내와 별개이며, 법정 지정교육은 포함하지 않습니다.",
+      href: "/공공기관법률교육",
+      ctaLabel: "법률교육·특강 안내",
+    },
+  ],
+  staffMinuteIntro:
+    "기관에서 법무사를 찾기 전에, 내부에서 아래만 정리해도 문의가 구체적입니다. 민감 원본은 초기 단계에 보내지 않아도 됩니다.",
+  staffMinuteChecklist: [
+    "기관의 법적 형태(공기업·재단·출연기관·조합 등)와 등기 주체 명칭",
+    "필요한 등기 종류(법인 변경 / 부동산 취득·보존·이전·말소 등)",
+    "대상 부동산(소재·필지 수) 또는 법인 등기부 상의 상호·본점",
+    "처리기한(임원변경·이전 등 법령상 기한이 있는지)",
+    "예상 건수(1건 / 여러 필지 / 반복 용역)",
+    "필요한 결과물(등기필·증명서·내부 보고용 요약)",
+    "발주·계약 방식(내부 의뢰 / 견적 / 용역 공고) — 확정 전이어도 됨",
+    "담당자 일정(결재·이사회·잔금·준공일 등 맞출 날짜)",
+  ],
   preChecklist: [
     "기관 유형(공기업·지방공기업·출연기관 등)",
     "등기 목적(설립·변경·취득·처분·말소 등)",
     "등기 대상이 법인인지 부동산인지",
-    "촉탁등기 가능 여부(사전 검토)",
-    "내부 결재 완료 여부",
-    "이사회·총회 의결 필요 여부",
-    "정관 또는 근거 규정 확인",
-    "공문 발급 가능 여부",
-    "원인서류 보유 여부",
-    "등기기한(해당 시)",
-    "관할 등기소",
-    "세금·국민주택채권 발생 여부",
-    "법인인감 사용 가능 여부",
-    "전자등기 가능 여부",
+    "촉탁등기인지 일반 신청등기인지(사전 검토)",
+    "내부 결재·이사회·총회 의결 완료 여부",
+    "정관 또는 근거 규정·공문 보유 여부",
+    "원인서류·공부(등기부·대장) 보유 여부",
+    "등기기한·관할 등기소·세금·전자등기 가능 여부",
   ],
   documents: [
     "등기사항증명서",
@@ -379,6 +466,70 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     "8단계: 보정 요청 대응",
     "9단계: 등기 완료 후 결과보고 자료 정리",
   ],
+  inquiryProcessIntro:
+    "기관마다 계약·조달 절차가 다르므로, 아래는 과장 없는 일반적인 문의·수행 흐름입니다. 특정 계약법이 모든 기관에 동일하게 적용된다고 단정하지 않습니다.",
+  inquiryProcessSteps: [
+    "업무 문의(기관명·부서·업무 종류)",
+    "대상 및 범위 확인(법인/부동산, 건수, 기한)",
+    "필요서류·과업·산출물 확인",
+    "견적 또는 수행범위 안내",
+    "계약·의뢰(기관 내부 방식에 따름)",
+    "업무 진행(작성·접수·보정)",
+    "처리 결과 안내",
+  ],
+  scopeIntro:
+    "기관 담당자가 검색하는 업무와 법무사가 수행할 수 있는 범위를 구분해 안내합니다. 범위를 넘는 행정행위는 수임 대상으로 광고하지 않습니다.",
+  scopeRows: [
+    {
+      topic: "법인·부동산 등기신청 대리, 신청서·첨부서류 작성",
+      classification: "DIRECT",
+      note: "법무사법상 등기 관련 업무로, 기관이 신청 주체가 되는 일반 등기에 해당합니다.",
+    },
+    {
+      topic: "촉탁 요건·관할·첨부서류 검토, 내부 체크리스트 정리",
+      classification: "SUPPORT",
+      note: "촉탁 여부를 함께 검토하고 준비자료를 정리할 수 있습니다. 관공서를 대신해 촉탁하는 행위는 아닙니다.",
+    },
+    {
+      topic: "촉탁등기의 의미·신청등기와의 차이 설명",
+      classification: "INFORMATION_ONLY",
+      note: "부동산등기법상 촉탁은 관공서 등이 등기소에 촉탁하는 방식입니다. 해당 여부는 사건마다 다릅니다.",
+    },
+    {
+      topic: "모든 관공서 촉탁등기 대행, 기관 전담·지정 법무사 표방",
+      classification: "OUT_OF_SCOPE",
+      note: "거래·위촉 관계가 없는 기관의 전담·지정·협력 법무사처럼 보이지 않게 합니다.",
+    },
+    {
+      topic: "청렴·성희롱예방 등 법정 지정교육 강사",
+      classification: "OUT_OF_SCOPE",
+      note: "공공 법률교육 페이지의 생활·실무 예방교육과 별개이며 제공 범위에 넣지 않습니다.",
+    },
+  ],
+  quoteIntro:
+    "기관 업무 견적을 위해 먼저 확인할 정보입니다. 최저가·무조건 저가 표현은 사용하지 않으며, 범위가 정해진 뒤 견적 구간을 안내합니다.",
+  quoteCheckItems: [
+    {
+      label: "업무종류",
+      hint: "법인 변경 / 소유권이전·보존 / 말소 / 여러 유형 동시 여부",
+    },
+    {
+      label: "건수·대상",
+      hint: "필지·호실·임원 인원, 부동산 소재지(구·군 단위도 가능)",
+    },
+    {
+      label: "일정",
+      hint: "결재·이사회·잔금·준공·등기기한 중 맞출 날짜",
+    },
+    {
+      label: "필요 산출물",
+      hint: "등기필·등기사항증명서·내부 보고용 요약 등",
+    },
+    {
+      label: "계약 검토 단계",
+      hint: "내부 의뢰 / 견적만 / 용역 공고 준비. 입찰 성사·지정 업체임을 약속하지 않습니다.",
+    },
+  ],
   commonProblems: [
     "내부 결재문서와 등기원인 문서 내용이 맞지 않는 경우",
     "기관 명칭과 등기부 상 법인명이 다른 경우",
@@ -391,11 +542,11 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     "법인인감·사용인감 사용 권한이 불명확한 경우",
     "기한이 있는 등기인데 내부 절차가 늦어지는 경우",
   ],
-  procurementTitle: "나라장터·조달청을 통한 등기업무 검토가 필요한 경우",
+  procurementTitle: "기관에서 법무사 업무를 의뢰할 때 확인할 수행범위",
   procurementParagraphs: [
-    "공공기관 등기업무는 나라장터, 조달청, 수의계약, 용역계약, 위탁계약 형태로 검토·발주될 수 있습니다. 담당자는 입찰 공고문·과업지시서에서 등기 범위(신청서 작성, 첨부서류 검토, 접수, 보정, 결과보고 등)를 확인하는 것이 좋습니다.",
-    "법무사사무소가 제공할 수 있는 업무는 통상 등기신청서 작성, 첨부서류 검토, 관할 등기소 접수, 보정 대응, 등기필증·등기사항증명서 수령, 결과보고 자료 정리 등입니다. 나라장터 등기업무 법무사, 조달청 등기 법무사, 공공기관 등기 용역 키워드로 검색하시는 경우에도 먼저 등기 목적과 기관 유형을 정리해 두면 상담이 수월합니다.",
-    "입찰 참가·계약 체결·수주를 보장하는 표현은 사용하지 않습니다. 사건별로 검토 가능한 범위와 예상 일정·비용을 설명드리며, 내부 검토용으로 이 페이지를 공유하실 수 있습니다.",
+    "기관의 내부 규정과 조달 방식에 따라 등기업무가 내부 의뢰, 견적 요청, 용역·위탁 공고 형태로 검토될 수 있습니다. 공고·과업지시서가 있는 경우 신청서 작성, 첨부서류 검토, 접수, 보정, 결과보고 등 과업 범위를 먼저 확인하는 것이 좋습니다.",
+    "법무사사무소가 검토할 수 있는 업무는 통상 등기신청서 작성, 첨부서류 검토, 관할 등기소 접수, 보정 대응, 등기필·등기사항증명서 수령, 결과보고 자료 정리입니다. 나라장터·조달 공고에 등기 과업이 포함되는 경우에도, 등록·지정·전담 업체임을 표방하지 않으며 사건별 가능 범위만 설명합니다.",
+    "입찰 참가·계약 체결·수주·수의계약 성사를 보장하지 않습니다. 여성기업·중소기업 확인서 등 증빙이 필요한지는 각 공고와 적용 법령을 별도로 확인해야 합니다.",
   ],
   busanTitle: "부산 공공기관 등기업무",
   busanParagraphs: [
@@ -462,22 +613,61 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     {
       question: "부산 공공기관 등기 상담은 어떤 자료를 먼저 내면 좋나요?",
       answer:
-        "기관 유형, 등기 목적, 등기사항증명서(법인·부동산), 관련 의결서·공문, 원인계약서·승인서 사본을 보내 주시면 검토가 수월합니다. 부산 등기 법무사 상담은 전화·카카오톡으로도 가능합니다.",
+        "기관 유형, 등기 목적, 등기사항증명서(법인·부동산), 관련 의결서·공문, 원인계약서·승인서 사본을 보내 주시면 검토가 수월합니다. 초기 문의에는 주민등록번호·등기필정보 등 민감 원본을 보내지 않으셔도 됩니다.",
+    },
+    {
+      question: "공공기관도 법무사에게 등기업무를 의뢰할 수 있나요?",
+      answer:
+        "등기신청 대리·신청서 작성·접수·보정 대응이 필요한 사안은 의뢰를 검토할 수 있습니다. 기관 내부 규정과 계약 방식을 확인하고, 촉탁으로만 진행해야 하는 행정행위는 대행한다고 안내하지 않습니다.",
+    },
+    {
+      question: "법무사 견적을 요청하려면 어떤 정보가 필요한가요?",
+      answer:
+        "업무종류, 예상 건수, 대상(부동산 소재 또는 법인), 희망 일정, 필요한 산출물만 있어도 수행범위 안내가 가능합니다. 확정 견적은 서류 확인 후 안내하며 최저가만으로 비교하지 않는 것이 안전합니다.",
+    },
+    {
+      question: "부동산 여러 필지의 등기도 문의할 수 있나요?",
+      answer:
+        "가능합니다. 필지·호실 수, 권리관계, 일정을 알려 주시면 일괄 검토 가능 여부를 안내합니다. 건수 구간은 문의서에 선택 항목이 있습니다.",
+    },
+    {
+      question: "임원이 여러 명 변경되는 경우 어떤 자료가 필요한가요?",
+      answer:
+        "이사회·총회 의사록(또는 이에 준하는 의결), 취임·사임 승낙, 정관, 법인 등기사항증명서를 확인합니다. 모든 공공기관이 회사등기 대상은 아니므로 법적 형태부터 확인합니다.",
+    },
+    {
+      question: "기관 부동산을 취득하는 경우 무엇부터 확인해야 하나요?",
+      answer:
+        "취득 근거(계약·승인·고시), 등기부·대장상 표시, 촉탁 여부, 취득세·등록면허세, 관할 등기소를 먼저 봅니다. 땅·건물 명의 이전은 통상 소유권이전등기 검토입니다.",
+    },
+    {
+      question: "기관 대표가 바뀌거나 주소가 바뀌면 등기를 해야 하나요?",
+      answer:
+        "법인등기 대상 기관이면 대표자·임원·본점 소재지 변경이 등기 사항인 경우가 많습니다. 재단·출연기관·특수법인은 근거 법령·정관이 다르므로 형태를 알려 주시면 필요 여부를 안내합니다.",
+    },
+    {
+      question: "법률교육·특강도 가능한가요?",
+      answer:
+        "직원·공무원·이용자 대상 생활법률·계약·전세사기 예방 등 실무 특강은 별도 안내합니다. 청렴·성희롱예방 등 법정 지정교육은 제공하지 않습니다. 공공기관 법률교육 페이지와 강의 문의로 연결됩니다.",
     },
   ],
   internalLinks: [
-    { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
-    { href: "/부산등기법무사", label: "부산 등기 법무사" },
+    { href: "/공공기관법인등기", label: "공공기관 법인등기" },
+    { href: "/공공기관부동산등기", label: "공공기관 부동산등기" },
+    { href: "/공공기관이전등기", label: "공공기관 이전·보상등기" },
+    { href: "/공공기관촉탁등기", label: "공공기관 촉탁등기 안내" },
+    { href: "/공공기관법률교육", label: "공공기관 법률교육" },
     { href: "/부산법인등기", label: "부산 법인등기" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
     { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
+    { href: "/부산임원변경등기", label: "부산 임원변경등기" },
+    { href: "/부산법인법무사", label: "부산 법인 법무사" },
     { href: "/부산법무사", label: "부산 법무사" },
-    { href: "/services", label: "업무안내" },
-    { href: "/contact", label: "상담 문의" },
     { href: "/partners", label: "전문직·기업 협업 안내" },
-    { href: "/협업문의?partner=public", label: "기관 등기업무 문의" },
+    { href: "/협업문의?partner=public", label: "공공기관·단체 업무 문의" },
+    { href: "/강의문의", label: "법률교육·특강 문의" },
     { href: "/faq/public-agency-registration-faq", label: "공공기관 등기 FAQ" },
   ],
   primaryKeywords: [
@@ -488,9 +678,6 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     "지방공기업 등기",
     "부산 공공기관 등기 법무사",
     "부산 공기업 등기 법무사",
-    "나라장터 등기업무 법무사",
-    "조달청 등기업무 법무사",
-    "부산 등기 법무사",
   ],
   bottomCtaText:
     "공공기관 등기업무는 내부 결재와 등기 실무가 함께 맞아야 하는 경우가 많습니다. 등기 목적, 기관 유형, 보유 서류를 먼저 정리한 뒤 검토하면 절차를 더 안정적으로 진행할 수 있습니다.",

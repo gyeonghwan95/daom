@@ -55,7 +55,7 @@ export function CaseRegionPageView({
                 href="/contact/inquiry"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
-                1분만에 상담 신청하기
+                상담 문의하기
               </Link>
             }
           />
@@ -150,7 +150,7 @@ export function CaseRegionPageView({
                 href="/contact/inquiry"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
-                1분만에 상담 신청하기
+                상담 문의하기
               </Link>
             }
           />

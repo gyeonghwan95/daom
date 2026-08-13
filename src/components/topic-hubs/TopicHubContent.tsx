@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
-import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   InheritanceCostGuide,
   InheritanceJourneyNav,
@@ -22,7 +21,6 @@ import {
   buildServicePageSchema,
 } from "@/lib/seo/json-ld";
 import { getServiceImage } from "@/lib/site-images";
-import { shouldShowQuickInquiryInline } from "@/lib/quick-inquiry/placements";
 import {
   isInheritanceFlagshipPage,
   isInheritanceJourneyPage,
@@ -111,6 +109,15 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
       </header>
 
+      <InlineConsultationCTA
+        pageType="service"
+        serviceSlug={page.primaryServiceSlug}
+        pageSlug={page.slug}
+        title={`${page.title} 상담 문의`}
+        description={page.ctaDescription}
+        diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
+      />
+
       <TopicHubQuickLinks page={page} />
 
       {showInheritanceJourney ? (
@@ -134,24 +141,11 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         </ContentBlock>
       ) : null}
 
-      <InlineConsultationCTA
-        pageType="service"
-        serviceSlug={page.primaryServiceSlug}
-        pageSlug={page.slug}
-        title={`${page.title} 지금 상담`}
-        description={page.ctaDescription}
-        diagnosisHref={diagnosisLinks[0]?.href ?? "/자가진단"}
-      />
-
       {showInheritanceExtras ? (
         <>
           <RemoteInheritanceProcess fromPage={page.slug} />
           <InheritanceCostGuide fromPage={page.slug} />
         </>
-      ) : null}
-
-      {shouldShowQuickInquiryInline({ slug: page.slug }) ? (
-        <QuickInquiryInlineCard pageTitle={page.h1 || page.title} pageUrl={page.path} />
       ) : null}
 
       {page.sections.map((section) => (

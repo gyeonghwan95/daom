@@ -43,9 +43,9 @@ export const consultWizardCopy = {
   inlineTitle: "내 상황도 상담이 필요한지 확인하기",
   inlineDescription:
     "준비된 서류가 없어도 문의할 수 있습니다. 업무명을 모르셔도 현재 상황만 선택해 주세요.",
-  inlineButton: "1분만에 상담 신청하기",
+  inlineButton: "상담 내용 남기기",
   ctaMidTitle: "준비된 서류가 없어도 문의할 수 있습니다",
   ctaMidBody:
-    "약 1분이면 상담 신청을 남길 수 있습니다. 어떤 업무인지 몰라도 현재 상황부터 확인해 드립니다. 긴 내용을 작성하지 않아도 됩니다.",
-  ctaMidButton: "1분만에 상담 신청하기",
+    "어떤 업무인지 몰라도 현재 상황만 남겨 주시면 됩니다. 긴 내용을 작성하지 않아도 됩니다.",
+  ctaMidButton: "상담 내용 남기기",
 } as const;

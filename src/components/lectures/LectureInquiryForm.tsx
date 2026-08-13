@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useId, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { InquiryDeliverySuccess } from "@/components/quick-inquiry/InquiryDeliverySuccess";
 import {
   isTurnstileConfigured,
   TurnstileWidget,
 } from "@/components/quick-inquiry/TurnstileWidget";
+import { trackB2BEvent } from "@/lib/analytics/track-b2b";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import {
   clientParseContact,
@@ -25,6 +26,25 @@ const TOPICS = [
   "기타·상담 후 결정",
 ] as const;
 
+const FORMATS = [
+  "미정",
+  "특강",
+  "워크숍",
+  "세미나",
+  "직원교육",
+  "강연",
+] as const;
+
+const AUDIENCES = [
+  "미정",
+  "임직원",
+  "신입사원",
+  "공공기관 직원",
+  "청년",
+  "창업자",
+  "기관 종사자",
+] as const;
+
 type FieldErrors = {
   contact?: string;
   agreed?: string;
@@ -41,8 +61,11 @@ export function LectureInquiryForm() {
   const [institution, setInstitution] = useState("");
   const [contact, setContact] = useState("");
   const [topic, setTopic] = useState<(typeof TOPICS)[number]>("전세사기 예방");
+  const [format, setFormat] = useState<(typeof FORMATS)[number]>("미정");
+  const [audience, setAudience] = useState<(typeof AUDIENCES)[number]>("미정");
   const [memo, setMemo] = useState("");
   const [agree, setAgree] = useState(false);
+  const startedRef = useRef(false);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -57,12 +80,26 @@ export function LectureInquiryForm() {
         institution.trim() ? `기관: ${institution.trim()}` : "기관: (미기재)",
         `연락처: ${contact.trim() || "-"}`,
         `희망 주제: ${topic}`,
+        format !== "미정" ? `행사 형태: ${format}` : "",
+        audience !== "미정" ? `교육 대상: ${audience}` : "",
         memo.trim() ? `요청: ${memo.trim()}` : "",
       ]
         .filter(Boolean)
         .join("\n"),
-    [institution, contact, topic, memo],
+    [institution, contact, topic, format, audience, memo],
   );
+
+  useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    const path =
+      typeof window !== "undefined" ? window.location.pathname : "/강의문의";
+    trackB2BEvent("lecture_inquiry_start", {
+      source_page: path,
+      category: "LECTURE",
+      placement: "lecture_form",
+    });
+  }, []);
 
   const pageMeta = useMemo(() => {
     if (typeof window === "undefined") {
@@ -119,7 +156,15 @@ export function LectureInquiryForm() {
 
     setSubmitting(true);
     setErrors({});
-    trackCTA("contact", "강의문의");
+    const path =
+      typeof window !== "undefined" ? window.location.pathname : "/강의문의";
+    trackCTA("contact", path.replace(/^\//, "") || "강의문의");
+    trackB2BEvent("lecture_inquiry_submit", {
+      source_page: path,
+      category: "LECTURE",
+      lectureIntent: topic,
+      placement: "lecture_form",
+    });
 
     try {
       const result = await submitQuickInquiry({
@@ -160,6 +205,8 @@ export function LectureInquiryForm() {
     setInstitution("");
     setContact("");
     setTopic("전세사기 예방");
+    setFormat("미정");
+    setAudience("미정");
     setMemo("");
     setAgree(false);
     setErrors({});
@@ -195,7 +242,7 @@ export function LectureInquiryForm() {
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy/50">
           이메일 문의 · Resend 접수
         </p>
-        <h2 className="text-lg font-semibold text-navy">30초 강의 문의</h2>
+        <h2 className="text-lg font-semibold text-navy">강의 문의</h2>
         <p className="text-sm leading-relaxed text-navy/70">
           연락처와 희망 주제만 남겨 주세요. 제출하시면 사무소 메일로 바로
           전달됩니다. 주민등록번호·사건 상세 등 민감정보는 적지 마세요.
@@ -243,6 +290,38 @@ export function LectureInquiryForm() {
             }
           >
             {TOPICS.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="행사 형태">
+          <select
+            className={fieldControlClass(false)}
+            value={format}
+            onChange={(e) =>
+              setFormat(e.target.value as (typeof FORMATS)[number])
+            }
+          >
+            {FORMATS.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="교육 대상">
+          <select
+            className={fieldControlClass(false)}
+            value={audience}
+            onChange={(e) =>
+              setAudience(e.target.value as (typeof AUDIENCES)[number])
+            }
+          >
+            {AUDIENCES.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>

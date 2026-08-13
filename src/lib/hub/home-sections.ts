@@ -63,6 +63,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
     links: [
       { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/부산법무사상담", label: "법무사 업무 상담" },
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
@@ -92,12 +93,12 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "많이 찾는 상담",
     description: "의뢰인이 자주 검색하는 상담 주제입니다.",
     links: [
+      { href: "/부산법무사상담", label: "법무사 상담 준비" },
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
+      { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/상속등기비용", label: "상속등기 비용" },
       { href: "/상속등기필요서류", label: "상속등기 필요서류" },
-      { href: "/상속등기기간", label: "상속등기 기간" },
-      { href: "/임원변경등기과태료", label: "임원변경등기 과태료" },
       { href: "/개인회생비용", label: "개인회생 비용" },
-      { href: "/부산여성법무사", label: "부산 여성 법무사" },
     ],
   },
   {
@@ -214,9 +215,10 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
   {
     title: "개인회생·파산",
     links: [
+      { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/부산개인회생", label: "부산 개인회생" },
+      { href: "/부산개인파산", label: "부산 개인파산" },
       { href: "/부산회생법원개인회생", label: "부산회생법원 개인회생" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
       { href: "/services/personal-rehabilitation", label: "개인회생 업무 상세" },
     ],
   },

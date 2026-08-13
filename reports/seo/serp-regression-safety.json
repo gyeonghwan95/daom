@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T15:58:45.103Z",
+  "generatedAt": "2026-08-13T12:13:10.692Z",
   "ok": true,
   "SEO_REGRESSION_SAFETY": {
     "existingUrls": {
@@ -25,7 +25,67 @@
   "addedUrls": [],
   "protectedDiffRows": [
     {
+      "url": "/개인회생파산",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
+      "url": "/부산개인파산",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
+      "url": "/부산개인회생",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
       "url": "/부산법무사",
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
+      "url": "/부산법무사상담",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
+      "url": "/부산법무사추천",
+      "missingBefore": true,
+      "missingAfter": true,
       "titleChanged": false,
       "h1Changed": false,
       "descriptionChanged": false,
@@ -115,6 +175,18 @@
       "internalLinksRemoved": 0
     },
     {
+      "url": "/전세사기피해대응절차",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
+    {
       "url": "/해운대법무사",
       "titleChanged": false,
       "h1Changed": false,
@@ -124,5 +196,6 @@
       "internalLinksAdded": 0,
       "internalLinksRemoved": 0
     }
-  ]
+  ],
+  "championGuard": []
 }

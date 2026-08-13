@@ -21,6 +21,10 @@ import {
   siteImages,
 } from "@/lib/site-images";
 import { getFinanceSectionsForSlug } from "@/data/seo/finance-intent-modules";
+import {
+  PERSONAL_BANKRUPTCY_SUPPORT_MODULES,
+  PERSONAL_REHAB_CHAMPION_MODULES,
+} from "@/data/seo/high-intent-rehab-modules";
 import { buildMetaDescription, buildMetaTitle } from "./seo";
 import { createPageData } from "./template-helpers";
 import type { PageCategory, PageData, PageSection } from "./types";
@@ -302,8 +306,22 @@ export function buildPageDataFromLocalLanding(
       ],
     });
   }
-  if (page.slug === "부산개인회생" || page.slug === "부산개인파산") {
+  if (page.slug === "부산개인회생") {
+    extraSections.unshift(...PERSONAL_REHAB_CHAMPION_MODULES);
     extraSections.unshift({
+      title: "회생·파산 중 어디부터 볼지",
+      body: "개인회생과 개인파산을 아직 나누지 못했다면 비교 허브를 먼저 보세요. 이 페이지는 개인회생 신청·서류·상황별 확인에 집중합니다.",
+      links: [
+        { href: "/개인회생파산", label: "회생·파산 비교 허브" },
+        { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+      ],
+    });
+  }
+  if (page.slug === "부산개인파산" || page.slug === "부산파산") {
+    extraSections.unshift(...PERSONAL_BANKRUPTCY_SUPPORT_MODULES);
+  }
+  if (page.slug === "부산개인회생" || page.slug === "부산개인파산") {
+    extraSections.push({
       title: "회생·파산 관련 검색의도 안내",
       body: "개인회생·파산 법무사·상담·신청·면책·비용 등 세부 검색어는 검색의도 허브와 아래 페이지에서 이어서 확인하실 수 있습니다. 기존 URL은 그대로 유지됩니다.",
       links: [

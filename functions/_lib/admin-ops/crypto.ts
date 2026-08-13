@@ -45,9 +45,32 @@ export function maskEmail(email) {
   return `${trimmed.slice(0, 1)}***@${trimmed.slice(at + 1)}`;
 }
 
-export function classifyReferrer(host) {
+const OWN_ANALYTICS_HOSTS = new Set([
+  "xn--2j1br1na42lvxja38mk8r.kr",
+  "다옴법무사사무소.kr",
+  "localhost",
+  "127.0.0.1",
+]);
+
+export function bareAnalyticsHost(host) {
+  return String(host || "")
+    .toLowerCase()
+    .replace(/\.$/, "")
+    .replace(/^www\./, "");
+}
+
+export function isOwnAnalyticsHost(host, extraHost) {
+  if (!host) return false;
+  const h = bareAnalyticsHost(host);
+  if (OWN_ANALYTICS_HOSTS.has(h)) return true;
+  if (extraHost && bareAnalyticsHost(extraHost) === h) return true;
+  return false;
+}
+
+export function classifyReferrer(host, requestHost) {
   if (!host) return "direct";
-  const h = host.toLowerCase();
+  if (isOwnAnalyticsHost(host, requestHost)) return "internal";
+  const h = String(host).toLowerCase();
   if (h.includes("google.")) return "google";
   if (h.includes("naver.")) return "naver";
   if (h.includes("daum.") || h.includes("kakao.")) return "daum";
@@ -76,15 +99,19 @@ export function normalizePath(raw) {
   return path;
 }
 
-/** KST hour bucket 0–23 */
+/** KST hour bucket 0–23 (some engines emit "24" at midnight) */
 export function getKstHour(d = new Date()) {
-  return Number(
+  const raw = Number(
     new Intl.DateTimeFormat("en-GB", {
       timeZone: "Asia/Seoul",
       hour: "2-digit",
       hour12: false,
+      hourCycle: "h23",
     }).format(d),
   );
+  if (!Number.isFinite(raw)) return 0;
+  if (raw === 24) return 0;
+  return Math.min(23, Math.max(0, raw));
 }
 
 export function isSafeCtaUrl(url) {

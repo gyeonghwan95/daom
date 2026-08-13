@@ -95,6 +95,88 @@
       "modificationRisk": "HIGH"
     },
     {
+      "url": "/부산법무사상담",
+      "reason": "high-intent-champion",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_LEGAL_CONSULTATION_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "indexability": true
+      },
+      "knownSuccessfulQueries": [],
+      "modificationRisk": "HIGH",
+      "notes": "UNKNOWN_PERFORMANCE. Modules OK; title/H1/URL immutable. Distinct from /부산법무사."
+    },
+    {
+      "url": "/전세사기피해대응절차",
+      "reason": "high-intent-champion",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_JEONSE_DAMAGE_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "indexability": true
+      },
+      "knownSuccessfulQueries": [],
+      "modificationRisk": "HIGH",
+      "notes": "UNKNOWN_PERFORMANCE. Damage navigator; do not merge with /전세사기예방교육."
+    },
+    {
+      "url": "/개인회생파산",
+      "reason": "high-intent-champion",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_INSOLVENCY_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "indexability": true
+      },
+      "knownSuccessfulQueries": [],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산개인회생",
+      "reason": "high-intent-champion",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_PERSONAL_REHABILITATION_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "indexability": true
+      },
+      "knownSuccessfulQueries": [],
+      "modificationRisk": "HIGH"
+    },
+    {
+      "url": "/부산개인파산",
+      "reason": "high-intent-champion",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_PERSONAL_BANKRUPTCY_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "indexability": true
+      },
+      "knownSuccessfulQueries": [],
+      "modificationRisk": "HIGH"
+    },
+    {
       "url": "/부산법인등기",
       "reason": "champion-hub",
       "protectionLevel": "FULL",

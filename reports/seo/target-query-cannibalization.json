@@ -1,0 +1,1328 @@
+{
+  "summary": {
+    "generatedAt": "2026-08-13T10:52:50.249Z",
+    "trendData": "TREND_DATA_UNAVAILABLE",
+    "queryCount": 38,
+    "highCannibalization": [
+      "부산 파산"
+    ],
+    "watch": [
+      "부산 법무사 법률 상담",
+      "부산 법무사 법률상담",
+      "부산 법률 상담",
+      "부산 법률상담",
+      "부산 전세사기",
+      "부산 전세사기 법무사",
+      "부산 전세보증금 상담",
+      "부산 보증금 못받음",
+      "부산 전세금 못받음",
+      "부산 임차권등기",
+      "부산 보증금 반환",
+      "부산회생파산",
+      "부산 회생파산",
+      "부산 회생파산 법무사",
+      "부산 개인회생 파산",
+      "부산 개인파산",
+      "부산개인회생",
+      "부산 개인회생",
+      "부산 개인회생 법무사",
+      "부산 개인회생 상담",
+      "부산 개인회생 신청",
+      "부산 개인회생 비용"
+    ],
+    "newUrlsCreated": 0,
+    "protectedGeneralUntouched": true
+  },
+  "rows": [
+    {
+      "query": "부산 법무사 법률 상담",
+      "cluster": "legal-consultation",
+      "intent": "judicial-scrivener-consultation-scope",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 75,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/상담",
+          "title": "법무사 상담, 상황만 선택해도 시작할 수 있습니다",
+          "titleRelevance": 50,
+          "role": "supporting"
+        },
+        {
+          "url": "/법무사상담전준비",
+          "title": "법무사 상담 전 준비 — 상담 전 확인 가이드",
+          "titleRelevance": 50,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산법무사",
+          "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
+          "titleRelevance": 75,
+          "role": "supporting"
+        },
+        {
+          "url": "/contact",
+          "title": "부산 법무사 상담 문의",
+          "titleRelevance": 75,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 법무사 법률상담",
+      "cluster": "legal-consultation",
+      "intent": "judicial-scrivener-consultation-scope",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "KEEP",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/상담",
+          "title": "법무사 상담, 상황만 선택해도 시작할 수 있습니다",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 법률 상담",
+      "cluster": "legal-consultation",
+      "intent": "where-to-ask-public-vs-scrivener",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/무슨법률업무인지모를때",
+          "title": "무슨 법률 업무인지 몰라도 괜찮습니다",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산법무사",
+          "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
+          "titleRelevance": 67,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 법률상담",
+      "cluster": "legal-consultation",
+      "intent": "where-to-ask-public-vs-scrivener",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 50,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 법무사 상담",
+      "cluster": "legal-consultation",
+      "intent": "consult-prep-channel-scope",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "strong",
+      "cannibalization": "low",
+      "action": "STRENGTHEN_EXISTING",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/법무사상담전준비",
+          "title": "법무사 상담 전 준비 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/상담",
+          "title": "법무사 상담, 상황만 선택해도 시작할 수 있습니다",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/contact",
+          "title": "부산 법무사 상담 문의",
+          "titleRelevance": 100,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [
+        "/contact"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 법무 상담",
+      "cluster": "legal-consultation",
+      "intent": "consult-prep-channel-scope",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "KEEP",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 생활법률 상담",
+      "cluster": "legal-consultation",
+      "intent": "daily-legal-issue-routing",
+      "primaryChampion": "/부산법무사상담",
+      "coverage": "thin",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법률상담",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/법률강의",
+          "title": "부산 법률 강의·특강｜기관·도서관·학교·기업 맞춤 생활법률 교육",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 33,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기",
+      "cluster": "jeonse-damage",
+      "intent": "deposit-fraud-damage-navigator",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 50,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산임차권등기명령",
+          "title": "부산 임차권등기명령, 요건·서류·이사 시점 정리",
+          "titleRelevance": 50,
+          "role": "supporting"
+        },
+        {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/민사소송",
+          "title": "부산 지급명령·소장·가압류·가처분 상담",
+          "titleRelevance": 50,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산전세전문법무사",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [
+        "/전세사기예방교육"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기 법무사",
+      "cluster": "jeonse-damage",
+      "intent": "scrivener-scope-in-jeonse-damage",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산임차권등기명령",
+          "title": "부산 임차권등기명령, 요건·서류·이사 시점 정리",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산전세전문법무사",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기 상담 법무사",
+      "cluster": "jeonse-damage",
+      "intent": "scrivener-consult-after-damage",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 75,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 25,
+          "role": "supporting"
+        },
+        {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 50,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기 상담",
+      "cluster": "jeonse-damage",
+      "intent": "damage-situation-triage",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "STRENGTHEN_EXISTING",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/전세보증금자가진단",
+          "title": "부산 전세보증금 자가진단 — 반환·연락두절·임차권등기명령",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 67,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기 피해",
+      "cluster": "jeonse-damage",
+      "intent": "damage-situation-triage",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 67,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세사기 대응",
+      "cluster": "jeonse-damage",
+      "intent": "damage-response-order",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "strong",
+      "cannibalization": "low",
+      "action": "STRENGTHEN_EXISTING",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산임차권등기명령",
+          "title": "부산 임차권등기명령, 요건·서류·이사 시점 정리",
+          "titleRelevance": 33,
+          "role": "supporting"
+        },
+        {
+          "url": "/민사소송",
+          "title": "부산 지급명령·소장·가압류·가처분 상담",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세보증금 상담",
+      "cluster": "jeonse-damage",
+      "intent": "unpaid-deposit-consult",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 67,
+          "role": "competing"
+        },
+        {
+          "url": "/전세보증금자가진단",
+          "title": "부산 전세보증금 자가진단 — 반환·연락두절·임차권등기명령",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 보증금 못받음",
+      "cluster": "jeonse-damage",
+      "intent": "unpaid-deposit-after-lease",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 67,
+          "role": "competing"
+        },
+        {
+          "url": "/situations/jeonse-deposit-unpaid",
+          "title": "전세보증금을 돌려받지 못했는데 어떻게 해야 하나요?",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세금 못받음",
+      "cluster": "jeonse-damage",
+      "intent": "unpaid-deposit-after-lease",
+      "primaryChampion": "/전세사기피해대응절차",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 33,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 임차권등기",
+      "cluster": "jeonse-damage",
+      "intent": "lease-registration-order-procedure",
+      "primaryChampion": "/부산임차권등기명령",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산임차권등기명령",
+          "title": "부산 임차권등기명령, 요건·서류·이사 시점 정리",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/임차권등기명령필요서류",
+          "title": "임차권등기명령 필요서류 안내",
+          "titleRelevance": 50,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 임차권등기명령",
+      "cluster": "jeonse-damage",
+      "intent": "lease-registration-order-procedure",
+      "primaryChampion": "/부산임차권등기명령",
+      "coverage": "strong",
+      "cannibalization": "low",
+      "action": "KEEP",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산임차권등기명령",
+          "title": "부산 임차권등기명령, 요건·서류·이사 시점 정리",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 보증금 반환",
+      "cluster": "jeonse-damage",
+      "intent": "deposit-return-procedure",
+      "primaryChampion": "/부산전세보증금반환법무사",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/민사소송",
+          "title": "부산 지급명령·소장·가압류·가처분 상담",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 전세보증금 반환",
+      "cluster": "jeonse-damage",
+      "intent": "deposit-return-procedure",
+      "primaryChampion": "/부산전세보증금반환법무사",
+      "coverage": "strong",
+      "cannibalization": "low",
+      "action": "KEEP",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산전세보증금반환법무사",
+          "title": "부산 전세보증금 반환, 상황 점검과 등기 절차부터 확인",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/전세사기피해대응절차",
+          "title": "",
+          "titleRelevance": 0,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산회생파산",
+      "cluster": "insolvency",
+      "intent": "rehab-vs-bankruptcy-choice",
+      "primaryChampion": "/개인회생파산",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 회생파산",
+      "cluster": "insolvency",
+      "intent": "rehab-vs-bankruptcy-choice",
+      "primaryChampion": "/개인회생파산",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 50,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 50,
+          "role": "competing"
+        },
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 50,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 회생 파산",
+      "cluster": "insolvency",
+      "intent": "rehab-vs-bankruptcy-choice",
+      "primaryChampion": "/개인회생파산",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 회생파산 법무사",
+      "cluster": "insolvency",
+      "intent": "scrivener-insolvency-hub",
+      "primaryChampion": "/개인회생파산",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 33,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "competing"
+        },
+        {
+          "url": "/부산개인파산법무사",
+          "title": "부산 개인파산 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 파산",
+      "cluster": "insolvency",
+      "intent": "rehab-vs-bankruptcy-choice",
+      "primaryChampion": "/개인회생파산",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "competing"
+        },
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 파산",
+      "cluster": "personal-bankruptcy",
+      "intent": "personal-bankruptcy-overview",
+      "primaryChampion": "/부산개인파산",
+      "coverage": "partial",
+      "cannibalization": "high",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 100,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산파산",
+        "/개인회생파산"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인파산",
+      "cluster": "personal-bankruptcy",
+      "intent": "personal-bankruptcy-application",
+      "primaryChampion": "/부산개인파산",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산파산",
+          "title": "부산 개인파산 법무사 상담",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/부산개인파산법무사",
+          "title": "부산 개인파산 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 100,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산파산",
+        "/부산개인파산법무사"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산개인회생",
+      "cluster": "personal-rehabilitation",
+      "intent": "personal-rehab-application",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 0,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 0,
+          "role": "competing"
+        },
+        {
+          "url": "/개인회생필요서류",
+          "title": "개인회생 필요서류 안내",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/개인회생비용",
+          "title": "개인회생 비용 안내",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/개인회생파산",
+          "title": "부산 개인회생·개인파산·면책 상담",
+          "titleRelevance": 0,
+          "role": "supporting"
+        },
+        {
+          "url": "/부산회생법원개인회생",
+          "title": "부산회생법원 개인회생",
+          "titleRelevance": 0,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생",
+      "cluster": "personal-rehabilitation",
+      "intent": "personal-rehab-application",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/개인회생필요서류",
+          "title": "개인회생 필요서류 안내",
+          "titleRelevance": 50,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산개인회생법무사"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 법무사",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-eligibility-with-scrivener",
+      "primaryChampion": "/부산개인회생법무사",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 100,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산개인회생"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 상담",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-consult-prep",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "INTERNAL_LINK",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 100,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생상담",
+          "title": "부산 개인회생 상담 — 상담 전 확인 가이드",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/부산법무사상담",
+          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산개인회생상담"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 신청",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-filing-steps",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "partial",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생신청",
+          "title": "부산 개인회생 신청 — 상담 전 확인 가이드",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
+          "url": "/개인회생체크리스트",
+          "title": "개인회생 체크리스트 — 상담 전 확인 가이드",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [
+        "/부산개인회생신청"
+      ],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 비용",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-cost-structure",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "strong",
+      "cannibalization": "watch",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/개인회생비용",
+          "title": "개인회생 비용 안내",
+          "titleRelevance": 67,
+          "role": "competing"
+        },
+        {
+          "url": "/왜개인회생비용이다를까",
+          "title": "왜 개인회생 비용이 다를까 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 준비서류",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-documents",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "strong",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/개인회생필요서류",
+          "title": "개인회생 필요서류 안내",
+          "titleRelevance": 33,
+          "role": "competing"
+        },
+        {
+          "url": "/faq/personal-rehabilitation-documents-faq",
+          "title": "개인회생 신청 시 필요한 서류는?",
+          "titleRelevance": 33,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 배우자",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-spouse-disclosure",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "competing"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 주식",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-investment-loss-debt",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "thin",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 코인",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-investment-loss-debt",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "thin",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [],
+      "conflictsWithGeneralChampion": false
+    },
+    {
+      "query": "부산 개인회생 급여압류",
+      "cluster": "personal-rehabilitation",
+      "intent": "rehab-with-wage-garnishment",
+      "primaryChampion": "/부산개인회생",
+      "coverage": "partial",
+      "cannibalization": "low",
+      "action": "ADD_MODULE",
+      "rankingObservation": "UNKNOWN_PERFORMANCE",
+      "candidates": [
+        {
+          "url": "/부산개인회생",
+          "title": "부산 개인회생 법무사 상담",
+          "titleRelevance": 67,
+          "role": "primary"
+        },
+        {
+          "url": "/부산개인회생법무사",
+          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "titleRelevance": 67,
+          "role": "supporting"
+        },
+        {
+          "url": "/개인회생자가진단",
+          "title": "부산 개인회생 자가진단 — 가능성·급여압류·카드 연체",
+          "titleRelevance": 100,
+          "role": "supporting"
+        }
+      ],
+      "competingTitleRisk": [
+        "/개인회생자가진단"
+      ],
+      "conflictsWithGeneralChampion": false
+    }
+  ]
+}

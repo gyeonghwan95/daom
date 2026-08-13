@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -228,12 +227,6 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         description={content.ctaText}
         pageSlug={page.slug}
       />
-
-      <p className="text-center text-sm text-navy/60">
-        <Link href="/contact/inquiry" className="font-semibold text-navy-light">
-          상담 내용 남기기
-        </Link>
-      </p>
     </article>
   );
 }

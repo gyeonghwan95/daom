@@ -311,6 +311,14 @@ export const collaborationLinks: CollaborationLink[] = [
     inDirectory: true,
     status: "live",
   },
+  {
+    href: "/공공기관법률교육",
+    label: "공공기관 법률교육",
+    description: "기관·공무원·직원 대상 생활법률 특강 안내입니다.",
+    category: "corporate-public",
+    inDirectory: true,
+    status: "live",
+  },
 
   // 특수
   {

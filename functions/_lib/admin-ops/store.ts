@@ -21,6 +21,26 @@ const KEYS = {
   recentActivity: "analytics:recent",
 };
 
+/** KV read-modify-write 충돌을 줄이기 위한 일별 샤드 수. 레거시 키도 읽기 병합. */
+const ANALYTICS_SHARDS = 8;
+
+function analyticsShard(ip) {
+  const s = String(ip || "unknown");
+  let h = 0;
+  for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h % ANALYTICS_SHARDS;
+}
+
+function dayKey(date, shard) {
+  return shard == null ? `analytics:day:${date}` : `analytics:day:${date}:s${shard}`;
+}
+
+function hourlyKey(date, shard) {
+  return shard == null
+    ? `analytics:hourly:${date}`
+    : `analytics:hourly:${date}:s${shard}`;
+}
+
 function emptyDay(date) {
   return {
     date,
@@ -91,6 +111,76 @@ function emptyPath() {
     naverPlace: 0,
     naverPlaceReservation: 0,
   };
+}
+
+function addNum(a, b) {
+  return (a || 0) + (b || 0);
+}
+
+function mergeDay(target, source) {
+  if (!source) return target;
+  target.visits = addNum(target.visits, source.visits);
+  target.cta = addNum(target.cta, source.cta);
+  target.consultStart = addNum(target.consultStart, source.consultStart);
+  target.consultSubmit = addNum(target.consultSubmit, source.consultSubmit);
+  target.naverPlace = addNum(target.naverPlace, source.naverPlace);
+  target.naverPlaceReservation = addNum(
+    target.naverPlaceReservation,
+    source.naverPlaceReservation,
+  );
+  target.naverPlaceMap = addNum(target.naverPlaceMap, source.naverPlaceMap);
+  target.naverPlaceReview = addNum(target.naverPlaceReview, source.naverPlaceReview);
+  target.naverPlaceOther = addNum(target.naverPlaceOther, source.naverPlaceOther);
+  if (!target.devices) target.devices = { mobile: 0, desktop: 0, unknown: 0 };
+  if (source.devices) {
+    target.devices.mobile = addNum(target.devices.mobile, source.devices.mobile);
+    target.devices.desktop = addNum(target.devices.desktop, source.devices.desktop);
+    target.devices.unknown = addNum(target.devices.unknown, source.devices.unknown);
+  }
+  if (!target.sources) target.sources = {};
+  for (const [k, v] of Object.entries(source.sources || {})) {
+    target.sources[k] = addNum(target.sources[k], v);
+  }
+  if (!target.naverPlacePlacements) target.naverPlacePlacements = {};
+  for (const [k, v] of Object.entries(source.naverPlacePlacements || {})) {
+    target.naverPlacePlacements[k] = addNum(target.naverPlacePlacements[k], v);
+  }
+  if (!target.notices) target.notices = {};
+  for (const [id, row] of Object.entries(source.notices || {})) {
+    if (!target.notices[id]) target.notices[id] = { impression: 0, click: 0, dismiss: 0 };
+    target.notices[id].impression = addNum(target.notices[id].impression, row.impression);
+    target.notices[id].click = addNum(target.notices[id].click, row.click);
+    target.notices[id].dismiss = addNum(target.notices[id].dismiss, row.dismiss);
+  }
+  if (!target.paths) target.paths = {};
+  for (const [path, stats] of Object.entries(source.paths || {})) {
+    if (!target.paths[path]) target.paths[path] = emptyPath();
+    mergePathRow(target.paths[path], stats);
+  }
+  if (source.lastEventAt) {
+    if (!target.lastEventAt || source.lastEventAt > target.lastEventAt) {
+      target.lastEventAt = source.lastEventAt;
+    }
+  }
+  return target;
+}
+
+function mergeHourly(target, source) {
+  if (!source?.hours) return target;
+  if (!target.hours) target.hours = emptyHourlyDay(target.date).hours;
+  for (const [hour, row] of Object.entries(source.hours)) {
+    if (!target.hours[hour]) {
+      target.hours[hour] = { pageViews: 0, cta: 0, consultSubmit: 0, naverPlace: 0 };
+    }
+    target.hours[hour].pageViews = addNum(target.hours[hour].pageViews, row.pageViews);
+    target.hours[hour].cta = addNum(target.hours[hour].cta, row.cta);
+    target.hours[hour].consultSubmit = addNum(
+      target.hours[hour].consultSubmit,
+      row.consultSubmit,
+    );
+    target.hours[hour].naverPlace = addNum(target.hours[hour].naverPlace, row.naverPlace);
+  }
+  return target;
 }
 
 export function hasKv(env) {
@@ -224,24 +314,37 @@ export async function deleteNotice(env, id) {
 
 export async function getDaily(env, date) {
   if (!hasKv(env)) return emptyDay(date);
-  const day = await getJson(env.ADMIN_KV, `analytics:day:${date}`, emptyDay(date));
+  const keys = [
+    dayKey(date),
+    ...Array.from({ length: ANALYTICS_SHARDS }, (_, i) => dayKey(date, i)),
+  ];
+  const parts = await Promise.all(
+    keys.map((key) => getJson(env.ADMIN_KV, key, null)),
+  );
+  const day = emptyDay(date);
+  for (const part of parts) mergeDay(day, part);
   day.paths = mergePathStats(day.paths);
   return day;
 }
 
 async function getHourly(env, date) {
   if (!hasKv(env)) return emptyHourlyDay(date);
-  const row = await getJson(
-    env.ADMIN_KV,
-    `analytics:hourly:${date}`,
-    emptyHourlyDay(date),
+  const keys = [
+    hourlyKey(date),
+    ...Array.from({ length: ANALYTICS_SHARDS }, (_, i) => hourlyKey(date, i)),
+  ];
+  const parts = await Promise.all(
+    keys.map((key) => getJson(env.ADMIN_KV, key, null)),
   );
-  if (!row.hours) row.hours = emptyHourlyDay(date).hours;
+  const row = emptyHourlyDay(date);
+  for (const part of parts) mergeHourly(row, part);
   return row;
 }
 
-async function bumpHourly(env, date, hour, event) {
-  const bucket = await getHourly(env, date);
+async function bumpHourly(env, date, hour, event, shard) {
+  const keyName = hourlyKey(date, shard);
+  const bucket = await getJson(env.ADMIN_KV, keyName, emptyHourlyDay(date));
+  if (!bucket.hours) bucket.hours = emptyHourlyDay(date).hours;
   const key = String(hour);
   if (!bucket.hours[key]) {
     bucket.hours[key] = {
@@ -273,7 +376,7 @@ async function bumpHourly(env, date, hour, event) {
     default:
       break;
   }
-  await putJson(env.ADMIN_KV, `analytics:hourly:${date}`, bucket);
+  await putJson(env.ADMIN_KV, keyName, bucket);
 }
 
 const ACTIVITY_EVENTS = new Set([
@@ -311,7 +414,8 @@ export async function recordAnalyticsEvent(env, event) {
   const now = new Date();
   const date = formatKstDate(now);
   const hour = getKstHour(now);
-  const day = await getJson(env.ADMIN_KV, `analytics:day:${date}`, emptyDay(date));
+  const shard = analyticsShard(event.ip);
+  const day = await getJson(env.ADMIN_KV, dayKey(date, shard), emptyDay(date));
   const path = normalizePath(event.path || "/");
   if (!day.paths[path]) day.paths[path] = emptyPath();
   const row = day.paths[path];
@@ -394,8 +498,8 @@ export async function recordAnalyticsEvent(env, event) {
   const source = event.referrerType || event.referrerHost || "direct";
   day.sources[source] = (day.sources[source] || 0) + (event.type === "page_view" ? 1 : 0);
 
-  await putJson(env.ADMIN_KV, `analytics:day:${date}`, day);
-  await bumpHourly(env, date, hour, event);
+  await putJson(env.ADMIN_KV, dayKey(date, shard), day);
+  await bumpHourly(env, date, hour, event, shard);
   await pushRecentActivity(env, event, path);
   return { ok: true };
 }

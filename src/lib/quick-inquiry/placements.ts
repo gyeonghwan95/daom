@@ -17,18 +17,16 @@ export const QUICK_INQUIRY_TOPIC_SLUGS = new Set([
   "임대차전세",
 ]);
 
+/**
+ * 본문 중간 인라인 상담 카드.
+ * 광고처럼 반복되지 않도록 기본 비활성. 히어로·하단 CTA만 사용한다.
+ * force=true 인 화면(문의 전용 페이지 등)만 예외.
+ */
 export function shouldShowQuickInquiryInline(options: {
   category?: string;
   slug?: string;
   serviceSlug?: string;
   force?: boolean;
 }): boolean {
-  if (options.force) return true;
-  if (options.category === "situation" || options.category === "case") return true;
-  if (options.serviceSlug && QUICK_INQUIRY_SERVICE_SLUGS.has(options.serviceSlug)) {
-    return true;
-  }
-  if (options.slug && QUICK_INQUIRY_SERVICE_SLUGS.has(options.slug)) return true;
-  if (options.slug && QUICK_INQUIRY_TOPIC_SLUGS.has(options.slug)) return true;
-  return false;
+  return options.force === true;
 }

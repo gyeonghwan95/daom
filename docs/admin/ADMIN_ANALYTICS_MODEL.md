@@ -6,16 +6,20 @@
 Browser → POST /api/analytics/collect → recordAnalyticsEvent()
 ```
 
-- Admin paths skipped
+- Admin paths skipped · bot UA skipped
 - Rate limit: 120/min/IP
-- Payload whitelist
+- Payload whitelist (`text/plain` or JSON body)
+- First page_view in a tab = landing source (naver/google/direct). Later views = `internal`
+- Writes go to sharded KV keys to avoid lost increments under concurrent traffic
 
 ## Aggregation Keys
 
 | Key | Content |
 |-----|---------|
-| `analytics:day:YYYY-MM-DD` | visits, cta, paths{}, sources{}, devices{}, naverPlace* |
-| `analytics:hourly:YYYY-MM-DD` | hours["0".."23"] { pageViews, cta, consultSubmit, naverPlace } |
+| `analytics:day:YYYY-MM-DD` | legacy unsharded day (still read) |
+| `analytics:day:YYYY-MM-DD:s0`–`s7` | sharded visits, cta, paths{}, sources{}, devices{}, naverPlace* |
+| `analytics:hourly:YYYY-MM-DD` | legacy hourly |
+| `analytics:hourly:YYYY-MM-DD:s0`–`s7` | sharded hours["0".."23"] { pageViews, cta, consultSubmit, naverPlace } |
 | `analytics:recent` | Last 25 CTA/conversion events (no PII) |
 | `email:logs` | Ring buffer 500 |
 | `notices:all` | Floating notices |

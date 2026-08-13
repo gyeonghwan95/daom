@@ -87,7 +87,7 @@ export const NAVER_PLACE_PLACEMENTS: NaverPlacePlacementRule[] = [
     variant: "reservation",
     priority: 1,
     enabled: true,
-    note: "Paired beside 1분 상담 via InquiryNaverCtaPair",
+    note: "Paired beside hero consult CTA via InquiryNaverCtaPair",
   },
   {
     pageType: "global",
@@ -111,7 +111,7 @@ export const NAVER_PLACE_PLACEMENTS: NaverPlacePlacementRule[] = [
     variant: "reservation",
     priority: 1,
     enabled: true,
-    note: "Beside 1분만에 상담 신청하기 in ConversionActionButtons",
+    note: "Beside footer consult CTA in ConversionActionButtons",
   },
   {
     pageType: "global",

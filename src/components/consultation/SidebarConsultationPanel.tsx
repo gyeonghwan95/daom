@@ -77,8 +77,8 @@ export function SidebarConsultationPanel() {
       : []),
     {
       id: "inquiry",
-      label: "1분 상담 신청",
-      hint: "약 1분 · 상황만 적어 보내기",
+      label: "상담 문의하기",
+      hint: "상황만 적어 보내기",
       href: "/contact/inquiry",
       variant: "inquiry" as const,
       icon: <FormIcon className="h-4 w-4 shrink-0" />,

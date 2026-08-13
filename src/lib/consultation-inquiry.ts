@@ -5,18 +5,18 @@
 export const CONTACT_INQUIRY_PATH = "/contact/inquiry" as const;
 
 export const consultationInquiryCopy = {
-  /** 주요 CTA 버튼 */
-  ctaPrimary: "1분만에 상담 신청하기",
-  /** 짧은 버튼 */
-  ctaShort: "상담 신청하기",
+  /** 주요 CTA 버튼 — 광고형 「1분만에」 금지. 페이지당 히어로·하단만. */
+  ctaPrimary: "상담 내용 남기기",
+  /** 짧은 버튼 (히어로) */
+  ctaShort: "상담 문의하기",
   /** 신청서 작성 유도 */
   ctaForm: "상담 신청서 작성하기",
-  /** 1분 안내 (본문·힌트) */
+  /** 본문·힌트 */
   oneMinute:
-    "약 1분이면 상담 신청을 완료할 수 있습니다. 서류가 없어도 상황만 남겨 주세요.",
-  oneMinuteShort: "약 1분이면 상담 신청을 남길 수 있습니다.",
+    "업무명을 몰라도 됩니다. 현재 상황만 남겨 주시면 필요한 절차부터 안내합니다.",
+  oneMinuteShort: "서류가 없어도 상황만 남겨 주시면 됩니다.",
   /** 사이드바·카드 힌트 */
-  hintForm: "약 1분 · 상황만 적어 보내기",
+  hintForm: "상황만 적어 보내기",
 } as const;
 
 export function contactInquiryHref(query?: Record<string, string>): string {

@@ -1,0 +1,1628 @@
+{
+  "generatedAt": "2026-08-13T11:53:52.667Z",
+  "pageCount": 20,
+  "verifiedHistoryCount": 22,
+  "pages": [
+    {
+      "url": "/법률강의",
+      "title": "부산 법률 강의·특강",
+      "metaTitle": "부산 법률 강의·특강｜기관·도서관·학교·기업 맞춤 법률교육",
+      "h1": "부산 법률 강의·특강｜기관·도서관·학교·기업 맞춤 생활법률 교육",
+      "description": "부산 법률 강의·생활법률 특강. 도서관·기관·단체·학교·기업 맞춤 교육. 전세사기 예방, 청년·창업·디지털·진로 특강. 안윤정 법무사 출강.",
+      "kind": "hub",
+      "primaryIntent": "기관·단체·학교·기업 교육담당자용",
+      "audience": [
+        "청년·대학생",
+        "신혼·사회초년생",
+        "예비창업자",
+        "임직원",
+        "학생·학부모",
+        "시민·평생학습"
+      ],
+      "topic": [
+        "전세사기 예방교육",
+        "청년 생활법률 특강",
+        "도서관 법률특강",
+        "기관·단체 법률특강",
+        "부산 법무사 강의",
+        "창업 법률교육",
+        "기업 법률교육",
+        "학교·진로 특강"
+      ],
+      "format": [
+        "특강",
+        "워크숍 · 워크샵",
+        "세미나 · 초청강연",
+        "직원교육"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "haeundae-youth-job-growth-cafe",
+        "lh-busan-changjo-collab",
+        "yangsan-high-school-career-talk"
+      ],
+      "cta": {
+        "title": "강의 가능 일정·맞춤 제안을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/강의이력",
+        "/부산법률강사",
+        "/부산법무사강의",
+        "/부산기관법률특강",
+        "/부산도서관법률특강",
+        "/부산사회복지기관강사",
+        "/강사소개",
+        "/강의문의",
+        "/media#lectures",
+        "/about",
+        "/media",
+        "/임대차전세",
+        "/부산법인설립등기"
+      ],
+      "canonical": "/법률강의",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 법률 강의",
+        "부산 법률 특강",
+        "부산법률강의",
+        "법률 강사 섭외",
+        "생활법률 특강",
+        "기관 법률교육",
+        "부산 법무사 강의"
+      ]
+    },
+    {
+      "url": "/부산법률강사",
+      "title": "부산 강사 초빙",
+      "metaTitle": "부산 강사 초빙｜기관·기업·청년 대상 사례 중심 실무 특강",
+      "h1": "부산에서 실무형 특강 강사를 찾고 계신가요?",
+      "description": "공공기관·기업·청년기관·도서관·사회복지기관을 대상으로 생활분쟁, 주거안전, 창업·기업 법률, 상속과 재산정리 등 사례 중심 교육을 진행합니다. 대상과 시간에 맞춘 강의주제, 커리큘럼과 출강 가능 일정을 확인할 수 있습니다.",
+      "kind": "hiring",
+      "primaryIntent": "부산 강사 초빙 · 출강 · 섭외",
+      "audience": [
+        "공공기관",
+        "기업·협회",
+        "청년기관",
+        "도서관·시민",
+        "복지·자립지원",
+        "학교·진로"
+      ],
+      "topic": [
+        "전세사기 예방교육",
+        "청년 생활법률 특강",
+        "도서관 법률특강",
+        "기관·단체 법률특강",
+        "부산 법무사 강의",
+        "창업 법률교육",
+        "기업 법률교육",
+        "학교·진로 특강"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "haeundae-youth-job-growth-cafe",
+        "lh-busan-changjo-collab",
+        "yangsan-high-school-career-talk"
+      ],
+      "cta": {
+        "title": "강의 가능 일정·맞춤 제안을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/강사소개",
+        "/강의이력",
+        "/공공기관법률교육",
+        "/기업법률교육",
+        "/청년생활법률특강",
+        "/창업법률교육",
+        "/부산사회복지기관강사",
+        "/부산도서관법률특강",
+        "/부산강사섭외비용",
+        "/부산강사섭외체크리스트",
+        "/기관특강주제추천",
+        "/강의시간별구성",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산법률강사",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 강사 초빙",
+        "부산 강사 출강",
+        "부산 강사 섭외",
+        "부산 특강 강사",
+        "부산 외부강사",
+        "부산 법무사 강사",
+        "부산 여성 강사"
+      ]
+    },
+    {
+      "url": "/전세사기예방교육",
+      "title": "부산 전세사기 예방교육",
+      "metaTitle": "부산 전세사기 예방교육｜청년·신혼부부·기관 맞춤형 법률특강",
+      "h1": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+      "description": "부산 전세사기 예방교육. 계약 전 확인, 등기부등본, 확정일자, 보증보험 등을 사례 중심으로 안내합니다. 청년·신혼·기관 맞춤 특강.",
+      "kind": "topic",
+      "primaryIntent": "주거·임대차 예방교육",
+      "audience": [
+        "청년기관·복지기관",
+        "대학·학교",
+        "기업 신입"
+      ],
+      "topic": [
+        "청년 전세사기 예방",
+        "대학생 주거법률",
+        "신혼·사회초년생",
+        "자립준비청년"
+      ],
+      "format": [
+        "특강",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "self-support-jeonse-prevention",
+        "youth-jeonse-prevention-series"
+      ],
+      "cta": {
+        "title": "전세사기 예방교육 일정을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/청년생활법률특강",
+        "/부산법률강사",
+        "/강의문의",
+        "/임대차전세",
+        "/about"
+      ],
+      "canonical": "/전세사기예방교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 전세사기 예방교육",
+        "전세사기 예방교육 강사",
+        "청년 전세사기 교육",
+        "등기부등본 강의",
+        "전세사기 예방교육 부산",
+        "부산 전세사기 특강"
+      ]
+    },
+    {
+      "url": "/청년생활법률특강",
+      "title": "부산 청년 특강 강사",
+      "metaTitle": "부산 청년 특강 강사｜주거·돈거래·계약에서 나를 지키는 실전교육",
+      "h1": "부산 청년 특강 강사｜주거·돈거래·계약에서 나를 지키는 방법",
+      "description": "부산 청년·사회초년생·자립준비청년 대상 특강. 임대차계약, 전세사기, 가족·친구 사이 돈거래, 카카오톡·통화녹음 증거를 사례 중심으로 안내합니다.",
+      "kind": "topic",
+      "primaryIntent": "청년센터 · 자립 · 사회초년생",
+      "audience": [
+        "청년센터·공간",
+        "대학·취업준비",
+        "자립준비청년"
+      ],
+      "topic": [
+        "전월세·주거",
+        "디지털·온라인",
+        "창업 입문"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "haeundae-youth-job-growth-cafe",
+        "youth-mistake-crime-lecture",
+        "youth-jeonse-prevention-series"
+      ],
+      "cta": {
+        "title": "청년 생활법률 특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/전세사기예방교육",
+        "/디지털법률교육",
+        "/법률강의",
+        "/부산법률강사",
+        "/강의문의",
+        "/media#lectures"
+      ],
+      "canonical": "/청년생활법률특강",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 청년 특강 강사",
+        "부산 청년교육 강사",
+        "부산 청년센터 강사",
+        "부산 자립청년 교육",
+        "부산 사회초년생 교육"
+      ]
+    },
+    {
+      "url": "/창업법률교육",
+      "title": "부산 창업교육 강사",
+      "metaTitle": "부산 창업교육 강사｜예비창업자가 놓치기 쉬운 계약·법인·채권관리",
+      "h1": "부산 창업교육 강사｜예비창업자가 놓치기 쉬운 법률 실수",
+      "description": "부산 예비창업자·초기기업 대상 교육. 개인·법인 차이, 공동창업 합의, 거래계약·미수금, 법인변경등기를 실무 범위에서 안내합니다. 세무·노무·투자유치 전략은 다루지 않습니다.",
+      "kind": "topic",
+      "primaryIntent": "창업지원 · 예비창업 · 초기기업",
+      "audience": [
+        "창업지원기관",
+        "청년창업"
+      ],
+      "topic": [
+        "법인설립 기초",
+        "동업·지분",
+        "계약·미수금"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "lh-busan-changjo-collab"
+      ],
+      "cta": {
+        "title": "창업 법률특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/기업법률교육",
+        "/법률강의",
+        "/부산법률강사",
+        "/강의문의",
+        "/부산기업법률자문",
+        "/부산법인설립등기",
+        "/부산임원변경등기"
+      ],
+      "canonical": "/창업법률교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 창업교육 강사",
+        "부산 예비창업자 강사",
+        "부산 창업 특강",
+        "부산 스타트업 강사"
+      ]
+    },
+    {
+      "url": "/기업법률교육",
+      "title": "부산 기업교육 강사",
+      "metaTitle": "부산 기업교육 강사｜계약·미수금·증거관리와 법인 실무 특강",
+      "h1": "부산 기업교육 강사｜계약·미수금·증거관리와 법인 실무",
+      "description": "부산 기업·직원교육 강사 안내. 계약서 확인, 미수금·증거관리, 법인 임원·변경등기 기초를 사례로 구성합니다. 리더십·마케팅 강의가 아니며 법정 지정교육은 포함하지 않습니다.",
+      "kind": "topic",
+      "primaryIntent": "기업교육 · 직원교육 · 사내특강",
+      "audience": [
+        "중소·소상공",
+        "산업단지·협회"
+      ],
+      "topic": [
+        "계약 체크리스트",
+        "미수금·채권",
+        "등기기한"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [],
+      "cta": {
+        "title": "기업 법률특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/창업법률교육",
+        "/공공기관법률교육",
+        "/부산기관법률특강",
+        "/부산법률강사",
+        "/강의문의",
+        "/부산기업법률자문",
+        "/부산법인등기",
+        "/부산임원변경등기"
+      ],
+      "canonical": "/기업법률교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 기업교육 강사",
+        "부산 직원교육 강사",
+        "부산 사내교육 강사",
+        "부산 실무교육 강사"
+      ]
+    },
+    {
+      "url": "/강사소개",
+      "title": "안윤정 법무사 강사 소개",
+      "metaTitle": "안윤정 법무사 강사 소개｜부산 법률특강·전세사기·창업 강의",
+      "h1": "기관이 먼저 찾는 부산 법률 강사, 안윤정 법무사",
+      "description": "안윤정 법무사 강사 소개. 부산 법률 강의·특강 출강. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학. 생활법률·전세사기 예방·청년·진로 특강.",
+      "kind": "speaker",
+      "primaryIntent": "확인된 출강 · 기관용 강사 프로필",
+      "audience": [],
+      "topic": [
+        "전세사기 예방교육",
+        "청년 생활법률 특강",
+        "도서관 법률특강",
+        "기관·단체 법률특강",
+        "부산 법무사 강의",
+        "창업 법률교육",
+        "기업 법률교육",
+        "학교·진로 특강"
+      ],
+      "format": [],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "haeundae-youth-job-growth-cafe",
+        "lh-busan-changjo-collab",
+        "yangsan-high-school-career-talk"
+      ],
+      "cta": {
+        "title": "연락처만 남겨도 됩니다",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/부산법률강사",
+        "/강사소개",
+        "/법률강의",
+        "/강의이력",
+        "/강의문의",
+        "/about",
+        "/media"
+      ],
+      "canonical": "/강사소개",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "법률 강사 프로필",
+        "안윤정 법무사",
+        "법무사 강사",
+        "부산 법률 강사",
+        "부산 법무사 강의"
+      ]
+    },
+    {
+      "url": "/강의문의",
+      "title": "법률 강의 문의",
+      "metaTitle": "부산 법률 강의 문의｜기관·단체 특강·강사 섭외 일정 협의",
+      "h1": "기관·단체 담당자를 위한 부산 법률 강의 문의",
+      "description": "부산 법률 강의·특강 문의. 도서관·기관·학교·기업·협회 담당자용. 주제·대상·일정만 남겨 주세요. 민감정보는 받지 않습니다.",
+      "kind": "inquiry",
+      "primaryIntent": "맞춤 제안 요청",
+      "audience": [],
+      "topic": [
+        "전세사기 예방교육",
+        "청년 생활법률 특강",
+        "도서관 법률특강",
+        "기관·단체 법률특강",
+        "부산 법무사 강의",
+        "창업 법률교육",
+        "기업 법률교육",
+        "학교·진로 특강"
+      ],
+      "format": [],
+      "region": "부산",
+      "actualLectureHistory": [],
+      "cta": {
+        "title": "강의 가능 일정·맞춤 제안을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/강의이력",
+        "/부산법률강사",
+        "/부산법무사강의",
+        "/부산기관법률특강",
+        "/부산도서관법률특강",
+        "/부산사회복지기관강사",
+        "/강사소개",
+        "/media#lectures",
+        "/contact"
+      ],
+      "canonical": "/강의문의",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "법률 강의 문의",
+        "출강 문의",
+        "강의 제안서",
+        "부산 법률특강 문의",
+        "기관 강의 섭외 문의"
+      ]
+    },
+    {
+      "url": "/디지털법률교육",
+      "title": "부산 디지털 법률교육",
+      "metaTitle": "부산 디지털 법률교육｜개인정보·명예훼손·온라인 범죄 예방특강",
+      "h1": "부산 디지털 법률교육｜온라인 활동에서 꼭 알아야 할 법률 기준",
+      "description": "부산 디지털 법률교육. SNS·개인정보·온라인 사기 예방을 생활법률 관점으로 안내합니다. 공식 예방교육 대체 아님.",
+      "kind": "topic",
+      "primaryIntent": "디지털·온라인 예방",
+      "audience": [
+        "청년·학생",
+        "직장인·교직원"
+      ],
+      "topic": [
+        "SNS·게시글",
+        "개인정보",
+        "온라인 사기"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "youth-digital-law-guide"
+      ],
+      "cta": {
+        "title": "디지털 법률교육을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/청년생활법률특강",
+        "/학교법률교육",
+        "/부산법률강사",
+        "/강의문의"
+      ],
+      "canonical": "/디지털법률교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 디지털 법률교육",
+        "개인정보보호 특강",
+        "사이버 명예훼손 교육"
+      ]
+    },
+    {
+      "url": "/학교법률교육",
+      "title": "부산 학교·대학 법률교육",
+      "metaTitle": "부산 학교·대학 법률교육｜청소년·대학생 생활법률 특강",
+      "h1": "부산 학교·대학 법률교육｜학생 눈높이에 맞춘 사례 중심 특강",
+      "description": "부산 학교·대학 법률교육. 학생 눈높이 생활법률·진로특강. 양산제일고 진로특강 등 이력 기반.",
+      "kind": "topic",
+      "primaryIntent": "초·중·고·대학·학부모·교직원",
+      "audience": [
+        "중·고등학생",
+        "대학생",
+        "학부모·교직원"
+      ],
+      "topic": [
+        "법무사 진로특강",
+        "디지털 예방"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "yangsan-high-school-career-talk"
+      ],
+      "cta": {
+        "title": "학교·대학 특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법무사진로특강",
+        "/디지털법률교육",
+        "/부산법률강사",
+        "/강의문의",
+        "/about"
+      ],
+      "canonical": "/학교법률교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 학교 법률교육",
+        "청소년 법률교육",
+        "대학생 법률교육"
+      ]
+    },
+    {
+      "url": "/공공기관법률교육",
+      "title": "부산 공공기관 강사",
+      "metaTitle": "부산 공공기관 강사｜직원·상담사·시민 대상 사례 중심 실무교육",
+      "h1": "부산 공공기관 강사｜직원·상담사·시민을 위한 실무교육",
+      "description": "부산 공공기관·공기업·지자체 외부강사 안내. 직원교육과 시민교육을 구분해 생활분쟁·계약·증거·상속 초기 안내를 사례 중심으로 구성합니다. 법정 지정교육은 포함하지 않습니다.",
+      "kind": "topic",
+      "primaryIntent": "공공기관 · 기관교육 · 외부강사",
+      "audience": [
+        "신규 직원",
+        "실무 담당"
+      ],
+      "topic": [
+        "생활법률",
+        "계약·채권",
+        "디지털"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "lh-busan-changjo-collab"
+      ],
+      "cta": {
+        "title": "공공기관 교육 문의를 남겨 주세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/기업법률교육",
+        "/부산기관법률특강",
+        "/부산법률강사",
+        "/강의문의",
+        "/공공기관등기업무"
+      ],
+      "canonical": "/공공기관법률교육",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 공공기관 강사",
+        "부산 공공기관 특강",
+        "부산 기관교육 강사",
+        "부산 공공기관 직원교육"
+      ]
+    },
+    {
+      "url": "/법무사진로특강",
+      "title": "법무사 진로특강",
+      "metaTitle": "법무사 진로특강｜법무사의 업무와 법률전문직 진로 이야기",
+      "h1": "법무사 진로특강｜일·자격·현장에서 보는 법률전문직",
+      "description": "법무사 진로특강. 업무·시험·커리어를 학교·청년 눈높이로 전달. 양산제일고 특강 이력.",
+      "kind": "topic",
+      "primaryIntent": "진로·직업 특강",
+      "audience": [
+        "고등학생",
+        "대학생"
+      ],
+      "topic": [
+        "법무사 하는 일",
+        "시험·준비",
+        "관련 자격"
+      ],
+      "format": [
+        "특강"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "yangsan-high-school-career-talk"
+      ],
+      "cta": {
+        "title": "진로특강 일정을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/학교법률교육",
+        "/강사소개",
+        "/부산법률강사",
+        "/강의문의",
+        "/about"
+      ],
+      "canonical": "/법무사진로특강",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "법무사 진로특강",
+        "법조인 진로강의",
+        "진로교육 강사 법무사"
+      ]
+    },
+    {
+      "url": "/부산도서관법률특강",
+      "title": "부산 도서관·시민강좌 강사",
+      "metaTitle": "부산 도서관·시민강좌 강사｜일상에서 바로 쓰는 생활법률 교육",
+      "h1": "부산 도서관·시민강좌 강사｜시민이 바로 활용하는 생활법률 강좌",
+      "description": "부산 도서관·평생학습관·시민강좌 강사 안내. 시민도서관 연속 강의 이력을 바탕으로 계약·주거·상속 기초·생활분쟁을 시민 눈높이로 구성합니다.",
+      "kind": "topic",
+      "primaryIntent": "도서관 · 시민강좌 · 평생교육",
+      "audience": [
+        "일반 시민",
+        "중장년·시니어",
+        "청년·사회초년생"
+      ],
+      "topic": [
+        "생활법률 입문",
+        "전세사기 예방",
+        "디지털 생활법률"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "youth-law-essential-lecture"
+      ],
+      "cta": {
+        "title": "도서관·평생학습 특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/강의이력",
+        "/부산기관법률특강",
+        "/부산법률강사",
+        "/강사소개",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산도서관법률특강",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 도서관 법률특강",
+        "평생학습관 법률강의",
+        "시민 생활법률 특강",
+        "부산 도서관 특강 강사",
+        "부산 생활법률 강의"
+      ]
+    },
+    {
+      "url": "/부산법무사강의",
+      "title": "부산 법무사 강의",
+      "metaTitle": "부산 법무사 강의｜실무 기반 법률특강·기관 출강",
+      "h1": "부산 법무사 강의｜실무로 설명하는 법률특강·기관 출강",
+      "description": "부산 법무사 강의·특강 안내. 안윤정 법무사가 등기·계약·생활법률 실무 경험을 바탕으로 기관·학교·기업·도서관 출강 교육을 진행합니다.",
+      "kind": "topic",
+      "primaryIntent": "법무사 실무 기반 교육",
+      "audience": [
+        "기관 교육담당",
+        "학교·대학",
+        "기업·협회"
+      ],
+      "topic": [
+        "강사 섭외 안내",
+        "강사 프로필",
+        "전세사기 예방"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "yangsan-high-school-career-talk",
+        "haeundae-youth-job-growth-cafe"
+      ],
+      "cta": {
+        "title": "부산 법무사 강의를 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/부산법률강사",
+        "/강사소개",
+        "/법률강의",
+        "/강의이력",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산법무사강의",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 법무사 강의",
+        "부산 법무사 특강",
+        "법무사 법률강의",
+        "부산 법무사 출강",
+        "법무사 기관 강의"
+      ]
+    },
+    {
+      "url": "/부산기관법률특강",
+      "title": "부산 기관 법률특강",
+      "metaTitle": "부산 기관 법률특강｜단체·협회·업체·복지기관 맞춤 교육",
+      "h1": "부산 기관 법률특강｜단체·협회·업체에 맞춘 생활법률 교육",
+      "description": "부산 기관·단체·협회·업체·복지기관 맞춤 법률특강. 대상과 목적에 맞춰 생활법률·전세·청년·창업·기업 예방교육을 기획합니다.",
+      "kind": "topic",
+      "primaryIntent": "기관·단체·협회·복지·업체",
+      "audience": [
+        "기관 이용자·시민",
+        "임직원·실무자",
+        "청년·학생"
+      ],
+      "topic": [
+        "도서관·평생학습",
+        "공공기관 임직원",
+        "기업·협회",
+        "청년·복지기관"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "lh-busan-changjo-collab",
+        "haeundae-youth-job-growth-cafe"
+      ],
+      "cta": {
+        "title": "기관·단체 맞춤 특강을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/부산도서관법률특강",
+        "/부산법무사강의",
+        "/부산법률강사",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산기관법률특강",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 기관 법률특강",
+        "부산 단체 법률교육",
+        "부산 협회 법률특강",
+        "기관 생활법률 특강",
+        "부산 업체 법률특강"
+      ]
+    },
+    {
+      "url": "/부산사회복지기관강사",
+      "title": "부산 사회복지기관 강사",
+      "metaTitle": "부산 사회복지기관 강사｜종사자·이용자 생활법률·분쟁예방 교육",
+      "h1": "부산 사회복지기관 강사｜현장 종사자를 위한 가족·재산·생활분쟁 교육",
+      "description": "부산 사회복지·자립지원기관 강사 안내. 가족·재산·생활분쟁 예방을 현장 종사자·이용자 눈높이에 맞춰 구성합니다. 자립지원전담기관 검증 이력 기반.",
+      "kind": "topic",
+      "primaryIntent": "사회복지·자립지원·종사자교육",
+      "audience": [
+        "현장 종사자",
+        "이용자·자립준비청년",
+        "교육·사업 담당자"
+      ],
+      "topic": [
+        "전세사기 예방",
+        "청년·자립 생활법률",
+        "기관 맞춤 특강",
+        "강사 섭외 검토"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "self-support-jeonse-prevention",
+        "self-support-daily-dispute-survival"
+      ],
+      "cta": {
+        "title": "사회복지·자립지원 교육 일정을 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/부산법률강사",
+        "/부산기관법률특강",
+        "/전세사기예방교육",
+        "/청년생활법률특강",
+        "/강의이력",
+        "/강사소개",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산사회복지기관강사",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 사회복지기관 강사",
+        "부산 복지기관 종사자교육",
+        "부산 자립지원 종사자교육",
+        "부산 사회복지사 교육 강사",
+        "부산 현장 실무교육 강사"
+      ]
+    },
+    {
+      "url": "/부산강사섭외비용",
+      "title": "부산 강사 섭외 비용",
+      "metaTitle": "부산 강사 섭외 비용｜출강료·견적에 영향을 주는 요소 안내",
+      "h1": "부산 강사 섭외 비용｜견적 전에 알아두면 좋은 요소",
+      "description": "부산 강사 섭외 비용·출강료 안내. 금액표를 단정하지 않고, 시간·형식·이동·자료 범위 등 견적 요소와 문의 시 남기면 좋은 정보를 정리합니다.",
+      "kind": "topic",
+      "primaryIntent": "출강료·강의료 안내",
+      "audience": [
+        "기관 교육담당",
+        "도서관·평생학습",
+        "청년·복지기관"
+      ],
+      "topic": [
+        "섭외 체크리스트",
+        "시간별 구성",
+        "강사 섭외 허브",
+        "강의 문의"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [],
+      "cta": {
+        "title": "구성안·가능 여부부터 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/부산법률강사",
+        "/부산강사섭외체크리스트",
+        "/강의시간별구성",
+        "/법률강의",
+        "/강사소개",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산강사섭외비용",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 강사 섭외 비용",
+        "부산 출강료",
+        "부산 강사료",
+        "부산 특강 강사 비용",
+        "강의료 견적"
+      ]
+    },
+    {
+      "url": "/부산강사섭외체크리스트",
+      "title": "부산 강사 섭외 체크리스트",
+      "metaTitle": "부산 강사 섭외 체크리스트｜외부강사·프로필·강의안 준비 항목",
+      "h1": "부산 강사 섭외 체크리스트｜담당자가 먼저 정리할 항목",
+      "description": "부산 강사 섭외 체크리스트. 교육담당자가 목적·대상·일정·프로필·강의계획서·비용 협의까지 빠짐없이 확인하도록 정리한 실무 안내입니다.",
+      "kind": "topic",
+      "primaryIntent": "외부강사 섭외 실무",
+      "audience": [
+        "교육·사업 담당자",
+        "도서관·학습관",
+        "청년·복지 실무"
+      ],
+      "topic": [
+        "섭외 비용 안내",
+        "주제 추천",
+        "강사 소개",
+        "강의 이력"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [],
+      "cta": {
+        "title": "체크리스트를 채운 뒤 문의하세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/부산법률강사",
+        "/부산강사섭외비용",
+        "/기관특강주제추천",
+        "/강의시간별구성",
+        "/법률강의",
+        "/강사소개",
+        "/강의이력",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/부산강사섭외체크리스트",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 강사 섭외 체크리스트",
+        "부산 외부강사 섭외 방법",
+        "강사 프로필 요청 방법",
+        "강의계획서에 들어갈 내용"
+      ]
+    },
+    {
+      "url": "/기관특강주제추천",
+      "title": "부산 기관 특강 주제 추천",
+      "metaTitle": "부산 기관 특강 주제 추천｜청년·직원·시민 교육 기획 가이드",
+      "h1": "부산 기관 특강 주제 추천｜청년·직원·시민 교육 기획 가이드",
+      "description": "부산 기관 특강 주제 추천. 청년 프로그램·직원교육·시민강좌에 맞는 생활법률·주거·계약·디지털·진로 주제를 기획 관점에서 안내합니다.",
+      "kind": "topic",
+      "primaryIntent": "교육기획·주제 선정",
+      "audience": [
+        "청년·자립 프로그램",
+        "직원·종사자 교육",
+        "시민·평생학습",
+        "학교·진로"
+      ],
+      "topic": [
+        "전세사기 예방",
+        "청년 생활법률",
+        "디지털 법률",
+        "학교·진로",
+        "도서관 시민강좌",
+        "창업 법률 입문"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "self-support-daily-dispute-survival",
+        "haeundae-youth-job-growth-cafe",
+        "changwon-youth-vision-center",
+        "yangsan-high-school-career-talk",
+        "lh-busan-changjo-collab"
+      ],
+      "cta": {
+        "title": "주제를 고르셨다면 일정만 남겨 주세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/부산법률강사",
+        "/부산기관법률특강",
+        "/강의시간별구성",
+        "/부산강사섭외체크리스트",
+        "/강의이력",
+        "/강사소개",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/기관특강주제추천",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "부산 기관 특강 주제 추천",
+        "부산 직원교육 주제 추천",
+        "부산 청년 프로그램 강의주제",
+        "부산 시민강좌 주제 추천"
+      ]
+    },
+    {
+      "url": "/강의시간별구성",
+      "title": "강의시간별 구성",
+      "metaTitle": "강의시간별 구성｜60·90·120분·반일 특강 목차 차이",
+      "h1": "강의시간별 구성｜60분부터 반일까지 목차와 진행 차이",
+      "description": "1시간 특강·2시간 참여형·4시간 실무 워크숍 등 강의시간별 구성 안내. 시간에 따라 이론·사례·실습·질의응답 비중이 어떻게 달라지는지 설명합니다.",
+      "kind": "topic",
+      "primaryIntent": "시간·형식 가이드",
+      "audience": [
+        "짧은 특강 담당",
+        "반일·워크숍 기획",
+        "연속과정 기획"
+      ],
+      "topic": [
+        "주제 추천",
+        "전세사기 예방",
+        "섭외 체크리스트",
+        "강사 섭외"
+      ],
+      "format": [
+        "특강",
+        "정규·연속 과정",
+        "사례 중심 워크숍",
+        "소규모 상담형 교육",
+        "온라인 강의"
+      ],
+      "region": "부산",
+      "actualLectureHistory": [
+        "citizen-library-life-law",
+        "self-support-jeonse-prevention",
+        "haeundae-youth-job-growth-cafe"
+      ],
+      "cta": {
+        "title": "시간과 주제를 알려 주세요",
+        "inquiry": true
+      },
+      "internalLinks": [
+        "/법률강의",
+        "/부산법률강사",
+        "/기관특강주제추천",
+        "/부산강사섭외비용",
+        "/강사소개",
+        "/강의문의",
+        "/about",
+        "/media#lectures"
+      ],
+      "canonical": "/강의시간별구성",
+      "indexability": "indexable",
+      "rankingProtection": "UNKNOWN_PERFORMANCE",
+      "primaryKeywords": [
+        "1시간 특강 주제",
+        "2시간 참여형 교육",
+        "4시간 실무 워크숍",
+        "강의시간별 구성"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "id": "citizen-library-life-law",
+      "institutionType": "도서관",
+      "audience": [
+        "시민",
+        "성인 수강생"
+      ],
+      "topics": [
+        "전·월세계약",
+        "전세사기 예방",
+        "가족·금전·관계 분쟁",
+        "생활 속 범죄 예방",
+        "명예훼손·모욕",
+        "개인정보보호",
+        "온라인 범죄 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "연속 과정"
+      ],
+      "verified": true,
+      "relatedPage": "/법률강의",
+      "institutionPublic": true,
+      "title": "부산광역시립시민도서관 생활법률 특강",
+      "institution": "부산광역시립시민도서관",
+      "slug": "/강의이력/busan-citizen-library-life-law"
+    },
+    {
+      "id": "self-support-jeonse-prevention",
+      "institutionType": "복지기관",
+      "audience": [
+        "자립준비청년",
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "전·월세 계약",
+        "보증금 보호",
+        "등기부등본 확인"
+      ],
+      "region": "부산 연제구",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "부산광역시 자립지원전담기관 전세사기 예방 특강",
+      "institution": "부산광역시 자립지원전담기관",
+      "slug": "/강의이력/busan-self-support-jeonse-prevention"
+    },
+    {
+      "id": "self-support-daily-dispute-survival",
+      "institutionType": "복지기관",
+      "audience": [
+        "자립준비청년",
+        "청년"
+      ],
+      "topics": [
+        "일상분쟁",
+        "생활법률",
+        "계약",
+        "분쟁 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/청년생활법률특강",
+      "institutionPublic": true,
+      "title": "부산광역시 자립지원전담기관 일상분쟁 생존법 특강",
+      "institution": "부산광역시 자립지원전담기관",
+      "slug": "/강의이력/busan-self-support-daily-dispute-survival"
+    },
+    {
+      "id": "haeundae-startup-law-2026-07",
+      "institutionType": "청년기관",
+      "audience": [
+        "청년",
+        "예비창업자"
+      ],
+      "topics": [
+        "창업법률",
+        "계약",
+        "법인",
+        "분쟁 예방"
+      ],
+      "region": "부산 해운대구",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/창업법률교육",
+      "institutionPublic": true,
+      "title": "해운대청년채움공간 창업법률 특강",
+      "institution": "해운대청년채움공간",
+      "slug": "/강의이력/haeundae-youth-space-startup-law-2026-07"
+    },
+    {
+      "id": "changwon-youth-vision-center",
+      "institutionType": "청년기관",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "청년 생활법률",
+        "전월세 계약",
+        "금전분쟁",
+        "계약",
+        "온라인 법률문제",
+        "일상 분쟁 예방"
+      ],
+      "region": "창원",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/청년생활법률특강",
+      "institutionPublic": true,
+      "title": "창원청년비전센터 청년 생활법률 특강",
+      "institution": "창원청년비전센터",
+      "slug": "/강의이력/changwon-youth-vision-center"
+    },
+    {
+      "id": "yangsan-high-school-career-talk",
+      "institutionType": "학교",
+      "audience": [
+        "고등학생"
+      ],
+      "topics": [
+        "법무사 업무",
+        "법률전문직 진로",
+        "법무사 시험",
+        "직업 소개"
+      ],
+      "region": "양산",
+      "format": [
+        "진로특강"
+      ],
+      "verified": true,
+      "relatedPage": "/법무사진로특강",
+      "institutionPublic": true,
+      "title": "양산제일고 법무사 진로특강",
+      "institution": "양산제일고",
+      "slug": "/강의이력/yangsan-jeil-high-career-talk"
+    },
+    {
+      "id": "haeundae-youth-job-growth-cafe",
+      "institutionType": "청년기관",
+      "audience": [
+        "청년",
+        "사회초년생"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "전월세 계약",
+        "등기부 확인",
+        "돈·부동산·관계 분쟁",
+        "취업 관련 생활법률"
+      ],
+      "region": "부산 해운대구",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "해운대 청년 JOB성장카페 청년 맞춤 법률 강의",
+      "institution": "해운대 청년 JOB성장카페",
+      "slug": "/강의이력/haeundae-youth-job-growth-cafe"
+    },
+    {
+      "id": "lh-busan-changjo-collab",
+      "institutionType": "창업지원",
+      "audience": [
+        "청년",
+        "시민"
+      ],
+      "topics": [
+        "생활법률 상담",
+        "청년 정책 연계 교육"
+      ],
+      "region": "부산",
+      "format": [
+        "세미나"
+      ],
+      "verified": true,
+      "relatedPage": "/법률강의",
+      "institutionPublic": true,
+      "title": "LH·부산창조경제혁신센터 청년·시민 생활법률 프로그램",
+      "institution": "LH · 부산창조경제혁신센터",
+      "slug": "/강의이력/lh-busan-ccei-life-law"
+    },
+    {
+      "id": "youth-jeonse-prevention-series",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "등기부등본 확인",
+        "확정일자"
+      ],
+      "region": "부산",
+      "format": [
+        "연속 과정"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 전세사기 예방 오프라인 강의 시리즈",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-jeonse-prevention-series"
+    },
+    {
+      "id": "youth-digital-law-guide",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "온라인 사기",
+        "명예훼손",
+        "모욕",
+        "개인정보",
+        "디지털 법률 리스크"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/디지털법률교육",
+      "institutionPublic": true,
+      "title": "청년 디지털 법률 가이드 강의",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-digital-law-guide"
+    },
+    {
+      "id": "youth-mistake-crime-lecture",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "생활 속 범죄",
+        "온라인 행동과 법적 책임",
+        "명예훼손",
+        "모욕",
+        "개인정보",
+        "형사 리스크 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/디지털법률교육",
+      "institutionPublic": true,
+      "title": "청년 대상 생활 속 형사 리스크 예방 강의",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-mistake-crime-lecture"
+    },
+    {
+      "id": "youth-law-essential-lecture",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "생활법률 기초",
+        "일상 속 법",
+        "계약",
+        "분쟁 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/청년생활법률특강",
+      "institutionPublic": true,
+      "title": "청년 대상 생활법률 기초 강의",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-life-law-basics"
+    },
+    {
+      "id": "housing-contract-practical-guide",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "주거계약 실무",
+        "전·월세 계약 체크리스트"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 주거계약 실전 가이드 강의",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-housing-contract-guide"
+    },
+    {
+      "id": "citizen-library-week-1",
+      "institutionType": "도서관",
+      "audience": [
+        "시민",
+        "성인 수강생"
+      ],
+      "topics": [
+        "전·월세계약",
+        "계약 체크리스트"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/법률강의",
+      "institutionPublic": true,
+      "title": "시민도서관 생활법률 1회차 · 전·월세계약",
+      "institution": "부산광역시립시민도서관",
+      "slug": "/강의이력/busan-citizen-library-week-1"
+    },
+    {
+      "id": "citizen-library-week-2",
+      "institutionType": "도서관",
+      "audience": [
+        "시민",
+        "성인 수강생"
+      ],
+      "topics": [
+        "가족·금전·관계 분쟁",
+        "생활 분쟁 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/법률강의",
+      "institutionPublic": true,
+      "title": "시민도서관 생활법률 2회차 · 생활 분쟁 예방",
+      "institution": "부산광역시립시민도서관",
+      "slug": "/강의이력/busan-citizen-library-week-2"
+    },
+    {
+      "id": "citizen-library-week-3",
+      "institutionType": "도서관",
+      "audience": [
+        "시민",
+        "성인 수강생"
+      ],
+      "topics": [
+        "명예훼손·모욕",
+        "개인정보보호",
+        "온라인 범죄 예방"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/디지털법률교육",
+      "institutionPublic": true,
+      "title": "시민도서관 생활법률 3회차 · 디지털·형사 예방",
+      "institution": "부산광역시립시민도서관",
+      "slug": "/강의이력/busan-citizen-library-week-3"
+    },
+    {
+      "id": "citizen-library-week-4",
+      "institutionType": "도서관",
+      "audience": [
+        "시민",
+        "성인 수강생"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "생활법률 종합",
+        "체크리스트"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/법률강의",
+      "institutionPublic": true,
+      "title": "시민도서관 생활법률 4회차 · 종합 정리",
+      "institution": "부산광역시립시민도서관",
+      "slug": "/강의이력/busan-citizen-library-week-4"
+    },
+    {
+      "id": "youth-money-property-dispute",
+      "institutionType": "청년기관",
+      "audience": [
+        "청년",
+        "사회초년생"
+      ],
+      "topics": [
+        "금전분쟁",
+        "부동산 분쟁",
+        "관계 분쟁 예방"
+      ],
+      "region": "부산 해운대구",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/청년생활법률특강",
+      "institutionPublic": true,
+      "title": "청년 돈·부동산·관계 분쟁 예방 특강",
+      "institution": "해운대·수영·동래 청년 대상 출강",
+      "slug": "/강의이력/youth-money-property-dispute"
+    },
+    {
+      "id": "youth-jeonse-legal-education",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "등기부등본",
+        "확정일자"
+      ],
+      "region": "부산",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 전세사기 예방 법률교육 · 등기부·확정일자",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-jeonse-legal-education"
+    },
+    {
+      "id": "youth-jeonse-most-sought",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "보증금 보호",
+        "계약 점검"
+      ],
+      "region": "부산",
+      "format": [
+        "강의"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 전세사기 예방 강의 · 자주 묻는 질문 중심",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-jeonse-most-sought"
+    },
+    {
+      "id": "youth-jeonse-offline-session",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "계약 실무"
+      ],
+      "region": "부산",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 전세사기 예방특강 오프라인 성료",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-jeonse-offline-session"
+    },
+    {
+      "id": "youth-jeonse-vaccination",
+      "institutionType": "기타",
+      "audience": [
+        "청년"
+      ],
+      "topics": [
+        "전세사기 예방",
+        "사전 점검"
+      ],
+      "region": "부산",
+      "format": [
+        "특강"
+      ],
+      "verified": true,
+      "relatedPage": "/전세사기예방교육",
+      "institutionPublic": true,
+      "title": "청년 전세사기 예방접종 특강",
+      "institution": "부산 지역 청년·기관 대상 출강",
+      "slug": "/강의이력/youth-jeonse-vaccination"
+    }
+  ],
+  "champions": {
+    "LECTURE_MAIN_HUB": "/법률강의",
+    "LECTURE_HIRING": "/부산법률강사",
+    "CORPORATE": "/기업법률교육",
+    "PUBLIC": "/공공기관법률교육",
+    "WORKSHOP_SEMINAR": "/법률강의 + /부산법률강사 (no new URL)",
+    "STARTUP": "/창업법률교육",
+    "JEONSE": "/전세사기예방교육",
+    "YOUTH": "/청년생활법률특강",
+    "TOPIC_DISCOVERY": "/기관특강주제추천",
+    "CONVERSION": "/강의문의"
+  },
+  "createNew": 0
+}

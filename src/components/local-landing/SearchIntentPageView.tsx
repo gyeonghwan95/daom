@@ -14,7 +14,6 @@ import { ServiceConversionEnhancements } from "@/components/conversion";
 import { resolveConversionKey } from "@/lib/service-conversion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
@@ -130,7 +129,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           content.showRemoteLegalProcess ||
           content.showRemoteCostChecklist
             ? "업무 가능 여부 확인하기"
-            : "1분만에 상담 신청하기"
+            : "상담 문의하기"
         }
         showDiagnosisCta={false}
         showAboutLawyerCta
@@ -320,15 +319,6 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
                 : undefined
           }
         />
-        <div className="mt-6">
-          <CTASection
-            pageType="faq"
-            title="부산 법무사 상담"
-            description={content.bottomCtaText}
-            pageSlug={page.slug}
-            serviceSlug={content.serviceSlug ?? page.serviceSlug}
-          />
-        </div>
       </div>
 
       {conversionKey ? (

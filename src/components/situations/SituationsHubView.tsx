@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
-import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   SituationExplorer,
   type SituationSearchItem,
@@ -10,6 +9,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { PageHero } from "@/components/readability";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import {
   getAllSituationPages,
@@ -72,13 +72,14 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
 
       <PageCoverBanner image={cover} />
 
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-          Legal Situations
-        </p>
-        <h1 className="page-title mt-2">{page.h1}</h1>
-        <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
-      </header>
+      <PageHero
+        h1={page.h1}
+        intro={page.intro}
+        eyebrow="Legal Situations"
+        ctaLabel="상담 문의하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
+      />
 
       <ArticleVisualSlot
         path={page.path}
@@ -150,11 +151,6 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
       </section>
 
       <DiagnosisFAQ items={page.faqs} />
-
-      <QuickInquiryInlineCard
-        pageTitle={page.h1 || page.title}
-        pageUrl={page.path}
-      />
 
       <div id="consultation">
         <LawyerConsultationGuide

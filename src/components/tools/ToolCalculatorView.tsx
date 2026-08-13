@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
@@ -152,18 +151,10 @@ export function ToolCalculatorView({
           <RelatedRecommendationsDisplay groups={recommendationGroups} />
           <div id="consultation">
             <ConsultationCTA
-              title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
+              title="계산 결과를 바탕으로 상담해 보세요"
               description={page.ctaText}
-              buttonLabel="1분만에 상담 신청하기"
+              buttonLabel="상담 내용 남기기"
             />
-            <div className="mt-6">
-              <LawyerConsultationGuide
-                title={page.ctaTitle}
-                description={page.ctaText}
-                showSecondaryLinks
-                pageSlug={slug}
-              />
-            </div>
           </div>
         </>
       ) : null}

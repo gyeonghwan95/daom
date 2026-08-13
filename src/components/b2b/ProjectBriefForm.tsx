@@ -205,7 +205,11 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
   useEffect(() => {
     if (startedRef.current) return;
     startedRef.current = true;
-    trackB2BEvent("project_brief_start", { source_page: sourcePage });
+    trackB2BEvent("project_brief_start", {
+      source_page: sourcePage,
+      category: form.partner === "public" ? "PUBLIC_SECTOR" : undefined,
+      partner_type: form.partner || undefined,
+    });
   }, [sourcePage]);
 
   const pageMeta = useMemo(() => {
@@ -253,6 +257,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
     setStep(2);
     trackB2BEvent("project_brief_step_complete", {
       source_page: sourcePage,
+      category: form.partner === "public" ? "PUBLIC_SECTOR" : undefined,
       partner_type: form.partner || undefined,
       service_type: form.service || undefined,
     });
@@ -284,6 +289,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
 
     trackB2BEvent("project_brief_submit", {
       source_page: sourcePage,
+      category: form.partner === "public" ? "PUBLIC_SECTOR" : undefined,
       partner_type: form.partner || undefined,
       service_type: form.service || undefined,
       lead_size_band: form.sizeBand || undefined,

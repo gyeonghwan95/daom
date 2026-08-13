@@ -80,8 +80,8 @@ export const counselPages: CounselPageContent[] = [
       },
       {
         title: "전세보증금을 받지 못한 경우",
-        description: "임차권등기명령·보증금 절차 안내",
-        href: "/부산임차권등기명령",
+        description: "피해 상황 구분 후 임차권등기·반환 절차 안내",
+        href: "/전세사기피해대응절차",
       },
       {
         title: "대출을 갚고 근저당을 지워야 하는 경우",
@@ -284,7 +284,9 @@ export const counselPages: CounselPageContent[] = [
     ],
     relatedLinks: [
       { href: "/상담", label: "상황 선택형 법무사 상담" },
-      { href: "/부산법무사상담", label: "상담 전 비용·준비서류 안내" },
+      { href: "/부산법무사상담", label: "법무사 업무 상담·준비서류" },
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
+      { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/부산법무사비용", label: "부산 법무사 비용 구성" },
       { href: "/무슨법률업무인지모를때", label: "업무명을 모를 때" },
       { href: "/부산법무사", label: "부산 법무사 안내" },
@@ -300,8 +302,8 @@ export const counselPages: CounselPageContent[] = [
     primaryKeywords: [
       "부산 법률상담",
       "부산 무료법률상담",
-      "부산 법무사 상담",
       "법률구조공단 상담",
+      "법무사 업무범위",
       "부산 등기 상담",
     ],
     ctaTitle: "등기·서류가 필요하신가요?",

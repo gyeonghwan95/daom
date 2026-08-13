@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type ReadabilityCTAProps = {
   title: string;
@@ -22,7 +23,7 @@ export function ReadabilityCTA({
   title,
   description,
   href,
-  buttonLabel = "1분만에 상담 신청하기",
+  buttonLabel = consultationInquiryCopy.ctaPrimary,
   inquiryField,
   fromPage,
   intent,

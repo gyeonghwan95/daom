@@ -10,7 +10,6 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
-import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import {
   InheritanceCostGuide,
   InheritanceJourneyNav,
@@ -24,7 +23,6 @@ import {
   buildPageTocItems,
   ArticleSummary,
   ChecklistBox,
-  ConsultationCTA,
   ContentSection,
   InfoCard,
   PageHero,
@@ -44,7 +42,6 @@ import {
   NATIONWIDE_SERVICE_SLUGS,
   shouldShowNationwideRegionChip,
 } from "@/lib/nationwide/show-region-chip";
-import { shouldShowQuickInquiryInline } from "@/lib/quick-inquiry/placements";
 
 type PageDataTemplateProps = {
   page: PageData;
@@ -110,11 +107,6 @@ export function PageDataTemplate({
     showNationwide &&
     !isDedicatedNationwideHub &&
     !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
-  const showQuickInquiry = shouldShowQuickInquiryInline({
-    category: page.category,
-    slug: page.slug,
-    serviceSlug: page.serviceSlug ?? (page.category === "service" ? page.slug : undefined),
-  });
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
 
@@ -141,7 +133,7 @@ export function PageDataTemplate({
         introParagraphs={page.introParagraphs}
         keywords={page.primaryKeywords}
         ctaLabel={
-          showInheritanceExtras ? "업무 가능 여부 확인하기" : "1분만에 상담 신청하기"
+          showInheritanceExtras ? "업무 가능 여부 확인하기" : "상담 문의하기"
         }
         showDiagnosisCta={false}
         showAboutLawyerCta
@@ -222,36 +214,6 @@ export function PageDataTemplate({
           <RemoteInheritanceProcess fromPage={page.slug} />
           <InheritanceCostGuide fromPage={page.slug} />
         </>
-      ) : null}
-
-      {conversionBlock("mid")}
-
-      {!conversionKey ? (
-        <ConsultationCTA
-          title="현재 상황에 필요한 절차부터 확인해보세요"
-          description={
-            showInheritanceExtras
-              ? "업무명을 몰라도 괜찮습니다. 사망일·상속인·확인된 재산·채무만 남겨 주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-              : "업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-          }
-          buttonLabel={
-            showInheritanceExtras
-              ? "업무 가능 여부 확인하기"
-              : "상담 내용 남기기"
-          }
-          inquiryField={
-            page.serviceSlug ??
-            (page.category === "service" ? page.slug : undefined)
-          }
-          fromPage={page.slug}
-          intent={
-            showInheritanceExtras ? "상속 절차·비용 확인" : undefined
-          }
-        />
-      ) : null}
-
-      {showQuickInquiry ? (
-        <QuickInquiryInlineCard pageTitle={page.h1 || page.title} pageUrl={page.path} />
       ) : null}
 
       {page.consultationPoints.length > 0 ? (

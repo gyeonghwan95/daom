@@ -30,8 +30,7 @@ export function ContactCTASection({
         diagnosisHref={diagnosisHref}
       />
       <p className="text-center text-sm text-navy/65">
-        {consultationInquiryCopy.oneMinuteShort} 방문이 필요하면 네이버 예약도
-        이용하실 수 있습니다.
+        {consultationInquiryCopy.oneMinuteShort}
       </p>
     </section>
   );

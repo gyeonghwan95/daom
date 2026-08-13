@@ -1,20 +1,10 @@
-import Link from "next/link";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
-import {
-  getContactInfo,
-  getDirectConsultationChannels,
-  getPhoneHref,
-} from "@/lib/contact";
-import {
-  CONTACT_INQUIRY_PATH,
-  consultationInquiryCopy,
-} from "@/lib/consultation-inquiry";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type NationwideServiceCardProps = {
   /** 업무 맥락 한 줄 제목 (없으면 기본 문구) */
   headline?: string;
   className?: string;
-  /** 하단 채널 버튼 표시 */
+  /** @deprecated 히어로·하단 CTA와 중복되어 더 이상 채널 버튼을 쓰지 않습니다 */
   showChannelButtons?: boolean;
 };
 
@@ -26,15 +16,9 @@ type NationwideServiceCardProps = {
 export function NationwideServiceCard({
   headline,
   className = "",
-  showChannelButtons = true,
 }: NationwideServiceCardProps) {
   const title =
     headline ?? "부산에 방문하지 않아도 업무를 끝까지 진행할 수 있습니다";
-  const contact = getContactInfo();
-  const channels = getDirectConsultationChannels();
-  const phoneChannel = channels.find((c) => c.id === "phone");
-  const kakaoChannel = channels.find((c) => c.id === "kakao");
-  const naverChannel = channels.find((c) => c.id === "naver");
 
   return (
     <aside
@@ -48,9 +32,8 @@ export function NationwideServiceCard({
           <p className="nationwide-service-card__lead">
             거주지가 부산이 아니거나 부동산·법인이 다른 지역에 있어도
             상담부터 신청까지 원활히 진행할 수 있습니다.{" "}
-            {consultationInquiryCopy.oneMinuteShort} 전화·카카오톡·네이버
-            톡톡으로도 바로 시작할 수 있고, 서류는 사진·우편·전자 방식으로
-            전달하면 됩니다.
+            {consultationInquiryCopy.oneMinuteShort} 서류는 사진·우편·전자
+            방식으로 전달하면 됩니다.
           </p>
         </div>
 
@@ -82,52 +65,6 @@ export function NationwideServiceCard({
             <span>관할·비용·준비서류 바로 안내</span>
           </li>
         </ul>
-      </div>
-
-      <div className="nationwide-service-card__actions">
-        <InquiryNaverCtaPair
-          placement="nationwide_card"
-          layout="row"
-          size="md"
-          inquiry={
-            <Link
-              href={CONTACT_INQUIRY_PATH}
-              className="btn-primary inline-flex min-h-12 items-center justify-center px-5"
-            >
-              {consultationInquiryCopy.ctaPrimary}
-            </Link>
-          }
-        />
-        {showChannelButtons ? (
-          <div className="nationwide-service-card__channels">
-            <a
-              href={phoneChannel?.href ?? getPhoneHref(contact.phone)}
-              className="nationwide-service-card__channel"
-            >
-              전화
-            </a>
-            {kakaoChannel ? (
-              <a
-                href={kakaoChannel.href}
-                className="nationwide-service-card__channel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                카카오톡
-              </a>
-            ) : null}
-            {naverChannel ? (
-              <a
-                href={naverChannel.href}
-                className="nationwide-service-card__channel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                네이버 톡톡
-              </a>
-            ) : null}
-          </div>
-        ) : null}
       </div>
     </aside>
   );

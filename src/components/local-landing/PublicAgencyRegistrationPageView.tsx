@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import {
@@ -81,20 +80,24 @@ export function PublicAgencyRegistrationPageView({
 
   const tocItems = [
     { id: "summary", label: "핵심 요약" },
+    { id: "role-intents", label: "어떤 업무인가요" },
     { id: "what-is", label: "등기업무란" },
     { id: "institutions", label: "대상 기관" },
     { id: "corporate", label: "법인등기" },
     { id: "real-estate", label: "부동산등기" },
     { id: "comparison", label: "촉탁·일반 비교" },
-    { id: "pre-check", label: "담당자 체크리스트" },
+    { id: "scope", label: "업무범위 구분" },
+    { id: "pre-check", label: "담당자 1분 체크" },
     { id: "documents", label: "준비 서류" },
     { id: "procedures", label: "진행 절차" },
+    { id: "inquiry-flow", label: "문의·수행 흐름" },
     { id: "problems", label: "자주 생기는 문제" },
-    { id: "procurement", label: "나라장터·조달청" },
+    { id: "quote", label: "견적 전 확인" },
+    { id: "procurement", label: "용역·수행범위" },
     { id: "busan", label: "부산 상담" },
     { id: "faq", label: "자주 묻는 질문" },
     { id: "related", label: "관련 페이지" },
-    { id: "consultation", label: "상담 문의" },
+    { id: "consultation", label: "업무 문의" },
   ];
 
   return (
@@ -110,11 +113,11 @@ export function PublicAgencyRegistrationPageView({
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
-        ctaHref="/contact/inquiry"
-        ctaLabel="공공기관 등기 상담하기"
+        ctaHref="/협업문의?partner=public&service=public"
+        ctaLabel="공공기관·단체 업무 문의"
         secondaryCta={{
-          href: "#documents",
-          label: "등기 필요서류 검토하기",
+          href: "#role-intents",
+          label: "어떤 업무인지 확인하기",
         }}
         showDiagnosisCta={false}
       />
@@ -137,6 +140,30 @@ export function PublicAgencyRegistrationPageView({
       />
 
       <PageTableOfContents items={tocItems} />
+
+      <ContentSection id="role-intents" title="어떤 업무를 찾고 계신가요?">
+        <p className="body-text mb-4 max-w-3xl">{content.roleIntentIntro}</p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {content.roleIntentCards.map((card) => (
+            <InfoCard key={card.id} variant="highlight">
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/85 md:text-base">
+                {card.description}
+              </p>
+              <p className="mt-3">
+                <Link
+                  href={card.href}
+                  className="text-sm font-medium text-navy-light underline hover:text-navy"
+                >
+                  {card.ctaLabel}
+                </Link>
+              </p>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
 
       <ContentSection id="what-is" title="공공기관 등기업무란?">
         <ProseParagraphs paragraphs={content.whatIsParagraphs} />
@@ -219,10 +246,45 @@ export function PublicAgencyRegistrationPageView({
         </WarningBox>
       </ContentSection>
 
+      <ContentSection id="scope" title="법무사가 지원 가능한 범위">
+        <p className="body-text mb-4 max-w-3xl">{content.scopeIntro}</p>
+        <div className="overflow-x-auto rounded-xl border border-beige-dark">
+          <table className="min-w-full text-left text-sm md:text-base">
+            <thead className="bg-beige/60 text-navy">
+              <tr>
+                <th className="px-4 py-3 font-semibold md:px-6">업무</th>
+                <th className="px-4 py-3 font-semibold md:px-6">구분</th>
+                <th className="px-4 py-3 font-semibold md:px-6">안내</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-beige-dark bg-white">
+              {content.scopeRows.map((row) => (
+                <tr key={row.topic}>
+                  <th className="px-4 py-3 font-medium text-navy md:px-6">
+                    {row.topic}
+                  </th>
+                  <td className="px-4 py-3 font-medium text-navy/85 md:px-6">
+                    {row.classification}
+                  </td>
+                  <td className="px-4 py-3 leading-relaxed text-navy/85 md:px-6">
+                    {row.note}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ContentSection>
+
       <ContentSection
         id="pre-check"
-        title="공공기관 담당자가 먼저 확인할 체크리스트"
+        title="기관에서 법무사를 찾기 전에 확인할 사항"
       >
+        <p className="body-text mb-4 max-w-3xl">{content.staffMinuteIntro}</p>
+        <ChecklistBox items={content.staffMinuteChecklist} />
+        <p className="mt-4 text-sm text-navy/70 md:text-base">
+          추가로 내부에서 확인하면 좋은 항목입니다.
+        </p>
         <ChecklistBox items={content.preChecklist} />
       </ContentSection>
 
@@ -245,12 +307,33 @@ export function PublicAgencyRegistrationPageView({
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
+      <ContentSection id="inquiry-flow" title="문의부터 결과 안내까지의 흐름">
+        <p className="body-text mb-4 max-w-3xl">{content.inquiryProcessIntro}</p>
+        <StepTimeline steps={content.inquiryProcessSteps} />
+      </ContentSection>
+
       <ContentSection id="problems" title="공공기관 등기에서 자주 생기는 문제">
         <div className="grid gap-3 sm:grid-cols-2">
           {content.commonProblems.map((problem) => (
             <WarningBox key={problem} title="주의 사항">
               <p>{problem}</p>
             </WarningBox>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="quote" title="기관 업무 견적을 위해 먼저 확인할 정보">
+        <p className="body-text mb-4 max-w-3xl">{content.quoteIntro}</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {content.quoteCheckItems.map((item) => (
+            <InfoCard key={item.label} variant="highlight">
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {item.label}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/85 md:text-base">
+                {item.hint}
+              </p>
+            </InfoCard>
           ))}
         </div>
       </ContentSection>
@@ -275,34 +358,29 @@ export function PublicAgencyRegistrationPageView({
 
       <div id="consultation">
         <ConsultationCTA
-          title="공공기관 등기 상담"
+          title="공공기관·단체 업무 문의"
           description={content.bottomCtaText}
-          buttonLabel="공공기관 등기 상담하기"
+          buttonLabel="공공기관·단체 업무 문의"
+          href="/협업문의?partner=public&service=public"
+          showNaverReservation={false}
+          showAboutLawyer={false}
         />
         <div className="mt-4 flex flex-wrap gap-3">
           <Link href="/협업문의?partner=public&service=public" className="btn-primary inline-flex min-h-12 items-center px-6">
-            기관 등기업무 문의
+            등기업무 협의
           </Link>
           <Link
             href="/협업문의?partner=public&service=quote"
             className="btn-secondary inline-flex min-h-12 items-center px-6"
           >
-            견적 검토 요청
+            업무범위 및 견적 문의
           </Link>
           <Link
-            href="/contact"
+            href="/공공기관법률교육"
             className="btn-secondary inline-flex min-h-12 items-center px-6"
           >
-            일반 상담 안내
+            법률교육·특강 문의
           </Link>
-        </div>
-        <div className="mt-6">
-          <CTASection
-            pageType="faq"
-            title="공공기관 등기업무 상담"
-            description={content.bottomCtaText}
-            pageSlug={page.slug}
-          />
         </div>
       </div>
     </article>

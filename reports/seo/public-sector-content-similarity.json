@@ -1,0 +1,531 @@
+{
+  "generatedAt": "2026-08-13T12:13:58.102Z",
+  "docs": [
+    {
+      "id": "/공공기관등기업무",
+      "chars": 6414
+    },
+    {
+      "id": "/협업문의",
+      "chars": 531
+    },
+    {
+      "id": "/partners",
+      "chars": 843
+    },
+    {
+      "id": "/공공기관법인등기",
+      "chars": 2491
+    },
+    {
+      "id": "/공공기관부동산등기",
+      "chars": 2259
+    },
+    {
+      "id": "/공공기관촉탁등기",
+      "chars": 2115
+    },
+    {
+      "id": "/공공기관이전등기",
+      "chars": 2080
+    },
+    {
+      "id": "/공기업등기",
+      "chars": 1695
+    },
+    {
+      "id": "/촉탁등기",
+      "chars": 1689
+    },
+    {
+      "id": "/지방공기업등기",
+      "chars": 1651
+    },
+    {
+      "id": "/부산법무사",
+      "chars": 9667
+    },
+    {
+      "id": "/부산법인법무사",
+      "chars": 46632
+    },
+    {
+      "id": "/부산법무사추천",
+      "chars": 8758
+    }
+  ],
+  "highDuplicateCount": 0,
+  "championReviewCount": 0,
+  "championHits": [],
+  "high": [],
+  "pairs": [
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/공공기관이전등기",
+      "similarity": 63.1,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/공공기관이전등기",
+      "similarity": 60.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/공공기관이전등기",
+      "similarity": 57.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/공공기관촉탁등기",
+      "similarity": 56.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/촉탁등기",
+      "similarity": 55.4,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/공공기관부동산등기",
+      "similarity": 55.1,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/공공기관촉탁등기",
+      "similarity": 54.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/촉탁등기",
+      "b": "/지방공기업등기",
+      "similarity": 54,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공기업등기",
+      "b": "/지방공기업등기",
+      "similarity": 50,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/지방공기업등기",
+      "similarity": 49.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/지방공기업등기",
+      "similarity": 49.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공기업등기",
+      "b": "/촉탁등기",
+      "similarity": 48.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/지방공기업등기",
+      "similarity": 47.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/촉탁등기",
+      "similarity": 45.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/지방공기업등기",
+      "similarity": 45.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/공기업등기",
+      "similarity": 44.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/공기업등기",
+      "similarity": 43.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/공기업등기",
+      "similarity": 43.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/공기업등기",
+      "similarity": 43.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/촉탁등기",
+      "similarity": 43.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/촉탁등기",
+      "similarity": 42.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법무사",
+      "b": "/부산법무사추천",
+      "similarity": 21.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법무사",
+      "b": "/부산법인법무사",
+      "similarity": 17.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/partners",
+      "similarity": 17.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/부산법무사추천",
+      "similarity": 16.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/부산법무사추천",
+      "similarity": 16.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/부산법무사추천",
+      "similarity": 16.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/부산법무사추천",
+      "similarity": 15.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/공공기관부동산등기",
+      "similarity": 14.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법인법무사",
+      "b": "/부산법무사추천",
+      "similarity": 13.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/공공기관법인등기",
+      "similarity": 13.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/부산법무사",
+      "similarity": 13.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/부산법무사",
+      "similarity": 13.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/공공기관촉탁등기",
+      "similarity": 13.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/부산법무사",
+      "similarity": 12.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/공기업등기",
+      "similarity": 12.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/부산법무사",
+      "similarity": 12.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/부산법인법무사",
+      "similarity": 12.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/지방공기업등기",
+      "b": "/부산법무사추천",
+      "similarity": 12.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/부산법무사",
+      "similarity": 12,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/공공기관이전등기",
+      "similarity": 11.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/부산법무사추천",
+      "similarity": 11.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공기업등기",
+      "b": "/부산법무사추천",
+      "similarity": 11.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/촉탁등기",
+      "b": "/부산법무사추천",
+      "similarity": 10.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/지방공기업등기",
+      "b": "/부산법무사",
+      "similarity": 10.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/지방공기업등기",
+      "similarity": 9.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관부동산등기",
+      "b": "/부산법인법무사",
+      "similarity": 9.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공기업등기",
+      "b": "/부산법무사",
+      "similarity": 9.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법인등기",
+      "b": "/부산법인법무사",
+      "similarity": 9.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/촉탁등기",
+      "b": "/부산법무사",
+      "similarity": 9.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/공공기관이전등기",
+      "similarity": 9.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/공기업등기",
+      "similarity": 8.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/촉탁등기",
+      "similarity": 8.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/공공기관부동산등기",
+      "similarity": 8.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관이전등기",
+      "b": "/부산법인법무사",
+      "similarity": 8.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관촉탁등기",
+      "b": "/부산법인법무사",
+      "similarity": 8.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/지방공기업등기",
+      "similarity": 7.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/공공기관촉탁등기",
+      "similarity": 7.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/partners",
+      "similarity": 7.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/공기업등기",
+      "similarity": 7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/공공기관법인등기",
+      "similarity": 7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/지방공기업등기",
+      "similarity": 7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공기업등기",
+      "b": "/부산법인법무사",
+      "similarity": 7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/지방공기업등기",
+      "b": "/부산법인법무사",
+      "similarity": 6.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/공공기관이전등기",
+      "similarity": 6.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/부산법무사",
+      "similarity": 6.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/부산법무사추천",
+      "similarity": 6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/촉탁등기",
+      "b": "/부산법인법무사",
+      "similarity": 6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/촉탁등기",
+      "similarity": 5.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/공공기관부동산등기",
+      "similarity": 5.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관등기업무",
+      "b": "/협업문의",
+      "similarity": 5.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/촉탁등기",
+      "similarity": 5.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/공공기관법인등기",
+      "similarity": 5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/공공기관촉탁등기",
+      "similarity": 4.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/부산법무사",
+      "similarity": 4.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/부산법무사추천",
+      "similarity": 4.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/partners",
+      "b": "/부산법인법무사",
+      "similarity": 3.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/협업문의",
+      "b": "/부산법인법무사",
+      "similarity": 2.5,
+      "band": "acceptable"
+    }
+  ]
+}

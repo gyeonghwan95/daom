@@ -36,6 +36,29 @@ const ALLOWED = new Set([
   "naver_place_click",
 ]);
 
+const BOT_UA =
+  /(?:bot|crawler|spider|yeti|googlebot|bingbot|baiduspider|yandex(?:bot)?|duckduckbot|facebookexternalhit|slackbot|twitterbot|linkedinbot|semrush|ahrefs|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|applebot|ia_archiver|pingdom|uptimerobot)/i;
+
+function isVerifiedBot(request) {
+  try {
+    if (request.cf?.botManagement?.verifiedBot) return true;
+  } catch {
+    /* ignore */
+  }
+  const ua = request.headers.get("user-agent") || "";
+  return BOT_UA.test(ua);
+}
+
+async function readJsonBody(request) {
+  const text = await request.text();
+  if (!text || !text.trim()) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const ip =
@@ -46,10 +69,12 @@ export async function onRequestPost(context) {
     return json({ ok: false, code: "rate_limited" }, 429);
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  if (isVerifiedBot(request)) {
+    return json({ ok: true, skipped: true, reason: "bot" });
+  }
+
+  const body = await readJsonBody(request);
+  if (!body || typeof body !== "object") {
     return json({ ok: false, code: "bad_request" }, 400);
   }
 
@@ -64,22 +89,37 @@ export async function onRequestPost(context) {
   }
 
   if (!hasKv(env)) {
-    // Soft-ok: never block UX
     return json({ ok: true, stored: false });
+  }
+
+  let requestHost;
+  try {
+    requestHost = new URL(request.url).hostname;
+  } catch {
+    requestHost = undefined;
   }
 
   const referrerHost = body?.referrerHost
     ? String(body.referrerHost).slice(0, 120)
     : undefined;
+  let referrerType = classifyReferrer(referrerHost, requestHost);
+  if (referrerType !== "internal" && body?.referrerType === "internal") {
+    referrerType = "internal";
+  } else if (referrerType === "direct" && body?.campaign) {
+    referrerType = "campaign";
+  }
+
   const result = await recordAnalyticsEvent(env, {
     type,
     path,
+    ip,
     referrerHost,
-    referrerType: body?.referrerType || classifyReferrer(referrerHost),
+    referrerType,
     campaign: body?.campaign ? String(body.campaign).slice(0, 80) : undefined,
-    deviceType: body?.deviceType === "mobile" || body?.deviceType === "desktop"
-      ? body.deviceType
-      : "unknown",
+    deviceType:
+      body?.deviceType === "mobile" || body?.deviceType === "desktop"
+        ? body.deviceType
+        : "unknown",
     meta:
       body?.meta && typeof body.meta === "object"
         ? Object.fromEntries(

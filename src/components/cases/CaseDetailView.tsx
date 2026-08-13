@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
-import { QuickInquiryInlineCard } from "@/components/quick-inquiry";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
@@ -154,17 +152,6 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         </ContentSection>
       ) : null}
 
-      <ConsultationCTA
-        title="비슷한 상황이라면 서류부터 확인해 보세요"
-        description="준비서류를 먼저 점검한 뒤 상담을 요청하시면 검토가 수월합니다."
-        buttonLabel="1분만에 상담 신청하기"
-      />
-
-      <QuickInquiryInlineCard
-        pageTitle={page.h1 || page.title}
-        pageUrl={page.path}
-      />
-
       {sections.procedures.length > 0 ? (
         <ContentSection id="case-procedures" title="진행 절차">
           <StepTimeline steps={sections.procedures} />
@@ -227,18 +214,10 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
 
       <div id="consultation">
         <ConsultationCTA
-          title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
+          title="비슷한 상황이라면 서류와 절차를 확인해 보세요"
           description={page.ctaText}
-          buttonLabel="1분만에 상담 신청하기"
+          buttonLabel="상담 내용 남기기"
         />
-        <div className="mt-6">
-          <LawyerConsultationGuide
-            pageType="case"
-            showSecondaryLinks
-            pageSlug={record.slug}
-            documentsHref="#case-documents"
-          />
-        </div>
       </div>
     </article>
   );

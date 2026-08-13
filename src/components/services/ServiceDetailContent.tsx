@@ -77,6 +77,12 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         <RelatedLinks title="업무 종합 허브" links={[hubLink]} />
       ) : null}
 
+      <InlineConsultationCTA
+        pageType="service"
+        serviceSlug={service.slug}
+        pageSlug={service.slug}
+      />
+
       <ContentBlock id="when-needed" title="어떤 경우에 필요한가요">
         <p className="text-base leading-relaxed text-navy/80 md:text-lg">
           {service.whenNeeded}
@@ -120,12 +126,6 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
           안내해 드립니다.
         </p>
       </ContentBlock>
-
-      <InlineConsultationCTA
-        pageType="service"
-        serviceSlug={service.slug}
-        pageSlug={service.slug}
-      />
 
       <ContentBlock id="common-issues" title="자주 발생하는 문제">
         <ul className="space-y-3">

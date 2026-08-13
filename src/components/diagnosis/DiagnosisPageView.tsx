@@ -88,7 +88,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         h1={page.h1}
         intro={diagnosis.intro[0] ?? page.intro}
         keywords={page.primaryKeywords}
-        ctaLabel="자가진단 후 1분 상담 신청"
+        ctaLabel="상담 문의하기"
         showNationwideChip={shouldShowNationwideRegionChip(
           page.path,
           page.slug,
@@ -147,12 +147,6 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         />
       </ContentSection>
 
-      <ConsultationCTA
-        title="자가진단 전에 서류를 먼저 확인해 보세요"
-        description="아래 체크리스트를 보신 뒤 자가진단을 시작하거나, 편한 방법으로 상담해 보세요."
-        buttonLabel="1분만에 상담 신청하기"
-      />
-
       <ArticleVisualSlot
         path={page.path}
         slot="before-procedures"
@@ -205,7 +199,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         <ConsultationCTA
           title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={cta.text}
-          buttonLabel="1분만에 상담 신청하기"
+          buttonLabel="상담 내용 남기기"
         />
       </div>
     </article>

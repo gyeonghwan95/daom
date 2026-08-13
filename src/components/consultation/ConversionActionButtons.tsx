@@ -89,8 +89,7 @@ export function ConversionActionButtons({
             : "text-center text-xs text-navy/60"
         }
       >
-        {consultationInquiryCopy.oneMinuteShort} 방문은 네이버 예약으로도
-        가능합니다.
+        {consultationInquiryCopy.oneMinuteShort}
       </p>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">

@@ -1,0 +1,250 @@
+{
+  "generatedAt": "2026-08-13T12:13:56.083Z",
+  "pageCount": 20,
+  "highDuplicateCount": 0,
+  "championReviewCount": 0,
+  "high": [],
+  "championHits": [],
+  "pairs": [
+    {
+      "a": "/강사소개",
+      "b": "/강의문의",
+      "similarity": 27.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/부산기관법률특강",
+      "similarity": 25.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법무사강의",
+      "b": "/부산기관법률특강",
+      "similarity": 24.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/강사소개",
+      "similarity": 22.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산도서관법률특강",
+      "b": "/부산기관법률특강",
+      "similarity": 21.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/부산도서관법률특강",
+      "similarity": 21.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/부산법무사강의",
+      "similarity": 21.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/부산법률강사",
+      "similarity": 20.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/강의문의",
+      "similarity": 20.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산도서관법률특강",
+      "b": "/부산사회복지기관강사",
+      "similarity": 19.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법률교육",
+      "b": "/부산기관법률특강",
+      "similarity": 19.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/부산사회복지기관강사",
+      "similarity": 19.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/공공기관법률교육",
+      "b": "/부산도서관법률특강",
+      "similarity": 19,
+      "band": "acceptable"
+    },
+    {
+      "a": "/강사소개",
+      "b": "/부산법무사강의",
+      "similarity": 18.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산도서관법률특강",
+      "b": "/부산법무사강의",
+      "similarity": 18.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산사회복지기관강사",
+      "b": "/기관특강주제추천",
+      "similarity": 18.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산강사섭외비용",
+      "b": "/부산강사섭외체크리스트",
+      "similarity": 18.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/기관특강주제추천",
+      "similarity": 17.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/공공기관법률교육",
+      "similarity": 17.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/공공기관법률교육",
+      "similarity": 17.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/기관특강주제추천",
+      "b": "/강의시간별구성",
+      "similarity": 17.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/부산강사섭외비용",
+      "similarity": 17.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/부산기관법률특강",
+      "similarity": 17.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/강사소개",
+      "b": "/부산도서관법률특강",
+      "similarity": 17.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산사회복지기관강사",
+      "b": "/부산강사섭외비용",
+      "similarity": 17.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/청년생활법률특강",
+      "b": "/부산도서관법률특강",
+      "similarity": 16.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/강사소개",
+      "b": "/부산기관법률특강",
+      "similarity": 16.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산강사섭외체크리스트",
+      "b": "/기관특강주제추천",
+      "similarity": 16.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산사회복지기관강사",
+      "b": "/부산강사섭외체크리스트",
+      "similarity": 16.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/부산강사섭외체크리스트",
+      "similarity": 16.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산강사섭외비용",
+      "b": "/강의시간별구성",
+      "similarity": 16.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/강의문의",
+      "b": "/부산기관법률특강",
+      "similarity": 15.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/강사소개",
+      "similarity": 15.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산기관법률특강",
+      "b": "/기관특강주제추천",
+      "similarity": 15.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/강의문의",
+      "similarity": 15.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/부산도서관법률특강",
+      "similarity": 14.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산법률강사",
+      "b": "/강의시간별구성",
+      "similarity": 14.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/강사소개",
+      "b": "/공공기관법률교육",
+      "similarity": 14.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산기관법률특강",
+      "b": "/부산사회복지기관강사",
+      "similarity": 14.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/법률강의",
+      "b": "/기관특강주제추천",
+      "similarity": 14.5,
+      "band": "acceptable"
+    }
+  ]
+}

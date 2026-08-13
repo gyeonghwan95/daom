@@ -31,9 +31,9 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
   ],
   primaryKeywords: [
     "부산 개인회생 법무사",
-    "부산 개인회생",
     "개인회생 신청 가능성",
     "부산회생법원",
+    "소득 채무 재산",
   ],
   searchIntents: [
     "급여소득자로 개인회생이 가능한지 확인하려는 경우",
@@ -136,7 +136,8 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
     },
   ],
   relatedServiceLinks: [
-    { href: "/부산개인회생", label: "부산 개인회생 업무 허브" },
+    { href: "/부산개인회생", label: "개인회생 신청·서류 안내" },
+    { href: "/개인회생파산", label: "회생·파산 비교" },
     { href: "/부산파산", label: "부산 개인파산 안내" },
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/tools/rehab-income-debt-check", label: "소득·채무 점검 도구" },

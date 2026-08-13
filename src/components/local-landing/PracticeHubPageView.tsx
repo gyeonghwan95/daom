@@ -3,6 +3,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { PageHero } from "@/components/readability";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { CollabInquiryForm } from "@/components/local-landing/CollabInquiryForm";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -35,13 +36,15 @@ export function PracticeHubPageView({
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <PageCoverBanner image={cover} />
 
-      <header className="max-w-3xl">
-        <h1 className="page-title">{page.h1}</h1>
-        <p className="body-text mt-4 md:mt-5">{intro}</p>
-        {note ? (
-          <p className="mt-3 text-sm text-navy/65">{note}</p>
-        ) : null}
-      </header>
+      <PageHero
+        h1={page.h1}
+        intro={intro}
+        ctaLabel="상담 문의하기"
+        showDiagnosisCta={false}
+        showAboutLawyerCta
+      >
+        {note ? <p className="mt-3 text-sm text-navy/65">{note}</p> : null}
+      </PageHero>
 
       <ArticleVisualSlot
         path={page.path}

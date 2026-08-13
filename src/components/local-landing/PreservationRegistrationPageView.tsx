@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ServiceConversionEnhancements } from "@/components/conversion";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
@@ -253,36 +251,8 @@ export function PreservationRegistrationPageView({
           title="보존등기 상담"
           description={content.bottomCtaText}
           buttonLabel="보존등기 상담하기"
+          inquiryField="preservation-registration"
         />
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
-          <InquiryNaverCtaPair
-            placement="other"
-            layout="row"
-            size="md"
-            inquiry={
-              <Link
-                href="/contact/inquiry?field=preservation-registration"
-                className="btn-primary inline-flex min-h-12 items-center px-6"
-              >
-                보존등기 상담 신청하기
-              </Link>
-            }
-          />
-          <Link
-            href="/contact/inquiry?field=preservation-registration"
-            className="btn-secondary inline-flex min-h-12 items-center px-6"
-          >
-            서류 준비 문의하기
-          </Link>
-        </div>
-        <div className="mt-6">
-          <CTASection
-            pageType="faq"
-            title="부산 신축건물 보존등기 상담"
-            description={content.bottomCtaText}
-            pageSlug={page.slug}
-          />
-        </div>
       </div>
     </article>
   );

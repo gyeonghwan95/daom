@@ -9,7 +9,7 @@ type Layout = "row" | "stack";
 type Size = "sm" | "md" | "lg";
 
 export type InquiryNaverCtaPairProps = {
-  /** 상담 신청(1분 상담 등) 버튼 — Link 또는 button */
+  /** 상담 문의 버튼 — Link 또는 button */
   inquiry: ReactNode;
   placement: NaverSmartPlacePlacement;
   layout?: Layout;
@@ -22,8 +22,8 @@ export type InquiryNaverCtaPairProps = {
 };
 
 /**
- * 「1분 상담 신청」류 CTA 옆/아래에
- * 톡톡과 동일 톤의 「네이버 예약」을 붙이는 공통 페어.
+ * 상담 문의 CTA 옆/아래에 「네이버 예약」을 붙이는 공통 페어.
+ * 페이지 본문에서는 히어로·하단에서만 사용한다.
  */
 export function InquiryNaverCtaPair({
   inquiry,

@@ -47,8 +47,35 @@ export function maskEmail(email: string): string {
   return `${head}***@${domain}`;
 }
 
-export function classifyReferrer(host: string | undefined): string {
+const OWN_ANALYTICS_HOSTS = new Set([
+  "xn--2j1br1na42lvxja38mk8r.kr",
+  "다옴법무사사무소.kr",
+  "localhost",
+  "127.0.0.1",
+]);
+
+export function bareAnalyticsHost(host: string): string {
+  return host.toLowerCase().replace(/\.$/, "").replace(/^www\./, "");
+}
+
+/** 자사 도메인(한글·punycode·미리보기) — 내부 이동을 외부 유입으로 세지 않기 위함 */
+export function isOwnAnalyticsHost(
+  host: string | undefined,
+  extraHost?: string,
+): boolean {
+  if (!host) return false;
+  const h = bareAnalyticsHost(host);
+  if (OWN_ANALYTICS_HOSTS.has(h)) return true;
+  if (extraHost && bareAnalyticsHost(extraHost) === h) return true;
+  return false;
+}
+
+export function classifyReferrer(
+  host: string | undefined,
+  requestHost?: string,
+): string {
   if (!host) return "direct";
+  if (isOwnAnalyticsHost(host, requestHost)) return "internal";
   const h = host.toLowerCase();
   if (h.includes("google.")) return "google";
   if (h.includes("naver.")) return "naver";

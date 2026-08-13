@@ -1,7 +1,3 @@
-import Link from "next/link";
-import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
-import { getContactInfo, getDirectConsultationChannels } from "@/lib/contact";
 import {
   getNationwideNotice,
   type NationwideServiceType,
@@ -21,8 +17,6 @@ export function NationwideServiceNotice({
   className = "",
 }: NationwideServiceNoticeProps) {
   const notice = getNationwideNotice(type, { ctaLabel, ctaHref });
-  const channels = getDirectConsultationChannels();
-  const { phone } = getContactInfo();
 
   return (
     <aside
@@ -58,42 +52,6 @@ export function NationwideServiceNotice({
           </li>
         ))}
       </ol>
-
-      <div className="mt-5 space-y-3 border-t border-beige-dark pt-4">
-        <InquiryNaverCtaPair
-          placement="nationwide_card"
-          layout="stack"
-          size="md"
-          inquiry={
-            <Link
-              href={notice.ctaHref}
-              className="btn-primary flex w-full min-h-12 items-center justify-center px-4 text-sm sm:text-base"
-            >
-              {notice.ctaLabel}
-            </Link>
-          }
-        />
-
-        <div className="rounded-lg border border-beige-dark bg-[var(--surface-muted)] p-3 sm:p-3.5">
-          <div className="mb-2.5 flex flex-wrap items-end justify-between gap-x-3 gap-y-1">
-            <p className="text-xs font-bold tracking-wide text-[var(--text-muted)]">
-              바로 상담하기
-            </p>
-            {phone ? (
-              <p className="text-sm font-bold tabular-nums tracking-tight text-[var(--text-primary)]">
-                {phone}
-              </p>
-            ) : null}
-          </div>
-          <ConsultationButtons
-            channels={channels}
-            layout="tile"
-            showLabels="short"
-            showQrCodes={false}
-            className="w-full"
-          />
-        </div>
-      </div>
 
       <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
         {notice.caution}

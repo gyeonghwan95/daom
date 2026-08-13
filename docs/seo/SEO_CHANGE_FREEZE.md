@@ -11,6 +11,18 @@
 
 Homepage `/`는 Champion으로의 authority flow를 지원한다. URL 변경 금지.
 
+### High-intent Champions (2026-08-13, UNKNOWN_PERFORMANCE → FULLY_PROTECTED)
+
+| Role | URL | Queries (aliases, 1 URL) |
+|------|-----|--------------------------|
+| LEGAL_CONSULTATION | `/부산법무사상담` | 부산 법무사 상담, 부산 법률 상담, 부산 법무사 법률 상담 |
+| JEONSE_DAMAGE | `/전세사기피해대응절차` | 부산 전세사기, 부산 전세사기 법무사, 부산 전세사기 상담 |
+| INSOLVENCY | `/개인회생파산` | 부산회생파산, 부산 회생 파산 |
+| PERSONAL_REHABILITATION | `/부산개인회생` | 부산개인회생, 부산 개인회생 |
+| PERSONAL_BANKRUPTCY | `/부산개인파산` | 부산 개인파산, 부산 파산 (Hub와 역할 분리) |
+
+Supporting (title/H1 자동변경 금지): `/부산법률상담`, `/부산임차권등기명령`, `/부산전세보증금반환법무사`, `/전세사기예방교육`, `/부산개인회생법무사`.
+
 ## Freeze rules
 
 금지 (자동·수동 모두):
@@ -29,6 +41,9 @@ Homepage `/`는 Champion으로의 authority flow를 지원한다. URL 변경 금
 - 버그·보안·관리자 UI (공개 HTML 의미 불변)
 - Champion 재수집 요청 (변경된 URL만)
 - 문서·가드·스냅샷
+- 승인된 Cluster의 **기존 URL 모듈 보강** (title/H1/canonical 불변, 신규 URL 0)
+- 2026-08-13 B2G/공공기관 Cluster: `/공공기관등기업무` Champion STRENGTHEN + 기존 spoke prose. **CREATE_NEW = 0** (기관명 doorway·유형별 thin 랜딩 금지)
+- 2026-08-13 Lecture B2B/B2G Cluster: `/법률강의` Hub + `/부산법률강사` Hiring STRENGTHEN. 워크숍/워크샵/세미나 **신규 URL 0**. title/H1 불변.
 
 ## Baseline
 

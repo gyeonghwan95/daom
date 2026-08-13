@@ -97,7 +97,6 @@ function IdleDeferredChrome() {
       <MobileBottomCTA />
       <FloatingCTA />
       <FloatingNoticeHost />
-      <AnalyticsBeacon />
     </>
   );
 }
@@ -121,6 +120,7 @@ export function AppClientShell({ children }: { children: ReactNode }) {
         <NavigationProgress />
       </Suspense>
       {children}
+      {!isAdminPath(pathname) ? <AnalyticsBeacon /> : null}
       {!isAdminPath(pathname) ? <DeferredConsultWizard /> : null}
       <IdleDeferredChrome />
     </QuickInquiryProvider>

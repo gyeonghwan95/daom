@@ -135,6 +135,7 @@ export const 부산전세보증금반환법무사Override: SearchIntentContent =
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응 안내" },
     { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
     { href: "/situations/jeonse-deposit-unpaid", label: "전세보증금 미반환 상황 안내" },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },

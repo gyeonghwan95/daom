@@ -1,17 +1,8 @@
-import Link from "next/link";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import type { SoutheastLandingDef } from "@/lib/southeast-cases";
-import { inquiryRegionFromSoutheast } from "@/lib/southeast-cases";
 
 type Props = { def: SoutheastLandingDef };
 
 export function SoutheastServiceHero({ def }: Props) {
-  const region = inquiryRegionFromSoutheast(def);
-  const field = def.pageType.startsWith("corporate")
-    ? "corporate-registration"
-    : "inheritance-registration";
-  const inquiry = `/contact/inquiry?from=nationwide&region=${encodeURIComponent(region)}&field=${field}`;
-
   return (
     <div className="space-y-4">
       <p className="inline-flex items-center rounded-md bg-navy px-2.5 py-1 text-xs font-semibold tracking-wide text-white">
@@ -48,21 +39,6 @@ export function SoutheastServiceHero({ def }: Props) {
             </li>
           ))}
         </ul>
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-stretch">
-          <InquiryNaverCtaPair
-            placement="case_region"
-            layout="row"
-            size="md"
-            inquiry={
-              <Link href={inquiry} className="btn-primary min-h-12 px-5 text-sm">
-                {def.ctaTitle}
-              </Link>
-            }
-          />
-          <Link href={inquiry} className="btn-secondary min-h-12 px-5 text-sm">
-            상담 신청서 작성
-          </Link>
-        </div>
       </aside>
     </div>
   );

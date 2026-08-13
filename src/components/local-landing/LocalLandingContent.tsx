@@ -76,7 +76,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         pageType="service"
         serviceSlug={page.serviceSlug}
         pageSlug={page.slug}
-        title={`${page.regionLabel} ${page.title} 지금 상담`}
+        title={`${page.regionLabel} ${page.title} 상담 문의`}
         description={page.ctaDescription}
       />
 
@@ -194,14 +194,6 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
           </p>
         </div>
       </ContentBlock>
-
-      <InlineConsultationCTA
-        pageType="service"
-        serviceSlug={page.serviceSlug}
-        pageSlug={page.slug}
-        title="비용·절차가 궁금하신가요?"
-        description="카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다."
-      />
 
       <ContentBlock id="precautions" title="주의사항">
         <ul className="space-y-3">

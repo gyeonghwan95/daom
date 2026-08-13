@@ -1,6 +1,15 @@
 import { buildSearchIntentContent } from "./factory";
 import { searchIntentSeeds } from "./seeds";
 import type { SearchIntentContent } from "./types";
+import {
+  공기업등기Override,
+  공공기관부동산등기Override,
+  공공기관법인등기Override,
+  공공기관이전등기Override,
+  공공기관촉탁등기Override,
+  지방공기업등기Override,
+  촉탁등기Override,
+} from "./overrides/public-agency-spokes";
 import { 부산등기복대리Override } from "./overrides/busan-subproxy";
 import { 부산집단등기Override } from "./overrides/busan-mass-registry";
 import { 부산매매등기법무사Override } from "./overrides/busan-sale-registration";
@@ -136,6 +145,13 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...specialistLawyerPhase2Overrides,
   ...keywordGapBatch1Overrides,
   ...situationIntentBatch1Overrides,
+  공공기관법인등기: 공공기관법인등기Override,
+  공공기관부동산등기: 공공기관부동산등기Override,
+  공공기관이전등기: 공공기관이전등기Override,
+  공공기관촉탁등기: 공공기관촉탁등기Override,
+  공기업등기: 공기업등기Override,
+  지방공기업등기: 지방공기업등기Override,
+  촉탁등기: 촉탁등기Override,
   부산개인회생법무사: 부산개인회생법무사Override,
   부산상속전문법무사: 부산상속전문법무사Override,
   부산회생법무사: 부산회생법무사Override,

@@ -43,7 +43,7 @@ export function PageHero({
   keywords = [],
   eyebrow,
   ctaHref = "/contact/inquiry",
-  ctaLabel = "1분만에 상담 신청하기",
+  ctaLabel = "상담 문의하기",
   secondaryCta,
   showDiagnosisCta = true,
   showAboutLawyerCta = true,
@@ -85,7 +85,9 @@ export function PageHero({
 
   const resolvedSecondary = secondaryCta ?? aboutCta;
   const naverOn =
-    showNaverReservation ?? (Boolean(ctaLabel) && isConsultCtaHref(ctaHref));
+    showNaverReservation !== false &&
+    Boolean(ctaLabel) &&
+    isConsultCtaHref(ctaHref);
 
   const ctaBlock = ctaLabel ? (
     <div className="mt-5 flex flex-col gap-3 md:mt-6">

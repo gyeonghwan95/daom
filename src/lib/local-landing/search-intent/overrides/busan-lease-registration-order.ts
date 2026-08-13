@@ -135,6 +135,7 @@ export const 부산임차권등기명령Override: SearchIntentContent = {
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응 안내" },
     { href: "/임차권등기명령비용", label: "임차권등기명령 비용" },
     { href: "/임차권등기명령필요서류", label: "임차권등기명령 필요서류" },
     {

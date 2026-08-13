@@ -52,13 +52,6 @@ export function NaverBlogExternalLayout({ post }: NaverBlogExternalLayoutProps) 
           </section>
         ) : null}
 
-        <InlineConsultationCTA
-          pageType="default"
-          pageSlug={`blog-external-${post.postId}`}
-          title="이 주제로 상담이 필요하신가요?"
-          description="블로그 글과 관련된 등기·상속·법인·채무 절차는 사건마다 다릅니다. 다옴법무사사무소 안윤정 법무사가 확인해드리겠습니다."
-        />
-
         <div className="mt-10 rounded-xl border border-beige-dark bg-beige/40 p-6 md:p-8">
           <p className="text-sm leading-relaxed text-navy/75 md:text-base">
             이 글은 네이버 블로그에 게시된 콘텐츠입니다. 전체 내용과 이미지는
@@ -84,6 +77,13 @@ export function NaverBlogExternalLayout({ post }: NaverBlogExternalLayoutProps) 
             { href: "/blog", label: "포스팅 목록" },
             { href: "/contact", label: "상담 신청" },
           ]}
+        />
+
+        <InlineConsultationCTA
+          pageType="default"
+          pageSlug={`blog-external-${post.postId}`}
+          title="이 주제로 상담이 필요하신가요?"
+          description="블로그 글과 관련된 등기·상속·법인·채무 절차는 사건마다 다릅니다. 다옴법무사사무소 안윤정 법무사가 확인해드리겠습니다."
         />
       </article>
     </PageContainer>

@@ -100,7 +100,7 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
             className="hero-contact__chip hero-contact__chip--contact"
             role="listitem"
           >
-            <span className="hero-contact__chip-label">1분 상담 신청</span>
+            <span className="hero-contact__chip-label">상담 문의</span>
           </Link>
           <Link
             href="/contact"

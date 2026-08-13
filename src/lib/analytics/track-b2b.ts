@@ -27,7 +27,9 @@ export type B2BAnalyticsEvent =
   | "collaboration_phone_click"
   | "collaboration_kakao_click"
   | "collaboration_share_click"
-  | "collaboration_print_click";
+  | "collaboration_print_click"
+  | "lecture_inquiry_start"
+  | "lecture_inquiry_submit";
 
 export type B2BAnalyticsParams = {
   source_page?: string;
@@ -37,6 +39,8 @@ export type B2BAnalyticsParams = {
   lead_size_band?: string;
   urgency_band?: string;
   contact_method?: string;
+  lectureIntent?: string;
+  placement?: string;
 };
 
 /**
@@ -56,6 +60,8 @@ export function trackB2BEvent(
     lead_size_band: params.lead_size_band,
     urgency_band: params.urgency_band,
     contact_method: params.contact_method,
+    lectureIntent: params.lectureIntent,
+    placement: params.placement,
   };
 
   if (typeof window !== "undefined") {

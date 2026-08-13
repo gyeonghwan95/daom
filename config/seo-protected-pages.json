@@ -18,6 +18,26 @@
     "busanMain": {
       "path": "/부산법무사",
       "role": "BUSAN_GENERAL_CHAMPION"
+    },
+    "legalConsultation": {
+      "path": "/부산법무사상담",
+      "role": "BUSAN_LEGAL_CONSULTATION_CHAMPION"
+    },
+    "jeonseDamage": {
+      "path": "/전세사기피해대응절차",
+      "role": "BUSAN_JEONSE_DAMAGE_CHAMPION"
+    },
+    "insolvency": {
+      "path": "/개인회생파산",
+      "role": "BUSAN_INSOLVENCY_CHAMPION"
+    },
+    "personalRehabilitation": {
+      "path": "/부산개인회생",
+      "role": "BUSAN_PERSONAL_REHABILITATION_CHAMPION"
+    },
+    "personalBankruptcy": {
+      "path": "/부산개인파산",
+      "role": "BUSAN_PERSONAL_BANKRUPTCY_CHAMPION"
     }
   },
   "champion": {
@@ -120,6 +140,41 @@
       "targetChampion": "/부산법인법무사",
       "urls": [],
       "candidateUrls": ["/부산법인법무사", "/부산법인등기"]
+    },
+    {
+      "query": "부산 법무사 법률 상담",
+      "protected": true,
+      "targetChampion": "/부산법무사상담",
+      "urls": [],
+      "candidateUrls": ["/부산법무사상담", "/부산법률상담"]
+    },
+    {
+      "query": "부산 법률 상담",
+      "protected": true,
+      "targetChampion": "/부산법무사상담",
+      "urls": [],
+      "candidateUrls": ["/부산법률상담", "/부산법무사상담", "/부산법무사"]
+    },
+    {
+      "query": "부산 전세사기",
+      "protected": true,
+      "targetChampion": "/전세사기피해대응절차",
+      "urls": [],
+      "candidateUrls": ["/전세사기피해대응절차", "/전세사기예방교육", "/부산전세보증금반환법무사"]
+    },
+    {
+      "query": "부산회생파산",
+      "protected": true,
+      "targetChampion": "/개인회생파산",
+      "urls": [],
+      "candidateUrls": ["/개인회생파산", "/부산개인회생", "/부산개인파산"]
+    },
+    {
+      "query": "부산개인회생",
+      "protected": true,
+      "targetChampion": "/부산개인회생",
+      "urls": [],
+      "candidateUrls": ["/부산개인회생", "/부산개인회생법무사", "/개인회생파산"]
     }
   ],
   "rules": {

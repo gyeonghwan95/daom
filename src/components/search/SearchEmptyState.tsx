@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 
 type SearchEmptyStateProps = {
   query: string;
@@ -32,20 +31,13 @@ export function SearchEmptyState({ query, onNavigate }: SearchEmptyStateProps) {
         >
           자가진단 보기
         </Link>
-        <InquiryNaverCtaPair
-          placement="search_empty"
-          layout="row"
-          size="sm"
-          inquiry={
-            <Link
-              href="/contact/inquiry"
-              onClick={onNavigate}
-              className="inline-flex items-center justify-center rounded-lg border border-beige-dark bg-navy px-3 py-2 text-xs font-medium text-white no-underline hover:bg-navy-light"
-            >
-              1분만에 상담 신청하기
-            </Link>
-          }
-        />
+        <Link
+          href="/contact/inquiry"
+          onClick={onNavigate}
+          className="inline-flex items-center justify-center rounded-lg border border-beige-dark bg-navy px-3 py-2 text-xs font-medium text-white no-underline hover:bg-navy-light"
+        >
+          상담 문의하기
+        </Link>
       </div>
     </div>
   );

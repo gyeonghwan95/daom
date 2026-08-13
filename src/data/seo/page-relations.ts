@@ -11,6 +11,7 @@ export type PageRelationRole =
   | "FINANCE_CHAMPION"
   | "COST_CHAMPION"
   | "SELECTION_CHAMPION"
+  | "PUBLIC_SECTOR_CHAMPION"
   | "HUB"
   | "SUPPORT";
 
@@ -37,6 +38,16 @@ export const FINANCE_REGISTRATION_CHAMPION = "/부산잔금대출근저당";
 export const FINANCE_CLOSING_DAY_CHAMPION = "/부산잔금일법무사";
 export const FINANCE_MORTGAGE_RELEASE_CHAMPION = "/부산근저당말소등기";
 export const REAL_ESTATE_CHAMPION = "/부산부동산등기";
+
+export const PUBLIC_SECTOR_CHAMPION = "/공공기관등기업무";
+export const PUBLIC_SECTOR_CONVERSION = "/협업문의";
+export const PUBLIC_SECTOR_LECTURE_HUB = "/공공기관법률교육";
+
+export const LEGAL_CONSULTATION_CHAMPION = "/부산법무사상담";
+export const JEONSE_DAMAGE_CHAMPION = "/전세사기피해대응절차";
+export const INSOLVENCY_CHAMPION = "/개인회생파산";
+export const PERSONAL_REHABILITATION_CHAMPION = "/부산개인회생";
+export const PERSONAL_BANKRUPTCY_CHAMPION = "/부산개인파산";
 
 export const LOCAL_CHAMPION_MAP: Record<
   string,
@@ -82,6 +93,32 @@ export const LOCAL_CHAMPION_MAP: Record<
 
 export const PAGE_RELATIONS: PageRelationEntry[] = [
   {
+    path: PUBLIC_SECTOR_CHAMPION,
+    role: "PUBLIC_SECTOR_CHAMPION",
+    parentHub: "/partners",
+    services: ["public-agency", "corporate", "real-estate", "lecture"],
+    situations: [
+      "public-registration",
+      "agency-officer-change",
+      "shared-property",
+      "compensation-transfer",
+      "scrivener-procurement",
+    ],
+    relatedPages: [
+      "/공공기관법인등기",
+      "/공공기관부동산등기",
+      "/공공기관이전등기",
+      "/공공기관촉탁등기",
+      "/공공기관법률교육",
+      PUBLIC_SECTOR_CONVERSION,
+      "/partners",
+      "/부산법인법무사",
+      "/부산부동산등기",
+    ],
+    notes:
+      "B2G information Hub. Distinct from /부산법무사 and /부산법인법무사. Conversion is /협업문의?partner=public. title/H1/canonical immutable. CREATE_NEW spokes already exist — do not duplicate.",
+  },
+  {
     path: BUSAN_LEGAL_SCRIVENER_CHAMPION,
     role: "BUSAN_MAIN_CHAMPION",
     region: ["부산"],
@@ -117,13 +154,79 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
     role: "SELECTION_CHAMPION",
     situations: ["provider-selection", "recommendation-research"],
     notes:
-      "Spoke only. 「부산 법무사 추천」 Primary Champion은 /부산법무사. 이 URL은 선택 기준 상세 Spoke.",
+      "Spoke only. 「부산 법무사 추천」 Primary Champion은 /부산법무사. 이 URL은 선택 기준 상세 Spoke. No self-recommendation spam.",
     relatedPages: [
       "/부산법무사비교",
       "/부산법무사상담",
       "/부산등기법무사추천",
     ],
-    notes: "No self-recommendation spam; selection criteria only",
+  },
+  {
+    path: LEGAL_CONSULTATION_CHAMPION,
+    parentHub: BUSAN_LEGAL_SCRIVENER_CHAMPION,
+    role: "SELECTION_CHAMPION",
+    situations: ["consultation-prep", "unknown-task", "scope-check"],
+    relatedPages: [
+      "/부산법률상담",
+      "/상담",
+      "/전세사기피해대응절차",
+      "/개인회생파산",
+      "/부산상속법무사",
+      "/부산법인법무사",
+    ],
+    notes:
+      "BUSAN_LEGAL_CONSULTATION_CHAMPION. Distinct from /부산법무사 (office+services). title/H1 guarded.",
+  },
+  {
+    path: JEONSE_DAMAGE_CHAMPION,
+    parentHub: REAL_ESTATE_CHAMPION,
+    role: "SERVICE_CHAMPION",
+    situations: ["jeonse-fraud", "unpaid-deposit", "landlord-uncontactable"],
+    relatedPages: [
+      "/부산임차권등기명령",
+      "/부산전세보증금반환법무사",
+      "/전세사기예방교육",
+      "/민사소송",
+      "/부산법무사상담",
+    ],
+    notes:
+      "BUSAN_JEONSE_DAMAGE_CHAMPION. Navigator only — 임차권/지급명령 pages keep their own intent.",
+  },
+  {
+    path: INSOLVENCY_CHAMPION,
+    role: "HUB",
+    services: ["rehab", "bankruptcy"],
+    situations: ["rehab-vs-bankruptcy"],
+    relatedPages: [
+      "/부산개인회생",
+      "/부산개인파산",
+      "/부산파산",
+      "/부산개인회생법무사",
+    ],
+    notes: "BUSAN_INSOLVENCY_CHAMPION. Comparison hub — do not target 부산개인회생 long-tails.",
+  },
+  {
+    path: PERSONAL_REHABILITATION_CHAMPION,
+    parentHub: INSOLVENCY_CHAMPION,
+    role: "SERVICE_CHAMPION",
+    services: ["rehab"],
+    situations: ["personal-rehabilitation"],
+    relatedPages: [
+      "/개인회생파산",
+      "/부산개인회생법무사",
+      "/개인회생필요서류",
+      "/개인회생비용",
+    ],
+    notes: "BUSAN_PERSONAL_REHABILITATION_CHAMPION. title/H1 guarded.",
+  },
+  {
+    path: PERSONAL_BANKRUPTCY_CHAMPION,
+    parentHub: INSOLVENCY_CHAMPION,
+    role: "SERVICE_CHAMPION",
+    services: ["bankruptcy"],
+    situations: ["personal-bankruptcy"],
+    relatedPages: ["/개인회생파산", "/부산파산", "/부산개인파산법무사"],
+    notes: "BUSAN_PERSONAL_BANKRUPTCY_CHAMPION. Do not compete with insolvency hub.",
   },
   {
     path: FINANCE_REGISTRATION_CHAMPION,
@@ -287,7 +390,15 @@ export function getChampionForTargetQuery(query: string): {
     "부산 법무사": { champion: BUSAN_LEGAL_SCRIVENER_CHAMPION, intent: "broad-provider-selection" },
     "부산 저렴한 법무사": { champion: COST_CHAMPION, intent: "cost-comparison" },
     "부산 법무사 비용": { champion: COST_CHAMPION, intent: "cost-transparency" },
-    "부산 법무사 추천": { champion: SELECTION_CHAMPION, intent: "selection-research" },
+    "부산 법무사 추천": { champion: BUSAN_LEGAL_SCRIVENER_CHAMPION, intent: "selection-research" },
+    "부산 법무사 법률 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "scrivener-consultation" },
+    "부산 법률 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "public-vs-scrivener-routing" },
+    "부산 법무사 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "consult-prep" },
+    "부산 전세사기": { champion: JEONSE_DAMAGE_CHAMPION, intent: "jeonse-damage-navigator" },
+    "부산 전세사기 법무사": { champion: JEONSE_DAMAGE_CHAMPION, intent: "jeonse-damage-scrivener" },
+    "부산회생파산": { champion: INSOLVENCY_CHAMPION, intent: "rehab-vs-bankruptcy" },
+    "부산개인회생": { champion: PERSONAL_REHABILITATION_CHAMPION, intent: "personal-rehab-application" },
+    "부산 개인파산": { champion: PERSONAL_BANKRUPTCY_CHAMPION, intent: "personal-bankruptcy" },
     "부산 은행 법무사": { champion: FINANCE_REGISTRATION_CHAMPION, intent: "finance-registration-mixed" },
     "부산 은행 등기 법무사": { champion: FINANCE_REGISTRATION_CHAMPION, intent: "finance-registration-closing" },
     "부산 잔금 법무사": { champion: FINANCE_CLOSING_DAY_CHAMPION, intent: "closing-day-registration" },

@@ -9,6 +9,7 @@ import { LectureInlineCta } from "@/components/lectures/LectureInlineCta";
 import { TopicRecommendationForm } from "@/components/lectures/TopicRecommendationForm";
 import { LectureTopicFinder } from "@/components/lectures/LectureTopicFinder";
 import { LectureFormatGuide } from "@/components/lectures/LectureFormatGuide";
+import { LectureProgramChooser } from "@/components/lectures/LectureProgramChooser";
 import { SpeakerProfile } from "@/components/lectures/SpeakerProfile";
 import { VerifiedLectureHistory } from "@/components/lectures/VerifiedLectureHistory";
 import { FeaturedLectureHistory } from "@/components/lectures/history/FeaturedLectureHistory";
@@ -101,7 +102,7 @@ function SpeakerLayout({
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="30초 강의 문의"
+        ctaLabel="강의 문의하기"
         ctaHref="#inquiry"
         secondaryCta={{ href: "/강의이력", label: "확인된 출강 이력" }}
         showDiagnosisCta={false}
@@ -227,7 +228,7 @@ function HiringLayout({
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="30초 섭외 문의"
+        ctaLabel="법률특강 출강 문의"
         ctaHref="#inquiry"
         secondaryCta={{ href: "/강사소개", label: "강사 프로필" }}
         showDiagnosisCta={false}
@@ -303,6 +304,27 @@ function HiringLayout({
         </ContentSection>
       ) : null}
 
+      {content.formats.length ? (
+        <ContentSection id="formats" title="특강·워크숍·세미나 진행 방식">
+          <p className="mb-4 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
+            부산 지역 기업·공공기관에서 워크숍(워크샵)·세미나·직원교육을 준비할 때
+            형식을 다르게 검색해도, 실제로는 한 회차 출강의 참여·설명 비중만
+            조정하는 경우가 많습니다. 게임형 퍼실리테이션은 제공하지 않습니다.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {content.formats.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-navy/10 p-4"
+              >
+                <p className="font-semibold text-navy">{item.title}</p>
+                <p className="mt-1 text-sm text-navy/75">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
+
       {content.durationOptions.length ? (
         <ContentSection id="durations" title="강의시간별 구성 요약">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -339,7 +361,7 @@ function HiringLayout({
       )}
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs.slice(0, 8)} />
+        <FAQAccordion items={content.faqs.slice(0, 12)} />
       </ContentSection>
 
       <RelatedLinks content={content} />
@@ -362,7 +384,7 @@ function HubLayout({
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={(content.primaryKeywords ?? []).slice(0, 4)}
-        ctaLabel="강의 일정 문의하기"
+        ctaLabel="기업·기관 강의 문의"
         ctaHref="/강의문의"
         secondaryCta={{ href: "/강사소개", label: "강사 소개" }}
         showDiagnosisCta={false}
@@ -370,6 +392,8 @@ function HubLayout({
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 2)} />
       <SummaryGrid items={content.summaryItems.slice(0, 4)} />
+
+      <LectureProgramChooser />
 
       <ArticleVisualSlot
         path={page.path}
@@ -487,7 +511,7 @@ function HubLayout({
       )}
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs.slice(0, 6)} />
+        <FAQAccordion items={content.faqs.slice(0, 12)} />
       </ContentSection>
 
       <RelatedLinks content={content} />
@@ -673,7 +697,7 @@ function TopicLayout({
       )}
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs.slice(0, 6)} />
+        <FAQAccordion items={content.faqs.slice(0, 12)} />
       </ContentSection>
 
       <RelatedLinks content={content} />

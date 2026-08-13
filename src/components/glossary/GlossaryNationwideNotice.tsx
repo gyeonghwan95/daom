@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 
-/** 법률용어 — 전국 수임·비용 문의 안내 (게시글 본문 하단) */
+/** 법률용어 — 전국 수임·비용 문의 안내 (게시글 본문, 버튼 CTA 없음) */
 export function GlossaryNationwideNotice({ termLabel }: { termLabel: string }) {
   return (
     <aside className="glossary-nationwide-notice mt-8 border-t border-beige-dark pt-6">
@@ -16,29 +15,12 @@ export function GlossaryNationwideNotice({ termLabel }: { termLabel: string }) {
         <strong className="font-semibold text-[var(--text-primary)]">
           비용과 일정을 먼저 확인
         </strong>
-        하시는 것을 권합니다.
-      </p>
-      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
-        <InquiryNaverCtaPair
-          placement="other"
-          layout="row"
-          size="md"
-          inquiry={
-            <Link
-              href="/contact/inquiry"
-              className="btn-primary inline-flex min-h-12 items-center px-6"
-            >
-              1분만에 상담 신청하기
-            </Link>
-          }
-        />
-        <Link
-          href="/contact"
-          className="btn-secondary inline-flex min-h-12 items-center px-6"
-        >
-          비용·연락처 안내
+        하시는 것을 권합니다.{" "}
+        <Link href="/contact" className="font-semibold text-navy-light underline-offset-2 hover:underline">
+          연락처·상담 안내
         </Link>
-      </div>
+        에서 확인하실 수 있습니다.
+      </p>
     </aside>
   );
 }
