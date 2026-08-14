@@ -17,7 +17,7 @@ export function AnalyticsBeacon() {
       trackPageView(pathname);
     };
 
-    const vis = document.visibilityState;
+    const vis = String(document.visibilityState);
     if (vis === "hidden" || vis === "prerender") {
       const onVis = () => {
         if (document.visibilityState === "visible") {
