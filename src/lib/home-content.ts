@@ -7,7 +7,7 @@ export const homeHero = {
   locationHint: "재송역·센텀역 도보 5분 · 주차 가능 · 예약 방문",
   mobileCta: "지금 전화하기",
   mobileCtaNote: "카카오톡·네이버 톡톡으로도 바로 남기실 됩니다",
-  ctaPrimary: "상담 문의",
+  ctaPrimary: "1분만에 문의하기",
   contactTitle: "부담 없이 연락해 주세요",
   contactSub: "전화 · 카카오톡 · 네이버 톡톡 — 편한 방법 하나만 고르시면 됩니다.",
   scrollHint: "업무·후기 더 보기",

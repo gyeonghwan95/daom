@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { getSourceLabel } from "@/lib/analytics/referrer";
@@ -11,6 +12,7 @@ import type { DashboardPayload } from "@/lib/admin-ops/types";
 type DayRow = {
   date: string;
   visits: number;
+  sessions?: number;
   cta: number;
   consultSubmit: number;
   naverPlace?: number;
@@ -55,13 +57,19 @@ export default function AdminAnalyticsPage() {
     <div>
       <AdminPageHeader title="유입 분석" />
       <p className="admin-prose">
-        page_view → CTA → 문의 · 네이버 플레이스 이동 클릭(개인정보 없음)
+        페이지뷰(화면 조회)와 세션(30분 방문)을 구분해 집계합니다. CTA는 클릭한 버튼이 연 주소까지 기록합니다.
       </p>
       {message ? (
         <p className="admin-alert admin-alert--info">{message}</p>
       ) : null}
 
       <div className="admin-metric-grid">
+        <MetricCard label="오늘 페이지뷰" value={k?.visitsToday ?? null} />
+        <MetricCard
+          label="오늘 세션"
+          value={k?.sessionsToday ?? null}
+          note="같은 탭 30분 = 1방문"
+        />
         <MetricCard
           label="오늘 SmartPlace 클릭"
           value={k?.naverPlaceToday ?? null}
@@ -77,28 +85,41 @@ export default function AdminAnalyticsPage() {
         {days.length === 0 ? (
           <p className="admin-empty">아직 측정되지 않음</p>
         ) : (
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th>날짜</th>
-                <th>페이지뷰</th>
-                <th>CTA</th>
-                <th>제출</th>
-                <th>네이버</th>
-              </tr>
-            </thead>
-            <tbody>
-              {days.map((d) => (
-                <tr key={d.date}>
-                  <td>{d.date}</td>
-                  <td>{d.visits}</td>
-                  <td>{d.cta}</td>
-                  <td>{d.consultSubmit}</td>
-                  <td>{d.naverPlace ?? "—"}</td>
+          <>
+            <DailyTrendChart
+              days={days.map((d) => ({
+                date: d.date,
+                visits: d.visits,
+                sessions: d.sessions,
+                cta: d.cta,
+                submits: d.consultSubmit,
+              }))}
+            />
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>날짜</th>
+                  <th>페이지뷰</th>
+                  <th>세션</th>
+                  <th>CTA</th>
+                  <th>제출</th>
+                  <th>네이버</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {days.map((d) => (
+                  <tr key={d.date}>
+                    <td>{d.date}</td>
+                    <td>{d.visits}</td>
+                    <td>{d.sessions ?? "—"}</td>
+                    <td>{d.cta}</td>
+                    <td>{d.consultSubmit}</td>
+                    <td>{d.naverPlace ?? "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
         )}
       </AdminSection>
 

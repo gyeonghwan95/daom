@@ -106,6 +106,11 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
         answer:
           "등기사항전부증명서와 궁금한 변경·채권 상황을 전화·카카오톡으로 남겨 주시면 됩니다.",
       },
+      {
+        question: "기업법무·회사법무 실무 안내는 어디서 보나요?",
+        answer:
+          "직역명보다 회사 변경·등기 실무를 찾는 경우에는 부산 법인 업무 안내(/부산법인법무사)를 먼저 보세요. 이 페이지는 기업 법무사 사무소를 고를 때의 선택 안내입니다.",
+      },
     ],
     relatedServiceLinks: [
       { href: "/부산기업법률자문", label: "부산 기업 법률실무 지원" },

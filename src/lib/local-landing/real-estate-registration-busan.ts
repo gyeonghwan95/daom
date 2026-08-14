@@ -167,7 +167,7 @@ export function buildBusanRealEstateRegistrationPage(
       { href: "/부산상속등기", label: "상속으로 인한 이전등기" },
       { href: "/부산신축건물보존등기", label: "신축 보존등기" },
       { href: "/부산법무사", label: "부산 법무사 종합 허브" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     relatedRegionLinks: [
       { href: "/수영구부동산등기", label: "수영구 부동산등기" },

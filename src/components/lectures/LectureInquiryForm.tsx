@@ -158,7 +158,7 @@ export function LectureInquiryForm() {
     setErrors({});
     const path =
       typeof window !== "undefined" ? window.location.pathname : "/강의문의";
-    trackCTA("contact", path.replace(/^\//, "") || "강의문의");
+    trackCTA("contact", path.replace(/^\//, "") || "강의문의", path);
     trackB2BEvent("lecture_inquiry_submit", {
       source_page: path,
       category: "LECTURE",

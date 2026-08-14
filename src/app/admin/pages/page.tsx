@@ -63,7 +63,9 @@ export default function AdminPagesPage() {
   return (
     <div>
       <AdminPageHeader title="페이지 성과" />
-      <p className="admin-prose">오늘 · 7일 · 30일(KST) · page_view 기준</p>
+      <p className="admin-prose">
+        오늘 · 7일 · 30일(KST) 페이지뷰(조회 수). 전환율은 문의 제출 ÷ 페이지뷰입니다.
+      </p>
       {message ? <p className="admin-alert admin-alert--info">{message}</p> : null}
 
       <div className="admin-toolbar">

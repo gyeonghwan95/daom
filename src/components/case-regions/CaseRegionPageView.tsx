@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
@@ -55,7 +56,7 @@ export function CaseRegionPageView({
                 href="/contact/inquiry"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
-                상담 문의하기
+                {consultationInquiryCopy.ctaShort}
               </Link>
             }
           />
@@ -150,7 +151,7 @@ export function CaseRegionPageView({
                 href="/contact/inquiry"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
-                상담 문의하기
+                {consultationInquiryCopy.ctaShort}
               </Link>
             }
           />

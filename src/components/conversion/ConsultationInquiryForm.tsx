@@ -9,10 +9,14 @@ import {
   TurnstileWidget,
 } from "@/components/quick-inquiry/TurnstileWidget";
 import {
+  CORPORATE_LEGAL_TASK_OPTIONS,
   INQUIRY_FIELD_OPTIONS,
+  getCorporateLegalTaskLabel,
   getInquiryFieldLabel,
+  type CorporateLegalTaskValue,
   type InquiryFieldValue,
 } from "@/lib/service-conversion/inquiry-fields";
+import { trackB2BEvent } from "@/lib/analytics/track-b2b";
 import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 import {
   getContactInfo,
@@ -41,6 +45,8 @@ export type ConsultationInquiryFormProps = {
   preparedDocsHint?: string;
   /** 비용 안내 요청 여부 */
   costGuideRequested?: boolean;
+  /** 유입 클러스터 (개인정보 아님). 예: corporate-legal */
+  inquiryCluster?: string;
 };
 
 type FormState = {
@@ -56,6 +62,7 @@ type FormState = {
   heirCount: string;
   visitPossible: string;
   contactTime: string;
+  corporateTask: CorporateLegalTaskValue | "";
 };
 
 type FieldErrors = {
@@ -81,6 +88,7 @@ const initialState: FormState = {
   heirCount: "",
   visitPossible: "",
   contactTime: "",
+  corporateTask: "",
 };
 
 function buildInquiryBody(
@@ -92,6 +100,7 @@ function buildInquiryBody(
     preparedDocsHint?: string;
     costGuideRequested?: boolean;
     pageUrl?: string;
+    inquiryCluster?: string;
   },
 ): string {
   const fieldLabel = form.field ? getInquiryFieldLabel(form.field) : "미선택";
@@ -109,6 +118,10 @@ function buildInquiryBody(
     `준비된 서류: ${meta.preparedDocsHint?.trim() || (form.hasDocuments ? "있음(상세는 본문)" : "없음/일부")}`,
     `비용 안내 요청: ${meta.costGuideRequested ? "예" : "아니오(본문 참고)"}`,
     `제출 URL: ${meta.pageUrl ?? "-"}`,
+    `유입 클러스터: ${meta.inquiryCluster?.trim() || "-"}`,
+    `기업 업무 선택: ${
+      form.corporateTask ? getCorporateLegalTaskLabel(form.corporateTask) : "-"
+    }`,
   ];
 
   if (nationwideMode) {
@@ -134,6 +147,7 @@ export function ConsultationInquiryForm({
   intentHint,
   preparedDocsHint,
   costGuideRequested = false,
+  inquiryCluster,
 }: ConsultationInquiryFormProps) {
   const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
@@ -232,7 +246,15 @@ export function ConsultationInquiryForm({
         costGuideRequested:
           costGuideRequested || form.situation.includes("비용"),
         pageUrl: pageMeta.pageUrl,
+        inquiryCluster,
       });
+      if (inquiryCluster === "corporate-legal") {
+        trackB2BEvent("collaboration_form_submit", {
+          source_page: sourcePage,
+          category: "CORPORATE_LEGAL",
+          service_type: form.corporateTask || form.field || undefined,
+        });
+      }
       const result = await submitQuickInquiry({
         message,
         contact: form.phone.trim(),
@@ -539,6 +561,33 @@ export function ConsultationInquiryForm({
           </span>
         ) : null}
       </label>
+
+      {form.field === "corporate-registration" ||
+      inquiryCluster === "corporate-legal" ? (
+        <label className="inquiry-form__field" htmlFor={`${formId}-corporate-task`}>
+          <span className="inquiry-form__label">기업·법인 업무 (선택)</span>
+          <select
+            id={`${formId}-corporate-task`}
+            name="corporateTask"
+            disabled={submitting}
+            value={form.corporateTask}
+            onChange={(e) =>
+              setForm((prev) => ({
+                ...prev,
+                corporateTask: e.target.value as CorporateLegalTaskValue | "",
+              }))
+            }
+            className="inquiry-form__input"
+          >
+            <option value="">해당하면 선택해 주세요</option>
+            {CORPORATE_LEGAL_TASK_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
 
       <label className="inquiry-form__field" htmlFor={`${formId}-situation`}>
         <span className="inquiry-form__label">

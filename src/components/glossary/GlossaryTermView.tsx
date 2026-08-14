@@ -15,6 +15,7 @@ import {
   RelatedContentGrid,
   SummaryBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { recommendationFromGlossaryTerm } from "@/lib/internal-links";
 import { getGlossaryPlainParagraphs, getGlossaryTermBySlug, isGlossaryNationwideTerm } from "@/lib/glossary";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -72,7 +73,7 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
         intro={term.oneLineDefinition}
         keywords={page.primaryKeywords}
         eyebrow="Legal Glossary"
-        ctaLabel="용어 관련 상담하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={isGlossaryNationwideTerm(slug)}
@@ -143,7 +144,7 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
         <ConsultationCTA
           title="용어와 관련된 절차가 궁금하시면 상담해 보세요"
           description={page.ctaText}
-          buttonLabel="상담 내용 남기기"
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
         />
       </div>
     </article>

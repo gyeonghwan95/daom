@@ -7,6 +7,7 @@ import { PageHero } from "@/components/readability";
 import {
   getSearchGuideEntriesByCategory,
 } from "@/lib/local-landing/search-intent";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 export function SearchGuidesHubView() {
   const groups = getSearchGuideEntriesByCategory();
@@ -25,7 +26,7 @@ export function SearchGuidesHubView() {
           h1="검색의도 SEO 안내"
           eyebrow="Search Intent Hub"
           intro="업무명만이 아니라, 실제 고객이 검색하는 추천·비용·서류·기한·공공기관·건축주 키워드까지 상담 전 체크포인트로 정리했습니다. 기존에 있는 페이지는 URL을 유지한 채 연결하고, 새로운 검색의도만 추가로 안내합니다."
-          ctaLabel="상담 문의하기"
+          ctaLabel={consultationInquiryCopy.ctaShort}
           showDiagnosisCta={false}
           showAboutLawyerCta
         >

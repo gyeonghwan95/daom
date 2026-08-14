@@ -16,6 +16,7 @@ import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 import { seoBrand } from "@/lib/seo/brand";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 const PORTRAIT_SRC = encodePublicSrc("/image/썸네일-정면.jpg");
 
@@ -77,7 +78,7 @@ export function SidebarConsultationPanel() {
       : []),
     {
       id: "inquiry",
-      label: "상담 문의하기",
+      label: consultationInquiryCopy.ctaShort,
       hint: "상황만 적어 보내기",
       href: "/contact/inquiry",
       variant: "inquiry" as const,

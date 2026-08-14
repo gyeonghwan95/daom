@@ -266,7 +266,7 @@ export default function OfficePage() {
                     href="/contact/inquiry?from=office"
                     className="font-medium text-navy-light underline-offset-2 hover:underline"
                   >
-                    상담 문의 남기기
+                    1분만에 문의하기
                   </Link>
                   로도 같은 내용을 전달할 수 있습니다.
                 </p>

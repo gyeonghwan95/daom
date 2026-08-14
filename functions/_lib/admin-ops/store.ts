@@ -45,6 +45,7 @@ function emptyDay(date) {
   return {
     date,
     visits: 0,
+    sessions: 0,
     cta: 0,
     consultStart: 0,
     consultSubmit: 0,
@@ -58,6 +59,7 @@ function emptyDay(date) {
     devices: { mobile: 0, desktop: 0, unknown: 0 },
     naverPlacePlacements: {},
     notices: {},
+    destinations: {},
     lastEventAt: null,
   };
 }
@@ -120,6 +122,7 @@ function addNum(a, b) {
 function mergeDay(target, source) {
   if (!source) return target;
   target.visits = addNum(target.visits, source.visits);
+  target.sessions = addNum(target.sessions, source.sessions);
   target.cta = addNum(target.cta, source.cta);
   target.consultStart = addNum(target.consultStart, source.consultStart);
   target.consultSubmit = addNum(target.consultSubmit, source.consultSubmit);
@@ -151,6 +154,10 @@ function mergeDay(target, source) {
     target.notices[id].impression = addNum(target.notices[id].impression, row.impression);
     target.notices[id].click = addNum(target.notices[id].click, row.click);
     target.notices[id].dismiss = addNum(target.notices[id].dismiss, row.dismiss);
+  }
+  if (!target.destinations) target.destinations = {};
+  for (const [k, v] of Object.entries(source.destinations || {})) {
+    target.destinations[k] = addNum(target.destinations[k], v);
   }
   if (!target.paths) target.paths = {};
   for (const [path, stats] of Object.entries(source.paths || {})) {
@@ -389,6 +396,16 @@ const ACTIVITY_EVENTS = new Set([
   "naver_place_click",
 ]);
 
+function activityMeta(meta) {
+  if (!meta || typeof meta !== "object") return undefined;
+  const out = {};
+  for (const [k, v] of Object.entries(meta)) {
+    if (k === "sid") continue;
+    out[k] = String(v).slice(0, k === "dest" ? 160 : 80);
+  }
+  return Object.keys(out).length ? out : undefined;
+}
+
 async function pushRecentActivity(env, event, path) {
   if (!ACTIVITY_EVENTS.has(event.type)) return;
   const list = await getJson(env.ADMIN_KV, KEYS.recentActivity, []);
@@ -398,9 +415,39 @@ async function pushRecentActivity(env, event, path) {
     path,
     eventType: event.type,
     referrerType: event.referrerType || "direct",
-    meta: event.meta,
+    meta: activityMeta(event.meta),
   });
-  await putJson(env.ADMIN_KV, KEYS.recentActivity, list.slice(0, 25));
+  await putJson(env.ADMIN_KV, KEYS.recentActivity, list.slice(0, 40));
+}
+
+function noteSession(day, sid) {
+  if (!sid) return;
+  if (!day.sessionSeen) day.sessionSeen = {};
+  if (day.sessionSeen[sid]) return;
+  if (Object.keys(day.sessionSeen).length >= 2000) return;
+  day.sessionSeen[sid] = 1;
+  day.sessions = (day.sessions || 0) + 1;
+}
+
+function bumpDestination(day, event) {
+  const dest = String(event.meta?.dest || "").slice(0, 160);
+  if (!dest) return;
+  const click = new Set([
+    "cta_click",
+    "phone_click",
+    "kakao_click",
+    "naver_click",
+    "naver_place_click",
+    "consultation_start",
+  ]);
+  if (!click.has(event.type)) return;
+  const kind = String(event.meta?.kind || event.type).slice(0, 40);
+  const key = `${kind}|${dest}`.slice(0, 180);
+  if (!day.destinations) day.destinations = {};
+  if (day.destinations[key] == null && Object.keys(day.destinations).length >= 80) {
+    return;
+  }
+  day.destinations[key] = (day.destinations[key] || 0) + 1;
 }
 
 export async function listRecentActivity(env, limit = 20) {
@@ -425,6 +472,7 @@ export async function recordAnalyticsEvent(env, event) {
     case "page_view":
       day.visits += 1;
       row.visits += 1;
+      noteSession(day, event.sid);
       if (event.deviceType === "mobile") day.devices.mobile += 1;
       else if (event.deviceType === "desktop") day.devices.desktop += 1;
       else day.devices.unknown += 1;
@@ -497,6 +545,7 @@ export async function recordAnalyticsEvent(env, event) {
 
   const source = event.referrerType || event.referrerHost || "direct";
   day.sources[source] = (day.sources[source] || 0) + (event.type === "page_view" ? 1 : 0);
+  bumpDestination(day, event);
 
   await putJson(env.ADMIN_KV, dayKey(date, shard), day);
   await bumpHourly(env, date, hour, event, shard);
@@ -541,6 +590,9 @@ export async function buildDashboard(env) {
   let visitsYesterday = null;
   let visits7d = null;
   let visitsPrev7d = null;
+  let sessionsToday = null;
+  let sessionsYesterday = null;
+  let sessions7d = null;
   let consultSubmitToday = null;
   let ctaToday = null;
   let consultStartToday = null;
@@ -571,6 +623,8 @@ export async function buildDashboard(env) {
     const dayY = await getDaily(env, yesterday);
     visitsToday = dayToday.visits;
     visitsYesterday = dayY.visits;
+    sessionsToday = dayToday.sessions || 0;
+    sessionsYesterday = dayY.sessions || 0;
     consultSubmitToday = dayToday.consultSubmit;
     ctaToday = dayToday.cta;
     consultStartToday = dayToday.consultStart;
@@ -652,14 +706,17 @@ export async function buildDashboard(env) {
     let v7 = 0;
     let vp = 0;
     let np7 = 0;
+    let s7 = 0;
     const series = [];
     for (const d of last7) {
       const day = await getDaily(env, d);
       v7 += day.visits;
+      s7 += day.sessions || 0;
       np7 += day.naverPlace || 0;
       series.push({
         date: d,
         visits: day.visits,
+        sessions: day.sessions || 0,
         submits: day.consultSubmit,
         cta: day.cta,
         naverPlace: day.naverPlace || 0,
@@ -671,6 +728,7 @@ export async function buildDashboard(env) {
     }
     visits7d = v7;
     visitsPrev7d = vp;
+    sessions7d = s7;
     naverPlace7d = np7;
     visitsByDay = series;
 
@@ -794,6 +852,7 @@ export async function buildDashboard(env) {
 
   const summaryParts = [
     `오늘 페이지뷰 ${visitsToday ?? "—"}`,
+    `세션 ${sessionsToday ?? "—"}`,
     `CTA ${ctaToday ?? "—"}`,
     `상담제출 ${consultSubmitToday ?? "—"}`,
     `네이버이동 ${naverPlaceToday ?? "—"}`,
@@ -810,6 +869,9 @@ export async function buildDashboard(env) {
       visitsYesterday,
       visits7d,
       visitsPrev7d,
+      sessionsToday,
+      sessionsYesterday,
+      sessions7d,
       ctaToday,
       consultStartToday,
       consultSubmitToday,
@@ -1110,5 +1172,14 @@ export async function buildConversionsReport(env) {
         naverPlace: r.naverPlace,
         ctr: r.visits > 0 ? Math.round((r.naverPlace / r.visits) * 1000) / 10 : null,
       })),
+    destinations: Object.entries(dayToday.destinations || {})
+      .map(([key, count]) => {
+        const sep = key.indexOf("|");
+        const kind = sep >= 0 ? key.slice(0, sep) : key;
+        const dest = sep >= 0 ? key.slice(sep + 1) : "";
+        return { kind, dest, clicks: count };
+      })
+      .sort((a, b) => b.clicks - a.clicks)
+      .slice(0, 20),
   };
 }

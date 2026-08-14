@@ -11,6 +11,7 @@ export function InquiryFormLoader() {
   const intent = searchParams.get("intent") ?? undefined;
   const docs = searchParams.get("docs") ?? undefined;
   const cost = searchParams.get("cost") ?? undefined;
+  const cluster = searchParams.get("cluster") ?? undefined;
 
   return (
     <ConsultationInquiryForm
@@ -21,6 +22,7 @@ export function InquiryFormLoader() {
       intentHint={intent}
       preparedDocsHint={docs}
       costGuideRequested={cost === "1" || cost === "true" || intent?.includes("비용")}
+      inquiryCluster={cluster}
     />
   );
 }

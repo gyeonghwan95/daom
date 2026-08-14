@@ -14,5 +14,5 @@ export const BUILDING_HUB_LINKS = {
   situations: { href: "/건물등기상황별안내", label: "건물등기 상황별 안내" },
   lawyer: { href: "/부산건축물등기법무사", label: "부산 건축물등기 법무사" },
   realEstate: { href: "/부산부동산등기", label: "부산 부동산등기" },
-  contact: { href: "/contact/inquiry?field=real-estate-registration", label: "건물등기 상담" },
+  contact: { href: "/contact/inquiry?field=real-estate-registration", label: "1분만에 문의하기" },
 } as const;

@@ -1,7 +1,9 @@
 import type { AnalyticsEventInput } from "@/lib/admin-ops/types";
 import { classifyReferrer, normalizePath } from "@/lib/admin-ops/utils";
 
-const PV_DEDUPE_MS = 1500;
+/** 같은 URL 재마운트·Strict Mode·HMR·이중 전송 방지 (GA 페이지뷰 ≠ 새로고침 폭주) */
+const PV_DEDUPE_MS = 30_000;
+const SESSION_IDLE_MS = 30 * 60 * 1000;
 const pvStamp = new Map<string, number>();
 
 function shouldSkipDuplicatePageView(path: string): boolean {
@@ -20,28 +22,38 @@ function shouldSkipDuplicatePageView(path: string): boolean {
   return false;
 }
 
-async function postCollect(body: string): Promise<void> {
-  const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
+function getSessionId(): string {
   try {
-    const res = await fetch("/api/analytics/collect", {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body,
-      keepalive: true,
-    });
-    if (res.ok) return;
+    const now = Date.now();
+    const last = Number(sessionStorage.getItem("daom_sid_at") || 0);
+    let sid = sessionStorage.getItem("daom_sid") || "";
+    if (!sid || (last && now - last > SESSION_IDLE_MS)) {
+      sid =
+        typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : `s${Math.random().toString(36).slice(2)}${Date.now().toString(36)}`;
+      sessionStorage.setItem("daom_sid", sid);
+    }
+    sessionStorage.setItem("daom_sid_at", String(now));
+    return sid.slice(0, 36);
   } catch {
-    /* fall through to sendBeacon */
+    return "";
   }
+}
+
+/** sendBeacon XOR fetch — 실패 시 재전송하면 서버가 이미 기록한 이벤트가 중복된다. */
+function postCollect(body: string): void {
+  const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
   if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
-    const queued = navigator.sendBeacon("/api/analytics/collect", blob);
-    if (queued) return;
+    if (navigator.sendBeacon("/api/analytics/collect", blob)) return;
   }
-  await fetch("/api/analytics/collect", {
+  void fetch("/api/analytics/collect", {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=UTF-8" },
     body,
     keepalive: true,
+  }).catch(() => {
+    /* fail open */
   });
 }
 
@@ -93,6 +105,10 @@ export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
     }
     if (campaign && referrerType === "direct") referrerType = "campaign";
 
+    const sid = getSessionId();
+    const meta: Record<string, string> = { ...(input.meta || {}) };
+    if (sid) meta.sid = sid;
+
     const payload = {
       type: input.type,
       path,
@@ -100,10 +116,10 @@ export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
       referrerType,
       campaign,
       deviceType: input.deviceType ?? deviceType,
-      meta: input.meta,
+      meta,
     };
 
-    await postCollect(JSON.stringify(payload));
+    postCollect(JSON.stringify(payload));
   } catch {
     /* ignore */
   }

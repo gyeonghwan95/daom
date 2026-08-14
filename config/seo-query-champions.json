@@ -1,0 +1,44 @@
+{
+  "updated": "2026-08-15",
+  "seoKnownGoodCommit": "e064454fd0aeac6fc60bb6010c364aee37c51f3b",
+  "queries": {
+    "부산 법무사": {
+      "primary": "/부산법무사",
+      "protected": true,
+      "role": "BUSAN_LAW_SCRIVENER_CHAMPION",
+      "supporting": [
+        "/부산법무사추천",
+        "/부산법무사비교",
+        "/부산법무사상담",
+        "/부산법무사비용",
+        "/부산등기법무사",
+        "/해운대법무사",
+        "/센텀법무사"
+      ]
+    },
+    "부산법무사": {
+      "primary": "/부산법무사",
+      "protected": true,
+      "aliasOf": "부산 법무사"
+    },
+    "부산 법무사 추천": {
+      "primary": "/부산법무사",
+      "protected": true,
+      "supporting": ["/부산법무사추천"],
+      "note": "추천 검색의 Primary Champion은 Flagship. /부산법무사추천은 선택 기준 Spoke."
+    },
+    "부산 법무사 상담": {
+      "primary": "/부산법무사상담",
+      "protected": true,
+      "supporting": ["/부산법률상담", "/상담"]
+    },
+    "부산 법무사 비교": {
+      "primary": "/부산법무사비교",
+      "protected": true
+    },
+    "부산 등기 법무사": {
+      "primary": "/부산등기법무사",
+      "protected": true
+    }
+  }
+}

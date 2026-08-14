@@ -22,4 +22,6 @@
 | 2026-08-13 | `/부산법률강사` | Hiring | 워크숍/세미나 alias FAQ·#formats. title/H1 불변 | Lecture Cluster | 부산 강사 섭외, 세미나 강사 |
 | 2026-08-13 | `/기업법률교육` `/공공기관법률교육` `/기관특강주제추천` | topic | Format/신입/DISCOVERY FAQ·섹션. title/H1 불변 | Lecture Cluster | 기업교육·공공교육·주제추천 |
 | 2026-08-13 | `/강의문의` form | 최소필드 | 행사형태·대상 optional + lecture_inquiry_* | Analytics LECTURE | — |
-| 2026-08-13 | docs | — | LECTURE_CURRENT_COVERAGE / BUSAN_LECTURE_KEYWORD_GAP / lecture-search-intents.ts | Audit | — |
+| 2026-08-15 | `/부산법인법무사` | 기존 Champion 본문 | 상황 선택·성장단계·체크리스트·범위표 모듈 + unique FAQ. title/H1/meta/canonical 불변 | Corporate adjacent cluster STRENGTHEN | 부산 법인법무, 부산 기업법무, 부산 회사법무 |
+| 2026-08-15 | `/부산기업법률자문` `/부산기업법무사` | 실무/선택 Hub | Champion 라우팅 FAQ·내부링크. title/H1 불변 | Cannibalization ADJUST | 기업법무 vs 기업 법무사 |
+| 2026-08-15 | sitewide TOC | hidden+details 이중 목차 | details 1회만 렌더 (DUPLICATE_FIX). title/H1 불변 | Recovery Phase 1 | 부산 법무사 (기술) |

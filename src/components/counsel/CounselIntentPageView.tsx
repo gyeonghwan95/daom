@@ -19,6 +19,7 @@ import { NationwideServiceCard } from "@/components/nationwide/NationwideService
 import { getCounselContent } from "@/lib/counsel-intent/content";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { CounselScopeLevel } from "@/lib/counsel-intent/types";
 import { siteImages } from "@/lib/site-images";
 
@@ -102,7 +103,7 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
         keywords={content.primaryKeywords}
-        ctaLabel="상담 내용 남기기"
+        ctaLabel={consultationInquiryCopy.ctaPrimary}
         ctaHref="/contact/inquiry"
         secondaryCta={{ href: "#selector", label: "필요한 업무 확인하기" }}
         showDiagnosisCta={false}

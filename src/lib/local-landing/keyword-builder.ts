@@ -13,6 +13,7 @@ import {
   championSituationMap,
 } from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
+import { corporateLegalExtraFaqs } from "./corporate-legal-operations-modules";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -73,6 +74,7 @@ export function buildKeywordHubPage(
   ];
 
   const isInheritanceChampion = topic.slug === "부산상속법무사";
+  const isCorporateLegalOps = topic.slug === "부산법인법무사";
 
   const summaryParagraphs = isInheritanceChampion
     ? [...topic.summaryParagraphs, ...championExtraSummaryParagraphs]
@@ -89,10 +91,22 @@ export function buildKeywordHubPage(
     : topic.procedures;
   const faqs = isInheritanceChampion
     ? [...topic.faqs, ...championExtraFaqs]
-    : topic.faqs;
+    : isCorporateLegalOps
+      ? [...topic.faqs, ...corporateLegalExtraFaqs]
+      : topic.faqs;
+
+  const corporateLegalExtraLinks = isCorporateLegalOps
+    ? [
+        { href: "/부산부동산등기", label: "회사 명의 부동산등기 안내" },
+        { href: "/부산기업채권관리", label: "미수금·지급명령 신청서류" },
+        { href: "/부산법인해산전확인사항", label: "해산 전 확인사항" },
+        { href: "/부산사업목적변경등기", label: "사업목적 변경등기" },
+      ]
+    : [];
 
   const internalLinks = [
     ...topic.relatedServiceLinks,
+    ...corporateLegalExtraLinks,
     ...(isInheritanceChampion ? championExtraRelatedLinks : []),
     ...topic.relatedFaqLinks,
     ...topic.relatedCaseLinks,
@@ -105,7 +119,9 @@ export function buildKeywordHubPage(
 
   const ctaDescription = isInheritanceChampion
     ? "내 상속 상황에 필요한 절차를 확인하고 싶으시면 사망일·상속인·확인된 재산·채무만 남겨 주세요. 준비서류와 다음 단계부터 안내합니다."
-    : consultationCopy.default;
+    : isCorporateLegalOps
+      ? "대표·임원·본점·목적·자본 등 회사에 생긴 변경과 등기부 현황만 남겨 주시면, 필요한 등기와 준비서류부터 확인합니다."
+      : consultationCopy.default;
 
   return {
     slug: config.slug,

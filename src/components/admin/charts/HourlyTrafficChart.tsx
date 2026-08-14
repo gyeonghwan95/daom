@@ -3,6 +3,7 @@
 type HourRow = {
   hour: number;
   pageViews: number;
+  cta?: number;
 };
 
 type Props = {
@@ -16,13 +17,24 @@ type Props = {
   } | null;
 };
 
-export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
-  const rows =
-    today && today.length > 0
-      ? [...today].sort((a, b) => a.hour - b.hour)
-      : null;
+function padHours(rows: HourRow[] | null | undefined): HourRow[] {
+  const map = new Map((rows || []).map((r) => [r.hour, r]));
+  return Array.from({ length: 24 }, (_, hour) => {
+    const row = map.get(hour);
+    return {
+      hour,
+      pageViews: row?.pageViews ?? 0,
+      cta: row?.cta ?? 0,
+    };
+  });
+}
 
-  if (!rows) {
+export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
+  const rows = padHours(today);
+  const avgRows = padHours(avg7Day);
+  const hasAny = rows.some((r) => r.pageViews > 0);
+
+  if (!hasAny) {
     return (
       <p className="admin-empty">오늘 수집된 시간대별 페이지뷰 데이터가 아직 없습니다.</p>
     );
@@ -31,8 +43,18 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
   const max = Math.max(
     1,
     ...rows.map((r) => r.pageViews),
-    ...(avg7Day || []).map((r) => r.pageViews),
+    ...avgRows.map((r) => r.pageViews),
   );
+
+  const nowHour = Number(
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Seoul",
+      hour: "2-digit",
+      hourCycle: "h23",
+    })
+      .format(new Date())
+      .replace(/\D/g, ""),
+  ) % 24;
 
   return (
     <div className="admin-hourly">
@@ -43,28 +65,29 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
         <span>
           <i className="admin-hourly__dot admin-hourly__dot--avg" /> 7일 평균
         </span>
+        <span className="admin-hourly__hint">막대에 마우스를 올리면 수치를 볼 수 있습니다</span>
       </div>
       <div className="admin-hourly__chart" role="img" aria-label="시간대별 페이지뷰">
         {rows.map((row) => {
-          const avg =
-            avg7Day?.find((x) => x.hour === row.hour)?.pageViews ?? 0;
-          const hToday = Math.round((row.pageViews / max) * 100);
-          const hAvg = Math.round((avg / max) * 100);
-          const showTick = row.hour % 3 === 0;
+          const avg = avgRows.find((x) => x.hour === row.hour)?.pageViews ?? 0;
+          const hToday = Math.max(row.pageViews > 0 ? 6 : 0, Math.round((row.pageViews / max) * 100));
+          const hAvg = Math.max(avg > 0 ? 4 : 0, Math.round((avg / max) * 100));
+          const showTick = row.hour % 2 === 0;
+          const isNow = row.hour === nowHour;
           return (
             <div
               key={row.hour}
-              className="admin-hourly__col"
-              title={`${row.hour}시 · 오늘 ${row.pageViews}회 · 7일 평균 ${avg}회`}
+              className={`admin-hourly__col${isNow ? " is-now" : ""}`}
+              title={`${String(row.hour).padStart(2, "0")}시 · 오늘 ${row.pageViews}회 · 7일 평균 ${avg}회${row.cta ? ` · CTA ${row.cta}` : ""}`}
             >
               <div className="admin-hourly__bars">
                 <div
-                  className="admin-hourly__bar admin-hourly__bar--today"
-                  style={{ height: `${hToday}%` }}
-                />
-                <div
                   className="admin-hourly__bar admin-hourly__bar--avg"
                   style={{ height: `${hAvg}%` }}
+                />
+                <div
+                  className="admin-hourly__bar admin-hourly__bar--today"
+                  style={{ height: `${hToday}%` }}
                 />
               </div>
               <span className="admin-hourly__tick">
@@ -112,9 +135,7 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
             <tr key={row.hour}>
               <td>{row.hour}</td>
               <td>{row.pageViews}</td>
-              <td>
-                {avg7Day?.find((x) => x.hour === row.hour)?.pageViews ?? "—"}
-              </td>
+              <td>{avgRows.find((x) => x.hour === row.hour)?.pageViews ?? "—"}</td>
             </tr>
           ))}
         </tbody>

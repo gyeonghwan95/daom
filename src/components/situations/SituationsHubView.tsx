@@ -23,6 +23,7 @@ import {
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type SituationsHubViewProps = {
   page: PageData;
@@ -76,7 +77,7 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
         h1={page.h1}
         intro={page.intro}
         eyebrow="Legal Situations"
-        ctaLabel="상담 문의하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
       />

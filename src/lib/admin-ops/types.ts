@@ -149,6 +149,9 @@ export type DashboardPayload = {
     visitsYesterday: number | null;
     visits7d: number | null;
     visitsPrev7d: number | null;
+    sessionsToday?: number | null;
+    sessionsYesterday?: number | null;
+    sessions7d?: number | null;
     ctaToday?: number | null;
     consultStartToday?: number | null;
     consultSubmitToday: number | null;
@@ -179,6 +182,7 @@ export type DashboardPayload = {
   visitsByDay: Array<{
     date: string;
     visits: number;
+    sessions?: number;
     submits: number;
     cta?: number;
     naverPlace?: number;

@@ -11,9 +11,9 @@ export type CTAType =
  * CTA 클릭 전환 추적.
  * Admin Ops(`/api/analytics/collect`)로 익명 집계. PII 없음.
  */
-export function trackCTA(type: CTAType, pageSlug: string): void {
+export function trackCTA(type: CTAType | string, pageSlug: string, href?: string): void {
   if (process.env.NODE_ENV === "development") {
-    console.debug("[trackCTA]", { type, pageSlug });
+    console.debug("[trackCTA]", { type, pageSlug, href });
   }
-  trackCtaEvent(type, pageSlug);
+  trackCtaEvent(type, pageSlug, href);
 }

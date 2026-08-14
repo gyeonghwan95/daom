@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type SearchEmptyStateProps = {
   query: string;
@@ -36,7 +37,7 @@ export function SearchEmptyState({ query, onNavigate }: SearchEmptyStateProps) {
           onClick={onNavigate}
           className="inline-flex items-center justify-center rounded-lg border border-beige-dark bg-navy px-3 py-2 text-xs font-medium text-white no-underline hover:bg-navy-light"
         >
-          상담 문의하기
+          {consultationInquiryCopy.ctaShort}
         </Link>
       </div>
     </div>

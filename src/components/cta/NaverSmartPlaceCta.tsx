@@ -121,7 +121,7 @@ export function NaverSmartPlaceCta({
       aria-label={copy.aria}
       className={`${toneClass(tone, fullWidth, size)} ${sizing} ${className}`.trim()}
       onClick={() => {
-        trackNaverPlaceClick({ variant, placement });
+        trackNaverPlaceClick({ variant, placement, href });
       }}
     >
       <NaverIcon className={iconClass} />

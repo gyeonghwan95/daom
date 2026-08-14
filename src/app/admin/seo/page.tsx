@@ -190,6 +190,30 @@ export default function AdminSeoPage() {
         </AdminSection>
       </div>
 
+      <AdminSection title="부산 법무사 Recovery">
+        <p className="admin-prose">
+          Champion: <code>/부산법무사</code> (부산 법무사, 부산 법무사 추천).
+          Title/H1/canonical 자동 변경 금지. Known-good commit: <code>e064454</code>.
+          순위 수치는 추정하지 않습니다. Search Advisor 수집·색인은 관리자가 수동
+          확인하세요.
+        </p>
+        <ul style={{ lineHeight: 1.8, fontSize: 14 }}>
+          <li>Last public SEO change class: duplicate TOC DOM (Phase 1 SAFE)</li>
+          <li>
+            Ranking observation: <code>data/seo/ranking-observations.json</code> —
+            「부산 법무사」 노출 URL은 미확정(null)
+          </li>
+          <li>
+            Rollback: Phase 1은{" "}
+            <code>src/components/readability/PageTableOfContents.tsx</code> 만
+          </li>
+          <li>
+            <code>npm run seo:audit:busan</code> ·{" "}
+            <code>npm run seo:snapshot:busan-lawyer</code>
+          </li>
+        </ul>
+      </AdminSection>
+
       <AdminSection title="로컬/CI 재실행">
         <ul style={{ lineHeight: 1.8, fontSize: 14, margin: 0 }}>
           <li>

@@ -3,6 +3,7 @@ import type {
   NationwideServiceCard,
   NationwideServiceType,
 } from "./types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 export const NATIONWIDE_TYPE_LABELS: Record<NationwideServiceType, string> = {
   "jurisdiction-exception": "관할 특례 확인",
@@ -21,7 +22,7 @@ export function getNationwideNotice(
   type: NationwideServiceType,
   options?: { ctaLabel?: string; ctaHref?: string },
 ): NationwideNoticeConfig {
-  const ctaLabel = options?.ctaLabel ?? "상담 문의하기";
+  const ctaLabel = options?.ctaLabel ?? consultationInquiryCopy.ctaShort;
   const ctaHref = options?.ctaHref ?? "/contact/inquiry?from=nationwide";
 
   if (type === "jurisdiction-exception") {
@@ -70,7 +71,7 @@ export function getNationwideNotice(
       steps: BASE_STEPS,
       caution:
         "법인등기의 법정 관할은 유지됩니다. 신청 관할·등록면허세·결의 요건은 이전 경로에 따라 달라지며 개별 확인이 필요합니다.",
-      ctaLabel: options?.ctaLabel ?? "방문 없이 바로 진행 상담하기",
+      ctaLabel: options?.ctaLabel ?? consultationInquiryCopy.ctaShort,
       ctaHref,
     };
   }

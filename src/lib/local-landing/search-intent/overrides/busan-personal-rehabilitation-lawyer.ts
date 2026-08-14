@@ -147,7 +147,7 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },
     { href: "/glossary/personal-rehabilitation", label: "개인회생 용어 설명" },
-    { href: "/contact/inquiry", label: "상담 신청" },
+    { href: "/contact/inquiry", label: "1분만에 문의하기" },
   ],
   bottomCtaText:
     "월 소득, 채무 규모, 재산 현황을 기준으로 신청 가능성을 확인해보세요. 결과는 개별 사정에 따라 달라질 수 있습니다.",

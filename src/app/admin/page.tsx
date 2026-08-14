@@ -5,10 +5,11 @@ import Link from "next/link";
 import { AlertCenter } from "@/components/admin/AlertCenter";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { HourlyTrafficChart } from "@/components/admin/charts/HourlyTrafficChart";
+import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
+import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
-import { getActivityEventLabel, getSourceLabel } from "@/lib/admin/activity-labels";
-import { formatKoreanNumber } from "@/lib/admin/url-display";
+import { formatActivityAction, getSourceLabel } from "@/lib/admin/activity-labels";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
@@ -75,12 +76,27 @@ export default function AdminDashboardPage() {
       </AdminPageHeader>
 
       <p className="admin-summary">{data.summaryLine}</p>
+      <p className="admin-prose">
+        페이지뷰는 화면을 연 횟수입니다. 세션은 같은 브라우저 탭에서 30분 동안을 한 방문으로 봅니다.
+        봇·숨은 탭·같은 주소 30초 이내 중복은 제외합니다.
+      </p>
 
       <div className="admin-metric-grid" aria-label="KPI">
         <MetricCard
           label="오늘 페이지뷰"
           value={k.visitsToday}
           compareValue={k.visitsYesterday}
+          note="조회 수 (중복 제거 후)"
+        />
+        <MetricCard
+          label="오늘 세션"
+          value={k.sessionsToday ?? null}
+          compareValue={k.sessionsYesterday ?? null}
+          note={
+            (k.sessionsToday ?? 0) === 0 && (k.visitsToday ?? 0) > 0
+              ? "세션은 이번 개선 이후부터 집계"
+              : "30분 유휴 시 새 방문"
+          }
         />
         <MetricCard
           label="최근 7일 페이지뷰"
@@ -112,7 +128,7 @@ export default function AdminDashboardPage() {
         <AlertCenter alerts={data.alerts} />
       </AdminSection>
 
-      <AdminSection title="오늘 시간대별 페이지 방문">
+      <AdminSection title="오늘 시간대별 페이지뷰">
         <HourlyTrafficChart
           today={data.hourlyToday}
           avg7Day={data.hourly7DayAvg}
@@ -125,28 +141,33 @@ export default function AdminDashboardPage() {
           {data.visitsByDay.length === 0 ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>날짜</th>
-                  <th>페이지뷰</th>
-                  <th>CTA</th>
-                  <th>제출</th>
-                  <th>네이버</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.visitsByDay.map((d) => (
-                  <tr key={d.date}>
-                    <td>{d.date}</td>
-                    <td>{d.visits}</td>
-                    <td>{d.cta ?? "—"}</td>
-                    <td>{d.submits}</td>
-                    <td>{d.naverPlace ?? "—"}</td>
+            <>
+              <DailyTrendChart days={data.visitsByDay} />
+              <table className="admin-table">
+                <thead>
+                  <tr>
+                    <th>날짜</th>
+                    <th>페이지뷰</th>
+                    <th>세션</th>
+                    <th>CTA</th>
+                    <th>제출</th>
+                    <th>네이버</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data.visitsByDay.map((d) => (
+                    <tr key={d.date}>
+                      <td>{d.date}</td>
+                      <td>{d.visits}</td>
+                      <td>{d.sessions ?? "—"}</td>
+                      <td>{d.cta ?? "—"}</td>
+                      <td>{d.submits}</td>
+                      <td>{d.naverPlace ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
           )}
         </AdminSection>
 
@@ -154,28 +175,15 @@ export default function AdminDashboardPage() {
           {!funnel ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
-            <ol className="admin-funnel">
-              <li>
-                <span>페이지뷰</span>
-                <strong>{formatKoreanNumber(funnel.pageViews)}</strong>
-              </li>
-              <li>
-                <span>CTA 클릭</span>
-                <strong>{formatKoreanNumber(funnel.cta)}</strong>
-              </li>
-              <li>
-                <span>상담 시작</span>
-                <strong>{formatKoreanNumber(funnel.consultStart)}</strong>
-              </li>
-              <li>
-                <span>문의 제출</span>
-                <strong>{formatKoreanNumber(funnel.consultSubmit)}</strong>
-              </li>
-              <li>
-                <span>메일 성공</span>
-                <strong>{formatKoreanNumber(funnel.mailSuccess)}</strong>
-              </li>
-            </ol>
+            <FunnelChart
+              steps={[
+                { label: "페이지뷰", value: funnel.pageViews },
+                { label: "CTA 클릭", value: funnel.cta },
+                { label: "상담 시작", value: funnel.consultStart },
+                { label: "문의 제출", value: funnel.consultSubmit },
+                { label: "메일 성공", value: funnel.mailSuccess },
+              ]}
+            />
           )}
         </AdminSection>
       </div>
@@ -251,7 +259,7 @@ export default function AdminDashboardPage() {
                 </time>
                 <PageIdentity path={a.path} compact />
                 <span>{getSourceLabel(a.referrerType)}</span>
-                <span>{getActivityEventLabel(a.eventType, a.meta)}</span>
+                <span>{formatActivityAction(a.eventType, a.meta)}</span>
               </li>
             ))}
           </ul>

@@ -463,6 +463,14 @@ body.mobile-menu-open .mobile-bottom-cta {
   letter-spacing: -0.02em;
 }
 
+.mobile-bottom-cta__label--inquiry {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 0.5625rem;
+  text-overflow: clip;
+}
+
 @media (min-width: 64rem) {
   body.has-mobile-cta {
     padding-bottom: 0;
@@ -5659,6 +5667,7 @@ body.quick-inquiry-open {
 .admin-section .admin-table,
 .admin-section .admin-hourly,
 .admin-section .admin-funnel,
+.admin-section .admin-funnel-bars,
 .admin-section .admin-activity,
 .admin-section .admin-health-list {
   background: #fff;
@@ -5768,6 +5777,83 @@ a.admin-page-identity__path:hover {
   border-bottom: 1px solid #f1f5f9;
   font-size: 0.875rem;
 }
+.admin-funnel-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+.admin-funnel-bars__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+.admin-funnel-bars__meta strong {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.admin-funnel-bars__meta small {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.admin-funnel-bars__track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+.admin-funnel-bars__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+}
+.admin-dest {
+  font-size: 0.75rem;
+  color: #334155;
+  word-break: break-all;
+}
+.admin-trend {
+  margin-bottom: 0.85rem;
+}
+.admin-trend__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.admin-trend__grid {
+  stroke: #e2e8f0;
+  stroke-width: 1;
+}
+.admin-trend__axis,
+.admin-trend__tick {
+  fill: #94a3b8;
+  font-size: 10px;
+}
+.admin-trend__area {
+  fill: rgba(37, 99, 235, 0.12);
+}
+.admin-trend__line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.admin-trend__line--visits { stroke: #2563eb; }
+.admin-trend__line--sessions { stroke: #0f766e; stroke-dasharray: 4 3; }
+.admin-trend__line--cta { stroke: #d97706; }
+.admin-trend__dot { fill: #2563eb; }
+.admin-hourly__dot--session { background: #0f766e; }
+.admin-hourly__dot--cta { background: #d97706; }
+.admin-hourly__hint {
+  margin-left: auto;
+  color: #94a3b8;
+}
 .admin-activity {
   list-style: none;
   margin: 0;
@@ -5776,11 +5862,14 @@ a.admin-page-identity__path:hover {
 }
 .admin-activity li {
   display: grid;
-  grid-template-columns: 3.5rem 1fr auto auto;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto minmax(0, 1.4fr);
   gap: 0.5rem;
   align-items: start;
   padding: 0.45rem 0;
   border-bottom: 1px solid #f1f5f9;
+}
+.admin-activity li span:last-child {
+  word-break: break-word;
 }
 @media (max-width: 640px) {
   .admin-activity li {
@@ -5807,9 +5896,12 @@ a.admin-page-identity__path:hover {
 .admin-hourly__chart {
   display: grid;
   grid-template-columns: repeat(24, minmax(0, 1fr));
-  gap: 2px;
-  height: 9rem;
+  gap: 3px;
+  height: 11rem;
   align-items: end;
+  padding: 0.25rem 0 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 70%);
+  border-radius: 0.5rem;
 }
 .admin-hourly__col {
   display: flex;
@@ -5832,6 +5924,10 @@ a.admin-page-identity__path:hover {
 }
 .admin-hourly__bar--today { background: #2563eb; }
 .admin-hourly__bar--avg { background: #cbd5e1; }
+.admin-hourly__col.is-now .admin-hourly__bar--today {
+  background: #1d4ed8;
+  box-shadow: 0 0 0 1px #93c5fd;
+}
 .admin-hourly__tick {
   font-size: 0.55rem;
   color: #94a3b8;

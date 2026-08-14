@@ -49,8 +49,8 @@ export function ConsultationChatTile({
       rel="noopener noreferrer"
       className="consultation-chat-tile group"
       aria-label={`${label} 상담`}
-      data-cta={pageSlug ? ctaType : undefined}
-      onClick={pageSlug ? () => trackCTA(ctaType, pageSlug) : undefined}
+      data-cta={ctaType}
+      onClick={() => trackCTA(ctaType, pageSlug || "", channel.href)}
     >
       {/* 모바일: 가로형 탭 카드 */}
       <div className="consultation-chat-tile__mobile sm:hidden">

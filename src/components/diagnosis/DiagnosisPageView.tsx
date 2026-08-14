@@ -18,6 +18,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { recommendationFromDiagnosis } from "@/lib/internal-links";
@@ -88,7 +89,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         h1={page.h1}
         intro={diagnosis.intro[0] ?? page.intro}
         keywords={page.primaryKeywords}
-        ctaLabel="상담 문의하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showNationwideChip={shouldShowNationwideRegionChip(
           page.path,
           page.slug,
@@ -199,7 +200,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         <ConsultationCTA
           title="내 상황에 맞는 서류와 절차를 확인하고 상담하기"
           description={cta.text}
-          buttonLabel="상담 내용 남기기"
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
         />
       </div>
     </article>

@@ -19,6 +19,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getPreservationRegistrationContent } from "@/lib/local-landing/preservation-registration-content";
 import { PreservationB2BSections } from "@/components/b2b/PreservationB2BSections";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
@@ -70,7 +71,7 @@ export function PreservationRegistrationPageView({
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
         ctaHref="/contact/inquiry"
-        ctaLabel="보존등기 상담하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         secondaryCta={{
           href: "#documents",
           label: "건축주 준비서류 확인하기",
@@ -250,7 +251,7 @@ export function PreservationRegistrationPageView({
         <ConsultationCTA
           title="보존등기 상담"
           description={content.bottomCtaText}
-          buttonLabel="보존등기 상담하기"
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
           inquiryField="preservation-registration"
         />
       </div>

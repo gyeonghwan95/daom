@@ -3,9 +3,11 @@ import {
   json,
   normalizePath,
 } from "../../_lib/admin-ops/crypto";
+import { sanitizeOutboundHref } from "../../_lib/admin-ops/outbound-href";
 import { hasKv, recordAnalyticsEvent } from "../../_lib/admin-ops/store";
 
 const hits = new Map();
+const recentPv = new Map();
 
 function rateOk(ip) {
   const now = Date.now();
@@ -73,6 +75,11 @@ export async function onRequestPost(context) {
     return json({ ok: true, skipped: true, reason: "bot" });
   }
 
+  const ua = request.headers.get("user-agent") || "";
+  if (!ua.trim()) {
+    return json({ ok: true, skipped: true, reason: "empty_ua" });
+  }
+
   const body = await readJsonBody(request);
   if (!body || typeof body !== "object") {
     return json({ ok: false, code: "bad_request" }, 400);
@@ -86,6 +93,16 @@ export async function onRequestPost(context) {
   const path = normalizePath(String(body?.path || "/"));
   if (path.startsWith("/admin") || path.startsWith("/api")) {
     return json({ ok: true, skipped: true });
+  }
+
+  if (type === "page_view") {
+    const now = Date.now();
+    const dupKey = `${ip}|${path}`;
+    const prev = recentPv.get(dupKey) || 0;
+    if (now - prev < 8_000) {
+      return json({ ok: true, skipped: true, reason: "dedupe" });
+    }
+    recentPv.set(dupKey, now);
   }
 
   if (!hasKv(env)) {
@@ -120,17 +137,31 @@ export async function onRequestPost(context) {
       body?.deviceType === "mobile" || body?.deviceType === "desktop"
         ? body.deviceType
         : "unknown",
-    meta:
-      body?.meta && typeof body.meta === "object"
-        ? Object.fromEntries(
-            Object.entries(body.meta)
-              .slice(0, 8)
-              .map(([k, v]) => [String(k).slice(0, 40), String(v).slice(0, 80)]),
-          )
-        : undefined,
+    meta: sanitizeEventMeta(body?.meta, requestHost),
+    sid: sanitizeSid(body?.meta?.sid),
   });
 
   return json({ ok: true, stored: result.ok });
+}
+
+function sanitizeSid(raw) {
+  const s = String(raw || "").slice(0, 36);
+  return /^[a-zA-Z0-9-]{8,36}$/.test(s) ? s : "";
+}
+
+function sanitizeEventMeta(meta, requestHost) {
+  if (!meta || typeof meta !== "object") return undefined;
+  const origin = requestHost ? `https://${requestHost}` : undefined;
+  const destRaw = meta.dest || meta.href;
+  const dest = destRaw ? sanitizeOutboundHref(String(destRaw), origin) : "";
+  const out = {};
+  for (const [k, v] of Object.entries(meta).slice(0, 8)) {
+    const key = String(k).slice(0, 40);
+    if (key === "sid" || key === "href") continue;
+    out[key] = String(v).slice(0, 80);
+  }
+  if (dest) out.dest = dest.slice(0, 160);
+  return Object.keys(out).length ? out : undefined;
 }
 
 export async function onRequest(context) {

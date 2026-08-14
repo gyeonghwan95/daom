@@ -2,6 +2,7 @@ import {
   classifyReferrer,
   isOwnAnalyticsHost,
 } from "../src/lib/admin-ops/utils.ts";
+import { sanitizeOutboundHref } from "../src/lib/admin-ops/outbound-href.ts";
 
 function assert(cond: unknown, msg: string) {
   if (!cond) {
@@ -28,5 +29,14 @@ assert(
 );
 assert(classifyReferrer("example.com") === "external", "unknown → external");
 assert(isOwnAnalyticsHost("www.xn--2j1br1na42lvxja38mk8r.kr"), "www punycode is own");
+
+assert(sanitizeOutboundHref("tel:010-0000-0000") === "tel:", "tel stripped");
+assert(sanitizeOutboundHref("/contact/inquiry?name=x") === "/contact/inquiry", "query stripped");
+assert(
+  sanitizeOutboundHref("https://pf.kakao.com/abc", "https://example.com") ===
+    "pf.kakao.com/abc",
+  "external host+path",
+);
+assert(sanitizeOutboundHref("#documents") === "#documents", "hash dest");
 
 if (!process.exitCode) console.log("admin analytics ingest checks passed");

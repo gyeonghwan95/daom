@@ -243,7 +243,7 @@ export const debtRehabPages = [
       { href: "/blog/bankruptcy-vs-personal-rehabilitation", label: "회생·파산 비교" },
       { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },
       { href: "/부산개인회생", label: "부산 개인회생 업무 허브" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     faqs: [
       {

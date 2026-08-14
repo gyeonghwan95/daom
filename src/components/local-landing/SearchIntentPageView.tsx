@@ -40,6 +40,7 @@ import { NationwideServiceCard } from "@/components/nationwide/NationwideService
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -129,7 +130,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           content.showRemoteLegalProcess ||
           content.showRemoteCostChecklist
             ? "업무 가능 여부 확인하기"
-            : "상담 문의하기"
+            : consultationInquiryCopy.ctaShort
         }
         showDiagnosisCta={false}
         showAboutLawyerCta
@@ -307,7 +308,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
             content.showInheritanceCostGuide ||
             page.slug.includes("증여")
               ? "업무 가능 여부 확인하기"
-              : "상담 내용 남기기"
+              : consultationInquiryCopy.ctaPrimary
           }
           inquiryField={content.serviceSlug ?? page.serviceSlug}
           fromPage={page.slug}

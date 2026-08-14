@@ -230,17 +230,21 @@ export function buildPageDataFromLocalLanding(
           page.title.replace(page.regionLabel, "").trim(),
         ].filter(Boolean);
 
-  const specialLandingFaqs =
+  const keepAllFaqs =
     page.pageType === "preservation-registration" ||
     page.pageType === "public-agency-registration" ||
     page.pageType === "selection-hub" ||
     page.pageType === "search-intent" ||
-    page.pageType === "lecture"
-      ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
-      : page.faqs.slice(0, 3).map((f) => ({
-          question: f.question,
-          answer: f.answer,
-        }));
+    page.pageType === "lecture" ||
+    page.slug === "부산법인법무사" ||
+    page.slug === "부산기업법무사";
+
+  const specialLandingFaqs = keepAllFaqs
+    ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+    : page.faqs.slice(0, 3).map((f) => ({
+        question: f.question,
+        answer: f.answer,
+      }));
 
   const extraSections = [...sectionsFromLocalLanding(page)];
   if (page.slug === "부산부동산등기") {
@@ -469,7 +473,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "public-agency-registration" ||
       page.pageType === "selection-hub" ||
       page.pageType === "search-intent" ||
-      page.pageType === "lecture",
+      page.pageType === "lecture" ||
+      page.slug === "부산법인법무사",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

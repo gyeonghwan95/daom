@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-14T16:30:41.190Z",
+  "liveNaverSerp": "LIVE_NAVER_SERP_UNAVAILABLE",
+  "answers": {
+    "1_inheritance_template_lock": "PARTIAL — flagship uses PageDataTemplate shell; procedures are broad; documents mix inheritance with corporate/real-estate. Not exclusive 상속등기 lock.",
+    "2_keyword_list_block": "YES — primaryKeywords badges (부산 법무사 / 부산법무사). Not a UL dump of variants. Protected — no auto-delete.",
+    "3_duplicate_toc": "NO — single TocList in details",
+    "4_homepage_responsive_duplicate": "YES — HeroContactBlock mobile+desktop separate DOM; images marquee duplicated. REPORT, UI-risk so Phase 1 did not merge.",
+    "5_multiple_primary_urls": "YES as candidates, NO as registry — Primary Champion is exactly /부산법무사",
+    "6_spoke_competition": "PARTIAL — 추천/상담/비교/등기 pages exist; registry assigns supporting roles. Title/H1 unchanged this phase.",
+    "7_exact_anchor_surge": "REVIEW — many label: 부산 법무사 across landings; capHubLinks fillers use exact-ish phrases. No mass delete this phase.",
+    "8_local_page_dilution": "REVIEW — local pages exist and must not act as mini-Champion. Freeze new local-provider URLs.",
+    "9_title_h1_canonical_changed_since_good": "NO for title/H1/canonical vs e064454 on /부산법무사. Related links and lawyerOpinion date did change.",
+    "10_search_advisor_index": "UNKNOWN — no Search Advisor login in this environment. Manual checklist only."
+  },
+  "evidence": {
+    "proceduresBroad": true,
+    "mixedDocs": true,
+    "defaultInheritanceDocs": true,
+    "usesPageDataTemplate": true,
+    "hiddenTocDup": false,
+    "heroContactDup": true,
+    "homeClientSwiper": true
+  }
+}

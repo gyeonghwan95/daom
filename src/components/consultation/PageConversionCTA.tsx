@@ -67,6 +67,9 @@ export function PageConversionCTA({
   const theme = tone ?? (isBottom ? "light" : "light");
   const slug = pageSlug ?? pageType;
   const feeNotice = showFeeNotice ?? isBottom;
+  const inquiryHref = serviceSlug
+    ? contactInquiryHref({ field: serviceSlug })
+    : contactInquiryHref();
 
   const shellClass = isBottom
     ? theme === "dark"
@@ -128,13 +131,9 @@ export function PageConversionCTA({
               size="md"
               inquiry={
                 <Link
-                  href={
-                    serviceSlug
-                      ? contactInquiryHref({ field: serviceSlug })
-                      : contactInquiryHref()
-                  }
+                  href={inquiryHref}
                   data-cta="contact"
-                  onClick={() => trackCTA("contact", slug)}
+                  onClick={() => trackCTA("contact", slug, inquiryHref)}
                   className={primaryBtnClass}
                 >
                   {consultationInquiryCopy.ctaPrimary}
@@ -144,7 +143,7 @@ export function PageConversionCTA({
             <Link
               href="/contact"
               data-cta="contact"
-              onClick={() => trackCTA("contact", slug)}
+              onClick={() => trackCTA("contact", slug, "/contact")}
               className={
                 theme === "dark"
                   ? "inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white/40 px-6 text-sm font-semibold text-white hover:bg-white/10"
@@ -169,7 +168,7 @@ export function PageConversionCTA({
           <Link
             href="/contact"
             data-cta="contact"
-            onClick={() => trackCTA("contact", slug)}
+            onClick={() => trackCTA("contact", slug, "/contact")}
             className={secondaryLinkClass}
           >
             상담 문의
@@ -177,7 +176,7 @@ export function PageConversionCTA({
           <Link
             href="/location"
             data-cta="location"
-            onClick={() => trackCTA("location", slug)}
+            onClick={() => trackCTA("location", slug, "/location")}
             className={secondaryLinkClass}
           >
             오시는 길

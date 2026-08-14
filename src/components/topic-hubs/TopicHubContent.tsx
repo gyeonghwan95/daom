@@ -61,7 +61,7 @@ function TopicHubQuickLinks({ page }: { page: TopicHubPage }) {
       ? { href: page.jurisdictionHref, label: "관할 법원·등기소 확인" }
       : null,
     { href: "/location", label: "오시는 길·방문 예약" },
-    { href: "/contact", label: "상담 문의하기" },
+    { href: "/contact/inquiry", label: "1분만에 문의하기" },
   ].filter((item): item is { href: string; label: string } => item !== null);
 
   return (

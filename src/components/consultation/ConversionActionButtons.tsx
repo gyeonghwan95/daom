@@ -70,7 +70,7 @@ export function ConversionActionButtons({
           <Link
             href={CONTACT_INQUIRY_PATH}
             data-cta="contact"
-            onClick={() => trackCTA("contact", slug)}
+            onClick={() => trackCTA("contact", slug, CONTACT_INQUIRY_PATH)}
             className={
               theme === "dark"
                 ? `${primaryBase} w-full bg-white text-navy hover:bg-beige`
@@ -97,7 +97,7 @@ export function ConversionActionButtons({
           <a
             href={getPhoneHref(phone)}
             data-cta="phone"
-            onClick={() => trackCTA("phone", slug)}
+            onClick={() => trackCTA("phone", slug, getPhoneHref(phone))}
             className={primaryClass(theme, "phone")}
           >
             <PhoneIcon className="h-5 w-5 shrink-0" />
@@ -111,7 +111,7 @@ export function ConversionActionButtons({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="kakao"
-            onClick={() => trackCTA("kakao", slug)}
+            onClick={() => trackCTA("kakao", slug, kakao)}
             className={primaryClass(theme, "kakao")}
           >
             <KakaoIcon className="h-5 w-5 shrink-0" />
@@ -125,7 +125,7 @@ export function ConversionActionButtons({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="naver-talk"
-            onClick={() => trackCTA("naver-talk", slug)}
+            onClick={() => trackCTA("naver-talk", slug, naverTalk)}
             className={`${primaryClass(theme, "naver")} col-span-2 sm:col-span-1`}
           >
             <NaverIcon className="h-5 w-5 shrink-0" />
@@ -138,19 +138,27 @@ export function ConversionActionButtons({
         <Link
           href="/location"
           data-cta="location"
-          onClick={() => trackCTA("location", slug)}
+          onClick={() => trackCTA("location", slug, "/location")}
           className={secondaryClass(theme)}
         >
           <LocationIcon className="h-5 w-5 shrink-0" />
           <span className="truncate">방문 상담 안내</span>
         </Link>
 
-        <a href={documentsHref} className={secondaryClass(theme)}>
+        <a
+          href={documentsHref}
+          className={secondaryClass(theme)}
+          onClick={() => trackCTA("documents", slug, documentsHref)}
+        >
           <FormIcon className="h-5 w-5 shrink-0" />
           <span className="truncate">준비서류 먼저 확인</span>
         </a>
 
-        <Link href={diagnosisHref} className={secondaryClass(theme)}>
+        <Link
+          href={diagnosisHref}
+          className={secondaryClass(theme)}
+          onClick={() => trackCTA("diagnosis", slug, diagnosisHref)}
+        >
           <FormIcon className="h-5 w-5 shrink-0" />
           <span className="truncate">자가진단 보기</span>
         </Link>

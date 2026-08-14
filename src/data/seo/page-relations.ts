@@ -32,6 +32,10 @@ export type PageRelationEntry = {
 /** Broad provider-selection — SEO_PROTECTED, do not change title/H1 */
 export const BUSAN_LEGAL_SCRIVENER_CHAMPION = "/부산법무사";
 
+/** Provider + operations broad intent — 동일 URL, title/H1 불변 */
+export const BUSAN_CORPORATE_CHAMPION = "/부산법인법무사";
+export const CORPORATE_LEGAL_OPERATIONS_CHAMPION = BUSAN_CORPORATE_CHAMPION;
+
 export const COST_CHAMPION = "/부산법무사비용";
 export const SELECTION_CHAMPION = "/부산법무사추천";
 export const FINANCE_REGISTRATION_CHAMPION = "/부산잔금대출근저당";
@@ -135,6 +139,34 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
     ],
     notes:
       "SEO_PROTECTED / BUSAN_GENERAL_CHAMPION. Queries: 부산 법무사, 부산 법무사 추천. title/H1/canonical immutable.",
+  },
+  {
+    path: BUSAN_CORPORATE_CHAMPION,
+    parentHub: BUSAN_LEGAL_SCRIVENER_CHAMPION,
+    role: "SERVICE_CHAMPION",
+    region: ["부산"],
+    services: ["corporate", "real-estate", "civil"],
+    situations: [
+      "corporate-legal-ops",
+      "company-change",
+      "establishment",
+      "dissolution",
+    ],
+    relatedPages: [
+      "/부산법인등기",
+      "/법인변경등기",
+      "/부산법인설립등기",
+      "/부산임원변경등기",
+      "/부산본점이전등기",
+      "/부산사업목적변경등기",
+      "/부산유상증자등기",
+      "/부산법인해산청산등기",
+      "/부산부동산등기",
+      "/부산기업법률자문",
+      "/부산기업법무사",
+    ],
+    notes:
+      "BUSAN_CORPORATE_CHAMPION = CORPORATE_LEGAL_OPERATIONS_CHAMPION. Provider(부산 법인 법무사)와 operations(법인법무·기업법무·회사법무) 동일 URL. title/H1/canonical immutable. CREATE_NEW=0.",
   },
   {
     path: COST_CHAMPION,

@@ -135,7 +135,7 @@ export const 부산상속전문법무사Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/부산상속등기전문", label: "상속등기 상담 전 확인사항" },
     { href: "/상속등기자가진단", label: "상속등기 자가진단" },
-    { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry", label: "1분만에 문의하기" },
   ],
   bottomCtaText:
     "부산 상속전문 법무사로 들어오셨다면 사망일·상속인·확인된 채무를 알려 주세요. 부산 상속 법무사의 대표 안내로 연결해, 다옴법무사사무소 해운대 센텀 안윤정 법무사가 부산 전역 상담에서 먼저 확인할 절차와 서류를 정리해 드립니다.",

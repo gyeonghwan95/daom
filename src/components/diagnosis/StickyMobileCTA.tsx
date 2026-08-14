@@ -10,8 +10,8 @@ type StickyMobileCTAProps = {
   pageSlug?: string;
 };
 
-function handleCtaClick(type: CTAType, pageSlug: string) {
-  trackCTA(type, pageSlug);
+function handleCtaClick(type: CTAType, pageSlug: string, href?: string) {
+  trackCTA(type, pageSlug, href);
 }
 
 export function StickyMobileCTA({
@@ -35,7 +35,7 @@ export function StickyMobileCTA({
             <a
               href={getPhoneHref(phone)}
               data-cta="phone"
-              onClick={() => handleCtaClick("phone", pageSlug)}
+              onClick={() => handleCtaClick("phone", pageSlug, getPhoneHref(phone))}
               className="diagnosis-sticky-cta__btn diagnosis-sticky-cta__btn--phone"
             >
               <PhoneIcon className="h-4 w-4 shrink-0" />
@@ -48,7 +48,7 @@ export function StickyMobileCTA({
               target="_blank"
               rel="noopener noreferrer"
               data-cta="kakao"
-              onClick={() => handleCtaClick("kakao", pageSlug)}
+              onClick={() => handleCtaClick("kakao", pageSlug, kakao)}
               className="diagnosis-sticky-cta__btn diagnosis-sticky-cta__btn--kakao"
             >
               <KakaoIcon className="h-4 w-4 shrink-0" />
@@ -58,7 +58,7 @@ export function StickyMobileCTA({
           <Link
             href="/contact"
             data-cta="contact"
-            onClick={() => handleCtaClick("contact", pageSlug)}
+            onClick={() => handleCtaClick("contact", pageSlug, "/contact")}
             className="diagnosis-sticky-cta__btn diagnosis-sticky-cta__btn--contact"
           >
             상담 문의

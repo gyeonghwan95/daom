@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { ConsultationChannel, ConsultationChannelId } from "@/lib/contact";
 import { ConsultationPanel } from "@/components/consultation/ConsultationPanel";
@@ -8,6 +10,8 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { trackCTA } from "@/lib/analytics/track-cta";
+import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 
 type ConsultationButtonsProps = {
   channels: ConsultationChannel[];
@@ -124,6 +128,28 @@ function ChannelLink({
     </>
   );
 
+  const onClick = () => {
+    if (channel.id === "reservation") {
+      trackNaverPlaceClick({
+        variant: "reservation",
+        placement: "other",
+        href: channel.href,
+      });
+      return;
+    }
+    const kind =
+      channel.id === "phone"
+        ? "phone"
+        : channel.id === "kakao"
+          ? "kakao"
+          : channel.id === "naver"
+            ? "naver-talk"
+            : channel.id === "location"
+              ? "location"
+              : "contact";
+    trackCTA(kind, "", channel.href);
+  };
+
   if (channel.external) {
     return (
       <a
@@ -131,6 +157,7 @@ function ChannelLink({
         target="_blank"
         rel="noopener noreferrer"
         className={className}
+        onClick={onClick}
       >
         {content}
       </a>
@@ -139,14 +166,14 @@ function ChannelLink({
 
   if (channel.href.startsWith("/")) {
     return (
-      <Link href={channel.href} className={className}>
+      <Link href={channel.href} className={className} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   return (
-    <a href={channel.href} className={className}>
+    <a href={channel.href} className={className} onClick={onClick}>
       {content}
     </a>
   );

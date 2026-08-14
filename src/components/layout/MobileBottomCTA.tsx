@@ -14,7 +14,30 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
-import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
+import { trackNaverPlaceClick, trackCtaEvent } from "@/lib/admin-ops/track-client";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+
+function trackMobileChannel(channel: ConsultationChannel) {
+  if (channel.id === "reservation") {
+    trackNaverPlaceClick({
+      variant: "reservation",
+      placement: "mobile_bottom",
+      href: channel.href,
+    });
+    return;
+  }
+  const kind =
+    channel.id === "phone"
+      ? "phone"
+      : channel.id === "kakao"
+        ? "kakao"
+        : channel.id === "naver"
+          ? "naver-talk"
+          : channel.id === "location"
+            ? "location"
+            : "contact";
+  trackCtaEvent(kind, undefined, channel.href);
+}
 
 function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
   const linkProps = channel.external
@@ -28,6 +51,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--phone"
           aria-label={channel.label}
+          onClick={() => trackMobileChannel(channel)}
           {...linkProps}
         >
           <PhoneIcon className="mobile-bottom-cta__icon" />
@@ -40,6 +64,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--kakao"
           aria-label={channel.label}
+          onClick={() => trackMobileChannel(channel)}
           {...linkProps}
         >
           <KakaoIcon className="mobile-bottom-cta__icon" />
@@ -52,6 +77,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-talk"
           aria-label={channel.label}
+          onClick={() => trackMobileChannel(channel)}
           {...linkProps}
         >
           <NaverIcon className="mobile-bottom-cta__icon" />
@@ -71,6 +97,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
             trackNaverPlaceClick({
               variant: "reservation",
               placement: "mobile_bottom",
+              href: channel.href,
             })
           }
           {...linkProps}
@@ -85,6 +112,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-map"
           aria-label={channel.label}
+          onClick={() => trackMobileChannel(channel)}
           {...linkProps}
         >
           <span className="mobile-bottom-cta__map-icon" aria-hidden>
@@ -101,14 +129,25 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
 
   if (channel.href.startsWith("/")) {
     return (
-      <Link href={channel.href} className={baseClass} aria-label={channel.label}>
+      <Link
+            href={channel.href}
+            className={baseClass}
+            aria-label={channel.label}
+            onClick={() => trackMobileChannel(channel)}
+          >
         <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
       </Link>
     );
   }
 
   return (
-    <a href={channel.href} className={baseClass} aria-label={channel.label} {...linkProps}>
+    <a
+      href={channel.href}
+      className={baseClass}
+      aria-label={channel.label}
+      onClick={() => trackMobileChannel(channel)}
+      {...linkProps}
+    >
       <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
     </a>
   );
@@ -136,6 +175,7 @@ export function MobileBottomCTA() {
             href="/협업문의"
             className="mobile-bottom-cta__btn bg-navy text-white"
             aria-label="협업 문의"
+            onClick={() => trackCtaEvent("collaboration", undefined, "/협업문의")}
           >
             <span className="mobile-bottom-cta__label">협업 문의</span>
           </Link>
@@ -164,11 +204,16 @@ export function MobileBottomCTA() {
           type="button"
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
           aria-haspopup="dialog"
-          aria-label="상담하기"
-          onClick={() => inquiry?.openInquiry({ source: "mobile" })}
+          aria-label={consultationInquiryCopy.ctaPrimary}
+          onClick={() => {
+            trackCtaEvent("contact", undefined, "#inquiry");
+            inquiry?.openInquiry({ source: "mobile" });
+          }}
         >
           <FormIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">상담</span>
+          <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
+            {consultationInquiryCopy.ctaPrimary}
+          </span>
         </button>
       </div>
     </div>

@@ -15,6 +15,29 @@ export const INQUIRY_FIELD_OPTIONS = [
 
 export type InquiryFieldValue = (typeof INQUIRY_FIELD_OPTIONS)[number]["value"];
 
+/** 기업·법인 문의 하위 선택 — analytics/이메일 본문용, 개인정보 아님 */
+export const CORPORATE_LEGAL_TASK_OPTIONS = [
+  { value: "establishment", label: "법인설립" },
+  { value: "officer-change", label: "임원변경" },
+  { value: "head-office", label: "본점/주소" },
+  { value: "charter-purpose", label: "정관/목적" },
+  { value: "capital", label: "증자" },
+  { value: "dissolution", label: "해산·청산" },
+  { value: "corporate-real-estate", label: "법인 부동산" },
+  { value: "court-docs", label: "법원서류" },
+  { value: "other-corporate", label: "기타" },
+] as const;
+
+export type CorporateLegalTaskValue =
+  (typeof CORPORATE_LEGAL_TASK_OPTIONS)[number]["value"];
+
+export function getCorporateLegalTaskLabel(value: string): string {
+  return (
+    CORPORATE_LEGAL_TASK_OPTIONS.find((option) => option.value === value)
+      ?.label ?? value
+  );
+}
+
 export function getInquiryFieldLabel(value: string): string {
   return (
     INQUIRY_FIELD_OPTIONS.find((option) => option.value === value)?.label ??

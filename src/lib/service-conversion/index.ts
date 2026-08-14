@@ -15,7 +15,10 @@ export {
 } from "./copy";
 export {
   INQUIRY_FIELD_OPTIONS,
+  CORPORATE_LEGAL_TASK_OPTIONS,
   getInquiryFieldLabel,
+  getCorporateLegalTaskLabel,
   type InquiryFieldValue,
+  type CorporateLegalTaskValue,
 } from "./inquiry-fields";
 export { resolveConversionKey, hasConversionEnhancements } from "./resolve";

@@ -252,7 +252,7 @@ export const inheritanceDeathPages = [
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산한정승인", label: "부산 한정승인 신청 기한 확인" },
       { href: "/부산상속포기", label: "부산 상속포기 후순위 효과" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     faqs: [
       {
@@ -523,7 +523,7 @@ export const inheritanceDeathPages = [
       { href: "/blog/busan-inheritance-registration-procedure-documents", label: "상속등기 절차·서류" },
       { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
-      { href: "/contact/inquiry", label: "상담 신청" },
+      { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     faqs: [
       {

@@ -25,6 +25,7 @@ import { getSelectionHubContent } from "@/lib/local-landing/selection";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type SelectionHubPageViewProps = {
   page: PageData;
@@ -106,7 +107,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         introParagraphs={content.heroParagraphs}
         keywords={content.primaryKeywords}
         ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
-        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : "상담 문의하기"}
+        ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : consultationInquiryCopy.ctaShort}
         secondaryCta={
           isConsultPrep
             ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }
@@ -234,7 +235,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           title={isConsultPrep ? "업무 가능 여부부터 확인해 보세요" : "상담 문의"}
           description={content.bottomCtaText}
           buttonLabel={
-            isConsultPrep ? "업무 가능 여부 확인하기" : "상담 내용 남기기"
+            isConsultPrep ? "업무 가능 여부 확인하기" : consultationInquiryCopy.ctaPrimary
           }
           inquiryField={page.serviceSlug}
           fromPage={page.slug}

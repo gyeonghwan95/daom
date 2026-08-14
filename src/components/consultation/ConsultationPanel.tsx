@@ -49,10 +49,13 @@ function channelCtaType(id: ConsultationChannelId): CTAType | undefined {
   }
 }
 
-function trackChannelClick(id: ConsultationChannelId, pageSlug?: string) {
-  if (!pageSlug) return;
+function trackChannelClick(
+  id: ConsultationChannelId,
+  pageSlug: string | undefined,
+  href: string,
+) {
   const type = channelCtaType(id);
-  if (type) trackCTA(type, pageSlug);
+  if (type) trackCTA(type, pageSlug || "", href);
 }
 
 function ChannelIcon({ id }: { id: ConsultationChannelId }) {
@@ -122,10 +125,10 @@ function SimpleChannelButton({
   );
 
   const ctaType = channelCtaType(channel.id);
-  const trackingProps = pageSlug && ctaType
+  const trackingProps = ctaType
     ? {
         "data-cta": ctaType,
-        onClick: () => trackChannelClick(channel.id, pageSlug),
+        onClick: () => trackChannelClick(channel.id, pageSlug, channel.href),
       }
     : {};
 
@@ -178,8 +181,8 @@ function ConsultationPhoneStrip({
           ? "consultation-panel__phone consultation-panel__phone--on-dark"
           : "consultation-panel__phone"
       }
-      data-cta={pageSlug ? "phone" : undefined}
-      onClick={pageSlug ? () => trackCTA("phone", pageSlug) : undefined}
+      data-cta="phone"
+      onClick={() => trackCTA("phone", pageSlug || "", channel.href)}
     >
       <span className="consultation-panel__phone-icon" aria-hidden>
         <PhoneIcon className="h-6 w-6" />

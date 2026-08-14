@@ -42,6 +42,13 @@ import {
   NATIONWIDE_SERVICE_SLUGS,
   shouldShowNationwideRegionChip,
 } from "@/lib/nationwide/show-region-chip";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { CorporateLegalOperationsModules } from "@/components/local-landing/CorporateLegalOperationsModules";
+import {
+  CORPORATE_LEGAL_OPERATIONS_SLUG,
+  corporateLegalHeroCta,
+  corporateLegalInquiryHref,
+} from "@/lib/local-landing/corporate-legal-operations-modules";
 
 type PageDataTemplateProps = {
   page: PageData;
@@ -88,7 +95,6 @@ export function PageDataTemplate({
   recommendationSource,
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
-  const displayFaqs = page.faqs.slice(0, 3);
   const tocItems = buildPageTocItems(page, {
     hasDetailContent: Boolean(children),
   });
@@ -109,6 +115,11 @@ export function PageDataTemplate({
     !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
+  const isCorporateLegalOps = page.slug === CORPORATE_LEGAL_OPERATIONS_SLUG;
+  const displayFaqs =
+    isCorporateLegalOps || page.slug === "부산기업법무사"
+      ? page.faqs
+      : page.faqs.slice(0, 3);
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
     conversionKey ? (
@@ -133,8 +144,13 @@ export function PageDataTemplate({
         introParagraphs={page.introParagraphs}
         keywords={page.primaryKeywords}
         ctaLabel={
-          showInheritanceExtras ? "업무 가능 여부 확인하기" : "상담 문의하기"
+          showInheritanceExtras
+            ? "업무 가능 여부 확인하기"
+            : isCorporateLegalOps
+              ? corporateLegalHeroCta
+              : consultationInquiryCopy.ctaShort
         }
+        ctaHref={isCorporateLegalOps ? corporateLegalInquiryHref : "/contact/inquiry"}
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}
@@ -167,6 +183,8 @@ export function PageDataTemplate({
         ].filter(Boolean)}
         consultTriggers={page.consultationPoints.slice(0, 3)}
       />
+
+      {isCorporateLegalOps ? <CorporateLegalOperationsModules /> : null}
 
       <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
@@ -265,8 +283,12 @@ export function PageDataTemplate({
       <div id="consultation" className="space-y-6">
         <CTASection
           pageType="faq"
-          title={page.ctaTitle}
-          description={page.ctaText}
+          title={isCorporateLegalOps ? corporateLegalHeroCta : page.ctaTitle}
+          description={
+            isCorporateLegalOps
+              ? "대표·임원·본점·목적·자본 등 변경 사실과 등기부만 알려 주시면, 필요한 등기와 준비서류부터 확인합니다."
+              : page.ctaText
+          }
           pageSlug={page.slug}
           showChannelButtons={false}
         />

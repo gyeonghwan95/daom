@@ -133,7 +133,7 @@ export function LegalDocumentView({
           links={[
             { href: counterpart.href, label: counterpart.label },
             { href: "/contact", label: "상담 문의" },
-            { href: "/contact/inquiry", label: "문의서 작성" },
+            { href: "/contact/inquiry", label: "1분만에 문의하기" },
             { href: "/faq", label: "자주 묻는 질문" },
             { href: "/about", label: "사무소 소개" },
           ]}

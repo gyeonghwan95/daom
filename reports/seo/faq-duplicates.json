@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-10T12:14:26.898Z",
+  "generatedAt": "2026-08-14T16:23:32.874Z",
   "pages": [
     {
       "path": "/부산법무사",
-      "faqCount": 14
+      "faqCount": 11
     },
     {
       "path": "/부산상속포기",
@@ -11,21 +11,13 @@
     },
     {
       "path": "/부산법인법무사",
-      "faqCount": 18
+      "faqCount": 17
     },
     {
       "path": "/부산상속법무사",
       "faqCount": 19
     }
   ],
-  "exactQuestionDuplicates": [
-    {
-      "question": "폐업신고만 하면 법인이 없어지나요?",
-      "paths": [
-        "/부산법인법무사",
-        "/부산법인법무사"
-      ]
-    }
-  ],
+  "exactQuestionDuplicates": [],
   "note": "Champion별 FAQ 역할 유지. 공통 템플릿 FAQ 신규 복제 금지."
 }

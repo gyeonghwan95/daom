@@ -17,6 +17,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { recommendationFromCaseRecord } from "@/lib/internal-links";
 import { formatContentDate, getServiceLabel } from "@/lib/content/loader";
 import { CASE_DISCLAIMER } from "@/lib/cases/types";
@@ -93,7 +94,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         intro={page.intro}
         keywords={page.primaryKeywords}
         eyebrow="Case Study"
-        ctaLabel="비슷한 상황 상담하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={shouldShowNationwideRegionChip(
@@ -216,7 +217,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         <ConsultationCTA
           title="비슷한 상황이라면 서류와 절차를 확인해 보세요"
           description={page.ctaText}
-          buttonLabel="상담 내용 남기기"
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
         />
       </div>
     </article>

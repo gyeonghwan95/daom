@@ -8,6 +8,7 @@ import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { CollabInquiryForm } from "@/components/local-landing/CollabInquiryForm";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 export type PracticeHubCard = {
   href: string;
@@ -39,7 +40,7 @@ export function PracticeHubPageView({
       <PageHero
         h1={page.h1}
         intro={intro}
-        ctaLabel="상담 문의하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
       >

@@ -10,6 +10,7 @@ import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFee
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { getPhoneHref, type ConsultationChannel } from "@/lib/contact";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type HeroContactBlockProps = {
   phone: string;
@@ -100,7 +101,9 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
             className="hero-contact__chip hero-contact__chip--contact"
             role="listitem"
           >
-            <span className="hero-contact__chip-label">상담 문의</span>
+            <span className="hero-contact__chip-label">
+              {consultationInquiryCopy.ctaShort}
+            </span>
           </Link>
           <Link
             href="/contact"

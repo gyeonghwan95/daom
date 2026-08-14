@@ -93,7 +93,7 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
     void trackEvent({
       type: "consultation_start",
       path: meta.path || "/",
-      meta: { source: options?.source ?? "other" },
+      meta: { source: options?.source ?? "other", dest: "#inquiry", kind: "contact" },
     });
   }, []);
 

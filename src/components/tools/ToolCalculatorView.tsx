@@ -14,6 +14,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { RecommendationGroups } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
@@ -82,7 +83,7 @@ export function ToolCalculatorView({
         intro={page.intro}
         keywords={page.primaryKeywords}
         eyebrow="Legal Calculator"
-        ctaLabel="계산 결과 상담하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
       />
@@ -153,7 +154,7 @@ export function ToolCalculatorView({
             <ConsultationCTA
               title="계산 결과를 바탕으로 상담해 보세요"
               description={page.ctaText}
-              buttonLabel="상담 내용 남기기"
+              buttonLabel={consultationInquiryCopy.ctaPrimary}
             />
           </div>
         </>

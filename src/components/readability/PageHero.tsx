@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
 import { KeywordBadges } from "./KeywordBadges";
 import { ProseParagraphs } from "./ProseParagraphs";
@@ -43,7 +44,7 @@ export function PageHero({
   keywords = [],
   eyebrow,
   ctaHref = "/contact/inquiry",
-  ctaLabel = "상담 문의하기",
+  ctaLabel = consultationInquiryCopy.ctaShort,
   secondaryCta,
   showDiagnosisCta = true,
   showAboutLawyerCta = true,

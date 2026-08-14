@@ -17,6 +17,7 @@ import {
   StepTimeline,
   WarningBox,
 } from "@/components/readability";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { recommendationFromSituation } from "@/lib/internal-links";
@@ -144,7 +145,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         intro={page.intro}
         keywords={page.primaryKeywords}
         eyebrow={`${category.label} · 상황 안내`}
-        ctaLabel="상담 문의하기"
+        ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNationwideChip={showNationwide}
@@ -304,7 +305,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         <ConsultationCTA
           title="현재 상황에 필요한 절차부터 확인해보세요"
           description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
-          buttonLabel="상담 내용 남기기"
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
           inquiryField={situation.serviceSlug}
         />
       </div>

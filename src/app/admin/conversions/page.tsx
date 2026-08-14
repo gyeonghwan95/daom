@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
-import { formatKoreanNumber, formatPercent } from "@/lib/admin/url-display";
+import { getCtaKindLabel } from "@/lib/admin/activity-labels";
+import { formatKoreanNumber } from "@/lib/admin/url-display";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type ConversionsData = {
@@ -51,6 +53,11 @@ type ConversionsData = {
     naverPlace: number;
     ctr: number | null;
   }>;
+  destinations?: Array<{
+    kind: string;
+    dest: string;
+    clicks: number;
+  }>;
 };
 
 export default function AdminConversionsPage() {
@@ -96,8 +103,8 @@ export default function AdminConversionsPage() {
     <div>
       <AdminPageHeader title="전환 분석" />
       <p className="admin-prose">
-        오늘(KST) 기준 Funnel · 채널별 CTA · 네이버 플레이스 이동 클릭.
-        “네이버 예약 완료”는 측정하지 않습니다.
+        버튼을 눌렀을 때 이동한 주소(전화·카카오·문의 페이지 등)를 보여 줍니다.
+        이름·전화번호 같은 개인정보는 저장하지 않습니다. 네이버 예약 완료는 측정하지 않습니다.
       </p>
       {data.message ? (
         <p className="admin-alert admin-alert--info">{data.message}</p>
@@ -107,40 +114,15 @@ export default function AdminConversionsPage() {
         {!f ? (
           <p className="admin-empty">아직 측정되지 않음</p>
         ) : (
-          <ol className="admin-funnel admin-funnel--wide">
-            <li>
-              <span>페이지뷰</span>
-              <strong>{formatKoreanNumber(f.pageViews)}</strong>
-            </li>
-            <li>
-              <span>CTA 클릭</span>
-              <strong>
-                {formatKoreanNumber(f.cta)}
-                <small>{formatPercent(f.rates.viewToCta)}</small>
-              </strong>
-            </li>
-            <li>
-              <span>상담 시작</span>
-              <strong>
-                {formatKoreanNumber(f.consultStart)}
-                <small>{formatPercent(f.rates.ctaToStart)}</small>
-              </strong>
-            </li>
-            <li>
-              <span>문의 제출</span>
-              <strong>
-                {formatKoreanNumber(f.consultSubmit)}
-                <small>{formatPercent(f.rates.startToSubmit)}</small>
-              </strong>
-            </li>
-            <li>
-              <span>메일 성공</span>
-              <strong>
-                {formatKoreanNumber(f.mailSuccess)}
-                <small>{formatPercent(f.rates.submitToMail)}</small>
-              </strong>
-            </li>
-          </ol>
+          <FunnelChart
+            steps={[
+              { label: "페이지뷰", value: f.pageViews },
+              { label: "CTA 클릭", value: f.cta, rate: f.rates.viewToCta },
+              { label: "상담 시작", value: f.consultStart, rate: f.rates.ctaToStart },
+              { label: "문의 제출", value: f.consultSubmit, rate: f.rates.startToSubmit },
+              { label: "메일 성공", value: f.mailSuccess, rate: f.rates.submitToMail },
+            ]}
+          />
         )}
       </AdminSection>
 
@@ -152,6 +134,35 @@ export default function AdminConversionsPage() {
           {formatKoreanNumber(data.last7.naverPlace)}
         </p>
       ) : null}
+
+      <AdminSection title="클릭한 버튼 → 이동한 주소 (오늘)">
+        {!data.destinations?.length ? (
+          <p className="admin-empty">
+            아직 목적지 기록이 없습니다. 이후 클릭부터 버튼 종류와 이동 URL이 쌓입니다.
+          </p>
+        ) : (
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>버튼</th>
+                <th>이동 URL</th>
+                <th>클릭</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.destinations.map((r) => (
+                <tr key={`${r.kind}|${r.dest}`}>
+                  <td>{getCtaKindLabel(r.kind)}</td>
+                  <td>
+                    <code className="admin-dest">{r.dest}</code>
+                  </td>
+                  <td>{r.clicks}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </AdminSection>
 
       <div className="admin-two-col">
         <AdminSection title="채널별 CTA (오늘)">

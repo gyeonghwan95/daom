@@ -10,6 +10,7 @@ import { ConsultationButtons } from "@/components/consultation/ConsultationButto
 import { Reveal } from "@/components/motion/Reveal";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { consultationCopy } from "@/lib/consultation";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getContactInfo, getDirectConsultationChannels, getPhoneHref } from "@/lib/contact";
 import { getNapInfo } from "@/lib/business-info";
 import { homeClosing } from "@/lib/home-content";
@@ -72,7 +73,7 @@ export function HomeContactClosing() {
                       href="/contact/inquiry"
                       className="home-closing__nav-btn"
                     >
-                      상담 문의하기
+                      {consultationInquiryCopy.ctaShort}
                     </Link>
                   }
                 />

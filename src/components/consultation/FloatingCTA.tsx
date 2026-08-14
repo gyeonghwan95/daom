@@ -110,7 +110,7 @@ export function FloatingCTA() {
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label={open ? "상담 메뉴 닫기" : "상담 메뉴 열기"}
-          className="floating-cta__trigger inline-flex min-h-14 min-w-[8.5rem] cursor-pointer items-center justify-center gap-2 rounded-full bg-navy px-5 text-base font-semibold text-white shadow-lg transition-transform hover:bg-navy-dark active:scale-95"
+          className="floating-cta__trigger inline-flex min-h-14 min-w-[11.25rem] cursor-pointer items-center justify-center gap-2 rounded-full bg-navy px-4 text-[0.9375rem] font-semibold text-white shadow-lg transition-transform hover:bg-navy-dark active:scale-95 sm:px-5 sm:text-base"
         >
           <ChatIcon className="h-5 w-5 shrink-0" />
           <span className="floating-cta__trigger-label">

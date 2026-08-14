@@ -104,7 +104,7 @@ export const 부산회생법무사Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },
-    { href: "/contact/inquiry", label: "상담 신청" },
+    { href: "/contact/inquiry", label: "1분만에 문의하기" },
   ],
   bottomCtaText:
     "월 소득, 채무 규모, 재산 현황을 알려 주시면 개인회생 검토 여부를 안내해 드립니다. 대표 가능성 안내는 부산 개인회생 법무사에서 이어집니다.",
