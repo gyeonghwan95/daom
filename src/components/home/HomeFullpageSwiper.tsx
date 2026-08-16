@@ -4,6 +4,7 @@ import { Children, useEffect, useMemo, useRef, useState, type ReactNode } from "
 import type { Swiper as SwiperInstance } from "swiper";
 import { Keyboard, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { HomeContinueScrollHint } from "@/components/home/HomeContinueScrollHint";
 import { HomeSwiperProgress } from "@/components/home/HomeSwiperProgress";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { bindHomeSlideNestedScroll } from "@/lib/home-slide-scroll";
@@ -110,6 +111,8 @@ export function HomeFullpageSwiper({ children }: HomeFullpageSwiperProps) {
           );
         })}
       </Swiper>
+
+      {activeIndex < slides.length - 1 && <HomeContinueScrollHint />}
 
       {activeIndex > 0 && (
         <button

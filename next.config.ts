@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
   ...(isStaticExport ? { output: "export" as const } : {}),
   images: {
     unoptimized: true,
+    // next/image quality must be listed here (default is [75] only).
+    qualities: [55, 72, 75, 80, 85],
   },
   async redirects() {
     if (isStaticExport) return [];

@@ -1,8 +1,10 @@
 export const homeHero = {
-  eyebrow: "다옴법무사사무소 · 안윤정 법무사",
-  headline: "부산 해운대·센텀\n법무사 상담",
+  officeName: "다옴법무사사무소",
+  representative: "안윤정 법무사",
+  subtitle: "부산 해운대·센텀 법무사 상담",
   sub: "정확한 업무명을 몰라도 괜찮습니다. 지금 상황만 남겨 주시면 필요한 절차부터 안내드립니다.",
   promise: "서류 준비 전에도 · 법무사 직접 상담",
+  proof: ["법무사 직접 상담", "해운대·센텀 실사무소", "대한법무사협회장 표창"] as const,
   serviceTags: ["상속등기", "부동산등기", "법인등기", "개인회생·파산"] as const,
   locationHint: "재송역·센텀역 도보 5분 · 주차 가능 · 예약 방문",
   mobileCta: "지금 전화하기",
@@ -10,7 +12,8 @@ export const homeHero = {
   ctaPrimary: "1분만에 문의하기",
   contactTitle: "부담 없이 연락해 주세요",
   contactSub: "전화 · 카카오톡 · 네이버 톡톡 — 편한 방법 하나만 고르시면 됩니다.",
-  scrollHint: "업무·후기 더 보기",
+  scrollHint: "소개·후기 더 보기",
+  scrollHintDetail: "안윤정 법무사 소개",
 } as const;
 
 export const homeServicesIntro = {

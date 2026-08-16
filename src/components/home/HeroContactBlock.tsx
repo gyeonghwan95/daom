@@ -15,6 +15,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 type HeroContactBlockProps = {
   phone: string;
   channels: ConsultationChannel[];
+  tone?: "light" | "on-dark";
 };
 
 const channelMeta: Record<
@@ -39,7 +40,11 @@ function ChannelIcon({ id }: { id: "phone" | "kakao" | "naver" }) {
   }
 }
 
-export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
+export function HeroContactBlock({
+  phone,
+  channels,
+  tone = "light",
+}: HeroContactBlockProps) {
   const directChannels = channels.filter((c) =>
     ["phone", "kakao", "naver"].includes(c.id),
   );
@@ -98,7 +103,7 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
         <div className="hero-contact__row hero-contact__row--guide" role="list">
           <Link
             href="/contact/inquiry"
-            className="hero-contact__chip hero-contact__chip--contact"
+            className="hero-contact__chip hero-contact__chip--inquiry"
             role="listitem"
           >
             <span className="hero-contact__chip-label">
@@ -107,7 +112,7 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
           </Link>
           <Link
             href="/contact"
-            className="hero-contact__chip hero-contact__chip--contact"
+            className="hero-contact__chip hero-contact__chip--guide"
             role="listitem"
           >
             <span className="hero-contact__chip-label">상담 안내</span>
@@ -133,7 +138,10 @@ export function HeroContactBlock({ phone, channels }: HeroContactBlockProps) {
             </Link>
           )}
         </div>
-        <ConsultationFeeNotice className="mt-2" />
+        <ConsultationFeeNotice
+          className="mt-2"
+          theme={tone === "on-dark" ? "dark" : "muted"}
+        />
       </div>
     </div>
   );

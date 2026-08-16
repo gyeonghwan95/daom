@@ -971,7 +971,7 @@ export function buildHomePageData(): PageData {
     title: "다옴법무사사무소",
     metaTitle: HOME_METADATA_TITLE,
     metaDescription: buildMetaDescription(HOME_METADATA_DESCRIPTION),
-    h1: "부산 해운대구·센텀 법무사 상담",
+    h1: "다옴법무사사무소 안윤정 법무사",
     intro: HOME_METADATA_DESCRIPTION,
     breadcrumbs: [{ label: "홈" }],
     internalLinks: [

@@ -25,12 +25,12 @@ export default function Home() {
     <main id="main-content" className="home-page flex min-h-0 flex-1 flex-col overflow-x-hidden">
       <HomeFullpageSwiper>
         <HomeHero />
-        <HomeServices />
         <HomeTrust />
-        <HomeLawyerEeat />
-        <HomeLectureHistorySection />
-        <HomeActivitiesMarquee />
         <HomePressMarquee />
+        <HomeActivitiesMarquee />
+        <HomeLawyerEeat />
+        <HomeServices />
+        <HomeLectureHistorySection />
         <HomeYoutube />
         <HomeInsights />
         <HomeFaqTeaser />

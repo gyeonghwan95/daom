@@ -69,7 +69,8 @@ export function formatNoticePublishedAt(iso?: string | null): string {
   return new Intl.DateTimeFormat("ko-KR", {
     timeZone: "Asia/Seoul",
     year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    month: "long",
+    day: "numeric",
+    weekday: "short",
   }).format(new Date(t));
 }

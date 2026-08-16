@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-08-16T13:59:00.000Z",
+  "seoKnownGoodCommit": "e064454fd0aeac6fc60bb6010c364aee37c51f3b",
+  "knownGoodDate": "2026-08-07",
+  "liveNaverSerp": "LIVE_NAVER_SERP_UNAVAILABLE",
+  "champion": "/부산법무사",
+  "protectedIdentity": {
+    "/부산법무사": {
+      "title": { "knownGood": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준", "live": "부산 법무사｜상속·부동산·법인등기에서 먼저 확인할 기준", "changed": false },
+      "h1": { "knownGood": "부산 법무사, 지금 필요한 절차부터 가려 드립니다", "live": "부산 법무사, 지금 필요한 절차부터 가려 드립니다", "changed": false },
+      "canonical": { "knownGood": "self /부산법무사", "live": "https://xn--2j1br1na42lvxja38mk8r.kr/부산법무사", "changed": false },
+      "robots": { "knownGood": "index,follow", "live": "index, follow", "changed": false },
+      "descriptionLead": "unchanged vs known-good (office sentence in live meta is additive in some snapshots; source description lead matches e064454)"
+    },
+    "/": {
+      "title": { "live": "부산법무사 | 다옴법무사사무소 안윤정 법무사", "note": "Homepage title uses 부산법무사 brand. CHAMPION_AMBIGUITY vs /부산법무사. Title auto-change FORBIDDEN." },
+      "h1": { "live": "부산 해운대·센텀법무사 상담", "note": "Office/location identity, not the same H1 as Champion." }
+    }
+  },
+  "gitSinceKnownGood": [
+    { "commit": "70f45a2", "date": "2026-08-10", "risk": "HIGH", "note": "Champion extra SEO modules (later unmerged in Recovery). Title/H1 not rewritten." },
+    { "commit": "eba1030", "date": "2026-08-11", "risk": "HIGH", "note": "Mass new landings. URLs kept under freeze. CREATE_NEW now 0." },
+    { "commit": "0f9e605", "date": "2026-08-12", "risk": "MEDIUM", "note": "Further content. Do not delete existing URLs." },
+    { "commit": "ca12fa8", "date": "2026-08-13", "risk": "LOW", "note": "Notices/local overlay. Champion not replaced." },
+    { "commit": "1519e79", "date": "2026-08-15", "risk": "SAFE", "note": "Build/type fix after analytics. Not a ranking experiment." }
+  ],
+  "structuralVsKnownGood": {
+    "keywordBadges": "PRESENT on Champion in e064454 and live. Do not remove.",
+    "stationRailNavOnChampion": "Added via expansion/builder-expansion.ts (not in Flagship relatedRegionLinks). REPORT ONLY. Do not auto-delete.",
+    "relatedServiceLinks": "Grew vs e064454 (+법인법무사, +상속포기, etc.). Mass delete FORBIDDEN.",
+    "awkwardQuerySentence": "problemStatement contains SEARCH_ENGINE_FACING_COPY (‘부산 법무 업무 법인 업무’처럼 어색한 검색어도…). REPORT / MEDIUM. No auto-edit of core paragraph.",
+    "duplicateToc": "Source now 1 DOM. Live HTML minus scripts: data-page-toc=1. Prior hidden+details duplicate was Phase 1 SAFE (already applied)."
+  },
+  "autoApplyThisRun": []
+}

@@ -10,6 +10,7 @@ import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { formatActivityAction, getSourceLabel } from "@/lib/admin/activity-labels";
+import { formatAdminActivityAt } from "@/lib/admin-ops/utils";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
@@ -247,21 +248,20 @@ export default function AdminDashboardPage() {
           <p className="admin-empty">최근 CTA·문의·네이버 클릭 기록이 없습니다.</p>
         ) : (
           <ul className="admin-activity">
-            {data.recentActivity.map((a) => (
-              <li key={a.id}>
-                <time dateTime={a.at}>
-                  {new Date(a.at).toLocaleTimeString("ko-KR", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                    timeZone: "Asia/Seoul",
-                  })}
-                </time>
-                <PageIdentity path={a.path} compact />
-                <span>{getSourceLabel(a.referrerType)}</span>
-                <span>{formatActivityAction(a.eventType, a.meta)}</span>
-              </li>
-            ))}
+            {data.recentActivity.map((a) => {
+              const when = formatAdminActivityAt(a.at);
+              return (
+                <li key={a.id}>
+                  <time dateTime={a.at} title={when.title}>
+                    <span className="admin-activity__date">{when.dateLabel}</span>
+                    <span className="admin-activity__time">{when.timeLabel}</span>
+                  </time>
+                  <PageIdentity path={a.path} compact />
+                  <span>{getSourceLabel(a.referrerType)}</span>
+                  <span>{formatActivityAction(a.eventType, a.meta)}</span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </AdminSection>

@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-16T13:59:00.000Z",
+  "phase": "after-audit-no-public-html-change",
+  "note": "2026-08-16 Recovery run applied REPORT ONLY. No URL/title/H1/canonical/robots/sitemap changes. Duplicate TOC was already live (script-stripped count=1).",
+  "existingUrlsBefore": 1653,
+  "existingUrlsAfter": 1653,
+  "removedUrls": [],
+  "changedUrls": [],
+  "protectedTitleChanges": 0,
+  "protectedH1Changes": 0,
+  "protectedCanonicalChanges": 0,
+  "noindexAdded": 0,
+  "unexpectedRedirects": 0,
+  "sitemapUrlsRemoved": 0,
+  "safety": "PASS",
+  "livePriorityUnchanged": true
+}

@@ -90,6 +90,9 @@ export const imagePaths = {
   stockLegalConsultation: "/image/썸네일-상담협의.jpg",
   stockLegalContract: "/image/썸네일-계약임원.jpg",
   stockLegalOffice: "/image/썸네일-사무실.jpg",
+  officeFront: "/image/썸네일-사무실_정면.jpg",
+  officeOnPhone: "/image/썸네일-사무실_전화중.jpg",
+  busanRegistryOffice: "/image/썸네일-부산지방등기국.jpg",
   stockLegalCourthouse: "/image/썸네일-법원절차.jpg",
   thumbMajorBook: "/image/썸네일-전공책.jpg",
   thumbNotaryBook: "/image/썸네일-법무사책.png",
@@ -191,18 +194,17 @@ export const siteImages = {
       img(imagePaths.appointmentCertificate, "위원 위촉장", 1200, 800),
       img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
     ],
-    /** 모바일 히어로 — 인물·상담 중심 (세로 프레임) */
-    heroSlidesMobile: [
-      img(imagePaths.thumbPortraitFront, "안윤정 법무사", 720, 960),
-      img(imagePaths.contactConsultationHero, "상담을 준비하는 안윤정 법무사", 1000, 750),
-      img(imagePaths.thumbDocumentReview, "서류를 검토하는 안윤정 법무사", 900, 1200),
-    ],
-    /** PC 히어로 — 사무소·신뢰 분위기 (가로 프레임) */
-    heroSlidesDesktop: [
+    /** 홈 히어로 풀블리드 배경 전환 순서 */
+    heroStageSlides: [
+      img(imagePaths.stockLegalConsultation, "상담 협의", 1200, 800),
+      img(imagePaths.appointmentCertificate, "위촉장", 1200, 800),
+      img(imagePaths.officeFront, "사무소 정면", 1200, 800),
+      img(imagePaths.lectureJeonseLegalEducation, "전세사기 예방 법률 교육 특강", 1200, 800),
+      img(imagePaths.busanRegistryOffice, "부산지방등기국", 1200, 800),
+      img(imagePaths.officeOnPhone, "전화 상담 중인 사무소", 1200, 800),
+      img(imagePaths.officeInterior, "다옴법무사사무소 내부", 1200, 800),
       img(imagePaths.officeExterior, "다옴법무사사무소 전경", 1200, 800),
       img(imagePaths.officeNameBadge, "다옴법무사사무소 명패", 1200, 600),
-      img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
-      img(imagePaths.appointmentCertificate, "위원 위촉장", 1200, 800),
     ],
     trust: img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
     activities: [

@@ -45,6 +45,7 @@ Supporting (title/H1 자동변경 금지): `/부산법률상담`, `/부산임차
 - 2026-08-13 B2G/공공기관 Cluster: `/공공기관등기업무` Champion STRENGTHEN + 기존 spoke prose. **CREATE_NEW = 0** (기관명 doorway·유형별 thin 랜딩 금지)
 - 2026-08-13 Lecture B2B/B2G Cluster: `/법률강의` Hub + `/부산법률강사` Hiring STRENGTHEN. 워크숍/워크샵/세미나 **신규 URL 0**. title/H1 불변.
 - 2026-08-15 「부산 법무사」 Recovery Phase 1: duplicate TOC DOM only. Title/H1/canonical/URL **0**. Freeze 14일 유지. CREATE_NEW local-provider **0**.
+- 2026-08-16 「부산 법무사」 SERP 재감사: live HTML + known-good diff. **공개 HTML 추가 변경 0**. 역 블록·홈 검색허브·keyword badges·홈 title 모호성은 REPORT ONLY. 신규 지역/랜딩 **0**.
 
 ## Baseline
 

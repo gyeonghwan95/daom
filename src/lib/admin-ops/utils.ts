@@ -22,6 +22,42 @@ export function formatKstDateTime(d = new Date()): string {
   }).format(d);
 }
 
+/** Dashboard activity timestamp — KST calendar date + 24h time. */
+export function formatAdminActivityAt(
+  iso: string,
+  now = new Date(),
+): { dateLabel: string; timeLabel: string; title: string } {
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) {
+    return { dateLabel: "—", timeLabel: "", title: "" };
+  }
+  const d = new Date(t);
+  const day = formatKstDate(d);
+  const today = formatKstDate(now);
+  const yesterday = addKstDays(today, -1);
+  const thisYear = today.slice(0, 4);
+  let dateLabel: string;
+  if (day === today) dateLabel = "오늘";
+  else if (day === yesterday) dateLabel = "어제";
+  else if (day.startsWith(`${thisYear}-`)) {
+    const [, month, date] = day.split("-");
+    dateLabel = `${Number(month)}.${Number(date)}`;
+  } else {
+    dateLabel = day.replace(/-/g, ".");
+  }
+  const timeLabel = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(d);
+  return {
+    dateLabel,
+    timeLabel,
+    title: formatKstDateTime(d),
+  };
+}
+
 export function addKstDays(dateYmd: string, delta: number): string {
   const [y, m, d] = dateYmd.split("-").map(Number);
   const utc = Date.UTC(y, m - 1, d) + delta * 86400000;

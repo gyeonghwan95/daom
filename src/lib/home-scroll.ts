@@ -2,21 +2,21 @@ import type { Swiper as SwiperInstance } from "swiper";
 
 export const HOME_SECTION_IDS = [
   "home-hero",
-  "home-services",
-  "home-nationwide",
-  "home-b2b",
-  "home-popular-searches",
-  "home-hub",
   "home-trust",
-  "home-lawyer-eeat",
-  "home-lecture-history",
-  "home-activities",
   "home-press",
+  "home-activities",
+  "home-lawyer-eeat",
+  "home-services",
+  "home-lecture-history",
   "home-youtube",
   "home-insights",
   "home-faq",
   "home-place-guide",
   "home-contact",
+  "home-nationwide",
+  "home-b2b",
+  "home-popular-searches",
+  "home-hub",
 ] as const;
 
 export type HomeSectionId = (typeof HOME_SECTION_IDS)[number];
@@ -51,5 +51,5 @@ export function scrollToNextHomeSection(speed = 750): void {
     return;
   }
 
-  scrollToHomeSection("home-services", speed);
+  scrollToHomeSection("home-trust", speed);
 }
