@@ -5,6 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { PublicOnly } from "@/components/layout/PublicOnly";
 import { AppClientShell } from "@/components/ux/AppClientShell";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
+import { InflowIntentRail } from "@/components/seo/InflowIntentRail";
+import { SpeculationRules } from "@/components/seo/SpeculationRules";
 import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
 import "./globals.css";
@@ -75,7 +77,9 @@ export default function RootLayout({
           </PublicOnly>
           {children}
           <PublicOnly>
+            <InflowIntentRail />
             <Footer />
+            <SpeculationRules />
           </PublicOnly>
         </AppClientShell>
       </body>

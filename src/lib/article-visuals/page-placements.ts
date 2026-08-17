@@ -38,6 +38,29 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
     tone: "dark",
   },
 
+  // /부산등기법무사
+  {
+    path: "/부산등기법무사",
+    slot: "after-intro",
+    assetId: "saleGiftRegCert",
+    alt: "매매·증여 등기 완료 후 확인하는 등기필정보 서류",
+    overlayText: "어떤 등기인지부터 가릅니다",
+    caption: "등기부와 현재 상황을 보고 필요한 절차를 안내합니다.",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+  {
+    path: "/부산등기법무사",
+    slot: "before-procedures",
+    assetId: "registryOfficeVisit",
+    alt: "부산지방법원 등기국 앞에서 등기 서류를 확인하는 안윤정 법무사",
+    overlayText: "관할 등기소를 확인한 뒤 접수합니다",
+    aspectRatio: "4:3",
+    overlayPosition: "left",
+    tone: "dark",
+  },
+
   // /부산상속법무사
   {
     path: "/부산상속법무사",

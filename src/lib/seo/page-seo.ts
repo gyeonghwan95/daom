@@ -3,18 +3,18 @@ import { buildSeoTitle } from "@/lib/seo/metadata";
 
 export const staticPageSeo = {
   about: {
-    title: buildSeoTitle("부산 법무사 소개"),
+    title: buildSeoTitle("안윤정 법무사 소개"),
     description:
       "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학, 대한법무사협회 표창, 기획예산처·부산시·해운대구·민주평통 자문, 시민도서관·청년기관 법률 강의.",
     path: "/about",
-    keywords: ["부산 법무사", "부산법무사", "안윤정 법무사", seoBrand.siteName],
+    keywords: ["안윤정 법무사", "해운대 법무사", seoBrand.siteName],
   },
   office: {
     title: buildSeoTitle("해운대·센텀 법무사 사무소"),
     description:
       "부산 해운대구 센텀 다옴법무사사무소. 주소·운영시간·주차·상담 방식과 방문 전 준비사항을 안내합니다. 안윤정 법무사가 직접 상담하며, 예약 후 방문해 주세요.",
     path: "/office",
-    keywords: ["해운대 법무사", "부산 법무사", "센텀 법무사", seoBrand.siteName],
+    keywords: ["해운대 법무사", "센텀 법무사", seoBrand.siteName],
   },
   services: {
     title: buildSeoTitle("부산 등기·상속·회생 업무안내"),
@@ -72,18 +72,18 @@ export const staticPageSeo = {
     keywords: ["안윤정 법무사", "부산 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
   },
   contact: {
-    title: buildSeoTitle("부산 법무사 상담 문의"),
+    title: buildSeoTitle("상담 문의 · 해운대·센텀"),
     description:
       "전화·카카오톡·네이버 톡톡 상담 안내. 방문 예약 후 센텀 사무소에서 직접 상담 가능.",
     path: "/contact",
-    keywords: ["부산 법무사", "해운대 법무사", "센텀 법무사", seoBrand.siteName],
+    keywords: ["해운대 법무사", "센텀 법무사", "상담 문의", seoBrand.siteName],
   },
   location: {
     title: buildSeoTitle("오시는 길 · 센텀"),
     description:
       "부산 해운대구 센텀동로 200 D동 1층 위치, 센텀시티역·주차·건물 안내, 네이버 예약 링크.",
     path: "/location",
-    keywords: ["해운대 법무사", "센텀 법무사", "부산 법무사", seoBrand.siteName],
+    keywords: ["해운대 법무사", "센텀 법무사", "오시는 길", seoBrand.siteName],
   },
   privacy: {
     title: buildSeoTitle("개인정보처리방침"),

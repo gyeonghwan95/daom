@@ -39,7 +39,7 @@ export {
 } from "./registry";
 
 export { pageDataToMetadata } from "./metadata";
-export { buildJsonLdForPageData } from "./json-ld";
+export { buildJsonLdForPageData, mergeVisibleFaqs } from "./json-ld";
 export {
   resolveBlogPageData,
   resolveCasePageData,

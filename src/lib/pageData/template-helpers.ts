@@ -63,6 +63,13 @@ export function capInternalLinks(
   return capHubLinks(links, options);
 }
 
+function uniqueFaqs(faqs: PageFaqItem[]): PageFaqItem[] {
+  return faqs.filter(
+    (faq, index, arr) =>
+      arr.findIndex((item) => item.question === faq.question) === index,
+  );
+}
+
 export function defaultFaqs(title: string, region = "부산"): PageFaqItem[] {
   return [
     {
@@ -181,18 +188,11 @@ export function createPageData(input: CreatePageDataInput): PageData {
     [...(input.internalLinks ?? []), ...hubLinks, ...thematicLinks],
     { min: isHub ? 20 : 8, max: isHub ? 28 : 16 },
   );
+  const providedFaqs = uniqueFaqs(input.faqs ?? []);
   const faqs =
-    input.faqs && input.faqs.length > 0
-      ? [
-          ...input.faqs,
-          ...defaultFaqs(input.title),
-        ]
-          .filter(
-            (faq, index, arr) =>
-              arr.findIndex((f) => f.question === faq.question) === index,
-          )
-          .slice(0, 3)
-      : defaultFaqs(input.title);
+    providedFaqs.length >= 3
+      ? providedFaqs
+      : uniqueFaqs([...providedFaqs, ...defaultFaqs(input.title)]).slice(0, 3);
 
   const page: PageData = {
     slug: input.slug,

@@ -10,6 +10,11 @@ import {
   getLectureHistoryPageDataBySlug,
 } from "@/lib/lectures/history-page-data";
 import { getNationwidePageDataBySlug } from "@/lib/nationwide";
+import {
+  buildCorePageData,
+  buildPageDataFromLocalLanding,
+  buildPageDataFromTopicHub,
+} from "./builders";
 import { getPageDataByPath } from "./registry";
 
 export function resolveKoreanLandingPageData(
@@ -25,12 +30,16 @@ export function resolveKoreanLandingPageData(
     return buildCaseRegionsHubPageData();
   }
 
-  if (normalized === "개인정보처리방침" || normalized === "이용약관") {
-    return getPageDataByPath(`/${normalized}`);
+  if (normalized === "개인정보처리방침") {
+    return buildCorePageData("privacy", { slugOverride: "개인정보처리방침" });
+  }
+
+  if (normalized === "이용약관") {
+    return buildCorePageData("terms", { slugOverride: "이용약관" });
   }
 
   if (normalized === "공지사항") {
-    return getPageDataByPath("/공지사항");
+    return buildCorePageData("notices", { slugOverride: "공지사항" });
   }
 
   const nationwide = getNationwidePageDataBySlug(normalized);
@@ -45,12 +54,12 @@ export function resolveKoreanLandingPageData(
 
   const hub = getTopicHubBySlug(normalized);
   if (hub) {
-    return getPageDataByPath(hub.path);
+    return buildPageDataFromTopicHub(hub);
   }
 
   const landing = getLocalLandingBySlug(normalized);
   if (landing) {
-    return getPageDataByPath(landing.path);
+    return buildPageDataFromLocalLanding(landing);
   }
 
   const seoLanding = getSeoLandingPageDataBySlug(normalized);

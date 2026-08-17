@@ -19,6 +19,7 @@ import {
   buildFaqPageSchema,
   buildLandingPageArticleSchema,
   buildServicePageSchema,
+  buildWebPageSchema,
 } from "@/lib/seo/json-ld";
 import { getServiceImage } from "@/lib/site-images";
 import {
@@ -95,9 +96,15 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
       <JsonLd
         data={[
+          buildWebPageSchema({
+            title: page.title,
+            description: page.description,
+            path: page.path,
+            h1: page.h1,
+          }),
           buildServicePageSchema(page.title, page.path),
           buildLandingPageArticleSchema(page.title, page.description, page.path),
-          buildFaqPageSchema(page.faqs),
+          buildFaqPageSchema(page.faqs, page.path),
         ]}
       />
 

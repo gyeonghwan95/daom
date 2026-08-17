@@ -33,7 +33,6 @@ export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
             <div className="flex flex-wrap items-center gap-3">
               <HomeSectionActionLink href="/부산법무사" label="부산 법무사" />
               <HomeSectionActionLink href="/부산등기법무사" label="등기업무" />
-              <HomeSectionActionLink href="/자가진단" label="자가진단 시작" />
               <HomeSectionActionLink href="/services" label="전체 업무 보기" />
             </div>
           }

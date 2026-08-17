@@ -4,7 +4,7 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { HOME_METADATA_TITLE, getCanonicalUrl } from "@/lib/seo/metadata";
+import { HOME_METADATA_TITLE, getCanonicalUrl, homeMetadata } from "@/lib/seo/metadata";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { buildHomePageData } from "@/lib/pageData/builders";
@@ -66,12 +66,16 @@ function main() {
       add("error", `hub H1 mismatch: ${hub.h1}`);
     }
     if (!hub.includeFaqSchema) add("error", "hub includeFaqSchema should be true");
-    if (hub.faqs.length < 3 || hub.faqs.length > 8) {
-      add("warn", `hub FAQ count ${hub.faqs.length} (expect 3–6 visible)`);
+    if (hub.faqs.length < 6) {
+      add("error", `hub FAQ count ${hub.faqs.length} (full hub FAQs should not be sliced to 3)`);
     }
     const jsonLd = buildJsonLdForPageData(hub);
     const types = jsonLd.map((s) => String((s as { "@type"?: string })["@type"] ?? ""));
     if (!types.includes("FAQPage")) add("error", "hub JSON-LD missing FAQPage");
+    if (!types.includes("Service")) add("error", "hub JSON-LD missing Service");
+    if (types.includes("LegalService")) {
+      add("error", "page JSON-LD repeats global LegalService");
+    }
     const blob = JSON.stringify(hub);
     if (blob.includes("부산 부산") || blob.includes("해운대 해운대")) {
       add("error", "hub page data contains duplicated region name");
@@ -101,6 +105,15 @@ function main() {
   }
   if (home.metaTitle === busanLawyerHubMetaTitle) {
     add("error", "homepage title equals champion title");
+  }
+  const homeKeywords = Array.isArray(homeMetadata.keywords)
+    ? homeMetadata.keywords
+    : [];
+  if (
+    homeKeywords.includes("부산법무사") ||
+    homeKeywords.includes("부산 법무사")
+  ) {
+    add("error", "homepage meta keywords still exact-match 「부산 법무사」");
   }
 
   const titles = new Map<string, string>();
@@ -137,6 +150,17 @@ function main() {
       add("error", `duplicate H1 ${h1s.get(page.h1)} ↔ /${slug}`);
     } else h1s.set(page.h1, `/${slug}`);
 
+    if (slug === "부산법무사무소") {
+      if (
+        /^부산 법무사(\s|\||｜)/.test(page.metaTitle) ||
+        page.metaTitle.startsWith("부산 법무사 사무실")
+      ) {
+        add(
+          "error",
+          "office page title still prefixes champion query 「부산 법무사」",
+        );
+      }
+    }
     if (slug === "부산법무사추천") {
       if (!page.h1.includes("선택") && !page.h1.includes("추천")) {
         add("error", "추천 페이지 H1 lost selection intent");

@@ -1392,19 +1392,18 @@ body.mobile-menu-open .mobile-bottom-cta {
     width: 100%;
     max-width: var(--content-measure);
     margin-inline: auto;
-    padding-inline: 1.25rem;
-  }
-
-  @media (min-width: 768px) {
-    .content-stack {
-      padding-inline: 0;
-    }
+    padding-inline: 0;
   }
 
   /* 커버·브레드크럼·섹션·CTA·카드 — 동일 폭 */
   .content-stack > * {
     width: 100%;
     max-width: 100%;
+  }
+
+  .content-stack .grid > .readability-info-card,
+  .content-stack .grid > .readability-cta {
+    height: 100%;
   }
 
   /* content-stack 안의 좁은 max-w-* 는 부모와 동일 폭으로 */
@@ -1874,18 +1873,6 @@ body.mobile-menu-open .mobile-bottom-cta {
     vertical-align: -0.05em;
   }
 
-  .home-hero__hub {
-    margin: 0.55rem 0 0 1.5rem;
-  }
-
-  .home-hero__hub-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--navy);
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-  }
-
   .home-hero__mobile-convert {
     margin-top: 0;
     display: flex;
@@ -2181,10 +2168,6 @@ body.mobile-menu-open .mobile-bottom-cta {
 
     .home-hero__location::before {
       border-color: #c4b7a3;
-    }
-
-    .home-hero__hub-link {
-      color: rgba(247, 244, 239, 0.92);
     }
 
     .home-hero__stage-img {
@@ -3336,7 +3319,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .readability-cta {
     background: var(--surface);
-    @apply rounded-xl border border-beige-dark border-l-4 border-l-navy p-6 text-left md:p-8;
+    @apply flex h-full flex-col rounded-xl border border-beige-dark border-l-4 border-l-navy p-6 text-left md:p-8;
   }
 
   .readability-cta__title {
@@ -3350,7 +3333,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .readability-cta__actions {
-    @apply mt-5 flex flex-wrap gap-3;
+    @apply mt-auto flex flex-wrap gap-3 pt-5;
   }
 
   .readability-cta__button {
@@ -3360,7 +3343,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   /* 상호작용 카드(선택·비교·이동) — 본문 설명용 아님 */
   .readability-info-card {
     background: var(--surface);
-    @apply rounded-lg border border-beige-dark p-5 md:p-6;
+    @apply flex flex-col rounded-lg border border-beige-dark p-5 md:p-6;
   }
 
   .readability-info-card--highlight {

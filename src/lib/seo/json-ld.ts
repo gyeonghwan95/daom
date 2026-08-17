@@ -2,7 +2,11 @@ import { seoBrand } from "@/lib/seo/brand";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
-import { getContactInfo } from "@/lib/contact";
+import { getContactInfo, getNaverReservationUrl } from "@/lib/contact";
+import {
+  getInflowItemsForPath,
+  PREFETCH_CHAMPION_PATHS,
+} from "@/lib/seo/inflow-policy";
 import {
   getNaverPlaceUrl,
   officeHours,
@@ -73,6 +77,70 @@ function contactEmail(): string {
   return getBusinessEmail();
 }
 
+function telephoneUri(): string | undefined {
+  const { phone } = getContactInfo();
+  if (!phone) return undefined;
+  const digits = phone.replace(/\D/g, "");
+  if (!digits) return undefined;
+  const e164 = digits.startsWith("0") ? `+82${digits.slice(1)}` : `+${digits}`;
+  return `tel:${e164}`;
+}
+
+function businessPotentialActions(): SchemaObject[] {
+  const actions: SchemaObject[] = [];
+  const tel = telephoneUri();
+  if (tel) {
+    actions.push({
+      "@type": "CommunicateAction",
+      name: "전화 상담",
+      target: tel,
+    });
+  }
+  const reservation = getNaverReservationUrl();
+  if (reservation) {
+    actions.push({
+      "@type": "ReserveAction",
+      name: "방문 상담 예약",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: reservation,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+    });
+  }
+  return actions;
+}
+
+const SERVICE_OFFERS: Array<{ name: string; path: string }> = [
+  { name: "상속등기", path: "/부산상속등기" },
+  { name: "상속포기", path: "/부산상속포기" },
+  { name: "한정승인", path: "/부산한정승인" },
+  { name: "부동산등기", path: "/부산부동산등기" },
+  { name: "법인설립등기", path: "/부산법인등기" },
+  { name: "임원변경등기", path: "/부산임원변경등기" },
+  { name: "개인회생", path: "/부산개인회생" },
+  { name: "개인파산", path: "/부산개인파산" },
+];
+
+function serviceOfferCatalog(): SchemaObject {
+  return {
+    "@type": "OfferCatalog",
+    name: "법무사 업무 안내",
+    itemListElement: SERVICE_OFFERS.map((offer) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: offer.name,
+        url: getCanonicalUrl(offer.path),
+        provider: { "@id": schemaIds.legalService },
+      },
+    })),
+  };
+}
+
 function areaServedPlaces() {
   return seoBrand.areaServed.map((area) => ({
     "@type": "AdministrativeArea",
@@ -137,12 +205,15 @@ export function buildLegalServiceSchema(): SchemaObject {
     areaServed: areaServedPlaces(),
     serviceType: seoBrand.services,
     knowsAbout: seoBrand.services,
+    availableLanguage: "ko",
+    hasOfferCatalog: serviceOfferCatalog(),
     provider: { "@id": schemaIds.person },
     parentOrganization: { "@id": schemaIds.organization },
   });
 }
 
 export function buildLocalBusinessSchema(): SchemaObject {
+  const actions = businessPotentialActions();
   return compact({
     "@context": "https://schema.org",
     "@type": ["LegalService", "LocalBusiness"],
@@ -167,6 +238,51 @@ export function buildLocalBusinessSchema(): SchemaObject {
     founder: { "@id": schemaIds.person },
     parentOrganization: { "@id": schemaIds.organization },
     sameAs: getSocialProfileUrls(),
+    ...(actions.length > 0 ? { potentialAction: actions } : {}),
+  });
+}
+
+export function buildWebPageSchema(input: {
+  title: string;
+  description: string;
+  path: string;
+  h1?: string;
+  image?: string;
+}): SchemaObject {
+  const canonical = getCanonicalUrl(input.path);
+  const related = getInflowItemsForPath(input.path);
+  const significant =
+    related.length > 0
+      ? related.map((item) => getCanonicalUrl(item.href))
+      : input.path === "/"
+        ? PREFETCH_CHAMPION_PATHS.map((path) => getCanonicalUrl(path))
+        : [];
+
+  return compact({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: input.title,
+    headline: input.h1 ?? input.title,
+    description: input.description,
+    inLanguage: "ko-KR",
+    isPartOf: { "@id": schemaIds.website },
+    about: { "@id": schemaIds.legalService },
+    author: { "@id": schemaIds.person },
+    reviewedBy: { "@id": schemaIds.person },
+    publisher: { "@id": schemaIds.organization },
+    primaryImageOfPage: input.image
+      ? {
+          "@type": "ImageObject",
+          url: getAbsoluteAssetUrl(input.image),
+        }
+      : undefined,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".page-title", ".home-hero__title-text"],
+    },
+    ...(significant.length > 0 ? { significantLink: significant } : {}),
   });
 }
 
@@ -211,10 +327,11 @@ export function buildBreadcrumbSchema(
   });
 }
 
-export function buildFaqPageSchema(faqs: FaqInput[]): SchemaObject {
+export function buildFaqPageSchema(faqs: FaqInput[], path?: string): SchemaObject {
   return compact({
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(path ? { "@id": `${getCanonicalUrl(path)}#faq` } : {}),
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -276,13 +393,17 @@ export function buildArticleListSchema(posts: ContentMeta[]): SchemaObject {
 }
 
 export function buildServicePageSchema(serviceName: string, path: string): SchemaObject {
+  const canonical = getCanonicalUrl(path);
   return compact({
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${canonical}#service`,
     name: serviceName,
     description: `${seoBrand.siteName} ${serviceName} 상담·절차 안내`,
-    url: getCanonicalUrl(path),
+    url: canonical,
     provider: { "@id": schemaIds.legalService },
+    isPartOf: { "@id": schemaIds.website },
+    mainEntityOfPage: { "@id": `${canonical}#webpage` },
     areaServed: {
       "@type": "City",
       name: seoBrand.primaryRegion,
@@ -306,8 +427,7 @@ export function buildLandingPageArticleSchema(
     author: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },
     mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": getCanonicalUrl(path),
+      "@id": `${getCanonicalUrl(path)}#webpage`,
     },
     about: { "@id": schemaIds.legalService },
   });

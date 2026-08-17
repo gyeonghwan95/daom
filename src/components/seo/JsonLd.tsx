@@ -9,11 +9,11 @@ export function JsonLd({ data }: JsonLdProps) {
 
   return (
     <>
-      {schemas.map((schema) => {
+      {schemas.map((schema, index) => {
         const key =
           typeof schema["@id"] === "string"
             ? schema["@id"]
-            : JSON.stringify(schema["@type"]);
+            : `${JSON.stringify(schema["@type"])}-${index}`;
 
         return (
           <script

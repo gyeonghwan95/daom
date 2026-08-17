@@ -69,6 +69,8 @@ void HOME_METADATA_TITLE;
 void busanLawyerHubMetaTitle;
 
 let cachedPages: PageData[] | null = null;
+let cachedByPath: Map<string, PageData> | null = null;
+let cachedBySlug: Map<string, PageData> | null = null;
 
 function buildAllPageData(): PageData[] {
   const pages: PageData[] = [];
@@ -228,22 +230,24 @@ export function getAllPageData(): PageData[] {
   if (!cachedPages) {
     cachedPages = buildAllPageData();
     validatePageDataRegistry(cachedPages);
+    cachedByPath = new Map();
+    cachedBySlug = new Map();
+    for (const page of cachedPages) {
+      cachedByPath.set(normalizeRouteSlug(page.path), page);
+      cachedBySlug.set(normalizeRouteSlug(page.slug), page);
+    }
   }
   return cachedPages;
 }
 
 export function getPageDataByPath(path: string): PageData | undefined {
-  const key = normalizeRouteSlug(path);
-  return getAllPageData().find(
-    (page) => normalizeRouteSlug(page.path) === key,
-  );
+  getAllPageData();
+  return cachedByPath?.get(normalizeRouteSlug(path));
 }
 
 export function getPageDataBySlug(slug: string): PageData | undefined {
-  const key = normalizeRouteSlug(slug);
-  return getAllPageData().find(
-    (page) => normalizeRouteSlug(page.slug) === key,
-  );
+  getAllPageData();
+  return cachedBySlug?.get(normalizeRouteSlug(slug));
 }
 
 export function listAllPagePaths(): string[] {

@@ -1,11 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { HubLawyerPortrait } from "@/components/local-landing/HubLawyerPortrait";
 import {
+  ChecklistBox,
   ConsultationCTA,
   ContentSection,
   InfoCard,
@@ -14,7 +16,6 @@ import {
   ProseParagraphs,
   RelatedContentGrid,
 } from "@/components/readability";
-import { getDirectConsultationChannels } from "@/lib/contact";
 import {
   registryHubCases,
   registryHubFaqs,
@@ -28,9 +29,9 @@ import {
   registryHubWorkAreas,
   registryHubEyebrow,
 } from "@/lib/local-landing/registry-hub-content";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
-import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 
 type RegistryHubPageViewProps = {
@@ -45,13 +46,6 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
     ...getCoverImageForPageData(page),
     alt: "부동산 소유권이전등기 서류 확인",
   };
-  const portrait = {
-    ...siteImages.about.portrait,
-    alt: "부산 등기업무 상담을 진행하는 안윤정 법무사",
-  };
-  const channels = getDirectConsultationChannels();
-  const phone = channels.find((c) => c.id === "phone");
-  const kakao = channels.find((c) => c.id === "kakao");
 
   const faqSchemaPage: PageData = {
     ...page,
@@ -89,54 +83,40 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         eyebrow={registryHubEyebrow}
         introParagraphs={registryHubHeroParagraphs}
         keywords={[]}
-        ctaLabel=""
+        ctaLabel={consultationInquiryCopy.ctaShort}
+        ctaHref={INQUIRY_HREF}
         showDiagnosisCta={false}
-        showAboutLawyerCta={false}
-        showNaverReservation={false}
+        showAboutLawyerCta
+        showNaverReservation
       >
-        <ul className="mt-4 list-disc space-y-1 pl-5 text-sm leading-relaxed text-navy/80 md:text-base">
-          <li>아파트 매매 잔금일 소유권이전</li>
-          <li>부모님 부동산 상속</li>
-          <li>가족 간 증여</li>
-          <li>대출에 따른 근저당 설정·말소</li>
-          <li>회사 설립 또는 임원변경</li>
-          <li>신축건물 보존등기</li>
-        </ul>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link
-            href={INQUIRY_HREF}
-            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
-          >
-            내 등기업무 확인하기
-          </Link>
-          {phone?.configured ? (
-            <a
-              href={phone.href}
-              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-            >
-              전화 상담
-            </a>
-          ) : null}
-          {kakao?.configured ? (
-            <a
-              href={kakao.href}
-              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-              target={kakao.external ? "_blank" : undefined}
-              rel={kakao.external ? "noopener noreferrer" : undefined}
-            >
-              카카오톡 문의
-            </a>
-          ) : null}
+        <div className="mt-4 md:mt-5">
+          <ChecklistBox
+            items={[
+              "아파트 매매 잔금일 소유권이전",
+              "부모님 부동산 상속",
+              "가족 간 증여",
+              "대출에 따른 근저당 설정·말소",
+              "회사 설립 또는 임원변경",
+              "신축건물 보존등기",
+            ]}
+          />
         </div>
       </PageHero>
+
+      <ArticleVisualSlot
+        path={page.path}
+        slot="after-intro"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
 
       <PageTableOfContents items={tocItems} />
 
       <ContentSection id="situations" title="어떤 등기가 필요하신가요?">
-        <p className="body-text mb-5 max-w-3xl">
+        <p className="body-text mb-5">
           지금 상황에 가까운 항목을 고르시면 해당 등기 안내로 이어집니다.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {registryHubSituations.map((card) => (
             <InfoCard key={card.title} variant="highlight">
               <h3 className="text-base font-semibold text-navy md:text-lg">
@@ -163,7 +143,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         id="work-areas"
         title="부산 등기 법무사에게 많이 맡기는 업무"
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid items-stretch gap-4 md:grid-cols-3">
           {registryHubWorkAreas.map((area) => (
             <InfoCard key={area.title}>
               <h3 className="text-base font-semibold text-navy md:text-lg">
@@ -189,8 +169,15 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         </div>
       </ContentSection>
 
+      <ArticleVisualSlot
+        path={page.path}
+        slot="before-procedures"
+        category={page.category}
+        serviceSlug={page.serviceSlug}
+      />
+
       <ContentSection id="process" title="어떻게 진행하나요">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid items-stretch gap-4 md:grid-cols-2">
           {registryHubProcess.map((step) => (
             <InfoCard key={step.title}>
               <h3 className="text-base font-semibold text-navy md:text-lg">
@@ -205,15 +192,14 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       </ContentSection>
 
       <ContentSection id="intake" title="등기 상담 전 이것만 알려주시면 됩니다">
-        <p className="body-text mb-5 max-w-3xl">
+        <p className="body-text mb-5">
           처음부터 모든 서류를 준비할 필요는 없습니다. 아래 항목만 알려 주셔도
           필요한 등기와 다음 자료를 구분할 수 있습니다.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid items-stretch gap-3 sm:grid-cols-2">
           {registryHubIntake.map((group) => (
-            <InfoCard key={group.title} variant="plain">
-              <h3 className="text-base font-semibold text-navy">{group.title}</h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/80">
+            <InfoCard key={group.title} title={group.title}>
+              <ul className="list-disc space-y-1 pl-5 text-sm text-navy/80">
                 {group.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -223,7 +209,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         </div>
       </ContentSection>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid items-stretch gap-4 md:grid-cols-3">
         {registryHubMidCtas.map((cta) => (
           <ConsultationCTA
             key={cta.title}
@@ -243,7 +229,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
           사이트에 공개된 실제 등기 사례입니다. 개별 사건의 결과나 완료 시점을
           보장하지는 않습니다.
         </p>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid items-stretch gap-4 md:grid-cols-3">
           {registryHubCases.map((item) => (
             <InfoCard key={item.href}>
               <h3 className="text-base font-semibold text-navy md:text-lg">
@@ -265,7 +251,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
                 <span className="font-medium text-navy">서류. </span>
                 {item.documents}
               </p>
-              <p className="mt-3">
+              <p className="mt-auto pt-3">
                 <Link
                   href={item.href}
                   className="text-sm font-medium text-navy underline-offset-2 hover:underline"
@@ -279,34 +265,13 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       </ContentSection>
 
       <ContentSection id="lawyer" title="누가 이 등기를 검토하나요">
-        <div className="grid items-start gap-6 md:grid-cols-[200px_1fr]">
-          <div className="relative aspect-[3/4] max-w-[200px] overflow-hidden rounded-xl border border-beige-dark">
-            <Image
-              src={portrait.src}
-              alt={portrait.alt}
-              width={portrait.width}
-              height={portrait.height}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-navy">안윤정 법무사</h3>
-            <ProseParagraphs
-              paragraphs={[
-                "다옴법무사사무소 대표 법무사입니다. 부동산·상속·법인등기 상담과 진행을 직접 맡습니다.",
-                "등기 종류만 듣고 서류를 먼저 나열하기보다, 등기부와 현재 상황을 보고 지금 필요한 등기부터 구분합니다. 대한법무사협회장 표창 수상 이력과 공공·정책 활동은 소개 페이지에서 이어서 확인하실 수 있습니다.",
-              ]}
-            />
-            <p className="mt-4">
-              <Link
-                href="/about"
-                className="text-sm font-medium text-navy underline-offset-2 hover:underline"
-              >
-                안윤정 법무사 소개
-              </Link>
-            </p>
-          </div>
-        </div>
+        <HubLawyerPortrait
+          alt="부산 등기업무 상담을 진행하는 안윤정 법무사"
+          paragraphs={[
+            "다옴법무사사무소 대표 법무사입니다. 부동산·상속·법인등기 상담과 진행을 직접 맡습니다.",
+            "등기 종류만 듣고 서류를 먼저 나열하기보다, 등기부와 현재 상황을 보고 지금 필요한 등기부터 구분합니다. 대한법무사협회장 표창 수상 이력과 공공·정책 활동은 소개 페이지에서 이어서 확인하실 수 있습니다.",
+          ]}
+        />
       </ContentSection>
 
       <ContentSection id="jurisdiction" title="부산 등기업무와 관할">

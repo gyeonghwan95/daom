@@ -96,6 +96,9 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
   return {
     title: { absolute: input.title },
     description: input.description,
+    ...(input.keywords && input.keywords.length > 0
+      ? { keywords: [...input.keywords] }
+      : {}),
     alternates: {
       canonical,
     },
@@ -139,8 +142,6 @@ export const homeMetadata = createPageMetadata({
   description: HOME_METADATA_DESCRIPTION,
   path: "/",
   keywords: [
-    "부산법무사",
-    "부산 법무사",
     "해운대 법무사",
     "센텀 법무사",
     "부산 상속등기",

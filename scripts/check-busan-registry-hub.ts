@@ -86,8 +86,8 @@ function main() {
     const h1Hits = [hub.h1, hub.title].filter(Boolean);
     if (h1Hits.length < 1) add("error", "hub missing H1");
     if (!hub.includeFaqSchema) add("error", "hub includeFaqSchema should be true");
-    if (hub.faqs.length < 3 || hub.faqs.length > 8) {
-      add("warn", `hub FAQ count ${hub.faqs.length} (expect 3–6 visible)`);
+    if (hub.faqs.length < 6) {
+      add("error", `hub FAQ count ${hub.faqs.length} (full hub FAQs should not be sliced to 3)`);
     }
     const jsonLd = buildJsonLdForPageData(hub);
     if (!Array.isArray(jsonLd) || jsonLd.length === 0) {
@@ -95,6 +95,10 @@ function main() {
     }
     const types = jsonLd.map((s) => String((s as { "@type"?: string })["@type"] ?? ""));
     if (!types.includes("FAQPage")) add("error", "hub JSON-LD missing FAQPage");
+    if (!types.includes("Service")) add("error", "hub JSON-LD missing Service");
+    if (types.includes("LegalService")) {
+      add("error", "page JSON-LD repeats global LegalService");
+    }
     const blob = JSON.stringify(hub);
     if (blob.includes("부산 부산") || blob.includes("해운대 해운대")) {
       add("error", "hub page data contains duplicated region name");

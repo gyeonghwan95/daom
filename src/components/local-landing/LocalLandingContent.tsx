@@ -9,7 +9,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { LocalLandingInternalLinks } from "@/components/local-landing/LocalLandingInternalLinks";
 import { RelatedBlogPosts } from "@/components/local-landing/RelatedBlogPosts";
-import { buildFaqPageSchema, buildLandingPageArticleSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
+import { buildFaqPageSchema, buildLandingPageArticleSchema, buildServicePageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
 import { getServiceImage, siteImages } from "@/lib/site-images";
 import type { LocalLandingPage } from "@/types/local-landing";
 
@@ -56,9 +56,15 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
       <JsonLd
         data={[
+          buildWebPageSchema({
+            title: page.title,
+            description: page.description,
+            path: page.path,
+            h1: page.h1,
+          }),
           buildServicePageSchema(page.title, page.path),
           buildLandingPageArticleSchema(page.title, page.description, page.path),
-          buildFaqPageSchema(page.faqs),
+          buildFaqPageSchema(page.faqs, page.path),
         ]}
       />
 

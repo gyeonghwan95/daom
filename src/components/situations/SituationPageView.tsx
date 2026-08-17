@@ -29,6 +29,7 @@ import {
 } from "@/lib/situations";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
 
 type SituationPageViewProps = {
@@ -115,6 +116,10 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
     page.slug,
     situation.serviceSlug,
   );
+  const conversionFaqs =
+    slug === "payment-order-certified-mail"
+      ? getConversionFaqsForPage(page.slug, page.path)
+      : [];
   const bodyParagraphs = buildSituationBodyParagraphs(situation);
 
   const tocItems = [
@@ -136,7 +141,9 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <JsonLd data={buildJsonLdForPageData(page)} />
+      <JsonLd
+        data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
+      />
 
       <PageCoverBanner image={cover} />
 

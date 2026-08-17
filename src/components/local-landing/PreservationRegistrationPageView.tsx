@@ -24,6 +24,7 @@ import { getPreservationRegistrationContent } from "@/lib/local-landing/preserva
 import { PreservationB2BSections } from "@/components/b2b/PreservationB2BSections";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
 
 type PreservationRegistrationPageViewProps = {
@@ -61,7 +62,14 @@ export function PreservationRegistrationPageView({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
+      <JsonLd
+        data={buildJsonLdForPageData(faqSchemaPage, {
+          extraFaqs: getConversionFaqsForPage(
+            "부산신축건물보존등기",
+            page.path,
+          ),
+        })}
+      />
 
       <PageCoverBanner image={cover} />
 

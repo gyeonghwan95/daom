@@ -537,7 +537,7 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
     ],
     introParagraphs: [page.ctaDescription],
     consultationPoints: page.sections.flatMap((s) => s.links.map((l) => l.label)).slice(0, 5),
-    faqs: page.faqs.slice(0, 3).map((f) => ({
+    faqs: page.faqs.map((f) => ({
       question: f.question,
       answer: f.answer,
     })),
@@ -640,7 +640,7 @@ export function buildPageDataFromService(service: ServiceDetail): PageData {
     procedures: service.procedures,
     documents: service.documents,
     consultationPoints: service.commonIssues,
-    faqs: service.faqs.slice(0, 3).map((f) => ({
+    faqs: service.faqs.map((f) => ({
       question: f.question,
       answer: f.answer,
     })),
@@ -930,7 +930,7 @@ export function buildPageDataFromNaverExternal(
 type StaticCoreKey = keyof typeof staticPageSeo;
 
 const coreH1Map: Record<StaticCoreKey, string> = {
-  about: "부산 법무사 소개",
+  about: "안윤정 법무사 소개",
   office: "해운대·센텀 법무사 사무소",
   services: "부산 등기·상속·회생 업무안내",
   cases: "부산 등기·상속 업무 사례",
@@ -939,7 +939,7 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   faq: "부산 법무사 FAQ",
   notices: "공지사항",
   media: "언론·활동",
-  contact: "부산 법무사 상담 문의",
+  contact: "상담 문의",
   location: "오시는 길 · 센텀",
   privacy: "개인정보처리방침",
   terms: "이용약관",

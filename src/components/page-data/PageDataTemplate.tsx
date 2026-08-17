@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { ServiceConversionEnhancements } from "@/components/conversion";
-import { resolveConversionKey } from "@/lib/service-conversion";
+import {
+  getConversionFaqsForPage,
+  resolveConversionKey,
+} from "@/lib/service-conversion";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -116,10 +119,10 @@ export function PageDataTemplate({
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
   const isCorporateLegalOps = page.slug === CORPORATE_LEGAL_OPERATIONS_SLUG;
-  const displayFaqs =
-    isCorporateLegalOps || page.slug === "부산기업법무사"
-      ? page.faqs
-      : page.faqs.slice(0, 3);
+  const conversionFaqs = conversionKey
+    ? getConversionFaqsForPage(page.slug, page.path)
+    : [];
+  const displayFaqs = page.faqs;
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
     conversionKey ? (
@@ -135,7 +138,9 @@ export function PageDataTemplate({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <JsonLd data={buildJsonLdForPageData(page)} />
+      <JsonLd
+        data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
+      />
 
       {showCover ? <PageCoverBanner image={cover} /> : null}
 

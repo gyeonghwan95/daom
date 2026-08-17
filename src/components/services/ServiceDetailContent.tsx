@@ -8,7 +8,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { ServiceInternalLinks } from "@/components/services/ServiceInternalLinks";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
-import { buildFaqPageSchema, buildServicePageSchema } from "@/lib/seo/json-ld";
+import { buildFaqPageSchema, buildServicePageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
 import { consultationCopy } from "@/lib/consultation";
 import { getTopicHubLinkForService } from "@/lib/seo/internal-links";
 import { getServiceImage } from "@/lib/site-images";
@@ -61,8 +61,14 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
       />
       <JsonLd
         data={[
+          buildWebPageSchema({
+            title: service.title,
+            description: service.intro,
+            path,
+            h1: service.title,
+          }),
           buildServicePageSchema(service.title, path),
-          buildFaqPageSchema(service.faqs),
+          buildFaqPageSchema(service.faqs, path),
         ]}
       />
 

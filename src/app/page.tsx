@@ -16,13 +16,30 @@ import { HomeLawyerEeat } from "@/components/home/HomeLawyerEeat";
 import { HomeLectureHistorySection } from "@/components/home/HomeLectureHistorySection";
 import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
-import { homeMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { homeHero } from "@/lib/home-content";
+import { buildWebPageSchema } from "@/lib/seo/json-ld";
+import {
+  HOME_METADATA_DESCRIPTION,
+  HOME_METADATA_TITLE,
+  homeMetadata,
+} from "@/lib/seo/metadata";
+import { siteImages } from "@/lib/site-images";
 
 export const metadata: Metadata = homeMetadata;
 
 export default function Home() {
   return (
     <main id="main-content" className="home-page flex min-h-0 flex-1 flex-col overflow-x-hidden">
+      <JsonLd
+        data={buildWebPageSchema({
+          title: HOME_METADATA_TITLE,
+          description: HOME_METADATA_DESCRIPTION,
+          path: "/",
+          h1: `${homeHero.officeName} ${homeHero.representative}`,
+          image: siteImages.home.hero.src,
+        })}
+      />
       <HomeFullpageSwiper>
         <HomeHero />
         <HomeTrust />

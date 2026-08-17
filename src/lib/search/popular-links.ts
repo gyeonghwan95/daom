@@ -44,6 +44,7 @@ export const FEATURED_PATHS = new Set([
   "/contact",
   "/location",
   "/부산법무사",
+  "/부산등기법무사",
   "/부산상속등기",
   "/부산개인회생",
   "/부산개인파산",

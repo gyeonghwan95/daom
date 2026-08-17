@@ -171,6 +171,11 @@ export function Footer() {
           </div>
         </div>
 
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/65">
+          이 사무소는 등기·비송 서류와 개인회생·파산 신청 서류를 안내합니다.
+          소송 대리와 형사 변론은 변호사 업무이며, 여기서 대신하지 않습니다.
+        </p>
+
         <FooterBusinessInfo />
 
         <p className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/60 md:text-left">

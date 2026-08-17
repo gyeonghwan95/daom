@@ -6,6 +6,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
 import { KeywordBadges } from "./KeywordBadges";
 import { ProseParagraphs } from "./ProseParagraphs";
+import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SiteImageAsset } from "@/lib/site-images";
 
 type PageHeroProps = {
@@ -147,7 +148,7 @@ export function PageHero({
         <div className="mx-auto w-full max-w-[14rem] sm:max-w-[15rem] lg:relative lg:mx-0 lg:h-full lg:max-w-none lg:justify-self-end">
           <div className="relative aspect-[4/3] max-h-52 w-full overflow-hidden rounded-2xl border border-beige-dark bg-beige/40 shadow-sm sm:max-h-56 lg:absolute lg:inset-0 lg:aspect-auto lg:max-h-none">
             <Image
-              src={sideImage.src}
+              src={encodePublicSrc(sideImage.src)}
               alt={sideImage.alt}
               fill
               priority
