@@ -1043,11 +1043,11 @@ export async function buildConversionsReport(env) {
   let kakao = 0;
   let naver = 0;
   let ctaGeneric = 0;
-  let consultStart = dayToday.consultStart || 0;
-  let consultSubmit = dayToday.consultSubmit || 0;
-  let visits = dayToday.visits || 0;
-  let cta = dayToday.cta || 0;
-  let naverPlace = dayToday.naverPlace || 0;
+  const consultStart = dayToday.consultStart || 0;
+  const consultSubmit = dayToday.consultSubmit || 0;
+  const visits = dayToday.visits || 0;
+  const cta = dayToday.cta || 0;
+  const naverPlace = dayToday.naverPlace || 0;
 
   const pathAgg = {};
   for (const [path, s] of Object.entries(dayToday.paths || {})) {

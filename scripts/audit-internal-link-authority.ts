@@ -15,7 +15,7 @@ const CHAMPIONS = [
 
 function main() {
   const published = getAllPublishedPaths();
-  let inbound: Record<string, number> = Object.fromEntries(CHAMPIONS.map((c) => [c, 0]));
+  const inbound: Record<string, number> = Object.fromEntries(CHAMPIONS.map((c) => [c, 0]));
 
   if (fs.existsSync(MANIFEST)) {
     const raw = JSON.parse(fs.readFileSync(MANIFEST, "utf8")) as unknown;

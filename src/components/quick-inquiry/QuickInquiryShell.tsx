@@ -13,13 +13,15 @@ export function QuickInquiryShell() {
   const panelRef = useRef<HTMLDivElement>(null);
   const ids = useDialogIds("qi-shell");
   const [completed, setCompleted] = useState(false);
+  const [wasOpen, setWasOpen] = useState(open);
+
+  if (open !== wasOpen) {
+    setWasOpen(open);
+    if (open) setCompleted(false);
+  }
 
   useFocusTrap(open, panelRef);
   useBodyScrollLock(open);
-
-  useEffect(() => {
-    if (open) setCompleted(false);
-  }, [open]);
 
   useEffect(() => {
     if (!open) return;

@@ -10,15 +10,19 @@ export function PublicNoticeDetail() {
   const params = useSearchParams();
   const id = params.get("id") || "";
   const [notice, setNotice] = useState<PublicFloatingNotice | null>(null);
-  const [state, setState] = useState<"loading" | "ok" | "missing" | "error">(
-    "loading",
-  );
+  const [loadState, setLoadState] = useState<
+    "loading" | "ok" | "missing" | "error"
+  >(id ? "loading" : "missing");
+  const [trackedId, setTrackedId] = useState(id);
+
+  if (trackedId !== id) {
+    setTrackedId(id);
+    setNotice(null);
+    setLoadState(id ? "loading" : "missing");
+  }
 
   useEffect(() => {
-    if (!id) {
-      setState("missing");
-      return;
-    }
+    if (!id) return;
     let cancelled = false;
     fetch(`/api/notices/item?id=${encodeURIComponent(id)}`, {
       credentials: "same-origin",
@@ -26,25 +30,27 @@ export function PublicNoticeDetail() {
       .then(async (res) => {
         if (cancelled) return;
         if (res.status === 404) {
-          setState("missing");
+          setLoadState("missing");
           return;
         }
         if (!res.ok) throw new Error("fail");
         const json = (await res.json()) as { notice?: PublicFloatingNotice };
         if (!json.notice) {
-          setState("missing");
+          setLoadState("missing");
           return;
         }
         setNotice(json.notice);
-        setState("ok");
+        setLoadState("ok");
       })
       .catch(() => {
-        if (!cancelled) setState("error");
+        if (!cancelled) setLoadState("error");
       });
     return () => {
       cancelled = true;
     };
   }, [id]);
+
+  const state = id ? loadState : "missing";
 
   if (state === "loading") {
     return <p className="body-text text-navy/60">불러오는 중…</p>;

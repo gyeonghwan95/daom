@@ -20,7 +20,6 @@ export default function AdminDashboardPage() {
   const [refreshing, setRefreshing] = useState(false);
 
   const load = useCallback(async () => {
-    setRefreshing(true);
     const result = await adminFetchJson<DashboardPayload>("/api/admin/dashboard");
     setRefreshing(false);
     if (!result.ok) {
@@ -32,8 +31,21 @@ export default function AdminDashboardPage() {
   }, []);
 
   useEffect(() => {
-    void load();
-  }, [load]);
+    let cancelled = false;
+    void (async () => {
+      const result = await adminFetchJson<DashboardPayload>("/api/admin/dashboard");
+      if (cancelled) return;
+      if (!result.ok) {
+        setError(result.message);
+        return;
+      }
+      setError(null);
+      setData(result.data);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   if (error && !data) {
     return (
@@ -68,7 +80,10 @@ export default function AdminDashboardPage() {
       <AdminPageHeader
         title="대시보드"
         generatedAt={data.generatedAt}
-        onRefresh={() => void load()}
+        onRefresh={() => {
+          setRefreshing(true);
+          void load();
+        }}
         refreshing={refreshing}
       >
         <Link href="/admin/notices" className="admin-btn admin-btn--primary">

@@ -60,6 +60,8 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             >
               다시 시도
             </button>
+            {/* global-error는 루트 레이아웃이 내려가 next/link를 쓸 수 없습니다. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
               href="/"
               style={{

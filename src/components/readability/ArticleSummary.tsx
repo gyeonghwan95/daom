@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ArticleSummaryProps = {
   /** 페이지 결론 2~3문장 */
   conclusion: string;
@@ -62,9 +64,9 @@ export function ArticleSummary({
 
       <p className="article-summary__note">
         아래 본문에서 절차·서류·주의사항을 이어서 확인하실 수 있습니다.{" "}
-        <a href="/contact" className="article-summary__link">
+        <Link href="/contact" className="article-summary__link">
           상황만 간단히 남기기
-        </a>
+        </Link>
       </p>
     </aside>
   );

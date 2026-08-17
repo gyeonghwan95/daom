@@ -5,7 +5,6 @@ import {
   ADMIN_OPS_COOKIE,
   clearSessionCookieHeader,
   createSessionToken,
-  formatKstDate,
   formatKstDateTime,
   getAdminSecrets,
   isSafeCtaUrl,
@@ -390,7 +389,7 @@ async function handleAdminRequest(context) {
 
     const current = notices[idx];
     const nowIso = new Date().toISOString();
-    let next = { ...current, updatedAt: nowIso };
+    const next = { ...current, updatedAt: nowIso };
 
     if (action === "publish") {
       next.status = "active";

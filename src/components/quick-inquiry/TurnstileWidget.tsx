@@ -72,10 +72,7 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
   );
 
   useEffect(() => {
-    if (!siteKey) {
-      setReady(true);
-      return;
-    }
+    if (!siteKey) return;
 
     let cancelled = false;
 

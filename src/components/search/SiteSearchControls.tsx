@@ -20,9 +20,14 @@ export function useHeaderSearch({
   const pathname = usePathname();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [query, setQuery] = useState("");
+  const [queryPath, setQueryPath] = useState(pathname);
+
+  if (queryPath !== pathname) {
+    setQueryPath(pathname);
+    setQuery("");
+  }
 
   useEffect(() => {
-    setQuery("");
     onSearchOpenChange(false);
   }, [pathname, onSearchOpenChange]);
 

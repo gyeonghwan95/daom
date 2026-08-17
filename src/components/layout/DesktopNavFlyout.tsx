@@ -73,10 +73,13 @@ export function DesktopNavFlyout({
 
   useLayoutEffect(() => {
     if (!open) return;
-    updatePosition();
+    const frame = requestAnimationFrame(() => {
+      updatePosition();
+    });
     window.addEventListener("resize", updatePosition);
     window.addEventListener("scroll", updatePosition, true);
     return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };

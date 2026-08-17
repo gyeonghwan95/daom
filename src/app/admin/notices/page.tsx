@@ -107,7 +107,31 @@ export default function AdminNoticesPage() {
   }
 
   useEffect(() => {
-    void reload().catch(() => setError("네트워크 오류"));
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch("/api/admin/notices", { credentials: "include" });
+        const json = (await res.json()) as {
+          ok?: boolean;
+          message?: string;
+          data?: { notices?: NoticeRow[]; storageConfigured?: boolean };
+        };
+        if (cancelled) return;
+        if (!res.ok) {
+          setError(json.message || "불러오기 실패");
+          return;
+        }
+        setNotices(json.data?.notices || []);
+        if (json.data?.storageConfigured === false) {
+          setError("ADMIN_KV가 없어 공지를 저장할 수 없습니다.");
+        }
+      } catch {
+        if (!cancelled) setError("네트워크 오류");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const filtered = useMemo(() => {

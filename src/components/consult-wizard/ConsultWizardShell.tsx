@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   isTurnstileConfigured,
@@ -85,7 +86,34 @@ export function ConsultWizardShell() {
   const [token, setToken] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [resetSignal, setResetSignal] = useState(0);
-  const startedStepRef = useRef(false);
+  const resetKey = open
+    ? `${pageTitle}\0${pageUrl}\0${presetSituationIds.join("\0")}`
+    : "";
+  const [appliedResetKey, setAppliedResetKey] = useState("");
+
+  if (open && resetKey !== appliedResetKey) {
+    const saved = loadConsultDraft();
+    setAppliedResetKey(resetKey);
+    setDraft(
+      createEmptyDraft({
+        ...(saved ?? {}),
+        pageTitle,
+        pageUrl,
+        situationIds: saved?.situationIds?.length
+          ? saved.situationIds
+          : presetSituationIds,
+        step: saved?.step ?? 1,
+      }),
+    );
+    setPhase("form");
+    setErrors({});
+    setFormError("");
+    setToken("");
+    setHoneypot("");
+    setResetSignal((n) => n + 1);
+  } else if (!open && appliedResetKey !== "") {
+    setAppliedResetKey("");
+  }
 
   useFocusTrap(open, panelRef);
   useBodyScrollLock(open);
@@ -133,38 +161,12 @@ export function ConsultWizardShell() {
   }, [open, closeInquiry]);
 
   useEffect(() => {
-    if (!open) {
-      startedStepRef.current = false;
-      return;
-    }
-
-    const saved = loadConsultDraft();
-    const initial = createEmptyDraft({
-      ...(saved ?? {}),
-      pageTitle,
-      pageUrl,
-      situationIds: saved?.situationIds?.length
-        ? saved.situationIds
-        : presetSituationIds,
-      step: saved?.step ?? 1,
-    });
-    setDraft(initial);
-    setPhase("form");
-    setErrors({});
-    setFormError("");
-    setToken("");
-    setHoneypot("");
-    setResetSignal((n) => n + 1);
-    startedStepRef.current = true;
-  }, [open, pageTitle, pageUrl, presetSituationIds]);
-
-  useEffect(() => {
     if (!open || phase !== "form") return;
     saveConsultDraft(draft);
   }, [draft, open, phase]);
 
   useEffect(() => {
-    if (!open || !startedStepRef.current || phase !== "form") return;
+    if (!open || !appliedResetKey || phase !== "form") return;
     trackConsultEvent({
       event: "consult_step",
       step: draft.step,
@@ -178,7 +180,7 @@ export function ConsultWizardShell() {
       })(),
       situationIds: draft.situationIds,
     });
-  }, [draft.step, open, phase, pageUrl, source, draft.situationIds]);
+  }, [appliedResetKey, draft.step, open, phase, pageUrl, source, draft.situationIds]);
 
   const docs = useMemo(
     () => getDocsForSituations(draft.situationIds),
@@ -433,9 +435,9 @@ export function ConsultWizardShell() {
                 >
                   {copy.reviewAgain}
                 </button>
-                <a href="/" className="btn-secondary min-h-11 justify-center">
+                <Link href="/" className="btn-secondary min-h-11 justify-center">
                   {copy.goHome}
-                </a>
+                </Link>
               </div>
             </div>
           ) : null}
