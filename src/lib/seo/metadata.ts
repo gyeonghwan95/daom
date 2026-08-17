@@ -19,8 +19,9 @@ export type PageSeoInput = {
 
 const DEFAULT_OG_IMAGE = siteImages.seo.defaultOg.src;
 
+/** 「부산 법무사」 검색 대표는 `/부산법무사`. 홈 제목은 브랜드·위치만 쓴다. */
 export const HOME_METADATA_TITLE =
-  "부산법무사 | 다옴법무사사무소 안윤정 법무사";
+  "다옴법무사사무소 | 해운대·센텀 안윤정 법무사";
 
 export const HOME_METADATA_DESCRIPTION =
   "부산 해운대구·센텀 소재 다옴법무사사무소. 상속등기, 상속포기, 한정승인, 부동산등기, 법인설립등기, 임원변경등기 상담.";

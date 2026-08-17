@@ -238,7 +238,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "lecture" ||
     page.slug === "부산법인법무사" ||
     page.slug === "부산기업법무사" ||
-    page.slug === "부산등기법무사";
+    page.slug === "부산등기법무사" ||
+    page.slug === "부산법무사";
 
   const specialLandingFaqs = keepAllFaqs
     ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
@@ -490,7 +491,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "search-intent" ||
       page.pageType === "lecture" ||
       page.slug === "부산법인법무사" ||
-      page.slug === "부산등기법무사",
+      page.slug === "부산등기법무사" ||
+      page.slug === "부산법무사",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

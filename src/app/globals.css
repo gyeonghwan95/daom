@@ -1874,6 +1874,18 @@ body.mobile-menu-open .mobile-bottom-cta {
     vertical-align: -0.05em;
   }
 
+  .home-hero__hub {
+    margin: 0.55rem 0 0 1.5rem;
+  }
+
+  .home-hero__hub-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
   .home-hero__mobile-convert {
     margin-top: 0;
     display: flex;
@@ -2169,6 +2181,10 @@ body.mobile-menu-open .mobile-bottom-cta {
 
     .home-hero__location::before {
       border-color: #c4b7a3;
+    }
+
+    .home-hero__hub-link {
+      color: rgba(247, 244, 239, 0.92);
     }
 
     .home-hero__stage-img {

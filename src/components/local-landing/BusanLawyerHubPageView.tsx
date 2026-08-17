@@ -1,0 +1,380 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Breadcrumb } from "@/components/navigation/Breadcrumb";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { FAQAccordion } from "@/components/sections/FAQAccordion";
+import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import {
+  ConsultationCTA,
+  ContentSection,
+  InfoCard,
+  PageHero,
+  PageTableOfContents,
+  ProseParagraphs,
+  RelatedContentGrid,
+} from "@/components/readability";
+import { getDirectConsultationChannels } from "@/lib/contact";
+import {
+  busanLawyerHubCases,
+  busanLawyerHubCostGuide,
+  busanLawyerHubEyebrow,
+  busanLawyerHubFaqs,
+  busanLawyerHubH1,
+  busanLawyerHubHeroParagraphs,
+  busanLawyerHubIntake,
+  busanLawyerHubInternalLinks,
+  busanLawyerHubNap,
+  busanLawyerHubProcess,
+  busanLawyerHubSituations,
+  busanLawyerHubWorkAreas,
+} from "@/lib/local-landing/busan-lawyer-hub-content";
+import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import { siteImages } from "@/lib/site-images";
+import type { PageData } from "@/lib/pageData/types";
+
+type BusanLawyerHubPageViewProps = {
+  page: PageData;
+};
+
+const INQUIRY_HREF =
+  "/contact/inquiry?from=부산법무사&intent=업무 가능 여부 확인";
+
+export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
+  const cover = {
+    ...getCoverImageForPageData(page),
+    alt: "부산 법무사 상담 서류 확인",
+  };
+  const portrait = {
+    ...siteImages.about.portrait,
+    alt: "부산 법무사 상담을 진행하는 안윤정 법무사",
+  };
+  const channels = getDirectConsultationChannels();
+  const phone = channels.find((c) => c.id === "phone");
+  const kakao = channels.find((c) => c.id === "kakao");
+
+  const faqSchemaPage: PageData = {
+    ...page,
+    faqs: busanLawyerHubFaqs.map((f) => ({
+      question: f.question,
+      answer: f.answer,
+    })),
+    includeFaqSchema: true,
+  };
+
+  const tocItems = [
+    { id: "situations", label: "어떤 절차가 필요하신가요?" },
+    { id: "work-areas", label: "많이 맡기는 업무" },
+    { id: "lawyer-vs-attorney", label: "법무사와 변호사" },
+    { id: "process", label: "어떻게 진행하나요" },
+    { id: "intake", label: "상담 전 알려주시면 되는 것" },
+    { id: "office", label: "사무소 위치" },
+    { id: "cases", label: "상담 사례" },
+    { id: "lawyer", label: "누가 상담하나요" },
+    { id: "cost", label: "비용이 달라지는 이유" },
+    { id: "faq", label: "자주 묻는 질문" },
+    { id: "related", label: "관련 안내" },
+    { id: "consultation", label: "상담 문의" },
+  ];
+
+  return (
+    <article className="content-stack">
+      <Breadcrumb items={page.breadcrumbs} />
+      <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
+
+      <PageCoverBanner image={cover} />
+
+      <PageHero
+        h1={busanLawyerHubH1}
+        eyebrow={busanLawyerHubEyebrow}
+        introParagraphs={busanLawyerHubHeroParagraphs}
+        keywords={[]}
+        ctaLabel=""
+        showDiagnosisCta={false}
+        showAboutLawyerCta={false}
+        showNaverReservation={false}
+      >
+        <ul className="mt-4 list-disc space-y-1 pl-5 text-sm leading-relaxed text-navy/80 md:text-base">
+          <li>부모님 부동산 상속·상속포기·한정승인</li>
+          <li>아파트 매매 잔금일 소유권이전</li>
+          <li>법인 설립·임원변경</li>
+          <li>개인회생·파산 신청 서류</li>
+        </ul>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Link
+            href={INQUIRY_HREF}
+            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+          >
+            내 업무 확인하기
+          </Link>
+          {phone?.configured ? (
+            <a
+              href={phone.href}
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              전화 상담
+            </a>
+          ) : null}
+          {kakao?.configured ? (
+            <a
+              href={kakao.href}
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              target={kakao.external ? "_blank" : undefined}
+              rel={kakao.external ? "noopener noreferrer" : undefined}
+            >
+              카카오톡 문의
+            </a>
+          ) : null}
+        </div>
+      </PageHero>
+
+      <PageTableOfContents items={tocItems} />
+
+      <ContentSection id="situations" title="어떤 절차가 필요하신가요?">
+        <p className="body-text mb-5 max-w-3xl">
+          지금 상황에 가까운 항목을 고르시면 해당 안내로 이어집니다.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {busanLawyerHubSituations.map((card) => (
+            <InfoCard key={card.title} variant="highlight">
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/80">
+                {card.body}
+              </p>
+              <ul className="mt-3 space-y-2">
+                {card.links.map((link) => (
+                  <li key={link.href + link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm font-medium text-navy underline-offset-2 hover:underline md:text-base"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="work-areas" title="부산 법무사에게 많이 맡기는 업무">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {busanLawyerHubWorkAreas.map((area) => (
+            <InfoCard key={area.title}>
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {area.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/80">
+                {area.items.join(" · ")}
+              </p>
+              <ul className="mt-3 space-y-2">
+                {area.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="lawyer-vs-attorney" title="법무사와 변호사는 다릅니다">
+        <ProseParagraphs
+          paragraphs={[
+            "네이버에서 ‘부산 법무사’를 검색하면 변호사 사무소나 로펌이 함께 보이기도 합니다. 소송·형사 변론이 필요하면 변호사가 맞고, 등기·상속 서류·법인변경·개인회생 신청 서류라면 법무사 업무입니다.",
+            "다옴법무사사무소는 법무사 사무소입니다. 사건 성격이 소송 쪽으로 보이면 그 범위는 분명히 말씀드리고, 법무사가 진행할 수 있는 절차부터 정리합니다.",
+          ]}
+        />
+      </ContentSection>
+
+      <ContentSection id="process" title="어떻게 진행하나요">
+        <div className="grid gap-4 md:grid-cols-2">
+          {busanLawyerHubProcess.map((step) => (
+            <InfoCard key={step.title}>
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy/85 md:text-base">
+                {step.body}
+              </p>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="intake" title="상담 전 이것만 알려주시면 됩니다">
+        <p className="body-text mb-5 max-w-3xl">
+          처음부터 모든 서류를 준비할 필요는 없습니다. 아래 항목만 알려 주셔도
+          필요한 절차와 다음 자료를 구분할 수 있습니다.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {busanLawyerHubIntake.map((group) => (
+            <InfoCard key={group.title} variant="plain">
+              <h3 className="text-base font-semibold text-navy">{group.title}</h3>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/80">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="office" title="해운대·센텀 사무소에서 상담합니다">
+        <ProseParagraphs
+          paragraphs={[
+            `${busanLawyerHubNap.officeName}는 ${busanLawyerHubNap.address}에 있습니다. ${busanLawyerHubNap.access}. 부산지방법원 바로 앞은 아니지만, 부동산·법인 본점이 부산 어디에 있든 상담은 가능합니다.`,
+            "법원·등기소와 공식 제휴 관계는 아닙니다. 관할·접수·서류는 실무 기준으로 안내합니다.",
+          ]}
+        />
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <InfoCard variant="plain">
+            <h3 className="text-sm font-semibold text-navy">주소</h3>
+            <p className="mt-1 text-sm leading-relaxed text-navy/80">
+              {busanLawyerHubNap.address}
+            </p>
+          </InfoCard>
+          <InfoCard variant="plain">
+            <h3 className="text-sm font-semibold text-navy">상담 시간</h3>
+            <p className="mt-1 text-sm leading-relaxed text-navy/80">
+              {busanLawyerHubNap.hours} (점심 {busanLawyerHubNap.lunch} /{" "}
+              {busanLawyerHubNap.closed} 휴무)
+            </p>
+          </InfoCard>
+          <InfoCard variant="plain">
+            <h3 className="text-sm font-semibold text-navy">전화</h3>
+            <p className="mt-1 text-sm leading-relaxed text-navy/80">
+              {busanLawyerHubNap.phone}
+            </p>
+          </InfoCard>
+          <InfoCard variant="plain">
+            <h3 className="text-sm font-semibold text-navy">방문</h3>
+            <p className="mt-1 text-sm leading-relaxed text-navy/80">
+              {busanLawyerHubNap.visit}{" "}
+              <Link
+                href="/location"
+                className="font-medium text-navy underline-offset-2 hover:underline"
+              >
+                오시는 길
+              </Link>
+            </p>
+          </InfoCard>
+        </div>
+      </ContentSection>
+
+      <ContentSection id="cases" title="상담·업무 사례">
+        <p className="body-text mb-5 max-w-3xl">
+          사이트에 공개된 실제 사례입니다. 개별 사건의 결과나 완료 시점을
+          보장하지는 않습니다.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {busanLawyerHubCases.map((item) => (
+            <InfoCard key={item.href}>
+              <h3 className="text-base font-semibold text-navy md:text-lg">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-navy/85">
+                <span className="font-medium text-navy">상황. </span>
+                {item.situation}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-navy/85">
+                <span className="font-medium text-navy">확인. </span>
+                {item.checked}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-navy/85">
+                <span className="font-medium text-navy">진행. </span>
+                {item.next}
+              </p>
+              <p className="mt-3">
+                <Link
+                  href={item.href}
+                  className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+                >
+                  사례 자세히 보기
+                </Link>
+              </p>
+            </InfoCard>
+          ))}
+        </div>
+      </ContentSection>
+
+      <ContentSection id="lawyer" title="누가 상담하나요">
+        <div className="grid items-start gap-6 md:grid-cols-[200px_1fr]">
+          <div className="relative aspect-[3/4] max-w-[200px] overflow-hidden rounded-xl border border-beige-dark">
+            <Image
+              src={portrait.src}
+              alt={portrait.alt}
+              width={portrait.width}
+              height={portrait.height}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-navy">안윤정 법무사</h3>
+            <ProseParagraphs
+              paragraphs={[
+                "다옴법무사사무소 대표 법무사입니다. 상속등기·부동산등기·법인등기·개인회생 상담과 진행을 직접 맡습니다.",
+                "검색으로 찾은 정보가 실제 절차와 맞는지 먼저 짚고, 지금 할 일과 나중 할 일을 나눕니다. 대한법무사협회장 표창 수상 이력과 공공·정책 활동은 소개 페이지에서 이어서 확인하실 수 있습니다.",
+              ]}
+            />
+            <p className="mt-4">
+              <Link
+                href="/about"
+                className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+              >
+                안윤정 법무사 소개
+              </Link>
+            </p>
+          </div>
+        </div>
+      </ContentSection>
+
+      <ContentSection id="cost" title="비용은 어떻게 정해지나요">
+        <ProseParagraphs
+          paragraphs={[
+            busanLawyerHubCostGuide,
+            "견적은 등기부나 가족관계, 정관·의사록을 본 뒤에 구체화됩니다. 항목을 먼저 보고 싶으시면 비용 안내를 참고하세요.",
+          ]}
+        />
+        <p className="mt-3">
+          <Link
+            href="/부산법무사비용"
+            className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+          >
+            부산 법무사 비용 보기
+          </Link>
+        </p>
+      </ContentSection>
+
+      <ContentSection id="faq" title="자주 묻는 질문">
+        <FAQAccordion items={busanLawyerHubFaqs} />
+      </ContentSection>
+
+      <ContentSection id="related" title="업무별 안내">
+        <RelatedContentGrid links={busanLawyerHubInternalLinks} columns={2} />
+      </ContentSection>
+
+      <div id="consultation">
+        <ConsultationCTA
+          title="업무명을 몰라도 괜찮습니다"
+          description="현재 상황과 준비된 자료만 남겨 주세요. 안윤정 법무사가 필요한 절차부터 확인합니다."
+          href="/contact/inquiry?from=부산법무사"
+          buttonLabel="1분 상담 문의"
+          fromPage="부산법무사"
+        />
+      </div>
+    </article>
+  );
+}

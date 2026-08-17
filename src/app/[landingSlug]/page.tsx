@@ -6,6 +6,7 @@ import {
 } from "@/components/diagnosis/DiagnosisPageView";
 import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
 import { RegistryHubPageView } from "@/components/local-landing/RegistryHubPageView";
+import { BusanLawyerHubPageView } from "@/components/local-landing/BusanLawyerHubPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
 import { ConsultLandingPageView } from "@/components/consult-wizard/ConsultLandingPageView";
@@ -175,6 +176,16 @@ export default async function LocalLandingPage({ params }: PageProps) {
       </PageContainer>
     );
   }
+
+  if (slug === "부산법무사") {
+    return (
+      <PageContainer>
+        <BusanLawyerHubPageView page={page} />
+      </PageContainer>
+    );
+  }
+
+
 
   if (landingConfig?.pageType === "preservation-registration") {
     return (

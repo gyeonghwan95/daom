@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { HeroContactBlock } from "@/components/home/HeroContactBlock";
 import { HeroStage } from "@/components/home/HeroStage";
@@ -88,6 +89,12 @@ export function HomeHero() {
 
           <motion.p variants={item} className="home-hero__location">
             {homeHero.locationHint}
+          </motion.p>
+
+          <motion.p variants={item} className="home-hero__hub">
+            <Link href={homeHero.hubLinkHref} className="home-hero__hub-link">
+              {homeHero.hubLinkLabel}
+            </Link>
           </motion.p>
         </div>
 

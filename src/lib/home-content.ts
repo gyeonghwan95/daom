@@ -7,6 +7,8 @@ export const homeHero = {
   proof: ["법무사 직접 상담", "해운대·센텀 실사무소", "대한법무사협회장 표창"] as const,
   serviceTags: ["상속등기", "부동산등기", "법인등기", "개인회생·파산"] as const,
   locationHint: "재송역·센텀역 도보 5분 · 주차 가능 · 예약 방문",
+  hubLinkLabel: "부산 법무사 업무 안내",
+  hubLinkHref: "/부산법무사",
   mobileCta: "지금 전화하기",
   mobileCtaNote: "카카오톡·네이버 톡톡으로도 바로 남기실 됩니다",
   ctaPrimary: "1분만에 문의하기",

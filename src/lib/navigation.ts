@@ -70,6 +70,7 @@ export const mainNavigation: NavItem[] = [
         title: "주요 업무",
         links: [
           { href: "/services", label: "업무안내 전체" },
+          { href: "/부산법무사", label: "부산 법무사" },
           { href: "/부산등기법무사", label: "등기업무" },
           { href: "/부산부동산등기", label: "부동산등기" },
           { href: "/부산건물등기", label: "건물·건축물등기" },

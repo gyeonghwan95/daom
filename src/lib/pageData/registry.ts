@@ -61,7 +61,12 @@ import {
   buildPageDataFromService,
   buildPageDataFromTopicHub,
 } from "./builders";
+import { HOME_METADATA_TITLE } from "@/lib/seo/metadata";
+import { busanLawyerHubMetaTitle } from "@/lib/local-landing/busan-lawyer-hub-content";
 import type { PageData } from "./types";
+
+void HOME_METADATA_TITLE;
+void busanLawyerHubMetaTitle;
 
 let cachedPages: PageData[] | null = null;
 
