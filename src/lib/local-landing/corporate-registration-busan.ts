@@ -163,6 +163,7 @@ export function buildBusanCorporateRegistrationPage(
       },
     ],
     relatedServiceLinks: [
+      { href: "/부산등기법무사", label: "부동산·상속·법인등기 전체 보기" },
       { href: "/부산임원변경등기", label: "부산 임원변경등기 — 대표·이사 임기" },
       { href: "/부산법인설립등기", label: "부산 법인설립등기" },
       { href: "/부산본점이전등기", label: "부산 본점이전등기" },

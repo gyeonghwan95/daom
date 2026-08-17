@@ -109,7 +109,9 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
         ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : consultationInquiryCopy.ctaShort}
         secondaryCta={
-          isConsultPrep
+          page.slug === "부산등기법무사추천"
+            ? { href: "/부산등기법무사", label: "부산 등기 법무사" }
+            : isConsultPrep
             ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }
             : { href: "/부산법무사상담", label: "상담 전 준비사항" }
         }

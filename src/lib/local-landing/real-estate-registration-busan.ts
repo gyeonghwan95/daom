@@ -162,6 +162,7 @@ export function buildBusanRealEstateRegistrationPage(
       "등기부와 잔금·대출 일정을 알려주시면 말소·이전 순서를 정리할 수 있습니다.",
     relatedBlogHrefs: [],
     relatedServiceLinks: [
+      { href: "/부산등기법무사", label: "부산 등기 법무사" },
       { href: "/부산소유권이전등기", label: "소유권이전등기 원인별 안내" },
       { href: "/부산아파트매매등기", label: "아파트 매매등기" },
       { href: "/부산상속등기", label: "상속으로 인한 이전등기" },

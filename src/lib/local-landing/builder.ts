@@ -447,6 +447,7 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
 function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
   const extras: Record<string, { href: string; label: string }[]> = {
     부산법인등기: [
+      { href: "/부산등기법무사", label: "부산 등기 상담" },
       { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 허브" },
       { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
       { href: "/법인변경등기", label: "법인 변경등기 허브" },
@@ -465,11 +466,13 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/partners", label: "협업·프로젝트 문의" },
     ],
     부산부동산등기: [
+      { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
       { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
       { href: "/partners", label: "부산 현지 등기 협업" },
       { href: "/부산부동산협력법무사", label: "부동산 협력 법무사" },
     ],
     부산소유권이전등기: [
+      { href: "/부산등기법무사", label: "등기 종류별 안내" },
       { href: "/부산부동산협력법무사", label: "잔금·이전등기 협업" },
       { href: "/partners", label: "전문직·기업 협업 안내" },
     ],
@@ -485,6 +488,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/부산기업채권관리", label: "기업 미수금·매출채권 관련 업무" },
     ],
     부산상속등기: [
+      { href: "/부산등기법무사", label: "부동산·상속·법인등기 전체 보기" },
       { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
       { href: "/상담", label: "상황 선택형 상담" },
     ],

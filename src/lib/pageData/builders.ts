@@ -237,7 +237,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "search-intent" ||
     page.pageType === "lecture" ||
     page.slug === "부산법인법무사" ||
-    page.slug === "부산기업법무사";
+    page.slug === "부산기업법무사" ||
+    page.slug === "부산등기법무사";
 
   const specialLandingFaqs = keepAllFaqs
     ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
@@ -300,13 +301,27 @@ export function buildPageDataFromLocalLanding(
   }
   if (page.slug === "부산등기법무사") {
     extraSections.unshift({
-      title: "등기 법무사 선택 기준",
-      body: "부산 등기 법무사 추천을 검색하실 때 부동산·상속·법인·근저당 등 업무별로 확인할 점이 다릅니다. 등기부·계약서를 준비한 뒤 아래 선택 기준 페이지를 참고해 상담하시면 비교가 수월합니다.",
+      title: "법무사 선택 기준이 궁금하다면",
+      body: "이 페이지는 부산 등기업무의 종류·절차·준비자료를 안내합니다. 사무소를 고르는 비교 기준은 선택 기준 페이지에서 따로 정리했습니다.",
       links: [
-        { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
-        { href: "/부산부동산등기전문", label: "부산 부동산등기 상담 확인사항" },
-        { href: "/부산상속등기전문", label: "부산 상속등기 상담 확인사항" },
-        { href: "/부산법인등기전문", label: "부산 법인등기 상담 확인사항" },
+        { href: "/부산등기법무사추천", label: "등기 법무사 선택 기준" },
+      ],
+    });
+  }
+  const REGISTRY_COURT_SLUGS = [
+    "부산지방법원등기국",
+    "남부산등기소법무사",
+    "북부산등기소법무사",
+    "중부산등기소법무사",
+    "부산진등기소법무사",
+    "부산지방법원동부지원등기과",
+  ];
+  if (REGISTRY_COURT_SLUGS.includes(page.slug)) {
+    extraSections.unshift({
+      title: "등기업무 자체를 맡길 법무사를 찾는다면",
+      body: "이 페이지는 관할 등기소·접수 위치·접근을 안내합니다. 부동산·상속·법인 등 실제 등기업무를 맡길 법무사를 찾고 있다면 부산 등기 법무사 종합 안내에서 업무별 절차를 확인할 수 있습니다.",
+      links: [
+        { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
       ],
     });
   }
@@ -474,7 +489,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "selection-hub" ||
       page.pageType === "search-intent" ||
       page.pageType === "lecture" ||
-      page.slug === "부산법인법무사",
+      page.slug === "부산법인법무사" ||
+      page.slug === "부산등기법무사",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

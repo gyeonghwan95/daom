@@ -1,4 +1,5 @@
 import type { ServiceFaq } from "@/types/service";
+import { registryHubTopic } from "./registry-hub-content";
 
 export type KeywordTopic = {
   slug: string;
@@ -51,135 +52,7 @@ const sharedKeywordLinks = {
 };
 
 export const keywordTopics: Record<string, KeywordTopic> = {
-  부산등기법무사: {
-    slug: "부산등기법무사",
-    title: "부산 등기 법무사",
-    metaTitle: "부산 등기 법무사｜부동산·상속·법인등기 중 무엇이 필요한지",
-    metaDescription:
-      "부산에서 부동산·상속·법인등기 중 어떤 등기가 필요한지 비교해 안내합니다. 관할 등기소와 업무별 대표 페이지로 연결됩니다.",
-    h1: "부산 등기 법무사 — 부동산·상속·법인을 먼저 가려 드립니다",
-    serviceSlug: "real-estate-registration",
-    primaryKeywords: [
-      "부산 등기 법무사",
-      "부산 등기 사무소",
-      "부산 소유권이전등기 법무사",
-    ],
-    summaryParagraphs: [
-      "부산 등기 법무사를 찾으시는 분들은 매매·상속·법인 변경 등 사건마다 필요한 등기 종류가 다르다는 점을 먼저 확인하시면 좋습니다. 이 페이지는 세 분야를 한곳에서 비교·연결하는 안내이며, 세부 절차는 부산 부동산등기·부산 상속등기·부산 법인등기 각 허브에서 이어집니다.",
-      "부산은 남부산·북부산·중부산·부산진등기소로 관할이 나뉘어 등기 사무소를 선택할 때 소재지 확인이 중요합니다. 등기부·계약서·가족관계증명서를 함께 검토하면 절차 순서와 예상 비용을 현실적으로 안내할 수 있습니다.",
-      "해운대·센텀에 위치한 다옴법무사사무소 안윤정 법무사가 부산 전역 의뢰인의 등기 사건을 직접 상담·진행합니다. 전화·카카오톡·네이버 예약으로 먼저 상황을 남겨 주시면 필요한 등기부터 차례로 정리해 드립니다.",
-    ],
-    problemStatement:
-      "부산에서 등기 법무사를 검색하시는 분들은 ‘어떤 등기가 필요한지’부터 막막한 경우가 많습니다. 아파트 매매는 소유권이전등기와 근저당 말소가 겹치고, 상속은 상속등기와 취득세 신고가 함께 진행되며, 법인은 임원변경·본점이전 등기가 기한과 연결됩니다. 먼저 사건 유형을 가려야 합니다. 매매·증여·보존·근저당은 부산 부동산등기, 피상속인 사망·포기·한정승인은 부산 상속등기(또는 부산 상속 법무사), 설립·임원·본점 변경은 부산 법인등기(또는 부산 법인 법무사)로 연결됩니다. 이 페이지는 분야별 대표 페이지를 비교·연결하는 역할이고, 한 의뢰인에게 여러 등기가 겹치면 순서까지 정리합니다.",
-    whenNeeded: [
-      "아파트·빌라·상가 매매 후 소유권이전등기가 필요한 경우",
-      "부모님 부동산 상속으로 상속등기·상속포기·한정승인을 검토하는 경우",
-      "법인 설립·임원변경·본점이전·상호변경 등기가 필요한 경우",
-      "은행 대출을 위해 근저당설정등기를 진행해야 하는 경우",
-      "대출 상환 후 근저당말소등기를 해야 매매·증여가 가능한 경우",
-      "전세금 보호를 위해 전세권설정등기를 검토하는 경우",
-      "전세 계약 종료 후 전세권말소등기가 필요한 경우",
-      "신축 건물·집합건물 사용승인 후 보존등기가 필요한 경우",
-      "건축사사무소·시행사에서 건축주에게 보존등기 안내가 필요한 경우",
-    ],
-    procedures: [
-      "상담: 등기부등본·계약서·가족관계증명서 등을 확인해 필요한 등기 종류와 순서를 정합니다.",
-      "관할 확인: 부동산 소재지·법인 본점 주소에 따라 부산 관할 등기소를 확인합니다.",
-      "서류 안내: 원인별(매매·상속·증여·설립 등) 필요 서류 목록을 작성합니다.",
-      "세금 신고: 취득세·등록면허세 등 선행 신고가 필요한 경우 일정을 맞춥니다.",
-      "등기 접수: 등기신청서·위임장·인감증명서 등을 준비해 관할 등기소 또는 전자등기로 접수합니다.",
-      "완료 확인: 등기필증·등기부등본을 확인하고 후속 절차(사업자등록 등)를 안내합니다.",
-    ],
-    documents: [
-      "등기부등본(최신)",
-      "매매계약서·증여계약서·상속관련 협의서(해당 시)",
-      "인감증명서·신분증",
-      "가족관계증명서·기본증명서(상속 해당 시)",
-      "법인: 정관·주주총회 의사록·등기사항전부증명서",
-      "근저당·전세권: 설정·말소 계약서·채권자 승낙서(해당 시)",
-      "위임장(법무사 수임 시)",
-    ],
-    costGuide:
-      "부산 등기 법무사 수임료는 등기 종류·부동산 가액·상속인 수·법인 변경 항목 수에 따라 달라집니다. 등록면허세·취득세·인지대·증지대는 별도이며, 사건을 확인한 뒤 법무사 비용과 공과금을 구분해 견적을 안내합니다.",
-    costFactors: [
-      "등기 종류(소유권이전·상속·법인·근저당·전세권 등)와 복잡도",
-      "부동산 시가표준액·채권최고액·자본금 규모",
-      "상속인·공동명의자 수, 해외 상속인 여부",
-      "근저당·전세권·가압류 등 선순위 권리 정리 필요 여부",
-      "전자등기 가능 여부와 보정·재접수 발생 여부",
-    ],
-    lawyerNeededCases: [
-      "등기부에 근저당·가압류·전세권이 여러 건 얽혀 순서를 정해야 할 때",
-      "상속인 간 분쟁·유언·유류분 문제가 겹칠 때",
-      "법인 정관과 실제 운영이 달라 임원변경·목적변경을 함께 검토해야 할 때",
-      "매매 잔금일과 말소·이전등기를 같은 날 처리해야 할 때",
-      "전세권 설정 한도·임대인 동의 여부가 불분명할 때",
-    ],
-    precautions: [
-      "관할 등기소 오접수는 반려·지연의 원인이 됩니다.",
-      "상속포기·한정승인은 상속 개시 후 3개월 기한이 별도로 있습니다.",
-      "임원변경등기 지연 시 과태료가 부과될 수 있습니다.",
-    ],
-    faqs: [
-      {
-        question: "부산 등기 법무사는 어디에 있나요?",
-        answer:
-          "다옴법무사사무소는 부산 해운대구 센텀에 있으며, 부산 전역 등기 사건을 전화·카카오톡·방문(예약)으로 상담합니다.",
-      },
-      {
-        question: "부산 등기 사무소에서 어떤 등기를 하나요?",
-        answer:
-          "부동산등기(매매·증여·상속), 법인등기(설립·임원변경·본점이전), 근저당설정·말소, 전세권설정·말소, 소유권이전등기 등을 진행합니다.",
-      },
-      {
-        question: "여러 등기가 겹치면 순서는 어떻게 정하나요?",
-        answer:
-          "보통 말소 등기 → 소유권이전·상속등기 → 설정 등기 순으로 정리하는 경우가 많습니다. 등기부를 확인한 뒤 사건별 일정을 잡습니다.",
-      },
-      {
-        question: "방문 없이 진행할 수 있나요?",
-        answer:
-          "가능한 사건은 서류를 우편·카카오톡으로 받아 원격 진행합니다. 초기 상담은 전화·메시지로도 가능합니다.",
-      },
-      {
-        question: "부동산·상속·법인 중 어디 페이지부터 보나요?",
-        answer:
-          "아파트 매매·증여·보존·근저당은 부산 부동산등기, 부모님 사망·상속등기·포기·한정승인은 부산 상속등기 또는 부산 상속 법무사, 법인 설립·임원·본점 변경은 부산 법인등기 또는 부산 법인 법무사부터 보시면 됩니다.",
-      },
-    ],
-    relatedServiceLinks: [
-      { href: "/부산부동산등기", label: "부산 부동산등기 — 매매·증여·보존" },
-      { href: "/부산상속등기", label: "부산 상속등기 — 상속·포기·한정승인" },
-      { href: "/부산법인등기", label: "부산 법인등기 — 설립·임원·본점" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
-      { href: "/services/real-estate-registration", label: "부동산등기 업무안내" },
-      { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
-      { href: "/services/corporate-registration", label: "법인등기 업무안내" },
-    ],
-    relatedFaqLinks: [
-      { href: "/faq/ownership-transfer-documents", label: "소유권이전등기 필요서류" },
-      { href: "/faq/inheritance-registration-cost", label: "상속등기 비용 안내" },
-      { href: "/faq/director-change-deadline-faq", label: "임원변경등기 기한·과태료" },
-    ],
-    relatedCaseLinks: [
-      { href: "/services/cases/centum-ownership-transfer-case", label: "센텀 아파트 매매 등기 사례" },
-      { href: "/services/cases/haeundae-inheritance-registration-case", label: "해운대 상속등기 사례" },
-    ],
-    relatedKeywordLinks: [
-      sharedKeywordLinks.busanRealEstate,
-      sharedKeywordLinks.busanInheritance,
-      sharedKeywordLinks.busanCorporate,
-      sharedKeywordLinks.realEstateLawyer,
-      sharedKeywordLinks.inheritanceLawyer,
-      sharedKeywordLinks.corporateLawyer,
-      { href: "/부산등기법무사추천", label: "부산 등기 법무사 선택 기준" },
-      { href: "/부산등기전문법무사", label: "부산 등기전문 법무사 검색 안내" },
-      sharedKeywordLinks.ownership,
-      sharedKeywordLinks.preservation,
-    ],
-    relatedCaseSlug: "centum-ownership-transfer-case",
-    caseAngle: "매매·상속·법인 등기가 겹친 부산 의뢰인 사건",
-  },
+  부산등기법무사: registryHubTopic,
 
   부산부동산등기법무사: {
     slug: "부산부동산등기법무사",
@@ -727,6 +600,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/cases/centum-ownership-transfer-case", label: "센텀 매매 등기 사례" },
     ],
     relatedKeywordLinks: [
+      { href: "/부산등기법무사", label: "부산 등기 법무사" },
       sharedKeywordLinks.realEstateLawyer,
       sharedKeywordLinks.mortgageCancel,
       sharedKeywordLinks.busanRealEstate,
@@ -826,6 +700,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/cases/centum-ownership-transfer-case", label: "말소 후 매매 등기 사례" },
     ],
     relatedKeywordLinks: [
+      { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
       sharedKeywordLinks.mortgageCancel,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.realEstateLawyer,
@@ -924,6 +799,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/cases/centum-ownership-transfer-case", label: "말소 후 매매 등기" },
     ],
     relatedKeywordLinks: [
+      { href: "/부산등기법무사", label: "등기 종류별 안내" },
       sharedKeywordLinks.mortgageSetup,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.realEstateLawyer,
@@ -1280,6 +1156,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/cases/yeonje-director-change-case", label: "연제구 대표이사 변경 사례" },
     ],
     relatedKeywordLinks: [
+      { href: "/부산등기법무사", label: "부산 등기 상담" },
       sharedKeywordLinks.corporateLawyer,
       sharedKeywordLinks.busanCorporate,
       {

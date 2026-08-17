@@ -520,10 +520,15 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
     ctaDescription:
       "법원·등기소 접수 전에는 관할, 서류, 신청 순서를 미리 확인하는 것이 중요합니다. 다옴법무사사무소 안윤정 법무사가 현재 상황에 맞는 절차를 안내해드리겠습니다.",
     relatedBlogHrefs: getRelatedBlogPosts(inst.primaryServiceSlug),
-    relatedServiceLinks: inst.relatedServiceSlugs.map((slug) => ({
-      href: `/services/${slug}`,
-      label: serviceLabels[slug] ?? slug,
-    })),
+    relatedServiceLinks: [
+      ...(config.institutionKey?.includes("registry")
+        ? [{ href: "/부산등기법무사", label: "부산 등기 상담" }]
+        : []),
+      ...inst.relatedServiceSlugs.map((slug) => ({
+        href: `/services/${slug}`,
+        label: serviceLabels[slug] ?? slug,
+      })),
+    ],
     relatedRegionLinks: [],
   };
 }

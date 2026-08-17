@@ -5,6 +5,7 @@ import {
   DiagnosisPageView,
 } from "@/components/diagnosis/DiagnosisPageView";
 import { PreservationRegistrationPageView } from "@/components/local-landing/PreservationRegistrationPageView";
+import { RegistryHubPageView } from "@/components/local-landing/RegistryHubPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
 import { ConsultLandingPageView } from "@/components/consult-wizard/ConsultLandingPageView";
@@ -167,6 +168,14 @@ export default async function LocalLandingPage({ params }: PageProps) {
   }
 
   const landingConfig = getLocalLandingConfig(slug);
+  if (slug === "부산등기법무사") {
+    return (
+      <PageContainer>
+        <RegistryHubPageView page={page} />
+      </PageContainer>
+    );
+  }
+
   if (landingConfig?.pageType === "preservation-registration") {
     return (
       <PageContainer>

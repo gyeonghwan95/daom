@@ -166,7 +166,7 @@ export const 부산등기전문법무사Override = createSpecialistPage({
     },
   ],
   relatedServiceLinks: [
-    { href: "/부산등기법무사", label: "부산 등기 법무사 — 등기 종류 비교 허브" },
+    { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산법인등기", label: "부산 법인등기" },

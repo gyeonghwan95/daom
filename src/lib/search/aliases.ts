@@ -4,6 +4,15 @@
  */
 export const PATH_ALIAS_RULES: Array<{ match: RegExp; aliases: string[] }> = [
   {
+    match: /부산등기법무사(?!추천)/,
+    aliases: [
+      "부산 등기 법무사",
+      "부산등기업무",
+      "부산 등기업무",
+      "등기 법무사",
+    ],
+  },
+  {
     match: /부산법무사(?!비용|추천)/,
     aliases: [
       "부산법무사",

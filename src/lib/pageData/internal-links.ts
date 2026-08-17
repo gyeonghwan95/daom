@@ -199,6 +199,7 @@ function topicHubLink(serviceSlug: string): PageRelatedLink | undefined {
 /** 홈·services·blog·faq·location 등 허브 페이지용 주요 랜딩 링크 */
 export function getMainLandingHubLinks(): RelatedLink[] {
   return [
+    { href: "/부산등기법무사", label: "부산 등기 법무사" },
     { href: "/부산법무사", label: "부산 법무사" },
     { href: "/부산상속법무사", label: "부산 상속 법무사" },
     { href: "/부산법인법무사", label: "부산 법인 법무사" },
@@ -342,6 +343,12 @@ export function getThematicInternalLinks(
       links.push(...conversionLinksForService(serviceSlug, input.slug));
       links.push(...localLandingsForService(serviceSlug, input.slug, 3));
     } else if (pageType === "court-registry") {
+      if (
+        /등기소|등기국|등기과/.test(input.slug) ||
+        input.slug.includes("등기")
+      ) {
+        links.push({ href: "/부산등기법무사", label: "부산 등기업무 전체 안내" });
+      }
       links.push(...courtLinksForService(serviceSlug, input.slug));
       links.push(...localLandingsForService(serviceSlug, input.slug, 3));
     } else if (regionKey) {

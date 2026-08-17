@@ -19,9 +19,9 @@ const POPULAR_SEARCH_CARDS = [
     hint: "상담 전 선택 기준",
   },
   {
-    href: "/부산등기법무사추천",
+    href: "/부산등기법무사",
     label: "부산 등기 법무사",
-    hint: "등기 업무별 확인",
+    hint: "부동산·상속·법인등기",
   },
   {
     href: "/부산상속법무사",

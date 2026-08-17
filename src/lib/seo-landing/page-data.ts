@@ -10,6 +10,9 @@ import { buildSeoLandingContent } from "./content";
 import type { SeoLandingSpec } from "./types";
 
 function metaTitleForSeoLanding(spec: SeoLandingSpec): string {
+  if (spec.slug === "등기소근처법무사") {
+    return "등기소 근처 법무사 | 관할·위치 확인 - 다옴법무사사무소";
+  }
   switch (spec.type) {
     case "institution-lawyer":
       return buildMetaTitle(
@@ -52,6 +55,9 @@ function metaDescriptionFor(spec: SeoLandingSpec): string {
         `${spec.institutionShortName} ${service} 안내. 관할·제출 서류·접수 절차를 사건별로 설명합니다.`,
       );
     case "special":
+      if (spec.slug === "등기소근처법무사") {
+        return "등기소 근처 법무사 안내. 관할 등기소·전자등기·방문 필요 여부를 정리합니다. 등기업무 종류는 부산 등기 법무사 페이지에서 이어집니다.";
+      }
       return buildMetaDescription(
         `${spec.title} 관련 절차·비용·서류 안내. 부산 전역 사건 상담, 전화·카카오톡 문의 가능합니다.`,
       );
@@ -123,6 +129,15 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     }
   }
 
+  if (spec.slug === "등기소근처법무사") {
+    if (!internalLinks.some((l) => l.href === "/부산등기법무사")) {
+      internalLinks.unshift({
+        href: "/부산등기법무사",
+        label: "부산 등기 법무사 안내",
+      });
+    }
+  }
+
   const page = createPageData({
     slug: spec.slug,
     path: spec.path,
@@ -130,7 +145,10 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     title: spec.title,
     metaTitle: metaTitleForSeoLanding(spec),
     metaDescription: metaDescriptionFor(spec),
-    h1: spec.h1,
+    h1:
+      spec.slug === "등기소근처법무사"
+        ? "등기소 근처 법무사를 찾을 때 먼저 확인할 것"
+        : spec.h1,
     intro: content.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },

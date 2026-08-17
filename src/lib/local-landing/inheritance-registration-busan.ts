@@ -158,6 +158,7 @@ export function buildBusanInheritanceRegistrationPage(
       "부동산과 상속인 구성을 알려주시면 필요한 서류와 진행 방식을 확인할 수 있습니다.",
     relatedBlogHrefs: [],
     relatedServiceLinks: [
+      { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
       { href: "/상속", label: "상속 종합 허브 — 단계별 안내" },
       { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
       { href: "/사망자재산채무조회", label: "사망 후 재산·채무 조회" },
