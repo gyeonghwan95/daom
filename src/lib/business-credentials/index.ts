@@ -1,6 +1,5 @@
 import {
   businessCredentials,
-  type BusinessCredentialId,
   type BusinessCredentialRecord,
 } from "@/data/business-credentials";
 

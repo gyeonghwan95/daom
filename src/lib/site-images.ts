@@ -36,7 +36,7 @@ function img(
   };
 }
 
-const SERVICE_SLUGS = [
+export const SERVICE_SLUGS = [
   "inheritance-registration",
   "inheritance-renunciation",
   "qualified-acceptance",

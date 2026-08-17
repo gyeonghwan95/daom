@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -24,14 +24,14 @@ export function NavigationProgress() {
   const routeKey = `${pathname}?${searchParams?.toString() ?? ""}`;
   const prevRoute = useRef(routeKey);
 
-  const clearTimers = () => {
+  const clearTimers = useCallback(() => {
     if (showTimer.current) clearTimeout(showTimer.current);
     if (completeTimer.current) clearTimeout(completeTimer.current);
     showTimer.current = null;
     completeTimer.current = null;
-  };
+  }, []);
 
-  const finish = () => {
+  const finish = useCallback(() => {
     navigating.current = false;
     if (showTimer.current) {
       clearTimeout(showTimer.current);
@@ -47,9 +47,9 @@ export function NavigationProgress() {
       setActive(false);
       setDone(false);
     }, COMPLETE_HOLD_MS);
-  };
+  }, []);
 
-  const start = () => {
+  const start = useCallback(() => {
     if (navigating.current) return;
     navigating.current = true;
     setDone(false);
@@ -59,14 +59,13 @@ export function NavigationProgress() {
       setVisible(true);
       showTimer.current = null;
     }, SHOW_DELAY_MS);
-  };
+  }, [clearTimers]);
 
   useEffect(() => {
     if (prevRoute.current === routeKey) return;
     prevRoute.current = routeKey;
     finish();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- finish on route settle only
-  }, [routeKey]);
+  }, [routeKey, finish]);
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -112,7 +111,7 @@ export function NavigationProgress() {
       window.removeEventListener("popstate", onPopState);
       clearTimers();
     };
-  }, []);
+  }, [start, clearTimers]);
 
   if (!visible && !active) return null;
 

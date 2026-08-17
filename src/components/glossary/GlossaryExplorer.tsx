@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import { useDeferredValue, useMemo, useRef, useState } from "react";
-import {
-  GLOSSARY_CATEGORY_LABELS,
-  type GlossaryCategory,
-} from "@/lib/glossary";
+import { type GlossaryCategory } from "@/lib/glossary";
 
 export type GlossarySearchItem = {
   slug: string;

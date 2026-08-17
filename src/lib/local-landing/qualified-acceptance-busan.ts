@@ -1,6 +1,5 @@
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import type { ServiceFaq } from "@/types/service";
-import { consultationCopy } from "@/lib/consultation";
 import { lawyerProfileMeta } from "@/lib/lawyer-profile";
 import { officeLocation } from "@/lib/office-location";
 

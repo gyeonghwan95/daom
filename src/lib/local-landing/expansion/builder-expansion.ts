@@ -276,7 +276,6 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
   const topic = config.conversionKey ? conversionTopics[config.conversionKey] : null;
   if (!topic) return null;
 
-  const service = getServiceBySlug(topic.serviceSlug);
   const serviceLabel = serviceLabels[topic.serviceSlug] ?? topic.title;
   const neighborhoods = config.neighborhoods.join(", ");
 
@@ -596,7 +595,6 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
   if (!topic) return null;
 
   const service = getServiceBySlug(topic.serviceSlug);
-  const serviceLabel = serviceLabels[topic.serviceSlug] ?? topic.title;
   const neighborhoods = config.neighborhoods.join(", ");
 
   const problemStatement = `부산에서 ${topic.title} 관련 문의가 늘고 있습니다. ${topic.topicContext} 재개발·재건축·신축 분양·토지 상속 등은 일반 매매와 권리 관계가 다릅니다. ${neighborhoods} 일대 사건도 조합원 지위·분양권·저당권·상속인 협의가 겹치면 절차가 복잡해집니다. 다옴법무사사무소는 ${topic.legalPoints.join(" ")} 등 실무 포인트를 중심으로 상담·진행합니다.`;

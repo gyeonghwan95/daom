@@ -1,7 +1,4 @@
-import {
-  getServiceConversionConfig,
-  RELAXED_INTRO,
-} from "@/lib/service-conversion";
+import { getServiceConversionConfig } from "@/lib/service-conversion";
 import { CaseExampleCards } from "./CaseExampleCards";
 import { ConsultationSituationBox } from "./ConsultationSituationBox";
 import { CostGuideBox } from "./CostGuideBox";
@@ -26,8 +23,6 @@ type ServiceConversionEnhancementsProps = {
 
 export function ServiceConversionEnhancements({
   conversionKey,
-  pageSlug,
-  serviceSlug,
   placement,
 }: ServiceConversionEnhancementsProps) {
   const config = getServiceConversionConfig(conversionKey);

@@ -30,10 +30,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -46,7 +46,7 @@ jobs:
       # 단위 테스트는 발송 이후에 실행한다 — 시간 의존 fixture 등으로
       # 테스트만 실패해도 데일리 브리핑 메일이 통째로 스킵되지 않게 한다.
       - name: Restore collector state
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: collector/data
           key: bid-collector-state-${{ github.run_id }}
@@ -65,14 +65,14 @@ jobs:
 
       - name: Save collector state
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: collector/data
           key: bid-collector-state-${{ github.run_id }}
 
       - name: Upload briefing artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: briefing-${{ github.run_id }}
           path: collector/output/

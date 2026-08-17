@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import type { BusanDistrictDef } from "@/lib/busan-legal-map/types";
 
 type BusanDistrictCardProps = {

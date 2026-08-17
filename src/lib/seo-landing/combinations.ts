@@ -1,5 +1,4 @@
 import {
-  getSeoEntitiesByType,
   getSeoEntityById,
   seoInstitutions,
   seoIntents,
@@ -7,7 +6,6 @@ import {
   seoServices,
   seoSpecialKeywords,
 } from "@/data/seo";
-import type { SeoIntentEntity } from "@/data/seo";
 import { getAllLocalLandingSlugs } from "@/lib/local-landing/config";
 import { getAllTopicHubSlugs } from "@/lib/topic-hubs/config";
 import { normalizeRouteSlug } from "@/lib/seo/slug";

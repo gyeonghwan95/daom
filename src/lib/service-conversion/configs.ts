@@ -1,5 +1,4 @@
 import type { ServiceConversionConfig } from "./types";
-import { RELAXED_INTRO } from "./copy";
 
 const TRUST_MESSAGE =
   "다옴법무사사무소는 상담 단계에서 사건의 기본 구조와 필요한 서류를 직접 확인한 뒤 진행 방향을 안내드립니다.";

@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Audit/report tooling is not shipped; unused locals there must not fail CI.
+    "scripts/**",
+    "reports/**",
+    "generated/**",
   ]),
 ]);
 

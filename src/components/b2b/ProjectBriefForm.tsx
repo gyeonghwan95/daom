@@ -210,7 +210,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
       category: form.partner === "public" ? "PUBLIC_SECTOR" : undefined,
       partner_type: form.partner || undefined,
     });
-  }, [sourcePage]);
+  }, [sourcePage, form.partner]);
 
   const pageMeta = useMemo(() => {
     if (typeof window === "undefined") {

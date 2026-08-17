@@ -4,10 +4,7 @@ import {
   type LectureHistoryEntry,
 } from "@/lib/lectures/types";
 import { getVerifiedLectureHistory } from "@/data/lectures/history";
-import {
-  getLectureHistoryAudienceLabel,
-  normalizeInstitutionType,
-} from "@/lib/lectures/history-helpers";
+import { normalizeInstitutionType } from "@/lib/lectures/history-helpers";
 
 /** Inventory/SEO용 슬림 이력. 허위 필드 없음. */
 export type LectureHistorySummary = {

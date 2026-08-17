@@ -15,7 +15,7 @@
     "build:server": "next build",
     "build:static": "npm run build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "validate:page-data": "node scripts/validate-page-data.mjs",
     "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
     "check:routes": "node scripts/check-routes.mjs",

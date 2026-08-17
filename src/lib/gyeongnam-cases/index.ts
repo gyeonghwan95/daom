@@ -10,12 +10,7 @@ import {
   buildAllGyeongnamPageData,
   buildGyeongnamPageData,
 } from "./builder";
-import {
-  CASE_BASE,
-  gyeongnamPath,
-  inquiryRegionFromDef,
-  type GyeongnamLandingDef,
-} from "./types";
+import type { GyeongnamLandingDef } from "./types";
 import type { PageData } from "@/lib/pageData/types";
 
 export type * from "./types";

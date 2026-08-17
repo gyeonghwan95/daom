@@ -265,10 +265,6 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
       ? `${place} 관련 상담에서는 상속·매매·법인·회생 중 어떤 업무인지, 희망 일정, 대략적인 소재지만 알려주셔도 다음 확인 항목을 정리할 수 있습니다. 유사 사례를 참고하시되, 본인 사건은 반드시 개별 상담으로 확인해 주세요.`
       : `${place}에서도 비대면 상담과 방문 상담을 상황에 맞게 선택할 수 있습니다.`;
 
-  const canonicalPath = entry.canonicalSlug
-    ? caseRegionPath(entry.canonicalSlug)
-    : caseRegionPath(entry.slug);
-
   const childNote =
     entry.kind === "district" && entry.parentDistrictKey
       ? getChildrenOfDistrict(entry.parentDistrictKey as DistrictKey)
