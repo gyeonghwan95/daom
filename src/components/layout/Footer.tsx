@@ -52,6 +52,14 @@ export function Footer() {
               ))}
               <li>
                 <Link
+                  href="/부산법무사"
+                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
+                >
+                  부산 법무사
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/공지사항"
                   className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
                 >

@@ -27,6 +27,7 @@ import {
   busanLawyerHubInternalLinks,
   busanLawyerHubNap,
   busanLawyerHubProcess,
+  busanLawyerHubReviewedLabel,
   busanLawyerHubSituations,
   busanLawyerHubWorkAreas,
 } from "@/lib/local-landing/busan-lawyer-hub-content";
@@ -223,6 +224,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
           paragraphs={[
             `${busanLawyerHubNap.officeName}는 ${busanLawyerHubNap.address}에 있습니다. ${busanLawyerHubNap.access}. 부산지방법원 바로 앞은 아니지만, 부동산·법인 본점이 부산 어디에 있든 상담은 가능합니다.`,
             "법원·등기소와 공식 제휴 관계는 아닙니다. 관할·접수·서류는 실무 기준으로 안내합니다.",
+            `주소·전화·상담 시간·업무 범위는 ${busanLawyerHubReviewedLabel} 기준으로 이 페이지에서 확인할 수 있습니다.`,
           ]}
         />
         <div className="mt-5 grid items-stretch gap-3 sm:grid-cols-2">

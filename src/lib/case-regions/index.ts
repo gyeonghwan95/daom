@@ -21,7 +21,7 @@ function buildDistrictTree(): CaseRegionEntry[] {
     kind: "city",
     parentDistrictKey: null,
     traits: ["commercial", "residential", "coastal"],
-    keywords: ["부산 법무사", "부산법무사", "부산 업무 사례"],
+    keywords: ["부산 업무 사례", "지역별 업무 사례", "부산 상담 사례"],
     context:
       "해운대·센텀 사무소를 기준으로 부산 전역의 상속등기·부동산등기·법인등기·개인회생 상담을 진행합니다. 구·군과 생활권마다 관할·일정이 달라 지역 맥락을 함께 확인합니다.",
     indexable: true,

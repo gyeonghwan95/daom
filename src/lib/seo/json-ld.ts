@@ -1,4 +1,6 @@
 import { seoBrand } from "@/lib/seo/brand";
+import { BUSAN_LAWYER_CHAMPION_PATH } from "@/lib/seo/champion-query";
+import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
@@ -198,6 +200,8 @@ export function buildLegalServiceSchema(): SchemaObject {
     name: seoBrand.siteName,
     description: seoBrand.defaultDescription,
     url: siteConfig.url,
+    mainEntityOfPage: getCanonicalUrl(BUSAN_LAWYER_CHAMPION_PATH),
+    hasMap: getNaverPlaceUrl(),
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     logo: getAbsoluteAssetUrl(siteImages.logo.src),
     telephone: telephone(),
@@ -248,6 +252,7 @@ export function buildWebPageSchema(input: {
   path: string;
   h1?: string;
   image?: string;
+  dateModified?: string;
 }): SchemaObject {
   const canonical = getCanonicalUrl(input.path);
   const related = getInflowItemsForPath(input.path);
@@ -257,6 +262,7 @@ export function buildWebPageSchema(input: {
       : input.path === "/"
         ? PREFETCH_CHAMPION_PATHS.map((path) => getCanonicalUrl(path))
         : [];
+  const isChampion = input.path === BUSAN_LAWYER_CHAMPION_PATH;
 
   return compact({
     "@context": "https://schema.org",
@@ -272,6 +278,7 @@ export function buildWebPageSchema(input: {
     author: { "@id": schemaIds.person },
     reviewedBy: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },
+    dateModified: input.dateModified ?? (isChampion ? busanLawyerHubReviewedOn : undefined),
     primaryImageOfPage: input.image
       ? {
           "@type": "ImageObject",

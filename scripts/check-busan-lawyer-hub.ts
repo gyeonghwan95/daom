@@ -4,7 +4,7 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { HOME_METADATA_TITLE, getCanonicalUrl, homeMetadata } from "@/lib/seo/metadata";
+import { HOME_METADATA_TITLE, getCanonicalUrl, homeMetadata, createPageMetadata } from "@/lib/seo/metadata";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { buildHomePageData } from "@/lib/pageData/builders";
@@ -13,6 +13,8 @@ import {
   busanLawyerHubH1,
   busanLawyerHubMetaTitle,
 } from "@/lib/local-landing/busan-lawyer-hub-content";
+import { getInflowItemsForPath } from "@/lib/seo/inflow-policy";
+import { sanitizePageKeywords } from "@/lib/seo/champion-query";
 
 const ROOT = process.cwd();
 
@@ -85,6 +87,29 @@ function main() {
     }
     if (hub.metaDescription === buildHomePageData().metaDescription) {
       add("error", "hub description duplicates homepage description");
+    }
+    if (getInflowItemsForPath("/업무사례/부산영주동법무사").length > 0) {
+      add("error", "inflow rail still emits on thin case pages");
+    }
+    if (getInflowItemsForPath("/부산법무사").length === 0) {
+      add("error", "inflow rail missing on champion hub");
+    }
+    const dongKeywords = sanitizePageKeywords("/민락동법무사", [
+      "부산 법무사",
+      "민락동 법무사",
+    ]);
+    if (dongKeywords?.includes("부산 법무사")) {
+      add("error", "exact champion query still in non-champion keywords");
+    }
+    const hubKw = createPageMetadata({
+      title: busanLawyerHubMetaTitle,
+      description: busanLawyerHubDescription,
+      path: "/부산법무사",
+      keywords: ["부산 법무사", "해운대 법무사"],
+    }).keywords;
+    const hubKwList = Array.isArray(hubKw) ? hubKw : [];
+    if (!hubKwList.includes("부산 법무사")) {
+      add("error", "champion lost exact-query keywords");
     }
     console.log("HUB");
     console.log(`  path: ${hub.path}`);

@@ -225,9 +225,8 @@ export function buildPageDataFromLocalLanding(
       ? page.primaryKeywords
       : [
           page.regionLabel,
-          "부산 법무사",
-          "부산법무사",
           page.title.replace(page.regionLabel, "").trim(),
+          "다옴법무사사무소",
         ].filter(Boolean);
 
   const keepAllFaqs =
@@ -1011,11 +1010,10 @@ export function buildHomePageData(): PageData {
       },
     ],
     primaryKeywords: [
-      "부산 법무사",
-      "부산법무사",
       "해운대 법무사",
       "센텀 법무사",
       "상속등기",
+      "다옴법무사사무소",
     ],
   });
 }
@@ -1045,6 +1043,6 @@ export function buildLegacyRedirectPageData(
         links: [{ href: targetPath, label: "바로 이동하기" }],
       },
     ],
-    primaryKeywords: ["부산 법무사", "다옴법무사사무소"],
+    primaryKeywords: ["다옴법무사사무소"],
   });
 }

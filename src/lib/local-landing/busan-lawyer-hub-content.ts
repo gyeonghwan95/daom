@@ -39,6 +39,8 @@ export const BUSAN_LAWYER_HUB_SLUG = "부산법무사" as const;
 export const BUSAN_LAWYER_HUB_PATH = "/부산법무사" as const;
 
 export const busanLawyerHubEyebrow = "BUSAN OFFICE";
+export const busanLawyerHubReviewedOn = "2026-08-18";
+export const busanLawyerHubReviewedLabel = "2026년 8월 18일 확인";
 
 export const busanLawyerHubMetaTitle =
   "부산 법무사 | 해운대·센텀 상속·등기 상담 - 다옴법무사사무소";

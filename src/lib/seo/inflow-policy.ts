@@ -13,7 +13,7 @@ import {
   REAL_ESTATE_CHAMPION,
   SELECTION_CHAMPION,
 } from "@/data/seo/page-relations";
-import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { isInflowRailPath, normalizeSeoPath } from "@/lib/seo/champion-query";
 
 export type InflowItem = {
   href: string;
@@ -128,9 +128,7 @@ const SKIP_PATHS = new Set([
 ]);
 
 function normalizePath(raw: string): string {
-  const decoded = normalizeRouteSlug(raw.split("?")[0] ?? raw);
-  if (!decoded || decoded === "/") return "/";
-  return decoded.startsWith("/") ? decoded : `/${decoded}`;
+  return normalizeSeoPath(raw);
 }
 
 function libraryByHref(href: string): InflowItem | undefined {
@@ -157,7 +155,11 @@ function pushUnique(target: InflowItem[], item: InflowItem, current: string) {
 /** 현재 경로에서 이탈하지 않고 대표 페이지로 이어 주는 링크 */
 export function getInflowItemsForPath(pathname: string): InflowItem[] {
   const current = normalizePath(pathname);
-  if (SKIP_PATHS.has(current) || current.startsWith("/admin")) {
+  if (
+    SKIP_PATHS.has(current) ||
+    current.startsWith("/admin") ||
+    !isInflowRailPath(current)
+  ) {
     return [];
   }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sanitizePageKeywords } from "@/lib/seo/champion-query";
 import { seoBrand } from "@/lib/seo/brand";
 import { getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { siteImages } from "@/lib/site-images";
@@ -92,13 +93,12 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
   const canonical = getCanonicalUrl(input.path);
   const ogImage = getAbsoluteImageUrl(input.ogImage ?? DEFAULT_OG_IMAGE);
   const openGraphType = input.openGraphType ?? "website";
+  const keywords = sanitizePageKeywords(input.path, input.keywords);
 
   return {
     title: { absolute: input.title },
     description: input.description,
-    ...(input.keywords && input.keywords.length > 0
-      ? { keywords: [...input.keywords] }
-      : {}),
+    ...(keywords && keywords.length > 0 ? { keywords } : {}),
     alternates: {
       canonical,
     },
