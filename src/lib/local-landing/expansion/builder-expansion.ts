@@ -18,6 +18,12 @@ import {
 } from "./institutions";
 import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
+import {
+  getRegionHubCoverage,
+  isRegionHubIdentityLocked,
+  neighborhoodSlugToLabel,
+  fitRegionHubDescription,
+} from "../region-hub-coverage";
 
 const defaultRegistryGuide: LocalLandingJurisdictionGuide = {
   title: "부산 관할 등기소 안내",
@@ -126,25 +132,27 @@ function buildDirectionsNote(config: LocalLandingConfig): string {
   return `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. ${config.regionLabel}에서 오시는 경우 센텀시티역·벡스코 인근이며, 방문 상담은 네이버 예약 후 이용해 주세요. 주차·대중교통 안내는 오시는 길 페이지에서 확인하실 수 있습니다.`;
 }
 
+/** 보조 키워드만. 동 전용 페이지가 가져갈 `{동} 법무사` exact는 넣지 않는다. */
 const regionRecommendKeywords: Record<string, string[]> = {
   해운대법무사: ["해운대 법무사 추천", "해운대 등기 상담"],
   센텀법무사: ["센텀 법무사 추천", "센텀 법인등기"],
   재송동법무사: ["재송동 법무사 추천", "재송동 상속등기"],
   반여동법무사: ["반여동 법무사 추천"],
-  수영구법무사: ["수영구 법무사 추천", "광안동 법무사"],
-  광안동법무사: ["광안동 법무사 추천", "광안동 부동산등기"],
-  연제구법무사: ["연제구 법무사 추천", "연산동 법무사"],
-  연산동법무사: ["연산동 법무사 추천"],
-  동래역법무사: ["동래 법무사 추천", "동래구 상속등기"],
-  남천동법무사: ["남구 법무사 추천", "남천동 법무사"],
-  대연동법무사: ["대연동 법무사 추천", "남구 법무사"],
-  부산진구법무사: ["부산진구 법무사 추천", "서면 법무사"],
-  서면법무사: ["서면 법무사 추천", "서면 부동산등기"],
-  사상법무사: ["사상 법무사 추천", "사상구 법무사"],
-  기장법무사: ["기장 법무사 추천", "기장군 상속등기"],
-  정관법무사: ["정관 법무사 추천"],
-  명지법무사: ["명지 법무사 추천"],
-  강서구법무사: ["강서구 법무사 추천", "명지 법무사"],
+  수영구법무사: ["수영구 법무사 추천"],
+  연제구법무사: ["연제구 법무사 추천"],
+  동래구법무사: ["동래구 법무사 추천"],
+  부산진구법무사: ["부산진구 법무사 추천"],
+  남구법무사: ["남구 법무사 추천"],
+  금정구법무사: ["금정구 법무사 추천"],
+  북구법무사: ["북구 법무사 추천"],
+  기장군법무사: ["기장군 법무사 추천", "기장군 상속등기"],
+  사상구법무사: ["사상구 법무사 추천"],
+  사하구법무사: ["사하구 법무사 추천"],
+  중구법무사: ["중구 법무사 추천"],
+  서구법무사: ["서구 법무사 추천"],
+  영도구법무사: ["영도구 법무사 추천"],
+  강서구법무사: ["강서구 법무사 추천"],
+  동구법무사: ["동구 법무사 추천"],
 };
 
 function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null {
@@ -155,10 +163,14 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
   const district = districtProfiles[config.regionKey];
   if (!district) return null;
 
+  const coverage = getRegionHubCoverage(config.slug);
+  const identityLocked = isRegionHubIdentityLocked(config.slug);
   const service = getServiceBySlug(config.serviceSlug);
   const serviceLabel = serviceLabels[config.serviceSlug] ?? "등기·상속";
-  const neighborhoods = [...new Set([...config.neighborhoods, ...district.neighborhoods])].slice(0, 8);
-  const neighborhoodText = neighborhoods.join(", ");
+  const coreNeighborhoods = [
+    ...new Set([...config.neighborhoods, ...district.neighborhoods]),
+  ].slice(0, 8);
+  const neighborhoodText = coreNeighborhoods.join(", ");
   const title = `${config.regionLabel} 법무사`;
   const demandNotes = district.demandNotes ?? [
     `${config.regionLabel} 아파트·상가 상속등기`,
@@ -166,11 +178,15 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     `${config.regionLabel} 부동산 매매·소유권이전등기`,
   ];
 
-  const problemStatement = `${config.regionLabel}(${neighborhoodText})에서 등기·상속·법인·채무 문제로 법무사를 찾으시는 분들이 많습니다. ${district.context} 부동산 가액·가족 관계·채무 유무에 따라 필요한 절차가 달라지고, 관할 등기소·법원도 사건마다 다릅니다. 막연히 인터넷 정보만으로 진행하다 보면 서류 누락·기한 경과·보정명령으로 일정이 늘어나는 경우가 있습니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${config.regionLabel} 의뢰인의 상속등기·상속포기·한정승인·법인등기·부동산등기·개인회생 사건을 직접 상담합니다.${
-    regionRecommendKeywords[config.slug]
-      ? ` ‘${regionRecommendKeywords[config.slug][0]}’을 검색하신 분도 상담 전 선택 기준(/부산법무사추천)을 참고하시면 비교에 도움이 됩니다.`
-      : ""
-  }`;
+  const useCoverageIntro =
+    !identityLocked && Boolean(coverage?.summaryParagraphs[0]);
+  const problemStatement = useCoverageIntro
+    ? `${coverage!.summaryParagraphs[0]} ${district.context} 부동산 가액·가족 관계·채무 유무에 따라 필요한 절차가 달라지고, 관할 등기소·법원도 사건마다 다릅니다. 다옴법무사사무소는 해운대 센텀에서 ${config.regionLabel} 의뢰인의 상속등기·상속포기·한정승인·법인등기·부동산등기·개인회생을 직접 상담합니다.`
+    : `${config.regionLabel}(${neighborhoodText})에서 등기·상속·법인·채무 문제로 법무사를 찾으시는 분들이 많습니다. ${district.context} 부동산 가액·가족 관계·채무 유무에 따라 필요한 절차가 달라지고, 관할 등기소·법원도 사건마다 다릅니다. 막연히 인터넷 정보만으로 진행하다 보면 서류 누락·기한 경과·보정명령으로 일정이 늘어나는 경우가 있습니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${config.regionLabel} 의뢰인의 상속등기·상속포기·한정승인·법인등기·부동산등기·개인회생 사건을 직접 상담합니다.${
+        regionRecommendKeywords[config.slug]
+          ? ` ‘${regionRecommendKeywords[config.slug][0]}’을 검색하신 분도 상담 전 선택 기준(/부산법무사추천)을 참고하시면 비교에 도움이 됩니다.`
+          : ""
+      }`;
 
   const whenNeeded = demandNotes.map((note) => `${config.regionLabel}에서 ${note}가 필요한 경우`);
 
@@ -216,6 +232,35 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
   if (service) {
     faqs.push(...service.faqs.slice(0, 2));
   }
+  if (coverage?.faqs.length) {
+    faqs.push(...coverage.faqs);
+  }
+
+  const defaultDescription = `${config.regionLabel}(${neighborhoodText}) 법무사 — 상속등기·법인등기·부동산등기·개인회생. 다옴법무사사무소 안윤정 법무사. 전화·카카오톡·네이버 예약.`;
+  const description =
+    identityLocked || !coverage?.description
+      ? defaultDescription
+      : fitRegionHubDescription(coverage.description);
+
+  const primaryKeywords = [
+    `${config.regionLabel} 법무사`,
+    ...(coverage?.extraKeywords ?? []),
+    ...(regionRecommendKeywords[config.slug] ?? []),
+  ].filter((item, index, list) => list.indexOf(item) === index);
+
+  const extraPageSections = coverage
+    ? [
+        {
+          title: `${config.regionLabel} 동·생활권에서 찾는 경우`,
+          body: coverage.coverageBody,
+          items: coverage.coverageItems,
+          links: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
+            href: `/${slug}`,
+            label: neighborhoodSlugToLabel(slug),
+          })),
+        },
+      ]
+    : [];
 
   return {
     slug: config.slug,
@@ -224,12 +269,13 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     serviceSlug: config.serviceSlug,
     title,
     h1: `${config.regionLabel} 법무사 상담 — 다옴법무사사무소`,
-    description: `${config.regionLabel}(${neighborhoodText}) 법무사 — 상속등기·법인등기·부동산등기·개인회생. 다옴법무사사무소 안윤정 법무사. 전화·카카오톡·네이버 예약.`,
-    primaryKeywords: regionRecommendKeywords[config.slug] ?? [
-      `${config.regionLabel} 법무사`,
-      "부산 법무사",
-      "부산법무사",
-    ],
+    description,
+    summaryParagraphs:
+      !identityLocked && coverage?.summaryParagraphs.length
+        ? coverage.summaryParagraphs
+        : undefined,
+    extraPageSections,
+    primaryKeywords,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
@@ -242,7 +288,8 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
       `${config.regionLabel} 사건에서도 상속인 협의·저당권 정리가 선행되어야 합니다.`,
       `관할 등기소·법원을 잘못 선택하면 접수 지연이 발생할 수 있습니다.`,
       `상속 개시 3개월 기한·임원변경 등기 기한을 놓치면 불이익이 있습니다.`,
-      `${config.regionLabel} 특유의 재개발·신도시 이슈는 권리 관계 확인이 필요합니다.`,
+      coverage?.coverageItems[0] ??
+        `${config.regionLabel} 특유의 재개발·신도시 이슈는 권리 관계 확인이 필요합니다.`,
     ],
     precautions: [
       "법원·등기소와 ‘공식 제휴’ 관계가 아닙니다. 관할·접수 절차·준비서류를 실무 관점에서 안내합니다.",
@@ -258,7 +305,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     ],
     documents: service?.documents ?? ["등기부등본", "가족관계증명서", "인감증명서", "신분증"],
     costGuide: `${config.regionLabel} 의뢰 사건도 사건 유형별로 법무사 수임료·등기 수수료·세금을 분리해 안내합니다. ${serviceLabel} 비용은 부동산 가액·상속인 수·채무 규모에 따라 달라지므로 상담 후 견적을 드립니다.`,
-    faqs: faqs.slice(0, 10),
+    faqs: faqs.slice(0, 12),
     lawyerOpinion: buildLawyerOpinion(config.regionLabel, "상속·등기·법인"),
     directionsNote: buildDirectionsNote(config),
     ctaDescription: consultationCopy.default,
@@ -266,7 +313,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     relatedServiceLinks: [],
     relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
       href: `/${slug}`,
-      label: slug,
+      label: neighborhoodSlugToLabel(slug),
     })),
     stationSections: buildStationSectionsForHost(`/${config.slug}`),
   };

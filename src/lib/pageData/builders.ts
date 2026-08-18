@@ -131,6 +131,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
 
   if (page.pageType === "neighborhood-hub") {
     const sections: PageSection[] = [
+      ...(page.extraPageSections ?? []),
       {
         title: "지역 생활권 안내",
         body: page.neighborhoodLivingArea ?? page.problemStatement,
@@ -166,6 +167,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
   }
 
   const baseSections: PageSection[] = [
+    ...(page.extraPageSections ?? []),
     {
       title: "비용 안내",
       body: page.costGuide,
@@ -235,6 +237,8 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "selection-hub" ||
     page.pageType === "search-intent" ||
     page.pageType === "lecture" ||
+    page.pageType === "region-hub" ||
+    page.pageType === "neighborhood-hub" ||
     page.slug === "부산법인법무사" ||
     page.slug === "부산기업법무사" ||
     page.slug === "부산등기법무사" ||
@@ -495,6 +499,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "selection-hub" ||
       page.pageType === "search-intent" ||
       page.pageType === "lecture" ||
+      page.pageType === "region-hub" ||
+      page.pageType === "neighborhood-hub" ||
       page.slug === "부산법인법무사" ||
       page.slug === "부산등기법무사" ||
       page.slug === "부산법무사" ||

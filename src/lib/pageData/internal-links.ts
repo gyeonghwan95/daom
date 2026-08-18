@@ -237,7 +237,7 @@ function championLinkForService(
   } else if ((REHAB_SERVICES as readonly string[]).includes(serviceSlug)) {
     link = { href: "/부산개인회생", label: "부산 개인회생" };
   } else {
-    link = { href: "/부산법무사", label: "부산 법무사 종합 안내" };
+    link = { href: "/부산법무사", label: "부산 전역 업무 선택 안내" };
   }
   if (!link || link.href === selfPath) return null;
   return link;
@@ -313,11 +313,11 @@ export function getThematicInternalLinks(
       links.push(...regionLandingsForRegion(regionKey, input.slug, 6));
     } else if (pageType === "keyword-hub") {
       links.push(...keywordHubLinks(input.slug, 6));
-      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push({ href: "/부산법무사", label: "부산 전역 업무 선택 안내" });
       links.push(...selectionHubLinks(input.slug, 4));
     } else if (pageType === "selection-hub") {
       links.push(...selectionHubLinks(input.slug, 6));
-      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push({ href: "/부산법무사", label: "부산 전역 업무 선택 안내" });
       links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "preservation-registration") {
       links.push(
@@ -337,7 +337,7 @@ export function getThematicInternalLinks(
       links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "neighborhood-hub") {
       links.push(...neighborhoodHubLinks(input.slug, 6));
-      links.push({ href: "/부산법무사", label: "부산 법무사 종합 안내" });
+      links.push({ href: "/부산법무사", label: "부산 전역 업무 선택 안내" });
       links.push({ href: "/부산법무사추천", label: "부산 법무사 추천 기준" });
     } else if (pageType === "conversion") {
       links.push(...conversionLinksForService(serviceSlug, input.slug));

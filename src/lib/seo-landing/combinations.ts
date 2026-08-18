@@ -120,7 +120,7 @@ function buildRegionLawyerSpecs(
       region.priority + (isHub ? 8 : 0),
       isHub,
       `lawyer:${region.id}`,
-      [`${label} 법무사`, `${label} 등기`, "부산 법무사"],
+      [`${label} 법무사`, `${label} 등기`],
       {
         category: "local",
         regionId: region.id,

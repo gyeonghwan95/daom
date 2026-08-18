@@ -14,6 +14,12 @@ export const regionalChampions = {
   BUK_CHAMPION: "/북구법무사",
   GEUMJEONG_CHAMPION: "/금정구법무사",
   SAHA_CHAMPION: "/사하구법무사",
+  DONG_CHAMPION: "/동구법무사",
+  SEO_CHAMPION: "/서구법무사",
+  YEONGDO_CHAMPION: "/영도구법무사",
+  GANGSEO_CHAMPION: "/강서구법무사",
+  GIJANG_CHAMPION: "/기장군법무사",
+  NAM_CHAMPION: "/남구법무사",
 } as const;
 
 export const serviceChampions = {

@@ -19,6 +19,7 @@ import {
 import {
   busanLawyerHubCases,
   busanLawyerHubCostGuide,
+  busanLawyerHubDistrictLinks,
   busanLawyerHubEyebrow,
   busanLawyerHubFaqs,
   busanLawyerHubH1,
@@ -68,6 +69,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
     { id: "cases", label: "상담 사례" },
     { id: "lawyer", label: "누가 상담하나요" },
     { id: "cost", label: "비용이 달라지는 이유" },
+    { id: "districts", label: "구·군 생활권 안내" },
     { id: "faq", label: "자주 묻는 질문" },
     { id: "related", label: "관련 안내" },
     { id: "consultation", label: "상담 문의" },
@@ -319,6 +321,15 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
             부산 법무사 비용 보기
           </Link>
         </p>
+      </ContentSection>
+
+      <ContentSection id="districts" title="구·군 생활권 안내">
+        <ProseParagraphs
+          paragraphs={[
+            "연제구·사직동처럼 구·동 이름으로 찾으셔도 사건은 해운대 센텀에서 상담합니다. 아래 구·군 안내에서 동 생활권과 관할을 이어서 확인하시면 됩니다.",
+          ]}
+        />
+        <RelatedContentGrid links={busanLawyerHubDistrictLinks} columns={2} />
       </ContentSection>
 
       <ContentSection id="faq" title="자주 묻는 질문">

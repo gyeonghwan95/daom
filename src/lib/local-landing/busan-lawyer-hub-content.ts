@@ -265,11 +265,33 @@ export const busanLawyerHubInternalLinks: BusanLawyerHubLink[] = [
   { href: "/부산개인회생", label: "부산 개인회생" },
   { href: "/해운대법무사", label: "해운대 법무사" },
   { href: "/센텀법무사", label: "센텀 법무사" },
+  { href: "/연제구법무사", label: "연제구 법무사" },
+  { href: "/동래구법무사", label: "동래구 법무사" },
+  { href: "/사직동법무사", label: "사직동 법무사" },
   { href: "/부산법무사무소", label: "사무소 안내" },
   { href: "/부산법무사비용", label: "비용 안내" },
   { href: "/부산법무사추천", label: "선택 기준" },
   { href: "/부산법무사상담", label: "상담 전 준비" },
   { href: "/부산법무사방문상담", label: "방문상담" },
+];
+
+export const busanLawyerHubDistrictLinks: BusanLawyerHubLink[] = [
+  { href: "/중구법무사", label: "중구 법무사" },
+  { href: "/서구법무사", label: "서구 법무사" },
+  { href: "/동구법무사", label: "동구 법무사" },
+  { href: "/영도구법무사", label: "영도구 법무사" },
+  { href: "/부산진구법무사", label: "부산진구 법무사" },
+  { href: "/동래구법무사", label: "동래구 법무사" },
+  { href: "/남구법무사", label: "남구 법무사" },
+  { href: "/북구법무사", label: "북구 법무사" },
+  { href: "/해운대법무사", label: "해운대 법무사" },
+  { href: "/사하구법무사", label: "사하구 법무사" },
+  { href: "/금정구법무사", label: "금정구 법무사" },
+  { href: "/강서구법무사", label: "강서구 법무사" },
+  { href: "/연제구법무사", label: "연제구 법무사" },
+  { href: "/수영구법무사", label: "수영구 법무사" },
+  { href: "/사상구법무사", label: "사상구 법무사" },
+  { href: "/기장군법무사", label: "기장군 법무사" },
 ];
 
 export const busanLawyerHubCostGuide =

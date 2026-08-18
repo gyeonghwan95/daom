@@ -4,6 +4,7 @@
  * regionId matches seo/regions.ts entity ids.
  */
 import type { PageFaqItem, PageSection } from "@/lib/pageData/types";
+import { SEO_LANDING_REGION_OVERLAYS } from "./local-champion-overlays-neighborhoods";
 
 export type LocalChampionOverlay = {
   regionId: string;
@@ -15,6 +16,7 @@ export type LocalChampionOverlay = {
 };
 
 export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
+  ...SEO_LANDING_REGION_OVERLAYS,
   "hood-millak": {
     regionId: "hood-millak",
     slug: "민락동법무사",
@@ -64,7 +66,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       },
     ],
     serviceLinks: [
-      { href: "/부산법무사", label: "부산 법무사 — 업무 선택 안내" },
+      { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/수영구부동산등기", label: "수영구 부동산등기" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
@@ -113,7 +115,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       },
     ],
     serviceLinks: [
-      { href: "/부산법무사", label: "부산 법무사 — 업무 선택 안내" },
+      { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
@@ -154,7 +156,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       },
     ],
     serviceLinks: [
-      { href: "/부산법무사", label: "부산 법무사 — 업무 선택 안내" },
+      { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/동래구상속등기", label: "동래구 상속등기" },
       { href: "/동래구부동산등기", label: "동래구 부동산등기" },
       { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
