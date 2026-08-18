@@ -305,6 +305,10 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
         website: honeypot,
         pageTitle: pageMeta.pageTitle,
         pageUrl: pageMeta.pageUrl,
+        analyticsMeta: {
+          kind: "collaboration",
+          field: String(form.service || form.partner || "").slice(0, 40),
+        },
       });
 
       if (result.ok) {

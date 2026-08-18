@@ -10,6 +10,11 @@ import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { formatActivityAction, getSourceLabel } from "@/lib/admin/activity-labels";
+import {
+  formatDeviceSplit,
+  getDeviceBadgeClass,
+  getDeviceLabel,
+} from "@/lib/admin/device-label";
 import { formatAdminActivityAt } from "@/lib/admin-ops/utils";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
@@ -119,6 +124,15 @@ export default function AdminDashboardPage() {
           value={k.visits7d}
           compareValue={k.visitsPrev7d}
         />
+        <MetricCard
+          label="오늘 모바일"
+          value={data.devicesToday?.mobile ?? null}
+          note={
+            data.devicesToday
+              ? `PC ${data.devicesToday.desktop}`
+              : "화면 너비 768px 기준"
+          }
+        />
         <MetricCard label="오늘 CTA" value={k.ctaToday ?? null} />
         <MetricCard label="오늘 문의 제출" value={k.consultSubmitToday} />
         <MetricCard
@@ -165,6 +179,7 @@ export default function AdminDashboardPage() {
                     <th>날짜</th>
                     <th>페이지뷰</th>
                     <th>세션</th>
+                    <th>기기</th>
                     <th>CTA</th>
                     <th>제출</th>
                     <th>네이버</th>
@@ -176,6 +191,7 @@ export default function AdminDashboardPage() {
                       <td>{d.date}</td>
                       <td>{d.visits}</td>
                       <td>{d.sessions ?? "—"}</td>
+                      <td>{formatDeviceSplit(d.mobile, d.desktop)}</td>
                       <td>{d.cta ?? "—"}</td>
                       <td>{d.submits}</td>
                       <td>{d.naverPlace ?? "—"}</td>
@@ -214,6 +230,7 @@ export default function AdminDashboardPage() {
                 <tr>
                   <th>페이지</th>
                   <th>페이지뷰</th>
+                  <th>기기</th>
                   <th>CTA</th>
                   <th>제출</th>
                 </tr>
@@ -225,6 +242,7 @@ export default function AdminDashboardPage() {
                       <PageIdentity path={r.path} />
                     </td>
                     <td>{r.visits}</td>
+                    <td>{formatDeviceSplit(r.mobile, r.desktop)}</td>
                     <td>{r.cta}</td>
                     <td>{r.consultSubmit ?? "—"}</td>
                   </tr>
@@ -260,7 +278,7 @@ export default function AdminDashboardPage() {
 
       <AdminSection title="최근 Activity">
         {!data.recentActivity?.length ? (
-          <p className="admin-empty">최근 CTA·문의·네이버 클릭 기록이 없습니다.</p>
+          <p className="admin-empty">최근 CTA·검색·계산기·문의 기록이 없습니다.</p>
         ) : (
           <ul className="admin-activity">
             {data.recentActivity.map((a) => {
@@ -273,6 +291,9 @@ export default function AdminDashboardPage() {
                   </time>
                   <PageIdentity path={a.path} compact />
                   <span>{getSourceLabel(a.referrerType)}</span>
+                  <span className={getDeviceBadgeClass(a.deviceType)}>
+                    {getDeviceLabel(a.deviceType)}
+                  </span>
                   <span>{formatActivityAction(a.eventType, a.meta)}</span>
                 </li>
               );

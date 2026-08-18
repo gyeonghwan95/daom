@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackSearchUsed } from "@/lib/admin-ops/track-client";
 import type { SearchResult } from "@/lib/search/types";
 import { SearchEmptyState } from "./SearchEmptyState";
 import { SearchPopularLinks } from "./SearchPopularLinks";
@@ -68,7 +69,15 @@ export function SiteSearchResults({
             item={item}
             query={trimmed}
             active={index === activeIndex}
-            onSelect={onSelect}
+            onSelect={() => {
+              trackSearchUsed({
+                query: trimmed,
+                hits: totalCount,
+                dest: item.href,
+                kind: "result",
+              });
+              onSelect();
+            }}
             onMouseEnter={() => onActiveIndexChange(index)}
           />
         ))}
@@ -77,7 +86,15 @@ export function SiteSearchResults({
         <div className="pt-1">
           <Link
             href={`/search?q=${encodeURIComponent(trimmed)}`}
-            onClick={onSelect}
+            onClick={() => {
+              trackSearchUsed({
+                query: trimmed,
+                hits: totalCount,
+                dest: `/search?q=${encodeURIComponent(trimmed)}`,
+                kind: "all",
+              });
+              onSelect();
+            }}
             className="inline-flex text-sm font-medium text-navy underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
           >
             전체 결과 보기 ({totalCount}개)

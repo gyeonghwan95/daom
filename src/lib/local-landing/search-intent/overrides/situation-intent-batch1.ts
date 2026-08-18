@@ -755,6 +755,7 @@ export const 경매낙찰후전세권확인Override: SearchIntentContent = {
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    { href: "/부산경매권리분석", label: "부산 경매 권리분석" },
     { href: "/부산경매낙찰등기", label: "부산 경매 낙찰등기" },
     { href: "/부산공매낙찰등기", label: "부산 공매 낙찰등기" },
     { href: "/부산전세권말소등기", label: "전세권 말소등기" },

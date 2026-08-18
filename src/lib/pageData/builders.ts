@@ -238,7 +238,8 @@ export function buildPageDataFromLocalLanding(
     page.slug === "부산법인법무사" ||
     page.slug === "부산기업법무사" ||
     page.slug === "부산등기법무사" ||
-    page.slug === "부산법무사";
+    page.slug === "부산법무사" ||
+    page.slug === "부산상속포기";
 
   const specialLandingFaqs = keepAllFaqs
     ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
@@ -457,7 +458,12 @@ export function buildPageDataFromLocalLanding(
         : page.pageType === "search-intent"
           ? [
               { label: "홈", href: "/" },
-              { label: "검색의도 안내", href: "/search-guides" },
+              page.breadcrumbParent
+                ? {
+                    label: page.breadcrumbParent.label,
+                    href: page.breadcrumbParent.href,
+                  }
+                : { label: "검색의도 안내", href: "/search-guides" },
               { label: page.title },
             ]
           : page.pageType === "b2b-collaboration"
@@ -491,7 +497,8 @@ export function buildPageDataFromLocalLanding(
       page.pageType === "lecture" ||
       page.slug === "부산법인법무사" ||
       page.slug === "부산등기법무사" ||
-      page.slug === "부산법무사",
+      page.slug === "부산법무사" ||
+      page.slug === "부산상속포기",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

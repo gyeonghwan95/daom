@@ -35,6 +35,8 @@ const ALLOWED = new Set([
   "notice_click",
   "notice_dismiss",
   "search_used",
+  "tool_used",
+  "diagnosis_complete",
   "naver_place_click",
 ]);
 

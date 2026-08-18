@@ -32,6 +32,8 @@ export type BidSource = {
   requestIntervalMs?: number;
   parserId?: string;
   notes?: string;
+  /** 페이지네이션 상한. 미지정 시 수집기 기본값(30). */
+  maxPages?: number;
 };
 
 export type OpportunityCategory =
@@ -200,6 +202,8 @@ export type BriefingData = {
   registrationLeads: Opportunity[];
   collaborationItems: Opportunity[];
   lectureItems: Opportunity[];
+  courtDocumentItems: Opportunity[];
+  corporateItems: Opportunity[];
   marketSignals: Opportunity[];
   changedItems: OpportunityChange[];
   runs: CollectionRun[];

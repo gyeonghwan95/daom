@@ -278,6 +278,10 @@ export function ConsultWizardShell() {
         website: honeypot,
         pageTitle: draft.pageTitle || pageTitle,
         pageUrl: draft.pageUrl || pageUrl,
+        analyticsMeta: {
+          kind: "wizard",
+          field: draft.situationIds.slice(0, 4).join(",").slice(0, 80),
+        },
       });
 
       if (!result.ok) {

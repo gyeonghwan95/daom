@@ -141,12 +141,12 @@ function buildBriefing(
       (o) =>
         o.category === "registration" ||
         o.category === "real-estate" ||
-        o.category === "trust" ||
-        o.category === "corporate" ||
-        o.category === "debt-court-document",
+        o.category === "trust",
     ),
     collaborationItems: pick((o) => o.category === "collaboration"),
     lectureItems: pick((o) => o.category === "lecture"),
+    courtDocumentItems: pick((o) => o.category === "debt-court-document"),
+    corporateItems: pick((o) => o.category === "corporate"),
     marketSignals: pick(
       (o) => o.category === "auction-public-sale" || o.category === "market-signal",
     ),
@@ -188,9 +188,20 @@ async function main(): Promise<void> {
         "G2B_SERVICE_KEY 환경변수가 없습니다. 공공데이터포털에서 '나라장터 입찰공고정보서비스'와 '누리장터 민간입찰공고서비스'를 각각 활용신청한 뒤 Decoding 키를 등록하세요.",
       );
       console.error("오프라인 확인: npx tsx collector/main.ts --dry-run --fixture collector/tests/fixtures/g2b-servc-sample.json");
+      runs.push({
+        runId: `config-${Date.now()}`,
+        startedAt: nowIso,
+        finishedAt: new Date().toISOString(),
+        sourceId: "G2B_SERVICE_KEY",
+        status: "failed",
+        fetchedCount: 0,
+        newCount: 0,
+        updatedCount: 0,
+        errorMessage: "G2B_SERVICE_KEY 없음 — GitHub Actions 시크릿을 확인하세요.",
+        durationMs: 0,
+      });
       process.exitCode = 1;
-      return;
-    }
+    } else {
     console.log(`[api] 서비스키 ${maskSecret(serviceKey)} 사용, 조회기간 ${kstDateString(new Date(window.from.getTime() + 9 * 3600_000))} ~ ${kstDateString(new Date(window.to.getTime() + 9 * 3600_000))}`);
 
     for (const source of getEnabledApiSources()) {
@@ -233,6 +244,7 @@ async function main(): Promise<void> {
           `[${source.id}] 수집 실패: ${message}${last ? ` (마지막 정상 수집 ${last})` : ""}`,
         );
       }
+    }
     }
   }
 
@@ -301,7 +313,16 @@ async function main(): Promise<void> {
       const result = await sendBriefingEmail(briefing);
       console.log(result.detail);
       if (result.sent) {
-        state.lastEmailKstDate = dateTag;
+        const allFailedNow =
+          runs.length > 0 && runs.every((r) => r.status === "failed");
+        const missingKey = !process.env.G2B_SERVICE_KEY?.trim() && !options.fixturePath;
+        // API 일시 장애면 당일 재시도(08:15·09:00)를 허용한다.
+        // 키 누락·정상 수집(0건 포함)은 하루 1회만 보낸다.
+        if (!allFailedNow || missingKey) {
+          state.lastEmailKstDate = dateTag;
+        } else {
+          console.log("수집 전부 실패 — 당일 재시도 메일을 허용합니다.");
+        }
       } else if (!result.detail.includes("환경변수")) {
         // 발송 설정이 있는데 실패한 경우만 실패로 처리
         process.exitCode = 1;

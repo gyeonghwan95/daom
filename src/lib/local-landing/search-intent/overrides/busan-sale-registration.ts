@@ -144,6 +144,7 @@ export const 부산매매등기법무사Override: SearchIntentContent = {
     { href: "/부산잔금일법무사", label: "부산 잔금일 법무사" },
     { href: "/부산매수인법무사", label: "부산 매수인 법무사" },
     { href: "/부산근저당말소등기", label: "부산 근저당 말소등기" },
+    { href: "/부산가등기", label: "부산 가등기" },
     { href: "/취득세", label: "취득세 안내" },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },
   ],

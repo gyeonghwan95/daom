@@ -18,6 +18,7 @@ import {
   searchSite,
 } from "@/lib/search";
 import type { SearchIndexItem } from "@/lib/search/types";
+import { trackSearchUsed } from "@/lib/admin-ops/track-client";
 import { SearchCloseIcon } from "./SearchIcons";
 import { SiteSearchInput } from "./SiteSearchInput";
 import { SiteSearchResults } from "./SiteSearchResults";
@@ -149,9 +150,15 @@ export function SiteSearchDrawer({
   const selectActiveResult = useCallback(() => {
     const item = results[activeIndex];
     if (!item) return;
+    trackSearchUsed({
+      query: deferredQuery,
+      hits: totalCount,
+      dest: item.href,
+      kind: "result",
+    });
     onClose();
     router.push(item.href);
-  }, [activeIndex, onClose, results, router]);
+  }, [activeIndex, deferredQuery, onClose, results, router, totalCount]);
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.nativeEvent.isComposing) return;
@@ -177,6 +184,12 @@ export function SiteSearchDrawer({
       const q = normalizeQueryInput(query);
       if (q) {
         event.preventDefault();
+        trackSearchUsed({
+          query: q,
+          hits: totalCount,
+          dest: `/search?q=${encodeURIComponent(q)}`,
+          kind: "all",
+        });
         onClose();
         router.push(`/search?q=${encodeURIComponent(q)}`);
       }

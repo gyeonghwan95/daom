@@ -6,6 +6,7 @@ import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { getSourceLabel } from "@/lib/analytics/referrer";
+import { formatDeviceSplit } from "@/lib/admin/device-label";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
@@ -101,6 +102,7 @@ export default function AdminAnalyticsPage() {
                   <th>날짜</th>
                   <th>페이지뷰</th>
                   <th>세션</th>
+                  <th>기기</th>
                   <th>CTA</th>
                   <th>제출</th>
                   <th>네이버</th>
@@ -112,6 +114,7 @@ export default function AdminAnalyticsPage() {
                     <td>{d.date}</td>
                     <td>{d.visits}</td>
                     <td>{d.sessions ?? "—"}</td>
+                    <td>{formatDeviceSplit(d.devices?.mobile, d.devices?.desktop)}</td>
                     <td>{d.cta}</td>
                     <td>{d.consultSubmit}</td>
                     <td>{d.naverPlace ?? "—"}</td>
@@ -154,15 +157,15 @@ export default function AdminAnalyticsPage() {
             <table className="admin-table">
               <tbody>
                 <tr>
-                  <td>Mobile</td>
+                  <td>모바일</td>
                   <td>{dash.devicesToday.mobile}</td>
                 </tr>
                 <tr>
-                  <td>Desktop</td>
+                  <td>PC</td>
                   <td>{dash.devicesToday.desktop}</td>
                 </tr>
                 <tr>
-                  <td>Unknown</td>
+                  <td>미확인</td>
                   <td>{dash.devicesToday.unknown}</td>
                 </tr>
               </tbody>

@@ -1,6 +1,7 @@
 import { seoBrand } from "@/lib/seo/brand";
-import { BUSAN_LAWYER_CHAMPION_PATH } from "@/lib/seo/champion-query";
+import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_RENUNCIATION_CHAMPION_PATH } from "@/lib/seo/champion-query";
 import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
+import { busanRenunciationHubReviewedOn } from "@/lib/local-landing/renunciation-hub-identity";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
@@ -262,7 +263,12 @@ export function buildWebPageSchema(input: {
       : input.path === "/"
         ? PREFETCH_CHAMPION_PATHS.map((path) => getCanonicalUrl(path))
         : [];
-  const isChampion = input.path === BUSAN_LAWYER_CHAMPION_PATH;
+  const reviewedOn =
+    input.path === BUSAN_LAWYER_CHAMPION_PATH
+      ? busanLawyerHubReviewedOn
+      : input.path === BUSAN_RENUNCIATION_CHAMPION_PATH
+        ? busanRenunciationHubReviewedOn
+        : undefined;
 
   return compact({
     "@context": "https://schema.org",
@@ -278,7 +284,7 @@ export function buildWebPageSchema(input: {
     author: { "@id": schemaIds.person },
     reviewedBy: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },
-    dateModified: input.dateModified ?? (isChampion ? busanLawyerHubReviewedOn : undefined),
+    dateModified: input.dateModified ?? reviewedOn,
     primaryImageOfPage: input.image
       ? {
           "@type": "ImageObject",

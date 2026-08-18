@@ -102,6 +102,7 @@ export function QuickInquiryForm({
         website: honeypot,
         pageTitle,
         pageUrl,
+        analyticsMeta: { kind: "inquiry" },
       });
 
       if (result.ok) {

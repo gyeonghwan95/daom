@@ -10,6 +10,8 @@ export type SubmitQuickInquiryInput = {
   website?: string;
   pageTitle?: string;
   pageUrl?: string;
+  /** 문의 유형 등 비식별 메타. 이름·전화·본문 금지. */
+  analyticsMeta?: Record<string, string>;
 };
 
 export type SubmitQuickInquiryResult = InquiryResult;
@@ -62,9 +64,11 @@ export async function submitQuickInquiry(
 
   // Analytics must never block or alter inquiry UX (no PII).
   if (data.ok) {
+    const meta: Record<string, string> = { ...(input.analyticsMeta || {}) };
     void trackEvent({
       type: "consultation_submit",
       path: resolveInquiryPath(input.pageUrl),
+      meta: Object.keys(meta).length ? meta : undefined,
     });
   }
 

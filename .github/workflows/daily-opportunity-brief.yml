@@ -2,10 +2,14 @@ name: Daily Opportunity Brief
 
 on:
   schedule:
+    # GitHub Actions cron은 지연·누락이 있어 아침 슬롯을 3회로 둔다.
+    # 중복 발송은 collector 상태(lastEmailKstDate)로 막는다.
     # Asia/Seoul 07:30 = UTC 22:30 (전날). 한국은 서머타임이 없어 고정.
-    # GitHub Actions 스케줄은 지연될 수 있으므로 메일 본문의 "수집 기준시각"이
-    # 실제 실행시각을 표시한다.
     - cron: "30 22 * * *"
+    # 08:15 KST — 1차 누락·API 일시장애 재시도
+    - cron: "15 23 * * *"
+    # 09:00 KST — 최종 재시도
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -41,6 +45,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Warn if required secrets missing
+        env:
+          G2B_SERVICE_KEY: ${{ secrets.G2B_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          BID_EMAIL_FROM: ${{ secrets.BID_EMAIL_FROM }}
+          BID_EMAIL_TO: ${{ secrets.BID_EMAIL_TO }}
+        run: |
+          if [ -z "$G2B_SERVICE_KEY" ]; then
+            echo "::warning::G2B_SERVICE_KEY 시크릿이 없습니다. 수집은 실패하고 점검 메일을 보냅니다."
+          fi
+          if [ -z "$RESEND_API_KEY" ] || [ -z "$BID_EMAIL_FROM" ] || [ -z "$BID_EMAIL_TO" ]; then
+            echo "::error::RESEND_API_KEY / BID_EMAIL_FROM / BID_EMAIL_TO 시크릿이 없어 메일을 보낼 수 없습니다."
+          fi
+
       # 실행 간 상태(중복 제거·정정 추적·중복 메일 방지)를 cache로 유지.
       # 공개 저장소에 DB를 커밋하지 않는다.
       # 단위 테스트는 발송 이후에 실행한다 — 시간 의존 fixture 등으로
@@ -54,7 +72,13 @@ jobs:
             bid-collector-state-
 
       - name: Collect and send briefing
-        run: npm run bid:run -- ${{ inputs.dry_run && '--dry-run' || '' }} ${{ inputs.force_email && '--force-email' || '' }}
+        run: |
+          EXTRA=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.dry_run }}" = "true" ]; then EXTRA="$EXTRA --dry-run"; fi
+            if [ "${{ inputs.force_email }}" = "true" ]; then EXTRA="$EXTRA --force-email"; fi
+          fi
+          npm run bid:run -- $EXTRA
         env:
           G2B_SERVICE_KEY: ${{ secrets.G2B_SERVICE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}

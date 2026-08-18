@@ -191,8 +191,9 @@ export async function collectG2b(
   const items: RawNotice[] = [];
   let fetched = 0;
   let lastStatus: number | undefined;
+  const maxPages = Math.min(Math.max(source.maxPages ?? MAX_PAGES, 1), MAX_PAGES);
 
-  for (let page = 1; page <= MAX_PAGES; page += 1) {
+  for (let page = 1; page <= maxPages; page += 1) {
     const params = new URLSearchParams({
       pageNo: String(page),
       numOfRows: String(PAGE_SIZE),

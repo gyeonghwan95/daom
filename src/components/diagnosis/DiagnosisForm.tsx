@@ -7,6 +7,7 @@ import { DiagnosisQuestion } from "@/components/diagnosis/DiagnosisQuestion";
 import { DiagnosisResult } from "@/components/diagnosis/DiagnosisResult";
 import { isQuestionAnswered } from "@/components/diagnosis/constants";
 import { evaluateDiagnosis } from "@/lib/diagnosis/evaluate";
+import { trackDiagnosisComplete } from "@/lib/admin-ops/track-client";
 
 import type { DiagnosisRecommendationGroups } from "@/lib/diagnosis/result-recommendations";
 
@@ -47,6 +48,11 @@ export function DiagnosisForm({
   function finishDiagnosis() {
     setFinished(true);
     onPhaseChange?.("result");
+    const result = evaluateDiagnosis(diagnosis, answers);
+    trackDiagnosisComplete({
+      slug: diagnosis.slug,
+      risk: result.outcome.riskLevel || (result.urgentOverride ? "urgent" : undefined),
+    });
   }
 
   function handleNext() {

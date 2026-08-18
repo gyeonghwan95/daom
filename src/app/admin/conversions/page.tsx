@@ -7,6 +7,7 @@ import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { getCtaKindLabel } from "@/lib/admin/activity-labels";
 import { formatKoreanNumber } from "@/lib/admin/url-display";
+import { formatDeviceSplit } from "@/lib/admin/device-label";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type ConversionsData = {
@@ -45,6 +46,8 @@ type ConversionsData = {
     naver: number;
     consultSubmit: number;
     naverPlace: number;
+    mobile?: number;
+    desktop?: number;
   }>;
   naverPlaceByPlacement?: Array<{ placement: string; count: number }>;
   naverPlaceTopPaths?: Array<{
@@ -225,6 +228,7 @@ export default function AdminConversionsPage() {
               <tr>
                 <th>페이지</th>
                 <th>뷰</th>
+                <th>기기</th>
                 <th>CTA</th>
                 <th>전화</th>
                 <th>카카오</th>
@@ -239,6 +243,7 @@ export default function AdminConversionsPage() {
                     <PageIdentity path={r.path} />
                   </td>
                   <td>{r.visits}</td>
+                  <td>{formatDeviceSplit(r.mobile, r.desktop)}</td>
                   <td>{r.cta}</td>
                   <td>{r.phone}</td>
                   <td>{r.kakao}</td>

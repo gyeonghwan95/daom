@@ -88,6 +88,8 @@ function mergePathRow(target, source) {
   target.naverPlace = (target.naverPlace || 0) + (source.naverPlace || 0);
   target.naverPlaceReservation =
     (target.naverPlaceReservation || 0) + (source.naverPlaceReservation || 0);
+  target.mobile = (target.mobile || 0) + (source.mobile || 0);
+  target.desktop = (target.desktop || 0) + (source.desktop || 0);
 }
 
 /** Merge encoded/decoded duplicate path keys for display aggregation */
@@ -112,6 +114,8 @@ function emptyPath() {
     consultSubmit: 0,
     naverPlace: 0,
     naverPlaceReservation: 0,
+    mobile: 0,
+    desktop: 0,
   };
 }
 
@@ -393,7 +397,13 @@ const ACTIVITY_EVENTS = new Set([
   "naver_click",
   "consultation_start",
   "consultation_submit",
+  "collaboration_submit",
+  "lecture_inquiry_submit",
   "naver_place_click",
+  "search_used",
+  "tool_used",
+  "diagnosis_complete",
+  "notice_click",
 ]);
 
 function activityMeta(meta) {
@@ -409,15 +419,20 @@ function activityMeta(meta) {
 async function pushRecentActivity(env, event, path) {
   if (!ACTIVITY_EVENTS.has(event.type)) return;
   const list = await getJson(env.ADMIN_KV, KEYS.recentActivity, []);
+  const device =
+    event.deviceType === "mobile" || event.deviceType === "desktop"
+      ? event.deviceType
+      : "unknown";
   list.unshift({
     id: newId("act"),
     at: new Date().toISOString(),
     path,
     eventType: event.type,
     referrerType: event.referrerType || "direct",
+    deviceType: device,
     meta: activityMeta(event.meta),
   });
-  await putJson(env.ADMIN_KV, KEYS.recentActivity, list.slice(0, 40));
+  await putJson(env.ADMIN_KV, KEYS.recentActivity, list.slice(0, 80));
 }
 
 function noteSession(day, sid) {
@@ -473,9 +488,15 @@ export async function recordAnalyticsEvent(env, event) {
       day.visits += 1;
       row.visits += 1;
       noteSession(day, event.sid);
-      if (event.deviceType === "mobile") day.devices.mobile += 1;
-      else if (event.deviceType === "desktop") day.devices.desktop += 1;
-      else day.devices.unknown += 1;
+      if (event.deviceType === "mobile") {
+        day.devices.mobile += 1;
+        row.mobile = (row.mobile || 0) + 1;
+      } else if (event.deviceType === "desktop") {
+        day.devices.desktop += 1;
+        row.desktop = (row.desktop || 0) + 1;
+      } else {
+        day.devices.unknown += 1;
+      }
       break;
     case "cta_click":
       day.cta += 1;
@@ -720,6 +741,8 @@ export async function buildDashboard(env) {
         submits: day.consultSubmit,
         cta: day.cta,
         naverPlace: day.naverPlace || 0,
+        mobile: day.devices?.mobile || 0,
+        desktop: day.devices?.desktop || 0,
       });
     }
     for (const d of prev7) {
@@ -739,6 +762,8 @@ export async function buildDashboard(env) {
         cta: s.cta,
         consultSubmit: s.consultSubmit || 0,
         naverPlace: s.naverPlace || 0,
+        mobile: s.mobile || 0,
+        desktop: s.desktop || 0,
       }))
       .sort((a, b) => b.visits - a.visits)
       .slice(0, 10);
@@ -774,7 +799,7 @@ export async function buildDashboard(env) {
 
     recentAudit = await listAudit(env, 15);
     notices = await listNotices(env);
-    recentActivity = await listRecentActivity(env, 20);
+    recentActivity = await listRecentActivity(env, 40);
   }
 
   const now = new Date();
@@ -942,6 +967,8 @@ export async function buildPagesReport(env, days = 30) {
           phone: 0,
           kakao: 0,
           naver: 0,
+          mobile: 0,
+          desktop: 0,
         };
       }
       agg[path].visits += s.visits || 0;
@@ -951,6 +978,8 @@ export async function buildPagesReport(env, days = 30) {
       agg[path].phone += s.phone || 0;
       agg[path].kakao += s.kakao || 0;
       agg[path].naver += s.naver || 0;
+      agg[path].mobile += s.mobile || 0;
+      agg[path].desktop += s.desktop || 0;
       if (d === today) todayAgg[path] = s;
     }
   }
@@ -999,6 +1028,10 @@ export async function buildPagesReport(env, days = 30) {
       phone: s.phone,
       kakao: s.kakao,
       naver: s.naver,
+      mobileToday: todayRow?.mobile || 0,
+      desktopToday: todayRow?.desktop || 0,
+      mobile30d: s.mobile || 0,
+      desktop30d: s.desktop || 0,
       conversionRate,
     };
   });
@@ -1063,6 +1096,8 @@ export async function buildConversionsReport(env) {
       naver: s.naver || 0,
       consultSubmit: s.consultSubmit || 0,
       naverPlace: s.naverPlace || 0,
+      mobile: s.mobile || 0,
+      desktop: s.desktop || 0,
     };
   }
   ctaGeneric = Math.max(0, cta - phone - kakao - naver);

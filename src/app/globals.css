@@ -6469,6 +6469,8 @@ a.admin-page-identity__path:hover {
   margin-left: auto;
   color: #94a3b8;
 }
+.admin-badge--mobile { background: #ecfeff; color: #0e7490; }
+.admin-badge--desktop { background: #f1f5f9; color: #334155; }
 .admin-activity {
   list-style: none;
   margin: 0;
@@ -6477,7 +6479,7 @@ a.admin-page-identity__path:hover {
 }
 .admin-activity li {
   display: grid;
-  grid-template-columns: 4.75rem minmax(0, 1fr) auto minmax(0, 1.4fr);
+  grid-template-columns: 4.75rem minmax(0, 1fr) auto auto minmax(0, 1.4fr);
   gap: 0.5rem;
   align-items: start;
   padding: 0.45rem 0;

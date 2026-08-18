@@ -63,7 +63,7 @@ export const BID_SOURCES: BidSource[] = [
     baseUrl: "https://www.g2b.go.kr",
     apiUrl:
       "https://apis.data.go.kr/1230000/ad/BidPublicInfoService/getBidPblancListInfoCnstwkPPSSrch",
-    enabled: false,
+    enabled: true,
     priority: 3,
     categories: ["registration", "real-estate"],
     requiresApiKey: true,
@@ -73,8 +73,9 @@ export const BID_SOURCES: BidSource[] = [
     robotsReviewed: true,
     requestIntervalMs: 400,
     parserId: "g2b",
+    maxPages: 12,
     notes:
-      "공사 공고 중 등기·보상·권리정리 부대용역 탐색용. 데이터량이 많아 기본 비활성. 필요 시 enabled: true.",
+      "공사 공고 중 등기·보상·권리정리 부대용역만 키워드 필터로 선별. 전수량이 커서 최근 12페이지만 조회.",
   },
 
   // ── Phase 1+: 누리장터 민간입찰 (아파트관리사무소·영리법인 등) ──

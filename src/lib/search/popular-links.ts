@@ -10,6 +10,8 @@ export const SEARCH_POPULAR_LINKS: SearchPopularLink[] = [
   { href: "/부산매매등기법무사", label: "매매등기", group: "service" },
   { href: "/부산증여등기", label: "증여등기", group: "service" },
   { href: "/부산임차권등기명령", label: "임차권등기명령", group: "service" },
+  { href: "/부산가등기", label: "가등기", group: "service" },
+  { href: "/부산경매권리분석", label: "경매 권리분석", group: "service" },
   { href: "/부산가압류말소등기", label: "가압류 말소", group: "service" },
   { href: "/부산신탁등기", label: "신탁등기", group: "service" },
   { href: "/법률강의", label: "법률 강의", group: "lecture" },

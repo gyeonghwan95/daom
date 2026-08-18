@@ -48,6 +48,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/미성년상속인", label: "미성년 상속인" },
           { href: "/재혼가정상속", label: "재혼가정 상속" },
           { href: "/해외거주상속인", label: "해외 거주 상속인" },
+          { href: "/부산유언검인", label: "유언검인 신청 안내" },
           { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
           { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
           { href: "/임대인사망전세계약", label: "임대인 사망과 전세계약" },
@@ -255,6 +256,9 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/소유권이전등기서류", label: "소유권이전등기 필요서류 확인" },
           { href: "/faq/ownership-transfer-documents", label: "매매등기·증여등기 서류 FAQ" },
           { href: "/faq/jeonse-registration-faq", label: "전세권설정·말소등기 안내" },
+          { href: "/부산가등기", label: "부산 가등기 설정·말소" },
+          { href: "/부동산실권리자명의등기", label: "실권리자명의·진정명의회복" },
+          { href: "/부산경매권리분석", label: "경매 입찰 전 권리분석" },
         ],
       },
       {
@@ -534,7 +538,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
     ctaDescription:
       "후견·가사 사건은 가족 관계와 피성년·피후견인 상황에 따라 신청 요건이 달라집니다. 상담 시 기본 사실관계를 확인해드리겠습니다.",
     jurisdictionHref: "/부산가정법원상속",
-    documentsHref: "/contact",
+    documentsHref: "/성년후견자가진단",
     faqServiceSlugs: ["inheritance-renunciation", "qualified-acceptance"],
     relatedHubSlugs: ["상속"],
     sections: [
@@ -542,9 +546,9 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "후견·특별대리인",
         intro: "후견 개시는 가정법원 심판으로, 신청서와 증거 준비가 중요합니다.",
         links: [
-          { href: "/contact", label: "성년후견 신청서류 확인 상담" },
-          { href: "/contact", label: "한정후견·임의후견 절차 안내" },
-          { href: "/contact", label: "상속특별대리인·미성년자특별대리인 선임 상담" },
+          { href: "/성년후견자가진단", label: "성년후견 자가진단" },
+          { href: "/특별대리인자가진단", label: "특별대리인 자가진단" },
+          { href: "/미성년상속인", label: "미성년 상속인·특별대리" },
           { href: "/부산가정법원상속", label: "부산가정법원 가사 사건 안내" },
         ],
       },
@@ -552,9 +556,10 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "상속·가족관계",
         links: [
           { href: "/상속", label: "상속등기·포기·한정승인 허브 보기" },
+          { href: "/부산개명허가", label: "개명허가·성본변경 신청" },
+          { href: "/부산유언검인", label: "유언검인 신청 안내" },
           { href: "/services/inheritance-renunciation", label: "상속포기 가정법원 신고 안내" },
           { href: "/faq/inheritance-renunciation-family-effect", label: "상속포기 가족 효과 FAQ" },
-          { href: "/contact", label: "가족관계등록 정정·개명 신청 상담" },
         ],
         intro: "상속과 후견 절차가 겹치는 경우 순서를 함께 검토합니다.",
       },

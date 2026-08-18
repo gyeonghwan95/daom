@@ -84,7 +84,7 @@ export function FloatingNoticeHost() {
         void trackEvent({
           type: "notice_click",
           path,
-          meta: { noticeId: notice.id },
+          meta: { noticeId: notice.id, title: notice.title.slice(0, 80) },
         })
       }
     />

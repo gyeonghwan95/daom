@@ -116,9 +116,10 @@
     },
     {
       "query": "부산 상속포기 법무사",
-      "protected": false,
+      "protected": true,
       "targetChampion": "/부산상속포기",
-      "urls": []
+      "urls": [],
+      "candidateUrls": ["/부산상속포기"]
     },
     {
       "query": "부산 상속 법무사 추천",

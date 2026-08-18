@@ -81,4 +81,57 @@ export function trackNaverPlaceClick(input: {
   });
 }
 
+function sanitizeSearchQuery(raw: string): string {
+  const q = raw.trim().slice(0, 40);
+  if (!q) return "";
+  if (/@|\d{8,}/.test(q)) return "(filtered)";
+  return q;
+}
+
+/** 사이트 검색 결과 클릭·추천 링크. 질의는 40자 제한, 연락처 패턴은 저장하지 않음. */
+export function trackSearchUsed(input: {
+  query?: string;
+  hits?: number;
+  dest?: string;
+  kind?: "result" | "popular" | "all";
+}) {
+  const path =
+    typeof window !== "undefined" ? window.location.pathname : "/";
+  const dest = sanitizeOutboundHref(
+    input.dest,
+    typeof window !== "undefined" ? window.location.origin : undefined,
+  );
+  const meta: Record<string, string> = {
+    kind: input.kind || "result",
+  };
+  const q = sanitizeSearchQuery(input.query || "");
+  if (q) meta.q = q;
+  if (typeof input.hits === "number") meta.hits = String(input.hits);
+  if (dest) meta.dest = dest;
+  void trackEvent({ type: "search_used", path, meta });
+}
+
+export function trackToolUsed(toolSlug: string) {
+  const path =
+    typeof window !== "undefined" ? window.location.pathname : "/";
+  void trackEvent({
+    type: "tool_used",
+    path,
+    meta: { tool: String(toolSlug).slice(0, 80), kind: "calculator" },
+  });
+}
+
+export function trackDiagnosisComplete(input: {
+  slug: string;
+  risk?: string;
+}) {
+  const path =
+    typeof window !== "undefined" ? window.location.pathname : "/";
+  const meta: Record<string, string> = {
+    slug: String(input.slug).slice(0, 80),
+  };
+  if (input.risk) meta.risk = String(input.risk).slice(0, 40);
+  void trackEvent({ type: "diagnosis_complete", path, meta });
+}
+
 export { trackEvent };

@@ -263,6 +263,10 @@ export function ConsultationInquiryForm({
         website: honeypot,
         pageTitle: pageMeta.pageTitle,
         pageUrl: pageMeta.pageUrl,
+        analyticsMeta: {
+          kind: inquiryCluster === "corporate-legal" ? "corporate-legal" : "inquiry",
+          field: String(form.field || inquiryCluster || "").slice(0, 40),
+        },
       });
 
       if (result.ok) {

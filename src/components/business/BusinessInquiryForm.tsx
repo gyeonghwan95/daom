@@ -191,6 +191,10 @@ export function BusinessInquiryForm() {
         website: honeypot,
         pageTitle: pageMeta.pageTitle,
         pageUrl: pageMeta.pageUrl,
+        analyticsMeta: {
+          kind: "business",
+          field: String(form.workType || "").slice(0, 40),
+        },
       });
 
       if (result.ok) {

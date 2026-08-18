@@ -24,6 +24,9 @@ export type InflowItem = {
 
 const REGISTRY_HUB = "/부산등기법무사";
 const INHERITANCE_HUB = "/부산상속등기";
+const INHERITANCE_CHOICE = "/부산상속법무사";
+const RENUNCIATION_HUB = "/부산상속포기";
+const QUALIFIED_HUB = "/부산한정승인";
 const CORPORATE_HUB = "/부산법인등기";
 const OFFICE_HUB = "/부산법무사무소";
 
@@ -49,7 +52,7 @@ const LIBRARY: InflowItem[] = [
   {
     href: "/부산상속포기",
     label: "상속포기 3개월 기한 확인",
-    searchPhrase: "부산 상속포기",
+    searchPhrase: "부산 상속포기 법무사",
     reason: "등기와 별개 절차입니다. 기한이 있으면 먼저 상담하는 편이 안전합니다.",
   },
   {
@@ -152,6 +155,51 @@ function pushUnique(target: InflowItem[], item: InflowItem, current: string) {
   target.push(item);
 }
 
+function fillerHrefs(current: string): string[] {
+  if (current === BUSAN_LEGAL_SCRIVENER_CHAMPION) {
+    return [
+      REGISTRY_HUB,
+      INHERITANCE_HUB,
+      CORPORATE_HUB,
+      PERSONAL_REHABILITATION_CHAMPION,
+      COST_CHAMPION,
+      SELECTION_CHAMPION,
+    ];
+  }
+  if (current === REGISTRY_HUB) {
+    return [
+      BUSAN_LEGAL_SCRIVENER_CHAMPION,
+      REAL_ESTATE_CHAMPION,
+      INHERITANCE_HUB,
+      CORPORATE_HUB,
+      "/부산소유권이전등기",
+      SELECTION_CHAMPION,
+    ];
+  }
+  if (
+    current === INHERITANCE_CHOICE ||
+    current === INHERITANCE_HUB ||
+    current === RENUNCIATION_HUB ||
+    current === QUALIFIED_HUB
+  ) {
+    return [
+      BUSAN_LEGAL_SCRIVENER_CHAMPION,
+      INHERITANCE_CHOICE,
+      RENUNCIATION_HUB,
+      QUALIFIED_HUB,
+      INHERITANCE_HUB,
+      COST_CHAMPION,
+    ];
+  }
+  return [
+    BUSAN_LEGAL_SCRIVENER_CHAMPION,
+    REGISTRY_HUB,
+    LEGAL_CONSULTATION_CHAMPION,
+    COST_CHAMPION,
+    OFFICE_HUB,
+  ];
+}
+
 /** 현재 경로에서 이탈하지 않고 대표 페이지로 이어 주는 링크 */
 export function getInflowItemsForPath(pathname: string): InflowItem[] {
   const current = normalizePath(pathname);
@@ -175,34 +223,7 @@ export function getInflowItemsForPath(pathname: string): InflowItem[] {
     if (items.length >= 4) break;
   }
 
-  const fillers =
-    current === BUSAN_LEGAL_SCRIVENER_CHAMPION
-      ? [
-          REGISTRY_HUB,
-          INHERITANCE_HUB,
-          CORPORATE_HUB,
-          PERSONAL_REHABILITATION_CHAMPION,
-          COST_CHAMPION,
-          SELECTION_CHAMPION,
-        ]
-      : current === REGISTRY_HUB
-        ? [
-            BUSAN_LEGAL_SCRIVENER_CHAMPION,
-            REAL_ESTATE_CHAMPION,
-            INHERITANCE_HUB,
-            CORPORATE_HUB,
-            "/부산소유권이전등기",
-            SELECTION_CHAMPION,
-          ]
-        : [
-            BUSAN_LEGAL_SCRIVENER_CHAMPION,
-            REGISTRY_HUB,
-            LEGAL_CONSULTATION_CHAMPION,
-            COST_CHAMPION,
-            OFFICE_HUB,
-          ];
-
-  for (const href of fillers) {
+  for (const href of fillerHrefs(current)) {
     pushUnique(items, fallbackItem(href), current);
     if (items.length >= 6) break;
   }
@@ -215,6 +236,7 @@ export const PREFETCH_CHAMPION_PATHS = [
   BUSAN_LEGAL_SCRIVENER_CHAMPION,
   REGISTRY_HUB,
   INHERITANCE_HUB,
+  RENUNCIATION_HUB,
   CORPORATE_HUB,
   REAL_ESTATE_CHAMPION,
   PERSONAL_REHABILITATION_CHAMPION,

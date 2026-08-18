@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackSearchUsed } from "@/lib/admin-ops/track-client";
 import { SEARCH_POPULAR_LINKS } from "@/lib/search/popular-links";
 
 type SearchPopularLinksProps = {
@@ -45,7 +46,14 @@ export function SearchPopularLinks({ onNavigate }: SearchPopularLinksProps) {
                 <li key={`${group.key}-${link.href}`}>
                   <Link
                     href={link.href}
-                    onClick={onNavigate}
+                    onClick={() => {
+                      trackSearchUsed({
+                        query: link.label,
+                        dest: link.href,
+                        kind: "popular",
+                      });
+                      onNavigate?.();
+                    }}
                     className="inline-flex rounded-lg border border-beige-dark bg-cream/60 px-3 py-1.5 text-xs font-medium text-navy no-underline transition-colors hover:border-navy/25 hover:bg-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
                   >
                     {link.label}

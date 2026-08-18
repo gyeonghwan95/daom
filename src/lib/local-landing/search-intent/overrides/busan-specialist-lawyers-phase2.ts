@@ -305,7 +305,7 @@ export const 부산상속포기전문법무사Override = createSpecialistPage({
     "결과는 개별 사정에 따라 달라지며 보장을 단정하지 않습니다.",
   ],
   serviceSlug: "inheritance-renunciation",
-  keywords: ["부산 상속포기", "부산 상속포기 법무사", "부산 한정승인", "부산 상속전문 법무사"],
+  keywords: ["부산 상속포기", "부산 한정승인", "부산 상속등기", "가정법원 상속포기"],
   whenNeeded: [
     "채무가 많아 상속포기를 먼저 검토하려는 경우",
     "3개월 기한 안에 신고 여부를 확인하려는 경우",

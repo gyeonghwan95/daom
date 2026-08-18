@@ -175,6 +175,10 @@ export function LectureInquiryForm() {
         website: honeypot,
         pageTitle: pageMeta.pageTitle,
         pageUrl: pageMeta.pageUrl,
+        analyticsMeta: {
+          kind: "lecture",
+          topic: String(topic).slice(0, 40),
+        },
       });
 
       if (result.ok) {

@@ -51,6 +51,11 @@ export function buildBusanInheritanceRegistrationPage(
       answer:
         "위임·공증·인증이 추가되는 경우가 많습니다. 입국 없이도 진행 가능한지, 어떤 서류가 필요한지는 거주국에 따라 달라집니다.",
     },
+    {
+      question: "자필 유언이 있으면 바로 상속등기를 하나요?",
+      answer:
+        "자필·녹음 유언은 가정법원 검인이 선행되는 경우가 많습니다. 유언검인 안내에서 방식과 서류를 확인한 뒤 등기 원인을 맞춥니다.",
+    },
   ];
 
   return {
@@ -167,6 +172,7 @@ export function buildBusanInheritanceRegistrationPage(
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산한정승인", label: "부산 한정승인" },
       { href: "/부산상속포기", label: "부산 상속포기" },
+      { href: "/부산유언검인", label: "유언검인 신청 안내" },
       { href: "/해외거주상속인", label: "해외 거주 상속인" },
       { href: "/상속등기자가진단", label: "상속등기 자가진단" },
       { href: "/contact/inquiry?field=inheritance-registration", label: "상속 절차 먼저 확인하기" },

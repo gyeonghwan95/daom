@@ -680,6 +680,11 @@ export const keywordTopics: Record<string, KeywordTopic> = {
         answer: "근저당으로 담보하는 채무의 상한액입니다. 실제 대출원금보다 높게 설정되는 경우가 많습니다.",
       },
       {
+        question: "담보가등기와 근저당은 같은가요?",
+        answer:
+          "다릅니다. 이 페이지는 근저당권 설정이고, 가등기는 본등기 순위 보전 또는 담보가등기일 수 있습니다. 가등기 안내에서 종류를 가릅니다.",
+      },
+      {
         question: "근저당설정등기 기간은?",
         answer: "서류가 준비되면 접수 후 수일 내 완료되는 경우가 많습니다. 은행 서류 수령 일정이 관건입니다.",
       },
@@ -701,6 +706,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedKeywordLinks: [
       { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
+      { href: "/부산가등기", label: "가등기 설정·말소" },
       sharedKeywordLinks.mortgageCancel,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.realEstateLawyer,
@@ -800,6 +806,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedKeywordLinks: [
       { href: "/부산등기법무사", label: "등기 종류별 안내" },
+      { href: "/부산가등기", label: "가등기 말소" },
       sharedKeywordLinks.mortgageSetup,
       sharedKeywordLinks.ownership,
       sharedKeywordLinks.realEstateLawyer,

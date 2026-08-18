@@ -18,6 +18,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { RecommendationGroups } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
+import { trackToolUsed } from "@/lib/admin-ops/track-client";
 import {
   getToolBySlug,
   runToolCalculator,
@@ -65,6 +66,7 @@ export function ToolCalculatorView({
 
   function handleCalculate() {
     setResult(runToolCalculator(calculatorType, input));
+    trackToolUsed(slug);
   }
 
   function handleReset() {

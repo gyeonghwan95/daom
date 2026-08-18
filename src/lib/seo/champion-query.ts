@@ -3,7 +3,31 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 /** 「부산 법무사」 exact-match는 `/부산법무사` 한 곳만 메타·키워드로 가져간다. */
 export const BUSAN_LAWYER_CHAMPION_PATH = "/부산법무사" as const;
 
+/** 「부산 상속포기 법무사」 exact-match는 `/부산상속포기` 한 곳만 가져간다. */
+export const BUSAN_RENUNCIATION_CHAMPION_PATH = "/부산상속포기" as const;
+
 export const BUSAN_LAWYER_EXACT_QUERIES = ["부산 법무사", "부산법무사"] as const;
+
+export const BUSAN_RENUNCIATION_EXACT_QUERIES = [
+  "부산 상속포기 법무사",
+  "부산상속포기법무사",
+] as const;
+
+type ExactKeywordChampion = {
+  path: string;
+  compactQueries: readonly string[];
+};
+
+const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
+  {
+    path: BUSAN_LAWYER_CHAMPION_PATH,
+    compactQueries: ["부산법무사"],
+  },
+  {
+    path: BUSAN_RENUNCIATION_CHAMPION_PATH,
+    compactQueries: ["부산상속포기법무사"],
+  },
+];
 
 /** 유입 레일·significantLink를 둘 허브만. 동·사례 전 페이지에 동일 블록을 두지 않는다. */
 export const INFLOW_RAIL_ALLOWLIST = new Set<string>([
@@ -19,6 +43,8 @@ export const INFLOW_RAIL_ALLOWLIST = new Set<string>([
   "/재송동법무사",
   "/부산상속법무사",
   "/부산상속등기",
+  "/부산상속포기",
+  "/부산한정승인",
   "/부산부동산등기",
   "/부산법인법무사",
   "/부산법인등기",
@@ -36,9 +62,16 @@ export function normalizeSeoPath(raw: string): string {
   return decoded.startsWith("/") ? decoded : `/${decoded}`;
 }
 
+function compactQuery(value: string): string {
+  return value.replace(/\s+/g, "");
+}
+
 export function isBusanLawyerExactQuery(value: string): boolean {
-  const compact = value.replace(/\s+/g, "");
-  return compact === "부산법무사";
+  return compactQuery(value) === "부산법무사";
+}
+
+export function isBusanRenunciationExactQuery(value: string): boolean {
+  return compactQuery(value) === "부산상속포기법무사";
 }
 
 export function allowsBusanLawyerExactKeywords(path: string): boolean {
@@ -54,9 +87,14 @@ export function sanitizePageKeywords(
   keywords: readonly string[] | undefined,
 ): string[] | undefined {
   if (!keywords || keywords.length === 0) return undefined;
-  if (allowsBusanLawyerExactKeywords(path)) {
-    return [...keywords];
-  }
-  const filtered = keywords.filter((item) => !isBusanLawyerExactQuery(item));
+  const normalized = normalizeSeoPath(path);
+  const filtered = keywords.filter((item) => {
+    const compact = compactQuery(item);
+    const rule = EXACT_KEYWORD_CHAMPIONS.find((row) =>
+      row.compactQueries.includes(compact),
+    );
+    if (!rule) return true;
+    return normalized === rule.path;
+  });
   return filtered.length > 0 ? filtered : undefined;
 }

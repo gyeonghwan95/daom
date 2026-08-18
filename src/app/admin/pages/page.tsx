@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { getPageDisplayName } from "@/lib/admin/url-display";
+import { formatDeviceSplit } from "@/lib/admin/device-label";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type Row = {
@@ -16,6 +17,10 @@ type Row = {
   consultSubmit: number;
   naverPlace: number;
   conversionRate: number | null;
+  mobileToday?: number;
+  desktopToday?: number;
+  mobile30d?: number;
+  desktop30d?: number;
 };
 
 const TREND_LABEL: Record<string, string> = {
@@ -65,6 +70,7 @@ export default function AdminPagesPage() {
       <AdminPageHeader title="페이지 성과" />
       <p className="admin-prose">
         오늘 · 7일 · 30일(KST) 페이지뷰(조회 수). 전환율은 문의 제출 ÷ 페이지뷰입니다.
+        기기는 화면 너비 768px 기준으로 모바일/PC를 구분합니다.
       </p>
       {message ? <p className="admin-alert admin-alert--info">{message}</p> : null}
 
@@ -88,8 +94,10 @@ export default function AdminPagesPage() {
               <tr>
                 <th>페이지</th>
                 <th>오늘</th>
+                <th>오늘 기기</th>
                 <th>7일</th>
                 <th>30일</th>
+                <th>30일 기기</th>
                 <th>상태</th>
                 <th>CTA</th>
                 <th>문의</th>
@@ -104,8 +112,10 @@ export default function AdminPagesPage() {
                     <PageIdentity path={r.path} />
                   </td>
                   <td>{r.visitsToday}</td>
+                  <td>{formatDeviceSplit(r.mobileToday, r.desktopToday)}</td>
                   <td>{r.visits7d}</td>
                   <td>{r.visits30d}</td>
+                  <td>{formatDeviceSplit(r.mobile30d, r.desktop30d)}</td>
                   <td>
                     <span className={`admin-badge admin-badge--${r.trend}`}>
                       {TREND_LABEL[r.trend] || r.trend}

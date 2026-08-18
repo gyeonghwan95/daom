@@ -43,6 +43,8 @@ export type SearchIntentContent = {
   relatedCaseLinks: { href: string; label: string }[];
   relatedServiceLinks: { href: string; label: string }[];
   relatedGuideLinks: { href: string; label: string }[];
+  /** 검색의도 페이지 브레드크럼 상위(미지정 시 검색의도 안내) */
+  breadcrumbParent?: { href: string; label: string };
   bottomCtaText: string;
   serviceSlug: string;
   /** 비대면 상속 절차 안내 컴포넌트 표시 */

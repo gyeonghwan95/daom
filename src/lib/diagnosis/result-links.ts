@@ -16,7 +16,7 @@ const RESULT_LINK_PACKS: Record<string, DiagnosisResultLinkPack> = {
     faq: { href: "/faq/inheritance-registration-cost", label: "상속등기 비용 FAQ" },
   },
   상속포기자가진단: {
-    service: { href: "/services/inheritance-renunciation", label: "상속포기 업무 안내" },
+    service: { href: "/부산상속포기", label: "부산 상속포기 안내" },
     cost: { href: "/상속등기비용", label: "상속 관련 비용" },
     documents: { href: "/상속등기필요서류", label: "상속 관련 필요서류" },
     faq: { href: "/faq/inheritance-renunciation-family-effect", label: "상속포기 FAQ" },
@@ -100,16 +100,16 @@ const RESULT_LINK_PACKS: Record<string, DiagnosisResultLinkPack> = {
     faq: { href: "/faq", label: "공탁 FAQ" },
   },
   성년후견자가진단: {
-    service: { href: "/contact", label: "성년후견 업무 상담" },
+    service: { href: "/가족후견", label: "성년후견·가사비송 허브" },
     cost: { href: "/부산법무사비용", label: "성년후견 비용" },
-    documents: { href: "/contact", label: "성년후견 필요서류 상담" },
-    faq: { href: "/faq", label: "성년후견 FAQ" },
+    documents: { href: "/가족후견", label: "후견·가사 신청 전 안내" },
+    faq: { href: "/가족후견", label: "후견·가사 안내" },
   },
   특별대리인자가진단: {
-    service: { href: "/contact", label: "특별대리인 업무 상담" },
+    service: { href: "/가족후견", label: "성년후견·가사비송 허브" },
     cost: { href: "/부산법무사비용", label: "특별대리인 비용" },
-    documents: { href: "/contact", label: "특별대리인 필요서류 상담" },
-    faq: { href: "/faq", label: "특별대리인 FAQ" },
+    documents: { href: "/가족후견", label: "특별대리 신청 전 안내" },
+    faq: { href: "/가족후견", label: "후견·가사 안내" },
   },
   선박등기자가진단: {
     service: { href: "/contact", label: "선박등기 업무 상담" },

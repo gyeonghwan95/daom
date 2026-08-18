@@ -12,11 +12,16 @@ import type { BriefingData, Opportunity, OpportunityChange } from "./types";
 import { daysUntil, escapeHtml, formatAmount, maskEmail } from "./util";
 
 export function buildSubject(data: BriefingData): string {
-  const { priorityCount, candidateTotal, changedCount } = {
+  const { priorityCount, candidateTotal, changedCount, fetchedTotal, failedSources } = {
     priorityCount: data.summary.priorityCount,
     candidateTotal: data.summary.candidateTotal,
     changedCount: data.summary.changedCount,
+    fetchedTotal: data.summary.fetchedTotal,
+    failedSources: data.summary.failedSources,
   };
+  if (failedSources.length > 0 && fetchedTotal === 0) {
+    return "[다옴 입찰브리핑] 수집 실패 — 점검 필요";
+  }
   if (candidateTotal === 0) {
     const changed = changedCount > 0 ? ` · 변경 ${changedCount}건` : "";
     return `[다옴 입찰브리핑] 신규 적합 공고 없음${changed}`;
@@ -47,8 +52,8 @@ function textItem(opp: Opportunity, index: number): string {
   return lines.join("\n");
 }
 
-function textSection(title: string, items: Opportunity[]): string {
-  if (items.length === 0) return "";
+function textSection(title: string, items?: Opportunity[]): string {
+  if (!items?.length) return "";
   return [
     "",
     `── ${title} (${items.length}건) ──`,
@@ -74,6 +79,8 @@ export function renderText(data: BriefingData): string {
   parts.push(textSection("오늘 우선 검토", data.priorityItems));
   parts.push(textSection("직접 입찰 후보", data.directBidItems));
   parts.push(textSection("등기 수임 잠재정보", data.registrationLeads));
+  parts.push(textSection("법인등기 후보", data.corporateItems));
+  parts.push(textSection("회생·민사서류·공탁", data.courtDocumentItems));
   parts.push(textSection("복대리·협업 후보", data.collaborationItems));
   parts.push(textSection("법률 강의·전문가 모집", data.lectureItems));
   parts.push(textSection("경매·공매·시장 참고정보", data.marketSignals));
@@ -158,8 +165,8 @@ function htmlItem(opp: Opportunity): string {
 </div>`;
 }
 
-function htmlSection(title: string, items: Opportunity[]): string {
-  if (items.length === 0) return "";
+function htmlSection(title: string, items?: Opportunity[]): string {
+  if (!items?.length) return "";
   return `<h2 style="${STYLE.h2}">${escapeHtml(title)} (${items.length}건)</h2>${items.map(htmlItem).join("")}`;
 }
 
@@ -230,9 +237,16 @@ export function renderHtml(data: BriefingData): string {
       <li>마감 임박(7일 이내) ${s.deadlineSoonCount}건 · 정정·취소·변경 ${s.changedCount}건</li>
       ${failedHtml}
     </ul>
+    ${
+      s.failedSources.length && s.fetchedTotal === 0
+        ? `<div style="margin:16px 0;padding:12px 14px;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;color:#991b1b;font-size:13px;line-height:1.7;">수집이 실패했습니다. GitHub Actions 시크릿(G2B_SERVICE_KEY)과 공공데이터포털 활용신청(나라장터·누리장터)을 확인해 주세요. 아침 재시도에서 복구되면 정상 브리핑이 발송됩니다.</div>`
+        : ""
+    }
     ${htmlSection("오늘 우선 검토", data.priorityItems)}
     ${htmlSection("직접 입찰 후보", data.directBidItems)}
     ${htmlSection("등기 수임 잠재정보", data.registrationLeads)}
+    ${htmlSection("법인등기 후보", data.corporateItems)}
+    ${htmlSection("회생·민사서류·공탁", data.courtDocumentItems)}
     ${htmlSection("복대리·협업 후보", data.collaborationItems)}
     ${htmlSection("법률 강의·전문가 모집", data.lectureItems)}
     ${htmlSection("경매·공매·시장 참고정보", data.marketSignals)}
@@ -268,7 +282,7 @@ export async function sendBriefingEmail(data: BriefingData): Promise<EmailResult
     };
   }
 
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetchWithRetry("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -291,4 +305,15 @@ export async function sendBriefingEmail(data: BriefingData): Promise<EmailResult
     };
   }
   return { sent: true, detail: `발송 완료 → ${maskEmail(to.split(",")[0])}` };
+}
+
+async function fetchWithRetry(url: string, init: RequestInit, attempts = 3): Promise<Response> {
+  let last: Response | undefined;
+  for (let i = 0; i < attempts; i += 1) {
+    last = await fetch(url, init);
+    if (last.ok) return last;
+    if (last.status < 500 && last.status !== 429) return last;
+    await new Promise((r) => setTimeout(r, 1000 * 2 ** i));
+  }
+  return last!;
 }

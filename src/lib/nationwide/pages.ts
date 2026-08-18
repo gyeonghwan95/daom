@@ -417,6 +417,11 @@ export function buildNationwideBequestPageData(): PageData {
           "포괄유증은 재산의 전부·일부 비율을, 특정유증은 특정 재산을 지정하는 형태입니다. 등기 원인과 첨부서류가 달라질 수 있습니다.",
       },
       {
+        question: "자필 유언은 검인이 필요한가요?",
+        answer:
+          "자필·녹음 유언은 가정법원 검인이 선행되는 경우가 많습니다. 검인 서류는 유언검인 안내에서, 검인 후 유증 이전은 이 페이지에서 다룹니다.",
+      },
+      {
         question: "유언공정증서가 있으면 절차가 단순해지나요?",
         answer:
           "형식 증명에 도움이 되는 경우가 많지만, 등기부와 수증자 확인은 여전히 필요합니다.",
@@ -483,6 +488,7 @@ export function buildNationwideBequestPageData(): PageData {
       "유증등기 관할 특례",
     ],
     internalLinks: [
+      { href: "/부산유언검인", label: "유언검인 신청 안내" },
       { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/services/inheritance-registration", label: "상속등기 절차" },

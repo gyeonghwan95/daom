@@ -134,6 +134,23 @@ test("무관 공고는 후보 제외", () => {
   assert.ok(!isCandidate(cls));
 });
 
+test("개인회생 상담 용역은 후보", () => {
+  const cls = classifyNotice(makeNotice({ title: "개인회생 신청 상담 및 서류 지원 용역" }));
+  assert.equal(cls.category, "debt-court-document");
+  assert.ok(isCandidate(cls));
+});
+
+test("법인 설립 등기 대행은 후보", () => {
+  const cls = classifyNotice(makeNotice({ title: "사회적경제기업 법인 설립 등기 대행 용역" }));
+  assert.equal(cls.category, "corporate");
+  assert.ok(isCandidate(cls));
+});
+
+test("상속포기·한정승인 지원은 후보", () => {
+  const cls = classifyNotice(makeNotice({ title: "상속포기 및 한정승인 신청 지원 용역" }));
+  assert.ok(isCandidate(cls));
+});
+
 test("제외 키워드: 법무법인 한정은 표시하되 삭제하지 않음", () => {
   const cls = classifyNotice(
     makeNotice({ title: "소송업무 수행 법무법인 선정 (법무법인에 한함)" }),
@@ -392,11 +409,19 @@ function emptyBriefing(): BriefingData {
     registrationLeads: [],
     collaborationItems: [],
     lectureItems: [],
+    courtDocumentItems: [],
+    corporateItems: [],
     marketSignals: [],
     changedItems: [],
     runs: [],
   };
 }
+
+test("수집 전부 실패 제목", () => {
+  const data = emptyBriefing();
+  data.summary.failedSources = ["G2B_SERVICE_KEY"];
+  assert.equal(buildSubject(data), "[다옴 입찰브리핑] 수집 실패 — 점검 필요");
+});
 
 test("신규 공고 없음 제목", () => {
   assert.equal(buildSubject(emptyBriefing()), "[다옴 입찰브리핑] 신규 적합 공고 없음");

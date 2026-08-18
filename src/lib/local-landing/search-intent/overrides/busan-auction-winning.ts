@@ -110,7 +110,7 @@ export const 부산경매낙찰등기Override: SearchIntentContent = {
     {
       question: "권리분석도 해 주나요?",
       answer:
-        "이 페이지의 안내는 낙찰 이후 등기 실무입니다. 입찰 전 권리분석·입찰 판단은 범위가 다르며, 필요 시 별도 상담으로 가능 여부를 안내합니다.",
+        "이 페이지의 안내는 낙찰 이후 등기 실무입니다. 입찰 전 등기부·말소기준권리 확인은 경매 권리분석 안내에서 다룹니다. 입찰 여부는 권하지 않습니다.",
     },
     {
       question: "비용은 어떤 항목으로 나뉘나요?",
@@ -125,6 +125,7 @@ export const 부산경매낙찰등기Override: SearchIntentContent = {
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
+    { href: "/부산경매권리분석", label: "부산 경매 권리분석" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
     { href: "/부산매매등기법무사", label: "부산 매매등기 법무사" },
     { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },

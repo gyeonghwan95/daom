@@ -69,5 +69,6 @@ export function buildSearchIntentPage(
     relatedBlogHrefs: [],
     relatedServiceLinks: content.relatedServiceLinks,
     relatedRegionLinks: content.relatedGuideLinks,
+    breadcrumbParent: content.breadcrumbParent,
   };
 }

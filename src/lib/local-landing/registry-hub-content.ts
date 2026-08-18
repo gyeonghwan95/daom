@@ -102,10 +102,11 @@ export const registryHubSituations: RegistryHubSituation[] = [
 export const registryHubWorkAreas: RegistryHubWorkArea[] = [
   {
     title: "부동산등기",
-    items: ["소유권이전", "증여", "근저당", "전세권", "보존등기"],
+    items: ["소유권이전", "증여", "근저당", "전세권", "보존등기", "가등기"],
     links: [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산소유권이전등기", label: "소유권이전등기" },
+      { href: "/부산가등기", label: "가등기" },
       { href: "/부산신축건물보존등기", label: "신축 보존등기" },
     ],
   },
@@ -241,12 +242,17 @@ export const registryHubFaqs: ServiceFaq[] = [
     answer:
       "상담부터 신청까지 진행할 수 있는 사건이 있습니다. 부동산 소재지·법인 본점에 따라 관할 등기소가 달라지므로, 주소를 알려 주시면 접수 방법을 안내합니다.",
   },
-  {
-    question: "등기비용은 무엇에 따라 달라지나요?",
-    answer:
-      "등기 종류, 부동산 가액, 상속인 수, 법인 변경 항목, 말소·설정 동반 여부에 따라 달라집니다. 법무사 수임료와 등록면허세·취득세 등 공과금은 구분해 안내합니다.",
-  },
-];
+    {
+      question: "등기비용은 무엇에 따라 달라지나요?",
+      answer:
+        "등기 종류, 부동산 가액, 상속인 수, 법인 변경 항목, 말소·설정 동반 여부에 따라 달라집니다. 법무사 수임료와 등록면허세·취득세 등 공과금은 구분해 안내합니다.",
+    },
+    {
+      question: "가등기·지상권·대지권도 등기업무인가요?",
+      answer:
+        "가등기 설정·말소는 가등기 안내에서, 집합건물의 대지권은 집합건물등기 허브에서 확인하시면 됩니다. 이 페이지는 어떤 등기인지 가른 뒤 해당 안내로 연결합니다.",
+    },
+  ];
 
 export const registryHubInternalLinks: RegistryHubLink[] = [
   { href: "/부산부동산등기", label: "부산 부동산등기" },
@@ -256,6 +262,9 @@ export const registryHubInternalLinks: RegistryHubLink[] = [
   { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
   { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
   { href: "/부산신축건물보존등기", label: "부산 신축건물 보존등기" },
+  { href: "/부산가등기", label: "부산 가등기" },
+  { href: "/부동산실권리자명의등기", label: "실권리자명의등기" },
+  { href: "/부산경매권리분석", label: "부산 경매 권리분석" },
   { href: "/등기비용", label: "등기비용" },
   { href: "/부산등기법무사추천", label: "등기 법무사 선택 기준" },
   { href: "/부산지방법원등기국", label: "부산지방법원 등기국" },

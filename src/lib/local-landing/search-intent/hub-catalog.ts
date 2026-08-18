@@ -37,7 +37,7 @@ const EXISTING_GUIDE_ENTRIES: SearchGuideEntry[] = [
   { label: "부산 한정승인 업무 안내", href: "/부산한정승인전문법무사", category: "expertise" },
   { label: "부산 회생 업무 안내", href: "/부산회생전문법무사", category: "expertise" },
   { label: "부산 파산 업무 안내", href: "/부산파산전문법무사", category: "expertise" },
-  { label: "부산 상속포기 업무 안내", href: "/부산상속포기전문법무사", category: "expertise" },
+  { label: "부산 상속포기 업무 안내", href: "/부산상속포기", category: "expertise" },
   { label: "부산 증여등기전문 법무사", href: "/부산증여등기전문법무사", category: "expertise" },
   { label: "부산 법인설립전문 법무사", href: "/부산법인설립전문법무사", category: "expertise" },
   { label: "부산 부동산전문 법무사", href: "/부산부동산전문법무사", category: "expertise" },

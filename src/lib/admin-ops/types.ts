@@ -19,6 +19,8 @@ export type AnalyticsEventType =
   | "notice_click"
   | "notice_dismiss"
   | "search_used"
+  | "tool_used"
+  | "diagnosis_complete"
   | "naver_place_click";
 
 export type AnalyticsEventInput = {
@@ -128,6 +130,8 @@ export type DailyPathStats = {
   naver: number;
   consultStart: number;
   consultSubmit: number;
+  mobile?: number;
+  desktop?: number;
 };
 
 export type DailyAggregate = {
@@ -178,6 +182,8 @@ export type DashboardPayload = {
     cta: number;
     consultSubmit?: number;
     naverPlace?: number;
+    mobile?: number;
+    desktop?: number;
   }>;
   visitsByDay: Array<{
     date: string;
@@ -186,6 +192,8 @@ export type DashboardPayload = {
     submits: number;
     cta?: number;
     naverPlace?: number;
+    mobile?: number;
+    desktop?: number;
   }>;
   emailRecent: EmailLogEntry[];
   activeNotices: FloatingNotice[];
@@ -221,6 +229,7 @@ export type DashboardPayload = {
     path: string;
     eventType: string;
     referrerType: string;
+    deviceType?: "mobile" | "desktop" | "unknown";
     meta?: Record<string, string>;
   }>;
   funnelToday?: {

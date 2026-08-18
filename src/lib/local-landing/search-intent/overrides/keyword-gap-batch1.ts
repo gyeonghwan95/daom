@@ -414,7 +414,7 @@ export const 유류분과상속등기Override: SearchIntentContent = {
       href: "/glossary/statutory-reserve-share",
       label: "유류분 용어 안내",
     },
-    { href: "/부산법무사", label: "부산 법무사 안내" },
+    { href: "/부산유언검인", label: "유언검인 신청 안내" },
   ],
   relatedGuideLinks: [inheritanceConsult],
   bottomCtaText:

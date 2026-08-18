@@ -1290,7 +1290,7 @@ export const 부산등기명의인표시변경Override = buildRemainingRealEstat
     {
       question: "개명한 경우 어떤 서류가 필요한가요?",
       answer:
-        "개명 전후가 연결되는 기본증명서 등 변경 사실을 확인할 자료가 필요할 수 있습니다.",
+        "가정법원 개명허가가 선행되는 경우가 많습니다. 허가 후 등기부 성명 표시는 이 페이지의 표시변경입니다. 개명허가 안내를 함께 보세요.",
     },
     {
       question: "법인 상호 변경도 부동산등기가 필요한가요?",
@@ -1321,6 +1321,7 @@ export const 부산등기명의인표시변경Override = buildRemainingRealEstat
   serviceSlug: "real-estate-registration",
   relatedServiceLinks: [
     { href: "/부산명의변경등기", label: "명의변경등기와 구분" },
+    { href: "/부산개명허가", label: "개명허가 신청 안내" },
     { href: "/부산소유권이전등기", label: "소유권이전등기" },
     { href: "/부산매매등기법무사", label: "매매 전 표시 확인" },
     { href: "/부산법인등기", label: "법인등기 안내" },
@@ -1408,7 +1409,7 @@ export const 부산공매낙찰등기Override = buildRemainingRealEstateContent(
     {
       question: "권리분석을 보장하나요?",
       answer:
-        "아닙니다. 이 페이지는 낙찰 이후 등기 실무 중심 안내입니다. 입찰 전 판단은 별도 검토가 필요합니다.",
+        "아닙니다. 이 페이지는 공매 낙찰 이후 등기 실무입니다. 법원 경매 입찰 전 등기부 확인은 경매 권리분석 안내를 보세요. 공매는 절차·기관이 다를 수 있습니다.",
     },
     {
       question: "비용은 어떻게 나뉘나요?",
@@ -1424,6 +1425,7 @@ export const 부산공매낙찰등기Override = buildRemainingRealEstateContent(
   serviceSlug: "ownership-transfer",
   relatedServiceLinks: [
     { href: "/부산경매낙찰등기", label: "경매 낙찰등기" },
+    { href: "/부산경매권리분석", label: "법원 경매 입찰 전 권리분석" },
     { href: "/부산소유권이전등기", label: "소유권이전등기" },
     { href: "/부산근저당설정등기", label: "근저당 설정등기" },
     { href: "/취득세", label: "취득세 안내" },
@@ -1514,6 +1516,11 @@ export const 부산신탁등기Override = buildRemainingRealEstateContent({
         "신탁 방식으로 사업이 진행되는 경우가 있어 등기와 계약 구조를 함께 확인해야 합니다.",
     },
     {
+      question: "유언대용신탁과 유언검인은 같은가요?",
+      answer:
+        "아닙니다. 신탁등기는 신탁계약·원부 구조이고, 자필 유언의 가정법원 검인은 별도 절차입니다. 유언검인 안내를 함께 보시면 됩니다.",
+    },
+    {
       question: "분쟁이 있으면 법무사가 대리하나요?",
       answer:
         "이 페이지는 등기 실무 안내입니다. 분쟁·소송대리가 필요한 사안은 별도 법률 검토가 필요할 수 있습니다.",
@@ -1529,6 +1536,7 @@ export const 부산신탁등기Override = buildRemainingRealEstateContent({
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산매매등기법무사", label: "신탁부동산 매매등기" },
     { href: "/부산근저당말소등기", label: "담보 말소 관련" },
+    { href: "/부산유언검인", label: "유언검인 신청 안내" },
     { href: "/특수등기의뢰", label: "특수 등기 의뢰" },
   ],
 });
