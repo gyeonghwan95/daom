@@ -29,7 +29,9 @@ export type PageRelationEntry = {
   notes?: string;
 };
 
-/** Broad provider-selection — SEO_PROTECTED, do not change title/H1 */
+export const HOME_BROAD_CHAMPION = "/" as const;
+
+/** Supporting guide — 업무·비용·선택 기준. Broad query champion is HOME. */
 export const BUSAN_LEGAL_SCRIVENER_CHAMPION = "/부산법무사";
 
 /** Provider + operations broad intent — 동일 URL, title/H1 불변 */
@@ -124,7 +126,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
   },
   {
     path: BUSAN_LEGAL_SCRIVENER_CHAMPION,
-    role: "BUSAN_MAIN_CHAMPION",
+    role: "HUB",
     region: ["부산"],
     services: ["inheritance", "real-estate", "corporate", "rehab", "civil"],
     situations: ["provider-selection", "unknown-task"],
@@ -138,7 +140,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
       "/센텀법무사",
     ],
     notes:
-      "SEO_PROTECTED / BUSAN_GENERAL_CHAMPION. Queries: 부산 법무사, 부산 법무사 추천. title/H1/canonical immutable.",
+      "Supporting guide for 업무·비용·선택 기준. Broad query 「부산 법무사」 champion is HOME `/`.",
   },
   {
     path: BUSAN_CORPORATE_CHAMPION,
@@ -186,7 +188,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
     role: "SELECTION_CHAMPION",
     situations: ["provider-selection", "recommendation-research"],
     notes:
-      "Spoke only. 「부산 법무사 추천」 Primary Champion은 /부산법무사. 이 URL은 선택 기준 상세 Spoke. No self-recommendation spam.",
+      "Spoke only. 「부산 법무사 추천」 Primary Champion은 `/부산법무사추천`. `/부산법무사`는 업무·선택 안내.",
     relatedPages: [
       "/부산법무사비교",
       "/부산법무사상담",
@@ -207,7 +209,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
       "/부산법인법무사",
     ],
     notes:
-      "BUSAN_LEGAL_CONSULTATION_CHAMPION. Distinct from /부산법무사 (office+services). title/H1 guarded.",
+      "BUSAN_LEGAL_CONSULTATION_CHAMPION. City-wide consult hub. Distinct from /부산법무사 and station pages. URL immutable.",
   },
   {
     path: JEONSE_DAMAGE_CHAMPION,
@@ -391,7 +393,7 @@ export function getLocalChampionForQuery(query: string): string | undefined {
     if (terms.some((t) => q.includes(t))) return cfg.primaryHost;
   }
   if (/부산\s*법무사/.test(q) && !/비용|수임|저렴|추천|은행|등기|잔금|근저당/.test(q)) {
-    return BUSAN_LEGAL_SCRIVENER_CHAMPION;
+    return HOME_BROAD_CHAMPION;
   }
   if (/부산.*(비용|수임|저렴)/.test(q)) return COST_CHAMPION;
   if (/부산.*추천/.test(q)) return SELECTION_CHAMPION;
@@ -419,13 +421,13 @@ export function getChampionForTargetQuery(query: string): {
     "양정역 법무사": { champion: "/양정동법무사", intent: "station-local-selection" },
     "복산동 법무사": { champion: "/동래구법무사", intent: "local-provider-selection" },
     "동래 복산동 법무사": { champion: "/동래구법무사", intent: "local-alias-selection" },
-    "부산 법무사": { champion: BUSAN_LEGAL_SCRIVENER_CHAMPION, intent: "broad-provider-selection" },
+    "부산 법무사": { champion: HOME_BROAD_CHAMPION, intent: "broad-provider-selection" },
     "부산 저렴한 법무사": { champion: COST_CHAMPION, intent: "cost-comparison" },
     "부산 법무사 비용": { champion: COST_CHAMPION, intent: "cost-transparency" },
-    "부산 법무사 추천": { champion: BUSAN_LEGAL_SCRIVENER_CHAMPION, intent: "selection-research" },
+    "부산 법무사 추천": { champion: SELECTION_CHAMPION, intent: "selection-research" },
     "부산 법무사 법률 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "scrivener-consultation" },
     "부산 법률 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "public-vs-scrivener-routing" },
-    "부산 법무사 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "consult-prep" },
+    "부산 법무사 상담": { champion: LEGAL_CONSULTATION_CHAMPION, intent: "city-wide-consultation" },
     "부산 전세사기": { champion: JEONSE_DAMAGE_CHAMPION, intent: "jeonse-damage-navigator" },
     "부산 전세사기 법무사": { champion: JEONSE_DAMAGE_CHAMPION, intent: "jeonse-damage-scrivener" },
     "부산회생파산": { champion: INSOLVENCY_CHAMPION, intent: "rehab-vs-bankruptcy" },
@@ -441,7 +443,7 @@ export function getChampionForTargetQuery(query: string): {
   const inferred = getLocalChampionForQuery(query);
   return {
     query,
-    champion: inferred ?? BUSAN_LEGAL_SCRIVENER_CHAMPION,
+    champion: inferred ?? HOME_BROAD_CHAMPION,
     intent: "inferred",
   };
 }

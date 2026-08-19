@@ -18,6 +18,7 @@ import {
 } from "./institutions";
 import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
+import { consultHubLinkForLocalPage } from "@/lib/seo/consult-hub-link";
 import {
   getRegionHubCoverage,
   isRegionHubIdentityLocked,
@@ -310,7 +311,9 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     directionsNote: buildDirectionsNote(config),
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
-    relatedServiceLinks: [],
+    relatedServiceLinks: [
+      consultHubLinkForLocalPage(config.slug),
+    ],
     relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
       href: `/${slug}`,
       label: neighborhoodSlugToLabel(slug),
@@ -697,7 +700,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
     pageType: "real-estate-dev",
     serviceSlug: topic.serviceSlug,
     title: topic.title,
-    h1: `${topic.title} — 부산 법무사 상담`,
+    h1: `${topic.title} 절차·서류 안내`,
     description: `부산 ${topic.title} — ${topic.topicContext}. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,

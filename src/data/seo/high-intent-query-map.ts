@@ -12,7 +12,7 @@ export const HIGH_INTENT_CHAMPIONS = {
 } as const;
 
 export const PROTECTED_GENERAL_CHAMPIONS = {
-  BUSAN_GENERAL: "/부산법무사",
+  BUSAN_GENERAL: "/",
   BUSAN_CORPORATE: "/부산법인법무사",
 } as const;
 
@@ -88,12 +88,12 @@ export const HIGH_INTENT_QUERIES: HighIntentQueryRow[] = [
   {
     query: "부산 법무사 상담",
     cluster: "legal-consultation",
-    intent: "consult-prep-channel-scope",
+    intent: "city-wide-consultation",
     primaryChampion: HIGH_INTENT_CHAMPIONS.LEGAL_CONSULTATION,
-    supporting: ["/법무사상담전준비", "/상담", "/contact"],
-    competing: ["/부산법률상담"],
+    supporting: ["/", "/법무사상담전준비", "/상담", "/contact"],
+    competing: ["/부산역법무사", "/부산법률상담", "/contact"],
     coverage: "strong",
-    cannibalization: "low",
+    cannibalization: "high",
     action: "STRENGTHEN_EXISTING",
     rankingObservation: "UNKNOWN_PERFORMANCE",
   },

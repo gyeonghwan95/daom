@@ -9,6 +9,7 @@ import type { NaverBlogPost } from "@/lib/naver-blog/types";
 import { getServiceLabel } from "@/lib/content/loader";
 import { faqs as faqEntries } from "@/lib/faq-data";
 import {
+  HOME_H1,
   HOME_METADATA_DESCRIPTION,
   HOME_METADATA_TITLE,
 } from "@/lib/seo/metadata";
@@ -299,7 +300,7 @@ export function buildPageDataFromLocalLanding(
       links: [
         { href: "/부산법무사추천", label: "부산 법무사 추천 선택 기준" },
         { href: "/부산법무사비교", label: "부산 법무사 비교 기준" },
-        { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+      { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
         { href: "/부산법무사후기", label: "후기를 볼 때 확인할 기준" },
       ],
     });
@@ -452,7 +453,7 @@ export function buildPageDataFromLocalLanding(
     intro: page.problemStatement,
     breadcrumbs:
       page.pageType === "lecture"
-        ? page.slug === "법률강의"
+        ? page.slug === "법률강의" || page.slug === "부산법률전문가"
           ? [{ label: "홈", href: "/" }, { label: page.title }]
           : [
               { label: "홈", href: "/" },
@@ -1001,7 +1002,7 @@ export function buildHomePageData(): PageData {
     title: "다옴법무사사무소",
     metaTitle: HOME_METADATA_TITLE,
     metaDescription: buildMetaDescription(HOME_METADATA_DESCRIPTION),
-    h1: "다옴법무사사무소 안윤정 법무사",
+    h1: HOME_H1,
     intro: HOME_METADATA_DESCRIPTION,
     breadcrumbs: [{ label: "홈" }],
     internalLinks: [
@@ -1023,10 +1024,10 @@ export function buildHomePageData(): PageData {
       },
     ],
     primaryKeywords: [
-      "해운대 법무사",
-      "센텀 법무사",
-      "상속등기",
+      "부산 법무사",
       "다옴법무사사무소",
+      "안윤정 법무사",
+      "상속등기",
     ],
   });
 }

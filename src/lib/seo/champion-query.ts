@@ -1,7 +1,13 @@
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
-/** 「부산 법무사」 exact-match는 `/부산법무사` 한 곳만 메타·키워드로 가져간다. */
-export const BUSAN_LAWYER_CHAMPION_PATH = "/부산법무사" as const;
+/** 「부산 법무사」 exact-match 메타·키워드는 홈(`/`)만 가져간다. */
+export const BUSAN_LAWYER_CHAMPION_PATH = "/" as const;
+
+/** 업무·비용·선택 기준 안내. 홈과 검색의도를 나누는 supporting 페이지. */
+export const BUSAN_LAWYER_GUIDE_PATH = "/부산법무사" as const;
+
+/** 「부산 법무사 상담」 exact-match 메타 키워드는 `/부산법무사상담`만 가져간다. */
+export const BUSAN_CONSULT_CHAMPION_PATH = "/부산법무사상담" as const;
 
 /** 「부산 상속포기 법무사」 exact-match는 `/부산상속포기` 한 곳만 가져간다. */
 export const BUSAN_RENUNCIATION_CHAMPION_PATH = "/부산상속포기" as const;
@@ -22,6 +28,10 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   {
     path: BUSAN_LAWYER_CHAMPION_PATH,
     compactQueries: ["부산법무사"],
+  },
+  {
+    path: BUSAN_CONSULT_CHAMPION_PATH,
+    compactQueries: ["부산법무사상담"],
   },
   {
     path: BUSAN_RENUNCIATION_CHAMPION_PATH,

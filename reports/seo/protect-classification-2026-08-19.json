@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-08-19",
+  "method": "코드·기존 감사 파일·사용자 SERP 사례. 실제 순위/트래픽은 확인된 것만 사용.",
+  "PROTECT-A": [
+    {
+      "url": "/",
+      "reason": "부산법무사 대표. 기존 홈 정체성 유지.",
+      "change": "이번 작업에서 타이틀/H1 변경 없음. 상담 허브 링크 강조만."
+    },
+    {
+      "url": "/부산역법무사",
+      "reason": "사용자 사례 및 역세권 long-tail. 타이틀/H1 유지.",
+      "change": "contextual internal link만 추가 (앵커: 부산 전역 상담 안내)"
+    },
+    {
+      "url": "/해운대법무사",
+      "reason": "identity-locked 지역 허브",
+      "change": "타이틀/H1 변경 없음. 구 허브에 상담 허브 링크 1개."
+    },
+    {
+      "url": "/센텀법무사",
+      "reason": "identity-locked",
+      "change": "타이틀/H1 변경 없음. 상담 허브 링크 1개."
+    },
+    {
+      "url": "/재송동법무사",
+      "reason": "identity-locked",
+      "change": "타이틀/H1 변경 없음. 상담 허브 링크 1개."
+    },
+    {
+      "url": "/부산등기법무사",
+      "reason": "등기 허브",
+      "change": "변경 없음"
+    },
+    {
+      "url": "/부산상속법무사",
+      "reason": "상속 허브",
+      "change": "변경 없음"
+    },
+    {
+      "url": "/부산법인법무사",
+      "reason": "법인 허브",
+      "change": "변경 없음"
+    }
+  ],
+  "PROTECT-B": [
+    {
+      "url": "/부산법무사",
+      "reason": "supporting guide. 홈과 의도 분리 유지.",
+      "change": "상담 허브 앵커만 정돈"
+    },
+    {
+      "url": "/동구법무사",
+      "reason": "구 페이지. 성과 불분명.",
+      "change": "상담 허브 contextual link (업무별 상담 안내). 타이틀/H1 유지."
+    },
+    {
+      "url": "/초량동법무사",
+      "reason": "동 페이지",
+      "change": "상담 허브 contextual link (법무사 상담 방법). 타이틀/H1 유지."
+    }
+  ],
+  "REBUILD-C": [
+    {
+      "url": "/부산법무사상담",
+      "reason": "부산 법무사 상담 PRIMARY. 기존에는 준비서류 허브에 가까워 범위가 약했음.",
+      "change": "title/H1/intro/구조 강화. URL 유지."
+    },
+    {
+      "urls": "real-estate-dev expansion H1",
+      "reason": "H1이 ‘부산 법무사 상담’을 붙여 도시 전체 상담 의도를 가로챔.",
+      "change": "H1을 ‘{주제} 절차·서류 안내’로 범위 축소. URL 유지."
+    }
+  ]
+}

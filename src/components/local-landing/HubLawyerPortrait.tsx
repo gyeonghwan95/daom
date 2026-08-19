@@ -6,9 +6,14 @@ import { siteImages, type SiteImageAsset } from "@/lib/site-images";
 type HubLawyerPortraitProps = {
   alt: string;
   paragraphs: string[];
+  showHomeOfficeLink?: boolean;
 };
 
-export function HubLawyerPortrait({ alt, paragraphs }: HubLawyerPortraitProps) {
+export function HubLawyerPortrait({
+  alt,
+  paragraphs,
+  showHomeOfficeLink = false,
+}: HubLawyerPortraitProps) {
   const portrait: SiteImageAsset = {
     ...siteImages.about.portrait,
     alt,
@@ -28,7 +33,15 @@ export function HubLawyerPortrait({ alt, paragraphs }: HubLawyerPortraitProps) {
       <div className="min-w-0">
         <h3 className="text-lg font-semibold text-navy">안윤정 법무사</h3>
         <ProseParagraphs paragraphs={paragraphs} />
-        <p className="mt-4">
+        <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+          {showHomeOfficeLink ? (
+            <Link
+              href="/"
+              className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+            >
+              부산 법무사 안윤정 · 다옴법무사사무소
+            </Link>
+          ) : null}
           <Link
             href="/about"
             className="text-sm font-medium text-navy underline-offset-2 hover:underline"

@@ -9,7 +9,7 @@ export function HomeHubGuide() {
       <Container>
         <HomeSectionHeader
           label="Busan Legal Hub"
-          title="부산 법무사 검색·상담 허브"
+          title="지역·업무별 안내"
           description="지역·업무·비용·법원·등기소별로 필요한 안내 페이지로 바로 이동할 수 있습니다."
         />
 

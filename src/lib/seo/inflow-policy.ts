@@ -233,6 +233,7 @@ export function getInflowItemsForPath(pathname: string): InflowItem[] {
 
 /** Speculation Rules·llms.txt에 쓰는 대표 경로 (기존 URL만) */
 export const PREFETCH_CHAMPION_PATHS = [
+  "/",
   BUSAN_LEGAL_SCRIVENER_CHAMPION,
   REGISTRY_HUB,
   INHERITANCE_HUB,

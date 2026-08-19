@@ -1,13 +1,12 @@
 {
-  "generatedAt": "2026-08-13T12:11:14.337Z",
-  "total": 313,
+  "generatedAt": "2026-08-19T12:54:22.963Z",
+  "total": 312,
   "paths": [
     "/부산진구상속등기",
     "/부산진구부동산등기",
     "/서면부동산등기",
     "/부동산등기비용",
     "/개인회생비용",
-    "/동구법무사",
     "/부산진구법인등기",
     "/부산진구소유권이전등기",
     "/서면법인등기",
@@ -317,13 +316,13 @@
     "/장전동법무사"
   ],
   "stats": {
-    "total": 313,
+    "total": 312,
     "byType": {
       "region-service": 136,
       "service-intent": 119,
-      "region-lawyer": 18,
       "institution-service": 24,
       "special": 13,
+      "region-lawyer": 17,
       "institution-lawyer": 3
     }
   }

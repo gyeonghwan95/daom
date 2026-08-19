@@ -72,6 +72,7 @@ function emptyHourlyDay(date) {
       cta: 0,
       consultSubmit: 0,
       naverPlace: 0,
+      sources: {},
     };
   }
   return { date, hours };
@@ -181,7 +182,13 @@ function mergeHourly(target, source) {
   if (!target.hours) target.hours = emptyHourlyDay(target.date).hours;
   for (const [hour, row] of Object.entries(source.hours)) {
     if (!target.hours[hour]) {
-      target.hours[hour] = { pageViews: 0, cta: 0, consultSubmit: 0, naverPlace: 0 };
+      target.hours[hour] = {
+        pageViews: 0,
+        cta: 0,
+        consultSubmit: 0,
+        naverPlace: 0,
+        sources: {},
+      };
     }
     target.hours[hour].pageViews = addNum(target.hours[hour].pageViews, row.pageViews);
     target.hours[hour].cta = addNum(target.hours[hour].cta, row.cta);
@@ -190,6 +197,10 @@ function mergeHourly(target, source) {
       row.consultSubmit,
     );
     target.hours[hour].naverPlace = addNum(target.hours[hour].naverPlace, row.naverPlace);
+    if (!target.hours[hour].sources) target.hours[hour].sources = {};
+    for (const [k, v] of Object.entries(row.sources || {})) {
+      target.hours[hour].sources[k] = addNum(target.hours[hour].sources[k], v);
+    }
   }
   return target;
 }
@@ -363,12 +374,18 @@ async function bumpHourly(env, date, hour, event, shard) {
       cta: 0,
       consultSubmit: 0,
       naverPlace: 0,
+      sources: {},
     };
   }
   const h = bucket.hours[key];
+  if (!h.sources) h.sources = {};
   switch (event.type) {
     case "page_view":
       h.pageViews += 1;
+      {
+        const source = event.referrerType || event.referrerHost || "direct";
+        h.sources[source] = (h.sources[source] || 0) + 1;
+      }
       break;
     case "cta_click":
     case "phone_click":
@@ -673,6 +690,7 @@ export async function buildDashboard(env) {
       cta: v.cta || 0,
       consultSubmit: v.consultSubmit || 0,
       naverPlace: v.naverPlace || 0,
+      sources: v.sources || {},
     }));
 
     const avgBuckets = {};
@@ -743,6 +761,7 @@ export async function buildDashboard(env) {
         naverPlace: day.naverPlace || 0,
         mobile: day.devices?.mobile || 0,
         desktop: day.devices?.desktop || 0,
+        sources: day.sources || {},
       });
     }
     for (const d of prev7) {

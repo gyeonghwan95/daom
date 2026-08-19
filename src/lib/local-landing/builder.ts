@@ -494,7 +494,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     ],
     상담: [
       { href: "/부산법률상담", label: "부산 법률상담 — 검색의도 안내" },
-      { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+      { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
     ],
     부산법무사상담: [
       { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },

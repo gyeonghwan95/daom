@@ -18,7 +18,7 @@ export const PUBLIC_SECTOR_PARTNERS_HUB = "/partners";
 export const PUBLIC_SECTOR_LECTURE_HUB = "/공공기관법률교육";
 export const PUBLIC_SECTOR_LECTURE_SPECIAL = "/부산기관법률특강";
 export const CORPORATE_CHAMPION = "/부산법인법무사";
-export const BUSAN_GENERAL_CHAMPION = "/부산법무사";
+export const BUSAN_GENERAL_CHAMPION = "/";
 
 export type PublicSectorCoverage =
   | "strong"

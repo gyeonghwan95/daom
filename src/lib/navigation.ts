@@ -25,6 +25,7 @@ export const lectureNavGroups: NavGroup[] = [
     title: "강의 안내",
     links: [
       { href: "/법률강의", label: "전체 강의 안내" },
+      { href: "/부산법률전문가", label: "법률 전문가 활동" },
       { href: "/부산법률강사", label: "부산 강사 초빙" },
       { href: "/부산법무사강의", label: "부산 법무사 강의" },
       { href: "/강사소개", label: "강사 소개" },
@@ -42,7 +43,7 @@ export const lectureNavGroups: NavGroup[] = [
       { href: "/부산사회복지기관강사", label: "사회복지기관 강사" },
       { href: "/디지털법률교육", label: "디지털 법률" },
       { href: "/창업법률교육", label: "창업교육" },
-      { href: "/기업법률교육", label: "기업·직원교육" },
+      { href: "/기업법률교육", label: "기업 특강" },
       { href: "/공공기관법률교육", label: "공공기관 강사" },
       { href: "/학교법률교육", label: "학교·진로" },
       { href: "/법무사진로특강", label: "법무사 진로특강" },
@@ -70,7 +71,7 @@ export const mainNavigation: NavItem[] = [
         title: "주요 업무",
         links: [
           { href: "/services", label: "업무안내 전체" },
-          { href: "/부산법무사", label: "부산 법무사" },
+          { href: "/부산법무사", label: "부산 업무 안내" },
           { href: "/부산등기법무사", label: "등기업무" },
           { href: "/부산부동산등기", label: "부동산등기" },
           { href: "/부산건물등기", label: "건물·건축물등기" },
@@ -168,6 +169,7 @@ export function isNavItemActive(pathname: string, href: string): boolean {
       normalized.startsWith("/강의이력") ||
       normalized === "/강사소개" ||
       normalized === "/강의문의" ||
+      normalized === "/부산법률전문가" ||
       normalized === "/부산법률강사" ||
       normalized === "/부산법무사강의" ||
       normalized === "/부산도서관법률특강" ||

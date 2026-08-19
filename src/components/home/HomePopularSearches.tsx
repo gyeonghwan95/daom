@@ -4,14 +4,14 @@ import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
 
 const POPULAR_SEARCH_CARDS = [
   {
-    href: "/부산법무사",
-    label: "부산 법무사",
-    hint: "상속·등기·법인·회생 종합",
+    href: "/부산법무사상담",
+    label: "부산 전역 상담 안내",
+    hint: "전화·카카오톡·예약 방문",
   },
   {
-    href: "/search-guides",
-    label: "검색의도 안내",
-    hint: "추천·비용·복대리·집단등기",
+    href: "/부산법무사",
+    label: "부산에서 법무사 찾을 때",
+    hint: "업무·비용·선택 기준 안내",
   },
   {
     href: "/부산법무사추천",

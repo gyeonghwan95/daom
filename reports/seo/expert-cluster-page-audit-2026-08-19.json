@@ -1,0 +1,110 @@
+{
+  "date": "2026-08-19",
+  "classification": [
+    {
+      "path": "/법률강의",
+      "class": "PROTECT-A",
+      "role": "Broad lecture hub. PRIMARY: 부산 법률 강의·특강",
+      "titleH1": "유지. Hero secondary CTA만 전문가 허브로 연결",
+      "action": "minimal"
+    },
+    {
+      "path": "/부산법률강사",
+      "class": "PROTECT-A/B",
+      "role": "PRIMARY: 부산 법률 강사·초빙·섭외",
+      "action": "related link to expert hub"
+    },
+    {
+      "path": "/강사소개",
+      "class": "PROTECT-A",
+      "role": "VERIFICATION profile. title/H1 유지",
+      "galleryNote": "InfiniteMarquee가 접근성용 aria-hidden 클론을 둠. 데이터 중복이 아님. UI 유지.",
+      "action": "related link only"
+    },
+    {
+      "path": "/강의문의",
+      "class": "PROTECT-B",
+      "role": "CONVERSION",
+      "action": "희망 일정·기업특강·언론 주제 옵션 추가. 필수 필드는 연락처 유지"
+    },
+    {
+      "path": "/기업법률교육",
+      "class": "PROTECT-B",
+      "role": "PRIMARY: 부산 기업 특강·기업교육 강사",
+      "before": "일반 기업 법률교육 토픽 페이지",
+      "after": "기업 특강 title/H1/hero, 상황형 본문, 60·90·120분 패키지, 직급별 대상, 고유 FAQ"
+    },
+    {
+      "path": "/창업법률교육",
+      "class": "PROTECT-B",
+      "role": "PRIMARY: 부산 창업 법률교육",
+      "action": "cluster inbound via relatedAll/expert navigator"
+    },
+    {
+      "path": "/전세사기예방교육",
+      "class": "PROTECT-B",
+      "role": "PRIMARY: 전세사기 예방 강사"
+    },
+    {
+      "path": "/부산기관법률특강",
+      "class": "PROTECT-B",
+      "role": "기관 특강 supporting"
+    },
+    {
+      "path": "/부산도서관법률특강",
+      "class": "PROTECT-B",
+      "role": "생활법률 강사 supporting"
+    },
+    {
+      "path": "/청년생활법률특강",
+      "class": "PROTECT-B",
+      "role": "청년 특강"
+    },
+    {
+      "path": "/학교법률교육",
+      "class": "PROTECT-B",
+      "role": "학교·진로"
+    },
+    {
+      "path": "/법무사진로특강",
+      "class": "PROTECT-B",
+      "role": "진로 특강"
+    },
+    {
+      "path": "/부산사회복지기관강사",
+      "class": "PROTECT-B",
+      "role": "복지기관 강사"
+    },
+    {
+      "path": "/media",
+      "class": "PROTECT-B",
+      "role": "언론·활동. Expert inbound",
+      "action": "관련 링크 1개 추가 (exact-match 반복 아님)"
+    },
+    {
+      "path": "/협업문의",
+      "class": "PROTECT-A/B",
+      "role": "취재·협업 conversion supporting"
+    },
+    {
+      "path": "/강의이력",
+      "class": "PROTECT-A",
+      "role": "확인된 출강 증거"
+    },
+    {
+      "path": "/부산법률전문가",
+      "class": "NEW-D",
+      "role": "DISCOVERY authority hub",
+      "reason": "강의·프로필·언론을 묶는 상위 탐색 의도를 담당하는 기존 URL이 없음"
+    },
+    {
+      "paths": ["/", "/부산상속등기", "/부산법무사 등 업무 PROTECT-A"],
+      "class": "PROTECT-A",
+      "action": "Expert 링크 강제 삽입 안 함. HOME만 강의 섹션에 Expert entry 1개"
+    }
+  ],
+  "ctaDom": {
+    "lectureInquiry": "showInquiryForm이 true면 LectureInquiryForm 1회. 기본 사건상담 CTASection은 폼이 없을 때만.",
+    "sitewideConsult": "레이아웃 공통 상담 채널은 이번 작업에서 제거하지 않음 (전역 UX)."
+  }
+}

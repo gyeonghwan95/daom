@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-08-19",
+  "principle": "Query Scope = Page Scope. 한 query에 Primary URL 하나.",
+  "rows": [
+    { "query": "부산법무사", "primary": "/", "supporting": ["/부산법무사"] },
+    { "query": "부산 법무사", "primary": "/", "supporting": ["/부산법무사"] },
+    { "query": "다옴법무사사무소", "primary": "/", "supporting": ["/office", "/about"] },
+    { "query": "안윤정 법무사", "primary": "/", "supporting": ["/about"] },
+    { "query": "부산 법무사 상담", "primary": "/부산법무사상담", "supporting": ["/", "/상담", "/contact", "/법무사상담전준비"] },
+    { "query": "부산 법무사 추천", "primary": "/부산법무사추천", "supporting": ["/부산법무사비교"] },
+    { "query": "부산 법무사 비용", "primary": "/부산법무사비용", "supporting": ["/부산법무사보수표"] },
+    { "query": "부산 법무사 사무실", "primary": "/부산법무사무소", "supporting": ["/location", "/office"] },
+    { "query": "부산 등기 법무사", "primary": "/부산등기법무사", "supporting": ["/부산부동산등기", "/부산상속등기", "/부산법인등기"] },
+    { "query": "부산 부동산등기", "primary": "/부산부동산등기", "supporting": ["/부산부동산등기전문"] },
+    { "query": "부산 부동산등기 법무사", "primary": "/부산부동산등기", "supporting": ["/부산등기법무사"] },
+    { "query": "부산 소유권이전 법무사", "primary": "/부산소유권이전등기", "supporting": ["/부산부동산등기"] },
+    { "query": "부산 상속 법무사", "primary": "/부산상속법무사", "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인"] },
+    { "query": "부산 상속등기", "primary": "/부산상속등기", "supporting": ["/부산상속등기전문"] },
+    { "query": "부산 상속등기 법무사", "primary": "/부산상속등기", "supporting": ["/부산상속법무사"] },
+    { "query": "부산 상속포기 법무사", "primary": "/부산상속포기", "supporting": ["/부산상속법무사"] },
+    { "query": "부산 한정승인 법무사", "primary": "/부산한정승인", "supporting": ["/부산상속법무사"] },
+    { "query": "부산 법인 법무사", "primary": "/부산법인법무사", "supporting": ["/부산법인등기"] },
+    { "query": "부산 법인등기", "primary": "/부산법인등기", "supporting": ["/부산법인법무사"] },
+    { "query": "부산 법인설립 법무사", "primary": "/부산법인설립등기", "supporting": ["/부산법인법무사"] },
+    { "query": "부산 임원변경 법무사", "primary": "/부산임원변경등기", "supporting": ["/부산법인법무사"] },
+    { "query": "부산 개인회생", "primary": "/부산개인회생", "supporting": ["/개인회생파산"] },
+    { "query": "부산 개인회생 법무사", "primary": "/부산개인회생", "supporting": ["/개인회생파산"] },
+    { "query": "부산 개인파산 법무사", "primary": "/부산개인파산", "supporting": ["/개인회생파산"] },
+    { "query": "해운대 법무사", "primary": "/해운대법무사", "supporting": ["/센텀법무사"] },
+    { "query": "센텀 법무사", "primary": "/센텀법무사", "supporting": ["/해운대법무사", "/재송동법무사"] },
+    { "query": "재송동 법무사", "primary": "/재송동법무사", "supporting": ["/센텀법무사"] },
+    { "query": "수영구 법무사", "primary": "/수영구법무사", "supporting": ["/해운대법무사"] },
+    { "query": "연제구 법무사", "primary": "/연제구법무사", "supporting": ["/"] },
+    { "query": "부산진구 법무사", "primary": "/부산진구법무사", "supporting": ["/"] },
+    { "query": "부산역 법무사", "primary": "/부산역법무사", "supporting": ["/동구법무사", "/초량동법무사"] },
+    { "query": "동구 법무사", "primary": "/동구법무사", "supporting": ["/부산역법무사", "/초량동법무사"] },
+    { "query": "초량동 법무사", "primary": "/초량동법무사", "supporting": ["/부산역법무사", "/동구법무사"] },
+    { "query": "부산 법무사 업무", "primary": "/services", "supporting": ["/", "/부산법무사"] },
+    { "query": "부산 등기 상담", "primary": "/부산법무사상담", "supporting": ["/부산등기법무사"] }
+  ],
+  "cannibalization": [
+    {
+      "query": "부산 법무사 상담",
+      "primary": "/부산법무사상담",
+      "competing": ["/", "/부산역법무사", "/해운대법무사", "/센텀법무사", "/contact"],
+      "score": "high (user-reported SERP mismatch)",
+      "action": "Broad hub 강화 + 지역 페이지는 지역 의도 유지 + 상담 허브 contextual link. 부산역 title/H1 미변경."
+    }
+  ]
+}

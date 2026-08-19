@@ -17,6 +17,19 @@ export type LectureIntentMapEntry = {
 
 export const lectureIntentToUrlMap: LectureIntentMapEntry[] = [
   {
+    id: "expert-discovery-hub",
+    intentLabel: "부산 법률 전문가 탐색·섭외",
+    dimensions: ["부산", "법률 전문가", "기업·기관·언론", "자격·이력 검증"],
+    primaryKeyword: "부산 법률 전문가",
+    secondaryKeywords: [
+      "부산 법률 전문가 섭외",
+      "부산 법률 전문가 인터뷰",
+    ],
+    targetUrl: "/부산법률전문가",
+    action: "strengthen",
+    notes: "DISCOVERY 허브. 기존 강의 URL 유지.",
+  },
+  {
     id: "speaker-hiring-hub",
     intentLabel: "부산 강사 초빙·출강·섭외 종합",
     dimensions: ["부산", "강사 초빙", "기관·기업·청년", "실무특강"],

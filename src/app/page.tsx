@@ -17,9 +17,9 @@ import { HomeLectureHistorySection } from "@/components/home/HomeLectureHistoryS
 import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { homeHero } from "@/lib/home-content";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import {
+  HOME_H1,
   HOME_METADATA_DESCRIPTION,
   HOME_METADATA_TITLE,
   homeMetadata,
@@ -36,7 +36,7 @@ export default function Home() {
           title: HOME_METADATA_TITLE,
           description: HOME_METADATA_DESCRIPTION,
           path: "/",
-          h1: `${homeHero.officeName} ${homeHero.representative}`,
+          h1: HOME_H1,
           image: siteImages.home.hero.src,
         })}
       />

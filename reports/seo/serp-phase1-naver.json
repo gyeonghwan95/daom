@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-08-19",
+  "site": "https://다옴법무사사무소.kr",
+  "note": "네이버 SERP 자동 확인 불가. 순위는 추정하지 않는다. 사용자 제공 결과와 기존 내부 스냅샷만 기록한다.",
+  "queries": {
+    "부산 법무사 상담": {
+      "daomExposure": "사용자 제공 결과: 좁은 지역 페이지가 노출된 것으로 보고됨",
+      "exposedUrl": "/부산역법무사",
+      "exposedTitle": "부산역 법무사｜동구·초량동 등기 상담",
+      "rank": null,
+      "intentMatch": "불일치 — 검색 범위는 부산 전체, 페이지 범위는 부산역·동구·초량동",
+      "automation": "네이버 SERP 자동 확인 불가"
+    },
+    "부산법무사": {
+      "note": "이전 site: 조회에서 홈이 보였으나 당시 라이브 타이틀은 배포 전 문구일 수 있음. 순위 미기록.",
+      "rank": null,
+      "automation": "네이버 SERP 자동 확인 불가"
+    }
+  },
+  "uncheckedBroad": [
+    "부산법무사",
+    "부산 법무사",
+    "부산 법무사 추천",
+    "부산 법무사 비용",
+    "부산 법무사 사무실",
+    "부산 법무사 업무"
+  ],
+  "uncheckedOtherGroups": [
+    "Registration",
+    "Inheritance",
+    "Corporate",
+    "Debt",
+    "Regional"
+  ]
+}

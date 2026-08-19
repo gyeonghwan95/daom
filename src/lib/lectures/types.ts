@@ -123,7 +123,13 @@ export type LectureSearchIntent = {
   targetPath?: string;
 };
 
-export type LecturePageKind = "hub" | "topic" | "hiring" | "speaker" | "inquiry";
+export type LecturePageKind =
+  | "hub"
+  | "topic"
+  | "hiring"
+  | "speaker"
+  | "inquiry"
+  | "expert";
 
 export type LectureLinkItem = {
   href: string;

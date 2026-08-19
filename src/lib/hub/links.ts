@@ -32,7 +32,7 @@ export function capHubLinks(
     { href: "/부산법무사", label: "부산 법무사 종합 안내" },
     { href: "/services", label: "부산 법무사 업무안내" },
     { href: "/faq", label: "부산 법무사 FAQ" },
-    { href: "/contact", label: "부산 법무사 상담 문의" },
+    { href: "/contact", label: "상담 문의" },
     { href: "/location", label: "센텀 법무사 오시는 길" },
     { href: "/blog", label: "블로그 안내" },
     { href: "/부산상속등기", label: "부산 상속등기 안내" },

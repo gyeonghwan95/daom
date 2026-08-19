@@ -148,7 +148,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     relatedServiceLinks: [
       { href: "/부산부동산등기", label: "부산 부동산등기 — 매매·증여·보존·말소" },
       { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/services/real-estate-registration", label: "부동산등기 상세 안내" },
       { href: "/services/ownership-transfer", label: "소유권이전등기" },
     ],
@@ -588,7 +588,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedServiceLinks: [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/services/ownership-transfer", label: "소유권이전등기 업무안내" },
       { href: "/부산부동산등기법무사", label: "부산 부동산등기 법무사" },
     ],

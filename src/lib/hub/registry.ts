@@ -50,7 +50,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/부산법무사비용", "부산 법무사 비용·수임료"),
       s("/부산법무사추천", "부산 법무사 추천 선택 기준"),
       s("/부산등기법무사추천", "부산 등기 법무사 선택 기준"),
-      s("/부산법무사상담", "부산 법무사 상담 준비"),
+      s("/부산법무사상담", "부산 전역 상담 안내"),
       s("/부산법무사비교", "부산 법무사 비교 기준"),
       s("/부산상속등기전문", "부산 상속등기 상담 확인"),
       s("/부산부동산등기전문", "부산 부동산등기 상담 확인"),
@@ -68,7 +68,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/faq/lawyer-fee-and-remote-faq", "법무사 수임료·비대면 상담"),
       s("/blog/busan-lawyer-consultation-documents", "부산 법무사 상담 준비 서류"),
       s("/blog/busan-lawyer-recommend-office-consult", "추천·사무실·상담 구분 가이드"),
-      s("/contact", "부산 법무사 상담 문의"),
+      s("/contact", "상담 문의"),
     ],
   },
   {

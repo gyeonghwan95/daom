@@ -83,7 +83,9 @@ export const commonDisclaimer =
   "강의 성사·수강 만족·교육 효과를 보장하지 않습니다. 청렴·성희롱예방·산업안전 등 별도 자격·지정요건이 필요한 법정의무교육은 본 안내 범위에 포함하지 않습니다. 법령·제도는 시점·사안에 따라 달라질 수 있습니다.";
 
 export const relatedAll: LecturePageContent["relatedLectureLinks"] = [
+  { href: "/부산법률전문가", label: "법률 실무·강의 활동 전체 소개" },
   { href: "/법률강의", label: "법률 강의 허브" },
+  { href: "/기업법률교육", label: "기업 특강·법률교육" },
   { href: "/강의이력", label: "강의 이력" },
   { href: "/부산법률강사", label: "부산 강사 초빙" },
   { href: "/부산법무사강의", label: "부산 법무사 강의" },
@@ -97,6 +99,7 @@ export const relatedAll: LecturePageContent["relatedLectureLinks"] = [
 
 /** 링크 경로를 사용자용 문구로 표시할 때 사용 (본문에 경로 문자열을 쓰지 않음) */
 export const lecturePageLabels: Record<string, string> = {
+  "/부산법률전문가": "부산 법률 전문가",
   "/법률강의": "법률 강의 허브",
   "/강의이력": "강의 이력",
   "/부산법률강사": "부산 강사 초빙",
@@ -105,7 +108,7 @@ export const lecturePageLabels: Record<string, string> = {
   "/전세사기예방교육": "전세사기 예방교육",
   "/청년생활법률특강": "청년 특강 강사",
   "/창업법률교육": "창업교육 강사",
-  "/기업법률교육": "기업교육 강사",
+  "/기업법률교육": "기업 특강·법률교육",
   "/디지털법률교육": "디지털 법률교육",
   "/학교법률교육": "학교 법률교육",
   "/법무사진로특강": "법무사 진로특강",

@@ -178,7 +178,7 @@ function relatedFor(seed: SearchIntentSeed): Pick<
         ]
       : [{ href: "/glossary", label: "법률 용어사전" }]),
     { href: "/faq", label: "FAQ" },
-    { href: "/부산법무사", label: "부산 법무사" },
+    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
   ];
 
   const relatedGuideLinks = [

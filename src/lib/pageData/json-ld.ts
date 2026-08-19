@@ -2,6 +2,7 @@ import {
   buildFaqPageSchema,
   buildServicePageSchema,
   buildWebPageSchema,
+  schemaIds,
 } from "@/lib/seo/json-ld";
 import type { PageData, PageFaqItem } from "./types";
 
@@ -35,6 +36,7 @@ export function buildJsonLdForPageData(
   page: PageData,
   options: JsonLdOptions = {},
 ): Record<string, unknown>[] {
+  const isExpertHub = page.slug === "부산법률전문가" || page.path === "/부산법률전문가";
   const schemas: Record<string, unknown>[] = [
     buildWebPageSchema({
       title: page.metaTitle,
@@ -42,9 +44,12 @@ export function buildJsonLdForPageData(
       path: page.path,
       h1: page.h1,
       image: page.ogImage,
+      aboutId: isExpertHub ? schemaIds.person : undefined,
     }),
-    buildServicePageSchema(page.title, page.path),
   ];
+  if (!isExpertHub) {
+    schemas.push(buildServicePageSchema(page.title, page.path));
+  }
 
   if (page.includeFaqSchema) {
     const faqs = mergeVisibleFaqs(page.faqs, options.extraFaqs);

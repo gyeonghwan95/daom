@@ -11,9 +11,8 @@ import {
 } from "@/lib/local-landing/busan-lawyer-hub-content";
 
 /**
- * `/부산법무사` — 「부산 법무사」 검색 대표 페이지.
- * 추천·비교 의도는 `/부산법무사추천`. 비용은 `/부산법무사비용`.
- * 홈(`/`) 제목과 exact-match를 나누어 자기잠식을 막는다.
+ * `/부산법무사` — 부산에서 법무사를 찾을 때 업무·비용·선택 기준 안내.
+ * 「부산 법무사」 대표 문서는 홈(`/`). 추천·비교 의도는 `/부산법무사추천`.
  */
 export function buildBusanLawyerFlagshipPage(
   config: LocalLandingConfig,
@@ -23,22 +22,21 @@ export function buildBusanLawyerFlagshipPage(
     path: `/${config.slug}`,
     pageType: "region-hub",
     serviceSlug: config.serviceSlug,
-    title: "부산 법무사",
+    title: "부산에서 법무사 찾을 때 확인사항",
     metaTitle: busanLawyerHubMetaTitle,
     h1: busanLawyerHubH1,
     description: busanLawyerHubDescription,
     summaryParagraphs: busanLawyerHubHeroParagraphs,
     primaryKeywords: [
-      "부산 법무사",
-      "부산법무사",
-      "부산 법무사 업무",
-      "부산 법무사 상담",
+      "부산 법무사 선택 기준",
+      "부산 법무사 업무 안내",
+      "법무사 상담 전 확인",
     ],
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
     problemStatement:
-      "부산에서 법무사를 찾는 이유는 사람마다 다릅니다. 부모님 사망 후 부동산·채무 정리, 아파트 매매 잔금 후 소유권이전, 법인 설립·임원변경, 카드·대출 누적에 따른 개인회생처럼 사건이 갈립니다. 다옴법무사사무소는 해운대·센텀에서 안윤정 법무사가 직접 상담하며, 이 페이지에서 필요한 절차를 가린 뒤 상속·등기·법인·회생 안내로 이어집니다. 관할은 부동산·법인 본점 소재지에 따라 남부산·북부산·중부산·부산진등기소와 부산가정법원·부산회생법원으로 나뉩니다. 처음 확인할 사실은 업무명이 아니라 지금 놓치면 안 되는 기한입니다.",
+      "부산에서 법무사를 찾는 이유는 사람마다 다릅니다. 부모님 사망 후 부동산·채무 정리, 아파트 매매 잔금 후 소유권이전, 법인 설립·임원변경, 카드·대출 누적에 따른 개인회생처럼 사건이 갈립니다. 이 페이지에서는 필요한 절차를 가린 뒤 상속·등기·법인·회생 안내로 이어집니다. 사무소·대표 안내는 다옴법무사사무소 홈에서 확인하시면 됩니다. 관할은 부동산·법인 본점 소재지에 따라 남부산·북부산·중부산·부산진등기소와 부산가정법원·부산회생법원으로 나뉩니다. 처음 확인할 사실은 업무명이 아니라 지금 놓치면 안 되는 기한입니다.",
     whenNeeded: [
       "부모님 사망 후 상속등기·상속포기·한정승인을 어디에 맡길지 고민할 때",
       "부산 아파트·상가 매매·증여 후 소유권이전등기가 필요할 때",
@@ -143,6 +141,7 @@ export function buildBusanLawyerFlagshipPage(
       },
     ],
     relatedServiceLinks: [
+      { href: "/", label: "부산 법무사 안윤정 · 다옴법무사사무소" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 등기·포기·한정승인 선택" },
       { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
       { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
@@ -157,7 +156,7 @@ export function buildBusanLawyerFlagshipPage(
       { href: "/부산법무사방문상담", label: "방문상담 안내" },
       { href: "/부산법무사비대면상담", label: "비대면상담 안내" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
-      { href: "/부산법무사상담", label: "상담 전 비용·준비서류" },
+      { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
       { href: "/부산법률상담", label: "공공 상담과 법무사 업무" },
       { href: "/무슨법률업무인지모를때", label: "업무명을 모를 때" },
       { href: "/부산증여등기", label: "부산 증여등기" },

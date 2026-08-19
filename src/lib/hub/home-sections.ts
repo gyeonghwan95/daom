@@ -11,10 +11,11 @@ export type HomeHubSection = {
 export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
     id: "lecture-education",
-    title: "법률 강의·기관 출강",
+    title: "기업·기관 법률 전문가 활동",
     description:
-      "기관·학교·기업 대상 생활법률·전세사기 예방·청년 특강 안내입니다. 법정의무교육은 포함하지 않습니다.",
+      "법률 전문가 소개, 기관·학교 법률 강의, 기업 특강, 강사 프로필입니다. 상속·등기 업무 안내와는 별도입니다.",
     links: [
+      { href: "/부산법률전문가", label: "기업·기관 법률 전문가 활동" },
       { href: "/법률강의", label: "법률 강의 허브" },
       { href: "/강의이력", label: "강의 이력" },
       { href: "/부산법률강사", label: "부산 법률 강사 섭외" },
@@ -23,7 +24,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산도서관법률특강", label: "도서관 법률특강" },
       { href: "/전세사기예방교육", label: "전세사기 예방교육" },
       { href: "/청년생활법률특강", label: "청년 생활법률 특강" },
-      { href: "/기업법률교육", label: "기업 법률교육" },
+      { href: "/기업법률교육", label: "기업 특강" },
       { href: "/강사소개", label: "강사 소개" },
       { href: "/강의문의", label: "강의 문의" },
     ],
@@ -49,7 +50,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "추천·비용·상담 검색 안내",
     description: "추천·후기·비용·상담 키워드 검색 전 확인할 선택 기준 페이지입니다.",
     links: [
-      { href: "/부산법무사", label: "부산 법무사 — 업무·선택 안내" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경 안내" },
       { href: "/부산법무사추천", label: "선택 기준 자세히 보기" },
       { href: "/부산법무사비용", label: "부산 법무사 비용·수임료" },
@@ -59,10 +60,10 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   },
   {
     id: "main-services",
-    title: "부산 법무사 주요 업무",
+    title: "주요 업무",
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
     links: [
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/부산법무사상담", label: "법무사 업무 상담" },
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
@@ -106,7 +107,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "지역별 법무사 안내",
     description: "부산 구·군·동·역세권별 법무사 상담 페이지입니다.",
     links: [
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/해운대법무사", label: "해운대 법무사" },
       { href: "/센텀법무사", label: "센텀 법무사" },
       { href: "/재송동법무사", label: "재송동 법무사" },
@@ -172,7 +173,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "상담 문의",
     description: "전화·카카오톡·네이버 톡톡·방문(예약) 상담이 가능합니다.",
     links: [
-      { href: "/contact", label: "부산 법무사 상담 신청" },
+      { href: "/contact", label: "상담 신청하기" },
       { href: "/location", label: "센텀 법무사 오시는 길" },
       { href: "/about", label: "안윤정 법무사 소개" },
     ],
@@ -225,7 +226,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
 ];
 
 export const LOCATION_HUB_LINKS: RelatedLink[] = [
-  { href: "/부산법무사", label: "부산 법무사" },
+  { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
   { href: "/해운대법무사", label: "해운대 법무사" },
   { href: "/센텀법무사", label: "센텀 법무사" },
   { href: "/재송동법무사", label: "재송동 법무사" },

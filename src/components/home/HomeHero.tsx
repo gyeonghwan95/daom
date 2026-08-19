@@ -39,14 +39,16 @@ export function HomeHero() {
         animate="visible"
       >
         <div className="home-hero__copy-main">
+          <motion.p variants={item} className="home-hero__eyebrow">
+            {homeHero.officeName}
+          </motion.p>
           <motion.h1 variants={item} className="home-hero__title">
             <span className="home-hero__title-ornament" aria-hidden>
               <span className="home-hero__title-diamond" />
               <span className="home-hero__title-stem" />
             </span>
             <span className="home-hero__title-text">
-              <span className="home-hero__office">{homeHero.officeName}</span>
-              <span className="home-hero__rep">{homeHero.representative}</span>
+              <span className="home-hero__office">{homeHero.h1}</span>
             </span>
           </motion.h1>
 

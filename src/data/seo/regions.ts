@@ -172,7 +172,7 @@ const busanCity: SeoIntentEntity = seoEntity({
   slug: "region-busan",
   type: "city",
   parentRegion: null,
-  keywords: ["부산 법무사", "부산 등기", "부산 법률사무소", "부산 법무사 상담"],
+  keywords: ["부산 법무사", "부산 등기", "부산 법률사무소"],
   description:
     "부산광역시 전역 상속등기·부동산등기·법인등기·개인회생·파산 등 법무사 업무를 다루는 핵심 지역입니다.",
   relatedServices: [

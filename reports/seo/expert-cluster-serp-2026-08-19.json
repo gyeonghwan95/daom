@@ -1,0 +1,387 @@
+{
+  "date": "2026-08-19",
+  "site": "https://다옴법무사사무소.kr",
+  "method": "SERP 직접 확인 불가",
+  "note": "네이버 자동검색을 우회하지 않았다. 순위를 추정·조작하지 않는다. 다옴 노출 여부·URL은 확인하지 않음.",
+  "queries": [
+    {
+      "query": "부산 법률 전문가",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "resultTypes": "UNKNOWN",
+      "topPageTypes": "UNKNOWN",
+      "locality": "부산",
+      "userIntent": "DISCOVERY — 섭외·초빙 전 인물·자격·활동 검증",
+      "daomVisible": "UNKNOWN",
+      "daomUrl": null,
+      "competingDaomUrls": ["/법률강의", "/강사소개", "/부산법률강사", "/about", "/media"],
+      "needNewPage": true,
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률전문가",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY (띄어쓰기 동의어)",
+      "needNewPage": false,
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 전문가 추천",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY",
+      "needNewPage": false,
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 전문가 섭외",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY → CONVERSION",
+      "needNewPage": false,
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 전문가 강연",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY / PROGRAM 혼재 — 사람 탐색이 앞섬",
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 전문가 강사",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY + LECTURER",
+      "plannedPrimary": "/부산법률전문가",
+      "supporting": ["/부산법률강사", "/강사소개"]
+    },
+    {
+      "query": "부산 법률 전문가 출연",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가",
+      "supporting": ["/media"]
+    },
+    {
+      "query": "부산 법률 전문가 인터뷰",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가",
+      "supporting": ["/media", "/협업문의"]
+    },
+    {
+      "query": "부산 법률 전문가 패널",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가",
+      "note": "별도 패널 페이지 없음. 허브 섹션으로 흡수."
+    },
+    {
+      "query": "부산 법률 전문가 자문",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 실무 전문가",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 강연 전문가",
+      "cluster": "Expert",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률전문가"
+    },
+    {
+      "query": "부산 법률 강사",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "userIntent": "DISCOVERY/PROGRAM — 기존 강사 초빙 허브",
+      "needNewPage": false,
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 법률 강사 섭외",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 법률 강사 추천",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 법률 특강",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의"
+    },
+    {
+      "query": "부산 법률 강연",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의"
+    },
+    {
+      "query": "부산 법률 교육",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의"
+    },
+    {
+      "query": "부산 생활법률 강사",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산도서관법률특강"
+    },
+    {
+      "query": "부산 외부강사 법률",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 전문가 강사",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 전문가 초빙",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 전문가 섭외",
+      "cluster": "Lecturer",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 기업 특강",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "needNewPage": false,
+      "plannedPrimary": "/기업법률교육",
+      "note": "thin URL /부산기업특강 생성 금지"
+    },
+    {
+      "query": "부산 기업특강",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업 특강 강사",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업교육 강사",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업 강사",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업 강연",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 사내 특강",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 사내교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 직원교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 임직원 교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업 법률특강",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 기업 법률교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 회사 법률교육",
+      "cluster": "Corporate",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 계약 강의",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 계약 실무 교육",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 계약서 특강",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 채권관리 강의",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 미수금 교육",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 내용증명 강의",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 법인 실무 강의",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 법인등기 강의",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/기업법률교육"
+    },
+    {
+      "query": "부산 창업 법률 특강",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/창업법률교육"
+    },
+    {
+      "query": "부산 창업 법률교육",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/창업법률교육"
+    },
+    {
+      "query": "부산 스타트업 법률교육",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/창업법률교육"
+    },
+    {
+      "query": "부산 스타트업 특강",
+      "cluster": "Practical",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/창업법률교육"
+    },
+    {
+      "query": "부산 공공기관 법률 강사",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/공공기관법률교육"
+    },
+    {
+      "query": "부산 공공기관 특강",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/공공기관법률교육"
+    },
+    {
+      "query": "부산 기관 법률 특강",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산기관법률특강"
+    },
+    {
+      "query": "부산 기관 강사 섭외",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산법률강사"
+    },
+    {
+      "query": "부산 청년 법률 특강",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/청년생활법률특강"
+    },
+    {
+      "query": "부산 전세사기 예방 강사",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/전세사기예방교육"
+    },
+    {
+      "query": "부산 생활법률 특강",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/부산도서관법률특강"
+    },
+    {
+      "query": "부산 법률 세미나",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의",
+      "note": "워크숍/워크샵과 동일 의도 — 별도 URL 없음"
+    },
+    {
+      "query": "부산 법률 워크숍",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의"
+    },
+    {
+      "query": "부산 법률 워크샵",
+      "cluster": "Public",
+      "serpStatus": "SERP 직접 확인 불가",
+      "plannedPrimary": "/법률강의"
+    }
+  ]
+}

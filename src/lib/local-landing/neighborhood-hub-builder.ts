@@ -7,6 +7,7 @@ import { districtProfiles } from "./districts";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import { getNeighborhoodTopic } from "./neighborhood-hub-topics";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
+import { withConsultHubLink } from "@/lib/seo/consult-hub-link";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -66,11 +67,11 @@ export function buildNeighborhoodHubPage(
     },
   ];
 
-  const internalLinks = [
+  const internalLinks = withConsultHubLink(config.slug, [
     ...topic.serviceLinks,
     ...topic.relatedPageLinks,
     ...(topic.relatedGuPage ? [topic.relatedGuPage] : []),
-  ];
+  ]);
 
   const jurisdictionFromDistrict = getJurisdictionGuide(config);
 

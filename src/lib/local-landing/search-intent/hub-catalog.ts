@@ -18,7 +18,7 @@ const CATEGORY_LABELS: Record<SearchIntentCategory, string> = {
 const EXISTING_GUIDE_ENTRIES: SearchGuideEntry[] = [
   { label: "부산 법무사 추천", href: "/부산법무사추천", category: "recommend", existing: true },
   { label: "부산 등기 법무사 추천", href: "/부산등기법무사추천", category: "recommend", existing: true },
-  { label: "부산 법무사 상담", href: "/부산법무사상담", category: "recommend", existing: true },
+  { label: "부산 전역 상담 안내", href: "/부산법무사상담", category: "recommend", existing: true },
   { label: "부산 법무사무소", href: "/부산법무사무소", category: "recommend", existing: true },
   { label: "부산 법무사 서류 준비", href: "/부산법무사서류준비", category: "checklist", existing: true },
   { label: "부산 법무사 방문상담", href: "/부산법무사방문상담", category: "recommend", existing: true },

@@ -42,7 +42,7 @@ const COST_HINT = /비용|수임료|수수료|보수|견적/;
 const AGENCY_HINT = /공공기관|공기업|지자체|관공서/;
 const SPECIAL_HINT = /복대리|집단등기|집단 등기/;
 const LECTURE_HINT =
-  /법률강의|법률강사|특강|강의문의|강사소개|법률교육|예방교육|강의이력|도서관법률|기관법률|법무사강의/;
+  /법률강의|법률강사|법률전문가|특강|강의문의|강사소개|법률교육|예방교육|강의이력|도서관법률|기관법률|법무사강의/;
 
 export function resolveSearchContentType(input: {
   path: string;

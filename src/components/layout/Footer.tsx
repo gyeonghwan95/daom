@@ -31,7 +31,7 @@ export function Footer() {
             <p className="text-lg font-bold">{nap.tradeName}</p>
             <p className="mt-1 text-base text-white/80">{nap.representative}</p>
             <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
-              부산 해운대구·센텀 상속등기·부동산등기·법인등기·개인회생 실무 안내
+              부산 법무사 안윤정. 해운대·센텀에서 상속등기·부동산등기·법인등기·개인회생을 상담합니다.
             </p>
             <p className="mt-2 text-sm text-white/60">{nap.address}</p>
             <p className="mt-2 text-sm text-white/60">{nap.phone}</p>
@@ -55,7 +55,7 @@ export function Footer() {
                   href="/부산법무사"
                   className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
                 >
-                  부산 법무사
+                  부산에서 법무사 찾을 때
                 </Link>
               </li>
               <li>

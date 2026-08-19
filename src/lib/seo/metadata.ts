@@ -20,12 +20,13 @@ export type PageSeoInput = {
 
 const DEFAULT_OG_IMAGE = siteImages.seo.defaultOg.src;
 
-/** 「부산 법무사」 검색 대표는 `/부산법무사`. 홈 제목은 브랜드·위치만 쓴다. */
-export const HOME_METADATA_TITLE =
-  "다옴법무사사무소 | 해운대·센텀 안윤정 법무사";
+/** 「부산 법무사」 검색 대표는 홈(`/`). 제목은 브랜드·지역서비스·대표자만. */
+export const HOME_METADATA_TITLE = "다옴법무사사무소 | 부산 법무사 안윤정";
+
+export const HOME_H1 = "부산 법무사 안윤정";
 
 export const HOME_METADATA_DESCRIPTION =
-  "부산 해운대구·센텀 소재 다옴법무사사무소. 상속등기, 상속포기, 한정승인, 부동산등기, 법인설립등기, 임원변경등기 상담.";
+  "부산 해운대·센텀 다옴법무사사무소 안윤정 법무사가 상속등기·부동산등기·법인등기·개인회생·파산 등 필요한 절차와 준비서류를 직접 상담·안내합니다. 부산 전역 상담 가능.";
 
 const INDEX_ROBOTS: Metadata["robots"] = {
   index: true,
@@ -142,14 +143,13 @@ export const homeMetadata = createPageMetadata({
   description: HOME_METADATA_DESCRIPTION,
   path: "/",
   keywords: [
-    "해운대 법무사",
-    "센텀 법무사",
-    "부산 상속등기",
-    "부산 부동산등기",
-    "부산 법인등기",
-    "부산 개인회생",
+    "부산 법무사",
     seoBrand.siteName,
     seoBrand.representative,
+    "상속등기",
+    "부동산등기",
+    "법인등기",
+    "개인회생",
   ],
   ogImage: DEFAULT_OG_IMAGE,
 });

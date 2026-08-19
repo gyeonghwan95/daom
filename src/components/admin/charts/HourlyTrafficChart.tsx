@@ -1,9 +1,17 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { ChartTooltip } from "@/components/admin/charts/ChartTooltip";
+import { SourceMix } from "@/components/admin/charts/SourceMix";
+import { rankSources, type SourceCounts } from "@/lib/admin/source-breakdown";
+
 type HourRow = {
   hour: number;
   pageViews: number;
   cta?: number;
+  consultSubmit?: number;
+  naverPlace?: number;
+  sources?: SourceCounts;
 };
 
 type Props = {
@@ -25,14 +33,41 @@ function padHours(rows: HourRow[] | null | undefined): HourRow[] {
       hour,
       pageViews: row?.pageViews ?? 0,
       cta: row?.cta ?? 0,
+      consultSubmit: row?.consultSubmit ?? 0,
+      naverPlace: row?.naverPlace ?? 0,
+      sources: row?.sources,
     };
   });
 }
 
+function clampTip(x: number, y: number, host: DOMRect) {
+  return {
+    x: Math.min(Math.max(8, x), Math.max(8, host.width - 220)),
+    y: Math.min(Math.max(8, y - 8), Math.max(8, host.height - 12)),
+  };
+}
+
 export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [tip, setTip] = useState<{
+    hour: number;
+    x: number;
+    y: number;
+    pinned: boolean;
+  } | null>(null);
+
   const rows = padHours(today);
   const avgRows = padHours(avg7Day);
   const hasAny = rows.some((r) => r.pageViews > 0);
+
+  useEffect(() => {
+    if (!tip?.pinned) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setTip(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [tip?.pinned]);
 
   if (!hasAny) {
     return (
@@ -46,18 +81,45 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
     ...avgRows.map((r) => r.pageViews),
   );
 
-  const nowHour = Number(
-    new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Asia/Seoul",
-      hour: "2-digit",
-      hourCycle: "h23",
-    })
-      .format(new Date())
-      .replace(/\D/g, ""),
-  ) % 24;
+  const nowHour =
+    Number(
+      new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Asia/Seoul",
+        hour: "2-digit",
+        hourCycle: "h23",
+      })
+        .format(new Date())
+        .replace(/\D/g, ""),
+    ) % 24;
+
+  const active = tip ? rows.find((r) => r.hour === tip.hour) : null;
+  const avgActive = tip
+    ? avgRows.find((r) => r.hour === tip.hour)?.pageViews ?? 0
+    : 0;
+  const sourceRows = active ? rankSources(active.sources) : [];
+
+  const moveTip = (hour: number, clientX: number, clientY: number, pin?: boolean) => {
+    const host = hostRef.current?.getBoundingClientRect();
+    if (!host) return;
+    const pos = clampTip(clientX - host.left + 12, clientY - host.top, host);
+    setTip((prev) => {
+      if (pin) {
+        if (prev?.pinned && prev.hour === hour) return null;
+        return { hour, x: pos.x, y: pos.y, pinned: true };
+      }
+      if (prev?.pinned) {
+        return prev.hour === hour ? { ...prev, x: pos.x, y: pos.y } : prev;
+      }
+      return { hour, x: pos.x, y: pos.y, pinned: false };
+    });
+  };
 
   return (
-    <div className="admin-hourly">
+    <div
+      className="admin-hourly"
+      ref={hostRef}
+      onMouseLeave={() => setTip((prev) => (prev?.pinned ? prev : null))}
+    >
       <div className="admin-hourly__legend">
         <span>
           <i className="admin-hourly__dot admin-hourly__dot--today" /> 오늘
@@ -65,7 +127,7 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
         <span>
           <i className="admin-hourly__dot admin-hourly__dot--avg" /> 7일 평균
         </span>
-        <span className="admin-hourly__hint">막대에 마우스를 올리면 수치를 볼 수 있습니다</span>
+        <span className="admin-hourly__hint">막대에 올리거나 클릭하면 상세가 보입니다</span>
       </div>
       <div className="admin-hourly__chart" role="img" aria-label="시간대별 페이지뷰">
         {rows.map((row) => {
@@ -74,11 +136,15 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
           const hAvg = Math.max(avg > 0 ? 4 : 0, Math.round((avg / max) * 100));
           const showTick = row.hour % 2 === 0;
           const isNow = row.hour === nowHour;
+          const isActive = tip?.hour === row.hour;
           return (
-            <div
+            <button
               key={row.hour}
-              className={`admin-hourly__col${isNow ? " is-now" : ""}`}
-              title={`${String(row.hour).padStart(2, "0")}시 · 오늘 ${row.pageViews}회 · 7일 평균 ${avg}회${row.cta ? ` · CTA ${row.cta}` : ""}`}
+              type="button"
+              className={`admin-hourly__col${isNow ? " is-now" : ""}${isActive ? " is-active" : ""}`}
+              onMouseEnter={(event) => moveTip(row.hour, event.clientX, event.clientY)}
+              onMouseMove={(event) => moveTip(row.hour, event.clientX, event.clientY)}
+              onClick={(event) => moveTip(row.hour, event.clientX, event.clientY, true)}
             >
               <div className="admin-hourly__bars">
                 <div
@@ -93,7 +159,7 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
               <span className="admin-hourly__tick">
                 {showTick ? String(row.hour).padStart(2, "0") : ""}
               </span>
-            </div>
+            </button>
           );
         })}
       </div>
@@ -140,6 +206,36 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
           ))}
         </tbody>
       </table>
+      <ChartTooltip
+        open={Boolean(active && tip)}
+        pinned={Boolean(tip?.pinned)}
+        title={`${String(active?.hour ?? 0).padStart(2, "0")}시`}
+        x={tip?.x ?? 0}
+        y={tip?.y ?? 0}
+        rows={
+          active
+            ? [
+                { label: "오늘 페이지뷰", value: `${active.pageViews}회` },
+                { label: "7일 평균", value: `${avgActive}회` },
+                { label: "CTA", value: String(active.cta ?? 0) },
+                { label: "제출", value: String(active.consultSubmit ?? 0) },
+                { label: "네이버", value: String(active.naverPlace ?? 0) },
+              ]
+            : []
+        }
+        extra={
+          sourceRows.length ? (
+            <div className="admin-chart-tip__sources">
+              <p>이 시간 유입 경로</p>
+              <SourceMix sources={active?.sources} />
+            </div>
+          ) : (
+            <p className="admin-chart-tip__empty">
+              시간대별 유입 경로는 이번 개선 이후 페이지뷰부터 쌓입니다.
+            </p>
+          )
+        }
+      />
     </div>
   );
 }

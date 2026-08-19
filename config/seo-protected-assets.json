@@ -58,22 +58,22 @@
     },
     {
       "url": "/부산법무사",
-      "reason": "known-ranking",
-      "protectionLevel": "FULL",
+      "reason": "supporting-guide",
+      "protectionLevel": "URL",
       "protection": "SEO_PROTECTED",
-      "role": "BUSAN_GENERAL_CHAMPION",
-      "aliases": ["BUSAN_MAIN_CHAMPION"],
+      "role": "BUSAN_SELECTION_GUIDE",
+      "aliases": ["BUSAN_LEGAL_SCRIVENER_GUIDE"],
       "protect": {
         "url": true,
-        "title": true,
-        "h1": true,
+        "title": false,
+        "h1": false,
         "canonical": true,
-        "description": true,
-        "coreContent": true,
-        "og": true
+        "description": false,
+        "coreContent": false,
+        "og": false
       },
-      "knownSuccessfulQueries": ["부산 법무사", "부산 법무사 추천"],
-      "modificationRisk": "HIGH"
+      "knownSuccessfulQueries": ["부산 법무사 선택 기준", "부산에서 법무사 찾을 때"],
+      "modificationRisk": "MEDIUM"
     },
     {
       "url": "/부산법인법무사",
@@ -109,7 +109,7 @@
       },
       "knownSuccessfulQueries": [],
       "modificationRisk": "HIGH",
-      "notes": "UNKNOWN_PERFORMANCE. Modules OK; title/H1/URL immutable. Distinct from /부산법무사."
+      "notes": "2026-08-19: city-wide consult hub title/H1/intro strengthened by design. URL/canonical/indexability remain locked. Distinct from /부산법무사 and /부산역법무사."
     },
     {
       "url": "/전세사기피해대응절차",

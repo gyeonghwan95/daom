@@ -35,6 +35,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
   const content = getSelectionHubContent(page.slug);
   if (!content) return null;
 
+  const isConsultPrep = page.slug === "부산법무사상담";
   const cover = getCoverImageForPageData(page);
   const conversionKey = resolveConversionKey(page);
 
@@ -46,8 +47,14 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
 
   const tocItems = [
     { id: "article-body", label: "본문 안내" },
-    { id: "selection-criteria", label: "선택 전 확인할 기준" },
-    { id: "service-checkpoints", label: "업무별 체크포인트" },
+    {
+      id: "selection-criteria",
+      label: isConsultPrep ? "상담 전 이것만 알려주세요" : "선택 전 확인할 기준",
+    },
+    {
+      id: "service-checkpoints",
+      label: isConsultPrep ? "어떤 문제로 상담하시나요?" : "업무별 체크포인트",
+    },
     ...(content.comparisonRows
       ? [{ id: "comparison", label: content.comparisonTitle ?? "비교" }]
       : []),
@@ -75,7 +82,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
   ].filter((p) => p.trim().length > 0);
 
   const comparisonColumns = content.comparisonRows
-    ? page.slug === "부산법무사상담"
+    ? isConsultPrep
       ? [
           { key: "aspect", header: "구분" },
           { key: "left", header: "안내·확인 내용" },
@@ -88,7 +95,6 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         ]
     : [];
 
-  const isConsultPrep = page.slug === "부산법무사상담";
   const inquiryBase = `/contact/inquiry?from=${encodeURIComponent(page.slug)}&field=${encodeURIComponent(page.serviceSlug ?? "inheritance-registration")}`;
   const inquiryCost = `${inquiryBase}&intent=${encodeURIComponent("준비서류와 비용 확인")}`;
   const inquirySituation = `${inquiryBase}&intent=${encodeURIComponent("현재 상황 안내")}`;
@@ -105,18 +111,19 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         h1={content.h1}
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
-        keywords={content.primaryKeywords}
+        keywords={isConsultPrep ? [] : content.primaryKeywords}
         ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
         ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : consultationInquiryCopy.ctaShort}
         secondaryCta={
           page.slug === "부산등기법무사추천"
             ? { href: "/부산등기법무사", label: "부산 등기 법무사" }
             : isConsultPrep
-            ? { href: "/부산법무사비용", label: "비용 구성 먼저 보기" }
-            : { href: "/부산법무사상담", label: "상담 전 준비사항" }
+            ? { href: "/about", label: "안윤정 법무사 소개" }
+            : { href: "/부산법무사상담", label: "부산 전역 상담 안내" }
         }
         showDiagnosisCta={false}
         showNationwideChip={showNationwide}
+        showNaverReservation={isConsultPrep ? true : undefined}
       />
 
       {showNationwide ? <NationwideServiceCard /> : null}
@@ -164,11 +171,17 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         serviceSlug={page.serviceSlug}
       />
 
-      <ContentSection id="selection-criteria" title="선택 전 확인할 기준">
+      <ContentSection
+        id="selection-criteria"
+        title={isConsultPrep ? "상담 전 이것만 알려주세요" : "선택 전 확인할 기준"}
+      >
         <ChecklistBox items={content.selectionCriteria} />
       </ContentSection>
 
-      <ContentSection id="service-checkpoints" title="업무별 체크포인트">
+      <ContentSection
+        id="service-checkpoints"
+        title={isConsultPrep ? "어떤 문제로 상담하시나요?" : "업무별 체크포인트"}
+      >
         <div className="space-y-6">
           {content.serviceCheckpoints.map((block) => (
             <div key={block.title}>

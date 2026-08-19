@@ -72,6 +72,8 @@ export function LecturePageView({ page }: LecturePageViewProps) {
 
       {content.kind === "speaker" ? (
         <SpeakerLayout content={content} page={page} />
+      ) : content.kind === "expert" ? (
+        <ExpertLayout content={content} />
       ) : content.kind === "inquiry" ? (
         <InquiryLayout content={content} page={page} />
       ) : content.kind === "hiring" ? (
@@ -204,6 +206,113 @@ function SpeakerLayout({
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs.slice(0, 5)} />
+      </ContentSection>
+
+      <RelatedLinks content={content} />
+      <DisclaimerNote text={content.disclaimer} />
+    </>
+  );
+}
+
+function ExpertLayout({
+  content,
+}: {
+  content: LecturePageContent;
+}) {
+  const trackSummary = buildLectureTrackRecordSummary();
+  const featuredHistory = getFeaturedLectureHistory().slice(0, 6);
+
+  return (
+    <>
+      <PageHero
+        h1={content.h1}
+        eyebrow={content.eyebrow}
+        intro={content.heroIntro}
+        introParagraphs={content.heroParagraphs}
+        keywords={[]}
+        ctaLabel="강의·섭외 문의"
+        ctaHref="/강의문의"
+        secondaryCta={{ href: "/강사소개", label: "강사 프로필 보기" }}
+        showDiagnosisCta={false}
+        showAboutLawyerCta={false}
+        sideImage={siteImages.about.portrait}
+      />
+
+      <LectureTrackRecordSummaryView summary={trackSummary} compact />
+
+      <ContentSection id="purpose" title="어떤 목적으로 법률 전문가를 찾고 계신가요?">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {content.topicCards.map((card) => (
+            <TopicLinkCard key={card.title} card={card} detailed />
+          ))}
+        </div>
+      </ContentSection>
+
+      <SummaryGrid items={content.summaryItems} />
+
+      <ContentSection id="evidence" title="확인할 수 있는 자격과 활동">
+        <SpeakerProfile
+          showPrint
+          focusNote="강의·인터뷰·패널 요청은 법무사 실무와 확인된 교육·공공·언론 활동 범위 안에서 협의합니다. 소송 대리·형사 변론은 하지 않습니다."
+        />
+      </ContentSection>
+
+      {content.bodySections?.length ? (
+        <BodySections sections={content.bodySections} />
+      ) : null}
+
+      <SpeakerLectureGallery compact dualRow={false} />
+
+      <ContentSection id="verified-history" title="확인된 출강 이력">
+        <VerifiedLectureHistory
+          historyIds={content.historyIds}
+          limit={6}
+          title="기관명·주제가 확인된 강의"
+          description="확인되지 않은 횟수나 효과를 적지 않습니다."
+        />
+      </ContentSection>
+
+      {featuredHistory.length ? (
+        <section className="space-y-4">
+          <h2 className="text-lg font-semibold text-navy md:text-xl">
+            대표 출강
+          </h2>
+          <LectureHistoryGrid items={featuredHistory} compact />
+        </section>
+      ) : null}
+
+      {content.audienceCards.length ? (
+        <ContentSection id="audience" title="이런 담당자께 필요합니다">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {content.audienceCards.map((card) => (
+              <div
+                key={card.title}
+                className="rounded-xl border border-navy/10 p-4"
+              >
+                <p className="font-semibold text-navy">{card.title}</p>
+                <p className="mt-1 text-sm text-navy/70">{card.description}</p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
+
+      <LectureInlineCta
+        title="프로필·이력을 보셨다면 일정을 남겨 주세요"
+        text="주제·대상·희망 일정만 있으면 가능 여부를 안내합니다."
+        primaryLabel="강의문의 남기기"
+        primaryHref="/강의문의"
+      />
+
+      {content.showInquiryForm ? (
+        <ContentSection id="inquiry" title={content.ctaTitle}>
+          <p className="mb-4 text-sm text-navy/75">{content.ctaText}</p>
+          <LectureInquiryForm />
+        </ContentSection>
+      ) : null}
+
+      <ContentSection id="faq" title="자주 묻는 질문">
+        <FAQAccordion items={content.faqs} />
       </ContentSection>
 
       <RelatedLinks content={content} />
@@ -386,7 +495,7 @@ function HubLayout({
         keywords={(content.primaryKeywords ?? []).slice(0, 4)}
         ctaLabel="기업·기관 강의 문의"
         ctaHref="/강의문의"
-        secondaryCta={{ href: "/강사소개", label: "강사 소개" }}
+        secondaryCta={{ href: "/부산법률전문가", label: "법률 전문가 활동" }}
         showDiagnosisCta={false}
       />
 
@@ -587,21 +696,38 @@ function TopicLayout({
   page: PageData;
   history: ReturnType<typeof getRelatedLectureHistoryForPage>;
 }) {
+  const isEnterprise = page.slug === "기업법률교육";
+
   return (
     <>
       <PageHero
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={(content.primaryKeywords ?? []).slice(0, 4)}
-        ctaLabel="이 주제 문의하기"
+        keywords={isEnterprise ? [] : (content.primaryKeywords ?? []).slice(0, 4)}
+        ctaLabel={isEnterprise ? "기업 특강 문의" : "이 주제 문의하기"}
         ctaHref="/강의문의"
-        secondaryCta={{ href: "/강사소개", label: "강사 소개" }}
+        secondaryCta={
+          isEnterprise
+            ? { href: "#packages", label: "강의 주제 보기" }
+            : { href: "/강사소개", label: "강사 소개" }
+        }
         showDiagnosisCta={false}
+        showAboutLawyerCta={false}
       />
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 3)} />
       <SummaryGrid items={content.summaryItems.slice(0, 4)} />
+
+      {isEnterprise ? (
+        <ContentSection id="proof" title="기업 담당자가 확인할 수 있는 근거">
+          <SpeakerProfile
+            compact
+            showPrint={false}
+            focusNote="법무사 국가자격과 명례일반산업단지 법률지원 MOU 등 확인된 기업 협업을 바탕으로 구성합니다."
+          />
+        </ContentSection>
+      ) : null}
 
       {content.bodySections?.length ? (
         <BodySections sections={content.bodySections} />
@@ -650,7 +776,10 @@ function TopicLayout({
       ) : null}
 
       {content.audienceCards.length ? (
-        <ContentSection id="audience" title="추천 대상">
+        <ContentSection
+          id="audience"
+          title={isEnterprise ? "직급·역할별로 많이 요청하는 주제" : "추천 대상"}
+        >
           <div className="grid gap-3 sm:grid-cols-2">
             {content.audienceCards.slice(0, 6).map((card) => (
               <div
@@ -675,6 +804,29 @@ function TopicLayout({
               >
                 <p className="font-semibold text-navy">{item.title}</p>
                 <p className="mt-1 text-sm text-navy/70">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
+
+      {content.durationOptions.length ? (
+        <ContentSection
+          id="packages"
+          title={isEnterprise ? "기업 특강 구성 예시" : "강의시간별 구성"}
+        >
+          <div className="grid gap-3 sm:grid-cols-2">
+            {content.durationOptions.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-xl border border-navy/10 p-4"
+              >
+                <p className="font-semibold text-navy">{item.label}</p>
+                <ul className="mt-2 list-disc space-y-0.5 pl-5 text-sm text-navy/75">
+                  {item.outline.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

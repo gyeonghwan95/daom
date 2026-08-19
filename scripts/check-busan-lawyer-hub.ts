@@ -67,6 +67,9 @@ function main() {
     if (hub.h1 !== busanLawyerHubH1) {
       add("error", `hub H1 mismatch: ${hub.h1}`);
     }
+    if (hub.h1.includes("부산 법무사 안윤정")) {
+      add("error", "hub H1 still matches homepage H1 intent");
+    }
     if (!hub.includeFaqSchema) add("error", "hub includeFaqSchema should be true");
     if (hub.faqs.length < 6) {
       add("error", `hub FAQ count ${hub.faqs.length} (full hub FAQs should not be sliced to 3)`);
@@ -96,10 +99,24 @@ function main() {
     }
     const dongKeywords = sanitizePageKeywords("/민락동법무사", [
       "부산 법무사",
+      "부산 법무사 상담",
       "민락동 법무사",
     ]);
     if (dongKeywords?.includes("부산 법무사")) {
       add("error", "exact champion query still in non-champion keywords");
+    }
+    if (dongKeywords?.includes("부산 법무사 상담")) {
+      add("error", "consult champion query still in neighborhood keywords");
+    }
+    const consultKw = createPageMetadata({
+      title: "부산 법무사 상담 | 상속·등기·법인·회생 상담 - 다옴법무사사무소",
+      description: "부산 전역 법무사 상담.",
+      path: "/부산법무사상담",
+      keywords: ["부산 법무사 상담", "해운대 법무사"],
+    }).keywords;
+    const consultKwList = Array.isArray(consultKw) ? consultKw : [];
+    if (!consultKwList.includes("부산 법무사 상담")) {
+      add("error", "consult hub lost exact-query keyword 「부산 법무사 상담」");
     }
     const hubKw = createPageMetadata({
       title: busanLawyerHubMetaTitle,
@@ -108,8 +125,14 @@ function main() {
       keywords: ["부산 법무사", "해운대 법무사"],
     }).keywords;
     const hubKwList = Array.isArray(hubKw) ? hubKw : [];
-    if (!hubKwList.includes("부산 법무사")) {
-      add("error", "champion lost exact-query keywords");
+    if (hubKwList.includes("부산 법무사")) {
+      add("error", "supporting hub still claims exact-query keywords");
+    }
+    if (!hubKwList.includes("해운대 법무사")) {
+      add("error", "hub lost non-champion keywords");
+    }
+    if (!hub.internalLinks.some((l) => l.href === "/")) {
+      add("error", "hub missing HOME link");
     }
     console.log("HUB");
     console.log(`  path: ${hub.path}`);
@@ -125,21 +148,23 @@ function main() {
   console.log("\nHOME");
   console.log(`  title: ${home.metaTitle}`);
   console.log(`  h1: ${home.h1}`);
-  if (/^부산법무사\s*\|/.test(home.metaTitle) || home.metaTitle.startsWith("부산 법무사 |")) {
-    add("error", "homepage title still exact-matches 「부산 법무사」 champion query");
-  }
-  if (home.metaTitle === busanLawyerHubMetaTitle) {
-    add("error", "homepage title equals champion title");
-  }
-  const homeKeywords = Array.isArray(homeMetadata.keywords)
-    ? homeMetadata.keywords
-    : [];
-  if (
-    homeKeywords.includes("부산법무사") ||
-    homeKeywords.includes("부산 법무사")
-  ) {
-    add("error", "homepage meta keywords still exact-match 「부산 법무사」");
-  }
+    if (home.metaTitle !== HOME_METADATA_TITLE) {
+      add("error", `homepage title mismatch: ${home.metaTitle}`);
+    }
+    if (home.h1 !== "부산 법무사 안윤정") {
+      add("error", `homepage H1 mismatch: ${home.h1}`);
+    }
+    if (home.metaTitle === busanLawyerHubMetaTitle) {
+      add("error", "homepage title equals supporting hub title");
+    }
+    const homeKeywords = Array.isArray(homeMetadata.keywords)
+      ? homeMetadata.keywords
+      : [];
+    if (
+      !homeKeywords.includes("부산 법무사")
+    ) {
+      add("error", "homepage lost exact-query keyword 「부산 법무사」");
+    }
 
   const titles = new Map<string, string>();
   const descriptions = new Map<string, string>();
@@ -184,6 +209,14 @@ function main() {
           "error",
           "office page title still prefixes champion query 「부산 법무사」",
         );
+      }
+    }
+    if (slug === "부산법무사상담") {
+      if (page.h1 !== "부산 법무사 상담, 현재 상황부터 알려주세요") {
+        add("error", "consult hub H1 lost city-wide consult intent");
+      }
+      if (!page.metaTitle.startsWith("부산 법무사 상담")) {
+        add("error", "consult hub title lost primary query");
       }
     }
     if (slug === "부산법무사추천") {

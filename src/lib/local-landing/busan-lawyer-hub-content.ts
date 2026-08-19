@@ -43,18 +43,18 @@ export const busanLawyerHubReviewedOn = "2026-08-18";
 export const busanLawyerHubReviewedLabel = "2026년 8월 18일 확인";
 
 export const busanLawyerHubMetaTitle =
-  "부산 법무사 | 해운대·센텀 상속·등기 상담 - 다옴법무사사무소";
+  "부산에서 법무사 찾을 때 확인할 업무·비용·상담 기준 | 다옴법무사사무소";
 
 export const busanLawyerHubH1 =
-  "부산 법무사, 지금 어떤 절차가 필요할까요?";
+  "부산에서 법무사를 찾을 때 먼저 확인할 기준";
 
 /** 80–120자. buildMetaDescription이 접미사를 붙이지 않도록 길이를 맞춘다. */
 export const busanLawyerHubDescription =
-  "해운대·센텀 다옴법무사사무소 안윤정 법무사. 상속등기·부동산등기·법인등기·개인회생을 직접 상담합니다. 업무명을 몰라도 현재 상황만 알려 주시면 됩니다.";
+  "부산에서 법무사를 찾을 때 확인할 업무 범위, 비용 항목, 관할·기한, 상담 전 준비사항을 정리합니다. 다옴법무사사무소 안윤정 법무사가 안내합니다.";
 
 export const busanLawyerHubHeroParagraphs = [
-  "부산 법무사를 찾고 있다면, 해운대·센텀 다옴법무사사무소에서 안윤정 법무사가 상속·부동산등기·법인등기·개인회생을 직접 상담합니다. 법원 앞이 아니어도 부산 전역 사건을 진행하며, 업무명을 몰라도 현재 상황만 알려 주시면 됩니다.",
-  "법무사는 등기·서류 작성과 법원·등기소 제출을 중심으로 하고, 변호사는 소송·형사 변론 범위가 넓습니다. 상속등기·소유권이전·법인변경·개인회생 신청 서류라면 법무사 상담이 맞습니다.",
+  "부산에서 법무사를 고를 때는 사무소 이름보다 지금 필요한 업무, 관할, 기한, 비용 항목부터 가리는 편이 안전합니다. 상속인지 매매등기인지, 법인 변경인지, 개인회생인지에 따라 준비서류와 접수처가 달라집니다.",
+  "이 페이지는 선택 기준과 업무 안내입니다. 다옴법무사사무소 안윤정 법무사에게 상담을 맡기고 싶다면 홈에서 사무소·대표·주요 업무를 이어서 확인하시면 됩니다.",
 ];
 
 export const busanLawyerHubSituations: BusanLawyerHubSituation[] = [
@@ -258,6 +258,7 @@ export const busanLawyerHubNap = {
 } as const;
 
 export const busanLawyerHubInternalLinks: BusanLawyerHubLink[] = [
+  { href: "/", label: "부산 법무사 안윤정 · 다옴법무사사무소" },
   { href: "/부산등기법무사", label: "부산 등기 법무사" },
   { href: "/부산상속법무사", label: "부산 상속 법무사" },
   { href: "/부산법인법무사", label: "부산 법인 법무사" },

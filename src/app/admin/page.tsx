@@ -9,6 +9,7 @@ import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
 import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
+import { SourceMix } from "@/components/admin/charts/SourceMix";
 import { formatActivityAction, getSourceLabel } from "@/lib/admin/activity-labels";
 import {
   formatDeviceSplit,
@@ -166,8 +167,7 @@ export default function AdminDashboardPage() {
         />
       </AdminSection>
 
-      <div className="admin-two-col">
-        <AdminSection title="최근 7일 추이">
+      <AdminSection title="최근 7일 추이">
           {data.visitsByDay.length === 0 ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
@@ -180,6 +180,7 @@ export default function AdminDashboardPage() {
                     <th>페이지뷰</th>
                     <th>세션</th>
                     <th>기기</th>
+                    <th>유입 경로</th>
                     <th>CTA</th>
                     <th>제출</th>
                     <th>네이버</th>
@@ -192,6 +193,9 @@ export default function AdminDashboardPage() {
                       <td>{d.visits}</td>
                       <td>{d.sessions ?? "—"}</td>
                       <td>{formatDeviceSplit(d.mobile, d.desktop)}</td>
+                      <td>
+                        <SourceMix sources={d.sources} compact />
+                      </td>
                       <td>{d.cta ?? "—"}</td>
                       <td>{d.submits}</td>
                       <td>{d.naverPlace ?? "—"}</td>
@@ -201,9 +205,9 @@ export default function AdminDashboardPage() {
               </table>
             </>
           )}
-        </AdminSection>
+      </AdminSection>
 
-        <AdminSection title="전환 Funnel (오늘)">
+      <AdminSection title="전환 Funnel (오늘)">
           {!funnel ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
@@ -217,8 +221,7 @@ export default function AdminDashboardPage() {
               ]}
             />
           )}
-        </AdminSection>
-      </div>
+      </AdminSection>
 
       <div className="admin-two-col">
         <AdminSection title="오늘 유입 TOP 페이지">

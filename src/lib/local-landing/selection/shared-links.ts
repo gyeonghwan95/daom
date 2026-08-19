@@ -5,7 +5,7 @@ export const selectionCoreLinks = {
     label: "부산 법무사 추천 선택 기준",
   },
   busanCompare: { href: "/부산법무사비교", label: "부산 법무사 비교 기준" },
-  busanConsult: { href: "/부산법무사상담", label: "부산 법무사 상담 준비" },
+  busanConsult: { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
   busanReviews: { href: "/부산법무사후기", label: "부산 법무사 후기 확인 기준" },
   busanCost: { href: "/부산법무사비용", label: "부산 법무사 비용 안내" },
   busanFeeTable: { href: "/부산법무사보수표", label: "부산 법무사 보수표" },

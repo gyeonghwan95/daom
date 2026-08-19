@@ -5,6 +5,7 @@ import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
+import { SourceMix } from "@/components/admin/charts/SourceMix";
 import { getSourceLabel } from "@/lib/analytics/referrer";
 import { formatDeviceSplit } from "@/lib/admin/device-label";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
@@ -94,6 +95,10 @@ export default function AdminAnalyticsPage() {
                 sessions: d.sessions,
                 cta: d.cta,
                 submits: d.consultSubmit,
+                naverPlace: d.naverPlace,
+                mobile: d.devices?.mobile,
+                desktop: d.devices?.desktop,
+                sources: d.sources,
               }))}
             />
             <table className="admin-table">
@@ -103,6 +108,7 @@ export default function AdminAnalyticsPage() {
                   <th>페이지뷰</th>
                   <th>세션</th>
                   <th>기기</th>
+                  <th>유입 경로</th>
                   <th>CTA</th>
                   <th>제출</th>
                   <th>네이버</th>
@@ -115,6 +121,9 @@ export default function AdminAnalyticsPage() {
                     <td>{d.visits}</td>
                     <td>{d.sessions ?? "—"}</td>
                     <td>{formatDeviceSplit(d.devices?.mobile, d.devices?.desktop)}</td>
+                    <td>
+                      <SourceMix sources={d.sources} compact />
+                    </td>
                     <td>{d.cta}</td>
                     <td>{d.consultSubmit}</td>
                     <td>{d.naverPlace ?? "—"}</td>

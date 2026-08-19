@@ -3,6 +3,28 @@ import type { LectureSearchIntent } from "@/lib/lectures/types";
 /** 강의 SEO 검색의도 레지스트리 — Priority 1 중심 */
 export const lectureSearchIntents: LectureSearchIntent[] = [
   {
+    id: "discovery-legal-expert",
+    primaryKeyword: "부산 법률 전문가",
+    secondaryKeywords: [
+      "부산법률전문가",
+      "부산 법률 전문가 섭외",
+      "부산 법률 전문가 강연",
+      "부산 법률 전문가 인터뷰",
+      "부산 법률 전문가 패널",
+    ],
+    targetUrl: "/부산법률전문가",
+    intentType: "expert-discovery",
+    audience: "기업·기관·언론 담당자",
+    region: "부산",
+    funnelStage: "awareness",
+    priority: 1,
+    action: "strengthen-existing",
+    parentHub: "/부산법률전문가",
+    relatedLectures: ["/법률강의", "/기업법률교육", "/강사소개", "/강의문의"],
+    legalQualificationRisk: true,
+    notes: "DISCOVERY 허브. 강의 프로그램·강사 프로필과 분리.",
+  },
+  {
     id: "hub-busan-lecture",
     primaryKeyword: "부산 법률 강의",
     secondaryKeywords: [

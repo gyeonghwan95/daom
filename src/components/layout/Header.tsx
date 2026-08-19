@@ -108,6 +108,7 @@ export function Header() {
           >
             <Link
               href="/"
+              aria-label="다옴법무사사무소 홈"
               className="site-header__brand header-bar__brand flex min-h-11 min-w-0 shrink-0 items-center gap-2.5 sm:gap-3 lg:flex-none"
               onClick={() => {
                 closeMenu();

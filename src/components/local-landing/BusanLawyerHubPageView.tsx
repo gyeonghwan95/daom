@@ -298,7 +298,8 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
 
       <ContentSection id="lawyer" title="누가 상담하나요">
         <HubLawyerPortrait
-          alt="부산 법무사 상담을 진행하는 안윤정 법무사"
+          alt="부산에서 법무사 상담을 진행하는 안윤정 법무사"
+          showHomeOfficeLink
           paragraphs={[
             "다옴법무사사무소 대표 법무사입니다. 상속등기·부동산등기·법인등기·개인회생 상담과 진행을 직접 맡습니다.",
             "검색으로 찾은 정보가 실제 절차와 맞는지 먼저 짚고, 지금 할 일과 나중 할 일을 나눕니다. 대한법무사협회장 표창 수상 이력과 공공·정책 활동은 소개 페이지에서 이어서 확인하실 수 있습니다.",

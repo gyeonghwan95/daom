@@ -30,6 +30,12 @@ export function HomeLectureHistorySection() {
             전체 강의 이력
           </Link>
           <Link
+            href="/부산법률전문가"
+            className="inline-flex min-h-11 items-center rounded-lg border border-beige-dark px-4 text-sm font-medium text-navy no-underline hover:bg-beige"
+          >
+            법률 전문가 활동
+          </Link>
+          <Link
             href="/강사소개"
             className="inline-flex min-h-11 items-center rounded-lg border border-beige-dark px-4 text-sm font-medium text-navy no-underline hover:bg-beige"
           >

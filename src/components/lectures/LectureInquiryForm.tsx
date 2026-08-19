@@ -21,7 +21,9 @@ const TOPICS = [
   "청년 생활법률",
   "디지털 법률",
   "창업·기업 법률",
+  "기업 특강(계약·채권·법인)",
   "진로 특강",
+  "언론·인터뷰·패널",
   "기관 맞춤 기획",
   "기타·상담 후 결정",
 ] as const;
@@ -63,6 +65,7 @@ export function LectureInquiryForm() {
   const [topic, setTopic] = useState<(typeof TOPICS)[number]>("전세사기 예방");
   const [format, setFormat] = useState<(typeof FORMATS)[number]>("미정");
   const [audience, setAudience] = useState<(typeof AUDIENCES)[number]>("미정");
+  const [schedule, setSchedule] = useState("");
   const [memo, setMemo] = useState("");
   const [agree, setAgree] = useState(false);
   const startedRef = useRef(false);
@@ -82,11 +85,12 @@ export function LectureInquiryForm() {
         `희망 주제: ${topic}`,
         format !== "미정" ? `행사 형태: ${format}` : "",
         audience !== "미정" ? `교육 대상: ${audience}` : "",
+        schedule.trim() ? `희망 일정: ${schedule.trim()}` : "",
         memo.trim() ? `요청: ${memo.trim()}` : "",
       ]
         .filter(Boolean)
         .join("\n"),
-    [institution, contact, topic, format, audience, memo],
+    [institution, contact, topic, format, audience, schedule, memo],
   );
 
   useEffect(() => {
@@ -211,6 +215,7 @@ export function LectureInquiryForm() {
     setTopic("전세사기 예방");
     setFormat("미정");
     setAudience("미정");
+    setSchedule("");
     setMemo("");
     setAgree(false);
     setErrors({});
@@ -333,13 +338,22 @@ export function LectureInquiryForm() {
           </select>
         </Field>
 
+        <Field label="희망 일정">
+          <input
+            className={fieldControlClass(false)}
+            value={schedule}
+            onChange={(e) => setSchedule(e.target.value)}
+            placeholder="예: 9월 둘째 주, 평일 오후 2시간 (선택)"
+          />
+        </Field>
+
         <Field label="한 줄 요청">
           <textarea
             className={fieldControlClass(false)}
             rows={2}
             value={memo}
             onChange={(e) => setMemo(e.target.value)}
-            placeholder="예: 9월 중 90분, 청년 30명 대상 (선택)"
+            placeholder="인원·장소·제안서 필요 여부 등 (선택). 민감정보는 적지 마세요."
           />
         </Field>
 

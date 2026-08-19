@@ -194,6 +194,7 @@ export type DashboardPayload = {
     naverPlace?: number;
     mobile?: number;
     desktop?: number;
+    sources?: Record<string, number>;
   }>;
   emailRecent: EmailLogEntry[];
   activeNotices: FloatingNotice[];
@@ -215,6 +216,7 @@ export type DashboardPayload = {
     cta: number;
     consultSubmit: number;
     naverPlace: number;
+    sources?: Record<string, number>;
   }>;
   hourly7DayAvg?: Array<{ hour: number; pageViews: number }>;
   hourlyInsights?: {
