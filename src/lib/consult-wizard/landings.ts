@@ -282,6 +282,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
       },
     ],
     relatedLinks: [
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/부산임차권등기명령", label: "임차권등기명령 안내" },
       { href: "/부산전세보증금반환법무사", label: "전세보증금 반환" },
     ],

@@ -149,6 +149,10 @@ export const 부산전세보증금반환법무사Override: SearchIntentContent =
     { href: "/faq/jeonse-registration-faq", label: "전세 등기 자주 묻는 질문" },
     { href: "/contact", label: "상담 문의" },
   ],
+  breadcrumbParent: {
+    href: "/전세사기피해대응절차",
+    label: "전세보증금 피해 대응",
+  },
   bottomCtaText:
     "계약 만료일과 전입·확정일자, 반환 요청 기록, 이사 예정 여부를 알려 주시면 상황을 정리하고 임차권등기명령 등 필요한 절차를 상담 기준으로 안내해 드립니다. 소송 대리가 필요한 부분은 변호사 상담을 권하며, 결과는 보장하지 않습니다.",
   serviceSlug: "real-estate-registration",

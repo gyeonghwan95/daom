@@ -205,6 +205,15 @@ export const PATH_ALIAS_RULES: Array<{ match: RegExp; aliases: string[] }> = [
     ],
   },
   {
+    match: /전세사기피해대응절차/,
+    aliases: [
+      "부산 전세사기 법무사",
+      "전세보증금 미반환",
+      "전세사기 피해",
+      "집주인 연락두절 보증금",
+    ],
+  },
+  {
     match: /임차권등기명령|임차권/,
     aliases: [
       "전세금 못 받고 이사",

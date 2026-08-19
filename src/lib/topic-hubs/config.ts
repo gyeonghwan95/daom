@@ -451,6 +451,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "전세보증금·임차권",
         intro: "보증금 반환이 어려울 때 임차권등기명령으로 우선변제권을 확보하는 경우가 많습니다.",
         links: [
+          { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
           { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
           {
             href: "/이사후임차권등기명령준비",

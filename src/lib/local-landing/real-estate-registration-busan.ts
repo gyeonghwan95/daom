@@ -176,6 +176,7 @@ export function buildBusanRealEstateRegistrationPage(
       { href: "/부산소유권이전등기", label: "소유권이전등기 원인별 안내" },
       { href: "/부산아파트매매등기", label: "아파트 매매등기" },
       { href: "/부산가등기", label: "가등기 설정·말소" },
+      { href: "/전세사기피해대응절차", label: "임대차·전세보증금 문제" },
       { href: "/부동산실권리자명의등기", label: "실권리자명의등기" },
       { href: "/부산상속등기", label: "상속으로 인한 이전등기" },
       { href: "/부산신축건물보존등기", label: "신축 보존등기" },

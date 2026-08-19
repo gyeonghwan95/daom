@@ -403,19 +403,20 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     id: "lec-no-consumer-champion",
     queryCluster: "hiring-booking",
     query: "부산 법무사",
-    aliases: ["부산 법무사 추천", "부산 법률상담"],
+    aliases: [],
     format: "수임 상담",
     audience: "개인 의뢰인",
     topic: "법무사 사무소 선택",
     institutionType: "consumer",
     funnelStage: "HIGH_INTENT",
-    existingUrl: "/부산법무사",
+    existingUrl: "/",
     coverage: "strong",
     trendIndex: "TREND_DATA_UNAVAILABLE",
     businessValue: 20,
     cannibalizationRisk: "HIGH",
     recommendedAction: "DO_NOT_TARGET",
-    notes: "강의 페이지 Primary 금지.",
+    notes:
+      "강의 페이지 Primary 금지. 「부산 법무사」는 홈(`/`). 「부산 법무사 추천」은 `/부산법무사추천`. 「부산 법무사 상담」은 `/부산법무사상담`.",
   },
 ];
 

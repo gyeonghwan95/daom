@@ -96,6 +96,7 @@ export const jeonseLeasePages = [
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/임대차전세", label: "임대차·전세 허브" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
       { href: "/민사소송", label: "민사·채권 허브" },
@@ -230,6 +231,7 @@ export const jeonseLeasePages = [
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/임대차전세", label: "임대차·전세 허브" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
       { href: "/민사소송", label: "민사·채권 허브" },
@@ -364,6 +366,7 @@ export const jeonseLeasePages = [
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/임대차전세", label: "임대차·전세 허브" },
       { href: "/민사소송", label: "민사·채권 허브" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
@@ -498,9 +501,9 @@ export const jeonseLeasePages = [
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
+      { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/임대차전세", label: "임대차·전세 허브" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
-      { href: "/전세사기예방교육", label: "전세사기 예방 교육" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [

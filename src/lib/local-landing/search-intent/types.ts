@@ -71,6 +71,22 @@ export type SearchIntentContent = {
     title: string;
     paragraphs: string[];
   }[];
+  /** 피해 허브 등: 상황 선택 카드 (같은 페이지 앵커 또는 기존 URL) */
+  situationNav?: {
+    title: string;
+    description: string;
+    href: string;
+  }[];
+  /** 공식 법령·공공기관 출처 (화면에 보이는 링크만) */
+  officialSources?: {
+    label: string;
+    href: string;
+    note?: string;
+  }[];
+  /** true면 Hero 키워드 칩·검색어 나열 문단을 넣지 않음 */
+  suppressKeywordChips?: boolean;
+  /** Hero 직후 긴급 체크리스트 */
+  featuredChecklist?: string[];
 };
 
 export type SearchIntentSeed = {

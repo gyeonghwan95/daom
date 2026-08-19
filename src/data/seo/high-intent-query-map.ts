@@ -129,7 +129,6 @@ export const HIGH_INTENT_QUERIES: HighIntentQueryRow[] = [
     supporting: [
       "/부산전세보증금반환법무사",
       "/부산임차권등기명령",
-      "/전세사기예방교육",
       "/민사소송",
     ],
     competing: ["/전세사기예방교육", "/부산전세전문법무사"],

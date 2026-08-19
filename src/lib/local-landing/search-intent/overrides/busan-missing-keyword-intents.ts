@@ -550,6 +550,7 @@ export const 부산경매권리분석Override: SearchIntentContent = {
     { href: "/경매낙찰후전세권확인", label: "경매 낙찰 후 전세권 확인" },
     { href: "/부산공매낙찰등기", label: "부산 공매 낙찰 등기" },
     { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
+    { href: "/전세사기피해대응절차", label: "전세 임차인 피해 대응" },
     realEstateHub,
   ],
   relatedGuideLinks: [realEstateConsult],

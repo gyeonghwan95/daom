@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-19",
+  "serp": {
+    "status": "SERP 직접 확인 불가",
+    "note": "네이버 웹검색 자동 수집을 우회하지 않음. 순위·노출 URL을 만들어내지 않음."
+  },
+  "primaryHub": {
+    "url": "/전세사기피해대응절차",
+    "decision": "기존 URL 업그레이드. /부산전세사기법무사 신규 생성 안 함.",
+    "titleAfter": "부산 전세사기 법무사 | 보증금 미반환·임차권등기 - 다옴법무사사무소",
+    "h1After": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?"
+  },
+  "newUrls": [],
+  "urlGuard": {
+    "existingUrlChanged": 0,
+    "existingUrlDeleted": 0,
+    "existingUrlRedirected": 0
+  },
+  "queryMap": [
+    { "query": "부산 전세사기 법무사", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "피해 초기 대응 허브" },
+    { "query": "부산 전세사기", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "피해 탐색" },
+    { "query": "부산 전세사기 상담", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산법무사상담", "intent": "피해 상담" },
+    { "query": "부산 전세사기 피해", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "피해 상황 분류" },
+    { "query": "부산 전세사기 피해자", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": null, "intent": "허브 지원제도 섹션" },
+    { "query": "부산 전세사기 피해 상담", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산법무사상담", "intent": "피해 상담" },
+    { "query": "부산 전세 피해 법무사", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산법무사상담", "intent": "법무사 업무범위" },
+    { "query": "부산 전세피해 상담", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산법무사상담", "intent": "피해 상담" },
+    { "query": "부산 전세보증금 반환", "primaryUrl": "/부산전세보증금반환법무사", "supportingUrl": "/전세사기피해대응절차", "intent": "보증금 반환" },
+    { "query": "부산 전세보증금 반환 법무사", "primaryUrl": "/부산전세보증금반환법무사", "supportingUrl": "/전세사기피해대응절차", "intent": "보증금 반환" },
+    { "query": "부산 전세보증금 못받음", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환 동의어" },
+    { "query": "부산 전세보증금 미반환", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환" },
+    { "query": "전세보증금 안주는 집주인 부산", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환" },
+    { "query": "집주인이 전세보증금을 안줘요", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환" },
+    { "query": "전세계약 끝났는데 보증금 못받음", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환" },
+    { "query": "전세 만기 보증금 미반환", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산전세보증금반환법무사", "intent": "미반환" },
+    { "query": "부산 임대차보증금 반환", "primaryUrl": "/부산전세보증금반환법무사", "supportingUrl": "/전세사기피해대응절차", "intent": "보증금 반환" },
+    { "query": "부산 임차권등기명령", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "임차권등기" },
+    { "query": "임차권등기명령 법무사 부산", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "임차권등기" },
+    { "query": "전세보증금 못받고 이사", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "이사·대항력" },
+    { "query": "보증금 못받았는데 이사해도 되나요", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "이사·대항력" },
+    { "query": "전세 만기 이사 전입신고", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "이사·대항력" },
+    { "query": "전세보증금 반환 전 이사", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/전세사기피해대응절차", "intent": "이사·대항력" },
+    { "query": "임차권등기 언제 해야하나요", "primaryUrl": "/부산임차권등기명령", "supportingUrl": "/임차권등기명령필요서류", "intent": "임차권등기" },
+    { "query": "부산 전세집 경매", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산경매권리분석", "intent": "경매·배당(임차인)" },
+    { "query": "전세집 경매 보증금", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산경매권리분석", "intent": "경매·배당" },
+    { "query": "전세사기 경매 법무사", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산경매권리분석", "intent": "경매·배당" },
+    { "query": "부산 경매 배당요구", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산경매권리분석", "intent": "배당요구" },
+    { "query": "전세 경매 배당요구", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/부산임차권등기명령", "intent": "배당요구" },
+    { "query": "집주인 연락두절 전세보증금", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/situations/집주인-연락-두절", "intent": "연락두절" },
+    { "query": "임대인 연락 안됨 보증금", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/situations/집주인-연락-두절", "intent": "연락두절" },
+    { "query": "집주인 잠적", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": "/situations/집주인-연락-두절", "intent": "연락두절" },
+    { "query": "전세사기 피해자 결정", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": null, "intent": "특별법 지원" },
+    { "query": "전세사기 특별법 부산", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": null, "intent": "특별법 지원" },
+    { "query": "부산 전세피해지원센터", "primaryUrl": "/전세사기피해대응절차", "supportingUrl": null, "intent": "공적 창구" },
+    { "query": "부산 전세사기 예방교육", "primaryUrl": "/전세사기예방교육", "supportingUrl": "/전세사기피해대응절차", "intent": "예방교육·강사" },
+    { "query": "전세사기 예방 강사", "primaryUrl": "/전세사기예방교육", "supportingUrl": "/법률강의", "intent": "예방교육·강사" }
+  ],
+  "sourcesReviewed": [
+    { "name": "전세사기피해자 지원 및 주거안정에 관한 특별법", "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsId=014450", "reviewed": "2026.08" },
+    { "name": "주택임대차보호법", "url": "https://www.law.go.kr/법령/주택임대차보호법", "reviewed": "2026.08" },
+    { "name": "부산광역시 전세피해지원센터", "url": "https://www.busan.go.kr/depart/charterdamage001/1579480", "reviewed": "2026.08.19", "note": "시청 1층 대강당 우측, 051-888-5101·5102, 센터 10:00–17:00 / 결정신청 09:00–18:00" },
+    { "name": "HUG 전세피해지원센터", "url": "https://khug.or.kr/jeonse/web/s01/s010001.jsp", "reviewed": "2026.08.19", "note": "페이지 fetch timeout. 링크는 유지, 방문 전 공식 안내 확인 문구 사용" }
+  ],
+  "protect": [
+    "/전세사기예방교육",
+    "/법률강의",
+    "/강사소개",
+    "/부산법무사상담",
+    "/부산임차권등기명령",
+    "/부산전세보증금반환법무사",
+    "/임대차전세",
+    "/"
+  ]
+}

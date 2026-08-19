@@ -590,7 +590,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     id: "ps-consumer-champion",
     queryCluster: "institution-general",
     query: "부산 법무사",
-    aliases: ["부산 법무사 추천"],
+    aliases: [],
     institutionType: "mixed",
     staffRole: "mixed",
     task: "일반 소비자 사무소 선택",

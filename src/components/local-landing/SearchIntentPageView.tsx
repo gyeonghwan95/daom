@@ -38,6 +38,7 @@ import { allServiceDetails } from "@/lib/services-data";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
+import Link from "next/link";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
@@ -64,13 +65,24 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     content.showInheritanceJourney !== false &&
     isInheritanceJourneyPage(page.slug);
 
+  const isJeonseVictimHub = content.slug === "전세사기피해대응절차";
+
   const tocItems = [
     ...(showJourney
       ? [{ id: "inheritance-journey", label: "절차 여정" }]
       : []),
+    ...(content.situationNav?.length
+      ? [{ id: "situation-nav", label: "지금 어떤 상황이신가요?" }]
+      : []),
+    ...(content.featuredChecklist?.length
+      ? [{ id: "first-checks-list", label: "먼저 확인할 7가지" }]
+      : []),
     { id: "article-body", label: "본문 안내" },
     ...(content.proseSections?.map((s) => ({ id: s.id, label: s.title })) ??
       []),
+    ...(content.officialSources?.length
+      ? [{ id: "official-sources", label: "공식 법령·공공 안내" }]
+      : []),
     { id: "documents", label: "준비서류" },
     { id: "procedures", label: "절차" },
     ...(content.showRemoteInheritance
@@ -90,7 +102,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       : []),
     { id: "mistakes", label: "자주 하는 실수" },
     { id: "faq", label: "자주 묻는 질문" },
-    { id: "related-cases", label: "관련 사례" },
+    ...(content.relatedCaseLinks.length > 0 || !isJeonseVictimHub
+      ? [{ id: "related-cases", label: "관련 사례" }]
+      : []),
     { id: "related-services", label: "관련 서비스" },
     { id: "consultation", label: "상담 문의" },
   ];
@@ -103,12 +117,16 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
   const bodyParagraphs = [
     ...content.heroParagraphs.slice(1),
-    content.searchIntents.length > 0
-      ? `이런 검색·상담이 많습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
-      : "",
-    content.whenNeeded.length > 0
-      ? `언제 필요한지부터 보면 판단이 쉬워집니다. ${content.whenNeeded.slice(0, 3).join(" ")}`
-      : "",
+    ...(content.suppressKeywordChips
+      ? []
+      : [
+          content.searchIntents.length > 0
+            ? `이런 검색·상담이 많습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
+            : "",
+          content.whenNeeded.length > 0
+            ? `언제 필요한지부터 보면 판단이 쉬워집니다. ${content.whenNeeded.slice(0, 3).join(" ")}`
+            : "",
+        ]),
   ].filter((p) => p.trim().length > 0);
 
   return (
@@ -123,7 +141,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroParagraphs[0]}
-        keywords={content.primaryKeywords}
+        keywords={content.suppressKeywordChips ? [] : content.primaryKeywords}
         ctaLabel={
           content.showRemoteInheritance ||
           content.showInheritanceCostGuide ||
@@ -139,14 +157,48 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       {showNationwide ? <NationwideServiceCard /> : null}
 
-      <ArticleSummary
-        conclusion={
-          content.summaryBullets.slice(0, 2).join(" ") ||
-          content.heroParagraphs[0]
-        }
-        checkItems={content.documents.slice(0, 3)}
-        consultTriggers={content.whenNeeded.slice(0, 3)}
-      />
+      {content.situationNav?.length ? (
+        <ContentSection id="situation-nav" title="지금 어떤 상황이신가요?">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {content.situationNav.map((item) => {
+              const className =
+                "block rounded-xl border border-beige-dark bg-white px-4 py-4 no-underline transition hover:border-navy/30";
+              const inner = (
+                <>
+                  <strong className="block text-navy">{item.title}</strong>
+                  <span className="mt-1 block text-sm text-navy/70">
+                    {item.description}
+                  </span>
+                </>
+              );
+              return item.href.startsWith("#") ? (
+                <a key={item.title} href={item.href} className={className}>
+                  {inner}
+                </a>
+              ) : (
+                <Link key={item.title} href={item.href} className={className}>
+                  {inner}
+                </Link>
+              );
+            })}
+          </div>
+        </ContentSection>
+      ) : null}
+
+      {content.featuredChecklist?.length ? (
+        <ContentSection id="first-checks-list" title="먼저 확인할 7가지">
+          <ChecklistBox items={content.featuredChecklist} />
+        </ContentSection>
+      ) : (
+        <ArticleSummary
+          conclusion={
+            content.summaryBullets.slice(0, 2).join(" ") ||
+            content.heroParagraphs[0]
+          }
+          checkItems={content.documents.slice(0, 3)}
+          consultTriggers={content.whenNeeded.slice(0, 3)}
+        />
+      )}
 
       {showJourney ? (
         <InheritanceJourneyNav currentSlug={page.slug} />
@@ -167,6 +219,32 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           <ProseParagraphs paragraphs={section.paragraphs} />
         </ContentSection>
       ))}
+
+      {content.officialSources?.length ? (
+        <ContentSection id="official-sources" title="공식 법령·공공 안내">
+          <p className="mb-3 text-sm text-navy/75">
+            블로그가 아니라 국가법령정보센터·HUG·부산시 공식 안내를 기준으로 합니다.
+            지원 요건과 연락처는 바뀔 수 있으니 방문 전에 원문을 확인하세요.
+          </p>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed md:text-base">
+            {content.officialSources.map((source) => (
+              <li key={source.href}>
+                <a
+                  href={source.href}
+                  className="font-medium text-navy underline underline-offset-2"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {source.label}
+                </a>
+                {source.note ? (
+                  <span className="text-navy/70"> — {source.note}</span>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </ContentSection>
+      ) : null}
 
       <ArticleVisualSlot
         path={page.path}
@@ -275,15 +353,17 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       {page.slug === "부산집단등기" ? <MassRegistryB2BAddon /> : null}
 
-      <ContentSection id="related-cases" title="관련 사례">
-        {content.relatedCaseLinks.length > 0 ? (
+      {content.relatedCaseLinks.length > 0 ? (
+        <ContentSection id="related-cases" title="관련 사례">
           <RelatedContentGrid links={content.relatedCaseLinks} />
-        ) : (
+        </ContentSection>
+      ) : isJeonseVictimHub ? null : (
+        <ContentSection id="related-cases" title="관련 사례">
           <RelatedContentGrid
             links={[{ href: "/cases", label: "사례 탐색기 전체 보기" }]}
           />
-        )}
-      </ContentSection>
+        </ContentSection>
+      )}
 
       <ContentSection id="related-services" title="관련 서비스">
         <RelatedContentGrid links={content.relatedServiceLinks} />
@@ -301,23 +381,32 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       <div id="consultation">
         <ConsultationCTA
-          title="현재 상황에 필요한 절차부터 확인해보세요"
+          title={
+            isJeonseVictimHub
+              ? "전세사기인지 정확히 판단되지 않아도 괜찮습니다"
+              : "현재 상황에 필요한 절차부터 확인해보세요"
+          }
           description={content.bottomCtaText}
           buttonLabel={
-            content.showRemoteInheritance ||
-            content.showInheritanceCostGuide ||
-            page.slug.includes("증여")
-              ? "업무 가능 여부 확인하기"
-              : consultationInquiryCopy.ctaPrimary
+            isJeonseVictimHub
+              ? "전세보증금 문제 문의"
+              : content.showRemoteInheritance ||
+                  content.showInheritanceCostGuide ||
+                  page.slug.includes("증여")
+                ? "업무 가능 여부 확인하기"
+                : consultationInquiryCopy.ctaPrimary
           }
           inquiryField={content.serviceSlug ?? page.serviceSlug}
           fromPage={page.slug}
+          showAboutLawyer={!isJeonseVictimHub}
           intent={
-            page.slug.includes("증여")
-              ? "증여등기 서류·비용 구성 확인"
-              : content.showInheritanceCostGuide || content.showRemoteInheritance
-                ? "상속 절차·비용 확인"
-                : undefined
+            isJeonseVictimHub
+              ? "전세보증금 미반환·피해 대응 순서 확인"
+              : page.slug.includes("증여")
+                ? "증여등기 서류·비용 구성 확인"
+                : content.showInheritanceCostGuide || content.showRemoteInheritance
+                  ? "상속 절차·비용 확인"
+                  : undefined
           }
         />
       </div>

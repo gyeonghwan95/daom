@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-19T12:54:19.979Z
+# 생성: 2026-08-19T15:15:50.529Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1659 (제외 141)
+# 총 URL: 1659 (제외 140)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -1707,8 +1707,7 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (141)
-# [EXCLUDED:duplicate] /동구법무사
+# 제외 (140)
 # [EXCLUDED:non-indexable-registry] /업무사례/부산가야역법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산강서서부지원법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산개금역법무사

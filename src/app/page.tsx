@@ -47,7 +47,7 @@ export default function Home() {
         <HomeActivitiesMarquee />
         <HomeLawyerEeat />
         <HomeServices />
-        <HomeLectureHistorySection />
+        <HomePopularSearches />
         <HomeYoutube />
         <HomeInsights />
         <HomeFaqTeaser />
@@ -55,7 +55,7 @@ export default function Home() {
         <HomeContactClosing />
         <HomeNationwideSection />
         <HomeB2BSection />
-        <HomePopularSearches />
+        <HomeLectureHistorySection />
         <HomeHubGuide />
       </HomeFullpageSwiper>
     </main>
