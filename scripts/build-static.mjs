@@ -113,10 +113,31 @@ try {
     fs.rmSync(nextDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });
   }
 
-  execSync("next build", {
+  // Cloudflare Pages: Next 16 기본 Turbopack이 대량 라우트(~1800)에서
+  // "Creating an optimized production build" 이후 로그 없이 행(hang)되는 사례가 있음.
+  // → 프로덕션 정적 export는 webpack 강제. 리다이렉트는 public/_redirects.
+  console.log(
+    "\n[build-static] next build --webpack 시작 (STATIC_EXPORT=true, output: export)",
+  );
+  console.log(
+    "[build-static] CF에서 Turbopack hang 회피 — 컴파일 후 Generating static pages (~1800) 진행\n",
+  );
+
+  execSync("npx --yes next build --webpack", {
     stdio: "inherit",
     cwd: ROOT,
-    env: { ...process.env, STATIC_EXPORT: "true" },
+    env: {
+      ...process.env,
+      STATIC_EXPORT: "true",
+      NEXT_TELEMETRY_DISABLED: "1",
+      // CF Pages 등 메모리 여유 확보 (OOM으로 로그 없이 끊기는 경우 완화)
+      NODE_OPTIONS:
+        process.env.NODE_OPTIONS?.includes("max-old-space-size")
+          ? process.env.NODE_OPTIONS
+          : [process.env.NODE_OPTIONS, "--max-old-space-size=4096"]
+              .filter(Boolean)
+              .join(" "),
+    },
   });
 
   const outDir = path.join(ROOT, "out");

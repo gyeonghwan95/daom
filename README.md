@@ -167,10 +167,18 @@ ls out/sitemap.xml out/robots.txt
 | 항목 | 값 |
 |------|-----|
 | Production branch | `main` |
-| Framework preset | `None` (또는 Next.js Static) |
+| Framework preset | **`None`** (Next.js SSR/OpenNext 프리셋 사용 금지) |
 | Build command | `npm run build` |
 | Build output directory | `out` |
 | Root directory | `/` (기본값) |
+
+> **Cloudflare에서 `Creating an optimized production build` 이후 로그가 안 늘면:**
+> Next.js 16 기본 **Turbopack**이 대량 라우트에서 hang 되는 알려진 증상입니다.
+> 이 저장소는 `scripts/build-static.mjs`에서 `next build --webpack`을 강제합니다. 해당 커밋이 배포됐는지 확인하세요.
+>
+> **참고:** `⚠ redirects will not work with output: export` 경고는 원인이 아닙니다.
+> 실제 리다이렉트는 `public/_redirects`가 처리합니다.
+> 빌드가 메모리로 실패하면 Pages 환경변수에 `NODE_OPTIONS=--max-old-space-size=4096` 를 추가하세요.
 
 4. **Environment variables** (Production) 추가:
 

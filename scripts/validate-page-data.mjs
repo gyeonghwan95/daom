@@ -125,10 +125,8 @@ function main() {
 
   console.log(`[validate-page-data] OK — ${paths.length} paths registered`);
   console.log(`[validate-page-data] manifest → scripts/output/page-manifest.json`);
-  console.log("");
-  for (const routePath of paths) {
-    console.log(routePath);
-  }
+  // Cloudflare 빌드 로그에 1800+ path를 모두 찍으면 로그 버퍼·가독성만 악화됨.
+  // 전체 목록은 page-manifest.json 참고.
 }
 
 main();
