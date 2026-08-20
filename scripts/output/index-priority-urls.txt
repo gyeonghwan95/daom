@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-20T13:53:50.994Z
+# 생성: 2026-08-20T16:13:49.444Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1659 (제외 140)
+# 총 URL: 1662 (제외 140)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -9,7 +9,7 @@
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 208개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 565개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
-# Tier 6 — 순차 (기타 키워드 랜딩): 576개
+# Tier 6 — 순차 (기타 키워드 랜딩): 579개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 28개
 
@@ -1038,7 +1038,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (183개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (576개)
+Tier 6 — 순차 (기타 키워드 랜딩) (579개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1341,6 +1341,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (576개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC	/사하구법무사
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/사하구법인등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/사하구법인설립등기
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/사하구부동산등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/사하구상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/사하구상속포기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/사하구임원변경등기
@@ -1385,6 +1386,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (576개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC	/서구법무사
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/서구법인등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/서구법인설립등기
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/서구부동산등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/서구상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/서구상속포기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/서구소유권이전등기
@@ -1448,6 +1450,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (576개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC	/영도구법무사
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/영도구법인등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/영도구법인설립등기
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/영도구부동산등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/영도구상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/영도구상속포기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/영도구선박등기
