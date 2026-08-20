@@ -203,7 +203,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
           href="/업무사례"
           className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
         >
-          ← 사례 탐색기
+          ← 업무 사례
         </Link>
         <Link
           href="/services"
