@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/cases",
-        destination: "/services#cases",
+        destination: "/업무사례",
         permanent: true,
       },
       {

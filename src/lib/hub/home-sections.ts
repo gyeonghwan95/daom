@@ -17,6 +17,10 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/부산법무사추천", label: "부산 법무사 추천" },
       { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/자가진단", label: "업무별 자가진단" },
+      { href: "/업무사례", label: "업무 사례" },
+      { href: "/법률강의", label: "법률 강의·특강" },
+      { href: "/partners", label: "협업문의" },
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
@@ -24,6 +28,20 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산개인회생", label: "부산 개인회생" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
+    ],
+  },
+  {
+    id: "tools-hubs",
+    title: "자가진단·상황·계산·지도",
+    description:
+      "업무를 고르기 전에 자가진단·상황별 안내·계산기·부산 법률지도를 먼저 보실 수 있습니다.",
+    links: [
+      { href: "/자가진단", label: "업무별 자가진단" },
+      { href: "/situations", label: "상황별 법률문제" },
+      { href: "/tools", label: "법률 계산기" },
+      { href: "/busan-legal-map", label: "부산 법률지도" },
+      { href: "/glossary", label: "법률 용어사전" },
+      { href: "/faq", label: "FAQ" },
     ],
   },
   {
@@ -130,11 +148,12 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "실제 상담 사례",
     description: "유사 사건 진행 경과를 참고하실 수 있습니다.",
     links: [
+      { href: "/업무사례", label: "업무 사례 허브" },
       { href: "/services/cases/haeundae-inheritance-registration-case", label: "해운대 상속등기 사례" },
       { href: "/services/cases/busan-personal-rehabilitation-consultation", label: "부산 개인회생 사례" },
       { href: "/services/cases/centum-ownership-transfer-case", label: "센텀 매매 등기 사례" },
       { href: "/services/cases/suyeong-company-establishment-case", label: "센텀 법인 설립 사례" },
-      { href: "/services#cases", label: "업무 사례 전체" },
+      { href: "/업무사례/지역별", label: "지역별 업무사례" },
     ],
   },
   {

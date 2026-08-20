@@ -56,7 +56,7 @@ export function buildGlossaryHubPageData(): PageData {
     internalLinks: [
       { href: "/situations", label: "상황별 법률문제" },
       { href: "/tools", label: "법률 계산기" },
-      { href: "/cases", label: "사례 탐색기" },
+      { href: "/업무사례", label: "업무 사례" },
       { href: "/busan-legal-map", label: "부산 법률지도" },
       { href: "/contact", label: "상담 문의" },
       ...termLinks.slice(0, 6),

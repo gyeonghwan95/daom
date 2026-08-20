@@ -31,7 +31,7 @@ export default function BlogPage() {
           ...getMainLandingHubLinks().slice(0, 8),
           { href: "/faq", label: "자주 묻는 질문" },
           { href: "/services", label: "업무안내" },
-          { href: "/services#cases", label: "업무 사례" },
+          { href: "/업무사례", label: "업무 사례" },
           { href: "/contact", label: "상담 신청" },
         ]}
       >

@@ -26,7 +26,7 @@ export function CaseRegionsHubView({ page }: { page: PageData }) {
       <ul className="grid gap-4 md:grid-cols-3">
         {[
           {
-            href: "/cases",
+            href: "/업무사례",
             title: "전체 업무 사례",
             body: "카테고리·상황·지역으로 정리된 실무 사례를 탐색합니다.",
           },

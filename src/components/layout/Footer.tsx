@@ -6,7 +6,20 @@ import { consultationCopy } from "@/lib/consultation";
 import { getDirectConsultationChannels, getNaverBlogUrl } from "@/lib/contact";
 import { getNapInfo } from "@/lib/business-info";
 import { footerCollaborationLinks } from "@/lib/b2b/collaboration-registry";
-import { mainNavigation } from "@/lib/navigation";
+const FOOTER_QUICK_LINKS = [
+  { href: "/about", label: "소개" },
+  { href: "/services", label: "업무안내" },
+  { href: "/업무사례", label: "업무 사례" },
+  { href: "/자가진단", label: "자가진단" },
+  { href: "/법률강의", label: "강의·특강" },
+  { href: "/partners", label: "협업문의" },
+  { href: "/situations", label: "상황별 안내" },
+  { href: "/tools", label: "법률 계산기" },
+  { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/공지사항", label: "공지사항" },
+  { href: "/contact", label: "상담 문의" },
+] as const;
 
 const FOOTER_COLLAB_LABELS: Record<string, string> = {
   "/partners": "협업문의 안내",
@@ -40,7 +53,7 @@ export function Footer() {
           <div>
             <p className="font-semibold text-beige">바로가기</p>
             <ul className="mt-3 grid grid-cols-2 gap-2 text-sm sm:text-base">
-              {mainNavigation.slice(0, 6).map((item) => (
+              {FOOTER_QUICK_LINKS.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -50,30 +63,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/부산법무사"
-                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
-                >
-                  부산에서 법무사 찾을 때
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/공지사항"
-                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
-                >
-                  공지사항
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
-                >
-                  FAQ
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -10,7 +10,7 @@ export function isSectionNavExcluded(pathname: string): boolean {
 
   if (path === "/") return true;
   if (path.startsWith("/admin")) return true;
-  if (path === "/cases" || path.startsWith("/cases/")) return true;
+  if (path === "/cases" || path.startsWith("/cases/") || path === "/업무사례" || path.startsWith("/업무사례/")) return true;
   if (path === "/press" || path.startsWith("/press/")) return true;
 
   return false;

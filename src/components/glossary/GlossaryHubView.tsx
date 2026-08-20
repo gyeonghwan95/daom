@@ -98,7 +98,7 @@ export function GlossaryHubView({ page }: GlossaryHubViewProps) {
           {[
             { href: "/situations", label: "상황별 법률문제" },
             { href: "/tools", label: "법률 계산기" },
-            { href: "/cases", label: "사례 탐색기" },
+            { href: "/업무사례", label: "업무 사례" },
             { href: "/자가진단", label: "자가진단" },
           ].map((item) => (
             <li key={item.href}>

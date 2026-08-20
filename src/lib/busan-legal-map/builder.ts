@@ -34,7 +34,7 @@ export function buildBusanLegalMapHubPageData(): PageData {
       ...districtLinks.slice(0, 8),
       { href: "/situations", label: "상황별 법률문제" },
       { href: "/tools", label: "법률 계산기" },
-      { href: "/cases", label: "사례 탐색기" },
+      { href: "/업무사례", label: "업무 사례" },
       { href: "/contact", label: "상담 문의" },
     ],
     sections: [

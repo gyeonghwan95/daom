@@ -107,7 +107,7 @@ export const mainNavigation: NavItem[] = [
       {
         title: "사례 안내",
         links: [
-          { href: "/cases", label: "전체 업무 사례" },
+          { href: "/업무사례", label: "전체 업무 사례" },
           { href: "/업무사례/지역별", label: "부산 지역 업무사례" },
           { href: "/업무사례/업무별", label: "업무별 업무 사례" },
           { href: "/업무사례/경남법무사업무", label: "경남 지역 업무사례" },
@@ -133,11 +133,11 @@ export const mainNavigation: NavItem[] = [
     label: "강의·특강",
     groups: lectureNavGroups,
   },
+  { href: "/자가진단", label: "자가진단" },
   { href: "/situations", label: "상황별 법률문제" },
   { href: "/tools", label: "법률 계산기" },
   { href: "/busan-legal-map", label: "부산 법률지도" },
   { href: "/glossary", label: "법률 용어사전" },
-  { href: "/자가진단", label: "자가진단" },
   { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
   { href: "/reviews", label: "고객후기" },

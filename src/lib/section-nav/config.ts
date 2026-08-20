@@ -76,5 +76,6 @@ export const EXCLUDED_SECTION_NAV_PREFIXES = [
   "/",
   "/admin",
   "/cases",
+  "/업무사례",
   "/press",
 ] as const;

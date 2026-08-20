@@ -155,7 +155,7 @@ export function CaseRegionPageView({
               </Link>
             }
           />
-          <Link href="/cases" className="btn-secondary min-h-11 px-5 text-sm">
+          <Link href="/업무사례" className="btn-secondary min-h-11 px-5 text-sm">
             전체 업무 사례
           </Link>
         </div>

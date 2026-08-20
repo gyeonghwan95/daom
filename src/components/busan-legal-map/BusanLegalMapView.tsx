@@ -47,7 +47,7 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
             { href: "/부산법무사", label: "부산 법무사" },
             { href: "/situations", label: "상황별 법률문제" },
             { href: "/tools", label: "법률 계산기" },
-            { href: "/cases", label: "사례 탐색기" },
+            { href: "/업무사례", label: "업무 사례" },
           ].map((item) => (
             <Link
               key={item.href}

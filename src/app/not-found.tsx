@@ -48,7 +48,7 @@ export default function NotFound() {
             {[
               { href: "/services", label: "업무안내" },
               { href: "/blog", label: "블로그" },
-              { href: "/services#cases", label: "업무 사례" },
+              { href: "/업무사례", label: "업무 사례" },
               { href: "/faq", label: "자주 묻는 질문" },
               { href: "/location", label: "오시는 길" },
             ].map((item) => (

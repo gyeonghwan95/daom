@@ -374,7 +374,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     ],
     internalLinks: [
       { href: "/업무사례/지역별", label: "지역별 업무 사례" },
-      { href: "/cases", label: "전체 업무 사례" },
+      { href: "/업무사례", label: "전체 업무 사례" },
       ...related.slice(0, 4).map((r) => ({
         href: caseRegionPath(r.slug),
         label: `${r.displayName} 법무사`,
@@ -424,7 +424,7 @@ export function buildCaseRegionsHubPageData(): PageData {
         title: "바로가기",
         body: "목적에 맞는 경로를 선택해 주세요.",
         links: [
-          { href: "/cases", label: "전체 업무 사례" },
+          { href: "/업무사례", label: "전체 업무 사례" },
           { href: "/업무사례/지역별", label: "지역별 업무 사례" },
           { href: "/업무사례/업무별", label: "업무별 업무 사례" },
         ],
@@ -432,7 +432,7 @@ export function buildCaseRegionsHubPageData(): PageData {
     ],
     primaryKeywords: ["부산 법무사 사례", "업무 사례", "지역별 법무사"],
     internalLinks: [
-      { href: "/cases", label: "전체 업무 사례" },
+      { href: "/업무사례", label: "전체 업무 사례" },
       { href: "/업무사례/지역별", label: "지역별 업무 사례" },
       { href: "/업무사례/업무별", label: "업무별 업무 사례" },
       { href: "/services", label: "업무안내" },
@@ -493,7 +493,7 @@ export function buildCaseRegionsByAreaPageData(): PageData {
     ],
     internalLinks: [
       { href: "/업무사례", label: "업무 사례 홈" },
-      { href: "/cases", label: "전체 업무 사례" },
+      { href: "/업무사례", label: "전체 업무 사례" },
       { href: "/업무사례/부산법무사", label: "부산 법무사" },
       { href: "/contact", label: "상담 문의" },
     ],
@@ -540,7 +540,7 @@ export function buildCaseRegionsByServicePageData(): PageData {
         title: "업무 유형",
         body: "대표 업무와 사례 탐색기로 연결됩니다.",
         links: [
-          { href: "/cases", label: "전체 사례 탐색기" },
+          { href: "/업무사례", label: "전체 사례 탐색기" },
           { href: "/부산상속등기", label: "상속등기" },
           { href: "/부산부동산등기", label: "부동산등기" },
           { href: "/부산법인등기", label: "법인등기" },
@@ -557,7 +557,7 @@ export function buildCaseRegionsByServicePageData(): PageData {
       "부동산등기 사례",
     ],
     internalLinks: [
-      { href: "/cases", label: "전체 업무 사례" },
+      { href: "/업무사례", label: "전체 업무 사례" },
       { href: "/업무사례/지역별", label: "지역별 업무 사례" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },

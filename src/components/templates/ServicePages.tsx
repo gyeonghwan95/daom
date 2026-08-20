@@ -243,7 +243,7 @@ export function ServicesIndexTemplate() {
               </p>
             </div>
             <Link
-              href="/cases"
+              href="/업무사례"
               className="interactive-surface shrink-0 rounded-xl border border-navy/15 bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-beige/40"
             >
               사례 탐색기 →

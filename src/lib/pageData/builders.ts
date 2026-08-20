@@ -746,7 +746,7 @@ export function buildPageDataFromCaseMeta(meta: ContentMeta): PageData {
     intro: meta.description,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "사례 탐색기", href: "/cases" },
+      { label: "업무 사례", href: "/업무사례" },
       { label: meta.title },
     ],
     introParagraphs: [
@@ -761,7 +761,7 @@ export function buildPageDataFromCaseMeta(meta: ContentMeta): PageData {
         href: `/services/${slug}`,
         label: getServiceLabel(slug),
       })),
-      { href: "/cases", label: "사례 탐색기" },
+      { href: "/업무사례", label: "업무 사례" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },
     ],

@@ -360,7 +360,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : isJeonseVictimHub ? null : (
         <ContentSection id="related-cases" title="관련 사례">
           <RelatedContentGrid
-            links={[{ href: "/cases", label: "사례 탐색기 전체 보기" }]}
+            links={[{ href: "/업무사례", label: "업무 사례 전체 보기" }]}
           />
         </ContentSection>
       )}
