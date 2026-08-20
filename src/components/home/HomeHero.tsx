@@ -94,15 +94,13 @@ export function HomeHero() {
         </div>
 
         <div className="home-hero__copy-actions">
-          <motion.div variants={item} className="home-hero__mobile-convert lg:hidden">
+          {/* 모바일·PC 동일 문구를 DOM에 두 번 두지 않음 (responsive CSS만) */}
+          <motion.div variants={item} className="home-hero__convert">
             <p className="home-hero__contact-lead">{homeHero.contactSub}</p>
             <HeroContactBlock phone={phone} channels={channels} tone="on-dark" />
-            <p className="home-hero__mobile-cta-note">{homeHero.mobileCtaNote}</p>
-          </motion.div>
-
-          <motion.div variants={item} className="home-hero__desktop-contact hidden lg:block">
-            <p className="home-hero__contact-lead">{homeHero.contactSub}</p>
-            <HeroContactBlock phone={phone} channels={channels} tone="on-dark" />
+            <p className="home-hero__mobile-cta-note lg:hidden">
+              {homeHero.mobileCtaNote}
+            </p>
           </motion.div>
         </div>
       </motion.div>

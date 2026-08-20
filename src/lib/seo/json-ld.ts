@@ -307,7 +307,7 @@ export function buildWebSiteSchema(): SchemaObject {
     "@type": "WebSite",
     "@id": schemaIds.website,
     name: seoBrand.siteName,
-    alternateName: ["다옴법무사", "부산 다옴법무사"],
+    alternateName: ["다옴법무사", "부산 다옴법무사사무소"],
     url: siteConfig.url,
     description: seoBrand.defaultDescription,
     inLanguage: "ko-KR",

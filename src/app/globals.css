@@ -1881,6 +1881,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     vertical-align: -0.05em;
   }
 
+  .home-hero__convert,
   .home-hero__mobile-convert {
     margin-top: 0;
     display: flex;
