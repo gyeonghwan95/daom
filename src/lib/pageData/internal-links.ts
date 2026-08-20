@@ -41,12 +41,12 @@ function neighborhoodHubLinks(excludeSlug?: string, limit = 8): PageRelatedLink[
 
 function selectionHubLinks(excludeSlug?: string, limit = 6): PageRelatedLink[] {
   const labels: Record<string, string> = {
-    부산법무사추천: "부산 법무사 추천 기준",
+    부산법무사추천: "부산 법무사 추천",
     부산등기법무사추천: "부산 등기 법무사 선택 기준",
     부산상속등기전문: "부산 상속등기 상담 확인",
     부산부동산등기전문: "부산 부동산등기 상담 확인",
     부산법인등기전문: "부산 법인등기 상담 확인",
-    부산법무사상담: "부산 전역 상담 안내",
+    부산법무사상담: "부산 법무사 상담",
     부산법무사후기: "부산 법무사 후기 확인 기준",
     부산법무사비교: "부산 법무사 비교 기준",
   };
@@ -199,7 +199,9 @@ function topicHubLink(serviceSlug: string): PageRelatedLink | undefined {
 /** 홈·services·blog·faq·location 등 허브 페이지용 주요 랜딩 링크 */
 export function getMainLandingHubLinks(): RelatedLink[] {
   return [
-    { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
+    { href: "/", label: "부산 법무사" },
+    { href: "/부산법무사추천", label: "부산 법무사 추천" },
+    { href: "/부산법무사상담", label: "부산 법무사 상담" },
     { href: "/부산등기법무사", label: "부산 등기 법무사" },
     { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
     { href: "/부산상속법무사", label: "부산 상속 법무사" },
@@ -338,8 +340,9 @@ export function getThematicInternalLinks(
       links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "neighborhood-hub") {
       links.push(...neighborhoodHubLinks(input.slug, 6));
-      links.push({ href: "/부산법무사", label: "부산 전역 업무 선택 안내" });
-      links.push({ href: "/부산법무사추천", label: "부산 법무사 추천 기준" });
+      links.push({ href: "/부산법무사", label: "부산에서 법무사 찾을 때" });
+      links.push({ href: "/부산법무사추천", label: "부산 법무사 추천" });
+      links.push({ href: "/", label: "부산 법무사" });
     } else if (pageType === "conversion") {
       links.push(...conversionLinksForService(serviceSlug, input.slug));
       links.push(...localLandingsForService(serviceSlug, input.slug, 3));

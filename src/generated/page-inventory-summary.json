@@ -1,82 +1,82 @@
 {
-  "generatedAt": "2026-07-26T10:33:20.282Z",
-  "totalPages": 1455,
-  "indexablePages": 1324,
-  "menuLinkedPages": 73,
-  "publicImageCount": 79,
+  "generatedAt": "2026-08-20T13:57:14.415Z",
+  "totalPages": 1794,
+  "indexablePages": 1661,
+  "menuLinkedPages": 84,
+  "publicImageCount": 95,
   "ogImageMissing": 0,
   "byPriority": {
     "critical": 15,
-    "medium": 1199,
-    "high": 26,
-    "low": 215
+    "medium": 1528,
+    "high": 33,
+    "low": 218
   },
   "byAction": {
-    "create-image": 41,
-    "replace-image": 1135,
-    "reuse-existing": 223,
-    "keep-current": 56
+    "create-image": 48,
+    "replace-image": 1448,
+    "reuse-existing": 248,
+    "keep-current": 50
   },
   "topDuplicateImages": [
     {
       "src": "/image/사무소-전경.jpg",
-      "count": 477
+      "count": 482
     },
     {
       "src": "/image/썸네일-사무실.jpg",
-      "count": 355
+      "count": 358
     },
     {
       "src": "/image/썸네일-등기소.jpg",
-      "count": 177
+      "count": 277
     },
     {
       "src": "/image/썸네일-등기필증_상속.jpg",
-      "count": 156
+      "count": 225
     },
     {
       "src": "/image/썸네일-계약임원.jpg",
-      "count": 55
+      "count": 148
     },
     {
       "src": "/image/썸네일-등기필증_매매증여.jpg",
-      "count": 49
+      "count": 64
     },
     {
       "src": "/image/썸네일-법원절차.jpg",
-      "count": 35
-    },
-    {
-      "src": "/image/썸네일-동부지원.jpg",
-      "count": 20
+      "count": 41
     },
     {
       "src": "/image/썸네일-컴퓨터.png",
-      "count": 18
+      "count": 36
+    },
+    {
+      "src": "/image/썸네일-동부지원.jpg",
+      "count": 25
     },
     {
       "src": "/image/썸네일-민사소송책.png",
-      "count": 17
+      "count": 23
+    },
+    {
+      "src": "/image/썸네일-서류확인.jpg",
+      "count": 22
     },
     {
       "src": "/image/썸네일-작성중.png",
-      "count": 16
+      "count": 18
     },
     {
       "src": "/image/썸네일-재송동행정복지센터.jpg",
       "count": 16
     },
     {
-      "src": "/image/썸네일-서류확인.jpg",
-      "count": 11
-    },
-    {
       "src": "/image/썸네일-서부지원.jpg",
-      "count": 10
+      "count": 13
     },
     {
       "src": "/image/썸네일-등기필증_근저당.jpg",
-      "count": 10
+      "count": 11
     },
     {
       "src": "/image/썸네일-동래구청.jpg",
@@ -107,122 +107,122 @@
       "count": 2
     },
     {
+      "src": "/image/언론-주간인물-260804.png",
+      "count": 1
+    },
+    {
+      "src": "/image/썸네일-MBC인터뷰.png",
+      "count": 1
+    },
+    {
       "src": "/image/언론-부산일보-260608.png",
-      "count": 1
-    },
-    {
-      "src": "/image/언론-국제신문-260603.png",
-      "count": 1
-    },
-    {
-      "src": "/image/언론-법률신문-260602.png",
       "count": 1
     }
   ],
-  "manifestWave1Count": 38,
+  "manifestWave1Count": 42,
   "criticalSample": [
     {
       "url": "/",
-      "title": "부산 해운대구·센텀 법무사 상담",
-      "dup": 477,
+      "title": "부산 법무사 안윤정",
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     },
     {
       "url": "/services",
       "title": "부산 등기·상속·회생 업무안내",
-      "dup": 477,
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     },
     {
       "url": "/contact",
-      "title": "부산 법무사 상담 문의",
-      "dup": 477,
+      "title": "상담 문의",
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     },
     {
       "url": "/contact/inquiry",
-      "title": "부산 법무사 상담 문의",
-      "dup": 477,
+      "title": "상담 문의",
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     },
     {
       "url": "/부산상속등기",
-      "title": "부산 상속등기 법무사 상담",
-      "dup": 156,
+      "title": "부산 상속등기 법무사, 명의이전 서류와 진행 순서",
+      "dup": 225,
       "og": "/image/썸네일-등기필증_상속.jpg",
       "action": "create-image"
     },
     {
       "url": "/부산법무사",
-      "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
-      "dup": 156,
+      "title": "부산에서 법무사를 찾을 때 먼저 확인할 기준",
+      "dup": 225,
       "og": "/image/썸네일-등기필증_상속.jpg",
       "action": "create-image"
     },
     {
       "url": "/해운대법무사",
       "title": "해운대 법무사 상담 — 다옴법무사사무소",
-      "dup": 156,
+      "dup": 225,
       "og": "/image/썸네일-등기필증_상속.jpg",
       "action": "create-image"
     },
     {
       "url": "/services/inheritance-registration",
       "title": "전국 상속등기 상담",
-      "dup": 156,
+      "dup": 225,
       "og": "/image/썸네일-등기필증_상속.jpg",
       "action": "create-image"
     },
     {
       "url": "/services/inheritance-renunciation",
       "title": "상속포기 — 3개월 기한·채무 승계 차단",
-      "dup": 17,
+      "dup": 23,
       "og": "/image/썸네일-민사소송책.png",
       "action": "create-image"
     },
     {
       "url": "/services/qualified-acceptance",
       "title": "한정승인 — 재산 범위 내 채무만 책임질 때",
-      "dup": 11,
+      "dup": 22,
       "og": "/image/썸네일-서류확인.jpg",
       "action": "create-image"
     },
     {
       "url": "/services/real-estate-registration",
       "title": "부동산등기 — 소유권·담보·말소 상담",
-      "dup": 177,
+      "dup": 277,
       "og": "/image/썸네일-등기소.jpg",
       "action": "create-image"
     },
     {
       "url": "/services/corporate-registration",
       "title": "법인등기 — 설립·임원·본점 변경 상담",
-      "dup": 55,
+      "dup": 148,
       "og": "/image/썸네일-계약임원.jpg",
       "action": "create-image"
     },
     {
       "url": "/업무사례",
       "title": "부산 법무사 업무 사례를 지역과 업무로 찾아보세요",
-      "dup": 355,
+      "dup": 358,
       "og": "/image/썸네일-사무실.jpg",
       "action": "create-image"
     },
     {
       "url": "/전국업무",
       "title": "부산에 방문하지 않아도 맡길 수 있는 전국 법무사 업무",
-      "dup": 477,
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     },
     {
       "url": "/전국상속등기",
       "title": "전국 어디서나 맡길 수 있는 상속등기",
-      "dup": 477,
+      "dup": 482,
       "og": "/image/사무소-전경.jpg",
       "action": "create-image"
     }

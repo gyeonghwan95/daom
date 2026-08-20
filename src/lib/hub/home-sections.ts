@@ -14,8 +14,9 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "주요 업무",
     description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
     links: [
+      { href: "/부산법무사상담", label: "부산 법무사 상담" },
+      { href: "/부산법무사추천", label: "부산 법무사 추천" },
       { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
-      { href: "/부산법무사상담", label: "법무사 업무 상담" },
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
@@ -23,7 +24,6 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산개인회생", label: "부산 개인회생" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
-      { href: "/부산법무사추천", label: "법무사 선택 기준" },
     ],
   },
   {
@@ -34,6 +34,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
       { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경 안내" },
       { href: "/부산법무사추천", label: "부산 법무사 추천 기준" },
+      { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/부산법무사비용", label: "부산 법무사 비용·수임료" },
       { href: "/부산잔금일법무사", label: "부산 잔금일 법무사" },
       { href: "/부산법무사비교", label: "부산 법무사 비교" },
@@ -74,7 +75,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "많이 찾는 상담",
     description: "의뢰인이 자주 검색하는 상담 주제입니다.",
     links: [
-      { href: "/부산법무사상담", label: "법무사 상담 준비" },
+      { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/전세사기피해대응절차", label: "전세사기·전세보증금 미반환" },
       { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/상속등기비용", label: "상속등기 비용" },

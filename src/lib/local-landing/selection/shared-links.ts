@@ -1,11 +1,13 @@
 export const selectionCoreLinks = {
-  busanLawyer: { href: "/부산법무사", label: "부산 법무사 종합 안내" },
+  /** 「부산 법무사」 exact → HOME */
+  busanHome: { href: "/", label: "부산 법무사" },
+  busanLawyer: { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
   busanRecommend: {
     href: "/부산법무사추천",
-    label: "부산 법무사 추천 선택 기준",
+    label: "부산 법무사 추천",
   },
   busanCompare: { href: "/부산법무사비교", label: "부산 법무사 비교 기준" },
-  busanConsult: { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
+  busanConsult: { href: "/부산법무사상담", label: "부산 법무사 상담" },
   busanReviews: { href: "/부산법무사후기", label: "부산 법무사 후기 확인 기준" },
   busanCost: { href: "/부산법무사비용", label: "부산 법무사 비용 안내" },
   busanFeeTable: { href: "/부산법무사보수표", label: "부산 법무사 보수표" },

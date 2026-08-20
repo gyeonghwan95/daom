@@ -4,13 +4,18 @@ import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
 
 const POPULAR_SEARCH_CARDS = [
   {
+    href: "/",
+    label: "부산 법무사",
+    hint: "다옴법무사사무소 · 안윤정 법무사",
+  },
+  {
     href: "/부산법무사추천",
     label: "부산 법무사 추천",
     hint: "사무소 선택 기준·상담 전 확인",
   },
   {
     href: "/부산법무사상담",
-    label: "부산 전역 상담 안내",
+    label: "부산 법무사 상담",
     hint: "전화·카카오톡·예약 방문",
   },
   {
@@ -22,11 +27,6 @@ const POPULAR_SEARCH_CARDS = [
     href: "/부산등기법무사",
     label: "부산 등기 법무사",
     hint: "부동산·상속·법인등기",
-  },
-  {
-    href: "/부산상속법무사",
-    label: "부산 상속 법무사",
-    hint: "등기·포기·한정승인 선택",
   },
   {
     href: "/부산법무사비용",

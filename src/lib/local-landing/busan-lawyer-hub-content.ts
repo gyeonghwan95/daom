@@ -54,7 +54,7 @@ export const busanLawyerHubDescription =
 
 export const busanLawyerHubHeroParagraphs = [
   "부산에서 법무사를 고를 때는 사무소 이름보다 지금 필요한 업무, 관할, 기한, 비용 항목부터 가리는 편이 안전합니다. 상속인지 매매등기인지, 법인 변경인지, 개인회생인지에 따라 준비서류와 접수처가 달라집니다.",
-  "이 페이지는 선택 기준과 업무 안내입니다. 다옴법무사사무소 안윤정 법무사에게 상담을 맡기고 싶다면 홈에서 사무소·대표·주요 업무를 이어서 확인하시면 됩니다.",
+  "「부산 법무사」로 사무소·대표를 찾는 검색은 홈(다옴법무사사무소)에서, 이 페이지는 업무·비용·상담 전 확인 기준을 정리합니다. 상담 채널은 부산 법무사 상담, 선택 비교는 부산 법무사 추천 안내를 함께 보시면 됩니다.",
 ];
 
 export const busanLawyerHubSituations: BusanLawyerHubSituation[] = [
@@ -258,7 +258,9 @@ export const busanLawyerHubNap = {
 } as const;
 
 export const busanLawyerHubInternalLinks: BusanLawyerHubLink[] = [
-  { href: "/", label: "부산 법무사 안윤정 · 다옴법무사사무소" },
+  { href: "/", label: "부산 법무사 · 다옴법무사사무소" },
+  { href: "/부산법무사추천", label: "부산 법무사 추천" },
+  { href: "/부산법무사상담", label: "부산 법무사 상담" },
   { href: "/부산등기법무사", label: "부산 등기 법무사" },
   { href: "/부산상속법무사", label: "부산 상속 법무사" },
   { href: "/부산법인법무사", label: "부산 법인 법무사" },
@@ -271,8 +273,6 @@ export const busanLawyerHubInternalLinks: BusanLawyerHubLink[] = [
   { href: "/사직동법무사", label: "사직동 법무사" },
   { href: "/부산법무사무소", label: "사무소 안내" },
   { href: "/부산법무사비용", label: "비용 안내" },
-  { href: "/부산법무사추천", label: "선택 기준" },
-  { href: "/부산법무사상담", label: "상담 전 준비" },
   { href: "/부산법무사방문상담", label: "방문상담" },
 ];
 

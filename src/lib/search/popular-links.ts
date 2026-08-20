@@ -1,9 +1,10 @@
 import type { SearchPopularLink } from "./types";
 
 export const SEARCH_POPULAR_LINKS: SearchPopularLink[] = [
-  { href: "/", label: "다옴법무사사무소", group: "region" },
+  { href: "/", label: "부산 법무사", group: "region" },
+  { href: "/부산법무사추천", label: "부산 법무사 추천", group: "region" },
+  { href: "/부산법무사상담", label: "부산 법무사 상담", group: "region" },
   { href: "/부산법무사", label: "업무·선택 안내", group: "region" },
-  { href: "/부산법무사추천", label: "법무사 선택 기준", group: "region" },
   { href: "/부산상속등기", label: "상속등기", group: "service" },
   { href: "/부산개인회생", label: "개인회생", group: "service" },
   { href: "/부산개인파산", label: "개인파산", group: "service" },
@@ -36,6 +37,7 @@ export const FEATURED_PATHS = new Set([
   "/services",
   "/부산법무사",
   "/부산법무사추천",
+  "/부산법무사상담",
   "/법률강의",
   "/기업법률교육",
   "/부산기업법률자문",

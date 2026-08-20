@@ -313,14 +313,14 @@ export const SEARCH_INTENT_REGISTRY: SearchIntent[] = [
     category: "provider",
     primaryIntent: "부산 법무사 선택 기준",
     primaryKeyword: "부산 법무사 추천",
-    aliases: ["부산 법무사"],
+    aliases: ["부산 법무사 사무소 추천", "부산 법무사 잘하는 곳"],
     userProblem: "사무소 선택 기준이 필요",
     funnel: "provider-selection",
-    currentUrl: "/부산법무사",
+    currentUrl: "/부산법무사추천",
     existingCoverage: "strong",
     businessScope: "DIRECT",
     recommendedAction: "KEEP",
-    notes: "자기추천·1위 표방 금지",
+    notes: "자기추천·1위 표방 금지. 「부산 법무사」 exact는 HOME.",
   },
 ];
 

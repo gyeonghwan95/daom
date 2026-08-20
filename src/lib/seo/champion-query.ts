@@ -6,6 +6,9 @@ export const BUSAN_LAWYER_CHAMPION_PATH = "/" as const;
 /** 업무·비용·선택 기준 안내. 홈과 검색의도를 나누는 supporting 페이지. */
 export const BUSAN_LAWYER_GUIDE_PATH = "/부산법무사" as const;
 
+/** 「부산 법무사 추천」 exact-match는 `/부산법무사추천`만. */
+export const BUSAN_RECOMMEND_CHAMPION_PATH = "/부산법무사추천" as const;
+
 /** 「부산 법무사 상담」 exact-match 메타 키워드는 `/부산법무사상담`만 가져간다. */
 export const BUSAN_CONSULT_CHAMPION_PATH = "/부산법무사상담" as const;
 
@@ -28,6 +31,10 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   {
     path: BUSAN_LAWYER_CHAMPION_PATH,
     compactQueries: ["부산법무사"],
+  },
+  {
+    path: BUSAN_RECOMMEND_CHAMPION_PATH,
+    compactQueries: ["부산법무사추천"],
   },
   {
     path: BUSAN_CONSULT_CHAMPION_PATH,
