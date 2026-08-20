@@ -5,7 +5,7 @@ export const expansionLandingConfigs: LocalLandingConfig[] = [
   // 지역 대표 19
   { slug: "부산법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "센텀", "서면", "연제구"], caseAngle: "부산 전역 상속·등기·법인 통합 상담" },
   { slug: "해운대법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "haeundae", regionLabel: "해운대", neighborhoods: ["센텀", "우동", "재송동", "반여동"], caseAngle: "해운대구 고가 아파트·상가 상속등기", linkedNeighborhoodSlugs: ["센텀법무사", "재송동법무사", "반여동법무사", "우동법무사", "좌동법무사"] },
-  { slug: "센텀법무사", pageType: "region-hub", serviceSlug: "corporate-registration", regionKey: "centum", regionLabel: "센텀", neighborhoods: ["센텀시티", "재송동", "벡스코"], caseAngle: "센텀 법인·스타트업 등기 상담", linkedNeighborhoodSlugs: ["재송동법무사", "우동법무사"] },
+  { slug: "센텀법무사", pageType: "region-hub", serviceSlug: "corporate-registration", regionKey: "centum", regionLabel: "센텀", neighborhoods: ["센텀시티", "재송동", "벡스코"], caseAngle: "센텀 법인·스타트업 등기 상담", linkedNeighborhoodSlugs: ["재송동법무사", "우동법무사", "중동법무사"] },
   { slug: "재송동법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "jaesong", regionLabel: "재송동", neighborhoods: ["재송동", "센텀시티"], caseAngle: "재송 아파트 상속·매매 등기" },
   { slug: "반여동법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "banyeo", regionLabel: "반여동", neighborhoods: ["반여동", "반송동", "좌동"], caseAngle: "반여동 아파트 공동상속 등기", linkedNeighborhoodSlugs: ["좌동법무사"] },
   { slug: "수영구법무사", pageType: "region-hub", serviceSlug: "real-estate-registration", regionKey: "suyeong", regionLabel: "수영구", neighborhoods: ["광안동", "민락동", "망미동"], caseAngle: "광안리 인근 부동산 등기", linkedNeighborhoodSlugs: ["광안리법무사", "남천동법무사", "망미동법무사", "민락동법무사"] },
@@ -53,7 +53,7 @@ export const expansionLandingConfigs: LocalLandingConfig[] = [
   { slug: "문현금융단지법인등기", pageType: "business-zone", serviceSlug: "corporate-registration", regionKey: "munhyeon", regionLabel: "문현동", neighborhoods: ["문현금융단지", "문현동"], businessZoneKey: "munhyeonFinance", caseAngle: "금융단지 법인 임원변경" },
   { slug: "부산국제금융센터법인등기", pageType: "business-zone", serviceSlug: "corporate-registration", regionKey: "munhyeon", regionLabel: "문현동", neighborhoods: ["부산국제금융센터", "BIFC"], businessZoneKey: "bifc", caseAngle: "BIFC 입주 법인 등기" },
   { slug: "명지국제신도시법인등기", pageType: "business-zone", serviceSlug: "company-establishment", regionKey: "myeongji", regionLabel: "명지", neighborhoods: ["명지국제신도시"], businessZoneKey: "myeongji", caseAngle: "명지 신도시 법인 설립" },
-  { slug: "에코델타시티법인등기", pageType: "business-zone", serviceSlug: "company-establishment", regionKey: "ecodelta", regionLabel: "에코델타시티", neighborhoods: ["에코델타시티", "강서구"], businessZoneKey: "ecodelta", caseAngle: "에코델타 입주 기업 설립등기" },
+  { slug: "에코델타시티법인등기", pageType: "business-zone", serviceSlug: "company-establishment", regionKey: "ecodelta", regionLabel: "에코델타시티", neighborhoods: ["에코델타시티", "강서구"], businessZoneKey: "ecodelta", caseAngle: "에코델타 입주 기업 설립등기", linkedNeighborhoodSlugs: ["명지법무사", "강서구법무사", "명지국제신도시법인등기"] },
   { slug: "정관법인등기", pageType: "business-zone", serviceSlug: "corporate-registration", regionKey: "jeonggwan", regionLabel: "정관", neighborhoods: ["정관읍", "정관신도시"], businessZoneKey: "jeonggwan", caseAngle: "정관 공장 법인 등기" },
   { slug: "명례산업단지법인등기", pageType: "business-zone", serviceSlug: "corporate-registration", regionKey: "myeongrye", regionLabel: "명례일반산업단지", neighborhoods: ["명례일반산업단지", "기장군"], businessZoneKey: "myeongrye", caseAngle: "명례 산업단지 임원변경" },
 

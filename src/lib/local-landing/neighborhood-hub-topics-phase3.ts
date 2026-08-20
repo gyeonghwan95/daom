@@ -375,6 +375,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
     ],
     relatedPageLinks: [
       { href: "/사하구법무사", label: "사하구 법무사" },
+      { href: "/사하구부동산등기", label: "사하구 부동산등기" },
       { href: "/하단법무사", label: "하단 법무사" },
       { href: "/괴정동법무사", label: "괴정동 법무사" },
     ],
@@ -469,6 +470,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
     ],
     relatedPageLinks: [
       { href: "/사하구법무사", label: "사하구 법무사" },
+      { href: "/사하구부동산등기", label: "사하구 부동산등기" },
       { href: "/하단법무사", label: "하단 법무사" },
       { href: "/다대동법무사", label: "다대동 법무사" },
     ],
@@ -1027,6 +1029,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
     ],
     relatedPageLinks: [
       { href: "/영도구법무사", label: "영도구 법무사" },
+      { href: "/영도구부동산등기", label: "영도구 부동산등기" },
       { href: "/우암동법무사", label: "우암동 법무사" },
       { href: "/남구법무사", label: "남구 법무사" },
     ],

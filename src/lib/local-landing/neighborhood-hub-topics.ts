@@ -175,7 +175,9 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     relatedPageLinks: [
       core.busanLawyer,
       { href: "/부산진등기소법무사", label: "부산진등기소 안내" },
-      { href: "/부산부동산등기법무사", label: "부산 부동산등기 법무사" },
+      { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
+      { href: "/부전동법무사", label: "부전동 법무사" },
+      { href: "/전포동법무사", label: "전포동 법무사" },
       { href: "/서면부동산등기", label: "서면 부동산등기" },
     ],
     relatedGuPage: { href: "/부산진구법무사", label: "부산진구 법무사 종합 안내" },
@@ -203,11 +205,11 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     serviceSlug: "real-estate-registration",
     primaryKeywords: ["광안리 법무사", "광안리 전세권", "광안해변 아파트 등기"],
     summaryParagraphs: [
-      "광안리 법무사 상담은 해변 인근 아파트·상가·카페 거리의 매매·전세·상속 사건이 많은 수영구 광안동 생활권에 맞춰 진행합니다. 여름철·방학 시즌 전후로 전세 갱신·매매가 몰리면서 전세권 설정·말소 문의가 늘어납니다.",
-      "광안동·민락동은 전월세와 상속이 겹치는 경우가 많아, 등기부상 근저당·전세권 순위를 먼저 확인합니다. 상담은 해운대 센텀에서 수영구 전역 사건을 다룹니다.",
+      "광안리 법무사 상담은 해변 인근 아파트·상가·카페 거리의 매매·전세·상속 사건이 많은 수영구 해안 상권에 맞춰 진행합니다. 여름철·방학 시즌 전후로 전세 갱신·매매가 몰리면서 전세권 설정·말소 문의가 늘어납니다.",
+      "행정동 실거주(광안1~3동) 아파트·다가구만 보시면 광안동 안내, 민락 오피스텔·수변은 민락동 안내, 수영구 전체는 수영구 안내와 나눕니다. 해변·전세권 각도는 이 광안리 페이지가 담당합니다.",
     ],
     livingAreaBody:
-      "광안리·광안동·민락동은 광안대교·해수욕장·먹자골목으로 유명한 주거·상업 복합 지역입니다. 오션뷰 아파트·근린상가·숙박업소의 매매·상속, 전세금 보호를 위한 전세권설정, 보증금 반환 후 말소등기 수요가 꾸준합니다. 남부산등기소 관할이 많습니다.",
+      "광안리 해수욕장·광안대교·먹자골목 일대는 오션뷰 아파트·근린상가·숙박업소의 매매·상속, 전세금 보호를 위한 전세권설정, 보증금 반환 후 말소등기 수요가 꾸준합니다. 남부산등기소 관할이 많습니다. 내륙 행정동 실거주 매매·상속은 광안동 안내를 함께 보시면 각도가 겹치지 않습니다.",
     problemStatement:
       "광안리 인근에서 ‘전세 계약은 했는데 전세권 설정을 해야 하나’, ‘부모님 광안동 아파트를 형제가 나눠 상속하려 한다’는 문의가 많습니다. 해변 생활권에서는 단순 매매뿐 아니라 전세 사기 예방·임대인 동의 여부·선순위 근저당 잔액을 함께 봐야 합니다. 광안동 상가는 권리금·임대차 승계가 매매 등기와 연결됩니다.",
     consultationTypes: [
@@ -250,6 +252,7 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     relatedPageLinks: [
       core.busanLawyer,
       { href: "/광안동법무사", label: "광안동 법무사" },
+      { href: "/민락동법무사", label: "민락동 법무사" },
       { href: "/광안역법무사", label: "광안역 법무사" },
       { href: "/situations/jeonse-deposit-unpaid", label: "전세보증금 미반환" },
     ],
@@ -562,11 +565,11 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     serviceSlug: "company-establishment",
     primaryKeywords: ["명지 법무사", "명지국제신도시 등기", "명지 법인설립"],
     summaryParagraphs: [
-      "명지 법무사 상담은 강서구 명지·명지국제신도시·에코델타시티 일대 신축 아파트·상가·입주 기업의 법인설립·본점이전·소유권이전등기 수요에 맞춰 진행합니다. 신도시 특성상 설립과 등기 일정이 입주·사업자등록과 맞물립니다.",
-      "명지국제신도시·에코델타 키워드가 함께 붙는 경우가 많습니다. 다옴법무사사무소가 신축 분양·법인 창업 등기를 상담합니다.",
+      "명지 법무사 상담은 강서구 명지국제신도시·에코델타시티 일대 신축 아파트·상가·입주 기업의 법인설립·본점이전·소유권이전등기 수요에 맞춰 진행합니다. 신도시 특성상 설립과 등기 일정이 입주·사업자등록과 맞물립니다.",
+      "기존 명지동 행정동·어촌·구축 주거만 보시면 명지동 안내, 신도시·법인·신축은 이 명지 허브를 보시면 각도가 겹치지 않습니다.",
     ],
     livingAreaBody:
-      "명지·가락동·명지국제신도시·에코델타시티는 강서구 서쪽 신흥 주거·산업·스마트시티 권역입니다. 신축 아파트 입주 후 최초 등기, 스타트업·중소기업 법인 설립, 본점을 명지로 이전하는 등기 수요가 빠르게 늘고 있습니다.",
+      "명지국제신도시·에코델타시티는 강서구 서쪽 신흥 주거·산업·스마트시티 권역입니다. 신축 아파트 입주 후 최초 등기, 스타트업·중소기업 법인 설립, 본점을 명지로 이전하는 등기 수요가 빠르게 늘고 있습니다. 기존 명지동 지번 매매·상속은 명지동 안내를 함께 보시면 됩니다.",
     problemStatement:
       "명지 신도시 아파트는 입주·대출·취득세·소유권이전등기 일정이 한꺼번에 몰립니다. 에코델타시티 입주 기업은 정관·임대차·본점 주소를 맞춰 설립등기를 해야 합니다. 강서구 법무사 상담 시 관할 등기소(북부산·남부산)를 소재지별로 확인합니다.",
     consultationTypes: [
@@ -599,6 +602,7 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     relatedPageLinks: [
       core.busanLawyer,
       { href: "/명지동법무사", label: "명지동 법무사" },
+      { href: "/강서구부동산등기", label: "강서구 부동산등기" },
       { href: "/명지역법무사", label: "명지역 법무사" },
     ],
     relatedGuPage: { href: "/강서구법무사", label: "강서구 법무사 종합 안내" },
@@ -655,6 +659,9 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     ],
     relatedPageLinks: [
       core.busanLawyer,
+      { href: "/기장군부동산등기", label: "기장군 부동산등기" },
+      { href: "/기장읍법무사", label: "기장읍 법무사" },
+      { href: "/일광읍법무사", label: "일광읍 법무사" },
       { href: "/기장토지상속등기", label: "기장 토지상속등기" },
       { href: "/기장군상속등기", label: "기장군 상속등기" },
     ],
@@ -764,6 +771,7 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
       { href: "/services/inheritance-registration", label: "상속등기" },
       { href: "/민사소송", label: "지급명령" },
       { href: "/사하구상속등기", label: "사하구 상속등기" },
+      { href: "/사하구부동산등기", label: "사하구 부동산등기" },
     ],
     relatedPageLinks: [
       core.busanLawyer,

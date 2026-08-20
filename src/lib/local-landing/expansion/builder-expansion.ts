@@ -636,7 +636,10 @@ function buildBusinessZonePage(config: LocalLandingConfig): LocalLandingPage | n
       href: `/services/${slug}`,
       label: serviceLabels[slug] ?? slug,
     })),
-    relatedRegionLinks: [],
+    relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
+      href: `/${slug}`,
+      label: neighborhoodSlugToLabel(slug),
+    })),
   };
 }
 

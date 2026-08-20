@@ -60,9 +60,15 @@ export const extraDistrictProfiles: Record<string, DistrictProfile> = {
     key: "seogu",
     label: "서구",
     type: "district",
-    neighborhoods: ["충무동", "아미동", "동대신동"],
+    neighborhoods: ["충무동", "아미동", "동대신동", "암남동"],
     context:
-      "서구는 충무·동대신 일대 주택·상가의 상속등기와 전세·매매 관련 등기 문의가 꾸준합니다.",
+      "서구 부동산등기는 충무·토성 원도심 상가, 동대신·서대신 구축 주택, 송도·암남 해안 주거의 매매·근저당·전세권 정리가 중심입니다. 구 법무사 허브가 상속·업무 분기를 담당한다면, 이 지역 프로필은 잔금일·담보 말소·소유권이전 실무 각도에 맞춥니다.",
+    registryOffice: "부산진등기소",
+    demandNotes: [
+      "충무·토성 상가 매매 후 근저당·전세권 말소",
+      "동대신·서대신 구축 주택 소유권이전등기",
+      "송도·암남 해안 주거·상가 매매 등기",
+    ],
   },
   yeongdo: {
     key: "yeongdo",
@@ -70,7 +76,13 @@ export const extraDistrictProfiles: Record<string, DistrictProfile> = {
     type: "district",
     neighborhoods: ["남항동", "동삼동", "봉래동"],
     context:
-      "영도구는 항만·조선 관련 업체와 주거지가 함께 있어 법인등기·상속·부동산 등기 사건이 다양합니다.",
+      "영도구 부동산등기는 남항·봉래 원도심 상가와 동삼·태종대 주거 매매·이전·담보 등기에 집중합니다. 선박·어선 등기는 별도 절차이므로 이 프로필에서는 토지·건물 등기만 다룹니다.",
+    registryOffice: "남부산등기소",
+    demandNotes: [
+      "남항·봉래 상가 매매·권리금과 구분되는 건물 등기",
+      "동삼·태종대 아파트·단독주택 소유권이전",
+      "영선·청학 소재 부동산의 근저당 설정·말소",
+    ],
   },
   gangseo: {
     key: "gangseo",
@@ -84,9 +96,15 @@ export const extraDistrictProfiles: Record<string, DistrictProfile> = {
     key: "saha",
     label: "사하구",
     type: "district",
-    neighborhoods: ["하단동", "괴정동", "당리동"],
+    neighborhoods: ["하단동", "괴정동", "당리동", "다대동"],
     context:
-      "사하구는 하단·괴정 일대 실거주 아파트와 상가의 상속·매매 등기 문의가 많습니다.",
+      "사하구 부동산등기는 하단 역세권·괴정·당리 실거주 아파트와 다대·장림 해안 주거의 잔금일 소유권이전, 전세권·근저당 말소가 핵심입니다. 상속 절차 안내는 사하구 법무사·상속등기 페이지와 역할을 나눕니다.",
+    registryOffice: "남부산등기소",
+    demandNotes: [
+      "하단역 인근 아파트 잔금일 소유권이전등기",
+      "괴정·당리 전세권·근저당 말소 후 매매등기",
+      "다대·장림 해안 주거 매매·증여 등기",
+    ],
   },
   jaesong: {
     key: "jaesong",

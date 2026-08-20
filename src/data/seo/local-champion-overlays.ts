@@ -5,6 +5,7 @@
  */
 import type { PageFaqItem, PageSection } from "@/lib/pageData/types";
 import { SEO_LANDING_REGION_OVERLAYS } from "./local-champion-overlays-neighborhoods";
+import { SEO_LANDING_STATION_OVERLAYS } from "./local-champion-overlays-stations";
 
 export type LocalChampionOverlay = {
   regionId: string;
@@ -17,6 +18,7 @@ export type LocalChampionOverlay = {
 
 export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
   ...SEO_LANDING_REGION_OVERLAYS,
+  ...SEO_LANDING_STATION_OVERLAYS,
   "hood-millak": {
     regionId: "hood-millak",
     slug: "민락동법무사",
@@ -39,7 +41,8 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
         title: "민락역·인접 생활권과의 구분",
         body: "광안리·남천·망미 등 인접동 사건은 관할·생활권 안내만 다를 수 있습니다. 소재지 행정동을 기준으로 등기 관할을 확인하며, 역 이름만으로 절차가 달라지지는 않습니다.",
         links: [
-          { href: "/광안리법무사", label: "광안리·광안동 안내" },
+          { href: "/광안리법무사", label: "광안리 법무사 (해변·전세)" },
+          { href: "/광안동법무사", label: "광안동 법무사 (행정동 실거주)" },
           { href: "/남천동법무사", label: "남천동 안내" },
           { href: "/수영구법무사", label: "수영구 종합 안내" },
         ],
@@ -164,6 +167,10 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
   },
 };
 
+/** regions.ts entity id ↔ legacy hood-* keys */
+LOCAL_CHAMPION_OVERLAYS.millak = LOCAL_CHAMPION_OVERLAYS["hood-millak"];
+LOCAL_CHAMPION_OVERLAYS.yangjeong = LOCAL_CHAMPION_OVERLAYS["hood-yangjeong"];
+
 export function getLocalChampionOverlay(
   regionId?: string,
   slug?: string,
@@ -172,7 +179,9 @@ export function getLocalChampionOverlay(
     return LOCAL_CHAMPION_OVERLAYS[regionId];
   }
   if (slug) {
-    return Object.values(LOCAL_CHAMPION_OVERLAYS).find((o) => o.slug === slug);
+    return Object.values(LOCAL_CHAMPION_OVERLAYS).find(
+      (o) => o && o.slug === slug,
+    );
   }
   return undefined;
 }

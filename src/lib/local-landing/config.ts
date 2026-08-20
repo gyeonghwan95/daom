@@ -68,6 +68,10 @@ const baseLandingConfigs: LocalLandingConfig[] = [
   { slug: "연제구한정승인", serviceSlug: "qualified-acceptance", regionKey: "yeonje", regionLabel: "연제구", neighborhoods: ["연산동"], caseAngle: "연제구 상속 부동산은 유지하고 채무만 한정", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
   { slug: "수영구상속포기", serviceSlug: "inheritance-renunciation", regionKey: "suyeong", regionLabel: "수영구", neighborhoods: ["광안동", "민락동"], caseAngle: "수영구 거주 상속인의 상속포기 가정법원 신고", relatedCaseSlug: "jaesong-inheritance-renunciation-consultation" },
   { slug: "동래구부동산등기", serviceSlug: "real-estate-registration", regionKey: "dongnae", regionLabel: "동래구", neighborhoods: ["온천동", "사직동"], caseAngle: "동래구 재건축 전 아파트 매매 등기", relatedCaseSlug: "centum-ownership-transfer-case" },
+  // Phase1: 맵 데드링크 해소 — 사하·서·영도 부동산등기 spoke (구 허브·동 허브와 각도 분리)
+  { slug: "사하구부동산등기", serviceSlug: "real-estate-registration", regionKey: "saha", regionLabel: "사하구", neighborhoods: ["하단동", "괴정동", "다대동"], caseAngle: "하단·괴정 아파트 잔금일 소유권이전·근저당 말소 동시 등기", relatedCaseSlug: "centum-ownership-transfer-case" },
+  { slug: "서구부동산등기", serviceSlug: "real-estate-registration", regionKey: "seogu", regionLabel: "서구", neighborhoods: ["충무동", "동대신동", "암남동"], caseAngle: "충무·송도 인근 상가·구축주택 매매 후 근저당·전세권 정리 등기", relatedCaseSlug: "centum-ownership-transfer-case" },
+  { slug: "영도구부동산등기", serviceSlug: "real-estate-registration", regionKey: "yeongdo", regionLabel: "영도구", neighborhoods: ["남항동", "동삼동", "봉래동"], caseAngle: "영도 원도심 상가·동삼 주거 매매등기(선박등기와 별도)", relatedCaseSlug: "centum-ownership-transfer-case" },
 ];
 
 export const localLandingConfigs: LocalLandingConfig[] = [
