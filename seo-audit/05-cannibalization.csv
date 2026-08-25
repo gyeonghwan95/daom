@@ -1,0 +1,9 @@
+QUERY,PRIMARY URL,COMPETING URL 1,COMPETING URL 2,WHY THEY COMPETE,INTENT DIFFERENCE,ACTION,PROTECTION LEVEL
+부산 법무사,/,/부산법무사,/해운대법무사,guide and district pages historically competed for exact,HOME=broad brand; /부산법무사=selection guide; district=local,Keep HOME exact; strip exact from guide; contextual links only,PROTECT-A HOME
+부산 법무사 추천,/부산법무사추천,/부산법무사,/,guide and HOME can dilute recommend,Recommend=selection criteria; guide=how to choose broadly,Recommend owns exact; HOME links as child,IMPROVE-B
+부산 법무사 상담,/부산법무사상담,/contact,/,contact and HOME CTA compete for consult,Consult hub=channels+prep; contact=form; HOME=brand,Consult owns exact consult query,IMPROVE-B
+부산 상속 법무사,/부산상속법무사,/상속,/부산상속등기,nationwide and registration pages overlap,Hub=Busan commercial branch; /상속=nationwide procedures; 상속등기=registration only,Differentiate title/H1/intro; child links,IMPROVE-B
+부산 상속전문 법무사,/부산상속법무사,/부산상속전문법무사,/부산상속법무사추천,specialist-named URLs if present cannibalize hub,Same commercial intent — no new URLs,Absorb intent into hub copy; do not create NEW-D,PROTECT ownership
+부산 상속포기 법무사,/부산상속포기,/부산상속법무사,/부산상속등기,hub and registration over-explain renunciation,Renunciation=3-month narrow; hub=branching; 등기≠포기,Keep renunciation narrow; parent link to hub,IMPROVE-B
+부산 등기 법무사,/부산등기법무사,/부산부동산등기,/부산법인등기,child hubs compete for broad registry,Registry hub=branch; RE/corp=narrow,Hub owns broad 등기 법무사,IMPROVE-B
+부산 개인회생,/부산개인회생,/개인회생파산,/부산개인회생법무사,compare and alias pages,Service hub vs compare vs alias,Service page primary; aliases support,IMPROVE-B

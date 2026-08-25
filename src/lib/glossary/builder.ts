@@ -74,7 +74,7 @@ export function buildGlossaryHubPageData(): PageData {
       "한정승인 뜻",
       "소유권이전등기",
       "개인회생 뜻",
-      "부산 법무사",
+      "다옴법무사사무소",
     ],
     includeFaqSchema: true,
     ctaTitle: "용어 설명만으로 부족하다면",
@@ -175,7 +175,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
         links: relatedTerms,
       },
     ],
-    primaryKeywords: [t.term, `${t.term} 뜻`, `${t.term} 절차`, "부산 법무사"],
+    primaryKeywords: [t.term, `${t.term} 뜻`, `${t.term} 절차`, "다옴법무사사무소"],
     includeFaqSchema: true,
     ctaTitle: `${t.term} — 다음 단계가 필요하신가요?`,
     ctaText:

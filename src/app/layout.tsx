@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
-import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PublicOnly } from "@/components/layout/PublicOnly";
 import { AppClientShell } from "@/components/ux/AppClientShell";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
-import { InflowIntentRail } from "@/components/seo/InflowIntentRail";
-import { SpeculationRules } from "@/components/seo/SpeculationRules";
 import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
 import "./globals.css";
@@ -75,12 +72,12 @@ export default function RootLayout({
             <GlobalJsonLd />
             <Header />
           </PublicOnly>
+          {/*
+            Footer는 layout 형제가 아니라 page 트리(PageContainer / home)의
+            Main 뒤에 둔다. layout에서 children Suspense hole 뒤에 Footer가
+            있으면 정적 HTML에 Footer NAP이 Main/H1보다 먼저 출력된다.
+          */}
           {children}
-          <PublicOnly>
-            <InflowIntentRail />
-            <Footer />
-            <SpeculationRules />
-          </PublicOnly>
         </AppClientShell>
       </body>
     </html>

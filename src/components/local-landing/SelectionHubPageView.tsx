@@ -65,11 +65,9 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
     { id: "consultation", label: "상담 문의" },
   ];
 
-  const showNationwide = shouldShowNationwideRegionChip(
-    page.path,
-    page.slug,
-    page.serviceSlug,
-  );
+  const showNationwide =
+    !isConsultPrep &&
+    shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
   const bodyParagraphs = [
     ...content.heroParagraphs.slice(1),
@@ -111,7 +109,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         h1={content.h1}
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
-        keywords={isConsultPrep ? [] : content.primaryKeywords}
+        keywords={[]}
         ctaHref={isConsultPrep ? inquiryBase : "/contact/inquiry"}
         ctaLabel={isConsultPrep ? "업무 가능 여부 확인하기" : consultationInquiryCopy.ctaShort}
         secondaryCta={

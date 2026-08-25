@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T16:30:43.689Z",
+  "generatedAt": "2026-08-25T15:39:58.799Z",
   "ok": true,
   "SEO_REGRESSION_SAFETY": {
     "existingUrls": {
@@ -15,8 +15,8 @@
     "noindexAdded": 0,
     "unexpectedRedirects": 0,
     "sitemapUrlsRemoved": 0,
-    "sitemapUrlsInFile": 1653,
-    "sitemapPathsMissingFromIndexableList": 16,
+    "sitemapUrlsInFile": 1662,
+    "sitemapPathsMissingFromIndexableList": 25,
     "protectedContentPreservationPct": 100,
     "protectedInternalLinksRemoved": 0,
     "protectedInternalLinksAdded": 0

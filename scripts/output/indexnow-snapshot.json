@@ -1,6 +1,6 @@
 {
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "updatedAt": "2026-08-20T14:22:31.047Z",
+  "updatedAt": "2026-08-20T16:46:54.101Z",
   "urls": {
     "/": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
@@ -12,11 +12,11 @@
     },
     "/부산상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/업무사례": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/업무사례/부산법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1032,7 +1032,7 @@
     },
     "/광안리법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%A6%AC%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/광안역법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1044,7 +1044,7 @@
     },
     "/남천동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%82%A8%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/남천동상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%82%A8%EC%B2%9C%EB%8F%99%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -1052,7 +1052,7 @@
     },
     "/대연동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%97%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/대연동상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%97%B0%EB%8F%99%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -1064,7 +1064,7 @@
     },
     "/덕천동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8D%95%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/덕천동상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8D%95%EC%B2%9C%EB%8F%99%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -1076,7 +1076,7 @@
     },
     "/동래구법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/동래구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -1084,11 +1084,11 @@
     },
     "/동래구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/동래구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/동래구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
@@ -1096,7 +1096,7 @@
     },
     "/동래구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/동래구재건축등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%EC%9E%AC%EA%B1%B4%EC%B6%95%EB%93%B1%EA%B8%B0",
@@ -1104,11 +1104,11 @@
     },
     "/동래구한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EA%B5%AC%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/동래역법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%9E%98%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/명지국제신도시법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AA%85%EC%A7%80%EA%B5%AD%EC%A0%9C%EC%8B%A0%EB%8F%84%EC%8B%9C%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -1128,7 +1128,7 @@
     },
     "/명지법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AA%85%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/명지법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AA%85%EC%A7%80%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -1216,7 +1216,7 @@
     },
     "/부산개인회생": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산개인회생법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1484,7 +1484,7 @@
     },
     "/부산법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산법인등기과태료": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C",
@@ -1512,7 +1512,7 @@
     },
     "/부산법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산법인설립전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1544,7 +1544,7 @@
     },
     "/부산부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산부동산등기법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1648,7 +1648,7 @@
     },
     "/부산상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산상속포기전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1672,7 +1672,7 @@
     },
     "/부산소유권이전등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-19"
+      "lastmod": "2026-08-20"
     },
     "/부산소유권이전전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1712,7 +1712,7 @@
     },
     "/부산역법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/부산역부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AD%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
@@ -1752,7 +1752,7 @@
     },
     "/부산임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-19"
+      "lastmod": "2026-08-20"
     },
     "/부산임원변경전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -1984,7 +1984,7 @@
     },
     "/부산파산": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8C%8C%EC%82%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산파산법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8C%8C%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -2004,7 +2004,7 @@
     },
     "/부산한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/부산한정승인전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -2052,7 +2052,7 @@
     },
     "/사상구개인회생": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/사상구공장창고등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EA%B3%B5%EC%9E%A5%EC%B0%BD%EA%B3%A0%EB%93%B1%EA%B8%B0",
@@ -2072,15 +2072,15 @@
     },
     "/사상구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/사상구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/사상구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/사상구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
@@ -2092,7 +2092,7 @@
     },
     "/사상법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/사상역개인회생": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%EC%83%81%EC%97%AD%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
@@ -2104,7 +2104,7 @@
     },
     "/서면법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/서면법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -2136,11 +2136,11 @@
     },
     "/센텀법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/센텀부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/센텀시티역법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -2160,7 +2160,7 @@
     },
     "/센텀임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/업무사례/대구군위군상속등기법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%8C%80%EA%B5%AC%EA%B5%B0%EC%9C%84%EA%B5%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -3192,7 +3192,7 @@
     },
     "/연산동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%82%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/연산동법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%82%B0%EB%8F%99%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -3212,7 +3212,7 @@
     },
     "/정관법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%95%EA%B4%80%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/정관법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%95%EA%B4%80%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
@@ -3224,35 +3224,35 @@
     },
     "/하단법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%98%EB%8B%A8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-08-20"
     },
     "/해운대구법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대구한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EA%B5%AC%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/해운대비영리법인설립": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -4080,7 +4080,7 @@
     },
     "/개금동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EA%B8%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/개인파산과태료": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EA%B3%BC%ED%83%9C%EB%A3%8C",
@@ -4300,7 +4300,7 @@
     },
     "/괴정동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%B4%EC%A0%95%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/교회사단법인설립": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B5%90%ED%9A%8C%EC%82%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -4308,11 +4308,11 @@
     },
     "/구서동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B5%AC%EC%84%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/구포동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B5%AC%ED%8F%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/국민주택채권": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B5%AD%EB%AF%BC%EC%A3%BC%ED%83%9D%EC%B1%84%EA%B6%8C",
@@ -4364,11 +4364,11 @@
     },
     "/금정구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%88%EC%A0%95%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/금정구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%88%EC%A0%95%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/금정구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%88%EC%A0%95%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
@@ -4380,7 +4380,7 @@
     },
     "/금정구한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%88%EC%A0%95%EA%B5%AC%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기관특강주제추천": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EA%B4%80%ED%8A%B9%EA%B0%95%EC%A3%BC%EC%A0%9C%EC%B6%94%EC%B2%9C",
@@ -4400,7 +4400,7 @@
     },
     "/기장군법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기장군법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -4408,15 +4408,15 @@
     },
     "/기장군부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기장군상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기장군상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기장군임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
@@ -4428,7 +4428,7 @@
     },
     "/기장군한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EA%B5%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/기장법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -4444,7 +4444,7 @@
     },
     "/기장읍법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%EC%9D%8D%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/기장토지상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%9E%A5%ED%86%A0%EC%A7%80%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -4536,7 +4536,7 @@
     },
     "/다대동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8B%A4%EB%8C%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/대습상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%8A%B5%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -4592,7 +4592,7 @@
     },
     "/동삼동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EC%82%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/등기권리증없이소유권이전": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EA%B6%8C%EB%A6%AC%EC%A6%9D%EC%97%86%EC%9D%B4%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84",
@@ -4748,7 +4748,7 @@
     },
     "/반송동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B0%98%EC%86%A1%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/반여동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B0%98%EC%97%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -4804,7 +4804,7 @@
     },
     "/범일동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%94%EC%9D%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/법률강의": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%A5%A0%EA%B0%95%EC%9D%98",
@@ -5084,7 +5084,7 @@
     },
     "/북구개인회생": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/북구법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -5100,15 +5100,15 @@
     },
     "/북구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/북구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/북구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/북구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%81%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
@@ -5213,6 +5213,10 @@
     "/사하구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    "/사하구부동산등기": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-08-20"
     },
     "/사하구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%AC%ED%95%98%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -5390,6 +5394,10 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
+    "/서구부동산등기": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-08-20"
+    },
     "/서구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
       "lastmod": null
@@ -5488,7 +5496,7 @@
     },
     "/수영구개인회생": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/수영구법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -5496,7 +5504,7 @@
     },
     "/수영구법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/수영구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -5504,7 +5512,7 @@
     },
     "/수영구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/수영구비영리법인설립": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -5512,11 +5520,11 @@
     },
     "/수영구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/수영구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/수영구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%88%98%EC%98%81%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
@@ -5556,7 +5564,7 @@
     },
     "/안락동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%95%88%EB%9D%BD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/안심상속원스톱서비스이후": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%95%88%EC%8B%AC%EC%83%81%EC%86%8D%EC%9B%90%EC%8A%A4%ED%86%B1%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9D%B4%ED%9B%84",
@@ -5596,7 +5604,7 @@
     },
     "/연제구법인등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연제구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -5604,27 +5612,27 @@
     },
     "/연제구부동산등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연제구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연제구상속포기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연제구임원변경등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연제구한정승인": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A0%9C%EA%B5%AC%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-08-01"
+      "lastmod": "2026-08-20"
     },
     "/연지동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A7%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/영농조합법인설립": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%86%8D%EC%A1%B0%ED%95%A9%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -5641,6 +5649,10 @@
     "/영도구법인설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    "/영도구부동산등기": {
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-08-20"
     },
     "/영도구상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -5672,7 +5684,7 @@
     },
     "/오시리아법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%A4%EC%8B%9C%EB%A6%AC%EC%95%84%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/오피스텔보존등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0",
@@ -5720,7 +5732,7 @@
     },
     "/우암동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B0%EC%95%94%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/유류분과상속등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EB%A5%98%EB%B6%84%EA%B3%BC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -6008,7 +6020,7 @@
     },
     "/주례동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A3%BC%EB%A1%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/주무관청허가후설립등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A3%BC%EB%AC%B4%EA%B4%80%EC%B2%AD%ED%97%88%EA%B0%80%ED%9B%84%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -6156,7 +6168,7 @@
     },
     "/초량동법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B4%88%EB%9F%89%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-05"
+      "lastmod": "2026-08-20"
     },
     "/촉탁등기": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B4%89%ED%83%81%EB%93%B1%EA%B8%B0",
@@ -6316,7 +6328,7 @@
     },
     "/blog": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog",
-      "lastmod": "2026-06-30"
+      "lastmod": "2026-08-20"
     },
     "/blog/bankruptcy-vs-discharge-difference": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/blog/bankruptcy-vs-discharge-difference",

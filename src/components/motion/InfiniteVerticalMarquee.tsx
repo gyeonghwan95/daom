@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePauseMarqueeWhileScrolling } from "@/hooks/usePauseMarqueeWhileScrolling";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type InfiniteVerticalMarqueeProps = {
   children: React.ReactNode;
-  /** 한 바퀴 도는 데 걸리는 초 (클수록 느림) */
   speed?: number;
   direction?: "up" | "down";
   className?: string;
@@ -23,6 +23,11 @@ export function InfiniteVerticalMarquee({
 }: InfiniteVerticalMarqueeProps) {
   const reduced = useReducedMotion();
   const rootRef = usePauseMarqueeWhileScrolling<HTMLDivElement>();
+  const [cloneReady, setCloneReady] = useState(false);
+
+  useEffect(() => {
+    setCloneReady(true);
+  }, []);
 
   if (reduced) {
     return (
@@ -49,9 +54,11 @@ export function InfiniteVerticalMarquee({
         }}
       >
         <div className="marquee-v-set">{children}</div>
-        <div className="marquee-v-set" aria-hidden="true">
-          {children}
-        </div>
+        {cloneReady ? (
+          <div className="marquee-v-set" aria-hidden="true">
+            {children}
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -60,9 +60,9 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   },
   {
     id: "search-intent-guides",
-    title: "검색의도·실제 검색 키워드",
+    title: "협업·복대리·특수 등기 안내",
     description:
-      "추천·비용·복대리·집단등기·회생·공공기관·보존등기 등 고객이 실제로 검색하는 키워드 안내입니다.",
+      "복대리·집단등기·공공기관·보존등기 등 의·기관 의뢰와 특수 등기 안내로 이동합니다.",
     links: [
       { href: "/search-guides", label: "검색의도 안내 허브" },
       { href: "/등기실무", label: "등기 실무 허브" },

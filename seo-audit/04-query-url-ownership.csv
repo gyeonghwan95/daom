@@ -1,0 +1,16 @@
+Query,PrimaryURL,Role,Notes
+부산 법무사,/,PRIMARY,exact HOME only
+부산법무사,/,PRIMARY,compact form
+부산 법무사 추천,/부산법무사추천,PRIMARY,
+부산 법무사 상담,/부산법무사상담,PRIMARY,
+부산에서 법무사 찾을 때,/부산법무사,SUPPORTING,not exact champion
+부산 상속 법무사,/부산상속법무사,PRIMARY,
+부산 상속전문 법무사,/부산상속법무사,PRIMARY,intent wording only — no specialty credential
+부산 상속 전문 법무사,/부산상속법무사,PRIMARY,same
+부산 상속포기 법무사,/부산상속포기,PRIMARY,
+부산 상속포기,/부산상속포기,PRIMARY,
+부산 등기 법무사,/부산등기법무사,PRIMARY,
+부산 부동산등기,/부산부동산등기,PRIMARY,child of registry hub
+부산 법인 법무사,/부산법인법무사,PRIMARY,
+부산 개인회생,/부산개인회생,PRIMARY,
+전국 상속 절차,/상속,PRIMARY,nationwide pillar — not Busan commercial

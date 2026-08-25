@@ -146,6 +146,12 @@ try {
     process.exit(1);
   }
 
+  // Footer-before-Main 정적 HTML 보정 (page 트리 Footer와 이중 안전망)
+  execSync("node scripts/fix-html-dom-order.mjs", {
+    stdio: "inherit",
+    cwd: ROOT,
+  });
+
   execSync("node scripts/validate-out-routes.mjs", {
     stdio: "inherit",
     cwd: ROOT,
@@ -157,6 +163,11 @@ try {
   });
 
   execSync("node scripts/seo-validate.mjs", {
+    stdio: "inherit",
+    cwd: ROOT,
+  });
+
+  execSync("node scripts/check-seo-dom-order.mjs", {
     stdio: "inherit",
     cwd: ROOT,
   });

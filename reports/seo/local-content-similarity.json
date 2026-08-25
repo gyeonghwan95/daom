@@ -1,10 +1,160 @@
 {
-  "generatedAt": "2026-08-12T14:57:31.745Z",
+  "generatedAt": "2026-08-25T14:56:23.923Z",
   "method": "jaccard-after-region-name-strip",
-  "documentCount": 3,
+  "documentCount": 20,
   "highRiskCount": 0,
   "reviewCount": 0,
   "topPairs": [
+    {
+      "a": "/광안역법무사",
+      "b": "/명지역법무사",
+      "similarity": 38.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/서면역법무사",
+      "b": "/사상역법무사",
+      "similarity": 36.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/센텀시티역법무사",
+      "b": "/해운대역법무사",
+      "similarity": 36,
+      "band": "acceptable"
+    },
+    {
+      "a": "/서면역법무사",
+      "b": "/광안역법무사",
+      "similarity": 34.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/센텀시티역법무사",
+      "b": "/서면역법무사",
+      "similarity": 34,
+      "band": "acceptable"
+    },
+    {
+      "a": "/해운대역법무사",
+      "b": "/사상역법무사",
+      "similarity": 34,
+      "band": "acceptable"
+    },
+    {
+      "a": "/서면역법무사",
+      "b": "/명지역법무사",
+      "similarity": 30.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/사상역법무사",
+      "b": "/명지역법무사",
+      "similarity": 30.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/해운대역법무사",
+      "b": "/명지역법무사",
+      "similarity": 30.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/센텀시티역법무사",
+      "b": "/명지역법무사",
+      "similarity": 29.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/서면역법무사",
+      "b": "/해운대역법무사",
+      "similarity": 28.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/광안역법무사",
+      "b": "/사상역법무사",
+      "similarity": 28.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/센텀시티역법무사",
+      "b": "/사상역법무사",
+      "similarity": 27.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부전동법무사",
+      "b": "/서면역법무사",
+      "similarity": 26.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/연산역법무사",
+      "b": "/서면역법무사",
+      "similarity": 26.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/해운대역법무사",
+      "b": "/광안역법무사",
+      "similarity": 25.3,
+      "band": "acceptable"
+    },
+    {
+      "a": "/센텀시티역법무사",
+      "b": "/광안역법무사",
+      "similarity": 24.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/연산역법무사",
+      "b": "/센텀시티역법무사",
+      "similarity": 24.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/송정동법무사",
+      "b": "/중동법무사",
+      "similarity": 23.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/동래구상속포기",
+      "b": "/부산진구법인등기",
+      "similarity": 23,
+      "band": "acceptable"
+    },
+    {
+      "a": "/중동법무사",
+      "b": "/해운대역법무사",
+      "similarity": 20.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/광안동법무사",
+      "b": "/광안역법무사",
+      "similarity": 20.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/명지동법무사",
+      "b": "/명지역법무사",
+      "similarity": 20.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/연산역법무사",
+      "b": "/해운대역법무사",
+      "similarity": 19.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/중동법무사",
+      "b": "/부전동법무사",
+      "similarity": 19,
+      "band": "acceptable"
+    },
     {
       "a": "/민락동법무사",
       "b": "/양정동법무사",
@@ -12,15 +162,27 @@
       "band": "acceptable"
     },
     {
-      "a": "/양정동법무사",
-      "b": "/동래구법무사",
-      "similarity": 15.1,
+      "a": "/연산역법무사",
+      "b": "/광안역법무사",
+      "similarity": 17.7,
       "band": "acceptable"
     },
     {
-      "a": "/민락동법무사",
-      "b": "/동래구법무사",
-      "similarity": 14.3,
+      "a": "/온천동법무사",
+      "b": "/연산역법무사",
+      "similarity": 17,
+      "band": "acceptable"
+    },
+    {
+      "a": "/송정동법무사",
+      "b": "/해운대역법무사",
+      "similarity": 16.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/연산역법무사",
+      "b": "/명지역법무사",
+      "similarity": 16.5,
       "band": "acceptable"
     }
   ],

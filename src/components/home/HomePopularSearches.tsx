@@ -58,9 +58,9 @@ export function HomePopularSearches() {
     >
       <Container>
         <HomeSectionHeader
-          label="Popular searches"
-          title="많이 찾는 검색어"
-          description="추천·비용·상담·업무별 안내 페이지로 바로 이동할 수 있습니다."
+          label="Quick links"
+          title="바로 찾는 안내"
+          description="상담·선택 기준·자가진단·업무 사례·협업 안내로 바로 이동합니다."
         />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {POPULAR_SEARCH_CARDS.map((card) => (

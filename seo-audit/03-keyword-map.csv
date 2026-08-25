@@ -1,0 +1,129 @@
+Query,Cluster,Intent,Scope,PrimaryURL,SupportingURLs,Priority,Evidence,CannibalizationRisk,RecommendedAction
+부산 법무사,brand,commercial-local,busan,/,/부산법무사,A,champion-query+user,high,HOME exact; guide supporting only
+부산법무사,brand,commercial-local,busan,/,/부산법무사,A,champion-query,high,same as spaced
+부산 법무사 사무소,brand,commercial-local,busan,/,/office|/부산법무사무소,A,site-content,med,HOME primary; office NAP
+부산 법무사 추천,brand-select,commercial,busan,/부산법무사추천,/부산법무사,A,champion-query+user,med,selection hub only
+부산 법무사 잘하는 곳,brand-select,commercial,busan,/부산법무사추천,/부산법무사,B,related-intent,med,absorb into recommend
+부산 법무사 상담,brand-consult,conversion,busan,/부산법무사상담,/contact,A,champion-query+user,high,consult hub only
+부산 법무사 비용,brand-cost,commercial,busan,/부산법무사비용,/부산법무사,A,site-hub,med,cost page primary
+부산 법무사 수임료,brand-cost,commercial,busan,/부산법무사비용,/법무사수임료,B,site-content,low,alias to cost
+부산 법무사 후기,brand-social,trust,busan,/부산법무사후기,/reviews,B,site-hub,med,reviews spoke
+부산 법무사 비교,brand-select,commercial,busan,/부산법무사비교,/부산법무사추천,B,site-hub,med,compare criteria
+부산 법무사 근처,brand-geo,local,busan,/해운대법무사|/센텀법무사|/,/location,B,geo-intent,med,HOME+district
+부산 법무사 전화상담,brand-consult,conversion,busan,/부산법무사상담,/contact,B,consult-channel,low,consult page
+부산에서 법무사 찾을 때,brand-guide,informational,busan,/부산법무사,/,A,champion-guide,med,supporting guide
+부산 상속 법무사,inheritance,commercial-local,busan,/부산상속법무사,/상속|/부산상속등기,A,user+site,high,Busan inheritance hub
+부산 상속전문 법무사,inheritance,commercial-local,busan,/부산상속법무사,/부산상속등기,A,user-intent,high,intent copy only no credential claim
+부산 상속 전문 법무사,inheritance,commercial-local,busan,/부산상속법무사,/상속,A,user-intent,high,same
+부산 상속등기 법무사,inheritance-reg,commercial,busan,/부산상속등기,/부산상속법무사,A,site-hub,med,narrow registration
+부산 상속등기,inheritance-reg,service,busan,/부산상속등기,/부산상속법무사,A,site-hub,med,procedure page
+부산 상속포기 법무사,renunciation,commercial,busan,/부산상속포기,/부산상속법무사,A,champion-query+user,high,narrow renunciation
+부산 상속포기,renunciation,service,busan,/부산상속포기,/상속포기자가진단,A,champion-query,med,same
+부산 한정승인 법무사,qualified,commercial,busan,/부산한정승인,/부산상속법무사,A,site-hub,med,narrow QA
+부산 한정승인,qualified,service,busan,/부산한정승인,/한정승인자가진단,A,site-hub,low,same
+부산 상속재산분할,inheritance-split,service,busan,/부산상속법무사,/상속재산분할협의서준비,B,site-content,med,hub section+article
+부산 상속재산분할 법무사,inheritance-split,commercial,busan,/부산상속법무사,/부산상속등기,B,site-content,med,hub
+부산 상속등기 비용,inheritance-cost,commercial,busan,/상속등기비용,/부산상속등기,A,site-hub,low,cost spoke
+부산 상속등기 필요서류,inheritance-docs,informational,busan,/상속등기필요서류|/부산상속등기,/상속등기준비서류,A,site-hub,low,docs
+부산 상속등기 기간,inheritance-timing,informational,busan,/상속등기기간,/부산상속등기,B,site-hub,low,timing
+부산 상속포기 비용,renunciation-cost,commercial,busan,/상속포기비용,/부산상속포기,B,site-hub,low,cost
+부산 상속포기 3개월,renunciation-timing,informational,busan,/부산상속포기,/상속포기자가진단,A,narrow-intent,low,section on renunciation
+부산 상속포기 상담,renunciation-consult,conversion,busan,/부산상속포기|/부산법무사상담,/상속포기상담,B,conversion,med,renunciation CTA
+부산 유증등기,bequest,service,busan,/전국유증등기|/부산상속법무사,/업무사례,B,nationwide,low,link from hub
+부산 유언 상속,bequest,informational,busan,/부산상속법무사,/부산유언검인,B,site-content,low,hub FAQ
+부산 해외상속인,special-heir,informational,busan,/해외거주상속인|/부산상속법무사,/방문없이준비하는상속등기,B,situation,low,situation+hub
+부산 외국인 상속,special-heir,informational,busan,/부산상속법무사,/해외서류가필요한증여등기,C,gap,low,article candidate
+부산 미성년자 상속,special-heir,informational,busan,/미성년상속인|/부산상속법무사,/특별대리인자가진단,B,situation,low,situation
+부산 대습상속,special-heir,informational,busan,/대습상속등기,/부산상속법무사,B,site-content,low,article
+부산 오래된 상속등기,special-heir,informational,busan,/오래된상속토지정리|/부산상속등기,/부산상속법무사,B,situation,low,situation
+부산 상속 부동산,inheritance-re,commercial,busan,/부산상속등기|/부산상속법무사,/부산토지상속등기,B,site-content,med,reg page
+부산 등기 법무사,registry,commercial,busan,/부산등기법무사,/부산부동산등기|/부산법인등기,A,site-hub,high,registry hub
+부산 등기전문 법무사,registry,commercial,busan,/부산등기법무사,/부산부동산등기전문,B,intent-copy,med,intent wording only
+부산 부동산등기 법무사,re-reg,commercial,busan,/부산부동산등기|/부산등기법무사,/부산소유권이전등기,A,site-hub,med,RE hub
+부산 부동산등기,re-reg,service,busan,/부산부동산등기,/부산등기법무사,A,site-hub,med,RE hub
+부산 소유권이전 법무사,ownership,commercial,busan,/부산소유권이전등기,/부산매매등기법무사,A,site-hub,low,ownership
+부산 소유권이전등기,ownership,service,busan,/부산소유권이전등기,/부산부동산등기,A,site-hub,low,same
+부산 아파트 등기 법무사,ownership,commercial,busan,/부산아파트매매등기|/부산소유권이전등기,/부산신축아파트소유권이전등기,B,site-content,low,apartment spoke
+부산 매매등기 법무사,sale,commercial,busan,/부산매매등기법무사,/부산소유권이전등기,A,site-hub,low,sale
+부산 잔금일 법무사,sale,commercial,busan,/부산잔금일법무사,/부산매매등기법무사,A,site-hub,low,settlement day
+부산 증여등기 법무사,gift,commercial,busan,/부산증여등기,/부산부동산등기,A,site-hub,low,gift
+부산 부동산 증여 법무사,gift,commercial,busan,/부산증여등기,/부산부모자녀아파트증여등기,B,site-content,low,gift
+부산 근저당 설정,mortgage,service,busan,/부산근저당설정등기,/부산등기법무사,A,site-hub,low,mortgage
+부산 근저당 말소,mortgage,service,busan,/부산근저당말소등기,/부산등기법무사,A,site-hub,low,cancel
+부산 근저당 법무사,mortgage,commercial,busan,/부산근저당설정등기|/부산근저당말소등기,/부산등기법무사,B,site-content,med,hub branch
+부산 전세권 설정,jeonse,service,busan,/부산전세권설정등기,/부산등기법무사,A,site-hub,low,jeonse
+부산 전세권 말소,jeonse,service,busan,/부산전세권말소등기,/부산등기법무사,A,site-hub,low,cancel
+부산 임차권등기명령,lease-order,service,busan,/부산임차권등기명령,/전세사기피해대응절차,A,site-hub,med,lease order
+부산 보존등기 법무사,preservation,commercial,busan,/부산신축건물보존등기|/신축보존등기,/부산등기법무사,B,site-content,low,preservation
+부산 신축건물 보존등기,preservation,service,busan,/부산신축건물보존등기,/신축보존등기,A,site-hub,low,same
+부산 오피스텔 등기,re-type,service,busan,/부산오피스텔매매등기|/부산오피스텔소유권이전등기,/부산부동산등기,B,site-content,low,type spoke
+부산 상가 등기,re-type,service,busan,/부산상가등기|/부산상가매매등기,/부산부동산등기,B,site-content,low,type spoke
+부산 법인 법무사,corporate,commercial,busan,/부산법인법무사,/부산법인등기|/부산등기법무사,A,site-hub,high,corporate hub
+부산 법인등기 법무사,corporate,commercial,busan,/부산법인등기|/부산법인법무사,/부산임원변경등기,A,site-hub,med,corp reg
+부산 법인등기,corporate,service,busan,/부산법인등기,/부산법인법무사,A,site-hub,med,corp reg
+부산 법인설립 법무사,incorp,commercial,busan,/부산법인설립등기,/부산법인법무사,A,site-hub,low,incorp
+부산 법인설립,incorp,service,busan,/부산법인설립등기,/법인설립자가진단,A,site-hub,low,same
+부산 회사설립 법무사,incorp,commercial,busan,/부산법인설립등기,/부산법인법무사,B,synonym,low,absorb
+부산 임원변경 법무사,director,commercial,busan,/부산임원변경등기,/부산법인법무사,A,site-hub,low,director
+부산 임원변경등기,director,service,busan,/부산임원변경등기,/임원변경등기자가진단,A,site-hub,low,same
+부산 대표이사 변경,director,service,busan,/부산대표이사변경등기|/부산임원변경등기,/부산법인법무사,B,site-content,low,director spoke
+부산 본점이전등기,hq-move,service,busan,/부산본점이전등기,/부산법인법무사,A,site-hub,low,hq
+부산 법인 본점이전,hq-move,service,busan,/부산본점이전등기|/전국법인본점이전등기,/부산법인법무사,B,site-content,low,hq
+부산 목적변경등기,purpose,service,busan,/부산사업목적변경등기,/부산법인법무사,B,site-content,low,purpose
+부산 증자등기,capital,service,busan,/부산유상증자등기,/부산법인법무사,B,site-content,low,capital
+부산 유상증자 법무사,capital,commercial,busan,/부산유상증자등기,/부산법인법무사,B,site-content,low,capital
+부산 법인 해산,dissolution,service,busan,/부산법인해산청산등기,/부산법인법무사,B,site-content,low,dissolve
+부산 법인 청산,dissolution,service,busan,/부산법인해산청산등기,/부산법인법무사,B,site-content,low,liquidate
+부산 정관변경,articles,service,busan,/법인정관변경|/법인정관업무,/부산법인법무사,B,site-content,low,articles
+부산 기업 등기 법무사,corporate,commercial,busan,/부산법인법무사|/부산기업법무사,/partners,B,b2b,med,corp hub
+부산 개인회생 법무사,rehab,commercial,busan,/부산개인회생|/부산개인회생법무사,/개인회생파산,A,site-hub,high,rehab hub
+부산 개인회생,rehab,service,busan,/부산개인회생,/개인회생자가진단,A,site-hub,med,rehab
+부산 개인회생 상담,rehab-consult,conversion,busan,/부산개인회생상담|/부산법무사상담,/부산개인회생,A,site-hub,med,consult spoke
+부산 개인회생 비용,rehab-cost,commercial,busan,/개인회생비용,/부산개인회생,B,site-hub,low,cost
+부산 개인회생 잘하는 곳,rehab,commercial,busan,/부산개인회생|/부산개인회생법무사추천,/부산법무사추천,B,select,med,rehab+recommend
+부산 개인파산 법무사,bankruptcy,commercial,busan,/부산개인파산|/부산개인파산법무사,/부산개인회생,A,site-hub,med,bankruptcy
+부산 개인파산,bankruptcy,service,busan,/부산개인파산|/부산파산,/개인파산자가진단,A,site-hub,med,bankruptcy
+부산 개인파산 상담,bankruptcy-consult,conversion,busan,/부산개인파산상담|/부산법무사상담,/부산개인파산,B,conversion,low,consult
+부산 개인회생 파산,rehab-compare,informational,busan,/개인회생파산,/부산개인회생|/부산개인파산,A,site-hub,med,compare hub
+부산 회생법원 법무사,rehab-court,local,busan,/부산회생법원법무사|/부산개인회생,/업무사례/부산회생법원법무사,B,court,low,court spoke
+부산 전세사기 법무사,jeonse-fraud,commercial,busan,/전세사기피해대응절차|/부산전세보증금반환법무사,/법률강의,A,site-hub,med,damage hub
+부산 전세사기 상담,jeonse-fraud,conversion,busan,/전세사기피해대응절차|/부산법무사상담,/전세보증금상담,A,conversion,med,damage+consult
+부산 전세보증금 반환,jeonse-deposit,service,busan,/부산전세보증금반환법무사,/전세사기피해대응절차,A,site-hub,med,deposit
+부산 전세보증금 미반환,jeonse-deposit,service,busan,/전세사기피해대응절차|/부산전세보증금반환법무사,/situations/jeonse-deposit-unpaid,A,situation,med,damage
+부산 전세보증금 반환 법무사,jeonse-deposit,commercial,busan,/부산전세보증금반환법무사,/전세사기피해대응절차,A,site-hub,low,deposit
+부산 임차권등기,lease-order,service,busan,/부산임차권등기명령,/임차권등기명령자가진단,A,site-hub,low,lease order
+부산 보증금 못받음,jeonse-deposit,informational,busan,/전세사기피해대응절차,/situations/집주인-연락-두절,B,situation,low,situation
+부산 전세집 경매,jeonse-auction,informational,busan,/situations/전세-경매-진행|/부산경매낙찰등기,/전세사기피해대응절차,B,situation,low,situation
+부산 전세사기 피해,jeonse-fraud,informational,busan,/전세사기피해대응절차,/전세사기예방교육,A,site-hub,low,damage
+부산 법률 전문가,lecture,expert,busan,/부산법률전문가|/법률강의,/강사소개,B,lecture-cluster,low,expert cluster
+부산 법률 강사,lecture,expert,busan,/부산법률강사|/법률강의,/강의문의,B,lecture-cluster,low,expert
+부산 법률 특강,lecture,expert,busan,/법률강의|/부산기관법률특강,/강의이력,B,lecture-cluster,low,lecture hub
+부산 기업 특강,lecture,b2b,busan,/기업법률교육|/부산기업법률자문,/법률강의,B,lecture-cluster,low,corp lecture
+부산 기업 법률교육,lecture,b2b,busan,/기업법률교육,/법률강의,B,lecture-cluster,low,corp lecture
+부산 공공기관 법률 강사,lecture,public,busan,/공공기관법률교육|/부산기관법률특강,/법률강의,B,lecture-cluster,low,public lecture
+부산 생활법률 강사,lecture,public,busan,/청년생활법률특강|/법률강의,/강의이력,B,lecture-cluster,low,life law
+부산 전세사기 예방 강사,lecture,public,busan,/전세사기예방교육,/법률강의,B,lecture-cluster,low,prevention
+부산 창업 법률교육,lecture,startup,busan,/창업법률교육,/법률강의,B,lecture-cluster,low,startup
+해운대 법무사,geo,local,haeundae,/해운대법무사,/,A,district-hub,med,district
+센텀 법무사,geo,local,haeundae,/센텀법무사,/해운대법무사,A,district-hub,med,district
+수영구 법무사,geo,local,suyeong,/수영구법무사,/,B,district-hub,low,district
+연제구 법무사,geo,local,yeonje,/연제구법무사,/,B,district-hub,low,district
+동래구 법무사,geo,local,dongnae,/동래구법무사,/,B,district-hub,low,district
+부산진구 법무사,geo,local,busanjin,/부산진구법무사,/서면법무사,B,district-hub,low,district
+서면 법무사,geo,local,busanjin,/서면법무사|/부산진구법무사,/,B,living-hub,low,living
+광안리 법무사,geo,local,suyeong,/광안리법무사|/수영구법무사,/,B,living-hub,low,living
+재송동 법무사,geo,local,haeundae,/재송동법무사,/해운대법무사,B,dong-hub,low,dong
+반여동 법무사,geo,local,haeundae,/반여동법무사,/해운대법무사,B,dong-hub,low,dong
+우동 법무사,geo,local,haeundae,/우동법무사,/해운대법무사,B,dong-hub,low,dong
+좌동 법무사,geo,local,haeundae,/좌동법무사,/해운대법무사,B,dong-hub,low,dong
+연산동 법무사,geo,local,yeonje,/연산동법무사,/연제구법무사,B,dong-hub,low,dong
+전포동 법무사,geo,local,busanjin,/전포동법무사|/부산진구법무사,/,B,dong-hub,low,dong
+대연동 법무사,geo,local,namgu,/대연동법무사|/남구법무사,/,B,dong-hub,low,dong
+덕천동 법무사,geo,local,bukgu,/덕천동법무사|/북구법무사,/,B,dong-hub,low,dong
+부산역 법무사,geo,station,donggu,/부산역법무사|/동구법무사,/,B,station,low,station
+상속,inheritance-nation,authority,nationwide,/상속,/부산상속법무사,A,topic-hub,high,nationwide vs Busan split
+등기실무,registry-practice,informational,nationwide,/등기실무,/부산등기법무사,B,hub,low,practice hub
+자가진단,tools,utility,busan,/자가진단,/부산법무사상담,B,tools-hub,low,diagnosis hub
+업무사례,cases,trust,busan,/업무사례,/services/cases,B,cases-hub,low,cases hub
+협업문의,b2b,commercial,busan,/partners,/부산법무사복대리,B,b2b,low,partners
+법률강의,lecture,expert,busan,/법률강의,/강의이력,B,lecture,low,lecture hub

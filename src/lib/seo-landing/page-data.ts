@@ -138,6 +138,15 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     }
   }
 
+  // exact 「부산 법무사」는 HOME(`/`)만 — thin SEO 랜딩 meta keywords에 도배하지 않음
+  const primaryKeywords = [
+    ...new Set(
+      [...spec.keywords, "다옴법무사사무소"].filter(
+        (k) => k !== "부산 법무사" && k !== "부산법무사",
+      ),
+    ),
+  ].slice(0, 8);
+
   const page = createPageData({
     slug: spec.slug,
     path: spec.path,
@@ -162,7 +171,7 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     consultationExample: content.consultationExample,
     internalLinks,
     sections,
-    primaryKeywords: [...spec.keywords, "부산 법무사", "다옴법무사"],
+    primaryKeywords,
     ogImage: getServiceImage(siteSlug ?? "inheritance-registration").src,
     serviceSlug: siteSlug,
     landingPageType: mapLandingPageType(spec),

@@ -150,7 +150,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
       <PageHero
         h1={page.h1}
         intro={page.intro}
-        keywords={page.primaryKeywords}
+        keywords={[]}
         eyebrow={`${category.label} · 상황 안내`}
         ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}

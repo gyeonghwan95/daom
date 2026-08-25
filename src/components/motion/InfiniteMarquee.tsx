@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type InfiniteMarqueeProps = {
@@ -11,6 +12,10 @@ type InfiniteMarqueeProps = {
   pauseOnHover?: boolean;
 };
 
+/**
+ * SEO: SSR/정적 HTML에는 카드 텍스트를 1세트만 출력한다.
+ * 무한 스크롤용 복제 세트는 mount 이후에만 추가한다(aria-hidden).
+ */
 export function InfiniteMarquee({
   children,
   speed = 45,
@@ -19,6 +24,11 @@ export function InfiniteMarquee({
   pauseOnHover = true,
 }: InfiniteMarqueeProps) {
   const reduced = useReducedMotion();
+  const [cloneReady, setCloneReady] = useState(false);
+
+  useEffect(() => {
+    setCloneReady(true);
+  }, []);
 
   if (reduced) {
     return (
@@ -42,9 +52,11 @@ export function InfiniteMarquee({
         }}
       >
         <div className="marquee-set flex shrink-0 gap-5">{children}</div>
-        <div className="marquee-set flex shrink-0 gap-5" aria-hidden="true">
-          {children}
-        </div>
+        {cloneReady ? (
+          <div className="marquee-set flex shrink-0 gap-5" aria-hidden="true">
+            {children}
+          </div>
+        ) : null}
       </div>
     </div>
   );

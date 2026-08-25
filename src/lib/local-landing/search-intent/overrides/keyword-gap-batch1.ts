@@ -804,7 +804,8 @@ export const 분양권명의이전등기Override: SearchIntentContent = {
     { href: "/부산아파트매매등기", label: "부산 아파트 매매등기" },
     { href: "/부산집단등기", label: "부산 집단등기" },
     { href: "/부산잔금대출근저당", label: "잔금대출 근저당" },
-    { href: "/부산법무사", label: "부산 법무사" },
+    { href: "/", label: "부산 법무사" },
+    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
   ],
   relatedGuideLinks: [realEstateConsult],
   bottomCtaText:

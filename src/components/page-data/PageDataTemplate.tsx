@@ -53,6 +53,19 @@ import {
   corporateLegalInquiryHref,
 } from "@/lib/local-landing/corporate-legal-operations-modules";
 
+/** thin/long-tail SEO 랜딩 — 키워드 chip 도배 억제 (meta keywords는 유지) */
+const KEYWORD_CHIP_SUPPRESS_CATEGORIES = new Set<PageData["category"]>([
+  "local",
+  "cost",
+  "court",
+  "businessDistrict",
+  "realEstate",
+  "situation",
+  "diagnosis",
+  "tool",
+  "glossary",
+]);
+
 type PageDataTemplateProps = {
   page: PageData;
   children?: ReactNode;
@@ -147,7 +160,11 @@ export function PageDataTemplate({
       <PageHero
         h1={page.h1}
         introParagraphs={page.introParagraphs}
-        keywords={page.primaryKeywords}
+        keywords={
+          KEYWORD_CHIP_SUPPRESS_CATEGORIES.has(page.category)
+            ? []
+            : page.primaryKeywords
+        }
         ctaLabel={
           showInheritanceExtras
             ? "업무 가능 여부 확인하기"

@@ -88,7 +88,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
       <PageHero
         h1={page.h1}
         intro={diagnosis.intro[0] ?? page.intro}
-        keywords={page.primaryKeywords}
+        keywords={[]}
         ctaLabel={consultationInquiryCopy.ctaShort}
         showNationwideChip={shouldShowNationwideRegionChip(
           page.path,

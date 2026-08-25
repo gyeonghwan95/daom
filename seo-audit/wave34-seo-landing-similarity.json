@@ -1,0 +1,289 @@
+{
+  "generatedAt": "2026-08-25T15:39:58.067Z",
+  "sampleCount": 67,
+  "pairCount": 761,
+  "highRiskCount": 0,
+  "reviewCount": 20,
+  "topPairs": [
+    {
+      "a": "/법인등기비용",
+      "b": "/소유권이전등기비용",
+      "type": "service-intent",
+      "similarity": 68.5,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/영도구상속등기",
+      "b": "/사하구상속등기",
+      "type": "region-service",
+      "similarity": 67.4,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/남구상속등기",
+      "b": "/서구소유권이전등기",
+      "type": "region-service",
+      "similarity": 65.6,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구소유권이전등기",
+      "b": "/중구부동산등기",
+      "type": "region-service",
+      "similarity": 64.8,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/서구소유권이전등기",
+      "b": "/서구법인등기",
+      "type": "region-service",
+      "similarity": 64.5,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/상속등기기한",
+      "b": "/상속등기준비서류",
+      "type": "service-intent",
+      "similarity": 64.4,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구부동산등기",
+      "b": "/중구부동산등기",
+      "type": "region-service",
+      "similarity": 63.7,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구한정승인",
+      "b": "/남구상속등기",
+      "type": "region-service",
+      "similarity": 63.1,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/동구상속등기",
+      "b": "/서면역부동산등기",
+      "type": "region-service",
+      "similarity": 62.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구법인등기",
+      "b": "/부산진구소유권이전등기",
+      "type": "region-service",
+      "similarity": 61.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/서면역법인등기",
+      "b": "/서구법인등기",
+      "type": "region-service",
+      "similarity": 61.3,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/남구상속등기",
+      "b": "/연산동상속등기",
+      "type": "region-service",
+      "similarity": 59.5,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/개인회생비용",
+      "b": "/개인회생보수표",
+      "type": "service-intent",
+      "similarity": 59.3,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부동산등기필요서류",
+      "b": "/부동산등기준비서류",
+      "type": "service-intent",
+      "similarity": 58.3,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/서구상속등기",
+      "b": "/동구법인등기",
+      "type": "region-service",
+      "similarity": 58.1,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/서면역법인등기",
+      "b": "/서구소유권이전등기",
+      "type": "region-service",
+      "similarity": 57.8,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구부동산등기",
+      "b": "/서구상속등기",
+      "type": "region-service",
+      "similarity": 56.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구법인등기",
+      "b": "/부산진구법인설립등기",
+      "type": "region-service",
+      "similarity": 56.5,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부산진구소유권이전등기",
+      "b": "/부산진구법인설립등기",
+      "type": "region-service",
+      "similarity": 56.4,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/동구상속등기",
+      "b": "/남구상속등기",
+      "type": "region-service",
+      "similarity": 54.9,
+      "band": "REVIEW"
+    },
+    {
+      "a": "/부동산등기기한",
+      "b": "/개인회생보수표",
+      "type": "service-intent",
+      "similarity": 54.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산진구부동산등기",
+      "b": "/동구법인등기",
+      "type": "region-service",
+      "similarity": 53.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산진구법인등기",
+      "b": "/중구부동산등기",
+      "type": "region-service",
+      "similarity": 53.8,
+      "band": "acceptable"
+    },
+    {
+      "a": "/수영구한정승인",
+      "b": "/연산동상속등기",
+      "type": "region-service",
+      "similarity": 53.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/영도구상속등기",
+      "b": "/부산진구법인설립등기",
+      "type": "region-service",
+      "similarity": 53.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/상속등기보수표",
+      "b": "/개인회생보수표",
+      "type": "service-intent",
+      "similarity": 53.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산진구법인등기",
+      "b": "/동구법인등기",
+      "type": "region-service",
+      "similarity": 53.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산진구한정승인",
+      "b": "/서구소유권이전등기",
+      "type": "region-service",
+      "similarity": 53.1,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부동산등기비용",
+      "b": "/상속포기필요서류",
+      "type": "service-intent",
+      "similarity": 52.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/상속등기준비서류",
+      "b": "/상속포기필요서류",
+      "type": "service-intent",
+      "similarity": 52.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부동산등기비용",
+      "b": "/법인등기비용",
+      "type": "service-intent",
+      "similarity": 52.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부동산등기비용",
+      "b": "/소유권이전등기비용",
+      "type": "service-intent",
+      "similarity": 52.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/사하구상속등기",
+      "b": "/부산진구법인설립등기",
+      "type": "region-service",
+      "similarity": 52.5,
+      "band": "acceptable"
+    },
+    {
+      "a": "/개인회생필요서류",
+      "b": "/법인등기보수표",
+      "type": "service-intent",
+      "similarity": 52.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/서구상속등기",
+      "b": "/중구부동산등기",
+      "type": "region-service",
+      "similarity": 51.7,
+      "band": "acceptable"
+    },
+    {
+      "a": "/남구상속등기",
+      "b": "/서구법인등기",
+      "type": "region-service",
+      "similarity": 51.4,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부산진구부동산등기",
+      "b": "/부산진구소유권이전등기",
+      "type": "region-service",
+      "similarity": 51.2,
+      "band": "acceptable"
+    },
+    {
+      "a": "/부동산등기비용",
+      "b": "/개인회생필요서류",
+      "type": "service-intent",
+      "similarity": 50.9,
+      "band": "acceptable"
+    },
+    {
+      "a": "/상속등기기한",
+      "b": "/개인회생기한",
+      "type": "service-intent",
+      "similarity": 50.6,
+      "band": "acceptable"
+    },
+    {
+      "a": "/수영구한정승인",
+      "b": "/서구법인등기",
+      "type": "region-service",
+      "similarity": 50.4,
+      "band": "acceptable"
+    }
+  ]
+}

@@ -209,7 +209,7 @@ function buildServiceIntentSpecs(
         Math.round((service.priority + intent.priority) / 2),
         false,
         `service-intent:${service.id}:${intent.id}`,
-        [slug, `${service.name} ${intent.name}`, "부산 법무사"],
+        [slug, `${service.name} ${intent.name}`, "다옴법무사사무소"],
         {
           category: isCost ? "cost" : "local",
           serviceId: service.id,
@@ -240,7 +240,7 @@ function buildInstitutionLawyerSpecs(
       institution.priority,
       false,
       `inst-lawyer:${institution.id}`,
-      [`${shortName} 법무사`, institution.name, "부산 법무사"],
+      [`${shortName} 법무사`, institution.name, "다옴법무사사무소"],
       {
         category: "court",
         institutionId: institution.id,
@@ -357,7 +357,7 @@ function buildSpecialSpecs(
       82,
       false,
       item.seed,
-      [item.slug, item.title, "부산 법무사"],
+      [item.slug, item.title, "다옴법무사사무소"],
       {
         category: item.slug.includes("산업단지") ? "businessDistrict" : item.slug.includes("재개발") || item.slug.includes("재건축") ? "realEstate" : "court",
         serviceId: item.serviceId,

@@ -1,0 +1,31 @@
+# Duplicate content notes (Phase 0 + WAVE3/4)
+
+## Method
+
+- Local `out/` HTML crawl of Priority A + samples (`urls.csv`)
+- WAVE3: `npx tsx scripts/audit-seo-landing-similarity.ts` (geo-stripped Jaccard)
+- WAVE3: `npm run seo:audit:local-similarity` (overlays + district samples)
+
+## Structural duplicates (tech) — WAVE1 resolved
+
+| Pattern | Before | After |
+|---|---|---|
+| Loading phrase in HTML | 22/22 | **0** |
+| Footer before H1 | 22/22 | **0** |
+| Header consultation status clones | Med | Fixed (measure text removed) |
+| InfiniteMarquee duplicate SSR text | Med | Clone after mount |
+| KeywordBadges on thin/selection | Med | **Suppressed** WAVE3 |
+
+## Content near-duplicates (WAVE3/4)
+
+| Cluster | Status |
+|---|---|
+| District/dong `region-lawyer` overlays | local-similarity highRisk **0** |
+| `region-service` same-service × different district | Residual HIGH after geo-strip — see `wave34-seo-landing-similarity.json`; template angles + parent hubs applied |
+| Search-intent cost twin pairs (비용/보수표 등) | Flagged REBUILD-C sample CSV; no URL merge |
+
+## Policy
+
+- No automatic noindex/deletion
+- No canonical force-merge for cannibalization
+- CREATE_NEW doorway = 0

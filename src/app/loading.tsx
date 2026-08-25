@@ -1,5 +1,5 @@
-import { PageSkeleton } from "@/components/ux/PageSkeleton";
-
 export default function HomeLoading() {
-  return <PageSkeleton variant="home" />;
+  // SEO: do not emit "페이지를 불러오는 중입니다" or skeleton chrome into HTML.
+  // Soft navigations still show NavigationProgress (client-only).
+  return null;
 }

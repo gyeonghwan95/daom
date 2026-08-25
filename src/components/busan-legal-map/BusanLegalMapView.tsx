@@ -44,7 +44,8 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
         </ul>
         <div className="mt-4 flex flex-wrap gap-2">
           {[
-            { href: "/부산법무사", label: "부산 법무사" },
+            { href: "/", label: "부산 법무사" },
+            { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
             { href: "/situations", label: "상황별 법률문제" },
             { href: "/tools", label: "법률 계산기" },
             { href: "/업무사례", label: "업무 사례" },

@@ -5,6 +5,10 @@ import { useConsultationAvailability } from "@/hooks/useConsultationAvailability
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 
+/**
+ * SEO: 상태 문구를 DOM에 2~3중으로 복제하지 않는다.
+ * 마퀴 필요 여부는 보이는 텍스트 노드의 scrollWidth/Height로만 측정한다.
+ */
 export function HeaderConsultationStatus() {
   const availability = useConsultationAvailability();
   const reducedMotion = useReducedMotion();
@@ -17,43 +21,38 @@ export function HeaderConsultationStatus() {
   const isExternal = !(isOpen && phone);
   const marqueeText = `${statusLabel} · ${hint}`;
 
-  const measureRef = useRef<HTMLSpanElement>(null);
   const viewportRef = useRef<HTMLSpanElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
   const [useMarquee, setUseMarquee] = useState(false);
+  const [cloneReady, setCloneReady] = useState(false);
 
   useEffect(() => {
-    const measureEl = measureRef.current;
+    setCloneReady(true);
+  }, []);
+
+  useEffect(() => {
     const viewportEl = viewportRef.current;
-    if (!measureEl || !viewportEl) return;
+    const textEl = textRef.current;
+    if (!viewportEl || !textEl) return;
 
     const sync = () => {
       const viewportWidth = viewportEl.clientWidth;
       if (viewportWidth <= 0) return;
-
-      measureEl.style.width = `${viewportWidth}px`;
-
-      const stackedTooTall = measureEl.scrollHeight > 36;
-      const singleLine = measureEl.querySelector(
-        "[data-measure-oneline]",
-      ) as HTMLElement | null;
-      const singleLineTooWide = singleLine
-        ? singleLine.scrollWidth > viewportWidth + 2
-        : false;
-
+      const stackedTooTall = textEl.scrollHeight > 36;
+      const singleLineTooWide = textEl.scrollWidth > viewportWidth + 2;
       setUseMarquee(stackedTooTall || singleLineTooWide);
     };
 
     sync();
     const observer = new ResizeObserver(sync);
     observer.observe(viewportEl);
-    observer.observe(measureEl);
+    observer.observe(textEl);
     window.addEventListener("resize", sync);
-
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", sync);
     };
-  }, [statusLabel, hint]);
+  }, [statusLabel, hint, useMarquee]);
 
   const showMarquee = useMarquee && !reducedMotion;
 
@@ -73,34 +72,28 @@ export function HeaderConsultationStatus() {
         {showMarquee ? (
           <span className="header-consult-status__marquee-viewport">
             <span className="header-consult-status__marquee-track">
-              <span className="header-consult-status__marquee-item">
-                {marqueeText}
-              </span>
               <span
+                ref={textRef}
                 className="header-consult-status__marquee-item"
-                aria-hidden="true"
               >
                 {marqueeText}
               </span>
+              {cloneReady ? (
+                <span
+                  className="header-consult-status__marquee-item"
+                  aria-hidden="true"
+                >
+                  {marqueeText}
+                </span>
+              ) : null}
             </span>
           </span>
         ) : (
-          <span className="header-consult-status__text">
+          <span ref={textRef} className="header-consult-status__text">
             <span className="header-consult-status__label">{statusLabel}</span>
             <span className="header-consult-status__hint">{hint}</span>
           </span>
         )}
-      </span>
-      <span
-        ref={measureRef}
-        className="header-consult-status__measure"
-        aria-hidden="true"
-      >
-        <span className="header-consult-status__label">{statusLabel}</span>
-        <span className="header-consult-status__hint">{hint}</span>
-        <span data-measure-oneline className="header-consult-status__oneline">
-          {marqueeText}
-        </span>
       </span>
     </>
   );

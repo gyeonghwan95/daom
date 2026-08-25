@@ -141,7 +141,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroParagraphs[0]}
-        keywords={content.suppressKeywordChips ? [] : content.primaryKeywords}
+        keywords={
+          content.suppressKeywordChips === false ? content.primaryKeywords : []
+        }
         ctaLabel={
           content.showRemoteInheritance ||
           content.showInheritanceCostGuide ||

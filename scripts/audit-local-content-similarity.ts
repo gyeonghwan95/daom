@@ -42,6 +42,13 @@ type Doc = { id: string; path: string; body: string };
 
 function main() {
   const docs: Doc[] = [];
+  const seen = new Set<string>();
+
+  function pushDoc(doc: Doc) {
+    if (seen.has(doc.path)) return;
+    seen.add(doc.path);
+    docs.push(doc);
+  }
 
   for (const overlay of Object.values(LOCAL_CHAMPION_OVERLAYS)) {
     const body = [
@@ -49,23 +56,41 @@ function main() {
       ...overlay.sections.map((s) => `${s.title}\n${s.body}`),
       ...(overlay.faqs?.map((f) => `${f.question} ${f.answer}`) ?? []),
     ].join("\n");
-    docs.push({
+    pushDoc({
       id: overlay.regionId,
       path: `/${overlay.slug}`,
       body: stripLocalNames(body),
     });
   }
 
-  for (const slug of ["민락동법무사", "양정동법무사", "수영구법무사", "부산진구법무사"]) {
+  const sampleSlugs = [
+    "민락동법무사",
+    "양정동법무사",
+    "수영구법무사",
+    "부산진구법무사",
+    "해운대법무사",
+    "동래구법무사",
+    "금정구법무사",
+    "사상구법무사",
+    "기장법무사",
+    "남구법무사",
+    "해운대상속등기",
+    "동래구상속포기",
+    "수영구부동산등기",
+    "부산진구법인등기",
+  ];
+
+  for (const slug of sampleSlugs) {
     const spec = getSeoLandingSpecBySlug(slug);
-    if (!spec || docs.some((d) => d.path === spec.path)) continue;
+    if (!spec) continue;
     const content = buildSeoLandingContent(spec);
     const body = [
       content.intro,
       ...content.introParagraphs,
       ...content.sections.map((s) => `${s.title}\n${s.body}`),
+      ...content.faqs.map((f) => `${f.question} ${f.answer}`),
     ].join("\n");
-    docs.push({
+    pushDoc({
       id: `template:${slug}`,
       path: spec.path,
       body: stripLocalNames(body),
