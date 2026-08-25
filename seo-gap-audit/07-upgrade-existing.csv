@@ -1,0 +1,10 @@
+QUERY,URL,UPGRADE_HINT,PRIORITY,NOTES
+부산 가압류 법무사,/가압류신청서류준비,"부산·부동산/채권 대상 절·situationNav·FAQ·민사 허브 링크",P0,Wave1 구현 — NEW /부산가압류 금지
+부산 채권가압류·부동산가압류,/가압류신청서류준비,대상별 prose 절,P0,동일 URL
+부산 개명신청,/부산개명허가,title/H1/keywords에 개명신청 흡수,P1,Wave1 구현
+부산 유언증서 검인,/부산유언검인,키워드·FAQ 흡수,P1,Wave1 구현
+부산 한정후견,/가족후견,허브 섹션+자가진단 연결 — NEW URL 금지,P1,Wave1 구현
+부산 해외상속인,/해외거주상속인,coverage 재분류(COVERED) — 본문 소폭 강화 가능,P1,FALSE GAP 교정
+부산 통장·급여압류,/채권압류추심서류준비,keywords+재산명시 cross-link,P1,Wave1 구현
+부산 지분이전등기,/부산지분이전등기,ownership 유지·내부링크,P2,경미
+빌려준 돈 안 갚을 때,/situations/대여금-못-받음,민사 허브·재산명시 연결 권장,P2,상황 페이지

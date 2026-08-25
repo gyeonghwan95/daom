@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-08-25T15:57:26.343Z",
+  "total": 1797,
+  "indexable": 1664,
+  "byCategory": {
+    "core": 30,
+    "diagnosis": 19,
+    "local": 763,
+    "cost": 59,
+    "court": 38,
+    "businessDistrict": 8,
+    "realEstate": 12,
+    "pillar": 40,
+    "situation": 48,
+    "tool": 9,
+    "service": 10,
+    "blog": 52,
+    "case": 638,
+    "faq": 32,
+    "media": 5,
+    "glossary": 34
+  }
+}

@@ -2213,4 +2213,42 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     focus: "개명·성본변경 신청 서류",
     ...inheritanceCase,
   },
+  {
+    slug: "부산재산명시",
+    label: "부산 재산명시",
+    category: "concern",
+    serviceSlug: "real-estate-registration",
+    keywords: [
+      "부산 재산명시",
+      "재산명시신청",
+      "채무자 재산목록",
+    ],
+    focus: "집행권원 후 재산명시 신청",
+  },
+  {
+    slug: "부산부재자재산관리인",
+    label: "부산 부재자재산관리인",
+    category: "concern",
+    serviceSlug: "inheritance-renunciation",
+    keywords: [
+      "부산 부재자재산관리인",
+      "부재자재산관리인 선임",
+      "부재자 재산관리",
+    ],
+    focus: "부재자재산관리인 선임 서류",
+    ...inheritanceCase,
+  },
+  {
+    slug: "부산상속재산관리인",
+    label: "부산 상속재산관리인",
+    category: "concern",
+    serviceSlug: "inheritance-renunciation",
+    keywords: [
+      "부산 상속재산관리인",
+      "상속인 없는 경우",
+      "상속재산관리인 선임",
+    ],
+    focus: "상속재산관리인 선임 서류",
+    ...inheritanceCase,
+  },
 ];

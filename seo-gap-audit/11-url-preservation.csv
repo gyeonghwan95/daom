@@ -1,0 +1,7 @@
+METRIC,BEFORE,AFTER,NOTES
+existing_url_change,0,0,기존 pathname/slug 변경 없음
+existing_url_delete,0,0,삭제 없음
+existing_url_redirect,0,0,redirect 추가 없음
+new_indexable_urls,—,+3,/부산재산명시 /부산부재자재산관리인 /부산상속재산관리인
+upgraded_existing,—,5+,가압류서류·개명허가·유언검인·채권압류서류·가족후견/민사/상속 허브
+title_duplicate_groups,2,0(목표),업무사례 seoTitle 차별화

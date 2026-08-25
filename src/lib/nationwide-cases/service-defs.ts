@@ -79,10 +79,10 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
     noticeType: "jurisdiction-exception",
     primaryKeyword: "전국 유증등기",
     secondaryKeywords: ["유증등기 법무사", "유언 부동산 이전", "유증등기 관할 특례"],
-    seoTitle: "전국 유증등기 법무사｜유언에 따른 부동산 이전 절차",
+    seoTitle: "전국 유증등기 업무사례｜유언에 따른 부동산 이전 절차",
     metaDescription:
-      "전국 유증등기 법무사. 특정·포괄유증, 유언공정증서, 유언집행자, 해외 수증자, 관할 특례와 필요서류·비용을 상속등기와 구분해 안내합니다.",
-    h1: "부동산 소재지가 달라도 상담할 수 있는 유증등기",
+      "전국 유증등기 업무사례. 특정·포괄유증, 유언공정증서, 유언집행자, 해외 수증자, 관할 특례와 필요서류·비용을 상속등기와 구분해 안내합니다.",
+    h1: "부동산 소재지가 달라도 상담할 수 있는 유증등기 사례",
     disclosure:
       "부산 해운대 사무소이며 타지역 지점이 없습니다. 유증등기 관할 특례 적용 여부는 사건별로 확인합니다.",
     localIntro:
@@ -131,10 +131,10 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
     noticeType: "expandable-jurisdiction",
     primaryKeyword: "전국 법인 본점이전등기",
     secondaryKeywords: ["타관할 본점이전", "서울 부산 본점이전"],
-    seoTitle: "전국 법인 본점이전등기｜서울·경기·부산 타지역 이전",
+    seoTitle: "전국 법인 본점이전 업무사례｜서울·경기·부산 타지역 이전",
     metaDescription:
-      "전국 법인 본점이전등기. 동일·타관할 차이, 서울↔부산·경남 이전, 정관·등록면허세·임원변경 동시 신청을 비대면으로 끝까지 진행합니다. 법정 관할은 유지됩니다.",
-    h1: "지역이 달라지는 법인 본점이전등기",
+      "전국 법인 본점이전 업무사례. 동일·타관할 차이, 서울↔부산·경남 이전, 정관·등록면허세·임원변경 동시 신청을 비대면으로 끝까지 진행합니다. 법정 관할은 유지됩니다.",
+    h1: "지역이 달라지는 법인 본점이전 업무사례",
     disclosure:
       "부산 해운대 사무소이며 타지역 법인등기 지점이 없습니다. 본점이전은 종전·신규 관할을 확인한 뒤 진행합니다.",
     localIntro:

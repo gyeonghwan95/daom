@@ -1,0 +1,41 @@
+QUERY,CLUSTER,INTENT,BUSAN_RELEVANCE,CURRENT_URL,CURRENT_COVERAGE,TRUE_GAP,ACTION,PROPOSED_URL,PARENT_HUB,PRIORITY,EVIDENCE
+부산 법무사,A.BRAND,commercial,5,/,STRONG,false,KEEP,,,P0,PRIMARY=/ 보호
+부산 법무사 추천,A.BRAND,commercial,5,/부산법무사추천,STRONG,false,KEEP,,,P0,PRIMARY 보호
+부산 법무사 상담,A.BRAND,commercial,5,/부산법무사상담,STRONG,false,KEEP,,,P0,PRIMARY 보호
+부산 법무사 비용,A.BRAND,commercial,5,/부산법무사비용,STRONG,false,KEEP,,,P1,기존 비용 페이지
+부산 상속,B.INHERITANCE,commercial,5,/부산상속법무사,STRONG,false,KEEP,,,P0,허브+/상속
+부산 상속포기,B.INHERITANCE,commercial,5,/부산상속포기,STRONG,false,KEEP,,,P0,보호
+부산 해외상속인,B.INHERITANCE,commercial,5,/해외거주상속인,STRONG,false,UPGRADE_EXISTING,,,P1,자동매칭 FALSE GAP→COVERED
+부산 재외국민 상속,B.INHERITANCE,commercial,4,/해외거주상속인,PARTIAL,false,UPGRADE_EXISTING,,,P2,해외거주상속인에 흡수
+부산 유언검인,B.INHERITANCE,commercial,5,/부산유언검인,PARTIAL,false,UPGRADE_EXISTING,,,P1,유언증서 검인 키워드 흡수
+부산 유언증서 검인,B.INHERITANCE,commercial,5,/부산유언검인,PARTIAL,false,MERGE_INTENT,,,P1,동일 intent
+부산 상속재산관리인,B.INHERITANCE,commercial,5,,NO,true,NEW_PAGE,/부산상속재산관리인,/상속,P0,전수조사 후 TRUE GAP — Wave1 구현
+부산 상속인 없는 경우,B.INHERITANCE,informational,5,/부산상속재산관리인,NO,true,MERGE_INTENT,/부산상속재산관리인,/상속,P0,동일 페이지 흡수
+부산 부재자재산관리인,F.STATUS,commercial,5,,NO,true,NEW_PAGE,/부산부재자재산관리인,/가족후견,P0,TRUE GAP — Wave1
+부산 개명신청,F.STATUS,commercial,5,/부산개명허가,PARTIAL,false,UPGRADE_EXISTING,,,P1,개명신청=개명허가 흡수
+부산 개명 법무사,F.STATUS,commercial,5,/부산개명허가,STRONG,false,KEEP,,,P1,기존
+부산 한정후견,F.STATUS,commercial,4,/가족후견,PARTIAL,false,UPGRADE_EXISTING,,,P1,허브+성년후견자가진단 — NEW 금지
+부산 성년후견,F.STATUS,commercial,5,/성년후견자가진단,STRONG,false,KEEP,,,P1,/가족후견·/부산가정법원성년후견
+부산 가압류 법무사,E.CIVIL_DEBT,commercial,5,/가압류신청서류준비,PARTIAL,false,UPGRADE_EXISTING,,,P0,신청 commercial — NEW 금지(말소와 분리)
+부산 채권가압류,E.CIVIL_DEBT,commercial,5,/가압류신청서류준비,PARTIAL,false,MERGE_INTENT,,,P1,가압류 서류 페이지 절 흡수
+부산 부동산가압류,E.CIVIL_DEBT,commercial,5,/가압류신청서류준비,PARTIAL,false,MERGE_INTENT,,,P1,동일
+부산 가압류 말소,E.CIVIL_DEBT,commercial,5,/부산가압류말소등기,STRONG,false,KEEP,,,P1,기존
+부산 통장압류,E.CIVIL_DEBT,commercial,5,/채권압류추심서류준비,PARTIAL,false,UPGRADE_EXISTING,,,P1,압류·추심에 흡수
+부산 급여압류,E.CIVIL_DEBT,commercial,5,/채권압류추심서류준비,PARTIAL,false,MERGE_INTENT,,,P1,동일
+부산 채권압류 추심명령,E.CIVIL_DEBT,commercial,5,/채권압류추심서류준비,PARTIAL,false,KEEP,,,P1,기존
+부산 재산명시,E.CIVIL_DEBT,commercial,5,,NO,true,NEW_PAGE,/부산재산명시,/민사소송,P0,TRUE GAP — Wave1
+부산 재산조회,E.CIVIL_DEBT,commercial,4,/부산재산명시,WEAK,false,MERGE_INTENT,/부산재산명시,/민사소송,P1,재산명시 FAQ에서 구분
+부산 지급명령,E.CIVIL_DEBT,commercial,5,/방문없이준비하는지급명령서류,STRONG,false,KEEP,,,P1,/민사소송
+부산 내용증명,E.CIVIL_DEBT,commercial,5,/내용증명작성준비,STRONG,false,KEEP,,,P2,기존
+부산 공탁,E.CIVIL_DEBT,commercial,5,/변제공탁서류준비,STRONG,false,KEEP,,,P2,/공탁채권회수
+부산 지분이전등기,C.REAL_ESTATE,commercial,5,/부산지분이전등기,PARTIAL,false,UPGRADE_EXISTING,,,P2,기존 강화
+부산 신탁등기,C.REAL_ESTATE,commercial,5,/부산신탁등기,STRONG,false,KEEP,,,P2,기존
+부산 가등기,C.REAL_ESTATE,commercial,5,/부산가등기,STRONG,false,KEEP,,,P2,기존
+부산 외국인 부동산등기,C.REAL_ESTATE,commercial,5,/부산외국인부동산등기,STRONG,false,KEEP,,,P2,기존
+부산 선박등기,I.SPECIAL,commercial,4,/선박등기자가진단,PARTIAL,false,KEEP,,,P2,특수등기 허브·자가진단
+부산 복대리,J.B2B,commercial,5,/부산등기복대리,STRONG,false,KEEP,,,P2,기존
+부산 집단등기,J.B2B,commercial,5,/부산집단등기,STRONG,false,KEEP,,,P2,기존
+부산 촉탁등기,J.B2B,commercial,5,/촉탁등기,STRONG,false,KEEP,,,P2,기존
+부산 법인 해산등기,D.CORPORATE,commercial,4,/사업자폐업후법인정리,PARTIAL,false,KEEP,,,P3,기존 해산·청산 계열
+부산 법인 감자등기,D.CORPORATE,commercial,3,,WATCHLIST,false,NO_ACTION,,,P3,SEARCH_VOLUME UNKNOWN — WATCHLIST
+부산 스타트업 법인설립,D.CORPORATE,commercial,4,/부산스타트업법무사,PARTIAL,false,KEEP,,,P3,기존

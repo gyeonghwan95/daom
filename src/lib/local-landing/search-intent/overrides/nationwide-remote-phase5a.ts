@@ -144,10 +144,13 @@ export const 채권압류추심서류준비Override: SearchIntentContent = {
     "채권압류 추심 서류",
     "채권압류명령 신청 준비",
     "판결 후 강제집행 서류",
+    "통장압류",
+    "급여압류",
   ],
   searchIntents: [
     "판결·지급명령 확정 후 압류·추심 서류를 정리하려는 경우",
     "가압류와 채권압류의 차이를 확인해 다음 단계를 고르려는 경우",
+    "통장·급여 압류를 검토하는 경우",
   ],
   whenNeeded: [
     "집행권원은 있으나 어디에 압류할지 정리되지 않은 경우",
@@ -189,12 +192,14 @@ export const 채권압류추심서류준비Override: SearchIntentContent = {
   relatedServiceLinks: [
     remoteHub,
     { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
+    { href: "/부산재산명시", label: "부산 재산명시" },
     {
       href: "/방문없이준비하는지급명령서류",
       label: "지급명령 서류 원격 준비",
     },
     { href: "/변제공탁서류준비", label: "변제공탁 서류 준비" },
     { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
+    { href: "/민사소송", label: "민사·서류 안내 허브" },
   ],
   relatedGuideLinks: [
     {

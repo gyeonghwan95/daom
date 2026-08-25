@@ -1,0 +1,18 @@
+CLUSTER,TOPIC,COVERAGE,NOTES,PRIMARY_URLS
+A.BRAND,부산 법무사·추천·상담·비용,STRONG,중요 URL 보호 — NEW 금지,/ /부산법무사추천 /부산법무사상담 /부산법무사 /부산법무사비용
+B.INHERITANCE,상속등기·포기·한정승인·유언,STRONG,허브+/부산상속* 다수,/상속 /부산상속법무사 /부산상속포기 /부산유언검인
+B.INHERITANCE,해외·재외국민 상속,STRONG,해외거주상속인 담당,/해외거주상속인
+B.INHERITANCE,상속재산관리인·상속인 없음,STRONG,Wave1 NEW,/부산상속재산관리인
+C.REAL_ESTATE,매매·증여·근저당·지분·가등기·신탁,STRONG,랜딩 다수,/부산부동산등기 /부산매매등기법무사 /부산지분이전등기 /부산가등기 /부산신탁등기
+D.CORPORATE,설립·임원·본점·상호,STRONG,법인 허브·전국,/부산법인등기 /법인등기
+D.CORPORATE,감자·해산·청산 세부,PARTIAL~WATCHLIST,일부 존재·검색량 UNKNOWN — NEW 남발 금지,/사업자폐업후법인정리
+E.CIVIL_DEBT,지급명령·내용증명·가압류·채권압류,PARTIAL→STRONG,Wave1 가압류 강화+재산명시 NEW,/민사소송 /가압류신청서류준비 /채권압류추심서류준비 /부산재산명시
+E.CIVIL_DEBT,재산명시·조회,STRONG,Wave1 NEW,/부산재산명시
+F.STATUS,개명·성년후견·특별대리,STRONG,개명허가·자가진단·허브,/부산개명허가 /성년후견자가진단 /가족후견
+F.STATUS,부재자재산관리인,STRONG,Wave1 NEW,/부산부재자재산관리인
+F.STATUS,한정후견 단독,PARTIAL,허브 절로 UPGRADE — NEW 금지,/가족후견
+G.INSOLVENCY,개인회생·파산,STRONG,보호,/services/personal-rehabilitation /부산개인회생법무사
+H.TENANCY,전세·임차권등기,STRONG,허브,/임대차전세 /부산임차권등기명령
+I.SPECIAL,선박·외국인·비영리,PARTIAL,자가진단·특수등기 허브 — 지역템플릿 복제 금지,/특수등기 /선박등기자가진단
+J.B2B,복대리·집단·촉탁·공공,STRONG,기존 강화본 유지,/부산등기복대리 /부산집단등기 /촉탁등기
+GENERATOR,지역×업무 thin landing,WEAK,hand overlay 없는 generator ~242 — 신규 지역페이지 금지 우선 품질,seo-landing

@@ -1,0 +1,8 @@
+TYPE,SIGNAL,COUNT_OR_GROUP,URLS,ACTION
+title-dup-fixed,전국 유증등기 vs 업무사례,2→differentiated,/전국유증등기 /업무사례/전국유증등기법무사,case seoTitle에 '업무사례' 구분
+title-dup-fixed,전국 법인 본점이전 vs 업무사례,2→differentiated,/전국법인본점이전등기 /업무사례/전국법인본점이전등기,동일
+desc-dup,description duplicate groups,0,—,유지
+generator-thin,seo-landing without hand overlay,~242,region×service specs,신규 생성 금지·overlay 점진 확대
+false-gap-corrected,해외상속인 등,여러,/해외거주상속인 등,06 CSV editorial 교정
+near-dup-risk,가압류 신청 vs 말소,의도 분리 OK,/가압류신청서류준비 /부산가압류말소등기,유지
+wave1-unique,신규 3페이지 구조,3,/부산재산명시 /부산부재자재산관리인 /부산상속재산관리인,템플릿 복제 없이 고유 H2
