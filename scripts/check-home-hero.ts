@@ -45,6 +45,8 @@ function main() {
   const images = read("src/lib/site-images.ts");
   const hero = read("src/components/home/HomeHero.tsx");
   const contact = read("src/components/home/HeroContactBlock.tsx");
+  const stage = read("src/components/home/HeroStage.tsx");
+  const media = read("src/lib/home-hero-media.ts");
   const css = read("src/app/globals.css");
 
   const keys = extractStageOrder(images);
@@ -113,10 +115,12 @@ function main() {
   const swiper = read("src/components/home/HomeFullpageSwiper.tsx");
   if (
     !swiper.includes("HomeContinueScrollHint") ||
+    !swiper.includes("home-slide-nav") ||
+    !swiper.includes("home-back-to-top") ||
     !swiper.includes("activeIndex < slides.length - 1") ||
     swiper.includes("activeIndex > 0 && activeIndex < slides.length - 1")
   ) {
-    fail("continue-scroll hint must show from the first slide");
+    fail("continue-scroll hint must show from the first slide with back-to-top");
   }
 
   const page = read("src/app/page.tsx");
@@ -138,6 +142,53 @@ function main() {
   }
   if (!scroll.includes('"home-trust"') || scroll.indexOf('"home-trust"') > scroll.indexOf('"home-services"')) {
     fail("HOME_SECTION_IDS does not put trust before services");
+  }
+
+  if (!media.includes("HOME_HERO_SLIDE_MS = 4000")) {
+    fail("hero media duration must be 4000ms");
+  }
+  if (!media.includes("HOME_HERO_VIDEO_MAX_MS = 8000")) {
+    fail("hero video duration must cap at 8000ms");
+  }
+  if (!stage.includes("home-hero-stage__deck") || !stage.includes("home-hero-stage__play")) {
+    fail("hero stage player controls are missing");
+  }
+  if (!stage.includes("home-hero-stage__list") || !stage.includes("home-hero-stage__progress")) {
+    fail("hero stage playlist/progress is missing");
+  }
+  if (stage.includes("<iframe")) {
+    fail("hero stage must not use an iframe");
+  }
+  if (!stage.includes("<video")) {
+    fail("hero stage must use a native video element");
+  }
+
+  const expectedVideos = [
+    "법무사소개.mp4",
+    "사무소소개.mp4",
+    "MBC뉴스인터뷰.mp4",
+    "강의진행.mp4",
+  ] as const;
+  let lastVideoAt = -1;
+  for (const name of expectedVideos) {
+    const at = media.indexOf(name);
+    if (at < 0) fail(`hero playlist missing ${name}`);
+    if (at < lastVideoAt) fail(`hero videos are out of order around ${name}`);
+    lastVideoAt = at;
+    if (!existsSync(join(ROOT, "public/video", name))) {
+      fail(`missing file /video/${name}`);
+    }
+  }
+  if (media.includes("fromImage(stageImages[2]")) {
+    fail("office-front photo must not appear in the hero playlist");
+  }
+  const playlistBlock = media.slice(media.indexOf("export const homeHeroMediaPlaylist"));
+  const firstVideo = playlistBlock.match(/src:\s*"\/video\/([^"]+)"/);
+  if (firstVideo?.[1] !== "법무사소개.mp4") {
+    fail("법무사 소개 video must lead the hero playlist");
+  }
+  if (!css.includes(".home-hero-stage__deck") || !css.includes(".home-hero-stage__item")) {
+    fail("hero stage player styles are missing");
   }
 
   console.log("check-home-hero PASS");

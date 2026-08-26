@@ -3,13 +3,13 @@
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { scrollToNextHomeSection } from "@/lib/home-scroll";
 
-export function HomeContinueScrollHint() {
+export function HomeContinueScrollHint({ className = "" }: { className?: string }) {
   const reduced = useReducedMotion();
 
   return (
     <button
       type="button"
-      className="home-continue-hint"
+      className={`home-continue-hint${className ? ` ${className}` : ""}`}
       onClick={() => scrollToNextHomeSection(reduced ? 0 : 750)}
       aria-label="다음 섹션으로 스크롤"
     >

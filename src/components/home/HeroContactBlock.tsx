@@ -11,6 +11,7 @@ import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { getPhoneHref, type ConsultationChannel } from "@/lib/contact";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { openFloatingConsult } from "@/lib/floating-consult";
 
 type HeroContactBlockProps = {
   phone: string;
@@ -110,13 +111,18 @@ export function HeroContactBlock({
               {consultationInquiryCopy.ctaShort}
             </span>
           </Link>
-          <Link
-            href="/contact"
+          <button
+            type="button"
             className="hero-contact__chip hero-contact__chip--guide"
             role="listitem"
+            aria-haspopup="dialog"
+            aria-label={consultationInquiryCopy.ctaShort}
+            onClick={() => openFloatingConsult()}
           >
-            <span className="hero-contact__chip-label">상담 안내</span>
-          </Link>
+            <span className="hero-contact__chip-label">
+              {consultationInquiryCopy.ctaShort}
+            </span>
+          </button>
           {isNaverSmartPlaceConfigured() ? (
             <span role="listitem" className="contents">
               <NaverSmartPlaceCta

@@ -82,3 +82,7 @@ export function getYoutubeEmbedUrl(
 export function getYoutubeWatchUrl(videoId: string): string {
   return `https://www.youtube.com/watch?v=${videoId}`;
 }
+
+export function getYoutubePosterUrl(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+}

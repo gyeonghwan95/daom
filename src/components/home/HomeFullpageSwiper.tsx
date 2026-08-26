@@ -16,12 +16,41 @@ type HomeFullpageSwiperProps = {
   children: ReactNode;
 };
 
+function useHomeHeroBodyClass(reduced: boolean, activeIndex: number) {
+  useEffect(() => {
+    if (reduced) {
+      const hero = document.getElementById("home-hero");
+      if (!hero) return undefined;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          document.body.classList.toggle(
+            "home-on-hero",
+            Boolean(entry?.isIntersecting && (entry.intersectionRatio ?? 0) >= 0.4),
+          );
+        },
+        { threshold: [0.4, 0.6] },
+      );
+      observer.observe(hero);
+      return () => {
+        observer.disconnect();
+        document.body.classList.remove("home-on-hero");
+      };
+    }
+
+    document.body.classList.toggle("home-on-hero", activeIndex === 0);
+    return () => document.body.classList.remove("home-on-hero");
+  }, [reduced, activeIndex]);
+}
+
 export function HomeFullpageSwiper({ children }: HomeFullpageSwiperProps) {
   const reduced = useReducedMotion();
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const unbindSlideScrollRef = useRef<(() => void) | null>(null);
   const slides = useMemo(() => Children.toArray(children), [children]);
+
+  useHomeHeroBodyClass(reduced, activeIndex);
 
   useEffect(() => {
     if (!swiper) return;
@@ -112,20 +141,25 @@ export function HomeFullpageSwiper({ children }: HomeFullpageSwiperProps) {
         })}
       </Swiper>
 
-      {activeIndex < slides.length - 1 && <HomeContinueScrollHint />}
-
-      {activeIndex > 0 && (
-        <button
-          type="button"
-          className="home-back-to-top"
-          onClick={() => scrollToHomeSection("home-hero", 750)}
-          aria-label="맨 위 섹션으로 이동"
-        >
-          <span className="home-back-to-top__icon" aria-hidden>
-            ↑
-          </span>
-        </button>
-      )}
+      <div
+        className={`home-slide-nav${activeIndex === 0 ? " home-slide-nav--hero" : ""}${
+          activeIndex >= slides.length - 1 ? " home-slide-nav--last" : ""
+        }`}
+      >
+        {activeIndex < slides.length - 1 ? <HomeContinueScrollHint /> : null}
+        {activeIndex > 0 ? (
+          <button
+            type="button"
+            className="home-back-to-top"
+            onClick={() => scrollToHomeSection("home-hero", 750)}
+            aria-label="맨 위 섹션으로 이동"
+          >
+            <span className="home-back-to-top__icon" aria-hidden>
+              ↑
+            </span>
+          </button>
+        ) : null}
+      </div>
     </>
   );
 }

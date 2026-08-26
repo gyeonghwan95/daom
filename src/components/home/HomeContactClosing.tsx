@@ -24,75 +24,93 @@ export function HomeContactClosing() {
   const titleLines = homeClosing.title.split("\n");
 
   return (
-    <section className="home-closing relative w-full overflow-hidden py-8 md:py-16 lg:py-20">
+    <section className="home-closing relative w-full overflow-hidden py-8 md:py-14 lg:py-16">
       <Container>
         <Reveal variant="scaleIn">
-          <div className="home-closing__inner relative rounded-2xl px-5 py-8 text-white sm:px-6 sm:py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
+          <div className="home-closing__panel">
             <motion.div
-              className="relative max-w-2xl"
+              className="home-closing__copy"
               initial={reduced ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.9, ease: easeOutSoft }}
             >
-              <h2 className="text-2xl font-bold leading-snug tracking-tight md:text-3xl lg:text-4xl">
+              <p className="home-section-label home-closing__eyebrow">
+                {homeClosing.eyebrow}
+              </p>
+              <h2 className="home-closing__title">
                 {titleLines.map((line) => (
                   <span key={line} className="block">
                     {line}
                   </span>
                 ))}
               </h2>
-              <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
-                {homeClosing.description}
+              <p className="home-closing__lede">{homeClosing.description}</p>
+
+              <ol className="home-closing__steps" aria-label="상담 후 진행 순서">
+                {homeClosing.steps.map((step) => (
+                  <li key={step.index} className="home-closing__step">
+                    <span className="home-closing__step-index" aria-hidden>
+                      {step.index}
+                    </span>
+                    <span className="home-closing__step-label">{step.label}</span>
+                  </li>
+                ))}
+              </ol>
+            </motion.div>
+
+            <motion.div
+              className="home-closing__aside"
+              initial={reduced ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.9, delay: reduced ? 0 : 0.08, ease: easeOutSoft }}
+            >
+              {phone ? (
+                <a href={getPhoneHref(phone)} className="home-closing__phone">
+                  <span className="home-closing__phone-kicker">지금 전화</span>
+                  <span className="home-closing__phone-number">{phone}</span>
+                </a>
+              ) : null}
+
+              <p className="home-closing__channel-hint">
+                전화 · 카카오톡 · 네이버 톡톡 중 편한 방법 하나면 됩니다.
               </p>
 
-              {phone && (
-                <a
-                  href={getPhoneHref(phone)}
-                  className="mt-6 inline-block break-all text-xl font-semibold tracking-tight text-white transition-[opacity,color] duration-200 hover:text-white/90 sm:mt-8 sm:text-2xl md:text-3xl"
-                >
-                  {phone}
-                </a>
-              )}
-
-              <div className="mt-8">
-                <ConsultationButtons channels={channels} theme="dark" layout="grid" />
+              <div className="home-closing__channels">
+                <ConsultationButtons channels={channels} theme="dark" layout="tile" />
               </div>
 
-              <div className="mt-6">
+              <div className="home-closing__visit">
                 <VisitNoticeBanner variant="compact" theme="dark" />
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 sm:flex-row sm:flex-wrap sm:items-stretch">
+              <div className="home-closing__cta">
                 <InquiryNaverCtaPair
                   placement="homepage_closing"
-                  layout="row"
-                  size="sm"
+                  layout="stack"
+                  size="md"
                   inquiry={
                     <Link
                       href="/contact/inquiry"
-                      className="home-closing__nav-btn"
+                      className="home-closing__inquiry"
                     >
                       {consultationInquiryCopy.ctaShort}
                     </Link>
                   }
                 />
-                <Link href="/contact" className="home-closing__nav-btn">
-                  상담 안내
-                </Link>
-                <Link href="/location" className="home-closing__nav-btn">
+                <Link href="/location" className="home-closing__location">
                   오시는 길
                 </Link>
               </div>
 
-              <div className="mt-4 flex flex-col gap-2 text-sm text-white/55 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+              <p className="home-closing__nap">
                 <span>{nap.tradeName}</span>
+                <span aria-hidden className="home-closing__nap-dot">
+                  ·
+                </span>
                 <span>{nap.address}</span>
-                <span>{nap.phone}</span>
-                <Link href="/about" className="text-white/70 transition-colors duration-200 hover:text-white">
-                  법무사 소개 →
-                </Link>
-              </div>
+              </p>
             </motion.div>
           </div>
         </Reveal>

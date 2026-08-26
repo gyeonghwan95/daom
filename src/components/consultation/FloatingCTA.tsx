@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ChatIcon } from "@/components/consultation/ConsultationIcons";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
@@ -9,6 +9,7 @@ import { useConsultationAvailability } from "@/hooks/useConsultationAvailability
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { consultWizardCopy as copy } from "@/lib/consult-wizard/copy";
+import { OPEN_FLOATING_CONSULT_EVENT, consumeFloatingConsultPending } from "@/lib/floating-consult";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 
 /**
@@ -21,6 +22,19 @@ export function FloatingCTA() {
   const reducedMotion = useReducedMotion();
   const inquiry = useOptionalQuickInquiry();
   const { isOpen, statusLabel, statusHint } = availability;
+
+  useEffect(() => {
+    if (consumeFloatingConsultPending()) setOpen(true);
+
+    const openPanel = () => setOpen(true);
+    window.addEventListener(OPEN_FLOATING_CONSULT_EVENT, openPanel);
+    return () => window.removeEventListener(OPEN_FLOATING_CONSULT_EVENT, openPanel);
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("home-floating-consult-open", open);
+    return () => document.body.classList.remove("home-floating-consult-open");
+  }, [open]);
 
   const startConsult = () => {
     setOpen(false);

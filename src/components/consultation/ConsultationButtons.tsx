@@ -37,7 +37,7 @@ function getButtonClass(
   if (theme === "dark") {
     switch (id) {
       case "phone":
-        return `${base} bg-white text-navy hover:bg-beige`;
+        return `${base} bg-[#f4efe8] text-navy hover:bg-beige`;
       case "kakao":
         return `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`;
       case "naver":
@@ -97,15 +97,19 @@ function ChannelLink({
   label,
   className,
   tile = false,
+  theme = "light",
 }: {
   channel: ConsultationChannel;
   label: string;
   className: string;
   tile?: boolean;
+  theme?: "dark" | "light";
 }) {
   const iconWrap =
     channel.id === "phone"
-      ? "bg-white/15 text-white"
+      ? theme === "dark"
+        ? "bg-navy text-white"
+        : "bg-white/15 text-white"
       : channel.id === "naver" || channel.id === "reservation"
         ? "bg-white/20 text-white"
         : channel.id === "kakao"
@@ -237,6 +241,7 @@ export function ConsultationButtons({
             label={labelFor(channel)}
             className={getButtonClass(channel.id, theme, layout)}
             tile={isTile}
+            theme={theme}
           />
         ))}
       </div>

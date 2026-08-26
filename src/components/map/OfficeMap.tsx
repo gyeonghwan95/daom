@@ -15,28 +15,36 @@ import { siteConfig } from "@/lib/site";
 
 type MapMode = "loading" | "kakao" | "fallback";
 
+type OfficeMapProps = {
+  compact?: boolean;
+};
+
 const mapLinkBase =
   "inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition-colors sm:min-h-12";
 
-function MapExternalLinks() {
+function MapExternalLinks({ compact = false }: { compact?: boolean }) {
+  const linkClass = compact
+    ? "inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold transition-colors"
+    : mapLinkBase;
+
   return (
-    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+    <div className={`mt-3 grid gap-2 sm:grid-cols-2${compact ? " home-place__map-links" : ""}`}>
       <NaverSmartPlaceCta
         variant="map"
         placement="map_widget"
         tone="brand"
         fullWidth
-        size="md"
+        size={compact ? "sm" : "md"}
         label="네이버 지도"
       />
       <a
         href={getKakaoMapPlaceUrl(siteConfig.name)}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${mapLinkBase} bg-[#FEE500] text-[#191919] hover:brightness-95`}
+        className={`${linkClass} bg-[#FEE500] text-[#191919] hover:brightness-95`}
       >
-        <KakaoIcon className="h-5 w-5 shrink-0" />
-        카카오맵에서 보기
+        <KakaoIcon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
+        카카오맵
       </a>
     </div>
   );
@@ -55,7 +63,7 @@ function OpenStreetMapFallback() {
   );
 }
 
-export function OfficeMap() {
+export function OfficeMap({ compact = false }: OfficeMapProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<kakao.maps.Map | null>(null);
@@ -137,24 +145,41 @@ export function OfficeMap() {
   }, [appKey, shouldLoad]);
 
   useEffect(() => {
-    if (mode !== "kakao" || !mapRef.current || !window.kakao?.maps) return;
+    if (mode !== "kakao" || !mapRef.current || !containerRef.current || !window.kakao?.maps) {
+      return;
+    }
     const map = mapRef.current;
+    const el = containerRef.current;
     const center = new window.kakao.maps.LatLng(
       officeCoordinates.lat,
       officeCoordinates.lng,
     );
-    const id = requestAnimationFrame(() => {
+    const relayout = () => {
       map.relayout();
       map.setCenter(center);
-    });
-    return () => cancelAnimationFrame(id);
+    };
+    relayout();
+    const frame = window.requestAnimationFrame(relayout);
+    const observer = new ResizeObserver(() => relayout());
+    observer.observe(el);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, [mode]);
 
   return (
-    <div ref={rootRef}>
-      <div className="relative overflow-hidden rounded-xl border border-beige-dark bg-beige/20">
+    <div
+      ref={rootRef}
+      className={compact ? "office-map office-map--fill" : "office-map"}
+    >
+      <div className="office-map__frame relative overflow-hidden rounded-xl border border-beige-dark bg-beige/20">
         <div
-          className="relative h-[min(420px,62vh)] min-h-[280px] w-full"
+          className={
+            compact
+              ? "office-map__canvas"
+              : "relative h-[min(420px,62vh)] min-h-[280px] w-full"
+          }
           aria-label={`${siteConfig.name} 위치 지도`}
         >
           {mode === "fallback" ? (
@@ -178,7 +203,7 @@ export function OfficeMap() {
         </div>
       </div>
 
-      <MapExternalLinks />
+      <MapExternalLinks compact={compact} />
     </div>
   );
 }
