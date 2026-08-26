@@ -15,6 +15,7 @@ import {
 } from "@/lib/local-landing/busan-lawyer-hub-content";
 import { getInflowItemsForPath } from "@/lib/seo/inflow-policy";
 import { sanitizePageKeywords } from "@/lib/seo/champion-query";
+import { homeFaqs } from "@/lib/home-content";
 
 const ROOT = process.cwd();
 
@@ -94,8 +95,12 @@ function main() {
     if (getInflowItemsForPath("/업무사례/부산영주동법무사").length > 0) {
       add("error", "inflow rail still emits on thin case pages");
     }
-    if (getInflowItemsForPath("/부산법무사").length === 0) {
-      add("error", "inflow rail missing on champion hub");
+    const hubInflow = getInflowItemsForPath("/부산법무사");
+    if (hubInflow.length === 0) {
+      add("error", "inflow rail missing on supporting hub");
+    }
+    if (!hubInflow.some((item) => item.href === "/")) {
+      add("error", "supporting hub inflow missing HOME");
     }
     const dongKeywords = sanitizePageKeywords("/민락동법무사", [
       "부산 법무사",
@@ -160,10 +165,14 @@ function main() {
     const homeKeywords = Array.isArray(homeMetadata.keywords)
       ? homeMetadata.keywords
       : [];
-    if (
-      !homeKeywords.includes("부산 법무사")
-    ) {
+    if (!homeKeywords.includes("부산 법무사")) {
       add("error", "homepage lost exact-query keyword 「부산 법무사」");
+    }
+    if (homeFaqs.length < 4) {
+      add("error", `homepage FAQ count ${homeFaqs.length} (need query-relevant FAQs)`);
+    }
+    if (!homeFaqs.some((faq) => faq.question.includes("부산 법무사"))) {
+      add("error", "homepage FAQ lost 「부산 법무사」 intent");
     }
 
   const titles = new Map<string, string>();

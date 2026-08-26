@@ -35,6 +35,9 @@ export function HomeTrust() {
               <blockquote className="mt-5 border-l-2 border-navy/20 pl-5 text-base leading-relaxed text-navy/80 md:text-lg">
                 {homeTrust.quote}
               </blockquote>
+              <p className="mt-5 text-sm leading-relaxed text-navy/70 md:text-base">
+                {homeTrust.identity}
+              </p>
             </Reveal>
 
             <Stagger className="mt-8 space-y-5" stagger={0.08}>

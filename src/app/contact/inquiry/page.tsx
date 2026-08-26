@@ -21,7 +21,7 @@ export default function ContactInquiryPage() {
         h1="상담 신청"
         breadcrumbs={[
           { label: "홈", href: "/" },
-          { label: "상담", href: "/contact" },
+          { label: "상담 문의", href: "/contact" },
           { label: "상담 신청" },
         ]}
         currentPath="/contact/inquiry"

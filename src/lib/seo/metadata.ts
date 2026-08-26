@@ -22,10 +22,10 @@ const DEFAULT_OG_IMAGE = siteImages.seo.defaultOg.src;
 
 /**
  * 「부산 법무사」 PRIMARY = HOME `/`.
- * Exact-match를 title 앞자리에 두고 브랜드·대표자를 이어서 고정한다.
+ * Exact-match를 앞자리에, H1(부산 법무사 안윤정)과 브랜드를 맞춰 고정한다.
  * (브랜드만 두면 exact query 신호가 약해짐 — 2026-08-20 복구)
  */
-export const HOME_METADATA_TITLE = "부산 법무사 | 다옴법무사사무소 안윤정";
+export const HOME_METADATA_TITLE = "부산 법무사 안윤정 | 다옴법무사사무소";
 
 export const HOME_H1 = "부산 법무사 안윤정";
 

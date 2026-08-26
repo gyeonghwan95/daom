@@ -1,0 +1,48 @@
+# 색인 등록 목록 — 홈 히어로·오시는 길 UI (2026-08-26 야간)
+# 배포 완료 후 Search Advisor URL 검사·IndexNow.
+# CREATE_NEW=0 — 신규 공개 URL 없음. 기존 URL 재수집.
+
+기준 도메인: https://다옴법무사사무소.kr
+
+오늘 이 목록이 다루는 변경:
+- HOME 히어로: iframe 제거, 로컬 영상 4편(법무사 소개·사무소 소개·MBC 인터뷰·강의 진행)
+- 사진 4초 / 영상 최대 8초, 사무소 정면 슬라이드 제외
+- HOME ‘상담 안내’ 카드 삭제
+- HOME 클로징·오시는 길 패널 UI 개편 (title/H1 변경 없음)
+
+제출하지 않음: /admin, mp4 파일 URL, 쿼리스트링, 자가진단 결과 UI.
+하루 과다 제출 금지. P0 → P1.
+
+## P0 — 필수 재수집 (1회)
+
+https://다옴법무사사무소.kr/
+
+기대 Meta title (변경 없음):
+부산 법무사 안윤정 | 다옴법무사사무소
+
+기대 H1 (변경 없음):
+부산 법무사 안윤정
+
+## P1 — 홈에서 이어지는 NAP·전환 (권장)
+
+https://다옴법무사사무소.kr/location
+https://다옴법무사사무소.kr/contact/inquiry
+https://다옴법무사사무소.kr/office
+
+## 오늘 이미 만들어 둔 다른 목록 (중복 제출하지 말 것)
+
+비용 intent: reports/seo/index-submit-cost-intent-2026-08-26.txt
+Gap Wave1 신규 3개: reports/seo/index-submit-gap-wave1-2026-08-26.txt
+  → /부산재산명시 /부산부재자재산관리인 /부산상속재산관리인
+Master rebuild: reports/seo/index-submit-master-rebuild-2026-08-26.txt
+  → HOME은 그 목록에도 있으나, 야간 UI 배포 후 HOME을 한 번 더 재수집할 것.
+
+## 제출 메모
+
+- 반드시 **이번 홈 UI가 올라간 배포 이후** 제출. 로컬만 반영된 상태면 색인 실패.
+- 신규 pathname 없음. sitemap URL 집합 불변 전제.
+- IndexNow: `npm run indexnow:dry` → 배포 → `npm run indexnow`
+- 네이버 서치어드바이저: P0 HOME URL 검사 → 수집 요청 1회. 매일 반복 금지.
+- 영상 파일(/video/*.mp4)은 HTML 문서가 아니므로 색인 URL에 넣지 않음.
+- HOME title/H1/「부산 법무사」 PRIMARY는 유지. 키워드로 바꾸지 않음.
+- 순위·검색량 추정 기재 금지.

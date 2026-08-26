@@ -38,10 +38,10 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       "업무를 고르기 전에 자가진단·상황별 안내·계산기·부산 법률지도를 먼저 보실 수 있습니다.",
     links: [
       { href: "/자가진단", label: "업무별 자가진단" },
-      { href: "/situations", label: "상황별 법률문제" },
+      { href: "/situations", label: "상황별 안내" },
       { href: "/tools", label: "법률 계산기" },
       { href: "/busan-legal-map", label: "부산 법률지도" },
-      { href: "/glossary", label: "법률 용어사전" },
+      { href: "/glossary", label: "등기 용어 안내" },
       { href: "/faq", label: "FAQ" },
     ],
   },

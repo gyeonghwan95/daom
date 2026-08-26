@@ -88,7 +88,7 @@ function slugFileMtime(relativeGlobDirs, slug) {
 }
 
 const STATIC_PAGE_FILES = {
-  "/": ["src/app/page.tsx", "src/content/blog"],
+  "/": ["src/app/page.tsx", "src/lib/home-content.ts", "src/content/blog"],
   "/about": ["src/app/about/page.tsx"],
   "/office": ["src/app/office/page.tsx"],
   "/location": ["src/app/location/page.tsx"],

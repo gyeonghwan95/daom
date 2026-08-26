@@ -91,7 +91,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     ],
     relatedLinks: [
       { href: "/상담", label: "상담 안내" },
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/", label: "부산 법무사" },
     ],
     presetSituationIds: ["unknown-work"],
     serviceSlug: "inheritance-registration",

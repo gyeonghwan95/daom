@@ -664,7 +664,7 @@ export const publicAgencyRegistrationContent: PublicAgencyRegistrationContent = 
     { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
     { href: "/부산임원변경등기", label: "부산 임원변경등기" },
     { href: "/부산법인법무사", label: "부산 법인 법무사" },
-    { href: "/부산법무사", label: "부산 법무사" },
+    { href: "/", label: "부산 법무사" },
     { href: "/partners", label: "전문직·기업 협업 안내" },
     { href: "/협업문의?partner=public", label: "공공기관·단체 업무 문의" },
     { href: "/강의문의", label: "법률교육·특강 문의" },

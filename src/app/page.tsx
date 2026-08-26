@@ -18,7 +18,8 @@ import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { buildWebPageSchema } from "@/lib/seo/json-ld";
+import { buildFaqPageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
+import { homeFaqs, homeReviewedOn } from "@/lib/home-content";
 import {
   HOME_H1,
   HOME_METADATA_DESCRIPTION,
@@ -34,13 +35,17 @@ export default function Home() {
     <>
       <main id="main-content" className="home-page flex min-h-0 flex-1 flex-col overflow-x-hidden">
         <JsonLd
-          data={buildWebPageSchema({
-            title: HOME_METADATA_TITLE,
-            description: HOME_METADATA_DESCRIPTION,
-            path: "/",
-            h1: HOME_H1,
-            image: siteImages.home.hero.src,
-          })}
+          data={[
+            buildWebPageSchema({
+              title: HOME_METADATA_TITLE,
+              description: HOME_METADATA_DESCRIPTION,
+              path: "/",
+              h1: HOME_H1,
+              image: siteImages.home.hero.src,
+              dateModified: homeReviewedOn,
+            }),
+            buildFaqPageSchema(homeFaqs, "/"),
+          ]}
         />
         <HomeFullpageSwiper>
           <HomeHero />

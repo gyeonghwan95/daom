@@ -15,9 +15,9 @@ const DOCS = path.join(ROOT, "docs/seo");
 const KEYWORD_TO_URL = [
   {
     primaryKeyword: "부산 법무사",
-    primaryUrl: "/부산법무사",
-    intent: "부산에서 법무사 업무를 언제·어떻게 의뢰할지 안내하는 지역 종합 허브",
-    competitors: ["/부산법무사추천", "/부산법무사무소", "/부산법무사상담"],
+    primaryUrl: "/",
+    intent: "부산 법무사 사무소·대표를 찾는 검색의 공식 홈",
+    competitors: ["/부산법무사", "/부산법무사추천", "/부산법무사무소", "/부산법무사상담"],
   },
   {
     primaryKeyword: "부산 한정승인 법무사",

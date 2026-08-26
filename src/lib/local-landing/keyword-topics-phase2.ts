@@ -131,7 +131,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산법인등기", label: "부산 법인등기" },
       { href: "/부산법인등기전문", label: "부산 법인등기 실무" },
       { href: "/창업법무", label: "창업법무 허브" },
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/", label: "부산 법무사" },
     ],
     relatedCaseSlug: "yeonje-director-change-case",
     caseAngle: "중소기업 임원 중임·본점 이전 동시 정리",
@@ -256,7 +256,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     relatedKeywordLinks: [
       { href: "/부산법인등기전문", label: "부산 법인등기 실무" },
       { href: "/센텀법인설립등기", label: "센텀 법인설립등기" },
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/", label: "부산 법무사" },
     ],
     relatedCaseSlug: "suyeong-company-establishment-case",
     caseAngle: "센텀 공동창업 2인 주식회사 설립",

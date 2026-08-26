@@ -2,11 +2,10 @@ import { Container } from "@/components/layout/Container";
 import { HomeSectionActionLink } from "@/components/home/HomeSectionActionLink";
 import { Reveal } from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
-import { homeFaqIntro } from "@/lib/home-content";
-import { faqs } from "@/lib/faq-data";
+import { homeFaqIntro, homeFaqs } from "@/lib/home-content";
 
 export function HomeFaqTeaser() {
-  const preview = faqs.slice(0, 3);
+  const preview = homeFaqs;
 
   return (
     <section className="home-trust w-full py-14 md:py-28">

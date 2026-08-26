@@ -17,6 +17,7 @@ import {
 } from "@/lib/office-location";
 import { siteImages } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
+import { siteSitelinkItems } from "@/lib/navigation";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import type { FaqItem } from "@/lib/faq-data";
 import type { ServiceFaq } from "@/types/service";
@@ -199,6 +200,7 @@ export function buildLegalServiceSchema(): SchemaObject {
     "@type": "LegalService",
     "@id": schemaIds.legalService,
     name: seoBrand.siteName,
+    alternateName: ["다옴법무사", "부산 다옴법무사사무소"],
     description: seoBrand.defaultDescription,
     url: siteConfig.url,
     mainEntityOfPage: getCanonicalUrl(BUSAN_LAWYER_CHAMPION_PATH),
@@ -206,6 +208,10 @@ export function buildLegalServiceSchema(): SchemaObject {
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     logo: getAbsoluteAssetUrl(siteImages.logo.src),
     telephone: telephone(),
+    email: contactEmail(),
+    address: postalAddress(),
+    geo: geoCoordinates(),
+    openingHoursSpecification: openingHoursSpecification(),
     priceRange: "$$",
     areaServed: areaServedPlaces(),
     serviceType: seoBrand.services,
@@ -214,6 +220,7 @@ export function buildLegalServiceSchema(): SchemaObject {
     hasOfferCatalog: serviceOfferCatalog(),
     provider: { "@id": schemaIds.person },
     parentOrganization: { "@id": schemaIds.organization },
+    sameAs: getSocialProfileUrls(),
   });
 }
 
@@ -224,6 +231,7 @@ export function buildLocalBusinessSchema(): SchemaObject {
     "@type": ["LegalService", "LocalBusiness"],
     "@id": schemaIds.localBusiness,
     name: seoBrand.siteName,
+    alternateName: ["다옴법무사", "부산 다옴법무사사무소"],
     description: seoBrand.defaultDescription,
     url: siteConfig.url,
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
@@ -312,6 +320,13 @@ export function buildWebSiteSchema(): SchemaObject {
     description: seoBrand.defaultDescription,
     inLanguage: "ko-KR",
     publisher: { "@id": schemaIds.organization },
+    hasPart: siteSitelinkItems.map((item, index) => ({
+      "@type": "SiteNavigationElement",
+      "@id": `${siteConfig.url}/#nav-${index + 1}`,
+      position: index + 1,
+      name: item.label,
+      url: getCanonicalUrl(item.href),
+    })),
   });
 }
 

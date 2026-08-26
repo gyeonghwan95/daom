@@ -7,6 +7,7 @@ import {
   BUSAN_LEGAL_SCRIVENER_CHAMPION,
   COST_CHAMPION,
   getPageRelation,
+  HOME_BROAD_CHAMPION,
   LEGAL_CONSULTATION_CHAMPION,
   PERSONAL_BANKRUPTCY_CHAMPION,
   PERSONAL_REHABILITATION_CHAMPION,
@@ -32,10 +33,15 @@ const OFFICE_HUB = "/부산법무사무소";
 
 const LIBRARY: InflowItem[] = [
   {
-    href: BUSAN_LEGAL_SCRIVENER_CHAMPION,
-    label: "지금 필요한 절차부터 가리기",
+    href: HOME_BROAD_CHAMPION,
+    label: "해운대·센텀 법무사 사무소",
     searchPhrase: "부산 법무사",
-    reason: "상속·등기·법인·회생 중 어디에 해당하는지 먼저 확인합니다.",
+    reason: "다옴법무사사무소 안윤정 법무사가 상속·등기·법인·회생을 직접 상담합니다.",
+  },
+  {
+    href: BUSAN_LEGAL_SCRIVENER_CHAMPION,
+    label: "업무·비용·상담 전 확인 기준",
+    reason: "정확한 업무명을 몰라도 지금 필요한 절차부터 가립니다.",
   },
   {
     href: REGISTRY_HUB,
@@ -158,6 +164,7 @@ function pushUnique(target: InflowItem[], item: InflowItem, current: string) {
 function fillerHrefs(current: string): string[] {
   if (current === BUSAN_LEGAL_SCRIVENER_CHAMPION) {
     return [
+      HOME_BROAD_CHAMPION,
       REGISTRY_HUB,
       INHERITANCE_HUB,
       CORPORATE_HUB,
@@ -192,6 +199,7 @@ function fillerHrefs(current: string): string[] {
     ];
   }
   return [
+    HOME_BROAD_CHAMPION,
     BUSAN_LEGAL_SCRIVENER_CHAMPION,
     REGISTRY_HUB,
     LEGAL_CONSULTATION_CHAMPION,

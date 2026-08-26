@@ -300,7 +300,7 @@ export const corporateIntentPages: CorporatePageContent[] = [
     ],
     relatedLinks: [
       { href: "/부산법인등기", label: "부산 법인등기" },
-      { href: "/부산법무사", label: "부산 법무사" },
+      { href: "/", label: "부산 법무사" },
       { href: "/법인정관변경", label: "정관 변경 필요 여부" },
       { href: "/법인의사록공증준비", label: "의사록 공증 준비" },
       { href: "/전국법인본점이전등기", label: "전국 본점이전등기" },

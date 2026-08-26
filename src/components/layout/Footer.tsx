@@ -7,18 +7,18 @@ import { getDirectConsultationChannels, getNaverBlogUrl } from "@/lib/contact";
 import { getNapInfo } from "@/lib/business-info";
 import { footerCollaborationLinks } from "@/lib/b2b/collaboration-registry";
 const FOOTER_QUICK_LINKS = [
-  { href: "/about", label: "소개" },
+  { href: "/about", label: "법무사 소개" },
+  { href: "/office", label: "해운대·센텀 사무소" },
   { href: "/services", label: "업무안내" },
   { href: "/업무사례", label: "업무 사례" },
+  { href: "/contact", label: "상담 문의" },
+  { href: "/location", label: "오시는 길" },
+  { href: "/reviews", label: "고객후기" },
   { href: "/자가진단", label: "자가진단" },
   { href: "/법률강의", label: "강의·특강" },
   { href: "/partners", label: "협업문의" },
   { href: "/situations", label: "상황별 안내" },
-  { href: "/tools", label: "법률 계산기" },
-  { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
   { href: "/faq", label: "FAQ" },
-  { href: "/공지사항", label: "공지사항" },
-  { href: "/contact", label: "상담 문의" },
 ] as const;
 
 const FOOTER_COLLAB_LABELS: Record<string, string> = {

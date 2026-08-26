@@ -199,5 +199,5 @@ export const YANGSAN_CORE_LINKS = [
   { href: "/업무사례/양산증여등기법무사", label: "양산 증여등기" },
   { href: "/업무사례/양산법인등기법무사", label: "양산 법인등기" },
   { href: "/업무사례/양산근저당말소", label: "양산 근저당 말소" },
-  { href: "/부산법무사", label: "부산 법무사" },
+  { href: "/", label: "부산 법무사" },
 ] as const;

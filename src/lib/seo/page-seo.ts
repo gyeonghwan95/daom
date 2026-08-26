@@ -44,7 +44,7 @@ export const staticPageSeo = {
     keywords: ["다옴법무사사무소", "부산 법무사", seoBrand.siteName],
   },
   reviews: {
-    title: buildSeoTitle("고객후기"),
+    title: buildSeoTitle("네이버 고객후기"),
     description:
       "네이버 플레이스 방문자가 남긴 상속등기·부동산등기·법인등기·상담 후기.",
     path: "/reviews",
@@ -72,7 +72,7 @@ export const staticPageSeo = {
     keywords: ["안윤정 법무사", "부산 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
   },
   contact: {
-    title: buildSeoTitle("상담 문의 · 해운대·센텀"),
+    title: buildSeoTitle("상담 문의 · 해운대·센텀 예약"),
     description:
       "전화·카카오톡·네이버 톡톡 상담 안내. 방문 예약 후 센텀 사무소에서 직접 상담 가능.",
     path: "/contact",

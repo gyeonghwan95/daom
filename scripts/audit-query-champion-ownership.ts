@@ -21,8 +21,8 @@ function main() {
   }
 
   const busan = reg.queries["부산 법무사"];
-  if (busan?.primary !== "/부산법무사") {
-    errors.push("부산 법무사 Champion이 /부산법무사 가 아님");
+  if (busan?.primary !== "/") {
+    errors.push("부산 법무사 Champion이 HOME `/` 가 아님");
   }
 
   console.log("=== Query Champion Ownership ===");

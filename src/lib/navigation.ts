@@ -60,91 +60,117 @@ export const lectureNavGroups: NavGroup[] = [
   },
 ];
 
-export const mainNavigation: NavItem[] = [
-  { href: "/about", label: "소개" },
-  { href: "/office", label: "사무소" },
-  {
-    href: "/services",
-    label: "업무안내",
-    groups: [
-      {
-        title: "주요 업무",
-        links: [
-          { href: "/services", label: "업무안내 전체" },
-          { href: "/부산법무사", label: "부산 업무 안내" },
-          { href: "/부산등기법무사", label: "등기업무" },
-          { href: "/부산부동산등기", label: "부동산등기" },
-          { href: "/부산건물등기", label: "건물·건축물등기" },
-          { href: "/부산법인등기", label: "법인등기" },
-          { href: "/법인변경등기", label: "법인 변경등기" },
-          { href: "/부산상속등기", label: "상속등기" },
-          { href: "/부산개인회생", label: "개인회생" },
-        ],
-      },
-      {
-        title: "전국 의뢰 업무",
-        links: [
-          { href: "/전국업무", label: "전국 업무 안내" },
-          { href: "/전국상속등기", label: "전국 상속등기" },
-          { href: "/전국유증등기", label: "전국 유증등기" },
-          { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
-          { href: "/전국법인본점이전등기", label: "전국 법인 본점이전" },
-          { href: "/전국공동담보등기", label: "전국 공동담보등기" },
-        ],
-      },
-    ],
-  },
+/**
+ * 네이버 사이트링크 후보. 데스크톱 주 메뉴·SiteNavigationElement와 문구를 맞춘다.
+ * 짧은 일반명사(소개·상담)와 타지역(울산) 앵커는 넣지 않는다.
+ */
+export const siteSitelinkItems = [
+  { href: "/about", label: "법무사 소개" },
+  { href: "/services", label: "업무안내" },
+  { href: "/contact", label: "상담 문의" },
+  { href: "/location", label: "오시는 길" },
+  { href: "/업무사례", label: "업무 사례" },
+  { href: "/reviews", label: "고객후기" },
+] as const;
+
+const servicesNavItem: NavItem = {
+  href: "/services",
+  label: "업무안내",
+  groups: [
+    {
+      title: "주요 업무",
+      links: [
+        { href: "/services", label: "업무안내 전체" },
+        { href: "/부산법무사", label: "부산 업무 안내" },
+        { href: "/부산등기법무사", label: "등기업무" },
+        { href: "/부산부동산등기", label: "부동산등기" },
+        { href: "/부산건물등기", label: "건물·건축물등기" },
+        { href: "/부산법인등기", label: "법인등기" },
+        { href: "/법인변경등기", label: "법인 변경등기" },
+        { href: "/부산상속등기", label: "상속등기" },
+        { href: "/부산개인회생", label: "개인회생" },
+      ],
+    },
+    {
+      title: "전국 의뢰 업무",
+      links: [
+        { href: "/전국업무", label: "전국 업무 안내" },
+        { href: "/전국상속등기", label: "전국 상속등기" },
+        { href: "/전국유증등기", label: "전국 유증등기" },
+        { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
+        { href: "/전국법인본점이전등기", label: "전국 법인 본점이전" },
+        { href: "/전국공동담보등기", label: "전국 공동담보등기" },
+      ],
+    },
+  ],
+};
+
+const casesNavItem: NavItem = {
+  href: "/업무사례",
+  label: "업무 사례",
+  groups: [
+    {
+      title: "부산 업무사례",
+      links: [
+        { href: "/업무사례", label: "전체 업무 사례" },
+        { href: "/업무사례/지역별", label: "부산 지역 업무사례" },
+        { href: "/업무사례/업무별", label: "업무별 업무 사례" },
+      ],
+    },
+    {
+      title: "전국 업무사례",
+      links: [
+        { href: "/업무사례/전국업무사례", label: "전국 업무사례" },
+        { href: "/업무사례/전국상속등기법무사", label: "전국 상속등기" },
+        { href: "/업무사례/지역별상속등기법무사", label: "지역별 상속등기" },
+        { href: "/업무사례/경남법무사업무", label: "경남 업무사례" },
+        { href: "/업무사례/울산법무사업무", label: "울산 업무사례" },
+        { href: "/업무사례/대구법무사업무", label: "대구 업무사례" },
+        { href: "/업무사례/경북법무사업무", label: "경북 업무사례" },
+        { href: "/업무사례/전국법인본점이전등기", label: "전국 법인 본점이전" },
+        { href: "/업무사례/전국비대면법무사", label: "전국 비대면 업무" },
+      ],
+    },
+  ],
+};
+
+/** 데스크톱 헤더에만 노출 — 네이버 사이트링크의 주 소스 */
+export const headerPrimaryNavigation: NavItem[] = [
+  { href: "/about", label: "법무사 소개" },
+  servicesNavItem,
+  casesNavItem,
   {
     href: "/partners",
     label: "협업문의",
     megaMenu: true,
     groups: buildCollaborationNavGroups(),
   },
-  {
-    href: "/업무사례",
-    label: "업무 사례",
-    groups: [
-      {
-        title: "사례 안내",
-        links: [
-          { href: "/업무사례", label: "전체 업무 사례" },
-          { href: "/업무사례/지역별", label: "부산 지역 업무사례" },
-          { href: "/업무사례/업무별", label: "업무별 업무 사례" },
-          { href: "/업무사례/경남법무사업무", label: "경남 지역 업무사례" },
-          { href: "/업무사례/울산법무사업무", label: "울산 지역 업무사례" },
-          { href: "/업무사례/대구법무사업무", label: "대구 지역 업무사례" },
-          { href: "/업무사례/경북법무사업무", label: "경북 지역 업무사례" },
-        ],
-      },
-      {
-        title: "전국 업무사례",
-        links: [
-          { href: "/업무사례/전국업무사례", label: "전국 업무사례" },
-          { href: "/업무사례/전국상속등기법무사", label: "전국 상속등기" },
-          { href: "/업무사례/지역별상속등기법무사", label: "지역별 상속등기" },
-          { href: "/업무사례/전국법인본점이전등기", label: "전국 법인 본점이전" },
-          { href: "/업무사례/전국비대면법무사", label: "전국 비대면 업무" },
-        ],
-      },
-    ],
-  },
+  { href: "/contact", label: "상담 문의" },
+  { href: "/location", label: "오시는 길" },
+  { href: "/reviews", label: "고객후기" },
+];
+
+const headerSecondaryNavigation: NavItem[] = [
+  { href: "/office", label: "사무소" },
   {
     href: "/법률강의",
     label: "강의·특강",
     groups: lectureNavGroups,
   },
   { href: "/자가진단", label: "자가진단" },
-  { href: "/situations", label: "상황별 법률문제" },
+  { href: "/situations", label: "상황별 안내" },
   { href: "/tools", label: "법률 계산기" },
   { href: "/busan-legal-map", label: "부산 법률지도" },
-  { href: "/glossary", label: "법률 용어사전" },
+  { href: "/glossary", label: "등기 용어 안내" },
   { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
-  { href: "/reviews", label: "고객후기" },
   { href: "/faq", label: "FAQ" },
   { href: "/공지사항", label: "공지사항" },
-  { href: "/contact", label: "상담" },
-  { href: "/location", label: "오시는 길" },
+];
+
+export const mainNavigation: NavItem[] = [
+  ...headerPrimaryNavigation,
+  ...headerSecondaryNavigation,
 ];
 
 /** 현재 경로가 메뉴 항목과 일치하는지 (하위 페이지 포함) */

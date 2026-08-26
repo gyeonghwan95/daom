@@ -25,7 +25,7 @@ export default function ContactPage() {
         h1="상담 문의"
         breadcrumbs={[
           { label: "홈", href: "/" },
-          { label: "상담" },
+          { label: "상담 문의" },
         ]}
         currentPath="/contact"
         intro={`상속·등기·회생 등 법률 문제로 고민이 있으시면 다옴법무사사무소 안윤정 법무사에게 연락해 주세요. 전화, 카카오톡, 네이버 톡톡 중 편한 방법으로 상담하실 수 있으며, ${consultationInquiryCopy.oneMinuteShort} 사무소 방문은 예약 후 이용해 주세요.`}

@@ -90,8 +90,9 @@
     {
       "query": "부산 법무사",
       "protected": true,
+      "targetChampion": "/",
       "urls": [],
-      "candidateUrls": ["/부산법무사"]
+      "candidateUrls": ["/", "/부산법무사"]
     },
     {
       "query": "부산 법인 법무사",
