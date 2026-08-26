@@ -844,9 +844,11 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
   },
 };
 
+import { COST_LANDING_OVERLAYS } from "./cost-landing-overlays";
+
 export function getSeoLandingSlugOverlay(
   slug?: string,
 ): SeoLandingSlugOverlay | undefined {
   if (!slug) return undefined;
-  return SEO_LANDING_SLUG_OVERLAYS[slug];
+  return SEO_LANDING_SLUG_OVERLAYS[slug] ?? COST_LANDING_OVERLAYS[slug];
 }

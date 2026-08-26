@@ -218,10 +218,20 @@ export type DashboardPayload = {
     naverPlace: number;
     sources?: Record<string, number>;
   }>;
+  hourlyYesterday?: Array<{
+    hour: number;
+    pageViews: number;
+    cta: number;
+    consultSubmit: number;
+    naverPlace: number;
+    sources?: Record<string, number>;
+  }>;
   hourly7DayAvg?: Array<{ hour: number; pageViews: number }>;
   hourlyInsights?: {
     peakHourToday: number | null;
     peakViewsToday: number;
+    peakHourYesterday: number | null;
+    peakViewsYesterday: number;
     peakHour7DayAvg: number | null;
     visitsSameHourVs7DayAvgPct: number | null;
   } | null;

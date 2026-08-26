@@ -27,6 +27,7 @@ import {
   isInheritanceJourneyPage,
 } from "@/lib/inheritance/journey";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
+import { ComparisonTable } from "@/components/readability";
 
 type TopicHubContentProps = {
   page: TopicHubPage;
@@ -59,7 +60,13 @@ function TopicHubQuickLinks({ page }: { page: TopicHubPage }) {
       : null,
     page.costHref ? { href: page.costHref, label: "비용·보수 안내" } : null,
     page.jurisdictionHref
-      ? { href: page.jurisdictionHref, label: "관할 법원·등기소 확인" }
+      ? {
+          href: page.jurisdictionHref,
+          label:
+            page.slug === "개인회생파산"
+              ? "관할 법원 확인"
+              : "관할 법원·등기소 확인",
+        }
       : null,
     { href: "/location", label: "오시는 길·방문 예약" },
     { href: "/contact/inquiry", label: "1분만에 문의하기" },
@@ -80,13 +87,71 @@ function TopicHubQuickLinks({ page }: { page: TopicHubPage }) {
   );
 }
 
+function RehabComparisonTable() {
+  return (
+    <section
+      id="rehab-vs-bankruptcy"
+      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+    >
+      <h2 className="section-heading">개인회생과 개인파산, 한눈에 비교</h2>
+      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/70">
+        요건은 「채무자 회생 및 파산에 관한 법률」·법원 안내에 따르며, 인가·면책은
+        보장하지 않습니다. 확인일 2026-08-26.
+      </p>
+      <div className="mt-4">
+        <ComparisonTable
+          caption="개인회생과 개인파산의 소득·핵심·재산·준비자료 비교"
+          columns={[
+            { key: "구분", header: "구분" },
+            { key: "회생", header: "개인회생" },
+            { key: "파산", header: "개인파산·면책" },
+          ]}
+          rows={[
+            {
+              구분: "소득",
+              회생: "계속·반복 수입을 설명할 여지가 있을 때",
+              파산: "변제 여력이 거의 없을 때",
+            },
+            {
+              구분: "핵심",
+              회생: "변제계획",
+              파산: "지급불능·면책 검토",
+            },
+            {
+              구분: "재산",
+              회생: "청산가치와 변제액을 함께 봄",
+              파산: "재산관계 조사",
+            },
+            {
+              구분: "주요자료",
+              회생: "소득·채무·재산 목록",
+              파산: "채무·재산·면책 관련 자료",
+            },
+          ]}
+        />
+      </div>
+    </section>
+  );
+}
+
 export function TopicHubContent({ page }: TopicHubContentProps) {
   const diagnosisLinks = getTopicHubDiagnosisLinks(page.slug);
-  const breadcrumbs = [
-    { label: "홈", href: "/" },
-    { label: "업무안내", href: "/services" },
-    { label: page.title },
-  ];
+  const isRehabHub = page.slug === "개인회생파산";
+  const breadcrumbs = isRehabHub
+    ? [
+        { label: "홈", href: "/" },
+        { label: "회생·파산" },
+      ]
+    : page.slug === "상속"
+      ? [
+          { label: "홈", href: "/" },
+          { label: "상속" },
+        ]
+      : [
+          { label: "홈", href: "/" },
+          { label: "업무안내", href: "/services" },
+          { label: page.title },
+        ];
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
 
@@ -115,6 +180,8 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         <h1 className="page-title mt-2">{page.h1}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
       </header>
+
+      {isRehabHub ? <RehabComparisonTable /> : null}
 
       <InlineConsultationCTA
         pageType="service"

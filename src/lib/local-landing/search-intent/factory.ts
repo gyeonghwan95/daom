@@ -182,7 +182,7 @@ function relatedFor(seed: SearchIntentSeed): Pick<
   ];
 
   const relatedGuideLinks = [
-    { href: "/search-guides", label: "검색의도 안내 허브" },
+    { href: "/search-guides", label: "상황별 안내 모음" },
     { href: "/부산법무사추천", label: "법무사 선택 기준" },
     { href: "/부산법무사상담", label: "상담 준비" },
     { href: "/contact", label: "상담 문의" },
@@ -206,7 +206,7 @@ export function buildSearchIntentContent(
     metaTitle,
     metaDescription,
     h1: `${seed.label} — 상담 전 확인 가이드`,
-    eyebrow: "검색의도 안내",
+    eyebrow: "상담 전 확인 안내",
     heroParagraphs: [
       `${seed.label} 검색 시, 키워드만 보고 결정하기보다 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
       OFFICE,

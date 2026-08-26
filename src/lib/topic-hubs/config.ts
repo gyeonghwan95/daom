@@ -137,7 +137,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
     ctaDescription:
       "법인등기는 결의일·정관·임원 자격에 따라 필요 서류가 달라집니다. 다옴법무사사무소 안윤정 법무사가 현재 등기부와 정관을 확인해드리겠습니다.",
     jurisdictionHref: "/부산지방법원등기국",
-    costHref: "/법인설립등기비용",
+    costHref: "/법인등기비용",
     documentsHref: "/faq/company-establishment-documents-faq",
     faqServiceSlugs: ["company-establishment", "director-change", "corporate-registration"],
     relatedHubSlugs: ["창업법무", "부동산등기"],
@@ -243,7 +243,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
     ctaDescription:
       "부동산등기는 매매·상속·증여 등 원인과 등기부 권리 관계에 따라 절차가 달라집니다. 등기부등본을 함께 확인해드리겠습니다.",
     jurisdictionHref: "/남부산등기소법무사",
-    costHref: "/상속등기비용",
+    costHref: "/부동산등기비용",
     documentsHref: "/소유권이전등기서류",
     faqServiceSlugs: ["real-estate-registration", "ownership-transfer"],
     relatedHubSlugs: ["상속", "임대차전세"],
@@ -295,17 +295,17 @@ export const topicHubConfigs: TopicHubConfig[] = [
   },
   {
     slug: "개인회생파산",
-    title: "개인회생·파산·면책｜소득·채무별 선택",
-    h1: "부산 개인회생·개인파산·면책 상담",
+    title: "부산 회생·파산 법무사｜개인회생·개인파산 비교",
+    h1: "부산 개인회생·파산, 어떤 절차를 먼저 봐야 할까요?",
     description:
-      "부산 개인회생·개인파산·채무조정·면책·변제계획안. 부산회생법원 관할 안내. 다옴법무사사무소 안윤정 법무사.",
+      "소득이 있어 변제 계획을 볼 수 있으면 개인회생, 변제 여력이 거의 없으면 개인파산을 먼저 비교합니다. 부산회생법원 관할. 인가·면책은 보장하지 않습니다.",
     primaryServiceSlug: "personal-rehabilitation",
     intro:
-      "채무가 소득·재산을 압도할 때 개인회생과 개인파산 중 어느 절차가 유리한지는 사건마다 다릅니다. 부산·경남 일대 개인회생·파산은 부산회생법원 관할이며, 신청서·채권자목록·재산목록 기재 누락은 보정명령·기각으로 이어질 수 있습니다. 급여소득자·자영업자·소상공인마다 소득 증빙과 변제 계획 설계가 달라집니다. 다옴법무사사무소는 두 절차를 비교 상담하고 신청 전 준비사항을 정리해 드립니다.",
+      "카드값·여러 곳 대출이 감당되지 않거나 급여압류가 들어왔을 때, 개인회생과 개인파산 중 어디부터 볼지 헷갈리는 경우가 많습니다. 소득으로 변제 계획을 세울 여지가 있으면 개인회생을, 변제 여력이 거의 없으면 개인파산·면책을 먼저 비교합니다. 부산·경남 일대는 부산회생법원 관할인 경우가 많고, 목록 누락은 보정·기각으로 이어질 수 있습니다. 이 페이지는 비교 허브이며, 개인회생 신청·서류는 개인회생 안내에서, 상담 전 가능성 판단은 개인회생 법무사 안내에서 이어집니다.",
     ctaDescription:
       "개인회생·파산은 채무·소득·최근 변제 이력에 따라 적격 여부가 달라집니다. 다옴법무사사무소 안윤정 법무사가 현재 상황을 확인해드리겠습니다.",
     jurisdictionHref: "/부산회생법원법무사",
-    costHref: "/부산법무사비용",
+    costHref: "/개인회생비용",
     documentsHref: "/faq/personal-rehabilitation-documents-faq",
     faqServiceSlugs: ["personal-rehabilitation", "bankruptcy"],
     relatedHubSlugs: ["공탁채권회수", "민사소송"],
@@ -345,14 +345,14 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "부산 전역 거주 의뢰인의 회생·파산 사건을 상담합니다.",
       },
       {
-        title: "개인회생과 개인파산, 먼저 이렇게 나눠 보세요",
+        title: "비교 후 이어갈 안내",
         intro:
-          "개인회생은 장래 수입으로 일정 기간 변제하며 채무를 조정하는 절차를, 개인파산·면책은 지급불능 상황에서 재산 관계 정리와 면책을 검토하는 절차를 중심으로 봅니다. 정확한 요건은 「채무자 회생 및 파산에 관한 법률」·법원 안내에 따르며, 상담 전 방향만 나눕니다. 확인일 2026-08-13.",
+          "정확한 요건은 「채무자 회생 및 파산에 관한 법률」·법원 안내에 따르며, 상담 전 방향만 나눕니다. 확인일 2026-08-26. 인가·면책은 보장하지 않습니다.",
         links: [
           { href: "/부산개인회생", label: "개인회생 신청·서류 안내" },
           { href: "/부산개인파산", label: "개인파산·면책 안내" },
+          { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
           { href: "/faq/bankruptcy-vs-rehabilitation-faq", label: "회생과 파산 차이 FAQ" },
-          { href: "/blog/bankruptcy-vs-personal-rehabilitation", label: "회생·파산 비교 칼럼" },
         ],
       },
       {

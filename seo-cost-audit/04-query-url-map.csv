@@ -1,0 +1,31 @@
+query,cluster,intent,primary_url,support_url,current_coverage,action,new_url,cannibalization_risk
+부산 법무사 비용,general-cost,TYPE_A,/부산법무사비용,/부산법무사보수표,strong,STRENGTHEN,no,watch-synonym-pages
+부산 법무사 수임료,general-cost,TYPE_A,/부산법무사비용,/부산법무사수임료,partial,SUPPORT_NOT_PRIMARY,no,high-if-exact-title
+부산 법무사 수수료,general-cost,TYPE_A,/부산법무사비용,/부산법무사비용,partial,NO_NEW_URL,no,high-if-created
+부산 법무사 보수,general-cost,TYPE_A,/부산법무사비용,/부산법무사보수,partial,SUPPORT_NOT_PRIMARY,no,watch
+부산 법무사 가격,general-cost,TYPE_A,/부산법무사비용,/부산법무사비교,thin,ABSORB_IN_HUB,no,low
+부산 법무사 견적,general-cost,TYPE_A,/부산법무사비용,/법무사상담전준비,thin,ABSORB_IN_HUB,no,low
+부산 법무사 보수표,general-cost,TYPE_A_TABLE,/부산법무사보수표,/부산법무사비용,strong,KEEP_SUPPORT,no,watch-vs-hub
+상속등기 비용,inheritance-reg,TYPE_B,/상속등기비용,/부산상속등기,strong,STRENGTHEN,no,watch-보수표
+상속등기 수수료,inheritance-reg,TYPE_B,/상속등기비용,/상속등기보수표,partial,NO_NEW_URL,no,high-if-created
+상속등기 수임료,inheritance-reg,TYPE_B,/상속등기비용,/왜상속등기비용이다를까,partial,NO_NEW_URL,no,high-if-created
+부산 상속등기 비용,inheritance-reg,TYPE_B,/상속등기비용,/부산상속등기,strong,NO_/부산상속등기비용,no,high
+상속포기 비용,renunciation,TYPE_B,/상속포기비용,/부산상속포기,strong,STRENGTHEN,no,low
+부산 상속포기 법무사 비용,renunciation,TYPE_B,/상속포기비용,/부산상속포기,partial,SECTION_ON_SERVICE,no,low
+한정승인 비용,qualified,TYPE_B,/한정승인비용,/부산한정승인,strong,STRENGTHEN,no,low
+부산 등기 법무사 비용,registry,TYPE_B,/부동산등기비용,/부산등기법무사,partial,SECTION_ON_HUB,no,watch
+소유권이전등기 비용,ownership,TYPE_B,/소유권이전등기비용,/부산소유권이전등기,partial,OVERLAY,no,low
+부산 법인설립 비용,corp-est,TYPE_B,/법인설립등기비용,/부산법인설립등기,strong,STRENGTHEN,no,low
+부산 법인등기 비용,corp-change,TYPE_B,/법인등기비용,/부산법인등기비용,partial,ONE_PRIMARY,no,watch-two-urls
+부산 개인회생 비용,rehab,TYPE_B,/개인회생비용,/부산개인회생,partial,OVERLAY,no,watch-hub
+부산 개인회생 수임료,rehab,TYPE_B,/개인회생비용,/부산개인회생법무사,thin,NO_NEW_URL,no,high-if-created
+개인회생 법무사 수수료,rehab,TYPE_B,/개인회생비용,/개인회생보수표,thin,NO_NEW_URL,no,high-if-created
+부산 개인파산 비용,bankruptcy,TYPE_B,/개인파산비용,/부산개인파산,partial,OVERLAY,no,low
+부산 임차권등기명령 비용,lease,TYPE_B,/임차권등기명령비용,/부산임차권등기명령,partial,OVERLAY,no,low
+근저당 말소 비용,mortgage,TYPE_B,/근저당말소비용,/부산근저당말소등기,partial,OVERLAY,no,low
+증여등기 비용,gift,TYPE_B,/증여등기비용,/부산증여등기,partial,OVERLAY,no,low
+부산 법무사 저렴한 곳,compare,TYPE_A,/부산법무사비용,/부산법무사비교,thin,ABSORB_COMPARE_SECTION,no,low
+부산 법무사 싼곳,compare,TYPE_A,/부산법무사비용,/부산법무사비교,thin,NO_CHEAPEST_CLAIM,no,low
+부동산등기 비용,registry,TYPE_B,/부동산등기비용,/부산등기법무사,partial,STRENGTHEN,no,watch
+소유권이전 수임료,ownership,TYPE_B,/소유권이전등기비용,/부산소유권이전등기,partial,NO_NEW_URL,no,high-if-created
+법인설립 수임료,corp-est,TYPE_B,/법인설립등기비용,/부산법인설립등기,partial,NO_NEW_URL,no,high-if-created

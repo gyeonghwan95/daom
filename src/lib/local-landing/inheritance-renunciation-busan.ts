@@ -187,6 +187,7 @@ export function buildBusanInheritanceRenunciationPage(
       { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
       { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
       { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
+      { href: "/상속포기비용", label: "상속포기 비용 구조" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/상속", label: "상속 종합 허브" },

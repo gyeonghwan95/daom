@@ -1,0 +1,9 @@
+QUERY,TITLE overlap,H1 overlap,Intro overlap,Keyword overlap,Inbound anchor overlap,Page purpose overlap,SCORE,EVIDENCE
+부산 개인회생 vs 부산 개인회생 법무사,High,High,Medium,High,High,High,High,production /부산개인회생 H1=부산 개인회생 법무사 상담; /부산개인회생법무사 H1=부산 개인회생 법무사…
+부산 회생 법무사 vs 부산 개인회생 법무사,Medium,Medium,Medium,High,Medium,High,High,/부산회생법무사 exists as synonym; must stay SUPPORT
+부산 회생파산 법무사 vs 부산 개인회생,Medium,Medium,Medium,Medium,Medium,Medium,Medium,production /개인회생파산 H1 packs 개인회생·개인파산·면책 상담
+부산 등기 법무사 vs 부산 법무사 등기,Low,Low,Low,Low,Low,Low,Low,same PRIMARY /부산등기법무사
+부산 상속 법무사 vs 부산 법무사 상속 vs 상속전문,Low,Low,Low,Low,Low,Low,Low,same PRIMARY /부산상속법무사
+부산 법무사 HOME vs /부산법무사,Low,Low,Low,Medium,Medium,Low,Low,HOME exact champion; /부산법무사 is selection guide
+구 단위 개인회생 vs /부산개인회생,Medium,High,High,High,High,Medium,High,북구/사상/수영 H1=○○ 개인회생 법무사 상담 + 등기 대리 description
+HOME vs 전 클러스터,Low,Low,Low,Low,Medium,Low,Low,HOME already broad; do not add query stuffing

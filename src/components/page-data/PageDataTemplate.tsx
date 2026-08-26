@@ -52,6 +52,7 @@ import {
   corporateLegalHeroCta,
   corporateLegalInquiryHref,
 } from "@/lib/local-landing/corporate-legal-operations-modules";
+import { shouldShowNaverBlogMoreCta } from "@/lib/naver-blog/more-posts-cta";
 
 /** thin/long-tail SEO 랜딩 — 키워드 chip 도배 억제 (meta keywords는 유지) */
 const KEYWORD_CHIP_SUPPRESS_CATEGORIES = new Set<PageData["category"]>([
@@ -175,6 +176,7 @@ export function PageDataTemplate({
         ctaHref={isCorporateLegalOps ? corporateLegalInquiryHref : "/contact/inquiry"}
         showDiagnosisCta={false}
         showAboutLawyerCta
+        showNaverBlogCta={shouldShowNaverBlogMoreCta(page.path)}
         showNationwideChip={showNationwide}
       />
 

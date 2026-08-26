@@ -1,0 +1,11 @@
+query,cluster,search_evidence,notes
+부산 법무사 비용,general,SERP page fetched 2026-08-26 — ads present; organic rank not parsed,Do not invent volume
+부산 법무사 수임료,general,not separately fetched,Same family as 비용
+부산 법무사 수수료,general,not fetched,Same family
+부산 상속등기 비용,inh,not fetched,Covered by /상속등기비용
+부산 개인회생 비용,rehab,not fetched,Covered by /개인회생비용
+부산 법인설립 비용,corp,not fetched,Covered by /법인설립등기비용
+부산 소유권이전등기 비용,re,not fetched,Covered by /소유권이전등기비용
+부산 임차권등기명령 비용,lease,not fetched,Covered by /임차권등기명령비용
+근저당 말소 비용,mortgage,not fetched,Covered by /근저당말소비용
+부산 법무사 싼곳,compare,not fetched,Absorb into compare checklist — no 최저가

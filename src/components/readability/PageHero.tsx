@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
 import { KeywordBadges } from "./KeywordBadges";
@@ -21,6 +22,8 @@ type PageHeroProps = {
   showDiagnosisCta?: boolean;
   /** 단일 상담 CTA일 때 '안윤정 법무사는 누구일까?' 버튼 표시 */
   showAboutLawyerCta?: boolean;
+  /** '안윤정 법무사는 누구일까?' 오른쪽에 네이버 블로그 더보기 버튼 */
+  showNaverBlogCta?: boolean;
   /** H1 위 좌측 — 전국 업무 가능 chip */
   showNationwideChip?: boolean;
   /** 상담 신청 CTA 옆 네이버 예약 (기본: 상담/문의 경로일 때) */
@@ -49,6 +52,7 @@ export function PageHero({
   secondaryCta,
   showDiagnosisCta = true,
   showAboutLawyerCta = true,
+  showNaverBlogCta = false,
   showNationwideChip = false,
   showNaverReservation,
   sideImage,
@@ -90,6 +94,9 @@ export function PageHero({
     showNaverReservation !== false &&
     Boolean(ctaLabel) &&
     isConsultCtaHref(ctaHref);
+  const secondaryBtnClass = showNaverBlogCta
+    ? "btn-secondary inline-flex min-h-12 items-center justify-center gap-1.5 px-4 sm:px-5"
+    : "btn-secondary inline-flex min-h-12 items-center justify-center px-6";
 
   const ctaBlock = ctaLabel ? (
     <div className="mt-5 flex flex-col gap-3 md:mt-6">
@@ -107,22 +114,19 @@ export function PageHero({
           </Link>
         }
       />
-      {resolvedSecondary || showDiagnosisCta ? (
-        <div className="flex flex-wrap gap-3">
+      {resolvedSecondary || showDiagnosisCta || showNaverBlogCta ? (
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {resolvedSecondary ? (
-            <Link
-              href={resolvedSecondary.href}
-              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-            >
+            <Link href={resolvedSecondary.href} className={secondaryBtnClass}>
               {resolvedSecondary.label}
             </Link>
           ) : showDiagnosisCta ? (
-            <Link
-              href="/자가진단"
-              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-            >
+            <Link href="/자가진단" className={secondaryBtnClass}>
               자가진단 보기
             </Link>
+          ) : null}
+          {showNaverBlogCta ? (
+            <NaverBlogMorePostsButton className={secondaryBtnClass} />
           ) : null}
         </div>
       ) : null}

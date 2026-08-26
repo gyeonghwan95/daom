@@ -40,12 +40,27 @@ function LinkGroup({
   );
 }
 
+const RELATED_DISPLAY_CAP = 12;
+
 export function RelatedRecommendationsDisplay({
   groups,
   title = "함께 보면 좋은 글",
   className = "",
 }: RelatedRecommendationsDisplayProps) {
   if (!hasRecommendationGroups(groups)) return null;
+
+  const cappedGroups: {
+    key: (typeof RECOMMENDATION_GROUP_ORDER)[number];
+    links: { href: string; label: string }[];
+  }[] = [];
+  let remaining = RELATED_DISPLAY_CAP;
+  for (const key of RECOMMENDATION_GROUP_ORDER) {
+    const links = groups[key];
+    if (!links?.length || remaining <= 0) continue;
+    const sliced = links.slice(0, remaining);
+    remaining -= sliced.length;
+    cappedGroups.push({ key, links: sliced });
+  }
 
   return (
     <section
@@ -61,17 +76,13 @@ export function RelatedRecommendationsDisplay({
       </p>
 
       <div className="mt-5 space-y-6">
-        {RECOMMENDATION_GROUP_ORDER.map((key) => {
-          const links = groups[key];
-          if (!links?.length) return null;
-          return (
-            <LinkGroup
-              key={key}
-              title={RECOMMENDATION_GROUP_LABELS[key]}
-              links={links}
-            />
-          );
-        })}
+        {cappedGroups.map(({ key, links }) => (
+          <LinkGroup
+            key={key}
+            title={RECOMMENDATION_GROUP_LABELS[key]}
+            links={links}
+          />
+        ))}
       </div>
     </section>
   );

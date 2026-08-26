@@ -171,6 +171,7 @@ export function buildBusanQualifiedAcceptancePage(
       { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택 안내" },
       { href: "/부산상속포기", label: "부산 상속포기 안내" },
+      { href: "/한정승인비용", label: "한정승인 비용 구조" },
       { href: "/부산상속등기", label: "부산 상속등기 서류·진행 순서" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/한정승인자가진단", label: "한정승인 자가진단" },

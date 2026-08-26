@@ -1,0 +1,12 @@
+candidate,gate_independent_intent,gate_page_too_long,gate_unique_structure,gate_distinct,gate_parent_hub,gate_conversion,decision,reason
+/부산법무사비용,yes,n/a,yes,yes,yes,yes,EXISTING,General Cost Hub already live
+/부산상속등기비용,yes,no,partial,no,yes,yes,DO_NOT_CREATE,Family owned by /상속등기비용
+/부산상속등기수임료,no,no,no,no,yes,yes,DO_NOT_CREATE,Synonym of 상속등기 비용
+/부산상속등기수수료,no,no,no,no,yes,yes,DO_NOT_CREATE,Synonym of 상속등기 비용
+/부산법무사수임료,no,no,no,no,yes,yes,KEEP_EXISTING_SUPPORT,URL already exists; not a second hub
+/부산법무사수수료,no,no,no,no,yes,yes,DO_NOT_CREATE,Same family as /부산법무사비용
+/부산개인회생수임료,no,no,no,no,yes,yes,DO_NOT_CREATE,Family owned by /개인회생비용
+/소유권이전등기비용,yes,n/a,yes,yes,yes,yes,EXISTING,Upgrade overlay only
+/개인회생비용,yes,n/a,yes,yes,yes,yes,EXISTING,Upgrade overlay only
+/근저당말소비용,yes,n/a,yes,yes,yes,yes,EXISTING,Upgrade overlay only — already live URL
+/임차권등기명령비용,yes,n/a,yes,yes,yes,yes,EXISTING,Upgrade overlay only — already live URL

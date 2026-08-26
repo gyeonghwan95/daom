@@ -155,6 +155,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
+        showNaverBlogCta
         showNationwideChip={showNationwide}
       />
 
@@ -314,6 +315,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
           description="업무명을 정확히 모르거나 준비된 서류가 없어도 괜찮습니다. 현재 상황을 남겨주시면 필요한 절차와 준비자료부터 확인할 수 있습니다."
           buttonLabel={consultationInquiryCopy.ctaPrimary}
           inquiryField={situation.serviceSlug}
+          showNaverBlogCta
         />
       </div>
     </article>

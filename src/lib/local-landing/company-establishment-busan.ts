@@ -166,6 +166,7 @@ export function buildBusanCompanyEstablishmentPage(
     ],
     relatedServiceLinks: [
       { href: "/부산법인등기", label: "부산 법인등기 — 변경등기 허브" },
+      { href: "/법인설립등기비용", label: "설립 비용 구조" },
       { href: "/법인정관업무", label: "법인 정관 업무 안내" },
       { href: "/법인정관인증확인", label: "정관 인증 필요 여부" },
       { href: "/법인공증준비", label: "법인 공증 준비 안내" },

@@ -3261,7 +3261,11 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .readability-checklist__item {
     color: var(--text-body);
-    @apply flex gap-2.5 text-[1.015rem] leading-[1.7] md:text-base;
+    @apply flex min-w-0 gap-2.5 text-[1.015rem] leading-[1.7] md:text-base;
+  }
+
+  .readability-checklist__item span:last-child {
+    @apply min-w-0 break-words;
   }
 
   .readability-checklist__mark {
@@ -3520,7 +3524,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .comparison-card__row {
-    @apply grid grid-cols-[7rem_1fr] gap-2 py-1.5 text-sm;
+    @apply grid grid-cols-[minmax(5.5rem,7rem)_minmax(0,1fr)] gap-2 py-1.5 text-sm;
   }
 
   .comparison-card__label {
@@ -3530,7 +3534,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .comparison-card__value {
     color: var(--text-body);
-    @apply leading-snug;
+    @apply min-w-0 break-words leading-snug;
   }
 
   /* Glossary search hub */
@@ -6298,6 +6302,7 @@ body.quick-inquiry-open {
 .admin-section .admin-funnel,
 .admin-section .admin-funnel-bars,
 .admin-section .admin-activity,
+.admin-section .admin-activity-chart,
 .admin-section .admin-health-list,
 .admin-section .admin-trend {
   background: #fff;
@@ -6628,14 +6633,23 @@ a.admin-page-identity__path:hover {
   margin: 0;
   padding: 0;
   font-size: 0.8125rem;
+  max-height: 22rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .admin-activity li {
   display: grid;
   grid-template-columns: 4.75rem minmax(0, 1fr) auto auto minmax(0, 1.4fr);
   gap: 0.5rem;
   align-items: start;
-  padding: 0.45rem 0;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px solid #f1f5f9;
+}
+.admin-activity li.is-today {
+  background: #eff6ff;
+}
+.admin-activity li:last-child {
+  border-bottom: 0;
 }
 .admin-activity time {
   display: flex;
@@ -6664,9 +6678,14 @@ a.admin-page-identity__path:hover {
 .admin-hourly {
   position: relative;
 }
+.admin-activity-chart {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
 .admin-hourly__legend {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
   font-size: 0.75rem;
   color: #64748b;
   margin-bottom: 0.5rem;
@@ -6679,6 +6698,7 @@ a.admin-page-identity__path:hover {
   margin-right: 0.25rem;
 }
 .admin-hourly__dot--today { background: #2563eb; }
+.admin-hourly__dot--yesterday { background: #d97706; }
 .admin-hourly__dot--avg { background: #94a3b8; }
 .admin-hourly__chart {
   display: grid;
@@ -6722,6 +6742,7 @@ a.admin-page-identity__path:hover {
   border-radius: 2px 2px 0 0;
 }
 .admin-hourly__bar--today { background: #2563eb; }
+.admin-hourly__bar--yesterday { background: #f59e0b; }
 .admin-hourly__bar--avg { background: #cbd5e1; }
 .admin-hourly__col.is-now .admin-hourly__bar--today {
   background: #1d4ed8;
@@ -6738,6 +6759,64 @@ a.admin-page-identity__path:hover {
   font-size: 0.8125rem;
   color: #475569;
   line-height: 1.5;
+}
+.admin-activity-chart__bars {
+  display: grid;
+  gap: 6px;
+  height: 9.5rem;
+  align-items: end;
+  padding: 0.25rem 0 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 70%);
+  border-radius: 0.5rem;
+}
+.admin-activity-chart__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0.15rem 0 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  border-radius: 0.35rem;
+}
+.admin-activity-chart__col.is-active,
+.admin-activity-chart__col.is-today.is-active {
+  background: rgba(37, 99, 235, 0.08);
+}
+.admin-activity-chart__value {
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  color: #64748b;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  min-height: 0.7rem;
+}
+.admin-activity-chart__bar {
+  width: 70%;
+  max-width: 2.25rem;
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: #94a3b8;
+}
+.admin-activity-chart__bar.is-today {
+  background: #2563eb;
+}
+.admin-activity-chart__tick {
+  font-size: 0.62rem;
+  color: #64748b;
+  margin-top: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+.admin-activity-chart__col.is-today .admin-activity-chart__tick {
+  color: #1d4ed8;
+  font-weight: 700;
 }
 .admin-sr-table {
   position: absolute;

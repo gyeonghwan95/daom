@@ -46,7 +46,7 @@ export function BusanDistrictCard({ district }: BusanDistrictCardProps) {
 
       <div className="mt-4">
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy-light">
-          관련 키워드
+          주요 상담 주제
         </p>
         <p className="mt-1.5 text-sm leading-relaxed text-navy/65">
           {district.keywords.join(", ")}

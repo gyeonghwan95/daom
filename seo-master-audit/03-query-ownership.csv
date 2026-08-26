@@ -1,0 +1,14 @@
+QUERY,INTENT,PRIMARY URL,SUPPORTING URLS,COMPETING URLS,CURRENT PROBLEM,ACTION,PROTECTION LEVEL
+부산 법무사,broad local judicial-scrivener,/,/부산법무사|/부산법무사상담|/부산법무사추천,/부산법무사,HOME title/H1 already match champion — do not retitle,KEEP_HOME,PROTECT
+부산법무사,same as 부산 법무사,/,/부산법무사,/부산법무사,compact-query champion already /,KEEP,PROTECT
+부산 개인회생,rehab procedure hub,/부산개인회생,/개인회생파산|/부산개인회생법무사|/부산회생법원개인회생,/부산개인회생법무사|/북구개인회생,production H1 is 법무사 상담 + 등기 template leak,REWRITE_HUB,HIGH
+부산 개인회생 법무사,commercial eligibility,/부산개인회생법무사,/부산개인회생|/개인회생파산|/부산회생법무사,/부산개인회생|/부산회생법무사,production breadcrumb still 검색의도 안내,PRESERVE_STRENGTHEN,PROTECT_CONTENT
+부산 회생 법무사,mostly personal-rehab commercial,/부산개인회생법무사,/부산회생법무사|/부산개인회생|/개인회생파산,/부산회생법무사,existing synonym page must not become PRIMARY,SUPPORT_ONLY,WATCH
+부산 회생파산 법무사,rehab vs bankruptcy choice,/개인회생파산,/부산개인회생|/부산개인파산법무사|/부산개인회생법무사,/부산개인회생법무사,production H1 is 상담 dump not comparison,REBUILD_COMPARISON,HIGH
+부산 개인파산 법무사,bankruptcy commercial,/부산개인파산법무사,/개인회생파산|/services/bankruptcy,/개인회생파산,generic search-intent eyebrow,LIGHT_UX,MEDIUM
+부산 등기 법무사,registry hub,/부산등기법무사,/부산소유권이전등기|/부산부동산등기|/부산법인등기,none material,title/H1 already precise,PROTECT,PROTECT
+부산 법무사 등기,same as 부산 등기 법무사,/부산등기법무사,/부산부동산등기,none,do not create /부산법무사등기,NO_NEW_URL,PROTECT
+부산 상속 법무사,inheritance procedure choice,/부산상속법무사,/부산상속등기|/부산상속포기|/부산한정승인|/상속,none material,structure/nav not title surgery,PROTECT_CONTENT
+부산 법무사 상속,same as 부산 상속 법무사,/부산상속법무사,/상속,none,do not create /부산법무사상속,NO_NEW_URL,PROTECT
+부산 상속전문 법무사,same choice hub not certification,/부산상속법무사,/부산상속등기,none,do not create /부산상속전문법무사; no 전문 표방,NO_NEW_URL,PROTECT
+부산 개인파산,procedure vs commercial split,/부산개인파산|/services/bankruptcy,/개인회생파산,/부산개인파산법무사,keep supporting,KEEP,WATCH

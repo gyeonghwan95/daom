@@ -10,7 +10,6 @@ import {
   championExtraRelatedLinks,
   championExtraSummaryParagraphs,
   championExtraWhenNeeded,
-  championSituationMap,
 } from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
 import { corporateLegalExtraFaqs } from "./corporate-legal-operations-modules";
@@ -113,13 +112,7 @@ export function buildKeywordHubPage(
   const whenNeeded = isInheritanceChampion
     ? [...topic.whenNeeded, ...championExtraWhenNeeded]
     : topic.whenNeeded;
-  const procedures = isInheritanceChampion
-    ? [
-        "상황별 필요 절차 가리기(아래 선택표)",
-        ...championSituationMap,
-        ...topic.procedures,
-      ]
-    : topic.procedures;
+  const procedures = topic.procedures;
   const faqs = isInheritanceChampion
     ? [...topic.faqs, ...championExtraFaqs]
     : isCorporateLegalOps
@@ -187,6 +180,47 @@ export function buildKeywordHubPage(
     lawyerOpinion,
     directionsNote: buildDirectionsNote(config),
     ctaDescription,
+    extraPageSections: isInheritanceChampion
+      ? [
+          {
+            title: "지금 필요한 상속 절차",
+            body: "부동산 명의이전, 채무 걱정, 가족 간 분배는 준비서류와 기한이 다릅니다. 검색어 나열이 아니라 지금 상황에 가까운 안내로 이어가시면 됩니다.",
+            items: [
+              "부동산만 정리 → 상속등기",
+              "빚이 걱정 → 상속포기·한정승인",
+              "가족끼리 나누기 → 협의분할",
+              "해외 상속인 → 특수 상속 안내",
+              "3개월이 임박 → 포기·한정승인 기한 확인",
+            ],
+            links: [
+              { href: "/부산상속등기", label: "부동산 명의이전(상속등기)" },
+              { href: "/부산상속포기", label: "상속포기 안내" },
+              { href: "/부산한정승인", label: "한정승인 안내" },
+              { href: "/상속", label: "상속 종합 허브" },
+            ],
+          },
+        ]
+      : isRegistryHub
+        ? [
+            {
+              title: "어떤 등기가 필요하신가요?",
+              body: "원인에 따라 준비서류와 순서가 달라집니다. 부산에서 법무사에게 등기를 맡길 때는 아래 유형부터 고르시면 됩니다.",
+              items: [
+                "매매 잔금 → 소유권이전",
+                "부모→자녀 → 증여등기",
+                "상속 부동산 → 상속등기",
+                "대출 상환 → 근저당말소",
+                "회사 변경 → 법인등기",
+              ],
+              links: [
+                { href: "/부산소유권이전등기", label: "소유권이전등기" },
+                { href: "/부산상속등기", label: "상속등기" },
+                { href: "/부산근저당말소등기", label: "근저당말소" },
+                { href: "/부산법인등기", label: "법인등기" },
+              ],
+            },
+          ]
+        : [],
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
     relatedServiceLinks: internalLinks,
     relatedRegionLinks: [],

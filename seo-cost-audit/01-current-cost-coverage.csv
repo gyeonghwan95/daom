@@ -1,0 +1,31 @@
+url,role,intent,has_fee_table,fee_vs_expense_split,notes
+/부산법무사비용,PRIMARY_GENERAL,TYPE_A,no,yes,COST_CHAMPION
+/부산법무사보수표,SUPPORT,TYPE_A,reference only,yes,협회 상한 참고 — 숫자 미게시
+/상속등기비용,PRIMARY,TYPE_B,no,yes,conversion
+/상속포기비용,PRIMARY,TYPE_B,no,yes,법원 실비
+/한정승인비용,PRIMARY,TYPE_B,no,yes,
+/법인설립등기비용,PRIMARY,TYPE_B,no,yes,
+/개인회생비용,PRIMARY,TYPE_B,no,yes,seo-landing overlay
+/개인파산비용,PRIMARY,TYPE_B,no,yes,
+/소유권이전등기비용,PRIMARY,TYPE_B,no,yes,
+/부동산등기비용,PRIMARY_REGISTRY,TYPE_B,no,yes,
+/법인등기비용,PRIMARY_CORP_CHANGE,TYPE_B,no,yes,
+/증여등기비용,PRIMARY,TYPE_B,no,yes,
+/근저당말소비용,PRIMARY,TYPE_B,no,yes,seo-landing overlay
+/임차권등기명령비용,PRIMARY,TYPE_B,no,yes,seo-landing overlay
+/부산법인등기비용,SUPPORT,TYPE_B,no,yes,부산 로컬 보조
+/상속등기보수표,SUPPORT,TYPE_B,no,yes,PRIMARY=/상속등기비용
+/개인회생보수표,SUPPORT,TYPE_B,no,yes,PRIMARY=/개인회생비용
+/부동산등기보수표,SUPPORT,TYPE_B,no,yes,
+/부산법무사수임료,SUPPORT_SYNONYM,TYPE_A,no,yes,URL 보존
+/부산법무사보수,SUPPORT_SYNONYM,TYPE_A,no,yes,URL 보존
+/법무사비용,SUPPORT_SYNONYM,TYPE_A,no,yes,URL 보존
+/법무사수임료,SUPPORT_SYNONYM,TYPE_A,no,yes,URL 보존
+/법무사보수,SUPPORT_SYNONYM,TYPE_A,no,yes,URL 보존
+/등기비용,SUPPORT_SYNONYM,TYPE_B,no,yes,URL 보존
+/왜상속등기비용이다를까,SUPPORT,TYPE_B,no,yes,
+/왜개인회생비용이다를까,SUPPORT,TYPE_B,no,yes,
+/왜법인등기비용이다를까,SUPPORT,TYPE_B,no,yes,
+/부산상속포기,SERVICE+SECTION,TYPE_B,no,yes,title/H1 보호
+/부산개인회생,SERVICE+SECTION,TYPE_B,no,yes,
+/부산등기법무사,SERVICE+SECTION,TYPE_B,no,yes,title/H1 보호

@@ -1,13 +1,13 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-20T16:13:49.444Z
+# 생성: 2026-08-26T12:05:13.385Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1662 (제외 140)
+# 총 URL: 1665 (제외 140)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 208개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 565개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 568개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 579개
 # Tier 7 — 후순위 (블로그): 53개
@@ -282,7 +282,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (208개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (565개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (568개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -424,6 +424,7 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (565개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%ED%98%91%EB%A0%A5%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산협력법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%AA%A8%EC%9E%90%EB%85%80%EC%95%84%ED%8C%8C%ED%8A%B8%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0	/부산부모자녀아파트증여등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%B6%80%EA%B0%84%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0	/부산부부간증여등기
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EC%9E%AC%EC%9E%90%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8	/부산부재자재산관리인
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%84%EC%96%91%EB%93%B1%EA%B8%B0	/부산분양등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/부산비영리법인변경등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/부산비영리법인설립등기
@@ -439,6 +440,7 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (565개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속등기전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산상속법무사추천
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8	/부산상속재산관리인
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속재산분할법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산상속포기
@@ -479,6 +481,7 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (565개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%AC%EA%B0%9C%EB%B0%9C%EB%93%B1%EA%B8%B0	/부산재개발등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%AC%EA%B1%B4%EC%B6%95%EB%93%B1%EA%B8%B0	/부산재건축등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%AC%EB%8B%A8%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/부산재단법인설립
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%AC%EC%82%B0%EB%AA%85%EC%8B%9C	/부산재산명시
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EA%B6%8C%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0	/부산전세권말소등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EA%B6%8C%EC%84%A4%EC%A0%95%EB%93%B1%EA%B8%B0	/부산전세권설정등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EB%B3%B4%EC%A6%9D%EA%B8%88%EB%B0%98%ED%99%98%EB%B2%95%EB%AC%B4%EC%82%AC	/부산전세보증금반환법무사

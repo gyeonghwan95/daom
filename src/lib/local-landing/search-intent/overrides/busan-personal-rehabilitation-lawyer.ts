@@ -141,13 +141,36 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
     { href: "/부산파산", label: "부산 개인파산 안내" },
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/tools/rehab-income-debt-check", label: "소득·채무 점검 도구" },
+    { href: "/개인회생비용", label: "개인회생 비용 구조" },
     { href: "/부산법무사", label: "부산 법무사 종합 허브" },
-    { href: "/부산법무사비용", label: "비용·수임료 안내" },
   ],
   relatedGuideLinks: [
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },
     { href: "/glossary/personal-rehabilitation", label: "개인회생 용어 설명" },
     { href: "/contact/inquiry", label: "1분만에 문의하기" },
+  ],
+  breadcrumbParent: { href: "/부산개인회생", label: "부산 개인회생" },
+  situationNav: [
+    {
+      title: "급여는 있으나 빚을 감당하기 어렵다",
+      description: "소득·채무·재산으로 신청 가능성을 가늠합니다.",
+      href: "#article-body",
+    },
+    {
+      title: "개인회생 절차·서류가 궁금하다",
+      description: "부산회생법원 준비 허브로 이동합니다.",
+      href: "/부산개인회생",
+    },
+    {
+      title: "회생과 파산 중 아직 고르지 못했다",
+      description: "비교 허브에서 먼저 나눕니다.",
+      href: "/개인회생파산",
+    },
+    {
+      title: "급여·통장이 압류됐다",
+      description: "압류가 있는 경우의 확인 포인트를 봅니다.",
+      href: "/부산개인회생",
+    },
   ],
   bottomCtaText:
     "월 소득, 채무 규모, 재산 현황을 기준으로 신청 가능성을 확인해보세요. 결과는 개별 사정에 따라 달라질 수 있습니다.",

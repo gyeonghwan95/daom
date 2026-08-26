@@ -1,0 +1,32 @@
+# 색인 등록 목록 — SEO Gap Discovery Wave1 (2026-08-26)
+# 배포 완료 후 Search Advisor URL 검사·IndexNow.
+# CREATE_NEW=3 — 신규 indexable URL 우선 제출.
+
+기준 도메인: https://다옴법무사사무소.kr
+
+## P0 — 신규 TRUE GAP (필수)
+
+https://다옴법무사사무소.kr/부산재산명시
+https://다옴법무사사무소.kr/부산부재자재산관리인
+https://다옴법무사사무소.kr/부산상속재산관리인
+
+## P1 — Parent Hub (신규 연결 반영, 재수집 권장)
+
+https://다옴법무사사무소.kr/민사소송
+https://다옴법무사사무소.kr/가족후견
+https://다옴법무사사무소.kr/상속
+https://다옴법무사사무소.kr/공탁채권회수
+
+## P2 — 기존 강화 페이지 (본문·키워드 흡수, 재수집 권장)
+
+https://다옴법무사사무소.kr/가압류신청서류준비
+https://다옴법무사사무소.kr/채권압류추심서류준비
+https://다옴법무사사무소.kr/부산개명허가
+https://다옴법무사사무소.kr/부산유언검인
+
+## 제출 메모
+
+- 반드시 **배포 후** 제출 (로컬만 반영된 상태면 색인 실패).
+- IndexNow는 sitemap add/lastmod 기준 — 신규 3개는 sitemap 반영 확인 후.
+- 하루 과다 제출 금지: P0 → P1 → P2 순.
+- 기존 URL 변경/삭제/redirect: 0

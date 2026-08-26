@@ -170,6 +170,7 @@ export function buildBusanInheritanceRegistrationPage(
       { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
       { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
+      { href: "/상속등기비용", label: "상속등기 공과금과 보수" },
       { href: "/부산한정승인", label: "부산 한정승인" },
       { href: "/부산상속포기", label: "부산 상속포기" },
       { href: "/부산유언검인", label: "유언검인 신청 안내" },

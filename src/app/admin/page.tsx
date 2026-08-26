@@ -6,6 +6,10 @@ import { AlertCenter } from "@/components/admin/AlertCenter";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { HourlyTrafficChart } from "@/components/admin/charts/HourlyTrafficChart";
 import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
+import {
+  ActivityByDayChart,
+  buildActivityByDay,
+} from "@/components/admin/charts/ActivityByDayChart";
 import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
@@ -159,9 +163,10 @@ export default function AdminDashboardPage() {
         <AlertCenter alerts={data.alerts} />
       </AdminSection>
 
-      <AdminSection title="오늘 시간대별 페이지뷰">
+      <AdminSection title="시간대별 페이지뷰">
         <HourlyTrafficChart
           today={data.hourlyToday}
+          yesterday={data.hourlyYesterday}
           avg7Day={data.hourly7DayAvg}
           insights={data.hourlyInsights}
         />
@@ -283,25 +288,29 @@ export default function AdminDashboardPage() {
         {!data.recentActivity?.length ? (
           <p className="admin-empty">최근 CTA·검색·계산기·문의 기록이 없습니다.</p>
         ) : (
-          <ul className="admin-activity">
-            {data.recentActivity.map((a) => {
-              const when = formatAdminActivityAt(a.at);
-              return (
-                <li key={a.id}>
-                  <time dateTime={a.at} title={when.title}>
-                    <span className="admin-activity__date">{when.dateLabel}</span>
-                    <span className="admin-activity__time">{when.timeLabel}</span>
-                  </time>
-                  <PageIdentity path={a.path} compact />
-                  <span>{getSourceLabel(a.referrerType)}</span>
-                  <span className={getDeviceBadgeClass(a.deviceType)}>
-                    {getDeviceLabel(a.deviceType)}
-                  </span>
-                  <span>{formatActivityAction(a.eventType, a.meta)}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <>
+            <ActivityByDayChart days={buildActivityByDay(data.recentActivity)} />
+            <ul className="admin-activity">
+              {data.recentActivity.map((a) => {
+                const when = formatAdminActivityAt(a.at);
+                const isToday = when.dateLabel === "오늘";
+                return (
+                  <li key={a.id} className={isToday ? "is-today" : undefined}>
+                    <time dateTime={a.at} title={when.title}>
+                      <span className="admin-activity__date">{when.dateLabel}</span>
+                      <span className="admin-activity__time">{when.timeLabel}</span>
+                    </time>
+                    <PageIdentity path={a.path} compact />
+                    <span>{getSourceLabel(a.referrerType)}</span>
+                    <span className={getDeviceBadgeClass(a.deviceType)}>
+                      {getDeviceLabel(a.deviceType)}
+                    </span>
+                    <span>{formatActivityAction(a.eventType, a.meta)}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
         )}
       </AdminSection>
 

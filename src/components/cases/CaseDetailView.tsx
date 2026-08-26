@@ -97,6 +97,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta
+        showNaverBlogCta
         showNationwideChip={shouldShowNationwideRegionChip(
           page.path,
           page.slug,
@@ -218,6 +219,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
           title="비슷한 상황이라면 서류와 절차를 확인해 보세요"
           description={page.ctaText}
           buttonLabel={consultationInquiryCopy.ctaPrimary}
+          showNaverBlogCta
         />
       </div>
     </article>

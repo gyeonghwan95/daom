@@ -1,0 +1,13 @@
+query,family,primary,competing_urls,current_cost_info,current_title_note,action
+부산 법무사 비용,general,/부산법무사비용,/부산법무사수임료|/부산법무사보수|/법무사비용|/부산법무사보수표,항목 구분 있음,허브 H1 유지,STRENGTHEN_HUB
+부산 법무사 수임료,general,/부산법무사비용,/부산법무사수임료,factory 얇은 페이지였음,동의어 title 조정,SUPPORT_ONLY
+상속등기 비용,inh-reg,/상속등기비용,/상속등기보수표|/부산상속등기|/왜상속등기비용이다를까,conversion 얇았음,비용 page title OK,UNIQUE_CONTENT
+상속등기 수수료,inh-reg,/상속등기비용,(none created),n/a,n/a,DO_NOT_CREATE
+개인회생 비용,rehab,/개인회생비용,/개인회생보수표|/왜개인회생비용이다를까|/부산개인회생,seo-landing 템플릿,overlay,UNIQUE_OVERLAY
+개인회생 수임료,rehab,/개인회생비용,/부산개인회생법무사,서비스 페이지 비용안내,H1 보호,NO_NEW_URL
+법인설립 비용,corp,/법인설립등기비용,/부산법인설립등기|/법인등기비용,conversion,비용 page,UNIQUE_CONTENT
+소유권이전 비용,re,/소유권이전등기비용,/부산소유권이전등기|/부동산등기비용,seo-landing 템플릿,overlay,UNIQUE_OVERLAY
+부동산등기 허브 비용링크,re,/부동산등기비용,/상속등기비용(구 costHref),오연결이었음,허브,FIX_COSTHREF
+근저당 말소 비용,mortgage,/근저당말소비용,/부산근저당말소등기|/근저당말소보수표,seo-landing 템플릿이었음,overlay,UNIQUE_OVERLAY
+임차권등기명령 비용,lease,/임차권등기명령비용,/부산임차권등기명령|/임차권등기명령보수표,seo-landing 템플릿이었음,overlay,UNIQUE_OVERLAY
+임원변경등기 비용,corp,/법인등기비용,/임원변경등기비용|/본점이전등기비용,별도 허브 금지,SUPPORT_ONLY,NO_NEW_URL

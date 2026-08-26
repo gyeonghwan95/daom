@@ -42,6 +42,7 @@ import Link from "next/link";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -55,9 +56,17 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
   const conversionKey = resolveConversionKey(page);
   const service = allServiceDetails.find((s) => s.slug === content.serviceSlug);
 
+  const costFaqs = getCostFaqsForSlug(page.slug).filter(
+    (faq) => !content.faqs.some((row) => row.question === faq.question),
+  );
+  const displayFaqs = [...content.faqs, ...costFaqs];
+  const costSections = page.sections.filter((section) =>
+    section.id?.startsWith("cost-intent-"),
+  );
+
   const faqSchemaPage: PageData = {
     ...page,
-    faqs: content.faqs,
+    faqs: displayFaqs,
     includeFaqSchema: true,
   };
 
@@ -80,6 +89,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     { id: "article-body", label: "본문 안내" },
     ...(content.proseSections?.map((s) => ({ id: s.id, label: s.title })) ??
       []),
+    ...costSections.map((s) => ({
+      id: s.id ?? s.title,
+      label: s.title,
+    })),
     ...(content.officialSources?.length
       ? [{ id: "official-sources", label: "공식 법령·공공 안내" }]
       : []),
@@ -222,6 +235,26 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         </ContentSection>
       ))}
 
+      {costSections.map((section) => (
+        <ContentSection
+          key={section.id ?? section.title}
+          id={section.id ?? section.title}
+          title={section.title}
+        >
+          <p className="body-text max-w-3xl text-navy/80">{section.body}</p>
+          {section.items && section.items.length > 0 ? (
+            <div className="mt-4">
+              <ChecklistBox items={section.items} />
+            </div>
+          ) : null}
+          {section.links && section.links.length > 0 ? (
+            <div className="mt-6">
+              <RelatedContentGrid links={section.links} />
+            </div>
+          ) : null}
+        </ContentSection>
+      ))}
+
       {content.officialSources?.length ? (
         <ContentSection id="official-sources" title="공식 법령·공공 안내">
           <p className="mb-3 text-sm text-navy/75">
@@ -350,7 +383,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       </ContentSection>
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs} />
+        <FAQAccordion items={displayFaqs} />
       </ContentSection>
 
       {page.slug === "부산집단등기" ? <MassRegistryB2BAddon /> : null}

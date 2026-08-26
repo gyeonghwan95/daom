@@ -1,0 +1,10 @@
+check,before,after,status
+existing_url_changed,n/a,0,PASS
+existing_url_deleted,n/a,0,PASS
+unintended_redirect,n/a,0,PASS
+new_cost_urls,0,0,PASS
+canonical_merge_of_indexed_urls,0,0,PASS
+home_title_h1,unchanged,unchanged,PASS
+busan_registry_hub_title_h1,unchanged,unchanged,PASS
+busan_renunciation_title_h1,unchanged,unchanged,PASS
+busan_rehab_lawyer_title_h1,unchanged,unchanged,PASS

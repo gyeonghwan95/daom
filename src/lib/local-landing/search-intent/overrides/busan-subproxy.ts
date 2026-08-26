@@ -172,7 +172,7 @@ export const 부산등기복대리Override: SearchIntentContent = {
     { href: "/등기실무", label: "등기 실무 허브" },
     { href: "/부산집단등기", label: "부산 집단등기" },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },
-    { href: "/search-guides", label: "검색의도 안내" },
+    { href: "/search-guides", label: "상황별 안내 모음" },
   ],
   bottomCtaText:
     "관할과 접수일·서류 현황을 알려 주시면 복대리·접수 지원 가능 여부를 안내해 드립니다. 타지역 법무사 협업은 ‘부산 법무사 복대리’ 안내와 협업 문의로도 연락할 수 있습니다.",

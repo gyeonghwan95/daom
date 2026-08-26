@@ -173,8 +173,6 @@ export function DiagnosisResult({
         </ol>
       </ResultSection>
 
-      <DiagnosisResultRecommendations groups={recommendationGroups} />
-
       <p className="diagnosis-result__cta-message">
         {evaluation.outcome.ctaMessage ?? diagnosis.ctaText}
       </p>
@@ -185,6 +183,8 @@ export function DiagnosisResult({
         pageSlug={diagnosis.slug}
         showSecondaryLinks
       />
+
+      <DiagnosisResultRecommendations groups={recommendationGroups} />
 
       <button
         type="button"

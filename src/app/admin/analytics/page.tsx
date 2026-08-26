@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
+import { HourlyTrafficChart } from "@/components/admin/charts/HourlyTrafficChart";
 import { MetricCard, AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { SourceMix } from "@/components/admin/charts/SourceMix";
@@ -82,6 +83,17 @@ export default function AdminAnalyticsPage() {
         />
         <MetricCard label="7일 SmartPlace" value={k?.naverPlace7d ?? null} />
       </div>
+
+      {dash ? (
+        <AdminSection title="시간대별 페이지뷰">
+          <HourlyTrafficChart
+            today={dash.hourlyToday}
+            yesterday={dash.hourlyYesterday}
+            avg7Day={dash.hourly7DayAvg}
+            insights={dash.hourlyInsights}
+          />
+        </AdminSection>
+      ) : null}
 
       <AdminSection title="방문 추이 (일별)">
         {days.length === 0 ? (

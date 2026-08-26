@@ -1,0 +1,54 @@
+url,type,action,title_h1_changed,cost_section,unique_faq,notes
+/부산법무사비용,TYPE_A_HUB,strengthen,no,yes,yes,Navigator + compare checklist
+/부산법무사보수표,SUPPORT,strengthen,no,yes,yes,협회 기준 참고 — 숫자표 미복사
+/상속등기비용,TYPE_B,unique_content,no,yes,yes,PRIMARY 상속등기 비용 family
+/상속포기비용,TYPE_B,unique_content,no,yes,yes,법원 실비 구조
+/한정승인비용,TYPE_B,unique_content,no,yes,yes,조사 범위 + 등기 병행 구분
+/법인설립등기비용,TYPE_B,unique_content,no,yes,yes,자본금·임원
+/부산상속포기,SERVICE,add_section,no,yes,yes,H1 보호
+/부산한정승인,SERVICE,add_section,no,yes,yes,H1 보호
+/부산상속등기,SERVICE,add_section,no,yes,yes,링크 to /상속등기비용
+/부산상속법무사,SERVICE,add_section,no,yes,yes,절차별 비용 분기
+/부산등기법무사,SERVICE,add_section,no,yes,yes,H1 보호
+/부산소유권이전등기,SERVICE,add_section,no,yes,yes,취득세 ≠ 보수
+/부산법인설립등기,SERVICE,add_section,no,yes,yes,링크 to 설립비용
+/부산법인등기,SERVICE,add_section,no,yes,yes,변경 vs 설립
+/부산법인등기비용,SERVICE,add_section,no,yes,yes,PRIMARY는 /법인등기비용
+/부산개인회생,SERVICE,add_section,no,yes,yes,법원실비 vs 보수
+/부산개인회생법무사,SERVICE,add_section,no,yes,yes,H1 보호
+/개인회생파산,HUB,add_section,no,yes,yes,회생/파산 비용 분리
+/부산개인파산,SERVICE,add_section,no,yes,yes,
+/부산근저당말소등기,SERVICE,add_section,no,yes,yes,PRIMARY는 /근저당말소비용
+/부산임차권등기명령,SERVICE,add_section,no,yes,yes,PRIMARY는 /임차권등기명령비용
+/부산증여등기,SERVICE,add_section,no,yes,yes,H1 보호
+/개인회생비용,SEO_LANDING,overlay,no,yes,yes,PRIMARY 회생 비용 family
+/개인파산비용,SEO_LANDING,overlay,no,yes,yes,
+/소유권이전등기비용,SEO_LANDING,overlay,no,yes,yes,
+/부동산등기비용,SEO_LANDING,overlay,no,yes,yes,
+/법인등기비용,SEO_LANDING,overlay,no,yes,yes,
+/증여등기비용,SEO_LANDING,overlay,no,yes,yes,
+/근저당말소비용,SEO_LANDING,overlay,no,yes,yes,PRIMARY 말소 비용 family
+/임차권등기명령비용,SEO_LANDING,overlay,no,yes,yes,PRIMARY 임차권 비용 family
+/상속등기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /상속등기비용
+/개인회생보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /개인회생비용
+/부동산등기보수표,SEO_LANDING,overlay,no,yes,yes,
+/근저당말소보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /근저당말소비용
+/임차권등기명령보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /임차권등기명령비용
+/법인등기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /법인등기비용
+/법인설립등기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /법인설립등기비용
+/소유권이전등기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /소유권이전등기비용
+/상속포기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /상속포기비용
+/한정승인보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /한정승인비용
+/개인파산보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /개인파산비용
+/임원변경등기비용,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /법인등기비용
+/본점이전등기비용,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /법인등기비용
+/임원변경등기보수표,SEO_LANDING,overlay,no,yes,yes,SUPPORT of /법인등기비용
+/부산법무사수임료,SYNONYM,support_copy,title_adjusted,yes,yes,URL 유지 · PRIMARY는 허브
+/부산법무사보수,SYNONYM,support_copy,title_adjusted,yes,yes,URL 유지
+/법무사비용,SYNONYM,support_copy,title_adjusted,yes,yes,URL 유지
+/법무사수임료,SYNONYM,support_copy,title_adjusted,yes,yes,URL 유지
+/법무사보수,SYNONYM,support_copy,title_adjusted,yes,yes,URL 유지
+/등기비용,SYNONYM,support_copy,title_adjusted,yes,yes,PRIMARY는 /부동산등기비용
+/왜상속등기비용이다를까,SUPPORT,add_section,no,yes,yes,PRIMARY는 /상속등기비용
+/왜개인회생비용이다를까,SUPPORT,add_section,no,yes,yes,PRIMARY는 /개인회생비용
+/왜법인등기비용이다를까,SUPPORT,add_section,no,yes,yes,PRIMARY는 /법인등기비용

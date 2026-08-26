@@ -36,6 +36,7 @@
     "audit:yangsan": "npx --yes tsx scripts/audit-yangsan-content.ts",
     "audit:inheritance": "npx --yes tsx scripts/audit-inheritance-seo.ts",
     "check:inheritance-similarity": "npx --yes tsx scripts/check-inheritance-similarity.ts",
+    "seo:audit": "npx --yes tsx scripts/seo-high-competition-audit.ts",
     "seo:audit:priority": "npx --yes tsx scripts/audit-target-query-pages.ts && npx --yes tsx scripts/audit-seo-cannibalization.ts && npx --yes tsx scripts/audit-title-patterns.ts && npx --yes tsx scripts/audit-meta-descriptions.ts && npx --yes tsx scripts/audit-faq-duplicates.ts && npx --yes tsx scripts/audit-internal-link-authority.ts && npx --yes tsx scripts/audit-indexability.ts",
     "seo:audit:stations": "npx --yes tsx scripts/check-station-hosts.ts && npx --yes tsx scripts/check-station-coverage.ts && npx --yes tsx scripts/audit-station-seo.ts",
     "check:business-scope": "npx --yes tsx scripts/check-business-scope.ts",

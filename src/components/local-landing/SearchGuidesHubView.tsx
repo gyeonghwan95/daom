@@ -13,7 +13,7 @@ export function SearchGuidesHubView() {
   const groups = getSearchGuideEntriesByCategory();
   const breadcrumbs = [
     { label: "홈", href: "/" },
-    { label: "검색의도 안내" },
+    { label: "상황별 안내" },
   ];
 
   return (
@@ -23,9 +23,9 @@ export function SearchGuidesHubView() {
         <BreadcrumbJsonLd items={breadcrumbs} currentPath="/search-guides" />
 
         <PageHero
-          h1="검색의도 SEO 안내"
-          eyebrow="Search Intent Hub"
-          intro="업무명만이 아니라, 실제 고객이 검색하는 추천·비용·서류·기한·공공기관·건축주 키워드까지 상담 전 체크포인트로 정리했습니다. 기존에 있는 페이지는 URL을 유지한 채 연결하고, 새로운 검색의도만 추가로 안내합니다."
+          h1="상황별로 확인할 안내"
+          eyebrow="상담 전 체크포인트"
+          intro="추천·비용·서류·기한처럼 상담 전에 자주 묻는 주제를 모았습니다. 이미 있는 안내는 그대로 연결하고, 아직 없는 주제만 추가로 정리합니다."
           ctaLabel={consultationInquiryCopy.ctaShort}
           showDiagnosisCta={false}
           showAboutLawyerCta
@@ -60,8 +60,8 @@ export function SearchGuidesHubView() {
             <h2 className="section-heading">{group.label}</h2>
             <p className="mt-2 text-sm text-navy/60">
               {group.entries.filter((e) => e.existing).length > 0
-                ? "기존 페이지와 신규 검색의도 페이지를 함께 모았습니다."
-                : "검색 키워드별 랜딩 안내입니다."}
+                ? "이미 있는 안내와 추가로 정리한 주제를 함께 모았습니다."
+                : "주제별 상담 전 안내입니다."}
             </p>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {group.entries.map((entry) => (
@@ -74,7 +74,7 @@ export function SearchGuidesHubView() {
                     {entry.existing ? (
                       <span className="mt-1 text-xs text-navy/45">기존 안내 페이지</span>
                     ) : (
-                      <span className="mt-1 text-xs text-navy/45">검색의도 가이드</span>
+                      <span className="mt-1 text-xs text-navy/45">추가 안내</span>
                     )}
                   </Link>
                 </li>

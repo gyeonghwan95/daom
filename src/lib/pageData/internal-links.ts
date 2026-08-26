@@ -215,7 +215,8 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
     { href: "/공공기관등기업무", label: "공공기관 등기업무" },
-    { href: "/부산개인회생", label: "부산 개인회생" },
+    { href: "/부산개인회생", label: "부산 개인회생 절차" },
+    { href: "/개인회생파산", label: "회생·파산 비교" },
     { href: "/부산법무사비용", label: "부산 법무사 비용" },
     { href: "/부산지방법원등기국", label: "부산 법원·등기소 안내" },
     { href: "/명례산업단지법인등기", label: "부산 산업단지 법인등기" },
@@ -238,7 +239,7 @@ function championLinkForService(
   } else if ((REAL_ESTATE_SERVICES as readonly string[]).includes(serviceSlug)) {
     link = { href: "/부산부동산등기", label: "부산 부동산등기" };
   } else if ((REHAB_SERVICES as readonly string[]).includes(serviceSlug)) {
-    link = { href: "/부산개인회생", label: "부산 개인회생" };
+    link = { href: "/부산개인회생", label: "부산 개인회생 전체 절차 보기" };
   } else {
     link = { href: "/부산법무사", label: "부산 전역 업무 선택 안내" };
   }

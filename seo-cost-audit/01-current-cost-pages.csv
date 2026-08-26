@@ -1,0 +1,21 @@
+url,role,cost_h2,amount_table,fee_vs_expense,search_intent
+/부산법무사비용,PRIMARY_GENERAL,어떤 비용을 확인하시나요?,no,yes,TYPE_A
+/부산법무사보수표,SUPPORT,보수표는 확정 견적이 아닙니다,no,yes,TYPE_A
+/상속등기비용,PRIMARY,상속등기 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/상속포기비용,PRIMARY,상속포기 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/한정승인비용,PRIMARY,한정승인 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/법인설립등기비용,PRIMARY,법인설립 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/개인회생비용,PRIMARY,개인회생 비용을 좌우하는 요소,no,yes,TYPE_B
+/개인파산비용,PRIMARY,파산 비용이 회생과 다른 이유,no,yes,TYPE_B
+/소유권이전등기비용,PRIMARY,이전등기에서 세금과 보수를 나누는 이유,no,yes,TYPE_B
+/부동산등기비용,PRIMARY_REGISTRY,등기 원인별 비용 안내,no,yes,TYPE_B
+/법인등기비용,PRIMARY_CORP_CHANGE,설립과 변경을 나누는 이유,no,yes,TYPE_B
+/증여등기비용,PRIMARY,증여등기에서 세금 혼동을 줄이는 법,no,yes,TYPE_B
+/근저당말소비용,PRIMARY,근저당 말소 비용을 좌우하는 요소,no,yes,TYPE_B
+/임차권등기명령비용,PRIMARY,임차권등기명령 비용을 좌우하는 요소,no,yes,TYPE_B
+/부산상속포기,SERVICE,부산 상속포기 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/부산개인회생,SERVICE,부산 개인회생 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/부산등기법무사,SERVICE,부산 등기 법무사 비용을 확인할 때 볼 항목,no,yes,TYPE_B
+/부산증여등기,SERVICE,증여등기 법무사 비용을 확인할 때 볼 항목,no,yes,TYPE_B
+/부산근저당말소등기,SERVICE,근저당 말소 비용은 어떻게 정해질까요?,no,yes,TYPE_B
+/부산임차권등기명령,SERVICE,임차권등기명령 비용은 어떻게 정해질까요?,no,yes,TYPE_B

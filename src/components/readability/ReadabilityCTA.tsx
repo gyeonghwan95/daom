@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type ReadabilityCTAProps = {
@@ -15,6 +16,8 @@ type ReadabilityCTAProps = {
   intent?: string;
   /** false면 '안윤정 법무사는 누구일까?' 보조 버튼 숨김 */
   showAboutLawyer?: boolean;
+  /** '안윤정 법무사는 누구일까?' 오른쪽에 네이버 블로그 더보기 버튼 */
+  showNaverBlogCta?: boolean;
   /** false면 네이버 예약 페어 숨김 (강의·B2B 등) */
   showNaverReservation?: boolean;
 };
@@ -28,6 +31,7 @@ export function ReadabilityCTA({
   fromPage,
   intent,
   showAboutLawyer = true,
+  showNaverBlogCta = false,
   showNaverReservation = true,
 }: ReadabilityCTAProps) {
   const params = new URLSearchParams();
@@ -39,6 +43,10 @@ export function ReadabilityCTA({
   const primaryHref = href ?? inquiryHref;
   const isConsult =
     primaryHref.startsWith("/contact") || primaryHref.includes("inquiry");
+  const secondaryPairClass =
+    showAboutLawyer && showNaverBlogCta
+      ? "btn-secondary readability-cta__button !w-auto flex-1 basis-[min(100%,11rem)] gap-1.5 sm:flex-initial"
+      : "btn-secondary readability-cta__button gap-1.5";
 
   return (
     <aside className="readability-cta">
@@ -60,14 +68,21 @@ export function ReadabilityCTA({
             </Link>
           }
         />
-        {showAboutLawyer ? (
-          <Link
-            href="/about"
-            className="btn-secondary readability-cta__button"
-            data-cta="about-lawyer"
-          >
-            안윤정 법무사는 누구일까?
-          </Link>
+        {showAboutLawyer || showNaverBlogCta ? (
+          <div className="flex w-full flex-wrap gap-3 sm:w-auto">
+            {showAboutLawyer ? (
+              <Link
+                href="/about"
+                className={secondaryPairClass}
+                data-cta="about-lawyer"
+              >
+                안윤정 법무사는 누구일까?
+              </Link>
+            ) : null}
+            {showNaverBlogCta ? (
+              <NaverBlogMorePostsButton className={secondaryPairClass} />
+            ) : null}
+          </div>
         ) : null}
       </div>
     </aside>

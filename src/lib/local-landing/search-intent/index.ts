@@ -125,6 +125,7 @@ import { keywordGapBatch1Overrides } from "./overrides/keyword-gap-batch1";
 import { situationIntentBatch1Overrides } from "./overrides/situation-intent-batch1";
 import { busanMissingKeywordIntentOverrides } from "./overrides/busan-missing-keyword-intents";
 import { wave1TrueGapOverrides } from "./overrides/wave1-true-gaps";
+import { costSynonymOverrides } from "./overrides/cost-synonym-intents";
 
 export type {
   SearchGuideEntry,
@@ -149,6 +150,7 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...situationIntentBatch1Overrides,
   ...busanMissingKeywordIntentOverrides,
   ...wave1TrueGapOverrides,
+  ...costSynonymOverrides,
   공공기관법인등기: 공공기관법인등기Override,
   공공기관부동산등기: 공공기관부동산등기Override,
   공공기관이전등기: 공공기관이전등기Override,

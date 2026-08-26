@@ -23,6 +23,10 @@ import {
 } from "@/lib/site-images";
 import { getFinanceSectionsForSlug } from "@/data/seo/finance-intent-modules";
 import {
+  getCostFaqsForSlug,
+  getCostSectionsForSlug,
+} from "@/data/seo/cost-intent-modules";
+import {
   PERSONAL_BANKRUPTCY_SUPPORT_MODULES,
   PERSONAL_REHAB_CHAMPION_MODULES,
 } from "@/data/seo/high-intent-rehab-modules";
@@ -101,10 +105,24 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
         ],
       });
     }
+    const isRegistryHub = page.slug === "부산등기법무사";
+    const isInheritanceHub = page.slug === "부산상속법무사";
     sections.push(
+      ...(page.extraPageSections ?? []).map((s) => ({
+        title: s.title,
+        body: s.body,
+        items: s.items,
+        links: s.links,
+      })),
       {
-        title: "이런 경우 필요한 등기입니다",
-        body: `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
+        title: isInheritanceHub
+          ? "이런 경우에 상담합니다"
+          : isRegistryHub
+            ? "상담이 필요한 등기 상황"
+            : "이런 경우 필요한 절차입니다",
+        body: isInheritanceHub
+          ? "부동산 명의이전, 채무 걱정, 가족 간 분배는 준비서류와 기한이 다릅니다. 아래 상황에 가까운 안내로 이어가시면 됩니다."
+          : `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
         items: page.whenNeeded,
       },
       {
@@ -114,7 +132,9 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
       },
       {
         title: "법무사 상담이 필요한 경우",
-        body: `다음과 같은 상황에서는 혼자 진행하기보다 ${page.regionLabel} 등기 법무사와 상담하시는 것이 안전합니다. 기한·순서·서류 오류를 줄이는 데 도움이 됩니다.`,
+        body: isInheritanceHub
+          ? "채무 조사, 3개월 기한, 해외·미성년 상속인이 있으면 혼자 순서를 정하기 어렵습니다. 사망일·상속인·확인된 재산·채무만 알려 주셔도 1차 방향을 나눌 수 있습니다."
+          : `다음과 같은 상황에서는 혼자 진행하기보다 ${page.regionLabel} 등기 법무사와 상담하시는 것이 안전합니다. 기한·순서·서류 오류를 줄이는 데 도움이 됩니다.`,
         items: page.legalIssues,
       },
       {
@@ -207,10 +227,16 @@ export function buildPageDataFromLocalLanding(
   const introParagraphs =
     page.summaryParagraphs && page.summaryParagraphs.length > 0
       ? page.summaryParagraphs
-      : [
-          page.description,
-          `${page.regionLabel} ${page.neighborhoods.slice(0, 3).join("·")} 일대에서 상속등기·부동산등기·법인등기·개인회생 등을 상담합니다.`,
-        ];
+      : page.serviceSlug === "personal-rehabilitation" ||
+          page.serviceSlug === "bankruptcy"
+        ? [
+            page.description,
+            `${page.regionLabel}에서 개인회생·파산은 부산회생법원 사건을 기준으로 상담합니다. 소득·채무·재산 현황만 알려 주셔도 1차 방향을 나눌 수 있습니다.`,
+          ]
+        : [
+            page.description,
+            `${page.regionLabel} ${page.neighborhoods.slice(0, 3).join("·")} 일대에서 해당 업무의 서류·기한·관할을 상담합니다.`,
+          ];
 
   const consultationPoints =
     page.pageType === "keyword-hub" ||
@@ -244,14 +270,24 @@ export function buildPageDataFromLocalLanding(
     page.slug === "부산기업법무사" ||
     page.slug === "부산등기법무사" ||
     page.slug === "부산법무사" ||
-    page.slug === "부산상속포기";
+    page.slug === "부산상속포기" ||
+    page.pageType === "conversion" ||
+    page.slug === "부산개인회생" ||
+    page.slug === "부산한정승인" ||
+    getCostFaqsForSlug(page.slug).length > 0;
 
-  const specialLandingFaqs = keepAllFaqs
+  const baseFaqs = keepAllFaqs
     ? page.faqs.map((f) => ({ question: f.question, answer: f.answer }))
     : page.faqs.slice(0, 3).map((f) => ({
         question: f.question,
         answer: f.answer,
       }));
+  const specialLandingFaqs = [...baseFaqs];
+  for (const faq of getCostFaqsForSlug(page.slug)) {
+    if (!specialLandingFaqs.some((row) => row.question === faq.question)) {
+      specialLandingFaqs.push(faq);
+    }
+  }
 
   const extraSections = [...sectionsFromLocalLanding(page)];
   if (page.slug === "부산부동산등기") {
@@ -348,10 +384,10 @@ export function buildPageDataFromLocalLanding(
   }
   if (page.slug === "부산개인회생" || page.slug === "부산개인파산") {
     extraSections.push({
-      title: "회생·파산 관련 검색의도 안내",
-      body: "개인회생·파산 법무사·상담·신청·면책·비용 등 세부 검색어는 검색의도 허브와 아래 페이지에서 이어서 확인하실 수 있습니다. 기존 URL은 그대로 유지됩니다.",
+      title: "회생·파산 관련 안내",
+      body: "개인회생·파산 법무사 상담, 신청 준비, 면책·비용처럼 조금 더 구체적인 안내는 아래 페이지에서 이어서 확인하실 수 있습니다.",
       links: [
-        { href: "/search-guides#guide-rehab", label: "개인회생·파산 검색의도" },
+        { href: "/search-guides#guide-rehab", label: "개인회생·파산 안내 더 보기" },
         { href: "/부산개인회생법무사", label: "부산 개인회생 법무사" },
         { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
         { href: "/개인회생체크리스트", label: "개인회생 체크리스트" },
@@ -427,11 +463,11 @@ export function buildPageDataFromLocalLanding(
   }
   if (page.slug === "부산개인회생" || page.slug === "개인회생파산") {
     extraSections.push({
-      title: "개인회생·파산 검색의도 더 보기",
-      body: "법무사·신청자격·보정권고·면책 등 세부 의도는 관련 안내 페이지와 자가진단에서 이어서 확인하세요. 인가·면책은 보장하지 않습니다.",
+      title: "함께 확인하면 좋은 절차",
+      body: "법무사 상담, 신청 자격, 보정, 면책 등 세부 안내는 관련 페이지와 자가진단에서 이어서 확인하세요. 인가·면책은 보장하지 않습니다.",
       links: [
-        { href: "/부산개인회생법무사", label: "부산 개인회생 법무사" },
-        { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
+        { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+        { href: "/부산개인파산법무사", label: "개인파산 법무사 상담 안내" },
         { href: "/개인회생체크리스트", label: "개인회생 체크리스트" },
         { href: "/개인회생자가진단", label: "개인회생 자가진단" },
         { href: "/개인파산자가진단", label: "개인파산 자가진단" },
@@ -442,6 +478,7 @@ export function buildPageDataFromLocalLanding(
   for (const section of getFinanceSectionsForSlug(page.slug)) {
     extraSections.unshift(section);
   }
+  extraSections.unshift(...getCostSectionsForSlug(page.slug));
 
   return createPageData({
     slug: page.slug,
@@ -469,7 +506,7 @@ export function buildPageDataFromLocalLanding(
                     label: page.breadcrumbParent.label,
                     href: page.breadcrumbParent.href,
                   }
-                : { label: "검색의도 안내", href: "/search-guides" },
+                : { label: "관련 안내", href: "/search-guides" },
               { label: page.title },
             ]
           : page.pageType === "b2b-collaboration"
@@ -489,6 +526,24 @@ export function buildPageDataFromLocalLanding(
                     { label: "협업문의", href: "/partners" },
                     { label: page.title },
                   ]
+            : page.slug === "부산개인회생"
+              ? [
+                  { label: "홈", href: "/" },
+                  { label: "회생·파산", href: "/개인회생파산" },
+                  { label: "개인회생" },
+                ]
+              : page.slug === "부산상속법무사"
+                ? [
+                    { label: "홈", href: "/" },
+                    { label: "상속", href: "/상속" },
+                    { label: "부산 상속" },
+                  ]
+                : page.slug === "부산등기법무사"
+                  ? [
+                      { label: "홈", href: "/" },
+                      { label: "등기업무", href: "/등기실무" },
+                      { label: "부산 등기" },
+                    ]
             : [{ label: "홈", href: "/" }, { label: page.title }],
     introParagraphs,
     procedures: page.procedures,
@@ -506,7 +561,9 @@ export function buildPageDataFromLocalLanding(
       page.slug === "부산법인법무사" ||
       page.slug === "부산등기법무사" ||
       page.slug === "부산법무사" ||
-      page.slug === "부산상속포기",
+      page.slug === "부산상속포기" ||
+      page.slug === "부산개인회생" ||
+      page.slug === "부산상속법무사",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,
@@ -957,7 +1014,7 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   location: "오시는 길 · 센텀",
   privacy: "개인정보처리방침",
   terms: "이용약관",
-  searchGuides: "검색의도 SEO 안내",
+  searchGuides: "상황별로 확인할 안내",
 };
 
 export function buildCorePageData(

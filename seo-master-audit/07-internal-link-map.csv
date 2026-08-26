@@ -1,0 +1,20 @@
+source,target,anchor,cluster,note
+/,/개인회생파산,회생·파산 비교,home,main-services + popular-consult
+/,/부산개인회생,부산 개인회생,home,existing
+/,/부산등기법무사,부산 등기 법무사,home,PROTECT
+/,/부산상속법무사,부산 상속 법무사,home,PROTECT
+/부산개인회생,/개인회생파산,회생·파산 중 무엇부터 볼지,rehab,parent hub up
+/부산개인회생,/부산개인회생법무사,소득·채무·재산으로 가능성 보기,rehab,commercial child
+/부산개인회생법무사,/부산개인회생,개인회생 신청·서류 안내,rehab,breadcrumbParent
+/부산개인회생법무사,/개인회생파산,회생·파산 비교,rehab,situation nav
+/개인회생파산,/부산개인회생,개인회생 신청·서류 안내,rehab,comparison hub down
+/개인회생파산,/부산개인파산,개인파산·면책 안내,rehab,comparison hub down
+/북구개인회생,/부산개인회생,부산 개인회생 전체 절차 보기,rehab-district,no broad claim
+/사상구개인회생,/부산개인회생,부산 개인회생 전체 절차 보기,rehab-district,no broad claim
+/수영구개인회생,/부산개인회생,부산 개인회생 전체 절차 보기,rehab-district,no broad claim
+/부산상속법무사,/부산상속등기,부동산 명의이전(상속등기),inheritance,situation nav
+/부산상속법무사,/부산상속포기,상속포기 안내,inheritance,situation nav
+/부산상속법무사,/부산한정승인,한정승인 안내,inheritance,situation nav
+/부산등기법무사,/부산소유권이전등기,소유권이전,registry,existing hub view PROTECT
+district rehab pages,/개인회생파산,회생·파산 비교,rehab-district,up-link
+footer local pages,/전국업무,전국 업무 안내,footer,directory compacted not deleted

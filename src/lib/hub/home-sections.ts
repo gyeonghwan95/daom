@@ -27,6 +27,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산상속포기", label: "부산 상속포기" },
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산개인회생", label: "부산 개인회생" },
+      { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
     ],
   },
@@ -64,7 +65,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     description:
       "복대리·집단등기·공공기관·보존등기 등 의·기관 의뢰와 특수 등기 안내로 이동합니다.",
     links: [
-      { href: "/search-guides", label: "검색의도 안내 허브" },
+      { href: "/search-guides", label: "상황별 안내 모음" },
       { href: "/등기실무", label: "등기 실무 허브" },
       { href: "/부산등기복대리", label: "부산 등기 복대리" },
       { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
@@ -97,6 +98,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/전세사기피해대응절차", label: "전세사기·전세보증금 미반환" },
       { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/상속등기비용", label: "상속등기 비용" },
+      { href: "/소유권이전등기비용", label: "소유권이전 비용" },
       { href: "/상속등기필요서류", label: "상속등기 필요서류" },
       { href: "/개인회생비용", label: "개인회생 비용" },
     ],

@@ -1,0 +1,7 @@
+pair,overlap,action
+/부산법무사비용 vs /부산법무사수임료,same TYPE_A family,support copy on synonym URL
+/상속등기비용 vs /상속등기보수표,same TYPE_B family,보수표 points to 비용 PRIMARY
+/개인회생비용 vs /개인회생보수표,same TYPE_B family,보수표 points to 비용 PRIMARY
+/법인등기비용 vs /부산법인등기비용,geo vs general,one PRIMARY=/법인등기비용
+/부동산등기 허브 costHref vs /상속등기비용,wrong parent,fixed to /부동산등기비용
+all conversion FAQs,were cloned,unique FAQs per conversionKey

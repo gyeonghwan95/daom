@@ -649,6 +649,7 @@ export async function buildDashboard(env) {
   let sourcesToday = [];
   let devicesToday = null;
   let hourlyToday = null;
+  let hourlyYesterday = null;
   let hourly7DayAvg = null;
   let hourlyInsights = null;
   let recentActivity = [];
@@ -683,15 +684,21 @@ export async function buildDashboard(env) {
       mailSuccess: null,
     };
 
-    const hourlyRow = await getHourly(env, today);
-    hourlyToday = Object.entries(hourlyRow.hours || {}).map(([hour, v]) => ({
-      hour: Number(hour),
-      pageViews: v.pageViews || 0,
-      cta: v.cta || 0,
-      consultSubmit: v.consultSubmit || 0,
-      naverPlace: v.naverPlace || 0,
-      sources: v.sources || {},
-    }));
+    const mapHourly = (hourlyRow) =>
+      Object.entries(hourlyRow.hours || {}).map(([hour, v]) => ({
+        hour: Number(hour),
+        pageViews: v.pageViews || 0,
+        cta: v.cta || 0,
+        consultSubmit: v.consultSubmit || 0,
+        naverPlace: v.naverPlace || 0,
+        sources: v.sources || {},
+      }));
+    const [hourlyRow, hourlyYRow] = await Promise.all([
+      getHourly(env, today),
+      getHourly(env, yesterday),
+    ]);
+    hourlyToday = mapHourly(hourlyRow);
+    hourlyYesterday = mapHourly(hourlyYRow);
 
     const avgBuckets = {};
     for (let h = 0; h < 24; h += 1) avgBuckets[h] = { pageViews: 0, days: 0 };
@@ -735,9 +742,19 @@ export async function buildDashboard(env) {
         avgPeakHour = row.hour;
       }
     }
+    let yPeakHour = null;
+    let yPeakViews = 0;
+    for (const row of hourlyYesterday) {
+      if (row.pageViews > yPeakViews) {
+        yPeakViews = row.pageViews;
+        yPeakHour = row.hour;
+      }
+    }
     hourlyInsights = {
       peakHourToday: peakHour,
       peakViewsToday: peakViews,
+      peakHourYesterday: yPeakHour,
+      peakViewsYesterday: yPeakViews,
       peakHour7DayAvg: avgPeakHour,
       visitsSameHourVs7DayAvgPct: visitsSameHourAvg7d,
     };
@@ -818,7 +835,7 @@ export async function buildDashboard(env) {
 
     recentAudit = await listAudit(env, 15);
     notices = await listNotices(env);
-    recentActivity = await listRecentActivity(env, 40);
+    recentActivity = await listRecentActivity(env, 80);
   }
 
   const now = new Date();
@@ -941,6 +958,7 @@ export async function buildDashboard(env) {
     sourcesToday,
     devicesToday,
     hourlyToday,
+    hourlyYesterday,
     hourly7DayAvg,
     hourlyInsights,
     recentActivity,

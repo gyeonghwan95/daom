@@ -100,9 +100,9 @@ export const staticPageSeo = {
     keywords: ["이용약관", "부산 법무사", seoBrand.siteName],
   },
   searchGuides: {
-    title: buildSeoTitle("검색의도 안내 — 추천·비용·서류·기한"),
+    title: buildSeoTitle("상황별 안내 — 추천·비용·서류·기한"),
     description:
-      "부산 법무사 추천·비용·후기·등기 복대리·집단등기·개인회생·공공기관·보존등기 등 실제 검색 키워드별 상담 전 체크포인트 허브.",
+      "부산 법무사 추천·비용·후기, 등기 복대리·집단등기, 개인회생, 공공기관·보존등기처럼 상담 전에 자주 묻는 주제를 모았습니다.",
     path: "/search-guides",
     keywords: [
       "부산 법무사 추천",

@@ -16,10 +16,13 @@ type HourRow = {
 
 type Props = {
   today: HourRow[] | null | undefined;
+  yesterday?: HourRow[] | null | undefined;
   avg7Day: HourRow[] | null | undefined;
   insights?: {
     peakHourToday: number | null;
     peakViewsToday: number;
+    peakHourYesterday?: number | null;
+    peakViewsYesterday?: number;
     peakHour7DayAvg: number | null;
     visitsSameHourVs7DayAvgPct: number | null;
   } | null;
@@ -47,7 +50,16 @@ function clampTip(x: number, y: number, host: DOMRect) {
   };
 }
 
-export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
+function barHeight(value: number, max: number, minPx: number) {
+  return Math.max(value > 0 ? minPx : 0, Math.round((value / max) * 100));
+}
+
+export function HourlyTrafficChart({
+  today,
+  yesterday,
+  avg7Day,
+  insights,
+}: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<{
     hour: number;
@@ -57,8 +69,10 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
   } | null>(null);
 
   const rows = padHours(today);
+  const yRows = padHours(yesterday);
   const avgRows = padHours(avg7Day);
-  const hasAny = rows.some((r) => r.pageViews > 0);
+  const hasAny =
+    rows.some((r) => r.pageViews > 0) || yRows.some((r) => r.pageViews > 0);
 
   useEffect(() => {
     if (!tip?.pinned) return;
@@ -71,13 +85,16 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
 
   if (!hasAny) {
     return (
-      <p className="admin-empty">오늘 수집된 시간대별 페이지뷰 데이터가 아직 없습니다.</p>
+      <p className="admin-empty">
+        오늘·어제 시간대별 페이지뷰 데이터가 아직 없습니다.
+      </p>
     );
   }
 
   const max = Math.max(
     1,
     ...rows.map((r) => r.pageViews),
+    ...yRows.map((r) => r.pageViews),
     ...avgRows.map((r) => r.pageViews),
   );
 
@@ -93,6 +110,9 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
     ) % 24;
 
   const active = tip ? rows.find((r) => r.hour === tip.hour) : null;
+  const yActive = tip
+    ? yRows.find((r) => r.hour === tip.hour)?.pageViews ?? 0
+    : 0;
   const avgActive = tip
     ? avgRows.find((r) => r.hour === tip.hour)?.pageViews ?? 0
     : 0;
@@ -125,15 +145,20 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
           <i className="admin-hourly__dot admin-hourly__dot--today" /> 오늘
         </span>
         <span>
+          <i className="admin-hourly__dot admin-hourly__dot--yesterday" /> 어제
+        </span>
+        <span>
           <i className="admin-hourly__dot admin-hourly__dot--avg" /> 7일 평균
         </span>
         <span className="admin-hourly__hint">막대에 올리거나 클릭하면 상세가 보입니다</span>
       </div>
       <div className="admin-hourly__chart" role="img" aria-label="시간대별 페이지뷰">
         {rows.map((row) => {
+          const yVal = yRows.find((x) => x.hour === row.hour)?.pageViews ?? 0;
           const avg = avgRows.find((x) => x.hour === row.hour)?.pageViews ?? 0;
-          const hToday = Math.max(row.pageViews > 0 ? 6 : 0, Math.round((row.pageViews / max) * 100));
-          const hAvg = Math.max(avg > 0 ? 4 : 0, Math.round((avg / max) * 100));
+          const hToday = barHeight(row.pageViews, max, 6);
+          const hY = barHeight(yVal, max, 5);
+          const hAvg = barHeight(avg, max, 4);
           const showTick = row.hour % 2 === 0;
           const isNow = row.hour === nowHour;
           const isActive = tip?.hour === row.hour;
@@ -150,6 +175,10 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
                 <div
                   className="admin-hourly__bar admin-hourly__bar--avg"
                   style={{ height: `${hAvg}%` }}
+                />
+                <div
+                  className="admin-hourly__bar admin-hourly__bar--yesterday"
+                  style={{ height: `${hY}%` }}
                 />
                 <div
                   className="admin-hourly__bar admin-hourly__bar--today"
@@ -169,6 +198,12 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
             <li>
               오늘 피크: {String(insights.peakHourToday).padStart(2, "0")}시 (
               {insights.peakViewsToday}회)
+            </li>
+          ) : null}
+          {insights.peakHourYesterday != null && insights.peakViewsYesterday ? (
+            <li>
+              어제 피크: {String(insights.peakHourYesterday).padStart(2, "0")}시 (
+              {insights.peakViewsYesterday}회)
             </li>
           ) : null}
           {insights.peakHour7DayAvg != null ? (
@@ -193,6 +228,7 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
           <tr>
             <th>시</th>
             <th>오늘</th>
+            <th>어제</th>
             <th>7일 평균</th>
           </tr>
         </thead>
@@ -201,6 +237,7 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
             <tr key={row.hour}>
               <td>{row.hour}</td>
               <td>{row.pageViews}</td>
+              <td>{yRows.find((x) => x.hour === row.hour)?.pageViews ?? "—"}</td>
               <td>{avgRows.find((x) => x.hour === row.hour)?.pageViews ?? "—"}</td>
             </tr>
           ))}
@@ -216,17 +253,18 @@ export function HourlyTrafficChart({ today, avg7Day, insights }: Props) {
           active
             ? [
                 { label: "오늘 페이지뷰", value: `${active.pageViews}회` },
+                { label: "어제 페이지뷰", value: `${yActive}회` },
                 { label: "7일 평균", value: `${avgActive}회` },
-                { label: "CTA", value: String(active.cta ?? 0) },
-                { label: "제출", value: String(active.consultSubmit ?? 0) },
-                { label: "네이버", value: String(active.naverPlace ?? 0) },
+                { label: "오늘 CTA", value: String(active.cta ?? 0) },
+                { label: "오늘 제출", value: String(active.consultSubmit ?? 0) },
+                { label: "오늘 네이버", value: String(active.naverPlace ?? 0) },
               ]
             : []
         }
         extra={
           sourceRows.length ? (
             <div className="admin-chart-tip__sources">
-              <p>이 시간 유입 경로</p>
+              <p>이 시간 유입 경로 (오늘)</p>
               <SourceMix sources={active?.sources} />
             </div>
           ) : (

@@ -1,3 +1,5 @@
+import type { ServiceFaq } from "@/types/service";
+
 export type InstitutionTopic = {
   key: string;
   institutionName: string;
@@ -210,6 +212,11 @@ export type ConversionTopic = {
   costFactors: string[];
   timelineNotes: string[];
   documentList: string[];
+  uniqueProblemStatement?: string;
+  uniqueFaqs?: ServiceFaq[];
+  relatedServiceLinks?: { href: string; label: string }[];
+  skipMortgageExample?: boolean;
+  ctaDescription?: string;
 };
 
 export const conversionTopics: Record<string, ConversionTopic> = {
@@ -247,6 +254,14 @@ export const conversionTopics: Record<string, ConversionTopic> = {
       "대출·말소·채무 관련 자료",
       "확인하고 싶은 비용 항목(보수·세금·공과금)",
     ],
+    relatedServiceLinks: [
+      { href: "/부산법무사상담", label: "상담 전 준비서류 안내" },
+      { href: "/부산법무사보수표", label: "협회 보수 기준 참고" },
+      { href: "/상속등기비용", label: "상속등기 비용 구조" },
+      { href: "/부동산등기비용", label: "부동산등기 비용" },
+      { href: "/법인설립등기비용", label: "법인설립 비용" },
+      { href: "/개인회생비용", label: "개인회생 비용" },
+    ],
   },
   "lawyer-fee-table": {
     key: "lawyer-fee-table",
@@ -255,46 +270,130 @@ export const conversionTopics: Record<string, ConversionTopic> = {
     focusKeywords: ["법무사 보수표", "대한법무사협회", "수임료 기준"],
     costFactors: [
       "협회 보수 기준을 참고하되 사건별 난이도에 따라 달라집니다.",
-      "복잡한 채무·지분·해외 상속인이 있으면 추가 비용이 발생할 수 있습니다.",
+      "기본보수 상한과 가산보수·실비·세금은 성격이 다릅니다. 표 숫자를 확정 견적으로 쓰지 않습니다.",
+      "복잡한 채무·지분·해외 상속인이 있으면 추가 준비 범위가 생길 수 있습니다.",
     ],
-    timelineNotes: ["견적은 사건 내용 확인 후 투명하게 안내합니다."],
+    timelineNotes: [
+      "대한법무사협회 「법무사보수기준」 2024. 9. 12. 시행본을 2026-08-26 기준으로 확인했습니다.",
+      "견적은 사건 내용 확인 후 항목별로 안내합니다.",
+    ],
     documentList: ["사건 관련 서류", "등기부등본"],
+    skipMortgageExample: true,
+    relatedServiceLinks: [
+      { href: "/부산법무사비용", label: "비용 구성 전체 안내" },
+    ],
   },
   "inheritance-reg-cost": {
     key: "inheritance-reg-cost",
     title: "상속등기 비용",
     serviceSlug: "inheritance-registration",
-    focusKeywords: ["상속등기 비용", "상속등기 수수료"],
-    costFactors: ["부동산 평가액", "상속인 수", "말소 등기 필요 여부"],
-    timelineNotes: ["등록면허세·법무사 수임료·등기신청 수수료로 구분 안내"],
-    documentList: ["등기부등본", "상속재산 목록"],
+    focusKeywords: ["상속등기 비용", "상속등기 수수료", "상속등기 수임료"],
+    costFactors: [
+      "상속인 수와 협의분할 여부",
+      "부동산 수·소재지·과세표준",
+      "해외·미성년 상속인·추가 증명서류",
+      "근저당 말소 등 병행 등기",
+    ],
+    timelineNotes: [
+      "등록면허세·취득세(해당 시)·등기신청수수료와 법무사 보수를 구분해 안내합니다.",
+      "고정 만 원 금액을 공시하지 않으며, 주소·상속인 구성 확인 후 항목을 나눕니다.",
+    ],
+    documentList: ["등기부등본", "상속인 구성 메모", "사망일·협의 여부"],
+    skipMortgageExample: true,
+    uniqueProblemStatement:
+      "부산에서 상속등기 비용을 알아볼 때 단순히 법무사 보수만 비교하면 실제 필요한 전체 금액을 판단하기 어렵습니다. 상속인 수와 부동산 수, 협의분할 여부 등에 따라 필요한 절차와 공과금이 달라질 수 있기 때문입니다. 상속등기 수수료·수임료로 검색하셔도 견적에서는 보수와 세금을 나눠 설명합니다.",
+    uniqueFaqs: [
+      {
+        question: "상속인이 많으면 비용이 늘어나나요?",
+        answer:
+          "인감·협의·위임이 늘면 준비 범위가 커질 수 있습니다. 부동산 가액과 건수도 함께 봅니다.",
+      },
+      {
+        question: "세금과 법무사 비용은 같은 금액인가요?",
+        answer:
+          "아닙니다. 취득세·등록면허세와 법무사 보수는 성격이 다릅니다.",
+      },
+    ],
+    relatedServiceLinks: [
+      { href: "/부산상속등기", label: "상속등기 절차 보기" },
+      { href: "/왜상속등기비용이다를까", label: "왜 금액이 달라지는지" },
+      { href: "/부산법무사비용", label: "법무사 비용 구성" },
+    ],
+    ctaDescription:
+      "부동산 주소와 상속인 수만 남겨 주셔도, 어떤 항목을 나눠 볼지 먼저 안내합니다. 확정 금액은 등기부 확인 후입니다.",
   },
   "renunciation-cost": {
     key: "renunciation-cost",
     title: "상속포기 비용",
     serviceSlug: "inheritance-renunciation",
-    focusKeywords: ["상속포기 비용", "가정법원 수수료"],
-    costFactors: ["상속인 수", "공동포기 여부", "채무 조사 범위"],
-    timelineNotes: ["가정법원 신고 수수료와 법무사 수임료가 별도입니다."],
-    documentList: ["가족관계증명서", "채무 관련 자료"],
+    focusKeywords: ["상속포기 비용", "상속포기 수임료", "가정법원 수수료"],
+    costFactors: [
+      "신청인 수·공동 신고 여부",
+      "미성년·해외 상속인",
+      "특별대리인 선임 필요",
+      "기한 임박·보정 가능성",
+    ],
+    timelineNotes: [
+      "가정법원 신고 실비와 법무사 보수가 별도입니다. 취득세 견적 구조와는 다릅니다.",
+    ],
+    documentList: ["가족관계증명서", "사망일·인지일", "처분·인출 메모(해당 시)"],
+    skipMortgageExample: true,
+    uniqueProblemStatement:
+      "상속포기 비용은 부동산 공과금보다 신청인 구성과 가정법원 실비가 중심입니다. 여러 명이 함께 포기하거나 미성년·해외 상속인이 있으면 서류와 보수가 달라질 수 있습니다. 수임료·수수료로 검색하셔도 같은 구조를 안내합니다.",
+    relatedServiceLinks: [
+      { href: "/부산상속포기", label: "상속포기 절차 보기" },
+      { href: "/한정승인비용", label: "한정승인 비용과 비교" },
+    ],
+    ctaDescription:
+      "사망일과 포기하려는 인원만 알려 주셔도 법원 실비와 보수 항목을 나눠 드립니다.",
   },
   "qualified-cost": {
     key: "qualified-cost",
     title: "한정승인 비용",
     serviceSlug: "qualified-acceptance",
-    focusKeywords: ["한정승인 비용", "상속 채무 조사"],
-    costFactors: ["재산·채무 규모", "조사 범위", "이후 상속등기 병행 여부"],
-    timelineNotes: ["한정승인 후 상속등기까지 일괄 진행 시 단계별 견적 가능"],
-    documentList: ["재산목록", "채무 목록"],
+    focusKeywords: ["한정승인 비용", "한정승인 수임료"],
+    costFactors: [
+      "재산·채무 조사 범위",
+      "상속인 수·미성년·해외 여부",
+      "처분 이력 확인",
+      "이후 상속등기 병행 여부",
+    ],
+    timelineNotes: [
+      "한정승인 신고와 상속등기 공과금은 항목을 나눕니다. 병행 시 단계별 안내가 가능합니다.",
+    ],
+    documentList: ["재산목록 초안", "채무 목록", "가족관계 서류"],
+    skipMortgageExample: true,
+    uniqueProblemStatement:
+      "한정승인 비용은 재산·채무 목록을 어디까지 조사하는지에 따라 준비 범위가 달라집니다. 신고 후에 부동산 등기까지 진행하면 등록면허세 등 등기 항목은 별도입니다.",
+    relatedServiceLinks: [
+      { href: "/부산한정승인", label: "한정승인 절차 보기" },
+      { href: "/상속포기비용", label: "포기 비용과 비교" },
+    ],
   },
   "company-est-cost": {
     key: "company-est-cost",
     title: "법인설립등기 비용",
     serviceSlug: "company-establishment",
-    focusKeywords: ["법인설립등기 비용", "설립 등기 수수료"],
-    costFactors: ["자본금 규모", "임원 수", "정관 복잡도"],
-    timelineNotes: ["등기 완료 후 사업자등록·계좌 개설은 별도 일정"],
-    documentList: ["정관", "임원 인감증명서"],
+    focusKeywords: ["법인설립등기 비용", "법인설립 수임료", "법인설립 수수료"],
+    costFactors: [
+      "자본금·회사 형태",
+      "임원·주주 수",
+      "본점·상호·목적 기재",
+      "정관 인증 필요 여부",
+    ],
+    timelineNotes: [
+      "등록면허세 등 공과금과 법무사 보수를 구분해 안내합니다. 사업자등록은 등기 완료 후 별도입니다.",
+    ],
+    documentList: ["자본금·임원 구성", "본점 주소", "사업목적"],
+    skipMortgageExample: true,
+    uniqueProblemStatement:
+      "법인설립 비용은 자본금과 임원 수, 정관·공과금 구성에 따라 달라집니다. 설립 수수료·수임료로 검색하셔도 견적에서는 보수와 등록세를 나눠 설명합니다. 설립 직후 변경이 예정돼 있으면 그 항목은 따로 안내합니다.",
+    relatedServiceLinks: [
+      { href: "/부산법인설립등기", label: "설립 절차 보기" },
+      { href: "/법인등기비용", label: "변경등기 비용" },
+    ],
+    ctaDescription:
+      "자본금·임원 수·본점 주소만 알려 주셔도 공과금과 보수 항목을 나눠 드립니다.",
   },
   "director-penalty": {
     key: "director-penalty",

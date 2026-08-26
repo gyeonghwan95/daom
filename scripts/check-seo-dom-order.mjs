@@ -18,6 +18,9 @@ const SAMPLES = [
   "부산상속법무사.html",
   "부산상속포기.html",
   "부산등기법무사.html",
+  "부산개인회생.html",
+  "부산개인회생법무사.html",
+  "개인회생파산.html",
   "상속.html",
 ];
 

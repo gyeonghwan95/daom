@@ -329,7 +329,9 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
   const serviceLabel = serviceLabels[topic.serviceSlug] ?? topic.title;
   const neighborhoods = config.neighborhoods.join(", ");
 
-  const problemStatement = `부산에서 ${topic.title}을(를) 검색하시는 분들은 대부분 실제 부담 금액과 준비 기간을 알고 싶어 하십니다. ${topic.focusKeywords.join(", ")} 관련 비용은 사건마다 다릅니다. 부동산 가액·상속인 수·채무 규모·법인 규모·저당권 말소 여부 등에 따라 법무사 수임료와 등기신청 수수료·세금이 달라집니다. 다옴법무사사무소는 ${neighborhoods} 일대를 포함한 부산 전역 의뢰인에게 항목별 견적을 투명하게 안내합니다. 숨겨진 비용 없이 상담 후 예상 범위를 설명해 드립니다.`;
+  const problemStatement = topic.uniqueProblemStatement
+    ? topic.uniqueProblemStatement
+    : `부산에서 ${topic.title}을(를) 검색하시는 분들은 대부분 실제 부담 금액과 준비 기간을 알고 싶어 하십니다. ${topic.focusKeywords.join(", ")} 관련 비용은 사건마다 다릅니다. 부동산 가액·상속인 수·채무 규모·법인 규모·병행 업무 여부에 따라 법무사 보수와 등기신청 수수료·세금이 달라집니다. 다옴법무사사무소는 ${neighborhoods} 일대를 포함한 부산 전역 의뢰인에게 항목별 견적을 투명하게 안내합니다. 숨겨진 비용 없이 상담 후 예상 범위를 설명해 드립니다.`;
 
   const whenNeeded = [
     `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
@@ -338,37 +340,52 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     `보정·과태료 등 추가 비용 가능성을 확인하고 싶을 때`,
   ];
 
-  const consultationCases = [
-    {
-      title: `${topic.title} — 이해를 위한 예시`,
-      summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 보수·등기 수수료·세금을 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
-    },
-    {
-      title: `복합 사건 견적 — 이해를 위한 예시`,
-      summary: `상속등기와 저당권 말소가 함께 필요한 사건에서 단계별 비용 구성을 미리 안내해 일정과 예산을 맞추는 경우가 있습니다. 실제 금액은 사건별 확인이 필요합니다.`,
-    },
-    {
-      title: `비대면 견적 문의 — 이해를 위한 예시`,
-      summary: `카카오톡으로 등기부·가족관계증명서를 보내주신 뒤 대략적인 구성을 안내하고, 방문 없이 진행하는 경우도 있습니다. 확정 견적은 서류 확인 후입니다.`,
-    },
-  ];
+  const consultationCases = topic.skipMortgageExample
+    ? [
+        {
+          title: `${topic.title} — 이해를 위한 예시`,
+          summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
+        },
+        {
+          title: `서류 확인 후 확정 — 이해를 위한 예시`,
+          summary: `전화로는 구성만 안내하고, 등기부·가족관계·결의서류 확인 뒤에야 항목이 정해지는 경우가 있습니다. 실제 금액은 사건별 확인이 필요합니다.`,
+        },
+        {
+          title: `비대면 견적 문의 — 이해를 위한 예시`,
+          summary: `카카오톡으로 등기부·가족관계증명서를 보내주신 뒤 대략적인 구성을 안내하고, 방문 없이 진행하는 경우도 있습니다. 확정 견적은 서류 확인 후입니다.`,
+        },
+      ]
+    : [
+        {
+          title: `${topic.title} — 이해를 위한 예시`,
+          summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 보수·등기 수수료·세금을 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
+        },
+        {
+          title: `복합 사건 견적 — 이해를 위한 예시`,
+          summary: `상속등기와 저당권 말소가 함께 필요한 사건에서 단계별 비용 구성을 미리 안내해 일정과 예산을 맞추는 경우가 있습니다. 실제 금액은 사건별 확인이 필요합니다.`,
+        },
+        {
+          title: `비대면 견적 문의 — 이해를 위한 예시`,
+          summary: `카카오톡으로 등기부·가족관계증명서를 보내주신 뒤 대략적인 구성을 안내하고, 방문 없이 진행하는 경우도 있습니다. 확정 견적은 서류 확인 후입니다.`,
+        },
+      ];
 
-  const faqs: ServiceFaq[] = [
+  const genericFaqs: ServiceFaq[] = [
     {
       question: `${topic.title}은 얼마나 드나요?`,
       answer: topic.costFactors.join(" "),
     },
     {
       question: `법무사 수임료와 등기 수수료는 별도인가요?`,
-      answer: "네. 법무사 수임료, 등기신청 수수료, 등록면허세·취득세 등 세금은 별도 항목입니다.",
+      answer: "네. 법무사 수임료, 등기신청 수수료, 등록면허세·취득세 등 세금은 별도 항목입니다. 해당 사건에 실제로 발생하는 항목만 안내합니다.",
     },
     {
       question: `견적은 어떻게 받나요?`,
-      answer: "전화·카카오톡·방문 상담 후 사건 내용을 확인하고 항목별로 안내합니다.",
+      answer: "전화·카카오톡·방문 상담 후 사건 내용을 확인하고 항목별로 안내합니다. 업무명과 핵심 정보만 보내주셔도 어떤 항목이 필요한지부터 구분합니다.",
     },
     {
       question: `추가 비용이 발생할 수 있나요?`,
-      answer: "보정명령·저당권 말소·해외 상속인 인증 등 부가 업무가 있으면 추가될 수 있으며, 사전에 설명합니다.",
+      answer: "보정명령·병행 등기·해외 서류 인증 등 부가 업무가 있으면 추가될 수 있으며, 사전에 설명합니다.",
     },
     {
       question: `기한이 촉박하면 비용이 더 드나요?`,
@@ -379,6 +396,12 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
       answer: note,
     })),
   ];
+  const faqs: ServiceFaq[] = topic.uniqueFaqs?.length
+    ? [...topic.uniqueFaqs, ...genericFaqs].filter(
+        (faq, index, arr) =>
+          arr.findIndex((row) => row.question === faq.question) === index,
+      )
+    : genericFaqs;
 
   const isLawyerFeeBusan = topic.key === "lawyer-fee-busan";
   const feeProblemStatement = isLawyerFeeBusan
@@ -426,18 +449,19 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     faqs: faqs.slice(0, 10),
     lawyerOpinion: buildLawyerOpinion("부산", topic.title),
     directionsNote: buildDirectionsNote(config),
-    ctaDescription: isLawyerFeeBusan
-      ? "확인하고 싶은 비용 항목과 준비된 자료를 남겨 주시면, 접수 가능 여부와 보수·공과금의 대략적 구성을 먼저 안내합니다. 확정 견적은 서류 확인 후입니다."
-      : "비용·절차가 궁금하시면 카카오톡으로 등기부·상황을 보내주시면 대략적인 비용과 순서를 안내해 드립니다.",
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
     relatedServiceLinks: isLawyerFeeBusan
       ? [
           { href: "/부산법무사상담", label: "상담 전 비용·준비서류 안내" },
           { href: "/부산법무사보수표", label: "부산 법무사 보수표 참고" },
           { href: "/부산법률상담", label: "부산 법률상담 절차" },
-          { href: "/등기비용", label: "등기 비용 항목" },
+          { href: "/부동산등기비용", label: "부동산등기 비용 항목" },
         ]
-      : [],
+      : (topic.relatedServiceLinks ?? []),
+    ctaDescription: isLawyerFeeBusan
+      ? "확인하고 싶은 비용 항목과 준비된 자료를 남겨 주시면, 접수 가능 여부와 보수·공과금의 대략적 구성을 먼저 안내합니다. 확정 견적은 서류 확인 후입니다."
+      : (topic.ctaDescription ??
+        "업무명과 핵심 정보를 보내주시면 어떤 항목이 필요한지부터 구분합니다. 확정 금액은 자료 확인 후입니다."),
     relatedRegionLinks: [],
   };
 }

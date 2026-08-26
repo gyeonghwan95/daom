@@ -29,6 +29,7 @@ import { buildBusanInheritanceRegistrationPage } from "./inheritance-registratio
 import { buildBusanInheritanceRenunciationPage } from "./inheritance-renunciation-busan";
 import { buildBusanRealEstateRegistrationPage } from "./real-estate-registration-busan";
 import { buildBusanCompanyEstablishmentPage } from "./company-establishment-busan";
+import { buildBusanPersonalRehabilitationPage } from "./personal-rehabilitation-busan";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -255,6 +256,9 @@ export function buildLocalLandingPage(
   const district = districtProfiles[config.regionKey];
   if (!service || !district) return null;
 
+  const isDebtResolution =
+    config.serviceSlug === "personal-rehabilitation" ||
+    config.serviceSlug === "bankruptcy";
   const serviceLabel = serviceLabels[config.serviceSlug] ?? service.title;
   const defaultSlug = normalizeRouteSlug(`${config.regionLabel}${serviceLabel}`);
   const title =
@@ -265,6 +269,92 @@ export function buildLocalLandingPage(
   const neighborhoodText = [...new Set([...config.neighborhoods, ...district.neighborhoods])]
     .slice(0, 6)
     .join(", ");
+
+  if (isDebtResolution) {
+    const procedureLabel =
+      config.serviceSlug === "bankruptcy" ? "개인파산" : "개인회생";
+    const hubHref =
+      config.serviceSlug === "bankruptcy" ? "/개인회생파산" : "/부산개인회생";
+    const hubLabel =
+      config.serviceSlug === "bankruptcy"
+        ? "회생·파산 비교 보기"
+        : "부산 개인회생 전체 절차 보기";
+
+    return {
+      slug: config.slug,
+      path,
+      pageType: config.pageType ?? "service-region",
+      serviceSlug: config.serviceSlug,
+      title,
+      h1: `${config.regionLabel} ${procedureLabel}, 거주 지역 상담`,
+      description: `${config.regionLabel} ${procedureLabel} 상담 안내. 부산회생법원 관할. 소득·채무·재산 기준으로 준비 순서를 안내하며 인가·면책은 보장하지 않습니다.`,
+      regionLabel: config.regionLabel,
+      regionKey: config.regionKey,
+      neighborhoods: config.neighborhoods,
+      problemStatement: `${config.regionLabel}에 거주하면서 ${procedureLabel}을 찾는 경우, 이 페이지는 해당 구·동의 상담 진입점입니다. 신청 자격·서류·부산회생법원 준비의 전체 절차는 상위 안내에서 이어집니다. 등기소·상속·매매와는 다른 법원 절차입니다.`,
+      whenNeeded: [
+        `${config.regionLabel}에 살면서 ${procedureLabel} 상담이 필요할 때`,
+        "소득·채무·재산으로 신청 방향을 가늠하고 싶을 때",
+        "급여압류·사업소득 등 세부 상황이 있을 때",
+        `부산 전역 ${procedureLabel} 절차를 이어서 보고 싶을 때`,
+      ],
+      jurisdictionGuide: {
+        title: "부산회생법원",
+        address: "부산회생법원 (개인회생·개인파산 관할)",
+        accessNote: `${config.regionLabel} 거주 사건도 개인회생·파산은 부산회생법원 관할인 경우가 많습니다.`,
+        jurisdictionNote: `${config.regionLabel} ${procedureLabel}은 부동산 등기소가 아니라 부산회생법원 사건을 기준으로 안내합니다. 접수·보정 일정은 사건마다 달라 확정하지 않습니다.`,
+        practicalNotes: (legalIssuesByService[config.serviceSlug] ?? []).slice(0, 3),
+      },
+      consultationCase: {
+        title: `${config.regionLabel} ${procedureLabel} 상담`,
+        summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내한 사례입니다. 인가 결과를 단정하지 않습니다.`,
+        href: config.relatedCaseSlug
+          ? `/services/cases/${config.relatedCaseSlug}`
+          : undefined,
+      },
+      consultationCases: [
+        {
+          title: `${config.regionLabel} ${procedureLabel} 상담`,
+          summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내했습니다.`,
+          href: config.relatedCaseSlug
+            ? `/services/cases/${config.relatedCaseSlug}`
+            : undefined,
+        },
+      ],
+      legalIssues: (legalIssuesByService[config.serviceSlug] ?? []).map(
+        (issue) => `${config.regionLabel} 사건에서도 ${issue}`,
+      ),
+      precautions: [
+        "이 안내는 일반 법률정보이며 개별 인가·면책을 보장하지 않습니다.",
+        `${config.regionLabel} 페이지는 지역 상담 진입점이며, 제도 전체는 상위 허브에서 확인하세요.`,
+      ],
+      procedures: service.procedures.map((step, i) =>
+        i === 0 ? `[${config.regionLabel}] ${step}` : step,
+      ),
+      documents: service.documents,
+      costGuide: `${costGuideByService[config.serviceSlug] ?? ""} ${config.regionLabel} 의뢰 사건도 동일한 기준으로 견적을 안내합니다.`,
+      faqs: [
+        ...service.faqs,
+        {
+          question: `${config.regionLabel} 거주자도 부산회생법원으로 내나요?`,
+          answer:
+            "개인회생·개인파산은 부산회생법원 관할인 경우가 많습니다. 주소·근무지와 다른 법원이 문제될 수 있어 상담 시 확인합니다.",
+        },
+      ].slice(0, 12),
+      lawyerOpinion: `${lawyerProfileMeta.fullTitle}는 ${config.regionLabel} 거주 의뢰인의 ${procedureLabel}도 소득·채무·재산 기준으로 상담합니다. 인가를 약속하지 않습니다.`,
+      directionsNote:
+        district.directionsFromOffice ??
+        `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. ${config.regionLabel}에서 방문·비대면 상담이 가능합니다.`,
+      ctaDescription: `${config.regionLabel} 거주 여부와 월 소득·채무 규모만 남겨 주시면 다음 확인 항목을 안내합니다.`,
+      relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
+      relatedServiceLinks: [
+        { href: hubHref, label: hubLabel },
+        { href: "/개인회생파산", label: "회생·파산 비교" },
+        { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+      ],
+      relatedRegionLinks: [],
+    };
+  }
 
   const problemStatement = `${config.regionLabel} ${neighborhoodText} 일대에서 ${serviceLabel}가 필요한 상황은 생각보다 다양합니다. ${district.context} 막상 등기소·법원 절차를 찾아보면 서류와 기한이 복잡해 막막한 경우가 많습니다. 상속·매매·법인 변경·채무 문제는 감정만으로 결정하기 어렵고, 기한을 놓치면 과태료·단순승인·권리 상실로 이어질 수 있습니다.`;
 
@@ -402,6 +492,10 @@ function resolveLocalLandingPage(config: LocalLandingConfig): LocalLandingPage |
     const custom = buildBusanCompanyEstablishmentPage(config);
     return enrichBusinessCrossLinks(custom);
   }
+  if (config.slug === "부산개인회생") {
+    const custom = buildBusanPersonalRehabilitationPage(config);
+    return enrichBusinessCrossLinks(custom);
+  }
 
   const pageType = config.pageType ?? "service-region";
   let page: LocalLandingPage | null = null;
@@ -493,7 +587,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/상담", label: "상황 선택형 상담" },
     ],
     상담: [
-      { href: "/부산법률상담", label: "부산 법률상담 — 검색의도 안내" },
+      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
       { href: "/부산법무사상담", label: "부산 전역 상담 안내" },
     ],
     부산법무사상담: [
