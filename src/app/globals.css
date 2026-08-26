@@ -2395,14 +2395,15 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .home-hero--stage .hero-contact__chip--inquiry,
   .home-hero--stage .hero-contact__chip--guide {
-    background: #f0ebe3;
+    background: #f4efe8;
     color: var(--navy);
-    border-color: #f0ebe3;
+    border-color: #f4efe8;
   }
 
-  .home-hero--stage .hero-contact__chip--guide {
-    background: #c4b7a3;
-    border-color: #c4b7a3;
+  .home-hero--stage .hero-contact__chip--inquiry:hover,
+  .home-hero--stage .hero-contact__chip--guide:hover {
+    background: #fff;
+    border-color: #fff;
   }
 
   .home-hero--stage .hero-contact__chip--location {
@@ -3254,8 +3255,11 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   button.hero-contact__chip {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
     border: 1px solid transparent;
-    font: inherit;
+    background-clip: padding-box;
   }
 
   .hero-contact__chip:hover {

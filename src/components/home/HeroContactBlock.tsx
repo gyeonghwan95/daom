@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import {
+  FormIcon,
   KakaoIcon,
+  LocationIcon,
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
@@ -19,6 +21,8 @@ type HeroContactBlockProps = {
   tone?: "light" | "on-dark";
 };
 
+const CHIP_ICON_CLASS = "h-4 w-4 shrink-0 sm:h-[1.125rem] sm:w-[1.125rem]";
+
 const channelMeta: Record<
   "phone" | "kakao" | "naver",
   { label: string }
@@ -28,8 +32,10 @@ const channelMeta: Record<
   naver: { label: "네이버 톡톡" },
 };
 
+const HERO_INQUIRY_CHIP_LABEL = consultationInquiryCopy.ctaShort;
+
 function ChannelIcon({ id }: { id: "phone" | "kakao" | "naver" }) {
-  const className = "h-4 w-4 shrink-0 sm:h-[1.125rem] sm:w-[1.125rem]";
+  const className = CHIP_ICON_CLASS;
 
   switch (id) {
     case "phone":
@@ -107,8 +113,9 @@ export function HeroContactBlock({
             className="hero-contact__chip hero-contact__chip--inquiry"
             role="listitem"
           >
+            <FormIcon className={CHIP_ICON_CLASS} />
             <span className="hero-contact__chip-label">
-              {consultationInquiryCopy.ctaShort}
+              {HERO_INQUIRY_CHIP_LABEL}
             </span>
           </Link>
           <button
@@ -116,11 +123,12 @@ export function HeroContactBlock({
             className="hero-contact__chip hero-contact__chip--guide"
             role="listitem"
             aria-haspopup="dialog"
-            aria-label={consultationInquiryCopy.ctaShort}
+            aria-label={HERO_INQUIRY_CHIP_LABEL}
             onClick={() => openFloatingConsult()}
           >
+            <FormIcon className={CHIP_ICON_CLASS} />
             <span className="hero-contact__chip-label">
-              {consultationInquiryCopy.ctaShort}
+              {HERO_INQUIRY_CHIP_LABEL}
             </span>
           </button>
           {isNaverSmartPlaceConfigured() ? (
@@ -140,6 +148,7 @@ export function HeroContactBlock({
               className="hero-contact__chip hero-contact__chip--location"
               role="listitem"
             >
+              <LocationIcon className={CHIP_ICON_CLASS} />
               <span className="hero-contact__chip-label">오시는 길</span>
             </Link>
           )}

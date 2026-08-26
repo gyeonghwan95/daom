@@ -93,6 +93,9 @@ function main() {
   if (!contact.includes("hero-contact__chip--guide")) {
     fail("guide chip class missing");
   }
+  if (!contact.includes("consultationInquiryCopy.ctaShort") || !contact.includes("FormIcon")) {
+    fail("inquiry chip must keep the 1-minute inquiry label and include an icon");
+  }
   if (!css.includes(".hero-contact__chip--inquiry") || !css.includes("background: #f0ebe3")) {
     fail("inquiry chip is not filled");
   }
