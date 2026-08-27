@@ -114,6 +114,7 @@ export const 방문없이준비하는법무사업무Override: SearchIntentConten
     },
   ],
   relatedServiceLinks: [
+    { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
     { href: "/전국업무", label: "전국 법무사 업무 허브" },
     { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
     {

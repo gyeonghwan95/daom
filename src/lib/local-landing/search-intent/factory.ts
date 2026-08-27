@@ -179,6 +179,14 @@ function relatedFor(seed: SearchIntentSeed): Pick<
       : [{ href: "/glossary", label: "법률 용어사전" }]),
     { href: "/faq", label: "FAQ" },
     { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+    ...(seed.slug === "등기소어디인가요" || seed.slug === "등기어디서하나요"
+      ? [
+          {
+            href: "/등기관할과사무소위치",
+            label: "사무소 위치와 등기 관할 구분",
+          },
+        ]
+      : []),
   ];
 
   const relatedGuideLinks = [

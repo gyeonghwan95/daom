@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
-import {
-  CONTACT_INQUIRY_PATH,
-  consultationInquiryCopy,
-} from "@/lib/consultation-inquiry";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
 
 type ConsultPageCTAProps = {
@@ -17,14 +14,12 @@ type ConsultPageCTAProps = {
 
 /** 페이지당 최대 1회 배치용 문맥형 CTA — 상담 신청서 + 네이버 예약 */
 export function ConsultPageCTA({
-  pageTitle: _pageTitle,
+  pageTitle,
   pageUrl: _pageUrl,
-  presetSituationIds: _presetSituationIds,
+  presetSituationIds,
   className = "",
 }: ConsultPageCTAProps) {
-  void _pageTitle;
   void _pageUrl;
-  void _presetSituationIds;
   return (
     <section
       className={`consult-page-cta ${className}`.trim()}
@@ -49,12 +44,14 @@ export function ConsultPageCTA({
         size="md"
         className="mt-4"
         inquiry={
-          <Link
-            href={CONTACT_INQUIRY_PATH}
+          <InquiryStartButton
             className="btn-primary consult-page-cta__btn"
+            source="landing"
+            note={pageTitle}
+            presetSituationIds={presetSituationIds}
           >
             {consultationInquiryCopy.ctaPrimary}
-          </Link>
+          </InquiryStartButton>
         }
       />
     </section>

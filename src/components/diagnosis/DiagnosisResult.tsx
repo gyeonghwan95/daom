@@ -181,6 +181,10 @@ export function DiagnosisResult({
         pageType="diagnosis-result"
         variant="bottom"
         pageSlug={diagnosis.slug}
+        inquiryNote={`[자가진단 ${diagnosis.title}] ${summary.narrative}`.slice(
+          0,
+          280,
+        )}
         showSecondaryLinks
       />
 

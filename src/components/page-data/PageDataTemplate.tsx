@@ -314,7 +314,6 @@ export function PageDataTemplate({
               : page.ctaText
           }
           pageSlug={page.slug}
-          showChannelButtons={false}
         />
       </div>
     </article>

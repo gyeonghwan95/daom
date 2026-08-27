@@ -7,6 +7,7 @@ import {
   type ConsultationChannel,
 } from "@/lib/contact";
 import { isB2BPath } from "@/lib/b2b/options";
+import { EXTERNAL_LINKS } from "@/config/external-links";
 import {
   FormIcon,
   KakaoIcon,
@@ -16,6 +17,7 @@ import {
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
 import { trackNaverPlaceClick, trackCtaEvent } from "@/lib/admin-ops/track-client";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 
 function trackMobileChannel(channel: ConsultationChannel) {
   if (channel.id === "reservation") {
@@ -88,7 +90,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
       return (
         <a
           href={channel.href}
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--reservation"
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-talk"
           aria-label={channel.label}
           data-cta="naver-place"
           data-cta-variant="reservation"
@@ -158,10 +160,22 @@ export function MobileBottomCTA() {
   const b2b = isB2BPath(pathname);
   const channels = getMobileBottomChannels();
   const inquiry = useOptionalQuickInquiry();
+  const rowChannels = useOrderedConsultationChannels(
+    channels.filter((c) => ["phone", "kakao", "naver"].includes(c.id)),
+  );
+  const reservation: ConsultationChannel = {
+    id: "reservation",
+    label: "네이버 상담 예약",
+    shortLabel: "예약",
+    href: EXTERNAL_LINKS.naverSmartPlace,
+    external: true,
+    configured: true,
+  };
 
   if (b2b) {
-    const phone = channels.find((c) => c.id === "phone");
-    const kakao = channels.find((c) => c.id === "kakao");
+    const pair = rowChannels.filter(
+      (c) => c.id === "phone" || c.id === "kakao",
+    );
     return (
       <div
         className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
@@ -170,7 +184,7 @@ export function MobileBottomCTA() {
         aria-label="협업 빠른 연락"
       >
         <div className="grid grid-cols-3 divide-x divide-beige-dark">
-          {phone ? <MobileChannelButton channel={phone} /> : null}
+          {pair[0] ? <MobileChannelButton channel={pair[0]} /> : null}
           <Link
             href="/협업문의"
             className="mobile-bottom-cta__btn bg-navy text-white"
@@ -179,24 +193,23 @@ export function MobileBottomCTA() {
           >
             <span className="mobile-bottom-cta__label">협업 문의</span>
           </Link>
-          {kakao ? <MobileChannelButton channel={kakao} /> : null}
+          {pair[1] ? <MobileChannelButton channel={pair[1]} /> : null}
         </div>
       </div>
     );
   }
 
-  const rowChannels = channels.filter((c) =>
-    ["phone", "kakao", "naver", "reservation"].includes(c.id),
-  );
-
   return (
     <div
       className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
-      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
-      role="region"
-      aria-label="빠른 연락"
-    >
-      <div className="grid grid-cols-5 divide-x divide-beige-dark">
+        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+        role="region"
+        aria-label="빠른 연락"
+      >
+        <div
+          className="grid min-w-0 w-full grid-cols-5 divide-x divide-beige-dark"
+          style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
+        >
         {rowChannels.map((channel) => (
           <MobileChannelButton key={channel.id} channel={channel} />
         ))}
@@ -212,9 +225,10 @@ export function MobileBottomCTA() {
         >
           <FormIcon className="mobile-bottom-cta__icon" />
           <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
-            {consultationInquiryCopy.ctaPrimary}
+            문의
           </span>
         </button>
+        <MobileChannelButton channel={reservation} />
       </div>
     </div>
   );

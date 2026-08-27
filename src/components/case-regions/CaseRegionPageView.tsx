@@ -5,6 +5,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
@@ -52,12 +53,12 @@ export function CaseRegionPageView({
             layout="row"
             size="sm"
             inquiry={
-              <Link
-                href="/contact/inquiry"
+              <InquiryStartButton
+                source="landing"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
                 {consultationInquiryCopy.ctaShort}
-              </Link>
+              </InquiryStartButton>
             }
           />
           <Link
@@ -147,12 +148,12 @@ export function CaseRegionPageView({
             layout="row"
             size="sm"
             inquiry={
-              <Link
-                href="/contact/inquiry"
+              <InquiryStartButton
+                source="landing"
                 className="btn-primary min-h-11 px-5 text-sm"
               >
                 {consultationInquiryCopy.ctaShort}
-              </Link>
+              </InquiryStartButton>
             }
           />
           <Link href="/업무사례" className="btn-secondary min-h-11 px-5 text-sm">

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import {
   CONTACT_INQUIRY_PATH,
@@ -21,20 +21,18 @@ type ConsultStartButtonProps = {
 };
 
 /**
- * 페이지·랜딩용 상담 시작 — 신청서(/contact/inquiry)로 이동.
- * 플로팅 팝업은 FloatingCTA에서 별도 유지.
+ * 페이지·랜딩용 상담 시작 — 1분 문의 위자드를 연다.
+ * 데스크톱 플로팅 패널은 FloatingCTA에서 별도 유지.
  */
 export function ConsultStartButton({
   pageTitle,
   pageUrl,
-  presetSituationIds: _presetSituationIds,
+  presetSituationIds,
   className = "btn-primary min-h-11",
   children,
   showNaverReservation = true,
 }: ConsultStartButtonProps) {
-  void pageTitle;
   void pageUrl;
-  void _presetSituationIds;
   return (
     <InquiryNaverCtaPair
       placement="consult_page"
@@ -42,9 +40,15 @@ export function ConsultStartButton({
       size="md"
       showNaver={showNaverReservation}
       inquiry={
-        <Link href={CONTACT_INQUIRY_PATH} className={className}>
+        <InquiryStartButton
+          className={className}
+          source="landing"
+          note={pageTitle}
+          presetSituationIds={presetSituationIds}
+          fallbackHref={CONTACT_INQUIRY_PATH}
+        >
           {children ?? consultationInquiryCopy.ctaPrimary}
-        </Link>
+        </InquiryStartButton>
       }
     />
   );

@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
-import {
-  CONTACT_INQUIRY_PATH,
-  consultationInquiryCopy,
-} from "@/lib/consultation-inquiry";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
 type ConsultInlineCardProps = {
   pageTitle: string;
@@ -17,11 +14,10 @@ type ConsultInlineCardProps = {
  * 인라인 상담 카드 — 신청서 + 네이버 예약
  */
 export function ConsultInlineCard({
-  pageTitle: _pageTitle,
+  pageTitle,
   pageUrl: _pageUrl,
   className = "",
 }: ConsultInlineCardProps) {
-  void _pageTitle;
   void _pageUrl;
   return (
     <aside
@@ -42,12 +38,13 @@ export function ConsultInlineCard({
         size="md"
         className="mt-4"
         inquiry={
-          <Link
-            href={CONTACT_INQUIRY_PATH}
+          <InquiryStartButton
             className="btn-primary consult-inline__btn"
+            source="inline"
+            note={pageTitle}
           >
             {consultationInquiryCopy.ctaPrimary}
-          </Link>
+          </InquiryStartButton>
         }
       />
     </aside>

@@ -9,8 +9,10 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
@@ -37,7 +39,7 @@ export function SidebarConsultationPanel() {
   const { isOpen, statusLabel, statusHint } = availability;
   const showNaverReservation = isNaverSmartPlaceConfigured();
 
-  const channels: ChannelItem[] = [
+  const channels: ChannelItem[] = useOrderedConsultationChannels([
     ...(phone
       ? [
           {
@@ -84,7 +86,7 @@ export function SidebarConsultationPanel() {
       variant: "inquiry" as const,
       icon: <FormIcon className="h-4 w-4 shrink-0" />,
     },
-  ];
+  ]);
 
   return (
     <aside
@@ -165,9 +167,9 @@ export function SidebarConsultationPanel() {
                     {content}
                   </a>
                 ) : channel.id === "inquiry" ? (
-                  <Link href={channel.href} className={className}>
+                  <InquiryStartButton source="cta" className={className}>
                     {content}
-                  </Link>
+                  </InquiryStartButton>
                 ) : (
                   <a href={channel.href} className={className}>
                     {content}

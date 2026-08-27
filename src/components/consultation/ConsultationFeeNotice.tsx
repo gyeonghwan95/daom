@@ -15,8 +15,8 @@ export function ConsultationFeeNotice({
 
   return (
     <p className={`text-xs leading-relaxed ${themeClass} ${className}`}>
-      ※ 자세한 사건 검토 및 법률 자문은 별도 비용이 발생할 수 있으며, 필요 시
-      상담 중 안내드립니다.
+      ※ 지금 상황을 확인하는 안내는 부담 없이 남겨 주세요. 수임료·공과금은
+      사실관계를 확인한 뒤 안내합니다.
     </p>
   );
 }

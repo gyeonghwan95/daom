@@ -115,6 +115,7 @@ function StageVisual({
   onProgress?: (ratio: number) => void;
 }) {
   const fileRef = useRef<HTMLVideoElement>(null);
+  const fillRef = useRef<HTMLVideoElement>(null);
   const [revealVideo, setRevealVideo] = useState(false);
   const completeRef = useRef(onComplete);
   const progressRef = useRef(onProgress);
@@ -131,10 +132,18 @@ function StageVisual({
     }
 
     const node = fileRef.current;
+    const fill = fillRef.current;
     if (!node) return;
 
     finishedRef.current = false;
     const start = item.startSeconds ?? 0;
+
+    const seekBoth = () => {
+      if (start > 0) {
+        node.currentTime = start;
+        if (fill) fill.currentTime = start;
+      }
+    };
 
     const reportProgress = () => {
       progressRef.current?.(videoProgressRatio(node, item));
@@ -150,16 +159,23 @@ function StageVisual({
     const onSeeked = () => setRevealVideo(true);
     const onLoaded = () => {
       if (start > 0 && Math.abs(node.currentTime - start) > 0.2) {
-        node.currentTime = start;
+        seekBoth();
         return;
+      }
+      if (fill && start > 0 && Math.abs(fill.currentTime - start) > 0.2) {
+        fill.currentTime = start;
       }
       setRevealVideo(true);
       reportProgress();
     };
     const onTimeUpdate = () => {
+      if (fill && Math.abs(fill.currentTime - node.currentTime) > 0.35) {
+        fill.currentTime = node.currentTime;
+      }
       const { end } = videoWindow(item, node.duration);
       if (node.currentTime >= end - 0.05) {
         node.pause();
+        fill?.pause();
         finish();
         return;
       }
@@ -183,53 +199,94 @@ function StageVisual({
   useEffect(() => {
     if (!active || item.kind !== "video") return;
     const node = fileRef.current;
+    const fill = fillRef.current;
     if (!node) return;
     if (playing) {
       void node.play().catch(() => undefined);
+      void fill?.play().catch(() => undefined);
     } else {
       node.pause();
+      fill?.pause();
     }
   }, [active, item, playing]);
 
+  const imageLayer = (layer: "fill" | "fit") => (
+    <Image
+      src={item.src}
+      alt=""
+      fill
+      priority={priority && layer === "fit"}
+      quality={layer === "fill" ? 55 : 80}
+      sizes="100vw"
+      className={`home-hero-stage__media home-hero-stage__media--${layer}`}
+    />
+  );
+
   if (item.kind === "image") {
     return (
-      <Image
-        src={item.src}
-        alt=""
-        fill
-        priority={priority}
-        quality={80}
-        sizes="100vw"
-        className="home-hero__stage-img object-cover object-center"
-      />
+      <>
+        <div className="home-hero-stage__fill" aria-hidden>
+          {imageLayer("fill")}
+        </div>
+        <div className="home-hero-stage__fit">{imageLayer("fit")}</div>
+      </>
     );
   }
 
   return (
     <>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={item.poster}
-        alt=""
-        className={`home-hero-stage__poster${revealVideo ? " is-hidden" : ""}`}
-      />
-      {active ? (
-        <video
-          ref={fileRef}
-          className="home-hero-stage__file-video"
-          src={item.src}
-          poster={item.poster}
-          muted
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          disableRemotePlayback
-          controlsList="nodownload nofullscreen noremoteplayback"
-          tabIndex={-1}
-          aria-hidden
-          onContextMenu={(event) => event.preventDefault()}
+      <div className="home-hero-stage__fill" aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.poster}
+          alt=""
+          className="home-hero-stage__media home-hero-stage__media--fill"
         />
-      ) : null}
+        {active ? (
+          <video
+            ref={fillRef}
+            className="home-hero-stage__media home-hero-stage__media--fill home-hero-stage__file-video"
+            src={item.src}
+            poster={item.poster}
+            muted
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            disableRemotePlayback
+            controlsList="nodownload nofullscreen noremoteplayback"
+            tabIndex={-1}
+            aria-hidden
+            onContextMenu={(event) => event.preventDefault()}
+          />
+        ) : null}
+      </div>
+      <div className="home-hero-stage__fit">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.poster}
+          alt=""
+          className={`home-hero-stage__media home-hero-stage__media--fit home-hero-stage__poster${
+            revealVideo ? " is-hidden" : ""
+          }`}
+        />
+        {active ? (
+          <video
+            ref={fileRef}
+            className="home-hero-stage__media home-hero-stage__media--fit home-hero-stage__file-video"
+            src={item.src}
+            poster={item.poster}
+            muted
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            disableRemotePlayback
+            controlsList="nodownload nofullscreen noremoteplayback"
+            tabIndex={-1}
+            aria-hidden
+            onContextMenu={(event) => event.preventDefault()}
+          />
+        ) : null}
+      </div>
     </>
   );
 }

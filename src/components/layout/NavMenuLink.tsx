@@ -163,7 +163,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
 
 function desktopLinkClass(active: boolean) {
   return [
-    "inline-flex min-h-11 items-center rounded-lg px-3 text-[0.9375rem] transition-colors duration-200",
+    "inline-flex min-h-10 items-center rounded-lg px-2 text-[0.8125rem] transition-colors duration-200 xl:min-h-11 xl:px-2.5 xl:text-[0.875rem]",
     active
       ? "bg-beige font-semibold text-navy shadow-sm ring-1 ring-inset ring-navy/10"
       : "font-medium text-navy/70 hover:bg-beige/70 hover:text-navy",

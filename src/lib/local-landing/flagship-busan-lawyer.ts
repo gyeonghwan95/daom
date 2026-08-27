@@ -142,6 +142,8 @@ export function buildBusanLawyerFlagshipPage(
     ],
     relatedServiceLinks: [
       { href: "/", label: "부산 법무사 · 다옴법무사사무소" },
+      { href: "/busan-legal-map", label: "부산 구·군 법률지도" },
+      { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
       { href: "/부산법무사추천", label: "부산 법무사 추천" },
       { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 등기·포기·한정승인 선택" },

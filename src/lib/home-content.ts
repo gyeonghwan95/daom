@@ -17,6 +17,13 @@ export const homeHero = {
   scrollHintDetail: "안윤정 법무사 소개",
 } as const;
 
+export const homeSituationChips = [
+  { label: "상속등기", situationId: "inheritance-registration" },
+  { label: "부동산등기", situationId: "real-estate-trade" },
+  { label: "법인등기", situationId: "corporate" },
+  { label: "개인회생·파산", situationId: "rehab-bankruptcy" },
+] as const;
+
 export const homeServicesIntro = {
   title: "이런 일로 찾아오십니다",
   description:
@@ -71,7 +78,7 @@ export const homeFaqs = [
   {
     question: "해운대 센텀에 있는데 부산 다른 구 사건도 맡길 수 있나요?",
     answer:
-      "가능합니다. 사무소는 해운대구 센텀동로 200에 있고, 상담은 부산 전역 사건을 같은 기준으로 진행합니다. 등기 관할은 거주지보다 부동산·법인 본점 소재지를 따릅니다. 방문이 어려우면 전화·카카오톡으로 먼저 상황을 남겨 주세요.",
+      "가능합니다. 사무소는 해운대구 센텀동로 200에 있고, 상담은 부산 전역 사건을 같은 기준으로 진행합니다. 등기 관할은 거주지보다 부동산·법인 본점 소재지를 따릅니다. 구·군별 안내는 부산 법률지도에서, 사무소가 다른 구여도 되는지는 등기 관할과 사무소 위치 안내에서 확인하실 수 있습니다. 방문이 어려우면 전화·카카오톡으로 먼저 상황을 남겨 주세요.",
   },
   {
     question: "법무사와 변호사는 어떻게 다른가요?",
@@ -85,7 +92,7 @@ export const homeFaqs = [
   },
 ] as const;
 
-export const homeReviewedOn = "2026-08-26";
+export const homeReviewedOn = "2026-08-27";
 
 export const homeClosing = {
   eyebrow: "안윤정 법무사",

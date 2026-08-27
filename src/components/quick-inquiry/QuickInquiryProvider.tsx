@@ -19,6 +19,8 @@ export type QuickInquiryOpenOptions = {
   source?: "floating" | "mobile" | "inline" | "landing" | "cta" | "other";
   /** 페이지 맥락으로 미리 선택할 상황 (변경 가능) */
   presetSituationIds?: ConsultSituationId[];
+  /** 계산·자가진단 등에서 가져온 한 줄 메모 */
+  note?: string;
 };
 
 type QuickInquiryContextValue = {
@@ -27,6 +29,7 @@ type QuickInquiryContextValue = {
   pageUrl: string;
   source: QuickInquiryOpenOptions["source"];
   presetSituationIds: ConsultSituationId[];
+  note: string;
   openInquiry: (options?: QuickInquiryOpenOptions) => void;
   closeInquiry: () => void;
 };
@@ -70,6 +73,7 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
   const [presetSituationIds, setPresetSituationIds] = useState<
     ConsultSituationId[]
   >([]);
+  const [note, setNote] = useState("");
 
   const openInquiry = useCallback((options?: QuickInquiryOpenOptions) => {
     const meta = resolvePageMeta(options);
@@ -82,6 +86,7 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
     setPageUrl(meta.pageUrl);
     setSource(options?.source ?? "other");
     setPresetSituationIds(presets);
+    setNote(options?.note?.trim() ?? "");
     setOpen(true);
 
     trackConsultEvent({
@@ -108,6 +113,7 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
       pageUrl,
       source,
       presetSituationIds,
+      note,
       openInquiry,
       closeInquiry,
     }),
@@ -117,6 +123,7 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
       pageUrl,
       source,
       presetSituationIds,
+      note,
       openInquiry,
       closeInquiry,
     ],

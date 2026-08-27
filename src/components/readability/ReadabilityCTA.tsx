@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
@@ -59,13 +60,24 @@ export function ReadabilityCTA({
           size="md"
           showNaver={showNaverReservation && isConsult}
           inquiry={
-            <Link
-              href={primaryHref}
-              className="btn-primary readability-cta__button"
-              data-cta="contact"
-            >
-              {buttonLabel}
-            </Link>
+            isConsult ? (
+              <InquiryStartButton
+                source="cta"
+                note={intent}
+                fallbackHref={primaryHref}
+                className="btn-primary readability-cta__button"
+              >
+                {buttonLabel}
+              </InquiryStartButton>
+            ) : (
+              <Link
+                href={primaryHref}
+                className="btn-primary readability-cta__button"
+                data-cta="contact"
+              >
+                {buttonLabel}
+              </Link>
+            )
           }
         />
         {showAboutLawyer || showNaverBlogCta ? (

@@ -24,6 +24,7 @@ export default function LocationPage() {
         intro={`${siteConfig.name}는 ${getOfficeLocationWithAccess()}에 있습니다. ${officeLocation.visitNoticeDetail}`}
         relatedLinks={[
           ...getMainLandingHubLinks().slice(0, 8),
+          { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
           { href: "/contact", label: "상담 신청" },
           { href: "/office", label: "사무소 소개" },
           { href: "/services", label: "업무안내" },

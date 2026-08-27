@@ -10,10 +10,18 @@ import {
 } from "@/components/consultation/ConsultationIcons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { useOptionalQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
+import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { getPhoneHref, type ConsultationChannel } from "@/lib/contact";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
-import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
-import { openFloatingConsult } from "@/lib/floating-consult";
+import {
+  CONTACT_INQUIRY_PATH,
+  consultationInquiryCopy,
+} from "@/lib/consultation-inquiry";
+import {
+  isDesktopFloatingConsultViewport,
+  openFloatingConsult,
+} from "@/lib/floating-consult";
 
 type HeroContactBlockProps = {
   phone: string;
@@ -52,9 +60,22 @@ export function HeroContactBlock({
   channels,
   tone = "light",
 }: HeroContactBlockProps) {
-  const directChannels = channels.filter((c) =>
-    ["phone", "kakao", "naver"].includes(c.id),
+  const inquiry = useOptionalQuickInquiry();
+  const directChannels = useOrderedConsultationChannels(
+    channels.filter((c) => ["phone", "kakao", "naver"].includes(c.id)),
   );
+
+  function startHeroInquiry() {
+    if (isDesktopFloatingConsultViewport()) {
+      openFloatingConsult();
+      return;
+    }
+    if (inquiry) {
+      inquiry.openInquiry({ source: "inline" });
+      return;
+    }
+    window.location.href = CONTACT_INQUIRY_PATH;
+  }
 
   return (
     <div className="hero-contact">
@@ -108,23 +129,26 @@ export function HeroContactBlock({
 
       <div className="hero-contact__footer">
         <div className="hero-contact__row hero-contact__row--guide" role="list">
-          <Link
-            href="/contact/inquiry"
+          <button
+            type="button"
             className="hero-contact__chip hero-contact__chip--inquiry"
             role="listitem"
+            aria-haspopup="dialog"
+            aria-label={HERO_INQUIRY_CHIP_LABEL}
+            onClick={startHeroInquiry}
           >
             <FormIcon className={CHIP_ICON_CLASS} />
             <span className="hero-contact__chip-label">
               {HERO_INQUIRY_CHIP_LABEL}
             </span>
-          </Link>
+          </button>
           <button
             type="button"
             className="hero-contact__chip hero-contact__chip--guide"
             role="listitem"
             aria-haspopup="dialog"
             aria-label={HERO_INQUIRY_CHIP_LABEL}
-            onClick={() => openFloatingConsult()}
+            onClick={startHeroInquiry}
           >
             <FormIcon className={CHIP_ICON_CLASS} />
             <span className="hero-contact__chip-label">

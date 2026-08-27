@@ -10,9 +10,10 @@ import {
   type ConversionVariant,
 } from "@/lib/conversion-cta";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
+import { homeHero } from "@/lib/home-content";
 import {
   consultationInquiryCopy,
-  contactInquiryHref,
 } from "@/lib/consultation-inquiry";
 
 type PageConversionCTAProps = {
@@ -31,6 +32,7 @@ type PageConversionCTAProps = {
   showChannelButtons?: boolean;
   tone?: "light" | "dark";
   className?: string;
+  inquiryNote?: string;
 };
 
 const secondaryLinkClass =
@@ -51,6 +53,7 @@ export function PageConversionCTA({
   showChannelButtons = true,
   tone,
   className = "",
+  inquiryNote,
 }: PageConversionCTAProps) {
   const config = resolveConversionCTAConfig({
     pageType,
@@ -67,9 +70,7 @@ export function PageConversionCTA({
   const theme = tone ?? (isBottom ? "light" : "light");
   const slug = pageSlug ?? pageType;
   const feeNotice = showFeeNotice ?? isBottom;
-  const inquiryHref = serviceSlug
-    ? contactInquiryHref({ field: serviceSlug })
-    : contactInquiryHref();
+  const proofLine = `${homeHero.proof[0]} · ${homeHero.proof[1]}`;
 
   const shellClass = isBottom
     ? theme === "dark"
@@ -122,6 +123,7 @@ export function PageConversionCTA({
             diagnosisHref={config.diagnosisHref}
             theme={theme}
             pageSlug={slug}
+            inquiryNote={inquiryNote}
           />
         ) : (
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
@@ -130,14 +132,14 @@ export function PageConversionCTA({
               layout="row"
               size="md"
               inquiry={
-                <Link
-                  href={inquiryHref}
-                  data-cta="contact"
-                  onClick={() => trackCTA("contact", slug, inquiryHref)}
+                <InquiryStartButton
+                  source="cta"
+                  note={inquiryNote}
+                  pageSlug={slug}
                   className={primaryBtnClass}
                 >
                   {consultationInquiryCopy.ctaPrimary}
-                </Link>
+                </InquiryStartButton>
               }
             />
             <Link
@@ -157,10 +159,21 @@ export function PageConversionCTA({
       </div>
 
       {feeNotice ? (
-        <ConsultationFeeNotice
-          theme={theme === "dark" ? "dark" : "light"}
-          className="mt-4"
-        />
+        <>
+          <ConsultationFeeNotice
+            theme={theme === "dark" ? "dark" : "light"}
+            className="mt-4"
+          />
+          <p
+            className={
+              theme === "dark"
+                ? "mt-2 text-center text-xs text-white/70"
+                : "mt-2 text-center text-xs text-navy/55"
+            }
+          >
+            {proofLine}
+          </p>
+        </>
       ) : null}
 
       {showSecondaryLinks ? (

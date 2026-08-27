@@ -93,6 +93,21 @@ function getClosedAvailability(
   };
 }
 
+/** 영업 외에는 카카오·톡톡을 전화보다 앞에 둔다. */
+export function orderChannelsForAvailability<T extends { id: string }>(
+  channels: T[],
+  isOpen: boolean,
+): T[] {
+  if (isOpen) return channels;
+  const rank = (id: string) => {
+    if (id === "kakao") return 0;
+    if (id === "naver") return 1;
+    if (id === "phone") return 2;
+    return 3;
+  };
+  return [...channels].sort((a, b) => rank(a.id) - rank(b.id));
+}
+
 export function getConsultationAvailability(
   now: Date = new Date(),
 ): ConsultationAvailability {

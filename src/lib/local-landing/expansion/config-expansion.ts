@@ -19,9 +19,9 @@ export const expansionLandingConfigs: LocalLandingConfig[] = [
   { slug: "사상구법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "sasang", regionLabel: "사상구", neighborhoods: ["엄궁동", "감전동", "주례동"], caseAngle: "사상구 상가·주택 상속등기", linkedNeighborhoodSlugs: ["사상법무사", "주례동법무사"] },
   { slug: "사하구법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "saha", regionLabel: "사하구", neighborhoods: ["하단동", "괴정동", "당리동"], caseAngle: "사하구 아파트 상속·매매", linkedNeighborhoodSlugs: ["하단법무사", "괴정동법무사", "다대동법무사"] },
   { slug: "중구법무사", pageType: "region-hub", serviceSlug: "real-estate-registration", regionKey: "junggu", regionLabel: "중구", neighborhoods: ["남포동", "중앙동", "보수동"], caseAngle: "원도심 상가·건물 등기", linkedNeighborhoodSlugs: ["남포동법무사"] },
-  { slug: "서구법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "seogu", regionLabel: "서구", neighborhoods: ["충무동", "동대신동", "아미동"], caseAngle: "서구 주택·상가 상속등기" },
+  { slug: "서구법무사", pageType: "region-hub", serviceSlug: "inheritance-registration", regionKey: "seogu", regionLabel: "서구", neighborhoods: ["충무동", "동대신동", "아미동", "송도"], caseAngle: "서구 주택·상가 상속등기" },
   { slug: "영도구법무사", pageType: "region-hub", serviceSlug: "corporate-registration", regionKey: "yeongdo", regionLabel: "영도구", neighborhoods: ["남항동", "동삼동", "봉래동"], caseAngle: "영도구 법인·부동산 등기", linkedNeighborhoodSlugs: ["동삼동법무사"] },
-  { slug: "강서구법무사", pageType: "region-hub", serviceSlug: "company-establishment", regionKey: "gangseo", regionLabel: "강서구", neighborhoods: ["명지", "명지국제신도시", "가락동"], caseAngle: "명지 신도시 법인설립·등기", linkedNeighborhoodSlugs: ["명지법무사"] },
+  { slug: "강서구법무사", pageType: "region-hub", serviceSlug: "company-establishment", regionKey: "gangseo", regionLabel: "강서구", neighborhoods: ["명지", "명지국제신도시", "가락동", "녹산"], caseAngle: "명지 신도시 법인설립·등기", linkedNeighborhoodSlugs: ["명지법무사"] },
   { slug: "동구법무사", pageType: "region-hub", serviceSlug: "real-estate-registration", regionKey: "donggu", regionLabel: "동구", neighborhoods: ["초량동", "수정동", "범일동", "부산역"], caseAngle: "동구 역세권 상가·주택 상속·등기", linkedNeighborhoodSlugs: ["부산역법무사", "초량동법무사", "범일동법무사"] },
 
   // 고전환 10

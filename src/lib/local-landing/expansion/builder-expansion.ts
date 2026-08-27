@@ -19,6 +19,7 @@ import {
 import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 import { consultHubLinkForLocalPage } from "@/lib/seo/consult-hub-link";
+import { isBusanDistrictHubPath } from "@/lib/geo/busan-district-hubs";
 import {
   getRegionHubCoverage,
   isRegionHubIdentityLocked,
@@ -66,6 +67,59 @@ const registryByRegionKey: Record<string, Partial<LocalLandingJurisdictionGuide>
     title: "부산진등기소",
     address: "부산광역시 부산진구 중앙대로 686",
     jurisdictionNote: "서면·부전·전포 일대 상가·오피스·주택 등기가 집중 접수됩니다.",
+  },
+  yeonje: {
+    title: "중부산등기소·부산지방법원 등기국",
+    address: "부산광역시 연제구 법원로 8 등",
+    jurisdictionNote:
+      "연제구 부동산·법인은 중부산등기소 또는 등기국 관할인 경우가 많습니다. 법원로 인근이라도 접수 관할은 소재지를 기준으로 확인합니다.",
+  },
+  suyeong: {
+    title: "남부산등기소",
+    address: "부산광역시 남구 수영로 312",
+    jurisdictionNote:
+      "수영구 광안·민락·남천 부동산은 남부산등기소 관할인 경우가 많습니다. 전세권·매매 잔금이 겹치면 말소 순서를 먼저 맞춥니다.",
+  },
+  namgu: {
+    title: "남부산등기소",
+    address: "부산광역시 남구 수영로 312",
+    jurisdictionNote:
+      "남구 대연·용호·문현 부동산은 남부산등기소 관할이 많습니다. 문현 법인 본점은 별도로 확인합니다.",
+  },
+  junggu: {
+    title: "부산진등기소",
+    address: "부산광역시 부산진구 중앙대로 686",
+    jurisdictionNote:
+      "중구 남포·중앙·보수 원도심 상가·주택은 부산진등기소 관할인 경우가 많습니다. 토지·건물 명의가 다르면 원인서류를 먼저 맞춥니다.",
+  },
+  seogu: {
+    title: "부산진등기소",
+    address: "부산광역시 부산진구 중앙대로 686",
+    jurisdictionNote:
+      "서구 충무·동대신·송도 부동산은 부산진등기소 관할인 경우가 많습니다. 해안 주거와 원도심 상가는 등기 원인이 달라 서류를 구분해 안내합니다.",
+  },
+  yeongdo: {
+    title: "남부산등기소",
+    address: "부산광역시 남구 수영로 312",
+    jurisdictionNote:
+      "영도구 토지·건물 등기는 남부산등기소 관할인 경우가 많습니다. 선박·어선 등기는 부동산등기와 별도 절차입니다.",
+  },
+  sasang: {
+    title: "북부산등기소",
+    address: "부산광역시 북구 금곡대로 231",
+    jurisdictionNote:
+      "사상구 공장·상가·주택은 북부산등기소 관할인 경우가 많습니다. 공장 부지는 토지·건물 명의가 어긋난 경우가 있어 등기부부터 대조합니다.",
+  },
+  saha: {
+    title: "남부산등기소",
+    address: "부산광역시 남구 수영로 312",
+    jurisdictionNote:
+      "사하구 하단·괴정·다대 부동산은 남부산등기소 관할인 경우가 많습니다. 잔금일·근저당 말소가 있으면 순서를 맞춰 접수합니다.",
+  },
+  geumjeong: {
+    title: "북부산등기소·중부산등기소",
+    jurisdictionNote:
+      "금정구 부곡·장전·구서는 소재지에 따라 북부산 또는 중부산등기소 관할이 정해집니다. 다가구·한정승인은 주소와 상속인 구성을 먼저 확인합니다.",
   },
   gijang: {
     title: "북부산등기소·동부지원 등기과",
@@ -255,10 +309,13 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
           title: `${config.regionLabel} 동·생활권에서 찾는 경우`,
           body: coverage.coverageBody,
           items: coverage.coverageItems,
-          links: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
-            href: `/${slug}`,
-            label: neighborhoodSlugToLabel(slug),
-          })),
+          links: [
+            ...(config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
+              href: `/${slug}`,
+              label: neighborhoodSlugToLabel(slug),
+            })),
+            { href: "/busan-legal-map", label: "부산 구·군 법률지도" },
+          ],
         },
       ]
     : [];
@@ -312,7 +369,19 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
     relatedServiceLinks: [
+      ...(isBusanDistrictHubPath(`/${config.slug}`)
+        ? [{ href: "/", label: "부산 법무사" }]
+        : []),
       consultHubLinkForLocalPage(config.slug),
+      { href: "/busan-legal-map", label: "부산 구·군 법률지도" },
+      ...(isBusanDistrictHubPath(`/${config.slug}`)
+        ? [
+            {
+              href: "/등기관할과사무소위치",
+              label: "다른 구 사건·등기 관할 확인",
+            },
+          ]
+        : []),
     ],
     relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
       href: `/${slug}`,

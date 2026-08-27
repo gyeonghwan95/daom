@@ -1,4 +1,5 @@
 import type { RelatedLink } from "@/types/content";
+import { BUSAN_DISTRICT_HUBS } from "@/lib/geo/busan-district-hubs";
 import { CORE_HUBS } from "./registry";
 
 export type HomeHubSection = {
@@ -106,16 +107,17 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
     id: "region-lawyers",
     title: "지역별 법무사 안내",
-    description: "부산 구·군·동·역세권별 법무사 상담 페이지입니다.",
+    description:
+      "부산 16개 구·군 안내입니다. 동·역세권은 해당 구 페이지와 오시는 길에서 이어집니다.",
     links: [
       { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
-      { href: "/해운대법무사", label: "해운대 법무사" },
+      { href: "/busan-legal-map", label: "부산 법률지도" },
+      ...BUSAN_DISTRICT_HUBS.map((hub) => ({
+        href: hub.href,
+        label: hub.label,
+      })),
       { href: "/센텀법무사", label: "센텀 법무사" },
       { href: "/재송동법무사", label: "재송동 법무사" },
-      { href: "/수영구법무사", label: "수영구 법무사" },
-      { href: "/연제구법무사", label: "연제구 법무사" },
-      { href: "/부산진구법무사", label: "부산진구 법무사" },
-      { href: "/기장군법무사", label: "기장군 법무사" },
       { href: "/location", label: "지역·오시는 길 전체" },
     ],
   },
@@ -243,7 +245,11 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
 
 export const LOCATION_HUB_LINKS: RelatedLink[] = [
   { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
-  { href: "/해운대법무사", label: "해운대 법무사" },
+  { href: "/busan-legal-map", label: "부산 법률지도" },
+  ...BUSAN_DISTRICT_HUBS.map((hub) => ({
+    href: hub.href,
+    label: hub.label,
+  })),
   { href: "/센텀법무사", label: "센텀 법무사" },
   { href: "/재송동법무사", label: "재송동 법무사" },
   { href: "/반여동법무사", label: "반여동 법무사" },

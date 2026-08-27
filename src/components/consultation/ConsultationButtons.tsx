@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import type { ConsultationChannel, ConsultationChannelId } from "@/lib/contact";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { ConsultationPanel } from "@/components/consultation/ConsultationPanel";
+import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import {
   FormIcon,
   KakaoIcon,
@@ -192,13 +194,14 @@ export function ConsultationButtons({
   className = "",
   pageSlug,
 }: ConsultationButtonsProps) {
+  const orderedChannels = useOrderedConsultationChannels(channels);
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
 
   const wantsQrPanel =
     (showQrCodes ?? layout === "grid") &&
     layout === "grid" &&
-    channels.some(
+    orderedChannels.some(
       (channel) =>
         (channel.id === "kakao" || channel.id === "naver") && channel.configured,
     );
@@ -206,7 +209,7 @@ export function ConsultationButtons({
   if (wantsQrPanel) {
     return (
       <ConsultationPanel
-        channels={channels}
+        channels={orderedChannels}
         theme={theme}
         showLabels={showLabels}
         className={className}
@@ -215,7 +218,7 @@ export function ConsultationButtons({
     );
   }
 
-  const count = Math.max(channels.length, 1);
+  const count = Math.max(orderedChannels.length, 1);
   const gridClass =
     layout === "stack"
       ? "flex flex-col gap-2.5 sm:gap-3"
@@ -234,16 +237,28 @@ export function ConsultationButtons({
   return (
     <div className={className}>
       <div className={gridClass}>
-        {channels.map((channel) => (
-          <ChannelLink
-            key={channel.id}
-            channel={channel}
-            label={labelFor(channel)}
-            className={getButtonClass(channel.id, theme, layout)}
-            tile={isTile}
-            theme={theme}
-          />
-        ))}
+        {orderedChannels.map((channel) =>
+          channel.id === "inquiry" ? (
+            <InquiryStartButton
+              key={channel.id}
+              source="cta"
+              pageSlug={pageSlug}
+              className={getButtonClass(channel.id, theme, layout)}
+            >
+              <ChannelIcon id={channel.id} />
+              <span className="truncate">{labelFor(channel)}</span>
+            </InquiryStartButton>
+          ) : (
+            <ChannelLink
+              key={channel.id}
+              channel={channel}
+              label={labelFor(channel)}
+              className={getButtonClass(channel.id, theme, layout)}
+              tile={isTile}
+              theme={theme}
+            />
+          ),
+        )}
       </div>
     </div>
   );

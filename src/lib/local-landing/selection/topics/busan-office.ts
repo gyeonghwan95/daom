@@ -171,6 +171,10 @@ export const 부산법무사무소: SelectionHubContent = {
         "사무실은 해운대·센텀에 있지만, 의뢰인 거주지·부동산 소재지는 부산진·동래·수영·사상·기장 등 전역일 수 있습니다. 등기 관할은 소재지 기준이므로, ‘가까운 사무실’과 ‘접수 관할’을 함께 확인합니다.",
         "타지역 상속인·타지역 부동산이 섞인 경우에도 서류 사진·우편으로 1차 정리가 가능한 경우가 많습니다. 무조건 완전 비대면을 보장하지는 않으며, 본인확인·인감·원본이 필요하면 별도 안내합니다.",
       ],
+      links: [
+        { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
+        { href: "/busan-legal-map", label: "부산 구·군 법률지도" },
+      ],
     },
   ],
   relatedLinks: [
@@ -183,6 +187,7 @@ export const 부산법무사무소: SelectionHubContent = {
     L.busanRemote,
     L.busanDocs,
     L.busanCost,
+    { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
     { href: "/blog/busan-lawyer-recommend-office-consult", label: "추천·사무실·상담 비교 칼럼" },
     L.contact,
   ],
@@ -200,7 +205,7 @@ export const 부산법무사무소: SelectionHubContent = {
     {
       question: "해운대·센텀 외 지역 사건도 맡나요?",
       answer:
-        "네. 부동산·법인 소재지가 부산 전역·인근이어도 상담합니다. 관할 등기소·법원은 사건별로 안내합니다.",
+        "네. 부동산·법인 소재지가 부산 전역·인근이어도 상담합니다. 관할 등기소·법원은 사건별로 안내합니다. 사무소가 그 구에 있어야 하는지는 등기 관할과 사무소 위치 안내에서 나누어 보실 수 있습니다.",
     },
     {
       question: "법무사 추천과 사무실 검색이 다른가요?",

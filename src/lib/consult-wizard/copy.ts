@@ -36,6 +36,10 @@ export const consultWizardCopy = {
     "내용을 확인한 뒤 남겨주신 연락처로 안내드리겠습니다.",
   reviewAgain: "상담 내용 다시 확인하기",
   callNow: "전화로 바로 문의하기",
+  kakaoPhotoHint:
+    "등기부등본·계약서 사진은 카카오톡으로 보내셔도 됩니다. 주민등록번호는 가려 주세요.",
+  kakaoContinue: "카카오톡으로 이어가기",
+  detailForm: "신청서로 자세히 작성",
   goHome: "홈으로 돌아가기",
   retry: "다시 보내기",
   floatingLabel: "1분만에 문의하기",

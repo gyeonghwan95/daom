@@ -14,6 +14,7 @@ import {
 import { useQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 import {
   CONSULT_SITUATIONS,
@@ -72,6 +73,7 @@ export function ConsultWizardShell() {
     pageUrl,
     source,
     presetSituationIds,
+    note: presetNote,
   } = useQuickInquiry();
   const reducedMotion = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
@@ -87,7 +89,7 @@ export function ConsultWizardShell() {
   const [honeypot, setHoneypot] = useState("");
   const [resetSignal, setResetSignal] = useState(0);
   const resetKey = open
-    ? `${pageTitle}\0${pageUrl}\0${presetSituationIds.join("\0")}`
+    ? `${pageTitle}\0${pageUrl}\0${presetSituationIds.join("\0")}\0${presetNote}`
     : "";
   const [appliedResetKey, setAppliedResetKey] = useState("");
 
@@ -99,10 +101,11 @@ export function ConsultWizardShell() {
         ...(saved ?? {}),
         pageTitle,
         pageUrl,
-        situationIds: saved?.situationIds?.length
-          ? saved.situationIds
-          : presetSituationIds,
-        step: saved?.step ?? 1,
+        situationIds: presetSituationIds.length
+          ? presetSituationIds
+          : saved?.situationIds ?? [],
+        situationNote: presetNote || saved?.situationNote || "",
+        step: presetSituationIds.length || presetNote ? 1 : saved?.step ?? 1,
       }),
     );
     setPhase("form");
@@ -187,7 +190,7 @@ export function ConsultWizardShell() {
     [draft.situationIds],
   );
 
-  const phone = getContactInfo().phone;
+  const { phone, kakao } = getContactInfo();
   const phoneHref = phone ? getPhoneHref(phone) : "tel:";
   const summary = useMemo(() => buildConsultSummaryLines(draft), [draft]);
 
@@ -216,9 +219,6 @@ export function ConsultWizardShell() {
 
   const validateStep = (step: number): boolean => {
     const nextErrors: Record<string, string> = {};
-    if (step === 1 && draft.situationIds.length === 0) {
-      nextErrors.situations = "해당하는 상황을 하나 이상 선택해 주세요.";
-    }
     if (step === 3) {
       if (!draft.name.trim()) nextErrors.name = "성함을 입력해 주세요.";
       if (!clientParseContact(draft.contact)) {
@@ -233,6 +233,10 @@ export function ConsultWizardShell() {
   };
 
   const goNext = () => {
+    if (draft.step === 1 && draft.situationIds.length === 0) {
+      update({ situationIds: ["unknown-work"], step: 2 });
+      return;
+    }
     if (!validateStep(draft.step)) return;
     if (draft.step < 4) update({ step: (draft.step + 1) as 1 | 2 | 3 | 4 });
   };
@@ -425,6 +429,9 @@ export function ConsultWizardShell() {
                 </svg>
               </div>
               <p className="consult-wizard__success-text">{copy.successBody}</p>
+              <p className="consult-wizard__success-text consult-wizard__success-hint">
+                {copy.kakaoPhotoHint}
+              </p>
               <div className="consult-wizard__success-actions">
                 <a
                   href={phoneHref}
@@ -432,6 +439,16 @@ export function ConsultWizardShell() {
                 >
                   {copy.callNow}
                 </a>
+                {kakao ? (
+                  <a
+                    href={kakao}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary min-h-11 justify-center"
+                  >
+                    {copy.kakaoContinue}
+                  </a>
+                ) : null}
                 <button
                   type="button"
                   className="btn-secondary min-h-11"
@@ -578,6 +595,23 @@ export function ConsultWizardShell() {
                 {copy.step3Caution}
               </p>
 
+              <fieldset className="consult-wizard__fieldset">
+                <legend>{copy.timeLabel}</legend>
+                <div className="consult-wizard__chips" role="group">
+                  {CONTACT_TIME_OPTIONS.map((opt) => (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      className={`consult-wizard__chip${draft.contactTime === opt.id ? " is-selected" : ""}`}
+                      aria-pressed={draft.contactTime === opt.id}
+                      onClick={() => update({ contactTime: opt.id })}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
               <label
                 className="consult-wizard__field"
                 htmlFor={`${ids.contactId}-name`}
@@ -633,23 +667,6 @@ export function ConsultWizardShell() {
                       className={`consult-wizard__chip${draft.contactPreference === opt.id ? " is-selected" : ""}`}
                       aria-pressed={draft.contactPreference === opt.id}
                       onClick={() => update({ contactPreference: opt.id })}
-                    >
-                      {opt.label}
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
-
-              <fieldset className="consult-wizard__fieldset">
-                <legend>{copy.timeLabel}</legend>
-                <div className="consult-wizard__chips" role="group">
-                  {CONTACT_TIME_OPTIONS.map((opt) => (
-                    <button
-                      key={opt.id}
-                      type="button"
-                      className={`consult-wizard__chip${draft.contactTime === opt.id ? " is-selected" : ""}`}
-                      aria-pressed={draft.contactTime === opt.id}
-                      onClick={() => update({ contactTime: opt.id })}
                     >
                       {opt.label}
                     </button>
@@ -745,7 +762,15 @@ export function ConsultWizardShell() {
                 >
                   {copy.back}
                 </button>
-              ) : null}
+              ) : (
+                <Link
+                  href={CONTACT_INQUIRY_PATH}
+                  className="btn-secondary min-h-11 consult-wizard__footer-back"
+                  onClick={closeInquiry}
+                >
+                  {copy.detailForm}
+                </Link>
+              )}
               {draft.step < 4 ? (
                 <button
                   type="button"

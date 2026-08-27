@@ -5,11 +5,18 @@ import { useConsultationAvailability } from "@/hooks/useConsultationAvailability
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 
+type HeaderConsultationStatusProps = {
+  variant?: "default" | "compact";
+};
+
 /**
  * SEO: 상태 문구를 DOM에 2~3중으로 복제하지 않는다.
  * 마퀴 필요 여부는 보이는 텍스트 노드의 scrollWidth/Height로만 측정한다.
+ * 모바일(default)은 칩 폭이 좁아 짧은 라벨만 보이고, 전체 안내는 aria-label에 둔다.
  */
-export function HeaderConsultationStatus() {
+export function HeaderConsultationStatus({
+  variant = "default",
+}: HeaderConsultationStatusProps) {
   const availability = useConsultationAvailability();
   const reducedMotion = useReducedMotion();
   const { phone, kakao } = getContactInfo();
@@ -20,6 +27,8 @@ export function HeaderConsultationStatus() {
     isOpen && phone ? getPhoneHref(phone) : kakao || "/contact/inquiry";
   const isExternal = !(isOpen && phone);
   const marqueeText = `${statusLabel} · ${hint}`;
+  const mobileLabel = isOpen ? "상담 가능" : "톡 상담";
+  const isCompact = variant === "compact";
 
   const viewportRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -31,6 +40,10 @@ export function HeaderConsultationStatus() {
   }, []);
 
   useEffect(() => {
+    if (!isCompact) {
+      setUseMarquee(false);
+      return;
+    }
     const viewportEl = viewportRef.current;
     const textEl = textRef.current;
     if (!viewportEl || !textEl) return;
@@ -52,9 +65,9 @@ export function HeaderConsultationStatus() {
       observer.disconnect();
       window.removeEventListener("resize", sync);
     };
-  }, [statusLabel, hint, useMarquee]);
+  }, [statusLabel, hint, isCompact]);
 
-  const showMarquee = useMarquee && !reducedMotion;
+  const showMarquee = isCompact && useMarquee && !reducedMotion;
 
   const content = (
     <>
@@ -90,8 +103,12 @@ export function HeaderConsultationStatus() {
           </span>
         ) : (
           <span ref={textRef} className="header-consult-status__text">
-            <span className="header-consult-status__label">{statusLabel}</span>
-            <span className="header-consult-status__hint">{hint}</span>
+            <span className="header-consult-status__label">
+              {isCompact ? statusLabel : mobileLabel}
+            </span>
+            {isCompact ? (
+              <span className="header-consult-status__hint">{hint}</span>
+            ) : null}
           </span>
         )}
       </span>
@@ -101,6 +118,7 @@ export function HeaderConsultationStatus() {
   const className = [
     "header-consult-status",
     `header-consult-status--${isOpen ? "live" : "away"}`,
+    isCompact ? "header-consult-status--compact" : "header-consult-status--mobile",
     showMarquee ? "header-consult-status--marquee" : "",
   ]
     .filter(Boolean)

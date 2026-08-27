@@ -149,18 +149,16 @@ export function ToolCalculatorView({
 
       <DiagnosisFAQ items={page.faqs} />
 
-      {!result ? (
-        <>
-          <RelatedRecommendationsDisplay groups={recommendationGroups} />
-          <div id="consultation">
-            <ConsultationCTA
-              title="계산 결과를 바탕으로 상담해 보세요"
-              description={page.ctaText}
-              buttonLabel={consultationInquiryCopy.ctaPrimary}
-            />
-          </div>
-        </>
-      ) : null}
+      <RelatedRecommendationsDisplay groups={recommendationGroups} />
+      <div id="consultation">
+        <ConsultationCTA
+          title="계산 결과를 바탕으로 상담해 보세요"
+          description={page.ctaText}
+          buttonLabel={consultationInquiryCopy.ctaPrimary}
+          intent={result?.summary}
+          fromPage={slug}
+        />
+      </div>
     </article>
   );
 }

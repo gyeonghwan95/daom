@@ -15,7 +15,7 @@ import { Container } from "@/components/layout/Container";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavMenuLink } from "@/components/layout/NavMenuLink";
 import { useHeaderSearch } from "@/components/search/SiteSearchControls";
-import { headerPrimaryNavigation } from "@/lib/navigation";
+import { mainNavigation } from "@/lib/navigation";
 import { siteFavicon } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 
@@ -137,8 +137,8 @@ export function Header() {
               className="hidden min-w-0 flex-1 lg:flex lg:justify-end"
               aria-label="주 메뉴"
             >
-              <ul className="flex flex-nowrap items-center justify-end gap-x-0.5 xl:gap-x-1">
-                {headerPrimaryNavigation.map((item) => (
+              <ul className="flex flex-wrap items-center justify-end gap-x-0 gap-y-0.5">
+                {mainNavigation.map((item) => (
                   <li key={item.href} className="shrink-0">
                     <NavMenuLink item={item} variant="desktop" />
                   </li>
@@ -151,6 +151,9 @@ export function Header() {
             </div>
 
             <div className="header-bar__actions flex shrink-0 items-center gap-1.5 sm:gap-2">
+              <div className="header-bar__status-desktop hidden min-w-0 lg:flex">
+                <HeaderConsultationStatus variant="compact" />
+              </div>
               {searchButton}
 
               <button

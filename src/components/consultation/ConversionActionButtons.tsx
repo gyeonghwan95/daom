@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import {
   FormIcon,
   KakaoIcon,
@@ -9,12 +10,11 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
-import {
-  CONTACT_INQUIRY_PATH,
-  consultationInquiryCopy,
-} from "@/lib/consultation-inquiry";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
 
 type ConversionActionButtonsProps = {
   documentsHref?: string;
@@ -22,6 +22,8 @@ type ConversionActionButtonsProps = {
   theme?: "light" | "dark";
   pageSlug?: string;
   className?: string;
+  inquiryNote?: string;
+  presetSituationIds?: ConsultSituationId[];
 };
 
 const primaryBase =
@@ -56,9 +58,34 @@ export function ConversionActionButtons({
   theme = "light",
   pageSlug,
   className = "",
+  inquiryNote,
+  presetSituationIds,
 }: ConversionActionButtonsProps) {
   const { phone, kakao, naverTalk } = getContactInfo();
   const slug = pageSlug ?? "conversion-cta";
+  const channelItems = useOrderedConsultationChannels(
+    [
+      phone
+        ? { id: "phone" as const, href: getPhoneHref(phone), label: "전화 상담" }
+        : null,
+      kakao
+        ? {
+            id: "kakao" as const,
+            href: kakao,
+            label: "카카오톡 상담",
+            external: true,
+          }
+        : null,
+      naverTalk
+        ? {
+            id: "naver" as const,
+            href: naverTalk,
+            label: "네이버 톡톡",
+            external: true,
+          }
+        : null,
+    ].filter((item): item is NonNullable<typeof item> => Boolean(item)),
+  );
 
   return (
     <div className={`space-y-3 ${className}`.trim()}>
@@ -67,10 +94,11 @@ export function ConversionActionButtons({
         layout="row"
         size="md"
         inquiry={
-          <Link
-            href={CONTACT_INQUIRY_PATH}
-            data-cta="contact"
-            onClick={() => trackCTA("contact", slug, CONTACT_INQUIRY_PATH)}
+          <InquiryStartButton
+            source="cta"
+            note={inquiryNote}
+            presetSituationIds={presetSituationIds}
+            pageSlug={slug}
             className={
               theme === "dark"
                 ? `${primaryBase} w-full bg-white text-navy hover:bg-beige`
@@ -79,7 +107,7 @@ export function ConversionActionButtons({
           >
             <FormIcon className="h-5 w-5 shrink-0" />
             <span>{consultationInquiryCopy.ctaPrimary}</span>
-          </Link>
+          </InquiryStartButton>
         }
       />
       <p
@@ -93,45 +121,46 @@ export function ConversionActionButtons({
       </p>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
-        {phone ? (
-          <a
-            href={getPhoneHref(phone)}
-            data-cta="phone"
-            onClick={() => trackCTA("phone", slug, getPhoneHref(phone))}
-            className={primaryClass(theme, "phone")}
-          >
-            <PhoneIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">전화 상담</span>
-          </a>
-        ) : null}
+        {channelItems.map((channel) => {
+          const kind = channel.id;
+          const className =
+            kind === "naver"
+              ? `${primaryClass(theme, kind)} col-span-2 sm:col-span-1`
+              : primaryClass(theme, kind);
+          const icon =
+            kind === "phone" ? (
+              <PhoneIcon className="h-5 w-5 shrink-0" />
+            ) : kind === "kakao" ? (
+              <KakaoIcon className="h-5 w-5 shrink-0" />
+            ) : (
+              <NaverIcon className="h-5 w-5 shrink-0" />
+            );
+          const ctaKind =
+            kind === "phone"
+              ? "phone"
+              : kind === "kakao"
+                ? "kakao"
+                : "naver-talk";
 
-        {kakao ? (
-          <a
-            href={kakao}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="kakao"
-            onClick={() => trackCTA("kakao", slug, kakao)}
-            className={primaryClass(theme, "kakao")}
-          >
-            <KakaoIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">카카오톡 상담</span>
-          </a>
-        ) : null}
-
-        {naverTalk ? (
-          <a
-            href={naverTalk}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="naver-talk"
-            onClick={() => trackCTA("naver-talk", slug, naverTalk)}
-            className={`${primaryClass(theme, "naver")} col-span-2 sm:col-span-1`}
-          >
-            <NaverIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">네이버 톡톡</span>
-          </a>
-        ) : null}
+          return (
+            <a
+              key={channel.id}
+              href={channel.href}
+              target={"external" in channel && channel.external ? "_blank" : undefined}
+              rel={
+                "external" in channel && channel.external
+                  ? "noopener noreferrer"
+                  : undefined
+              }
+              data-cta={ctaKind}
+              onClick={() => trackCTA(ctaKind, slug, channel.href)}
+              className={className}
+            >
+              {icon}
+              <span className="truncate">{channel.label}</span>
+            </a>
+          );
+        })}
       </div>
 
       <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">

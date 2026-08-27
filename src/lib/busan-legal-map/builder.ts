@@ -30,8 +30,10 @@ export function buildBusanLegalMapHubPageData(): PageData {
       body: "거주지나 부동산·법인 소재지를 알려주시면 관할과 다음 절차를 함께 정리해 드립니다. 해운대·센텀 사무소에서 부산 전역 상담이 가능합니다.",
     },
     internalLinks: [
-      { href: "/부산법무사", label: "부산 법무사 허브" },
-      ...districtLinks.slice(0, 8),
+      { href: "/", label: "해운대·센텀 법무사 사무소" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
+      ...districtLinks,
       { href: "/situations", label: "상황별 법률문제" },
       { href: "/tools", label: "법률 계산기" },
       { href: "/업무사례", label: "업무 사례" },
@@ -46,7 +48,6 @@ export function buildBusanLegalMapHubPageData(): PageData {
     ],
     primaryKeywords: [
       "부산 법률지도",
-      "부산 법무사",
       "해운대 법무사",
       "센텀 법무사",
       "상속등기",

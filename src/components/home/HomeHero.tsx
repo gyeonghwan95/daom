@@ -8,8 +8,12 @@ import {
   getContactInfo,
   getDirectConsultationChannels,
 } from "@/lib/contact";
-import { homeHero } from "@/lib/home-content";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
+import { FormIcon } from "@/components/consultation/ConsultationIcons";
+import { homeHero, homeSituationChips } from "@/lib/home-content";
+import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { heroTransition } from "@/lib/motion";
+import { useOptionalQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 
 const stagger = {
   hidden: {},
@@ -29,6 +33,7 @@ export function HomeHero() {
   const { phone } = getContactInfo();
   const channels = getDirectConsultationChannels();
   const reduced = useReducedMotion();
+  const inquiry = useOptionalQuickInquiry();
 
   return (
     <section className="home-hero home-hero--stage">
@@ -81,9 +86,21 @@ export function HomeHero() {
             className="home-hero__tags"
             aria-label="주요 업무"
           >
-            {homeHero.serviceTags.map((tag) => (
-              <li key={tag} className="home-hero__tag">
-                {tag}
+            {homeSituationChips.map((chip) => (
+              <li key={chip.label}>
+                <button
+                  type="button"
+                  className="home-hero__tag home-hero__tag--action"
+                  aria-haspopup="dialog"
+                  onClick={() =>
+                    inquiry?.openInquiry({
+                      source: "inline",
+                      presetSituationIds: [chip.situationId],
+                    })
+                  }
+                >
+                  {chip.label}
+                </button>
               </li>
             ))}
           </motion.ul>
@@ -91,6 +108,17 @@ export function HomeHero() {
           <motion.p variants={item} className="home-hero__location">
             {homeHero.locationHint}
           </motion.p>
+
+          <motion.div variants={item} className="home-hero__mobile-convert lg:hidden">
+            <InquiryStartButton
+              className="home-hero__mobile-cta"
+              source="inline"
+            >
+              <FormIcon className="home-hero__mobile-cta-icon" />
+              {consultationInquiryCopy.ctaPrimary}
+            </InquiryStartButton>
+            <p className="home-hero__mobile-cta-note">{homeHero.mobileCtaNote}</p>
+          </motion.div>
         </div>
 
         <div className="home-hero__copy-actions">
@@ -98,9 +126,6 @@ export function HomeHero() {
           <motion.div variants={item} className="home-hero__convert">
             <p className="home-hero__contact-lead">{homeHero.contactSub}</p>
             <HeroContactBlock phone={phone} channels={channels} tone="on-dark" />
-            <p className="home-hero__mobile-cta-note lg:hidden">
-              {homeHero.mobileCtaNote}
-            </p>
           </motion.div>
         </div>
       </motion.div>

@@ -9,6 +9,7 @@ import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredent
 import { OfficeLocationInfo } from "@/components/contact/OfficeLocationInfo";
 import { ContentSection } from "@/components/readability";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages, type SiteImageAsset } from "@/lib/site-images";
@@ -100,6 +101,7 @@ export default function OfficePage() {
         intro={officePageMeta.intro}
         relatedLinks={[
           { href: "/location", label: "오시는 길" },
+          { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
           { href: "/about", label: "법무사 소개" },
           { href: "/services", label: "업무안내" },
           { href: "/부산법무사방문상담", label: "방문상담 안내" },
@@ -262,12 +264,12 @@ export default function OfficePage() {
                   />
                 </div>
                 <p className="mt-4 text-sm text-navy/60">
-                  <Link
-                    href="/contact/inquiry?from=office"
-                    className="font-medium text-navy-light underline-offset-2 hover:underline"
+                  <InquiryStartButton
+                    source="cta"
+                    className="inline bg-transparent p-0 font-medium text-navy-light underline-offset-2 hover:underline"
                   >
                     1분만에 문의하기
-                  </Link>
+                  </InquiryStartButton>
                   로도 같은 내용을 전달할 수 있습니다.
                 </p>
               </div>

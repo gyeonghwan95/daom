@@ -135,7 +135,7 @@ function buildInquiryBody(
     );
   }
 
-  lines.push("", "현재 상황:", form.situation.trim());
+  lines.push("", "현재 상황:", form.situation.trim() || "(미기재)");
   return lines.join("\n");
 }
 
@@ -211,10 +211,6 @@ export function ConsultationInquiryForm({
     if (!form.name.trim()) next.name = "이름을 입력해 주세요.";
     if (!clientParseContact(form.phone)) {
       next.phone = "전화번호 또는 이메일 형식을 확인해 주세요.";
-    }
-    if (!form.field) next.field = "상담 분야를 선택해 주세요.";
-    if (form.situation.trim().length < 5) {
-      next.situation = "현재 상황을 조금 더 구체적으로 적어 주세요.";
     }
     if (!form.agreed) {
       next.agreed = "개인정보 수집·이용에 동의해 주세요.";
@@ -534,13 +530,10 @@ export function ConsultationInquiryForm({
       </div>
 
       <label className="inquiry-form__field" htmlFor={`${formId}-field`}>
-        <span className="inquiry-form__label">
-          상담 분야 <span className="inquiry-form__req">*</span>
-        </span>
+        <span className="inquiry-form__label">상담 분야 (선택)</span>
         <select
           id={`${formId}-field`}
           name="field"
-          required
           disabled={submitting}
           value={form.field}
           onChange={(e) =>
@@ -594,13 +587,10 @@ export function ConsultationInquiryForm({
       ) : null}
 
       <label className="inquiry-form__field" htmlFor={`${formId}-situation`}>
-        <span className="inquiry-form__label">
-          현재 상황 간단히 작성 <span className="inquiry-form__req">*</span>
-        </span>
+        <span className="inquiry-form__label">현재 상황 간단히 작성 (선택)</span>
         <textarea
           id={`${formId}-situation`}
           name="situation"
-          required
           rows={5}
           disabled={submitting}
           value={form.situation}

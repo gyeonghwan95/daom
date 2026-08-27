@@ -18,7 +18,13 @@ const FOOTER_QUICK_LINKS = [
   { href: "/법률강의", label: "강의·특강" },
   { href: "/partners", label: "협업문의" },
   { href: "/situations", label: "상황별 안내" },
+  { href: "/tools", label: "법률 계산기" },
+  { href: "/busan-legal-map", label: "부산 법률지도" },
+  { href: "/glossary", label: "등기 용어 안내" },
+  { href: "/blog", label: "블로그" },
+  { href: "/media", label: "언론·활동" },
   { href: "/faq", label: "FAQ" },
+  { href: "/공지사항", label: "공지사항" },
 ] as const;
 
 const FOOTER_COLLAB_LABELS: Record<string, string> = {

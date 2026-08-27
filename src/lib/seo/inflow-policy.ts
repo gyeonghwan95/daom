@@ -14,6 +14,10 @@ import {
   REAL_ESTATE_CHAMPION,
   SELECTION_CHAMPION,
 } from "@/data/seo/page-relations";
+import {
+  BUSAN_DISTRICT_HUBS,
+  isBusanDistrictHubPath,
+} from "@/lib/geo/busan-district-hubs";
 import { isInflowRailPath, normalizeSeoPath } from "@/lib/seo/champion-query";
 
 export type InflowItem = {
@@ -126,6 +130,20 @@ const LIBRARY: InflowItem[] = [
     label: "1분 상담 문의",
     reason: "업무명을 몰라도 현재 상황만 남겨 주시면 됩니다.",
   },
+  {
+    href: "/busan-legal-map",
+    label: "부산 구·군별 상담 주제",
+    reason: "16개 구·군에서 자주 묻는 상속·등기 주제를 생활권 기준으로 봅니다.",
+  },
+  ...BUSAN_DISTRICT_HUBS.filter(
+    (hub) =>
+      hub.href !== "/해운대법무사" && hub.href !== "/센텀법무사",
+  ).map((hub) => ({
+    href: hub.href,
+    label: hub.hint,
+    searchPhrase: hub.label,
+    reason: `센텀 사무소에서 ${hub.label.replace(" 법무사", "")} 소재 사건을 상담합니다.`,
+  })),
 ];
 
 const SKIP_PATHS = new Set([
@@ -162,6 +180,16 @@ function pushUnique(target: InflowItem[], item: InflowItem, current: string) {
 }
 
 function fillerHrefs(current: string): string[] {
+  if (isBusanDistrictHubPath(current) || current === "/busan-legal-map") {
+    return [
+      HOME_BROAD_CHAMPION,
+      BUSAN_LEGAL_SCRIVENER_CHAMPION,
+      "/busan-legal-map",
+      LEGAL_CONSULTATION_CHAMPION,
+      COST_CHAMPION,
+      REGISTRY_HUB,
+    ];
+  }
   if (current === BUSAN_LEGAL_SCRIVENER_CHAMPION) {
     return [
       HOME_BROAD_CHAMPION,

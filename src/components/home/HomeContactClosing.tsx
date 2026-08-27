@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { VisitNoticeBanner } from "@/components/contact/VisitNoticeBanner";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { Container } from "@/components/layout/Container";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
@@ -91,12 +92,12 @@ export function HomeContactClosing() {
                   layout="stack"
                   size="md"
                   inquiry={
-                    <Link
-                      href="/contact/inquiry"
+                    <InquiryStartButton
                       className="home-closing__inquiry"
+                      source="cta"
                     >
                       {consultationInquiryCopy.ctaShort}
-                    </Link>
+                    </InquiryStartButton>
                   }
                 />
                 <Link href="/location" className="home-closing__location">

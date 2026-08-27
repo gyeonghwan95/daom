@@ -2251,4 +2251,18 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     focus: "상속재산관리인 선임 서류",
     ...inheritanceCase,
   },
+  {
+    slug: "등기관할과사무소위치",
+    label: "등기 관할과 사무소 위치",
+    category: "concern",
+    serviceSlug: "real-estate-registration",
+    keywords: [
+      "등기 관할",
+      "법무사 사무소 위치",
+      "다른 구 법무사 의뢰",
+      "부동산 소재지 등기소",
+    ],
+    focus: "사무소 위치와 등기 관할을 구분하는 확인",
+    ...realEstateCase,
+  },
 ];

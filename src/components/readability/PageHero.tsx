@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
@@ -106,12 +107,22 @@ export function PageHero({
         size="md"
         showNaver={naverOn}
         inquiry={
-          <Link
-            href={ctaHref}
-            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
-          >
-            {ctaLabel}
-          </Link>
+          isConsultCtaHref(ctaHref) ? (
+            <InquiryStartButton
+              source="landing"
+              fallbackHref={ctaHref}
+              className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              {ctaLabel}
+            </InquiryStartButton>
+          ) : (
+            <Link
+              href={ctaHref}
+              className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              {ctaLabel}
+            </Link>
+          )
         }
       />
       {resolvedSecondary || showDiagnosisCta || showNaverBlogCta ? (

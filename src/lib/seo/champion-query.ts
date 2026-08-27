@@ -1,3 +1,4 @@
+import { BUSAN_DISTRICT_HUB_PATHS } from "@/lib/geo/busan-district-hubs";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 /** 「부산 법무사」 exact-match 메타·키워드는 홈(`/`)만 가져간다. */
@@ -158,6 +159,8 @@ export const INFLOW_RAIL_ALLOWLIST = new Set<string>([
   "/부산법무사상담",
   "/부산법무사비용",
   "/부산법무사무소",
+  "/busan-legal-map",
+  ...BUSAN_DISTRICT_HUB_PATHS,
   "/해운대법무사",
   "/센텀법무사",
   "/재송동법무사",

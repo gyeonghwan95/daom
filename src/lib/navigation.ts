@@ -61,7 +61,7 @@ export const lectureNavGroups: NavGroup[] = [
 ];
 
 /**
- * 네이버 사이트링크 후보. 데스크톱 주 메뉴·SiteNavigationElement와 문구를 맞춘다.
+ * JSON-LD SiteNavigationElement 전용. 화면 메뉴와 분리한다.
  * 짧은 일반명사(소개·상담)와 타지역(울산) 앵커는 넣지 않는다.
  */
 export const siteSitelinkItems = [
@@ -134,24 +134,21 @@ const casesNavItem: NavItem = {
   ],
 };
 
-/** 데스크톱 헤더에만 노출 — 네이버 사이트링크의 주 소스 */
-export const headerPrimaryNavigation: NavItem[] = [
+/**
+ * 헤더·모바일 공통 주 메뉴.
+ * 기존에 연결돼 있던 페이지는 모두 최상단에 둔다.
+ */
+export const mainNavigation: NavItem[] = [
   { href: "/about", label: "법무사 소개" },
+  { href: "/office", label: "사무소" },
   servicesNavItem,
-  casesNavItem,
   {
     href: "/partners",
     label: "협업문의",
     megaMenu: true,
     groups: buildCollaborationNavGroups(),
   },
-  { href: "/contact", label: "상담 문의" },
-  { href: "/location", label: "오시는 길" },
-  { href: "/reviews", label: "고객후기" },
-];
-
-const headerSecondaryNavigation: NavItem[] = [
-  { href: "/office", label: "사무소" },
+  casesNavItem,
   {
     href: "/법률강의",
     label: "강의·특강",
@@ -164,13 +161,11 @@ const headerSecondaryNavigation: NavItem[] = [
   { href: "/glossary", label: "등기 용어 안내" },
   { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
+  { href: "/reviews", label: "고객후기" },
   { href: "/faq", label: "FAQ" },
   { href: "/공지사항", label: "공지사항" },
-];
-
-export const mainNavigation: NavItem[] = [
-  ...headerPrimaryNavigation,
-  ...headerSecondaryNavigation,
+  { href: "/contact", label: "상담 문의" },
+  { href: "/location", label: "오시는 길" },
 ];
 
 /** 현재 경로가 메뉴 항목과 일치하는지 (하위 페이지 포함) */

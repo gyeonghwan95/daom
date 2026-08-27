@@ -159,6 +159,7 @@ export function ToolCalculatorResultView({
         pageType="tool"
         variant="mid"
         pageSlug={tool.slug}
+        inquiryNote={`[계산기 ${tool.cardTitle}] ${result.summary}`.slice(0, 280)}
         diagnosisHref={tool.diagnosisLinks[0]?.href ?? "/자가진단"}
         documentsHref="#tool-documents"
       />
@@ -181,6 +182,7 @@ export function ToolCalculatorResultView({
           pageType="tool"
           variant="bottom"
           pageSlug={tool.slug}
+          inquiryNote={`[계산기 ${tool.cardTitle}] ${result.summary}`.slice(0, 280)}
           diagnosisHref={tool.diagnosisLinks[0]?.href ?? "/자가진단"}
           documentsHref="#tool-documents"
           showSecondaryLinks

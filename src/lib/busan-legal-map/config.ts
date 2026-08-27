@@ -20,7 +20,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "센텀시티·마린시티·재송·반여 일대 고가 아파트와 법인 사옥이 밀집해, 공동상속·해외 거주 상속인·잔금 후 등기 문의가 많습니다.",
     commonServices: ["상속등기", "부동산등기", "법인등기", "전세보증금", "근저당 말소"],
-    keywords: ["해운대 상속등기", "센텀 법인등기", "재송동 등기", "해운대구 부동산등기", "부산 법무사"],
+    keywords: ["해운대 상속등기", "센텀 법인등기", "재송동 등기", "해운대구 부동산등기", "해운대구 법무사"],
     hubPath: "/해운대법무사",
     serviceLinks: [
       { href: "/해운대구상속등기", label: "해운대구 상속등기" },
@@ -39,7 +39,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "광안리·민락 일대 전월세·매매와 상속이 겹치는 사건이 많고, 보증금 반환 지연·확정일자·대항력 확인이 먼저인 경우가 많습니다.",
     commonServices: ["부동산등기", "상속등기", "전세보증금", "개인회생"],
-    keywords: ["수영구 부동산등기", "광안동 상속등기", "전세보증금", "수영구 법무사", "부산 법무사"],
+    keywords: ["수영구 부동산등기", "광안동 상속등기", "전세보증금", "수영구 법무사", "남천동 전세등기"],
     hubPath: "/수영구법무사",
     serviceLinks: [
       { href: "/수영구상속등기", label: "수영구 상속등기" },
@@ -58,7 +58,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "연산·거제 일대 실거주 아파트와 소규모 법인 사무실이 많아, 상속등기와 임원변경·한정승인 상담이 이어지는 지역입니다.",
     commonServices: ["상속등기", "임원변경등기", "법인등기", "한정승인"],
-    keywords: ["연제구 상속등기", "연산동 등기", "임원변경등기", "연제구 법무사", "부산 법무사"],
+    keywords: ["연제구 상속등기", "연산동 등기", "임원변경등기", "연제구 법무사", "거제동 법인등기"],
     hubPath: "/연제구법무사",
     serviceLinks: [
       { href: "/연제구상속등기", label: "연제구 상속등기" },
@@ -66,6 +66,7 @@ export const busanDistricts: BusanDistrictDef[] = [
       { href: "/연산동법무사", label: "연산동 법무사" },
       { href: "/연제구임원변경등기", label: "연제구 임원변경등기" },
       { href: "/연제구한정승인", label: "연제구 한정승인" },
+      { href: "/연제구부동산등기", label: "연제구 부동산등기" },
     ],
     situationLinks: [S.parent, S.debt, S.corp, S.siblings],
   },
@@ -77,7 +78,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "온천·사직·명륜 일대 오래된 주택과 재건축 이슈가 있는 부동산의 상속·한정승인·등기 사건이 꾸준합니다.",
     commonServices: ["상속등기", "한정승인", "부동산등기", "임원변경등기"],
-    keywords: ["동래구 상속등기", "한정승인", "재건축 등기", "동래구 법무사", "부산 법무사"],
+    keywords: ["동래구 상속등기", "한정승인", "재건축 등기", "동래구 법무사", "사직동 재건축등기"],
     hubPath: "/동래구법무사",
     serviceLinks: [
       { href: "/동래구상속등기", label: "동래구 상속등기" },
@@ -85,6 +86,7 @@ export const busanDistricts: BusanDistrictDef[] = [
       { href: "/동래역법무사", label: "동래역 법무사" },
       { href: "/동래구한정승인", label: "동래구 한정승인" },
       { href: "/부산재건축등기", label: "부산 재건축 등기" },
+      { href: "/동래구부동산등기", label: "동래구 부동산등기" },
     ],
     situationLinks: [S.debt, S.parent, S.sale, S.siblings],
   },
@@ -96,7 +98,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "대연·용호 주거지와 문현금융단지 인근 법인 사옥이 함께 있어, 법인등기·임원변경과 부동산 등기 문의가 겹칩니다.",
     commonServices: ["법인등기", "임원변경등기", "부동산등기", "상속등기"],
-    keywords: ["남구 법인등기", "문현금융단지", "남부산 등기", "남구 법무사", "부산 법무사"],
+    keywords: ["남구 법인등기", "문현금융단지", "남부산 등기", "남구 법무사", "대연동 상속등기"],
     hubPath: "/남구법무사",
     serviceLinks: [
       { href: "/문현동법무사", label: "문현동 법무사" },
@@ -104,6 +106,7 @@ export const busanDistricts: BusanDistrictDef[] = [
       { href: "/대연동법무사", label: "대연동 법무사" },
       { href: "/문현금융단지법인등기", label: "문현금융단지 법인등기" },
       { href: "/남부산등기소법무사", label: "남부산등기소 안내" },
+      { href: "/남구부동산등기", label: "남구 부동산등기" },
     ],
     situationLinks: [S.corp, S.sale, S.parent],
   },
@@ -115,7 +118,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "서면·부전·전포 일대 상업지와 오피스텔·상가 밀집 지역으로, 매매 등기·채권회수·지급명령 문의가 많습니다.",
     commonServices: ["부동산등기", "소유권이전등기", "지급명령", "법인등기"],
-    keywords: ["서면 등기", "부산진구 부동산등기", "오피스텔 등기", "부산진구 법무사", "부산 법무사"],
+    keywords: ["서면 등기", "부산진구 부동산등기", "오피스텔 등기", "부산진구 법무사", "전포동 상가등기"],
     hubPath: "/부산진구법무사",
     serviceLinks: [
       { href: "/서면법무사", label: "서면 법무사" },
@@ -123,6 +126,7 @@ export const busanDistricts: BusanDistrictDef[] = [
       { href: "/부산진등기소법무사", label: "부산진등기소 안내" },
       { href: "/부산오피스텔소유권이전등기", label: "오피스텔 소유권이전" },
       { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
     ],
     situationLinks: [S.payment, S.sale, S.corp],
   },
@@ -134,13 +138,15 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "덕천·구포·화명 일대 실거주 아파트와 상가에서 상속·매매 등기와 개인회생 상담이 꾸준히 이어집니다.",
     commonServices: ["상속등기", "개인회생", "부동산등기", "상속포기"],
-    keywords: ["북구 상속등기", "덕천동 등기", "북구 개인회생", "북구 법무사", "부산 법무사"],
+    keywords: ["북구 상속등기", "덕천동 등기", "북구 개인회생", "북구 법무사", "화명동 상속등기"],
     hubPath: "/북구법무사",
     serviceLinks: [
       { href: "/화명동법무사", label: "화명동 법무사" },
       { href: "/덕천동법무사", label: "덕천동 법무사" },
       { href: "/북구개인회생", label: "북구 개인회생" },
       { href: "/북부산등기소법무사", label: "북부산등기소 안내" },
+      { href: "/북구상속등기", label: "북구 상속등기" },
+      { href: "/북구부동산등기", label: "북구 부동산등기" },
     ],
     situationLinks: [S.rehab, S.debt, S.parent],
   },
@@ -152,7 +158,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "부곡·서동·금사 일대 다가구·상가의 상속등기와 한정승인, 부산대 인근 임대·매매 등기 문의가 있습니다.",
     commonServices: ["상속등기", "한정승인", "부동산등기"],
-    keywords: ["금정구 상속등기", "부곡동 등기", "한정승인", "금정구 법무사", "부산 법무사"],
+    keywords: ["금정구 상속등기", "부곡동 등기", "한정승인", "금정구 법무사", "장전동 상속등기"],
     hubPath: "/금정구법무사",
     serviceLinks: [
       { href: "/부곡동법무사", label: "부곡동 법무사" },
@@ -170,7 +176,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "엄궁·감전·주례 일대 상가·주택 상속과 채무 관련 상속포기·개인회생 문의가 잦은 지역입니다.",
     commonServices: ["상속등기", "상속포기", "개인회생", "부동산등기"],
-    keywords: ["사상구 상속등기", "엄궁동 등기", "사상구 개인회생", "사상구 법무사", "부산 법무사"],
+    keywords: ["사상구 상속등기", "엄궁동 등기", "사상구 개인회생", "사상구 법무사", "주례동 등기"],
     hubPath: "/사상구법무사",
     serviceLinks: [
       { href: "/사상구상속등기", label: "사상구 상속등기" },
@@ -188,7 +194,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "원도심 상가·오래된 건물의 상속·매매 등기와 소규모 법인 사무실 등기 수요가 있는 지역입니다.",
     commonServices: ["부동산등기", "상속등기", "상가 등기", "법인등기"],
-    keywords: ["중구 부동산등기", "남포동 상가 등기", "중구 상속등기", "중구 법무사", "부산 법무사"],
+    keywords: ["중구 부동산등기", "남포동 상가 등기", "중구 상속등기", "중구 법무사", "광복동 상가등기"],
     hubPath: "/중구법무사",
     serviceLinks: [
       { href: "/남포동법무사", label: "남포동 법무사" },
@@ -206,7 +212,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "충무·동대신 일대 주택·상가의 상속등기와 전세·매매 관련 등기 문의가 꾸준합니다.",
     commonServices: ["상속등기", "부동산등기", "전세보증금"],
-    keywords: ["서구 상속등기", "동대신동 등기", "서구 부동산등기", "서구 법무사", "부산 법무사"],
+    keywords: ["서구 상속등기", "동대신동 등기", "서구 부동산등기", "서구 법무사", "송도 주택등기"],
     hubPath: "/서구법무사",
     serviceLinks: [
       { href: "/서구상속등기", label: "서구 상속등기" },
@@ -223,7 +229,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "항만·조선 관련 업체와 주거지가 함께 있어 법인등기·상속·부동산 등기 사건이 다양합니다.",
     commonServices: ["법인등기", "상속등기", "부동산등기", "임원변경등기"],
-    keywords: ["영도구 법인등기", "영도구 상속등기", "남항동 등기", "영도구 법무사", "부산 법무사"],
+    keywords: ["영도구 법인등기", "영도구 상속등기", "남항동 등기", "영도구 법무사", "봉래동 상속등기"],
     hubPath: "/영도구법무사",
     serviceLinks: [
       { href: "/영도구상속등기", label: "영도구 상속등기" },
@@ -240,12 +246,13 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "토지·전원주택·농지 상속과 정관·명례 산업단지 법인 등기 문의가 있으며, 관할 등기소 확인이 중요합니다.",
     commonServices: ["상속등기", "토지 등기", "법인등기", "부동산등기"],
-    keywords: ["기장군 상속등기", "정관 등기", "토지 상속", "기장군 법무사", "부산 법무사"],
+    keywords: ["기장군 상속등기", "정관 등기", "토지 상속", "기장군 법무사", "일광 토지상속"],
     hubPath: "/기장군법무사",
     serviceLinks: [
       { href: "/일광읍법무사", label: "일광읍 법무사" },
       { href: "/정관법무사", label: "정관 법무사" },
       { href: "/기장군상속등기", label: "기장군 상속등기" },
+      { href: "/기장군부동산등기", label: "기장군 부동산등기" },
       { href: "/기장토지상속등기", label: "기장 토지 상속등기" },
     ],
     situationLinks: [S.parent, S.siblings, S.sale],
@@ -258,12 +265,13 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "명지·에코델타시티 일대 신축 아파트·상가·법인 사옥이 늘며 설립등기와 소유권이전 수요가 빠르게 커지는 지역입니다.",
     commonServices: ["법인설립등기", "부동산등기", "상속등기", "임원변경등기"],
-    keywords: ["명지 법인등기", "강서구 등기", "에코델타시티", "강서구 법무사", "부산 법무사"],
+    keywords: ["명지 법인등기", "강서구 등기", "에코델타시티", "강서구 법무사", "녹산 법인등기"],
     hubPath: "/강서구법무사",
     serviceLinks: [
       { href: "/명지국제신도시법인등기", label: "명지국제신도시 법인등기" },
       { href: "/에코델타시티법인등기", label: "에코델타시티 법인등기" },
       { href: "/강서구상속등기", label: "강서구 상속등기" },
+      { href: "/강서구부동산등기", label: "강서구 부동산등기" },
       { href: "/부산신축아파트소유권이전등기", label: "신축 아파트 등기" },
     ],
     situationLinks: [S.corp, S.sale, S.parent],
@@ -276,7 +284,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "하단·괴정·당리 일대 실거주 아파트와 상가의 상속·매매 등기 문의가 많습니다.",
     commonServices: ["상속등기", "부동산등기", "상속포기"],
-    keywords: ["사하구 상속등기", "하단동 등기", "사하구 부동산등기", "사하구 법무사", "부산 법무사"],
+    keywords: ["사하구 상속등기", "하단동 등기", "사하구 부동산등기", "사하구 법무사", "하단동 아파트등기"],
     hubPath: "/사하구법무사",
     serviceLinks: [
       { href: "/사하구상속등기", label: "사하구 상속등기" },
@@ -293,7 +301,7 @@ export const busanDistricts: BusanDistrictDef[] = [
     context:
       "항만·물류 인근 상가·창고와 주거지가 섞여 있어, 상속·매매 등기와 소규모 법인 등기 문의가 이어집니다.",
     commonServices: ["상속등기", "부동산등기", "법인등기"],
-    keywords: ["동구 상속등기", "초량동 등기", "동구 부동산등기", "동구 법무사", "부산 법무사"],
+    keywords: ["동구 상속등기", "초량동 등기", "동구 부동산등기", "동구 법무사", "수정동 주택등기"],
     hubPath: "/동구법무사",
     serviceLinks: [
       { href: "/동구상속등기", label: "동구 상속등기" },
@@ -316,7 +324,7 @@ export const busanLegalMapHub: BusanLegalMapHubConfig = {
     {
       question: "해운대·센텀 사무소인데 다른 구도 상담 가능한가요?",
       answer:
-        "네. 부산 전역 사건을 전화·카카오톡·방문(예약)으로 상담합니다. 관할 등기소·법원은 사건별로 달라지므로, 지역과 함께 사건 내용을 알려주시면 됩니다.",
+        "네. 부산 전역 사건을 전화·카카오톡·방문(예약)으로 상담합니다. 관할 등기소는 부동산·법인 본점 주소 기준이며, 사무소가 그 구에 있어야 하는 것은 아닙니다. 위치 세 가지를 나누는 안내는 등기 관할과 사무소 위치 페이지에서 이어집니다.",
     },
     {
       question: "지역 페이지와 업무안내는 무엇이 다른가요?",
