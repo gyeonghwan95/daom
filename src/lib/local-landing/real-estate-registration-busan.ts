@@ -28,9 +28,9 @@ export function buildBusanRealEstateRegistrationPage(
         "원인에 따라 원인증서·세금이 다릅니다. 증여는 증여세·시가 이슈가 있을 수 있어 세무 확인이 필요할 수 있습니다.",
     },
     {
-      question: "부산 부동산등기 법무사 페이지와 같나요?",
+      question: "부동산등기 법무사 안내와 이 페이지는 같나요?",
       answer:
-        "검색어가 비슷해도 대표 URL은 이 페이지입니다. 세부 원인(아파트 매매·증여 등)은 관련 안내로 연결합니다.",
+        "매매·증여·근저당·전세권·보존 등 부동산등기 실무의 대표 안내는 이 페이지입니다. 아파트 매매·증여처럼 원인별 절차는 아래 관련 안내에서 이어서 보시면 됩니다.",
     },
     {
       question: "비용은 어떻게 보나요?",
@@ -103,6 +103,7 @@ export function buildBusanRealEstateRegistrationPage(
       "공동명의·지분이전을 정리할 때",
       "잔금 당일 말소·이전을 맞춰야 할 때",
       "전세권·가압류 등 선순위 권리를 정리해야 할 때",
+      "신축 건물 사용승인 후 보존등기가 필요할 때",
     ],
     jurisdictionGuide: {
       title: "부산 부동산등기 관할",
@@ -175,6 +176,9 @@ export function buildBusanRealEstateRegistrationPage(
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
       { href: "/부산소유권이전등기", label: "소유권이전등기 원인별 안내" },
       { href: "/부산아파트매매등기", label: "아파트 매매등기" },
+      { href: "/부산증여등기", label: "증여등기" },
+      { href: "/부산근저당설정등기", label: "근저당설정등기" },
+      { href: "/부산전세권설정등기", label: "전세권설정등기" },
       { href: "/부산가등기", label: "가등기 설정·말소" },
       { href: "/전세사기피해대응절차", label: "임대차·전세보증금 문제" },
       { href: "/부동산실권리자명의등기", label: "실권리자명의등기" },

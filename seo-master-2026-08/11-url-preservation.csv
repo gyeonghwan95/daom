@@ -1,0 +1,6 @@
+check,result,note
+기존 URL 변경,0,pathname/slug 변경 없음
+기존 URL 삭제,0,snapshot 1806 paths
+의도하지 않은 Redirect,0,P0 crawl redirect=manual
+금지 신규 URL 생성,0,/부산부동산법무사 /부산상속전문법무사 미생성
+publishedPathCount,1806,C:\workspace\daom\scripts\output\existing-routes-baseline-2026-08-30.json

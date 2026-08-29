@@ -1,0 +1,18 @@
+check,before_production_2026-08-30,after_code,notes
+loading-before-H1_상담,false,false,이미 해결. 재현 없음
+loading-before-H1_등기,false,false,이미 해결
+footer-before-main,false,false,layout Footer after main
+H1 count P0,all 1,all 1,유지
+상담 TOC/중복 섹션,15+ H2·자세히 알아보기 반복,8강 섹션·자세히 블록 제거,고유 법률범위 유지
+상담 검색어 섹션,keyword-cluster 존재,제거,사용자 문장만
+추천 검색의도 H2,더 구체적인 검색의도 안내,더 구체적인 상황별 안내,title 미변경
+추천 H1,검색 전에 확인할 선택 기준,맡기기 전에 확인할 선택 기준,의도 동일
+등기 FAQ 허브 문장,해당 안내로 연결합니다,가등기·대지권도 등기업무로 완결,링크허브 자기정의 제거
+부동산 PRIMARY,기존 /부산부동산등기,동일 + 상황 내비,신규 URL 없음
+ComparisonTable DOM,카드+표 이중 텍스트,표 1개,SEO 복제 제거
+HOME 허브 검색 문구,추천·비용·상담 검색 안내,추천·비용·상담 안내,exact 분산 완화
+Champion 상속/부동산,JSON 미등록,등록,sanitize exact-match
+기존 URL 변경,0,0,pathname 불변
+기존 URL 삭제,0,0,1806 paths snapshot
+Redirect,0,0,crawl redirect=manual
+seoJargon_추천_prod,true,코드에서 false 예정,배포 후 recrawl

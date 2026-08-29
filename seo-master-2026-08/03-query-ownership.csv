@@ -1,0 +1,50 @@
+QUERY,CLUSTER,INTENT,PRIMARY URL,CURRENT COVERAGE,RANKING EVIDENCE,CANNIBALIZATION RISK,ACTION
+부산 법무사,Broad,local commercial,/,HOME title/H1 일치,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사 supporting,KEEP_HOME
+부산법무사,Broad,same as 부산 법무사,/,compact champion,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 상담,Consultation,action/channel,/부산법무사상담,H1·title 일치,NAVER SERP 자동 확인 불가,LOW /상담 /부산법률상담,PRIMARY_ACTION_PAGE
+부산 법무사 추천,Recommendation,selection criteria,/부산법무사추천,H1·title 일치,NAVER SERP 자동 확인 불가,LOW /부산법무사비교,PROTECT_IMPROVE_JARGON
+부산 법무사 등기,Service,registry hub,/부산등기법무사,H1 등기 선택,NAVER SERP 자동 확인 불가,LOW,NO_NEW_URL
+부산 등기 법무사,Service,registry hub,/부산등기법무사,title 일치,NAVER SERP 자동 확인 불가,LOW /부산등기법무사추천,KEEP
+부산 상속전문 법무사,Service,inheritance choice hub,/부산상속법무사,전문자격 표방 없음,NAVER SERP 자동 확인 불가,LOW,NO_NEW_URL
+부산 상속 법무사,Service,inheritance choice hub,/부산상속법무사,H1 등기·포기·한정,NAVER SERP 자동 확인 불가,MEDIUM /상속 /부산상속등기,PROTECT
+부산 법무사 상속,Service,same as 부산 상속 법무사,/부산상속법무사,alias,NAVER SERP 자동 확인 불가,LOW,NO_NEW_URL
+부산 상속포기 법무사,Procedure,renunciation,/부산상속포기,H1 기한·후순위,NAVER SERP 자동 확인 불가,LOW /상속포기비용,KEEP
+부산 한정승인 법무사,Procedure,qualified acceptance,/부산한정승인,H1 채무 불확실,NAVER SERP 자동 확인 불가,LOW /한정승인비용,KEEP
+부산 부동산 법무사,Service,broad real-estate commercial,/부산부동산등기,기존 unique hub,NAVER SERP 자동 확인 불가,HIGH /부산부동산등기법무사 /부동산등기,PRIMARY_EXISTING
+부산 부동산등기 법무사,Service,same cluster,/부산부동산등기,title 이미 보유,NAVER SERP 자동 확인 불가,HIGH /부산부동산등기법무사,SUPPORT_SPOKE
+부산 부동산 등기,Service,same cluster,/부산부동산등기,실무 hub,NAVER SERP 자동 확인 불가,MEDIUM /부동산등기,KEEP
+부산 상속등기 법무사,Procedure,name transfer,/부산상속등기,원인=명의이전,NAVER SERP 자동 확인 불가,MEDIUM /부산상속법무사,KEEP_SPECIFIC
+부산 법무사 비용,Cost,fee structure,/부산법무사비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,NO_NEW_URL
+부산 법무사 수임료,Cost,fee synonym,/부산법무사비용,champion compact,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 상속 법무사 추천,Recommendation,inheritance selection,/부산상속법무사,허브 선택 기준,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사추천,SECTION_NOT_NEW_URL
+부산 상속 법무사 비용,Cost,inheritance cost,/상속등기비용,비용 전용 우선,NAVER SERP 자동 확인 불가,MEDIUM /부산상속법무사 비용섹션,KEEP_COST_URL
+부산 상속포기 비용,Cost,renunciation cost,/상속포기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW /부산상속포기,KEEP
+부산 한정승인 비용,Cost,QA cost,/한정승인비용,비용 전용,NAVER SERP 자동 확인 불가,LOW /부산한정승인,KEEP
+부산 상속등기 비용,Cost,registration cost,/상속등기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 등기 법무사 비용,Cost,registry cost,/등기비용,비용 허브,NAVER SERP 자동 확인 불가,MEDIUM /부산등기법무사,KEEP
+부산 부동산등기 비용,Cost,RE cost,/부동산등기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 소유권이전 비용,Cost,transfer cost,/소유권이전등기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 상속포기,Procedure,renunciation,/부산상속포기,동일 PRIMARY,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 한정승인,Procedure,QA,/부산한정승인,동일 PRIMARY,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 상속등기,Procedure,name transfer,/부산상속등기,specific,NAVER SERP 자동 확인 불가,MEDIUM,KEEP
+해운대 법무사,Local,district,/해운대법무사,지역 long-tail,NAVER SERP 자동 확인 불가,LOW vs HOME,PROTECT_LOCAL
+센텀 법무사,Local,district,/센텀법무사,지역 long-tail,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+부산 법무사 사무실,Local,NAP/office,/부산법무사무소,위치·NAP,NAVER SERP 자동 확인 불가,MEDIUM /location,KEEP
+부산 법무사 오시는 길,Local,visit,/location,방문,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 매매등기,Procedure,sale transfer,/부산소유권이전등기,원인별,NAVER SERP 자동 확인 불가,MEDIUM /부산아파트매매등기,KEEP
+부산 증여등기,Procedure,gift,/부산증여등기,원인별,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 근저당설정,Procedure,mortgage,/부산근저당설정등기,담보,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 근저당말소,Procedure,discharge,/부산근저당말소등기,담보,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 전세권설정,Procedure,jeonse,/부산전세권설정등기,담보,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 보존등기,Procedure,preservation,/부산신축건물보존등기,신축,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법인 법무사,Service,corporate,/부산법인법무사,법인 hub,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 개인회생 법무사,Service,rehab,/부산개인회생법무사,회생 commercial,NAVER SERP 자동 확인 불가,MEDIUM /부산개인회생,KEEP
+상속포기 3개월,Deadline,renunciation deadline,/부산상속포기,기한 섹션,NAVER SERP 자동 확인 불가,MEDIUM /한정승인기간,KEEP
+한정승인 3개월,Deadline,QA deadline,/부산한정승인,기한 섹션,NAVER SERP 자동 확인 불가,MEDIUM /한정승인기간,KEEP
+상속포기 서류,Documents,renunciation docs,/부산상속포기,서류 섹션,NAVER SERP 자동 확인 불가,LOW,KEEP
+한정승인 재산목록,Documents,inventory,/부산한정승인,서류 섹션,NAVER SERP 자동 확인 불가,LOW,KEEP
+해외 상속인,Problem,overseas heir,/해외거주상속인,특수,NAVER SERP 자동 확인 불가,LOW /부산상속법무사,KEEP
+미성년 상속인,Problem,minor heir,/미성년상속인,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속재산분할,Procedure,agreement,/부산상속재산분할법무사,협의,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 잔금일 법무사,Problem,closing day,/부산잔금일법무사,일정,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법률상담,Consultation,public vs scrivener,/부산법률상담,범위 구분,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사상담,KEEP_SPLIT

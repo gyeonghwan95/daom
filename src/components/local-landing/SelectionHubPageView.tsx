@@ -45,39 +45,46 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
     includeFaqSchema: true,
   };
 
-  const tocItems = [
-    { id: "article-body", label: "본문 안내" },
-    {
-      id: "selection-criteria",
-      label: isConsultPrep ? "상담 전 이것만 알려주세요" : "선택 전 확인할 기준",
-    },
-    {
-      id: "service-checkpoints",
-      label: isConsultPrep ? "어떤 문제로 상담하시나요?" : "업무별 체크포인트",
-    },
-    ...(content.comparisonRows
-      ? [{ id: "comparison", label: content.comparisonTitle ?? "비교" }]
-      : []),
-    ...content.extraSections.map((s) => ({ id: s.id, label: s.title })),
-    { id: "preparation", label: "상담 전 준비서류" },
-    { id: "related", label: "관련 페이지" },
-    { id: "faq", label: "자주 묻는 질문" },
-    { id: "consultation", label: "상담 문의" },
-  ];
+  const tocItems = isConsultPrep
+    ? [
+        { id: "service-checkpoints", label: "어떤 문제인가요?" },
+        { id: "selection-criteria", label: "처음 알려주실 정보" },
+        { id: "lawyer", label: "안윤정 법무사" },
+        { id: "channels", label: "상담 방법" },
+        { id: "docs-by-work", label: "업무별 기본 자료" },
+        { id: "free-scope", label: "초기 안내와 정식 수임" },
+        { id: "cost-structure", label: "비용 확인" },
+        { id: "faq", label: "자주 묻는 질문" },
+      ]
+    : [
+        { id: "article-body", label: "본문 안내" },
+        { id: "selection-criteria", label: "선택 전 확인할 기준" },
+        { id: "service-checkpoints", label: "업무별 체크포인트" },
+        ...(content.comparisonRows
+          ? [{ id: "comparison", label: content.comparisonTitle ?? "비교" }]
+          : []),
+        ...content.extraSections.map((s) => ({ id: s.id, label: s.title })),
+        { id: "preparation", label: "상담 전 준비서류" },
+        { id: "related", label: "관련 페이지" },
+        { id: "faq", label: "자주 묻는 질문" },
+        { id: "consultation", label: "상담 문의" },
+      ];
 
   const showNationwide =
     !isConsultPrep &&
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
-  const bodyParagraphs = [
-    ...content.heroParagraphs.slice(1),
-    content.searchIntents.length > 0
-      ? `이런 분들이 이 페이지를 찾습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
-      : "",
-    content.selectionCriteria.length > 0
-      ? `추천·후기·비용만으로 결정하기 전, ${content.selectionCriteria.slice(0, 2).join(" ")} 같은 기준을 먼저 확인해 보시면 상담이 구체적입니다.`
-      : "",
-  ].filter((p) => p.trim().length > 0);
+  const bodyParagraphs = isConsultPrep
+    ? []
+    : [
+        ...content.heroParagraphs.slice(1),
+        content.searchIntents.length > 0
+          ? `이런 분들이 이 페이지를 찾습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
+          : "",
+        content.selectionCriteria.length > 0
+          ? `추천·후기·비용만으로 결정하기 전, ${content.selectionCriteria.slice(0, 2).join(" ")} 같은 기준을 먼저 확인해 보시면 상담이 구체적입니다.`
+          : "",
+      ].filter((p) => p.trim().length > 0);
 
   const comparisonColumns = content.comparisonRows
     ? isConsultPrep
@@ -140,7 +147,9 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           content.heroParagraphs[0]
         }
         checkItems={content.selectionCriteria.slice(0, 3)}
-        consultTriggers={content.searchIntents.slice(0, 3)}
+        consultTriggers={
+          isConsultPrep ? [] : content.searchIntents.slice(0, 3)
+        }
       />
 
       {bodyParagraphs.length > 0 ? (
@@ -169,32 +178,54 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         serviceSlug={page.serviceSlug}
       />
 
+      {isConsultPrep ? (
+        <ContentSection
+          id="service-checkpoints"
+          title="어떤 문제로 상담하시나요?"
+        >
+          <div className="space-y-6">
+            {content.serviceCheckpoints.map((block) => (
+              <div key={block.title}>
+                <h3 className="text-base font-semibold text-navy md:text-lg">
+                  {block.title}
+                </h3>
+                <div className="mt-3">
+                  <ChecklistBox items={block.items} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+      ) : null}
+
       <ContentSection
         id="selection-criteria"
-        title={isConsultPrep ? "상담 전 이것만 알려주세요" : "선택 전 확인할 기준"}
+        title={isConsultPrep ? "처음 알려주시면 되는 정보" : "선택 전 확인할 기준"}
       >
         <ChecklistBox items={content.selectionCriteria} />
       </ContentSection>
 
-      <ContentSection
-        id="service-checkpoints"
-        title={isConsultPrep ? "어떤 문제로 상담하시나요?" : "업무별 체크포인트"}
-      >
-        <div className="space-y-6">
-          {content.serviceCheckpoints.map((block) => (
-            <div key={block.title}>
-              <h3 className="text-base font-semibold text-navy md:text-lg">
-                {block.title}
-              </h3>
-              <div className="mt-3">
-                <ChecklistBox items={block.items} />
+      {isConsultPrep ? null : (
+        <ContentSection
+          id="service-checkpoints"
+          title="업무별 체크포인트"
+        >
+          <div className="space-y-6">
+            {content.serviceCheckpoints.map((block) => (
+              <div key={block.title}>
+                <h3 className="text-base font-semibold text-navy md:text-lg">
+                  {block.title}
+                </h3>
+                <div className="mt-3">
+                  <ChecklistBox items={block.items} />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </ContentSection>
+            ))}
+          </div>
+        </ContentSection>
+      )}
 
-      {content.comparisonRows && content.comparisonRows.length > 0 ? (
+      {!isConsultPrep && content.comparisonRows && content.comparisonRows.length > 0 ? (
         <ContentSection
           id="comparison"
           title={content.comparisonTitle ?? "비교"}

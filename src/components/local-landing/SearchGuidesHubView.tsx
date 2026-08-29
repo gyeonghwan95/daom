@@ -85,7 +85,7 @@ export function SearchGuidesHubView() {
 
         <CTASection
           pageType="faq"
-          title="검색 키워드로 찾기 어려우신가요?"
+          title="찾으시는 안내가 없으신가요?"
           description="상황·서류를 말씀해 주시면 맞는 안내 페이지와 상담 순서를 안내해 드립니다."
           pageSlug="search-guides"
         />

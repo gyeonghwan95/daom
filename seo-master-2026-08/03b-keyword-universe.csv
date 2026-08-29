@@ -1,0 +1,108 @@
+QUERY,CLUSTER,INTENT,PRIMARY URL,CURRENT COVERAGE,RANKING EVIDENCE,CANNIBALIZATION RISK,ACTION
+부산 법무사 방문상담,Consultation,visit,/부산법무사방문상담,방문 전용,NAVER SERP 자동 확인 불가,LOW /부산법무사상담,KEEP
+부산 법무사 비대면상담,Consultation,remote,/부산법무사비대면상담,비대면,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 비교,Recommendation,compare,/부산법무사비교,비교 기준,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사추천,KEEP
+부산 법무사 후기,Recommendation,reviews,/reviews,실제 후기,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 잘하는 곳,Recommendation,quality,/부산법무사잘하는곳,체크리스트,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사추천,KEEP
+무슨 법률 업무인지 모를 때,Problem,unknown work,/무슨법률업무인지모를때,입구,NAVER SERP 자동 확인 불가,LOW /부산법무사상담,KEEP
+부산 등기소 어디,Local,jurisdiction,/등기소어디인가요,관할,NAVER SERP 자동 확인 불가,LOW /등기관할과사무소위치,KEEP
+등기관할과 사무소 위치,Local,office vs registry,/등기관할과사무소위치,3층 구분,NAVER SERP 자동 확인 불가,LOW /location,KEEP
+부산지방법원 등기국,Local,court registry,/부산지방법원등기국,기관,NAVER SERP 자동 확인 불가,LOW /부산등기법무사,KEEP
+남부산등기소,Local,office,/남부산등기소법무사,기관,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산진등기소,Local,office,/부산진등기소법무사,기관,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속 개시 안 날,Deadline,start date,/부산상속포기,기한 본문,NAVER SERP 자동 확인 불가,MEDIUM /부산한정승인,KEEP
+단순승인 주의,Problem,absolute acceptance,/부산상속법무사,주의 섹션,NAVER SERP 자동 확인 불가,LOW,KEEP
+특별한정승인,Procedure,special QA,/부산한정승인,후속,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속포기 후순위,Problem,next heir,/부산상속포기,후순위 본문,NAVER SERP 자동 확인 불가,LOW,KEEP
+한정승인 신문공고,Procedure,notice,/부산한정승인,후속 절차,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속등기 필요서류,Documents,heir docs,/상속등기필요서류,서류 전용,NAVER SERP 자동 확인 불가,LOW /부산상속등기,KEEP
+소유권이전등기 서류,Documents,transfer docs,/소유권이전등기서류,서류 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+취득세 60일,Deadline,tax,/부산부동산등기,세무 기한,NAVER SERP 자동 확인 불가,LOW,KEEP
+잔금 당일 등기,Problem,same-day,/부산잔금일법무사,일정,NAVER SERP 자동 확인 불가,LOW /부산소유권이전등기,KEEP
+근저당 있는 매매,Problem,encumbered sale,/부산근저당말소등기,말소 선행,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 아파트 매매등기,Procedure,apt sale,/부산아파트매매등기,원인별,NAVER SERP 자동 확인 불가,MEDIUM /부산소유권이전등기,KEEP
+부산 가등기,Procedure,provisional,/부산가등기,가등기,NAVER SERP 자동 확인 불가,LOW,KEEP
+실권리자명의등기,Procedure,real name,/부동산실권리자명의등기,실명,NAVER SERP 자동 확인 불가,LOW,KEEP
+신축아파트 소유권이전,Procedure,new apt,/부산신축아파트소유권이전등기,신축,NAVER SERP 자동 확인 불가,LOW,KEEP
+공공기관 등기,Service,public agency,/공공기관등기업무,촉탁,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법인설립,Procedure,incorp,/부산법인설립등기,설립,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 임원변경등기,Procedure,director,/부산임원변경등기,기한,NAVER SERP 자동 확인 불가,LOW,KEEP
+임원변경 과태료,Deadline,penalty,/임원변경등기과태료,기한,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 본점이전등기,Procedure,HQ move,/부산본점이전등기,법인,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 개인회생,Service,rehab,/부산개인회생,절차 hub,NAVER SERP 자동 확인 불가,MEDIUM /부산개인회생법무사,KEEP
+개인회생 파산 차이,Service,compare,/개인회생파산,비교,NAVER SERP 자동 확인 불가,LOW,KEEP
+전세사기 피해,Problem,jeonse fraud,/전세사기피해대응절차,임대차,NAVER SERP 자동 확인 불가,LOW,KEEP
+임차권등기명령,Procedure,lease registry,/부산임차권등기명령,임대차,NAVER SERP 자동 확인 불가,LOW,KEEP
+해운대 상속등기,Local,district procedure,/해운대구상속등기,구×상속,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+수영구 부동산등기,Local,district procedure,/수영구부동산등기,구×부동산,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+재송동 법무사,Local,neighborhood,/재송동법무사,동,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+부산 법무사 보수표,Cost,fee table,/부산법무사보수표,보수,NAVER SERP 자동 확인 불가,LOW /부산법무사비용,KEEP
+등기비용,Cost,registry fee,/등기비용,항목,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속등기 기간,Deadline,duration,/상속등기기간,기간,NAVER SERP 자동 확인 불가,LOW,KEEP
+사망 후 3개월 지난 상속,Deadline,late,/사망후3개월지난상속,기한 경과,NAVER SERP 자동 확인 불가,MEDIUM /부산한정승인,KEEP
+사망자 재산 채무 조회,Documents,inquiry,/사망자재산채무조회,조사,NAVER SERP 자동 확인 불가,LOW,KEEP
+부모 빚 상속,Problem,debt,/부모빚상속방법,선택,NAVER SERP 자동 확인 불가,MEDIUM /부산상속법무사,KEEP
+여러 지역 상속부동산,Problem,multi region,/여러지역상속부동산등기,전국,NAVER SERP 자동 확인 불가,LOW,KEEP
+대습상속,Procedure,subrogation,/대습상속등기,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+협의분할 상속등기,Procedure,agreement reg,/부산상속재산분할법무사,분할,NAVER SERP 자동 확인 불가,LOW /부산상속등기,KEEP
+부산 재개발등기,Procedure,redev,/부산재개발등기,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 집합건물등기,Procedure,condo,/집합건물보존등기,집합,NAVER SERP 자동 확인 불가,LOW,KEEP_EXISTING
+안윤정 법무사,Entity,person,/about,프로필,NAVER SERP 자동 확인 불가,LOW /,KEEP
+다옴법무사사무소,Entity,brand,/,HOME,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 여성 법무사,Entity,attribute,/부산여성법무사,기존,NAVER SERP 자동 확인 불가,LOW,KEEP
+법률강의,Entity,lecture,/법률강의,강의,NAVER SERP 자동 확인 불가,LOW,KEEP
+자가진단 상속,Consultation,tool,/자가진단,도구,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 1분 상담,Consultation,wizard,/상담,위저드,NAVER SERP 자동 확인 불가,MEDIUM /부산법무사상담,KEEP_SPLIT
+부산 집단등기,Service,volume,/부산집단등기,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 복대리,Service,subproxy,/부산법무사복대리,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+협업문의,Service,B2B,/partners,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 경매 권리분석,Service,auction,/부산경매권리분석,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+내용증명,Procedure,docs,/내용증명작성준비,서류,NAVER SERP 자동 확인 불가,LOW,KEEP_EXISTING
+지급명령,Procedure,court docs,/민사소송,서류,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 스타트업 법무사,Service,startup,/부산스타트업법무사,법인,NAVER SERP 자동 확인 불가,LOW /부산법인법무사,KEEP
+부산 기업 법무사,Service,corp ops,/부산기업법무사,기업,NAVER SERP 자동 확인 불가,LOW,KEEP
+서면 법무사,Local,area,/서면법무사,지역,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+광안리 법무사,Local,area,/광안리법무사,지역,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+기장 법무사,Local,area,/기장법무사,지역,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+명지 법무사,Local,area,/명지법무사,지역,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+부산회생법원 개인회생,Service,court rehab,/부산회생법원개인회생,관할,NAVER SERP 자동 확인 불가,LOW /부산개인회생,KEEP
+가정법원 상속,Local,family court,/부산가정법원상속,관할,NAVER SERP 자동 확인 불가,MEDIUM /부산상속법무사,KEEP
+상속포기 자가진단,Consultation,tool,/상속포기자가진단,도구,NAVER SERP 자동 확인 불가,MEDIUM /부산상속포기,SPOKE
+한정승인 자가진단,Consultation,tool,/한정승인자가진단,도구,NAVER SERP 자동 확인 불가,MEDIUM /부산한정승인,SPOKE
+부산 증여 법무사,Service,gift commercial,/부산증여등기,증여,NAVER SERP 자동 확인 불가,MEDIUM /부산부동산등기,KEEP_SPECIFIC
+부산 매매 법무사,Service,sale commercial,/부산소유권이전등기,매매,NAVER SERP 자동 확인 불가,MEDIUM /부산부동산등기,KEEP_SPECIFIC
+전자등기,Procedure,online,/부산등기법무사,접수 방법,NAVER SERP 자동 확인 불가,LOW,KEEP
+등기부 열람,Documents,extract,/glossary,용어·안내,NAVER SERP 자동 확인 불가,LOW,KEEP
+공동명의 이전,Problem,co-owner,/부산소유권이전등기,지분,NAVER SERP 자동 확인 불가,LOW,KEEP
+해외 거주 상속 포기,Problem,overseas renounce,/해외거주상속인,특수+포기,NAVER SERP 자동 확인 불가,MEDIUM /부산상속포기,KEEP
+특별대리인 상속,Problem,special agent,/미성년상속인,미성년,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속 후 매매등기,Procedure,sell after heir,/부산상속후매매등기,순서,NAVER SERP 자동 확인 불가,LOW,KEEP
+유언 상속등기,Procedure,will,/부산상속등기,유언 해당시,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 전화,Consultation,phone,/부산법무사상담,채널,NAVER SERP 자동 확인 불가,LOW /contact,KEEP
+부산 법무사 카카오톡,Consultation,kakao,/부산법무사상담,채널,NAVER SERP 자동 확인 불가,LOW,KEEP
+네이버 예약 법무사,Consultation,booking,/부산법무사상담,네이버 예약,NAVER SERP 자동 확인 불가,LOW,KEEP
+센텀 오시는 길,Local,directions,/location,NAP,NAVER SERP 자동 확인 불가,LOW,KEEP
+재송역 법무사,Local,station,/재송동법무사,역세권,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+센텀시티역 법무사,Local,station,/센텀시티역법무사,역세권,NAVER SERP 자동 확인 불가,LOW,PROTECT_LOCAL
+부산 부동산등기전문,Recommendation,checklist,/부산부동산등기전문,선택 체크,NAVER SERP 자동 확인 불가,HIGH /부산부동산등기,SUPPORT
+부산 상속등기전문,Recommendation,checklist,/부산상속등기전문,선택 체크,NAVER SERP 자동 확인 불가,MEDIUM /부산상속등기,SUPPORT
+법무사와 변호사 차이,Broad,scope,/,HOME·/부산법무사,NAVER SERP 자동 확인 불가,LOW,KEEP
+전국 상속등기,Problem,remote,/여러지역상속부동산등기,원격,NAVER SERP 자동 확인 불가,LOW,KEEP
+보정 등기,Problem,correction,/부산등기보정업무,B2B/실무,NAVER SERP 자동 확인 불가,LOW,KEEP
+분양등기,Procedure,sale in lots,/부산분양등기,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+건설사 등기,Service,builder,/부산건설사등기,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+시행사 등기,Service,developer,/부산시행사등기,B2B,NAVER SERP 자동 확인 불가,LOW,KEEP
+선박등기,Procedure,ship,/부산선박등기,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+산업단지 법인등기,Local,industrial,/명례산업단지법인등기,특수,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속포기 수리,Procedure,court accept,/부산상속포기,수리 후속,NAVER SERP 자동 확인 불가,LOW,KEEP
+한정승인 채권자,Procedure,creditor,/부산한정승인,신문·채권,NAVER SERP 자동 확인 불가,LOW,KEEP
+상속인 연락두절,Problem,missing heir,/부산상속법무사,특수 분기,NAVER SERP 자동 확인 불가,LOW,KEEP
+재혼가정 상속,Problem,blended family,/부산상속법무사,상속인 범위,NAVER SERP 자동 확인 불가,LOW,KEEP
+근저당설정 비용,Cost,mortgage fee,/근저당말소비용,비용 전용·설정은 페이지 섹션,NAVER SERP 자동 확인 불가,LOW,NO_NEW_COST_URL
+전세권설정 비용,Cost,jeonse fee,/부산전세권설정등기,비용 섹션,NAVER SERP 자동 확인 불가,LOW,NO_NEW_COST_URL
+보존등기 비용,Cost,preservation fee,/부산신축건물보존등기,비용 섹션,NAVER SERP 자동 확인 불가,LOW,NO_NEW_COST_URL
+증여등기 비용,Cost,gift fee,/증여등기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+법인등기 비용,Cost,corp fee,/법인등기비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+개인회생 비용,Cost,rehab fee,/개인회생비용,비용 전용,NAVER SERP 자동 확인 불가,LOW,KEEP
+부산 법무사 견적,Cost,quote,/부산법무사비용,견적 구성,NAVER SERP 자동 확인 불가,LOW,KEEP
+상담 전 준비서류,Documents,intake,/부산법무사상담,준비 섹션,NAVER SERP 자동 확인 불가,LOW /blog,KEEP

@@ -315,6 +315,18 @@ export function buildPageDataFromLocalLanding(
         },
       ],
     });
+    extraSections.unshift({
+      title: "지금 필요한 등기가 어떤 건가요?",
+      body: "매매·증여·상속·근저당·전세권·보존등기는 서류와 접수 순서가 다릅니다. 정확한 등기명을 몰라도 지금 상황에 가까운 안내를 고르시면 됩니다.",
+      links: [
+        { href: "/부산소유권이전등기", label: "매매·소유권이전" },
+        { href: "/부산증여등기", label: "증여등기" },
+        { href: "/부산상속등기", label: "상속으로 인한 이전" },
+        { href: "/부산근저당설정등기", label: "근저당설정" },
+        { href: "/부산전세권설정등기", label: "전세권설정" },
+        { href: "/부산신축건물보존등기", label: "보존등기" },
+      ],
+    });
   }
   if (page.slug === "부산법인등기") {
     extraSections.unshift({
@@ -331,8 +343,8 @@ export function buildPageDataFromLocalLanding(
   }
   if (page.slug === "부산법무사") {
     extraSections.unshift({
-      title: "부산 법무사 추천을 검색했다면 먼저 확인할 기준",
-      body: "추천·잘하는 곳·후기 검색 전에 업무 범위·서류 안내·기한 설명·비용 구분을 확인하는 기준을 정리해 두었습니다. 특정 사무소를 대신 골라 주는 페이지가 아니라, 상담 전 스스로 비교할 체크리스트입니다.",
+      title: "법무사를 고르기 전에 먼저 확인할 기준",
+      body: "업무 범위·서류 안내·기한 설명·비용 구분을 확인하는 기준을 정리해 두었습니다. 특정 사무소를 대신 골라 주는 페이지가 아니라, 상담 전 스스로 비교할 체크리스트입니다.",
       links: [
         { href: "/", label: "부산 법무사" },
         { href: "/부산법무사추천", label: "부산 법무사 추천" },

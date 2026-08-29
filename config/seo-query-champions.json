@@ -46,6 +46,49 @@
       "protected": true,
       "supporting": ["/부산한정승인", "/부산상속법무사", "/상속포기자가진단"],
       "note": "exact 「부산 상속포기 법무사」는 /부산상속포기만. 자가진단·전문 브리지는 spoke."
+    },
+    "부산 법무사 등기": {
+      "primary": "/부산등기법무사",
+      "protected": true,
+      "aliasOf": "부산 등기 법무사"
+    },
+    "부산 상속 법무사": {
+      "primary": "/부산상속법무사",
+      "protected": true,
+      "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인", "/상속"],
+      "note": "broad inheritance hub. Do not create /부산상속전문법무사."
+    },
+    "부산 상속전문 법무사": {
+      "primary": "/부산상속법무사",
+      "protected": true,
+      "aliasOf": "부산 상속 법무사"
+    },
+    "부산 법무사 상속": {
+      "primary": "/부산상속법무사",
+      "protected": true,
+      "aliasOf": "부산 상속 법무사"
+    },
+    "부산 한정승인 법무사": {
+      "primary": "/부산한정승인",
+      "protected": true,
+      "supporting": ["/부산상속법무사", "/부산상속포기", "/한정승인비용"]
+    },
+    "부산 부동산 법무사": {
+      "primary": "/부산부동산등기",
+      "protected": true,
+      "supporting": [
+        "/부산부동산등기법무사",
+        "/부산부동산등기전문",
+        "/부동산등기",
+        "/부산소유권이전등기",
+        "/부산등기법무사"
+      ],
+      "note": "existing /부산부동산등기 is PRIMARY. Do not create /부산부동산법무사."
+    },
+    "부산 부동산등기 법무사": {
+      "primary": "/부산부동산등기",
+      "protected": true,
+      "aliasOf": "부산 부동산 법무사"
     }
   }
 }
