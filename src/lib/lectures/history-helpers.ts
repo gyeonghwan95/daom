@@ -30,6 +30,55 @@ function normalize(text: string): string {
   return text.toLowerCase().replace(/\s+/g, "");
 }
 
+/** /about 강의활동 카드 venue → 강의이력 상세 매칭용 별칭 */
+const INSTITUTION_LOOKUP_ALIASES: Record<string, string[]> = {
+  [normalize("양산제일고등학교")]: [
+    normalize("양산제일고"),
+    normalize("양산제일고등학교"),
+  ],
+  [normalize("부산청년 JOB카페")]: [
+    normalize("해운대 청년 JOB성장카페"),
+    normalize("부산청년 JOB카페"),
+  ],
+  [normalize("해운대청년채움공간")]: [
+    normalize("해운대청년채움공간"),
+    normalize("해운대 청년 JOB성장카페"),
+  ],
+  [normalize("LH · 부산창조경제혁신센터")]: [
+    normalize("LH · 부산창조경제혁신센터"),
+    normalize("LH·부산창조경제혁신센터"),
+  ],
+};
+
+/**
+ * 기관명에 맞는 검증된 강의이력 상세 URL.
+ * 동일 기관 다건이면 정확 일치 → featured → 최신순으로 1건을 고릅니다.
+ */
+export function getBestLectureHistoryHrefForInstitution(
+  institution: string,
+): string | undefined {
+  const key = normalize(institution);
+  if (!key) return undefined;
+
+  const candidates = INSTITUTION_LOOKUP_ALIASES[key] ?? [key];
+  const matches = getVerifiedLectureHistory().filter((entry) =>
+    candidates.includes(normalize(entry.institution)),
+  );
+  if (!matches.length) return undefined;
+
+  const ranked = [...matches].sort((a, b) => {
+    const aExact = normalize(a.institution) === key ? 1 : 0;
+    const bExact = normalize(b.institution) === key ? 1 : 0;
+    if (aExact !== bExact) return bExact - aExact;
+    if (a.featured !== b.featured) return Number(b.featured) - Number(a.featured);
+    const yearDiff = (b.year ?? 0) - (a.year ?? 0);
+    if (yearDiff !== 0) return yearDiff;
+    return (b.date ?? "").localeCompare(a.date ?? "");
+  });
+
+  return `/강의이력/${ranked[0].slug}`;
+}
+
 export function getLectureHistoryDisplayDate(
   entry: LectureHistoryEntry,
 ): string {

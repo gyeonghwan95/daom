@@ -9,6 +9,7 @@ import {
   lawyerLectures,
   lawyerProfileMeta,
 } from "@/lib/lawyer-profile";
+import { getBestLectureHistoryHrefForInstitution } from "@/lib/lectures/history-helpers";
 import { getAllPressArticles, getPressArticleHref } from "@/lib/press-articles";
 import {
   eeatAppointmentThumbs,
@@ -25,6 +26,8 @@ type EeatFact = {
   description: string;
   meta?: string;
   href?: string;
+  /** 링크 CTA 문구 (기본: 자세히 보기) */
+  ctaLabel?: string;
   image?: EeatThumbImage;
 };
 
@@ -32,83 +35,104 @@ type LawyerEeatProfileProps = {
   variant?: "full" | "compact";
 };
 
-function EeatFactTerm({ item }: { item: EeatFact }) {
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
+const EEAT_CARD_HOVER =
+  "interactive-surface no-underline transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg hover:shadow-navy/5";
+
+function EeatFactCard({
+  item,
+  stacked,
+}: {
+  item: EeatFact;
+  stacked: boolean;
+}) {
+  const clickable = Boolean(item.href);
+  const shellClass = stacked
+    ? `eeat-stacked-fact group flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4 ${
+        clickable ? EEAT_CARD_HOVER : ""
+      }`
+    : `eeat-fact group flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4 ${
+        clickable ? EEAT_CARD_HOVER : ""
+      }`;
+
+  const titleClass = clickable
+    ? "text-base font-semibold leading-snug text-navy group-hover:text-navy-light md:text-lg"
+    : "text-base font-semibold leading-snug text-navy md:text-lg";
+
+  const cta = clickable ? (
+    <span className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-navy-light group-hover:text-navy">
+      {item.ctaLabel ?? "자세히 보기 →"}
+    </span>
+  ) : null;
+
+  const inner = stacked ? (
+    <>
+      <p className={`w-full ${titleClass}`}>{item.term}</p>
+      <div className="eeat-stacked-fact__body mt-2 flex min-h-0 flex-1 items-center gap-3 md:gap-4">
+        <div className="min-w-0 flex-1">
+          {item.meta ? (
+            <p className="text-xs font-medium text-navy-light md:text-sm">
+              {item.meta}
+            </p>
+          ) : null}
+          <p
+            className={
+              item.meta
+                ? "mt-2 text-sm leading-relaxed text-navy/75 md:text-base"
+                : "text-sm leading-relaxed text-navy/75 md:text-base"
+            }
+          >
+            {item.description}
+          </p>
+          {cta}
+        </div>
+        <EeatFactThumb image={item.image} />
+      </div>
+    </>
+  ) : (
+    <>
+      <div className="min-w-0 flex-1">
+        <p className={titleClass}>{item.term}</p>
+        {item.meta ? (
+          <p className="mt-1 text-xs font-medium text-navy-light md:text-sm">
+            {item.meta}
+          </p>
+        ) : null}
+        <p className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
+          {item.description}
+        </p>
+        {cta}
+      </div>
+      <EeatFactThumb image={item.image} />
+    </>
+  );
+
+  if (item.href && isExternalHref(item.href)) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={shellClass}
+      >
+        {inner}
+        <span className="sr-only"> (새 창)</span>
+      </a>
+    );
+  }
+
   if (item.href) {
     return (
-      <Link
-        href={item.href}
-        className="underline-offset-4 hover:text-navy-light hover:underline"
-      >
-        {item.term}
+      <Link href={item.href} className={shellClass}>
+        {inner}
       </Link>
     );
   }
-  return item.term;
-}
 
-function EeatFactList({ items }: { items: EeatFact[] }) {
-  return (
-    <dl className="eeat-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-      {items.map((item) => (
-        <div
-          key={`${item.term}-${item.meta ?? ""}`}
-          className="eeat-fact flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4"
-        >
-          <div className="min-w-0 flex-1">
-            <dt className="text-base font-semibold leading-snug text-navy md:text-lg">
-              <EeatFactTerm item={item} />
-            </dt>
-            {item.meta ? (
-              <dd className="mt-1 text-xs font-medium text-navy-light md:text-sm">
-                {item.meta}
-              </dd>
-            ) : null}
-            <dd className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
-              {item.description}
-            </dd>
-          </div>
-          <EeatFactThumb image={item.image} />
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-/** 제목 100% → 하위 본문·이미지를 기존 비율(flex-1 : 썸네일)로 병렬 배치 */
-function EeatStackedFactList({ items }: { items: EeatFact[] }) {
-  return (
-    <dl className="eeat-stacked-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-      {items.map((item) => (
-        <div
-          key={`${item.term}-${item.meta ?? ""}`}
-          className="eeat-stacked-fact flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4"
-        >
-          <dt className="w-full text-base font-semibold leading-snug text-navy md:text-lg">
-            <EeatFactTerm item={item} />
-          </dt>
-          <div className="eeat-stacked-fact__body mt-2 flex min-h-0 flex-1 items-center gap-3 md:gap-4">
-            <div className="min-w-0 flex-1">
-              {item.meta ? (
-                <dd className="text-xs font-medium text-navy-light md:text-sm">
-                  {item.meta}
-                </dd>
-              ) : null}
-              <dd
-                className={
-                  item.meta
-                    ? "mt-2 text-sm leading-relaxed text-navy/75 md:text-base"
-                    : "text-sm leading-relaxed text-navy/75 md:text-base"
-                }
-              >
-                {item.description}
-              </dd>
-            </div>
-            <EeatFactThumb image={item.image} />
-          </div>
-        </div>
-      ))}
-    </dl>
-  );
+  return <div className={shellClass}>{inner}</div>;
 }
 
 function EeatProfileFactList({
@@ -118,10 +142,20 @@ function EeatProfileFactList({
   items: EeatFact[];
   stacked: boolean;
 }) {
-  return stacked ? (
-    <EeatStackedFactList items={items} />
-  ) : (
-    <EeatFactList items={items} />
+  return (
+    <ul
+      className={
+        stacked
+          ? "eeat-stacked-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
+          : "eeat-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
+      }
+    >
+      {items.map((item) => (
+        <li key={`${item.term}-${item.meta ?? ""}`} className="h-full">
+          <EeatFactCard item={item} stacked={stacked} />
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -193,6 +227,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       .join(" · "),
     description: article.seoDescription ?? article.paragraphs[0] ?? "",
     href: getPressArticleHref(article.slug),
+    ctaLabel: "기사 보기 →",
     image: {
       src: article.image.src,
       alt: article.image.alt,
@@ -205,6 +240,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       meta: "다옴법무사사무소 네이버 블로그",
       description: "상속·부동산·법인·회생 관련 법률 정보와 실무 사례를 게시합니다.",
       href: "/blog",
+      ctaLabel: "블로그 보기 →",
       image: eeatPressExtraThumbs["법률 칼럼·실무 사례"],
     },
     {
@@ -212,6 +248,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       meta: "안윤정 법무사",
       description: "부산 지역 법률 실무와 생활 법률 정보를 정기적으로 기고합니다.",
       href: naverBlog,
+      ctaLabel: "네이버 블로그 보기 →",
       image: eeatPressExtraThumbs["네이버 블로그"],
     },
   ];
@@ -283,7 +320,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/about#credentials"
             showMore={hasMoreItems(getLawyerQualifications().length, compact, 6)}
           >
-            <EeatFactList
+            <EeatProfileFactList
+              stacked={false}
               items={sliceItems(getLawyerQualifications(), compact, 6).map(
                 (item) => ({
                   term: item.name,
@@ -300,7 +338,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             moreHref="/about#awards"
             showMore={hasMoreItems(getLawyerAwards().length, compact)}
           >
-            <EeatFactList
+            <EeatProfileFactList
+              stacked={false}
               items={sliceItems(getLawyerAwards(), compact).map((item) => ({
                 term: item.name,
                 meta: [item.year, item.category].filter(Boolean).join(" · "),
@@ -341,6 +380,10 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                   .filter(Boolean)
                   .join(" · "),
                 description: item.summary,
+                href:
+                  getBestLectureHistoryHrefForInstitution(item.venue) ??
+                  "/강의이력",
+                ctaLabel: "이력 자세히 보기 →",
                 image: eeatLectureThumbs[item.venue],
               }))}
             />

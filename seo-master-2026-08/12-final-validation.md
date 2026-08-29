@@ -2,7 +2,7 @@
 
 일자: 2026-08-30  
 Production: `https://xn--2j1br1na42lvxja38mk8r.kr`  
-명령: `npm run seo:audit:master`
+명령: `npm run seo:audit:master` (사용자 재실행, exit 0 — 배포본에 코드 변경 반영 확인)
 
 순위 보장을 주장하지 않음.
 

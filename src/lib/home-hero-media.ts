@@ -68,9 +68,10 @@ function fromFileVideo({
 
 const stageImages = siteImages.home.heroStageSlides;
 
-/** 재생목록·현재 재생 제목 — 1줄에 들어가게 짧게 */
+/** 재생목록·현재 재생 제목 — 1줄에 들어가게 짧게 (heroStageSlides 인덱스와 대응) */
 const STAGE_TITLES = [
   "상담 협의",
+  "청년예산언박싱",
   "위촉장",
   "사무소 정면",
   "전세사기 특강",
@@ -106,7 +107,7 @@ export const homeHeroMediaPlaylist: readonly HomeHeroMediaItem[] = [
     alt: "부산 MBC NEWS 전문가 출연",
     poster: imagePaths.pressMbcInterview,
   }),
-  fromImage(stageImages[3], 3, STAGE_TITLES[3]),
+  fromImage(stageImages[2], 2, STAGE_TITLES[2]),
   fromFileVideo({
     src: "/video/강의진행.mp4",
     title: "강의 진행",
@@ -118,4 +119,5 @@ export const homeHeroMediaPlaylist: readonly HomeHeroMediaItem[] = [
   fromImage(stageImages[6], 6, STAGE_TITLES[6]),
   fromImage(stageImages[7], 7, STAGE_TITLES[7]),
   fromImage(stageImages[8], 8, STAGE_TITLES[8]),
+  fromImage(stageImages[9], 9, STAGE_TITLES[9]),
 ];

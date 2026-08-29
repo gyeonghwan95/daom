@@ -64,6 +64,18 @@ export const trackRecordActivities: TrackRecordActivity[] = [
     kind: "상담",
   },
   {
+    date: "2026.08.28",
+    title: "젊은 실무자가 설명하고 청년이 묻고…43조 청년예산 ‘언박싱’",
+    organization: "쿠키뉴스",
+    kind: "언론",
+  },
+  {
+    date: "2026.08.28",
+    title: "청년예산 언박싱 2027 청년자문단 참가 및 질의",
+    organization: "이재명 대통령 주재",
+    kind: "자문",
+  },
+  {
     date: "2026.07.24",
     title: "일상분쟁 생존법 특강",
     organization: "부산광역시 자립지원전담기관",

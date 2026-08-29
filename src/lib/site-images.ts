@@ -69,6 +69,8 @@ export const imagePaths = {
   appointmentCertificate: "/image/위촉장.jpg",
   activityBarAssociationAward: "/image/활동-법무사협회표창.jpg",
   activityYouthBudgetAdvisory: "/image/활동-기획예산처청년자문단위촉.jpg",
+  activityYouthBudgetUnboxing: "/image/활동-청년예산언박싱.png",
+  activityYouthBudgetUnboxing2: "/image/활동-청년예산언박싱2.png",
   activityBusanYouthPolicy: "/image/활동-부산청년정책위원.jpg",
   activityHaeundaePolicy: "/image/활동-해운대정책자문.jpg",
   activityPeaceUnification: "/image/활동-민주평통자문.jpg",
@@ -82,6 +84,7 @@ export const imagePaths = {
   contactInPersonConsult: "/image/상담-대면.png",
   contactOnSiteConsult: "/image/상담-출장.png",
   pressWeeklyPeople20260804: "/image/언론-주간인물-260804.png",
+  pressKukinewsYouthBudget20260828: "/image/활동-청년예산언박싱.png",
   pressBusanIlbo20260608: "/image/언론-부산일보-260608.png",
   pressKukjeSinmun20260603: "/image/언론-국제신문-260603.png",
   pressBeopryulSinmun20260602: "/image/언론-법률신문-260602.png",
@@ -197,6 +200,12 @@ export const siteImages = {
     /** 홈 히어로 풀블리드 배경 전환 순서 */
     heroStageSlides: [
       img(imagePaths.stockLegalConsultation, "상담 협의", 1200, 800),
+      img(
+        imagePaths.activityYouthBudgetUnboxing2,
+        "청년예산 언박싱 2027에서 질의하는 안윤정 법무사",
+        2559,
+        1439,
+      ),
       img(imagePaths.appointmentCertificate, "위촉장", 1200, 800),
       img(imagePaths.officeFront, "사무소 정면", 1200, 800),
       img(imagePaths.lectureJeonseLegalEducation, "전세사기 예방 법률 교육 특강", 1200, 800),
@@ -208,6 +217,12 @@ export const siteImages = {
     ],
     trust: img(imagePaths.homeTrust, "안윤정 법무사 상담", 1000, 800),
     activities: [
+      img(
+        imagePaths.activityYouthBudgetUnboxing,
+        "청년예산 언박싱 2027 질의",
+        800,
+        600,
+      ),
       img(imagePaths.activityMou, "기업 MOU 법률지원", 800, 600),
       img(imagePaths.activityLhCollab, "공공기관 협업", 800, 600),
       img(imagePaths.activityYouthSpace, "청년 법률 지원", 800, 600),
@@ -239,6 +254,13 @@ export const siteImages = {
         "기획예산처 청년자문단 위촉",
         800,
         600,
+        false,
+      ),
+      youthBudgetUnboxing: img(
+        imagePaths.activityYouthBudgetUnboxing,
+        "청년예산 언박싱 2027에서 질의하는 안윤정 법무사",
+        1254,
+        1254,
         false,
       ),
       busanYouthPolicy: img(
@@ -350,6 +372,13 @@ export const siteImages = {
       "주간인물 — 지역 법조계에 활력이 되는 청년 법무사 안윤정",
       1200,
       800,
+      false,
+    ),
+    kukinewsYouthBudget260828: img(
+      imagePaths.pressKukinewsYouthBudget20260828,
+      "쿠키뉴스 — 청년예산 언박싱 2027에서 질의하는 안윤정 법무사",
+      1254,
+      1254,
       false,
     ),
     mbcInterview260624: img(

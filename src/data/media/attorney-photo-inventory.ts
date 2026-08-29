@@ -113,6 +113,14 @@ export const EXCLUDED_IMAGE_NOTES: { src: string; reason: string }[] = [
     src: "/image/활동-기획예산처청년자문단위촉.jpg",
     reason: "타인(위촉 관계자) 얼굴 크게 노출 — 대표이미지 제외, 활동 카드 전용",
   },
+  {
+    src: "/image/활동-청년예산언박싱.png",
+    reason: "행사 합성·타인 얼굴 노출 — 대표이미지 제외, 활동 카드 전용",
+  },
+  {
+    src: "/image/활동-청년예산언박싱2.png",
+    reason: "방송 캡처·청중 얼굴 노출 — 대표이미지 제외, 히어로·활동 전용",
+  },
   { src: "/image/로고.png", reason: "로고 단독 — 대표이미지 금지" },
 ];
 

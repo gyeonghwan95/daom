@@ -46,7 +46,7 @@ function EeatFactThumbInner({ image }: { image: EeatThumbImage }) {
           src={src}
           alt={image.alt}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="96px"
           onError={() => setSrc(undefined)}
         />

@@ -129,6 +129,14 @@ const externalActivityEntries: ExternalActivityItem[] = [
     image: siteImages.about.policy.barAssociationAward,
   },
   {
+    id: "youth-budget-unboxing",
+    category: "정책 자문",
+    title: "청년예산 언박싱 2027",
+    subtitle: "청년자문단 참가 및 질의",
+    period: "2026.08.28",
+    image: siteImages.about.policy.youthBudgetUnboxing,
+  },
+  {
     id: "budget-youth",
     category: "정책 자문",
     title: "기획예산처 1기 청년자문단",

@@ -86,12 +86,12 @@ export function LawyerTrackRecordTables({
                       {row.title}
                     </span>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="whitespace-nowrap px-4 py-3">
                     <span
                       className={
                         row.status === "활동중"
-                          ? "inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800"
-                          : "inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"
+                          ? "inline-flex shrink-0 items-center whitespace-nowrap rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800"
+                          : "inline-flex shrink-0 items-center whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"
                       }
                     >
                       {row.status}
@@ -126,7 +126,10 @@ export function LawyerTrackRecordTables({
                 <th scope="col" className="px-4 py-3 font-semibold">
                   일자
                 </th>
-                <th scope="col" className="px-4 py-3 font-semibold">
+                <th
+                  scope="col"
+                  className="whitespace-nowrap px-4 py-3 font-semibold"
+                >
                   구분
                 </th>
                 <th scope="col" className="px-4 py-3 font-semibold">
@@ -146,9 +149,9 @@ export function LawyerTrackRecordTables({
                   <td className="whitespace-nowrap px-4 py-3 font-medium text-navy/85">
                     {row.date}
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="whitespace-nowrap px-4 py-3">
                     <span
-                      className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${KIND_CLASS[row.kind]}`}
+                      className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${KIND_CLASS[row.kind]}`}
                     >
                       {row.kind}
                     </span>
