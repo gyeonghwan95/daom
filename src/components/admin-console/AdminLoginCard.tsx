@@ -24,6 +24,10 @@ export function AdminLoginCard({ onSuccess }: { onSuccess: () => void }) {
         return;
       }
       setPassword("");
+      const { markAdminAnalyticsExcluded } = await import(
+        "@/lib/admin-ops/analytics-exclude"
+      );
+      markAdminAnalyticsExcluded();
       onSuccess();
     } catch {
       setError("네트워크 오류가 발생했습니다.");

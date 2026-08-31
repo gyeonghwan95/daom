@@ -1,7 +1,12 @@
 import {
+  ADMIN_OPS_COOKIE,
   classifyReferrer,
+  getAdminSecrets,
+  isExcludedAnalyticsPath,
   json,
   normalizePath,
+  parseCookie,
+  verifySessionToken,
 } from "../../_lib/admin-ops/crypto";
 import { sanitizeOutboundHref } from "../../_lib/admin-ops/outbound-href";
 import { hasKv, recordAnalyticsEvent } from "../../_lib/admin-ops/store";
@@ -93,8 +98,16 @@ export async function onRequestPost(context) {
   }
 
   const path = normalizePath(String(body?.path || "/"));
-  if (path.startsWith("/admin") || path.startsWith("/api")) {
-    return json({ ok: true, skipped: true });
+  if (isExcludedAnalyticsPath(path)) {
+    return json({ ok: true, skipped: true, reason: "admin_path" });
+  }
+
+  const secrets = getAdminSecrets(env);
+  if (secrets.secret) {
+    const token = parseCookie(request.headers.get("Cookie"), ADMIN_OPS_COOKIE);
+    if (token && (await verifySessionToken(token, secrets.secret))) {
+      return json({ ok: true, skipped: true, reason: "admin_session" });
+    }
   }
 
   if (type === "page_view") {

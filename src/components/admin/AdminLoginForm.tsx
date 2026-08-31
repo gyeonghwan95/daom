@@ -32,6 +32,10 @@ export function AdminLoginForm({ onSuccess }: AdminLoginFormProps) {
       }
 
       setPassword("");
+      const { markAdminAnalyticsExcluded } = await import(
+        "@/lib/admin-ops/analytics-exclude"
+      );
+      markAdminAnalyticsExcluded();
       onSuccess();
     } catch {
       setError("로그인 요청 중 오류가 발생했습니다.");

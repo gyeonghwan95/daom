@@ -1,5 +1,6 @@
 import type { AnalyticsEventInput } from "@/lib/admin-ops/types";
-import { classifyReferrer, normalizePath } from "@/lib/admin-ops/utils";
+import { isAdminAnalyticsExcluded } from "@/lib/admin-ops/analytics-exclude";
+import { classifyReferrer, isExcludedAnalyticsPath, normalizePath } from "@/lib/admin-ops/utils";
 
 /** 같은 URL 재마운트·Strict Mode·HMR·이중 전송 방지 (GA 페이지뷰 ≠ 새로고침 폭주) */
 const PV_DEDUPE_MS = 30_000;
@@ -51,6 +52,7 @@ function postCollect(body: string): void {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=UTF-8" },
     body,
+    credentials: "same-origin",
     keepalive: true,
   }).catch(() => {
     /* fail open */
@@ -59,13 +61,13 @@ function postCollect(body: string): void {
 
 /**
  * Fire-and-forget analytics. Never throws into UI flows.
- * No PII. Admin paths skipped server-side too.
+ * No PII. Admin session and /admin paths are skipped client- and server-side.
  */
 export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
   try {
     if (typeof window === "undefined") return;
     const path = normalizePath(input.path || window.location.pathname);
-    if (path.startsWith("/admin")) return;
+    if (isExcludedAnalyticsPath(path) || isAdminAnalyticsExcluded()) return;
     if (input.type === "page_view" && shouldSkipDuplicatePageView(path)) return;
 
     let referrerHost: string | undefined;

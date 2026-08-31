@@ -6,7 +6,10 @@
 Browser → POST /api/analytics/collect → recordAnalyticsEvent()
 ```
 
-- Admin paths skipped · bot UA skipped
+- `/admin` and `/api` paths skipped (never stored; leftover keys stripped on read)
+- Valid `daom_admin_session` skipped (owner browsing public pages is not a visitor)
+- Client also skips when an admin session is present (`daom_analytics_exclude` + sessionStorage)
+- Bot UA skipped
 - Rate limit: 120/min/IP
 - Payload whitelist (`text/plain` or JSON body)
 - First page_view in a tab = landing source (naver/google/direct). Later views = `internal`

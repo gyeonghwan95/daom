@@ -24,7 +24,7 @@ const FOOTER_QUICK_LINKS = [
         { href: "/센텀법무사", label: "센텀 법무사" },
         { href: "/연제구법무사", label: "연제구 법무사" },
         { href: "/서면법무사", label: "서면 법무사" },
-  { href: "/glossary", label: "등기 용어 안내" },
+  { href: "/glossary", label: "업무 용어" },
   { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
   { href: "/faq", label: "FAQ" },

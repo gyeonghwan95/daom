@@ -11,7 +11,7 @@ export const SEARCH_CATEGORY_LABELS: Record<SearchContentType, string> = {
   case: "사례",
   cost: "비용·서류",
   document: "준비서류",
-  glossary: "용어사전",
+  glossary: "업무 용어",
   tool: "계산기",
   lecture: "강의·특강",
   lectureHistory: "강의 이력",
@@ -32,7 +32,7 @@ export const SEARCH_FILTER_LABELS: Record<SearchCategoryFilter, string> = {
   cost: "비용·서류",
   lecture: "강의·특강",
   tool: "계산기",
-  glossary: "용어사전",
+  glossary: "업무 용어",
   other: "기타",
 };
 

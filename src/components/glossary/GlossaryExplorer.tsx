@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useDeferredValue, useMemo, useRef, useState } from "react";
-import { type GlossaryCategory } from "@/lib/glossary";
+import { GLOSSARY_SITUATION_SHORTCUTS, type GlossaryCategory } from "@/lib/glossary";
 
 export type GlossarySearchItem = {
   slug: string;
@@ -12,6 +12,7 @@ export type GlossarySearchItem = {
   categoryLabel: string;
   cardDescription: string;
   oneLineDefinition: string;
+  discoverable: boolean;
 };
 
 type GlossaryGroup = {
@@ -22,24 +23,15 @@ type GlossaryGroup = {
 
 type GlossaryExplorerProps = {
   groups: GlossaryGroup[];
-  popularTerms: GlossarySearchItem[];
+  allTerms: GlossarySearchItem[];
 };
-
-const QUICK_SEARCHES = [
-  "상속등기",
-  "한정승인",
-  "전세권",
-  "지급명령",
-  "법인등기",
-  "개인회생",
-];
 
 function normalizeForSearch(text: string): string {
   return text.toLowerCase().replace(/\s+/g, "");
 }
 
 function matchesQuery(item: GlossarySearchItem, query: string): boolean {
-  if (!query) return true;
+  if (!query) return item.discoverable;
   const q = normalizeForSearch(query);
   const haystack = normalizeForSearch(
     [
@@ -52,13 +44,22 @@ function matchesQuery(item: GlossarySearchItem, query: string): boolean {
   return haystack.includes(q);
 }
 
-export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps) {
+export function GlossaryExplorer({ groups, allTerms }: GlossaryExplorerProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<GlossaryCategory | "all">("all");
   const deferredQuery = useDeferredValue(query);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const filteredGroups = useMemo(() => {
+  const uniqueGroups = useMemo(() => {
+    const searching = deferredQuery.trim().length > 0;
+    if (searching) {
+      const terms = allTerms.filter((term) => {
+        if (category !== "all" && term.category !== category) return false;
+        return matchesQuery(term, deferredQuery);
+      });
+      if (terms.length === 0) return [];
+      return [{ category: "inheritance" as GlossaryCategory, label: "용어", terms }];
+    }
     return groups
       .map((group) => ({
         ...group,
@@ -68,20 +69,19 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
         }),
       }))
       .filter((group) => group.terms.length > 0);
-  }, [groups, category, deferredQuery]);
+  }, [groups, allTerms, category, deferredQuery]);
 
-  const totalCount = filteredGroups.reduce(
-    (sum, group) => sum + group.terms.length,
-    0,
-  );
+  const situationHits = useMemo(() => {
+    const q = deferredQuery.trim();
+    if (!q) return [];
+    const n = normalizeForSearch(q);
+    return GLOSSARY_SITUATION_SHORTCUTS.filter((item) =>
+      normalizeForSearch(item.label).includes(n),
+    );
+  }, [deferredQuery]);
 
+  const totalCount = uniqueGroups.reduce((sum, group) => sum + group.terms.length, 0);
   const isSearching = deferredQuery.trim().length > 0 || category !== "all";
-
-  function handleQuickSearch(value: string) {
-    setQuery(value);
-    setCategory("all");
-    inputRef.current?.focus();
-  }
 
   function clearSearch() {
     setQuery("");
@@ -91,17 +91,14 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
 
   return (
     <div className="glossary-explorer space-y-8 md:space-y-10">
-      <section
-        className="glossary-search"
-        aria-label="법률 용어 검색"
-      >
+      <section className="glossary-search" aria-label="용어 검색">
         <div className="glossary-search__panel">
           <label htmlFor="glossary-search-input" className="glossary-search__label">
-            법률 용어 검색
+            용어 검색
           </label>
           <p className="glossary-search__lead">
-            궁금한 용어를 입력하면 바로 찾을 수 있습니다. 상속·등기·민사·회생·법인
-            분야를 함께 검색합니다.
+            등기·신청 서류에서 본 용어를 찾아 짧게 구분합니다. 지금 할 일이 먼저면
+            아래 상황별 안내를 보세요.
           </p>
 
           <div className="glossary-search__field-wrap">
@@ -126,7 +123,7 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="예: 상속등기, 한정승인, 전세권, 지급명령…"
+              placeholder="예: 상속등기, 임원변경, 임차권등기명령"
               className="glossary-search__input"
               autoComplete="off"
               enterKeyHint="search"
@@ -143,23 +140,7 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
             ) : null}
           </div>
 
-          <div className="glossary-search__quick">
-            <span className="glossary-search__quick-label">자주 찾는 용어</span>
-            <div className="glossary-search__quick-list">
-              {QUICK_SEARCHES.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => handleQuickSearch(item)}
-                  className="glossary-search__chip"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="glossary-search__filters" role="group" aria-label="분야 필터">
+          <div className="glossary-search__filters" role="group" aria-label="용어 분류">
             <button
               type="button"
               onClick={() => setCategory("all")}
@@ -191,38 +172,37 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
 
           <p className="glossary-search__meta" aria-live="polite">
             {isSearching
-              ? `검색 결과 ${totalCount}개 용어`
-              : `총 ${totalCount}개 용어 · 분야별로 둘러보거나 검색해 보세요`}
+              ? `검색 결과 용어 ${totalCount}개`
+              : `확인할 수 있는 용어 ${totalCount}개`}
           </p>
         </div>
-
-        {!isSearching && popularTerms.length > 0 ? (
-          <div className="glossary-search__popular">
-            <h2 className="glossary-search__popular-title">바로 읽어보기</h2>
-            <ul className="glossary-search__popular-list">
-              {popularTerms.map((item) => (
-                <li key={item.slug}>
-                  <Link href={item.path} className="glossary-search__popular-card">
-                    <span className="glossary-search__popular-term">{item.term}</span>
-                    <span className="glossary-search__popular-desc">
-                      {item.oneLineDefinition}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
       </section>
 
-      {totalCount === 0 ? (
+      {situationHits.length > 0 ? (
+        <section>
+          <h2 className="section-heading">바로 갈 수 있는 업무 안내</h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {situationHits.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="interactive-surface flex min-h-12 items-center rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm font-semibold text-navy hover:bg-beige/50"
+                >
+                  {item.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {totalCount === 0 && situationHits.length === 0 ? (
         <div className="glossary-search__empty" role="status">
           <p className="text-base font-semibold text-navy">
             &apos;{deferredQuery}&apos;에 맞는 용어를 찾지 못했습니다
           </p>
           <p className="mt-2 text-sm leading-relaxed text-navy/65">
-            다른 키워드로 검색하거나 분야 필터를 바꿔 보세요. 상담이 필요하면
-            아래에서 문의하실 수 있습니다.
+            용어 이름으로 다시 검색하거나, 상황별 안내에서 지금 할 일을 고르세요.
           </p>
           <button
             type="button"
@@ -233,8 +213,8 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
           </button>
         </div>
       ) : (
-        filteredGroups.map((group) => (
-          <section key={group.category} id={`glossary-${group.category}`}>
+        uniqueGroups.map((group) => (
+          <section key={`${group.category}-${group.label}`} id={`glossary-${group.category}`}>
             <h2 className="section-heading">{group.label}</h2>
             <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.terms.map((term) => (
@@ -251,7 +231,7 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
                       {term.cardDescription}
                     </p>
                     <span className="mt-4 text-sm font-semibold text-navy-light group-hover:text-navy">
-                      뜻과 절차 보기 →
+                      용어 확인 →
                     </span>
                   </Link>
                 </li>
@@ -260,6 +240,27 @@ export function GlossaryExplorer({ groups, popularTerms }: GlossaryExplorerProps
           </section>
         ))
       )}
+
+      {!isSearching ? (
+        <section className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">
+          <h2 className="text-base font-semibold text-navy sm:text-lg">
+            지금 할 일이 먼저라면
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-navy/70">
+            용어보다 신청·등기가 급하면 해당 업무 안내로 바로 갑니다.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {GLOSSARY_SITUATION_SHORTCUTS.slice(0, 6).map((item) => (
+              <Link key={item.href} href={item.href} className="glossary-search__chip">
+                {item.label}
+              </Link>
+            ))}
+            <Link href="/situations" className="glossary-search__chip">
+              상황별 안내
+            </Link>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

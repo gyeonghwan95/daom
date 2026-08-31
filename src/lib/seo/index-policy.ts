@@ -1,4 +1,5 @@
 import indexPolicy from "../../../seo/index-policy.json";
+import { getGlossaryCanonicalOverride } from "@/lib/glossary/policy";
 
 function normalizePath(raw: string): string {
   const decoded = (raw.split("?")[0] ?? raw).trim();
@@ -21,7 +22,8 @@ export function isNoIndexPath(path: string): boolean {
 }
 
 export function getCanonicalOverridePath(path: string): string | undefined {
-  return CANONICAL_OVERRIDES[normalizePath(path)];
+  const normalized = normalizePath(path);
+  return CANONICAL_OVERRIDES[normalized] ?? getGlossaryCanonicalOverride(normalized);
 }
 
 export function resolveCanonicalPath(path: string): string {

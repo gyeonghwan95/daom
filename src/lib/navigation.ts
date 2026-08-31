@@ -140,7 +140,7 @@ export const mainNavigation: NavItem[] = [
   { href: "/situations", label: "상황별 안내" },
   { href: "/tools", label: "법률 계산기" },
   { href: "/busan-legal-map", label: "부산 법률지도" },
-  { href: "/glossary", label: "등기 용어 안내" },
+  { href: "/glossary", label: "업무 용어" },
   { href: "/blog", label: "블로그" },
   { href: "/media", label: "언론·활동" },
   { href: "/reviews", label: "고객후기" },

@@ -9,6 +9,7 @@ import {
   useOptionalQuickInquiry,
 } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { isAdminPath } from "@/components/layout/PublicOnly";
+import { isAdminAnalyticsExcluded } from "@/lib/admin-ops/analytics-exclude";
 
 const FloatingCTA = dynamic(
   () =>
@@ -120,7 +121,9 @@ export function AppClientShell({ children }: { children: ReactNode }) {
         <NavigationProgress />
       </Suspense>
       {children}
-      {!isAdminPath(pathname) ? <AnalyticsBeacon /> : null}
+      {!isAdminPath(pathname) && !isAdminAnalyticsExcluded() ? (
+        <AnalyticsBeacon />
+      ) : null}
       {!isAdminPath(pathname) ? <DeferredConsultWizard /> : null}
       <IdleDeferredChrome />
     </QuickInquiryProvider>

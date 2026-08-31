@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T12:26:48.931Z",
+  "generatedAt": "2026-08-31T14:40:59.516Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1662,
+  "totalUrls": 1629,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
     "2": 28,
-    "3": 208,
+    "3": 175,
     "4": 564,
     "5": 183,
     "6": 580,
@@ -571,6 +571,138 @@
       "reason": "redirect"
     },
     {
+      "path": "/glossary/acquisition-tax",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/answer-brief",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/attachment",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/certified-mail",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/company-establishment-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/complaint",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/director-change-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/discharge",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/dissolution-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/head-office-move-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/inheritance-division-agreement",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/inheritance-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/inheritance-renunciation",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/jeonse-right",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/lease-registration-order",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/legal-inheritance-order",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/liquidation-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/mortgage",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/ownership-preservation-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/ownership-transfer-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/payment-order",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/personal-bankruptcy",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/personal-rehabilitation",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/pledge",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/provisional-attachment",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/purpose-change-registration",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/qualified-acceptance",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/registration-license-tax",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/service-fee",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/special-qualified-acceptance",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/stamp-duty",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/statutory-reserve-share",
+      "reason": "noindex"
+    },
+    {
+      "path": "/glossary/subrogation-inheritance",
+      "reason": "noindex"
+    },
+    {
       "path": "/press",
       "reason": "redirect"
     },
@@ -610,7 +742,7 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
       "lastmod": "2026-08-31",
       "filename": "tier-3-tools.xml",
-      "count": 208
+      "count": 175
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
@@ -1603,204 +1735,6 @@
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/faq/who-needs-inheritance-registration",
       "lastmod": "2025-01-11"
-    },
-    {
-      "path": "/glossary/acquisition-tax",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/acquisition-tax",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/answer-brief",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/answer-brief",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/attachment",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/attachment",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/certified-mail",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/certified-mail",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/company-establishment-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/company-establishment-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/complaint",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/complaint",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/director-change-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/director-change-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/discharge",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/discharge",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/dissolution-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/dissolution-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/head-office-move-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/head-office-move-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/inheritance-division-agreement",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-division-agreement",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/inheritance-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/inheritance-renunciation",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-renunciation",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/jeonse-right",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/jeonse-right",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/lease-registration-order",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/lease-registration-order",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/legal-inheritance-order",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/legal-inheritance-order",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/liquidation-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/liquidation-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/mortgage",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/mortgage",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/ownership-preservation-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/ownership-preservation-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/ownership-transfer-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/ownership-transfer-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/payment-order",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/payment-order",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/personal-bankruptcy",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/personal-bankruptcy",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/personal-rehabilitation",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/personal-rehabilitation",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/pledge",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/pledge",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/provisional-attachment",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/provisional-attachment",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/purpose-change-registration",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/purpose-change-registration",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/qualified-acceptance",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/qualified-acceptance",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/registration-license-tax",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/registration-license-tax",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/service-fee",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/service-fee",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/special-qualified-acceptance",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/special-qualified-acceptance",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/stamp-duty",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/stamp-duty",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/statutory-reserve-share",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/statutory-reserve-share",
-      "lastmod": "2026-08-31"
-    },
-    {
-      "path": "/glossary/subrogation-inheritance",
-      "tier": 3,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/glossary/subrogation-inheritance",
-      "lastmod": "2026-08-31"
     },
     {
       "path": "/services/bankruptcy",

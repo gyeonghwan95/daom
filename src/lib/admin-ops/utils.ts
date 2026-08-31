@@ -146,6 +146,17 @@ export function normalizePath(raw: string): string {
   return path;
 }
 
+/** Admin/API routes must never enter public traffic stats. */
+export function isExcludedAnalyticsPath(raw: string): boolean {
+  const path = normalizePath(raw);
+  return (
+    path === "/admin" ||
+    path.startsWith("/admin/") ||
+    path === "/api" ||
+    path.startsWith("/api/")
+  );
+}
+
 export function isSafeCtaUrl(url: string): boolean {
   const t = url.trim();
   if (!t) return false;

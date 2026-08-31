@@ -3,183 +3,153 @@ import { buildSeoTitle } from "@/lib/seo/metadata";
 import { createPageData } from "@/lib/pageData/template-helpers";
 import type { PageData } from "@/lib/pageData/types";
 import { glossaryHub } from "./config";
-import { getGlossaryPlainParagraphs } from "./plain-explanations";
+import { getGlossaryGuide } from "./guides";
+import { josa } from "./josa";
+import {
+  GLOSSARY_POLICY,
+  getGlossaryPolicy,
+  isGlossaryDiscoverable,
+} from "./policy";
 import { getAllGlossaryTerms, getGlossaryTermBySlug } from "./terms";
-import type { GlossaryTerm } from "./types";
 
-function buildGlossaryTermMetaTitle(term: string): string {
-  return buildSeoTitle(`${term} 뜻과 절차｜부산 법무사가 쉽게 설명`);
+function uniqueLinks(
+  links: { href: string; label: string }[],
+): { href: string; label: string }[] {
+  const seen = new Set<string>();
+  return links.filter((link) => {
+    if (!link?.href) return false;
+    if (seen.has(link.href)) return false;
+    seen.add(link.href);
+    return true;
+  });
 }
 
-function buildGlossaryTermMetaDescription(t: GlossaryTerm): string {
-  const base = `${t.term}은(는) ${t.oneLineDefinition.replace(/\.$/, "")}입니다. 언제 문제가 되는지, 준비서류와 확인사항을 정리했습니다.`;
-  return buildMetaDescription(base);
-}
-
-function buildRelatedTermLinks(current: GlossaryTerm): { href: string; label: string }[] {
-  const sameCategory = getAllGlossaryTerms()
-    .filter((t) => t.category === current.category && t.slug !== current.slug)
-    .slice(0, 4)
-    .map((t) => ({ href: t.path, label: t.term }));
-
-  const crossLinks = getAllGlossaryTerms()
-    .filter((t) => t.category !== current.category && t.slug !== current.slug)
-    .slice(0, 2)
-    .map((t) => ({ href: t.path, label: t.term }));
-
-  return [...sameCategory, ...crossLinks];
+function ownerLink(slug: string): { href: string; label: string } | null {
+  const policy = getGlossaryPolicy(slug);
+  if (!policy) return null;
+  return { href: policy.serviceOwner, label: policy.serviceOwnerLabel };
 }
 
 export function buildGlossaryHubPageData(): PageData {
-  const terms = getAllGlossaryTerms();
-  const termLinks = terms.map((t) => ({ href: t.path, label: t.term }));
+  const discoverable = getAllGlossaryTerms().filter((t) => isGlossaryDiscoverable(t.slug));
 
   return createPageData({
     slug: glossaryHub.slug,
     path: glossaryHub.path,
     category: "glossary",
-    title: "법률 용어사전",
-    metaTitle: buildSeoTitle("법률 용어사전 — 상속·등기·민사 용어 쉽게"),
+    title: "등기·신청 용어",
+    metaTitle: buildSeoTitle("등기·신청에서 자주 확인하는 용어"),
     metaDescription: buildMetaDescription(glossaryHub.metaDescriptionBase),
     h1: glossaryHub.h1,
     intro: glossaryHub.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "법률 용어사전" },
+      { label: "용어 안내" },
     ],
     introParagraphs: [glossaryHub.intro],
     faqs: glossaryHub.faqs,
     consultationExample: {
-      title: "용어는 알겠는데 내 사건은?",
-      body: "용어 이해 후에도 서류·기한·관할은 사건마다 다릅니다. 관련 자가진단을 먼저 보시거나, 해운대·센텀 사무소로 상황을 알려주시면 다음 단계를 함께 정리해 드립니다.",
+      title: "용어보다 지금 할 일이 먼저라면",
+      body: "상황별 안내나 해당 업무 페이지에서 기한·서류를 확인하는 편이 맞습니다. 용어가 헷갈릴 때만 이 목록을 쓰시면 됩니다.",
     },
-    internalLinks: [
+    internalLinks: uniqueLinks([
       { href: "/situations", label: "상황별 법률문제" },
-      { href: "/tools", label: "법률 계산기" },
-      { href: "/업무사례", label: "업무 사례" },
-      { href: "/busan-legal-map", label: "부산 법률지도" },
+      { href: "/자가진단", label: "자가진단" },
+      { href: "/부산상속등기", label: "부산 상속등기" },
+      { href: "/부산임원변경등기", label: "부산 임원변경등기" },
       { href: "/contact", label: "상담 문의" },
-      ...termLinks.slice(0, 6),
-    ],
+    ]),
     sections: [
       {
-        title: "용어 목록",
-        body: "아래 카드에서 용어를 선택하면 정의·설명·준비서류·관련 페이지로 이동할 수 있습니다.",
-        links: termLinks,
+        title: "용어로 찾아보기",
+        body: "아래 용어는 뜻을 짧게 구분하는 보조 문서입니다. 신청·등기의 대표 안내는 각 업무 페이지입니다.",
+        links: discoverable.map((t) => ({ href: t.path, label: t.term })),
       },
     ],
-    primaryKeywords: [
-      "법률 용어사전",
-      "상속등기 뜻",
-      "한정승인 뜻",
-      "소유권이전등기",
-      "개인회생 뜻",
-      "다옴법무사사무소",
-    ],
+    primaryKeywords: ["등기 용어", "신청 용어"],
     includeFaqSchema: true,
-    ctaTitle: "용어 설명만으로 부족하다면",
+    ctaTitle: "필요한 업무 안내로 이동합니다",
     ctaText:
-      "기한·서류·비용은 사실관계마다 달라집니다. 전화·카카오톡·방문(예약)으로 편하게 문의해 주세요.",
+      "용어 확인 후 신청·등기가 필요하면 해당 업무 페이지 또는 상담으로 이어갑니다.",
   });
 }
 
 export function buildGlossaryTermPageData(slug: string): PageData | null {
   const t = getGlossaryTermBySlug(slug);
-  if (!t) return null;
+  const guide = getGlossaryGuide(slug);
+  const policy = getGlossaryPolicy(slug);
+  if (!t || !guide || !policy) return null;
 
-  const relatedTerms = buildRelatedTermLinks(t);
-  const plainParagraphs = getGlossaryPlainParagraphs(t.slug, t.plainExplanation);
+  const owner = ownerLink(slug);
 
   return createPageData({
     slug: t.slug,
     path: t.path,
     category: "glossary",
     title: t.term,
-    metaTitle: buildGlossaryTermMetaTitle(t.term),
-    metaDescription: buildGlossaryTermMetaDescription(t),
-    h1: `${t.term} 뜻과 절차`,
+    metaTitle: buildSeoTitle(`${t.term} 용어 확인`),
+    metaDescription: buildMetaDescription(
+      `${josa(t.term, "은/는")} ${t.oneLineDefinition.replace(/\.$/, "")}. 신청·등기 절차의 대표 안내는 ${policy.serviceOwnerLabel}에서 확인합니다.`,
+    ),
+    h1: t.term,
     intro: t.oneLineDefinition,
     breadcrumbs: [
       { label: "홈", href: "/" },
-      { label: "법률 용어사전", href: "/glossary" },
+      { label: "용어 안내", href: "/glossary" },
       { label: t.term },
     ],
-    introParagraphs: plainParagraphs.slice(0, 2),
-    documents: t.checks,
-    consultationPoints: t.whenItMatters,
+    introParagraphs: [t.oneLineDefinition, guide.answerLead],
+    procedures: [
+      `${t.term}의 신청 순서는 ${policy.serviceOwnerLabel}에서 확인합니다.`,
+    ],
+    documents: [
+      `${t.term}의 준비서류는 ${policy.serviceOwnerLabel}에서 확인합니다.`,
+    ],
+    consultationPoints: guide.stuckPoints.slice(0, 3),
     faqs: [
       {
-        question: `${t.term}은 언제 필요한가요?`,
-        answer: t.whenItMatters.join(" "),
+        question: `${josa(t.term, "은/는")} 무슨 뜻인가요?`,
+        answer: t.oneLineDefinition,
       },
       {
-        question: `${t.term} 전에 무엇을 확인해야 하나요?`,
-        answer: t.checks.join(" "),
+        question: `${josa(t.term, "을/를")} 신청·등기할 때는 어디를 보나요?`,
+        answer: `대표 안내는 ${policy.serviceOwnerLabel}(${policy.serviceOwner})입니다. 이 페이지는 용어를 구분하는 보조 문서입니다.`,
+      },
+      {
+        question: `${josa(t.term, "은/는")} 검색 대표 페이지인가요?`,
+        answer: `아닙니다. 의뢰·절차 검색의 대표 URL은 ${policy.serviceOwner}입니다.`,
       },
     ],
     consultationExample: {
-      title: `${t.term} 관련 상담`,
-      body: `${t.term}이 본인 사건과 맞는지, 다음에 무엇을 준비해야 하는지 사실관계를 알려주시면 부산 해운대구·센텀 사무소에서 안내해 드립니다.`,
+      title: `${t.term} 다음 단계`,
+      body: `기한·서류·비용은 ${policy.serviceOwnerLabel}에서 확인합니다.`,
     },
-    internalLinks: [
-      ...t.serviceLinks,
-      ...t.diagnosisLinks,
-      ...t.faqLinks,
-      ...t.caseLinks,
-      ...relatedTerms,
-      { href: "/glossary", label: "법률 용어사전" },
-      { href: "/contact", label: "상담 문의" },
-    ],
+    internalLinks: uniqueLinks([
+      ...(owner ? [owner] : []),
+      ...t.diagnosisLinks.slice(0, 2),
+      { href: "/glossary", label: "용어 목록" },
+      { href: "/situations", label: "상황별 안내" },
+    ]),
     sections: [
       {
-        title: "한 줄 정의",
-        body: t.oneLineDefinition,
+        title: `${t.term}에서 자주 헷갈리는 점`,
+        body: `${t.term}의 신청·등기 절차 전체는 ${policy.serviceOwnerLabel}이 기준입니다.`,
+        items: guide.stuckPoints.slice(0, 3),
       },
       {
-        title: "쉽게 풀어쓴 설명",
-        body: plainParagraphs.join("\n\n"),
+        title: `${t.term}에서 법무사가 맡는 범위`,
+        body: [guide.scrivenerScope, guide.outOfScope].filter(Boolean).join(" "),
       },
       {
-        title: "언제 문제가 되는지",
-        body: "아래 상황에서 특히 주의가 필요합니다.",
-        items: t.whenItMatters,
-      },
-      {
-        title: "준비서류 또는 확인사항",
-        body: "절차 전에 아래 항목을 먼저 확인해 보세요.",
-        items: t.checks,
-      },
-      {
-        title: "관련 자가진단",
-        body: "질문에 답하며 위험도와 다음 절차를 점검할 수 있습니다.",
-        links: t.diagnosisLinks,
-      },
-      {
-        title: "관련 서비스",
-        body: "절차·서류·비용을 항목별로 정리한 업무 안내입니다.",
-        links: t.serviceLinks,
-      },
-      {
-        title: "관련 FAQ",
-        body: "자주 묻는 질문과 답변입니다.",
-        links: t.faqLinks,
-      },
-      {
-        title: "관련 사례",
-        body: "유사 상황의 상담·진행 사례를 참고할 수 있습니다.",
-        links: t.caseLinks,
-      },
-      {
-        title: "관련 용어",
-        body: "함께 보면 이해가 쉬운 용어입니다.",
-        links: relatedTerms,
+        title: `${t.term} 대표 업무 안내`,
+        body: `${t.term}의 신청·등기·기한·서류는 이 용어 페이지가 아니라 ${policy.serviceOwner}가 대표입니다.`,
+        links: uniqueLinks([...(owner ? [owner] : []), ...t.diagnosisLinks.slice(0, 1)]),
       },
     ],
-    primaryKeywords: [t.term, `${t.term} 뜻`, `${t.term} 절차`, "다옴법무사사무소"],
-    includeFaqSchema: true,
-    ctaTitle: `${t.term} — 다음 단계가 필요하신가요?`,
-    ctaText:
-      "용어 이해 후에도 기한·관할·서류는 사건마다 다릅니다. 관련 자가진단을 확인하시거나 상담을 예약해 주세요.",
+    primaryKeywords: [t.term],
+    includeFaqSchema: false,
+    ctaTitle: `${policy.serviceOwnerLabel}에서 절차를 확인합니다`,
+    ctaText: `${josa(t.term, "을/를")} 신청·등기해야 하면 대표 안내 페이지로 이동합니다.`,
   });
 }
 
@@ -195,4 +165,15 @@ export function resolveGlossaryHubPageData(): PageData {
 
 export function resolveGlossaryTermPageData(slug: string): PageData | undefined {
   return buildGlossaryTermPageData(slug) ?? undefined;
+}
+
+export function assertGlossaryPolicyComplete(): void {
+  for (const term of getAllGlossaryTerms()) {
+    if (!GLOSSARY_POLICY[term.slug]) {
+      throw new Error(`Missing glossary policy: ${term.slug}`);
+    }
+    if (!getGlossaryGuide(term.slug)) {
+      throw new Error(`Missing glossary guide: ${term.slug}`);
+    }
+  }
 }

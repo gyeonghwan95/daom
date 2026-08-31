@@ -3,13 +3,11 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { GlossaryTermView } from "@/components/glossary/GlossaryTermView";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
-import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getGlossaryTermSlugs,
   resolveGlossaryTermPageData,
 } from "@/lib/glossary";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
-import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 type Props = {
@@ -38,7 +36,6 @@ export default async function GlossaryTermPage({ params }: Props) {
   return (
     <PageContainer>
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <JsonLd data={buildJsonLdForPageData(page)} />
       <GlossaryTermView page={page} slug={normalized} />
     </PageContainer>
   );

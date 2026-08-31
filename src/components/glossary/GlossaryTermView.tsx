@@ -2,22 +2,18 @@ import Link from "next/link";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
-import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
-import { GlossaryNationwideNotice } from "@/components/glossary/GlossaryNationwideNotice";
-import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import {
   ChecklistBox,
-  ConsultationCTA,
   ContentSection,
   PageHero,
-  PageTableOfContents,
-  ProseParagraphs,
-  RelatedContentGrid,
-  SummaryBox,
+  WarningBox,
 } from "@/components/readability";
-import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
-import { recommendationFromGlossaryTerm } from "@/lib/internal-links";
-import { getGlossaryPlainParagraphs, getGlossaryTermBySlug, isGlossaryNationwideTerm } from "@/lib/glossary";
+import {
+  getGlossaryGuide,
+  getGlossaryPolicy,
+  getGlossaryTermBySlug,
+  josa,
+} from "@/lib/glossary";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 
@@ -28,39 +24,11 @@ type GlossaryTermViewProps = {
 
 export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
   const term = getGlossaryTermBySlug(slug);
+  const guide = getGlossaryGuide(slug);
+  const policy = getGlossaryPolicy(slug);
   const cover = getCoverImageForPageData(page);
 
-  if (!term) return null;
-
-  const plainParagraphs = getGlossaryPlainParagraphs(
-    term.slug,
-    term.plainExplanation,
-  );
-
-  const summaryBullets = [
-    term.oneLineDefinition,
-    plainParagraphs[0]
-      ? plainParagraphs[0].length > 120
-        ? `${plainParagraphs[0].slice(0, 117)}…`
-        : plainParagraphs[0]
-      : null,
-    term.whenItMatters[0] ? `관련 상황: ${term.whenItMatters[0]}` : null,
-    term.checks[0] ? `확인 사항: ${term.checks[0]}` : null,
-  ]
-    .filter((item): item is string => Boolean(item))
-    .slice(0, 5);
-
-  const tocItems = [
-    { id: "glossary-plain", label: "쉽게 풀어쓴 설명" },
-    { id: "glossary-matters", label: "언제 문제가 되는지" },
-    { id: "glossary-checks", label: "준비서류 또는 확인사항" },
-    { id: "glossary-diagnosis", label: "관련 자가진단" },
-    { id: "glossary-services", label: "관련 서비스" },
-    { id: "glossary-faq", label: "관련 FAQ" },
-    { id: "glossary-cases", label: "관련 사례" },
-    { id: "faq", label: "자주 묻는 질문" },
-    { id: "consultation", label: "상담 문의" },
-  ];
+  if (!term || !guide || !policy) return null;
 
   return (
     <article className="content-stack">
@@ -71,82 +39,68 @@ export function GlossaryTermView({ page, slug }: GlossaryTermViewProps) {
       <PageHero
         h1={page.h1}
         intro={term.oneLineDefinition}
-        keywords={page.primaryKeywords}
-        eyebrow="Legal Glossary"
-        ctaLabel={consultationInquiryCopy.ctaShort}
+        keywords={[]}
+        eyebrow="용어 확인"
+        ctaHref={policy.serviceOwner}
+        ctaLabel={`${policy.serviceOwnerLabel} 보기`}
         showDiagnosisCta={false}
-        showAboutLawyerCta
-        showNationwideChip={isGlossaryNationwideTerm(slug)}
+        showAboutLawyerCta={false}
+        showNationwideChip={false}
       />
 
-      {isGlossaryNationwideTerm(slug) ? <NationwideRemoteBanner /> : null}
+      <ContentSection id="glossary-confusions" title={`${term.term}에서 자주 헷갈리는 점`}>
+        <p className="body-text mb-4">{guide.answerLead}</p>
+        <ChecklistBox items={guide.stuckPoints.slice(0, 3)} />
+      </ContentSection>
 
-      <SummaryBox items={summaryBullets} />
-
-      <PageTableOfContents items={tocItems} />
-
-      <ContentSection id="glossary-plain" title="쉽게 풀어쓴 설명">
-        <div className="glossary-prose">
-          <ProseParagraphs paragraphs={plainParagraphs} />
-        </div>
-        {isGlossaryNationwideTerm(slug) ? (
-          <GlossaryNationwideNotice termLabel={term.term} />
+      <ContentSection id="glossary-scope" title={`${term.term}에서 법무사가 맡는 범위`}>
+        <p className="body-text">{guide.scrivenerScope}</p>
+        {guide.outOfScope ? (
+          <WarningBox title="이 페이지에서 맡지 않는 업무">
+            <p>{guide.outOfScope}</p>
+          </WarningBox>
         ) : null}
       </ContentSection>
 
-      <ContentSection id="glossary-matters" title="언제 문제가 되는지">
-        <ChecklistBox items={term.whenItMatters} />
+      <ContentSection id="glossary-owner" title={`${term.term} 대표 업무 안내`}>
+        <p className="body-text mb-4">
+          {josa(term.term, "을/를")} 신청·등기할 때의 기한·서류·비용은 이 용어 페이지가 아니라
+          아래 대표 안내가 기준입니다.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={policy.serviceOwner}
+            className="interactive-surface rounded-lg border border-navy/15 bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-navy/90"
+          >
+            {policy.serviceOwnerLabel} →
+          </Link>
+          {term.diagnosisLinks[0] ? (
+            <Link
+              href={term.diagnosisLinks[0].href}
+              className="interactive-surface rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm font-semibold text-navy hover:bg-beige/50"
+            >
+              {term.diagnosisLinks[0].label}
+            </Link>
+          ) : null}
+        </div>
       </ContentSection>
-
-      <ContentSection id="glossary-checks" title="준비서류 또는 확인사항">
-        <ChecklistBox
-          items={term.checks}
-          note="사안에 따라 추가로 확인할 항목이 있을 수 있습니다."
-        />
-      </ContentSection>
-
-      <ContentSection id="glossary-diagnosis" title="관련 자가진단">
-        <RelatedContentGrid links={term.diagnosisLinks} />
-      </ContentSection>
-
-      <ContentSection id="glossary-services" title="관련 서비스">
-        <RelatedContentGrid links={term.serviceLinks} />
-      </ContentSection>
-
-      <ContentSection id="glossary-faq" title="관련 FAQ">
-        <RelatedContentGrid links={term.faqLinks} />
-      </ContentSection>
-
-      <ContentSection id="glossary-cases" title="관련 사례">
-        <RelatedContentGrid links={term.caseLinks} />
-      </ContentSection>
-
-      <RelatedRecommendations source={recommendationFromGlossaryTerm(term)} />
 
       <div className="flex flex-wrap gap-2">
         <Link
           href="/glossary"
           className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
         >
-          ← 법률 용어사전 목록
+          ← 용어 목록
         </Link>
         <Link
           href="/situations"
           className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
         >
-          상황별 법률문제
+          상황별 안내
         </Link>
       </div>
 
       <DiagnosisFAQ items={page.faqs} />
-
-      <div id="consultation">
-        <ConsultationCTA
-          title="용어와 관련된 절차가 궁금하시면 상담해 보세요"
-          description={page.ctaText}
-          buttonLabel={consultationInquiryCopy.ctaPrimary}
-        />
-      </div>
     </article>
   );
 }

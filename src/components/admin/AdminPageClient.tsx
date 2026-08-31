@@ -12,6 +12,10 @@ export function AdminPageClient({ reviewsFetchedAt }: AdminPageClientProps) {
   const { loading, authenticated, configured, localDev, refresh } = useAdminSession();
 
   async function handleLogout() {
+    const { clearAdminAnalyticsExcluded } = await import(
+      "@/lib/admin-ops/analytics-exclude"
+    );
+    clearAdminAnalyticsExcluded();
     await fetch("/api/admin/logout", {
       method: "POST",
       credentials: "include",

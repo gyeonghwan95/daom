@@ -1,0 +1,34 @@
+term,glossary_url,primary_query,allowed_secondary_query,forbidden_query,service_owner,glossary_role
+상속등기,/glossary/inheritance-registration,상속등기 다음 절차,상속등기 준비서류 | 상속등기 확인사항,부산 상속등기 | 부산 상속등기 법무사 | 부산 법무사,/부산상속등기,SUPPORT_NOINDEX
+상속포기,/glossary/inheritance-renunciation,상속포기 신청 전 확인,상속포기 3개월 | 상속포기 준비서류,부산 상속포기 | 부산 상속포기 법무사,/부산상속포기,SUPPORT_NOINDEX
+한정승인,/glossary/qualified-acceptance,한정승인 신청 전 확인,한정승인 3개월 | 한정승인 재산목록,부산 한정승인 | 부산 한정승인 법무사,/부산한정승인,SUPPORT_NOINDEX
+특별한정승인,/glossary/special-qualified-acceptance,상속포기 기한 지난 뒤,특별한정승인 사유 | 3개월 지난 상속,부산 한정승인 | 부산 상속포기,/특별한정승인,SUPPORT_NOINDEX
+상속재산분할협의서,/glossary/inheritance-division-agreement,부동산을 한 명 앞으로 상속,상속재산분할협의서 인감 | 공동상속 등기서류,부산 상속등기 | 부산 상속 법무사,/상속재산분할협의서준비,SUPPORT_NOINDEX
+유류분,/glossary/statutory-reserve-share,유류분과 상속등기 관계,분할협의 전 유류분,유류분 반환청구 | 유류분 소송 | 부산 상속등기,/유류분과상속등기,REMOVE_FROM_DISCOVERY
+법정상속순위,/glossary/legal-inheritance-order,상속인이 누구인지 확인,법정상속순위 가족관계,부산 상속등기 | 부산 상속 법무사,/부산상속등기,SUPPORT_NOINDEX
+대습상속,/glossary/subrogation-inheritance,자녀가 먼저 사망한 상속등기,대습상속인 서류 | 손자녀 상속등기,부산 상속등기,/대습상속등기,SUPPORT_NOINDEX
+근저당,/glossary/mortgage,대출 갚은 뒤 근저당 말소,잔금 전 근저당 말소 | 근저당 설정 확인,부산 근저당말소 | 부산 근저당말소등기 | 부산 법무사,/부산근저당말소등기,SUPPORT_NOINDEX
+가압류,/glossary/provisional-attachment,등기부 가압류 말소,가압류 있는 매매 | 가압류 신청 서류,가압류 소송대리 | 부산 법무사,/부산가압류말소등기,SUPPORT_NOINDEX
+압류,/glossary/attachment,등기부 압류 말소,압류 있는 부동산,압류 소송대리,/부산압류말소등기,REMOVE_FROM_DISCOVERY
+질권,/glossary/pledge,질권과 등기 실무 구분,,부산 법무사 | 질권 소송,/법인등기,REMOVE_FROM_DISCOVERY
+전세권,/glossary/jeonse-right,전세권 설정·말소 확인,전세권 말소등기,부산 전세권설정등기 | 부산 전세권말소등기,/부산전세권설정등기,SUPPORT_NOINDEX
+임차권등기명령,/glossary/lease-registration-order,보증금 못 받고 이사할 때,임차권등기명령 신청 서류,부산 임차권등기명령 | 부산 임차권등기명령 법무사,/부산임차권등기명령,SUPPORT_NOINDEX
+소유권이전등기,/glossary/ownership-transfer-registration,잔금일 소유권이전등기 서류,매매 이전등기 준비서류,부산 소유권이전등기 | 부산 부동산등기,/부산소유권이전등기,SUPPORT_NOINDEX
+소유권보존등기,/glossary/ownership-preservation-registration,신축 소유권보존등기,보존등기 준비서류 | 미등기 건물 등기,부산 부동산등기 | 부산 소유권이전등기,/미등기건물소유권보존등기,SUPPORT_NOINDEX
+등록면허세,/glossary/registration-license-tax,등기 전 등록면허세,,등록면허세 뜻 | 부산 법무사,/등록면허세,REMOVE_FROM_DISCOVERY
+취득세,/glossary/acquisition-tax,상속·매매 취득세와 등기 순서,상속취득세 기한,취득세 뜻 | 부산 상속등기,/취득세,REMOVE_FROM_DISCOVERY
+인지대,/glossary/stamp-duty,법원 신청 인지대,,인지대 뜻,/부산지방법원지급명령,REMOVE_FROM_DISCOVERY
+송달료,/glossary/service-fee,법원 송달료,,송달료 뜻,/부산개인회생,REMOVE_FROM_DISCOVERY
+지급명령,/glossary/payment-order,돈을 못 받았을 때 지급명령,지급명령 신청 서류 | 지급명령 이의,지급명령 소송대리 | 부산 법무사,/부산지방법원지급명령,SUPPORT_NOINDEX
+내용증명,/glossary/certified-mail,보증금·대금 내용증명,내용증명 언제 보내나,부산 법무사,/내용증명작성준비,SUPPORT_NOINDEX
+소장,/glossary/complaint,소장과 지급명령 구분,,소장 작성 소송대리 | 민사소송 변호사,/민사소송,REMOVE_FROM_DISCOVERY
+답변서,/glossary/answer-brief,답변서 제출 기한,,답변서 소송대리,/민사소송,REMOVE_FROM_DISCOVERY
+개인회생,/glossary/personal-rehabilitation,개인회생 신청 전 확인,개인회생 변제계획 | 개인회생 서류,부산 개인회생 | 부산 개인회생 법무사,/부산개인회생,SUPPORT_NOINDEX
+개인파산,/glossary/personal-bankruptcy,개인파산 신청 전 확인,개인파산 면책 | 회생과 파산 비교,부산 개인파산 | 부산 개인파산 법무사,/부산개인파산,SUPPORT_NOINDEX
+면책,/glossary/discharge,파산·회생 후 면책,면책 불허 사유,부산 개인파산,/부산면책신청,SUPPORT_NOINDEX
+법인설립등기,/glossary/company-establishment-registration,법인설립등기 준비서류,설립등기 순서 | 정관·자본금,부산 법인설립등기 | 부산 법인 법무사,/부산법인설립등기,SUPPORT_NOINDEX
+임원변경등기,/glossary/director-change-registration,임원변경등기 2주 기한,대표이사 변경 과태료 | 임원변경 서류,부산 임원변경등기 | 부산 법인등기,/부산임원변경등기,SUPPORT_NOINDEX
+본점이전등기,/glossary/head-office-move-registration,법인 사무실 이전 등기,관할 내외 본점이전,부산 본점이전등기 | 부산 법인등기,/부산본점이전등기,SUPPORT_NOINDEX
+목적변경등기,/glossary/purpose-change-registration,법인 사업목적 추가 등기,목적변경 주주총회,부산 법인등기,/부산사업목적변경등기,SUPPORT_NOINDEX
+해산등기,/glossary/dissolution-registration,법인 폐업과 해산등기,해산등기 주주총회,부산 법인등기,/부산법인해산청산등기,SUPPORT_NOINDEX
+청산등기,/glossary/liquidation-registration,청산종결등기 순서,해산 후 청산등기,부산 법인등기,/부산법인해산청산등기,SUPPORT_NOINDEX

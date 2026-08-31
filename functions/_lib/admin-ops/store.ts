@@ -8,6 +8,7 @@ import {
   formatKstDate,
   formatKstDateTime,
   getKstHour,
+  isExcludedAnalyticsPath,
   kstDateRange,
   newId,
   normalizePath,
@@ -118,6 +119,43 @@ function emptyPath() {
     mobile: 0,
     desktop: 0,
   };
+}
+
+/** Drop /admin·/api keys from a merged day so the owner is not a visitor. */
+export function omitExcludedAnalyticsPaths(day) {
+  if (!day?.paths) return day;
+  const paths = {};
+  let removedVisits = 0;
+  let removedCta = 0;
+  let removedConsultStart = 0;
+  let removedConsultSubmit = 0;
+  let removedNaverPlace = 0;
+  let removedMobile = 0;
+  let removedDesktop = 0;
+  for (const [path, stats] of Object.entries(day.paths)) {
+    if (isExcludedAnalyticsPath(path)) {
+      removedVisits += stats?.visits || 0;
+      removedCta += stats?.cta || 0;
+      removedConsultStart += stats?.consultStart || 0;
+      removedConsultSubmit += stats?.consultSubmit || 0;
+      removedNaverPlace += stats?.naverPlace || 0;
+      removedMobile += stats?.mobile || 0;
+      removedDesktop += stats?.desktop || 0;
+      continue;
+    }
+    paths[path] = stats;
+  }
+  day.paths = paths;
+  day.visits = Math.max(0, (day.visits || 0) - removedVisits);
+  day.cta = Math.max(0, (day.cta || 0) - removedCta);
+  day.consultStart = Math.max(0, (day.consultStart || 0) - removedConsultStart);
+  day.consultSubmit = Math.max(0, (day.consultSubmit || 0) - removedConsultSubmit);
+  day.naverPlace = Math.max(0, (day.naverPlace || 0) - removedNaverPlace);
+  if (day.devices) {
+    day.devices.mobile = Math.max(0, (day.devices.mobile || 0) - removedMobile);
+    day.devices.desktop = Math.max(0, (day.devices.desktop || 0) - removedDesktop);
+  }
+  return day;
 }
 
 function addNum(a, b) {
@@ -346,6 +384,7 @@ export async function getDaily(env, date) {
   const day = emptyDay(date);
   for (const part of parts) mergeDay(day, part);
   day.paths = mergePathStats(day.paths);
+  omitExcludedAnalyticsPaths(day);
   return day;
 }
 
@@ -485,7 +524,9 @@ function bumpDestination(day, event) {
 export async function listRecentActivity(env, limit = 20) {
   if (!hasKv(env)) return [];
   const list = await getJson(env.ADMIN_KV, KEYS.recentActivity, []);
-  return list.slice(0, limit);
+  return list
+    .filter((row) => !isExcludedAnalyticsPath(row?.path || ""))
+    .slice(0, limit);
 }
 
 export async function recordAnalyticsEvent(env, event) {
@@ -496,6 +537,9 @@ export async function recordAnalyticsEvent(env, event) {
   const shard = analyticsShard(event.ip);
   const day = await getJson(env.ADMIN_KV, dayKey(date, shard), emptyDay(date));
   const path = normalizePath(event.path || "/");
+  if (isExcludedAnalyticsPath(path)) {
+    return { ok: true, skipped: true, reason: "admin_path" };
+  }
   if (!day.paths[path]) day.paths[path] = emptyPath();
   const row = day.paths[path];
   day.lastEventAt = now.toISOString();

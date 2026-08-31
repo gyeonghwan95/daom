@@ -1,6 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import {
+  clearAdminAnalyticsExcluded,
+  markAdminAnalyticsExcluded,
+} from "@/lib/admin-ops/analytics-exclude";
 
 type SessionState = {
   loading: boolean;
@@ -45,6 +49,8 @@ export function useAdminOpsSession(): SessionState {
     setAuthenticated(session.authenticated);
     setStorageConfigured(session.storageConfigured);
     setLoading(false);
+    if (session.authenticated) markAdminAnalyticsExcluded();
+    else clearAdminAnalyticsExcluded();
   }, []);
 
   useEffect(() => {
@@ -55,6 +61,7 @@ export function useAdminOpsSession(): SessionState {
       setAuthenticated(session.authenticated);
       setStorageConfigured(session.storageConfigured);
       setLoading(false);
+      if (session.authenticated) markAdminAnalyticsExcluded();
     });
     return () => {
       cancelled = true;
@@ -62,6 +69,7 @@ export function useAdminOpsSession(): SessionState {
   }, []);
 
   const logout = useCallback(async () => {
+    clearAdminAnalyticsExcluded();
     await fetch("/api/admin/logout", {
       method: "POST",
       credentials: "include",

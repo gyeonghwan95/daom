@@ -173,10 +173,10 @@ function relatedFor(seed: SearchIntentSeed): Pick<
       ? [
           {
             href: seed.glossaryHref,
-            label: seed.glossaryLabel ?? "용어사전",
+            label: seed.glossaryLabel ?? "관련 용어",
           },
         ]
-      : [{ href: "/glossary", label: "법률 용어사전" }]),
+      : [{ href: "/glossary", label: "업무 용어" }]),
     { href: "/faq", label: "FAQ" },
     { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
     ...(seed.slug === "등기소어디인가요" || seed.slug === "등기어디서하나요"

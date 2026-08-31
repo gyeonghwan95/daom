@@ -42,7 +42,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/situations", label: "상황별 안내" },
       { href: "/tools", label: "법률 계산기" },
       { href: "/busan-legal-map", label: "부산 법률지도" },
-      { href: "/glossary", label: "등기 용어 안내" },
+      { href: "/glossary", label: "업무 용어" },
       { href: "/faq", label: "FAQ" },
     ],
   },

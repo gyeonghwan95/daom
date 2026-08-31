@@ -134,7 +134,7 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
         <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { href: "/자가진단", label: "업무별 자가진단" },
-            { href: "/glossary", label: "법률용어사전" },
+            { href: "/glossary", label: "업무 용어" },
             { href: "/services", label: "업무안내" },
             { href: "/faq", label: "FAQ" },
             { href: "/contact", label: "상담 문의" },

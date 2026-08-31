@@ -47,7 +47,7 @@ export function buildJsonLdForPageData(
       aboutId: isExpertHub ? schemaIds.person : undefined,
     }),
   ];
-  if (!isExpertHub) {
+  if (!isExpertHub && page.category !== "glossary") {
     schemas.push(buildServicePageSchema(page.title, page.path));
   }
 

@@ -47,6 +47,17 @@ export function useAdminSession() {
   const refresh = useCallback(async () => {
     const session = await fetchAdminSession();
     setState({ loading: false, ...session });
+    if (session.authenticated) {
+      const { markAdminAnalyticsExcluded } = await import(
+        "@/lib/admin-ops/analytics-exclude"
+      );
+      markAdminAnalyticsExcluded();
+    } else {
+      const { clearAdminAnalyticsExcluded } = await import(
+        "@/lib/admin-ops/analytics-exclude"
+      );
+      clearAdminAnalyticsExcluded();
+    }
   }, []);
 
   useEffect(() => {
@@ -55,6 +66,11 @@ export function useAdminSession() {
     fetchAdminSession().then((session) => {
       if (cancelled) return;
       setState({ loading: false, ...session });
+      if (session.authenticated) {
+        void import("@/lib/admin-ops/analytics-exclude").then((m) => {
+          m.markAdminAnalyticsExcluded();
+        });
+      }
     });
 
     return () => {

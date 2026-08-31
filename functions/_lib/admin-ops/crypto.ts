@@ -99,6 +99,12 @@ export function normalizePath(raw) {
   return path;
 }
 
+/** Admin/API routes must never enter public traffic stats. */
+export function isExcludedAnalyticsPath(raw) {
+  const path = normalizePath(raw);
+  return path === "/admin" || path.startsWith("/admin/") || path === "/api" || path.startsWith("/api/");
+}
+
 /** KST hour bucket 0–23 (some engines emit "24" at midnight) */
 export function getKstHour(d = new Date()) {
   const raw = Number(

@@ -97,6 +97,7 @@
     "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs",
     "test:admin-url": "npx --yes tsx scripts/test-admin-url-display.ts",
     "test:admin-analytics": "npx --yes tsx scripts/test-admin-analytics-ingest.ts",
+    "audit:glossary-business-seo": "npx --yes tsx scripts/glossary-business-seo-audit.ts",
     "test:notice-dismiss": "npx --yes tsx scripts/test-notice-dismiss.ts",
     "bid:run": "npx --yes tsx collector/main.ts",
     "bid:dry": "npx --yes tsx collector/main.ts --dry-run",

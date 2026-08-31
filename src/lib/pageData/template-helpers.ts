@@ -164,36 +164,45 @@ export type CreatePageDataInput = {
 
 export function createPageData(input: CreatePageDataInput): PageData {
   const isHub = isCoreHubSlug(input.slug);
-  const thematicLinks = getThematicInternalLinks({
-    slug: input.slug,
-    path: input.path,
-    category: input.category,
-    serviceSlug: input.serviceSlug,
-    landingPageType: input.landingPageType,
-    regionKey: input.regionKey,
-  });
-  const hubLinks = getHubNavigationLinks({
-    slug: input.slug,
-    path: input.path,
-    category: input.category,
-    title: input.title,
-    serviceSlug: input.serviceSlug,
-    landingPageType: input.landingPageType,
-    regionKey: input.regionKey,
-    seoLandingType: input.seoLandingType,
-    intentSuffix: input.intentSuffix,
-  });
+  const isGlossary = input.category === "glossary";
+  const thematicLinks = isGlossary
+    ? []
+    : getThematicInternalLinks({
+        slug: input.slug,
+        path: input.path,
+        category: input.category,
+        serviceSlug: input.serviceSlug,
+        landingPageType: input.landingPageType,
+        regionKey: input.regionKey,
+      });
+  const hubLinks = isGlossary
+    ? []
+    : getHubNavigationLinks({
+        slug: input.slug,
+        path: input.path,
+        category: input.category,
+        title: input.title,
+        serviceSlug: input.serviceSlug,
+        landingPageType: input.landingPageType,
+        regionKey: input.regionKey,
+        seoLandingType: input.seoLandingType,
+        intentSuffix: input.intentSuffix,
+      });
 
   const isLocalHub =
     input.landingPageType === "region-hub" ||
     input.landingPageType === "neighborhood-hub";
   const internalLinks = capHubLinks(
     [...(input.internalLinks ?? []), ...hubLinks, ...thematicLinks],
-    { min: isHub ? 20 : isLocalHub ? 6 : 8, max: isHub ? 28 : isLocalHub ? 10 : 16 },
+    {
+      min: isGlossary ? 0 : isHub ? 20 : isLocalHub ? 6 : 8,
+      max: isGlossary ? 12 : isHub ? 28 : isLocalHub ? 10 : 16,
+    },
   );
   const providedFaqs = uniqueFaqs(input.faqs ?? []);
-  const faqs =
-    providedFaqs.length >= 3
+  const faqs = isGlossary
+    ? providedFaqs
+    : providedFaqs.length >= 3
       ? providedFaqs
       : uniqueFaqs([...providedFaqs, ...defaultFaqs(input.title)]).slice(0, 3);
 
@@ -214,11 +223,15 @@ export function createPageData(input: CreatePageDataInput): PageData {
     procedures:
       input.procedures && input.procedures.length > 0
         ? input.procedures
-        : DEFAULT_PROCEDURES,
+        : isGlossary
+          ? []
+          : DEFAULT_PROCEDURES,
     documents:
       input.documents && input.documents.length > 0
         ? input.documents
-        : DEFAULT_DOCUMENTS,
+        : isGlossary
+          ? []
+          : DEFAULT_DOCUMENTS,
     consultationPoints: input.consultationPoints ?? [],
     faqs,
     consultationExample:
@@ -235,5 +248,6 @@ export function createPageData(input: CreatePageDataInput): PageData {
     serviceSlug: input.serviceSlug,
   };
 
+  if (isGlossary) return page;
   return ensureMinContent(page);
 }
