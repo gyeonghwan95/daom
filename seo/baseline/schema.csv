@@ -1,0 +1,4 @@
+url,note
+/,LocalBusiness+Person via GlobalJsonLd / home
+/office,"LocalBusiness on office page (same NAP, not a fake branch)"
+lecture/*,WebPage + BreadcrumbList; FAQ only when visible

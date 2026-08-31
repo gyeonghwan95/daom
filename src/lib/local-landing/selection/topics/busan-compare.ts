@@ -24,7 +24,6 @@ export const 부산법무사비교: SelectionHubContent = {
   primaryKeywords: [
     "부산 법무사 비교",
     "부산 법무사 비용 비교",
-    "부산 법무사 추천",
     "부산 등기 법무사 비교",
     "부산 법무사 선택 기준",
   ],

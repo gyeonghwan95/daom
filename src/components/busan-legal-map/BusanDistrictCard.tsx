@@ -1,11 +1,14 @@
 import Link from "next/link";
 import type { BusanDistrictDef } from "@/lib/busan-legal-map/types";
+import { getRegistryOfficeForRegionKey } from "@/lib/geo/busan-registry";
 
 type BusanDistrictCardProps = {
   district: BusanDistrictDef;
 };
 
 export function BusanDistrictCard({ district }: BusanDistrictCardProps) {
+  const registry = getRegistryOfficeForRegionKey(district.regionKey);
+
   return (
     <article className="interactive-surface flex h-full flex-col rounded-2xl border border-navy/10 bg-gradient-to-br from-white via-cream/25 to-beige/35 p-5 shadow-[0_4px_24px_rgba(26,39,68,0.05)] sm:p-6">
       <header>
@@ -19,6 +22,11 @@ export function BusanDistrictCard({ district }: BusanDistrictCardProps) {
           </Link>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-navy/70">{district.context}</p>
+        {registry ? (
+          <p className="mt-2 text-xs leading-relaxed text-navy/55">
+            부동산등기 관할: {registry.name}
+          </p>
+        ) : null}
       </header>
 
       <div className="mt-4">
@@ -30,7 +38,7 @@ export function BusanDistrictCard({ district }: BusanDistrictCardProps) {
 
       <div className="mt-4">
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy-light">
-          많이 찾는 업무
+          이 페이지에서 다루는 업무
         </p>
         <div className="mt-2 flex flex-wrap gap-1.5">
           {district.commonServices.map((service) => (

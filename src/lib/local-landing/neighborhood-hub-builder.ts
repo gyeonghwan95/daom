@@ -25,7 +25,7 @@ function getRelatedBlogPosts(
 }
 
 function buildLawyerOpinion(regionLabel: string, title: string): string {
-  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${title} 사건을 직접 상담·진행합니다. ${regionLabel} 생활권 특성에 맞춰 관할 등기소·법원과 필요 서류를 먼저 정리해 드립니다. 부산 전역 의뢰인께는 절차·비용을 항목별로 설명하며, 급한 기한이 있으면 우선순위를 표시합니다.`;
+  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${title} 상담을 직접 진행합니다. 관할·기한·서류는 확인된 범위만 안내합니다.`;
 }
 
 function buildDirectionsNote(config: LocalLandingConfig): string {
@@ -47,8 +47,8 @@ export function buildNeighborhoodHubPage(
   if (!district) return null;
 
   const consultationCase = {
-    title: `${config.regionLabel} ${topic.title} 상담 사례`,
-    summary: `최근 ${config.regionLabel}에서 상담한 사례입니다. ${config.caseAngle ?? topic.caseAngle ?? topic.title}. 의뢰인 상황에 맞춰 관할·필요 서류·예상 비용을 단계별로 안내했습니다.`,
+    title: `${config.regionLabel}에서 상담이 필요한 대표 상황`,
+    summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 검토할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다. 가상의 절차 예시이며 실제 사건 기록이 아닙니다.`,
     href: config.relatedCaseSlug ?? topic.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug ?? topic.relatedCaseSlug}`
       : undefined,
@@ -57,13 +57,8 @@ export function buildNeighborhoodHubPage(
   const consultationCases = [
     consultationCase,
     {
-      title: `${config.regionLabel} 서류 준비 상담`,
-      summary: `등기부·계약서를 미리 검토해 누락 서류를 줄이고 접수 일정을 맞춘 사례입니다.`,
-    },
-    {
-      title: `${config.regionLabel} 원격 진행`,
-      summary: `카카오톡 상담 후 방문 없이 서류를 받아 진행한 사례입니다.`,
-      href: consultationCase.href,
+      title: `${config.regionLabel} 서류 준비`,
+      summary: `등기부·계약서를 미리 보면 누락 서류와 접수 일정을 맞추기 쉽습니다. 일반적 진행 안내이며 특정 의뢰 기록이 아닙니다.`,
     },
   ];
 
@@ -113,8 +108,9 @@ export function buildNeighborhoodHubPage(
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(config.serviceSlug),
     relatedServiceLinks: internalLinks,
-    relatedRegionLinks: [],
+    relatedRegionLinks: topic.relatedGuPage ? [topic.relatedGuPage] : [],
     neighborhoodLivingArea: topic.livingAreaBody,
+    breadcrumbParent: topic.relatedGuPage,
     stationSections: buildStationSectionsForHost(`/${config.slug}`),
   };
 }

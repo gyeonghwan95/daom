@@ -43,9 +43,9 @@ function selectionHubLinks(excludeSlug?: string, limit = 6): PageRelatedLink[] {
   const labels: Record<string, string> = {
     부산법무사추천: "부산 법무사 추천",
     부산등기법무사추천: "부산 등기 법무사 선택 기준",
-    부산상속등기전문: "부산 상속등기 상담 확인",
-    부산부동산등기전문: "부산 부동산등기 상담 확인",
-    부산법인등기전문: "부산 법인등기 상담 확인",
+    부산상속등기전문: "상속등기 상담 전 확인",
+    부산부동산등기전문: "부동산등기 상담 전 확인",
+    부산법인등기전문: "법인등기 상담 전 확인",
     부산법무사상담: "부산 법무사 상담",
     부산법무사후기: "부산 법무사 후기 확인 기준",
     부산법무사비교: "부산 법무사 비교 기준",
@@ -314,7 +314,7 @@ export function getThematicInternalLinks(
     links.push(...serviceDetailLinks(serviceSlug, `/services/${serviceSlug}`));
 
     if (pageType === "region-hub" && regionKey) {
-      links.push(...regionLandingsForRegion(regionKey, input.slug, 6));
+      links.push(...regionLandingsForRegion(regionKey, input.slug, 2));
     } else if (pageType === "keyword-hub") {
       links.push(...keywordHubLinks(input.slug, 6));
       links.push({ href: "/부산법무사", label: "부산 전역 업무 선택 안내" });

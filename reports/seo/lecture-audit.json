@@ -1,0 +1,223 @@
+{
+  "generated": "2026-08-31T12:25:54.934Z",
+  "lecturePageCount": 21,
+  "keywordCount": 239,
+  "intentClusters": 18,
+  "historyCount": 22,
+  "searchAdvisor": "UNKNOWN",
+  "duplicateTitles": 0,
+  "highSimilarity": 0,
+  "issues": [
+    {
+      "level": "warn",
+      "message": "/청년생활법률특강: 본문 695자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/창업법률교육: 본문 645자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/강사소개: 본문 581자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/학교법률교육: 본문 671자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/법무사진로특강: 본문 664자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/부산도서관법률특강: 본문 678자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/부산법무사강의: 본문 582자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/부산기관법률특강: 본문 603자 (thin 가능)"
+    },
+    {
+      "level": "warn",
+      "message": "/부산사회복지기관강사: 공통 CTA 문구 3개 — 고유 본문 비중 확인"
+    },
+    {
+      "level": "warn",
+      "message": "/부산강사섭외비용: 공통 CTA 문구 2개 — 고유 본문 비중 확인"
+    }
+  ],
+  "similarity": [],
+  "scores": [
+    {
+      "path": "/부산법률전문가",
+      "total": 91,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 1485,
+      "history": 2,
+      "lectureLinks": 9
+    },
+    {
+      "path": "/법률강의",
+      "total": 92,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 997,
+      "history": 5,
+      "lectureLinks": 9
+    },
+    {
+      "path": "/부산법률강사",
+      "total": 97,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 2137,
+      "history": 5,
+      "lectureLinks": 15
+    },
+    {
+      "path": "/전세사기예방교육",
+      "total": 90,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 978,
+      "history": 2,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/청년생활법률특강",
+      "total": 94,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 695,
+      "history": 3,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/창업법률교육",
+      "total": 86,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 645,
+      "history": 1,
+      "lectureLinks": 4
+    },
+    {
+      "path": "/기업법률교육",
+      "total": 87,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 1418,
+      "history": 1,
+      "lectureLinks": 7
+    },
+    {
+      "path": "/강사소개",
+      "total": 80,
+      "band": "IMPROVE",
+      "chars": 581,
+      "history": 5,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/강의문의",
+      "total": 86,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 980,
+      "history": 5,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/디지털법률교육",
+      "total": 86,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 805,
+      "history": 1,
+      "lectureLinks": 6
+    },
+    {
+      "path": "/학교법률교육",
+      "total": 86,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 671,
+      "history": 1,
+      "lectureLinks": 6
+    },
+    {
+      "path": "/공공기관법률교육",
+      "total": 85,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 932,
+      "history": 1,
+      "lectureLinks": 4
+    },
+    {
+      "path": "/법무사진로특강",
+      "total": 86,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 664,
+      "history": 1,
+      "lectureLinks": 6
+    },
+    {
+      "path": "/부산도서관법률특강",
+      "total": 89,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 678,
+      "history": 2,
+      "lectureLinks": 6
+    },
+    {
+      "path": "/부산법무사강의",
+      "total": 94,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 582,
+      "history": 4,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/부산기관법률특강",
+      "total": 94,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 603,
+      "history": 4,
+      "lectureLinks": 5
+    },
+    {
+      "path": "/부산사회복지기관강사",
+      "total": 91,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 2092,
+      "history": 2,
+      "lectureLinks": 8
+    },
+    {
+      "path": "/부산강사섭외비용",
+      "total": 82,
+      "band": "IMPROVE",
+      "chars": 1921,
+      "history": 0,
+      "lectureLinks": 6
+    },
+    {
+      "path": "/부산강사섭외체크리스트",
+      "total": 83,
+      "band": "IMPROVE",
+      "chars": 1930,
+      "history": 0,
+      "lectureLinks": 8
+    },
+    {
+      "path": "/기관특강주제추천",
+      "total": 97,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 2315,
+      "history": 7,
+      "lectureLinks": 8
+    },
+    {
+      "path": "/강의시간별구성",
+      "total": 89,
+      "band": "PRESERVE / MINOR IMPROVE",
+      "chars": 1942,
+      "history": 3,
+      "lectureLinks": 6
+    }
+  ]
+}

@@ -170,7 +170,7 @@ export function buildBusanCorporateRegistrationPage(
       { href: "/부산법인법무사", label: "부산 법인 법무사 상담 안내" },
       { href: "/법인변경등기", label: "법인 변경등기 허브" },
       { href: "/부산법인등기전문", label: "법인등기 실무 선택 기준" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
       { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     relatedRegionLinks: [

@@ -91,8 +91,8 @@ export function defaultFaqs(title: string, region = "부산"): PageFaqItem[] {
 
 export function defaultConsultationExample(title: string): PageConsultationExample {
   return {
-    title: `${title} 상담 예시`,
-    body: `최근 ${title} 관련으로 문의하신 의뢰인께는 먼저 가족관계·재산·채무 여부를 확인했습니다. 급한 기한이 있으면 우선순위를 정리하고, 준비 서류 목록과 예상 일정·비용 범위를 단계별로 안내드렸습니다. 서류가 모이면 접수까지 이어서 진행했습니다.`,
+    title: `${title} — 상담이 필요한 대표 상황`,
+    body: `${title} 관련 문의에서는 가족관계·재산·채무·기한부터 확인합니다. 급한 기한이 있으면 우선순위를 정리하고, 준비 서류와 비용 구성을 항목별로 안내합니다. 아래는 일반적인 진행 흐름이며 특정 의뢰 기록이 아닙니다.`,
   };
 }
 
@@ -184,9 +184,12 @@ export function createPageData(input: CreatePageDataInput): PageData {
     intentSuffix: input.intentSuffix,
   });
 
+  const isLocalHub =
+    input.landingPageType === "region-hub" ||
+    input.landingPageType === "neighborhood-hub";
   const internalLinks = capHubLinks(
     [...(input.internalLinks ?? []), ...hubLinks, ...thematicLinks],
-    { min: isHub ? 20 : 8, max: isHub ? 28 : 16 },
+    { min: isHub ? 20 : isLocalHub ? 6 : 8, max: isHub ? 28 : isLocalHub ? 10 : 16 },
   );
   const providedFaqs = uniqueFaqs(input.faqs ?? []);
   const faqs =

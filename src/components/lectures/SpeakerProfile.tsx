@@ -40,9 +40,9 @@ export function SpeakerProfile({
             {lawyerProfileMeta.fullTitle}
           </h3>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/75 md:text-base">
-            안윤정 법무사는 등기·상속·기업 법률 실무를 수행하면서 청년, 시민,
-            창업자, 공공기관 및 현장 종사자를 대상으로 생활에서 바로 활용할 수
-            있는 사례 중심 교육을 진행하고 있습니다.
+            현직 법무사로서 법률 실무를 바탕으로 교육합니다. 확인된 기관 출강
+            이력과 대상별 커리큘럼 구성 경험을 중심으로 안내하며, 사건 상담용
+            경력 전체를 나열하지 않습니다.
           </p>
           {focusNote ? (
             <p className="mt-2 text-sm leading-relaxed text-navy/70">

@@ -221,7 +221,7 @@ export const BUSAN_LOCAL_INTENT_REGISTRY: LocalIntent[] = [
     regionName: "기장",
     regionType: "gu",
     verified: true,
-    primaryHostPage: "/기장법무사",
+    primaryHostPage: "/기장군법무사",
     relatedServices: ["inheritance", "real-estate"],
     userSituations: ["토지·전원 상속", "매매"],
     candidateQueries: ["기장 상속토지", "기장 매매등기"],

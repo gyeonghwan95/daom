@@ -26,18 +26,18 @@ export const selectionCoreLinks = {
   inheritance: { href: "/부산상속등기", label: "부산 상속등기 절차" },
   inheritanceGuide: {
     href: "/부산상속등기전문",
-    label: "부산 상속등기 상담 확인사항",
+    label: "상속등기 상담 전 확인사항",
   },
   inheritanceLawyer: { href: "/부산상속법무사", label: "부산 상속 법무사 안내" },
   realEstate: { href: "/부산부동산등기", label: "부산 부동산등기 안내" },
   realEstateGuide: {
     href: "/부산부동산등기전문",
-    label: "부산 부동산등기 상담 확인사항",
+    label: "부동산등기 상담 전 확인사항",
   },
   corporate: { href: "/부산법인등기", label: "부산 법인등기 안내" },
   corporateGuide: {
     href: "/부산법인등기전문",
-    label: "부산 법인등기 상담 확인사항",
+    label: "법인등기 상담 전 확인사항",
   },
   contact: { href: "/contact", label: "상담 문의" },
   location: { href: "/location", label: "오시는 길" },

@@ -103,10 +103,10 @@ function SpeakerLayout({
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="강의 문의하기"
+        keywords={[]}
+        ctaLabel="강의 가능 일정 문의"
         ctaHref="#inquiry"
-        secondaryCta={{ href: "/강의이력", label: "확인된 출강 이력" }}
+        secondaryCta={{ href: "/강의이력", label: "강의 이력 보기" }}
         showDiagnosisCta={false}
         sideImage={siteImages.about.portrait}
       />
@@ -167,11 +167,11 @@ function SpeakerLayout({
       <SpeakerHistoryList title="주요 출강 이력" limit={14} />
 
       <LectureInlineCta
-        title="강의 가능 일정·맞춤 제안을 문의하세요"
-        text="주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다."
-        primaryLabel="이메일로 문의하기"
+        title="특강 구성을 문의하세요"
+        text="교육 대상과 희망 주제만 남겨 주시면 가능 여부와 구성안을 안내합니다."
+        primaryLabel="강의 가능 일정 문의"
         primaryHref="#inquiry"
-        secondaryLabel="강의 주제 둘러보기"
+        secondaryLabel="강의 안내"
         secondaryHref="/법률강의"
       />
 
@@ -205,7 +205,7 @@ function SpeakerLayout({
       </ContentSection>
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs.slice(0, 5)} />
+        <FAQAccordion items={content.faqs} />
       </ContentSection>
 
       <RelatedLinks content={content} />
@@ -336,10 +336,10 @@ function HiringLayout({
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel="법률특강 출강 문의"
+        keywords={[]}
+        ctaLabel="특강 구성 문의"
         ctaHref="#inquiry"
-        secondaryCta={{ href: "/강사소개", label: "강사 프로필" }}
+        secondaryCta={{ href: "/강사소개", label: "강사 프로필 확인" }}
         showDiagnosisCta={false}
       />
 
@@ -381,10 +381,12 @@ function HiringLayout({
       <SpeakerHistoryList title="출강 이력 목록" limit={12} />
 
       <LectureInlineCta
-        title="강의 가능 일정·맞춤 제안을 문의하세요"
-        text="주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다."
-        primaryLabel="강의문의 남기기"
+        title="특강 구성을 문의하세요"
+        text="교육 대상과 희망 주제만 남겨 주시면 가능 여부와 구성안을 안내합니다."
+        primaryLabel="특강 구성 문의"
         primaryHref="#inquiry"
+        secondaryLabel="강의 이력 보기"
+        secondaryHref="/강의이력"
       />
 
       {content.audienceCards.length ? (
@@ -492,17 +494,25 @@ function HubLayout({
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={(content.primaryKeywords ?? []).slice(0, 4)}
-        ctaLabel="기업·기관 강의 문의"
+        keywords={[]}
+        ctaLabel="강의 가능 일정 문의"
         ctaHref="/강의문의"
-        secondaryCta={{ href: "/부산법률전문가", label: "법률 전문가 활동" }}
+        secondaryCta={{ href: "/강사소개", label: "강사 프로필 확인" }}
         showDiagnosisCta={false}
       />
 
       <ProseParagraphs paragraphs={content.heroParagraphs.slice(0, 2)} />
       <SummaryGrid items={content.summaryItems.slice(0, 4)} />
+      <LectureTrackRecordSummaryView
+        summary={buildLectureTrackRecordSummary()}
+        compact
+      />
 
       <LectureProgramChooser />
+
+      {content.bodySections?.length ? (
+        <BodySections sections={content.bodySections} />
+      ) : null}
 
       <ArticleVisualSlot
         path={page.path}
@@ -522,10 +532,11 @@ function HubLayout({
       ) : null}
 
       <LectureInlineCta
-        title="주제만 정하셨다면, 일정부터 남겨 주세요"
-        text="기관·대상·희망일만 있어도 가능 여부와 구성안을 안내할 수 있습니다."
-        secondaryLabel="강사 프로필 보기"
-        secondaryHref="/강사소개"
+        title="주제만 정하셨다면 일정을 남겨 주세요"
+        text="교육 대상과 희망 주제만 있어도 가능 여부와 구성안을 안내합니다."
+        primaryLabel="강의 가능 일정 문의"
+        secondaryLabel="강의 이력 보기"
+        secondaryHref="/강의이력"
       />
 
       <ContentSection id="history" title="확인된 강의 이력">
@@ -556,19 +567,7 @@ function HubLayout({
         <ContentSection id="institutions" title="기관·단체별 맞춤 안내">
           <div className="grid gap-3 sm:grid-cols-2">
             {content.institutionCards.map((card) => (
-              <div
-                key={card.title}
-                className="rounded-xl border border-navy/10 bg-cream/40 p-4"
-              >
-                <p className="font-semibold text-navy">{card.title}</p>
-                {card.topics?.length ? (
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/75">
-                    {card.topics.map((topic) => (
-                      <li key={topic}>{topic}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
+              <InstitutionCard key={card.title} card={card} />
             ))}
           </div>
           <p className="mt-3 text-sm text-navy/65">
@@ -642,11 +641,17 @@ function InquiryLayout({
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={(content.primaryKeywords ?? []).slice(0, 3)}
-        ctaLabel=""
+        keywords={[]}
+        ctaLabel="문의 작성하기"
+        ctaHref="#inquiry"
+        secondaryCta={{ href: "/강의이력", label: "강의 이력 보기" }}
         showDiagnosisCta={false}
       />
 
+      <LectureTrackRecordSummaryView
+        summary={buildLectureTrackRecordSummary()}
+        compact
+      />
       <SummaryGrid items={content.summaryItems} />
 
       <ArticleVisualSlot
@@ -678,7 +683,7 @@ function InquiryLayout({
       ) : null}
 
       <ContentSection id="faq" title="자주 묻는 질문">
-        <FAQAccordion items={content.faqs.slice(0, 5)} />
+        <FAQAccordion items={content.faqs} />
       </ContentSection>
 
       <RelatedLinks content={content} />
@@ -704,13 +709,13 @@ function TopicLayout({
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}
-        keywords={isEnterprise ? [] : (content.primaryKeywords ?? []).slice(0, 4)}
+        keywords={[]}
         ctaLabel={isEnterprise ? "기업 특강 문의" : "이 주제 문의하기"}
         ctaHref="/강의문의"
         secondaryCta={
           isEnterprise
             ? { href: "#packages", label: "강의 주제 보기" }
-            : { href: "/강사소개", label: "강사 소개" }
+            : { href: "/강의이력", label: "강의 이력 보기" }
         }
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
@@ -755,8 +760,11 @@ function TopicLayout({
       ) : null}
 
       <LectureInlineCta
-        title="강의 가능 일정·맞춤 제안을 문의하세요"
-        text="주제·대상·희망 일정만 남겨 주시면 가능 여부와 구성안을 안내드립니다."
+        title="이 주제로 특강 구성을 문의하세요"
+        text="교육 대상과 희망 주제만 남겨 주시면 가능 여부와 구성안을 안내합니다."
+        primaryLabel="특강 구성 문의"
+        secondaryLabel="강사 프로필 확인"
+        secondaryHref="/강사소개"
       />
 
       {content.modules.length ? (
@@ -921,6 +929,40 @@ function SummaryGrid({
         </div>
       ))}
     </dl>
+  );
+}
+
+function InstitutionCard({
+  card,
+}: {
+  card: LecturePageContent["institutionCards"][number];
+}) {
+  const inner = (
+    <>
+      <p className="font-semibold text-navy">{card.title}</p>
+      {card.topics?.length ? (
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/75">
+          {card.topics.map((topic) => (
+            <li key={topic}>{topic}</li>
+          ))}
+        </ul>
+      ) : null}
+    </>
+  );
+
+  if (card.href) {
+    return (
+      <Link
+        href={card.href}
+        className="block rounded-xl border border-navy/10 bg-cream/40 p-4 transition hover:border-navy/25 hover:bg-cream/70"
+      >
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="rounded-xl border border-navy/10 bg-cream/40 p-4">{inner}</div>
   );
 }
 

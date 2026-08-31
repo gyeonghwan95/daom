@@ -74,6 +74,26 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     ],
   },
   {
+    path: "/부산상속등기",
+    compactQueries: ["부산상속등기법무사", "부산상속등기"],
+  },
+  {
+    path: "/해운대법무사",
+    compactQueries: ["해운대법무사"],
+  },
+  {
+    path: "/센텀법무사",
+    compactQueries: ["센텀법무사"],
+  },
+  {
+    path: "/부산법인법무사",
+    compactQueries: ["부산법인법무사"],
+  },
+  {
+    path: "/부산개인회생법무사",
+    compactQueries: ["부산개인회생법무사"],
+  },
+  {
     path: "/부산한정승인",
     compactQueries: ["부산한정승인법무사"],
   },

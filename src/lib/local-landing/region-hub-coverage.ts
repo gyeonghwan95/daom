@@ -50,7 +50,7 @@ export const REGION_HUB_COVERAGE: Record<string, RegionHubCoverage> = {
       "연산1~9동·거제1~2동처럼 행정동만 다른 검색은 연제구 허브에서 흡수합니다.",
       "등기국 접수 전 서류 검토는 법인·부동산 원인부터 나눈 뒤 진행합니다.",
     ],
-    extraKeywords: ["연제구 법무사", "연제 법무사", "연산 구청 법무사"],
+    extraKeywords: ["연제구 법무사", "연산 구청 법무사"],
     faqs: [
       {
         question: "연제구 법무사 사무소가 연산동에 있어야 하나요?",

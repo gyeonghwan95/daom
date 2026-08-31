@@ -108,7 +108,7 @@ export function buildBusanRealEstateRegistrationPage(
     jurisdictionGuide: {
       title: "부산 부동산등기 관할",
       address: "부동산 소재지 기준 관할 등기소",
-      accessNote: "남부산·북부산·중부산·부산진등기소로 나뉩니다.",
+      accessNote: "등기국·동부지원 등기과·남부산등기소·서부지원 등기과·북부산등기소로 나뉩니다.",
       jurisdictionNote: "인터넷등기소 가능 여부는 사건 유형에 따라 다릅니다.",
       practicalNotes: [
         "취득세 60일 등 세무 기한을 확인하세요.",
@@ -184,7 +184,7 @@ export function buildBusanRealEstateRegistrationPage(
       { href: "/부동산실권리자명의등기", label: "실권리자명의등기" },
       { href: "/부산상속등기", label: "상속으로 인한 이전등기" },
       { href: "/부산신축건물보존등기", label: "신축 보존등기" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
       { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     relatedRegionLinks: [

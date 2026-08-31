@@ -1,0 +1,5 @@
+$ git status --short
+
+$ git log -12 --oneline
+
+$ git rev-parse --abbrev-ref HEAD

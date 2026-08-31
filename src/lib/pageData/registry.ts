@@ -95,12 +95,7 @@ function buildAllPageData(): PageData[] {
     pages.push(buildCorePageData(key));
   }
 
-  pages.push(
-    buildCorePageData("contact", {
-      pathOverride: "/contact/inquiry",
-      slugOverride: "contact-inquiry",
-    }),
-  );
+  pages.push(buildCorePageData("contactInquiry"));
 
   // 한글 정식 URL — [landingSlug] 에서 LegalDocumentView 로 렌더
   pages.push(

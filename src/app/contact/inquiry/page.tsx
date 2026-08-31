@@ -5,14 +5,10 @@ import { ConsultationInquiryForm } from "@/components/conversion/ConsultationInq
 import { InquiryFormLoader } from "@/components/conversion/InquiryFormLoader";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
+import { staticPageSeo } from "@/lib/seo/page-seo";
 import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "상담 신청",
-  description:
-    "다옴법무사사무소 상담 신청 양식입니다. 상속등기·부동산등기·법인등기·개인회생 등 상담 분야를 선택해 현재 상황을 보내 주세요.",
-  path: "/contact/inquiry",
-});
+export const metadata: Metadata = createPageMetadata(staticPageSeo.contactInquiry);
 
 export default function ContactInquiryPage() {
   return (

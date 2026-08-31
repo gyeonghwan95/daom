@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { sanitizePageKeywords } from "@/lib/seo/champion-query";
+import { isNoIndexPath, resolveCanonicalPath } from "@/lib/seo/index-policy";
 import { seoBrand } from "@/lib/seo/brand";
 import { getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { siteImages } from "@/lib/site-images";
@@ -95,10 +96,11 @@ export function resolveContentSeoTitle(
 }
 
 export function createPageMetadata(input: PageSeoInput): Metadata {
-  const canonical = getCanonicalUrl(input.path);
+  const canonical = getCanonicalUrl(resolveCanonicalPath(input.path));
   const ogImage = getAbsoluteImageUrl(input.ogImage ?? DEFAULT_OG_IMAGE);
   const openGraphType = input.openGraphType ?? "website";
   const keywords = sanitizePageKeywords(input.path, input.keywords);
+  const noIndex = Boolean(input.noIndex) || isNoIndexPath(input.path);
 
   return {
     title: { absolute: input.title },
@@ -136,8 +138,8 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
       description: input.description,
       images: [ogImage],
     },
-    robots: input.noIndex
-      ? { index: false, follow: false }
+    robots: noIndex
+      ? { index: false, follow: true }
       : INDEX_ROBOTS,
   };
 }

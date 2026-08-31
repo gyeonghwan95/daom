@@ -271,7 +271,7 @@ export function PageDataTemplate({
         serviceSlug={page.serviceSlug}
       />
 
-      <ContentSection id="consultation-example" title="실제 상담 상황 예시">
+      <ContentSection id="consultation-example" title="상담이 필요한 대표 상황">
         <InfoCard variant="plain">
           <h3 className="section-subheading">{page.consultationExample.title}</h3>
           <p className="body-text mt-3">{page.consultationExample.body}</p>

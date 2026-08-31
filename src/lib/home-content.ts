@@ -18,10 +18,10 @@ export const homeHero = {
 } as const;
 
 export const homeSituationChips = [
-  { label: "상속등기", situationId: "inheritance-registration" },
-  { label: "부동산등기", situationId: "real-estate-trade" },
-  { label: "법인등기", situationId: "corporate" },
-  { label: "개인회생·파산", situationId: "rehab-bankruptcy" },
+  { label: "상속등기", situationId: "inheritance-registration", href: "/부산상속등기" },
+  { label: "부동산등기", situationId: "real-estate-trade", href: "/부산부동산등기" },
+  { label: "법인등기", situationId: "corporate", href: "/부산법인등기" },
+  { label: "개인회생·파산", situationId: "rehab-bankruptcy", href: "/개인회생파산" },
 ] as const;
 
 export const homeServicesIntro = {

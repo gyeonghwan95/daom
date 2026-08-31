@@ -98,7 +98,7 @@ export const 부산회생법무사Override: SearchIntentContent = {
     { href: "/부산개인회생", label: "부산 개인회생 업무 허브" },
     { href: "/부산파산", label: "부산 개인파산 안내" },
     { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
-    { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+    { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
     { href: "/services/personal-rehabilitation", label: "개인회생 업무안내" },
   ],
   relatedGuideLinks: [

@@ -14,6 +14,9 @@ export type LocalChampionOverlay = {
   sections: PageSection[];
   faqs?: PageFaqItem[];
   serviceLinks?: { href: string; label: string }[];
+  metaTitle?: string;
+  h1?: string;
+  metaDescription?: string;
 };
 
 export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
@@ -22,6 +25,10 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
   "hood-millak": {
     regionId: "hood-millak",
     slug: "민락동법무사",
+    metaTitle: "민락동 법무사 | 민락역·수변 오피스텔 등기",
+    h1: "민락동 법무사, 민락역·수변 오피스텔·상가를 볼 때",
+    metaDescription:
+      "민락동 법무사 상담. 민락역·수변공원 오피스텔·상가 매매·전세·상속. 광안리·남천과 각도를 나눕니다. 해운대 센텀 다옴법무사사무소.",
     introParagraphs: [
       "민락동·민락역 생활권에서 법무사 업무를 찾을 때는 먼저 부동산 매매·전세인지, 상속 명의이전인지, 법인 변경인지부터 나누는 것이 좋습니다. 절차와 관할은 업무 종류에 따라 달라집니다.",
       "민락은 수영구 광안·남천·망미와 맞닿은 해안 주거·상권입니다. 오피스텔·근린상가·아파트의 잔금일 등기, 전세금 반환 후 말소, 공동상속 후 명의 정리처럼 ‘어떤 등기인지’를 먼저 확인하면 준비 서류가 정리됩니다.",
@@ -78,6 +85,10 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
   "hood-yangjeong": {
     regionId: "hood-yangjeong",
     slug: "양정동법무사",
+    metaTitle: "양정동 법무사 | 양정역·개금 인접 주거 등기",
+    h1: "양정동 법무사, 양정역 환승 주거·상가 등기를 볼 때",
+    metaDescription:
+      "양정동 법무사 상담. 양정역·양정동 주택·상가 매매·상속. 서면·연지와 각도를 나눕니다. 해운대 센텀 다옴법무사사무소.",
     introParagraphs: [
       "양정동·양정역 생활권에서는 주택·상가 매매등기, 공동상속 후 명의 정리, 전세·임대 관련 등기 문의가 이어집니다. 서면·전포·개금과 맞닿은 부산진구 주거 밀집지입니다.",
       "‘양정 법무’처럼 짧게 검색하셔도 같은 생활권 안내입니다. 역 이름(양정역)과 동 이름(양정동)은 하나의 Local Cluster로 보시면 됩니다.",

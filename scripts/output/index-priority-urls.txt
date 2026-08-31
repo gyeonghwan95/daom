@@ -1,15 +1,15 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-26T15:05:46.476Z
+# 생성: 2026-08-31T12:27:02.872Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1665 (제외 140)
+# 총 URL: 1662 (제외 144)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 208개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 568개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 564개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
-# Tier 6 — 순차 (기타 키워드 랜딩): 579개
+# Tier 6 — 순차 (기타 키워드 랜딩): 580개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 28개
 
@@ -282,7 +282,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (208개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (568개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (564개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -437,14 +437,11 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (568개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EA%B0%80%EB%93%B1%EA%B8%B0	/부산상가등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EA%B0%80%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산상가매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8	/부산상속등기전문
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속등기전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산상속법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8	/부산상속재산관리인
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속재산분할법무사
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산상속포기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속포기전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%9B%84%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산상속후매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%ED%98%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/부산상호변경등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/부산선박등기
@@ -534,7 +531,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (568개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8C%8C%EC%82%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산파산전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%99%EA%B5%90%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/부산학교법인등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/부산한정승인
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산한정승인전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%91%EB%8F%99%EC%A1%B0%ED%95%A9%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/부산협동조합설립등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%91%ED%9A%8C%EB%8B%A8%EC%B2%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/부산협회단체법인설립
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90%EC%A0%84%EC%84%B8%EA%B6%8C%EB%B9%84%EA%B5%90	/부산확정일자전세권비교
@@ -1041,7 +1037,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (183개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (579개)
+Tier 6 — 순차 (기타 키워드 랜딩) (580개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1189,6 +1185,7 @@ Tier 6 — 순차 (기타 키워드 랜딩) (579개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EA%B5%AC%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/동구한정승인
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/동부지원상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%99%EC%82%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/동삼동법무사
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EA%B4%80%ED%95%A0%EA%B3%BC%EC%82%AC%EB%AC%B4%EC%86%8C%EC%9C%84%EC%B9%98	/등기관할과사무소위치
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EA%B6%8C%EB%A6%AC%EC%A6%9D%EC%97%86%EC%9D%B4%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84	/등기권리증없이소유권이전
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EB%B3%B4%EC%A0%95	/등기보정
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EB%B3%B5%EB%8C%80%EB%A6%AC	/등기복대리
@@ -1713,7 +1710,11 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (140)
+# 제외 (144)
+# [EXCLUDED:noindex] /부산상속등기전문법무사
+# [EXCLUDED:noindex] /부산상속전문법무사
+# [EXCLUDED:noindex] /부산상속포기전문법무사
+# [EXCLUDED:noindex] /부산한정승인전문법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산가야역법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산강서서부지원법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산개금역법무사

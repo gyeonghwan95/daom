@@ -18,10 +18,10 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     key: "busan-district-court",
     institutionName: "부산지방법원",
     institutionType: "court",
-    address: "부산광역시 해운대구 센텀중앙로 100",
-    accessNote: "센텀시티역·벡스코 인근. 방문 전 사건번호·접수 창구를 확인하세요.",
+    address: "부산광역시 연제구 법원로 31",
+    accessNote: "연산·거제 생활권. 부산지방법원 본원입니다. 동부지원은 해운대 재송동에 있습니다.",
     jurisdictionNote:
-      "부산·울산·경남 일부 민사·형사 1심 및 가압류·가처분 등 관련 서류 접수가 이뤄집니다. 사건 종류에 따라 동부지원·서부지원 관할이 달라질 수 있습니다.",
+      "민사·형사 1심 및 보전처분 등 관련 서류 접수가 이뤄집니다. 해운대·기장 일부는 동부지원, 강서·사하 일부는 서부지원 관할일 수 있습니다.",
     relatedServiceSlugs: [
       "inheritance-registration",
       "personal-rehabilitation",
@@ -46,7 +46,7 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     address: "부산광역시 연제구 법원로 8",
     accessNote: "연산역·동래역 인근. 부동산·법인 등기 접수의 중심 기관입니다.",
     jurisdictionNote:
-      "부산 전역 부동산·법인 등기 중 일부가 이곳에 접수됩니다. 부동산 소재지와 법인 본점에 따라 남부산·북부산·중부산·부산진 등기소로 나뉘기도 합니다.",
+      "부산 전역 상업등기·선박등기·동산·채권담보등기와 중구·서구·동구·영도구·부산진구·동래구·연제구·금정구 부동산등기가 접수됩니다. 해운대·기장은 동부지원 등기과, 남구·수영구는 남부산등기소, 사하·강서는 서부지원 등기과, 북구·사상은 북부산등기소입니다. 2021년 부산진등기소·중부산등기소 사무가 등기국으로 통합되었습니다.",
     relatedServiceSlugs: [
       "inheritance-registration",
       "real-estate-registration",
@@ -68,10 +68,10 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     key: "busan-east-branch-court",
     institutionName: "부산지방법원 동부지원",
     institutionType: "court",
-    address: "부산광역시 해운대구 센텀중앙로 100",
-    accessNote: "센텀·해운대·재송 일대에서 접근이 편합니다.",
+    address: "부산광역시 해운대구 재반로112번길 20",
+    accessNote: "해운대 재송동 청사입니다. 방문 전 사건번호·접수 창구를 확인하세요.",
     jurisdictionNote:
-      "해운대·수영·기장 등 동부 지역 관련 일부 민사·형사 사건이 관할됩니다. 정확한 관할은 사건 소재지·당사자 주소에 따라 달라집니다.",
+      "해운대·기장 등 동부 지역 관련 일부 민사·형사 사건이 관할됩니다. 정확한 관할은 사건 소재지·당사자 주소에 따라 달라집니다.",
     relatedServiceSlugs: ["personal-rehabilitation", "bankruptcy"],
     practicalNotes: [
       "지급명령·소송·보전처분 등 절차마다 관할 기준이 다릅니다.",
@@ -84,10 +84,10 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     key: "busan-east-registry",
     institutionName: "부산지방법원 동부지원 등기과",
     institutionType: "registry",
-    address: "부산광역시 해운대구 센텀중앙로 100",
-    accessNote: "동부지원 건물 내 등기 접수 창구를 이용합니다.",
+    address: "부산광역시 해운대구 재반로112번길 20",
+    accessNote: "동부지원 청사 내 등기 접수 창구를 이용합니다.",
     jurisdictionNote:
-      "동부권 부동산·법인 등기 일부가 접수됩니다. 부동산 소재지에 따라 다른 등기소가 관할일 수 있습니다.",
+      "해운대구·기장군 부동산등기가 접수됩니다. 남구·수영구는 남부산등기소, 상업등기는 등기국 관할인 경우가 많습니다.",
     relatedServiceSlugs: ["real-estate-registration", "corporate-registration"],
     practicalNotes: [
       "관할 등기소 오접수는 반려·이송 사유가 될 수 있어 소재지 확인이 우선입니다.",
@@ -146,9 +146,9 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     institutionName: "남부산등기소",
     institutionType: "registry",
     address: "부산광역시 남구 수영로 312",
-    accessNote: "남구·수영·해운대 일부 부동산 관할.",
+    accessNote: "남구·수영구 부동산 관할. 해운대는 동부지원 등기과입니다.",
     jurisdictionNote:
-      "남부산권 부동산·법인 등기가 접수됩니다. 부동산 소재지를 기준으로 관할을 확인해야 합니다.",
+      "남구·수영구 부동산등기가 접수됩니다. 해운대구·기장군은 동부지원 등기과 관할입니다.",
     relatedServiceSlugs: ["real-estate-registration", "ownership-transfer"],
     practicalNotes: [
       "아파트·상가 매매 시 저당권 말소 순서를 등기 일정과 맞추는 것이 중요합니다.",
@@ -161,9 +161,9 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     key: "buk-busan-registry",
     institutionName: "북부산등기소",
     institutionType: "registry",
-    address: "부산광역시 북구 금곡대로 231",
-    accessNote: "북구·금정·강서 일부 관할.",
-    jurisdictionNote: "북부산권 부동산 등기 접수. 덕천·화명·명지 등 소재지에 따라 관할이 정해집니다.",
+    address: "부산광역시 북구 사상로583번길 14",
+    accessNote: "북구·사상구 부동산 관할.",
+    jurisdictionNote: "북구·사상구 부동산등기가 접수됩니다. 금정구는 등기국, 강서구는 서부지원 등기과 관할입니다.",
     relatedServiceSlugs: ["inheritance-registration", "real-estate-registration"],
     practicalNotes: [
       "토지·건물 지분등기는 협의서·분할 내용이 정확해야 합니다.",
@@ -174,11 +174,12 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
   },
   "jung-busan-registry": {
     key: "jung-busan-registry",
-    institutionName: "중부산등기소",
+    institutionName: "중부산등기소(통합)",
     institutionType: "registry",
-    address: "부산광역시 동래구 중앙대로 1333",
-    accessNote: "동래·연제·북구 일부 관할.",
-    jurisdictionNote: "중부산권 부동산·법인 등기. 본점·부동산 소재지에 따라 관할이 달라집니다.",
+    address: "부산광역시 연제구 법원로 8",
+    accessNote: "2021년 부산지방법원 등기국으로 통합되었습니다. 현재 별도 접수 창구가 아닙니다.",
+    jurisdictionNote:
+      "중부산등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 동래·연제 등 기존 관할 부동산등기는 등기국에서 접수합니다. 이 페이지는 옛 명칭 검색자를 위한 안내입니다.",
     relatedServiceSlugs: ["corporate-registration", "director-change"],
     practicalNotes: [
       "법인 임원변경은 결의일로부터 등기 기한을 지키는 것이 중요합니다.",
@@ -189,11 +190,12 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
   },
   "busanjin-registry": {
     key: "busanjin-registry",
-    institutionName: "부산진등기소",
+    institutionName: "부산진등기소(통합)",
     institutionType: "registry",
-    address: "부산광역시 부산진구 중앙대로 686",
-    accessNote: "서면·부전·전포 일대 부동산 관할.",
-    jurisdictionNote: "부산진구 및 서면 일대 상가·오피스·주택 등기가 집중 접수되는 등기소입니다.",
+    address: "부산광역시 연제구 법원로 8",
+    accessNote: "2021년 부산지방법원 등기국으로 통합되었습니다. 현재 별도 접수 창구가 아닙니다.",
+    jurisdictionNote:
+      "부산진등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 부산진구·서면 일대 부동산등기는 등기국에서 접수합니다. 이 페이지는 옛 명칭 검색자를 위한 안내입니다.",
     relatedServiceSlugs: ["real-estate-registration", "ownership-transfer"],
     practicalNotes: [
       "상가·오피스텔 매매는 용도·대지권 비율 확인이 필요합니다.",

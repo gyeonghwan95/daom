@@ -5,9 +5,73 @@ const workChoice = {
   label: "부산 전역 업무 선택 안내",
 } as const;
 
+const OVERLAY_SEO: Record<
+  string,
+  { metaTitle: string; h1: string; metaDescription: string }
+> = {
+  온천동법무사: {
+    metaTitle: "온천동 법무사 | 온천장·동래읍성 상속·매매",
+    h1: "온천동 법무사, 온천장·동래읍성에서 상속·매매를 볼 때",
+    metaDescription:
+      "온천동 법무사 상담. 온천장 상업·구축 주택 상속·매매등기. 다옴법무사사무소는 해운대 센텀에서 직접 상담합니다.",
+  },
+  연산역법무사: {
+    metaTitle: "연산역 법무사 | 1·3호선 환승역 접근 동선",
+    h1: "연산역 법무사, 환승역 인근 아파트·상가 등기를 볼 때",
+    metaDescription:
+      "연산역 법무사 상담. 환승 동선 안내이며 연산동·연제구 허브와 역할을 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  송정동법무사: {
+    metaTitle: "송정동 법무사 | 송정해수욕장·청사포 주택·숙박",
+    h1: "송정동 법무사, 해변 주택·펜션성 숙박 등기를 볼 때",
+    metaDescription:
+      "송정동 법무사 상담. 송정·청사포 주택·숙박 상속·매매. 우동·중동과 각도를 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  중동법무사: {
+    metaTitle: "중동 법무사 | 해운대역·해변 상권 등기",
+    h1: "중동 법무사, 해운대역 상가·오피스텔 등기를 볼 때",
+    metaDescription:
+      "중동 법무사 상담. 해운대역·해변 상권 상가·오피스텔. 중구 원도심과 다른 생활권입니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  장전동법무사: {
+    metaTitle: "장전동 법무사 | 부산대·장전역 원룸·다가구",
+    h1: "장전동 법무사, 대학가 원룸·다가구 매매·상속을 볼 때",
+    metaDescription:
+      "장전동 법무사 상담. 부산대·장전역 원룸·다가구 매매·상속. 부곡동 한정승인과 각도를 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  부전동법무사: {
+    metaTitle: "부전동 법무사 | 부전 지번 상가·권리금 구분",
+    h1: "부전동 법무사, 부전 지번 상가 소유권과 권리금을 볼 때",
+    metaDescription:
+      "부전동 법무사 상담. 부전 지번 상가·오피스텔 매매. 서면 상권 허브와 역할을 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  광안동법무사: {
+    metaTitle: "광안동 법무사 | 행정동 실거주 아파트·다가구",
+    h1: "광안동 법무사, 행정동 실거주 아파트·내륙 상가를 볼 때",
+    metaDescription:
+      "광안동 법무사 상담. 광안 행정동 실거주 매매·상속. 광안리 해변 안내와 각도가 다릅니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  명지동법무사: {
+    metaTitle: "명지동 법무사 | 기존 주거·토지 등기",
+    h1: "명지동 법무사, 기존 명지 지번 주거·토지를 볼 때",
+    metaDescription:
+      "명지동 법무사 상담. 기존 주거·토지 매매·상속. 명지 신도시·에코델타 허브와 각도를 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  기장법무사: {
+    metaTitle: "기장읍 생활권 법무사 | 기장 해안·주택 등기",
+    h1: "기장읍·기장 해안에서 법무사 상담이 필요할 때",
+    metaDescription:
+      "기장읍 해안·주택 상속·매매 등기 상담. 군 전체는 기장군 법무사 안내, 정관·일광은 각 생활권 페이지에서 이어집니다.",
+  },
+};
+
 function overlay(input: LocalChampionOverlay): LocalChampionOverlay {
+  const head = OVERLAY_SEO[input.slug];
   return {
     ...input,
+    metaTitle: input.metaTitle ?? head?.metaTitle,
+    h1: input.h1 ?? head?.h1,
+    metaDescription: input.metaDescription ?? head?.metaDescription,
     serviceLinks: input.serviceLinks ?? [
       workChoice,
       { href: "/부산부동산등기", label: "부산 부동산등기" },
@@ -480,6 +544,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
     serviceLinks: [
       workChoice,
       { href: "/기장읍법무사", label: "기장읍 법무사" },
+      { href: "/기장군법무사", label: "기장군 법무사" },
       { href: "/기장군부동산등기", label: "기장군 부동산등기" },
     ],
   }),

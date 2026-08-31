@@ -1,0 +1,315 @@
+{
+  "status": "SEO_RELEASE_READY",
+  "internalQaScore": 90,
+  "note": "Internal SEO QA Score — not a Naver score.",
+  "counts": {
+    "pages": 1803,
+    "indexable": 1665,
+    "critical": 0,
+    "high": 0,
+    "dupTitle": 0,
+    "dupDesc": 0,
+    "advisorFiles": [],
+    "searchAdvisor": "UNKNOWN"
+  },
+  "clusters": {
+    "CORE": 8,
+    "LOCAL": 1170,
+    "LECTURE": 44
+  },
+  "intentSimulation": [
+    {
+      "query": "부산 법무사",
+      "expectedOwner": "/",
+      "top": [
+        {
+          "url": "/",
+          "score": 225
+        },
+        {
+          "url": "/자가진단",
+          "score": 75
+        },
+        {
+          "url": "/blog/busan-lawyer-jurisdiction-checklist",
+          "score": 75
+        },
+        {
+          "url": "/부산법무사비용",
+          "score": 45
+        },
+        {
+          "url": "/부산법무사보수표",
+          "score": 45
+        }
+      ]
+    },
+    {
+      "query": "부산 법무사 상담",
+      "expectedOwner": "/부산법무사상담",
+      "top": [
+        {
+          "url": "/부산법무사상담",
+          "score": 235
+        },
+        {
+          "url": "/blog/busan-lawyer-consultation-documents",
+          "score": 35
+        },
+        {
+          "url": "/blog/busan-lawyer-recommend-office-consult",
+          "score": 15
+        }
+      ]
+    },
+    {
+      "query": "부산 법무사 추천",
+      "expectedOwner": "/부산법무사추천",
+      "top": [
+        {
+          "url": "/부산법무사추천",
+          "score": 235
+        },
+        {
+          "url": "/search-guides",
+          "score": 55
+        },
+        {
+          "url": "/blog/busan-lawyer-recommend-office-consult",
+          "score": 55
+        }
+      ]
+    },
+    {
+      "query": "부산 상속 전문 법무사",
+      "expectedOwner": "/부산상속법무사",
+      "top": [
+        {
+          "url": "/부산상속법무사",
+          "score": 235
+        },
+        {
+          "url": "/부산상속법무사추천",
+          "score": 45
+        },
+        {
+          "url": "/부산상속등기",
+          "score": 10
+        },
+        {
+          "url": "/부산상속포기",
+          "score": 10
+        },
+        {
+          "url": "/부산상속재산분할법무사",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "query": "부산 상속등기",
+      "expectedOwner": "/부산상속등기",
+      "top": [
+        {
+          "url": "/부산상속등기",
+          "score": 195
+        },
+        {
+          "url": "/services",
+          "score": 40
+        },
+        {
+          "url": "/services/inheritance-registration",
+          "score": 40
+        },
+        {
+          "url": "/상속등기자가진단",
+          "score": 35
+        },
+        {
+          "url": "/blog/busan-inheritance-consultation-prep",
+          "score": 35
+        }
+      ]
+    },
+    {
+      "query": "부산 상속포기",
+      "expectedOwner": "/부산상속포기",
+      "top": [
+        {
+          "url": "/부산상속포기",
+          "score": 195
+        },
+        {
+          "url": "/services/inheritance-renunciation",
+          "score": 40
+        },
+        {
+          "url": "/상속포기자가진단",
+          "score": 35
+        },
+        {
+          "url": "/상속포기비용",
+          "score": 15
+        },
+        {
+          "url": "/부산상속법무사",
+          "score": 15
+        }
+      ]
+    },
+    {
+      "query": "부산 한정승인",
+      "expectedOwner": "/부산한정승인",
+      "top": [
+        {
+          "url": "/부산한정승인",
+          "score": 195
+        },
+        {
+          "url": "/services/qualified-acceptance",
+          "score": 40
+        },
+        {
+          "url": "/한정승인자가진단",
+          "score": 35
+        },
+        {
+          "url": "/한정승인비용",
+          "score": 15
+        },
+        {
+          "url": "/부산상속법무사",
+          "score": 15
+        }
+      ]
+    },
+    {
+      "query": "연제구 법무사",
+      "expectedOwner": "/연제구법무사",
+      "top": [
+        {
+          "url": "/연제구법무사",
+          "score": 185
+        },
+        {
+          "url": "/연제구상속등기",
+          "score": 10
+        },
+        {
+          "url": "/연제구상속포기",
+          "score": 10
+        },
+        {
+          "url": "/연제구법인등기",
+          "score": 10
+        },
+        {
+          "url": "/연제구임원변경등기",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "query": "수영구 법무사",
+      "expectedOwner": "/수영구법무사",
+      "top": [
+        {
+          "url": "/수영구법무사",
+          "score": 235
+        },
+        {
+          "url": "/수영구상속등기",
+          "score": 10
+        },
+        {
+          "url": "/수영구부동산등기",
+          "score": 10
+        },
+        {
+          "url": "/수영구법인등기",
+          "score": 10
+        },
+        {
+          "url": "/수영구개인회생",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "query": "해운대 법무사",
+      "expectedOwner": "/해운대법무사",
+      "top": [
+        {
+          "url": "/해운대법무사",
+          "score": 235
+        },
+        {
+          "url": "/office",
+          "score": 40
+        },
+        {
+          "url": "/location",
+          "score": 40
+        },
+        {
+          "url": "/해운대구상속등기",
+          "score": 10
+        },
+        {
+          "url": "/해운대구상속포기",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "query": "부산 강의 문의",
+      "expectedOwner": "/강의문의",
+      "top": [
+        {
+          "url": "/강의문의",
+          "score": 155
+        }
+      ]
+    },
+    {
+      "query": "부산 강사 섭외",
+      "expectedOwner": "/부산법률강사",
+      "top": [
+        {
+          "url": "/부산법률강사",
+          "score": 140
+        },
+        {
+          "url": "/부산강사섭외비용",
+          "score": 45
+        },
+        {
+          "url": "/부산강사섭외체크리스트",
+          "score": 45
+        }
+      ]
+    },
+    {
+      "query": "부산 법률 강의",
+      "expectedOwner": "/법률강의",
+      "top": [
+        {
+          "url": "/법률강의",
+          "score": 225
+        }
+      ]
+    },
+    {
+      "query": "부산 전세사기 예방교육",
+      "expectedOwner": "/전세사기예방교육",
+      "top": [
+        {
+          "url": "/전세사기예방교육",
+          "score": 225
+        }
+      ]
+    }
+  ],
+  "issues": []
+}

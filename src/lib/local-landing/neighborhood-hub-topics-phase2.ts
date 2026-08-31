@@ -10,16 +10,14 @@ const office = "다옴법무사사무소(안윤정 법무사)는 해운대 센�
 
 function makeTopic({ slug, headline, localFocus, livingAreaBody, problemStatement, ...topic }: TopicInput): NeighborhoodTopic {
   const [propertyType, decisionPoint, documentPoint] = localFocus;
-  const livingGuide = `${headline} 사건은 ${propertyType}라는 지역적 사정이 있어도, 안내문이나 주변 사례만으로 접수 방법을 결정하기 어렵습니다. 우선 등기부등본의 갑구와 을구를 통해 현재 소유자, 압류·가압류, 근저당, 전세권 등 이미 등기된 권리를 확인하고, 계약·상속·법인 변경 가운데 실제로 발생한 원인을 문서로 특정합니다. ${decisionPoint}은 당사자끼리 구두로 합의한 내용과 등기신청에 필요한 서류가 어긋나기 쉬운 지점입니다. 그래서 누가 언제 어떤 권리를 넘기거나 정리하는지, 잔금·사망·결의·계약 만료 중 어느 날짜가 기준인지 한 번에 적어 보는 것이 도움이 됩니다. 특히 여러 사람이 관련된 사건은 한 사람의 서류가 늦어져도 전체 일정이 바뀔 수 있으므로, 먼저 원본 발급 가능 여부와 인감·위임의 필요성을 확인합니다.`;
-  const problemGuide = `${headline}에서 절차가 지연되는 원인은 대개 관할 기관의 거리가 아니라 사실관계와 첨부서류가 맞지 않는 데 있습니다. ${documentPoint}도 등기부 표시와 일치하는지 비교해야 하며, 주소·성명·지분이 다르게 적힌 상태로 접수하면 보정이나 추가 확인이 생길 수 있습니다. 거래 상대방이나 상속인, 임차인, 법인의 담당자처럼 이해관계자가 여럿이면 누가 어떤 원본을 준비하는지와 연락 가능한 시점을 초기에 정해 두는 편이 좋습니다. 이미 계약일이나 법원 기한이 정해진 경우에는 그 날짜만 보지 말고 발급 서류의 유효기간, 은행·임대인·상속인의 협조가 필요한 단계를 거꾸로 확인해야 합니다. 상담에서는 결과나 기간을 단정하지 않고, 현재 자료에서 확인되는 사실과 아직 확인해야 할 항목을 나눠 필요한 다음 절차를 안내합니다.`;
-  const completionGuide = `또한 ${propertyType}의 당사자는 계약서에 적힌 표현과 실제 의사를 다시 대조할 필요가 있습니다. ${decisionPoint}에 관한 조건이 모호하면 접수 뒤에 바꾸기 어려운 지분·말소·승계 문제가 남을 수 있습니다. 자료를 보내실 때에는 개인정보가 포함된 원본의 제출 방식도 확인하고, 이미 발급한 서류가 있다면 발급일과 누락 페이지를 함께 점검합니다. 상담 후에도 새 사실이나 상대방의 일정 변경이 생기면 접수 전 알려 주셔야 그 영향을 다시 검토할 수 있습니다. 추가 확인이 필요합니다.`;
+  const closer = `${headline}에서는 ${propertyType}를 볼 때 ${decisionPoint}를 ${documentPoint}와 맞춰 확인합니다. 다옴법무사사무소는 해운대 센텀에서 상담합니다.`;
   return {
     slug,
     title: `${headline} 법무사`,
     h1: `${headline} 법무사 — ${propertyType} 상담`,
     ...topic,
-    livingAreaBody: `${livingAreaBody} ${livingGuide}`,
-    problemStatement: `${problemStatement} ${problemGuide} ${completionGuide}`,
+    livingAreaBody,
+    problemStatement: `${problemStatement} ${closer}`,
   };
 }
 
@@ -38,7 +36,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["마린시티 아파트 매매·증여 소유권이전등기", "해운대해수욕장 인근 상가 매매·근저당 말소", "우동 오피스텔 전세권·임차권 정리", "부모님 소유 우동 주택 상속등기", "공동명의 지분 이전·공유물 정리", "잔금일 대출 실행과 기존 담보 말소 일정 검토"],
     procedures: ["등기부·매매계약서·임대차 현황을 먼저 확인합니다.", "말소·이전·전세권 정리의 선후관계를 정합니다.", "취득세 신고와 인감·위임 서류 일정을 안내합니다.", "관할 접수 후 등기 완료 내용까지 확인합니다."],
     documents: ["최신 등기부등본", "매매계약서 또는 증여계약서", "매도·매수인 인감증명서와 신분증", "근저당 말소 관련 금융기관 서류", "상속 시 가족관계증명서·협의서"],
-    registryGuide: { title: "우동·해운대 관할 등기 안내", body: "우동 부동산의 관할은 정확한 소재지와 등기 목적에 따라 확인합니다. 해운대 생활권 거래라도 법인 본점등기와 부동산등기는 접수 관할이 다를 수 있으므로 등기부 주소를 기준으로 준비합니다.", notes: ["부동산 등기는 소재지 관할이 기준입니다.", "잔금 전 최신 등기부로 권리 변동을 다시 확인합니다.", "남부산등기소: 남구 수영로 312"] },
+    registryGuide: { title: "우동·해운대 관할 등기 안내", body: "우동 부동산의 관할은 정확한 소재지와 등기 목적에 따라 확인합니다. 해운대 생활권 거래라도 법인 본점등기와 부동산등기는 접수 관할이 다를 수 있으므로 등기부 주소를 기준으로 준비합니다.", notes: ["부동산 등기는 소재지 관할이 기준입니다.", "잔금 전 최신 등기부로 권리 변동을 다시 확인합니다.", "동부지원 등기과: 해운대구 재반로112번길 20"] },
     serviceLinks: [{ href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/services/ownership-transfer", label: "소유권이전등기" }, { href: "/부산근저당말소등기", label: "근저당말소등기" }, { href: "/services/inheritance-registration", label: "상속등기" }],
     relatedPageLinks: [{ href: "/해운대법무사", label: "해운대 법무사" }, { href: "/좌동법무사", label: "좌동 법무사" }, { href: "/부산부동산등기", label: "부산 부동산등기" }],
     relatedGuPage: { href: "/해운대법무사", label: "해운대구 법무사 종합 안내" },
@@ -62,7 +60,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["좌동 신시가지 아파트 상속등기", "상속인 협의분할과 지분 이전", "상속채무 확인 후 한정승인 검토", "세입자 있는 아파트 상속·매도 일정", "장산역 인근 아파트 매매·증여 등기", "공동상속 부동산 처분 전 명의 정리"],
     procedures: ["사망일·상속인·부동산·채무 현황을 확인합니다.", "가족관계 서류와 등기부로 상속 범위를 정리합니다.", "협의분할 또는 법정지분 등기 방식을 안내합니다.", "세금 신고와 관할 등기 접수 순서를 진행합니다."],
     documents: ["피상속인 기본·가족관계증명서", "상속인별 가족관계증명서와 인감증명서", "상속재산분할협의서", "최신 등기부등본", "임대차계약서·채무 관련 자료(해당 시)"],
-    registryGuide: { title: "좌동 상속등기 관할 안내", body: "좌동 아파트의 상속등기는 부동산 소재지 관할을 기준으로 접수합니다. 한정승인·상속포기는 가정법원 절차이므로 등기와 기한을 혼동하지 않도록 별도로 확인합니다.", notes: ["상속포기·한정승인은 사망을 안 날부터의 기간 확인이 중요합니다.", "상속인 전원의 인적사항 표기가 서류마다 일치해야 합니다.", "남부산등기소: 남구 수영로 312"] },
+    registryGuide: { title: "좌동 상속등기 관할 안내", body: "좌동 아파트의 상속등기는 부동산 소재지 관할을 기준으로 접수합니다. 한정승인·상속포기는 가정법원 절차이므로 등기와 기한을 혼동하지 않도록 별도로 확인합니다.", notes: ["상속포기·한정승인은 사망을 안 날부터의 기간 확인이 중요합니다.", "상속인 전원의 인적사항 표기가 서류마다 일치해야 합니다.", "동부지원 등기과: 해운대구 재반로112번길 20"] },
     serviceLinks: [{ href: "/services/inheritance-registration", label: "상속등기" }, { href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/상속포기", label: "상속포기 안내" }],
     relatedPageLinks: [{ href: "/해운대법무사", label: "해운대 법무사" }, { href: "/우동법무사", label: "우동 법무사" }, { href: "/해운대상속등기", label: "해운대 상속등기" }],
     relatedGuPage: { href: "/해운대법무사", label: "해운대구 법무사 종합 안내" },
@@ -88,7 +86,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["사직동 구축아파트 상속등기", "재건축 논의 단지의 상속 명의 정리", "단독주택 토지·건물 상속 이전", "형제 공동상속 지분 협의", "사직야구장 인근 상가 매매 등기", "상속 후 전세·근저당 정리"],
     procedures: ["부동산별 등기부와 상속인 관계를 확인합니다.", "정비사업·임대차·담보 서류를 별도로 검토합니다.", "협의분할과 등기 접수에 필요한 서류를 안내합니다.", "취득세 신고와 관할 접수 결과를 확인합니다."],
     documents: ["토지·건물 등기부등본", "피상속인 및 상속인 가족관계 서류", "상속재산분할협의서", "조합 안내문·임대차계약서(해당 시)", "상속인 인감증명서"],
-    registryGuide: { title: "사직동·동래구 등기 안내", body: "사직동 부동산은 소재지 관할을 확인해 접수하며, 동래구 일대는 중부산등기소 안내가 필요한 경우가 있습니다. 재건축 조합 서류는 등기신청 서류와 별도로 요구될 수 있습니다.", notes: ["중부산등기소: 동래구 중앙대로 1333", "정비사업 여부는 조합·사업 단계별로 다릅니다.", "토지와 건물의 표시·지분을 각각 확인합니다."] },
+    registryGuide: { title: "사직동·동래구 등기 안내", body: "사직동 부동산은 소재지 관할을 확인해 접수하며, 동래구 일대 부동산등기는 부산지방법원 등기국 관할입니다. 재건축 조합 서류는 등기신청 서류와 별도로 요구될 수 있습니다.", notes: ["부산지방법원 등기국: 연제구 법원로 8", "정비사업 여부는 조합·사업 단계별로 다릅니다.", "토지와 건물의 표시·지분을 각각 확인합니다."] },
     serviceLinks: [{ href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산재건축등기", label: "부산 재건축 등기" }, { href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/services/qualified-acceptance", label: "한정승인" }],
     relatedPageLinks: [{ href: "/동래구법무사", label: "동래구 법무사" }, { href: "/동래역법무사", label: "동래역 법무사" }, { href: "/동래구상속등기", label: "동래구 상속등기" }],
     relatedGuPage: { href: "/동래구법무사", label: "동래구 법무사 종합 안내" },
@@ -114,7 +112,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["화명신도시 아파트 매매 이전등기", "부모님 아파트 상속등기", "부부·가족 공동명의 지분 이전", "전세 세입자 있는 매매 일정 검토", "근저당 말소와 대출 연계 등기", "화명동 상가·오피스텔 증여 등기"],
     procedures: ["등기부와 계약·상속 서류를 확인합니다.", "매매·상속·증여에 따른 원인을 확정합니다.", "담보 말소·취득세·전세 관계의 일정을 맞춥니다.", "북구 소재지 관할에 접수하고 완료를 확인합니다."],
     documents: ["등기부등본", "매매·증여계약서 또는 협의서", "인감증명서·주민등록 관련 서류", "대출·근저당 말소 서류", "상속 관련 가족관계증명서"],
-    registryGuide: { title: "화명동·북구 등기 안내", body: "화명동 부동산은 소재지 관할을 확인하여 등기합니다. 북구 생활권의 부동산 관련 안내는 북부산등기소 위치를 참고할 수 있으나, 실제 접수 관할은 대상 부동산 주소로 확인합니다.", notes: ["북부산등기소: 북구 금곡대로 231", "집합건물은 전유부분과 대지권을 함께 확인합니다.", "매매 잔금 전 최신 등기부 확인이 필요합니다."] },
+    registryGuide: { title: "화명동·북구 등기 안내", body: "화명동 부동산은 소재지 관할을 확인하여 등기합니다. 북구 생활권의 부동산 관련 안내는 북부산등기소 위치를 참고할 수 있으나, 실제 접수 관할은 대상 부동산 주소로 확인합니다.", notes: ["북부산등기소: 북구 사상로583번길 14", "집합건물은 전유부분과 대지권을 함께 확인합니다.", "매매 잔금 전 최신 등기부 확인이 필요합니다."] },
     serviceLinks: [{ href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/services/ownership-transfer", label: "소유권이전등기" }, { href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산근저당말소등기", label: "근저당말소등기" }],
     relatedPageLinks: [{ href: "/북구법무사", label: "북구 법무사" }, { href: "/덕천동법무사", label: "덕천동 법무사" }, { href: "/북구상속등기", label: "북구 상속등기" }],
     relatedGuPage: { href: "/북구법무사", label: "북구 법무사 종합 안내" },
@@ -138,7 +136,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["부곡동 원룸·다가구 상속채무 한정승인", "부산대 인근 임대주택 상속등기", "상속포기와 한정승인 기한 검토", "임차인 보증금·월세 승계 현황 정리", "상가주택 토지·건물 상속 이전", "상속 후 근저당·매도 가능성 검토"],
     procedures: ["사망일과 상속인·재산·채무 자료를 확인합니다.", "한정승인·상속포기 기한을 우선 검토합니다.", "임대차 보증금과 담보를 포함한 목록을 정리합니다.", "법원 절차 후 필요한 상속등기 순서를 안내합니다."],
     documents: ["사망진단 관련 자료와 가족관계증명서", "부동산 등기부·건축물 자료", "대출·독촉장·채무 관련 자료", "임대차계약서와 보증금·월세 현황", "상속인 신분·인감 관련 서류"],
-    registryGuide: { title: "부곡동 상속·한정승인 안내", body: "한정승인과 상속포기는 가정법원 절차이며, 부곡동 부동산의 상속등기와는 별개로 진행 시점과 서류를 검토합니다. 금정구 소재 부동산 관할은 주소별로 확인합니다.", notes: ["한정승인은 상속재산과 채무의 목록 작성이 중요합니다.", "임대차 보증금도 상속재산 관계에서 확인할 항목입니다.", "중부산등기소: 동래구 중앙대로 1333"] },
+    registryGuide: { title: "부곡동 상속·한정승인 안내", body: "한정승인과 상속포기는 가정법원 절차이며, 부곡동 부동산의 상속등기와는 별개로 진행 시점과 서류를 검토합니다. 금정구 소재 부동산 관할은 주소별로 확인합니다.", notes: ["한정승인은 상속재산과 채무의 목록 작성이 중요합니다.", "임대차 보증금도 상속재산 관계에서 확인할 항목입니다.", "부산지방법원 등기국: 연제구 법원로 8"] },
     serviceLinks: [{ href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/상속포기", label: "상속포기" }, { href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산다가구주택상속등기", label: "다가구주택 상속등기" }],
     relatedPageLinks: [{ href: "/금정구법무사", label: "금정구 법무사" }, { href: "/부산대법무사", label: "부산대 인근 법무사" }, { href: "/부산한정승인", label: "부산 한정승인 안내" }],
     relatedGuPage: { href: "/금정구법무사", label: "금정구 법무사 종합 안내" },
@@ -186,7 +184,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["전포카페거리 상가·꼬마빌딩 매매 등기", "근저당 말소 후 소유권이전등기", "임대차 승계와 보증금 현황 확인", "상가주택 토지·건물 동시 이전", "전포동 오피스텔 매매·증여 등기", "상속받은 점포 건물 명의 정리"],
     procedures: ["등기부·매매계약서·임대차 현황을 대조합니다.", "권리금·영업 양수도와 건물 등기를 구분합니다.", "말소·이전·세금 신고 일정을 정합니다.", "소재지 관할 접수와 완료 내용을 확인합니다."],
     documents: ["최신 토지·건물 등기부", "매매계약서와 특약", "임대차계약서·보증금 현황", "근저당 말소 관련 서류", "인감증명서·상속 서류(해당 시)"],
-    registryGuide: { title: "전포동·부산진구 등기 안내", body: "전포동 부동산의 등기는 정확한 소재지 관할을 확인하여 진행합니다. 부산진구 거래는 부산진등기소 관련 안내가 필요한 경우가 있으며, 상가 임대차는 등기와 별도 계약관계를 확인합니다.", notes: ["부산진등기소: 부산진구 중앙대로 737", "권리금 약정은 소유권이전등기를 대신하지 않습니다.", "잔금 직전 등기부 재확인이 필요합니다."] },
+    registryGuide: { title: "전포동·부산진구 등기 안내", body: "전포동 부동산의 등기는 정확한 소재지 관할을 확인하여 진행합니다. 부산진구 부동산등기는 부산지방법원 등기국 관할이며, 상가 임대차는 등기와 별도 계약관계를 확인합니다.", notes: ["부산지방법원 등기국: 연제구 법원로 8", "권리금 약정은 소유권이전등기를 대신하지 않습니다.", "잔금 직전 등기부 재확인이 필요합니다."] },
     serviceLinks: [{ href: "/부산상가등기", label: "부산 상가등기" }, { href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/services/ownership-transfer", label: "소유권이전등기" }, { href: "/부산근저당말소등기", label: "근저당말소등기" }],
     relatedPageLinks: [{ href: "/부산진구법무사", label: "부산진구 법무사" }, { href: "/서면법무사", label: "서면 법무사" }, { href: "/부산진등기소법무사", label: "부산진등기소 안내" }],
     relatedGuPage: { href: "/부산진구법무사", label: "부산진구 법무사 종합 안내" },
@@ -306,7 +304,7 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     consultationTypes: ["남포동·자갈치 상가 건물 매매 등기", "원도심 가족 보유 건물 상속등기", "토지·건물 분리 소유 관계 확인", "다수 임차인 보증금·임대차 승계 검토", "근저당·가압류 말소와 이전등기", "공동상속 지분 정리 후 매도 준비"],
     procedures: ["토지·건물 등기부와 가족·임대차 자료를 모두 확인합니다.", "상속·매매·권리금 계약의 대상을 구분합니다.", "담보 말소·보증금 승계·잔금 일정을 정리합니다.", "소재지 관할 접수 후 등기 완료를 확인합니다."],
     documents: ["토지·건물 최신 등기부등본", "매매계약서·임대차계약서", "상속인 가족관계증명서·협의서", "근저당 말소·가압류 관련 서류", "인감증명서와 신분증"],
-    registryGuide: { title: "남포동·중구 원도심 등기 안내", body: "남포동 부동산의 관할은 대상 토지·건물의 정확한 소재지로 확인합니다. 중구 원도심 상가의 경우 토지와 건물, 임대차와 소유권 등기를 각각 나누어 검토합니다.", notes: ["중부산등기소: 동래구 중앙대로 1333", "상가 권리금은 소유권이전등기와 별개의 약정일 수 있습니다.", "다수 임차인의 보증금·계약기간을 확인합니다."] },
+    registryGuide: { title: "남포동·중구 원도심 등기 안내", body: "남포동 부동산의 관할은 대상 토지·건물의 정확한 소재지로 확인합니다. 중구 원도심 상가의 경우 토지와 건물, 임대차와 소유권 등기를 각각 나누어 검토합니다.", notes: ["부산지방법원 등기국: 연제구 법원로 8", "상가 권리금은 소유권이전등기와 별개의 약정일 수 있습니다.", "다수 임차인의 보증금·계약기간을 확인합니다."] },
     serviceLinks: [{ href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/부산상가등기", label: "부산 상가등기" }, { href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산근저당말소등기", label: "근저당말소등기" }],
     relatedPageLinks: [{ href: "/중구법무사", label: "중구 법무사" }, { href: "/부산역법무사", label: "부산역 법무사" }, { href: "/부산부동산등기법무사", label: "부산 부동산등기 법무사" }],
     relatedGuPage: { href: "/중구법무사", label: "중구 법무사 종합 안내" },

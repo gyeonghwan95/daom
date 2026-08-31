@@ -9,9 +9,16 @@ import { getLawyerSlugLabel, resolveServiceSiteSlug } from "./labels";
 import { buildSeoLandingContent } from "./content";
 import type { SeoLandingSpec } from "./types";
 
-function metaTitleForSeoLanding(spec: SeoLandingSpec): string {
+function metaTitleForSeoLanding(
+  spec: SeoLandingSpec,
+  overlay?: ReturnType<typeof getLocalChampionOverlay>,
+): string {
+  if (overlay?.metaTitle) return overlay.metaTitle;
   if (spec.slug === "등기소근처법무사") {
     return "등기소 근처 법무사 | 관할·위치 확인 - 다옴법무사사무소";
+  }
+  if (spec.slug === "기장법무사") {
+    return "기장읍 생활권 법무사 | 기장 해안·주택 등기";
   }
   switch (spec.type) {
     case "institution-lawyer":
@@ -29,15 +36,30 @@ function metaTitleForSeoLanding(spec: SeoLandingSpec): string {
   }
 }
 
-function metaDescriptionFor(spec: SeoLandingSpec): string {
+function metaDescriptionFor(
+  spec: SeoLandingSpec,
+  overlay?: ReturnType<typeof getLocalChampionOverlay>,
+): string {
+  if (overlay?.metaDescription) return overlay.metaDescription;
   const region = spec.regionLabel ?? "부산";
   const service = spec.serviceName ?? "법무사 업무";
 
+  if (spec.slug === "기장법무사") {
+    return buildMetaDescription(
+      "기장읍 해안·주택 상속·매매 등기 상담. 군 전체는 기장군 법무사 안내, 정관·일광은 각 생활권 페이지에서 이어집니다.",
+    );
+  }
+
   switch (spec.type) {
-    case "region-lawyer":
+    case "region-lawyer": {
+      const regionEntity = spec.regionId ? getSeoEntityById(spec.regionId) : undefined;
+      const localAngle = regionEntity?.description
+        ? regionEntity.description.replace(/\s+/g, " ").slice(0, 42)
+        : `${region} 생활권 상속·등기`;
       return buildMetaDescription(
-        `${region} 상속등기·부동산등기·법인등기·개인회생 상담. 관할·서류·비용을 항목별로 안내합니다.`,
+        `${region} 법무사 상담. ${localAngle} 다옴법무사사무소는 해운대 센텀에서 직접 상담합니다.`,
       );
+    }
     case "region-service":
       return buildMetaDescription(
         `${region} ${service} 절차·필요서류·비용·관할 등기소 안내. 해운대·센텀 다옴법무사사무소에서 상담 가능합니다.`,
@@ -109,6 +131,8 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
   const content = buildSeoLandingContent(spec);
   const siteSlug = resolveServiceSiteSlug(spec.serviceId ?? "");
   const overlay = getLocalChampionOverlay(spec.regionId, spec.slug);
+  const overlayMeta =
+    overlay && overlay.slug === spec.slug ? overlay : undefined;
   const stationSections = buildStationSectionsForHost(spec.path);
   const sections = [
     ...stationSections.map((s) => ({
@@ -151,13 +175,19 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     slug: spec.slug,
     path: spec.path,
     category: spec.category,
-    title: spec.title,
-    metaTitle: metaTitleForSeoLanding(spec),
-    metaDescription: metaDescriptionFor(spec),
+    title:
+      spec.slug === "기장법무사"
+        ? "기장읍 생활권 법무사"
+        : spec.title,
+    metaTitle: metaTitleForSeoLanding(spec, overlayMeta),
+    metaDescription: metaDescriptionFor(spec, overlayMeta),
     h1:
-      spec.slug === "등기소근처법무사"
+      overlayMeta?.h1 ??
+      (spec.slug === "등기소근처법무사"
         ? "등기소 근처 법무사를 찾을 때 먼저 확인할 것"
-        : spec.h1,
+        : spec.slug === "기장법무사"
+          ? "기장읍·기장 해안에서 법무사 상담이 필요할 때"
+          : spec.h1),
     intro: content.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },

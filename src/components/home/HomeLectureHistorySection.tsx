@@ -16,8 +16,8 @@ export function HomeLectureHistorySection() {
       <Container>
         <HomeSectionHeader
           label="Lecture track record"
-          title="현장에서 이어가는 생활법률 교육"
-          description="확인된 기관·일정·사진을 바탕으로 최근 강의 이력을 안내합니다."
+          title="강의·특강"
+          description="공공기관·도서관·청년기관·학교 대상 생활법률·전세사기·창업법률 교육. 확인된 최근 이력입니다."
         />
         <div className="mt-8">
           <LectureHistoryGrid items={recent} compact />
@@ -27,19 +27,13 @@ export function HomeLectureHistorySection() {
             href="/강의이력"
             className="inline-flex min-h-11 items-center rounded-lg bg-navy px-4 text-sm font-medium text-white no-underline hover:bg-navy-light"
           >
-            전체 강의 이력
+            강의 이력 보기
           </Link>
           <Link
             href="/법률강의"
             className="inline-flex min-h-11 items-center rounded-lg border border-beige-dark px-4 text-sm font-medium text-navy no-underline hover:bg-beige"
           >
-            법률 강의 안내
-          </Link>
-          <Link
-            href="/강사소개"
-            className="inline-flex min-h-11 items-center rounded-lg border border-beige-dark px-4 text-sm font-medium text-navy no-underline hover:bg-beige"
-          >
-            강사 소개
+            강의 안내
           </Link>
           <Link
             href="/강의문의"

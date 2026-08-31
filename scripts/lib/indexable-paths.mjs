@@ -1,4 +1,5 @@
 import { getAllPublishedPaths } from "./published-paths.mjs";
+import { NOINDEX_EXACT } from "./sitemap/exclusions.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -42,6 +43,7 @@ const NON_INDEXABLE_CASE_REGIONS = nonIndexableCaseRegionSlugs();
 /** 색인 대상 path (레거시 /cases/*, /press, 네이버 블로그 미러, 내부검색 제외) */
 export function getIndexablePaths() {
   return getAllPublishedPaths().filter((routePath) => {
+    if (NOINDEX_EXACT.has(routePath)) return false;
     if (routePath === "/search") return false;
     if (routePath === "/cases" || routePath.startsWith("/cases/")) return false;
     if (routePath === "/press" || routePath.startsWith("/press/")) return false;

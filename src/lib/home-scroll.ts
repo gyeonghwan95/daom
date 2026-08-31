@@ -7,16 +7,13 @@ export const HOME_SECTION_IDS = [
   "home-activities",
   "home-lawyer-eeat",
   "home-services",
-  "home-lecture-history",
+  "home-popular-searches",
   "home-youtube",
   "home-insights",
   "home-faq",
   "home-place-guide",
   "home-contact",
-  "home-nationwide",
   "home-b2b",
-  "home-popular-searches",
-  "home-hub",
 ] as const;
 
 export type HomeSectionId = (typeof HOME_SECTION_IDS)[number];

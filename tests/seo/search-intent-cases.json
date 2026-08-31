@@ -1,0 +1,61 @@
+{
+  "note": "/강의 and /부산강사초빙 do not exist — actual owners used.",
+  "cases": [
+    {
+      "query": "부산 법무사",
+      "expectedOwner": "/"
+    },
+    {
+      "query": "부산 법무사 상담",
+      "expectedOwner": "/부산법무사상담"
+    },
+    {
+      "query": "부산 법무사 추천",
+      "expectedOwner": "/부산법무사추천"
+    },
+    {
+      "query": "부산 상속 전문 법무사",
+      "expectedOwner": "/부산상속법무사"
+    },
+    {
+      "query": "부산 상속등기",
+      "expectedOwner": "/부산상속등기"
+    },
+    {
+      "query": "부산 상속포기",
+      "expectedOwner": "/부산상속포기"
+    },
+    {
+      "query": "부산 한정승인",
+      "expectedOwner": "/부산한정승인"
+    },
+    {
+      "query": "연제구 법무사",
+      "expectedOwner": "/연제구법무사"
+    },
+    {
+      "query": "수영구 법무사",
+      "expectedOwner": "/수영구법무사"
+    },
+    {
+      "query": "해운대 법무사",
+      "expectedOwner": "/해운대법무사"
+    },
+    {
+      "query": "부산 강의 문의",
+      "expectedOwner": "/강의문의"
+    },
+    {
+      "query": "부산 강사 섭외",
+      "expectedOwner": "/부산법률강사"
+    },
+    {
+      "query": "부산 법률 강의",
+      "expectedOwner": "/법률강의"
+    },
+    {
+      "query": "부산 전세사기 예방교육",
+      "expectedOwner": "/전세사기예방교육"
+    }
+  ]
+}

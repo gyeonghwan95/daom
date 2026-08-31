@@ -80,7 +80,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
     searchIntent: "faq",
     date: "2025-10-28",
     area: "부산",
-    seoTitle: "부산 상속포기·한정승인 비교 | 다옴법무사사무소",
+    seoTitle: "상속포기와 한정승인 비교 | 다옴법무사사무소",
     seoDescription: "상속포기와 한정승인 차이, 신고 기한, 선택 기준. 부산 상속 채무 상담.",
     relatedServices: ["inheritance-renunciation", "qualified-acceptance"],
     relatedFaqs: ["what-is-qualified-acceptance", "inheritance-renunciation-deadline"],

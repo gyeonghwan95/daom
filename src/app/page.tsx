@@ -5,15 +5,12 @@ import { HomePlaceGuide } from "@/components/home/HomePlaceGuide";
 import { HomeFaqTeaser } from "@/components/home/HomeFaqTeaser";
 import { HomeFullpageSwiper } from "@/components/home/HomeFullpageSwiper";
 import { HomeHero } from "@/components/home/HomeHero";
-import { HomeHubGuide } from "@/components/home/HomeHubGuide";
-import { HomeNationwideSection } from "@/components/home/HomeNationwideSection";
 import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomePressMarquee } from "@/components/home/HomePressMarquee";
 import { HomeServices } from "@/components/home/HomeServices";
 import { HomeB2BSection } from "@/components/home/HomeB2BSection";
 import { HomeLawyerEeat } from "@/components/home/HomeLawyerEeat";
-import { HomeLectureHistorySection } from "@/components/home/HomeLectureHistorySection";
 import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
@@ -44,7 +41,7 @@ export default function Home() {
               image: siteImages.home.hero.src,
               dateModified: homeReviewedOn,
             }),
-            buildFaqPageSchema(homeFaqs, "/"),
+            buildFaqPageSchema([...homeFaqs], "/"),
           ]}
         />
         <HomeFullpageSwiper>
@@ -60,10 +57,7 @@ export default function Home() {
           <HomeFaqTeaser />
           <HomePlaceGuide />
           <HomeContactClosing />
-          <HomeNationwideSection />
           <HomeB2BSection />
-          <HomeLectureHistorySection />
-          <HomeHubGuide />
         </HomeFullpageSwiper>
       </main>
       <SiteChromeAfterMain />

@@ -18,14 +18,14 @@ import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 const TOPICS = [
   "전세사기 예방",
+  "생활법률 특강",
   "청년 생활법률",
+  "창업 법률교육",
+  "기업 법률교육",
+  "학교·진로 특강",
   "디지털 법률",
-  "창업·기업 법률",
-  "기업 특강(계약·채권·법인)",
-  "진로 특강",
-  "언론·인터뷰·패널",
   "기관 맞춤 기획",
-  "기타·상담 후 결정",
+  "기타",
 ] as const;
 
 const FORMATS = [
@@ -38,17 +38,21 @@ const FORMATS = [
 ] as const;
 
 const AUDIENCES = [
-  "미정",
-  "임직원",
-  "신입사원",
   "공공기관 직원",
-  "청년",
-  "창업자",
-  "기관 종사자",
+  "기업 임직원",
+  "도서관·평생학습 이용자",
+  "청년·사회초년생",
+  "학교·대학 학생",
+  "복지기관 종사자",
+  "협회·단체 회원",
+  "예비창업자",
+  "시민",
+  "기타",
 ] as const;
 
 type FieldErrors = {
   contact?: string;
+  audience?: string;
   agreed?: string;
   turnstile?: string;
   form?: string;
@@ -64,8 +68,11 @@ export function LectureInquiryForm() {
   const [contact, setContact] = useState("");
   const [topic, setTopic] = useState<(typeof TOPICS)[number]>("전세사기 예방");
   const [format, setFormat] = useState<(typeof FORMATS)[number]>("미정");
-  const [audience, setAudience] = useState<(typeof AUDIENCES)[number]>("미정");
+  const [audience, setAudience] = useState<"" | (typeof AUDIENCES)[number]>("");
   const [schedule, setSchedule] = useState("");
+  const [headcount, setHeadcount] = useState("");
+  const [region, setRegion] = useState("");
+  const [needPlan, setNeedPlan] = useState(false);
   const [memo, setMemo] = useState("");
   const [agree, setAgree] = useState(false);
   const startedRef = useRef(false);
@@ -83,14 +90,28 @@ export function LectureInquiryForm() {
         institution.trim() ? `기관: ${institution.trim()}` : "기관: (미기재)",
         `연락처: ${contact.trim() || "-"}`,
         `희망 주제: ${topic}`,
+        audience ? `교육 대상: ${audience}` : "교육 대상: (미선택)",
         format !== "미정" ? `행사 형태: ${format}` : "",
-        audience !== "미정" ? `교육 대상: ${audience}` : "",
         schedule.trim() ? `희망 일정: ${schedule.trim()}` : "",
+        headcount.trim() ? `예상 인원: ${headcount.trim()}` : "",
+        region.trim() ? `지역: ${region.trim()}` : "",
+        needPlan ? "강의계획서: 필요" : "",
         memo.trim() ? `요청: ${memo.trim()}` : "",
       ]
         .filter(Boolean)
         .join("\n"),
-    [institution, contact, topic, format, audience, schedule, memo],
+    [
+      institution,
+      contact,
+      topic,
+      format,
+      audience,
+      schedule,
+      headcount,
+      region,
+      needPlan,
+      memo,
+    ],
   );
 
   useEffect(() => {
@@ -140,6 +161,9 @@ export function LectureInquiryForm() {
     const next: FieldErrors = {};
     if (!clientParseContact(contact)) {
       next.contact = "회신 가능한 전화번호 또는 이메일을 입력해 주세요.";
+    }
+    if (!audience) {
+      next.audience = "교육 대상을 선택해 주세요.";
     }
     if (!agree) next.agreed = "개인정보 수집 동의에 체크해 주세요.";
     if (isTurnstileConfigured() && !token) {
@@ -214,8 +238,11 @@ export function LectureInquiryForm() {
     setContact("");
     setTopic("전세사기 예방");
     setFormat("미정");
-    setAudience("미정");
+    setAudience("");
     setSchedule("");
+    setHeadcount("");
+    setRegion("");
+    setNeedPlan(false);
     setMemo("");
     setAgree(false);
     setErrors({});
@@ -253,7 +280,7 @@ export function LectureInquiryForm() {
         </p>
         <h2 className="text-lg font-semibold text-navy">강의 문의</h2>
         <p className="text-sm leading-relaxed text-navy/70">
-          연락처와 희망 주제만 남겨 주세요. 제출하시면 사무소 메일로 바로
+          연락처, 교육 대상, 희망 주제만 필수입니다. 제출하시면 사무소 메일로
           전달됩니다. 주민등록번호·사건 상세 등 민감정보는 적지 마세요.
         </p>
       </div>
@@ -281,18 +308,11 @@ export function LectureInquiryForm() {
           />
         </Field>
 
-        <Field label="기관명">
-          <input
-            className={fieldControlClass(false)}
-            value={institution}
-            onChange={(e) => setInstitution(e.target.value)}
-            placeholder="예: ○○도서관, ○○청년센터 (나중에 알려주셔도 됩니다)"
-          />
-        </Field>
-
-        <Field label="희망 주제">
+        <Field label="희망 주제" required>
           <select
-            className={fieldControlClass(false)}
+            required
+            aria-required="true"
+            className={fieldControlClass(true)}
             value={topic}
             onChange={(e) =>
               setTopic(e.target.value as (typeof TOPICS)[number])
@@ -304,6 +324,35 @@ export function LectureInquiryForm() {
               </option>
             ))}
           </select>
+        </Field>
+
+        <Field label="교육 대상" required error={errors.audience}>
+          <select
+            required
+            aria-required="true"
+            className={fieldControlClass(true)}
+            value={audience}
+            onChange={(e) =>
+              setAudience(e.target.value as "" | (typeof AUDIENCES)[number])
+            }
+            aria-invalid={Boolean(errors.audience)}
+          >
+            <option value="">선택해 주세요</option>
+            {AUDIENCES.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="기관명">
+          <input
+            className={fieldControlClass(false)}
+            value={institution}
+            onChange={(e) => setInstitution(e.target.value)}
+            placeholder="예: ○○도서관, ○○청년센터"
+          />
         </Field>
 
         <Field label="행사 형태">
@@ -322,38 +371,53 @@ export function LectureInquiryForm() {
           </select>
         </Field>
 
-        <Field label="교육 대상">
-          <select
-            className={fieldControlClass(false)}
-            value={audience}
-            onChange={(e) =>
-              setAudience(e.target.value as (typeof AUDIENCES)[number])
-            }
-          >
-            {AUDIENCES.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </Field>
-
         <Field label="희망 일정">
           <input
             className={fieldControlClass(false)}
             value={schedule}
             onChange={(e) => setSchedule(e.target.value)}
-            placeholder="예: 9월 둘째 주, 평일 오후 2시간 (선택)"
+            placeholder="예: 9월 둘째 주, 평일 오후 2시간"
           />
         </Field>
 
-        <Field label="한 줄 요청">
+        <Field label="예상 인원">
+          <input
+            className={fieldControlClass(false)}
+            value={headcount}
+            onChange={(e) => setHeadcount(e.target.value)}
+            placeholder="예: 30명 (선택)"
+          />
+        </Field>
+
+        <Field label="지역">
+          <input
+            className={fieldControlClass(false)}
+            value={region}
+            onChange={(e) => setRegion(e.target.value)}
+            placeholder="예: 해운대구, 부산 전역 (선택)"
+          />
+        </Field>
+
+        <label className="flex items-start gap-3 rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy">
+          <input
+            type="checkbox"
+            className="mt-1 h-4 w-4 shrink-0 accent-navy"
+            checked={needPlan}
+            onChange={(e) => setNeedPlan(e.target.checked)}
+          />
+          <span className="leading-relaxed">
+            강의계획서·강사 프로필이 필요합니다
+            <span className="ml-2 text-xs font-medium text-navy/40">선택</span>
+          </span>
+        </label>
+
+        <Field label="추가 요청">
           <textarea
             className={fieldControlClass(false)}
             rows={2}
             value={memo}
             onChange={(e) => setMemo(e.target.value)}
-            placeholder="인원·장소·제안서 필요 여부 등 (선택). 민감정보는 적지 마세요."
+            placeholder="기관 양식, 예산 기준, 장비 환경 등 (선택). 민감정보는 적지 마세요."
           />
         </Field>
 

@@ -12,6 +12,9 @@ type StationOverlay = {
   sections: PageSection[];
   faqs?: PageFaqItem[];
   serviceLinks?: { href: string; label: string }[];
+  metaTitle?: string;
+  h1?: string;
+  metaDescription?: string;
 };
 
 const workChoice = {
@@ -19,9 +22,55 @@ const workChoice = {
   label: "부산 전역 업무 선택 안내",
 } as const;
 
+const STATION_OVERLAY_SEO: Record<
+  string,
+  { metaTitle: string; h1: string; metaDescription: string }
+> = {
+  센텀시티역법무사: {
+    metaTitle: "센텀시티역 법무사 | 벡스코 역세권 방문 동선",
+    h1: "센텀시티역 법무사, 역세권으로 오실 때 연결할 안내",
+    metaDescription:
+      "센텀시티역 법무사 상담. 방문·환승 동선이며 센텀 업무지구 본문은 센텀 법무사 안내가 Primary Host입니다.",
+  },
+  서면역법무사: {
+    metaTitle: "서면역 법무사 | 1·2호선 환승 접근 동선",
+    h1: "서면역 법무사, 환승역에서 서면 상권 등기를 찾을 때",
+    metaDescription:
+      "서면역 법무사 상담. 환승 동선이며 서면·부전동 허브와 역할을 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  해운대역법무사: {
+    metaTitle: "해운대역 법무사 | 해변 상권 접근 동선",
+    h1: "해운대역 법무사, 역에서 중동·우동 안내로 이어갈 때",
+    metaDescription:
+      "해운대역 법무사 상담. 역 접근 동선이며 중동·해운대 허브가 Primary Host입니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  광안역법무사: {
+    metaTitle: "광안역 법무사 | 수영 해변 접근 동선",
+    h1: "광안역 법무사, 역에서 광안리·광안동 안내로 이어갈 때",
+    metaDescription:
+      "광안역 법무사 상담. 역 접근 동선이며 광안리·광안동 허브와 역할을 나눕니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  사상역법무사: {
+    metaTitle: "사상역 법무사 | 서부산 유통 접근 동선",
+    h1: "사상역 법무사, 역에서 괘법·사상구 안내로 이어갈 때",
+    metaDescription:
+      "사상역 법무사 상담. 역 접근 동선이며 사상구·사상 허브가 Primary Host입니다. 해운대 센텀 다옴법무사사무소.",
+  },
+  명지역법무사: {
+    metaTitle: "명지역 법무사 | 명지 신도시 접근 동선",
+    h1: "명지역 법무사, 역에서 명지·강서구 안내로 이어갈 때",
+    metaDescription:
+      "명지역 법무사 상담. 역 접근 동선이며 명지 허브가 Primary Host입니다. 해운대 센텀 다옴법무사사무소.",
+  },
+};
+
 function overlay(input: StationOverlay): StationOverlay {
+  const head = STATION_OVERLAY_SEO[input.slug];
   return {
     ...input,
+    metaTitle: input.metaTitle ?? head?.metaTitle,
+    h1: input.h1 ?? head?.h1,
+    metaDescription: input.metaDescription ?? head?.metaDescription,
     serviceLinks: input.serviceLinks ?? [
       workChoice,
       { href: "/부산부동산등기", label: "부산 부동산등기" },

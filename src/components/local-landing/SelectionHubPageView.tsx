@@ -26,6 +26,8 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 type SelectionHubPageViewProps = {
   page: PageData;
@@ -130,6 +132,25 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         showNationwideChip={showNationwide}
         showNaverReservation={isConsultPrep ? true : undefined}
       />
+
+      {isConsultPrep ? (
+        <div className="rounded-2xl border border-beige-dark bg-cream/40 px-5 py-5 md:px-6">
+          <p className="text-sm font-semibold text-navy md:text-base">
+            전화 · 카카오톡 · 네이버 톡톡 · 방문 예약
+          </p>
+          <p className="mt-1 text-sm text-navy/70">
+            안윤정 법무사가 직접 상담합니다. 편한 채널 하나만 고르시면 됩니다.
+          </p>
+          <div className="mt-4">
+            <ConsultationButtons
+              channels={getDirectConsultationChannels()}
+              theme="light"
+              layout="grid"
+              pageSlug={page.slug}
+            />
+          </div>
+        </div>
+      ) : null}
 
       {showNationwide ? <NationwideServiceCard /> : null}
 

@@ -51,11 +51,11 @@ export const staticPageSeo = {
     keywords: ["부산 법무사", "해운대 법무사", "고객후기", seoBrand.siteName],
   },
   faq: {
-    title: buildSeoTitle("부산 법무사 FAQ"),
+    title: buildSeoTitle("등기·상속·회생 FAQ"),
     description:
       "상속등기, 부동산등기, 법인등기, 개인회생·파산 등 법무사 업무 관련 자주 묻는 질문과 답변.",
     path: "/faq",
-    keywords: ["부산 법무사", "부산 상속등기", "부산 개인회생", seoBrand.siteName],
+    keywords: ["상속등기 FAQ", "부동산등기 FAQ", "개인회생 FAQ", seoBrand.siteName],
   },
   notices: {
     title: buildSeoTitle("공지사항"),
@@ -76,7 +76,14 @@ export const staticPageSeo = {
     description:
       "전화·카카오톡·네이버 톡톡 상담 안내. 방문 예약 후 센텀 사무소에서 직접 상담 가능.",
     path: "/contact",
-    keywords: ["해운대 법무사", "센텀 법무사", "상담 문의", seoBrand.siteName],
+    keywords: ["해운대 법무사 상담", "센텀 방문 예약", seoBrand.siteName],
+  },
+  contactInquiry: {
+    title: buildSeoTitle("상담 신청 양식 · 1분 문의"),
+    description:
+      "상속등기·부동산등기·법인등기·개인회생 등 상담 분야와 현재 상황을 남기는 신청 양식입니다. 전화·카카오 안내가 필요하면 상담 문의 페이지를 이용해 주세요.",
+    path: "/contact/inquiry",
+    keywords: ["상담 신청", "해운대 법무사 문의", seoBrand.siteName],
   },
   location: {
     title: buildSeoTitle("오시는 길 · 센텀"),

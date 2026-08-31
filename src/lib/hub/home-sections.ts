@@ -149,7 +149,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   },
   {
     id: "cases",
-    title: "실제 상담 사례",
+    title: "업무 사례",
     description: "유사 사건 진행 경과를 참고하실 수 있습니다.",
     links: [
       { href: "/업무사례", label: "업무 사례 허브" },
@@ -174,15 +174,11 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   },
   {
     id: "lecture-education",
-    title: "기업·기관 강의·출강",
+    title: "강의·특강",
     description:
-      "기관·학교·기업 대상 법률 강의와 출강 안내입니다. 상속·등기 업무 상담과는 별도입니다.",
+      "공공기관·도서관·청년기관·학교 대상 생활법률·전세사기·창업법률 교육. 사건 상담과는 별도입니다.",
     links: [
-      { href: "/법률강의", label: "법률 강의 허브" },
-      { href: "/기업법률교육", label: "기업 특강" },
-      { href: "/강의이력", label: "강의 이력" },
-      { href: "/강사소개", label: "강사 소개" },
-      { href: "/부산법률전문가", label: "강의·공공활동 소개" },
+      { href: "/법률강의", label: "강의 안내" },
       { href: "/강의문의", label: "강의 문의" },
     ],
   },
@@ -260,7 +256,8 @@ export const LOCATION_HUB_LINKS: RelatedLink[] = [
   { href: "/센텀시티역법무사", label: "센텀시티역 법무사" },
   { href: "/서면역법무사", label: "서면역 법무사" },
   { href: "/명지동법무사", label: "명지동 법무사" },
-  { href: "/기장법무사", label: "기장 법무사" },
+  { href: "/기장군법무사", label: "기장군 법무사" },
+  { href: "/기장법무사", label: "기장읍 생활권" },
 ];
 
 export const FAQ_HUB_GROUPS = [

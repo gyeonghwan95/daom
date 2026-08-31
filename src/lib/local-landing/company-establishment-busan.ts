@@ -174,7 +174,7 @@ export function buildBusanCompanyEstablishmentPage(
       { href: "/부산본점이전등기", label: "본점이전등기" },
       { href: "/situations/법인-설립-처음", label: "법인 설립 처음 순서" },
       { href: "/법인설립자가진단", label: "법인설립 자가진단" },
-      { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+      { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
       { href: "/contact/inquiry", label: "1분만에 문의하기" },
     ],
     relatedRegionLinks: [

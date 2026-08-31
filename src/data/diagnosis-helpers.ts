@@ -6,7 +6,7 @@ export function seoIntroParagraphs(serviceName: string, detail: string): string[
   return [
     `${serviceName}이 필요한지, 어떤 절차·필요서류·비용·기간이 예상되는지 막막하신 분을 위해 다옴법무사사무소가 자가진단을 준비했습니다. 부산·해운대·센텀·재송동·반여동에서 ${serviceName} 관련 법무사 상담을 찾으시는 분들이 많이 확인하는 질문으로 구성했습니다.`,
     detail,
-    `질문에 답하시면 점수와 태그를 바탕으로 검토 필요·상담 권장·긴급 확인 필요 방향을 안내합니다. 가능/불가능처럼 단정하지 않으며, ${DIAGNOSIS_SEO_KEYWORDS.slice(0, 4).join(", ")} 지역 실제 상담 사례의 기한·과태료·주의사항도 함께 정리했습니다.`,
+    `질문에 답하시면 점수와 태그를 바탕으로 검토 필요·상담 권장·긴급 확인 필요 방향을 안내합니다. 가능/불가능처럼 단정하지 않으며, ${DIAGNOSIS_SEO_KEYWORDS.slice(0, 4).join(", ")} 지역에서 상담 시 자주 확인하는 기한·과태료·주의사항도 함께 정리했습니다.`,
   ];
 }
 

@@ -14,11 +14,11 @@ import {
 export const libraryLecture: LecturePageContent = {
   slug: "부산도서관법률특강",
   kind: "topic",
-  title: "부산 도서관·시민강좌 강사",
-  metaTitle: "부산 도서관·시민강좌 강사｜일상에서 바로 쓰는 생활법률 교육",
+  title: "부산 도서관 법률특강",
+  metaTitle: "부산 도서관 법률특강 | 시민·평생학습 강좌",
   metaDescription:
-    "부산 도서관·평생학습관·시민강좌 강사 안내. 시민도서관 연속 강의 이력을 바탕으로 계약·주거·상속 기초·생활분쟁을 시민 눈높이로 구성합니다.",
-  h1: "부산 도서관·시민강좌 강사｜시민이 바로 활용하는 생활법률 강좌",
+    "부산 도서관·평생학습관·시민강좌 법률특강. 시민도서관 연속 강의 이력을 바탕으로 계약·주거·상속 기초·생활분쟁을 시민 눈높이로 구성합니다.",
+  h1: "부산 도서관 법률특강, 시민이 바로 쓰는 생활법률 강좌",
   eyebrow: "도서관 · 시민강좌 · 평생교육",
   heroIntro:
     "도서관·평생학습관·문화센터에서 시민 대상으로 진행하는 생활법률·예방 특강입니다. 용어 나열이 아니라, 일상에서 바로 확인할 포인트를 중심으로 구성합니다.",
@@ -125,12 +125,12 @@ export const libraryLecture: LecturePageContent = {
   ctaText: "기관명·예상 인원·희망 회차(1회/연속)만 남겨 주시면 가능 여부를 회신합니다.",
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
-  primaryKeywords: [
-    "부산 도서관 법률특강",
-    "평생학습관 법률강의",
-    "시민 생활법률 특강",
-    "부산 도서관 특강 강사",
-    "부산 생활법률 강의",
+  primaryKeywords: ["부산 도서관 법률특강"],
+  secondaryKeywords: [
+    "부산 도서관 특강",
+    "부산 도서관 강사",
+    "부산 평생학습 강사",
+    "부산 평생교육 강사",
   ],
 };
 
@@ -138,10 +138,10 @@ export const lawyerLecture: LecturePageContent = {
   slug: "부산법무사강의",
   kind: "topic",
   title: "부산 법무사 강의",
-  metaTitle: "부산 법무사 강의｜실무 기반 법률특강·기관 출강",
+  metaTitle: "부산 법무사 강의 | 실무 기반 출강",
   metaDescription:
-    "부산 법무사 강의·특강 안내. 안윤정 법무사가 등기·계약·생활법률 실무 경험을 바탕으로 기관·학교·기업·도서관 출강 교육을 진행합니다.",
-  h1: "부산 법무사 강의｜실무로 설명하는 법률특강·기관 출강",
+    "부산 법무사 강의. 등기·계약·생활법률 실무를 눈높이에 맞게 풀어내는 출강 교육입니다. 안윤정 법무사가 직접 진행합니다.",
+  h1: "부산 법무사 강의, 실무로 설명하는 출강 교육",
   eyebrow: "법무사 실무 기반 교육",
   heroIntro:
     "일반 교양 강연이 아니라, 법무사 사무소에서 실제로 다루는 계약·등기·서류·예방 포인트를 눈높이에 맞게 풀어내는 강의입니다.",
@@ -252,13 +252,8 @@ export const lawyerLecture: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   showPrintProfile: true,
-  primaryKeywords: [
-    "부산 법무사 강의",
-    "부산 법무사 특강",
-    "법무사 법률강의",
-    "부산 법무사 출강",
-    "법무사 기관 강의",
-  ],
+  primaryKeywords: ["부산 법무사 강의"],
+  secondaryKeywords: ["부산 법무사 특강", "부산 법무사 출강"],
 };
 
 export const institutionLecture: LecturePageContent = {

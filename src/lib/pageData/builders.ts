@@ -158,8 +158,8 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
         body: page.neighborhoodLivingArea ?? page.problemStatement,
       },
       {
-        title: "많이 발생하는 상담 유형",
-        body: `${page.regionLabel} 생활권에서 아래와 같은 등기·송무 상담이 자주 이어집니다. 사건마다 필요 서류와 관할이 달라지므로 상담 시 확인합니다.`,
+        title: "이 생활권에서 상담하는 업무",
+        body: `${page.regionLabel} 생활권에서는 아래 업무를 중심으로 안내합니다. 사건마다 필요 서류와 관할이 달라지므로 상담 시 확인합니다.`,
         items: page.whenNeeded,
       },
       {
@@ -221,8 +221,8 @@ export function buildPageDataFromLocalLanding(
   const metaTitle =
     page.metaTitle ??
     (page.pageType === "court-registry" && page.slug.endsWith("법무사")
-      ? buildMetaTitle(`${page.slug.replace(/법무사$/, "")} 법무사 안내`)
-      : buildMetaTitle(`${page.title} 안내`));
+      ? buildMetaTitle(`${page.slug.replace(/법무사$/, "")} 법무사`)
+      : buildMetaTitle(page.h1 || page.title));
 
   const introParagraphs =
     page.summaryParagraphs && page.summaryParagraphs.length > 0
@@ -502,7 +502,21 @@ export function buildPageDataFromLocalLanding(
     h1: page.h1,
     intro: page.problemStatement,
     breadcrumbs:
-      page.pageType === "lecture"
+      page.pageType === "region-hub" || page.pageType === "neighborhood-hub"
+        ? [
+            { label: "홈", href: "/" },
+            { label: "부산 법률지도", href: "/busan-legal-map" },
+            ...(page.breadcrumbParent && page.breadcrumbParent.href !== "/busan-legal-map"
+              ? [
+                  {
+                    label: page.breadcrumbParent.label,
+                    href: page.breadcrumbParent.href,
+                  },
+                ]
+              : []),
+            { label: page.title },
+          ]
+      : page.pageType === "lecture"
         ? page.slug === "법률강의" || page.slug === "부산법률전문가"
           ? [{ label: "홈", href: "/" }, { label: page.title }]
           : [
@@ -1019,10 +1033,11 @@ const coreH1Map: Record<StaticCoreKey, string> = {
   cases: "부산 등기·상속 업무 사례",
   blog: "다옴법무사사무소 네이버 블로그",
   reviews: "고객후기",
-  faq: "부산 법무사 FAQ",
+  faq: "자주 묻는 질문",
   notices: "공지사항",
   media: "언론·활동",
   contact: "상담 문의",
+  contactInquiry: "상담 신청",
   location: "오시는 길 · 센텀",
   privacy: "개인정보처리방침",
   terms: "이용약관",

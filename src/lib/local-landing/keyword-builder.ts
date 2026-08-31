@@ -62,8 +62,8 @@ export function buildKeywordHubPage(
         href: "/services/cases/centum-ownership-transfer-case",
       }
     : {
-        title: `${config.regionLabel} ${topic.title} 상담 사례`,
-        summary: `최근 ${config.regionLabel}에서 상담한 사례입니다. ${config.caseAngle ?? topic.caseAngle ?? topic.title}. 의뢰인 상황에 맞춰 필요 서류·예상 기간·비용을 단계별로 안내하고 진행했습니다.`,
+        title: `${config.regionLabel} ${topic.title} 진행 안내`,
+        summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 진행할 때는 필요 서류·기간·비용을 사건 내용에 맞춰 확인합니다.`,
         href: config.relatedCaseSlug ?? topic.relatedCaseSlug
           ? `/services/cases/${config.relatedCaseSlug ?? topic.relatedCaseSlug}`
           : topic.relatedCaseLinks[0]?.href,
@@ -93,12 +93,12 @@ export function buildKeywordHubPage(
     : [
         consultationCase,
         {
-          title: `${config.regionLabel} 서류 준비 상담`,
-          summary: `등기부·계약서를 미리 검토해 누락 서류를 줄이고 접수 일정을 맞춘 사례입니다.`,
+          title: `${config.regionLabel} 서류 준비`,
+          summary: `등기부·계약서를 미리 검토하면 누락 서류와 접수 일정을 맞추기 쉽습니다.`,
         },
         {
-          title: `${config.regionLabel} 원격 진행 사례`,
-          summary: `카카오톡 상담 후 방문 없이 서류를 받아 진행한 사례입니다.`,
+          title: `${config.regionLabel} 원격 진행`,
+          summary: `카카오톡 상담 후 방문 없이 서류를 받아 진행할 수 있는 사건이 있습니다.`,
           href: consultationCase.href,
         },
       ];

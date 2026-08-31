@@ -1,0 +1,89 @@
+{
+  "generated": "2026-08-31T10:29:10.440Z",
+  "totals": {
+    "pages": 1803,
+    "indexable": 1665,
+    "noindex": 138,
+    "sitemap": 1662
+  },
+  "duplicates": {
+    "title": 1,
+    "h1": 5,
+    "description": 2
+  },
+  "built": {
+    "available": true,
+    "results": {
+      "/": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr",
+        "robots": "index, follow",
+        "title": "부산 법무사 안윤정 | 다옴법무사사무소"
+      },
+      "/부산법무사": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
+        "robots": "index, follow",
+        "title": "부산에서 법무사 찾을 때 확인할 업무·비용·상담 기준 | 다옴법무사사무소"
+      },
+      "/부산법무사상담": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%83%81%EB%8B%B4",
+        "robots": "index, follow",
+        "title": "부산 법무사 상담 | 준비서류·비용·상담방법"
+      },
+      "/부산법무사추천": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C",
+        "robots": "index, follow",
+        "title": "부산 법무사 추천 | 상담 전 확인할 7가지 기준"
+      },
+      "/부산상속법무사": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC",
+        "robots": "index, follow",
+        "title": "부산 상속 법무사 | 등기·포기·한정승인 먼저 확인"
+      },
+      "/부산상속등기": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+        "robots": "index, follow",
+        "title": "부산 상속등기 법무사｜상속인 구성에 따라 달라지는 서류와 진행 순서"
+      },
+      "/부산상속포기": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+        "robots": "index, follow",
+        "title": "부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인"
+      },
+      "/부산한정승인": {
+        "h1": 1,
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+        "robots": "index, follow",
+        "title": "부산 한정승인 법무사｜상속채무가 걱정될 때 3개월 안에 확인할 절차"
+      }
+    },
+    "noindexResults": {
+      "/부산상속전문법무사": {
+        "robots": "noindex, follow",
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC",
+        "title": "상속등기·포기·한정승인 첫 분기 | 다옴법무사사무소"
+      },
+      "/부산상속등기전문법무사": {
+        "robots": "noindex, follow",
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+        "title": "부산 상속등기전문 법무사｜협의분할·지분 서류 정리"
+      },
+      "/부산한정승인전문법무사": {
+        "robots": "noindex, follow",
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+        "title": "부산 한정승인전문 법무사｜3개월 기한·재산범위 확인"
+      },
+      "/부산상속포기전문법무사": {
+        "robots": "noindex, follow",
+        "canonical": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+        "title": "부산 상속포기전문 법무사｜채무 과다·3개월 기한"
+      }
+    }
+  }
+}

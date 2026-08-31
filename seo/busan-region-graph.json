@@ -1,0 +1,170 @@
+{
+  "updated": "2026-08-31",
+  "note": "부산 행정·생활권 parent-child. 사무소 실주소는 해운대구 센텀이며 구별 지점이 아니다.",
+  "office": {
+    "name": "다옴법무사사무소",
+    "lawyer": "안윤정 법무사",
+    "address": "부산광역시 해운대구 센텀동로 200 D동 1층 LAB9호"
+  },
+  "city": {
+    "name": "부산광역시",
+    "hub": "/",
+    "map": "/busan-legal-map"
+  },
+  "districts": [
+    {
+      "name": "해운대구",
+      "type": "DISTRICT",
+      "hub": "/해운대법무사",
+      "children": [
+        { "name": "센텀", "type": "BUSINESS_DISTRICT", "hub": "/센텀법무사" },
+        { "name": "재송동", "type": "DONG", "hub": "/재송동법무사" },
+        { "name": "반여동", "type": "DONG", "hub": "/반여동법무사" },
+        { "name": "우동", "type": "DONG", "hub": "/우동법무사" },
+        { "name": "좌동", "type": "DONG", "hub": "/좌동법무사" },
+        { "name": "중동", "type": "DONG", "hub": "/중동법무사" },
+        { "name": "반송동", "type": "DONG", "hub": "/반송동법무사" }
+      ]
+    },
+    {
+      "name": "연제구",
+      "type": "DISTRICT",
+      "hub": "/연제구법무사",
+      "children": [
+        { "name": "연산동", "type": "DONG", "hub": "/연산동법무사" },
+        { "name": "거제동", "type": "DONG", "hub": "/거제동법무사" }
+      ]
+    },
+    {
+      "name": "수영구",
+      "type": "DISTRICT",
+      "hub": "/수영구법무사",
+      "children": [
+        { "name": "광안리", "type": "LANDMARK", "hub": "/광안리법무사" },
+        { "name": "광안동", "type": "DONG", "hub": "/광안동법무사" },
+        { "name": "민락동", "type": "DONG", "hub": "/민락동법무사" },
+        { "name": "망미동", "type": "DONG", "hub": "/망미동법무사" },
+        { "name": "남천동", "type": "DONG", "hub": "/남천동법무사" }
+      ]
+    },
+    {
+      "name": "동래구",
+      "type": "DISTRICT",
+      "hub": "/동래구법무사",
+      "children": [
+        { "name": "사직동", "type": "DONG", "hub": "/사직동법무사" },
+        { "name": "온천동", "type": "DONG", "hub": "/온천동법무사" },
+        { "name": "명륜동", "type": "DONG", "hub": "/동래구법무사", "note": "전용 URL 없음. 구 허브가 owner." },
+        { "name": "동래역", "type": "STATION", "hub": "/동래역법무사" },
+        { "name": "안락동", "type": "DONG", "hub": "/안락동법무사" }
+      ]
+    },
+    {
+      "name": "부산진구",
+      "type": "DISTRICT",
+      "hub": "/부산진구법무사",
+      "children": [
+        { "name": "서면", "type": "BUSINESS_DISTRICT", "hub": "/서면법무사" },
+        { "name": "부전동", "type": "DONG", "hub": "/부전동법무사" },
+        { "name": "전포동", "type": "DONG", "hub": "/전포동법무사" },
+        { "name": "개금동", "type": "DONG", "hub": "/개금동법무사" },
+        { "name": "연지동", "type": "DONG", "hub": "/연지동법무사" }
+      ]
+    },
+    {
+      "name": "남구",
+      "type": "DISTRICT",
+      "hub": "/남구법무사",
+      "children": [
+        { "name": "대연동", "type": "DONG", "hub": "/대연동법무사" },
+        { "name": "용호동", "type": "DONG", "hub": "/용호동법무사" },
+        { "name": "문현동", "type": "DONG", "hub": "/문현동법무사" },
+        { "name": "우암동", "type": "DONG", "hub": "/우암동법무사" }
+      ]
+    },
+    {
+      "name": "북구",
+      "type": "DISTRICT",
+      "hub": "/북구법무사",
+      "children": [
+        { "name": "화명동", "type": "DONG", "hub": "/화명동법무사" },
+        { "name": "덕천동", "type": "DONG", "hub": "/덕천동법무사" },
+        { "name": "구포동", "type": "DONG", "hub": "/구포동법무사" }
+      ]
+    },
+    {
+      "name": "금정구",
+      "type": "DISTRICT",
+      "hub": "/금정구법무사",
+      "children": [
+        { "name": "부곡동", "type": "DONG", "hub": "/부곡동법무사" },
+        { "name": "구서동", "type": "DONG", "hub": "/구서동법무사" }
+      ]
+    },
+    {
+      "name": "사상구",
+      "type": "DISTRICT",
+      "hub": "/사상구법무사",
+      "children": [
+        { "name": "사상", "type": "NEIGHBORHOOD", "hub": "/사상법무사" },
+        { "name": "주례동", "type": "DONG", "hub": "/주례동법무사" }
+      ]
+    },
+    {
+      "name": "사하구",
+      "type": "DISTRICT",
+      "hub": "/사하구법무사",
+      "children": [
+        { "name": "하단", "type": "NEIGHBORHOOD", "hub": "/하단법무사" },
+        { "name": "다대동", "type": "DONG", "hub": "/다대동법무사" },
+        { "name": "괴정동", "type": "DONG", "hub": "/괴정동법무사" }
+      ]
+    },
+    {
+      "name": "중구",
+      "type": "DISTRICT",
+      "hub": "/중구법무사",
+      "children": [{ "name": "남포동", "type": "DONG", "hub": "/남포동법무사" }]
+    },
+    {
+      "name": "서구",
+      "type": "DISTRICT",
+      "hub": "/서구법무사",
+      "children": []
+    },
+    {
+      "name": "동구",
+      "type": "DISTRICT",
+      "hub": "/동구법무사",
+      "children": [
+        { "name": "부산역", "type": "STATION", "hub": "/부산역법무사" },
+        { "name": "초량동", "type": "DONG", "hub": "/초량동법무사" },
+        { "name": "범일동", "type": "DONG", "hub": "/범일동법무사" }
+      ]
+    },
+    {
+      "name": "영도구",
+      "type": "DISTRICT",
+      "hub": "/영도구법무사",
+      "children": [{ "name": "동삼동", "type": "DONG", "hub": "/동삼동법무사" }]
+    },
+    {
+      "name": "강서구",
+      "type": "DISTRICT",
+      "hub": "/강서구법무사",
+      "children": [{ "name": "명지", "type": "LANDMARK", "hub": "/명지법무사" }]
+    },
+    {
+      "name": "기장군",
+      "type": "COUNTY",
+      "hub": "/기장군법무사",
+      "children": [
+        { "name": "기장읍", "type": "DONG", "hub": "/기장읍법무사" },
+        { "name": "기장(짧은 URL)", "type": "NEIGHBORHOOD", "hub": "/기장법무사", "note": "기장읍 생활권 연결 URL. PRIMARY ‘기장 법무사’ owner는 기장군 허브." },
+        { "name": "정관", "type": "NEIGHBORHOOD", "hub": "/정관법무사" },
+        { "name": "일광읍", "type": "DONG", "hub": "/일광읍법무사" },
+        { "name": "오시리아", "type": "LANDMARK", "hub": "/오시리아법무사" }
+      ]
+    }
+  ]
+}

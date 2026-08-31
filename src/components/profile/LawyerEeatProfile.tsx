@@ -283,10 +283,9 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
               대표 {lawyerProfileMeta.fullTitle}
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
-              {lawyerProfileMeta.organization} 대표로 {lawyerProfileMeta.region}{" "}
-              {lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래는
-              실무경력·자격·수상·위원 위촉·강의·언론 활동을 정리한 공식 프로필이며,
-              일자별 위원회·강의 실적 표는 이어서 확인하실 수 있습니다.
+              {compact
+                ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 수상·언론·강의 등 확인 가능한 기록은 전체 프로필에서 이어집니다.`
+                : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래는 실무경력·자격·수상·위원 위촉·강의·언론 활동을 정리한 공식 프로필이며, 일자별 위원회·강의 실적 표는 이어서 확인하실 수 있습니다.`}
             </p>
           </div>
           {compact ? (
@@ -297,6 +296,42 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
         </div>
 
         <div className={`space-y-8 ${compact ? "mt-10" : "mt-8"}`}>
+          {compact ? (
+            <>
+              <EeatSection
+                id="awards"
+                title="확인 가능한 신뢰 신호"
+                moreHref="/about#awards"
+                showMore
+              >
+                <EeatProfileFactList
+                  stacked={false}
+                  items={sliceItems(getLawyerAwards(), compact).map((item) => ({
+                    term: item.name,
+                    meta: [item.year, item.category].filter(Boolean).join(" · "),
+                    description: item.detail ?? "",
+                    image: eeatAwardThumbs[item.name],
+                  }))}
+                />
+              </EeatSection>
+              <EeatSection id="practice-areas" title="주요 업무">
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {lawyerProfileMeta.practiceAreas.map((area) => (
+                    <li
+                      key={area}
+                      className="rounded-full bg-beige px-3 py-1.5 text-sm font-medium text-navy"
+                    >
+                      {area}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-sm leading-relaxed text-navy/65">
+                  언론 보도·공공활동·강의 이력은 프로필과 언론 페이지에서 확인하실 수 있습니다.
+                </p>
+              </EeatSection>
+            </>
+          ) : (
+            <>
           <EeatSection
             id="experience"
             title="실무경력"
@@ -393,7 +428,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             id="press"
             title="언론 및 기고"
             moreHref="/media#press"
-            showMore={compact}
+            showMore={false}
           >
             <EeatProfileFactList stacked={!compact} items={pressItems} />
           </EeatSection>
@@ -409,12 +444,12 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                 </li>
               ))}
             </ul>
-            {!compact ? (
-              <p className="mt-4 text-sm leading-relaxed text-navy/65">
-                상속·부동산·법인·회생 분야 등기 및 신청 절차를 직접 상담·진행합니다.
-              </p>
-            ) : null}
+            <p className="mt-4 text-sm leading-relaxed text-navy/65">
+              상속·부동산·법인·회생 분야 등기 및 신청 절차를 직접 상담·진행합니다.
+            </p>
           </EeatSection>
+            </>
+          )}
         </div>
       </div>
     </section>

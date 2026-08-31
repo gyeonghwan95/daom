@@ -7,9 +7,11 @@ import { getAllPageData } from "@/lib/pageData/registry";
 import type { PageData } from "@/lib/pageData/types";
 import { getPressArticle } from "@/lib/press-articles";
 import { siteConfig } from "@/lib/site";
+import { isNoIndexPath } from "@/lib/seo/index-policy";
 
 /** 색인 대상 path (레거시 리다이렉트·noindex 제외) — sitemap manifest 생성과 동일 기준 */
 export function isIndexablePagePath(path: string): boolean {
+  if (isNoIndexPath(path)) return false;
   if (path.startsWith("/cases/")) return false;
   if (path === "/press" || path.startsWith("/press/")) return false;
   if (path.startsWith("/blog/external/")) return false;

@@ -1,0 +1,270 @@
+{
+  "updated": "2026-08-31",
+  "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만.",
+  "queries": {
+    "부산 법무사": {
+      "owner": "/",
+      "intent": "local-commercial",
+      "supporting": [
+        "/부산법무사",
+        "/부산법무사상담",
+        "/부산법무사추천",
+        "/해운대법무사",
+        "/센텀법무사"
+      ]
+    },
+    "부산법무사": {
+      "owner": "/",
+      "intent": "local-commercial",
+      "aliasOf": "부산 법무사"
+    },
+    "부산 법무사 상담": {
+      "owner": "/부산법무사상담",
+      "intent": "transactional",
+      "supporting": ["/", "/contact", "/상담"]
+    },
+    "부산 법무사 추천": {
+      "owner": "/부산법무사추천",
+      "intent": "commercial-investigation",
+      "supporting": ["/부산법무사", "/부산법무사비교"]
+    },
+    "부산 상속 전문 법무사": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인"]
+    },
+    "부산 상속전문 법무사": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "aliasOf": "부산 상속 전문 법무사"
+    },
+    "부산 상속 법무사": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service"
+    },
+    "부산 상속등기 법무사": {
+      "owner": "/부산상속등기",
+      "intent": "procedure"
+    },
+    "부산 상속등기": {
+      "owner": "/부산상속등기",
+      "intent": "procedure"
+    },
+    "부산 상속포기 법무사": {
+      "owner": "/부산상속포기",
+      "intent": "procedure"
+    },
+    "부산 상속포기": {
+      "owner": "/부산상속포기",
+      "intent": "procedure"
+    },
+    "부산 한정승인 법무사": {
+      "owner": "/부산한정승인",
+      "intent": "procedure"
+    },
+    "부산 한정승인": {
+      "owner": "/부산한정승인",
+      "intent": "procedure"
+    },
+    "부산 등기 법무사": {
+      "owner": "/부산등기법무사",
+      "intent": "service-hub"
+    },
+    "부산 부동산 법무사": {
+      "owner": "/부산부동산등기",
+      "intent": "service-hub"
+    },
+    "부산 부동산등기 법무사": {
+      "owner": "/부산부동산등기",
+      "intent": "service-hub",
+      "aliasOf": "부산 부동산 법무사"
+    },
+    "부산 법인 법무사": {
+      "owner": "/부산법인법무사",
+      "intent": "service-hub"
+    },
+    "부산 개인회생 법무사": {
+      "owner": "/부산개인회생법무사",
+      "intent": "service-hub"
+    },
+    "해운대 법무사": {
+      "owner": "/해운대법무사",
+      "intent": "local"
+    },
+    "해운대구 법무사": {
+      "owner": "/해운대법무사",
+      "intent": "local",
+      "aliasOf": "해운대 법무사"
+    },
+    "센텀 법무사": {
+      "owner": "/센텀법무사",
+      "intent": "local"
+    },
+    "센텀시티 법무사": {
+      "owner": "/센텀법무사",
+      "intent": "local",
+      "aliasOf": "센텀 법무사"
+    },
+    "연제구 법무사": { "owner": "/연제구법무사", "intent": "local" },
+    "연산동 법무사": { "owner": "/연산동법무사", "intent": "local" },
+    "거제동 법무사": { "owner": "/거제동법무사", "intent": "local" },
+    "수영구 법무사": { "owner": "/수영구법무사", "intent": "local" },
+    "광안리 법무사": { "owner": "/광안리법무사", "intent": "local" },
+    "광안동 법무사": { "owner": "/광안동법무사", "intent": "local" },
+    "민락동 법무사": { "owner": "/민락동법무사", "intent": "local" },
+    "망미동 법무사": { "owner": "/망미동법무사", "intent": "local" },
+    "남천동 법무사": { "owner": "/남천동법무사", "intent": "local" },
+    "동래구 법무사": { "owner": "/동래구법무사", "intent": "local" },
+    "사직동 법무사": { "owner": "/사직동법무사", "intent": "local" },
+    "온천동 법무사": { "owner": "/온천동법무사", "intent": "local" },
+    "명륜동 법무사": { "owner": "/동래구법무사", "intent": "local" },
+    "부산진구 법무사": { "owner": "/부산진구법무사", "intent": "local" },
+    "부산진 법무사": {
+      "owner": "/부산진구법무사",
+      "intent": "local",
+      "aliasOf": "부산진구 법무사"
+    },
+    "서면 법무사": { "owner": "/서면법무사", "intent": "local" },
+    "부전동 법무사": { "owner": "/부전동법무사", "intent": "local" },
+    "전포동 법무사": { "owner": "/전포동법무사", "intent": "local" },
+    "남구 법무사": { "owner": "/남구법무사", "intent": "local" },
+    "대연동 법무사": { "owner": "/대연동법무사", "intent": "local" },
+    "용호동 법무사": { "owner": "/용호동법무사", "intent": "local" },
+    "문현동 법무사": { "owner": "/문현동법무사", "intent": "local" },
+    "북구 법무사": { "owner": "/북구법무사", "intent": "local" },
+    "화명동 법무사": { "owner": "/화명동법무사", "intent": "local" },
+    "덕천동 법무사": { "owner": "/덕천동법무사", "intent": "local" },
+    "금정구 법무사": { "owner": "/금정구법무사", "intent": "local" },
+    "사상구 법무사": { "owner": "/사상구법무사", "intent": "local" },
+    "사하구 법무사": { "owner": "/사하구법무사", "intent": "local" },
+    "중구 법무사": { "owner": "/중구법무사", "intent": "local" },
+    "서구 법무사": { "owner": "/서구법무사", "intent": "local" },
+    "동구 법무사": { "owner": "/동구법무사", "intent": "local" },
+    "영도구 법무사": { "owner": "/영도구법무사", "intent": "local" },
+    "강서구 법무사": { "owner": "/강서구법무사", "intent": "local" },
+    "기장군 법무사": { "owner": "/기장군법무사", "intent": "local" },
+    "기장 법무사": {
+      "owner": "/기장군법무사",
+      "intent": "local",
+      "aliasOf": "기장군 법무사"
+    },
+    "재송동 법무사": { "owner": "/재송동법무사", "intent": "local" },
+    "반여동 법무사": { "owner": "/반여동법무사", "intent": "local" },
+    "우동 법무사": { "owner": "/우동법무사", "intent": "local" },
+    "좌동 법무사": { "owner": "/좌동법무사", "intent": "local" },
+    "중동 법무사": { "owner": "/중동법무사", "intent": "local" },
+    "부산 중구 법무사": { "owner": "/중구법무사", "intent": "local", "aliasOf": "중구 법무사" },
+    "부산 서구 법무사": { "owner": "/서구법무사", "intent": "local", "aliasOf": "서구 법무사" },
+    "부산 동구 법무사": { "owner": "/동구법무사", "intent": "local", "aliasOf": "동구 법무사" },
+    "부산 영도구 법무사": { "owner": "/영도구법무사", "intent": "local", "aliasOf": "영도구 법무사" },
+    "부산 동래구 법무사": { "owner": "/동래구법무사", "intent": "local", "aliasOf": "동래구 법무사" },
+    "부산 남구 법무사": { "owner": "/남구법무사", "intent": "local", "aliasOf": "남구 법무사" },
+    "부산 북구 법무사": { "owner": "/북구법무사", "intent": "local", "aliasOf": "북구 법무사" },
+    "부산 해운대 법무사": { "owner": "/해운대법무사", "intent": "local", "aliasOf": "해운대 법무사" },
+    "부산 사하구 법무사": { "owner": "/사하구법무사", "intent": "local", "aliasOf": "사하구 법무사" },
+    "부산 금정구 법무사": { "owner": "/금정구법무사", "intent": "local", "aliasOf": "금정구 법무사" },
+    "부산 강서구 법무사": { "owner": "/강서구법무사", "intent": "local", "aliasOf": "강서구 법무사" },
+    "부산 연제구 법무사": { "owner": "/연제구법무사", "intent": "local", "aliasOf": "연제구 법무사" },
+    "부산 수영구 법무사": { "owner": "/수영구법무사", "intent": "local", "aliasOf": "수영구 법무사" },
+    "부산 사상구 법무사": { "owner": "/사상구법무사", "intent": "local", "aliasOf": "사상구 법무사" },
+    "부산 기장군 법무사": { "owner": "/기장군법무사", "intent": "local", "aliasOf": "기장군 법무사" },
+    "사상 법무사": { "owner": "/사상법무사", "intent": "local" },
+    "하단 법무사": { "owner": "/하단법무사", "intent": "local" },
+    "명지 법무사": { "owner": "/명지법무사", "intent": "local" },
+    "정관 법무사": { "owner": "/정관법무사", "intent": "local" },
+    "일광읍 법무사": { "owner": "/일광읍법무사", "intent": "local" },
+    "기장읍 법무사": { "owner": "/기장읍법무사", "intent": "local" },
+    "부산역 법무사": { "owner": "/부산역법무사", "intent": "local" },
+    "동래역 법무사": { "owner": "/동래역법무사", "intent": "local" },
+    "남포동 법무사": { "owner": "/남포동법무사", "intent": "local" },
+    "초량동 법무사": { "owner": "/초량동법무사", "intent": "local" },
+    "범일동 법무사": { "owner": "/범일동법무사", "intent": "local" },
+    "구포동 법무사": { "owner": "/구포동법무사", "intent": "local" },
+    "다대동 법무사": { "owner": "/다대동법무사", "intent": "local" },
+    "괴정동 법무사": { "owner": "/괴정동법무사", "intent": "local" },
+    "개금동 법무사": { "owner": "/개금동법무사", "intent": "local" },
+    "안락동 법무사": { "owner": "/안락동법무사", "intent": "local" },
+    "구서동 법무사": { "owner": "/구서동법무사", "intent": "local" },
+    "반송동 법무사": { "owner": "/반송동법무사", "intent": "local" },
+    "주례동 법무사": { "owner": "/주례동법무사", "intent": "local" },
+    "동삼동 법무사": { "owner": "/동삼동법무사", "intent": "local" },
+    "우암동 법무사": { "owner": "/우암동법무사", "intent": "local" },
+    "연지동 법무사": { "owner": "/연지동법무사", "intent": "local" },
+    "오시리아 법무사": { "owner": "/오시리아법무사", "intent": "local" },
+    "부곡동 법무사": { "owner": "/부곡동법무사", "intent": "local" },
+    "부산에서 법무사 찾는 기준": {
+      "owner": "/부산법무사",
+      "intent": "informational"
+    },
+    "부산 법률 강의": {
+      "owner": "/법률강의",
+      "intent": "informational",
+      "supporting": ["/강의문의", "/부산법률강사", "/강의이력"]
+    },
+    "부산 법률 특강": {
+      "owner": "/법률강의",
+      "intent": "informational",
+      "aliasOf": "부산 법률 강의"
+    },
+    "부산 강의 문의": {
+      "owner": "/강의문의",
+      "intent": "transactional",
+      "supporting": ["/법률강의", "/부산법률강사"]
+    },
+    "부산 특강 문의": {
+      "owner": "/강의문의",
+      "intent": "transactional",
+      "aliasOf": "부산 강의 문의"
+    },
+    "부산 강연 문의": {
+      "owner": "/강의문의",
+      "intent": "transactional",
+      "aliasOf": "부산 강의 문의"
+    },
+    "부산 출강 문의": {
+      "owner": "/강의문의",
+      "intent": "transactional",
+      "aliasOf": "부산 강의 문의"
+    },
+    "부산 강사 섭외": {
+      "owner": "/부산법률강사",
+      "intent": "commercial-investigation",
+      "supporting": ["/법률강의", "/강사소개", "/강의이력", "/강의문의"]
+    },
+    "부산 강사 초빙": {
+      "owner": "/부산법률강사",
+      "intent": "commercial-investigation",
+      "aliasOf": "부산 강사 섭외"
+    },
+    "부산 전세사기 예방교육": {
+      "owner": "/전세사기예방교육",
+      "intent": "informational",
+      "supporting": ["/법률강의", "/강의문의"]
+    },
+    "부산 청년 법률교육": {
+      "owner": "/청년생활법률특강",
+      "intent": "informational",
+      "supporting": ["/법률강의", "/강의문의"]
+    },
+    "부산 창업 법률교육": {
+      "owner": "/창업법률교육",
+      "intent": "informational",
+      "supporting": ["/법률강의", "/강의문의"]
+    },
+    "부산 법무사 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "informational",
+      "supporting": ["/학교법률교육", "/강의문의"]
+    },
+    "부산 법무사 강의": {
+      "owner": "/부산법무사강의",
+      "intent": "informational",
+      "supporting": ["/법률강의", "/강사소개"]
+    },
+    "부산 도서관 법률특강": {
+      "owner": "/부산도서관법률특강",
+      "intent": "informational",
+      "supporting": ["/법률강의", "/강의이력"]
+    }
+  }
+}

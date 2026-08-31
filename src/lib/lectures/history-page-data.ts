@@ -18,8 +18,8 @@ export function buildLectureHistoryHubPageData(): PageData {
     slug: "강의이력",
     path: "/강의이력",
     category: "pillar",
-    title: "안윤정 법무사 강의 이력｜생활법률·전세사기·청년·창업 특강",
-    metaTitle: "안윤정 법무사 강의 이력｜생활법률·전세사기·청년·창업 특강",
+    title: "안윤정 법무사 강의 이력",
+    metaTitle: "안윤정 법무사 강의 이력 | 확인된 출강",
     metaDescription:
       "부산 시민, 청년, 학생, 자립준비청년, 예비창업자, 기업·기관 임직원을 대상으로 진행한 생활법률, 전세사기 예방, 디지털 법률, 창업 법률교육 이력을 안내합니다.",
     h1: "안윤정 법무사 강의·특강 이력",
@@ -34,15 +34,7 @@ export function buildLectureHistoryHubPageData(): PageData {
       `확인된 강의 이력 ${summary.lectureCount}건을 기관·주제·대상별로 살펴볼 수 있습니다.`,
       "생활법률, 전세사기 예방, 청년·디지털·학교 진로, 기관 맞춤형 교육 이력을 확인한 뒤 강의 문의를 이어갈 수 있습니다.",
     ],
-    primaryKeywords: [
-      "안윤정 법무사 강의 이력",
-      "부산 법률 특강",
-      "부산 법무사 강의",
-      "전세사기 예방교육",
-      "청년 생활법률",
-      "도서관 법률특강",
-      "법무사 진로특강",
-    ],
+    primaryKeywords: ["안윤정 법무사 강의 경력", "안윤정 법무사 강의 이력"],
     internalLinks: [
       { href: "/법률강의", label: "법률 강의 안내" },
       { href: "/부산법무사강의", label: "부산 법무사 강의" },

@@ -155,6 +155,7 @@ export type LectureAudienceCard = {
 export type LectureInstitutionCard = {
   title: string;
   topics: string[];
+  href?: string;
 };
 
 export type LectureFormatOption = {

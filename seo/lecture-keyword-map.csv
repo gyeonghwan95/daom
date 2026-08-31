@@ -1,0 +1,240 @@
+keyword,cluster,search_intent,owner_url,secondary_url,status,impressions,clicks,ctr,notes
+부산 법률 강의,pillar-hub,informational,/법률강의,,UNKNOWN,,,,PILLAR PRIMARY
+부산 법률 특강,pillar-hub,informational,/법률강의,/부산법률강사,UNKNOWN,,,,PILLAR PRIMARY 동의어
+부산법률강의,pillar-hub,informational,/법률강의,,UNKNOWN,,,,표기 변형
+맞춤형 법률교육,pillar-hub,informational,/법률강의,,UNKNOWN,,,,형식 동의어
+부산 생활법률 강의,pillar-hub,informational,/법률강의,/부산도서관법률특강,UNKNOWN,,,,주제 secondary. 도서관 페이지와 분리
+부산 생활법률 특강,pillar-hub,informational,/법률강의,/부산도서관법률특강,UNKNOWN,,,,주제 secondary
+부산 법률교육 강사,hiring,commercial,/부산법률강사,/법률강의,UNKNOWN,,,,강사 선택 의도
+부산 법률 세미나,pillar-hub,informational,/법률강의,,UNKNOWN,,,,형식 동의어. 별도 URL 없음
+부산 법률 워크숍,pillar-hub,informational,/법률강의,,UNKNOWN,,,,형식 동의어
+부산 법률 워크샵,pillar-hub,informational,/법률강의,,UNKNOWN,,,,철자 변형
+부산 찾아가는 강의,pillar-hub,informational,/법률강의,,UNKNOWN,,,,출강 형식. FAQ/본문 대응
+부산 찾아가는 특강,pillar-hub,informational,/법률강의,,UNKNOWN,,,,출강 형식
+부산 방문교육 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,출강 강사 선택
+부산 출장강의,pillar-hub,informational,/법률강의,,UNKNOWN,,,,출강 형식
+부산 출강 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,강사 선택
+부산 맞춤형 특강,pillar-hub,informational,/법률강의,,UNKNOWN,,,,형식
+부산 맞춤교육,pillar-hub,informational,/법률강의,,UNKNOWN,,,,형식
+부산 1시간 특강,admin-duration,informational,/강의시간별구성,/강의문의,UNKNOWN,,,,시간 구성 가이드
+부산 단체교육 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,기관 단체 교육 강사
+부산 강의 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,TRANSACTIONAL PRIMARY
+부산 특강 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,동일 문의 의도
+부산 강연 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,동일 문의 의도
+부산 출강 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,동일 문의 의도
+강의 제안 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,제안·일정 협의
+법률 강의 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,표기 변형
+출강 문의,inquiry,transactional,/강의문의,,UNKNOWN,,,,표기 변형
+부산 강사 섭외,hiring,commercial,/부산법률강사,,UNKNOWN,,,,COMMERCIAL PRIMARY. 기존 URL 유지(/부산강사초빙 없음)
+부산 강사 초빙,hiring,commercial,/부산법률강사,,UNKNOWN,,,,PRIMARY 동의어
+부산 외부강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일 섭외 의도
+부산 외부 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,표기 변형
+부산 외부강사 섭외,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 외부강사 초빙,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 특강 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,강사 선택. 허브 title과 분리
+부산 강연 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 강의 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 초청강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 강연자 섭외,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 강사 문의,hiring,commercial,/부산법률강사,/강의문의,UNKNOWN,,,,섭외 검토 후 문의는 /강의문의
+부산 강사 출강,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 법률 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,전문영역 한정
+부산 법률 강사 섭외,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+생활법률 강사,hiring,commercial,/부산법률강사,/법률강의,UNKNOWN,,,,주제+강사
+법률 강사 섭외,hiring,commercial,/부산법률강사,,UNKNOWN,,,,지역 없는 변형
+부산 교육 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,광범위. title에 사용하지 않음
+부산 기관 강사,hiring,commercial,/부산법률강사,/부산기관법률특강,UNKNOWN,,,,기관 유형은 허브 섹션
+부산 법무사 강사,hiring,commercial,/부산법률강사,/부산법무사강의,UNKNOWN,,,,법무사 정체성+강사
+부산 법률특강 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 법률 강연 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 전문가 초빙,hiring,commercial,/부산법률강사,/부산법률전문가,UNKNOWN,,,,전문가 허브와 구분
+부산 전문가 섭외,hiring,commercial,/부산법률강사,/부산법률전문가,UNKNOWN,,,,동일
+부산 전문가 강사,hiring,commercial,/부산법률강사,,UNKNOWN,,,,동일
+부산 강사 추천,hiring,commercial,/부산법률강사,,UNKNOWN,,,,가짜 순위 페이지 없음. 선택 기준으로 대응
+부산 특강 강사 추천,hiring,commercial,/부산법률강사,,UNKNOWN,,,,가짜 추천 페이지 없음
+부산 강연자 추천,hiring,commercial,/부산법률강사,,UNKNOWN,,,,가짜 추천 페이지 없음
+부산 강사,skip-wide,commercial,/부산법률강사,,UNKNOWN,,,,매우 넓은 검색어. title/H1에 사용하지 않음. 법률 맥락만
+부산 강연,skip-wide,informational,/법률강의,,UNKNOWN,,,,광범위. 법률 특강 맥락
+부산 교육,skip-wide,informational,/법률강의,,UNKNOWN,,,,광범위. 사이트 정체성(법무사) 유지
+부산 전세사기 예방교육,jeonse,informational,/전세사기예방교육,,UNKNOWN,,,,주제 PRIMARY
+부산 전세사기 강의,jeonse,informational,/전세사기예방교육,,UNKNOWN,,,,동일 의도
+부산 전세사기 특강,jeonse,informational,/전세사기예방교육,,UNKNOWN,,,,동일
+부산 전세사기 예방 강사,jeonse,commercial,/전세사기예방교육,,UNKNOWN,,,,주제+강사. 별도 URL 없음
+부산 전월세 계약 교육,jeonse,informational,/전세사기예방교육,,UNKNOWN,,,,동일 클러스터
+부산 부동산 계약 강의,jeonse,informational,/전세사기예방교육,/기업법률교육,UNKNOWN,,,,주거계약 교육
+부산 부동산 법률교육,jeonse,informational,/전세사기예방교육,/법률강의,UNKNOWN,,,,주거 중심
+부산 등기부등본 교육 강사,jeonse,commercial,/전세사기예방교육,,UNKNOWN,,,,커리큘럼 항목
+부산 주거안전 강사,jeonse,commercial,/전세사기예방교육,,UNKNOWN,,,,관련 표현
+부산 청년 법률교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,주제 PRIMARY
+부산 청년 생활법률,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 청년 법률특강,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 청년 생활법률 특강,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 청년 특강 강사,youth,commercial,/청년생활법률특강,,UNKNOWN,,,,주제+강사
+부산 청년교육 강사,youth,commercial,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 청년센터 강사,youth,commercial,/청년생활법률특강,,UNKNOWN,,,,"기관유형은 허브 흡수, 이력 있어 페이지 유지"
+부산 청년기관 특강,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 자립청년 교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,자립준비청년
+부산 청년 자립교육 강사,youth,commercial,/청년생활법률특강,,UNKNOWN,,,,동일
+청년 법률강의,youth,informational,/청년생활법률특강,,UNKNOWN,,,,지역 없는 변형. 부산 실적 맥락
+대학생 법률특강,youth,informational,/청년생활법률특강,/학교법률교육,UNKNOWN,,,,대상 기반. 학교 페이지와 분담
+사회초년생 법률교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,대상
+자립준비청년 법률교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,확인된 이력
+부산 사회초년생 교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 사회초년생 법률교육,youth,informational,/청년생활법률특강,,UNKNOWN,,,,동일
+부산 가족 간 돈거래 강사,youth,commercial,/청년생활법률특강,,UNKNOWN,,,,커리큘럼 항목
+부산 창업 법률교육,startup,informational,/창업법률교육,,UNKNOWN,,,,주제 PRIMARY
+부산 창업 법률특강,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업 강사,startup,commercial,/창업법률교육,,UNKNOWN,,,,주제+강사
+부산 예비창업자 법률교육,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업교육 강사,startup,commercial,/창업법률교육,,UNKNOWN,,,,동일
+부산 예비창업자 강사,startup,commercial,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업 특강,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업 법률 특강,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 스타트업 법률교육,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 스타트업 특강,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 스타트업 강사,startup,commercial,/창업법률교육,,UNKNOWN,,,,법률 창업만. 일반 스타트업 강사 아님
+부산 청년창업 교육,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업기업 법률교육,startup,informational,/창업법률교육,,UNKNOWN,,,,동일
+부산 창업 법률 강사,startup,commercial,/창업법률교육,,UNKNOWN,,,,동일
+창업자 법률교육,startup,informational,/창업법률교육,,UNKNOWN,,,,지역 없는 변형
+부산 기업 법률교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,주제 PRIMARY
+부산 기업 법률강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업 특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업교육 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업체 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 직원교육 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 임직원 교육 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 사내교육 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,표기
+부산 기업 특강 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업 법률특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 사내 특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 사내특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 직원교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,법정교육 아님
+부산 임직원 교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 임직원 법률교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 회사 법률교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 기업 강연,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 대표자 교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 실무교육 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,계약·채권 실무
+부산 법인 실무 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 법인 실무 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 법인등기 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,교육. 사건 페이지와 구분
+부산 계약 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 계약 실무 교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 계약서 특강,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 계약서 교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 채권관리 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 미수금 교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 내용증명 강의,corporate,informational,/기업법률교육,,UNKNOWN,,,,동일
+부산 계약서 강의 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 미수금·채권관리 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+부산 증거관리 강사,corporate,commercial,/기업법률교육,,UNKNOWN,,,,동일
+직장인 생활법률,corporate,informational,/기업법률교육,/법률강의,UNKNOWN,,,,대상 기반
+임직원 법률교육,corporate,informational,/기업법률교육,,UNKNOWN,,,,대상
+부산 개인정보 교육,digital,informational,/디지털법률교육,,UNKNOWN,,,,주제
+부산 개인정보 특강,digital,informational,/디지털법률교육,,UNKNOWN,,,,동일
+부산 명예훼손 강의,digital,informational,/디지털법률교육,,UNKNOWN,,,,동일
+부산 온라인 법률교육,digital,informational,/디지털법률교육,,UNKNOWN,,,,동일
+부산 디지털 법률교육,digital,informational,/디지털법률교육,,UNKNOWN,,,,PRIMARY
+부산 생활분쟁 강의,digital,informational,/법률강의,/부산도서관법률특강,UNKNOWN,,,,생활분쟁은 허브+도서관
+부산 법무사 진로특강,career,informational,/법무사진로특강,,UNKNOWN,,,,PRIMARY
+법무사 직업 특강,career,informational,/법무사진로특강,,UNKNOWN,,,,동일
+법무사 진로 강사,career,commercial,/법무사진로특강,,UNKNOWN,,,,동일
+부산 진로 특강 강사,career,commercial,/법무사진로특강,,UNKNOWN,,,,법무사 진로만
+부산 학교 특강,school,informational,/학교법률교육,,UNKNOWN,,,,학교 허브
+부산 학교 강사,school,commercial,/학교법률교육,,UNKNOWN,,,,동일
+부산 진로특강 강사,career,commercial,/법무사진로특강,,UNKNOWN,,,,진로=법무사 진로
+부산 고등학교 특강,school,informational,/학교법률교육,,UNKNOWN,,,,확인된 양산제일고 이력
+부산 대학교 특강,school,informational,/학교법률교육,,UNKNOWN,,,,대학 대상
+부산 대학생 특강,school,informational,/학교법률교육,/청년생활법률특강,UNKNOWN,,,,대상
+부산 학교 특강 강사,school,commercial,/학교법률교육,,UNKNOWN,,,,동일
+부산 대학 특강 강사,school,commercial,/학교법률교육,,UNKNOWN,,,,동일
+부산 고등학생 법률교육,school,informational,/학교법률교육,,UNKNOWN,,,,동일
+부산 대학생 생활법률,school,informational,/학교법률교육,/청년생활법률특강,UNKNOWN,,,,동일
+부산 대학생 특강 강사,youth,commercial,/청년생활법률특강,/학교법률교육,UNKNOWN,,,,청년 클러스터와 학교 분담
+청소년 생활법률,school,informational,/학교법률교육,,UNKNOWN,,,,대상
+고등학생 법률특강,school,informational,/학교법률교육,,UNKNOWN,,,,대상
+부산 공공기관 특강,public,informational,/공공기관법률교육,,UNKNOWN,,,,기관유형. 고유 이력·본문 유지
+부산 공공기관 강의,public,informational,/공공기관법률교육,,UNKNOWN,,,,동일
+부산 공공기관 강사,public,commercial,/공공기관법률교육,,UNKNOWN,,,,PRIMARY
+부산 공공기관 법률 강사,public,commercial,/공공기관법률교육,,UNKNOWN,,,,동일
+부산 기관교육 강사,public,commercial,/공공기관법률교육,,UNKNOWN,,,,동일
+부산 공공기관 직원교육,public,informational,/공공기관법률교육,,UNKNOWN,,,,법정교육 아님
+부산 공공기관 법률교육,public,informational,/공공기관법률교육,,UNKNOWN,,,,동일
+부산 공공기관 외부강사,public,commercial,/공공기관법률교육,,UNKNOWN,,,,동일
+부산 기관 특강,institution,informational,/부산기관법률특강,,UNKNOWN,,,,협회·단체 허브
+부산 기관 강의,institution,informational,/부산기관법률특강,,UNKNOWN,,,,동일
+부산 기관 법률 특강,institution,informational,/부산기관법률특강,,UNKNOWN,,,,PRIMARY
+부산 기관 강사 섭외,hiring,commercial,/부산법률강사,/부산기관법률특강,UNKNOWN,,,,섭외는 hiring
+부산 협회 특강,institution,informational,/부산기관법률특강,,UNKNOWN,,,,동일
+부산 단체 특강,institution,informational,/부산기관법률특강,,UNKNOWN,,,,동일
+부산 직원 특강,corporate,informational,/기업법률교육,/공공기관법률교육,UNKNOWN,,,,직원=기업 우선
+부산 종사자 교육,welfare,informational,/부산사회복지기관강사,/공공기관법률교육,UNKNOWN,,,,복지 종사자
+공무원 생활법률 교육,public,informational,/공공기관법률교육,,UNKNOWN,,,,대상. 법정교육 아님
+부산 도서관 특강,library,informational,/부산도서관법률특강,,UNKNOWN,,,,PRIMARY 동의어
+부산 도서관 법률특강,library,informational,/부산도서관법률특강,,UNKNOWN,,,,PRIMARY
+부산 도서관 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,동일
+부산 평생학습 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,동일
+부산 평생교육 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,동일
+부산 시민강좌 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,동일
+부산 주민 특강,library,informational,/부산도서관법률특강,,UNKNOWN,,,,시민 대상
+부산 성인교육 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,동일
+시민 생활법률 강의,library,informational,/부산도서관법률특강,/법률강의,UNKNOWN,,,,대상
+부산 상속 강의 강사,library,commercial,/부산도서관법률특강,,UNKNOWN,,,,시민강좌 상속 기초. 상속등기 사건 페이지 아님
+부산 사회복지기관 강사,welfare,commercial,/부산사회복지기관강사,,UNKNOWN,,,,이력·고유본문 있어 유지
+부산 복지기관 강사,welfare,commercial,/부산사회복지기관강사,,UNKNOWN,,,,동일
+부산 복지관 특강,welfare,informational,/부산사회복지기관강사,,UNKNOWN,,,,동일
+부산 사회복지사 교육 강사,welfare,commercial,/부산사회복지기관강사,,UNKNOWN,,,,동일
+부산 복지기관 종사자교육,welfare,informational,/부산사회복지기관강사,,UNKNOWN,,,,동일
+부산 자립지원 종사자교육,welfare,informational,/부산사회복지기관강사,,UNKNOWN,,,,확인된 이력
+부산 현장 실무교육 강사,welfare,commercial,/부산사회복지기관강사,,UNKNOWN,,,,종사자 현장
+복지기관 종사자 법률교육,welfare,informational,/부산사회복지기관강사,,UNKNOWN,,,,대상
+부산 법무사 강의,lawyer-identity,informational,/부산법무사강의,,UNKNOWN,,,,PRIMARY. 허브와 역할 분리
+부산 법무사 특강,lawyer-identity,informational,/부산법무사강의,,UNKNOWN,,,,동의어
+부산 법무사 출강,lawyer-identity,informational,/부산법무사강의,,UNKNOWN,,,,동의어
+법률 강사 프로필,speaker,informational,/강사소개,,UNKNOWN,,,,프로필 PRIMARY
+안윤정 법무사 강사,speaker,navigational,/강사소개,,UNKNOWN,,,,인물
+부산 강사 프로필,admin-docs,informational,/강사소개,/강의문의,UNKNOWN,,,,행정 검색. FAQ/소개서로 대응
+부산 강사 소개서,admin-docs,informational,/강사소개,,UNKNOWN,,,,동일
+강의 이력,history,informational,/강의이력,,UNKNOWN,,,,실적 증명
+안윤정 법무사 강의 경력,history,informational,/강의이력,,UNKNOWN,,,,PRIMARY
+안윤정 법무사 강의 이력,history,informational,/강의이력,,UNKNOWN,,,,동의어
+부산 강의계획서,admin-docs,informational,/부산강사섭외체크리스트,/강의문의,UNKNOWN,,,,정보성. 고정 양식 단정하지 않음
+부산 강사 제안서,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,동일
+부산 특강 제안서,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,동일
+강의계획서에 들어갈 내용,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,동일
+강사 프로필 요청 방법,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,동일
+부산 강사 섭외 체크리스트,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,PRIMARY
+부산 외부강사 섭외 방법,admin-docs,informational,/부산강사섭외체크리스트,,UNKNOWN,,,,동일
+부산 강의 견적,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,고정가 없음. 결정 요인만
+부산 특강 비용,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 강사료,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 강의료,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 출강료,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 특강 강사 비용,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 외부강사 비용,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 강사 섭외 비용,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,PRIMARY
+강의료 견적,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+강사 교통비,admin-cost,informational,/부산강사섭외비용,,UNKNOWN,,,,동일
+부산 기관 특강 주제 추천,admin-topics,informational,/기관특강주제추천,,UNKNOWN,,,,기획 가이드. 가짜 랭킹 아님
+부산 직원교육 주제 추천,admin-topics,informational,/기관특강주제추천,,UNKNOWN,,,,동일
+부산 청년 프로그램 강의주제,admin-topics,informational,/기관특강주제추천,,UNKNOWN,,,,동일
+부산 시민강좌 주제 추천,admin-topics,informational,/기관특강주제추천,,UNKNOWN,,,,동일
+1시간 특강 주제,admin-duration,informational,/강의시간별구성,,UNKNOWN,,,,시간 구성
+2시간 참여형 교육,admin-duration,informational,/강의시간별구성,,UNKNOWN,,,,동일
+4시간 실무 워크숍,admin-duration,informational,/강의시간별구성,,UNKNOWN,,,,동일
+부산 법률 전문가,expert,informational,/부산법률전문가,,UNKNOWN,,,,실무·공공활동. 강의 허브와 분리
+부산법률전문가,expert,informational,/부산법률전문가,,UNKNOWN,,,,표기
+부산 법률전문가,expert,informational,/부산법률전문가,,UNKNOWN,,,,표기
+부산 법률 전문가 추천,expert,commercial,/부산법률전문가,,UNKNOWN,,,,가짜 순위 없음
+부산 법률 전문가 섭외,expert,commercial,/부산법률전문가,/부산법률강사,UNKNOWN,,,,강의 섭외는 /부산법률강사
+부산 법률 전문가 강연,expert,informational,/부산법률전문가,,UNKNOWN,,,,동일
+부산 법률 전문가 출연,expert,informational,/부산법률전문가,,UNKNOWN,,,,언론
+부산 법률 전문가 인터뷰,expert,informational,/부산법률전문가,,UNKNOWN,,,,언론
+부산 법률 전문가 패널,expert,informational,/부산법률전문가,,UNKNOWN,,,,동일
+부산 법률 전문가 자문,expert,informational,/부산법률전문가,,UNKNOWN,,,,자문≠강의
+부산 법률 실무 전문가,expert,informational,/부산법률전문가,,UNKNOWN,,,,동일
+부산 법률 강연 전문가,expert,informational,/부산법률전문가,,UNKNOWN,,,,동일

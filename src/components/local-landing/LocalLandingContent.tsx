@@ -122,7 +122,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         </div>
       </ContentBlock>
 
-      <ContentBlock id="consultation-cases" title="실제 상담 사례">
+      <ContentBlock id="consultation-cases" title="상담이 필요한 대표 상황">
         <div className="space-y-4">
           {page.consultationCases.map((caseItem) => (
             <div key={caseItem.title} className="card-surface bg-beige p-6 md:p-8">

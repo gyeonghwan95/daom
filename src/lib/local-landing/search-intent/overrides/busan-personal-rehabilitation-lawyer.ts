@@ -142,7 +142,7 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/tools/rehab-income-debt-check", label: "소득·채무 점검 도구" },
     { href: "/개인회생비용", label: "개인회생 비용 구조" },
-    { href: "/부산법무사", label: "부산 법무사 종합 허브" },
+    { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
   ],
   relatedGuideLinks: [
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },

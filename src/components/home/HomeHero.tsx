@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { HeroContactBlock } from "@/components/home/HeroContactBlock";
 import { HeroStage } from "@/components/home/HeroStage";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -13,7 +14,6 @@ import { FormIcon } from "@/components/consultation/ConsultationIcons";
 import { homeHero, homeSituationChips } from "@/lib/home-content";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { heroTransition } from "@/lib/motion";
-import { useOptionalQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 
 const stagger = {
   hidden: {},
@@ -33,7 +33,6 @@ export function HomeHero() {
   const { phone } = getContactInfo();
   const channels = getDirectConsultationChannels();
   const reduced = useReducedMotion();
-  const inquiry = useOptionalQuickInquiry();
 
   return (
     <section className="home-hero home-hero--stage">
@@ -88,19 +87,12 @@ export function HomeHero() {
           >
             {homeSituationChips.map((chip) => (
               <li key={chip.label}>
-                <button
-                  type="button"
+                <Link
+                  href={chip.href}
                   className="home-hero__tag home-hero__tag--action"
-                  aria-haspopup="dialog"
-                  onClick={() =>
-                    inquiry?.openInquiry({
-                      source: "inline",
-                      presetSituationIds: [chip.situationId],
-                    })
-                  }
                 >
                   {chip.label}
-                </button>
+                </Link>
               </li>
             ))}
           </motion.ul>

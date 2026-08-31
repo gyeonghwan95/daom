@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26",
+    "updated": "2026-08-31",
   "seoKnownGoodCommit": "e064454fd0aeac6fc60bb6010c364aee37c51f3b",
   "queries": {
     "부산 법무사": {
@@ -56,12 +56,38 @@
       "primary": "/부산상속법무사",
       "protected": true,
       "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인", "/상속"],
-      "note": "broad inheritance hub. Do not create /부산상속전문법무사."
+      "note": "broad inheritance hub. /부산상속전문법무사는 URL 유지·noindex·canonical to hub."
+    },
+    "부산 상속 전문 법무사": {
+      "primary": "/부산상속법무사",
+      "protected": true,
+      "aliasOf": "부산 상속 법무사"
     },
     "부산 상속전문 법무사": {
       "primary": "/부산상속법무사",
       "protected": true,
       "aliasOf": "부산 상속 법무사"
+    },
+    "부산 상속등기 법무사": {
+      "primary": "/부산상속등기",
+      "protected": true,
+      "supporting": ["/부산상속법무사"]
+    },
+    "부산 법인 법무사": {
+      "primary": "/부산법인법무사",
+      "protected": true
+    },
+    "부산 개인회생 법무사": {
+      "primary": "/부산개인회생법무사",
+      "protected": true
+    },
+    "해운대 법무사": {
+      "primary": "/해운대법무사",
+      "protected": true
+    },
+    "센텀 법무사": {
+      "primary": "/센텀법무사",
+      "protected": true
     },
     "부산 법무사 상속": {
       "primary": "/부산상속법무사",

@@ -42,7 +42,7 @@ export function buildBusanLegalMapHubPageData(): PageData {
     sections: [
       {
         title: "지역별 안내",
-        body: "16개 구·군 카드에서 생활권·많이 찾는 업무·관련 페이지로 이동할 수 있습니다.",
+        body: "16개 구·군 카드에서 생활권·이 페이지에서 다루는 업무·관련 페이지로 이동할 수 있습니다.",
         links: districtLinks,
       },
     ],
