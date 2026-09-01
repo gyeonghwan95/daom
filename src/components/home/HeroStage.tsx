@@ -116,7 +116,6 @@ function StageVisual({
 }) {
   const fileRef = useRef<HTMLVideoElement>(null);
   const fillRef = useRef<HTMLVideoElement>(null);
-  const [revealVideo, setRevealVideo] = useState(false);
   const completeRef = useRef(onComplete);
   const progressRef = useRef(onProgress);
   const playingRef = useRef(playing);
@@ -126,10 +125,7 @@ function StageVisual({
   playingRef.current = playing;
 
   useEffect(() => {
-    if (!active || item.kind !== "video") {
-      setRevealVideo(false);
-      return;
-    }
+    if (!active || item.kind !== "video") return;
 
     const node = fileRef.current;
     const fill = fillRef.current;
@@ -156,7 +152,6 @@ function StageVisual({
       completeRef.current?.();
     };
 
-    const onSeeked = () => setRevealVideo(true);
     const onLoaded = () => {
       if (start > 0 && Math.abs(node.currentTime - start) > 0.2) {
         seekBoth();
@@ -165,7 +160,6 @@ function StageVisual({
       if (fill && start > 0 && Math.abs(fill.currentTime - start) > 0.2) {
         fill.currentTime = start;
       }
-      setRevealVideo(true);
       reportProgress();
     };
     const onTimeUpdate = () => {
@@ -183,14 +177,12 @@ function StageVisual({
     };
 
     node.addEventListener("loadedmetadata", onLoaded);
-    node.addEventListener("seeked", onSeeked);
     node.addEventListener("timeupdate", onTimeUpdate);
     node.addEventListener("ended", finish);
     if (node.readyState >= 1) onLoaded();
 
     return () => {
       node.removeEventListener("loadedmetadata", onLoaded);
-      node.removeEventListener("seeked", onSeeked);
       node.removeEventListener("timeupdate", onTimeUpdate);
       node.removeEventListener("ended", finish);
     };
@@ -236,18 +228,11 @@ function StageVisual({
   return (
     <>
       <div className="home-hero-stage__fill" aria-hidden>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={item.poster}
-          alt=""
-          className="home-hero-stage__media home-hero-stage__media--fill"
-        />
         {active ? (
           <video
             ref={fillRef}
             className="home-hero-stage__media home-hero-stage__media--fill home-hero-stage__file-video"
             src={item.src}
-            poster={item.poster}
             muted
             playsInline
             preload="auto"
@@ -261,20 +246,11 @@ function StageVisual({
         ) : null}
       </div>
       <div className="home-hero-stage__fit">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={item.poster}
-          alt=""
-          className={`home-hero-stage__media home-hero-stage__media--fit home-hero-stage__poster${
-            revealVideo ? " is-hidden" : ""
-          }`}
-        />
         {active ? (
           <video
             ref={fileRef}
             className="home-hero-stage__media home-hero-stage__media--fit home-hero-stage__file-video"
             src={item.src}
-            poster={item.poster}
             muted
             playsInline
             preload="auto"
@@ -441,7 +417,10 @@ export function HeroStage() {
         {PLAYLIST.map((item, itemIndex) => (
           <div
             key={item.id}
-            className={`home-hero-stage__slide${itemIndex === index ? " is-active" : ""}`}
+            data-kind={item.kind}
+            className={`home-hero-stage__slide home-hero-stage__slide--${item.kind}${
+              itemIndex === index ? " is-active" : ""
+            }`}
           >
             <StageVisual
               item={item}
