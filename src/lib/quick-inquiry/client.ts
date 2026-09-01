@@ -1,6 +1,7 @@
 import { trackEvent } from "@/lib/admin-ops/beacon";
 import { parseContact } from "@/lib/quick-inquiry/shared";
 import type { InquiryResult } from "@/lib/quick-inquiry/shared";
+import type { AnalyticsEventType } from "@/lib/admin-ops/types";
 
 export type SubmitQuickInquiryInput = {
   message: string;
@@ -28,6 +29,17 @@ function resolveInquiryPath(pageUrl?: string): string {
     /* ignore */
   }
   return window.location.pathname;
+}
+
+function submitEventType(
+  meta?: Record<string, string>,
+): AnalyticsEventType {
+  const kind = meta?.kind || "";
+  if (kind === "lecture") return "lecture_inquiry_submit";
+  if (kind === "collaboration" || kind === "corporate-legal") {
+    return "collaboration_submit";
+  }
+  return "consultation_submit";
 }
 
 export async function submitQuickInquiry(
@@ -66,7 +78,7 @@ export async function submitQuickInquiry(
   if (data.ok) {
     const meta: Record<string, string> = { ...(input.analyticsMeta || {}) };
     void trackEvent({
-      type: "consultation_submit",
+      type: submitEventType(input.analyticsMeta),
       path: resolveInquiryPath(input.pageUrl),
       meta: Object.keys(meta).length ? meta : undefined,
     });

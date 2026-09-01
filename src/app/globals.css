@@ -7550,30 +7550,35 @@ body.quick-inquiry-open {
 }
 .admin-metric-grid {
   display: grid;
-  gap: 0.65rem;
+  gap: 0.55rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 1rem;
 }
-@media (min-width: 900px) {
+@media (min-width: 720px) {
   .admin-metric-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .admin-metric-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 .admin-metric {
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 0.55rem;
-  padding: 0.75rem 0.85rem;
+  padding: 0.55rem 0.7rem;
 }
 .admin-metric__label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #64748b;
   text-transform: none;
 }
 .admin-metric__value {
-  margin-top: 0.25rem;
-  font-size: 1.65rem;
+  margin-top: 0.2rem;
+  font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -7711,6 +7716,7 @@ a.admin-page-identity__path:hover {
 .admin-badge--up { background: #dcfce7; color: #166534; }
 .admin-badge--warn,
 .admin-badge--down { background: #fee2e2; color: #991b1b; }
+.admin-badge--unknown { background: #f1f5f9; color: #475569; }
 .admin-badge--low_data { background: #f8fafc; color: #64748b; }
 .admin-badge--stable { background: #eff6ff; color: #1d4ed8; }
 .admin-funnel {
@@ -8149,6 +8155,48 @@ a.admin-page-identity__path:hover {
   list-style: none;
   font-size: 0.8125rem;
   line-height: 1.6;
+}
+.admin-health-grid {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 720px) {
+  .admin-health-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .admin-health-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+.admin-health-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.7rem;
+  min-width: 0;
+}
+.admin-health-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+.admin-health-card__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+}
+.admin-health-card__detail {
+  margin-top: 0.28rem;
+  font-size: 0.75rem;
+  color: #334155;
+  line-height: 1.35;
 }
 .admin-health-list li,
 .admin-notice-list li {

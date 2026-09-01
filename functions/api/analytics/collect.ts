@@ -9,7 +9,7 @@ import {
   verifySessionToken,
 } from "../../_lib/admin-ops/crypto";
 import { sanitizeOutboundHref } from "../../_lib/admin-ops/outbound-href";
-import { hasKv, recordAnalyticsEvent } from "../../_lib/admin-ops/store";
+import { hasKv, recordAnalyticsEvent, bumpIngest } from "../../_lib/admin-ops/store";
 
 const hits = new Map();
 const recentPv = new Map();
@@ -75,6 +75,7 @@ export async function onRequestPost(context) {
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     "unknown";
   if (!rateOk(ip)) {
+    await bumpIngest(env, "rate_limited");
     return json({ ok: false, code: "rate_limited" }, 429);
   }
 
@@ -84,21 +85,25 @@ export async function onRequestPost(context) {
 
   const ua = request.headers.get("user-agent") || "";
   if (!ua.trim()) {
+    await bumpIngest(env, "empty_ua");
     return json({ ok: true, skipped: true, reason: "empty_ua" });
   }
 
   const body = await readJsonBody(request);
   if (!body || typeof body !== "object") {
+    await bumpIngest(env, "bad_request");
     return json({ ok: false, code: "bad_request" }, 400);
   }
 
   const type = String(body?.type || "");
   if (!ALLOWED.has(type)) {
+    await bumpIngest(env, "invalid_type");
     return json({ ok: false, code: "invalid_type" }, 400);
   }
 
   const path = normalizePath(String(body?.path || "/"));
   if (isExcludedAnalyticsPath(path)) {
+    await bumpIngest(env, "admin_path");
     return json({ ok: true, skipped: true, reason: "admin_path" });
   }
 
@@ -106,6 +111,7 @@ export async function onRequestPost(context) {
   if (secrets.secret) {
     const token = parseCookie(request.headers.get("Cookie"), ADMIN_OPS_COOKIE);
     if (token && (await verifySessionToken(token, secrets.secret))) {
+      await bumpIngest(env, "admin_session");
       return json({ ok: true, skipped: true, reason: "admin_session" });
     }
   }
@@ -115,12 +121,14 @@ export async function onRequestPost(context) {
     const dupKey = `${ip}|${path}`;
     const prev = recentPv.get(dupKey) || 0;
     if (now - prev < 8_000) {
+      await bumpIngest(env, "dedupe");
       return json({ ok: true, skipped: true, reason: "dedupe" });
     }
     recentPv.set(dupKey, now);
   }
 
   if (!hasKv(env)) {
+    await bumpIngest(env, "no_kv");
     return json({ ok: true, stored: false });
   }
 
@@ -155,6 +163,10 @@ export async function onRequestPost(context) {
     meta: sanitizeEventMeta(body?.meta, requestHost),
     sid: sanitizeSid(body?.meta?.sid),
   });
+
+  if (!result.ok) {
+    await bumpIngest(env, "store_error");
+  }
 
   return json({ ok: true, stored: result.ok });
 }

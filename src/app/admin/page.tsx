@@ -155,7 +155,16 @@ export default function AdminDashboardPage() {
               : `성공 ${k.emailSuccessToday ?? "—"}건`
           }
         />
-        <MetricCard label="활성 공지" value={k.activeNotices} />
+        <MetricCard
+          label="마지막 수집"
+          value={data.lastEventAgeMinutes ?? null}
+          suffix={data.lastEventAgeMinutes != null ? "분 전" : undefined}
+          note={
+            data.lastEventAt
+              ? "이벤트 수신 간격"
+              : "아직 공개 트래픽 없음"
+          }
+        />
         <MetricCard label="확인할 경고" value={k.alertCount} />
       </div>
 

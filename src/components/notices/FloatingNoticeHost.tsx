@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import type { PublicFloatingNotice } from "@/lib/admin-ops/types";
 import { trackEvent } from "@/lib/admin-ops/beacon";
 import { NoticeModal } from "@/components/notices/NoticeModal";
@@ -17,15 +18,14 @@ import {
  * Does not block FloatingCTA / MobileBottomCTA (modal overlays above).
  */
 export function FloatingNoticeHost() {
+  const pathname = usePathname() || "/";
   const [notice, setNotice] = useState<PublicFloatingNotice | null>(null);
   const [open, setOpen] = useState(false);
-  const [path] = useState(() =>
-    typeof window !== "undefined" ? window.location.pathname : "/",
-  );
+  const impressionIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`/api/notices/active?path=${encodeURIComponent(path)}`, {
+    fetch(`/api/notices/active?path=${encodeURIComponent(pathname)}`, {
       credentials: "same-origin",
     })
       .then(async (res) => {
@@ -36,17 +36,24 @@ export function FloatingNoticeHost() {
         };
         if (cancelled) return;
         const candidate = (data.notices || [])[0];
-        if (!candidate) return;
+        if (!candidate) {
+          setNotice(null);
+          setOpen(false);
+          return;
+        }
         clearLegacyDismiss(candidate.id);
         if (isDismissedForToday(candidate.id)) return;
         if (isDismissedThisSession(candidate.id)) return;
         setNotice(candidate);
         setOpen(true);
-        void trackEvent({
-          type: "notice_impression",
-          path,
-          meta: { noticeId: candidate.id },
-        });
+        if (impressionIdRef.current !== candidate.id) {
+          impressionIdRef.current = candidate.id;
+          void trackEvent({
+            type: "notice_impression",
+            path: pathname,
+            meta: { noticeId: candidate.id },
+          });
+        }
       })
       .catch(() => {
         /* soft-fail — never block public site */
@@ -54,7 +61,7 @@ export function FloatingNoticeHost() {
     return () => {
       cancelled = true;
     };
-  }, [path]);
+  }, [pathname]);
 
   if (!notice) return null;
 
@@ -66,7 +73,7 @@ export function FloatingNoticeHost() {
         dismissForSession(notice.id);
         void trackEvent({
           type: "notice_dismiss",
-          path,
+          path: pathname,
           meta: { noticeId: notice.id, mode: "session" },
         });
         setOpen(false);
@@ -75,7 +82,7 @@ export function FloatingNoticeHost() {
         dismissForToday(notice.id);
         void trackEvent({
           type: "notice_dismiss",
-          path,
+          path: pathname,
           meta: { noticeId: notice.id, mode: "today" },
         });
         setOpen(false);
@@ -83,7 +90,7 @@ export function FloatingNoticeHost() {
       onCtaClick={() =>
         void trackEvent({
           type: "notice_click",
-          path,
+          path: pathname,
           meta: { noticeId: notice.id, title: notice.title.slice(0, 80) },
         })
       }

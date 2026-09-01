@@ -248,7 +248,31 @@ async function handleAdminRequest(context) {
 
   if (key === "monitoring" && method === "GET") {
     const dash = await buildDashboard(env);
-    return json({ ok: true, data: { health: dash.health, alerts: dash.alerts } });
+    return json({
+      ok: true,
+      data: {
+        health: dash.health,
+        alerts: dash.alerts,
+        generatedAt: dash.generatedAt,
+        lastEventAt: dash.lastEventAt,
+        lastEventAgeMinutes: dash.lastEventAgeMinutes,
+        ingest: dash.ingestToday,
+        notice: dash.noticeToday,
+        notifyChannels: dash.notifyChannels,
+        kpis: {
+          visitsToday: dash.kpis.visitsToday,
+          sessionsToday: dash.kpis.sessionsToday,
+          ctaToday: dash.kpis.ctaToday,
+          consultSubmitToday: dash.kpis.consultSubmitToday,
+          searchUsedToday: dash.kpis.searchUsedToday,
+          toolUsedToday: dash.kpis.toolUsedToday,
+          diagnosisCompleteToday: dash.kpis.diagnosisCompleteToday,
+          emailSuccessToday: dash.kpis.emailSuccessToday,
+          emailFailedToday: dash.kpis.emailFailedToday,
+          naverPlaceToday: dash.kpis.naverPlaceToday,
+        },
+      },
+    });
   }
 
   if (key === "notices" && method === "GET") {

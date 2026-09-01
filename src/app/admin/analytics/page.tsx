@@ -82,6 +82,26 @@ export default function AdminAnalyticsPage() {
           value={k?.naverReservationToday ?? null}
         />
         <MetricCard label="7일 SmartPlace" value={k?.naverPlace7d ?? null} />
+        <MetricCard
+          label="오늘 검색"
+          value={k?.searchUsedToday ?? null}
+        />
+        <MetricCard
+          label="오늘 계산기"
+          value={k?.toolUsedToday ?? null}
+        />
+        <MetricCard
+          label="오늘 자가진단"
+          value={k?.diagnosisCompleteToday ?? null}
+        />
+        <MetricCard
+          label="오늘 CTA"
+          value={k?.ctaToday ?? null}
+        />
+        <MetricCard
+          label="오늘 문의"
+          value={k?.consultSubmitToday ?? null}
+        />
       </div>
 
       {dash ? (

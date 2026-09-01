@@ -233,7 +233,7 @@ export default function AdminConversionsPage() {
                 <th>전화</th>
                 <th>카카오</th>
                 <th>문의</th>
-                <th>네이버</th>
+                <th>플레이스</th>
               </tr>
             </thead>
             <tbody>

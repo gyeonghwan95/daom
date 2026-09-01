@@ -22,6 +22,59 @@ const KEYS = {
   recentActivity: "analytics:recent",
 };
 
+function ingestKey(date) {
+  return `analytics:ingest:${date}`;
+}
+
+function emptyIngest(date) {
+  return {
+    date,
+    skippedAdminSession: 0,
+    skippedDedupe: 0,
+    skippedAdminPath: 0,
+    skippedEmptyUa: 0,
+    skippedNoKv: 0,
+    badRequest: 0,
+    invalidType: 0,
+    rateLimited: 0,
+    storeError: 0,
+    lastAt: null,
+    lastReason: null,
+  };
+}
+
+export async function bumpIngest(env, reason) {
+  if (!hasKv(env)) return;
+  const fieldByReason = {
+    admin_session: "skippedAdminSession",
+    dedupe: "skippedDedupe",
+    admin_path: "skippedAdminPath",
+    empty_ua: "skippedEmptyUa",
+    no_kv: "skippedNoKv",
+    bad_request: "badRequest",
+    invalid_type: "invalidType",
+    rate_limited: "rateLimited",
+    store_error: "storeError",
+  };
+  const field = fieldByReason[reason];
+  if (!field) return;
+  try {
+    const date = formatKstDate();
+    const row = await getJson(env.ADMIN_KV, ingestKey(date), emptyIngest(date));
+    row[field] = (row[field] || 0) + 1;
+    row.lastAt = new Date().toISOString();
+    row.lastReason = reason;
+    await putJson(env.ADMIN_KV, ingestKey(date), row);
+  } catch {
+    /* never block collect */
+  }
+}
+
+export async function getIngest(env, date) {
+  if (!hasKv(env)) return emptyIngest(date);
+  return getJson(env.ADMIN_KV, ingestKey(date), emptyIngest(date));
+}
+
 /** KV read-modify-write 충돌을 줄이기 위한 일별 샤드 수. 레거시 키도 읽기 병합. */
 const ANALYTICS_SHARDS = 8;
 
@@ -61,6 +114,10 @@ function emptyDay(date) {
     naverPlacePlacements: {},
     notices: {},
     destinations: {},
+    searchUsed: 0,
+    toolUsed: 0,
+    diagnosisComplete: 0,
+    eventsStored: 0,
     lastEventAt: null,
   };
 }
@@ -207,6 +264,13 @@ function mergeDay(target, source) {
     if (!target.paths[path]) target.paths[path] = emptyPath();
     mergePathRow(target.paths[path], stats);
   }
+  target.searchUsed = addNum(target.searchUsed, source.searchUsed);
+  target.toolUsed = addNum(target.toolUsed, source.toolUsed);
+  target.diagnosisComplete = addNum(
+    target.diagnosisComplete,
+    source.diagnosisComplete,
+  );
+  target.eventsStored = addNum(target.eventsStored, source.eventsStored);
   if (source.lastEventAt) {
     if (!target.lastEventAt || source.lastEventAt > target.lastEventAt) {
       target.lastEventAt = source.lastEventAt;
@@ -543,6 +607,7 @@ export async function recordAnalyticsEvent(env, event) {
   if (!day.paths[path]) day.paths[path] = emptyPath();
   const row = day.paths[path];
   day.lastEventAt = now.toISOString();
+  day.eventsStored = (day.eventsStored || 0) + 1;
 
   switch (event.type) {
     case "page_view":
@@ -621,6 +686,15 @@ export async function recordAnalyticsEvent(env, event) {
       if (event.type === "notice_dismiss") day.notices[noticeId].dismiss += 1;
       break;
     }
+    case "search_used":
+      day.searchUsed = (day.searchUsed || 0) + 1;
+      break;
+    case "tool_used":
+      day.toolUsed = (day.toolUsed || 0) + 1;
+      break;
+    case "diagnosis_complete":
+      day.diagnosisComplete = (day.diagnosisComplete || 0) + 1;
+      break;
     default:
       break;
   }
@@ -659,6 +733,18 @@ export async function listAudit(env, limit = 30) {
   if (!hasKv(env)) return [];
   const logs = await getJson(env.ADMIN_KV, KEYS.audit, []);
   return logs.slice(0, limit);
+}
+
+function sumNoticeStats(day) {
+  let impression = 0;
+  let click = 0;
+  let dismiss = 0;
+  for (const row of Object.values(day?.notices || {})) {
+    impression += row?.impression || 0;
+    click += row?.click || 0;
+    dismiss += row?.dismiss || 0;
+  }
+  return { impression, click, dismiss };
 }
 
 export async function buildDashboard(env) {
@@ -700,6 +786,22 @@ export async function buildDashboard(env) {
   let funnelToday = null;
   let lastEventAt = null;
   let visitsSameHourAvg7d = null;
+  let searchUsedToday = null;
+  let toolUsedToday = null;
+  let diagnosisCompleteToday = null;
+  let noticeToday = null;
+  let ingestToday = null;
+  let lastEventAgeMinutes = null;
+  let notifyChannels = {
+    telegram: Boolean(
+      env.TELEGRAM_BOT_TOKEN?.trim() && env.TELEGRAM_CHAT_ID?.trim(),
+    ),
+    email: Boolean(
+      env.RESEND_API_KEY?.trim() &&
+        String(env.INQUIRY_FROM_EMAIL || "").includes("@") &&
+        env.INQUIRY_TO_EMAIL?.trim(),
+    ),
+  };
 
   if (storageConfigured) {
     const dayToday = await getDaily(env, today);
@@ -715,6 +817,21 @@ export async function buildDashboard(env) {
     naverReservationToday = dayToday.naverPlaceReservation || 0;
     lastEventAt = dayToday.lastEventAt || null;
     devicesToday = dayToday.devices || { mobile: 0, desktop: 0, unknown: 0 };
+    searchUsedToday = dayToday.searchUsed || 0;
+    toolUsedToday = dayToday.toolUsed || 0;
+    diagnosisCompleteToday = dayToday.diagnosisComplete || 0;
+    noticeToday = sumNoticeStats(dayToday);
+    if (lastEventAt) {
+      lastEventAgeMinutes = Math.max(
+        0,
+        Math.round((Date.now() - Date.parse(lastEventAt)) / 60000),
+      );
+    }
+    const ingestRow = await getIngest(env, today);
+    ingestToday = {
+      ...ingestRow,
+      stored: dayToday.eventsStored || 0,
+    };
 
     sourcesToday = Object.entries(dayToday.sources || {})
       .map(([source, count]) => ({ source, count }))
@@ -917,40 +1034,82 @@ export async function buildDashboard(env) {
       });
     }
   }
+  if (ingestToday?.storeError > 0) {
+    alerts.push({
+      id: "ingest-error",
+      level: "warning",
+      title: `수집 저장 실패 ${ingestToday.storeError}건`,
+      detail: "오늘 KV 기록 중 오류가 있었습니다. 바인딩·용량을 확인하세요.",
+      href: "/admin/monitoring",
+    });
+  }
+  if (!notifyChannels.telegram && !notifyChannels.email) {
+    alerts.push({
+      id: "notify-channel",
+      level: "warning",
+      title: "문의 전달 채널 미설정",
+      detail: "Telegram 또는 Resend 환경변수가 없어 문의가 전달되지 않습니다.",
+      href: "/admin/settings",
+    });
+  }
+
+  const analyticsStatus = !storageConfigured
+    ? "unknown"
+    : lastEventAgeMinutes != null && lastEventAgeMinutes > 6 * 60
+      ? "warn"
+      : "ok";
+  const emailStatus =
+    emailFailedToday > 0 ? "warn" : storageConfigured ? "ok" : "unknown";
+  const notifyStatus =
+    notifyChannels.telegram || notifyChannels.email ? "ok" : "warn";
 
   const health = [
     {
       id: "public-site",
-      label: "Public Site",
+      label: "공개 사이트",
       status: "ok",
       detail: "정적 배포(Pages)",
       checkedAt: formatKstDateTime(),
     },
     {
       id: "storage",
-      label: "Admin Storage",
+      label: "저장소",
       status: storageConfigured ? "ok" : "warn",
       detail: storageConfigured ? "ADMIN_KV 연결됨" : "ADMIN_KV 없음",
       checkedAt: formatKstDateTime(),
     },
     {
-      id: "email",
-      label: "Email",
-      status: emailFailedToday > 0 ? "warn" : "unknown",
+      id: "analytics",
+      label: "수집",
+      status: analyticsStatus,
       detail: storageConfigured
-        ? `오늘 성공 ${emailSuccessToday ?? 0} / 실패 ${emailFailedToday ?? 0}`
-        : "로그 저장소 없음 — Resend 대시보드 확인",
+        ? lastEventAt
+          ? `마지막 ${formatKstDateTime(new Date(lastEventAt))}`
+          : "오늘 이벤트 없음"
+        : "수집 대기(KV 필요)",
       checkedAt: formatKstDateTime(),
     },
     {
-      id: "analytics",
-      label: "Analytics",
-      status: storageConfigured ? "ok" : "unknown",
+      id: "email",
+      label: "문의 전달",
+      status: emailStatus,
       detail: storageConfigured
-        ? lastEventAt
-          ? `마지막 이벤트 ${formatKstDateTime(new Date(lastEventAt))}`
-          : "이벤트 집계 활성"
-        : "수집 대기(KV 필요)",
+        ? emailSuccessToday || emailFailedToday
+          ? `오늘 성공 ${emailSuccessToday ?? 0} / 실패 ${emailFailedToday ?? 0}`
+          : "오늘 발송 없음"
+        : "로그 저장소 없음",
+      checkedAt: formatKstDateTime(),
+    },
+    {
+      id: "notify",
+      label: "전달 채널",
+      status: notifyStatus,
+      detail: [
+        notifyChannels.telegram ? "Telegram" : null,
+        notifyChannels.email ? "Resend" : null,
+      ]
+        .filter(Boolean)
+        .join(" · ") || "미설정",
       checkedAt: formatKstDateTime(),
     },
   ];
@@ -988,6 +1147,9 @@ export async function buildDashboard(env) {
       naverPlace7d,
       naverReservationToday,
       visitsSameHourVs7DayAvgPct: visitsSameHourAvg7d,
+      searchUsedToday,
+      toolUsedToday,
+      diagnosisCompleteToday,
     },
     summaryLine: summaryParts.join(" · "),
     alerts,
@@ -1008,6 +1170,10 @@ export async function buildDashboard(env) {
     recentActivity,
     funnelToday,
     lastEventAt,
+    lastEventAgeMinutes,
+    ingestToday,
+    noticeToday,
+    notifyChannels,
   };
 }
 

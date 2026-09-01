@@ -167,6 +167,9 @@ export type DashboardPayload = {
     naverPlace7d?: number | null;
     naverReservationToday?: number | null;
     visitsSameHourVs7DayAvgPct?: number | null;
+    searchUsedToday?: number | null;
+    toolUsedToday?: number | null;
+    diagnosisCompleteToday?: number | null;
   };
   summaryLine: string;
   alerts: Array<{
@@ -252,4 +255,25 @@ export type DashboardPayload = {
     mailSuccess: number | null;
   } | null;
   lastEventAt?: string | null;
+  lastEventAgeMinutes?: number | null;
+  ingestToday?: {
+    stored: number;
+    skippedAdminSession: number;
+    skippedDedupe: number;
+    skippedAdminPath: number;
+    skippedEmptyUa: number;
+    skippedNoKv: number;
+    badRequest: number;
+    invalidType: number;
+    rateLimited: number;
+    storeError: number;
+    lastAt?: string | null;
+    lastReason?: string | null;
+  } | null;
+  noticeToday?: {
+    impression: number;
+    click: number;
+    dismiss: number;
+  } | null;
+  notifyChannels?: { telegram: boolean; email: boolean };
 };
