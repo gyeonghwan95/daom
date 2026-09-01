@@ -1,0 +1,11 @@
+QUERY,PRIMARY URL,COMPETING URLS,TITLE overlap,H1 overlap,Intro overlap,Anchor overlap,Intent overlap,ROLE,ACTION
+부산 법무사,/,/부산법무사|/해운대법무사|/센텀법무사,HOME only exact title,HOME H1 부산 법무사 안윤정,supporting은 선택 기준,HOME 주요업무 exact 유지 하위 contextual,HOME=broad entity,KEEP_HOME
+부산 법무사 상담,/부산법무사상담,/상담|/부산법률상담|/contact,상담 exact는 대표만,H1 상담 행동형,채널 안내 중복 정리,HOME·추천에서 상담 채널·준비 안내,상담=행동 페이지,DEDUP_SECTIONS
+부산 법무사 추천,/부산법무사추천,/부산법무사비교|/부산법무사,/추천 검색 문구 완화,H1 선택 기준,비교 기준 유사,HOME 선택 기준 확인,추천=선택 기준,REWRITE_JARGON
+부산 등기 법무사,/부산등기법무사,/부산등기법무사추천|/부동산등기|/부산부동산등기,등기 법무사 exact는 hub,허브 H1 어떤 등기,부동산·상속·법인 분기,등기 종류별 안내,허브=종류 판단,KEEP_STANDALONE
+부산 상속 법무사,/부산상속법무사,/상속|/부산상속등기|/부산상속포기|/부산한정승인,상속 법무사 exact는 hub,허브=선택 H1 vs 절차 H1,절차 선택 vs 명의이전 vs 포기 vs 한정,하위→허브 contextual,broad vs specific,PROTECT_SPLIT
+부산 상속전문 법무사,/부산상속법무사,(none new),전문 URL 없음,전문자격 문구 없음,사용자 중심 포괄,생성 금지,choice not certification,NO_NEW_URL
+부산 상속포기 법무사,/부산상속포기,/상속포기비용|/부산상속법무사,포기 exact는 절차페이지,기한·후순위,일반 상속등기 설명으로 늘리지 않음,상속 절차 선택,포기=3개월·후순위,KEEP
+부산 한정승인 법무사,/부산한정승인,/한정승인비용|/부산상속포기,한정 exact는 절차페이지,채무 불확실,포기와 비교 유지,상속 절차 선택,한정=재산목록·후속,KEEP
+부산 부동산 법무사,/부산부동산등기,/부산부동산등기법무사|/부산부동산등기전문|/부동산등기|/부산소유권이전등기,두 페이지 title 유사,허브 H1 실무 vs spoke 연결,spoke가 허브로 위임,부동산등기 실무,허브=broad commercial,PRIMARY_EXISTING_NO_NEW
+부산 부동산등기 법무사,/부산부동산등기,/부산부동산등기법무사,title 완전 유사,spoke H1이 허브로 위임,검색 문구 완화,spoke 유지·키워드 champion은 허브,same intent,SUPPORT_ONLY

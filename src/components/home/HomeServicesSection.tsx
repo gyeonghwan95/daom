@@ -19,9 +19,13 @@ const services = homeFeaturedServiceSlugs
 
 type HomeServicesSectionProps = {
   reviews: NaverPlaceReview[];
+  reviewCount?: number;
 };
 
-export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
+export function HomeServicesSection({
+  reviews,
+  reviewCount,
+}: HomeServicesSectionProps) {
   return (
     <section className="relative w-full border-t border-beige-dark bg-white py-14 md:py-28">
       <Container>
@@ -72,7 +76,7 @@ export function HomeServicesSection({ reviews }: HomeServicesSectionProps) {
           </div>
 
           <div className="lg:self-start">
-            <HomeReviewsMarquee reviews={reviews} />
+            <HomeReviewsMarquee reviews={reviews} reviewCount={reviewCount} />
           </div>
         </div>
       </Container>

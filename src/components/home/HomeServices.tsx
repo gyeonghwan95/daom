@@ -1,8 +1,17 @@
 import { HomeServicesSection } from "@/components/home/HomeServicesSection";
-import { getSortedNaverPlaceReviews } from "@/lib/naver-place-reviews";
+import {
+  getNaverPlaceReviewsFeed,
+  getSortedNaverPlaceReviews,
+} from "@/lib/naver-place-reviews";
 
 export function HomeServices() {
   const reviews = getSortedNaverPlaceReviews();
+  const { stats } = getNaverPlaceReviewsFeed();
 
-  return <HomeServicesSection reviews={reviews} />;
+  return (
+    <HomeServicesSection
+      reviews={reviews}
+      reviewCount={stats.totalCount}
+    />
+  );
 }

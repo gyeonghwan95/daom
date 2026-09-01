@@ -9,7 +9,7 @@ export const homeHero = {
   serviceTags: ["상속등기", "부동산등기", "법인등기", "개인회생·파산"] as const,
   locationHint: "부산광역시 해운대구 센텀동로 200 · 재송역·센텀역 도보 5분",
   mobileCta: "지금 전화하기",
-  mobileCtaNote: "카카오톡·네이버 톡톡으로도 바로 남기실 됩니다",
+  mobileCtaNote: "카카오톡·네이버 톡톡으로도 바로 남기실 수 있습니다",
   ctaPrimary: "1분만에 문의하기",
   contactTitle: "부담 없이 연락해 주세요",
   contactSub: "전화 · 카카오톡 · 네이버 톡톡 — 편한 방법 하나만 고르시면 됩니다.",

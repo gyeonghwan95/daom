@@ -19,6 +19,7 @@ import {
   eeatPressExtraThumbs,
   type EeatThumbImage,
 } from "@/lib/lawyer-eeat-images";
+import { homeReviewedOn } from "@/lib/home-content";
 import { EeatFactThumb } from "@/components/profile/EeatFactThumb";
 
 type EeatFact = {
@@ -284,9 +285,14 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
               {compact
-                ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 수상·언론·강의 등 확인 가능한 기록은 전체 프로필에서 이어집니다.`
+                ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 수상·자격·공공 위촉 등 확인 가능한 신호는 아래에, 전체 이력은 프로필에서 이어집니다.`
                 : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래는 실무경력·자격·수상·위원 위촉·강의·언론 활동을 정리한 공식 프로필이며, 일자별 위원회·강의 실적 표는 이어서 확인하실 수 있습니다.`}
             </p>
+            {compact ? (
+              <p className="mt-2 text-xs font-medium text-navy/55">
+                프로필·안내 최종 확인: {homeReviewedOn}
+              </p>
+            ) : null}
           </div>
           {compact ? (
             <Link href="/about" className="btn-secondary shrink-0">
@@ -298,6 +304,25 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
         <div className={`space-y-8 ${compact ? "mt-10" : "mt-8"}`}>
           {compact ? (
             <>
+              <EeatSection
+                id="credentials"
+                title="자격사항"
+                moreHref="/about#credentials"
+                showMore
+              >
+                <EeatProfileFactList
+                  stacked={false}
+                  items={sliceItems(getLawyerQualifications(), compact, 2).map(
+                    (item) => ({
+                      term: item.name,
+                      meta: [item.year, item.category]
+                        .filter(Boolean)
+                        .join(" · "),
+                      description: item.detail ?? item.name,
+                    }),
+                  )}
+                />
+              </EeatSection>
               <EeatSection
                 id="awards"
                 title="확인 가능한 신뢰 신호"
@@ -312,6 +337,26 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                     description: item.detail ?? "",
                     image: eeatAwardThumbs[item.name],
                   }))}
+                />
+              </EeatSection>
+              <EeatSection
+                id="appointments"
+                title="위원 위촉"
+                moreHref="/about#appointments"
+                showMore
+              >
+                <EeatProfileFactList
+                  stacked={false}
+                  items={sliceItems(getLawyerAppointments(), compact, 2).map(
+                    (item) => ({
+                      term: item.title,
+                      meta: [item.organization, item.period]
+                        .filter(Boolean)
+                        .join(" · "),
+                      description: item.summary,
+                      image: eeatAppointmentThumbs[item.title],
+                    }),
+                  )}
                 />
               </EeatSection>
               <EeatSection id="practice-areas" title="주요 업무">

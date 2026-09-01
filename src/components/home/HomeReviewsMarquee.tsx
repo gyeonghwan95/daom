@@ -8,9 +8,19 @@ import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
 
 type HomeReviewsMarqueeProps = {
   reviews: NaverPlaceReview[];
+  /** 네이버 플레이스 방문자 후기 건수(평점 스키마 없이 건수만 표시) */
+  reviewCount?: number;
 };
 
-export function HomeReviewsMarquee({ reviews }: HomeReviewsMarqueeProps) {
+export function HomeReviewsMarquee({
+  reviews,
+  reviewCount,
+}: HomeReviewsMarqueeProps) {
+  const countLabel =
+    typeof reviewCount === "number" && reviewCount > 0
+      ? `방문자 후기 ${reviewCount.toLocaleString("ko-KR")}건`
+      : null;
+
   if (reviews.length === 0) {
     return (
       <div className="flex h-[14rem] flex-col justify-center rounded-2xl border border-dashed border-beige-dark bg-cream/60 px-5 py-6 text-center md:h-[15.5rem]">
@@ -45,6 +55,9 @@ export function HomeReviewsMarquee({ reviews }: HomeReviewsMarqueeProps) {
           <h3 className="mt-0.5 text-base font-bold text-navy md:text-lg">
             고객 후기
           </h3>
+          {countLabel ? (
+            <p className="mt-0.5 text-xs font-medium text-navy/55">{countLabel}</p>
+          ) : null}
         </div>
         <div className="flex shrink-0 flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-3">
           <NaverSmartPlaceCta

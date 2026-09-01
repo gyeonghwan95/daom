@@ -161,7 +161,7 @@ export function Header() {
                 type="button"
                 className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-beige-dark bg-beige text-navy lg:hidden"
                 aria-expanded={menuOpen}
-                aria-controls="mobile-menu"
+                aria-controls={menuOpen ? "mobile-menu" : undefined}
                 aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
                 onClick={openMenu}
               >

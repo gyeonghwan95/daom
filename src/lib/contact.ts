@@ -6,7 +6,7 @@ import {
 
 export const defaultContact = {
   phone: "070-4172-8056",
-  kakao: "http://pf.kakao.com/_Bvhxnn/chat",
+  kakao: "https://pf.kakao.com/_Bvhxnn/chat",
   naverTalk: "https://talk.naver.com/ct/w661kd4",
   naverBlog: "https://blog.naver.com/law-yoon-91",
   /** @deprecated Use getNaverReservationUrl() → SmartPlace SSOT */

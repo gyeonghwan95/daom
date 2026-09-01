@@ -111,7 +111,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
         href={item.href}
         aria-current={active ? "page" : undefined}
         aria-expanded={open}
-        aria-controls={panelId}
+        aria-controls={open ? panelId : undefined}
         aria-haspopup="true"
         className={desktopLinkClass(active || open)}
         onFocus={openMenu}

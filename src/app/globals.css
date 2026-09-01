@@ -2310,7 +2310,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     font-size: 0.84rem;
     font-weight: 400;
     line-height: 1.5;
@@ -2345,12 +2345,12 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .home-hero__proof {
-    display: none;
-    margin: 0.95rem 0 0;
+    display: flex;
+    margin: 0.7rem 0 0;
     padding: 0;
     list-style: none;
     flex-wrap: wrap;
-    gap: 0.4rem 1rem;
+    gap: 0.35rem 0.85rem;
   }
 
   .home-hero__proof li {
@@ -2917,12 +2917,17 @@ body.mobile-menu-open .mobile-bottom-cta {
     padding-bottom: 0;
   }
 
+  /*
+   * 헤더(z-40)·데스크톱 드롭다운보다 아래에 둔다.
+   * 드롭다운이 헤더 스택 컨텍스트 안에 있으므로, 이 값이 헤더보다 높으면
+   * 「아래로 더 보기」가 메뉴를 가린다.
+   */
   .home-slide-nav {
     position: fixed;
     left: 50%;
     right: auto;
     bottom: 1.75rem;
-    z-index: 55;
+    z-index: 30;
     transform: translateX(-50%);
     display: flex;
     align-items: center;

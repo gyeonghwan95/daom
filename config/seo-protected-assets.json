@@ -1,8 +1,26 @@
 {
   "version": 2,
-  "updated": "2026-08-13",
-  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex/URL 자동 변경 금지. ranking-observations.json의 url이 null인 query는 추측으로 확정하지 않고 candidate만 보호. FULL = known ranking signal + champion. 2026-08-13 Recovery freeze: BUSAN_GENERAL_CHAMPION=/부산법무사, BUSAN_CORPORATE_CHAMPION=/부산법인법무사.",
+  "updated": "2026-09-01",
+  "notes": "검색성과가 확인되었거나 가능성이 높은 URL. title/H1/canonical/noindex/URL 자동 변경 금지. ranking-observations.json의 url이 null인 query는 추측으로 확정하지 않고 candidate만 보호. FULL = known ranking signal + champion. 2026-09-01 ownership sync: 「부산 법무사」 PRIMARY=/ (HOME). /부산법무사=SELECTION_GUIDE. BUSAN_CORPORATE_CHAMPION=/부산법인법무사.",
   "pages": [
+    {
+      "url": "/",
+      "reason": "primary-query-owner",
+      "protectionLevel": "FULL",
+      "protection": "SEO_PROTECTED",
+      "role": "BUSAN_GENERAL_CHAMPION",
+      "protect": {
+        "url": true,
+        "title": true,
+        "h1": true,
+        "canonical": true,
+        "description": true,
+        "coreContent": true,
+        "og": true
+      },
+      "knownSuccessfulQueries": ["부산 법무사"],
+      "modificationRisk": "HIGH"
+    },
     {
       "url": "/부산상속법무사",
       "reason": "known-ranking",
@@ -293,14 +311,24 @@
       "modificationRisk": "HIGH"
     },
     {
-      "path": "/부산법무사",
+      "path": "/",
       "role": "BUSAN_GENERAL_CHAMPION",
       "protectedTitle": true,
       "protectedH1": true,
       "protectedUrl": true,
       "protectedCanonical": true,
-      "knownSuccessfulQueries": ["부산 법무사", "부산 법무사 추천"],
+      "knownSuccessfulQueries": ["부산 법무사"],
       "modificationRisk": "HIGH"
+    },
+    {
+      "path": "/부산법무사",
+      "role": "BUSAN_SELECTION_GUIDE",
+      "protectedTitle": true,
+      "protectedH1": true,
+      "protectedUrl": true,
+      "protectedCanonical": true,
+      "knownSuccessfulQueries": ["부산에서 법무사 찾을 때", "부산 법무사 선택 기준"],
+      "modificationRisk": "MEDIUM"
     },
     {
       "path": "/부산법인법무사",
@@ -383,14 +411,14 @@
     {
       "query": "부산 법무사",
       "observedPosition": "높은 위치 가능",
-      "confirmedUrl": null,
-      "candidateUrls": ["/부산법무사"]
+      "confirmedUrl": "/",
+      "candidateUrls": ["/", "/부산법무사"]
     },
     {
       "query": "부산 법무사 추천",
       "observedPosition": "사용자 진술: 과거 최상위권",
-      "confirmedUrl": null,
-      "candidateUrls": ["/부산법무사", "/부산법무사추천"]
+      "confirmedUrl": "/부산법무사추천",
+      "candidateUrls": ["/부산법무사추천", "/부산법무사"]
     },
     {
       "query": "부산 법인 법무사",

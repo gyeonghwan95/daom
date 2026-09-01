@@ -9,6 +9,8 @@ type SiteSearchInputProps = {
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   inputRef?: React.RefObject<HTMLInputElement | null>;
   listboxId?: string;
+  /** 결과 listbox가 DOM에 있을 때만 aria-controls 연결 */
+  listboxActive?: boolean;
   activeDescendant?: string;
   placeholder?: string;
 };
@@ -20,6 +22,7 @@ export function SiteSearchInput({
   onKeyDown,
   inputRef,
   listboxId,
+  listboxActive = false,
   activeDescendant,
   placeholder = "업무·지역·강의 검색",
 }: SiteSearchInputProps) {
@@ -37,7 +40,7 @@ export function SiteSearchInput({
         spellCheck={false}
         aria-label="사이트 전체 검색"
         aria-autocomplete="list"
-        aria-controls={listboxId}
+        aria-controls={listboxActive && listboxId ? listboxId : undefined}
         aria-activedescendant={activeDescendant || undefined}
         placeholder={placeholder}
         className="w-full rounded-lg border border-beige-dark bg-white py-2.5 pl-10 pr-10 text-sm text-navy placeholder:text-navy/40 focus:border-navy/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy/25 lg:text-[15px]"

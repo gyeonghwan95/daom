@@ -223,6 +223,7 @@ export function SiteSearchDrawer({
             onKeyDown={onInputKeyDown}
             inputRef={inputRef}
             listboxId={listboxId}
+            listboxActive={Boolean(index) && results.length > 0}
             activeDescendant={activeDescendant}
             placeholder={placeholder}
           />

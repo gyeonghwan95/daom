@@ -183,7 +183,7 @@ const FIELD_OVERLAYS: Record<ArticleVisualField, OverlaySet> = {
     ],
     beforeProcedures: ["준비된 서류가 없어도 시작할 수 있습니다"],
     beforeExample: ["상담은 상황 확인부터 시작합니다"],
-    beforeCta: ["전화·카카오·네이버로 남기실 됩니다"],
+    beforeCta: ["전화·카카오·네이버로 남기실 수 있습니다"],
     midBody: ["방문은 예약 후 이용해 주세요"],
   },
   situations: {

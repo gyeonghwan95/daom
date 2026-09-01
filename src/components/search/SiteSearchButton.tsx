@@ -26,7 +26,7 @@ export const SiteSearchButton = forwardRef<
       className={`inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-beige-dark bg-beige text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy ${className}`}
       aria-label={open ? "사이트 전체 검색 닫기" : "사이트 전체 검색 열기"}
       aria-expanded={open}
-      aria-controls="site-search-drawer"
+      aria-controls={open ? "site-search-drawer" : undefined}
       title={open ? "검색 닫기" : "사이트 검색"}
       onClick={onClick}
     >

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T15:39:58.799Z",
+  "generatedAt": "2026-09-01T12:03:57.021Z",
   "ok": true,
   "SEO_REGRESSION_SAFETY": {
     "existingUrls": {
@@ -15,8 +15,8 @@
     "noindexAdded": 0,
     "unexpectedRedirects": 0,
     "sitemapUrlsRemoved": 0,
-    "sitemapUrlsInFile": 1662,
-    "sitemapPathsMissingFromIndexableList": 25,
+    "sitemapUrlsInFile": 1629,
+    "sitemapPathsMissingFromIndexableList": 29,
     "protectedContentPreservationPct": 100,
     "protectedInternalLinksRemoved": 0,
     "protectedInternalLinksAdded": 0
@@ -24,6 +24,18 @@
   "removedUrls": [],
   "addedUrls": [],
   "protectedDiffRows": [
+    {
+      "url": "/",
+      "missingBefore": true,
+      "missingAfter": true,
+      "titleChanged": false,
+      "h1Changed": false,
+      "descriptionChanged": false,
+      "canonicalChanged": false,
+      "bodyHashChanged": false,
+      "internalLinksAdded": 0,
+      "internalLinksRemoved": 0
+    },
     {
       "url": "/개인회생파산",
       "missingBefore": true,

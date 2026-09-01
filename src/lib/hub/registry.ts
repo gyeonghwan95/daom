@@ -9,7 +9,8 @@ export const CORE_HUBS: CoreHub[] = [
   {
     id: "busan-lawyer",
     slug: "부산법무사",
-    title: "부산 법무사",
+    /** exact 「부산 법무사」는 HOME(/) 전용 — 이 허브는 선택 기준 가이드 */
+    title: "부산에서 법무사 찾을 때",
     theme: "region-lawyer",
     spokes: [
       s("/해운대법무사", "해운대·센텀 법무사 상담"),
@@ -86,7 +87,8 @@ export const CORE_HUBS: CoreHub[] = [
       s("/센텀법인등기", "센텀 법인 본점·임원 등기"),
       s("/해운대재개발상속등기", "해운대 재개발 지역 상속등기"),
       s("/부산상속등기", "부산 전역 상속등기"),
-      s("/부산법무사", "부산 법무사 종합 안내"),
+      s("/", "부산 법무사"),
+      s("/부산법무사", "부산에서 법무사 찾을 때"),
       s("/services/cases/haeundae-inheritance-registration-case", "해운대 아파트 상속등기 사례"),
       s("/faq/inheritance-registration-cost", "상속등기 비용 FAQ"),
       s("/location", "센텀 법무사 오시는 길"),

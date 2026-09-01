@@ -92,7 +92,7 @@ export function CollaborationMegaMenu({
         href={href}
         aria-current={active ? "page" : undefined}
         aria-expanded={open}
-        aria-controls={panelId}
+        aria-controls={open ? panelId : undefined}
         aria-haspopup="true"
         className={[
           "inline-flex min-h-11 items-center rounded-lg px-3 text-[0.9375rem] transition-colors duration-200",

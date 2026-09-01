@@ -38,6 +38,22 @@ export function HomePlaceGuide() {
                 <CopyAddressButton className="home-place__copy" />
               </div>
 
+              {nap.representative ? (
+                <div className="home-place__fact">
+                  <p className="home-place__fact-label">대표자</p>
+                  <p className="home-place__fact-value">{nap.representative}</p>
+                </div>
+              ) : null}
+
+              {nap.businessRegistrationNumber ? (
+                <div className="home-place__fact">
+                  <p className="home-place__fact-label">사업자등록번호</p>
+                  <p className="home-place__fact-value">
+                    {nap.businessRegistrationNumber}
+                  </p>
+                </div>
+              ) : null}
+
               {phone ? (
                 <div className="home-place__fact">
                   <p className="home-place__fact-label">전화</p>
