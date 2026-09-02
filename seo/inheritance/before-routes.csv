@@ -1,0 +1,11 @@
+path,role,indexable,canonical,ownerQueries,protection
+/,BUSAN_GENERAL_CHAMPION,yes,self,부산 법무사,FULL
+/부산상속법무사,INHERITANCE_HUB_CHAMPION,yes,self,"부산 상속전문 법무사;부산 상속 법무사;부산 법무사 상속",FULL
+/부산상속등기,INHERITANCE_REGISTRATION_OWNER,yes,self,"부산 상속등기 법무사;부산 상속등기",FULL
+/부산상속포기,INHERITANCE_RENUNCIATION_OWNER,yes,self,"부산 상속포기 법무사;부산 상속포기",FULL
+/부산한정승인,INHERITANCE_QUALIFIED_ACCEPTANCE_OWNER,yes,self,"부산 한정승인 법무사;부산 한정승인",FULL
+/부산법무사상담,CONSULT_OWNER,yes,self,부산 법무사 상담,FULL
+/부산법무사추천,RECOMMEND_OWNER,yes,self,부산 법무사 추천,FULL
+/부산상속전문법무사,BRIDGE_NOINDEX,noindex,/부산상속법무사,none,KEEP_NOINDEX
+/상속,NATIONWIDE_PROCEDURE_HUB,yes,self,supporting,PROTECT_CANDIDATE
+/전국상속등기,NATIONWIDE_REGISTRATION_HUB,yes,self,supporting,NO_301_THIS_SPRINT

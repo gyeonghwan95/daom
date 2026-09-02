@@ -1,4 +1,5 @@
 import type { CaseRegionEntry } from "./types";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 
 /** 법원·등기소 인근 지역 키워드 */
 export function buildCourtEntries(): CaseRegionEntry[] {
@@ -111,7 +112,7 @@ export function buildCourtEntries(): CaseRegionEntry[] {
   return items.map((item) => ({
     slug: item.slug,
     name: item.name,
-    displayName: item.name.startsWith("부산") ? item.name : `부산 ${item.name}`,
+    displayName: withRegionLabel("부산", item.name),
     kind: "court" as const,
     parentDistrictKey: item.parent,
     traits: ["court" as const, "registry" as const],

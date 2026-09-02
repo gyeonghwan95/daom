@@ -52,6 +52,16 @@ export const renunciationChampionExtraFaqs: ServiceFaq[] = [
     answer:
       "아닙니다. 상속포기는 가정법원 신고이고, 부동산 명의이전은 등기소 접수입니다. 접수처가 달라 일정과 서류를 나눠 준비하는 것이 안전합니다.",
   },
+  {
+    question: "나만 상속포기하면 가족 채무는 끝나나요?",
+    answer:
+      "아닙니다. 선순위가 모두 포기하면 후순위 상속인에게 넘어갈 수 있습니다. 배우자·자녀만 포기하고 피상속인의 부모·형제를 안내하지 않으면 나중에 갈등이 생길 수 있습니다.",
+  },
+  {
+    question: "미성년 자녀가 있으면 부모만 포기하면 되나요?",
+    answer:
+      "미성년 상속인의 포기는 특별대리인 등 추가 절차가 필요할 수 있습니다. 부모가 자신의 상속분만 포기해도 자녀 몫은 남습니다.",
+  },
 ];
 
 export const renunciationChampionExtraRelatedLinks: {

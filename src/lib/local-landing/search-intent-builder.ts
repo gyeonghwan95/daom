@@ -5,9 +5,11 @@ import { districtProfiles } from "./districts";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import { getSearchIntentContent } from "./search-intent";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
+import { withRegionLabel } from "./region-label";
 
 function buildLawyerOpinion(regionLabel: string, title: string): string {
-  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${title} 관련 상담을 진행합니다. 검색 키워드보다 서류·기한·관할을 기준으로 실무 절차를 안내합니다.`;
+  const labeled = withRegionLabel(regionLabel, title);
+  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${labeled} 관련 상담을 진행합니다. 서류·기한·관할을 기준으로 실무 절차를 안내합니다.`;
 }
 
 function buildDirectionsNote(config: LocalLandingConfig): string {
@@ -28,8 +30,10 @@ export function buildSearchIntentPage(
   const district = districtProfiles[config.regionKey];
   if (!district) return null;
 
+  const caseTitle = `${withRegionLabel(config.regionLabel, content.title)} 참고 사례`;
+
   const consultationCase = {
-    title: `${config.regionLabel} ${content.title} 참고 사례`,
+    title: caseTitle,
     summary: `유사 상담 시 필요 서류·예상 기간·비용을 단계별로 안내한 사례입니다.`,
     href:
       content.relatedCaseLinks[0]?.href ??

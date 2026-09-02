@@ -10,7 +10,6 @@ import {
 } from "./renunciation-hub-identity";
 import {
   renunciationChampionExtraFaqs,
-  renunciationChampionExtraRelatedLinks,
   renunciationChampionExtraSummaryParagraphs,
   renunciationChampionExtraWhenNeeded,
   renunciationChampionTimeline,
@@ -182,18 +181,35 @@ export function buildBusanInheritanceRenunciationPage(
     ctaDescription:
       "상속관계와 기한을 확인하고 싶으시면 사망일·상속인 구성·확인된 채무만 남겨 주세요.",
     relatedBlogHrefs: [],
+    extraPageSections: [
+      {
+        title: "나만 포기하면 끝나는가",
+        body: "선순위가 모두 포기하면 피상속인의 부모·형제 등 후순위에게 채무가 넘어갈 수 있습니다. 부산 상속포기 상담에서는 누가 포기하고 누가 남는지, 후순위에게 미리 알릴지를 신고 전에 정리합니다.",
+        items: [
+          "배우자·자녀만 포기하면 후순위가 남는지 확인",
+          "가족마다 포기·한정승인 선택이 갈리는지 조율",
+          "후순위에게 미리 안내할 범위 정하기",
+        ],
+      },
+      {
+        title: "3개월 기산·처분행위·미성년 상속인",
+        body: "기한은 원칙적으로 상속 개시를 안 날부터 봅니다. 고인 계좌에서 장례비를 쓰거나 물건을 처분하면 단순승인으로 볼 여지가 생깁니다. 미성년 자녀가 있으면 부모만 포기해도 자녀 몫은 남을 수 있어 특별대리를 함께 봅니다.",
+        items: [
+          "사망일과 인지일을 구분해 기록",
+          "이미 한 인출·처분 시기와 용도 메모",
+          "미성년 상속인 특별대리 필요 여부",
+          "해외 상속인 위임·공증이 기한과 겹치는지",
+        ],
+      },
+    ],
     relatedServiceLinks: [
+      { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
+      { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
+      { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
       { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
-      { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
-      { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
-      { href: "/상속포기비용", label: "상속포기 비용 구조" },
-      { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
-      { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/상속", label: "상속 종합 허브" },
-      { href: "/상속포기자가진단", label: "상속포기 자가진단" },
       { href: "/blog/inheritance-renunciation-vs-qualified-acceptance", label: "상속포기와 한정승인 차이" },
-      ...renunciationChampionExtraRelatedLinks,
       { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 준비서류 확인하기" },
     ],
     relatedRegionLinks: [

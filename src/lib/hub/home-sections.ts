@@ -198,6 +198,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
   {
     title: "상속·가사",
     links: [
+      { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부산상속포기", label: "부산 상속포기" },
       { href: "/부산한정승인", label: "부산 한정승인" },

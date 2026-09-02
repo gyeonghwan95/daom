@@ -31,6 +31,7 @@ import {
   getRegionHubIdentity,
 } from "../region-hub-identity";
 import { buildJurisdictionGuideForRegionKey } from "@/lib/geo/busan-registry";
+import { formatPlaceList, withRegionLabel } from "../region-label";
 
 const defaultRegistryGuide: LocalLandingJurisdictionGuide =
   buildJurisdictionGuideForRegionKey("busan");
@@ -73,7 +74,8 @@ function getRelatedBlogPosts(
 }
 
 function buildLawyerOpinion(regionLabel: string, topic: string): string {
-  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${topic} 상담을 직접 진행합니다. 관할·기한·준비서류는 확인된 사실만 안내합니다.`;
+  const labeled = withRegionLabel(regionLabel, topic);
+  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${labeled} 상담을 직접 진행합니다. 관할·기한·준비서류는 확인된 사실만 안내합니다.`;
 }
 
 function buildDirectionsNote(config: LocalLandingConfig): string {
@@ -313,11 +315,11 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
   if (!topic) return null;
 
   const serviceLabel = serviceLabels[topic.serviceSlug] ?? topic.title;
-  const neighborhoods = config.neighborhoods.join(", ");
+  const neighborhoodArea = formatPlaceList("부산", config.neighborhoods);
 
   const problemStatement = topic.uniqueProblemStatement
     ? topic.uniqueProblemStatement
-    : `부산에서 ${topic.title}을(를) 검색하시는 분들은 대부분 실제 부담 금액과 준비 기간을 알고 싶어 하십니다. ${topic.focusKeywords.join(", ")} 관련 비용은 사건마다 다릅니다. 부동산 가액·상속인 수·채무 규모·법인 규모·병행 업무 여부에 따라 법무사 보수와 등기신청 수수료·세금이 달라집니다. 다옴법무사사무소는 ${neighborhoods} 일대를 포함한 부산 전역 의뢰인에게 항목별 견적을 투명하게 안내합니다. 숨겨진 비용 없이 상담 후 예상 범위를 설명해 드립니다.`;
+    : `부산에서 ${topic.title}을(를) 검색하시는 분들은 대부분 실제 부담 금액과 준비 기간을 알고 싶어 하십니다. ${topic.focusKeywords.join(", ")} 관련 비용은 사건마다 다릅니다. 부동산 가액·상속인 수·채무 규모·법인 규모·병행 업무 여부에 따라 법무사 보수와 등기신청 수수료·세금이 달라집니다. 다옴법무사사무소는 ${neighborhoodArea} 일대를 포함한 부산 전역 의뢰인에게 항목별 견적을 투명하게 안내합니다. 숨겨진 비용 없이 상담 후 예상 범위를 설명해 드립니다.`;
 
   const whenNeeded = [
     `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
@@ -330,7 +332,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     ? [
         {
           title: `${topic.title} — 이해를 위한 예시`,
-          summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
+          summary: `상황을 단순화한 예시입니다. ${neighborhoodArea} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
         },
         {
           title: `서류 확인 후 확정 — 이해를 위한 예시`,
@@ -344,7 +346,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     : [
         {
           title: `${topic.title} — 이해를 위한 예시`,
-          summary: `상황을 단순화한 예시입니다. 부산 ${neighborhoods} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 보수·등기 수수료·세금을 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
+          summary: `상황을 단순화한 예시입니다. ${neighborhoodArea} 일대에서 ${serviceLabel} 비용을 문의하는 경우, ${config.caseAngle ?? "등기부와 상황을 확인한 뒤"} 법무사 보수·등기 수수료·세금을 항목별로 구분해 안내하고 진행 여부를 결정하는 흐름이 일반적입니다. 개별 사정에 따라 결론이 달라질 수 있습니다.`,
         },
         {
           title: `복합 사건 견적 — 이해를 위한 예시`,
@@ -391,7 +393,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
 
   const isLawyerFeeBusan = topic.key === "lawyer-fee-busan";
   const feeProblemStatement = isLawyerFeeBusan
-    ? `부산 법무사 비용·수수료를 검색하시는 분들은 대개 ‘얼마가 드는지’보다 ‘무엇을 내는 돈인지’를 먼저 알고 싶어 하십니다. 법무사 보수와 취득세·등록면허세·국민주택채권·증명서·등기신청수수료는 성격이 다릅니다. 같은 업무라도 부동산 가액, 상속인 수, 법인 변경사항, 채권자 수, 말소·보정 병행 여부에 따라 달라지며, 전화로는 대략적인 구성만 안내하고 확정 금액은 서류 확인 후에 안내하는 경우가 많습니다. 다옴법무사사무소는 ${neighborhoods} 일대를 포함한 부산 전역 의뢰인에게 항목별 구성을 구분해 설명합니다. 근거 없는 고정 단가나 ‘최저’ 금액만으로 비교하도록 유도하지 않습니다.`
+    ? `부산 법무사 비용·수수료를 검색하시는 분들은 대개 ‘얼마가 드는지’보다 ‘무엇을 내는 돈인지’를 먼저 알고 싶어 하십니다. 법무사 보수와 취득세·등록면허세·국민주택채권·증명서·등기신청수수료는 성격이 다릅니다. 같은 업무라도 부동산 가액, 상속인 수, 법인 변경사항, 채권자 수, 말소·보정 병행 여부에 따라 달라지며, 전화로는 대략적인 구성만 안내하고 확정 금액은 서류 확인 후에 안내하는 경우가 많습니다. 다옴법무사사무소는 ${neighborhoodArea} 일대를 포함한 부산 전역 의뢰인에게 항목별 구성을 구분해 설명합니다. 근거 없는 고정 단가나 ‘최저’ 금액만으로 비교하도록 유도하지 않습니다.`
     : problemStatement;
 
   return {
@@ -408,7 +410,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
       : `${topic.title} 안내 — 부산 다옴법무사사무소`,
     description: isLawyerFeeBusan
       ? "부산 법무사 비용·수수료는 보수와 세금·공과금이 다릅니다. 같은 업무라도 달라지는 이유, 전화 안내와 서류 확인 후 확정의 차이, 견적 전 준비자료를 안내합니다."
-      : `부산 ${topic.title} — 법무사 수임료·등기 수수료·세금 항목별 안내. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담 가능.`,
+      : `${withRegionLabel("부산", topic.title)} — 법무사 수임료·등기 수수료·세금 항목별 안내. 다옴법무사사무소 안윤정 법무사. ${neighborhoodArea} 상담 가능.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
@@ -472,7 +474,7 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
   const consultationCases = [
     {
       title: `${inst.institutionName} 접수 전 확인`,
-      summary: `${config.regionLabel}에서 ${inst.institutionName} 접수를 앞둔 경우 관할과 서류를 먼저 확인하는 흐름입니다. 가상의 절차 예시이며 특정 의뢰 기록이 아닙니다.`,
+      summary: `${inst.institutionName.startsWith(config.regionLabel) ? inst.institutionName : `${config.regionLabel}에서 ${inst.institutionName}`} 접수를 앞둔 경우 관할과 서류를 먼저 확인하는 흐름입니다. 가상의 절차 예시이며 특정 의뢰 기록이 아닙니다.`,
     },
     {
       title: `보정명령이 있는 경우`,
@@ -610,7 +612,7 @@ function buildBusinessZonePage(config: LocalLandingConfig): LocalLandingPage | n
     serviceSlug: zone.serviceSlug,
     title: zone.title,
     h1: `${zone.title} — ${zone.zoneName} 법무사 상담`,
-    description: `부산 ${zone.title} — ${zone.zoneName} 법인 설립·등기·임원변경. 다옴법무사사무소 안윤정 법무사.`,
+    description: `${withRegionLabel("부산", zone.title)} — ${zone.zoneName} 법인 설립·등기·임원변경. 다옴법무사사무소 안윤정 법무사.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
@@ -659,8 +661,11 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
 
   const service = getServiceBySlug(topic.serviceSlug);
   const neighborhoods = config.neighborhoods.join(", ");
+  const topicLead = topic.title.startsWith("부산")
+    ? topic.title
+    : `부산에서 ${topic.title}`;
 
-  const problemStatement = `부산에서 ${topic.title} 관련 문의가 늘고 있습니다. ${topic.topicContext} 재개발·재건축·신축 분양·토지 상속 등은 일반 매매와 권리 관계가 다릅니다. ${neighborhoods} 일대 사건도 조합원 지위·분양권·저당권·상속인 협의가 겹치면 절차가 복잡해집니다. 다옴법무사사무소는 ${topic.legalPoints.join(" ")} 등 실무 포인트를 중심으로 상담·진행합니다.`;
+  const problemStatement = `${topicLead} 관련 문의가 늘고 있습니다. ${topic.topicContext} 재개발·재건축·신축 분양·토지 상속 등은 일반 매매와 권리 관계가 다릅니다. ${neighborhoods} 일대 사건도 조합원 지위·분양권·저당권·상속인 협의가 겹치면 절차가 복잡해집니다. 다옴법무사사무소는 ${topic.legalPoints.join(" ")} 등 실무 포인트를 중심으로 상담·진행합니다.`;
 
   const whenNeeded = [
     `${topic.title}가 필요한 부동산·상속 상황`,
@@ -714,7 +719,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
     serviceSlug: topic.serviceSlug,
     title: topic.title,
     h1: `${topic.title} 절차·서류 안내`,
-    description: `부산 ${topic.title} — ${topic.topicContext}. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담.`,
+    description: `${withRegionLabel("부산", topic.title)} — ${topic.topicContext}. 다옴법무사사무소 안윤정 법무사. ${neighborhoods} 상담.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,

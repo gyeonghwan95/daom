@@ -5,9 +5,11 @@ import { districtProfiles } from "./districts";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import { getSelectionHubContent } from "./selection";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
+import { withRegionLabel } from "./region-label";
 
 function buildLawyerOpinion(regionLabel: string, title: string): string {
-  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${title} 관련 상담을 진행합니다. 등기부·계약서·가족관계를 함께 보며 상담 전 확인할 절차와 서류를 항목별로 정리해 드립니다.`;
+  const labeled = withRegionLabel(regionLabel, title);
+  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${labeled} 관련 상담을 진행합니다. 등기부·계약서·가족관계를 함께 보며 상담 전 확인할 절차와 서류를 항목별로 정리해 드립니다.`;
 }
 
 function buildDirectionsNote(config: LocalLandingConfig): string {
@@ -28,8 +30,10 @@ export function buildSelectionHubPage(
   const district = districtProfiles[config.regionKey];
   if (!district) return null;
 
+  const caseTitle = `${withRegionLabel(config.regionLabel, content.title)} 참고 사례`;
+
   const consultationCase = {
-    title: `${config.regionLabel} ${content.title} 참고 사례`,
+    title: caseTitle,
     summary: `유사 사건 상담 시 필요 서류·예상 기간·비용을 단계별로 안내한 사례입니다.`,
     href: config.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug}`

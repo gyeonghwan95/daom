@@ -1,0 +1,2074 @@
+{
+  "generated": "2026-09-02",
+  "note": "내부 PageData 전수. 네이버 순위·노출 숫자는 없음.",
+  "stats": {
+    "totalPages": 1803,
+    "indexable": 1632,
+    "noindex": 171,
+    "faqEq3": 844,
+    "faqLt3": 0,
+    "linksGt16": 13,
+    "linksLt6": 0,
+    "autoCase": 225,
+    "dupRegion": 0,
+    "metaSeo": 1,
+    "dedicatedSummary": 11,
+    "summaryCopiesIntro": 1792,
+    "duplicateTitles": 2,
+    "duplicateH1s": 11
+  },
+  "championSnapshot": [
+    {
+      "path": "/",
+      "title": "부산 법무사 안윤정 | 다옴법무사사무소",
+      "h1": "부산 법무사 안윤정",
+      "faqs": 3,
+      "links": 16,
+      "caseTitle": "다옴법무사사무소 — 상담이 필요한 대표 상황",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": [
+        "상담 시 확인하는 내용"
+      ]
+    },
+    {
+      "path": "/부산상속법무사",
+      "title": "부산 상속 법무사 | 등기·포기·한정승인 먼저 확인",
+      "h1": "부산 상속 법무사, 등기·포기·한정승인 중 무엇부터 볼까",
+      "faqs": 24,
+      "links": 10,
+      "caseTitle": "해운대 아파트 상속등기",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "상속 관련 비용은 절차마다 구조가 다릅니다",
+        "사망 직후 확인할 순서",
+        "등기·포기·한정승인을 가르는 기준",
+        "부산 상속전문 법무사를 찾을 때 확인할 업무 범위",
+        "이런 경우에 상담합니다",
+        "비용이 달라지는 요소"
+      ]
+    },
+    {
+      "path": "/부산상속등기",
+      "title": "부산 상속등기 법무사｜상속인 구성에 따라 달라지는 서류와 진행 순서",
+      "h1": "부산 상속등기 법무사, 명의이전 서류와 진행 순서",
+      "faqs": 14,
+      "links": 10,
+      "caseTitle": "해운대 아파트 상속등기",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "상속등기 법무사 비용을 확인할 때 볼 항목",
+        "명의이전·협의분할·법정상속분 등기의 차이",
+        "취득세와 관할 등기소 확인 순서"
+      ]
+    },
+    {
+      "path": "/부산상속포기",
+      "title": "부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인",
+      "h1": "부산 상속포기 법무사, 기한과 후순위부터 확인하세요",
+      "faqs": 18,
+      "links": 10,
+      "caseTitle": "채무 과다 상속포기 상담",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "부산 상속포기 비용은 어떻게 정해질까요?",
+        "나만 포기하면 끝나는가",
+        "3개월 기산·처분행위·미성년 상속인"
+      ]
+    },
+    {
+      "path": "/부산한정승인",
+      "title": "부산 한정승인 법무사｜상속채무가 걱정될 때 3개월 안에 확인할 절차",
+      "h1": "부산 한정승인 법무사, 상속채무가 불확실할 때 먼저 볼 기준",
+      "faqs": 13,
+      "links": 10,
+      "caseTitle": "채무 불명확 한정승인 상담",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "부산 한정승인 비용을 확인할 때 볼 항목",
+        "재산·채무 목록과 단순승인 위험",
+        "청산·채권자 통지·특별한정승인"
+      ]
+    },
+    {
+      "path": "/부산법무사상담",
+      "title": "부산 법무사 상담 | 준비서류·비용·상담방법",
+      "h1": "부산 법무사 상담",
+      "faqs": 12,
+      "links": 16,
+      "caseTitle": "부산 법무사 상담 참고 사례",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "상담 시 확인하는 내용"
+      ]
+    },
+    {
+      "path": "/부산법무사추천",
+      "title": "부산 법무사 추천 | 상담 전 확인할 7가지 기준",
+      "h1": "부산 법무사 추천, 어떤 기준으로 선택해야 할까",
+      "faqs": 10,
+      "links": 16,
+      "caseTitle": "부산 법무사 추천 선택 기준 참고 사례",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "상담 시 확인하는 내용"
+      ]
+    },
+    {
+      "path": "/부산법무사",
+      "title": "부산에서 법무사 찾을 때 확인할 업무·비용·상담 기준 | 다옴법무사사무소",
+      "h1": "부산에서 법무사를 찾을 때 먼저 확인할 기준",
+      "faqs": 9,
+      "links": 28,
+      "caseTitle": "상속·등기 복합 상담",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": [
+        "법무사를 고르기 전에 먼저 확인할 기준"
+      ]
+    },
+    {
+      "path": "/부산법인법무사",
+      "title": "부산 법무사 법인 업무｜비용·절차·준비서류 총정리",
+      "h1": "부산 법인 업무, 설립부터 변경·해산까지 한 번에 확인하기",
+      "faqs": 17,
+      "links": 16,
+      "caseTitle": "수영구 법인설립등기 사례",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "이런 경우 필요한 절차입니다",
+        "비용이 달라지는 요소",
+        "법무사 상담이 필요한 경우"
+      ]
+    },
+    {
+      "path": "/부산법인등기",
+      "title": "부산 법인등기 법무사｜임원·본점·사업목적 변경을 놓치지 않으려면",
+      "h1": "부산 법인등기 법무사, 설립부터 임원·본점 변경까지",
+      "faqs": 8,
+      "links": 28,
+      "caseTitle": "임원변경·과태료 예방",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "법인등기 비용을 확인할 때 볼 항목",
+        "공공기관 법인등기"
+      ]
+    },
+    {
+      "path": "/부산등기법무사",
+      "title": "부산 등기 법무사 | 부동산·상속·법인등기 상담 - 다옴법무사사무소",
+      "h1": "부산 등기 법무사, 어떤 등기부터 준비해야 할까요?",
+      "faqs": 8,
+      "links": 16,
+      "caseTitle": "센텀 오피스텔 매매 소유권이전",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "부산 등기 법무사 비용을 확인할 때 볼 항목",
+        "법무사 선택 기준이 궁금하다면",
+        "신축건물 보존등기",
+        "공공기관 등기업무",
+        "어떤 등기가 필요하신가요?",
+        "상담이 필요한 등기 상황"
+      ]
+    },
+    {
+      "path": "/부산부동산등기",
+      "title": "부산 부동산등기 법무사｜잔금·말소·소유권이전 순서를 맞추려면",
+      "h1": "부산 부동산등기 법무사, 매매·증여 이전 순서 정리",
+      "faqs": 11,
+      "links": 28,
+      "caseTitle": "잔금일 소유권이전",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "이런 상황이라면 — 잔금·대출·등기",
+        "지금 필요한 등기가 어떤 건가요?",
+        "신축 소유권보존등기",
+        "공공기관 부동산등기·촉탁등기"
+      ]
+    },
+    {
+      "path": "/부산개인회생",
+      "title": "부산 개인회생｜신청자격·절차·부산회생법원 안내",
+      "h1": "부산 개인회생, 신청 전 무엇부터 확인할까요?",
+      "faqs": 12,
+      "links": 28,
+      "caseTitle": "급여소득 개인회생 상담 사례",
+      "dedicatedSummary": true,
+      "nationwideDeferred": true,
+      "uniqueSectionTitles": [
+        "부산 개인회생 비용은 어떻게 정해질까요?",
+        "개인회생 비용 확인에 필요한 정보",
+        "회생·파산 중 어디부터 볼지",
+        "개인회생 신청 전 먼저 확인할 사항",
+        "개인회생 준비서류",
+        "비용은 무엇에 따라 달라질까?"
+      ]
+    },
+    {
+      "path": "/개인회생파산",
+      "title": "부산 회생·파산 법무사｜개인회생·개인파산 비교 | 다옴법무사사무소",
+      "h1": "부산 개인회생·파산, 어떤 절차를 먼저 봐야 할까요?",
+      "faqs": 6,
+      "links": 16,
+      "caseTitle": "부산 회생·파산 법무사｜개인회생·개인파산 비교 상담 예시",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": [
+        "비교 후 이어갈 안내",
+        "지금 상황별로 먼저 볼 페이지",
+        "상담 시 확인하는 내용"
+      ]
+    },
+    {
+      "path": "/전세사기피해대응절차",
+      "title": "부산 전세사기 법무사 | 보증금 미반환·임차권등기 - 다옴법무사사무소",
+      "h1": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+      "faqs": 8,
+      "links": 16,
+      "caseTitle": "부산 전세사기 피해 대응 절차 참고 사례",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": []
+    },
+    {
+      "path": "/상속",
+      "title": "상속등기·포기·한정승인｜전국·부산 상담 | 다옴법무사사무소",
+      "h1": "상속등기·상속포기·한정승인·전국 상속 상담",
+      "faqs": 8,
+      "links": 16,
+      "caseTitle": "상속등기·포기·한정승인｜전국·부산 상담 상담 예시",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": [
+        "시간 순서: 장례 직후부터 상담까지",
+        "특수 가족·장기 미정리",
+        "어디 지역 상속인가요?",
+        "상속 절차별 안내",
+        "부산 지역·법원 안내"
+      ]
+    },
+    {
+      "path": "/전국상속등기",
+      "title": "전국 상속등기 법무사｜지역이 달라도 … | 다옴법무사사무소",
+      "h1": "전국 어디서나 맡길 수 있는 상속등기",
+      "faqs": 8,
+      "links": 16,
+      "caseTitle": "일반적인 상담 유형",
+      "dedicatedSummary": false,
+      "nationwideDeferred": false,
+      "uniqueSectionTitles": [
+        "전국 상속등기가 가능한 이유",
+        "상속등기 관할 특례를 쉬운 말로",
+        "부동산이 여러 지역에 있을 때",
+        "상속인이 서로 다른 지역에 거주할 때",
+        "서류 준비와 원본 전달",
+        "취득세·국민주택채권·등기비용"
+      ]
+    }
+  ],
+  "inboundRiskFromConsultTrim": [
+    "/부산법무사무소",
+    "/부산법무사비용",
+    "/about",
+    "/부산상속등기전문",
+    "/부산부동산등기전문",
+    "/부산법인등기전문",
+    "/부산증여등기",
+    "/부산법률상담",
+    "/전세사기피해대응절차",
+    "/개인회생파산",
+    "/무슨법률업무인지모를때"
+  ],
+  "duplicateTitles": [
+    {
+      "title": "언론·활동 | 다옴법무사사무소",
+      "paths": [
+        "/media",
+        "/press"
+      ]
+    },
+    {
+      "title": "사례 상세 | 다옴법무사사무소",
+      "paths": [
+        "/cases/busan-personal-rehabilitation-consultation",
+        "/cases/centum-ownership-transfer-case",
+        "/cases/dongnae-qualified-acceptance-consultation",
+        "/cases/gijang-land-inheritance-case",
+        "/cases/haeundae-inheritance-registration-case",
+        "/cases/jaesong-inheritance-renunciation-consultation",
+        "/cases/suyeong-company-establishment-case",
+        "/cases/yeonje-director-change-case"
+      ]
+    }
+  ],
+  "duplicateH1s": [
+    {
+      "h1": "언론·활동",
+      "paths": [
+        "/media",
+        "/press"
+      ]
+    },
+    {
+      "h1": "젊은 실무자가 설명하고 청년이 묻고…43조 청년예산 ‘언박싱’",
+      "paths": [
+        "/media/kukinews-youth-budget-unboxing-2027",
+        "/press/kukinews-youth-budget-unboxing-2027"
+      ]
+    },
+    {
+      "h1": "지역 법조계에 활력이 되는 청년 법무사! - 안윤정 다옴법무사사무소 대표 법무사",
+      "paths": [
+        "/media/weeklypeople-youth-judicial-scrivener-ahn",
+        "/press/weeklypeople-youth-judicial-scrivener-ahn"
+      ]
+    },
+    {
+      "h1": "부산 MBC NEWS 전문가 출연",
+      "paths": [
+        "/media/busan-mbc-news-fuel-price-relief-expert",
+        "/press/busan-mbc-news-fuel-price-relief-expert"
+      ]
+    },
+    {
+      "h1": "부산지방법무사회 제64회 정기총회 개최",
+      "paths": [
+        "/media/busan-ilbo-bar-association-64th-general-assembly",
+        "/press/busan-ilbo-bar-association-64th-general-assembly"
+      ]
+    },
+    {
+      "h1": "부산지방법무사회 정기총회 “공익 법률서비스 확대 강화”",
+      "paths": [
+        "/media/kukje-sinmun-bar-association-64th-general-assembly",
+        "/press/kukje-sinmun-bar-association-64th-general-assembly"
+      ]
+    },
+    {
+      "h1": "부산지방법무사회, 제64회 정기총회 개최",
+      "paths": [
+        "/media/beopryul-sinmun-bar-association-64th-general-assembly",
+        "/press/beopryul-sinmun-bar-association-64th-general-assembly"
+      ]
+    },
+    {
+      "h1": "부산에 방문하지 않아도 맡길 수 있는 전국 법무사 업무",
+      "paths": [
+        "/전국업무",
+        "/업무사례/전국업무사례"
+      ]
+    },
+    {
+      "h1": "전국 어디서나 맡길 수 있는 상속등기",
+      "paths": [
+        "/전국상속등기",
+        "/업무사례/전국상속등기법무사"
+      ]
+    },
+    {
+      "h1": "서로 다른 지역의 부동산을 공동담보로 제공하는 경우",
+      "paths": [
+        "/전국공동담보등기",
+        "/업무사례/전국공동근저당권등기"
+      ]
+    },
+    {
+      "h1": "사례 상세",
+      "paths": [
+        "/cases/busan-personal-rehabilitation-consultation",
+        "/cases/centum-ownership-transfer-case",
+        "/cases/dongnae-qualified-acceptance-consultation",
+        "/cases/gijang-land-inheritance-case",
+        "/cases/haeundae-inheritance-registration-case",
+        "/cases/jaesong-inheritance-renunciation-consultation",
+        "/cases/suyeong-company-establishment-case",
+        "/cases/yeonje-director-change-case"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "path": "/부산임원변경등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 임원변경등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산소유권이전등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 소유권이전등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부동산등기법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산등기 법무사 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산기업법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 기업 법무사 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산스타트업법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 스타트업 법무사 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속재산분할법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속재산분할 법무사 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법인등기비용",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인등기 비용 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산근저당설정등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 근저당설정등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산근저당말소등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 근저당말소등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산전세권설정등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전세권설정등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산전세권말소등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전세권말소등기 진행 안내",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사추천",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 추천 선택 기준 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산등기법무사추천",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 법무사 추천 선택 기준 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속등기전문",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기 상담 전 확인사항 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부동산등기전문",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산등기 상담 전 확인사항 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법인등기전문",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인등기 상담 전 확인사항 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사후기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 후기 확인 기준 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사비교",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 비교 기준 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사무소",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사무소·사무실 안내 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사방문상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 방문상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사비대면상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 비대면상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속법무사추천",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속 법무사 추천 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인회생법무사추천",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생 법무사 추천 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인파산법무사추천",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인파산 법무사 추천 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사수임료",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 수임료 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사보수",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 보수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법무사잘하는곳",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 잘하는 곳 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산등기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기·포기·한정승인 첫 분기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법인전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부동산등기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산등기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인회생전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인파산전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인파산전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산근저당전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 근저당전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산전세전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전세전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산임원변경전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 임원변경전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산매매등기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 매매등기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산소유권이전전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 소유권이전전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산한정승인전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 한정승인전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산회생전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 회생전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산파산전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 파산전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산면책전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 면책전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속포기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속포기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속등기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산증여등기전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 증여등기전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산법인설립전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인설립전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부동산전문법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산전문 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인회생법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인파산법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인파산 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산회생법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 회생 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산파산법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 파산 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산등기복대리",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 복대리 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/복대리등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 복대리 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기복대리",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 복대리 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산집단등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 집단등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/집단등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 집단등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/아파트집단등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 아파트 집단등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/오피스텔집단등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 오피스텔 집단등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/신축집단등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 신축 집단등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사수임료",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 수임료 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사비용",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 비용 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사보수",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 보수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기비용",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 비용 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등록면허세",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등록면허세 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/국민주택채권",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 국민주택채권 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/취득세",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 취득세 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기신청대행",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기신청 대행 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/전자등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전자등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/전자신청",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전자신청 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기소제출",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기소 제출 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기보정",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 보정 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기완료기간",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 완료기간 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기접수",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 접수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기처리기간",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 처리기간 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인회생상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생 상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인회생신청",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생 신청 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산파산신청",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 파산신청 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개인파산상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인파산 상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산면책신청",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 면책신청 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산회생상담",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 회생 상담 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사상담전준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 상담 전 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사방문전준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 방문 전 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기준비서류",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 준비서류 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기얼마나걸리나요",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 얼마나 걸리나요 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기언제끝나나요",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 언제 끝나나요 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기어디서하나요",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 어디서 하나요 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기소어디인가요",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기소 어디인가요 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사맡기면달라지는점",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사에게 맡기면 뭐가 달라지나요 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공공기관법인등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공공기관 법인등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공공기관부동산등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공공기관 부동산등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공기업등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공기업 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/촉탁등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 촉탁등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공공기관촉탁등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공공기관 촉탁등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/지방공기업등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 지방공기업 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공공기관이전등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공공기관 이전등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/신축보존등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 신축 보존등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/건물보존등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 건물 보존등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/집합건물보존등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 집합건물 보존등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/오피스텔보존등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 오피스텔 보존등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상가보존등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상가 보존등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/건축주준비서류",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 건축주 준비서류 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사용승인후등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사용승인 후 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속등기실수모음",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기에서 많이 하는 실수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법인등기실수모음",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인등기에서 많이 하는 실수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/개인회생실수모음",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생에서 많이 하는 실수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부동산등기실수모음",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산등기에서 많이 하는 실수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/집단등기실수모음",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 집단등기에서 많이 하는 실수 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속등기체크리스트",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기 체크리스트 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법인등기체크리스트",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법인등기 체크리스트 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/개인회생체크리스트",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개인회생 체크리스트 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부동산등기체크리스트",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산등기 체크리스트 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/신축보존등기체크리스트",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 신축 보존등기 체크리스트 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/왜상속등기비용이다를까",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 왜 상속등기 비용이 다를까 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/왜법인등기비용이다를까",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 왜 법인등기 비용이 다를까 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/왜개인회생비용이다를까",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 왜 개인회생 비용이 다를까 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기실무",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 실무 안내 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/특수등기의뢰",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 특수 등기 의뢰 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사협업",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 협업 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산잔금일법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 잔금일 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산매매등기법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 매매등기 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부모자녀아파트증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부모자녀 아파트 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부부간증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부부간 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부담부증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부담부증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산공동명의지분증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공동명의 지분 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산명의변경등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 명의변경 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산아파트매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 아파트 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산전세보증금반환법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전세보증금 반환 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산임차권등기명령",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 임차권등기명령 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산매수인법무사",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 매수인 법무사 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산경매낙찰등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 경매 낙찰 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산공동명의등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공동명의 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산지분이전등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 지분이전 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산이혼재산분할등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 이혼 재산분할 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산입주등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 입주 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산셀프등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 셀프 등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산등기권리증분실",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기권리증 분실 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산빌라매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 빌라 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산오피스텔매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 오피스텔 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상가매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상가 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산토지매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 토지 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산가압류말소등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 가압류말소등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산압류말소등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 압류말소등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산중도금대출근저당",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 중도금대출 근저당 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산잔금대출근저당",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 잔금대출 근저당 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속후매매등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속 후 매매등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산확정일자전세권비교",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 확정일자 전세권 비교 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산외국인부동산등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 외국인 부동산등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산등기명의인표시변경",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기명의인 표시변경 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산공매낙찰등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공매 낙찰등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산신탁등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 신탁등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부모님사망후해야할일",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부모님 사망 후 해야 할 일 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/장례후재산채무정리",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 장례 후 재산·채무 정리 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사망신고와상속등기차이",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사망신고와 상속등기의 차이 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/안심상속원스톱서비스이후",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 안심상속 원스톱서비스 이후 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사망자재산채무조회",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사망자 재산·채무 조회 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부모빚상속방법",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부모 빚이 있는 경우 상속방법 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는상속등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 상속등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속상담전준비서류와비용",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속 상담 전 준비서류와 비용 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/오래된상속토지정리",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 오래된 상속토지 정리 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/연락두절상속인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 연락두절 상속인이 있는 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/미성년상속인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 미성년 상속인이 있는 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/재혼가정상속",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 재혼가정의 상속 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/고인계좌장례비사용",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 고인 계좌에서 장례비를 사용한 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사망후3개월지난상속",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사망 후 3개월이 지난 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/해외거주상속인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 해외 거주 상속인이 있는 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/임대인사망전세계약",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 임대인이 사망한 전세계약 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/경상도비대면상속등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 경상도 비대면 상속등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/타지역상속인경상도부동산",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 타지역 상속인과 경상도 부동산 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는법무사업무",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 법무사 업무 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속인이여러지역에있는경우",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속인이 여러 지역에 있는 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부동산과거주지가다른상속등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산과 거주지가 다른 상속등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는상속포기한정승인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 상속포기·한정승인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사진전자파일우편으로서류전달",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사진·전자파일·우편으로 서류 전달하기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/법무사비용먼저확인하는방법",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 법무사 비용을 먼저 확인하는 방법 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는법인설립",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 법인설립 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는임원변경",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 임원변경등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/해외대표이사주주법인등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 해외 대표이사·주주가 있는 법인등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부모자녀다른지역증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부모와 자녀가 다른 지역에 사는 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는근저당말소",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 근저당권 말소 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/이사후임차권등기명령준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 이사 후 임차권등기명령 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는지급명령서류",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 지급명령 서류 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/사업자폐업후법인정리",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 사업자 폐업 후 법인 정리 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기권리증없이소유권이전",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기권리증 없이 소유권이전하기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/해외서류가필요한증여등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 해외서류가 필요한 증여등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는부담부증여",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 부담부증여 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는전세권말소",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 전세권 말소 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/공유물분할등기서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 공유물분할등기 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/가압류신청서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 가압류 신청 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/내용증명작성준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 내용증명 작성 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/방문없이준비하는유상증자",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 방문 없이 준비하는 유상증자등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/휴면법인계속등기준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 휴면법인 계속등기 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/제주타지역상속인부동산",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 제주 부동산과 타지역 상속인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/가처분신청서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 가처분 신청 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/채권압류추심서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 채권압류·추심 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/변제공탁서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 변제공탁 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/이혼재산분할등기서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 이혼 재산분할등기 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/압류말소등기서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 압류말소등기 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속등기후매매서류준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속등기 후 매매 서류 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/특별한정승인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 특별한정승인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/대습상속등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 대습상속등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/유류분과상속등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 유류분과 상속등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속취득세와등기순서",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속 취득세와 등기 순서 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/신용회복과개인회생차이",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 신용회복과 개인회생 차이 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/전세사기피해대응절차",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 전세사기 피해 대응 절차 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/분양권명의이전등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 분양권 명의이전등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/지급명령이의신청준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 지급명령 이의신청 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/해산간주확인절차",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 해산간주 확인 절차 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기신청반려와보정",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기신청 반려와 보정 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속재산분할협의서준비",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속재산분할협의서 준비 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/대표이사한명만남는경우",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 대표이사만 남는 경우 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/경매낙찰후전세권확인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 경매 낙찰 후 전세권 확인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/본점이전후사업자등록순서",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 본점이전 후 사업자등록 순서 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/상속포기후다음순위확인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속포기 후 다음 순위 확인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산가등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 가등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산유언검인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 유언검인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부동산실권리자명의등기",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부동산 실권리자명의등기 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산경매권리분석",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 경매 권리분석 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산개명허가",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 개명허가 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산재산명시",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 재산명시 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부재자재산관리인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 부재자재산관리인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산상속재산관리인",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 상속재산관리인 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/등기관할과사무소위치",
+      "category": "local",
+      "issue": "auto-generated-case-title",
+      "detail": "부산 등기 관할과 사무소 위치 참고 사례",
+      "severity": "medium"
+    },
+    {
+      "path": "/부산부동산등기",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산법인등기",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산개인회생",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산법무사",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/해운대법무사",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/센텀법무사",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산법무사비용",
+      "category": "cost",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산지방법원등기국",
+      "category": "court",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/명례산업단지법인등기",
+      "category": "businessDistrict",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산재개발등기",
+      "category": "realEstate",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산여성법무사",
+      "category": "local",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/부산선박등기",
+      "category": "realEstate",
+      "issue": "link-overflow",
+      "detail": "internalLinks=25",
+      "severity": "low"
+    },
+    {
+      "path": "/업무사례/부산법무사",
+      "category": "case",
+      "issue": "link-overflow",
+      "detail": "internalLinks=28",
+      "severity": "low"
+    },
+    {
+      "path": "/업무사례/지역별상속등기법무사",
+      "category": "case",
+      "issue": "meta-seo-copy",
+      "detail": "색인",
+      "severity": "low"
+    }
+  ]
+}

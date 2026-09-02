@@ -7,6 +7,7 @@ import type { PageFaqItem, PageSection } from "@/lib/pageData/types";
 import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
 import { getSeoLandingSlugOverlay } from "@/data/seo/region-service-overlays";
 import type { SeoLandingSpec } from "./types";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 
 function hashSeed(seed: string): number {
   let h = 0;
@@ -428,14 +429,18 @@ function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
   const region = spec.regionLabel ?? "부산";
   const service = spec.serviceName ?? "법무사 업무";
   const seed = spec.seed;
+  const titled = withRegionLabel(region, spec.title);
+  const inRegion = spec.title.startsWith(region)
+    ? spec.title
+    : `${region}에서 ${spec.title}`;
 
   const whereQ = [
     {
-      question: `${region}에서 ${spec.title} 상담은 어디서 받나요?`,
+      question: `${inRegion} 상담은 어디서 받나요?`,
       answer: `다옴법무사사무소는 ${officeLocation.fullAddress}에 있으며, ${region} 사건도 전화·카카오톡·방문(예약)으로 상담합니다.`,
     },
     {
-      question: `${region} ${spec.title}은(는) 방문이 필수인가요?`,
+      question: `${titled}은(는) 방문이 필수인가요?`,
       answer: `가능한 사건은 서류 전달로 원격 진행합니다. 보정·열람·당사자 확인이 있으면 방문을 안내할 수 있습니다. 사무소는 ${officeLocation.areaLabel}입니다.`,
     },
   ];
@@ -447,7 +452,7 @@ function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
         "사건 복잡도에 따라 달라집니다. 서류를 확인한 뒤 법무사 수임료와 등기·법원 비용을 구분해 설명드립니다.",
     },
     {
-      question: `${region} ${service} 견적은 바로 나오나요?`,
+      question: `${withRegionLabel(region, service)} 견적은 바로 나오나요?`,
       answer:
         "주소·당사자·권리관계만으로 1차 범위를 말할 수 있고, 확정 견적은 서류 확인 후 항목별로 드립니다.",
     },
@@ -686,7 +691,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       sections: localOverlay.sections,
       faqs: localOverlay.faqs ?? buildFaqs(spec),
       consultationExample: {
-        title: `${spec.regionLabel ?? "부산"} ${spec.title} 상담 예시`,
+        title: `${withRegionLabel(spec.regionLabel ?? "부산", spec.title)} 상담 예시`,
         body: `${spec.regionLabel ?? "부산"} 생활권에서 등기·상속·법인 문의가 있었습니다. 소재지와 등기 원인을 먼저 확인한 뒤, 관할·서류·기한을 항목별로 안내했습니다. 잔금·대출이 겹치면 연동 순서도 함께 정리했습니다.`,
       },
       procedures: [
@@ -731,10 +736,10 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
     sections: buildSections(spec),
     faqs: buildFaqs(spec),
     consultationExample: {
-      title: `${spec.regionLabel ?? "부산"} ${spec.title} 상담 예시`,
+      title: `${withRegionLabel(spec.regionLabel ?? "부산", spec.title)} 상담 예시`,
       body: pick(
         [
-          `최근 ${spec.regionLabel ?? "부산"}에서 ${spec.title} 관련 문의가 있었습니다. 먼저 가족관계·재산·채무·관할을 확인했고, 급한 기한이 있으면 우선순위를 정리했습니다. 준비 서류 목록과 예상 일정·비용 범위를 단계별로 안내한 뒤, 서류가 모이면 접수까지 이어서 진행했습니다.`,
+          `최근 ${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 관련 문의가 있었습니다. 먼저 가족관계·재산·채무·관할을 확인했고, 급한 기한이 있으면 우선순위를 정리했습니다. 준비 서류 목록과 예상 일정·비용 범위를 단계별로 안내한 뒤, 서류가 모이면 접수까지 이어서 진행했습니다.`,
           `${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${spec.title}을(를) 검색해 문의하셨습니다. 주소와 당사자만으로 관할을 확인한 뒤, 필요 서류와 일정 리스크를 항목별로 안내한 가상 예시입니다. 실제 결과는 달라질 수 있습니다.`,
           `${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친 경우, 날짜가 있는 절차부터 정리하고 나머지 서류를 병렬로 준비하도록 안내했습니다.`,
         ],

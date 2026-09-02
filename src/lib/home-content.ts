@@ -18,6 +18,7 @@ export const homeHero = {
 } as const;
 
 export const homeSituationChips = [
+  { label: "상속 절차", situationId: "inheritance-choice", href: "/부산상속법무사" },
   { label: "상속등기", situationId: "inheritance-registration", href: "/부산상속등기" },
   { label: "부동산등기", situationId: "real-estate-trade", href: "/부산부동산등기" },
   { label: "법인등기", situationId: "corporate", href: "/부산법인등기" },

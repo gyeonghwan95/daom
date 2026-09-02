@@ -8,6 +8,7 @@ import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import { getNeighborhoodTopic } from "./neighborhood-hub-topics";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 import { withConsultHubLink } from "@/lib/seo/consult-hub-link";
+import { withRegionLabel } from "./region-label";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -25,7 +26,8 @@ function getRelatedBlogPosts(
 }
 
 function buildLawyerOpinion(regionLabel: string, title: string): string {
-  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${regionLabel} ${title} 상담을 직접 진행합니다. 관할·기한·서류는 확인된 범위만 안내합니다.`;
+  const labeled = withRegionLabel(regionLabel, title);
+  return `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 ${labeled} 상담을 직접 진행합니다. 관할·기한·서류는 확인된 범위만 안내합니다.`;
 }
 
 function buildDirectionsNote(config: LocalLandingConfig): string {

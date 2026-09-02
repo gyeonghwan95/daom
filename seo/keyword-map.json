@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31",
+  "updated": "2026-09-02",
   "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만.",
   "queries": {
     "부산 법무사": {
@@ -41,6 +41,11 @@
     "부산 상속 법무사": {
       "owner": "/부산상속법무사",
       "intent": "specialized-service"
+    },
+    "부산 법무사 상속": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "aliasOf": "부산 상속 법무사"
     },
     "부산 상속등기 법무사": {
       "owner": "/부산상속등기",

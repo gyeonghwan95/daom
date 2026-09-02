@@ -23,6 +23,10 @@ import {
   isInheritanceJourneyPage,
 } from "@/lib/inheritance/journey";
 import {
+  getChampionArticleSummary,
+  shouldDeferNationwideBanner,
+} from "@/lib/local-landing/champion-article-summaries";
+import {
   buildPageTocItems,
   ArticleSummary,
   ChecklistBox,
@@ -132,6 +136,8 @@ export function PageDataTemplate({
     !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
+  const deferNationwideBanner = shouldDeferNationwideBanner(page.slug);
+  const championSummary = getChampionArticleSummary(page.slug);
   const isCorporateLegalOps = page.slug === CORPORATE_LEGAL_OPERATIONS_SLUG;
   const conversionFaqs = conversionKey
     ? getConversionFaqsForPage(page.slug, page.path)
@@ -180,7 +186,7 @@ export function PageDataTemplate({
         showNationwideChip={showNationwide}
       />
 
-      {showRemoteBanner ? (
+      {showRemoteBanner && !deferNationwideBanner ? (
         <NationwideServiceCard
           headline={getNationwideBannerHeadline(page.slug)}
         />
@@ -196,17 +202,30 @@ export function PageDataTemplate({
 
       <ArticleSummary
         conclusion={
+          championSummary?.conclusion ||
           page.introParagraphs[0]?.trim() ||
           page.intro.trim() ||
           `${page.h1}에 대한 핵심 절차와 준비사항을 정리했습니다.`
         }
-        checkItems={[
-          page.procedures[0] ? `진행: ${page.procedures[0]}` : "",
-          page.documents[0] ? `서류: ${page.documents[0]}` : "",
-          page.consultationPoints[0] || "",
-        ].filter(Boolean)}
-        consultTriggers={page.consultationPoints.slice(0, 3)}
+        checkItems={
+          championSummary?.checkItems ??
+          [
+            page.procedures[0] ? `진행: ${page.procedures[0]}` : "",
+            page.documents[0] ? `서류: ${page.documents[0]}` : "",
+            page.consultationPoints[0] || "",
+          ].filter(Boolean)
+        }
+        consultTriggers={
+          championSummary?.consultTriggers ??
+          page.consultationPoints.slice(0, 3)
+        }
       />
+
+      {showRemoteBanner && deferNationwideBanner ? (
+        <NationwideServiceCard
+          headline={getNationwideBannerHeadline(page.slug)}
+        />
+      ) : null}
 
       {isCorporateLegalOps ? <CorporateLegalOperationsModules /> : null}
 

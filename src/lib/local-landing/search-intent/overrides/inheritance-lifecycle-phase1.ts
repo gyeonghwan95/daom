@@ -215,6 +215,7 @@ export const 장례후재산채무정리Override: SearchIntentContent = {
   ],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
     { href: "/안심상속원스톱서비스이후", label: "안심상속 신청 후 할 일" },
     { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
@@ -315,6 +316,7 @@ export const 사망신고와상속등기차이Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산상속포기", label: "부산 상속포기" },
@@ -415,6 +417,7 @@ export const 안심상속원스톱서비스이후Override: SearchIntentContent =
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/장례후재산채무정리", label: "장례 후 재산·채무 정리" },
     { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
     { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
@@ -514,6 +517,7 @@ export const 사망자재산채무조회Override: SearchIntentContent = {
   ],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/장례후재산채무정리", label: "장례 후 재산·채무 정리" },
     { href: "/안심상속원스톱서비스이후", label: "안심상속 이후 할 일" },
     { href: "/부모빚상속방법", label: "부모 빚이 있을 때" },
@@ -723,6 +727,7 @@ export const 방문없이준비하는상속등기Override: SearchIntentContent =
   relatedServiceLinks: [
     { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
     hub,
+    busanHub,
     { href: "/전국상속등기", label: "전국 상속등기" },
     {
       href: "/상속인이여러지역에있는경우",

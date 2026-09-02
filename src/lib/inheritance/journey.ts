@@ -123,6 +123,18 @@ export const INHERITANCE_FLAGSHIP_SLUGS = new Set([
   "여러지역상속부동산등기",
 ]);
 
+/** 부산 로컬 오너 — 전국 배너를 핵심 요약 아래로 내린다. `/상속`·`/전국상속등기`는 제외. */
+export const BUSAN_INHERITANCE_LOCAL_OWNER_SLUGS = new Set([
+  "부산상속법무사",
+  "부산상속등기",
+  "부산상속포기",
+  "부산한정승인",
+]);
+
+export function isBusanInheritanceLocalOwner(slug: string): boolean {
+  return BUSAN_INHERITANCE_LOCAL_OWNER_SLUGS.has(slug);
+}
+
 export function getInheritanceJourneyStage(
   slug: string,
 ): InheritanceJourneyStage | undefined {

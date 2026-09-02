@@ -3,7 +3,7 @@ import Link from "next/link";
 type ArticleSummaryProps = {
   /** 페이지 결론 2~3문장 */
   conclusion: string;
-  /** 가장 먼저 확인할 사항 (최대 3개) */
+  /** 가장 먼저 확인할 사항 (최대 5개) */
   checkItems?: string[];
   /** 상담이 필요한 대표 상황 (최대 3개) */
   consultTriggers?: string[];
@@ -23,7 +23,7 @@ export function ArticleSummary({
   readingTimeLabel = "약 3분 읽기",
   className = "",
 }: ArticleSummaryProps) {
-  const checks = checkItems.filter(Boolean).slice(0, 3);
+  const checks = checkItems.filter(Boolean).slice(0, 5);
   const triggers = consultTriggers.filter(Boolean).slice(0, 3);
 
   return (

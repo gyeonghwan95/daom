@@ -3,6 +3,7 @@ import { DISTRICT_METAS } from "./districts";
 import { buildIndustrialEntries } from "./industrial";
 import { buildLivingAreaEntries } from "./living-areas";
 import type { CaseRegionEntry, DistrictKey, DistrictMeta } from "./types";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 
 export type * from "./types";
 export { DISTRICT_METAS } from "./districts";
@@ -48,11 +49,11 @@ function buildDistrictTree(): CaseRegionEntry[] {
       entries.push({
         slug: dongSlug(dong),
         name: dong,
-        displayName: `부산 ${dong}`,
+        displayName: withRegionLabel("부산", dong),
         kind: district.key === "gijang" ? "living" : "dong",
         parentDistrictKey: district.key,
         traits: district.traits.slice(0, 3),
-        keywords: [dong, `부산 ${dong}`, `${dong} 법무사`],
+        keywords: [dong, withRegionLabel("부산", dong), `${dong} 법무사`],
         context: `${district.name} ${dong} 일대는 ${district.context}`,
         indexable: true,
       });
@@ -63,11 +64,11 @@ function buildDistrictTree(): CaseRegionEntry[] {
       entries.push({
         slug: dongSlug(admin),
         name: admin,
-        displayName: `부산 ${admin}`,
+        displayName: withRegionLabel("부산", admin),
         kind: "admin-dong",
         parentDistrictKey: district.key,
         traits: district.traits.slice(0, 2),
-        keywords: [admin, `부산 ${admin}`, `${admin} 법무사`],
+        keywords: [admin, withRegionLabel("부산", admin), `${admin} 법무사`],
         context: `${district.name} ${admin}은(는) ${baseDong} 생활권의 행정동으로, 주거 밀집지의 이전·상속등기 상담이 이어집니다.`,
         indexable: false,
         canonicalSlug: dongSlug(baseDong),

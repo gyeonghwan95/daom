@@ -1,6 +1,7 @@
 import type { SearchIntentContent } from "../types";
 
 const hub = { href: "/상속", label: "상속 종합 안내" } as const;
+const busanHub = { href: "/부산상속법무사", label: "부산 상속 업무 종합안내" } as const;
 const consult = {
   href: "/contact/inquiry?field=inheritance-registration",
   label: "상속 절차 먼저 확인하기",
@@ -76,6 +77,7 @@ export const 오래된상속토지정리Override: SearchIntentContent = {
   ],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
     {
@@ -192,6 +194,7 @@ export const 연락두절상속인Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산상속재산분할법무사", label: "상속재산분할" },
     { href: "/해외거주상속인", label: "해외 거주 상속인" },
@@ -281,6 +284,7 @@ export const 미성년상속인Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/blog/minor-heir-inheritance-guide", label: "미성년 상속인 안내(블로그)" },
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산상속포기", label: "부산 상속포기" },
@@ -374,6 +378,7 @@ export const 재혼가정상속Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/미성년상속인", label: "미성년 상속인" },
     { href: "/부산상속등기", label: "부산 상속등기" },
     { href: "/부산상속재산분할법무사", label: "상속재산분할" },
@@ -458,6 +463,7 @@ export const 고인계좌장례비사용Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
     { href: "/부산한정승인", label: "부산 한정승인" },
     { href: "/부산상속포기", label: "부산 상속포기" },
@@ -541,6 +547,7 @@ export const 사망후3개월지난상속Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/특별한정승인", label: "특별한정승인 절차·서류 안내" },
     { href: "/blog/three-months-after-death-inheritance", label: "3개월 경과 안내(블로그)" },
     { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
@@ -631,6 +638,7 @@ export const 해외거주상속인Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/방문없이준비하는법무사업무", label: "방문 없이 준비하는 법무사 업무" },
     { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
     {
@@ -729,6 +737,7 @@ export const 임대인사망전세계약Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     hub,
+    busanHub,
     { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
     { href: "/부산전세보증금반환법무사", label: "전세보증금 반환" },
     { href: "/부산상속등기", label: "부산 상속등기" },

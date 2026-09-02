@@ -23,6 +23,7 @@ import { buildBuildingIntentPage } from "@/lib/building-intent/builder";
 import { buildSpecialEntityIntentPage } from "@/lib/special-entity-intent/builder";
 import { buildB2BCollaborationPage } from "@/lib/b2b/builder";
 import { buildSearchIntentPage } from "./search-intent-builder";
+import { formatPlaceList, withRegionLabel } from "./region-label";
 import { buildBusanQualifiedAcceptancePage } from "./qualified-acceptance-busan";
 import { buildBusanCorporateRegistrationPage } from "./corporate-registration-busan";
 import { buildBusanInheritanceRegistrationPage } from "./inheritance-registration-busan";
@@ -131,7 +132,7 @@ function buildRegionFaqs(
       answer: `다옴법무사사무소는 부산 해운대구 센텀에 있으며, ${regionLabel}·${area} 일대 의뢰인을 직접 상담합니다. 전화·카카오톡·방문(예약) 모두 가능합니다.`,
     },
     {
-      question: `${regionLabel} ${serviceLabel} 비용은 얼마인가요?`,
+      question: `${withRegionLabel(regionLabel, serviceLabel)} 비용은 얼마인가요?`,
       answer: `사건마다 다릅니다. 부동산 가액·채무 규모·상속인 수·법인 규모 등에 따라 달라지므로, 상담 후 항목별 견적을 안내해 드립니다.`,
     },
     {
@@ -252,7 +253,8 @@ function buildLawyerOpinion(
   regionLabel: string,
   serviceLabel: string,
 ): string {
-  return `${lawyerProfileMeta.fullTitle}는 해운대 센텀에서 ${regionLabel} ${serviceLabel}를 상담합니다. 경력·자격은 소개 페이지에서 확인하실 수 있습니다.`;
+  const labeled = withRegionLabel(regionLabel, serviceLabel);
+  return `${lawyerProfileMeta.fullTitle}는 해운대 센텀에서 ${labeled}를 상담합니다. 경력·자격은 소개 페이지에서 확인하실 수 있습니다.`;
 }
 
 function getRelatedBlogPosts(
@@ -287,9 +289,10 @@ export function buildLocalLandingPage(
       ? config.slug
       : `${config.regionLabel} ${serviceLabel}`;
   const path = `/${config.slug}`;
-  const neighborhoodText = [...new Set([...config.neighborhoods, ...district.neighborhoods])]
-    .slice(0, 6)
-    .join(", ");
+  const neighborhoodPlaces = [
+    ...new Set([...config.neighborhoods, ...district.neighborhoods]),
+  ].slice(0, 6);
+  const neighborhoodText = neighborhoodPlaces.join(", ");
 
   if (isDebtResolution) {
     const procedureLabel =
@@ -338,7 +341,7 @@ export function buildLocalLandingPage(
         practicalNotes: (legalIssuesByService[config.serviceSlug] ?? []).slice(0, 3),
       },
       consultationCase: {
-        title: `${config.regionLabel} ${procedureLabel} 상담`,
+        title: `${withRegionLabel(config.regionLabel, procedureLabel)} 상담`,
         summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내한 사례입니다. 인가 결과를 단정하지 않습니다.`,
         href: config.relatedCaseSlug
           ? `/services/cases/${config.relatedCaseSlug}`
@@ -346,7 +349,7 @@ export function buildLocalLandingPage(
       },
       consultationCases: [
         {
-          title: `${config.regionLabel} ${procedureLabel} 상담`,
+          title: `${withRegionLabel(config.regionLabel, procedureLabel)} 상담`,
           summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내했습니다.`,
           href: config.relatedCaseSlug
             ? `/services/cases/${config.relatedCaseSlug}`
@@ -396,7 +399,7 @@ export function buildLocalLandingPage(
     };
   }
 
-  const problemStatement = `${district.context} ${config.regionLabel} ${neighborhoodText}에서 ${serviceLabel}를 진행할 때는 부동산·법인 소재지와 당사자 서류를 기준으로 관할과 순서를 맞춥니다. 이 페이지는 ${serviceLabel}만 다루며, 상담은 해운대 센텀 다옴법무사사무소에서 이어집니다.`;
+  const problemStatement = `${district.context} ${formatPlaceList(config.regionLabel, neighborhoodPlaces)}에서 ${serviceLabel}를 진행할 때는 부동산·법인 소재지와 당사자 서류를 기준으로 관할과 순서를 맞춥니다. 이 페이지는 ${serviceLabel}만 다루며, 상담은 해운대 센텀 다옴법무사사무소에서 이어집니다.`;
 
   const consultationCase = {
     title: `${config.regionLabel}에서 ${serviceLabel}를 검토하는 대표 상황`,
@@ -439,7 +442,7 @@ export function buildLocalLandingPage(
     ...serviceRegionFaqs,
   ].slice(0, 12);
 
-  const description = `${config.regionLabel} ${serviceLabel} 실무 안내 — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
+  const description = `${withRegionLabel(config.regionLabel, `${serviceLabel} 실무 안내`)} — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
 
   const ssotGuide = buildJurisdictionGuideForRegionKey(config.regionKey);
   const jurisdictionGuide = {

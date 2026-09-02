@@ -1,4 +1,5 @@
 import type { CaseRegionEntry, DistrictKey } from "./types";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 
 type LivingSeed = {
   name: string;
@@ -194,11 +195,15 @@ export function buildLivingAreaEntries(): CaseRegionEntry[] {
   return livingSeeds.map((seed) => ({
     slug: seed.slug,
     name: seed.name,
-    displayName: `부산 ${seed.name}`,
+    displayName: withRegionLabel("부산", seed.name),
     kind: "living" as const,
     parentDistrictKey: seed.parent,
     traits: seed.traits,
-    keywords: seed.keywords ?? [seed.name, `부산 ${seed.name}`, `${seed.name} 법무사`],
+    keywords: seed.keywords ?? [
+      seed.name,
+      withRegionLabel("부산", seed.name),
+      `${seed.name} 법무사`,
+    ],
     context: seed.context,
     indexable: seed.indexable ?? true,
     canonicalSlug: seed.canonicalSlug,

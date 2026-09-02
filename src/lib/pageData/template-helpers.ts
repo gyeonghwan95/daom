@@ -4,6 +4,7 @@ import type { SeoLandingPageType } from "@/lib/seo-landing/types";
 import { getStandardContactLinks } from "./contact-links";
 import { STANDARD_CTA_TEXT, STANDARD_CTA_TITLE } from "./constants";
 import { capHubLinks, getHubNavigationLinks, isCoreHubSlug } from "@/lib/hub";
+import { BUSAN_INHERITANCE_LOCAL_OWNER_SLUGS } from "@/lib/inheritance/journey";
 import { getThematicInternalLinks } from "./internal-links";
 import type {
   PageCategory,
@@ -192,11 +193,12 @@ export function createPageData(input: CreatePageDataInput): PageData {
   const isLocalHub =
     input.landingPageType === "region-hub" ||
     input.landingPageType === "neighborhood-hub";
+  const isInheritanceOwner = BUSAN_INHERITANCE_LOCAL_OWNER_SLUGS.has(input.slug);
   const internalLinks = capHubLinks(
     [...(input.internalLinks ?? []), ...hubLinks, ...thematicLinks],
     {
-      min: isGlossary ? 0 : isHub ? 20 : isLocalHub ? 6 : 8,
-      max: isGlossary ? 12 : isHub ? 28 : isLocalHub ? 10 : 16,
+      min: isGlossary ? 0 : isInheritanceOwner ? 6 : isHub ? 20 : isLocalHub ? 6 : 8,
+      max: isGlossary ? 12 : isInheritanceOwner ? 10 : isHub ? 28 : isLocalHub ? 10 : 16,
     },
   );
   const providedFaqs = uniqueFaqs(input.faqs ?? []);

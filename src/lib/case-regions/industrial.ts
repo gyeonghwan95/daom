@@ -1,4 +1,5 @@
 import type { CaseRegionEntry, DistrictKey } from "./types";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 
 type IndustrialSeed = {
   name: string;
@@ -41,11 +42,11 @@ export function buildIndustrialEntries(): CaseRegionEntry[] {
   return industrialSeeds.map((seed) => ({
     slug: seed.slug,
     name: seed.name,
-    displayName: `부산 ${seed.name}`,
+    displayName: withRegionLabel("부산", seed.name),
     kind: "industrial" as const,
     parentDistrictKey: seed.parent,
     traits: ["industrial" as const],
-    keywords: [seed.name, `부산 ${seed.name}`, `${seed.name} 법무사`],
+    keywords: [seed.name, withRegionLabel("부산", seed.name), `${seed.name} 법무사`],
     context: seed.context,
     indexable: seed.indexable ?? true,
     canonicalSlug: seed.canonicalSlug,

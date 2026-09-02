@@ -33,6 +33,7 @@ import {
 import { buildMetaDescription, buildMetaTitle } from "./seo";
 import { createPageData } from "./template-helpers";
 import type { PageCategory, PageData, PageSection } from "./types";
+import { formatPlaceList } from "@/lib/local-landing/region-label";
 
 export function mapLandingPageTypeToCategory(
   pageType: LocalLandingPageType,
@@ -235,7 +236,7 @@ export function buildPageDataFromLocalLanding(
           ]
         : [
             page.description,
-            `${page.regionLabel} ${page.neighborhoods.slice(0, 3).join("·")} 일대에서 해당 업무의 서류·기한·관할을 상담합니다.`,
+            `${formatPlaceList(page.regionLabel, page.neighborhoods.slice(0, 3)).replace(/, /g, "·")} 일대에서 해당 업무의 서류·기한·관할을 상담합니다.`,
           ];
 
   const consultationPoints =
@@ -274,6 +275,10 @@ export function buildPageDataFromLocalLanding(
     page.pageType === "conversion" ||
     page.slug === "부산개인회생" ||
     page.slug === "부산한정승인" ||
+    page.slug === "부산상속법무사" ||
+    page.slug === "부산상속등기" ||
+    page.slug === "부산부동산등기" ||
+    page.slug === "부산법인등기" ||
     getCostFaqsForSlug(page.slug).length > 0;
 
   const baseFaqs = keepAllFaqs
@@ -589,7 +594,11 @@ export function buildPageDataFromLocalLanding(
       page.slug === "부산법무사" ||
       page.slug === "부산상속포기" ||
       page.slug === "부산개인회생" ||
-      page.slug === "부산상속법무사",
+      page.slug === "부산상속법무사" ||
+      page.slug === "부산상속등기" ||
+      page.slug === "부산한정승인" ||
+      page.slug === "부산부동산등기" ||
+      page.slug === "부산법인등기",
     consultationExample: {
       title: page.consultationCase.title,
       body: page.consultationCase.summary,

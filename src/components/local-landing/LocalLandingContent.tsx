@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
+import { withRegionLabel } from "@/lib/local-landing/region-label";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -82,7 +83,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         pageType="service"
         serviceSlug={page.serviceSlug}
         pageSlug={page.slug}
-        title={`${page.regionLabel} ${page.title} 상담 문의`}
+        title={`${withRegionLabel(page.regionLabel, page.title)} 상담 문의`}
         description={page.ctaDescription}
       />
 
@@ -252,7 +253,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
           pageType="service"
           serviceSlug={page.serviceSlug}
           pageSlug={page.slug}
-          title={`${page.regionLabel} ${page.title} 상담 신청`}
+          title={`${withRegionLabel(page.regionLabel, page.title)} 상담 신청`}
           description={page.ctaDescription}
         />
       </div>
