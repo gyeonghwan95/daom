@@ -1857,6 +1857,16 @@ body.mobile-menu-open .mobile-bottom-cta {
     -webkit-appearance: none;
   }
 
+  .home-hero-stage__preload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+    opacity: 0;
+  }
+
   .home-hero-stage__fit .home-hero-stage__file-video {
     z-index: 1;
   }

@@ -19,6 +19,8 @@ import {
 
 const PLAYLIST = homeHeroMediaPlaylist;
 const FIRST_IMAGE_INDEX = PLAYLIST.findIndex((item) => item.kind === "image");
+/** 미디어 이벤트가 없어도 다음 장으로 넘긴다. ended보다 약간 뒤에 둔다. */
+const VIDEO_WATCHDOG_MS = HOME_HERO_VIDEO_MAX_MS + 800;
 
 function PlayGlyph() {
   return (
@@ -102,6 +104,7 @@ function videoProgressRatio(node: HTMLVideoElement, item: HomeHeroMediaItem) {
 function StageVisual({
   item,
   active,
+  warmed,
   playing,
   priority,
   onComplete,
@@ -109,13 +112,13 @@ function StageVisual({
 }: {
   item: HomeHeroMediaItem;
   active: boolean;
+  warmed: boolean;
   playing: boolean;
   priority: boolean;
   onComplete?: () => void;
   onProgress?: (ratio: number) => void;
 }) {
   const fileRef = useRef<HTMLVideoElement>(null);
-  const fillRef = useRef<HTMLVideoElement>(null);
   const completeRef = useRef(onComplete);
   const progressRef = useRef(onProgress);
   const playingRef = useRef(playing);
@@ -128,78 +131,88 @@ function StageVisual({
     if (!active || item.kind !== "video") return;
 
     const node = fileRef.current;
-    const fill = fillRef.current;
     if (!node) return;
 
     finishedRef.current = false;
     const start = item.startSeconds ?? 0;
-
-    const seekBoth = () => {
-      if (start > 0) {
-        node.currentTime = start;
-        if (fill) fill.currentTime = start;
-      }
-    };
+    let retryTimer = 0;
+    let retries = 0;
 
     const reportProgress = () => {
       progressRef.current?.(videoProgressRatio(node, item));
     };
 
     const finish = () => {
-      if (finishedRef.current || !playingRef.current) return;
+      if (finishedRef.current) return;
       finishedRef.current = true;
+      window.clearTimeout(retryTimer);
       progressRef.current?.(1);
+      node.pause();
       completeRef.current?.();
+    };
+
+    const tryPlay = () => {
+      if (finishedRef.current || !playingRef.current) return;
+      void node.play().then(() => {
+        retries = 0;
+      }).catch(() => {
+        if (finishedRef.current || !playingRef.current || retries >= 10) return;
+        retries += 1;
+        retryTimer = window.setTimeout(tryPlay, 140);
+      });
     };
 
     const onLoaded = () => {
       if (start > 0 && Math.abs(node.currentTime - start) > 0.2) {
-        seekBoth();
+        node.currentTime = start;
         return;
       }
-      if (fill && start > 0 && Math.abs(fill.currentTime - start) > 0.2) {
-        fill.currentTime = start;
-      }
       reportProgress();
+      tryPlay();
     };
     const onTimeUpdate = () => {
-      if (fill && Math.abs(fill.currentTime - node.currentTime) > 0.35) {
-        fill.currentTime = node.currentTime;
-      }
       const { end } = videoWindow(item, node.duration);
       if (node.currentTime >= end - 0.05) {
-        node.pause();
-        fill?.pause();
         finish();
         return;
       }
       reportProgress();
     };
+    const onPlaying = () => {
+      retries = 0;
+    };
 
     node.addEventListener("loadedmetadata", onLoaded);
+    node.addEventListener("canplay", tryPlay);
+    node.addEventListener("seeked", tryPlay);
+    node.addEventListener("playing", onPlaying);
     node.addEventListener("timeupdate", onTimeUpdate);
     node.addEventListener("ended", finish);
+    node.addEventListener("error", finish);
     if (node.readyState >= 1) onLoaded();
+    if (node.readyState >= 2) tryPlay();
 
     return () => {
+      window.clearTimeout(retryTimer);
       node.removeEventListener("loadedmetadata", onLoaded);
+      node.removeEventListener("canplay", tryPlay);
+      node.removeEventListener("seeked", tryPlay);
+      node.removeEventListener("playing", onPlaying);
       node.removeEventListener("timeupdate", onTimeUpdate);
       node.removeEventListener("ended", finish);
+      node.removeEventListener("error", finish);
     };
   }, [active, item]);
 
   useEffect(() => {
-    if (!active || item.kind !== "video") return;
+    if (item.kind !== "video") return;
     const node = fileRef.current;
-    const fill = fillRef.current;
     if (!node) return;
-    if (playing) {
+    if (active && playing) {
       void node.play().catch(() => undefined);
-      void fill?.play().catch(() => undefined);
-    } else {
-      node.pause();
-      fill?.pause();
+      return;
     }
+    node.pause();
   }, [active, item, playing]);
 
   const imageLayer = (layer: "fill" | "fit") => (
@@ -225,32 +238,25 @@ function StageVisual({
     );
   }
 
+  const showVideo = active || warmed;
+
   return (
     <>
       <div className="home-hero-stage__fill" aria-hidden>
-        {active ? (
-          <video
-            ref={fillRef}
-            className="home-hero-stage__media home-hero-stage__media--fill home-hero-stage__file-video"
-            src={item.src}
-            muted
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-            controlsList="nodownload nofullscreen noremoteplayback"
-            tabIndex={-1}
-            aria-hidden
-            onContextMenu={(event) => event.preventDefault()}
-          />
-        ) : null}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.poster}
+          alt=""
+          className="home-hero-stage__media home-hero-stage__media--fill"
+        />
       </div>
       <div className="home-hero-stage__fit">
-        {active ? (
+        {showVideo ? (
           <video
             ref={fileRef}
             className="home-hero-stage__media home-hero-stage__media--fit home-hero-stage__file-video"
             src={item.src}
+            poster={item.poster}
             muted
             playsInline
             preload="auto"
@@ -278,6 +284,7 @@ export function HeroStage() {
   const [pageVisible, setPageVisible] = useState(true);
   const fillRef = useRef<HTMLSpanElement>(null);
   const elapsedRef = useRef(0);
+  const advancingRef = useRef(false);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const listRef = useRef<HTMLUListElement>(null);
   const [overflow, setOverflow] = useState({ left: false, right: false });
@@ -292,6 +299,10 @@ export function HeroStage() {
     return () => document.removeEventListener("visibilitychange", onVis);
   }, []);
 
+  useEffect(() => {
+    advancingRef.current = false;
+  }, [index]);
+
   const resetFill = useCallback(() => {
     elapsedRef.current = 0;
     if (fillRef.current) fillRef.current.style.transform = "scaleX(0)";
@@ -300,12 +311,15 @@ export function HeroStage() {
   const goTo = useCallback((next: number, resume = true) => {
     const length = PLAYLIST.length;
     if (length === 0) return;
+    advancingRef.current = false;
     setIndex(((next % length) + length) % length);
     resetFill();
     if (resume) setUserPlaying(true);
   }, [resetFill]);
 
   const advance = useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
     resetFill();
     setIndex((currentIndex) => (currentIndex + 1) % PLAYLIST.length);
   }, [resetFill]);
@@ -359,6 +373,16 @@ export function HeroStage() {
   }, [advance, current.kind, isPlaying, index]);
 
   useEffect(() => {
+    if (!isPlaying) return;
+    const limit =
+      current.kind === "video" ? VIDEO_WATCHDOG_MS : HOME_HERO_SLIDE_MS + 800;
+    const timer = window.setTimeout(() => {
+      advance();
+    }, limit);
+    return () => window.clearTimeout(timer);
+  }, [advance, current.kind, index, isPlaying]);
+
+  useEffect(() => {
     const button = itemRefs.current[index];
     const list = listRef.current;
     if (!button || !list) return;
@@ -405,6 +429,7 @@ export function HeroStage() {
   if (!current) return null;
 
   const positionLabel = `${index + 1} / ${PLAYLIST.length}`;
+  const nextIndex = (index + 1) % PLAYLIST.length;
 
   return (
     <div
@@ -425,6 +450,7 @@ export function HeroStage() {
             <StageVisual
               item={item}
               active={itemIndex === index}
+              warmed={itemIndex === index || itemIndex === nextIndex}
               playing={isPlaying}
               priority={itemIndex === FIRST_IMAGE_INDEX}
               onComplete={itemIndex === index ? advance : undefined}
