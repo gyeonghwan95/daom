@@ -103,8 +103,7 @@ export default function AdminDashboardPage() {
 
       <p className="admin-summary">{data.summaryLine}</p>
       <p className="admin-prose">
-        페이지뷰는 화면을 연 횟수입니다. 세션은 같은 브라우저 탭에서 30분 동안을 한 방문으로 봅니다.
-        봇·숨은 탭·같은 주소 30초 이내 중복은 제외합니다.
+        페이지뷰 KV 기록은 공개 방문 경로에서 제거했습니다. CTA·문의 제출 같은 전환 이벤트만 저장됩니다. 과거 페이지뷰 수치는 그대로 남아 있습니다.
       </p>
 
       <div className="admin-metric-grid" aria-label="KPI">

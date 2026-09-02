@@ -1,0 +1,37 @@
+route,GET_reads,LIST_calls,PUT_writes,DELETE_calls,middleware_reads,layout_reads,api_reads,render_reads,client_followup_reads,total_possible_operations,notes
+/,0,0,0,0,0,0,0,0,0-1,0,static HTML; notices/active cache hit 0 miss 1; no page_view write
+/robots.txt,0,0,0,0,0,0,0,0,0,0,force-static build artifact
+/sitemap.xml,0,0,0,0,0,0,0,0,0,0,prebuild public/sitemap.xml
+/부산법무사,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산법무사상담,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산법무사추천,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산법무사비용,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산상속법무사,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산상속등기,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산상속포기,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/부산한정승인,0,0,0,0,0,0,0,0,0-1,0,static SEO HTML
+/해운대법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/서면법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/연제구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/센텀법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/부산진구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/동래구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/수영구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/사하구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/금정구법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/기장군법무사,0,0,0,0,0,0,0,0,0-1,0,region owner sample
+/강의,0,0,0,0,0,0,0,0,0-1,0,lecture hub static
+/glossary,0,0,0,0,0,0,0,0,0-1,0,static
+/contact,0,0,0,0,0,0,0,0,0-1,0,GET KV write 0
+/contact/inquiry,0,0,0,0,0,0,0,0,0-1,0,GET KV write 0
+/api/quick-inquiry POST,1,0,1,0,0,0,2,0,0,2,email log get+put after real submit
+/api/notices/active,0-1,0,0,0,0,0,0-1,0,0,0-1,Cache API then 1 GET
+/api/analytics/collect page_view,0,0,0,0,0,0,0,0,0,0,skipped not_stored
+/api/analytics/collect cta_click,3,0,3,0,0,0,6,0,0,6,event-driven only
+/favicon.ico,0,0,0,0,0,0,0,0,0,0,static asset no functions
+/_next/static/*,0,0,0,0,0,0,0,0,0,0,_routes.json excludes from Functions
+/image/*,0,0,0,0,0,0,0,0,0,0,static
+/admin,0,0,0,0,0,0,0,0,0,0,static shell; data via API
+/api/admin/dashboard,~194,0,0,0,0,0,~194,0,0,~194,memoized shard reads
+/api/admin/monitoring,~12,0,0,0,0,0,~12,0,0,~12,today+ingest+email+notices
+/api/admin/pages,~270,0,0,0,0,0,~270,0,0,~270,30 unique days x 9 keys

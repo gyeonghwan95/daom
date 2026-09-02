@@ -21,8 +21,8 @@ import {
   appendAudit,
   buildConversionsReport,
   buildDashboard,
+  buildMonitoring,
   buildPagesReport,
-  deleteNotice,
   getDaily,
   getNoticeStatsMap,
   hasKv,
@@ -247,7 +247,7 @@ async function handleAdminRequest(context) {
   }
 
   if (key === "monitoring" && method === "GET") {
-    const dash = await buildDashboard(env);
+    const dash = await buildMonitoring(env);
     return json({
       ok: true,
       data: {
@@ -374,7 +374,10 @@ async function handleAdminRequest(context) {
     const notices = await listNotices(env);
     const found = notices.find((n) => n.id === id);
     if (!found) return json({ ok: false, code: "not_found" }, 404);
-    await deleteNotice(env, id);
+    await saveNotices(
+      env,
+      notices.filter((n) => n.id !== id),
+    );
     await appendAudit(env, {
       id: newId("audit"),
       action: "notice_delete",

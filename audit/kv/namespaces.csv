@@ -1,0 +1,20 @@
+namespace,binding_name,file,operation,function,route,public_or_private,called_on_page_render,called_on_asset_request,called_on_api,estimated_frequency,risk
+ADMIN_KV,ADMIN_KV,wrangler.toml,binding,n/a,n/a,private,no,no,no,n/a,LOW
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET,getJson,via callers,mixed,no,no,yes,every KV read,HIGH
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,PUT,putJson,via callers,mixed,no,no,yes,every KV write,CRITICAL
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET+PUT,recordAnalyticsEvent,POST /api/analytics/collect,public,no,no,yes,conversion events only (page_view removed),HIGH
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET+PUT,bumpIngest,POST /api/analytics/collect,public,no,no,yes,store_error only,LOW
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET,listNotices,GET /api/notices/* and /api/admin/notices,mixed,no,no,yes,cache miss on public; admin CRUD,HIGH
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,PUT,saveNotices,/api/admin/notices,private,no,no,yes,admin write,LOW
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET,getDaily,/api/admin/dashboard|analytics|pages,private,no,no,yes,9 keys/day,HIGH
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET,getHourly,/api/admin/dashboard,private,no,no,yes,9 keys/day,MEDIUM
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET+PUT,appendEmailLog,POST /api/quick-inquiry,private-on-submit,no,no,yes,per successful/failed delivery,LOW
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET,listEmailLogs,/api/admin/email|dashboard,private,no,no,yes,admin,MEDIUM
+ADMIN_KV,ADMIN_KV,functions/_lib/admin-ops/store.ts,GET+PUT,appendAudit,/api/admin/login|notices,private,no,no,yes,admin,LOW
+ADMIN_KV,ADMIN_KV,functions/api/analytics/collect.ts,none-for-page_view,onRequestPost,POST /api/analytics/collect,public,no,no,yes,page_view now skipped 0 ops,CRITICAL
+ADMIN_KV,ADMIN_KV,functions/api/notices/active.ts,GET<=1,onRequestGet,GET /api/notices/active,public,no,no,yes,edge miss 1; hit 0,HIGH
+ADMIN_KV,ADMIN_KV,functions/api/notices/list.ts,GET<=1,onRequestGet,GET /api/notices/list,public,no,no,yes,edge miss 1; hit 0,MEDIUM
+ADMIN_KV,ADMIN_KV,functions/api/notices/item.ts,GET<=1,onRequestGet,GET /api/notices/item,public,no,no,yes,edge miss 1; hit 0,MEDIUM
+ADMIN_KV,ADMIN_KV,functions/api/admin/[[path]].ts,GET fan-out,buildDashboard,GET /api/admin/dashboard,private,no,no,yes,admin load,HIGH
+ADMIN_KV,ADMIN_KV,functions/api/admin/[[path]].ts,GET subset,buildMonitoring,GET /api/admin/monitoring,private,no,no,yes,admin load,MEDIUM
+ADMIN_KV,ADMIN_KV,functions/_lib/quick-inquiry/handler.ts,GET+PUT,appendEmailLog,POST /api/quick-inquiry,private-on-submit,no,no,yes,form POST only,LOW

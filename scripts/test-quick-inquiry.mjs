@@ -135,7 +135,7 @@ console.log("quick-inquiry handler");
         pageUrl: "/",
       }),
     }),
-    {},
+    { TURNSTILE_ALLOW_BYPASS: "1" },
   );
   assert.equal(res.status, 503);
   const data = await res.json();
@@ -182,7 +182,7 @@ console.log("quick-inquiry handler");
         pageUrl: "/",
       }),
     }),
-    {},
+    { TURNSTILE_ALLOW_BYPASS: "1" },
   );
   assert.equal(res.status, 503);
   const data = await res.json();
@@ -211,6 +211,7 @@ console.log("quick-inquiry handler");
         body: JSON.stringify(payload),
       }),
       {
+        TURNSTILE_ALLOW_BYPASS: "1",
         TELEGRAM_BOT_TOKEN: "fake",
         TELEGRAM_CHAT_ID: "1",
       },

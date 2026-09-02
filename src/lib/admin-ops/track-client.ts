@@ -5,16 +5,9 @@ import type {
   NaverSmartPlaceVariant,
 } from "@/lib/naver-smartplace/cta";
 
-/** Privacy-safe page_view + CTA helpers for public site */
-
-export function trackPageView(path?: string) {
-  const p =
-    path ||
-    (typeof window !== "undefined" ? window.location.pathname : "/");
-  void trackEvent({
-    type: "page_view",
-    path: p,
-  });
+/** Page views are not stored in KV. Conversion events still use trackEvent. */
+export function trackPageView(_path?: string) {
+  return;
 }
 
 export function trackCtaEvent(

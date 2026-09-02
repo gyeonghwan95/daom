@@ -60,7 +60,7 @@ export default function AdminAnalyticsPage() {
     <div>
       <AdminPageHeader title="유입 분석" />
       <p className="admin-prose">
-        페이지뷰(화면 조회)와 세션(30분 방문)을 구분해 집계합니다. CTA는 클릭한 버튼이 연 주소까지 기록합니다.
+        일반 페이지뷰는 KV에 쌓지 않습니다. CTA·문의 제출 등 전환 이벤트와 과거 페이지뷰만 표시됩니다.
       </p>
       {message ? (
         <p className="admin-alert admin-alert--info">{message}</p>

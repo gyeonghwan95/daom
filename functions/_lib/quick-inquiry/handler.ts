@@ -222,21 +222,6 @@ export async function handleQuickInquiry(
     );
   }
 
-  const dupHash = await hashDuplicateKey(
-    validated.data.message,
-    validated.data.contact,
-  );
-  if (!checkDuplicate(dupHash)) {
-    return json(
-      {
-        ok: false,
-        code: "duplicate",
-        message: "같은 내용의 문의가 방금 접수되었습니다. 잠시만 기다려 주세요.",
-      },
-      429,
-    );
-  }
-
   const turnstileSecret = env.TURNSTILE_SECRET_KEY?.trim();
   const allowBypass = env.TURNSTILE_ALLOW_BYPASS === "1";
   const token =
@@ -281,6 +266,21 @@ export async function handleQuickInquiry(
         400,
       );
     }
+  }
+
+  const dupHash = await hashDuplicateKey(
+    validated.data.message,
+    validated.data.contact,
+  );
+  if (!checkDuplicate(dupHash)) {
+    return json(
+      {
+        ok: false,
+        code: "duplicate",
+        message: "같은 내용의 문의가 방금 접수되었습니다. 잠시만 기다려 주세요.",
+      },
+      429,
+    );
   }
 
   const delivered = await deliverInquiry(env, validated.data);

@@ -10,6 +10,7 @@ Browser → POST /api/analytics/collect → recordAnalyticsEvent()
 - Valid `daom_admin_session` skipped (owner browsing public pages is not a visitor)
 - Client also skips when an admin session is present (`daom_analytics_exclude` + sessionStorage)
 - Bot UA skipped
+- **`page_view` and `notice_impression` are not stored** (public hot-path KV writes removed 2026-09-02). CTA, consult submit, notice click/dismiss, and similar conversion events still call `recordAnalyticsEvent()`.
 - Rate limit: 120/min/IP
 - Payload whitelist (`text/plain` or JSON body)
 - First page_view in a tab = landing source (naver/google/direct). Later views = `internal`

@@ -13,6 +13,10 @@ import {
   newId,
   normalizePath,
 } from "./crypto";
+import { invalidatePublicNoticeCache } from "./edge-cache";
+
+/** Same-isolate GET memo. Does not reduce billed ops across isolates. */
+const READ_MEMO_MS = 15_000;
 
 const KEYS = {
   notices: "notices:all",
@@ -44,24 +48,14 @@ function emptyIngest(date) {
 }
 
 export async function bumpIngest(env, reason) {
+  // Skip-path counters used to be GET+PUT on every rejected collect.
+  // That turned bot/spam/dedupe into billed writes. Only persist store errors.
+  if (reason !== "store_error") return;
   if (!hasKv(env)) return;
-  const fieldByReason = {
-    admin_session: "skippedAdminSession",
-    dedupe: "skippedDedupe",
-    admin_path: "skippedAdminPath",
-    empty_ua: "skippedEmptyUa",
-    no_kv: "skippedNoKv",
-    bad_request: "badRequest",
-    invalid_type: "invalidType",
-    rate_limited: "rateLimited",
-    store_error: "storeError",
-  };
-  const field = fieldByReason[reason];
-  if (!field) return;
   try {
     const date = formatKstDate();
     const row = await getJson(env.ADMIN_KV, ingestKey(date), emptyIngest(date));
-    row[field] = (row[field] || 0) + 1;
+    row.storeError = (row.storeError || 0) + 1;
     row.lastAt = new Date().toISOString();
     row.lastReason = reason;
     await putJson(env.ADMIN_KV, ingestKey(date), row);
@@ -311,17 +305,36 @@ export function hasKv(env) {
   return Boolean(env?.ADMIN_KV);
 }
 
+function readMemo(kv) {
+  if (!kv.__daomReadMemo) kv.__daomReadMemo = new Map();
+  return kv.__daomReadMemo;
+}
+
+function cloneJson(value) {
+  if (value == null) return value;
+  return JSON.parse(JSON.stringify(value));
+}
+
 async function getJson(kv, key, fallback) {
+  const memo = readMemo(kv);
+  const hit = memo.get(key);
+  if (hit && Date.now() - hit.at < READ_MEMO_MS) return cloneJson(hit.value);
   const raw = await kv.get(key);
-  if (!raw) return fallback;
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return fallback;
+  let value = fallback;
+  if (raw) {
+    try {
+      value = JSON.parse(raw);
+    } catch {
+      value = fallback;
+    }
   }
+  memo.set(key, { at: Date.now(), value });
+  return cloneJson(value);
 }
 
 async function putJson(kv, key, value) {
+  const memo = readMemo(kv);
+  memo.set(key, { at: Date.now(), value });
   await kv.put(key, JSON.stringify(value));
 }
 
@@ -330,8 +343,17 @@ export async function listNotices(env) {
   return getJson(env.ADMIN_KV, KEYS.notices, []);
 }
 
+export async function listNoticesSafe(env) {
+  try {
+    return await listNotices(env);
+  } catch {
+    return [];
+  }
+}
+
 export async function saveNotices(env, notices) {
   await putJson(env.ADMIN_KV, KEYS.notices, notices);
+  await invalidatePublicNoticeCache();
 }
 
 export function resolveNoticeStatus(notice, now = new Date()) {
@@ -365,11 +387,10 @@ export function toPublicNotice(notice) {
   };
 }
 
-export async function getActivePublicNotices(env, path = "/") {
-  const all = await listNotices(env);
+export function filterActivePublicNotices(all, path = "/") {
   const now = new Date();
   const p = normalizePath(path);
-  return all
+  return (all || [])
     .map((n) => ({ ...n, status: resolveNoticeStatus(n, now) }))
     .filter((n) => n.status === "active")
     .filter((n) => n.showPopup !== false)
@@ -386,6 +407,11 @@ export async function getActivePublicNotices(env, path = "/") {
     .map(toPublicNotice);
 }
 
+export async function getActivePublicNotices(env, path = "/") {
+  const all = await listNoticesSafe(env);
+  return filterActivePublicNotices(all, path);
+}
+
 /** Notices eligible for public archive list / detail. */
 export function isPublicListable(notice, now = new Date()) {
   const status = resolveNoticeStatus(notice, now);
@@ -397,10 +423,9 @@ export function isPublicListable(notice, now = new Date()) {
   return false;
 }
 
-export async function listPublicNotices(env) {
-  const all = await listNotices(env);
+export function mapPublicNoticeList(all) {
   const now = new Date();
-  return all
+  return (all || [])
     .map((n) => ({ ...n, status: resolveNoticeStatus(n, now) }))
     .filter((n) => isPublicListable(n, now))
     .sort((a, b) => {
@@ -417,15 +442,22 @@ export async function listPublicNotices(env) {
     }));
 }
 
-export async function getPublicNoticeById(env, id) {
+export function findPublicNoticeById(all, id) {
   if (!id) return null;
-  const all = await listNotices(env);
   const now = new Date();
-  const found = all.find((n) => n.id === id);
+  const found = (all || []).find((n) => n.id === id);
   if (!found) return null;
   const withStatus = { ...found, status: resolveNoticeStatus(found, now) };
   if (!isPublicListable(withStatus, now)) return null;
   return toPublicNotice(withStatus);
+}
+
+export async function listPublicNotices(env) {
+  return mapPublicNoticeList(await listNoticesSafe(env));
+}
+
+export async function getPublicNoticeById(env, id) {
+  return findPublicNoticeById(await listNoticesSafe(env), id);
 }
 
 export async function deleteNotice(env, id) {
@@ -595,6 +627,9 @@ export async function listRecentActivity(env, limit = 20) {
 
 export async function recordAnalyticsEvent(env, event) {
   if (!hasKv(env)) return { ok: false, reason: "no_storage" };
+  if (event?.type === "page_view" || event?.type === "notice_impression") {
+    return { ok: true, skipped: true, reason: "not_stored" };
+  }
   const now = new Date();
   const date = formatKstDate(now);
   const hour = getKstHour(now);
@@ -984,8 +1019,8 @@ export async function buildDashboard(env) {
       .map(([placement, count]) => ({ placement, count }))
       .sort((a, b) => b.count - a.count);
 
-    emailRecent = await listEmailLogs(env, 20);
-    const allEmail = await listEmailLogs(env, 200);
+    emailRecent = await listEmailLogs(env, 200);
+    const allEmail = emailRecent;
     emailSuccessToday = allEmail.filter(
       (e) => e.status === "success" && isSameKstDay(e.timestamp, today),
     ).length;
@@ -1186,6 +1221,184 @@ function isSameKstDay(timestamp, ymd) {
   return digits === compact;
 }
 
+/** Monitoring page does not need the full 7-day hourly fan-out. */
+export async function buildMonitoring(env) {
+  const storageConfigured = hasKv(env);
+  const today = formatKstDate();
+  const notifyChannels = {
+    telegram: Boolean(
+      env.TELEGRAM_BOT_TOKEN?.trim() && env.TELEGRAM_CHAT_ID?.trim(),
+    ),
+    email: Boolean(
+      env.RESEND_API_KEY?.trim() &&
+        String(env.INQUIRY_FROM_EMAIL || "").includes("@") &&
+        env.INQUIRY_TO_EMAIL?.trim(),
+    ),
+  };
+
+  let visitsToday = null;
+  let sessionsToday = null;
+  let ctaToday = null;
+  let consultSubmitToday = null;
+  let searchUsedToday = null;
+  let toolUsedToday = null;
+  let diagnosisCompleteToday = null;
+  let naverPlaceToday = null;
+  let lastEventAt = null;
+  let lastEventAgeMinutes = null;
+  let ingestToday = null;
+  let noticeToday = null;
+  let emailSuccessToday = null;
+  let emailFailedToday = null;
+  let notices = [];
+
+  if (storageConfigured) {
+    const dayToday = await getDaily(env, today);
+    visitsToday = dayToday.visits;
+    sessionsToday = dayToday.sessions || 0;
+    ctaToday = dayToday.cta;
+    consultSubmitToday = dayToday.consultSubmit;
+    searchUsedToday = dayToday.searchUsed || 0;
+    toolUsedToday = dayToday.toolUsed || 0;
+    diagnosisCompleteToday = dayToday.diagnosisComplete || 0;
+    naverPlaceToday = dayToday.naverPlace || 0;
+    lastEventAt = dayToday.lastEventAt || null;
+    noticeToday = sumNoticeStats(dayToday);
+    if (lastEventAt) {
+      lastEventAgeMinutes = Math.max(
+        0,
+        Math.round((Date.now() - Date.parse(lastEventAt)) / 60000),
+      );
+    }
+    const ingestRow = await getIngest(env, today);
+    ingestToday = { ...ingestRow, stored: dayToday.eventsStored || 0 };
+    const allEmail = await listEmailLogs(env, 200);
+    emailSuccessToday = allEmail.filter(
+      (e) => e.status === "success" && isSameKstDay(e.timestamp, today),
+    ).length;
+    emailFailedToday = allEmail.filter(
+      (e) => e.status === "failed" && isSameKstDay(e.timestamp, today),
+    ).length;
+    notices = await listNotices(env);
+  }
+
+  const now = new Date();
+  const activeNotices = notices
+    .map((n) => ({ ...n, status: resolveNoticeStatus(n, now) }))
+    .filter((n) => n.status === "active");
+
+  const alerts = [];
+  if (!storageConfigured) {
+    alerts.push({
+      id: "no-kv",
+      level: "warning",
+      title: "ADMIN_KV 미연결",
+      detail: "Cloudflare KV 바인딩 ADMIN_KV를 연결하면 통계·공지·메일 로그가 저장됩니다.",
+    });
+  }
+  if (emailFailedToday && emailFailedToday > 0) {
+    alerts.push({
+      id: "email-fail",
+      level: "critical",
+      title: `상담메일 실패 ${emailFailedToday}건`,
+      detail: "Resend/Telegram 설정·도메인 인증·Secret을 확인하세요.",
+      href: "/admin/email",
+    });
+  }
+  if (!notifyChannels.telegram && !notifyChannels.email) {
+    alerts.push({
+      id: "notify-channel",
+      level: "warning",
+      title: "문의 전달 채널 미설정",
+      detail: "Telegram 또는 Resend 환경변수가 없어 문의가 전달되지 않습니다.",
+      href: "/admin/settings",
+    });
+  }
+
+  const analyticsStatus = !storageConfigured
+    ? "unknown"
+    : lastEventAgeMinutes != null && lastEventAgeMinutes > 6 * 60
+      ? "warn"
+      : "ok";
+  const emailStatus =
+    emailFailedToday > 0 ? "warn" : storageConfigured ? "ok" : "unknown";
+  const notifyStatus =
+    notifyChannels.telegram || notifyChannels.email ? "ok" : "warn";
+
+  return {
+    generatedAt: new Date().toISOString(),
+    storageConfigured,
+    lastEventAt,
+    lastEventAgeMinutes,
+    ingestToday,
+    noticeToday,
+    notifyChannels,
+    alerts,
+    health: [
+      {
+        id: "public-site",
+        label: "공개 사이트",
+        status: "ok",
+        detail: "정적 배포(Pages)",
+        checkedAt: formatKstDateTime(),
+      },
+      {
+        id: "storage",
+        label: "저장소",
+        status: storageConfigured ? "ok" : "warn",
+        detail: storageConfigured ? "ADMIN_KV 연결됨" : "ADMIN_KV 없음",
+        checkedAt: formatKstDateTime(),
+      },
+      {
+        id: "analytics",
+        label: "수집",
+        status: analyticsStatus,
+        detail: storageConfigured
+          ? lastEventAt
+            ? `마지막 ${formatKstDateTime(new Date(lastEventAt))}`
+            : "오늘 전환 이벤트 없음"
+          : "수집 대기(KV 필요)",
+        checkedAt: formatKstDateTime(),
+      },
+      {
+        id: "email",
+        label: "문의 전달",
+        status: emailStatus,
+        detail: storageConfigured
+          ? emailSuccessToday || emailFailedToday
+            ? `오늘 성공 ${emailSuccessToday ?? 0} / 실패 ${emailFailedToday ?? 0}`
+            : "오늘 발송 없음"
+          : "로그 저장소 없음",
+        checkedAt: formatKstDateTime(),
+      },
+      {
+        id: "notify",
+        label: "전달 채널",
+        status: notifyStatus,
+        detail:
+          [notifyChannels.telegram ? "Telegram" : null, notifyChannels.email ? "Resend" : null]
+            .filter(Boolean)
+            .join(" · ") || "미설정",
+        checkedAt: formatKstDateTime(),
+      },
+    ],
+    kpis: {
+      visitsToday,
+      sessionsToday,
+      ctaToday,
+      consultSubmitToday,
+      searchUsedToday,
+      toolUsedToday,
+      diagnosisCompleteToday,
+      emailSuccessToday,
+      emailFailedToday,
+      naverPlaceToday,
+      activeNotices: activeNotices.length,
+      alertCount: alerts.length,
+    },
+  };
+}
+
 export { emptyDay, KEYS, newId, formatKstDateTime, formatKstDate, kstDateRange };
 
 export async function buildPagesReport(env, days = 30) {
@@ -1201,9 +1414,16 @@ export async function buildPagesReport(env, days = 30) {
   const agg = {};
   const agg7 = {};
   const todayAgg = {};
+  const byDate = new Map();
+  const loadDay = async (d) => {
+    if (byDate.has(d)) return byDate.get(d);
+    const day = await getDaily(env, d);
+    byDate.set(d, day);
+    return day;
+  };
 
   for (const d of range) {
-    const day = await getDaily(env, d);
+    const day = await loadDay(d);
     for (const [path, s] of Object.entries(day.paths || {})) {
       if (!agg[path]) {
         agg[path] = {
@@ -1232,7 +1452,7 @@ export async function buildPagesReport(env, days = 30) {
   }
 
   for (const d of last7) {
-    const day = await getDaily(env, d);
+    const day = await loadDay(d);
     for (const [path, s] of Object.entries(day.paths || {})) {
       if (!agg7[path]) agg7[path] = 0;
       agg7[path] += s.visits || 0;
@@ -1241,7 +1461,7 @@ export async function buildPagesReport(env, days = 30) {
 
   const prevAgg = {};
   for (const d of prev7) {
-    const day = await getDaily(env, d);
+    const day = await loadDay(d);
     for (const [path, s] of Object.entries(day.paths || {})) {
       prevAgg[path] = (prevAgg[path] || 0) + (s.visits || 0);
     }

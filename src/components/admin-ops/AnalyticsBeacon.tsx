@@ -1,44 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { isAdminAnalyticsExcluded } from "@/lib/admin-ops/analytics-exclude";
-import { trackPageView } from "@/lib/admin-ops/track-client";
-
-/** Soft page_view — 실제 탐색 1회당 1건. 프리렌더·숨은 탭·bfcache 복원은 제외. */
+/**
+ * Public page_view beacons used to POST /api/analytics/collect on every visit.
+ * That path did GET+PUT on KV per view and exhausted the Free write budget.
+ * Conversion events still go through trackEvent(); this component is a no-op.
+ */
 export function AnalyticsBeacon() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (!pathname || pathname.startsWith("/admin")) return;
-    if (isAdminAnalyticsExcluded()) return;
-    let cancelled = false;
-
-    const fire = () => {
-      if (cancelled) return;
-      trackPageView(pathname);
-    };
-
-    const vis = String(document.visibilityState);
-    if (vis === "hidden" || vis === "prerender") {
-      const onVis = () => {
-        if (document.visibilityState === "visible") {
-          document.removeEventListener("visibilitychange", onVis);
-          fire();
-        }
-      };
-      document.addEventListener("visibilitychange", onVis);
-      return () => {
-        cancelled = true;
-        document.removeEventListener("visibilitychange", onVis);
-      };
-    }
-
-    fire();
-    return () => {
-      cancelled = true;
-    };
-  }, [pathname]);
-
   return null;
 }
