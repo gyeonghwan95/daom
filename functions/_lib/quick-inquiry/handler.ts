@@ -1,9 +1,7 @@
 import { checkDuplicate, checkRateLimit, hashDuplicateKey } from "./rate-limit";
 import { deliverInquiry, type NotifyEnv } from "./notify";
 import { validateInquiryBody } from "./validate";
-import type { InquiryResult, ValidatedInquiry } from "./types";
-import { newId, normalizePath } from "../admin-ops/crypto";
-import { appendEmailLog, hasKv } from "../admin-ops/store";
+import type { InquiryResult } from "./types";
 
 export type QuickInquiryHandlerEnv = NotifyEnv & {
   TURNSTILE_SECRET_KEY?: string;
@@ -12,48 +10,6 @@ export type QuickInquiryHandlerEnv = NotifyEnv & {
   ALLOWED_ORIGINS?: string;
   NEXT_PUBLIC_SITE_URL?: string;
 };
-
-async function recordInquiryDeliveryLog(
-  env: QuickInquiryHandlerEnv,
-  data: ValidatedInquiry,
-  delivered:
-    | { ok: true; channels: ("telegram" | "email")[] }
-    | { ok: false; code: string; hint?: string },
-): Promise<void> {
-  try {
-    if (!hasKv(env)) return;
-    const path = normalizePath(data.pageUrl || "/");
-    let messageType = "inquiry";
-    if (path.includes("강의")) messageType = "lecture";
-    else if (
-      path.includes("협업") ||
-      path.includes("기업") ||
-      path.toLowerCase().includes("b2b")
-    ) {
-      messageType = "collaboration";
-    }
-    const provider = delivered.ok
-      ? delivered.channels.includes("email")
-        ? "resend"
-        : "telegram"
-      : "unknown";
-    await appendEmailLog(env, {
-      id: newId("em"),
-      timestamp: new Date().toISOString(),
-      messageType,
-      provider,
-      recipientMasked:
-        data.contactKind === "email" ? "***@***" : "전화 ***-****",
-      status: delivered.ok ? "success" : "failed",
-      errorSummary: delivered.ok
-        ? undefined
-        : String(delivered.hint || delivered.code || "").slice(0, 80),
-      path,
-    });
-  } catch {
-    /* never block inquiry delivery */
-  }
-}
 
 function json(result: InquiryResult, status: number): Response {
   return new Response(JSON.stringify(result), {
@@ -284,7 +240,6 @@ export async function handleQuickInquiry(
   }
 
   const delivered = await deliverInquiry(env, validated.data);
-  await recordInquiryDeliveryLog(env, validated.data, delivered);
   if (!delivered.ok) {
     if (delivered.code === "no_channel") {
       const from = env.INQUIRY_FROM_EMAIL?.trim() ?? "";

@@ -71,11 +71,11 @@ export function createSpecialistPage(page: SpecialistPage): SearchIntentContent 
 export const 부산등기전문법무사Override = createSpecialistPage({
   slug: "부산등기전문법무사",
   phrase: "부산 등기전문 법무사",
-  title: "부산 등기전문 법무사",
-  metaTitle: "부산 등기전문 법무사｜부동산·상속·법인 등기 먼저 가르기",
+  title: "등기 종류별 업무 선택 안내",
+  metaTitle: "등기 종류별 업무 선택｜부산 부동산·상속·법인 등기",
   metaDescription:
     "부산 등기전문 법무사로 검색했다면 부동산·상속·법인 등기 중 무엇을 바꾸려는지부터 갈립니다. 등기부 종류별 확인 순서와 관할 등기소 점검 방법을 정리했습니다.",
-  h1: "부산 등기전문 법무사, 등기 종류부터 가르는 순서",
+  h1: "부동산·상속·법인, 어떤 등기부터 확인할까요?",
   eyebrow: "등기부 종류 분기 안내",
   heroParagraphs: [
     "부동산등기는 매매·근저당처럼 부동산 등기부를 바꾸는 일, 상속등기는 사망 이후 상속인 명의로 옮기는 일, 법인등기는 임원·상호·본점을 공시하는 일입니다. 세 가지가 한 번에 섞여 보이면, 지금 어느 등기부를 바꾸려는지부터 가릅니다. 이 페이지는 전문 자격을 평가하는 곳이 아닙니다.",

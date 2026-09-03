@@ -3,8 +3,8 @@ import type { SearchIntentContent } from "../types";
 export const 부산매매등기법무사Override: SearchIntentContent = {
   slug: "부산매매등기법무사",
   category: "keyword",
-  title: "부산 매매등기 법무사",
-  metaTitle: "부산 매매등기 법무사｜계약·잔금·소유권이전 절차 안내",
+  title: "매매 잔금일 등기 실무",
+  metaTitle: "매매 잔금일 등기 실무｜부산 소유권이전 절차 안내",
   metaDescription:
     "부산 매매등기 법무사를 찾을 때 확인할 매수인·매도인 서류, 잔금일 진행, 취득세·채권·수수료 항목, 대출·근저당 연동을 정리했습니다. 세금은 개별 확인이 필요합니다.",
   h1: "부산 매매등기, 계약부터 잔금·소유권이전까지 확인할 기준",

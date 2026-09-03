@@ -236,7 +236,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   {
     slug: "부동산등기",
     title: "부동산등기·소유권이전｜매매·증여 절차",
-    h1: "부산 부동산등기·소유권이전·매매등기 상담",
+    h1: "부동산등기·소유권이전·매매등기 종합 안내",
     description:
       "부산 부동산등기·소유권이전등기·매매·증여·상속·재개발·전세권 등기. 해운대·서면·남부산등기소 관할 안내. 다옴법무사사무소.",
     primaryServiceSlug: "real-estate-registration",

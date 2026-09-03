@@ -1,12 +1,12 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-08-31T12:27:02.872Z
+# 생성: 2026-09-03T14:44:29.166Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1662 (제외 144)
+# 총 URL: 1629 (제외 177)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
-# Tier 3 — 2주차 (광역·비용·자가진단·도구): 208개
+# Tier 3 — 2주차 (광역·비용·자가진단·도구): 175개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 564개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 580개
@@ -70,7 +70,7 @@ Tier 2 — 1주차 (지역·전국 허브) (28개)
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/tools	/tools
 
 ────────────────────────────────────────────────────────────────────────
-Tier 3 — 2주차 (광역·비용·자가진단·도구) (208개)
+Tier 3 — 2주차 (광역·비용·자가진단·도구) (175개)
 ────────────────────────────────────────────────────────────────────────
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8	/개인파산자가진단
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8	/개인회생자가진단
@@ -186,39 +186,6 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (208개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/faq/when-to-file-inheritance-registration	/faq/when-to-file-inheritance-registration
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/faq/who-can-file-bankruptcy-faq	/faq/who-can-file-bankruptcy-faq
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/faq/who-needs-inheritance-registration	/faq/who-needs-inheritance-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/acquisition-tax	/glossary/acquisition-tax
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/answer-brief	/glossary/answer-brief
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/attachment	/glossary/attachment
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/certified-mail	/glossary/certified-mail
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/company-establishment-registration	/glossary/company-establishment-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/complaint	/glossary/complaint
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/director-change-registration	/glossary/director-change-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/discharge	/glossary/discharge
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/dissolution-registration	/glossary/dissolution-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/head-office-move-registration	/glossary/head-office-move-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-division-agreement	/glossary/inheritance-division-agreement
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-registration	/glossary/inheritance-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/inheritance-renunciation	/glossary/inheritance-renunciation
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/jeonse-right	/glossary/jeonse-right
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/lease-registration-order	/glossary/lease-registration-order
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/legal-inheritance-order	/glossary/legal-inheritance-order
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/liquidation-registration	/glossary/liquidation-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/mortgage	/glossary/mortgage
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/ownership-preservation-registration	/glossary/ownership-preservation-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/ownership-transfer-registration	/glossary/ownership-transfer-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/payment-order	/glossary/payment-order
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/personal-bankruptcy	/glossary/personal-bankruptcy
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/personal-rehabilitation	/glossary/personal-rehabilitation
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/pledge	/glossary/pledge
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/provisional-attachment	/glossary/provisional-attachment
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/purpose-change-registration	/glossary/purpose-change-registration
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/qualified-acceptance	/glossary/qualified-acceptance
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/registration-license-tax	/glossary/registration-license-tax
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/service-fee	/glossary/service-fee
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/special-qualified-acceptance	/glossary/special-qualified-acceptance
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/stamp-duty	/glossary/stamp-duty
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/statutory-reserve-share	/glossary/statutory-reserve-share
-[T3] https://xn--2j1br1na42lvxja38mk8r.kr/glossary/subrogation-inheritance	/glossary/subrogation-inheritance
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/services/bankruptcy	/services/bankruptcy
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/busan-personal-rehabilitation-consultation	/services/cases/busan-personal-rehabilitation-consultation
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/centum-ownership-transfer-case	/services/cases/centum-ownership-transfer-case
@@ -1710,7 +1677,7 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (144)
+# 제외 (177)
 # [EXCLUDED:noindex] /부산상속등기전문법무사
 # [EXCLUDED:noindex] /부산상속전문법무사
 # [EXCLUDED:noindex] /부산상속포기전문법무사
@@ -1850,6 +1817,39 @@ Tier 8 — 후순위 (언론·강의) (28개)
 # [EXCLUDED:redirect] /cases/jaesong-inheritance-renunciation-consultation
 # [EXCLUDED:redirect] /cases/suyeong-company-establishment-case
 # [EXCLUDED:redirect] /cases/yeonje-director-change-case
+# [EXCLUDED:noindex] /glossary/acquisition-tax
+# [EXCLUDED:noindex] /glossary/answer-brief
+# [EXCLUDED:noindex] /glossary/attachment
+# [EXCLUDED:noindex] /glossary/certified-mail
+# [EXCLUDED:noindex] /glossary/company-establishment-registration
+# [EXCLUDED:noindex] /glossary/complaint
+# [EXCLUDED:noindex] /glossary/director-change-registration
+# [EXCLUDED:noindex] /glossary/discharge
+# [EXCLUDED:noindex] /glossary/dissolution-registration
+# [EXCLUDED:noindex] /glossary/head-office-move-registration
+# [EXCLUDED:noindex] /glossary/inheritance-division-agreement
+# [EXCLUDED:noindex] /glossary/inheritance-registration
+# [EXCLUDED:noindex] /glossary/inheritance-renunciation
+# [EXCLUDED:noindex] /glossary/jeonse-right
+# [EXCLUDED:noindex] /glossary/lease-registration-order
+# [EXCLUDED:noindex] /glossary/legal-inheritance-order
+# [EXCLUDED:noindex] /glossary/liquidation-registration
+# [EXCLUDED:noindex] /glossary/mortgage
+# [EXCLUDED:noindex] /glossary/ownership-preservation-registration
+# [EXCLUDED:noindex] /glossary/ownership-transfer-registration
+# [EXCLUDED:noindex] /glossary/payment-order
+# [EXCLUDED:noindex] /glossary/personal-bankruptcy
+# [EXCLUDED:noindex] /glossary/personal-rehabilitation
+# [EXCLUDED:noindex] /glossary/pledge
+# [EXCLUDED:noindex] /glossary/provisional-attachment
+# [EXCLUDED:noindex] /glossary/purpose-change-registration
+# [EXCLUDED:noindex] /glossary/qualified-acceptance
+# [EXCLUDED:noindex] /glossary/registration-license-tax
+# [EXCLUDED:noindex] /glossary/service-fee
+# [EXCLUDED:noindex] /glossary/special-qualified-acceptance
+# [EXCLUDED:noindex] /glossary/stamp-duty
+# [EXCLUDED:noindex] /glossary/statutory-reserve-share
+# [EXCLUDED:noindex] /glossary/subrogation-inheritance
 # [EXCLUDED:redirect] /press
 # [EXCLUDED:redirect] /press/beopryul-sinmun-bar-association-64th-general-assembly
 # [EXCLUDED:redirect] /press/busan-ilbo-bar-association-64th-general-assembly
