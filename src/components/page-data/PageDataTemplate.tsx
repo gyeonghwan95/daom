@@ -14,11 +14,13 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import {
+  InheritanceChoiceCards,
   InheritanceCostGuide,
   InheritanceJourneyNav,
   RemoteInheritanceProcess,
 } from "@/components/inheritance";
 import {
+  isBusanInheritanceLocalOwner,
   isInheritanceFlagshipPage,
   isInheritanceJourneyPage,
 } from "@/lib/inheritance/journey";
@@ -173,17 +175,21 @@ export function PageDataTemplate({
             : page.primaryKeywords
         }
         ctaLabel={
-          showInheritanceExtras
-            ? "업무 가능 여부 확인하기"
-            : isCorporateLegalOps
-              ? corporateLegalHeroCta
-              : consultationInquiryCopy.ctaShort
+          page.slug === "부산상속법무사"
+            ? "등기·포기·한정승인 중 무엇이 필요한지 확인"
+            : page.slug === "부산상속포기"
+              ? "3개월 기한·후순위 먼저 확인"
+              : showInheritanceExtras
+                ? "업무 가능 여부 확인하기"
+                : isCorporateLegalOps
+                  ? corporateLegalHeroCta
+                  : consultationInquiryCopy.ctaShort
         }
         ctaHref={isCorporateLegalOps ? corporateLegalInquiryHref : "/contact/inquiry"}
         showDiagnosisCta={false}
         showAboutLawyerCta
         showNaverBlogCta={shouldShowNaverBlogMoreCta(page.path)}
-        showNationwideChip={showNationwide}
+        showNationwideChip={showNationwide && !isBusanInheritanceLocalOwner(page.slug)}
       />
 
       {showRemoteBanner && !deferNationwideBanner ? (
@@ -193,6 +199,8 @@ export function PageDataTemplate({
       ) : null}
 
       {heroAddon}
+
+      {page.slug === "부산상속법무사" ? <InheritanceChoiceCards /> : null}
 
       {showInheritanceJourney ? (
         <InheritanceJourneyNav currentSlug={page.slug} />
@@ -231,9 +239,13 @@ export function PageDataTemplate({
 
       <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
-      {page.introParagraphs.length > 1 ? (
+      {page.introParagraphs.length > (page.slug === "부산상속법무사" ? 2 : 1) ? (
         <ContentSection id="article-body" title="자세히 알아보기">
-          <ProseParagraphs paragraphs={page.introParagraphs.slice(1)} />
+          <ProseParagraphs
+            paragraphs={page.introParagraphs.slice(
+              page.slug === "부산상속법무사" ? 2 : 1,
+            )}
+          />
         </ContentSection>
       ) : null}
 

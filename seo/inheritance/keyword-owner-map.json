@@ -1,0 +1,40 @@
+{
+  "updated": "2026-09-03",
+  "note": "PRIMARY query owner는 indexable URL 하나. /부산상속전문법무사는 noindex 허브이며 오너가 아니다. Search Advisor 실측 없음 = PERFORMANCE_UNKNOWN.",
+  "owners": {
+    "부산 상속 법무사": "/부산상속법무사",
+    "부산 상속전문 법무사": "/부산상속법무사",
+    "부산 법무사 상속": "/부산상속법무사",
+    "부산 상속등기 법무사": "/부산상속등기",
+    "부산 상속등기": "/부산상속등기",
+    "부산 상속포기 법무사": "/부산상속포기",
+    "부산 상속포기": "/부산상속포기",
+    "부산 한정승인 법무사": "/부산한정승인",
+    "부산 한정승인": "/부산한정승인",
+    "부산 법무사": "/",
+    "부산 법무사 상담": "/부산법무사상담"
+  },
+  "protected": {
+    "부산 법무사 추천": "/부산법무사추천",
+    "부산 법무사 비용": "/부산법무사비용",
+    "부산 특별한정승인": "/특별한정승인",
+    "해운대 법무사": "/해운대법무사",
+    "연제구 법무사": "/연제구법무사",
+    "수영구 법무사": "/수영구법무사",
+    "동래구 법무사": "/동래구법무사",
+    "부산 법인등기 법무사": "/부산법인등기",
+    "부산 개인회생 법무사": "/부산개인회생법무사",
+    "부산 강의 문의": "/강의문의"
+  },
+  "nonOwners": {
+    "/상속": "INFORMATIONAL PILLAR — 부산 commercial query owner 아님",
+    "/부산상속전문법무사": "noindex canonical hub → /부산상속법무사",
+    "/전국상속등기": "nationwide supporting",
+    "/services/inheritance-registration": "service detail supporting"
+  },
+  "rules": {
+    "duplicatePrimaryOwner": "FAIL",
+    "newSpecialistUrl": "FORBIDDEN",
+    "titleH1ChangeOnOwners": "RED — this project freeze"
+  }
+}

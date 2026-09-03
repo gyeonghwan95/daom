@@ -12,6 +12,7 @@ import { sanitizeOutboundHref } from "../../_lib/admin-ops/outbound-href";
 import { hasKv, recordAnalyticsEvent, bumpIngest } from "../../_lib/admin-ops/store";
 
 const hits = new Map();
+const recentPv = new Map();
 
 function rateOk(ip) {
   const now = Date.now();
@@ -43,8 +44,6 @@ const ALLOWED = new Set([
   "diagnosis_complete",
   "naver_place_click",
 ]);
-
-const NOT_STORED = new Set(["page_view", "notice_impression"]);
 
 const BOT_UA =
   /(?:bot|crawler|spider|yeti|googlebot|bingbot|baiduspider|yandex(?:bot)?|duckduckbot|facebookexternalhit|slackbot|twitterbot|linkedinbot|semrush|ahrefs|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|applebot|ia_archiver|pingdom|uptimerobot)/i;
@@ -98,10 +97,6 @@ export async function onRequestPost(context) {
     return json({ ok: false, code: "invalid_type" }, 400);
   }
 
-  if (NOT_STORED.has(type)) {
-    return json({ ok: true, skipped: true, reason: "not_stored" });
-  }
-
   const path = normalizePath(String(body?.path || "/"));
   if (isExcludedAnalyticsPath(path)) {
     return json({ ok: true, skipped: true, reason: "admin_path" });
@@ -112,6 +107,21 @@ export async function onRequestPost(context) {
     const token = parseCookie(request.headers.get("Cookie"), ADMIN_OPS_COOKIE);
     if (token && (await verifySessionToken(token, secrets.secret))) {
       return json({ ok: true, skipped: true, reason: "admin_session" });
+    }
+  }
+
+  if (type === "page_view") {
+    const now = Date.now();
+    const dupKey = `${ip}|${path}`;
+    const prev = recentPv.get(dupKey) || 0;
+    if (now - prev < 8_000) {
+      return json({ ok: true, skipped: true, reason: "dedupe" });
+    }
+    recentPv.set(dupKey, now);
+    if (recentPv.size > 2000) {
+      for (const [k, t] of recentPv) {
+        if (now - t > 60_000) recentPv.delete(k);
+      }
     }
   }
 

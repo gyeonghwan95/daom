@@ -270,6 +270,73 @@
       "owner": "/부산도서관법률특강",
       "intent": "informational",
       "supporting": ["/법률강의", "/강의이력"]
+    },
+    "부산 특별한정승인": {
+      "owner": "/특별한정승인",
+      "intent": "procedure"
+    },
+    "부산 특별한정승인 법무사": {
+      "owner": "/특별한정승인",
+      "intent": "procedure",
+      "aliasOf": "부산 특별한정승인"
+    },
+    "부산 목적변경등기": {
+      "owner": "/부산사업목적변경등기",
+      "intent": "procedure"
+    },
+    "부산 증자등기": {
+      "owner": "/부산유상증자등기",
+      "intent": "procedure"
+    },
+    "부산 해산등기": {
+      "owner": "/부산법인해산청산등기",
+      "intent": "procedure"
+    },
+    "부산 청산등기": {
+      "owner": "/부산법인해산청산등기",
+      "intent": "procedure",
+      "aliasOf": "부산 해산등기"
+    },
+    "부산 지급명령 법무사": {
+      "owner": "/부산지방법원지급명령",
+      "intent": "procedure"
+    },
+    "부산 내용증명 법무사": {
+      "owner": "/내용증명작성준비",
+      "intent": "procedure"
+    },
+    "부산 가압류 말소 법무사": {
+      "owner": "/부산가압류말소등기",
+      "intent": "procedure"
+    },
+    "만덕동 법무사": {
+      "owner": "/북구법무사",
+      "intent": "local",
+      "supporting": ["/덕천동법무사", "/화명동법무사"]
+    },
+    "부산 법무사 수수료": {
+      "owner": "/부산법무사비용",
+      "intent": "transactional",
+      "aliasOf": "부산 법무사 비용"
+    },
+    "부산 법무사 보수": {
+      "owner": "/부산법무사비용",
+      "intent": "transactional",
+      "aliasOf": "부산 법무사 비용"
+    },
+    "부산 부동산등기": {
+      "owner": "/부산부동산등기",
+      "intent": "service-hub",
+      "aliasOf": "부산 부동산등기 법무사"
+    },
+    "부산 매매등기 법무사": {
+      "owner": "/부산소유권이전등기",
+      "intent": "procedure"
+    },
+    "부산 등기전문 법무사": {
+      "owner": "/부산등기법무사",
+      "intent": "service-hub",
+      "aliasOf": "부산 등기 법무사"
     }
   }
 }

@@ -1,0 +1,7 @@
+query_a,query_b,owner_a,owner_b,reason
+부산 법인 법무사,부산 법인등기 법무사,/부산법인법무사,/부산법인등기,semantic-group-multiple-owners
+법인본점이전등기,,/situations/본점-이전-등기,/faq/corporate-address-change-faq,duplicate-title:2
+전국상속등기법무사,,/services/inheritance-registration,/전국상속등기,duplicate-title:3
+한정승인절차,,/services/qualified-acceptance,/faq/qualified-acceptance-procedure,duplicate-title:2
+임원변경등기기한·과태료,,/services/director-change,/blog/director-change-registration-deadline-penalty,duplicate-title:2
+전국공동근저당권등기,,/전국공동담보등기,/업무사례/전국공동근저당권등기,duplicate-title:2

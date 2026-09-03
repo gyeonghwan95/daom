@@ -186,6 +186,7 @@ function main() {
   const lines = [
     "query,expectedOwner,internalRank1,score,pass,note",
   ];
+  const top5Lines = ["query,rank,url,score"];
 
   for (const row of EXPECTED) {
     const ranked = list
@@ -199,6 +200,11 @@ function main() {
         `${row.query}: expected ${row.owner}, internal #1 ${top.path} (${top.score})`,
       );
     }
+    ranked.slice(0, 5).forEach((item, index) => {
+      top5Lines.push(
+        [csvEscape(row.query), index + 1, csvEscape(item.path), csvEscape(item.score)].join(","),
+      );
+    });
     lines.push(
       [
         csvEscape(row.query),
@@ -215,6 +221,7 @@ function main() {
 
   const out = path.join(OUT_DIR, "intent-audit.csv");
   fs.writeFileSync(out, `${lines.join("\n")}\n`, "utf8");
+  fs.writeFileSync(path.join(OUT_DIR, "intent-top5.csv"), `${top5Lines.join("\n")}\n`, "utf8");
   console.log(lines.join("\n"));
   if (failures.length > 0) {
     console.error("\nFAIL\n" + failures.join("\n"));

@@ -9,6 +9,7 @@ import {
   useOptionalQuickInquiry,
 } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { isAdminPath } from "@/components/layout/PublicOnly";
+import { isAdminAnalyticsExcluded } from "@/lib/admin-ops/analytics-exclude";
 
 const FloatingCTA = dynamic(
   () =>
@@ -20,6 +21,14 @@ const FloatingNoticeHost = dynamic(
   () =>
     import("@/components/notices/FloatingNoticeHost").then(
       (m) => m.FloatingNoticeHost,
+    ),
+  { ssr: false },
+);
+
+const AnalyticsBeacon = dynamic(
+  () =>
+    import("@/components/admin-ops/AnalyticsBeacon").then(
+      (m) => m.AnalyticsBeacon,
     ),
   { ssr: false },
 );
@@ -112,6 +121,9 @@ export function AppClientShell({ children }: { children: ReactNode }) {
         <NavigationProgress />
       </Suspense>
       {children}
+      {!isAdminPath(pathname) && !isAdminAnalyticsExcluded() ? (
+        <AnalyticsBeacon />
+      ) : null}
       {!isAdminPath(pathname) ? <DeferredConsultWizard /> : null}
       <IdleDeferredChrome />
     </QuickInquiryProvider>

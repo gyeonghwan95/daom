@@ -103,7 +103,7 @@ export default function AdminDashboardPage() {
 
       <p className="admin-summary">{data.summaryLine}</p>
       <p className="admin-prose">
-        페이지뷰 KV 기록은 공개 방문 경로에서 제거했습니다. CTA·문의 제출 같은 전환 이벤트만 저장됩니다. 과거 페이지뷰 수치는 그대로 남아 있습니다.
+        페이지뷰·세션은 공개 방문에서 집계됩니다. 관리자 세션, 봇, /admin 경로는 제외됩니다.
       </p>
 
       <div className="admin-metric-grid" aria-label="KPI">

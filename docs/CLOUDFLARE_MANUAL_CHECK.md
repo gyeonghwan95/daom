@@ -15,7 +15,7 @@ Record daily:
 
 Expect:
 
-- **writes** drop sharply (page_view + skip ingest removed). Should no longer track visits 1:1.
+- **writes** grow with unique public page views (**1 PUT** each: nested hourly on the day shard). Bot/admin/dedupe skips do not write. Expect writes to track visits roughly 1:1, plus rare CTA/mail/notice writes.
 - **reads** drop on public traffic; remaining reads are notice cache misses + admin + conversion events.
 - **lists** stay ~0 (code never calls `list()`).
 
@@ -25,7 +25,7 @@ Limits reset 00:00 UTC. Free plan published caps (docs): 100,000 reads / 1,000 w
 
 Workers & Pages → this Pages project → analytics
 
-- Invocations of `/api/analytics/collect` should fall (no page_view beacon).
+- Invocations of `/api/analytics/collect` resume for page_view beacons (public pages only).
 - `/api/notices/active` may remain but should be cacheable (Cache-Control 300s).
 
 ## What should stay healthy
@@ -36,4 +36,4 @@ Workers & Pages → this Pages project → analytics
 
 ## Admin
 
-`/admin` KPIs: historical page views remain; new browsing will not increment page_view counters. CTA / consult submit / mail logs still update.
+`/admin` KPIs: public (non-admin, non-bot) browsing increments page views and sessions after this restore. Admin cookie visits still excluded. CTA / consult submit / mail logs still update.

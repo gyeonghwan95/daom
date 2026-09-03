@@ -135,10 +135,7 @@ const LIBRARY: InflowItem[] = [
     label: "부산 구·군별 상담 주제",
     reason: "16개 구·군에서 자주 묻는 상속·등기 주제를 생활권 기준으로 봅니다.",
   },
-  ...BUSAN_DISTRICT_HUBS.filter(
-    (hub) =>
-      hub.href !== "/해운대법무사" && hub.href !== "/센텀법무사",
-  ).map((hub) => ({
+  ...BUSAN_DISTRICT_HUBS.filter((hub) => hub.href !== "/해운대법무사").map((hub) => ({
     href: hub.href,
     label: hub.hint,
     searchPhrase: hub.label,

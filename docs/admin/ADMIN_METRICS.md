@@ -3,7 +3,7 @@
 ## 페이지뷰 (visits / page_view)
 
 - **정의**: `page_view` 이벤트 1회 = 1 페이지뷰
-- **Source**: ADMIN_KV `analytics:day:*`, `analytics:hourly:*`
+- **Source**: ADMIN_KV `analytics:day:*` (hourly buckets nested on the day shard; legacy `analytics:hourly:*` still merged on read)
 - **Timezone**: Asia/Seoul (KST)
 - **주의**: unique visitor 아님
 

@@ -113,6 +113,7 @@ function emptyDay(date) {
     diagnosisComplete: 0,
     eventsStored: 0,
     lastEventAt: null,
+    hours: {},
   };
 }
 
@@ -270,6 +271,10 @@ function mergeDay(target, source) {
       target.lastEventAt = source.lastEventAt;
     }
   }
+  if (source.hours) {
+    if (!target.hours) target.hours = {};
+    mergeHourly(target, source);
+  }
   return target;
 }
 
@@ -318,7 +323,10 @@ function cloneJson(value) {
 async function getJson(kv, key, fallback) {
   const memo = readMemo(kv);
   const hit = memo.get(key);
-  if (hit && Date.now() - hit.at < READ_MEMO_MS) return cloneJson(hit.value);
+  if (hit && Date.now() - hit.at < READ_MEMO_MS) {
+    if (hit.value == null) return cloneJson(fallback);
+    return cloneJson(hit.value);
+  }
   const raw = await kv.get(key);
   let value = fallback;
   if (raw) {
@@ -486,25 +494,40 @@ export async function getDaily(env, date) {
 
 async function getHourly(env, date) {
   if (!hasKv(env)) return emptyHourlyDay(date);
-  const keys = [
+  const row = emptyHourlyDay(date);
+  const dayKeys = [
+    dayKey(date),
+    ...Array.from({ length: ANALYTICS_SHARDS }, (_, i) => dayKey(date, i)),
+  ];
+  const hourlyKeys = [
     hourlyKey(date),
     ...Array.from({ length: ANALYTICS_SHARDS }, (_, i) => hourlyKey(date, i)),
   ];
   const parts = await Promise.all(
-    keys.map((key) => getJson(env.ADMIN_KV, key, null)),
+    [...dayKeys, ...hourlyKeys].map((key) => getJson(env.ADMIN_KV, key, null)),
   );
-  const row = emptyHourlyDay(date);
   for (const part of parts) mergeHourly(row, part);
   return row;
 }
 
-async function bumpHourly(env, date, hour, event, shard) {
-  const keyName = hourlyKey(date, shard);
-  const bucket = await getJson(env.ADMIN_KV, keyName, emptyHourlyDay(date));
-  if (!bucket.hours) bucket.hours = emptyHourlyDay(date).hours;
+/** Nested on the daily shard — one PUT instead of a second hourly key. */
+function applyHourly(day, hour, event) {
+  const type = event?.type;
+  const tracked =
+    type === "page_view" ||
+    type === "cta_click" ||
+    type === "phone_click" ||
+    type === "kakao_click" ||
+    type === "naver_click" ||
+    type === "consultation_submit" ||
+    type === "collaboration_submit" ||
+    type === "lecture_inquiry_submit" ||
+    type === "naver_place_click";
+  if (!tracked) return;
+  if (!day.hours) day.hours = {};
   const key = String(hour);
-  if (!bucket.hours[key]) {
-    bucket.hours[key] = {
+  if (!day.hours[key]) {
+    day.hours[key] = {
       pageViews: 0,
       cta: 0,
       consultSubmit: 0,
@@ -512,9 +535,9 @@ async function bumpHourly(env, date, hour, event, shard) {
       sources: {},
     };
   }
-  const h = bucket.hours[key];
+  const h = day.hours[key];
   if (!h.sources) h.sources = {};
-  switch (event.type) {
+  switch (type) {
     case "page_view":
       h.pageViews += 1;
       {
@@ -539,7 +562,6 @@ async function bumpHourly(env, date, hour, event, shard) {
     default:
       break;
   }
-  await putJson(env.ADMIN_KV, keyName, bucket);
 }
 
 const ACTIVITY_EVENTS = new Set([
@@ -627,9 +649,6 @@ export async function listRecentActivity(env, limit = 20) {
 
 export async function recordAnalyticsEvent(env, event) {
   if (!hasKv(env)) return { ok: false, reason: "no_storage" };
-  if (event?.type === "page_view" || event?.type === "notice_impression") {
-    return { ok: true, skipped: true, reason: "not_stored" };
-  }
   const now = new Date();
   const date = formatKstDate(now);
   const hour = getKstHour(now);
@@ -639,6 +658,7 @@ export async function recordAnalyticsEvent(env, event) {
   if (isExcludedAnalyticsPath(path)) {
     return { ok: true, skipped: true, reason: "admin_path" };
   }
+  if (!day.paths) day.paths = {};
   if (!day.paths[path]) day.paths[path] = emptyPath();
   const row = day.paths[path];
   day.lastEventAt = now.toISOString();
@@ -737,9 +757,9 @@ export async function recordAnalyticsEvent(env, event) {
   const source = event.referrerType || event.referrerHost || "direct";
   day.sources[source] = (day.sources[source] || 0) + (event.type === "page_view" ? 1 : 0);
   bumpDestination(day, event);
+  applyHourly(day, hour, event);
 
   await putJson(env.ADMIN_KV, dayKey(date, shard), day);
-  await bumpHourly(env, date, hour, event, shard);
   await pushRecentActivity(env, event, path);
   return { ok: true };
 }

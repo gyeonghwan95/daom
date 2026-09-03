@@ -89,11 +89,22 @@ function installMemoryCache() {
   };
 }
 
-function collectRequest(type: string, path = "/") {
+function collectRequest(
+  type: string,
+  path = "/",
+  extra?: { ip?: string; sid?: string; meta?: Record<string, string> },
+) {
+  const headers: Record<string, string> = {
+    "user-agent": "Mozilla/5.0 daom-test",
+    "Content-Type": "application/json",
+  };
+  if (extra?.ip) headers["CF-Connecting-IP"] = extra.ip;
+  const meta = { ...(extra?.meta || {}) };
+  if (extra?.sid) meta.sid = extra.sid;
   return new Request("https://example.test/api/analytics/collect", {
     method: "POST",
-    headers: { "user-agent": "Mozilla/5.0 daom-test", "Content-Type": "application/json" },
-    body: JSON.stringify({ type, path }),
+    headers,
+    body: JSON.stringify({ type, path, meta }),
   });
 }
 
@@ -144,22 +155,45 @@ async function main() {
   trackPageView("/");
   const kvPv = new CountingKV();
   const pvRes = await collectPost({
-    request: collectRequest("page_view", "/"),
+    request: collectRequest("page_view", "/", { ip: "10.0.0.1", sid: "session01" }),
     env: { ADMIN_KV: kvPv },
   });
   const pvJson = await pvRes.json();
   assert(pvRes.status === 200, "page_view status 200");
-  assert(pvJson.skipped === true, "page_view skipped");
-  assert(kvPv.ops.get === 0 && kvPv.ops.put === 0 && kvPv.ops.list === 0, "page_view KV ops 0");
+  assert(pvJson.stored === true, "page_view stored");
+  assert(kvPv.ops.list === 0, "page_view no list");
+  assert(kvPv.ops.put === 1, `page_view one PUT (hours nested in day), got put=${kvPv.ops.put}`);
+  assert(kvPv.ops.get === 1, `page_view one GET, got get=${kvPv.ops.get}`);
+  assert(
+    [...kvPv.data.keys()].every((k) => !String(k).includes("analytics:hourly:")),
+    "page_view does not write a separate hourly key",
+  );
+  const storedDay = JSON.parse([...kvPv.data.values()][0] || "{}");
+  assert(
+    Object.values(storedDay.hours || {}).some((h) => (h?.pageViews || 0) >= 1),
+    "hourly bucket nested on day shard",
+  );
+  const putsAfterFirst = kvPv.ops.put;
+
+  const dupRes = await collectPost({
+    request: collectRequest("page_view", "/", { ip: "10.0.0.1", sid: "session01" }),
+    env: { ADMIN_KV: kvPv },
+  });
+  const dupJson = await dupRes.json();
+  assert(dupJson.skipped === true && dupJson.reason === "dedupe", "page_view 8s dedupe");
+  assert(kvPv.ops.put === putsAfterFirst, "dedupe adds 0 KV writes");
 
   const impressionKv = new CountingKV();
   const impRes = await collectPost({
-    request: collectRequest("notice_impression", "/"),
+    request: collectRequest("notice_impression", "/", {
+      ip: "10.0.0.2",
+      meta: { noticeId: "notice-test" },
+    }),
     env: { ADMIN_KV: impressionKv },
   });
   const impJson = await impRes.json();
-  assert(impJson.skipped === true, "notice_impression skipped");
-  assert(impressionKv.ops.get === 0 && impressionKv.ops.put === 0, "impression KV ops 0");
+  assert(impJson.stored === true, "notice_impression stored");
+  assert(impressionKv.ops.put === 1, "impression one PUT (no empty hourly write)");
 
   const ctaKv = new CountingKV();
   const ctaRes = await collectPost({
@@ -170,14 +204,16 @@ async function main() {
   assert(ctaRes.status === 200, "cta status 200");
   assert(ctaJson.stored === true, "cta stored");
   assert(ctaKv.ops.list === 0, "cta no list");
-  assert(ctaKv.ops.put >= 1, "cta writes event keys only");
+  assert(ctaKv.ops.put === 2, `cta day+recent only, got put=${ctaKv.ops.put}`);
 
   const throwKv = new ThrowingKV();
   const throwPage = await collectPost({
-    request: collectRequest("page_view"),
+    request: collectRequest("page_view", "/chaos-pv", { ip: "10.9.9.9" }),
     env: { ADMIN_KV: throwKv },
   });
   assert(throwPage.status === 200, "page_view KV-down still 200");
+  const throwPageJson = await throwPage.json();
+  assert(throwPageJson.stored === false, "page_view KV-down stored:false");
 
   const throwCta = await collectPost({
     request: collectRequest("cta_click", "/"),

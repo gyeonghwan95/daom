@@ -617,6 +617,16 @@ export function buildPageDataFromLocalLanding(
     landingPageType: page.pageType,
     regionKey: page.regionKey,
     ogImage: getServiceImage(page.serviceSlug).src,
+    ctaTitle:
+      page.slug === "부산상속법무사"
+        ? "등기·포기·한정승인 중 무엇이 필요한지 확인"
+        : page.slug === "부산상속포기"
+          ? "3개월 기한·후순위 먼저 확인"
+          : undefined,
+    ctaText:
+      page.slug === "부산상속법무사" || page.slug === "부산상속포기"
+        ? page.ctaDescription
+        : undefined,
   });
 }
 

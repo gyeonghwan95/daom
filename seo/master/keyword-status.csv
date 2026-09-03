@@ -1,0 +1,107 @@
+keyword,cluster,owner,status,internal_rank1,internal_score,gap_score,priority
+부산 법무사,core,/,SERP_UNVERIFIED,/,269,51,2
+부산 법무사 상담,core,/부산법무사상담,SERP_UNVERIFIED,/부산법무사상담,227,57,2
+부산 법무사 추천,core,/부산법무사추천,SERP_UNVERIFIED,/부산법무사추천,197,52,2
+부산 법무사 비용,core,/부산법무사비용,SERP_UNVERIFIED,/부산법무사비용,230,53,2
+부산 법무사 수수료,core,/부산법무사비용,SERP_UNVERIFIED,/부산법무사,65,46,1
+부산 법무사 보수,core,/부산법무사비용,SERP_UNVERIFIED,/부산법무사보수표,222,46,1
+부산 등기 법무사,core,/부산등기법무사,SERP_UNVERIFIED,/부산등기법무사,239,60,2
+부산 등기전문 법무사,core,/부산등기법무사,SERP_UNVERIFIED,/부산등기전문법무사,188,53,1
+부산 상속 법무사,inheritance,/부산상속법무사,SERP_UNVERIFIED,/부산상속법무사,239,60,2
+부산 상속전문 법무사,inheritance,/부산상속법무사,SERP_UNVERIFIED,/부산상속법무사,128,60,2
+부산 법무사 상속,inheritance,/부산상속법무사,SERP_UNVERIFIED,/부산상속법무사,149,60,2
+부산 상속등기 법무사,inheritance,/부산상속등기,SERP_UNVERIFIED,/부산상속등기,218,60,2
+부산 상속등기,inheritance,/부산상속등기,SERP_UNVERIFIED,/부산상속등기,212,60,2
+부산 상속포기 법무사,inheritance,/부산상속포기,SERP_UNVERIFIED,/부산상속포기,206,55,2
+부산 상속포기,inheritance,/부산상속포기,SERP_UNVERIFIED,/부산상속포기,200,55,2
+부산 한정승인 법무사,inheritance,/부산한정승인,SERP_UNVERIFIED,/부산한정승인,224,55,2
+부산 한정승인,inheritance,/부산한정승인,SERP_UNVERIFIED,/부산한정승인,212,55,2
+부산 특별한정승인 법무사,inheritance,/특별한정승인,SERP_UNVERIFIED,/특별한정승인,133,50,2
+부산 특별한정승인,inheritance,/특별한정승인,SERP_UNVERIFIED,/특별한정승인,124,50,2
+부산 상속재산분할 법무사,inheritance,/부산상속재산분할법무사,SERP_UNVERIFIED,/부산상속재산분할법무사,167,53,2
+부산 상속재산분할협의,inheritance,/부산상속재산분할법무사,SERP_UNVERIFIED,/상속,41,46,1
+부산 대습상속,inheritance,/대습상속등기,SERP_UNVERIFIED,/상속,41,43,1
+부산 미성년자 상속,inheritance,/미성년상속인,SERP_UNVERIFIED,/상속,65,43,1
+부산 해외 상속인 상속등기,inheritance,/해외거주상속인,SERP_UNVERIFIED,/부산상속등기,69,43,1
+부산 부동산 법무사,real-estate,/부산부동산등기,SERP_UNVERIFIED,/부산부동산등기법무사,72,53,1
+부산 부동산등기 법무사,real-estate,/부산부동산등기,SERP_UNVERIFIED,/부산부동산등기,212,60,2
+부산 부동산등기,real-estate,/부산부동산등기,SERP_UNVERIFIED,/부산부동산등기법무사,198,53,1
+부산 소유권이전등기 법무사,real-estate,/부산소유권이전등기,SERP_UNVERIFIED,/부산소유권이전등기,62,60,2
+부산 아파트 등기 법무사,real-estate,/부산부동산등기,SERP_UNVERIFIED,/업무사례/대구북구상속등기법무사,87,53,1
+부산 매매등기 법무사,real-estate,/부산소유권이전등기,SERP_UNVERIFIED,/부산매매등기법무사,182,53,1
+부산 증여등기 법무사,real-estate,/부산증여등기,SERP_UNVERIFIED,/부산증여등기,200,50,2
+부산 근저당설정 법무사,real-estate,/부산근저당설정등기,SERP_UNVERIFIED,/부산법무사비용,48,44,1
+부산 근저당말소 법무사,real-estate,/부산근저당말소등기,SERP_UNVERIFIED,/부산법무사비용,48,44,1
+부산 전세권설정 법무사,real-estate,/부산전세권설정등기,SERP_UNVERIFIED,/부산법무사비용,48,43,1
+부산 전세권말소 법무사,real-estate,/부산전세권말소등기,SERP_UNVERIFIED,/부산전세권말소등기,116,50,2
+부산 보존등기 법무사,real-estate,/부산신축건물보존등기,SERP_UNVERIFIED,/부산부동산등기법무사,54,53,1
+부산 가등기 법무사,real-estate,/부산가등기,SERP_UNVERIFIED,/부산가등기,50,50,2
+부산 법인 법무사,corporate,/부산법인법무사,SERP_UNVERIFIED,/부산법인법무사,71,56,2
+부산 법인등기 법무사,corporate,/부산법인등기,SERP_UNVERIFIED,/부산법인등기,224,60,2
+부산 법인등기,corporate,/부산법인등기,SERP_UNVERIFIED,/부산법인등기,206,60,2
+부산 법인설립 법무사,corporate,/부산법인설립등기,SERP_UNVERIFIED,/부산법인설립등기,186,58,2
+부산 법인설립등기,corporate,/부산법인설립등기,SERP_UNVERIFIED,/법인설립자가진단,122,51,1
+부산 임원변경등기 법무사,corporate,/부산임원변경등기,SERP_UNVERIFIED,/임원변경등기과태료,60,53,1
+부산 대표이사 변경등기,corporate,/부산임원변경등기,SERP_UNVERIFIED,/부산대표이사변경등기,197,53,1
+부산 본점이전등기,corporate,/부산본점이전등기,SERP_UNVERIFIED,/부산본점이전등기,41,50,2
+부산 목적변경등기,corporate,/부산사업목적변경등기,SERP_UNVERIFIED,/부산상속등기,24,43,1
+부산 증자등기,corporate,/부산유상증자등기,SERP_UNVERIFIED,/부산상속등기,24,43,1
+부산 해산등기,corporate,/부산법인해산청산등기,SERP_UNVERIFIED,/부산상속등기,24,43,1
+부산 청산등기,corporate,/부산법인해산청산등기,SERP_UNVERIFIED,/부산상속등기,24,43,1
+부산 개인회생 법무사,rehab,/부산개인회생법무사,SERP_UNVERIFIED,/부산개인회생법무사,215,50,2
+부산 개인회생,rehab,/부산개인회생,SERP_UNVERIFIED,/부산개인회생,209,60,2
+부산 개인파산 법무사,rehab,/부산개인파산법무사,SERP_UNVERIFIED,/부산개인파산법무사,227,50,2
+부산 개인파산,rehab,/부산개인파산,SERP_UNVERIFIED,/부산개인파산,209,50,2
+부산 회생파산 법무사,rehab,/개인회생파산,SERP_UNVERIFIED,/부산법무사비용,48,45,1
+부산 파산면책,rehab,/부산개인파산,SERP_UNVERIFIED,/부산파산,44,43,1
+부산 개인회생 비용,rehab,/개인회생비용,SERP_UNVERIFIED,/부산개인회생,59,46,1
+부산 개인파산 비용,rehab,/개인파산비용,SERP_UNVERIFIED,/부산개인파산,59,43,1
+부산 지급명령 법무사,civil,/부산지방법원지급명령,SERP_UNVERIFIED,/부산법원근처법무사,51,43,1
+부산 내용증명 법무사,civil,/내용증명작성준비,SERP_UNVERIFIED,/부산법무사비용,48,43,1
+부산 임차권등기명령 법무사,civil,/부산임차권등기명령,SERP_UNVERIFIED,/부산임차권등기명령,50,50,2
+부산 가압류 말소 법무사,civil,/부산가압류말소등기,SERP_UNVERIFIED,/부산가압류말소등기,63,50,2
+부산 개명 법무사,civil,/부산개명허가,SERP_UNVERIFIED,/부산법무사비용,48,43,1
+부산 중구 법무사,district,/중구법무사,SERP_UNVERIFIED,/중구법무사,62,51,2
+부산 서구 법무사,district,/서구법무사,SERP_UNVERIFIED,/서구법무사,62,51,2
+부산 동구 법무사,district,/동구법무사,SERP_UNVERIFIED,/동구법무사,80,51,2
+영도구 법무사,district,/영도구법무사,SERP_UNVERIFIED,/영도구법무사,209,51,2
+부산진구 법무사,district,/부산진구법무사,SERP_UNVERIFIED,/부산진구법무사,206,51,2
+동래구 법무사,district,/동래구법무사,SERP_UNVERIFIED,/동래구법무사,209,51,2
+부산 남구 법무사,district,/남구법무사,SERP_UNVERIFIED,/남구법무사,62,51,2
+부산 북구 법무사,district,/북구법무사,SERP_UNVERIFIED,/업무사례/대구북구상속등기법무사,63,44,1
+해운대구 법무사,district,/해운대법무사,SERP_UNVERIFIED,/해운대구상속등기,33,53,1
+해운대 법무사,district,/해운대법무사,SERP_UNVERIFIED,/해운대법무사,212,60,2
+사하구 법무사,district,/사하구법무사,SERP_UNVERIFIED,/사하구법무사,209,51,2
+금정구 법무사,district,/금정구법무사,SERP_UNVERIFIED,/금정구법무사,209,51,2
+강서구 법무사,district,/강서구법무사,SERP_UNVERIFIED,/강서구법무사,209,52,2
+연제구 법무사,district,/연제구법무사,SERP_UNVERIFIED,/연제구법무사,212,51,2
+수영구 법무사,district,/수영구법무사,SERP_UNVERIFIED,/수영구법무사,206,51,2
+사상구 법무사,district,/사상구법무사,SERP_UNVERIFIED,/사상구법무사,206,51,2
+기장군 법무사,district,/기장군법무사,SERP_UNVERIFIED,/기장군법무사,212,51,2
+기장 법무사,district,/기장군법무사,SERP_UNVERIFIED,/기장법무사,139,44,1
+센텀 법무사,neighborhood,/센텀법무사,SERP_UNVERIFIED,/센텀법무사,212,60,2
+센텀시티 법무사,neighborhood,/센텀법무사,SERP_UNVERIFIED,/센텀시티역법무사,48,53,1
+재송동 법무사,neighborhood,/재송동법무사,SERP_UNVERIFIED,/재송동법무사,200,51,2
+반여동 법무사,neighborhood,/반여동법무사,SERP_UNVERIFIED,/반여동법무사,209,50,2
+우동 법무사,neighborhood,/우동법무사,SERP_UNVERIFIED,/우동법무사,200,50,2
+좌동 법무사,neighborhood,/좌동법무사,SERP_UNVERIFIED,/좌동법무사,200,50,2
+연산동 법무사,neighborhood,/연산동법무사,SERP_UNVERIFIED,/연산동법무사,203,50,2
+거제동 법무사,neighborhood,/거제동법무사,SERP_UNVERIFIED,/거제동법무사,206,50,2
+광안동 법무사,neighborhood,/광안동법무사,SERP_UNVERIFIED,/광안동법무사,200,50,2
+광안리 법무사,neighborhood,/광안리법무사,SERP_UNVERIFIED,/광안리법무사,194,50,2
+민락동 법무사,neighborhood,/민락동법무사,SERP_UNVERIFIED,/민락동법무사,200,50,2
+망미동 법무사,neighborhood,/망미동법무사,SERP_UNVERIFIED,/망미동법무사,206,50,2
+남천동 법무사,neighborhood,/남천동법무사,SERP_UNVERIFIED,/남천동법무사,200,50,2
+사직동 법무사,neighborhood,/사직동법무사,SERP_UNVERIFIED,/사직동법무사,200,50,2
+온천동 법무사,neighborhood,/온천동법무사,SERP_UNVERIFIED,/온천동법무사,200,50,2
+명륜동 법무사,neighborhood,/동래구법무사,SERP_UNVERIFIED,/업무사례/부산명륜동법무사,36,44,1
+서면 법무사,neighborhood,/서면법무사,SERP_UNVERIFIED,/서면법무사,203,50,2
+부전동 법무사,neighborhood,/부전동법무사,SERP_UNVERIFIED,/부전동법무사,200,50,2
+전포동 법무사,neighborhood,/전포동법무사,SERP_UNVERIFIED,/전포동법무사,200,50,2
+대연동 법무사,neighborhood,/대연동법무사,SERP_UNVERIFIED,/대연동법무사,200,50,2
+용호동 법무사,neighborhood,/용호동법무사,SERP_UNVERIFIED,/용호동법무사,206,50,2
+문현동 법무사,neighborhood,/문현동법무사,SERP_UNVERIFIED,/문현동법무사,206,50,2
+덕천동 법무사,neighborhood,/덕천동법무사,SERP_UNVERIFIED,/덕천동법무사,194,50,2
+화명동 법무사,neighborhood,/화명동법무사,SERP_UNVERIFIED,/화명동법무사,200,50,2
+만덕동 법무사,neighborhood,/북구법무사,SERP_UNVERIFIED,/업무사례/부산만덕동법무사,36,44,1
+부산 강의 문의,lecture,/강의문의,SERP_UNVERIFIED,/강의문의,158,51,3

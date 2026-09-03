@@ -18,17 +18,15 @@ Public SEO HTML was already static export (`out/`, `STATIC_EXPORT=true`). The de
 ## After
 
 ```
-VISITOR / YETI
-  → CLOUDFLARE EDGE / STATIC HTML
-  → KV operations = 0
-
-공지 등 비SEO 동적 정보
-  → EDGE CACHE (5 min, per colo)
-  → HIT  KV = 0
-  → MISS KV = 1 GET (notices:all blob) then cache
-
+VISITOR
+  → static HTML (KV = 0)
+  → POST /api/analytics/collect page_view → 1 GET + 1 PUT (hourly nested on day shard)
+YETI / bots
+  → static HTML (KV = 0); collect skipped with 0 writes
+공지
+  → EDGE CACHE (5 min); HIT KV = 0; MISS 1 GET
 전환 이벤트 (CTA, 문의 제출, 공지 클릭)
-  → POST collect → sharded GET+PUT (event-driven, not per view)
+  → POST collect → sharded GET+PUT
 
 문의 POST
   → 전달 성공/실패 시에만 email:logs GET+PUT (1+1)
@@ -51,5 +49,5 @@ ADMIN
 |-------|-----------------|----|
 | STATIC SEO CONTENT | repo / `out/` | never |
 | EDGE-CACHED PUBLIC DYNAMIC | `notices:all` behind Cache API 300s | miss only |
-| EVENT-DRIVEN WRITE | CTA / inquiry / notice click | per event |
+| EVENT-DRIVEN WRITE | page_view / CTA / inquiry / notice | per event (page_view 1 PUT) |
 | ADMIN ONLY | dashboard, logs, notice CRUD | on demand |

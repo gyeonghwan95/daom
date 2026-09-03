@@ -1,0 +1,69 @@
+{
+  "note": "내부 상대평가용. 네이버 순위를 추정·보장하지 않는다. Search Advisor 실측 없음 = PERFORMANCE_UNKNOWN.",
+  "cases": [
+    {
+      "query": "부산 상속 법무사",
+      "expectedOwner": "/부산상속법무사"
+    },
+    {
+      "query": "부산 상속전문 법무사",
+      "expectedOwner": "/부산상속법무사"
+    },
+    {
+      "query": "부산 상속포기 법무사",
+      "expectedOwner": "/부산상속포기"
+    },
+    {
+      "query": "부산 법무사",
+      "expectedOwner": "/"
+    },
+    {
+      "query": "부산 법무사 상담",
+      "expectedOwner": "/부산법무사상담"
+    },
+    {
+      "query": "부산 법무사 추천",
+      "expectedOwner": "/부산법무사추천"
+    },
+    {
+      "query": "부산 법무사 비용",
+      "expectedOwner": "/부산법무사비용"
+    },
+    {
+      "query": "부산 상속등기 법무사",
+      "expectedOwner": "/부산상속등기"
+    },
+    {
+      "query": "부산 한정승인 법무사",
+      "expectedOwner": "/부산한정승인"
+    },
+    {
+      "query": "부산 상속등기",
+      "expectedOwner": "/부산상속등기"
+    },
+    {
+      "query": "부산 한정승인",
+      "expectedOwner": "/부산한정승인"
+    },
+    {
+      "query": "연제구 법무사",
+      "expectedOwner": "/연제구법무사"
+    },
+    {
+      "query": "해운대 법무사",
+      "expectedOwner": "/해운대법무사"
+    },
+    {
+      "query": "수영구 법무사",
+      "expectedOwner": "/수영구법무사"
+    },
+    {
+      "query": "동래구 법무사",
+      "expectedOwner": "/동래구법무사"
+    },
+    {
+      "query": "부산 강의 문의",
+      "expectedOwner": "/강의문의"
+    }
+  ]
+}

@@ -8,7 +8,6 @@ import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import {
   championExtraFaqs,
   championExtraRelatedLinks,
-  championExtraSummaryParagraphs,
   championExtraWhenNeeded,
 } from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
@@ -147,9 +146,7 @@ export function buildKeywordHubPage(
             },
           ];
 
-  const summaryParagraphs = isInheritanceChampion
-    ? [...topic.summaryParagraphs, ...championExtraSummaryParagraphs]
-    : topic.summaryParagraphs;
+  const summaryParagraphs = topic.summaryParagraphs;
   const whenNeeded = isInheritanceChampion
     ? [...topic.whenNeeded, ...championExtraWhenNeeded]
     : topic.whenNeeded;
@@ -200,7 +197,7 @@ export function buildKeywordHubPage(
       : buildLawyerOpinion(config.regionLabel, topic.title);
 
   const ctaDescription = isInheritanceChampion
-    ? "내 상속 상황에 필요한 절차를 확인하고 싶으시면 사망일·상속인·확인된 재산·채무만 남겨 주세요. 준비서류와 다음 단계부터 안내합니다."
+    ? "상속등기·포기·한정승인 중 무엇이 필요한지 확인하고 싶으시면 사망일·상속인·확인된 재산·채무만 남겨 주세요."
     : isCorporateLegalOps
       ? "대표·임원·본점·목적·자본 등 회사에 생긴 변경과 등기부 현황만 남겨 주시면, 필요한 등기와 준비서류부터 확인합니다."
       : isRegistryHub
@@ -272,8 +269,8 @@ export function buildKeywordHubPage(
             ],
           },
           {
-            title: "부산 상속전문 법무사를 찾을 때 확인할 업무 범위",
-            body: "부산 상속전문 법무사를 검색할 때는 자격처럼 보이는 표방보다, 상속등기·상속포기·한정승인을 한 흐름에서 안내하는지, 3개월 기한과 채무 조사를 등기 일정과 나눠 보는지, 해외·미성년·연락두절 상속인을 어떻게 안내하는지를 보시면 됩니다. 이 페이지는 그 세 절차를 가르는 허브입니다.",
+            title: "부산에서 상속전문 법무사를 찾을 때 무엇을 확인해야 할까요?",
+            body: "상속등기만 처리하는지, 상속포기와 한정승인까지 함께 구분할 수 있는지, 3개월 기한을 확인하는지, 상속인 범위를 먼저 보는지, 부동산과 채무를 함께 보는지, 미성년·해외·대습·연락두절을 구분할 수 있는지가 핵심입니다. 다옴법무사사무소에서는 법무사가 수행할 수 있는 범위에서 상속등기·상속포기·한정승인 등 필요한 절차를 함께 구분합니다. 전문 자격이나 순위를 표방하지 않습니다.",
             items: [
               "지금 필요한 절차를 구분하는지",
               "가족관계·등기부·채무 자료를 어떻게 안내하는지",
@@ -284,6 +281,63 @@ export function buildKeywordHubPage(
               { href: "/해외거주상속인", label: "해외 거주 상속인" },
               { href: "/미성년상속인", label: "미성년 상속인" },
               { href: "/연락두절상속인", label: "연락두절 상속인" },
+            ],
+          },
+          {
+            title: "재산보다 채무가 많을지 모를 때",
+            body: "부동산이 있어도 대출·보증·세금이 불명확하면 상속등기보다 승인 방식을 먼저 봅니다. 빚이 분명하고 재산을 받지 않기로 하면 상속포기, 재산은 남기고 채무만 한도로 제한하려면 한정승인입니다. 일부 상속인만 포기하면 후순위 효과가 달라질 수 있습니다.",
+            items: [
+              "안심상속 등으로 예금·대출·세금을 먼저 조회",
+              "이미 한 인출·처분이 단순승인으로 보이는지 점검",
+              "가족마다 포기·한정승인 선택이 갈리는지 조율",
+            ],
+            links: [
+              { href: "/부산상속포기", label: "채무가 많은 경우 상속포기" },
+              { href: "/부산한정승인", label: "부산 한정승인" },
+              { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
+            ],
+          },
+          {
+            title: "특정 상속인 명의로 하거나 상속 후 바로 매도할 때",
+            body: "법정상속분 등기와 협의분할 등기는 서류가 다릅니다. 한 명의 앞으로 모으려면 상속재산분할협의가 필요하고, 등기 직후 매도까지 염두에 두면 취득세·잔금일과 순서를 같이 봅니다.",
+            items: [
+              "법정상속분인지 특정 명의인지 정하기",
+              "협의서·인감이 전원 갖춰졌는지 확인",
+              "상속 후 매매가 있으면 등기·잔금 일정 맞추기",
+            ],
+            links: [
+              { href: "/부산상속등기", label: "부산 상속등기" },
+              { href: "/부산상속재산분할법무사", label: "협의분할 안내" },
+              { href: "/부산상속후매매등기", label: "상속 후 바로 매도하는 경우" },
+            ],
+          },
+          {
+            title: "미성년·해외·대습·연락두절이 섞여 있을 때",
+            body: "미성년은 특별대리, 해외 거주자는 위임·인증, 상속인이 먼저 사망한 경우는 대습, 연락이 되지 않으면 등기·승인 전 별도 확인이 필요할 수 있습니다. 이 페이지에서 해당 안내로 이어집니다.",
+            items: [
+              "미성년 상속인 특별대리 필요 여부",
+              "해외 위임·공증이 3개월 기한과 겹치는지",
+              "대습 대상·재혼 가족관계 재확인",
+              "연락두절 상속인이 있으면 등기 전 검토",
+            ],
+            links: [
+              { href: "/미성년상속인", label: "미성년 상속인" },
+              { href: "/해외거주상속인", label: "해외 거주 상속인" },
+              { href: "/연락두절상속인", label: "연락두절 상속인" },
+              { href: "/재혼가정상속", label: "재혼가정 상속" },
+            ],
+          },
+          {
+            title: "30년 이상 미정리된 부동산이 있을 때",
+            body: "오래된 미등기 상속재산은 상속인 범위와 등기부 이력 확인이 길어질 수 있습니다. 명의이전만 서두르지 말고, 승인 방식과 권리관계를 먼저 맞춥니다.",
+            items: [
+              "등기부 소유자·최종 등기일 확인",
+              "중간 상속인 사망·대습 여부",
+              "시효·서류 공백이 있으면 별도 안내",
+            ],
+            links: [
+              { href: "/오래된상속토지정리", label: "오래된 상속토지 정리" },
+              { href: "/부산상속등기", label: "부산 상속등기" },
             ],
           },
         ]

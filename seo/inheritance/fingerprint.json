@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-09-03",
+  "note": "Unexpected change to these fields = FAIL. Title/H1/URL/canonical frozen this project.",
+  "performance": "PERFORMANCE_UNKNOWN",
+  "pages": {
+    "/": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/",
+      "title": "부산 법무사 안윤정 | 다옴법무사사무소",
+      "h1": "부산 법무사 안윤정",
+      "primaryIntent": "부산 법무사",
+      "fingerprint": "0844c60b081ee6a6",
+      "incomingInternalLinks": 55
+    },
+    "/부산법무사상담": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/부산법무사상담",
+      "title": "부산 법무사 상담 | 준비서류·비용·상담방법",
+      "h1": "부산 법무사 상담",
+      "primaryIntent": "부산 법무사 상담",
+      "fingerprint": "009b26fc7b1bbf96",
+      "incomingInternalLinks": 295
+    },
+    "/부산상속법무사": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/부산상속법무사",
+      "title": "부산 상속 법무사 | 등기·포기·한정승인 먼저 확인",
+      "h1": "부산 상속 법무사, 등기·포기·한정승인 중 무엇부터 볼까",
+      "primaryIntent": "부산 상속 법무사",
+      "fingerprint": "de92ba8b94e92599",
+      "incomingInternalLinks": 554
+    },
+    "/부산상속포기": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/부산상속포기",
+      "title": "부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인",
+      "h1": "부산 상속포기 법무사, 기한과 후순위부터 확인하세요",
+      "primaryIntent": "부산 상속포기 법무사",
+      "fingerprint": "7b52107d1d0582c4",
+      "incomingInternalLinks": 209
+    },
+    "/부산상속등기": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/부산상속등기",
+      "title": "부산 상속등기 법무사｜상속인 구성에 따라 달라지는 서류와 진행 순서",
+      "h1": "부산 상속등기 법무사, 명의이전 서류와 진행 순서",
+      "primaryIntent": "부산 상속등기 법무사",
+      "fingerprint": "957f5d7643bcdcaf",
+      "incomingInternalLinks": 1191
+    },
+    "/부산한정승인": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/부산한정승인",
+      "title": "부산 한정승인 법무사｜상속채무가 걱정될 때 3개월 안에 확인할 절차",
+      "h1": "부산 한정승인 법무사, 상속채무가 불확실할 때 먼저 볼 기준",
+      "primaryIntent": "부산 한정승인 법무사",
+      "fingerprint": "2aae3b0784266102",
+      "incomingInternalLinks": 186
+    },
+    "/상속": {
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/상속",
+      "title": "상속등기·포기·한정승인｜전국·부산 상담 | 다옴법무사사무소",
+      "h1": "상속등기·상속포기·한정승인·전국 상속 상담",
+      "primaryIntent": "informational-pillar",
+      "fingerprint": "f5d2c9b7a17fae4f",
+      "incomingInternalLinks": 51
+    },
+    "/부산상속전문법무사": {
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "/부산상속법무사",
+      "indexable": false,
+      "role": "bridge-not-owner"
+    }
+  }
+}

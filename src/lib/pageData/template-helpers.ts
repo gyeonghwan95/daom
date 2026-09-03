@@ -208,6 +208,10 @@ export function createPageData(input: CreatePageDataInput): PageData {
       ? providedFaqs
       : uniqueFaqs([...providedFaqs, ...defaultFaqs(input.title)]).slice(0, 3);
 
+  const useProvidedIntros =
+    input.slug === "부산상속법무사" &&
+    (input.introParagraphs?.length ?? 0) >= 2;
+
   const page: PageData = {
     slug: input.slug,
     path: input.path,
@@ -218,10 +222,12 @@ export function createPageData(input: CreatePageDataInput): PageData {
     h1: input.h1,
     intro: input.intro,
     breadcrumbs: input.breadcrumbs,
-    introParagraphs: splitIntroParagraphs(
-      input.intro,
-      input.introParagraphs ?? [],
-    ),
+    introParagraphs: useProvidedIntros
+      ? input.introParagraphs!
+      : splitIntroParagraphs(
+          input.intro,
+          input.introParagraphs ?? [],
+        ),
     procedures:
       input.procedures && input.procedures.length > 0
         ? input.procedures

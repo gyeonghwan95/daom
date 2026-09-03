@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-03T13:45:02.802Z",
+  "pageCount": 1803,
+  "indexable": 1632,
+  "universeSize": 1333,
+  "seedCount": 106,
+  "serpStatus": "SERP_UNVERIFIED",
+  "searchAdvisor": "PERFORMANCE_UNKNOWN",
+  "cannibalizationRows": 6,
+  "qualityFlags": 3,
+  "unresolvedOwners": [],
+  "internalIntentPass": 355,
+  "internalIntentFail": 175,
+  "releaseStatus": "SEO_RELEASE_READY_WITH_WARNINGS",
+  "kvSeoSeparation": "public HTML static; Functions /api/* only"
+}

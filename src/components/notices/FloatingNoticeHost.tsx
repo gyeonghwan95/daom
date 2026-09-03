@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import type { PublicFloatingNotice } from "@/lib/admin-ops/types";
 import { trackEvent } from "@/lib/admin-ops/beacon";
@@ -21,6 +21,7 @@ export function FloatingNoticeHost() {
   const pathname = usePathname() || "/";
   const [notice, setNotice] = useState<PublicFloatingNotice | null>(null);
   const [open, setOpen] = useState(false);
+  const impressionIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -45,6 +46,14 @@ export function FloatingNoticeHost() {
         if (isDismissedThisSession(candidate.id)) return;
         setNotice(candidate);
         setOpen(true);
+        if (impressionIdRef.current !== candidate.id) {
+          impressionIdRef.current = candidate.id;
+          void trackEvent({
+            type: "notice_impression",
+            path: pathname,
+            meta: { noticeId: candidate.id },
+          });
+        }
       })
       .catch(() => {
         /* soft-fail — never block public site */

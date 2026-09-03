@@ -179,7 +179,7 @@ export function buildBusanInheritanceRenunciationPage(
     lawyerOpinion: `${lawyerProfileMeta.fullTitle}는 상속포기 상담에서 후순위 효과를 빠뜨리지 않도록 먼저 설명합니다. 재산이 남아 채무만 제한할 때는 한정승인도 함께 비교합니다. 다옴법무사사무소는 3개월 기한·처분 이력·가족 조율 포인트를 같은 상담에서 정리합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 ${busanRenunciationHubReviewedLabel}.`,
     directionsNote: `사무소는 ${officeLocation.fullAddress}입니다.`,
     ctaDescription:
-      "상속관계와 기한을 확인하고 싶으시면 사망일·상속인 구성·확인된 채무만 남겨 주세요.",
+      "3개월 기한·후순위를 먼저 확인하고 싶으시면 사망일·상속인 구성·확인된 채무만 남겨 주세요.",
     relatedBlogHrefs: [],
     extraPageSections: [
       {

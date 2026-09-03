@@ -1,0 +1,191 @@
+file,issue,snippet
+src\app\admin\monitoring\page.tsx,undefined,es: number | null | undefined) { if (minutes == null) retu
+src\app\admin\notices\page.tsx,undefined,: string): string | undefined { if (!value) return undefin
+src\app\admin\page.tsx,undefined,"ate != null ? ""%"" : undefined} note={ "
+src\app\[landingSlug]\page.tsx,undefined, : undefined } /> <
+src\components\admin\charts\ActivityByDayChart.tsx,undefined," string }> | null | undefined, ): ActivityDayCount[] { con"
+src\components\admin\charts\FunnelChart.tsx,undefined,ue: number | null | undefined; rate?: number | null; }; e
+src\components\admin\charts\HourlyTrafficChart.tsx,undefined, HourRow[] | null | undefined; yesterday?: HourRow[] | nul
+src\components\admin\MetricCard.tsx,undefined,ue: number | null | undefined; compareValue?: number | nul
+src\components\admin-console\AdminShell.tsx,undefined,"{current ? ""page"" : undefined} > "
+src\components\b2b\PreservationB2BSections.tsx,undefined,"""project"" : undefined, }); }, [prep.ownerType,"
+src\components\b2b\ProjectBriefForm.tsx,undefined,"? partner : undefined, service: service &&"
+src\components\b2b\SharePrintBar.tsx,undefined," typeof window !== ""undefined"" ? window.location.href : """"; "
+src\components\business\BusinessInquiryForm.tsx,undefined,"(typeof window === ""undefined"") { return { pag"
+src\components\business\BusinessPageView.tsx,undefined,Images.home.trust : undefined} /> {content.kind
+src\components\consult-wizard\ConsultWizardShell.tsx,undefined,desc ? ids.descId : undefined} > <div classNam
+src\components\consultation\ConsultationPanel.tsx,undefined,"annelId): CTAType | undefined { switch (id) { case ""ph"
+src\components\consultation\ConversionActionButtons.tsx,undefined,"ternal ? ""_blank"" : undefined} rel={ "
+src\components\consultation\HeaderConsultationStatus.tsx,undefined,"{kakao ? ""_blank"" : undefined} rel={kakao ? ""noopene"
+src\components\consultation\SidebarConsultationPanelFixed.tsx,undefined,aria-hidden={show ? undefined : true} > <SidebarCo
+src\components\conversion\ConsultationInquiryForm.tsx,undefined,"(typeof window === ""undefined"") { return { pag"
+src\components\conversion\InquiryFormLoader.tsx,undefined,"ams.get(""field"") ?? undefined; const from = searchParams.g"
+src\components\credentials\BusinessCredentialSlot.tsx,undefined,f (path && slug !== undefined) { placement = forceDispla
+src\components\cta\InquiryNaverCtaPair.tsx,undefined,sName={className || undefined}>{inquiry}</div>; } const
+src\components\cta\NaverSmartPlaceCta.tsx,undefined,"ant, tone: Tone | undefined, ): VisualTone { if (tone =="
+src\components\diagnosis\constants.ts,undefined,"string | string[] | undefined, ): boolean { if (value === "
+src\components\diagnosis\DiagnosisForm.tsx,undefined,= useState<string | undefined>(); const questions = diagn
+src\components\diagnosis\DiagnosisQuestion.tsx,undefined,string | string[] | undefined; onSingleChange: (value: str
+src\components\home\HeroStage.tsx,undefined,.play().catch(() => undefined); return; } node
+src\components\home\HomeFullpageSwiper.tsx,undefined, if (!hero) return undefined; const observer = new I
+src\components\home\HomeHero.tsx,undefined,variants={reduced ? undefined : stagger} initial={r
+src\components\inheritance\InheritanceJourneyNav.tsx,undefined,"={active ? ""step"" : undefined} > "
+src\components\layout\CollaborationMegaMenu.tsx,undefined,"={active ? ""page"" : undefined} aria-expanded={open} "
+src\components\layout\DesktopNavFlyout.tsx,undefined," typeof window === ""undefined"") return; const rect = tr"
+src\components\layout\Header.tsx,undefined,"n ? ""mobile-menu"" : undefined} aria-label={m"
+src\components\layout\MobileBottomCTA.tsx,undefined,"trackCtaEvent(kind, undefined, channel.href); } function Mo"
+src\components\layout\MobileNav.tsx,undefined,"={active ? ""page"" : undefined} class"
+src\components\layout\NavMenuLink.tsx,undefined,"={active ? ""page"" : undefined} onClick={onNavigate} "
+src\components\layout\PublicOnly.tsx,undefined,me: string | null | undefined): boolean { return Boolean(p
+src\components\lectures\history\LectureHistoryCard.tsx,undefined, : undefined } > 
+src\components\lectures\LectureInquiryForm.tsx,undefined," typeof window !== ""undefined"" ? window.location.pathname : "
+src\components\lectures\VerifiedLectureHistory.tsx,undefined,` : undefined)} </p> ) : n
+src\components\local-landing\SearchIntentPageView.tsx,undefined, : undefined } /> <
+src\components\local-landing\SelectionHubPageView.tsx,undefined,onsultPrep ? true : undefined} /> {isConsult
+src\components\map\OfficeMap.tsx,undefined,"ectionObserver === ""undefined"") { const t = window.set"
+src\components\media\ArticleVisual.tsx,undefined,"ArticleVisualTone | undefined): ""dark"" | ""light"" { if (ton"
+src\components\nationwide-cases\NationwideCasePageView.tsx,undefined,ryRegion={region || undefined} fromPage={def.slu
+src\components\navigation\Breadcrumb.tsx,undefined,"={isLast ? ""page"" : undefined} > "
+src\components\navigation\SectionNavigator.tsx,undefined,"= useState<number | undefined>( undefined, ); const"
+src\components\page-data\PageDataTemplate.tsx,undefined,"vice"" ? page.slug : undefined} placement={placement"
+src\components\profile\ActivitySectionBlock.tsx,undefined,ction.image.width : undefined} height={imageOnTop ? 
+src\components\profile\EeatFactThumb.tsx,undefined,= useState<string | undefined>( image.fallbackSrc ?? ima
+src\components\profile\GridPagination.tsx,undefined,"isActive ? ""page"" : undefined} className={`inl"
+src\components\profile\LawyerEeatProfile.tsx,undefined," sm:px-6 lg:px-8"" : undefined}> <div className={com"
+src\components\quick-inquiry\QuickInquiryForm.tsx,undefined,errorId}-contact` : undefined} disabled={submitt
+src\components\quick-inquiry\QuickInquiryProvider.tsx,undefined,"(typeof window === ""undefined"") { return { pageTit"
+src\components\quick-inquiry\QuickInquiryShell.tsx,undefined,ibedby={completed ? undefined : ids.descId} > 
+src\components\quick-inquiry\TurnstileWidget.tsx,undefined,"(typeof window === ""undefined"") return Promise.resolve(); "
+src\components\search\SiteSearchButton.tsx,undefined,"te-search-drawer"" : undefined} title={open ? ""검색 닫기"" :"
+src\components\search\SiteSearchDrawer.tsx,undefined,n-${activeIndex}` : undefined; return ( <div id
+src\components\search\SiteSearchInput.tsx,undefined,boxId ? listboxId : undefined} aria-activedescendant
+src\components\ux\AppClientShell.tsx,undefined,et idleId: number | undefined; let timeoutId: ReturnTyp
+src\components\ux\NavigationProgress.tsx,undefined,"""페이지를 불러오는 중입니다."" : undefined} > <div className=""n"
+src\data\diagnosis-pages\others.ts,undefined,"rviceSlug: string | undefined, detail: string, questions"
+src\data\diagnosis-registry.ts,undefined,tring): Diagnosis | undefined { const normalized = slug.no
+src\data\geo\busan-rail-stations.ts,undefined, BusanRailStation | undefined { return allBusanRailStation
+src\data\lectures\history-summaries.ts,undefined,oryEntry): string | undefined { return entry.relatedLectur
+src\data\lectures\history.ts,undefined,ctureHistoryEntry | undefined { return lectureHistory.find
+src\data\lectures\lecture-intent-to-url-map.ts,undefined,ureIntentMapEntry | undefined { const q = keyword.trim();
+src\data\lectures\lecture-keyword-to-url-map.ts,undefined,: string): string | undefined { const normalized = keywor
+src\data\media\attorney-photo-inventory.ts,undefined,g): AttorneyPhoto | undefined { return ATTORNEY_PHOTOS.fin
+src\data\seo\carousel-image-manifest.ts,undefined,ImageManifestItem | undefined { return CAROUSEL_IMAGE_MANI
+src\data\seo\corporate-content-intents.ts,undefined,rateContentIntent | undefined { const q = keyword.trim(); 
+src\data\seo\local-champion-overlays.ts,undefined,alChampionOverlay | undefined { if (regionId && LOCAL_CHA
+src\data\seo\page-image-manifest.ts,undefined,ImageManifestItem | undefined { return PAGE_IMAGE_MANIFEST
+src\data\seo\page-relations.ts,undefined,PageRelationEntry | undefined { return PAGE_RELATIONS.find
+src\data\seo\region-service-overlays.ts,undefined,andingSlugOverlay | undefined { if (!slug) return undefine
+src\data\seo\registry.ts,undefined,: SeoIntentEntity | undefined { return allSeoIntentEntitie
+src\data\seo\station-section-content.ts,undefined,ionSectionContent | undefined { return stationSectionConte
+src\data\seo-intent-articles\index.ts,undefined, SeoIntentArticle | undefined { return allSeoIntentArticle
+src\lib\admin\session.ts,undefined,ken(token: string | undefined): boolean { if (!token) retu
+src\lib\admin\source-breakdown.ts,undefined,"ces: SourceCounts | undefined, limit = 6, ): SourceShare[]"
+src\lib\admin\url-display.ts,undefined,(n: number | null | undefined): string { if (n == null || 
+src\lib\admin-ops\analytics-exclude.ts,undefined,"(typeof window === ""undefined"") return """"; return window."
+src\lib\admin-ops\beacon.ts,undefined," typeof crypto !== ""undefined"" && typeof crypto.randomUUID ="
+src\lib\admin-ops\outbound-href.ts,undefined,"ef( raw: string | undefined | null, origin?: string, ): "
+src\lib\admin-ops\session-web.ts,undefined,"( token: string | undefined, secret: string, ): Promise<"
+src\lib\admin-ops\track-client.ts,undefined,"(typeof window !== ""undefined"" ? window.location.pathname : "
+src\lib\admin-ops\utils.ts,undefined,"( host: string | undefined, extraHost?: string, ): bo"
+src\lib\analytics\referrer.ts,undefined,el(source: string | undefined): string { if (!source) retu
+src\lib\analytics\track-b2b.ts,undefined,"(typeof window !== ""undefined"") { const w = window as Wi"
+src\lib\article-visuals\asset-catalog.ts,undefined,ArticleImageAsset | undefined { return articleImageCatalog
+src\lib\b2b\index.ts,undefined,): B2BPageContent | undefined { return bySlug[slug]; } ex
+src\lib\b2b\options.ts,undefined,"rd<string, string | undefined>, ): string { const search ="
+src\lib\building-intent\content\index.ts,undefined,ildingPageContent | undefined { return buildingPages.find(
+src\lib\busan-legal-map\config.ts,undefined, BusanDistrictDef | undefined { return busanDistricts.fin
+src\lib\business\content.ts,undefined,sinessPageContent | undefined { return businessPages.find(
+src\lib\business-credentials\index.ts,undefined,"typeof process === ""undefined"") return; if (process.env.NO"
+src\lib\case-regions\index.ts,은(는),"trict.name} ${admin}은(는) ${baseDong} 생활권의 행정동으로, 주거 밀집지의 이전·"
+src\lib\case-regions\index.ts,undefined,: CaseRegionEntry | undefined { if (!bySlugCache) { by
+src\lib\consult-wizard\analytics.ts,undefined,"(typeof window === ""undefined"") return; const safe: Recor"
+src\lib\consult-wizard\landings.ts,undefined,ultLandingContent | undefined { return CONSULT_LANDINGS.fi
+src\lib\consult-wizard\storage.ts,undefined,"(typeof window === ""undefined"") return null; try { con"
+src\lib\consultation.ts,undefined,yFormProvider | undefined; if (primary) { const m
+src\lib\content\loader.ts,undefined,"String(data.area) : undefined, caseCategory: data.caseCa"
+src\lib\corporate-intent\content\index.ts,undefined,poratePageContent | undefined { return corporatePages.find
+src\lib\counsel-intent\content.ts,undefined,ounselPageContent | undefined { return counselPages.find((
+src\lib\diagnosis\evaluate.ts,undefined," string[], warning: undefined, recommendation: undefined }; "
+src\lib\diagnosis\index.ts,undefined,if (!config) return undefined; return buildPageDataFromDia
+src\lib\diagnosis\result-enrichment.ts,undefined,"; if (raw === undefined || raw === """" || (Array.isArra"
+src\lib\floating-consult.ts,undefined,"(typeof window === ""undefined"") return false; return windo"
+src\lib\glossary\builder.ts,undefined,string): PageData | undefined { return buildGlossaryTermP
+src\lib\glossary\guides.ts,undefined,g): GlossaryGuide | undefined { return GLOSSARY_GUIDES[sl
+src\lib\glossary\policy.ts,undefined,GlossaryPolicyRow | undefined { return GLOSSARY_POLICY[sl
+src\lib\glossary\terms.ts,undefined,ng): GlossaryTerm | undefined { return GLOSSARY_TERMS.find
+src\lib\gyeongnam-cases\index.ts,undefined,eongnamLandingDef | undefined { if (!bySlug) { bySlu
+src\lib\gyeongnam-cases\phase-yangsan-cluster.ts,로 검색한 경우,": 업무명을 모른 채 ‘양산 법무사’로 검색한 경우"", ""일반적인 상담 유형: 비용만 먼저 알고 "
+src\lib\home-slide-scroll.ts,undefined,x] as HTMLElement | undefined; return slide?.querySelector
+src\lib\hub\registry.ts,undefined, string): CoreHub | undefined { return CORE_HUBS.find((h) 
+src\lib\hub\resolve.ts,undefined,nput.serviceSlug] : undefined; if (serviceHub) return se
+src\lib\inheritance\article-summaries.ts,undefined,nceArticleSummary | undefined { return SUMMARIES[slug]; } 
+src\lib\inheritance\journey.ts,undefined,tanceJourneyStage | undefined { const stageId = INHERITANC
+src\lib\internal-links\catalog.ts,undefined,"latedServices[0]) : undefined); return { kind, sl"
+src\lib\internal-links\domains.ts,undefined,: string): string | undefined { if (!serviceSlug) return u
+src\lib\internal-links\score.ts,undefined,"ug(list: string[] | undefined, slug: string): boolean { if"
+src\lib\kakao-map-loader.ts,undefined,"(typeof window === ""undefined"") { return Promise.reject("
+src\lib\lawyer-eeat-images.ts,undefined,"enc(fallbackPath) : undefined, }; } /** 실무경력 — title 키 */"
+src\lib\lectures\content.ts,undefined,ecturePageContent | undefined { return bySlug.get(normali
+src\lib\lectures\history-helpers.ts,undefined,"string, ): string | undefined { const key = normalize(inst"
+src\lib\lectures\history-page-data.ts,undefined,"ing, ): PageData | undefined { if (slug === ""강의이력"") retu"
+src\lib\lectures\speaker-media.ts,undefined,"tring(entry.year) : undefined), href: `/강의이력/${entry.s"
+src\lib\local-landing\builder.ts,undefined,"·면책과 구분"" : undefined, h1: isBankruptcyOvervi"
+src\lib\local-landing\champion-article-summaries.ts,undefined,ionArticleSummary | undefined { return LOCAL_SUMMARIES[slu
+src\lib\local-landing\config.ts,undefined,ocalLandingConfig | undefined { const key = normalizeRoute
+src\lib\local-landing\expansion\builder-expansion.ts,undefined,"분해서 확인하세요"" : undefined, h1: isLawyerFeeBusan "
+src\lib\local-landing\keyword-topics.ts,undefined,ng): KeywordTopic | undefined { return keywordTopics[key]
+src\lib\local-landing\neighborhood-hub-builder.ts,undefined,"CaseSlug}` : undefined, }; const consultation"
+src\lib\local-landing\neighborhood-hub-topics.ts,undefined,NeighborhoodTopic | undefined { return neighborhoodTopics
+src\lib\local-landing\region-hub-coverage.ts,undefined,RegionHubCoverage | undefined { return REGION_HUB_COVERAG
+src\lib\local-landing\region-label.ts,부산 부산, 목록이 이미 지역명으로 시작하면 `부산 부산진구`처럼 겹치지 않게 붙인다. */ export functio
+src\lib\local-landing\search-intent\index.ts,undefined,archIntentContent | undefined { return ensureCache().get(k
+src\lib\local-landing\search-intent\overrides\nationwide-remote-phase4b.ts,검색어에,"agraphs: [ ""검색어에 ‘가압류’만 있으면 신청·말소·본안이 섞입니다. 등기부에 이미 "
+src\lib\local-landing\search-intent\overrides\nationwide-remote-phase5a.ts,검색어에,"agraphs: [ ""검색어에 ‘보전’만 있으면 가압류·가처분·본안이 한 덩어리로 보입니다. "
+src\lib\local-landing\search-intent\overrides\nationwide-remote-phase5b.ts,검색어에,"agraphs: [ ""검색어에 ‘압류 말소’만 있으면 보전 가압류와 기관 압류가 섞입니다. 단"
+src\lib\local-landing\search-intent\overrides\wave1-true-gaps.ts,검색어에,"이 안전합니다."", ""검색어에 ‘통장압류’ ‘급여압류’만 있으면 이 페이지가 아니라 채권압류·"
+src\lib\local-landing\search-intent-builder.ts,undefined,"aseSlug}` : undefined), }; return { slug: c"
+src\lib\local-landing\selection\index.ts,undefined,lectionHubContent | undefined { return selectionHubTopics[
+src\lib\nationwide\pages.ts,undefined,"ring, ): PageData | undefined { return buildAllNationwideP"
+src\lib\nationwide\show-region-chip.ts,undefined,: string): string | undefined { return NATIONWIDE_BANNER_H
+src\lib\nationwide-cases\index.ts,undefined, RegionLandingDef | undefined { if (!bySlug) { bySlug 
+src\lib\naver-blog\rss.ts,undefined,"tegory: category || undefined, }); } return items.s"
+src\lib\naver-place-reviews\fetch.ts,undefined,"horRef: ApolloRef | undefined, ): string { if (!authorRef?"
+src\lib\pageData\builders.ts,undefined,"먼저 확인"" : undefined, ctaText: page.slu"
+src\lib\pageData\internal-links.ts,undefined,: PageRelatedLink | undefined { const hubSlug = getTopicH
+src\lib\pageData\json-ld.ts,undefined,nly PageFaqItem[] | undefined> ): PageFaqItem[] { const 
+src\lib\pageData\registry.ts,undefined,string): PageData | undefined { getAllPageData(); retu
+src\lib\pageData\resolvers.ts,undefined,ding; } return undefined; } export function resolveLec
+src\lib\pageData\sitemap.ts,undefined,기반 lastmod (알 수 없으면 undefined) */ export function pathToLas
+src\lib\press-articles.ts,undefined,ng): PressArticle | undefined { const key = normalizeRoute
+src\lib\quick-inquiry\client.ts,undefined,"(typeof window === ""undefined"") return ""/""; try { if ("
+src\lib\search\build-search-index.ts,undefined,"gth > 0 ? aliases : undefined, region: extractRegions(pa"
+src\lib\section-nav\filter-available-sections.ts,undefined,"ypeof document === ""undefined"") return sections; const av"
+src\lib\section-nav\footer-boundary.ts,undefined," typeof window !== ""undefined"" && typeof document !== ""undef"
+src\lib\section-nav\scroll-spy.ts,undefined,"ypeof document === ""undefined"") { return ""-88px 0px -55%"
+src\lib\seo\carousel-images.ts,undefined, 페이지 OG 이미지 (승인 전이면 undefined → 기존 기본 OG 유지) */ export funct
+src\lib\seo\champion-query.ts,undefined,"readonly string[] | undefined, ): string[] | undefined { "
+src\lib\seo\index-policy.ts,undefined,: string): string | undefined { const normalized = normal
+src\lib\seo\inflow-policy.ts,undefined,ring): InflowItem | undefined { return LIBRARY.find((item)
+src\lib\seo\internal-links.ts,undefined,"g, ): RelatedLink | undefined { const hubSlug = getTopicHu"
+src\lib\seo\json-ld.ts,undefined,lephone(): string | undefined { const { phone } = getConta
+src\lib\seo\page-images.ts,undefined,미지 경로. * 준비되지 않았으면 undefined (호출측은 기존 og 로직 유지). */ export
+src\lib\seo\station-sections.ts,undefined,"ms.length ? items : undefined, links: content.serviceLin"
+src\lib\seo\verification.ts,undefined,e && !naver) return undefined; return { ...(google ? 
+src\lib\seo-intent-articles\build-mdx.ts,undefined,t(items: string[] | undefined): string { if (!items?.lengt
+src\lib\seo-landing\combinations.ts,undefined,"udes(""부산"") ? ""부산"" : undefined, regionKey: special.pa"
+src\lib\seo-landing\content.ts,은(는)," = [ `${region}은(는) ${pick([""아파트·상가"", ""법인 사옥·오피스"", ""토지·"
+src\lib\seo-landing\content.ts,undefined,ityById(regionId) : undefined; return region?.description
+src\lib\seo-landing\index.ts,undefined, if (!spec) return undefined; return buildPageDataFromSeo
+src\lib\seo-landing\labels.ts,undefined,: string): string | undefined { if (SITE_SERVICE_SLUGS.has
+src\lib\seo-landing\page-data.ts,undefined,Id(spec.regionId) : undefined; const localAngle = reg
+src\lib\services-data.ts,undefined,g): ServiceDetail | undefined { const key = normalizeRoute
+src\lib\situations\builder.ts,undefined,"eSlug).src : undefined, includeFaqSchema: true, "
+src\lib\situations\categories.ts,undefined,uationCategoryDef | undefined { return Object.values(SITUA
+src\lib\situations\config.ts,undefined,g): SituationPage | undefined { return situationPages.find
+src\lib\southeast-cases\index.ts,undefined,utheastLandingDef | undefined { if (!bySlug) { bySlu
+src\lib\special-entity-intent\content\index.ts,undefined,EntityPageContent | undefined { return specialEntityPages.
+src\lib\tools\builder.ts,undefined,"ceSlug).src : undefined, includeFaqSchema: true, "
+src\lib\tools\config.ts,undefined,): ToolDefinition | undefined { return toolDefinitions.fin
+src\lib\topic-hubs\service-hub-map.ts,undefined,: string): string | undefined { return serviceToTopicHubSl
+src\lib\youtube-videos.ts,undefined,ng): YoutubeVideo | undefined { return youtubeVideos.find(
+src\lib\youtube.ts,undefined,g | null): number | undefined { if (!value) return undefin
