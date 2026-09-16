@@ -5,7 +5,7 @@ import {
 } from "@/config/external-links";
 
 export const defaultContact = {
-  phone: "070-4172-8056",
+  phone: "010-4277-1279",
   kakao: "https://pf.kakao.com/_Bvhxnn/chat",
   naverTalk: "https://talk.naver.com/ct/w661kd4",
   naverBlog: "https://blog.naver.com/law-yoon-91",

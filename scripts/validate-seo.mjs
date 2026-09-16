@@ -149,7 +149,7 @@ function assertNapConsistency() {
     );
   }
 
-  const phone = "070-4172-8056";
+  const phone = "010-4277-1279";
   if (!business.includes(phone) && !business.includes("getContactInfo")) {
     fail("business-info.ts must source phone from getContactInfo()");
   }
