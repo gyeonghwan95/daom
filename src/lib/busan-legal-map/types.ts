@@ -4,6 +4,8 @@ export type BusanDistrictDef = {
   id: string;
   regionKey: string;
   label: string;
+  clusterId: string;
+  clusterLabel: string;
   neighborhoods: string[];
   context: string;
   commonServices: string[];

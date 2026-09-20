@@ -6,6 +6,10 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { getAllBusanDistricts } from "@/lib/busan-legal-map";
+import {
+  BUSAN_LEGAL_MAP_CLUSTER_ORDER,
+  BUSAN_LEGAL_MAP_CLUSTER_PRIORITY,
+} from "@/lib/busan-legal-map/config";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -63,7 +67,40 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
       </section>
 
       <section id="district-map">
-        <h2 className="section-heading">부산 16개 구·군</h2>
+        <h2 className="section-heading">생활권별 지역 허브</h2>
+        <p className="mt-2 text-sm text-navy/65">
+          다옴법무사사무소는 해운대 센텀에 있습니다. 아래는 구·동 안내 페이지이며, 그 구에 사무소가 있다는 뜻이 아닙니다.
+        </p>
+        <div className="mt-5 space-y-6">
+          {BUSAN_LEGAL_MAP_CLUSTER_ORDER.map((clusterId) => {
+            const group = districts.filter((d) => d.clusterId === clusterId);
+            if (!group.length) return null;
+            const label = group[0]?.clusterLabel ?? clusterId;
+            const priority = BUSAN_LEGAL_MAP_CLUSTER_PRIORITY[clusterId] ?? [];
+            return (
+              <section key={clusterId} aria-labelledby={`cluster-${clusterId}`}>
+                <h3 id={`cluster-${clusterId}`} className="text-base font-semibold text-navy">
+                  {label}
+                </h3>
+                {priority.length > 0 ? (
+                  <ul className="mt-2 flex flex-wrap gap-2">
+                    {priority.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="interactive-surface inline-flex rounded-lg border border-navy/10 bg-white px-3 py-1.5 text-sm font-semibold text-navy hover:bg-beige/50"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </section>
+            );
+          })}
+        </div>
+        <h2 className="section-heading mt-10">부산 16개 구·군</h2>
         <p className="mt-2 text-sm text-navy/65">
           카드에서 지역 허브·업무 안내·상황별 문제로 이동할 수 있습니다.
         </p>

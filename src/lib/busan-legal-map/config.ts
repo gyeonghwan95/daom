@@ -16,6 +16,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "haeundae-gu",
     regionKey: "haeundae",
     label: "해운대구",
+    clusterId: "haeundae",
+    clusterLabel: "해운대권",
     neighborhoods: ["반여동", "재송동", "센텀", "우동", "좌동"],
     context:
       "센텀시티·마린시티·재송·반여 일대는 고가 아파트와 법인 사옥이 밀집한 생활권입니다. 이 페이지에서는 공동상속·해외 거주 상속인·잔금 후 등기를 중심으로 안내합니다.",
@@ -35,6 +37,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "suyeong-gu",
     regionKey: "suyeong",
     label: "수영구",
+    clusterId: "suyeong",
+    clusterLabel: "수영권",
     neighborhoods: ["광안동", "민락동", "망미동", "남천동"],
     context:
       "광안리·민락 일대 전월세·매매와 상속이 겹치는 사건이 많고, 보증금 반환 지연·확정일자·대항력 확인이 먼저인 경우가 많습니다.",
@@ -54,6 +58,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "yeonje-gu",
     regionKey: "yeonje",
     label: "연제구",
+    clusterId: "yeonje",
+    clusterLabel: "연제권",
     neighborhoods: ["연산동", "거제동", "연산역"],
     context:
       "연산·거제 일대 실거주 아파트와 소규모 법인 사무실이 많아, 상속등기와 임원변경·한정승인 상담이 이어지는 지역입니다.",
@@ -74,6 +80,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "dongnae-gu",
     regionKey: "dongnae",
     label: "동래구",
+    clusterId: "dongnae",
+    clusterLabel: "동래권",
     neighborhoods: ["온천동", "사직동", "명륜동"],
     context:
       "온천·사직·명륜 일대 오래된 주택과 재건축 이슈가 있는 부동산의 상속·한정승인·등기 사건이 꾸준합니다.",
@@ -94,6 +102,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "nam-gu",
     regionKey: "namgu",
     label: "남구",
+    clusterId: "nam",
+    clusterLabel: "남구권",
     neighborhoods: ["대연동", "용호동", "문현동"],
     context:
       "대연·용호 주거지와 문현금융단지 인근 법인 사옥이 함께 있어, 법인등기·임원변경과 부동산 등기 문의가 겹칩니다.",
@@ -114,6 +124,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "busanjin-gu",
     regionKey: "busanjin",
     label: "부산진구",
+    clusterId: "jin",
+    clusterLabel: "부산진·서면권",
     neighborhoods: ["서면", "부전동", "전포동", "범천동"],
     context:
       "서면·부전·전포 일대는 상업지와 오피스텔·상가가 밀집한 생활권입니다. 이 페이지에서는 매매 등기·채권회수·지급명령을 중심으로 안내합니다.",
@@ -134,6 +146,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "buk-gu",
     regionKey: "buk",
     label: "북구",
+    clusterId: "buk",
+    clusterLabel: "북구권",
     neighborhoods: ["덕천동", "구포동", "화명동"],
     context:
       "덕천·구포·화명 일대 실거주 아파트와 상가에서 상속·매매 등기와 개인회생 상담이 꾸준히 이어집니다.",
@@ -154,6 +168,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "geumjeong-gu",
     regionKey: "geumjeong",
     label: "금정구",
+    clusterId: "east",
+    clusterLabel: "동부산권",
     neighborhoods: ["부곡동", "서동", "금사동"],
     context:
       "부곡·서동·금사 일대 다가구·상가의 상속등기와 한정승인, 부산대 인근 임대·매매 등기 문의가 있습니다.",
@@ -172,6 +188,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "sasang-gu",
     regionKey: "sasang",
     label: "사상구",
+    clusterId: "west",
+    clusterLabel: "서부산권",
     neighborhoods: ["엄궁동", "감전동", "주례동"],
     context:
       "엄궁·감전·주례 일대 상가·주택 상속과 채무 관련 상속포기·개인회생 문의가 잦은 지역입니다.",
@@ -190,6 +208,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "jung-gu",
     regionKey: "junggu",
     label: "중구",
+    clusterId: "oldtown",
+    clusterLabel: "원도심권",
     neighborhoods: ["남포동", "중앙동", "보수동"],
     context:
       "원도심 상가·오래된 건물의 상속·매매 등기와 소규모 법인 사무실 등기 수요가 있는 지역입니다.",
@@ -208,6 +228,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "seo-gu",
     regionKey: "seogu",
     label: "서구",
+    clusterId: "west",
+    clusterLabel: "서부산권",
     neighborhoods: ["충무동", "동대신동", "아미동"],
     context:
       "충무·동대신 일대 주택·상가의 상속등기와 전세·매매 관련 등기 문의가 꾸준합니다.",
@@ -225,6 +247,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "yeongdo-gu",
     regionKey: "yeongdo",
     label: "영도구",
+    clusterId: "oldtown",
+    clusterLabel: "원도심권",
     neighborhoods: ["남항동", "동삼동", "봉래동"],
     context:
       "항만·조선 관련 업체와 주거지가 함께 있어 법인등기·상속·부동산 등기 사건이 다양합니다.",
@@ -242,6 +266,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "gijang-gun",
     regionKey: "gijang",
     label: "기장군",
+    clusterId: "east",
+    clusterLabel: "동부산권",
     neighborhoods: ["기장읍", "정관읍", "일광읍"],
     context:
       "토지·전원주택·농지 상속과 정관·명례 산업단지 법인 등기 문의가 있으며, 관할 등기소 확인이 중요합니다.",
@@ -261,6 +287,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "gangseo-gu",
     regionKey: "gangseo",
     label: "강서구",
+    clusterId: "west",
+    clusterLabel: "서부산권",
     neighborhoods: ["명지", "명지국제신도시", "가락동", "에코델타시티"],
     context:
       "명지·에코델타시티 일대 신축 아파트·상가·법인 사옥이 늘며 설립등기와 소유권이전 수요가 빠르게 커지는 지역입니다.",
@@ -280,6 +308,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "saha-gu",
     regionKey: "saha",
     label: "사하구",
+    clusterId: "west",
+    clusterLabel: "서부산권",
     neighborhoods: ["하단동", "괴정동", "당리동"],
     context:
       "하단·괴정·당리 실거주 아파트와 다대 해안 주거의 매매·상속 등기를 이 구 안내에서 연결합니다.",
@@ -297,6 +327,8 @@ export const busanDistricts: BusanDistrictDef[] = [
     id: "dong-gu",
     regionKey: "donggu",
     label: "동구",
+    clusterId: "oldtown",
+    clusterLabel: "원도심권",
     neighborhoods: ["초량동", "범일동", "수정동"],
     context:
       "항만·물류 인근 상가·창고와 주거지가 섞여 있어, 상속·매매 등기와 소규모 법인 등기 문의가 이어집니다.",
@@ -347,3 +379,90 @@ export function getBusanDistrictById(id: string): BusanDistrictDef | undefined {
 export function getAllBusanDistricts(): BusanDistrictDef[] {
   return busanDistricts;
 }
+
+export const BUSAN_LEGAL_MAP_CLUSTER_ORDER = [
+  "haeundae",
+  "suyeong",
+  "yeonje",
+  "dongnae",
+  "jin",
+  "nam",
+  "buk",
+  "west",
+  "east",
+  "oldtown",
+] as const;
+
+/** 클러스터당 지역 허브 3~6개. 기존 구 카드 URL은 유지한다. */
+export const BUSAN_LEGAL_MAP_CLUSTER_PRIORITY: Record<
+  string,
+  { href: string; label: string }[]
+> = {
+  haeundae: [
+    { href: "/해운대법무사", label: "해운대 법무사" },
+    { href: "/센텀법무사", label: "센텀 법무사" },
+    { href: "/재송동법무사", label: "재송동 법무사" },
+    { href: "/반여동법무사", label: "반여동 법무사" },
+    { href: "/우동법무사", label: "우동 법무사" },
+    { href: "/좌동법무사", label: "좌동 법무사" },
+  ],
+  suyeong: [
+    { href: "/수영구법무사", label: "수영구 법무사" },
+    { href: "/광안리법무사", label: "광안리 법무사" },
+    { href: "/광안동법무사", label: "광안동 법무사" },
+    { href: "/민락동법무사", label: "민락동 법무사" },
+    { href: "/남천동법무사", label: "남천동 법무사" },
+    { href: "/망미동법무사", label: "망미동 법무사" },
+  ],
+  yeonje: [
+    { href: "/연제구법무사", label: "연제구 법무사" },
+    { href: "/연산동법무사", label: "연산동 법무사" },
+    { href: "/거제동법무사", label: "거제동 법무사" },
+    { href: "/부산지방법원법무사", label: "부산지방법원 안내" },
+  ],
+  dongnae: [
+    { href: "/동래구법무사", label: "동래구 법무사" },
+    { href: "/사직동법무사", label: "사직동 법무사" },
+    { href: "/온천동법무사", label: "온천동 법무사" },
+    { href: "/동래역법무사", label: "동래역 법무사" },
+  ],
+  jin: [
+    { href: "/부산진구법무사", label: "부산진구 법무사" },
+    { href: "/서면법무사", label: "서면 법무사" },
+    { href: "/부전동법무사", label: "부전동 법무사" },
+    { href: "/전포동법무사", label: "전포동 법무사" },
+  ],
+  nam: [
+    { href: "/남구법무사", label: "남구 법무사" },
+    { href: "/대연동법무사", label: "대연동 법무사" },
+    { href: "/용호동법무사", label: "용호동 법무사" },
+    { href: "/문현동법무사", label: "문현동 법무사" },
+  ],
+  buk: [
+    { href: "/북구법무사", label: "북구 법무사" },
+    { href: "/화명동법무사", label: "화명동 법무사" },
+    { href: "/덕천동법무사", label: "덕천동 법무사" },
+  ],
+  west: [
+    { href: "/강서구법무사", label: "강서구 법무사" },
+    { href: "/명지법무사", label: "명지 법무사" },
+    { href: "/사상구법무사", label: "사상구 법무사" },
+    { href: "/사하구법무사", label: "사하구 법무사" },
+    { href: "/하단법무사", label: "하단 법무사" },
+    { href: "/서구법무사", label: "서구 법무사" },
+  ],
+  east: [
+    { href: "/기장군법무사", label: "기장군 법무사" },
+    { href: "/정관법무사", label: "정관 법무사" },
+    { href: "/일광읍법무사", label: "일광읍 법무사" },
+    { href: "/금정구법무사", label: "금정구 법무사" },
+    { href: "/부곡동법무사", label: "부곡동 법무사" },
+  ],
+  oldtown: [
+    { href: "/중구법무사", label: "중구 법무사" },
+    { href: "/동구법무사", label: "동구 법무사" },
+    { href: "/영도구법무사", label: "영도구 법무사" },
+    { href: "/남포동법무사", label: "남포동 법무사" },
+    { href: "/초량동법무사", label: "초량동 법무사" },
+  ],
+};

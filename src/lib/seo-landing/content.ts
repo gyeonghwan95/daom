@@ -8,6 +8,7 @@ import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
 import { getSeoLandingSlugOverlay } from "@/data/seo/region-service-overlays";
 import type { SeoLandingSpec } from "./types";
 import { withRegionLabel } from "@/lib/local-landing/region-label";
+import { josa } from "@/lib/glossary/josa";
 
 function hashSeed(seed: string): number {
   let h = 0;
@@ -55,8 +56,8 @@ function introForSpec(spec: SeoLandingSpec): string {
     case "region-service": {
       const openings = [
         `${region} ${spec.serviceName} 문의는 소재지·채무·협의 상태에 따라 준비 순서가 달라집니다.`,
-        `${region}에서 ${spec.serviceName}을(를) 진행하려면 관할 확인 후 서류 체크리스트부터 잡는 편이 안전합니다.`,
-        `${spec.serviceName}을(를) ${region} 기준으로 볼 때는 동일 절차라도 등기소·법원 창구가 사건별로 갈릴 수 있습니다.`,
+        `${region}에서 ${josa(spec.serviceName ?? "해당 업무", "을/를")} 진행하려면 관할 확인 후 서류 체크리스트부터 잡는 편이 안전합니다.`,
+        `${josa(spec.serviceName ?? "해당 업무", "을/를")} ${region} 기준으로 볼 때는 동일 절차라도 등기소·법원 창구가 사건별로 갈릴 수 있습니다.`,
       ];
       return `${pick(openings, seed, 0)} ${regionContext(spec.regionId)} ${serviceContext(spec.serviceId)} 상담 시 서류·일정·비용 범위를 항목별로 안내합니다.`;
     }
@@ -394,7 +395,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
   ];
 
   const localVariants = [
-    `${region}은(는) ${pick(["아파트·상가", "법인 사옥·오피스", "토지·전원주택", "전월세·매매", "재개발·재건축 인근"], spec.seed, 1)} 관련 문의가 많습니다. 관할 등기소와 법원이 다를 수 있어 소재지 기준 확인이 우선입니다.`,
+    `${josa(region, "은/는")} 관할 등기소와 법원이 다를 수 있어 부동산·법인 소재지 기준 확인이 우선입니다.`,
     `${lawyerProfileMeta.name} 법무사는 ${officeLocation.areaLabel}에 있는 다옴법무사사무소에서 ${region} 포함 부산 전역 사건을 상담합니다. 급한 기한이 있으면 우선순위부터 정리합니다.`,
     `${region}에서 검색해 들어오신 경우에도, 실제 접수 관할은 부동산 소재지·본점 주소 기준으로 다시 확인합니다. 생활권과 관할이 같지 않을 수 있습니다.`,
     `${region} 인근 교통·업무지구 특성상 잔금일·인도일·법인 결의일이 겹치는 문의가 있습니다. 일정표로 정리하면 누락을 줄일 수 있습니다.`,
@@ -474,7 +475,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
     sections.push(
       {
         title: "다옴법무사사무소 상담 안내",
-        body: `해운대구 센텀에 위치한 다옴법무사사무소는 ${region}을(를) 포함해 부산 전역 상속·등기·회생 사건을 다룹니다. 전화·카카오톡·네이버 톡톡으로 간단히 상황을 남기시면, 필요한 준비부터 차분히 정리해 드립니다.`,
+        body: `해운대구 센텀에 위치한 다옴법무사사무소는 ${josa(region, "을/를")} 포함해 부산 전역 상속·등기·회생 사건을 다룹니다. 전화·카카오톡·네이버 톡톡으로 간단히 상황을 남기시면, 필요한 준비부터 차분히 정리해 드립니다.`,
         items: [
           "상속등기·상속포기·한정승인",
           "부동산등기·소유권이전등기",
@@ -484,7 +485,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
       },
       {
         title: "의뢰인께 드리는 말씀",
-        body: `막막할수록 지금 무엇부터 해야 하는지부터 정리하는 것이 우선이라고 생각합니다. ${lawyerProfileMeta.fullTitle}은(는) ${lawyerProfileMeta.practiceAreas.slice(0, 4).join("·")} 등을 다루며, ${region} 사건에서도 절차·비용·기한을 알기 쉽게 설명드립니다.`,
+        body: `막막할수록 지금 무엇부터 해야 하는지부터 정리하는 것이 우선이라고 생각합니다. ${josa(lawyerProfileMeta.fullTitle, "은/는")} ${lawyerProfileMeta.practiceAreas.slice(0, 4).join("·")} 등을 다루며, ${region} 사건에서도 절차·비용·기한을 알기 쉽게 설명드립니다.`,
       },
     );
   }
@@ -507,7 +508,7 @@ function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
       answer: `다옴법무사사무소는 ${officeLocation.fullAddress}에 있으며, ${region} 사건도 전화·카카오톡·방문(예약)으로 상담합니다.`,
     },
     {
-      question: `${titled}은(는) 방문이 필수인가요?`,
+      question: `${josa(titled, "은/는")} 방문이 필수인가요?`,
       answer: `가능한 사건은 서류 전달로 원격 진행합니다. 보정·열람·당사자 확인이 있으면 방문을 안내할 수 있습니다. 사무소는 ${officeLocation.areaLabel}입니다.`,
     },
   ];
@@ -533,7 +534,7 @@ function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
   if (spec.intentSuffix) {
     const intentFaqs = [
       {
-        question: `${spec.serviceName} ${spec.intentSuffix}은(는) 어디서 확인하나요?`,
+        question: `${josa(`${spec.serviceName} ${spec.intentSuffix}`, "은/는")} 어디서 확인하나요?`,
         answer: `사건별로 달라 일괄 금액을 단정하기 어렵습니다. 상담 시 ${spec.intentSuffix} 범위를 항목별로 정리해 드립니다.`,
       },
       {
@@ -807,7 +808,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       body: pick(
         [
           `최근 ${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 관련 문의가 있었습니다. 먼저 가족관계·재산·채무·관할을 확인했고, 급한 기한이 있으면 우선순위를 정리했습니다. 준비 서류 목록과 예상 일정·비용 범위를 단계별로 안내한 뒤, 서류가 모이면 접수까지 이어서 진행했습니다.`,
-          `${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${spec.title}을(를) 검색해 문의하셨습니다. 주소와 당사자만으로 관할을 확인한 뒤, 필요 서류와 일정 리스크를 항목별로 안내한 가상 예시입니다. 실제 결과는 달라질 수 있습니다.`,
+          `${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${josa(spec.title, "을/를")} 검색해 문의하셨습니다. 주소와 당사자만으로 관할을 확인한 뒤, 필요 서류와 일정 리스크를 항목별로 안내한 가상 예시입니다. 실제 결과는 달라질 수 있습니다.`,
           `${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친 경우, 날짜가 있는 절차부터 정리하고 나머지 서류를 병렬로 준비하도록 안내했습니다.`,
         ],
         spec.seed,
