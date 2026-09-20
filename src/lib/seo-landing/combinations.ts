@@ -343,7 +343,7 @@ function buildSpecialSpecs(
     { slug: "명례산업단지법인등기", title: "명례산업단지 법인등기", serviceId: "corporate-registration", seed: "special:myeongrye-corp" },
     { slug: "녹산산업단지법인등기", title: "녹산산업단지 법인등기", serviceId: "corporate-registration", seed: "special:noksan-corp" },
     { slug: "동부지원상속등기", title: "동부지원 상속등기", serviceId: "inheritance-registration", seed: "special:east-inheritance" },
-    { slug: "부산가정법원상속포기", title: "부산가정법원 상속포기", serviceId: "inheritance-renunciation", seed: "special:family-renunciation" },
+    { slug: "부산가정법원상속포기", title: "부산가정법원 상속포기 관할", serviceId: "inheritance-renunciation", seed: "special:family-renunciation" },
     { slug: "부산회생법원개인회생", title: "부산회생법원 개인회생", serviceId: "personal-rehabilitation", seed: "special:rehab-court" },
   ];
 

@@ -172,6 +172,12 @@ function candidates(): Candidate[] {
       h1: "부산 상속전문 법무사 — 상속 절차 첫 분기 안내",
       body: "noindex 브리지. 대표 안내는 부산 상속 법무사 페이지로 이어진다.",
     },
+    {
+      path: "/부산가정법원상속포기",
+      title: "부산가정법원 상속포기 | 관할·접수 창구 확인",
+      h1: "부산가정법원 상속포기, 관할과 접수 창구부터 확인",
+      body: "가정법원 관할·접수 창구. 3개월 기한과 가족관계 판단은 부산 상속포기 안내에서 이어진다.",
+    },
   ];
 }
 
@@ -223,6 +229,10 @@ function main() {
   const out = path.join(OUT_DIR, "intent-audit.csv");
   fs.writeFileSync(out, `${lines.join("\n")}\n`, "utf8");
   fs.writeFileSync(path.join(OUT_DIR, "intent-top5.csv"), `${top5Lines.join("\n")}\n`, "utf8");
+  const serpDir = path.join(ROOT, "seo/inheritance-serp");
+  fs.mkdirSync(serpDir, { recursive: true });
+  fs.writeFileSync(path.join(serpDir, "intent-audit.csv"), `${lines.join("\n")}\n`, "utf8");
+  fs.writeFileSync(path.join(serpDir, "intent-top5.csv"), `${top5Lines.join("\n")}\n`, "utf8");
   console.log(lines.join("\n"));
   if (failures.length > 0) {
     console.error("\nFAIL\n" + failures.join("\n"));

@@ -1,0 +1,24 @@
+query,rank,domain,url,title,page_type,lawyer_or_scrivener,locality,main_intent,observed_date,source,vertical_note
+부산 상속포기 법무사,UNKNOWN,법무사허성엽사무소.com,https://www.법무사허성엽사무소.com/,부산 한정승인 법무사허성엽사무소,office-home,scrivener,부산,포기·한정 전문 사무소,2026-09-20,MIXED_WEB_UNVERIFIED,WEB/홈 혼합. 공식 WEB 순위 아님
+부산 상속포기 법무사,UNKNOWN,상속법전문변호사.com,https://상속법전문변호사.com/,부산 상속포기 법무사 · 상속전문변호사 이창재,lawyer-local,lawyer,부산,변호사 vs 법무사·연쇄포기,2026-09-20,MIXED_WEB_UNVERIFIED,변호사 콘텐츠. 0.2% 등 과장 표현 있음
+부산 상속포기 법무사,UNKNOWN,greeda.co.kr,https://greeda.co.kr/,부산 상속포기 법무사,lawyer-local,lawyer,부산,법무사·변호사 차이,2026-09-20,MIXED_WEB_UNVERIFIED,이로운 법률사무소 동일 계열 추정
+부산 상속포기 법무사,UNKNOWN,blog.naver.com,https://blog.naver.com/hsy6207,부산 상속포기 법무사 비용,blog,scrivener,부산,비용 체크리스트,2026-09-20,MIXED_WEB_UNVERIFIED,BLOG vertical 혼입
+부산 상속포기 법무사,UNKNOWN,yeinlaw.com,https://yeinlaw.com/,부산진구상속포기변호사,lawyer-district,lawyer,부산진구,3개월·가정법원 관할,2026-09-20,MIXED_WEB_UNVERIFIED,구 단위 포기·한정 페이지
+부산 상속포기 법무사,UNKNOWN,다옴법무사사무소.kr,https://다옴법무사사무소.kr/부산가정법원상속포기,부산가정법원 상속포기,supporting-court,scrivener,부산,관할·접수,2026-09-20,MIXED_WEB_UNVERIFIED,OWNER MISMATCH 신호 — 대표는 /부산상속포기
+부산 상속포기 법무사,UNKNOWN,다옴법무사사무소.kr,https://다옴법무사사무소.kr/부산상속법무사,부산 상속 법무사 | 등기·포기·한정승인 먼저 확인,local-commercial-hub,scrivener,부산,절차 선택,2026-09-20,MIXED_WEB_UNVERIFIED,P0 쿼리에 P1 타이틀 스니펫
+부산 상속포기 법무사,UNKNOWN,다옴법무사사무소.kr,https://다옴법무사사무소.kr/부산상속포기,부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인,local-transactional,scrivener,부산,포기 의뢰,2026-09-20,MIXED_WEB_UNVERIFIED,P0 OWNER URL 관측됨. 순위 미확정
+부산 상속포기 법무사,UNKNOWN,hero-legacy.com,https://hero-legacy.com/,부산 상속포기 한정승인 법무사 비용 9만 9천원,lawyer-promo,lawyer,부산,저가 비용·사례량,2026-09-20,MIXED_WEB_UNVERIFIED,9.9만·성공률류 표현. 복제 금지
+부산 상속포기 법무사,UNKNOWN,inherit-law.kr,https://inherit-law.kr/,부산 상속포기변호사,lawyer-local,lawyer,부산,선임 기준·후순위,2026-09-20,MIXED_WEB_UNVERIFIED,법무법인 정서
+부산 상속포기 법무사,UNKNOWN,bms-sangsok.qshop.ai,https://bms-sangsok.qshop.ai/case,부산상속전문법무사 업무사례,scrivener-cases,scrivener,부산,사례 목록,2026-09-20,MIXED_WEB_UNVERIFIED,김정민 법무사. 사례량 강점
+부산 상속 법무사,UNKNOWN,jinsimpartnersbusan.com,https://jinsimpartnersbusan.com/sangsok,부산이혼변호사 | 재산분할·유류분·상속,lawyer-office,lawyer,부산,이혼·유류분 혼합,2026-09-20,MIXED_WEB_UNVERIFIED,P1 쿼리에 이혼 페이지 혼입
+부산 상속 법무사,UNKNOWN,다옴법무사사무소.kr,https://다옴법무사사무소.kr/부산상속포기,부산 상속포기 법무사,local-transactional,scrivener,부산,포기,2026-09-20,MIXED_WEB_UNVERIFIED,P1 쿼리에 P0 URL — OWNER MISMATCH 후보
+부산 상속 법무사,UNKNOWN,yeinlaw.com,https://yeinlaw.com/,사하구상속변호사,lawyer-district,lawyer,사하구,분할·회복,2026-09-20,MIXED_WEB_UNVERIFIED,구 단위 상속 페이지
+부산 상속 법무사,UNKNOWN,bms-sangsok.qshop.ai,https://bms-sangsok.qshop.ai/case,부산상속전문법무사 업무사례,scrivener-cases,scrivener,부산,사례,2026-09-20,MIXED_WEB_UNVERIFIED,
+부산 상속 법무사,UNKNOWN,다옴법무사사무소.kr,https://다옴법무사사무소.kr/부산상속등기,부산 상속등기 법무사,local-procedure,scrivener,부산,등기,2026-09-20,MIXED_WEB_UNVERIFIED,P1 쿼리에 등기 OWNER — 허브보다 등기 스니펫
+부산 상속 법무사,UNKNOWN,onestopsangsok.com,https://onestopsangsok.com/,원스톱상속증여,tax-combo,tax+scrivener,동래,세무+등기,2026-09-20,MIXED_WEB_UNVERIFIED,
+부산 상속전문 법무사,UNKNOWN,greeda.co.kr,https://greeda.co.kr/,부산 상속포기 법무사,lawyer-local,lawyer,부산,포기,2026-09-20,MIXED_WEB_UNVERIFIED,전문 쿼리에 포기 변호사 페이지
+부산 상속전문 법무사,UNKNOWN,bms-sangsok.qshop.ai,https://bms-sangsok.qshop.ai/case,부산상속전문법무사 업무사례,scrivener-cases,scrivener,부산,사례+exact 전문,2026-09-20,MIXED_WEB_UNVERIFIED,exact 부산상속전문법무사
+부산 상속전문 법무사,UNKNOWN,hero-inherit.com,https://www.hero-inherit.com/,서울 부산 상속전문변호사,lawyer-promo,lawyer,서울·부산,전문변호사 마케팅,2026-09-20,MIXED_WEB_UNVERIFIED,9.9만·24시. 복제 금지
+부산 상속전문 법무사,UNKNOWN,haeundae.daeryunlaw.com,https://haeundae.daeryunlaw.com/insight,부산상속전문변호사 칼럼,lawyer-column,lawyer,해운대,세제·가업승계,2026-09-20,MIXED_WEB_UNVERIFIED,
+부산 상속전문 법무사,UNKNOWN,blog.naver.com,https://blog.naver.com/lawhaebom,[부산 상속전문 법무사] 한정승인,blog,scrivener,부산,한정승인 실무,2026-09-20,MIXED_WEB_UNVERIFIED,BLOG 혼입
+부산상속전문법무사,UNKNOWN,SERP_UNVERIFIED,,,,unknown,,,2026-09-20,SERP_UNVERIFIED,별도 검색 스냅샷 미확보. 가짜 순위 없음

@@ -6,7 +6,6 @@ import { districtProfiles } from "./districts";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import {
-  championExtraFaqs,
   championExtraRelatedLinks,
   championExtraWhenNeeded,
 } from "./inheritance-champion-modules";
@@ -152,7 +151,7 @@ export function buildKeywordHubPage(
     : topic.whenNeeded;
   const procedures = topic.procedures;
   const faqs = isInheritanceChampion
-    ? [...topic.faqs, ...championExtraFaqs]
+    ? topic.faqs
     : isCorporateLegalOps
       ? [...topic.faqs, ...corporateLegalExtraFaqs]
       : topic.faqs;
@@ -171,12 +170,9 @@ export function buildKeywordHubPage(
     { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
     { href: "/부산상속포기", label: "부산 상속포기 안내" },
     { href: "/상속", label: "상속 종합 허브" },
-    { href: "/부모님사망후해야할일", label: "부모님 사망 후 해야 할 일" },
-    { href: "/부산법무사상담", label: "부산 법무사 상담" },
-    { href: "/상속상담전준비서류와비용", label: "상담 전 서류·비용" },
     {
       href: "/contact/inquiry?field=inheritance-registration",
-      label: "상속 절차 먼저 확인하기",
+      label: "등기·포기·한정 중 무엇부터 확인할지",
     },
   ];
 
@@ -191,7 +187,7 @@ export function buildKeywordHubPage(
       ];
 
   const lawyerOpinion = isInheritanceChampion
-    ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-08-07.`
+    ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-09-20.`
     : isRegistryHub
       ? `${lawyerProfileMeta.fullTitle}는 해운대·센텀에서 부동산·상속·법인등기를 직접 상담·진행합니다. 등기 종류가 같아도 등기부 상태에 따라 순서가 달라질 수 있어, 계약서나 현황을 확인한 뒤 지금 필요한 등기부터 안내합니다.`
       : buildLawyerOpinion(config.regionLabel, topic.title);
@@ -245,6 +241,7 @@ export function buildKeywordHubPage(
               "재산·채무를 아직 모름 → 조회 후 승인 방식 결정",
               "3개월이 임박함 → 포기·한정승인부터",
               "3개월이 지난 뒤 채무를 알게 됨 → 특별한정승인 검토",
+              "여러 상속인이 지분을 나눔 → 협의분할 + 상속등기",
               "미성년·해외 상속인이 있음 → 해당 안내와 함께 절차 선택",
             ],
             links: [
@@ -252,7 +249,15 @@ export function buildKeywordHubPage(
               { href: "/부산상속포기", label: "채무가 많을 때 상속포기" },
               { href: "/부산한정승인", label: "한정승인 안내" },
               { href: "/특별한정승인", label: "특별한정승인 안내" },
-              { href: "/사망자재산채무조회", label: "재산·채무 조회" },
+            ],
+          },
+          {
+            title: "해운대 센텀 사무소에서 직접 상담합니다",
+            body: `다옴법무사사무소는 ${officeLocation.fullAddress}에 있습니다. 안윤정 법무사가 상속등기·포기·한정승인 중 무엇부터 볼지를 상담에서 가릅니다. 부산 전역 사건도 전화·카카오톡·예약 방문으로 이어집니다.`,
+            items: [
+              "법무사 직접 상담",
+              "해운대·센텀 사무소",
+              "등기소·가정법원 창구를 사건별로 구분",
             ],
           },
           {
@@ -272,23 +277,6 @@ export function buildKeywordHubPage(
             ],
           },
           {
-            title: "등기·포기·한정승인을 가르는 기준",
-            body: "부동산이 있어도 채무가 불명확하면 상속등기보다 승인 방식을 먼저 봅니다. 빚이 분명하고 재산을 받지 않기로 하면 상속포기, 재산은 남기고 채무만 한도로 제한하려면 한정승인입니다. 세 절차는 관할·서류·기한이 다릅니다.",
-            items: [
-              "명의이전만 필요 → 상속등기",
-              "상속 자체를 받지 않음 → 상속포기(후순위 효과 확인)",
-              "상속은 하되 채무를 재산 한도로 → 한정승인",
-              "가족끼리 지분을 나눔 → 협의분할 후 등기",
-            ],
-            links: [
-              { href: "/부산상속등기", label: "부동산 명의이전(상속등기)" },
-              { href: "/부산상속포기", label: "상속포기 안내" },
-              { href: "/부산한정승인", label: "한정승인 안내" },
-              { href: "/부산상속재산분할법무사", label: "협의분할 안내" },
-              ...championExtraRelatedLinks,
-            ],
-          },
-          {
             title: "부산에서 상속전문 법무사를 찾을 때 어떤 업무를 함께 확인해야 할까요?",
             body: "자격처럼 보이는 표현보다, 상속등기·상속포기·한정승인을 한 흐름에서 구분할 수 있는지가 핵심입니다. 3개월 기한, 상속인 범위, 부동산과 채무, 미성년·해외·대습·연락두절을 나눠 안내하는지 확인하시면 됩니다. 전문 자격이나 순위를 표방하지 않습니다.",
             items: [
@@ -304,20 +292,6 @@ export function buildKeywordHubPage(
             ],
           },
           {
-            title: "재산보다 채무가 많을지 모를 때",
-            body: "부동산이 있어도 대출·보증·세금이 불명확하면 상속등기보다 승인 방식을 먼저 봅니다. 포기와 한정승인의 세부 판단은 각 안내에서 이어집니다.",
-            items: [
-              "안심상속 등으로 예금·대출·세금을 먼저 조회",
-              "상속을 받지 않기로 하면 상속포기 안내",
-              "재산은 남기고 채무만 제한하면 한정승인 안내",
-            ],
-            links: [
-              { href: "/부산상속포기", label: "채무가 많은 경우 상속포기" },
-              { href: "/부산한정승인", label: "부산 한정승인" },
-              { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회" },
-            ],
-          },
-          {
             title: "특정 상속인 명의로 하거나 상속 후 바로 매도할 때",
             body: "법정상속분 등기와 협의분할 등기는 서류가 다릅니다. 한 명의 앞으로 모으려면 상속재산분할협의가 필요하고, 등기 직후 매도까지 염두에 두면 취득세·잔금일과 순서를 같이 봅니다.",
             items: [
@@ -329,6 +303,7 @@ export function buildKeywordHubPage(
               { href: "/부산상속등기", label: "부산 상속등기" },
               { href: "/부산상속재산분할법무사", label: "협의분할 안내" },
               { href: "/부산상속후매매등기", label: "상속 후 바로 매도하는 경우" },
+              ...championExtraRelatedLinks,
             ],
           },
           {

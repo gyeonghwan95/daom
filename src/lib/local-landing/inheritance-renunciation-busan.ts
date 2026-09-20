@@ -153,7 +153,7 @@ export function buildBusanInheritanceRenunciationPage(
     precautions: [
       "이 안내는 일반 법률정보이며 개별 사건의 법률 자문·결과 보장이 아닙니다.",
       "기한·처분 이력·후순위 효과는 상담 시 사실관계에 따라 다시 확인합니다.",
-      "검토·작성: 안윤정 법무사(다옴법무사사무소). 검토일 2026-07-30.",
+      "검토·작성: 안윤정 법무사(다옴법무사사무소). 검토일 2026-09-20.",
     ],
     procedures: [
       "상담에서 사망일·인지일·가족관계·처분 이력을 확인합니다.",
@@ -182,13 +182,18 @@ export function buildBusanInheritanceRenunciationPage(
     relatedBlogHrefs: [],
     extraPageSections: [
       {
-        title: "상속포기 전에 가장 먼저 확인할 5가지",
-        body: "기한·가족관계·처분 이력을 맞추기 전에 등기부터 진행하면 선택이 꼬일 수 있습니다. 아래 다섯 가지만 적어도 1차 방향을 나눌 수 있습니다.",
+        title: "상속포기 전에 먼저 확인할 것",
+        body: "기한·가족관계·처분 이력을 맞추기 전에 등기부터 진행하면 선택이 꼬일 수 있습니다. 아래 항목만 적어도 1차 방향을 나눌 수 있습니다.",
         items: [
-          "피상속인 사망일과 내가 상속 사실을 안 날",
-          "배우자·자녀·부모 등 현재 상속인 구성",
-          "알고 있는 재산과 대출·보증·세금",
-          "이미 한 예금 인출·처분·사용이 있는지",
+          "상속개시일(사망일)과 내가 상속 사실을 안 날",
+          "현재 상속인 — 배우자 유무",
+          "현재 상속인 — 자녀 유무",
+          "자녀·배우자가 모두 포기할 때 다음 순위 친족",
+          "알고 있는 재산 규모",
+          "알고 있는 채무 규모(대출·보증·세금)",
+          "예금 인출·부동산 처분 여부",
+          "미성년 상속인 여부",
+          "해외 거주 상속인 여부",
           "3개월이 임박했는지, 이미 지났는지",
         ],
       },
@@ -259,11 +264,8 @@ export function buildBusanInheritanceRenunciationPage(
       { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
       { href: "/상속포기비용", label: "상속포기 비용이 궁금할 때" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
-      { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
       { href: "/상속", label: "상속 종합 허브" },
-      { href: "/blog/inheritance-renunciation-vs-qualified-acceptance", label: "상속포기와 한정승인 차이" },
-      { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 준비서류 확인하기" },
+      { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 3개월 기한·가족관계 확인" },
     ],
     relatedRegionLinks: [
       { href: "/동래구상속포기", label: "동래구 상속포기" },

@@ -20,6 +20,9 @@ function metaTitleForSeoLanding(
   if (spec.slug === "기장법무사") {
     return "기장읍 생활권 법무사 | 기장 해안·주택 등기";
   }
+  if (spec.slug === "부산가정법원상속포기") {
+    return "부산가정법원 상속포기 | 관할·접수 창구 확인";
+  }
   switch (spec.type) {
     case "institution-lawyer":
       return buildMetaTitle(
@@ -48,6 +51,9 @@ function metaDescriptionFor(
     return buildMetaDescription(
       "기장읍 해안·주택 상속·매매 등기 상담. 군 전체는 기장군 법무사 안내, 정관·일광은 각 생활권 페이지에서 이어집니다.",
     );
+  }
+  if (spec.slug === "부산가정법원상속포기") {
+    return "상속포기 신고의 가정법원 관할·접수 창구를 확인합니다. 3개월 기한과 가족관계 판단은 부산 상속포기 안내에서 이어집니다.";
   }
 
   switch (spec.type) {
@@ -79,6 +85,9 @@ function metaDescriptionFor(
     case "special":
       if (spec.slug === "등기소근처법무사") {
         return "등기소 근처 법무사 안내. 관할 등기소·전자등기·방문 필요 여부를 정리합니다. 등기업무 종류는 부산 등기 법무사 페이지에서 이어집니다.";
+      }
+      if (spec.slug === "부산가정법원상속포기") {
+        return "상속포기 신고의 가정법원 관할·접수 창구를 확인합니다. 3개월 기한과 가족관계 판단은 부산 상속포기 안내에서 이어집니다.";
       }
       return buildMetaDescription(
         `${spec.title} 관련 절차·비용·서류 안내. 부산 전역 사건 상담, 전화·카카오톡 문의 가능합니다.`,
@@ -187,7 +196,9 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
         ? "등기소 근처 법무사를 찾을 때 먼저 확인할 것"
         : spec.slug === "기장법무사"
           ? "기장읍·기장 해안에서 법무사 상담이 필요할 때"
-          : spec.h1),
+          : spec.slug === "부산가정법원상속포기"
+            ? "부산가정법원 상속포기, 관할과 접수 창구부터 확인"
+            : spec.h1),
     intro: content.intro,
     breadcrumbs: [
       { label: "홈", href: "/" },
