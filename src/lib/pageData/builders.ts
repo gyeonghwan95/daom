@@ -569,6 +569,12 @@ export function buildPageDataFromLocalLanding(
                     { label: "상속", href: "/상속" },
                     { label: "부산 상속" },
                   ]
+                : page.slug === "부산상속포기"
+                  ? [
+                      { label: "홈", href: "/" },
+                      { label: "상속", href: "/상속" },
+                      { label: "부산 상속포기" },
+                    ]
                 : page.slug === "부산등기법무사"
                   ? [
                       { label: "홈", href: "/" },

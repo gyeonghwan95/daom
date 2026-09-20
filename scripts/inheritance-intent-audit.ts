@@ -35,6 +35,7 @@ type Candidate = {
 
 const EXPECTED: { query: string; owner: string }[] = [
   { query: "부산 상속전문 법무사", owner: "/부산상속법무사" },
+  { query: "부산상속전문법무사", owner: "/부산상속법무사" },
   { query: "부산 상속 전문 법무사", owner: "/부산상속법무사" },
   { query: "부산 상속 법무사", owner: "/부산상속법무사" },
   { query: "부산 법무사 상속", owner: "/부산상속법무사" },

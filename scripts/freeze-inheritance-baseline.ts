@@ -143,6 +143,9 @@ function main() {
   const metaRows = ["URL,title,description,og:title,og:description,H1,main H2,schema"];
   const linkRows = ["URL,incoming internal links,anchor texts,outgoing links"];
   const contentRows = ["URL,first 500 characters,word count,content fingerprint"];
+  const wideRows = [
+    "url,status,indexable,robots,canonical,title,description,og_title,og_description,H1,H2,first_500_chars,word_count,incoming_links,incoming_anchors,outgoing_links,sitemap,schema,primary_intent,secondary_intents,body_hash,semantic_hash",
+  ];
 
   for (const page of pages.sort((a, b) => a.path.localeCompare(b.path, "ko"))) {
     const indexable = isIndexablePagePath(page.path);
@@ -197,6 +200,38 @@ function main() {
     contentRows.push(
       csvRow([page.path, body.replace(/\s+/g, " ").slice(0, 500), wordCount(body), fp]),
     );
+    wideRows.push(
+      csvRow([
+        page.path,
+        byPath.has(page.path) ? 200 : 0,
+        indexable,
+        robots,
+        canonical,
+        page.metaTitle || page.title,
+        page.metaDescription,
+        page.metaTitle || page.title,
+        page.metaDescription,
+        page.h1,
+        mainH2,
+        body.replace(/\s+/g, " ").slice(0, 500),
+        wordCount(body),
+        inLinks.length,
+        inLinks
+          .slice(0, 20)
+          .map((row) => row.label)
+          .join(" | "),
+        outLinks
+          .slice(0, 20)
+          .map((row) => row.href)
+          .join(" | "),
+        indexable,
+        schemaNames(page),
+        intent.primary,
+        intent.secondary,
+        fp,
+        fingerprint([page.h1, page.sections.map((s) => s.title).join("|")]),
+      ]),
+    );
   }
 
   fs.writeFileSync(path.join(OUT, "baseline-routes.csv"), `${routeRows.join("\n")}\n`, "utf8");
@@ -214,6 +249,14 @@ function main() {
     note: "PERFORMANCE_UNKNOWN — Search Advisor impressions/clicks 없음. HTTP 200은 레지스트리 존재 기준.",
   };
   fs.writeFileSync(path.join(OUT, "baseline-summary.json"), JSON.stringify(report, null, 2), "utf8");
+
+  const finalDir = path.join(ROOT, "seo/inheritance-final");
+  const p0Dir = path.join(ROOT, "seo/inheritance-p0");
+  fs.mkdirSync(finalDir, { recursive: true });
+  fs.mkdirSync(p0Dir, { recursive: true });
+  fs.writeFileSync(path.join(finalDir, "baseline.csv"), `${wideRows.join("\n")}\n`, "utf8");
+  fs.copyFileSync(path.join(finalDir, "baseline.csv"), path.join(p0Dir, "baseline.csv"));
+
   console.log(`Wrote ${pages.length} inheritance-related rows to seo/inheritance/baseline-*.csv`);
   if (missingRequired.length) {
     console.warn("Missing required paths:", missingRequired.join(", "));

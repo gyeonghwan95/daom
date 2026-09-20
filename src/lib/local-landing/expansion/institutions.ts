@@ -341,9 +341,9 @@ export const conversionTopics: Record<string, ConversionTopic> = {
     documentList: ["가족관계증명서", "사망일·인지일", "처분·인출 메모(해당 시)"],
     skipMortgageExample: true,
     uniqueProblemStatement:
-      "상속포기 비용은 부동산 공과금보다 신청인 구성과 가정법원 실비가 중심입니다. 여러 명이 함께 포기하거나 미성년·해외 상속인이 있으면 서류와 보수가 달라질 수 있습니다. 수임료·수수료로 검색하셔도 같은 구조를 안내합니다.",
+      "신청 가능성·3개월 기한·가족관계는 부산 상속포기 안내에서 먼저 확인하세요. 이 페이지는 상속포기 비용·수임료가 무엇 때문에 달라지는지만 설명합니다. 가정법원 실비와 신청인 구성이 중심이며, 부동산 취득세 견적 구조와는 다릅니다.",
     relatedServiceLinks: [
-      { href: "/부산상속포기", label: "상속포기 절차 보기" },
+      { href: "/부산상속포기", label: "3개월 기한·가족관계는 상속포기 안내에서 먼저 확인" },
       { href: "/한정승인비용", label: "한정승인 비용과 비교" },
     ],
     ctaDescription:

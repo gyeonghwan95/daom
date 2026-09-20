@@ -187,7 +187,7 @@ export function PageDataTemplate({
         }
         ctaHref={isCorporateLegalOps ? corporateLegalInquiryHref : "/contact/inquiry"}
         showDiagnosisCta={false}
-        showAboutLawyerCta
+        showAboutLawyerCta={!isBusanInheritanceLocalOwner(page.slug)}
         showNaverBlogCta={shouldShowNaverBlogMoreCta(page.path)}
         showNationwideChip={showNationwide && !isBusanInheritanceLocalOwner(page.slug)}
       />
@@ -239,12 +239,12 @@ export function PageDataTemplate({
 
       <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
-      {page.introParagraphs.length > (page.slug === "부산상속법무사" ? 2 : 1) ? (
+      {page.slug !== "부산상속법무사" &&
+      page.slug !== "부산상속포기" &&
+      page.introParagraphs.length > 1 ? (
         <ContentSection id="article-body" title="자세히 알아보기">
           <ProseParagraphs
-            paragraphs={page.introParagraphs.slice(
-              page.slug === "부산상속법무사" ? 2 : 1,
-            )}
+            paragraphs={page.introParagraphs.slice(1)}
           />
         </ContentSection>
       ) : null}

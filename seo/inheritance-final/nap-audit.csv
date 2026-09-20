@@ -1,0 +1,5 @@
+source,value,status,note
+src/lib/contact.ts,010-4277-1279,SSOT,공식 대표번호
+src (public),070-4172-8056,ABSENT,소스 트리에 없음. 구 캐시 HTML이면 Search Advisor에서 확인
+office address,부산 해운대구 센텀동로 200 D동 1층 LAB9호,CONSISTENT,
+representative,안윤정 법무사,CONSISTENT,

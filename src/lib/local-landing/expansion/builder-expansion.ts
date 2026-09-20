@@ -51,6 +51,25 @@ export function getJurisdictionGuide(
     };
   }
 
+  if (
+    config.serviceSlug === "inheritance-renunciation" ||
+    config.serviceSlug === "qualified-acceptance"
+  ) {
+    const label =
+      config.serviceSlug === "inheritance-renunciation" ? "상속포기" : "한정승인";
+    return {
+      title: `부산 ${label} 관할`,
+      address: "관할 가정법원",
+      accessNote: "피상속인 마지막 주소지 등을 기준으로 관할이 정해집니다.",
+      jurisdictionNote: `${label}은 가정법원 신고 사건입니다. 부동산 등기소 접수와 창구가 다릅니다.`,
+      practicalNotes: [
+        "3개월 기한을 달력에 표시하세요.",
+        "가족관계·처분 이력을 신고 전에 맞춰 주세요.",
+        "부동산 등기 일정과 섞지 않습니다.",
+      ],
+    };
+  }
+
   const fromSsot = buildJurisdictionGuideForRegionKey(config.regionKey);
 
   return {
@@ -319,7 +338,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
 
   const problemStatement = topic.uniqueProblemStatement
     ? topic.uniqueProblemStatement
-    : `부산에서 ${topic.title}을(를) 검색하시는 분들은 대부분 실제 부담 금액과 준비 기간을 알고 싶어 하십니다. ${topic.focusKeywords.join(", ")} 관련 비용은 사건마다 다릅니다. 부동산 가액·상속인 수·채무 규모·법인 규모·병행 업무 여부에 따라 법무사 보수와 등기신청 수수료·세금이 달라집니다. 다옴법무사사무소는 ${neighborhoodArea} 일대를 포함한 부산 전역 의뢰인에게 항목별 견적을 투명하게 안내합니다. 숨겨진 비용 없이 상담 후 예상 범위를 설명해 드립니다.`;
+    : `${topic.title} 비용은 사건마다 다릅니다. 보수와 실비를 구분해 안내하며, 상담 후 예상 범위를 설명합니다. 다옴법무사사무소는 ${neighborhoodArea} 일대를 포함한 부산 전역 의뢰인을 상담합니다.`;
 
   const whenNeeded = [
     `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,

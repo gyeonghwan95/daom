@@ -25,7 +25,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
-      { href: "/부산상속포기", label: "부산 상속포기" },
+      { href: "/부산상속포기", label: "빚이 많아 상속을 받지 않으려는 경우" },
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산개인회생", label: "부산 개인회생" },
       { href: "/개인회생파산", label: "회생·파산 비교" },

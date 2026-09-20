@@ -209,7 +209,7 @@ export function createPageData(input: CreatePageDataInput): PageData {
       : uniqueFaqs([...providedFaqs, ...defaultFaqs(input.title)]).slice(0, 3);
 
   const useProvidedIntros =
-    input.slug === "부산상속법무사" &&
+    (input.slug === "부산상속법무사" || input.slug === "부산상속포기") &&
     (input.introParagraphs?.length ?? 0) >= 2;
 
   const page: PageData = {
