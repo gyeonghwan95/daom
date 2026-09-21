@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T05:04:21.735Z",
+  "generatedAt": "2026-09-21T05:50:52.845Z",
   "sitemapChecked": true,
   "items": [
     {
@@ -243,6 +243,210 @@
       "status": "approved"
     },
     {
+      "id": "registry-busan-lawyer",
+      "pageUrl": "/부산등기법무사",
+      "urlExists": true,
+      "source": "/image/썸네일-등기소.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-registry-lawyer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 90,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-busan-hub",
+      "pageUrl": "/부산부동산등기",
+      "urlExists": true,
+      "source": "/image/상담-메인.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-real-estate-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 54,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-ownership-transfer",
+      "pageUrl": "/부산소유권이전등기",
+      "urlExists": true,
+      "source": "/image/썸네일-계약임원.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-ownership-transfer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 41,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-gift-registration",
+      "pageUrl": "/부산증여등기",
+      "urlExists": true,
+      "source": "/image/썸네일-서류확인.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-gift-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 46,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-mortgage-establishment",
+      "pageUrl": "/부산근저당설정등기",
+      "urlExists": true,
+      "source": "/image/썸네일-서류등기.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-mortgage-establishment.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 35,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-mortgage-release",
+      "pageUrl": "/부산근저당말소등기",
+      "urlExists": true,
+      "source": "/image/썸네일-사무실_전화중.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-mortgage-release.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 42,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-jeonse-establishment",
+      "pageUrl": "/부산전세권설정등기",
+      "urlExists": true,
+      "source": "/image/상담-메인.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-jeonse-establishment.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 56,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-jeonse-release",
+      "pageUrl": "/부산전세권말소등기",
+      "urlExists": true,
+      "source": "/image/썸네일-상담협의.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-jeonse-release.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 42,
+      "status": "approved"
+    },
+    {
+      "id": "real-estate-building-preservation",
+      "pageUrl": "/부산신축건물보존등기",
+      "urlExists": true,
+      "source": "/image/썸네일-등기소.jpg",
+      "output": "/images/generated/carousel/real-estate/busan-building-preservation.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 90,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-busan-lawyer",
+      "pageUrl": "/부산법인법무사",
+      "urlExists": true,
+      "source": "/image/썸네일-계약임원.jpg",
+      "output": "/images/generated/carousel/corporate/busan-corporate-lawyer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 38,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-busan-registration",
+      "pageUrl": "/부산법인등기",
+      "urlExists": true,
+      "source": "/image/썸네일-서류등기.jpg",
+      "output": "/images/generated/carousel/corporate/busan-corporate-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 34,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-company-establishment",
+      "pageUrl": "/부산법인설립등기",
+      "urlExists": true,
+      "source": "/image/상담-메인.jpg",
+      "output": "/images/generated/carousel/corporate/busan-company-establishment.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 56,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-director-change",
+      "pageUrl": "/부산임원변경등기",
+      "urlExists": true,
+      "source": "/image/썸네일-사무실.jpg",
+      "output": "/images/generated/carousel/corporate/busan-director-change.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 55,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-head-office-move",
+      "pageUrl": "/부산본점이전등기",
+      "urlExists": true,
+      "source": "/image/썸네일-서류등기.jpg",
+      "output": "/images/generated/carousel/corporate/busan-head-office-move.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 34,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-purpose-change",
+      "pageUrl": "/부산사업목적변경등기",
+      "urlExists": true,
+      "source": "/image/썸네일-서류확인.jpg",
+      "output": "/images/generated/carousel/corporate/busan-purpose-change.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 46,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-capital-increase",
+      "pageUrl": "/부산유상증자등기",
+      "urlExists": true,
+      "source": "/image/썸네일-상담협의.jpg",
+      "output": "/images/generated/carousel/corporate/busan-capital-increase.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 43,
+      "status": "approved"
+    },
+    {
+      "id": "corporate-dissolution-liquidation",
+      "pageUrl": "/부산법인해산청산등기",
+      "urlExists": true,
+      "source": "/image/썸네일-아래.jpg",
+      "output": "/images/generated/carousel/corporate/busan-dissolution-liquidation.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 43,
+      "status": "approved"
+    },
+    {
       "id": "lecture-hub",
       "pageUrl": "/법률강의",
       "urlExists": true,
@@ -276,6 +480,18 @@
     },
     {
       "hubUrl": "/부산상속법무사",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산부동산등기",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산법인법무사",
       "totalItems": 7,
       "approvedItems": 7,
       "itemListEligible": true

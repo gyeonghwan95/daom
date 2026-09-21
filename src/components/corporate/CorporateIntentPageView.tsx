@@ -21,8 +21,8 @@ import { NationwideServiceCard } from "@/components/nationwide/NationwideService
 import { getCorporateContent } from "@/lib/corporate-intent/content";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
-import { siteImages } from "@/lib/site-images";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -153,7 +153,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}
-        sideImage={siteImages.home.trust}
+        sideImage={getCoverImageForPageData(page)}
       />
 
       {showNationwide ? (

@@ -20,6 +20,10 @@ import {
   RemoteInheritanceProcess,
 } from "@/components/inheritance";
 import {
+  CorporateRegistrationChoiceCards,
+  RealEstateRegistrationChoiceCards,
+} from "@/components/registration/RegistrationChoiceCards";
+import {
   isBusanInheritanceLocalOwner,
   isInheritanceFlagshipPage,
   isInheritanceJourneyPage,
@@ -201,6 +205,12 @@ export function PageDataTemplate({
       {heroAddon}
 
       {page.slug === "부산상속법무사" ? <InheritanceChoiceCards /> : null}
+      {page.path === "/부산부동산등기" ? (
+        <RealEstateRegistrationChoiceCards />
+      ) : null}
+      {page.path === "/부산법인법무사" ? (
+        <CorporateRegistrationChoiceCards />
+      ) : null}
 
       {showInheritanceJourney ? (
         <InheritanceJourneyNav currentSlug={page.slug} />

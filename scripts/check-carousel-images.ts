@@ -14,9 +14,12 @@ import sharp from "sharp";
 import {
   CAROUSEL_HUBS,
   CAROUSEL_IMAGE_MANIFEST,
+  CORPORATE_IMAGE_OWNER_URLS,
+  REAL_ESTATE_IMAGE_OWNER_URLS,
 } from "../src/data/seo/carousel-image-manifest";
 import { getAttorneyPhoto } from "../src/data/media/attorney-photo-inventory";
 import { getAllPageData } from "../src/lib/pageData/registry";
+import { isNoIndexPath } from "../src/lib/seo/index-policy";
 
 const ROOT = process.cwd();
 const PUBLIC = path.join(ROOT, "public");
@@ -80,12 +83,33 @@ async function main() {
   const warnings: string[] = [];
   const hashes = new Map<string, string[]>();
   const sourceUsage = new Map<string, string[]>();
+  const outputUsage = new Map<string, string[]>();
+  const ownerUrls = new Set<string>([
+    ...REAL_ESTATE_IMAGE_OWNER_URLS,
+    ...CORPORATE_IMAGE_OWNER_URLS,
+  ]);
+  const protectedOwnerTypes = new Set([
+    "registry-hub",
+    "real-estate-hub",
+    "real-estate-detail",
+    "corporate-hub",
+    "corporate-detail",
+  ]);
 
   const items = [];
   for (const item of CAROUSEL_IMAGE_MANIFEST) {
     const urlExists =
       registryPaths.has(item.pageUrl) || KNOWN_STATIC_URLS.has(item.pageUrl);
     if (!urlExists) problems.push(`${item.id}: URL 미존재 ${item.pageUrl}`);
+    if (isNoIndexPath(item.pageUrl)) {
+      problems.push(`${item.id}: noindex URL은 승인 이미지 대상이 아님 ${item.pageUrl}`);
+    }
+    if (protectedOwnerTypes.has(item.pageType) && !ownerUrls.has(item.pageUrl)) {
+      problems.push(`${item.id}: PRIMARY owner 허용 목록 밖의 URL ${item.pageUrl}`);
+    }
+    const outputIds = outputUsage.get(item.outputPath) ?? [];
+    outputIds.push(item.id);
+    outputUsage.set(item.outputPath, outputIds);
 
     const sourcePublic = item.sourcePhotoId
       ? getAttorneyPhoto(item.sourcePhotoId)?.src
@@ -152,6 +176,11 @@ async function main() {
 
   for (const [h, ids] of hashes) {
     if (ids.length > 1) problems.push(`동일 이미지 hash(${h.slice(0, 8)}): ${ids.join(", ")}`);
+  }
+  for (const [outputPath, ids] of outputUsage) {
+    if (ids.length > 1) {
+      problems.push(`중복 outputPath ${outputPath}: ${ids.join(", ")}`);
+    }
   }
   for (const [src, ids] of sourceUsage) {
     if (ids.length > 5) problems.push(`동일 원본 과다 사용(${ids.length}회): ${src}`);
