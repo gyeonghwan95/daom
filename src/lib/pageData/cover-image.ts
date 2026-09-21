@@ -1,6 +1,7 @@
 import type { PageData } from "@/lib/pageData/types";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
 import { getPressArticle } from "@/lib/press-articles";
+import { resolveCarouselBodyImage } from "@/lib/seo/carousel-images";
 import { getTopicHubConfig } from "@/lib/topic-hubs/config";
 import {
   getBlogPostImage,
@@ -11,6 +12,9 @@ import {
 } from "@/lib/site-images";
 
 export function getCoverImageForPageData(page: PageData): SiteImageAsset {
+  const carouselImage = resolveCarouselBodyImage(page.path);
+  if (carouselImage) return carouselImage;
+
   switch (page.category) {
     case "service":
       return getServiceImage(page.slug);

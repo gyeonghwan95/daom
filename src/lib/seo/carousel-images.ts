@@ -42,6 +42,22 @@ export function resolveCarouselOgImage(pageUrl: string):
   };
 }
 
+/** 본문 대표 이미지 (승인되고 bodyImageRequired인 항목만) */
+export function resolveCarouselBodyImage(pageUrl: string):
+  | { src: string; alt: string; width: number; height: number }
+  | undefined {
+  const item = getCarouselManifestItemByUrl(pageUrl);
+  if (!item || !isCarouselImageReady(item) || !item.bodyImageRequired) {
+    return undefined;
+  }
+  return {
+    src: encodePublicSrc(item.outputPath),
+    alt: item.alt,
+    width: item.width,
+    height: item.height,
+  };
+}
+
 /**
  * 허브 캐러셀 데이터.
  * 승인 항목 4개 미만이면 null (캐러셀·ItemList 모두 미노출).

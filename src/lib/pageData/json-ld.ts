@@ -4,6 +4,7 @@ import {
   buildWebPageSchema,
   schemaIds,
 } from "@/lib/seo/json-ld";
+import { resolveCarouselOgImage } from "@/lib/seo/carousel-images";
 import type { PageData, PageFaqItem } from "./types";
 
 export function mergeVisibleFaqs(
@@ -37,13 +38,14 @@ export function buildJsonLdForPageData(
   options: JsonLdOptions = {},
 ): Record<string, unknown>[] {
   const isExpertHub = page.slug === "부산법률전문가" || page.path === "/부산법률전문가";
+  const primaryImage = resolveCarouselOgImage(page.path)?.src ?? page.ogImage;
   const schemas: Record<string, unknown>[] = [
     buildWebPageSchema({
       title: page.metaTitle,
       description: page.metaDescription,
       path: page.path,
       h1: page.h1,
-      image: page.ogImage,
+      image: primaryImage,
       aboutId: isExpertHub ? schemaIds.person : undefined,
     }),
   ];

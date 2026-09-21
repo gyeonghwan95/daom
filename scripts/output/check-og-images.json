@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T10:32:33.422Z",
+  "generatedAt": "2026-09-21T05:00:08.527Z",
   "missingExisting": [],
   "presentPlanned": [],
   "rows": [
@@ -451,16 +451,76 @@
       "note": "planned not created yet (expected)"
     },
     {
-      "id": "mortgage-cancel",
-      "url": "/services/real-estate-registration",
+      "id": "consult-champion",
+      "url": "/부산법무사상담",
+      "pathChecked": "/image/derived/consult-main.webp",
+      "exists": true,
+      "bytes": 66686,
+      "note": "existing ok"
+    },
+    {
+      "id": "consult-champion:planned",
+      "url": "/부산법무사상담",
+      "pathChecked": "/image/seo/seo-consult-champion.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "jeonse-damage-champion",
+      "url": "/전세사기피해대응절차",
+      "pathChecked": "/image/derived/doc-review-desk.webp",
+      "exists": true,
+      "bytes": 60378,
+      "note": "existing ok"
+    },
+    {
+      "id": "jeonse-damage-champion:planned",
+      "url": "/전세사기피해대응절차",
+      "pathChecked": "/image/seo/seo-jeonse-damage.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "insolvency-hub",
+      "url": "/개인회생파산",
+      "pathChecked": "/image/derived/court-procedure.webp",
+      "exists": true,
+      "bytes": 86932,
+      "note": "existing ok"
+    },
+    {
+      "id": "insolvency-hub:planned",
+      "url": "/개인회생파산",
+      "pathChecked": "/image/seo/seo-insolvency-hub.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "counsel-public-vs-scrivener",
+      "url": "/부산법률상담",
+      "pathChecked": "/image/derived/consult-talk.webp",
+      "exists": true,
+      "bytes": 55888,
+      "note": "existing ok"
+    },
+    {
+      "id": "counsel-public-vs-scrivener:planned",
+      "url": "/부산법률상담",
+      "pathChecked": "/image/seo/seo-busan-legal-counsel.webp",
+      "exists": false,
+      "note": "planned not created yet (expected)"
+    },
+    {
+      "id": "blog-mortgage-cancel",
+      "url": "/blog/mortgage-cancellation-risks",
       "pathChecked": "/image/썸네일-등기필증_근저당.jpg",
       "exists": true,
       "bytes": 2102955,
       "note": "existing ok"
     },
     {
-      "id": "mortgage-cancel:planned",
-      "url": "/services/real-estate-registration",
+      "id": "blog-mortgage-cancel:planned",
+      "url": "/blog/mortgage-cancellation-risks",
       "pathChecked": "/image/seo/seo-mortgage-cancel.webp",
       "exists": false,
       "note": "planned not created yet (expected)"
@@ -507,7 +567,7 @@
       "url": "/media",
       "pathChecked": "/image/언론-부산일보-260608.png",
       "exists": true,
-      "bytes": 352653,
+      "bytes": 854001,
       "note": "existing ok"
     },
     {

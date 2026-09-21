@@ -12,6 +12,9 @@ export type PageSeoInput = {
   path: string;
   keywords?: readonly string[];
   ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   noIndex?: boolean;
   openGraphType?: "website" | "article";
   publishedTime?: string;
@@ -119,9 +122,11 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: `${seoBrand.siteName} - ${seoBrand.representative}`,
+          width: input.ogImageWidth ?? 1200,
+          height: input.ogImageHeight ?? 630,
+          alt:
+            input.ogImageAlt ??
+            `${seoBrand.siteName} - ${seoBrand.representative}`,
         },
       ],
       ...(openGraphType === "article" && input.publishedTime

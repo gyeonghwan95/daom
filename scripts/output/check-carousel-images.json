@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T11:17:52.216Z",
+  "generatedAt": "2026-09-21T05:04:21.735Z",
   "sitemapChecked": true,
   "items": [
     {
@@ -147,6 +147,18 @@
       "status": "approved"
     },
     {
+      "id": "inheritance-busan-lawyer",
+      "pageUrl": "/부산상속법무사",
+      "urlExists": true,
+      "source": "/image/홈-신뢰안내.png",
+      "output": "/images/generated/carousel/inheritance/busan-inheritance-lawyer.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 48,
+      "status": "approved"
+    },
+    {
       "id": "local-busan-inheritance",
       "pageUrl": "/부산상속등기",
       "urlExists": true,
@@ -156,6 +168,78 @@
       "width": 1200,
       "height": 800,
       "kb": 62,
+      "status": "approved"
+    },
+    {
+      "id": "local-busan-inheritance-renunciation",
+      "pageUrl": "/부산상속포기",
+      "urlExists": true,
+      "source": "/image/썸네일-정면.jpg",
+      "output": "/images/generated/carousel/inheritance/busan-inheritance-renunciation.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 53,
+      "status": "approved"
+    },
+    {
+      "id": "local-busan-qualified-acceptance",
+      "pageUrl": "/부산한정승인",
+      "urlExists": true,
+      "source": "/image/썸네일-서류확인.jpg",
+      "output": "/images/generated/carousel/inheritance/busan-qualified-acceptance.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 48,
+      "status": "approved"
+    },
+    {
+      "id": "inheritance-special-qualified-acceptance",
+      "pageUrl": "/특별한정승인",
+      "urlExists": true,
+      "source": "/image/홈-신뢰안내.png",
+      "output": "/images/generated/carousel/inheritance/special-qualified-acceptance.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 48,
+      "status": "approved"
+    },
+    {
+      "id": "inheritance-division-agreement",
+      "pageUrl": "/상속재산분할협의서준비",
+      "urlExists": true,
+      "source": "/image/썸네일-상담협의.jpg",
+      "output": "/images/generated/carousel/inheritance/inheritance-division-agreement.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 42,
+      "status": "approved"
+    },
+    {
+      "id": "inheritance-subrogation-registration",
+      "pageUrl": "/대습상속등기",
+      "urlExists": true,
+      "source": "/image/썸네일-정면.jpg",
+      "output": "/images/generated/carousel/inheritance/subrogation-inheritance-registration.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 54,
+      "status": "approved"
+    },
+    {
+      "id": "inheritance-assets-debts-lookup",
+      "pageUrl": "/사망자재산채무조회",
+      "urlExists": true,
+      "source": "/image/썸네일-아래.jpg",
+      "output": "/images/generated/carousel/inheritance/decedent-assets-debts-lookup.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 800,
+      "kb": 42,
       "status": "approved"
     },
     {
@@ -186,6 +270,12 @@
   "hubs": [
     {
       "hubUrl": "/services",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산상속법무사",
       "totalItems": 7,
       "approvedItems": 7,
       "itemListEligible": true

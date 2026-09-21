@@ -177,6 +177,29 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
     tone: "dark",
   },
 
+  // /부산상속포기
+  {
+    path: "/부산상속포기",
+    slot: "after-intro",
+    assetId: "docReviewDesk",
+    alt: "상속포기 기한과 가족관계 서류를 검토하는 안윤정 법무사",
+    overlayText: "3개월 기한부터 확인합니다",
+    caption: "사망일과 선순위 상속인의 결정 여부에 따라 확인 순서가 달라집니다.",
+    aspectRatio: "4:3",
+    overlayPosition: "left",
+    tone: "dark",
+  },
+  {
+    path: "/부산상속포기",
+    slot: "before-procedures",
+    assetId: "consultTalk",
+    alt: "상속포기와 한정승인 선택 기준을 안내하는 상담 장면",
+    overlayText: "후순위 상속인 영향도 함께 봅니다",
+    aspectRatio: "3:2",
+    overlayPosition: "center",
+    tone: "dark",
+  },
+
   // /부산한정승인
   {
     path: "/부산한정승인",

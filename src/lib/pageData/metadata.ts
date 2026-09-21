@@ -13,6 +13,9 @@ export function pageDataToMetadata(page: PageData): Metadata {
     path: page.path,
     keywords: page.primaryKeywords,
     ogImage: carouselOg?.src ?? page.ogImage,
+    ogImageAlt: carouselOg?.alt,
+    ogImageWidth: carouselOg?.width,
+    ogImageHeight: carouselOg?.height,
     openGraphType: page.openGraphType ?? "website",
   });
 }
