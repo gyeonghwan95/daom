@@ -8,7 +8,7 @@ import {
   linksForMegaArea,
   megaMenuAreas,
 } from "@/lib/b2b/collaboration-registry";
-import { isNavItemActive } from "@/lib/navigation";
+import { isExactNavHref, isNavItemActive, isNavLinkActive } from "@/lib/navigation";
 import { trackB2BEvent } from "@/lib/analytics/track-b2b";
 
 type CollaborationMegaMenuProps = {
@@ -22,6 +22,11 @@ export function CollaborationMegaMenu({
 }: CollaborationMegaMenuProps) {
   const pathname = usePathname();
   const active = isNavItemActive(pathname, href);
+  const ariaCurrent = active
+    ? isExactNavHref(pathname, href)
+      ? "page"
+      : "true"
+    : undefined;
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLAnchorElement>(null);
@@ -90,7 +95,7 @@ export function CollaborationMegaMenu({
       <Link
         ref={triggerRef}
         href={href}
-        aria-current={active ? "page" : undefined}
+        aria-current={ariaCurrent}
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-haspopup="true"
@@ -125,17 +130,30 @@ export function CollaborationMegaMenu({
                     {area.title}
                   </p>
                   <ul className="space-y-0.5">
-                    {links.map((link) => (
-                      <li key={`${area.id}-${link.href}-${link.label}`}>
-                        <Link
-                          href={link.href}
-                          className="block rounded-lg px-2 py-1.5 text-sm leading-snug text-navy/80 no-underline hover:bg-beige hover:text-navy"
-                          onClick={closeMenu}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
+                    {links.map((link) => {
+                      const linkActive = isNavLinkActive(
+                        pathname,
+                        link.href,
+                        href,
+                      );
+                      return (
+                        <li key={`${area.id}-${link.href}-${link.label}`}>
+                          <Link
+                            href={link.href}
+                            aria-current={linkActive ? "page" : undefined}
+                            className={[
+                              "block rounded-lg px-2 py-1.5 text-sm leading-snug no-underline",
+                              linkActive
+                                ? "bg-beige font-semibold text-navy"
+                                : "text-navy/80 hover:bg-beige hover:text-navy",
+                            ].join(" ")}
+                            onClick={closeMenu}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               );

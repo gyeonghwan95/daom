@@ -127,6 +127,7 @@ import { busanMissingKeywordIntentOverrides } from "./overrides/busan-missing-ke
 import { wave1TrueGapOverrides } from "./overrides/wave1-true-gaps";
 import { 등기관할과사무소위치Override } from "./overrides/busan-office-jurisdiction";
 import { costSynonymOverrides } from "./overrides/cost-synonym-intents";
+import { top450InheritanceOverrides } from "./overrides/top450-inheritance-gaps";
 
 export type {
   SearchGuideEntry,
@@ -152,6 +153,7 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...busanMissingKeywordIntentOverrides,
   ...wave1TrueGapOverrides,
   ...costSynonymOverrides,
+  ...top450InheritanceOverrides,
   등기관할과사무소위치: 등기관할과사무소위치Override,
   공공기관법인등기: 공공기관법인등기Override,
   공공기관부동산등기: 공공기관부동산등기Override,

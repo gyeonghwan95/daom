@@ -44,3 +44,6 @@ next-env.d.ts
 # bid monitor (상태 DB·브리핑 출력물은 커밋하지 않음)
 /collector/data/
 /collector/output/
+
+# SEO audit caches
+/.cache/

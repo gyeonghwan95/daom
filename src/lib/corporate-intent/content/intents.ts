@@ -486,6 +486,10 @@ export const corporateIntentPages: CorporatePageContent[] = [
     relatedLinks: [
       { href: "/faq/capital-increase-registration-faq", label: "증자등기 FAQ" },
       { href: "/부산대표이사변경등기", label: "투자 후 대표이사 변경" },
+      { href: "/부산제3자배정유상증자", label: "제3자배정 유상증자" },
+      { href: "/부산주주배정유상증자", label: "주주배정 유상증자" },
+      { href: "/부산가수금출자전환", label: "가수금 출자전환" },
+      { href: "/부산현물출자증자", label: "현물출자 증자" },
       ...baseRelated,
     ],
     ctaTitle: "유상증자 등기 검토",

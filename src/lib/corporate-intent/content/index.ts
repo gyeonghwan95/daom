@@ -4,6 +4,7 @@ import { corporateIntentPages } from "./intents";
 import { corporateGapPages } from "./phase-gaps";
 import { corporateClusterPhase1Pages } from "./cluster-phase1";
 import { charterNotaryPhase1Pages } from "./charter-notary-phase1";
+import { top450CorporateGapPages } from "./top450-gaps";
 
 export const corporatePages: CorporatePageContent[] = [
   corporateHubPage,
@@ -11,6 +12,7 @@ export const corporatePages: CorporatePageContent[] = [
   ...corporateGapPages,
   ...corporateClusterPhase1Pages,
   ...charterNotaryPhase1Pages,
+  ...top450CorporateGapPages,
 ];
 
 export function getCorporateContent(slug: string): CorporatePageContent | undefined {

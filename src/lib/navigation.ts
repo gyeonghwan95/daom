@@ -150,56 +150,131 @@ export const mainNavigation: NavItem[] = [
   { href: "/location", label: "오시는 길" },
 ];
 
-/** 현재 경로가 메뉴 항목과 일치하는지 (하위 페이지 포함) */
+/** 퍼센트 인코딩·NFC·트레일링 슬래시를 맞춰 메뉴 경로를 비교한다. */
+export function normalizeNavPath(pathname: string): string {
+  const trimmed = pathname.split("?")[0].split("#")[0].trim() || "/";
+  let decoded = trimmed;
+  try {
+    if (/%[0-9A-Fa-f]{2}/.test(trimmed)) {
+      decoded = decodeURIComponent(trimmed);
+    }
+  } catch {
+    decoded = trimmed;
+  }
+  const nfc = decoded.normalize("NFC");
+  if (nfc.length > 1 && nfc.endsWith("/")) return nfc.slice(0, -1);
+  return nfc || "/";
+}
+
+function hrefMatchScore(pathname: string, href: string): number {
+  const path = normalizeNavPath(pathname);
+  const target = normalizeNavPath(href);
+  if (target === "/") return path === "/" ? 1 : -1;
+  if (path === target) return target.length + 100;
+  if (path.startsWith(`${target}/`)) return target.length;
+  return -1;
+}
+
+const LECTURE_EXTRA_HREFS = [
+  "/강의이력",
+  "/강사소개",
+  "/강의문의",
+  "/부산법률전문가",
+  "/부산법률강사",
+  "/부산법무사강의",
+  "/부산도서관법률특강",
+  "/부산기관법률특강",
+  "/부산사회복지기관강사",
+  "/부산강사섭외비용",
+  "/부산강사섭외체크리스트",
+  "/기관특강주제추천",
+  "/강의시간별구성",
+  "/전세사기예방교육",
+  "/청년생활법률특강",
+  "/디지털법률교육",
+  "/창업법률교육",
+  "/기업법률교육",
+  "/학교법률교육",
+  "/공공기관법률교육",
+  "/법무사진로특강",
+] as const;
+
+function extraMatchScore(pathname: string, item: NavItem): number {
+  const path = normalizeNavPath(pathname);
+  let best = -1;
+  const consider = (href: string) => {
+    const score = hrefMatchScore(path, href);
+    if (score > best) best = score;
+  };
+
+  if (item.href === "/partners" && isCollaborationPath(path)) {
+    consider(path);
+  }
+  if (item.href === "/업무사례") {
+    consider("/cases");
+    consider("/services/cases");
+  }
+  if (item.href === "/법률강의") {
+    for (const href of LECTURE_EXTRA_HREFS) consider(href);
+  }
+  if (item.href === "/services" && path.startsWith("/전국")) {
+    consider(path);
+  }
+  if (item.href === "/자가진단" && /(^|\/)[^/]*자가진단$/.test(path)) {
+    consider(path);
+  }
+  if (item.href === "/media") {
+    consider("/press");
+  }
+  if (item.href === "/공지사항") {
+    consider("/notices");
+  }
+  return best;
+}
+
+function navItemMatchScore(pathname: string, item: NavItem): number {
+  let best = hrefMatchScore(pathname, item.href);
+  for (const group of item.groups ?? []) {
+    for (const link of group.links) {
+      const score = hrefMatchScore(pathname, link.href);
+      if (score > best) best = score;
+    }
+  }
+  const extra = extraMatchScore(pathname, item);
+  if (extra > best) best = extra;
+  return best;
+}
+
+function winningNavHref(pathname: string): string | null {
+  let winner: { href: string; score: number } | null = null;
+  for (const item of mainNavigation) {
+    const score = navItemMatchScore(pathname, item);
+    if (score < 0) continue;
+    if (!winner || score > winner.score) {
+      winner = { href: item.href, score };
+    }
+  }
+  return winner?.href ?? null;
+}
+
+/** 현재 경로가 해당 GNB 항목(또는 하위 연결 URL)에 해당하는지 */
 export function isNavItemActive(pathname: string, href: string): boolean {
-  const normalized = pathname.split("?")[0].split("#")[0];
-  if (href === "/") return normalized === "/";
-  if (href === "/partners") {
-    return isCollaborationPath(normalized);
+  return winningNavHref(pathname) === href;
+}
+
+export function isExactNavHref(pathname: string, href: string): boolean {
+  return hrefMatchScore(pathname, href) >= 100;
+}
+
+/** 드롭다운·모바일 하위 링크. 허브 URL은 정확히 맞을 때만 현재 페이지로 본다. */
+export function isNavLinkActive(
+  pathname: string,
+  href: string,
+  hubHref?: string,
+): boolean {
+  const target = normalizeNavPath(href);
+  if (hubHref && target === normalizeNavPath(hubHref)) {
+    return isExactNavHref(pathname, href);
   }
-  if (href === "/업무사례") {
-    return (
-      normalized === "/업무사례" ||
-      normalized.startsWith("/업무사례/") ||
-      normalized === "/cases" ||
-      normalized.startsWith("/cases/") ||
-      normalized.startsWith("/services/cases/")
-    );
-  }
-  if (href === "/법률강의") {
-    return (
-      normalized === href ||
-      normalized.startsWith("/강의이력") ||
-      normalized === "/강사소개" ||
-      normalized === "/강의문의" ||
-      normalized === "/부산법률전문가" ||
-      normalized === "/부산법률강사" ||
-      normalized === "/부산법무사강의" ||
-      normalized === "/부산도서관법률특강" ||
-      normalized === "/부산기관법률특강" ||
-      normalized === "/부산사회복지기관강사" ||
-      normalized === "/부산강사섭외비용" ||
-      normalized === "/부산강사섭외체크리스트" ||
-      normalized === "/기관특강주제추천" ||
-      normalized === "/강의시간별구성" ||
-      normalized === "/전세사기예방교육" ||
-      normalized === "/청년생활법률특강" ||
-      normalized === "/디지털법률교육" ||
-      normalized === "/창업법률교육" ||
-      normalized === "/기업법률교육" ||
-      normalized === "/학교법률교육" ||
-      normalized === "/공공기관법률교육" ||
-      normalized === "/법무사진로특강"
-    );
-  }
-  if (href === "/services") {
-    return (
-      normalized === href ||
-      normalized.startsWith("/services/") ||
-      normalized === "/전국업무" ||
-      normalized.startsWith("/전국") ||
-      normalized === "/여러지역상속부동산등기"
-    );
-  }
-  return normalized === href || normalized.startsWith(`${href}/`);
+  return hrefMatchScore(pathname, href) >= 0;
 }

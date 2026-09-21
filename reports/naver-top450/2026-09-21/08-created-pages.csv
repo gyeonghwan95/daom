@@ -1,0 +1,9 @@
+url,status,intent
+/부산1인법인설립,created,one-person-company
+/부산유한회사설립등기,created,llc-formation
+/부산제3자배정유상증자,created,third-party-allotment
+/부산주주배정유상증자,created,shareholder-allotment
+/부산가수금출자전환,created,debt-equity-swap
+/부산현물출자증자,created,in-kind-increase
+/부산재상속등기,created,re-inheritance
+/부산외국인상속등기,created,foreign-heir

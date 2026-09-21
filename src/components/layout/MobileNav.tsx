@@ -5,7 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
+  isExactNavHref,
   isNavItemActive,
+  isNavLinkActive,
   mainNavigation,
   type NavItem,
 } from "@/lib/navigation";
@@ -197,6 +199,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                           type="button"
                           onClick={() => openSubmenu(item)}
                           aria-haspopup="true"
+                          aria-current={
+                            active
+                              ? isExactNavHref(pathname, item.href)
+                                ? "page"
+                                : "true"
+                              : undefined
+                          }
                           className={[
                             "group flex w-full min-h-[3.25rem] items-center gap-3 rounded-2xl px-3.5 text-left transition-colors",
                             active
@@ -230,7 +239,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={item.href}
                         onClick={handleClose}
-                        aria-current={active ? "page" : undefined}
+                        aria-current={
+                          active
+                            ? isExactNavHref(pathname, item.href)
+                              ? "page"
+                              : "true"
+                            : undefined
+                        }
                         className={[
                           "flex min-h-[3.25rem] items-center rounded-2xl px-3.5 text-[0.9375rem] no-underline transition-colors",
                           active
@@ -365,7 +380,15 @@ function MobileNavSubmenu({
       <Link
         href={item.href}
         onClick={onClose}
-        className="mb-3 flex items-center gap-3 rounded-2xl border border-beige-dark bg-white px-4 py-3.5 no-underline shadow-[0_1px_2px_rgba(30,58,95,0.04)] active:bg-beige/40"
+        aria-current={
+          isExactNavHref(pathname, item.href) ? "page" : undefined
+        }
+        className={[
+          "mb-3 flex items-center gap-3 rounded-2xl border px-4 py-3.5 no-underline shadow-[0_1px_2px_rgba(30,58,95,0.04)]",
+          isExactNavHref(pathname, item.href)
+            ? "border-navy/20 bg-beige/70"
+            : "border-beige-dark bg-white active:bg-beige/40",
+        ].join(" ")}
       >
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-navy text-cream">
           <MenuMarkIcon />
@@ -435,10 +458,11 @@ function MobileNavSubmenu({
                   }
                 >
                   {links.map((link, index) => {
-                    const pathOnly = link.href.split("#")[0];
-                    const linkActive =
-                      pathname === pathOnly ||
-                      pathname.startsWith(`${pathOnly}/`);
+                    const linkActive = isNavLinkActive(
+                      pathname,
+                      link.href,
+                      item.href,
+                    );
                     const isLast = index === links.length - 1;
                     return (
                       <li key={`${group.title}-${link.href}-${link.label}`}>

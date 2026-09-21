@@ -1,0 +1,17 @@
+metric,value
+inventoryPages,1640
+keywords,450
+intentGroups,275
+COVERED_STRONG,418
+COVERED_NEEDS_IMPROVEMENT,32
+WEAK_COVERAGE,0
+CONTENT_GAP_CANDIDATE,0
+CREATE,0
+IMPROVE,32
+PARENT_HUB_COVERAGE,0
+CANNIBALIZATION_RISK,0
+dupTitles,0
+dupDescriptions,0
+missingH1,0
+orphan,649
+duplicatePairs,84

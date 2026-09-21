@@ -1,0 +1,400 @@
+keyword,cluster,region,regionType,intent,service,bestUrl,coverageScore,band,candidates,action,parentHubUrl,issues
+부산 법무사,busan-lawyer-home,부산,BUSAN,local-provider,GENERAL,/,88,COVERED_STRONG,/|/부산법무사비용|/부산법무사보수표|/부산법무사추천|/부산법무사상담|/부산법무사후기,KEEP,,THIN_BODY
+부산 법무사 추천,busan-lawyer-recommend,부산,BUSAN,provider-selection,GENERAL,/부산법무사추천,94,COVERED_STRONG,/부산법무사추천|/부산등기법무사추천|/부산법무사후기|/부산법무사무소|/부산상속법무사추천|/부산개인회생법무사추천,KEEP,,
+부산 법무사 상담,busan-lawyer-consult,부산,BUSAN,consultation,GENERAL,/부산법무사상담,94,COVERED_STRONG,/부산법무사상담|/blog/busan-lawyer-consultation-documents|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,,
+부산 법무사 비용,busan-lawyer-cost,부산,BUSAN,cost,GENERAL,/부산법무사비용,100,COVERED_STRONG,/부산법무사비용|/부산소유권이전등기|/부산파산|/부산법무사|/부산법무사보수표|/상속등기비용,KEEP,,
+부산 법무사 수수료,busan-lawyer-cost,부산,BUSAN,cost,GENERAL,/부산법무사비용,100,COVERED_STRONG,/부산법무사비용|/부산법무사보수표|/상속등기비용|/상속포기비용|/한정승인비용|/법인설립등기비용,KEEP,,
+부산 등기 법무사,busan-registry-lawyer,부산,BUSAN,registry-provider,GENERAL,/부산등기법무사,100,COVERED_STRONG,/부산등기법무사|/부산등기법무사추천|/부산상속등기|/부산상속포기|/부산법인설립등기|/부산임원변경등기,KEEP,,
+부산 법무사 사무소,busan-office,부산,BUSAN,office,GENERAL,/부산법무사무소,94,COVERED_STRONG,/부산법무사무소|/부산상속포기|/부산법인설립등기|/부산임원변경등기|/부산부동산등기|/부산소유권이전등기,KEEP,,
+부산 무료법률상담,free-counsel-info,부산,BUSAN,public-vs-scrivener,GENERAL,/부산법률상담,88,COVERED_STRONG,/부산법률상담|/부산법무사상담|/media/busan-ilbo-bar-association-64th-general-assembly|/media/weeklypeople-youth-judicial-scrivener-ahn|/부산상속등기|/부산상속포기,KEEP,,THIN_BODY
+부산 법무사 무료상담,free-counsel-info,부산,BUSAN,public-vs-scrivener,GENERAL,/부산법률상담,88,COVERED_STRONG,/부산법률상담|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,KEEP,,THIN_BODY
+부산 여성 법무사,female-lawyer,부산,BUSAN,provider-trait,GENERAL,/부산여성법무사,94,COVERED_STRONG,/부산여성법무사|/업무사례/성동구상속등기법무사|/업무사례/성남상속등기법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,
+부산 비대면 법무사,remote-lawyer,부산,BUSAN,remote,GENERAL,/부산법무사비대면상담,94,COVERED_STRONG,/부산법무사비대면상담|/부산등기법무사추천|/해외거주상속인|/경상도비대면상속등기|/방문없이준비하는법무사업무|/제주타지역상속인부동산,KEEP,,
+부산 온라인 법무사,remote-lawyer,부산,BUSAN,remote,GENERAL,/부산법무사비대면상담,94,COVERED_STRONG,/부산법무사비대면상담|/법률강의|/디지털법률교육|/학교법률교육|/법무사진로특강|/방문없이준비하는상속포기한정승인,KEEP,,
+부산 법무 업무,busan-lawyer-hub,부산,BUSAN,scope,GENERAL,/부산법무사,94,COVERED_STRONG,/부산법무사|/부산법인등기|/부산진구법무사|/동구법무사|/부산법무사비용|/부산법무사보수표,KEEP,,
+부산 등기 상담,busan-registry-lawyer,부산,BUSAN,consultation,GENERAL,/부산등기법무사,100,COVERED_STRONG,/부산등기법무사|/부산상속등기|/부산상속포기|/부산법인설립등기|/부산부동산등기|/부산법인등기,KEEP,,
+부산 법무사 전화상담,busan-lawyer-consult,부산,BUSAN,phone-consult,GENERAL,/부산법무사상담,94,COVERED_STRONG,/부산법무사상담|/부산법률상담|/blog/busan-inheritance-consultation-prep|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,
+부산 법무사 카카오톡 상담,busan-lawyer-consult,부산,BUSAN,kakao-consult,GENERAL,/부산법무사상담,94,COVERED_STRONG,/부산법무사상담|/부산부동산등기|/부산소유권이전등기|/부산파산|/부산진구법무사|/동구법무사,KEEP,,
+부산 법무사 네이버 톡톡,busan-lawyer-consult,부산,BUSAN,naver-talk,GENERAL,/부산법무사상담,94,COVERED_STRONG,/부산법무사상담|/부산법무사추천|/부산등기법무사추천|/부산법무사후기|/부산법무사비교|/부산법무사무소,KEEP,,
+부산 법무사 견적,busan-lawyer-cost,부산,BUSAN,quote,GENERAL,/부산법무사비용,100,COVERED_STRONG,/부산법무사비용|/부산법인등기|/부산파산|/부산법무사보수표|/상속등기비용|/상속포기비용,KEEP,,
+부산 법무사 업무,busan-lawyer-hub,부산,BUSAN,scope,GENERAL,/부산법무사,94,COVERED_STRONG,/부산법무사|/자가진단|/업무사례|/부산법인등기|/부산진구법무사|/동구법무사,KEEP,,
+부산 전문 법무사,busan-lawyer-hub,부산,BUSAN,expertise-without-title,GENERAL,/부산법무사,94,COVERED_STRONG,/부산법무사|/부산법인설립등기|/부산부동산등기|/부산법인등기|/부산국제금융센터법인등기|/부산등기전문법무사,KEEP,,
+부산 상속 법무사,inheritance-hub,부산,BUSAN,inheritance-hub,INHERITANCE,/부산상속법무사,100,COVERED_STRONG,/부산상속법무사|/부산상속법무사추천|/부산상속등기|/부산상속포기|/부산한정승인|/부산소유권이전등기,KEEP,,
+부산 상속전문 법무사,inheritance-hub,부산,BUSAN,inheritance-hub,INHERITANCE,/부산상속법무사,100,COVERED_STRONG,/부산상속법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,KEEP,,
+부산 상속등기 법무사,inheritance-registration,부산,BUSAN,inheritance-registration,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/동구법무사|/상속등기비용|/한정승인비용|/임원변경등기과태료|/소유권이전등기서류,KEEP,,
+부산 상속등기,inheritance-registration,부산,BUSAN,inheritance-registration,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/blog/busan-inheritance-consultation-prep|/blog/busan-inheritance-registration-procedure-documents|/상속등기자가진단|/동구법무사|/상속등기비용,KEEP,,
+부산 상속등기 비용,inheritance-cost,부산,BUSAN,cost,INHERITANCE,/상속등기비용,94,COVERED_STRONG,/상속등기비용|/한정승인비용|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류|/상속등기기간,KEEP,,
+부산 상속등기 수수료,inheritance-cost,부산,BUSAN,cost,INHERITANCE,/상속등기비용,94,COVERED_STRONG,/상속등기비용|/한정승인비용|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류|/상속등기기간,KEEP,,
+부산 상속 상담,inheritance-consult,부산,BUSAN,consultation,INHERITANCE,/부산상속법무사,100,COVERED_STRONG,/부산상속법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산소유권이전등기|/부산개인회생,KEEP,,
+부산 상속포기 법무사,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/부산한정승인|/상속포기비용|/부산가정법원상속|/부산상속법무사|/부산상속재산관리인,KEEP,,
+부산 상속포기,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/상속포기자가진단|/부산한정승인|/상속포기비용|/부산가정법원상속|/부산상속법무사,KEEP,,
+부산 상속포기 비용,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/상속포기비용|/부산가정법원상속|/부산상속재산관리인|/해운대구상속포기|/연제구상속포기,KEEP,,
+부산 한정승인 법무사,qualified-acceptance,부산,BUSAN,qualified-acceptance,INHERITANCE,/부산한정승인,100,COVERED_STRONG,/부산한정승인|/부산상속등기|/부산상속포기|/한정승인비용|/부산가정법원상속|/부산상속법무사,KEEP,,
+부산 한정승인,qualified-acceptance,부산,BUSAN,qualified-acceptance,INHERITANCE,/부산한정승인,100,COVERED_STRONG,/부산한정승인|/한정승인자가진단|/부산상속등기|/부산상속포기|/한정승인비용|/부산가정법원상속,KEEP,,
+부산 한정승인 비용,qualified-acceptance,부산,BUSAN,qualified-acceptance,INHERITANCE,/부산한정승인,100,COVERED_STRONG,/부산한정승인|/한정승인비용|/부산가정법원상속|/부산상속법무사추천|/상속상담전준비서류와비용|/부산상속재산관리인,KEEP,,
+부산 특별한정승인,special-qa,부산,BUSAN,special-qualified-acceptance,INHERITANCE,/특별한정승인,94,COVERED_STRONG,/특별한정승인|/사망후3개월지난상속|/동래구상속포기|/상속포기기한|/동구상속포기|/남구상속포기,KEEP,,
+부산 상속재산분할,division-agreement,부산,BUSAN,division,INHERITANCE,/부산상속재산분할법무사,94,COVERED_STRONG,/부산상속재산분할법무사|/부산상속후매매등기|/상속재산분할협의서준비|/blog/inheritance-division-agreement-cautions|/blog/minor-heir-inheritance-guide|/blog/overseas-heir-inheritance-busan,KEEP,,
+부산 부동산 법무사,real-estate-hub,부산,BUSAN,real-estate-hub,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산상속등기|/부산상속포기|/부산소유권이전등기|/부산파산|/부산법무사,KEEP,,
+부산 부동산등기 법무사,real-estate-hub,부산,BUSAN,real-estate-hub,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산상속포기|/부산소유권이전등기|/부산파산|/부산진구법무사|/동구법무사,KEEP,,
+부산 부동산등기,real-estate-hub,부산,BUSAN,real-estate-hub,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산부동산등기법무사|/부산부동산등기전문법무사|/부동산등기자가진단|/blog/busan-real-estate-registration-documents|/부산상속포기,KEEP,,
+부산 소유권이전등기 법무사,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/소유권이전등기서류|/부산신축아파트소유권이전등기|/부산오피스텔소유권이전등기|/부산부동산등기법무사|/부산근저당말소등기,KEEP,,
+부산 소유권이전등기,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/소유권이전등기자가진단|/소유권이전등기서류|/부산신축아파트소유권이전등기|/부산오피스텔소유권이전등기|/부산부동산등기법무사,KEEP,,
+부산 아파트 등기 법무사,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산상속등기|/부산부동산등기|/부산법무사|/부산재개발등기|/부산재건축등기,KEEP,,
+부산 아파트 등기,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산상속등기|/부산부동산등기|/부산법무사|/부산재개발등기|/부산재건축등기,KEEP,,
+부산 매매등기,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산매매등기전문법무사|/부산매매등기법무사|/부산법무사|/부산진구법무사|/부산법무사서류준비,KEEP,,
+부산 매매 법무사,unclassified,부산,BUSAN,general,GENERAL,/부산법무사,94,COVERED_STRONG,/부산법무사|/부산부동산등기|/부산소유권이전등기|/부산파산|/부산진구법무사|/동구법무사,KEEP,,
+부산 잔금 법무사,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산부동산등기|/부산법무사|/부산등기법무사|/부산부동산등기법무사|/부산근저당설정등기,KEEP,,
+부산 등기비용,re-cost,부산,BUSAN,cost,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/상속등기비용|/법인설립등기비용|/부산국제금융센터법인등기|/부산재개발등기|/부산재건축등기,KEEP,,
+부산 아파트 등기비용,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산재개발등기|/부산재건축등기|/부산신축아파트소유권이전등기|/부산증여등기|/해운대구부동산등기,KEEP,,
+부산 증여 법무사,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산부동산등기|/부산소유권이전등기|/소유권이전등기서류|/부산등기법무사|/부산부동산등기법무사,KEEP,,
+부산 증여등기 법무사,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산증여등기전문법무사|/부산부모자녀아파트증여등기|/부산부부간증여등기|/부산부담부증여등기|/부산공동명의지분증여등기,KEEP,,
+부산 증여등기,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산증여등기전문법무사|/부산부모자녀아파트증여등기|/부산부부간증여등기|/부산부담부증여등기|/부산공동명의지분증여등기,KEEP,,
+부산 아파트 증여,parent-child-gift,부산,BUSAN,parent-child-gift,REAL_ESTATE,/부산부모자녀아파트증여등기,88,COVERED_STRONG,/부산부모자녀아파트증여등기|/부산부동산등기|/부산소유권이전등기|/부산등기법무사|/부산부동산등기법무사|/부산신축건물보존등기,KEEP,,THIN_BODY
+부산 부모 자녀 증여,parent-child-gift,부산,BUSAN,parent-child-gift,REAL_ESTATE,/부산부모자녀아파트증여등기,88,COVERED_STRONG,/부산부모자녀아파트증여등기|/부산증여등기전문법무사|/부산증여등기|/부모자녀다른지역증여등기|/부산소유권이전등기|/부산등기법무사,KEEP,,THIN_BODY
+부산 부부간 증여,spouse-gift,부산,BUSAN,spouse-gift,REAL_ESTATE,/부산부부간증여등기,88,COVERED_STRONG,/부산부부간증여등기|/부산증여등기전문법무사|/부산증여등기|/이혼재산분할등기서류준비|/업무사례/양산증여등기법무사|/부산부동산등기,KEEP,,THIN_BODY
+부산 지분 증여,share-gift,부산,BUSAN,share-gift,REAL_ESTATE,/부산공동명의지분증여등기,88,COVERED_STRONG,/부산공동명의지분증여등기|/부산부동산등기|/부산스타트업법무사|/부산증여등기전문법무사|/부산부부간증여등기|/부산공동명의등기,KEEP,,THIN_BODY
+부산 부담부증여,onerous-gift,부산,BUSAN,onerous-gift,REAL_ESTATE,/부산부담부증여등기,88,COVERED_STRONG,/부산부담부증여등기|/부산증여등기전문법무사|/방문없이준비하는부담부증여|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,THIN_BODY
+부산 토지 증여,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산부동산등기|/부산신축건물보존등기|/부동산등기자가진단|/services/inheritance-registration|/부산지방법원등기국상속등기,KEEP,,
+부산 근저당 설정,mortgage-set,부산,BUSAN,mortgage-set,REAL_ESTATE,/부산잔금대출근저당,94,COVERED_STRONG,/부산잔금대출근저당|/부산근저당설정등기|/부산부동산등기|/부산등기법무사|/부산전세권설정등기|/부산부동산등기전문법무사,KEEP,,
+부산 근저당 설정 법무사,mortgage-set,부산,BUSAN,mortgage-set,REAL_ESTATE,/부산잔금대출근저당,94,COVERED_STRONG,/부산잔금대출근저당|/부산부동산등기|/부산등기법무사|/부산근저당설정등기|/부산전세권설정등기|/부산부동산등기전문법무사,KEEP,,
+부산 근저당 말소,mortgage-cancel,부산,BUSAN,mortgage-cancel,REAL_ESTATE,/방문없이준비하는근저당말소,88,COVERED_STRONG,/방문없이준비하는근저당말소|/부산근저당말소등기|/부산부동산등기|/부산소유권이전등기|/부산등기법무사|/부산부동산등기법무사,KEEP,,THIN_BODY
+부산 근저당 말소 법무사,mortgage-cancel,부산,BUSAN,mortgage-cancel,REAL_ESTATE,/방문없이준비하는근저당말소,88,COVERED_STRONG,/방문없이준비하는근저당말소|/부산부동산등기|/부산소유권이전등기|/부산등기법무사|/부산부동산등기법무사|/부산근저당설정등기,KEEP,,THIN_BODY
+부산 전세권 설정,leasehold-set,부산,BUSAN,leasehold-set,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산전세권설정등기|/부산전세전문법무사|/부산확정일자전세권비교|/수영구법무사|/부산부동산등기전문,KEEP,,
+부산 전세권 설정 법무사,leasehold-set,부산,BUSAN,leasehold-set,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산전세권설정등기|/부산전세전문법무사|/부산확정일자전세권비교|/수영구법무사|/부산부동산등기전문,KEEP,,
+부산 가등기,provisional,부산,BUSAN,provisional-registration,REAL_ESTATE,/부산가등기,94,COVERED_STRONG,/부산가등기|/부산임원변경등기|/부산지방법원등기국|/부산재건축등기|/부산오피스텔소유권이전등기|/부산상가등기,KEEP,,
+부산 가등기 법무사,provisional,부산,BUSAN,provisional-registration,REAL_ESTATE,/부산가등기,94,COVERED_STRONG,/부산가등기|/부산임원변경등기|/부산지방법원등기국|/부산재건축등기|/부산오피스텔소유권이전등기|/부산상가등기,KEEP,,
+부산 신축건물 등기,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/부산등기법무사|/부산입주등기|/토지소유자와건축주다른보존등기|/건축주법인신축보존등기|/보존등기후근저당설정,KEEP,,
+부산 소유권보존등기,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/토지소유자와건축주다른보존등기|/건축주법인신축보존등기|/지식산업센터보존등기|/증축후건물표시변경등기|/미등기건물소유권보존등기,KEEP,,
+부산 보존등기 법무사,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/부산등기법무사|/부산부동산등기법무사|/부산집단등기|/부산입주등기|/부산기업부동산등기,KEEP,,
+부산 건물멸실등기,building-loss,부산,BUSAN,loss-registration,REAL_ESTATE,/부산건물멸실등기,88,COVERED_STRONG,/부산건물멸실등기|/철거후건물멸실등기|/건축물대장말소와멸실등기차이|/화재소실건물멸실등기|/상속건물멸실등기|/공유자연락두절멸실등기,KEEP,,THIN_BODY
+부산 멸실등기 법무사,building-loss,부산,BUSAN,loss-registration,REAL_ESTATE,/부산건물멸실등기,88,COVERED_STRONG,/부산건물멸실등기|/부산건물등기|/강서구공장멸실등기|/연락두절상속인|/철거후건물멸실등기|/건축물대장말소와멸실등기차이,KEEP,,THIN_BODY
+부산 건축물 멸실등기,building-loss,부산,BUSAN,loss-registration,REAL_ESTATE,/부산건물멸실등기,88,COVERED_STRONG,/부산건물멸실등기|/부산건물등기|/강서구공장멸실등기|/철거후건물멸실등기|/건축물대장말소와멸실등기차이|/건축물대장말소등기부잔존,KEEP,,THIN_BODY
+부산 건물표시변경등기,building-change,부산,BUSAN,indication-change,REAL_ESTATE,/부산건물표시변경등기,88,COVERED_STRONG,/부산건물표시변경등기|/증축후건물표시변경등기|/건물용도변경등기|/도로명주소등기부상이|/건물일부철거표시변경|/부산상속등기,KEEP,,THIN_BODY
+부산 등기권리증 분실,deed-lost,부산,BUSAN,lost-deed,REAL_ESTATE,/부산등기권리증분실,90,COVERED_STRONG,/부산등기권리증분실|/등기권리증없이소유권이전|/오래된상속토지정리|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,
+부산 법인 명의 부동산등기,corp-property,부산,BUSAN,corp-property,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산등기전문법무사|/부산집단등기|/부산부부간증여등기|/부산공동명의지분증여등기|/부산명의변경등기,KEEP,,
+부산 농지 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산상속등기|/부산토지상속등기|/부산농업회사법인설립|/기장군상속포기|/기장군한정승인,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 토지 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산상속등기|/부산부동산등기|/부산재개발등기|/부산재건축등기|/부산신축아파트소유권이전등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 상가 등기,provisional,부산,BUSAN,provisional-registration,REAL_ESTATE,/부산가등기,94,COVERED_STRONG,/부산가등기|/부산상가등기|/부산상속등기|/부산부동산등기|/부산진구법무사|/동구법무사,KEEP,,
+부산 공장 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산신축건물보존등기|/부산기업부동산등기|/부산건물등기|/부산건축물등기법무사|/부산건물멸실등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 창고 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산신축건물보존등기|/부산기업부동산등기|/부산건물등기|/부산공장창고등기|/건축주법인신축보존등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 공유물 분할등기,partition,부산,BUSAN,partition,REAL_ESTATE,/공유물분할등기서류준비,77,COVERED_NEEDS_IMPROVEMENT,/공유물분할등기서류준비|/이혼재산분할등기서류준비|/부산이혼재산분할등기|/건물분할등기|/situations/공동명의-정리|/faq/real-estate-divorce-registration,IMPROVE,,TITLE_INTENT_WEAK|THIN_BODY
+부산 법인 법무사,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인설립등기|/부산임원변경등기|/부산법인등기|/부산법무사|/부산진구법무사,KEEP,,
+부산 법인등기 법무사,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인등기|/부산임원변경등기|/부산진구법무사|/임원변경등기과태료|/소유권이전등기서류,KEEP,,
+부산 법인등기,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인등기|/부산법인등기비용|/부산법인정기점검|/법인등기자가진단|/부산임원변경등기,KEEP,,
+부산 법인전문 법무사,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인전문법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,,
+부산 회사등기,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인등기|/특수등기|/업무사례/양산법무사업무|/부산상속등기|/부산상속포기,KEEP,,
+부산 기업등기,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인등기|/부산기업법률자문|/공기업등기|/지방공기업등기|/faq/public-agency-registration-faq,KEEP,,
+부산 상업등기,corporate-hub,부산,BUSAN,corporate-hub,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산법인등기|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류|/상속등기기간,KEEP,,
+부산 법인설립 법무사,incorporation,부산,BUSAN,incorporation,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/부산법인등기|/부산법무사|/법인설립등기비용|/부산국제금융센터법인등기|/부산등기법무사,KEEP,,
+부산 법인설립,incorporation,부산,BUSAN,incorporation,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/부산법인설립전문법무사|/법인등기|/법인설립자가진단|/blog/busan-company-establishment-documents|/부산법인등기,KEEP,,
+부산 주식회사 설립,stock-company,부산,BUSAN,stock-company,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/법인정관업무|/부산1인법인설립|/부산유한회사설립등기|/부산특수법인등기|/부산협회단체법인설립,KEEP,,
+부산 1인 법인설립,one-person-company,부산,BUSAN,one-person-company,CORPORATE,/부산1인법인설립,84,COVERED_NEEDS_IMPROVEMENT,/부산1인법인설립|/부산법인설립등기|/부산유한회사설립등기|/창업법무|/blog/one-person-company-establishment-checklist|/services/company-establishment,IMPROVE,,THIN_BODY
+부산 법인설립 비용,incorporation,부산,BUSAN,incorporation,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/부산법무사|/법인설립등기비용|/부산국제금융센터법인등기|/부산등기법무사|/부산법인법무사,KEEP,,
+부산 임원변경등기,officer-change,부산,BUSAN,officer-change,CORPORATE,/부산임원변경등기,100,COVERED_STRONG,/부산임원변경등기|/임원변경등기자가진단|/임원변경등기과태료|/부산임원변경전문법무사|/부산기업법률자문|/부산대표이사변경등기,KEEP,,
+부산 임원변경 법무사,officer-change,부산,BUSAN,officer-change,CORPORATE,/부산임원변경등기,100,COVERED_STRONG,/부산임원변경등기|/부산법인등기|/부산법무사|/임원변경등기과태료|/부산국제금융센터법인등기|/부산등기법무사,KEEP,,
+부산 대표이사 변경,ceo-change,부산,BUSAN,ceo-change,CORPORATE,/부산대표이사변경등기,88,COVERED_STRONG,/부산대표이사변경등기|/부산임원변경등기|/부산법인등기|/부산법인법무사|/부산임원변경전문법무사|/부산법인설립전문법무사,KEEP,,THIN_BODY
+부산 대표이사 변경등기,ceo-change,부산,BUSAN,ceo-change,CORPORATE,/부산대표이사변경등기,88,COVERED_STRONG,/부산대표이사변경등기|/부산임원변경등기|/부산법인등기|/부산임원변경전문법무사|/부산법인설립전문법무사|/부산기업법률자문,KEEP,,THIN_BODY
+부산 임원중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 임원 임기만료,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/부산기업법무사|/부산임원변경전문법무사|/부산기업법률자문|/부산임원사임해임등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 본점이전등기,hq-move,부산,BUSAN,head-office-move,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/부산국제금융센터법인등기|/창업법률교육|/부산지점설치등기|/센텀법인등기|/문현금융단지법인등기,KEEP,,THIN_BODY
+부산 본점이전 법무사,hq-move,부산,BUSAN,head-office-move,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/부산법인등기|/부산국제금융센터법인등기|/부산법인법무사|/부산기업법무사|/부산스타트업법무사,KEEP,,THIN_BODY
+부산 법인 주소변경,hq-move,부산,BUSAN,head-office-move,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/부산임원변경등기|/부산법인등기|/부산대표이사변경등기|/도로명주소등기부상이|/본점이전후사업자등록순서,KEEP,,THIN_BODY
+부산 사업목적 변경등기,purpose-change,부산,BUSAN,purpose-change,CORPORATE,/부산사업목적변경등기,88,COVERED_STRONG,/부산사업목적변경등기|/부산법인등기|/부산스타트업법무사|/부산법인정기점검|/법인변경등기|/사단법인목적변경등기,KEEP,,THIN_BODY
+부산 상호변경등기,name-change,부산,BUSAN,trade-name-change,CORPORATE,/부산상호변경등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상호변경등기|/blog/corporate-name-change-registration|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,IMPROVE,,THIN_BODY
+부산 유상증자 법무사,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,88,COVERED_STRONG,/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산주주배정유상증자|/부산가수금출자전환,KEEP,,THIN_BODY
+부산 유상증자 등기,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,88,COVERED_STRONG,/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산주주배정유상증자|/부산가수금출자전환,KEEP,,THIN_BODY
+부산 증자등기,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,81,COVERED_NEEDS_IMPROVEMENT,/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산가수금출자전환|/부산현물출자증자,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 자본금 증자,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,88,COVERED_STRONG,/부산유상증자등기|/부산법인등기비용|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산주주배정유상증자,KEEP,,THIN_BODY
+부산 감자등기,capital-reduction,부산,BUSAN,capital-reduction,CORPORATE,/부산감자등기,84,COVERED_NEEDS_IMPROVEMENT,/부산감자등기|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,IMPROVE,,THIN_BODY
+부산 지점설치등기,branch-open,부산,BUSAN,branch-open,CORPORATE,/부산지점설치등기,88,COVERED_STRONG,/부산지점설치등기|/부산지점폐지등기|/녹산산단법인본점지점|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,THIN_BODY
+부산 법인 해산,dissolution,부산,BUSAN,dissolution,CORPORATE,/부산법인해산청산등기,88,COVERED_STRONG,/부산법인해산청산등기|/부산법인해산전확인사항|/부산법인등기|/부산법인법무사|/부산법인등기비용|/부산휴면법인계속등기,KEEP,,THIN_BODY
+부산 법인 청산,dissolution,부산,BUSAN,dissolution,CORPORATE,/부산법인해산청산등기,88,COVERED_STRONG,/부산법인해산청산등기|/부산법인등기|/부산법인법무사|/부산상속재산관리인|/부산휴면법인계속등기|/부산법인해산전확인사항,KEEP,,THIN_BODY
+부산 법인 해산청산,dissolution,부산,BUSAN,dissolution,CORPORATE,/부산법인해산청산등기,88,COVERED_STRONG,/부산법인해산청산등기|/부산법인등기|/부산휴면법인계속등기|/부산법인해산전확인사항|/사회복지법인해산청산등기|/비영리법인해산청산등기,KEEP,,THIN_BODY
+부산 협동조합 등기,special-entity,부산,BUSAN,special-entity,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산특수법인등기|/부산조합협동조합등기|/부산협동조합설립등기|/부산농업회사법인설립|/부산협회단체법인설립,KEEP,,
+부산 사단법인 등기,special-entity,부산,BUSAN,special-entity,CORPORATE,/부산법인법무사,100,COVERED_STRONG,/부산법인법무사|/부산비영리법인설립등기|/부산사단법인설립|/부산협회단체법인설립|/부산진구비영리법인설립|/부산문화예술단체법인설립,KEEP,,
+외국인 법인설립 부산,foreign-corp,부산,BUSAN,foreign-investment,CORPORATE,/해외대표이사주주법인등기,70,COVERED_NEEDS_IMPROVEMENT,/해외대표이사주주법인등기|/부산외국인부동산등기|/부산외국인상속등기|/부산법인설립등기|/부산임원변경등기|/부산법인등기,IMPROVE,,TITLE_INTENT_WEAK|H1_INTENT_WEAK|THIN_BODY
+부산 개인회생,rehab-hub,부산,BUSAN,rehab-hub,REHABILITATION,/부산개인회생,100,COVERED_STRONG,/부산개인회생|/부산개인회생법무사추천|/부산개인회생전문법무사|/부산개인회생법무사|/부산개인회생상담|/부산개인회생신청,KEEP,,
+부산 개인회생 법무사,rehab-hub,부산,BUSAN,rehab-hub,REHABILITATION,/부산개인회생,100,COVERED_STRONG,/부산개인회생|/부산개인회생법무사추천|/부산개인회생법무사|/부산파산|/부산법무사|/임원변경등기과태료,KEEP,,
+부산 개인회생 상담,rehab-hub,부산,BUSAN,rehab-hub,REHABILITATION,/부산개인회생,100,COVERED_STRONG,/부산개인회생|/부산개인회생상담|/services/cases/busan-personal-rehabilitation-consultation|/부산파산|/부산법무사|/임원변경등기과태료,KEEP,,
+부산 개인회생 비용,rehab-cost,부산,BUSAN,cost,REHABILITATION,/개인회생비용,94,COVERED_STRONG,/개인회생비용|/부산파산|/부산법무사|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류,KEEP,,
+부산 회생 법무사,rehab-bankruptcy-hub,부산,BUSAN,insolvency-hub,REHABILITATION,/개인회생파산,94,COVERED_STRONG,/개인회생파산|/부산회생법무사|/부산파산|/부산법무사|/임원변경등기과태료|/소유권이전등기서류,KEEP,,
+부산 회생파산 법무사,rehab-bankruptcy-hub,부산,BUSAN,insolvency-hub,REHABILITATION,/개인회생파산,94,COVERED_STRONG,/개인회생파산|/situations/회생-파산-선택-고민|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,,
+부산 개인파산,bankruptcy,부산,BUSAN,bankruptcy,REHABILITATION,/부산개인파산,94,COVERED_STRONG,/부산개인파산|/부산개인파산법무사추천|/부산개인파산전문법무사|/부산개인파산법무사|/부산개인파산상담|/개인파산자가진단,KEEP,,
+부산 개인파산 법무사,bankruptcy,부산,BUSAN,bankruptcy,REHABILITATION,/부산개인파산,94,COVERED_STRONG,/부산개인파산|/부산개인파산법무사추천|/부산개인파산법무사|/부산파산|/부산회생법원법무사|/부산개인파산전문법무사,KEEP,,
+부산 개인파산 비용,bankruptcy-cost,부산,BUSAN,cost,REHABILITATION,/개인파산비용,86,COVERED_STRONG,/개인파산비용|/부산파산|/부산회생법원법무사|/부산개인파산|/부산개인파산법무사추천|/부산개인파산전문법무사,KEEP,,ORPHAN_RISK
+부산 파산면책,bankruptcy,부산,BUSAN,bankruptcy,REHABILITATION,/부산개인파산,94,COVERED_STRONG,/부산개인파산|/개인파산자가진단|/faq/bankruptcy-discharge-faq|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,
+부산 파산 법무사,bankruptcy,부산,BUSAN,bankruptcy,REHABILITATION,/부산개인파산,94,COVERED_STRONG,/부산개인파산|/부산파산법무사|/부산파산|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류,KEEP,,
+부산회생법원 개인회생,rehab-court,부산,BUSAN,court,REHABILITATION,/부산개인회생,100,COVERED_STRONG,/부산개인회생|/부산회생법원개인회생|/부산회생법원법무사|/부산파산|/수영구개인회생|/북구개인회생,KEEP,,
+자영업자 개인회생 부산,rehab-income-type,부산,BUSAN,income-type,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/덕천동법무사|/개인회생자가진단|/부산개인회생|/부산파산|/수영구개인회생,KEEP,,
+직장인 개인회생 부산,rehab-income-type,부산,BUSAN,income-type,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/덕천동법무사|/blog/salaried-worker-rehabilitation-eligibility|/부산개인회생|/부산파산|/수영구개인회생,KEEP,,
+부산 임차권등기명령,lease-reg-order,부산,BUSAN,lease-registration-order,LEASE,/부산임차권등기명령,94,COVERED_STRONG,/부산임차권등기명령|/임차권등기명령자가진단|/부산전세권설정등기|/부산전세전문법무사|/부산전세보증금반환법무사|/부산확정일자전세권비교,KEEP,,
+부산 임차권등기 법무사,lease-reg-order,부산,BUSAN,lease-registration-order,LEASE,/부산임차권등기명령,94,COVERED_STRONG,/부산임차권등기명령|/부산전세권설정등기|/부산전세전문법무사|/부산전세보증금반환법무사|/부산확정일자전세권비교|/전세사기피해대응절차,KEEP,,
+부산 전세보증금 반환,deposit-return,부산,BUSAN,deposit-return,LEASE,/부산전세보증금반환법무사,94,COVERED_STRONG,/부산전세보증금반환법무사|/임대차전세|/부산부담부증여등기|/전세사기피해대응절차|/임대인사망전세계약|/방문없이준비하는부담부증여,KEEP,,
+부산 전세금 반환 법무사,deposit-return,부산,BUSAN,deposit-return,LEASE,/부산전세보증금반환법무사,94,COVERED_STRONG,/부산전세보증금반환법무사|/부산전세권설정등기|/광안리법무사|/부산전세권말소등기|/부산부담부증여등기|/부산확정일자전세권비교,KEEP,,
+부산 전세사기 법무사,jeonse-fraud,부산,BUSAN,jeonse-fraud,LEASE,/전세사기피해대응절차,94,COVERED_STRONG,/전세사기피해대응절차|/부산전세권설정등기|/법률강의|/전세사기예방교육|/청년생활법률특강|/강의문의,KEEP,,
+부산 전세사기 상담,jeonse-fraud,부산,BUSAN,jeonse-fraud,LEASE,/전세사기피해대응절차,94,COVERED_STRONG,/전세사기피해대응절차|/부산전세권설정등기|/법률강의|/전세사기예방교육|/청년생활법률특강|/강의문의,KEEP,,
+부산 지급명령 법무사,payment-order,부산,BUSAN,payment-order,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/부산기업법무사|/부산전세보증금반환법무사|/부산재산명시|/부산역법무사|/서면법무사,KEEP,,
+부산 지급명령,payment-order,부산,BUSAN,payment-order,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/지급명령자가진단|/부산기업법무사|/부산전세보증금반환법무사|/부산재산명시|/부산역법무사,KEEP,,
+부산 미수금 법무사,receivables,부산,BUSAN,receivables,CIVIL,/부산기업채권관리,88,COVERED_STRONG,/부산기업채권관리|/부산기업법무사|/창업법률교육|/기업법률교육|/부산기업법률자문|/방문없이준비하는지급명령서류,KEEP,,THIN_BODY
+부산 미수금 회수,receivables,부산,BUSAN,receivables,CIVIL,/부산기업채권관리,88,COVERED_STRONG,/부산기업채권관리|/부산기업법무사|/공탁채권회수|/부산지방법원지급명령|/부산지방법원동부지원지급명령|/situations/공사대금-못-받음,KEEP,,THIN_BODY
+부산 내용증명 법무사,content-certified,부산,BUSAN,content-certified-mail,CIVIL,/내용증명작성준비,88,COVERED_STRONG,/내용증명작성준비|/부산기업법무사|/부산전세보증금반환법무사|/부산기업법률자문|/부산기업채권관리|/전세보증금상담,KEEP,,THIN_BODY
+부산 내용증명,content-certified,부산,BUSAN,content-certified-mail,CIVIL,/내용증명작성준비,88,COVERED_STRONG,/내용증명작성준비|/내용증명자가진단|/부산기업법무사|/부산전세보증금반환법무사|/부산기업법률자문|/부산기업채권관리,KEEP,,THIN_BODY
+부산 가압류,provisional-seizure,부산,BUSAN,provisional-attachment,CIVIL,/가압류신청서류준비,88,COVERED_STRONG,/가압류신청서류준비|/부산가압류말소등기|/부산상속등기|/부산부동산등기|/부산매수인법무사|/부산압류말소등기,KEEP,,THIN_BODY
+부산 채권추심 법무사,collection,부산,BUSAN,collection,CIVIL,/채권압류추심서류준비,70,COVERED_NEEDS_IMPROVEMENT,/채권압류추심서류준비|/부산기업채권관리|/blog/debt-collection-response-guide|/부산상속등기|/부산상속포기|/부산한정승인,IMPROVE,,TITLE_INTENT_WEAK|H1_INTENT_WEAK|THIN_BODY
+부산 공탁 법무사,deposit-court,부산,BUSAN,consignation,CIVIL,/변제공탁서류준비,88,COVERED_STRONG,/변제공탁서류준비|/부산역법무사|/공탁자가진단|/공탁채권회수|/부산상속등기|/부산상속포기,KEEP,,THIN_BODY
+부산 보증금 못받을때,deposit-return,부산,BUSAN,deposit-return,LEASE,/부산전세보증금반환법무사,94,COVERED_STRONG,/부산전세보증금반환법무사|/부산전세권설정등기|/부산전세권말소등기|/부산부담부증여등기|/부산임차권등기명령|/부산빌라매매등기,KEEP,,
+해운대 법무사,해운대-lawyer,해운대,DISTRICT,district-lawyer,LOCAL,/해운대법무사,100,COVERED_STRONG,/해운대법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,,
+해운대 상속 법무사,해운대-inheritance,해운대,DISTRICT,local-inheritance,INHERITANCE,/해운대구상속등기,94,COVERED_STRONG,/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기|/해운대구법인설립등기,KEEP,/해운대법무사,
+해운대 부동산 법무사,해운대-real-estate,해운대,DISTRICT,local-real-estate,REAL_ESTATE,/해운대구부동산등기,94,COVERED_STRONG,/해운대구부동산등기|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구법인설립등기,KEEP,/해운대법무사,
+수영구 법무사,수영구-lawyer,수영구,DISTRICT,district-lawyer,LOCAL,/수영구법무사,94,COVERED_STRONG,/수영구법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구개인회생|/수영구상속포기,KEEP,,
+연제구 법무사,연제구-lawyer,연제구,DISTRICT,district-lawyer,LOCAL,/연제구법무사,100,COVERED_STRONG,/연제구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/연제구부동산등기,KEEP,,
+해운대구 법무사,해운대구-lawyer,해운대구,DISTRICT,district-lawyer,LOCAL,/해운대법무사,100,COVERED_STRONG,/해운대법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,,
+센텀시티 법무사,센텀시티-lawyer,센텀시티,LIVING_AREA,local-lawyer,LOCAL,/센텀법무사,100,COVERED_STRONG,/센텀법무사|/센텀법인설립등기|/센텀임원변경등기|/센텀부동산등기|/해운대구상속등기|/해운대구상속포기,KEEP,/해운대법무사,
+센텀 법무사,센텀-lawyer,센텀,LIVING_AREA,local-lawyer,LOCAL,/센텀법무사,100,COVERED_STRONG,/센텀법무사|/센텀법인등기|/office|/blog/centum-lawyer-visit-day-flow|/해운대구상속등기|/해운대구한정승인,KEEP,/해운대법무사,
+재송동 법무사,재송동-lawyer,재송동,NEIGHBORHOOD,local-lawyer,LOCAL,/재송동법무사,94,COVERED_STRONG,/재송동법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,/해운대법무사,
+반여동 법무사,반여동-lawyer,반여동,NEIGHBORHOOD,local-lawyer,LOCAL,/반여동법무사,91,COVERED_STRONG,/반여동법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,/해운대법무사,
+우동 법무사,우동-lawyer,우동,NEIGHBORHOOD,local-lawyer,LOCAL,/우동법무사,97,COVERED_STRONG,/우동법무사|/해운대법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기,KEEP,/해운대법무사,
+좌동 법무사,좌동-lawyer,좌동,NEIGHBORHOOD,local-lawyer,LOCAL,/좌동법무사,97,COVERED_STRONG,/좌동법무사|/해운대구상속포기|/해운대구상속등기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,/해운대법무사,
+중동 법무사,중동-lawyer,중동,NEIGHBORHOOD,local-lawyer,LOCAL,/중동법무사,94,COVERED_STRONG,/중동법무사|/해운대법무사|/센텀법무사|/업무사례/부산중동법무사|/중동부동산등기|/해운대역부동산등기,KEEP,/해운대법무사,
+송정동 법무사,송정동-lawyer,송정동,NEIGHBORHOOD,local-lawyer,LOCAL,/해운대법무사,100,COVERED_STRONG,/해운대법무사|/송정동법무사|/업무사례/부산송정동법무사|/업무사례/울산송정동상속등기|/송정동상속등기|/부산상속등기,KEEP,/해운대법무사,
+장산 법무사,장산-lawyer,장산,LIVING_AREA,local-lawyer,LOCAL,/좌동법무사,100,COVERED_STRONG,/좌동법무사|/업무사례/부산장산역법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,/해운대법무사,
+마린시티 법무사,마린시티-lawyer,마린시티,LIVING_AREA,local-lawyer,LOCAL,/해운대법무사,100,COVERED_STRONG,/해운대법무사|/해운대구부동산등기|/우동법무사|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인,KEEP,/해운대법무사,
+수영구 등기 법무사,수영구-lawyer,수영구,DISTRICT,district-lawyer,LOCAL,/수영구법무사,94,COVERED_STRONG,/수영구법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구개인회생|/수영구상속포기,KEEP,,
+광안동 법무사,광안동-lawyer,광안동,NEIGHBORHOOD,local-lawyer,LOCAL,/광안동법무사,87,COVERED_STRONG,/광안동법무사|/수영구상속등기|/수영구부동산등기|/수영구상속포기|/광안리법무사|/수영구법인등기,KEEP,/수영구법무사,
+광안리 법무사,광안리-lawyer,광안리,LIVING_AREA,local-lawyer,LOCAL,/광안리법무사,94,COVERED_STRONG,/광안리법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구상속포기|/수영구법무사,KEEP,/수영구법무사,
+민락동 법무사,민락동-lawyer,민락동,NEIGHBORHOOD,local-lawyer,LOCAL,/민락동법무사,91,COVERED_STRONG,/민락동법무사|/수영구법인등기|/수영구상속등기|/수영구부동산등기|/수영구상속포기|/수영구법무사,KEEP,/수영구법무사,
+망미동 법무사,망미동-lawyer,망미동,NEIGHBORHOOD,local-lawyer,LOCAL,/망미동법무사,100,COVERED_STRONG,/망미동법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구상속포기|/업무사례/부산망미동법무사,KEEP,/수영구법무사,
+남천동 법무사,남천동-lawyer,남천동,NEIGHBORHOOD,local-lawyer,LOCAL,/남천동법무사,90,COVERED_STRONG,/남천동법무사|/수영구법무사|/업무사례/부산남천동법무사|/남천동상속등기|/부산상속등기|/부산상속포기,KEEP,/수영구법무사,
+연제구 등기 법무사,연제구-lawyer,연제구,DISTRICT,district-lawyer,LOCAL,/연제구법무사,100,COVERED_STRONG,/연제구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/연제구부동산등기,KEEP,,
+연산동 법무사,연산동-lawyer,연산동,NEIGHBORHOOD,local-lawyer,LOCAL,/연산동법무사,91,COVERED_STRONG,/연산동법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구부동산등기|/연제구한정승인,KEEP,/연제구법무사,
+거제동 법무사,거제-inheritance,거제,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/거제동법무사|/연제구임원변경등기|/연제구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기,KEEP,,
+시청 법무사 부산,yeonje-lawyer,연제구,DISTRICT,district-lawyer,LOCAL,/연제구법무사,100,COVERED_STRONG,/연제구법무사|/업무사례/부산시청법무사|/media/weeklypeople-youth-judicial-scrivener-ahn|/업무사례/연제구법무사|/업무사례/부산거제동법무사|/업무사례/부산연산동법무사,KEEP,,
+동래구 등기 법무사,동래구-lawyer,동래구,DISTRICT,district-lawyer,LOCAL,/동래구법무사,94,COVERED_STRONG,/동래구법무사|/동래구상속등기|/동래구법인등기|/동래구한정승인|/동래구임원변경등기|/동래구부동산등기,KEEP,,
+명륜동 법무사,명륜동-lawyer,명륜동,NEIGHBORHOOD,local-lawyer,LOCAL,/동래구법무사,94,COVERED_STRONG,/동래구법무사|/동래구법인등기|/동래구상속등기|/동래구한정승인|/동래구임원변경등기|/동래구부동산등기,KEEP,/동래구법무사,
+온천동 법무사,온천동-lawyer,온천동,NEIGHBORHOOD,local-lawyer,LOCAL,/온천동법무사,90,COVERED_STRONG,/온천동법무사|/동래구상속등기|/동래구임원변경등기|/동래구부동산등기|/동래구법인등기|/동래구한정승인,KEEP,/동래구법무사,
+사직동 법무사,사직동-lawyer,사직동,NEIGHBORHOOD,local-lawyer,LOCAL,/사직동법무사,97,COVERED_STRONG,/사직동법무사|/동래구한정승인|/동래구상속등기|/동래구법인등기|/동래구임원변경등기|/동래구부동산등기,KEEP,/동래구법무사,
+낙민동 법무사,낙민동-lawyer,낙민동,NEIGHBORHOOD,local-lawyer,LOCAL,/동래구법무사,94,COVERED_STRONG,/동래구법무사|/동래역법무사|/업무사례/부산낙민동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/동래구법무사,
+부산진구 등기 법무사,부산진구-lawyer,부산진구,DISTRICT,district-lawyer,LOCAL,/부산진구법무사,94,COVERED_STRONG,/부산진구법무사|/서면법무사|/부산진구비영리법인설립|/연제구상속등기|/연제구상속포기|/연제구법인등기,KEEP,,
+서면 법무사,서면-lawyer,서면,LIVING_AREA,local-lawyer,LOCAL,/서면법무사,94,COVERED_STRONG,/서면법무사|/부산진구법무사|/부산등기권리증분실|/등기권리증없이소유권이전|/부산진구비영리법인설립|/부산진등기소법무사,KEEP,/부산진구법무사,
+부전동 법무사,부전동-lawyer,부전동,NEIGHBORHOOD,local-lawyer,LOCAL,/부전동법무사,87,COVERED_STRONG,/부전동법무사|/서면법무사|/부산진등기소법무사|/업무사례/부산부전동법무사|/부전동소유권이전등기|/서면부동산등기,KEEP,/부산진구법무사,
+전포동 법무사,전포동-lawyer,전포동,NEIGHBORHOOD,local-lawyer,LOCAL,/전포동법무사,97,COVERED_STRONG,/전포동법무사|/부산진구법무사|/부산오피스텔소유권이전등기|/서면법무사|/업무사례/부산전포동법무사|/전포동부동산등기,KEEP,/부산진구법무사,
+양정동 법무사,양정동-lawyer,양정동,NEIGHBORHOOD,local-lawyer,LOCAL,/부산진구법무사,94,COVERED_STRONG,/부산진구법무사|/양정동법무사|/업무사례/부산양정동법무사|/양정동상속등기|/부산상속등기|/부산상속포기,KEEP,/부산진구법무사,
+초읍동 법무사,초읍동-lawyer,초읍동,NEIGHBORHOOD,local-lawyer,LOCAL,/부산진구법무사,94,COVERED_STRONG,/부산진구법무사|/연지동법무사|/업무사례/부산초읍동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/부산진구법무사,
+남구 법무사,남구-lawyer,남구,DISTRICT,district-lawyer,LOCAL,/남구법무사,94,COVERED_STRONG,/남구법무사|/대연동법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구상속포기,KEEP,,
+대연동 법무사,대연동-lawyer,대연동,NEIGHBORHOOD,local-lawyer,LOCAL,/대연동법무사,94,COVERED_STRONG,/대연동법무사|/남구법무사|/남부산등기소법무사|/업무사례/부산대연동법무사|/대연동상속등기|/부산상속등기,KEEP,/남구법무사,
+용호동 법무사,용호동-lawyer,용호동,NEIGHBORHOOD,local-lawyer,LOCAL,/용호동법무사,97,COVERED_STRONG,/용호동법무사|/남구법무사|/대연동법무사|/업무사례/부산용호동법무사|/부산상속등기|/부산상속포기,KEEP,/남구법무사,
+용당동 법무사,용당동-lawyer,용당동,NEIGHBORHOOD,local-lawyer,LOCAL,/남구법무사,94,COVERED_STRONG,/남구법무사|/우암동법무사|/업무사례/부산용당동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/남구법무사,
+문현동 법무사,문현동-lawyer,문현동,NEIGHBORHOOD,local-lawyer,LOCAL,/문현동법무사,97,COVERED_STRONG,/문현동법무사|/남구법무사|/남부산등기소법무사|/문현금융단지법인등기|/업무사례/부산문현동법무사|/문현동법인등기,KEEP,/남구법무사,
+북구 법무사,북구-lawyer,북구,DISTRICT,district-lawyer,LOCAL,/북구법무사,94,COVERED_STRONG,/북구법무사|/북구상속등기|/북구부동산등기|/북구개인회생|/북구상속포기|/덕천동법무사,KEEP,,
+화명동 법무사,화명동-lawyer,화명동,NEIGHBORHOOD,local-lawyer,LOCAL,/화명동법무사,97,COVERED_STRONG,/화명동법무사|/북구부동산등기|/북구상속등기|/북구상속포기|/북구법무사|/북부산등기소법무사,KEEP,/북구법무사,
+덕천동 법무사,덕천동-lawyer,덕천동,NEIGHBORHOOD,local-lawyer,LOCAL,/덕천동법무사,94,COVERED_STRONG,/덕천동법무사|/북구상속등기|/북구부동산등기|/북구상속포기|/북구법무사|/북부산등기소법무사,KEEP,/북구법무사,
+만덕동 법무사,만덕동-lawyer,만덕동,NEIGHBORHOOD,local-lawyer,LOCAL,/북구법무사,94,COVERED_STRONG,/북구법무사|/구포동법무사|/업무사례/부산만덕동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/북구법무사,
+금정구 법무사,금정구-lawyer,금정구,DISTRICT,district-lawyer,LOCAL,/금정구법무사,94,COVERED_STRONG,/금정구법무사|/금정구상속등기|/금정구한정승인|/금정구부동산등기|/연제구상속등기|/연제구상속포기,KEEP,,
+장전동 법무사,장전동-lawyer,장전동,NEIGHBORHOOD,local-lawyer,LOCAL,/금정구법무사,94,COVERED_STRONG,/금정구법무사|/장전동법무사|/업무사례/부산장전동법무사|/장전동부동산등기|/부산상속등기|/부산상속포기,KEEP,/금정구법무사,
+구서동 법무사,구서동-lawyer,구서동,NEIGHBORHOOD,local-lawyer,LOCAL,/구서동법무사,90,COVERED_STRONG,/구서동법무사|/금정구부동산등기|/금정구법무사|/업무사례/부산구서동법무사|/업무사례/부산서동법무사|/부산상속등기,KEEP,/금정구법무사,
+부곡동 법무사,부곡동-lawyer,부곡동,NEIGHBORHOOD,local-lawyer,LOCAL,/부곡동법무사,100,COVERED_STRONG,/부곡동법무사|/금정구상속등기|/금정구한정승인|/금정구부동산등기|/금정구법무사|/구서동법무사,KEEP,/금정구법무사,
+사상구 법무사,사상구-lawyer,사상구,DISTRICT,district-lawyer,LOCAL,/사상구법무사,94,COVERED_STRONG,/사상구법무사|/사상구상속등기|/사상구부동산등기|/사상구상속포기|/사상구개인회생|/사상구공장창고등기,KEEP,,
+주례동 법무사,주례동-lawyer,주례동,NEIGHBORHOOD,local-lawyer,LOCAL,/주례동법무사,94,COVERED_STRONG,/주례동법무사|/사상구부동산등기|/사상구상속등기|/사상구상속포기|/사상구법무사|/사상법무사,KEEP,/사상법무사,
+엄궁동 법무사,엄궁동-lawyer,엄궁동,NEIGHBORHOOD,local-lawyer,LOCAL,/사상법무사,94,COVERED_STRONG,/사상법무사|/사상구상속등기|/사상구부동산등기|/사상구상속포기|/업무사례/부산엄궁동법무사|/부산상속등기,KEEP,/사상법무사,
+괘법동 법무사,괘법동-lawyer,괘법동,NEIGHBORHOOD,local-lawyer,LOCAL,/사상법무사,94,COVERED_STRONG,/사상법무사|/업무사례/부산괘법동법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,/사상법무사,
+사하구 법무사,사하구-lawyer,사하구,DISTRICT,district-lawyer,LOCAL,/사하구법무사,94,COVERED_STRONG,/사하구법무사|/사하구부동산등기|/하단법무사|/명지국제신도시법인등기|/에코델타시티법인등기|/업무사례/사하구법무사,KEEP,,
+하단동 법무사,하단동-lawyer,하단동,NEIGHBORHOOD,local-lawyer,LOCAL,/하단법무사,94,COVERED_STRONG,/하단법무사|/사하구부동산등기|/업무사례/부산하단동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/사하구법무사,
+당리동 법무사,당리동-lawyer,당리동,NEIGHBORHOOD,local-lawyer,LOCAL,/사하구법무사,94,COVERED_STRONG,/사하구법무사|/사하구부동산등기|/하단법무사|/괴정동법무사|/업무사례/부산당리동법무사|/부산상속등기,KEEP,/사하구법무사,
+다대동 법무사,다대동-lawyer,다대동,NEIGHBORHOOD,local-lawyer,LOCAL,/다대동법무사,91,COVERED_STRONG,/다대동법무사|/사하구부동산등기|/사하구법무사|/업무사례/부산다대동법무사|/부산상속등기|/부산상속포기,KEEP,/사하구법무사,
+괴정동 법무사,괴정동-lawyer,괴정동,NEIGHBORHOOD,local-lawyer,LOCAL,/괴정동법무사,91,COVERED_STRONG,/괴정동법무사|/사하구부동산등기|/사하구법무사|/하단법무사|/업무사례/부산괴정동법무사|/부산상속등기,KEEP,/사하구법무사,
+강서구 법무사,강서구-lawyer,강서구,DISTRICT,district-lawyer,LOCAL,/강서구법무사,94,COVERED_STRONG,/강서구법무사|/명지법무사|/강서구공장멸실등기|/북부산등기소법무사|/명지국제신도시법인등기|/에코델타시티법인등기,KEEP,,
+명지 법무사,명지-lawyer,명지,LIVING_AREA,local-lawyer,LOCAL,/명지법무사,94,COVERED_STRONG,/명지법무사|/강서구법무사|/명지국제신도시법인등기|/법인등기|/창업법무|/업무사례/부산명지동법무사,KEEP,/강서구법무사,
+명지동 법무사,명지동-lawyer,명지동,NEIGHBORHOOD,local-lawyer,LOCAL,/명지법무사,94,COVERED_STRONG,/명지법무사|/명지동법무사|/업무사례/부산명지동법무사|/명지동부동산등기|/명지동법인설립등기|/명지역법무사,KEEP,/강서구법무사,
+녹산 법무사,녹산-lawyer,녹산,LIVING_AREA,local-lawyer,LOCAL,/강서구법무사,94,COVERED_STRONG,/강서구법무사|/녹산산단법인본점지점|/업무사례/부산녹산동법무사|/업무사례/부산녹산국가산업단지법무사|/녹산국가산단법인등기|/녹산국가산단법인설립등기,KEEP,/강서구법무사,
+기장군 법무사,기장군-lawyer,기장군,DISTRICT,district-lawyer,LOCAL,/기장군법무사,94,COVERED_STRONG,/기장군법무사|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기|/기장군부동산등기,KEEP,,
+정관 법무사,정관-lawyer,정관,LIVING_AREA,local-lawyer,LOCAL,/정관법무사,94,COVERED_STRONG,/정관법무사|/부산법인설립등기|/기장군법인등기|/기장군법무사|/정관법인등기|/부산사업목적변경등기,KEEP,/기장군법무사,
+정관읍 법무사,정관읍-lawyer,정관읍,LIVING_AREA,local-lawyer,LOCAL,/정관법무사,94,COVERED_STRONG,/정관법무사|/기장군법인등기|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군부동산등기,KEEP,/기장군법무사,
+일광 법무사,일광-lawyer,일광,LIVING_AREA,local-lawyer,LOCAL,/일광읍법무사,100,COVERED_STRONG,/일광읍법무사|/기장군법무사|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기,KEEP,/기장군법무사,
+일광읍 법무사,일광읍-lawyer,일광읍,LIVING_AREA,local-lawyer,LOCAL,/일광읍법무사,100,COVERED_STRONG,/일광읍법무사|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기|/기장군부동산등기,KEEP,/기장군법무사,
+기장읍 법무사,기장읍-lawyer,기장읍,NEIGHBORHOOD,local-lawyer,LOCAL,/기장읍법무사,94,COVERED_STRONG,/기장읍법무사|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군부동산등기|/기장군법무사,KEEP,/기장군법무사,
+부산 중구 법무사,중구-lawyer,중구,DISTRICT,district-lawyer,LOCAL,/중구법무사,100,COVERED_STRONG,/중구법무사|/부산지방법원등기국|/부산재건축등기|/부산오피스텔소유권이전등기|/부산상가등기|/부산증여등기전문법무사,KEEP,,
+남포동 법무사,남포동-lawyer,남포동,NEIGHBORHOOD,local-lawyer,LOCAL,/남포동법무사,93,COVERED_STRONG,/남포동법무사|/중구법무사|/부산상가등기|/업무사례/부산남포동법무사|/부산상속등기|/부산상속포기,KEEP,/중구법무사,
+부산 서구 법무사,서구-lawyer,서구,DISTRICT,district-lawyer,LOCAL,/서구법무사,94,COVERED_STRONG,/서구법무사|/부산지방법원등기국|/북부산등기소법무사|/부산재건축등기|/부산신축아파트소유권이전등기|/부산오피스텔소유권이전등기,KEEP,,
+서대신동 법무사,서대신동-lawyer,서대신동,NEIGHBORHOOD,local-lawyer,LOCAL,/서구법무사,94,COVERED_STRONG,/서구법무사|/업무사례/부산서대신동법무사|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,/서구법무사,
+동대신동 법무사,동대신동-lawyer,동대신동,NEIGHBORHOOD,local-lawyer,LOCAL,/서구법무사,94,COVERED_STRONG,/서구법무사|/서구부동산등기|/업무사례/부산동대신동법무사|/서구상속등기|/서구소유권이전등기|/서구법인등기,KEEP,/서구법무사,
+부산 동구 법무사,동구-lawyer,동구,DISTRICT,district-lawyer,LOCAL,/동구법무사,94,COVERED_STRONG,/동구법무사|/부산지방법원등기국|/부산재건축등기|/부산오피스텔소유권이전등기|/부산상가등기|/부산역법무사,KEEP,,
+해운대구 상속등기 법무사,해운대구-inheritance,해운대구,DISTRICT,local-inheritance,INHERITANCE,/해운대구상속등기,94,COVERED_STRONG,/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/수영구개인회생|/기장군상속등기|/기장군상속포기,KEEP,/해운대법무사,
+센텀 상속등기 법무사,센텀-inheritance,센텀,LIVING_AREA,local-inheritance,INHERITANCE,/해운대구상속등기,94,COVERED_STRONG,/해운대구상속등기|/해운대구한정승인|/해운대법무사|/부산법무사무소|/부산법무사방문상담|/등기관할과사무소위치,KEEP,/해운대법무사,
+재송동 상속등기 법무사,재송동-inheritance,재송동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/해운대구상속등기,94,COVERED_STRONG,/해운대구상속등기|/재송동법무사|/해운대구상속포기|/해운대구한정승인|/해운대재개발상속등기|/services/cases/jaesong-inheritance-renunciation-consultation,KEEP,/해운대법무사,
+반여동 상속 법무사,반여동-inheritance,반여동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/해운대구상속등기,94,COVERED_STRONG,/해운대구상속등기|/반여동법무사|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구부동산등기,KEEP,/해운대법무사,
+수영구 상속 법무사,수영구-inheritance,수영구,DISTRICT,local-inheritance,INHERITANCE,/수영구상속등기,94,COVERED_STRONG,/수영구상속등기|/수영구부동산등기|/수영구법인등기|/수영구개인회생|/수영구상속포기|/수영구법무사,KEEP,/수영구법무사,
+광안동 상속등기 법무사,광안동-inheritance,광안동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/수영구상속등기,94,COVERED_STRONG,/수영구상속등기|/수영구상속포기|/광안리법무사|/수영구법무사|/업무사례/부산광안동법무사|/광안동부동산등기,KEEP,/수영구법무사,
+남천동 상속 법무사,남천동-inheritance,남천동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/수영구상속등기,94,COVERED_STRONG,/수영구상속등기|/남천동법무사|/수영구법무사|/업무사례/부산남천동법무사|/남천동상속등기|/부산상속등기,KEEP,/수영구법무사,
+연제구 상속 법무사,연제구-inheritance,연제구,DISTRICT,local-inheritance,INHERITANCE,/연제구상속등기,94,COVERED_STRONG,/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/연제구부동산등기|/연제구한정승인,KEEP,/연제구법무사,
+연산동 상속등기 법무사,연산동-inheritance,연산동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/연제구상속등기,94,COVERED_STRONG,/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구부동산등기|/연제구한정승인|/연제구법무사,KEEP,/연제구법무사,
+동래구 상속 법무사,동래구-inheritance,동래구,DISTRICT,local-inheritance,INHERITANCE,/동래구상속등기,94,COVERED_STRONG,/동래구상속등기|/동래구법인등기|/동래구한정승인|/동래구임원변경등기|/동래구부동산등기|/동래구법무사,KEEP,/동래구법무사,
+사직동 상속등기 법무사,사직동-inheritance,사직동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/동래구상속등기,94,COVERED_STRONG,/동래구상속등기|/동래구한정승인|/사직동법무사|/동래구법무사|/업무사례/부산사직동법무사|/사직동상속등기,KEEP,/동래구법무사,
+부산진구 상속 법무사,부산진구-inheritance,부산진구,DISTRICT,local-inheritance,INHERITANCE,/부산진구상속등기,86,COVERED_STRONG,/부산진구상속등기|/부산진구비영리법인설립|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기,KEEP,/부산진구법무사,ORPHAN_RISK
+서면 상속등기 법무사,서면-inheritance,서면,LIVING_AREA,local-inheritance,INHERITANCE,/부산진구상속등기,86,COVERED_STRONG,/부산진구상속등기|/부산등기권리증분실|/등기권리증없이소유권이전|/부산진구비영리법인설립|/개금동법무사|/연지동법무사,KEEP,/부산진구법무사,ORPHAN_RISK
+남구 상속 법무사,남구-inheritance,남구,DISTRICT,local-inheritance,INHERITANCE,/남구상속등기,86,COVERED_STRONG,/남구상속등기|/남구법무사|/대연동법무사|/수영구상속등기|/수영구부동산등기|/수영구법인등기,KEEP,/남구법무사,ORPHAN_RISK
+대연동 상속등기 법무사,대연동-inheritance,대연동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/남구상속등기,86,COVERED_STRONG,/남구상속등기|/대연동법무사|/업무사례/부산대연동법무사|/대연동상속등기|/부산상속등기|/해운대구상속등기,KEEP,/남구법무사,ORPHAN_RISK
+북구 상속 법무사,북구-inheritance,북구,DISTRICT,local-inheritance,INHERITANCE,/북구상속등기,94,COVERED_STRONG,/북구상속등기|/북구부동산등기|/북구개인회생|/북구상속포기|/북구법무사|/덕천동법무사,KEEP,/북구법무사,
+화명동 상속등기 법무사,화명동-inheritance,화명동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/북구상속등기,94,COVERED_STRONG,/북구상속등기|/북구상속포기|/북구법무사|/업무사례/부산화명동법무사|/북구부동산등기|/화명동법무사,KEEP,/북구법무사,
+만덕동 상속 법무사,만덕동-inheritance,만덕동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/북구상속등기,94,COVERED_STRONG,/북구상속등기|/구포동법무사|/업무사례/부산만덕동법무사|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,/북구법무사,
+금정구 상속 법무사,금정구-inheritance,금정구,DISTRICT,local-inheritance,INHERITANCE,/금정구상속등기,90,COVERED_STRONG,/금정구상속등기|/금정구한정승인|/금정구부동산등기|/금정구법무사|/연제구상속등기|/연제구상속포기,KEEP,/금정구법무사,
+장전동 상속등기 법무사,장전동-inheritance,장전동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/금정구상속등기,90,COVERED_STRONG,/금정구상속등기|/금정구법무사|/업무사례/부산장전동법무사|/장전동부동산등기|/장전동법무사|/부산상속등기,KEEP,/금정구법무사,
+사상구 상속 법무사,사상구-inheritance,사상구,DISTRICT,local-inheritance,INHERITANCE,/사상구상속등기,94,COVERED_STRONG,/사상구상속등기|/사상구부동산등기|/사상구상속포기|/사상구개인회생|/사상구법무사|/사상구공장창고등기,KEEP,/사상구법무사,
+사하구 상속 법무사,사하구-inheritance,사하구,DISTRICT,local-inheritance,INHERITANCE,/사하구상속등기,94,COVERED_STRONG,/사하구상속등기|/사하구부동산등기|/사하구법무사|/하단법무사|/업무사례/사하구법무사|/사하구법인등기,KEEP,/사하구법무사,
+하단동 상속등기 법무사,하단동-inheritance,하단동,NEIGHBORHOOD,local-inheritance,INHERITANCE,/사하구상속등기,94,COVERED_STRONG,/사하구상속등기|/사하구부동산등기|/하단법무사|/업무사례/부산하단동법무사|/부산상속등기|/해운대구상속등기,KEEP,/사하구법무사,
+강서구 상속등기 법무사,강서구-inheritance,강서구,DISTRICT,local-inheritance,INHERITANCE,/강서구상속등기,86,COVERED_STRONG,/강서구상속등기|/강서구공장멸실등기|/업무사례/강서구법무사|/업무사례/강서구상속등기법무사|/강서구한정승인|/업무사례/지역별,KEEP,/강서구법무사,ORPHAN_RISK
+명지 상속 법무사,명지-inheritance,명지,LIVING_AREA,local-inheritance,INHERITANCE,/기장군상속등기,94,COVERED_STRONG,/기장군상속등기|/명지법무사|/업무사례/부산명지동법무사|/업무사례/부산명지법무사|/명지법인등기|/명지동부동산등기,KEEP,/강서구법무사,
+기장군 상속 법무사,기장군-inheritance,기장군,DISTRICT,local-inheritance,INHERITANCE,/기장군상속등기,94,COVERED_STRONG,/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기|/기장군부동산등기|/기장군법무사,KEEP,/기장군법무사,
+정관 상속등기 법무사,정관-inheritance,정관,LIVING_AREA,local-inheritance,INHERITANCE,/기장군상속등기,94,COVERED_STRONG,/기장군상속등기|/기장군법무사|/정관법무사|/부산사업목적변경등기|/부산상호변경등기|/법인정관업무,KEEP,/기장군법무사,
+일광 상속등기 법무사,일광-inheritance,일광,LIVING_AREA,local-inheritance,INHERITANCE,/기장군상속등기,94,COVERED_STRONG,/기장군상속등기|/기장군법무사|/일광읍법무사|/기장군상속포기|/기장군한정승인|/정관법무사,KEEP,/기장군법무사,
+부산 사망신고 절차,death-report,부산,BUSAN,death-report,INHERITANCE,/사망신고와상속등기차이,88,COVERED_STRONG,/사망신고와상속등기차이|/부모님사망후해야할일|/situations/상속-후-첫-절차|/부산상속포기|/부산한정승인|/부산소유권이전등기,KEEP,,THIN_BODY
+부산 사망 후 재산조회,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,88,COVERED_STRONG,/사망자재산채무조회|/situations/상속재산-조회|/situations/상속-후-첫-절차|/업무사례/통영상속포기한정승인|/업무사례/진주상속포기한정승인|/업무사례/포항상속포기한정승인,KEEP,,THIN_BODY
+부산 사망자 재산조회,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,88,COVERED_STRONG,/사망자재산채무조회|/부산재산명시|/고인계좌장례비사용|/situations/상속재산-조회|/situations/상속-후-첫-절차|/situations/채무자-재산-모름,KEEP,,THIN_BODY
+부산 사망자 채무조회,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,88,COVERED_STRONG,/사망자재산채무조회|/고인계좌장례비사용|/blog/how-to-check-deceased-parent-debt|/situations/inheritance-unknown-debt|/부산상속등기|/부산상속포기,KEEP,,THIN_BODY
+부산 부모님 빚 상속포기,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/부산한정승인|/부산상속법무사|/부모님사망후해야할일|/사망자재산채무조회|/부모빚상속방법,KEEP,,
+부산 상속포기 3개월,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/부산한정승인|/상속포기비용|/부산상속법무사|/부산상속등기전문|/사망후3개월지난상속,KEEP,,
+부산 한정승인 3개월,qualified-acceptance,부산,BUSAN,qualified-acceptance,INHERITANCE,/부산한정승인,100,COVERED_STRONG,/부산한정승인|/부산상속포기|/부산상속법무사|/부산상속등기전문|/사망후3개월지난상속|/특별한정승인,KEEP,,
+부산 상속등기 준비서류,inheritance-docs,부산,BUSAN,documents,INHERITANCE,/상속등기준비서류,86,COVERED_STRONG,/상속등기준비서류|/한정승인비용|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류|/상속등기기간,KEEP,,ORPHAN_RISK
+부산 상속포기 준비서류,renunciation,부산,BUSAN,renunciation,INHERITANCE,/부산상속포기,100,COVERED_STRONG,/부산상속포기|/부산한정승인|/부산가정법원상속|/부산상속법무사|/방문없이준비하는상속포기한정승인|/특별한정승인,KEEP,,
+부산 한정승인 준비서류,qualified-acceptance,부산,BUSAN,qualified-acceptance,INHERITANCE,/부산한정승인,100,COVERED_STRONG,/부산한정승인|/한정승인비용|/부산가정법원상속|/부산상속법무사|/부산상속법무사추천|/상속상담전준비서류와비용,KEEP,,
+부산 상속등기 필요서류,inheritance-docs,부산,BUSAN,documents,INHERITANCE,/상속등기준비서류,86,COVERED_STRONG,/상속등기준비서류|/상속등기필요서류|/부산법무사서류준비|/부산기업부동산등기|/상속포기상담|/등기서류상담,KEEP,,ORPHAN_RISK
+부산 상속재산 조회,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,81,COVERED_NEEDS_IMPROVEMENT,/사망자재산채무조회|/한정승인상담|/부산진구한정승인|/부산가정법원한정승인|/situations/inheritance-unknown-debt|/situations/상속재산-조회,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 상속채무 확인,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,88,COVERED_STRONG,/사망자재산채무조회|/부산한정승인|/부곡동법무사|/초량동법무사|/한정승인자가진단|/situations/inheritance-unknown-debt,KEEP,,THIN_BODY
+부산 상속인 조회,heir-confirm,부산,BUSAN,heir-confirm,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/blog/how-to-check-deceased-parent-debt|/situations/상속재산-조회|/situations/상속-후-첫-절차|/업무사례/양산상속포기한정승인|/업무사례/통영상속포기한정승인,KEEP,,
+부산 가족관계 상속,heir-confirm,부산,BUSAN,heir-confirm,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/부산상속포기|/상속포기비용|/부산상속법무사|/상속상담전준비서류와비용|/부산개명허가,KEEP,,
+부산 협의분할 상속등기,division-agreement,부산,BUSAN,division,INHERITANCE,/부산상속재산분할법무사,94,COVERED_STRONG,/부산상속재산분할법무사|/상속등기비용|/부산상속법무사|/타지역상속인경상도부동산|/부산상속후매매등기|/연락두절상속인,KEEP,,
+부산 법정상속분 등기,statutory-share,부산,BUSAN,statutory-share,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/부산상속재산분할법무사|/상속재산분할협의서준비|/situations/siblings-not-cooperating|/부산상속포기|/부산법인설립등기,KEEP,,
+부산 대습상속 등기,representation,부산,BUSAN,representation,INHERITANCE,/대습상속등기,88,COVERED_STRONG,/대습상속등기|/부산재상속등기|/faq/inheritance-renunciation-family-effect|/업무사례/안동오래된토지상속등기|/부산상속등기|/부산상속포기,KEEP,,THIN_BODY
+부산 재상속 등기,re-inheritance,부산,BUSAN,re-inheritance,INHERITANCE,/부산재상속등기,80,COVERED_NEEDS_IMPROVEMENT,/부산재상속등기|/services/inheritance-registration|/업무사례/서울상속등기법무사|/업무사례/안동오래된토지상속등기|/부산상속등기|/부산상속포기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 해외거주 상속인,overseas-heir,부산,BUSAN,overseas-heir,INHERITANCE,/해외거주상속인,88,COVERED_STRONG,/해외거주상속인|/부산상속등기|/부산상속포기|/부산상속재산분할법무사|/부산외국인상속등기|/부산상속등기전문,KEEP,,THIN_BODY
+부산 미성년 상속인,minor-heir,부산,BUSAN,minor-heir,INHERITANCE,/미성년상속인,88,COVERED_STRONG,/미성년상속인|/부산상속등기|/부산상속포기|/부산한정승인|/상속등기비용|/상속포기비용,KEEP,,THIN_BODY
+부산 상속 특별대리인,special-agent,부산,BUSAN,special-agent,INHERITANCE,/미성년상속인,88,COVERED_STRONG,/미성년상속인|/상속포기비용|/특별대리인자가진단|/가족후견|/부산상속등기|/부산상속포기,KEEP,,THIN_BODY
+부산 유언 상속등기,will-inheritance,부산,BUSAN,will,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/부산유언검인|/유류분과상속등기|/전국유증등기|/업무사례/전국유증등기법무사|/업무사례/경남유증등기법무사,KEEP,,
+부산 유증 등기,bequest,부산,BUSAN,bequest,INHERITANCE,/전국유증등기,94,COVERED_STRONG,/전국유증등기|/상속|/업무사례/김해에서부산법인본점이전|/업무사례/양산에서부산법인본점이전|/업무사례/창원에서부산법인본점이전|/업무사례/부산김해양산공동근저당권,KEEP,,
+부산 상속 부동산 처분,sell-before-after,부산,BUSAN,sale-after-inheritance,INHERITANCE,/부산상속후매매등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상속후매매등기|/부산상속포기|/상속포기비용|/한정승인비용|/부산지분이전등기|/부산압류말소등기,IMPROVE,,THIN_BODY
+부산 상속 등기권리증 없음,inheritance-registration,부산,BUSAN,inheritance-registration,INHERITANCE,/부산상속등기,100,COVERED_STRONG,/부산상속등기|/부산등기권리증분실|/오래된상속토지정리|/등기권리증없이소유권이전|/제주타지역상속인부동산|/등기부존재실제건물없음,KEEP,,
+부산 오래된 토지 상속,old-estate,부산,BUSAN,multi-generation,INHERITANCE,/오래된상속토지정리,88,COVERED_STRONG,/오래된상속토지정리|/부산상속등기|/부산재상속등기|/중구법무사|/부산재개발등기|/부산재건축등기,KEEP,,THIN_BODY
+해운대구 부동산등기 법무사,해운대구-real-estate,해운대구,DISTRICT,local-real-estate,REAL_ESTATE,/해운대구부동산등기,94,COVERED_STRONG,/해운대구부동산등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구법인설립등기|/해운대구임원변경등기,KEEP,/해운대법무사,
+센텀 부동산등기 법무사,센텀-real-estate,센텀,LIVING_AREA,local-real-estate,REAL_ESTATE,/센텀부동산등기,90,COVERED_STRONG,/센텀부동산등기|/해운대구한정승인|/해운대구법인등기|/센텀법인설립등기|/센텀임원변경등기|/해운대구법인설립등기,KEEP,/해운대법무사,
+재송동 부동산등기 법무사,재송동-real-estate,재송동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/해운대구부동산등기,94,COVERED_STRONG,/해운대구부동산등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/센텀법인설립등기|/센텀임원변경등기,KEEP,/해운대법무사,
+반여동 부동산등기 법무사,반여동-real-estate,반여동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/해운대구부동산등기,94,COVERED_STRONG,/해운대구부동산등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기|/해운대구법인설립등기|/해운대구임원변경등기,KEEP,/해운대법무사,
+수영구 부동산등기 법무사,수영구-real-estate,수영구,DISTRICT,local-real-estate,REAL_ESTATE,/수영구부동산등기,94,COVERED_STRONG,/수영구부동산등기|/수영구법인등기|/수영구개인회생|/수영구상속포기|/수영구법무사|/광안리법무사,KEEP,/수영구법무사,
+광안동 부동산등기 법무사,광안동-real-estate,광안동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/수영구부동산등기,94,COVERED_STRONG,/수영구부동산등기|/수영구상속포기|/광안리법무사|/수영구법인등기|/수영구법무사|/업무사례/부산광안동법무사,KEEP,/수영구법무사,
+남천동 부동산등기 법무사,남천동-real-estate,남천동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/남천동법무사,90,COVERED_STRONG,/남천동법무사|/수영구법무사|/업무사례/부산남천동법무사|/부산상속포기|/부산부동산등기|/부산소유권이전등기,KEEP,/수영구법무사,
+연제구 부동산등기 법무사,연제구-real-estate,연제구,DISTRICT,local-real-estate,REAL_ESTATE,/연제구부동산등기,94,COVERED_STRONG,/연제구부동산등기|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/연제구한정승인,KEEP,/연제구법무사,
+연산동 부동산등기 법무사,연산동-real-estate,연산동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/연제구부동산등기,94,COVERED_STRONG,/연제구부동산등기|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구한정승인|/연제구법무사,KEEP,/연제구법무사,
+동래구 부동산등기 법무사,동래구-real-estate,동래구,DISTRICT,local-real-estate,REAL_ESTATE,/동래구부동산등기,94,COVERED_STRONG,/동래구부동산등기|/동래구법인등기|/동래구한정승인|/동래구임원변경등기|/동래구법무사|/연제구상속등기,KEEP,/동래구법무사,
+부산진구 부동산등기 법무사,부산진구-real-estate,부산진구,DISTRICT,local-real-estate,REAL_ESTATE,/부산진구부동산등기,94,COVERED_STRONG,/부산진구부동산등기|/부산진구법무사|/서면법무사|/부산진구비영리법인설립|/연제구상속등기|/연제구상속포기,KEEP,/부산진구법무사,
+서면 부동산등기 법무사,서면-real-estate,서면,LIVING_AREA,local-real-estate,REAL_ESTATE,/서면법무사,94,COVERED_STRONG,/서면법무사|/부산진구법무사|/부산등기권리증분실|/등기권리증없이소유권이전|/부산진구비영리법인설립|/부산진등기소법무사,KEEP,/부산진구법무사,
+남구 부동산등기 법무사,남구-real-estate,남구,DISTRICT,local-real-estate,REAL_ESTATE,/남구부동산등기,94,COVERED_STRONG,/남구부동산등기|/남구법무사|/수영구부동산등기|/수영구법인등기|/수영구상속포기|/부산지방법원등기국,KEEP,/남구법무사,
+대연동 부동산등기 법무사,대연동-real-estate,대연동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/대연동법무사,94,COVERED_STRONG,/대연동법무사|/남구법무사|/남부산등기소법무사|/업무사례/부산대연동법무사|/부산상속포기|/부산부동산등기,KEEP,/남구법무사,
+북구 부동산등기 법무사,북구-real-estate,북구,DISTRICT,local-real-estate,REAL_ESTATE,/북구부동산등기,86,COVERED_STRONG,/북구부동산등기|/북구상속등기|/북구개인회생|/북구상속포기|/북구법무사|/덕천동법무사,KEEP,/북구법무사,ORPHAN_RISK
+화명동 부동산등기 법무사,화명동-real-estate,화명동,NEIGHBORHOOD,local-real-estate,REAL_ESTATE,/화명동법무사,97,COVERED_STRONG,/화명동법무사|/북구부동산등기|/북구상속등기|/북구상속포기|/북구법무사|/북부산등기소법무사,KEEP,/북구법무사,
+금정구 부동산등기 법무사,금정구-real-estate,금정구,DISTRICT,local-real-estate,REAL_ESTATE,/금정구부동산등기,94,COVERED_STRONG,/금정구부동산등기|/금정구한정승인|/금정구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기,KEEP,/금정구법무사,
+사상구 부동산등기 법무사,사상구-real-estate,사상구,DISTRICT,local-real-estate,REAL_ESTATE,/사상구부동산등기,94,COVERED_STRONG,/사상구부동산등기|/사상구상속등기|/사상구상속포기|/사상구개인회생|/사상구법무사|/사상구공장창고등기,KEEP,/사상구법무사,
+사하구 부동산등기 법무사,사하구-real-estate,사하구,DISTRICT,local-real-estate,REAL_ESTATE,/사하구부동산등기,94,COVERED_STRONG,/사하구부동산등기|/사하구법무사|/하단법무사|/명지국제신도시법인등기|/에코델타시티법인등기|/업무사례/사하구법무사,KEEP,/사하구법무사,
+강서구 부동산등기 법무사,강서구-real-estate,강서구,DISTRICT,local-real-estate,REAL_ESTATE,/강서구부동산등기,94,COVERED_STRONG,/강서구부동산등기|/강서구법무사|/강서구공장멸실등기|/북부산등기소법무사|/명지국제신도시법인등기|/에코델타시티법인등기,KEEP,/강서구법무사,
+명지 부동산등기 법무사,명지-real-estate,명지,LIVING_AREA,local-real-estate,REAL_ESTATE,/명지법무사,94,COVERED_STRONG,/명지법무사|/강서구법무사|/명지국제신도시법인등기|/업무사례/부산명지동법무사|/업무사례/부산명지법무사|/명지동부동산등기,KEEP,/강서구법무사,
+기장군 부동산등기 법무사,기장군-real-estate,기장군,DISTRICT,local-real-estate,REAL_ESTATE,/기장군부동산등기,94,COVERED_STRONG,/기장군부동산등기|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기|/기장군법무사,KEEP,/기장군법무사,
+정관 부동산등기 법무사,정관-real-estate,정관,LIVING_AREA,local-real-estate,REAL_ESTATE,/정관법무사,94,COVERED_STRONG,/정관법무사|/기장군법인등기|/기장군법무사|/정관법인등기|/부산사업목적변경등기|/부산상호변경등기,KEEP,/기장군법무사,
+일광 부동산등기 법무사,일광-real-estate,일광,LIVING_AREA,local-real-estate,REAL_ESTATE,/일광읍법무사,100,COVERED_STRONG,/일광읍법무사|/기장군법무사|/기장군상속등기|/기장군상속포기|/기장군한정승인|/기장군법인등기,KEEP,/기장군법무사,
+부산 아파트 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산부동산등기|/부산법무사|/부산재건축등기|/부산신축아파트소유권이전등기|/부산등기법무사,KEEP,,
+부산 주택 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산신축아파트소유권이전등기|/부산오피스텔소유권이전등기|/부산근저당설정등기|/부산신축건물보존등기|/부산빌라매매등기,KEEP,,
+부산 상가 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산부동산등기|/부산진구법무사|/부산신축건물보존등기|/부산집단등기|/부산상가매매등기,KEEP,,
+부산 토지 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산부동산등기|/부산재건축등기|/부산신축아파트소유권이전등기|/부산오피스텔소유권이전등기|/부산신축건물보존등기,KEEP,,
+부산 공장 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산신축건물보존등기|/부산기업부동산등기|/부산건물표시변경등기|/업무사례/부산괴정동법무사|/업무사례/부산하단동법무사,KEEP,,
+부산 창고 소유권이전,ownership-transfer,부산,BUSAN,ownership-transfer,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산신축건물보존등기|/부산기업부동산등기|/업무사례/부산삼락동법무사|/업무사례/부산주례동법무사|/업무사례/강서구법무사,KEEP,,
+부산 법인 부동산 취득등기,corp-property,부산,BUSAN,corp-property,REAL_ESTATE,/부산소유권이전등기,94,COVERED_STRONG,/부산소유권이전등기|/부산개인회생|/부산법무사|/부산진구법무사|/동구법무사|/부산법무사비용,KEEP,,
+부산 공동명의 변경등기,co-ownership,부산,BUSAN,share-transfer,REAL_ESTATE,/부산지분이전등기,94,COVERED_STRONG,/부산지분이전등기|/부산법인설립등기|/부산임원변경등기|/부산부동산등기|/부산법인등기|/임원변경등기과태료,KEEP,,
+부산 부부 공동명의 등기,co-ownership,부산,BUSAN,share-transfer,REAL_ESTATE,/부산지분이전등기,94,COVERED_STRONG,/부산지분이전등기|/부산부부간증여등기|/부산공동명의등기|/blog/joint-ownership-registration-cautions|/부산부동산등기|/부산상속재산분할법무사,KEEP,,
+부산 지분이전등기,co-ownership,부산,BUSAN,share-transfer,REAL_ESTATE,/부산지분이전등기,94,COVERED_STRONG,/부산지분이전등기|/부산공동명의지분증여등기|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,KEEP,,
+부산 증여등기 비용,gift-cost-docs,부산,BUSAN,gift-docs,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산증여등기전문법무사|/부산부모자녀아파트증여등기|/부산부부간증여등기|/부산부담부증여등기|/부산공동명의지분증여등기,KEEP,,
+부산 증여등기 준비서류,gift-cost-docs,부산,BUSAN,gift-docs,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/무슨법률업무인지모를때|/부산한정승인|/부산부동산등기|/부산법인등기|/한정승인비용,KEEP,,
+부산 부담부증여 등기,onerous-gift,부산,BUSAN,onerous-gift,REAL_ESTATE,/부산부담부증여등기,88,COVERED_STRONG,/부산부담부증여등기|/부산증여등기전문법무사|/방문없이준비하는부담부증여|/부산상속등기|/부산상속포기|/부산법인설립등기,KEEP,,THIN_BODY
+부산 농지 증여등기,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/부산상속등기|/부산토지상속등기|/부산증여등기전문법무사|/부산부모자녀아파트증여등기|/부산부부간증여등기,KEEP,,
+부산 상가 증여등기,gift,부산,BUSAN,gift-registration,REAL_ESTATE,/부산증여등기,94,COVERED_STRONG,/부산증여등기|/소유권이전등기자가진단|/부산상속등기|/부산부동산등기|/부산진구법무사|/동구법무사,KEEP,,
+부산 근저당권 설정등기,mortgage-set,부산,BUSAN,mortgage-set,REAL_ESTATE,/부산잔금대출근저당,94,COVERED_STRONG,/부산잔금대출근저당|/부산근저당설정등기|/보존등기후근저당설정|/부산근저당말소등기|/부산전세권설정등기|/부산신축건물보존등기,KEEP,,
+부산 근저당권 말소등기,mortgage-cancel,부산,BUSAN,mortgage-cancel,REAL_ESTATE,/방문없이준비하는근저당말소,88,COVERED_STRONG,/방문없이준비하는근저당말소|/부산근저당말소등기|/업무사례/양산근저당말소|/부산재개발등기|/부산재건축등기|/부산신축아파트소유권이전등기,KEEP,,THIN_BODY
+부산 근저당권 변경등기,mortgage-change,부산,BUSAN,mortgage-change,REAL_ESTATE,/부산부동산등기,100,COVERED_STRONG,/부산부동산등기|/부산법인설립등기|/부산임원변경등기|/부산법인등기|/임원변경등기과태료|/부산스타트업법무사,KEEP,,
+부산 전세권 말소,leasehold-cancel,부산,BUSAN,leasehold-cancel,REAL_ESTATE,/방문없이준비하는전세권말소,88,COVERED_STRONG,/방문없이준비하는전세권말소|/부산전세권말소등기|/부산부동산등기|/부산전세권설정등기|/수영구법무사|/부산부동산등기전문,KEEP,,THIN_BODY
+부산 전세권 말소 법무사,leasehold-cancel,부산,BUSAN,leasehold-cancel,REAL_ESTATE,/방문없이준비하는전세권말소,88,COVERED_STRONG,/방문없이준비하는전세권말소|/부산부동산등기|/부산전세권설정등기|/부산전세권말소등기|/수영구법무사|/부산부동산등기전문,KEEP,,THIN_BODY
+부산 소유권보존등기 법무사,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/토지소유자와건축주다른보존등기|/건축주법인신축보존등기|/지식산업센터보존등기|/증축후건물표시변경등기|/미등기건물소유권보존등기,KEEP,,
+부산 신축 아파트 보존등기,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/부산등기법무사|/부산부동산등기법무사|/부산집단등기|/부산입주등기|/업무사례/부산에코델타시티법무사,KEEP,,
+부산 신축 상가 보존등기,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/부산집단등기|/부산기업부동산등기|/건축주법인신축보존등기|/기장신축건물보존등기|/업무사례/부산봉림동법무사,KEEP,,
+부산 공장 보존등기,preservation,부산,BUSAN,preservation,REAL_ESTATE,/부산신축건물보존등기,94,COVERED_STRONG,/부산신축건물보존등기|/부산기업부동산등기|/부산건물등기|/부산공장창고등기|/건축주법인신축보존등기|/지식산업센터보존등기,KEEP,,
+부산 건물 철거 멸실등기,building-loss,부산,BUSAN,loss-registration,REAL_ESTATE,/부산건물멸실등기,88,COVERED_STRONG,/부산건물멸실등기|/강서구공장멸실등기|/철거후건물멸실등기|/멸실등기없이토지매도|/신축전기존건물철거등기순서|/건물일부철거표시변경,KEEP,,THIN_BODY
+부산 일부 철거 표시변경등기,partial-demolition,부산,BUSAN,partial-demolition,REAL_ESTATE,/건물일부철거표시변경,88,COVERED_STRONG,/건물일부철거표시변경|/부산건물표시변경등기|/부산건물멸실등기|/건물용도변경등기|/신축전기존건물철거등기순서|/공장철거후멸실등기,KEEP,,THIN_BODY
+해운대구 법인등기 법무사,해운대구-corporate,해운대구,DISTRICT,local-corporate,CORPORATE,/해운대구법인등기,94,COVERED_STRONG,/해운대구법인등기|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구부동산등기|/해운대구법인설립등기,KEEP,/해운대법무사,
+센텀 법인등기 법무사,센텀-corporate,센텀,LIVING_AREA,local-corporate,CORPORATE,/센텀법인설립등기,94,COVERED_STRONG,/센텀법인설립등기|/해운대구상속등기|/해운대구한정승인|/해운대구법인등기|/해운대구법인설립등기|/해운대구임원변경등기,KEEP,/해운대법무사,
+재송동 법인등기 법무사,재송동-corporate,재송동,NEIGHBORHOOD,local-corporate,CORPORATE,/해운대구법인등기,94,COVERED_STRONG,/해운대구법인등기|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인|/해운대구부동산등기|/해운대구법인설립등기,KEEP,/해운대법무사,
+수영구 법인등기 법무사,수영구-corporate,수영구,DISTRICT,local-corporate,CORPORATE,/수영구법인등기,86,COVERED_STRONG,/수영구법인등기|/수영구개인회생|/수영구비영리법인설립|/상속등기필요서류|/문현금융단지법인등기|/부산국제금융센터법인등기,KEEP,/수영구법무사,ORPHAN_RISK
+연제구 법인등기 법무사,연제구-corporate,연제구,DISTRICT,local-corporate,CORPORATE,/연제구법인등기,94,COVERED_STRONG,/연제구법인등기|/연제구상속등기|/연제구상속포기|/연제구임원변경등기|/연제구부동산등기|/연제구한정승인,KEEP,/연제구법무사,
+동래구 법인등기 법무사,동래구-corporate,동래구,DISTRICT,local-corporate,CORPORATE,/동래구법인등기,86,COVERED_STRONG,/동래구법인등기|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/연제구부동산등기,KEEP,/동래구법무사,ORPHAN_RISK
+부산진구 법인등기 법무사,부산진구-corporate,부산진구,DISTRICT,local-corporate,CORPORATE,/부산진구법무사,94,COVERED_STRONG,/부산진구법무사|/서면법무사|/부산진구비영리법인설립|/연제구상속등기|/연제구상속포기|/연제구법인등기,KEEP,/부산진구법무사,
+남구 법인등기 법무사,남구-corporate,남구,DISTRICT,local-corporate,CORPORATE,/남구법무사,94,COVERED_STRONG,/남구법무사|/수영구법인등기|/문현금융단지법인등기|/부산국제금융센터법인등기|/업무사례/남구법무사|/남구법인등기,KEEP,/남구법무사,
+북구 법인등기 법무사,북구-corporate,북구,DISTRICT,local-corporate,CORPORATE,/북구법무사,94,COVERED_STRONG,/북구법무사|/북구개인회생|/업무사례/북구법무사|/북구법인등기|/북구임원변경등기|/업무사례/부산구포동법무사,KEEP,/북구법무사,
+금정구 법인등기 법무사,금정구-corporate,금정구,DISTRICT,local-corporate,CORPORATE,/금정구법무사,94,COVERED_STRONG,/금정구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구임원변경등기|/동래구법인등기,KEEP,/금정구법무사,
+사상구 법인등기 법무사,사상구-corporate,사상구,DISTRICT,local-corporate,CORPORATE,/사상법무사,94,COVERED_STRONG,/사상법무사|/사상구개인회생|/사상구공장창고등기|/업무사례/사상구법무사|/사상구법인등기|/사상구임원변경등기,KEEP,/사상구법무사,
+사하구 법인등기 법무사,사하구-corporate,사하구,DISTRICT,local-corporate,CORPORATE,/사하구법무사,94,COVERED_STRONG,/사하구법무사|/명지국제신도시법인등기|/에코델타시티법인등기|/업무사례/사하구법무사|/사하구법인등기|/사하구임원변경등기,KEEP,/사하구법무사,
+강서구 법인등기 법무사,강서구-corporate,강서구,DISTRICT,local-corporate,CORPORATE,/강서구법무사,94,COVERED_STRONG,/강서구법무사|/명지법무사|/강서구공장멸실등기|/명지국제신도시법인등기|/에코델타시티법인등기|/업무사례/강서구법무사,KEEP,/강서구법무사,
+명지 법인등기 법무사,명지-corporate,명지,LIVING_AREA,local-corporate,CORPORATE,/강서구법무사,94,COVERED_STRONG,/강서구법무사|/명지국제신도시법인등기|/명지법무사|/법인등기|/업무사례/부산명지동법무사|/업무사례/부산명지법무사,KEEP,/강서구법무사,
+기장군 법인등기 법무사,기장군-corporate,기장군,DISTRICT,local-corporate,CORPORATE,/기장군법인등기,86,COVERED_STRONG,/기장군법인등기|/정관법무사|/기장신축건물보존등기|/해운대구상속포기|/해운대구한정승인|/해운대구법인등기,KEEP,/기장군법무사,ORPHAN_RISK
+부산 법인설립 준비서류,incorporation,부산,BUSAN,incorporation,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/부산법인등기|/부산등기법무사|/부산법인법무사|/왜법인등기비용이다를까|/방문없이준비하는법인설립,KEEP,,
+부산 법인설립 대행,incorporation,부산,BUSAN,incorporation,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/창업법률교육|/부산법인등기|/부산법무사|/법인설립등기비용|/부산국제금융센터법인등기,KEEP,,
+부산 주식회사 설립등기,stock-company,부산,BUSAN,stock-company,CORPORATE,/부산법인설립등기,100,COVERED_STRONG,/부산법인설립등기|/부산1인법인설립|/부산유한회사설립등기|/부산특수법인등기|/법인정관인증확인|/사회적기업과법인설립차이,KEEP,,
+부산 유한회사 설립등기,llc,부산,BUSAN,llc-formation,CORPORATE,/부산유한회사설립등기,84,COVERED_NEEDS_IMPROVEMENT,/부산유한회사설립등기|/부산법인설립등기|/부산1인법인설립|/법인설립자가진단|/services/company-establishment|/법인설립등기비용,IMPROVE,,THIN_BODY
+부산 1인회사 설립,one-person-company,부산,BUSAN,one-person-company,CORPORATE,/부산1인법인설립,84,COVERED_NEEDS_IMPROVEMENT,/부산1인법인설립|/부산법인설립등기|/부산법인등기|/부산법무사|/법인설립등기비용|/부산국제금융센터법인등기,IMPROVE,,THIN_BODY
+부산 법인 임원중임,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산기업법무사|/부산법인설립등기|/부산임원변경등기|/부산법인등기|/부산개인회생,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 법인 임기만료 과태료,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/부산기업법무사|/부산임원변경전문법무사|/부산법인등기|/임원변경등기과태료,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 대표이사 중임등기,ceo-change,부산,BUSAN,ceo-change,CORPORATE,/부산대표이사변경등기,88,COVERED_STRONG,/부산대표이사변경등기|/부산임원변경등기|/부산법인등기|/부산법인법무사|/부산임원변경전문법무사|/부산법인설립전문법무사,KEEP,,THIN_BODY
+부산 이사 중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/비영리법인임원변경등기|/부산법인등기|/부산상속법무사|/부산법인법무사,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 감사 중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/비영리법인임원변경등기|/부산임원변경등기|/부산임원변경전문법무사|/부산법인설립전문법무사|/연제구임원변경등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 법인 본점이전,hq-move,부산,BUSAN,head-office-move,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/부산법인등기|/부산국제금융센터법인등기|/부산법인법무사|/부산기업법무사|/부산스타트업법무사,KEEP,,THIN_BODY
+부산 관외 본점이전,hq-out,부산,BUSAN,hq-outside-jurisdiction,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/blog/head-office-move-in-out-district|/부산법인등기|/부산국제금융센터법인등기|/부산법인법무사|/부산기업법무사,KEEP,,THIN_BODY
+부산 관내 본점이전,hq-in,부산,BUSAN,hq-inside-jurisdiction,CORPORATE,/부산본점이전등기,88,COVERED_STRONG,/부산본점이전등기|/blog/head-office-move-in-out-district|/부산법인등기|/부산국제금융센터법인등기|/부산법인법무사|/부산기업법무사,KEEP,,THIN_BODY
+부산 법인 목적변경,purpose-change,부산,BUSAN,purpose-change,CORPORATE,/부산사업목적변경등기,88,COVERED_STRONG,/부산사업목적변경등기|/부산법인등기|/부산법인법무사|/부산기업법무사|/부산법인등기과태료|/부산법인등기복대리,KEEP,,THIN_BODY
+부산 법인 상호변경,name-change,부산,BUSAN,trade-name-change,CORPORATE,/부산상호변경등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상호변경등기|/부산법인법무사|/부산기업법무사|/서면법무사|/부산법인등기전문|/법인등기,IMPROVE,,THIN_BODY
+부산 제3자배정 유상증자,third-party-increase,부산,BUSAN,third-party-allotment,CORPORATE,/부산제3자배정유상증자,88,COVERED_STRONG,/부산제3자배정유상증자|/부산주주배정유상증자|/부산가수금출자전환|/부산유상증자등기|/부산감자등기|/부산무상증자등기,KEEP,,THIN_BODY
+부산 주주배정 유상증자,shareholder-increase,부산,BUSAN,shareholder-allotment,CORPORATE,/부산주주배정유상증자,88,COVERED_STRONG,/부산주주배정유상증자|/부산제3자배정유상증자|/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산가수금출자전환,KEEP,,THIN_BODY
+부산 가수금 출자전환,debt-equity,부산,BUSAN,debt-equity-swap,CORPORATE,/부산가수금출자전환,88,COVERED_STRONG,/부산가수금출자전환|/부산제3자배정유상증자|/부산현물출자증자|/부산상속등기|/부산상속포기|/부산한정승인,KEEP,,THIN_BODY
+부산 현물출자 증자,in-kind,부산,BUSAN,in-kind-increase,CORPORATE,/부산현물출자증자,88,COVERED_STRONG,/부산현물출자증자|/부산가수금출자전환|/부산법인법무사|/부산법인등기비용|/부산유상증자등기|/부산감자등기,KEEP,,THIN_BODY
+부산 유상증자 준비서류,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,88,COVERED_STRONG,/부산유상증자등기|/업무사례/양산법인등기법무사|/부산한정승인|/부산부동산등기|/부산법인등기|/한정승인비용,KEEP,,THIN_BODY
+부산 유상증자 비용,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,88,COVERED_STRONG,/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산주주배정유상증자|/부산가수금출자전환,KEEP,,THIN_BODY
+부산 법인 감자,capital-reduction,부산,BUSAN,capital-reduction,CORPORATE,/부산감자등기,84,COVERED_NEEDS_IMPROVEMENT,/부산감자등기|/부산무상증자등기|/방문없이준비하는유상증자|/situations/분류/법인-사업-운영|/부산법인설립등기|/부산임원변경등기,IMPROVE,,THIN_BODY
+부산 법인 지점설치,branch-open,부산,BUSAN,branch-open,CORPORATE,/부산지점설치등기,88,COVERED_STRONG,/부산지점설치등기|/부산지점폐지등기|/부산법인등기복대리|/녹산산단법인본점지점|/부산법인설립등기|/부산임원변경등기,KEEP,,THIN_BODY
+부산 법인 지점폐지,branch-close,부산,BUSAN,branch-close,CORPORATE,/부산지점폐지등기,88,COVERED_STRONG,/부산지점폐지등기|/부산지점설치등기|/녹산산단법인본점지점|/부산법인설립등기|/부산임원변경등기|/부산법인등기,KEEP,,THIN_BODY
+부산 휴면법인 계속등기,dormant,부산,BUSAN,dormant-resume,CORPORATE,/부산휴면법인계속등기,88,COVERED_STRONG,/부산휴면법인계속등기|/부산법인해산전확인사항|/사업자폐업후법인정리|/휴면법인계속등기준비|/해산간주확인절차|/부산법인해산청산등기,KEEP,,THIN_BODY
+해운대구 개인회생 법무사,해운대구-rehab,해운대구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/수영구개인회생|/북구개인회생|/사상구개인회생|/임원변경등기과태료|/소유권이전등기서류,KEEP,/해운대법무사,
+수영구 개인회생 법무사,수영구-rehab,수영구,DISTRICT,local-rehab,REHABILITATION,/수영구개인회생,84,COVERED_NEEDS_IMPROVEMENT,/수영구개인회생|/수영구비영리법인설립|/상속등기필요서류|/services/cases/suyeong-company-establishment-case|/업무사례/수영구법무사|/blog/jeonse-deposit-return-certified-mail,IMPROVE,/수영구법무사,THIN_BODY
+연제구 개인회생 법무사,연제구-rehab,연제구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/임원변경등기과태료|/거제동법무사|/services/cases/yeonje-director-change-case|/업무사례/연제구법무사|/업무사례/지역별,KEEP,/연제구법무사,
+동래구 개인회생 법무사,동래구-rehab,동래구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/상속등기필요서류|/services/cases/dongnae-qualified-acceptance-consultation|/업무사례/동래구법무사|/업무사례/부산낙민동법무사|/업무사례/부산명장동법무사,KEEP,/동래구법무사,
+부산진구 개인회생 법무사,부산진구-rehab,부산진구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/부산진구비영리법인설립|/소유권이전등기서류|/업무사례/부산진구법무사|/부산진구상속등기|/업무사례/부산가야동법무사,KEEP,/부산진구법무사,
+남구 개인회생 법무사,남구-rehab,남구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/업무사례/남구법무사|/업무사례/부산감만동법무사|/업무사례/부산대연동법무사|/업무사례/부산용호동법무사|/업무사례/부산용당동법무사,KEEP,/남구법무사,
+북구 개인회생 법무사,북구-rehab,북구,DISTRICT,local-rehab,REHABILITATION,/북구개인회생,88,COVERED_STRONG,/북구개인회생|/북구상속등기|/북구부동산등기|/북구상속포기|/북구법무사|/덕천동법무사,KEEP,/북구법무사,THIN_BODY
+사하구 개인회생 법무사,사하구-rehab,사하구,DISTRICT,local-rehab,REHABILITATION,/부산개인회생법무사,94,COVERED_STRONG,/부산개인회생법무사|/업무사례/사하구법무사|/업무사례/부산감천동법무사|/업무사례/부산구평동법무사|/업무사례/부산괴정동법무사|/업무사례/부산하단동법무사,KEEP,/사하구법무사,
+부산 개인회생 준비서류,rehab-howto,부산,BUSAN,howto,REHABILITATION,/개인회생준비서류,86,COVERED_STRONG,/개인회생준비서류|/임원변경등기과태료|/소유권이전등기서류|/상속등기필요서류|/상속등기기간|/부산회생법원법무사,KEEP,,ORPHAN_RISK
+부산 개인회생 신청방법,rehab-howto,부산,BUSAN,howto,REHABILITATION,/개인회생준비서류,86,COVERED_STRONG,/개인회생준비서류|/부산개인회생|/부산파산|/부산법무사|/임원변경등기과태료|/소유권이전등기서류,KEEP,,ORPHAN_RISK
+부산 개인파산 신청방법,bankruptcy-howto,부산,BUSAN,howto,REHABILITATION,/개인파산준비서류,86,COVERED_STRONG,/개인파산준비서류|/부산파산|/부산회생법원법무사|/부산개인파산|/부산개인파산법무사추천|/부산개인파산전문법무사,KEEP,,ORPHAN_RISK
+부산 개인파산 준비서류,bankruptcy-howto,부산,BUSAN,howto,REHABILITATION,/개인파산준비서류,86,COVERED_STRONG,/개인파산준비서류|/부산회생법원법무사|/부산개인파산법무사추천|/부산개인파산법무사|/부산개인파산상담|/부산한정승인,KEEP,,ORPHAN_RISK
+부산 임차권등기명령 신청,lease-reg-order,부산,BUSAN,lease-registration-order,LEASE,/부산임차권등기명령,94,COVERED_STRONG,/부산임차권등기명령|/부산전세보증금반환법무사|/임차권등기명령자가진단|/situations/임차권등기명령-필요할-때|/부산한정승인|/부산임원변경등기,KEEP,,
+부산 임차권등기명령 비용,lease-reg-order,부산,BUSAN,lease-registration-order,LEASE,/부산임차권등기명령,94,COVERED_STRONG,/부산임차권등기명령|/부산전세권설정등기|/부산전세전문법무사|/부산전세보증금반환법무사|/부산확정일자전세권비교|/임대인사망전세계약,KEEP,,
+부산 전세보증금 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/부산전세보증금반환법무사|/tools|/부산기업법무사|/부산부담부증여등기|/부산확정일자전세권비교,KEEP,,
+부산 보증금 반환 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/부산전세보증금반환법무사|/내용증명작성준비|/무슨법률업무인지모를때|/부산전세권설정등기|/부산전세권말소등기,KEEP,,
+부산 미수금 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/부산기업법무사|/부산기업법률자문|/부산기업채권관리|/방문없이준비하는지급명령서류|/덕천동법무사,KEEP,,
+부산 공사대금 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/서면법무사|/공탁채권회수|/situations/분류/돈을-받지-못한-경우|/situations/payment-order-certified-mail|/부산기업법무사,KEEP,,
+부산 대여금 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/방문없이준비하는지급명령서류|/공탁채권회수|/blog/loan-repayment-claim-documents|/지급명령자가진단|/부산지방법원채권회수,KEEP,,
+부산 물품대금 지급명령,payment-order-type,부산,BUSAN,payment-order-cause,CIVIL,/민사소송,94,COVERED_STRONG,/민사소송|/지급명령자가진단|/부산기업법무사|/부산전세보증금반환법무사|/부산재산명시|/부산역법무사,KEEP,,
+양산 상속등기 법무사,양산-inheritance,양산,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/경남사단법인설립|/강의문의|/학교법률교육|/법무사진로특강|/업무사례/부산산양산업단지법무사|/업무사례/경남상속등기법무사,KEEP,,
+양산 상속포기 법무사,양산-renunciation,양산,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/양산법무사업무|/업무사례/양산상속포기한정승인|/업무사례/울주군상속포기한정승인|/경남사단법인설립|/부산상속포기|/부산한정승인,KEEP,/양산상속등기법무사,
+양산 한정승인 법무사,양산-renunciation,양산,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/양산법무사업무|/업무사례/양산상속포기한정승인|/업무사례/경남유증등기법무사|/업무사례/울주군상속포기한정승인|/경남사단법인설립|/부산상속등기,KEEP,/양산상속등기법무사,
+양산 법인등기 법무사,양산-corporate,양산,NEARBY_CITY,corporate,CORPORATE,/부산법무사,94,COVERED_STRONG,/경남사단법인설립|/강의문의|/학교법률교육|/법무사진로특강|/업무사례/부산산양산업단지법무사|/업무사례/경남법무사업무,KEEP,,
+김해 상속등기 법무사,김해-inheritance,김해,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/경남사단법인설립|/업무사례/경남상속등기법무사|/업무사례/김해상속등기법무사|/업무사례/경남법무사업무|/업무사례/율하상속등기법무사|/업무사례/김해상속등기비용,KEEP,,
+김해 상속포기 법무사,김해-renunciation,김해,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/양산법무사업무|/경남사단법인설립|/부산상속포기|/부산한정승인|/해운대구상속포기|/연제구상속포기,KEEP,/김해상속등기법무사,
+김해 법인등기 법무사,김해-corporate,김해,NEARBY_CITY,corporate,CORPORATE,/부산법무사,94,COVERED_STRONG,/경남사단법인설립|/업무사례/경남법무사업무|/업무사례/경남법인등기법무사|/업무사례/김해법인등기법무사|/전국법인본점이전등기|/업무사례/양산법무사업무,KEEP,,
+울산 상속등기 법무사,울산-inheritance,울산,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/경상도비대면상속등기|/타지역상속인경상도부동산|/업무사례/울산상속등기법무사|/업무사례/울산남구상속등기법무사|/업무사례/울산법무사업무|/업무사례/울산중구상속등기법무사,KEEP,,
+울산 상속포기 법무사,울산-renunciation,울산,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/울주군상속등기법무사|/업무사례/양산상속포기한정승인|/업무사례/울주군상속포기한정승인|/경상도비대면상속등기|/타지역상속인경상도부동산|/부산상속포기,KEEP,/울산상속등기법무사,
+울주군 상속포기 법무사,울주군-renunciation,울주군,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/울주군상속등기법무사|/업무사례/울주군상속포기한정승인|/부산상속포기|/부산한정승인|/해운대구상속포기|/연제구상속포기,KEEP,/울주군상속등기법무사,
+창원 상속등기 법무사,창원-inheritance,창원,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/경남사단법인설립|/경남재단법인설립|/창원비영리법인설립|/강의문의|/업무사례/경남상속등기법무사|/업무사례/창원상속등기법무사,KEEP,,
+거제 상속등기 법무사,거제-inheritance,거제,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/연제구임원변경등기|/연제구법무사|/연제구상속등기|/연제구상속포기|/연제구법인등기|/연제구부동산등기,KEEP,,
+통영 상속등기 법무사,통영-inheritance,통영,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/경상도비대면상속등기|/업무사례/통영상속등기법무사|/업무사례/통영상속포기한정승인|/업무사례/거제상속포기법무사|/업무사례/경남비대면상속안내|/업무사례/고성군상속등기법무사,KEEP,,
+경주 상속등기 법무사,경주-inheritance,경주,NEARBY_CITY,inheritance-registration,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/경주상속등기법무사|/업무사례/경주오래된토지상속등기|/부산상속등기|/해운대구상속등기|/해운대구상속포기|/해운대구한정승인,KEEP,,
+포항 상속포기 법무사,포항-renunciation,포항,NEARBY_CITY,renunciation,INHERITANCE,/부산법무사,94,COVERED_STRONG,/업무사례/포항상속등기법무사|/업무사례/포항상속포기한정승인|/부산상속포기|/부산한정승인|/해운대구상속포기|/연제구상속포기,KEEP,/포항상속등기법무사,

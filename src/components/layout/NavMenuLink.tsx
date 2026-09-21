@@ -5,7 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CollaborationMegaMenu } from "@/components/layout/CollaborationMegaMenu";
 import { DesktopNavFlyout } from "@/components/layout/DesktopNavFlyout";
-import { isNavItemActive, type NavItem } from "@/lib/navigation";
+import {
+  isExactNavHref,
+  isNavItemActive,
+  isNavLinkActive,
+  type NavItem,
+} from "@/lib/navigation";
 
 type NavMenuLinkProps = {
   item: NavItem;
@@ -16,6 +21,8 @@ type NavMenuLinkProps = {
 export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
   const pathname = usePathname();
   const active = isNavItemActive(pathname, item.href);
+  const currentPage = active && isExactNavHref(pathname, item.href);
+  const ariaCurrent = active ? (currentPage ? "page" : "true") : undefined;
   const [open, setOpen] = useState(false);
   const hasGroups = Boolean(item.groups?.length);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -74,7 +81,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
     return (
       <Link
         href={item.href}
-        aria-current={active ? "page" : undefined}
+        aria-current={ariaCurrent}
         onClick={onNavigate}
         className={mobileLinkClass(active)}
       >
@@ -91,7 +98,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
     return (
       <Link
         href={item.href}
-        aria-current={active ? "page" : undefined}
+        aria-current={ariaCurrent}
         className={desktopLinkClass(active)}
       >
         {item.label}
@@ -109,7 +116,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
       <Link
         ref={triggerRef}
         href={item.href}
-        aria-current={active ? "page" : undefined}
+        aria-current={ariaCurrent}
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-haspopup="true"
@@ -140,18 +147,31 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
                 {group.title}
               </p>
               <ul className="space-y-0.5">
-                {group.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      role="menuitem"
-                      className="block rounded-lg px-2 py-1.5 text-sm text-navy/80 no-underline hover:bg-beige hover:text-navy"
-                      onClick={closeMenu}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {group.links.map((link) => {
+                  const linkActive = isNavLinkActive(
+                    pathname,
+                    link.href,
+                    item.href,
+                  );
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        role="menuitem"
+                        aria-current={linkActive ? "page" : undefined}
+                        className={[
+                          "block rounded-lg px-2 py-1.5 text-sm no-underline",
+                          linkActive
+                            ? "bg-beige font-semibold text-navy"
+                            : "text-navy/80 hover:bg-beige hover:text-navy",
+                        ].join(" ")}
+                        onClick={closeMenu}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

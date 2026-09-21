@@ -1,0 +1,33 @@
+keyword,cluster,region,regionType,intent,service,bestUrl,coverageScore,band,candidates,action,parentHubUrl,issues
+상속재산분할협의,division-agreement,,NONE,division,INHERITANCE,/부산상속재산분할법무사,76,COVERED_NEEDS_IMPROVEMENT,/부산상속재산분할법무사|/blog/inheritance-division-agreement-cautions|/상속재산분할협의서준비|/부산상속후매매등기|/업무사례/전국유증등기법무사|/업무사례/타지역법무사의뢰,IMPROVE,,TITLE_INTENT_WEAK|H1_INTENT_WEAK
+외국인 상속등기,foreign-heir,,NONE,foreign-heir,INHERITANCE,/부산외국인상속등기,80,COVERED_NEEDS_IMPROVEMENT,/부산외국인상속등기|/부산외국인부동산등기|/해외대표이사주주법인등기|/법인정관인증확인|/특수등기|/부산상속등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+재혼가정 상속,remarriage,,NONE,remarriage-heir,INHERITANCE,/재혼가정상속,84,COVERED_NEEDS_IMPROVEMENT,/재혼가정상속|/부산상속등기|/부산상속포기|/부산한정승인|/부산소유권이전등기|/부산개인회생,IMPROVE,,THIN_BODY
+재상속,re-inheritance,,NONE,re-inheritance,INHERITANCE,/부산재상속등기,80,COVERED_NEEDS_IMPROVEMENT,/부산재상속등기|/services/inheritance-registration|/업무사례/서울상속등기법무사|/업무사례/안동오래된토지상속등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+연속상속,old-estate,,NONE,multi-generation,INHERITANCE,/오래된상속토지정리,81,COVERED_NEEDS_IMPROVEMENT,/오래된상속토지정리|/부산재상속등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+상속부동산 매도,sell-before-after,,NONE,sale-after-inheritance,INHERITANCE,/부산상속후매매등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상속후매매등기|/여러지역상속부동산등기|/업무사례/전국상속부동산일괄등기|/업무사례/안산상속등기법무사|/업무사례/영종도상속등기법무사|/업무사례/거제상속등기법무사,IMPROVE,,THIN_BODY
+상속등기 전 매매,sell-before-after,,NONE,sale-after-inheritance,INHERITANCE,/부산상속후매매등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상속후매매등기|/해운대구상속등기|/수영구상속등기|/북구상속등기|/금정구상속등기|/사하구법무사,IMPROVE,,THIN_BODY
+부산 농지 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산상속등기|/부산토지상속등기|/부산농업회사법인설립|/기장군상속포기|/기장군한정승인,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 토지 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산상속등기|/부산부동산등기|/부산재개발등기|/부산재건축등기|/부산신축아파트소유권이전등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 공장 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산신축건물보존등기|/부산기업부동산등기|/부산건물등기|/부산건축물등기법무사|/부산건물멸실등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 창고 등기,property-type,부산,BUSAN,property-type,REAL_ESTATE,/부산토지매매등기,80,COVERED_NEEDS_IMPROVEMENT,/부산토지매매등기|/부산신축건물보존등기|/부산기업부동산등기|/부산건물등기|/부산공장창고등기|/건축주법인신축보존등기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 공유물 분할등기,partition,부산,BUSAN,partition,REAL_ESTATE,/공유물분할등기서류준비,77,COVERED_NEEDS_IMPROVEMENT,/공유물분할등기서류준비|/이혼재산분할등기서류준비|/부산이혼재산분할등기|/건물분할등기|/situations/공동명의-정리|/faq/real-estate-divorce-registration,IMPROVE,,TITLE_INTENT_WEAK|THIN_BODY
+부산 1인 법인설립,one-person-company,부산,BUSAN,one-person-company,CORPORATE,/부산1인법인설립,84,COVERED_NEEDS_IMPROVEMENT,/부산1인법인설립|/부산법인설립등기|/부산유한회사설립등기|/창업법무|/blog/one-person-company-establishment-checklist|/services/company-establishment,IMPROVE,,THIN_BODY
+부산 임원중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 임원 임기만료,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/부산기업법무사|/부산임원변경전문법무사|/부산기업법률자문|/부산임원사임해임등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 상호변경등기,name-change,부산,BUSAN,trade-name-change,CORPORATE,/부산상호변경등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상호변경등기|/blog/corporate-name-change-registration|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기,IMPROVE,,THIN_BODY
+부산 증자등기,paid-in-increase,부산,BUSAN,capital-increase,CORPORATE,/부산유상증자등기,81,COVERED_NEEDS_IMPROVEMENT,/부산유상증자등기|/부산감자등기|/부산무상증자등기|/부산제3자배정유상증자|/부산가수금출자전환|/부산현물출자증자,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 감자등기,capital-reduction,부산,BUSAN,capital-reduction,CORPORATE,/부산감자등기,84,COVERED_NEEDS_IMPROVEMENT,/부산감자등기|/부산상속등기|/부산상속포기|/부산한정승인|/부산법인설립등기|/부산임원변경등기,IMPROVE,,THIN_BODY
+외국인 법인설립 부산,foreign-corp,부산,BUSAN,foreign-investment,CORPORATE,/해외대표이사주주법인등기,70,COVERED_NEEDS_IMPROVEMENT,/해외대표이사주주법인등기|/부산외국인부동산등기|/부산외국인상속등기|/부산법인설립등기|/부산임원변경등기|/부산법인등기,IMPROVE,,TITLE_INTENT_WEAK|H1_INTENT_WEAK|THIN_BODY
+부산 채권추심 법무사,collection,부산,BUSAN,collection,CIVIL,/채권압류추심서류준비,70,COVERED_NEEDS_IMPROVEMENT,/채권압류추심서류준비|/부산기업채권관리|/blog/debt-collection-response-guide|/부산상속등기|/부산상속포기|/부산한정승인,IMPROVE,,TITLE_INTENT_WEAK|H1_INTENT_WEAK|THIN_BODY
+부산 상속재산 조회,estate-inquiry,부산,BUSAN,asset-debt-inquiry,INHERITANCE,/사망자재산채무조회,81,COVERED_NEEDS_IMPROVEMENT,/사망자재산채무조회|/한정승인상담|/부산진구한정승인|/부산가정법원한정승인|/situations/inheritance-unknown-debt|/situations/상속재산-조회,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 재상속 등기,re-inheritance,부산,BUSAN,re-inheritance,INHERITANCE,/부산재상속등기,80,COVERED_NEEDS_IMPROVEMENT,/부산재상속등기|/services/inheritance-registration|/업무사례/서울상속등기법무사|/업무사례/안동오래된토지상속등기|/부산상속등기|/부산상속포기,IMPROVE,,THIN_BODY|ORPHAN_RISK
+부산 상속 부동산 처분,sell-before-after,부산,BUSAN,sale-after-inheritance,INHERITANCE,/부산상속후매매등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상속후매매등기|/부산상속포기|/상속포기비용|/한정승인비용|/부산지분이전등기|/부산압류말소등기,IMPROVE,,THIN_BODY
+부산 유한회사 설립등기,llc,부산,BUSAN,llc-formation,CORPORATE,/부산유한회사설립등기,84,COVERED_NEEDS_IMPROVEMENT,/부산유한회사설립등기|/부산법인설립등기|/부산1인법인설립|/법인설립자가진단|/services/company-establishment|/법인설립등기비용,IMPROVE,,THIN_BODY
+부산 1인회사 설립,one-person-company,부산,BUSAN,one-person-company,CORPORATE,/부산1인법인설립,84,COVERED_NEEDS_IMPROVEMENT,/부산1인법인설립|/부산법인설립등기|/부산법인등기|/부산법무사|/법인설립등기비용|/부산국제금융센터법인등기,IMPROVE,,THIN_BODY
+부산 법인 임원중임,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산기업법무사|/부산법인설립등기|/부산임원변경등기|/부산법인등기|/부산개인회생,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 법인 임기만료 과태료,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/부산기업법무사|/부산임원변경전문법무사|/부산법인등기|/임원변경등기과태료,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 이사 중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/부산임원변경등기|/비영리법인임원변경등기|/부산법인등기|/부산상속법무사|/부산법인법무사,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 감사 중임등기,officer-term,부산,BUSAN,officer-term,CORPORATE,/부산임원임기만료등기,81,COVERED_NEEDS_IMPROVEMENT,/부산임원임기만료등기|/비영리법인임원변경등기|/부산임원변경등기|/부산임원변경전문법무사|/부산법인설립전문법무사|/연제구임원변경등기,IMPROVE,,H1_INTENT_WEAK|THIN_BODY
+부산 법인 상호변경,name-change,부산,BUSAN,trade-name-change,CORPORATE,/부산상호변경등기,84,COVERED_NEEDS_IMPROVEMENT,/부산상호변경등기|/부산법인법무사|/부산기업법무사|/서면법무사|/부산법인등기전문|/법인등기,IMPROVE,,THIN_BODY
+부산 법인 감자,capital-reduction,부산,BUSAN,capital-reduction,CORPORATE,/부산감자등기,84,COVERED_NEEDS_IMPROVEMENT,/부산감자등기|/부산무상증자등기|/방문없이준비하는유상증자|/situations/분류/법인-사업-운영|/부산법인설립등기|/부산임원변경등기,IMPROVE,,THIN_BODY
+수영구 개인회생 법무사,수영구-rehab,수영구,DISTRICT,local-rehab,REHABILITATION,/수영구개인회생,84,COVERED_NEEDS_IMPROVEMENT,/수영구개인회생|/수영구비영리법인설립|/상속등기필요서류|/services/cases/suyeong-company-establishment-case|/업무사례/수영구법무사|/blog/jeonse-deposit-return-certified-mail,IMPROVE,/수영구법무사,THIN_BODY

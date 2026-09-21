@@ -2265,4 +2265,22 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     focus: "사무소 위치와 등기 관할을 구분하는 확인",
     ...realEstateCase,
   },
+  {
+    slug: "부산재상속등기",
+    label: "부산 재상속 등기",
+    category: "concern",
+    serviceSlug: "inheritance-registration",
+    keywords: ["부산 재상속 등기", "재상속", "상속등기 전 상속인 사망"],
+    focus: "등기 전 상속인 사망 재상속",
+    ...inheritanceCase,
+  },
+  {
+    slug: "부산외국인상속등기",
+    label: "부산 외국인 상속등기",
+    category: "concern",
+    serviceSlug: "inheritance-registration",
+    keywords: ["외국인 상속등기", "부산 외국인 상속등기", "외국 국적 상속인"],
+    focus: "외국 국적 상속인 명의이전",
+    ...inheritanceCase,
+  },
 ];

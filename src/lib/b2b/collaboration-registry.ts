@@ -495,9 +495,18 @@ export const COLLABORATION_ACTIVE_PREFIXES = [
   "/부산신축건물보존등기",
 ] as const;
 
+function collaborationPathKey(href: string): string {
+  return href.split("?")[0].split("#")[0] || "/";
+}
+
 export function isCollaborationPath(pathname: string): boolean {
-  const path = pathname.split("?")[0].split("#")[0];
-  return COLLABORATION_ACTIVE_PREFIXES.some(
-    (prefix) => path === prefix || path.startsWith(`${prefix}/`),
+  const path = collaborationPathKey(pathname);
+  const prefixes = new Set<string>([
+    ...COLLABORATION_ACTIVE_PREFIXES,
+    ...collaborationLinks.map((link) => collaborationPathKey(link.href)),
+  ]);
+  return [...prefixes].some(
+    (prefix) =>
+      prefix !== "/" && (path === prefix || path.startsWith(`${prefix}/`)),
   );
 }
