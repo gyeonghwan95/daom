@@ -3,7 +3,7 @@
  * 「부산 상속포기 법무사」 exact-match는 이 URL만 가져간다.
  */
 export const busanRenunciationHubReviewedOn = "2026-09-20";
-export const busanRenunciationHubReviewedLabel = "2026년 9월 20일 확인";
+export const busanRenunciationHubReviewedLabel = "2026년 9월 20일";
 export const busanRenunciationHubMetaTitle =
   "부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인";
 export const busanRenunciationHubH1 =

@@ -149,6 +149,10 @@ export function PageDataTemplate({
     ? getConversionFaqsForPage(page.slug, page.path)
     : [];
   const displayFaqs = page.faqs;
+  const inheritanceOwnerIntroRemainder =
+    page.slug === "부산상속법무사" || page.slug === "부산상속포기"
+      ? page.introParagraphs.slice(2)
+      : [];
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
     conversionKey ? (
@@ -249,6 +253,19 @@ export function PageDataTemplate({
 
       <BusinessCredentialSlot path={page.path} slug={page.slug} />
 
+      {inheritanceOwnerIntroRemainder.length > 0 ? (
+        <ContentSection
+          id="inheritance-owner-guidance"
+          title={
+            page.slug === "부산상속포기"
+              ? "상속포기 판단 전에 확인할 내용"
+              : "상속 절차를 정하기 전에"
+          }
+        >
+          <ProseParagraphs paragraphs={inheritanceOwnerIntroRemainder} />
+        </ContentSection>
+      ) : null}
+
       {page.slug !== "부산상속법무사" &&
       page.slug !== "부산상속포기" &&
       page.introParagraphs.length > 1 ? (
@@ -312,11 +329,26 @@ export function PageDataTemplate({
         serviceSlug={page.serviceSlug}
       />
 
-      <ContentSection id="consultation-example" title="상담이 필요한 대표 상황">
-        <InfoCard variant="plain">
-          <h3 className="section-subheading">{page.consultationExample.title}</h3>
-          <p className="body-text mt-3">{page.consultationExample.body}</p>
-        </InfoCard>
+      <ContentSection
+        id="consultation-example"
+        title={page.consultationExamples ? "익명 상담 사례" : "상담이 필요한 대표 상황"}
+      >
+        {page.consultationExamples ? (
+          <p className="body-text mb-4 max-w-3xl">
+            개인정보를 제외해 요약한 상담 유형이며, 개별 사건의 결과를
+            보장하지 않습니다.
+          </p>
+        ) : null}
+        <div className="grid gap-4 md:grid-cols-2">
+          {(page.consultationExamples ?? [page.consultationExample]).map(
+            (example) => (
+              <InfoCard key={example.title} variant="plain">
+                <h3 className="section-subheading">{example.title}</h3>
+                <p className="body-text mt-3">{example.body}</p>
+              </InfoCard>
+            ),
+          )}
+        </div>
       </ContentSection>
 
       {conversionBlock("detail")}

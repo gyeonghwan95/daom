@@ -60,6 +60,8 @@ export type PageData = {
   consultationPoints: string[];
   faqs: PageFaqItem[];
   consultationExample: PageConsultationExample;
+  /** 대표 owner에서 함께 보여 줄 검증 가능한 익명 상담 사례 */
+  consultationExamples?: PageConsultationExample[];
   sections: PageSection[];
   primaryKeywords: string[];
   /** 내부 네비게이션 링크 (4~8개) */

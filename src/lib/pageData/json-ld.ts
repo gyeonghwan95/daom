@@ -5,6 +5,7 @@ import {
   schemaIds,
 } from "@/lib/seo/json-ld";
 import { resolveCarouselOgImage } from "@/lib/seo/carousel-images";
+import { resolveCanonicalPath } from "@/lib/seo/index-policy";
 import type { PageData, PageFaqItem } from "./types";
 
 export function mergeVisibleFaqs(
@@ -38,25 +39,27 @@ export function buildJsonLdForPageData(
   options: JsonLdOptions = {},
 ): Record<string, unknown>[] {
   const isExpertHub = page.slug === "부산법률전문가" || page.path === "/부산법률전문가";
-  const primaryImage = resolveCarouselOgImage(page.path)?.src ?? page.ogImage;
+  const canonicalPath = resolveCanonicalPath(page.path);
+  const primaryImage =
+    resolveCarouselOgImage(canonicalPath)?.src ?? page.ogImage;
   const schemas: Record<string, unknown>[] = [
     buildWebPageSchema({
       title: page.metaTitle,
       description: page.metaDescription,
-      path: page.path,
+      path: canonicalPath,
       h1: page.h1,
       image: primaryImage,
       aboutId: isExpertHub ? schemaIds.person : undefined,
     }),
   ];
   if (!isExpertHub && page.category !== "glossary") {
-    schemas.push(buildServicePageSchema(page.title, page.path));
+    schemas.push(buildServicePageSchema(page.title, canonicalPath));
   }
 
   if (page.includeFaqSchema) {
     const faqs = mergeVisibleFaqs(page.faqs, options.extraFaqs);
     if (faqs.length > 0) {
-      schemas.push(buildFaqPageSchema(faqs, page.path));
+      schemas.push(buildFaqPageSchema(faqs, canonicalPath));
     }
   }
 

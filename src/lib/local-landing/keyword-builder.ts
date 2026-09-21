@@ -7,6 +7,7 @@ import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import {
   championExtraRelatedLinks,
+  championExtraSummaryParagraphs,
   championExtraWhenNeeded,
 } from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
@@ -145,7 +146,9 @@ export function buildKeywordHubPage(
             },
           ];
 
-  const summaryParagraphs = topic.summaryParagraphs;
+  const summaryParagraphs = isInheritanceChampion
+    ? [...topic.summaryParagraphs, ...championExtraSummaryParagraphs]
+    : topic.summaryParagraphs;
   const whenNeeded = isInheritanceChampion
     ? [...topic.whenNeeded, ...championExtraWhenNeeded]
     : topic.whenNeeded;
@@ -164,6 +167,15 @@ export function buildKeywordHubPage(
         { href: "/부산사업목적변경등기", label: "사업목적 변경등기" },
       ]
     : [];
+  const renunciationOwnerLink =
+    config.serviceSlug === "inheritance-renunciation"
+      ? [
+          {
+            href: "/부산상속포기",
+            label: "부산 전체 상속포기 기한·후순위 안내",
+          },
+        ]
+      : [];
 
   const championPrimaryLinks = [
     { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
@@ -180,6 +192,7 @@ export function buildKeywordHubPage(
     ? championPrimaryLinks
     : [
         ...topic.relatedServiceLinks,
+        ...renunciationOwnerLink,
         ...corporateLegalExtraLinks,
         ...topic.relatedFaqLinks,
         ...topic.relatedCaseLinks,

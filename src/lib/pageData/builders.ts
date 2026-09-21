@@ -193,6 +193,10 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
     {
       title: "비용 안내",
       body: page.costGuide,
+      links:
+        page.slug === "부산상속포기"
+          ? [{ href: "/상속포기비용", label: "상속포기 비용 구성 확인" }]
+          : undefined,
     },
     {
       title: "관할·접근 안내",
@@ -609,13 +613,22 @@ export function buildPageDataFromLocalLanding(
       title: page.consultationCase.title,
       body: page.consultationCase.summary,
     },
+    consultationExamples:
+      page.slug === "부산상속법무사" || page.slug === "부산상속포기"
+        ? page.consultationCases.map((caseItem) => ({
+            title: caseItem.title,
+            body: caseItem.summary,
+          }))
+        : undefined,
     internalLinks: [
       ...page.relatedServiceLinks,
       ...page.relatedRegionLinks,
       ...page.relatedBlogHrefs,
-      ...(page.consultationCase.href
-        ? [{ href: page.consultationCase.href, label: "관련 사례 보기" }]
-        : []),
+      ...page.consultationCases.flatMap((caseItem) =>
+        caseItem.href
+          ? [{ href: caseItem.href, label: `${caseItem.title} 자세히 보기` }]
+          : [],
+      ),
     ],
     sections: extraSections,
     primaryKeywords,

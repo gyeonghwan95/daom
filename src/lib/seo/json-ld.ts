@@ -3,6 +3,7 @@ import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_LAWYER_GUIDE_PATH, BUSAN_RENUNCIATION
 import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
 import { busanRenunciationHubReviewedOn } from "@/lib/local-landing/renunciation-hub-identity";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
+import { resolveCanonicalPath } from "@/lib/seo/index-policy";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
 import { getContactInfo, getNaverReservationUrl } from "@/lib/contact";
@@ -18,6 +19,10 @@ import {
 import { siteImages } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 import { siteSitelinkItems } from "@/lib/navigation";
+
+function getResolvedCanonicalUrl(path: string): string {
+  return getCanonicalUrl(resolveCanonicalPath(path));
+}
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import type { FaqItem } from "@/lib/faq-data";
 import type { ServiceFaq } from "@/types/service";
@@ -265,7 +270,7 @@ export function buildWebPageSchema(input: {
   /** 기본 LegalService. 전문가 허브는 화면에 있는 인물(Person)을 about으로 둔다. */
   aboutId?: string;
 }): SchemaObject {
-  const canonical = getCanonicalUrl(input.path);
+  const canonical = getResolvedCanonicalUrl(input.path);
   const related = getInflowItemsForPath(input.path);
   const significant =
     related.length > 0
@@ -334,7 +339,7 @@ export function buildBreadcrumbSchema(
   items: BreadcrumbItem[],
   currentPath: string,
 ): SchemaObject {
-  const canonical = getCanonicalUrl(currentPath);
+  const canonical = getResolvedCanonicalUrl(currentPath);
 
   return compact({
     "@context": "https://schema.org",
@@ -361,7 +366,7 @@ export function buildFaqPageSchema(faqs: FaqInput[], path?: string): SchemaObjec
   return compact({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    ...(path ? { "@id": `${getCanonicalUrl(path)}#faq` } : {}),
+    ...(path ? { "@id": `${getResolvedCanonicalUrl(path)}#faq` } : {}),
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -423,7 +428,7 @@ export function buildArticleListSchema(posts: ContentMeta[]): SchemaObject {
 }
 
 export function buildServicePageSchema(serviceName: string, path: string): SchemaObject {
-  const canonical = getCanonicalUrl(path);
+  const canonical = getResolvedCanonicalUrl(path);
   return compact({
     "@context": "https://schema.org",
     "@type": "Service",

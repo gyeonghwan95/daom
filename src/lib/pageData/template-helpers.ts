@@ -148,6 +148,7 @@ export type CreatePageDataInput = {
   consultationPoints?: string[];
   faqs?: PageFaqItem[];
   consultationExample?: PageConsultationExample;
+  consultationExamples?: PageConsultationExample[];
   internalLinks?: PageRelatedLink[];
   sections?: PageSection[];
   primaryKeywords: string[];
@@ -244,6 +245,7 @@ export function createPageData(input: CreatePageDataInput): PageData {
     faqs,
     consultationExample:
       input.consultationExample ?? defaultConsultationExample(input.title),
+    consultationExamples: input.consultationExamples,
     sections: input.sections ?? [],
     primaryKeywords: input.primaryKeywords,
     internalLinks,

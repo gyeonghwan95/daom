@@ -4,80 +4,36 @@
   "champion": {
     "path": "/부산상속법무사",
     "role": "INHERITANCE_CHAMPION",
-    "title": "부산 상속 법무사｜상속등기·상속포기·한정승인 중 무엇이 필요할까",
+    "title": "부산 상속 법무사 | 등기·포기·한정승인 먼저 확인",
     "h1": "부산 상속 법무사, 등기·포기·한정승인 중 무엇부터 볼까",
     "description": "부모님 사망 후 상속등기·상속포기·한정승인 중 어떤 절차가 필요한지 안내합니다. 3개월 기한과 채무 조사를 먼저 확인한 뒤 등기·협의로 이어갈 수 있습니다.",
-    "first300": "부산에서 상속 법무사를 찾는 이유는 대개 부모님 명의 아파트·토지·예금을 정리해야 하기 때문입니다. 그런데 상속등기만 생각하다가 모르는 채무로 단순승인해 버리면 나중에 변제 책임이 생길 수 있습니다. 반대로 상속포기를 서두르다가 남겨 둘 재산과 유류분·협의 문제를 놓치기도 합니다. 검색어에 ‘상속전문’이 붙는 경우도 많지만, 이 페이지는 입증하기 어려운 전문 표방 대신 상속등기·포기·한정승인을 어떻게 고를지에 집중합니다. 가족관계·등기부·금융 채무를 함께 보며 어떤 조합이 맞는지 정리하고, 등기 실무는 부산 상속등기, 채무 한도 절",
-    "bodyChars": 3159,
-    "faqCount": 19,
+    "first300": "부산에서 상속 법무사를 찾는 이유는 대개 부모님 명의 아파트·토지·예금을 정리해야 하기 때문입니다. 이 페이지는 상속등기·상속포기·한정승인 중 무엇을 볼지부터 가릅니다. 포기·한정승인의 기한·가족관계 상세는 각 절차 안내로 이어집니다. 다옴법무사사무소는 해운대 센텀에 있으며 안윤정 법무사가 상담합니다. 실제 결과는 개별 사정에 따라 달라질 수 있습니다. 가족이 사망하면 부동산 명의를 바로 이전하는 상속등기만 생각하면 안 됩니다. 채무가 있는지, 상속을 받을지, 재산 한도로만 받을지에 따라 상속포기나 한정승인을 먼저 봐야 할 수 있습",
+    "bodyChars": 1525,
+    "faqCount": 12,
     "outbound": [
-      "/부모님사망후해야할일",
-      "/장례후재산채무정리",
-      "/부모빚상속방법",
-      "/방문없이준비하는상속등기",
-      "/연락두절상속인",
-      "/미성년상속인",
-      "/해외거주상속인",
       "/부산상속등기",
       "/부산한정승인",
       "/부산상속포기",
       "/상속",
-      "/상속상담전준비서류와비용",
-      "/contact/inquiry?field=inheritance-registration",
-      "/부산상속재산분할법무사",
-      "/glossary/subrogation-inheritance",
-      "/부산상속후매매등기",
-      "/faq/what-is-inheritance-renunciation",
-      "/faq/what-is-qualified-acceptance",
-      "/faq/when-to-file-inheritance-registration",
-      "/services/cases/haeundae-inheritance-registration-case",
-      "/services/cases/dongnae-qualified-acceptance-consultation",
-      "/재혼가정상속",
-      "/미성년상속인",
-      "/연락두절상속인",
-      "/해외거주상속인",
-      "/오래된상속토지정리",
-      "/situations/inheritance-unknown-debt"
+      "/contact/inquiry?field=inheritance-registration"
     ]
   },
   "corePages": [
     {
       "path": "/부산상속법무사",
       "role": "INHERITANCE_CHAMPION",
-      "title": "부산 상속 법무사｜상속등기·상속포기·한정승인 중 무엇이 필요할까",
+      "title": "부산 상속 법무사 | 등기·포기·한정승인 먼저 확인",
       "h1": "부산 상속 법무사, 등기·포기·한정승인 중 무엇부터 볼까",
       "description": "부모님 사망 후 상속등기·상속포기·한정승인 중 어떤 절차가 필요한지 안내합니다. 3개월 기한과 채무 조사를 먼저 확인한 뒤 등기·협의로 이어갈 수 있습니다.",
-      "first300": "부산에서 상속 법무사를 찾는 이유는 대개 부모님 명의 아파트·토지·예금을 정리해야 하기 때문입니다. 그런데 상속등기만 생각하다가 모르는 채무로 단순승인해 버리면 나중에 변제 책임이 생길 수 있습니다. 반대로 상속포기를 서두르다가 남겨 둘 재산과 유류분·협의 문제를 놓치기도 합니다. 검색어에 ‘상속전문’이 붙는 경우도 많지만, 이 페이지는 입증하기 어려운 전문 표방 대신 상속등기·포기·한정승인을 어떻게 고를지에 집중합니다. 가족관계·등기부·금융 채무를 함께 보며 어떤 조합이 맞는지 정리하고, 등기 실무는 부산 상속등기, 채무 한도 절",
-      "bodyChars": 3159,
-      "faqCount": 19,
+      "first300": "부산에서 상속 법무사를 찾는 이유는 대개 부모님 명의 아파트·토지·예금을 정리해야 하기 때문입니다. 이 페이지는 상속등기·상속포기·한정승인 중 무엇을 볼지부터 가릅니다. 포기·한정승인의 기한·가족관계 상세는 각 절차 안내로 이어집니다. 다옴법무사사무소는 해운대 센텀에 있으며 안윤정 법무사가 상담합니다. 실제 결과는 개별 사정에 따라 달라질 수 있습니다. 가족이 사망하면 부동산 명의를 바로 이전하는 상속등기만 생각하면 안 됩니다. 채무가 있는지, 상속을 받을지, 재산 한도로만 받을지에 따라 상속포기나 한정승인을 먼저 봐야 할 수 있습",
+      "bodyChars": 1525,
+      "faqCount": 12,
       "outbound": [
-        "/부모님사망후해야할일",
-        "/장례후재산채무정리",
-        "/부모빚상속방법",
-        "/방문없이준비하는상속등기",
-        "/연락두절상속인",
-        "/미성년상속인",
-        "/해외거주상속인",
         "/부산상속등기",
         "/부산한정승인",
         "/부산상속포기",
         "/상속",
-        "/상속상담전준비서류와비용",
-        "/contact/inquiry?field=inheritance-registration",
-        "/부산상속재산분할법무사",
-        "/glossary/subrogation-inheritance",
-        "/부산상속후매매등기",
-        "/faq/what-is-inheritance-renunciation",
-        "/faq/what-is-qualified-acceptance",
-        "/faq/when-to-file-inheritance-registration",
-        "/services/cases/haeundae-inheritance-registration-case",
-        "/services/cases/dongnae-qualified-acceptance-consultation",
-        "/재혼가정상속",
-        "/미성년상속인",
-        "/연락두절상속인",
-        "/해외거주상속인",
-        "/오래된상속토지정리",
-        "/situations/inheritance-unknown-debt"
+        "/contact/inquiry?field=inheritance-registration"
       ]
     },
     {
@@ -547,47 +503,47 @@
     {
       "urlA": "/부산상속법무사",
       "urlB": "/부산상속등기",
-      "titleSimilarity": 20,
+      "titleSimilarity": 12.5,
       "h1Similarity": 15.4,
-      "first300Similarity": 12.2,
+      "first300Similarity": 9.7,
       "cannibalizationRisk": "낮음",
-      "score": 15.8
+      "score": 12.5
     },
     {
       "urlA": "/부산상속법무사",
       "urlB": "/부산상속포기",
-      "titleSimilarity": 37.5,
+      "titleSimilarity": 22.2,
       "h1Similarity": 11.1,
-      "first300Similarity": 0,
+      "first300Similarity": 1.6,
       "cannibalizationRisk": "낮음",
-      "score": 16.2
+      "score": 11.6
     },
     {
       "urlA": "/부산상속법무사",
       "urlB": "/부산한정승인",
       "titleSimilarity": 37.5,
       "h1Similarity": 25,
-      "first300Similarity": 0,
+      "first300Similarity": 1.6,
       "cannibalizationRisk": "낮음",
-      "score": 20.8
+      "score": 21.4
     },
     {
       "urlA": "/부산상속법무사",
       "urlB": "/부산상속전문법무사",
-      "titleSimilarity": 25,
+      "titleSimilarity": 50,
       "h1Similarity": 25,
-      "first300Similarity": 2.7,
+      "first300Similarity": 0,
       "cannibalizationRisk": "낮음",
-      "score": 17.6
+      "score": 25
     },
     {
       "urlA": "/부산상속법무사",
       "urlB": "/부산법무사",
       "titleSimilarity": 25,
       "h1Similarity": 25,
-      "first300Similarity": 1.4,
+      "first300Similarity": 0,
       "cannibalizationRisk": "낮음",
-      "score": 17.1
+      "score": 16.7
     },
     {
       "urlA": "/부산상속등기",

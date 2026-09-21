@@ -1,9 +1,10 @@
 {
   "summary": {
-    "generatedAt": "2026-08-13T10:52:50.249Z",
+    "generatedAt": "2026-09-21T06:58:00.497Z",
     "trendData": "TREND_DATA_UNAVAILABLE",
     "queryCount": 38,
     "highCannibalization": [
+      "부산 법무사 상담",
       "부산 파산"
     ],
     "watch": [
@@ -46,14 +47,14 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 75,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 75,
           "role": "competing"
         },
         {
@@ -70,14 +71,14 @@
         },
         {
           "url": "/부산법무사",
-          "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
-          "titleRelevance": 75,
+          "title": "부산에서 법무사를 찾을 때 먼저 확인할 기준",
+          "titleRelevance": 50,
           "role": "supporting"
         },
         {
           "url": "/contact",
-          "title": "부산 법무사 상담 문의",
-          "titleRelevance": 75,
+          "title": "상담 문의",
+          "titleRelevance": 25,
           "role": "competing"
         }
       ],
@@ -96,14 +97,14 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 67,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 67,
           "role": "competing"
         },
         {
@@ -128,30 +129,32 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 67,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 100,
           "role": "competing"
         },
         {
           "url": "/무슨법률업무인지모를때",
-          "title": "무슨 법률 업무인지 몰라도 괜찮습니다",
-          "titleRelevance": 33,
+          "title": "어떤 법무사 업무인지 모르겠다면, 상황부터 설명해도 괜찮습니다",
+          "titleRelevance": 0,
           "role": "supporting"
         },
         {
           "url": "/부산법무사",
-          "title": "부산 법무사 상담, 어떤 업무를 맡길 수 있을까요?",
-          "titleRelevance": 67,
+          "title": "부산에서 법무사를 찾을 때 먼저 확인할 기준",
+          "titleRelevance": 33,
           "role": "competing"
         }
       ],
-      "competingTitleRisk": [],
+      "competingTitleRisk": [
+        "/부산법률상담"
+      ],
       "conflictsWithGeneralChampion": false
     },
     {
@@ -166,35 +169,43 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 50,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 100,
           "role": "competing"
         }
       ],
-      "competingTitleRisk": [],
+      "competingTitleRisk": [
+        "/부산법률상담"
+      ],
       "conflictsWithGeneralChampion": false
     },
     {
       "query": "부산 법무사 상담",
       "cluster": "legal-consultation",
-      "intent": "consult-prep-channel-scope",
+      "intent": "city-wide-consultation",
       "primaryChampion": "/부산법무사상담",
       "coverage": "strong",
-      "cannibalization": "low",
+      "cannibalization": "high",
       "action": "STRENGTHEN_EXISTING",
       "rankingObservation": "UNKNOWN_PERFORMANCE",
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 100,
           "role": "primary"
+        },
+        {
+          "url": "/",
+          "title": "부산 법무사 안윤정",
+          "titleRelevance": 67,
+          "role": "supporting"
         },
         {
           "url": "/법무사상담전준비",
@@ -210,19 +221,25 @@
         },
         {
           "url": "/contact",
-          "title": "부산 법무사 상담 문의",
+          "title": "상담 문의",
+          "titleRelevance": 33,
+          "role": "competing"
+        },
+        {
+          "url": "/부산역법무사",
+          "title": "부산역 법무사 — 동구·초량동 등기·채권 상담",
           "titleRelevance": 100,
-          "role": "supporting"
+          "role": "competing"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 67,
           "role": "competing"
         }
       ],
       "competingTitleRisk": [
-        "/contact"
+        "/부산역법무사"
       ],
       "conflictsWithGeneralChampion": false
     },
@@ -238,14 +255,14 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 100,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 67,
           "role": "supporting"
         }
       ],
@@ -264,14 +281,14 @@
       "candidates": [
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 67,
           "role": "primary"
         },
         {
           "url": "/부산법률상담",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산에서 법률상담을 찾을 때 확인할 곳",
+          "titleRelevance": 67,
           "role": "supporting"
         },
         {
@@ -302,8 +319,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 100,
           "role": "primary"
         },
         {
@@ -319,21 +336,21 @@
           "role": "supporting"
         },
         {
-          "url": "/전세사기예방교육",
-          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
-          "titleRelevance": 100,
-          "role": "competing"
-        },
-        {
           "url": "/민사소송",
           "title": "부산 지급명령·소장·가압류·가처분 상담",
           "titleRelevance": 50,
           "role": "supporting"
         },
         {
+          "url": "/전세사기예방교육",
+          "title": "부산 전세사기 예방교육｜계약 전 확인부터 보증금 보호까지",
+          "titleRelevance": 100,
+          "role": "competing"
+        },
+        {
           "url": "/부산전세전문법무사",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세전문 법무사 — 확정일자·전세권·임차권 갈림길",
+          "titleRelevance": 50,
           "role": "competing"
         }
       ],
@@ -354,8 +371,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -372,8 +389,8 @@
         },
         {
           "url": "/부산전세전문법무사",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세전문 법무사 — 확정일자·전세권·임차권 갈림길",
+          "titleRelevance": 67,
           "role": "competing"
         }
       ],
@@ -392,13 +409,13 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 50,
           "role": "primary"
         },
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 75,
           "role": "supporting"
         },
@@ -430,8 +447,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -442,7 +459,7 @@
         },
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 67,
           "role": "supporting"
         },
@@ -468,8 +485,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -500,8 +517,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -532,8 +549,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -564,8 +581,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 67,
           "role": "primary"
         },
         {
@@ -596,8 +613,8 @@
       "candidates": [
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 33,
           "role": "primary"
         },
         {
@@ -628,8 +645,8 @@
         },
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 50,
           "role": "competing"
         },
         {
@@ -660,8 +677,8 @@
         },
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 50,
           "role": "supporting"
         }
       ],
@@ -686,8 +703,8 @@
         },
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 100,
           "role": "competing"
         },
         {
@@ -697,7 +714,9 @@
           "role": "supporting"
         }
       ],
-      "competingTitleRisk": [],
+      "competingTitleRisk": [
+        "/전세사기피해대응절차"
+      ],
       "conflictsWithGeneralChampion": false
     },
     {
@@ -718,12 +737,14 @@
         },
         {
           "url": "/전세사기피해대응절차",
-          "title": "",
-          "titleRelevance": 0,
+          "title": "부산 전세사기·전세보증금 미반환, 지금 무엇부터 해야 할까요?",
+          "titleRelevance": 100,
           "role": "supporting"
         }
       ],
-      "competingTitleRisk": [],
+      "competingTitleRisk": [
+        "/전세사기피해대응절차"
+      ],
       "conflictsWithGeneralChampion": false
     },
     {
@@ -762,7 +783,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 0,
           "role": "competing"
         }
@@ -852,7 +873,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 67,
           "role": "competing"
         },
@@ -986,7 +1007,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 0,
           "role": "competing"
         },
@@ -1036,7 +1057,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 100,
           "role": "competing"
         },
@@ -1064,7 +1085,7 @@
       "candidates": [
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 100,
           "role": "primary"
         },
@@ -1104,7 +1125,7 @@
         },
         {
           "url": "/부산법무사상담",
-          "title": "부산 법무사 상담 전 무엇을 준비해야 할까요?",
+          "title": "부산 법무사 상담, 현재 상황부터 알려주세요",
           "titleRelevance": 67,
           "role": "supporting"
         }
@@ -1230,7 +1251,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 67,
           "role": "competing"
         }
@@ -1256,7 +1277,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 67,
           "role": "supporting"
         }
@@ -1282,7 +1303,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 67,
           "role": "supporting"
         }
@@ -1308,7 +1329,7 @@
         },
         {
           "url": "/부산개인회생법무사",
-          "title": "부산 개인회생 법무사 — 상담 전 확인 가이드",
+          "title": "부산 개인회생 법무사, 소득·채무·재산으로 신청 가능성 보기",
           "titleRelevance": 67,
           "role": "supporting"
         },

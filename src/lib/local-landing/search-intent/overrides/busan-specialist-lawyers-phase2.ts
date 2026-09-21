@@ -371,7 +371,7 @@ export const 부산상속포기전문법무사Override = createSpecialistPage({
   relatedServiceLinks: [
     { href: "/부산상속포기", label: "부산 상속포기 — 절차 대표 안내" },
     { href: "/부산한정승인", label: "부산 한정승인" },
-    { href: "/부산한정승인전문법무사", label: "부산 한정승인전문 법무사" },
+    { href: "/부산한정승인", label: "부산 한정승인 절차 안내" },
     { href: "/부산상속법무사", label: "부산 상속 법무사" },
   ],
   bottomCtaText:

@@ -16,7 +16,7 @@ import {
 
 /**
  * `/부산상속포기` — 「부산 상속포기 법무사」 대표 (한정승인·등기와 의도 분리).
- * title/H1 고정. 검토일: 2026-08-18
+ * title/H1 고정. 검토일은 renunciation-hub-identity.ts에서 관리한다.
  */
 export {
   busanRenunciationHubDescription,
@@ -205,7 +205,13 @@ export function buildBusanInheritanceRenunciationPage(
           "기한이 며칠 남았는지 표시",
           "이미 지났다면 특별한정승인 안내도 함께 확인",
         ],
-        links: [{ href: "/특별한정승인", label: "특별한정승인 안내" }],
+        links: [
+          {
+            href: "/tools/inheritance-renunciation-deadline",
+            label: "상속포기 3개월 기한 확인 도구",
+          },
+          { href: "/특별한정승인", label: "특별한정승인 안내" },
+        ],
       },
       {
         title: "가족 구성에 따라 누가 포기하면 어떻게 되나요",
@@ -250,12 +256,11 @@ export function buildBusanInheritanceRenunciationPage(
           "사망일·상속인·확인된 채무만 있어도 1차 확인 가능",
           "관할은 피상속인 최후 주소지 등을 기준으로 확인",
         ],
-      },
-      {
-        title: "비용이 달라지는 요소",
-        body: "상속포기 비용은 부동산 취득세·등기신청수수료 구조가 아닙니다. 가정법원 실비, 법무사 보수, 증명서·우편, 신청인 수, 미성년·해외·특별대리 등 추가 업무에 따라 달라집니다. 상세 항목은 상속포기 비용 안내에서 이어집니다.",
         links: [
-          { href: "/상속포기비용", label: "상속포기 비용 구성" },
+          {
+            href: "/부산가정법원상속포기",
+            label: "부산가정법원 상속포기 관할·접수 안내",
+          },
         ],
       },
     ],
@@ -263,6 +268,8 @@ export function buildBusanInheritanceRenunciationPage(
       { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택" },
       { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
       { href: "/상속포기비용", label: "상속포기 비용이 궁금할 때" },
+      { href: "/tools/inheritance-renunciation-deadline", label: "3개월 기한 확인 도구" },
+      { href: "/부산가정법원상속포기", label: "부산가정법원 관할·접수 안내" },
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 3개월 기한·가족관계 확인" },

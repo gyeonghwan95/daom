@@ -123,7 +123,7 @@ export const 부산상속전문법무사Override: SearchIntentContent = {
     { href: "/부산상속등기", label: "부산 상속등기 — 등기 실무" },
     { href: "/부산한정승인", label: "부산 한정승인" },
     { href: "/부산상속포기", label: "부산 상속포기" },
-    { href: "/부산한정승인전문법무사", label: "부산 한정승인전문 법무사" },
+    { href: "/부산한정승인", label: "한정승인 절차와 준비서류" },
     { href: "/부산법무사", label: "부산에서 법무사 찾는 기준" },
     { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
   ],

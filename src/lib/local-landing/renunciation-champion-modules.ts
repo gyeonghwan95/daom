@@ -3,13 +3,14 @@
  * Target: 부산 상속포기 법무사
  * - title/H1/meta 변경 없음
  * - 기존 문단·FAQ 삭제 없음 (추가만)
- * 검토일: 2026-08-10
+ * 검토일은 renunciation-hub-identity.ts에서 관리한다.
  */
 import type { ServiceFaq } from "@/types/service";
+import { busanRenunciationHubReviewedLabel } from "./renunciation-hub-identity";
 
 export const renunciationChampionExtraSummaryParagraphs: string[] = [
   "상속포기를 준비할 때는 ①상속 개시를 안 날부터의 3개월 기한 ②상속순위와 후순위 영향 ③배우자·자녀·손자녀 관계 ④포기 전 재산 처분·인출 여부 ⑤한정승인과 비교를 먼저 확인하는 것이 안전합니다.",
-  "가정법원 신고 후에는 보정·심판 안내를 받게 될 수 있으며, 다른 상속인의 등기·협의와 일정이 겹칠 수 있습니다. 해운대·센텀 다옴법무사사무소 안윤정 법무사가 직접 상담합니다. 작성·검토: 안윤정 법무사(다옴법무사사무소). 최종확인일 2026년 8월 18일.",
+  `가정법원 신고 후에는 보정·심판 안내를 받게 될 수 있으며, 다른 상속인의 등기·협의와 일정이 겹칠 수 있습니다. 해운대·센텀 다옴법무사사무소 안윤정 법무사가 직접 상담합니다. 작성·검토: 안윤정 법무사(다옴법무사사무소). 최종확인일 ${busanRenunciationHubReviewedLabel}.`,
 ];
 
 export const renunciationChampionExtraWhenNeeded: string[] = [
