@@ -6,6 +6,7 @@ import { districtProfiles } from "./districts";
 import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing";
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import {
+  busanInheritanceHubReviewedLabel,
   championExtraRelatedLinks,
   championExtraSummaryParagraphs,
   championExtraWhenNeeded,
@@ -200,7 +201,7 @@ export function buildKeywordHubPage(
       ];
 
   const lawyerOpinion = isInheritanceChampion
-    ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 2026-09-20.`
+    ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 ${busanInheritanceHubReviewedLabel}.`
     : isRegistryHub
       ? `${lawyerProfileMeta.fullTitle}는 해운대·센텀에서 부동산·상속·법인등기를 직접 상담·진행합니다. 등기 종류가 같아도 등기부 상태에 따라 순서가 달라질 수 있어, 계약서나 현황을 확인한 뒤 지금 필요한 등기부터 안내합니다.`
       : buildLawyerOpinion(config.regionLabel, topic.title);
@@ -262,6 +263,33 @@ export function buildKeywordHubPage(
               { href: "/부산상속포기", label: "채무가 많을 때 상속포기" },
               { href: "/부산한정승인", label: "한정승인 안내" },
               { href: "/특별한정승인", label: "특별한정승인 안내" },
+            ],
+          },
+          {
+            title: "상속상담 전 체크표",
+            body: "등기·포기·한정승인을 가르기 전에, 아래만 적어도 상담에서 1차 순서를 정할 수 있습니다. 서류가 모두 없어도 빈칸으로 남겨 두시면 됩니다.",
+            items: [
+              "사망일 / 상속 사실을 안 날",
+              "배우자·자녀·대습 여부",
+              "알고 있는 부동산·예금",
+              "알고 있는 대출·보증·세금",
+              "이미 한 인출·처분",
+              "3개월이 임박했는지",
+              "미성년·해외·연락두절 상속인",
+            ],
+          },
+          {
+            title: "상속인·재산·채무 확인표",
+            body: "한 장에 사람을 적고, 재산과 채무를 나눠 적으면 ‘지금 등기인지, 승인 방식인지’가 갈립니다. 상세 신고 서류는 해당 절차 안내에서 이어집니다.",
+            items: [
+              "사람: 배우자 / 자녀 / 그 외 친족",
+              "재산: 부동산 주소 / 예금·보험 유무",
+              "채무: 대출 / 보증 / 세금 통지",
+              "창구: 등기소(명의이전) / 가정법원(포기·한정)",
+            ],
+            links: [
+              { href: "/사망자재산채무조회", label: "재산·채무 조회 안내" },
+              { href: "/부산상속등기", label: "명의이전이 필요할 때" },
             ],
           },
           {

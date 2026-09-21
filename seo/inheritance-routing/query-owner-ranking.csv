@@ -1,0 +1,81 @@
+query,rank,path,score,expectedOwner,isOwner,reasons
+부산 상속 법무사,1,/부산상속법무사,330.44,/부산상속법무사,yes,title=100.0 h1=78.0 lead=18.0 body=10.5 exactIn=505 inLinks=536 purpose=22
+부산 상속 법무사,2,/상속등기필요서류,76.91,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=127 purpose=-4
+부산 상속 법무사,3,/상속등기기간,76.51,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=115 purpose=-4
+부산 상속 법무사,4,/부산상속법무사추천,76.09,/부산상속법무사,no,title=30.0 h1=30.0 lead=-6.0 body=-3.5 exactIn=2 inLinks=2 purpose=-4
+부산 상속 법무사,5,/상속등기비용,75.36,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=3.5 exactIn=0 inLinks=174 purpose=-4
+부산 상속 법무사,6,/부산상속재산분할법무사,73.37,/부산상속법무사,no,title=18.0 h1=12.0 lead=18.0 body=6.3 exactIn=0 inLinks=129 purpose=-4
+부산 상속 법무사,7,/부산상속포기,69.93,/부산상속법무사,no,title=26.0 h1=26.0 lead=18.0 body=6.3 exactIn=0 inLinks=222 purpose=-32
+부산 상속 법무사,8,/업무사례/서울상속등기법무사,62.83,/부산상속법무사,no,title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=16 purpose=-4
+부산 상속 법무사,9,/업무사례/경남상속등기법무사,62.59,/부산상속법무사,no,title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=15 purpose=-4
+부산 상속 법무사,10,/업무사례/지역별상속등기법무사,62.15,/부산상속법무사,no,title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=212 purpose=-4
+부산 상속전문 법무사,1,/부산상속법무사,119.14,/부산상속법무사,yes,title=24.0 h1=24.0 lead=12.0 body=8.4 exactIn=0 inLinks=536 purpose=22
+부산 상속전문 법무사,2,/부산소유권이전전문법무사,90.17,/부산상속법무사,no,title=28.0 h1=28.0 lead=28.0 body=9.8 exactIn=0 inLinks=1 purpose=-4
+부산 상속전문 법무사,3,/상속등기필요서류,55.61,/부산상속법무사,no,title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=127 purpose=-4
+부산 상속전문 법무사,4,/상속등기기간,55.21,/부산상속법무사,no,title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=115 purpose=-4
+부산 상속전문 법무사,5,/상속등기비용,54.06,/부산상속법무사,no,title=12.0 h1=12.0 lead=12.0 body=1.4 exactIn=0 inLinks=174 purpose=-4
+부산 상속전문 법무사,6,/부산상속재산분할법무사,52.07,/부산상속법무사,no,title=12.0 h1=6.0 lead=12.0 body=4.2 exactIn=0 inLinks=129 purpose=-4
+부산 상속전문 법무사,7,/부산상속포기,48.63,/부산상속법무사,no,title=20.0 h1=20.0 lead=12.0 body=4.2 exactIn=0 inLinks=222 purpose=-32
+부산 상속전문 법무사,8,/업무사례/서울상속등기법무사,41.53,/부산상속법무사,no,title=6.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=16 purpose=-4
+부산 상속전문 법무사,9,/업무사례/경남상속등기법무사,41.29,/부산상속법무사,no,title=6.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=15 purpose=-4
+부산 상속전문 법무사,10,/업무사례/지역별상속등기법무사,40.85,/부산상속법무사,no,title=6.0 h1=0.0 lead=12.0 body=4.2 exactIn=0 inLinks=212 purpose=-4
+부산상속전문법무사,1,/부산상속법무사,89.74,/부산상속법무사,yes,title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=536 purpose=22
+부산상속전문법무사,2,/부산소유권이전전문법무사,47.57,/부산상속법무사,no,title=16.0 h1=16.0 lead=16.0 body=5.6 exactIn=0 inLinks=1 purpose=-4
+부산상속전문법무사,3,/업무사례/지역별상속등기법무사,17.45,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=212 purpose=-4
+부산상속전문법무사,4,/업무사례/전국상속등기법무사,16.68,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=175 purpose=-4
+부산상속전문법무사,5,/부산상속재산분할법무사,15.47,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=129 purpose=-4
+부산상속전문법무사,6,/상속등기필요서류,15.41,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=127 purpose=-4
+부산상속전문법무사,7,/상속등기기간,15.01,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=115 purpose=-4
+부산상속전문법무사,8,/상속등기비용,13.86,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=-2.8 exactIn=0 inLinks=174 purpose=-4
+부산상속전문법무사,9,/부산소유권이전등기,13.42,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=574 purpose=-4
+부산상속전문법무사,10,/업무사례/전국상속부동산일괄등기,12.76,/부산상속법무사,no,title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=65 purpose=-4
+부산 법무사 상속,1,/부산상속법무사,140.44,/부산상속법무사,yes,title=30.0 h1=30.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=22
+부산 법무사 상속,2,/상속등기필요서류,76.91,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=127 purpose=-4
+부산 법무사 상속,3,/상속등기기간,76.51,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=115 purpose=-4
+부산 법무사 상속,4,/상속등기비용,75.36,/부산상속법무사,no,title=18.0 h1=18.0 lead=18.0 body=3.5 exactIn=0 inLinks=174 purpose=-4
+부산 법무사 상속,5,/부산상속재산분할법무사,73.37,/부산상속법무사,no,title=18.0 h1=12.0 lead=18.0 body=6.3 exactIn=0 inLinks=129 purpose=-4
+부산 법무사 상속,6,/부산상속포기,69.93,/부산상속법무사,no,title=26.0 h1=26.0 lead=18.0 body=6.3 exactIn=0 inLinks=222 purpose=-32
+부산 법무사 상속,7,/업무사례/서울상속등기법무사,62.83,/부산상속법무사,no,title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=16 purpose=-4
+부산 법무사 상속,8,/업무사례/경남상속등기법무사,62.59,/부산상속법무사,no,title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=15 purpose=-4
+부산 법무사 상속,9,/업무사례/지역별상속등기법무사,62.15,/부산상속법무사,no,title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=212 purpose=-4
+부산 법무사 상속,10,/업무사례/전국상속등기법무사,61.38,/부산상속법무사,no,title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=175 purpose=-4
+부산 상속포기 법무사,1,/부산상속포기,368.13,/부산상속포기,yes,title=118.0 h1=96.0 lead=82.0 body=16.1 exactIn=0 inLinks=222 purpose=26
+부산 상속포기 법무사,2,/상속포기비용,136.63,/부산상속포기,no,title=36.0 h1=36.0 lead=30.0 body=7.7 exactIn=0 inLinks=92 purpose=4
+부산 상속포기 법무사,3,/상속포기필요서류,117.41,/부산상속포기,no,title=30.0 h1=24.0 lead=30.0 body=10.5 exactIn=0 inLinks=33 purpose=4
+부산 상속포기 법무사,4,/부산가정법원상속포기,116.03,/부산상속포기,no,title=30.0 h1=30.0 lead=24.0 body=7.7 exactIn=0 inLinks=35 purpose=4
+부산 상속포기 법무사,5,/상속포기자가진단,114.66,/부산상속포기,no,title=30.0 h1=30.0 lead=30.0 body=5.6 exactIn=0 inLinks=12 purpose=4
+부산 상속포기 법무사,6,/부산진구상속포기,107.70,/부산상속포기,no,title=36.0 h1=30.0 lead=24.0 body=7.7 exactIn=0 inLinks=0 purpose=4
+부산 상속포기 법무사,7,/services/cases/jaesong-inheritance-renunciation-consultation,104.25,/부산상속포기,no,title=30.0 h1=24.0 lead=24.0 body=10.5 exactIn=0 inLinks=41 purpose=-4
+부산 상속포기 법무사,8,/services/inheritance-renunciation,100.60,/부산상속포기,no,title=30.0 h1=24.0 lead=22.0 body=7.7 exactIn=0 inLinks=55 purpose=-4
+부산 상속포기 법무사,9,/상속포기기한,100.50,/부산상속포기,no,title=30.0 h1=24.0 lead=30.0 body=7.7 exactIn=0 inLinks=0 purpose=4
+부산 상속포기 법무사,10,/상속포기준비서류,100.50,/부산상속포기,no,title=30.0 h1=24.0 lead=30.0 body=7.7 exactIn=0 inLinks=0 purpose=4
+부산 상속포기,1,/부산상속포기,401.63,/부산상속포기,yes,title=90.0 h1=90.0 lead=76.0 body=14.0 exactIn=215 inLinks=222 purpose=26
+부산 상속포기,2,/상속포기자가진단,180.96,/부산상속포기,no,title=24.0 h1=78.0 lead=48.0 body=11.9 exactIn=0 inLinks=12 purpose=4
+부산 상속포기,3,/상속포기비용,140.83,/부산상속포기,no,title=30.0 h1=30.0 lead=42.0 body=11.9 exactIn=0 inLinks=92 purpose=4
+부산 상속포기,4,/부산가정법원상속포기,120.23,/부산상속포기,no,title=30.0 h1=30.0 lead=24.0 body=11.9 exactIn=0 inLinks=35 purpose=4
+부산 상속포기,5,/상속포기필요서류,109.61,/부산상속포기,no,title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=33 purpose=4
+부산 상속포기,6,/부산진구상속포기,105.90,/부산상속포기,no,title=30.0 h1=30.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4
+부산 상속포기,7,/중구상속포기,95.50,/부산상속포기,no,title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=0 purpose=4
+부산 상속포기,8,/사하구상속포기,95.50,/부산상속포기,no,title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=0 purpose=4
+부산 상속포기,9,/상속포기기한,92.70,/부산상속포기,no,title=24.0 h1=24.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4
+부산 상속포기,10,/영도구상속포기,92.70,/부산상속포기,no,title=24.0 h1=24.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4
+부산 상속등기 법무사,1,/부산상속등기,228.14,/부산상속등기,yes,title=100.0 h1=78.0 lead=-12.0 body=4.2 exactIn=0 inLinks=1193 purpose=20
+부산 상속등기 법무사,2,/상속등기필요서류,119.51,/부산상속등기,no,title=30.0 h1=30.0 lead=30.0 body=10.5 exactIn=0 inLinks=127 purpose=-4
+부산 상속등기 법무사,3,/상속등기기간,119.11,/부산상속등기,no,title=30.0 h1=30.0 lead=30.0 body=10.5 exactIn=0 inLinks=115 purpose=-4
+부산 상속등기 법무사,4,/상속등기비용,117.96,/부산상속등기,no,title=30.0 h1=30.0 lead=30.0 body=7.7 exactIn=0 inLinks=174 purpose=-4
+부산 상속등기 법무사,5,/업무사례/지역별상속등기법무사,104.75,/부산상속등기,no,title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=212 purpose=-4
+부산 상속등기 법무사,6,/업무사례/전국상속등기법무사,103.98,/부산상속등기,no,title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=175 purpose=-4
+부산 상속등기 법무사,7,/부산상속재산분할법무사,100.37,/부산상속등기,no,title=24.0 h1=24.0 lead=24.0 body=10.5 exactIn=0 inLinks=129 purpose=-4
+부산 상속등기 법무사,8,/blog/busan-inheritance-registration-procedure-documents,98.07,/부산상속등기,no,title=30.0 h1=24.0 lead=30.0 body=10.5 exactIn=0 inLinks=1 purpose=-4
+부산 상속등기 법무사,9,/faq/inheritance-registration-cost,97.67,/부산상속등기,no,title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=48 purpose=-4
+부산 상속등기 법무사,10,/부산상속법무사,97.24,/부산상속등기,no,title=24.0 h1=24.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=-8
+부산 한정승인 법무사,1,/부산한정승인,244.55,/부산한정승인,yes,title=104.0 h1=82.0 lead=0.0 body=7.0 exactIn=0 inLinks=197 purpose=20
+부산 한정승인 법무사,2,/부산상속법무사,139.24,/부산한정승인,no,title=30.0 h1=30.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=22
+부산 한정승인 법무사,3,/한정승인비용,131.93,/부산한정승인,no,title=34.0 h1=34.0 lead=34.0 body=11.9 exactIn=0 inLinks=81 purpose=-4
+부산 한정승인 법무사,4,/faq/qualified-acceptance-procedure,110.52,/부산한정승인,no,title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=34 purpose=-4
+부산 한정승인 법무사,5,/services/cases/dongnae-qualified-acceptance-consultation,105.44,/부산한정승인,no,title=28.0 h1=22.0 lead=28.0 body=11.9 exactIn=0 inLinks=43 purpose=-4
+부산 한정승인 법무사,6,/부산진구한정승인,103.50,/부산한정승인,no,title=34.0 h1=28.0 lead=28.0 body=11.9 exactIn=0 inLinks=0 purpose=-4
+부산 한정승인 법무사,7,/한정승인기간,101.05,/부산한정승인,no,title=28.0 h1=22.0 lead=34.0 body=2.1 exactIn=0 inLinks=37 purpose=-4
+부산 한정승인 법무사,8,/한정승인필요서류,96.30,/부산한정승인,no,title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4
+부산 한정승인 법무사,9,/한정승인준비서류,96.30,/부산한정승인,no,title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4
+부산 한정승인 법무사,10,/한정승인과태료,96.30,/부산한정승인,no,title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4

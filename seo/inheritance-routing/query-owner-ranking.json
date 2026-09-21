@@ -1,0 +1,422 @@
+{
+  "generatedAt": "2026-09-21T08:11:31.831Z",
+  "failures": [],
+  "ranking": {
+    "부산 상속 법무사": [
+      {
+        "path": "/부산상속법무사",
+        "score": 330.4439923780355,
+        "reasons": "title=100.0 h1=78.0 lead=18.0 body=10.5 exactIn=505 inLinks=536 purpose=22"
+      },
+      {
+        "path": "/상속등기필요서류",
+        "score": 76.90812105567846,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=127 purpose=-4"
+      },
+      {
+        "path": "/상속등기기간",
+        "score": 76.51436076442546,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=115 purpose=-4"
+      },
+      {
+        "path": "/부산상속법무사추천",
+        "score": 76.09444915467245,
+        "reasons": "title=30.0 h1=30.0 lead=-6.0 body=-3.5 exactIn=2 inLinks=2 purpose=-4"
+      },
+      {
+        "path": "/상속등기비용",
+        "score": 75.35914389569406,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=3.5 exactIn=0 inLinks=174 purpose=-4"
+      },
+      {
+        "path": "/부산상속재산분할법무사",
+        "score": 73.37013780182232,
+        "reasons": "title=18.0 h1=12.0 lead=18.0 body=6.3 exactIn=0 inLinks=129 purpose=-4"
+      },
+      {
+        "path": "/부산상속포기",
+        "score": 69.92868708584047,
+        "reasons": "title=26.0 h1=26.0 lead=18.0 body=6.3 exactIn=0 inLinks=222 purpose=-32"
+      },
+      {
+        "path": "/업무사례/서울상속등기법무사",
+        "score": 62.83285337622486,
+        "reasons": "title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=16 purpose=-4"
+      },
+      {
+        "path": "/업무사례/경남상속등기법무사",
+        "score": 62.590354888959126,
+        "reasons": "title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=15 purpose=-4"
+      },
+      {
+        "path": "/업무사례/지역별상속등기법무사",
+        "score": 62.1451686628377,
+        "reasons": "title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=212 purpose=-4"
+      }
+    ],
+    "부산 상속전문 법무사": [
+      {
+        "path": "/부산상속법무사",
+        "score": 119.14399237803546,
+        "reasons": "title=24.0 h1=24.0 lead=12.0 body=8.4 exactIn=0 inLinks=536 purpose=22"
+      },
+      {
+        "path": "/부산소유권이전전문법무사",
+        "score": 90.17258872223977,
+        "reasons": "title=28.0 h1=28.0 lead=28.0 body=9.8 exactIn=0 inLinks=1 purpose=-4"
+      },
+      {
+        "path": "/상속등기필요서류",
+        "score": 55.60812105567847,
+        "reasons": "title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=127 purpose=-4"
+      },
+      {
+        "path": "/상속등기기간",
+        "score": 55.214360764425464,
+        "reasons": "title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=115 purpose=-4"
+      },
+      {
+        "path": "/상속등기비용",
+        "score": 54.059143895694056,
+        "reasons": "title=12.0 h1=12.0 lead=12.0 body=1.4 exactIn=0 inLinks=174 purpose=-4"
+      },
+      {
+        "path": "/부산상속재산분할법무사",
+        "score": 52.070137801822334,
+        "reasons": "title=12.0 h1=6.0 lead=12.0 body=4.2 exactIn=0 inLinks=129 purpose=-4"
+      },
+      {
+        "path": "/부산상속포기",
+        "score": 48.62868708584047,
+        "reasons": "title=20.0 h1=20.0 lead=12.0 body=4.2 exactIn=0 inLinks=222 purpose=-32"
+      },
+      {
+        "path": "/업무사례/서울상속등기법무사",
+        "score": 41.532853376224864,
+        "reasons": "title=6.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=16 purpose=-4"
+      },
+      {
+        "path": "/업무사례/경남상속등기법무사",
+        "score": 41.29035488895913,
+        "reasons": "title=6.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=15 purpose=-4"
+      },
+      {
+        "path": "/업무사례/지역별상속등기법무사",
+        "score": 40.84516866283771,
+        "reasons": "title=6.0 h1=0.0 lead=12.0 body=4.2 exactIn=0 inLinks=212 purpose=-4"
+      }
+    ],
+    "부산상속전문법무사": [
+      {
+        "path": "/부산상속법무사",
+        "score": 89.74399237803547,
+        "reasons": "title=12.0 h1=12.0 lead=12.0 body=4.2 exactIn=0 inLinks=536 purpose=22"
+      },
+      {
+        "path": "/부산소유권이전전문법무사",
+        "score": 47.572588722239786,
+        "reasons": "title=16.0 h1=16.0 lead=16.0 body=5.6 exactIn=0 inLinks=1 purpose=-4"
+      },
+      {
+        "path": "/업무사례/지역별상속등기법무사",
+        "score": 17.445168662837702,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=212 purpose=-4"
+      },
+      {
+        "path": "/업무사례/전국상속등기법무사",
+        "score": 16.681935980152605,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=175 purpose=-4"
+      },
+      {
+        "path": "/부산상속재산분할법무사",
+        "score": 15.470137801822329,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=129 purpose=-4"
+      },
+      {
+        "path": "/상속등기필요서류",
+        "score": 15.408121055678468,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=127 purpose=-4"
+      },
+      {
+        "path": "/상속등기기간",
+        "score": 15.014360764425458,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=115 purpose=-4"
+      },
+      {
+        "path": "/상속등기비용",
+        "score": 13.859143895694057,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=-2.8 exactIn=0 inLinks=174 purpose=-4"
+      },
+      {
+        "path": "/부산소유권이전등기",
+        "score": 13.417480163189403,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=574 purpose=-4"
+      },
+      {
+        "path": "/업무사례/전국상속부동산일괄등기",
+        "score": 12.7586189681057,
+        "reasons": "title=0.0 h1=0.0 lead=0.0 body=0.0 exactIn=0 inLinks=65 purpose=-4"
+      }
+    ],
+    "부산 법무사 상속": [
+      {
+        "path": "/부산상속법무사",
+        "score": 140.4439923780355,
+        "reasons": "title=30.0 h1=30.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=22"
+      },
+      {
+        "path": "/상속등기필요서류",
+        "score": 76.90812105567846,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=127 purpose=-4"
+      },
+      {
+        "path": "/상속등기기간",
+        "score": 76.51436076442546,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=115 purpose=-4"
+      },
+      {
+        "path": "/상속등기비용",
+        "score": 75.35914389569406,
+        "reasons": "title=18.0 h1=18.0 lead=18.0 body=3.5 exactIn=0 inLinks=174 purpose=-4"
+      },
+      {
+        "path": "/부산상속재산분할법무사",
+        "score": 73.37013780182232,
+        "reasons": "title=18.0 h1=12.0 lead=18.0 body=6.3 exactIn=0 inLinks=129 purpose=-4"
+      },
+      {
+        "path": "/부산상속포기",
+        "score": 69.92868708584047,
+        "reasons": "title=26.0 h1=26.0 lead=18.0 body=6.3 exactIn=0 inLinks=222 purpose=-32"
+      },
+      {
+        "path": "/업무사례/서울상속등기법무사",
+        "score": 62.83285337622486,
+        "reasons": "title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=16 purpose=-4"
+      },
+      {
+        "path": "/업무사례/경남상속등기법무사",
+        "score": 62.590354888959126,
+        "reasons": "title=12.0 h1=18.0 lead=18.0 body=6.3 exactIn=0 inLinks=15 purpose=-4"
+      },
+      {
+        "path": "/업무사례/지역별상속등기법무사",
+        "score": 62.1451686628377,
+        "reasons": "title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=212 purpose=-4"
+      },
+      {
+        "path": "/업무사례/전국상속등기법무사",
+        "score": 61.3819359801526,
+        "reasons": "title=12.0 h1=6.0 lead=18.0 body=6.3 exactIn=0 inLinks=175 purpose=-4"
+      }
+    ],
+    "부산 상속포기 법무사": [
+      {
+        "path": "/부산상속포기",
+        "score": 368.12868708584045,
+        "reasons": "title=118.0 h1=96.0 lead=82.0 body=16.1 exactIn=0 inLinks=222 purpose=26"
+      },
+      {
+        "path": "/상속포기비용",
+        "score": 136.63039797261303,
+        "reasons": "title=36.0 h1=36.0 lead=30.0 body=7.7 exactIn=0 inLinks=92 purpose=4"
+      },
+      {
+        "path": "/상속포기필요서류",
+        "score": 117.40544209846465,
+        "reasons": "title=30.0 h1=24.0 lead=30.0 body=10.5 exactIn=0 inLinks=33 purpose=4"
+      },
+      {
+        "path": "/부산가정법원상속포기",
+        "score": 116.03407575382444,
+        "reasons": "title=30.0 h1=30.0 lead=24.0 body=7.7 exactIn=0 inLinks=35 purpose=4"
+      },
+      {
+        "path": "/상속포기자가진단",
+        "score": 114.65979742984614,
+        "reasons": "title=30.0 h1=30.0 lead=30.0 body=5.6 exactIn=0 inLinks=12 purpose=4"
+      },
+      {
+        "path": "/부산진구상속포기",
+        "score": 107.7,
+        "reasons": "title=36.0 h1=30.0 lead=24.0 body=7.7 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/services/cases/jaesong-inheritance-renunciation-consultation",
+        "score": 104.25067847313348,
+        "reasons": "title=30.0 h1=24.0 lead=24.0 body=10.5 exactIn=0 inLinks=41 purpose=-4"
+      },
+      {
+        "path": "/services/inheritance-renunciation",
+        "score": 100.6014067629406,
+        "reasons": "title=30.0 h1=24.0 lead=22.0 body=7.7 exactIn=0 inLinks=55 purpose=-4"
+      },
+      {
+        "path": "/상속포기기한",
+        "score": 100.5,
+        "reasons": "title=30.0 h1=24.0 lead=30.0 body=7.7 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/상속포기준비서류",
+        "score": 100.5,
+        "reasons": "title=30.0 h1=24.0 lead=30.0 body=7.7 exactIn=0 inLinks=0 purpose=4"
+      }
+    ],
+    "부산 상속포기": [
+      {
+        "path": "/부산상속포기",
+        "score": 401.62868708584045,
+        "reasons": "title=90.0 h1=90.0 lead=76.0 body=14.0 exactIn=215 inLinks=222 purpose=26"
+      },
+      {
+        "path": "/상속포기자가진단",
+        "score": 180.95979742984616,
+        "reasons": "title=24.0 h1=78.0 lead=48.0 body=11.9 exactIn=0 inLinks=12 purpose=4"
+      },
+      {
+        "path": "/상속포기비용",
+        "score": 140.83039797261304,
+        "reasons": "title=30.0 h1=30.0 lead=42.0 body=11.9 exactIn=0 inLinks=92 purpose=4"
+      },
+      {
+        "path": "/부산가정법원상속포기",
+        "score": 120.23407575382444,
+        "reasons": "title=30.0 h1=30.0 lead=24.0 body=11.9 exactIn=0 inLinks=35 purpose=4"
+      },
+      {
+        "path": "/상속포기필요서류",
+        "score": 109.60544209846465,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=33 purpose=4"
+      },
+      {
+        "path": "/부산진구상속포기",
+        "score": 105.9,
+        "reasons": "title=30.0 h1=30.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/중구상속포기",
+        "score": 95.5,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/사하구상속포기",
+        "score": 95.5,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=14.7 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/상속포기기한",
+        "score": 92.7,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4"
+      },
+      {
+        "path": "/영도구상속포기",
+        "score": 92.7,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=11.9 exactIn=0 inLinks=0 purpose=4"
+      }
+    ],
+    "부산 상속등기 법무사": [
+      {
+        "path": "/부산상속등기",
+        "score": 228.14025717581018,
+        "reasons": "title=100.0 h1=78.0 lead=-12.0 body=4.2 exactIn=0 inLinks=1193 purpose=20"
+      },
+      {
+        "path": "/상속등기필요서류",
+        "score": 119.50812105567846,
+        "reasons": "title=30.0 h1=30.0 lead=30.0 body=10.5 exactIn=0 inLinks=127 purpose=-4"
+      },
+      {
+        "path": "/상속등기기간",
+        "score": 119.11436076442546,
+        "reasons": "title=30.0 h1=30.0 lead=30.0 body=10.5 exactIn=0 inLinks=115 purpose=-4"
+      },
+      {
+        "path": "/상속등기비용",
+        "score": 117.95914389569406,
+        "reasons": "title=30.0 h1=30.0 lead=30.0 body=7.7 exactIn=0 inLinks=174 purpose=-4"
+      },
+      {
+        "path": "/업무사례/지역별상속등기법무사",
+        "score": 104.7451686628377,
+        "reasons": "title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=212 purpose=-4"
+      },
+      {
+        "path": "/업무사례/전국상속등기법무사",
+        "score": 103.9819359801526,
+        "reasons": "title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=175 purpose=-4"
+      },
+      {
+        "path": "/부산상속재산분할법무사",
+        "score": 100.37013780182234,
+        "reasons": "title=24.0 h1=24.0 lead=24.0 body=10.5 exactIn=0 inLinks=129 purpose=-4"
+      },
+      {
+        "path": "/blog/busan-inheritance-registration-procedure-documents",
+        "score": 98.07258872223977,
+        "reasons": "title=30.0 h1=24.0 lead=30.0 body=10.5 exactIn=0 inLinks=1 purpose=-4"
+      },
+      {
+        "path": "/faq/inheritance-registration-cost",
+        "score": 97.6672811924425,
+        "reasons": "title=24.0 h1=18.0 lead=30.0 body=10.5 exactIn=0 inLinks=48 purpose=-4"
+      },
+      {
+        "path": "/부산상속법무사",
+        "score": 97.24399237803546,
+        "reasons": "title=24.0 h1=24.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=-8"
+      }
+    ],
+    "부산 한정승인 법무사": [
+      {
+        "path": "/부산한정승인",
+        "score": 244.55306812277814,
+        "reasons": "title=104.0 h1=82.0 lead=0.0 body=7.0 exactIn=0 inLinks=197 purpose=20"
+      },
+      {
+        "path": "/부산상속법무사",
+        "score": 139.24399237803547,
+        "reasons": "title=30.0 h1=30.0 lead=18.0 body=10.5 exactIn=0 inLinks=536 purpose=22"
+      },
+      {
+        "path": "/한정승인비용",
+        "score": 131.92687698905704,
+        "reasons": "title=34.0 h1=34.0 lead=34.0 body=11.9 exactIn=0 inLinks=81 purpose=-4"
+      },
+      {
+        "path": "/faq/qualified-acceptance-procedure",
+        "score": 110.52139224595767,
+        "reasons": "title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=34 purpose=-4"
+      },
+      {
+        "path": "/services/cases/dongnae-qualified-acceptance-consultation",
+        "score": 105.43675853567305,
+        "reasons": "title=28.0 h1=22.0 lead=28.0 body=11.9 exactIn=0 inLinks=43 purpose=-4"
+      },
+      {
+        "path": "/부산진구한정승인",
+        "score": 103.5,
+        "reasons": "title=34.0 h1=28.0 lead=28.0 body=11.9 exactIn=0 inLinks=0 purpose=-4"
+      },
+      {
+        "path": "/한정승인기간",
+        "score": 101.05034463890554,
+        "reasons": "title=28.0 h1=22.0 lead=34.0 body=2.1 exactIn=0 inLinks=37 purpose=-4"
+      },
+      {
+        "path": "/한정승인필요서류",
+        "score": 96.30000000000001,
+        "reasons": "title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4"
+      },
+      {
+        "path": "/한정승인준비서류",
+        "score": 96.30000000000001,
+        "reasons": "title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4"
+      },
+      {
+        "path": "/한정승인과태료",
+        "score": 96.30000000000001,
+        "reasons": "title=28.0 h1=22.0 lead=34.0 body=11.9 exactIn=0 inLinks=0 purpose=-4"
+      }
+    ]
+  }
+}

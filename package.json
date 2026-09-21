@@ -96,6 +96,7 @@
     "generate:carousel-images": "npx --yes tsx scripts/generate-carousel-images.ts",
     "audit:attorney-photos": "npx --yes tsx scripts/audit-attorney-photos.ts",
     "check:profession-misrepresentation": "npx --yes tsx scripts/check-profession-misrepresentation.ts",
+    "audit:inheritance-query-owner": "npx --yes tsx scripts/inheritance-query-owner-audit.ts",
     "verify:inheritance-owner-export": "npx --yes tsx scripts/verify-inheritance-owner-export.ts",
     "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs",
     "test:admin-url": "npx --yes tsx scripts/test-admin-url-display.ts",

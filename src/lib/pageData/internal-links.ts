@@ -233,7 +233,20 @@ function championLinkForService(
 ): PageRelatedLink | null {
   let link: PageRelatedLink | null = null;
   if ((INHERITANCE_SERVICES as readonly string[]).includes(serviceSlug)) {
-    link = { href: "/부산상속법무사", label: "부산 상속 법무사" };
+    if (serviceSlug === "inheritance-renunciation") {
+      link =
+        selfPath === "/부산상속포기"
+          ? {
+              href: "/부산상속법무사",
+              label: "등기·포기·한정승인 중 무엇부터 볼지",
+            }
+          : {
+              href: "/부산상속포기",
+              label: "부산 전체 상속포기 안내",
+            };
+    } else {
+      link = { href: "/부산상속법무사", label: "부산 상속 법무사" };
+    }
   } else if ((CORPORATE_SERVICES as readonly string[]).includes(serviceSlug)) {
     link = { href: "/부산법인법무사", label: "부산 법인 법무사" };
   } else if ((REAL_ESTATE_SERVICES as readonly string[]).includes(serviceSlug)) {

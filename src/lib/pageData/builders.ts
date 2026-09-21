@@ -577,6 +577,7 @@ export function buildPageDataFromLocalLanding(
                   ? [
                       { label: "홈", href: "/" },
                       { label: "상속", href: "/상속" },
+                      { label: "상속 절차 선택", href: "/부산상속법무사" },
                       { label: "부산 상속포기" },
                     ]
                 : page.slug === "부산등기법무사"

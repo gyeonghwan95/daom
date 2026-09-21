@@ -1,6 +1,7 @@
 import { seoBrand } from "@/lib/seo/brand";
 import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_LAWYER_GUIDE_PATH, BUSAN_RENUNCIATION_CHAMPION_PATH } from "@/lib/seo/champion-query";
 import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
+import { busanInheritanceHubReviewedOn } from "@/lib/local-landing/inheritance-champion-modules";
 import { busanRenunciationHubReviewedOn } from "@/lib/local-landing/renunciation-hub-identity";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { resolveCanonicalPath } from "@/lib/seo/index-policy";
@@ -283,7 +284,9 @@ export function buildWebPageSchema(input: {
       ? busanLawyerHubReviewedOn
       : input.path === BUSAN_RENUNCIATION_CHAMPION_PATH
         ? busanRenunciationHubReviewedOn
-        : undefined;
+        : input.path === "/부산상속법무사"
+          ? busanInheritanceHubReviewedOn
+          : undefined;
 
   return compact({
     "@context": "https://schema.org",

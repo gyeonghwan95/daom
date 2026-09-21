@@ -200,7 +200,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
     links: [
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부산상속포기", label: "부산 상속포기" },
+      { href: "/부산상속포기", label: "빚이 많아 상속을 받지 않으려는 경우" },
       { href: "/부산한정승인", label: "부산 한정승인" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/services/inheritance-registration", label: "상속등기 업무 상세" },

@@ -2,9 +2,12 @@
  * `/부산상속법무사` Champion 보강 모듈
  * - 검색자 의도 문구 「부산 상속 전문 법무사」는 허브 본문에서 1~2회만 사용
  * - 자격처럼 스스로 표방하지 않음
- * 검토일: 2026-08-31
+ * 검토일은 busanInheritanceHubReviewedOn 한 곳에서 관리한다.
  */
 import type { ServiceFaq } from "@/types/service";
+
+export const busanInheritanceHubReviewedOn = "2026-09-20";
+export const busanInheritanceHubReviewedLabel = "2026년 9월 20일";
 
 /** 렌더용 추가 요약 문단 (기존 summaryParagraphs 뒤에 붙임) */
 export const championExtraSummaryParagraphs: string[] = [
