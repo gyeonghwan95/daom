@@ -738,6 +738,20 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
 
   // ⑥ 공공기관
   {
+    slug: "부산보상등기",
+    label: "부산 보상등기",
+    category: "keyword",
+    serviceSlug: "real-estate-registration",
+    keywords: [
+      "부산 보상등기 법무사",
+      "부산 보상등기",
+      "협의취득 등기",
+      "수용등기",
+      "공익사업 등기",
+    ],
+    focus: "협의취득·수용 과정의 등기 정리",
+  },
+  {
     slug: "공공기관법인등기",
     label: "공공기관 법인등기",
     category: "public",

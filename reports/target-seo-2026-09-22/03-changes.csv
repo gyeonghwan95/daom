@@ -1,0 +1,9 @@
+url,field,before,after,why
+/부산상속법무사,summary+FAQ+sections,generic/defensive specialist FAQ,problem-first intro + 상속전문 H2 + unique FAQs,S1 relevance + A stabilize
+/부산등기법무사,hero+workAreas+FAQ+links,no 보상/전문 framing,등기전문 intent + 보상등기 link + 멸실/유상증자,A4 hub depth
+/부산법인등기,summary+FAQ+links+desc,duplicate trailing sentences,법인전문 H2 + 증자/감자 links + trimmed problemStatement,A4/A5
+/해운대법무사,title,해운대 법무사 | 센텀·재송·우동 부동산·상속 상담,해운대구 법무사｜센텀 소재 사무소의 상속·부동산·법인 상담,WHY_TITLE_CHANGE: LEVEL S 미노출·PRIMARY 해운대구 mismatch
+/해운대법무사,h1,해운대 법무사 센텀·재송·우동에서...,해운대구 법무사 센텀에서 방문·상담...,WHY_H1_CHANGE: local office entity + 해운대구 intent
+/해운대법무사,description+FAQ,해운대 secondary,해운대구 primary + 방문/주차/타구 FAQ,S3 local relevance
+/업무사례/울산상속등기법무사,localIntro+metaDescription+cta,narrow 상속등기 only,broad 상속 분기 + 흩어진 상속인,A6 stabilize lift
+/부산보상등기,CREATE,,,신규 보상등기 고유 페이지

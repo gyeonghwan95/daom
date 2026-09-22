@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThumbnailCarousel } from "@/components/carousel/ThumbnailCarousel";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { serviceLabels } from "@/lib/local-landing/districts";
 import {
@@ -11,7 +12,21 @@ import {
   getTopicHubLinksForLanding,
   serviceHubLinks,
 } from "@/lib/seo/internal-links";
+import { getThumbnailCarouselForUrls } from "@/lib/seo/page-thumbnails";
 import type { LocalLandingPageType } from "@/types/local-landing";
+
+const SERVICE_CAROUSEL_HEADING: Record<string, string> = {
+  "inheritance-registration": "이어서 확인하면 좋은 상속 절차",
+  "inheritance-renunciation": "이어서 확인하면 좋은 상속 절차",
+  "qualified-acceptance": "이어서 확인하면 좋은 상속 절차",
+  "real-estate-registration": "이 상황과 함께 확인하는 등기",
+  "ownership-transfer": "이 상황과 함께 확인하는 등기",
+  "corporate-registration": "법인 운영 중 함께 확인할 등기",
+  "company-establishment": "법인 운영 중 함께 확인할 등기",
+  "director-change": "법인 운영 중 함께 확인할 등기",
+  "personal-rehabilitation": "신청 전에 함께 확인할 내용",
+  bankruptcy: "신청 전에 함께 확인할 내용",
+};
 
 type LocalLandingInternalLinksProps = {
   currentSlug: string;
@@ -44,6 +59,16 @@ export function LocalLandingInternalLinks({
         ? getLocalServiceCrossLinks(regionKey, currentSlug)
         : getLocalLandingLinksForRegion(regionLabel, currentSlug);
 
+  const relatedCarousel = getThumbnailCarouselForUrls(
+    serviceLinks.map((l) => l.href),
+    SERVICE_CAROUSEL_HEADING[serviceSlug] ??
+      (pageType === "region-hub"
+        ? "이 지역에서 함께 확인할 업무"
+        : "함께 확인할 업무"),
+    `/${currentSlug}`,
+    8,
+  );
+
   return (
     <div className="space-y-8">
       {getTopicHubLinksForLanding(serviceSlug).length > 0 ? (
@@ -52,7 +77,15 @@ export function LocalLandingInternalLinks({
           links={getTopicHubLinksForLanding(serviceSlug)}
         />
       ) : null}
-      <RelatedLinks title="관련 업무 보기" links={serviceLinks} />
+      {relatedCarousel ? (
+        <ThumbnailCarousel
+          heading={relatedCarousel.heading}
+          items={relatedCarousel.items}
+          className="mt-0"
+        />
+      ) : (
+        <RelatedLinks title="관련 업무 보기" links={serviceLinks} />
+      )}
       <RelatedLinks
         title="관련 지역 안내"
         links={

@@ -36,6 +36,12 @@ export function HomeHero() {
 
   return (
     <section className="home-hero home-hero--stage">
+      {/* 모바일: 미디어가 먼저(상단). 데스크톱: absolute로 전면 배경 */}
+      <div className="home-hero__photo">
+        <HeroStage />
+        <div className="home-hero__fade" aria-hidden />
+      </div>
+
       <motion.div
         className="home-hero__copy"
         variants={reduced ? undefined : stagger}
@@ -109,6 +115,9 @@ export function HomeHero() {
               <FormIcon className="home-hero__mobile-cta-icon" />
               {consultationInquiryCopy.ctaPrimary}
             </InquiryStartButton>
+            <div className="home-hero__mobile-channels">
+              <HeroContactBlock phone={phone} channels={channels} tone="light" />
+            </div>
             <p className="home-hero__mobile-cta-note">{homeHero.mobileCtaNote}</p>
           </motion.div>
         </div>
@@ -121,11 +130,6 @@ export function HomeHero() {
           </motion.div>
         </div>
       </motion.div>
-
-      <div className="home-hero__photo">
-        <HeroStage />
-        <div className="home-hero__fade" aria-hidden />
-      </div>
     </section>
   );
 }

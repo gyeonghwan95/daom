@@ -1,12 +1,14 @@
 {
-  "updated": "2026-08-31",
-  "note": "URL은 유지한다. 대표와 검색의도가 같은 브리지·glossary는 noindex+follow. 동일 의도 glossary는 canonical을 서비스 owner로 보낸다(코드 getGlossaryCanonicalOverride).",
+  "updated": "2026-09-22",
+  "note": "URL은 유지한다. 대표와 검색의도가 같은 브리지·glossary는 noindex+follow. 동일 의도 glossary는 canonical을 서비스 owner로 보낸다(코드 getGlossaryCanonicalOverride). 2026-09-22: 등기전문·법인전문 브리지를 상속전문과 동일 정책으로 허브에 연결.",
   "noindex": [
     "/search",
     "/부산상속전문법무사",
     "/부산상속등기전문법무사",
     "/부산한정승인전문법무사",
     "/부산상속포기전문법무사",
+    "/부산등기전문법무사",
+    "/부산법인전문법무사",
     "/glossary/inheritance-registration",
     "/glossary/inheritance-renunciation",
     "/glossary/qualified-acceptance",
@@ -45,6 +47,8 @@
     "/부산상속전문법무사": "/부산상속법무사",
     "/부산상속등기전문법무사": "/부산상속등기",
     "/부산한정승인전문법무사": "/부산한정승인",
-    "/부산상속포기전문법무사": "/부산상속포기"
+    "/부산상속포기전문법무사": "/부산상속포기",
+    "/부산등기전문법무사": "/부산등기법무사",
+    "/부산법인전문법무사": "/부산법인등기"
   }
 }

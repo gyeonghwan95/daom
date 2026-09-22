@@ -82,13 +82,16 @@ export const lectureKeywordUniverse: LectureKeywordRow[] = [
   row("부산 외부 강사", "hiring", "commercial", "/부산법률강사", "표기 변형"),
   row("부산 외부강사 섭외", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 외부강사 초빙", "hiring", "commercial", "/부산법률강사", "동일"),
+  row("부산 강사", "hiring", "commercial", "/부산법률강사", "PRIMARY broad. 특강·강연과 동일 허브"),
+  row("부산 특강", "hiring", "commercial", "/부산법률강사", "PRIMARY 동의어. 별도 URL 없음", "/법률강의"),
+  row("부산 강연", "hiring", "commercial", "/부산법률강사", "PRIMARY 동의어. 별도 URL 없음", "/법률강의"),
+  row("부산 강사 출강", "hiring", "commercial", "/부산법률강사", "PRIMARY 동의어"),
   row("부산 특강 강사", "hiring", "commercial", "/부산법률강사", "강사 선택. 허브 title과 분리"),
   row("부산 강연 강사", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 강의 강사", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 초청강사", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 강연자 섭외", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 강사 문의", "hiring", "commercial", "/부산법률강사", "섭외 검토 후 문의는 /강의문의", "/강의문의"),
-  row("부산 강사 출강", "hiring", "commercial", "/부산법률강사", "동일"),
   row("부산 법률 강사", "hiring", "commercial", "/부산법률강사", "전문영역 한정"),
   row("부산 법률 강사 섭외", "hiring", "commercial", "/부산법률강사", "동일"),
   row("생활법률 강사", "hiring", "commercial", "/부산법률강사", "주제+강사", "/법률강의"),
@@ -106,9 +109,8 @@ export const lectureKeywordUniverse: LectureKeywordRow[] = [
   row("부산 강연자 추천", "hiring", "commercial", "/부산법률강사", "가짜 추천 페이지 없음"),
 
   // —— wide queries: map closest, do not retarget site identity ——
-  row("부산 강사", "skip-wide", "commercial", "/부산법률강사", "매우 넓은 검색어. title/H1에 사용하지 않음. 법률 맥락만"),
-  row("부산 강연", "skip-wide", "informational", "/법률강의", "광범위. 법률 특강 맥락"),
   row("부산 교육", "skip-wide", "informational", "/법률강의", "광범위. 사이트 정체성(법무사) 유지"),
+  // 부산 강사·특강·강연은 hiring 섹션 /부산법률강사 PRIMARY
 
   // —— jeonse ——
   row("부산 전세사기 예방교육", "jeonse", "informational", "/전세사기예방교육", "주제 PRIMARY"),

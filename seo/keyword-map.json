@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-02",
-  "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만.",
+  "updated": "2026-09-22",
+  "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리.",
   "queries": {
     "부산 법무사": {
       "owner": "/",
@@ -236,6 +236,21 @@
       "intent": "commercial-investigation",
       "supporting": ["/법률강의", "/강사소개", "/강의이력", "/강의문의"]
     },
+    "부산 강사": {
+      "owner": "/부산법률강사",
+      "intent": "commercial-investigation",
+      "aliasOf": "부산 강사 섭외"
+    },
+    "부산 특강": {
+      "owner": "/부산법률강사",
+      "intent": "commercial-investigation",
+      "aliasOf": "부산 강사 섭외"
+    },
+    "부산 강연": {
+      "owner": "/부산법률강사",
+      "intent": "commercial-investigation",
+      "aliasOf": "부산 강사 섭외"
+    },
     "부산 강사 초빙": {
       "owner": "/부산법률강사",
       "intent": "commercial-investigation",
@@ -245,6 +260,26 @@
       "owner": "/전세사기예방교육",
       "intent": "informational",
       "supporting": ["/법률강의", "/강의문의"]
+    },
+    "부산 전세사기 법무사": {
+      "owner": "/전세사기피해대응절차",
+      "intent": "service-hub",
+      "supporting": ["/부산임차권등기명령", "/부산전세보증금반환법무사", "/전세사기예방교육"]
+    },
+    "부산 전세사기": {
+      "owner": "/전세사기피해대응절차",
+      "intent": "informational",
+      "aliasOf": "부산 전세사기 법무사"
+    },
+    "부산 법률 자문": {
+      "owner": "/부산법률상담",
+      "intent": "informational",
+      "supporting": ["/부산법무사상담", "/부산기업법률자문", "/상담"]
+    },
+    "부산 법률상담": {
+      "owner": "/부산법률상담",
+      "intent": "informational",
+      "aliasOf": "부산 법률 자문"
     },
     "부산 청년 법률교육": {
       "owner": "/청년생활법률특강",
@@ -337,6 +372,48 @@
       "owner": "/부산등기법무사",
       "intent": "service-hub",
       "aliasOf": "부산 등기 법무사"
+    },
+    "부산등기전문법무사": {
+      "owner": "/부산등기법무사",
+      "intent": "service-hub",
+      "aliasOf": "부산 등기 법무사"
+    },
+    "부산 법인등기 법무사": {
+      "owner": "/부산법인등기",
+      "intent": "procedure"
+    },
+    "부산 법인등기": {
+      "owner": "/부산법인등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인등기 법무사"
+    },
+    "부산 법인전문 법무사": {
+      "owner": "/부산법인등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인등기 법무사"
+    },
+    "부산 법인전문법무사": {
+      "owner": "/부산법인등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인등기 법무사"
+    },
+    "부산 보상등기 법무사": {
+      "owner": "/부산보상등기",
+      "intent": "procedure"
+    },
+    "부산 보상등기": {
+      "owner": "/부산보상등기",
+      "intent": "procedure",
+      "aliasOf": "부산 보상등기 법무사"
+    },
+    "울산 상속 법무사": {
+      "owner": "/업무사례/울산상속등기법무사",
+      "intent": "local-case"
+    },
+    "울산 상속등기 법무사": {
+      "owner": "/업무사례/울산상속등기법무사",
+      "intent": "local-case",
+      "aliasOf": "울산 상속 법무사"
     }
   }
 }

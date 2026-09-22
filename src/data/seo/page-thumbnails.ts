@@ -1,0 +1,552 @@
+/**
+ * 페이지 1:1 에디토리얼 썸네일 manifest.
+ * 기존 URL/title/H1/canonical/SEO 본문은 변경하지 않는다.
+ * designVersion을 올리면 전체 재생성.
+ */
+
+import type { ThumbnailCategory } from "@/data/media/thumbnail-portraits";
+
+export const THUMBNAIL_DESIGN_VERSION = 1;
+
+export type ThumbnailTemplate =
+  | "EDITORIAL_LEFT"
+  | "EDITORIAL_RIGHT"
+  | "CENTER_LOW"
+  | "CENTER_HIGH"
+  | "SOFT_SPLIT_LEFT"
+  | "SOFT_SPLIT_RIGHT";
+
+export type ThumbnailCopyType =
+  | "situation"
+  | "question"
+  | "action"
+  | "problem";
+
+export type PageThumbnailItem = {
+  url: string;
+  pageTitle: string;
+  sourcePortrait: string;
+  template: ThumbnailTemplate;
+  headline: string;
+  copyType: ThumbnailCopyType;
+  category: ThumbnailCategory;
+  output: string;
+  alt: string;
+  carouselSectionTitle?: string;
+  designVersion: number;
+};
+
+function out(category: ThumbnailCategory, file: string) {
+  return `/generated/thumbnails/${category}/${file}`;
+}
+
+/**
+ * 1차 배치: 홈·허브·주요 업무 페이지 (기존 캐러셀 승인 페이지 중심).
+ * headline은 페이지 title을 그대로 쓰지 않는 짧은 editorial copy.
+ */
+export const PAGE_THUMBNAILS: PageThumbnailItem[] = [
+  {
+    url: "/services",
+    pageTitle: "업무 안내",
+    sourcePortrait: "portrait-studio-01",
+    template: "EDITORIAL_LEFT",
+    headline: "어떤 등기부터\n확인할까",
+    copyType: "question",
+    category: "services",
+    output: out("services", "services-hub.webp"),
+    alt: "다옴법무사사무소 업무 안내 표지",
+    carouselSectionTitle: "함께 확인할 업무",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/inheritance-registration",
+    pageTitle: "상속등기",
+    sourcePortrait: "portrait-docs-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "부모님 집,\n어떻게 상속할까",
+    copyType: "question",
+    category: "inheritance",
+    output: out("inheritance", "inheritance-registration.webp"),
+    alt: "상속등기 안내 표지",
+    carouselSectionTitle: "이어서 확인하면 좋은 상속 절차",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/inheritance-renunciation",
+    pageTitle: "상속포기",
+    sourcePortrait: "portrait-consult-01",
+    template: "EDITORIAL_LEFT",
+    headline: "상속포기,\n언제까지?",
+    copyType: "question",
+    category: "inheritance",
+    output: out("inheritance", "inheritance-renunciation.webp"),
+    alt: "상속포기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/qualified-acceptance",
+    pageTitle: "한정승인",
+    sourcePortrait: "portrait-desk-front-01",
+    template: "CENTER_LOW",
+    headline: "빚까지\n상속될까?",
+    copyType: "question",
+    category: "inheritance",
+    output: out("inheritance", "qualified-acceptance.webp"),
+    alt: "한정승인 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/real-estate-registration",
+    pageTitle: "부동산등기",
+    sourcePortrait: "portrait-registry-01",
+    template: "EDITORIAL_LEFT",
+    headline: "잔금일,\n등기는 어떻게?",
+    copyType: "question",
+    category: "realestate",
+    output: out("realestate", "real-estate-registration.webp"),
+    alt: "부동산등기 안내 표지",
+    carouselSectionTitle: "이 상황과 함께 많이 확인하는 등기",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/ownership-transfer",
+    pageTitle: "소유권이전등기",
+    sourcePortrait: "portrait-writing-01",
+    template: "SOFT_SPLIT_RIGHT",
+    headline: "명의이전,\n무엇부터 할까",
+    copyType: "action",
+    category: "realestate",
+    output: out("realestate", "ownership-transfer.webp"),
+    alt: "소유권이전등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/corporate-registration",
+    pageTitle: "법인등기",
+    sourcePortrait: "portrait-corporate-01",
+    template: "EDITORIAL_LEFT",
+    headline: "회사 등기,\n어디에 손댈까",
+    copyType: "question",
+    category: "corporate",
+    output: out("corporate", "corporate-registration.webp"),
+    alt: "법인등기 안내 표지",
+    carouselSectionTitle: "법인 운영 중 함께 확인할 등기",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/company-establishment",
+    pageTitle: "법인설립",
+    sourcePortrait: "portrait-studio-01",
+    template: "EDITORIAL_LEFT",
+    headline: "법인설립,\n무엇부터?",
+    copyType: "question",
+    category: "corporate",
+    output: out("corporate", "company-establishment.webp"),
+    alt: "법인설립 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/director-change",
+    pageTitle: "임원변경",
+    sourcePortrait: "portrait-corporate-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "임원 임기가\n끝났다면",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "director-change.webp"),
+    alt: "임원변경등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/personal-rehabilitation",
+    pageTitle: "개인회생",
+    sourcePortrait: "portrait-phone-01",
+    template: "CENTER_LOW",
+    headline: "빚을 감당하기\n어렵다면",
+    copyType: "situation",
+    category: "rehabilitation",
+    output: out("rehabilitation", "personal-rehabilitation.webp"),
+    alt: "개인회생 안내 표지",
+    carouselSectionTitle: "신청 전에 함께 확인할 내용",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/services/bankruptcy",
+    pageTitle: "개인파산",
+    sourcePortrait: "portrait-desk-front-01",
+    template: "EDITORIAL_LEFT",
+    headline: "개인파산,\n가능할까?",
+    copyType: "question",
+    category: "rehabilitation",
+    output: out("rehabilitation", "bankruptcy.webp"),
+    alt: "개인파산 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산법무사",
+    pageTitle: "부산 법무사",
+    sourcePortrait: "portrait-studio-01",
+    template: "EDITORIAL_LEFT",
+    headline: "가까운 곳에서\n법무사가 필요할 때",
+    copyType: "situation",
+    category: "local",
+    output: out("local", "busan-attorney.webp"),
+    alt: "부산 법무사 안내 표지",
+    carouselSectionTitle: "이 지역에서 함께 확인할 업무",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산상속법무사",
+    pageTitle: "부산 상속 법무사",
+    sourcePortrait: "portrait-consult-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "상속 절차,\n어디서부터 볼까",
+    copyType: "question",
+    category: "inheritance",
+    output: out("inheritance", "busan-inheritance-hub.webp"),
+    alt: "부산 상속 안내 표지",
+    carouselSectionTitle: "이어서 확인하면 좋은 상속 절차",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산상속등기",
+    pageTitle: "부산 상속등기",
+    sourcePortrait: "portrait-registry-01",
+    template: "EDITORIAL_LEFT",
+    headline: "상속등기,\n무엇부터 할까",
+    copyType: "action",
+    category: "inheritance",
+    output: out("inheritance", "busan-inheritance-registration.webp"),
+    alt: "부산 상속등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산상속포기",
+    pageTitle: "부산 상속포기",
+    sourcePortrait: "portrait-docs-01",
+    template: "CENTER_HIGH",
+    headline: "3개월이\n지났다면",
+    copyType: "situation",
+    category: "inheritance",
+    output: out("inheritance", "busan-inheritance-renunciation.webp"),
+    alt: "부산 상속포기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산한정승인",
+    pageTitle: "부산 한정승인",
+    sourcePortrait: "portrait-desk-front-01",
+    template: "EDITORIAL_LEFT",
+    headline: "재산과 채무,\n함께 본다면",
+    copyType: "situation",
+    category: "inheritance",
+    output: out("inheritance", "busan-qualified-acceptance.webp"),
+    alt: "부산 한정승인 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/특별한정승인",
+    pageTitle: "특별한정승인",
+    sourcePortrait: "portrait-phone-01",
+    template: "CENTER_LOW",
+    headline: "뒤늦게 빚을\n알았다면",
+    copyType: "problem",
+    category: "inheritance",
+    output: out("inheritance", "special-qualified-acceptance.webp"),
+    alt: "특별한정승인 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/상속재산분할협의서준비",
+    pageTitle: "상속재산 분할협의",
+    sourcePortrait: "portrait-consult-01",
+    template: "SOFT_SPLIT_RIGHT",
+    headline: "상속인끼리\n나눌 때",
+    copyType: "situation",
+    category: "inheritance",
+    output: out("inheritance", "inheritance-division.webp"),
+    alt: "상속재산 분할 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/대습상속등기",
+    pageTitle: "대습상속등기",
+    sourcePortrait: "portrait-writing-01",
+    template: "EDITORIAL_LEFT",
+    headline: "대습상속,\n무엇부터 볼까",
+    copyType: "situation",
+    category: "inheritance",
+    output: out("inheritance", "subrogation-inheritance.webp"),
+    alt: "대습상속등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/사망자재산채무조회",
+    pageTitle: "재산·채무 조회",
+    sourcePortrait: "portrait-docs-01",
+    template: "CENTER_LOW",
+    headline: "상속 결정 전\n확인할 것",
+    copyType: "action",
+    category: "inheritance",
+    output: out("inheritance", "assets-debts-lookup.webp"),
+    alt: "사망자 재산·채무 조회 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산등기법무사",
+    pageTitle: "부산 등기 법무사",
+    sourcePortrait: "portrait-registry-01",
+    template: "EDITORIAL_LEFT",
+    headline: "등기가 필요할 때\n먼저 볼 것",
+    copyType: "action",
+    category: "realestate",
+    output: out("realestate", "busan-registry-attorney.webp"),
+    alt: "부산 등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산부동산등기",
+    pageTitle: "부산 부동산등기",
+    sourcePortrait: "portrait-writing-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "부동산 등기,\n상황별로 보면",
+    copyType: "action",
+    category: "realestate",
+    output: out("realestate", "busan-real-estate.webp"),
+    alt: "부산 부동산등기 안내 표지",
+    carouselSectionTitle: "이 상황과 함께 확인하는 등기",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산소유권이전등기",
+    pageTitle: "부산 소유권이전등기",
+    sourcePortrait: "portrait-corporate-01",
+    template: "EDITORIAL_LEFT",
+    headline: "잔금 날,\n명의는 어떻게",
+    copyType: "question",
+    category: "realestate",
+    output: out("realestate", "busan-ownership-transfer.webp"),
+    alt: "부산 소유권이전등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산증여등기",
+    pageTitle: "부산 증여등기",
+    sourcePortrait: "portrait-desk-front-01",
+    template: "CENTER_HIGH",
+    headline: "부모님 집을\n증여한다면",
+    copyType: "situation",
+    category: "realestate",
+    output: out("realestate", "busan-gift-registration.webp"),
+    alt: "부산 증여등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산근저당설정등기",
+    pageTitle: "부산 근저당설정등기",
+    sourcePortrait: "portrait-writing-01",
+    template: "SOFT_SPLIT_RIGHT",
+    headline: "대출을 받을 때\n근저당은",
+    copyType: "situation",
+    category: "realestate",
+    output: out("realestate", "busan-mortgage-set.webp"),
+    alt: "부산 근저당설정등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산근저당말소등기",
+    pageTitle: "부산 근저당말소등기",
+    sourcePortrait: "portrait-docs-01",
+    template: "EDITORIAL_LEFT",
+    headline: "대출은 갚았는데\n근저당은 그대로?",
+    copyType: "problem",
+    category: "realestate",
+    output: out("realestate", "busan-mortgage-release.webp"),
+    alt: "부산 근저당말소등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산전세권설정등기",
+    pageTitle: "부산 전세권설정등기",
+    sourcePortrait: "portrait-consult-01",
+    template: "CENTER_LOW",
+    headline: "전세 계약,\n등기로 남긴다면",
+    copyType: "situation",
+    category: "lease",
+    output: out("lease", "busan-jeonse-set.webp"),
+    alt: "부산 전세권설정등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산전세권말소등기",
+    pageTitle: "부산 전세권말소등기",
+    sourcePortrait: "portrait-phone-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "이사할 때\n전세권은",
+    copyType: "situation",
+    category: "lease",
+    output: out("lease", "busan-jeonse-release.webp"),
+    alt: "부산 전세권말소등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산신축건물보존등기",
+    pageTitle: "부산 신축건물 보존등기",
+    sourcePortrait: "portrait-registry-01",
+    template: "EDITORIAL_LEFT",
+    headline: "신축건물,\n첫 등기는?",
+    copyType: "question",
+    category: "realestate",
+    output: out("realestate", "busan-building-preservation.webp"),
+    alt: "부산 신축건물 보존등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산법인법무사",
+    pageTitle: "부산 법인 법무사",
+    sourcePortrait: "portrait-studio-01",
+    template: "EDITORIAL_LEFT",
+    headline: "회사 등기,\n함께 보면",
+    copyType: "action",
+    category: "corporate",
+    output: out("corporate", "busan-corporate-hub.webp"),
+    alt: "부산 법인 안내 표지",
+    carouselSectionTitle: "법인 운영 중 함께 확인할 등기",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산법인등기",
+    pageTitle: "부산 법인등기",
+    sourcePortrait: "portrait-corporate-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "법인등기,\n어떤 변경일까",
+    copyType: "question",
+    category: "corporate",
+    output: out("corporate", "busan-corporate-registration.webp"),
+    alt: "부산 법인등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산법인설립등기",
+    pageTitle: "부산 법인설립등기",
+    sourcePortrait: "portrait-desk-front-01",
+    template: "CENTER_HIGH",
+    headline: "회사를 만들 때\n확인할 순서",
+    copyType: "action",
+    category: "corporate",
+    output: out("corporate", "busan-company-establishment.webp"),
+    alt: "부산 법인설립등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산임원변경등기",
+    pageTitle: "부산 임원변경등기",
+    sourcePortrait: "portrait-writing-01",
+    template: "EDITORIAL_LEFT",
+    headline: "대표이사가\n바뀐다면",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "busan-director-change.webp"),
+    alt: "부산 임원변경등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산본점이전등기",
+    pageTitle: "부산 본점이전등기",
+    sourcePortrait: "portrait-docs-01",
+    template: "SOFT_SPLIT_RIGHT",
+    headline: "회사 주소를\n옮긴다면",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "busan-head-office-move.webp"),
+    alt: "부산 본점이전등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산사업목적변경등기",
+    pageTitle: "부산 사업목적변경등기",
+    sourcePortrait: "portrait-consult-01",
+    template: "CENTER_LOW",
+    headline: "사업 목적을\n바꿀 때",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "busan-purpose-change.webp"),
+    alt: "부산 사업목적변경등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산유상증자등기",
+    pageTitle: "부산 유상증자등기",
+    sourcePortrait: "portrait-corporate-01",
+    template: "EDITORIAL_LEFT",
+    headline: "투자금을\n받으려 한다면",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "busan-capital-increase.webp"),
+    alt: "부산 유상증자등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/부산법인해산청산등기",
+    pageTitle: "부산 법인해산·청산등기",
+    sourcePortrait: "portrait-phone-01",
+    template: "SOFT_SPLIT_LEFT",
+    headline: "법인을\n정리하려 한다면",
+    copyType: "situation",
+    category: "corporate",
+    output: out("corporate", "busan-dissolution-liquidation.webp"),
+    alt: "부산 법인해산·청산등기 안내 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/법률강의",
+    pageTitle: "법률 강의",
+    sourcePortrait: "portrait-studio-01",
+    template: "CENTER_HIGH",
+    headline: "함께 살펴볼\n강의 주제",
+    copyType: "action",
+    category: "lecture",
+    output: out("lecture", "lecture-hub.webp"),
+    alt: "법률 강의 안내 표지",
+    carouselSectionTitle: "함께 살펴볼 강의 주제",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+  {
+    url: "/전세사기예방교육",
+    pageTitle: "전세사기 예방 교육",
+    sourcePortrait: "portrait-consult-01",
+    template: "EDITORIAL_LEFT",
+    headline: "계약 전\n확인할 것",
+    copyType: "action",
+    category: "lecture",
+    output: out("lecture", "jeonse-prevention.webp"),
+    alt: "전세사기 예방 교육 표지",
+    designVersion: THUMBNAIL_DESIGN_VERSION,
+  },
+];
+
+export function getPageThumbnail(
+  url: string,
+): PageThumbnailItem | undefined {
+  return PAGE_THUMBNAILS.find((t) => t.url === url);
+}
+
+export function getPageThumbnailsByCategory(
+  category: ThumbnailCategory,
+): PageThumbnailItem[] {
+  return PAGE_THUMBNAILS.filter((t) => t.category === category);
+}
+
+/** 관련 페이지용: 같은 카테고리 우선, 없으면 허브 풀에서 채움 */
+export function getRelatedPageThumbnails(
+  currentUrl: string,
+  limit = 8,
+): PageThumbnailItem[] {
+  const current = getPageThumbnail(currentUrl);
+  const others = PAGE_THUMBNAILS.filter((t) => t.url !== currentUrl);
+  const same = current
+    ? others.filter((t) => t.category === current.category)
+    : [];
+  const rest = others.filter((t) => !same.includes(t));
+  return [...same, ...rest].slice(0, limit);
+}

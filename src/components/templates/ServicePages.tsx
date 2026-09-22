@@ -17,12 +17,13 @@ import { serviceSeoMap, staticPageSeo } from "@/lib/seo/page-seo";
 import { getCaseImage, getServiceImage } from "@/lib/site-images";
 import { allServiceDetails } from "@/lib/services-data";
 import type { ServiceDetail } from "@/types/service";
-import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
+import { ThumbnailCarousel } from "@/components/carousel/ThumbnailCarousel";
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import {
   getApprovedCarouselHubData,
   resolveCarouselOgImage,
 } from "@/lib/seo/carousel-images";
+import { getRelatedThumbnailCarousel } from "@/lib/seo/page-thumbnails";
 
 type ServiceDetailTemplateProps = {
   service: ServiceDetail;
@@ -38,8 +39,9 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
 
 export function ServicesIndexTemplate() {
   const cases = getAllContent("cases");
-  // 승인(approved|applied)된 대표이미지가 4개 이상일 때만 노출된다.
-  const seoCarousel = getApprovedCarouselHubData("/services");
+  const seoCarousel =
+    getRelatedThumbnailCarousel("/services", 7) ??
+    getApprovedCarouselHubData("/services");
 
   return (
     <PageContainer>
@@ -83,7 +85,7 @@ export function ServicesIndexTemplate() {
         </section>
 
         {seoCarousel ? (
-          <SeoContentCarousel
+          <ThumbnailCarousel
             heading={seoCarousel.heading}
             description="자주 찾는 업무를 대표이미지와 함께 확인하세요."
             items={seoCarousel.items}

@@ -7,6 +7,7 @@ import type { LocalLandingConfig, LocalLandingPage } from "@/types/local-landing
 import { getJurisdictionGuide } from "./expansion/builder-expansion";
 import {
   busanInheritanceHubReviewedLabel,
+  championExtraFaqs,
   championExtraRelatedLinks,
   championExtraSummaryParagraphs,
   championExtraWhenNeeded,
@@ -155,7 +156,7 @@ export function buildKeywordHubPage(
     : topic.whenNeeded;
   const procedures = topic.procedures;
   const faqs = isInheritanceChampion
-    ? topic.faqs
+    ? [...topic.faqs, ...championExtraFaqs]
     : isCorporateLegalOps
       ? [...topic.faqs, ...corporateLegalExtraFaqs]
       : topic.faqs;
@@ -318,8 +319,8 @@ export function buildKeywordHubPage(
             ],
           },
           {
-            title: "부산에서 상속전문 법무사를 찾을 때 어떤 업무를 함께 확인해야 할까요?",
-            body: "자격처럼 보이는 표현보다, 상속등기·상속포기·한정승인을 한 흐름에서 구분할 수 있는지가 핵심입니다. 3개월 기한, 상속인 범위, 부동산과 채무, 미성년·해외·대습·연락두절을 나눠 안내하는지 확인하시면 됩니다. 전문 자격이나 순위를 표방하지 않습니다.",
+            title: "부산에서 상속전문 법무사를 찾을 때 확인할 것은 무엇일까",
+            body: "부산에서 상속전문 법무사를 찾는 분들은 한 건의 상속등기만 처리하는지보다, 상속등기·상속포기·한정승인, 미성년·해외·연락두절 상속인처럼 상황이 달라졌을 때 필요한 절차를 함께 구분할 수 있는지를 확인하는 경우가 많습니다. 명칭보다 상속인 범위·재산·채무·3개월 관련 문제·등기·포기·한정승인을 한 흐름에서 가르는지가 핵심입니다. 존재하지 않는 공인 전문자격처럼 표방하지 않습니다.",
             items: [
               "지금 필요한 절차를 구분하는지",
               "가족관계·등기부·채무 자료를 어떻게 안내하는지",

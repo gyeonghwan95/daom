@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
+import { ThumbnailCarousel } from "@/components/carousel/ThumbnailCarousel";
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import { getApprovedCarouselHubData } from "@/lib/seo/carousel-images";
+import { getRelatedThumbnailCarousel } from "@/lib/seo/page-thumbnails";
 
 const CHOICES = [
   {
@@ -43,13 +44,15 @@ const CHOICES = [
 
 /** 첫 화면 선택 UI — 키워드 반복이 아니라 상황 분기. */
 export function InheritanceChoiceCards() {
-  const carousel = getApprovedCarouselHubData("/부산상속법무사");
+  const related = getRelatedThumbnailCarousel("/부산상속법무사", 7);
+  const fallback = getApprovedCarouselHubData("/부산상속법무사");
+  const carousel = related ?? fallback;
 
   if (carousel) {
     return (
       <>
-        <SeoContentCarousel
-          heading={carousel.heading}
+        <ThumbnailCarousel
+          heading={related?.heading ?? "이어서 확인하면 좋은 상속 절차"}
           description="현재 상황과 가까운 항목에서 필요한 기한·서류·절차를 확인하세요."
           items={carousel.items}
           className="mt-2"

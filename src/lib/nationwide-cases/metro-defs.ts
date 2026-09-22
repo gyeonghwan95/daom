@@ -147,23 +147,28 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "울산상속등기법무사",
     regionName: "울산",
-    primaryKeyword: "울산 상속등기 법무사",
-    secondaryKeywords: ["울산 아파트 상속등기", "울산 비대면 상속등기"],
+    primaryKeyword: "울산 상속 법무사",
+    secondaryKeywords: [
+      "울산 상속등기 법무사",
+      "울산 아파트 상속등기",
+      "울산 비대면 상속등기",
+    ],
     seoTitle: "울산 상속등기 법무사｜아파트·토지 비대면 상속등기",
     metaDescription:
-      "울산 상속등기 법무사. 아파트·토지 비대면 진행, 상속인 타지역 거주 시 절차. 울산 지점 없이 부산 사무소에서 검토합니다.",
+      "울산 상속 법무사·상속등기 안내. 울산 부동산과 부산·타지역 거주 상속인, 해외·미성년 상속인, 방문 전 자료확인·원본서류 전달 순서를 정리합니다. 울산 지점 없이 부산 해운대 사무소에서 검토합니다.",
     h1: "울산 상속부동산을 부산 방문 없이 맡기는 방법",
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 울산에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "울산 아파트·토지 상속도 서류 개요만으로 먼저 상담할 수 있습니다. 상속인이 수도권에 있어도 위임·협의 방식을 안내합니다.",
+      "울산 아파트·토지 상속을 부산 해운대 사무소에 맡기는 경우는, 상속인이 울산·부산·수도권에 흩어져 있거나 방문 전 서류 사진으로 개요를 확인하고 싶을 때입니다. 부동산과 상속인 거주지가 다르면 위임·협의·원본 전달 순서를 먼저 가릅니다. 채무가 불명확하면 등기보다 상속포기·한정승인 분기도 함께 봅니다.",
     scenarioIds: ["heir-scattered", "apt-land-mix", "busan-remote"],
     propertyTypeIds: ["apt", "land", "retail"],
     uniqueFaqIds: ["visit-need", "deadline-3m", "branch-myth"],
     relatedRegionSlugs: ["울산남구상속등기법무사", "울주군상속등기법무사", "지역별상속등기법무사"],
-    relatedServiceSlugs: ["전국상속등기법무사"],
-    ctaTitle: "울산 상속등기 가능 여부 확인",
-    ctaDescription: "구·군과 부동산 종류를 알려주시면 서류를 안내합니다.",
+    relatedServiceSlugs: ["전국상속등기법무사", "부산상속법무사", "부산상속포기"],
+    ctaTitle: "울산 상속 가능 여부 확인",
+    ctaDescription:
+      "구·군, 부동산 종류, 상속인 거주 지역, 채무 여부를 알려주시면 서류와 방문 필요 여부를 안내합니다.",
   }),
   metro({
     slug: "대구상속등기법무사",

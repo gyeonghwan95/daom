@@ -10,6 +10,7 @@ import {
   getCarouselManifestItemByUrl,
   type CarouselImageManifestItem,
 } from "@/data/seo/carousel-image-manifest";
+import { getPageThumbnail } from "@/data/seo/page-thumbnails";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 
 export type SeoCarouselItem = {
@@ -79,13 +80,14 @@ export function getApprovedCarouselHubData(hubUrl: string):
     if (seenUrls.has(m.pageUrl) || seenImages.has(m.outputPath)) continue;
     seenUrls.add(m.pageUrl);
     seenImages.add(m.outputPath);
+    const pageThumb = getPageThumbnail(m.pageUrl);
     items.push({
       id: m.id,
       title: m.pageTitle,
-      description: m.subheadline,
+      description: undefined,
       href: m.pageUrl,
-      image: encodePublicSrc(m.outputPath),
-      imageAlt: m.alt,
+      image: encodePublicSrc(pageThumb?.output ?? m.outputPath),
+      imageAlt: pageThumb?.alt ?? m.alt,
       category: m.primaryKeyword,
     });
     if (items.length >= 7) break;

@@ -1,0 +1,30 @@
+# Changed files (target SEO surgery 2026-09-22)
+
+## Source (intentional)
+
+| File | Why | Target URL impact |
+|------|-----|-------------------|
+| `src/lib/local-landing/keyword-topics.ts` | 상속 first700·FAQ | `/부산상속법무사` |
+| `src/lib/local-landing/inheritance-champion-modules.ts` | 상속전문 모듈·검토일 | `/부산상속법무사` |
+| `src/lib/local-landing/keyword-builder.ts` | 상속 H2 문구·FAQ merge | `/부산상속법무사` |
+| `src/lib/inheritance/article-summaries.ts` | 상속 요약 | `/부산상속법무사` |
+| `src/lib/local-landing/registry-hub-content.ts` | 등기전문·보상 링크 | `/부산등기법무사` |
+| `src/lib/local-landing/corporate-registration-busan.ts` | 법인등기·법인전문 | `/부산법인등기` |
+| `src/lib/local-landing/champion-article-summaries.ts` | 등기/법인 요약 | `/부산등기법무사`, `/부산법인등기` |
+| `src/lib/local-landing/region-hub-identity.ts` | 해운대구 title/H1/local | `/해운대법무사` |
+| `src/lib/local-landing/region-hub-coverage.ts` | 해운대구 coverage | `/해운대법무사` |
+| `src/lib/nationwide-cases/metro-defs.ts` | 울산 상속 first700 | `/업무사례/울산상속등기법무사` |
+| `src/lib/local-landing/search-intent/overrides/busan-compensation-registration.ts` | 신규 보상등기 | `/부산보상등기` |
+| `src/lib/local-landing/search-intent/seeds.ts` | seed 등록 | `/부산보상등기` |
+| `src/lib/local-landing/search-intent/index.ts` | override 등록 | `/부산보상등기` |
+| `src/lib/pageData/builders.ts` | slug-gated sections only | `/부산등기법무사`, `/부산법인등기` |
+
+## Build artifacts (generated)
+
+- `public/sitemap.xml`, `public/sitemaps/*`
+- `scripts/output/*`, `src/generated/*`
+- `public/data/naver-place-reviews.json` (prebuild fetch — not hand-edited)
+
+## Tooling
+
+- `scripts/target-seo-snapshot.mjs`, `scripts/target-seo-qa.mjs`, etc.

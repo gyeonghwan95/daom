@@ -56,7 +56,7 @@ export function SeoContentCarousel({
             type="button"
             aria-label="이전 카드"
             onClick={() => scrollByCard(-1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border,#e5e0d8)] bg-white text-[var(--navy,#1e3a5f)] transition-colors hover:bg-[#f0ebe3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy,#1e3a5f)]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border,#e5e0d8)] bg-white text-[var(--navy,#1e3a5f)] transition-colors hover:bg-[#f0ebe3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy,#1e3a5f)]"
           >
             <span aria-hidden>←</span>
           </button>
@@ -64,7 +64,7 @@ export function SeoContentCarousel({
             type="button"
             aria-label="다음 카드"
             onClick={() => scrollByCard(1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border,#e5e0d8)] bg-white text-[var(--navy,#1e3a5f)] transition-colors hover:bg-[#f0ebe3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy,#1e3a5f)]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border,#e5e0d8)] bg-white text-[var(--navy,#1e3a5f)] transition-colors hover:bg-[#f0ebe3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy,#1e3a5f)]"
           >
             <span aria-hidden>→</span>
           </button>

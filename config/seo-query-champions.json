@@ -1,5 +1,5 @@
 {
-    "updated": "2026-08-31",
+  "updated": "2026-09-22",
   "seoKnownGoodCommit": "e064454fd0aeac6fc60bb6010c364aee37c51f3b",
   "queries": {
     "부산 법무사": {
@@ -39,7 +39,19 @@
     },
     "부산 등기 법무사": {
       "primary": "/부산등기법무사",
-      "protected": true
+      "protected": true,
+      "supporting": ["/부산부동산등기", "/부산상속등기", "/부산법인등기", "/부산보상등기"],
+      "note": "/부산등기전문법무사는 URL 유지·noindex·canonical to hub."
+    },
+    "부산 등기전문 법무사": {
+      "primary": "/부산등기법무사",
+      "protected": true,
+      "aliasOf": "부산 등기 법무사"
+    },
+    "부산등기전문법무사": {
+      "primary": "/부산등기법무사",
+      "protected": true,
+      "aliasOf": "부산 등기 법무사"
     },
     "부산 상속포기 법무사": {
       "primary": "/부산상속포기",
@@ -115,6 +127,32 @@
       "primary": "/부산부동산등기",
       "protected": true,
       "aliasOf": "부산 부동산 법무사"
+    },
+    "부산 법인등기 법무사": {
+      "primary": "/부산법인등기",
+      "protected": true,
+      "supporting": ["/부산법인법무사", "/법인설립"],
+      "note": "/부산법인전문법무사는 URL 유지·noindex·canonical to /부산법인등기."
+    },
+    "부산 법인전문 법무사": {
+      "primary": "/부산법인등기",
+      "protected": true,
+      "aliasOf": "부산 법인등기 법무사"
+    },
+    "해운대구 법무사": {
+      "primary": "/해운대법무사",
+      "protected": true,
+      "aliasOf": "해운대 법무사"
+    },
+    "부산 보상등기 법무사": {
+      "primary": "/부산보상등기",
+      "protected": true,
+      "supporting": ["/부산등기법무사", "/공공기관등기업무"]
+    },
+    "울산 상속 법무사": {
+      "primary": "/업무사례/울산상속등기법무사",
+      "protected": true,
+      "supporting": ["/부산상속법무사", "/부산상속등기"]
     }
   }
 }

@@ -1,13 +1,13 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-09-21T15:08:23.947Z
+# 생성: 2026-09-22T12:33:21.071Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1637 (제외 177)
+# 총 URL: 1636 (제외 179)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 175개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 572개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 571개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 580개
 # Tier 7 — 후순위 (블로그): 53개
@@ -249,7 +249,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (175개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (572개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (571개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -340,7 +340,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (572개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B3%B4%EC%A0%95%EC%97%85%EB%AC%B4	/부산등기보정업무
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B3%B5%EB%8C%80%EB%A6%AC	/부산등기복대리
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EC%86%8C%ED%98%84%EC%A7%80%EC%97%85%EB%AC%B4	/부산등기소현지업무
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산등기전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%91%EC%88%98%ED%98%91%EC%97%85	/부산등기접수협업
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산매매등기법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산매매등기전문법무사
@@ -378,10 +377,10 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (572개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/부산법인설립등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인설립전문법무사
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%A0%95%EA%B8%B0%EC%A0%90%EA%B2%80	/부산법인정기점검
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%ED%95%B4%EC%82%B0%EC%A0%84%ED%99%95%EC%9D%B8%EC%82%AC%ED%95%AD	/부산법인해산전확인사항
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%ED%95%B4%EC%82%B0%EC%B2%AD%EC%82%B0%EB%93%B1%EA%B8%B0	/부산법인해산청산등기
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B4%EC%83%81%EB%93%B1%EA%B8%B0	/부산보상등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/부산본점이전등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8B%B4%EB%B6%80%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0	/부산부담부증여등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/부산부동산등기
@@ -1685,7 +1684,9 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (177)
+# 제외 (179)
+# [EXCLUDED:noindex] /부산등기전문법무사
+# [EXCLUDED:noindex] /부산법인전문법무사
 # [EXCLUDED:noindex] /부산상속등기전문법무사
 # [EXCLUDED:noindex] /부산상속전문법무사
 # [EXCLUDED:noindex] /부산상속포기전문법무사
