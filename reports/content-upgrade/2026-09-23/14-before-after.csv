@@ -1,0 +1,11 @@
+url,beforeChars,afterChars,status
+/법무사상담전준비,template-thin,override-expanded,IMPROVED
+/법무사방문전준비,template-thin,override-expanded,IMPROVED
+/부산개인회생상담,near-dup,override-differentiated,IMPROVED
+/부산회생상담,near-dup,override-differentiated,IMPROVED
+/전자등기,near-dup,override-differentiated,IMPROVED
+/전자신청,near-dup,override-differentiated,IMPROVED
+/등기완료기간,near-dup,override-differentiated,IMPROVED
+/등기얼마나걸리나요,near-dup,override-differentiated,IMPROVED
+/부산개인파산법무사,near-dup,override-differentiated,IMPROVED
+/부산파산법무사,near-dup,override-differentiated,IMPROVED

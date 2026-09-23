@@ -15,7 +15,6 @@ type DesktopNavFlyoutProps = {
   /** 트리거 요소 — 패널 콘텐츠를 이 메뉴 아래 중심으로 맞춤 */
   triggerRef: React.RefObject<HTMLElement | null>;
   onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
   children: ReactNode;
   /** 메가메뉴처럼 넓은 콘텐츠 */
   wide?: boolean;
@@ -31,7 +30,6 @@ export function DesktopNavFlyout({
   ariaLabel,
   triggerRef,
   onMouseEnter,
-  onMouseLeave,
   children,
   wide = false,
 }: DesktopNavFlyoutProps) {
@@ -72,14 +70,14 @@ export function DesktopNavFlyout({
   }, [triggerRef, wide]);
 
   useLayoutEffect(() => {
-    if (!open) return;
-    const frame = requestAnimationFrame(() => {
-      updatePosition();
-    });
+    if (!open) {
+      setContentStyle(null);
+      return;
+    }
+    updatePosition();
     window.addEventListener("resize", updatePosition);
     window.addEventListener("scroll", updatePosition, true);
     return () => {
-      cancelAnimationFrame(frame);
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };
@@ -92,17 +90,14 @@ export function DesktopNavFlyout({
       id={panelId}
       role="region"
       aria-label={ariaLabel}
-      className="fixed inset-x-0 z-[60] border-b border-beige-dark bg-white shadow-[0_12px_32px_-12px_rgba(30,58,95,0.22)]"
-      style={{ top: "var(--header-height)" }}
+      className="fixed inset-x-0 z-[60] border-b border-beige-dark bg-white shadow-[0_12px_32px_-12px_rgba(30,58,95,0.22)] motion-reduce:transition-none"
+      style={{
+        top: "var(--header-height)",
+        transition: "none",
+        animation: "none",
+      }}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
-      {/* 헤더 하단 ↔ 패널 사이 호버 끊김 방지(전체 너비) */}
-      <div
-        className="absolute inset-x-0 bottom-full h-10"
-        aria-hidden
-      />
-
       <div className="relative max-h-[min(70vh,36rem)] overflow-y-auto overscroll-contain py-4 md:py-5">
         <div
           ref={panelInnerRef}

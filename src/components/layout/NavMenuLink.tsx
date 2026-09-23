@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CollaborationMegaMenu } from "@/components/layout/CollaborationMegaMenu";
 import { DesktopNavFlyout } from "@/components/layout/DesktopNavFlyout";
+import { useDesktopNavFlyout } from "@/components/layout/useDesktopNavFlyout";
 import {
   isExactNavHref,
   isNavItemActive,
@@ -23,59 +23,9 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
   const active = isNavItemActive(pathname, item.href);
   const currentPage = active && isExactNavHref(pathname, item.href);
   const ariaCurrent = active ? (currentPage ? "page" : "true") : undefined;
-  const [open, setOpen] = useState(false);
   const hasGroups = Boolean(item.groups?.length);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLAnchorElement>(null);
-  const panelId = useId();
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const clearCloseTimer = useCallback(() => {
-    if (closeTimer.current) {
-      clearTimeout(closeTimer.current);
-      closeTimer.current = null;
-    }
-  }, []);
-
-  const openMenu = useCallback(() => {
-    clearCloseTimer();
-    setOpen(true);
-  }, [clearCloseTimer]);
-
-  const scheduleClose = useCallback(() => {
-    clearCloseTimer();
-    closeTimer.current = setTimeout(() => setOpen(false), 160);
-  }, [clearCloseTimer]);
-
-  const closeMenu = useCallback(() => {
-    clearCloseTimer();
-    setOpen(false);
-  }, [clearCloseTimer]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        triggerRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open, closeMenu]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (event: MouseEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) {
-        const panel = document.getElementById(panelId);
-        if (panel?.contains(event.target as Node)) return;
-        closeMenu();
-      }
-    };
-    document.addEventListener("mousedown", onPointerDown);
-    return () => document.removeEventListener("mousedown", onPointerDown);
-  }, [open, closeMenu, panelId]);
+  const { open, openMenu, closeMenu, rootRef, triggerRef, panelId } =
+    useDesktopNavFlyout();
 
   if (variant === "mobile") {
     return (
@@ -107,12 +57,7 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
   }
 
   return (
-    <div
-      ref={rootRef}
-      className="relative"
-      onMouseEnter={openMenu}
-      onMouseLeave={scheduleClose}
-    >
+    <div ref={rootRef} className="relative" onMouseEnter={openMenu}>
       <Link
         ref={triggerRef}
         href={item.href}
@@ -132,7 +77,6 @@ export function NavMenuLink({ item, variant, onNavigate }: NavMenuLinkProps) {
         ariaLabel={`${item.label} 하위 메뉴`}
         triggerRef={triggerRef}
         onMouseEnter={openMenu}
-        onMouseLeave={scheduleClose}
       >
         <div
           className={[

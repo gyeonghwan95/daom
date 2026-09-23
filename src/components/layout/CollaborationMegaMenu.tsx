@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DesktopNavFlyout } from "@/components/layout/DesktopNavFlyout";
+import { useDesktopNavFlyout } from "@/components/layout/useDesktopNavFlyout";
 import {
   linksForMegaArea,
   megaMenuAreas,
@@ -27,71 +28,16 @@ export function CollaborationMegaMenu({
       ? "page"
       : "true"
     : undefined;
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLAnchorElement>(null);
-  const panelId = useId();
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const clearCloseTimer = useCallback(() => {
-    if (closeTimer.current) {
-      clearTimeout(closeTimer.current);
-      closeTimer.current = null;
-    }
-  }, []);
+  const onOpen = useCallback(() => {
+    trackB2BEvent("collaboration_menu_open", { source_page: pathname });
+  }, [pathname]);
 
-  const openMenu = useCallback(() => {
-    clearCloseTimer();
-    setOpen((wasOpen) => {
-      if (!wasOpen) {
-        trackB2BEvent("collaboration_menu_open", { source_page: pathname });
-      }
-      return true;
-    });
-  }, [clearCloseTimer, pathname]);
-
-  const scheduleClose = useCallback(() => {
-    clearCloseTimer();
-    closeTimer.current = setTimeout(() => setOpen(false), 160);
-  }, [clearCloseTimer]);
-
-  const closeMenu = useCallback(() => {
-    clearCloseTimer();
-    setOpen(false);
-  }, [clearCloseTimer]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        triggerRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open, closeMenu]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (event: MouseEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) {
-        const panel = document.getElementById(panelId);
-        if (panel?.contains(event.target as Node)) return;
-        closeMenu();
-      }
-    };
-    document.addEventListener("mousedown", onPointerDown);
-    return () => document.removeEventListener("mousedown", onPointerDown);
-  }, [open, closeMenu, panelId]);
+  const { open, openMenu, closeMenu, rootRef, triggerRef, panelId } =
+    useDesktopNavFlyout({ onOpen });
 
   return (
-    <div
-      ref={rootRef}
-      className="relative"
-      onMouseEnter={openMenu}
-      onMouseLeave={scheduleClose}
-    >
+    <div ref={rootRef} className="relative" onMouseEnter={openMenu}>
       <Link
         ref={triggerRef}
         href={href}
@@ -117,7 +63,6 @@ export function CollaborationMegaMenu({
         triggerRef={triggerRef}
         wide
         onMouseEnter={openMenu}
-        onMouseLeave={scheduleClose}
       >
         <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_15rem]">
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">

@@ -404,7 +404,7 @@ export const PAGE_THUMBNAILS: PageThumbnailItem[] = [
   {
     url: "/부산법인법무사",
     pageTitle: "부산 법인 법무사",
-    sourcePortrait: "portrait-studio-01",
+    sourcePortrait: "portrait-corporate-01",
     template: "EDITORIAL_LEFT",
     headline: "회사 등기,\n함께 보면",
     copyType: "action",

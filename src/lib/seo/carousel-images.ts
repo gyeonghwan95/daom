@@ -10,8 +10,9 @@ import {
   getCarouselManifestItemByUrl,
   type CarouselImageManifestItem,
 } from "@/data/seo/carousel-image-manifest";
-import { getPageThumbnail } from "@/data/seo/page-thumbnails";
+import { getPageVisual } from "@/data/seo/page-visuals";
 import { encodePublicSrc } from "@/lib/encode-public-src";
+import { resolveSerpImage } from "@/lib/seo/page-visuals";
 
 export type SeoCarouselItem = {
   id: string;
@@ -27,10 +28,13 @@ export function isCarouselImageReady(item: CarouselImageManifestItem): boolean {
   return item.status === "approved" || item.status === "applied";
 }
 
-/** 페이지 OG 이미지 (승인 전이면 undefined → 기존 기본 OG 유지) */
+/** 페이지 OG 이미지 — pageVisuals SERP 우선, 없으면 승인된 캐러셀 OG */
 export function resolveCarouselOgImage(pageUrl: string):
   | { src: string; alt: string; width: number; height: number }
   | undefined {
+  const serp = resolveSerpImage(pageUrl);
+  if (serp) return serp;
+
   const item = getCarouselManifestItemByUrl(pageUrl);
   if (!item || !isCarouselImageReady(item) || !item.ogImageRequired) {
     return undefined;
@@ -43,10 +47,13 @@ export function resolveCarouselOgImage(pageUrl: string):
   };
 }
 
-/** 본문 대표 이미지 (승인되고 bodyImageRequired인 항목만) */
+/** 본문 대표 이미지 — SERP 1:1 우선 */
 export function resolveCarouselBodyImage(pageUrl: string):
   | { src: string; alt: string; width: number; height: number }
   | undefined {
+  const serp = resolveSerpImage(pageUrl);
+  if (serp) return serp;
+
   const item = getCarouselManifestItemByUrl(pageUrl);
   if (!item || !isCarouselImageReady(item) || !item.bodyImageRequired) {
     return undefined;
@@ -80,14 +87,16 @@ export function getApprovedCarouselHubData(hubUrl: string):
     if (seenUrls.has(m.pageUrl) || seenImages.has(m.outputPath)) continue;
     seenUrls.add(m.pageUrl);
     seenImages.add(m.outputPath);
-    const pageThumb = getPageThumbnail(m.pageUrl);
+    const pageVisual = getPageVisual(m.pageUrl);
     items.push({
       id: m.id,
       title: m.pageTitle,
       description: undefined,
       href: m.pageUrl,
-      image: encodePublicSrc(pageThumb?.output ?? m.outputPath),
-      imageAlt: pageThumb?.alt ?? m.alt,
+      image: encodePublicSrc(
+        pageVisual?.cardImage ?? pageVisual?.representativeImage ?? m.outputPath,
+      ),
+      imageAlt: pageVisual?.alt ?? m.alt,
       category: m.primaryKeyword,
     });
     if (items.length >= 7) break;

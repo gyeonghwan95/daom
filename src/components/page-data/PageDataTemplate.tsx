@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { PageRepresentativeFigure } from "@/components/media/PageRepresentativeFigure";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import {
@@ -49,6 +50,9 @@ import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData, PageSection } from "@/lib/pageData/types";
+import { resolveSerpImage, getRelatedContentCarousel } from "@/lib/seo/page-visuals";
+import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
+import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
   getNationwideBannerHeadline,
@@ -172,7 +176,9 @@ export function PageDataTemplate({
         data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
       />
 
-      {showCover ? <PageCoverBanner image={cover} /> : null}
+      {showCover && !resolveSerpImage(page.path) ? (
+        <PageCoverBanner image={cover} />
+      ) : null}
 
       <PageHero
         h1={page.h1}
@@ -199,6 +205,21 @@ export function PageDataTemplate({
         showNaverBlogCta={shouldShowNaverBlogMoreCta(page.path)}
         showNationwideChip={showNationwide && !isBusanInheritanceLocalOwner(page.slug)}
       />
+
+      {(() => {
+        const serp = resolveSerpImage(page.path);
+        if (!serp) return null;
+        return (
+          <PageRepresentativeFigure
+            image={{
+              src: serp.src,
+              alt: serp.alt,
+              width: serp.width,
+              height: serp.height,
+            }}
+          />
+        );
+      })()}
 
       {showRemoteBanner && !deferNationwideBanner ? (
         <NationwideServiceCard
@@ -366,6 +387,21 @@ export function PageDataTemplate({
       </ContentSection>
 
       {conversionBlock("post-faq")}
+
+      {(() => {
+        const relatedCarousel = getRelatedContentCarousel(page.path, 8);
+        if (!relatedCarousel) return null;
+        return (
+          <>
+            <RelatedContentCarousel
+              heading={relatedCarousel.heading}
+              items={relatedCarousel.items}
+              className="mt-8"
+            />
+            <SeoCarouselJsonLd items={relatedCarousel.items} />
+          </>
+        );
+      })()}
 
       <ContentSection id="related" title="관련 페이지">
         <RelatedContentGrid links={page.internalLinks} />

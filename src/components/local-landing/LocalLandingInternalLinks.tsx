@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ThumbnailCarousel } from "@/components/carousel/ThumbnailCarousel";
+import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { serviceLabels } from "@/lib/local-landing/districts";
 import {
@@ -12,20 +12,20 @@ import {
   getTopicHubLinksForLanding,
   serviceHubLinks,
 } from "@/lib/seo/internal-links";
-import { getThumbnailCarouselForUrls } from "@/lib/seo/page-thumbnails";
+import { getContentCarouselForUrls } from "@/lib/seo/page-visuals";
 import type { LocalLandingPageType } from "@/types/local-landing";
 
 const SERVICE_CAROUSEL_HEADING: Record<string, string> = {
-  "inheritance-registration": "이어서 확인하면 좋은 상속 절차",
-  "inheritance-renunciation": "이어서 확인하면 좋은 상속 절차",
-  "qualified-acceptance": "이어서 확인하면 좋은 상속 절차",
-  "real-estate-registration": "이 상황과 함께 확인하는 등기",
-  "ownership-transfer": "이 상황과 함께 확인하는 등기",
-  "corporate-registration": "법인 운영 중 함께 확인할 등기",
-  "company-establishment": "법인 운영 중 함께 확인할 등기",
-  "director-change": "법인 운영 중 함께 확인할 등기",
-  "personal-rehabilitation": "신청 전에 함께 확인할 내용",
-  bankruptcy: "신청 전에 함께 확인할 내용",
+  "inheritance-registration": "이어서 확인할 상속 절차",
+  "inheritance-renunciation": "이어서 확인할 상속 절차",
+  "qualified-acceptance": "이어서 확인할 상속 절차",
+  "real-estate-registration": "함께 확인하면 좋은 등기",
+  "ownership-transfer": "함께 확인하면 좋은 등기",
+  "corporate-registration": "회사 운영 중 함께 확인할 등기",
+  "company-establishment": "회사 운영 중 함께 확인할 등기",
+  "director-change": "회사 운영 중 함께 확인할 등기",
+  "personal-rehabilitation": "신청 전 함께 살펴볼 내용",
+  bankruptcy: "신청 전 함께 살펴볼 내용",
 };
 
 type LocalLandingInternalLinksProps = {
@@ -59,11 +59,11 @@ export function LocalLandingInternalLinks({
         ? getLocalServiceCrossLinks(regionKey, currentSlug)
         : getLocalLandingLinksForRegion(regionLabel, currentSlug);
 
-  const relatedCarousel = getThumbnailCarouselForUrls(
+  const relatedCarousel = getContentCarouselForUrls(
     serviceLinks.map((l) => l.href),
     SERVICE_CAROUSEL_HEADING[serviceSlug] ??
       (pageType === "region-hub"
-        ? "이 지역에서 함께 확인할 업무"
+        ? "이 지역에서 이용할 수 있는 주요 업무"
         : "함께 확인할 업무"),
     `/${currentSlug}`,
     8,
@@ -78,7 +78,7 @@ export function LocalLandingInternalLinks({
         />
       ) : null}
       {relatedCarousel ? (
-        <ThumbnailCarousel
+        <RelatedContentCarousel
           heading={relatedCarousel.heading}
           items={relatedCarousel.items}
           className="mt-0"

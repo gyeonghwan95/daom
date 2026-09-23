@@ -1,14 +1,15 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
+import type { RelatedCardItem } from "@/lib/seo/page-visuals";
 import { getCanonicalUrl, getAbsoluteImageUrl } from "@/lib/seo/metadata";
 
 type SeoCarouselJsonLdProps = {
-  items: SeoCarouselItem[];
+  items: Array<SeoCarouselItem | RelatedCardItem>;
 };
 
 /**
- * 캐러셀 ItemList — 화면에 표시되는 카드와 동일한 데이터·순서로 생성.
- * 항목이 4개 미만이면 렌더링하지 않는다.
+ * 캐러셀 ItemList — 화면 카드와 동일 순서.
+ * image는 1200 SERP representative(있으면) 절대 URL.
  */
 export function SeoCarouselJsonLd({ items }: SeoCarouselJsonLdProps) {
   if (items.length < 4) return null;
@@ -18,13 +19,17 @@ export function SeoCarouselJsonLd({ items }: SeoCarouselJsonLdProps) {
       data={{
         "@context": "https://schema.org",
         "@type": "ItemList",
-        itemListElement: items.map((item, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: item.title,
-          image: getAbsoluteImageUrl(item.image),
-          url: getCanonicalUrl(item.href),
-        })),
+        itemListElement: items.map((item, index) => {
+          const related = item as RelatedCardItem;
+          const imageSrc = related.representativeImage ?? item.image;
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.title,
+            image: getAbsoluteImageUrl(imageSrc),
+            url: getCanonicalUrl(item.href),
+          };
+        }),
       }}
     />
   );

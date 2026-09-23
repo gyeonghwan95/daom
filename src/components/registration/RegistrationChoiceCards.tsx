@@ -1,7 +1,7 @@
-import { ThumbnailCarousel } from "@/components/carousel/ThumbnailCarousel";
+import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import { getApprovedCarouselHubData } from "@/lib/seo/carousel-images";
-import { getRelatedThumbnailCarousel } from "@/lib/seo/page-thumbnails";
+import { getRelatedContentCarousel } from "@/lib/seo/page-visuals";
 
 type ChoiceCarouselProps = {
   hubUrl: "/부산부동산등기" | "/부산법인법무사";
@@ -10,7 +10,7 @@ type ChoiceCarouselProps = {
 };
 
 function ChoiceCarousel({ hubUrl, description, heading }: ChoiceCarouselProps) {
-  const related = getRelatedThumbnailCarousel(hubUrl, 7);
+  const related = getRelatedContentCarousel(hubUrl, 7);
   const fallback = getApprovedCarouselHubData(hubUrl);
   const carousel = related ?? fallback;
 
@@ -18,7 +18,7 @@ function ChoiceCarousel({ hubUrl, description, heading }: ChoiceCarouselProps) {
 
   return (
     <>
-      <ThumbnailCarousel
+      <RelatedContentCarousel
         heading={related?.heading ?? heading}
         description={description}
         items={carousel.items}
@@ -33,7 +33,7 @@ export function RealEstateRegistrationChoiceCards() {
   return (
     <ChoiceCarousel
       hubUrl="/부산부동산등기"
-      heading="이 상황과 함께 확인하는 등기"
+      heading="함께 확인하면 좋은 등기"
       description="필요한 부동산등기 업무에서 준비서류·절차·비용 안내를 확인하세요."
     />
   );
@@ -43,7 +43,7 @@ export function CorporateRegistrationChoiceCards() {
   return (
     <ChoiceCarousel
       hubUrl="/부산법인법무사"
-      heading="법인 운영 중 함께 확인할 등기"
+      heading="회사 운영 중 함께 확인할 등기"
       description="현재 필요한 법인등기 업무에서 기한·결의·준비서류를 확인하세요."
     />
   );

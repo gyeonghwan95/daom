@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
+import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
+import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
+import { getContentCarouselForUrls } from "@/lib/seo/page-visuals";
 
 const POPULAR_SEARCH_CARDS = [
   {
@@ -75,13 +78,40 @@ const POPULAR_SEARCH_CARDS = [
   },
 ] as const;
 
+const SITUATION_URLS = [
+  "/부산상속법무사",
+  "/부산부동산등기",
+  "/부산법인법무사",
+  "/services/personal-rehabilitation",
+  "/부산전세권설정등기",
+  "/법률강의",
+];
+
 export function HomePopularSearches() {
+  const situationCarousel = getContentCarouselForUrls(
+    SITUATION_URLS,
+    "상황별로 찾는 법무사 업무",
+    undefined,
+    6,
+  );
+
   return (
     <section
       id="home-popular-searches"
       className="relative w-full border-t border-beige-dark bg-white py-14 md:py-20"
     >
       <Container>
+        {situationCarousel ? (
+          <div className="mb-12">
+            <RelatedContentCarousel
+              heading={situationCarousel.heading}
+              description="지금 상황에 가까운 안내부터 확인하세요."
+              items={situationCarousel.items}
+              className="mt-0"
+            />
+            <SeoCarouselJsonLd items={situationCarousel.items} />
+          </div>
+        ) : null}
         <HomeSectionHeader
           label="Quick links"
           title="바로 찾는 안내"

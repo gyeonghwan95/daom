@@ -1,87 +1,62 @@
 /**
- * 페이지 1:1 썸네일 리졸버 — page-thumbnails manifest 단일 출처.
+ * @deprecated Prefer `@/lib/seo/page-visuals` (SERP JPG + HTML overlay cards).
+ * 하위 호환: page-visuals card/serp 경로를 우선 반환.
  */
 
-import {
-  getPageThumbnail,
-  getRelatedPageThumbnails,
-  PAGE_THUMBNAILS,
-  type PageThumbnailItem,
-} from "@/data/seo/page-thumbnails";
+import { getPageThumbnail } from "@/data/seo/page-thumbnails";
+import { getPageVisual } from "@/data/seo/page-visuals";
 import { encodePublicSrc } from "@/lib/encode-public-src";
-import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
+import {
+  getContentCarouselForUrls,
+  getRelatedContentCarousel,
+  type RelatedCardItem,
+} from "@/lib/seo/page-visuals";
 
-export type ThumbnailCardItem = SeoCarouselItem & {
-  categoryLabel?: string;
-};
+export type ThumbnailCardItem = RelatedCardItem;
 
-export function toThumbnailCardItem(
-  item: PageThumbnailItem,
-): ThumbnailCardItem {
+export function toThumbnailCardItem(item: {
+  url: string;
+  pageTitle: string;
+  output: string;
+  alt: string;
+  category?: string;
+}): ThumbnailCardItem {
+  const visual = getPageVisual(item.url);
   return {
     id: item.url,
     title: item.pageTitle,
     href: item.url,
-    image: encodePublicSrc(item.output),
-    imageAlt: item.alt,
+    image: encodePublicSrc(visual?.cardImage ?? item.output),
+    imageAlt: visual?.alt ?? item.alt,
     category: item.category,
-    categoryLabel: item.category,
+    headline: visual?.cardHeadline,
+    textPosition: visual?.textPosition,
+    representativeImage: visual
+      ? encodePublicSrc(visual.representativeImage)
+      : undefined,
   };
 }
 
-export function resolvePageThumbnailSrc(
-  url: string,
-): string | undefined {
+export function resolvePageThumbnailSrc(url: string): string | undefined {
+  const visual = getPageVisual(url);
+  if (visual) return encodePublicSrc(visual.cardImage);
   const item = getPageThumbnail(url);
   return item ? encodePublicSrc(item.output) : undefined;
 }
 
-/** 현재 페이지 기준 관련 썸네일 캐러셀 (6~10) */
-export function getRelatedThumbnailCarousel(
-  currentUrl: string,
-  limit = 8,
-): { heading: string; items: ThumbnailCardItem[] } | null {
-  const current = getPageThumbnail(currentUrl);
-  const related = getRelatedPageThumbnails(currentUrl, limit);
-  if (related.length < 4) return null;
-
-  return {
-    heading:
-      current?.carouselSectionTitle ??
-      related.find((r) => r.carouselSectionTitle)?.carouselSectionTitle ??
-      "함께 확인할 업무",
-    items: related.map(toThumbnailCardItem),
-  };
+export function getRelatedThumbnailCarousel(currentUrl: string, limit = 8) {
+  return getRelatedContentCarousel(currentUrl, limit);
 }
 
-/** URL 목록에 매핑되는 썸네일만 캐러셀로 (관련 링크 대체용) */
 export function getThumbnailCarouselForUrls(
   urls: string[],
   heading: string,
   excludeUrl?: string,
   limit = 8,
-): { heading: string; items: ThumbnailCardItem[] } | null {
-  const seen = new Set<string>();
-  const items: ThumbnailCardItem[] = [];
-  for (const url of urls) {
-    if (excludeUrl && url === excludeUrl) continue;
-    if (seen.has(url)) continue;
-    const thumb = getPageThumbnail(url);
-    if (!thumb) continue;
-    seen.add(url);
-    items.push(toThumbnailCardItem(thumb));
-    if (items.length >= limit) break;
-  }
-  if (items.length < 4) return null;
-  return { heading, items };
+) {
+  return getContentCarouselForUrls(urls, heading, excludeUrl, limit);
 }
 
 export function summarizePageThumbnails() {
-  return {
-    total: PAGE_THUMBNAILS.length,
-    byCategory: PAGE_THUMBNAILS.reduce<Record<string, number>>((acc, t) => {
-      acc[t.category] = (acc[t.category] ?? 0) + 1;
-      return acc;
-    }, {}),
-  };
+  return { total: 0, note: "use summarizePageVisuals from page-visuals" };
 }
