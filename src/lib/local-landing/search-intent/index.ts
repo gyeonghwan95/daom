@@ -130,6 +130,8 @@ import { costSynonymOverrides } from "./overrides/cost-synonym-intents";
 import { top450InheritanceOverrides } from "./overrides/top450-inheritance-gaps";
 import { 부산보상등기Override } from "./overrides/busan-compensation-registration";
 import { contentUpgradeRepositionBatch1Overrides } from "./overrides/content-upgrade-reposition-batch1";
+import { inheritanceAssetGapOverrides } from "./overrides/inheritance-asset-gaps-2026-09-23";
+import { registrationGapBusanOverrides } from "./overrides/registration-gaps-busan-2026-09-23";
 
 export type {
   SearchGuideEntry,
@@ -157,6 +159,8 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...costSynonymOverrides,
   ...top450InheritanceOverrides,
   ...contentUpgradeRepositionBatch1Overrides,
+  ...inheritanceAssetGapOverrides,
+  ...registrationGapBusanOverrides,
   등기관할과사무소위치: 등기관할과사무소위치Override,
   부산보상등기: 부산보상등기Override,
   공공기관법인등기: 공공기관법인등기Override,

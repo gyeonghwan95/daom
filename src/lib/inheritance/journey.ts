@@ -110,6 +110,15 @@ export const INHERITANCE_PAGE_STAGE: Record<string, string> = {
   제주타지역상속인부동산: "remote-cost",
   부산상속법무사: "choice",
   상속: "after-death",
+  // 2026-09-23 asset / will / tax gaps
+  유언공증준비: "special",
+  유언집행자와상속등기: "registry",
+  상속세신고와등기순서: "registry",
+  예금상속인출절차: "assets",
+  자동차상속명의이전: "assets",
+  보험금과상속재산구분: "assets",
+  분양권입주권상속: "registry",
+  단순승인과숙려기간: "choice",
 };
 
 /** 플래그십·허브에서 비대면·비용 블록을 노출할 slug */
