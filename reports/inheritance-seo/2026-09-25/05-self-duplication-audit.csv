@@ -1,0 +1,7 @@
+sourceUrl,duplicateRiskWith,titleOverlap,status,notes
+/부산상속법무사,/부산상속포기,포기·한정승인 키워드,SERP_CANNIBALIZATION,포기 쿼리에서 허브만 노출 (2026-09-25 관측)
+/부산상속법무사,/부산상속전문법무사,상속전문·절차,POLICY_NOINDEX,spoke canonical hub — 의도적
+/,/부산상속법무사,부산 상속·등기·포기·한정승인,MEDIUM,홈 meta/히어로가 허브 타이틀과 유사할 수 있음 — 수동 확인
+/blog 또는 외부,다옴 도메인,LIVE_SERP_REVIEW_REQUIRED,UNVERIFIED,네이버 블로그·티스토리「부산 상속 법무사｜상속등기·상속포기·한정승인」미러 타이틀 리스크
+/tistory (외부),/부산상속포기,LIVE_SERP_REVIEW_REQUIRED,UNVERIFIED,포기 비용·서류 글 SERP 14위대 — 자사 중복 여부 미확인
+/cafe.naver.com (외부),/부산상속포기,LIVE_SERP_REVIEW_REQUIRED,UNVERIFIED,후기·추천글 — 브랜드 혼선 가능

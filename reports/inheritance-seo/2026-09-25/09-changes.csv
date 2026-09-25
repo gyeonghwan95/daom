@@ -1,0 +1,10 @@
+file,url,field,before,after,why
+keyword-topics.ts,/부산상속법무사,metaTitle,부산 상속 법무사 | 등기·포기·한정승인 먼저 확인,부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차,SERP: 포기 쿼리 허브 흡수 완화·절차 intent
+keyword-topics.ts,/부산상속법무사,summary+FAQ+desc,generic/defensive,answer-first + 상속전문 FAQ,GROUP A + specialist intent
+inheritance-champion-modules.ts,/부산상속법무사,extras+reviewDate,heavy FAQ extras,slim extras; reviewed 2026-09-25,fatigue·중복 감소
+keyword-builder.ts,/부산상속법무사,extraPageSections,many scattered,6 consolidated sections + CTA,hub depth without duplication
+builders.ts,/부산상속법무사,sections,whenNeeded/jurisdiction/lawyerNeeded always,inheritance hub skips redundant (target-scoped),thin repetitive blocks removed
+renunciation-hub-identity.ts,/부산상속포기,metaTitle,부산 상속포기 법무사｜3개월 기한과 후순위 상속 효과를 먼저 확인,부산 상속포기 법무사｜3개월·후순위 상속인부터 확인,hub title diff + SERP exact match
+renunciation-hub-identity.ts,/부산상속포기,h1+description,(구) 장문·효과 중심,3개월·후순위 answer-first; 80–120자 desc,GROUP B ownership
+renunciation-champion-modules.ts,/부산상속포기,FAQ extras,overlap hub,slim unique FAQ,cannibalization
+inheritance-renunciation-busan.ts,/부산상속포기,firstScreen+FAQ,office-first; generic FAQ,answer-first; office later; cost factors; unique FAQ,SERP: 포기 전용 페이지 경쟁

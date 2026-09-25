@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-22T12:32:59.374Z",
+  "generatedAt": "2026-09-25T15:20:23.981Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1636,
+  "totalUrls": 1652,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
     "2": 28,
     "3": 175,
-    "4": 571,
+    "4": 579,
     "5": 183,
-    "6": 580,
+    "6": 588,
     "7": 53,
     "8": 28
   },
@@ -754,9 +754,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-09-22",
+      "lastmod": "2026-09-25",
       "filename": "tier-4-regions.xml",
-      "count": 571
+      "count": 579
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
@@ -766,9 +766,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-09-22",
+      "lastmod": "2026-09-23",
       "filename": "tier-6-keywords.xml",
-      "count": 580
+      "count": 588
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
@@ -2357,6 +2357,12 @@
       "lastmod": null
     },
     {
+      "path": "/부산가처분말소등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%B2%98%EB%B6%84%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
       "path": "/부산감자등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%90%EC%9E%90%EB%93%B1%EA%B8%B0",
@@ -2525,6 +2531,12 @@
       "lastmod": null
     },
     {
+      "path": "/부산공유물분할등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B3%B5%EC%9C%A0%EB%AC%BC%EB%B6%84%ED%95%A0%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
       "path": "/부산공장창고등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B3%B5%EC%9E%A5%EC%B0%BD%EA%B3%A0%EB%93%B1%EA%B8%B0",
@@ -2540,13 +2552,13 @@
       "path": "/부산근저당말소등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산근저당설정등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B7%BC%EC%A0%80%EB%8B%B9%EC%84%A4%EC%A0%95%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산근저당전문법무사",
@@ -2588,6 +2600,12 @@
       "path": "/부산농업회사법인설립",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%86%8D%EC%97%85%ED%9A%8C%EC%82%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
+      "lastmod": null
+    },
+    {
+      "path": "/부산대지권등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8C%80%EC%A7%80%EA%B6%8C%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
     {
@@ -2649,6 +2667,12 @@
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%91%EC%88%98%ED%98%91%EC%97%85",
       "lastmod": "2026-07-18"
+    },
+    {
+      "path": "/부산말소등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0",
+      "lastmod": null
     },
     {
       "path": "/부산매매등기법무사",
@@ -2852,7 +2876,7 @@
       "path": "/부산법인법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산법인설립등기",
@@ -2912,7 +2936,7 @@
       "path": "/부산부동산등기법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산부동산등기복대리",
@@ -3038,7 +3062,7 @@
       "path": "/부산상속법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산상속법무사추천",
@@ -3092,7 +3116,7 @@
       "path": "/부산소유권이전등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산소유권이전전문법무사",
@@ -3161,6 +3185,12 @@
       "lastmod": null
     },
     {
+      "path": "/부산예고등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%98%88%EA%B3%A0%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
       "path": "/부산오피스텔매매등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0",
@@ -3224,7 +3254,7 @@
       "path": "/부산임원변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산임원변경전문법무사",
@@ -3308,13 +3338,13 @@
       "path": "/부산전세권말소등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EA%B6%8C%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산전세권설정등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EA%B6%8C%EC%84%A4%EC%A0%95%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-25"
     },
     {
       "path": "/부산전세보증금반환법무사",
@@ -3464,6 +3494,12 @@
       "path": "/부산지분이전등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B6%84%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
+      "path": "/부산지상권설정등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EC%83%81%EA%B6%8C%EC%84%A4%EC%A0%95%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
     {
@@ -3650,6 +3686,18 @@
       "path": "/부산확정일자전세권비교",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90%EC%A0%84%EC%84%B8%EA%B6%8C%EB%B9%84%EA%B5%90",
+      "lastmod": null
+    },
+    {
+      "path": "/부산확정일자취득",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90%EC%B7%A8%EB%93%9D",
+      "lastmod": null
+    },
+    {
+      "path": "/부산환매특약등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%99%98%EB%A7%A4%ED%8A%B9%EC%95%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
     {
@@ -6656,7 +6704,7 @@
       "path": "/가족후견",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%A1%B1%ED%9B%84%EA%B2%AC",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/가처분신청서류준비",
@@ -6848,7 +6896,7 @@
       "path": "/개인회생파산",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%ED%8C%8C%EC%82%B0",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/개인회생필요서류",
@@ -7058,7 +7106,7 @@
       "path": "/공탁채권회수",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%ED%83%81%EC%B1%84%EA%B6%8C%ED%9A%8C%EC%88%98",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/관세법인설립등기",
@@ -7427,6 +7475,12 @@
       "lastmod": "2026-09-01"
     },
     {
+      "path": "/단순승인과숙려기간",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8B%A8%EC%88%9C%EC%8A%B9%EC%9D%B8%EA%B3%BC%EC%88%99%EB%A0%A4%EA%B8%B0%EA%B0%84",
+      "lastmod": null
+    },
+    {
       "path": "/대습상속등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%8A%B5%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -7742,7 +7796,7 @@
       "path": "/민사소송",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AF%BC%EC%82%AC%EC%86%8C%EC%86%A1",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/반송동법무사",
@@ -7916,7 +7970,7 @@
       "path": "/법인등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/법인등기과태료",
@@ -8063,6 +8117,12 @@
       "lastmod": null
     },
     {
+      "path": "/보험금과상속재산구분",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B3%B4%ED%97%98%EA%B8%88%EA%B3%BC%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B5%AC%EB%B6%84",
+      "lastmod": null
+    },
+    {
       "path": "/복대리등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B3%B5%EB%8C%80%EB%A6%AC%EB%93%B1%EA%B8%B0",
@@ -8150,7 +8210,7 @@
       "path": "/부동산등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/부동산등기과태료",
@@ -8324,6 +8384,12 @@
       "path": "/분양권명의이전등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%84%EC%96%91%EA%B6%8C%EB%AA%85%EC%9D%98%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
+      "path": "/분양권입주권상속",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%84%EC%96%91%EA%B6%8C%EC%9E%85%EC%A3%BC%EA%B6%8C%EC%83%81%EC%86%8D",
       "lastmod": null
     },
     {
@@ -8540,7 +8606,7 @@
       "path": "/상속",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/상속건물멸실등기",
@@ -8618,6 +8684,12 @@
       "path": "/상속상담전준비서류와비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%83%81%EB%8B%B4%EC%A0%84%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98%EC%99%80%EB%B9%84%EC%9A%A9",
+      "lastmod": null
+    },
+    {
+      "path": "/상속세신고와등기순서",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%84%B8%EC%8B%A0%EA%B3%A0%EC%99%80%EB%93%B1%EA%B8%B0%EC%88%9C%EC%84%9C",
       "lastmod": null
     },
     {
@@ -9143,6 +9215,12 @@
       "lastmod": null
     },
     {
+      "path": "/예금상속인출절차",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%88%EA%B8%88%EC%83%81%EC%86%8D%EC%9D%B8%EC%B6%9C%EC%A0%88%EC%B0%A8",
+      "lastmod": null
+    },
+    {
       "path": "/오래된상속토지정리",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%A4%EB%9E%98%EB%90%9C%EC%83%81%EC%86%8D%ED%86%A0%EC%A7%80%EC%A0%95%EB%A6%AC",
@@ -9233,6 +9311,18 @@
       "lastmod": null
     },
     {
+      "path": "/유언공증준비",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EA%B3%B5%EC%A6%9D%EC%A4%80%EB%B9%84",
+      "lastmod": null
+    },
+    {
+      "path": "/유언집행자와상속등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EC%A7%91%ED%96%89%EC%9E%90%EC%99%80%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
       "path": "/의료법인설립등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
@@ -9284,7 +9374,7 @@
       "path": "/임대차전세",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EB%8C%80%EC%B0%A8%EC%A0%84%EC%84%B8",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/임원변경등기과태료",
@@ -9368,6 +9458,12 @@
       "path": "/임차권등기명령필요서류",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98",
+      "lastmod": null
+    },
+    {
+      "path": "/자동차상속명의이전",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%90%EB%8F%99%EC%B0%A8%EC%83%81%EC%86%8D%EB%AA%85%EC%9D%98%EC%9D%B4%EC%A0%84",
       "lastmod": null
     },
     {
@@ -9842,7 +9938,7 @@
       "path": "/창업법무",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B0%BD%EC%97%85%EB%B2%95%EB%AC%B4",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/창원비영리법인설립",
@@ -9920,7 +10016,7 @@
       "path": "/특수등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-21"
+      "lastmod": "2026-09-23"
     },
     {
       "path": "/특수등기의뢰",

@@ -115,15 +115,28 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
         items: s.items,
         links: s.links,
       })),
+    );
+    if (isInheritanceHub) {
+      // 상속 허브: extraPageSections(상황·비교·전문 판단) 중심으로 TOC를 짧게 유지
+      sections.push(
+        {
+          title: "비용이 달라지는 요소",
+          body: page.costGuide,
+          items: page.costFactors ?? page.precautions,
+        },
+        {
+          title: "법무사 의견",
+          body: page.lawyerOpinion,
+        },
+      );
+      return sections;
+    }
+    sections.push(
       {
-        title: isInheritanceHub
-          ? "이런 경우에 상담합니다"
-          : isRegistryHub
-            ? "상담이 필요한 등기 상황"
-            : "이런 경우 필요한 절차입니다",
-        body: isInheritanceHub
-          ? "부동산 명의이전, 채무 걱정, 가족 간 분배는 준비서류와 기한이 다릅니다. 아래 상황에 가까운 안내로 이어가시면 됩니다."
-          : `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
+        title: isRegistryHub
+          ? "상담이 필요한 등기 상황"
+          : "이런 경우 필요한 절차입니다",
+        body: `${page.regionLabel}에서 아래와 같은 상황이면 ${page.title} 절차를 검토해 보시면 좋습니다. 등기부·계약서를 함께 확인하면 필요 여부와 순서를 정하기 쉽습니다.`,
         items: page.whenNeeded,
       },
       {
@@ -133,9 +146,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
       },
       {
         title: "법무사 상담이 필요한 경우",
-        body: isInheritanceHub
-          ? "채무 조사, 3개월 기한, 해외·미성년 상속인이 있으면 혼자 순서를 정하기 어렵습니다. 사망일·상속인·확인된 재산·채무만 알려 주셔도 1차 방향을 나눌 수 있습니다."
-          : `다음과 같은 상황에서는 혼자 진행하기보다 ${page.regionLabel} 등기 법무사와 상담하시는 것이 안전합니다. 기한·순서·서류 오류를 줄이는 데 도움이 됩니다.`,
+        body: `다음과 같은 상황에서는 혼자 진행하기보다 ${page.regionLabel} 등기 법무사와 상담하시는 것이 안전합니다. 기한·순서·서류 오류를 줄이는 데 도움이 됩니다.`,
         items: page.legalIssues,
       },
       {

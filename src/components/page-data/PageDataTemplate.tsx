@@ -139,11 +139,14 @@ export function PageDataTemplate({
     page.path.startsWith("/전국") ||
     page.path === "/여러지역상속부동산등기" ||
     page.slug === "전국업무";
+  const isInheritanceSurgeryTarget =
+    page.slug === "부산상속법무사" || page.slug === "부산상속포기";
   /** 업무안내·전국허브는 NationwideServiceNotice가 있어 배너 중복 생략 */
   const showRemoteBanner =
     showNationwide &&
     !isDedicatedNationwideHub &&
-    !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
+    !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug)) &&
+    !isInheritanceSurgeryTarget;
   const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
   const deferNationwideBanner = shouldDeferNationwideBanner(page.slug);
@@ -330,7 +333,7 @@ export function PageDataTemplate({
         />
       </ContentSection>
 
-      {showInheritanceExtras ? (
+      {showInheritanceExtras && !isInheritanceSurgeryTarget ? (
         <>
           <RemoteInheritanceProcess fromPage={page.slug} />
           <InheritanceCostGuide fromPage={page.slug} />
