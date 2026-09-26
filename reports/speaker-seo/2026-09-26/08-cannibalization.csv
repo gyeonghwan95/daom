@@ -1,0 +1,4 @@
+query_a,query_b,risk,owner,mitigation
+부산 강사,부산 특강,LOW,/부산법률강사,동의어 단일 owner
+법률 특강 강사,부산 법률특강 강사,MED,/법률강의 vs /부산법률강사,"generic=/법률강의, local hiring=/부산법률강사"
+진로특강 강사,고등학교 진로특강,LOW,/법무사진로특강,단일 career owner

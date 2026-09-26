@@ -1,0 +1,5 @@
+url,changeType,summary
+/법무사진로특강,CONTENT,직업인·현직자·법조인 초청 특강 의도 H2/FAQ 강화
+/학교법률교육,CONTENT,고등학교·대학교 담당자 분기·커리큘럼 카드 강화
+/법률강의,CONTENT,지역명 없는 검색 담당 문단·대상 선택 신호 강화
+keyword-map,DATA,generic/학교/대학/섭외 seed → 기존 URL 매핑 확장

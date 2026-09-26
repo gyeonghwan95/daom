@@ -1,0 +1,5 @@
+gap,severity,evidence,action,createNew
+지역명 없는 GENERIC speaker hub title,HIGH,/법률강의·/부산법률강사 title이 부산 중심,STRENGTHEN_CONTENT — 신규 URL 없이 hub first700에 전국 출강·지역무검색 대응 문단 강화,NO
+직업인·현직자·법조인 진로 자연어,HIGH,학교 공고 표현이 /법무사진로특강·/학교법률교육에 약함,STRENGTHEN — FAQ/H2에 직업인 초청·현직자 특강 명시,NO
+대학교 전용 URL,MED,대학 의도가 학교·청년에 분산,KEEP split — /학교법률교육(슬롯)·/청년생활법률특강(생활)·/법무사진로특강(진로),NO
+지역 clone (울산·김해 등),LOW,실적 부족 지역,DO_NOT_CREATE — 인접은 hiring/이력에서 협의 문구만,NO

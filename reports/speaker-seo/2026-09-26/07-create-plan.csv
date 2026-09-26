@@ -1,0 +1,5 @@
+priority,proposedSlug,intent,decision,reason,ownerInstead
+P0,/법률특강강사,GENERIC speaker hub,DO_NOT_CREATE,기존 /법률강의+/부산법률강사로 흡수. title 보호·cannibalization 위험,/법률강의
+P0,/고등학교진로특강,high school career,DO_NOT_CREATE,/법무사진로특강이 owner. 콘텐츠 강화,/법무사진로특강
+P0,/대학교특강,university,DO_NOT_CREATE,학교·청년·진로로 분담,/학교법률교육
+P1,/울산법률강사,regional clone,DO_NOT_CREATE,QUALITY GATE 미충족,/부산법률강사

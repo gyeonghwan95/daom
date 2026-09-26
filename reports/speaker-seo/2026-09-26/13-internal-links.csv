@@ -1,0 +1,8 @@
+from,to,type
+/법률강의,/부산법률강사,hub→hiring
+/법률강의,/학교법률교육,hub→audience
+/법률강의,/법무사진로특강,hub→career
+/학교법률교육,/법무사진로특강,audience→topic
+/법무사진로특강,/강의이력/yangsan-jeil-high-career-talk,topic→evidence
+/부산법률강사,/강의문의,hiring→inquiry
+/부산법률강사,/강사소개,hiring→profile
