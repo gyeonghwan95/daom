@@ -1,9 +1,8 @@
 {
-  "updated": "2026-09-22",
-  "note": "URL은 유지한다. 대표와 검색의도가 같은 브리지·glossary는 noindex+follow. 동일 의도 glossary는 canonical을 서비스 owner로 보낸다(코드 getGlossaryCanonicalOverride). 2026-09-22: 등기전문·법인전문 브리지를 상속전문과 동일 정책으로 허브에 연결.",
+  "updated": "2026-09-26",
+  "note": "URL은 유지한다. 대표와 검색의도가 같은 브리지·glossary는 noindex+follow. 2026-09-26: /부산상속전문법무사는 PROVIDER-SELECTION으로 index 전환(절차 허브와 역할 분리). 등기전문·법인전문·포기전문·한정전문 브리지는 기존 정책 유지.",
   "noindex": [
     "/search",
-    "/부산상속전문법무사",
     "/부산상속등기전문법무사",
     "/부산한정승인전문법무사",
     "/부산상속포기전문법무사",
@@ -44,7 +43,6 @@
     "/glossary/liquidation-registration"
   ],
   "canonicalOverrides": {
-    "/부산상속전문법무사": "/부산상속법무사",
     "/부산상속등기전문법무사": "/부산상속등기",
     "/부산한정승인전문법무사": "/부산한정승인",
     "/부산상속포기전문법무사": "/부산상속포기",

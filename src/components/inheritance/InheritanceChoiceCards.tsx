@@ -1,8 +1,4 @@
 import Link from "next/link";
-import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
-import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
-import { getApprovedCarouselHubData } from "@/lib/seo/carousel-images";
-import { getRelatedContentCarousel } from "@/lib/seo/page-visuals";
 
 const CHOICES = [
   {
@@ -31,37 +27,14 @@ const CHOICES = [
     hint: "특별한정승인 검토",
   },
   {
-    href: "/부산상속재산분할법무사",
-    title: "상속인 여러 명이 부동산 배분 합의",
-    hint: "협의분할 후 등기",
-  },
-  {
-    href: "/미성년상속인",
-    title: "미성년 상속인이 있음",
-    hint: "특별대리 등 추가 검토",
+    href: "/부산상속전문법무사",
+    title: "맡길 법무사를 고르는 중",
+    hint: "업무범위·경험 선택 기준",
   },
 ] as const;
 
-/** 첫 화면 선택 UI — 키워드 반복이 아니라 상황 분기. */
+/** 첫 화면 선택 UI — 상황 분기만. 관련 캐러셀은 본문 하단에서만. */
 export function InheritanceChoiceCards() {
-  const related = getRelatedContentCarousel("/부산상속법무사", 7);
-  const fallback = getApprovedCarouselHubData("/부산상속법무사");
-  const carousel = related ?? fallback;
-
-  if (carousel) {
-    return (
-      <>
-        <RelatedContentCarousel
-          heading={related?.heading ?? "이어서 확인할 상속 절차"}
-          description="현재 상황과 가까운 항목에서 필요한 기한·서류·절차를 확인하세요."
-          items={carousel.items}
-          className="mt-2"
-        />
-        <SeoCarouselJsonLd items={carousel.items} />
-      </>
-    );
-  }
-
   return (
     <nav
       aria-label="상속 절차 선택"

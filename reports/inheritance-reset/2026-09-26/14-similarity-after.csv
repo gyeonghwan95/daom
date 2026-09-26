@@ -1,0 +1,4 @@
+pair,first700_jaccard,first700_cosine,first700_score,first700_gate,first700_pass,body_jaccard,body_cosine,body_score,body_gate,body_pass
+Broad ↔ Renunciation,0.2186,0.2777,0.2777,0.45,true,0.2834,0.5011,0.5011,0.6,true
+Broad ↔ Specialist,0.2146,0.312,0.312,0.5,true,0.2439,0.5827,0.5827,0.65,true
+Renunciation ↔ Specialist,0.1435,0.1498,0.1498,0.4,true,0.1648,0.3386,0.3386,0.55,true

@@ -138,6 +138,7 @@ export const BUSAN_INHERITANCE_LOCAL_OWNER_SLUGS = new Set([
   "부산상속등기",
   "부산상속포기",
   "부산한정승인",
+  "부산상속전문법무사",
 ]);
 
 export function isBusanInheritanceLocalOwner(slug: string): boolean {

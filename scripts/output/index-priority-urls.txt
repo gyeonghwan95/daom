@@ -1,13 +1,13 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-09-25T15:20:52.660Z
+# 생성: 2026-09-26T10:49:10.409Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1652 (제외 179)
+# 총 URL: 1653 (제외 178)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 175개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 579개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 580개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 588개
 # Tier 7 — 후순위 (블로그): 53개
@@ -249,7 +249,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (175개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (579개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (580개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -413,6 +413,7 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (579개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산상속법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8	/부산상속재산관리인
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속재산분할법무사
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산상속포기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%9B%84%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산상속후매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%ED%98%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/부산상호변경등기
@@ -1700,11 +1701,10 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 
 ========================================================================
-# 제외 (179)
+# 제외 (178)
 # [EXCLUDED:noindex] /부산등기전문법무사
 # [EXCLUDED:noindex] /부산법인전문법무사
 # [EXCLUDED:noindex] /부산상속등기전문법무사
-# [EXCLUDED:noindex] /부산상속전문법무사
 # [EXCLUDED:noindex] /부산상속포기전문법무사
 # [EXCLUDED:noindex] /부산한정승인전문법무사
 # [EXCLUDED:non-indexable-registry] /업무사례/부산가야역법무사

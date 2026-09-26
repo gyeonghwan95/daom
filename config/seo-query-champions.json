@@ -67,18 +67,18 @@
     "부산 상속 법무사": {
       "primary": "/부산상속법무사",
       "protected": true,
-      "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인", "/상속"],
-      "note": "broad inheritance hub. /부산상속전문법무사는 URL 유지·noindex·canonical to hub."
+      "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인", "/부산상속전문법무사", "/상속"],
+      "note": "INHERITANCE DECISION HUB. Provider-selection is /부산상속전문법무사 (indexable)."
     },
     "부산 상속 전문 법무사": {
-      "primary": "/부산상속법무사",
+      "primary": "/부산상속전문법무사",
       "protected": true,
-      "aliasOf": "부산 상속 법무사"
+      "aliasOf": "부산 상속전문 법무사"
     },
     "부산 상속전문 법무사": {
-      "primary": "/부산상속법무사",
+      "primary": "/부산상속전문법무사",
       "protected": true,
-      "aliasOf": "부산 상속 법무사"
+      "supporting": ["/부산상속법무사", "/부산상속등기", "/부산상속포기"]
     },
     "부산 상속등기 법무사": {
       "primary": "/부산상속등기",

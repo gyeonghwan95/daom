@@ -9,6 +9,7 @@ import {
 import { getAllLocalLandingSlugs } from "@/lib/local-landing/config";
 import { getAllTopicHubSlugs } from "@/lib/topic-hubs/config";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { RESERVED_INHERITANCE_SLUG_BLOCKLIST } from "@/data/seoExperiments/reserved-inheritance-intents";
 import {
   INTENT_URL_SUFFIX,
   SPECIAL_KOREAN_SLUG,
@@ -53,7 +54,11 @@ const CORE_SERVICE_IDS = [
 ];
 
 function loadReservedSlugs(): Set<string> {
-  const slugs = [...getAllLocalLandingSlugs(), ...getAllTopicHubSlugs()];
+  const slugs = [
+    ...getAllLocalLandingSlugs(),
+    ...getAllTopicHubSlugs(),
+    ...RESERVED_INHERITANCE_SLUG_BLOCKLIST,
+  ];
   return new Set(slugs.map((s) => normalizeRouteSlug(s)));
 }
 

@@ -122,11 +122,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     { id: "consultation", label: "상담 문의" },
   ];
 
-  const showNationwide = shouldShowNationwideRegionChip(
-    page.path,
-    page.slug,
-    page.serviceSlug,
-  );
+  const showNationwide =
+    page.slug !== "부산상속전문법무사" &&
+    shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
   const bodyParagraphs = [
     ...content.heroParagraphs.slice(1),

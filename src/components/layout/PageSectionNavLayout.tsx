@@ -9,6 +9,7 @@ import {
   usesDynamicSectionDiscovery,
 } from "@/lib/section-nav/get-sections-for-path";
 import type { SectionNavItem } from "@/lib/section-nav/types";
+import { isReservedInheritancePath } from "@/data/seoExperiments/reserved-inheritance-intents";
 
 type PageSectionNavLayoutProps = {
   children: React.ReactNode;
@@ -114,13 +115,30 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
     return <div className="min-w-0">{children}</div>;
   }
 
+  const leanInheritanceSeo = isReservedInheritancePath(pathname || "");
+
+  if (!leanInheritanceSeo) {
+    return (
+      <div
+        data-section-nav-grid
+        className="lg:grid lg:grid-cols-[11.5rem_minmax(0,1fr)] xl:grid-cols-[12.5rem_minmax(0,1fr)] lg:items-stretch lg:gap-8 xl:gap-10"
+      >
+        <SectionNavigator sections={sections} />
+        <div className="min-w-0">{children}</div>
+      </div>
+    );
+  }
+
+  /* Target-only: article first in DOM (SEO), visual left column via grid placement */
   return (
     <div
       data-section-nav-grid
       className="lg:grid lg:grid-cols-[11.5rem_minmax(0,1fr)] xl:grid-cols-[12.5rem_minmax(0,1fr)] lg:items-stretch lg:gap-8 xl:gap-10"
     >
-      <SectionNavigator sections={sections} />
-      <div className="min-w-0">{children}</div>
+      <div className="min-w-0 lg:col-start-2 lg:row-start-1">{children}</div>
+      <div className="lg:col-start-1 lg:row-start-1">
+        <SectionNavigator sections={sections} />
+      </div>
     </div>
   );
 }

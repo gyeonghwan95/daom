@@ -34,9 +34,9 @@ type Candidate = {
 };
 
 const EXPECTED: { query: string; owner: string }[] = [
-  { query: "부산 상속전문 법무사", owner: "/부산상속법무사" },
-  { query: "부산상속전문법무사", owner: "/부산상속법무사" },
-  { query: "부산 상속 전문 법무사", owner: "/부산상속법무사" },
+  { query: "부산 상속전문 법무사", owner: "/부산상속전문법무사" },
+  { query: "부산상속전문법무사", owner: "/부산상속전문법무사" },
+  { query: "부산 상속 전문 법무사", owner: "/부산상속전문법무사" },
   { query: "부산 상속 법무사", owner: "/부산상속법무사" },
   { query: "부산 법무사 상속", owner: "/부산상속법무사" },
   { query: "부산 상속포기 법무사", owner: "/부산상속포기" },
@@ -53,7 +53,7 @@ function compact(s: string): string {
   return s.replace(/\s+/g, "");
 }
 
-const NOINDEX_PATHS = new Set(["/부산상속전문법무사"]);
+const NOINDEX_PATHS = new Set<string>([]);
 
 const TITLE_MODIFIERS = ["상담", "추천"];
 
@@ -168,9 +168,9 @@ function candidates(): Candidate[] {
     },
     {
       path: "/부산상속전문법무사",
-      title: "부산 상속전문 법무사｜등기·포기·한정승인 첫 분기",
-      h1: "부산 상속전문 법무사 — 상속 절차 첫 분기 안내",
-      body: "noindex 브리지. 대표 안내는 부산 상속 법무사 페이지로 이어진다.",
+      title: "부산에서 상속전문 법무사를 찾을 때｜업무 범위·사례·상담 기준",
+      h1: "부산에서 상속 문제를 맡길 법무사를 고를 때 확인할 기준",
+      body: "부산 상속전문 법무사 선택 기준. 업무범위·경험·등기·포기·한정승인. 공인 전문 자격처럼 표방하지 않음. 절차 선택은 부산 상속 법무사.",
     },
     {
       path: "/부산가정법원상속포기",

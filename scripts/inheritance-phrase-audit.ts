@@ -9,8 +9,8 @@ import { getAllPageData } from "../src/lib/pageData/registry";
 const OWNERS: Record<string, string> = {
   "부산 상속포기 법무사": "/부산상속포기",
   "부산 상속 법무사": "/부산상속법무사",
-  "부산 상속전문 법무사": "/부산상속법무사",
-  "부산상속전문법무사": "/부산상속법무사",
+  "부산 상속전문 법무사": "/부산상속전문법무사",
+  "부산상속전문법무사": "/부산상속전문법무사",
 };
 
 function csvEscape(v: string | number): string {

@@ -20,15 +20,25 @@ const owners = [
     bodySignals: [
       "상속포기 판단 전에 확인할 내용",
       "상속포기 3개월 기한 확인 도구",
-      "부산가정법원 상속포기 관할·접수 안내",
+      "부산가정법원 관할·접수",
       "익명 상담 사례",
     ],
   },
 ] as const;
 
 const bridges = [
-  { path: "/부산상속전문법무사", owner: "/부산상속법무사" },
   { path: "/부산상속포기전문법무사", owner: "/부산상속포기" },
+] as const;
+
+const indexedSpecialists = [
+  {
+    path: "/부산상속전문법무사",
+    bodySignals: [
+      "상속업무를 맡기기 전에 확인할 7가지",
+      "업무범위",
+      "공인 ‘전문’ 자격처럼 표방하지 않습니다",
+    ],
+  },
 ] as const;
 
 function fail(message: string): never {
@@ -113,11 +123,31 @@ for (const bridge of bridges) {
   }
 }
 
+for (const page of indexedSpecialists) {
+  const html = readExport(page.path);
+  const expectedUrl = absoluteUrl(page.path);
+  const robots = robotsOf(html);
+  if (canonicalOf(html) !== expectedUrl) {
+    fail(`${page.path} self-canonical 불일치`);
+  }
+  if (!robots.includes("index") || robots.includes("noindex")) {
+    fail(`${page.path} index,follow 아님: ${robots || "(없음)"}`);
+  }
+  for (const signal of page.bodySignals) {
+    if (!html.includes(signal)) fail(`${page.path} 본문 신호 누락: ${signal}`);
+  }
+}
+
 const sitemapPath = path.join(OUT, "sitemap.xml");
 const sitemap = fs.readFileSync(sitemapPath, "utf8");
 for (const owner of owners) {
   if (!sitemap.includes(absoluteUrl(owner.path))) {
     fail(`sitemap owner 누락: ${owner.path}`);
+  }
+}
+for (const page of indexedSpecialists) {
+  if (!sitemap.includes(absoluteUrl(page.path))) {
+    fail(`sitemap specialist 누락: ${page.path}`);
   }
 }
 for (const bridge of bridges) {
@@ -126,4 +156,4 @@ for (const bridge of bridges) {
   }
 }
 
-console.log("[inheritance-owner-export] OK — owner/bridge HTML 및 sitemap 신호 일치");
+console.log("[inheritance-owner-export] OK — owner/specialist/bridge HTML 및 sitemap 신호 일치");

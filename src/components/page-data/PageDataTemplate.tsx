@@ -130,24 +130,28 @@ export function PageDataTemplate({
     hasDetailContent: Boolean(children),
   });
   const conversionKey = resolveConversionKey(page);
-  const showNationwide = shouldShowNationwideRegionChip(
-    page.path,
-    page.slug,
-    page.serviceSlug,
-  );
+  const isInheritanceSurgeryTarget =
+    page.slug === "부산상속법무사" ||
+    page.slug === "부산상속포기" ||
+    page.slug === "부산상속전문법무사";
+  const showNationwide =
+    !isInheritanceSurgeryTarget &&
+    shouldShowNationwideRegionChip(
+      page.path,
+      page.slug,
+      page.serviceSlug,
+    );
   const isDedicatedNationwideHub =
     page.path.startsWith("/전국") ||
     page.path === "/여러지역상속부동산등기" ||
     page.slug === "전국업무";
-  const isInheritanceSurgeryTarget =
-    page.slug === "부산상속법무사" || page.slug === "부산상속포기";
   /** 업무안내·전국허브는 NationwideServiceNotice가 있어 배너 중복 생략 */
   const showRemoteBanner =
     showNationwide &&
     !isDedicatedNationwideHub &&
-    !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug)) &&
-    !isInheritanceSurgeryTarget;
-  const showInheritanceJourney = isInheritanceJourneyPage(page.slug);
+    !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
+  const showInheritanceJourney =
+    isInheritanceJourneyPage(page.slug) && !isInheritanceSurgeryTarget;
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
   const deferNationwideBanner = shouldDeferNationwideBanner(page.slug);
   const championSummary = getChampionArticleSummary(page.slug);
@@ -244,7 +248,7 @@ export function PageDataTemplate({
         <InheritanceJourneyNav currentSlug={page.slug} />
       ) : null}
 
-      {conversionBlock("top")}
+      {isInheritanceSurgeryTarget ? null : conversionBlock("top")}
 
       <ArticleSummary
         conclusion={
@@ -340,7 +344,7 @@ export function PageDataTemplate({
         </>
       ) : null}
 
-      {page.consultationPoints.length > 0 ? (
+      {!isInheritanceSurgeryTarget && page.consultationPoints.length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
           <ChecklistBox items={page.consultationPoints} />
         </ContentSection>
@@ -375,7 +379,7 @@ export function PageDataTemplate({
         </div>
       </ContentSection>
 
-      {conversionBlock("detail")}
+      {isInheritanceSurgeryTarget ? null : conversionBlock("detail")}
 
       <ExtraSections sections={page.sections} />
 
@@ -392,7 +396,10 @@ export function PageDataTemplate({
       {conversionBlock("post-faq")}
 
       {(() => {
-        const relatedCarousel = getRelatedContentCarousel(page.path, 8);
+        const relatedCarousel = getRelatedContentCarousel(
+          page.path,
+          isInheritanceSurgeryTarget ? 4 : 8,
+        );
         if (!relatedCarousel) return null;
         return (
           <>
