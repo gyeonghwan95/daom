@@ -19,6 +19,7 @@ import { NoticeDetailPageView } from "@/components/notices/NoticeDetailPageView"
 import { NationwideCasePageView } from "@/components/nationwide-cases/NationwideCasePageView";
 import { GyeongnamCasePageView } from "@/components/gyeongnam-cases/GyeongnamCasePageView";
 import { SoutheastCasePageView } from "@/components/southeast-cases/SoutheastCasePageView";
+import { RegionalInheritanceTargetView } from "@/components/regional-inheritance/RegionalInheritanceTargetView";
 import {
   buildCaseRegionPageData,
   buildCaseRegionsByAreaPageData,
@@ -48,6 +49,7 @@ import {
   getPublishedNationwideCaseSlugs,
   getRegionHubGroups,
 } from "@/lib/nationwide-cases";
+import { getRegionalInheritanceTarget } from "@/lib/nationwide-cases/regional-inheritance-targets";
 import {
   SOUTHEAST_HUB_LINKS,
   getPublishedSoutheastDefs,
@@ -58,7 +60,7 @@ import {
 } from "@/lib/southeast-cases";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
-import { getCanonicalUrl } from "@/lib/seo/metadata";
+import { createPageMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
 type Props = {
@@ -146,6 +148,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
     if (child === "업무별") {
       return pageDataToMetadata(buildCaseRegionsByServicePageData());
+    }
+
+    const regionalTarget = getRegionalInheritanceTarget(child);
+    if (regionalTarget) {
+      return createPageMetadata({
+        title: regionalTarget.metaTitle,
+        description: regionalTarget.description,
+        path: regionalTarget.path,
+        ogImage: regionalTarget.ogImage.src,
+        ogImageWidth: regionalTarget.ogImage.width,
+        ogImageHeight: regionalTarget.ogImage.height,
+        ogImageAlt: regionalTarget.ogImage.alt,
+      });
     }
 
     const nationwidePage = getNationwideCasePageDataBySlug(child);
@@ -253,6 +268,17 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
 
     const nationwideDef = getNationwideCaseBySlug(child);
     const nationwidePage = getNationwideCasePageDataBySlug(child);
+
+    const regionalTarget = getRegionalInheritanceTarget(child);
+    if (regionalTarget && nationwidePage) {
+      return (
+        <RegionalInheritanceTargetView
+          target={regionalTarget}
+          breadcrumbs={nationwidePage.breadcrumbs}
+        />
+      );
+    }
+
     if (nationwideDef && nationwidePage) {
       const explorerItems = getPublishedNationwideCaseDefs()
         .filter((d) => d.kind === "region")

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T07:31:44.187Z",
+  "generatedAt": "2026-09-27T10:05:21.468Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1654,
   "format": "urlset",
@@ -732,7 +732,7 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-09-22",
+      "lastmod": "2026-09-27",
       "filename": "tier-1-core.xml",
       "count": 18
     },
@@ -744,7 +744,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
-      "lastmod": "2026-09-22",
+      "lastmod": "2026-09-27",
       "filename": "tier-3-tools.xml",
       "count": 175
     },
@@ -756,7 +756,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
-      "lastmod": "2026-09-02",
+      "lastmod": "2026-09-27",
       "filename": "tier-5-local.xml",
       "count": 183
     },
@@ -826,7 +826,7 @@
       "path": "/전국상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-08-18"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/전국업무",
@@ -838,7 +838,7 @@
       "path": "/해운대법무사",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/contact",
@@ -1276,7 +1276,7 @@
       "path": "/업무사례/김해상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B9%80%ED%95%B4%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-07"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/업무사례/김해상속등기비용",
@@ -1300,7 +1300,7 @@
       "path": "/업무사례/대구상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%8C%80%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/업무사례/대구상속등기비용",
@@ -1372,7 +1372,7 @@
       "path": "/업무사례/양산상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-07"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/업무사례/양산상속등기비용",
@@ -1474,7 +1474,7 @@
       "path": "/업무사례/창원상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%B0%BD%EC%9B%90%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-07"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/업무사례/창원상속등기비용",
@@ -3088,13 +3088,13 @@
       "path": "/부산상속전문법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/부산상속포기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-08-20"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/부산상속후매매등기",
@@ -5638,7 +5638,7 @@
       "path": "/업무사례/거제상속등기법무사",
       "tier": 5,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B1%B0%EC%A0%9C%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-07"
+      "lastmod": "2026-09-27"
     },
     {
       "path": "/업무사례/거제상속포기법무사",

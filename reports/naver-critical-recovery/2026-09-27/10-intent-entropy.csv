@@ -1,0 +1,4 @@
+﻿url,role,selection,procedure,local,cost,consult,normalized_entropy,dominant,role_match
+/부산상속전문법무사,PROVIDER_SELECTION,29,11,9,6,15,0.907,selection,true
+/부산상속포기,ACTION_PROCEDURE,13,73,7,3,7,0.605,procedure,true
+/해운대법무사,LOCAL_PROVIDER,3,3,78,4,16,0.518,local,true

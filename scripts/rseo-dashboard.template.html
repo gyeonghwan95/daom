@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Regional SEO dashboard __DATE__</title>
+<style>
+body{font:14px/1.5 system-ui,sans-serif;margin:24px;color:#1f2a44}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #ddd;padding:4px 6px;text-align:left;font-size:12px}
+th{background:#f4f1ea;position:sticky;top:0}
+button{margin:0 4px 8px 0;padding:4px 10px;border:1px solid #1f2a44;background:#fff;border-radius:4px;cursor:pointer}
+button.on{background:#1f2a44;color:#fff}
+select{margin:0 8px 8px 0}
+</style>
+</head>
+<body>
+<h1>Regional SEO dashboard (__DATE__)</h1>
+<p>유사도 구간은 내부 기준(네이버 공식 기준 아님). 검색량 숫자 미사용. SERP는 로그아웃 1회 표본. EXPAND = 이번 배치 신규 생성(0건).</p>
+<div id="f"></div>
+<div><select id="g"><option value="">모든 지역군</option></select><select id="s"><option value="">모든 업무</option></select><span id="n"></span></div>
+<table>
+<thead><tr><th>region</th><th>query</th><th>url</th><th>status</th><th>opportunity</th><th>remoteFit</th><th>similarity</th><th>contentChars</th><th>indexable</th><th>action</th></tr></thead>
+<tbody id="b"></tbody>
+</table>
+<script>
+const R = __ROWS__;
+const COLS = ["region","query","url","status","opportunity","remoteFit","similarity","contentChars","indexable","action"];
+const S = ["ALL","PROVEN","EXPAND","IMPROVE","TEST","HOLD","THIN","DUPLICATE"];
+let st = "ALL";
+const f = document.getElementById("f");
+S.forEach((s) => {
+  const b = document.createElement("button");
+  b.textContent = s;
+  b.onclick = () => { st = s; draw(); };
+  f.appendChild(b);
+});
+const g = document.getElementById("g");
+const sv = document.getElementById("s");
+[...new Set(R.map((r) => r.group))].sort().forEach((x) => g.add(new Option(x, x)));
+[...new Set(R.map((r) => r.service))].sort().forEach((x) => sv.add(new Option(x, x)));
+g.onchange = draw;
+sv.onchange = draw;
+function draw() {
+  [...f.children].forEach((b) => { b.className = b.textContent === st ? "on" : ""; });
+  const rows = R.filter((r) => (st === "ALL" || r.status === st) && (!g.value || r.group === g.value) && (!sv.value || r.service === sv.value));
+  document.getElementById("n").textContent = rows.length + " rows";
+  const tb = document.getElementById("b");
+  tb.textContent = "";
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    for (const k of COLS) {
+      const td = document.createElement("td");
+      td.textContent = r[k] ?? "";
+      tr.appendChild(td);
+    }
+    tb.appendChild(tr);
+  }
+}
+draw();
+</script>
+</body>
+</html>

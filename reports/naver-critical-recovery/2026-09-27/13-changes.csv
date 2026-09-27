@@ -1,0 +1,13 @@
+﻿file,type,scope,change
+src/data/seoIntentOwners.ts,added,internal,"Query→URL lock, TITLE_FROZEN=true, target title/H1/description source of truth, decoded path check"
+src/lib/naver-recovery/types.ts,added,target-only,"Spec types (blocks, evidence status VERIFIED_HANDLED/VERIFIED_CONSULTED/EXAMPLE)"
+src/lib/naver-recovery/specialist.ts,added,/부산상속전문법무사,"Provider-selection content, portrait og/body image, 7 contextual links"
+src/lib/naver-recovery/renunciation.ts,added,/부산상속포기,Action page rebuilt to 7 sections + FAQ/CTA; legal points checked against 민법·가사소송법·2020그42
+src/lib/naver-recovery/haeundae.ts,added,/해운대법무사,"Local provider content, balanced 4-service structure, office nameplate og/body image, official NAP"
+src/lib/local-landing/naver-recovery-targets.ts,added,target-only,Spec index (slug map) — also drives sitemap lastmod for the 3 targets only
+src/components/naver-recovery/NaverRecoveryTargetView.tsx,added,target-only,Lean layout: breadcrumb → main > article > H1 → answer; no sidebar consult panel; single late CTA; remote note at bottom; WebPage+BreadcrumbList JSON-LD
+src/app/[landingSlug]/page.tsx,modified,target-only branch,getNaverRecoveryTarget() branch for metadata + view; other slugs unchanged
+public/image/og/haeundae-office-nameplate.jpg,added,/해운대법무사,1200x630 resize of real office nameplate photo (no text/overlay added)
+public/image/og/haeundae-office-nameplate-4x3.jpg,added,/해운대법무사,1200x900 body image of the same photo
+scripts/lib/sitemap/lastmod-pins.json,modified,sitemap,Pin /업무사례 lastmod 2026-09-02 (page.tsx is its lastmod source)
+scripts/ncr-*.mjs,added,tooling,"snapshot/compare, live check, DOM audit, diagnose, QA, og check, reports, static server"

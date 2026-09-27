@@ -40,6 +40,9 @@ import {
   getRawDiagnosisBySlug,
 } from "@/data/diagnosis-registry";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
+import { createPageMetadata } from "@/lib/seo/metadata";
+import { getNaverRecoveryTarget } from "@/lib/local-landing/naver-recovery-targets";
+import { NaverRecoveryTargetView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
@@ -48,6 +51,10 @@ import {
   getNationwidePageType,
   NATIONWIDE_PAGE_SLUGS,
 } from "@/lib/nationwide";
+import {
+  applyInheritanceHubRegional,
+  INHERITANCE_HUB_REGIONAL,
+} from "@/lib/nationwide/inheritance-hub-regional";
 import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import type { NationwidePageSlug } from "@/lib/nationwide";
@@ -68,6 +75,33 @@ export async function generateMetadata({
   const { landingSlug } = await params;
   const page = resolveKoreanLandingPageData(normalizeRouteSlug(landingSlug));
   if (!page) return {};
+  const recovery = getNaverRecoveryTarget(page.slug);
+  if (recovery) {
+    const { owner, spec } = recovery;
+    return createPageMetadata({
+      title: owner.metaTitle,
+      description: owner.description,
+      path: page.path,
+      ogImage: spec.ogImage.src,
+      ogImageAlt: spec.ogImage.alt,
+      ogImageWidth: spec.ogImage.width,
+      ogImageHeight: spec.ogImage.height,
+      openGraphType: "website",
+    });
+  }
+  if (page.slug === INHERITANCE_HUB_REGIONAL.slug) {
+    const hub = INHERITANCE_HUB_REGIONAL;
+    return createPageMetadata({
+      title: hub.metaTitle,
+      description: hub.metaDescription,
+      path: page.path,
+      ogImage: hub.ogImage.src,
+      ogImageAlt: hub.ogImage.alt,
+      ogImageWidth: hub.ogImage.width,
+      ogImageHeight: hub.ogImage.height,
+      openGraphType: "website",
+    });
+  }
   return pageDataToMetadata(page);
 }
 
@@ -76,6 +110,11 @@ export default async function LocalLandingPage({ params }: PageProps) {
   const slug = normalizeRouteSlug(landingSlug);
   const page = resolveKoreanLandingPageData(slug);
   if (!page) notFound();
+
+  const recovery = getNaverRecoveryTarget(slug);
+  if (recovery) {
+    return <NaverRecoveryTargetView page={page} target={recovery} />;
+  }
 
   if (slug === "강의이력") {
     return (
@@ -133,7 +172,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <NationwidePageView
-          page={page}
+          page={applyInheritanceHubRegional(page)}
           noticeType={noticeType}
           showServiceCards={slug === "전국업무"}
           ctaLabel={

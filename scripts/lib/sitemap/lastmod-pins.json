@@ -1,10 +1,11 @@
 {
-  "note": "2026-09-27 speaker SEO reset: src/lib/lectures/content.ts 수정 시 함께 정의된 비대상 강의 페이지 lastmod 유지",
+  "note": "2026-09-27 speaker SEO reset: src/lib/lectures/content.ts 수정 시 함께 정의된 비대상 강의 페이지 lastmod 유지. 2026-09-27 naver critical recovery: src/app/[landingSlug]/page.tsx 수정으로 /업무사례 lastmod가 바뀌지 않도록 고정",
   "pins": {
     "/청년생활법률특강": "2026-09-26",
     "/창업법률교육": "2026-09-26",
     "/강의문의": "2026-09-26",
     "/디지털법률교육": "2026-09-26",
-    "/공공기관법률교육": "2026-09-26"
+    "/공공기관법률교육": "2026-09-26",
+    "/업무사례": "2026-09-02"
   }
 }

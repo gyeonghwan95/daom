@@ -1,0 +1,46 @@
+﻿url,check,result,evidence
+/부산상속전문법무사,A exists (out/*.html + seo-paths),OK,static HTML present
+/부산상속전문법무사,B HTTP status (browser/Yeti/Googlebot),200/200/200,live fetch 2026-09-27
+/부산상속전문법무사,C robots.txt,ALLOWED,"User-Agent Yeti/Googlebot/* Allow: / (only /admin,/api,/search,/blog/external disallowed)"
+/부산상속전문법무사,D meta robots,"index, follow",before build
+/부산상속전문법무사,E X-Robots-Tag,(none),live header
+/부산상속전문법무사,F canonical,SELF,https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC
+/부산상속전문법무사,G sitemap,tier 4 lastmod null,before sitemap-manifest
+/부산상속전문법무사,H initial HTML main content,STATIC,main chars 4091; loadingPlaceholder=false
+/부산상속전문법무사,I title,부산에서 상속전문 법무사를 찾을 때｜업무 범위·사례·상담 기준,
+/부산상속전문법무사,J description,부산에서 상속업무를 맡길 법무사를 찾을 때 등기뿐 아니라 포기·한정승인·해외·미성년 등 업무범위와 상담기준을 확인합니다. 해운대 센텀 다옴법무사.,
+/부산상속전문법무사,K H1,부산에서 상속 문제를 맡길 법무사를 고를 때 확인할 기준 (count 1),
+/부산상속전문법무사,L duplicate/near-duplicate URL,NONE_EXACT,no other URL shares title/H1; see 03-internal-competition.csv
+/부산상속전문법무사,M Yeti/WAF challenge,NO_CHALLENGE,cf-mitigated=none
+/부산상속전문법무사,N host/slash/protocol variants,"slash 308, http 301, www no DNS, .html 308","slash/.html 308 Location header is raw UTF-8 (not percent-encoded) — minor client risk, reported"
+/부산상속전문법무사,CLASSIFICATION,"INDEX_OK (technical) + CONTENT_RELEVANCE_RISK (H1·first700 did not answer provider-selection query; consult panel before H1) + LOW_INTERNAL_DISCOVERABILITY (7 linking pages) + NEW_URL (2026-09-26, no sitemap lastmod)",consult words before H1: 바로 상담/전화/카카오/톡톡/예약/상담하기/문의하기
+/부산상속포기,A exists (out/*.html + seo-paths),OK,static HTML present
+/부산상속포기,B HTTP status (browser/Yeti/Googlebot),200/200/200,live fetch 2026-09-27
+/부산상속포기,C robots.txt,ALLOWED,"User-Agent Yeti/Googlebot/* Allow: / (only /admin,/api,/search,/blog/external disallowed)"
+/부산상속포기,D meta robots,"index, follow",before build
+/부산상속포기,E X-Robots-Tag,(none),live header
+/부산상속포기,F canonical,SELF,https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
+/부산상속포기,G sitemap,tier 4 lastmod 2026-08-20,before sitemap-manifest
+/부산상속포기,H initial HTML main content,STATIC,main chars 5501; loadingPlaceholder=false
+/부산상속포기,I title,부산 상속포기 법무사｜3개월·후순위 상속인부터 확인,
+/부산상속포기,J description,"상속포기 3개월 기한, 배우자·자녀 포기의 후순위 효과, 처분·인출 이력과 한정승인 비교를 먼저 확인합니다. 부산 해운대 센텀 다옴법무사 안내.",
+/부산상속포기,K H1,"부산 상속포기, 3개월과 다음 상속인부터 확인하세요 (count 1)",
+/부산상속포기,L duplicate/near-duplicate URL,NONE_EXACT,no other URL shares title/H1; see 03-internal-competition.csv
+/부산상속포기,M Yeti/WAF challenge,NO_CHALLENGE,cf-mitigated=none
+/부산상속포기,N host/slash/protocol variants,"slash 308, http 301, www no DNS, .html 308","slash/.html 308 Location header is raw UTF-8 (not percent-encoded) — minor client risk, reported"
+/부산상속포기,CLASSIFICATION,INDEX_OK + CONTENT_RELEVANCE_RISK (consult panel before H1; 17 H2 with repeated 3개월/처분 blocks),consult words before H1: 바로 상담/전화/카카오/톡톡/예약/상담하기/문의하기
+/해운대법무사,A exists (out/*.html + seo-paths),OK,static HTML present
+/해운대법무사,B HTTP status (browser/Yeti/Googlebot),200/200/200,live fetch 2026-09-27
+/해운대법무사,C robots.txt,ALLOWED,"User-Agent Yeti/Googlebot/* Allow: / (only /admin,/api,/search,/blog/external disallowed)"
+/해운대법무사,D meta robots,"index, follow",before build
+/해운대법무사,E X-Robots-Tag,(none),live header
+/해운대법무사,F canonical,SELF,https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC
+/해운대법무사,G sitemap,tier 1 lastmod 2026-09-22,before sitemap-manifest
+/해운대법무사,H initial HTML main content,STATIC,main chars 6595; loadingPlaceholder=false
+/해운대법무사,I title,해운대구 법무사｜센텀 소재 사무소의 상속·부동산·법인 상담,
+/해운대법무사,J description,해운대구 법무사 상담. 센텀·재송동·우동·좌동·중동·반여동 생활권의 부동산등기·상속등기·법인등기. 다옴법무사사무소는 해운대구 센텀에 있으며 안윤정 법무사가 직접 상담합니다.,
+/해운대법무사,K H1,"해운대구 법무사, 센텀에서 방문·상담할 수 있는 업무 (count 1)",
+/해운대법무사,L duplicate/near-duplicate URL,NONE_EXACT,no other URL shares title/H1; see 03-internal-competition.csv
+/해운대법무사,M Yeti/WAF challenge,NO_CHALLENGE,cf-mitigated=none
+/해운대법무사,N host/slash/protocol variants,"slash 308, http 301, www no DNS, .html 308","slash/.html 308 Location header is raw UTF-8 (not percent-encoded) — minor client risk, reported"
+/해운대법무사,CLASSIFICATION,INDEX_OK + CONTENT_RELEVANCE_RISK (nationwide block H2 at +413 chars after H1; inheritance-biased og image/404; consult panel before H1),consult words before H1: 바로 상담/전화/카카오/톡톡/예약/상담하기/문의하기
