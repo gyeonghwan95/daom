@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T05:50:52.845Z",
+  "generatedAt": "2026-09-27T14:17:41.522Z",
   "sitemapChecked": true,
   "items": [
     {
@@ -10,8 +10,8 @@
       "output": "/images/generated/carousel/hub/services-hub.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 47,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -22,8 +22,8 @@
       "output": "/images/generated/carousel/inheritance/inheritance-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 53,
+      "height": 1200,
+      "kb": 31,
       "status": "approved"
     },
     {
@@ -34,8 +34,8 @@
       "output": "/images/generated/carousel/inheritance/inheritance-renunciation.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 47,
+      "height": 1200,
+      "kb": 37,
       "status": "approved"
     },
     {
@@ -46,8 +46,8 @@
       "output": "/images/generated/carousel/inheritance/qualified-acceptance.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 41,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -58,8 +58,8 @@
       "output": "/images/generated/carousel/real-estate/real-estate-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 62,
+      "height": 1200,
+      "kb": 37,
       "status": "approved"
     },
     {
@@ -70,8 +70,8 @@
       "output": "/images/generated/carousel/real-estate/ownership-transfer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 73,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -82,32 +82,32 @@
       "output": "/images/generated/carousel/corporate/corporate-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 50,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
       "id": "svc-company-establishment",
       "pageUrl": "/services/company-establishment",
       "urlExists": true,
-      "source": null,
+      "source": "/generated/serp/corporate/company-establishment.jpg",
       "output": "/images/generated/carousel/corporate/company-establishment.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 10,
+      "height": 1200,
+      "kb": 32,
       "status": "approved"
     },
     {
       "id": "svc-director-change",
       "pageUrl": "/services/director-change",
       "urlExists": true,
-      "source": null,
+      "source": "/generated/serp/corporate/director-change.jpg",
       "output": "/images/generated/carousel/corporate/director-change.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 13,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -118,8 +118,8 @@
       "output": "/images/generated/carousel/rehabilitation/personal-rehabilitation.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 94,
+      "height": 1200,
+      "kb": 32,
       "status": "approved"
     },
     {
@@ -130,8 +130,8 @@
       "output": "/images/generated/carousel/rehabilitation/bankruptcy.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 60,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -142,8 +142,8 @@
       "output": "/images/generated/carousel/hub/busan-lawyer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 52,
+      "height": 1200,
+      "kb": 40,
       "status": "approved"
     },
     {
@@ -154,8 +154,8 @@
       "output": "/images/generated/carousel/inheritance/busan-inheritance-lawyer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 48,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -166,8 +166,20 @@
       "output": "/images/generated/carousel/inheritance/busan-inheritance.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 62,
+      "height": 1200,
+      "kb": 35,
+      "status": "approved"
+    },
+    {
+      "id": "local-busan-inheritance-specialist",
+      "pageUrl": "/부산상속전문법무사",
+      "urlExists": true,
+      "source": "/generated/serp/inheritance/busan-inheritance-specialist.jpg",
+      "output": "/images/generated/carousel/inheritance/busan-inheritance-specialist.webp",
+      "outExists": true,
+      "width": 1200,
+      "height": 1200,
+      "kb": 31,
       "status": "approved"
     },
     {
@@ -178,8 +190,8 @@
       "output": "/images/generated/carousel/inheritance/busan-inheritance-renunciation.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 53,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -190,8 +202,8 @@
       "output": "/images/generated/carousel/inheritance/busan-qualified-acceptance.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 48,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -202,8 +214,8 @@
       "output": "/images/generated/carousel/inheritance/special-qualified-acceptance.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 48,
+      "height": 1200,
+      "kb": 30,
       "status": "approved"
     },
     {
@@ -214,8 +226,8 @@
       "output": "/images/generated/carousel/inheritance/inheritance-division-agreement.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 42,
+      "height": 1200,
+      "kb": 36,
       "status": "approved"
     },
     {
@@ -226,8 +238,8 @@
       "output": "/images/generated/carousel/inheritance/subrogation-inheritance-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 54,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -238,8 +250,8 @@
       "output": "/images/generated/carousel/inheritance/decedent-assets-debts-lookup.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 42,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -250,8 +262,8 @@
       "output": "/images/generated/carousel/real-estate/busan-registry-lawyer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 90,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -262,8 +274,8 @@
       "output": "/images/generated/carousel/real-estate/busan-real-estate-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 54,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -274,8 +286,8 @@
       "output": "/images/generated/carousel/real-estate/busan-ownership-transfer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 41,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -286,8 +298,8 @@
       "output": "/images/generated/carousel/real-estate/busan-gift-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 46,
+      "height": 1200,
+      "kb": 31,
       "status": "approved"
     },
     {
@@ -298,8 +310,8 @@
       "output": "/images/generated/carousel/real-estate/busan-mortgage-establishment.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 35,
+      "height": 1200,
+      "kb": 36,
       "status": "approved"
     },
     {
@@ -310,8 +322,8 @@
       "output": "/images/generated/carousel/real-estate/busan-mortgage-release.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 42,
+      "height": 1200,
+      "kb": 36,
       "status": "approved"
     },
     {
@@ -322,8 +334,8 @@
       "output": "/images/generated/carousel/real-estate/busan-jeonse-establishment.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 56,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -334,8 +346,8 @@
       "output": "/images/generated/carousel/real-estate/busan-jeonse-release.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 42,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -346,8 +358,8 @@
       "output": "/images/generated/carousel/real-estate/busan-building-preservation.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 90,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -358,8 +370,8 @@
       "output": "/images/generated/carousel/corporate/busan-corporate-lawyer.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 38,
+      "height": 1200,
+      "kb": 33,
       "status": "approved"
     },
     {
@@ -370,8 +382,8 @@
       "output": "/images/generated/carousel/corporate/busan-corporate-registration.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 34,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -382,8 +394,8 @@
       "output": "/images/generated/carousel/corporate/busan-company-establishment.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 56,
+      "height": 1200,
+      "kb": 37,
       "status": "approved"
     },
     {
@@ -394,8 +406,8 @@
       "output": "/images/generated/carousel/corporate/busan-director-change.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 55,
+      "height": 1200,
+      "kb": 37,
       "status": "approved"
     },
     {
@@ -406,8 +418,8 @@
       "output": "/images/generated/carousel/corporate/busan-head-office-move.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 34,
+      "height": 1200,
+      "kb": 35,
       "status": "approved"
     },
     {
@@ -418,8 +430,8 @@
       "output": "/images/generated/carousel/corporate/busan-purpose-change.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 46,
+      "height": 1200,
+      "kb": 32,
       "status": "approved"
     },
     {
@@ -430,8 +442,8 @@
       "output": "/images/generated/carousel/corporate/busan-capital-increase.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 43,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     },
     {
@@ -442,8 +454,8 @@
       "output": "/images/generated/carousel/corporate/busan-dissolution-liquidation.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 43,
+      "height": 1200,
+      "kb": 37,
       "status": "approved"
     },
     {
@@ -454,8 +466,8 @@
       "output": "/images/generated/carousel/lecture/lecture-hub.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 67,
+      "height": 1200,
+      "kb": 38,
       "status": "approved"
     },
     {
@@ -466,8 +478,8 @@
       "output": "/images/generated/carousel/lecture/lecture-jeonse.webp",
       "outExists": true,
       "width": 1200,
-      "height": 800,
-      "kb": 53,
+      "height": 1200,
+      "kb": 34,
       "status": "approved"
     }
   ],

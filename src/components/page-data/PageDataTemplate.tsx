@@ -86,6 +86,8 @@ type PageDataTemplateProps = {
   children?: ReactNode;
   /** H1·인트로 바로 아래(첫 화면)에 붙는 안내 — 전국 수임 배지 등 */
   heroAddon?: ReactNode;
+  /** heroAddon에 전국 의뢰 패널(NationwideServiceNotice)이 있으면 배너 카드를 생략 */
+  hasRemoteNotice?: boolean;
   showCover?: boolean;
   recommendationSource?: RecommendationSource;
 };
@@ -122,6 +124,7 @@ export function PageDataTemplate({
   page,
   children,
   heroAddon,
+  hasRemoteNotice = false,
   showCover = true,
   recommendationSource,
 }: PageDataTemplateProps) {
@@ -148,6 +151,7 @@ export function PageDataTemplate({
   /** 업무안내·전국허브는 NationwideServiceNotice가 있어 배너 중복 생략 */
   const showRemoteBanner =
     showNationwide &&
+    !hasRemoteNotice &&
     !isDedicatedNationwideHub &&
     !(page.category === "service" && NATIONWIDE_SERVICE_SLUGS.has(page.slug));
   const showInheritanceJourney =

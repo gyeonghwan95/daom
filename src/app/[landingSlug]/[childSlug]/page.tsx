@@ -270,11 +270,14 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
     const nationwidePage = getNationwideCasePageDataBySlug(child);
 
     const regionalTarget = getRegionalInheritanceTarget(child);
-    if (regionalTarget && nationwidePage) {
+    const regionalBasePage =
+      regionalTarget &&
+      (nationwidePage ?? getGyeongnamPageDataBySlug(child) ?? getSoutheastPageDataBySlug(child));
+    if (regionalTarget && regionalBasePage) {
       return (
         <RegionalInheritanceTargetView
           target={regionalTarget}
-          breadcrumbs={nationwidePage.breadcrumbs}
+          breadcrumbs={regionalBasePage.breadcrumbs}
         />
       );
     }

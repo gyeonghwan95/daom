@@ -3,7 +3,7 @@
  * 점수(A–G)는 내부 기준이며 네이버 공식 기준이 아니다. 검색량 숫자는 쓰지 않는다(demandProxy만).
  * serp: 2026-09-27 로그아웃 상태 1회 표본(순위 보장 아님). null = 표본 없음.
  * 이 파일은 스크립트(Node 24 .ts 타입 제거)에서도 읽으므로 경로 alias import를 쓰지 않는다.
- * familyCourt: 울산·양산·창원·김해·거제·대구는 법원 관할표로 확인. 나머지는 페이지에 쓰기 전 재확인.
+ * familyCourt: 울산·양산·창원·김해·거제·대구·경주·구미·진주·통영·밀양은 법원 관할표로 확인. 나머지는 페이지에 쓰기 전 재확인.
  */
 
 export type RegionType = "NEARBY" | "REMOTE" | "MIXED";
@@ -88,7 +88,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     representativeUrl: "/업무사례/포항상속등기법무사",
     hubUrl: "/업무사례/경북상속등기법무사",
     parentHub: HUB,
-    familyCourt: "대구지방법원 포항지원",
+    familyCourt: "대구가정법원 포항지원",
     serp: { query: "포항 상속 법무사", position: 1, shown: ["/업무사례/포항상속등기법무사", "/업무사례/경북상속등기법무사"] },
     scores: { A: 25, B: 11, C: 6, D: D_INHERITANCE, E: 1, F: 5, G: 7 },
     aBasis: "SERP_1",
@@ -239,14 +239,14 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     representativeUrl: "/업무사례/경주상속등기법무사",
     hubUrl: "/업무사례/경북상속등기법무사",
     parentHub: HUB,
-    familyCourt: "대구지방법원 경주지원",
+    familyCourt: "대구가정법원 경주지원(경주시)",
     serp: { query: "경주 상속 법무사", position: 2, shown: ["/업무사례/경주상속등기법무사", "/업무사례/경주오래된토지상속등기"] },
     scores: { A: 18, B: 7, C: 8, D: D_INHERITANCE, E: 5, F: 4, G: 6 },
     aBasis: "SERP_2",
     demandProxy: "LOW",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "오래된 토지·재상속 비중. 검증되지 않은 ‘역사도시’ 서술은 제거 검토.",
+    uniqueAngle: "비농업인 상속인의 농지 소유(농지법 1만㎡)·임야. 오래된 토지 의도는 /업무사례/경주오래된토지상속등기가 담당.",
   },
   {
     region: "진주",
@@ -258,14 +258,14 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     representativeUrl: "/업무사례/진주상속등기법무사",
     hubUrl: "/업무사례/경남상속등기법무사",
     parentHub: HUB,
-    familyCourt: "창원지방법원 진주지원",
+    familyCourt: "창원지방법원 진주지원(진주·사천·하동·남해·산청)",
     serp: { query: "진주 상속 법무사", position: 3, shown: ["/업무사례/진주상속포기한정승인"], note: "상속포기 문서가 선행" },
     scores: { A: 14, B: 9, C: 7, D: D_INHERITANCE, E: 7, F: 4, G: 6 },
     aBasis: "SERP_3",
     demandProxy: "MEDIUM",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "등기·포기 의도 분리(대표 URL 역할 정리).",
+    uniqueAngle: "빚 확인(안심상속) → 포기·한정승인 판단 → 등기 순서. 포기 의도는 /업무사례/진주상속포기한정승인이 담당.",
   },
   {
     region: "구미",
@@ -277,14 +277,14 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     representativeUrl: "/업무사례/구미상속등기법무사",
     hubUrl: "/업무사례/경북상속등기법무사",
     parentHub: HUB,
-    familyCourt: "대구지방법원 김천지원",
+    familyCourt: "대구가정법원 김천지원(김천·구미)",
     serp: { query: "구미 상속 법무사", position: 2, shown: ["/업무사례/구미상속등기법무사"] },
     scores: { A: 18, B: 10, C: 4, D: D_INHERITANCE, E: 5, F: 4, G: 5 },
     aBasis: "SERP_2",
     demandProxy: "MEDIUM",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "관할 가정사건이 김천지원이라는 점.",
+    uniqueAngle: "구미 부동산 상속 / 구미 거주 상속인의 부산 부동산 상속 양방향, 김천지원 관할, 가족 회사 임원 변경.",
   },
   {
     region: "통영",
@@ -303,11 +303,29 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     demandProxy: "LOW",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "섬 지역 토지. 거제와 같은 통영지원 관할.",
+    uniqueAngle: "섬 지역 토지와 등기부 없는 건물의 상속인 보존등기(부동산등기법 제65조 제1호).",
+  },
+  {
+    region: "밀양",
+    parent: "경상남도",
+    group: "경남",
+    regionType: "REMOTE",
+    targetIntent: "밀양 상속등기 법무사",
+    secondaryQueries: ["밀양 상속 법무사"],
+    representativeUrl: "/업무사례/밀양상속등기법무사",
+    hubUrl: "/업무사례/경남상속등기법무사",
+    parentHub: HUB,
+    familyCourt: "창원지방법원 밀양지원(밀양·창녕)",
+    serp: null,
+    scores: { A: 8, B: 4, C: 10, D: D_INHERITANCE, E: 6, F: 3, G: 5 },
+    aBasis: "UNSAMPLED",
+    demandProxy: "LOW",
+    action: "IMPROVE_EXISTING",
+    batch: "B",
+    uniqueAngle: "흩어진 형제의 협의서 서명·본인서명사실확인서, 단독 소유 vs 법정상속분 공유.",
   },
   ...(
     [
-      ["밀양", "경상남도", "경남", "REMOTE", "창원지방법원 밀양지원", 4, 10, 6, 3, 5, "LOW"],
       ["사천", "경상남도", "경남", "REMOTE", "창원지방법원 진주지원", 4, 6, 6, 3, 4, "LOW"],
       ["울주군", "울산광역시", "동남권광역", "NEARBY", "울산가정법원", 7, 12, 5, 6, 6, "LOW"],
       ["안동", "경상북도", "경북", "REMOTE", "대구지방법원 안동지원", 5, 3, 6, 2, 4, "LOW"],

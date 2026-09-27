@@ -21,6 +21,7 @@ export function NationwidePageView({
   return (
     <PageDataTemplate
       page={page}
+      hasRemoteNotice
       heroAddon={
         <NationwideServiceNotice type={noticeType} ctaLabel={ctaLabel} />
       }

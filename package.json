@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node scripts/sync-favicon.mjs && next dev",
+    "dev": "node scripts/sync-favicon.mjs && node scripts/optimize-images.mjs && next dev",
     "prebuild": "node scripts/warn-business-credentials.mjs && node scripts/sync-favicon.mjs && node scripts/check-cloudflare-asset-size.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && npx --yes tsx scripts/generate-llms-txt.ts && node scripts/generate-sitemaps.mjs && node scripts/generate-index-priority-list.mjs && node scripts/validate-sitemap.mjs && node scripts/seo-validate.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && npx --yes tsx scripts/check-keyword-ownership.ts && npx --yes tsx scripts/check-region-boilerplate.ts && node scripts/generate-seo-pages.mjs && npm run build:search && node scripts/generate-admin-page-titles.mjs && node scripts/generate-admin-seo-summary.mjs",
     "check:cloudflare-assets": "node scripts/check-cloudflare-asset-size.mjs",
     "compress:hero-videos": "node scripts/compress-hero-videos.mjs",
@@ -14,7 +14,7 @@
     "fetch:naver-blog": "node scripts/fetch-naver-blog.mjs",
     "fetch:naver-reviews": "node scripts/fetch-naver-place-reviews.mjs",
     "build": "node scripts/build-static.mjs",
-    "build:server": "next build",
+    "build:server": "node scripts/optimize-images.mjs && next build",
     "build:static": "npm run build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
@@ -122,7 +122,8 @@
     "bid:dry": "npx --yes tsx collector/main.ts --dry-run",
     "bid:sample": "npx --yes tsx collector/main.ts --dry-run --fixture collector/tests/fixtures/g2b-servc-sample.json",
     "bid:sample:nuri": "npx --yes tsx collector/main.ts --dry-run --fixture collector/tests/fixtures/nuri-servc-sample.json",
-    "bid:test": "npx --yes tsx collector/tests/run-tests.ts"
+    "bid:test": "npx --yes tsx collector/tests/run-tests.ts",
+    "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

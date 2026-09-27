@@ -45,25 +45,19 @@ export function NationwideCasePageView({
   return (
     <PageDataTemplate
       page={page}
+      hasRemoteNotice
       heroAddon={
-        <div className="space-y-4">
-          <p className="inline-flex items-center rounded-md bg-navy px-2.5 py-1 text-xs font-semibold tracking-wide text-white">
-            {def.kind === "hub" || def.regionName === "전국"
-              ? "전국 의뢰 상담 가능"
-              : `${def.regionName} 부동산 전국 의뢰 가능`}
-          </p>
-          <NationwideServiceNotice
-            type={(def.noticeType ?? "remote-accept") as NationwideServiceType}
-            ctaLabel={def.ctaTitle}
-            ctaHref={inquiryHref}
-          />
-          <aside
-            className="rounded-lg border border-beige-dark border-l-4 border-l-navy bg-[var(--surface-muted)] p-4 text-[1.015rem] leading-[1.7] text-[var(--text-body)]"
-            aria-label="사무소 위치 안내"
-          >
-            {def.disclosure}
-          </aside>
-        </div>
+        <NationwideServiceNotice
+          type={(def.noticeType ?? "remote-accept") as NationwideServiceType}
+          badge={
+            def.kind === "hub" || def.regionName === "전국"
+              ? "전국 의뢰 가능"
+              : `${def.regionName} 부동산 전국 의뢰 가능`
+          }
+          footnote={def.disclosure}
+          ctaLabel={def.ctaTitle}
+          ctaHref={inquiryHref}
+        />
       }
     >
       {showRemote && def.primaryKeyword.includes("상속") ? (

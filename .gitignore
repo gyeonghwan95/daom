@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+# scripts/optimize-images.mjs 산출물 (빌드 때 다시 생성)
+/public/_img/
 
 # production
 /build

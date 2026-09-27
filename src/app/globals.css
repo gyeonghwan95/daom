@@ -4580,72 +4580,133 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply font-semibold underline-offset-2 hover:underline;
   }
 
-  /* NationwideServiceCard — 배지·제목·포인트 분리 */
-  .nationwide-service-card {
+  /* RemoteServicePanel — 전국·비대면 의뢰 안내 (이미지 + 요약 + 접힌 세부) */
+  .remote-panel {
     border: 1px solid color-mix(in srgb, var(--navy) 16%, var(--beige-dark));
     background: linear-gradient(
       135deg,
       color-mix(in srgb, var(--navy) 5%, white) 0%,
       white 55%
     );
-    @apply rounded-2xl p-5 md:p-6;
+    @apply overflow-hidden rounded-2xl;
   }
 
-  .nationwide-service-card__layout {
-    @apply grid gap-6 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-start;
+  .remote-panel__layout {
+    @apply flex flex-col;
   }
 
-  .nationwide-service-card__badge {
+  .remote-panel__body {
+    @apply min-w-0 p-4 sm:p-5 md:px-6 md:pb-6;
+  }
+
+  /*
+   * 이미지는 패널 상단 전체 폭. 이미지 속 문구 크기가 폭에 비례하므로 줄이지 않는다.
+   * 세로만 잘라 높이를 줄인다 — 문구(원본 높이 24~58%)와 인물 얼굴(17~47%)이 항상 남는 범위.
+   */
+  .remote-panel__media {
+    background: color-mix(in srgb, var(--navy) 4%, white);
+    border-bottom: 1px solid color-mix(in srgb, var(--navy) 10%, var(--beige-dark));
+    @apply relative order-first m-0 aspect-[2/1] w-full overflow-hidden sm:aspect-[12/5];
+  }
+
+  .remote-panel__image {
+    object-fit: cover;
+    object-position: 50% 35%;
+  }
+
+  @media (min-width: 640px) {
+    .remote-panel__image {
+      object-position: 50% 27%;
+    }
+  }
+
+  .remote-panel__badge {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
     border: 1px solid color-mix(in srgb, var(--navy) 22%, transparent);
     background: white;
     color: var(--navy);
-    @apply mb-3 px-3 py-1 text-xs font-bold tracking-wide;
+    @apply mb-2.5 px-3 py-1 text-xs font-bold tracking-wide;
   }
 
-  .nationwide-service-card__title {
+  .remote-panel__title {
     color: var(--text-primary);
-    @apply text-lg font-bold leading-snug md:text-xl;
+    @apply text-[1.05rem] font-bold leading-snug text-balance break-keep md:text-lg;
   }
 
-  .nationwide-service-card__lead {
+  .remote-panel__lead {
     color: var(--text-body);
-    @apply mt-3 text-[0.975rem] leading-[1.8] md:text-[1.015rem];
+    @apply mt-2 text-[0.95rem] leading-[1.7] md:text-[0.975rem];
   }
 
-  .nationwide-service-card__points {
-    @apply space-y-3;
+  .remote-panel__points {
+    @apply mt-3 flex flex-wrap gap-1.5;
   }
 
-  .nationwide-service-card__point {
+  .remote-panel__point {
     color: var(--text-primary);
-    @apply flex items-start gap-3 rounded-xl border border-beige-dark/80 bg-white/80 px-3 py-3 text-sm font-medium leading-snug md:text-[0.95rem];
+    @apply inline-flex items-center gap-1.5 rounded-full border border-beige-dark/80 bg-white/90 px-2.5 py-1 text-[0.8125rem] font-medium leading-snug;
   }
 
-  .nationwide-service-card__icon {
+  .remote-panel__point svg {
     color: var(--navy);
-    @apply mt-0.5 inline-flex h-5 w-5 shrink-0;
+    @apply h-3.5 w-3.5 shrink-0;
   }
 
-  .nationwide-service-card__icon svg {
-    width: 100%;
-    height: 100%;
+  .remote-panel__footnote {
+    color: var(--text-muted);
+    @apply mt-3 text-[0.8125rem] leading-relaxed;
   }
 
-  .nationwide-service-card__actions {
-    @apply mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center;
+  .remote-panel__details {
+    @apply mt-3 border-t border-beige-dark/70 pt-1;
   }
 
-  .nationwide-service-card__channels {
-    @apply flex flex-wrap gap-2;
-  }
-
-  .nationwide-service-card__channel {
-    border: 1px solid var(--beige-dark);
+  .remote-panel__summary {
     color: var(--navy);
-    @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-3.5 text-sm font-semibold hover:bg-beige/40;
+    @apply flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm font-semibold marker:content-none;
+  }
+
+  .remote-panel__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .remote-panel__summary::after {
+    content: "";
+    @apply ml-0.5 h-2 w-2 -translate-y-0.5 rotate-45 border-b-2 border-r-2 border-current transition-transform;
+  }
+
+  .remote-panel__details[open] > .remote-panel__summary::after {
+    @apply translate-y-0.5 -rotate-135;
+  }
+
+  .remote-panel__summary:focus-visible {
+    @apply rounded outline-2 outline-offset-2 outline-[var(--navy)];
+  }
+
+  .remote-panel__details-body {
+    color: var(--text-body);
+    @apply space-y-2.5 pb-1 text-sm leading-[1.7];
+  }
+
+  .remote-panel__steps {
+    @apply grid gap-1.5 sm:grid-cols-3;
+  }
+
+  .remote-panel__step {
+    background: var(--surface-muted);
+    @apply flex flex-col rounded-lg border border-beige-dark px-3 py-2 text-[0.8125rem] font-medium leading-snug;
+  }
+
+  .remote-panel__step-no {
+    color: var(--text-muted);
+    @apply mb-0.5 text-xs font-bold;
+  }
+
+  .remote-panel__caution {
+    color: var(--text-muted);
+    @apply text-[0.8125rem] leading-relaxed;
   }
 
   .readability-toc {

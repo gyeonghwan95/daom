@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
+import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ContentSection } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -20,7 +21,8 @@ type RegionalInheritanceTargetViewProps = {
 
 /**
  * 타지역 상속등기 대표 URL 전용 레이아웃.
- * 상담 패널·지역 탐색기 없이 H1 → 직접 답변 → 본문 → FAQ → 지역 CTA 순서로 둔다.
+ * 지역 탐색기 없이 H1 → 직접 답변 → 본문 → FAQ → 전국 의뢰 패널 → 지역 CTA 순서로 둔다.
+ * 전국 의뢰 패널은 본문 위로 올리지 않는다.
  */
 export function RegionalInheritanceTargetView({
   target,
@@ -104,6 +106,12 @@ export function RegionalInheritanceTargetView({
             <ContentSection id="faq" title={`${target.region} 상속등기 자주 묻는 질문`}>
               <FAQAccordion items={[...target.faqs]} />
             </ContentSection>
+
+            <NationwideServiceNotice
+              type="jurisdiction-exception"
+              badge={`${target.region} 부동산 전국 의뢰 가능`}
+              showDetails={false}
+            />
 
             <section
               id="consultation"

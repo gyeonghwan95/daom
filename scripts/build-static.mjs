@@ -108,6 +108,9 @@ try {
     fs.cpSync(coreSrc, coreDest, { recursive: true });
   }
 
+  // next/image 커스텀 로더가 가리키는 폭별 WebP 파생본 (public/_img/)
+  execSync("node scripts/optimize-images.mjs", { stdio: "inherit", cwd: ROOT });
+
   const nextDir = path.join(ROOT, ".next");
   if (fs.existsSync(nextDir)) {
     fs.rmSync(nextDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });

@@ -11,6 +11,8 @@ import { normalizeRegion } from "./rseo-audit.mjs";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CACHE = path.join(ROOT, ".cache", "regional-seo");
+/** before/after 스냅샷 위치(배치별 SNAP_NS). audit.json은 항상 regional-seo에서 읽는다. */
+const SNAP = path.join(ROOT, ".cache", process.env.SNAP_NS || "regional-seo");
 const TARGETS = (process.env.SNAP_TARGETS || "").split(",").filter(Boolean);
 
 const tokens = (text) =>
@@ -36,8 +38,8 @@ const jaccard = (A, B) => {
 const audit = JSON.parse(fs.readFileSync(path.join(CACHE, "audit.json"), "utf8"));
 const regionUrls = audit.rows.map((r) => r.url);
 const load = (phase) => {
-  const raw = JSON.parse(fs.readFileSync(path.join(CACHE, phase, "raw.json"), "utf8"));
-  const manifest = JSON.parse(fs.readFileSync(path.join(CACHE, phase, "manifest.json"), "utf8"));
+  const raw = JSON.parse(fs.readFileSync(path.join(SNAP, phase, "raw.json"), "utf8"));
+  const manifest = JSON.parse(fs.readFileSync(path.join(SNAP, phase, "manifest.json"), "utf8"));
   return { raw, manifest };
 };
 const first700 = (text, h1) => {
@@ -85,7 +87,7 @@ for (const phase of ["before", "after"]) {
     result._targetPairs = pairs;
   }
 }
-fs.writeFileSync(path.join(CACHE, "simcheck.json"), `${JSON.stringify(result, null, 2)}\n`);
+fs.writeFileSync(path.join(SNAP, "simcheck.json"), `${JSON.stringify(result, null, 2)}\n`);
 for (const t of TARGETS) {
   const r = result[t];
   if (!r) continue;

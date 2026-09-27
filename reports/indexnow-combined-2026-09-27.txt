@@ -1,0 +1,33 @@
+# Combined IndexNow / 네이버 수집 요청 — 2026-09-27
+# 오늘 작업 3건: 강의 SEO 리셋 + 네이버 긴급 복구 + 지역 상속 SEO
+# 신규·실질 수정 URL만 (사이트 전체 재제출 금지, 울산·포항 제외)
+
+# [1] 네이버 긴급 복구 (배포 반영 확인)
+https://xn--2j1br1na42lvxja38mk8r.kr/부산상속전문법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/부산상속포기
+https://xn--2j1br1na42lvxja38mk8r.kr/해운대법무사
+
+# [2] 지역 상속 SEO (커밋 ddcf8ce 배포 완료 후 제출)
+https://xn--2j1br1na42lvxja38mk8r.kr/전국상속등기
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/양산상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/창원상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/김해상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/대구상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/거제상속등기법무사
+
+# [2-B] 지역 상속 SEO Batch B (미커밋 — 커밋·배포 완료 후 제출)
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/경주상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/진주상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/구미상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/통영상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/밀양상속등기법무사
+
+# [3] 강의 SEO 리셋 (배포 반영 확인, 이미 제출했다면 생략)
+https://xn--2j1br1na42lvxja38mk8r.kr/부산대학교특강
+https://xn--2j1br1na42lvxja38mk8r.kr/부산법률강사
+https://xn--2j1br1na42lvxja38mk8r.kr/기업법률교육
+https://xn--2j1br1na42lvxja38mk8r.kr/법무사진로특강
+https://xn--2j1br1na42lvxja38mk8r.kr/학교법률교육
+https://xn--2j1br1na42lvxja38mk8r.kr/전세사기예방교육
+https://xn--2j1br1na42lvxja38mk8r.kr/법률강의
+https://xn--2j1br1na42lvxja38mk8r.kr/강사소개

@@ -9,6 +9,7 @@ import {
   type PageVisual,
   type TextPosition,
 } from "@/data/seo/page-visuals";
+import { getCarouselManifestItemByUrl } from "@/data/seo/carousel-image-manifest";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
 
@@ -17,7 +18,22 @@ export type RelatedCardItem = SeoCarouselItem & {
   textPosition?: TextPosition;
   /** ItemList / schema용 1200 JPG */
   representativeImage?: string;
+  /** 이미지에 제목이 이미 들어 있어 HTML overlay를 생략 */
+  textBaked?: boolean;
 };
+
+/** 사이트 카드 전용 1:1 타이포 썸네일 — SERP/OG/ItemList에는 쓰지 않는다 */
+function resolveHookThumbnail(url: string): string | undefined {
+  const item = getCarouselManifestItemByUrl(url);
+  if (
+    !item ||
+    item.layoutVariant !== "centered-hook" ||
+    (item.status !== "approved" && item.status !== "applied")
+  ) {
+    return undefined;
+  }
+  return encodePublicSrc(item.outputPath);
+}
 
 export function resolveSerpImage(pageUrl: string):
   | { src: string; alt: string; width: number; height: number }
@@ -33,11 +49,13 @@ export function resolveSerpImage(pageUrl: string):
 }
 
 export function toRelatedCardItem(v: PageVisual): RelatedCardItem {
+  const hook = resolveHookThumbnail(v.url);
   return {
     id: v.url,
     title: v.pageTitle,
     href: v.url,
-    image: encodePublicSrc(v.cardImage),
+    image: hook ?? encodePublicSrc(v.cardImage),
+    textBaked: Boolean(hook),
     imageAlt: v.alt,
     category: v.category,
     headline: v.cardHeadline,

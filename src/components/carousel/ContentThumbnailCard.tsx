@@ -38,7 +38,7 @@ function overlayClass(pos?: TextPosition): string {
 }
 
 /**
- * 1:1 카드 — 사진은 bake 없이, headline은 HTML overlay.
+ * 1:1 카드 — 사진 카드는 headline을 HTML overlay, 타이포 썸네일(textBaked)은 이미지 그대로.
  */
 export function ContentThumbnailCard({
   item,
@@ -69,18 +69,20 @@ export function ContentThumbnailCard({
               decoding="async"
               className="h-full w-full object-cover"
             />
-            <div
-              className={`pointer-events-none absolute inset-0 flex ${overlayClass(item.textPosition)}`}
-              aria-hidden="true"
-            >
-              <span className="max-w-[12rem] text-[1.05rem] font-extrabold leading-snug tracking-tight text-white drop-shadow-sm sm:text-[1.15rem]">
-                {lines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </span>
-            </div>
+            {item.textBaked ? null : (
+              <div
+                className={`pointer-events-none absolute inset-0 flex ${overlayClass(item.textPosition)}`}
+                aria-hidden="true"
+              >
+                <span className="max-w-[12rem] text-[1.05rem] font-extrabold leading-snug tracking-tight text-white drop-shadow-sm sm:text-[1.15rem]">
+                  {lines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            )}
           </div>
           <span className="sr-only">{item.title}</span>
           <div className="px-3 py-2.5">

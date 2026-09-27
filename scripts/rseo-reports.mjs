@@ -12,17 +12,22 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATE = process.env.RSEO_DATE || "2026-09-27";
 const OUT = path.join(ROOT, "reports", "regional-seo", DATE);
 const CACHE = path.join(ROOT, ".cache", "regional-seo");
+/** 배치별 스냅샷(SNAP_NS)과 출력 파일 접미사(RSEO_SUFFIX, 예: -batch-b). audit·score는 항상 regional-seo. */
+const SNAP = path.join(ROOT, ".cache", process.env.SNAP_NS || "regional-seo");
+const SUFFIX = process.env.RSEO_SUFFIX || "";
 const ORIGIN = "https://xn--2j1br1na42lvxja38mk8r.kr";
 const TARGETS = (process.env.SNAP_TARGETS || "").split(",").filter(Boolean);
 const CITY_TARGETS = TARGETS.filter((t) => t.startsWith("/업무사례/"));
 
 const j = (f) => JSON.parse(fs.readFileSync(path.join(CACHE, f), "utf8"));
+const js = (f) => JSON.parse(fs.readFileSync(path.join(SNAP, f), "utf8"));
 const audit = j("audit.json");
-const sim = j("simcheck.json");
+const sim = js("simcheck.json");
 const score = j("score.json");
-const diff = j("diff-report.json");
-const before = j("before/manifest.json").pages;
-const after = j("after/manifest.json").pages;
+const diff = js("diff-report.json");
+const before = js("before/manifest.json").pages;
+const after = js("after/manifest.json").pages;
+const named = (name) => (SUFFIX ? name.replace(/(\.\w+)$/, `${SUFFIX}$1`) : name);
 const sitemapAfter = new Map(
   JSON.parse(fs.readFileSync(path.join(ROOT, "scripts/output/sitemap-manifest.json"), "utf8")).entries.map((e) => [
     decodeURIComponent(e.path),
@@ -36,8 +41,9 @@ const esc = (v) => {
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 const writeCsv = (name, head, rows) => {
-  fs.writeFileSync(path.join(OUT, name), `\uFEFF${[head.join(","), ...rows.map((r) => r.map(esc).join(","))].join("\n")}\n`);
-  console.log(`[rseo-reports] ${name} rows=${rows.length}`);
+  const file = name.startsWith("21-") ? name : named(name);
+  fs.writeFileSync(path.join(OUT, file), `\uFEFF${[head.join(","), ...rows.map((r) => r.map(esc).join(","))].join("\n")}\n`);
+  console.log(`[rseo-reports] ${file} rows=${rows.length}`);
 };
 const htmlFor = (url) => {
   const flat = path.join(ROOT, "out", `${url.slice(1)}.html`);
@@ -66,7 +72,7 @@ writeCsv(
 
 // 14 — pages created (none)
 writeCsv("14-pages-created.csv", ["url", "region", "status", "reason"], [
-  ["(none)", "-", "NOT_CREATED", "평가한 23개 지역 모두 대표 URL이 이미 존재. 신규 URL은 기존 대표 URL과 같은 의도를 나눠 갖게 되므로(cannibalization) Batch A는 기존 URL 개선으로 진행."],
+  ["(none)", "-", "NOT_CREATED", "평가한 23개 지역 모두 대표 URL이 이미 존재. 신규 URL은 기존 대표 URL과 같은 의도를 나눠 갖게 되므로(cannibalization) Batch A·B 모두 기존 URL 개선으로 진행."],
 ]);
 
 // 16 — internal link map (hub → cities, cities → out)
@@ -112,10 +118,10 @@ writeCsv(
 
 // 19 — IndexNow (changed pages only)
 fs.writeFileSync(
-  path.join(OUT, "19-indexnow-targets.txt"),
+  path.join(OUT, named("19-indexnow-targets.txt")),
   `${TARGETS.map((u) => ORIGIN + u.split("/").map((s) => encodeURIComponent(s)).join("/")).join("\n")}\n`,
 );
-console.log(`[rseo-reports] 19-indexnow-targets.txt urls=${TARGETS.length}`);
+console.log(`[rseo-reports] ${named("19-indexnow-targets.txt")} urls=${TARGETS.length}`);
 
 // 21 — performance baseline template
 const baseRows = [];
@@ -136,8 +142,7 @@ const dashRows = audit.rows.map((r) => {
   const isRep = e && e.representativeUrl === r.url;
   let status = "OK";
   if (isRep && e.action === "PROTECT_WINNER") status = "PROVEN";
-  else if (isRep && e.batch === "A") status = "IMPROVE";
-  else if (isRep && e.batch === "B") status = "TEST";
+  else if (isRep && (e.batch === "A" || e.batch === "B")) status = "IMPROVE";
   else if (isRep && e.action === "HOLD") status = "HOLD";
   else if (r.thinLocal) status = "THIN";
   else if (r.similarityBand === "DOORWAY_DUPLICATE_RISK" || r.similarityBand === "HIGH_SIMILARITY") status = "DUPLICATE";

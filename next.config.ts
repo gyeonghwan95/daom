@@ -74,7 +74,13 @@ const nextConfig: NextConfig = {
       }
     : {}),
   images: {
-    unoptimized: true,
+    // 정적 export라 Next 이미지 서버가 없다. scripts/optimize-images.mjs가 빌드 전에
+    // public/_img/ 에 폭별 WebP를 만들고, 로더가 srcset에서 그 파일을 고른다.
+    // 폭 단계는 scripts/optimize-images.mjs VARIANT_WIDTHS와 같아야 한다.
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
+    deviceSizes: [640, 960, 1280, 1920],
+    imageSizes: [256, 384],
     // next/image quality must be listed here (default is [75] only).
     qualities: [55, 72, 75, 80, 85],
   },

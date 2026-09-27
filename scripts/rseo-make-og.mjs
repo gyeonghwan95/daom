@@ -17,9 +17,18 @@ const SOURCES = {
   daegu: "썸네일-사무실_전화중.jpg",
   geoje: "썸네일-사무실_작업중.jpg",
   hub: "썸네일-사무실_정면.jpg",
+  gyeongju: "썸네일-사무실_가을 (1).jpg",
+  jinju: "썸네일_사무실_서류검토_여름 (5).jpg",
+  gumi: "썸네일-사무실_가을 (3).jpg",
+  tongyeong: "썸네일-사무실_겨울 (2).jpg",
+  miryang: "썸네일-사무실_겨울 (1).jpg",
 };
 
+// node scripts/rseo-make-og.mjs gyeongju jinju ...  → 지정한 키만 생성(기존 파일 재생성 방지)
+const only = process.argv.slice(2);
+
 for (const [key, file] of Object.entries(SOURCES)) {
+  if (only.length && !only.includes(key)) continue;
   for (const [suffix, width, height] of [
     ["", 1200, 630],
     ["-4x3", 1200, 900],

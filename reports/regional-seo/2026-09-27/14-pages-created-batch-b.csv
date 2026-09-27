@@ -1,0 +1,2 @@
+﻿url,region,status,reason
+(none),-,NOT_CREATED,평가한 23개 지역 모두 대표 URL이 이미 존재. 신규 URL은 기존 대표 URL과 같은 의도를 나눠 갖게 되므로(cannibalization) Batch A·B 모두 기존 URL 개선으로 진행.

@@ -36,6 +36,8 @@ export type NationwideNoticeConfig = {
   type: NationwideServiceType;
   badge: string;
   title: string;
+  /** 패널에 항상 보이는 한두 줄 요약 — 세부 문단은 접힌 영역에 둔다 */
+  summary: string;
   paragraphs: string[];
   steps: [string, string, string];
   caution: string;

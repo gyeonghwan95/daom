@@ -50,6 +50,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <PageDataTemplate
         page={page}
         recommendationSource={recommendationFromService(service)}
+        hasRemoteNotice={nationwideType !== null}
         heroAddon={
           nationwideType ? (
             <NationwideServiceNotice type={nationwideType} />

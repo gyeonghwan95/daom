@@ -1,5 +1,5 @@
 ﻿url,region,regionLevel,service,mainTextChars,maxNormSim,maxNormSimWith,dupSentences,incomingLinksInMain,thinFlags,thinLocal
-/업무사례/고성군상속등기법무사,고성,군,상속등기,6518,0.5525,/업무사례/밀양상속등기법무사,19,2,dupSentences 19; inMain 2,THIN_LOCAL_PAGE
+/업무사례/고성군상속등기법무사,고성,군,상속등기,6518,0.5466,/업무사례/사천상속등기법무사,19,2,dupSentences 19; inMain 2,THIN_LOCAL_PAGE
 /업무사례/대구군위군상속등기법무사,대구,군,상속등기,5002,0.6656,/업무사례/대구현풍상속등기,12,2,normSim 0.6656; dupSentences 12; inMain 2,THIN_LOCAL_PAGE
 /업무사례/대구남구상속등기법무사,대구,구,상속등기,4835,0.6978,/업무사례/대구성서상속등기,10,0,normSim 0.6978; dupSentences 10; inMain 0,THIN_LOCAL_PAGE
 /업무사례/대구다사상속등기,대구,읍면/생활권,상속등기,4668,0.6945,/업무사례/대구달성군상속등기법무사,8,3,normSim 0.6945; dupSentences 8,THIN_LOCAL_PAGE
@@ -33,7 +33,7 @@
 /업무사례/울산송정동상속등기,울산,동,상속등기,5051,0.6064,/업무사례/대구성서상속등기,14,3,normSim 0.6064; dupSentences 14,THIN_LOCAL_PAGE
 /업무사례/울산옥동상속등기,울산,동,상속등기,4869,0.6041,/업무사례/울산매곡동상속등기,9,1,normSim 0.6041; dupSentences 9; inMain 1,THIN_LOCAL_PAGE
 /업무사례/울산중구상속등기법무사,울산,구,상속등기,4964,0.6964,/업무사례/대구중구상속등기법무사,9,2,normSim 0.6964; dupSentences 9; inMain 2,THIN_LOCAL_PAGE
-/업무사례/울주군상속등기법무사,울주,군,상속등기,5919,0.7464,/업무사례/진주상속등기법무사,20,11,normSim 0.7464; dupSentences 20,THIN_LOCAL_PAGE
+/업무사례/울주군상속등기법무사,울주,군,상속등기,5919,0.6928,/업무사례/포항상속등기법무사,20,11,normSim 0.6928; dupSentences 20,THIN_LOCAL_PAGE
 /업무사례/울주군상속포기한정승인,울주,군,상속포기·한정승인,6263,0.4917,/업무사례/포항상속포기한정승인,16,1,dupSentences 16; inMain 1,THIN_LOCAL_PAGE
 /업무사례/울주범서상속등기,울주,읍면/생활권,상속등기,4953,0.693,/업무사례/울주삼남상속등기,9,3,normSim 0.693; dupSentences 9,THIN_LOCAL_PAGE
 /업무사례/울주삼남상속등기,울주,읍면/생활권,상속등기,4887,0.693,/업무사례/울주범서상속등기,8,2,normSim 0.693; dupSentences 8; inMain 2,THIN_LOCAL_PAGE

@@ -10,6 +10,7 @@ import {
 } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { optimizedImageSrc, optimizedSrcSet } from "@/lib/image-variants";
 import {
   HOME_HERO_SLIDE_MS,
   HOME_HERO_VIDEO_MAX_MS,
@@ -245,7 +246,9 @@ function StageVisual({
       <div className="home-hero-stage__fill" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={item.poster}
+          src={optimizedImageSrc(item.poster, 1280)}
+          srcSet={optimizedSrcSet(item.poster)}
+          sizes="100vw"
           alt=""
           className="home-hero-stage__media home-hero-stage__media--fill"
         />
@@ -256,7 +259,7 @@ function StageVisual({
             ref={fileRef}
             className="home-hero-stage__media home-hero-stage__media--fit home-hero-stage__file-video"
             src={item.src}
-            poster={item.poster}
+            poster={optimizedImageSrc(item.poster, 1280)}
             muted
             playsInline
             preload="auto"
@@ -552,7 +555,7 @@ export function HeroStage() {
                         />
                       ) : (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={itemPoster(item)} alt="" />
+                        <img src={optimizedImageSrc(itemPoster(item), 256)} alt="" />
                       )}
                       {item.kind === "video" ? <VideoBadge /> : null}
                     </span>

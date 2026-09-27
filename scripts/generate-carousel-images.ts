@@ -2,10 +2,10 @@
  * 캐러셀 대표이미지 생성 (로컬 사전 생성 전용 — 배포 빌드에서 실행하지 않음)
  *
  * - 원본 사진은 수정하지 않고 crop/resize/합성만 수행
- * - 출력: public/images/generated/carousel/<category>/<file>.webp (1200×800)
+ * - 출력: public/images/generated/carousel/<category>/<file>.webp (매니페스트 width×height)
  * - 검토용 미리보기: docs/generated/carousel-image-preview.html
  *
- * Usage: npm run generate:carousel-images
+ * Usage: npm run generate:carousel-images [-- --only=id1,id2]
  */
 
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
@@ -228,6 +228,126 @@ async function buildLayers(
   }
 }
 
+/**
+ * centered-hook (1:1) — 사진 전면 배경 + 가운데 타이포.
+ * 1:1 그대로, 4:3·3:2·16:9 가로 crop, 3:4 세로 crop, OG 1.91:1 crop 모두에서
+ * 글자가 남도록 x 170–1030 · y 300–900 안에만 텍스트를 둔다.
+ */
+const HOOK_TINT: Record<string, string> = {
+  navy: "#0c1a2b",
+  warm: "#211910",
+  sage: "#111f18",
+  slate: "#151c26",
+};
+const GOLD = "#c9a96b";
+const SERIF = `'Noto Serif KR','Malgun Gothic',serif`;
+const SANS = `'Noto Sans KR','Malgun Gothic',sans-serif`;
+
+/** 글자 폭 추정(em). 한글 1, 공백 0.26, 숫자·라틴 0.6, 구두점 0.32 */
+function emWidth(text: string): number {
+  let w = 0;
+  for (const ch of text) {
+    if (/\s/.test(ch)) w += 0.26;
+    else if (/[0-9A-Za-z]/.test(ch)) w += 0.6;
+    else if (/[·.,?!:~'"()\-]/.test(ch)) w += 0.32;
+    else w += 1;
+  }
+  return w;
+}
+
+function fitSize(lines: string[], maxWidth: number, max: number, min: number): number {
+  const widest = Math.max(...lines.map(emWidth));
+  return Math.max(min, Math.min(max, Math.floor(maxWidth / widest)));
+}
+
+async function renderCenteredHook(
+  item: CarouselImageManifestItem,
+  photoDisk: string | null,
+): Promise<Buffer> {
+  const w = item.width;
+  const h = item.height;
+  const cx = w / 2;
+  const copy = item.thumbnail ?? {
+    eyebrow: item.pageTitle,
+    title: item.headline,
+    subtitle: item.subheadline ?? "",
+  };
+  const tint = HOOK_TINT[item.accent] ?? HOOK_TINT.navy;
+
+  const background = photoDisk
+    ? await sharp(photoDisk)
+        .rotate()
+        .resize(w, h, { fit: "cover", position: item.cropPosition ?? "centre" })
+        .blur(7)
+        .modulate({ saturation: 0.5, brightness: 0.9 })
+        .toBuffer()
+    : await sharp(
+        Buffer.from(
+          `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg"><rect width="${w}" height="${h}" fill="${tint}"/></svg>`,
+        ),
+      )
+        .png()
+        .toBuffer();
+
+  const titleLines = copy.title.split("\n").slice(0, 2);
+  const titleSize = fitSize(titleLines, 840, 116, 72);
+  const lineGap = Math.round(titleSize * 1.24);
+  const titleBaselines =
+    titleLines.length === 2 ? [548, 548 + lineGap] : [612];
+
+  const eyebrowSize = 30;
+  const eyebrowSpacing = 6;
+  const eyebrowHalf =
+    (emWidth(copy.eyebrow) * eyebrowSize + [...copy.eyebrow].length * eyebrowSpacing) / 2;
+  const subtitleSize = Math.min(40, Math.floor(860 / Math.max(1, emWidth(copy.subtitle))));
+
+  const overlay = `
+<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="62%" stop-color="#000" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.62"/>
+    </radialGradient>
+    <radialGradient id="focus" cx="50%" cy="50%" r="42%">
+      <stop offset="0%" stop-color="${tint}" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="${tint}" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dy="4" result="blur"/>
+      <feFlood flood-color="#000" flood-opacity="0.45"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="${w}" height="${h}" fill="${tint}" opacity="0.64"/>
+  <rect width="${w}" height="${h}" fill="url(#focus)"/>
+  <rect width="${w}" height="${h}" fill="url(#vignette)"/>
+
+  <g font-family="${SANS}" text-anchor="middle">
+    <line x1="${cx - eyebrowHalf - 76}" y1="${378 - 10}" x2="${cx - eyebrowHalf - 22}" y2="${378 - 10}" stroke="${GOLD}" stroke-width="2"/>
+    <line x1="${cx + eyebrowHalf + 22}" y1="${378 - 10}" x2="${cx + eyebrowHalf + 76}" y2="${378 - 10}" stroke="${GOLD}" stroke-width="2"/>
+    <text x="${cx + eyebrowSpacing / 2}" y="378" font-size="${eyebrowSize}" font-weight="600" fill="${GOLD}" letter-spacing="${eyebrowSpacing}">${esc(copy.eyebrow)}</text>
+  </g>
+
+  <g font-family="${SERIF}" font-weight="900" font-size="${titleSize}" fill="#ffffff" text-anchor="middle" filter="url(#shadow)">
+    ${titleLines.map((line, i) => `<text x="${cx}" y="${titleBaselines[i]}">${esc(line)}</text>`).join("\n    ")}
+  </g>
+
+  <rect x="${cx - 36}" y="742" width="72" height="3" fill="${GOLD}"/>
+
+  <text x="${cx}" y="812" font-family="${SANS}" font-size="${subtitleSize}" font-weight="500" fill="#ece3cf" text-anchor="middle" filter="url(#shadow)">${esc(copy.subtitle)}</text>
+
+  <text x="${cx + 4}" y="884" font-family="${SANS}" font-size="21" font-weight="500" fill="#ffffff" fill-opacity="0.62" text-anchor="middle" letter-spacing="8">다옴법무사사무소</text>
+</svg>`;
+
+  return sharp(background)
+    .composite([{ input: Buffer.from(overlay), left: 0, top: 0 }])
+    .webp({ quality: 86 })
+    .toBuffer();
+}
+
 function resolveSourceDisk(item: CarouselImageManifestItem): string | null {
   let publicPath: string | undefined;
   if (item.sourcePhotoId) {
@@ -248,18 +368,21 @@ async function generateOne(item: CarouselImageManifestItem) {
     return { id: item.id, ok: false, reason: "source photo missing" };
   }
 
-  const { base, layers } = await buildLayers(item, photoDisk);
+  if (item.layoutVariant === "centered-hook") {
+    writeFileSync(outDisk, await renderCenteredHook(item, photoDisk));
+  } else {
+    const { base, layers } = await buildLayers(item, photoDisk);
 
-  // 배경(SVG: 색면·텍스트·아이콘) 위에 사진 패널을 합성.
-  // 텍스트 영역과 사진 패널은 겹치지 않도록 레이아웃되어 있다.
-  let pipeline = sharp(base);
-  if (layers.length) {
-    pipeline = pipeline.composite(
-      layers.map((l) => ({ input: l.input, left: l.left, top: l.top })),
-    );
+    // 배경(SVG: 색면·텍스트·아이콘) 위에 사진 패널을 합성.
+    // 텍스트 영역과 사진 패널은 겹치지 않도록 레이아웃되어 있다.
+    let pipeline = sharp(base);
+    if (layers.length) {
+      pipeline = pipeline.composite(
+        layers.map((l) => ({ input: l.input, left: l.left, top: l.top })),
+      );
+    }
+    await pipeline.webp({ quality: 85 }).toFile(outDisk);
   }
-
-  await pipeline.webp({ quality: 85 }).toFile(outDisk);
   const meta = await sharp(outDisk).metadata();
   return {
     id: item.id,
@@ -306,15 +429,22 @@ ${rows}</table></html>`;
 }
 
 async function main() {
+  const only = process.argv
+    .find((a) => a.startsWith("--only="))
+    ?.slice("--only=".length)
+    .split(",");
+  const targets = only
+    ? CAROUSEL_IMAGE_MANIFEST.filter((i) => only.includes(i.id))
+    : CAROUSEL_IMAGE_MANIFEST;
   const results = [];
-  for (const item of CAROUSEL_IMAGE_MANIFEST) {
+  for (const item of targets) {
     try {
       results.push(await generateOne(item));
     } catch (e) {
       results.push({ id: item.id, ok: false, reason: String(e) });
     }
   }
-  writePreview(results);
+  if (!only) writePreview(results);
   const ok = results.filter((r) => r.ok).length;
   console.log(
     JSON.stringify(

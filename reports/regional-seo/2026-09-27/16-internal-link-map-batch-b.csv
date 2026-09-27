@@ -1,0 +1,55 @@
+﻿source,target,anchor,type,note
+/전국상속등기,/업무사례/양산상속등기법무사,양산 상속등기(울산가정법원 관할 확인) →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/김해상속등기법무사,부산 사는 상속인의 김해 부동산 정리 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/창원상속등기법무사,창원 여러 구 부동산 일괄 신청 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/거제상속등기법무사,경남 거제시 상속등기 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/울산상속등기법무사,울산 아파트·토지 상속등기 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/대구상속등기법무사,대구 부동산 비대면 상속등기 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/포항상속등기법무사,포항 상속등기 안내 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/경주상속등기법무사,경주 농지·임야 상속 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/경산상속등기법무사,경산 상속등기 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/구미상속등기법무사,구미 부동산과 부산 부모님 집 상속 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/진주상속등기법무사,"진주 상속, 빚 확인 후 등기 →",HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/통영상속등기법무사,통영 섬 지역 토지·주택 상속 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/밀양상속등기법무사,"밀양 상속, 형제 서류 모으기 →",HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/서울상속등기법무사,서울 부동산 상속등기 →,HUB_TO_CITY,new curated section
+/전국상속등기,/업무사례/지역별상속등기법무사,지역별 상속등기 전체 목록 →,HUB_TO_CITY,new curated section
+/업무사례/경주상속등기법무사,/업무사례/경북농지상속등기,경북 농지 상속등기 안내,CITY_TO_RELATED,
+/업무사례/경주상속등기법무사,/업무사례/경주오래된토지상속등기,경주 오래된 토지 상속등기,CITY_TO_RELATED,
+/업무사례/경주상속등기법무사,/업무사례/경북임야상속등기,경북 임야 상속등기,CITY_TO_RELATED,
+/업무사례/경주상속등기법무사,/업무사례/경북상속등기비용,경북 상속등기 비용,CITY_TO_RELATED,
+/업무사례/경주상속등기법무사,/전국상속등기,지역별 상속등기 안내 보기,CITY_TO_HUB,
+/업무사례/경주상속등기법무사,/contact/inquiry,경주 상속등기 상담 신청,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/안심상속원스톱서비스이후,안심상속 조회 결과를 받은 뒤 할 일,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/부모빚상속방법,부모님 빚이 있을 때 상속 방법,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/업무사례/진주상속포기한정승인,진주 상속포기·한정승인 안내,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/특별한정승인,특별한정승인,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/업무사례/사천상속등기법무사,사천 상속등기 안내,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/업무사례/경남상속등기비용,경남 상속등기 비용,CITY_TO_RELATED,
+/업무사례/진주상속등기법무사,/전국상속등기,지역별 상속등기 안내 보기,CITY_TO_HUB,
+/업무사례/진주상속등기법무사,/contact/inquiry,진주 상속등기 상담 신청,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/부산상속법무사,부산 상속등기 법무사 안내,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/업무사례/경북상속등기필요서류,경북 상속등기 필요서류,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/업무사례/구미에서부산법인본점이전,구미에서 부산으로 법인 본점 이전,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/업무사례/경북법인등기법무사,경북 법인등기 안내,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/업무사례/경북상속등기비용,경북 상속등기 비용,CITY_TO_RELATED,
+/업무사례/구미상속등기법무사,/전국상속등기,지역별 상속등기 안내 보기,CITY_TO_HUB,
+/업무사례/구미상속등기법무사,/contact/inquiry,구미 상속등기 상담 신청,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/미등기건물소유권보존등기,미등기 건물 소유권보존등기,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/업무사례/경남오래된상속등기,경남 오래된 상속등기,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/업무사례/경남여러필지토지상속,경남 여러 필지 토지 상속,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/업무사례/통영상속포기한정승인,통영 상속포기·한정승인 안내,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/업무사례/거제상속등기법무사,거제시 상속등기 안내,CITY_TO_RELATED,
+/업무사례/통영상속등기법무사,/전국상속등기,지역별 상속등기 안내 보기,CITY_TO_HUB,
+/업무사례/통영상속등기법무사,/contact/inquiry,통영 상속등기 상담 신청,CITY_TO_RELATED,
+/업무사례/밀양상속등기법무사,/업무사례/경주상속등기법무사,경주 농지 상속 안내(1만㎡ 기준),CITY_TO_RELATED,
+/업무사례/밀양상속등기법무사,/업무사례/창녕상속등기법무사,창녕 상속등기,CITY_TO_RELATED,
+/업무사례/밀양상속등기법무사,/업무사례/양산상속등기법무사,양산 상속등기,CITY_TO_RELATED,
+/업무사례/밀양상속등기법무사,/업무사례/경남상속등기비용,경남 상속등기 비용,CITY_TO_RELATED,
+/업무사례/밀양상속등기법무사,/전국상속등기,지역별 상속등기 안내 보기,CITY_TO_HUB,
+/업무사례/밀양상속등기법무사,/contact/inquiry,밀양 상속등기 상담 신청,CITY_TO_RELATED,
+(all pages),/업무사례/경주상속등기법무사,,INBOUND_COUNT,incomingLinks=5; inMain=5
+(all pages),/업무사례/구미상속등기법무사,,INBOUND_COUNT,incomingLinks=7; inMain=7
+(all pages),/업무사례/밀양상속등기법무사,,INBOUND_COUNT,incomingLinks=4; inMain=4
+(all pages),/업무사례/진주상속등기법무사,,INBOUND_COUNT,incomingLinks=4; inMain=4
+(all pages),/업무사례/통영상속등기법무사,,INBOUND_COUNT,incomingLinks=8; inMain=8
