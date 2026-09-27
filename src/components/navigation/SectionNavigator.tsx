@@ -15,6 +15,7 @@ import {
 } from "@/lib/section-nav/footer-boundary";
 import type { SectionNavItem } from "@/lib/section-nav/types";
 import { isReservedInheritancePath } from "@/data/seoExperiments/reserved-inheritance-intents";
+import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
 
 type SectionNavigatorProps = {
   sections: SectionNavItem[];
@@ -27,7 +28,9 @@ type NavLayout = {
 
 export function SectionNavigator({ sections }: SectionNavigatorProps) {
   const pathname = usePathname();
-  const leanSeo = isReservedInheritancePath(pathname || "");
+  const leanSeo =
+    isReservedInheritancePath(pathname || "") ||
+    isLectureTargetPath(pathname || "");
   const reduced = useReducedMotion();
   const anchorRef = useRef<HTMLDivElement>(null);
   const tocRef = useRef<HTMLElement>(null);

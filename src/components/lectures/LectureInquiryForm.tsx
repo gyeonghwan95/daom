@@ -50,25 +50,83 @@ const AUDIENCES = [
   "기타",
 ] as const;
 
+const TARGET_TOPICS = [
+  "기업 법률특강",
+  "대학교 특강",
+  "진로특강",
+  "고등학교 특강",
+  "전세사기 예방교육",
+  "생활법률 특강",
+  "창업 법률교육",
+  "기관 맞춤 기획",
+  "기타",
+] as const;
+
+const TARGET_AUDIENCES = [
+  "기업 임직원",
+  "대학생",
+  "고등학생",
+  "중학생",
+  "청년·사회초년생",
+  "공공기관 직원",
+  "도서관·시민",
+  "복지기관 종사자·이용자",
+  "협회·단체 회원",
+  "교직원·학부모",
+  "기타",
+] as const;
+
+const TARGET_LENGTHS = ["미정", "60분", "90분", "120분", "3시간 이상", "연속 회차"] as const;
+const TARGET_DELIVERY = ["미정", "대면(출강)", "온라인"] as const;
+const TARGET_FEE_BASIS = ["모름", "기관 기준 있음", "기관 기준 없음"] as const;
+
 type FieldErrors = {
   contact?: string;
   audience?: string;
+  institution?: string;
   agreed?: string;
   turnstile?: string;
   form?: string;
+};
+
+type LectureInquiryFormProps = {
+  /** target: 강의 target 페이지 전용 — 기관명 필수, 시간·방식·강사료 기준 항목 추가 */
+  variant?: "default" | "target";
+  heading?: string;
+  defaultTopic?: string;
+  defaultAudience?: string;
 };
 
 /**
  * 강의 문의 — Resend(quick-inquiry) 메일 접수.
  * 입력 항목을 최소화해 문의 문턱을 낮춥니다.
  */
-export function LectureInquiryForm() {
+export function LectureInquiryForm({
+  variant = "default",
+  heading,
+  defaultTopic,
+  defaultAudience,
+}: LectureInquiryFormProps = {}) {
+  const isTarget = variant === "target";
+  const topicOptions: readonly string[] = isTarget ? TARGET_TOPICS : TOPICS;
+  const audienceOptions: readonly string[] = isTarget ? TARGET_AUDIENCES : AUDIENCES;
+  const initialTopic =
+    isTarget && defaultTopic && topicOptions.includes(defaultTopic)
+      ? defaultTopic
+      : topicOptions[0];
+  const initialAudience =
+    isTarget && defaultAudience && audienceOptions.includes(defaultAudience)
+      ? defaultAudience
+      : "";
   const formId = useId();
   const [institution, setInstitution] = useState("");
   const [contact, setContact] = useState("");
-  const [topic, setTopic] = useState<(typeof TOPICS)[number]>("전세사기 예방");
+  const [topic, setTopic] = useState<string>(initialTopic);
   const [format, setFormat] = useState<(typeof FORMATS)[number]>("미정");
-  const [audience, setAudience] = useState<"" | (typeof AUDIENCES)[number]>("");
+  const [audience, setAudience] = useState<string>(initialAudience);
+  const [length, setLength] = useState<(typeof TARGET_LENGTHS)[number]>("미정");
+  const [delivery, setDelivery] = useState<(typeof TARGET_DELIVERY)[number]>("미정");
+  const [feeBasis, setFeeBasis] = useState<(typeof TARGET_FEE_BASIS)[number]>("모름");
   const [schedule, setSchedule] = useState("");
   const [headcount, setHeadcount] = useState("");
   const [region, setRegion] = useState("");
@@ -92,6 +150,9 @@ export function LectureInquiryForm() {
         `희망 주제: ${topic}`,
         audience ? `교육 대상: ${audience}` : "교육 대상: (미선택)",
         format !== "미정" ? `행사 형태: ${format}` : "",
+        isTarget && length !== "미정" ? `강의 시간: ${length}` : "",
+        isTarget && delivery !== "미정" ? `진행 방식: ${delivery}` : "",
+        isTarget ? `기관 강사료 기준: ${feeBasis}` : "",
         schedule.trim() ? `희망 일정: ${schedule.trim()}` : "",
         headcount.trim() ? `예상 인원: ${headcount.trim()}` : "",
         region.trim() ? `지역: ${region.trim()}` : "",
@@ -106,6 +167,10 @@ export function LectureInquiryForm() {
       topic,
       format,
       audience,
+      isTarget,
+      length,
+      delivery,
+      feeBasis,
       schedule,
       headcount,
       region,
@@ -164,6 +229,9 @@ export function LectureInquiryForm() {
     }
     if (!audience) {
       next.audience = "교육 대상을 선택해 주세요.";
+    }
+    if (isTarget && !institution.trim()) {
+      next.institution = "기관명(학교·기업·기관)을 입력해 주세요.";
     }
     if (!agree) next.agreed = "개인정보 수집 동의에 체크해 주세요.";
     if (isTurnstileConfigured() && !token) {
@@ -236,9 +304,12 @@ export function LectureInquiryForm() {
   function resetForm() {
     setInstitution("");
     setContact("");
-    setTopic("전세사기 예방");
+    setTopic(initialTopic);
     setFormat("미정");
-    setAudience("");
+    setAudience(initialAudience);
+    setLength("미정");
+    setDelivery("미정");
+    setFeeBasis("모름");
     setSchedule("");
     setHeadcount("");
     setRegion("");
@@ -270,20 +341,32 @@ export function LectureInquiryForm() {
     <form
       onSubmit={(e) => void handleSubmit(e)}
       className="space-y-5 rounded-2xl border border-beige-dark bg-cream/50 p-5 md:p-6"
-      aria-label="법률 강의 문의"
+      aria-label={isTarget && heading ? heading : "법률 강의 문의"}
       noValidate
       aria-busy={submitting}
     >
-      <div className="space-y-1.5">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy/50">
-          이메일 문의 · Resend 접수
-        </p>
-        <h2 className="text-lg font-semibold text-navy">강의 문의</h2>
-        <p className="text-sm leading-relaxed text-navy/70">
-          연락처, 교육 대상, 희망 주제만 필수입니다. 제출하시면 사무소 메일로
-          전달됩니다. 주민등록번호·사건 상세 등 민감정보는 적지 마세요.
-        </p>
-      </div>
+      {isTarget ? (
+        <div className="space-y-1.5">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy/50">
+            출강 문의서 · 이메일 접수
+          </p>
+          <p className="text-sm leading-relaxed text-navy/70">
+            기관명, 연락처, 교육 대상, 희망 주제만 필수입니다. 시간·방식·강사료
+            기준은 아는 만큼만 적어 주세요. 주민등록번호 등 민감정보는 적지 마세요.
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-1.5">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-navy/50">
+            이메일 문의 · Resend 접수
+          </p>
+          <h2 className="text-lg font-semibold text-navy">강의 문의</h2>
+          <p className="text-sm leading-relaxed text-navy/70">
+            연락처, 교육 대상, 희망 주제만 필수입니다. 제출하시면 사무소 메일로
+            전달됩니다. 주민등록번호·사건 상세 등 민감정보는 적지 마세요.
+          </p>
+        </div>
+      )}
 
       {errors.form ? (
         <div
@@ -295,6 +378,21 @@ export function LectureInquiryForm() {
       ) : null}
 
       <fieldset className="space-y-4" disabled={submitting}>
+        {isTarget ? (
+          <Field label="기관명" required error={errors.institution}>
+            <input
+              required
+              aria-required="true"
+              className={fieldControlClass(true)}
+              value={institution}
+              onChange={(e) => setInstitution(e.target.value)}
+              placeholder="예: ○○대학교 학생처, ○○고등학교, ○○(주) 인사팀"
+              aria-invalid={Boolean(errors.institution)}
+              autoComplete="organization"
+            />
+          </Field>
+        ) : null}
+
         <Field label="연락처" required error={errors.contact}>
           <input
             required
@@ -314,11 +412,9 @@ export function LectureInquiryForm() {
             aria-required="true"
             className={fieldControlClass(true)}
             value={topic}
-            onChange={(e) =>
-              setTopic(e.target.value as (typeof TOPICS)[number])
-            }
+            onChange={(e) => setTopic(e.target.value)}
           >
-            {TOPICS.map((item) => (
+            {topicOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -332,13 +428,11 @@ export function LectureInquiryForm() {
             aria-required="true"
             className={fieldControlClass(true)}
             value={audience}
-            onChange={(e) =>
-              setAudience(e.target.value as "" | (typeof AUDIENCES)[number])
-            }
+            onChange={(e) => setAudience(e.target.value)}
             aria-invalid={Boolean(errors.audience)}
           >
             <option value="">선택해 주세요</option>
-            {AUDIENCES.map((item) => (
+            {audienceOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -346,30 +440,68 @@ export function LectureInquiryForm() {
           </select>
         </Field>
 
-        <Field label="기관명">
-          <input
-            className={fieldControlClass(false)}
-            value={institution}
-            onChange={(e) => setInstitution(e.target.value)}
-            placeholder="예: ○○도서관, ○○청년센터"
-          />
-        </Field>
+        {isTarget ? (
+          <>
+            <Field label="강의 시간">
+              <select
+                className={fieldControlClass(false)}
+                value={length}
+                onChange={(e) =>
+                  setLength(e.target.value as (typeof TARGET_LENGTHS)[number])
+                }
+              >
+                {TARGET_LENGTHS.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </Field>
 
-        <Field label="행사 형태">
-          <select
-            className={fieldControlClass(false)}
-            value={format}
-            onChange={(e) =>
-              setFormat(e.target.value as (typeof FORMATS)[number])
-            }
-          >
-            {FORMATS.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </Field>
+            <Field label="진행 방식">
+              <select
+                className={fieldControlClass(false)}
+                value={delivery}
+                onChange={(e) =>
+                  setDelivery(e.target.value as (typeof TARGET_DELIVERY)[number])
+                }
+              >
+                {TARGET_DELIVERY.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </>
+        ) : (
+          <>
+            <Field label="기관명">
+              <input
+                className={fieldControlClass(false)}
+                value={institution}
+                onChange={(e) => setInstitution(e.target.value)}
+                placeholder="예: ○○도서관, ○○청년센터"
+              />
+            </Field>
+
+            <Field label="행사 형태">
+              <select
+                className={fieldControlClass(false)}
+                value={format}
+                onChange={(e) =>
+                  setFormat(e.target.value as (typeof FORMATS)[number])
+                }
+              >
+                {FORMATS.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </>
+        )}
 
         <Field label="희망 일정">
           <input
@@ -397,6 +529,24 @@ export function LectureInquiryForm() {
             placeholder="예: 해운대구, 부산 전역 (선택)"
           />
         </Field>
+
+        {isTarget ? (
+          <Field label="기관 강사료 기준">
+            <select
+              className={fieldControlClass(false)}
+              value={feeBasis}
+              onChange={(e) =>
+                setFeeBasis(e.target.value as (typeof TARGET_FEE_BASIS)[number])
+              }
+            >
+              {TARGET_FEE_BASIS.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </Field>
+        ) : null}
 
         <label className="flex items-start gap-3 rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy">
           <input

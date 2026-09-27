@@ -1,0 +1,10 @@
+# 네이버 서치어드바이저 웹페이지 수집 요청 — 2026-09-27
+# 순서: Busan hub → 기업 → 대학교 → 진로 → 고등학교 → 전세 → 생활법률 → generic
+1. https://xn--2j1br1na42lvxja38mk8r.kr/부산법률강사
+2. https://xn--2j1br1na42lvxja38mk8r.kr/기업법률교육
+3. https://xn--2j1br1na42lvxja38mk8r.kr/부산대학교특강
+4. https://xn--2j1br1na42lvxja38mk8r.kr/법무사진로특강
+5. https://xn--2j1br1na42lvxja38mk8r.kr/학교법률교육
+6. https://xn--2j1br1na42lvxja38mk8r.kr/전세사기예방교육
+7. https://xn--2j1br1na42lvxja38mk8r.kr/법률강의
+8. https://xn--2j1br1na42lvxja38mk8r.kr/강사소개

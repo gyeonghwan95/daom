@@ -37,6 +37,8 @@ import {
   getRelatedLectureHistoryForPage,
 } from "@/data/lectures/history";
 import { getLectureContent } from "@/lib/lectures/content";
+import { getLectureTargetSpec } from "@/lib/lectures/target-specs";
+import { LectureTargetLayout } from "@/components/lectures/LectureTargetLayout";
 import { buildLectureTrackRecordSummary } from "@/lib/lectures/history-helpers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
@@ -50,6 +52,24 @@ type LecturePageViewProps = {
 export function LecturePageView({ page }: LecturePageViewProps) {
   const content = getLectureContent(page.slug);
   if (!content) return null;
+
+  const targetSpec = getLectureTargetSpec(page.slug);
+  if (targetSpec) {
+    return (
+      <article className="lecture-page content-stack">
+        <Breadcrumb items={page.breadcrumbs} />
+        <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+        <JsonLd
+          data={buildJsonLdForPageData({
+            ...page,
+            faqs: content.faqs,
+            includeFaqSchema: true,
+          })}
+        />
+        <LectureTargetLayout content={content} spec={targetSpec} />
+      </article>
+    );
+  }
 
   const relatedHistory = getRelatedLectureHistoryForPage(page.path, 3);
   const fallbackHistory = getLectureHistoryByIds(content.historyIds).slice(0, 3);

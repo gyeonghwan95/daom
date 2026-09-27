@@ -5,6 +5,23 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const CONTENT = path.join(ROOT, "src/content");
+const PINS_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), "lastmod-pins.json");
+
+/**
+ * 공유 소스 파일을 수정했지만 페이지 내용은 바뀌지 않은 URL의 lastmod 고정값.
+ * { "/경로": "YYYY-MM-DD" } — 해당 페이지 내용을 실제로 바꾸면 항목을 지운다.
+ */
+function readLastmodPins() {
+  try {
+    if (!fs.existsSync(PINS_FILE)) return {};
+    const parsed = JSON.parse(fs.readFileSync(PINS_FILE, "utf8"));
+    return parsed?.pins ?? {};
+  } catch {
+    return {};
+  }
+}
+
+const LASTMOD_PINS = readLastmodPins();
 
 /** YYYY-MM-DD — 알 수 없으면 null (lastmod 생략) */
 export function formatLastmod(dateInput) {
@@ -111,6 +128,8 @@ const STATIC_PAGE_FILES = {
  * 빌드 시각을 쓰지 않고 콘텐츠·소스 파일 기준만 사용
  */
 export function getLastmodForPath(routePath) {
+  if (LASTMOD_PINS[routePath]) return LASTMOD_PINS[routePath];
+
   const blogMatch = routePath.match(/^\/blog\/([^/]+)$/);
   if (blogMatch) return mdxDate("blog", blogMatch[1]);
 

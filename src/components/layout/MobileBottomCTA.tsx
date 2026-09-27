@@ -7,6 +7,7 @@ import {
   type ConsultationChannel,
 } from "@/lib/contact";
 import { isB2BPath } from "@/lib/b2b/options";
+import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
 import { EXTERNAL_LINKS } from "@/config/external-links";
 import {
   FormIcon,
@@ -171,6 +172,31 @@ export function MobileBottomCTA() {
     external: true,
     configured: true,
   };
+
+  if (isLectureTargetPath(pathname)) {
+    const phone = rowChannels.find((c) => c.id === "phone");
+    return (
+      <div
+        className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+        role="region"
+        aria-label="출강 문의"
+      >
+        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] divide-x divide-beige-dark">
+          {phone ? <MobileChannelButton channel={phone} /> : <span />}
+          <a
+            href="#lecture-request"
+            className="mobile-bottom-cta__btn bg-navy text-white"
+            aria-label="출강 문의서 작성"
+            onClick={() => trackCtaEvent("contact", undefined, "#lecture-request")}
+          >
+            <FormIcon className="mobile-bottom-cta__icon" />
+            <span className="mobile-bottom-cta__label">출강 문의서 작성</span>
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (b2b) {
     const pair = rowChannels.filter(

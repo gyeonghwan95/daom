@@ -1,0 +1,20 @@
+﻿keyword,source,intent_group,url,action
+비교과 특강,SERP_PATTERN: 대학 검색 결과 대부분 .ac.kr 비교과 공지,university,/부산대학교특강,MAP_EXISTING — 본문·리드에 비교과 용어 사용
+대학 강연,BRIEF P0 + SERP .ac.kr 행사 공지,university,/부산대학교특강,MAP_EXISTING — 리드에 반영
+취업진로지원센터 특강,SERP_PATTERN: 대학 공지 주관 부서명,university,/부산대학교특강,MAP_EXISTING — 리드의 담당 부서로 반영
+전문직업인 특강,SERP_PATTERN: 진로 검색 .go.kr·.or.kr(교육청·진로센터) 공고 용어,career,/법무사진로특강,MAP_EXISTING
+진로체험의 날 강사,SERP_PATTERN: 교육청 진로체험 공고,career,/법무사진로특강,MAP_EXISTING — 반일 순환 커리큘럼으로 반영
+고등학생 법률특강,BRIEF 확장,high-school,/학교법률교육,MAP_EXISTING — 리드 반영
+학부모 연수 생활법률,CONTENT_GAP: 학교 담당자 추가 요청 형태,high-school,/학교법률교육,ADD_SECTION — 3시간 이상 커리큘럼에 포함
+기업교육 강사 / 사내특강,BRIEF 확장,enterprise,/기업법률교육,MAP_EXISTING — 리드 반영
+조찬 강연 법률,CONTENT_GAP: 기업 강연 형식,enterprise,/기업법률교육,ADD_SECTION — 진행 방식에 반영
+부산 세미나 강사,BRIEF P0 (기존 map 누락),busan-hub,/부산법률강사,MAP_EXISTING — title에 세미나 반영
+전세사기 예방교육 강사,BRIEF P0 (기존 map 누락),jeonse,/전세사기예방교육,MAP_EXISTING
+자립준비청년 전세 교육,EVIDENCE: 자립지원전담기관 완료 강의,jeonse,/전세사기예방교육,MAP_EXISTING
+평생학습 생활법률 강좌,EVIDENCE: 시민도서관 4회차,life-law,/법률강의,MAP_EXISTING
+법률특강 강사,SERP: 이전 관측에서 /법률강의 노출,life-law,/법률강의,OWNER_FIX — /부산법률강사에서 이동
+특강 강사 프로필,BRIEF generic,generic,/강사소개,MAP_EXISTING
+강의계획서 양식 강사,CONTENT_GAP: 담당자 결재 서류,generic,/강사소개,ADD_SECTION — 프로필·강의계획서 섹션
+기관 강사료 기준,BRIEF,busan-hub,/부산법률강사,ADD_SECTION — 전 target 강사료 요소 섹션
+부산 대학교 특강 강사 추천,PATTERN,university,/부산대학교특강,NO_PAGE — 추천·순위 페이지 만들지 않음
+부산 최고 강사,PATTERN,busan-hub,-,REJECT — 금지 표현
