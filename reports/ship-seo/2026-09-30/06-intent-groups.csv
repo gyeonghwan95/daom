@@ -1,0 +1,13 @@
+﻿intentId,cluster,representativeUrl,queries,supportingUrls,status
+SHIP_REGISTRATION,CORE,/선박등기,선박등기 · 선박등기 법무사 · 선박등기 절차 · 선박등기 대상,/선박등기와선박등록 /선박등기자가진단,RESERVED
+SHIP_OWNERSHIP_TRANSFER,OWNERSHIP,/선박등기,선박 소유권이전등기 · 선박 매매 등기 · 배 명의이전,/창원선박등기 /거제선박등기,RESERVED (허브 섹션)
+SHIP_MORTGAGE,MORTGAGE,/선박등기,선박 저당권 설정·말소 · 소형선박 저당권,,RESERVED (허브 섹션)
+SHIP_INHERITANCE,INHERITANCE,/선박상속,선박상속 · 선박상속 법무사 · 부산 선박상속 · 어선 상속,/선박관리인선임등기 /통영선박등기,RESERVED
+SHIP_MANAGER,MANAGER,/선박관리인선임등기,선박관리인 · 선박관리인 선임등기 · 공동상속 선박관리인,/선박상속,RESERVED
+SHIP_REGISTRATION_VS_ADMIN_REGISTRATION,FISHING_VESSEL,/선박등기와선박등록,등기 등록 차이 · 선박원부 · 어선원부 · 소형선박 등록,/선박등기,RESERVED
+REGIONAL_BUSAN,REGIONAL,/부산선박등기,부산 선박등기 · 부산 선박등기 법무사,/영도구선박등기,IMPROVED
+REGIONAL_YEONGDO,REGIONAL,/영도구선박등기,영도 선박등기,/부산선박등기,PROTECT
+REGIONAL_ULSAN,REGIONAL,/울산선박등기,울산 선박등기,/선박등기필요서류,CREATED
+REGIONAL_GEOJE,REGIONAL,/거제선박등기,거제 선박등기 · 거제 선박상속,/선박상속,CREATED
+REGIONAL_TONGYEONG,REGIONAL,/통영선박등기,통영 선박등기 · 통영 선박상속,/선박관리인선임등기,CREATED
+REGIONAL_CHANGWON,REGIONAL,/창원선박등기,창원·진해·마산 선박등기,/선박등기,CREATED

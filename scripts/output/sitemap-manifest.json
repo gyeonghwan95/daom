@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-27T14:18:37.385Z",
+  "generatedAt": "2026-09-30T15:18:04.405Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1654,
+  "totalUrls": 1662,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
@@ -9,7 +9,7 @@
     "3": 175,
     "4": 581,
     "5": 183,
-    "6": 588,
+    "6": 596,
     "7": 53,
     "8": 28
   },
@@ -744,27 +744,27 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
-      "lastmod": "2026-09-27",
+      "lastmod": "2026-09-30",
       "filename": "tier-3-tools.xml",
       "count": 175
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-09-27",
+      "lastmod": "2026-09-30",
       "filename": "tier-4-regions.xml",
       "count": 581
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
-      "lastmod": "2026-09-27",
+      "lastmod": "2026-09-30",
       "filename": "tier-5-local.xml",
       "count": 183
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-09-27",
+      "lastmod": "2026-09-30",
       "filename": "tier-6-keywords.xml",
-      "count": 588
+      "count": 596
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
@@ -1348,7 +1348,7 @@
       "path": "/업무사례/서울상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%84%9C%EC%9A%B8%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-09-22"
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/업무사례/세종상속등기법무사",
@@ -3112,7 +3112,7 @@
       "path": "/부산선박등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/부산셀프등기",
@@ -6334,7 +6334,7 @@
       "path": "/업무사례/용인상속등기법무사",
       "tier": 5,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%9A%A9%EC%9D%B8%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-08-07"
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/업무사례/울산공장상속등기",
@@ -6923,6 +6923,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B1%B0%EC%A0%9C%EB%8F%99%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/거제선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B1%B0%EC%A0%9C%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/건물등기상황별안내",
@@ -8839,6 +8845,18 @@
       "lastmod": null
     },
     {
+      "path": "/선박관리인선임등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EA%B4%80%EB%A6%AC%EC%9D%B8%EC%84%A0%EC%9E%84%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
+    },
+    {
+      "path": "/선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
+    },
+    {
       "path": "/선박등기과태료",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C",
@@ -8869,6 +8887,12 @@
       "lastmod": null
     },
     {
+      "path": "/선박등기와선박등록",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%EC%99%80%EC%84%A0%EB%B0%95%EB%93%B1%EB%A1%9D",
+      "lastmod": "2026-09-30"
+    },
+    {
       "path": "/선박등기준비서류",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98",
@@ -8879,6 +8903,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98",
       "lastmod": null
+    },
+    {
+      "path": "/선박상속",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EC%83%81%EC%86%8D",
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/세무법인설립등기",
@@ -9311,6 +9341,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B0%EC%95%94%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC",
       "lastmod": "2026-09-01"
+    },
+    {
+      "path": "/울산선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/유류분과상속등기",
@@ -9955,6 +9991,12 @@
       "lastmod": null
     },
     {
+      "path": "/창원선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B0%BD%EC%9B%90%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
+    },
+    {
       "path": "/채권압류추심서류준비",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B1%84%EA%B6%8C%EC%95%95%EB%A5%98%EC%B6%94%EC%8B%AC%EC%84%9C%EB%A5%98%EC%A4%80%EB%B9%84",
@@ -10007,6 +10049,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%86%A0%EC%A7%80%EC%86%8C%EC%9C%A0%EC%9E%90%EC%99%80%EA%B1%B4%EC%B6%95%EC%A3%BC%EB%8B%A4%EB%A5%B8%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/통영선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%86%B5%EC%98%81%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-09-30"
     },
     {
       "path": "/특별법법인설립등기",

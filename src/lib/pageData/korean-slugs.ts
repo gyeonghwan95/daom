@@ -2,6 +2,7 @@ import { getAllDiagnosisSlugs } from "@/lib/diagnosis";
 import { getAllLocalLandingSlugs } from "@/lib/local-landing";
 import { NATIONWIDE_PAGE_SLUGS } from "@/lib/nationwide";
 import { getAllSeoLandingSlugs } from "@/lib/seo-landing";
+import { getNewShipSeoSlugs } from "@/lib/ship-seo";
 import { getAllTopicHubSlugs } from "@/lib/topic-hubs";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
@@ -13,6 +14,7 @@ export function getAllKoreanLandingSlugs(): string[] {
     ...getAllTopicHubSlugs(),
     ...getAllSeoLandingSlugs(),
     ...NATIONWIDE_PAGE_SLUGS,
+    ...getNewShipSeoSlugs(),
     "강의이력",
     "업무사례",
     "개인정보처리방침",

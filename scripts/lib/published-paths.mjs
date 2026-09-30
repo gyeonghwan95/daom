@@ -485,6 +485,21 @@ function readLectureHistoryPaths() {
   ];
 }
 
+/** 선박등기 클러스터 신규 URL — src/lib/ship-seo/pages/*.ts (기존 URL 오버라이드는 existing/ 에 있어 제외) */
+function readShipSeoPaths() {
+  const dir = path.join(ROOT, "src/lib/ship-seo/pages");
+  if (!fs.existsSync(dir)) return [];
+  const paths = [];
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith(".ts")) continue;
+    const text = fs.readFileSync(path.join(dir, file), "utf8");
+    for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
+      paths.push(`/${normalizeRouteSlug(match[1])}`);
+    }
+  }
+  return paths;
+}
+
 function readSeoLandingPaths() {
   const manifest = path.join(ROOT, "scripts/output/seo-landing-manifest.json");
   if (!fs.existsSync(manifest)) return [];
@@ -574,6 +589,7 @@ export function getAllPublishedPaths() {
     ...caseSlugs.map((slug) => `/cases/${slug}`),
     ...caseRegionPaths,
     ...nationwidePaths,
+    ...readShipSeoPaths(),
     "/press",
     ...pressSlugs.map((slug) => `/press/${slug}`),
   ];

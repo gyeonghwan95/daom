@@ -1,0 +1,10 @@
+﻿check,result,detail
+npm run build,PASS,"exit 0, 정적 페이지 1866개 생성, seo-dom all samples OK"
+tsc --noEmit,PASS (기존 오류 1건),src/data/seoExperiments/reserved-inheritance-intents.ts(42) — 이번 변경과 무관
+eslint (변경 파일),PASS,0 errors
+NON_TARGET_CHANGED_URLS,0,보호 1663개 URL: 본문·title·canonical·robots·sitemap lastmod 변화 없음
+sitemap,PASS,"총 1662 URL, 변경 2개만 lastmod 2026-09-30"
+new URL,0,신규 생성 없음
+모바일 375/390/430,PASS,"main 내부 가로 넘침 0, 가로 스크롤 불가(clip), 표는 자체 스크롤, 캐러셀 정상"
+duplicate DOM id,0,seo-carousel-heading 페이지당 1회
+broken internal links,0,두 페이지 전체 a[href^=/] 기준

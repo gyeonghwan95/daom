@@ -1,0 +1,16 @@
+﻿region,group,query,searchIntentEvidence,noExistingRepresentative,uniqueFirst700,uniqueFaq,uniqueSituation,similarityUnder065,chars1800Plus,internalLinkSlot,legalInfoAccurate,conversionIntent,criteriaMet(of10),action,representativeUrl,note
+부산,BUSAN,부산 선박등기,-,-,-,-,-,-,-,-,-,-,,IMPROVE_EXISTING,/부산선박등기,TARGET_ALLOWLIST. 부산 선적 전부 부산지방법원 등기국
+영도,BUSAN,영도 선박등기,-,-,-,-,-,-,-,-,-,-,,PROTECT_WINNER,/영도구선박등기,표본 1위. 변경 없음
+울산,ULSAN,울산 선박등기,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,10,CREATE,/울산선박등기,울산지방법원 등기과 위임. 법인 선박·부선 각도
+거제,GYEONGNAM,거제 선박등기,Y,Y,Y,Y,Y,Y,Y,Y,P,Y,9,CREATE,/거제선박등기,접수 등기소 미확정 → 관할구역표 재확인으로 헤지
+통영,GYEONGNAM,통영 선박상속,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,10,CREATE,/통영선박등기,통영지원 등기관할 통영시(2026.6 법원 안내)
+창원·진해·마산,GYEONGNAM,창원 선박등기,P,Y,Y,Y,Y,Y,Y,Y,Y,Y,9,CREATE,/창원선박등기,관할구역표상 창원지방법원 등기과가 창원시 전역
+포항,GYEONGBUK,포항 선박등기,Y,Y,?,?,?,?,?,?,?,?,2,HOLD,,Batch 2. 표본 SERP 법무사 문서 없음
+사천·삼천포,GYEONGNAM,사천 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 2
+고성,GYEONGNAM,고성 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 2 — 경남/강원 동명 구분 필요
+남해,GYEONGNAM,남해 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 2
+기장,BUSAN,기장 선박등기,?,N,?,?,?,?,?,?,?,?,0,DO_NOT_CREATE,/부산선박등기,부산 대표 URL과 관할·절차 동일 → doorway 위험
+강서구,BUSAN,강서구 선박등기,-,-,-,-,-,-,-,-,-,-,,HOLD,/강서구선박등기,기존 보호 URL(얇음). 개선은 승인 필요
+경주,GYEONGBUK,경주 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 3
+영덕,GYEONGBUK,영덕 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 3
+울진,GYEONGBUK,울진 선박등기,?,Y,?,?,?,?,?,?,?,?,1,HOLD,,Batch 3

@@ -1032,6 +1032,34 @@
   960,
   1200
  ],
+ "/image/og/metro-seoul-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/metro-seoul.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/metro-yongin-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/metro-yongin.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
  "/image/og/regional-inheritance-changwon-4x3.jpg": [
   256,
   384,
@@ -1173,6 +1201,132 @@
   1200
  ],
  "/image/og/regional-inheritance-yangsan.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-busan-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-busan.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-changwon-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-changwon.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-geoje-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-geoje.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-hub-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-hub.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-inheritance-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-inheritance.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-manager-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-manager.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-tongyeong-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-tongyeong.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-ulsan-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-ulsan.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-vs-registration-4x3.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/og/ship-vs-registration.jpg": [
   256,
   384,
   640,

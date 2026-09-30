@@ -1,0 +1,12 @@
+﻿gap,cluster,evidence,action,url
+선박상속 대표 문서 없음,INHERITANCE,"표본 SERP 다옴 미노출, 사이트 내 상속+선박 문서 없음",CREATED,/선박상속
+선박등기 허브 없음 (얇은 하위 문서만 존재),CORE,비용·기간·과태료 등 템플릿 문서 10개가 서로 0.78–0.83 유사,CREATED,/선박등기
+등기 vs 등록(선박원부·어선원부) 설명 없음,FISHING_VESSEL,20톤 미만 어선도 법원 등기라는 오해 소지,CREATED,/선박등기와선박등록
+선박관리인 설명 없음,MANAGER,공유·공동상속 선박의 필수 절차인데 문서 없음,CREATED,/선박관리인선임등기
+저당권: 등기 대상 vs 소형선박(특정동산저당법) 구분 없음,MORTGAGE,기존 문서에 근저당·전세권 등 부동산 문구,HUB_SECTION,/선박등기#mortgage
+소유권이전(매매) 문서 없음,OWNERSHIP,의도는 허브·지역 섹션으로 충분,HUB_SECTION,/선박등기#work-types
+부산 선박등기 본문의 부동산 템플릿 오류,REGIONAL,근저당·전세권·아파트 표현,IMPROVED,/부산선박등기
+영도·강서구·비용·기간 등 템플릿 문서 법률 표현,REGIONAL,같은 템플릿 오류 추정,APPROVAL_REQUIRED,/영도구선박등기 외
+경남·울산 지역 선박 문서 없음,REGIONAL,거제·통영·창원·울산 표본,CREATED,4개 지역 URL
+포항·사천·고성·남해,REGIONAL,배치 상한 5,HOLD,Batch 2
+실제 선박 사건 사례,INHERITANCE,검증된 선박 사례 자료 없음,DO_NOT_CREATE,익명 사례 자료 요청

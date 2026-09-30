@@ -1,0 +1,22 @@
+﻿fromUrl,toUrl,anchor,placement
+/업무사례/서울상속등기법무사,/contact/inquiry?from=metro-seoul-panel&amp;field=inheritance-registration&amp;region=서울,등기부 사진으로 먼저 확인받기,BODY_CONTEXT
+/업무사례/서울상속등기법무사,/부동산과거주지가다른상속등기,부동산과 거주지가 다른 상속등기,BODY_CONTEXT
+/업무사례/서울상속등기법무사,/상속인이여러지역에있는경우,상속인이 여러 지역에 사는 경우,BODY_CONTEXT
+/업무사례/서울상속등기법무사,/services/cases/haeundae-inheritance-registration-case,해외 상속인 서류를 맞춘 처리 사례,BODY_CONTEXT
+/업무사례/서울상속등기법무사,/faq/inheritance-registration-cost,상속등기 비용 항목 정리,BODY_CONTEXT
+/업무사례/서울상속등기법무사,/contact/inquiry?from=metro-seoul&amp;field=inheritance-registration&amp;region=서울,상담 남기기,CTA
+/업무사례/서울상속등기법무사,/방문없이준비하는상속포기한정승인,상속포기·한정승인을 멀리서 준비하는 방법,NEXT_STEP_CAROUSEL
+/업무사례/서울상속등기법무사,/situations/상속포기-한정승인-선택,포기와 한정승인 중 무엇을 고를지,NEXT_STEP_CAROUSEL
+/업무사례/서울상속등기법무사,/해외거주상속인,해외에 사는 상속인이 있을 때,NEXT_STEP_CAROUSEL
+/업무사례/서울상속등기법무사,/상속등기필요서류,상속등기 필요서류 목록,NEXT_STEP_CAROUSEL
+/업무사례/서울상속등기법무사,/상속등기후매매서류준비,상속받은 집을 팔 계획이라면,NEXT_STEP_CAROUSEL
+/업무사례/용인상속등기법무사,/contact/inquiry?from=metro-yongin-panel&amp;field=inheritance-registration&amp;region=용인,아는 지번부터 보내기,BODY_CONTEXT
+/업무사례/용인상속등기법무사,/오래된상속토지정리,오래된 상속 토지 정리,BODY_CONTEXT
+/업무사례/용인상속등기법무사,/업무사례/경기상속등기법무사,경기 여러 시에 걸친 상속등기,BODY_CONTEXT
+/업무사례/용인상속등기법무사,/업무사례/전국상속부동산일괄등기,여러 부동산을 한 번에 등기하는 방법,BODY_CONTEXT
+/업무사례/용인상속등기법무사,/contact/inquiry?from=metro-yongin&amp;field=inheritance-registration&amp;region=용인,상담 남기기,CTA
+/업무사례/용인상속등기법무사,/여러지역상속부동산등기,여러 지역에 흩어진 상속부동산 등기,NEXT_STEP_CAROUSEL
+/업무사례/용인상속등기법무사,/오래된상속토지정리,오래 방치된 상속 토지 정리,NEXT_STEP_CAROUSEL
+/업무사례/용인상속등기법무사,/방문없이준비하는상속포기한정승인,상속포기·한정승인을 멀리서 준비하기,NEXT_STEP_CAROUSEL
+/업무사례/용인상속등기법무사,/상속등기필요서류,상속등기에 필요한 서류,NEXT_STEP_CAROUSEL
+/업무사례/용인상속등기법무사,/상속등기후매매서류준비,상속 토지를 팔기 전 준비할 서류,NEXT_STEP_CAROUSEL

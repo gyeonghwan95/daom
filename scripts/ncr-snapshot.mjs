@@ -221,7 +221,15 @@ function hashesFor(page) {
 
 function loadAllIndexableUrls() {
   const data = JSON.parse(fs.readFileSync(PATHS_JSON, "utf8"));
-  return [...new Set((data.paths || []).map(normalizePath))].sort();
+  const paths = (data.paths || []).map(normalizePath);
+  // SNAP_INCLUDE_SITEMAP=1 — seo-paths.json 밖에서 추가된 sitemap URL(예: 선박 클러스터)도 보호 대상에 포함
+  if (process.env.SNAP_INCLUDE_SITEMAP) {
+    const sitemap = JSON.parse(
+      fs.readFileSync(path.join(ROOT, "scripts", "output", "sitemap-manifest.json"), "utf8"),
+    );
+    for (const e of sitemap.entries || []) paths.push(normalizePath(e.path));
+  }
+  return [...new Set(paths)].sort();
 }
 
 function writePhase(phaseName) {

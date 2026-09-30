@@ -20,6 +20,7 @@ import { NationwideCasePageView } from "@/components/nationwide-cases/Nationwide
 import { GyeongnamCasePageView } from "@/components/gyeongnam-cases/GyeongnamCasePageView";
 import { SoutheastCasePageView } from "@/components/southeast-cases/SoutheastCasePageView";
 import { RegionalInheritanceTargetView } from "@/components/regional-inheritance/RegionalInheritanceTargetView";
+import { MetroRemoteTargetView } from "@/components/metro-remote/MetroRemoteTargetView";
 import {
   buildCaseRegionPageData,
   buildCaseRegionsByAreaPageData,
@@ -50,6 +51,7 @@ import {
   getRegionHubGroups,
 } from "@/lib/nationwide-cases";
 import { getRegionalInheritanceTarget } from "@/lib/nationwide-cases/regional-inheritance-targets";
+import { getMetroRemoteTarget } from "@/lib/metro-remote";
 import {
   SOUTHEAST_HUB_LINKS,
   getPublishedSoutheastDefs,
@@ -148,6 +150,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
     if (child === "업무별") {
       return pageDataToMetadata(buildCaseRegionsByServicePageData());
+    }
+
+    const metroTarget = getMetroRemoteTarget(child);
+    if (metroTarget) {
+      return createPageMetadata({
+        title: metroTarget.metaTitle,
+        description: metroTarget.description,
+        path: metroTarget.path,
+        ogImage: metroTarget.ogImage.src,
+        ogImageWidth: metroTarget.ogImage.width,
+        ogImageHeight: metroTarget.ogImage.height,
+        ogImageAlt: metroTarget.ogImage.alt,
+      });
     }
 
     const regionalTarget = getRegionalInheritanceTarget(child);
@@ -268,6 +283,11 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
 
     const nationwideDef = getNationwideCaseBySlug(child);
     const nationwidePage = getNationwideCasePageDataBySlug(child);
+
+    const metroTarget = getMetroRemoteTarget(child);
+    if (metroTarget && nationwidePage) {
+      return <MetroRemoteTargetView spec={metroTarget} breadcrumbs={nationwidePage.breadcrumbs} />;
+    }
 
     const regionalTarget = getRegionalInheritanceTarget(child);
     const regionalBasePage =

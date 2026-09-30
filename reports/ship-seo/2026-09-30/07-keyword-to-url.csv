@@ -1,0 +1,55 @@
+﻿keyword,intent,region,representativeUrl,status,top5InternalCandidates(score),cannibalization,note
+선박등기,CORE,,/선박등기,CREATE,/강서구선박등기(100) /부산선박등기(100) /선박등기과태료(100) /선박등기기간(100) /선박등기기한(100),REVIEW: TOP1=/강서구선박등기,
+선박등기 법무사,CORE,,/선박등기,CREATE,/울산선박등기(74) /부산선박등기(72) /거제선박등기(71) /강서구선박등기(60) /선박등기과태료(60),REVIEW: TOP1=/울산선박등기,
+선박등기 절차,CORE,,/선박등기,CREATE,/선박등기(56) /거제선박등기(48),OK,
+선박등기 대상,CORE,,/선박등기,CREATE,/선박등기(90),OK,
+선박등기 필요서류,CORE,,/선박등기필요서류,HOLD,/선박등기필요서류(110),OK,기존 보호 URL. 허브에서 보조 링크 후보
+선박등기 비용,CORE,,/선박등기비용,HOLD,/선박등기비용(110),OK,기존 보호 URL이 제목 일치로 우세. 허브 #cost 는 보조. 통합은 승인 필요
+선박등기 기간,CORE,,/선박등기기간,HOLD,/선박등기기간(110),OK,기존 보호 URL(얇음)
+선박 소유권이전등기,OWNERSHIP,,/선박등기,CREATE,,OK,허브 섹션 소유. 별도 URL 만들지 않음
+선박 매매 등기,OWNERSHIP,,/선박등기,CREATE,/거제선박등기(60),REVIEW: TOP1=/거제선박등기,
+배 명의이전,OWNERSHIP,,/선박등기,CREATE,,OK,
+선박 저당권 설정,MORTGAGE,,/선박등기,CREATE,,OK,허브 섹션(#mortgage)
+선박 저당권 말소,MORTGAGE,,/선박등기,CREATE,,OK,
+소형선박 저당권,MORTGAGE,,/선박등기,CREATE,,OK,특정동산저당법 — 법원 등기 아님
+선박 근저당,MORTGAGE,,/선박등기,CREATE,,OK,
+선박상속,INHERITANCE,,/선박상속,CREATE,/선박상속(99) /통영선박등기(61),OK,"표본 SERP 광고만, 다옴 미노출 → GAP"
+선박상속 법무사,INHERITANCE,,/선박상속,CREATE,/선박상속(72) /통영선박등기(44),OK,
+선박 상속등기,INHERITANCE,,/선박상속,CREATE,,OK,
+선주 사망 선박,INHERITANCE,,/선박상속,CREATE,/선박상속(51),OK,
+부산 선박상속,INHERITANCE,BUSAN,/선박상속,CREATE,,OK,별도 부산 선박상속 URL 만들지 않음(자기잠식 방지)
+선박 상속 취득세,INHERITANCE,,/선박상속,CREATE,,OK,세율 단정 없이 기한·구조만
+어선 상속,FISHING_VESSEL,,/선박상속,CREATE,/통영선박등기(80),REVIEW: TOP1=/통영선박등기,표본 SERP 질문글만
+어선 상속 이전등록,FISHING_VESSEL,,/선박상속,CREATE,,OK,
+어선 명의변경,FISHING_VESSEL,,/선박등기와선박등록,CREATE,,OK,
+어선원부,FISHING_VESSEL,,/선박등기와선박등록,CREATE,/선박등기와선박등록(68),OK,
+선박원부,FISHING_VESSEL,,/선박등기와선박등록,CREATE,/선박등기와선박등록(70),OK,
+선박등기 선박등록 차이,FISHING_VESSEL,,/선박등기와선박등록,CREATE,/선박등기와선박등록(52),OK,
+소형선박 등록,FISHING_VESSEL,,/선박등기와선박등록,CREATE,/선박등기와선박등록(54),OK,
+선박관리인,MANAGER,,/선박관리인선임등기,CREATE,/선박관리인선임등기(98),OK,표본 SERP 사전·서식뿐
+선박관리인 선임등기,MANAGER,,/선박관리인선임등기,CREATE,/선박관리인선임등기(69),OK,
+선박 공유자 관리인,MANAGER,,/선박관리인선임등기,CREATE,,OK,
+공동상속 선박관리인,MANAGER,,/선박관리인선임등기,CREATE,/선박관리인선임등기(52),OK,
+부산 선박등기,REGIONAL,BUSAN,/부산선박등기,IMPROVE,/부산선박등기(110) /선박등기자가진단(90) /울산선박등기(57),OK,"표본 SERP 다옴 노출. URL 유지, 본문 정정"
+부산 선박등기 법무사,REGIONAL,BUSAN,/부산선박등기,IMPROVE,/부산선박등기(80) /선박등기자가진단(60) /울산선박등기(60),OK,
+영도 선박등기,REGIONAL,BUSAN,/영도구선박등기,STRONG,/영도구선박등기(80),OK,표본 1위 — PROTECT
+강서구 선박등기,REGIONAL,BUSAN,/강서구선박등기,HOLD,/강서구선박등기(110),OK,보호 URL(얇음)
+기장 선박등기,REGIONAL,BUSAN,/부산선박등기,DO_NOT_CREATE,,OK,부산 선적은 모두 부산지방법원 등기국 — 부산 대표 URL이 받음
+울산 선박등기,REGIONAL,ULSAN,/울산선박등기,CREATE,/울산선박등기(80),OK,표본 SERP 다옴 /선박등기필요서류 하위 노출
+울산 선박상속,REGIONAL,ULSAN,/선박상속,HOLD,,OK,울산 상속은 PROTECT_WINNER 클러스터 — 선박상속 허브가 받음
+거제 선박등기,REGIONAL,GYEONGNAM,/거제선박등기,CREATE,/거제선박등기(77),OK,표본 SERP 법무사 문서 없음
+거제 선박상속,REGIONAL,GYEONGNAM,/거제선박등기,CREATE,,OK,
+통영 선박등기,REGIONAL,GYEONGNAM,/통영선박등기,CREATE,,OK,
+통영 선박상속,REGIONAL,GYEONGNAM,/통영선박등기,CREATE,/통영선박등기(71),OK,표본 SERP 공동상속 블로그
+창원 선박등기,REGIONAL,GYEONGNAM,/창원선박등기,CREATE,/창원선박등기(80),OK,
+진해 선박등기,REGIONAL,GYEONGNAM,/창원선박등기,CREATE,/창원선박등기(100),OK,표본 약함 → 창원에 통합
+마산 선박등기,REGIONAL,GYEONGNAM,/창원선박등기,CREATE,/창원선박등기(40),OK,창원에 통합
+사천 선박등기,REGIONAL,GYEONGNAM,/선박등기,HOLD,,OK,Batch 2
+삼천포 선박등기,REGIONAL,GYEONGNAM,/선박등기,HOLD,,OK,Batch 2
+고성 선박등기,REGIONAL,GYEONGNAM,/선박등기,HOLD,,OK,Batch 2 — 경남 고성/강원 고성 구분 필요
+남해 선박등기,REGIONAL,GYEONGNAM,/선박등기,HOLD,,OK,Batch 2
+포항 선박등기,REGIONAL,GYEONGBUK,/선박등기,HOLD,,OK,Batch 2 1순위 — 표본 SERP 법무사 문서 없음
+포항 선박상속,REGIONAL,GYEONGBUK,/선박상속,HOLD,,OK,포항 상속은 PROTECT_WINNER 클러스터
+경주 선박등기,REGIONAL,GYEONGBUK,/선박등기,HOLD,,OK,Batch 3
+영덕 선박등기,REGIONAL,GYEONGBUK,/선박등기,HOLD,,OK,Batch 3
+울진 선박등기,REGIONAL,GYEONGBUK,/선박등기,HOLD,,OK,Batch 3

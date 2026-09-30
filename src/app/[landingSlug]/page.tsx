@@ -43,6 +43,8 @@ import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { getNaverRecoveryTarget } from "@/lib/local-landing/naver-recovery-targets";
 import { NaverRecoveryTargetView } from "@/components/naver-recovery/NaverRecoveryTargetView";
+import { ShipSeoPageView } from "@/components/ship-seo/ShipSeoPageView";
+import { getShipSeoPage } from "@/lib/ship-seo";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
@@ -73,6 +75,19 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { landingSlug } = await params;
+  const ship = getShipSeoPage(normalizeRouteSlug(landingSlug));
+  if (ship) {
+    return createPageMetadata({
+      title: ship.metaTitle,
+      description: ship.description,
+      path: ship.path,
+      ogImage: ship.ogImage.src,
+      ogImageAlt: ship.ogImage.alt,
+      ogImageWidth: ship.ogImage.width,
+      ogImageHeight: ship.ogImage.height,
+      openGraphType: "website",
+    });
+  }
   const page = resolveKoreanLandingPageData(normalizeRouteSlug(landingSlug));
   if (!page) return {};
   const recovery = getNaverRecoveryTarget(page.slug);
@@ -108,6 +123,10 @@ export async function generateMetadata({
 export default async function LocalLandingPage({ params }: PageProps) {
   const { landingSlug } = await params;
   const slug = normalizeRouteSlug(landingSlug);
+  const ship = getShipSeoPage(slug);
+  if (ship) {
+    return <ShipSeoPageView spec={ship} />;
+  }
   const page = resolveKoreanLandingPageData(slug);
   if (!page) notFound();
 

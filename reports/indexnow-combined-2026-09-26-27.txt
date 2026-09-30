@@ -1,0 +1,35 @@
+# 색인 요청 목록 (IndexNow / 네이버 서치어드바이저 / 구글 서치콘솔) — 2026-09-26 ~ 09-27
+# 커밋 7b42ef4까지 모두 반영. 배포 완료 확인 후 제출.
+# 본문이 새로 쓰이거나 실질적으로 바뀐 페이지만 (사이트 전체 재제출 금지, 울산·포항 제외)
+# 제외: 비대면 안내 패널(830여 개 페이지 공통 블록), 카드 썸네일 교체, 이미지 최적화 — 본문 변경 아님
+
+# [1] 상속 핵심 페이지 (09-26 상속 리셋 + 09-27 네이버 복구)
+https://xn--2j1br1na42lvxja38mk8r.kr/부산상속법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/부산상속포기
+https://xn--2j1br1na42lvxja38mk8r.kr/부산상속전문법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/해운대법무사
+
+# [2] 지역 상속 — 허브 + 1차(양산·창원·김해·대구·거제)
+https://xn--2j1br1na42lvxja38mk8r.kr/전국상속등기
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/양산상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/창원상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/김해상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/대구상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/거제상속등기법무사
+
+# [3] 지역 상속 — 2차(경주·진주·구미·통영·밀양)
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/경주상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/진주상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/구미상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/통영상속등기법무사
+https://xn--2j1br1na42lvxja38mk8r.kr/업무사례/밀양상속등기법무사
+
+# [4] 법률강의 (09-26 강사 SEO + 09-27 리셋)
+https://xn--2j1br1na42lvxja38mk8r.kr/법률강의
+https://xn--2j1br1na42lvxja38mk8r.kr/부산법률강사
+https://xn--2j1br1na42lvxja38mk8r.kr/강사소개
+https://xn--2j1br1na42lvxja38mk8r.kr/부산대학교특강
+https://xn--2j1br1na42lvxja38mk8r.kr/기업법률교육
+https://xn--2j1br1na42lvxja38mk8r.kr/법무사진로특강
+https://xn--2j1br1na42lvxja38mk8r.kr/학교법률교육
+https://xn--2j1br1na42lvxja38mk8r.kr/전세사기예방교육

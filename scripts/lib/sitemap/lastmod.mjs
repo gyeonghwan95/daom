@@ -104,6 +104,31 @@ function slugFileMtime(relativeGlobDirs, slug) {
   return best;
 }
 
+/** 선박등기 클러스터 — 스펙의 dateModified(실제 본문 수정일)를 쓴다. 파일 mtime은 체크아웃 시각이 될 수 있어 쓰지 않는다. */
+function shipSeoDateModified(slug) {
+  return specDateModified(["src/lib/ship-seo/pages", "src/lib/ship-seo/existing"], slug);
+}
+
+/** 수도권·충청 원거리 상속등기 대표 URL — 같은 이유로 스펙 dateModified 사용 */
+function metroRemoteDateModified(slug) {
+  return specDateModified(["src/lib/metro-remote/pages"], slug);
+}
+
+function specDateModified(dirs, slug) {
+  for (const rel of dirs) {
+    const dirPath = path.join(ROOT, rel);
+    if (!fs.existsSync(dirPath)) continue;
+    for (const file of fs.readdirSync(dirPath)) {
+      if (!file.endsWith(".ts")) continue;
+      const text = fs.readFileSync(path.join(dirPath, file), "utf8");
+      if (!text.includes(`slug: "${slug}"`)) continue;
+      const match = text.match(/dateModified:\s*"(\d{4}-\d{2}-\d{2})"/);
+      if (match) return match[1];
+    }
+  }
+  return null;
+}
+
 const STATIC_PAGE_FILES = {
   "/": ["src/app/page.tsx", "src/lib/home-content.ts", "src/content/blog"],
   "/about": ["src/app/about/page.tsx"],
@@ -149,6 +174,8 @@ export function getLastmodForPath(routePath) {
 
   if (routePath.startsWith("/업무사례/")) {
     const slug = routePath.slice("/업무사례/".length);
+    const metroDate = metroRemoteDateModified(slug);
+    if (metroDate) return metroDate;
     return slugFileMtime(
       [
         "src/lib/case-regions",
@@ -179,6 +206,9 @@ export function getLastmodForPath(routePath) {
   }
 
   const landingSlug = routePath.startsWith("/") ? routePath.slice(1) : routePath;
+  const shipDate = landingSlug ? shipSeoDateModified(landingSlug) : null;
+  if (shipDate) return shipDate;
+
   if (landingSlug && !landingSlug.includes("/")) {
     const fromLanding = slugFileMtime(
       [
