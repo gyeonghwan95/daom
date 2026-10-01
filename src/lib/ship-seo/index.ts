@@ -3,12 +3,16 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { busanShipSpec } from "./existing/busan";
 import { shipChangwonSpec } from "./pages/changwon";
 import { shipGeojeSpec } from "./pages/geoje";
+import { shipGyeongjuSpec } from "./pages/gyeongju";
 import { shipHubSpec } from "./pages/hub";
 import { shipInheritanceSpec } from "./pages/inheritance";
 import { shipManagerSpec } from "./pages/manager";
+import { shipPohangSpec } from "./pages/pohang";
 import { shipTongyeongSpec } from "./pages/tongyeong";
+import { shipUljinSpec } from "./pages/uljin";
 import { shipUlsanSpec } from "./pages/ulsan";
 import { shipVsRegistrationSpec } from "./pages/vs-registration";
+import { shipYeongdeokSpec } from "./pages/yeongdeok";
 import type { ShipSeoSpec } from "./types";
 
 /**
@@ -24,6 +28,10 @@ const NEW_SHIP_PAGES: readonly ShipSeoSpec[] = [
   shipTongyeongSpec,
   shipChangwonSpec,
   shipUlsanSpec,
+  shipPohangSpec,
+  shipUljinSpec,
+  shipYeongdeokSpec,
+  shipGyeongjuSpec,
 ];
 
 /** TARGET_ALLOWLIST — 기존 URL을 유지한 채 전용 레이아웃으로 렌더하는 선박 페이지 */

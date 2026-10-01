@@ -126,4 +126,32 @@ export const SHIP_INTENT_OWNERS: readonly ShipIntentOwner[] = [
     secondaryQueries: ["울산 법인 선박 이전", "울산 부선 등기"],
     supportingPaths: ["/선박등기필요서류"],
   },
+  {
+    query: "포항 선박등기",
+    intent: "REGIONAL",
+    path: "/포항선박등기",
+    secondaryQueries: ["울릉 선박등기", "포항 선박 경매 명의변경", "구룡포 선박 낙찰"],
+    supportingPaths: ["/선박등기"],
+  },
+  {
+    query: "울진 선박등기",
+    intent: "REGIONAL",
+    path: "/울진선박등기",
+    secondaryQueries: ["울진 어선 명의변경", "후포 어선 명의변경", "죽변 어선 명의변경"],
+    supportingPaths: ["/선박등기와선박등록"],
+  },
+  {
+    query: "영덕 선박등기",
+    intent: "REGIONAL",
+    path: "/영덕선박등기",
+    secondaryQueries: ["영덕 어선 증여", "어선 자녀 증여"],
+    supportingPaths: ["/선박상속"],
+  },
+  {
+    query: "경주 선박등기",
+    intent: "REGIONAL",
+    path: "/경주선박등기",
+    secondaryQueries: ["감포 선박등기", "선박 선적항 변경"],
+    supportingPaths: ["/선박등기"],
+  },
 ];

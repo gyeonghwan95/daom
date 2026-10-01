@@ -1,0 +1,16 @@
+query,intent,region,representativeUrl,status,note
+포항 선박등기,REGIONAL,GYEONGBUK,/포항선박등기,CREATE,
+포항 선박등기 법무사,REGIONAL,GYEONGBUK,/포항선박등기,CREATE,
+포항 선박 경매 명의변경,OWNERSHIP,GYEONGBUK,/포항선박등기,CREATE,
+울릉 선박등기,REGIONAL,GYEONGBUK,/포항선박등기,COVERED,울릉 섹션
+포항 선박상속,INHERITANCE,GYEONGBUK,/선박상속,EXISTING,포항 상속 PROTECT_WINNER 클러스터와 경쟁 피하려 포항 페이지 title에 '상속' 미사용
+포항 어선 상속,FISHING_VESSEL,GYEONGBUK,/선박상속,EXISTING,
+울진 선박등기,REGIONAL,GYEONGBUK,/울진선박등기,CREATE,
+울진 어선 명의변경,FISHING_VESSEL,GYEONGBUK,/울진선박등기,CREATE,
+후포 어선 명의변경,FISHING_VESSEL,GYEONGBUK,/울진선박등기,CREATE,
+죽변 어선 명의변경,FISHING_VESSEL,GYEONGBUK,/울진선박등기,CREATE,
+영덕 선박등기,REGIONAL,GYEONGBUK,/영덕선박등기,CREATE,
+영덕 어선 증여,OWNERSHIP,GYEONGBUK,/영덕선박등기,CREATE,
+경주 선박등기,REGIONAL,GYEONGBUK,/경주선박등기,CREATE,
+감포 선박등기,REGIONAL,GYEONGBUK,/경주선박등기,CREATE,
+선박 선적항 변경,CORE,,/경주선박등기,CREATE,일반 검색어는 허브가 대표가 되도록 추후 검토

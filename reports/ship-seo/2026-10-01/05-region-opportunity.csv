@@ -1,0 +1,6 @@
+region,group,query,existingShipUrl(before),serpLawyerDocs,serpIntentObserved,registryVerified,uniqueAngle,criteriaMet(10),action
+포항,GYEONGBUK,포항 선박등기,없음 (허브 지역목록에도 없음),0,"해수청 선박등록, 구룡포 선박 경매",Y — 포항지원 등기과,경매 낙찰 후 정리,9,CREATE
+울릉,GYEONGBUK,울릉 선박등기,없음,0,군청 어선 변경등록 서식,Y — 울릉등기소,포항 페이지 섹션 (서류 왕복 일정),5,COVERED_BY /포항선박등기
+울진,GYEONGBUK,울진 선박등기,없음,0,"군청 어선 변경등록, 죽변 경매",Y — 울진등기소 (재판은 영덕지원),등기 필요 여부 구분·직접 vs 위임,9,CREATE
+영덕,GYEONGBUK,영덕 선박등기,없음,0,강구·병곡 선박 경매,Y — 영덕지원 등기계,생전 증여,8,CREATE
+경주,GYEONGBUK,경주 선박등기,없음,0,"시청 어선등록·변경등록, 경매",Y — 경주지원 등기계,선적항 vs 정박지,9,CREATE

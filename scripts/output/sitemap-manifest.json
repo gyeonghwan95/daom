@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-01T12:44:26.919Z",
+  "generatedAt": "2026-10-01T14:01:44.615Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1668,
+  "totalUrls": 1672,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
@@ -9,7 +9,7 @@
     "3": 175,
     "4": 586,
     "5": 183,
-    "6": 597,
+    "6": 601,
     "7": 53,
     "8": 28
   },
@@ -756,7 +756,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
-      "lastmod": "2026-10-01",
+      "lastmod": "2026-09-30",
       "filename": "tier-5-local.xml",
       "count": 183
     },
@@ -764,7 +764,7 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
       "lastmod": "2026-10-01",
       "filename": "tier-6-keywords.xml",
-      "count": 597
+      "count": 601
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
@@ -1240,7 +1240,7 @@
       "path": "/업무사례/경산상속등기법무사",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-08-07"
     },
     {
       "path": "/업무사례/경주상속등기법무사",
@@ -6064,7 +6064,7 @@
       "path": "/업무사례/부천상속등기법무사",
       "tier": 5,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%B2%9C%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-08-07"
     },
     {
       "path": "/업무사례/부평구상속등기법무사",
@@ -6442,7 +6442,7 @@
       "path": "/업무사례/원주상속등기법무사",
       "tier": 5,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%9B%90%EC%A3%BC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-08-07"
     },
     {
       "path": "/업무사례/율하상속등기법무사",
@@ -6718,7 +6718,7 @@
       "path": "/업무사례/화성상속등기법무사",
       "tier": 5,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-08-07"
     },
     {
       "path": "/1분간편상담",
@@ -7061,6 +7061,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EC%83%81%EB%8F%84%EB%B9%84%EB%8C%80%EB%A9%B4%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/경주선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EC%A3%BC%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-10-01"
     },
     {
       "path": "/고인계좌장례비사용",
@@ -8890,7 +8896,7 @@
       "path": "/선박등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-09-30"
+      "lastmod": "2026-10-01"
     },
     {
       "path": "/선박등기과태료",
@@ -9229,6 +9235,12 @@
       "lastmod": null
     },
     {
+      "path": "/영덕선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8D%95%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-10-01"
+    },
+    {
       "path": "/영도구법무사",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8F%84%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC",
@@ -9383,6 +9395,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
       "lastmod": "2026-09-30"
+    },
+    {
+      "path": "/울진선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%A7%84%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-10-01"
     },
     {
       "path": "/유류분과상속등기",
@@ -10127,6 +10145,12 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%ED%97%88%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/포항선박등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8F%AC%ED%95%AD%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-10-01"
     },
     {
       "path": "/학교법률교육",

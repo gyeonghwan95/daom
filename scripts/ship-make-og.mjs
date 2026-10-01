@@ -20,6 +20,10 @@ const SOURCES = {
   geoje: "썸네일-아래.jpg",
   changwon: "썸네일-사무실_가을 (2).jpg",
   ulsan: "썸네일_사무실_여름 (5).jpg",
+  pohang: "썸네일-법원절차.jpg",
+  uljin: "썸네일-서류확인.jpg",
+  yeongdeok: "썸네일-상담협의.jpg",
+  gyeongju: "썸네일-서류등기.jpg",
 };
 
 // node scripts/ship-make-og.mjs hub busan ...  → 지정한 키만 생성
