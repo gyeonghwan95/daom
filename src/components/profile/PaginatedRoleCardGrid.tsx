@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { GridPagination } from "@/components/profile/GridPagination";
-import { usePaginatedGrid } from "@/hooks/usePaginatedGrid";
+import { mediaPanelGridOptions, usePaginatedGrid } from "@/hooks/usePaginatedGrid";
 import type { ActivityRole } from "@/lib/lawyer-activities";
 
 type PaginatedRoleCardGridProps = {
@@ -11,17 +11,17 @@ type PaginatedRoleCardGridProps = {
 
 export function PaginatedRoleCardGrid({ roles }: PaginatedRoleCardGridProps) {
   const { page, setPage, totalPages, showPagination, visibleItems, gridClassName } =
-    usePaginatedGrid(roles.length);
-
-  const visibleRoles = roles.slice(visibleItems.start, visibleItems.end);
+    usePaginatedGrid(roles.length, mediaPanelGridOptions);
 
   return (
     <div>
       <ul className={gridClassName}>
-        {visibleRoles.map((role) => (
+        {roles.map((role, index) => (
           <li
             key={`${role.title}-${role.period}`}
-            className="overflow-hidden rounded-xl border border-beige-dark bg-white transition-shadow hover:shadow-md hover:shadow-navy/5"
+            className={`${
+              index < visibleItems.start || index >= visibleItems.end ? "hidden" : ""
+            } overflow-hidden rounded-xl border border-beige-dark bg-white transition-shadow hover:shadow-md hover:shadow-navy/5`}
           >
             {role.image ? (
               <div className="relative aspect-[16/10] overflow-hidden border-b border-beige-dark bg-beige/30">
@@ -30,11 +30,11 @@ export function PaginatedRoleCardGrid({ roles }: PaginatedRoleCardGridProps) {
                   alt={role.image.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
                 />
               </div>
             ) : null}
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               <h3 className="text-sm font-semibold leading-snug text-navy md:text-base">
                 {role.title}
               </h3>

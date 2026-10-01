@@ -140,6 +140,7 @@ const serviceSlugs = [
 ];
 
 const pressSlugs = [
+  "sentv-trend-hot-issue-ahn-yoonjung",
   "busan-ilbo-bar-association-64th-general-assembly",
   "kukje-sinmun-bar-association-64th-general-assembly",
   "beopryul-sinmun-bar-association-64th-general-assembly",

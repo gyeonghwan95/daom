@@ -13,6 +13,8 @@ function defaultGetColumnCount(width: number): number {
 
 export type UsePaginatedGridOptions = {
   maxRows?: number;
+  /** 지정 시 maxRows 대신 화면 폭에 따라 행 수 결정 */
+  getMaxRows?: (width: number) => number;
   getColumnCount?: (width: number) => number;
   gridClassName?: string;
 };
@@ -21,33 +23,37 @@ export function usePaginatedGrid(
   itemCount: number,
   options?: UsePaginatedGridOptions,
 ) {
-  const maxRows = options?.maxRows ?? DEFAULT_MAX_ROWS;
   const getColumnCount = options?.getColumnCount ?? defaultGetColumnCount;
+  const getMaxRows = options?.getMaxRows;
+  const fixedMaxRows = options?.maxRows ?? DEFAULT_MAX_ROWS;
   const gridClassName =
     options?.gridClassName ??
     "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 
-  const [columns, setColumns] = useState(1);
+  // 0 = SSR·첫 렌더 (모바일 기준 레이아웃)
+  const [width, setWidth] = useState(0);
   const [page, setPage] = useState(1);
-  const [prevColumns, setPrevColumns] = useState(columns);
+  const columns = getColumnCount(width);
+  const maxRows = getMaxRows ? getMaxRows(width) : fixedMaxRows;
+  const pageSize = columns * maxRows;
+  const [prevPageSize, setPrevPageSize] = useState(pageSize);
   const [prevItemCount, setPrevItemCount] = useState(itemCount);
 
   useEffect(() => {
-    const updateColumns = () => {
-      setColumns(getColumnCount(window.innerWidth));
+    const updateWidth = () => {
+      setWidth(window.innerWidth);
     };
 
-    updateColumns();
-    window.addEventListener("resize", updateColumns);
-    return () => window.removeEventListener("resize", updateColumns);
-  }, [getColumnCount]);
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
-  const pageSize = columns * maxRows;
   const totalPages = Math.max(1, Math.ceil(itemCount / pageSize));
   const showPagination = itemCount > pageSize;
 
-  if (prevColumns !== columns) {
-    setPrevColumns(columns);
+  if (prevPageSize !== pageSize) {
+    setPrevPageSize(pageSize);
     setPage(1);
   }
   if (prevItemCount !== itemCount) {
@@ -76,6 +82,13 @@ export function usePaginatedGrid(
     gridClassName,
   };
 }
+
+/** 언론·활동 패널 — 모바일 2×2, 768px~ 3×3, 1280px~ 4×3 */
+export const mediaPanelGridOptions: UsePaginatedGridOptions = {
+  getColumnCount: (width) => (width >= 1280 ? 4 : width >= 768 ? 3 : 2),
+  getMaxRows: (width) => (width >= 768 ? 3 : 2),
+  gridClassName: "grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4",
+};
 
 function getReviewColumnCount(width: number): number {
   return width >= 768 ? 2 : 1;

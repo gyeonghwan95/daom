@@ -4,6 +4,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { SiteImage } from "@/components/media/SiteImage";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { PressHighlightText } from "@/components/press/PressHighlightText";
+import { encodePublicSrc } from "@/lib/encode-public-src";
 import {
   getPressOriginalLinkLabel,
   type PressArticle,
@@ -66,12 +67,26 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
         </header>
 
         <div className="mt-8 overflow-hidden rounded-xl border border-beige-dark">
-          <SiteImage
-            {...article.image}
-            className="block w-full"
-            sizes="(max-width: 768px) 100vw, 720px"
-            priority
-          />
+          {article.video ? (
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster={encodePublicSrc(article.image.src)}
+              title={article.video.title}
+              aria-label={article.video.title}
+              className="block aspect-video w-full bg-navy-dark"
+            >
+              <source src={encodePublicSrc(article.video.src)} type="video/mp4" />
+            </video>
+          ) : (
+            <SiteImage
+              {...article.image}
+              className="block w-full"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          )}
         </div>
 
         <section
@@ -80,7 +95,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
           aria-labelledby="press-article-heading"
         >
           <h2 id="press-article-heading" className="section-heading">
-            기사 본문
+            {article.bodyHeading ?? "기사 본문"}
           </h2>
           <div className="mt-6 space-y-5 md:space-y-6">
             {article.paragraphs.map((paragraph, index) => (
@@ -92,6 +107,41 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
               </p>
             ))}
           </div>
+          {article.sections?.map((section) => (
+            <div key={section.heading} className="mt-10 md:mt-12">
+              <h3 className="text-lg font-bold leading-snug text-navy md:text-xl">
+                {section.heading}
+              </h3>
+              <div className="mt-4 space-y-5 md:space-y-6">
+                {section.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="body-text text-base leading-relaxed text-navy/85 md:text-lg"
+                  >
+                    <PressHighlightText text={paragraph} />
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+          {article.gallery?.length ? (
+            <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-12">
+              {article.gallery.map((image) => (
+                <li key={image.src}>
+                  <figure className="overflow-hidden rounded-xl border border-beige-dark bg-white">
+                    <SiteImage
+                      {...image}
+                      className="block aspect-video w-full object-cover"
+                      sizes="(max-width: 640px) 100vw, 360px"
+                    />
+                    <figcaption className="px-3 py-2 text-sm leading-snug text-navy/70">
+                      {image.alt}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          ) : null}
           {article.originalUrl && originalInline ? (
             <p className="mt-8 rounded-lg border border-beige-dark bg-beige/40 px-4 py-3 text-sm text-navy/80 md:text-base">
               이 페이지는 보도·출연 내용을 요약한 안내입니다.{" "}
@@ -119,6 +169,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
                   },
                 ]
               : []),
+            ...(article.relatedLinks ?? []),
             { href: "/media#press", label: "언론보도 목록" },
             { href: "/media", label: "언론·활동" },
             { href: "/about", label: "법무사 소개" },

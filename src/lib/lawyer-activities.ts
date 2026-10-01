@@ -129,6 +129,19 @@ const externalActivityEntries: ExternalActivityItem[] = [
     image: siteImages.about.policy.barAssociationAward,
   },
   {
+    id: "sentv-trend-hot-issue",
+    category: "방송 출연",
+    title: "서울경제TV ‘조영구의 트렌드 핫이슈’",
+    subtitle: "상속·법인·부동산 실무와 상담 원칙 소개",
+    period: "2026.09",
+    image: activityImage(
+      imagePaths.activityTrendHotIssue,
+      "서울경제TV 조영구의 트렌드 핫이슈 출연 — 다옴법무사사무소 안윤정 법무사",
+      1200,
+      675,
+    ),
+  },
+  {
     id: "youth-budget-unboxing",
     category: "정책 자문",
     title: "청년예산 언박싱 2027",

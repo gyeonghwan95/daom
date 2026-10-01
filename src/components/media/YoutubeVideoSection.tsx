@@ -60,8 +60,41 @@ type YoutubeVideoSectionProps = {
   footerLink?: { href: string; label: string };
   /** 홈 fullpage 등 세로 공간이 좁을 때 컴팩트 레이아웃 */
   density?: "default" | "compact";
+  /** grid: 메인 영상 없이 모든 영상을 같은 크기 카드로 (featuredId가 첫 칸) */
+  layout?: "featured" | "grid";
   className?: string;
 };
+
+function YoutubeWatchButton({
+  video,
+  variant,
+}: {
+  video: YoutubeVideo;
+  variant: "dark" | "light";
+}) {
+  return (
+    <a
+      href={parseYoutubeUrl(video.youtubeUrl)?.watchUrl ?? video.youtubeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${video.title} — YouTube에서 보기 (새 창)`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors ${
+        variant === "dark"
+          ? "border border-white/25 bg-white/5 text-white hover:bg-white/15"
+          : "border-2 border-beige-muted bg-white text-navy hover:border-navy hover:bg-beige"
+      }`}
+    >
+      <svg
+        aria-hidden
+        viewBox="0 0 24 24"
+        className="h-4 w-4 shrink-0 fill-[#ff0000]"
+      >
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+      </svg>
+      YouTube에서 보기
+    </a>
+  );
+}
 
 export function YoutubeVideoSection({
   videos,
@@ -70,6 +103,7 @@ export function YoutubeVideoSection({
   showAllInGrid = false,
   footerLink,
   density = "default",
+  layout = "featured",
   className = "",
 }: YoutubeVideoSectionProps) {
   const isDark = variant === "dark";
@@ -87,6 +121,27 @@ export function YoutubeVideoSection({
   const linkClass = isDark
     ? "text-white/70 hover:text-white"
     : "text-navy-light hover:text-navy";
+
+  if (layout === "grid") {
+    return (
+      <ul className={`grid gap-6 sm:grid-cols-2 md:gap-8 ${className}`}>
+        {[featured, ...others].map((video) => (
+          <li key={video.id} className="flex flex-col">
+            <YoutubeEmbed video={video} featured={video.id === featured.id} variant={variant} />
+            <h3 className={`mt-4 text-base font-semibold leading-snug ${titleClass}`}>
+              {video.title}
+            </h3>
+            <p className={`mt-1.5 flex-1 text-sm leading-relaxed ${descClass}`}>
+              {video.description}
+            </p>
+            <div className="mt-3">
+              <YoutubeWatchButton video={video} variant={variant} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <div className={`${isCompact ? "space-y-4" : "space-y-8"} ${className}`}>

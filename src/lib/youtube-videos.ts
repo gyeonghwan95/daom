@@ -33,6 +33,20 @@ export const youtubeVideos: YoutubeVideo[] = [
   },
 ];
 
+export const trendHotIssueVideo: YoutubeVideo = {
+  id: "sentv-trend-hot-issue",
+  title: "서울경제TV ‘조영구의 트렌드 핫이슈’ 출연 — 부산 법무사 안윤정",
+  description:
+    "상속·법인·부동산 실무와 세 가지 상담 원칙, 생활법률 교육과 정책 자문 활동을 소개한 방송입니다.",
+  youtubeUrl: "https://youtu.be/EfShKaEBrck",
+};
+
+/** 언론·활동 페이지 — 방송 출연 영상을 맨 앞에 */
+export const mediaPageYoutubeVideos: YoutubeVideo[] = [
+  trendHotIssueVideo,
+  ...youtubeVideos,
+];
+
 export function getFeaturedYoutubeVideo(): YoutubeVideo {
   return youtubeVideos.find((v) => v.featured) ?? youtubeVideos[0];
 }

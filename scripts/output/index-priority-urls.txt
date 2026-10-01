@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-01T14:02:17.741Z
+# 생성: 2026-10-01T15:05:01.303Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1672 (제외 178)
+# 총 URL: 1673 (제외 179)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -11,7 +11,7 @@
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 601개
 # Tier 7 — 후순위 (블로그): 53개
-# Tier 8 — 후순위 (언론·강의): 28개
+# Tier 8 — 후순위 (언론·강의): 29개
 
 ========================================================================
 
@@ -1688,7 +1688,7 @@ Tier 7 — 후순위 (블로그) (53개)
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/when-to-consult-real-estate-registration-lawyer	/blog/when-to-consult-real-estate-registration-lawyer
 
 ────────────────────────────────────────────────────────────────────────
-Tier 8 — 후순위 (언론·강의) (28개)
+Tier 8 — 후순위 (언론·강의) (29개)
 ────────────────────────────────────────────────────────────────────────
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EB%AC%B8%EC%9D%98	/강의문의
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%8B%9C%EA%B0%84%EB%B3%84%EA%B5%AC%EC%84%B1	/강의시간별구성
@@ -1718,9 +1718,10 @@ Tier 8 — 후순위 (언론·강의) (28개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/beopryul-sinmun-bar-association-64th-general-assembly	/media/beopryul-sinmun-bar-association-64th-general-assembly
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/busan-ilbo-bar-association-64th-general-assembly	/media/busan-ilbo-bar-association-64th-general-assembly
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/sentv-trend-hot-issue-ahn-yoonjung	/media/sentv-trend-hot-issue-ahn-yoonjung
 
 ========================================================================
-# 제외 (178)
+# 제외 (179)
 # [EXCLUDED:noindex] /부산등기전문법무사
 # [EXCLUDED:noindex] /부산법인전문법무사
 # [EXCLUDED:noindex] /부산상속등기전문법무사
@@ -1898,6 +1899,7 @@ Tier 8 — 후순위 (언론·강의) (28개)
 # [EXCLUDED:redirect] /press/beopryul-sinmun-bar-association-64th-general-assembly
 # [EXCLUDED:redirect] /press/busan-ilbo-bar-association-64th-general-assembly
 # [EXCLUDED:redirect] /press/kukje-sinmun-bar-association-64th-general-assembly
+# [EXCLUDED:redirect] /press/sentv-trend-hot-issue-ahn-yoonjung
 # [EXCLUDED:noindex] /search
 
 ========================================================================

@@ -1,0 +1,61 @@
+# 색인 요청 목록 — 2026-10-01 작업분 (커밋 50d0315, 4936b36)
+# 기준: sitemap lastmod 2026-10-01인 URL 18개와 정확히 일치. 배포 완료 확인 후 제출.
+# 9/30 작업분(선박 허브·거제·통영·창원·울산, 서울·용인 상속)은 indexnow-combined-2026-09-30-10-01.txt 참고 — 여기서 제외.
+# 전체 sitemap 재제출 금지.
+
+# ─────────────────────────────────────────────
+# 네이버 서치어드바이저 [웹 페이지 수집] / 구글 서치콘솔 [URL 검사] 붙여넣기용
+
+# [1] 부산 핵심 페이지 개선 (기존 URL)
+https://다옴법무사사무소.kr/부산법무사
+https://다옴법무사사무소.kr/부산법무사상담
+https://다옴법무사사무소.kr/부산법무사추천
+https://다옴법무사사무소.kr/부산상속포기
+https://다옴법무사사무소.kr/부산한정승인
+
+# [2] 공탁 클러스터
+https://다옴법무사사무소.kr/부산공탁
+https://다옴법무사사무소.kr/부산변제공탁
+https://다옴법무사사무소.kr/부산담보공탁
+https://다옴법무사사무소.kr/부산집행공탁
+https://다옴법무사사무소.kr/부산형사공탁
+https://다옴법무사사무소.kr/공탁금출급회수
+
+# [3] 원거리 상속등기 개선 (기존 URL)
+https://다옴법무사사무소.kr/업무사례/대전상속등기법무사
+https://다옴법무사사무소.kr/업무사례/대구상속등기법무사
+
+# [4] 선박등기 경북 해안 (신규 4 + 허브 개선 1)
+https://다옴법무사사무소.kr/포항선박등기
+https://다옴법무사사무소.kr/울진선박등기
+https://다옴법무사사무소.kr/영덕선박등기
+https://다옴법무사사무소.kr/경주선박등기
+https://다옴법무사사무소.kr/선박등기
+
+# ─────────────────────────────────────────────
+# IndexNow API 제출용 (퍼센트 인코딩, 18개)
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%83%81%EB%8B%B4
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B3%B5%ED%83%81
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%80%EC%A0%9C%EA%B3%B5%ED%83%81
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8B%B4%EB%B3%B4%EA%B3%B5%ED%83%81
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%91%ED%96%89%EA%B3%B5%ED%83%81
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%95%EC%82%AC%EA%B3%B5%ED%83%81
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%ED%83%81%EA%B8%88%EC%B6%9C%EA%B8%89%ED%9A%8C%EC%88%98
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%8C%80%EC%A0%84%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%8C%80%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8F%AC%ED%95%AD%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%A7%84%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%98%81%EB%8D%95%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B2%BD%EC%A3%BC%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0
+
+# ─────────────────────────────────────────────
+# [선택] 되돌린 4개 — 커밋 50d0315(22:09) 상태로 배포됐고 그 사이 이미 제출한 경우에만 재제출
+# https://다옴법무사사무소.kr/업무사례/화성상속등기법무사
+# https://다옴법무사사무소.kr/업무사례/부천상속등기법무사
+# https://다옴법무사사무소.kr/업무사례/원주상속등기법무사
+# https://다옴법무사사무소.kr/업무사례/경산상속등기법무사
