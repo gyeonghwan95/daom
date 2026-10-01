@@ -114,6 +114,11 @@ function metroRemoteDateModified(slug) {
   return specDateModified(["src/lib/metro-remote/pages"], slug);
 }
 
+/** 상속·부산법무사·공탁 우선순위 클러스터 — 같은 이유로 스펙 dateModified 사용 */
+function prioritySeoDateModified(slug) {
+  return specDateModified(["src/lib/priority-seo/pages", "src/lib/priority-seo/existing"], slug);
+}
+
 function specDateModified(dirs, slug) {
   for (const rel of dirs) {
     const dirPath = path.join(ROOT, rel);
@@ -208,6 +213,8 @@ export function getLastmodForPath(routePath) {
   const landingSlug = routePath.startsWith("/") ? routePath.slice(1) : routePath;
   const shipDate = landingSlug ? shipSeoDateModified(landingSlug) : null;
   if (shipDate) return shipDate;
+  const priorityDate = landingSlug ? prioritySeoDateModified(landingSlug) : null;
+  if (priorityDate) return priorityDate;
 
   if (landingSlug && !landingSlug.includes("/")) {
     const fromLanding = slugFileMtime(

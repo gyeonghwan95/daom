@@ -13,9 +13,17 @@ fs.mkdirSync(outDir, { recursive: true });
 const SOURCES = {
   seoul: "썸네일-등기필증_상속.jpg",
   yongin: "썸네일-작성중.png",
+  daejeon: "사무소-서류.jpg",
+  daegu: "썸네일-사무실_겨울 (3).jpg",
+  hwaseong: "썸네일-등기필증_근저당.jpg",
+  bucheon: "썸네일-사무실_가을 (2).jpg",
+  wonju: "썸네일-등기소.jpg",
+  gyeongsan: "썸네일-컴퓨터.png",
 };
 
+const only = process.argv.slice(2);
 for (const [key, file] of Object.entries(SOURCES)) {
+  if (only.length && !only.includes(key)) continue;
   const src = path.join(IMG, file);
   const srcMeta = await sharp(src).metadata();
   console.log(file, srcMeta.width, srcMeta.height);

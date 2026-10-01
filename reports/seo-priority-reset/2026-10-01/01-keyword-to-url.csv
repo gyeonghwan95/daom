@@ -1,0 +1,24 @@
+﻿keyword,priority,intent_role,owner_url,status,supporting_urls
+부산 상속포기,P0,ACTION — 상속포기 신고 실행,/부산상속포기,IMPROVED,/부산한정승인 /상속포기후다음순위확인
+부산 상속포기 법무사,P0,ACTION,/부산상속포기,IMPROVED,
+부산 한정승인,P0,DEBT-SAFE DECISION — 빚이 많을지 모를 때 판단,/부산한정승인,IMPROVED,/특별한정승인 /사망자재산채무조회
+부산 한정승인 법무사,P0,DEBT-SAFE DECISION,/부산한정승인,IMPROVED,
+부산 상속전문 법무사,P0,PROVIDER SELECTION — 상속 사건 맡길 곳 고르기,/부산상속전문법무사,KEEP (의도 일치),/부산상속법무사
+부산 상속 법무사 선택,P0,PROVIDER SELECTION,/부산상속전문법무사,KEEP,/부산상속법무사
+부산 법무사,P0,LOCAL OFFICE / SERVICE HUB — 맡길 수 있는 업무,/부산법무사,IMPROVED (title 의도 수정),/ (홈: 브랜드·사무소 대표)
+부산 법무사 상담,P0,HOW TO START — 처음 연락하는 법,/부산법무사상담,IMPROVED,/부산법무사방문상담 /부산법무사비대면상담
+부산 법무사 추천,P0,HOW TO CHOOSE — 비교 기준,/부산법무사추천,IMPROVED,/부산법무사비교 /부산법무사비용
+부산 공탁,P0,HUB — 상황별 공탁 종류 판별,/부산공탁,NEW,/공탁자가진단
+부산 공탁 법무사,P0,HUB,/부산공탁,NEW,
+공탁 법무사,P1,HUB,/부산공탁,NEW,
+부산 변제공탁 / 변제공탁,P1,DETAIL — 수령거절·채권자불확지,/부산변제공탁,NEW,/변제공탁서류준비
+월세 안 받을 때 공탁 / 수령거절 공탁,P1,DETAIL,/부산변제공탁,NEW,
+집행공탁 / 제3채무자 공탁 / 압류 공탁,P1,DETAIL — 압류·가압류 송달된 제3채무자,/부산집행공탁,NEW,/공탁채권회수
+혼합공탁,P2,DETAIL (섹션),/부산집행공탁,NEW,/부산변제공탁
+담보공탁 / 가압류 담보공탁 / 담보제공명령,P1,DETAIL — 보전처분 담보,/부산담보공탁,NEW,
+담보취소 / 권리행사최고서,P2,DETAIL (섹션),/부산담보공탁,NEW,/공탁금출급회수
+형사공탁 / 부산 형사공탁,P1,DETAIL — 피해자 인적사항 불명,/부산형사공탁,NEW,
+공탁금 출급 / 공탁금 회수 / 공탁금 찾기,P1,DETAIL — 받는 쪽·맡긴 쪽,/공탁금출급회수,NEW,
+수용 공탁 / 보상금 공탁,P2,HUB 안내 문단만 (전용 page 없음),/부산공탁,NOT_CREATED (실사례 근거 없음),
+공탁 서류 준비,P2,기존 유지,/변제공탁서류준비,PROTECT (변경 없음),
+공탁 채권 압류 추심,P2,기존 유지 (채권자 입장),/공탁채권회수,PROTECT (변경 없음),

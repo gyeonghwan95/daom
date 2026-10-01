@@ -1,6 +1,12 @@
 import type { NrBlock, NrImage, NrSection } from "@/lib/naver-recovery/types";
 
-export type MetroRemoteRegionGroup = "SEOUL" | "GYEONGGI" | "CHUNGCHEONG" | "INCHEON_TEST";
+export type MetroRemoteRegionGroup =
+  | "SEOUL"
+  | "GYEONGGI"
+  | "CHUNGCHEONG"
+  | "INCHEON_TEST"
+  | "DAEGU_GYEONGBUK"
+  | "GANGWON";
 
 export type MetroRemoteCarouselItem = {
   href: string;

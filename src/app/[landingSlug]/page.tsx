@@ -45,6 +45,8 @@ import { getNaverRecoveryTarget } from "@/lib/local-landing/naver-recovery-targe
 import { NaverRecoveryTargetView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { ShipSeoPageView } from "@/components/ship-seo/ShipSeoPageView";
 import { getShipSeoPage } from "@/lib/ship-seo";
+import { PrioritySeoPageView } from "@/components/priority-seo/PrioritySeoPageView";
+import { getPrioritySeoPage } from "@/lib/priority-seo";
 import { resolveKoreanLandingPageData } from "@/lib/pageData/resolvers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getLocalLandingConfig } from "@/lib/local-landing/config";
@@ -88,6 +90,19 @@ export async function generateMetadata({
       openGraphType: "website",
     });
   }
+  const priority = getPrioritySeoPage(normalizeRouteSlug(landingSlug));
+  if (priority) {
+    return createPageMetadata({
+      title: priority.metaTitle,
+      description: priority.description,
+      path: priority.path,
+      ogImage: priority.ogImage.src,
+      ogImageAlt: priority.ogImage.alt,
+      ogImageWidth: priority.ogImage.width,
+      ogImageHeight: priority.ogImage.height,
+      openGraphType: "website",
+    });
+  }
   const page = resolveKoreanLandingPageData(normalizeRouteSlug(landingSlug));
   if (!page) return {};
   const recovery = getNaverRecoveryTarget(page.slug);
@@ -126,6 +141,10 @@ export default async function LocalLandingPage({ params }: PageProps) {
   const ship = getShipSeoPage(slug);
   if (ship) {
     return <ShipSeoPageView spec={ship} />;
+  }
+  const priority = getPrioritySeoPage(slug);
+  if (priority) {
+    return <PrioritySeoPageView spec={priority} />;
   }
   const page = resolveKoreanLandingPageData(slug);
   if (!page) notFound();

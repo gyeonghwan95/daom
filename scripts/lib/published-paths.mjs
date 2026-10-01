@@ -487,7 +487,16 @@ function readLectureHistoryPaths() {
 
 /** 선박등기 클러스터 신규 URL — src/lib/ship-seo/pages/*.ts (기존 URL 오버라이드는 existing/ 에 있어 제외) */
 function readShipSeoPaths() {
-  const dir = path.join(ROOT, "src/lib/ship-seo/pages");
+  return readSpecSlugPaths("src/lib/ship-seo/pages");
+}
+
+/** 상속·부산법무사·공탁 우선순위 클러스터 신규 URL — src/lib/priority-seo/pages/*.ts */
+function readPrioritySeoPaths() {
+  return readSpecSlugPaths("src/lib/priority-seo/pages");
+}
+
+function readSpecSlugPaths(relDir) {
+  const dir = path.join(ROOT, relDir);
   if (!fs.existsSync(dir)) return [];
   const paths = [];
   for (const file of fs.readdirSync(dir)) {
@@ -590,6 +599,7 @@ export function getAllPublishedPaths() {
     ...caseRegionPaths,
     ...nationwidePaths,
     ...readShipSeoPaths(),
+    ...readPrioritySeoPaths(),
     "/press",
     ...pressSlugs.map((slug) => `/press/${slug}`),
   ];
