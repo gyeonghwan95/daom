@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -150,6 +151,7 @@ export function RegionalInheritanceTargetView({
               </p>
             </aside>
           </article>
+          <LawyerTrustShowcase />
         </div>
       </main>
       <SiteChromeAfterMain />

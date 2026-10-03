@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { SituationCategoryHubView } from "@/components/situations/SituationCategoryHubView";
 import { SituationPageView } from "@/components/situations/SituationPageView";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import {
   getAllSituationCategorySlugs,
@@ -78,6 +79,7 @@ export default async function SituationCatchAllPage({ params }: Props) {
     return (
       <PageContainer>
         <SituationPageView page={page} slug={situationSlug} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }

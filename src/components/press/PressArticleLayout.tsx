@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { SiteImage } from "@/components/media/SiteImage";
@@ -178,6 +179,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
           ]}
         />
       </article>
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

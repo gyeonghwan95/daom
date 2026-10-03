@@ -99,7 +99,9 @@ export const busanLawyerSpec: PrioritySeoSpec = {
             { href: "/부산상속포기", label: "상속포기" },
             "나 ",
             { href: "/부산한정승인", label: "한정승인" },
-            "을 검토합니다. 미성년 자녀가 함께 상속인이면 특별대리인 선임이 먼저 필요할 수 있습니다.",
+            "을 검토합니다. 미성년 자녀가 함께 상속인이면 특별대리인 선임이 먼저 필요할 수 있습니다. 상속 사건을 어디에 맡길지 비교하고 계신다면 ",
+            { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준" },
+            "을 먼저 보셔도 됩니다.",
           ],
         },
       ],
@@ -306,5 +308,5 @@ export const busanLawyerSpec: PrioritySeoSpec = {
   },
   officeNote: PRIORITY_OFFICE_NOTE,
   reviewNote: LOCAL_REVIEW_NOTE,
-  dateModified: "2026-10-01",
+  dateModified: "2026-10-02",
 };

@@ -187,8 +187,9 @@ const MODULES: Record<string, CostIntentModule> = {
           "한정승인·등기와 같은 가족에서 병행하는지",
         ],
         links: [
-          { href: "/부산상속포기", label: "상속포기 절차 보기" },
+          { href: "/부산상속포기", label: "부산 상속포기 법무사 — 기한·절차 보기" },
           { href: "/한정승인비용", label: "한정승인 비용과 비교" },
+          { href: "/부산상속전문법무사", label: "상속 업무를 맡길 법무사 선택 기준" },
           inquiryLink("상속포기비용", "상속포기 비용 문의"),
         ],
       },

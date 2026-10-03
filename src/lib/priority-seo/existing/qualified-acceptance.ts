@@ -236,7 +236,7 @@ export const qualifiedAcceptanceSpec: PrioritySeoSpec = {
       { href: "/부산상속포기", label: "부산 상속포기", note: "재산도 빚도 받지 않으려 할 때" },
       { href: "/특별한정승인", label: "특별한정승인", note: "3개월이 지난 뒤 빚을 알게 됐을 때" },
       { href: "/사망자재산채무조회", label: "사망자 재산·채무 조회", note: "판단 전에 재산과 빚 확인" },
-      { href: "/부산상속전문법무사", label: "부산 상속 법무사 선택 기준", note: "청산까지 맡길 곳을 고를 때" },
+      { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준", note: "청산까지 맡길 곳을 고를 때" },
     ],
   },
   cta: {

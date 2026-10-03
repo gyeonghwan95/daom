@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -158,6 +159,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
               </p>
             </aside>
           </article>
+          <LawyerTrustShowcase />
         </div>
       </main>
       <SiteChromeAfterMain />

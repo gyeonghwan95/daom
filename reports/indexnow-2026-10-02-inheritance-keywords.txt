@@ -1,0 +1,44 @@
+# 2026-10-02 부산 상속전문·상속포기 키워드 작업 — 다시 색인 요청할 URL (이번 작업으로 내용이 바뀐 URL만)
+# /부산상속포기전문법무사 는 링크를 고쳤지만 noindex 페이지라 제외
+
+## 네이버 서치어드바이저 웹페이지 수집용 (한글 주소)
+# 1순위 — 대표 URL (본문·H1·description 변경)
+https://다옴법무사사무소.kr/부산상속전문법무사
+https://다옴법무사사무소.kr/부산상속포기
+
+# 2순위 — 대표 URL로 링크·앵커를 보강한 페이지
+https://다옴법무사사무소.kr/부산상속법무사
+https://다옴법무사사무소.kr/부산법무사
+https://다옴법무사사무소.kr/상속
+https://다옴법무사사무소.kr/부산법무사추천
+https://다옴법무사사무소.kr/부산한정승인
+https://다옴법무사사무소.kr/상속포기비용
+https://다옴법무사사무소.kr/부산가정법원상속포기
+https://다옴법무사사무소.kr/상속상담전준비서류와비용
+https://다옴법무사사무소.kr/부모빚상속방법
+https://다옴법무사사무소.kr/services/cases/jaesong-inheritance-renunciation-consultation
+https://다옴법무사사무소.kr/services/cases/haeundae-inheritance-registration-case
+https://다옴법무사사무소.kr/services/cases/dongnae-qualified-acceptance-consultation
+https://다옴법무사사무소.kr/blog/three-months-after-death-inheritance
+https://다옴법무사사무소.kr/blog/how-to-check-deceased-parent-debt
+
+## IndexNow용 (퍼센트 인코딩)
+# 1순위 — 대표 URL (본문·H1·description 변경)
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
+
+# 2순위 — 대표 URL로 링크·앵커를 보강한 페이지
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%83%81%EB%8B%B4%EC%A0%84%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98%EC%99%80%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EB%AA%A8%EB%B9%9A%EC%83%81%EC%86%8D%EB%B0%A9%EB%B2%95
+https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/jaesong-inheritance-renunciation-consultation
+https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/haeundae-inheritance-registration-case
+https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/dongnae-qualified-acceptance-consultation
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/three-months-after-death-inheritance
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/how-to-check-deceased-parent-debt

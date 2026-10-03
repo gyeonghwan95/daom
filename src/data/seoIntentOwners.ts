@@ -5,7 +5,7 @@
  */
 export const TITLE_FROZEN = true;
 
-export const SEO_INTENT_OWNERS_REVIEWED_ON = "2026-09-27";
+export const SEO_INTENT_OWNERS_REVIEWED_ON = "2026-10-02";
 
 export type SeoIntentRole = "PROVIDER_SELECTION" | "ACTION_PROCEDURE" | "LOCAL_PROVIDER";
 
@@ -31,9 +31,9 @@ export const SEO_INTENT_OWNERS: readonly SeoIntentOwner[] = [
     supportingPaths: ["/부산상속법무사", "/부산상속포기", "/부산한정승인"],
     titleFrozen: TITLE_FROZEN,
     metaTitle: "부산 상속전문 법무사를 찾는다면｜업무범위와 선택 기준",
-    h1: "부산에서 상속전문 법무사를 찾을 때 무엇을 확인해야 할까요?",
+    h1: "부산 상속전문 법무사를 찾을 때 무엇을 확인해야 할까요?",
     description:
-      "등기만 맡길지, 상속포기·한정승인과 미성년·해외 상속인까지 함께 볼지에 따라 비교 기준이 달라집니다. 업무범위, 공개된 처리·상담 기록, 상담 방식을 확인하는 방법을 정리했습니다.",
+      "부산 상속전문 법무사 비교 기준 — 상속등기만 맡는지, 상속포기·한정승인처럼 부산가정법원 서류까지 함께 보는지부터 확인하세요. 해운대 센텀 다옴법무사사무소 안윤정 법무사의 업무범위와 공개된 처리·상담 기록을 정리했습니다.",
   },
   {
     query: "부산 상속포기 법무사",
@@ -43,9 +43,9 @@ export const SEO_INTENT_OWNERS: readonly SeoIntentOwner[] = [
     supportingPaths: ["/상속포기비용", "/부산가정법원상속포기", "/상속포기자가진단", "/부산한정승인"],
     titleFrozen: TITLE_FROZEN,
     metaTitle: "부산 상속포기 법무사｜3개월·후순위 상속인부터 확인",
-    h1: "부산 상속포기, 3개월과 다음 상속인부터 확인하세요",
+    h1: "부산 상속포기 법무사 상담, 3개월과 다음 상속인부터 확인하세요",
     description:
-      "상속포기 3개월 기한, 배우자·자녀 포기의 후순위 효과, 처분·인출 이력과 한정승인 비교를 먼저 확인합니다. 부산 해운대 센텀 다옴법무사 안내.",
+      "부산 상속포기, 법무사가 3개월 기한과 배우자·자녀가 포기하면 넘어가는 다음 상속인, 예금 인출·처분 이력, 한정승인과의 비교를 먼저 확인하고 부산가정법원 신고서를 준비합니다. 해운대 센텀 다옴법무사사무소 안윤정 법무사.",
   },
   {
     query: "해운대구 법무사",

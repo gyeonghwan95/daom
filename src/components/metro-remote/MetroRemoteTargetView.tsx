@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { RemoteServicePanel } from "@/components/nationwide/RemoteServicePanel";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -170,6 +171,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
               className="mt-2"
             />
           </article>
+          <LawyerTrustShowcase />
         </div>
       </main>
       <SiteChromeAfterMain />

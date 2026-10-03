@@ -854,7 +854,7 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
         title: "등기소와 가정법원을 섞지 않는 이유",
         body: "부동산 명의이전(상속등기)은 관할 등기소, 상속포기·한정승인은 가정법원입니다. 같은 가족 사건이라도 접수처·신청서·첨부서류가 다릅니다. 주소가 부산이어도 부동산만 타 지역이면 등기 관할은 별도로 봅니다.",
         links: [
-          { href: "/부산상속포기", label: "상속포기 선택·기한 안내" },
+          { href: "/부산상속포기", label: "부산 상속포기 법무사 — 선택·기한 안내" },
           { href: "/부산상속등기", label: "부동산 상속등기(등기소)" },
         ],
       },

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { getCompiledContent, getContentSlugs } from "@/lib/content/loader";
 import { faqs } from "@/lib/faq-data";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
@@ -56,6 +57,7 @@ export default async function FaqDetailPage({ params }: Props) {
       >
         {content}
       </PageDataTemplate>
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

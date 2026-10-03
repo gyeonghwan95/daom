@@ -626,7 +626,7 @@ export const 부모빚상속방법Override: SearchIntentContent = {
   relatedServiceLinks: [
     hub,
     busanHub,
-    { href: "/부산상속포기", label: "부산 상속포기" },
+    { href: "/부산상속포기", label: "부산 상속포기 법무사" },
     { href: "/부산한정승인", label: "부산 한정승인" },
     { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
     { href: "/고인계좌장례비사용", label: "고인 계좌에서 장례비를 쓴 경우" },
@@ -845,6 +845,7 @@ export const 상속상담전준비서류와비용Override: SearchIntentContent =
     { href: "/법무사비용먼저확인하는방법", label: "법무사 비용 먼저 확인" },
     { href: "/부산법무사상담", label: "부산 법무사 상담 전 안내" },
     { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 상속등기" },
+    { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준" },
   ],
   relatedGuideLinks: [
     {

@@ -4,6 +4,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { CaseDetailView } from "@/components/cases/CaseDetailView";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { getCaseRecord } from "@/lib/cases";
 import { getContentMeta, getContentSlugs } from "@/lib/content/loader";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
@@ -52,6 +53,7 @@ export default async function CaseDetailPage({ params }: Props) {
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
       <CaseDetailView page={page} record={record} faqLinks={faqLinks} />
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

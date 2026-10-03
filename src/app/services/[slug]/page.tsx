@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveServicePageData } from "@/lib/pageData/resolvers";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
@@ -57,6 +58,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           ) : null
         }
       />
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

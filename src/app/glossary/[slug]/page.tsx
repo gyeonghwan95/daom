@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { GlossaryTermView } from "@/components/glossary/GlossaryTermView";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import {
   getGlossaryTermSlugs,
   resolveGlossaryTermPageData,
@@ -37,6 +38,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     <PageContainer>
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <GlossaryTermView page={page} slug={normalized} />
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

@@ -30,6 +30,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHero } from "@/components/readability";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import {
   getPrivacyPolicyDocument,
   getTermsOfUseDocument,
@@ -223,6 +224,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
                   : undefined
           }
         />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -241,6 +243,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <DiagnosisPageView page={page} diagnosis={diagnosis} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -250,6 +253,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <RegistryHubPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -258,6 +262,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <BusanLawyerHubPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -268,6 +273,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <PreservationRegistrationPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -276,6 +282,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <PublicAgencyRegistrationPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -284,6 +291,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <SelectionHubPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -292,6 +300,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <ConsultLandingPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -300,6 +309,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <LecturePageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -308,6 +318,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <BusinessPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -316,6 +327,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <CounselIntentPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -324,6 +336,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <CorporateIntentPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -332,6 +345,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <BuildingIntentPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -340,6 +354,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <SpecialEntityIntentPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -348,6 +363,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <B2BPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -370,6 +386,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <SearchIntentPageView page={page} />
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -377,6 +394,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
   return (
     <PageContainer>
       <PageDataTemplate page={page} />
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

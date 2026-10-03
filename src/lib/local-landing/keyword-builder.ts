@@ -183,8 +183,8 @@ export function buildKeywordHubPage(
   const championPrimaryLinks = [
     { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
     { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
-    { href: "/부산상속포기", label: "부산 상속포기 — 3개월·후순위" },
-    { href: "/부산상속전문법무사", label: "법무사 선택 기준 — 업무범위·경험" },
+    { href: "/부산상속포기", label: "부산 상속포기 법무사 — 3개월·후순위" },
+    { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준 — 업무범위·경험" },
     {
       href: "/contact/inquiry?field=inheritance-registration",
       label: "내 상황에 필요한 상속절차 확인",
@@ -259,7 +259,7 @@ export function buildKeywordHubPage(
             ],
             links: [
               { href: "/부산상속등기", label: "부산 상속등기" },
-              { href: "/부산상속포기", label: "부산 상속포기" },
+              { href: "/부산상속포기", label: "부산 상속포기 법무사" },
               { href: "/부산한정승인", label: "부산 한정승인" },
               { href: "/특별한정승인", label: "특별한정승인" },
             ],
@@ -303,7 +303,7 @@ export function buildKeywordHubPage(
               { href: "/미성년상속인", label: "미성년 상속인" },
               { href: "/해외거주상속인", label: "해외 거주 상속인" },
               { href: "/연락두절상속인", label: "연락두절 상속인" },
-              { href: "/부산상속전문법무사", label: "법무사 선택 기준" },
+              { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준" },
             ],
           },
           {

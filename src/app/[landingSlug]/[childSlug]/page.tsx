@@ -10,6 +10,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { LectureHistoryDetailView } from "@/components/lectures/history/LectureHistoryDetailView";
 import {
   getAllLectureHistorySlugs,
@@ -260,6 +261,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
         <article>
           <LectureHistoryDetailView entry={entry} />
         </article>
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }
@@ -323,6 +325,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             explorerItems={explorerItems}
             explorerGroups={getRegionHubGroups()}
           />
+          <LawyerTrustShowcase />
         </PageContainer>
       );
     }
@@ -357,6 +360,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             }))}
             coreLinks={coreLinks}
           />
+          <LawyerTrustShowcase />
         </PageContainer>
       );
     }
@@ -391,6 +395,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             explorerFilters={getSoutheastHubFilters(southeastDef.regionGroup)}
             coreLinks={[...SOUTHEAST_HUB_LINKS[southeastDef.regionGroup]]}
           />
+          <LawyerTrustShowcase />
         </PageContainer>
       );
     }
@@ -428,6 +433,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             </section>
           ) : null}
         </PageDataTemplate>
+        <LawyerTrustShowcase />
       </PageContainer>
     );
   }

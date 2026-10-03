@@ -4,6 +4,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { ToolCalculatorView } from "@/components/tools/ToolCalculatorView";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getAllToolSlugs, getToolBySlug, resolveToolPageData } from "@/lib/tools";
@@ -50,6 +51,7 @@ export default async function ToolDetailPage({ params }: Props) {
         slug={normalized}
         recommendationGroups={recommendationGroups}
       />
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }

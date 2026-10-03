@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ContentSection } from "@/components/readability";
@@ -170,6 +171,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
               </p>
             </aside>
           </article>
+          <LawyerTrustShowcase />
         </div>
       </main>
       <SiteChromeAfterMain />

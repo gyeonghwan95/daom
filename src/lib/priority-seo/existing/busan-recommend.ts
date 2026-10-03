@@ -211,7 +211,7 @@ export const busanRecommendSpec: PrioritySeoSpec = {
     links: [
       { href: "/부산법무사", label: "부산 법무사 업무 안내", note: "다옴법무사사무소가 맡는 업무" },
       { href: "/부산법무사상담", label: "부산 법무사 상담", note: "처음 연락하는 방법" },
-      { href: "/부산상속전문법무사", label: "부산 상속 법무사 선택 기준", note: "상속 사건이라면" },
+      { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준", note: "상속 사건이라면" },
       { href: "/부산법무사비용", label: "부산 법무사 비용", note: "비용 항목 비교" },
     ],
   },

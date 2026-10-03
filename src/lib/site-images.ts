@@ -94,6 +94,7 @@ export const imagePaths = {
   pressTrendHotIssueLecture: "/image/언론-트렌드핫이슈-법률특강.jpg",
   pressTrendHotIssueAppointment: "/image/언론-트렌드핫이슈-위촉장.jpg",
   activityTrendHotIssue: "/image/활동-조영구의트렌드핫이슈출연.jpg",
+  credentialInfographic: "/image/전문이력_인포그래픽.png",
   stockLegalDocuments: "/image/썸네일-서류등기.jpg",
   stockLegalConsultation: "/image/썸네일-상담협의.jpg",
   stockLegalContract: "/image/썸네일-계약임원.jpg",
@@ -245,6 +246,13 @@ export const siteImages = {
     profile: img(imagePaths.officeExterior, "안윤정 법무사 프로필", 800, 1000),
     /** 안윤정 법무사 대표 인물 사진 */
     portrait: img(imagePaths.thumbPortraitFront, "안윤정 법무사", 720, 960),
+    credentialInfographic: img(
+      imagePaths.credentialInfographic,
+      "부산 다옴법무사사무소 안윤정 법무사 전문이력 — 주요 이력·자격, 언론·방송 출연, 강의·교육 활동, 수상·위원 위촉, 기업 인증, 상담 연락처",
+      1086,
+      1448,
+      false,
+    ),
     nameplate: img(imagePaths.officeNameplate, "안윤정 법무사 명판", 800, 600, false),
     policy: {
       barAssociationAward: img(

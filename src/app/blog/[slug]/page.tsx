@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { getCompiledContent, getContentSlugs } from "@/lib/content/loader";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { resolveBlogPageData } from "@/lib/pageData/resolvers";
@@ -46,6 +47,7 @@ export default async function BlogDetailPage({ params }: Props) {
       >
         {content}
       </PageDataTemplate>
+      <LawyerTrustShowcase />
     </PageContainer>
   );
 }
