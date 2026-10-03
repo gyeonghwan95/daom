@@ -126,6 +126,7 @@ export const 지급명령이의신청준비Override: SearchIntentContent = {
     { href: "/방문없이준비하는지급명령서류", label: "지급명령 신청 서류 준비" },
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
     { href: "/situations/내용증명-받았을-때", label: "내용증명을 받았을 때" },
+    { href: "/부산소액소송", label: "이의 후 3천만 원 이하 소액소송 절차" },
   ],
   relatedGuideLinks: [civilConsult],
   bottomCtaText:

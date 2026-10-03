@@ -132,6 +132,7 @@ import { 부산보상등기Override } from "./overrides/busan-compensation-regis
 import { contentUpgradeRepositionBatch1Overrides } from "./overrides/content-upgrade-reposition-batch1";
 import { inheritanceAssetGapOverrides } from "./overrides/inheritance-asset-gaps-2026-09-23";
 import { registrationGapBusanOverrides } from "./overrides/registration-gaps-busan-2026-09-23";
+import { civilSmallClaimsBusanOverrides } from "./overrides/civil-small-claims-busan-2026-10-03";
 
 export type {
   SearchGuideEntry,
@@ -161,6 +162,7 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...contentUpgradeRepositionBatch1Overrides,
   ...inheritanceAssetGapOverrides,
   ...registrationGapBusanOverrides,
+  ...civilSmallClaimsBusanOverrides,
   등기관할과사무소위치: 등기관할과사무소위치Override,
   부산보상등기: 부산보상등기Override,
   공공기관법인등기: 공공기관법인등기Override,

@@ -174,7 +174,7 @@ export function buildBusanPersonalRehabilitationPage(
     ],
     relatedServiceLinks: [
       { href: "/개인회생파산", label: "회생·파산 중 무엇부터 볼지" },
-      { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+      { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 소득·채무·재산으로 가능성 보기" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인회생필요서류", label: "개인회생 필요서류" },
       { href: "/개인회생비용", label: "개인회생 비용 안내" },
@@ -200,7 +200,7 @@ export function buildBusanPersonalRehabilitationPage(
         ],
         links: [
           { href: "/개인회생파산", label: "회생·파산 비교" },
-          { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+          { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },
           { href: "/개인회생자가진단", label: "개인회생 자가진단" },
         ],
       },

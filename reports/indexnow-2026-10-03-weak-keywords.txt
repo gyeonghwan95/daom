@@ -1,0 +1,28 @@
+# 2026-10-03 약한 키워드 보강 - 다시 색인 요청할 URL (이번 작업으로 내용이 바뀌거나 새로 생긴 URL 6개만)
+# 앵커 문구만 바뀐 /부산개인회생, /개인회생파산, /지급명령이의신청준비 는 제외
+
+## 네이버 서치어드바이저 웹페이지 수집용 (한글 주소)
+# 1순위 - 신규 페이지
+https://다옴법무사사무소.kr/부산소액소송
+
+# 2순위 - 약한 키워드 담당 페이지 본문 보강
+https://다옴법무사사무소.kr/부산소유권이전등기
+https://다옴법무사사무소.kr/부산근저당말소등기
+https://다옴법무사사무소.kr/부산개인회생법무사
+
+# 3순위 - 의도 분리·신규 페이지 연결
+https://다옴법무사사무소.kr/부산근저당설정등기
+https://다옴법무사사무소.kr/민사소송
+
+## IndexNow용 (퍼센트 인코딩)
+# 1순위 - 신규 페이지
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%95%A1%EC%86%8C%EC%86%A1
+
+# 2순위 - 약한 키워드 담당 페이지 본문 보강
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B2%95%EB%AC%B4%EC%82%AC
+
+# 3순위 - 의도 분리·신규 페이지 연결
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B7%BC%EC%A0%80%EB%8B%B9%EC%84%A4%EC%A0%95%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AF%BC%EC%82%AC%EC%86%8C%EC%86%A1

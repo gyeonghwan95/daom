@@ -12,6 +12,7 @@ import {
   championExtraWhenNeeded,
 } from "./inheritance-champion-modules";
 import { getKeywordTopic } from "./keyword-topics";
+import { keywordDepthSections } from "./keyword-depth-sections";
 import { corporateLegalExtraFaqs } from "./corporate-legal-operations-modules";
 import { withRegionLabel } from "./region-label";
 
@@ -335,7 +336,7 @@ export function buildKeywordHubPage(
               ],
             },
           ]
-        : [],
+        : (keywordDepthSections[topic.slug]?.sections ?? []),
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
     relatedServiceLinks: internalLinks,
     relatedRegionLinks: [],

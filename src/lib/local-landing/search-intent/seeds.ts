@@ -2524,4 +2524,18 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     focus: "부산 확정일자 취득·대항력 확인",
     ...realEstateCase,
   },
+  // 2026-10-03 civil small claims gap
+  {
+    slug: "부산소액소송",
+    label: "부산 소액소송",
+    category: "keyword",
+    serviceSlug: "payment-order",
+    keywords: [
+      "부산 소액소송",
+      "부산 소액사건",
+      "소액소송 소장 작성",
+      "3천만원 이하 소송",
+    ],
+    focus: "부산 3천만 원 이하 금전 청구 소액사건 소장",
+  },
 ];

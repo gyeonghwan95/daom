@@ -386,7 +386,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/부산개인회생", label: "개인회생 신청·서류 안내" },
           { href: "/부산개인파산", label: "개인파산·면책 안내" },
-          { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
+          { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성 보기" },
           { href: "/faq/bankruptcy-vs-rehabilitation-faq", label: "회생과 파산 차이 FAQ" },
         ],
       },
@@ -445,6 +445,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           },
           { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
+          { href: "/부산소액소송", label: "부산 소액소송 — 3천만 원 이하 청구" },
         ],
       },
       {
