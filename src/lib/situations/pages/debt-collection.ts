@@ -90,7 +90,7 @@ export const debtCollectionPages = [
     diagnosisLinks: [
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -221,7 +221,7 @@ export const debtCollectionPages = [
       "부족분 추가 집행·보증·담보",
     ],
     diagnosisLinks: [
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
@@ -355,7 +355,7 @@ export const debtCollectionPages = [
     ],
     diagnosisLinks: [
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
@@ -484,7 +484,7 @@ export const debtCollectionPages = [
       "부족분 추가 집행·채권자취소 등",
     ],
     diagnosisLinks: [
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },

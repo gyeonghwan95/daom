@@ -165,7 +165,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     propertyTypeIds: ["apt", "land", "retail"],
     uniqueFaqIds: ["visit-need", "deadline-3m", "branch-myth"],
     relatedRegionSlugs: ["울산남구상속등기법무사", "울주군상속등기법무사", "지역별상속등기법무사"],
-    relatedServiceSlugs: ["전국상속등기법무사", "부산상속법무사", "부산상속포기"],
+    relatedServiceSlugs: ["전국상속등기법무사", "/부산상속법무사", "/부산상속포기"],
     ctaTitle: "울산 상속 가능 여부 확인",
     ctaDescription:
       "구·군, 부동산 종류, 상속인 거주 지역, 채무 여부를 알려주시면 서류와 방문 필요 여부를 안내합니다.",

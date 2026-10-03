@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-22",
-  "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리.",
+  "updated": "2026-10-04",
+  "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리. 2026-10-04: 서비스 유니버스 Wave 1 — 근저당 말소·공유물분할·개명·변제공탁·임차권등기·해산청산·집단·PF·가압류·집행문·불이행자명부·배당요구·등록부 정정·실종선고.",
   "queries": {
     "부산 법무사": {
       "owner": "/",
@@ -414,6 +414,82 @@
       "owner": "/업무사례/울산상속등기법무사",
       "intent": "local-case",
       "aliasOf": "울산 상속 법무사"
+    },
+    "부산 근저당 말소": {
+      "owner": "/부산근저당말소등기",
+      "intent": "procedure",
+      "supporting": ["/근저당말소비용", "/근저당말소필요서류", "/situations/근저당-말소-지연"]
+    },
+    "부산 공유물분할등기": {
+      "owner": "/부산공유물분할등기",
+      "intent": "procedure"
+    },
+    "부산 개명 법무사": {
+      "owner": "/부산개명허가",
+      "intent": "procedure",
+      "supporting": ["/부산가족관계등록부정정"]
+    },
+    "부산 변제공탁": {
+      "owner": "/부산변제공탁",
+      "intent": "procedure",
+      "supporting": ["/공탁채권회수"]
+    },
+    "부산 임차권등기명령": {
+      "owner": "/부산임차권등기명령",
+      "intent": "procedure",
+      "supporting": ["/전세사기피해대응절차", "/부산전세전문법무사"]
+    },
+    "부산 임차권등기 법무사": {
+      "owner": "/부산임차권등기명령",
+      "intent": "procedure",
+      "aliasOf": "부산 임차권등기명령"
+    },
+    "부산 법인 해산 청산": {
+      "owner": "/부산법인해산청산등기",
+      "intent": "procedure"
+    },
+    "부산 집단등기": {
+      "owner": "/부산집단등기",
+      "intent": "procedure",
+      "supporting": ["/부산시행사등기", "/부산분양등기"]
+    },
+    "부산 PF 담보등기": {
+      "owner": "/부산시행사등기",
+      "intent": "procedure",
+      "supporting": ["/부산집단등기"]
+    },
+    "부산 가압류 신청": {
+      "owner": "/부산가압류신청",
+      "intent": "procedure",
+      "supporting": ["/가압류신청서류준비", "/민사소송"]
+    },
+    "부산 가압류 법무사": {
+      "owner": "/부산가압류신청",
+      "intent": "procedure",
+      "aliasOf": "부산 가압류 신청"
+    },
+    "부산 집행문 부여 신청": {
+      "owner": "/부산집행문부여신청",
+      "intent": "procedure"
+    },
+    "부산 채무불이행자명부 등재": {
+      "owner": "/부산채무불이행자명부등재",
+      "intent": "procedure"
+    },
+    "부산 배당요구 신청": {
+      "owner": "/부산배당요구신청",
+      "intent": "procedure",
+      "supporting": ["/부산임차권등기명령"]
+    },
+    "부산 가족관계등록부 정정": {
+      "owner": "/부산가족관계등록부정정",
+      "intent": "procedure",
+      "supporting": ["/부산개명허가"]
+    },
+    "부산 실종선고 청구": {
+      "owner": "/부산실종선고청구",
+      "intent": "procedure",
+      "supporting": ["/부산부재자재산관리인"]
     }
   }
 }

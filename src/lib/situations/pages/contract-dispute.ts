@@ -90,7 +90,7 @@ export const contractDisputePages = [
     diagnosisLinks: [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -220,7 +220,7 @@ export const contractDisputePages = [
     diagnosisLinks: [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -350,7 +350,7 @@ export const contractDisputePages = [
     diagnosisLinks: [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -483,7 +483,7 @@ export const contractDisputePages = [
     diagnosisLinks: [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
-      { href: "/채권회수자가진단", label: "채권회수 자가진단" },
+      { href: "/지급명령자가진단", label: "지급명령 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [

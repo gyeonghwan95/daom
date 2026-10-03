@@ -61,8 +61,8 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     procedures: ["사망일·상속인·부동산·채무 현황을 확인합니다.", "가족관계 서류와 등기부로 상속 범위를 정리합니다.", "협의분할 또는 법정지분 등기 방식을 안내합니다.", "세금 신고와 관할 등기 접수 순서를 진행합니다."],
     documents: ["피상속인 기본·가족관계증명서", "상속인별 가족관계증명서와 인감증명서", "상속재산분할협의서", "최신 등기부등본", "임대차계약서·채무 관련 자료(해당 시)"],
     registryGuide: { title: "좌동 상속등기 관할 안내", body: "좌동 아파트의 상속등기는 부동산 소재지 관할을 기준으로 접수합니다. 한정승인·상속포기는 가정법원 절차이므로 등기와 기한을 혼동하지 않도록 별도로 확인합니다.", notes: ["상속포기·한정승인은 사망을 안 날부터의 기간 확인이 중요합니다.", "상속인 전원의 인적사항 표기가 서류마다 일치해야 합니다.", "동부지원 등기과: 해운대구 재반로112번길 20"] },
-    serviceLinks: [{ href: "/services/inheritance-registration", label: "상속등기" }, { href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/상속포기", label: "상속포기 안내" }],
-    relatedPageLinks: [{ href: "/해운대법무사", label: "해운대 법무사" }, { href: "/우동법무사", label: "우동 법무사" }, { href: "/해운대상속등기", label: "해운대 상속등기" }],
+    serviceLinks: [{ href: "/services/inheritance-registration", label: "상속등기" }, { href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/services/real-estate-registration", label: "부동산등기" }, { href: "/부산상속포기", label: "상속포기 안내" }],
+    relatedPageLinks: [{ href: "/해운대법무사", label: "해운대 법무사" }, { href: "/우동법무사", label: "우동 법무사" }, { href: "/해운대구상속등기", label: "해운대 상속등기" }],
     relatedGuPage: { href: "/해운대법무사", label: "해운대구 법무사 종합 안내" },
     faqs: [
       { question: "좌동 아파트 상속등기는 언제 해야 하나요?", answer: "상속 부동산을 처분·담보 설정·임대차 변경하기 전에는 명의 정리가 필요할 수 있습니다. 상속인의 협의와 채무 여부를 확인한 뒤 일정을 정합니다." },
@@ -137,8 +137,8 @@ export const neighborhoodTopicsPhase2: Record<string, NeighborhoodTopic> = {
     procedures: ["사망일과 상속인·재산·채무 자료를 확인합니다.", "한정승인·상속포기 기한을 우선 검토합니다.", "임대차 보증금과 담보를 포함한 목록을 정리합니다.", "법원 절차 후 필요한 상속등기 순서를 안내합니다."],
     documents: ["사망진단 관련 자료와 가족관계증명서", "부동산 등기부·건축물 자료", "대출·독촉장·채무 관련 자료", "임대차계약서와 보증금·월세 현황", "상속인 신분·인감 관련 서류"],
     registryGuide: { title: "부곡동 상속·한정승인 안내", body: "한정승인과 상속포기는 가정법원 절차이며, 부곡동 부동산의 상속등기와는 별개로 진행 시점과 서류를 검토합니다. 금정구 소재 부동산 관할은 주소별로 확인합니다.", notes: ["한정승인은 상속재산과 채무의 목록 작성이 중요합니다.", "임대차 보증금도 상속재산 관계에서 확인할 항목입니다.", "부산지방법원 등기국: 연제구 법원로 8"] },
-    serviceLinks: [{ href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/상속포기", label: "상속포기" }, { href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산다가구주택상속등기", label: "다가구주택 상속등기" }],
-    relatedPageLinks: [{ href: "/금정구법무사", label: "금정구 법무사" }, { href: "/부산대법무사", label: "부산대 인근 법무사" }, { href: "/부산한정승인", label: "부산 한정승인 안내" }],
+    serviceLinks: [{ href: "/services/qualified-acceptance", label: "한정승인" }, { href: "/부산상속포기", label: "상속포기" }, { href: "/services/inheritance-registration", label: "상속등기" }, { href: "/부산상속등기", label: "부산 상속등기" }],
+    relatedPageLinks: [{ href: "/금정구법무사", label: "금정구 법무사" }, { href: "/업무사례/부산대법무사", label: "부산대 인근 법무사" }, { href: "/부산한정승인", label: "부산 한정승인 안내" }],
     relatedGuPage: { href: "/금정구법무사", label: "금정구 법무사 종합 안내" },
     faqs: [
       { question: "부곡동 원룸 건물 상속 전에 한정승인을 먼저 봐야 하나요?", answer: "대출·보증금 등 채무가 상속재산보다 클 가능성이 있거나 불명확하다면 기한을 포함해 먼저 검토할 수 있습니다. 개별 사건의 재산·채무 목록이 필요합니다." },

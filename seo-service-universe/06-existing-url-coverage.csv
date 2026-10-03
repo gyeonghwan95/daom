@@ -1,0 +1,349 @@
+﻿SERVICE_ID,ORIGINAL_SERVICE_NAME,FAMILY,COVERING_URL,URL_STATUS,FAMILY_PRIMARY,COVERAGE,DECISION,REASON
+1,소유권보존등기,01 부동산 소유권 보존,/부산신축건물보존등기,EXISTING,/부산신축건물보존등기,COVERED,KEEP,family 대표 URL이 포괄
+2,소유권이전등기,02 부동산 소유권 이전,/부산소유권이전등기,EXISTING,/부산소유권이전등기,COVERED,KEEP,family 대표 URL이 포괄
+3,매매에 의한 소유권이전등기,03 매매등기,/부산매매등기법무사,EXISTING,/부산매매등기법무사,COVERED,KEEP,family 대표 URL이 포괄
+4,증여에 의한 소유권이전등기,04 증여등기,/부산증여등기,EXISTING,/부산증여등기,COVERED,KEEP,family 대표 URL이 포괄
+5,상속에 의한 소유권이전등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,family 대표 URL이 포괄
+6,유증에 의한 소유권이전등기,05 상속등기,/전국유증등기,EXISTING,/부산상속등기,COVERED,KEEP,기존 유증 페이지
+7,협의분할에 의한 상속등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,
+8,법정상속등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,
+9,재산분할에 따른 소유권이전등기,07 재산분할에 따른 등기,/부산이혼재산분할등기,EXISTING,/부산이혼재산분할등기,COVERED,KEEP,family 대표 URL이 포괄
+10,공유물분할에 따른 소유권이전등기,06 공유물·공유지분,/부산공유물분할등기,EXISTING,/부산공유물분할등기,COVERED,KEEP,SERP #1
+11,공유지분 이전등기,06 공유물·공유지분,/부산지분이전등기,EXISTING,/부산공유물분할등기,COVERED,KEEP,기존 지분이전 페이지
+12,경락에 의한 소유권이전등기,31 경매 관련 신청서·등기,/부산경매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+13,판결에 의한 소유권이전등기 신청서 작성,02 부동산 소유권 이전,/부산소유권이전등기,EXISTING,/부산소유권이전등기,COVERED,KEEP,판결 등기 section
+14,진정명의회복에 의한 소유권이전등기,02 부동산 소유권 이전,/부산소유권이전등기,EXISTING,/부산소유권이전등기,COVERED,WATCHLIST,"자동완성 有, 소송 연계 비중 큼 — 등기 section 후보"
+15,소유권이전청구권 가등기,08 가등기·본등기·말소,/부산가등기,EXISTING,/부산가등기,COVERED,KEEP,family 대표 URL이 포괄
+16,가등기에 의한 본등기,08 가등기·본등기·말소,/부산가등기,EXISTING,/부산가등기,COVERED,KEEP,family 대표 URL이 포괄
+17,소유권이전등기 말소,08 가등기·본등기·말소,/부산말소등기,EXISTING,/부산가등기,COVERED,KEEP,
+18,소유권보존등기 말소,08 가등기·본등기·말소,/부산말소등기,EXISTING,/부산가등기,COVERED,KEEP,
+19,등기명의인 표시변경등기,09 표시변경·멸실,/부산등기명의인표시변경,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+20,주소변경등기,09 표시변경·멸실,/부산등기명의인표시변경,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+21,성명변경등기,09 표시변경·멸실,/부산등기명의인표시변경,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+22,주민등록번호 변경 관련 등기,09 표시변경·멸실,/부산등기명의인표시변경,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+23,건물 표시변경등기,09 표시변경·멸실,/부산건물표시변경등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+24,토지 표시변경등기,09 표시변경·멸실,,NONE,/부산등기명의인표시변경,GAP_OR_WATCH,WATCHLIST,토지 표시변경은 대장 정리 후 촉탁 비중 큼
+25,건물 멸실등기,09 표시변경·멸실,/부산건물멸실등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+26,토지 분필등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,"지적소관청 촉탁 구조, Daom은 인접 페이지만 노출"
+27,토지 합필등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,지적소관청 촉탁 구조
+28,지목변경 관련 등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,지적소관청 촉탁 구조
+29,대지권 관련 등기,11 구분건물·대지권,/부산대지권등기,EXISTING,/부산대지권등기,COVERED,KEEP,
+30,구분건물 관련 등기,11 구분건물·대지권,/부산집합건물등기,EXISTING,/부산대지권등기,COVERED,KEEP,
+31,근저당권 설정등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,COVERED,KEEP,SERP #1
+32,근저당권 변경등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,PARTIAL→SECTION,ADD_SECTION,변경(채권최고액·채무자) section 추가 — 부동산등기법 제52조5호
+33,근저당권 이전등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,PARTIAL→SECTION,ADD_SECTION,이전(확정채권양도·계약양도) section 추가
+34,근저당권 말소등기,12 근저당·저당,/부산근저당말소등기,EXISTING,/부산근저당설정등기,COVERED,KEEP,근저당 말소 대표 URL
+35,저당권 설정등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,COVERED,KEEP,
+36,저당권 변경등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,PARTIAL→SECTION,ADD_SECTION,변경 section에 포함
+37,저당권 이전등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,PARTIAL→SECTION,ADD_SECTION,이전 section에 포함
+38,저당권 말소등기,12 근저당·저당,/부산근저당말소등기,EXISTING,/부산근저당설정등기,COVERED,KEEP,
+39,전세권 설정등기,13 전세권·임차권,/부산전세권설정등기,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+40,전세권 변경등기,13 전세권·임차권,/부산전세권설정등기,EXISTING,/부산전세권설정등기,COVERED,WATCHLIST,전세권 변경 section 후보(Wave 2)
+41,전세권 이전등기,13 전세권·임차권,/부산전세권설정등기,EXISTING,/부산전세권설정등기,COVERED,WATCHLIST,전세권 이전 수요 미확인
+42,전세권 말소등기,13 전세권·임차권,/부산전세권말소등기,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+43,지상권 설정등기,14 지상권·지역권,/부산지상권설정등기,EXISTING,/부산지상권설정등기,COVERED,KEEP,
+44,지상권 변경등기,14 지상권·지역권,/부산지상권설정등기,EXISTING,/부산지상권설정등기,COVERED,KEEP,
+45,지상권 이전등기,14 지상권·지역권,/부산지상권설정등기,EXISTING,/부산지상권설정등기,COVERED,KEEP,
+46,지상권 말소등기,14 지상권·지역권,/부산지상권설정등기,EXISTING,/부산지상권설정등기,COVERED,KEEP,
+47,지역권 설정등기,14 지상권·지역권,,NONE,/부산지상권설정등기,GAP_OR_WATCH,WATCHLIST,지역권 검색 증거 없음
+48,지역권 변경등기,14 지상권·지역권,,NONE,/부산지상권설정등기,GAP_OR_WATCH,WATCHLIST,지역권 검색 증거 없음
+49,지역권 말소등기,14 지상권·지역권,,NONE,/부산지상권설정등기,GAP_OR_WATCH,WATCHLIST,지역권 검색 증거 없음
+50,임차권등기,13 전세권·임차권,/부산임차권등기명령,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+51,임차권등기명령에 따른 등기,13 전세권·임차권,/부산임차권등기명령,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+52,담보권 관련 등기,12 근저당·저당,/부산근저당설정등기,EXISTING,/부산근저당설정등기,COVERED,KEEP,
+53,신탁등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+54,신탁변경등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+55,신탁말소등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,신탁말소 SERP #2
+56,신탁재산 귀속에 따른 등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+57,담보신탁 관련 등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,PARTIAL→SECTION,UPGRADE_EXISTING,담보신탁·PF section 추가
+58,처분신탁 관련 등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+59,관리신탁 관련 등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+60,부동산신탁 관련 등기,15 신탁등기,/부산신탁등기,EXISTING,/부산신탁등기,COVERED,KEEP,family 대표 URL이 포괄
+61,상속등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,
+62,협의분할 상속등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,
+63,법정상속등기,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,
+64,대습상속 관련 등기,05 상속등기,/대습상속등기,EXISTING,/부산상속등기,COVERED,KEEP,기존 대습상속 페이지
+65,유증에 의한 소유권이전등기,05 상속등기,/전국유증등기,EXISTING,/부산상속등기,COVERED,KEEP,기존 유증 페이지
+66,상속재산 협의분할에 따른 등기,05 상속등기,/상속재산분할협의서준비,EXISTING,/부산상속등기,COVERED,KEEP,
+67,상속재산 관련 등기서류 작성,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,family 대표 URL이 포괄
+68,상속인 범위 확인 관련 서류,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,family 대표 URL이 포괄
+69,상속관계 서류 정리,05 상속등기,/부산상속등기,EXISTING,/부산상속등기,COVERED,KEEP,family 대표 URL이 포괄
+70,상속포기 심판청구서 작성,16 상속포기·한정승인,/부산상속포기,EXISTING,/부산상속포기,COVERED,KEEP,
+71,상속포기 신청,16 상속포기·한정승인,/부산상속포기,EXISTING,/부산상속포기,COVERED,KEEP,
+72,한정승인 심판청구서 작성,16 상속포기·한정승인,/부산한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+73,한정승인 신청,16 상속포기·한정승인,/부산한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+74,특별한정승인 신청,16 상속포기·한정승인,/특별한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+75,상속재산목록 작성,16 상속포기·한정승인,/부산한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+76,상속포기 관련 법원 제출서류 작성,16 상속포기·한정승인,/부산상속포기,EXISTING,/부산상속포기,COVERED,KEEP,
+77,한정승인 관련 법원 제출서류 작성,16 상속포기·한정승인,/부산한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+78,상속포기 후속절차 관련 서류,16 상속포기·한정승인,/상속포기후다음순위확인,EXISTING,/부산상속포기,COVERED,KEEP,
+79,한정승인 후속절차 관련 서류,16 상속포기·한정승인,/부산한정승인,EXISTING,/부산상속포기,COVERED,KEEP,
+80,상속재산 청산 관련 서류작성,16 상속포기·한정승인,/부산상속재산관리인,EXISTING,/부산상속포기,COVERED,KEEP,
+81,주식회사 설립등기,17 법인설립,/부산법인설립등기,EXISTING,/부산법인설립등기,COVERED,KEEP,family 대표 URL이 포괄
+82,유한회사 설립등기,17 법인설립,/부산유한회사설립등기,EXISTING,/부산법인설립등기,COVERED,KEEP,
+83,유한책임회사 관련 등기,17 법인설립,,NONE,/부산법인설립등기,GAP_OR_WATCH,WATCHLIST,"자동완성 1건, 사례 없음"
+84,외국회사 관련 등기,17 법인설립,,NONE,/부산법인설립등기,GAP_OR_WATCH,WATCHLIST,검색 증거 없음
+85,법인 본점설립등기,17 법인설립,/부산법인설립등기,EXISTING,/부산법인설립등기,COVERED,KEEP,family 대표 URL이 포괄
+86,지점설치등기,19 법인 본점·지점,/부산지점설치등기,EXISTING,/부산본점이전등기,COVERED,KEEP,
+87,지점이전등기,19 법인 본점·지점,/부산본점이전등기,EXISTING,/부산본점이전등기,COVERED,KEEP,family 대표 URL이 포괄
+88,지점폐지등기,19 법인 본점·지점,/부산지점폐지등기,EXISTING,/부산본점이전등기,COVERED,KEEP,
+89,상호변경등기,20 법인 목적·상호,/부산상호변경등기,EXISTING,/부산사업목적변경등기,COVERED,KEEP,
+90,목적변경등기,20 법인 목적·상호,/부산사업목적변경등기,EXISTING,/부산사업목적변경등기,COVERED,KEEP,family 대표 URL이 포괄
+91,본점이전등기,19 법인 본점·지점,/부산본점이전등기,EXISTING,/부산본점이전등기,COVERED,KEEP,family 대표 URL이 포괄
+92,대표이사 변경등기,18 법인 임원변경,/부산대표이사변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,
+93,이사 취임등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+94,이사 퇴임등기,18 법인 임원변경,/부산임원사임해임등기,EXISTING,/부산임원변경등기,COVERED,KEEP,
+95,이사 중임등기,18 법인 임원변경,/부산임원임기만료등기,EXISTING,/부산임원변경등기,COVERED,KEEP,
+96,감사 취임등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+97,감사 퇴임등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+98,감사 중임등기,18 법인 임원변경,/부산임원임기만료등기,EXISTING,/부산임원변경등기,COVERED,KEEP,
+99,임원 변경등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+100,임원 주소변경등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+101,임원 개명에 따른 변경등기,18 법인 임원변경,/부산임원변경등기,EXISTING,/부산임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+102,자본금 변경등기,21 증자·감자·신주,/부산유상증자등기,EXISTING,/부산유상증자등기,COVERED,KEEP,family 대표 URL이 포괄
+103,증자등기,21 증자·감자·신주,/부산유상증자등기,EXISTING,/부산유상증자등기,COVERED,KEEP,family 대표 URL이 포괄
+104,감자등기,21 증자·감자·신주,/부산감자등기,EXISTING,/부산유상증자등기,COVERED,KEEP,SERP #1
+105,신주발행 관련 등기,21 증자·감자·신주,/부산유상증자등기,EXISTING,/부산유상증자등기,COVERED,KEEP,family 대표 URL이 포괄
+106,주식분할 관련 등기,21 증자·감자·신주,,NONE,/부산유상증자등기,GAP_OR_WATCH,WATCHLIST,
+107,주식병합 관련 등기,21 증자·감자·신주,,NONE,/부산유상증자등기,GAP_OR_WATCH,WATCHLIST,
+108,전환사채 관련 등기,21 증자·감자·신주,,NONE,/부산유상증자등기,GAP_OR_WATCH,WATCHLIST,
+109,신주인수권부사채 관련 등기,21 증자·감자·신주,,NONE,/부산유상증자등기,GAP_OR_WATCH,WATCHLIST,
+110,회사의 공고방법 변경등기,20 법인 목적·상호,/부산사업목적변경등기,EXISTING,/부산사업목적변경등기,COVERED,KEEP,family 대표 URL이 포괄
+111,회사의 종류 변경 관련 등기,20 법인 목적·상호,,NONE,/부산사업목적변경등기,GAP_OR_WATCH,WATCHLIST,조직변경 수요 미확인
+112,해산등기,22 법인 해산·청산,/부산법인해산청산등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,family 대표 URL이 포괄
+113,청산인 선임등기,22 법인 해산·청산,/부산법인해산청산등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,family 대표 URL이 포괄
+114,청산인 변경등기,22 법인 해산·청산,/부산법인해산청산등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,family 대표 URL이 포괄
+115,청산종결등기,22 법인 해산·청산,/부산법인해산청산등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,family 대표 URL이 포괄
+116,회사계속등기,22 법인 해산·청산,/부산휴면법인계속등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,
+117,휴면회사 관련 등기,22 법인 해산·청산,/부산휴면법인계속등기,EXISTING,/부산법인해산청산등기,COVERED,KEEP,
+118,법인등기부등본 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+119,법인인감 관련 등기업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+120,검사인 선임 관련 신청,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+121,임시총회 소집 관련 신청,23 회사 비송,,NONE,,GAP_OR_WATCH,LEGAL_REVIEW_REQUIRED,"SERP가 경영권 분쟁 로펌 위주, 자동완성 없음"
+122,주주총회 관련 비송사건 신청,23 회사 비송,,NONE,,GAP_OR_WATCH,LEGAL_REVIEW_REQUIRED,분쟁성 사건 경계
+123,청산인 관련 비송사건,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+124,법인 해산 관련 비송사건,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+125,청산 관련 비송사건,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+126,회사 관련 비송사건 신청서 작성,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+127,상업등기 관련 비송사건 서류작성,23 회사 비송,,NONE,,GAP_OR_WATCH,WATCHLIST,대표 URL 없음·증거 미확인
+128,개인회생 신청,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+129,개인회생 개시신청서 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+130,개인회생 채권자목록 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+131,개인회생 재산목록 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+132,개인회생 수입·지출목록 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+133,개인회생 변제계획안 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+134,개인회생 보정서 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+135,개인회생 보정명령 대응서류 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+136,개인회생 채권자 관련 서류작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+137,개인회생 변제계획 변경 신청,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,변경 section 후보(Wave 2)
+138,개인회생 변제계획 수정 관련 서류,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+139,개인회생 폐지 관련 신청서 작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+140,개인회생 면책신청,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,
+141,개인회생 면책 관련 서류작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,family 대표 URL이 포괄
+142,개인회생 재신청 관련 서류작성,24 개인회생,/부산개인회생,EXISTING,/부산개인회생,COVERED,KEEP,재신청 section 후보(Wave 2)
+143,개인파산 신청,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+144,파산선고 신청,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+145,면책신청,25 개인파산·면책,/부산면책신청,EXISTING,/부산개인파산,COVERED,KEEP,
+146,파산신청서 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+147,채권자목록 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+148,재산목록 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+149,파산재단 관련 자료작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+150,파산 보정서 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+151,파산 보정명령 대응서류 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+152,면책 관련 서류작성,25 개인파산·면책,/부산면책신청,EXISTING,/부산개인파산,COVERED,KEEP,
+153,면책불허가 사유 관련 소명자료 작성,25 개인파산·면책,/부산면책신청,EXISTING,/부산개인파산,COVERED,WATCHLIST,소명 section 후보
+154,파산·면책 관련 추가서류 작성,25 개인파산·면책,/부산개인파산,EXISTING,/부산개인파산,COVERED,KEEP,family 대표 URL이 포괄
+155,복권 관련 신청서 작성,25 개인파산·면책,/부산면책신청,EXISTING,/부산개인파산,COVERED,WATCHLIST,복권 section 후보
+156,변제공탁,26 공탁,/부산변제공탁,EXISTING,/부산공탁,COVERED,KEEP,대표 URL — /공탁채권회수 역할 정리 필요
+157,담보공탁,26 공탁,/부산담보공탁,EXISTING,/부산공탁,COVERED,KEEP,
+158,집행공탁,26 공탁,/부산집행공탁,EXISTING,/부산공탁,COVERED,KEEP,
+159,보관공탁,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,WATCHLIST,
+160,몰취공탁,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,WATCHLIST,
+161,혼합공탁,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,KEEP,family 대표 URL이 포괄
+162,공탁신청서 작성,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,KEEP,family 대표 URL이 포괄
+163,공탁금 출급청구,26 공탁,/공탁금출급회수,EXISTING,/부산공탁,COVERED,KEEP,
+164,공탁금 회수청구,26 공탁,/공탁금출급회수,EXISTING,/부산공탁,COVERED,KEEP,
+165,공탁물 출급청구,26 공탁,/공탁금출급회수,EXISTING,/부산공탁,COVERED,KEEP,
+166,공탁물 회수청구,26 공탁,/공탁금출급회수,EXISTING,/부산공탁,COVERED,KEEP,
+167,공탁원인증서 작성,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,KEEP,family 대표 URL이 포괄
+168,공탁 관련 보정서 작성,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,KEEP,family 대표 URL이 포괄
+169,공탁 관련 법원 제출서류 작성,26 공탁,/부산공탁,EXISTING,/부산공탁,COVERED,KEEP,family 대표 URL이 포괄
+170,출생신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+171,혼인신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+172,이혼신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+173,입양신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+174,친양자 입양 관련 신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+175,친양자 파양 관련 신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+176,사망신고,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+177,실종선고 관련 가족관계등록,45 실종선고·부재자(추가 하위 family),/부산실종선고청구,NEW_WAVE1,/부산실종선고청구,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"자동완성 '실종선고 법무사/비용/절차', SERP Daom 부재"
+178,개명허가 신청,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,KEEP,SERP #2
+179,개명신고,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,KEEP,
+180,성·본 변경허가 신청,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,KEEP,성본변경 SERP #5 — 동일 URL
+181,성·본 변경신고,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,KEEP,
+182,가족관계등록부 정정허가 신청,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"자동완성 '정정하는 방법', SERP Daom 부재"
+183,가족관계등록부 정정신청,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,PARTIAL→SECTION,ADD_SECTION,허가 후 1개월 내 정정신청 section
+184,가족관계등록부 기록 정정 관련 업무,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,PARTIAL→SECTION,ADD_SECTION,
+185,가족관계등록 관련 법원 제출서류 작성,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,PARTIAL→SECTION,ADD_SECTION,
+186,가족관계등록 관련 신고서 작성,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+187,성년후견 개시심판 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+188,한정후견 개시심판 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,한정후견 SERP #4 — 같은 URL에서 다룸
+189,특정후견 개시심판 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+190,임의후견 관련 신청,29 성년·미성년후견,,NONE,/부산가정법원성년후견,GAP_OR_WATCH,WATCHLIST,"공정증서 필요, 수요 미확인"
+191,후견인 선임 관련 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+192,후견인 변경 관련 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+193,후견감독인 관련 신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+194,후견 관련 법원 제출서류 작성,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+195,후견등기 관련 업무,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함
+196,미성년후견 관련 신청,29 성년·미성년후견,,NONE,/부산가정법원성년후견,GAP_OR_WATCH,WATCHLIST,미성년후견 수요 미확인
+197,개명허가 신청,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,SKIP_DUPLICATE,178과 동일
+198,성·본 변경허가 신청,28 개명·성본변경,/부산개명허가,EXISTING,/부산개명허가,COVERED,SKIP_DUPLICATE,180과 동일
+199,가족관계등록부 정정허가 신청,27 가족관계등록,/부산가족관계등록부정정,NEW_WAVE1,/부산가족관계등록부정정,COVERED,SKIP_DUPLICATE,182와 동일 의도
+200,친족관계 관련 비송신청,42 법원 제출서류,,NONE,/민사소송,GAP_OR_WATCH,WATCHLIST,
+201,후견 관련 비송신청,29 성년·미성년후견,/부산가정법원성년후견,EXISTING,/부산가정법원성년후견,COVERED,KEEP,family 대표 URL이 포괄
+202,가사 비송사건 신청서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+203,집행문 부여 신청,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"자동완성 '집행문 부여 신청 방법/신청서', SERP Daom 부재"
+204,재도부여 집행문 신청,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,PARTIAL→SECTION,ADD_SECTION,재도부여 section
+205,승계집행문 신청,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,PARTIAL→SECTION,ADD_SECTION,승계집행문 section
+206,집행문 관련 서류작성,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,PARTIAL→SECTION,ADD_SECTION,
+207,송달증명원 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,송달·확정증명 section
+208,확정증명원 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,
+209,판결정본 관련 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,
+210,집행권원 관련 신청,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,PARTIAL→SECTION,ADD_SECTION,
+211,재산명시 신청,30 집행문·재산명시·재산조회,/부산재산명시,EXISTING,/부산재산명시,COVERED,KEEP,
+212,재산조회 신청,30 집행문·재산명시·재산조회,/부산재산명시,EXISTING,/부산재산명시,COVERED,KEEP,재산조회 연계 설명 존재
+213,채무불이행자명부 등재 신청,30 집행문·재산명시·재산조회,/부산채무불이행자명부등재,NEW_WAVE1,/부산재산명시,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"자동완성 '등재 비용/말소/셀프', SERP Daom 부재"
+214,강제집행 관련 법원 제출서류 작성,30 집행문·재산명시·재산조회,/민사소송,EXISTING,/부산재산명시,COVERED,KEEP,
+215,부동산 강제경매 신청서 작성,31 경매 관련 신청서·등기,,NONE,/부산경매낙찰등기,GAP_OR_WATCH,WATCHLIST,경매신청서 작성 수요 미조사
+216,부동산 임의경매 신청서 작성,31 경매 관련 신청서·등기,,NONE,/부산경매낙찰등기,GAP_OR_WATCH,WATCHLIST,경매신청서 작성 수요 미조사
+217,경매신청 관련 서류작성,31 경매 관련 신청서·등기,,NONE,/부산경매낙찰등기,GAP_OR_WATCH,WATCHLIST,
+218,배당요구신청서 작성,31 경매 관련 신청서·등기,/부산배당요구신청,NEW_WAVE1,/부산경매낙찰등기,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"자동완성 '배당요구신청서' 다수, SERP Daom 부재"
+219,채권계산서 작성,31 경매 관련 신청서·등기,/부산배당요구신청,NEW_WAVE1,/부산경매낙찰등기,PARTIAL→SECTION,ADD_SECTION,채권계산서 section
+220,경매 취하 관련 서류작성,31 경매 관련 신청서·등기,,NONE,/부산경매낙찰등기,GAP_OR_WATCH,WATCHLIST,
+221,경락에 의한 소유권이전등기,31 경매 관련 신청서·등기,/부산경매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+222,경락에 따른 말소등기,31 경매 관련 신청서·등기,/부산경매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+223,경매 관련 등기신청,31 경매 관련 신청서·등기,/부산경매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+224,공매에 따른 소유권이전등기,31 경매 관련 신청서·등기,/부산공매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+225,경매 관련 법원 제출서류 작성,31 경매 관련 신청서·등기,/부산경매낙찰등기,EXISTING,/부산경매낙찰등기,COVERED,KEEP,
+226,부동산 가압류 신청서 작성,32 가압류,/부산가압류신청,NEW_WAVE1,/부산가압류신청,TRUE_GAP→NEW,NEW_SERVICE_PAGE,"'부산 가압류 법무사' SERP Daom 부재, 자동완성 '부산 가압류 취소방법'"
+227,채권 가압류 신청서 작성,32 가압류,/부산가압류신청,NEW_WAVE1,/부산가압류신청,PARTIAL→SECTION,ADD_SECTION,대상재산별 section
+228,유체동산 가압류 신청서 작성,32 가압류,/부산가압류신청,NEW_WAVE1,/부산가압류신청,PARTIAL→SECTION,ADD_SECTION,
+229,자동차 가압류 신청서 작성,32 가압류,/부산가압류신청,NEW_WAVE1,/부산가압류신청,PARTIAL→SECTION,ADD_SECTION,
+230,부동산 처분금지가처분 신청서 작성,33 가처분,/가처분신청서류준비,EXISTING,/가처분신청서류준비,COVERED,KEEP,
+231,부동산 점유이전금지가처분 신청서 작성,33 가처분,/가처분신청서류준비,EXISTING,/가처분신청서류준비,COVERED,KEEP,
+232,가압류 해제 관련 신청서 작성,32 가압류,/부산가압류말소등기,EXISTING,/부산가압류신청,COVERED,KEEP,
+233,가처분 해제 관련 신청서 작성,33 가처분,/부산가처분말소등기,EXISTING,/가처분신청서류준비,COVERED,KEEP,
+234,가압류 취소 관련 신청서 작성,32 가압류,/부산가압류신청,NEW_WAVE1,/부산가압류신청,PARTIAL→SECTION,ADD_SECTION,제소명령·사정변경 취소 section
+235,가처분 취소 관련 신청서 작성,33 가처분,/가처분신청서류준비,EXISTING,/가처분신청서류준비,COVERED,KEEP,
+236,임차권등기명령 신청,34 임대차·보증금,/부산임차권등기명령,EXISTING,/부산임차권등기명령,COVERED,KEEP,대표 URL — 전세 페이지와 역할 정리
+237,임차권등기 신청,34 임대차·보증금,/부산임차권등기명령,EXISTING,/부산임차권등기명령,COVERED,KEEP,
+238,전세권 설정등기,13 전세권·임차권,/부산전세권설정등기,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+239,전세권 말소등기,13 전세권·임차권,/부산전세권말소등기,EXISTING,/부산전세권설정등기,COVERED,KEEP,
+240,전세권 변경등기,13 전세권·임차권,/부산전세권설정등기,EXISTING,/부산전세권설정등기,COVERED,WATCHLIST,
+241,임대차 관련 등기,34 임대차·보증금,/부산임차권등기명령,EXISTING,/부산임차권등기명령,COVERED,KEEP,family 대표 URL이 포괄
+242,임대차보증금 관련 지급명령 신청서 작성,34 임대차·보증금,/부산지방법원지급명령,EXISTING,/부산임차권등기명령,COVERED,KEEP,
+243,임대차 관련 법원 신청서 작성,34 임대차·보증금,/부산전세보증금반환법무사,EXISTING,/부산임차권등기명령,COVERED,KEEP,
+244,주택임대차 관련 신청서 작성,34 임대차·보증금,/부산전세보증금반환법무사,EXISTING,/부산임차권등기명령,COVERED,KEEP,
+245,상가임대차 관련 신청서 작성,34 임대차·보증금,,NONE,/부산임차권등기명령,GAP_OR_WATCH,WATCHLIST,상가임대차 수요 미조사
+246,아파트 소유권보존등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+247,아파트 소유권이전등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+248,오피스텔 소유권보존등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+249,오피스텔 소유권이전등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+250,상가 소유권보존등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+251,상가 소유권이전등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+252,지식산업센터 소유권보존등기,35 부동산 집단등기,/지식산업센터보존등기,EXISTING,/부산집단등기,COVERED,KEEP,SERP #1
+253,지식산업센터 소유권이전등기,35 부동산 집단등기,/지식산업센터보존등기,EXISTING,/부산집단등기,COVERED,KEEP,
+254,집합건물 대지권등기,11 구분건물·대지권,/부산대지권등기,EXISTING,/부산대지권등기,COVERED,KEEP,
+255,집합건물 근저당권 설정등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+256,집합건물 근저당권 말소등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+257,대규모 집단등기,35 부동산 집단등기,/부산집단등기,EXISTING,/부산집단등기,COVERED,KEEP,family 대표 URL이 포괄
+258,재개발 소유권보존등기,36 재개발·재건축,/부산재개발등기,EXISTING,/부산재개발등기,COVERED,KEEP,family 대표 URL이 포괄
+259,재개발 소유권이전등기,36 재개발·재건축,/부산재개발등기,EXISTING,/부산재개발등기,COVERED,KEEP,family 대표 URL이 포괄
+260,재건축 소유권보존등기,36 재개발·재건축,/부산재건축등기,EXISTING,/부산재개발등기,COVERED,KEEP,
+261,재건축 소유권이전등기,36 재개발·재건축,/부산재건축등기,EXISTING,/부산재개발등기,COVERED,KEEP,
+262,이전고시에 따른 소유권등기,36 재개발·재건축,/부산재개발등기,EXISTING,/부산재개발등기,COVERED,WATCHLIST,이전고시 section 후보
+263,조합 관련 법인등기,47 정비조합 법인등기(추가),/재건축조합임원변경등기,EXISTING,/재건축조합임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+264,조합 임원 변경등기,47 정비조합 법인등기(추가),/재건축조합임원변경등기,EXISTING,/재건축조합임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+265,조합 본점 관련 등기,47 정비조합 법인등기(추가),/재건축조합임원변경등기,EXISTING,/재건축조합임원변경등기,COVERED,KEEP,family 대표 URL이 포괄
+266,재개발·재건축 집단등기,36 재개발·재건축,/부산재개발등기,EXISTING,/부산재개발등기,COVERED,KEEP,family 대표 URL이 포괄
+267,멸실등기,09 표시변경·멸실,/부산건물멸실등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+268,신축건물 보존등기,01 부동산 소유권 보존,/부산신축건물보존등기,EXISTING,/부산신축건물보존등기,COVERED,KEEP,
+269,토지 소유권보존등기,01 부동산 소유권 보존,,NONE,/부산신축건물보존등기,GAP_OR_WATCH,WATCHLIST,미등기 토지 보존 수요 미조사
+270,토지 소유권이전등기,02 부동산 소유권 이전,/부산소유권이전등기,EXISTING,/부산소유권이전등기,COVERED,KEEP,family 대표 URL이 포괄
+271,토지 분필등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,
+272,토지 합필등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,
+273,토지 표시변경등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,
+274,지목변경 관련 등기,10 토지 분필·합필·지목,,NONE,,GAP_OR_WATCH,WATCHLIST,
+275,공유토지 관련 등기,06 공유물·공유지분,/부산공유물분할등기,EXISTING,/부산공유물분할등기,COVERED,KEEP,
+276,공유지분 이전등기,06 공유물·공유지분,/부산지분이전등기,EXISTING,/부산공유물분할등기,COVERED,KEEP,
+277,공유물분할 관련 등기,06 공유물·공유지분,/부산공유물분할등기,EXISTING,/부산공유물분할등기,COVERED,KEEP,
+278,농지 관련 소유권이전등기,37 토지·농지,,NONE,/부산토지매매등기,GAP_OR_WATCH,WATCHLIST,농지법 선행요건
+279,농업법인 관련 등기,17 법인설립,/부산농업회사법인설립,EXISTING,/부산법인설립등기,COVERED,KEEP,
+280,건물 소유권보존등기,01 부동산 소유권 보존,/부산신축건물보존등기,EXISTING,/부산신축건물보존등기,COVERED,KEEP,
+281,건물 소유권이전등기,02 부동산 소유권 이전,/부산소유권이전등기,EXISTING,/부산소유권이전등기,COVERED,KEEP,family 대표 URL이 포괄
+282,건물 표시변경등기,09 표시변경·멸실,/부산등기명의인표시변경,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,family 대표 URL이 포괄
+283,건물 멸실등기,09 표시변경·멸실,/부산건물멸실등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+284,증축 관련 표시변경등기,09 표시변경·멸실,/부산건물표시변경등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+285,용도변경 관련 표시변경등기,09 표시변경·멸실,/부산건물표시변경등기,EXISTING,/부산등기명의인표시변경,COVERED,KEEP,
+286,구분건물 등기,38 건물·집합건물,/부산건물등기,EXISTING,/부산건물등기,COVERED,KEEP,family 대표 URL이 포괄
+287,집합건물 등기,38 건물·집합건물,/부산건물등기,EXISTING,/부산건물등기,COVERED,KEEP,family 대표 URL이 포괄
+288,은행 근저당권 설정,39 금융기관 담보,/부산잔금대출근저당,EXISTING,/부산잔금대출근저당,COVERED,KEEP,family 대표 URL이 포괄
+289,은행 근저당권 말소,39 금융기관 담보,/부산근저당말소등기,EXISTING,/부산잔금대출근저당,COVERED,KEEP,
+290,은행 근저당권 변경,39 금융기관 담보,/부산근저당설정등기,EXISTING,/부산잔금대출근저당,PARTIAL→SECTION,ADD_SECTION,변경 section
+291,은행 근저당권 이전,39 금융기관 담보,/부산근저당설정등기,EXISTING,/부산잔금대출근저당,PARTIAL→SECTION,ADD_SECTION,이전 section
+292,저축은행 담보등기,39 금융기관 담보,/부산잔금대출근저당,EXISTING,/부산잔금대출근저당,COVERED,KEEP,family 대표 URL이 포괄
+293,캐피탈 담보등기,39 금융기관 담보,/부산잔금대출근저당,EXISTING,/부산잔금대출근저당,COVERED,KEEP,family 대표 URL이 포괄
+294,금융기관 담보권 관련 등기,39 금융기관 담보,/부산잔금대출근저당,EXISTING,/부산잔금대출근저당,COVERED,KEEP,family 대표 URL이 포괄
+295,집단대출 관련 등기,39 금융기관 담보,/부산집단등기,EXISTING,/부산잔금대출근저당,COVERED,KEEP,
+296,담보신탁 관련 등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,PARTIAL→SECTION,UPGRADE_EXISTING,담보신탁 section
+297,PF 관련 담보등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,PARTIAL→SECTION,UPGRADE_EXISTING,PF 담보 section — SERP #4
+298,시행사 법인설립등기,17 법인설립,/부산시행사등기,EXISTING,/부산법인설립등기,COVERED,KEEP,
+299,시행사 법인변경등기,18 법인 임원변경,/부산시행사등기,EXISTING,/부산임원변경등기,COVERED,KEEP,
+300,개발사업 관련 신탁등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,PARTIAL→SECTION,UPGRADE_EXISTING,개발신탁 section
+301,개발사업 관련 소유권보존등기,40 PF·부동산개발,/부산신축건물보존등기,EXISTING,/부산시행사등기,COVERED,KEEP,
+302,개발사업 관련 소유권이전등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,COVERED,KEEP,family 대표 URL이 포괄
+303,분양 관련 소유권이전등기,40 PF·부동산개발,/부산분양등기,EXISTING,/부산시행사등기,COVERED,KEEP,
+304,준공 후 보존등기,40 PF·부동산개발,/부산신축건물보존등기,EXISTING,/부산시행사등기,COVERED,KEEP,
+305,개발사업 집단등기,40 PF·부동산개발,/부산집단등기,EXISTING,/부산시행사등기,COVERED,KEEP,
+306,프로젝트금융 관련 담보등기,40 PF·부동산개발,/부산시행사등기,EXISTING,/부산시행사등기,PARTIAL→SECTION,UPGRADE_EXISTING,PF section
+307,자동차 저당권 설정 관련 업무,41 자동차 관련 법원·등록업무,,NONE,,GAP_OR_WATCH,WATCHLIST,자동차 등록 — 대리 표현 제한
+308,자동차 저당권 말소 관련 업무,41 자동차 관련 법원·등록업무,,NONE,,GAP_OR_WATCH,WATCHLIST,
+309,자동차 가압류 신청서 작성,41 자동차 관련 법원·등록업무,/부산가압류신청,NEW_WAVE1,,PARTIAL→SECTION,ADD_SECTION,자동차 가압류 section
+310,자동차 강제집행 관련 신청서 작성,41 자동차 관련 법원·등록업무,,NONE,,GAP_OR_WATCH,WATCHLIST,
+311,자동차 관련 법원 제출서류 작성,41 자동차 관련 법원·등록업무,,NONE,,GAP_OR_WATCH,WATCHLIST,
+312,각종 신청서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+313,각종 신고서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+314,각종 청구서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+315,보정서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+316,보정명령 관련 서류작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+317,법원 제출용 위임장 관련 업무,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+318,법원 제출용 첨부서류 정리,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+319,판결문 관련 증명서 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,
+320,확정증명원 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,
+321,송달증명원 신청,"46 집행 증명서(송달·확정증명, 추가)",/부산집행문부여신청,NEW_WAVE1,/부산집행문부여신청,PARTIAL→SECTION,ADD_SECTION,
+322,집행문 관련 신청,30 집행문·재산명시·재산조회,/부산집행문부여신청,NEW_WAVE1,/부산재산명시,COVERED,SKIP_DUPLICATE,203과 동일
+323,각종 법원 사건 신청서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+324,부동산거래신고 관련 업무,43 부동산 부수신고·공과금,,NONE,/취득세,GAP_OR_WATCH,SKIP_DUPLICATE,독립 페이지 금지 — 거래신고는 매매등기 section에서 언급
+325,취득세 신고 관련 업무,43 부동산 부수신고·공과금,/취득세,EXISTING,/취득세,COVERED,KEEP,
+326,등록면허세 신고 관련 업무,43 부동산 부수신고·공과금,/등기비용,EXISTING,/취득세,COVERED,SKIP_DUPLICATE,
+327,지방교육세 관련 신고,43 부동산 부수신고·공과금,/등기비용,EXISTING,/취득세,COVERED,SKIP_DUPLICATE,
+328,농어촌특별세 관련 신고,43 부동산 부수신고·공과금,/등기비용,EXISTING,/취득세,COVERED,SKIP_DUPLICATE,
+329,취득세 감면신청 관련 업무,43 부동산 부수신고·공과금,/취득세,EXISTING,/취득세,COVERED,SKIP_DUPLICATE,
+330,등기신청 수수료 및 공과금 관련 업무,44 등기 행정 부수업무,/등기비용,EXISTING,/등기신청대행,COVERED,KEEP,
+331,부동산등기 첨부서류 확인,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+332,등기신청 서류 작성,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,KEEP,family 대표 URL이 포괄
+333,등기신청 대행,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,KEEP,family 대표 URL이 포괄
+334,등기신청 보정 업무,44 등기 행정 부수업무,/부산등기보정업무,EXISTING,/등기신청대행,COVERED,KEEP,
+335,등기부등본 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+336,법인등기부 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+337,등기사항증명서 발급 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+338,법인인감증명서 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+339,인감증명 관련 업무,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+340,주민등록 관련 첨부서류 확인,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+341,가족관계등록 관련 서류 확인,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+342,법원 제출서류 첨부자료 정리,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+343,등기 관련 사실관계 조사,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,부수업무 — 대표 업무 페이지 안에서만 언급
+344,등기원인증서 작성,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,KEEP,family 대표 URL이 포괄
+345,위임장 작성,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,KEEP,family 대표 URL이 포괄
+346,등기신청서 작성,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,KEEP,family 대표 URL이 포괄
+347,법원 신청서 작성,42 법원 제출서류,/민사소송,EXISTING,/민사소송,COVERED,KEEP,family 대표 URL이 포괄
+348,각종 법원·등기 행정절차 대행,44 등기 행정 부수업무,/등기신청대행,EXISTING,/등기신청대행,COVERED,SKIP_DUPLICATE,VERIFY_BEFORE_ADVERTISING — 독립 페이지 생성 안 함

@@ -123,6 +123,8 @@ export const 부산재산명시Override: SearchIntentContent = {
     depositHub,
     { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
     { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
+    { href: "/부산집행문부여신청", label: "판결 후 집행문 받기" },
+    { href: "/부산채무불이행자명부등재", label: "명시 불응 시 채무불이행자명부" },
     {
       href: "/방문없이준비하는지급명령서류",
       label: "지급명령 서류 원격 준비",
@@ -278,6 +280,7 @@ export const 부산부재자재산관리인Override: SearchIntentContent = {
     familyHub,
     inheritanceHub,
     { href: "/부산상속재산관리인", label: "부산 상속재산관리인" },
+    { href: "/부산실종선고청구", label: "5년 이상 생사불명이면 실종선고" },
     { href: "/연락두절상속인", label: "연락두절 상속인" },
     { href: "/특별대리인자가진단", label: "특별대리인 자가진단" },
     { href: "/부산가정법원상속", label: "부산가정법원 안내" },

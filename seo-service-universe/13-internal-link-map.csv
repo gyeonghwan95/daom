@@ -1,0 +1,25 @@
+﻿FROM,TO,ANCHOR_TYPE,PLACEMENT
+/가족후견,/부산가족관계등록부정정,hub→child,topic hub 링크 목록
+/부산개명허가,/부산가족관계등록부정정,contextual(변형 anchor),관련 안내/본문 링크
+/부산가족관계등록부정정,/가족후견,child→hub,breadcrumb·관련 안내
+/민사소송,/부산집행문부여신청,hub→child,topic hub 링크 목록
+/부산재산명시,/부산집행문부여신청,contextual(변형 anchor),관련 안내/본문 링크
+/채권압류추심서류준비,/부산집행문부여신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산집행문부여신청,/민사소송,child→hub,breadcrumb·관련 안내
+/민사소송,/부산채무불이행자명부등재,hub→child,topic hub 링크 목록
+/부산재산명시,/부산채무불이행자명부등재,contextual(변형 anchor),관련 안내/본문 링크
+/부산채무불이행자명부등재,/민사소송,child→hub,breadcrumb·관련 안내
+/민사소송,/부산배당요구신청,hub→child,topic hub 링크 목록
+/부산임차권등기명령,/부산배당요구신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산경매낙찰등기,/부산배당요구신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산배당요구신청,/민사소송,child→hub,breadcrumb·관련 안내
+/가족후견,/부산실종선고청구,hub→child,topic hub 링크 목록
+/부산부재자재산관리인,/부산실종선고청구,contextual(변형 anchor),관련 안내/본문 링크
+/부산상속등기,/부산실종선고청구,contextual(변형 anchor),관련 안내/본문 링크
+/부산실종선고청구,/가족후견,child→hub,breadcrumb·관련 안내
+/민사소송,/부산가압류신청,hub→child,topic hub 링크 목록
+/가압류신청서류준비,/부산가압류신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산가압류말소등기,/부산가압류신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산재산명시,/부산가압류신청,contextual(변형 anchor),관련 안내/본문 링크
+/부산가압류신청,/민사소송,child→hub,breadcrumb·관련 안내
+/공탁채권회수,/부산변제공탁,role clarification,본문 역할 문장

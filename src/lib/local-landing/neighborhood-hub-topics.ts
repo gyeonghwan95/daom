@@ -775,7 +775,7 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     ],
     relatedPageLinks: [
       core.busanLawyer,
-      { href: "/하단역", label: "하단역 인근 안내" },
+      { href: "/사하구상속포기", label: "사하구 상속포기" },
       { href: "/지급명령자가진단", label: "지급명령 자가진단" },
     ],
     relatedGuPage: { href: "/사하구법무사", label: "사하구 법무사 종합 안내" },

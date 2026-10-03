@@ -1,0 +1,48 @@
+{
+  "services": 348,
+  "excluded": 21,
+  "families": 47,
+  "unmapped": 0,
+  "typeCount": {
+    "A": 180,
+    "C": 94,
+    "G": 14,
+    "E": 27,
+    "B": 12,
+    "H": 20,
+    "D": 1,
+    "I": 21
+  },
+  "decisionCount": {
+    "KEEP": 231,
+    "WATCHLIST": 47,
+    "ADD_SECTION": 25,
+    "UPGRADE_EXISTING": 5,
+    "SKIP_DUPLICATE": 32,
+    "LEGAL_REVIEW_REQUIRED": 2,
+    "NEW_SERVICE_PAGE": 6
+  },
+  "verifyRequired": 48,
+  "serpQueries": 28,
+  "autocompleteTerms": 30,
+  "ownershipQueries": 562,
+  "cannibalHigh": 3,
+  "cannibalMedium": 36,
+  "removedRoutes": 0,
+  "counts": {
+    "01-service-legal-scope.csv": 369,
+    "02-service-intent-families.csv": 47,
+    "03-keyword-universe.csv": 528,
+    "04-naver-demand-evidence.csv": 192,
+    "05-regional-query-matrix.csv": 47,
+    "06-existing-url-coverage.csv": 348,
+    "07-query-url-ownership.csv": 562,
+    "08-cannibalization.csv": 68,
+    "09-true-gaps.csv": 11,
+    "10-upgrade-existing.csv": 7,
+    "11-new-pages.csv": 6,
+    "12-watchlist.csv": 54,
+    "13-internal-link-map.csv": 24,
+    "16-url-preservation.csv": 1871
+  }
+}

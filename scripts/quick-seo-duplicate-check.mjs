@@ -6,6 +6,7 @@
  * - 사이트 전체와 title / description / H1 완전 일치 여부
  *
  * node scripts/quick-seo-duplicate-check.mjs [--out=reports/seo-priority-reset/2026-10-01/03-duplicate-check.csv]
+ *   [--targets=/a,/b] [--pairs=/a:/b,/c:/d] — 지정하면 기본 TARGETS·PAIRS 대신 사용(pairs는 필수 쌍)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -16,14 +17,17 @@ const OUT = path.join(ROOT, "out");
 const outArg = process.argv.find((a) => a.startsWith("--out="))?.slice(6);
 const CSV_OUT = path.join(ROOT, outArg ?? "reports/seo-priority-reset/2026-10-01/03-duplicate-check.csv");
 
-const TARGETS = [
+const targetsArg = process.argv.find((a) => a.startsWith("--targets="))?.slice(10);
+const pairsArg = process.argv.find((a) => a.startsWith("--pairs="))?.slice(8);
+
+const DEFAULT_TARGETS = [
   "/부산상속포기", "/부산한정승인", "/부산상속전문법무사",
   "/부산법무사", "/부산법무사상담", "/부산법무사추천",
   "/부산공탁", "/부산변제공탁", "/부산집행공탁", "/부산담보공탁", "/부산형사공탁", "/공탁금출급회수",
 ];
 
 /** [a, b, 필수 여부] — 필수 쌍은 브리프에서 중복 금지로 지정한 조합 */
-const PAIRS = [
+const DEFAULT_PAIRS = [
   ["/부산상속포기", "/부산한정승인", true],
   ["/부산상속전문법무사", "/부산상속법무사", true],
   ["/부산법무사", "/부산법무사추천", true],
@@ -50,6 +54,11 @@ const PAIRS = [
   ["/부산담보공탁", "/공탁금출급회수", false],
   ["/부산공탁", "/공탁금출급회수", false],
 ];
+
+const TARGETS = targetsArg ? targetsArg.split(",").filter(Boolean) : DEFAULT_TARGETS;
+const PAIRS = pairsArg
+  ? pairsArg.split(",").filter(Boolean).map((p) => [...p.split(":"), true])
+  : DEFAULT_PAIRS;
 
 const decode = (s) =>
   String(s || "")

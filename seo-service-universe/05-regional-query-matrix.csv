@@ -1,0 +1,48 @@
+﻿FAMILY,LOCAL_RELEVANCE,LEVEL1_BUSAN_URL,EXISTING_GU_PAGES,LEVEL2_DECISION,LEVEL3_DECISION,EVIDENCE
+10 토지 분필·합필·지목,2,,2,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+11 구분건물·대지권,3,/부산대지권등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+12 근저당·저당,5,/부산근저당설정등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+13 전세권·임차권,5,/부산전세권설정등기,2,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+14 지상권·지역권,2,/부산지상권설정등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+15 신탁등기,4,/부산신탁등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+16 상속포기·한정승인,5,/부산상속포기,33,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+17 법인설립,5,/부산법인설립등기,16,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+18 법인 임원변경,5,/부산임원변경등기,16,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+19 법인 본점·지점,4,/부산본점이전등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+20 법인 목적·상호,4,/부산사업목적변경등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+21 증자·감자·신주,4,/부산유상증자등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+22 법인 해산·청산,4,/부산법인해산청산등기,39,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+23 회사 비송,1,,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+24 개인회생,5,/부산개인회생,3,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+25 개인파산·면책,5,/부산개인파산,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+26 공탁,4,/부산공탁,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+27 가족관계등록,3,/부산가족관계등록부정정,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+28 개명·성본변경,4,/부산개명허가,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+29 성년·미성년후견,4,/부산가정법원성년후견,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+30 집행문·재산명시·재산조회,3,/부산재산명시,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+31 경매 관련 신청서·등기,4,/부산경매낙찰등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+32 가압류,4,/부산가압류신청,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+33 가처분,3,/가처분신청서류준비,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+34 임대차·보증금,5,/부산임차권등기명령,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+35 부동산 집단등기,4,/부산집단등기,2,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+36 재개발·재건축,4,/부산재개발등기,2,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+37 토지·농지,3,/부산토지매매등기,2,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+38 건물·집합건물,3,/부산건물등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+39 금융기관 담보,4,/부산잔금대출근저당,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+40 PF·부동산개발,4,/부산시행사등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+41 자동차 관련 법원·등록업무,1,,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+42 법원 제출서류,2,/민사소송,1,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+43 부동산 부수신고·공과금,2,/취득세,126,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+44 등기 행정 부수업무,3,/등기신청대행,126,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+45 실종선고·부재자(추가 하위 family),3,/부산실종선고청구,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+"46 집행 증명서(송달·확정증명, 추가)",2,/부산집행문부여신청,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+47 정비조합 법인등기(추가),3,/재건축조합임원변경등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+01 부동산 소유권 보존,3,/부산신축건물보존등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+02 부동산 소유권 이전,5,/부산소유권이전등기,2,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+03 매매등기,5,/부산매매등기법무사,17,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+04 증여등기,5,/부산증여등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+05 상속등기,5,/부산상속등기,32,기존 구 페이지 유지·부산 대표 URL로 상향 링크,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+06 공유물·공유지분,4,/부산공유물분할등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+07 재산분할에 따른 등기,3,/부산이혼재산분할등기,1,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+08 가등기·본등기·말소,3,/부산가등기,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN
+09 표시변경·멸실,3,/부산등기명의인표시변경,0,구별 신규 페이지 생성 안 함 — 부산 대표 URL이 long-tail 포괄,동 단위 신규 금지(지역 고유 정보·수요 증거 없음),구 단위 Naver 수요 미조사 → SEARCH_VOLUME UNKNOWN

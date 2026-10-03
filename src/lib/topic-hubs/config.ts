@@ -452,11 +452,22 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "보전처분·집행",
         intro: "가압류·가처분은 본안 전 재산·현상 보전을 위한 절차입니다.",
         links: [
+          { href: "/부산가압류신청", label: "부산 가압류 신청서 작성 전 확인" },
           { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
           { href: "/가처분신청서류준비", label: "가처분 신청 서류 준비" },
           { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
           { href: "/부산가압류말소등기", label: "가압류 말소등기(이미 설정된 경우)" },
           { href: "/공탁채권회수", label: "공탁·채권압류·추심 안내" },
+        ],
+      },
+      {
+        title: "판결 이후 집행 준비",
+        intro: "판결·지급명령을 받은 뒤에도 상대방이 갚지 않을 때 단계별로 필요한 신청서가 다릅니다.",
+        links: [
+          { href: "/부산집행문부여신청", label: "집행문 부여·승계집행문 신청" },
+          { href: "/부산채무불이행자명부등재", label: "채무불이행자명부 등재 신청" },
+          { href: "/부산배당요구신청", label: "경매 배당요구 신청서" },
+          { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
         ],
       },
       {
@@ -533,7 +544,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
   {
     slug: "공탁채권회수",
     title: "공탁·채권압류·추심｜회수 절차 안내",
-    h1: "부산 변제공탁·채권압류·추심명령 상담",
+    h1: "부산 공탁·채권압류·추심명령 상담",
     description:
       "부산 변제공탁·집행공탁·채권압류·추심명령·미수금회수. 부산지방법원 공탁·민사집행 안내. 다옴법무사사무소.",
     primaryServiceSlug: "inheritance-registration",
@@ -550,6 +561,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "공탁 절차",
         intro: "변제공탁·집행공탁·해방공탁은 사건별 양식과 제출 부수가 다릅니다.",
         links: [
+          { href: "/부산변제공탁", label: "부산 변제공탁 요건·관할 공탁소" },
           { href: "/변제공탁서류준비", label: "변제공탁 서류 준비" },
           { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
           { href: "/부산지방법원법무사", label: "부산지방법원 공탁 접수 안내" },
@@ -613,6 +625,8 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/상속", label: "상속등기·포기·한정승인 허브 보기" },
           { href: "/부산상속재산관리인", label: "상속재산관리인(상속인 없는 경우)" },
           { href: "/부산개명허가", label: "개명허가·성본변경 신청" },
+          { href: "/부산가족관계등록부정정", label: "가족관계등록부 정정허가" },
+          { href: "/부산실종선고청구", label: "실종선고 청구와 상속 정리" },
           { href: "/부산유언검인", label: "유언검인 신청 안내" },
           { href: "/services/inheritance-renunciation", label: "상속포기 가정법원 신고 안내" },
           { href: "/faq/inheritance-renunciation-family-effect", label: "상속포기 가족 효과 FAQ" },

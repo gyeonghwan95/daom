@@ -147,6 +147,7 @@ export const 부산임차권등기명령Override: SearchIntentContent = {
     },
     { href: "/임차권등기명령비용", label: "임차권등기명령 비용" },
     { href: "/임차권등기명령필요서류", label: "임차권등기명령 필요서류" },
+    { href: "/부산배당요구신청", label: "집이 경매로 넘어가면 배당요구" },
     {
       href: "/이사후임차권등기명령준비",
       label: "이사 후·타지역 임차권등기 준비",

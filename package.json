@@ -40,7 +40,7 @@
     "check:inheritance-similarity": "npx --yes tsx scripts/check-inheritance-similarity.ts && npx --yes tsx scripts/inheritance-similarity-audit.ts && npx --yes tsx scripts/inheritance-content-similarity.ts",
     "check:inheritance-intent": "npx --yes tsx scripts/inheritance-intent-audit.ts",
     "freeze:inheritance-baseline": "npx --yes tsx scripts/freeze-inheritance-baseline.ts",
-    "seo:audit": "npx --yes tsx scripts/seo-high-competition-audit.ts && npx --yes tsx scripts/seo-master-2026-08-audit.ts",
+    "seo:audit": "node scripts/seo-universe-audit.mjs && npx --yes tsx scripts/seo-high-competition-audit.ts && npx --yes tsx scripts/seo-master-2026-08-audit.ts",
     "seo:audit:master": "npx --yes tsx scripts/seo-master-audit.ts",
     "seo:audit:master-legacy": "npx --yes tsx scripts/seo-master-2026-08-audit.ts",
     "seo:audit:priority": "npx --yes tsx scripts/audit-target-query-pages.ts && npx --yes tsx scripts/audit-seo-cannibalization.ts && npx --yes tsx scripts/audit-title-patterns.ts && npx --yes tsx scripts/audit-meta-descriptions.ts && npx --yes tsx scripts/audit-faq-duplicates.ts && npx --yes tsx scripts/audit-internal-link-authority.ts && npx --yes tsx scripts/audit-indexability.ts",

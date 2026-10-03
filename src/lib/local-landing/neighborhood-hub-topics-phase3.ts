@@ -369,7 +369,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       { href: "/services/inheritance-registration", label: "상속등기" },
       { href: "/services/real-estate-registration", label: "부동산등기" },
       { href: "/services/ownership-transfer", label: "소유권이전등기" },
-      { href: "/상속포기", label: "상속포기" },
+      { href: "/부산상속포기", label: "상속포기" },
     ],
     relatedPageLinks: [
       { href: "/사하구법무사", label: "사하구 법무사" },
@@ -652,7 +652,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       { href: "/services/inheritance-registration", label: "상속등기" },
       { href: "/services/qualified-acceptance", label: "한정승인" },
       { href: "/services/real-estate-registration", label: "부동산등기" },
-      { href: "/상속포기", label: "상속포기" },
+      { href: "/부산상속포기", label: "상속포기" },
     ],
     relatedPageLinks: [
       { href: "/동래구법무사", label: "동래구 법무사" },
@@ -744,7 +744,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
     serviceLinks: [
       { href: "/services/qualified-acceptance", label: "한정승인" },
       { href: "/services/inheritance-registration", label: "상속등기" },
-      { href: "/상속포기", label: "상속포기" },
+      { href: "/부산상속포기", label: "상속포기" },
       { href: "/services/real-estate-registration", label: "부동산등기" },
     ],
     relatedPageLinks: [

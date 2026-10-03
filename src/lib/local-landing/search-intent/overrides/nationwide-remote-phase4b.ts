@@ -118,6 +118,7 @@ export const 가압류신청서류준비Override: SearchIntentContent = {
   relatedServiceLinks: [
     remoteHub,
     { href: "/민사소송", label: "민사·서류 안내 허브" },
+    { href: "/부산가압류신청", label: "부산 법원 가압류 신청 순서" },
     { href: "/부산가압류말소등기", label: "부산 가압류말소등기" },
     { href: "/부산재산명시", label: "부산 재산명시" },
     {

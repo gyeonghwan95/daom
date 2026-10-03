@@ -133,6 +133,7 @@ import { contentUpgradeRepositionBatch1Overrides } from "./overrides/content-upg
 import { inheritanceAssetGapOverrides } from "./overrides/inheritance-asset-gaps-2026-09-23";
 import { registrationGapBusanOverrides } from "./overrides/registration-gaps-busan-2026-09-23";
 import { civilSmallClaimsBusanOverrides } from "./overrides/civil-small-claims-busan-2026-10-03";
+import { universeWave1Overrides } from "./overrides/universe-wave1-2026-10-04";
 
 export type {
   SearchGuideEntry,
@@ -163,6 +164,7 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...inheritanceAssetGapOverrides,
   ...registrationGapBusanOverrides,
   ...civilSmallClaimsBusanOverrides,
+  ...universeWave1Overrides,
   등기관할과사무소위치: 등기관할과사무소위치Override,
   부산보상등기: 부산보상등기Override,
   공공기관법인등기: 공공기관법인등기Override,

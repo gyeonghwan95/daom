@@ -388,7 +388,7 @@ export const phaseYangsanClusterDefs: GyeongnamLandingDef[] = [
       "부산김해양산공동근저당권",
       "양산증여등기법무사",
     ],
-    relatedServiceSlugs: ["/부산근저당말소", "/부산근저당설정등기"],
+    relatedServiceSlugs: ["/부산근저당말소등기", "/부산근저당설정등기"],
     ctaTitle: "양산 근저당 말소 서류 확인",
     ctaDescription:
       "양산 부동산 주소와 상환·은행 서류 보유 여부만 알려주셔도 말소 가능 여부와 비용 확인 항목을 안내합니다.",
@@ -448,7 +448,7 @@ export const phaseYangsanClusterDefs: GyeongnamLandingDef[] = [
       "양산신축건물보존등기",
       "양산부동산등기법무사",
     ],
-    relatedServiceSlugs: ["/services/preservation-registration", "/부산부동산등기"],
+    relatedServiceSlugs: ["/부산신축건물보존등기", "/부산부동산등기"],
     ctaTitle: "양산 멸실등기 여부 확인",
     ctaDescription:
       "건물 주소와 건축물대장·등기부를 기준으로 멸실등기 필요 여부와 비용 확인 자료를 살펴볼 수 있습니다.",
@@ -508,7 +508,7 @@ export const phaseYangsanClusterDefs: GyeongnamLandingDef[] = [
       "양산건물멸실등기",
       "양산부동산등기법무사",
     ],
-    relatedServiceSlugs: ["/services/preservation-registration", "/부산부동산등기"],
+    relatedServiceSlugs: ["/부산신축건물보존등기", "/부산부동산등기"],
     ctaTitle: "양산 보존등기 준비자료 확인",
     ctaDescription:
       "사용승인·건축물대장 기준으로 보존등기 준비서류와 비용 확인 항목을 안내합니다.",

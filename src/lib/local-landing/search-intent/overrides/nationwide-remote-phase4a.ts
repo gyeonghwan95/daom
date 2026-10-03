@@ -341,7 +341,7 @@ export const 공유물분할등기서류준비Override: SearchIntentContent = {
     },
     { href: "/부산공동명의등기", label: "부산 공동명의등기" },
     { href: "/부산지분이전등기", label: "부산 지분이전등기" },
-    { href: "/부산부동산명의변경", label: "부산 부동산 명의변경" },
+    { href: "/부산명의변경등기", label: "부산 부동산 명의변경" },
     { href: "/연락두절상속인", label: "연락두절 상속인" },
   ],
   relatedGuideLinks: [

@@ -698,6 +698,7 @@ export const 부산개명허가Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     familyHub,
+    { href: "/부산가족관계등록부정정", label: "이름·생년월일 오기라면 등록부 정정" },
     { href: "/성년후견자가진단", label: "성년후견 자가진단" },
     { href: "/부산가정법원상속", label: "부산가정법원 안내" },
     { href: "/부산등기명의인표시변경", label: "등기명의인 표시변경" },

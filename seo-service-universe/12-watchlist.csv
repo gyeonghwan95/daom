@@ -1,0 +1,55 @@
+﻿ITEM,SERVICE_IDS,STATUS,REASON,RECHECK_TRIGGER
+임시주주총회 소집허가,"121,122",LEGAL_REVIEW_REQUIRED,score 19,Search Advisor 노출/문의 발생 시 재평가
+토지 분필·합필,"26-28,271-274",WATCHLIST,score 12,Search Advisor 노출/문의 발생 시 재평가
+유한책임회사 설립,83,WATCHLIST,score 15,Search Advisor 노출/문의 발생 시 재평가
+진정명의회복 등기,14,WATCHLIST,score 13,Search Advisor 노출/문의 발생 시 재평가
+자동차 저당권,"307,308",WATCHLIST,score 7,Search Advisor 노출/문의 발생 시 재평가
+진정명의회복에 의한 소유권이전등기,14,WATCHLIST,"자동완성 有, 소송 연계 비중 큼 — 등기 section 후보",/부산소유권이전등기 section 추가 검토
+토지 표시변경등기,24,WATCHLIST,토지 표시변경은 대장 정리 후 촉탁 비중 큼,수요 증거 확보 시
+토지 분필등기,26,WATCHLIST,"지적소관청 촉탁 구조, Daom은 인접 페이지만 노출",수요 증거 확보 시
+토지 합필등기,27,WATCHLIST,지적소관청 촉탁 구조,수요 증거 확보 시
+지목변경 관련 등기,28,WATCHLIST,지적소관청 촉탁 구조,수요 증거 확보 시
+전세권 변경등기,40,WATCHLIST,전세권 변경 section 후보(Wave 2),/부산전세권설정등기 section 추가 검토
+전세권 이전등기,41,WATCHLIST,전세권 이전 수요 미확인,/부산전세권설정등기 section 추가 검토
+지역권 설정등기,47,WATCHLIST,지역권 검색 증거 없음,수요 증거 확보 시
+지역권 변경등기,48,WATCHLIST,지역권 검색 증거 없음,수요 증거 확보 시
+지역권 말소등기,49,WATCHLIST,지역권 검색 증거 없음,수요 증거 확보 시
+유한책임회사 관련 등기,83,WATCHLIST,"자동완성 1건, 사례 없음",수요 증거 확보 시
+외국회사 관련 등기,84,WATCHLIST,검색 증거 없음,수요 증거 확보 시
+주식분할 관련 등기,106,WATCHLIST,,수요 증거 확보 시
+주식병합 관련 등기,107,WATCHLIST,,수요 증거 확보 시
+전환사채 관련 등기,108,WATCHLIST,,수요 증거 확보 시
+신주인수권부사채 관련 등기,109,WATCHLIST,,수요 증거 확보 시
+회사의 종류 변경 관련 등기,111,WATCHLIST,조직변경 수요 미확인,수요 증거 확보 시
+검사인 선임 관련 신청,120,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+임시총회 소집 관련 신청,121,LEGAL_REVIEW_REQUIRED,"SERP가 경영권 분쟁 로펌 위주, 자동완성 없음",수요 증거 확보 시
+주주총회 관련 비송사건 신청,122,LEGAL_REVIEW_REQUIRED,분쟁성 사건 경계,수요 증거 확보 시
+청산인 관련 비송사건,123,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+법인 해산 관련 비송사건,124,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+청산 관련 비송사건,125,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+회사 관련 비송사건 신청서 작성,126,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+상업등기 관련 비송사건 서류작성,127,WATCHLIST,대표 URL 없음·증거 미확인,수요 증거 확보 시
+면책불허가 사유 관련 소명자료 작성,153,WATCHLIST,소명 section 후보,/부산면책신청 section 추가 검토
+복권 관련 신청서 작성,155,WATCHLIST,복권 section 후보,/부산면책신청 section 추가 검토
+보관공탁,159,WATCHLIST,,/부산공탁 section 추가 검토
+몰취공탁,160,WATCHLIST,,/부산공탁 section 추가 검토
+임의후견 관련 신청,190,WATCHLIST,"공정증서 필요, 수요 미확인",수요 증거 확보 시
+미성년후견 관련 신청,196,WATCHLIST,미성년후견 수요 미확인,수요 증거 확보 시
+친족관계 관련 비송신청,200,WATCHLIST,,수요 증거 확보 시
+부동산 강제경매 신청서 작성,215,WATCHLIST,경매신청서 작성 수요 미조사,수요 증거 확보 시
+부동산 임의경매 신청서 작성,216,WATCHLIST,경매신청서 작성 수요 미조사,수요 증거 확보 시
+경매신청 관련 서류작성,217,WATCHLIST,,수요 증거 확보 시
+경매 취하 관련 서류작성,220,WATCHLIST,,수요 증거 확보 시
+전세권 변경등기,240,WATCHLIST,,/부산전세권설정등기 section 추가 검토
+상가임대차 관련 신청서 작성,245,WATCHLIST,상가임대차 수요 미조사,수요 증거 확보 시
+이전고시에 따른 소유권등기,262,WATCHLIST,이전고시 section 후보,/부산재개발등기 section 추가 검토
+토지 소유권보존등기,269,WATCHLIST,미등기 토지 보존 수요 미조사,수요 증거 확보 시
+토지 분필등기,271,WATCHLIST,,수요 증거 확보 시
+토지 합필등기,272,WATCHLIST,,수요 증거 확보 시
+토지 표시변경등기,273,WATCHLIST,,수요 증거 확보 시
+지목변경 관련 등기,274,WATCHLIST,,수요 증거 확보 시
+농지 관련 소유권이전등기,278,WATCHLIST,농지법 선행요건,수요 증거 확보 시
+자동차 저당권 설정 관련 업무,307,WATCHLIST,자동차 등록 — 대리 표현 제한,수요 증거 확보 시
+자동차 저당권 말소 관련 업무,308,WATCHLIST,,수요 증거 확보 시
+자동차 강제집행 관련 신청서 작성,310,WATCHLIST,,수요 증거 확보 시
+자동차 관련 법원 제출서류 작성,311,WATCHLIST,,수요 증거 확보 시

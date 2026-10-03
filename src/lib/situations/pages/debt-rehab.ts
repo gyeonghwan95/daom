@@ -91,7 +91,7 @@ export const debtRehabPages = [
     diagnosisLinks: [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -223,7 +223,7 @@ export const debtRehabPages = [
     diagnosisLinks: [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -355,7 +355,7 @@ export const debtRehabPages = [
     diagnosisLinks: [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [
@@ -484,7 +484,7 @@ export const debtRehabPages = [
       "변제·면책·생활 재정 복구",
     ],
     diagnosisLinks: [
-      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
@@ -617,7 +617,7 @@ export const debtRehabPages = [
     diagnosisLinks: [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-      { href: "/채무자가진단", label: "채무 자가진단" },
+      { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/자가진단", label: "자가진단 허브" },
     ],
     serviceLinks: [

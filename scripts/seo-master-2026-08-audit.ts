@@ -216,7 +216,8 @@ async function main() {
   fs.mkdirSync(path.dirname(SNAPSHOT), { recursive: true });
 
   const published = getAllPublishedPaths().map((p) => normalizeRouteSlug(p));
-  fs.writeFileSync(
+  // seo-zero-regression-freeze가 이 파일을 삭제 감지 기준선으로 읽으므로 있으면 덮어쓰지 않는다.
+  if (!fs.existsSync(SNAPSHOT)) fs.writeFileSync(
     SNAPSHOT,
     JSON.stringify(
       {
