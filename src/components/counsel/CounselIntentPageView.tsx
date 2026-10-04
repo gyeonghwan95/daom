@@ -172,8 +172,8 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
           </table>
         </div>
         <p className="mt-3 text-sm text-navy/70">
-          “불가능”이라고 일률적으로 단정하지 않습니다. 사안별로 적절한
-          업무영역 확인이 필요합니다.
+          소송대리·형사변호·협상대리는 이 사무소가 수행하지 않습니다. 법원
+          제출서류 작성과 등기·회생파산 신청 대리는 위 표의 범위에서 진행합니다.
         </p>
       </ContentSection>
 

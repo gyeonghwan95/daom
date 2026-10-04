@@ -118,8 +118,9 @@ export function LawyerTrustShowcase() {
               <span className="block">안윤정 법무사가 직접 답해 드립니다</span>
             </h2>
             <p className="mt-3 text-[0.98rem] leading-relaxed text-navy/75 @md:text-base">
-              자격과 현장 경험으로 이력을 쌓아 온 대표 법무사가 상속·등기·법인·민사·회생파산
-              상담을 직접 맡습니다. 부산 해운대 센텀 사무소에서 의뢰인 곁에서 함께합니다.
+              자격과 현장 경험으로 이력을 쌓아 온 대표 법무사가 상속·부동산·법인등기, 민사
+              법원서류, 개인회생·파산 신청에 필요한 상담을 직접 맡습니다. 부산 해운대 센텀
+              사무소에서 의뢰인 곁에서 함께합니다.
             </p>
           </header>
 

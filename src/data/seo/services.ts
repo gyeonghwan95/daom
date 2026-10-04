@@ -266,7 +266,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["채권회수", "부산 채권회수", "대여금 소송", "미수금 회수"],
     description:
-      "대여금·매매대금·임대료 등 채권 회수를 위한 내용증명·지급명령·소송을 지원합니다.",
+      "대여금·매매대금·임대료 등 채권 회수를 위한 내용증명 작성과 지급명령 신청서·소장 등 법원 제출서류 작성·제출 대행을 지원합니다. 이 사무소는 소송대리를 수행하지 않습니다.",
     relatedServices: ["payment-order", "certified-mail", "deposit"],
     relatedRegions: ["busan", "busanjin-gu"],
     searchIntent: "consultation",

@@ -37,7 +37,10 @@ import { MassRegistryB2BAddon } from "@/components/b2b/MassRegistryB2BAddon";
 import { allServiceDetails } from "@/lib/services-data";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
-import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
+import {
+  getNationwideBannerHeadline,
+  shouldShowNationwideRegionChip,
+} from "@/lib/nationwide/show-region-chip";
 import Link from "next/link";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
@@ -168,7 +171,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         showNationwideChip={showNationwide}
       />
 
-      {showNationwide ? <NationwideServiceCard /> : null}
+      {showNationwide ? (
+        <NationwideServiceCard headline={getNationwideBannerHeadline(page.slug)} />
+      ) : null}
 
       {content.situationNav?.length ? (
         <ContentSection id="situation-nav" title="지금 어떤 상황이신가요?">

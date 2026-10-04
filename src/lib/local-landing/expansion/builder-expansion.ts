@@ -481,7 +481,7 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
   const serviceLabel = serviceLabels[inst.primaryServiceSlug] ?? "등기·상속";
   const neighborhoods = config.neighborhoods.join(", ");
 
-  const problemStatement = `${inst.institutionName} 관련 절차를 앞두고 계신가요? ${inst.jurisdictionNote} 방문 전에 관할, 서류, 신청 순서를 미리 확인하는 것이 중요합니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${neighborhoods} 일대를 포함해 ${inst.institutionName} 접수 전 상담·서류 준비·대리 접수를 도와드립니다. 본 페이지는 공식 기관 사이트가 아니며, 실무상 접수 절차와 준비서류를 법무사 관점에서 안내합니다.`;
+  const problemStatement = `${inst.institutionName} 관련 절차를 앞두고 계신가요? ${inst.jurisdictionNote} 방문 전에 관할, 서류, 신청 순서를 미리 확인하는 것이 중요합니다. 다옴법무사사무소는 부산 해운대 센텀에 있으며, ${neighborhoods} 일대를 포함해 ${inst.institutionName} 접수 전 상담과 관련 신청서·첨부서류 작성 및 제출 대행을 지원합니다. 본 페이지는 공식 기관 사이트가 아니며, 실무상 접수 절차와 준비서류를 법무사 관점에서 안내합니다.`;
 
   const whenNeeded = [
     `${inst.institutionName}에 ${serviceLabel} 관련 서류를 접수해야 할 때`,

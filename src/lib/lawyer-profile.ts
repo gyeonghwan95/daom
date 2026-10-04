@@ -54,7 +54,7 @@ export const lawyerExperience: LawyerExperience[] = [
     period: "2025.06 ~",
     title: "지역 기업 법률지원",
     description:
-      "명례일반산업단지와 법률지원 MOU를 체결하고 등기·계약·분쟁 예방 자문을 수행합니다.",
+      "명례일반산업단지와 법률지원 MOU를 체결했습니다.",
   },
   {
     period: "2025 ~",
@@ -191,7 +191,7 @@ export const lawyerActivities: LawyerActivity[] = [
     organization: "명례일반산업단지",
     category: "기업·공공 협력",
     period: "2025.06.26",
-    summary: "산업단지 법률지원 협약 체결·자문.",
+    summary: "산업단지 법률지원 협약 체결.",
   },
   {
     title: "청년·시민 법률 지원",

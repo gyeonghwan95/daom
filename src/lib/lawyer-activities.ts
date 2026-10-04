@@ -80,7 +80,7 @@ const externalActivityEntries: ExternalActivityItem[] = [
     id: "mou",
     category: "기업 협력",
     title: "명례일반산업단지 MOU",
-    subtitle: "법률지원 협약 체결·자문",
+    subtitle: "법률지원 협약 체결",
     period: "2025.06.26",
     image: activityImage(
       imagePaths.activityMou,

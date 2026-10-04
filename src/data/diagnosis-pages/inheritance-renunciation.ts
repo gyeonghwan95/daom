@@ -121,7 +121,7 @@ export const inheritanceRenunciationDiagnosis: Diagnosis = {
     "관할 가정법원 상속포기 신고",
     "신고 후 등기·채권자 대응 정리",
   ],
-  costFactors: ["상속인 수", "채무 조사 범위", "가정법원 신고 대리"],
+  costFactors: ["상속인 수", "채무 조사 범위", "신고서·첨부서류 작성 및 제출 대행"],
   deadlineWarnings: [
     "원칙적으로 상속 개시 후 3개월 내 신고",
     "기한 경과 시 단순승인 간주 위험",

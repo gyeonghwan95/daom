@@ -1,0 +1,89 @@
+# 2026-10-04 SEO 점검·업무범위·과태료 정정 - 다시 색인 요청할 URL (내용이 바뀌거나 새로 생긴 URL 35개)
+# 배포 후 실제 사이트에 반영된 것을 확인한 다음 제출
+# 전체 sitemap 재제출 금지. 수집 요청·IndexNow 성공은 색인 완료나 순위 상승을 뜻하지 않음
+# npm run indexnow 자동 제출 대상(lastmod 변경)은 /상속등기자가진단, /tools/inheritance-registration-cost 2개뿐 - 나머지는 서치어드바이저에서 직접 요청
+# 오전 Wave 1 목록(indexnow-2026-10-04-service-universe.txt, 16개)은 별도
+
+## 네이버 서치어드바이저 웹페이지 수집용 (한글 주소)
+# 1순위 - 사실 오류 정정(상속등기 과태료·기한) - 잘못된 내용이 검색 결과에 남아 있어 가장 먼저
+https://다옴법무사사무소.kr/situations/상속등기-지연-과태료
+https://다옴법무사사무소.kr/상속등기과태료
+https://다옴법무사사무소.kr/faq/when-to-file-inheritance-registration
+https://다옴법무사사무소.kr/blog/delaying-inheritance-registration-risks
+https://다옴법무사사무소.kr/blog/three-months-after-death-inheritance
+https://다옴법무사사무소.kr/상속등기자가진단
+https://다옴법무사사무소.kr/tools/inheritance-registration-deadline
+https://다옴법무사사무소.kr/situations/parent-passed-away
+https://다옴법무사사무소.kr/situations/전입신고-확정일자-없음
+
+# 2순위 - 전국 비용 검색 보강(법정 세율·법원비용 섹션 추가) + 신규 계산기
+https://다옴법무사사무소.kr/상속등기비용
+https://다옴법무사사무소.kr/tools/inheritance-registration-cost
+https://다옴법무사사무소.kr/상속포기비용
+https://다옴법무사사무소.kr/한정승인비용
+https://다옴법무사사무소.kr/소유권이전등기비용
+https://다옴법무사사무소.kr/부동산등기비용
+https://다옴법무사사무소.kr/근저당말소비용
+https://다옴법무사사무소.kr/개인회생비용
+https://다옴법무사사무소.kr/개인파산비용
+https://다옴법무사사무소.kr/증여등기비용
+https://다옴법무사사무소.kr/법인등기비용
+https://다옴법무사사무소.kr/법인설립등기비용
+https://다옴법무사사무소.kr/임차권등기명령비용
+https://다옴법무사사무소.kr/tools/payment-order-fee-check
+https://다옴법무사사무소.kr/부산지방법원지급명령
+https://다옴법무사사무소.kr/부산지방법원동부지원지급명령
+
+# 3순위 - 법무사 업무범위 정리(분쟁·소송 대리 암시 문구 수정)
+https://다옴법무사사무소.kr/situations/계약금-반환-분쟁
+https://다옴법무사사무소.kr/situations/중고거래-분쟁
+https://다옴법무사사무소.kr/situations/내용증명-받았을-때
+https://다옴법무사사무소.kr/situations/손해배상-청구
+https://다옴법무사사무소.kr/situations/분류/계약-일상-분쟁
+https://다옴법무사사무소.kr/situations/잔금-후-소유권이전-거부
+https://다옴법무사사무소.kr/situations/집주인-연락-두절
+https://다옴법무사사무소.kr/blog/complaint-filing-required-materials
+https://다옴법무사사무소.kr/blog/jeonse-deposit-return-certified-mail
+https://다옴법무사사무소.kr/tools
+
+## IndexNow용 (퍼센트 인코딩)
+# 1순위 - 사실 오류 정정(상속등기 과태료·기한) - 잘못된 내용이 검색 결과에 남아 있어 가장 먼저
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0-%EC%A7%80%EC%97%B0-%EA%B3%BC%ED%83%9C%EB%A3%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/faq/when-to-file-inheritance-registration
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/delaying-inheritance-registration-risks
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/three-months-after-death-inheritance
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8
+https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-deadline
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/parent-passed-away
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EC%97%86%EC%9D%8C
+
+# 2순위 - 전국 비용 검색 보강(법정 세율·법원비용 섹션 추가) + 신규 계산기
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-cost
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/tools/payment-order-fee-check
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EC%A7%80%EA%B8%89%EB%AA%85%EB%A0%B9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EC%A7%80%EA%B8%89%EB%AA%85%EB%A0%B9
+
+# 3순위 - 법무사 업무범위 정리(분쟁·소송 대리 암시 문구 수정)
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EA%B3%84%EC%95%BD%EA%B8%88-%EB%B0%98%ED%99%98-%EB%B6%84%EC%9F%81
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98-%EB%B6%84%EC%9F%81
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EB%82%B4%EC%9A%A9%EC%A6%9D%EB%AA%85-%EB%B0%9B%EC%95%98%EC%9D%84-%EB%95%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%86%90%ED%95%B4%EB%B0%B0%EC%83%81-%EC%B2%AD%EA%B5%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EB%B6%84%EB%A5%98/%EA%B3%84%EC%95%BD-%EC%9D%BC%EC%83%81-%EB%B6%84%EC%9F%81
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%9E%94%EA%B8%88-%ED%9B%84-%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84-%EA%B1%B0%EB%B6%80
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EC%A7%91%EC%A3%BC%EC%9D%B8-%EC%97%B0%EB%9D%BD-%EB%91%90%EC%A0%88
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/complaint-filing-required-materials
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/jeonse-deposit-return-certified-mail
+https://xn--2j1br1na42lvxja38mk8r.kr/tools
