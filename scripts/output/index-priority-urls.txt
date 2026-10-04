@@ -1,12 +1,12 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-03T16:26:40.176Z
+# 생성: 2026-10-04T10:22:05.139Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1680 (제외 179)
+# 총 URL: 1681 (제외 179)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
 # Tier 2 — 1주차 (지역·전국 허브): 28개
-# Tier 3 — 2주차 (광역·비용·자가진단·도구): 175개
+# Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 593개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
 # Tier 6 — 순차 (기타 키워드 랜딩): 601개
@@ -70,7 +70,7 @@ Tier 2 — 1주차 (지역·전국 허브) (28개)
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/tools	/tools
 
 ────────────────────────────────────────────────────────────────────────
-Tier 3 — 2주차 (광역·비용·자가진단·도구) (175개)
+Tier 3 — 2주차 (광역·비용·자가진단·도구) (176개)
 ────────────────────────────────────────────────────────────────────────
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8	/개인파산자가진단
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8	/개인회생자가진단
@@ -241,6 +241,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (175개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/situations/siblings-not-cooperating	/situations/siblings-not-cooperating
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/director-change-penalty-deadline	/tools/director-change-penalty-deadline
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/head-office-move-deadline	/tools/head-office-move-deadline
+[T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-cost	/tools/inheritance-registration-cost
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-deadline	/tools/inheritance-registration-deadline
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-renunciation-deadline	/tools/inheritance-renunciation-deadline
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/jeonse-deposit-timeline	/tools/jeonse-deposit-timeline

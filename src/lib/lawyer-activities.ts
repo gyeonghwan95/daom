@@ -271,8 +271,8 @@ export const lawyerActivitySections: LawyerActivitySection[] = [
     image: siteImages.media.community,
     highlights: [
       {
-        title: "기업 법무 특화",
-        body: "기장 명례일반산업단지와 법률지원 협약(MOU, 2025.06.26)을 체결한 경험이 있으며, 여러 법률 자문을 진행하고 있습니다.",
+        title: "기업 등기·법원 서류 지원",
+        body: "기장 명례일반산업단지와 법률지원 협약(MOU, 2025.06.26)을 체결했으며, 기업의 등기·법원 제출 서류 업무와 관련한 상담을 하고 있습니다.",
       },
       {
         title: "공공기관 협업",

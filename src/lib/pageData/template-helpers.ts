@@ -71,12 +71,19 @@ function uniqueFaqs(faqs: PageFaqItem[]): PageFaqItem[] {
   );
 }
 
+const DISPUTE_TITLE = /분쟁|손해배상|소송|합의/;
+
 export function defaultFaqs(title: string, region = "부산"): PageFaqItem[] {
   return [
-    {
-      question: `${title} 상담은 어디서 받을 수 있나요?`,
-      answer: `다옴법무사사무소는 해운대구 센텀에 있으며, ${region} 전역 사건을 전화·카카오톡·네이버 톡톡·방문(예약)으로 상담합니다.`,
-    },
+    DISPUTE_TITLE.test(title)
+      ? {
+          question: `${title} 관련 서류는 어디서 준비하나요?`,
+          answer: `다옴법무사사무소(해운대구 센텀)는 지급명령 신청서·소장·답변서 등 법원에 내는 서류의 작성과 제출 대행을 맡습니다. 상대방과의 협상·합의나 소송대리는 하지 않으며, 다툼이 크면 변호사 상담을 권합니다.`,
+        }
+      : {
+          question: `${title} 상담은 어디서 받을 수 있나요?`,
+          answer: `다옴법무사사무소는 해운대구 센텀에 있으며, ${region} 전역 사건을 전화·카카오톡·네이버 톡톡·방문(예약)으로 상담합니다.`,
+        },
     {
       question: "비용은 어떻게 안내되나요?",
       answer:
@@ -158,6 +165,7 @@ export type CreatePageDataInput = {
   includeFaqSchema?: boolean;
   openGraphType?: "website" | "article";
   serviceSlug?: string;
+  serviceSchemaName?: string;
   landingPageType?: LocalLandingPageType;
   regionKey?: string;
   seoLandingType?: SeoLandingPageType;
@@ -256,6 +264,9 @@ export function createPageData(input: CreatePageDataInput): PageData {
     includeFaqSchema: input.includeFaqSchema ?? input.category === "faq",
     openGraphType: input.openGraphType,
     serviceSlug: input.serviceSlug,
+    ...(input.serviceSchemaName
+      ? { serviceSchemaName: input.serviceSchemaName }
+      : {}),
   };
 
   if (isGlossary) return page;

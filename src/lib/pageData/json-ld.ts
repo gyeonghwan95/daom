@@ -53,7 +53,9 @@ export function buildJsonLdForPageData(
     }),
   ];
   if (!isExpertHub && page.category !== "glossary") {
-    schemas.push(buildServicePageSchema(page.title, canonicalPath));
+    schemas.push(
+      buildServicePageSchema(page.serviceSchemaName ?? page.title, canonicalPath),
+    );
   }
 
   if (page.includeFaqSchema) {

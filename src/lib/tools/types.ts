@@ -7,6 +7,7 @@ export const TOOL_DISCLAIMER =
 export type ToolCalculatorType =
   | "inheritance-registration-deadline"
   | "inheritance-renunciation-deadline"
+  | "inheritance-registration-cost"
   | "director-change-penalty"
   | "head-office-move-deadline"
   | "jeonse-deposit-timeline"
@@ -42,6 +43,15 @@ export type ToolDefinition = ContentRelations & {
   serviceLinks: PageRelatedLink[];
   faqs: PageFaqItem[];
   serviceSlug?: string;
+  guideSections?: ToolGuideSection[];
+};
+
+export type ToolGuideSection = {
+  id: string;
+  title: string;
+  body?: string;
+  items: string[];
+  links?: PageRelatedLink[];
 };
 
 export type ToolsHubConfig = {

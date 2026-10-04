@@ -24,8 +24,15 @@ const SITUATION_CATEGORY_META_TITLES: Record<SituationCategoryId, string> = {
   "debt-rehab": "개인채무·회생·파산｜빚·압류·신청 가능 여부",
   "corporate-business": "법인·사업 운영｜설립·임원·본점이전 상황별",
   "debt-collection": "돈을 받지 못한 경우｜지급명령·강제집행 상황별",
-  "contract-dispute": "계약·일상 분쟁｜계약금·내용증명·합의 상황별",
+  "contract-dispute": "계약·일상 분쟁｜계약금·내용증명·지급명령 상황별",
 };
+
+const DISPUTE_SCOPE_POINTS = [
+  "청구 금액과 상대방 주소가 분명하면 지급명령 신청서를 준비할 수 있습니다",
+  "지급명령 신청서·소장·답변서·이의신청서 등 법원에 내는 서류는 법무사가 작성하고 제출을 대행할 수 있습니다",
+  "상대방과의 협상·합의, 소송대리, 법정 변론은 법무사 업무가 아닙니다",
+  "다툼이 크거나 소송 수행이 필요하면 변호사 상담을 받으세요",
+];
 
 function collectInternalLinks(page: SituationPage) {
   const relatedSituations = getRelatedSituationLinks(page);
@@ -49,6 +56,7 @@ function collectInternalLinks(page: SituationPage) {
 
 export function buildPageDataFromSituation(page: SituationPage): PageData {
   const category = getSituationCategoryById(page.situationCategory);
+  const isDispute = page.situationCategory === "contract-dispute";
   const relatedSituations = getRelatedSituationLinks(page);
 
   const solutionProse = page.solutions
@@ -78,7 +86,9 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
         ? `혼자 서류·절차를 진행해 볼 수 있는 경우로는 ${page.selfHandleCases.slice(0, 2).join(" ")} 정도가 있습니다.`
         : "",
       page.lawyerNeededCases[0]
-        ? `반면 ${page.lawyerNeededCases.slice(0, 2).join(" ")}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
+        ? isDispute
+          ? `반면 ${page.lawyerNeededCases.slice(0, 2).join(" ")}처럼 다툼이 크거나 소송이 예상되면 변호사 상담이 필요합니다. 법무사는 지급명령·소장 등 법원 제출 서류의 작성과 제출 대행을 맡고, 상대방과의 협상·합의나 소송대리는 하지 않습니다.`
+          : `반면 ${page.lawyerNeededCases.slice(0, 2).join(" ")}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
         : "",
     ]
       .filter(Boolean)
@@ -95,7 +105,9 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     },
     {
       title: "비용·기간에 영향을 주는 요소",
-      body: "사건마다 다르지만, 아래 요소가 수임료·등기·법원 비용에 영향을 줍니다.",
+      body: isDispute
+        ? "사건마다 다르지만, 아래 요소에 따라 인지대·송달료 등 법원 비용과 준비할 서류가 달라집니다. 소송대리가 필요하면 변호사 선임 비용이 별도로 듭니다."
+        : "사건마다 다르지만, 아래 요소가 수임료·등기·법원 비용에 영향을 줍니다.",
       items: page.costFactors,
     },
     {
@@ -144,20 +156,28 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     introParagraphs: [page.intro, ...bodyProse],
     procedures: page.procedures,
     documents: page.documents,
-    consultationPoints: page.lawyerNeededCases.slice(0, 5),
+    consultationPoints: isDispute
+      ? DISPUTE_SCOPE_POINTS
+      : page.lawyerNeededCases.slice(0, 5),
     faqs: page.faqs,
     consultationExample: page.caseExample,
     internalLinks: collectInternalLinks(page),
     sections,
     primaryKeywords: [page.cardTitle, page.searchIntent, category.label],
     serviceSlug: page.serviceSlug,
+    serviceSchemaName: isDispute
+      ? `${page.cardTitle} 관련 법원 제출 서류 작성`
+      : undefined,
     ogImage: page.serviceSlug
       ? getServiceImage(page.serviceSlug).src
       : undefined,
     includeFaqSchema: true,
-    ctaTitle: "지금 상황, 함께 정리해 드립니다",
-    ctaText:
-      "위 내용은 일반적인 안내이며, 법률·절차는 사건마다 달라질 수 있습니다. 사실관계·서류·기한을 확인한 뒤 다음 단계를 정하는 것이 좋습니다. 부산 해운대구·센텀 다옴법무사사무소에 연락 주시면 우선순위부터 정리해 드립니다.",
+    ctaTitle: isDispute
+      ? "법원에 낼 서류가 필요할 때"
+      : "지금 상황, 함께 정리해 드립니다",
+    ctaText: isDispute
+      ? "위 내용은 일반적인 안내이며, 법률·절차는 사건마다 달라질 수 있습니다. 부산 해운대구·센텀 다옴법무사사무소는 지급명령 신청서·소장·답변서 등 법원 제출 서류의 작성과 제출 대행을 맡습니다. 상대방과의 협상이나 소송대리는 하지 않으므로, 다툼이 크면 변호사 상담을 권합니다."
+      : "위 내용은 일반적인 안내이며, 법률·절차는 사건마다 달라질 수 있습니다. 사실관계·서류·기한을 확인한 뒤 다음 단계를 정하는 것이 좋습니다. 부산 해운대구·센텀 다옴법무사사무소에 연락 주시면 우선순위부터 정리해 드립니다.",
   });
 }
 
@@ -258,11 +278,17 @@ export function buildSituationCategoryHubPageData(
     ],
     introParagraphs: [category.hubIntro],
     faqs: [
-      {
-        question: `${category.label} 상담은 어떻게 시작하나요?`,
-        answer:
-          "겪고 계신 상황을 말씀해 주시면, 관련 안내 페이지·자가진단·필요 서류를 함께 정리해 드립니다. 전화·카카오톡·방문(예약) 상담이 가능합니다.",
-      },
+      categoryId === "contract-dispute"
+        ? {
+            question: "상대방과의 협상이나 합의도 맡길 수 있나요?",
+            answer:
+              "아닙니다. 법무사는 상대방과의 협상·합의나 소송대리를 하지 않습니다. 다툼이 크면 변호사 상담을 받으시고, 법원에 낼 서류가 필요하면 지급명령 신청서·소장·답변서의 작성과 제출 대행을 맡길 수 있습니다.",
+          }
+        : {
+            question: `${category.label} 상담은 어떻게 시작하나요?`,
+            answer:
+              "겪고 계신 상황을 말씀해 주시면, 관련 안내 페이지·자가진단·필요 서류를 함께 정리해 드립니다. 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+          },
       {
         question: "업무명을 몰라도 괜찮은가요?",
         answer:
@@ -285,6 +311,10 @@ export function buildSituationCategoryHubPageData(
       },
     ],
     primaryKeywords: [category.label, category.shortLabel, "상황별 법률문제"],
+    serviceSchemaName:
+      categoryId === "contract-dispute"
+        ? `${category.label} 관련 법원 제출 서류 작성`
+        : undefined,
     includeFaqSchema: true,
     ctaTitle: `${category.shortLabel} 문제, 다음 단계부터`,
     ctaText:

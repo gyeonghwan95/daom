@@ -30,7 +30,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
         "상속 개시와 동시에 상속인 지위가 생기며, 채무가 의심되면 상속등기보다 상속포기·한정승인 여부를 먼저 검토해야 합니다.",
         "채무가 크지 않다고 판단되면 상속등기를 진행하되, 피상속인 명의 부동산·예금·주식 등 재산 목록을 먼저 정리하는 것이 좋습니다.",
         "상속포기·한정승인은 상속인임을 안 날로부터 3개월 이내 가정법원 신고가 필요합니다.",
-        "상속등기는 기한이 지나 과태료가 부과될 수 있어, 방치하지 않는 것이 중요합니다.",
+        "상속등기 자체에는 과태료 규정이 없지만, 취득세는 상속개시일이 속한 달의 말일부터 6개월 안에 신고·납부해야 하고 늦으면 가산세가 붙습니다.",
       ],
       procedure: [
         "사망신고·가족관계증명서·등기부등본 등 기본 서류 확보",
@@ -421,7 +421,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
     title: "사망 후 3개월이 지났을 때",
     slug: "three-months-after-death-inheritance",
     description:
-      "상속 개시 후 3개월이 지난 뒤 상속포기·한정승인·상속등기·과태료 등에서 달라지는 점을 정리합니다.",
+      "상속 개시 후 3개월이 지난 뒤 상속포기·한정승인·상속등기·취득세 신고에서 달라지는 점을 정리합니다.",
     category: "상속 안내",
     tags: ["상속 3개월", "한정승인 기한", "상속등기 과태료", ...BUSAN_TAGS],
     searchIntent: "deadline",
@@ -429,7 +429,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
     area: "부산",
     seoTitle: "사망 후 3개월 지나면?｜부산 상속 법무사",
     seoDescription:
-      "상속포기·한정승인 3개월 기한, 단순승인·상속등기 과태료. 해운대·센텀 긴급 상담.",
+      "상속포기·한정승인 3개월 기한, 단순승인, 상속등기 과태료 여부와 취득세 신고기한. 해운대·센텀 긴급 상담.",
     relatedServices: ["qualified-acceptance", "inheritance-renunciation", "inheritance-registration"],
     relatedFaqs: ["inheritance-renunciation-deadline", "when-to-file-inheritance-registration"],
     relatedDiagnosis: ["한정승인자가진단", "상속포기자가진단"],
@@ -440,13 +440,13 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
       ],
       summary: [
         "상속포기·한정승인은 원칙적으로 3개월 이내 신고가 필요합니다.",
-        "기한을 넘기면 단순승인으로 추정될 수 있어 채무 대응이 어려워집니다.",
-        "상속등기는 별도 기한·과태료 규정이 있어 방치 시 불이익이 생길 수 있습니다.",
+        "기한을 넘기면 단순승인한 것으로 보아 채무 대응이 어려워집니다.",
+        "상속등기 자체에는 신청기한·과태료가 없지만, 취득세는 6개월 안에 신고·납부해야 하고 늦으면 가산세가 붙습니다.",
         "이미 기한이 지났어도 가능한 조치가 있는지 사안별로 확인해야 합니다.",
       ],
       procedure: [
         "사망일·상속인 지위 안 날짜 확인",
-        "3개월·상속등기 기한 각각 계산",
+        "상속포기·한정승인 3개월과 취득세 신고 6개월 각각 계산",
         "단순승인 추정 여부·채무 현황 점검",
         "가능한 법적 조치·등기 진행 방향 상담",
       ],
@@ -469,7 +469,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
         {
           question: "상속등기 과태료는 언제부터 나오나요?",
           answer:
-            "일정 기간 경과 후 신고·등기를 하지 않으면 과태료 대상이 될 수 있습니다. 개별 계산이 필요합니다.",
+            "상속등기에는 과태료 규정이 없습니다. 60일 신청의무와 과태료는 매매·증여 등 계약을 원인으로 한 소유권이전등기에 적용됩니다. 다만 취득세는 상속개시일이 속한 달의 말일부터 6개월(외국에 주소를 둔 상속인이 있으면 9개월) 안에 신고·납부해야 하고, 늦으면 가산세가 붙습니다.",
         },
       ],
     },

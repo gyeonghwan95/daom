@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T16:26:44.542Z",
-  "total": 1859,
+  "generatedAt": "2026-10-04T10:22:07.428Z",
+  "total": 1860,
   "paths": [
     "/",
     "/about",
@@ -1017,6 +1017,7 @@
     "/situations/분류/계약-일상-분쟁",
     "/tools/inheritance-registration-deadline",
     "/tools/inheritance-renunciation-deadline",
+    "/tools/inheritance-registration-cost",
     "/tools/director-change-penalty-deadline",
     "/tools/head-office-move-deadline",
     "/tools/jeonse-deposit-timeline",

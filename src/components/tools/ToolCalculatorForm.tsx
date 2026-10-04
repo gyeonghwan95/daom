@@ -48,6 +48,102 @@ export function ToolCalculatorForm({
         </div>
       ) : null}
 
+      {calculatorType === "inheritance-registration-cost" ? (
+        <>
+          <div>
+            <label htmlFor="propertyValue" className={labelClass}>
+              시가표준액(공시가격) 합계(원)
+            </label>
+            <input
+              id="propertyValue"
+              type="text"
+              inputMode="numeric"
+              placeholder="예: 300000000"
+              className={inputClass}
+              value={String(input.propertyValue ?? "")}
+              onChange={(e) => setField("propertyValue", e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="propertyType" className={labelClass}>
+              부동산 종류
+            </label>
+            <select
+              id="propertyType"
+              className={inputClass}
+              value={String(input.propertyType ?? "house")}
+              onChange={(e) => setField("propertyType", e.target.value)}
+            >
+              <option value="house">주택(아파트·빌라·단독주택)</option>
+              <option value="other">토지·상가·건물(농지 제외)</option>
+              <option value="farmland">농지(논·밭·과수원)</option>
+            </select>
+          </div>
+          {String(input.propertyType ?? "house") === "house" ? (
+            <>
+              <div>
+                <label htmlFor="smallHouse" className={labelClass}>
+                  전용면적 85㎡ 이하 주택인가요?
+                </label>
+                <select
+                  id="smallHouse"
+                  className={inputClass}
+                  value={String(input.smallHouse ?? "no")}
+                  onChange={(e) => setField("smallHouse", e.target.value)}
+                >
+                  <option value="no">아니오 또는 모름</option>
+                  <option value="yes">예(85㎡ 이하)</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="homelessSpecial" className={labelClass}>
+                  상속받는 가구가 무주택이고, 상속으로 1주택이 되나요?
+                </label>
+                <select
+                  id="homelessSpecial"
+                  className={inputClass}
+                  value={String(input.homelessSpecial ?? "no")}
+                  onChange={(e) => setField("homelessSpecial", e.target.value)}
+                >
+                  <option value="no">아니오 또는 모름</option>
+                  <option value="yes">예(무주택 1주택 특례)</option>
+                </select>
+              </div>
+            </>
+          ) : null}
+          <div>
+            <label htmlFor="propertyCount" className={labelClass}>
+              등기할 부동산 개수(토지·건물 각각 1개)
+            </label>
+            <input
+              id="propertyCount"
+              type="text"
+              inputMode="numeric"
+              placeholder="예: 2"
+              className={inputClass}
+              value={String(input.propertyCount ?? "")}
+              onChange={(e) => setField("propertyCount", e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="filingMethod" className={labelClass}>
+              신청 방식
+            </label>
+            <select
+              id="filingMethod"
+              className={inputClass}
+              value={String(input.filingMethod ?? "paper")}
+              onChange={(e) => setField("filingMethod", e.target.value)}
+            >
+              <option value="paper">등기소 방문(서면)</option>
+              <option value="eform">전자표준양식(e-form)</option>
+              <option value="electronic">전자신청(인터넷등기소)</option>
+            </select>
+          </div>
+        </>
+      ) : null}
+
       {calculatorType === "director-change-penalty" ? (
         <div>
           <label htmlFor="changeDate" className={labelClass}>
@@ -110,6 +206,18 @@ export function ToolCalculatorForm({
             value={String(input.claimAmount ?? "")}
             onChange={(e) => setField("claimAmount", e.target.value)}
             required
+          />
+          <label htmlFor="partyCount" className={`${labelClass} mt-4`}>
+            당사자 수(채권자+채무자)
+          </label>
+          <input
+            id="partyCount"
+            type="text"
+            inputMode="numeric"
+            placeholder="예: 2"
+            className={inputClass}
+            value={String(input.partyCount ?? "")}
+            onChange={(e) => setField("partyCount", e.target.value)}
           />
         </div>
       ) : null}

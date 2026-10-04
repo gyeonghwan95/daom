@@ -57,8 +57,11 @@ export function ToolCalculatorView({
     "자가진단·업무안내·상담으로 이어서 확인하는 것이 좋습니다.",
   ].slice(0, 5);
 
+  const guideSections = tool.guideSections ?? [];
+
   const tocItems = [
     { id: "calculator", label: "대략 검토하기" },
+    ...guideSections.map((section) => ({ id: section.id, label: section.title })),
     { id: "tool-info", label: "이 계산기로 알 수 있는 것" },
     { id: "faq", label: "자주 묻는 질문" },
     { id: "consultation", label: "상담 문의" },
@@ -125,6 +128,49 @@ export function ToolCalculatorView({
           </div>
         </div>
       </ContentSection>
+
+      {guideSections.map((section) => (
+        <ContentSection key={section.id} id={section.id} title={section.title}>
+          {section.body ? (
+            <p className="text-sm leading-relaxed text-navy/75 md:text-base">{section.body}</p>
+          ) : null}
+          <ul className="mt-3 space-y-2.5">
+            {section.items.map((item) => (
+              <li
+                key={item}
+                className="rounded-xl border border-beige-dark bg-white px-4 py-3.5 text-sm leading-relaxed text-navy/80 md:text-base"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          {section.links && section.links.length > 0 ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {section.links.map((link) =>
+                link.href.startsWith("http") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="interactive-surface rounded-lg border border-navy/10 bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-beige/50"
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
+            </div>
+          ) : null}
+        </ContentSection>
+      ))}
 
       <ContentSection id="tool-info" title="이 계산기로 알 수 있는 것">
         <ul className="space-y-3">

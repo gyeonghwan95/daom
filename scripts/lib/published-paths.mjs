@@ -29,6 +29,7 @@ export const staticRoutes = [
 const toolSlugs = [
   "inheritance-registration-deadline",
   "inheritance-renunciation-deadline",
+  "inheritance-registration-cost",
   "director-change-penalty-deadline",
   "head-office-move-deadline",
   "jeonse-deposit-timeline",

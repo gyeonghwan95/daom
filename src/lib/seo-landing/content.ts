@@ -250,6 +250,66 @@ function seededLocalChecklist(spec: SeoLandingSpec): string[] {
   return [0, 1, 2, 3, 4].map((i) => pick(pool, spec.seed, 60 + i));
 }
 
+function penaltyFacts(serviceId: string | undefined): string[] {
+  const corporateChange = [
+    "등기사항이 바뀌면 변경 사유가 생긴 날부터 2주 안에 변경등기를 해야 합니다.",
+    "기간을 넘기면 대표자 개인에게 과태료가 부과될 수 있습니다(상법 제635조).",
+  ];
+  const contractTransfer = [
+    "매매·증여 등 계약을 원인으로 한 소유권이전등기는 잔금 지급일(증여는 계약 효력 발생일)부터 60일 안에 신청해야 합니다.",
+    "기간을 넘기면 과태료가 부과될 수 있습니다(부동산등기 특별조치법).",
+  ];
+  const renunciation = [
+    "상속포기·한정승인에는 과태료 규정이 없습니다.",
+    "상속을 안 날부터 3개월이 지나면 단순승인한 것으로 봅니다. 채무 초과를 뒤늦게 알았다면 특별한정승인을 검토합니다.",
+  ];
+  const insolvency = [
+    "개인회생·파산 신청에는 과태료 규정이 없습니다.",
+    "법원이 정한 보정 기한을 넘기면 신청이 기각될 수 있어 기한 관리가 중요합니다.",
+  ];
+  const map: Record<string, string[]> = {
+    "corporate-registration": corporateChange,
+    "director-change": corporateChange,
+    "head-office-transfer": corporateChange,
+    "company-establishment": [
+      "주식회사는 설립 조사 종료일 또는 창립총회 종결일부터 2주 안에 설립등기를 해야 합니다(상법 제317조).",
+      "설립 후 생긴 변경사항도 2주 안에 등기하지 않으면 과태료가 부과될 수 있습니다(상법 제635조).",
+    ],
+    "ownership-transfer": contractTransfer,
+    "gift-registration": contractTransfer,
+    "real-estate-registration": [
+      "과태료 여부는 등기 원인에 따라 다릅니다.",
+      "매매·증여 등 계약 원인 소유권이전등기는 60일 신청의무와 과태료가 있고, 상속등기에는 과태료 규정이 없습니다.",
+    ],
+    "inheritance-registration": [
+      "상속등기에는 법정 신청기한과 과태료가 없습니다.",
+      "취득세는 상속개시일이 속한 달의 말일부터 6개월(외국에 주소를 둔 상속인이 있으면 9개월) 안에 신고·납부해야 하고, 늦으면 가산세가 붙습니다.",
+    ],
+    "inheritance-renunciation": renunciation,
+    "qualified-acceptance": renunciation,
+    "mortgage-cancellation": [
+      "근저당말소등기에는 신청기한·과태료 규정이 없습니다.",
+      "말소 전까지는 등기부에 근저당이 남아 매매·대출에 지장이 있을 수 있습니다.",
+    ],
+    "jeonse-registration": [
+      "전세권설정등기에는 신청기한·과태료 규정이 없습니다.",
+      "전세권은 등기를 마쳐야 효력이 생기므로 잔금·입주 일정에 맞춰 신청합니다.",
+    ],
+    "lease-registration-order": [
+      "임차권등기명령에는 과태료 규정이 없습니다.",
+      "임차권등기가 등기부에 기입된 것을 확인한 뒤 이사해야 대항력·우선변제권이 유지됩니다.",
+    ],
+    "personal-rehabilitation": insolvency,
+    bankruptcy: insolvency,
+  };
+  return (
+    map[serviceId ?? ""] ?? [
+      "과태료 여부는 등기 원인과 근거 법령에 따라 다릅니다.",
+      "계약을 원인으로 한 소유권이전등기라면 60일 신청의무가 적용될 수 있어 등기 원인부터 확인합니다.",
+    ]
+  );
+}
+
 /** intentSuffix별 고유 초점 — 필요서류 vs 준비서류, 비용 vs 보수표 등 */
 function intentFocusBlock(spec: SeoLandingSpec): string | null {
   const intent = spec.intentSuffix;
@@ -285,7 +345,7 @@ function intentFocusBlock(spec: SeoLandingSpec): string | null {
       "사건마다 달라 단정 일정을 약속하지 않으며, 병목 구간을 미리 알려 드립니다.",
     ],
     과태료: [
-      `${service} 과태료 관련 안내는 지연 등기·신고가 문제될 수 있는 조건을 중심으로 봅니다.`,
+      `${service} 과태료 안내는 과태료가 실제로 적용되는지와, 대신 지켜야 할 기한을 구분해 정리합니다.`,
       "이미 기한이 지난 경우에도 다음 조치 선택지를 상담에서 정리합니다.",
     ],
   };
@@ -445,10 +505,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
               "개인회생·파산은 신청서 보정 기한을 놓치지 않도록 일정을 관리합니다.",
             ]
           : intent === "과태료"
-            ? [
-                "등기·신고 지연 시 과태료가 부과될 수 있습니다.",
-                "결의·신고 기한을 확인한 뒤 신속히 접수하는 것이 좋습니다.",
-              ]
+            ? penaltyFacts(spec.serviceId)
             : seededLocalChecklist(spec).slice(0, 3),
     },
     {
@@ -679,6 +736,14 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
         {
           title: `${court} 관할·접수 포인트`,
           body: `${institutionContext(spec.institutionId)} 상대방 주소지·사무소 소재 등에 따라 관할이 달라질 수 있어, 접수 전 관할을 확인합니다. 인지·송달료 등 비용은 청구액에 따라 달라집니다.`,
+          items: [
+            "인지액: 같은 금액으로 소장을 낼 때 인지액의 10분의 1(민사소송 등 인지법 제7조 제2항)",
+            "송달료: 1회 5,640원 × 당사자 수 × 6회분 예납(2026년 7월 1일부터)",
+            "예시(이해를 위한 예시): 청구금액 1,000만원, 당사자 2명이면 인지액 5,000원 + 송달료 67,680원",
+          ],
+          links: [
+            { href: "/tools/payment-order-fee-check", label: "지급명령 인지대·송달료 계산기" },
+          ],
         },
         {
           title: "준비 서류와 자주 하는 실수",

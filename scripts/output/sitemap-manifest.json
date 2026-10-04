@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-03T16:31:53.077Z",
+  "generatedAt": "2026-10-04T10:21:33.442Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1680,
+  "totalUrls": 1681,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
     "2": 28,
-    "3": 175,
+    "3": 176,
     "4": 593,
     "5": 183,
     "6": 601,
@@ -748,9 +748,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
-      "lastmod": "2026-10-03",
+      "lastmod": "2026-10-04",
       "filename": "tier-3-tools.xml",
-      "count": 175
+      "count": 176
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
@@ -1106,7 +1106,7 @@
       "path": "/상속등기자가진단",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8",
-      "lastmod": "2026-06-28"
+      "lastmod": "2026-10-04"
     },
     {
       "path": "/상속포기자가진단",
@@ -2072,6 +2072,12 @@
       "path": "/tools/head-office-move-deadline",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/tools/head-office-move-deadline",
+      "lastmod": "2026-10-03"
+    },
+    {
+      "path": "/tools/inheritance-registration-cost",
+      "tier": 3,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-cost",
       "lastmod": "2026-10-03"
     },
     {

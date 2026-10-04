@@ -111,7 +111,7 @@ export const inheritanceRegistrationDiagnosis: Diagnosis = {
       options: [
         { label: "아직 시작 전·1개월 미만", value: "fresh", score: 5 },
         { label: "1~2개월", value: "mid", score: 14, tags: ["deadline", "penalty"] },
-        { label: "3개월 가까이 또는 그 이상", value: "late", score: 28, tags: ["urgent", "deadline", "penalty"], warning: "등기 지연 시 과태료·채무·처분 제한 이슈가 생길 수 있습니다." },
+        { label: "3개월 가까이 또는 그 이상", value: "late", score: 28, tags: ["urgent", "deadline", "penalty"], warning: "상속포기·한정승인 3개월 기한과 취득세 신고기한(6개월)을 확인하세요. 등기를 미루면 매매·담보 설정이 막힐 수 있습니다." },
       ],
     },
   ] satisfies DiagnosisQuestion[],
@@ -149,7 +149,7 @@ export const inheritanceRegistrationDiagnosis: Diagnosis = {
   ],
   deadlineWarnings: [
     "상속포기·한정승인: 원칙적으로 상속 개시 후 3개월",
-    "상속등기: 지연 시 과태료·거래·대출 제한 가능",
+    "상속등기: 과태료 규정은 없으나 취득세는 6개월 안에 신고·납부(지나면 가산세), 미등기 시 거래·대출 제한",
     "미성년·해외 상속인: 추가 절차로 기간 연장 필요할 수 있음",
     "채무 초과 시 단순승인만 하면 개인 채무 부담 위험",
   ],

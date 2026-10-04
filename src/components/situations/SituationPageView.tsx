@@ -37,6 +37,12 @@ type SituationPageViewProps = {
   slug: string;
 };
 
+const DISPUTE_CONSULT_TRIGGERS = [
+  "청구 금액이 분명해 지급명령 신청서를 내려는 경우",
+  "소장·답변서·이의신청서 등 법원 제출 서류가 필요한 경우",
+  "지급명령·소장을 받고 제출 기한이 다가오는 경우",
+];
+
 /** 상황 데이터를 자연스러운 줄글 문단으로 조합 (카드 반복 대신) */
 function buildSituationBodyParagraphs(situation: NonNullable<
   ReturnType<typeof getSituationBySlug>
@@ -84,7 +90,9 @@ function buildSituationBodyParagraphs(situation: NonNullable<
           ? `혼자 서류·절차를 진행해 볼 수 있는 경우로는 ${self} 정도가 있습니다.`
           : null,
         lawyer
-          ? `반면 ${lawyer}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
+          ? situation.situationCategory === "contract-dispute"
+            ? `반면 ${lawyer}처럼 다툼이 크거나 소송이 예상되면 변호사 상담이 필요합니다. 법무사는 지급명령·소장 등 법원 제출 서류의 작성과 제출 대행을 맡고, 상대방과의 협상·합의나 소송대리는 하지 않습니다.`
+            : `반면 ${lawyer}처럼 기한·당사자·관할이 얽히면 법무사 상담으로 순서를 먼저 확인하는 편이 좋습니다.`
           : null,
       ]
         .filter(Boolean)
@@ -110,6 +118,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
   if (!situation) return null;
 
   const category = getSituationCategoryById(situation.situationCategory);
+  const isDispute = situation.situationCategory === "contract-dispute";
   const relatedSituations = getRelatedSituationLinks(situation);
   const showNationwide = shouldShowNationwideRegionChip(
     page.path,
@@ -127,7 +136,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
     { id: "documents", label: "필요한 서류" },
     { id: "procedures", label: "예상 절차" },
     { id: "cost-factors", label: "비용·기간 요소" },
-    { id: "case-example", label: "상담 사례" },
+    { id: "case-example", label: "상황 예시" },
     { id: "diagnosis-links", label: "관련 자가진단" },
     { id: "service-links", label: "관련 서비스·허브" },
     ...(relatedSituations.length > 0
@@ -176,7 +185,11 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
       <ArticleSummary
         conclusion={situation.conclusion}
         checkItems={situation.firstChecks.slice(0, 3)}
-        consultTriggers={situation.lawyerNeededCases.slice(0, 3)}
+        consultTriggers={
+          isDispute
+            ? DISPUTE_CONSULT_TRIGGERS
+            : situation.lawyerNeededCases.slice(0, 3)
+        }
       />
 
       <ArticleVisualSlot
@@ -232,10 +245,18 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
       <ContentSection id="cost-factors" title="절차·기간·비용에 영향을 주는 요소">
         <ChecklistBox items={situation.costFactors} />
         <WarningBox title="비용·기간 안내">
-          <p>
-            등기·법원·공탁 비용과 법무사 수임료는 사건 복잡도에 따라 달라집니다.
-            위 항목을 기준으로 상담 시 구분해 안내드립니다.
-          </p>
+          {isDispute ? (
+            <p>
+              인지대·송달료 등 법원 비용과 법원 제출 서류 작성 수임료는 사건에
+              따라 달라집니다. 소송대리가 필요하면 변호사 선임 비용이 별도로
+              듭니다.
+            </p>
+          ) : (
+            <p>
+              등기·법원·공탁 비용과 법무사 수임료는 사건 복잡도에 따라 달라집니다.
+              위 항목을 기준으로 상담 시 구분해 안내드립니다.
+            </p>
+          )}
         </WarningBox>
       </ContentSection>
 
@@ -247,7 +268,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         />
       ) : null}
 
-      <ContentSection id="case-example" title="현실적인 상담 사례">
+      <ContentSection id="case-example" title="상담 상황 예시">
         <div className="rounded-xl border border-beige-dark/80 bg-white p-4 sm:p-5">
           <h3 className="font-semibold text-navy">{situation.caseExample.title}</h3>
           <p className="mt-2 text-[1.015rem] leading-[1.85] text-navy/80 md:text-[1.0625rem]">

@@ -182,7 +182,7 @@ export const civilSeoIntentArticles: SeoIntentArticle[] = [
     },
     cta: {
       title: "전세보증금, 다음 단계부터 정리하세요",
-      description: "해운대·부산 전역 전세 분쟁 상담.",
+      description: "해운대·부산 전역 임차권등기명령·지급명령 서류 상담.",
     },
   },
   {
@@ -256,7 +256,7 @@ export const civilSeoIntentArticles: SeoIntentArticle[] = [
     area: "부산",
     seoTitle: "소장 작성 전 필요 자료｜부산 법무사",
     seoDescription:
-      "민사 소송 소장 준비, 청구취지·증거. 부산지방법원 소송 상담.",
+      "민사 소송 소장 준비, 청구취지·증거. 부산지방법원 소장 서류 상담.",
     relatedServices: ["personal-rehabilitation"],
     relatedFaqs: ["how-to-book-consultation-faq"],
     relatedDiagnosis: ["지급명령자가진단"],

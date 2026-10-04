@@ -75,4 +75,6 @@ export type PageData = {
   openGraphType?: "website" | "article";
   /** 연관 업무 슬러그 (전국 배너·내부링크용) */
   serviceSlug?: string;
+  /** Service 스키마 이름. 없으면 title */
+  serviceSchemaName?: string;
 };

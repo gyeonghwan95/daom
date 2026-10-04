@@ -56,7 +56,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       conversionIntro:
         "상속등기는 가족관계, 협의 여부, 부동산 수에 따라 절차가 달라집니다. 서류가 아직 없어도 현재 상황부터 함께 확인해 드립니다.",
       painPoints: [
-        "상속등기 기한이 지나 걱정되는 경우",
+        "상속등기를 오래 미뤄 걱정되는 경우",
         "가족 간 협의가 아직 끝나지 않은 경우",
         "서류를 어디서부터 준비해야 할지 모르는 경우",
         "셀프등기를 하려다 보정이 걱정되는 경우",

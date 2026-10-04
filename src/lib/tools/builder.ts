@@ -49,6 +49,10 @@ export function buildPageDataFromTool(tool: ToolDefinition): PageData {
         title: "계산기 안내",
         body: tool.intro,
       },
+      ...(tool.guideSections ?? []).map((section) => ({
+        title: section.title,
+        body: [section.body, ...section.items].filter(Boolean).join(" "),
+      })),
       {
         title: "관련 자가진단",
         body: "질문에 답하며 위험도와 다음 절차를 확인할 수 있습니다.",
