@@ -132,7 +132,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
       {
         question: "해운대구 법무사와 해운대 법무사는 다른가요?",
         answer:
-          "같은 구 안내입니다. 대표 URL은 이 페이지이며, 해운대구·해운대·센텀·재송동 검색을 함께 담당합니다. 센텀만 찾으시면 센텀 페이지를 보시면 됩니다.",
+          "같은 해운대구 안내입니다. 해운대·센텀·재송동 사건을 함께 다루며, 센텀 업무지구만 궁금하시면 센텀 안내를 보시면 됩니다.",
       },
       {
         question: "센텀·재송동에서 방문하려면 어떻게 하나요?",
@@ -191,7 +191,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
       {
         question: "센텀시티 법무사 안내는 따로 있나요?",
         answer:
-          "센텀과 센텀시티는 같은 업무지구 안내입니다. 이 페이지가 대표 URL입니다.",
+          "센텀과 센텀시티는 같은 업무지구를 가리킵니다. 관할은 부동산 주소나 법인 본점 기준으로 확인합니다.",
       },
       {
         question: "방문 상담이 가능한가요?",
@@ -328,7 +328,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
       {
         question: "부산진 법무사와 부산진구 법무사는 다른가요?",
         answer:
-          "같은 구 안내입니다. 대표 URL은 이 페이지입니다. 서면만 찾으시면 서면 페이지를 보시면 됩니다.",
+          "같은 부산진구 안내입니다. 서면 일대 상가·업무지구만 궁금하시면 서면 안내를 보시면 됩니다.",
       },
     ],
     trustLine: trust("부산진구"),

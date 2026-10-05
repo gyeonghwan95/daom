@@ -23,8 +23,8 @@ export const CONTENT_PROFILES: Record<HubTheme, ContentProfile> = {
     focusNote: "사건별 준비서류를 체크리스트 형태로 정리하고, 누락 시 보정·지연 위험을 안내합니다.",
   },
   period: {
-    sectionTitles: ["법정 기한", "지연 시 불이익", "과태료·가산세"],
-    focusNote: "신고·등기 기한과 지연 시 과태료·단순승인 등 불이익을 사례별로 설명합니다.",
+    sectionTitles: ["법정 기한", "기한을 넘기면 생기는 일", "관할과 접수 기준"],
+    focusNote: "기한은 업무마다 근거와 결과가 다릅니다. 과태료가 있는 기한, 가산세가 붙는 세금 신고 기한, 단순승인으로 보는 상속포기 기한을 구분해 설명합니다.",
   },
   court: {
     sectionTitles: ["관할 확인", "접수 전 확인사항", "서류 보정 대응"],

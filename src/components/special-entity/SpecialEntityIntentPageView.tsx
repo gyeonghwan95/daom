@@ -301,7 +301,7 @@ export function SpecialEntityIntentPageView({
       ) : null}
 
       {isHub && content.topicClusters ? (
-        <ContentSection id="clusters" title="검색 의도별 안내">
+        <ContentSection id="clusters" title="법인 종류별 안내">
           <div className="grid gap-6">
             {content.topicClusters.map((cluster) => (
               <div

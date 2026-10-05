@@ -95,7 +95,7 @@ export const 부산등기법무사추천: SelectionHubContent = {
     {
       aspect: "기한 이슈",
       left: "잔금일·취득세 신고",
-      right: "상속 6개월·포기 3개월 / 임원변경 2주",
+      right: "상속 취득세 신고 6개월·포기 3개월 / 임원변경 2주",
     },
     {
       aspect: "관할",

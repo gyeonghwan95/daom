@@ -182,7 +182,7 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
       />
 
       {isHub && content.topicClusters ? (
-        <ContentSection id="clusters" title="검색 의도별 건물등기 안내">
+        <ContentSection id="clusters" title="상황별 건물등기 안내">
           <div className="grid gap-6">
             {content.topicClusters.map((cluster) => (
               <div

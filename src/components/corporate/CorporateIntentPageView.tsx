@@ -241,7 +241,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       {hasTopicClusters && content.topicClusters ? (
         <ContentSection
           id="clusters"
-          title={isHub ? "검색 의도별 변경등기 안내" : "이어지는 안내"}
+          title={isHub ? "변경 종류별 등기 안내" : "이어지는 안내"}
         >
           <div className="grid gap-6">
             {content.topicClusters.map((cluster) => (

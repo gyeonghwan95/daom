@@ -145,6 +145,9 @@ const pressSlugs = [
   "busan-ilbo-bar-association-64th-general-assembly",
   "kukje-sinmun-bar-association-64th-general-assembly",
   "beopryul-sinmun-bar-association-64th-general-assembly",
+  "kukinews-youth-budget-unboxing-2027",
+  "weeklypeople-youth-judicial-scrivener-ahn",
+  "busan-mbc-news-fuel-price-relief-expert",
 ];
 
 export function normalizeRouteSlug(raw) {

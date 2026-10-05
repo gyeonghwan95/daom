@@ -33,12 +33,12 @@ function supportFeeOverlay(opts: {
     slug: opts.slug,
     introParagraphs: [
       opts.intro,
-      `이 주소는 보조 안내이며, 같은 검색의도의 대표 구조는 ${opts.primaryLabel}에서 이어갑니다. 확정 만 원 금액은 두지 않습니다. 검토일 2026-08-26.`,
+      `세금·수수료·법원 비용과 법무사 보수를 항목별로 나눈 자세한 설명은 ${opts.primaryLabel}에 정리돼 있습니다. 근거 없는 고정 금액은 제시하지 않습니다. 검토일 2026-08-26.`,
     ],
     sections: [
       {
-        title: "대표 비용 안내로 이어가기",
-        body: "검색어만 수임료·수수료·보수표로 달라도, 알고 싶은 내용은 대개 실비와 보수를 나누는 일입니다.",
+        title: "보수표와 실제 비용은 다릅니다",
+        body: "대한법무사협회 보수기준은 기본보수의 참고 기준입니다. 세금·등기신청수수료·법원 비용 같은 실비는 보수표에 들어 있지 않고, 사건 난이도에 따라 보수도 달라질 수 있습니다.",
         links: [
           { href: opts.primaryHref, label: opts.primaryLabel },
           COST_HUB,
@@ -47,18 +47,18 @@ function supportFeeOverlay(opts: {
     ],
     faqs: [
       {
-        question: "이 페이지와 대표 비용 안내의 차이는?",
+        question: "보수표 금액이 최종 비용인가요?",
         answer: opts.faqAnswer,
       },
     ],
     consultationExample: {
-      title: "용어만 다른 검색으로 들어온 경우",
-      body: `${opts.primaryLabel}에서 실비와 보수를 나눠 안내한 흐름입니다.`,
+      title: "보수표를 보고 문의한 경우 — 이해를 위한 예시",
+      body: `보수표 숫자만으로는 실제 금액을 알기 어려워, 사건 내용을 확인한 뒤 ${opts.primaryLabel} 기준으로 실비와 보수를 나눠 안내하는 흐름입니다.`,
     },
     procedures: [
-      "실비와 보수 구분",
-      "대표 비용 안내로 연결",
-      "서류 확인 후 항목 안내",
+      "업무 종류와 사건 내용 확인",
+      "실비(세금·수수료·법원 비용)와 보수 구분",
+      "서류 확인 후 항목별 안내",
     ],
     documents: ["현재 상황 한 줄", "주소 또는 당사자 구성"],
     consultationPoints: ["하고 싶은 업무", "지금 있는 자료"],
@@ -166,7 +166,7 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     sections: [
       {
         title: "파산 비용이 회생과 다른 이유",
-        body: "회생은 변제계획·송달 범위가, 파산은 재산 목록과 면책 준비 범위가 중심입니다. 비교 허브에서 절차를 고른 뒤 이 페이지에서 항목을 보시면 됩니다.",
+        body: "회생은 변제계획·송달 범위가, 파산은 재산 목록과 면책 준비 범위가 중심입니다. 어느 절차인지 먼저 정한 뒤 해당 비용 항목을 보시면 됩니다.",
         links: [
           { href: "/부산개인파산", label: "개인파산 절차" },
           { href: "/개인회생비용", label: "회생 비용과 비교" },
@@ -338,7 +338,7 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     sections: [
       {
         title: "설립과 변경을 나누는 이유",
-        body: "설립 전용 견적은 법인설립등기 비용 안내, 이미 운영 중인 회사의 변경은 이 페이지와 부산 법인등기 허브에서 이어갑니다.",
+        body: "설립 견적은 법인설립등기 비용 안내에서, 이미 운영 중인 회사의 변경등기 비용은 여기와 부산 법인등기 안내에서 확인하실 수 있습니다.",
         links: [
           { href: "/법인설립등기비용", label: "설립 비용 구조" },
           { href: "/부산법인등기", label: "법인등기 절차" },
@@ -426,15 +426,15 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
   상속등기보수표: {
     slug: "상속등기보수표",
     introParagraphs: [
-      "상속등기 보수표 검색은 상속등기 비용과 같은 의도인 경우가 많습니다. 대표 안내는 상속등기 비용 페이지입니다.",
-      "협회 보수표는 기본보수 상한 참고이며, 이 페이지에 만 원 단위 확정표를 복사하지 않습니다. 검토일 2026-08-26.",
+      "상속등기 비용은 법무사 보수, 취득세 등 법정 공과금, 등기신청수수료, 국민주택채권으로 나뉩니다. 협회 보수표는 이 중 법무사 보수의 참고 기준일 뿐입니다.",
+      "협회 보수표는 기본보수 상한 참고이며, 만 원 단위 확정표처럼 옮겨 적지 않습니다. 검토일 2026-08-26.",
     ],
     sections: [
       {
         title: "보수표와 실제 견적의 차이",
         body: "가산보수·실비·취득세·등록면허세는 표 밖 항목일 수 있습니다. 상속인 수·부동산 수를 알려 주시면 상속등기 비용 안내에서 구조를 이어갑니다.",
         links: [
-          { href: "/상속등기비용", label: "상속등기 비용 대표 안내" },
+          { href: "/상속등기비용", label: "상속등기 비용 항목별 안내" },
           { href: "/부산법무사보수표", label: "협회 기준 참고" },
         ],
       },
@@ -447,10 +447,10 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
       },
     ],
     consultationExample: {
-      title: "보수표만 보고 문의하신 경우",
-      body: "표와 공과금을 구분해 설명한 뒤 주소·상속인 수를 받아 항목 안내로 이어간 예시입니다.",
+      title: "보수표만 보고 문의하신 경우 — 이해를 위한 예시",
+      body: "보수표와 공과금을 구분해 설명한 뒤 주소·상속인 수를 받아 항목별로 안내하는 흐름입니다.",
     },
-    procedures: ["협회 기준 설명", "사건 변수 확인", "비용 페이지로 연결"],
+    procedures: ["협회 기준 설명", "상속인 수·부동산 수 확인", "항목별 비용 안내"],
     documents: ["부동산 주소", "상속인 수"],
     consultationPoints: ["주소", "상속인 수", "협의 여부"],
     minContentLength: 2000,
@@ -459,7 +459,7 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
   개인회생보수표: {
     slug: "개인회생보수표",
     introParagraphs: [
-      "개인회생 보수표 검색은 개인회생 비용과 같은 의도인 경우가 많습니다. 대표 구조는 개인회생 비용 페이지에서 안내합니다.",
+      "개인회생 비용은 법원 인지·송달료와 신청서·변제계획안 준비 보수로 나뉩니다. 채권자 수와 소득 형태가 금액을 바꾸는 주요 요인입니다.",
       "협회 일반 보수표 숫자를 회생 사건에 그대로 적용하지 않습니다. 검토일 2026-08-26.",
     ],
     sections: [
@@ -467,7 +467,7 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
         title: "회생 비용의 실제 구성",
         body: "인지·송달료 등 법원 실비와 서류 준비 보수를 구분합니다. 채권자 수·소득 형태가 핵심 변수입니다.",
         links: [
-          { href: "/개인회생비용", label: "개인회생 비용 대표 안내" },
+          { href: "/개인회생비용", label: "개인회생 비용 항목별 안내" },
           { href: "/부산개인회생", label: "개인회생 절차" },
         ],
       },
@@ -480,10 +480,10 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
       },
     ],
     consultationExample: {
-      title: "보수표 검색 후 상담",
-      body: "채권자 수와 소득 형태를 확인한 뒤 실비·보수 항목으로 안내한 예시입니다.",
+      title: "보수표를 보고 문의한 경우 — 이해를 위한 예시",
+      body: "채권자 수와 소득 형태를 확인한 뒤 실비·보수 항목으로 나눠 안내하는 흐름입니다.",
     },
-    procedures: ["실비·보수 구분", "채권자·소득 확인", "비용 페이지 연결"],
+    procedures: ["실비·보수 구분", "채권자·소득 확인", "항목별 비용 안내"],
     documents: ["채권자 수", "소득 형태"],
     consultationPoints: ["채무 규모", "소득", "재산"],
     minContentLength: 2000,
@@ -667,9 +667,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/근저당말소비용",
     primaryLabel: "근저당 말소 비용 안내",
     intro:
-      "근저당 말소 보수표 검색은 근저당 말소 비용과 같은 의도인 경우가 많습니다. 협회 표 숫자를 이 페이지에 복사하지 않습니다.",
+      "근저당 말소 보수는 말소할 근저당 건수와 공동담보 여부에 따라 달라집니다. 협회 보수표 숫자를 그대로 옮겨 확정 금액처럼 보이게 하지 않습니다.",
     faqAnswer:
-      "보수표는 기본보수 참고입니다. 말소 건수·공동담보에 따른 실비·보수는 근저당 말소 비용 안내에서 구조를 이어갑니다.",
+      "아닙니다. 보수표는 기본보수 참고 기준이고, 말소 건수·공동담보에 따라 등기신청수수료와 보수가 함께 달라집니다.",
   }),
 
   임차권등기명령보수표: supportFeeOverlay({
@@ -677,9 +677,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/임차권등기명령비용",
     primaryLabel: "임차권등기명령 비용 안내",
     intro:
-      "임차권등기명령 보수표 검색은 임차권등기명령 비용과 같은 의도인 경우가 많습니다.",
+      "임차권등기명령 비용은 법원에 내는 인지·송달료와 신청서 작성 보수로 나뉩니다. 보수표만으로는 전체 금액을 알 수 없습니다.",
     faqAnswer:
-      "법원 인지·송달료는 보수표 밖 항목인 경우가 많습니다. 대표 구조는 임차권등기명령 비용 안내입니다.",
+      "아닙니다. 법원 인지·송달료는 보수표에 들어 있지 않은 별도 항목입니다.",
   }),
 
   법인등기보수표: supportFeeOverlay({
@@ -687,9 +687,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/법인등기비용",
     primaryLabel: "법인등기 비용 안내",
     intro:
-      "법인등기 보수표 검색은 법인등기 비용과 같은 의도인 경우가 많습니다. 설립과 변경을 한 표에 섞지 않습니다.",
+      "법인등기 보수는 설립인지 변경인지, 변경 항목이 몇 개인지에 따라 달라집니다. 설립과 변경을 한 표에 섞지 않습니다.",
     faqAnswer:
-      "협회 표는 참고입니다. 설립은 법인설립등기 비용, 변경은 법인등기 비용 안내가 대표입니다.",
+      "아닙니다. 협회 보수표는 참고 기준이고, 등록면허세·등기신청수수료는 별도입니다. 설립은 법인설립등기 비용, 변경은 법인등기 비용 안내에서 나눠 설명합니다.",
   }),
 
   법인설립등기보수표: supportFeeOverlay({
@@ -697,9 +697,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/법인설립등기비용",
     primaryLabel: "법인설립등기 비용 안내",
     intro:
-      "법인설립 보수표 검색은 법인설립 비용과 같은 의도인 경우가 많습니다.",
+      "법인설립 비용은 자본금에 연동되는 등록면허세와 법무사 보수로 나뉩니다. 보수표만으로는 전체 금액을 알 수 없습니다.",
     faqAnswer:
-      "자본금·등록면허세는 표 밖 공과금일 수 있습니다. 대표 안내는 법인설립등기 비용입니다.",
+      "아닙니다. 자본금에 따른 등록면허세·지방교육세와 등기신청수수료는 보수표 밖의 공과금입니다.",
   }),
 
   소유권이전등기보수표: supportFeeOverlay({
@@ -707,9 +707,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/소유권이전등기비용",
     primaryLabel: "소유권이전등기 비용 안내",
     intro:
-      "소유권이전 보수표 검색은 소유권이전 비용과 같은 의도인 경우가 많습니다. 취득세는 표에 들어 있지 않습니다.",
+      "소유권이전등기 비용에서 가장 큰 부분은 보통 취득세입니다. 취득세와 국민주택채권은 보수표에 들어 있지 않습니다.",
     faqAnswer:
-      "취득세·채권과 보수를 한 숫자로 보지 마세요. 대표 구조는 소유권이전등기 비용 안내입니다.",
+      "아닙니다. 취득세·국민주택채권·등기신청수수료와 법무사 보수는 별도 항목입니다.",
   }),
 
   상속포기보수표: supportFeeOverlay({
@@ -717,9 +717,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/상속포기비용",
     primaryLabel: "상속포기 비용 안내",
     intro:
-      "상속포기 보수표 검색은 상속포기 비용과 같은 의도인 경우가 많습니다. 취득세 견적 구조와는 다릅니다.",
+      "상속포기 비용은 가정법원 인지대·송달료와 신청인 구성에 따른 보수가 중심입니다. 부동산 취득세 견적 구조와는 다릅니다.",
     faqAnswer:
-      "가정법원 실비와 신청인 구성이 핵심입니다. 대표 안내는 상속포기 비용 페이지입니다.",
+      "아닙니다. 가정법원 인지대·송달료는 별도이고, 신고인 수와 미성년·해외 상속인 여부에 따라 보수가 달라집니다.",
   }),
 
   한정승인보수표: supportFeeOverlay({
@@ -727,9 +727,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/한정승인비용",
     primaryLabel: "한정승인 비용 안내",
     intro:
-      "한정승인 보수표 검색은 한정승인 비용과 같은 의도인 경우가 많습니다.",
+      "한정승인 비용은 재산·채무 조사 범위에 따라 달라지고, 수리 후 신문 공고비가 따로 듭니다.",
     faqAnswer:
-      "재산·채무 조사 범위가 보수와 준비 시간을 바꿉니다. 대표 안내는 한정승인 비용입니다.",
+      "아닙니다. 가정법원 비용과 공고비는 별도이고, 재산·채무 조사 범위가 보수와 준비 시간을 바꿉니다.",
   }),
 
   개인파산보수표: supportFeeOverlay({
@@ -737,9 +737,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/개인파산비용",
     primaryLabel: "개인파산 비용 안내",
     intro:
-      "개인파산 보수표 검색은 개인파산 비용과 같은 의도인 경우가 많습니다. 회생 비용과 한 표로 묶지 않습니다.",
+      "개인파산 비용은 법원 실비와 재산 조사·면책 준비 범위에 따른 보수로 나뉩니다. 개인회생 비용과 한 표로 묶지 않습니다.",
     faqAnswer:
-      "면책 준비 범위와 법원 실비는 표 숫자만으로 단정하지 않습니다. 대표는 개인파산 비용 안내입니다.",
+      "아닙니다. 법원 인지·송달료 등 실비는 별도이고, 재산·채무 자료의 양에 따라 준비 범위가 달라집니다.",
   }),
 
   임원변경등기비용: supportFeeOverlay({
@@ -747,9 +747,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/법인등기비용",
     primaryLabel: "법인등기 비용 안내",
     intro:
-      "임원변경등기 비용은 법인 변경등기 비용과 같은 가족입니다. 취임·사임 인원과 결의 서류가 등록세·보수 범위를 바꿉니다.",
+      "임원변경등기 비용은 취임·사임·중임 인원과 결의 서류에 따라 등록면허세와 보수가 달라집니다.",
     faqAnswer:
-      "임원변경만의 별도 허브를 두지 않습니다. 변경 종류별 구분은 법인등기 비용 안내에서 이어갑니다.",
+      "아닙니다. 변경 건수에 따른 등록면허세·지방교육세와 등기신청수수료가 별도로 듭니다. 변경 종류별 구분은 법인등기 비용 안내에서 설명합니다.",
   }),
 
   본점이전등기비용: supportFeeOverlay({
@@ -757,9 +757,9 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/법인등기비용",
     primaryLabel: "법인등기 비용 안내",
     intro:
-      "본점이전등기 비용은 법인 변경등기 비용과 같은 가족입니다. 관할 이전 여부가 서류와 등록세 항목을 바꿉니다.",
+      "본점이전등기 비용은 관할 등기소가 바뀌는지에 따라 신청 건수와 등록면허세 항목이 달라집니다.",
     faqAnswer:
-      "본점이전만의 두 번째 비용 허브는 만들지 않습니다. 대표는 법인등기 비용 안내입니다.",
+      "아닙니다. 관할 밖으로 옮기면 구 본점과 신 본점 관할 모두에 신청해야 해 공과금이 달라질 수 있습니다. 항목 구분은 법인등기 비용 안내에서 설명합니다.",
   }),
 
   임원변경등기보수표: supportFeeOverlay({
@@ -767,8 +767,8 @@ export const COST_LANDING_OVERLAYS: Record<string, SeoLandingSlugOverlay> = {
     primaryHref: "/법인등기비용",
     primaryLabel: "법인등기 비용 안내",
     intro:
-      "임원변경 보수표 검색은 법인등기 비용과 같은 의도인 경우가 많습니다.",
+      "임원변경등기 보수는 변경되는 임원 수와 결의 서류 준비 범위에 따라 달라집니다.",
     faqAnswer:
-      "협회 표는 참고입니다. 결의 인원·등록세 구분은 법인등기 비용 안내에서 이어갑니다.",
+      "아닙니다. 협회 보수표는 참고 기준이고, 등록면허세·등기신청수수료는 별도입니다.",
   }),
 };

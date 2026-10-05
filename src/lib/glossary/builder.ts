@@ -113,11 +113,11 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
       },
       {
         question: `${josa(t.term, "을/를")} 신청·등기할 때는 어디를 보나요?`,
-        answer: `대표 안내는 ${policy.serviceOwnerLabel}(${policy.serviceOwner})입니다. 이 페이지는 용어를 구분하는 보조 문서입니다.`,
+        answer: `절차·서류·비용은 ${policy.serviceOwnerLabel} 안내에서 확인하실 수 있습니다. 이 용어 설명은 비슷한 개념과의 차이를 구분하는 데 초점을 둡니다.`,
       },
       {
-        question: `${josa(t.term, "은/는")} 검색 대표 페이지인가요?`,
-        answer: `아닙니다. 의뢰·절차 검색의 대표 URL은 ${policy.serviceOwner}입니다.`,
+        question: `${josa(t.term, "을/를")} 이해했다면 다음에는 무엇을 확인하나요?`,
+        answer: `실제 사건에서는 등기사항증명서·가족관계 서류 등으로 사실관계를 먼저 확인합니다. 구체적인 순서는 ${policy.serviceOwnerLabel} 안내를 참고하세요.`,
       },
     ],
     consultationExample: {

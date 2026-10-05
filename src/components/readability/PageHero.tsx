@@ -6,7 +6,6 @@ import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
-import { KeywordBadges } from "./KeywordBadges";
 import { ProseParagraphs } from "./ProseParagraphs";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SiteImageAsset } from "@/lib/site-images";
@@ -46,7 +45,6 @@ export function PageHero({
   h1,
   intro,
   introParagraphs = [],
-  keywords = [],
   eyebrow,
   ctaHref = "/contact/inquiry",
   ctaLabel = consultationInquiryCopy.ctaShort,
@@ -74,11 +72,6 @@ export function PageHero({
       {descriptions.length > 0 ? (
         <div className="mt-4 md:mt-5">
           <ProseParagraphs paragraphs={descriptions.slice(0, 2)} />
-        </div>
-      ) : null}
-      {keywords.length > 0 ? (
-        <div className="mt-4 md:mt-5">
-          <KeywordBadges keywords={keywords} />
         </div>
       ) : null}
       {children}

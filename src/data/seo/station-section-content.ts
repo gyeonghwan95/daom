@@ -365,7 +365,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "2호선 민락역 인근에서 등기를 준비할 때는 민락동 소재인지, 광안·남천 등 인접동인지에 따라 생활권 안내만 달리하고 법률 절차는 업무 페이지에서 통일합니다.",
     localContext:
-      "민락은 수영구의 Local Champion 페이지에서 역·동 검색을 함께 다룹니다. 전세·매매·상속 중 무엇을 준비하는지 먼저 고르면 됩니다.",
+      "민락동은 수영구 생활권 안내에서 역·동 사건을 함께 다룹니다. 전세·매매·상속 중 무엇을 준비하는지 먼저 고르면 됩니다.",
     nextStep:
       "계약 유형과 주소를 남겨 주세요.",
     serviceLinks: [

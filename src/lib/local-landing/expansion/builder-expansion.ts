@@ -15,6 +15,7 @@ import {
   conversionTopics,
   institutionTopics,
   realEstateDevTopics,
+  type ConversionTopic,
 } from "./institutions";
 import { buildBusanLawyerFlagshipPage } from "../flagship-busan-lawyer";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
@@ -230,7 +231,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
   const extraPageSections = [
     {
       title: `이 페이지에서 다루는 ${config.regionLabel} 업무`,
-      body: `통계로 ‘많다’고 단정하지 않습니다. ${config.regionLabel} 검색 의도에 맞춰 아래 업무를 중심으로 안내합니다.`,
+      body: `통계로 ‘많다’고 단정하지 않습니다. ${config.regionLabel}에서 자주 문의하시는 아래 업무를 중심으로 안내합니다.`,
       items: practiceFocus.map((item) => `${item.label}: ${item.note}`),
       links: practiceFocus.map((item) => ({ href: item.href, label: item.label })),
     },
@@ -329,9 +330,66 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
   };
 }
 
+function topicParticle(word: string): "은" | "는" {
+  const code = word.trim().charCodeAt(word.trim().length - 1);
+  if (code < 0xac00 || code > 0xd7a3) return "는";
+  return (code - 0xac00) % 28 === 0 ? "는" : "은";
+}
+
+function buildConversionGuidePage(
+  config: LocalLandingConfig,
+  topic: ConversionTopic,
+): LocalLandingPage {
+  const summaryParagraphs = topic.summaryParagraphs ?? [topic.description ?? topic.title];
+  const consultationCases = topic.consultationCases ?? [
+    {
+      title: `${topic.title} — 이해를 위한 예시`,
+      summary: "상황을 단순화한 예시입니다. 실제 사건은 서류를 확인한 뒤 진행 순서를 정합니다.",
+    },
+  ];
+  return {
+    slug: config.slug,
+    path: `/${config.slug}`,
+    pageType: "conversion",
+    serviceSlug: topic.serviceSlug,
+    title: topic.title,
+    metaTitle: topic.metaTitle,
+    h1: topic.h1 ?? topic.title,
+    description: topic.description ?? summaryParagraphs[0],
+    summaryParagraphs,
+    extraPageSections: topic.sections,
+    regionLabel: config.regionLabel,
+    regionKey: config.regionKey,
+    neighborhoods: config.neighborhoods,
+    problemStatement: summaryParagraphs[0],
+    whenNeeded: topic.whenNeeded ?? [],
+    jurisdictionGuide: getJurisdictionGuide(config),
+    consultationCase: consultationCases[0],
+    consultationCases,
+    legalIssues: topic.checkPoints ?? [],
+    precautions: [
+      "사건마다 필요한 서류와 기한이 달라질 수 있어, 등기부와 가족관계·결의 서류를 확인한 뒤 안내합니다.",
+    ],
+    procedures: topic.procedures ?? [],
+    documents: topic.documentList,
+    costGuide: topic.costNote ?? "",
+    faqs: topic.uniqueFaqs ?? [],
+    lawyerOpinion: buildLawyerOpinion("부산", topic.title),
+    directionsNote: buildDirectionsNote(config),
+    relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
+    relatedServiceLinks: topic.relatedServiceLinks ?? [],
+    ctaDescription:
+      topic.ctaDescription ??
+      "지금 상황과 가지고 계신 서류만 알려 주셔도 다음에 확인할 내용을 정리해 드립니다.",
+    relatedRegionLinks: [],
+  };
+}
+
 function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | null {
   const topic = config.conversionKey ? conversionTopics[config.conversionKey] : null;
   if (!topic) return null;
+
+  if (topic.kind === "guide") return buildConversionGuidePage(config, topic);
 
   const serviceLabel = serviceLabels[topic.serviceSlug] ?? topic.title;
   const neighborhoodArea = formatPlaceList("부산", config.neighborhoods);
@@ -344,7 +402,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
     `가족·동업자와 비용 분담을 논의해야 할 때`,
     `등기 수수료·세금·법무사 보수를 구분해 알고 싶을 때`,
-    `보정·과태료 등 추가 비용 가능성을 확인하고 싶을 때`,
+    `보정·병행 등기 등 추가 비용 가능성을 확인하고 싶을 때`,
   ];
 
   const consultationCases = topic.skipMortgageExample
@@ -377,10 +435,13 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
         },
       ];
 
+  const factorsAreSentences = topic.costFactors.every((f) => /[.다]$/.test(f.trim()));
   const genericFaqs: ServiceFaq[] = [
     {
-      question: `${topic.title}은 얼마나 드나요?`,
-      answer: topic.costFactors.join(" "),
+      question: `${topic.title}${topicParticle(topic.title)} 얼마나 드나요?`,
+      answer: factorsAreSentences
+        ? topic.costFactors.join(" ")
+        : `${topic.costFactors.join(", ")} 등에 따라 달라집니다. 확정 금액은 서류를 확인한 뒤 항목별로 안내합니다.`,
     },
     {
       question: `법무사 수임료와 등기 수수료는 별도인가요?`,
@@ -396,12 +457,8 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     },
     {
       question: `기한이 촉박하면 비용이 더 드나요?`,
-      answer: "긴급 진행 자체로 수임료가 달라지지는 않지만, 기한을 놓치면 과태료·불이익이 생길 수 있어 빠른 상담을 권합니다.",
+      answer: "긴급 진행 자체로 수임료가 달라지지는 않습니다. 다만 세금 신고 기한 등을 넘기면 가산세처럼 별도 부담이 생길 수 있어, 기한이 있는 절차인지 먼저 확인합니다.",
     },
-    ...topic.timelineNotes.map((note) => ({
-      question: `${topic.title} 관련 일정 안내`,
-      answer: note,
-    })),
   ];
   const faqs: ServiceFaq[] = topic.uniqueFaqs?.length
     ? [...topic.uniqueFaqs, ...genericFaqs].filter(
@@ -423,13 +480,14 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     title: topic.title,
     metaTitle: isLawyerFeeBusan
       ? "부산 법무사 비용은 어떻게 정해질까｜보수·세금·공과금을 구분해서 확인하세요"
-      : undefined,
+      : topic.metaTitle,
     h1: isLawyerFeeBusan
       ? "부산 법무사 비용은 어떻게 정해질까"
-      : `${topic.title} 안내 — 부산 다옴법무사사무소`,
+      : (topic.h1 ?? topic.title),
     description: isLawyerFeeBusan
       ? "부산 법무사 비용·수수료는 보수와 세금·공과금이 다릅니다. 같은 업무라도 달라지는 이유, 전화 안내와 서류 확인 후 확정의 차이, 견적 전 준비자료를 안내합니다."
-      : `${withRegionLabel("부산", topic.title)} — 법무사 수임료·등기 수수료·세금 항목별 안내. 다옴법무사사무소 안윤정 법무사. ${neighborhoodArea} 상담 가능.`,
+      : (topic.description ??
+        `${topic.title}${topicParticle(topic.title)} 법무사 보수와 세금·공과금을 나눠 봐야 전체 금액을 판단할 수 있습니다. ${topic.costFactors.slice(0, 3).join(", ")} 등 금액이 달라지는 요인을 정리했습니다.`),
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,
     neighborhoods: config.neighborhoods,
@@ -438,7 +496,9 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     jurisdictionGuide: getJurisdictionGuide(config),
     consultationCase: consultationCases[0],
     consultationCases,
-    legalIssues: topic.costFactors.map((f) => `비용 산정 시 ${f}`),
+    legalIssues: factorsAreSentences
+      ? topic.costFactors
+      : topic.costFactors.map((f) => `금액이 달라지는 요인: ${f}`),
     precautions: [
       "지나치게 낮은 금액만으로 비교하기보다 포함 항목(말소·보정·출장·복대리)을 확인하세요.",
       "인터넷 평균 비용과 실제 사건 비용은 차이가 날 수 있습니다.",
@@ -452,7 +512,9 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
       "접수·완료",
     ],
     documents: topic.documentList,
-    costGuide: `${topic.title}: ${topic.costFactors.join(" ")} ${topic.timelineNotes.join(" ")}`,
+    costGuide: factorsAreSentences
+      ? `${topic.costFactors.join(" ")} ${topic.timelineNotes.join(" ")}`
+      : `${topic.title}${topicParticle(topic.title)} ${topic.costFactors.join(", ")}에 따라 달라집니다. ${topic.timelineNotes.join(" ")}`,
     faqs: faqs.slice(0, 10),
     lawyerOpinion: buildLawyerOpinion("부산", topic.title),
     directionsNote: buildDirectionsNote(config),

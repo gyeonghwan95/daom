@@ -113,7 +113,7 @@ const FIELD_OVERLAYS: Record<ArticleVisualField, OverlaySet> = {
     ],
     beforeProcedures: [
       "승인 방식을 먼저 가립니다",
-      "3개월 기한을 달력에 표시하세요",
+      "포기 3개월·취득세 6개월을 구분하세요",
       "협의와 등기 순서를 맞춥니다",
     ],
     beforeExample: ["상황을 단순화한 예시로 살펴봅니다"],

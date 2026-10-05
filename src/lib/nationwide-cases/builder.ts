@@ -292,7 +292,7 @@ export function buildNationwideCasePageData(
   if (def.kind === "region-hub") {
     sections.unshift({
       title: "권역별로 상속등기 안내 찾기",
-      body: "아래 검색·카드에서 서울·경기·인천 등 광역과 주요 시·구 안내로 이동할 수 있습니다. 부산은 기존 부산 상속등기 페이지로 연결합니다. 필터·검색 파라미터 URL은 색인 대상이 아니며 canonical은 이 허브입니다.",
+      body: "아래 검색·카드에서 서울·경기·인천 등 광역과 주요 시·구 안내로 이동할 수 있습니다. 부산 부동산은 부산 상속등기 안내로 연결합니다.",
       links: [
         { href: "/부산상속등기", label: "부산 상속등기 (기존 안내)" },
         {

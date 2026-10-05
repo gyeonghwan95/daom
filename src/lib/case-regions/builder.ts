@@ -268,7 +268,7 @@ function faqFor(entry: CaseRegionEntry, seed: number) {
     },
     {
       question: "기존 지역 안내 페이지와 무엇이 다른가요?",
-      answer: `이 페이지는 업무 사례·상담 동선 중심으로 ${place} 검색 의도에 맞춰 정리한 안내입니다. 관련 구·군·생활권·업무 페이지와 함께 보시면 좋습니다.`,
+      answer: `${place}에서 자주 있는 업무 사례와 상담 동선을 정리한 안내입니다. 관련 구·군·생활권·업무 페이지와 함께 보시면 좋습니다.`,
     },
   ];
   return [0, 1, 2, 3, 4].map((i) => pick(faqs, seed, i));
@@ -468,16 +468,16 @@ export function buildCaseRegionsHubPageData(): PageData {
     ],
     introParagraphs: [
       "전체 사례 탐색기에서 카테고리·상황별 사례를 확인하고, 지역별 안내에서 구·군·동·생활권을 검색할 수 있습니다.",
-      "기존 사례 URL과 상담 기능은 그대로 유지됩니다.",
+      "사례를 읽은 뒤 비슷한 상황이면 상담 신청에서 지금 상황만 남겨 주셔도 됩니다.",
     ],
     faqs: [
       {
         question: "지역 페이지와 사례 탐색기는 무엇이 다른가요?",
         answer:
-          "사례 탐색기는 실제 정리된 업무 사례를 카테고리로 찾습니다. 지역별 안내는 부산 구·군·동·생활권 검색 의도에 맞춘 상담·업무 안내입니다.",
+          "사례 탐색기는 실제 정리된 업무 사례를 카테고리로 찾습니다. 지역별 안내는 부산 구·군·동·생활권별 관할과 자주 있는 업무를 정리한 상담 안내입니다.",
       },
     ],
-    includeFaqSchema: true,
+    includeFaqSchema: false,
     consultationExample: {
       title: "상담 전 확인",
       body: "업무 종류와 소재지, 희망 일정만 알려주셔도 다음 단계를 안내할 수 있습니다.",

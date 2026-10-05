@@ -1325,7 +1325,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       {
         question: "개금동법무사와 겹치나요?",
         answer:
-          "인접하지만 행정동·검색 의도가 달라 허브를 분리했습니다. 주소 기준으로 맞는 페이지를 안내합니다.",
+          "인접하지만 행정동이 달라 안내를 나눴습니다. 관할은 주소 기준으로 확인합니다.",
       },
       {
         question: "전세 만기에 맞춰 상속·매도가 가능한가요?",

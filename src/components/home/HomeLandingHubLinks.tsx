@@ -6,11 +6,11 @@ export function HomeLandingHubLinks() {
 
   return (
     <nav
-      aria-label="지역·업무 랜딩 안내"
+      aria-label="지역·업무별 안내"
       className="mt-8 border-t border-beige-dark pt-8"
     >
       <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-navy-light">
-        지역·업무 랜딩
+        지역·업무별 안내
       </h3>
       <ul className="mt-4 flex flex-wrap gap-2">
         {links.map((link) => (

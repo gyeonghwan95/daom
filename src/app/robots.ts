@@ -16,17 +16,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/admin/", "/api/", "/search", "/blog/external/"],
+        disallow: ["/admin", "/admin/", "/api/", "/search$", "/search?", "/search/", "/blog/external/"],
       },
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/admin", "/admin/", "/api/", "/search", "/blog/external/"],
+        disallow: ["/admin", "/admin/", "/api/", "/search$", "/search?", "/search/", "/blog/external/"],
       },
       {
         userAgent: "Yeti",
         allow: "/",
-        disallow: ["/admin", "/admin/", "/api/", "/search", "/blog/external/"],
+        disallow: ["/admin", "/admin/", "/api/", "/search$", "/search?", "/search/", "/blog/external/"],
       },
     ],
     sitemap,

@@ -34,7 +34,7 @@ export const expansionLandingConfigs: LocalLandingConfig[] = [
   { slug: "임원변경등기과태료", pageType: "conversion", serviceSlug: "director-change", regionKey: "busan", regionLabel: "부산", neighborhoods: ["센텀", "연제구"], conversionKey: "director-penalty", caseAngle: "등기 지연 과태료 예방" },
   { slug: "소유권이전등기서류", pageType: "conversion", serviceSlug: "ownership-transfer", regionKey: "busan", regionLabel: "부산", neighborhoods: ["부산진구", "해운대구"], conversionKey: "ownership-docs", caseAngle: "매매 등기 서류 체크리스트" },
   { slug: "상속등기필요서류", pageType: "conversion", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["수영구", "동래구"], conversionKey: "inheritance-docs", caseAngle: "상속인 3인 협의 서류 준비" },
-  { slug: "상속등기기간", pageType: "conversion", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "기장군"], conversionKey: "inheritance-period", caseAngle: "3개월 기한 내 등기 완료" },
+  { slug: "상속등기기간", pageType: "conversion", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "기장군"], conversionKey: "inheritance-period", caseAngle: "취득세 신고 기한과 등기 순서 확인" },
 
   // 법원·등기소 10
   { slug: "부산지방법원법무사", pageType: "court-registry", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["센텀", "해운대구"], institutionKey: "busan-district-court", caseAngle: "민사·가사 서류 접수 전 상담" },

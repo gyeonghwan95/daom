@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T11:21:06.196Z",
-  "total": 1860,
+  "generatedAt": "2026-10-05T11:46:35.200Z",
+  "total": 1866,
   "paths": [
     "/",
     "/about",
@@ -1163,6 +1163,9 @@
     "/media/busan-ilbo-bar-association-64th-general-assembly",
     "/media/kukje-sinmun-bar-association-64th-general-assembly",
     "/media/beopryul-sinmun-bar-association-64th-general-assembly",
+    "/media/kukinews-youth-budget-unboxing-2027",
+    "/media/weeklypeople-youth-judicial-scrivener-ahn",
+    "/media/busan-mbc-news-fuel-price-relief-expert",
     "/blog/external/224328626727",
     "/blog/external/224328590968",
     "/blog/external/224328572114",
@@ -1861,6 +1864,9 @@
     "/press/sentv-trend-hot-issue-ahn-yoonjung",
     "/press/busan-ilbo-bar-association-64th-general-assembly",
     "/press/kukje-sinmun-bar-association-64th-general-assembly",
-    "/press/beopryul-sinmun-bar-association-64th-general-assembly"
+    "/press/beopryul-sinmun-bar-association-64th-general-assembly",
+    "/press/kukinews-youth-budget-unboxing-2027",
+    "/press/weeklypeople-youth-judicial-scrivener-ahn",
+    "/press/busan-mbc-news-fuel-price-relief-expert"
   ]
 }

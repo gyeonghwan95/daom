@@ -18,6 +18,7 @@
     "build:static": "npm run build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
+    "test": "node --test tests/seo-recovery.spec.ts",
     "validate:page-data": "node scripts/validate-page-data.mjs",
     "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
     "check:routes": "node scripts/check-routes.mjs",

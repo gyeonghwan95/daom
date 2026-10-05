@@ -2,12 +2,12 @@ import type { SearchGuideEntry, SearchIntentCategory } from "./types";
 import { searchIntentSeeds } from "./seeds";
 
 const CATEGORY_LABELS: Record<SearchIntentCategory, string> = {
-  recommend: "추천·선택 키워드",
-  expertise: "등기·상속 실무 키워드",
-  keyword: "실제 검색 키워드",
+  recommend: "법무사 선택·상담 방법",
+  expertise: "등기·상속 실무 안내",
+  keyword: "비용·절차 안내",
   rehab: "개인회생·파산",
-  concern: "고객 고민 키워드",
-  public: "공공기관 키워드",
+  concern: "준비서류·자주 하는 고민",
+  public: "공공기관 업무",
   builder: "건축주·보존등기",
   mistakes: "실수 모음",
   checklist: "체크리스트",

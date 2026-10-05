@@ -65,7 +65,7 @@ function introForSpec(spec: SeoLandingSpec): string {
       const intentBlock = intentFocusBlock(spec);
       const openings = [
         intentBlock ??
-          `${spec.serviceName} ${spec.intentSuffix} 검색 결과는 사건 복잡도에 따라 답이 달라지는 경우가 많습니다.`,
+          `${spec.serviceName} ${spec.intentSuffix} 질문은 사건 복잡도에 따라 답이 달라지는 경우가 많습니다.`,
         `${spec.intentSuffix}만 보고 단정하기보다, ${spec.serviceName}의 사실관계·기한·관할을 먼저 나눠 보는 것이 실무적입니다.`,
       ];
       return `${pick(openings, seed, 0)} ${serviceContext(spec.serviceId)} 다옴법무사사무소는 부산 전역 사건을 다루며 ${spec.intentSuffix} 관련 범위를 항목별로 정리합니다.`;
@@ -74,14 +74,14 @@ function introForSpec(spec: SeoLandingSpec): string {
       const openings = [
         `${spec.institutionName} 인근에서 법무사를 찾을 때는 거리보다 사건 종류(등기·회생·가사)에 맞는 서류 준비가 우선입니다.`,
         `${spec.institutionName} 관련 접수를 앞두고 있다면 창구·수수료·위임 서류부터 점검하는 것이 좋습니다.`,
-        `${spec.institutionName} 근처 검색으로 들어왔더라도, 실제 관할과 접수 방식이 맞는지가 핵심입니다.`,
+        `${spec.institutionName} 근처 사무소를 찾더라도, 실제 관할과 접수 방식이 맞는지가 핵심입니다.`,
       ];
       return `${pick(openings, seed, 0)} ${institutionContext(spec.institutionId)} 방문 전 신청서·위임장·인감증명서를 정리해 두면 접수가 수월합니다.`;
     }
     case "institution-service":
       return `${spec.institutionShortName}와(과) 관련된 ${spec.serviceName} 사건은 관할과 제출 서류를 먼저 맞추는 것이 중요합니다. ${institutionContext(spec.institutionId)} ${serviceContext(spec.serviceId)}`;
     case "special":
-      return `${spec.title} 관련 문의는 검색 키워드만으로 절차가 결정되지 않는 경우가 많습니다. ${serviceContext(spec.serviceId)} ${regionContext(spec.regionId)} 다옴법무사사무소는 상황을 듣고 다음 단계부터 정리합니다.`;
+      return `${spec.title} 관련 문의는 업무 이름만으로 절차가 결정되지 않는 경우가 많습니다. ${serviceContext(spec.serviceId)} ${regionContext(spec.regionId)} 다옴법무사사무소는 상황을 듣고 다음 단계부터 정리합니다.`;
     default:
       return `${spec.title} 관련 상담을 안내합니다.`;
   }
@@ -192,41 +192,87 @@ function exclusiveClusterBody(spec: SeoLandingSpec): string {
       "미성년 상속인이 있으면 특별대리를 검토합니다. 해외 거주 상속인은 위임·인증 일정이 기한과 겹치는지 봅니다.",
       "상속포기 비용은 취득세·등기신청수수료 구조가 아닙니다. 법원 실비와 신청인 구성이 중심입니다.",
       "관할은 피상속인 최후 주소지 등을 기준으로 확인합니다. 부동산 등기소 접수와 섞지 않습니다.",
-      "지역 생활권 안내는 이 페이지에서, 기한·가족관계·신청 흐름은 부산 상속포기 안내에서 이어집니다.",
+      "기한·가족관계·신청 흐름의 자세한 설명은 부산 상속포기 안내에 정리돼 있습니다.",
       "나만 포기하면 끝나는지가 핵심 질문입니다. 남은 상속인 효과를 신고 전에 맞춰야 합니다.",
       "한정승인과 달리 상속 자체를 받지 않습니다. 남겨 둘 재산이 있으면 선택을 다시 가릅니다.",
       "신고서·가족관계 서류·위임 자료를 준비한 뒤 관할 가정법원에 신고합니다.",
       "기한이 지났고 뒤늦게 채무를 알게 된 경우에는 특별한정승인 검토 여지가 있을 수 있습니다.",
-      "검색 유입 구·동과 피상속인 주소지가 다르면 관할을 주소지 기준으로 다시 확인합니다.",
+      "사시는 구·동과 피상속인 마지막 주소지가 다르면 관할을 피상속인 주소지 기준으로 다시 확인합니다.",
     ];
     return [1, 4, 7].map((off) => pick(clusters, spec.seed, off)).join(" ");
   }
   if (spec.serviceId === "qualified-acceptance") {
     const clusters = [
       "한정승인은 재산 목록·채무 목록 작성이 중심입니다. 상속재산 한도로만 채무를 부담합니다.",
-      "안심상속 조회 후 승인 방식을 정하는 흐름을 권합니다. 3개월 기한을 별도 표시합니다.",
+      "안심상속 조회 후 승인 방식을 정하는 흐름을 권합니다. 상속개시를 안 날부터 3개월 기한을 별도로 표시합니다.",
       "미성년·해외 상속인이 있으면 특별대리·위임 일정을 기한과 맞춰 잡습니다.",
       "한정승인 후 상속등기·변제 순서는 사건별로 다시 설계합니다. 등기 비용과 신고 실비를 섞지 않습니다.",
       "기한이 지났다면 특별한정승인 가능성을 먼저 확인합니다.",
-      "지역 안내는 이 페이지에서, 부산 한정승인 절차는 상위 안내에서 이어집니다.",
+      "재산·채무 목록 작성과 신고 후 공고 절차는 부산 한정승인 안내에 자세히 정리돼 있습니다.",
     ];
     return [0, 2, 4].map((off) => pick(clusters, spec.seed, off)).join(" ");
   }
-  const clusters = [
+  const clusters = clusterPoolFor(spec.serviceId);
+  const picked = [1, 4, 7].map((off) => pick(clusters, spec.seed, off));
+  return [...new Set(picked)].join(" ");
+}
+
+function clusterPoolFor(serviceId?: string): string[] {
+  const realEstate = [
     "잔금·인도·대출 실행 일정을 한 줄에 두고 등기 접수를 맞춥니다. 중도금 연체가 있으면 계약 특약을 먼저 확인합니다.",
-    "등기원인 문구와 검인·취득세 완납 증빙이 일치하는지 접수 직전에 재확인합니다. 공동매수면 지분 표기를 맞춥니다.",
+    "등기원인 문구와 취득세 납부 증빙이 일치하는지 접수 직전에 재확인합니다. 공동매수면 지분 표기를 맞춥니다.",
     "말소할 근저당·전세권 목록을 본등기 신청서와 같은 묶음으로 준비합니다. 채권자 협의 필요 여부를 표시합니다.",
-    "전자등기 가능 사건과 방문 열람이 필요한 사건을 분리해 일정을 잡습니다. 보정 대응 창구를 미리 적어 둡니다.",
-    "수임·등록면허세·지방교육세·수수료 칸을 나눈 견적 초안을 상담 후 공유합니다. 추가 보정 비용은 별도 줄입니다.",
-    "미성년·해외·연락두절 당사자가 있으면 위임·특별대리·공시송달 검토 여부를 체크합니다.",
-    "다수 필지·다수 계좌면 목록 번호를 매겨 누락을 줄입니다. 완료 후 등기필정보 전달 방식을 정합니다.",
-    "이미 소송·가압류가 있으면 등기 가능 시점부터 다시 설계합니다. 단순 매매 일정과 섞지 않습니다.",
-    "법인 결의·취임승낙·인감 원본을 대조하고, 과태료 기한을 결의일부터 역산합니다.",
-    "상속 승인 방식(단순·한정·포기)을 등기 일정과 분리해 먼저 가립니다. 3개월 기한을 별도 표시합니다.",
-    "회생·파산 경로에서는 소득·재산·채무 목록 정합성을 신청서 품질의 기준으로 둡니다.",
-    "산업단지·재개발·재건축처럼 특수한 권리관계는 일반 매매 체크리스트와 항목을 나눕니다.",
+    "전자등기 가능 사건과 방문이 필요한 사건을 분리해 일정을 잡습니다. 보정 대응 창구를 미리 적어 둡니다.",
+    "이미 가압류·가처분이 있으면 등기 가능 시점부터 다시 확인합니다. 단순 매매 일정과 섞지 않습니다.",
+    "재개발·재건축·산업단지처럼 특수한 권리관계는 일반 매매 체크리스트와 항목을 나눕니다.",
   ];
-  return [1, 4, 7].map((off) => pick(clusters, spec.seed, off)).join(" ");
+  const corporate = [
+    "법인 결의서·취임승낙서·인감 원본을 대조하고, 변경일부터 2주 등기 기한을 계산합니다.",
+    "등기부와 정관의 상호·목적·본점·임원 기재가 일치하는지 먼저 봅니다.",
+    "임기 만료일이 지난 임원이 있으면 중임·퇴임 등기가 함께 필요한지 확인합니다.",
+    "본점이전은 관할 등기소가 바뀌는지에 따라 신청 방식이 달라집니다.",
+    "의사록 공증이 필요한 결의인지 확인하고 접수 일정을 거꾸로 잡습니다.",
+    "등록면허세·지방교육세·등기신청수수료와 법무사 보수를 나눈 견적을 상담 후 안내합니다.",
+  ];
+  const inheritance = [
+    "상속 승인 방식(단순승인·한정승인·포기)을 등기 일정과 분리해 먼저 가립니다.",
+    "피상속인의 상세 가족관계 서류로 상속인 전원을 먼저 확정합니다.",
+    "협의분할이면 상속인 전원의 인감 날인과 인감증명서가 필요합니다.",
+    "취득세는 상속개시일이 속한 달의 말일부터 6개월 안에 신고·납부해야 하므로 날짜를 먼저 계산합니다.",
+    "미성년 상속인과 친권자가 함께 상속인이면 특별대리인 선임을 검토합니다.",
+    "해외 거주 상속인이 있으면 국적에 따라 서명인증·공증 방식을 먼저 정합니다.",
+  ];
+  const insolvency = [
+    "회생·파산 경로에서는 소득·재산·채무 목록이 서로 맞는지가 신청서 품질의 기준입니다.",
+    "최근 재산 처분·이체 이력이 있으면 신청 전에 설명 자료를 준비합니다.",
+    "채권자 목록은 금융기관 조회 자료와 대조해 누락을 줄입니다.",
+    "법원이 정한 보정 기한을 달력에 표시하고 자료를 미리 모읍니다.",
+    "급여소득인지 영업소득인지에 따라 소득 증빙 서류가 달라집니다.",
+    "인가·면책 여부는 법원이 판단하며 결과를 보장하지 않습니다.",
+  ];
+  const general = [
+    "관할·당사자·원인서류·날짜를 먼저 맞추는 것이 공통 출발점입니다.",
+    "미성년·해외·연락두절 당사자가 있으면 위임·특별대리 검토 여부를 체크합니다.",
+    "여러 부동산·여러 계좌가 얽히면 목록 번호를 매겨 누락을 줄입니다.",
+    "법무사 보수와 세금·수수료·법원 비용을 나눈 견적을 상담 후 안내합니다.",
+    "전자 접수 가능 사건과 방문이 필요한 사건을 분리해 일정을 잡습니다.",
+    "완료 후 등기필정보·접수증 전달 방식을 미리 정합니다.",
+  ];
+  const map: Record<string, string[]> = {
+    "real-estate-registration": realEstate,
+    "ownership-transfer": realEstate,
+    "gift-registration": realEstate,
+    "mortgage-cancellation": realEstate,
+    "jeonse-registration": realEstate,
+    "corporate-registration": corporate,
+    "company-establishment": corporate,
+    "director-change": corporate,
+    "head-office-transfer": corporate,
+    "inheritance-registration": inheritance,
+    "personal-rehabilitation": insolvency,
+    bankruptcy: insolvency,
+  };
+  return map[serviceId ?? ""] ?? general;
 }
 
 function seededLocalChecklist(spec: SeoLandingSpec): string[] {
@@ -244,7 +290,7 @@ function seededLocalChecklist(spec: SeoLandingSpec): string[] {
     "다수 부동산·다수 계좌면 목록 표를 만들어 누락을 줄입니다.",
     "진행 중인 대출·매매가 있으면 연동 순서를 문의 시 알려 주세요.",
     "관공서 수수료 납부 방법도 일정에 포함해 안내합니다.",
-    "검색 유입 생활권과 실제 사건 주소가 다르면 관할을 바꿉니다.",
+    "사시는 생활권과 실제 사건 주소가 다르면 관할을 사건 주소 기준으로 다시 확인합니다.",
     "완료 후 등기필·접수증 전달 방식(메일·카카오·방문)을 정합니다.",
   ];
   return [0, 1, 2, 3, 4].map((i) => pick(pool, spec.seed, 60 + i));
@@ -318,42 +364,90 @@ function intentFocusBlock(spec: SeoLandingSpec): string | null {
   const banks: Record<string, string[]> = {
     필요서류: [
       `${service} ‘필요서류’ 안내는 접수에 반드시 붙는 핵심 서류(신분·인감·원인서류·관할 확인용 주소) 중심으로 정리합니다.`,
-      "없어도 상담은 가능하지만, 접수 단계로 가려면 목록의 ★ 표시 항목부터 채우는 편이 빠릅니다.",
-      "이 페이지는 ‘무엇을 준비해야 접수가 되는지’에 초점을 둡니다. 일정·비용은 별도 안내를 참고하세요.",
+      "서류가 없어도 상담은 가능하지만, 접수 단계로 가려면 신분·인감·원인서류부터 채우는 편이 빠릅니다.",
+      "여기서는 ‘무엇을 준비해야 접수가 되는지’에 초점을 둡니다. 일정·비용은 별도 안내를 참고하세요.",
     ],
     준비서류: [
       `${service} ‘준비서류’ 안내는 상담 전에 모아 두면 좋은 참고 자료(등기부·계약서 사본·가족관계·잔고 등) 중심입니다.`,
       "필수 접수 서류와 달리, 준비서류는 사건 파악용으로 먼저 모아 두면 체크리스트가 짧아집니다.",
-      "이 페이지는 ‘상담 전 미리 챙기면 좋은 것’에 초점을 둡니다. 접수 필수 목록은 필요서류 안내와 역할을 나눕니다.",
+      "여기서는 ‘상담 전 미리 챙기면 좋은 것’에 초점을 둡니다. 접수에 꼭 필요한 목록은 상담 후 사건에 맞춰 다시 정리합니다.",
     ],
     비용: [
       `${service} 비용 안내는 수임료·세금·수수료를 항목별로 나누어 설명하는 데 초점을 둡니다.`,
-      "확정 견적은 서류 확인 후 드리며, 이 페이지에서는 구성 항목과 달라지는 조건을 정리합니다.",
+      "확정 견적은 서류 확인 후 드리며, 여기서는 구성 항목과 금액이 달라지는 조건을 정리합니다.",
       "보수표·협회 기준만 보고 단정하지 않도록, 실제 포함 범위(보정·말소·추가 당사자)를 함께 봅니다.",
     ],
     보수표: [
       `${service} 보수표 안내는 협회·일반 보수 체계를 참고 기준으로 설명합니다.`,
       "실제 수임은 사건 난이도에 따라 조정될 수 있어, 보수표=최종 견적이 아닙니다.",
-      "비용 구성(세금·수수료)과 보수표를 혼동하지 않도록 이 페이지에서는 보수 기준 쪽에 초점을 둡니다.",
+      "세금·수수료는 보수표에 포함되지 않는 별도 항목이라, 보수 기준과 나눠서 설명합니다.",
     ],
     기한: [
-      `${service} 기한 안내는 법정·실무상 놓치기 쉬운 날짜(결의일·상속 개시·잔금일)를 중심으로 정리합니다.`,
-      "기한이 임박하면 서류 완비보다 우선순위 절차부터 안내합니다.",
+      `${service}에서 지켜야 할 기한은 다음과 같습니다.`,
+      ...deadlineFacts(spec.serviceId),
     ],
     기간: [
-      `${service} 소요 기간 안내는 서류 수집·접수·보정·완료까지 일반적인 흐름을 구간별로 설명합니다.`,
-      "사건마다 달라 단정 일정을 약속하지 않으며, 병목 구간을 미리 알려 드립니다.",
+      `${service} 소요 기간은 서류 수집·접수·보정·완료까지 구간별로 나눠 봅니다.`,
+      "사건마다 달라 단정 일정을 약속하지 않으며, 오래 걸리는 구간을 미리 알려 드립니다.",
+      ...deadlineFacts(spec.serviceId).slice(0, 1),
     ],
     과태료: [
-      `${service} 과태료 안내는 과태료가 실제로 적용되는지와, 대신 지켜야 할 기한을 구분해 정리합니다.`,
-      "이미 기한이 지난 경우에도 다음 조치 선택지를 상담에서 정리합니다.",
+      `${service}에 과태료가 실제로 있는지와, 대신 지켜야 할 기한을 구분해 정리합니다.`,
+      ...penaltyFacts(spec.serviceId),
     ],
   };
   const lines = banks[intent];
   if (!lines) {
-    return `${service} ${intent} 문의는 검색어 의도(${intent})에 맞춰 확인 범위를 좁혀 안내합니다. 단정 견적·단정 일정은 서류 확인 후로 미룹니다.`;
+    return `${service} ${intent} 문의는 확인할 범위를 먼저 좁혀 안내합니다. 확정 견적과 일정은 서류를 확인한 뒤 말씀드립니다.`;
   }
   return lines.join(" ");
+}
+
+function deadlineFacts(serviceId: string | undefined): string[] {
+  const corporate = [
+    "등기사항이 바뀌면 변경 사유가 생긴 날부터 2주 안에 본점 소재지에서 변경등기를 해야 합니다.",
+    "임기 만료 후 같은 임원을 다시 선임해도 중임등기가 필요합니다.",
+  ];
+  const contract = [
+    "계약을 원인으로 한 소유권이전등기는 잔금 지급일(증여는 계약 효력 발생일)부터 60일 안에 신청해야 합니다.",
+    "취득세 신고·납부 기한은 취득 원인에 따라 다르므로 등기 접수 전에 함께 확인합니다.",
+  ];
+  const renunciation = [
+    "상속포기·한정승인은 상속개시가 있음을 안 날부터 3개월 안에 가정법원에 신고해야 합니다.",
+    "3개월이 지나면 단순승인으로 볼 수 있어, 채무 초과를 뒤늦게 알았다면 특별한정승인 가능성을 확인합니다.",
+  ];
+  const map: Record<string, string[]> = {
+    "inheritance-registration": [
+      "상속등기 자체에는 일반적인 신청기한이나 지연 과태료가 없습니다.",
+      "상속 취득세는 상속개시일이 속한 달의 말일부터 6개월(외국에 주소를 둔 상속인이 있으면 9개월) 안에 신고·납부해야 하고, 늦으면 가산세가 붙습니다.",
+      "채무 때문에 상속포기·한정승인을 검토한다면 상속개시를 안 날부터 3개월 기한이 먼저입니다.",
+    ],
+    "inheritance-renunciation": renunciation,
+    "qualified-acceptance": renunciation,
+    "corporate-registration": corporate,
+    "director-change": corporate,
+    "head-office-transfer": corporate,
+    "company-establishment": [
+      "주식회사 설립등기는 설립 절차가 끝난 날부터 2주 안에 해야 합니다.",
+      "설립 후 생긴 변경사항도 2주 안에 변경등기를 해야 합니다.",
+    ],
+    "ownership-transfer": contract,
+    "gift-registration": contract,
+    "real-estate-registration": [
+      "기한은 등기 원인에 따라 다릅니다. 매매·증여 등 계약 원인 소유권이전등기는 60일 신청의무가 있고, 상속등기에는 일반적인 신청기한이 없습니다.",
+    ],
+    "personal-rehabilitation": [
+      "개인회생은 법원이 정한 보정 기한을 지키는 것이 중요합니다. 기한을 넘기면 신청이 기각될 수 있습니다.",
+    ],
+    bankruptcy: [
+      "개인파산·면책은 법원이 정한 보정 기한을 지키는 것이 중요합니다.",
+    ],
+  };
+  return (
+    map[serviceId ?? ""] ?? [
+      "기한은 업무와 근거 법령에 따라 다르므로, 날짜가 있는 절차부터 확인합니다.",
+    ]
+  );
 }
 
 function parentHubSection(spec: SeoLandingSpec): PageSection | null {
@@ -361,7 +455,7 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
   if (spec.type === "region-lawyer" && region !== "부산") {
     return {
       title: `${region}에서 이어 볼 안내`,
-      body: `${region} 생활권 안내를 본 뒤에는 부산 전역 선택 가이드와 홈의 업무 허브로 이어가면 검색 의도에 맞는 페이지를 고르기 쉽습니다. exact 상호 검색은 홈을, 지역 생활권 안내는 이 페이지를 기준으로 보시면 됩니다.`,
+      body: `${region} 생활권 안내를 본 뒤에는 부산 전역에서 법무사를 고를 때 확인할 기준과 업무별 안내를 함께 보시면 필요한 절차를 고르기 쉽습니다.`,
       links: [
         { href: "/", label: "부산 법무사" },
         { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
@@ -371,8 +465,8 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
   }
   if (spec.type === "region-service" && spec.serviceId === "inheritance-renunciation") {
     return {
-      title: "광역 상속포기 안내로 이어가기",
-      body: `${region} 상속포기 생활권 안내는 이 페이지에서 보시면 됩니다. 3개월 기한·가족관계·신청 흐름은 부산 상속포기 안내에서 이어집니다. 비용만 궁금하면 상속포기 비용 페이지를 보시면 됩니다.`,
+      title: "상속포기 절차와 비용 더 보기",
+      body: "3개월 기한·가족관계·신청 흐름은 부산 상속포기 안내에, 법원 비용과 보수 구분은 상속포기 비용 안내에 정리돼 있습니다.",
       links: [
         { href: "/부산상속포기", label: "부산 상속포기 신청 안내" },
         { href: "/상속포기비용", label: "상속포기 비용 구성" },
@@ -381,24 +475,27 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
     };
   }
   if (spec.type === "region-service" && spec.serviceName) {
-    const serviceLinks: PageSection["links"] = [
-      { href: "/부산등기법무사", label: "부산 등기 법무사" },
-      { href: "/부산상속법무사", label: "부산 상속 법무사" },
-      { href: "/부산법무사상담", label: "상담 안내" },
-    ];
-    if (spec.serviceName.includes("상속")) {
-      serviceLinks.unshift({ href: "/부산상속법무사", label: "부산 상속 법무사 허브" });
-    }
+    const serviceLinks: PageSection["links"] = spec.serviceName.includes("상속")
+      ? [
+          { href: "/부산상속법무사", label: "상속 절차 중 먼저 할 일 고르기" },
+          { href: "/부산상속등기", label: "부산 상속등기 절차" },
+          { href: "/부산법무사상담", label: "상담 안내" },
+        ]
+      : [
+          { href: "/부산등기법무사", label: "부산 등기 법무사" },
+          { href: "/부산상속법무사", label: "부산 상속 법무사" },
+          { href: "/부산법무사상담", label: "상담 안내" },
+        ];
     return {
-      title: "관련 허브로 이어가기",
-      body: `${region} ${spec.serviceName} 세부 안내는 이 페이지에서, 업무 선택·비교는 상위 허브에서 이어집니다.`,
+      title: "관련 안내 더 보기",
+      body: `${region} ${spec.serviceName} 절차를 확인한 뒤 다른 업무와 비교가 필요하면 아래 안내를 참고하세요.`,
       links: serviceLinks.slice(0, 4),
     };
   }
   if (spec.type === "service-intent") {
     return {
-      title: "검색 의도별 다음 안내",
-      body: `${spec.serviceName} ${spec.intentSuffix ?? ""} 관련해서는 허브 페이지에서 절차를 고른 뒤, 필요하면 상담으로 이어가면 됩니다.`,
+      title: "함께 보면 좋은 안내",
+      body: `${spec.serviceName} 절차 전체와 다른 업무와의 차이는 아래 안내에서 확인할 수 있습니다. 필요하면 상담으로 이어가면 됩니다.`,
       links: [
         { href: "/부산등기법무사", label: "부산 등기 법무사" },
         { href: "/부산상속법무사", label: "부산 상속 법무사" },
@@ -457,13 +554,13 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
   const localVariants = [
     `${josa(region, "은/는")} 관할 등기소와 법원이 다를 수 있어 부동산·법인 소재지 기준 확인이 우선입니다.`,
     `${lawyerProfileMeta.name} 법무사는 ${officeLocation.areaLabel}에 있는 다옴법무사사무소에서 ${region} 포함 부산 전역 사건을 상담합니다. 급한 기한이 있으면 우선순위부터 정리합니다.`,
-    `${region}에서 검색해 들어오신 경우에도, 실제 접수 관할은 부동산 소재지·본점 주소 기준으로 다시 확인합니다. 생활권과 관할이 같지 않을 수 있습니다.`,
+    `${region}에 사시더라도 실제 접수 관할은 부동산 소재지·본점 주소 기준으로 다시 확인합니다. 생활권과 관할이 같지 않을 수 있습니다.`,
     `${region} 인근 교통·업무지구 특성상 잔금일·인도일·법인 결의일이 겹치는 문의가 있습니다. 일정표로 정리하면 누락을 줄일 수 있습니다.`,
   ];
 
   const angleVariants = [
     `${region} ${service}에서 자주 헷갈리는 지점은 ‘누가 신청인인지’와 ‘지금 당장 막히는 권리(근저당·가압류)가 있는지’입니다.`,
-    `검색어만 보고 절차를 단정하지 않습니다. ${region} 사건이라도 상속·매매·증여·법인 변경은 출발 서류가 다릅니다.`,
+    `업무 이름만으로 절차를 단정하지 않습니다. ${region} 사건이라도 상속·매매·증여·법인 변경은 출발 서류가 다릅니다.`,
     `상담 전에는 주소·당사자·희망 일정만 알려 주셔도 ${service} 1차 방향을 잡을 수 있습니다.`,
   ];
 
@@ -494,16 +591,12 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
       items:
         spec.serviceId === "inheritance-renunciation" && (intent === "기한" || intent === "기간")
           ? [
-              "상속포기는 상속 개시를 안 날부터 3개월 내 가정법원 신고가 원칙입니다.",
-              "사망일과 인지일을 구분해 달력에 표시합니다.",
+              "상속포기는 상속개시가 있음을 안 날부터 3개월 안에 가정법원에 신고해야 합니다.",
+              "사망일과 사망 사실을 안 날을 구분해 달력에 표시합니다.",
               "기한이 지났다면 특별한정승인 검토 여지가 있는지 사실관계부터 확인합니다.",
             ]
           : intent === "기한" || intent === "기간"
-          ? [
-              "상속포기·한정승인은 상속 개시 후 3개월 내 검토가 중요합니다. 상속등기·취득세 신고는 별도 기준으로 확인합니다.",
-              "임원변경등기는 결의일로부터 등기 기한을 지키는 것이 좋습니다.",
-              "개인회생·파산은 신청서 보정 기한을 놓치지 않도록 일정을 관리합니다.",
-            ]
+          ? deadlineFacts(spec.serviceId)
           : intent === "과태료"
             ? penaltyFacts(spec.serviceId)
             : seededLocalChecklist(spec).slice(0, 3),
@@ -550,6 +643,111 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
   return sections;
 }
 
+function intentFaq(spec: SeoLandingSpec): PageFaqItem {
+  const service = spec.serviceName ?? "해당 업무";
+  const intent = spec.intentSuffix ?? "";
+  if (intent === "비용" || intent === "보수표" || intent === "수임료" || intent === "수수료") {
+    return {
+      question: `${service} 비용에는 무엇이 포함되나요?`,
+      answer:
+        "법무사 보수와 세금·등기신청수수료·법원 비용 같은 실비는 성격이 다른 항목입니다. 사건에 실제로 발생하는 항목만 나눠 안내하고, 확정 금액은 서류 확인 후 말씀드립니다.",
+    };
+  }
+  if (intent === "필요서류" || intent === "준비서류" || intent === "서류") {
+    return {
+      question: `${service} 서류를 모두 갖춰야 상담할 수 있나요?`,
+      answer:
+        "아닙니다. 주소와 당사자 관계만으로도 1차 서류 목록을 만들 수 있고, 발급에 시간이 걸리는 서류부터 표시해 드립니다.",
+    };
+  }
+  if (intent === "과태료") {
+    return {
+      question: `${service}에도 과태료가 있나요?`,
+      answer: penaltyFacts(spec.serviceId).join(" "),
+    };
+  }
+  if (intent === "기한" || intent === "기간") {
+    return {
+      question: `${josa(service, "은/는")} 언제까지 해야 하나요?`,
+      answer: deadlineFacts(spec.serviceId).join(" "),
+    };
+  }
+  return {
+    question: `${service} ${intent} 상담 전에 무엇을 알려 드리면 되나요?`,
+    answer:
+      "부동산·본점 주소, 당사자 관계, 날짜가 있는 일정만 알려 주셔도 확인할 범위를 먼저 좁혀 안내합니다.",
+  };
+}
+
+function consultationChecklist(serviceId?: string): string[] {
+  const map: Record<string, string[]> = {
+    "inheritance-registration": [
+      "사망일과 상속인 구성",
+      "부동산 주소와 등기부",
+      "법정상속분대로 할지 협의분할할지",
+      "해외·미성년 상속인이 있는지",
+      "취득세 신고 기한까지 남은 기간",
+    ],
+    "inheritance-renunciation": [
+      "사망일과 사망 사실을 안 날",
+      "상속인 구성(배우자·자녀·다음 순위)",
+      "이미 예금 인출·재산 처분을 했는지",
+      "미성년·해외 상속인이 있는지",
+    ],
+    "qualified-acceptance": [
+      "사망일과 사망 사실을 안 날",
+      "파악된 재산과 채무 목록",
+      "재산 처분 이력",
+      "신고 후 상속등기가 필요한지",
+    ],
+    "corporate-registration": [
+      "최신 법인 등기부와 정관",
+      "변경 사유가 생긴 날",
+      "임원 임기 만료일",
+      "의사록 공증 필요 여부",
+    ],
+    "director-change": [
+      "등기부상 임원 취임일과 임기",
+      "취임·사임·중임 날짜",
+      "취임승낙서·인감증명서 준비 여부",
+      "2주 기한이 지났는지",
+    ],
+    "company-establishment": [
+      "상호·사업목적·본점 주소",
+      "자본금과 주주·임원 구성",
+      "발기설립인지 모집설립인지",
+      "설립 희망일",
+    ],
+    "ownership-transfer": [
+      "계약일·잔금일",
+      "매도인 등기필증 보유 여부",
+      "근저당 말소·대출 실행 여부",
+      "매수인 수와 지분",
+    ],
+    "personal-rehabilitation": [
+      "월 소득과 소득 형태",
+      "채권자 수와 채무 총액",
+      "보유 재산",
+      "최근 재산 처분·이체 이력",
+    ],
+    bankruptcy: [
+      "소득과 생계비",
+      "채무 총액과 발생 경위",
+      "보유 재산과 면제재산",
+      "최근 재산 처분 이력",
+    ],
+  };
+  return (
+    map[serviceId ?? ""] ?? [
+      "부동산·본점 주소",
+      "당사자 관계",
+      "날짜가 있는 일정(잔금일·결의일·사망일)",
+      "근저당·가압류 등 권리관계",
+      "준비된 서류",
+    ]
+  );
+}
+
 function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
   const region = spec.regionLabel ?? "부산";
   const service = spec.serviceName ?? "법무사 업무";
@@ -589,17 +787,7 @@ function buildFaqs(spec: SeoLandingSpec): PageFaqItem[] {
   ];
 
   if (spec.intentSuffix) {
-    const intentFaqs = [
-      {
-        question: `${josa(`${spec.serviceName} ${spec.intentSuffix}`, "은/는")} 어디서 확인하나요?`,
-        answer: `사건별로 달라 일괄 금액을 단정하기 어렵습니다. 상담 시 ${spec.intentSuffix} 범위를 항목별로 정리해 드립니다.`,
-      },
-      {
-        question: `${spec.intentSuffix}만 보면 ${spec.serviceName} 절차가 정해지나요?`,
-        answer: `아닙니다. ${spec.intentSuffix}는 참고 포인트이고, 관할·서류·기한을 함께 봐야 진행 순서가 정해집니다.`,
-      },
-    ];
-    faqs.push(pick(intentFaqs, seed, 12));
+    faqs.push(intentFaq(spec));
   } else {
     const remoteFaqs = [
       {
@@ -691,7 +879,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       ],
       consultationExample: {
         title: "등기소 관할 확인 상담",
-        body: "해운대 부동산인데 등기소 근처 법무사를 검색해 문의하신 경우, 관할이 남부산등기소인지부터 확인하고 전자등기 가능 여부를 안내한 사례입니다.",
+        body: "이해를 위한 가상 예시입니다. 해운대 부동산 등기를 등기소 근처 사무소에 맡기려는 경우, 관할 등기소가 어디인지부터 확인하고 전자등기 가능 여부를 안내합니다.",
       },
       procedures: [
         "부동산 주소 또는 법인 본점으로 관할 등기소 확인",
@@ -860,7 +1048,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
             [
               `${spec.regionLabel ?? "부산"} 의뢰인 사례에서 관할·서류·기한을 함께 검토합니다.`,
               `${spec.regionLabel ?? "부산"}에서 들어온 문의는 생활권과 실제 접수 관할을 구분해 안내합니다.`,
-              `검색어(${spec.title})만으로 단정하지 않고, 확인된 사실부터 범위를 나눕니다.`,
+              `${spec.title} 문의도 확인된 사실부터 범위를 나눠 안내합니다.`,
             ],
             spec.seed,
             20,
@@ -872,9 +1060,9 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       title: `${withRegionLabel(spec.regionLabel ?? "부산", spec.title)} 상담 예시`,
       body: pick(
         [
-          `최근 ${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 관련 문의가 있었습니다. 먼저 가족관계·재산·채무·관할을 확인했고, 급한 기한이 있으면 우선순위를 정리했습니다. 준비 서류 목록과 예상 일정·비용 범위를 단계별로 안내한 뒤, 서류가 모이면 접수까지 이어서 진행했습니다.`,
-          `${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${josa(spec.title, "을/를")} 검색해 문의하셨습니다. 주소와 당사자만으로 관할을 확인한 뒤, 필요 서류와 일정 리스크를 항목별로 안내한 가상 예시입니다. 실제 결과는 달라질 수 있습니다.`,
-          `${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친 경우, 날짜가 있는 절차부터 정리하고 나머지 서류를 병렬로 준비하도록 안내했습니다.`,
+          `이해를 위한 가상 예시입니다. ${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 문의라면 먼저 당사자·재산·관할을 확인하고, 급한 기한이 있으면 우선순위를 정합니다. 준비 서류 목록과 예상 일정·비용 항목을 단계별로 안내한 뒤 서류가 모이면 접수로 이어집니다. 실제 결과는 달라질 수 있습니다.`,
+          `이해를 위한 가상 예시입니다. ${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${josa(spec.title, "을/를")} 문의하면, 주소와 당사자만으로 관할을 확인한 뒤 필요 서류와 일정상 주의점을 항목별로 안내합니다. 실제 결과는 달라질 수 있습니다.`,
+          `이해를 위한 가상 예시입니다. ${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친다면, 날짜가 있는 절차부터 정리하고 나머지 서류를 함께 준비하도록 안내합니다.`,
         ],
         spec.seed,
         21,
@@ -898,7 +1086,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       "등기부등본·계약서·협의서 등 사건 관련 핵심 서류",
       "가족관계증명서·재산 목록(상속·가사 해당 시)",
     ],
-    consultationPoints: spec.keywords.slice(0, 5),
+    consultationPoints: consultationChecklist(spec.serviceId),
     minContentLength: spec.isHub ? 2500 : 1500,
   };
 }

@@ -80,7 +80,7 @@ export function MdxArticleLayout({
             {meta.area && (
               <span className="rounded-full bg-cream px-3 py-1">{meta.area}</span>
             )}
-            {meta.tags.map((tag) => (
+            {meta.tags.slice(0, 3).map((tag) => (
               <span key={tag} className="rounded-full bg-cream px-3 py-1">
                 {tag}
               </span>

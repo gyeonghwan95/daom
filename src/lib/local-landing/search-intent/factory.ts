@@ -205,7 +205,7 @@ export function buildSearchIntentContent(
 ): SearchIntentContent {
   const title = seed.label;
   const metaTitle = `${seed.label}｜다옴법무사사무소`;
-  const metaDescription = `${seed.label} 검색 안내. ${seed.focus} 기준의 준비서류·절차·자주 하는 실수·FAQ를 정리했습니다. 해운대·센텀 다옴법무사사무소.`;
+  const metaDescription = `${seed.label} 상담 전 확인 안내. ${seed.focus} 기준의 준비서류·절차·자주 하는 실수·FAQ를 정리했습니다. 해운대·센텀 다옴법무사사무소.`;
 
   return {
     slug: seed.slug,
@@ -216,9 +216,9 @@ export function buildSearchIntentContent(
     h1: `${seed.label} — 상담 전 확인 가이드`,
     eyebrow: "상담 전 확인 안내",
     heroParagraphs: [
-      `${seed.label} 검색 시, 키워드만 보고 결정하기보다 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
+      `${seed.label} 관련 업무를 알아볼 때는 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
       OFFICE,
-      "이 페이지는 특정 사무소를 ‘추천’하거나 전문 자격을 단정하지 않습니다. 실제 고객 검색 의도를 바탕으로 상담 전 체크포인트를 정리한 안내입니다.",
+      "이 안내는 특정 사무소를 ‘추천’하거나 전문 자격을 단정하지 않습니다. 상담 전에 스스로 확인할 수 있는 체크포인트를 정리했습니다.",
     ],
     summaryBullets: [
       `${seed.label}는 ${seed.focus}를 중심으로 서류·절차·비용을 함께 봅니다.`,
