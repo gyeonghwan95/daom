@@ -17,9 +17,10 @@ type Size = "sm" | "md" | "lg";
  * chip  — Hero 가이드 칩 (rounded-lg)
  * soft  — 흰 배경 + 초록 보더 (지도 보조)
  * text  — 인라인 링크 (푸터·후기)
+ * onDark — 네이비 배경 위 보조 버튼 (반투명 흰 테두리 + 초록 N)
  * primary/secondary — 하위 호환 (brand/soft로 매핑)
  */
-type Tone = "brand" | "chip" | "soft" | "text" | "primary" | "secondary";
+type Tone = "brand" | "chip" | "soft" | "text" | "onDark" | "primary" | "secondary";
 
 export type NaverSmartPlaceCtaProps = {
   variant: NaverSmartPlaceVariant;
@@ -32,7 +33,7 @@ export type NaverSmartPlaceCtaProps = {
   showHint?: boolean;
 };
 
-type VisualTone = "brand" | "chip" | "soft" | "text";
+type VisualTone = "brand" | "chip" | "soft" | "text" | "onDark";
 
 const sizeClass: Record<Size, string> = {
   sm: "min-h-10 px-3 text-sm gap-1.5",
@@ -52,7 +53,13 @@ function resolveTone(
 ): VisualTone {
   if (tone === "primary") return "brand";
   if (tone === "secondary") return variant === "map" ? "soft" : "brand";
-  if (tone === "brand" || tone === "chip" || tone === "soft" || tone === "text") {
+  if (
+    tone === "brand" ||
+    tone === "chip" ||
+    tone === "soft" ||
+    tone === "text" ||
+    tone === "onDark"
+  ) {
     return tone;
   }
   if (variant === "reservation" || variant === "map") return "brand";
@@ -74,6 +81,8 @@ function toneClass(tone: VisualTone, fullWidth: boolean, size: Size): string {
       return `${base} ${width} ${radius} border border-[#03C75A]/30 bg-white text-[#028a46] hover:border-[#03C75A]/50 hover:bg-[#E8F8EF]`;
     case "text":
       return `${base} ${width} gap-1 rounded-md text-[#028a46] underline-offset-2 hover:underline`;
+    case "onDark":
+      return `${base} ${width} ${radius} border border-white/30 bg-white/[0.07] text-white hover:border-white/50 hover:bg-white/[0.14]`;
     default:
       return `${base} ${width}`;
   }
@@ -102,7 +111,9 @@ export function NaverSmartPlaceCta({
   const iconClass =
     tone === "soft" || tone === "text"
       ? `${iconSize[size]} shrink-0 text-current`
-      : `${iconSize[size]} shrink-0 text-white`;
+      : tone === "onDark"
+        ? `${iconSize[size]} shrink-0 text-[#03C75A]`
+        : `${iconSize[size]} shrink-0 text-white`;
 
   // Hero chip: globals `.hero-contact__chip`가 padding/radius를 담당 → size 클래스 축소
   const sizing =

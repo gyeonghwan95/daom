@@ -61,8 +61,6 @@ export const NATIONWIDE_BANNER_HEADLINES: Record<string, string> = {
     "수임료 안내부터 원격 진행까지, 전국 어디서나 문의할 수 있습니다",
   "how-to-book-consultation-faq":
     "부산에 오지 않아도 전화·카카오톡으로 상담을 시작할 수 있습니다",
-  유언공증준비:
-    "공증 전 재산 목록 확인과 이후 유증·상속등기 준비는 방문 없이 진행할 수 있습니다",
 };
 
 /** 제목 위 '전 지역 업무 가능' chip · 비대면 배너 표시 여부 */

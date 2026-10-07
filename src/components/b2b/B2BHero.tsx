@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import type { TrustItem } from "@/lib/b2b/types";
 
 type B2BHeroProps = {
@@ -58,6 +59,14 @@ export function B2BHero({
             {secondaryCta.label}
           </Link>
         )}
+        <NaverSmartPlaceCta
+          variant="reservation"
+          placement="page_hero"
+          tone="brand"
+          size="lg"
+          label="네이버 예약"
+          className="!rounded-lg px-6 print:hidden"
+        />
       </div>
       {audienceLabels.length > 0 ? (
         <ul className="flex flex-wrap gap-2" aria-label="대상 유형">

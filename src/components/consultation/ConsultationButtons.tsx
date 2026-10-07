@@ -12,8 +12,10 @@ import {
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
+import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
+import type { NaverSmartPlacePlacement } from "@/lib/naver-smartplace/cta";
 
 type ConsultationButtonsProps = {
   channels: ConsultationChannel[];
@@ -24,6 +26,9 @@ type ConsultationButtonsProps = {
   showQrCodes?: boolean;
   className?: string;
   pageSlug?: string;
+  /** 채널 버튼 아래에 「네이버 예약 · 네이버 지도」 한 쌍을 붙인다 */
+  naverPlace?: boolean;
+  naverPlacement?: NaverSmartPlacePlacement;
 };
 
 function getButtonClass(
@@ -193,10 +198,22 @@ export function ConsultationButtons({
   showQrCodes,
   className = "",
   pageSlug,
+  naverPlace = false,
+  naverPlacement = "other",
 }: ConsultationButtonsProps) {
   const orderedChannels = useOrderedConsultationChannels(channels);
   const labelFor = (channel: ConsultationChannel) =>
     showLabels === "short" ? channel.shortLabel : channel.label;
+
+  const naverActions = naverPlace ? (
+    <NaverPlaceActions
+      placement={naverPlacement}
+      theme={theme}
+      size="md"
+      className="mt-2 sm:mt-3 sm:gap-3"
+      buttonClassName="!min-h-11 !px-3"
+    />
+  ) : null;
 
   const wantsQrPanel =
     (showQrCodes ?? layout === "grid") &&
@@ -207,14 +224,21 @@ export function ConsultationButtons({
     );
 
   if (wantsQrPanel) {
-    return (
+    const panel = (
       <ConsultationPanel
         channels={orderedChannels}
         theme={theme}
         showLabels={showLabels}
-        className={className}
+        className={naverActions ? "" : className}
         pageSlug={pageSlug}
       />
+    );
+    if (!naverActions) return panel;
+    return (
+      <div className={className || undefined}>
+        {panel}
+        {naverActions}
+      </div>
     );
   }
 
@@ -230,7 +254,7 @@ export function ConsultationButtons({
                 ? "grid-cols-2"
                 : "grid-cols-3"
           }`
-        : "grid grid-cols-2 gap-2 sm:gap-3";
+        : "grid grid-cols-2 gap-2 sm:gap-3 [&>*:last-child:nth-child(odd)]:col-span-2";
 
   const isTile = layout === "tile";
 
@@ -260,6 +284,7 @@ export function ConsultationButtons({
           ),
         )}
       </div>
+      {naverActions}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-05T11:46:33.191Z
+# 생성: 2026-10-07T11:56:56.974Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1657 (제외 209)
+# 총 URL: 1656 (제외 209)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -9,7 +9,7 @@
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 593개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 183개
-# Tier 6 — 순차 (기타 키워드 랜딩): 574개
+# Tier 6 — 순차 (기타 키워드 랜딩): 573개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 32개
 
@@ -1034,7 +1034,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (183개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (574개)
+Tier 6 — 순차 (기타 키워드 랜딩) (573개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1469,7 +1469,6 @@ Tier 6 — 순차 (기타 키워드 랜딩) (574개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/울산선박등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9A%B8%EC%A7%84%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/울진선박등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EB%A5%98%EB%B6%84%EA%B3%BC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/유류분과상속등기
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EA%B3%B5%EC%A6%9D%EC%A4%80%EB%B9%84	/유언공증준비
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EC%A7%91%ED%96%89%EC%9E%90%EC%99%80%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/유언집행자와상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/의료법인설립등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/의료법인임원변경등기

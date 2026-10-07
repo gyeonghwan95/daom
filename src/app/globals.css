@@ -37,7 +37,7 @@
   --warning-text: #4a3614;
   --focus-ring: #152a45;
 
-  /* Layout — 본문 가독성 폭 (약 780px) · 카드·표는 섹션에서 확장 가능 */
+  /* Layout — 본문 가독성 폭 (기본 약 780px, PC 960~1088px) · 카드·표는 섹션에서 확장 가능 */
   --article-width: min(48.75rem, 100%);
   --content-measure: var(--article-width);
   --prose-width: var(--article-width);
@@ -74,6 +74,19 @@
 @media (min-width: 64rem) {
   :root {
     --header-height: 5rem;
+  }
+}
+
+/* PC — 본문 칼럼을 넓혀 표·카드·단계를 한눈에 본다 (좌측 목차 열 제외 폭 기준) */
+@media (min-width: 80rem) {
+  :root {
+    --article-width: min(60rem, 100%);
+  }
+}
+
+@media (min-width: 90rem) {
+  :root {
+    --article-width: min(68rem, 100%);
   }
 }
 

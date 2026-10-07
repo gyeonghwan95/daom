@@ -10,6 +10,7 @@ import { OfficeLocationInfo } from "@/components/contact/OfficeLocationInfo";
 import { ContentSection } from "@/components/readability";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages, type SiteImageAsset } from "@/lib/site-images";
@@ -261,6 +262,8 @@ export default function OfficePage() {
                     theme="light"
                     layout="grid"
                     pageSlug="office"
+                    naverPlace
+                    naverPlacement="office_page"
                   />
                 </div>
                 <p className="mt-4 text-sm text-navy/60">
@@ -389,17 +392,30 @@ export default function OfficePage() {
             <p className="mt-2 text-sm text-navy/65">
               약도 이미지입니다. 상세 지도·주차·동선은 오시는 길에서 이어서 확인하세요.
             </p>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex flex-col items-center">
               <div className="relative aspect-[4/3] w-full max-w-md overflow-hidden rounded-xl border border-beige-dark sm:max-w-lg">
                 <SiteImage {...map} fill className="object-contain bg-white" sizes="512px" />
               </div>
+              <div className="mt-3 w-full max-w-md sm:max-w-lg">
+                <NaverSmartPlaceCta
+                  variant="map"
+                  placement="office_page"
+                  tone="brand"
+                  size="lg"
+                  fullWidth
+                  label="네이버 지도에서 위치 보기"
+                />
+                <p className="mt-2 text-center text-xs leading-relaxed text-navy/55">
+                  네이버 지도에서 길찾기와 방문 예약을 함께 이용할 수 있습니다.
+                </p>
+              </div>
+              <Link
+                href="/location"
+                className="mt-1 inline-flex min-h-12 items-center text-sm font-semibold text-navy-light hover:underline"
+              >
+                지도·찾아오시는 길·주차 안내 자세히 보기 →
+              </Link>
             </div>
-            <Link
-              href="/location"
-              className="mt-4 inline-flex min-h-12 items-center text-sm font-semibold text-navy-light hover:underline"
-            >
-              지도·찾아오시는 길·주차 안내 자세히 보기 →
-            </Link>
           </section>
 
           <ContentSection id="office-faq" title="자주 묻는 질문">
@@ -436,6 +452,8 @@ export default function OfficePage() {
                 theme="dark"
                 layout="grid"
                 pageSlug="office-bottom"
+                naverPlace
+                naverPlacement="office_page"
               />
             </div>
           </section>

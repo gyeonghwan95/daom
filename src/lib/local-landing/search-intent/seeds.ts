@@ -2299,21 +2299,6 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
   },
   // 2026-09-23 inheritance asset / will / tax gaps
   {
-    slug: "유언공증준비",
-    label: "유언공증 준비",
-    category: "concern",
-    serviceSlug: "inheritance-registration",
-    keywords: [
-      "부산 유언공증",
-      "부산 공정증서유언",
-      "유언공증 부산",
-      "유언공증 준비",
-      "유언 공증 서류",
-    ],
-    focus: "부산 생전 유언공증·방식·재산 목록 준비",
-    ...inheritanceCase,
-  },
-  {
     slug: "유언집행자와상속등기",
     label: "유언집행자와 상속등기",
     category: "concern",

@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { InquiryDeliverySuccess } from "@/components/quick-inquiry/InquiryDeliverySuccess";
 import {
   isTurnstileConfigured,
@@ -624,23 +626,46 @@ export function LectureInquiryForm({
         </div>
       ) : null}
 
-      <button
-        type="submit"
-        disabled={!agree || submitting}
-        className="interactive-surface inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-navy px-4 text-sm font-semibold text-cream hover:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-50"
-      >
-        {submitting ? (
-          <>
-            <span
-              className="inquiry-form__spinner inquiry-form__spinner--button"
-              aria-hidden
-            />
-            전송 중…
-          </>
-        ) : (
-          "이메일로 문의 보내기"
-        )}
-      </button>
+      <div className="grid gap-2 sm:grid-cols-2">
+        <button
+          type="submit"
+          disabled={!agree || submitting}
+          className="interactive-surface inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-navy px-4 text-sm font-semibold text-cream hover:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {submitting ? (
+            <>
+              <span
+                className="inquiry-form__spinner inquiry-form__spinner--button"
+                aria-hidden
+              />
+              전송 중…
+            </>
+          ) : (
+            "바로 메일 보내기"
+          )}
+        </button>
+        <NaverSmartPlaceCta
+          variant="reservation"
+          placement="page_conversion"
+          tone="brand"
+          size="lg"
+          fullWidth
+          label="네이버 예약하기"
+          className="!text-sm"
+        />
+      </div>
+      {!agree ? (
+        <p className="-mt-2 text-center text-xs text-navy/55">
+          개인정보 수집에 동의하시면 메일을 보낼 수 있습니다.
+        </p>
+      ) : null}
+
+      <InquiryAltChannels
+        placement="page_conversion"
+        pageSlug="lecture-inquiry"
+        title="메일 말고도 편한 방법으로 문의하실 수 있습니다"
+        description="강의 일정·주제·대상만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 같은 담당 법무사가 직접 확인합니다."
+      />
 
       <p className="text-center text-xs text-navy/55">
         보통 영업일 기준 빠르게 회신드립니다.{" "}

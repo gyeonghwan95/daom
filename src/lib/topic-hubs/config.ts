@@ -112,7 +112,6 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/보험금과상속재산구분", label: "부산 보험금과 상속재산" },
           { href: "/자동차상속명의이전", label: "부산 자동차 상속 명의이전" },
           { href: "/분양권입주권상속", label: "부산 분양권·입주권 상속" },
-          { href: "/유언공증준비", label: "부산 유언공증 준비" },
           { href: "/유언집행자와상속등기", label: "부산 유언집행자와 상속등기" },
           { href: "/부산유언검인", label: "부산 유언검인(사망 후)" },
           { href: "/상속세신고와등기순서", label: "부산 상속세 신고와 등기" },

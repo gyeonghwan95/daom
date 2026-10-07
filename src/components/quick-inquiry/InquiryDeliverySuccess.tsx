@@ -70,7 +70,13 @@ export function InquiryDeliverySuccess({
 
       <div className="inquiry-form__success-channels">
         <p className="inquiry-form__section-label">다른 연락 방법</p>
-        <ConsultationButtons channels={channels} theme="light" layout="grid" />
+        <ConsultationButtons
+          channels={channels}
+          theme="light"
+          layout="grid"
+          naverPlace
+          naverPlacement="consult_page"
+        />
       </div>
 
       <div className="inquiry-form__success-actions">

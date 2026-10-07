@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 import { SidebarConsultationPanelFixed } from "@/components/consultation/SidebarConsultationPanelFixed";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { filterAvailableSections } from "@/lib/section-nav/filter-available-sections";
@@ -14,8 +13,6 @@ import {
   isTopFixedVisibleAboveFooter,
 } from "@/lib/section-nav/footer-boundary";
 import type { SectionNavItem } from "@/lib/section-nav/types";
-import { isReservedInheritancePath } from "@/data/seoExperiments/reserved-inheritance-intents";
-import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
 
 type SectionNavigatorProps = {
   sections: SectionNavItem[];
@@ -27,10 +24,6 @@ type NavLayout = {
 };
 
 export function SectionNavigator({ sections }: SectionNavigatorProps) {
-  const pathname = usePathname();
-  const leanSeo =
-    isReservedInheritancePath(pathname || "") ||
-    isLectureTargetPath(pathname || "");
   const reduced = useReducedMotion();
   const anchorRef = useRef<HTMLDivElement>(null);
   const tocRef = useRef<HTMLElement>(null);
@@ -263,13 +256,11 @@ export function SectionNavigator({ sections }: SectionNavigatorProps) {
         </nav>
       ) : null}
 
-      {leanSeo ? null : (
-        <SidebarConsultationPanelFixed
-          left={layout.left}
-          width={layout.width}
-          isReady={isReady}
-        />
-      )}
+      <SidebarConsultationPanelFixed
+        left={layout.left}
+        width={layout.width}
+        isReady={isReady}
+      />
     </>
   );
 }

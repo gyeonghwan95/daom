@@ -10,6 +10,8 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
@@ -63,6 +65,7 @@ export function ConversionActionButtons({
 }: ConversionActionButtonsProps) {
   const { phone, kakao, naverTalk } = getContactInfo();
   const slug = pageSlug ?? "conversion-cta";
+  const naverMapOn = isNaverSmartPlaceConfigured();
   const channelItems = useOrderedConsultationChannels(
     [
       phone
@@ -120,13 +123,10 @@ export function ConversionActionButtons({
         {consultationInquiryCopy.oneMinuteShort}
       </p>
 
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 [&>*:last-child:nth-child(odd)]:col-span-2 sm:[&>*:last-child:nth-child(odd)]:col-span-1">
         {channelItems.map((channel) => {
           const kind = channel.id;
-          const className =
-            kind === "naver"
-              ? `${primaryClass(theme, kind)} col-span-2 sm:col-span-1`
-              : primaryClass(theme, kind);
+          const className = primaryClass(theme, kind);
           const icon =
             kind === "phone" ? (
               <PhoneIcon className="h-5 w-5 shrink-0" />
@@ -163,7 +163,13 @@ export function ConversionActionButtons({
         })}
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
+      <div
+        className={
+          naverMapOn
+            ? "grid gap-2 sm:grid-cols-2 sm:gap-3 xl:grid-cols-4"
+            : "grid gap-2 sm:grid-cols-3 sm:gap-3"
+        }
+      >
         <Link
           href="/location"
           data-cta="location"
@@ -173,6 +179,17 @@ export function ConversionActionButtons({
           <LocationIcon className="h-5 w-5 shrink-0" />
           <span className="truncate">방문 상담 안내</span>
         </Link>
+
+        {naverMapOn ? (
+          <NaverSmartPlaceCta
+            variant="map"
+            placement="conversion_actions"
+            tone={theme === "dark" ? "onDark" : "soft"}
+            size="md"
+            fullWidth
+            label="네이버 지도"
+          />
+        ) : null}
 
         <a
           href={documentsHref}

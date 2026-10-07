@@ -111,7 +111,6 @@ export const INHERITANCE_PAGE_STAGE: Record<string, string> = {
   부산상속법무사: "choice",
   상속: "after-death",
   // 2026-09-23 asset / will / tax gaps
-  유언공증준비: "special",
   유언집행자와상속등기: "registry",
   상속세신고와등기순서: "registry",
   예금상속인출절차: "assets",

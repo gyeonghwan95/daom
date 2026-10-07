@@ -147,6 +147,8 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
               theme="light"
               layout="grid"
               pageSlug={page.slug}
+              naverPlace
+              naverPlacement="page_conversion"
             />
           </div>
         </div>

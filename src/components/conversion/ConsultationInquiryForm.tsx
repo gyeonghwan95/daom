@@ -3,6 +3,7 @@
 import { useCallback, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import {
   isTurnstileConfigured,
@@ -332,7 +333,13 @@ export function ConsultationInquiryForm({
 
         <div className="inquiry-form__success-channels">
           <p className="inquiry-form__section-label">다른 연락 방법</p>
-          <ConsultationButtons channels={channels} theme="light" layout="grid" />
+          <ConsultationButtons
+            channels={channels}
+            theme="light"
+            layout="grid"
+            naverPlace
+            naverPlacement="consult_page"
+          />
         </div>
 
         <div className="inquiry-form__success-actions">
@@ -723,6 +730,15 @@ export function ConsultationInquiryForm({
           </a>
         ) : null}
       </div>
+
+      <InquiryAltChannels
+        channels={["kakao", "talk", "reservation", "map"]}
+        placement="consult_page"
+        pageSlug="contact-inquiry"
+        title="신청서 대신 바로 연락하셔도 됩니다"
+        description="작성이 번거로우시면 카카오톡·네이버 톡톡으로 상황만 남기시거나, 네이버 예약으로 방문 상담 일정을 잡으실 수 있습니다."
+        className="mt-5"
+      />
 
       <ConsultationFeeNotice />
     </form>

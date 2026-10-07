@@ -10,7 +10,7 @@ import {
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
-import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -182,17 +182,16 @@ export function SidebarConsultationPanel() {
 
         {showNaverReservation ? (
           <div className="sidebar-consult-panel__naver">
-            <NaverSmartPlaceCta
-              variant="reservation"
+            <NaverPlaceActions
               placement="sidebar"
-              tone="brand"
               size="sm"
-              fullWidth
-              label="네이버 예약"
-              className="!min-h-10 !rounded-lg"
+              reservationLabel="예약"
+              mapLabel="지도"
+              className="gap-1.5"
+              buttonClassName="!min-h-10 !rounded-lg !px-2"
             />
             <p className="sidebar-consult-panel__naver-hint">
-              방문 상담은 네이버에서 일정을 확인할 수 있습니다
+              네이버에서 방문 예약과 사무소 위치를 확인할 수 있습니다
             </p>
           </div>
         ) : null}

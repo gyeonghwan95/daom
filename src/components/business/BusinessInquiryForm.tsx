@@ -1,12 +1,13 @@
 "use client";
 
 import { useCallback, useId, useMemo, useState } from "react";
+import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { InquiryDeliverySuccess } from "@/components/quick-inquiry/InquiryDeliverySuccess";
 import {
   isTurnstileConfigured,
   TurnstileWidget,
 } from "@/components/quick-inquiry/TurnstileWidget";
-import { getContactInfo, getDirectConsultationChannels } from "@/lib/contact";
 import {
   clientParseContact,
   submitQuickInquiry,
@@ -106,9 +107,6 @@ const INPUT_CLASS =
   "w-full rounded-lg border border-beige-dark bg-white px-3 py-2.5 text-sm text-navy outline-none ring-navy/20 focus:ring-2 disabled:bg-beige/40 disabled:opacity-70";
 
 export function BusinessInquiryForm() {
-  const channels = getDirectConsultationChannels();
-  const { phone } = getContactInfo();
-  const kakao = channels.find((channel) => channel.id === "kakao");
   const formId = useId();
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -442,7 +440,7 @@ export function BusinessInquiryForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="btn-primary inline-flex min-h-11 items-center gap-2 disabled:opacity-60"
+          className="btn-primary inline-flex min-h-12 items-center gap-2 disabled:opacity-60"
         >
           {submitting ? (
             <>
@@ -450,25 +448,25 @@ export function BusinessInquiryForm() {
               전송 중…
             </>
           ) : (
-            "기업 업무 문의 보내기"
+            "바로 메일 보내기"
           )}
         </button>
-        {phone ? (
-          <a href={`tel:${phone.replace(/-/g, "")}`} className="btn-secondary">
-            전화 상담
-          </a>
-        ) : null}
-        {kakao?.configured ? (
-          <a
-            href={kakao.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            카카오 상담
-          </a>
-        ) : null}
+        <NaverSmartPlaceCta
+          variant="reservation"
+          placement="page_conversion"
+          tone="brand"
+          size="lg"
+          label="네이버 예약하기"
+          className="!rounded-lg px-6"
+        />
       </div>
+
+      <InquiryAltChannels
+        placement="page_conversion"
+        pageSlug="기업업무문의"
+        title="메일 대신 바로 연락하셔도 됩니다"
+        description="회사명과 문의 업무만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 담당 법무사가 직접 확인합니다."
+      />
     </form>
   );
 }

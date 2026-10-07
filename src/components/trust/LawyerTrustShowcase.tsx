@@ -51,6 +51,15 @@ function LectureIcon() {
   );
 }
 
+function ProfileIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4.5 20.5c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5" />
+    </svg>
+  );
+}
+
 function CheckIcon() {
   return (
     <svg className="mt-0.5 h-5 w-5 shrink-0 text-navy" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -91,7 +100,7 @@ const promises = [
 
 /**
  * 게시글 끝 신뢰·전환 블록 — 안윤정 법무사 전문이력 인포그래픽 + 상담 채널.
- * 컨테이너 쿼리로 배치하므로 좁은 본문 칼럼(860px)과 넓은 PageContainer 양쪽에서 같은 컴포넌트를 쓴다.
+ * 컨테이너 쿼리로 배치하므로 좁은 본문 칼럼과 넓은 PageContainer 양쪽에서 같은 컴포넌트를 쓴다.
  */
 export function LawyerTrustShowcase() {
   const { phone, kakao, naverTalk } = getContactInfo();
@@ -124,11 +133,27 @@ export function LawyerTrustShowcase() {
             </p>
           </header>
 
-          <div className="mx-4 mt-5 rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-start @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:rounded-none @5xl:p-7">
+          <div className="mx-4 mt-5 flex flex-col rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-center @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:justify-center @5xl:rounded-none @5xl:p-7">
             <TrustInfographicViewer image={image} />
             <p className="mt-3 text-center text-xs leading-relaxed text-navy/60">
               이미지를 누르면 이력 전체를 크게 볼 수 있습니다.
             </p>
+            <Link
+              href="/about"
+              className="group mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-navy/15 bg-white px-5 text-[0.95rem] font-bold text-navy no-underline shadow-sm transition hover:border-navy/30 hover:bg-cream"
+              data-cta="trust-profile"
+            >
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+                <ProfileIcon />
+              </span>
+              안윤정 법무사는 누구일까?
+              <span
+                className="text-navy/50 transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden
+              >
+                →
+              </span>
+            </Link>
           </div>
 
           <div className="px-5 pt-5 @md:px-7 @3xl:col-start-2 @3xl:row-start-2 @3xl:pt-6 @5xl:px-8 @5xl:pt-5">
@@ -173,9 +198,6 @@ export function LawyerTrustShowcase() {
             />
 
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <Link href="/about" className="text-navy underline-offset-4 hover:underline">
-                전체 프로필 보기 →
-              </Link>
               <Link href="/media" className="text-navy underline-offset-4 hover:underline">
                 언론·방송 출연 보기 →
               </Link>

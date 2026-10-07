@@ -33,6 +33,8 @@ export function PageDataNapSection({ contactLinks }: PageDataNapSectionProps) {
           layout="tile"
           showLabels="short"
           showQrCodes={false}
+          naverPlace
+          naverPlacement="page_conversion"
         />
       </div>
 

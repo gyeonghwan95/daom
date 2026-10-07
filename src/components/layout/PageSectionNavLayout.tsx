@@ -10,10 +10,21 @@ import {
 } from "@/lib/section-nav/get-sections-for-path";
 import type { SectionNavItem } from "@/lib/section-nav/types";
 import { isReservedInheritancePath } from "@/data/seoExperiments/reserved-inheritance-intents";
+import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
 
 type PageSectionNavLayoutProps = {
   children: React.ReactNode;
+  /** 본문을 DOM 앞에 두고 좌측 열은 grid 배치로만 보이게 한다 (검색 타깃 페이지) */
+  articleFirst?: boolean;
 };
+
+function safeDecodePath(pathname: string): string {
+  try {
+    return decodeURIComponent(pathname);
+  } catch {
+    return pathname;
+  }
+}
 
 const MDX_END_SECTIONS: SectionNavItem[] = [
   { id: "consultation", label: "상담 문의" },
@@ -63,7 +74,10 @@ function discoverMdxSections(): SectionNavItem[] {
   return [...discovered, ...endSections];
 }
 
-export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
+export function PageSectionNavLayout({
+  children,
+  articleFirst = false,
+}: PageSectionNavLayoutProps) {
   const pathname = usePathname();
   const staticSections = useMemo(
     () => getSectionsForPath(pathname),
@@ -115,9 +129,13 @@ export function PageSectionNavLayout({ children }: PageSectionNavLayoutProps) {
     return <div className="min-w-0">{children}</div>;
   }
 
-  const leanInheritanceSeo = isReservedInheritancePath(pathname || "");
+  const decodedPath = safeDecodePath(pathname || "");
+  const contentFirst =
+    articleFirst ||
+    isReservedInheritancePath(decodedPath) ||
+    isLectureTargetPath(decodedPath);
 
-  if (!leanInheritanceSeo) {
+  if (!contentFirst) {
     return (
       <div
         data-section-nav-grid

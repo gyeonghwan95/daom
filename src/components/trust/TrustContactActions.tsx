@@ -1,6 +1,7 @@
 "use client";
 
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
+import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
 import {
   KakaoIcon,
   NaverIcon,
@@ -45,7 +46,7 @@ export function TrustContactActions({
         {phone}
       </a>
       <p className="relative mt-1.5 text-xs text-white/70 @md:text-sm">
-        {hours} · 방문 상담은 예약제 · 카카오톡·톡톡으로 먼저 남겨 두셔도 됩니다
+        {hours} · 방문 상담은 예약제 · 카카오톡·톡톡으로 먼저 남기시거나 네이버 예약을 이용해 주세요
       </p>
 
       <div className="relative mt-5 grid gap-2.5 @sm:grid-cols-2 @2xl:grid-cols-3">
@@ -81,6 +82,15 @@ export function TrustContactActions({
           <span className="sr-only"> (새 창)</span>
         </a>
       </div>
+
+      <NaverPlaceActions
+        placement="service_end"
+        theme="dark"
+        reservationLabel="네이버 예약"
+        mapLabel="네이버 지도"
+        className="relative mt-2.5 gap-2.5"
+        buttonClassName="!min-h-12 !font-bold"
+      />
     </div>
   );
 }

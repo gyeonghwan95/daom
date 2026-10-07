@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ChatIcon } from "@/components/consultation/ConsultationIcons";
-import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
 import { useOptionalQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -96,23 +96,18 @@ export function FloatingCTA() {
                   {copy.floatingLabel}
                 </button>
                 {isNaverSmartPlaceConfigured() ? (
-                  <div className="mt-2">
-                    <NaverSmartPlaceCta
-                      variant="reservation"
-                      placement="floating_panel"
-                      tone="brand"
-                      size="md"
-                      fullWidth
-                      label="네이버 예약"
-                      className="!min-h-11 !rounded-lg"
-                    />
-                  </div>
+                  <NaverPlaceActions
+                    placement="floating_panel"
+                    size="md"
+                    className="mt-2"
+                    buttonClassName="!min-h-11 !rounded-lg !px-2"
+                  />
                 ) : null}
                 <p
                   className={`floating-cta__section-note${reducedMotion ? "" : " floating-cta__section-note--emphasis"}`}
                 >
-                  채팅·신청서 상담과 별도로, 방문은 네이버에서 일정을 확인할 수
-                  있습니다
+                  채팅·신청서 상담과 별도로, 방문 일정과 위치는 네이버에서 확인할
+                  수 있습니다
                 </p>
               </div>
             </div>

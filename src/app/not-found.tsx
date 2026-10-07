@@ -38,7 +38,13 @@ export default function NotFound() {
         <div className="mt-8 text-left">
           <p className="text-sm font-semibold text-navy">빠른 상담</p>
           <div className="mt-3">
-            <ConsultationButtons channels={channels} theme="light" layout="grid" />
+            <ConsultationButtons
+              channels={channels}
+              theme="light"
+              layout="grid"
+              naverPlace
+              naverPlacement="search_empty"
+            />
           </div>
         </div>
 

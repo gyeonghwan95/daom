@@ -142,6 +142,8 @@ export function Footer() {
                 theme="dark"
                 layout="grid"
                 showQrCodes={false}
+                naverPlace
+                naverPlacement="footer"
               />
             </div>
             <ul className="mt-4 space-y-1 text-sm text-white/70">

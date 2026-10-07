@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
-import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
+import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -31,8 +31,8 @@ const STATUS_LABEL: Record<NrEvidenceStatus, string> = {
 
 /**
  * 대상 3개 URL 전용 레이아웃.
- * 상담 패널·섹션 내비게이터 없이 header → breadcrumb → main > article > H1 → 첫 답변 순서로 둔다.
- * 상담 CTA는 본문 끝에 한 번만 둔다.
+ * 본문(main > breadcrumb > article > H1 → 첫 답변)을 DOM 앞에 두고, 좌측 상담 패널은 grid 배치로만 보인다.
+ * 본문 안 상담 CTA는 끝에 한 번만 둔다.
  */
 export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetViewProps) {
   const { spec, owner } = target;
@@ -47,123 +47,116 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
   });
 
   return (
-    <>
-      <div className="mx-auto w-full max-w-[860px] px-4 pt-6 md:px-6 md:pt-10">
-        <Breadcrumb items={page.breadcrumbs} />
-      </div>
-      <main id="main-content" className="flex-1 overflow-x-hidden pb-10 md:pb-14">
-        <div className="mx-auto w-full max-w-[860px] px-4 md:px-6">
-          <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-          <JsonLd data={webPage} />
-          <article className="content-stack">
-            <header>
-              <p className="readability-hero__eyebrow">{spec.eyebrow}</p>
-              <h1 className="page-title">{owner.h1}</h1>
-              <div className="readability-prose mt-4 space-y-3 md:mt-5">
-                {spec.lead.map((text) => (
-                  <p key={text.slice(0, 40)} className="body-text">
-                    {text}
-                  </p>
-                ))}
-              </div>
-              {spec.keyPoints ? (
-                <div className="mt-5 rounded-xl border border-navy/10 bg-cream/50 px-4 py-3">
-                  <p className="text-sm font-semibold text-navy">{spec.keyPoints.title}</p>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-navy/80 md:text-base">
-                    {spec.keyPoints.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-              {spec.facts?.length ? (
-                <dl className="mt-5 grid gap-2 sm:grid-cols-3">
-                  {spec.facts.map((fact) => (
-                    <div
-                      key={fact.label}
-                      className="rounded-xl border border-navy/10 bg-cream/50 px-3 py-2"
-                    >
-                      <dt className="text-xs font-semibold text-navy/55">{fact.label}</dt>
-                      <dd className="mt-0.5 text-sm font-medium leading-snug text-navy">
-                        {fact.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              ) : null}
-              <figure className="mx-auto mt-6 w-full max-w-md">
-                <div
-                  className="relative w-full overflow-hidden rounded-2xl border border-beige-dark bg-beige/40"
-                  style={{ aspectRatio: `${spec.image.width} / ${spec.image.height}` }}
-                >
-                  <Image
-                    src={encodePublicSrc(spec.image.src)}
-                    alt={spec.image.alt}
-                    fill
-                    quality={72}
-                    className="object-cover"
-                    sizes="(max-width: 768px) 92vw, 28rem"
-                  />
-                </div>
-                {spec.image.caption ? (
-                  <figcaption className="mt-2 text-center text-xs leading-relaxed text-navy/60">
-                    {spec.image.caption}
-                  </figcaption>
-                ) : null}
-              </figure>
-            </header>
-
-            {spec.sections.map((section) => (
-              <ContentSection key={section.id} id={section.id} title={section.title}>
-                <div className="space-y-4">
-                  {section.blocks.map((block, index) => (
-                    <BlockView key={`${section.id}-${index}`} block={block} />
-                  ))}
-                </div>
-              </ContentSection>
+    <PageContainer articleFirst>
+      <Breadcrumb items={page.breadcrumbs} />
+      <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <JsonLd data={webPage} />
+      <article className="content-stack">
+        <header>
+          <p className="readability-hero__eyebrow">{spec.eyebrow}</p>
+          <h1 className="page-title">{owner.h1}</h1>
+          <div className="readability-prose mt-4 space-y-3 md:mt-5">
+            {spec.lead.map((text) => (
+              <p key={text.slice(0, 40)} className="body-text">
+                {text}
+              </p>
             ))}
-
-            <ContentSection id="faq" title="자주 묻는 질문">
-              <FAQAccordion items={[...spec.faqs]} />
-            </ContentSection>
-
-            <section
-              id="consultation"
-              className="section-anchor rounded-2xl border border-navy/15 bg-cream/60 p-5 md:p-6"
+          </div>
+          {spec.keyPoints ? (
+            <div className="mt-5 rounded-xl border border-navy/10 bg-cream/50 px-4 py-3">
+              <p className="text-sm font-semibold text-navy">{spec.keyPoints.title}</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-navy/80 md:text-base">
+                {spec.keyPoints.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {spec.facts?.length ? (
+            <dl className="mt-5 grid gap-2 sm:grid-cols-3">
+              {spec.facts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="rounded-xl border border-navy/10 bg-cream/50 px-3 py-2"
+                >
+                  <dt className="text-xs font-semibold text-navy/55">{fact.label}</dt>
+                  <dd className="mt-0.5 text-sm font-medium leading-snug text-navy">
+                    {fact.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+          <figure className="mx-auto mt-6 w-full max-w-md">
+            <div
+              className="relative w-full overflow-hidden rounded-2xl border border-beige-dark bg-beige/40"
+              style={{ aspectRatio: `${spec.image.width} / ${spec.image.height}` }}
             >
-              <h2 className="section-heading">{spec.cta.title}</h2>
-              <p className="body-text mt-3">{spec.cta.body}</p>
-              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                <Link
-                  href={spec.cta.href}
-                  className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
-                >
-                  {spec.cta.label}
-                </Link>
-                <a
-                  href={getPhoneHref(phone)}
-                  className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
-                >
-                  전화 {phone}
-                </a>
-              </div>
-            </section>
+              <Image
+                src={encodePublicSrc(spec.image.src)}
+                alt={spec.image.alt}
+                fill
+                quality={72}
+                className="object-cover"
+                sizes="(max-width: 768px) 92vw, 28rem"
+              />
+            </div>
+            {spec.image.caption ? (
+              <figcaption className="mt-2 text-center text-xs leading-relaxed text-navy/60">
+                {spec.image.caption}
+              </figcaption>
+            ) : null}
+          </figure>
+        </header>
 
-            <aside className="rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-sm leading-relaxed text-navy/70">
-              <p>
-                <span className="font-semibold text-navy/80">다른 지역에 계신 경우 · </span>
-                {spec.remoteNote}
-              </p>
-              <p className="mt-2 text-xs text-navy/55">
-                {spec.reviewNote} 최종 수정 {spec.dateModified}.
-              </p>
-            </aside>
-          </article>
-          <LawyerTrustShowcase />
-        </div>
-      </main>
-      <SiteChromeAfterMain />
-    </>
+        {spec.sections.map((section) => (
+          <ContentSection key={section.id} id={section.id} title={section.title}>
+            <div className="space-y-4">
+              {section.blocks.map((block, index) => (
+                <BlockView key={`${section.id}-${index}`} block={block} />
+              ))}
+            </div>
+          </ContentSection>
+        ))}
+
+        <ContentSection id="faq" title="자주 묻는 질문">
+          <FAQAccordion items={[...spec.faqs]} />
+        </ContentSection>
+
+        <section
+          id="consultation"
+          className="section-anchor rounded-2xl border border-navy/15 bg-cream/60 p-5 md:p-6"
+        >
+          <h2 className="section-heading">{spec.cta.title}</h2>
+          <p className="body-text mt-3">{spec.cta.body}</p>
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+            <Link
+              href={spec.cta.href}
+              className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              {spec.cta.label}
+            </Link>
+            <a
+              href={getPhoneHref(phone)}
+              className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+            >
+              전화 {phone}
+            </a>
+          </div>
+        </section>
+
+        <aside className="rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-sm leading-relaxed text-navy/70">
+          <p>
+            <span className="font-semibold text-navy/80">다른 지역에 계신 경우 · </span>
+            {spec.remoteNote}
+          </p>
+          <p className="mt-2 text-xs text-navy/55">
+            {spec.reviewNote} 최종 수정 {spec.dateModified}.
+          </p>
+        </aside>
+      </article>
+      <LawyerTrustShowcase />
+    </PageContainer>
   );
 }
 

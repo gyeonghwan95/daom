@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
+import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import { InquiryDeliverySuccess } from "@/components/quick-inquiry/InquiryDeliverySuccess";
 import {
   isTurnstileConfigured,
@@ -381,11 +383,12 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
           협업·프로젝트 문의
         </h2>
         <p className="body-text mt-2 text-sm text-navy/75">
-          2단계로 나뉘어 있습니다. 1단계만 입력해도 사무소 이메일로 바로
-          전달됩니다. 메일 앱을 열 필요가 없습니다.
+          기본 항목만 적고 ‘바로 메일 보내기’를 누르면 사무소 이메일로 바로
+          전달됩니다. 메일 앱을 열 필요가 없고, 건물·일정 같은 상세정보는 원하실
+          때만 더 적으시면 됩니다.
         </p>
         <p className="mt-2 text-xs text-navy/55" aria-live="polite">
-          현재 {step}단계 / 2단계
+          {step === 1 ? "기본 정보 입력 중" : "상세정보 입력 중 (선택 항목)"}
         </p>
       </div>
 
@@ -400,7 +403,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
 
       {step === 1 ? (
         <fieldset className="space-y-4" disabled={submitting}>
-          <legend className="sr-only">1단계 빠른 문의</legend>
+          <legend className="sr-only">기본 정보</legend>
           <label className="block text-sm font-medium text-navy">
             문의자 유형
             <select
@@ -769,14 +772,6 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
         {step === 1 ? (
           <div className="flex flex-wrap gap-3">
             <button
-              type="button"
-              onClick={goStep2}
-              disabled={submitting}
-              className="btn-secondary inline-flex min-h-12 items-center px-6 disabled:opacity-60"
-            >
-              상세정보 추가(선택)
-            </button>
-            <button
               type="submit"
               disabled={submitting}
               className="btn-primary inline-flex min-h-12 items-center gap-2 px-6 disabled:opacity-60"
@@ -787,8 +782,24 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
                   전송 중…
                 </>
               ) : (
-                "1단계만으로 보내기"
+                "바로 메일 보내기"
               )}
+            </button>
+            <NaverSmartPlaceCta
+              variant="reservation"
+              placement="page_conversion"
+              tone="brand"
+              size="lg"
+              label="네이버 예약하기"
+              className="!rounded-lg px-6"
+            />
+            <button
+              type="button"
+              onClick={goStep2}
+              disabled={submitting}
+              className="btn-secondary inline-flex min-h-12 items-center px-6 disabled:opacity-60"
+            >
+              상세정보 더 적기(선택)
             </button>
           </div>
         ) : (
@@ -812,12 +823,27 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
                   전송 중…
                 </>
               ) : (
-                "문의 보내기"
+                "메일 보내기"
               )}
             </button>
+            <NaverSmartPlaceCta
+              variant="reservation"
+              placement="page_conversion"
+              tone="brand"
+              size="lg"
+              label="네이버 예약하기"
+              className="!rounded-lg px-6"
+            />
           </div>
         )}
       </div>
+
+      <InquiryAltChannels
+        placement="page_conversion"
+        pageSlug={sourcePage}
+        title="메일 대신 바로 연락하셔도 됩니다"
+        description="업무 종류·소재지·일정만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 안윤정 법무사가 직접 확인합니다."
+      />
 
       <ul className="space-y-1 text-xs leading-relaxed text-navy/55">
         <li>제출하시면 사무소 이메일로 안전하게 전달됩니다.</li>

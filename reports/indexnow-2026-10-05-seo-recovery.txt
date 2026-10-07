@@ -1,0 +1,184 @@
+# 2026-10-05 네이버 SEO 회복 작업 - 다시 색인 요청할 URL (필수 46개 + 선택 30개)
+# 커밋 6989b5b. 배포 후 실제 사이트에 반영된 것을 확인한 다음 제출
+# 전체 sitemap 재제출 금지. 수집 요청·IndexNow 성공은 색인 완료나 순위 상승을 뜻하지 않음
+# 제출하지 않는 URL: 이번에 noindex로 바꾼 27개(○○과태료 9, ○○보수표 18) - 재수집 때 자연히 검색 제외됨
+# 제출하지 않는 URL: 키워드 배지 제거(789)·업무사례 지역 템플릿(221)·자동 조합 가상 예시 문구(243)처럼 공통 템플릿만 바뀐 페이지 - 자연 재수집에 맡김
+# 모든 URL은 out/ 기준 index 상태이고 sitemap에 있음을 확인함
+
+## 네이버 서치어드바이저 웹페이지 수집용 (한글 주소)
+# 1순위 - 상속 기한·과태료 사실 오류 정정 (잘못된 내용이 검색 결과에 남아 있어 가장 먼저)
+https://다옴법무사사무소.kr/blog/busan-inheritance-registration-procedure-documents
+https://다옴법무사사무소.kr/전국상속등기
+https://다옴법무사사무소.kr/상속등기기간
+https://다옴법무사사무소.kr/상속등기기한
+https://다옴법무사사무소.kr/상속등기필요서류
+https://다옴법무사사무소.kr/부산등기법무사추천
+https://다옴법무사사무소.kr/상속포기기간
+https://다옴법무사사무소.kr/상속포기기한
+https://다옴법무사사무소.kr/한정승인기간
+https://다옴법무사사무소.kr/한정승인기한
+
+# 1순위 보충 - 어제(10-04) 목록에 있던 URL. 취득세 기한 기산점(상속개시일이 속한 달의 말일부터)만 추가로 고침. 어제 제출했다면 생략 가능
+https://다옴법무사사무소.kr/blog/three-months-after-death-inheritance
+https://다옴법무사사무소.kr/tools/inheritance-registration-deadline
+https://다옴법무사사무소.kr/situations/parent-passed-away
+https://다옴법무사사무소.kr/상속등기자가진단
+
+# 2순위 - 대표 페이지 title·H1·설명 변경, robots 차단 해제
+https://다옴법무사사무소.kr/상속등기비용
+https://다옴법무사사무소.kr/상속포기비용
+https://다옴법무사사무소.kr/한정승인비용
+https://다옴법무사사무소.kr/법인설립등기비용
+https://다옴법무사사무소.kr/부산법무사보수표
+https://다옴법무사사무소.kr/임원변경등기과태료
+https://다옴법무사사무소.kr/소유권이전등기서류
+https://다옴법무사사무소.kr/부산법무사무소
+https://다옴법무사사무소.kr/blog/busan-lawyer-recommend-office-consult
+https://다옴법무사사무소.kr/search-guides
+
+# 3순위 - sitemap에 새로 들어간 언론 페이지
+https://다옴법무사사무소.kr/media/busan-mbc-news-fuel-price-relief-expert
+https://다옴법무사사무소.kr/media/kukinews-youth-budget-unboxing-2027
+https://다옴법무사사무소.kr/media/weeklypeople-youth-judicial-scrivener-ahn
+
+# 4순위 - 화면의 SEO 내부 용어(검색 의도·대표 URL 등) 제거, 문장 정리
+https://다옴법무사사무소.kr/
+https://다옴법무사사무소.kr/busan-legal-map
+https://다옴법무사사무소.kr/센텀법무사
+https://다옴법무사사무소.kr/부산진구법무사
+https://다옴법무사사무소.kr/부산부동산등기법무사
+https://다옴법무사사무소.kr/법인변경등기
+https://다옴법무사사무소.kr/건물등기상황별안내
+https://다옴법무사사무소.kr/특수비영리법인등기
+https://다옴법무사사무소.kr/부산특수법인등기
+https://다옴법무사사무소.kr/부산증여등기
+https://다옴법무사사무소.kr/해외거주상속인
+https://다옴법무사사무소.kr/공기업등기
+https://다옴법무사사무소.kr/부산경매권리분석
+https://다옴법무사사무소.kr/건물일부철거표시변경
+https://다옴법무사사무소.kr/민락동법무사
+https://다옴법무사사무소.kr/연지동법무사
+https://다옴법무사사무소.kr/업무사례/지역별상속등기법무사
+https://다옴법무사사무소.kr/업무사례/양산법무사업무
+https://다옴법무사사무소.kr/업무사례/양산법인등기법무사
+
+# 5순위(선택) - '○○기간/○○기한' 템플릿의 '지연 시 과태료' 문장 정정. 하루 요청 한도에 여유가 있을 때만
+https://다옴법무사사무소.kr/개인파산기간
+https://다옴법무사사무소.kr/개인파산기한
+https://다옴법무사사무소.kr/개인회생기간
+https://다옴법무사사무소.kr/개인회생기한
+https://다옴법무사사무소.kr/근저당말소기간
+https://다옴법무사사무소.kr/근저당말소기한
+https://다옴법무사사무소.kr/법인등기기간
+https://다옴법무사사무소.kr/법인등기기한
+https://다옴법무사사무소.kr/법인설립등기기간
+https://다옴법무사사무소.kr/법인설립등기기한
+https://다옴법무사사무소.kr/본점이전등기기간
+https://다옴법무사사무소.kr/본점이전등기기한
+https://다옴법무사사무소.kr/부동산등기기간
+https://다옴법무사사무소.kr/부동산등기기한
+https://다옴법무사사무소.kr/선박등기기간
+https://다옴법무사사무소.kr/선박등기기한
+https://다옴법무사사무소.kr/소유권이전등기기간
+https://다옴법무사사무소.kr/소유권이전등기기한
+https://다옴법무사사무소.kr/임원변경등기기간
+https://다옴법무사사무소.kr/임원변경등기기한
+https://다옴법무사사무소.kr/임차권등기명령기간
+https://다옴법무사사무소.kr/임차권등기명령기한
+https://다옴법무사사무소.kr/재개발등기기간
+https://다옴법무사사무소.kr/재개발등기기한
+https://다옴법무사사무소.kr/재건축등기기간
+https://다옴법무사사무소.kr/재건축등기기한
+https://다옴법무사사무소.kr/전세권설정기간
+https://다옴법무사사무소.kr/전세권설정기한
+https://다옴법무사사무소.kr/증여등기기간
+https://다옴법무사사무소.kr/증여등기기한
+
+## IndexNow용 (퍼센트 인코딩)
+# 1순위 - 상속 기한·과태료 사실 오류 정정 (잘못된 내용이 검색 결과에 남아 있어 가장 먼저)
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-inheritance-registration-procedure-documents
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EA%B8%B0%ED%95%9C
+
+# 1순위 보충 - 어제(10-04) 목록에 있던 URL. 취득세 기한 기산점(상속개시일이 속한 달의 말일부터)만 추가로 고침. 어제 제출했다면 생략 가능
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/three-months-after-death-inheritance
+https://xn--2j1br1na42lvxja38mk8r.kr/tools/inheritance-registration-deadline
+https://xn--2j1br1na42lvxja38mk8r.kr/situations/parent-passed-away
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%9E%90%EA%B0%80%EC%A7%84%EB%8B%A8
+
+# 2순위 - 대표 페이지 title·H1·설명 변경, robots 차단 해제
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B3%B4%EC%88%98%ED%91%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EC%84%9C%EB%A5%98
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%AC%B4%EC%86%8C
+https://xn--2j1br1na42lvxja38mk8r.kr/blog/busan-lawyer-recommend-office-consult
+https://xn--2j1br1na42lvxja38mk8r.kr/search-guides
+
+# 3순위 - sitemap에 새로 들어간 언론 페이지
+https://xn--2j1br1na42lvxja38mk8r.kr/media/busan-mbc-news-fuel-price-relief-expert
+https://xn--2j1br1na42lvxja38mk8r.kr/media/kukinews-youth-budget-unboxing-2027
+https://xn--2j1br1na42lvxja38mk8r.kr/media/weeklypeople-youth-judicial-scrivener-ahn
+
+# 4순위 - 화면의 SEO 내부 용어(검색 의도·대표 URL 등) 제거, 문장 정리
+https://xn--2j1br1na42lvxja38mk8r.kr/
+https://xn--2j1br1na42lvxja38mk8r.kr/busan-legal-map
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B1%B4%EB%AC%BC%EB%93%B1%EA%B8%B0%EC%83%81%ED%99%A9%EB%B3%84%EC%95%88%EB%82%B4
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8A%B9%EC%88%98%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%99%B8%EA%B1%B0%EC%A3%BC%EC%83%81%EC%86%8D%EC%9D%B8
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B8%B0%EC%97%85%EB%93%B1%EA%B8%B0
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B2%BD%EB%A7%A4%EA%B6%8C%EB%A6%AC%EB%B6%84%EC%84%9D
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B1%B4%EB%AC%BC%EC%9D%BC%EB%B6%80%EC%B2%A0%EA%B1%B0%ED%91%9C%EC%8B%9C%EB%B3%80%EA%B2%BD
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AF%BC%EB%9D%BD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%B0%EC%A7%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%A7%80%EC%97%AD%EB%B3%84%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%96%91%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC
+
+# 5순위(선택) - '○○기간/○○기한' 템플릿의 '지연 시 과태료' 문장 정정. 하루 요청 한도에 여유가 있을 때만
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B7%BC%EC%A0%80%EB%8B%B9%EB%A7%90%EC%86%8C%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%AC%EA%B0%9C%EB%B0%9C%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%AC%EA%B0%9C%EB%B0%9C%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%AC%EA%B1%B4%EC%B6%95%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%AC%EA%B1%B4%EC%B6%95%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EC%84%B8%EA%B6%8C%EC%84%A4%EC%A0%95%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EC%84%B8%EA%B6%8C%EC%84%A4%EC%A0%95%EA%B8%B0%ED%95%9C
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84
+https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C
