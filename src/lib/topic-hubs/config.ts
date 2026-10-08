@@ -51,6 +51,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/부산상속재산관리인", label: "상속재산관리인(상속인 없는 경우)" },
           { href: "/부산부재자재산관리인", label: "부재자재산관리인" },
           { href: "/부산유언검인", label: "유언검인 신청 안내" },
+          { href: "/유언공증준비", label: "유언 공정증서 준비 안내" },
           { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
           { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
           { href: "/임대인사망전세계약", label: "임대인 사망과 전세계약" },
@@ -113,6 +114,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/자동차상속명의이전", label: "부산 자동차 상속 명의이전" },
           { href: "/분양권입주권상속", label: "부산 분양권·입주권 상속" },
           { href: "/유언집행자와상속등기", label: "부산 유언집행자와 상속등기" },
+          { href: "/유언공증준비", label: "유언 공정증서 준비(생존 시)" },
           { href: "/부산유언검인", label: "부산 유언검인(사망 후)" },
           { href: "/상속세신고와등기순서", label: "부산 상속세 신고와 등기" },
           { href: "/상속취득세와등기순서", label: "상속 취득세와 등기 순서" },
@@ -193,6 +195,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "법인 설립·임원변경·본점이전·목적·상호 변경은 사건마다 결의 기관과 첨부 서류가 다릅니다.",
         links: [
           { href: "/부산법인법무사", label: "부산 법인 법무사" },
+          { href: "/부산법인설립등기", label: "부산 법인설립등기" },
           { href: "/법인변경등기", label: "법인 변경등기 허브" },
           { href: "/부산법인정기점검", label: "법인등기 정기점검" },
           { href: "/부산대표이사변경등기", label: "대표이사 변경등기" },
@@ -417,7 +420,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
     h1: "부산 지급명령·소장·가압류·가처분 상담",
     description:
       "부산 지급명령·대여금·물품대금·손해배상·가압류·가처분·민사집행. 부산지방법원 관할 안내. 다옴법무사사무소.",
-    primaryServiceSlug: "inheritance-registration",
+    primaryServiceSlug: "payment-order",
     intro:
       "채권 회수·분쟁 대응에서 지급명령·본안 소송·가압류·가처분 중 어떤 절차가 적합한지는 채권 종류·증거·상대방 주소에 따라 달라집니다. 부산지방법원·동부지원 관할은 사건 소재지와 당사자 주소를 기준으로 정해지며, 소장·답변서·준비서면 작성과 증거 정리가 결과에 큰 영향을 줍니다. 다옴법무사사무소는 법원 제출 서류의 작성·접수와 절차 순서를 안내하며, 소송대리·법정 변론은 하지 않습니다. 법원과 공식 제휴 관계가 아닌 민사 서류·절차 상담입니다.",
     ctaDescription:
@@ -425,7 +428,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
     jurisdictionHref: "/부산지방법원법무사",
     costHref: "/부산법무사비용",
     documentsHref: "/가압류신청서류준비",
-    faqServiceSlugs: ["inheritance-registration"],
+    faqServiceSlugs: ["payment-order"],
     relatedHubSlugs: ["공탁채권회수", "임대차전세"],
     sections: [
       {
@@ -546,14 +549,14 @@ export const topicHubConfigs: TopicHubConfig[] = [
     h1: "부산 공탁·채권압류·추심명령 상담",
     description:
       "부산 변제공탁·집행공탁·채권압류·추심명령·미수금회수. 부산지방법원 공탁·민사집행 안내. 다옴법무사사무소.",
-    primaryServiceSlug: "inheritance-registration",
+    primaryServiceSlug: "payment-order",
     intro:
-      "채무 변제 공탁·집행 공탁·해방 공탁은 채권·채무 관계와 소송 진행 상황에 따라 서류와 순서가 달라집니다. 미수금·대여금·공사대금 회수는 지급명령·본안 소송·가압류·추심명령·강제집행까지 단계별 전략이 필요합니다. 부산지방법원 공탁 사무와 민사집행 절차는 관할과 신청서 양식을 사전에 확인하는 것이 좋습니다. 다옴법무사사무소는 채권 회수 경로를 정리해 드립니다.",
+      "채무 변제 공탁·집행 공탁·해방 공탁은 채권·채무 관계와 소송 진행 상황에 따라 서류와 순서가 달라집니다. 미수금·대여금·공사대금 회수는 지급명령·가압류·추심명령 등 법원 제출 서류와 접수 순서를 사건별로 나눠 안내합니다. 소송대리·법정 변론은 하지 않습니다. 부산지방법원 공탁 사무와 민사집행 절차는 관할과 신청서 양식을 사전에 확인하는 것이 좋습니다. 다옴법무사사무소는 공탁·채권 회수 서류 경로를 정리해 드립니다.",
     ctaDescription:
       "공탁·채권회수는 채권 성격과 상대방 재산 상황에 따라 절차가 달라집니다. 관련 서류를 확인해드리겠습니다.",
     jurisdictionHref: "/부산지방법원법무사",
     costHref: "/부산법무사비용",
-    faqServiceSlugs: ["inheritance-registration"],
+    faqServiceSlugs: ["payment-order"],
     relatedHubSlugs: ["민사소송", "개인회생파산"],
     sections: [
       {

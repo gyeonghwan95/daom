@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-07T11:56:28.001Z",
+  "generatedAt": "2026-10-08T12:02:38.447Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1656,
+  "totalUrls": 1657,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
@@ -9,7 +9,7 @@
     "3": 176,
     "4": 593,
     "5": 183,
-    "6": 573,
+    "6": 574,
     "7": 53,
     "8": 32
   },
@@ -886,9 +886,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-07",
+      "lastmod": "2026-10-08",
       "filename": "tier-6-keywords.xml",
-      "count": 573
+      "count": 574
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
@@ -9491,6 +9491,12 @@
       "lastmod": null
     },
     {
+      "path": "/유언공증준비",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EA%B3%B5%EC%A6%9D%EC%A4%80%EB%B9%84",
+      "lastmod": null
+    },
+    {
       "path": "/유언집행자와상속등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9C%A0%EC%96%B8%EC%A7%91%ED%96%89%EC%9E%90%EC%99%80%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
@@ -10142,7 +10148,7 @@
       "path": "/특수등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-08"
     },
     {
       "path": "/특수등기의뢰",

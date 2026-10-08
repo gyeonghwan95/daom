@@ -188,3 +188,72 @@ test("13. 법무사가 소송대리·형사변론을 하는 것처럼 보이는 
   );
   assert.deepEqual(hits.slice(0, 20), [], `업무범위 오인 문구 ${hits.length}건`);
 });
+
+function articleBodyParagraphs(route: string): string[] {
+  const file = routeToFile(route);
+  assert.ok(file && fs.existsSync(file), `${route} HTML 없음`);
+  const html = fs.readFileSync(file, "utf8");
+  const section = html.match(
+    /id=["']article-body["'][\s\S]*?<\/section>/i,
+  );
+  if (!section) return [];
+  return [...section[0].matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((m) =>
+      m[1]
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim(),
+    )
+    .filter((text) => text.length > 40);
+}
+
+test("14. /상속·/법인등기 자세히 알아보기 구간에 연속 동일 문단이 없다", () => {
+  for (const route of ["/상속", "/법인등기"]) {
+    const paras = articleBodyParagraphs(route);
+    for (let i = 1; i < paras.length; i += 1) {
+      assert.notEqual(
+        paras[i],
+        paras[i - 1],
+        `${route} 연속 동일 문단: ${paras[i].slice(0, 80)}`,
+      );
+    }
+  }
+});
+
+test("15. /유언공증준비가 색인 가능한 공개 경로로 존재한다", () => {
+  const page = pages.get("/유언공증준비");
+  assert.ok(page, "out/에 /유언공증준비 없음");
+  assert.equal(isIndexable(page), true, "/유언공증준비 noindex");
+  assert.equal(canonicalPath(page.canonical), "/유언공증준비");
+});
+
+test("16. 본문이 없는 페이지 TOC는 자세히 알아보기를 만들지 않는다", () => {
+  const file = routeToFile("/법인등기");
+  assert.ok(file && fs.existsSync(file), "/법인등기 HTML 없음");
+  const html = fs.readFileSync(file, "utf8");
+  const hasBodySection = /id=["']article-body["']/.test(html);
+  const tocHasBody = /href=["']#article-body["']/.test(html);
+  assert.equal(
+    tocHasBody,
+    hasBodySection,
+    "/법인등기 TOC #article-body와 본문 섹션 존재 여부가 다름",
+  );
+});
+
+test("17. 공탁·민사소송 허브 표지는 영문 슬러그 alt가 아니다", () => {
+  for (const route of ["/공탁채권회수", "/민사소송"]) {
+    const file = routeToFile(route);
+    assert.ok(file && fs.existsSync(file), `${route} HTML 없음`);
+    const html = fs.readFileSync(file, "utf8");
+    assert.equal(
+      /alt=["']payment-order 업무 안내["']/.test(html),
+      false,
+      `${route} 표지 alt가 영문 슬러그`,
+    );
+    assert.equal(
+      /alt=["']inheritance-registration 업무 안내["']/.test(html),
+      false,
+      `${route} 표지 alt가 상속 슬러그`,
+    );
+  }
+});

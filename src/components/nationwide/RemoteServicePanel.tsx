@@ -3,7 +3,7 @@ import Image from "next/image";
 /** public/image/비대면업무안내.png 원본(1448×1086)을 WebP로 변환한 파생본 */
 const REMOTE_GUIDE_IMAGE = {
   src: "/image/remote-service-guide.webp",
-  alt: "부산에 오지 않아도 진행 가능합니다. 상속등기·상속포기 등 비대면 진행 가능 여부를 먼저 안내해 드립니다. 전화·카카오톡·네이버 톡톡으로 문의할 수 있습니다.",
+  alt: "비대면 업무 안내 그림. 방문 없이 전화·메시지·서류 전달로 진행하는 순서를 보여 줍니다.",
 } as const;
 
 export type RemoteServicePanelDetails = {

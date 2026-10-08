@@ -37,11 +37,13 @@ export function buildPageSummaryBullets(page: PageData): string[] {
 
 export function buildPageTocItems(
   page: PageData,
-  options?: { hasDetailContent?: boolean },
+  options?: { hasDetailContent?: boolean; hasArticleBody?: boolean },
 ): { id: string; label: string }[] {
   const items: { id: string; label: string }[] = [];
 
-  if (page.introParagraphs.length > 1) {
+  const showArticleBody =
+    options?.hasArticleBody ?? page.introParagraphs.length > 1;
+  if (showArticleBody) {
     items.push({ id: "article-body", label: "자세히 알아보기" });
   }
   if (page.procedures.length > 0) {

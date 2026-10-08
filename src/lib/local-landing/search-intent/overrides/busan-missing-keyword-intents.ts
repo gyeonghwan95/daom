@@ -288,6 +288,7 @@ export const 부산유언검인Override: SearchIntentContent = {
     familyHub,
     inheritanceReg,
     { href: "/전국유증등기", label: "전국 유증등기" },
+    { href: "/유언공증준비", label: "유언 공정증서 준비(생존 시)" },
     { href: "/부산상속법무사", label: "부산 상속 업무 종합" },
     { href: "/유류분과상속등기", label: "유류분과 상속등기" },
     { href: "/상속재산분할협의서준비", label: "상속재산분할협의서 준비" },

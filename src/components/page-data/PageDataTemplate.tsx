@@ -49,6 +49,7 @@ import {
 import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import { partitionPageIntro, uniqueParagraphs } from "@/lib/pageData/template-helpers";
 import type { PageData, PageSection } from "@/lib/pageData/types";
 import { resolveSerpImage, getRelatedContentCarousel } from "@/lib/seo/page-visuals";
 import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
@@ -129,9 +130,6 @@ export function PageDataTemplate({
   recommendationSource,
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
-  const tocItems = buildPageTocItems(page, {
-    hasDetailContent: Boolean(children),
-  });
   const conversionKey = resolveConversionKey(page);
   const isInheritanceSurgeryTarget =
     page.slug === "부산상속법무사" ||
@@ -159,6 +157,18 @@ export function PageDataTemplate({
   const showInheritanceExtras = isInheritanceFlagshipPage(page.slug);
   const deferNationwideBanner = shouldDeferNationwideBanner(page.slug);
   const championSummary = getChampionArticleSummary(page.slug);
+  const introSlots = partitionPageIntro(page.introParagraphs, {
+    dedicatedConclusion: championSummary?.conclusion,
+    h1: page.h1,
+  });
+  const showArticleBody =
+    page.slug !== "부산상속법무사" &&
+    page.slug !== "부산상속포기" &&
+    introSlots.bodyParagraphs.length > 0;
+  const tocItems = buildPageTocItems(page, {
+    hasDetailContent: Boolean(children),
+    hasArticleBody: showArticleBody,
+  });
   const isCorporateLegalOps = page.slug === CORPORATE_LEGAL_OPERATIONS_SLUG;
   const conversionFaqs = conversionKey
     ? getConversionFaqsForPage(page.slug, page.path)
@@ -166,7 +176,7 @@ export function PageDataTemplate({
   const displayFaqs = page.faqs;
   const inheritanceOwnerIntroRemainder =
     page.slug === "부산상속법무사" || page.slug === "부산상속포기"
-      ? page.introParagraphs.slice(2)
+      ? uniqueParagraphs(page.introParagraphs).slice(2)
       : [];
 
   const conversionBlock = (placement: Parameters<typeof ServiceConversionEnhancements>[0]["placement"]) =>
@@ -193,7 +203,7 @@ export function PageDataTemplate({
 
       <PageHero
         h1={page.h1}
-        introParagraphs={page.introParagraphs}
+        introParagraphs={introSlots.heroParagraphs}
         keywords={
           KEYWORD_CHIP_SUPPRESS_CATEGORIES.has(page.category)
             ? []
@@ -255,12 +265,7 @@ export function PageDataTemplate({
       {isInheritanceSurgeryTarget ? null : conversionBlock("top")}
 
       <ArticleSummary
-        conclusion={
-          championSummary?.conclusion ||
-          page.introParagraphs[0]?.trim() ||
-          page.intro.trim() ||
-          `${page.h1}에 대한 핵심 절차와 준비사항을 정리했습니다.`
-        }
+        conclusion={introSlots.summaryConclusion}
         checkItems={
           championSummary?.checkItems ??
           [
@@ -298,13 +303,9 @@ export function PageDataTemplate({
         </ContentSection>
       ) : null}
 
-      {page.slug !== "부산상속법무사" &&
-      page.slug !== "부산상속포기" &&
-      page.introParagraphs.length > 1 ? (
+      {showArticleBody ? (
         <ContentSection id="article-body" title="자세히 알아보기">
-          <ProseParagraphs
-            paragraphs={page.introParagraphs.slice(1)}
-          />
+          <ProseParagraphs paragraphs={introSlots.bodyParagraphs} />
         </ContentSection>
       ) : null}
 

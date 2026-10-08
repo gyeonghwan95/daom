@@ -2189,6 +2189,19 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     ...inheritanceCase,
   },
   {
+    slug: "유언공증준비",
+    label: "유언 공정증서 준비",
+    category: "concern",
+    serviceSlug: "inheritance-registration",
+    keywords: [
+      "유언공증 준비",
+      "유언 공정증서",
+      "부산 유언 공증",
+    ],
+    focus: "생존 시 유언 공정증서 준비와 공증인·법무사 역할 구분",
+    ...inheritanceCase,
+  },
+  {
     slug: "부동산실권리자명의등기",
     label: "부동산 실권리자명의등기",
     category: "concern",

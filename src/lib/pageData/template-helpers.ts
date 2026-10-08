@@ -29,6 +29,24 @@ const DEFAULT_DOCUMENTS = [
   "기타 상담 시 추가로 요청드리는 서류",
 ];
 
+export function normalizeParagraphText(text: string): string {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+export function uniqueParagraphs(paragraphs: readonly string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const raw of paragraphs) {
+    const text = raw.trim();
+    if (!text) continue;
+    const key = normalizeParagraphText(text);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(text);
+  }
+  return out;
+}
+
 export function splitIntroParagraphs(
   intro: string,
   extras: string[] = [],
@@ -39,7 +57,7 @@ export function splitIntroParagraphs(
     .filter(Boolean);
 
   if (blocks.length >= 2) {
-    return [...blocks, ...extras].slice(0, 3);
+    return uniqueParagraphs([...blocks, ...extras]).slice(0, 3);
   }
 
   if (intro.length > 220) {
@@ -47,14 +65,47 @@ export function splitIntroParagraphs(
     const midpoint = Math.ceil(sentences.length / 2);
     const first = sentences.slice(0, midpoint).join("").trim();
     const second = sentences.slice(midpoint).join("").trim();
-    const result = [first, second, ...extras].filter(Boolean);
-    return result.length >= 2 ? result.slice(0, 3) : [intro, ...extras].slice(0, 3);
+    const result = uniqueParagraphs([first, second, ...extras]);
+    return result.length >= 2
+      ? result.slice(0, 3)
+      : uniqueParagraphs([intro, ...extras]).slice(0, 3);
   }
 
   const fallback =
     extras[0] ??
     "부산 해운대구·센텀에 위치한 다옴법무사사무소 안윤정 법무사가 절차·서류·비용을 항목별로 설명드립니다. 막막할수록 지금 무엇부터 해야 하는지부터 정리하는 것이 우선이라고 생각합니다.";
-  return [intro, fallback, ...extras.slice(1)].filter(Boolean).slice(0, 3);
+  return uniqueParagraphs([intro, fallback, ...extras.slice(1)]).slice(0, 3);
+}
+
+/** Hero·요약·자세히 알아보기가 같은 문단을 반복하지 않도록 나눈다. */
+export function partitionPageIntro(
+  introParagraphs: readonly string[],
+  options: {
+    dedicatedConclusion?: string;
+    h1: string;
+  },
+): {
+  heroParagraphs: string[];
+  summaryConclusion: string;
+  bodyParagraphs: string[];
+} {
+  const unique = uniqueParagraphs(introParagraphs);
+  const heroParagraphs = unique.slice(0, 2);
+  const heroKeys = new Set(heroParagraphs.map(normalizeParagraphText));
+  const dedicated = options.dedicatedConclusion?.trim();
+  const remainder = unique.filter(
+    (paragraph) => !heroKeys.has(normalizeParagraphText(paragraph)),
+  );
+  const summaryConclusion =
+    dedicated ||
+    remainder[0] ||
+    `${options.h1}에 대한 핵심 절차와 준비사항을 정리했습니다.`;
+  const summaryKey = normalizeParagraphText(summaryConclusion);
+  const bodyParagraphs = unique.filter((paragraph) => {
+    const key = normalizeParagraphText(paragraph);
+    return !heroKeys.has(key) && key !== summaryKey;
+  });
+  return { heroParagraphs, summaryConclusion, bodyParagraphs };
 }
 
 export function capInternalLinks(
@@ -231,12 +282,14 @@ export function createPageData(input: CreatePageDataInput): PageData {
     h1: input.h1,
     intro: input.intro,
     breadcrumbs: input.breadcrumbs,
-    introParagraphs: useProvidedIntros
-      ? input.introParagraphs!
-      : splitIntroParagraphs(
-          input.intro,
-          input.introParagraphs ?? [],
-        ),
+    introParagraphs: uniqueParagraphs(
+      useProvidedIntros
+        ? input.introParagraphs!
+        : splitIntroParagraphs(
+            input.intro,
+            input.introParagraphs ?? [],
+          ),
+    ),
     procedures:
       input.procedures && input.procedures.length > 0
         ? input.procedures

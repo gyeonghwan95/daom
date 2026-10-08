@@ -466,10 +466,30 @@ export const siteImages = {
   },
 } as const;
 
+const SERVICE_IMAGE_ALTS: Record<string, string> = {
+  "inheritance-registration": "상속등기 업무 안내",
+  "inheritance-renunciation": "상속포기 업무 안내",
+  "qualified-acceptance": "한정승인 업무 안내",
+  "real-estate-registration": "부동산등기 업무 안내",
+  "ownership-transfer": "소유권이전등기 업무 안내",
+  "corporate-registration": "법인등기 업무 안내",
+  "company-establishment": "법인설립 업무 안내",
+  "director-change": "임원변경등기 업무 안내",
+  "personal-rehabilitation": "개인회생 업무 안내",
+  bankruptcy: "개인파산 업무 안내",
+  "payment-order": "지급명령·채권회수 업무 안내",
+};
+
+function serviceImageAlt(slug: string): string {
+  if (SERVICE_IMAGE_ALTS[slug]) return SERVICE_IMAGE_ALTS[slug];
+  if (/[A-Za-z]/.test(slug)) return "업무 안내 그림";
+  return `${slug} 업무 안내`;
+}
+
 export function getServiceImage(slug: string): SiteImageAsset {
   const src =
     serviceImageBySlug[slug as ServiceSlug] ?? pickThumbnailImagePath(slug);
-  return img(src, `${slug} 업무 안내`, 1200, 700);
+  return img(src, serviceImageAlt(slug), 1200, 700);
 }
 
 export function getBlogPostImage(slug: string): SiteImageAsset {
