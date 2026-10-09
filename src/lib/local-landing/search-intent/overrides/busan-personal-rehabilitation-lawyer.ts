@@ -138,7 +138,7 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
   relatedServiceLinks: [
     { href: "/부산개인회생", label: "개인회생 신청·서류 안내" },
     { href: "/개인회생파산", label: "회생·파산 비교" },
-    { href: "/부산파산", label: "부산 개인파산 안내" },
+    { href: "/부산개인파산", label: "부산 개인파산 안내" },
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },
     { href: "/tools/rehab-income-debt-check", label: "소득·채무 점검 도구" },
     { href: "/개인회생비용", label: "개인회생 비용 구조" },

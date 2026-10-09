@@ -1,0 +1,143 @@
+[
+ {
+  "query": "부산 상속",
+  "set": "base17",
+  "candidate": "/부산상속법무사"
+ },
+ {
+  "query": "부산 상속등기",
+  "set": "base17",
+  "candidate": "/부산상속등기"
+ },
+ {
+  "query": "부산 상속포기",
+  "set": "base17",
+  "candidate": "/부산상속포기"
+ },
+ {
+  "query": "부산 한정승인",
+  "set": "base17",
+  "candidate": "/부산한정승인"
+ },
+ {
+  "query": "부산 특별한정승인",
+  "set": "base17",
+  "candidate": "/특별한정승인"
+ },
+ {
+  "query": "부산 법인설립",
+  "set": "base17",
+  "candidate": "/부산법인설립등기"
+ },
+ {
+  "query": "부산 법인등기",
+  "set": "base17",
+  "candidate": "/부산법인등기"
+ },
+ {
+  "query": "부산 임원변경등기",
+  "set": "base17",
+  "candidate": "/부산임원변경등기"
+ },
+ {
+  "query": "부산 본점이전등기",
+  "set": "base17",
+  "candidate": "/부산본점이전등기"
+ },
+ {
+  "query": "부산 부동산등기",
+  "set": "base17",
+  "candidate": "/부산부동산등기"
+ },
+ {
+  "query": "부산 소유권이전등기",
+  "set": "base17",
+  "candidate": "/부산소유권이전등기"
+ },
+ {
+  "query": "부산 증여등기",
+  "set": "base17",
+  "candidate": "/부산증여등기"
+ },
+ {
+  "query": "부산 개인회생",
+  "set": "base17",
+  "candidate": "/부산개인회생"
+ },
+ {
+  "query": "부산 개인파산",
+  "set": "base17",
+  "candidate": "/부산개인파산"
+ },
+ {
+  "query": "부산 공탁",
+  "set": "base17",
+  "candidate": "/부산공탁"
+ },
+ {
+  "query": "부산 지급명령",
+  "set": "base17",
+  "candidate": "/부산지방법원지급명령"
+ },
+ {
+  "query": "부산 선박등기",
+  "set": "base17",
+  "candidate": "/부산선박등기"
+ },
+ {
+  "query": "부산 법인전문 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법인 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법인설립 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법인등기 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 상속 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 상속전문 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 상속포기 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 한정승인 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법무사 상속",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 등기 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법무사",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법무사 추천",
+  "set": "protect14"
+ },
+ {
+  "query": "부산 법무사 상담",
+  "set": "protect14"
+ }
+]

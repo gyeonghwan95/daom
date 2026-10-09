@@ -54,6 +54,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/유언공증준비", label: "유언 공정증서 준비 안내" },
           { href: "/고인계좌장례비사용", label: "고인 계좌 장례비 사용" },
           { href: "/사망후3개월지난상속", label: "사망 후 3개월이 지난 경우" },
+          { href: "/특별한정승인", label: "빚을 뒤늦게 안 경우 특별한정승인" },
           { href: "/임대인사망전세계약", label: "임대인 사망과 전세계약" },
         ],
       },
@@ -435,7 +436,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "채권 회수·지급명령",
         intro: "금전 채권은 지급명령으로 빠르게 진행할 수 있는 경우가 많습니다. 공사대금·대여금·물품대금처럼 원인만 달라도 같은 지급명령 허브에서 증거·상대방 주소부터 가릅니다.",
         links: [
-          { href: "/부산지방법원법무사", label: "부산지방법원 지급명령 절차 안내" },
+          { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령 절차 안내" },
           { href: "/부산지방법원동부지원법무사", label: "부산지방법원 동부지원 민사 접수 안내" },
           {
             href: "/방문없이준비하는지급명령서류",
@@ -567,6 +568,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/변제공탁서류준비", label: "변제공탁 서류 준비" },
           { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
           { href: "/부산지방법원법무사", label: "부산지방법원 공탁 접수 안내" },
+          { href: "/부산공탁", label: "부산 공탁 종류 비교 — 변제·집행·담보·형사" },
         ],
       },
       {

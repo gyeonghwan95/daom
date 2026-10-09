@@ -1,0 +1,1018 @@
+[
+ {
+  "query": "부산 상속",
+  "set": "base17",
+  "route": "/부산상속법무사",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차",
+  "h1": [
+   "부산에서 상속 문제를 정리할 때, 어떤 절차부터 시작해야 할까"
+  ],
+  "canonical": "/부산상속법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 374,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:57:47",
+   "ourDomainOrder": 9,
+   "ourUrl": "/부산상속포기"
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 상속등기",
+  "set": "base17",
+  "route": "/부산상속등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 상속등기 법무사｜상속인 구성에 따라 달라지는 서류와 진행 순서",
+  "h1": [
+   "부산 상속등기 법무사, 명의이전 서류와 진행 순서"
+  ],
+  "canonical": "/부산상속등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 765,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:57:51",
+   "ourDomainOrder": 2,
+   "ourUrl": "/부산상속등기"
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 상속포기",
+  "set": "base17",
+  "route": "/부산상속포기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 상속포기 법무사｜3개월·후순위 상속인부터 확인",
+  "h1": [
+   "부산 상속포기 법무사 상담, 3개월과 다음 상속인부터 확인하세요"
+  ],
+  "canonical": "/부산상속포기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 157,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:57:54",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 한정승인",
+  "set": "base17",
+  "route": "/부산한정승인",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 한정승인 법무사｜상속채무가 걱정될 때 3개월 안에 확인할 절차",
+  "h1": [
+   "부모님 재산보다 빚이 더 많을지 모른다면, 한정승인은 어떻게 판단하나요?"
+  ],
+  "canonical": "/부산한정승인",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 138,
+  "linkedFrom": [
+   "/services",
+   "/부산법무사",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:57:58",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 특별한정승인",
+  "set": "base17",
+  "route": "/특별한정승인",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "특별한정승인｜기한 경과·뒤늦은 채무 발견 시 확인할 절차·서류",
+  "h1": [
+   "특별한정승인, 기한이 지났거나 빚을 뒤늦게 알았을 때"
+  ],
+  "canonical": "/특별한정승인",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 13,
+  "linkedFrom": [
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:02",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "/부산특별한정승인 URL 없음(404). 전국 /특별한정승인 유지, 관할 안내 보강 대상",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 법인설립",
+  "set": "base17",
+  "route": "/부산법인설립등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 법인설립 법무사｜정관·임원·자본금부터 맞추는 설립등기",
+  "h1": [
+   "부산 법인설립 법무사, 정관과 설립총회부터 정리"
+  ],
+  "canonical": "/부산법인설립등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 202,
+  "linkedFrom": [],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:05",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "/부산법인설립 URL 없음(404). /부산법인설립등기가 설립 상세",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 법인등기",
+  "set": "base17",
+  "route": "/부산법인등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 법인등기 법무사｜임원·본점·사업목적 변경을 놓치지 않으려면",
+  "h1": [
+   "부산 법인등기 법무사, 설립부터 임원·본점 변경까지"
+  ],
+  "canonical": "/부산법인등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 716,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:09",
+   "ourDomainOrder": 1,
+   "ourUrl": "/부산학교법인등기"
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 임원변경등기",
+  "set": "base17",
+  "route": "/부산임원변경등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 임원변경등기｜대표이사·이사 임기와 과태료 확인사항",
+  "h1": [
+   "부산 임원변경등기, 대표이사 임기와 과태료부터 확인"
+  ],
+  "canonical": "/부산임원변경등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 338,
+  "linkedFrom": [],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:13",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 본점이전등기",
+  "set": "base17",
+  "route": "/부산본점이전등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 법인 본점이전등기｜관할 내·외 이전 차이",
+  "h1": [
+   "부산 법인 본점이전등기 — 관할이 바뀌는지부터 확인하세요"
+  ],
+  "canonical": "/부산본점이전등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 19,
+  "linkedFrom": [],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:16",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 부동산등기",
+  "set": "base17",
+  "route": "/부산부동산등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 부동산등기 법무사｜잔금·말소·소유권이전 순서를 맞추려면",
+  "h1": [
+   "부산 부동산등기 법무사, 매매·증여 이전 순서 정리"
+  ],
+  "canonical": "/부산부동산등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 686,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:20",
+   "ourDomainOrder": 1,
+   "ourUrl": "/부산지방법원동부지원등기과부동산등기"
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 소유권이전등기",
+  "set": "base17",
+  "route": "/부산소유권이전등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 소유권이전등기｜매매·증여·상속 원인별",
+  "h1": [
+   "부산 소유권이전등기 — 매매·증여·상속 원인별 안내"
+  ],
+  "canonical": "/부산소유권이전등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 334,
+  "linkedFrom": [
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:24",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 증여등기",
+  "set": "base17",
+  "route": "/부산증여등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 증여등기 법무사｜부모·자녀·부부 간 부동산을 이전하기 전 확인할 사항",
+  "h1": [
+   "부산 부동산 증여등기, 계약 전에 확인할 절차와 준비서류"
+  ],
+  "canonical": "/부산증여등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 28,
+  "linkedFrom": [],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:27",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 개인회생",
+  "set": "base17",
+  "route": "/부산개인회생",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 개인회생｜신청자격·절차·부산회생법원 안내",
+  "h1": [
+   "부산 개인회생, 신청 전 무엇부터 확인할까요?"
+  ],
+  "canonical": "/부산개인회생",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 253,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:31",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 개인파산",
+  "set": "base17",
+  "route": "/부산개인파산",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 개인파산｜신청 자격·서류·부산회생법원 면책 절차",
+  "h1": [
+   "부산 개인파산, 신청 자격·서류·면책 절차부터 확인"
+  ],
+  "canonical": "/부산개인파산",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 16,
+  "linkedFrom": [
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:35",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 공탁",
+  "set": "base17",
+  "route": "/부산공탁",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 공탁 법무사｜변제·집행·담보·형사공탁 중 내 상황부터 확인 | 다옴법무사사무소",
+  "h1": [
+   "부산에서 공탁을 알아본다면, 어떤 공탁인지부터 확인해야 합니다"
+  ],
+  "canonical": "/부산공탁",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 7,
+  "linkedFrom": [
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:38",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "사전 후보 /공탁채권회수는 채권회수 연결원. /부산공탁은 변제·집행·담보·형사공탁 분기 허브(200, index, sitemap)이며 세부 /부산변제공탁 등 존재",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 지급명령",
+  "set": "base17",
+  "route": "/부산지방법원지급명령",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산지방법원 지급명령 절차 | 다옴법무사사무소",
+  "h1": [
+   "부산지방법원 지급명령"
+  ],
+  "canonical": "/부산지방법원지급명령",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 15,
+  "linkedFrom": [
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:42",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "/부산지급명령·/지급명령 URL 없음(404). /부산지방법원지급명령이 지급명령 상세(200,index). 동부지원 별도 /부산지방법원동부지원지급명령",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 선박등기",
+  "set": "base17",
+  "route": "/부산선박등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "title": "부산 선박등기 법무사｜부산지방법원 등기국 접수와 해운대 사무소 상담 | 다옴법무사사무소",
+  "h1": [
+   "부산 선박등기, 부산지방법원 등기국에 접수하기 전 확인할 것"
+  ],
+  "canonical": "/부산선박등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 22,
+  "linkedFrom": [
+   "/"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:46",
+   "ourDomainOrder": 1,
+   "ourUrl": "/부산선박등기"
+  },
+  "evidence": "사전 후보 URL 200·index·self canonical 확인",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법인전문 법무사",
+  "set": "protect14",
+  "route": "/부산법인등기",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법인등기 법무사｜임원·본점·사업목적 변경을 놓치지 않으려면",
+  "h1": [
+   "부산 법인등기 법무사, 설립부터 임원·본점 변경까지"
+  ],
+  "canonical": "/부산법인등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 716,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:49",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "/부산법인전문법무사는 2026-09-22 정책으로 noindex+canonical→/부산법인등기",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 법인 법무사",
+  "set": "protect14",
+  "route": "/부산법인법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법무사 법인 업무｜비용·절차·준비서류 총정리",
+  "h1": [
+   "부산 법인 업무, 설립부터 변경·해산까지 한 번에 확인하기"
+  ],
+  "canonical": "/부산법인법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 100,
+  "linkedFrom": [
+   "/",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:53",
+   "ourDomainOrder": 5,
+   "ourUrl": "/"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법인설립 법무사",
+  "set": "protect14",
+  "route": "/부산법인설립등기",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법인설립 법무사｜정관·임원·자본금부터 맞추는 설립등기",
+  "h1": [
+   "부산 법인설립 법무사, 정관과 설립총회부터 정리"
+  ],
+  "canonical": "/부산법인설립등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 202,
+  "linkedFrom": [],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:58:56",
+   "ourDomainOrder": 3,
+   "ourUrl": "/부산법인설립등기"
+  },
+  "evidence": "/부산법인설립법무사 URL 없음(404)",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법인등기 법무사",
+  "set": "protect14",
+  "route": "/부산법인등기",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법인등기 법무사｜임원·본점·사업목적 변경을 놓치지 않으려면",
+  "h1": [
+   "부산 법인등기 법무사, 설립부터 임원·본점 변경까지"
+  ],
+  "canonical": "/부산법인등기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 716,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:00",
+   "ourDomainOrder": 2,
+   "ourUrl": "/부산기업법무사"
+  },
+  "evidence": "/부산법인등기법무사 URL 없음(404)",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 상속 법무사",
+  "set": "protect14",
+  "route": "/부산상속법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차",
+  "h1": [
+   "부산에서 상속 문제를 정리할 때, 어떤 절차부터 시작해야 할까"
+  ],
+  "canonical": "/부산상속법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 374,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:04",
+   "ourDomainOrder": 5,
+   "ourUrl": "/부산상속포기"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 상속전문 법무사",
+  "set": "protect14",
+  "route": "/부산상속전문법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 상속전문 법무사를 찾는다면｜업무범위와 선택 기준",
+  "h1": [
+   "부산 상속전문 법무사를 찾을 때 무엇을 확인해야 할까요?"
+  ],
+  "canonical": "/부산상속전문법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 13,
+  "linkedFrom": [
+   "/부산법무사",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:07",
+   "ourDomainOrder": 9,
+   "ourUrl": "/부산상속전문법무사"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 상속포기 법무사",
+  "set": "protect14",
+  "route": "/부산상속포기",
+  "source": "기존 URL·index-policy",
+  "title": "부산 상속포기 법무사｜3개월·후순위 상속인부터 확인",
+  "h1": [
+   "부산 상속포기 법무사 상담, 3개월과 다음 상속인부터 확인하세요"
+  ],
+  "canonical": "/부산상속포기",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 157,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:11",
+   "ourDomainOrder": 8,
+   "ourUrl": "/부산상속포기"
+  },
+  "evidence": "/부산상속포기법무사 URL 없음(404)",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 한정승인 법무사",
+  "set": "protect14",
+  "route": "/부산한정승인",
+  "source": "기존 URL·index-policy",
+  "title": "부산 한정승인 법무사｜상속채무가 걱정될 때 3개월 안에 확인할 절차",
+  "h1": [
+   "부모님 재산보다 빚이 더 많을지 모른다면, 한정승인은 어떻게 판단하나요?"
+  ],
+  "canonical": "/부산한정승인",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 138,
+  "linkedFrom": [
+   "/services",
+   "/부산법무사",
+   "/부산상속법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:15",
+   "ourDomainOrder": 10,
+   "ourUrl": "/부산한정승인"
+  },
+  "evidence": "/부산한정승인법무사 URL 없음(404)",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법무사 상속",
+  "set": "protect14",
+  "route": "/부산상속법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차",
+  "h1": [
+   "부산에서 상속 문제를 정리할 때, 어떤 절차부터 시작해야 할까"
+  ],
+  "canonical": "/부산상속법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 374,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사",
+   "/상속"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:18",
+   "ourDomainOrder": 2,
+   "ourUrl": "/상속"
+  },
+  "evidence": "네이버 관측 노출 URL은 /상속",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 등기 법무사",
+  "set": "protect14",
+  "route": "/부산등기법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 등기 법무사 | 부동산·상속·법인등기 상담 - 다옴법무사사무소",
+  "h1": [
+   "부산 등기 법무사, 어떤 등기부터 준비해야 할까요?"
+  ],
+  "canonical": "/부산등기법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 617,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:22",
+   "ourDomainOrder": 5,
+   "ourUrl": "/부산등기법무사"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "set": "protect14",
+  "route": "/부산등기법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 등기 법무사 | 부동산·상속·법인등기 상담 - 다옴법무사사무소",
+  "h1": [
+   "부산 등기 법무사, 어떤 등기부터 준비해야 할까요?"
+  ],
+  "canonical": "/부산등기법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 617,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:25",
+   "ourDomainOrder": 4,
+   "ourUrl": "/부산부동산등기전문법무사"
+  },
+  "evidence": "/부산등기전문법무사 noindex+canonical→/부산등기법무사(09-22 정책)",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법무사",
+  "set": "protect14",
+  "route": "/부산법무사",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법무사 업무 안내｜상속·부동산등기·법인등기·공탁 | 다옴법무사사무소",
+  "h1": [
+   "부산 법무사, 다옴법무사사무소는 어떤 일을 맡나요?"
+  ],
+  "canonical": "/부산법무사",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 752,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산상속법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:29",
+   "ourDomainOrder": null,
+   "ourUrl": null
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공",
+   "비로그인 PC 1회 관측에서 본 도메인 미검출(순위 아님)"
+  ]
+ },
+ {
+  "query": "부산 법무사 추천",
+  "set": "protect14",
+  "route": "/부산법무사추천",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법무사 추천 | 상담 전 확인할 7가지 기준",
+  "h1": [
+   "부산 법무사 추천, 어떤 기준으로 선택해야 할까"
+  ],
+  "canonical": "/부산법무사추천",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 64,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:33",
+   "ourDomainOrder": 2,
+   "ourUrl": "/부산법무사추천"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ },
+ {
+  "query": "부산 법무사 상담",
+  "set": "protect14",
+  "route": "/부산법무사상담",
+  "source": "기존 URL·index-policy",
+  "title": "부산 법무사 상담 | 준비서류·비용·상담방법",
+  "h1": [
+   "부산 법무사 상담, 처음 연락할 때 무엇을 말하면 될까요?"
+  ],
+  "canonical": "/부산법무사상담",
+  "robots": "index, follow",
+  "inSitemap": true,
+  "response": {
+   "status": 200,
+   "xRobots": null,
+   "cache": "DYNAMIC"
+  },
+  "inboundIndexable": 285,
+  "linkedFrom": [
+   "/",
+   "/services",
+   "/부산법무사"
+  ],
+  "naverObserved": {
+   "atKST": "2026-10-09 22:59:36",
+   "ourDomainOrder": 6,
+   "ourUrl": "/부산법무사추천"
+  },
+  "evidence": "기존 URL 200·index",
+  "unknowns": [
+   "네이버 서치어드바이저 색인·유입 자료 미제공"
+  ]
+ }
+]

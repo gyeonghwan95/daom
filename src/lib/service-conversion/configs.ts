@@ -614,7 +614,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       ],
       relatedServices: [
         { href: "/services/personal-rehabilitation", label: "개인회생" },
-        { href: "/부산파산", label: "부산 개인파산" },
+        { href: "/부산개인파산", label: "부산 개인파산" },
         { href: "/개인파산비용", label: "개인파산 비용" },
         { href: "/부산회생법원개인파산", label: "부산회생법원 개인파산" },
         { href: "/개인파산자가진단", label: "개인파산 자가진단" },

@@ -1,0 +1,219 @@
+[
+ {
+  "query": "부산 상속",
+  "set": "base17",
+  "owner": "/부산상속법무사",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 상속등기",
+  "set": "base17",
+  "owner": "/부산상속등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 상속포기",
+  "set": "base17",
+  "owner": "/부산상속포기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 한정승인",
+  "set": "base17",
+  "owner": "/부산한정승인",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 특별한정승인",
+  "set": "base17",
+  "owner": "/특별한정승인",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "/부산특별한정승인 URL 없음(404). 전국 /특별한정승인 유지, 관할 안내 보강 대상"
+ },
+ {
+  "query": "부산 법인설립",
+  "set": "base17",
+  "owner": "/부산법인설립등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "/부산법인설립 URL 없음(404). /부산법인설립등기가 설립 상세"
+ },
+ {
+  "query": "부산 법인등기",
+  "set": "base17",
+  "owner": "/부산법인등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 임원변경등기",
+  "set": "base17",
+  "owner": "/부산임원변경등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 본점이전등기",
+  "set": "base17",
+  "owner": "/부산본점이전등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 부동산등기",
+  "set": "base17",
+  "owner": "/부산부동산등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 소유권이전등기",
+  "set": "base17",
+  "owner": "/부산소유권이전등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 증여등기",
+  "set": "base17",
+  "owner": "/부산증여등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 개인회생",
+  "set": "base17",
+  "owner": "/부산개인회생",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 개인파산",
+  "set": "base17",
+  "owner": "/부산개인파산",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 공탁",
+  "set": "base17",
+  "owner": "/부산공탁",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 /공탁채권회수는 채권회수 연결원. /부산공탁은 변제·집행·담보·형사공탁 분기 허브(200, index, sitemap)이며 세부 /부산변제공탁 등 존재"
+ },
+ {
+  "query": "부산 지급명령",
+  "set": "base17",
+  "owner": "/부산지방법원지급명령",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "/부산지급명령·/지급명령 URL 없음(404). /부산지방법원지급명령이 지급명령 상세(200,index). 동부지원 별도 /부산지방법원동부지원지급명령"
+ },
+ {
+  "query": "부산 선박등기",
+  "set": "base17",
+  "owner": "/부산선박등기",
+  "source": "사전 후보표+현재 out/ 확인",
+  "evidence": "사전 후보 URL 200·index·self canonical 확인"
+ },
+ {
+  "query": "부산 법인전문 법무사",
+  "set": "protect14",
+  "owner": "/부산법인등기",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산법인전문법무사는 2026-09-22 정책으로 noindex+canonical→/부산법인등기"
+ },
+ {
+  "query": "부산 법인 법무사",
+  "set": "protect14",
+  "owner": "/부산법인법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 법인설립 법무사",
+  "set": "protect14",
+  "owner": "/부산법인설립등기",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산법인설립법무사 URL 없음(404)"
+ },
+ {
+  "query": "부산 법인등기 법무사",
+  "set": "protect14",
+  "owner": "/부산법인등기",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산법인등기법무사 URL 없음(404)"
+ },
+ {
+  "query": "부산 상속 법무사",
+  "set": "protect14",
+  "owner": "/부산상속법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 상속전문 법무사",
+  "set": "protect14",
+  "owner": "/부산상속전문법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 상속포기 법무사",
+  "set": "protect14",
+  "owner": "/부산상속포기",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산상속포기법무사 URL 없음(404)"
+ },
+ {
+  "query": "부산 한정승인 법무사",
+  "set": "protect14",
+  "owner": "/부산한정승인",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산한정승인법무사 URL 없음(404)"
+ },
+ {
+  "query": "부산 법무사 상속",
+  "set": "protect14",
+  "owner": "/부산상속법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "네이버 관측 노출 URL은 /상속"
+ },
+ {
+  "query": "부산 등기 법무사",
+  "set": "protect14",
+  "owner": "/부산등기법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "set": "protect14",
+  "owner": "/부산등기법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "/부산등기전문법무사 noindex+canonical→/부산등기법무사(09-22 정책)"
+ },
+ {
+  "query": "부산 법무사",
+  "set": "protect14",
+  "owner": "/부산법무사",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 법무사 추천",
+  "set": "protect14",
+  "owner": "/부산법무사추천",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ },
+ {
+  "query": "부산 법무사 상담",
+  "set": "protect14",
+  "owner": "/부산법무사상담",
+  "source": "기존 URL·index-policy",
+  "evidence": "기존 URL 200·index"
+ }
+]

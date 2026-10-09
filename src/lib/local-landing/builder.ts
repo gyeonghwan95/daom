@@ -305,6 +305,8 @@ export function buildLocalLandingPage(
         : "부산 개인회생 전체 절차 보기";
     /** `/부산개인파산`이 개인파산 절차 owner. `/부산파산`은 용어 구분용 supporting. */
     const isBankruptcyOverview = config.slug === "부산파산";
+    /** 시 단위 `/부산개인파산`은 구·동 진입점이 아니라 개인파산 절차 안내 자체다. */
+    const isCityBankruptcyOwner = config.slug === "부산개인파산";
 
     return {
       slug: config.slug,
@@ -314,19 +316,25 @@ export function buildLocalLandingPage(
       title: isBankruptcyOverview ? "부산 파산 절차 개요" : title,
       metaTitle: isBankruptcyOverview
         ? "부산 파산 절차 개요｜개인파산·면책과 구분"
-        : undefined,
+        : isCityBankruptcyOwner
+          ? "부산 개인파산｜신청 자격·서류·부산회생법원 면책 절차"
+          : undefined,
       h1: isBankruptcyOverview
         ? "부산 파산 절차, 개인파산·면책과 구분해서 보기"
-        : `${config.regionLabel} ${procedureLabel}, 거주 지역 상담`,
+        : isCityBankruptcyOwner
+          ? "부산 개인파산, 신청 자격·서류·면책 절차부터 확인"
+          : `${config.regionLabel} ${procedureLabel}, 거주 지역 상담`,
       description: isBankruptcyOverview
-        ? "파산이라는 말과 개인파산·면책 신청을 구분하는 안내입니다. 자격·서류·부산회생법원 준비는 부산 개인파산 대표 페이지에서 이어집니다."
+        ? "파산이라는 말과 개인파산·면책 신청을 구분하는 안내입니다. 자격·서류·부산회생법원 준비는 부산 개인파산 안내에서 이어집니다."
         : `${config.regionLabel} ${procedureLabel} 상담 안내. 부산회생법원 관할. 소득·채무·재산 기준으로 준비 순서를 안내하며 인가·면책은 보장하지 않습니다.`,
       regionLabel: config.regionLabel,
       regionKey: config.regionKey,
       neighborhoods: config.neighborhoods,
       problemStatement: isBankruptcyOverview
-        ? "검색어의 ‘파산’은 기업 파산과 개인파산·면책을 한 말로 묶는 경우가 많습니다. 이 페이지는 그 차이만 가른 뒤, 개인 채무 정리는 부산 개인파산 대표 안내로 연결합니다. 등기소·상속·매매와는 다른 부산회생법원 절차입니다."
-        : `${config.regionLabel}에 거주하면서 ${procedureLabel}을 찾는 경우, 이 페이지는 해당 구·동의 상담 진입점입니다. 신청 자격·서류·부산회생법원 준비의 전체 절차는 상위 안내에서 이어집니다. 등기소·상속·매매와는 다른 법원 절차입니다.`,
+        ? "‘파산’이라는 말은 기업 파산과 개인파산·면책을 함께 가리키는 경우가 많습니다. 이 페이지는 그 차이를 가른 뒤, 개인 채무 정리는 부산 개인파산 안내로 연결합니다. 등기소·상속·매매와는 다른 부산회생법원 절차입니다."
+        : isCityBankruptcyOwner
+          ? "부산에 사는 개인의 개인파산·면책 신청은 부산회생법원 사건을 기준으로 준비합니다. 채무·재산 목록, 소득과 생계비, 최근 변제·재산 처분 내역을 먼저 정리하면 개인회생과 파산 중 무엇을 볼지 가를 수 있습니다. 등기소·상속·매매와는 다른 법원 절차입니다."
+          : `${config.regionLabel}에 거주하면서 ${procedureLabel}을 찾는 경우, 이 페이지는 해당 구·동의 상담 진입점입니다. 신청 자격·서류·부산회생법원 준비의 전체 절차는 상위 안내에서 이어집니다. 등기소·상속·매매와는 다른 법원 절차입니다.`,
       whenNeeded: [
         `${config.regionLabel}에 살면서 ${procedureLabel} 상담이 필요할 때`,
         "소득·채무·재산으로 신청 방향을 가늠하고 싶을 때",

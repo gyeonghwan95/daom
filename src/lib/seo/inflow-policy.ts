@@ -66,6 +66,21 @@ const LIBRARY: InflowItem[] = [
     reason: "등기와 별개 절차입니다. 기한이 있으면 먼저 상담하는 편이 안전합니다.",
   },
   {
+    href: INHERITANCE_CHOICE,
+    label: "부산 상속 절차 선택 안내",
+    reason: "등기·포기·한정승인 중 무엇부터 할지와 신청하는 곳·기한을 함께 봅니다.",
+  },
+  {
+    href: QUALIFIED_HUB,
+    label: "한정승인 신고와 이후 청산",
+    reason: "재산 한도에서만 채무를 부담하는 절차입니다. 포기와 같은 3개월 기한을 봅니다.",
+  },
+  {
+    href: "/부산소유권이전등기",
+    label: "매매·증여·상속 원인별 명의이전",
+    reason: "등기 원인에 따라 서류와 세금 신고 순서가 달라집니다.",
+  },
+  {
     href: CORPORATE_HUB,
     label: "설립·임원·본점 변경등기",
     searchPhrase: "부산 법인등기",
