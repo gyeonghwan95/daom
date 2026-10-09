@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T15:00:30.615Z",
+  "generatedAt": "2026-10-09T15:59:30.369Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1657,
   "format": "urlset",
@@ -856,7 +856,7 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-10-05",
+      "lastmod": "2026-10-10",
       "filename": "tier-1-core.xml",
       "count": 18
     },
@@ -914,7 +914,7 @@
       "path": "/부산법무사",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-02"
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산상속등기",

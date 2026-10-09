@@ -1,0 +1,9302 @@
+{
+ "removed": [],
+ "added": [],
+ "policy": [],
+ "title": [
+  {
+   "r": "/부산법무사",
+   "before": "부산 법무사 업무 안내｜상속·부동산등기·법인등기·공탁 | 다옴법무사사무소",
+   "after": "다옴법무사사무소 업무 안내｜부산 상속·부동산등기·법인등기·공탁"
+  }
+ ],
+ "h1": [
+  {
+   "r": "/부산법무사",
+   "before": [
+    "부산 법무사, 다옴법무사사무소는 어떤 일을 맡나요?"
+   ],
+   "after": [
+    "다옴법무사사무소는 부산에서 어떤 일을 맡나요?"
+   ]
+  }
+ ],
+ "description": [],
+ "main": [
+  {
+   "r": "/1분간편상담",
+   "beforeLen": 1569,
+   "afterLen": 1568
+  },
+  {
+   "r": "/404",
+   "beforeLen": 505,
+   "afterLen": 504
+  },
+  {
+   "r": "/about",
+   "beforeLen": 6787,
+   "afterLen": 6786
+  },
+  {
+   "r": "/blog/bankruptcy-vs-discharge-difference",
+   "beforeLen": 3950,
+   "afterLen": 3949
+  },
+  {
+   "r": "/blog/bankruptcy-vs-personal-rehabilitation",
+   "beforeLen": 4127,
+   "afterLen": 4126
+  },
+  {
+   "r": "/blog/busan-company-establishment-documents",
+   "beforeLen": 4239,
+   "afterLen": 4238
+  },
+  {
+   "r": "/blog/busan-inheritance-consultation-prep",
+   "beforeLen": 4471,
+   "afterLen": 4470
+  },
+  {
+   "r": "/blog/busan-inheritance-registration-procedure-documents",
+   "beforeLen": 4626,
+   "afterLen": 4625
+  },
+  {
+   "r": "/blog/busan-lawyer-consultation-documents",
+   "beforeLen": 4599,
+   "afterLen": 4598
+  },
+  {
+   "r": "/blog/busan-lawyer-jurisdiction-checklist",
+   "beforeLen": 4788,
+   "afterLen": 4787
+  },
+  {
+   "r": "/blog/busan-lawyer-recommend-office-consult",
+   "beforeLen": 6434,
+   "afterLen": 6433
+  },
+  {
+   "r": "/blog/busan-real-estate-registration-documents",
+   "beforeLen": 4045,
+   "afterLen": 4044
+  },
+  {
+   "r": "/blog/business-owner-rehabilitation-pre-check",
+   "beforeLen": 4041,
+   "afterLen": 4040
+  },
+  {
+   "r": "/blog/centum-lawyer-visit-day-flow",
+   "beforeLen": 4736,
+   "afterLen": 4735
+  },
+  {
+   "r": "/blog/ceo-address-change-registration",
+   "beforeLen": 4257,
+   "afterLen": 4256
+  },
+  {
+   "r": "/blog/certified-mail-before-sending",
+   "beforeLen": 3962,
+   "afterLen": 3961
+  },
+  {
+   "r": "/blog/company-establishment-registration-checklist",
+   "beforeLen": 4406,
+   "afterLen": 4405
+  },
+  {
+   "r": "/blog/complaint-filing-required-materials",
+   "beforeLen": 3998,
+   "afterLen": 3997
+  },
+  {
+   "r": "/blog/corporate-name-change-registration",
+   "beforeLen": 4187,
+   "afterLen": 4186
+  },
+  {
+   "r": "/blog/corporate-purpose-change-registration",
+   "beforeLen": 4213,
+   "afterLen": 4212
+  },
+  {
+   "r": "/blog/corporate-registration-penalty-cases",
+   "beforeLen": 4327,
+   "afterLen": 4326
+  },
+  {
+   "r": "/blog/debt-collection-response-guide",
+   "beforeLen": 3978,
+   "afterLen": 3977
+  },
+  {
+   "r": "/blog/delayed-ownership-transfer-after-balance",
+   "beforeLen": 4282,
+   "afterLen": 4281
+  },
+  {
+   "r": "/blog/delaying-inheritance-registration-risks",
+   "beforeLen": 4700,
+   "afterLen": 4699
+  },
+  {
+   "r": "/blog/director-change-registration-deadline-guide",
+   "beforeLen": 4330,
+   "afterLen": 4329
+  },
+  {
+   "r": "/blog/director-change-registration-deadline-penalty",
+   "beforeLen": 4321,
+   "afterLen": 4320
+  },
+  {
+   "r": "/blog/external/224323008309",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224324132853",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224325288121",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224326475676",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224327594579",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224328572114",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224328590968",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/external/224328626727",
+   "beforeLen": 348,
+   "afterLen": 347
+  },
+  {
+   "r": "/blog/gift-registration-pre-check",
+   "beforeLen": 4069,
+   "afterLen": 4068
+  },
+  {
+   "r": "/blog/head-office-move-in-out-district",
+   "beforeLen": 4310,
+   "afterLen": 4309
+  },
+  {
+   "r": "/blog/how-to-check-deceased-parent-debt",
+   "beforeLen": 4658,
+   "afterLen": 4657
+  },
+  {
+   "r": "/blog/inheritance-division-agreement-cautions",
+   "beforeLen": 4576,
+   "afterLen": 4575
+  },
+  {
+   "r": "/blog/inheritance-registration-documents-checklist",
+   "beforeLen": 4506,
+   "afterLen": 4505
+  },
+  {
+   "r": "/blog/inheritance-registration-priority-after-parent-death",
+   "beforeLen": 4909,
+   "afterLen": 4908
+  },
+  {
+   "r": "/blog/inheritance-renunciation-vs-qualified-acceptance",
+   "beforeLen": 4517,
+   "afterLen": 4516
+  },
+  {
+   "r": "/blog/jeonse-deposit-return-certified-mail",
+   "beforeLen": 4039,
+   "afterLen": 4038
+  },
+  {
+   "r": "/blog/jeonse-right-cancellation-procedure",
+   "beforeLen": 4028,
+   "afterLen": 4027
+  },
+  {
+   "r": "/blog/jeonse-right-vs-lease-registration-order",
+   "beforeLen": 4273,
+   "afterLen": 4272
+  },
+  {
+   "r": "/blog/joint-ownership-registration-cautions",
+   "beforeLen": 4061,
+   "afterLen": 4060
+  },
+  {
+   "r": "/blog/loan-repayment-claim-documents",
+   "beforeLen": 3976,
+   "afterLen": 3975
+  },
+  {
+   "r": "/blog/minor-heir-inheritance-guide",
+   "beforeLen": 4476,
+   "afterLen": 4475
+  },
+  {
+   "r": "/blog/missed-director-term-expiry",
+   "beforeLen": 4229,
+   "afterLen": 4228
+  },
+  {
+   "r": "/blog/mortgage-cancellation-risks",
+   "beforeLen": 4187,
+   "afterLen": 4186
+  },
+  {
+   "r": "/blog/new-apartment-ownership-transfer",
+   "beforeLen": 4077,
+   "afterLen": 4076
+  },
+  {
+   "r": "/blog/one-person-company-establishment-checklist",
+   "beforeLen": 4249,
+   "afterLen": 4248
+  },
+  {
+   "r": "/blog/overseas-heir-inheritance-busan",
+   "beforeLen": 4469,
+   "afterLen": 4468
+  },
+  {
+   "r": "/blog/payment-order-application-pre-check",
+   "beforeLen": 4018,
+   "afterLen": 4017
+  },
+  {
+   "r": "/blog/personal-rehabilitation-before-application",
+   "beforeLen": 4123,
+   "afterLen": 4122
+  },
+  {
+   "r": "/blog/personal-rehabilitation-consultation-documents",
+   "beforeLen": 4130,
+   "afterLen": 4129
+  },
+  {
+   "r": "/blog/real-estate-ownership-transfer-procedure",
+   "beforeLen": 4192,
+   "afterLen": 4191
+  },
+  {
+   "r": "/blog/salaried-worker-rehabilitation-eligibility",
+   "beforeLen": 3956,
+   "afterLen": 3955
+  },
+  {
+   "r": "/blog/startup-corporate-registration-checklist",
+   "beforeLen": 4315,
+   "afterLen": 4314
+  },
+  {
+   "r": "/blog/three-months-after-death-inheritance",
+   "beforeLen": 4683,
+   "afterLen": 4682
+  },
+  {
+   "r": "/blog/when-jeonse-right-registration-needed",
+   "beforeLen": 4182,
+   "afterLen": 4181
+  },
+  {
+   "r": "/blog/when-seller-withholds-registration-documents",
+   "beforeLen": 4169,
+   "afterLen": 4168
+  },
+  {
+   "r": "/blog/when-siblings-refuse-inheritance-registration",
+   "beforeLen": 4602,
+   "afterLen": 4601
+  },
+  {
+   "r": "/blog/when-to-consult-real-estate-registration-lawyer",
+   "beforeLen": 4115,
+   "afterLen": 4114
+  },
+  {
+   "r": "/blog",
+   "beforeLen": 6638,
+   "afterLen": 6637
+  },
+  {
+   "r": "/busan-legal-map",
+   "beforeLen": 7374,
+   "afterLen": 7373
+  },
+  {
+   "r": "/contact/inquiry",
+   "beforeLen": 1219,
+   "afterLen": 1218
+  },
+  {
+   "r": "/contact",
+   "beforeLen": 2063,
+   "afterLen": 2062
+  },
+  {
+   "r": "/faq/bankruptcy-discharge-faq",
+   "beforeLen": 3570,
+   "afterLen": 3569
+  },
+  {
+   "r": "/faq/bankruptcy-vs-rehabilitation-faq",
+   "beforeLen": 3590,
+   "afterLen": 3589
+  },
+  {
+   "r": "/faq/capital-increase-registration-faq",
+   "beforeLen": 4160,
+   "afterLen": 4159
+  },
+  {
+   "r": "/faq/company-establishment-documents-faq",
+   "beforeLen": 4174,
+   "afterLen": 4173
+  },
+  {
+   "r": "/faq/corporate-address-change-faq",
+   "beforeLen": 4196,
+   "afterLen": 4195
+  },
+  {
+   "r": "/faq/director-change-deadline-faq",
+   "beforeLen": 4225,
+   "afterLen": 4224
+  },
+  {
+   "r": "/faq/gift-registration-faq",
+   "beforeLen": 3574,
+   "afterLen": 3573
+  },
+  {
+   "r": "/faq/how-to-book-consultation-faq",
+   "beforeLen": 4477,
+   "afterLen": 4476
+  },
+  {
+   "r": "/faq/inheritance-registration-cost",
+   "beforeLen": 5396,
+   "afterLen": 5395
+  },
+  {
+   "r": "/faq/inheritance-registration-with-mortgage",
+   "beforeLen": 4303,
+   "afterLen": 4302
+  },
+  {
+   "r": "/faq/inheritance-renunciation-deadline",
+   "beforeLen": 4192,
+   "afterLen": 4191
+  },
+  {
+   "r": "/faq/inheritance-renunciation-family-effect",
+   "beforeLen": 4270,
+   "afterLen": 4269
+  },
+  {
+   "r": "/faq/jeonse-registration-faq",
+   "beforeLen": 3628,
+   "afterLen": 3627
+  },
+  {
+   "r": "/faq/lawyer-fee-and-remote-faq",
+   "beforeLen": 4434,
+   "afterLen": 4433
+  },
+  {
+   "r": "/faq/multiple-heirs-inheritance-registration",
+   "beforeLen": 4221,
+   "afterLen": 4220
+  },
+  {
+   "r": "/faq/ownership-transfer-documents",
+   "beforeLen": 3591,
+   "afterLen": 3590
+  },
+  {
+   "r": "/faq/personal-rehabilitation-credit-faq",
+   "beforeLen": 3611,
+   "afterLen": 3610
+  },
+  {
+   "r": "/faq/personal-rehabilitation-documents-faq",
+   "beforeLen": 3540,
+   "afterLen": 3539
+  },
+  {
+   "r": "/faq/personal-rehabilitation-duration-faq",
+   "beforeLen": 3575,
+   "afterLen": 3574
+  },
+  {
+   "r": "/faq/personal-rehabilitation-eligibility-faq",
+   "beforeLen": 3621,
+   "afterLen": 3620
+  },
+  {
+   "r": "/faq/preservation-registration-faq",
+   "beforeLen": 3736,
+   "afterLen": 3735
+  },
+  {
+   "r": "/faq/public-agency-registration-faq",
+   "beforeLen": 3985,
+   "afterLen": 3984
+  },
+  {
+   "r": "/faq/qualified-acceptance-procedure",
+   "beforeLen": 4166,
+   "afterLen": 4165
+  },
+  {
+   "r": "/faq/qualified-acceptance-vs-simple-acceptance",
+   "beforeLen": 4126,
+   "afterLen": 4125
+  },
+  {
+   "r": "/faq/real-estate-divorce-registration",
+   "beforeLen": 3601,
+   "afterLen": 3600
+  },
+  {
+   "r": "/faq/renouncing-share-vs-full-renunciation",
+   "beforeLen": 4194,
+   "afterLen": 4193
+  },
+  {
+   "r": "/faq/what-is-inheritance-renunciation",
+   "beforeLen": 4237,
+   "afterLen": 4236
+  },
+  {
+   "r": "/faq/what-is-qualified-acceptance",
+   "beforeLen": 4113,
+   "afterLen": 4112
+  },
+  {
+   "r": "/faq/when-to-choose-qualified-acceptance",
+   "beforeLen": 4136,
+   "afterLen": 4135
+  },
+  {
+   "r": "/faq/when-to-file-inheritance-registration",
+   "beforeLen": 4782,
+   "afterLen": 4781
+  },
+  {
+   "r": "/faq/who-can-file-bankruptcy-faq",
+   "beforeLen": 3553,
+   "afterLen": 3552
+  },
+  {
+   "r": "/faq/who-needs-inheritance-registration",
+   "beforeLen": 4302,
+   "afterLen": 4301
+  },
+  {
+   "r": "/faq",
+   "beforeLen": 10061,
+   "afterLen": 10060
+  },
+  {
+   "r": "/glossary/acquisition-tax",
+   "beforeLen": 1494,
+   "afterLen": 1493
+  },
+  {
+   "r": "/glossary/answer-brief",
+   "beforeLen": 1495,
+   "afterLen": 1494
+  },
+  {
+   "r": "/glossary/attachment",
+   "beforeLen": 1487,
+   "afterLen": 1486
+  },
+  {
+   "r": "/glossary/certified-mail",
+   "beforeLen": 1511,
+   "afterLen": 1510
+  },
+  {
+   "r": "/glossary/company-establishment-registration",
+   "beforeLen": 1491,
+   "afterLen": 1490
+  },
+  {
+   "r": "/glossary/complaint",
+   "beforeLen": 1519,
+   "afterLen": 1518
+  },
+  {
+   "r": "/glossary/director-change-registration",
+   "beforeLen": 1482,
+   "afterLen": 1481
+  },
+  {
+   "r": "/glossary/discharge",
+   "beforeLen": 1464,
+   "afterLen": 1463
+  },
+  {
+   "r": "/glossary/dissolution-registration",
+   "beforeLen": 1505,
+   "afterLen": 1504
+  },
+  {
+   "r": "/glossary/head-office-move-registration",
+   "beforeLen": 1511,
+   "afterLen": 1510
+  },
+  {
+   "r": "/glossary/inheritance-division-agreement",
+   "beforeLen": 1660,
+   "afterLen": 1659
+  },
+  {
+   "r": "/glossary/inheritance-registration",
+   "beforeLen": 1630,
+   "afterLen": 1629
+  },
+  {
+   "r": "/glossary/inheritance-renunciation",
+   "beforeLen": 1566,
+   "afterLen": 1565
+  },
+  {
+   "r": "/glossary/jeonse-right",
+   "beforeLen": 1466,
+   "afterLen": 1465
+  },
+  {
+   "r": "/glossary/lease-registration-order",
+   "beforeLen": 1570,
+   "afterLen": 1569
+  },
+  {
+   "r": "/glossary/legal-inheritance-order",
+   "beforeLen": 1549,
+   "afterLen": 1548
+  },
+  {
+   "r": "/glossary/liquidation-registration",
+   "beforeLen": 1487,
+   "afterLen": 1486
+  },
+  {
+   "r": "/glossary/mortgage",
+   "beforeLen": 1507,
+   "afterLen": 1506
+  },
+  {
+   "r": "/glossary/ownership-preservation-registration",
+   "beforeLen": 1524,
+   "afterLen": 1523
+  },
+  {
+   "r": "/glossary/ownership-transfer-registration",
+   "beforeLen": 1534,
+   "afterLen": 1533
+  },
+  {
+   "r": "/glossary/payment-order",
+   "beforeLen": 1544,
+   "afterLen": 1543
+  },
+  {
+   "r": "/glossary/personal-bankruptcy",
+   "beforeLen": 1479,
+   "afterLen": 1478
+  },
+  {
+   "r": "/glossary/personal-rehabilitation",
+   "beforeLen": 1477,
+   "afterLen": 1476
+  },
+  {
+   "r": "/glossary/pledge",
+   "beforeLen": 1473,
+   "afterLen": 1472
+  },
+  {
+   "r": "/glossary/provisional-attachment",
+   "beforeLen": 1577,
+   "afterLen": 1576
+  },
+  {
+   "r": "/glossary/purpose-change-registration",
+   "beforeLen": 1501,
+   "afterLen": 1500
+  },
+  {
+   "r": "/glossary/qualified-acceptance",
+   "beforeLen": 1537,
+   "afterLen": 1536
+  },
+  {
+   "r": "/glossary/registration-license-tax",
+   "beforeLen": 1486,
+   "afterLen": 1485
+  },
+  {
+   "r": "/glossary/service-fee",
+   "beforeLen": 1443,
+   "afterLen": 1442
+  },
+  {
+   "r": "/glossary/special-qualified-acceptance",
+   "beforeLen": 1575,
+   "afterLen": 1574
+  },
+  {
+   "r": "/glossary/stamp-duty",
+   "beforeLen": 1466,
+   "afterLen": 1465
+  },
+  {
+   "r": "/glossary/statutory-reserve-share",
+   "beforeLen": 1601,
+   "afterLen": 1600
+  },
+  {
+   "r": "/glossary/subrogation-inheritance",
+   "beforeLen": 1515,
+   "afterLen": 1514
+  },
+  {
+   "r": "/glossary",
+   "beforeLen": 3002,
+   "afterLen": 3001
+  },
+  {
+   "r": "/location",
+   "beforeLen": 1784,
+   "afterLen": 1783
+  },
+  {
+   "r": "/media/beopryul-sinmun-bar-association-64th-general-assembly",
+   "beforeLen": 1495,
+   "afterLen": 1494
+  },
+  {
+   "r": "/media/busan-ilbo-bar-association-64th-general-assembly",
+   "beforeLen": 1754,
+   "afterLen": 1753
+  },
+  {
+   "r": "/media/busan-mbc-news-fuel-price-relief-expert",
+   "beforeLen": 1401,
+   "afterLen": 1400
+  },
+  {
+   "r": "/media/kukinews-youth-budget-unboxing-2027",
+   "beforeLen": 1792,
+   "afterLen": 1791
+  },
+  {
+   "r": "/media/kukje-sinmun-bar-association-64th-general-assembly",
+   "beforeLen": 1818,
+   "afterLen": 1817
+  },
+  {
+   "r": "/media/sentv-trend-hot-issue-ahn-yoonjung",
+   "beforeLen": 3513,
+   "afterLen": 3512
+  },
+  {
+   "r": "/media/weeklypeople-youth-judicial-scrivener-ahn",
+   "beforeLen": 1812,
+   "afterLen": 1811
+  },
+  {
+   "r": "/media",
+   "beforeLen": 3656,
+   "afterLen": 3655
+  },
+  {
+   "r": "/notices/view",
+   "beforeLen": 653,
+   "afterLen": 652
+  },
+  {
+   "r": "/notices",
+   "beforeLen": 697,
+   "afterLen": 696
+  },
+  {
+   "r": "/office",
+   "beforeLen": 5141,
+   "afterLen": 5140
+  },
+  {
+   "r": "/partners",
+   "beforeLen": 5712,
+   "afterLen": 5711
+  },
+  {
+   "r": "/privacy",
+   "beforeLen": 3278,
+   "afterLen": 3277
+  },
+  {
+   "r": "/reviews",
+   "beforeLen": 1725,
+   "afterLen": 1724
+  },
+  {
+   "r": "/search-guides",
+   "beforeLen": 6096,
+   "afterLen": 6095
+  },
+  {
+   "r": "/search",
+   "beforeLen": 729,
+   "afterLen": 728
+  },
+  {
+   "r": "/services/bankruptcy",
+   "beforeLen": 5368,
+   "afterLen": 5367
+  },
+  {
+   "r": "/services/cases/busan-personal-rehabilitation-consultation",
+   "beforeLen": 2915,
+   "afterLen": 2914
+  },
+  {
+   "r": "/services/cases/centum-ownership-transfer-case",
+   "beforeLen": 2870,
+   "afterLen": 2869
+  },
+  {
+   "r": "/services/cases/dongnae-qualified-acceptance-consultation",
+   "beforeLen": 3115,
+   "afterLen": 3114
+  },
+  {
+   "r": "/services/cases/gijang-land-inheritance-case",
+   "beforeLen": 3069,
+   "afterLen": 3068
+  },
+  {
+   "r": "/services/cases/haeundae-inheritance-registration-case",
+   "beforeLen": 3284,
+   "afterLen": 3283
+  },
+  {
+   "r": "/services/cases/jaesong-inheritance-renunciation-consultation",
+   "beforeLen": 3231,
+   "afterLen": 3230
+  },
+  {
+   "r": "/services/cases/suyeong-company-establishment-case",
+   "beforeLen": 3061,
+   "afterLen": 3060
+  },
+  {
+   "r": "/services/cases/yeonje-director-change-case",
+   "beforeLen": 3096,
+   "afterLen": 3095
+  },
+  {
+   "r": "/services/company-establishment",
+   "beforeLen": 5835,
+   "afterLen": 5834
+  },
+  {
+   "r": "/services/corporate-registration",
+   "beforeLen": 5813,
+   "afterLen": 5812
+  },
+  {
+   "r": "/services/director-change",
+   "beforeLen": 5824,
+   "afterLen": 5823
+  },
+  {
+   "r": "/services/inheritance-registration",
+   "beforeLen": 6833,
+   "afterLen": 6832
+  },
+  {
+   "r": "/services/inheritance-renunciation",
+   "beforeLen": 6262,
+   "afterLen": 6261
+  },
+  {
+   "r": "/services/ownership-transfer",
+   "beforeLen": 5471,
+   "afterLen": 5470
+  },
+  {
+   "r": "/services/personal-rehabilitation",
+   "beforeLen": 5453,
+   "afterLen": 5452
+  },
+  {
+   "r": "/services/qualified-acceptance",
+   "beforeLen": 6127,
+   "afterLen": 6126
+  },
+  {
+   "r": "/services/real-estate-registration",
+   "beforeLen": 5584,
+   "afterLen": 5583
+  },
+  {
+   "r": "/services",
+   "beforeLen": 4349,
+   "afterLen": 4348
+  },
+  {
+   "r": "/situations/corporate-officer-address-change",
+   "beforeLen": 4320,
+   "afterLen": 4319
+  },
+  {
+   "r": "/situations/inheritance-unknown-debt",
+   "beforeLen": 4406,
+   "afterLen": 4405
+  },
+  {
+   "r": "/situations/jeonse-deposit-unpaid",
+   "beforeLen": 4106,
+   "afterLen": 4105
+  },
+  {
+   "r": "/situations/parent-passed-away",
+   "beforeLen": 4596,
+   "afterLen": 4595
+  },
+  {
+   "r": "/situations/payment-order-certified-mail",
+   "beforeLen": 5461,
+   "afterLen": 5460
+  },
+  {
+   "r": "/situations/personal-rehabilitation-bankruptcy",
+   "beforeLen": 4084,
+   "afterLen": 4083
+  },
+  {
+   "r": "/situations/real-estate-sale-registration",
+   "beforeLen": 4117,
+   "afterLen": 4116
+  },
+  {
+   "r": "/situations/siblings-not-cooperating",
+   "beforeLen": 4379,
+   "afterLen": 4378
+  },
+  {
+   "r": "/situations/개인회생-가능-여부",
+   "beforeLen": 4139,
+   "afterLen": 4138
+  },
+  {
+   "r": "/situations/계약금-반환-분쟁",
+   "beforeLen": 3960,
+   "afterLen": 3959
+  },
+  {
+   "r": "/situations/공동명의-정리",
+   "beforeLen": 4197,
+   "afterLen": 4196
+  },
+  {
+   "r": "/situations/공사대금-못-받음",
+   "beforeLen": 3768,
+   "afterLen": 3767
+  },
+  {
+   "r": "/situations/근저당-말소-지연",
+   "beforeLen": 4154,
+   "afterLen": 4153
+  },
+  {
+   "r": "/situations/급여-압류-빚",
+   "beforeLen": 4329,
+   "afterLen": 4328
+  },
+  {
+   "r": "/situations/내용증명-받았을-때",
+   "beforeLen": 3939,
+   "afterLen": 3938
+  },
+  {
+   "r": "/situations/대여금-못-받음",
+   "beforeLen": 3843,
+   "afterLen": 3842
+  },
+  {
+   "r": "/situations/대표자-사망-법인",
+   "beforeLen": 4164,
+   "afterLen": 4163
+  },
+  {
+   "r": "/situations/법인-설립-처음",
+   "beforeLen": 4380,
+   "afterLen": 4379
+  },
+  {
+   "r": "/situations/보증채무-부담",
+   "beforeLen": 4150,
+   "afterLen": 4149
+  },
+  {
+   "r": "/situations/본점-이전-등기",
+   "beforeLen": 4106,
+   "afterLen": 4105
+  },
+  {
+   "r": "/situations/분류/가족-사망-상속",
+   "beforeLen": 1551,
+   "afterLen": 1550
+  },
+  {
+   "r": "/situations/분류/개인채무-회생-파산",
+   "beforeLen": 1431,
+   "afterLen": 1430
+  },
+  {
+   "r": "/situations/분류/계약-일상-분쟁",
+   "beforeLen": 1507,
+   "afterLen": 1506
+  },
+  {
+   "r": "/situations/분류/돈을-받지-못한-경우",
+   "beforeLen": 1409,
+   "afterLen": 1408
+  },
+  {
+   "r": "/situations/분류/법인-사업-운영",
+   "beforeLen": 1425,
+   "afterLen": 1424
+  },
+  {
+   "r": "/situations/분류/부동산-매매-증여-등기",
+   "beforeLen": 1462,
+   "afterLen": 1461
+  },
+  {
+   "r": "/situations/분류/전세-임대차-보증금",
+   "beforeLen": 1428,
+   "afterLen": 1427
+  },
+  {
+   "r": "/situations/빚-감당-어려울-때",
+   "beforeLen": 4030,
+   "afterLen": 4029
+  },
+  {
+   "r": "/situations/상속-후-첫-절차",
+   "beforeLen": 4381,
+   "afterLen": 4380
+  },
+  {
+   "r": "/situations/상속등기-지연-과태료",
+   "beforeLen": 4861,
+   "afterLen": 4860
+  },
+  {
+   "r": "/situations/상속재산-조회",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/situations/상속포기-한정승인-선택",
+   "beforeLen": 4742,
+   "afterLen": 4741
+  },
+  {
+   "r": "/situations/셀프등기-실수",
+   "beforeLen": 4118,
+   "afterLen": 4117
+  },
+  {
+   "r": "/situations/손해배상-청구",
+   "beforeLen": 3838,
+   "afterLen": 3837
+  },
+  {
+   "r": "/situations/임원-임기-만료",
+   "beforeLen": 4219,
+   "afterLen": 4218
+  },
+  {
+   "r": "/situations/임원변경-기한-임박",
+   "beforeLen": 4193,
+   "afterLen": 4192
+  },
+  {
+   "r": "/situations/임차권등기명령-필요할-때",
+   "beforeLen": 4297,
+   "afterLen": 4296
+  },
+  {
+   "r": "/situations/잔금-후-소유권이전-거부",
+   "beforeLen": 4282,
+   "afterLen": 4281
+  },
+  {
+   "r": "/situations/잔금일-소유권이전",
+   "beforeLen": 4116,
+   "afterLen": 4115
+  },
+  {
+   "r": "/situations/전세-경매-진행",
+   "beforeLen": 4362,
+   "afterLen": 4361
+  },
+  {
+   "r": "/situations/전입신고-확정일자-없음",
+   "beforeLen": 4276,
+   "afterLen": 4275
+  },
+  {
+   "r": "/situations/중고거래-분쟁",
+   "beforeLen": 3735,
+   "afterLen": 3734
+  },
+  {
+   "r": "/situations/집주인-연락-두절",
+   "beforeLen": 4311,
+   "afterLen": 4310
+  },
+  {
+   "r": "/situations/채무자-재산-모름",
+   "beforeLen": 3829,
+   "afterLen": 3828
+  },
+  {
+   "r": "/situations/판결-후-강제집행",
+   "beforeLen": 3757,
+   "afterLen": 3756
+  },
+  {
+   "r": "/situations/해외-거주-상속인",
+   "beforeLen": 4743,
+   "afterLen": 4742
+  },
+  {
+   "r": "/situations/회생-파산-선택-고민",
+   "beforeLen": 3976,
+   "afterLen": 3975
+  },
+  {
+   "r": "/situations",
+   "beforeLen": 4406,
+   "afterLen": 4405
+  },
+  {
+   "r": "/terms",
+   "beforeLen": 2205,
+   "afterLen": 2204
+  },
+  {
+   "r": "/tools/director-change-penalty-deadline",
+   "beforeLen": 2353,
+   "afterLen": 2352
+  },
+  {
+   "r": "/tools/head-office-move-deadline",
+   "beforeLen": 2317,
+   "afterLen": 2316
+  },
+  {
+   "r": "/tools/inheritance-registration-cost",
+   "beforeLen": 3577,
+   "afterLen": 3576
+  },
+  {
+   "r": "/tools/inheritance-registration-deadline",
+   "beforeLen": 2531,
+   "afterLen": 2530
+  },
+  {
+   "r": "/tools/inheritance-renunciation-deadline",
+   "beforeLen": 2315,
+   "afterLen": 2314
+  },
+  {
+   "r": "/tools/jeonse-deposit-timeline",
+   "beforeLen": 2344,
+   "afterLen": 2343
+  },
+  {
+   "r": "/tools/payment-order-fee-check",
+   "beforeLen": 2927,
+   "afterLen": 2926
+  },
+  {
+   "r": "/tools/real-estate-documents-check",
+   "beforeLen": 2359,
+   "afterLen": 2358
+  },
+  {
+   "r": "/tools/rehab-income-debt-check",
+   "beforeLen": 2326,
+   "afterLen": 2325
+  },
+  {
+   "r": "/tools",
+   "beforeLen": 1595,
+   "afterLen": 1594
+  },
+  {
+   "r": "/_not-found",
+   "beforeLen": 505,
+   "afterLen": 504
+  },
+  {
+   "r": "/가설컨테이너등기가능여부",
+   "beforeLen": 4280,
+   "afterLen": 4279
+  },
+  {
+   "r": "/가압류신청서류준비",
+   "beforeLen": 4866,
+   "afterLen": 4865
+  },
+  {
+   "r": "/가족후견",
+   "beforeLen": 4413,
+   "afterLen": 4412
+  },
+  {
+   "r": "/가처분신청서류준비",
+   "beforeLen": 4367,
+   "afterLen": 4366
+  },
+  {
+   "r": "/감정평가법인설립등기",
+   "beforeLen": 3605,
+   "afterLen": 3604
+  },
+  {
+   "r": "/강사소개",
+   "beforeLen": 4855,
+   "afterLen": 4854
+  },
+  {
+   "r": "/강서구공장멸실등기",
+   "beforeLen": 4427,
+   "afterLen": 4426
+  },
+  {
+   "r": "/강서구법무사",
+   "beforeLen": 4845,
+   "afterLen": 4844
+  },
+  {
+   "r": "/강서구법인등기",
+   "beforeLen": 4724,
+   "afterLen": 4723
+  },
+  {
+   "r": "/강서구법인설립등기",
+   "beforeLen": 4793,
+   "afterLen": 4792
+  },
+  {
+   "r": "/강서구부동산등기",
+   "beforeLen": 3708,
+   "afterLen": 3707
+  },
+  {
+   "r": "/강서구상속등기",
+   "beforeLen": 3740,
+   "afterLen": 3739
+  },
+  {
+   "r": "/강서구상속포기",
+   "beforeLen": 4939,
+   "afterLen": 4938
+  },
+  {
+   "r": "/강서구선박등기",
+   "beforeLen": 4627,
+   "afterLen": 4626
+  },
+  {
+   "r": "/강서구임원변경등기",
+   "beforeLen": 4810,
+   "afterLen": 4809
+  },
+  {
+   "r": "/강서구한정승인",
+   "beforeLen": 4738,
+   "afterLen": 4737
+  },
+  {
+   "r": "/강의문의",
+   "beforeLen": 3420,
+   "afterLen": 3419
+  },
+  {
+   "r": "/강의시간별구성",
+   "beforeLen": 5884,
+   "afterLen": 5883
+  },
+  {
+   "r": "/강의이력/busan-citizen-library-life-law",
+   "beforeLen": 1821,
+   "afterLen": 1820
+  },
+  {
+   "r": "/강의이력/busan-citizen-library-week-1",
+   "beforeLen": 1401,
+   "afterLen": 1400
+  },
+  {
+   "r": "/강의이력/busan-citizen-library-week-2",
+   "beforeLen": 1399,
+   "afterLen": 1398
+  },
+  {
+   "r": "/강의이력/busan-citizen-library-week-3",
+   "beforeLen": 1408,
+   "afterLen": 1407
+  },
+  {
+   "r": "/강의이력/busan-citizen-library-week-4",
+   "beforeLen": 1404,
+   "afterLen": 1403
+  },
+  {
+   "r": "/강의이력/busan-self-support-daily-dispute-survival",
+   "beforeLen": 1441,
+   "afterLen": 1440
+  },
+  {
+   "r": "/강의이력/busan-self-support-jeonse-prevention",
+   "beforeLen": 1551,
+   "afterLen": 1550
+  },
+  {
+   "r": "/강의이력/changwon-youth-vision-center",
+   "beforeLen": 1450,
+   "afterLen": 1449
+  },
+  {
+   "r": "/강의이력/haeundae-youth-job-growth-cafe",
+   "beforeLen": 1516,
+   "afterLen": 1515
+  },
+  {
+   "r": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "beforeLen": 1413,
+   "afterLen": 1412
+  },
+  {
+   "r": "/강의이력/lh-busan-ccei-life-law",
+   "beforeLen": 1456,
+   "afterLen": 1455
+  },
+  {
+   "r": "/강의이력/yangsan-jeil-high-career-talk",
+   "beforeLen": 1457,
+   "afterLen": 1456
+  },
+  {
+   "r": "/강의이력/youth-digital-law-guide",
+   "beforeLen": 1430,
+   "afterLen": 1429
+  },
+  {
+   "r": "/강의이력/youth-housing-contract-guide",
+   "beforeLen": 1398,
+   "afterLen": 1397
+  },
+  {
+   "r": "/강의이력/youth-jeonse-legal-education",
+   "beforeLen": 1402,
+   "afterLen": 1401
+  },
+  {
+   "r": "/강의이력/youth-jeonse-most-sought",
+   "beforeLen": 1404,
+   "afterLen": 1403
+  },
+  {
+   "r": "/강의이력/youth-jeonse-offline-session",
+   "beforeLen": 1399,
+   "afterLen": 1398
+  },
+  {
+   "r": "/강의이력/youth-jeonse-prevention-series",
+   "beforeLen": 1450,
+   "afterLen": 1449
+  },
+  {
+   "r": "/강의이력/youth-jeonse-vaccination",
+   "beforeLen": 1373,
+   "afterLen": 1372
+  },
+  {
+   "r": "/강의이력/youth-life-law-basics",
+   "beforeLen": 1370,
+   "afterLen": 1369
+  },
+  {
+   "r": "/강의이력/youth-mistake-crime-lecture",
+   "beforeLen": 1458,
+   "afterLen": 1457
+  },
+  {
+   "r": "/강의이력/youth-money-property-dispute",
+   "beforeLen": 1407,
+   "afterLen": 1406
+  },
+  {
+   "r": "/강의이력",
+   "beforeLen": 3172,
+   "afterLen": 3171
+  },
+  {
+   "r": "/개금동법무사",
+   "beforeLen": 4721,
+   "afterLen": 4720
+  },
+  {
+   "r": "/개인정보처리방침",
+   "beforeLen": 3278,
+   "afterLen": 3277
+  },
+  {
+   "r": "/개인파산과태료",
+   "beforeLen": 4567,
+   "afterLen": 4566
+  },
+  {
+   "r": "/개인파산기간",
+   "beforeLen": 4461,
+   "afterLen": 4460
+  },
+  {
+   "r": "/개인파산기한",
+   "beforeLen": 4447,
+   "afterLen": 4446
+  },
+  {
+   "r": "/개인파산보수표",
+   "beforeLen": 3428,
+   "afterLen": 3427
+  },
+  {
+   "r": "/개인파산비용",
+   "beforeLen": 3814,
+   "afterLen": 3813
+  },
+  {
+   "r": "/개인파산자가진단",
+   "beforeLen": 4304,
+   "afterLen": 4303
+  },
+  {
+   "r": "/개인파산준비서류",
+   "beforeLen": 4708,
+   "afterLen": 4707
+  },
+  {
+   "r": "/개인파산필요서류",
+   "beforeLen": 4601,
+   "afterLen": 4600
+  },
+  {
+   "r": "/개인회생과태료",
+   "beforeLen": 4559,
+   "afterLen": 4558
+  },
+  {
+   "r": "/개인회생기간",
+   "beforeLen": 4611,
+   "afterLen": 4610
+  },
+  {
+   "r": "/개인회생기한",
+   "beforeLen": 4529,
+   "afterLen": 4528
+  },
+  {
+   "r": "/개인회생보수표",
+   "beforeLen": 3238,
+   "afterLen": 3237
+  },
+  {
+   "r": "/개인회생비용",
+   "beforeLen": 4006,
+   "afterLen": 4005
+  },
+  {
+   "r": "/개인회생상담",
+   "beforeLen": 1540,
+   "afterLen": 1539
+  },
+  {
+   "r": "/개인회생실수모음",
+   "beforeLen": 3806,
+   "afterLen": 3805
+  },
+  {
+   "r": "/개인회생여성법무사",
+   "beforeLen": 4598,
+   "afterLen": 4597
+  },
+  {
+   "r": "/개인회생자가진단",
+   "beforeLen": 4324,
+   "afterLen": 4323
+  },
+  {
+   "r": "/개인회생준비서류",
+   "beforeLen": 4745,
+   "afterLen": 4744
+  },
+  {
+   "r": "/개인회생체크리스트",
+   "beforeLen": 3760,
+   "afterLen": 3759
+  },
+  {
+   "r": "/개인회생파산",
+   "beforeLen": 4604,
+   "afterLen": 4603
+  },
+  {
+   "r": "/개인회생필요서류",
+   "beforeLen": 4626,
+   "afterLen": 4625
+  },
+  {
+   "r": "/거제동법무사",
+   "beforeLen": 5560,
+   "afterLen": 5559
+  },
+  {
+   "r": "/거제동상속등기",
+   "beforeLen": 4808,
+   "afterLen": 4807
+  },
+  {
+   "r": "/거제선박등기",
+   "beforeLen": 3476,
+   "afterLen": 3475
+  },
+  {
+   "r": "/건물등기상황별안내",
+   "beforeLen": 5251,
+   "afterLen": 5250
+  },
+  {
+   "r": "/건물면적상이경정등기",
+   "beforeLen": 4266,
+   "afterLen": 4265
+  },
+  {
+   "r": "/건물보존등기",
+   "beforeLen": 3740,
+   "afterLen": 3739
+  },
+  {
+   "r": "/건물분할등기",
+   "beforeLen": 4237,
+   "afterLen": 4236
+  },
+  {
+   "r": "/건물용도변경등기",
+   "beforeLen": 4235,
+   "afterLen": 4234
+  },
+  {
+   "r": "/건물일부철거표시변경",
+   "beforeLen": 4371,
+   "afterLen": 4370
+  },
+  {
+   "r": "/건물토지소유자상이멸실",
+   "beforeLen": 4583,
+   "afterLen": 4582
+  },
+  {
+   "r": "/건물합병등기",
+   "beforeLen": 4200,
+   "afterLen": 4199
+  },
+  {
+   "r": "/건축물대장등기부불일치",
+   "beforeLen": 4322,
+   "afterLen": 4321
+  },
+  {
+   "r": "/건축물대장말소등기부잔존",
+   "beforeLen": 4476,
+   "afterLen": 4475
+  },
+  {
+   "r": "/건축물대장말소와멸실등기차이",
+   "beforeLen": 4524,
+   "afterLen": 4523
+  },
+  {
+   "r": "/건축주법인신축보존등기",
+   "beforeLen": 4995,
+   "afterLen": 4994
+  },
+  {
+   "r": "/건축주준비서류",
+   "beforeLen": 3764,
+   "afterLen": 3763
+  },
+  {
+   "r": "/경남사단법인설립",
+   "beforeLen": 3493,
+   "afterLen": 3492
+  },
+  {
+   "r": "/경남재단법인설립",
+   "beforeLen": 2962,
+   "afterLen": 2961
+  },
+  {
+   "r": "/경매낙찰후전세권확인",
+   "beforeLen": 3227,
+   "afterLen": 3226
+  },
+  {
+   "r": "/경상도비대면상속등기",
+   "beforeLen": 5158,
+   "afterLen": 5157
+  },
+  {
+   "r": "/경주선박등기",
+   "beforeLen": 3322,
+   "afterLen": 3321
+  },
+  {
+   "r": "/고인계좌장례비사용",
+   "beforeLen": 3661,
+   "afterLen": 3660
+  },
+  {
+   "r": "/공공기관등기업무",
+   "beforeLen": 13328,
+   "afterLen": 13327
+  },
+  {
+   "r": "/공공기관법률교육",
+   "beforeLen": 3721,
+   "afterLen": 3720
+  },
+  {
+   "r": "/공공기관법인등기",
+   "beforeLen": 4666,
+   "afterLen": 4665
+  },
+  {
+   "r": "/공공기관부동산등기",
+   "beforeLen": 4160,
+   "afterLen": 4159
+  },
+  {
+   "r": "/공공기관이전등기",
+   "beforeLen": 3957,
+   "afterLen": 3956
+  },
+  {
+   "r": "/공공기관촉탁등기",
+   "beforeLen": 4013,
+   "afterLen": 4012
+  },
+  {
+   "r": "/공기업등기",
+   "beforeLen": 3832,
+   "afterLen": 3831
+  },
+  {
+   "r": "/공유물분할등기서류준비",
+   "beforeLen": 4424,
+   "afterLen": 4423
+  },
+  {
+   "r": "/공유자연락두절멸실등기",
+   "beforeLen": 4673,
+   "afterLen": 4672
+  },
+  {
+   "r": "/공익법인설립등기",
+   "beforeLen": 3671,
+   "afterLen": 3670
+  },
+  {
+   "r": "/공익법인임원변경등기",
+   "beforeLen": 3647,
+   "afterLen": 3646
+  },
+  {
+   "r": "/공장철거후멸실등기",
+   "beforeLen": 4451,
+   "afterLen": 4450
+  },
+  {
+   "r": "/공지사항/보기",
+   "beforeLen": 653,
+   "afterLen": 652
+  },
+  {
+   "r": "/공지사항",
+   "beforeLen": 697,
+   "afterLen": 696
+  },
+  {
+   "r": "/공탁금출급회수",
+   "beforeLen": 4151,
+   "afterLen": 4150
+  },
+  {
+   "r": "/공탁자가진단",
+   "beforeLen": 4083,
+   "afterLen": 4082
+  },
+  {
+   "r": "/공탁채권회수",
+   "beforeLen": 3715,
+   "afterLen": 3714
+  },
+  {
+   "r": "/관세법인설립등기",
+   "beforeLen": 3560,
+   "afterLen": 3559
+  },
+  {
+   "r": "/광안동법무사",
+   "beforeLen": 3833,
+   "afterLen": 3832
+  },
+  {
+   "r": "/광안동부동산등기",
+   "beforeLen": 4558,
+   "afterLen": 4557
+  },
+  {
+   "r": "/광안동전세권설정",
+   "beforeLen": 4512,
+   "afterLen": 4511
+  },
+  {
+   "r": "/광안리법무사",
+   "beforeLen": 4578,
+   "afterLen": 4577
+  },
+  {
+   "r": "/광안역법무사",
+   "beforeLen": 3543,
+   "afterLen": 3542
+  },
+  {
+   "r": "/광안역전세권설정",
+   "beforeLen": 4517,
+   "afterLen": 4516
+  },
+  {
+   "r": "/괴정동법무사",
+   "beforeLen": 4499,
+   "afterLen": 4498
+  },
+  {
+   "r": "/교회사단법인설립",
+   "beforeLen": 3699,
+   "afterLen": 3698
+  },
+  {
+   "r": "/구서동법무사",
+   "beforeLen": 4800,
+   "afterLen": 4799
+  },
+  {
+   "r": "/구포동법무사",
+   "beforeLen": 4701,
+   "afterLen": 4700
+  },
+  {
+   "r": "/국민주택채권",
+   "beforeLen": 3732,
+   "afterLen": 3731
+  },
+  {
+   "r": "/국제교류단체사단법인설립",
+   "beforeLen": 3742,
+   "afterLen": 3741
+  },
+  {
+   "r": "/근저당말소과태료",
+   "beforeLen": 4770,
+   "afterLen": 4769
+  },
+  {
+   "r": "/근저당말소기간",
+   "beforeLen": 4594,
+   "afterLen": 4593
+  },
+  {
+   "r": "/근저당말소기한",
+   "beforeLen": 4538,
+   "afterLen": 4537
+  },
+  {
+   "r": "/근저당말소보수표",
+   "beforeLen": 3462,
+   "afterLen": 3461
+  },
+  {
+   "r": "/근저당말소비용",
+   "beforeLen": 3864,
+   "afterLen": 3863
+  },
+  {
+   "r": "/근저당말소준비서류",
+   "beforeLen": 4733,
+   "afterLen": 4732
+  },
+  {
+   "r": "/근저당말소필요서류",
+   "beforeLen": 4790,
+   "afterLen": 4789
+  },
+  {
+   "r": "/금정구법무사",
+   "beforeLen": 4966,
+   "afterLen": 4965
+  },
+  {
+   "r": "/금정구법인등기",
+   "beforeLen": 4758,
+   "afterLen": 4757
+  },
+  {
+   "r": "/금정구법인설립등기",
+   "beforeLen": 4604,
+   "afterLen": 4603
+  },
+  {
+   "r": "/금정구부동산등기",
+   "beforeLen": 4320,
+   "afterLen": 4319
+  },
+  {
+   "r": "/금정구상속등기",
+   "beforeLen": 4790,
+   "afterLen": 4789
+  },
+  {
+   "r": "/금정구상속포기",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/금정구임원변경등기",
+   "beforeLen": 4643,
+   "afterLen": 4642
+  },
+  {
+   "r": "/금정구한정승인",
+   "beforeLen": 4582,
+   "afterLen": 4581
+  },
+  {
+   "r": "/기관특강주제추천",
+   "beforeLen": 6007,
+   "afterLen": 6006
+  },
+  {
+   "r": "/기업법률교육",
+   "beforeLen": 5299,
+   "afterLen": 5298
+  },
+  {
+   "r": "/기업업무문의",
+   "beforeLen": 2863,
+   "afterLen": 2862
+  },
+  {
+   "r": "/기장군법무사",
+   "beforeLen": 5058,
+   "afterLen": 5057
+  },
+  {
+   "r": "/기장군법인등기",
+   "beforeLen": 4435,
+   "afterLen": 4434
+  },
+  {
+   "r": "/기장군법인설립등기",
+   "beforeLen": 4671,
+   "afterLen": 4670
+  },
+  {
+   "r": "/기장군부동산등기",
+   "beforeLen": 4287,
+   "afterLen": 4286
+  },
+  {
+   "r": "/기장군상속등기",
+   "beforeLen": 4761,
+   "afterLen": 4760
+  },
+  {
+   "r": "/기장군상속포기",
+   "beforeLen": 4746,
+   "afterLen": 4745
+  },
+  {
+   "r": "/기장군임원변경등기",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/기장군재개발등기",
+   "beforeLen": 4619,
+   "afterLen": 4618
+  },
+  {
+   "r": "/기장군한정승인",
+   "beforeLen": 4562,
+   "afterLen": 4561
+  },
+  {
+   "r": "/기장법무사",
+   "beforeLen": 3853,
+   "afterLen": 3852
+  },
+  {
+   "r": "/기장상속등기",
+   "beforeLen": 4738,
+   "afterLen": 4737
+  },
+  {
+   "r": "/기장신축건물보존등기",
+   "beforeLen": 4214,
+   "afterLen": 4213
+  },
+  {
+   "r": "/기장읍법무사",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/기장토지상속등기",
+   "beforeLen": 4490,
+   "afterLen": 4489
+  },
+  {
+   "r": "/기타전문직법인설립등기",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/남구법무사",
+   "beforeLen": 4609,
+   "afterLen": 4608
+  },
+  {
+   "r": "/남구법인등기",
+   "beforeLen": 4784,
+   "afterLen": 4783
+  },
+  {
+   "r": "/남구법인설립등기",
+   "beforeLen": 4764,
+   "afterLen": 4763
+  },
+  {
+   "r": "/남구부동산등기",
+   "beforeLen": 3801,
+   "afterLen": 3800
+  },
+  {
+   "r": "/남구상속등기",
+   "beforeLen": 4674,
+   "afterLen": 4673
+  },
+  {
+   "r": "/남구상속포기",
+   "beforeLen": 4900,
+   "afterLen": 4899
+  },
+  {
+   "r": "/남구임원변경등기",
+   "beforeLen": 4689,
+   "afterLen": 4688
+  },
+  {
+   "r": "/남구한정승인",
+   "beforeLen": 4852,
+   "afterLen": 4851
+  },
+  {
+   "r": "/남부산등기소법무사",
+   "beforeLen": 3842,
+   "afterLen": 3841
+  },
+  {
+   "r": "/남부산등기소부동산등기",
+   "beforeLen": 4527,
+   "afterLen": 4526
+  },
+  {
+   "r": "/남부산등기소소유권이전등기",
+   "beforeLen": 4501,
+   "afterLen": 4500
+  },
+  {
+   "r": "/남천동법무사",
+   "beforeLen": 4155,
+   "afterLen": 4154
+  },
+  {
+   "r": "/남천동상속등기",
+   "beforeLen": 4735,
+   "afterLen": 4734
+  },
+  {
+   "r": "/남포동법무사",
+   "beforeLen": 5279,
+   "afterLen": 5278
+  },
+  {
+   "r": "/내용증명자가진단",
+   "beforeLen": 4193,
+   "afterLen": 4192
+  },
+  {
+   "r": "/내용증명작성준비",
+   "beforeLen": 4012,
+   "afterLen": 4011
+  },
+  {
+   "r": "/노무법인설립등기",
+   "beforeLen": 3021,
+   "afterLen": 3020
+  },
+  {
+   "r": "/녹산국가산단법인등기",
+   "beforeLen": 4662,
+   "afterLen": 4661
+  },
+  {
+   "r": "/녹산국가산단법인설립등기",
+   "beforeLen": 4834,
+   "afterLen": 4833
+  },
+  {
+   "r": "/녹산산단법인본점지점",
+   "beforeLen": 4859,
+   "afterLen": 4858
+  },
+  {
+   "r": "/녹산산업단지법인등기",
+   "beforeLen": 4721,
+   "afterLen": 4720
+  },
+  {
+   "r": "/농어업법인설립등기",
+   "beforeLen": 3460,
+   "afterLen": 3459
+  },
+  {
+   "r": "/농업회사법인과영농조합법인차이",
+   "beforeLen": 3012,
+   "afterLen": 3011
+  },
+  {
+   "r": "/다대동법무사",
+   "beforeLen": 4807,
+   "afterLen": 4806
+  },
+  {
+   "r": "/단순승인과숙려기간",
+   "beforeLen": 3952,
+   "afterLen": 3951
+  },
+  {
+   "r": "/대습상속등기",
+   "beforeLen": 4897,
+   "afterLen": 4896
+  },
+  {
+   "r": "/대연동법무사",
+   "beforeLen": 4174,
+   "afterLen": 4173
+  },
+  {
+   "r": "/대연동상속등기",
+   "beforeLen": 4708,
+   "afterLen": 4707
+  },
+  {
+   "r": "/대표이사한명만남는경우",
+   "beforeLen": 3445,
+   "afterLen": 3444
+  },
+  {
+   "r": "/대표자사망시법인등기",
+   "beforeLen": 3826,
+   "afterLen": 3825
+  },
+  {
+   "r": "/덕천동개인회생",
+   "beforeLen": 4379,
+   "afterLen": 4378
+  },
+  {
+   "r": "/덕천동법무사",
+   "beforeLen": 4234,
+   "afterLen": 4233
+  },
+  {
+   "r": "/덕천동상속등기",
+   "beforeLen": 4777,
+   "afterLen": 4776
+  },
+  {
+   "r": "/도로명주소등기부상이",
+   "beforeLen": 4392,
+   "afterLen": 4391
+  },
+  {
+   "r": "/동구법무사",
+   "beforeLen": 4714,
+   "afterLen": 4713
+  },
+  {
+   "r": "/동구법인등기",
+   "beforeLen": 4744,
+   "afterLen": 4743
+  },
+  {
+   "r": "/동구법인설립등기",
+   "beforeLen": 4687,
+   "afterLen": 4686
+  },
+  {
+   "r": "/동구부동산등기",
+   "beforeLen": 3545,
+   "afterLen": 3544
+  },
+  {
+   "r": "/동구상속등기",
+   "beforeLen": 4637,
+   "afterLen": 4636
+  },
+  {
+   "r": "/동구상속포기",
+   "beforeLen": 4962,
+   "afterLen": 4961
+  },
+  {
+   "r": "/동구임원변경등기",
+   "beforeLen": 4795,
+   "afterLen": 4794
+  },
+  {
+   "r": "/동구한정승인",
+   "beforeLen": 4791,
+   "afterLen": 4790
+  },
+  {
+   "r": "/동래구법무사",
+   "beforeLen": 5620,
+   "afterLen": 5619
+  },
+  {
+   "r": "/동래구법인등기",
+   "beforeLen": 4464,
+   "afterLen": 4463
+  },
+  {
+   "r": "/동래구법인설립등기",
+   "beforeLen": 4707,
+   "afterLen": 4706
+  },
+  {
+   "r": "/동래구부동산등기",
+   "beforeLen": 4320,
+   "afterLen": 4319
+  },
+  {
+   "r": "/동래구상속등기",
+   "beforeLen": 4768,
+   "afterLen": 4767
+  },
+  {
+   "r": "/동래구상속포기",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/동래구임원변경등기",
+   "beforeLen": 4486,
+   "afterLen": 4485
+  },
+  {
+   "r": "/동래구재건축등기",
+   "beforeLen": 4510,
+   "afterLen": 4509
+  },
+  {
+   "r": "/동래구한정승인",
+   "beforeLen": 4580,
+   "afterLen": 4579
+  },
+  {
+   "r": "/동래역법무사",
+   "beforeLen": 4831,
+   "afterLen": 4830
+  },
+  {
+   "r": "/동부지원상속등기",
+   "beforeLen": 4695,
+   "afterLen": 4694
+  },
+  {
+   "r": "/동삼동법무사",
+   "beforeLen": 4710,
+   "afterLen": 4709
+  },
+  {
+   "r": "/등기관할과사무소위치",
+   "beforeLen": 4785,
+   "afterLen": 4784
+  },
+  {
+   "r": "/등기권리증없이소유권이전",
+   "beforeLen": 5126,
+   "afterLen": 5125
+  },
+  {
+   "r": "/등기보정",
+   "beforeLen": 3724,
+   "afterLen": 3723
+  },
+  {
+   "r": "/등기복대리",
+   "beforeLen": 3747,
+   "afterLen": 3746
+  },
+  {
+   "r": "/등기부존재실제건물없음",
+   "beforeLen": 4541,
+   "afterLen": 4540
+  },
+  {
+   "r": "/등기비용",
+   "beforeLen": 3845,
+   "afterLen": 3844
+  },
+  {
+   "r": "/등기서류상담",
+   "beforeLen": 1548,
+   "afterLen": 1547
+  },
+  {
+   "r": "/등기소근처법무사",
+   "beforeLen": 3796,
+   "afterLen": 3795
+  },
+  {
+   "r": "/등기소어디인가요",
+   "beforeLen": 3796,
+   "afterLen": 3795
+  },
+  {
+   "r": "/등기소제출",
+   "beforeLen": 3750,
+   "afterLen": 3749
+  },
+  {
+   "r": "/등기신청대행",
+   "beforeLen": 3742,
+   "afterLen": 3741
+  },
+  {
+   "r": "/등기신청반려와보정",
+   "beforeLen": 3139,
+   "afterLen": 3138
+  },
+  {
+   "r": "/등기실무",
+   "beforeLen": 1542,
+   "afterLen": 1541
+  },
+  {
+   "r": "/등기어디서하나요",
+   "beforeLen": 3798,
+   "afterLen": 3797
+  },
+  {
+   "r": "/등기언제끝나나요",
+   "beforeLen": 3769,
+   "afterLen": 3768
+  },
+  {
+   "r": "/등기얼마나걸리나요",
+   "beforeLen": 2464,
+   "afterLen": 2463
+  },
+  {
+   "r": "/등기완료기간",
+   "beforeLen": 2499,
+   "afterLen": 2498
+  },
+  {
+   "r": "/등기접수",
+   "beforeLen": 3728,
+   "afterLen": 3727
+  },
+  {
+   "r": "/등기준비서류",
+   "beforeLen": 3745,
+   "afterLen": 3744
+  },
+  {
+   "r": "/등기처리기간",
+   "beforeLen": 3739,
+   "afterLen": 3738
+  },
+  {
+   "r": "/등록면허세",
+   "beforeLen": 3728,
+   "afterLen": 3727
+  },
+  {
+   "r": "/디지털법률교육",
+   "beforeLen": 3719,
+   "afterLen": 3718
+  },
+  {
+   "r": "/망미동법무사",
+   "beforeLen": 5070,
+   "afterLen": 5069
+  },
+  {
+   "r": "/멸실등기없이토지매도",
+   "beforeLen": 4602,
+   "afterLen": 4601
+  },
+  {
+   "r": "/명례산업단지법인등기",
+   "beforeLen": 4288,
+   "afterLen": 4287
+  },
+  {
+   "r": "/명례산업단지임원변경등기",
+   "beforeLen": 4684,
+   "afterLen": 4683
+  },
+  {
+   "r": "/명지국제신도시법인등기",
+   "beforeLen": 4279,
+   "afterLen": 4278
+  },
+  {
+   "r": "/명지동법무사",
+   "beforeLen": 4094,
+   "afterLen": 4093
+  },
+  {
+   "r": "/명지동법인설립등기",
+   "beforeLen": 4653,
+   "afterLen": 4652
+  },
+  {
+   "r": "/명지동부동산등기",
+   "beforeLen": 4491,
+   "afterLen": 4490
+  },
+  {
+   "r": "/명지법무사",
+   "beforeLen": 4470,
+   "afterLen": 4469
+  },
+  {
+   "r": "/명지법인등기",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/명지법인설립등기",
+   "beforeLen": 4662,
+   "afterLen": 4661
+  },
+  {
+   "r": "/명지역법무사",
+   "beforeLen": 3818,
+   "afterLen": 3817
+  },
+  {
+   "r": "/명지역법인설립등기",
+   "beforeLen": 4615,
+   "afterLen": 4614
+  },
+  {
+   "r": "/무슨법률업무인지모를때",
+   "beforeLen": 2100,
+   "afterLen": 2099
+  },
+  {
+   "r": "/문현금융단지법인등기",
+   "beforeLen": 4181,
+   "afterLen": 4180
+  },
+  {
+   "r": "/문현금융단지임원변경등기",
+   "beforeLen": 4796,
+   "afterLen": 4795
+  },
+  {
+   "r": "/문현동법무사",
+   "beforeLen": 5322,
+   "afterLen": 5321
+  },
+  {
+   "r": "/문현동법인등기",
+   "beforeLen": 4737,
+   "afterLen": 4736
+  },
+  {
+   "r": "/문현동본점이전등기",
+   "beforeLen": 4763,
+   "afterLen": 4762
+  },
+  {
+   "r": "/문화예술단체사단법인설립",
+   "beforeLen": 3696,
+   "afterLen": 3695
+  },
+  {
+   "r": "/물류회사법인등기",
+   "beforeLen": 4637,
+   "afterLen": 4636
+  },
+  {
+   "r": "/미등기건물소유권보존등기",
+   "beforeLen": 4238,
+   "afterLen": 4237
+  },
+  {
+   "r": "/미성년상속인",
+   "beforeLen": 4171,
+   "afterLen": 4170
+  },
+  {
+   "r": "/민락동법무사",
+   "beforeLen": 4359,
+   "afterLen": 4358
+  },
+  {
+   "r": "/민락동부동산등기",
+   "beforeLen": 4494,
+   "afterLen": 4493
+  },
+  {
+   "r": "/민사소송",
+   "beforeLen": 4131,
+   "afterLen": 4130
+  },
+  {
+   "r": "/반송동법무사",
+   "beforeLen": 4807,
+   "afterLen": 4806
+  },
+  {
+   "r": "/반여동법무사",
+   "beforeLen": 4770,
+   "afterLen": 4769
+  },
+  {
+   "r": "/반여동부동산등기",
+   "beforeLen": 4552,
+   "afterLen": 4551
+  },
+  {
+   "r": "/반여동상속등기",
+   "beforeLen": 4809,
+   "afterLen": 4808
+  },
+  {
+   "r": "/방문없이준비하는근저당말소",
+   "beforeLen": 3626,
+   "afterLen": 3625
+  },
+  {
+   "r": "/방문없이준비하는법무사업무",
+   "beforeLen": 8786,
+   "afterLen": 8785
+  },
+  {
+   "r": "/방문없이준비하는법인설립",
+   "beforeLen": 4379,
+   "afterLen": 4378
+  },
+  {
+   "r": "/방문없이준비하는부담부증여",
+   "beforeLen": 4956,
+   "afterLen": 4955
+  },
+  {
+   "r": "/방문없이준비하는상속등기",
+   "beforeLen": 5111,
+   "afterLen": 5110
+  },
+  {
+   "r": "/방문없이준비하는상속포기한정승인",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/방문없이준비하는유상증자",
+   "beforeLen": 3971,
+   "afterLen": 3970
+  },
+  {
+   "r": "/방문없이준비하는임원변경",
+   "beforeLen": 3889,
+   "afterLen": 3888
+  },
+  {
+   "r": "/방문없이준비하는전세권말소",
+   "beforeLen": 4108,
+   "afterLen": 4107
+  },
+  {
+   "r": "/방문없이준비하는지급명령서류",
+   "beforeLen": 3642,
+   "afterLen": 3641
+  },
+  {
+   "r": "/범일동법무사",
+   "beforeLen": 4617,
+   "afterLen": 4616
+  },
+  {
+   "r": "/법률강의",
+   "beforeLen": 5005,
+   "afterLen": 5004
+  },
+  {
+   "r": "/법무사맡기면달라지는점",
+   "beforeLen": 4001,
+   "afterLen": 4000
+  },
+  {
+   "r": "/법무사방문전준비",
+   "beforeLen": 2585,
+   "afterLen": 2584
+  },
+  {
+   "r": "/법무사법인설립등기",
+   "beforeLen": 3294,
+   "afterLen": 3293
+  },
+  {
+   "r": "/법무사보수",
+   "beforeLen": 4132,
+   "afterLen": 4131
+  },
+  {
+   "r": "/법무사비용",
+   "beforeLen": 4177,
+   "afterLen": 4176
+  },
+  {
+   "r": "/법무사비용먼저확인하는방법",
+   "beforeLen": 4584,
+   "afterLen": 4583
+  },
+  {
+   "r": "/법무사상담",
+   "beforeLen": 1672,
+   "afterLen": 1671
+  },
+  {
+   "r": "/법무사상담전준비",
+   "beforeLen": 2688,
+   "afterLen": 2687
+  },
+  {
+   "r": "/법무사수임료",
+   "beforeLen": 4157,
+   "afterLen": 4156
+  },
+  {
+   "r": "/법무사진로특강",
+   "beforeLen": 4631,
+   "afterLen": 4630
+  },
+  {
+   "r": "/법무사협업",
+   "beforeLen": 1057,
+   "afterLen": 1056
+  },
+  {
+   "r": "/법인공증준비",
+   "beforeLen": 5700,
+   "afterLen": 5699
+  },
+  {
+   "r": "/법인등기",
+   "beforeLen": 5173,
+   "afterLen": 5172
+  },
+  {
+   "r": "/법인등기과태료",
+   "beforeLen": 4891,
+   "afterLen": 4890
+  },
+  {
+   "r": "/법인등기기간",
+   "beforeLen": 4996,
+   "afterLen": 4995
+  },
+  {
+   "r": "/법인등기기한",
+   "beforeLen": 4915,
+   "afterLen": 4914
+  },
+  {
+   "r": "/법인등기보수표",
+   "beforeLen": 3699,
+   "afterLen": 3698
+  },
+  {
+   "r": "/법인등기비용",
+   "beforeLen": 3965,
+   "afterLen": 3964
+  },
+  {
+   "r": "/법인등기상담",
+   "beforeLen": 1537,
+   "afterLen": 1536
+  },
+  {
+   "r": "/법인등기실수모음",
+   "beforeLen": 4074,
+   "afterLen": 4073
+  },
+  {
+   "r": "/법인등기자가진단",
+   "beforeLen": 5644,
+   "afterLen": 5643
+  },
+  {
+   "r": "/법인등기준비서류",
+   "beforeLen": 5025,
+   "afterLen": 5024
+  },
+  {
+   "r": "/법인등기체크리스트",
+   "beforeLen": 4025,
+   "afterLen": 4024
+  },
+  {
+   "r": "/법인등기필요서류",
+   "beforeLen": 3718,
+   "afterLen": 3717
+  },
+  {
+   "r": "/법인변경등기",
+   "beforeLen": 5714,
+   "afterLen": 5713
+  },
+  {
+   "r": "/법인설립등기과태료",
+   "beforeLen": 4844,
+   "afterLen": 4843
+  },
+  {
+   "r": "/법인설립등기기간",
+   "beforeLen": 4848,
+   "afterLen": 4847
+  },
+  {
+   "r": "/법인설립등기기한",
+   "beforeLen": 4808,
+   "afterLen": 4807
+  },
+  {
+   "r": "/법인설립등기보수표",
+   "beforeLen": 3682,
+   "afterLen": 3681
+  },
+  {
+   "r": "/법인설립등기비용",
+   "beforeLen": 5146,
+   "afterLen": 5145
+  },
+  {
+   "r": "/법인설립등기준비서류",
+   "beforeLen": 4988,
+   "afterLen": 4987
+  },
+  {
+   "r": "/법인설립등기필요서류",
+   "beforeLen": 5018,
+   "afterLen": 5017
+  },
+  {
+   "r": "/법인설립자가진단",
+   "beforeLen": 4528,
+   "afterLen": 4527
+  },
+  {
+   "r": "/법인의사록공증준비",
+   "beforeLen": 4995,
+   "afterLen": 4994
+  },
+  {
+   "r": "/법인정관변경",
+   "beforeLen": 5301,
+   "afterLen": 5300
+  },
+  {
+   "r": "/법인정관업무",
+   "beforeLen": 6402,
+   "afterLen": 6401
+  },
+  {
+   "r": "/법인정관인증확인",
+   "beforeLen": 4971,
+   "afterLen": 4970
+  },
+  {
+   "r": "/변제공탁서류준비",
+   "beforeLen": 4158,
+   "afterLen": 4157
+  },
+  {
+   "r": "/보존등기후근저당설정",
+   "beforeLen": 4750,
+   "afterLen": 4749
+  },
+  {
+   "r": "/보험금과상속재산구분",
+   "beforeLen": 3697,
+   "afterLen": 3696
+  },
+  {
+   "r": "/복대리등기",
+   "beforeLen": 3747,
+   "afterLen": 3746
+  },
+  {
+   "r": "/복지단체사단법인설립",
+   "beforeLen": 3826,
+   "afterLen": 3825
+  },
+  {
+   "r": "/본점이전등기과태료",
+   "beforeLen": 4853,
+   "afterLen": 4852
+  },
+  {
+   "r": "/본점이전등기기간",
+   "beforeLen": 4883,
+   "afterLen": 4882
+  },
+  {
+   "r": "/본점이전등기기한",
+   "beforeLen": 4893,
+   "afterLen": 4892
+  },
+  {
+   "r": "/본점이전등기보수표",
+   "beforeLen": 4914,
+   "afterLen": 4913
+  },
+  {
+   "r": "/본점이전등기비용",
+   "beforeLen": 3692,
+   "afterLen": 3691
+  },
+  {
+   "r": "/본점이전등기준비서류",
+   "beforeLen": 5077,
+   "afterLen": 5076
+  },
+  {
+   "r": "/본점이전등기필요서류",
+   "beforeLen": 5025,
+   "afterLen": 5024
+  },
+  {
+   "r": "/본점이전후사업자등록순서",
+   "beforeLen": 3378,
+   "afterLen": 3377
+  },
+  {
+   "r": "/부곡동법무사",
+   "beforeLen": 5370,
+   "afterLen": 5369
+  },
+  {
+   "r": "/부곡동상속등기",
+   "beforeLen": 4850,
+   "afterLen": 4849
+  },
+  {
+   "r": "/부곡동한정승인",
+   "beforeLen": 4742,
+   "afterLen": 4741
+  },
+  {
+   "r": "/부동산과거주지가다른상속등기",
+   "beforeLen": 5140,
+   "afterLen": 5139
+  },
+  {
+   "r": "/부동산등기",
+   "beforeLen": 4247,
+   "afterLen": 4246
+  },
+  {
+   "r": "/부동산등기과태료",
+   "beforeLen": 4569,
+   "afterLen": 4568
+  },
+  {
+   "r": "/부동산등기기간",
+   "beforeLen": 4685,
+   "afterLen": 4684
+  },
+  {
+   "r": "/부동산등기기한",
+   "beforeLen": 4812,
+   "afterLen": 4811
+  },
+  {
+   "r": "/부동산등기보수표",
+   "beforeLen": 3137,
+   "afterLen": 3136
+  },
+  {
+   "r": "/부동산등기비용",
+   "beforeLen": 3628,
+   "afterLen": 3627
+  },
+  {
+   "r": "/부동산등기상담",
+   "beforeLen": 1545,
+   "afterLen": 1544
+  },
+  {
+   "r": "/부동산등기실수모음",
+   "beforeLen": 3855,
+   "afterLen": 3854
+  },
+  {
+   "r": "/부동산등기자가진단",
+   "beforeLen": 5395,
+   "afterLen": 5394
+  },
+  {
+   "r": "/부동산등기준비서류",
+   "beforeLen": 4778,
+   "afterLen": 4777
+  },
+  {
+   "r": "/부동산등기체크리스트",
+   "beforeLen": 3814,
+   "afterLen": 3813
+  },
+  {
+   "r": "/부동산등기필요서류",
+   "beforeLen": 4842,
+   "afterLen": 4841
+  },
+  {
+   "r": "/부동산실권리자명의등기",
+   "beforeLen": 3691,
+   "afterLen": 3690
+  },
+  {
+   "r": "/부모님사망후해야할일",
+   "beforeLen": 5636,
+   "afterLen": 5635
+  },
+  {
+   "r": "/부모빚상속방법",
+   "beforeLen": 4662,
+   "afterLen": 4661
+  },
+  {
+   "r": "/부모자녀다른지역증여등기",
+   "beforeLen": 3805,
+   "afterLen": 3804
+  },
+  {
+   "r": "/부산1인법인설립",
+   "beforeLen": 4840,
+   "afterLen": 4839
+  },
+  {
+   "r": "/부산가등기",
+   "beforeLen": 4096,
+   "afterLen": 4095
+  },
+  {
+   "r": "/부산가수금출자전환",
+   "beforeLen": 4105,
+   "afterLen": 4104
+  },
+  {
+   "r": "/부산가압류말소등기",
+   "beforeLen": 3703,
+   "afterLen": 3702
+  },
+  {
+   "r": "/부산가압류신청",
+   "beforeLen": 5291,
+   "afterLen": 5290
+  },
+  {
+   "r": "/부산가정법원법무사",
+   "beforeLen": 4847,
+   "afterLen": 4846
+  },
+  {
+   "r": "/부산가정법원상속",
+   "beforeLen": 4010,
+   "afterLen": 4009
+  },
+  {
+   "r": "/부산가정법원상속포기",
+   "beforeLen": 4053,
+   "afterLen": 4052
+  },
+  {
+   "r": "/부산가정법원성년후견",
+   "beforeLen": 4418,
+   "afterLen": 4417
+  },
+  {
+   "r": "/부산가정법원한정승인",
+   "beforeLen": 4776,
+   "afterLen": 4775
+  },
+  {
+   "r": "/부산가족관계등록부정정",
+   "beforeLen": 4413,
+   "afterLen": 4412
+  },
+  {
+   "r": "/부산가처분말소등기",
+   "beforeLen": 3002,
+   "afterLen": 3001
+  },
+  {
+   "r": "/부산감자등기",
+   "beforeLen": 4625,
+   "afterLen": 4624
+  },
+  {
+   "r": "/부산강사섭외비용",
+   "beforeLen": 5045,
+   "afterLen": 5044
+  },
+  {
+   "r": "/부산강사섭외체크리스트",
+   "beforeLen": 5069,
+   "afterLen": 5068
+  },
+  {
+   "r": "/부산개명허가",
+   "beforeLen": 3910,
+   "afterLen": 3909
+  },
+  {
+   "r": "/부산개인사업자법인전환",
+   "beforeLen": 4837,
+   "afterLen": 4836
+  },
+  {
+   "r": "/부산개인파산",
+   "beforeLen": 4527,
+   "afterLen": 4526
+  },
+  {
+   "r": "/부산개인파산법무사",
+   "beforeLen": 2517,
+   "afterLen": 2516
+  },
+  {
+   "r": "/부산개인파산법무사추천",
+   "beforeLen": 3797,
+   "afterLen": 3796
+  },
+  {
+   "r": "/부산개인파산상담",
+   "beforeLen": 3730,
+   "afterLen": 3729
+  },
+  {
+   "r": "/부산개인파산전문법무사",
+   "beforeLen": 3891,
+   "afterLen": 3890
+  },
+  {
+   "r": "/부산개인회생",
+   "beforeLen": 9533,
+   "afterLen": 9532
+  },
+  {
+   "r": "/부산개인회생법무사",
+   "beforeLen": 5954,
+   "afterLen": 5953
+  },
+  {
+   "r": "/부산개인회생법무사추천",
+   "beforeLen": 3856,
+   "afterLen": 3855
+  },
+  {
+   "r": "/부산개인회생상담",
+   "beforeLen": 2581,
+   "afterLen": 2580
+  },
+  {
+   "r": "/부산개인회생신청",
+   "beforeLen": 3731,
+   "afterLen": 3730
+  },
+  {
+   "r": "/부산개인회생전문법무사",
+   "beforeLen": 3926,
+   "afterLen": 3925
+  },
+  {
+   "r": "/부산건물등기",
+   "beforeLen": 5859,
+   "afterLen": 5858
+  },
+  {
+   "r": "/부산건물멸실등기",
+   "beforeLen": 5605,
+   "afterLen": 5604
+  },
+  {
+   "r": "/부산건물표시변경등기",
+   "beforeLen": 5202,
+   "afterLen": 5201
+  },
+  {
+   "r": "/부산건설사등기",
+   "beforeLen": 3296,
+   "afterLen": 3295
+  },
+  {
+   "r": "/부산건축물등기법무사",
+   "beforeLen": 5052,
+   "afterLen": 5051
+  },
+  {
+   "r": "/부산건축사등기협업",
+   "beforeLen": 3348,
+   "afterLen": 3347
+  },
+  {
+   "r": "/부산경매권리분석",
+   "beforeLen": 3789,
+   "afterLen": 3788
+  },
+  {
+   "r": "/부산경매낙찰등기",
+   "beforeLen": 3826,
+   "afterLen": 3825
+  },
+  {
+   "r": "/부산공동대표변경등기",
+   "beforeLen": 4662,
+   "afterLen": 4661
+  },
+  {
+   "r": "/부산공동명의등기",
+   "beforeLen": 3758,
+   "afterLen": 3757
+  },
+  {
+   "r": "/부산공동명의지분증여등기",
+   "beforeLen": 3232,
+   "afterLen": 3231
+  },
+  {
+   "r": "/부산공매낙찰등기",
+   "beforeLen": 3532,
+   "afterLen": 3531
+  },
+  {
+   "r": "/부산공유물분할등기",
+   "beforeLen": 3409,
+   "afterLen": 3408
+  },
+  {
+   "r": "/부산공장창고등기",
+   "beforeLen": 5110,
+   "afterLen": 5109
+  },
+  {
+   "r": "/부산공탁",
+   "beforeLen": 5285,
+   "afterLen": 5284
+  },
+  {
+   "r": "/부산국제금융센터법인등기",
+   "beforeLen": 4223,
+   "afterLen": 4222
+  },
+  {
+   "r": "/부산근저당말소등기",
+   "beforeLen": 8058,
+   "afterLen": 8057
+  },
+  {
+   "r": "/부산근저당설정등기",
+   "beforeLen": 7897,
+   "afterLen": 7896
+  },
+  {
+   "r": "/부산근저당전문법무사",
+   "beforeLen": 3905,
+   "afterLen": 3904
+  },
+  {
+   "r": "/부산기관법률특강",
+   "beforeLen": 4018,
+   "afterLen": 4017
+  },
+  {
+   "r": "/부산기업법률자문",
+   "beforeLen": 7948,
+   "afterLen": 7947
+  },
+  {
+   "r": "/부산기업법무사",
+   "beforeLen": 4932,
+   "afterLen": 4931
+  },
+  {
+   "r": "/부산기업부동산등기",
+   "beforeLen": 3665,
+   "afterLen": 3664
+  },
+  {
+   "r": "/부산기업채권관리",
+   "beforeLen": 3980,
+   "afterLen": 3979
+  },
+  {
+   "r": "/부산농업회사법인설립",
+   "beforeLen": 3813,
+   "afterLen": 3812
+  },
+  {
+   "r": "/부산담보공탁",
+   "beforeLen": 4154,
+   "afterLen": 4153
+  },
+  {
+   "r": "/부산대지권등기",
+   "beforeLen": 3107,
+   "afterLen": 3106
+  },
+  {
+   "r": "/부산대표이사변경등기",
+   "beforeLen": 4523,
+   "afterLen": 4522
+  },
+  {
+   "r": "/부산대학교특강",
+   "beforeLen": 5418,
+   "afterLen": 5417
+  },
+  {
+   "r": "/부산도서관법률특강",
+   "beforeLen": 3604,
+   "afterLen": 3603
+  },
+  {
+   "r": "/부산등기권리증분실",
+   "beforeLen": 3775,
+   "afterLen": 3774
+  },
+  {
+   "r": "/부산등기명의인표시변경",
+   "beforeLen": 3625,
+   "afterLen": 3624
+  },
+  {
+   "r": "/부산등기법무사",
+   "beforeLen": 5473,
+   "afterLen": 5472
+  },
+  {
+   "r": "/부산등기법무사추천",
+   "beforeLen": 4300,
+   "afterLen": 4299
+  },
+  {
+   "r": "/부산등기보정업무",
+   "beforeLen": 3356,
+   "afterLen": 3355
+  },
+  {
+   "r": "/부산등기복대리",
+   "beforeLen": 4525,
+   "afterLen": 4524
+  },
+  {
+   "r": "/부산등기소현지업무",
+   "beforeLen": 3360,
+   "afterLen": 3359
+  },
+  {
+   "r": "/부산등기전문법무사",
+   "beforeLen": 4188,
+   "afterLen": 4187
+  },
+  {
+   "r": "/부산등기접수협업",
+   "beforeLen": 3476,
+   "afterLen": 3475
+  },
+  {
+   "r": "/부산말소등기",
+   "beforeLen": 3403,
+   "afterLen": 3402
+  },
+  {
+   "r": "/부산매매등기법무사",
+   "beforeLen": 4216,
+   "afterLen": 4215
+  },
+  {
+   "r": "/부산매매등기전문법무사",
+   "beforeLen": 4051,
+   "afterLen": 4050
+  },
+  {
+   "r": "/부산매수인법무사",
+   "beforeLen": 4276,
+   "afterLen": 4275
+  },
+  {
+   "r": "/부산면책신청",
+   "beforeLen": 3688,
+   "afterLen": 3687
+  },
+  {
+   "r": "/부산면책전문법무사",
+   "beforeLen": 3655,
+   "afterLen": 3654
+  },
+  {
+   "r": "/부산명의변경등기",
+   "beforeLen": 4180,
+   "afterLen": 4179
+  },
+  {
+   "r": "/부산무상증자등기",
+   "beforeLen": 4635,
+   "afterLen": 4634
+  },
+  {
+   "r": "/부산문화예술단체법인설립",
+   "beforeLen": 3082,
+   "afterLen": 3081
+  },
+  {
+   "r": "/부산배당요구신청",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/부산법률강사",
+   "beforeLen": 5759,
+   "afterLen": 5758
+  },
+  {
+   "r": "/부산법률상담",
+   "beforeLen": 6365,
+   "afterLen": 6364
+  },
+  {
+   "r": "/부산법률전문가",
+   "beforeLen": 5533,
+   "afterLen": 5532
+  },
+  {
+   "r": "/부산법무사",
+   "beforeLen": 4626,
+   "afterLen": 4622
+  },
+  {
+   "r": "/부산법무사강의",
+   "beforeLen": 3520,
+   "afterLen": 3519
+  },
+  {
+   "r": "/부산법무사무소",
+   "beforeLen": 5647,
+   "afterLen": 5646
+  },
+  {
+   "r": "/부산법무사방문상담",
+   "beforeLen": 4185,
+   "afterLen": 4184
+  },
+  {
+   "r": "/부산법무사보수",
+   "beforeLen": 4293,
+   "afterLen": 4292
+  },
+  {
+   "r": "/부산법무사보수표",
+   "beforeLen": 5519,
+   "afterLen": 5518
+  },
+  {
+   "r": "/부산법무사복대리",
+   "beforeLen": 3796,
+   "afterLen": 3795
+  },
+  {
+   "r": "/부산법무사비교",
+   "beforeLen": 4324,
+   "afterLen": 4323
+  },
+  {
+   "r": "/부산법무사비대면상담",
+   "beforeLen": 4267,
+   "afterLen": 4266
+  },
+  {
+   "r": "/부산법무사비용",
+   "beforeLen": 6666,
+   "afterLen": 6665
+  },
+  {
+   "r": "/부산법무사상담",
+   "beforeLen": 4082,
+   "afterLen": 4081
+  },
+  {
+   "r": "/부산법무사서류준비",
+   "beforeLen": 4277,
+   "afterLen": 4276
+  },
+  {
+   "r": "/부산법무사수임료",
+   "beforeLen": 4367,
+   "afterLen": 4366
+  },
+  {
+   "r": "/부산법무사잘하는곳",
+   "beforeLen": 4312,
+   "afterLen": 4311
+  },
+  {
+   "r": "/부산법무사추천",
+   "beforeLen": 3812,
+   "afterLen": 3811
+  },
+  {
+   "r": "/부산법무사후기",
+   "beforeLen": 4043,
+   "afterLen": 4042
+  },
+  {
+   "r": "/부산법원근처법무사",
+   "beforeLen": 4288,
+   "afterLen": 4287
+  },
+  {
+   "r": "/부산법인등기",
+   "beforeLen": 5824,
+   "afterLen": 5823
+  },
+  {
+   "r": "/부산법인등기과태료",
+   "beforeLen": 3510,
+   "afterLen": 3509
+  },
+  {
+   "r": "/부산법인등기복대리",
+   "beforeLen": 3765,
+   "afterLen": 3764
+  },
+  {
+   "r": "/부산법인등기비용",
+   "beforeLen": 4633,
+   "afterLen": 4632
+  },
+  {
+   "r": "/부산법인등기아웃소싱",
+   "beforeLen": 3407,
+   "afterLen": 3406
+  },
+  {
+   "r": "/부산법인등기전문",
+   "beforeLen": 4322,
+   "afterLen": 4321
+  },
+  {
+   "r": "/부산법인법무사",
+   "beforeLen": 8625,
+   "afterLen": 8624
+  },
+  {
+   "r": "/부산법인설립등기",
+   "beforeLen": 5565,
+   "afterLen": 5564
+  },
+  {
+   "r": "/부산법인설립전문법무사",
+   "beforeLen": 3953,
+   "afterLen": 3952
+  },
+  {
+   "r": "/부산법인전문법무사",
+   "beforeLen": 4236,
+   "afterLen": 4235
+  },
+  {
+   "r": "/부산법인정기점검",
+   "beforeLen": 5518,
+   "afterLen": 5517
+  },
+  {
+   "r": "/부산법인해산전확인사항",
+   "beforeLen": 4654,
+   "afterLen": 4653
+  },
+  {
+   "r": "/부산법인해산청산등기",
+   "beforeLen": 3789,
+   "afterLen": 3788
+  },
+  {
+   "r": "/부산변제공탁",
+   "beforeLen": 4425,
+   "afterLen": 4424
+  },
+  {
+   "r": "/부산보상등기",
+   "beforeLen": 5338,
+   "afterLen": 5337
+  },
+  {
+   "r": "/부산본점이전등기",
+   "beforeLen": 4729,
+   "afterLen": 4728
+  },
+  {
+   "r": "/부산부담부증여등기",
+   "beforeLen": 3394,
+   "afterLen": 3393
+  },
+  {
+   "r": "/부산부동산등기",
+   "beforeLen": 6515,
+   "afterLen": 6514
+  },
+  {
+   "r": "/부산부동산등기법무사",
+   "beforeLen": 4798,
+   "afterLen": 4797
+  },
+  {
+   "r": "/부산부동산등기복대리",
+   "beforeLen": 4077,
+   "afterLen": 4076
+  },
+  {
+   "r": "/부산부동산등기전문",
+   "beforeLen": 4046,
+   "afterLen": 4045
+  },
+  {
+   "r": "/부산부동산등기전문법무사",
+   "beforeLen": 4135,
+   "afterLen": 4134
+  },
+  {
+   "r": "/부산부동산전문법무사",
+   "beforeLen": 3640,
+   "afterLen": 3639
+  },
+  {
+   "r": "/부산부동산협력법무사",
+   "beforeLen": 3486,
+   "afterLen": 3485
+  },
+  {
+   "r": "/부산부모자녀아파트증여등기",
+   "beforeLen": 3409,
+   "afterLen": 3408
+  },
+  {
+   "r": "/부산부부간증여등기",
+   "beforeLen": 3200,
+   "afterLen": 3199
+  },
+  {
+   "r": "/부산부재자재산관리인",
+   "beforeLen": 4184,
+   "afterLen": 4183
+  },
+  {
+   "r": "/부산분양등기",
+   "beforeLen": 3197,
+   "afterLen": 3196
+  },
+  {
+   "r": "/부산비영리법인변경등기",
+   "beforeLen": 3758,
+   "afterLen": 3757
+  },
+  {
+   "r": "/부산비영리법인설립등기",
+   "beforeLen": 4803,
+   "afterLen": 4802
+  },
+  {
+   "r": "/부산빌라매매등기",
+   "beforeLen": 3489,
+   "afterLen": 3488
+  },
+  {
+   "r": "/부산사단법인설립",
+   "beforeLen": 4552,
+   "afterLen": 4551
+  },
+  {
+   "r": "/부산사업목적변경등기",
+   "beforeLen": 4393,
+   "afterLen": 4392
+  },
+  {
+   "r": "/부산사회복지기관강사",
+   "beforeLen": 5490,
+   "afterLen": 5489
+  },
+  {
+   "r": "/부산사회복지법인등기",
+   "beforeLen": 3386,
+   "afterLen": 3385
+  },
+  {
+   "r": "/부산사회적협동조합설립",
+   "beforeLen": 3844,
+   "afterLen": 3843
+  },
+  {
+   "r": "/부산상가등기",
+   "beforeLen": 4086,
+   "afterLen": 4085
+  },
+  {
+   "r": "/부산상가매매등기",
+   "beforeLen": 3428,
+   "afterLen": 3427
+  },
+  {
+   "r": "/부산상속등기",
+   "beforeLen": 7378,
+   "afterLen": 7377
+  },
+  {
+   "r": "/부산상속등기전문",
+   "beforeLen": 4705,
+   "afterLen": 4704
+  },
+  {
+   "r": "/부산상속등기전문법무사",
+   "beforeLen": 4036,
+   "afterLen": 4035
+  },
+  {
+   "r": "/부산상속법무사",
+   "beforeLen": 6180,
+   "afterLen": 6179
+  },
+  {
+   "r": "/부산상속법무사추천",
+   "beforeLen": 4283,
+   "afterLen": 4282
+  },
+  {
+   "r": "/부산상속재산관리인",
+   "beforeLen": 4079,
+   "afterLen": 4078
+  },
+  {
+   "r": "/부산상속재산분할법무사",
+   "beforeLen": 4488,
+   "afterLen": 4487
+  },
+  {
+   "r": "/부산상속전문법무사",
+   "beforeLen": 5214,
+   "afterLen": 5213
+  },
+  {
+   "r": "/부산상속포기",
+   "beforeLen": 6048,
+   "afterLen": 6047
+  },
+  {
+   "r": "/부산상속포기전문법무사",
+   "beforeLen": 4025,
+   "afterLen": 4024
+  },
+  {
+   "r": "/부산상속후매매등기",
+   "beforeLen": 3736,
+   "afterLen": 3735
+  },
+  {
+   "r": "/부산상호변경등기",
+   "beforeLen": 4747,
+   "afterLen": 4746
+  },
+  {
+   "r": "/부산선박등기",
+   "beforeLen": 3587,
+   "afterLen": 3586
+  },
+  {
+   "r": "/부산셀프등기",
+   "beforeLen": 3726,
+   "afterLen": 3725
+  },
+  {
+   "r": "/부산소액소송",
+   "beforeLen": 5107,
+   "afterLen": 5106
+  },
+  {
+   "r": "/부산소유권이전등기",
+   "beforeLen": 7109,
+   "afterLen": 7108
+  },
+  {
+   "r": "/부산소유권이전전문법무사",
+   "beforeLen": 4033,
+   "afterLen": 4032
+  },
+  {
+   "r": "/부산스타트업법무사",
+   "beforeLen": 4523,
+   "afterLen": 4522
+  },
+  {
+   "r": "/부산시행사등기",
+   "beforeLen": 3991,
+   "afterLen": 3990
+  },
+  {
+   "r": "/부산신축건물보존등기",
+   "beforeLen": 10097,
+   "afterLen": 10096
+  },
+  {
+   "r": "/부산신축아파트소유권이전등기",
+   "beforeLen": 3980,
+   "afterLen": 3979
+  },
+  {
+   "r": "/부산신탁등기",
+   "beforeLen": 3665,
+   "afterLen": 3664
+  },
+  {
+   "r": "/부산실종선고청구",
+   "beforeLen": 4472,
+   "afterLen": 4471
+  },
+  {
+   "r": "/부산아파트매매등기",
+   "beforeLen": 4198,
+   "afterLen": 4197
+  },
+  {
+   "r": "/부산압류말소등기",
+   "beforeLen": 3597,
+   "afterLen": 3596
+  },
+  {
+   "r": "/부산여성법무사",
+   "beforeLen": 5187,
+   "afterLen": 5186
+  },
+  {
+   "r": "/부산역법무사",
+   "beforeLen": 4921,
+   "afterLen": 4920
+  },
+  {
+   "r": "/부산역부동산등기",
+   "beforeLen": 4482,
+   "afterLen": 4481
+  },
+  {
+   "r": "/부산예고등기",
+   "beforeLen": 3209,
+   "afterLen": 3208
+  },
+  {
+   "r": "/부산오피스텔매매등기",
+   "beforeLen": 3483,
+   "afterLen": 3482
+  },
+  {
+   "r": "/부산오피스텔소유권이전등기",
+   "beforeLen": 4177,
+   "afterLen": 4176
+  },
+  {
+   "r": "/부산외국인부동산등기",
+   "beforeLen": 3592,
+   "afterLen": 3591
+  },
+  {
+   "r": "/부산외국인상속등기",
+   "beforeLen": 3590,
+   "afterLen": 3589
+  },
+  {
+   "r": "/부산원거리등기협업",
+   "beforeLen": 3339,
+   "afterLen": 3338
+  },
+  {
+   "r": "/부산유상증자등기",
+   "beforeLen": 3848,
+   "afterLen": 3847
+  },
+  {
+   "r": "/부산유언검인",
+   "beforeLen": 4064,
+   "afterLen": 4063
+  },
+  {
+   "r": "/부산유한회사설립등기",
+   "beforeLen": 4255,
+   "afterLen": 4254
+  },
+  {
+   "r": "/부산의료법인등기",
+   "beforeLen": 3087,
+   "afterLen": 3086
+  },
+  {
+   "r": "/부산이혼재산분할등기",
+   "beforeLen": 3787,
+   "afterLen": 3786
+  },
+  {
+   "r": "/부산임원변경등기",
+   "beforeLen": 5486,
+   "afterLen": 5485
+  },
+  {
+   "r": "/부산임원변경전문법무사",
+   "beforeLen": 4156,
+   "afterLen": 4155
+  },
+  {
+   "r": "/부산임원사임해임등기",
+   "beforeLen": 4704,
+   "afterLen": 4703
+  },
+  {
+   "r": "/부산임원임기만료등기",
+   "beforeLen": 4124,
+   "afterLen": 4123
+  },
+  {
+   "r": "/부산임차권등기명령",
+   "beforeLen": 4805,
+   "afterLen": 4804
+  },
+  {
+   "r": "/부산입주등기",
+   "beforeLen": 3760,
+   "afterLen": 3759
+  },
+  {
+   "r": "/부산잔금대출근저당",
+   "beforeLen": 3369,
+   "afterLen": 3368
+  },
+  {
+   "r": "/부산잔금등기협업",
+   "beforeLen": 3414,
+   "afterLen": 3413
+  },
+  {
+   "r": "/부산잔금일법무사",
+   "beforeLen": 3807,
+   "afterLen": 3806
+  },
+  {
+   "r": "/부산재개발등기",
+   "beforeLen": 4133,
+   "afterLen": 4132
+  },
+  {
+   "r": "/부산재건축등기",
+   "beforeLen": 4142,
+   "afterLen": 4141
+  },
+  {
+   "r": "/부산재단법인설립",
+   "beforeLen": 3978,
+   "afterLen": 3977
+  },
+  {
+   "r": "/부산재산명시",
+   "beforeLen": 4904,
+   "afterLen": 4903
+  },
+  {
+   "r": "/부산재상속등기",
+   "beforeLen": 3820,
+   "afterLen": 3819
+  },
+  {
+   "r": "/부산전세권말소등기",
+   "beforeLen": 4218,
+   "afterLen": 4217
+  },
+  {
+   "r": "/부산전세권설정등기",
+   "beforeLen": 4334,
+   "afterLen": 4333
+  },
+  {
+   "r": "/부산전세보증금반환법무사",
+   "beforeLen": 4319,
+   "afterLen": 4318
+  },
+  {
+   "r": "/부산전세전문법무사",
+   "beforeLen": 4042,
+   "afterLen": 4041
+  },
+  {
+   "r": "/부산제3자배정유상증자",
+   "beforeLen": 4336,
+   "afterLen": 4335
+  },
+  {
+   "r": "/부산조합협동조합등기",
+   "beforeLen": 3847,
+   "afterLen": 3846
+  },
+  {
+   "r": "/부산주주배정유상증자",
+   "beforeLen": 3722,
+   "afterLen": 3721
+  },
+  {
+   "r": "/부산중도금대출근저당",
+   "beforeLen": 3377,
+   "afterLen": 3376
+  },
+  {
+   "r": "/부산증여등기",
+   "beforeLen": 5519,
+   "afterLen": 5518
+  },
+  {
+   "r": "/부산증여등기전문법무사",
+   "beforeLen": 3820,
+   "afterLen": 3819
+  },
+  {
+   "r": "/부산지방법원동부지원등기과",
+   "beforeLen": 4244,
+   "afterLen": 4243
+  },
+  {
+   "r": "/부산지방법원동부지원등기과법무사",
+   "beforeLen": 4611,
+   "afterLen": 4610
+  },
+  {
+   "r": "/부산지방법원동부지원등기과법인등기",
+   "beforeLen": 4695,
+   "afterLen": 4694
+  },
+  {
+   "r": "/부산지방법원동부지원등기과부동산등기",
+   "beforeLen": 4675,
+   "afterLen": 4674
+  },
+  {
+   "r": "/부산지방법원동부지원법무사",
+   "beforeLen": 3816,
+   "afterLen": 3815
+  },
+  {
+   "r": "/부산지방법원동부지원지급명령",
+   "beforeLen": 4055,
+   "afterLen": 4054
+  },
+  {
+   "r": "/부산지방법원동부지원채권회수",
+   "beforeLen": 4623,
+   "afterLen": 4622
+  },
+  {
+   "r": "/부산지방법원등기국",
+   "beforeLen": 4363,
+   "afterLen": 4362
+  },
+  {
+   "r": "/부산지방법원등기국법무사",
+   "beforeLen": 4554,
+   "afterLen": 4553
+  },
+  {
+   "r": "/부산지방법원등기국법인등기",
+   "beforeLen": 4801,
+   "afterLen": 4800
+  },
+  {
+   "r": "/부산지방법원등기국부동산등기",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/부산지방법원등기국상속등기",
+   "beforeLen": 4728,
+   "afterLen": 4727
+  },
+  {
+   "r": "/부산지방법원법무사",
+   "beforeLen": 4453,
+   "afterLen": 4452
+  },
+  {
+   "r": "/부산지방법원상속등기",
+   "beforeLen": 4840,
+   "afterLen": 4839
+  },
+  {
+   "r": "/부산지방법원지급명령",
+   "beforeLen": 4027,
+   "afterLen": 4026
+  },
+  {
+   "r": "/부산지방법원채권회수",
+   "beforeLen": 4527,
+   "afterLen": 4526
+  },
+  {
+   "r": "/부산지분이전등기",
+   "beforeLen": 3754,
+   "afterLen": 3753
+  },
+  {
+   "r": "/부산지상권설정등기",
+   "beforeLen": 3013,
+   "afterLen": 3012
+  },
+  {
+   "r": "/부산지점설치등기",
+   "beforeLen": 4422,
+   "afterLen": 4421
+  },
+  {
+   "r": "/부산지점폐지등기",
+   "beforeLen": 4674,
+   "afterLen": 4673
+  },
+  {
+   "r": "/부산진구법무사",
+   "beforeLen": 5058,
+   "afterLen": 5057
+  },
+  {
+   "r": "/부산진구법인등기",
+   "beforeLen": 4840,
+   "afterLen": 4839
+  },
+  {
+   "r": "/부산진구법인설립등기",
+   "beforeLen": 4731,
+   "afterLen": 4730
+  },
+  {
+   "r": "/부산진구부동산등기",
+   "beforeLen": 4598,
+   "afterLen": 4597
+  },
+  {
+   "r": "/부산진구비영리법인설립",
+   "beforeLen": 3064,
+   "afterLen": 3063
+  },
+  {
+   "r": "/부산진구상속등기",
+   "beforeLen": 3707,
+   "afterLen": 3706
+  },
+  {
+   "r": "/부산진구상속포기",
+   "beforeLen": 4903,
+   "afterLen": 4902
+  },
+  {
+   "r": "/부산진구소유권이전등기",
+   "beforeLen": 4610,
+   "afterLen": 4609
+  },
+  {
+   "r": "/부산진구임원변경등기",
+   "beforeLen": 4701,
+   "afterLen": 4700
+  },
+  {
+   "r": "/부산진구한정승인",
+   "beforeLen": 4883,
+   "afterLen": 4882
+  },
+  {
+   "r": "/부산진등기소법무사",
+   "beforeLen": 4028,
+   "afterLen": 4027
+  },
+  {
+   "r": "/부산진등기소부동산등기",
+   "beforeLen": 4570,
+   "afterLen": 4569
+  },
+  {
+   "r": "/부산진등기소소유권이전등기",
+   "beforeLen": 4615,
+   "afterLen": 4614
+  },
+  {
+   "r": "/부산집단등기",
+   "beforeLen": 5514,
+   "afterLen": 5513
+  },
+  {
+   "r": "/부산집합건물등기",
+   "beforeLen": 5234,
+   "afterLen": 5233
+  },
+  {
+   "r": "/부산집행공탁",
+   "beforeLen": 4380,
+   "afterLen": 4379
+  },
+  {
+   "r": "/부산집행문부여신청",
+   "beforeLen": 4832,
+   "afterLen": 4831
+  },
+  {
+   "r": "/부산채무불이행자명부등재",
+   "beforeLen": 4477,
+   "afterLen": 4476
+  },
+  {
+   "r": "/부산체육단체법인설립",
+   "beforeLen": 2991,
+   "afterLen": 2990
+  },
+  {
+   "r": "/부산토지매매등기",
+   "beforeLen": 3438,
+   "afterLen": 3437
+  },
+  {
+   "r": "/부산토지상속등기",
+   "beforeLen": 4309,
+   "afterLen": 4308
+  },
+  {
+   "r": "/부산특수법인등기",
+   "beforeLen": 3775,
+   "afterLen": 3774
+  },
+  {
+   "r": "/부산파산",
+   "beforeLen": 4159,
+   "afterLen": 4158
+  },
+  {
+   "r": "/부산파산법무사",
+   "beforeLen": 2372,
+   "afterLen": 2371
+  },
+  {
+   "r": "/부산파산신청",
+   "beforeLen": 3685,
+   "afterLen": 3684
+  },
+  {
+   "r": "/부산파산전문법무사",
+   "beforeLen": 3616,
+   "afterLen": 3615
+  },
+  {
+   "r": "/부산학교법인등기",
+   "beforeLen": 2990,
+   "afterLen": 2989
+  },
+  {
+   "r": "/부산한정승인",
+   "beforeLen": 4614,
+   "afterLen": 4613
+  },
+  {
+   "r": "/부산한정승인전문법무사",
+   "beforeLen": 4377,
+   "afterLen": 4376
+  },
+  {
+   "r": "/부산현물출자증자",
+   "beforeLen": 3934,
+   "afterLen": 3933
+  },
+  {
+   "r": "/부산협동조합설립등기",
+   "beforeLen": 3597,
+   "afterLen": 3596
+  },
+  {
+   "r": "/부산협회단체법인설립",
+   "beforeLen": 3344,
+   "afterLen": 3343
+  },
+  {
+   "r": "/부산형사공탁",
+   "beforeLen": 3989,
+   "afterLen": 3988
+  },
+  {
+   "r": "/부산확정일자전세권비교",
+   "beforeLen": 3658,
+   "afterLen": 3657
+  },
+  {
+   "r": "/부산확정일자취득",
+   "beforeLen": 3148,
+   "afterLen": 3147
+  },
+  {
+   "r": "/부산환매특약등기",
+   "beforeLen": 3036,
+   "afterLen": 3035
+  },
+  {
+   "r": "/부산회생법무사",
+   "beforeLen": 3244,
+   "afterLen": 3243
+  },
+  {
+   "r": "/부산회생법원개인파산",
+   "beforeLen": 4425,
+   "afterLen": 4424
+  },
+  {
+   "r": "/부산회생법원개인회생",
+   "beforeLen": 4309,
+   "afterLen": 4308
+  },
+  {
+   "r": "/부산회생법원법무사",
+   "beforeLen": 3793,
+   "afterLen": 3792
+  },
+  {
+   "r": "/부산회생상담",
+   "beforeLen": 2534,
+   "afterLen": 2533
+  },
+  {
+   "r": "/부산회생전문법무사",
+   "beforeLen": 3663,
+   "afterLen": 3662
+  },
+  {
+   "r": "/부산휴면법인계속등기",
+   "beforeLen": 4722,
+   "afterLen": 4721
+  },
+  {
+   "r": "/부전동법무사",
+   "beforeLen": 3791,
+   "afterLen": 3790
+  },
+  {
+   "r": "/부전동소유권이전등기",
+   "beforeLen": 4463,
+   "afterLen": 4462
+  },
+  {
+   "r": "/북구개인회생",
+   "beforeLen": 3987,
+   "afterLen": 3986
+  },
+  {
+   "r": "/북구법무사",
+   "beforeLen": 4665,
+   "afterLen": 4664
+  },
+  {
+   "r": "/북구법인등기",
+   "beforeLen": 3670,
+   "afterLen": 3669
+  },
+  {
+   "r": "/북구법인설립등기",
+   "beforeLen": 4717,
+   "afterLen": 4716
+  },
+  {
+   "r": "/북구부동산등기",
+   "beforeLen": 4245,
+   "afterLen": 4244
+  },
+  {
+   "r": "/북구상속등기",
+   "beforeLen": 4727,
+   "afterLen": 4726
+  },
+  {
+   "r": "/북구상속포기",
+   "beforeLen": 4698,
+   "afterLen": 4697
+  },
+  {
+   "r": "/북구임원변경등기",
+   "beforeLen": 4623,
+   "afterLen": 4622
+  },
+  {
+   "r": "/북구한정승인",
+   "beforeLen": 4838,
+   "afterLen": 4837
+  },
+  {
+   "r": "/북부산등기소법무사",
+   "beforeLen": 4251,
+   "afterLen": 4250
+  },
+  {
+   "r": "/북부산등기소부동산등기",
+   "beforeLen": 4531,
+   "afterLen": 4530
+  },
+  {
+   "r": "/북부산등기소상속등기",
+   "beforeLen": 4692,
+   "afterLen": 4691
+  },
+  {
+   "r": "/분양권명의이전등기",
+   "beforeLen": 3527,
+   "afterLen": 3526
+  },
+  {
+   "r": "/분양권입주권상속",
+   "beforeLen": 3770,
+   "afterLen": 3769
+  },
+  {
+   "r": "/불법증축후등기가능여부",
+   "beforeLen": 4459,
+   "afterLen": 4458
+  },
+  {
+   "r": "/비영리민간단체와사단법인차이",
+   "beforeLen": 4077,
+   "afterLen": 4076
+  },
+  {
+   "r": "/비영리법인임원변경등기",
+   "beforeLen": 3678,
+   "afterLen": 3677
+  },
+  {
+   "r": "/비영리법인해산청산등기",
+   "beforeLen": 4866,
+   "afterLen": 4865
+  },
+  {
+   "r": "/사단법인과재단법인차이",
+   "beforeLen": 3874,
+   "afterLen": 3873
+  },
+  {
+   "r": "/사단법인과협동조합차이",
+   "beforeLen": 2872,
+   "afterLen": 2871
+  },
+  {
+   "r": "/사단법인목적변경등기",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/사단법인주사무소이전등기",
+   "beforeLen": 5091,
+   "afterLen": 5090
+  },
+  {
+   "r": "/사망신고와상속등기차이",
+   "beforeLen": 4658,
+   "afterLen": 4657
+  },
+  {
+   "r": "/사망자재산채무조회",
+   "beforeLen": 4620,
+   "afterLen": 4619
+  },
+  {
+   "r": "/사망후3개월지난상속",
+   "beforeLen": 3750,
+   "afterLen": 3749
+  },
+  {
+   "r": "/사상구개인회생",
+   "beforeLen": 4014,
+   "afterLen": 4013
+  },
+  {
+   "r": "/사상구공장창고등기",
+   "beforeLen": 4246,
+   "afterLen": 4245
+  },
+  {
+   "r": "/사상구법무사",
+   "beforeLen": 5043,
+   "afterLen": 5042
+  },
+  {
+   "r": "/사상구법인등기",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/사상구법인설립등기",
+   "beforeLen": 4726,
+   "afterLen": 4725
+  },
+  {
+   "r": "/사상구부동산등기",
+   "beforeLen": 4280,
+   "afterLen": 4279
+  },
+  {
+   "r": "/사상구상속등기",
+   "beforeLen": 4744,
+   "afterLen": 4743
+  },
+  {
+   "r": "/사상구상속포기",
+   "beforeLen": 4733,
+   "afterLen": 4732
+  },
+  {
+   "r": "/사상구임원변경등기",
+   "beforeLen": 4802,
+   "afterLen": 4801
+  },
+  {
+   "r": "/사상구한정승인",
+   "beforeLen": 4712,
+   "afterLen": 4711
+  },
+  {
+   "r": "/사상법무사",
+   "beforeLen": 4313,
+   "afterLen": 4312
+  },
+  {
+   "r": "/사상역개인회생",
+   "beforeLen": 4400,
+   "afterLen": 4399
+  },
+  {
+   "r": "/사상역법무사",
+   "beforeLen": 3576,
+   "afterLen": 3575
+  },
+  {
+   "r": "/사업자폐업후법인정리",
+   "beforeLen": 5660,
+   "afterLen": 5659
+  },
+  {
+   "r": "/사용승인후등기",
+   "beforeLen": 3786,
+   "afterLen": 3785
+  },
+  {
+   "r": "/사직동법무사",
+   "beforeLen": 5503,
+   "afterLen": 5502
+  },
+  {
+   "r": "/사직동상속등기",
+   "beforeLen": 4698,
+   "afterLen": 4697
+  },
+  {
+   "r": "/사직동재건축등기",
+   "beforeLen": 4446,
+   "afterLen": 4445
+  },
+  {
+   "r": "/사진전자파일우편으로서류전달",
+   "beforeLen": 4237,
+   "afterLen": 4236
+  },
+  {
+   "r": "/사하구법무사",
+   "beforeLen": 5036,
+   "afterLen": 5035
+  },
+  {
+   "r": "/사하구법인등기",
+   "beforeLen": 4708,
+   "afterLen": 4707
+  },
+  {
+   "r": "/사하구법인설립등기",
+   "beforeLen": 4736,
+   "afterLen": 4735
+  },
+  {
+   "r": "/사하구부동산등기",
+   "beforeLen": 4279,
+   "afterLen": 4278
+  },
+  {
+   "r": "/사하구상속등기",
+   "beforeLen": 4707,
+   "afterLen": 4706
+  },
+  {
+   "r": "/사하구상속포기",
+   "beforeLen": 4873,
+   "afterLen": 4872
+  },
+  {
+   "r": "/사하구임원변경등기",
+   "beforeLen": 4615,
+   "afterLen": 4614
+  },
+  {
+   "r": "/사하구전세권설정",
+   "beforeLen": 4549,
+   "afterLen": 4548
+  },
+  {
+   "r": "/사하구한정승인",
+   "beforeLen": 4806,
+   "afterLen": 4805
+  },
+  {
+   "r": "/사회복지법인설립등기",
+   "beforeLen": 4172,
+   "afterLen": 4171
+  },
+  {
+   "r": "/사회복지법인임원변경등기",
+   "beforeLen": 3739,
+   "afterLen": 3738
+  },
+  {
+   "r": "/사회복지법인해산청산등기",
+   "beforeLen": 3775,
+   "afterLen": 3774
+  },
+  {
+   "r": "/사회적기업과법인설립차이",
+   "beforeLen": 3834,
+   "afterLen": 3833
+  },
+  {
+   "r": "/사회적기업과사회적협동조합차이",
+   "beforeLen": 3033,
+   "afterLen": 3032
+  },
+  {
+   "r": "/사회적협동조합과사단법인차이",
+   "beforeLen": 2889,
+   "afterLen": 2888
+  },
+  {
+   "r": "/산업단지법인등기",
+   "beforeLen": 4636,
+   "afterLen": 4635
+  },
+  {
+   "r": "/상가보존등기",
+   "beforeLen": 3728,
+   "afterLen": 3727
+  },
+  {
+   "r": "/상담",
+   "beforeLen": 1886,
+   "afterLen": 1885
+  },
+  {
+   "r": "/상속",
+   "beforeLen": 7348,
+   "afterLen": 7347
+  },
+  {
+   "r": "/상속건물멸실등기",
+   "beforeLen": 4412,
+   "afterLen": 4411
+  },
+  {
+   "r": "/상속등기과태료",
+   "beforeLen": 5048,
+   "afterLen": 5047
+  },
+  {
+   "r": "/상속등기기간",
+   "beforeLen": 4885,
+   "afterLen": 4884
+  },
+  {
+   "r": "/상속등기기한",
+   "beforeLen": 5192,
+   "afterLen": 5191
+  },
+  {
+   "r": "/상속등기보수표",
+   "beforeLen": 3542,
+   "afterLen": 3541
+  },
+  {
+   "r": "/상속등기비용",
+   "beforeLen": 6774,
+   "afterLen": 6773
+  },
+  {
+   "r": "/상속등기상담",
+   "beforeLen": 1592,
+   "afterLen": 1591
+  },
+  {
+   "r": "/상속등기실수모음",
+   "beforeLen": 4125,
+   "afterLen": 4124
+  },
+  {
+   "r": "/상속등기자가진단",
+   "beforeLen": 6194,
+   "afterLen": 6193
+  },
+  {
+   "r": "/상속등기준비서류",
+   "beforeLen": 4851,
+   "afterLen": 4850
+  },
+  {
+   "r": "/상속등기체크리스트",
+   "beforeLen": 4080,
+   "afterLen": 4079
+  },
+  {
+   "r": "/상속등기필요서류",
+   "beforeLen": 4710,
+   "afterLen": 4709
+  },
+  {
+   "r": "/상속등기후매매서류준비",
+   "beforeLen": 4354,
+   "afterLen": 4353
+  },
+  {
+   "r": "/상속상담전준비서류와비용",
+   "beforeLen": 4358,
+   "afterLen": 4357
+  },
+  {
+   "r": "/상속세신고와등기순서",
+   "beforeLen": 4468,
+   "afterLen": 4467
+  },
+  {
+   "r": "/상속여성법무사",
+   "beforeLen": 4991,
+   "afterLen": 4990
+  },
+  {
+   "r": "/상속인이여러지역에있는경우",
+   "beforeLen": 5651,
+   "afterLen": 5650
+  },
+  {
+   "r": "/상속재산분할협의서준비",
+   "beforeLen": 3864,
+   "afterLen": 3863
+  },
+  {
+   "r": "/상속취득세와등기순서",
+   "beforeLen": 4179,
+   "afterLen": 4178
+  },
+  {
+   "r": "/상속포기과태료",
+   "beforeLen": 4938,
+   "afterLen": 4937
+  },
+  {
+   "r": "/상속포기기간",
+   "beforeLen": 5164,
+   "afterLen": 5163
+  },
+  {
+   "r": "/상속포기기한",
+   "beforeLen": 5203,
+   "afterLen": 5202
+  },
+  {
+   "r": "/상속포기보수표",
+   "beforeLen": 3665,
+   "afterLen": 3664
+  },
+  {
+   "r": "/상속포기비용",
+   "beforeLen": 4920,
+   "afterLen": 4919
+  },
+  {
+   "r": "/상속포기상담",
+   "beforeLen": 1563,
+   "afterLen": 1562
+  },
+  {
+   "r": "/상속포기자가진단",
+   "beforeLen": 5545,
+   "afterLen": 5544
+  },
+  {
+   "r": "/상속포기준비서류",
+   "beforeLen": 5091,
+   "afterLen": 5090
+  },
+  {
+   "r": "/상속포기필요서류",
+   "beforeLen": 4950,
+   "afterLen": 4949
+  },
+  {
+   "r": "/상속포기후다음순위확인",
+   "beforeLen": 3449,
+   "afterLen": 3448
+  },
+  {
+   "r": "/서구법무사",
+   "beforeLen": 5293,
+   "afterLen": 5292
+  },
+  {
+   "r": "/서구법인등기",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/서구법인설립등기",
+   "beforeLen": 4641,
+   "afterLen": 4640
+  },
+  {
+   "r": "/서구부동산등기",
+   "beforeLen": 4317,
+   "afterLen": 4316
+  },
+  {
+   "r": "/서구상속등기",
+   "beforeLen": 4718,
+   "afterLen": 4717
+  },
+  {
+   "r": "/서구상속포기",
+   "beforeLen": 4891,
+   "afterLen": 4890
+  },
+  {
+   "r": "/서구소유권이전등기",
+   "beforeLen": 4526,
+   "afterLen": 4525
+  },
+  {
+   "r": "/서구임원변경등기",
+   "beforeLen": 4758,
+   "afterLen": 4757
+  },
+  {
+   "r": "/서구한정승인",
+   "beforeLen": 4903,
+   "afterLen": 4902
+  },
+  {
+   "r": "/서류가없어도상담가능",
+   "beforeLen": 1537,
+   "afterLen": 1536
+  },
+  {
+   "r": "/서면법무사",
+   "beforeLen": 4961,
+   "afterLen": 4960
+  },
+  {
+   "r": "/서면법인등기",
+   "beforeLen": 3790,
+   "afterLen": 3789
+  },
+  {
+   "r": "/서면부동산등기",
+   "beforeLen": 3605,
+   "afterLen": 3604
+  },
+  {
+   "r": "/서면역법무사",
+   "beforeLen": 3567,
+   "afterLen": 3566
+  },
+  {
+   "r": "/서면역법인등기",
+   "beforeLen": 4767,
+   "afterLen": 4766
+  },
+  {
+   "r": "/서면역부동산등기",
+   "beforeLen": 4478,
+   "afterLen": 4477
+  },
+  {
+   "r": "/선박관리인선임등기",
+   "beforeLen": 3204,
+   "afterLen": 3203
+  },
+  {
+   "r": "/선박등기",
+   "beforeLen": 5413,
+   "afterLen": 5412
+  },
+  {
+   "r": "/선박등기과태료",
+   "beforeLen": 4930,
+   "afterLen": 4929
+  },
+  {
+   "r": "/선박등기기간",
+   "beforeLen": 4863,
+   "afterLen": 4862
+  },
+  {
+   "r": "/선박등기기한",
+   "beforeLen": 4694,
+   "afterLen": 4693
+  },
+  {
+   "r": "/선박등기보수표",
+   "beforeLen": 4954,
+   "afterLen": 4953
+  },
+  {
+   "r": "/선박등기비용",
+   "beforeLen": 4961,
+   "afterLen": 4960
+  },
+  {
+   "r": "/선박등기와선박등록",
+   "beforeLen": 3667,
+   "afterLen": 3666
+  },
+  {
+   "r": "/선박등기자가진단",
+   "beforeLen": 4077,
+   "afterLen": 4076
+  },
+  {
+   "r": "/선박등기준비서류",
+   "beforeLen": 4941,
+   "afterLen": 4940
+  },
+  {
+   "r": "/선박등기필요서류",
+   "beforeLen": 4952,
+   "afterLen": 4951
+  },
+  {
+   "r": "/선박상속",
+   "beforeLen": 5147,
+   "afterLen": 5146
+  },
+  {
+   "r": "/성년후견자가진단",
+   "beforeLen": 4136,
+   "afterLen": 4135
+  },
+  {
+   "r": "/세무법인설립등기",
+   "beforeLen": 3091,
+   "afterLen": 3090
+  },
+  {
+   "r": "/센텀법무사",
+   "beforeLen": 5970,
+   "afterLen": 5969
+  },
+  {
+   "r": "/센텀법인등기",
+   "beforeLen": 4177,
+   "afterLen": 4176
+  },
+  {
+   "r": "/센텀법인설립등기",
+   "beforeLen": 4494,
+   "afterLen": 4493
+  },
+  {
+   "r": "/센텀부동산등기",
+   "beforeLen": 4284,
+   "afterLen": 4283
+  },
+  {
+   "r": "/센텀시티역법무사",
+   "beforeLen": 3883,
+   "afterLen": 3882
+  },
+  {
+   "r": "/센텀시티역법인등기",
+   "beforeLen": 4690,
+   "afterLen": 4689
+  },
+  {
+   "r": "/센텀시티역상속등기",
+   "beforeLen": 3831,
+   "afterLen": 3830
+  },
+  {
+   "r": "/센텀여성법무사",
+   "beforeLen": 4978,
+   "afterLen": 4977
+  },
+  {
+   "r": "/센텀임원변경등기",
+   "beforeLen": 4425,
+   "afterLen": 4424
+  },
+  {
+   "r": "/소유권이전등기과태료",
+   "beforeLen": 4850,
+   "afterLen": 4849
+  },
+  {
+   "r": "/소유권이전등기기간",
+   "beforeLen": 4900,
+   "afterLen": 4899
+  },
+  {
+   "r": "/소유권이전등기기한",
+   "beforeLen": 4851,
+   "afterLen": 4850
+  },
+  {
+   "r": "/소유권이전등기보수표",
+   "beforeLen": 3440,
+   "afterLen": 3439
+  },
+  {
+   "r": "/소유권이전등기비용",
+   "beforeLen": 3959,
+   "afterLen": 3958
+  },
+  {
+   "r": "/소유권이전등기서류",
+   "beforeLen": 4438,
+   "afterLen": 4437
+  },
+  {
+   "r": "/소유권이전등기자가진단",
+   "beforeLen": 4390,
+   "afterLen": 4389
+  },
+  {
+   "r": "/소유권이전등기준비서류",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/소유권이전등기필요서류",
+   "beforeLen": 3421,
+   "afterLen": 3420
+  },
+  {
+   "r": "/송정동법무사",
+   "beforeLen": 3993,
+   "afterLen": 3992
+  },
+  {
+   "r": "/송정동상속등기",
+   "beforeLen": 4774,
+   "afterLen": 4773
+  },
+  {
+   "r": "/수영구개인회생",
+   "beforeLen": 4010,
+   "afterLen": 4009
+  },
+  {
+   "r": "/수영구법무사",
+   "beforeLen": 4912,
+   "afterLen": 4911
+  },
+  {
+   "r": "/수영구법인등기",
+   "beforeLen": 4447,
+   "afterLen": 4446
+  },
+  {
+   "r": "/수영구법인설립등기",
+   "beforeLen": 4685,
+   "afterLen": 4684
+  },
+  {
+   "r": "/수영구부동산등기",
+   "beforeLen": 4278,
+   "afterLen": 4277
+  },
+  {
+   "r": "/수영구비영리법인설립",
+   "beforeLen": 3046,
+   "afterLen": 3045
+  },
+  {
+   "r": "/수영구상속등기",
+   "beforeLen": 4732,
+   "afterLen": 4731
+  },
+  {
+   "r": "/수영구상속포기",
+   "beforeLen": 4743,
+   "afterLen": 4742
+  },
+  {
+   "r": "/수영구임원변경등기",
+   "beforeLen": 4734,
+   "afterLen": 4733
+  },
+  {
+   "r": "/수영구전세권설정",
+   "beforeLen": 4628,
+   "afterLen": 4627
+  },
+  {
+   "r": "/수영구한정승인",
+   "beforeLen": 4810,
+   "afterLen": 4809
+  },
+  {
+   "r": "/신용회복과개인회생차이",
+   "beforeLen": 3454,
+   "afterLen": 3453
+  },
+  {
+   "r": "/신축보존등기",
+   "beforeLen": 3731,
+   "afterLen": 3730
+  },
+  {
+   "r": "/신축보존등기체크리스트",
+   "beforeLen": 3842,
+   "afterLen": 3841
+  },
+  {
+   "r": "/신축전기존건물철거등기순서",
+   "beforeLen": 4585,
+   "afterLen": 4584
+  },
+  {
+   "r": "/신축집단등기",
+   "beforeLen": 3728,
+   "afterLen": 3727
+  },
+  {
+   "r": "/아파트집단등기",
+   "beforeLen": 3742,
+   "afterLen": 3741
+  },
+  {
+   "r": "/안락동법무사",
+   "beforeLen": 4724,
+   "afterLen": 4723
+  },
+  {
+   "r": "/안심상속원스톱서비스이후",
+   "beforeLen": 4571,
+   "afterLen": 4570
+  },
+  {
+   "r": "/압류말소등기서류준비",
+   "beforeLen": 4118,
+   "afterLen": 4117
+  },
+  {
+   "r": "/양정동법무사",
+   "beforeLen": 4650,
+   "afterLen": 4649
+  },
+  {
+   "r": "/양정동상속등기",
+   "beforeLen": 4756,
+   "afterLen": 4755
+  },
+  {
+   "r": "/어업회사법인설립",
+   "beforeLen": 3082,
+   "afterLen": 3081
+  },
+  {
+   "r": "/업무사례/가평상속등기법무사",
+   "beforeLen": 7672,
+   "afterLen": 7671
+  },
+  {
+   "r": "/업무사례/강남구상속등기법무사",
+   "beforeLen": 6413,
+   "afterLen": 6412
+  },
+  {
+   "r": "/업무사례/강동구상속등기법무사",
+   "beforeLen": 6429,
+   "afterLen": 6428
+  },
+  {
+   "r": "/업무사례/강릉상속등기법무사",
+   "beforeLen": 6283,
+   "afterLen": 6282
+  },
+  {
+   "r": "/업무사례/강서구법무사",
+   "beforeLen": 4954,
+   "afterLen": 4953
+  },
+  {
+   "r": "/업무사례/강서구상속등기법무사",
+   "beforeLen": 6186,
+   "afterLen": 6185
+  },
+  {
+   "r": "/업무사례/강원상속등기법무사",
+   "beforeLen": 5872,
+   "afterLen": 5871
+  },
+  {
+   "r": "/업무사례/강화도상속등기법무사",
+   "beforeLen": 6264,
+   "afterLen": 6263
+  },
+  {
+   "r": "/업무사례/거제상속등기법무사",
+   "beforeLen": 3821,
+   "afterLen": 3820
+  },
+  {
+   "r": "/업무사례/거제상속포기법무사",
+   "beforeLen": 6357,
+   "afterLen": 6356
+  },
+  {
+   "r": "/업무사례/거창상속등기법무사",
+   "beforeLen": 7000,
+   "afterLen": 6999
+  },
+  {
+   "r": "/업무사례/경기광주상속등기법무사",
+   "beforeLen": 6580,
+   "afterLen": 6579
+  },
+  {
+   "r": "/업무사례/경기상속등기법무사",
+   "beforeLen": 6282,
+   "afterLen": 6281
+  },
+  {
+   "r": "/업무사례/경남공장공동근저당권",
+   "beforeLen": 4624,
+   "afterLen": 4623
+  },
+  {
+   "r": "/업무사례/경남법무사업무",
+   "beforeLen": 5831,
+   "afterLen": 5830
+  },
+  {
+   "r": "/업무사례/경남법인등기법무사",
+   "beforeLen": 4676,
+   "afterLen": 4675
+  },
+  {
+   "r": "/업무사례/경남비대면상속안내",
+   "beforeLen": 6903,
+   "afterLen": 6902
+  },
+  {
+   "r": "/업무사례/경남상속등기법무사",
+   "beforeLen": 6385,
+   "afterLen": 6384
+  },
+  {
+   "r": "/업무사례/경남상속등기비용",
+   "beforeLen": 5570,
+   "afterLen": 5569
+  },
+  {
+   "r": "/업무사례/경남여러필지토지상속",
+   "beforeLen": 5336,
+   "afterLen": 5335
+  },
+  {
+   "r": "/업무사례/경남오래된상속등기",
+   "beforeLen": 5359,
+   "afterLen": 5358
+  },
+  {
+   "r": "/업무사례/경남유증등기법무사",
+   "beforeLen": 5308,
+   "afterLen": 5307
+  },
+  {
+   "r": "/업무사례/경남조부모명의토지상속",
+   "beforeLen": 5315,
+   "afterLen": 5314
+  },
+  {
+   "r": "/업무사례/경북농지상속등기",
+   "beforeLen": 5391,
+   "afterLen": 5390
+  },
+  {
+   "r": "/업무사례/경북법무사업무",
+   "beforeLen": 6067,
+   "afterLen": 6066
+  },
+  {
+   "r": "/업무사례/경북법인등기법무사",
+   "beforeLen": 4668,
+   "afterLen": 4667
+  },
+  {
+   "r": "/업무사례/경북상속등기법무사",
+   "beforeLen": 5906,
+   "afterLen": 5905
+  },
+  {
+   "r": "/업무사례/경북상속등기비용",
+   "beforeLen": 5435,
+   "afterLen": 5434
+  },
+  {
+   "r": "/업무사례/경북상속등기필요서류",
+   "beforeLen": 5484,
+   "afterLen": 5483
+  },
+  {
+   "r": "/업무사례/경북오래된상속등기",
+   "beforeLen": 5445,
+   "afterLen": 5444
+  },
+  {
+   "r": "/업무사례/경북임야상속등기",
+   "beforeLen": 5260,
+   "afterLen": 5259
+  },
+  {
+   "r": "/업무사례/경북조부모명의토지상속",
+   "beforeLen": 5476,
+   "afterLen": 5475
+  },
+  {
+   "r": "/업무사례/경북토지상속등기",
+   "beforeLen": 5433,
+   "afterLen": 5432
+  },
+  {
+   "r": "/업무사례/경산상속등기법무사",
+   "beforeLen": 6330,
+   "afterLen": 6329
+  },
+  {
+   "r": "/업무사례/경주상속등기법무사",
+   "beforeLen": 3873,
+   "afterLen": 3872
+  },
+  {
+   "r": "/업무사례/경주오래된토지상속등기",
+   "beforeLen": 6357,
+   "afterLen": 6356
+  },
+  {
+   "r": "/업무사례/고령성주상속등기법무사",
+   "beforeLen": 7472,
+   "afterLen": 7471
+  },
+  {
+   "r": "/업무사례/고성군상속등기법무사",
+   "beforeLen": 6939,
+   "afterLen": 6938
+  },
+  {
+   "r": "/업무사례/고양상속등기법무사",
+   "beforeLen": 6207,
+   "afterLen": 6206
+  },
+  {
+   "r": "/업무사례/공주상속등기법무사",
+   "beforeLen": 7618,
+   "afterLen": 7617
+  },
+  {
+   "r": "/업무사례/관악구상속등기법무사",
+   "beforeLen": 6372,
+   "afterLen": 6371
+  },
+  {
+   "r": "/업무사례/광교상속등기법무사",
+   "beforeLen": 6391,
+   "afterLen": 6390
+  },
+  {
+   "r": "/업무사례/광명상속등기법무사",
+   "beforeLen": 6199,
+   "afterLen": 6198
+  },
+  {
+   "r": "/업무사례/광양상속등기법무사",
+   "beforeLen": 6495,
+   "afterLen": 6494
+  },
+  {
+   "r": "/업무사례/광주상속등기법무사",
+   "beforeLen": 5724,
+   "afterLen": 5723
+  },
+  {
+   "r": "/업무사례/구로구상속등기법무사",
+   "beforeLen": 6430,
+   "afterLen": 6429
+  },
+  {
+   "r": "/업무사례/구리상속등기법무사",
+   "beforeLen": 6450,
+   "afterLen": 6449
+  },
+  {
+   "r": "/업무사례/구미상속등기법무사",
+   "beforeLen": 3500,
+   "afterLen": 3499
+  },
+  {
+   "r": "/업무사례/구미에서부산법인본점이전",
+   "beforeLen": 4664,
+   "afterLen": 4663
+  },
+  {
+   "r": "/업무사례/군산상속등기법무사",
+   "beforeLen": 6176,
+   "afterLen": 6175
+  },
+  {
+   "r": "/업무사례/군포상속등기법무사",
+   "beforeLen": 7824,
+   "afterLen": 7823
+  },
+  {
+   "r": "/업무사례/금정구법무사",
+   "beforeLen": 4991,
+   "afterLen": 4990
+  },
+  {
+   "r": "/업무사례/기장군법무사",
+   "beforeLen": 4961,
+   "afterLen": 4960
+  },
+  {
+   "r": "/업무사례/김천상속등기법무사",
+   "beforeLen": 5355,
+   "afterLen": 5354
+  },
+  {
+   "r": "/업무사례/김포상속등기법무사",
+   "beforeLen": 6215,
+   "afterLen": 6214
+  },
+  {
+   "r": "/업무사례/김해거주부산부동산상속",
+   "beforeLen": 5289,
+   "afterLen": 5288
+  },
+  {
+   "r": "/업무사례/김해법인등기법무사",
+   "beforeLen": 4492,
+   "afterLen": 4491
+  },
+  {
+   "r": "/업무사례/김해상속등기법무사",
+   "beforeLen": 3915,
+   "afterLen": 3914
+  },
+  {
+   "r": "/업무사례/김해상속등기비용",
+   "beforeLen": 5244,
+   "afterLen": 5243
+  },
+  {
+   "r": "/업무사례/김해상속등기필요서류",
+   "beforeLen": 5469,
+   "afterLen": 5468
+  },
+  {
+   "r": "/업무사례/김해에서부산법인본점이전",
+   "beforeLen": 4500,
+   "afterLen": 4499
+  },
+  {
+   "r": "/업무사례/나주정읍상속등기법무사",
+   "beforeLen": 7636,
+   "afterLen": 7635
+  },
+  {
+   "r": "/업무사례/남구법무사",
+   "beforeLen": 4896,
+   "afterLen": 4895
+  },
+  {
+   "r": "/업무사례/남동구상속등기법무사",
+   "beforeLen": 6144,
+   "afterLen": 6143
+  },
+  {
+   "r": "/업무사례/남양주상속등기법무사",
+   "beforeLen": 6217,
+   "afterLen": 6216
+  },
+  {
+   "r": "/업무사례/남원상속등기법무사",
+   "beforeLen": 7615,
+   "afterLen": 7614
+  },
+  {
+   "r": "/업무사례/남해상속등기법무사",
+   "beforeLen": 6844,
+   "afterLen": 6843
+  },
+  {
+   "r": "/업무사례/노원구상속등기법무사",
+   "beforeLen": 6173,
+   "afterLen": 6172
+  },
+  {
+   "r": "/업무사례/당진상속등기법무사",
+   "beforeLen": 6337,
+   "afterLen": 6336
+  },
+  {
+   "r": "/업무사례/대구경북공동담보등기",
+   "beforeLen": 4721,
+   "afterLen": 4720
+  },
+  {
+   "r": "/업무사례/대구군위군상속등기법무사",
+   "beforeLen": 5342,
+   "afterLen": 5341
+  },
+  {
+   "r": "/업무사례/대구남구상속등기법무사",
+   "beforeLen": 5499,
+   "afterLen": 5498
+  },
+  {
+   "r": "/업무사례/대구다사상속등기",
+   "beforeLen": 5349,
+   "afterLen": 5348
+  },
+  {
+   "r": "/업무사례/대구달서구상속등기법무사",
+   "beforeLen": 6460,
+   "afterLen": 6459
+  },
+  {
+   "r": "/업무사례/대구달성군상속등기법무사",
+   "beforeLen": 5468,
+   "afterLen": 5467
+  },
+  {
+   "r": "/업무사례/대구동구상속등기법무사",
+   "beforeLen": 5505,
+   "afterLen": 5504
+  },
+  {
+   "r": "/업무사례/대구만촌동상속등기",
+   "beforeLen": 5243,
+   "afterLen": 5242
+  },
+  {
+   "r": "/업무사례/대구범어동상속등기",
+   "beforeLen": 5511,
+   "afterLen": 5510
+  },
+  {
+   "r": "/업무사례/대구법무사업무",
+   "beforeLen": 6030,
+   "afterLen": 6029
+  },
+  {
+   "r": "/업무사례/대구부산공동근저당권",
+   "beforeLen": 4641,
+   "afterLen": 4640
+  },
+  {
+   "r": "/업무사례/대구북구상속등기법무사",
+   "beforeLen": 5308,
+   "afterLen": 5307
+  },
+  {
+   "r": "/업무사례/대구상속등기법무사",
+   "beforeLen": 3868,
+   "afterLen": 3867
+  },
+  {
+   "r": "/업무사례/대구상속등기비용",
+   "beforeLen": 5511,
+   "afterLen": 5510
+  },
+  {
+   "r": "/업무사례/대구상속등기필요서류",
+   "beforeLen": 5442,
+   "afterLen": 5441
+  },
+  {
+   "r": "/업무사례/대구상인동상속등기",
+   "beforeLen": 5393,
+   "afterLen": 5392
+  },
+  {
+   "r": "/업무사례/대구서구상속등기법무사",
+   "beforeLen": 5313,
+   "afterLen": 5312
+  },
+  {
+   "r": "/업무사례/대구성서상속등기",
+   "beforeLen": 5428,
+   "afterLen": 5427
+  },
+  {
+   "r": "/업무사례/대구수성구상속등기법무사",
+   "beforeLen": 6204,
+   "afterLen": 6203
+  },
+  {
+   "r": "/업무사례/대구시지상속등기",
+   "beforeLen": 5227,
+   "afterLen": 5226
+  },
+  {
+   "r": "/업무사례/대구아파트상속등기",
+   "beforeLen": 5338,
+   "afterLen": 5337
+  },
+  {
+   "r": "/업무사례/대구에서부산법인본점이전",
+   "beforeLen": 4572,
+   "afterLen": 4571
+  },
+  {
+   "r": "/업무사례/대구월성동상속등기",
+   "beforeLen": 5404,
+   "afterLen": 5403
+  },
+  {
+   "r": "/업무사례/대구유증등기법무사",
+   "beforeLen": 5373,
+   "afterLen": 5372
+  },
+  {
+   "r": "/업무사례/대구중구상속등기법무사",
+   "beforeLen": 5592,
+   "afterLen": 5591
+  },
+  {
+   "r": "/업무사례/대구토지상속등기",
+   "beforeLen": 5431,
+   "afterLen": 5430
+  },
+  {
+   "r": "/업무사례/대구현풍상속등기",
+   "beforeLen": 5411,
+   "afterLen": 5410
+  },
+  {
+   "r": "/업무사례/대전상속등기법무사",
+   "beforeLen": 4281,
+   "afterLen": 4280
+  },
+  {
+   "r": "/업무사례/대전서구상속등기법무사",
+   "beforeLen": 6455,
+   "afterLen": 6454
+  },
+  {
+   "r": "/업무사례/대전유성구상속등기법무사",
+   "beforeLen": 6170,
+   "afterLen": 6169
+  },
+  {
+   "r": "/업무사례/동구법무사",
+   "beforeLen": 4941,
+   "afterLen": 4940
+  },
+  {
+   "r": "/업무사례/동래구법무사",
+   "beforeLen": 5010,
+   "afterLen": 5009
+  },
+  {
+   "r": "/업무사례/동탄상속등기법무사",
+   "beforeLen": 6094,
+   "afterLen": 6093
+  },
+  {
+   "r": "/업무사례/동해삼척상속등기법무사",
+   "beforeLen": 7676,
+   "afterLen": 7675
+  },
+  {
+   "r": "/업무사례/마산합포구상속등기법무사",
+   "beforeLen": 5390,
+   "afterLen": 5389
+  },
+  {
+   "r": "/업무사례/마산회원구상속등기법무사",
+   "beforeLen": 5509,
+   "afterLen": 5508
+  },
+  {
+   "r": "/업무사례/마포구상속등기법무사",
+   "beforeLen": 6254,
+   "afterLen": 6253
+  },
+  {
+   "r": "/업무사례/목포상속등기법무사",
+   "beforeLen": 6196,
+   "afterLen": 6195
+  },
+  {
+   "r": "/업무사례/문경상속등기법무사",
+   "beforeLen": 6874,
+   "afterLen": 6873
+  },
+  {
+   "r": "/업무사례/물금상속등기법무사",
+   "beforeLen": 5502,
+   "afterLen": 5501
+  },
+  {
+   "r": "/업무사례/밀양상속등기법무사",
+   "beforeLen": 3484,
+   "afterLen": 3483
+  },
+  {
+   "r": "/업무사례/부산BIFC법무사",
+   "beforeLen": 4701,
+   "afterLen": 4700
+  },
+  {
+   "r": "/업무사례/부산가덕도법무사",
+   "beforeLen": 4856,
+   "afterLen": 4855
+  },
+  {
+   "r": "/업무사례/부산가덕도신공항법무사",
+   "beforeLen": 4883,
+   "afterLen": 4882
+  },
+  {
+   "r": "/업무사례/부산가락동법무사",
+   "beforeLen": 4839,
+   "afterLen": 4838
+  },
+  {
+   "r": "/업무사례/부산가야동법무사",
+   "beforeLen": 4687,
+   "afterLen": 4686
+  },
+  {
+   "r": "/업무사례/부산가야역법무사",
+   "beforeLen": 4795,
+   "afterLen": 4794
+  },
+  {
+   "r": "/업무사례/부산가정법원법무사",
+   "beforeLen": 4861,
+   "afterLen": 4860
+  },
+  {
+   "r": "/업무사례/부산감만동법무사",
+   "beforeLen": 4663,
+   "afterLen": 4662
+  },
+  {
+   "r": "/업무사례/부산감전동법무사",
+   "beforeLen": 4673,
+   "afterLen": 4672
+  },
+  {
+   "r": "/업무사례/부산감천동법무사",
+   "beforeLen": 4750,
+   "afterLen": 4749
+  },
+  {
+   "r": "/업무사례/부산감천문화마을법무사",
+   "beforeLen": 4800,
+   "afterLen": 4799
+  },
+  {
+   "r": "/업무사례/부산강동동법무사",
+   "beforeLen": 4664,
+   "afterLen": 4663
+  },
+  {
+   "r": "/업무사례/부산강서서부지원법무사",
+   "beforeLen": 4880,
+   "afterLen": 4879
+  },
+  {
+   "r": "/업무사례/부산강서해성산업단지법무사",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/업무사례/부산개금동법무사",
+   "beforeLen": 4869,
+   "afterLen": 4868
+  },
+  {
+   "r": "/업무사례/부산개금역법무사",
+   "beforeLen": 4629,
+   "afterLen": 4628
+  },
+  {
+   "r": "/업무사례/부산거제1동법무사",
+   "beforeLen": 4900,
+   "afterLen": 4899
+  },
+  {
+   "r": "/업무사례/부산거제2동법무사",
+   "beforeLen": 4870,
+   "afterLen": 4869
+  },
+  {
+   "r": "/업무사례/부산거제3동법무사",
+   "beforeLen": 4818,
+   "afterLen": 4817
+  },
+  {
+   "r": "/업무사례/부산거제4동법무사",
+   "beforeLen": 4838,
+   "afterLen": 4837
+  },
+  {
+   "r": "/업무사례/부산거제동법무사",
+   "beforeLen": 4665,
+   "afterLen": 4664
+  },
+  {
+   "r": "/업무사례/부산거제동법원법무사",
+   "beforeLen": 4897,
+   "afterLen": 4896
+  },
+  {
+   "r": "/업무사례/부산거제역법무사",
+   "beforeLen": 4784,
+   "afterLen": 4783
+  },
+  {
+   "r": "/업무사례/부산거주김해부동산상속",
+   "beforeLen": 5377,
+   "afterLen": 5376
+  },
+  {
+   "r": "/업무사례/부산거주양산부동산상속",
+   "beforeLen": 5331,
+   "afterLen": 5330
+  },
+  {
+   "r": "/업무사례/부산경성대법무사",
+   "beforeLen": 4716,
+   "afterLen": 4715
+  },
+  {
+   "r": "/업무사례/부산고등법원법무사",
+   "beforeLen": 4787,
+   "afterLen": 4786
+  },
+  {
+   "r": "/업무사례/부산과학기술대학교법무사",
+   "beforeLen": 4806,
+   "afterLen": 4805
+  },
+  {
+   "r": "/업무사례/부산광복동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/업무사례/부산광안1동법무사",
+   "beforeLen": 4742,
+   "afterLen": 4741
+  },
+  {
+   "r": "/업무사례/부산광안2동법무사",
+   "beforeLen": 4911,
+   "afterLen": 4910
+  },
+  {
+   "r": "/업무사례/부산광안3동법무사",
+   "beforeLen": 4888,
+   "afterLen": 4887
+  },
+  {
+   "r": "/업무사례/부산광안4동법무사",
+   "beforeLen": 4833,
+   "afterLen": 4832
+  },
+  {
+   "r": "/업무사례/부산광안대교법무사",
+   "beforeLen": 4847,
+   "afterLen": 4846
+  },
+  {
+   "r": "/업무사례/부산광안동법무사",
+   "beforeLen": 4815,
+   "afterLen": 4814
+  },
+  {
+   "r": "/업무사례/부산광안리법무사",
+   "beforeLen": 4675,
+   "afterLen": 4674
+  },
+  {
+   "r": "/업무사례/부산광안역법무사",
+   "beforeLen": 4800,
+   "afterLen": 4799
+  },
+  {
+   "r": "/업무사례/부산괘법동법무사",
+   "beforeLen": 4761,
+   "afterLen": 4760
+  },
+  {
+   "r": "/업무사례/부산괘법르네시떼역법무사",
+   "beforeLen": 4778,
+   "afterLen": 4777
+  },
+  {
+   "r": "/업무사례/부산괴정동법무사",
+   "beforeLen": 4944,
+   "afterLen": 4943
+  },
+  {
+   "r": "/업무사례/부산교대역법무사",
+   "beforeLen": 4793,
+   "afterLen": 4792
+  },
+  {
+   "r": "/업무사례/부산구랑동법무사",
+   "beforeLen": 4787,
+   "afterLen": 4786
+  },
+  {
+   "r": "/업무사례/부산구서동법무사",
+   "beforeLen": 4674,
+   "afterLen": 4673
+  },
+  {
+   "r": "/업무사례/부산구서역법무사",
+   "beforeLen": 4796,
+   "afterLen": 4795
+  },
+  {
+   "r": "/업무사례/부산구평동법무사",
+   "beforeLen": 4928,
+   "afterLen": 4927
+  },
+  {
+   "r": "/업무사례/부산구포동법무사",
+   "beforeLen": 4680,
+   "afterLen": 4679
+  },
+  {
+   "r": "/업무사례/부산구포시장법무사",
+   "beforeLen": 4765,
+   "afterLen": 4764
+  },
+  {
+   "r": "/업무사례/부산구포역법무사",
+   "beforeLen": 4729,
+   "afterLen": 4728
+  },
+  {
+   "r": "/업무사례/부산국립해양박물관법무사",
+   "beforeLen": 4875,
+   "afterLen": 4874
+  },
+  {
+   "r": "/업무사례/부산국제금융센터법무사",
+   "beforeLen": 4832,
+   "afterLen": 4831
+  },
+  {
+   "r": "/업무사례/부산국제산업물류도시법무사",
+   "beforeLen": 4907,
+   "afterLen": 4906
+  },
+  {
+   "r": "/업무사례/부산국제시장법무사",
+   "beforeLen": 4822,
+   "afterLen": 4821
+  },
+  {
+   "r": "/업무사례/부산근대역사관법무사",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/업무사례/부산금곡도시첨단산업단지법무사",
+   "beforeLen": 4909,
+   "afterLen": 4908
+  },
+  {
+   "r": "/업무사례/부산금곡동법무사",
+   "beforeLen": 4802,
+   "afterLen": 4801
+  },
+  {
+   "r": "/업무사례/부산금곡역법무사",
+   "beforeLen": 4780,
+   "afterLen": 4779
+  },
+  {
+   "r": "/업무사례/부산금련산역법무사",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/업무사례/부산금사공업지역법무사",
+   "beforeLen": 4836,
+   "afterLen": 4835
+  },
+  {
+   "r": "/업무사례/부산금사동법무사",
+   "beforeLen": 4856,
+   "afterLen": 4855
+  },
+  {
+   "r": "/업무사례/부산금성동법무사",
+   "beforeLen": 4867,
+   "afterLen": 4866
+  },
+  {
+   "r": "/업무사례/부산금정구청법무사",
+   "beforeLen": 4830,
+   "afterLen": 4829
+  },
+  {
+   "r": "/업무사례/부산기장군청법무사",
+   "beforeLen": 4798,
+   "afterLen": 4797
+  },
+  {
+   "r": "/업무사례/부산기장시장법무사",
+   "beforeLen": 4783,
+   "afterLen": 4782
+  },
+  {
+   "r": "/업무사례/부산기장역법무사",
+   "beforeLen": 4799,
+   "afterLen": 4798
+  },
+  {
+   "r": "/업무사례/부산기장읍법무사",
+   "beforeLen": 4827,
+   "afterLen": 4826
+  },
+  {
+   "r": "/업무사례/부산김해양산공동근저당권",
+   "beforeLen": 4648,
+   "afterLen": 4647
+  },
+  {
+   "r": "/업무사례/부산낙민동법무사",
+   "beforeLen": 4818,
+   "afterLen": 4817
+  },
+  {
+   "r": "/업무사례/부산남부민동법무사",
+   "beforeLen": 4698,
+   "afterLen": 4697
+  },
+  {
+   "r": "/업무사례/부산남산동법무사",
+   "beforeLen": 4849,
+   "afterLen": 4848
+  },
+  {
+   "r": "/업무사례/부산남산역법무사",
+   "beforeLen": 4615,
+   "afterLen": 4614
+  },
+  {
+   "r": "/업무사례/부산남천1동법무사",
+   "beforeLen": 4921,
+   "afterLen": 4920
+  },
+  {
+   "r": "/업무사례/부산남천2동법무사",
+   "beforeLen": 4882,
+   "afterLen": 4881
+  },
+  {
+   "r": "/업무사례/부산남천동법무사",
+   "beforeLen": 4882,
+   "afterLen": 4881
+  },
+  {
+   "r": "/업무사례/부산남천역법무사",
+   "beforeLen": 4618,
+   "afterLen": 4617
+  },
+  {
+   "r": "/업무사례/부산남포동법무사",
+   "beforeLen": 4853,
+   "afterLen": 4852
+  },
+  {
+   "r": "/업무사례/부산남항동법무사",
+   "beforeLen": 4896,
+   "afterLen": 4895
+  },
+  {
+   "r": "/업무사례/부산낫개역법무사",
+   "beforeLen": 4813,
+   "afterLen": 4812
+  },
+  {
+   "r": "/업무사례/부산냉정역법무사",
+   "beforeLen": 4738,
+   "afterLen": 4737
+  },
+  {
+   "r": "/업무사례/부산노포동법무사",
+   "beforeLen": 4667,
+   "afterLen": 4666
+  },
+  {
+   "r": "/업무사례/부산노포역법무사",
+   "beforeLen": 4798,
+   "afterLen": 4797
+  },
+  {
+   "r": "/업무사례/부산녹산국가산업단지법무사",
+   "beforeLen": 4864,
+   "afterLen": 4863
+  },
+  {
+   "r": "/업무사례/부산녹산동법무사",
+   "beforeLen": 4858,
+   "afterLen": 4857
+  },
+  {
+   "r": "/업무사례/부산눌차동법무사",
+   "beforeLen": 4838,
+   "afterLen": 4837
+  },
+  {
+   "r": "/업무사례/부산다대동법무사",
+   "beforeLen": 4736,
+   "afterLen": 4735
+  },
+  {
+   "r": "/업무사례/부산다대포법무사",
+   "beforeLen": 4780,
+   "afterLen": 4779
+  },
+  {
+   "r": "/업무사례/부산다대포해수욕장역법무사",
+   "beforeLen": 4746,
+   "afterLen": 4745
+  },
+  {
+   "r": "/업무사례/부산달맞이길법무사",
+   "beforeLen": 4878,
+   "afterLen": 4877
+  },
+  {
+   "r": "/업무사례/부산당감동법무사",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/업무사례/부산당리동법무사",
+   "beforeLen": 4855,
+   "afterLen": 4854
+  },
+  {
+   "r": "/업무사례/부산대교동법무사",
+   "beforeLen": 4691,
+   "afterLen": 4690
+  },
+  {
+   "r": "/업무사례/부산대법무사",
+   "beforeLen": 4757,
+   "afterLen": 4756
+  },
+  {
+   "r": "/업무사례/부산대역법무사",
+   "beforeLen": 4745,
+   "afterLen": 4744
+  },
+  {
+   "r": "/업무사례/부산대연동법무사",
+   "beforeLen": 4662,
+   "afterLen": 4661
+  },
+  {
+   "r": "/업무사례/부산대연역법무사",
+   "beforeLen": 4729,
+   "afterLen": 4728
+  },
+  {
+   "r": "/업무사례/부산대연혁신지구법무사",
+   "beforeLen": 4799,
+   "afterLen": 4798
+  },
+  {
+   "r": "/업무사례/부산대저동법무사",
+   "beforeLen": 4830,
+   "afterLen": 4829
+  },
+  {
+   "r": "/업무사례/부산대창동법무사",
+   "beforeLen": 4902,
+   "afterLen": 4901
+  },
+  {
+   "r": "/업무사례/부산대청동법무사",
+   "beforeLen": 4877,
+   "afterLen": 4876
+  },
+  {
+   "r": "/업무사례/부산대평동법무사",
+   "beforeLen": 4902,
+   "afterLen": 4901
+  },
+  {
+   "r": "/업무사례/부산대학병원법무사",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/업무사례/부산대항동법무사",
+   "beforeLen": 4858,
+   "afterLen": 4857
+  },
+  {
+   "r": "/업무사례/부산덕천동법무사",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/업무사례/부산덕천역법무사",
+   "beforeLen": 4695,
+   "afterLen": 4694
+  },
+  {
+   "r": "/업무사례/부산덕포동법무사",
+   "beforeLen": 4736,
+   "afterLen": 4735
+  },
+  {
+   "r": "/업무사례/부산동광동법무사",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/업무사례/부산동남권방사선의과학산업단지법무사",
+   "beforeLen": 4997,
+   "afterLen": 4996
+  },
+  {
+   "r": "/업무사례/부산동대신동법무사",
+   "beforeLen": 4840,
+   "afterLen": 4839
+  },
+  {
+   "r": "/업무사례/부산동래구청법무사",
+   "beforeLen": 4778,
+   "afterLen": 4777
+  },
+  {
+   "r": "/업무사례/부산동래문화회관법무사",
+   "beforeLen": 4868,
+   "afterLen": 4867
+  },
+  {
+   "r": "/업무사례/부산동래시장법무사",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/업무사례/부산동래역법무사",
+   "beforeLen": 4817,
+   "afterLen": 4816
+  },
+  {
+   "r": "/업무사례/부산동매역법무사",
+   "beforeLen": 4788,
+   "afterLen": 4787
+  },
+  {
+   "r": "/업무사례/부산동부산관광단지법무사",
+   "beforeLen": 4803,
+   "afterLen": 4802
+  },
+  {
+   "r": "/업무사례/부산동부산롯데아울렛법무사",
+   "beforeLen": 4733,
+   "afterLen": 4732
+  },
+  {
+   "r": "/업무사례/부산동부지원법무사",
+   "beforeLen": 4647,
+   "afterLen": 4646
+  },
+  {
+   "r": "/업무사례/부산동삼동법무사",
+   "beforeLen": 4886,
+   "afterLen": 4885
+  },
+  {
+   "r": "/업무사례/부산동삼혁신지구법무사",
+   "beforeLen": 4830,
+   "afterLen": 4829
+  },
+  {
+   "r": "/업무사례/부산동선동법무사",
+   "beforeLen": 4796,
+   "afterLen": 4795
+  },
+  {
+   "r": "/업무사례/부산동아대병원법무사",
+   "beforeLen": 4871,
+   "afterLen": 4870
+  },
+  {
+   "r": "/업무사례/부산동의대역법무사",
+   "beforeLen": 4846,
+   "afterLen": 4845
+  },
+  {
+   "r": "/업무사례/부산두구동법무사",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/업무사례/부산두실역법무사",
+   "beforeLen": 4789,
+   "afterLen": 4788
+  },
+  {
+   "r": "/업무사례/부산등기국법무사",
+   "beforeLen": 4820,
+   "afterLen": 4819
+  },
+  {
+   "r": "/업무사례/부산롯데월드어드벤처법무사",
+   "beforeLen": 4909,
+   "afterLen": 4908
+  },
+  {
+   "r": "/업무사례/부산마린시티법무사",
+   "beforeLen": 4890,
+   "afterLen": 4889
+  },
+  {
+   "r": "/업무사례/부산만덕동법무사",
+   "beforeLen": 4802,
+   "afterLen": 4801
+  },
+  {
+   "r": "/업무사례/부산만덕역법무사",
+   "beforeLen": 4783,
+   "afterLen": 4782
+  },
+  {
+   "r": "/업무사례/부산망미1동법무사",
+   "beforeLen": 4739,
+   "afterLen": 4738
+  },
+  {
+   "r": "/업무사례/부산망미2동법무사",
+   "beforeLen": 4914,
+   "afterLen": 4913
+  },
+  {
+   "r": "/업무사례/부산망미단길법무사",
+   "beforeLen": 4661,
+   "afterLen": 4660
+  },
+  {
+   "r": "/업무사례/부산망미동법무사",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/업무사례/부산망미역법무사",
+   "beforeLen": 4757,
+   "afterLen": 4756
+  },
+  {
+   "r": "/업무사례/부산명동산업단지법무사",
+   "beforeLen": 4810,
+   "afterLen": 4809
+  },
+  {
+   "r": "/업무사례/부산명례산업단지법무사",
+   "beforeLen": 4776,
+   "afterLen": 4775
+  },
+  {
+   "r": "/업무사례/부산명륜동법무사",
+   "beforeLen": 4811,
+   "afterLen": 4810
+  },
+  {
+   "r": "/업무사례/부산명서산업단지법무사",
+   "beforeLen": 4855,
+   "afterLen": 4854
+  },
+  {
+   "r": "/업무사례/부산명장동법무사",
+   "beforeLen": 4681,
+   "afterLen": 4680
+  },
+  {
+   "r": "/업무사례/부산명지국제신도시법무사",
+   "beforeLen": 4823,
+   "afterLen": 4822
+  },
+  {
+   "r": "/업무사례/부산명지동법무사",
+   "beforeLen": 4845,
+   "afterLen": 4844
+  },
+  {
+   "r": "/업무사례/부산명지법무사",
+   "beforeLen": 4756,
+   "afterLen": 4755
+  },
+  {
+   "r": "/업무사례/부산모라도시첨단산업단지법무사",
+   "beforeLen": 4896,
+   "afterLen": 4895
+  },
+  {
+   "r": "/업무사례/부산모라동법무사",
+   "beforeLen": 4786,
+   "afterLen": 4785
+  },
+  {
+   "r": "/업무사례/부산못골역법무사",
+   "beforeLen": 4775,
+   "afterLen": 4774
+  },
+  {
+   "r": "/업무사례/부산문현금융단지법무사",
+   "beforeLen": 4831,
+   "afterLen": 4830
+  },
+  {
+   "r": "/업무사례/부산문현동법무사",
+   "beforeLen": 4791,
+   "afterLen": 4790
+  },
+  {
+   "r": "/업무사례/부산문현역법무사",
+   "beforeLen": 4601,
+   "afterLen": 4600
+  },
+  {
+   "r": "/업무사례/부산미남역법무사",
+   "beforeLen": 4627,
+   "afterLen": 4626
+  },
+  {
+   "r": "/업무사례/부산미음동법무사",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/업무사례/부산미음산업단지법무사",
+   "beforeLen": 4658,
+   "afterLen": 4657
+  },
+  {
+   "r": "/업무사례/부산미포법무사",
+   "beforeLen": 4767,
+   "afterLen": 4766
+  },
+  {
+   "r": "/업무사례/부산민락동법무사",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/업무사례/부산민락수변공원법무사",
+   "beforeLen": 4941,
+   "afterLen": 4940
+  },
+  {
+   "r": "/업무사례/부산민락항법무사",
+   "beforeLen": 4785,
+   "afterLen": 4784
+  },
+  {
+   "r": "/업무사례/부산반룡산업단지법무사",
+   "beforeLen": 4867,
+   "afterLen": 4866
+  },
+  {
+   "r": "/업무사례/부산반송1동법무사",
+   "beforeLen": 4738,
+   "afterLen": 4737
+  },
+  {
+   "r": "/업무사례/부산반송2동법무사",
+   "beforeLen": 4931,
+   "afterLen": 4930
+  },
+  {
+   "r": "/업무사례/부산반송동법무사",
+   "beforeLen": 4834,
+   "afterLen": 4833
+  },
+  {
+   "r": "/업무사례/부산반여1동법무사",
+   "beforeLen": 4897,
+   "afterLen": 4896
+  },
+  {
+   "r": "/업무사례/부산반여2동법무사",
+   "beforeLen": 4740,
+   "afterLen": 4739
+  },
+  {
+   "r": "/업무사례/부산반여3동법무사",
+   "beforeLen": 4929,
+   "afterLen": 4928
+  },
+  {
+   "r": "/업무사례/부산반여4동법무사",
+   "beforeLen": 4898,
+   "afterLen": 4897
+  },
+  {
+   "r": "/업무사례/부산반여농산물시장법무사",
+   "beforeLen": 4793,
+   "afterLen": 4792
+  },
+  {
+   "r": "/업무사례/부산반여동법무사",
+   "beforeLen": 4894,
+   "afterLen": 4893
+  },
+  {
+   "r": "/업무사례/부산범방동법무사",
+   "beforeLen": 4842,
+   "afterLen": 4841
+  },
+  {
+   "r": "/업무사례/부산범어사역법무사",
+   "beforeLen": 4797,
+   "afterLen": 4796
+  },
+  {
+   "r": "/업무사례/부산범일동법무사",
+   "beforeLen": 4871,
+   "afterLen": 4870
+  },
+  {
+   "r": "/업무사례/부산범전동법무사",
+   "beforeLen": 4682,
+   "afterLen": 4681
+  },
+  {
+   "r": "/업무사례/부산범천동법무사",
+   "beforeLen": 4682,
+   "afterLen": 4681
+  },
+  {
+   "r": "/업무사례/부산법무사",
+   "beforeLen": 4775,
+   "afterLen": 4774
+  },
+  {
+   "r": "/업무사례/부산법원법무사",
+   "beforeLen": 4778,
+   "afterLen": 4777
+  },
+  {
+   "r": "/업무사례/부산벡스코법무사",
+   "beforeLen": 4785,
+   "afterLen": 4784
+  },
+  {
+   "r": "/업무사례/부산보수동법무사",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/업무사례/부산복천동법무사",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/업무사례/부산봉래동법무사",
+   "beforeLen": 4879,
+   "afterLen": 4878
+  },
+  {
+   "r": "/업무사례/부산봉림동법무사",
+   "beforeLen": 4855,
+   "afterLen": 4854
+  },
+  {
+   "r": "/업무사례/부산부경대법무사",
+   "beforeLen": 4748,
+   "afterLen": 4747
+  },
+  {
+   "r": "/업무사례/부산부곡동법무사",
+   "beforeLen": 4819,
+   "afterLen": 4818
+  },
+  {
+   "r": "/업무사례/부산부민동법무사",
+   "beforeLen": 4873,
+   "afterLen": 4872
+  },
+  {
+   "r": "/업무사례/부산부암동법무사",
+   "beforeLen": 4668,
+   "afterLen": 4667
+  },
+  {
+   "r": "/업무사례/부산부용동법무사",
+   "beforeLen": 4872,
+   "afterLen": 4871
+  },
+  {
+   "r": "/업무사례/부산부전동법무사",
+   "beforeLen": 4861,
+   "afterLen": 4860
+  },
+  {
+   "r": "/업무사례/부산부전시장법무사",
+   "beforeLen": 4646,
+   "afterLen": 4645
+  },
+  {
+   "r": "/업무사례/부산부전역법무사",
+   "beforeLen": 4631,
+   "afterLen": 4630
+  },
+  {
+   "r": "/업무사례/부산부평깡통시장법무사",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/업무사례/부산부평동법무사",
+   "beforeLen": 4887,
+   "afterLen": 4886
+  },
+  {
+   "r": "/업무사례/부산북구청법무사",
+   "beforeLen": 4784,
+   "afterLen": 4783
+  },
+  {
+   "r": "/업무사례/부산북항법무사",
+   "beforeLen": 4784,
+   "afterLen": 4783
+  },
+  {
+   "r": "/업무사례/부산사상공업지역법무사",
+   "beforeLen": 4795,
+   "afterLen": 4794
+  },
+  {
+   "r": "/업무사례/부산사상산업단지법무사",
+   "beforeLen": 4775,
+   "afterLen": 4774
+  },
+  {
+   "r": "/업무사례/부산사상역법무사",
+   "beforeLen": 4792,
+   "afterLen": 4791
+  },
+  {
+   "r": "/업무사례/부산사상재생사업지구법무사",
+   "beforeLen": 4706,
+   "afterLen": 4705
+  },
+  {
+   "r": "/업무사례/부산사직동법무사",
+   "beforeLen": 4898,
+   "afterLen": 4897
+  },
+  {
+   "r": "/업무사례/부산사직야구장법무사",
+   "beforeLen": 4881,
+   "afterLen": 4880
+  },
+  {
+   "r": "/업무사례/부산사직역법무사",
+   "beforeLen": 4751,
+   "afterLen": 4750
+  },
+  {
+   "r": "/업무사례/부산산양산업단지법무사",
+   "beforeLen": 4847,
+   "afterLen": 4846
+  },
+  {
+   "r": "/업무사례/부산삼락동법무사",
+   "beforeLen": 4818,
+   "afterLen": 4817
+  },
+  {
+   "r": "/업무사례/부산삼락생태공원법무사",
+   "beforeLen": 4817,
+   "afterLen": 4816
+  },
+  {
+   "r": "/업무사례/부산생곡동법무사",
+   "beforeLen": 4669,
+   "afterLen": 4668
+  },
+  {
+   "r": "/업무사례/부산생곡산업단지법무사",
+   "beforeLen": 4835,
+   "afterLen": 4834
+  },
+  {
+   "r": "/업무사례/부산서대신동법무사",
+   "beforeLen": 4716,
+   "afterLen": 4715
+  },
+  {
+   "r": "/업무사례/부산서동법무사",
+   "beforeLen": 4833,
+   "afterLen": 4832
+  },
+  {
+   "r": "/업무사례/부산서면1번가법무사",
+   "beforeLen": 4664,
+   "afterLen": 4663
+  },
+  {
+   "r": "/업무사례/부산서면법무사",
+   "beforeLen": 4780,
+   "afterLen": 4779
+  },
+  {
+   "r": "/업무사례/부산서부버스터미널법무사",
+   "beforeLen": 4861,
+   "afterLen": 4860
+  },
+  {
+   "r": "/업무사례/부산서부산권법무사",
+   "beforeLen": 4834,
+   "afterLen": 4833
+  },
+  {
+   "r": "/업무사례/부산서부산복합산업단지법무사",
+   "beforeLen": 4887,
+   "afterLen": 4886
+  },
+  {
+   "r": "/업무사례/부산서부산스마트밸리법무사",
+   "beforeLen": 4842,
+   "afterLen": 4841
+  },
+  {
+   "r": "/업무사례/부산서부시외버스터미널법무사",
+   "beforeLen": 4880,
+   "afterLen": 4879
+  },
+  {
+   "r": "/업무사례/부산서부지원등기과법무사",
+   "beforeLen": 4875,
+   "afterLen": 4874
+  },
+  {
+   "r": "/업무사례/부산서부지원법무사",
+   "beforeLen": 4812,
+   "afterLen": 4811
+  },
+  {
+   "r": "/업무사례/부산석대동법무사",
+   "beforeLen": 4892,
+   "afterLen": 4891
+  },
+  {
+   "r": "/업무사례/부산선동법무사",
+   "beforeLen": 4837,
+   "afterLen": 4836
+  },
+  {
+   "r": "/업무사례/부산성북동법무사",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/업무사례/부산센텀2지구도시첨단산업단지법무사",
+   "beforeLen": 4982,
+   "afterLen": 4981
+  },
+  {
+   "r": "/업무사례/부산센텀2지구법무사",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/업무사례/부산센텀법무사",
+   "beforeLen": 4718,
+   "afterLen": 4717
+  },
+  {
+   "r": "/업무사례/부산센텀시티법무사",
+   "beforeLen": 4764,
+   "afterLen": 4763
+  },
+  {
+   "r": "/업무사례/부산센텀역법무사",
+   "beforeLen": 4741,
+   "afterLen": 4740
+  },
+  {
+   "r": "/업무사례/부산송도해상케이블카법무사",
+   "beforeLen": 4969,
+   "afterLen": 4968
+  },
+  {
+   "r": "/업무사례/부산송도해수욕장법무사",
+   "beforeLen": 4718,
+   "afterLen": 4717
+  },
+  {
+   "r": "/업무사례/부산송정동법무사",
+   "beforeLen": 4736,
+   "afterLen": 4735
+  },
+  {
+   "r": "/업무사례/부산송정역법무사",
+   "beforeLen": 4791,
+   "afterLen": 4790
+  },
+  {
+   "r": "/업무사례/부산송정해수욕장법무사",
+   "beforeLen": 4921,
+   "afterLen": 4920
+  },
+  {
+   "r": "/업무사례/부산수안동법무사",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/업무사례/부산수영교차로법무사",
+   "beforeLen": 4801,
+   "afterLen": 4800
+  },
+  {
+   "r": "/업무사례/부산수영동법무사",
+   "beforeLen": 4817,
+   "afterLen": 4816
+  },
+  {
+   "r": "/업무사례/부산수영역법무사",
+   "beforeLen": 4774,
+   "afterLen": 4773
+  },
+  {
+   "r": "/업무사례/부산수정동법무사",
+   "beforeLen": 4915,
+   "afterLen": 4914
+  },
+  {
+   "r": "/업무사례/부산시민공원법무사",
+   "beforeLen": 4797,
+   "afterLen": 4796
+  },
+  {
+   "r": "/업무사례/부산시청법무사",
+   "beforeLen": 4764,
+   "afterLen": 4763
+  },
+  {
+   "r": "/업무사례/부산시청역법무사",
+   "beforeLen": 4816,
+   "afterLen": 4815
+  },
+  {
+   "r": "/업무사례/부산식만동법무사",
+   "beforeLen": 4842,
+   "afterLen": 4841
+  },
+  {
+   "r": "/업무사례/부산신선동법무사",
+   "beforeLen": 4676,
+   "afterLen": 4675
+  },
+  {
+   "r": "/업무사례/부산신창동법무사",
+   "beforeLen": 4831,
+   "afterLen": 4830
+  },
+  {
+   "r": "/업무사례/부산신평동법무사",
+   "beforeLen": 4859,
+   "afterLen": 4858
+  },
+  {
+   "r": "/업무사례/부산신평역법무사",
+   "beforeLen": 4795,
+   "afterLen": 4794
+  },
+  {
+   "r": "/업무사례/부산신평장림산업단지법무사",
+   "beforeLen": 4716,
+   "afterLen": 4715
+  },
+  {
+   "r": "/업무사례/부산신항법무사",
+   "beforeLen": 4769,
+   "afterLen": 4768
+  },
+  {
+   "r": "/업무사례/부산신호동법무사",
+   "beforeLen": 4837,
+   "afterLen": 4836
+  },
+  {
+   "r": "/업무사례/부산아미동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/업무사례/부산안락동법무사",
+   "beforeLen": 4870,
+   "afterLen": 4869
+  },
+  {
+   "r": "/업무사례/부산암남동법무사",
+   "beforeLen": 4873,
+   "afterLen": 4872
+  },
+  {
+   "r": "/업무사례/부산양정동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/업무사례/부산양정역법무사",
+   "beforeLen": 4796,
+   "afterLen": 4795
+  },
+  {
+   "r": "/업무사례/부산엄궁동법무사",
+   "beforeLen": 4759,
+   "afterLen": 4758
+  },
+  {
+   "r": "/업무사례/부산에서김해법인본점이전",
+   "beforeLen": 4668,
+   "afterLen": 4667
+  },
+  {
+   "r": "/업무사례/부산에서대구법인본점이전",
+   "beforeLen": 4638,
+   "afterLen": 4637
+  },
+  {
+   "r": "/업무사례/부산에서양산법인본점이전",
+   "beforeLen": 4569,
+   "afterLen": 4568
+  },
+  {
+   "r": "/업무사례/부산에서울산법인본점이전",
+   "beforeLen": 4573,
+   "afterLen": 4572
+  },
+  {
+   "r": "/업무사례/부산에서창원법인본점이전",
+   "beforeLen": 4599,
+   "afterLen": 4598
+  },
+  {
+   "r": "/업무사례/부산에코델타시티법무사",
+   "beforeLen": 4864,
+   "afterLen": 4863
+  },
+  {
+   "r": "/업무사례/부산에코장안산업단지법무사",
+   "beforeLen": 4883,
+   "afterLen": 4882
+  },
+  {
+   "r": "/업무사례/부산엘시티법무사",
+   "beforeLen": 4870,
+   "afterLen": 4869
+  },
+  {
+   "r": "/업무사례/부산역법무사",
+   "beforeLen": 4757,
+   "afterLen": 4756
+  },
+  {
+   "r": "/업무사례/부산연구개발특구법무사",
+   "beforeLen": 4661,
+   "afterLen": 4660
+  },
+  {
+   "r": "/업무사례/부산연산1동법무사",
+   "beforeLen": 4864,
+   "afterLen": 4863
+  },
+  {
+   "r": "/업무사례/부산연산2동법무사",
+   "beforeLen": 4680,
+   "afterLen": 4679
+  },
+  {
+   "r": "/업무사례/부산연산3동법무사",
+   "beforeLen": 4891,
+   "afterLen": 4890
+  },
+  {
+   "r": "/업무사례/부산연산4동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/업무사례/부산연산5동법무사",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/업무사례/부산연산6동법무사",
+   "beforeLen": 4844,
+   "afterLen": 4843
+  },
+  {
+   "r": "/업무사례/부산연산8동법무사",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/업무사례/부산연산9동법무사",
+   "beforeLen": 4895,
+   "afterLen": 4894
+  },
+  {
+   "r": "/업무사례/부산연산동법무사",
+   "beforeLen": 4839,
+   "afterLen": 4838
+  },
+  {
+   "r": "/업무사례/부산연산역법무사",
+   "beforeLen": 4627,
+   "afterLen": 4626
+  },
+  {
+   "r": "/업무사례/부산연제구청법무사",
+   "beforeLen": 4818,
+   "afterLen": 4817
+  },
+  {
+   "r": "/업무사례/부산연지동법무사",
+   "beforeLen": 4864,
+   "afterLen": 4863
+  },
+  {
+   "r": "/업무사례/부산영도대교법무사",
+   "beforeLen": 4683,
+   "afterLen": 4682
+  },
+  {
+   "r": "/업무사례/부산영선동법무사",
+   "beforeLen": 4834,
+   "afterLen": 4833
+  },
+  {
+   "r": "/업무사례/부산영주동법무사",
+   "beforeLen": 4864,
+   "afterLen": 4863
+  },
+  {
+   "r": "/업무사례/부산오륜동법무사",
+   "beforeLen": 4849,
+   "afterLen": 4848
+  },
+  {
+   "r": "/업무사례/부산오시리아법무사",
+   "beforeLen": 4765,
+   "afterLen": 4764
+  },
+  {
+   "r": "/업무사례/부산온천동법무사",
+   "beforeLen": 4686,
+   "afterLen": 4685
+  },
+  {
+   "r": "/업무사례/부산온천장법무사",
+   "beforeLen": 4812,
+   "afterLen": 4811
+  },
+  {
+   "r": "/업무사례/부산온천장역법무사",
+   "beforeLen": 4758,
+   "afterLen": 4757
+  },
+  {
+   "r": "/업무사례/부산용당동법무사",
+   "beforeLen": 4791,
+   "afterLen": 4790
+  },
+  {
+   "r": "/업무사례/부산용호동법무사",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/업무사례/부산용호만법무사",
+   "beforeLen": 4696,
+   "afterLen": 4695
+  },
+  {
+   "r": "/업무사례/부산우1동법무사",
+   "beforeLen": 4821,
+   "afterLen": 4820
+  },
+  {
+   "r": "/업무사례/부산우2동법무사",
+   "beforeLen": 4846,
+   "afterLen": 4845
+  },
+  {
+   "r": "/업무사례/부산우3동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/업무사례/부산우동법무사",
+   "beforeLen": 4869,
+   "afterLen": 4868
+  },
+  {
+   "r": "/업무사례/부산우암동법무사",
+   "beforeLen": 4788,
+   "afterLen": 4787
+  },
+  {
+   "r": "/업무사례/부산울산공동근저당권",
+   "beforeLen": 4689,
+   "afterLen": 4688
+  },
+  {
+   "r": "/업무사례/부산율리역법무사",
+   "beforeLen": 4737,
+   "afterLen": 4736
+  },
+  {
+   "r": "/업무사례/부산이기대법무사",
+   "beforeLen": 4775,
+   "afterLen": 4774
+  },
+  {
+   "r": "/업무사례/부산일광신도시법무사",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/업무사례/부산일광역법무사",
+   "beforeLen": 4703,
+   "afterLen": 4702
+  },
+  {
+   "r": "/업무사례/부산일광읍법무사",
+   "beforeLen": 4831,
+   "afterLen": 4830
+  },
+  {
+   "r": "/업무사례/부산일광해수욕장법무사",
+   "beforeLen": 4907,
+   "afterLen": 4906
+  },
+  {
+   "r": "/업무사례/부산자갈치시장법무사",
+   "beforeLen": 4836,
+   "afterLen": 4835
+  },
+  {
+   "r": "/업무사례/부산장림동법무사",
+   "beforeLen": 4915,
+   "afterLen": 4914
+  },
+  {
+   "r": "/업무사례/부산장림역법무사",
+   "beforeLen": 4797,
+   "afterLen": 4796
+  },
+  {
+   "r": "/업무사례/부산장산역법무사",
+   "beforeLen": 4771,
+   "afterLen": 4770
+  },
+  {
+   "r": "/업무사례/부산장안산업단지법무사",
+   "beforeLen": 4763,
+   "afterLen": 4762
+  },
+  {
+   "r": "/업무사례/부산장안읍법무사",
+   "beforeLen": 4811,
+   "afterLen": 4810
+  },
+  {
+   "r": "/업무사례/부산장전동법무사",
+   "beforeLen": 4817,
+   "afterLen": 4816
+  },
+  {
+   "r": "/업무사례/부산장전역법무사",
+   "beforeLen": 4806,
+   "afterLen": 4805
+  },
+  {
+   "r": "/업무사례/부산재송1동법무사",
+   "beforeLen": 4903,
+   "afterLen": 4902
+  },
+  {
+   "r": "/업무사례/부산재송2동법무사",
+   "beforeLen": 4849,
+   "afterLen": 4848
+  },
+  {
+   "r": "/업무사례/부산재송동법무사",
+   "beforeLen": 4884,
+   "afterLen": 4883
+  },
+  {
+   "r": "/업무사례/부산재송역법무사",
+   "beforeLen": 4792,
+   "afterLen": 4791
+  },
+  {
+   "r": "/업무사례/부산전포동법무사",
+   "beforeLen": 4856,
+   "afterLen": 4855
+  },
+  {
+   "r": "/업무사례/부산전포카페거리법무사",
+   "beforeLen": 4912,
+   "afterLen": 4911
+  },
+  {
+   "r": "/업무사례/부산정관농공단지법무사",
+   "beforeLen": 4830,
+   "afterLen": 4829
+  },
+  {
+   "r": "/업무사례/부산정관산업단지법무사",
+   "beforeLen": 4847,
+   "afterLen": 4846
+  },
+  {
+   "r": "/업무사례/부산정관신도시법무사",
+   "beforeLen": 4676,
+   "afterLen": 4675
+  },
+  {
+   "r": "/업무사례/부산정관읍법무사",
+   "beforeLen": 4836,
+   "afterLen": 4835
+  },
+  {
+   "r": "/업무사례/부산좌1동법무사",
+   "beforeLen": 4872,
+   "afterLen": 4871
+  },
+  {
+   "r": "/업무사례/부산좌2동법무사",
+   "beforeLen": 4717,
+   "afterLen": 4716
+  },
+  {
+   "r": "/업무사례/부산좌3동법무사",
+   "beforeLen": 4904,
+   "afterLen": 4903
+  },
+  {
+   "r": "/업무사례/부산좌4동법무사",
+   "beforeLen": 4874,
+   "afterLen": 4873
+  },
+  {
+   "r": "/업무사례/부산좌동법무사",
+   "beforeLen": 4712,
+   "afterLen": 4711
+  },
+  {
+   "r": "/업무사례/부산좌천동법무사",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/업무사례/부산주례동법무사",
+   "beforeLen": 4795,
+   "afterLen": 4794
+  },
+  {
+   "r": "/업무사례/부산주례역법무사",
+   "beforeLen": 4738,
+   "afterLen": 4737
+  },
+  {
+   "r": "/업무사례/부산죽동동법무사",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/업무사례/부산죽림동법무사",
+   "beforeLen": 4845,
+   "afterLen": 4844
+  },
+  {
+   "r": "/업무사례/부산중1동법무사",
+   "beforeLen": 4874,
+   "afterLen": 4873
+  },
+  {
+   "r": "/업무사례/부산중2동법무사",
+   "beforeLen": 4821,
+   "afterLen": 4820
+  },
+  {
+   "r": "/업무사례/부산중동법무사",
+   "beforeLen": 4883,
+   "afterLen": 4882
+  },
+  {
+   "r": "/업무사례/부산중동역법무사",
+   "beforeLen": 4756,
+   "afterLen": 4755
+  },
+  {
+   "r": "/업무사례/부산중앙동법무사",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/업무사례/부산지방법원등기국법무사",
+   "beforeLen": 4890,
+   "afterLen": 4889
+  },
+  {
+   "r": "/업무사례/부산지방법원법무사",
+   "beforeLen": 4835,
+   "afterLen": 4834
+  },
+  {
+   "r": "/업무사례/부산지사과학산업단지법무사",
+   "beforeLen": 4895,
+   "afterLen": 4894
+  },
+  {
+   "r": "/업무사례/부산지사글로벌산업단지법무사",
+   "beforeLen": 4904,
+   "afterLen": 4903
+  },
+  {
+   "r": "/업무사례/부산지사동법무사",
+   "beforeLen": 4670,
+   "afterLen": 4669
+  },
+  {
+   "r": "/업무사례/부산진구법무사",
+   "beforeLen": 5043,
+   "afterLen": 5042
+  },
+  {
+   "r": "/업무사례/부산진역법무사",
+   "beforeLen": 4743,
+   "afterLen": 4742
+  },
+  {
+   "r": "/업무사례/부산진해경제자유구역법무사",
+   "beforeLen": 4901,
+   "afterLen": 4900
+  },
+  {
+   "r": "/업무사례/부산차이나타운법무사",
+   "beforeLen": 4872,
+   "afterLen": 4871
+  },
+  {
+   "r": "/업무사례/부산창선동법무사",
+   "beforeLen": 4866,
+   "afterLen": 4865
+  },
+  {
+   "r": "/업무사례/부산천성동법무사",
+   "beforeLen": 4846,
+   "afterLen": 4845
+  },
+  {
+   "r": "/업무사례/부산철마면법무사",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/업무사례/부산청룡동법무사",
+   "beforeLen": 4854,
+   "afterLen": 4853
+  },
+  {
+   "r": "/업무사례/부산청사포법무사",
+   "beforeLen": 4671,
+   "afterLen": 4670
+  },
+  {
+   "r": "/업무사례/부산청학동법무사",
+   "beforeLen": 4696,
+   "afterLen": 4695
+  },
+  {
+   "r": "/업무사례/부산초량동법무사",
+   "beforeLen": 4811,
+   "afterLen": 4810
+  },
+  {
+   "r": "/업무사례/부산초량역법무사",
+   "beforeLen": 4813,
+   "afterLen": 4812
+  },
+  {
+   "r": "/업무사례/부산초읍동법무사",
+   "beforeLen": 4868,
+   "afterLen": 4867
+  },
+  {
+   "r": "/업무사례/부산초장동법무사",
+   "beforeLen": 4839,
+   "afterLen": 4838
+  },
+  {
+   "r": "/업무사례/부산충무동법무사",
+   "beforeLen": 4824,
+   "afterLen": 4823
+  },
+  {
+   "r": "/업무사례/부산칠산동법무사",
+   "beforeLen": 4853,
+   "afterLen": 4852
+  },
+  {
+   "r": "/업무사례/부산태종대법무사",
+   "beforeLen": 4647,
+   "afterLen": 4646
+  },
+  {
+   "r": "/업무사례/부산토성동법무사",
+   "beforeLen": 4818,
+   "afterLen": 4817
+  },
+  {
+   "r": "/업무사례/부산하단동법무사",
+   "beforeLen": 4882,
+   "afterLen": 4881
+  },
+  {
+   "r": "/업무사례/부산하단역법무사",
+   "beforeLen": 4627,
+   "afterLen": 4626
+  },
+  {
+   "r": "/업무사례/부산하단오거리법무사",
+   "beforeLen": 4802,
+   "afterLen": 4801
+  },
+  {
+   "r": "/업무사례/부산학장공단법무사",
+   "beforeLen": 4756,
+   "afterLen": 4755
+  },
+  {
+   "r": "/업무사례/부산학장동법무사",
+   "beforeLen": 4677,
+   "afterLen": 4676
+  },
+  {
+   "r": "/업무사례/부산항국제여객터미널법무사",
+   "beforeLen": 4900,
+   "afterLen": 4899
+  },
+  {
+   "r": "/업무사례/부산항법무사",
+   "beforeLen": 4765,
+   "afterLen": 4764
+  },
+  {
+   "r": "/업무사례/부산해운대동부지원법무사",
+   "beforeLen": 4842,
+   "afterLen": 4841
+  },
+  {
+   "r": "/업무사례/부산해운대법무사",
+   "beforeLen": 4838,
+   "afterLen": 4837
+  },
+  {
+   "r": "/업무사례/부산해운대역법무사",
+   "beforeLen": 4754,
+   "afterLen": 4753
+  },
+  {
+   "r": "/업무사례/부산해운대해수욕장법무사",
+   "beforeLen": 4962,
+   "afterLen": 4961
+  },
+  {
+   "r": "/업무사례/부산현대미술관법무사",
+   "beforeLen": 4787,
+   "afterLen": 4786
+  },
+  {
+   "r": "/업무사례/부산화명동법무사",
+   "beforeLen": 4826,
+   "afterLen": 4825
+  },
+  {
+   "r": "/업무사례/부산화명신도시법무사",
+   "beforeLen": 4810,
+   "afterLen": 4809
+  },
+  {
+   "r": "/업무사례/부산화명역법무사",
+   "beforeLen": 4688,
+   "afterLen": 4687
+  },
+  {
+   "r": "/업무사례/부산화전동법무사",
+   "beforeLen": 4830,
+   "afterLen": 4829
+  },
+  {
+   "r": "/업무사례/부산화전산업단지법무사",
+   "beforeLen": 4655,
+   "afterLen": 4654
+  },
+  {
+   "r": "/업무사례/부산회동동법무사",
+   "beforeLen": 4877,
+   "afterLen": 4876
+  },
+  {
+   "r": "/업무사례/부산회동석대도시첨단산업단지법무사",
+   "beforeLen": 4776,
+   "afterLen": 4775
+  },
+  {
+   "r": "/업무사례/부산회동석대산업단지법무사",
+   "beforeLen": 4859,
+   "afterLen": 4858
+  },
+  {
+   "r": "/업무사례/부산회생법원법무사",
+   "beforeLen": 4815,
+   "afterLen": 4814
+  },
+  {
+   "r": "/업무사례/부산흰여울문화마을법무사",
+   "beforeLen": 4840,
+   "afterLen": 4839
+  },
+  {
+   "r": "/업무사례/부천상속등기법무사",
+   "beforeLen": 6256,
+   "afterLen": 6255
+  },
+  {
+   "r": "/업무사례/부평구상속등기법무사",
+   "beforeLen": 6210,
+   "afterLen": 6209
+  },
+  {
+   "r": "/업무사례/북구법무사",
+   "beforeLen": 4945,
+   "afterLen": 4944
+  },
+  {
+   "r": "/업무사례/분당상속등기법무사",
+   "beforeLen": 6311,
+   "afterLen": 6310
+  },
+  {
+   "r": "/업무사례/사상구법무사",
+   "beforeLen": 4935,
+   "afterLen": 4934
+  },
+  {
+   "r": "/업무사례/사송상속등기법무사",
+   "beforeLen": 5599,
+   "afterLen": 5598
+  },
+  {
+   "r": "/업무사례/사천상속등기법무사",
+   "beforeLen": 7152,
+   "afterLen": 7151
+  },
+  {
+   "r": "/업무사례/사하구법무사",
+   "beforeLen": 5013,
+   "afterLen": 5012
+  },
+  {
+   "r": "/업무사례/산청상속등기법무사",
+   "beforeLen": 7020,
+   "afterLen": 7019
+  },
+  {
+   "r": "/업무사례/상주상속등기법무사",
+   "beforeLen": 6656,
+   "afterLen": 6655
+  },
+  {
+   "r": "/업무사례/서구법무사",
+   "beforeLen": 4965,
+   "afterLen": 4964
+  },
+  {
+   "r": "/업무사례/서귀포상속등기법무사",
+   "beforeLen": 6239,
+   "afterLen": 6238
+  },
+  {
+   "r": "/업무사례/서산보령상속등기법무사",
+   "beforeLen": 7719,
+   "afterLen": 7718
+  },
+  {
+   "r": "/업무사례/서울상속등기법무사",
+   "beforeLen": 5214,
+   "afterLen": 5213
+  },
+  {
+   "r": "/업무사례/서초구상속등기법무사",
+   "beforeLen": 6282,
+   "afterLen": 6281
+  },
+  {
+   "r": "/업무사례/성남상속등기법무사",
+   "beforeLen": 6094,
+   "afterLen": 6093
+  },
+  {
+   "r": "/업무사례/성동구상속등기법무사",
+   "beforeLen": 6285,
+   "afterLen": 6284
+  },
+  {
+   "r": "/업무사례/세종상속등기법무사",
+   "beforeLen": 5684,
+   "afterLen": 5683
+  },
+  {
+   "r": "/업무사례/속초상속등기법무사",
+   "beforeLen": 6403,
+   "afterLen": 6402
+  },
+  {
+   "r": "/업무사례/송도상속등기법무사",
+   "beforeLen": 6317,
+   "afterLen": 6316
+  },
+  {
+   "r": "/업무사례/송파구상속등기법무사",
+   "beforeLen": 6212,
+   "afterLen": 6211
+  },
+  {
+   "r": "/업무사례/수영구법무사",
+   "beforeLen": 4985,
+   "afterLen": 4984
+  },
+  {
+   "r": "/업무사례/수원상속등기법무사",
+   "beforeLen": 6262,
+   "afterLen": 6261
+  },
+  {
+   "r": "/업무사례/순천상속등기법무사",
+   "beforeLen": 6215,
+   "afterLen": 6214
+  },
+  {
+   "r": "/업무사례/시흥상속등기법무사",
+   "beforeLen": 6638,
+   "afterLen": 6637
+  },
+  {
+   "r": "/업무사례/아산상속등기법무사",
+   "beforeLen": 6187,
+   "afterLen": 6186
+  },
+  {
+   "r": "/업무사례/안동상속등기법무사",
+   "beforeLen": 5328,
+   "afterLen": 5327
+  },
+  {
+   "r": "/업무사례/안동오래된토지상속등기",
+   "beforeLen": 6457,
+   "afterLen": 6456
+  },
+  {
+   "r": "/업무사례/안산상속등기법무사",
+   "beforeLen": 6196,
+   "afterLen": 6195
+  },
+  {
+   "r": "/업무사례/안양상속등기법무사",
+   "beforeLen": 6208,
+   "afterLen": 6207
+  },
+  {
+   "r": "/업무사례/양산개인회생법무사",
+   "beforeLen": 4958,
+   "afterLen": 4957
+  },
+  {
+   "r": "/업무사례/양산거주부산부동산상속",
+   "beforeLen": 5290,
+   "afterLen": 5289
+  },
+  {
+   "r": "/업무사례/양산건물멸실등기",
+   "beforeLen": 4999,
+   "afterLen": 4998
+  },
+  {
+   "r": "/업무사례/양산근저당말소",
+   "beforeLen": 4899,
+   "afterLen": 4898
+  },
+  {
+   "r": "/업무사례/양산법무사업무",
+   "beforeLen": 9398,
+   "afterLen": 9397
+  },
+  {
+   "r": "/업무사례/양산법인등기법무사",
+   "beforeLen": 5742,
+   "afterLen": 5741
+  },
+  {
+   "r": "/업무사례/양산부동산등기법무사",
+   "beforeLen": 5048,
+   "afterLen": 5047
+  },
+  {
+   "r": "/업무사례/양산상속등기법무사",
+   "beforeLen": 4146,
+   "afterLen": 4145
+  },
+  {
+   "r": "/업무사례/양산상속등기비용",
+   "beforeLen": 5230,
+   "afterLen": 5229
+  },
+  {
+   "r": "/업무사례/양산상속등기필요서류",
+   "beforeLen": 5351,
+   "afterLen": 5350
+  },
+  {
+   "r": "/업무사례/양산상속포기한정승인",
+   "beforeLen": 6925,
+   "afterLen": 6924
+  },
+  {
+   "r": "/업무사례/양산신축건물보존등기",
+   "beforeLen": 4966,
+   "afterLen": 4965
+  },
+  {
+   "r": "/업무사례/양산에서부산법인본점이전",
+   "beforeLen": 4578,
+   "afterLen": 4577
+  },
+  {
+   "r": "/업무사례/양산증여등기법무사",
+   "beforeLen": 5624,
+   "afterLen": 5623
+  },
+  {
+   "r": "/업무사례/양주상속등기법무사",
+   "beforeLen": 6328,
+   "afterLen": 6327
+  },
+  {
+   "r": "/업무사례/업무별",
+   "beforeLen": 728,
+   "afterLen": 727
+  },
+  {
+   "r": "/업무사례/여수상속등기법무사",
+   "beforeLen": 6324,
+   "afterLen": 6323
+  },
+  {
+   "r": "/업무사례/여주양평상속등기법무사",
+   "beforeLen": 7805,
+   "afterLen": 7804
+  },
+  {
+   "r": "/업무사례/연제구법무사",
+   "beforeLen": 4927,
+   "afterLen": 4926
+  },
+  {
+   "r": "/업무사례/영덕봉화상속등기법무사",
+   "beforeLen": 7489,
+   "afterLen": 7488
+  },
+  {
+   "r": "/업무사례/영도구법무사",
+   "beforeLen": 4829,
+   "afterLen": 4828
+  },
+  {
+   "r": "/업무사례/영등포구상속등기법무사",
+   "beforeLen": 6238,
+   "afterLen": 6237
+  },
+  {
+   "r": "/업무사례/영종도상속등기법무사",
+   "beforeLen": 6286,
+   "afterLen": 6285
+  },
+  {
+   "r": "/업무사례/영주상속등기법무사",
+   "beforeLen": 6712,
+   "afterLen": 6711
+  },
+  {
+   "r": "/업무사례/영천상속등기법무사",
+   "beforeLen": 6460,
+   "afterLen": 6459
+  },
+  {
+   "r": "/업무사례/예천상속등기법무사",
+   "beforeLen": 5260,
+   "afterLen": 5259
+  },
+  {
+   "r": "/업무사례/오산안성상속등기법무사",
+   "beforeLen": 7557,
+   "afterLen": 7556
+  },
+  {
+   "r": "/업무사례/용산구상속등기법무사",
+   "beforeLen": 6197,
+   "afterLen": 6196
+  },
+  {
+   "r": "/업무사례/용인상속등기법무사",
+   "beforeLen": 4424,
+   "afterLen": 4423
+  },
+  {
+   "r": "/업무사례/울산공장상속등기",
+   "beforeLen": 5574,
+   "afterLen": 5573
+  },
+  {
+   "r": "/업무사례/울산남구상속등기법무사",
+   "beforeLen": 6271,
+   "afterLen": 6270
+  },
+  {
+   "r": "/업무사례/울산달동상속등기",
+   "beforeLen": 5596,
+   "afterLen": 5595
+  },
+  {
+   "r": "/업무사례/울산동구상속등기법무사",
+   "beforeLen": 5651,
+   "afterLen": 5650
+  },
+  {
+   "r": "/업무사례/울산매곡동상속등기",
+   "beforeLen": 5614,
+   "afterLen": 5613
+  },
+  {
+   "r": "/업무사례/울산법무사업무",
+   "beforeLen": 6034,
+   "afterLen": 6033
+  },
+  {
+   "r": "/업무사례/울산북구상속등기법무사",
+   "beforeLen": 5596,
+   "afterLen": 5595
+  },
+  {
+   "r": "/업무사례/울산삼산동상속등기",
+   "beforeLen": 5637,
+   "afterLen": 5636
+  },
+  {
+   "r": "/업무사례/울산상속등기법무사",
+   "beforeLen": 6166,
+   "afterLen": 6165
+  },
+  {
+   "r": "/업무사례/울산상속등기비용",
+   "beforeLen": 5558,
+   "afterLen": 5557
+  },
+  {
+   "r": "/업무사례/울산상속등기필요서류",
+   "beforeLen": 5484,
+   "afterLen": 5483
+  },
+  {
+   "r": "/업무사례/울산송정동상속등기",
+   "beforeLen": 5383,
+   "afterLen": 5382
+  },
+  {
+   "r": "/업무사례/울산아파트상속등기",
+   "beforeLen": 5536,
+   "afterLen": 5535
+  },
+  {
+   "r": "/업무사례/울산에서부산법인본점이전",
+   "beforeLen": 4478,
+   "afterLen": 4477
+  },
+  {
+   "r": "/업무사례/울산옥동상속등기",
+   "beforeLen": 5528,
+   "afterLen": 5527
+  },
+  {
+   "r": "/업무사례/울산유증등기법무사",
+   "beforeLen": 5565,
+   "afterLen": 5564
+  },
+  {
+   "r": "/업무사례/울산중구상속등기법무사",
+   "beforeLen": 5634,
+   "afterLen": 5633
+  },
+  {
+   "r": "/업무사례/울산토지상속등기",
+   "beforeLen": 5515,
+   "afterLen": 5514
+  },
+  {
+   "r": "/업무사례/울주군상속등기법무사",
+   "beforeLen": 6557,
+   "afterLen": 6556
+  },
+  {
+   "r": "/업무사례/울주군상속포기한정승인",
+   "beforeLen": 6745,
+   "afterLen": 6744
+  },
+  {
+   "r": "/업무사례/울주범서상속등기",
+   "beforeLen": 5596,
+   "afterLen": 5595
+  },
+  {
+   "r": "/업무사례/울주삼남상속등기",
+   "beforeLen": 5538,
+   "afterLen": 5537
+  },
+  {
+   "r": "/업무사례/울주언양상속등기",
+   "beforeLen": 5561,
+   "afterLen": 5560
+  },
+  {
+   "r": "/업무사례/울진상속등기법무사",
+   "beforeLen": 6738,
+   "afterLen": 6737
+  },
+  {
+   "r": "/업무사례/원주상속등기법무사",
+   "beforeLen": 6217,
+   "afterLen": 6216
+  },
+  {
+   "r": "/업무사례/율하상속등기법무사",
+   "beforeLen": 5638,
+   "afterLen": 5637
+  },
+  {
+   "r": "/업무사례/은평구상속등기법무사",
+   "beforeLen": 6298,
+   "afterLen": 6297
+  },
+  {
+   "r": "/업무사례/의령상속등기법무사",
+   "beforeLen": 7688,
+   "afterLen": 7687
+  },
+  {
+   "r": "/업무사례/의성상속등기법무사",
+   "beforeLen": 7463,
+   "afterLen": 7462
+  },
+  {
+   "r": "/업무사례/의왕과천상속등기법무사",
+   "beforeLen": 7693,
+   "afterLen": 7692
+  },
+  {
+   "r": "/업무사례/의정부상속등기법무사",
+   "beforeLen": 6184,
+   "afterLen": 6183
+  },
+  {
+   "r": "/업무사례/이천상속등기법무사",
+   "beforeLen": 6404,
+   "afterLen": 6403
+  },
+  {
+   "r": "/업무사례/익산상속등기법무사",
+   "beforeLen": 6112,
+   "afterLen": 6111
+  },
+  {
+   "r": "/업무사례/인천상속등기법무사",
+   "beforeLen": 5871,
+   "afterLen": 5870
+  },
+  {
+   "r": "/업무사례/일산상속등기법무사",
+   "beforeLen": 6278,
+   "afterLen": 6277
+  },
+  {
+   "r": "/업무사례/장유상속등기법무사",
+   "beforeLen": 5561,
+   "afterLen": 5560
+  },
+  {
+   "r": "/업무사례/전국공동근저당권등기",
+   "beforeLen": 5134,
+   "afterLen": 5133
+  },
+  {
+   "r": "/업무사례/전국법인본점이전등기",
+   "beforeLen": 4800,
+   "afterLen": 4799
+  },
+  {
+   "r": "/업무사례/전국비대면법무사",
+   "beforeLen": 5226,
+   "afterLen": 5225
+  },
+  {
+   "r": "/업무사례/전국상속등기법무사",
+   "beforeLen": 6221,
+   "afterLen": 6220
+  },
+  {
+   "r": "/업무사례/전국상속부동산일괄등기",
+   "beforeLen": 6208,
+   "afterLen": 6207
+  },
+  {
+   "r": "/업무사례/전국업무사례",
+   "beforeLen": 6187,
+   "afterLen": 6186
+  },
+  {
+   "r": "/업무사례/전국유증등기법무사",
+   "beforeLen": 5153,
+   "afterLen": 5152
+  },
+  {
+   "r": "/업무사례/전남상속등기법무사",
+   "beforeLen": 5765,
+   "afterLen": 5764
+  },
+  {
+   "r": "/업무사례/전북상속등기법무사",
+   "beforeLen": 5715,
+   "afterLen": 5714
+  },
+  {
+   "r": "/업무사례/전주상속등기법무사",
+   "beforeLen": 6254,
+   "afterLen": 6253
+  },
+  {
+   "r": "/업무사례/제주상속등기법무사",
+   "beforeLen": 6092,
+   "afterLen": 6091
+  },
+  {
+   "r": "/업무사례/제주시상속등기법무사",
+   "beforeLen": 6335,
+   "afterLen": 6334
+  },
+  {
+   "r": "/업무사례/제천상속등기법무사",
+   "beforeLen": 6410,
+   "afterLen": 6409
+  },
+  {
+   "r": "/업무사례/중구법무사",
+   "beforeLen": 4985,
+   "afterLen": 4984
+  },
+  {
+   "r": "/업무사례/증산상속등기법무사",
+   "beforeLen": 5579,
+   "afterLen": 5578
+  },
+  {
+   "r": "/업무사례/지역별",
+   "beforeLen": 2308,
+   "afterLen": 2307
+  },
+  {
+   "r": "/업무사례/지역별상속등기법무사",
+   "beforeLen": 6079,
+   "afterLen": 6078
+  },
+  {
+   "r": "/업무사례/진주상속등기법무사",
+   "beforeLen": 3621,
+   "afterLen": 3620
+  },
+  {
+   "r": "/업무사례/진주상속포기한정승인",
+   "beforeLen": 6638,
+   "afterLen": 6637
+  },
+  {
+   "r": "/업무사례/진해구상속등기법무사",
+   "beforeLen": 5380,
+   "afterLen": 5379
+  },
+  {
+   "r": "/업무사례/창녕상속등기법무사",
+   "beforeLen": 7183,
+   "afterLen": 7182
+  },
+  {
+   "r": "/업무사례/창원법인등기법무사",
+   "beforeLen": 4659,
+   "afterLen": 4658
+  },
+  {
+   "r": "/업무사례/창원상속등기법무사",
+   "beforeLen": 4000,
+   "afterLen": 3999
+  },
+  {
+   "r": "/업무사례/창원상속등기비용",
+   "beforeLen": 5264,
+   "afterLen": 5263
+  },
+  {
+   "r": "/업무사례/창원상속등기필요서류",
+   "beforeLen": 5368,
+   "afterLen": 5367
+  },
+  {
+   "r": "/업무사례/창원성산구상속등기법무사",
+   "beforeLen": 5407,
+   "afterLen": 5406
+  },
+  {
+   "r": "/업무사례/창원에서부산법인본점이전",
+   "beforeLen": 4588,
+   "afterLen": 4587
+  },
+  {
+   "r": "/업무사례/창원의창구상속등기법무사",
+   "beforeLen": 5376,
+   "afterLen": 5375
+  },
+  {
+   "r": "/업무사례/천안상속등기법무사",
+   "beforeLen": 6255,
+   "afterLen": 6254
+  },
+  {
+   "r": "/업무사례/청도상속등기법무사",
+   "beforeLen": 6682,
+   "afterLen": 6681
+  },
+  {
+   "r": "/업무사례/청라상속등기법무사",
+   "beforeLen": 6179,
+   "afterLen": 6178
+  },
+  {
+   "r": "/업무사례/청송영양상속등기법무사",
+   "beforeLen": 7394,
+   "afterLen": 7393
+  },
+  {
+   "r": "/업무사례/청주상속등기법무사",
+   "beforeLen": 6107,
+   "afterLen": 6106
+  },
+  {
+   "r": "/업무사례/춘천상속등기법무사",
+   "beforeLen": 6138,
+   "afterLen": 6137
+  },
+  {
+   "r": "/업무사례/충남상속등기법무사",
+   "beforeLen": 5805,
+   "afterLen": 5804
+  },
+  {
+   "r": "/업무사례/충북상속등기법무사",
+   "beforeLen": 5704,
+   "afterLen": 5703
+  },
+  {
+   "r": "/업무사례/충주상속등기법무사",
+   "beforeLen": 6217,
+   "afterLen": 6216
+  },
+  {
+   "r": "/업무사례/칠곡상속등기법무사",
+   "beforeLen": 5230,
+   "afterLen": 5229
+  },
+  {
+   "r": "/업무사례/타지역법무사의뢰",
+   "beforeLen": 5215,
+   "afterLen": 5214
+  },
+  {
+   "r": "/업무사례/통영상속등기법무사",
+   "beforeLen": 3552,
+   "afterLen": 3551
+  },
+  {
+   "r": "/업무사례/통영상속포기한정승인",
+   "beforeLen": 6318,
+   "afterLen": 6317
+  },
+  {
+   "r": "/업무사례/파주상속등기법무사",
+   "beforeLen": 6203,
+   "afterLen": 6202
+  },
+  {
+   "r": "/업무사례/판교상속등기법무사",
+   "beforeLen": 6423,
+   "afterLen": 6422
+  },
+  {
+   "r": "/업무사례/평택상속등기법무사",
+   "beforeLen": 6177,
+   "afterLen": 6176
+  },
+  {
+   "r": "/업무사례/포천동두천상속등기법무사",
+   "beforeLen": 7777,
+   "afterLen": 7776
+  },
+  {
+   "r": "/업무사례/포항상속등기법무사",
+   "beforeLen": 6411,
+   "afterLen": 6410
+  },
+  {
+   "r": "/업무사례/포항상속포기한정승인",
+   "beforeLen": 6917,
+   "afterLen": 6916
+  },
+  {
+   "r": "/업무사례/포항에서부산법인본점이전",
+   "beforeLen": 4585,
+   "afterLen": 4584
+  },
+  {
+   "r": "/업무사례/하남상속등기법무사",
+   "beforeLen": 6188,
+   "afterLen": 6187
+  },
+  {
+   "r": "/업무사례/하동상속등기법무사",
+   "beforeLen": 6601,
+   "afterLen": 6600
+  },
+  {
+   "r": "/업무사례/함안상속등기법무사",
+   "beforeLen": 7100,
+   "afterLen": 7099
+  },
+  {
+   "r": "/업무사례/함양상속등기법무사",
+   "beforeLen": 6973,
+   "afterLen": 6972
+  },
+  {
+   "r": "/업무사례/합천상속등기법무사",
+   "beforeLen": 6858,
+   "afterLen": 6857
+  },
+  {
+   "r": "/업무사례/해운대구법무사",
+   "beforeLen": 4983,
+   "afterLen": 4982
+  },
+  {
+   "r": "/업무사례/홍천상속등기법무사",
+   "beforeLen": 7604,
+   "afterLen": 7603
+  },
+  {
+   "r": "/업무사례/화성상속등기법무사",
+   "beforeLen": 6244,
+   "afterLen": 6243
+  },
+  {
+   "r": "/업무사례",
+   "beforeLen": 481,
+   "afterLen": 480
+  },
+  {
+   "r": "/에코델타시티법인등기",
+   "beforeLen": 4275,
+   "afterLen": 4274
+  },
+  {
+   "r": "/에코델타시티법인설립등기",
+   "beforeLen": 4787,
+   "afterLen": 4786
+  },
+  {
+   "r": "/여러지역상속부동산등기",
+   "beforeLen": 5282,
+   "afterLen": 5281
+  },
+  {
+   "r": "/연락두절상속인",
+   "beforeLen": 4320,
+   "afterLen": 4319
+  },
+  {
+   "r": "/연산동법무사",
+   "beforeLen": 4878,
+   "afterLen": 4877
+  },
+  {
+   "r": "/연산동법인등기",
+   "beforeLen": 4810,
+   "afterLen": 4809
+  },
+  {
+   "r": "/연산동상속등기",
+   "beforeLen": 4735,
+   "afterLen": 4734
+  },
+  {
+   "r": "/연산역법무사",
+   "beforeLen": 3847,
+   "afterLen": 3846
+  },
+  {
+   "r": "/연산역상속등기",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/연제구법무사",
+   "beforeLen": 6282,
+   "afterLen": 6281
+  },
+  {
+   "r": "/연제구법인등기",
+   "beforeLen": 4478,
+   "afterLen": 4477
+  },
+  {
+   "r": "/연제구법인설립등기",
+   "beforeLen": 4721,
+   "afterLen": 4720
+  },
+  {
+   "r": "/연제구부동산등기",
+   "beforeLen": 4298,
+   "afterLen": 4297
+  },
+  {
+   "r": "/연제구상속등기",
+   "beforeLen": 4760,
+   "afterLen": 4759
+  },
+  {
+   "r": "/연제구상속포기",
+   "beforeLen": 4769,
+   "afterLen": 4768
+  },
+  {
+   "r": "/연제구임원변경등기",
+   "beforeLen": 4474,
+   "afterLen": 4473
+  },
+  {
+   "r": "/연제구한정승인",
+   "beforeLen": 4584,
+   "afterLen": 4583
+  },
+  {
+   "r": "/연지동법무사",
+   "beforeLen": 4628,
+   "afterLen": 4627
+  },
+  {
+   "r": "/영농조합법인설립",
+   "beforeLen": 3320,
+   "afterLen": 3319
+  },
+  {
+   "r": "/영덕선박등기",
+   "beforeLen": 3360,
+   "afterLen": 3359
+  },
+  {
+   "r": "/영도구법무사",
+   "beforeLen": 4873,
+   "afterLen": 4872
+  },
+  {
+   "r": "/영도구법인등기",
+   "beforeLen": 4733,
+   "afterLen": 4732
+  },
+  {
+   "r": "/영도구법인설립등기",
+   "beforeLen": 4769,
+   "afterLen": 4768
+  },
+  {
+   "r": "/영도구부동산등기",
+   "beforeLen": 4368,
+   "afterLen": 4367
+  },
+  {
+   "r": "/영도구상속등기",
+   "beforeLen": 4813,
+   "afterLen": 4812
+  },
+  {
+   "r": "/영도구상속포기",
+   "beforeLen": 4865,
+   "afterLen": 4864
+  },
+  {
+   "r": "/영도구선박등기",
+   "beforeLen": 4701,
+   "afterLen": 4700
+  },
+  {
+   "r": "/영도구임원변경등기",
+   "beforeLen": 4714,
+   "afterLen": 4713
+  },
+  {
+   "r": "/영도구한정승인",
+   "beforeLen": 4881,
+   "afterLen": 4880
+  },
+  {
+   "r": "/영어조합법인설립",
+   "beforeLen": 3034,
+   "afterLen": 3033
+  },
+  {
+   "r": "/예금상속인출절차",
+   "beforeLen": 3972,
+   "afterLen": 3971
+  },
+  {
+   "r": "/오래된상속토지정리",
+   "beforeLen": 5217,
+   "afterLen": 5216
+  },
+  {
+   "r": "/오시리아법무사",
+   "beforeLen": 4630,
+   "afterLen": 4629
+  },
+  {
+   "r": "/오피스텔보존등기",
+   "beforeLen": 3773,
+   "afterLen": 3772
+  },
+  {
+   "r": "/오피스텔집단등기",
+   "beforeLen": 3759,
+   "afterLen": 3758
+  },
+  {
+   "r": "/온천동법무사",
+   "beforeLen": 4062,
+   "afterLen": 4061
+  },
+  {
+   "r": "/온천동상속등기",
+   "beforeLen": 4755,
+   "afterLen": 4754
+  },
+  {
+   "r": "/왜개인회생비용이다를까",
+   "beforeLen": 4003,
+   "afterLen": 4002
+  },
+  {
+   "r": "/왜법인등기비용이다를까",
+   "beforeLen": 4283,
+   "afterLen": 4282
+  },
+  {
+   "r": "/왜상속등기비용이다를까",
+   "beforeLen": 4375,
+   "afterLen": 4374
+  },
+  {
+   "r": "/용호동법무사",
+   "beforeLen": 5083,
+   "afterLen": 5082
+  },
+  {
+   "r": "/우동법무사",
+   "beforeLen": 5228,
+   "afterLen": 5227
+  },
+  {
+   "r": "/우동부동산등기",
+   "beforeLen": 4540,
+   "afterLen": 4539
+  },
+  {
+   "r": "/우동소유권이전등기",
+   "beforeLen": 4579,
+   "afterLen": 4578
+  },
+  {
+   "r": "/우암동법무사",
+   "beforeLen": 4431,
+   "afterLen": 4430
+  },
+  {
+   "r": "/울산선박등기",
+   "beforeLen": 3239,
+   "afterLen": 3238
+  },
+  {
+   "r": "/울진선박등기",
+   "beforeLen": 3440,
+   "afterLen": 3439
+  },
+  {
+   "r": "/유류분과상속등기",
+   "beforeLen": 4340,
+   "afterLen": 4339
+  },
+  {
+   "r": "/유언공증준비",
+   "beforeLen": 4000,
+   "afterLen": 3999
+  },
+  {
+   "r": "/유언집행자와상속등기",
+   "beforeLen": 4075,
+   "afterLen": 4074
+  },
+  {
+   "r": "/의료법인설립등기",
+   "beforeLen": 3657,
+   "afterLen": 3656
+  },
+  {
+   "r": "/의료법인임원변경등기",
+   "beforeLen": 3699,
+   "afterLen": 3698
+  },
+  {
+   "r": "/의료법인주사무소이전등기",
+   "beforeLen": 3751,
+   "afterLen": 3750
+  },
+  {
+   "r": "/이사후임차권등기명령준비",
+   "beforeLen": 3623,
+   "afterLen": 3622
+  },
+  {
+   "r": "/이용약관",
+   "beforeLen": 2205,
+   "afterLen": 2204
+  },
+  {
+   "r": "/이혼재산분할등기서류준비",
+   "beforeLen": 4210,
+   "afterLen": 4209
+  },
+  {
+   "r": "/일광읍법무사",
+   "beforeLen": 5388,
+   "afterLen": 5387
+  },
+  {
+   "r": "/일반건물집합건물전환등기",
+   "beforeLen": 4237,
+   "afterLen": 4236
+  },
+  {
+   "r": "/임대인사망전세계약",
+   "beforeLen": 4053,
+   "afterLen": 4052
+  },
+  {
+   "r": "/임대차전세",
+   "beforeLen": 3800,
+   "afterLen": 3799
+  },
+  {
+   "r": "/임원변경등기과태료",
+   "beforeLen": 4692,
+   "afterLen": 4691
+  },
+  {
+   "r": "/임원변경등기기간",
+   "beforeLen": 4933,
+   "afterLen": 4932
+  },
+  {
+   "r": "/임원변경등기기한",
+   "beforeLen": 4969,
+   "afterLen": 4968
+  },
+  {
+   "r": "/임원변경등기보수표",
+   "beforeLen": 3652,
+   "afterLen": 3651
+  },
+  {
+   "r": "/임원변경등기비용",
+   "beforeLen": 3684,
+   "afterLen": 3683
+  },
+  {
+   "r": "/임원변경등기자가진단",
+   "beforeLen": 4601,
+   "afterLen": 4600
+  },
+  {
+   "r": "/임원변경등기준비서류",
+   "beforeLen": 5079,
+   "afterLen": 5078
+  },
+  {
+   "r": "/임원변경등기필요서류",
+   "beforeLen": 5093,
+   "afterLen": 5092
+  },
+  {
+   "r": "/임차권등기명령과태료",
+   "beforeLen": 4583,
+   "afterLen": 4582
+  },
+  {
+   "r": "/임차권등기명령기간",
+   "beforeLen": 4643,
+   "afterLen": 4642
+  },
+  {
+   "r": "/임차권등기명령기한",
+   "beforeLen": 4532,
+   "afterLen": 4531
+  },
+  {
+   "r": "/임차권등기명령보수표",
+   "beforeLen": 3443,
+   "afterLen": 3442
+  },
+  {
+   "r": "/임차권등기명령비용",
+   "beforeLen": 3906,
+   "afterLen": 3905
+  },
+  {
+   "r": "/임차권등기명령자가진단",
+   "beforeLen": 4301,
+   "afterLen": 4300
+  },
+  {
+   "r": "/임차권등기명령준비서류",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/임차권등기명령필요서류",
+   "beforeLen": 4862,
+   "afterLen": 4861
+  },
+  {
+   "r": "/자가진단",
+   "beforeLen": 1574,
+   "afterLen": 1573
+  },
+  {
+   "r": "/자동차상속명의이전",
+   "beforeLen": 3785,
+   "afterLen": 3784
+  },
+  {
+   "r": "/장례후재산채무정리",
+   "beforeLen": 4891,
+   "afterLen": 4890
+  },
+  {
+   "r": "/장전동법무사",
+   "beforeLen": 3738,
+   "afterLen": 3737
+  },
+  {
+   "r": "/장전동부동산등기",
+   "beforeLen": 4488,
+   "afterLen": 4487
+  },
+  {
+   "r": "/장학재단설립",
+   "beforeLen": 3489,
+   "afterLen": 3488
+  },
+  {
+   "r": "/재개발등기과태료",
+   "beforeLen": 4813,
+   "afterLen": 4812
+  },
+  {
+   "r": "/재개발등기기간",
+   "beforeLen": 4843,
+   "afterLen": 4842
+  },
+  {
+   "r": "/재개발등기기한",
+   "beforeLen": 4715,
+   "afterLen": 4714
+  },
+  {
+   "r": "/재개발등기보수표",
+   "beforeLen": 4993,
+   "afterLen": 4992
+  },
+  {
+   "r": "/재개발등기비용",
+   "beforeLen": 4955,
+   "afterLen": 4954
+  },
+  {
+   "r": "/재개발등기준비서류",
+   "beforeLen": 4941,
+   "afterLen": 4940
+  },
+  {
+   "r": "/재개발등기필요서류",
+   "beforeLen": 4805,
+   "afterLen": 4804
+  },
+  {
+   "r": "/재건축등기과태료",
+   "beforeLen": 4697,
+   "afterLen": 4696
+  },
+  {
+   "r": "/재건축등기기간",
+   "beforeLen": 4627,
+   "afterLen": 4626
+  },
+  {
+   "r": "/재건축등기기한",
+   "beforeLen": 4469,
+   "afterLen": 4468
+  },
+  {
+   "r": "/재건축등기보수표",
+   "beforeLen": 4709,
+   "afterLen": 4708
+  },
+  {
+   "r": "/재건축등기비용",
+   "beforeLen": 4715,
+   "afterLen": 4714
+  },
+  {
+   "r": "/재건축등기준비서류",
+   "beforeLen": 4684,
+   "afterLen": 4683
+  },
+  {
+   "r": "/재건축등기필요서류",
+   "beforeLen": 4532,
+   "afterLen": 4531
+  },
+  {
+   "r": "/재건축조합임원변경등기",
+   "beforeLen": 3520,
+   "afterLen": 3519
+  },
+  {
+   "r": "/재단법인과공익법인차이",
+   "beforeLen": 3789,
+   "afterLen": 3788
+  },
+  {
+   "r": "/재단법인기본재산변경등기",
+   "beforeLen": 4746,
+   "afterLen": 4745
+  },
+  {
+   "r": "/재송동법무사",
+   "beforeLen": 5224,
+   "afterLen": 5223
+  },
+  {
+   "r": "/재송동상속등기",
+   "beforeLen": 4715,
+   "afterLen": 4714
+  },
+  {
+   "r": "/재송동소유권이전등기",
+   "beforeLen": 4542,
+   "afterLen": 4541
+  },
+  {
+   "r": "/재혼가정상속",
+   "beforeLen": 4005,
+   "afterLen": 4004
+  },
+  {
+   "r": "/전국공동담보등기",
+   "beforeLen": 4105,
+   "afterLen": 4104
+  },
+  {
+   "r": "/전국법인본점이전등기",
+   "beforeLen": 4292,
+   "afterLen": 4291
+  },
+  {
+   "r": "/전국상속등기",
+   "beforeLen": 7423,
+   "afterLen": 7422
+  },
+  {
+   "r": "/전국업무",
+   "beforeLen": 6530,
+   "afterLen": 6529
+  },
+  {
+   "r": "/전국유증등기",
+   "beforeLen": 4649,
+   "afterLen": 4648
+  },
+  {
+   "r": "/전문직법인등기",
+   "beforeLen": 4132,
+   "afterLen": 4131
+  },
+  {
+   "r": "/전세권설정과태료",
+   "beforeLen": 4650,
+   "afterLen": 4649
+  },
+  {
+   "r": "/전세권설정기간",
+   "beforeLen": 4704,
+   "afterLen": 4703
+  },
+  {
+   "r": "/전세권설정기한",
+   "beforeLen": 4599,
+   "afterLen": 4598
+  },
+  {
+   "r": "/전세권설정보수표",
+   "beforeLen": 4692,
+   "afterLen": 4691
+  },
+  {
+   "r": "/전세권설정비용",
+   "beforeLen": 4723,
+   "afterLen": 4722
+  },
+  {
+   "r": "/전세권설정준비서류",
+   "beforeLen": 4761,
+   "afterLen": 4760
+  },
+  {
+   "r": "/전세권설정필요서류",
+   "beforeLen": 4719,
+   "afterLen": 4718
+  },
+  {
+   "r": "/전세보증금상담",
+   "beforeLen": 1568,
+   "afterLen": 1567
+  },
+  {
+   "r": "/전세보증금자가진단",
+   "beforeLen": 4357,
+   "afterLen": 4356
+  },
+  {
+   "r": "/전세사기예방교육",
+   "beforeLen": 4771,
+   "afterLen": 4770
+  },
+  {
+   "r": "/전세사기피해대응절차",
+   "beforeLen": 7201,
+   "afterLen": 7200
+  },
+  {
+   "r": "/전자등기",
+   "beforeLen": 2586,
+   "afterLen": 2585
+  },
+  {
+   "r": "/전자신청",
+   "beforeLen": 2497,
+   "afterLen": 2496
+  },
+  {
+   "r": "/전포동법무사",
+   "beforeLen": 5495,
+   "afterLen": 5494
+  },
+  {
+   "r": "/전포동부동산등기",
+   "beforeLen": 4605,
+   "afterLen": 4604
+  },
+  {
+   "r": "/전화가어려울때법률상담",
+   "beforeLen": 1567,
+   "afterLen": 1566
+  },
+  {
+   "r": "/정관법무사",
+   "beforeLen": 4355,
+   "afterLen": 4354
+  },
+  {
+   "r": "/정관법인등기",
+   "beforeLen": 4234,
+   "afterLen": 4233
+  },
+  {
+   "r": "/정관법인설립등기",
+   "beforeLen": 4626,
+   "afterLen": 4625
+  },
+  {
+   "r": "/제주타지역상속인부동산",
+   "beforeLen": 5201,
+   "afterLen": 5200
+  },
+  {
+   "r": "/종교단체사단법인설립",
+   "beforeLen": 3878,
+   "afterLen": 3877
+  },
+  {
+   "r": "/종교재단설립",
+   "beforeLen": 3694,
+   "afterLen": 3693
+  },
+  {
+   "r": "/좌동법무사",
+   "beforeLen": 5782,
+   "afterLen": 5781
+  },
+  {
+   "r": "/좌동상속등기",
+   "beforeLen": 4813,
+   "afterLen": 4812
+  },
+  {
+   "r": "/좌동소유권이전등기",
+   "beforeLen": 4526,
+   "afterLen": 4525
+  },
+  {
+   "r": "/주례동법무사",
+   "beforeLen": 4716,
+   "afterLen": 4715
+  },
+  {
+   "r": "/주무관청허가후설립등기",
+   "beforeLen": 3722,
+   "afterLen": 3721
+  },
+  {
+   "r": "/중구법무사",
+   "beforeLen": 5589,
+   "afterLen": 5588
+  },
+  {
+   "r": "/중구법인등기",
+   "beforeLen": 3685,
+   "afterLen": 3684
+  },
+  {
+   "r": "/중구법인설립등기",
+   "beforeLen": 4660,
+   "afterLen": 4659
+  },
+  {
+   "r": "/중구부동산등기",
+   "beforeLen": 4585,
+   "afterLen": 4584
+  },
+  {
+   "r": "/중구상속등기",
+   "beforeLen": 3754,
+   "afterLen": 3753
+  },
+  {
+   "r": "/중구상속포기",
+   "beforeLen": 4985,
+   "afterLen": 4984
+  },
+  {
+   "r": "/중구임원변경등기",
+   "beforeLen": 4735,
+   "afterLen": 4734
+  },
+  {
+   "r": "/중구한정승인",
+   "beforeLen": 4702,
+   "afterLen": 4701
+  },
+  {
+   "r": "/중동법무사",
+   "beforeLen": 3720,
+   "afterLen": 3719
+  },
+  {
+   "r": "/중동부동산등기",
+   "beforeLen": 4464,
+   "afterLen": 4463
+  },
+  {
+   "r": "/중부산등기소법무사",
+   "beforeLen": 4283,
+   "afterLen": 4282
+  },
+  {
+   "r": "/중부산등기소법인등기",
+   "beforeLen": 4783,
+   "afterLen": 4782
+  },
+  {
+   "r": "/중부산등기소부동산등기",
+   "beforeLen": 4467,
+   "afterLen": 4466
+  },
+  {
+   "r": "/중부산등기소임원변경등기",
+   "beforeLen": 4689,
+   "afterLen": 4688
+  },
+  {
+   "r": "/증여등기과태료",
+   "beforeLen": 4692,
+   "afterLen": 4691
+  },
+  {
+   "r": "/증여등기기간",
+   "beforeLen": 4817,
+   "afterLen": 4816
+  },
+  {
+   "r": "/증여등기기한",
+   "beforeLen": 4825,
+   "afterLen": 4824
+  },
+  {
+   "r": "/증여등기보수표",
+   "beforeLen": 4622,
+   "afterLen": 4621
+  },
+  {
+   "r": "/증여등기비용",
+   "beforeLen": 3637,
+   "afterLen": 3636
+  },
+  {
+   "r": "/증여등기준비서류",
+   "beforeLen": 4690,
+   "afterLen": 4689
+  },
+  {
+   "r": "/증여등기필요서류",
+   "beforeLen": 4697,
+   "afterLen": 4696
+  },
+  {
+   "r": "/증축후건물표시변경등기",
+   "beforeLen": 4804,
+   "afterLen": 4803
+  },
+  {
+   "r": "/지급명령이의신청준비",
+   "beforeLen": 3184,
+   "afterLen": 3183
+  },
+  {
+   "r": "/지급명령자가진단",
+   "beforeLen": 4318,
+   "afterLen": 4317
+  },
+  {
+   "r": "/지방공기업등기",
+   "beforeLen": 3792,
+   "afterLen": 3791
+  },
+  {
+   "r": "/지식산업센터보존등기",
+   "beforeLen": 4748,
+   "afterLen": 4747
+  },
+  {
+   "r": "/집단등기",
+   "beforeLen": 3735,
+   "afterLen": 3734
+  },
+  {
+   "r": "/집단등기실수모음",
+   "beforeLen": 3824,
+   "afterLen": 3823
+  },
+  {
+   "r": "/집합건물보존등기",
+   "beforeLen": 3776,
+   "afterLen": 3775
+  },
+  {
+   "r": "/창업법률교육",
+   "beforeLen": 3409,
+   "afterLen": 3408
+  },
+  {
+   "r": "/창업법무",
+   "beforeLen": 4397,
+   "afterLen": 4396
+  },
+  {
+   "r": "/창원비영리법인설립",
+   "beforeLen": 3030,
+   "afterLen": 3029
+  },
+  {
+   "r": "/창원선박등기",
+   "beforeLen": 3574,
+   "afterLen": 3573
+  },
+  {
+   "r": "/채권압류추심서류준비",
+   "beforeLen": 4323,
+   "afterLen": 4322
+  },
+  {
+   "r": "/철거후건물멸실등기",
+   "beforeLen": 4866,
+   "afterLen": 4865
+  },
+  {
+   "r": "/청년생활법률특강",
+   "beforeLen": 3597,
+   "afterLen": 3596
+  },
+  {
+   "r": "/체육단체사단법인설립",
+   "beforeLen": 3692,
+   "afterLen": 3691
+  },
+  {
+   "r": "/초량동법무사",
+   "beforeLen": 5183,
+   "afterLen": 5182
+  },
+  {
+   "r": "/촉탁등기",
+   "beforeLen": 3570,
+   "afterLen": 3569
+  },
+  {
+   "r": "/취득세",
+   "beforeLen": 3712,
+   "afterLen": 3711
+  },
+  {
+   "r": "/타지역상속인경상도부동산",
+   "beforeLen": 5009,
+   "afterLen": 5008
+  },
+  {
+   "r": "/토지소유자와건축주다른보존등기",
+   "beforeLen": 5471,
+   "afterLen": 5470
+  },
+  {
+   "r": "/통영선박등기",
+   "beforeLen": 3409,
+   "afterLen": 3408
+  },
+  {
+   "r": "/특별대리인자가진단",
+   "beforeLen": 4133,
+   "afterLen": 4132
+  },
+  {
+   "r": "/특별법법인설립등기",
+   "beforeLen": 3944,
+   "afterLen": 3943
+  },
+  {
+   "r": "/특별한정승인",
+   "beforeLen": 5203,
+   "afterLen": 5202
+  },
+  {
+   "r": "/특수등기",
+   "beforeLen": 4069,
+   "afterLen": 4068
+  },
+  {
+   "r": "/특수등기의뢰",
+   "beforeLen": 940,
+   "afterLen": 939
+  },
+  {
+   "r": "/특수비영리법인등기",
+   "beforeLen": 5529,
+   "afterLen": 5528
+  },
+  {
+   "r": "/특허법인설립등기",
+   "beforeLen": 3653,
+   "afterLen": 3652
+  },
+  {
+   "r": "/포항선박등기",
+   "beforeLen": 3868,
+   "afterLen": 3867
+  },
+  {
+   "r": "/하단법무사",
+   "beforeLen": 4313,
+   "afterLen": 4312
+  },
+  {
+   "r": "/학교법률교육",
+   "beforeLen": 5015,
+   "afterLen": 5014
+  },
+  {
+   "r": "/학교법인설립등기",
+   "beforeLen": 3563,
+   "afterLen": 3562
+  },
+  {
+   "r": "/학교법인임원변경등기",
+   "beforeLen": 3675,
+   "afterLen": 3674
+  },
+  {
+   "r": "/한정승인과태료",
+   "beforeLen": 5030,
+   "afterLen": 5029
+  },
+  {
+   "r": "/한정승인기간",
+   "beforeLen": 5125,
+   "afterLen": 5124
+  },
+  {
+   "r": "/한정승인기한",
+   "beforeLen": 5010,
+   "afterLen": 5009
+  },
+  {
+   "r": "/한정승인보수표",
+   "beforeLen": 3644,
+   "afterLen": 3643
+  },
+  {
+   "r": "/한정승인비용",
+   "beforeLen": 4790,
+   "afterLen": 4789
+  },
+  {
+   "r": "/한정승인상담",
+   "beforeLen": 1558,
+   "afterLen": 1557
+  },
+  {
+   "r": "/한정승인자가진단",
+   "beforeLen": 5608,
+   "afterLen": 5607
+  },
+  {
+   "r": "/한정승인준비서류",
+   "beforeLen": 5015,
+   "afterLen": 5014
+  },
+  {
+   "r": "/한정승인필요서류",
+   "beforeLen": 5149,
+   "afterLen": 5148
+  },
+  {
+   "r": "/해산간주확인절차",
+   "beforeLen": 3594,
+   "afterLen": 3593
+  },
+  {
+   "r": "/해외거주상속인",
+   "beforeLen": 4068,
+   "afterLen": 4067
+  },
+  {
+   "r": "/해외대표이사주주법인등기",
+   "beforeLen": 3854,
+   "afterLen": 3853
+  },
+  {
+   "r": "/해외서류가필요한증여등기",
+   "beforeLen": 4847,
+   "afterLen": 4846
+  },
+  {
+   "r": "/해운대구법인등기",
+   "beforeLen": 4508,
+   "afterLen": 4507
+  },
+  {
+   "r": "/해운대구법인설립등기",
+   "beforeLen": 4560,
+   "afterLen": 4559
+  },
+  {
+   "r": "/해운대구부동산등기",
+   "beforeLen": 4347,
+   "afterLen": 4346
+  },
+  {
+   "r": "/해운대구상속등기",
+   "beforeLen": 4801,
+   "afterLen": 4800
+  },
+  {
+   "r": "/해운대구상속포기",
+   "beforeLen": 4788,
+   "afterLen": 4787
+  },
+  {
+   "r": "/해운대구임원변경등기",
+   "beforeLen": 4505,
+   "afterLen": 4504
+  },
+  {
+   "r": "/해운대구한정승인",
+   "beforeLen": 4599,
+   "afterLen": 4598
+  },
+  {
+   "r": "/해운대법무사",
+   "beforeLen": 3291,
+   "afterLen": 3290
+  },
+  {
+   "r": "/해운대비영리법인설립",
+   "beforeLen": 3347,
+   "afterLen": 3346
+  },
+  {
+   "r": "/해운대상가오피스텔건물등기",
+   "beforeLen": 4211,
+   "afterLen": 4210
+  },
+  {
+   "r": "/해운대여성법무사",
+   "beforeLen": 5029,
+   "afterLen": 5028
+  },
+  {
+   "r": "/해운대역법무사",
+   "beforeLen": 3579,
+   "afterLen": 3578
+  },
+  {
+   "r": "/해운대역부동산등기",
+   "beforeLen": 4479,
+   "afterLen": 4478
+  },
+  {
+   "r": "/해운대재개발상속등기",
+   "beforeLen": 4524,
+   "afterLen": 4523
+  },
+  {
+   "r": "/해운회사법인등기",
+   "beforeLen": 4670,
+   "afterLen": 4669
+  },
+  {
+   "r": "/협동조합과주식회사차이",
+   "beforeLen": 3768,
+   "afterLen": 3767
+  },
+  {
+   "r": "/협동조합임원변경등기",
+   "beforeLen": 4635,
+   "afterLen": 4634
+  },
+  {
+   "r": "/협동조합해산청산등기",
+   "beforeLen": 4580,
+   "afterLen": 4579
+  },
+  {
+   "r": "/협업문의",
+   "beforeLen": 2614,
+   "afterLen": 2613
+  },
+  {
+   "r": "/협회사단법인설립",
+   "beforeLen": 3875,
+   "afterLen": 3874
+  },
+  {
+   "r": "/화명동법무사",
+   "beforeLen": 4980,
+   "afterLen": 4979
+  },
+  {
+   "r": "/화명동부동산등기",
+   "beforeLen": 4464,
+   "afterLen": 4463
+  },
+  {
+   "r": "/화재소실건물멸실등기",
+   "beforeLen": 4485,
+   "afterLen": 4484
+  },
+  {
+   "r": "/환경단체사단법인설립",
+   "beforeLen": 3677,
+   "afterLen": 3676
+  },
+  {
+   "r": "/회계법인설립등기",
+   "beforeLen": 4007,
+   "afterLen": 4006
+  },
+  {
+   "r": "/휴면법인계속등기준비",
+   "beforeLen": 3897,
+   "afterLen": 3896
+  }
+ ],
+ "links": []
+}
