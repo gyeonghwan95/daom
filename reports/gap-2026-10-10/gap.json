@@ -1,0 +1,920 @@
+[
+ {
+  "query": "부산 법무사 사무실",
+  "candidates": [
+   {
+    "r": "/blog/busan-lawyer-recommend-office-consult",
+    "score": 1,
+    "title": "부산 법무사 고르는 기준과 상담 준비 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:16:20",
+   "ourOrder": 1,
+   "ourUrl": "/부산법무사무소",
+   "top5": [
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "cafe.naver.com",
+    "blog.naver.com",
+    "uxuitalk.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 상속 전문 법무사",
+  "candidates": [
+   {
+    "r": "/부산상속전문법무사",
+    "score": 1,
+    "title": "부산 상속전문 법무사를 찾는다면｜업무범위와 선택 기준"
+   },
+   {
+    "r": "/부산소유권이전전문법무사",
+    "score": 1,
+    "title": "부산 소유권이전전문 법무사｜매매·증여·상속 원인 구분"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:16:23",
+   "ourOrder": 10,
+   "ourUrl": "/부산상속전문법무사",
+   "top5": [
+    "cafe.naver.com",
+    "www.xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "greeda.co.kr",
+    "jinsimpartnersbusan.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 상속 등기 법무사",
+  "candidates": [
+   {
+    "r": "/연지동법무사",
+    "score": 1,
+    "title": "연지동 법무사｜초읍동 상속·매매 등기"
+   },
+   {
+    "r": "/초량동법무사",
+    "score": 1,
+    "title": "초량동 법무사｜좌천·수정동 상속·등기"
+   },
+   {
+    "r": "/오시리아법무사",
+    "score": 1,
+    "title": "오시리아 법무사｜동부산 분양·상속 등기"
+   },
+   {
+    "r": "/부산진구상속등기",
+    "score": 1,
+    "title": "부산진구 상속등기 안내 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:16:27",
+   "ourOrder": 3,
+   "ourUrl": "/부산지방법원상속등기",
+   "top5": [
+    "blog.naver.com",
+    "cafe.naver.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "busanlaw.net",
+    "hero-busan.com"
+   ],
+   "placeOurs": 3,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 상속포기 법무사 비용",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:31",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "blog.naver.com",
+    "cafe.naver.com",
+    "lawfirm-hero.com",
+    "hero-busan.com",
+    "greeda.co.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 상속포기 법원",
+  "candidates": [
+   {
+    "r": "/부산가정법원상속포기",
+    "score": 1,
+    "title": "부산가정법원 상속포기 | 관할·접수 창구 확인"
+   },
+   {
+    "r": "/업무사례/서울상속등기법무사",
+    "score": 1,
+    "title": "서울 상속등기, 부산 법무사에게 원거리로 맡길 때 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:16:34",
+   "ourOrder": 3,
+   "ourUrl": "/부산상속포기",
+   "top5": [
+    "cafe.naver.com",
+    "www.xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "blog.naver.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 1
+  }
+ },
+ {
+  "query": "부산 상속포기 전문 법무사",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:38",
+   "ourOrder": 9,
+   "ourUrl": "/부산상속전문법무사",
+   "top5": [
+    "greeda.co.kr",
+    "cafe.naver.com",
+    "www.xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "blog.naver.com",
+    "jinsimpartnersbusan.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 4
+  }
+ },
+ {
+  "query": "부산 한정승인 전문",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:42",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "bobbarnett.com",
+    "kin.naver.com",
+    "blog.naver.com",
+    "cafe.naver.com",
+    "xn--z92bzyzd60o5co9cb5zft2a.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 한정승인 비용",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:45",
+   "ourOrder": 11,
+   "ourUrl": "/한정승인비용",
+   "top5": [
+    "kin.naver.com",
+    "blog.naver.com",
+    "greeda.co.kr",
+    "lawfirm-hero.com",
+    "hero-busan.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산한정승인공고",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:49",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "blog.naver.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 상속재산파산",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:52",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 유언공증",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:16:56",
+   "ourOrder": 2,
+   "ourUrl": "/유언공증준비",
+   "top5": [
+    "yeinlaw.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "lawguide.kr",
+    "notary.seongahnlaw.com",
+    "blog.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 5
+  }
+ },
+ {
+  "query": "부산 유언장 공증",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:00",
+   "ourOrder": 3,
+   "ourUrl": "/유언공증준비",
+   "top5": [
+    "kin.naver.com",
+    "yeinlaw.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "sangsokbusan.com",
+    "blog.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 등기소 관할",
+  "candidates": [
+   {
+    "r": "/부산학교법인등기",
+    "score": 1,
+    "title": "부산 학교법인 등기｜교육감 인가 후 설립·변경등기"
+   },
+   {
+    "r": "/부산사회복지법인등기",
+    "score": 1,
+    "title": "부산 사회복지법인 등기｜설립·임원변경·주사무소 이전"
+   },
+   {
+    "r": "/blog/busan-lawyer-jurisdiction-checklist",
+    "score": 1,
+    "title": "부산 법무사 관할 확인｜등기소·가정법원·회생법원 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:03",
+   "ourOrder": 4,
+   "ourUrl": "/북부산등기소법무사",
+   "top5": [
+    "busan.scourt.go.kr",
+    "suwon.scourt.go.kr",
+    "bsgodung.scourt.go.kr",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "ko.wikipedia.org"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 등기부등본 발급",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:07",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "busan.scourt.go.kr",
+    "www.yeonje.go.kr",
+    "www.bsseogu.go.kr",
+    "www.bsjunggu.go.kr",
+    "www.okminwon.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 증여 법무사",
+  "candidates": [
+   {
+    "r": "/부산증여등기전문법무사",
+    "score": 1,
+    "title": "부산 증여등기전문 법무사｜부모자녀·부담부 증여 구분"
+   },
+   {
+    "r": "/blog/gift-registration-pre-check",
+    "score": 1,
+    "title": "증여등기 전 확인사항｜부산 법무사 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산소유권이전전문법무사",
+    "score": 1,
+    "title": "부산 소유권이전전문 법무사｜매매·증여·상속 원인 구분"
+   },
+   {
+    "r": "/부산부동산등기",
+    "score": 1,
+    "title": "부산 부동산등기 법무사｜잔금·말소·소유권이전 순서를 맞추려면"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:10",
+   "ourOrder": 1,
+   "ourUrl": "/부산증여등기",
+   "top5": [
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "xn--2q1b26p7rc.shop",
+    "yeinlaw.com",
+    "cafe.naver.com",
+    "blog.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 6
+  }
+ },
+ {
+  "query": "부산 임차권등기",
+  "candidates": [
+   {
+    "r": "/부산전세권설정등기",
+    "score": 1,
+    "title": "부산 전세권설정등기｜비용·서류·임차권등기명령"
+   },
+   {
+    "r": "/부산임차권등기명령",
+    "score": 1,
+    "title": "부산 임차권등기명령｜신청 요건·서류·이사 전후 안내"
+   },
+   {
+    "r": "/임대차전세",
+    "score": 1,
+    "title": "전세보증금·임차권등기명령｜미반환 대응 | 다옴법무사사무소"
+   },
+   {
+    "r": "/전세보증금자가진단",
+    "score": 1,
+    "title": "전세보증금 반환·집주인 연락두절 자가… | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:14",
+   "ourOrder": 2,
+   "ourUrl": "/부산임차권등기명령",
+   "top5": [
+    "kin.naver.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "dh-lawfirm.com",
+    "cafe.naver.com",
+    "sojunglaw.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 가압류푸는방법",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:17",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "blog.naver.com",
+    "cafe.naver.com",
+    "www.youtube.com",
+    "kin.naver.com",
+    "in.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 가압류취소방법",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:21",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "blog.naver.com",
+    "in.naver.com",
+    "cafe.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 개인파산 비용",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:25",
+   "ourOrder": 4,
+   "ourUrl": "/부산개인파산",
+   "top5": [
+    "www.busan.go.kr",
+    "cafe.naver.com",
+    "lawsaegyeot.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "blog.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 3
+  }
+ },
+ {
+  "query": "부산 개인파산 사무소",
+  "candidates": [
+   {
+    "r": "/부산개인파산상담",
+    "score": 1,
+    "title": "부산 개인파산 상담｜다옴법무사사무소"
+   },
+   {
+    "r": "/부산개인파산법무사추천",
+    "score": 1,
+    "title": "부산 개인파산 법무사 추천｜다옴법무사사무소"
+   },
+   {
+    "r": "/부산회생법원개인파산",
+    "score": 1,
+    "title": "부산회생법원 개인파산 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/blog/bankruptcy-vs-discharge-difference",
+    "score": 1,
+    "title": "개인파산과 면책 차이｜부산 법무사 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:28",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "lawfirm-jm.com",
+    "bsb.scourt.go.kr",
+    "saedoyak.com",
+    "kin.naver.com",
+    "busanlaw.net"
+   ],
+   "placeOurs": 4,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 개인파산 법무사",
+  "candidates": [
+   {
+    "r": "/부산개인파산상담",
+    "score": 1,
+    "title": "부산 개인파산 상담｜다옴법무사사무소"
+   },
+   {
+    "r": "/부산개인파산법무사추천",
+    "score": 1,
+    "title": "부산 개인파산 법무사 추천｜다옴법무사사무소"
+   },
+   {
+    "r": "/부산회생법원개인파산",
+    "score": 1,
+    "title": "부산회생법원 개인파산 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산파산전문법무사",
+    "score": 1,
+    "title": "부산 파산전문 법무사｜짧은 검색어 개인파산 연결"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:32",
+   "ourOrder": 6,
+   "ourUrl": "/부산개인파산전문법무사",
+   "top5": [
+    "bsb.scourt.go.kr",
+    "lawsaegyeot.com",
+    "www.lawoon24.com",
+    "kin.naver.com",
+    "busanlaw.net"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 지급명령 법무사",
+  "candidates": [
+   {
+    "r": "/부산지방법원지급명령",
+    "score": 1,
+    "title": "부산지방법원 지급명령 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산지방법원동부지원지급명령",
+    "score": 1,
+    "title": "부산지방법원동부지원 지급명령 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/blog/payment-order-application-pre-check",
+    "score": 1,
+    "title": "지급명령 신청 전 확인｜부산 법무사 | 다옴법무사사무소"
+   },
+   {
+    "r": "/민사소송",
+    "score": 1,
+    "title": "지급명령·가압류·소장｜채권 회수 절차 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:36",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "www.daehanlaw.com",
+    "jinsimpartnersbusan.com",
+    "in.naver.com",
+    "blog.naver.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 6
+  }
+ },
+ {
+  "query": "부산 성년후견 법무사",
+  "candidates": [
+   {
+    "r": "/부산가정법원성년후견",
+    "score": 1,
+    "title": "부산가정법원 성년후견 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/가족후견",
+    "score": 1,
+    "title": "성년후견·가사비송｜가족·상속 특별대리 | 다옴법무사사무소"
+   },
+   {
+    "r": "/성년후견자가진단",
+    "score": 1,
+    "title": "성년후견 자가진단 | 부산 가정법원·의사·재산관리 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:39",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "blog.naver.com",
+    "inherit-law.kr",
+    "www.daehanlaw.com",
+    "www.hero-inherit.com",
+    "cafe.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산성년후견인 신청방법",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:43",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "www.youtube.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 개명신청방법",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:47",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "www.geumjeong.go.kr",
+    "blog.naver.com",
+    "www.yeonje.go.kr",
+    "www.lawandgood.com",
+    "www.bsnamgu.go.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 개명 허가 기간",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:50",
+   "ourOrder": 4,
+   "ourUrl": "/부산개명허가",
+   "top5": [
+    "kin.naver.com",
+    "blog.naver.com",
+    "www.yeonje.go.kr",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "www.lawandgood.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 개명대행",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:17:54",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 법인등기",
+  "candidates": [
+   {
+    "r": "/서면법무사",
+    "score": 1,
+    "title": "서면 법무사｜부산진구·부전동 상가등기"
+   },
+   {
+    "r": "/부산법인등기과태료",
+    "score": 1,
+    "title": "부산 법인등기 과태료｜지연 등기·예방 체크"
+   },
+   {
+    "r": "/부산진구법인등기",
+    "score": 1,
+    "title": "부산진구 법인등기 안내 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산법인등기비용",
+    "score": 1,
+    "title": "부산 법인등기 비용｜설립·임원·본점·등록면허세"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:17:57",
+   "ourOrder": 1,
+   "ourUrl": "/부산국제금융센터법인등기",
+   "top5": [
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "cafe.naver.com",
+    "kin.naver.com",
+    "blog.naver.com",
+    "busan.scourt.go.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ },
+ {
+  "query": "부산 법인설립",
+  "candidates": [
+   {
+    "r": "/부산농업회사법인설립",
+    "score": 1,
+    "title": "부산 농업회사법인 설립｜인증과 설립등기 순서"
+   },
+   {
+    "r": "/부산스타트업법무사",
+    "score": 1,
+    "title": "부산 스타트업 법무사｜법인설립·지분·임원등기"
+   },
+   {
+    "r": "/부산법인설립전문법무사",
+    "score": 1,
+    "title": "부산 법인설립전문 법무사｜상호·자본·임원 준비"
+   },
+   {
+    "r": "/부산진구법인설립등기",
+    "score": 1,
+    "title": "부산진구 법인설립등기 안내 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:01",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "clip.naver.com",
+    "m.blog.naver.com",
+    "www.busanstartup.kr",
+    "www.busan.go.kr",
+    "www.pnudh.co.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 상속포기",
+  "candidates": [
+   {
+    "r": "/부산진구상속포기",
+    "score": 1,
+    "title": "부산진구 상속포기 안내 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산가정법원상속포기",
+    "score": 1,
+    "title": "부산가정법원 상속포기 | 관할·접수 창구 확인"
+   },
+   {
+    "r": "/부산상속포기",
+    "score": 1,
+    "title": "부산 상속포기 법무사｜3개월·후순위 상속인부터 확인"
+   },
+   {
+    "r": "/상속포기자가진단",
+    "score": 1,
+    "title": "상속포기 3개월·빚 상속포기 자가진단 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:05",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "cafe.naver.com",
+    "www.xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "blog.naver.com",
+    "greeda.co.kr",
+    "kin.naver.com"
+   ],
+   "placeOurs": 2,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 한정승인",
+  "candidates": [
+   {
+    "r": "/부곡동법무사",
+    "score": 1,
+    "title": "부곡동 법무사｜부산대 원룸·한정승인"
+   },
+   {
+    "r": "/부산진구한정승인",
+    "score": 1,
+    "title": "부산진구 한정승인 안내 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산가정법원한정승인",
+    "score": 1,
+    "title": "부산가정법원 한정승인 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산상속법무사",
+    "score": 1,
+    "title": "부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:08",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "www.xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "cafe.naver.com",
+    "yeinlaw.com",
+    "hero-busan.com",
+    "blog.naver.com"
+   ],
+   "placeOurs": 3,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 상속등기",
+  "candidates": [
+   {
+    "r": "/오시리아법무사",
+    "score": 1,
+    "title": "오시리아 법무사｜동부산 분양·상속 등기"
+   },
+   {
+    "r": "/부산진구상속등기",
+    "score": 1,
+    "title": "부산진구 상속등기 안내 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산지방법원상속등기",
+    "score": 1,
+    "title": "부산지방법원 상속등기 절차 | 다옴법무사사무소"
+   },
+   {
+    "r": "/북부산등기소상속등기",
+    "score": 1,
+    "title": "북부산등기소 상속등기 절차 | 다옴법무사사무소"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:12",
+   "ourOrder": 2,
+   "ourUrl": "/부산상속등기",
+   "top5": [
+    "cafe.naver.com",
+    "xn--2j1br1na42lvxja38mk8r.kr",
+    "busanlaw.net",
+    "blog.naver.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": 7,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산개인회생상담",
+  "candidates": [
+   {
+    "r": "/services/cases/busan-personal-rehabilitation-consultation",
+    "score": 1,
+    "title": "부산 개인회생 상담 사례 | 다옴법무사사무소"
+   },
+   {
+    "r": "/부산개인회생상담",
+    "score": 1,
+    "title": "부산 개인회생 상담｜상담에서 확인할 소득·채무·재산"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:16",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "www.lawyerkwon.com",
+    "bsb.scourt.go.kr",
+    "www.lawoon24.com",
+    "cafe.naver.com",
+    "lawsaegyeot.com"
+   ],
+   "placeOurs": 3,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 법인회생",
+  "candidates": [],
+  "obs": {
+   "at": "2026-10-10 01:18:19",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "cafe.naver.com",
+    "lawsaegyeot.com",
+    "blog.naver.com",
+    "bsb.scourt.go.kr",
+    "hueclinic.kr"
+   ],
+   "placeOurs": null,
+   "placeCount": 7
+  }
+ },
+ {
+  "query": "부산 분양권",
+  "candidates": [
+   {
+    "r": "/분양권입주권상속",
+    "score": 1,
+    "title": "부산 분양권·입주권 상속｜입주 전 승계·시행사·대출 확인"
+   }
+  ],
+  "obs": {
+   "at": "2026-10-10 01:18:23",
+   "ourOrder": null,
+   "ourUrl": null,
+   "top5": [
+    "clip.naver.com",
+    "m.blog.naver.com",
+    "blog.naver.com",
+    "cafe.naver.com",
+    "kin.naver.com"
+   ],
+   "placeOurs": null,
+   "placeCount": 0
+  }
+ }
+]

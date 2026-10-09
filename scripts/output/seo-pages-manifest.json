@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T15:48:05.161Z",
+  "generatedAt": "2026-10-09T16:24:28.989Z",
   "total": 1639,
   "paths": [
     "/",
@@ -17708,6 +17708,7 @@
         "/압류말소등기서류준비",
         "/부산법무사비용",
         "/glossary/provisional-attachment",
+        "/부산가압류취소",
         "/등기실무",
         "/tools/real-estate-documents-check",
         "/contact",
@@ -17716,8 +17717,7 @@
         "/공공기관등기업무",
         "/소유권이전등기서류",
         "/소유권이전등기비용",
-        "/해운대구부동산등기",
-        "/수영구부동산등기"
+        "/해운대구부동산등기"
       ],
       "relatedLinks": [
         "/부산부동산등기",
@@ -17726,6 +17726,7 @@
         "/압류말소등기서류준비",
         "/부산법무사비용",
         "/glossary/provisional-attachment",
+        "/부산가압류취소",
         "/등기실무",
         "/tools/real-estate-documents-check",
         "/contact",
@@ -17735,7 +17736,6 @@
         "/소유권이전등기서류",
         "/소유권이전등기비용",
         "/해운대구부동산등기",
-        "/수영구부동산등기",
         "tel:01042771279",
         "https://pf.kakao.com/_Bvhxnn/chat",
         "https://talk.naver.com/ct/w661kd4",
@@ -22243,6 +22243,7 @@
         "/부산부재자재산관리인",
         "/연락두절상속인",
         "/부모빚상속방법",
+        "/부산상속재산파산",
         "/부산가정법원상속",
         "/contact/inquiry?field=inheritance-registration&from=부산상속재산관리인&intent=상속재산관리인 확인",
         "/services/cases/haeundae-inheritance-registration-case",
@@ -22252,8 +22253,7 @@
         "/부산한정승인",
         "/부산가정법원상속포기",
         "/부산상속등기",
-        "/부산개인회생",
-        "/services/inheritance-renunciation"
+        "/부산개인회생"
       ],
       "relatedLinks": [
         "/상속",
@@ -22261,6 +22261,7 @@
         "/부산부재자재산관리인",
         "/연락두절상속인",
         "/부모빚상속방법",
+        "/부산상속재산파산",
         "/부산가정법원상속",
         "/contact/inquiry?field=inheritance-registration&from=부산상속재산관리인&intent=상속재산관리인 확인",
         "/services/cases/haeundae-inheritance-registration-case",
@@ -22271,7 +22272,6 @@
         "/부산가정법원상속포기",
         "/부산상속등기",
         "/부산개인회생",
-        "/services/inheritance-renunciation",
         "tel:01042771279",
         "https://pf.kakao.com/_Bvhxnn/chat",
         "https://talk.naver.com/ct/w661kd4",
@@ -23361,6 +23361,7 @@
         "/민사소송",
         "/가압류신청서류준비",
         "/부산가압류말소등기",
+        "/부산가압류취소",
         "/부산재산명시",
         "/부산지방법원지급명령",
         "/contact/inquiry?field=payment-order&from=부산가압류신청&intent=가압류 신청서 작성 상담",
@@ -23372,13 +23373,13 @@
         "/부산법인등기",
         "/부산부동산등기",
         "/부산등기법무사",
-        "/부산부동산등기법무사",
-        "/부산상속법무사"
+        "/부산부동산등기법무사"
       ],
       "relatedLinks": [
         "/민사소송",
         "/가압류신청서류준비",
         "/부산가압류말소등기",
+        "/부산가압류취소",
         "/부산재산명시",
         "/부산지방법원지급명령",
         "/contact/inquiry?field=payment-order&from=부산가압류신청&intent=가압류 신청서 작성 상담",
@@ -23391,7 +23392,6 @@
         "/부산부동산등기",
         "/부산등기법무사",
         "/부산부동산등기법무사",
-        "/부산상속법무사",
         "tel:01042771279",
         "https://pf.kakao.com/_Bvhxnn/chat",
         "https://talk.naver.com/ct/w661kd4",

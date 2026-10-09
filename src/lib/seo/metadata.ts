@@ -111,6 +111,10 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
     ...(keywords && keywords.length > 0 ? { keywords } : {}),
     alternates: {
       canonical,
+      // metadata는 최상위 키 단위로 얕게 병합되어 layout의 alternates.types(RSS)가 사라지므로 여기서 함께 둔다.
+      types: {
+        "application/rss+xml": [{ url: "/rss.xml", title: "DAOM RSS" }],
+      },
     },
     openGraph: {
       type: openGraphType,

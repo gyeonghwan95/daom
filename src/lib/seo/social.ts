@@ -16,8 +16,7 @@ export function getSocialProfileUrls(): string[] {
     kakao,
     naverTalk,
     getNaverBlogUrl(),
-    `${siteConfig.url}/contact`,
-    `${siteConfig.url}/location`,
+    // sameAs는 같은 주체의 외부 프로필만 둔다. 자기 사이트 경로(/contact·/location)는 넣지 않는다.
   ].filter(Boolean);
 }
 

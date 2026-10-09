@@ -431,6 +431,7 @@ export const 부산상속재산관리인Override: SearchIntentContent = {
     { href: "/부산부재자재산관리인", label: "부산 부재자재산관리인" },
     { href: "/연락두절상속인", label: "연락두절 상속인" },
     { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },
+    { href: "/부산상속재산파산", label: "한정승인 뒤 상속재산파산" },
     { href: "/부산가정법원상속", label: "부산가정법원 안내" },
   ],
   relatedGuideLinks: [

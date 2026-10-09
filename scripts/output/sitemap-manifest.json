@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-09T15:59:30.369Z",
+  "generatedAt": "2026-10-09T16:27:51.370Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1657,
+  "totalUrls": 1659,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
     "2": 28,
     "3": 176,
-    "4": 593,
+    "4": 595,
     "5": 183,
     "6": 574,
     "7": 53,
@@ -874,9 +874,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-09",
+      "lastmod": "2026-10-10",
       "filename": "tier-4-regions.xml",
-      "count": 593
+      "count": 595
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
@@ -886,7 +886,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-09",
+      "lastmod": "2026-10-10",
       "filename": "tier-6-keywords.xml",
       "count": 574
     },
@@ -2450,13 +2450,19 @@
       "path": "/부산가압류말소등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산가압류신청",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%8B%A0%EC%B2%AD",
-      "lastmod": null
+      "lastmod": "2026-10-10"
+    },
+    {
+      "path": "/부산가압류취소",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%B7%A8%EC%86%8C",
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산가정법원법무사",
@@ -3242,13 +3248,19 @@
       "path": "/부산상속재산관리인",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8",
-      "lastmod": null
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산상속재산분할법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%EB%B2%95%EB%AC%B4%EC%82%AC",
       "lastmod": "2026-08-26"
+    },
+    {
+      "path": "/부산상속재산파산",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%ED%8C%8C%EC%82%B0",
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산상속전문법무사",
@@ -3866,7 +3878,7 @@
       "path": "/부산한정승인",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/부산현물출자증자",
@@ -7988,7 +8000,7 @@
       "path": "/민사소송",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%AF%BC%EC%82%AC%EC%86%8C%EC%86%A1",
-      "lastmod": "2026-10-09"
+      "lastmod": "2026-10-10"
     },
     {
       "path": "/반송동법무사",

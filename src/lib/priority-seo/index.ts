@@ -10,6 +10,8 @@ import { depositHubSpec } from "./pages/deposit-hub";
 import { depositPaymentSpec } from "./pages/deposit-payment";
 import { depositReleaseSpec } from "./pages/deposit-release";
 import { depositSecuritySpec } from "./pages/deposit-security";
+import { attachmentReleaseSpec } from "./pages/attachment-release";
+import { inheritanceEstateBankruptcySpec } from "./pages/inheritance-estate-bankruptcy";
 import type { PrioritySeoSpec } from "./types";
 
 /**
@@ -23,6 +25,8 @@ const NEW_PRIORITY_PAGES: readonly PrioritySeoSpec[] = [
   depositSecuritySpec,
   depositCriminalSpec,
   depositReleaseSpec,
+  attachmentReleaseSpec,
+  inheritanceEstateBankruptcySpec,
 ];
 
 /** TARGET_ALLOWLIST — 기존 URL을 유지한 채 전용 레이아웃으로 렌더하는 페이지 */

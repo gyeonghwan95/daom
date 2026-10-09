@@ -110,6 +110,7 @@ export const 부산가압류신청Override: SearchIntentContent = {
     civilHub,
     { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비(비대면)" },
     { href: "/부산가압류말소등기", label: "가압류 말소등기" },
+    { href: "/부산가압류취소", label: "가압류를 당한 쪽의 취소·해제 방법" },
     { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
     { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
   ],

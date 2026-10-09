@@ -1,0 +1,9 @@
+﻿type,url_a,url_b,required_pair,title_sim,first700_sim,body_sim,h2_sim,band,result
+PAIR,/부산가압류취소,/부산가압류말소등기,Y,0.217,0.050,0.307,0.471,ACCEPT,PASS
+PAIR,/부산가압류취소,/부산가압류신청,Y,0.352,0.086,0.391,0.444,ACCEPT,PASS
+PAIR,/부산가압류취소,/부산공탁,Y,0.317,0.020,0.356,0.462,ACCEPT,PASS
+PAIR,/부산상속재산파산,/부산한정승인,Y,0.289,0.123,0.520,0.576,ACCEPT,PASS
+PAIR,/부산상속재산파산,/부산상속재산관리인,Y,0.385,0.041,0.365,0.487,ACCEPT,PASS
+PAIR,/부산상속재산파산,/부산개인파산,Y,0.184,0.023,0.314,0.484,ACCEPT,PASS
+NEAREST,/부산가압류취소,/부산집행공탁,N,0.354,0.083,0.391,0.492,ACCEPT,PASS
+NEAREST,/부산상속재산파산,/부산한정승인,N,0.289,0.123,0.520,0.576,ACCEPT,PASS

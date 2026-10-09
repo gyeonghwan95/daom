@@ -460,6 +460,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/가처분신청서류준비", label: "가처분 신청 서류 준비" },
           { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
           { href: "/부산가압류말소등기", label: "가압류 말소등기(이미 설정된 경우)" },
+          { href: "/부산가압류취소", label: "가압류를 당했을 때 푸는 방법" },
           { href: "/공탁채권회수", label: "공탁·채권압류·추심 안내" },
         ],
       },

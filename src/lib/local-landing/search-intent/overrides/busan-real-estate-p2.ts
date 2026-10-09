@@ -564,7 +564,10 @@ export const 부산가압류말소등기Override = buildRemainingRealEstateConte
   ],
   serviceSlug: "real-estate-registration",
   relatedServiceLinks: restrictionLinks,
-  relatedGuideLinks: [{ href: "/glossary/provisional-attachment", label: "가압류 용어 안내" }],
+  relatedGuideLinks: [
+    { href: "/glossary/provisional-attachment", label: "가압류 용어 안내" },
+    { href: "/부산가압류취소", label: "말소 전에 가압류를 푸는 방법(해방공탁·취소)" },
+  ],
 });
 
 export const 부산압류말소등기Override = buildRemainingRealEstateContent({
