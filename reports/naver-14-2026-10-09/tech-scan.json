@@ -1,0 +1,21 @@
+{
+ "headDup": [
+  {
+   "route": "/404",
+   "title": 1,
+   "canonical": 1,
+   "description": 1,
+   "robots": 2
+  },
+  {
+   "route": "/_not-found",
+   "title": 1,
+   "canonical": 1,
+   "description": 1,
+   "robots": 2
+  }
+ ],
+ "canonicalNotAbsolute": [],
+ "doubleEncoded": [],
+ "brokenLinks": []
+}

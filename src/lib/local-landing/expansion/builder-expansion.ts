@@ -439,8 +439,9 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
   const genericFaqs: ServiceFaq[] = [
     {
       question: `${topic.title}${topicParticle(topic.title)} 얼마나 드나요?`,
+      // 문장형 요인은 상담 포인트 목록에 이미 나오므로 FAQ는 직접 답만 둔다(같은 문장 3회 반복 방지).
       answer: factorsAreSentences
-        ? topic.costFactors.join(" ")
+        ? "보수와 세금·공과금을 합친 한 금액으로 미리 단정하기는 어렵습니다. 업무 종류와 부동산 가액·상속인 수·법인 변경사항 등을 확인한 뒤 보수·세금·공과금을 항목별로 나눠 안내합니다."
         : `${topic.costFactors.join(", ")} 등에 따라 달라집니다. 확정 금액은 서류를 확인한 뒤 항목별로 안내합니다.`,
     },
     {
@@ -513,7 +514,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     ],
     documents: topic.documentList,
     costGuide: factorsAreSentences
-      ? `${topic.costFactors.join(" ")} ${topic.timelineNotes.join(" ")}`
+      ? `비용은 법무사 보수와 세금·공과금을 나눠서 봅니다. ${topic.timelineNotes.join(" ")}`
       : `${topic.title}${topicParticle(topic.title)} ${topic.costFactors.join(", ")}에 따라 달라집니다. ${topic.timelineNotes.join(" ")}`,
     faqs: faqs.slice(0, 10),
     lawyerOpinion: buildLawyerOpinion("부산", topic.title),

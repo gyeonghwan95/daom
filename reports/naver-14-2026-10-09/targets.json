@@ -1,0 +1,164 @@
+[
+ {
+  "set": "required14",
+  "query": "부산 법인전문 법무사",
+  "candidate": "/부산법인법무사",
+  "owner": "/부산법인법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법인 법무사",
+  "candidate": "/부산법인법무사",
+  "owner": "/부산법인법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법인설립 법무사",
+  "candidate": "/부산법인설립등기",
+  "owner": "/부산법인설립등기"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법인등기 법무사",
+  "candidate": "/부산법인등기",
+  "owner": "/부산법인등기"
+ },
+ {
+  "set": "required14",
+  "query": "부산 상속 법무사",
+  "candidate": "/부산상속법무사",
+  "owner": "/부산상속법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 상속전문 법무사",
+  "candidate": "/부산상속법무사",
+  "owner": "/부산상속법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 상속포기 법무사",
+  "candidate": "/부산상속포기",
+  "owner": "/부산상속포기"
+ },
+ {
+  "set": "required14",
+  "query": "부산 한정승인 법무사",
+  "candidate": "/부산한정승인",
+  "owner": "/부산한정승인"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법무사 상속",
+  "candidate": "/부산상속법무사",
+  "owner": "/부산상속법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 등기 법무사",
+  "candidate": "/부산등기법무사",
+  "owner": "/부산등기법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 등기전문 법무사",
+  "candidate": "/부산등기법무사",
+  "owner": "/부산등기법무사"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법무사",
+  "candidate": "/",
+  "owner": "/"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법무사 추천",
+  "candidate": "/부산법무사추천",
+  "owner": "/부산법무사추천"
+ },
+ {
+  "set": "required14",
+  "query": "부산 법무사 상담",
+  "candidate": "/부산법무사상담",
+  "owner": "/부산법무사상담"
+ },
+ {
+  "set": "extra",
+  "query": "부산법무사",
+  "candidate": "/부산법무사",
+  "owner": "/부산법무사"
+ },
+ {
+  "set": "extra",
+  "query": "부산 법무사 비용",
+  "candidate": "/부산법무사비용",
+  "owner": "/부산법무사비용"
+ },
+ {
+  "set": "extra",
+  "query": "부산 법무사 등기",
+  "candidate": "/부산등기법무사",
+  "owner": "/부산등기법무사"
+ },
+ {
+  "set": "extra",
+  "query": "부산 상속등기 법무사",
+  "candidate": "/부산상속등기",
+  "owner": "/부산상속등기"
+ },
+ {
+  "set": "extra",
+  "query": "부산 부동산등기 법무사",
+  "candidate": "/부산부동산등기법무사",
+  "owner": "/부산부동산등기법무사"
+ },
+ {
+  "set": "extra",
+  "query": "부산 소유권이전등기 법무사",
+  "candidate": "/부산소유권이전등기",
+  "owner": "/부산소유권이전등기"
+ },
+ {
+  "set": "extra",
+  "query": "부산 증여등기 법무사",
+  "candidate": "/부산증여등기",
+  "owner": "/부산증여등기"
+ },
+ {
+  "set": "extra",
+  "query": "부산 특별한정승인 법무사",
+  "candidate": "/특별한정승인",
+  "owner": "/특별한정승인"
+ },
+ {
+  "set": "extra",
+  "query": "부산 임원변경등기",
+  "candidate": "/부산임원변경등기",
+  "owner": "/부산임원변경등기"
+ },
+ {
+  "set": "extra",
+  "query": "부산 본점이전등기",
+  "candidate": "/부산본점이전등기",
+  "owner": "/부산본점이전등기"
+ },
+ {
+  "set": "extra",
+  "query": "해운대 법무사",
+  "candidate": "/해운대법무사",
+  "owner": "/해운대법무사"
+ },
+ {
+  "set": "extra",
+  "query": "재송동 법무사",
+  "candidate": "/재송동법무사",
+  "owner": "/재송동법무사"
+ },
+ {
+  "set": "extra",
+  "query": "센텀 법무사",
+  "candidate": "/센텀법무사",
+  "owner": "/센텀법무사"
+ }
+]

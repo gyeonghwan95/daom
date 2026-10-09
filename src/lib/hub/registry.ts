@@ -114,7 +114,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/services/cases/centum-ownership-transfer-case", "센텀 부동산 매매 등기 사례"),
       s("/법인설립등기비용", "법인설립등기 비용"),
       s("/임원변경등기과태료", "임원변경등기 과태료"),
-      s("/location", "센텀시티역 인근 법무사"),
+      s("/location", "센텀역·재송역 도보권 사무소 위치"),
       s("/contact", "센텀 법무사 상담"),
     ],
   },

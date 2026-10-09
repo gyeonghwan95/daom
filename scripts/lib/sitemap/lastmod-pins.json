@@ -1,5 +1,5 @@
 {
-  "note": "2026-09-27 speaker SEO reset: src/lib/lectures/content.ts 수정 시 함께 정의된 비대상 강의 페이지 lastmod 유지. 2026-09-27 naver critical recovery: src/app/[landingSlug]/page.tsx 수정으로 /업무사례 lastmod가 바뀌지 않도록 고정. 2026-10-02 부산 상속전문·상속포기 링크 보강: 블로그 mdx·keyword-topics.ts·topic-hubs/config.ts·situations page.tsx를 수정했지만 본문이 그대로인 홈·키워드 허브·주제 허브·상황 분류 페이지 lastmod 유지. 2026-10-03 약한 키워드 보강: 소유권이전·근저당 설정/말소·민사 허브·개인회생 법무사·신규 소액소송만 갱신. 2026-10-03 업무범위 문구 점검: keyword-topics-phase2.ts 수정으로 바뀐 비대상 3개 lastmod 유지. 2026-10-04 업무범위 표현 수정: 본문이 바뀐 /특수등기·/부산스타트업법무사 고정 해제, 공유 파일(jeonse.ts·keyword-topics-phase2.ts·topic-hubs/config.ts) 수정으로만 바뀐 비대상 5개 lastmod 유지 2026-10-09 부산 지역+업무 검색 보강: /민사소송·/공탁채권회수·/상속·/부산파산은 본문·링크가 실제로 바뀌어 2026-10-09, keyword-topics.ts 공유 수정으로만 날짜가 바뀌던 /특수등기는 2026-10-08 유지.",
+  "note": "2026-09-27 speaker SEO reset: src/lib/lectures/content.ts 수정 시 함께 정의된 비대상 강의 페이지 lastmod 유지. 2026-09-27 naver critical recovery: src/app/[landingSlug]/page.tsx 수정으로 /업무사례 lastmod가 바뀌지 않도록 고정. 2026-10-02 부산 상속전문·상속포기 링크 보강: 블로그 mdx·keyword-topics.ts·topic-hubs/config.ts·situations page.tsx를 수정했지만 본문이 그대로인 홈·키워드 허브·주제 허브·상황 분류 페이지 lastmod 유지. 2026-10-03 약한 키워드 보강: 소유권이전·근저당 설정/말소·민사 허브·개인회생 법무사·신규 소액소송만 갱신. 2026-10-03 업무범위 문구 점검: keyword-topics-phase2.ts 수정으로 바뀐 비대상 3개 lastmod 유지. 2026-10-04 업무범위 표현 수정: 본문이 바뀐 /특수등기·/부산스타트업법무사 고정 해제, 공유 파일(jeonse.ts·keyword-topics-phase2.ts·topic-hubs/config.ts) 수정으로만 바뀐 비대상 5개 lastmod 유지 2026-10-09 부산 지역+업무 검색 보강: /민사소송·/공탁채권회수·/상속·/부산파산은 본문·링크가 실제로 바뀌어 2026-10-09, keyword-topics.ts 공유 수정으로만 날짜가 바뀌던 /특수등기는 2026-10-08 유지. 2026-10-09 14개 검색어 점검: /부산법무사상담(업무별 링크 문장 추가)·/센텀법무사(오시는 길 링크 문구를 사무소 실제 역 표기로 정정)는 본문이 실제로 바뀌어 2026-10-09.",
   "pins": {
     "/": "2026-09-20",
     "/가족후견": "2026-10-03",
@@ -99,6 +99,8 @@
     "/situations/분류/부동산-매매-증여-등기": "2026-07-21",
     "/situations/분류/전세-임대차-보증금": "2026-07-21",
     "/부산파산": "2026-10-09",
-    "/특수등기": "2026-10-08"
+    "/특수등기": "2026-10-08",
+    "/부산법무사상담": "2026-10-09",
+    "/센텀법무사": "2026-10-09"
   }
 }
