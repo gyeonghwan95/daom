@@ -7,6 +7,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { RelatedContentGrid } from "@/components/readability";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { HubChildLinks } from "@/components/seo/HubChildLinks";
 
 export function CaseRegionsHubView({ page }: { page: PageData }) {
   return (
@@ -73,6 +74,8 @@ export function CaseRegionsByAreaView({ page }: { page: PageData }) {
       </header>
 
       <CaseRegionExplorer />
+
+      <HubChildLinks path={page.path} />
 
       <section>
         <h2 className="section-heading">자주 묻는 질문</h2>

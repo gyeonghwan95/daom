@@ -23,6 +23,24 @@ function pick<T>(items: T[], seed: string, offset = 0): T {
   return items[index]!;
 }
 
+/** 한 페이지에서 여러 문장을 고를 때 같은 문장이 두 번 나오지 않게 한다(avoid: 같은 페이지에서 이미 쓴 문장). */
+function pickDistinct<T>(items: T[], seed: string, offsets: number[], avoid: readonly T[] = []): T[] {
+  const used = new Set<T>(avoid);
+  const out: T[] = [];
+  for (const offset of offsets) {
+    const start = (hashSeed(`${seed}:${offset}`) % items.length + items.length) % items.length;
+    for (let step = 0; step < items.length; step += 1) {
+      const item = items[(start + step) % items.length]!;
+      if (!used.has(item)) {
+        used.add(item);
+        out.push(item);
+        break;
+      }
+    }
+  }
+  return out;
+}
+
 function regionContext(regionId?: string): string {
   const region = regionId ? getSeoEntityById(regionId) : undefined;
   return region?.description ?? "부산은 관할 법원·등기소가 사건별로 달라 사전 정리가 중요한 지역입니다.";
@@ -103,7 +121,7 @@ function uniqueAngleBlock(spec: SeoLandingSpec): string {
       `${service}에서 미성년·해외 거주가 있으면 특별대리·위임·인증이 추가됩니다.`,
       `${service} 상담 메모에는 사망일·상속인·확인된 채무만 적어도 1차 방향을 잡을 수 있습니다.`,
     ];
-    return `${pick(angles, spec.seed, 30)} ${pick(angles, spec.seed, 31)}`;
+    return pickDistinct(angles, spec.seed, [30, 31]).join(" ");
   }
   const angles = [
     `${service}에서는 신청인·의무자·권리자 표기를 서류마다 맞추는 것이 보정 예방에 중요합니다.`,
@@ -117,7 +135,7 @@ function uniqueAngleBlock(spec: SeoLandingSpec): string {
     `${service}에서 공동명의·미성년·해외 거주가 있으면 동의·특별대리·인증 서류가 추가됩니다.`,
     `${service} 상담 메모에는 주소·날짜·당사자 관계만 적어도 1차 체크리스트를 만들 수 있습니다.`,
   ];
-  return `${pick(angles, spec.seed, 30)} ${pick(angles, spec.seed, 31)}`;
+  return pickDistinct(angles, spec.seed, [30, 31]).join(" ");
 }
 
 /** serviceId별 고정 포인트 — 동일 업무×다른 지역 유사도 완화 */
@@ -183,7 +201,11 @@ function serviceFocusLines(serviceId?: string): string[] {
   );
 }
 
-function exclusiveClusterBody(spec: SeoLandingSpec): string {
+function exclusiveClusterBody(spec: SeoLandingSpec, avoid: readonly string[] = []): string {
+  return exclusiveClusterSentences(spec, avoid).join(" ");
+}
+
+function exclusiveClusterSentences(spec: SeoLandingSpec, avoid: readonly string[] = []): string[] {
   if (spec.serviceId === "inheritance-renunciation") {
     const clusters = [
       "상속포기는 가정법원 신고입니다. 3개월 기한은 사망일과 인지일을 구분해 달력에 적습니다.",
@@ -199,7 +221,7 @@ function exclusiveClusterBody(spec: SeoLandingSpec): string {
       "기한이 지났고 뒤늦게 채무를 알게 된 경우에는 특별한정승인 검토 여지가 있을 수 있습니다.",
       "사시는 구·동과 피상속인 마지막 주소지가 다르면 관할을 피상속인 주소지 기준으로 다시 확인합니다.",
     ];
-    return [1, 4, 7].map((off) => pick(clusters, spec.seed, off)).join(" ");
+    return pickDistinct(clusters, spec.seed, [1, 4, 7], avoid);
   }
   if (spec.serviceId === "qualified-acceptance") {
     const clusters = [
@@ -210,11 +232,10 @@ function exclusiveClusterBody(spec: SeoLandingSpec): string {
       "기한이 지났다면 특별한정승인 가능성을 먼저 확인합니다.",
       "재산·채무 목록 작성과 신고 후 공고 절차는 부산 한정승인 안내에 자세히 정리돼 있습니다.",
     ];
-    return [0, 2, 4].map((off) => pick(clusters, spec.seed, off)).join(" ");
+    return pickDistinct(clusters, spec.seed, [0, 2, 4], avoid);
   }
   const clusters = clusterPoolFor(spec.serviceId);
-  const picked = [1, 4, 7].map((off) => pick(clusters, spec.seed, off));
-  return [...new Set(picked)].join(" ");
+  return pickDistinct(clusters, spec.seed, [1, 4, 7], avoid);
 }
 
 function clusterPoolFor(serviceId?: string): string[] {
@@ -275,7 +296,7 @@ function clusterPoolFor(serviceId?: string): string[] {
   return map[serviceId ?? ""] ?? general;
 }
 
-function seededLocalChecklist(spec: SeoLandingSpec): string[] {
+function seededLocalChecklist(spec: SeoLandingSpec, extra = false): string[] {
   const pool = [
     "상담 메모에 잔금·결의·상속 개시처럼 날짜가 있으면 맨 위에 적습니다.",
     "등기부등본이 없어도 주소만으로 1차 관할·서류 목록을 만들 수 있습니다.",
@@ -293,7 +314,9 @@ function seededLocalChecklist(spec: SeoLandingSpec): string[] {
     "사시는 생활권과 실제 사건 주소가 다르면 관할을 사건 주소 기준으로 다시 확인합니다.",
     "완료 후 등기필·접수증 전달 방식(메일·카카오·방문)을 정합니다.",
   ];
-  return [0, 1, 2, 3, 4].map((i) => pick(pool, spec.seed, 60 + i));
+  const main = pickDistinct(pool, spec.seed, [60, 61, 62, 63, 64]);
+  // extra: 같은 페이지의 다른 섹션용 — 위 5개와 겹치지 않는 3개
+  return extra ? pickDistinct(pool, spec.seed, [70, 71, 72], main) : main;
 }
 
 function penaltyFacts(serviceId: string | undefined): string[] {
@@ -574,7 +597,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
     },
     {
       title: `${service}에서 자주 놓치는 점`,
-      body: `${uniqueAngleBlock(spec)} ${seededLocalChecklist(spec).join(" ")}`,
+      body: uniqueAngleBlock(spec),
       items: [...focusItems, ...seededLocalChecklist(spec)].slice(0, 8),
     },
     ...(intentBody
@@ -599,11 +622,11 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
           ? deadlineFacts(spec.serviceId)
           : intent === "과태료"
             ? penaltyFacts(spec.serviceId)
-            : seededLocalChecklist(spec).slice(0, 3),
+            : seededLocalChecklist(spec, true),
     },
     {
       title: "준비 서류",
-      body: `${pick(documentVariants, spec.seed, 4)} ${exclusiveClusterBody({ ...spec, seed: `${spec.seed}:docs` })}`,
+      body: `${pick(documentVariants, spec.seed, 4)} ${exclusiveClusterBody({ ...spec, seed: `${spec.seed}:docs` }, exclusiveClusterSentences(spec))}`,
     },
     {
       title: profile.sectionTitles[2] ?? `${region} 지역 특성`,
@@ -1037,8 +1060,10 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
     };
   }
 
+  const intro = introForSpec(spec);
   return {
-    intro: introForSpec(spec),
+    intro,
+    // 도입문(intro)에 이미 들어간 지역·업무 설명은 문단 목록에서 다시 출력하지 않는다.
     introParagraphs: [
       regionContext(spec.regionId),
       serviceContext(spec.serviceId),
@@ -1053,7 +1078,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
             spec.seed,
             20,
           ),
-    ],
+    ].filter((paragraph) => !intro.includes(paragraph)),
     sections: buildSections(spec),
     faqs: buildFaqs(spec),
     consultationExample: {

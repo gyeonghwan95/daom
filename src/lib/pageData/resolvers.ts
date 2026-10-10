@@ -16,8 +16,41 @@ import {
   buildPageDataFromTopicHub,
 } from "./builders";
 import { getPageDataByPath } from "./registry";
+import { HUB_CHILD_LINKS } from "@/data/seo/hub-child-links";
+
+/**
+ * 상위 허브에 하위 상세 안내 링크를 붙인다. 내부 링크가 없던 색인 페이지를 맥락이 맞는 허브 한 곳에서만 연결한다
+ * (목록: src/data/seo/hub-child-links.ts). 전역 푸터에는 넣지 않는다.
+ */
+function withHubChildLinks(
+  page: ReturnType<typeof getPageDataByPath>,
+): ReturnType<typeof getPageDataByPath> {
+  const links = page ? HUB_CHILD_LINKS[page.path] : undefined;
+  if (!page || !links?.length) return page;
+  const existing = new Set(page.sections.flatMap((s) => (s.links ?? []).map((l) => l.href)));
+  const fresh = links.filter((l) => !existing.has(l.href));
+  if (!fresh.length) return page;
+  return {
+    ...page,
+    sections: [
+      ...page.sections,
+      {
+        id: "hub-child-links",
+        title: "이어서 볼 수 있는 상세 안내",
+        body: "같은 업무·지역에서 따로 정리한 안내입니다. 지금 상황에 가까운 항목을 골라 보세요.",
+        links: fresh.map((l) => ({ href: l.href, label: l.label })),
+      },
+    ],
+  };
+}
 
 export function resolveKoreanLandingPageData(
+  slug: string,
+): ReturnType<typeof getPageDataByPath> {
+  return withHubChildLinks(resolveKoreanLandingPageDataBase(slug));
+}
+
+function resolveKoreanLandingPageDataBase(
   slug: string,
 ): ReturnType<typeof getPageDataByPath> {
   const normalized = normalizeRouteSlug(slug);

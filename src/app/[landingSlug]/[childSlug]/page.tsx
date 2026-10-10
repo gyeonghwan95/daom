@@ -65,6 +65,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { createPageMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { RegionCoverageContained, RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
 
 type Props = {
   params: Promise<{ landingSlug: string; childSlug: string }>;
@@ -288,7 +289,12 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
 
     const metroTarget = getMetroRemoteTarget(child);
     if (metroTarget && nationwidePage) {
-      return <MetroRemoteTargetView spec={metroTarget} breadcrumbs={nationwidePage.breadcrumbs} />;
+      return (
+        <>
+          <MetroRemoteTargetView spec={metroTarget} breadcrumbs={nationwidePage.breadcrumbs} />
+          <RegionCoverageContained path={`/업무사례/${child}`} />
+        </>
+      );
     }
 
     const regionalTarget = getRegionalInheritanceTarget(child);
@@ -297,10 +303,13 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
       (nationwidePage ?? getGyeongnamPageDataBySlug(child) ?? getSoutheastPageDataBySlug(child));
     if (regionalTarget && regionalBasePage) {
       return (
-        <RegionalInheritanceTargetView
-          target={regionalTarget}
-          breadcrumbs={regionalBasePage.breadcrumbs}
-        />
+        <>
+          <RegionalInheritanceTargetView
+            target={regionalTarget}
+            breadcrumbs={regionalBasePage.breadcrumbs}
+          />
+          <RegionCoverageContained path={`/업무사례/${child}`} />
+        </>
       );
     }
 
@@ -325,6 +334,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             explorerItems={explorerItems}
             explorerGroups={getRegionHubGroups()}
           />
+          <RegionCoverageSection path={`/업무사례/${child}`} />
           <LawyerTrustShowcase />
         </PageContainer>
       );
@@ -360,6 +370,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             }))}
             coreLinks={coreLinks}
           />
+          <RegionCoverageSection path={`/업무사례/${child}`} />
           <LawyerTrustShowcase />
         </PageContainer>
       );
@@ -395,6 +406,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
             explorerFilters={getSoutheastHubFilters(southeastDef.regionGroup)}
             coreLinks={[...SOUTHEAST_HUB_LINKS[southeastDef.regionGroup]]}
           />
+          <RegionCoverageSection path={`/업무사례/${child}`} />
           <LawyerTrustShowcase />
         </PageContainer>
       );

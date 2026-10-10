@@ -23,6 +23,7 @@ import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chi
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
+import { HubChildLinks } from "@/components/seo/HubChildLinks";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -308,6 +309,8 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       <ContentSection id="related" title="관련 업무 페이지">
         <RelatedContentGrid links={content.relatedLinks} />
       </ContentSection>
+
+      <HubChildLinks path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

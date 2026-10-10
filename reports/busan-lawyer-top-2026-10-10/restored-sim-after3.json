@@ -1,0 +1,551 @@
+[
+ {
+  "group": "restored",
+  "r": "/강서구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/중구상속포기",
+  "sim": 0.911,
+  "mainLen": 5165
+ },
+ {
+  "group": "restored",
+  "r": "/강서구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/동구한정승인",
+  "sim": 0.908,
+  "mainLen": 5055
+ },
+ {
+  "group": "restored",
+  "r": "/금정구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/영도구상속포기",
+  "sim": 0.938,
+  "mainLen": 5224
+ },
+ {
+  "group": "restored",
+  "r": "/기장군법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/동래구법인등기",
+  "sim": 0.902,
+  "mainLen": 4371
+ },
+ {
+  "group": "restored",
+  "r": "/기장군한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/연제구한정승인",
+  "sim": 0.915,
+  "mainLen": 4529
+ },
+ {
+  "group": "restored",
+  "r": "/남구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/중구상속포기",
+  "sim": 0.919,
+  "mainLen": 5142
+ },
+ {
+  "group": "restored",
+  "r": "/남부산등기소부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/중부산등기소부동산등기",
+  "sim": 0.94,
+  "mainLen": 4645
+ },
+ {
+  "group": "restored",
+  "r": "/동구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/중구상속포기",
+  "sim": 0.915,
+  "mainLen": 5241
+ },
+ {
+  "group": "restored",
+  "r": "/동구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/중구한정승인",
+  "sim": 0.924,
+  "mainLen": 5070
+ },
+ {
+  "group": "restored",
+  "r": "/동래구법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/수영구법인등기",
+  "sim": 0.915,
+  "mainLen": 4353
+ },
+ {
+  "group": "restored",
+  "r": "/동래구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/동구상속포기",
+  "sim": 0.909,
+  "mainLen": 5185
+ },
+ {
+  "group": "restored",
+  "r": "/동래구임원변경등기",
+  "svc": "임원변경등기",
+  "siblings": 27,
+  "nearest": "/연제구임원변경등기",
+  "sim": 0.924,
+  "mainLen": 4392
+ },
+ {
+  "group": "restored",
+  "r": "/동부지원상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/부산지방법원상속등기",
+  "sim": 0.895,
+  "mainLen": 4870
+ },
+ {
+  "group": "restored",
+  "r": "/명지법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/서면역법인등기",
+  "sim": 0.906,
+  "mainLen": 4928
+ },
+ {
+  "group": "restored",
+  "r": "/민락동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/장전동부동산등기",
+  "sim": 0.91,
+  "mainLen": 4825
+ },
+ {
+  "group": "restored",
+  "r": "/반여동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/중동부동산등기",
+  "sim": 0.93,
+  "mainLen": 4948
+ },
+ {
+  "group": "restored",
+  "r": "/반여동상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/좌동상속등기",
+  "sim": 0.945,
+  "mainLen": 5161
+ },
+ {
+  "group": "restored",
+  "r": "/부곡동상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/좌동상속등기",
+  "sim": 0.937,
+  "mainLen": 5182
+ },
+ {
+  "group": "restored",
+  "r": "/부곡동한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/영도구한정승인",
+  "sim": 0.915,
+  "mainLen": 5100
+ },
+ {
+  "group": "restored",
+  "r": "/부산역부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/중동부동산등기",
+  "sim": 0.89,
+  "mainLen": 4883
+ },
+ {
+  "group": "restored",
+  "r": "/부산진구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/연제구법인설립등기",
+  "sim": 0.896,
+  "mainLen": 4989
+ },
+ {
+  "group": "restored",
+  "r": "/부산진구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/동구한정승인",
+  "sim": 0.896,
+  "mainLen": 5126
+ },
+ {
+  "group": "restored",
+  "r": "/북구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/사상구상속포기",
+  "sim": 0.942,
+  "mainLen": 4668
+ },
+ {
+  "group": "restored",
+  "r": "/북구임원변경등기",
+  "svc": "임원변경등기",
+  "siblings": 27,
+  "nearest": "/중구임원변경등기",
+  "sim": 0.934,
+  "mainLen": 4947
+ },
+ {
+  "group": "restored",
+  "r": "/북구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/동구한정승인",
+  "sim": 0.914,
+  "mainLen": 5111
+ },
+ {
+  "group": "restored",
+  "r": "/북부산등기소부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/남부산등기소부동산등기",
+  "sim": 0.94,
+  "mainLen": 4653
+ },
+ {
+  "group": "restored",
+  "r": "/북부산등기소상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/동부지원상속등기",
+  "sim": 0.894,
+  "mainLen": 4870
+ },
+ {
+  "group": "restored",
+  "r": "/사상구법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/서구법인등기",
+  "sim": 0.905,
+  "mainLen": 4978
+ },
+ {
+  "group": "restored",
+  "r": "/사상구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/중구한정승인",
+  "sim": 0.894,
+  "mainLen": 5104
+ },
+ {
+  "group": "restored",
+  "r": "/사하구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/영도구법인설립등기",
+  "sim": 0.914,
+  "mainLen": 4954
+ },
+ {
+  "group": "restored",
+  "r": "/사하구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/서구한정승인",
+  "sim": 0.91,
+  "mainLen": 5152
+ },
+ {
+  "group": "restored",
+  "r": "/서구법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/서면역법인등기",
+  "sim": 0.911,
+  "mainLen": 4923
+ },
+ {
+  "group": "restored",
+  "r": "/서구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/사하구상속포기",
+  "sim": 0.915,
+  "mainLen": 5190
+ },
+ {
+  "group": "restored",
+  "r": "/서구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/사하구한정승인",
+  "sim": 0.91,
+  "mainLen": 5154
+ },
+ {
+  "group": "restored",
+  "r": "/서면역법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/서구법인등기",
+  "sim": 0.911,
+  "mainLen": 4941
+ },
+ {
+  "group": "restored",
+  "r": "/수영구법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/동래구법인등기",
+  "sim": 0.915,
+  "mainLen": 4387
+ },
+ {
+  "group": "restored",
+  "r": "/수영구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/연제구법인설립등기",
+  "sim": 0.917,
+  "mainLen": 4915
+ },
+ {
+  "group": "restored",
+  "r": "/수영구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/북구상속포기",
+  "sim": 0.937,
+  "mainLen": 4714
+ },
+ {
+  "group": "restored",
+  "r": "/수영구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/남구한정승인",
+  "sim": 0.929,
+  "mainLen": 5157
+ },
+ {
+  "group": "restored",
+  "r": "/양정동상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/송정동상속등기",
+  "sim": 0.908,
+  "mainLen": 5073
+ },
+ {
+  "group": "restored",
+  "r": "/연산동법인등기",
+  "svc": "법인등기",
+  "siblings": 47,
+  "nearest": "/남구법인등기",
+  "sim": 0.908,
+  "mainLen": 5117
+ },
+ {
+  "group": "restored",
+  "r": "/연제구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/수영구법인설립등기",
+  "sim": 0.917,
+  "mainLen": 5089
+ },
+ {
+  "group": "restored",
+  "r": "/연제구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/북구상속포기",
+  "sim": 0.942,
+  "mainLen": 4689
+ },
+ {
+  "group": "restored",
+  "r": "/영도구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/사하구법인설립등기",
+  "sim": 0.914,
+  "mainLen": 5038
+ },
+ {
+  "group": "restored",
+  "r": "/영도구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/금정구상속포기",
+  "sim": 0.938,
+  "mainLen": 5145
+ },
+ {
+  "group": "restored",
+  "r": "/영도구임원변경등기",
+  "svc": "임원변경등기",
+  "siblings": 27,
+  "nearest": "/사상구임원변경등기",
+  "sim": 0.908,
+  "mainLen": 5046
+ },
+ {
+  "group": "restored",
+  "r": "/우동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/반여동부동산등기",
+  "sim": 0.924,
+  "mainLen": 4914
+ },
+ {
+  "group": "restored",
+  "r": "/장전동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/민락동부동산등기",
+  "sim": 0.91,
+  "mainLen": 4873
+ },
+ {
+  "group": "restored",
+  "r": "/재송동상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/송정동상속등기",
+  "sim": 0.891,
+  "mainLen": 5128
+ },
+ {
+  "group": "restored",
+  "r": "/좌동상속등기",
+  "svc": "상속등기",
+  "siblings": 48,
+  "nearest": "/반여동상속등기",
+  "sim": 0.945,
+  "mainLen": 5188
+ },
+ {
+  "group": "restored",
+  "r": "/중구법인설립등기",
+  "svc": "법인설립등기",
+  "siblings": 38,
+  "nearest": "/북구법인설립등기",
+  "sim": 0.941,
+  "mainLen": 4890
+ },
+ {
+  "group": "restored",
+  "r": "/중구상속포기",
+  "svc": "상속포기",
+  "siblings": 17,
+  "nearest": "/남구상속포기",
+  "sim": 0.919,
+  "mainLen": 5229
+ },
+ {
+  "group": "restored",
+  "r": "/중구임원변경등기",
+  "svc": "임원변경등기",
+  "siblings": 27,
+  "nearest": "/동구임원변경등기",
+  "sim": 0.955,
+  "mainLen": 5005
+ },
+ {
+  "group": "restored",
+  "r": "/중구한정승인",
+  "svc": "한정승인",
+  "siblings": 20,
+  "nearest": "/동구한정승인",
+  "sim": 0.924,
+  "mainLen": 5017
+ },
+ {
+  "group": "restored",
+  "r": "/중동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/반여동부동산등기",
+  "sim": 0.93,
+  "mainLen": 4887
+ },
+ {
+  "group": "restored",
+  "r": "/화명동부동산등기",
+  "svc": "부동산등기",
+  "siblings": 41,
+  "nearest": "/우동부동산등기",
+  "sim": 0.915,
+  "mainLen": 4810
+ },
+ {
+  "group": "restored",
+  "r": "/업무사례/광주상속등기법무사",
+  "svc": "상속등기법무사",
+  "siblings": 154,
+  "nearest": "/업무사례/세종상속등기법무사",
+  "sim": 0.906,
+  "mainLen": 5724
+ },
+ {
+  "group": "restored",
+  "r": "/업무사례/부산명지법무사",
+  "svc": "법무사",
+  "siblings": 424,
+  "nearest": "/업무사례/강서구법무사",
+  "sim": 0.902,
+  "mainLen": 4756
+ },
+ {
+  "group": "restored",
+  "r": "/업무사례/부산신항법무사",
+  "svc": "법무사",
+  "siblings": 424,
+  "nearest": "/업무사례/부산항법무사",
+  "sim": 0.922,
+  "mainLen": 4769
+ },
+ {
+  "group": "restored",
+  "r": "/업무사례/부산회동동법무사",
+  "svc": "법무사",
+  "siblings": 424,
+  "nearest": "/업무사례/부산대법무사",
+  "sim": 0.901,
+  "mainLen": 4877
+ },
+ {
+  "group": "restored",
+  "r": "/업무사례/세종상속등기법무사",
+  "svc": "상속등기법무사",
+  "siblings": 154,
+  "nearest": "/업무사례/전북상속등기법무사",
+  "sim": 0.913,
+  "mainLen": 5684
+ }
+]

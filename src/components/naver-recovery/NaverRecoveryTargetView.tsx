@@ -17,6 +17,7 @@ import type {
   NrEvidenceStatus,
   NrInline,
 } from "@/lib/naver-recovery/types";
+import { HubChildLinks } from "@/components/seo/HubChildLinks";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -118,6 +119,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
             </div>
           </ContentSection>
         ))}
+
+        <HubChildLinks path={page.path} />
 
         <ContentSection id="faq" title="자주 묻는 질문">
           <FAQAccordion items={[...spec.faqs]} />

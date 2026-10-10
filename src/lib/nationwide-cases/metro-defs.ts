@@ -63,7 +63,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 경기에 별도 지점이 있는 것은 아닙니다. 관할 특례와 비대면 방식을 검토하여 경기 소재 부동산도 진행 바로 진행 방법을 안내합니다.",
     localIntro:
-      "경기에서는 서로 다른 시에 아파트와 토지가 있는 경우, 신도시 아파트와 외곽 토지가 함께 있는 경우가 많습니다. 상속인 거주지가 서울·부산 등으로 갈라져도 한 사무소에서 목록을 관리할 수 있습니다.",
+      "경기도는 31개 시·군이라 부동산마다 관할 등기소가 다릅니다. 수원·용인·고양처럼 여러 시에 흩어진 상속부동산은 2025년 1월 31일부터 관할이 아닌 등기소에서도 상속등기를 처리할 수 있어(부동산등기법 제7조의3), 접수처를 한곳으로 모을 수 있는지부터 봅니다. 경기 광주시는 광주광역시와 이름이 같아 등기부의 '경기도 광주시' 표기로 구분합니다.",
     scenarioIds: ["newtown-outer", "multi-gu", "apt-land-mix", "heir-scattered"],
     propertyTypeIds: ["apt", "land", "farm"],
     uniqueFaqIds: ["gyeonggi-cities", "multi-prop", "branch-myth", "cost-split"],
@@ -92,7 +92,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 인천에 별도 지점이 있는 것은 아닙니다. 상속등기 관할 특례와 비대면 서류 전달을 검토합니다.",
     localIntro:
-      "송도·청라·영종처럼 생활권이 나뉜 인천 부동산도 소재지와 상속인 거주 지역을 먼저 맞춥니다. 방문 없이 서류 사진으로 개요를 확인할 수 있습니다.",
+      "인천은 송도·청라·영종처럼 새로 조성된 지역의 아파트와 강화·옹진의 토지·섬 부동산이 한 상속에 섞이는 경우가 있습니다. 행정체제 개편으로 구 이름이 바뀐 지역(중구·동구·서구 일부)은 등기부의 옛 주소와 현재 주소를 대조해 상속부동산 목록을 만듭니다. 섬 토지는 토지대장 면적과 등기부 면적이 다른지도 함께 확인합니다.",
     scenarioIds: ["heir-scattered", "office-retail", "busan-remote"],
     propertyTypeIds: ["apt", "retail", "land"],
     uniqueFaqIds: ["incheon-songdo", "visit-need", "branch-myth"],
@@ -123,7 +123,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 경남에 별도 지점이 있는 것은 아닙니다. 관할 특례와 방문·비대면 진행 바로 진행 방법을 안내합니다.",
     localIntro:
-      "김해 아파트, 양산 토지, 창원 상가처럼 경남 여러 지역에 상속부동산이 있더라도 부동산마다 다른 사무소를 찾기 전에 한 번에 진행할 수 있는지 검토할 수 있습니다. 상속등기의 관할 특례, 상속인 거주지와 부동산 수를 확인하여 적절한 신청 방법을 안내합니다.",
+      "경남은 18개 시·군이고, 상속포기·한정승인 신고처는 고인의 마지막 주소에 따라 다릅니다. 창원 의창·성산·진해와 김해는 창원지방법원 본원, 마산합포·마산회원은 마산지원, 통영·거제·고성은 통영지원, 진주·사천·하동·남해·산청은 진주지원, 밀양·창녕은 밀양지원입니다. 2010년 창원·마산·진해 통합 전 주소가 등기부에 남아 있으면 현재 주소와 함께 확인합니다.",
     scenarioIds: ["multi-gu", "apt-land-mix", "busan-remote", "heir-scattered"],
     propertyTypeIds: ["apt", "land", "house", "farm"],
     uniqueFaqIds: ["multi-prop", "visit-need", "cost-split", "jurisdiction-special"],
@@ -160,12 +160,12 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 울산에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "울산 아파트·토지 상속을 부산 해운대 사무소에 맡기는 경우는, 상속인이 울산·부산·수도권에 흩어져 있거나 방문 전 서류 사진으로 개요를 확인하고 싶을 때입니다. 부동산과 상속인 거주지가 다르면 위임·협의·원본 전달 순서를 먼저 가릅니다. 채무가 불명확하면 등기보다 상속포기·한정승인 분기도 함께 봅니다.",
+      "울산은 중구·남구·동구·북구·울주군 5개 구·군입니다. 상속포기·한정승인은 울산가정법원에 신고하며, 이 법원은 경남 양산시도 함께 관할합니다. 울주군의 공장 부지·농지와 시내 아파트가 한 상속에 함께 있으면 토지대장과 등기부 면적부터 맞춘 뒤 등기 목록을 만듭니다.",
     scenarioIds: ["heir-scattered", "apt-land-mix", "busan-remote"],
     propertyTypeIds: ["apt", "land", "retail"],
     uniqueFaqIds: ["visit-need", "deadline-3m", "branch-myth"],
     relatedRegionSlugs: ["울산남구상속등기법무사", "울주군상속등기법무사", "지역별상속등기법무사"],
-    relatedServiceSlugs: ["전국상속등기법무사", "/부산상속법무사", "/부산상속포기"],
+    relatedServiceSlugs: ["전국상속등기법무사", "/부산상속법무사", "울산상속포기한정승인"],
     ctaTitle: "울산 상속 가능 여부 확인",
     ctaDescription:
       "구·군, 부동산 종류, 상속인 거주 지역, 채무 여부를 알려주시면 서류와 방문 필요 여부를 안내합니다.",
@@ -228,7 +228,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 세종에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "세종시 아파트·상가 상속은 서류 사진으로 개요를 확인한 뒤 원본 단계를 안내하는 방식이 많습니다.",
+      "세종특별자치시는 2012년 옛 충남 연기군 전역과 공주시·청원군 일부로 출범했습니다. 오래된 등기부에는 '연기군'이나 '공주시' 주소가 그대로 남아 있는 경우가 있어, 현재 동·읍·면 주소와 지번을 대조해 상속부동산을 특정합니다. 상속포기·한정승인은 고인의 마지막 주소지를 관할하는 가정법원에 신고합니다.",
     scenarioIds: ["office-retail", "busan-remote", "heir-scattered"],
     propertyTypeIds: ["apt", "retail"],
     uniqueFaqIds: ["cost-split", "visit-need", "branch-myth"],
@@ -249,7 +249,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 충남에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "천안·아산·당진처럼 시·군이 나뉜 부동산은 목록 누락을 막는 것이 우선입니다. 토지와 주택이 함께 있는 경우도 많습니다.",
+      "충남은 15개 시·군입니다. 2012년 연기군 전역이 세종시로 넘어갔고 당진군은 당진시가 되었기 때문에, 오래된 등기부의 주소가 지금 행정구역과 다를 수 있습니다. 천안·아산의 아파트와 서산·홍성·예산의 농지가 한 상속에 함께 있으면 주택과 농지를 목록에서 나눠 서류를 준비합니다.",
     scenarioIds: ["multi-gu", "farm-forest", "apt-land-mix"],
     propertyTypeIds: ["apt", "land", "farm", "house"],
     uniqueFaqIds: ["multi-prop", "cost-split", "branch-myth"],
@@ -270,7 +270,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 충북에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "청주·충주·제천 등 시별로 부동산이 나뉘거나 토지·주택이 함께 있는 경우 지번 목록을 먼저 맞춥니다.",
+      "충북은 11개 시·군입니다. 2014년 청원군이 청주시로 통합되어, 오래된 등기부에 '청원군' 주소가 남아 있으면 현재 청주시 구·읍·면 주소와 지번을 대조합니다. 청주 아파트와 충주·제천 쪽 토지가 함께 있으면 상속등기 관할 특례로 접수처를 모을 수 있는지 먼저 봅니다(부동산등기법 제7조의3).",
     scenarioIds: ["farm-forest", "heir-scattered", "busan-remote"],
     propertyTypeIds: ["house", "land", "farm"],
     uniqueFaqIds: ["jurisdiction-special", "visit-need", "deadline-3m"],
@@ -291,7 +291,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 광주에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "광주광역시 상속부동산도 보수와 공과금을 구분해 안내합니다. 상속인이 타지역에 있어도 협의 방식을 확인할 수 있습니다.",
+      "광주광역시는 동구·서구·남구·북구·광산구 5개 구입니다. 경기도 광주시와 이름이 같아, 등기부와 가족관계 서류의 '광주광역시'·'경기도 광주시' 표기부터 확인합니다. 상속인이 수도권·부산 등 다른 지역에 흩어져 있어도 협의서와 인감 서류를 우편으로 모아 진행할 수 있습니다.",
     scenarioIds: ["heir-scattered", "office-retail", "busan-remote"],
     propertyTypeIds: ["apt", "house", "retail"],
     uniqueFaqIds: ["cost-split", "branch-myth", "choose-lawyer"],
@@ -312,7 +312,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 전남에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "여수·순천·목포처럼 연안·내륙 도시가 나뉜 경우 토지·주택 필지 확인이 중요합니다. 상속인이 수도권에 거주하는 경우도 많습니다.",
+      "전남은 22개 시·군으로 섬과 연안 지역이 많아, 여러 필지로 나뉜 토지나 등기가 없는 건물이 상속재산에 섞이는 경우가 있습니다. 여수·순천·목포 등 도시 아파트와 섬 토지를 한 번에 정리할 때는 토지대장·건축물대장과 등기부를 대조해 누락을 막습니다. 상속인이 수도권에 사는 경우 서류는 우편으로 모읍니다.",
     scenarioIds: ["farm-forest", "multi-gu", "heir-scattered"],
     propertyTypeIds: ["land", "farm", "house"],
     uniqueFaqIds: ["multi-prop", "visit-need", "jurisdiction-special"],
@@ -339,7 +339,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 전북에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "전주·익산·군산 등 시별로 아파트·상가·토지가 섞인 경우 비용 항목을 구분해 설명합니다.",
+      "전북은 14개 시·군이며 2024년 1월 전북특별자치도가 되었습니다. 등기부에는 '전라북도' 표기가 그대로 남아 있는 경우가 많아, 상속부동산 목록을 만들 때 옛 표기와 현재 표기를 함께 확인합니다. 전주·군산·익산의 주택과 김제·정읍 등의 농지가 함께 있으면 목록을 나눠 서류를 준비합니다.",
     scenarioIds: ["apt-land-mix", "office-retail", "busan-remote"],
     propertyTypeIds: ["apt", "retail", "land"],
     uniqueFaqIds: ["cost-split", "deadline-3m", "branch-myth"],
@@ -365,7 +365,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 경북에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "포항·구미·경산처럼 산업·주거 도시가 나뉜 경우 아파트와 토지 목록을 분리해 확인합니다.",
+      "경북은 22개 시·군입니다. 2023년 7월 군위군이 대구광역시로 편입되어, 군위 부동산은 주소 표기를 대구 기준으로 다시 확인합니다. 상속포기·한정승인 신고처는 고인의 마지막 주소에 따라 포항은 대구가정법원 포항지원, 경주는 경주지원, 김천·구미는 김천지원, 영천·경산·청도·칠곡·성주·고령은 대구가정법원 본원입니다.",
     scenarioIds: ["multi-gu", "apt-land-mix", "farm-forest"],
     propertyTypeIds: ["apt", "land", "farm"],
     uniqueFaqIds: ["multi-prop", "jurisdiction-special", "visit-need"],
@@ -391,7 +391,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 강원에 별도 지점이 있는 것은 아닙니다.",
     localIntro:
-      "토지·임야·농지와 주택이 함께 있는 경우가 많아 지번 확인이 중요합니다. 상속인이 수도권에 거주하는 상담도 많습니다.",
+      "강원은 18개 시·군이며 2023년 6월 강원특별자치도가 되었습니다. 등기부에는 '강원도' 표기가 남아 있는 경우가 많아 현재 주소와 함께 확인합니다. 춘천·원주 아파트와 홍천·평창 등 산간 임야가 함께 상속되면 임야는 공유 지분인 경우가 있어 지분 목록을 먼저 만듭니다.",
     scenarioIds: ["farm-forest", "heir-scattered", "busan-remote"],
     propertyTypeIds: ["land", "farm", "house"],
     uniqueFaqIds: ["visit-need", "multi-prop", "choose-lawyer"],
@@ -418,7 +418,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 제주에 별도 지점이 있는 것은 아닙니다. 관할 특례와 비대면 서류 전달을 검토합니다.",
     localIntro:
-      "상속부동산은 제주에 있고 상속인은 육지에 거주하는 경우가 많습니다. 토지와 주택이 여러 필지로 나뉜 경우 방문 횟수를 줄이는 절차를 안내합니다.",
+      "제주특별자치도는 제주시와 서귀포시 두 행정시로 나뉩니다. 섬 밖에 사는 상속인이 많아 협의서·인감증명서를 우편으로 모으는 일정이 전체 기간을 좌우하는 경우가 많습니다. 과수원 같은 농지와 주택이 함께 있으면 토지·건물 목록을 나눠 준비합니다.",
     scenarioIds: ["mainland-jeju", "farm-forest", "heir-scattered", "busan-remote"],
     propertyTypeIds: ["land", "farm", "house"],
     uniqueFaqIds: ["jeju-visit", "branch-myth", "visit-need", "jurisdiction-special"],

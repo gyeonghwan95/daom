@@ -211,6 +211,12 @@ export const daeguMetroRemote: MetroRemoteSpec = {
         imageAlt: "",
       },
       {
+        href: "/업무사례/대구상속포기한정승인",
+        title: "대구 상속포기·한정승인 (대구가정법원)",
+        image: "/image/썸네일-법원절차.jpg",
+        imageAlt: "",
+      },
+      {
         href: "/부모빚상속방법",
         title: "부모님 빚이 있을 때 상속 방법",
         image: "/image/썸네일-법원절차.jpg",

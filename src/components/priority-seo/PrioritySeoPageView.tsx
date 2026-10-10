@@ -13,6 +13,7 @@ import { encodePublicSrc } from "@/lib/encode-public-src";
 import { getPriorityBreadcrumbs } from "@/lib/priority-seo";
 import type { PrioritySeoSpec } from "@/lib/priority-seo/types";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
+import { HubChildLinks } from "@/components/seo/HubChildLinks";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -105,6 +106,8 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
             {sectionIndex === 0 ? figure : null}
           </div>
         ))}
+
+        <HubChildLinks path={spec.path} />
 
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />

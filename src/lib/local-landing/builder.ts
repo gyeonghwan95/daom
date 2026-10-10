@@ -32,7 +32,11 @@ import { buildBusanRealEstateRegistrationPage } from "./real-estate-registration
 import { buildBusanCompanyEstablishmentPage } from "./company-establishment-busan";
 import { buildBusanPersonalRehabilitationPage } from "./personal-rehabilitation-busan";
 import { hubPathForRegionKey } from "@/lib/geo/busan-district-hubs";
-import { buildJurisdictionGuideForRegionKey } from "@/lib/geo/busan-registry";
+import {
+  BUSAN_REGISTRY_OFFICES,
+  buildJurisdictionGuideForRegionKey,
+  getRegistryOfficeForRegionKey,
+} from "@/lib/geo/busan-registry";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -453,16 +457,56 @@ export function buildLocalLandingPage(
   const description = `${withRegionLabel(config.regionLabel, `${serviceLabel} 실무 안내`)} — 다옴법무사사무소 안윤정 법무사. ${neighborhoodText} 일대 상담·서류·등기 대리. 전화·카카오톡 상담 가능.`;
 
   const ssotGuide = buildJurisdictionGuideForRegionKey(config.regionKey);
-  const jurisdictionGuide = {
-    title: ssotGuide.title,
-    address: ssotGuide.address,
-    accessNote: ssotGuide.accessNote,
-    jurisdictionNote: ssotGuide.jurisdictionNote,
-    practicalNotes: [
-      ...ssotGuide.practicalNotes.slice(0, 2),
-      ...(legalIssuesByService[config.serviceSlug] ?? []).slice(0, 1),
-    ],
-  };
+  const regionOffice = getRegistryOfficeForRegionKey(config.regionKey);
+  const isFamilyService =
+    config.serviceSlug === "inheritance-renunciation" ||
+    config.serviceSlug === "qualified-acceptance";
+  const isCommercialService =
+    config.serviceSlug === "corporate-registration" ||
+    config.serviceSlug === "company-establishment" ||
+    config.serviceSlug === "director-change";
+  const commercialOffice = BUSAN_REGISTRY_OFFICES.deunggiguk;
+  // 업무마다 실제 접수처가 다르다: 포기·한정승인은 가정법원, 법인은 상업등기(부산 전역 등기국), 그 밖은 부동산 소재지 등기소.
+  const jurisdictionGuide = isFamilyService
+    ? {
+        title: `${config.regionLabel} ${serviceLabel} 신고 관할`,
+        address: "고인의 마지막 주소지(상속개시지)를 관할하는 가정법원",
+        accessNote: `상속인이 ${config.regionLabel}에 산다는 이유만으로 관할이 정해지지 않습니다(가사소송법 제44조 제1항 제6호).`,
+        jurisdictionNote: regionOffice
+          ? `${serviceLabel}은 등기소가 아니라 가정법원 신고 사건입니다. 상속재산에 ${config.regionLabel} 부동산이 있으면 이후 상속등기는 ${regionOffice.name}(${regionOffice.address}) 관할이고, 상속등기는 관할이 아닌 등기소에서도 처리할 수 있습니다(부동산등기법 제7조의3).`
+          : `${serviceLabel}은 등기소가 아니라 가정법원 신고 사건입니다.`,
+        practicalNotes: [
+          "신고 기한은 상속개시 있음을 안 날부터 3개월입니다(민법 제1019조 제1항).",
+          "가족관계·처분 이력을 신고 전에 맞춰 둡니다.",
+          ...(legalIssuesByService[config.serviceSlug] ?? []).slice(0, 1),
+        ],
+      }
+    : isCommercialService
+      ? {
+          title: `${commercialOffice.name} (상업등기)`,
+          address: commercialOffice.address,
+          accessNote: `${config.regionLabel}에 본점을 두는 회사의 상업등기는 부산 전역과 같이 ${commercialOffice.name} 관할입니다.`,
+          jurisdictionNote: regionOffice
+            ? `법인 명의 부동산이 ${config.regionLabel}에 있다면 그 부동산등기는 ${regionOffice.name}(${regionOffice.address}) 관할입니다.`
+            : ssotGuide.jurisdictionNote,
+          practicalNotes: [
+            config.serviceSlug === "director-change"
+              ? "주식회사의 임원 변경등기는 변경이 생긴 날부터 본점 소재지에서 2주 안에 신청합니다(상법 제317조 제4항, 제183조)."
+              : "본점을 부산 안의 다른 구로 옮기는 경우와 부산 밖으로 옮기는 경우는 신청 방법이 다릅니다.",
+            ...ssotGuide.practicalNotes.slice(0, 1),
+            ...(legalIssuesByService[config.serviceSlug] ?? []).slice(0, 1),
+          ],
+        }
+      : {
+          title: ssotGuide.title,
+          address: ssotGuide.address,
+          accessNote: ssotGuide.accessNote,
+          jurisdictionNote: ssotGuide.jurisdictionNote,
+          practicalNotes: [
+            ...ssotGuide.practicalNotes.slice(0, 2),
+            ...(legalIssuesByService[config.serviceSlug] ?? []).slice(0, 1),
+          ],
+        };
 
   const whenNeeded = [
     `${config.regionLabel}에서 ${serviceLabel}가 필요한 경우`,

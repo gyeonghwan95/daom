@@ -13,6 +13,7 @@ import { encodePublicSrc } from "@/lib/encode-public-src";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import { getShipBreadcrumbs } from "@/lib/ship-seo";
 import type { ShipSeoSpec } from "@/lib/ship-seo/types";
+import { HubChildLinks } from "@/components/seo/HubChildLinks";
 
 type ShipSeoPageViewProps = {
   spec: ShipSeoSpec;
@@ -90,6 +91,8 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
             </div>
           </ContentSection>
         ))}
+
+        <HubChildLinks path={spec.path} />
 
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />

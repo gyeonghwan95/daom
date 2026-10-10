@@ -8,6 +8,7 @@ import { getServiceImage } from "@/lib/site-images";
 import { getLawyerSlugLabel, resolveServiceSiteSlug } from "./labels";
 import { buildSeoLandingContent } from "./content";
 import type { SeoLandingSpec } from "./types";
+import { buildRegionJurisdictionSection } from "./region-jurisdiction";
 
 function metaTitleForSeoLanding(
   spec: SeoLandingSpec,
@@ -143,6 +144,7 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
   const overlayMeta =
     overlay && overlay.slug === spec.slug ? overlay : undefined;
   const stationSections = buildStationSectionsForHost(spec.path);
+  const regionJurisdiction = buildRegionJurisdictionSection(spec);
   const sections = [
     ...stationSections.map((s) => ({
       title: s.title,
@@ -150,6 +152,7 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
       items: s.items,
       links: s.links,
     })),
+    ...(regionJurisdiction ? [regionJurisdiction] : []),
     ...content.sections,
   ];
 
