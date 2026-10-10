@@ -1,0 +1,17 @@
+C:\workspace\daom\scripts\verify-exported-carousel-images.ts:18
+  throw new Error(`[verify-exported-carousel-images] ${message}`);
+        ^
+
+Error: [verify-exported-carousel-images] /부산등기법무사: 이미지 신호 누락 (<meta property="og:image" content="https://xn--2j1br1na42lvxja38mk8r.k)
+    at fail (C:\workspace\daom\scripts\verify-exported-carousel-images.ts:18:9)
+    at path (C:\workspace\daom\scripts\verify-exported-carousel-images.ts:56:7)
+    at Object.<anonymous> (C:\workspace\daom\scripts\verify-exported-carousel-images.ts:100:1)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object.transformer (C:\Users\your1\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\tsx\dist\register-B1c7OH6V.cjs:22:2188)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:328:3)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:233:7)
+
+Node.js v24.14.0

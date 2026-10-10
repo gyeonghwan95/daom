@@ -1,3 +1,4 @@
+import { splitLongParagraph } from "@/lib/readability/split-paragraph";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { InlineConsultationCTA } from "@/components/consultation/InlineConsultationCTA";
@@ -76,7 +77,11 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
           {page.regionLabel} · {page.neighborhoods.join(" · ")}
         </p>
         <h1 className="page-title mt-2">{page.h1}</h1>
-        <p className="body-text mt-4 max-w-3xl md:mt-5">{page.problemStatement}</p>
+        {splitLongParagraph(page.problemStatement).map((part, index) => (
+          <p key={index} className={`body-text max-w-3xl ${index === 0 ? "mt-4 md:mt-5" : "mt-3"}`}>
+            {part}
+          </p>
+        ))}
       </header>
 
       <InlineConsultationCTA

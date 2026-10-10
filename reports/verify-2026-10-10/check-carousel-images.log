@@ -1,0 +1,38 @@
+{
+  "items": 40,
+  "outputsPresent": 40,
+  "hubs": [
+    {
+      "hubUrl": "/services",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산상속법무사",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산부동산등기",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/부산법인법무사",
+      "totalItems": 7,
+      "approvedItems": 7,
+      "itemListEligible": true
+    },
+    {
+      "hubUrl": "/법률강의",
+      "totalItems": 2,
+      "approvedItems": 2,
+      "itemListEligible": false
+    }
+  ],
+  "warnings": 0,
+  "problems": []
+}

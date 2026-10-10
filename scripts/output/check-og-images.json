@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T05:50:54.330Z",
+  "generatedAt": "2026-10-10T10:55:50.433Z",
   "missingExisting": [],
   "presentPlanned": [],
   "rows": [
@@ -173,7 +173,7 @@
       "url": "/services/bankruptcy",
       "pathChecked": "/image/썸네일-서부지원.jpg",
       "exists": true,
-      "bytes": 3412579,
+      "bytes": 4736684,
       "note": "existing ok"
     },
     {

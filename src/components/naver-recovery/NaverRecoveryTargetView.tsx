@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { EarlyConsultCta } from "@/components/consultation/EarlyConsultCta";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
@@ -109,6 +110,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
             ) : null}
           </figure>
         </header>
+
+        <EarlyConsultCta slug={page.slug} />
 
         {spec.sections.map((section) => (
           <ContentSection key={section.id} id={section.id} title={section.title}>

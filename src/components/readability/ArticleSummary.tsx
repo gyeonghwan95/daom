@@ -1,3 +1,4 @@
+import { splitLongParagraph } from "@/lib/readability/split-paragraph";
 import Link from "next/link";
 
 type ArticleSummaryProps = {
@@ -38,7 +39,11 @@ export function ArticleSummary({
         ) : null}
       </div>
 
-      <p className="article-summary__conclusion">{conclusion}</p>
+      {splitLongParagraph(conclusion).map((part) => (
+        <p key={part.slice(0, 40)} className="article-summary__conclusion">
+          {part}
+        </p>
+      ))}
 
       {checks.length > 0 ? (
         <div className="article-summary__block">

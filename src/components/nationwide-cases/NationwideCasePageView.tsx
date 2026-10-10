@@ -19,6 +19,16 @@ import {
   type RegionLandingDef,
 } from "@/lib/nationwide-cases";
 
+/**
+ * 시·도 단위 상속 허브: 같은 '전국 의뢰' 세부 설명이 여러 시·도에 반복되어 간결형으로 보여 준다.
+ * 지역 고유 내용(localIntro·localPoints·localFaqs·지역 커버리지)이 첫 화면을 차지하게 한다.
+ */
+const SIDO_INHERITANCE_HUBS = new Set([
+  "경기상속등기법무사", "인천상속등기법무사", "광주상속등기법무사", "세종상속등기법무사", "강원상속등기법무사",
+  "충북상속등기법무사", "충남상속등기법무사", "전북상속등기법무사", "전남상속등기법무사", "경북상속등기법무사",
+  "경남상속등기법무사", "제주상속등기법무사", "울산상속등기법무사",
+]);
+
 type Props = {
   page: PageData;
   def: RegionLandingDef;
@@ -54,7 +64,8 @@ export function NationwideCasePageView({
               ? "전국 의뢰 가능"
               : `${def.regionName} 부동산 전국 의뢰 가능`
           }
-          footnote={def.disclosure}
+          footnote={SIDO_INHERITANCE_HUBS.has(def.slug) ? undefined : def.disclosure}
+          showDetails={!SIDO_INHERITANCE_HUBS.has(def.slug)}
           ctaLabel={def.ctaTitle}
           ctaHref={inquiryHref}
         />

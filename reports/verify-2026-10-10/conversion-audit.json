@@ -1,0 +1,353 @@
+{
+ "rows": [
+  {
+   "r": "/",
+   "tel": 7,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 3,
+   "map": 8,
+   "charsToFirstCta": 326,
+   "mainChars": 7183
+  },
+  {
+   "r": "/부산법무사",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 611,
+   "mainChars": 4605
+  },
+  {
+   "r": "/부산법무사상담",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 569,
+   "mainChars": 4255
+  },
+  {
+   "r": "/부산법무사추천",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 467,
+   "mainChars": 3807
+  },
+  {
+   "r": "/부산법무사비용",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 8,
+   "map": 10,
+   "charsToFirstCta": 1045,
+   "mainChars": 6648
+  },
+  {
+   "r": "/부산상속법무사",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 980,
+   "mainChars": 6162
+  },
+  {
+   "r": "/부산상속전문법무사",
+   "tel": 6,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 909,
+   "mainChars": 5262
+  },
+  {
+   "r": "/부산상속포기",
+   "tel": 6,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 992,
+   "mainChars": 6174
+  },
+  {
+   "r": "/부산한정승인",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 637,
+   "mainChars": 4711
+  },
+  {
+   "r": "/부산상속등기",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 9,
+   "map": 10,
+   "charsToFirstCta": 1217,
+   "mainChars": 7469
+  },
+  {
+   "r": "/부산법인법무사",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 8,
+   "map": 10,
+   "charsToFirstCta": 1017,
+   "mainChars": 8607
+  },
+  {
+   "r": "/부산법인등기",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 823,
+   "mainChars": 5930
+  },
+  {
+   "r": "/부산법인설립등기",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 1036,
+   "mainChars": 5677
+  },
+  {
+   "r": "/부산등기법무사",
+   "tel": 4,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 4,
+   "map": 9,
+   "charsToFirstCta": 5025,
+   "mainChars": 5455
+  },
+  {
+   "r": "/부산부동산등기",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 1288,
+   "mainChars": 6651
+  },
+  {
+   "r": "/부산소유권이전등기",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 703,
+   "mainChars": 7240
+  },
+  {
+   "r": "/부산개인회생",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 8,
+   "map": 10,
+   "charsToFirstCta": 877,
+   "mainChars": 9537
+  },
+  {
+   "r": "/부산개인파산",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 5,
+   "map": 10,
+   "charsToFirstCta": 673,
+   "mainChars": 4600
+  },
+  {
+   "r": "/부산공탁",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 587,
+   "mainChars": 5267
+  },
+  {
+   "r": "/부산가압류취소",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 599,
+   "mainChars": 4132
+  },
+  {
+   "r": "/부산상속재산파산",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 570,
+   "mainChars": 3510
+  },
+  {
+   "r": "/해운대법무사",
+   "tel": 6,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 586,
+   "mainChars": 3599
+  },
+  {
+   "r": "/센텀법무사",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 10,
+   "charsToFirstCta": 823,
+   "mainChars": 6111
+  },
+  {
+   "r": "/업무사례/울산상속등기법무사",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 11,
+   "map": 10,
+   "charsToFirstCta": 692,
+   "mainChars": 5893
+  },
+  {
+   "r": "/업무사례/대구상속포기한정승인",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 10,
+   "map": 10,
+   "charsToFirstCta": 1106,
+   "mainChars": 6138
+  },
+  {
+   "r": "/업무사례/서울상속등기법무사",
+   "tel": 8,
+   "kakao": 7,
+   "talk": 5,
+   "booking": 0,
+   "inquiry": 9,
+   "map": 12,
+   "charsToFirstCta": 678,
+   "mainChars": 6815
+  },
+  {
+   "r": "/상속",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 9,
+   "map": 10,
+   "charsToFirstCta": 1355,
+   "mainChars": 7374
+  },
+  {
+   "r": "/services/inheritance-registration",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 5,
+   "map": 10,
+   "charsToFirstCta": 1764,
+   "mainChars": 6852
+  },
+  {
+   "r": "/blog/busan-inheritance-consultation-prep",
+   "tel": 5,
+   "kakao": 6,
+   "talk": 4,
+   "booking": 0,
+   "inquiry": 8,
+   "map": 10,
+   "charsToFirstCta": 631,
+   "mainChars": 4517
+  },
+  {
+   "r": "/location",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 5,
+   "map": 10,
+   "charsToFirstCta": 379,
+   "mainChars": 1766
+  },
+  {
+   "r": "/contact",
+   "tel": 5,
+   "kakao": 5,
+   "talk": 3,
+   "booking": 0,
+   "inquiry": 6,
+   "map": 7,
+   "charsToFirstCta": 534,
+   "mainChars": 2045
+  }
+ ],
+ "phones": {
+  "01042771279": 162
+ },
+ "form": {
+  "inputs": 7,
+  "required": 3,
+  "privacy": true
+ }
+}

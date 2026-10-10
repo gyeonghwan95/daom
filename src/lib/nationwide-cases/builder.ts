@@ -256,6 +256,9 @@ export function buildNationwideCasePageData(
       body: def.localIntro,
       items: TRUST_ITEMS,
     },
+    ...(def.localPoints
+      ? [{ title: def.localPoints.title, body: "", items: def.localPoints.items.slice(1) }]
+      : []),
     {
       title: titles[1]!,
       body: `${def.regionName} 소재 부동산이어도 부산 해운대 사무소에서 관할 특례·비대면 서류 전달을 검토할 수 있습니다. 지점이 있다는 의미가 아닙니다.`,
@@ -266,20 +269,25 @@ export function buildNationwideCasePageData(
       body: "상속인 거주지와 부동산 소재지가 다르면 위임·인감·협의 일정 조율이 핵심입니다.",
       items: properties.map((p) => `${p.title} — ${p.body}`),
     },
-    {
-      title: titles[3]!,
-      body: "협의분할 내용과 등기 신청 순서가 모순되지 않게 맞춥니다. 서류가 모두 없어도 개요만으로 먼저 상담할 수 있습니다.",
-      items: [
-        "가족관계·상속인 목록",
-        "부동산 목록(주소·지번)",
-        "등기부·권리제한 개요",
-        "협의 여부·매도 일정",
-      ],
-    },
-    {
-      title: titles[4]!,
-      body: "법무사 보수와 취득세·국민주택채권·등기신청수수료 등 공과금을 구분해 안내합니다. 서류 확인 전 확정액을 단정하지 않습니다.",
-    },
+    // 고유 실무 포인트가 있는 시·도 허브는 모든 지역 페이지에 반복되던 협의·비용 일반 설명을 생략한다(비용 안내 블록·지역 포인트가 대신 다룸).
+    ...(def.localPoints
+      ? []
+      : ([
+        {
+          title: titles[3]!,
+          body: "협의분할 내용과 등기 신청 순서가 모순되지 않게 맞춥니다. 서류가 모두 없어도 개요만으로 먼저 상담할 수 있습니다.",
+          items: [
+            "가족관계·상속인 목록",
+            "부동산 목록(주소·지번)",
+            "등기부·권리제한 개요",
+            "협의 여부·매도 일정",
+          ],
+        },
+        {
+          title: titles[4]!,
+          body: "법무사 보수와 취득세·국민주택채권·등기신청수수료 등 공과금을 구분해 안내합니다. 서류 확인 전 확정액을 단정하지 않습니다.",
+        }
+        ] as PageSection[])),
     {
       title: titles[5]!,
       body: "① 지역·상속인 수 공유 ② 관할·서류 안내 ③ 보수·공과금 구분 ④ 원본 전달 ⑤ 접수·보정·완료 공유",
@@ -334,7 +342,10 @@ export function buildNationwideCasePageData(
       ...breadcrumbMid,
       { label: def.regionName === "전국" ? def.primaryKeyword : def.regionName },
     ],
-    introParagraphs: [def.localIntro, def.disclosure, DISCLAIMER],
+    // 시·도 허브는 핵심 요약 결론에 일반 면책 문구 대신 지역 포인트 첫 항목을 쓴다(섹션에서는 그 항목을 뺀다).
+    introParagraphs: def.localPoints
+      ? [def.localIntro, def.disclosure, def.localPoints.items[0]!, DISCLAIMER]
+      : [def.localIntro, def.disclosure, DISCLAIMER],
     procedures: [
       `${def.regionName} 부동산·상속인 거주 지역 공유`,
       "관할 특례·비대면 가능 범위 검토",
@@ -353,7 +364,10 @@ export function buildNationwideCasePageData(
       "타지역이라는 이유만으로 비용을 올리지 않습니다.",
       "가까운 사무소인지보다 직접 검토·비용·진행 공유를 확인하세요.",
     ],
-    faqs: faqs.map((f) => ({ question: f.title, answer: f.body })),
+    faqs: [
+      ...(def.localFaqs ?? []),
+      ...faqs.map((f) => ({ question: f.title, answer: f.body })),
+    ].slice(0, def.localFaqs?.length ? def.localFaqs.length + 1 : undefined),
     consultationExample: {
       title: "일반적인 상담 유형",
       body: scenarios

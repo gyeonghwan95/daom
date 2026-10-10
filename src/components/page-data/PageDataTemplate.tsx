@@ -165,6 +165,21 @@ export function PageDataTemplate({
     page.slug !== "부산상속법무사" &&
     page.slug !== "부산상속포기" &&
     introSlots.bodyParagraphs.length > 0;
+  // 핵심 요약 기본값: '진행:/서류:' 단편 조합 대신 절차 문장을 쓰고, 권유 문구·중복 문장은 '상담이 필요한 상황'에서 뺀다.
+  const summaryCheckItems =
+    page.procedures.length >= 3
+      ? page.procedures.slice(0, 3)
+      : [
+          page.procedures[0] ? `진행: ${page.procedures[0]}` : "",
+          page.documents[0] ? `서류: ${page.documents[0]}` : "",
+          page.consultationPoints[0] || "",
+        ].filter(Boolean);
+  const triggerCandidates = page.consultationPoints.filter(
+    (point) =>
+      !summaryCheckItems.includes(point) &&
+      !/(시작해 보세요|문의하세요|남겨 주세요|연락 주세요)\.?$/.test(point.trim()),
+  );
+  const summaryConsultTriggers = triggerCandidates.length >= 2 ? triggerCandidates.slice(0, 3) : [];
   const tocItems = buildPageTocItems(page, {
     hasDetailContent: Boolean(children),
     hasArticleBody: showArticleBody,
@@ -266,18 +281,8 @@ export function PageDataTemplate({
 
       <ArticleSummary
         conclusion={introSlots.summaryConclusion}
-        checkItems={
-          championSummary?.checkItems ??
-          [
-            page.procedures[0] ? `진행: ${page.procedures[0]}` : "",
-            page.documents[0] ? `서류: ${page.documents[0]}` : "",
-            page.consultationPoints[0] || "",
-          ].filter(Boolean)
-        }
-        consultTriggers={
-          championSummary?.consultTriggers ??
-          page.consultationPoints.slice(0, 3)
-        }
+        checkItems={championSummary?.checkItems ?? summaryCheckItems}
+        consultTriggers={championSummary?.consultTriggers ?? summaryConsultTriggers}
       />
 
       {showRemoteBanner && deferNationwideBanner ? (
@@ -404,6 +409,7 @@ export function PageDataTemplate({
         const relatedCarousel = getRelatedContentCarousel(
           page.path,
           isInheritanceSurgeryTarget ? 4 : 8,
+          { serviceSlug: page.serviceSlug },
         );
         if (!relatedCarousel) return null;
         return (

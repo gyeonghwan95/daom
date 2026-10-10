@@ -233,12 +233,6 @@ async function buildLayers(
  * 1:1 그대로, 4:3·3:2·16:9 가로 crop, 3:4 세로 crop, OG 1.91:1 crop 모두에서
  * 글자가 남도록 x 170–1030 · y 300–900 안에만 텍스트를 둔다.
  */
-const HOOK_TINT: Record<string, string> = {
-  navy: "#0c1a2b",
-  warm: "#211910",
-  sage: "#111f18",
-  slate: "#151c26",
-};
 const GOLD = "#c9a96b";
 const SERIF = `'Noto Serif KR','Malgun Gothic',serif`;
 const SANS = `'Noto Sans KR','Malgun Gothic',sans-serif`;
@@ -260,6 +254,20 @@ function fitSize(lines: string[], maxWidth: number, max: number, min: number): n
   return Math.max(min, Math.min(max, Math.floor(maxWidth / widest)));
 }
 
+/** 업무 분류별 색 — 캐러셀에 나란히 놓일 때 카드끼리 구분되게 한다(경로의 분류 폴더 기준). */
+const CATEGORY_STYLE: Record<string, { tint: string; badge: string; label: string }> = {
+  inheritance: { tint: "#0f2f33", badge: "#2f7d73", label: "상속" },
+  "real-estate": { tint: "#2c1f12", badge: "#a0662b", label: "부동산등기" },
+  corporate: { tint: "#101f3a", badge: "#3a5f9e", label: "법인등기" },
+  rehabilitation: { tint: "#26162f", badge: "#7a4a8f", label: "회생·파산" },
+  hub: { tint: "#18222c", badge: "#4f6475", label: "다옴법무사사무소" },
+  lecture: { tint: "#1c2414", badge: "#5f7a3a", label: "법률 강의" },
+};
+
+function categoryOf(item: CarouselImageManifestItem): string {
+  return item.outputPath.split("/")[4] ?? "hub";
+}
+
 async function renderCenteredHook(
   item: CarouselImageManifestItem,
   photoDisk: string | null,
@@ -272,14 +280,16 @@ async function renderCenteredHook(
     title: item.headline,
     subtitle: item.subheadline ?? "",
   };
-  const tint = HOOK_TINT[item.accent] ?? HOOK_TINT.navy;
+  const style = CATEGORY_STYLE[categoryOf(item)] ?? CATEGORY_STYLE.hub;
+  const tint = style.tint;
 
+  // 사진이 보이도록 흐림·감광을 줄이고, 글자 뒤만 분류 색으로 눌러 대비를 만든다.
   const background = photoDisk
     ? await sharp(photoDisk)
         .rotate()
         .resize(w, h, { fit: "cover", position: item.cropPosition ?? "centre" })
-        .blur(7)
-        .modulate({ saturation: 0.5, brightness: 0.9 })
+        .blur(3.5)
+        .modulate({ saturation: 0.75, brightness: 1.0 })
         .toBuffer()
     : await sharp(
         Buffer.from(
@@ -290,56 +300,50 @@ async function renderCenteredHook(
         .toBuffer();
 
   const titleLines = copy.title.split("\n").slice(0, 2);
-  const titleSize = fitSize(titleLines, 840, 116, 72);
-  const lineGap = Math.round(titleSize * 1.24);
-  const titleBaselines =
-    titleLines.length === 2 ? [548, 548 + lineGap] : [612];
+  const titleSize = fitSize(titleLines, 860, 124, 76);
+  const lineGap = Math.round(titleSize * 1.22);
+  const titleBaselines = titleLines.length === 2 ? [560, 560 + lineGap] : [624];
 
-  const eyebrowSize = 30;
-  const eyebrowSpacing = 6;
-  const eyebrowHalf =
-    (emWidth(copy.eyebrow) * eyebrowSize + [...copy.eyebrow].length * eyebrowSpacing) / 2;
-  const subtitleSize = Math.min(40, Math.floor(860 / Math.max(1, emWidth(copy.subtitle))));
+  // 분류 배지: 300px 표시에서도 읽히도록 48px(표시 약 12px)
+  const badgeText = copy.eyebrow;
+  const badgeSize = Math.min(48, Math.floor(760 / Math.max(1, emWidth(badgeText))));
+  const badgeW = Math.round(emWidth(badgeText) * badgeSize + 88);
+  const badgeH = Math.round(badgeSize * 1.7);
+  const badgeY = 330;
+  const subtitleSize = Math.min(50, Math.floor(900 / Math.max(1, emWidth(copy.subtitle))));
 
   const overlay = `
 <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="vignette" cx="50%" cy="50%" r="72%">
-      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="62%" stop-color="#000" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.62"/>
-    </radialGradient>
-    <radialGradient id="focus" cx="50%" cy="50%" r="42%">
-      <stop offset="0%" stop-color="${tint}" stop-opacity="0.38"/>
-      <stop offset="100%" stop-color="${tint}" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${tint}" stop-opacity="0.45"/>
+      <stop offset="30%" stop-color="${tint}" stop-opacity="0.72"/>
+      <stop offset="78%" stop-color="${tint}" stop-opacity="0.80"/>
+      <stop offset="100%" stop-color="${tint}" stop-opacity="0.55"/>
+    </linearGradient>
     <filter id="shadow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-      <feOffset dy="4" result="blur"/>
-      <feFlood flood-color="#000" flood-opacity="0.45"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dy="3" result="blur"/>
+      <feFlood flood-color="#000" flood-opacity="0.5"/>
       <feComposite in2="blur" operator="in"/>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="${w}" height="${h}" fill="${tint}" opacity="0.64"/>
-  <rect width="${w}" height="${h}" fill="url(#focus)"/>
-  <rect width="${w}" height="${h}" fill="url(#vignette)"/>
+  <rect width="${w}" height="${h}" fill="url(#shade)"/>
+  <rect x="0" y="0" width="${w}" height="14" fill="${style.badge}"/>
 
-  <g font-family="${SANS}" text-anchor="middle">
-    <line x1="${cx - eyebrowHalf - 76}" y1="${378 - 10}" x2="${cx - eyebrowHalf - 22}" y2="${378 - 10}" stroke="${GOLD}" stroke-width="2"/>
-    <line x1="${cx + eyebrowHalf + 22}" y1="${378 - 10}" x2="${cx + eyebrowHalf + 76}" y2="${378 - 10}" stroke="${GOLD}" stroke-width="2"/>
-    <text x="${cx + eyebrowSpacing / 2}" y="378" font-size="${eyebrowSize}" font-weight="600" fill="${GOLD}" letter-spacing="${eyebrowSpacing}">${esc(copy.eyebrow)}</text>
-  </g>
+  <rect x="${cx - badgeW / 2}" y="${badgeY}" width="${badgeW}" height="${badgeH}" rx="${badgeH / 2}" fill="${style.badge}"/>
+  <text x="${cx}" y="${badgeY + badgeH / 2 + badgeSize * 0.36}" font-family="${SANS}" font-size="${badgeSize}" font-weight="700" fill="#ffffff" text-anchor="middle">${esc(badgeText)}</text>
 
   <g font-family="${SERIF}" font-weight="900" font-size="${titleSize}" fill="#ffffff" text-anchor="middle" filter="url(#shadow)">
     ${titleLines.map((line, i) => `<text x="${cx}" y="${titleBaselines[i]}">${esc(line)}</text>`).join("\n    ")}
   </g>
 
-  <rect x="${cx - 36}" y="742" width="72" height="3" fill="${GOLD}"/>
+  <rect x="${cx - 44}" y="752" width="88" height="5" rx="2" fill="${GOLD}"/>
 
-  <text x="${cx}" y="812" font-family="${SANS}" font-size="${subtitleSize}" font-weight="500" fill="#ece3cf" text-anchor="middle" filter="url(#shadow)">${esc(copy.subtitle)}</text>
+  <text x="${cx}" y="828" font-family="${SANS}" font-size="${subtitleSize}" font-weight="600" fill="#f4ecdc" text-anchor="middle" filter="url(#shadow)">${esc(copy.subtitle)}</text>
 
-  <text x="${cx + 4}" y="884" font-family="${SANS}" font-size="21" font-weight="500" fill="#ffffff" fill-opacity="0.62" text-anchor="middle" letter-spacing="8">다옴법무사사무소</text>
+  <text x="${cx}" y="900" font-family="${SANS}" font-size="34" font-weight="700" fill="#ffffff" fill-opacity="0.88" text-anchor="middle" letter-spacing="4">다옴법무사사무소 · 안윤정 법무사</text>
 </svg>`;
 
   return sharp(background)

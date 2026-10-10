@@ -1,0 +1,21 @@
+{
+  "manifest": {
+    "total": 42,
+    "byStatus": {
+      "existing-review": 22,
+      "needed": 20
+    },
+    "ready": 0
+  },
+  "seoFiles": 1,
+  "unsafe": 0,
+  "needed": 20,
+  "existingReview": 22,
+  "totalPages": 1794,
+  "byPriority": {
+    "critical": 15,
+    "medium": 1528,
+    "high": 33,
+    "low": 218
+  }
+}

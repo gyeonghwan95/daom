@@ -1,0 +1,18 @@
+quick-inquiry validation
+  ✓ phone parse
+  ✓ email parse
+  ✓ invalid contact rejected
+  ✓ valid body
+  ✓ short message rejected
+  ✓ bad contact rejected
+  ✓ consent required
+  ✓ honeypot blocked
+  ✓ from address punycode normalize
+quick-inquiry handler
+  ✓ GET → 405
+  ✓ punycode origin allowed (no channel → 503)
+  ✓ foreign origin → 403
+  ✓ no telegram/resend → 503
+  ✓ duplicate submit → 429
+
+All quick-inquiry checks passed.

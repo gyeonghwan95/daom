@@ -26,6 +26,10 @@ export type RegionLandingDef = {
   h1: string;
   disclosure: string;
   localIntro: string;
+  /** 시·도 고유 실무 포인트(공용 시나리오와 별도) */
+  localPoints?: { title: string; items: string[] };
+  /** 시·도 고유 FAQ — 공용 FAQ보다 먼저 노출 */
+  localFaqs?: { question: string; answer: string }[];
   scenarioIds: string[];
   propertyTypeIds: string[];
   uniqueFaqIds: string[];

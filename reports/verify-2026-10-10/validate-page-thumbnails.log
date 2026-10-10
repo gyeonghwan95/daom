@@ -1,0 +1,15 @@
+{
+  "pages": 40,
+  "filesChecked": 39,
+  "avgKb": 93,
+  "maxKb": 177,
+  "errors": 1,
+  "warnings": 0,
+  "issues": [
+    {
+      "url": "/부산상속전문법무사",
+      "level": "error",
+      "message": "output file missing"
+    }
+  ]
+}

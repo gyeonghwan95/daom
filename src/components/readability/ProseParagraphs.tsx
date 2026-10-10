@@ -1,3 +1,4 @@
+import { splitLongParagraph } from "@/lib/readability/split-paragraph";
 type ProseParagraphsProps = {
   paragraphs: string[];
   className?: string;
@@ -11,7 +12,7 @@ export function ProseParagraphs({
 
   return (
     <div className={`readability-prose space-y-4 ${className}`.trim()}>
-      {paragraphs.map((paragraph) => (
+      {paragraphs.flatMap((paragraph) => splitLongParagraph(paragraph)).map((paragraph) => (
         <p key={paragraph.slice(0, 48)} className="body-text">
           {paragraph}
         </p>

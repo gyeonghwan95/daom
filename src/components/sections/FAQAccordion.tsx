@@ -1,3 +1,4 @@
+import { splitLongParagraph } from "@/lib/readability/split-paragraph";
 import Link from "next/link";
 import type { FaqItem } from "@/lib/faq-data";
 import type { ServiceFaq } from "@/types/service";
@@ -20,7 +21,11 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
             </span>
           </summary>
           <div className="faq-accordion__body">
-            <p>{faq.answer}</p>
+            {splitLongParagraph(faq.answer).map((part, index) => (
+              <p key={index} className={index > 0 ? "mt-3" : undefined}>
+                {part}
+              </p>
+            ))}
             {"href" in faq && faq.href ? (
               <Link
                 href={faq.href}
