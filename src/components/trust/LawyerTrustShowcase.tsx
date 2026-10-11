@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { TrustContactActions } from "@/components/trust/TrustContactActions";
 import { TrustInfographicViewer } from "@/components/trust/TrustInfographicViewer";
+import { TrustReviewQuote } from "@/components/trust/TrustReviewQuote";
+import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
+import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { officeHours } from "@/lib/office-location";
 import { siteImages } from "@/lib/site-images";
@@ -105,6 +108,8 @@ const promises = [
 export function LawyerTrustShowcase() {
   const { phone, kakao, naverTalk } = getContactInfo();
   const image = siteImages.about.credentialInfographic;
+  const reviewFeed = getNaverPlaceReviewsFeed();
+  const reviewQuotes = buildReviewQuotes(reviewFeed.items);
 
   return (
     <section
@@ -186,6 +191,11 @@ export function LawyerTrustShowcase() {
                 </li>
               ))}
             </ul>
+
+            <TrustReviewQuote
+              quotes={reviewQuotes}
+              totalCount={reviewFeed.stats.totalCount}
+            />
           </div>
 
           <div className="px-5 pb-6 pt-6 @md:px-7 @md:pb-7 @3xl:col-span-2 @3xl:row-start-3 @5xl:col-span-1 @5xl:col-start-2 @5xl:row-start-3 @5xl:px-8 @5xl:pb-8">

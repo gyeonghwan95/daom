@@ -49,11 +49,11 @@ export function TrustContactActions({
         {hours} · 방문 상담은 예약제 · 카카오톡·톡톡으로 먼저 남기시거나 네이버 예약을 이용해 주세요
       </p>
 
-      <div className="relative mt-5 grid gap-2.5 @sm:grid-cols-2 @2xl:grid-cols-3">
+      <div className="relative mt-5 grid grid-cols-2 gap-2.5 @2xl:grid-cols-3">
         <InquiryStartButton
           source="cta"
           note="법무사 이력 확인 후 상담"
-          className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-white px-5 text-base font-bold text-navy shadow-sm transition hover:bg-cream @sm:col-span-2 @2xl:col-span-1"
+          className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-white px-5 text-base font-bold text-navy shadow-sm transition hover:bg-cream col-span-2 @2xl:col-span-1"
         >
           1분 만에 상담 신청하기
         </InquiryStartButton>
@@ -62,11 +62,11 @@ export function TrustContactActions({
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackCtaEvent("kakao", undefined, kakaoHref)}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#FEE500] px-4 text-sm font-bold text-[#191919] no-underline transition hover:brightness-95"
+          className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#FEE500] px-2 text-sm font-bold text-[#191919] no-underline transition hover:brightness-95"
           data-cta="trust-kakao"
         >
           <KakaoIcon className="h-5 w-5" />
-          카카오톡 상담
+          카카오톡
           <span className="sr-only"> (새 창)</span>
         </a>
         <a
@@ -74,11 +74,11 @@ export function TrustContactActions({
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackCtaEvent("naver-talk", undefined, naverTalkHref)}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#03C75A] px-4 text-sm font-bold text-white no-underline transition hover:brightness-95"
+          className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#03C75A] px-2 text-sm font-bold text-white no-underline transition hover:brightness-95"
           data-cta="trust-naver-talk"
         >
           <NaverIcon className="h-5 w-5" />
-          네이버 톡톡 상담
+          네이버 톡톡
           <span className="sr-only"> (새 창)</span>
         </a>
       </div>

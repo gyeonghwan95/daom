@@ -77,6 +77,10 @@ export function InquiryDeliverySuccess({
           naverPlace
           naverPlacement="consult_page"
         />
+        <p className="mt-2 text-xs leading-relaxed text-navy/60">
+          네이버 플레이스에서 ‘저장’을 눌러 두시면 연락처와 위치를 다시 찾기
+          쉬워요.
+        </p>
       </div>
 
       <div className="inquiry-form__success-actions">

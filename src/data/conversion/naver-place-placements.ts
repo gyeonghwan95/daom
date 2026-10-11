@@ -115,6 +115,14 @@ export const NAVER_PLACE_PLACEMENTS: NaverPlacePlacementRule[] = [
   },
   {
     pageType: "global",
+    placement: "trust_review",
+    variant: "review",
+    priority: 2,
+    enabled: true,
+    note: "Same-topic visitor review excerpt in end-of-page trust block → text link",
+  },
+  {
+    pageType: "global",
     placement: "sidebar",
     variant: "reservation",
     priority: 2,

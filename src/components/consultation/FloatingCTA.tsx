@@ -106,8 +106,8 @@ export function FloatingCTA() {
                 <p
                   className={`floating-cta__section-note${reducedMotion ? "" : " floating-cta__section-note--emphasis"}`}
                 >
-                  채팅·신청서 상담과 별도로, 방문 일정과 위치는 네이버에서 확인할
-                  수 있습니다
+                  방문 예약과 방문자 후기·사무소 사진은 네이버 플레이스에서 볼 수
+                  있습니다
                 </p>
               </div>
             </div>

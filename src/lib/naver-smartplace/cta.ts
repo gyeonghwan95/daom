@@ -22,6 +22,7 @@ export type NaverSmartPlacePlacement =
   | "footer"
   | "map_widget"
   | "reviews_hub"
+  | "trust_review"
   | "page_hero"
   | "readability_cta"
   | "consult_inline"
@@ -48,7 +49,7 @@ const LABELS: Record<
     aria: "네이버 지도에서 다옴법무사사무소 위치 확인 (새 창)",
   },
   review: {
-    label: "네이버에서 후기·정보 보기",
+    label: "후기·사진 보기",
     aria: "네이버 플레이스에서 후기·사무소 정보 보기 (새 창)",
   },
   place: {
