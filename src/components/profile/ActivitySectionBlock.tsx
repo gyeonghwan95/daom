@@ -11,7 +11,7 @@ type ActivitySectionBlockProps = {
 
 function RoleCardList({ roles }: { roles: ActivityRole[] }) {
   return (
-    <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="profile-card-grid mt-5">
       {roles.map((role) => (
         <li
           key={`${role.title}-${role.period}`}

@@ -62,7 +62,7 @@ function EeatFactCard({
       ? `eeat-stacked-fact group flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4 ${
           clickable ? EEAT_CARD_HOVER : ""
         }`
-      : `eeat-fact group flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4 ${
+      : `eeat-fact group flex h-full items-start gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4 ${
           clickable ? EEAT_CARD_HOVER : ""
         }`;
 
@@ -170,8 +170,8 @@ function EeatProfileFactList({
     <ul
       className={
         stacked
-          ? "eeat-stacked-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
-          : "eeat-fact-list mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
+          ? "eeat-stacked-fact-list profile-card-grid mt-4"
+          : "eeat-fact-list profile-card-grid mt-4"
       }
     >
       {items.map((item) => (

@@ -19,7 +19,7 @@ export function LectureHistoryGrid({
   }
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    <ul className="profile-card-grid">
       {items.map((entry) => (
         <li key={entry.id}>
           <LectureHistoryCard entry={entry} compact={compact} />

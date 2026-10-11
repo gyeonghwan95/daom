@@ -190,7 +190,7 @@ admin-seo-summary: critical=0 warning=0 protected=16 → C:\workspace\daom\src\g
 > daom@0.1.0 build
 > node scripts/build-static.mjs
 
-[optimize-images] 원본 301개 · 파생본 1720개 (새로 생성 0, 정리 0) · 0.6s
+[optimize-images] 원본 301개 · 파생본 1720개 (새로 생성 0, 정리 0) · 0.8s
 
 [build-static] next build --webpack 시작 (STATIC_EXPORT=true, output: export)
 [build-static] CF에서 Turbopack hang 회피 — 컴파일 후 Generating static pages (~1800) 진행
@@ -199,9 +199,9 @@ admin-seo-summary: critical=0 warning=0 protected=16 → C:\workspace\daom\src\g
 - Environments: .env.local, .env
 
   Creating an optimized production build ...
-✓ Compiled successfully in 33.6s
+✓ Compiled successfully in 43s
   Skipping validation of types
-  Finished TypeScript config validation in 6ms ...
+  Finished TypeScript config validation in 7ms ...
   Collecting page data using 11 workers ...
   Generating static pages using 11 workers (0/1896) ...
 [business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
@@ -237,7 +237,7 @@ admin-seo-summary: critical=0 warning=0 protected=16 → C:\workspace\daom\src\g
   Generating static pages using 11 workers (474/1896) 
   Generating static pages using 11 workers (948/1896) 
   Generating static pages using 11 workers (1422/1896) 
-✓ Generating static pages using 11 workers (1896/1896) in 33.1s
+✓ Generating static pages using 11 workers (1896/1896) in 50s
   Finalizing page optimization ...
   Collecting build traces ...
 

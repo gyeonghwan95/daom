@@ -1402,6 +1402,23 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
   }
 
+  /* 소개·강의·활동 카드 목록 — 화면이 아니라 실제 콘텐츠 폭에 맞춰 1~4열(카드 최소 15rem).
+     목차·상담 패널로 본문이 좁아져도 카드가 너무 좁아지지 않고, 넓으면 최대 4장을 한 줄에 보여 준다. */
+  .profile-card-grid {
+    --pcg-gap: 0.75rem;
+    display: grid;
+    gap: var(--pcg-gap);
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(100%, max(15rem, calc((100% - 3 * var(--pcg-gap)) / 4))), 1fr)
+    );
+  }
+  @media (min-width: 768px) {
+    .profile-card-grid {
+      --pcg-gap: 1rem;
+    }
+  }
+
   /* 홈 fullpage 섹션 — 세로 공간 절약 */
   .home-section-compact {
     @apply py-8 md:py-12;

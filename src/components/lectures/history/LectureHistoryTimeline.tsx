@@ -22,7 +22,7 @@ export function LectureHistoryTimeline({ items }: LectureHistoryTimelineProps) {
               {group.items.length}건
             </span>
           </h3>
-          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <ul className="profile-card-grid">
             {group.items.map((entry) => (
               <li key={entry.id}>
                 <LectureHistoryCard entry={entry} />

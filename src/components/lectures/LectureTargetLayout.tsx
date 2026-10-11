@@ -117,7 +117,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
         <p className="mb-4 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           {spec.curriculumIntro}
         </p>
-        <div className="grid gap-3 md:grid-cols-2">
+        <div className="profile-card-grid">
           {spec.curricula.map((item) => (
             <div
               key={item.length}
@@ -142,7 +142,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
         <p className="mb-4 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           {spec.evidenceIntro}
         </p>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="profile-card-grid">
           {evidence.map((item) => {
             const history = item.historyId ? historyById.get(item.historyId) : undefined;
             const badge =
@@ -329,7 +329,7 @@ function CardGrid({ cards }: { cards: LectureTargetCard[] }) {
   // 한 장이라도 사진이 있으면 모든 카드에 같은 사진 영역을 둬 높이를 맞춘다
   const withMedia = cards.some((card) => card.image);
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className="profile-card-grid">
       {cards.map((card) => (
         <div
           key={card.title}

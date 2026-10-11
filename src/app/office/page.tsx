@@ -152,7 +152,7 @@ export default function OfficePage() {
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/65">
                 해운대 청년채움공간 내 사무소 위치와 상담 환경을 먼저 살펴보세요.
               </p>
-              <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="profile-card-grid mt-5">
                 {buildingExterior ? (
                   <FigureWithCaption
                     image={buildingExterior}

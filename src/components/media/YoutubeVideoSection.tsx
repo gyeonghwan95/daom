@@ -124,7 +124,7 @@ export function YoutubeVideoSection({
 
   if (layout === "grid") {
     return (
-      <ul className={`grid gap-6 sm:grid-cols-2 md:gap-8 ${className}`}>
+      <ul className={`profile-card-grid ${className}`}>
         {[featured, ...others].map((video) => (
           <li key={video.id} className="flex flex-col">
             <YoutubeEmbed video={video} featured={video.id === featured.id} variant={variant} />
