@@ -45,6 +45,7 @@ export function ToolCalculatorView({
   const [result, setResult] = useState<ReturnType<typeof runToolCalculator> | null>(
     null,
   );
+  const [inputError, setInputError] = useState("");
 
   if (!tool) return null;
 
@@ -68,12 +69,20 @@ export function ToolCalculatorView({
   ];
 
   function handleCalculate() {
-    setResult(runToolCalculator(calculatorType, input));
+    const next = runToolCalculator(calculatorType, input);
+    // 입력 오류는 결과·우선도 없이 폼 위에 안내하고 입력값을 그대로 둔다
+    if (next.invalid) {
+      setInputError(next.summary);
+      return;
+    }
+    setInputError("");
+    setResult(next);
     trackToolUsed(slug);
   }
 
   function handleReset() {
     setResult(null);
+    setInputError("");
     setInput({});
   }
 
@@ -118,12 +127,19 @@ export function ToolCalculatorView({
                 recommendationGroups={recommendationGroups}
               />
             ) : (
+              <>
+              {inputError ? (
+                <p role="alert" className="mb-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-900">
+                  {inputError}
+                </p>
+              ) : null}
               <ToolCalculatorForm
                 calculatorType={tool.calculatorType}
                 input={input}
                 onChange={setInput}
                 onSubmit={handleCalculate}
               />
+              </>
             )}
           </div>
         </div>

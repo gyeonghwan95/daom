@@ -8,9 +8,18 @@ import { ResourceShareActions } from "@/components/resources/ResourceShareAction
 import { RESOURCE_CATEGORY_LABEL, RESOURCE_VERIFIED_ON, RESOURCE_VERSION, resourcePath } from "@/data/resources/guides";
 import type { ResourceGuide } from "@/data/resources/types";
 import { getContactInfo } from "@/lib/contact";
+import { getContentMeta } from "@/lib/content/loader";
 import { resourceAssetPaths } from "@/lib/resources/asset-paths";
 import { absoluteUrl, RESOURCE_BRAND, readableUrl } from "@/lib/resources/urls";
 import { buildBreadcrumbSchema } from "@/lib/seo/json-ld";
+
+/** 자료별 관련 실제 처리 사례(공개 사례 중 주제가 맞는 것만, 없으면 표시하지 않음) */
+const RELATED_CASES: Record<string, string[]> = {
+  "inheritance-family": ["haeundae-inheritance-registration-case"],
+  "inheritance-overseas": ["haeundae-inheritance-registration-case"],
+  "property-closing": ["centum-ownership-transfer-case"],
+  "company-change": ["yeonje-director-change-case", "suyeong-company-establishment-case"],
+};
 
 /** 다운로드 파일 이름(사람이 알아보는 이름) */
 const FILE_LABEL: Record<string, string> = {
@@ -35,6 +44,9 @@ export function ResourceGuideView({ guide }: { guide: ResourceGuide }) {
   const assets = resourceAssetPaths(guide.slug);
   const fileBase = `다옴법무사사무소_${FILE_LABEL[guide.slug] ?? guide.slug}_v${RESOURCE_VERSION}`;
   const path = resourcePath(guide.slug);
+  const relatedCases = (RELATED_CASES[guide.slug] ?? [])
+    .map((slug) => getContentMeta("cases", slug))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const breadcrumbs = [
     { label: "홈", href: "/" },
     { label: "의뢰 전 준비자료", href: "/resources" },
@@ -203,6 +215,22 @@ export function ResourceGuideView({ guide }: { guide: ResourceGuide }) {
             {RESOURCE_VERIFIED_ON}에 국가법령정보센터·찾기쉬운 생활법령정보 원문을 확인했습니다. 법령은 바뀔 수 있고, 이 자료는 일반 안내이지 개별 사건의 결론이 아닙니다.
           </p>
         </Section>
+
+        {relatedCases.length ? (
+          <Section id="related-cases" title="비슷한 실제 처리 사례">
+            <p className="mb-3 text-sm text-navy/65">사무소에서 실제로 진행한 사건을 개인정보를 빼고 정리했습니다. 내 상황과 비교해 보세요.</p>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {relatedCases.map((c) => (
+                <li key={c.slug}>
+                  <Link href={c.href} className="flex h-full flex-col rounded-lg border border-beige-dark bg-white px-3 py-2.5 no-underline hover:border-navy/30" data-resource-case={c.slug}>
+                    <span className="text-xs font-semibold text-navy-light">실제 처리 사례 · {c.category}</span>
+                    <span className="mt-0.5 text-[0.95rem] font-semibold text-navy">{c.title} →</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        ) : null}
 
         <Section id="related" title="절차를 더 자세히 보려면">
           <ul className="grid gap-2 sm:grid-cols-2">

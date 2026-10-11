@@ -5,6 +5,8 @@ import { HomePlaceGuide } from "@/components/home/HomePlaceGuide";
 import { HomeFaqTeaser } from "@/components/home/HomeFaqTeaser";
 import { HomeFullpageSwiper } from "@/components/home/HomeFullpageSwiper";
 import { HomeHero } from "@/components/home/HomeHero";
+import { HomeFeaturedCases } from "@/components/home/HomeFeaturedCases";
+import { HomeResources } from "@/components/home/HomeResources";
 import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomePressMarquee } from "@/components/home/HomePressMarquee";
@@ -47,10 +49,12 @@ export default function Home() {
         <HomeFullpageSwiper>
           <HomeHero />
           <HomeTrust />
+          <HomeFeaturedCases />
+          <HomeServices />
+          <HomeResources />
           <HomePressMarquee />
           <HomeActivitiesMarquee />
           <HomeLawyerEeat />
-          <HomeServices />
           <HomePopularSearches />
           <HomeYoutube />
           <HomeInsights />

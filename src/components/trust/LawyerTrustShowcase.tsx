@@ -76,7 +76,7 @@ function CheckIcon() {
 
 const highlights: TrustHighlight[] = [
   {
-    label: "국가자격",
+    label: "보유 자격",
     value: "법무사 · 공인중개사 · 신용관리사",
     icon: <CertificateIcon />,
   },

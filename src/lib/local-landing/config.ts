@@ -15,7 +15,7 @@ import { searchIntentLandingConfigs } from "./search-intent-landing-config";
 import { consultLandingConfigs } from "./consult-landing-config";
 
 const baseLandingConfigs: LocalLandingConfig[] = [
-  { slug: "부산상속등기", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "센텀", "재송동", "수영구", "연제구"], caseAngle: "형제 상속인 간 분쟁 없이 해운대 아파트 상속등기 완료", relatedCaseSlug: "haeundae-inheritance-registration-case" },
+  { slug: "부산상속등기", serviceSlug: "inheritance-registration", regionKey: "busan", regionLabel: "부산", neighborhoods: ["해운대구", "센텀", "재송동", "수영구", "연제구"], caseAngle: "해외 거주 상속인이 있는 해운대 아파트 상속등기", relatedCaseSlug: "haeundae-inheritance-registration-case" },
   { slug: "부산상속포기", serviceSlug: "inheritance-renunciation", regionKey: "busan", regionLabel: "부산", neighborhoods: ["동래구", "북구", "사상구"], caseAngle: "채무가 재산보다 많아 상속포기 신고 진행", relatedCaseSlug: "jaesong-inheritance-renunciation-consultation" },
   { slug: "부산한정승인", serviceSlug: "qualified-acceptance", regionKey: "busan", regionLabel: "부산", neighborhoods: ["연제구", "금정구"], caseAngle: "모르는 채무가 있어 한정승인으로 상속 범위 제한", relatedCaseSlug: "dongnae-qualified-acceptance-consultation" },
   { slug: "부산법인설립등기", serviceSlug: "company-establishment", regionKey: "busan", regionLabel: "부산", neighborhoods: ["센텀", "해운대구"], caseAngle: "센텀 스타트업 2인 창업 법인 설립 등기", relatedCaseSlug: "suyeong-company-establishment-case" },

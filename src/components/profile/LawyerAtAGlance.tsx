@@ -3,9 +3,9 @@ import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { getVerifiedLectureHistory } from "@/data/lectures/history";
-import { getLawyerAppointments, getLawyerAwards, getLawyerQualifications } from "@/lib/lawyer-profile";
+import { getAllContent } from "@/lib/content/loader";
+import { getLawyerAwards, getLawyerQualifications } from "@/lib/lawyer-profile";
 import {
-  eeatAppointmentThumbs,
   eeatAwardThumbs,
   eeatLectureThumbs,
   type EeatThumbImage,
@@ -67,9 +67,11 @@ function Tile({
  * 숫자와 문구는 모두 기존 데이터 원본(lawyer-profile·press-articles·lectures/history·후기 피드)에서 계산한다.
  */
 export function LawyerAtAGlance() {
-  const qualifications = getLawyerQualifications().filter((q) => q.category === "국가자격");
+  const qualifications = getLawyerQualifications().filter(
+    (q) => q.category === "국가자격" || q.category === "국가공인 민간자격",
+  );
   const awards = getLawyerAwards();
-  const appointments = getLawyerAppointments();
+  const handledCases = getAllContent("cases").filter((c) => c.slug.endsWith("-case"));
   const press = getAllPressArticles();
   const lectures = getVerifiedLectureHistory();
   const lectureInstitutions = new Set(lectures.map((l) => l.institution));
@@ -77,7 +79,6 @@ export function LawyerAtAGlance() {
   const quote = buildReviewQuotes(reviewFeed.items).find((q) => q.topic !== "general") ?? buildReviewQuotes(reviewFeed.items)[0];
   const lectureThumbs = Object.values(eeatLectureThumbs).slice(0, 3).map(resolveThumb);
   const awardThumb = resolveThumb(awards[0] ? eeatAwardThumbs[awards[0].name] : undefined);
-  const appointmentThumb = resolveThumb(Object.values(eeatAppointmentThumbs)[0]);
 
   return (
     <section aria-labelledby="at-a-glance-heading" className="break-keep" data-lawyer-at-a-glance>
@@ -114,7 +115,7 @@ export function LawyerAtAGlance() {
           </div>
         </Link>
 
-        <Tile href="#credentials" label={`국가자격 ${qualifications.length}개`} title={qualifications.map((q) => q.name).join(" · ")}>
+        <Tile href="#credentials" label={`주요 보유 자격 ${qualifications.length}개`} title={qualifications.map((q) => q.name).join(" · ")}>
           <Thumb src={siteImages.about.credentialInfographic.src} alt="안윤정 법무사 전문이력 인포그래픽" className="mt-3 aspect-[4/3] w-full" />
         </Tile>
 
@@ -138,8 +139,8 @@ export function LawyerAtAGlance() {
           </div>
         </Tile>
 
-        <Tile href="#appointments" label={`위원·자문 ${appointments.length}건`} title={appointments.length > 1 ? `${appointments[0].title} 외 ${appointments.length - 1}건` : appointments[0]?.title ?? "위원 위촉"}>
-          <Thumb src={appointmentThumb} alt="정책 자문 위촉 활동" className="mt-3 aspect-[4/3] w-full" />
+        <Tile href="/업무사례#case-list" label={`실제 업무 사례 ${handledCases.length}건`} title="사무소에서 처리한 상속·부동산·법인 사건">
+          <p className="mt-2 text-sm leading-relaxed text-navy/70">어떤 조건을 확인했고 무엇을 맡았는지 사례로 볼 수 있습니다.</p>
         </Tile>
 
         <Tile

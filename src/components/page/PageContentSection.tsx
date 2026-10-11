@@ -10,6 +10,8 @@ import type { RelatedLink } from "@/types/content";
 
 type PageContentSectionProps = {
   h1: string;
+  /** H1 아래 큰 강조 문장(선택) */
+  lead?: string;
   intro: string;
   breadcrumbs?: BreadcrumbItem[];
   currentPath?: string;
@@ -26,6 +28,7 @@ type PageContentSectionProps = {
 
 export function PageContentSection({
   h1,
+  lead,
   intro,
   breadcrumbs,
   currentPath,
@@ -56,6 +59,9 @@ export function PageContentSection({
           <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,18rem)] lg:items-start lg:gap-8 xl:grid-cols-[1fr_minmax(0,20rem)]">
             <div>
               <h1 className="page-title">{h1}</h1>
+              {lead ? (
+                <p className="mt-3 text-[1.25rem] font-bold leading-snug tracking-tight text-navy md:text-[1.6rem]">{lead}</p>
+              ) : null}
               <p className="body-text mt-4 text-[0.9375rem] leading-relaxed md:mt-5 md:text-base">
                 {intro}
               </p>
@@ -74,6 +80,9 @@ export function PageContentSection({
         ) : (
           <>
             <h1 className="page-title">{h1}</h1>
+            {lead ? (
+              <p className="mt-3 text-[1.25rem] font-bold leading-snug tracking-tight text-navy md:text-[1.6rem]">{lead}</p>
+            ) : null}
             <p className="body-text mt-4 max-w-3xl md:mt-5">{intro}</p>
           </>
         )}

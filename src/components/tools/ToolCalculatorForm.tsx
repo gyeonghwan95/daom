@@ -31,8 +31,50 @@ export function ToolCalculatorForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {calculatorType === "inheritance-registration-deadline" ||
-      calculatorType === "inheritance-renunciation-deadline" ? (
+      {calculatorType === "inheritance-renunciation-deadline" ? (
+        <>
+          <div>
+            <label htmlFor="situation" className={labelClass}>
+              지금 상황
+            </label>
+            <select
+              id="situation"
+              className={inputClass}
+              value={String(input.situation ?? "general")}
+              onChange={(e) => setField("situation", e.target.value)}
+            >
+              <option value="general">가족의 사망을 알게 되어 내가 상속인이 된 경우</option>
+              <option value="later-heir">앞 순위 상속인이 포기해서 상속인이 된 경우</option>
+              <option value="minor-or-incapacity">상속인이 미성년자이거나 제한능력자인 경우</option>
+              <option value="debt-found-later">빚이 더 많다는 사실을 나중에 알게 된 경우</option>
+              <option value="unknown">언제 알게 되었는지 정확히 모름</option>
+            </select>
+          </div>
+          {String(input.situation ?? "general") === "general" ? (
+            <div>
+              <label htmlFor="knownDate" className={labelClass}>
+                상속개시 있음을 안 날
+              </label>
+              <input
+                id="knownDate"
+                type="date"
+                min="1900-01-01"
+                className={inputClass}
+                value={String(input.knownDate ?? "")}
+                onChange={(e) => setField("knownDate", e.target.value)}
+                aria-describedby="knownDate-help"
+                required
+              />
+              <p id="knownDate-help" className="mt-1.5 text-xs leading-relaxed text-navy/60">
+                사망 사실을 알고 그로써 내가 상속인이 된 것을 안 날입니다. 재산이 있다는 것을 안 날이 아니며, 사망일과
+                다를 수 있습니다.
+              </p>
+            </div>
+          ) : null}
+        </>
+      ) : null}
+
+      {calculatorType === "inheritance-registration-deadline" ? (
         <div>
           <label htmlFor="deathDate" className={labelClass}>
             사망일(상속개시일)
@@ -40,6 +82,7 @@ export function ToolCalculatorForm({
           <input
             id="deathDate"
             type="date"
+            min="1900-01-01"
             className={inputClass}
             value={String(input.deathDate ?? "")}
             onChange={(e) => setField("deathDate", e.target.value)}

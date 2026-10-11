@@ -1,4 +1,26 @@
 export const homeHero = {
+  /** 첫 화면 머리말(위치) */
+  locationLabel: "부산 해운대·센텀 다옴법무사사무소",
+  /** 첫 화면 강조 문장 */
+  headline: "복잡한 사정은 꼼꼼히. 필요한 절차는 명확하게.",
+  /** 첫 화면 설명 */
+  lead: "상속·부동산·법인등기와 개인회생·파산, 안윤정 법무사가 직접 상담하고 진행합니다.",
+  primaryCta: "업무 의뢰 문의",
+  secondaryCta: { label: "비슷한 업무 사례 보기", href: "/업무사례#case-list" },
+  ctaNote: "어떤 일인지와 연락처만 남기시면, 필요한 절차와 준비할 것부터 안내해 드립니다.",
+  /** 작은 신뢰 근거 — 기존 상세 링크로 연결 */
+  proofLinks: [
+    { label: "직접 상담·진행", href: "/about" },
+    { label: "대한법무사협회장 표창", href: "/about#awards" },
+    { label: "방송·강의 이력", href: "/media" },
+  ],
+  /** 업무 바로가기(작은 링크) */
+  quickLinks: [
+    { label: "상속", href: "/상속" },
+    { label: "부동산등기", href: "/부산부동산등기" },
+    { label: "법인등기", href: "/부산법인등기" },
+    { label: "개인회생·파산", href: "/개인회생파산" },
+  ],
   officeName: "다옴법무사사무소",
   h1: "부산 법무사 안윤정",
   representative: "안윤정 법무사",

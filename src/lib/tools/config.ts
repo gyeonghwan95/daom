@@ -164,12 +164,12 @@ export const toolDefinitions: ToolDefinition[] = [
     path: "/tools/inheritance-renunciation-deadline",
     calculatorType: "inheritance-renunciation-deadline",
     cardTitle: "상속포기·한정승인 3개월 기한",
-    cardDescription: "사망일 기준 3개월 기한 계산",
+    cardDescription: "상속개시 있음을 안 날 기준 3개월 기간 계산",
     h1: "상속포기·한정승인 3개월 기한은 언제까지인가요?",
     intro:
-      "상속개시일(사망일)부터 3개월 기한을 참고용으로 계산합니다. 한정승인 기간·상속포기 기한은 사실관계 확인이 필요합니다.",
+      "상속개시 있음을 안 날(사망 사실을 알고 내가 상속인이 된 것을 안 날)부터 3개월 기간을 민법의 기간 계산 방식으로 참고 계산합니다. 사망일과 다를 수 있고, 앞 순위 포기·미성년·특별한정승인처럼 사실 확인이 더 필요한 경우는 따로 안내합니다.",
     metaDescriptionBase:
-      "상속포기·한정승인 3개월 기한 계산기. 사망일 입력으로 기한 참고. 부산 법무사 상담.",
+      "상속포기·한정승인 3개월 기한 계산기. 상속개시 있음을 안 날 입력으로 기한 참고. 부산 법무사 상담.",
     primaryKeywords: ["상속포기 3개월", "한정승인 기간", "한정승인 기한", "부산 법무사"],
     documents: [
       "가족관계증명서·기본증명서",
@@ -193,7 +193,7 @@ export const toolDefinitions: ToolDefinition[] = [
       {
         question: "3개월을 넘기면 어떻게 되나요?",
         answer:
-          "단순승인으로 보일 수 있어 채무까지 승인한 것으로 처리될 위험이 있을 수 있습니다. 빠른 확인이 필요합니다.",
+          "기간 안에 한정승인이나 포기를 하지 않으면 단순승인한 것으로 봅니다(민법 제1019조·제1026조 제2호). 다만 빚이 더 많다는 사실을 중대한 과실 없이 늦게 알았다면 그 사실을 안 날부터 3개월 안에 한정승인을 검토할 수 있어, 언제 무엇을 알았는지부터 확인합니다.",
       },
     ],
     serviceSlug: "qualified-acceptance",

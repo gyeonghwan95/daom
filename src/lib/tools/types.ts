@@ -23,6 +23,8 @@ export type ToolCalculatorResult = {
   summary: string;
   details: string[];
   urgency: ToolUrgency;
+  /** 입력 오류 — 우선도·결과 화면 없이 입력 폼에 메시지만 보인다 */
+  invalid?: boolean;
   actions: string[];
   timeline?: { label: string; date?: string; note?: string }[];
 };

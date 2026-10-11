@@ -21,12 +21,6 @@ function addDays(date: Date, days: number): Date {
   return result;
 }
 
-function addMonthsClamped(date: Date, months: number): Date {
-  const targetMonthEnd = new Date(date.getFullYear(), date.getMonth() + months + 1, 0);
-  const day = Math.min(date.getDate(), targetMonthEnd.getDate());
-  return new Date(targetMonthEnd.getFullYear(), targetMonthEnd.getMonth(), day);
-}
-
 function monthEndAfter(date: Date, months: number): Date {
   return new Date(date.getFullYear(), date.getMonth() + months + 1, 0);
 }
@@ -62,19 +56,64 @@ function invalidResult(message: string): ToolCalculatorResult {
     summary: message,
     details: [],
     urgency: "low",
+    invalid: true,
     actions: ["날짜·금액을 다시 확인해 주세요."],
   };
 }
 
+/** 오늘(이용자 기기 기준) 0시 */
+function todayStart(): Date {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+}
+
+/**
+ * YYYY-MM-DD 날짜 입력 검증 — 형식·실재하는 날짜·1900년 이후·미래 아님.
+ * 실패하면 이용자에게 보일 오류 문구를 돌려준다.
+ */
+export function parseInputDate(value: string, label: string): { date: Date } | { error: string } {
+  const trimmed = value.trim();
+  if (!trimmed) return { error: `${label}을 입력해 주세요.` };
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trimmed);
+  if (!m) return { error: `${label}을 연-월-일 형식으로 다시 입력해 주세요. 연도가 4자리인지 확인해 주세요.` };
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const date = new Date(y, mo - 1, d);
+  if (date.getFullYear() !== y || date.getMonth() !== mo - 1 || date.getDate() !== d || y < 1900) {
+    return { error: `${label}이 올바른 날짜가 아닙니다. 다시 확인해 주세요.` };
+  }
+  if (date > todayStart()) return { error: `${label}이 오늘 이후 날짜입니다. 이미 지난 날짜를 입력해 주세요.` };
+  return { date };
+}
+
+/**
+ * 월 단위 기간의 만료일(민법 제157조 초일 불산입, 제160조 역에 의한 계산, 제161조 말일 토요일·공휴일 익일 만료).
+ * 공휴일 중 일요일만 반영한다(설·추석·대체공휴일 등 그 밖의 공휴일 데이터는 없음 — 화면에 따로 표시).
+ */
+export function civilMonthPeriodEnd(eventDate: Date, months: number): { end: Date; shiftedFrom?: Date } {
+  const start = addDays(eventDate, 1); // 초일 불산입
+  const targetMonthLastDay = new Date(start.getFullYear(), start.getMonth() + months + 1, 0);
+  let end: Date;
+  if (start.getDate() > targetMonthLastDay.getDate()) {
+    end = targetMonthLastDay; // 제160조 제3항: 최종 월에 해당일이 없으면 그 월의 말일
+  } else {
+    end = addDays(new Date(start.getFullYear(), start.getMonth() + months, start.getDate()), -1); // 제160조 제2항
+  }
+  const raw = end;
+  while (end.getDay() === 6 || end.getDay() === 0) end = addDays(end, 1); // 토요일·일요일 → 익일
+  return end.getTime() === raw.getTime() ? { end } : { end, shiftedFrom: raw };
+}
+
+const HOLIDAY_NOTE =
+  "토요일·일요일은 반영했지만 설·추석·대체공휴일 같은 그 밖의 공휴일은 반영하지 않았습니다. 마지막 날이 공휴일이면 그다음 날까지입니다(민법 제161조).";
+
 function calcInheritanceRegistrationDeadline(
   input: ToolCalculatorInput,
 ): ToolCalculatorResult {
-  const deathDate = parseDate(String(input.deathDate ?? ""));
-  if (!deathDate) {
-    return invalidResult("사망일(상속개시일)을 입력해 주세요.");
-  }
+  const parsedDeath = parseInputDate(String(input.deathDate ?? ""), "사망일(상속개시일)");
+  if ("error" in parsedDeath) return invalidResult(parsedDeath.error);
+  const deathDate = parsedDeath.date;
 
-  const renunciationDeadline = addMonthsClamped(deathDate, 3);
+  const renunciationDeadline = civilMonthPeriodEnd(deathDate, 3).end;
   const acquisitionTaxDeadline = monthEndAfter(deathDate, 6);
   const acquisitionTaxDeadlineAbroad = monthEndAfter(deathDate, 9);
   const daysToRenunciation = daysFromToday(renunciationDeadline);
@@ -119,7 +158,8 @@ function calcInheritanceRegistrationDeadline(
       `상속포기·한정승인 기한: ${formatKr(renunciationDeadline)}${daysToRenunciation >= 0 ? ` — 약 ${daysToRenunciation}일 남음` : " — 기한 경과"}`,
       `상속 취득세 신고·납부 기한: ${formatKr(acquisitionTaxDeadline)}${daysToAcquisitionTax >= 0 ? ` — 약 ${daysToAcquisitionTax}일 남음` : " — 기한 경과"}`,
       "상속등기 자체에는 신청기한·과태료가 없습니다. 기한을 넘기면 취득세 가산세가 문제됩니다(지방세법 제20조, 지방세기본법).",
-      "기간의 마지막 날이 토요일·공휴일이면 그다음 날까지로 계산합니다(민법 제161조).",
+      "상속포기·한정승인 기간은 사망일이 아니라 상속개시 있음을 안 날부터 셉니다. 위 날짜는 사망 당일에 안 경우의 예시입니다.",
+      HOLIDAY_NOTE,
     ],
     urgency,
     actions: [
@@ -131,13 +171,49 @@ function calcInheritanceRegistrationDeadline(
   };
 }
 
+/** 날짜만으로 계산하지 않고 개별 확인으로 안내하는 상황 */
+const RENUNCIATION_SPECIAL: Record<string, { title: string; body: string }> = {
+  "later-heir": {
+    title: "앞 순위 상속인이 포기해서 상속인이 된 경우",
+    body: "앞 순위 상속인의 포기로 내가 상속인이 되었다면, 그 사실을 알게 된 날이 기준이 될 수 있습니다. 언제 알게 되었는지는 통지·서류로 따로 확인해야 해서 날짜만으로 계산하지 않습니다.",
+  },
+  "minor-or-incapacity": {
+    title: "미성년자이거나 제한능력자인 상속인",
+    body: "친권자 또는 후견인이 상속이 개시된 것을 안 날부터 기간을 세는 등(민법 제1020조) 확인할 사실이 더 있어 날짜만으로 계산하지 않습니다. 미성년 상속인은 성년이 된 뒤 한정승인을 할 수 있는 특례도 있습니다(민법 제1019조 제4항).",
+  },
+  "debt-found-later": {
+    title: "빚이 재산보다 많다는 사실을 나중에 알게 된 경우",
+    body: "3개월 안에 중대한 과실 없이 채무 초과 사실을 알지 못했다면, 그 사실을 안 날부터 3개월 안에 한정승인(특별한정승인)을 검토할 수 있습니다(민법 제1019조 제3항). 중대한 과실이 없었는지는 사정을 보고 판단해야 해서 날짜만으로 계산하지 않습니다.",
+  },
+  unknown: {
+    title: "언제 알게 되었는지 정확히 모르는 경우",
+    body: "기준일이 분명하지 않으면 계산 결과가 오히려 오해를 낳을 수 있습니다. 사망 사실을 알게 된 경위(연락받은 날, 서류를 받은 날 등)를 먼저 정리해 주세요.",
+  },
+};
+
 function calcRenunciationDeadline(input: ToolCalculatorInput): ToolCalculatorResult {
-  const deathDate = parseDate(String(input.deathDate ?? ""));
-  if (!deathDate) {
-    return invalidResult("사망일(상속개시일)을 입력해 주세요.");
+  const situation = String(input.situation ?? "general");
+  const special = RENUNCIATION_SPECIAL[situation];
+  if (special) {
+    return {
+      summary: `${special.title}에는 날짜 계산 대신 개별 확인이 필요합니다. ${special.body}`,
+      details: [
+        "상속포기·한정승인은 상속개시 있음을 안 날부터 3개월 안에 가정법원에 신고합니다(민법 제1019조 제1항).",
+        "‘안 날’은 상속이 시작된 사실을 알고 그로써 자기가 상속인이 된 것을 안 날이며, 상속재산이 있음을 안 날이 아닙니다(대법원 1984. 8. 23. 자 84스17 결정).",
+        "이해관계인 등의 청구로 가정법원이 이 기간을 연장할 수 있습니다(민법 제1019조 제1항 단서).",
+      ],
+      urgency: "caution",
+      actions: [
+        "사망 사실·상속인이 된 사실을 알게 된 날과 그 근거(연락·통지·서류)를 정리해 두세요.",
+        "채무·재산 자료를 모아 상속포기·한정승인 중 무엇이 맞는지 함께 검토하는 것이 좋습니다.",
+      ],
+    };
   }
 
-  const deadline = addMonthsClamped(deathDate, 3);
+  const parsed = parseInputDate(String(input.knownDate ?? input.deathDate ?? ""), "상속개시 있음을 안 날");
+  if ("error" in parsed) return invalidResult(parsed.error);
+  const knownDate = parsed.date;
+  const { end: deadline, shiftedFrom } = civilMonthPeriodEnd(knownDate, 3);
   const daysLeft = daysFromToday(deadline);
   const urgency: ToolCalculatorResult["urgency"] =
     daysLeft < 0 ? "urgent" : daysLeft <= 14 ? "urgent" : daysLeft <= 30 ? "caution" : "low";
@@ -145,25 +221,27 @@ function calcRenunciationDeadline(input: ToolCalculatorInput): ToolCalculatorRes
   return {
     summary:
       daysLeft >= 0
-        ? `상속포기·한정승인은 상속개시가 있음을 안 날부터 3개월 안에 가정법원에 신고해야 합니다(민법 제1019조). 사망 사실을 사망일에 알았다면 기한은 ${formatKr(deadline)}입니다.`
-        : `사망일 기준 3개월(${formatKr(deadline)})이 지난 것으로 보입니다. 사망 사실을 늦게 알았는지, 빚이 더 많다는 사실을 늦게 알았는지(특별한정승인)에 따라 아직 가능한지가 달라집니다.`,
+        ? `상속개시 있음을 ${formatKr(knownDate)}에 알았다면, 상속포기·한정승인 신고 기간은 ${formatKr(deadline)}까지로 계산됩니다(약 ${daysLeft}일 남음). 그 밖의 공휴일이 겹치면 하루 이상 늘어날 수 있습니다.`
+        : `상속개시 있음을 ${formatKr(knownDate)}에 알았다면, 일반적인 3개월 기간(${formatKr(deadline)})은 지난 것으로 계산됩니다. 다만 안 날이 언제인지, 빚이 더 많다는 사실을 늦게 알았는지(특별한정승인)에 따라 아직 검토할 방법이 있을 수 있어 날짜만으로 단정할 수 없습니다.`,
     details: [
-      `상속개시일: ${formatKr(deathDate)}`,
-      `3개월 기한(사망일에 안 경우): ${formatKr(deadline)}`,
-      daysLeft >= 0
-        ? `오늘 기준 약 ${daysLeft}일 남은 것으로 계산됩니다.`
-        : "빚이 재산보다 많다는 사실을 중대한 과실 없이 3개월 안에 알지 못했다면, 그 사실을 안 날부터 3개월 안에 특별한정승인을 검토할 수 있습니다(민법 제1019조 제3항).",
-      "사망 사실을 나중에 알았다면 안 날부터 3개월로 계산하며, 마지막 날이 토요일·공휴일이면 그다음 날까지입니다(민법 제161조).",
+      `기준일(상속개시 있음을 안 날): ${formatKr(knownDate)}`,
+      shiftedFrom
+        ? `3개월 기간 만료일: ${formatKr(shiftedFrom)}이 토요일·일요일이라 ${formatKr(deadline)}까지`
+        : `3개월 기간 만료일: ${formatKr(deadline)}`,
+      "계산 방식: 안 날 다음 날부터 세고, 3개월째 같은 날짜의 전날에 끝납니다. 그 달에 같은 날짜가 없으면 그 달 말일입니다(민법 제157조·제160조).",
+      HOLIDAY_NOTE,
+      "‘안 날’은 상속이 시작된 사실을 알고 그로써 자기가 상속인이 된 것을 안 날이며, 상속재산이 있음을 안 날이 아닙니다(대법원 84스17). 사망일과 다를 수 있습니다.",
+      "이해관계인 등의 청구로 가정법원이 기간을 연장할 수 있습니다(민법 제1019조 제1항 단서).",
     ],
     urgency,
     actions: [
       "채무·재산 목록을 먼저 정리해 한정승인·상속포기 필요 여부를 검토해야 합니다.",
-      "상속인 전원의 의견이 필요할 수 있으니 가족과 일정을 맞춰야 합니다.",
-      "기한이 임박했거나 경과했다면 서류 확인을 우선하는 것이 좋습니다.",
+      "상속포기는 가족마다 따로 신고하며, 앞 순위가 포기하면 다음 순위로 상속이 넘어갈 수 있어 가족과 함께 확인하는 것이 좋습니다.",
+      "기한이 가깝거나 지났다면 서류 확인을 먼저 하는 것이 좋습니다.",
     ],
     timeline: [
-      { label: "상속개시일", date: formatKr(deathDate) },
-      { label: "상속포기·한정승인 기한", date: formatKr(deadline), note: "사망일에 안 경우" },
+      { label: "상속개시 있음을 안 날", date: formatKr(knownDate) },
+      { label: "상속포기·한정승인 신고 기간 만료", date: formatKr(deadline), note: "그 밖의 공휴일 미반영" },
     ],
   };
 }

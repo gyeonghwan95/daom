@@ -16,7 +16,7 @@ export const lawyerProfileMeta = {
 
 export type LawyerCredential = {
   name: string;
-  category: "국가자격" | "학력·교육" | "수상";
+  category: "국가자격" | "국가공인 민간자격" | "학력·교육" | "수상";
   detail?: string;
   year?: string;
 };
@@ -85,8 +85,9 @@ export const lawyerCredentials: LawyerCredential[] = [
   },
   {
     name: "신용관리사",
-    category: "국가자격",
-    detail: "한국금융연수원 · 채무·신용 회복(개인회생·파산) 상담",
+    // 민간자격정보서비스(PQI) 2008-0429 공인 · 자격관리기관 신용정보협회 (2026-10-11 확인)
+    category: "국가공인 민간자격",
+    detail: "신용정보협회 · 채무·신용 관련 상담 실무",
     year: "2024.09.19",
   },
   {

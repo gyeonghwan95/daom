@@ -103,7 +103,7 @@ export const seoulMetroRemote: MetroRemoteSpec = {
             {
               status: "VERIFIED_HANDLED",
               title: "해외에 사는 상속인이 있던 아파트 상속등기",
-              body: "사무소에서 처리한 해운대 아파트 사건입니다. 상속인 3명 중 1명이 해외에 있어 위임장과 인감 관련 서류 일정을 따로 맞췄고, 신고 기한 안에 배우자 단독 명의로 등기를 마쳤습니다. 부동산은 부산이었지만 멀리 있는 상속인의 서류를 받는 방식은 서울 상속인에게도 같습니다.",
+              body: "사무소에서 처리한 해운대 아파트 사건입니다. 상속인 3명 중 1명이 해외에 있어 위임장과 인감 관련 서류 일정을 따로 맞췄고, 배우자 단독 명의로 등기를 마쳤습니다. 부동산은 부산이었지만 멀리 있는 상속인의 서류를 받는 방식은 서울 상속인에게도 같습니다.",
               link: {
                 href: "/services/cases/haeundae-inheritance-registration-case",
                 label: "해외 상속인 서류를 맞춘 처리 사례",

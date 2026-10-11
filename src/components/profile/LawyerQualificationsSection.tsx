@@ -6,7 +6,7 @@ import {
 import type { SiteImageAsset } from "@/lib/site-images";
 
 const categoryLabels: Record<LawyerQualificationCategory, string> = {
-  license: "국가자격",
+  license: "보유 자격",
   education: "학력·교육",
   award: "수상",
 };

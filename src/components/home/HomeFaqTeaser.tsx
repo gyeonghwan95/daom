@@ -1,8 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { HomeSectionActionLink } from "@/components/home/HomeSectionActionLink";
 import { homeFaqIntro, homeFaqs } from "@/lib/home-content";
-import Link from "next/link";
-import { RESOURCE_CATEGORY_LABEL, RESOURCE_GUIDES, resourcePath } from "@/data/resources/guides";
 
 /**
  * 홈 FAQ — motion 없이 정적 HTML + details로 크롤·접근성 정렬.
@@ -40,28 +38,6 @@ export function HomeFaqTeaser() {
               </p>
             </details>
           ))}
-        </div>
-
-        <div className="mt-8" data-home-resources>
-          <div className="flex items-end justify-between gap-3">
-            <p className="text-base font-bold text-navy md:text-lg">의뢰 전 준비자료</p>
-            <Link href="/resources" className="text-sm font-semibold text-navy-light underline-offset-4 hover:underline">
-              자료실 보기 →
-            </Link>
-          </div>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {RESOURCE_GUIDES.map((g) => (
-              <li key={g.slug}>
-                <Link
-                  href={resourcePath(g.slug)}
-                  className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-beige-dark bg-white px-3 text-sm text-navy hover:border-navy/30"
-                >
-                  <span className="font-semibold text-navy-light">{RESOURCE_CATEGORY_LABEL[g.category]}</span>
-                  {g.shortTitle}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </Container>
     </section>

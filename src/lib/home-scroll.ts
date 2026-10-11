@@ -3,10 +3,12 @@ import type { Swiper as SwiperInstance } from "swiper";
 export const HOME_SECTION_IDS = [
   "home-hero",
   "home-trust",
+  "home-cases",
+  "home-services",
+  "home-resources",
   "home-press",
   "home-activities",
   "home-lawyer-eeat",
-  "home-services",
   "home-popular-searches",
   "home-youtube",
   "home-insights",

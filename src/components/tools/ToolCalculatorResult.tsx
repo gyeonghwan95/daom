@@ -103,11 +103,13 @@ export function ToolCalculatorResultView({
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
             계산 결과
           </p>
-          <span
-            className={`rounded-full border px-3 py-1 text-xs font-semibold ${urgencyClass[result.urgency]}`}
-          >
-            검토 우선도: {urgencyLabel[result.urgency]}
-          </span>
+          {result.invalid ? null : (
+            <span
+              className={`rounded-full border px-3 py-1 text-xs font-semibold ${urgencyClass[result.urgency]}`}
+            >
+              검토 우선도: {urgencyLabel[result.urgency]}
+            </span>
+          )}
         </div>
         <p className="mt-4 text-base leading-relaxed text-navy/90 sm:text-lg">
           {result.summary}

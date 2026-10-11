@@ -1,0 +1,1208 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<title>민간자격검색 | 자격정보 | 민간자격 정보서비스</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+	
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=1200" />
+<link rel="icon" type="image/png" sizes="144x144" href="/new_images/favicon/favicon.png?v=c7b48209-338">
+<link rel="apple-touch-icon" sizes="144x144" href="/new_images/favicon/favicon.png?v=c7b48209-338">
+<script src="https://use.fontawesome.com/releases/v6.6.0/js/all.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="/new_css/style.css?v=c7b48209-338" />
+<link rel="stylesheet" type="text/css" href="/new_css/board.css?v=c7b48209-338" />
+<link rel="stylesheet" type="text/css" href="/new_css/common.css?v=c7b48209-338" />
+<!--[if lte IE 6]><link rel="stylesheet" href="/css/ie6.css?v=c7b48209-338" type="text/css" media="all"><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css?v=c7b48209-338" type="text/css" media="all"><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css?v=c7b48209-338" type="text/css" media="all"><![endif]-->
+<style type="text/css">
+.qul_search_line:after,
+.qul_search_home:after {
+	content: none !important;
+	display: none !important;
+}
+
+.qul_search_line {
+	background: none !important;
+	color: #006cba !important;
+	gap: 5px !important;
+}
+
+.qul_search_home {
+	background: none !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 14px !important;
+	height: 14px !important;
+	margin-left: 4px !important;
+	color: inherit !important;
+}
+
+.qul_search_line .qul_info_icon {
+	margin-left: 5px;
+	font-size: 15px;
+	line-height: 1;
+	color: #4d5560;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+}
+
+.qul_search_home i,
+.qul_search_home .svg-inline--fa {
+	font-size: 15px;
+	line-height: 1;
+	color: #4d5560;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+}
+
+.qul_search_line:hover,
+.qul_search_line:focus {
+	color: #006cba;
+}
+
+.qul_search_line:hover .qul_info_icon,
+.qul_search_line:focus .qul_info_icon,
+.qul_search_home:hover i,
+.qul_search_home:focus i,
+.qul_search_home:hover .svg-inline--fa,
+.qul_search_home:focus .svg-inline--fa {
+	color: #2b3138;
+}
+
+#qulListTb td:nth-child(3),
+#qulListTb td:nth-child(4) {
+	line-height: 1.45;
+}
+
+#qulListTb td:nth-child(3) .qul_search_line {
+	display: inline;
+	white-space: normal;
+	word-break: keep-all;
+	overflow-wrap: anywhere;
+}
+
+#qulListTb td:nth-child(3) .qul_search_text,
+#qulListTb td:nth-child(4) .qul_org_text {
+	word-break: keep-all;
+	overflow-wrap: anywhere;
+}
+
+#qulListTb td:nth-child(3) .qul_search_text {
+	color: #006cba !important;
+}
+
+#qulListTb td:nth-child(3) .qul_info_icon {
+	position: relative;
+	top: -1px;
+}
+
+#qulListTb td:nth-child(4) .qul_search_home {
+	vertical-align: middle;
+	position: static;
+	top: auto;
+}
+</style>
+
+<script src="/js/jquery.js?v=c7b48209-338" type="text/javascript"></script>
+<script src="/js/common.js?v=c7b48209-338" type="text/javascript"></script>
+<script defer src="/js/global_script.js?v=c7b48209-338"></script>
+<script type="text/javascript">
+<!--
+	function updateQulListSortHeader() {
+		var tmp = ($('#searchOrderMethodRow').val() || 'qulRegNum DESC').split(' ');
+		var sortedColumn = tmp[0];
+		var sortedBy = (tmp[1] || 'DESC').toUpperCase();
+
+		$('#qulListTb>thead a.sort_link').each(function() {
+			var $targetA = $(this);
+			var sortLabel = $targetA.attr('data-sort-label') || $.trim($targetA.find('.sort_text').first().text());
+			var isActive = this.id == sortedColumn;
+			var nextSortType = (isActive && sortedBy == 'ASC') ? 'DESC' : 'ASC';
+			var iconClass = 'fas fa-sort';
+
+			if (isActive) {
+				iconClass = (sortedBy == 'ASC') ? 'fas fa-caret-up' : 'fas fa-caret-down';
+			}
+
+			$targetA.toggleClass('is_active', isActive);
+			$targetA.toggleClass('is_asc', isActive && sortedBy == 'ASC');
+			$targetA.toggleClass('is_desc', isActive && sortedBy == 'DESC');
+			$targetA.attr('title', sortLabel
+					+ (nextSortType == 'ASC' ? ' 오름차순 정렬' : ' 내림차순 정렬'));
+			$targetA.find('.sort_icon i').attr('class', iconClass);
+			$targetA.find('.sort_state').text('');
+		});
+	}
+
+	$(document)
+			.ready(
+					function() {
+						/* 조회결과 - 헤더 클릭 시 소트 */
+						$('#qulListTb>thead a.sort_link')
+								.bind(
+										'click',
+										function(e) {
+											e.preventDefault();
+
+											var tmp = $('#searchOrderMethodRow')
+													.val().split(' ');
+											var sortedColumn = tmp[0];
+											var sortedBy = tmp[1];
+											var sortColumn = $(this)[0].id;
+
+											if (sortColumn == sortedColumn) // 현재 정렬된 컬럼이면
+												$('#searchOrderMethodRow')
+												.val(
+												sortColumn
+												+ (sortedBy == 'ASC' ? ' DESC'
+												: ' ASC'));
+											else
+												$('#searchOrderMethodRow').val(
+														sortColumn + ' ASC');
+
+											var form = document.listForm;
+											form.pageIndex.value = "1";
+											form.target = "_self";
+											form.action = "/inf/qul/infQulList.do";
+											form.submit();
+										});
+
+						/* 컬럼 정렬 표시 */
+						updateQulListSortHeader();
+					});
+
+	/* 페이지 네비게이션으로 검색을 한다. */
+	function f_retrieveLinkPageList(pageNo) {
+		if (!fireWallChk("search")) {
+			return;
+		}
+
+		document.listForm.pageIndex.value = pageNo;
+		document.listForm.action = "/inf/qul/infQulList.do";
+		document.listForm.submit();
+	}
+
+	/* 검색조건으로 검색한다. */
+	function search() {
+		if (!fireWallChk("search")) {
+			return;
+		}
+
+		document.listForm.pageIndex.value = 1;
+		document.listForm.action = "/inf/qul/infQulList.do";
+		document.listForm.submit();
+	}
+
+	/* 직무능력표준분류 중분류조회 */
+	function selectNcsCd2() {
+		var form = document.listForm;
+		var url = "/inf/qul/selectInfQulNcsMidList.do";
+		var data = "searchNcsCd1=" + $("#searchNcsCd1").val();
+		var value = checkAjax(url, data);
+
+		var ncsList = value.split(".");
+		var ncsObject = "";
+
+		$("#searchNcsCd3").html("<option value='0000'>**** 소분류 ****</option>");
+		$("#searchNcsCd2").html("<option value='0000'>**** 중분류 ****</option>");
+
+		if ($("#searchNcsCd1").val() != "0000" && ncsList[0] != "empty") {
+			if (ncsList[0] != "" && ncsList[0] != null) {
+				for (var i = 0; i < ncsList.length; i++) {
+					ncsObject = ncsList[i].split(",");
+					$("#searchNcsCd2").append(
+							"<option value='" + ncsObject[0] + "'>"
+									+ ncsObject[1] + "</option>");
+				}
+			}
+		}
+	}
+
+	/* 직무능력표준분류 소분류조회 */
+	function selectNcsCd3() {
+		var form = document.listForm;
+		var url = "/inf/qul/selectInfQulNcsLasList.do";
+		var data = "searchNcsCd2=" + $("#searchNcsCd2").val();
+		var value = checkAjax(url, data);
+		var ncsList = value.split(".");
+		var ncsObject = "";
+
+		$("#searchNcsCd3").html("<option value='0000'>**** 소분류 ****</option>");
+		if ($("#searchNcsCd2").val() != "0000") {
+			if (ncsList[0] != "" && ncsList[0] != null && ncsList[0] != "empty") {
+				for (var i = 0; i < ncsList.length; i++) {
+					ncsObject = ncsList[i].split(",");
+					$("#searchNcsCd3").append(
+							"<option value='" + ncsObject[0] + "'>"
+									+ ncsObject[1] + "</option>");
+				}
+			}
+		}
+	}
+
+	/* 직무능력표준분류 중분류조회 */
+	function selectKrvCd2() {
+		var form = document.listForm;
+		var url = "/inf/qul/selectInfQulKrvList.do";
+		var data = "searchKrvCd1=" + $("#searchKrvCd1").val();
+		var value = checkAjax(url, data);
+		var ncsList = value.split(".");
+		var ncsObject = "";
+
+		$("#searchKrvCd2").html("<option value='0000'>**** 중분류 ****</option>");
+		if ($("#searchKrvCd1").val() != "0000") {
+			if (ncsList[0] != "" && ncsList[0] != null && ncsList[0] != "empty") {
+				for (var i = 0; i < ncsList.length; i++) {
+					ncsObject = ncsList[i].split(",");
+					$("#searchKrvCd2").append(
+							"<option value='" + ncsObject[0] + "'>"
+									+ ncsObject[1] + "</option>");
+				}
+			}
+		}
+	}
+
+	/* 자격정보 상세검색 */
+	function detail(qulId) {
+		if (!fireWallChk("search")) {
+			return;
+		}
+
+		var form = document.listForm;
+		$("#searchQulId").val(qulId);
+		form.pageIndex.value = 1; /* 2015기능개선추가_psw 자격취득현황(목록)에 페이징이 적용되어서 */
+		form.target = "_self";
+		form.action = "/inf/qul/infQulBasDetail.do";
+		form.submit();
+	}
+
+
+	/* 기관 홈페이지 새창을 연다 */
+	function linkHome(url) {
+		window.open("http://" + url, '_blank');
+	}
+//-->
+</script>
+</head>
+<body>
+	<div class="all_wrap">
+		<div class="content_align">
+			<!--top-->
+			
+
+
+
+
+
+
+
+
+
+<!--
+<script type="text/javascript" src="/MagicLine4Web/ML4WebExample/js/jquery-1.10.2.js"></script>
+-->
+
+
+<script type="text/javascript">
+	//<![CDATA[
+/* 	$(document).ready(function wait(){
+		alert("서비스 준비중입니다.");
+		return;
+	}) */
+	var ipAddress = "175.200.44.131";
+    //alert("Your IP Address: " + ipAddress);
+	
+	/* 클라우드 전환 준비 중 리다이렉션 */
+    // $(document).ready(function() {
+	// 	if (ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨' && ipAddress !== '삭제됨')
+	// 	{
+	// 		window.location.replace('/preparing.html');
+	// 	}
+    // });
+	
+	function topMove(url) {
+		var prevent = ['reqReNewQulMngList','reqChgMain','reqEtcList','reqChgList3'];
+		var today = Number(getToday());
+
+		if(today >= 20141101 && today <= 20141130) {
+			for(var i = 0 ; i < prevent.length ; i++) {
+				if(url.indexOf(prevent[i]) > -1) {
+					alert('기관이전 및 시스템 개선 작업으로 인해 11월 한달동안 시스템 이용에 제한이 있습니다.');
+					url = '/brd/brdView.do';
+				}
+			} 
+		}
+			
+		document.topForm.action=url;
+		document.topForm.submit();
+	}
+
+	function getToday() {
+	   	var today = new Date();
+	   	var year  = today.getFullYear();
+	   	var month = Number(today.getMonth()) + 1;	   
+	   	var date  = Number(today.getDate());	   
+	   	if(month < 10) { month = '0' + month; } else { month = month + ''; }
+	   	if(date < 10) { date = '0' + date; } else { date = date + ''; }
+	   
+	   	return year + month + date;
+    }
+    
+	function menuMsgTop(){
+		alert("8월 7일까지 자격관련 이관 작업을 위해  서비스를 잠시 중단합니다.  \n\n많은 양해 부탁드립니다.");
+		return;
+	}
+	
+	function menuMsg(){
+		alert("기존 홈페이지의 등록정보 이관작업을 위해 서비스를 잠시 중단합니다.  \n\n많은 양해 부탁드립니다.");
+		return;
+	}	
+
+
+
+	
+	//]]>
+	
+	//글로벌 네비게이션(2Depth 메뉴그룹)에 대한 마우스 또는 키보드 반응(보임/숨김)설정
+	function activeGNB(id) {
+		$(".depth1").css("display","none");
+		$("#"+id).css("display","block");
+	}
+	//로컬 네비게이션(4Depth 메뉴그룹)에 대한 마우스 또는 키보드 반응(보임/숨김)설정
+	function activeLNB() {
+		$(".depth1").css("display","none");
+	}
+
+	function MM_openBrWindow(theURL, winName, features) { //v2.0
+		window.open(theURL, winName, features);
+	}
+
+	//JavaScript Document
+	$(document).ready(function() {
+		var focusClassNm = "";
+		//gnb hover
+		$("#gnb li").mouseenter(function() {
+			$(this).children("ul.depth1").css("display","block");
+		}).mouseleave(function() {
+			$(this).children("ul.depth1").css("display","none");
+		}); 
+		
+		//a태그안에 title추가	
+		$(".gnb li a").each(function() {
+			var add_title = jQuery(this).text();
+			$(this).attr("title", add_title);
+		});
+
+		//a태그안에 title추가	
+		$(".admin_left li a").each(function() {
+			var add_title = jQuery(this).text();
+			$(this).attr("title", add_title);
+		});
+	});
+	(function () {
+	  // DOMContentLoaded 보장
+	  if (document.readyState === 'loading') {
+	    document.addEventListener('DOMContentLoaded', initSkip, { once: true });
+	  } else {
+	    initSkip();
+	  }
+
+	  function initSkip() {
+	    try {
+	      // 1) 스킵 링크를 body 맨 앞에 "한 번만" 삽입 (top_menu.jsp는 body 안에 include되므로 before 대신 afterbegin)
+	      if (!document.getElementById('skipToContent')) {
+	        document.body.insertAdjacentHTML('afterbegin',
+	          '<nav id="skipToContent" class="skip" aria-label="바로가기">'
+	            + '<a href="#contents">본문 바로가기</a>'
+	            + '<a href="#btnMenu">메뉴 바로가기</a>'
+	          + '</nav>'
+	        );
+	      }
+
+	      // 2) 본문 타깃(#contents) 보정
+	      var main = document.getElementById('contents')
+	             || document.querySelector('.content');
+	      if (main) {
+	        // 이미 다른 곳에 id="contents"가 있으면 중복 방지
+	        if (!main.id) { main.id = 'contents'; }
+	        // 스킵 이동 후 포커스 보장
+	        main.setAttribute('tabindex', '-1');
+	      } else {
+	        // 타깃이 전혀 없으면 "본문 바로가기" 링크 제거(깨진 앵커 예방)
+	        var skipContentLink = document.querySelector('#skipToContent a[href="#contents"]');
+	        if (skipContentLink) skipContentLink.remove();
+	      }
+
+	      // 3) (선택) 중복 삽입 가드: 다른 스크립트가 또 넣으려 하면 막기 위해 data-flag 부여
+	      document.body.dataset.skipInit = '1';
+	    } catch (e) {
+	      // 공통 파일이라 페이지별 에러 전파 막기
+	      console && console.warn && console.warn('[skip] init failed:', e);
+	    }
+	  }
+	})();
+</script>
+	<div id="header-top">
+		<div class="toggle-wrap">
+			<div class="toggle-head">
+				<div class="inner">
+					<span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+					<!--<button type="button" class="btn btn-txt ico-arr-down toggle-btn xsm">공식 누리집 확인방법<span
+							class="sr-only">열기</span></button>-->
+				</div>
+			</div>
+			<div class="toggle-body">
+				<div class="inner">
+					<!--<dl class="dl nuri">					
+						<dt class="dt">공식 누리집 주소 확인하기</dt>
+						<dd class="dd">go.kr 주소를 사용하는 누리집은 대한민국 정부기관이 관리하는 누리집입니다.<br class="br">이밖에 or.kr 또는 .kr등 다른 도메인 주소를 사용하고 있다면 아래 URL에서 도메인 주소를 확인해 보세요</dd>
+						<dd><a href="#" class="btn btn-txt ico-go xsm" target="_blank">운영중인 공식 누리집보기</a></dd>
+					</dl>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<header id="header">
+	<form method="post" name="topForm" action="">
+			<!-- 헤더 컨텐츠 영역  -->
+			<div class="header-in top_wrap">
+				<!-- 헤더 상단 기타메뉴 -->
+				<div class="head-body">
+					<div class="inner">
+						<div class="head-in">
+							<h1 class="logo">
+								<img src="/new_images/logo_res.png?v=c7b48209-338" alt="민간자격정보서비스" usemap="#Map" width="280" height="44" />
+								<map name="Map" id="Map">
+									<area shape="rect" coords="1,1,280,44" href="/" alt="민간자격정보서비스 홈페이지로 이동" />
+									<!-- <area shape="rect" coords="7,12,163,39" href="/" alt="민간자격정보서비스 홈페이지로 이동"/> 20201216 로고적용에 따른 링크 위치 변경 -->
+									<!-- <area shape="rect" coords="188,15,361,39" href="http://www.krivet.re.kr" alt="한국직업능력개발원 홈페이지로 이동"/> -->
+								</map>
+							</h1>
+							<div class="right member fr">
+								
+								<a href='/jin/lgn/jinLgnView.do' class="btn-navi login" title="로그인">로그인</a>
+								<a href='/jin/reg/jinRegChoice.do' class="btn-navi join" title="회원가입">회원가입</a>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- //헤더 상단 기타메뉴 -->
+				
+				<!-- 웹 : 메뉴 영역 -->
+				<nav id="btnMenu" class="krds-gnb">
+					<div class="inner">
+						<ul class="gnb-menu" aria-label="메인 메뉴" role="tablist">
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-orclk2x" aria-expanded="false" aria-haspopup="true">민간자격소개</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-orclk2x" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 263px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger active" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-micgtpi" aria-expanded="false" aria-haspopup="true">민간자격소개</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list active" role="menu" id="gnb-sub-menu-micgtpi">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">민간자격소개</h2>
+														<ul>
+															<li role="none"><a href="/int/intPrCntView.do">자격연구센터</a></li>
+															<li role="none"><a href="/int/intSysView.do">민간자격제도</a></li>
+															<li role="none"><a href="/int/intRegSysView.do">민간자격 등록제도</a></li>
+															<li role="none"><a href="/int/intOffcView.do">민간자격 국가공인제도</a></li>
+															<li role="none"><a href="/int/intRelOrgView.do">관련기관</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+							
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-v15bk64" aria-expanded="false" aria-haspopup="true">자격정보</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-v15bk64" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 256px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-0hp6dbm" aria-expanded="false" aria-haspopup="true">민간자격</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list" role="menu" id="gnb-sub-menu-0hp6dbm">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">민간자격</h2>             	  
+														<ul>
+															<li role="none"><a href="/inf/qul/infQulSitRegView.do">민간자격 현황</a></li>
+															<li role="none"><a href="/inf/qul/infQulList.do">민간자격 검색(등록/공인)</a></li>
+															<li role="none"><a href="/inf/qul/infQulEtcList.do">등록폐지자격 검색</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-0hp6dbm" aria-expanded="false" aria-haspopup="true">국가자격</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list" role="menu" id="gnb-sub-menu-0hp6dbm">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">국가자격</h2>             	  
+														<ul>
+															<li role="none"><a href="/inf/qul/infQulSitNanView.do">국가자격 현황</a></li>
+															<li role="none"><a href="/inf/qul/infQulNanLis.do">개별법 국가자격 검색</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+				
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-orclk2x" aria-expanded="false" aria-haspopup="true">민간자격등록신청</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-orclk2x" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 263px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger active" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-micgtpi" aria-expanded="false" aria-haspopup="true">민간자격등록신청</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list active" role="menu" id="gnb-sub-menu-micgtpi">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">민간자격등록신청</h2>                   
+														<ul>
+															<li role="none"><a href="javascript:topMove('/req/renew/reqReNewQulMngList.do');">신규등록신청</a></li>
+															<li role="none"><a href="javascript:topMove('/req/chg/reqChgMain.do');">변경등록신청</a></li>
+															<li role="none"><a href="javascript:topMove('/req/etc/reqEtcList.do?reqCd=0002');">등록 폐지 신고</a></li>
+															<li role="none"><a href="javascript:topMove('/req/etc/reqEtcList.do?reqCd=0001');">등록증 발급 오류 신고</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+							
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-orclk2x" aria-expanded="false" aria-haspopup="true">알림마당</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-orclk2x" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 263px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger active" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-micgtpi" aria-expanded="false" aria-haspopup="true">알림마당</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list active" role="menu" id="gnb-sub-menu-micgtpi">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">알림마당</h2>                   
+														<ul>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=1">공지사항</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=2">자격관련소식</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=3">자주묻는질문</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=12">등록폐지등 공고</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+							
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-orclk2x" aria-expanded="false" aria-haspopup="true">참여마당</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-orclk2x" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 263px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger active" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-micgtpi" aria-expanded="false" aria-haspopup="true">참여마당</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list active" role="menu" id="gnb-sub-menu-micgtpi">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">참여마당</h2>                   
+														<ul>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=11">민간자격관리자 문의</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=14">소비자피해상담 및 질의</a></li>
+															<li role="none"><a href="/pol/prt/prtPolList.do">설문참여</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+							
+							<li role="none">
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb" role="menuitem" aria-controls="gnb-main-menu-orclk2x" aria-expanded="false" aria-haspopup="true">정보마당</button>
+								<!-- gnb-toggle-wrap -->
+								<div class="gnb-toggle-wrap" id="gnb-main-menu-orclk2x" role="menu">
+									<!-- gnb-main-list -->
+									<div class="gnb-main-list" data-has-submenu="true" style="min-height: 263px;">
+										<ul>
+											<li role="none">
+												<button type="button" class="gnb-sub-trigger active" data-trigger="gnb" role="menuitem" aria-controls="gnb-sub-menu-micgtpi" aria-expanded="false" aria-haspopup="true">정보마당</button>
+												<!-- gnb-sub-list -->
+												<div class="gnb-sub-list active" role="menu" id="gnb-sub-menu-micgtpi">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">정보마당</h2>                   
+														<ul>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=6">관련법</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=7">양식 및 서식</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=8">자료 및 발간물</a></li>
+															<li role="none"><a href="/brd/brdList.do?pBbsKindId=9" onfocusout="activeLNB();">금지분야 공고</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- //gnb-sub-list -->
+											</li>
+										</ul>
+									</div>
+									<!-- //gnb-main-list -->
+								</div>
+								<!-- //gnb-toggle-wrap -->
+							</li>
+							
+						</ul>
+					</div>
+				</nav>
+				<!-- //웹 : 메뉴 영역 -->
+			</div>
+			<!-- //헤더 컨텐츠 영역  -->					
+			
+			</form>
+		</header>
+<!-- 서비스 소개영상 -->
+<!--p style="padding:0 0 0 770px; position:absolute; z-index:500; margin:-7px 0 0 0;" ><a href="javascript:;" onclick="window.open('/krivet/popup.html','pqi_krivet','width=950,height=560,left=0,top=0')"><img src="/images/krivet/icon.png?v=c7b48209-338" style="cursor:pointer" alt="민간자격정보서비스 영상마당" title="새창으로열림"/></a></p -->
+<!-- 서비스 소개영상 -->
+
+			<!--top-->
+
+			<!-- 상단이미지 -->
+			<div class="sub_top_title title_002">
+				<div style="width: 1200px; margin: 0 auto; top: 0; right: 0; bottom: 0; left: 0;">
+					<p class="title_textarea_p1">
+						<span class="span_red">P</span>rivate <span class="span_red">Q</span>ualification <span class="span_red">I</span>nformation
+					</p>
+					<p class="title_textarea_p2">한 눈에 보는 민간자격정보</p>
+					<p class="title_textarea_p3 title_textarea_p3_sub">
+						민간자격 정보서비스를 통해 등록된<br />민간자격을 소개하고 민간자격현황을 알려드립니다.
+					</p>
+				</div>
+			</div>
+			<!-- 상단이미지 -->
+
+			<!-- contents start -->
+			<div class="content_wrap">
+				<!--좌측메뉴 Start-->
+				<!--좌측메뉴 Start--><nav id="left_wrap">	<h2 class="hidden">서브메뉴</h2>	<div class="left_title">자격정보</div>	<ul class="admin_left">		<li class="sub_menu_top"><a href="/inf/qul/infQulSitRegView.do">민간자격</a>			<ul>				<li><a href="/inf/qul/infQulSitRegView.do"><hr>민간자격 현황</a></li>				<li><a href="/inf/qul/infQulList.do"><hr>민간자격 검색</a></li>				<li><a href="/inf/qul/infQulEtcList.do"><hr>등록폐지자격 검색</a></li>			</ul></li>		<li class="sub_menu_top"><a href="/inf/qul/infQulSitNanView.do">국가자격</a>			<ul>				<li><a href="/inf/qul/infQulSitNanView.do"><hr>국가자격 현황</a></li>				<li><a href="/inf/qul/infQulNanLis.do"><hr>개별법 국가자격 검색</a></li>			</ul></li>	</ul></nav><!--자격조회 Start-->
+
+
+
+				<!--div class="lbanner">
+                    <p><a href="/inf/qul/infQulList.do?searchQulCpCd=0001"><img src="/images/common/banner01.gif?v=c7b48209-338" alt="공인 민간자격 목록을 확인할 수 있는 링크입니다" /></a></p>
+                    <p><a href="/inf/qul/infQulList.do?searchQulCpCd=0002"><img src="/images/common/banner02.gif?v=c7b48209-338" alt="등록 민간자격 목록을 확인할 수 있는 링크입니다" /></a></p>
+                </div -->
+            <!--자격조회 End-->
+				<!--좌측메뉴 End-->
+				<div class="content">
+					<section>
+						<form id="searchVO" name="listForm" action="/inf/qul/infQulList.do?searchQulNm=%EC%8B%A0%EC%9A%A9%EA%B4%80%EB%A6%AC%EC%82%AC" method="post">
+							<input id="searchQulId" name="searchQulId" type="hidden" value="0"/>
+							<input id="searchOrderRegNum" name="searchOrderRegNum" type="hidden" value="DESC"/>
+							<input id="searchOrderQulNm" name="searchOrderQulNm" type="hidden" value="DESC"/>
+							<input id="searchOrderQulYear" name="searchOrderQulYear" type="hidden" value="DESC"/>
+							<input id="searchOrderMethodRow" name="searchOrderMethodRow" type="hidden" value="qulRegNum DESC"/>
+							<h2 class="hidden">자격정보</h2>
+							<article>
+								<div class="content_info">
+									<h3>민간자격검색</h3>
+									<div class="location">
+										<span>home</span><span>자격정보</span><span>민간자격검색</span>
+									</div>
+								</div>
+								<article class="content_search">
+									<h4 class="hidden">민간자격검색 검색 조건</h4>
+									<!-- JSTL 사용한 전년도 값 계산 LJH_24 -->
+									
+								    
+								    
+									<!-- JSTL 사용한 전년도 값 계산 LJH_24 -->
+									<table class="board_write">
+										<caption>민간자격검색 검색조건을 자격구분, 자격명, 자격관리기관, 등록번호 순으로 나타냄</caption>
+										<colgroup>
+											<col class="width200" />
+											<col class="widthauto" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">자격구분</th>
+												<td>
+													<div class="inputRadioWrap">
+														<span> <input id="searchQulCpCd1" name="searchQulCpCd" type="radio" value="0000" checked="checked"/> <label for="searchQulCpCd1" title="전체">전체</label>
+														</span> <span> <input id="searchQulCpCd2" name="searchQulCpCd" type="radio" value="0001"/> <label for="searchQulCpCd2" title="공인">공인</label>
+														</span> <span> <input id="searchQulCpCd3" name="searchQulCpCd" type="radio" value="0002"/> <label for="searchQulCpCd3" title="등록">등록</label>
+														</span>
+													</div>
+												</td>
+											</tr>
+											<tr>
+											  <th scope="row">등록번호</th>
+											  <td>
+											    <!-- 등록연도 -->
+											    <label for="searchQulRegYy" class="sr-only">등록번호 - 등록연도</label>
+											    <select id="searchQulRegYy" name="searchQulRegYy" class="selectText width130" title="등록번호 - 등록연도 선택">
+											      <option value="0000" selected="selected">등록연도 선택</option>
+											      <option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option>
+											    </select>
+											    <span>&nbsp;-&nbsp;</span>
+											    <!-- 일련번호 -->
+											    <label for="searchQulRegNum" class="sr-only">등록번호 - 일련번호</label>
+											    <input id="searchQulRegNum" name="searchQulRegNum" class="inputText width150" title="등록번호 - 일련번호 입력" onkeypress="only_number();" type="text" value="" maxlength="6"/>
+											  </td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="searchQulNm">자격명</label></th>
+												<td><input id="searchQulNm" name="searchQulNm" class="inputText width100p" style="ime-mode:active;" title="자격명 입력" type="text" value="신용관리사"/></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="searchMemNm">자격관리기관</label></th>
+												<td><input id="searchMemNm" name="searchMemNm" class="inputText width100p" style="ime-mode:active;" title="자격관리기관 입력" type="text" value=""/></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="searchQulOrgCd1">주무부처</label></th>
+												<td> <select id="searchQulOrgCd1" name="searchQulOrgCd1" class="selectText width180" title="주무부처 선택">
+														<option value="" selected="selected">주무부처 선택</option>
+														<option value="007">감사원</option><option value="061">개인정보보호위원회</option><option value="038">경찰청</option><option value="022">고용노동부</option><option value="030">공정거래위원회</option><option value="052">과학기술정보통신부</option><option value="034">관세청</option><option value="011">교육부</option><option value="035">국가데이터처</option><option value="026">국가보훈부</option><option value="040">국가유산청</option><option value="032">국민권익위원회</option><option value="015">국방부</option><option value="033">국세청</option><option value="024">국토교통부</option><option value="031">금융위원회</option><option value="045">기상청</option><option value="064">기획예산처</option><option value="021">기후에너지환경부</option><option value="018">농림축산식품부</option><option value="041">농촌진흥청</option><option value="017">문화체육관광부</option><option value="029">방송미디어통신위원회</option><option value="037">방위사업청</option><option value="014">법무부</option><option value="025">법제처</option><option value="036">병무청</option><option value="020">보건복지부</option><option value="042">산림청</option><option value="019">산업통상부</option><option value="023">성평등가족부</option><option value="059">소방청</option><option value="044">식품의약품안전처</option><option value="012">외교부</option><option value="063">우주항공청</option><option value="054">원자력안전위원회</option><option value="060">인사혁신처</option><option value="010">재정경제부</option><option value="049">조달청</option><option value="043">중소벤처기업부</option><option value="048">지식재산처</option><option value="062">질병관리청</option><option value="013">통일부</option><option value="058">해양경찰청</option><option value="053">해양수산부</option><option value="056">행정안전부</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">기관유형</th>
+												<td>
+													<div class="inputRadioWrap">
+														<span> <input id="searchMemSecCd1" name="searchMemSecCd" type="radio" value="0000"/> <label for="searchMemSecCd1" title="전체">전체</label> </span>
+														<span> <input id="searchMemSecCd2" name="searchMemSecCd" type="radio" value="0001"/> <label for="searchMemSecCd2" title="개인">개인</label> </span>
+														<span> <input id="searchMemSecCd3" name="searchMemSecCd" type="radio" value="0002"/> <label for="searchMemSecCd3" title="단체">단체</label> </span>
+														<span> <input id="searchMemSecCd4" name="searchMemSecCd" type="radio" value="0003"/> <label for="searchMemSecCd4" title="법인">법인</label> </span>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="searchMemArea">사업장소재지(지역) 선택</label></th>
+												<td><select id="searchMemArea" name="searchMemArea" class="selectText width150" title="사업장소재지(지역) 선택">
+														<option value="" selected="selected">지역 선택</option>
+														<!------------------------ 예시 ------------------------->
+														<option value="서울특별시">서울</option>
+														<option value="부산광역시">부산</option>
+														<option value="대구광역시">대구</option>
+														<option value="인천광역시">인천</option>
+														<option value="광주광역시">광주</option>
+														<option value="대전광역시">대전</option>
+														<option value="울산광역시">울산</option>
+														<option value="세종특별자치시">세종</option>
+														<option value="경기도">경기</option>
+														<option value="강원특별자치도">강원</option>
+														<option value="충청북도">충북</option>
+														<option value="충청남도">충남</option>
+														<option value="전북특별자치도">전북</option>
+														<option value="전라남도">전남</option>
+														<option value="경상북도">경북</option>
+														<option value="경상남도">경남</option>
+														<option value="제주특별자치도">제주</option>
+														<!---------------------------------------------------------->
+													</select>
+											</tr>
+											<tr>
+												<th scope="row">정렬</th>
+												<td>
+													<div class="inputRadioWrap">
+														<span> <input id="ordGrdStatSum1" name="ordGrdStatSum" type="radio" value="" checked="checked"/> <label for="ordGrdStatSum1" title="선택안함">선택안함</label>
+														</span> <span> <input id="ordGrdStatSum2" name="ordGrdStatSum" type="radio" value="0001"/> <label for="ordGrdStatSum2" title="응시자 높은 순 [2025년 기준]">응시자 높은 순 [2025년 기준]</label>
+														</span> <span> <input id="ordGrdStatSum3" name="ordGrdStatSum" type="radio" value="0002"/> <label for="ordGrdStatSum3" title="취득자 높은 순 [2025년 기준]">취득자 높은 순 [2025년 기준]</label>
+														</span>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">페이지당 표시 자격 수</th>
+												<td>
+													<select id="recordCountPerPage" name="recordCountPerPage" class="selectText width70" title="페이지당 표시 자격 수 선택">
+														<option value="10" selected="selected">10</option><option value="30">30</option><option value="50">50</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="space20"></div>
+									<div class="fl">
+										<p class="search_page_text">
+											<img alt="느낌표 아이콘" src="/new_images/2022/search_icon_warning.png?v=c7b48209-338"> <span style="color:red; text-decoration: underline;">동일 명칭의 자격 및 기관이 다수 존재</span>할 수 있으니, 반드시 <span style="color:red; text-decoration: underline;">자격의 등록번호 및 기관 정보를 확인</span>하시기 바랍니다.<br><img alt="느낌표 아이콘" src="/new_images/2022/search_icon_warning.png?v=c7b48209-338"> 취득현황은 해당 기관에서 직접 입력한 정보이며, 데이터 유무와 실제 자격운영여부와는 무관합니다.
+										</p>
+									</div>
+									<div class="fr">
+										<button type="button" onclick="search();" class="btn_search keySearch" title="검색버튼">검색</button>
+									</div>
+								</article>
+								<div class="space30"></div>
+								<article class="content_result">
+									<h4 class="hidden">민간자격검색 검색 결과</h4>
+									<div class="board_info">
+										<p>총 <span>1</span>건&nbsp; (<span>1</span>/1 페이지)</p>
+										<div class="clear"></div>
+									</div>
+									<table id="qulListTb" class="board_list">
+										<caption>민간자격검색 목록을 등록번호, 구분, 자격명, 자격관리기관[공동발급기관], 유형, 지역, 응시자수(전년도), 취득자수(전년도) 순으로 나타냄</caption>
+										<colgroup>
+											<col style="width: 13%;" />
+											<col style="width: 9%;" />
+											<col style="width: 20%;" />
+											<col style="width: 22%;" />
+											<col style="width: 7%;" />
+											<col style="width: 7%;" />
+											<col style="width: 11%;" />
+											<col style="width: 11%;" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col"><a href="#" id="qulRegNum" class="sort_link" data-sort-label="등록번호" title="검색결과 보기 내림차순으로 정렬하기"><span class="sort_head"><span class="sort_text">등록번호</span><span class="sort_meta"><span class="sort_icon" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="sort_state" aria-hidden="true"></span></span></span>
+												</a></th>
+												<th scope="col">구분</th>
+												<th scope="col"><a href="#" id="qulNm" class="sort_link" data-sort-label="자격명" title="검색결과 보기 내림차순으로 정렬하기"><span class="sort_head"><span class="sort_text">자격명</span><span class="sort_meta"><span class="sort_icon" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="sort_state" aria-hidden="true"></span></span></span></a></th>
+												<th scope="col"><a href="#" id="qulOthOrgNm" class="sort_link sort_link_multi" data-sort-label="자격관리기관" title="검색결과 보기 내림차순으로 정렬하기"><span class="sort_head"><span class="sort_text">자격관리기관</span><span class="sort_meta"><span class="sort_icon" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="sort_state" aria-hidden="true"></span></span></span><span class="squar">공동발급기관</span>
+												</a></th>
+												<th scope="col"><a href="#" id="memTypeNm" class="sort_link" data-sort-label="유형" title="검색결과 보기 내림차순으로 정렬하기"><span class="sort_head"><span class="sort_text">유형</span><span class="sort_meta"><span class="sort_icon" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="sort_state" aria-hidden="true"></span></span></span></a></th>
+												<th scope="col"><a href="#" id="memArea" class="sort_link" data-sort-label="지역" title="검색결과 보기 내림차순으로 정렬하기"><span class="sort_head"><span class="sort_text">지역</span><span class="sort_meta"><span class="sort_icon" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="sort_state" aria-hidden="true"></span></span></span></a></th>
+												<th scope="col">응시자수<br />
+										            <span class="squar">2025년</span>
+										        </th>
+										        <th scope="col">취득자수<br />
+										            <span class="squar">2025년</span>
+										        </th>
+											</tr>
+										</thead>
+										<tbody>
+											
+											
+												<tr>
+													
+														<td>2008-0429</td>
+													
+													
+													
+														<td style="color: #CC6633;">공인</td>
+													
+													
+													<td title="개인이건 기업이건 신용관리가 무엇보다 중요한 세상이다. 신용을 평가하거나 금융회사의 대출심사, 채권추심 등을 위해서는 금융지식이나 채권 등의 전문지식이 필요하다. 신용관리사 자격은 부실채권을 사전에 예방하고 부실채권의 발생 시 신속하고 효율적인 채권추심을 할 수 있는지 등을 평가한다. 또한 본 자격을 통해 신용조회, 신용조사, 채권추심 및 신용평가업에 대한 기본실무능력과 전문 지식을 겸비하였는지를 검정한다." style="overflow: hidden;"><a class="qul_search_line" href="javascript:detail('584');" title="해당 민간자격 자세히 보기"><span class="qul_search_text">신용관리사</span><i class="fas fa-info-circle qul_info_icon" aria-hidden="true"></i>
+													</a></td>
+													<td><span class="qul_org_text">신용정보협회</span> 
+															<a class="qul_search_home" href="javascript:linkHome('www.cica.or.kr')" title="새창 열림" aria-label="홈페이지 열기"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+														  </td>
+													
+													
+													<!--<td>
+						                                	<button type="button" class="btn_s bg_green" title="자격 정보보기 버튼" onClick="detail('584');">자격정보</button>
+						                                	
+						                                		<button type="button" class="btn_s bg_green" title="취득현황 버튼" onClick="detail('584');">취득현황</button>
+						                                	
+						                                </td>-->
+													
+													<td>법인</td>
+													<td> 
+															
+																
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+														 서울
+													</td>
+													<td>
+													    
+													        
+													        
+													            3,761
+													        
+													    
+													</td>
+													<td>
+													    
+													        
+													        
+													            2,040
+													        
+													    
+													</td>
+												</tr>
+											
+										</tbody>
+									</table>
+									<div class="space10"></div>
+									<!-- paging -->
+									<div class="page_num alignC">
+										<ul>
+											<li class="active">1</li>
+
+											<input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+										</ul>
+									</div>
+									<!-- paging -->
+								</article>
+							</article>
+						</form>
+					</section>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!-- contents end -->
+
+			<!--footer-->
+			
+
+
+</script>
+<!--footer-->			
+<footer id="footer" aria-hidden="false">
+	<div class="foot-quick">
+		<div class="inner">
+			<button type="button" class="link" title="관련기관 레이어" aria-controls="popFootLink" aria-haspopup="dialog" onclick="openRelatedOrganizationPopup();">관련기관</button>
+		</div>
+	</div>
+	<div class="inner">
+		<div class="f-logo">
+			<img src="/new_images/logo_res.png?v=c7b48209-338" class="logo-im"  alt="pqi 민간자격정보서비스" style="height:44px;">
+		</div>
+		<div class="f-cnt">
+			<div class="f-info">
+				<p class="info-addr">(30147) 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력연구원 자격연구센터</p>
+				<ul class="info-cs">
+					<li><strong class="strong">전화 044-415-5000, 3808</strong></li>
+					<li><strong class="strong">팩스 044-415-3638</strong></li>
+				</ul>
+			</div>				
+			<div class="f-link">
+				<div class="link-go">
+					<a href="/jin/ctc/jinCtcView.do" class="footer-contact-link">민간자격 관련문의처</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="f-btm">
+			<div class="f-btm-text">
+				<div class="f-menu">
+					<a href="/jin/pct/jinPctView.do#" class="point">개인정보처리방침</a>
+					<a href="/jin/mal/jinMalView.do">이메일무단수집거부</a>
+					<a href="http://webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" target="_blank" title="웹와치(WebWatch) 새창으로 열림">웹 접근성 품질인증 마크 획득</a>
+				</div>
+				<p class="f-copy">Copyright ⓒ 교육부 & 한국직업능력연구원. 모든 권리 보유.</p>
+				<!-- <p class="f-copy">© Ministry of Education & KRIVET. All rights reserved.</p> -->
+			</div>
+			<!-- <div class="f-btm-ban">
+				<span class="sr-only">교육부</span>
+				<span class="ban-txt">이 누리집은 한국직업능력연구원 자격연구센터에서 교육부로부터 위탁 받아 운영 중입니다.</span>
+				<span class="ban-txt">이 누리집은 교육부 산하기관 누리집입니다.</span>
+			</div> -->
+			<!-- <div class="f-btm-ban">
+				<span class="sr-only">교육부</span>
+				<span class="ban-txt">이 누리집은 한국직업능력연구원 자격연구센터에서 교육부로부터 위탁 받아 운영 중입니다.</span>
+				<span class="ban-txt">이 누리집은 교육부 산하기관 누리집입니다.</span>
+			</div> -->
+		</div>
+	</div>
+</footer>
+<!-- 레이어 : 소속기관 링크 -->
+<div class="popup-wrap related-org-popup-layer" data-type="full" id="popFootLink">
+	<div class="popup-in">
+		<div class="popup">
+			<div class="popup-head">
+				<h1 class="pop-tit">관련기관</h1>
+			</div>
+			<div class="popup-body" id="relatedOrganizationPopupContent"></div>
+			<button type="button" class="popup-close"><span class="sr-only">레이어 닫기</span></button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function prepareRelatedOrganizationPopup() {
+		var popup = document.getElementById("popFootLink");
+		if (popup && popup.parentNode !== document.body) {
+			document.body.appendChild(popup);
+		}
+	}
+
+	function openRelatedOrganizationPopup() {
+		prepareRelatedOrganizationPopup();
+		var content = document.getElementById("relatedOrganizationPopupContent");
+		if (content.getAttribute("data-loaded") === "Y") {
+			common.popupEvent("#popFootLink");
+			return;
+		}
+
+		var request = new XMLHttpRequest();
+		request.open("GET", "/main/relatedOrganizationPopup.do", true);
+		request.onreadystatechange = function() {
+			if (request.readyState !== 4) {
+				return;
+			}
+			var html = request.status === 200
+					? request.responseText.replace(/^\s+|\s+$/g, "") : "";
+			if (!html) {
+				alert("현재 공개 중인 관련기관 정보가 없습니다.");
+				return;
+			}
+			content.innerHTML = html;
+			content.setAttribute("data-loaded", "Y");
+			common.popupEvent("#popFootLink");
+		};
+		request.send(null);
+	}
+
+	function closeRelatedOrganizationPopup() {
+		var popup = document.getElementById("popFootLink");
+		if (!popup || !popup.classList.contains("is-open")) {
+			return;
+		}
+
+		var closeButton = popup.querySelector(".popup-close");
+		if (closeButton) {
+			closeButton.click();
+		}
+	}
+
+	document.addEventListener("keydown", function(event) {
+		var escapePressed = event.key === "Escape" || event.keyCode === 27;
+		if (!escapePressed) {
+			return;
+		}
+
+		var popup = document.getElementById("popFootLink");
+		if (popup && popup.classList.contains("is-open")) {
+			event.preventDefault();
+			closeRelatedOrganizationPopup();
+		}
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".footerSiteButton").click(function() {
+			$(".footerSite").toggleClass("footerSite_show");
+			$(".ft_site_button").toggleClass("footerSite_site_box");
+			$(".siteButton").toggleClass("siteButtonChg");
+			$(".closeButton").toggleClass("closeButtonChg");
+		});
+		$(".footerSiteButton").click(function(e) {
+			e.preventDefault();
+		})
+	});
+</script>
+			<!--footer-->
+
+			<form id="viewForm" name="viewForm" method="get" action="/brd/brdView.do">
+				<input type="hidden" name="bbsKindId" value="1" />
+				<input type="hidden" name="bbsId" value="3369" />
+			</form>
+		</div>
+	</div>
+<!-- 두 번째 jQuery 로드 (new_js/jquery.min.js) -->
+<script src="/new_js/jquery.min.js?v=c7b48209-338"></script>
+<script>
+  // 두 번째 jQuery 버전 보호 (필요한 경우)
+  var jQueryNew = $.noConflict(true);
+</script>
+
+<!-- 두 번째 jQuery를 사용하는 스크립트 -->
+<script src="/new_js/ui-pattern-script.js?v=c7b48209-338"></script>
+<script src="/new_js/ui-script.js?v=c7b48209-338"></script>
+<div class="gnb-backdrop" style="display: none;"></div>
+</body>
+</html>
+
+			<!--footer-->
+			<script type="text/javascript">
+				//gnb li 'active' 추가
+				$("#gnb li:nth-child(2):not(#gnb li > ul li)").addClass(
+						"active");
+				//left menu actived
+				$(".admin_left li:nth-child(1) ul li:nth-child(2)").addClass("actived");
+
+				/* 자격명, 기관명 엔터검색 */
+				$("#searchQulRegNum, #searchQulNm, #searchMemNm").keypress(
+						function(event) {
+							if (event.keyCode === 13) {
+								$(".keySearch").click();
+							}
+						});
+			</script>
+		</div>
+	</div>
+</body>
+</html>
