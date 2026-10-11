@@ -1,15 +1,15 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-11T02:58:08.955Z
+# 생성: 2026-10-11T04:32:46.559Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1629 (제외 241)
+# 총 URL: 1635 (제외 241)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
-# Tier 2 — 1주차 (지역·전국 허브): 28개
+# Tier 2 — 1주차 (지역·전국 허브): 29개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 595개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
-# Tier 6 — 순차 (기타 키워드 랜딩): 542개
+# Tier 6 — 순차 (기타 키워드 랜딩): 547개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 32개
 
@@ -38,7 +38,7 @@ Tier 1 — 즉시 (핵심 전환·허브) (18개)
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/real-estate-registration	/services/real-estate-registration
 
 ────────────────────────────────────────────────────────────────────────
-Tier 2 — 1주차 (지역·전국 허브) (28개)
+Tier 2 — 1주차 (지역·전국 허브) (29개)
 ────────────────────────────────────────────────────────────────────────
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8	/개인정보처리방침
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EB%82%A8%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/경남법무사업무
@@ -57,6 +57,7 @@ Tier 2 — 1주차 (지역·전국 허브) (28개)
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/glossary	/glossary
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/location	/location
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/office	/office
+[T2] https://xn--2j1br1na42lvxja38mk8r.kr/resources	/resources
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/reviews	/reviews
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/search-guides	/search-guides
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/situations	/situations
@@ -1038,7 +1039,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (185개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (542개)
+Tier 6 — 순차 (기타 키워드 랜딩) (547개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1582,6 +1583,11 @@ Tier 6 — 순차 (기타 키워드 랜딩) (542개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%9C%B4%EB%A9%B4%EB%B2%95%EC%9D%B8%EA%B3%84%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A4%80%EB%B9%84	/휴면법인계속등기준비
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/media	/media
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/partners	/partners
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/resources/company-change	/resources/company-change
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/resources/inheritance-family	/resources/inheritance-family
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/resources/inheritance-overseas	/resources/inheritance-overseas
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/resources/property-closing	/resources/property-closing
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/resources/unpaid-evidence	/resources/unpaid-evidence
 
 ────────────────────────────────────────────────────────────────────────
 Tier 7 — 후순위 (블로그) (53개)

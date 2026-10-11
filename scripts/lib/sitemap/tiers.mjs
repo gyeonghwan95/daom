@@ -30,6 +30,7 @@ export const TIER2 = new Set([
   "/search-guides",
   "/situations",
   "/tools",
+  "/resources",
   "/glossary",
   "/busan-legal-map",
   "/개인정보처리방침",

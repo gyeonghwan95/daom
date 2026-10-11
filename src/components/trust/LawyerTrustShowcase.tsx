@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import { TrustContactActions } from "@/components/trust/TrustContactActions";
 import { TrustInfographicViewer } from "@/components/trust/TrustInfographicViewer";
 import { TrustReviewQuote } from "@/components/trust/TrustReviewQuote";
+import { PrepResourceLink } from "@/components/resources/PrepResourceLink";
+import { getResourceGuide, RESOURCE_BY_PAGE, resourcePath } from "@/data/resources/guides";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
@@ -110,6 +112,12 @@ export function LawyerTrustShowcase() {
   const image = siteImages.about.credentialInfographic;
   const reviewFeed = getNaverPlaceReviewsFeed();
   const reviewQuotes = buildReviewQuotes(reviewFeed.items);
+  const prepByPath = Object.fromEntries(
+    Object.entries(RESOURCE_BY_PAGE).map(([page, slug]) => [
+      page,
+      { href: resourcePath(slug), title: getResourceGuide(slug)?.h1 ?? "" },
+    ]),
+  );
 
   return (
     <section
@@ -196,6 +204,7 @@ export function LawyerTrustShowcase() {
               quotes={reviewQuotes}
               totalCount={reviewFeed.stats.totalCount}
             />
+            <PrepResourceLink byPath={prepByPath} />
           </div>
 
           <div className="px-5 pb-6 pt-6 @md:px-7 @md:pb-7 @3xl:col-span-2 @3xl:row-start-3 @5xl:col-span-1 @5xl:col-start-2 @5xl:row-start-3 @5xl:px-8 @5xl:pb-8">

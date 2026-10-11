@@ -18,6 +18,7 @@ const FOOTER_QUICK_LINKS = [
   { href: "/법률강의", label: "강의·특강" },
   { href: "/partners", label: "협업문의" },
   { href: "/situations", label: "상황별 안내" },
+  { href: "/resources", label: "의뢰 전 준비자료" },
   { href: "/tools", label: "법률 계산기" },
         { href: "/busan-legal-map", label: "부산 법률지도" },
         { href: "/해운대법무사", label: "해운대 법무사" },

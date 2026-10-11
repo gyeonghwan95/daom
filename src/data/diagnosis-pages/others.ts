@@ -174,7 +174,10 @@ export const depositDiagnosis = simplifiedDiagnosis(
       ],
     },
   ],
-  [{ href: "/공탁채권회수", label: "공탁·채권회수 허브" }],
+  [
+    { href: "/부산공탁", label: "공탁 종류별 안내(변제·집행·담보·형사)" },
+    { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
+  ],
 );
 
 export const adultGuardianshipDiagnosis = simplifiedDiagnosis(

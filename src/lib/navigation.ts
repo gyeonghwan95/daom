@@ -138,6 +138,7 @@ export const mainNavigation: NavItem[] = [
   },
   { href: "/자가진단", label: "자가진단" },
   { href: "/situations", label: "상황별 안내" },
+  { href: "/resources", label: "준비자료실" },
   { href: "/tools", label: "법률 계산기" },
   { href: "/busan-legal-map", label: "부산 법률지도" },
   { href: "/glossary", label: "업무 용어" },

@@ -1,0 +1,46 @@
+{
+  "version": "2026.10.11-1",
+  "contentHash": "572494d70b71188f",
+  "guides": {
+    "inheritance-family": {
+      "png": "/resources/files/inheritance-family-v2026.10.11-1.png",
+      "pdf": "/resources/pdf/inheritance-family-v2026.10.11-1.pdf",
+      "og": "/resources/og/inheritance-family-v2026.10.11-1.png",
+      "pngScale": 0.96,
+      "pdfPages": 3,
+      "pdfBytes": 96154
+    },
+    "unpaid-evidence": {
+      "png": "/resources/files/unpaid-evidence-v2026.10.11-1.png",
+      "pdf": "/resources/pdf/unpaid-evidence-v2026.10.11-1.pdf",
+      "og": "/resources/og/unpaid-evidence-v2026.10.11-1.png",
+      "pngScale": 0.96,
+      "pdfPages": 3,
+      "pdfBytes": 86664
+    },
+    "company-change": {
+      "png": "/resources/files/company-change-v2026.10.11-1.png",
+      "pdf": "/resources/pdf/company-change-v2026.10.11-1.pdf",
+      "og": "/resources/og/company-change-v2026.10.11-1.png",
+      "pngScale": 1,
+      "pdfPages": 3,
+      "pdfBytes": 86923
+    },
+    "inheritance-overseas": {
+      "png": "/resources/files/inheritance-overseas-v2026.10.11-1.png",
+      "pdf": "/resources/pdf/inheritance-overseas-v2026.10.11-1.pdf",
+      "og": "/resources/og/inheritance-overseas-v2026.10.11-1.png",
+      "pngScale": 0.92,
+      "pdfPages": 3,
+      "pdfBytes": 85375
+    },
+    "property-closing": {
+      "png": "/resources/files/property-closing-v2026.10.11-1.png",
+      "pdf": "/resources/pdf/property-closing-v2026.10.11-1.pdf",
+      "og": "/resources/og/property-closing-v2026.10.11-1.png",
+      "pngScale": 0.96,
+      "pdfPages": 3,
+      "pdfBytes": 87779
+    }
+  }
+}

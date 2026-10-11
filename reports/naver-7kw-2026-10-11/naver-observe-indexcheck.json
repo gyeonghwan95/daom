@@ -1,0 +1,74 @@
+[
+ {
+  "query": "부산 공탁 법무사 변제·집행·담보·형사공탁 중 내 상황부터 확인",
+  "observedAtKST": "2026-10-11 12:31:10",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 18,
+  "ourBlockOrder": 1,
+  "ourBlockType": "web",
+  "ourWebOrder": 1,
+  "ourUrls": [
+   "/부산공탁"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 상속 법무사 등기·포기·한정승인 중 먼저 확인할 절차",
+  "observedAtKST": "2026-10-11 12:31:14",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 17,
+  "ourBlockOrder": 1,
+  "ourBlockType": "web",
+  "ourWebOrder": 1,
+  "ourUrls": [
+   "/부산상속법무사"
+  ],
+  "above": []
+ },
+ {
+  "query": "공공기관 등기업무 공기업·공공기관 법인등기·부동산등기·촉탁등기 안내",
+  "observedAtKST": "2026-10-11 12:31:19",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 18,
+  "ourBlockOrder": 1,
+  "ourBlockType": "web",
+  "ourWebOrder": 1,
+  "ourUrls": [
+   "/공공기관등기업무"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 법무사 상담 준비서류·비용·상담방법",
+  "observedAtKST": "2026-10-11 12:31:24",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 21,
+  "ourBlockOrder": 1,
+  "ourBlockType": "web",
+  "ourWebOrder": 1,
+  "ourUrls": [
+   "/부산법무사상담"
+  ],
+  "above": []
+ }
+]

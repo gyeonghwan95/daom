@@ -10,6 +10,18 @@
   # 해시 파일명 — 장기 캐시 안전
   Cache-Control: public, max-age=31536000, immutable
 
+/resources/pdf/*
+  # 의뢰 전 준비자료 PDF — 원문 HTML(/resources/*)이 색인 대상, 파일은 버전명이라 하루 캐시
+  Content-Type: application/pdf
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=86400
+
+/resources/files/*
+  Cache-Control: public, max-age=86400
+
+/resources/og/*
+  Cache-Control: public, max-age=86400
+
 /rss.xml
   Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600

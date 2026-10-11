@@ -1,0 +1,717 @@
+[
+ {
+  "query": "부산 법무사",
+  "observedAtKST": "2026-10-11 12:09:03",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1525154216",
+    "1367132358",
+    "1171205877",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "2035745096",
+    "2009750561"
+   ],
+   "ourOrder": 7,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "web:busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html",
+   "web:www.busan.go.kr/depart/freelegaladvice",
+   "web:www.lh.or.kr/boardDownload.es",
+   "web:xn--6l3btnt2foa576y.xn--hu5b25b77nvwc.org/",
+   "web:leeandbusan.kr/",
+   "web:bsajar.kabl.kr/index.do"
+  ]
+ },
+ {
+  "query": "부산 공탁 법무사",
+  "observedAtKST": "2026-10-11 12:09:08",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1710188850",
+    "1278163961"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 21,
+  "ourBlockOrder": 7,
+  "ourBlockType": "web",
+  "ourWebOrder": 5,
+  "ourUrls": [
+   "/부산형사공탁"
+  ],
+  "above": [
+   "web:busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html",
+   "web:www.bmc.busan.kr/board/download.do",
+   "web:xn--v92b7ygf69l9pihya.kr/",
+   "review:blog.naver.com/law-yoon-91",
+   "web:xn--v92b7yeu46gra.net/공탁사건",
+   "clip:m.blog.naver.com/tivents56097"
+  ]
+ },
+ {
+  "query": "부산 상속포기 법무사",
+  "observedAtKST": "2026-10-11 12:09:12",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2009180992",
+    "1144111068",
+    "2035745096",
+    "1823160246",
+    "1072287152",
+    "1305038093",
+    "90119738",
+    "1320346307"
+   ],
+   "ourOrder": 3,
+   "ourName": true
+  },
+  "blockCount": 17,
+  "ourBlockOrder": 13,
+  "ourBlockType": "web",
+  "ourWebOrder": 7,
+  "ourUrls": [
+   "/부산상속포기"
+  ],
+  "above": [
+   "review:cafe.naver.com/cantsb",
+   "review:cafe.naver.com/kig",
+   "review:cafe.naver.com/sogam0515",
+   "web:www.xn--v92ba17hy9ha11fjsf8zu50b.com/",
+   "web:blog.naver.com/hsy6207/224378635378",
+   "web:yeinlaw.com/기장군-상속포기-변호사",
+   "kin:kin.naver.com/qna/detail.naver",
+   "review:blog.naver.com/goodlegal0",
+   "review:blog.naver.com/hsy6207",
+   "web:www.xn--6l3bu5e0by8b596e.com/",
+   "web:xn--z92bzyzd60o5co9cb5zft2a.com/부산/상속포기 법무사",
+   "web:greeda.co.kr/부산/상속포기 법무사"
+  ]
+ },
+ {
+  "query": "부산 상속전문 법무사",
+  "observedAtKST": "2026-10-11 12:09:17",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "31156804",
+    "1000682738",
+    "1072287152",
+    "1136708234",
+    "1277321216",
+    "2005494815"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 17,
+  "ourBlockType": "web",
+  "ourWebOrder": 9,
+  "ourUrls": [
+   "/부산상속전문법무사"
+  ],
+  "above": [
+   "review:cafe.naver.com/kig",
+   "review:cafe.naver.com/sogam0515",
+   "review:cafe.naver.com/cantsb",
+   "web:www.xn--v92ba17hy9ha11fjsf8zu50b.com/jHF2Y",
+   "web:greeda.co.kr/부산/상속포기 법무사",
+   "web:jinsimpartnersbusan.com/sangsok.html",
+   "web:blog.naver.com/lawhaebom/224435295259",
+   "review:cafe.naver.com/tictoc",
+   "kin:kin.naver.com/qna/detail.naver",
+   "review:blog.naver.com/hsy6207",
+   "review:blog.naver.com/happy_village293",
+   "review:cafe.naver.com/cantsb",
+   "web:blog.naver.com/lawhaebom/224435226230",
+   "web:blog.naver.com/jktrustlaw/224428458947",
+   "web:bms-sangsok.qshop.ai/case",
+   "web:www.xn--6l3bu5e0by8b596e.com/"
+  ]
+ },
+ {
+  "query": "부산 상속 법무사",
+  "observedAtKST": "2026-10-11 12:09:21",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "2009180992",
+    "31156804",
+    "1710188850",
+    "1649288125",
+    "1288400871",
+    "1526596949",
+    "2005221566"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 7,
+  "ourBlockType": "web",
+  "ourWebOrder": 4,
+  "ourUrls": [
+   "/부산상속포기"
+  ],
+  "above": [
+   "web:ilovelaw1.com/inheritance",
+   "review:cafe.naver.com/sogam0515",
+   "review:cafe.naver.com/kig",
+   "web:www.xn--v92ba17hy9ha11fjsf8zu50b.com/",
+   "review:cafe.naver.com/cantsb",
+   "web:yeinlaw.com/부산-상속-변호사"
+  ]
+ },
+ {
+  "query": "부산 기관 법무사",
+  "observedAtKST": "2026-10-11 12:09:26",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "16684586"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "web:busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html",
+   "web:www.bmc.busan.kr/board/view.do",
+   "web:www.lh.or.kr/boardDownload.es",
+   "review:cafe.naver.com/dgmom365",
+   "review:cafe.naver.com/cantsb",
+   "review:cafe.naver.com/gpsf"
+  ]
+ },
+ {
+  "query": "부산 법률상담",
+  "observedAtKST": "2026-10-11 12:09:31",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1868004998",
+    "1268040468",
+    "1177874127",
+    "35743175",
+    "1972056045",
+    "1154405346",
+    "1977760825",
+    "2041164100"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "web:www.busan.go.kr/depart/freelegaladvice",
+   "web:busan.scourt.go.kr/busan/civil_complaint/civil_03/civil_03_01/lawadvice_01.html",
+   "web:www.busanjin.go.kr/index.busanjin",
+   "web:bsfamily.scourt.go.kr/jibubmgr/klac/Klac.work",
+   "web:bsb.scourt.go.kr/bsb/civil/civil_02/index.html",
+   "review:blog.naver.com/polinlove2"
+  ]
+ },
+ {
+  "query": "부산 상속",
+  "observedAtKST": "2026-10-11 12:09:35",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 22,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "clip:clip.naver.com/@lawfirmtaelim",
+   "web:kiwoolaw.com/",
+   "web:ilovelaw1.com/inheritance",
+   "web:www.bsdonggu.go.kr/index.donggu",
+   "kin:kin.naver.com/qna/detail.naver"
+  ]
+ },
+ {
+  "query": "부산 상속포기",
+  "observedAtKST": "2026-10-11 12:09:40",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1144111068",
+    "2035745096",
+    "1823160246",
+    "1305038093",
+    "90119738",
+    "1072287152"
+   ],
+   "ourOrder": 2,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "review:cafe.naver.com/cantsb",
+   "review:cafe.naver.com/sogam0515",
+   "review:cafe.naver.com/cantsb",
+   "web:www.xn--v92ba17hy9ha11fjsf8zu50b.com/",
+   "web:yeinlaw.com/사하구-상속포기-변호사",
+   "web:greeda.co.kr/부산/상속포기 법무사"
+  ]
+ },
+ {
+  "query": "부산 공탁",
+  "observedAtKST": "2026-10-11 12:09:45",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1710188850",
+    "1278163961"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 21,
+  "ourBlockOrder": 5,
+  "ourBlockType": "web",
+  "ourWebOrder": 4,
+  "ourUrls": [
+   "/공탁자가진단"
+  ],
+  "above": [
+   "web:busan.scourt.go.kr/info/location/new/LocationIframeAction.work",
+   "web:www.bmc.busan.kr/index.do",
+   "web:www.busan.com/print/index.php",
+   "review:cafe.naver.com/dgmom365"
+  ]
+ },
+ {
+  "query": "부산 기관 등기",
+  "observedAtKST": "2026-10-11 12:09:49",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 20,
+  "ourBlockOrder": 2,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산지방법원등기국"
+  ],
+  "above": [
+   "web:www.bmc.busan.kr/board/download.do"
+  ]
+ },
+ {
+  "query": "부산 법무사 상담",
+  "observedAtKST": "2026-10-11 12:09:54",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "820966630",
+    "1881034409",
+    "1136708234",
+    "1526596949",
+    "1059872840",
+    "2044388874"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 7,
+  "ourBlockType": "web",
+  "ourWebOrder": 6,
+  "ourUrls": [
+   "/부산법무사추천"
+  ],
+  "above": [
+   "web:busan.scourt.go.kr/busan/civil_complaint/civil_03/civil_03_01/lawadvice_01.html",
+   "web:www.busan.go.kr/depart/freelegaladvice",
+   "web:bsajar.kabl.kr/mod/board/list.do",
+   "web:bsb.scourt.go.kr/bsb/civil/civil_02/index.html",
+   "review:cafe.naver.com/cantsb",
+   "web:busanlaw.net/"
+  ]
+ },
+ {
+  "query": "부산 법인전문 법무사",
+  "observedAtKST": "2026-10-11 12:09:59",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1277321216",
+    "1539838962",
+    "2005494815",
+    "1207672585",
+    "1136708234"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 5,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산법인설립전문법무사"
+  ],
+  "above": [
+   "review:blog.naver.com/pica1026",
+   "web:blog.naver.com/lawhaebom/224384116473",
+   "review:cafe.naver.com/move79",
+   "review:cafe.naver.com/gpsf"
+  ]
+ },
+ {
+  "query": "부산 법인 법무사",
+  "observedAtKST": "2026-10-11 12:10:03",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1710188850",
+    "1881034409",
+    "2035745096",
+    "19933918",
+    "1513984551"
+   ],
+   "ourOrder": 4,
+   "ourName": true
+  },
+  "blockCount": 19,
+  "ourBlockOrder": 6,
+  "ourBlockType": "web",
+  "ourWebOrder": 4,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "web:namu.wiki/w/법무법인 부산",
+   "web:leeandbusan.kr/",
+   "web:ilovelaw1.com/",
+   "review:cafe.naver.com/move79",
+   "review:cafe.naver.com/minecraftpe"
+  ]
+ },
+ {
+  "query": "부산 법인설립 법무사",
+  "observedAtKST": "2026-10-11 12:10:08",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1277321216",
+    "21622222",
+    "36957279",
+    "1539838962",
+    "1541317130",
+    "33078248"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 2,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산법인설립전문법무사"
+  ],
+  "above": [
+   "web:blog.naver.com/lawhaebom/224384116473"
+  ]
+ },
+ {
+  "query": "부산 법인등기 법무사",
+  "observedAtKST": "2026-10-11 12:10:13",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1710188850",
+    "2035745096",
+    "1881034409",
+    "2064633749",
+    "1385362148",
+    "34291710"
+   ],
+   "ourOrder": 2,
+   "ourName": true
+  },
+  "blockCount": 19,
+  "ourBlockOrder": 2,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산지방법원동부지원등기과법인등기"
+  ],
+  "above": [
+   "web:www.bmc.busan.kr/index.do"
+  ]
+ },
+ {
+  "query": "부산 한정승인 법무사",
+  "observedAtKST": "2026-10-11 12:10:17",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "398019771",
+    "820966630",
+    "2035745096",
+    "1352860087",
+    "1823160246",
+    "1072287152"
+   ],
+   "ourOrder": 3,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 20,
+  "ourBlockType": "web",
+  "ourWebOrder": 11,
+  "ourUrls": [
+   "/부산한정승인"
+  ],
+  "above": [
+   "web:www.xn--v92ba17hy9ha11fjsf8zu50b.com/oQ9bB",
+   "review:cafe.naver.com/cantsb",
+   "review:cafe.naver.com/sogam0515",
+   "web:blog.naver.com/kymlaw3/224418584346",
+   "web:blog.naver.com/hsy6207",
+   "web:greeda.co.kr/부산/한정승인 법무사",
+   "review:cafe.naver.com/cantsb",
+   "kin:kin.naver.com/qna/detail.naver",
+   "review:blog.naver.com/goodlegal0",
+   "review:blog.naver.com/hsy6207",
+   "review:blog.naver.com/happy_village293",
+   "review:cafe.naver.com/kig",
+   "review:cafe.naver.com/myungjimom",
+   "web:inherit-law.kr/부산/한정승인법무사",
+   "web:lawfirm-hero.com/board/case/view/no/17188412",
+   "web:www.xn--6l3bu5e0by8b596e.com/",
+   "web:hero-busan.com/board/case/view/no/17188412",
+   "web:xn--z92bzyzd60o5co9cb5zft2a.com/부산/한정승인 법무사",
+   "web:yeinlaw.com/matters/inheritance-renunciation"
+  ]
+ },
+ {
+  "query": "부산 법무사 상속",
+  "observedAtKST": "2026-10-11 12:10:22",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "31156804",
+    "1710188850",
+    "1649288125",
+    "1288400871",
+    "1526596949",
+    "2005221566"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 3,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산상속등기"
+  ],
+  "above": [
+   "web:ilovelaw1.com/inheritance",
+   "review:cafe.naver.com/kig"
+  ]
+ },
+ {
+  "query": "부산 등기 법무사",
+  "observedAtKST": "2026-10-11 12:10:27",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2035745096",
+    "1823160246",
+    "2064633749",
+    "1305038093",
+    "1136708234",
+    "2086652596"
+   ],
+   "ourOrder": 1,
+   "ourName": true
+  },
+  "blockCount": 19,
+  "ourBlockOrder": 4,
+  "ourBlockType": "web",
+  "ourWebOrder": 4,
+  "ourUrls": [
+   "/부산등기법무사"
+  ],
+  "above": [
+   "web:www.bmc.busan.kr/board/view.do",
+   "web:www.lh.or.kr/boardDownload.es",
+   "web:blog.naver.com/whollygrace/224417235711"
+  ]
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "observedAtKST": "2026-10-11 12:10:31",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1000682738",
+    "1136708234",
+    "31156804",
+    "1277321216",
+    "1539838962",
+    "1207672585"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 5,
+  "ourBlockType": "web",
+  "ourWebOrder": 3,
+  "ourUrls": [
+   "/부산부동산등기전문법무사"
+  ],
+  "above": [
+   "web:www.bmc.busan.kr/board/view.do",
+   "review:cafe.naver.com/masanmam",
+   "review:cafe.naver.com/tictoc",
+   "web:blog.naver.com/hsy6207/224115711831"
+  ]
+ },
+ {
+  "query": "부산 법무사 추천",
+  "observedAtKST": "2026-10-11 12:10:36",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1525154216",
+    "1367132358",
+    "1171205877",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "2035745096",
+    "1072287152"
+   ],
+   "ourOrder": 7,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 2,
+  "ourBlockType": "web",
+  "ourWebOrder": 2,
+  "ourUrls": [
+   "/부산법무사추천"
+  ],
+  "above": [
+   "web:blog.naver.com/sea1225sky"
+  ]
+ }
+]

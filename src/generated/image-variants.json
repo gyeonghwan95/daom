@@ -1622,5 +1622,75 @@
   640,
   960,
   1200
+ ],
+ "/resources/files/company-change-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1080
+ ],
+ "/resources/files/inheritance-family-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1080
+ ],
+ "/resources/files/inheritance-overseas-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1080
+ ],
+ "/resources/files/property-closing-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1080
+ ],
+ "/resources/files/unpaid-evidence-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1080
+ ],
+ "/resources/og/company-change-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/resources/og/inheritance-family-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/resources/og/inheritance-overseas-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/resources/og/property-closing-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/resources/og/unpaid-evidence-v2026.10.11-1.png": [
+  256,
+  384,
+  640,
+  960,
+  1200
  ]
 }

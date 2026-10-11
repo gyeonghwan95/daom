@@ -409,7 +409,6 @@ export function PageDataTemplate({
         const relatedCarousel = getRelatedContentCarousel(
           page.path,
           isInheritanceSurgeryTarget ? 4 : 8,
-          { serviceSlug: page.serviceSlug },
         );
         if (!relatedCarousel) return null;
         return (

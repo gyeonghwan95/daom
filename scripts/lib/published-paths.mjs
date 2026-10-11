@@ -561,6 +561,14 @@ function readDiagnosisSlugs() {
 }
 
 /** 색인·검증용 전체 공개 경로 (site-routes.ts와 동일 구성) */
+/** 의뢰 전 준비자료 slug — src/data/resources/guides.ts의 slug 필드 */
+function readResourceSlugs() {
+  const file = path.join(ROOT, "src/data/resources/guides.ts");
+  if (!fs.existsSync(file)) return [];
+  const src = fs.readFileSync(file, "utf8");
+  return [...src.matchAll(/^    slug: "([a-z0-9-]+)",$/gm)].map((m) => m[1]);
+}
+
 export function getAllPublishedPaths() {
   const blogSlugs = readSlugsFromDir("src/content/blog");
   const caseSlugs = readSlugsFromDir("src/content/cases");
@@ -591,6 +599,8 @@ export function getAllPublishedPaths() {
     ...situationSlugs.map((slug) => `/situations/${slug}`),
     ...situationCategoryHubPaths,
     ...toolSlugs.map((slug) => `/tools/${slug}`),
+    "/resources",
+    ...readResourceSlugs().map((slug) => `/resources/${slug}`),
     ...glossarySlugs.map((slug) => `/glossary/${slug}`),
     ...serviceSlugs.map((slug) => `/services/${slug}`),
     ...blogSlugs.map((slug) => `/blog/${slug}`),

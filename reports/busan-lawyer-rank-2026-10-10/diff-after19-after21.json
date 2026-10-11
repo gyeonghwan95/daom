@@ -1,0 +1,5257 @@
+{
+ "removed": [],
+ "added": [],
+ "policy": [],
+ "title": [],
+ "h1": [],
+ "description": [],
+ "main": [
+  {
+   "r": "/blog/bankruptcy-vs-discharge-difference",
+   "beforeLen": 4107,
+   "afterLen": 4097
+  },
+  {
+   "r": "/blog/bankruptcy-vs-personal-rehabilitation",
+   "beforeLen": 4286,
+   "afterLen": 4276
+  },
+  {
+   "r": "/blog/busan-lawyer-consultation-documents",
+   "beforeLen": 4780,
+   "afterLen": 4736
+  },
+  {
+   "r": "/blog/busan-lawyer-jurisdiction-checklist",
+   "beforeLen": 4969,
+   "afterLen": 4925
+  },
+  {
+   "r": "/blog/busan-lawyer-recommend-office-consult",
+   "beforeLen": 6615,
+   "afterLen": 6571
+  },
+  {
+   "r": "/blog/busan-real-estate-registration-documents",
+   "beforeLen": 4224,
+   "afterLen": 4254
+  },
+  {
+   "r": "/blog/business-owner-rehabilitation-pre-check",
+   "beforeLen": 4203,
+   "afterLen": 4193
+  },
+  {
+   "r": "/blog/centum-lawyer-visit-day-flow",
+   "beforeLen": 4917,
+   "afterLen": 4873
+  },
+  {
+   "r": "/blog/ceo-address-change-registration",
+   "beforeLen": 4438,
+   "afterLen": 4470
+  },
+  {
+   "r": "/blog/certified-mail-before-sending",
+   "beforeLen": 4119,
+   "afterLen": 4097
+  },
+  {
+   "r": "/blog/complaint-filing-required-materials",
+   "beforeLen": 4157,
+   "afterLen": 4135
+  },
+  {
+   "r": "/blog/debt-collection-response-guide",
+   "beforeLen": 4139,
+   "afterLen": 4129
+  },
+  {
+   "r": "/blog/gift-registration-pre-check",
+   "beforeLen": 4252,
+   "afterLen": 4282
+  },
+  {
+   "r": "/blog/jeonse-deposit-return-certified-mail",
+   "beforeLen": 4221,
+   "afterLen": 4251
+  },
+  {
+   "r": "/blog/jeonse-right-cancellation-procedure",
+   "beforeLen": 4176,
+   "afterLen": 4206
+  },
+  {
+   "r": "/blog/jeonse-right-vs-lease-registration-order",
+   "beforeLen": 4424,
+   "afterLen": 4454
+  },
+  {
+   "r": "/blog/joint-ownership-registration-cautions",
+   "beforeLen": 4244,
+   "afterLen": 4274
+  },
+  {
+   "r": "/blog/loan-repayment-claim-documents",
+   "beforeLen": 4134,
+   "afterLen": 4112
+  },
+  {
+   "r": "/blog/mortgage-cancellation-risks",
+   "beforeLen": 4368,
+   "afterLen": 4398
+  },
+  {
+   "r": "/blog/payment-order-application-pre-check",
+   "beforeLen": 4179,
+   "afterLen": 4157
+  },
+  {
+   "r": "/blog/personal-rehabilitation-before-application",
+   "beforeLen": 4284,
+   "afterLen": 4274
+  },
+  {
+   "r": "/blog/personal-rehabilitation-consultation-documents",
+   "beforeLen": 4291,
+   "afterLen": 4281
+  },
+  {
+   "r": "/blog/salaried-worker-rehabilitation-eligibility",
+   "beforeLen": 4112,
+   "afterLen": 4102
+  },
+  {
+   "r": "/blog/when-jeonse-right-registration-needed",
+   "beforeLen": 4366,
+   "afterLen": 4396
+  },
+  {
+   "r": "/blog/when-to-consult-real-estate-registration-lawyer",
+   "beforeLen": 4294,
+   "afterLen": 4324
+  },
+  {
+   "r": "/faq/bankruptcy-discharge-faq",
+   "beforeLen": 3736,
+   "afterLen": 3726
+  },
+  {
+   "r": "/faq/bankruptcy-vs-rehabilitation-faq",
+   "beforeLen": 3752,
+   "afterLen": 3742
+  },
+  {
+   "r": "/faq/jeonse-registration-faq",
+   "beforeLen": 3783,
+   "afterLen": 3813
+  },
+  {
+   "r": "/faq/personal-rehabilitation-credit-faq",
+   "beforeLen": 3777,
+   "afterLen": 3767
+  },
+  {
+   "r": "/faq/personal-rehabilitation-documents-faq",
+   "beforeLen": 3702,
+   "afterLen": 3692
+  },
+  {
+   "r": "/faq/personal-rehabilitation-duration-faq",
+   "beforeLen": 3737,
+   "afterLen": 3727
+  },
+  {
+   "r": "/faq/personal-rehabilitation-eligibility-faq",
+   "beforeLen": 3787,
+   "afterLen": 3777
+  },
+  {
+   "r": "/faq/preservation-registration-faq",
+   "beforeLen": 3924,
+   "afterLen": 3954
+  },
+  {
+   "r": "/faq/public-agency-registration-faq",
+   "beforeLen": 4167,
+   "afterLen": 4199
+  },
+  {
+   "r": "/faq/who-can-file-bankruptcy-faq",
+   "beforeLen": 3719,
+   "afterLen": 3709
+  },
+  {
+   "r": "/가족후견",
+   "beforeLen": 4585,
+   "afterLen": 4541
+  },
+  {
+   "r": "/강서구법무사",
+   "beforeLen": 5192,
+   "afterLen": 5150
+  },
+  {
+   "r": "/강서구부동산등기",
+   "beforeLen": 4305,
+   "afterLen": 4335
+  },
+  {
+   "r": "/강서구선박등기",
+   "beforeLen": 4743,
+   "afterLen": 4775
+  },
+  {
+   "r": "/개금동법무사",
+   "beforeLen": 4865,
+   "afterLen": 4821
+  },
+  {
+   "r": "/개인파산과태료",
+   "beforeLen": 4596,
+   "afterLen": 4586
+  },
+  {
+   "r": "/개인파산기간",
+   "beforeLen": 4531,
+   "afterLen": 4521
+  },
+  {
+   "r": "/개인파산기한",
+   "beforeLen": 4476,
+   "afterLen": 4466
+  },
+  {
+   "r": "/개인파산보수표",
+   "beforeLen": 3576,
+   "afterLen": 3566
+  },
+  {
+   "r": "/개인파산비용",
+   "beforeLen": 3961,
+   "afterLen": 3951
+  },
+  {
+   "r": "/개인파산준비서류",
+   "beforeLen": 4769,
+   "afterLen": 4759
+  },
+  {
+   "r": "/개인파산필요서류",
+   "beforeLen": 4743,
+   "afterLen": 4733
+  },
+  {
+   "r": "/개인회생과태료",
+   "beforeLen": 4591,
+   "afterLen": 4581
+  },
+  {
+   "r": "/개인회생기간",
+   "beforeLen": 4656,
+   "afterLen": 4646
+  },
+  {
+   "r": "/개인회생기한",
+   "beforeLen": 4551,
+   "afterLen": 4541
+  },
+  {
+   "r": "/개인회생보수표",
+   "beforeLen": 3378,
+   "afterLen": 3368
+  },
+  {
+   "r": "/개인회생비용",
+   "beforeLen": 4144,
+   "afterLen": 4134
+  },
+  {
+   "r": "/개인회생여성법무사",
+   "beforeLen": 4932,
+   "afterLen": 4922
+  },
+  {
+   "r": "/개인회생준비서류",
+   "beforeLen": 4735,
+   "afterLen": 4725
+  },
+  {
+   "r": "/개인회생파산",
+   "beforeLen": 4752,
+   "afterLen": 4742
+  },
+  {
+   "r": "/개인회생필요서류",
+   "beforeLen": 4642,
+   "afterLen": 4632
+  },
+  {
+   "r": "/거제동법무사",
+   "beforeLen": 5676,
+   "afterLen": 5654
+  },
+  {
+   "r": "/공탁자가진단",
+   "beforeLen": 4201,
+   "afterLen": 4214
+  },
+  {
+   "r": "/광안동법무사",
+   "beforeLen": 3993,
+   "afterLen": 3949
+  },
+  {
+   "r": "/광안동부동산등기",
+   "beforeLen": 5062,
+   "afterLen": 5092
+  },
+  {
+   "r": "/광안동전세권설정",
+   "beforeLen": 4593,
+   "afterLen": 4623
+  },
+  {
+   "r": "/광안리법무사",
+   "beforeLen": 4726,
+   "afterLen": 4682
+  },
+  {
+   "r": "/광안역법무사",
+   "beforeLen": 3703,
+   "afterLen": 3659
+  },
+  {
+   "r": "/광안역전세권설정",
+   "beforeLen": 4655,
+   "afterLen": 4685
+  },
+  {
+   "r": "/괴정동법무사",
+   "beforeLen": 4640,
+   "afterLen": 4596
+  },
+  {
+   "r": "/구서동법무사",
+   "beforeLen": 4949,
+   "afterLen": 4905
+  },
+  {
+   "r": "/구포동법무사",
+   "beforeLen": 4816,
+   "afterLen": 4794
+  },
+  {
+   "r": "/근저당말소과태료",
+   "beforeLen": 4813,
+   "afterLen": 4843
+  },
+  {
+   "r": "/근저당말소기간",
+   "beforeLen": 4735,
+   "afterLen": 4765
+  },
+  {
+   "r": "/근저당말소기한",
+   "beforeLen": 4620,
+   "afterLen": 4650
+  },
+  {
+   "r": "/근저당말소보수표",
+   "beforeLen": 3583,
+   "afterLen": 3613
+  },
+  {
+   "r": "/근저당말소비용",
+   "beforeLen": 4033,
+   "afterLen": 4063
+  },
+  {
+   "r": "/근저당말소준비서류",
+   "beforeLen": 4766,
+   "afterLen": 4796
+  },
+  {
+   "r": "/근저당말소필요서류",
+   "beforeLen": 4887,
+   "afterLen": 4917
+  },
+  {
+   "r": "/금정구법무사",
+   "beforeLen": 5367,
+   "afterLen": 5323
+  },
+  {
+   "r": "/금정구부동산등기",
+   "beforeLen": 4405,
+   "afterLen": 4435
+  },
+  {
+   "r": "/기장군법무사",
+   "beforeLen": 5470,
+   "afterLen": 5426
+  },
+  {
+   "r": "/기장군부동산등기",
+   "beforeLen": 4425,
+   "afterLen": 4455
+  },
+  {
+   "r": "/기장군재개발등기",
+   "beforeLen": 4692,
+   "afterLen": 4722
+  },
+  {
+   "r": "/기장법무사",
+   "beforeLen": 4464,
+   "afterLen": 4420
+  },
+  {
+   "r": "/기장읍법무사",
+   "beforeLen": 4897,
+   "afterLen": 4853
+  },
+  {
+   "r": "/남구법무사",
+   "beforeLen": 5003,
+   "afterLen": 4961
+  },
+  {
+   "r": "/남구부동산등기",
+   "beforeLen": 4298,
+   "afterLen": 4328
+  },
+  {
+   "r": "/남부산등기소부동산등기",
+   "beforeLen": 4833,
+   "afterLen": 4863
+  },
+  {
+   "r": "/남천동법무사",
+   "beforeLen": 4282,
+   "afterLen": 4238
+  },
+  {
+   "r": "/남포동법무사",
+   "beforeLen": 5424,
+   "afterLen": 5380
+  },
+  {
+   "r": "/다대동법무사",
+   "beforeLen": 4942,
+   "afterLen": 4898
+  },
+  {
+   "r": "/대연동법무사",
+   "beforeLen": 4299,
+   "afterLen": 4255
+  },
+  {
+   "r": "/덕천동개인회생",
+   "beforeLen": 4480,
+   "afterLen": 4470
+  },
+  {
+   "r": "/덕천동법무사",
+   "beforeLen": 4362,
+   "afterLen": 4340
+  },
+  {
+   "r": "/동구법무사",
+   "beforeLen": 5032,
+   "afterLen": 4988
+  },
+  {
+   "r": "/동구부동산등기",
+   "beforeLen": 4125,
+   "afterLen": 4155
+  },
+  {
+   "r": "/동래구법무사",
+   "beforeLen": 6030,
+   "afterLen": 5986
+  },
+  {
+   "r": "/동래구부동산등기",
+   "beforeLen": 4405,
+   "afterLen": 4435
+  },
+  {
+   "r": "/동래역법무사",
+   "beforeLen": 4992,
+   "afterLen": 4948
+  },
+  {
+   "r": "/동삼동법무사",
+   "beforeLen": 4847,
+   "afterLen": 4803
+  },
+  {
+   "r": "/등기소근처법무사",
+   "beforeLen": 3953,
+   "afterLen": 3983
+  },
+  {
+   "r": "/망미동법무사",
+   "beforeLen": 5211,
+   "afterLen": 5167
+  },
+  {
+   "r": "/명지동법무사",
+   "beforeLen": 4598,
+   "afterLen": 4556
+  },
+  {
+   "r": "/명지동부동산등기",
+   "beforeLen": 5050,
+   "afterLen": 5080
+  },
+  {
+   "r": "/명지법무사",
+   "beforeLen": 4820,
+   "afterLen": 4778
+  },
+  {
+   "r": "/명지역법무사",
+   "beforeLen": 4322,
+   "afterLen": 4280
+  },
+  {
+   "r": "/문현동법무사",
+   "beforeLen": 5474,
+   "afterLen": 5432
+  },
+  {
+   "r": "/민락동법무사",
+   "beforeLen": 4665,
+   "afterLen": 4621
+  },
+  {
+   "r": "/민락동부동산등기",
+   "beforeLen": 4960,
+   "afterLen": 4990
+  },
+  {
+   "r": "/반송동법무사",
+   "beforeLen": 4945,
+   "afterLen": 4901
+  },
+  {
+   "r": "/반여동법무사",
+   "beforeLen": 5098,
+   "afterLen": 5054
+  },
+  {
+   "r": "/반여동부동산등기",
+   "beforeLen": 5136,
+   "afterLen": 5166
+  },
+  {
+   "r": "/범일동법무사",
+   "beforeLen": 4754,
+   "afterLen": 4710
+  },
+  {
+   "r": "/부곡동법무사",
+   "beforeLen": 5505,
+   "afterLen": 5461
+  },
+  {
+   "r": "/부동산등기",
+   "beforeLen": 4420,
+   "afterLen": 4450
+  },
+  {
+   "r": "/부동산등기과태료",
+   "beforeLen": 4658,
+   "afterLen": 4688
+  },
+  {
+   "r": "/부동산등기기간",
+   "beforeLen": 4796,
+   "afterLen": 4826
+  },
+  {
+   "r": "/부동산등기기한",
+   "beforeLen": 4847,
+   "afterLen": 4877
+  },
+  {
+   "r": "/부동산등기보수표",
+   "beforeLen": 3243,
+   "afterLen": 3273
+  },
+  {
+   "r": "/부동산등기비용",
+   "beforeLen": 3789,
+   "afterLen": 3819
+  },
+  {
+   "r": "/부동산등기준비서류",
+   "beforeLen": 4877,
+   "afterLen": 4907
+  },
+  {
+   "r": "/부동산등기필요서류",
+   "beforeLen": 4929,
+   "afterLen": 4959
+  },
+  {
+   "r": "/부산가정법원법무사",
+   "beforeLen": 4819,
+   "afterLen": 4775
+  },
+  {
+   "r": "/부산개인파산",
+   "beforeLen": 4732,
+   "afterLen": 4722
+  },
+  {
+   "r": "/부산개인회생",
+   "beforeLen": 9673,
+   "afterLen": 9663
+  },
+  {
+   "r": "/부산기업법무사",
+   "beforeLen": 5085,
+   "afterLen": 5043
+  },
+  {
+   "r": "/부산법무사보수표",
+   "beforeLen": 5661,
+   "afterLen": 5617
+  },
+  {
+   "r": "/부산법무사비용",
+   "beforeLen": 6784,
+   "afterLen": 6740
+  },
+  {
+   "r": "/부산법무사상담",
+   "beforeLen": 4387,
+   "afterLen": 4752
+  },
+  {
+   "r": "/부산부동산등기법무사",
+   "beforeLen": 4967,
+   "afterLen": 4997
+  },
+  {
+   "r": "/부산상가등기",
+   "beforeLen": 4249,
+   "afterLen": 4279
+  },
+  {
+   "r": "/부산스타트업법무사",
+   "beforeLen": 4671,
+   "afterLen": 4629
+  },
+  {
+   "r": "/부산여성법무사",
+   "beforeLen": 5250,
+   "afterLen": 5206
+  },
+  {
+   "r": "/부산역법무사",
+   "beforeLen": 5083,
+   "afterLen": 5039
+  },
+  {
+   "r": "/부산역부동산등기",
+   "beforeLen": 5020,
+   "afterLen": 5050
+  },
+  {
+   "r": "/부산재개발등기",
+   "beforeLen": 4416,
+   "afterLen": 4446
+  },
+  {
+   "r": "/부산재건축등기",
+   "beforeLen": 4450,
+   "afterLen": 4480
+  },
+  {
+   "r": "/부산지방법원동부지원등기과",
+   "beforeLen": 4395,
+   "afterLen": 4427
+  },
+  {
+   "r": "/부산지방법원동부지원등기과법무사",
+   "beforeLen": 5133,
+   "afterLen": 5163
+  },
+  {
+   "r": "/부산지방법원동부지원등기과부동산등기",
+   "beforeLen": 5043,
+   "afterLen": 5073
+  },
+  {
+   "r": "/부산지방법원동부지원법무사",
+   "beforeLen": 3954,
+   "afterLen": 3932
+  },
+  {
+   "r": "/부산지방법원등기국",
+   "beforeLen": 4507,
+   "afterLen": 4537
+  },
+  {
+   "r": "/부산지방법원등기국법무사",
+   "beforeLen": 5141,
+   "afterLen": 5171
+  },
+  {
+   "r": "/부산지방법원등기국부동산등기",
+   "beforeLen": 5087,
+   "afterLen": 5117
+  },
+  {
+   "r": "/부산지방법원법무사",
+   "beforeLen": 4804,
+   "afterLen": 4760
+  },
+  {
+   "r": "/부산진구법무사",
+   "beforeLen": 5431,
+   "afterLen": 5387
+  },
+  {
+   "r": "/부산진구부동산등기",
+   "beforeLen": 5106,
+   "afterLen": 5136
+  },
+  {
+   "r": "/부산진등기소부동산등기",
+   "beforeLen": 4681,
+   "afterLen": 4711
+  },
+  {
+   "r": "/부산파산",
+   "beforeLen": 4273,
+   "afterLen": 4263
+  },
+  {
+   "r": "/부산회생법원개인파산",
+   "beforeLen": 4497,
+   "afterLen": 4487
+  },
+  {
+   "r": "/부산회생법원개인회생",
+   "beforeLen": 4406,
+   "afterLen": 4396
+  },
+  {
+   "r": "/부산회생법원법무사",
+   "beforeLen": 3922,
+   "afterLen": 3912
+  },
+  {
+   "r": "/부전동법무사",
+   "beforeLen": 3981,
+   "afterLen": 3907
+  },
+  {
+   "r": "/북구개인회생",
+   "beforeLen": 4104,
+   "afterLen": 4094
+  },
+  {
+   "r": "/북구법무사",
+   "beforeLen": 4991,
+   "afterLen": 4969
+  },
+  {
+   "r": "/북구부동산등기",
+   "beforeLen": 4331,
+   "afterLen": 4361
+  },
+  {
+   "r": "/북부산등기소법무사",
+   "beforeLen": 4584,
+   "afterLen": 4614
+  },
+  {
+   "r": "/북부산등기소부동산등기",
+   "beforeLen": 4841,
+   "afterLen": 4871
+  },
+  {
+   "r": "/사상구개인회생",
+   "beforeLen": 4126,
+   "afterLen": 4116
+  },
+  {
+   "r": "/사상구법무사",
+   "beforeLen": 5414,
+   "afterLen": 5370
+  },
+  {
+   "r": "/사상구부동산등기",
+   "beforeLen": 4418,
+   "afterLen": 4448
+  },
+  {
+   "r": "/사상법무사",
+   "beforeLen": 4444,
+   "afterLen": 4400
+  },
+  {
+   "r": "/사상역개인회생",
+   "beforeLen": 4454,
+   "afterLen": 4444
+  },
+  {
+   "r": "/사상역법무사",
+   "beforeLen": 3714,
+   "afterLen": 3692
+  },
+  {
+   "r": "/사직동법무사",
+   "beforeLen": 5659,
+   "afterLen": 5615
+  },
+  {
+   "r": "/사하구법무사",
+   "beforeLen": 5391,
+   "afterLen": 5347
+  },
+  {
+   "r": "/사하구부동산등기",
+   "beforeLen": 4417,
+   "afterLen": 4447
+  },
+  {
+   "r": "/사하구전세권설정",
+   "beforeLen": 4651,
+   "afterLen": 4681
+  },
+  {
+   "r": "/서구법무사",
+   "beforeLen": 5662,
+   "afterLen": 5618
+  },
+  {
+   "r": "/서구부동산등기",
+   "beforeLen": 4403,
+   "afterLen": 4433
+  },
+  {
+   "r": "/서면법무사",
+   "beforeLen": 5264,
+   "afterLen": 5220
+  },
+  {
+   "r": "/서면부동산등기",
+   "beforeLen": 4170,
+   "afterLen": 4200
+  },
+  {
+   "r": "/서면역법무사",
+   "beforeLen": 4178,
+   "afterLen": 4134
+  },
+  {
+   "r": "/서면역부동산등기",
+   "beforeLen": 5045,
+   "afterLen": 5075
+  },
+  {
+   "r": "/선박등기과태료",
+   "beforeLen": 4974,
+   "afterLen": 5006
+  },
+  {
+   "r": "/선박등기기간",
+   "beforeLen": 4922,
+   "afterLen": 4954
+  },
+  {
+   "r": "/선박등기기한",
+   "beforeLen": 4770,
+   "afterLen": 4802
+  },
+  {
+   "r": "/선박등기보수표",
+   "beforeLen": 5060,
+   "afterLen": 5092
+  },
+  {
+   "r": "/선박등기비용",
+   "beforeLen": 5068,
+   "afterLen": 5100
+  },
+  {
+   "r": "/선박등기준비서류",
+   "beforeLen": 5010,
+   "afterLen": 5042
+  },
+  {
+   "r": "/선박등기필요서류",
+   "beforeLen": 4981,
+   "afterLen": 5013
+  },
+  {
+   "r": "/센텀법무사",
+   "beforeLen": 6247,
+   "afterLen": 6205
+  },
+  {
+   "r": "/센텀부동산등기",
+   "beforeLen": 4370,
+   "afterLen": 4400
+  },
+  {
+   "r": "/센텀시티역법무사",
+   "beforeLen": 4524,
+   "afterLen": 4482
+  },
+  {
+   "r": "/센텀여성법무사",
+   "beforeLen": 5490,
+   "afterLen": 5448
+  },
+  {
+   "r": "/송정동법무사",
+   "beforeLen": 4686,
+   "afterLen": 4642
+  },
+  {
+   "r": "/수영구개인회생",
+   "beforeLen": 4126,
+   "afterLen": 4116
+  },
+  {
+   "r": "/수영구법무사",
+   "beforeLen": 5284,
+   "afterLen": 5240
+  },
+  {
+   "r": "/수영구부동산등기",
+   "beforeLen": 4363,
+   "afterLen": 4393
+  },
+  {
+   "r": "/수영구전세권설정",
+   "beforeLen": 4644,
+   "afterLen": 4674
+  },
+  {
+   "r": "/안락동법무사",
+   "beforeLen": 4866,
+   "afterLen": 4822
+  },
+  {
+   "r": "/양정동법무사",
+   "beforeLen": 4986,
+   "afterLen": 4942
+  },
+  {
+   "r": "/업무사례/부산회생법원법무사",
+   "beforeLen": 4924,
+   "afterLen": 4914
+  },
+  {
+   "r": "/업무사례/양산개인회생법무사",
+   "beforeLen": 5042,
+   "afterLen": 5032
+  },
+  {
+   "r": "/연산동법무사",
+   "beforeLen": 5012,
+   "afterLen": 4970
+  },
+  {
+   "r": "/연산역법무사",
+   "beforeLen": 4572,
+   "afterLen": 4528
+  },
+  {
+   "r": "/연제구법무사",
+   "beforeLen": 6635,
+   "afterLen": 6591
+  },
+  {
+   "r": "/연제구부동산등기",
+   "beforeLen": 4383,
+   "afterLen": 4413
+  },
+  {
+   "r": "/연지동법무사",
+   "beforeLen": 4763,
+   "afterLen": 4719
+  },
+  {
+   "r": "/영도구법무사",
+   "beforeLen": 5186,
+   "afterLen": 5144
+  },
+  {
+   "r": "/영도구부동산등기",
+   "beforeLen": 4453,
+   "afterLen": 4483
+  },
+  {
+   "r": "/영도구선박등기",
+   "beforeLen": 4762,
+   "afterLen": 4794
+  },
+  {
+   "r": "/오시리아법무사",
+   "beforeLen": 4763,
+   "afterLen": 4719
+  },
+  {
+   "r": "/온천동법무사",
+   "beforeLen": 4728,
+   "afterLen": 4684
+  },
+  {
+   "r": "/용호동법무사",
+   "beforeLen": 5236,
+   "afterLen": 5192
+  },
+  {
+   "r": "/우동법무사",
+   "beforeLen": 5379,
+   "afterLen": 5335
+  },
+  {
+   "r": "/우동부동산등기",
+   "beforeLen": 5049,
+   "afterLen": 5079
+  },
+  {
+   "r": "/우암동법무사",
+   "beforeLen": 4569,
+   "afterLen": 4525
+  },
+  {
+   "r": "/일광읍법무사",
+   "beforeLen": 5530,
+   "afterLen": 5486
+  },
+  {
+   "r": "/임대차전세",
+   "beforeLen": 4074,
+   "afterLen": 4104
+  },
+  {
+   "r": "/임차권등기명령과태료",
+   "beforeLen": 4653,
+   "afterLen": 4683
+  },
+  {
+   "r": "/임차권등기명령기간",
+   "beforeLen": 4689,
+   "afterLen": 4719
+  },
+  {
+   "r": "/임차권등기명령기한",
+   "beforeLen": 4603,
+   "afterLen": 4633
+  },
+  {
+   "r": "/임차권등기명령보수표",
+   "beforeLen": 3617,
+   "afterLen": 3647
+  },
+  {
+   "r": "/임차권등기명령비용",
+   "beforeLen": 4041,
+   "afterLen": 4071
+  },
+  {
+   "r": "/임차권등기명령준비서류",
+   "beforeLen": 4940,
+   "afterLen": 4970
+  },
+  {
+   "r": "/임차권등기명령필요서류",
+   "beforeLen": 4882,
+   "afterLen": 4912
+  },
+  {
+   "r": "/장전동법무사",
+   "beforeLen": 4350,
+   "afterLen": 4306
+  },
+  {
+   "r": "/장전동부동산등기",
+   "beforeLen": 5008,
+   "afterLen": 5038
+  },
+  {
+   "r": "/재개발등기과태료",
+   "beforeLen": 4938,
+   "afterLen": 4968
+  },
+  {
+   "r": "/재개발등기기간",
+   "beforeLen": 4874,
+   "afterLen": 4904
+  },
+  {
+   "r": "/재개발등기기한",
+   "beforeLen": 4800,
+   "afterLen": 4830
+  },
+  {
+   "r": "/재개발등기보수표",
+   "beforeLen": 5047,
+   "afterLen": 5077
+  },
+  {
+   "r": "/재개발등기비용",
+   "beforeLen": 5022,
+   "afterLen": 5052
+  },
+  {
+   "r": "/재개발등기준비서류",
+   "beforeLen": 4987,
+   "afterLen": 5017
+  },
+  {
+   "r": "/재개발등기필요서류",
+   "beforeLen": 4832,
+   "afterLen": 4862
+  },
+  {
+   "r": "/재송동법무사",
+   "beforeLen": 5549,
+   "afterLen": 5505
+  },
+  {
+   "r": "/전세권설정과태료",
+   "beforeLen": 4733,
+   "afterLen": 4763
+  },
+  {
+   "r": "/전세권설정기간",
+   "beforeLen": 4805,
+   "afterLen": 4835
+  },
+  {
+   "r": "/전세권설정기한",
+   "beforeLen": 4701,
+   "afterLen": 4731
+  },
+  {
+   "r": "/전세권설정보수표",
+   "beforeLen": 4819,
+   "afterLen": 4849
+  },
+  {
+   "r": "/전세권설정비용",
+   "beforeLen": 4850,
+   "afterLen": 4880
+  },
+  {
+   "r": "/전세권설정준비서류",
+   "beforeLen": 4887,
+   "afterLen": 4917
+  },
+  {
+   "r": "/전세권설정필요서류",
+   "beforeLen": 4819,
+   "afterLen": 4849
+  },
+  {
+   "r": "/전포동법무사",
+   "beforeLen": 5633,
+   "afterLen": 5589
+  },
+  {
+   "r": "/전포동부동산등기",
+   "beforeLen": 5147,
+   "afterLen": 5177
+  },
+  {
+   "r": "/정관법무사",
+   "beforeLen": 4482,
+   "afterLen": 4480
+  },
+  {
+   "r": "/좌동법무사",
+   "beforeLen": 5933,
+   "afterLen": 5889
+  },
+  {
+   "r": "/주례동법무사",
+   "beforeLen": 4852,
+   "afterLen": 4808
+  },
+  {
+   "r": "/중구법무사",
+   "beforeLen": 5906,
+   "afterLen": 5862
+  },
+  {
+   "r": "/중구부동산등기",
+   "beforeLen": 5066,
+   "afterLen": 5096
+  },
+  {
+   "r": "/중동법무사",
+   "beforeLen": 4345,
+   "afterLen": 4301
+  },
+  {
+   "r": "/중동부동산등기",
+   "beforeLen": 5077,
+   "afterLen": 5107
+  },
+  {
+   "r": "/중부산등기소법무사",
+   "beforeLen": 4569,
+   "afterLen": 4601
+  },
+  {
+   "r": "/중부산등기소부동산등기",
+   "beforeLen": 4547,
+   "afterLen": 4577
+  },
+  {
+   "r": "/창업법무",
+   "beforeLen": 4563,
+   "afterLen": 4521
+  },
+  {
+   "r": "/초량동법무사",
+   "beforeLen": 5328,
+   "afterLen": 5284
+  },
+  {
+   "r": "/특수등기",
+   "beforeLen": 4240,
+   "afterLen": 4272
+  },
+  {
+   "r": "/하단법무사",
+   "beforeLen": 4443,
+   "afterLen": 4399
+  },
+  {
+   "r": "/해운대구부동산등기",
+   "beforeLen": 4484,
+   "afterLen": 4514
+  },
+  {
+   "r": "/해운대여성법무사",
+   "beforeLen": 5685,
+   "afterLen": 5641
+  },
+  {
+   "r": "/해운대역법무사",
+   "beforeLen": 4212,
+   "afterLen": 4168
+  },
+  {
+   "r": "/해운대역부동산등기",
+   "beforeLen": 5124,
+   "afterLen": 5154
+  },
+  {
+   "r": "/화명동법무사",
+   "beforeLen": 5131,
+   "afterLen": 5087
+  },
+  {
+   "r": "/화명동부동산등기",
+   "beforeLen": 5000,
+   "afterLen": 5030
+  }
+ ],
+ "links": [
+  {
+   "r": "/blog/bankruptcy-vs-discharge-difference",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/bankruptcy-vs-personal-rehabilitation",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/busan-lawyer-consultation-documents",
+   "lost": [
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/busan-lawyer-jurisdiction-checklist",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/blog/busan-lawyer-recommend-office-consult",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/busan-real-estate-registration-documents",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/business-owner-rehabilitation-pre-check",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/centum-lawyer-visit-day-flow",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/blog/ceo-address-change-registration",
+   "lost": [
+    "/services/company-establishment",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/certified-mail-before-sending",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/complaint-filing-required-materials",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/debt-collection-response-guide",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/gift-registration-pre-check",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/jeonse-deposit-return-certified-mail",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/jeonse-right-cancellation-procedure",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/jeonse-right-vs-lease-registration-order",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/joint-ownership-registration-cautions",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/loan-repayment-claim-documents",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/mortgage-cancellation-risks",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/payment-order-application-pre-check",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/personal-rehabilitation-before-application",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/personal-rehabilitation-consultation-documents",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/salaried-worker-rehabilitation-eligibility",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/blog/when-jeonse-right-registration-needed",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/blog/when-to-consult-real-estate-registration-lawyer",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/faq/bankruptcy-discharge-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/bankruptcy-vs-rehabilitation-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/jeonse-registration-faq",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/faq/personal-rehabilitation-credit-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/personal-rehabilitation-documents-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/personal-rehabilitation-duration-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/personal-rehabilitation-eligibility-faq",
+   "lost": [
+    "/부산상속법무사"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/faq/preservation-registration-faq",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/faq/public-agency-registration-faq",
+   "lost": [
+    "/services/company-establishment",
+    "/services/director-change",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/faq/who-can-file-bankruptcy-faq",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/가족후견",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/강서구법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/강서구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/강서구선박등기",
+   "lost": [
+    "/services/company-establishment",
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/개금동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산과태료",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산기간",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산기한",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산보수표",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산비용",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산준비서류",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인파산필요서류",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생과태료",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생기간",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생기한",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생보수표",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생비용",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생여성법무사",
+   "lost": [
+    "/부산상속법무사"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생준비서류",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생파산",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/개인회생필요서류",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/거제동법무사",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/공탁자가진단",
+   "lost": [
+    "/부산상속법무사"
+   ],
+   "gained": [
+    "/부산공탁"
+   ]
+  },
+  {
+   "r": "/광안동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/광안동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/광안동전세권설정",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/광안리법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/광안역법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/광안역전세권설정",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/괴정동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/구서동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/구포동법무사",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/근저당말소과태료",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소기간",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소기한",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소보수표",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소비용",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소준비서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/근저당말소필요서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/금정구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/금정구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/기장군법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/기장군부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/기장군재개발등기",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/기장법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/기장읍법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/남구법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/남구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/남부산등기소부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/남천동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/남포동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/다대동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/대연동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/덕천동개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/덕천동법무사",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/동구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/동구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/동래구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/동래구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/동래역법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/동삼동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/등기소근처법무사",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/망미동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/명지동법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/명지동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/명지법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/명지역법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/문현동법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance"
+   ]
+  },
+  {
+   "r": "/민락동법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/민락동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/반송동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/반여동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/반여동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/범일동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment"
+   ]
+  },
+  {
+   "r": "/부곡동법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산등기법무사"
+   ]
+  },
+  {
+   "r": "/부동산등기과태료",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기기간",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기기한",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기보수표",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기비용",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기준비서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부동산등기필요서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산가정법원법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산개인파산",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산개인회생",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산기업법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산법무사보수표",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산법무사비용",
+   "lost": [
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산부동산등기법무사",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산상가등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산스타트업법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산여성법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산역법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/부산역부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산재개발등기",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산재건축등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원동부지원등기과",
+   "lost": [
+    "/services/company-establishment",
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원동부지원등기과법무사",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원동부지원등기과부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원동부지원법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산지방법원등기국",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원등기국법무사",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원등기국부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산지방법원법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산진구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산진구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산진등기소부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/부산파산",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산회생법원개인파산",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산회생법원개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부산회생법원법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/부전동법무사",
+   "lost": [
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance"
+   ]
+  },
+  {
+   "r": "/북구개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/북구법무사",
+   "lost": [
+    "/services/bankruptcy",
+    "/services/personal-rehabilitation",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/북구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/북부산등기소법무사",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/북부산등기소부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/사상구개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/사상구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/사상구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/사상법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/사상역개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/사상역법무사",
+   "lost": [
+    "/services/bankruptcy",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/사직동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/사하구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/사하구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/사하구전세권설정",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/서구법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/서구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/서면법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment"
+   ]
+  },
+  {
+   "r": "/서면부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/서면역법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/서면역부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기과태료",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기기간",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기기한",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기보수표",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기비용",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기준비서류",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/선박등기필요서류",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/센텀법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/센텀부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/센텀시티역법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/센텀여성법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/송정동법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/수영구개인회생",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/수영구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/수영구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/수영구전세권설정",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/안락동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/양정동법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/업무사례/부산회생법원법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/업무사례/양산개인회생법무사",
+   "lost": [
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/연산동법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance"
+   ]
+  },
+  {
+   "r": "/연산역법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/연제구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/연제구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/연지동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/영도구법무사",
+   "lost": [
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/영도구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/영도구선박등기",
+   "lost": [
+    "/services/director-change",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/오시리아법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/온천동법무사",
+   "lost": [
+    "/부산상속전문법무사"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/용호동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/우동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/우동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/우암동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/일광읍법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/임대차전세",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산등기법무사",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령과태료",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령기간",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령기한",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령보수표",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령비용",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령준비서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/임차권등기명령필요서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/장전동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/장전동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기과태료",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기기간",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기기한",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기보수표",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기비용",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기준비서류",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재개발등기필요서류",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/재송동법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/전세권설정과태료",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정기간",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정기한",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정보수표",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정비용",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정준비서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전세권설정필요서류",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산전세권말소등기",
+    "/부산전세권설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/전포동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/전포동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/정관법무사",
+   "lost": [
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/director-change",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ]
+  },
+  {
+   "r": "/좌동법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/주례동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/중구법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/중구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/중동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/중동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/중부산등기소법무사",
+   "lost": [
+    "/services/company-establishment",
+    "/부산법인등기",
+    "/부산법인법무사",
+    "/부산법인설립등기",
+    "/부산본점이전등기",
+    "/부산임원변경등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/중부산등기소부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/창업법무",
+   "lost": [
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/ownership-transfer",
+    "/services/qualified-acceptance",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/초량동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/특수등기",
+   "lost": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/director-change",
+    "/부산법인법무사",
+    "/부산본점이전등기"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/하단법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/해운대구부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/services/real-estate-registration",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산등기법무사",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/해운대여성법무사",
+   "lost": [
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration",
+    "/services/ownership-transfer",
+    "/services/real-estate-registration"
+   ]
+  },
+  {
+   "r": "/해운대역법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/ownership-transfer"
+   ]
+  },
+  {
+   "r": "/해운대역부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산부동산등기",
+    "/부산소유권이전등기",
+    "/부산증여등기"
+   ]
+  },
+  {
+   "r": "/화명동법무사",
+   "lost": [
+    "/부산상속등기",
+    "/부산상속법무사",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/company-establishment",
+    "/services/corporate-registration"
+   ]
+  },
+  {
+   "r": "/화명동부동산등기",
+   "lost": [
+    "/services/inheritance-registration",
+    "/services/inheritance-renunciation",
+    "/services/qualified-acceptance",
+    "/부산상속등기",
+    "/부산상속전문법무사",
+    "/부산상속포기",
+    "/부산한정승인"
+   ],
+   "gained": [
+    "/services/ownership-transfer",
+    "/부산근저당말소등기",
+    "/부산근저당설정등기",
+    "/부산증여등기"
+   ]
+  }
+ ]
+}

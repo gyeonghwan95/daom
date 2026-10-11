@@ -65,11 +65,13 @@ export function toRelatedCardItem(v: PageVisual): RelatedCardItem {
 }
 
 /**
- * 대표 visual이 없는 페이지(블로그·지역·FAQ 등)는 업무 분류(serviceSlug)로 캐러셀 분류를 추정한다.
- * 추정이 없으면 PAGE_VISUALS 앞 8개(서비스 허브 묶음)가 모든 페이지에 똑같이 나왔다.
+ * 대표 visual이 없는 페이지(블로그·지역·FAQ 등)는 주소의 업무명(한글 경로·영문 slug)으로 캐러셀 분류를 추정한다.
+ * 페이지 데이터의 serviceSlug는 기본값(inheritance-registration)이 비용·지역·재개발 페이지에도 들어 있어 쓰지 않는다.
+ * 주소로 추정되지 않으면 PAGE_VISUALS 앞 8개(서비스 허브 묶음)를 그대로 쓴다.
  */
 const CATEGORY_BY_SERVICE: readonly [RegExp, string][] = [
-  [/inherit|renunciation|qualified|heir|estate|will|succession/, "inheritance"],
+  // 'estate'는 real-estate(부동산등기)와 겹쳐 쓰지 않는다
+  [/inherit|renunciation|qualified|heir|succession|deceased|(^|-)will(-|$)/, "inheritance"],
   [/jeonse|lease|deposit|tenant/, "lease"],
   [/rehabilitation|bankruptcy|debt|insolvency/, "rehabilitation"],
   [/corporate|company|director|head-office|capital|dissolution|purpose|startup|nonprofit|association|foundation/, "corporate"],
@@ -79,13 +81,14 @@ const CATEGORY_BY_SERVICE: readonly [RegExp, string][] = [
 const NEIGHBOR_CATEGORY: Record<string, string[]> = {
   inheritance: ["realestate"],
   lease: ["realestate"],
-  rehabilitation: ["inheritance"],
+  // 회생·파산과 직접 이어지는 분류가 없어, 모자란 자리는 기본 허브 순서로 채운다
+  rehabilitation: [],
   realestate: ["inheritance"],
   corporate: ["realestate"],
   lecture: ["lease"],
 };
 
-/** 업무 분류 값이 없는 페이지(지역 업무사례 등)는 경로의 업무명으로 추정한다 */
+/** 한글 경로의 업무명 → 없으면 영문 slug의 업무 단어로 추정한다 */
 const CATEGORY_BY_PATH: readonly [RegExp, string][] = [
   [/상속|한정승인|유증|유언/, "inheritance"],
   [/회생|파산/, "rehabilitation"],
@@ -100,7 +103,10 @@ function categoryFromPath(url: string): string | undefined {
   } catch {
     // 이미 디코딩된 경로
   }
-  return CATEGORY_BY_PATH.find(([re]) => re.test(path))?.[1];
+  return (
+    CATEGORY_BY_PATH.find(([re]) => re.test(path))?.[1] ??
+    CATEGORY_BY_SERVICE.find(([re]) => re.test(path))?.[1]
+  );
 }
 
 function relatedVisualsByCategory(currentUrl: string, category: string, limit: number): PageVisual[] {
@@ -115,14 +121,9 @@ function relatedVisualsByCategory(currentUrl: string, category: string, limit: n
 export function getRelatedContentCarousel(
   currentUrl: string,
   limit = 8,
-  hint?: { serviceSlug?: string },
 ): { heading: string; items: RelatedCardItem[] } | null {
   const current = getPageVisual(currentUrl);
-  const hintedCategory = current
-    ? undefined
-    : (hint?.serviceSlug
-        ? CATEGORY_BY_SERVICE.find(([re]) => re.test(hint.serviceSlug!))?.[1]
-        : undefined) ?? categoryFromPath(currentUrl);
+  const hintedCategory = current ? undefined : categoryFromPath(currentUrl);
   const related = hintedCategory
     ? relatedVisualsByCategory(currentUrl, hintedCategory, limit)
     : getRelatedPageVisuals(currentUrl, limit);

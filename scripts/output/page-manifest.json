@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T02:58:12.662Z",
-  "total": 1870,
+  "generatedAt": "2026-10-11T04:32:48.404Z",
+  "total": 1876,
   "paths": [
     "/",
     "/about",
@@ -1024,6 +1024,12 @@
     "/tools/payment-order-fee-check",
     "/tools/real-estate-documents-check",
     "/tools/rehab-income-debt-check",
+    "/resources",
+    "/resources/inheritance-family",
+    "/resources/unpaid-evidence",
+    "/resources/company-change",
+    "/resources/inheritance-overseas",
+    "/resources/property-closing",
     "/glossary/inheritance-registration",
     "/glossary/inheritance-renunciation",
     "/glossary/qualified-acceptance",
