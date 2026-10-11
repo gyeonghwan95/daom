@@ -5,6 +5,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { SiteImage } from "@/components/media/SiteImage";
 import { YoutubeVideoSection } from "@/components/media/YoutubeVideoSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { OfficeLocationInfo } from "@/components/contact/OfficeLocationInfo";
 import { ContentSection } from "@/components/readability";
@@ -187,6 +188,7 @@ export default function OfficePage() {
         }
       >
         <div className="space-y-10 md:space-y-12">
+          <LawyerProfileNav />
           <BusinessCredentialSlot
             fixed={{ variant: "inline", copyGroup: "general" }}
           />

@@ -296,7 +296,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     legalIssues: (identity?.checkFirst ?? whenNeeded).slice(0, 4),
     precautions: [
       "법원·등기소와 공식 제휴 관계가 아닙니다. 관할·접수 절차·준비서류를 실무 관점에서 안내합니다.",
-      "확인되지 않은 지역 통계나 성공률은 제시하지 않습니다.",
+      "막연한 통계나 성공률보다, 실제 서류를 보고 가능한 방법을 말씀드립니다.",
     ],
     procedures: service?.procedures ?? [
       "전화·카카오톡·방문(예약)으로 지역·업무·기한 확인",
@@ -614,7 +614,7 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
     legalIssues: inst.practicalNotes,
     precautions: [
       "본 사무소는 법원·등기소와 공식 제휴 관계가 아닙니다.",
-      "‘법원 지정’·‘등기소 지정’ 등 오해의 소지가 있는 표현을 사용하지 않습니다.",
+      "법원이나 등기소가 지정한 곳이 아니라, 의뢰인이 직접 선택하는 개인 법무사사무소입니다.",
       "접수 마감 시각·휴무일은 당일 기관 안내를 확인하세요.",
     ],
     procedures: service?.procedures ?? [

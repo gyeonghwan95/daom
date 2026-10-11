@@ -12,7 +12,7 @@ type RelatedLectureHistoryProps = {
 export function RelatedLectureHistory({
   items,
   title = "관련 주제로 진행한 실제 강의",
-  description = "이 주제와 연결된 확인된 출강 이력입니다.",
+  description = "이 주제와 연결된 그동안 다녀온 강의입니다.",
   moreHref = "/강의이력",
 }: RelatedLectureHistoryProps) {
   if (items.length === 0) {

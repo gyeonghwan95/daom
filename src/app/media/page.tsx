@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PaginatedPressGrid } from "@/components/profile/PaginatedPressGrid";
@@ -42,6 +43,7 @@ export default function MediaPage() {
         ]}
       >
         <div className="space-y-8">
+          <LawyerProfileNav />
           <section
             id="media-video"
             className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] card-surface p-5 md:p-8"

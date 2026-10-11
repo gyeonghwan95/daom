@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
+import { LawyerAtAGlance } from "@/components/profile/LawyerAtAGlance";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { AboutExternalActivitiesMarquee } from "@/components/profile/AboutExternalActivitiesMarquee";
 import { ActivitySectionBlock } from "@/components/profile/ActivitySectionBlock";
@@ -41,6 +43,8 @@ export default function AboutPage() {
         consultationDescription="안윤정 법무사에게 직접 상담을 요청하세요. 사건 내용을 듣고 진행 가능 여부와 예상 절차를 안내해 드립니다."
       >
         <div className="space-y-8">
+          <LawyerProfileNav />
+          <LawyerAtAGlance />
           <LawyerEeatProfile />
           <LawyerTrackRecordTables />
           <LawyerQualificationsSection profileImage={siteImages.about.profile} />

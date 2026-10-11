@@ -31,7 +31,7 @@ export function NationwideServiceCard({
       }
       lead={`거주지나 부동산·법인 소재지가 부산이 아니어도 상담부터 신청까지 진행할 수 있습니다. ${consultationInquiryCopy.oneMinuteShort}`}
       points={POINTS}
-      footnote="신청은 사건별 법정 관할 법원·등기소에 하며, 방문이 필요한 절차는 수임 전에 안내합니다."
+      footnote="신청은 사건별 법정 관할 법원·등기소에 하며, 방문이 필요한 절차가 있으면 맡기시기 전에 미리 알려드립니다."
       className={className}
     />
   );

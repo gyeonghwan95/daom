@@ -35,7 +35,7 @@ function buildRemainingRealEstateContent(
     heroParagraphs: [
       `${item.title}는 ${item.focus}을(를) 찾는 분이 상담 전 절차와 서류를 확인하기 위한 안내입니다.`,
       item.caution,
-      "부동산등기는 계약·원인·관할·세금·대출·권리관계에 따라 필요한 서류와 접수 순서가 달라집니다. 이 페이지는 일반 안내이며 세금·허가·결과를 확정하지 않습니다.",
+      "부동산등기는 계약·원인·관할·세금·대출·권리관계에 따라 필요한 서류와 접수 순서가 달라집니다. 이 페이지는 일반 안내라서, 세금·허가·결과는 실제 서류를 확인한 뒤 정확히 말씀드립니다.",
       "상담 전에는 등기부, 계약서 또는 원인 서류, 당사자 관계, 대출·압류·임대차 여부를 함께 정리하면 안내가 빨라집니다.",
       "특히 잔금일·대출 실행일·기관 서류 발급일처럼 외부 일정이 있는 사건은 하루 차이로 준비 방식이 달라질 수 있어, 현재 단계와 원하는 완료 시점을 함께 알려 주는 것이 좋습니다.",
     ],
@@ -54,7 +54,7 @@ function buildRemainingRealEstateContent(
     whenNeeded: item.situations,
     documents: item.documents,
     documentsNote:
-      "사안별 필요서류는 달라질 수 있습니다. 세금·감면·허가·소송 판단은 별도 확인이 필요할 수 있으며 이 페이지에서 확정하지 않습니다.",
+      "사안별 필요서류는 달라질 수 있습니다. 세금·감면·허가·소송 문제는 따로 확인이 필요할 수 있어, 해당하는 부분은 상담하면서 짚어 드립니다.",
     procedures: item.procedures,
     commonMistakes: item.mistakes,
     faqs: item.faqs,
@@ -67,7 +67,7 @@ function buildRemainingRealEstateContent(
       { href: "/contact", label: "상담 문의" },
     ],
     bottomCtaText:
-      "등기부·계약서·원인 서류와 현재 진행 단계를 알려 주시면 필요한 서류와 접수 순서를 상담 기준으로 정리해 드립니다. 세금·허가·완료일은 확정하지 않습니다.",
+      "등기부·계약서·원인 서류와 현재 진행 단계를 알려 주시면 필요한 서류와 접수 순서를 상담 기준으로 정리해 드립니다. 세금·허가·완료일처럼 미리 정할 수 없는 부분은 그 이유와 함께 설명해 드립니다.",
     serviceSlug: item.serviceSlug,
   };
 }

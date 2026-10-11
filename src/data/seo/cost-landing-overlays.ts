@@ -33,7 +33,7 @@ function supportFeeOverlay(opts: {
     slug: opts.slug,
     introParagraphs: [
       opts.intro,
-      `세금·수수료·법원 비용과 법무사 보수를 항목별로 나눈 자세한 설명은 ${opts.primaryLabel}에 정리돼 있습니다. 근거 없는 고정 금액은 제시하지 않습니다. 검토일 2026-08-26.`,
+      `세금·수수료·법원 비용과 법무사 보수를 항목별로 나눈 자세한 설명은 ${opts.primaryLabel}에 정리돼 있습니다. 금액은 실제 상황을 확인한 뒤 항목별로 설명해 드립니다. 검토일 2026-08-26.`,
     ],
     sections: [
       {

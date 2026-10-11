@@ -285,8 +285,8 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
               {compact
-                ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 수상·자격·공공 위촉 등 확인 가능한 신호는 아래에, 전체 이력은 프로필에서 이어집니다.`
-                : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래는 실무경력·자격·수상·위원 위촉·강의·언론 활동을 정리한 공식 프로필이며, 일자별 위원회·강의 실적 표는 이어서 확인하실 수 있습니다.`}
+                ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 어떤 사람이 내 일을 맡는지 궁금하실 분들을 위해 자격·수상·위촉 이력을 아래에 모았습니다. 전체 이력은 프로필에서 이어집니다.`
+                : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.region} ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래에 실무경력·자격·수상·위원 위촉·강의·언론 활동을 차례로 정리했습니다. 날짜별 위원회·강의 기록은 그 아래 표에서 이어서 보실 수 있습니다.`}
             </p>
             {compact ? (
               <p className="mt-2 text-xs font-medium text-navy/55">
@@ -325,7 +325,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
               </EeatSection>
               <EeatSection
                 id="awards"
-                title="확인 가능한 신뢰 신호"
+                title="수상"
                 moreHref="/about#awards"
                 showMore
               >
@@ -371,7 +371,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
                   ))}
                 </ul>
                 <p className="mt-4 text-sm leading-relaxed text-navy/65">
-                  언론 보도·공공활동·강의 이력은 프로필과 언론 페이지에서 확인하실 수 있습니다.
+                  방송·신문 인터뷰와 강의 현장 사진은 프로필과 언론 페이지에서 보실 수 있습니다.
                 </p>
               </EeatSection>
             </>

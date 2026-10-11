@@ -1,3 +1,4 @@
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
 import Link from "next/link";
 import { LectureHistoryFilter } from "@/components/lectures/history/LectureHistoryFilter";
 import { LectureTrackRecordSummaryView } from "@/components/lectures/history/LectureTrackRecordSummary";
@@ -20,6 +21,7 @@ export function LectureHistoryHubView() {
 
   return (
     <div className="space-y-10 md:space-y-12">
+      <LawyerProfileNav />
       <section className="rounded-2xl border border-beige-dark bg-white p-5 md:p-8">
         <p className="text-sm font-medium text-navy/60">Speaker track record</p>
         <h2 className="mt-2 text-xl font-bold text-navy md:text-2xl">
@@ -27,8 +29,8 @@ export function LectureHistoryHubView() {
         </h2>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           법률 용어를 나열하기보다, 실제 생활에서 어떤 부분을 확인하고 어떻게
-          예방할 수 있는지 사례 중심으로 설명합니다. 아래 이력은 프로젝트에
-          확인된 기관·일정·사진만 포함합니다.
+          예방할 수 있는지 사례 중심으로 설명합니다. 아래에는 실제로 다녀온
+          기관과 일정, 현장 사진을 모았습니다.
         </p>
         <ul className="mt-5 flex flex-wrap gap-2">
           {FIELD_SUMMARY.map((label) => (

@@ -105,7 +105,7 @@ export const jeonseSpec: LectureTargetSpec = {
       ],
     },
   ],
-  evidenceIntro: "기관명·일자가 확인된 전세사기 예방 강의 기록입니다.",
+  evidenceIntro: "그동안 진행한 전세사기 예방 강의입니다.",
   approachTitle: "전세사기 예방교육 진행 원칙",
   approach: [
     "공포를 키우는 사례 나열보다, 참석자가 계약 전날 스스로 확인할 수 있는 순서를 남기는 것을 목표로 합니다. 체크리스트 한 장을 들고 돌아가게 합니다.",
@@ -136,7 +136,7 @@ export const jeonseSpec: LectureTargetSpec = {
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "대학생 주거계약 특강" },
     { href: "/법률강의", label: "생활법률 특강", description: "시민 연속 강좌 1회차 전·월세" },
     { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위" },
-    { href: "/강의이력", label: "확인된 강의 이력", description: "전세사기 예방 강의 기록" },
+    { href: "/강의이력", label: "그동안 다녀온 강의", description: "전세사기 예방 강의 기록" },
     { href: "/전세사기피해대응절차", label: "이미 보증금 문제가 생긴 경우", description: "예방교육이 아닌 대응 절차 안내" },
   ],
   inquiryTopic: "전세사기 예방교육",
@@ -282,11 +282,11 @@ export const lifeLawSpec: LectureTargetSpec = {
       outline: ["자주 받는 이용자 질문 유형", "안내 범위와 연계 기관", "사례 검토", "질의응답"],
     },
   ],
-  evidenceIntro: "생활법률 주제로 기관명·일자가 확인된 강의 기록입니다.",
+  evidenceIntro: "생활법률을 주제로 기관·시민들과 함께했던 강의입니다.",
   approachTitle: "생활법률 특강 진행 방식",
   approach: [
     "법 조문 설명보다 ‘이럴 때 무엇을 먼저 확인하는가’를 순서로 남깁니다. 회차마다 한 장짜리 확인표를 드립니다.",
-    "상속·계약·분쟁처럼 사무소 업무와 가까운 주제도 강의에서는 일반 원칙만 다루고, 특정 사건 상담이나 수임 권유로 이어지지 않도록 운영합니다.",
+    "상속·계약·분쟁처럼 사무소 업무와 가까운 주제도 강의에서는 일반 원칙을 쉽게 풀어 드립니다. 개인 사건 상담이나 수임 권유는 하지 않아 참석자분들이 편하게 들으실 수 있습니다.",
   ],
   scopeExclusions: [
     "청렴·성희롱예방 등 법정 지정교육",
@@ -305,7 +305,7 @@ export const lifeLawSpec: LectureTargetSpec = {
   profileGuide: [
     "평생학습 강좌 개설용 강사 소개 문구와 회차별 강의계획서를 드립니다.",
     "도서관·기관 홍보물에 쓸 강의 제목을 회차별로 제안합니다.",
-    "강사 프로필은 법무사 자격과 확인된 기관 출강 기록 중심으로 작성합니다.",
+    "강사 프로필에는 법무사 자격과 그동안 출강한 기관 이력을 담아 드립니다.",
   ],
   photos: [targetPhotos.citizenWeek2, targetPhotos.citizenWeek3],
   related: [
@@ -316,7 +316,7 @@ export const lifeLawSpec: LectureTargetSpec = {
     { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "등기부·특약 실습" },
     { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위" },
     { href: "/강사소개", label: "강사 프로필", description: "자격·출강 기록" },
-    { href: "/강의이력", label: "확인된 강의 이력", description: "기관명·일자 기록" },
+    { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 기록" },
   ],
   inquiryTopic: "생활법률 특강",
   inquiryAudience: "도서관·시민",
@@ -396,7 +396,7 @@ export const speakerSpec: LectureTargetSpec = {
     {
       title: "실제로 출강한 기관",
       description:
-        "부산광역시립시민도서관, 부산광역시 자립지원전담기관, 해운대청년채움공간, 창원청년비전센터, 양산제일고등학교 등 기관명·일자가 확인된 기록만 공개합니다.",
+        "부산광역시립시민도서관, 부산광역시 자립지원전담기관, 해운대청년채움공간, 창원청년비전센터, 양산제일고등학교 등 여러 기관에서 시민·청년·학생들과 만나 왔습니다.",
     },
     {
       title: "강의할 수 있는 주제의 경계",
@@ -464,11 +464,11 @@ export const speakerSpec: LectureTargetSpec = {
     },
   ],
   evidenceIntro:
-    "기관명·일자가 확인된 대표 출강 기록입니다. 전체 목록은 강의 이력에서 볼 수 있습니다.",
+    "그동안 다녀온 대표 강의입니다. 전체 목록은 강의 이력에서 볼 수 있습니다.",
   approachTitle: "출강·온라인 진행 기준",
   approach: [
     "부산·경남은 대면 출강을 기본으로 하고, 그 밖의 지역은 온라인 강의를 먼저 제안합니다. 먼 곳의 대면 출강은 일정과 이동 조건을 협의합니다.",
-    "모든 강의는 확인된 사실만 안내합니다. 강의 효과나 시험 합격을 약속하지 않고, 확인되지 않은 수상·실적·인원을 프로필에 적지 않습니다.",
+    "강사 프로필에는 실제 자격과 직접 다녀온 강의만 정직하게 담습니다.",
   ],
   scopeExclusions: [
     "법정의무교육(청렴·성희롱예방·산업안전 등)",
@@ -485,7 +485,7 @@ export const speakerSpec: LectureTargetSpec = {
     "행정 서류 범위",
   ],
   profileGuide: [
-    "인쇄용 강사 프로필(1쪽): 자격·학력·확인된 출강 기록",
+    "인쇄용 강사 프로필(1쪽): 자격·학력·출강 기록",
     "강의계획서: 기관 양식 또는 기본 개요(목표·차시·준비물)",
     "강사 사진·소개 문구: 홍보물용으로 제공",
     "외부강사 행정 서류는 기관 안내에 따라 따로 제출합니다. 주민등록번호·통장 사본 등은 공개 페이지에 싣지 않습니다.",
@@ -498,7 +498,7 @@ export const speakerSpec: LectureTargetSpec = {
     { href: "/부산대학교특강", label: "대학교 특강", description: "비교과·진로" },
     { href: "/법무사진로특강", label: "진로특강", description: "법 관련 직업인 특강" },
     { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "청년·자립준비청년" },
-    { href: "/강의이력", label: "확인된 강의 이력", description: "기관명·일자 기록" },
+    { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 기록" },
     { href: "/부산법률전문가", label: "법률 실무·공공활동", description: "강의 외 활동 소개" },
   ],
   inquiryTopic: "기관 맞춤 기획",
@@ -535,7 +535,7 @@ export const speakerContent = buildTargetContent({
     },
     {
       question: "강의 이력은 어디서 확인하나요?",
-      answer: "강의 이력 페이지에 기관명·일자·주제가 확인된 기록만 올립니다.",
+      answer: "강의 이력 페이지에 다녀온 기관·날짜·주제를 함께 정리해 두었습니다.",
     },
     {
       question: "이 페이지에서 사건 상담도 받나요?",

@@ -330,7 +330,7 @@ export function buildLocalLandingPage(
           : `${config.regionLabel} ${procedureLabel}, 거주 지역 상담`,
       description: isBankruptcyOverview
         ? "파산이라는 말과 개인파산·면책 신청을 구분하는 안내입니다. 자격·서류·부산회생법원 준비는 부산 개인파산 안내에서 이어집니다."
-        : `${config.regionLabel} ${procedureLabel} 상담 안내. 부산회생법원 관할. 소득·채무·재산 기준으로 준비 순서를 안내하며 인가·면책은 보장하지 않습니다.`,
+        : `${config.regionLabel} ${procedureLabel} 상담 안내. 부산회생법원 관할. 소득·채무·재산 기준으로 준비 순서를 안내하며 인가·면책 여부는 법원이 판단합니다.`,
       regionLabel: config.regionLabel,
       regionKey: config.regionKey,
       neighborhoods: config.neighborhoods,
@@ -354,7 +354,7 @@ export function buildLocalLandingPage(
       },
       consultationCase: {
         title: `${withRegionLabel(config.regionLabel, procedureLabel)} 상담`,
-        summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내한 사례입니다. 인가 결과를 단정하지 않습니다.`,
+        summary: `${config.caseAngle ?? `${procedureLabel} 상담`}. 소득·채무·재산을 표로 나눈 뒤 준비 순서를 안내한 사례입니다. 인가 여부는 법원이 판단합니다.`,
         href: config.relatedCaseSlug
           ? `/services/cases/${config.relatedCaseSlug}`
           : undefined,
@@ -372,7 +372,7 @@ export function buildLocalLandingPage(
         (issue) => `${config.regionLabel} 사건에서도 ${issue}`,
       ),
       precautions: [
-        "이 안내는 일반 법률정보이며 개별 인가·면책을 보장하지 않습니다.",
+        "이 안내는 일반 법률정보입니다. 인가·면책은 법원이 판단하므로, 그 과정을 꼼꼼히 준비하도록 돕겠습니다.",
         `${config.regionLabel} 페이지는 지역 상담 진입점이며, 제도 전체는 상위 허브에서 확인하세요.`,
       ],
       procedures: service.procedures.map((step, i) =>

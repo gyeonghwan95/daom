@@ -141,8 +141,8 @@ export const ulsanRemoteInheritanceDefs: SoutheastLandingDef[] = [
       "/부모빚상속방법",
     ],
     ctaTitle: "울주 상속포기·한정승인 상담",
-    ctaDescription: "사망일과 확인된 채무·재산만 알려주셔도 다음 순서를 안내합니다.",
+    ctaDescription: "사망일과 알고 있는 채무·재산만 알려주셔도 다음 순서를 안내합니다.",
     visitHint: "법원 제출서류에 인감·서명 확인이 필요하면 방문 또는 절차 안내를 함께 드립니다.",
-    remoteHint: "사망일과 확인된 채무·재산 목록만으로 먼저 비대면 상담을 시작할 수 있습니다.",
+    remoteHint: "사망일과 알고 있는 채무·재산 목록만으로 먼저 비대면 상담을 시작할 수 있습니다.",
   }),
 ];

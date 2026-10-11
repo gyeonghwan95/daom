@@ -1,3 +1,4 @@
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
 import Image from "next/image";
 import Link from "next/link";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -89,6 +90,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
           ) : null}
         </div>
       </header>
+      <LawyerProfileNav className="mt-5" />
 
       <ContentSection id="situation" title={spec.situationTitle}>
         <CardGrid cards={spec.situations} />
@@ -130,7 +132,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
         </div>
       </ContentSection>
 
-      <ContentSection id="evidence" title="확인된 강의 근거">
+      <ContentSection id="evidence" title="이 주제로 진행한 강의">
         <p className="mb-4 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           {spec.evidenceIntro}
         </p>
@@ -139,10 +141,10 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
             const history = item.historyId ? historyById.get(item.historyId) : undefined;
             const badge =
               item.status === "PARTIAL"
-                ? "강의 외 협업"
+                ? "기관 협업"
                 : item.applicability === "DIRECT"
-                  ? "같은 대상·주제"
-                  : "관련 대상 강의";
+                  ? "같은 주제 강의"
+                  : "관련 강의";
             const body = (
               <>
                 <span className="text-[11px] font-semibold text-navy/55">
@@ -223,8 +225,8 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
           ))}
         </ul>
         <p className="mt-3 text-sm font-medium text-navy">
-          기관 강사료 기준이 있다면 알려주세요. 고정 단가를 먼저 제시하지 않고, 기준표에
-          맞춰 가능한 구성을 회신합니다.
+          기관 강사료 기준이 있다면 알려주세요. 그 기준에 맞춰 가능한 구성을
+          정성껏 제안드리겠습니다.
         </p>
       </ContentSection>
 

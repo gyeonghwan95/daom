@@ -75,8 +75,8 @@ export function RemoteLegalProcess({
 
       <p className="mt-5 rounded-lg border border-beige-dark bg-white px-4 py-3 text-sm leading-relaxed text-navy/75">
         사건별 본인확인, 인감·서명, 원본서류, 해외서류 또는 기관의 추가 요구에
-        따라 방문이나 별도 절차가 필요할 수 있습니다. 모든 사건이 완전 비대면으로
-        끝난다고 단정하지 않습니다.
+        따라 방문이나 별도 절차가 필요할 수 있습니다. 그런 경우에는 미리
+        알려드리고 일정을 함께 맞춰 드립니다.
       </p>
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">

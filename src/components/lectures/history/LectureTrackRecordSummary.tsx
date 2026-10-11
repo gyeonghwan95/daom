@@ -12,7 +12,7 @@ export function LectureTrackRecordSummaryView({
 }: LectureTrackRecordSummaryProps) {
   const items = [
     {
-      label: "확인된 강의",
+      label: "진행한 강의",
       value: `${summary.lectureCount}회`,
     },
     {
@@ -36,9 +36,9 @@ export function LectureTrackRecordSummaryView({
     >
       {!compact ? (
         <>
-          <h2 className="text-lg font-semibold text-navy">확인된 강의 이력 요약</h2>
+          <h2 className="text-lg font-semibold text-navy">그동안 다녀온 강의 요약</h2>
           <p className="mt-2 text-sm text-navy/70">
-            확인된 데이터만 집계합니다. 수강 인원·만족도는 추정하지 않습니다.
+            숫자는 실제로 진행한 강의만 세었습니다.
           </p>
         </>
       ) : null}

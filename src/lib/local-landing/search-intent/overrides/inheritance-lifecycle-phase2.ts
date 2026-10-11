@@ -522,7 +522,7 @@ export const 사망후3개월지난상속Override: SearchIntentContent = {
   ],
   documents: [
     "사망일·인지 경위",
-    "확인된 채무·재산",
+    "알고 있는 채무·재산",
     "기한 관련 메모",
   ],
   documentsNote:
@@ -556,7 +556,7 @@ export const 사망후3개월지난상속Override: SearchIntentContent = {
   ],
   relatedGuideLinks: [consult],
   bottomCtaText:
-    "사망일·인지 경위와 확인된 채무를 남겨 주시면 기한과 관련해 우선 확인할 점을 안내합니다.",
+    "사망일·인지 경위와 알고 있는 채무를 남겨 주시면 기한과 관련해 우선 확인할 점을 안내합니다.",
   serviceSlug: "qualified-acceptance",
   showInheritanceCostGuide: true,
   proseSections: [
@@ -572,7 +572,7 @@ export const 사망후3개월지난상속Override: SearchIntentContent = {
       id: "what-to-send",
       title: "상담에 남기면 좋은 최소 정보",
       paragraphs: [
-        "사망일·인지 경위·확인된 채무·이미 한 처분(계좌 인출 등)만 있어도 우선 확인할 점을 정리할 수 있습니다. 블로그 상세 안내와 병행해 보시면 좋습니다.",
+        "사망일·인지 경위·알고 있는 채무·이미 한 처분(계좌 인출 등)만 있어도 우선 확인할 점을 정리할 수 있습니다. 블로그 상세 안내와 병행해 보시면 좋습니다.",
       ],
     },
   ],

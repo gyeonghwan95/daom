@@ -99,7 +99,7 @@ function HistoryCard({
  * 검증된 출강 이력만 표시. 미확인 만족도·재초청 문구는 넣지 않습니다.
  */
 export function VerifiedLectureHistory({
-  title = "확인된 출강 이력",
+  title = "그동안 다녀온 강의",
   description = "날짜·기관·주제가 프로젝트 자료로 확인된 강의만 모아 두었습니다.",
   historyIds,
   limit = 6,

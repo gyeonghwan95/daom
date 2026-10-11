@@ -11,7 +11,7 @@ import {
 import { caseNationwidePath, type RegionLandingDef } from "./types";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 달라질 수 있습니다. 실제 수행하지 않은 사건을 성공사례처럼 단정하지 않습니다.";
+  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 달라질 수 있습니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
 
 const TRUST_ITEMS = [
   "안윤정 법무사 직접 확인",
@@ -285,7 +285,7 @@ export function buildNationwideCasePageData(
         },
         {
           title: titles[4]!,
-          body: "법무사 보수와 취득세·국민주택채권·등기신청수수료 등 공과금을 구분해 안내합니다. 서류 확인 전 확정액을 단정하지 않습니다.",
+          body: "법무사 보수와 취득세·국민주택채권·등기신청수수료 등 공과금을 나눠서 알기 쉽게 설명해 드립니다. 정확한 금액은 서류를 확인한 뒤 말씀드립니다.",
         }
         ] as PageSection[])),
     {

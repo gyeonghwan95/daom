@@ -67,13 +67,13 @@ function buildSpecialBody(
 
   if (content.procedures.length) {
     paragraphs.push(
-      `실제 진행은 보통 ${content.procedures.join(" → ")} 순서로 이어집니다. 사안마다 주무관청·결의·관할이 달라질 수 있어, 단정하지 않고 현황부터 확인하는 편이 안전합니다.`,
+      `실제 진행은 보통 ${content.procedures.join(" → ")} 순서로 이어집니다. 사안마다 주무관청·결의·관할이 달라질 수 있어, 현재 상황부터 차근차근 확인하는 편이 안전합니다.`,
     );
   }
 
   if (content.documents.length) {
     paragraphs.push(
-      `상담·접수 전에 자주 확인하는 서류로는 ${content.documents.slice(0, 5).join(", ")} 등이 있습니다. 사건마다 추가·생략이 있을 수 있어 목록만으로 단정하지 않습니다.`,
+      `상담·접수 전에 자주 확인하는 서류로는 ${content.documents.slice(0, 5).join(", ")} 등이 있습니다. 사건마다 더하거나 빠지는 서류가 있어, 실제 필요한 목록은 상황을 듣고 정리해 드립니다.`,
     );
   }
 

@@ -224,8 +224,8 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
       <ContentSection id="office" title="해운대·센텀 사무소에서 상담합니다">
         <ProseParagraphs
           paragraphs={[
-            `${busanLawyerHubNap.officeName}는 ${busanLawyerHubNap.address}에 있습니다. ${busanLawyerHubNap.access}. 부산지방법원 바로 앞은 아니지만, 부동산·법인 본점이 부산 어디에 있든 상담은 가능합니다.`,
-            "법원·등기소와 공식 제휴 관계는 아닙니다. 관할·접수·서류는 실무 기준으로 안내합니다.",
+            `${busanLawyerHubNap.officeName}는 ${busanLawyerHubNap.address}에 있습니다. ${busanLawyerHubNap.access}. 부동산·법인 본점이 부산 어디에 있든 편하게 상담하실 수 있습니다.`,
+            "법원·등기소와 별개인 개인 법무사사무소로, 관할·접수·서류는 실무 기준으로 꼼꼼히 안내해 드립니다.",
             `주소·전화·상담 시간·업무 범위는 ${busanLawyerHubReviewedLabel} 기준으로 이 페이지에서 확인할 수 있습니다.`,
           ]}
         />

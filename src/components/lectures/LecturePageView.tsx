@@ -283,11 +283,11 @@ function ExpertLayout({
 
       <SpeakerLectureGallery compact dualRow={false} />
 
-      <ContentSection id="verified-history" title="확인된 출강 이력">
+      <ContentSection id="verified-history" title="그동안 다녀온 강의">
         <VerifiedLectureHistory
           historyIds={content.historyIds}
           limit={6}
-          title="기관명·주제가 확인된 강의"
+          title="이 주제로 진행한 강의"
           description="확인되지 않은 횟수나 효과를 적지 않습니다."
         />
       </ContentSection>
@@ -389,7 +389,7 @@ function HiringLayout({
 
       <SpeakerLectureGallery compact dualRow />
 
-      <ContentSection id="verified-history" title="확인된 출강 이력">
+      <ContentSection id="verified-history" title="그동안 다녀온 강의">
         <VerifiedLectureHistory
           historyIds={content.historyIds}
           limit={6}
@@ -559,7 +559,7 @@ function HubLayout({
         secondaryHref="/강의이력"
       />
 
-      <ContentSection id="history" title="확인된 강의 이력">
+      <ContentSection id="history" title="그동안 다녀온 강의">
         <FeaturedLectureHistory
           summary={buildLectureTrackRecordSummary()}
           featured={getFeaturedLectureHistory()}
@@ -769,8 +769,8 @@ function TopicLayout({
         <ContentSection id="history" title="이 주제의 실제 강의">
           <RelatedLectureHistory
             items={history}
-            title="확인된 출강 이력"
-            description="기관명·일정이 확인된 관련 강의입니다."
+            title="그동안 다녀온 강의"
+            description="같은 주제로 진행했던 강의입니다."
           />
         </ContentSection>
       ) : content.historyIds.length ? (

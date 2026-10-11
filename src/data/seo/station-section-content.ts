@@ -57,7 +57,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
       { href: "/부산임원변경등기", label: "임원변경등기 기한·서류" },
     ],
     checklist: [
-      "상속: 가족관계·등기부·확인된 채무",
+      "상속: 가족관계·등기부·알고 있는 채무",
       "법인: 결의일·임기·정관",
     ],
   },

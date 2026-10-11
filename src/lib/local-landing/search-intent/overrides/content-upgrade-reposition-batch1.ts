@@ -9,7 +9,7 @@ const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 상담 전 확인용이며 개별 사안 확정 의견이 아닙니다. 확인 기준일: 2026-09-23.";
 
 const scope =
-  "법무사 업무범위(법무사법 제2조) 안에서 서류 작성·등기·신청 대리를 안내합니다. 소송 대리·세무 확정·결과 보장은 하지 않습니다.";
+  "법무사 업무범위(법무사법 제2조) 안에서 서류 작성부터 등기·신청 대리까지 맡아 진행합니다. 소송 대리나 세무 확정은 법무사 업무가 아니어서, 필요하면 미리 말씀드립니다.";
 
 function base(
   partial: Omit<SearchIntentContent, "relatedCaseLinks" | "relatedServiceLinks" | "relatedGuideLinks" | "bottomCtaText" | "documentsNote"> &

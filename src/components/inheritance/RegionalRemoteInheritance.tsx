@@ -87,9 +87,9 @@ export function RegionalRemoteInheritance({
       </ol>
 
       <p className="mt-5 rounded-lg border border-beige-dark bg-white px-4 py-3 text-sm leading-relaxed text-navy/75">
-        사건별 관할, 본인확인, 인감·서명, 원본서류와 해외서류 요건에 따라 추가
-        절차가 필요할 수 있습니다. 모든 사건이 완전 비대면으로 끝난다고 단정하지
-        않습니다.
+        사건별 관할, 본인확인, 인감·서명, 원본서류와 해외서류 요건에 따라 방문이나
+        추가 절차가 필요한 경우도 있습니다. 그런 경우에는 미리 알려드리고 일정을
+        함께 맞춰 드립니다.
       </p>
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">

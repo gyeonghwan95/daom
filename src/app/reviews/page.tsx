@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { NaverReviewsSection } from "@/components/reviews/NaverReviewsSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
@@ -26,6 +27,7 @@ export default function ReviewsPage() {
         ]}
         showConsultationCTA
       >
+        <LawyerProfileNav className="mb-6" />
         <section
           id="reviews"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"

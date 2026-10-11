@@ -234,10 +234,10 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
 
       <ContentSection id="procedures" title="예상 절차">
         <StepTimeline steps={situation.procedures} />
-        <WarningBox title="법률·절차 고지">
+        <WarningBox title="함께 확인해 주세요">
           <p>
             위 순서는 일반적인 흐름입니다. 관할·서류·당사자 관계·시점에 따라
-            달라질 수 있으며, 본 안내는 법률 자문을 대체하지 않습니다.
+            달라질 수 있어, 내 상황에 맞는 순서는 상담에서 함께 정리해 드립니다.
           </p>
         </WarningBox>
       </ContentSection>

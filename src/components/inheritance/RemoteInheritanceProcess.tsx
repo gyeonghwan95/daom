@@ -46,7 +46,7 @@ export function RemoteInheritanceProcess({
         상속인이 여러 지역에 있어도 절차부터 확인할 수 있습니다
       </h2>
       <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/80 sm:text-base">
-        사망일, 상속인 구성, 부동산과 확인된 채무를 전화·카카오톡·네이버 톡톡으로
+        사망일, 상속인 구성, 부동산과 알고 있는 채무를 전화·카카오톡·네이버 톡톡으로
         먼저 알려주시면 필요한 업무와 준비자료를 확인합니다. 사건에 따라
         가족관계서류, 등기사항증명서, 재산조회 결과 등을 사진·전자파일·우편으로
         전달할 수 있습니다.
@@ -71,8 +71,8 @@ export function RemoteInheritanceProcess({
 
       <p className="mt-5 rounded-lg border border-beige-dark bg-white px-4 py-3 text-sm leading-relaxed text-navy/75">
         원본서류, 본인확인, 해외서류 또는 개별 기관의 요구에 따라 추가 절차가
-        필요할 수 있습니다. 모든 사건이 완전 비대면으로 처리된다고 단정하지
-        않습니다.
+        필요할 수 있습니다. 그런 경우에는 미리 알려드리고 일정을 함께 맞춰
+        드립니다.
       </p>
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">

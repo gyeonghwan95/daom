@@ -255,7 +255,7 @@ function faqFor(entry: CaseRegionEntry, seed: number) {
     {
       question: "사례와 비슷하면 결과도 같나요?",
       answer:
-        "아니요. 본 페이지의 사례는 참고용이며, 사실관계·서류·관할·기한에 따라 절차와 결과가 달라질 수 있습니다. 허위 사건번호나 성공률을 제시하지 않습니다.",
+        "아니요. 여기 소개한 사례는 참고용입니다. 사실관계·서류·관할·기한에 따라 절차와 결과가 달라질 수 있어, 숫자로 장담하기보다 실제 서류를 함께 보며 말씀드립니다.",
     },
     {
       question: `${place} 관할 등기소는 어디인가요?`,
@@ -392,7 +392,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
       },
       {
         title: "참고용 업무 사례",
-        body: "개인정보는 비공개이며, 사건 유형과 점검 포인트 위주로 정리했습니다. 유사해도 결과가 같다고 단정하지 않습니다.",
+        body: "의뢰인 개인정보는 공개하지 않고, 비슷한 상황에서 함께 살펴볼 점 위주로 정리했습니다. 상황이 비슷해 보여도 서류와 사정에 따라 결과가 달라질 수 있어, 내 경우는 따로 꼼꼼히 확인해 드립니다.",
         items: vignettes.map((v) => `${v.title}: ${v.body}`),
       },
       {

@@ -103,8 +103,8 @@ export function ToolCalculatorView({
         </p>
         <WarningBox title="계산기 안내">
           <p>
-            본 계산기는 참고용이며, 사안에 따라 결과가 달라질 수 있습니다.
-            확정적인 법률 판단이나 금액 산정을 대신하지 않습니다.
+            계산 결과는 대략적인 참고용입니다. 실제 금액과 판단은 사안에 따라
+            달라질 수 있으니, 궁금한 점은 언제든 물어봐 주세요.
           </p>
         </WarningBox>
         <div className="rounded-2xl border border-navy/10 bg-gradient-to-br from-white via-cream/20 to-beige/30 p-5 sm:p-6">

@@ -106,7 +106,7 @@ export function LectureHistoryFilter({ items }: LectureHistoryFilterProps) {
       </div>
 
       <p className="text-sm text-navy/60" aria-live="polite">
-        확인된 이력 {filtered.length}건
+        강의 이력 {filtered.length}건
       </p>
 
       <LectureHistoryTimeline items={filtered} />

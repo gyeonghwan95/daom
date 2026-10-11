@@ -53,7 +53,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
     ],
     checkFirst: [
       "부동산·법인 주소가 연제구인지, 등기는 거주지와 별개인지",
-      "상속이면 사망일·상속인 범위·확인된 채무",
+      "상속이면 사망일·상속인 범위·알고 있는 채무",
       "법인이면 본점 주소·변경 사유·결의 진행 여부",
     ],
     typicalSituations: [

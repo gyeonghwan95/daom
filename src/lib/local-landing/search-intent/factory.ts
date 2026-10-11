@@ -218,7 +218,7 @@ export function buildSearchIntentContent(
     heroParagraphs: [
       `${seed.label} 관련 업무를 알아볼 때는 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
       OFFICE,
-      "이 안내는 특정 사무소를 ‘추천’하거나 전문 자격을 단정하지 않습니다. 상담 전에 스스로 확인할 수 있는 체크포인트를 정리했습니다.",
+      "어느 사무소에 맡기시든 도움이 되도록, 상담 전에 직접 확인해 보실 수 있는 기준을 정리했습니다.",
     ],
     summaryBullets: [
       `${seed.label}는 ${seed.focus}를 중심으로 서류·절차·비용을 함께 봅니다.`,

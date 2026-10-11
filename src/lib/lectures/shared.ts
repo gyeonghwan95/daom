@@ -80,7 +80,7 @@ export const preparationDefault = [
 ];
 
 export const commonDisclaimer =
-  "강의 성사·수강 만족·교육 효과를 보장하지 않습니다. 청렴·성희롱예방·산업안전 등 별도 자격·지정요건이 필요한 법정의무교육은 본 안내 범위에 포함하지 않습니다. 법령·제도는 시점·사안에 따라 달라질 수 있습니다.";
+  "청렴·성희롱예방·산업안전처럼 별도 자격·지정요건이 필요한 법정의무교육은 맡지 않습니다. 법령·제도는 시점에 따라 바뀔 수 있어, 강의 전에 최신 내용으로 다시 확인해 준비합니다.";
 
 export const relatedAll: LecturePageContent["relatedLectureLinks"] = [
   { href: "/부산법률전문가", label: "법률 실무·강의 활동 전체 소개" },

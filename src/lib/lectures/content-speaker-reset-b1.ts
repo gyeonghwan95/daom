@@ -148,7 +148,7 @@ export const busanHubSpec: LectureTargetSpec = {
     "강의계획서·결과보고 등 서류 요청 범위",
   ],
   profileGuide: [
-    "강사 프로필: 법무사 자격, 교육대학원 석사·교사 자격, 확인된 출강 기록을 한 장으로 정리해 드립니다.",
+    "강사 프로필: 법무사 자격, 교육대학원 석사·교사 자격, 출강 기록을 한 장으로 정리해 드립니다.",
     "강의계획서: 기관 양식이 있으면 양식에 맞춰, 없으면 목차·시간 배분·준비물을 담은 개요로 보냅니다.",
     "사진·자료: 강의 사진의 홍보 사용은 참석자 초상권을 고려해 기관과 협의합니다.",
   ],
@@ -161,7 +161,7 @@ export const busanHubSpec: LectureTargetSpec = {
     { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "청년·자립준비청년 대상" },
     { href: "/강사소개", label: "강사 프로필", description: "자격·출강 기록·강의계획서" },
     { href: "/부산강사섭외체크리스트", label: "외부강사 섭외 체크리스트", description: "섭외 전 확인 항목" },
-    { href: "/강의이력", label: "확인된 강의 이력", description: "기관명·일자 확인 기록" },
+    { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 확인 기록" },
   ],
   inquiryTopic: "기관 맞춤 기획",
 };

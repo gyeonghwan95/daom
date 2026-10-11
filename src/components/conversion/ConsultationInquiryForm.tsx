@@ -390,7 +390,7 @@ export function ConsultationInquiryForm({
         </p>
         <ul className="inquiry-form__reassure">
           <li>제출하시면 사무소 이메일로 안전하게 전달됩니다</li>
-          <li>사이트에는 개인정보를 저장하지 않습니다</li>
+          <li>남겨 주신 개인정보는 사이트에 따로 보관하지 않으니 안심하셔도 됩니다</li>
           <li>급하시면 전화·카카오톡·톡톡도 이용하실 수 있습니다</li>
         </ul>
       </header>

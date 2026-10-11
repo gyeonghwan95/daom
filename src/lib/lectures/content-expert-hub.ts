@@ -46,7 +46,7 @@ export const expertHubPage: LecturePageContent = {
   summaryItems: [
     { label: "자격", value: "법무사 · 공인중개사 · 신용관리사 · 직업상담사" },
     { label: "실무", value: "상속등기 · 부동산등기 · 법인등기 · 개인회생·파산" },
-    { label: "교육", value: "기관·도서관·청년·기업 특강 (확인된 이력)" },
+    { label: "교육", value: "기관·도서관·청년·기업 특강" },
     { label: "공공·언론", value: "위원·자문 · 보도 · 기업 MOU" },
   ],
   topicCards: [
@@ -174,7 +174,7 @@ export const expertHubPage: LecturePageContent = {
     { href: "/법률강의", label: "법률 강의·특강 안내" },
     { href: "/기업법률교육", label: "기업 특강·임직원 교육" },
     { href: "/강사소개", label: "강사 프로필" },
-    { href: "/강의이력", label: "확인된 출강 이력" },
+    { href: "/강의이력", label: "그동안 다녀온 강의" },
     { href: "/부산법률강사", label: "강사 초빙·섭외 안내" },
     { href: "/창업법률교육", label: "창업 법률교육" },
     { href: "/강의문의", label: "강의·섭외 문의" },

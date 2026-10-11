@@ -82,7 +82,7 @@ export const lectureEvidenceRegistry: LectureEvidenceRecord[] = [
     date: "2026-07-16",
     status: "COMPLETED_VERIFIED",
     groups: { enterprise: "RELATED", university: "RELATED", "busan-hub": "DIRECT" },
-    publicNote: "예비창업 청년 대상 계약·법인설립 기초 특강. 기업 사내 강연은 아닙니다.",
+    publicNote: "예비창업 청년 대상 계약·법인설립 기초 특강.",
     sourceNote: "history.ts verified",
   },
   {
@@ -126,7 +126,7 @@ export const lectureEvidenceRegistry: LectureEvidenceRecord[] = [
     date: "2025",
     status: "COMPLETED_VERIFIED",
     groups: { enterprise: "RELATED", "life-law": "DIRECT", "busan-hub": "DIRECT" },
-    publicNote: "공공기관·혁신센터 협업 생활법률 프로그램. 기업 임직원 교육은 아닙니다.",
+    publicNote: "공공기관·혁신센터와 함께한 청년·시민 생활법률 프로그램.",
     sourceNote: "history.ts verified",
   },
   {
@@ -168,7 +168,7 @@ export const lectureEvidenceRegistry: LectureEvidenceRecord[] = [
     institution: "명례일반산업단지",
     status: "PARTIAL",
     groups: { enterprise: "RELATED" },
-    publicNote: "입주기업 법률지원 협약. 강의 실적이 아니라 기업 협업 근거로만 안내합니다.",
+    publicNote: "입주기업에 법률 지원을 함께하는 협약입니다.",
     sourceNote: "활동-명례일반산업단지MOU.png · 강의 아님",
   },
   {

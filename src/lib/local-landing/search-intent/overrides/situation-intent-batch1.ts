@@ -30,7 +30,7 @@ const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 상담 전 확인용이며 개별 사안 확정 의견이 아닙니다. 확인 기준일: 2026-08-11.";
 
 const scope =
-  "법무사 업무범위(법무사법 제2조) 안에서 서류 작성·등기·신청 대리를 안내합니다. 소송 대리·세무 확정·잘못된 관할 단정은 하지 않습니다.";
+  "법무사 업무범위(법무사법 제2조) 안에서 서류 작성부터 등기·신청 대리까지 맡아 진행합니다. 소송 대리나 세무 확정은 법무사 업무가 아니어서, 필요한 부분과 관할을 미리 확인해 말씀드립니다.";
 
 /** Situation / problem intents — no lawyer-word stuffing; natural problem first. */
 export const 지급명령이의신청준비Override: SearchIntentContent = {
@@ -164,7 +164,7 @@ export const 해산간주확인절차Override: SearchIntentContent = {
   metaTitle:
     "해산간주 통지를 받았거나 의되면｜계속등기·해산 중 무엇을 보나",
   metaDescription:
-    "휴면·해산간주가 의심되거나 통지를 받은 뒤 계속등기·해산·청산 중 무엇을 확인할지 안내합니다. 과태료·허가 결과를 보장하지 않습니다.",
+    "휴면·해산간주가 의심되거나 통지를 받은 뒤 계속등기·해산·청산 중 무엇을 확인할지 안내합니다. 과태료·허가 결과는 법원·관계 기관의 판단에 따라 달라집니다.",
   h1: "해산간주가 걱정될 때, 계속등기와 해산 중 무엇을 먼저 볼까",
   eyebrow: "회사 운영 · 이미 벌어진 문제",
   heroParagraphs: [
@@ -954,7 +954,7 @@ export const 상속포기후다음순위확인Override: SearchIntentContent = {
   documents: [
     "가족관계증명·기본증명",
     "상속인 구성 메모",
-    "확인된 채무·재산 개요",
+    "알고 있는 채무·재산 개요",
     "미성년 자녀 유무",
   ],
   documentsNote:

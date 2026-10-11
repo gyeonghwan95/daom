@@ -19,7 +19,7 @@ export function ContactSection() {
         <div className="border-b border-beige-dark bg-beige/30 px-5 py-5 md:px-8 md:py-6">
           <h2 className="section-heading">사무소 연락처</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/70 md:text-base">
-            네이버 플레이스·홈페이지·상담 페이지에 동일하게 표시되는 공식 연락처입니다.
+            네이버 플레이스와 홈페이지 어디서 보셔도 같은 번호로 안윤정 법무사에게 연결됩니다.
           </p>
         </div>
         <div className="p-5 md:p-8">

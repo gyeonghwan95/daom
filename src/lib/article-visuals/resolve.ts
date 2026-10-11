@@ -202,7 +202,7 @@ const FIELD_OVERLAYS: Record<ArticleVisualField, OverlaySet> = {
       "기관 일정에 맞춰 주제를 조정합니다",
     ],
     beforeProcedures: ["대상·시간에 맞는 구성을 잡습니다"],
-    beforeExample: ["확인된 강의 이력을 참고합니다"],
+    beforeExample: ["그동안 다녀온 강의을 참고합니다"],
     beforeCta: ["출강 문의를 남겨 주세요"],
     midBody: ["생활법률·전세·등기 주제를 다룹니다"],
   },

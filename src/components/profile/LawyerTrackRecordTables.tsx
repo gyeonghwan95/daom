@@ -32,7 +32,7 @@ export function LawyerTrackRecordTables({
       aria-labelledby="track-record-heading"
     >
       <div>
-        <p className="text-sm font-medium text-navy/60">Verified track record</p>
+        <p className="text-sm font-medium text-navy/60">활동 기록</p>
         <h2 id="track-record-heading" className="section-heading mt-1">
           위원회·강의 실적
         </h2>

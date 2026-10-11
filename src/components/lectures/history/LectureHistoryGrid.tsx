@@ -13,7 +13,7 @@ export function LectureHistoryGrid({
   if (items.length === 0) {
     return (
       <p className="rounded-2xl border border-dashed border-beige-dark bg-cream/40 px-4 py-8 text-center text-sm text-navy/65">
-        조건에 맞는 확인된 강의 이력이 없습니다. 검색어나 필터를 바꿔 보세요.
+        조건에 맞는 그동안 다녀온 강의이 없습니다. 검색어나 필터를 바꿔 보세요.
       </p>
     );
   }

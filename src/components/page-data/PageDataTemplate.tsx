@@ -373,8 +373,8 @@ export function PageDataTemplate({
       >
         {page.consultationExamples ? (
           <p className="body-text mb-4 max-w-3xl">
-            개인정보를 제외해 요약한 상담 유형이며, 개별 사건의 결과를
-            보장하지 않습니다.
+            개인정보를 빼고 요약한 상담 유형입니다. 내 사건은 서류를 보고 따로
+            안내해 드립니다.
           </p>
         ) : null}
         <div className="grid gap-4 md:grid-cols-2">
