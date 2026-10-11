@@ -52,13 +52,19 @@ function EeatFactCard({
   stacked: boolean;
 }) {
   const clickable = Boolean(item.href);
-  const shellClass = stacked
-    ? `eeat-stacked-fact group flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4 ${
+  const thumb = resolveEeatThumb(item.image);
+  // 사진이 있는 카드는 사진을 카드 위쪽에 넓게(16:10) 보여 준다 — 작은 정사각 썸네일로는 위촉장·MOU·강의 장면을 알아보기 어렵다
+  const shellClass = thumb
+    ? `eeat-fact eeat-fact--media group flex h-full flex-col overflow-hidden rounded-xl border border-beige-dark bg-white ${
         clickable ? EEAT_CARD_HOVER : ""
       }`
-    : `eeat-fact group flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4 ${
-        clickable ? EEAT_CARD_HOVER : ""
-      }`;
+    : stacked
+      ? `eeat-stacked-fact group flex h-full flex-col rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:px-5 md:py-4 ${
+          clickable ? EEAT_CARD_HOVER : ""
+        }`
+      : `eeat-fact group flex h-full items-center gap-3 rounded-xl border border-beige-dark bg-white px-3.5 py-3.5 md:gap-4 md:px-5 md:py-4 ${
+          clickable ? EEAT_CARD_HOVER : ""
+        }`;
 
   const titleClass = clickable
     ? "text-base font-semibold leading-snug text-navy group-hover:text-navy-light md:text-lg"
@@ -70,7 +76,23 @@ function EeatFactCard({
     </span>
   ) : null;
 
-  const inner = stacked ? (
+  const inner = thumb ? (
+    <>
+      <EeatFactThumb image={thumb} layout="banner" />
+      <div className="flex min-w-0 flex-1 flex-col px-3.5 py-3.5 md:px-5 md:py-4">
+        <p className={titleClass}>{item.term}</p>
+        {item.meta ? (
+          <p className="mt-1 text-xs font-medium text-navy-light md:text-sm">
+            {item.meta}
+          </p>
+        ) : null}
+        <p className="mt-2 text-sm leading-relaxed text-navy/75 md:text-base">
+          {item.description}
+        </p>
+        {cta}
+      </div>
+    </>
+  ) : stacked ? (
     <>
       <p className={`w-full ${titleClass}`}>{item.term}</p>
       <div className="eeat-stacked-fact__body mt-2 flex min-h-0 flex-1 items-center gap-3 md:gap-4">

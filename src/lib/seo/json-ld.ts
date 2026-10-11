@@ -6,6 +6,7 @@ import { busanRenunciationHubReviewedOn } from "@/lib/local-landing/renunciation
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { resolveCanonicalPath } from "@/lib/seo/index-policy";
 import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
+import { resolveShareImage } from "@/lib/seo/share-image";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
 import { getContactInfo, getNaverReservationUrl } from "@/lib/contact";
 import {
@@ -303,11 +304,17 @@ export function buildWebPageSchema(input: {
     reviewedBy: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },
     dateModified: input.dateModified ?? reviewedOn,
+    // og:image와 같은 실제 파일(필요하면 1200px OG 파생본)과 크기를 쓴다
     primaryImageOfPage: input.image
-      ? {
-          "@type": "ImageObject",
-          url: getAbsoluteAssetUrl(input.image),
-        }
+      ? (() => {
+          const share = resolveShareImage(input.image);
+          return {
+            "@type": "ImageObject",
+            url: share.url,
+            width: share.width,
+            height: share.height,
+          };
+        })()
       : undefined,
     speakable: {
       "@type": "SpeakableSpecification",

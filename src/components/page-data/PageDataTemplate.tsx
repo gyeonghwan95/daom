@@ -253,6 +253,7 @@ export function PageDataTemplate({
               width: serp.width,
               height: serp.height,
             }}
+            caption={serp.caption}
           />
         );
       })()}

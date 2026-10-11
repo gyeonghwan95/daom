@@ -231,12 +231,14 @@ export const lifeLawSpec: LectureTargetSpec = {
   selectors: [
     {
       title: "도서관·평생학습 시민",
+      image: targetPhotos.citizenWeek1,
       description: "연속 강좌에 맞는 생활 장면",
       bullets: ["전·월세 계약", "이웃·금전 분쟁", "디지털·형사 예방", "상속 기초"],
       href: "/부산도서관법률특강",
     },
     {
       title: "복지관·자립지원기관",
+      image: targetPhotos.selfSupportJeonse,
       description: "이용자·종사자 예방교육",
       bullets: ["사기·금전거래 예방", "주거 계약", "연계 기관 안내"],
       href: "/부산사회복지기관강사",
@@ -249,6 +251,7 @@ export const lifeLawSpec: LectureTargetSpec = {
     },
     {
       title: "청년",
+      image: targetPhotos.changwon,
       description: "첫 계약과 첫 직장",
       bullets: ["근로·주거 계약", "온라인 분쟁", "금전거래"],
       href: "/청년생활법률특강",

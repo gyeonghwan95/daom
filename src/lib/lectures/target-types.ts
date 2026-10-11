@@ -20,6 +20,8 @@ export type LectureTargetCard = {
   description: string;
   bullets?: string[];
   href?: string;
+  /** 카드 위쪽 사진 — 실제 강의 현장 사진(target-photos)만 넣는다. 맞는 사진이 없으면 비워 둔다 */
+  image?: LectureTargetPhoto;
 };
 
 export type LectureTargetLink = {

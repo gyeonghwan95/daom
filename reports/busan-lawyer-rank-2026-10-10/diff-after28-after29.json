@@ -1,0 +1,306 @@
+{
+ "removed": [],
+ "added": [],
+ "policy": [],
+ "title": [],
+ "h1": [],
+ "description": [],
+ "main": [
+  {
+   "r": "/강서구상속포기",
+   "beforeLen": 5365,
+   "afterLen": 5408
+  },
+  {
+   "r": "/강서구한정승인",
+   "beforeLen": 5201,
+   "afterLen": 5261
+  },
+  {
+   "r": "/개인파산과태료",
+   "beforeLen": 4605,
+   "afterLen": 4580
+  },
+  {
+   "r": "/개인파산기간",
+   "beforeLen": 4529,
+   "afterLen": 4472
+  },
+  {
+   "r": "/개인파산기한",
+   "beforeLen": 4500,
+   "afterLen": 4450
+  },
+  {
+   "r": "/개인파산준비서류",
+   "beforeLen": 4771,
+   "afterLen": 4701
+  },
+  {
+   "r": "/개인파산필요서류",
+   "beforeLen": 4752,
+   "afterLen": 4694
+  },
+  {
+   "r": "/개인회생과태료",
+   "beforeLen": 4619,
+   "afterLen": 4584
+  },
+  {
+   "r": "/개인회생기간",
+   "beforeLen": 4658,
+   "afterLen": 4600
+  },
+  {
+   "r": "/개인회생기한",
+   "beforeLen": 4549,
+   "afterLen": 4506
+  },
+  {
+   "r": "/개인회생여성법무사",
+   "beforeLen": 4930,
+   "afterLen": 4907
+  },
+  {
+   "r": "/개인회생준비서류",
+   "beforeLen": 4738,
+   "afterLen": 4708
+  },
+  {
+   "r": "/개인회생파산",
+   "beforeLen": 4750,
+   "afterLen": 4747
+  },
+  {
+   "r": "/개인회생필요서류",
+   "beforeLen": 4645,
+   "afterLen": 4616
+  },
+  {
+   "r": "/금정구상속포기",
+   "beforeLen": 5487,
+   "afterLen": 5544
+  },
+  {
+   "r": "/남구상속포기",
+   "beforeLen": 5337,
+   "afterLen": 5348
+  },
+  {
+   "r": "/남구한정승인",
+   "beforeLen": 5309,
+   "afterLen": 5346
+  },
+  {
+   "r": "/덕천동개인회생",
+   "beforeLen": 4493,
+   "afterLen": 4460
+  },
+  {
+   "r": "/동구상속포기",
+   "beforeLen": 5427,
+   "afterLen": 5491
+  },
+  {
+   "r": "/동구한정승인",
+   "beforeLen": 5270,
+   "afterLen": 5356
+  },
+  {
+   "r": "/동래구상속포기",
+   "beforeLen": 5331,
+   "afterLen": 5405
+  },
+  {
+   "r": "/법률강의",
+   "beforeLen": 5150,
+   "afterLen": 5283
+  },
+  {
+   "r": "/부곡동한정승인",
+   "beforeLen": 5252,
+   "afterLen": 5297
+  },
+  {
+   "r": "/부산가정법원한정승인",
+   "beforeLen": 4743,
+   "afterLen": 4811
+  },
+  {
+   "r": "/부산지방법원등기국",
+   "beforeLen": 4547,
+   "afterLen": 4574
+  },
+  {
+   "r": "/부산지방법원등기국법무사",
+   "beforeLen": 5175,
+   "afterLen": 5202
+  },
+  {
+   "r": "/부산지방법원등기국법인등기",
+   "beforeLen": 5158,
+   "afterLen": 5185
+  },
+  {
+   "r": "/부산지방법원등기국부동산등기",
+   "beforeLen": 5121,
+   "afterLen": 5148
+  },
+  {
+   "r": "/부산지방법원등기국상속등기",
+   "beforeLen": 5157,
+   "afterLen": 5184
+  },
+  {
+   "r": "/부산진구법무사",
+   "beforeLen": 5406,
+   "afterLen": 5434
+  },
+  {
+   "r": "/부산진구상속포기",
+   "beforeLen": 5313,
+   "afterLen": 5363
+  },
+  {
+   "r": "/부산진구한정승인",
+   "beforeLen": 5321,
+   "afterLen": 5391
+  },
+  {
+   "r": "/부산회생법원개인파산",
+   "beforeLen": 4521,
+   "afterLen": 4506
+  },
+  {
+   "r": "/부산회생법원개인회생",
+   "beforeLen": 4404,
+   "afterLen": 4363
+  },
+  {
+   "r": "/북구한정승인",
+   "beforeLen": 5300,
+   "afterLen": 5339
+  },
+  {
+   "r": "/사상구한정승인",
+   "beforeLen": 5324,
+   "afterLen": 5385
+  },
+  {
+   "r": "/사상역개인회생",
+   "beforeLen": 4488,
+   "afterLen": 4434
+  },
+  {
+   "r": "/사하구상속포기",
+   "beforeLen": 5480,
+   "afterLen": 5500
+  },
+  {
+   "r": "/사하구한정승인",
+   "beforeLen": 5365,
+   "afterLen": 5417
+  },
+  {
+   "r": "/상속포기과태료",
+   "beforeLen": 5044,
+   "afterLen": 5087
+  },
+  {
+   "r": "/상속포기기간",
+   "beforeLen": 5168,
+   "afterLen": 5167
+  },
+  {
+   "r": "/상속포기기한",
+   "beforeLen": 5151,
+   "afterLen": 5153
+  },
+  {
+   "r": "/상속포기준비서류",
+   "beforeLen": 5093,
+   "afterLen": 5148
+  },
+  {
+   "r": "/상속포기필요서류",
+   "beforeLen": 4907,
+   "afterLen": 5029
+  },
+  {
+   "r": "/서구상속포기",
+   "beforeLen": 5389,
+   "afterLen": 5409
+  },
+  {
+   "r": "/서구한정승인",
+   "beforeLen": 5384,
+   "afterLen": 5429
+  },
+  {
+   "r": "/수영구한정승인",
+   "beforeLen": 5348,
+   "afterLen": 5401
+  },
+  {
+   "r": "/업무사례/부산서부지원법무사",
+   "beforeLen": 4951,
+   "afterLen": 4979
+  },
+  {
+   "r": "/업무사례/부산지방법원등기국법무사",
+   "beforeLen": 5103,
+   "afterLen": 5130
+  },
+  {
+   "r": "/업무사례/부산진구법무사",
+   "beforeLen": 5182,
+   "afterLen": 5210
+  },
+  {
+   "r": "/영도구상속포기",
+   "beforeLen": 5406,
+   "afterLen": 5463
+  },
+  {
+   "r": "/영도구한정승인",
+   "beforeLen": 5268,
+   "afterLen": 5259
+  },
+  {
+   "r": "/중구상속포기",
+   "beforeLen": 5375,
+   "afterLen": 5377
+  },
+  {
+   "r": "/중구한정승인",
+   "beforeLen": 5161,
+   "afterLen": 5227
+  },
+  {
+   "r": "/한정승인과태료",
+   "beforeLen": 4992,
+   "afterLen": 5032
+  },
+  {
+   "r": "/한정승인기간",
+   "beforeLen": 5179,
+   "afterLen": 5223
+  },
+  {
+   "r": "/한정승인기한",
+   "beforeLen": 4982,
+   "afterLen": 5026
+  },
+  {
+   "r": "/한정승인준비서류",
+   "beforeLen": 5040,
+   "afterLen": 5115
+  },
+  {
+   "r": "/한정승인필요서류",
+   "beforeLen": 5100,
+   "afterLen": 5122
+  }
+ ],
+ "links": []
+}

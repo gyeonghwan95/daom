@@ -1,0 +1,389 @@
+
+> daom@0.1.0 prebuild
+> node scripts/warn-business-credentials.mjs && node scripts/sync-favicon.mjs && node scripts/check-cloudflare-asset-size.mjs && node scripts/fetch-naver-place-reviews.mjs && node scripts/generate-rss.mjs && npx --yes tsx scripts/generate-llms-txt.ts && npx --yes tsx scripts/validate-resource-assets.ts && node scripts/generate-sitemaps.mjs && node scripts/generate-index-priority-list.mjs && node scripts/validate-sitemap.mjs && node scripts/seo-validate.mjs && node scripts/validate-seo.mjs && node scripts/validate-seo-intent-db.mjs && node scripts/generate-seo-landing-manifest.mjs && node scripts/validate-page-data.mjs && npx --yes tsx scripts/check-keyword-ownership.ts && npx --yes tsx scripts/check-region-boilerplate.ts && node scripts/generate-seo-pages.mjs && npm run build:search && node scripts/generate-admin-page-titles.mjs && node scripts/generate-admin-seo-summary.mjs
+
+[business-credentials] 검증 보류 · 공개 미노출: 여성기업확인서 (women-owned-business)
+[business-credentials] 검증 보류 · 공개 미노출: 중소기업확인서 (small-business)
+[business-credentials] 검증 보류 · 공개 미노출: 창업기업확인서 (startup-business)
+[business-credentials] 경고 3건 (공개 노출은 enabled·verified·유효기간 게이트로 차단)
+[sync-favicon] synced 로고.png → app icons + public/favicon.ico
+[cloudflare-assets] OK — 25 MiB 이상 파일 없음
+Fetched 10 Naver place reviews (total 13) → C:\workspace\daom\public\data\naver-place-reviews.json
+Generated C:\workspace\daom\public\rss.xml (50 items)
+[llms.txt] wrote C:\workspace\daom\public\llms.txt
+[validate-resource-assets] OK — 5종 v2026.10.11-1
+[sitemap:generate] tier-1-core.xml — 18 URLs
+[sitemap:generate] tier-2-hubs.xml — 29 URLs
+[sitemap:generate] tier-3-tools.xml — 176 URLs
+[sitemap:generate] tier-4-regions.xml — 595 URLs
+[sitemap:generate] tier-5-local.xml — 185 URLs
+[sitemap:generate] tier-6-keywords.xml — 547 URLs
+[sitemap:generate] tier-7-blog.xml — 53 URLs
+[sitemap:generate] tier-8-media.xml — 32 URLs
+[sitemap:generate] root urlset → public/sitemap.xml (1635 URLs)
+[sitemap:generate] tier index → public/sitemaps/index.xml (8 sub-sitemaps)
+[sitemap:generate] total 1635 URLs, excluded 241
+Wrote 1635 URLs → C:\workspace\daom\scripts\output\index-priority-urls.txt
+Tier counts: {
+  '1': 18,
+  '2': 29,
+  '3': 176,
+  '4': 595,
+  '5': 185,
+  '6': 547,
+  '7': 53,
+  '8': 32
+}
+[sitemap:validate] OK — root urlset 1635 URLs + 8 tier sitemaps
+[sitemap:validate] Tier counts: {
+  '1': 18,
+  '2': 29,
+  '3': 176,
+  '4': 595,
+  '5': 185,
+  '6': 547,
+  '7': 53,
+  '8': 32
+}
+[sitemap:validate] excluded 241 paths (see sitemap-manifest.json)
+[seo:validate] rss.xml OK (50 items, blog+cases only)
+[seo:validate] robots.ts OK
+[seo:validate] sitemap manifest OK (1635 URLs, excluded redirect=25, noindex=98)
+[seo:validate] canonical helper OK
+[seo:validate] all checks passed (https://xn--2j1br1na42lvxja38mk8r.kr)
+[validate-seo] rss.xml OK (50 items, https://xn--2j1br1na42lvxja38mk8r.kr)
+[validate-seo] sitemap urlset + tier index OK (https://xn--2j1br1na42lvxja38mk8r.kr/sitemap.xml)
+[validate-seo] NAP consistency OK (부산광역시 해운대구 센텀동로 200 D동 1층 LAB9호, 010-4277-1279)
+[validate-seo] local landing pages OK (164 configured, 10 topic hubs)
+[validate-seo-intent-db] OK — 117 entities (regions 58, services 25, intents 11, institutions 10, special 13)
+[generate-seo-landing-manifest] OK — 312 SEO landing paths → scripts\output\seo-landing-manifest.json
+[validate-page-data] OK — 1876 paths registered
+[validate-page-data] manifest → scripts/output/page-manifest.json
+=== Keyword ownership ===
+queries: 164
+indexable pages scanned: 1609
+  부산 법무사 → /
+  부산 상속등기 법무사 → /부산상속등기
+  부산 상속포기 법무사 → /부산상속포기
+  부산 한정승인 법무사 → /부산한정승인
+  부산 부동산 법무사 → /부산부동산등기
+  부산 법인등기 법무사 → /부산법인등기
+  해운대 법무사 → /해운대법무사
+  센텀 법무사 → /센텀법무사
+  재송동 법무사 → /재송동법무사
+  반여동 법무사 → /반여동법무사
+  수영구 법무사 → /수영구법무사
+  연제구 법무사 → /연제구법무사
+  동래구 법무사 → /동래구법무사
+  부산진구 법무사 → /부산진구법무사
+  남구 법무사 → /남구법무사
+  금정구 법무사 → /금정구법무사
+  북구 법무사 → /북구법무사
+  기장군 법무사 → /기장군법무사
+  사상구 법무사 → /사상구법무사
+  사하구 법무사 → /사하구법무사
+  중구 법무사 → /중구법무사
+  서구 법무사 → /서구법무사
+  영도구 법무사 → /영도구법무사
+  강서구 법무사 → /강서구법무사
+  동구 법무사 → /동구법무사
+  부산 등기 법무사 → /부산등기법무사
+  부산 상속 법무사 → /부산상속법무사
+  부산 근저당 말소 → /부산근저당말소등기
+  부산 법무사 추천 → /부산법무사추천
+  부산 법무사 상담 → /부산법무사상담
+  부산 개인회생 법무사 → /부산개인회생법무사
+  부산 집단등기 → /부산집단등기
+  부산 보상등기 법무사 → /부산보상등기
+  부산 임차권등기명령 → /부산임차권등기명령
+  부산 전세사기 법무사 → /전세사기피해대응절차
+  부산 공유물분할등기 → /부산공유물분할등기
+  부산 집행문 부여 신청 → /부산집행문부여신청
+  부산 실종선고 청구 → /부산실종선고청구
+  부산역 법무사 → /부산역법무사
+  서면 법무사 → /서면법무사
+  광안리 법무사 → /광안리법무사
+  동래역 법무사 → /동래역법무사
+  연산동 법무사 → /연산동법무사
+  남천동 법무사 → /남천동법무사
+  대연동 법무사 → /대연동법무사
+  덕천동 법무사 → /덕천동법무사
+  명지 법무사 → /명지법무사
+  정관 법무사 → /정관법무사
+  사상 법무사 → /사상법무사
+  하단 법무사 → /하단법무사
+  우동 법무사 → /우동법무사
+  좌동 법무사 → /좌동법무사
+  사직동 법무사 → /사직동법무사
+  화명동 법무사 → /화명동법무사
+  부곡동 법무사 → /부곡동법무사
+  거제동 법무사 → /거제동법무사
+  전포동 법무사 → /전포동법무사
+  문현동 법무사 → /문현동법무사
+  용호동 법무사 → /용호동법무사
+  망미동 법무사 → /망미동법무사
+  일광읍 법무사 → /일광읍법무사
+  남포동 법무사 → /남포동법무사
+  초량동 법무사 → /초량동법무사
+  범일동 법무사 → /범일동법무사
+  구포동 법무사 → /구포동법무사
+  다대동 법무사 → /다대동법무사
+  괴정동 법무사 → /괴정동법무사
+  개금동 법무사 → /개금동법무사
+  안락동 법무사 → /안락동법무사
+  구서동 법무사 → /구서동법무사
+  반송동 법무사 → /반송동법무사
+  주례동 법무사 → /주례동법무사
+  동삼동 법무사 → /동삼동법무사
+  우암동 법무사 → /우암동법무사
+  기장읍 법무사 → /기장읍법무사
+  연지동 법무사 → /연지동법무사
+  오시리아 법무사 → /오시리아법무사
+  부산 법률 강의 → /법률강의
+  부산 강사 섭외 → /부산법률강사
+  부산 전세사기 예방교육 → /전세사기예방교육
+  부산 청년 법률교육 → /청년생활법률특강
+  부산 창업 법률교육 → /창업법률교육
+  부산 강의 문의 → /강의문의
+  부산 도서관 법률특강 → /부산도서관법률특강
+  부산 법무사 강의 → /부산법무사강의
+  광안동 법무사 → /광안동법무사
+  중동 법무사 → /중동법무사
+  민락동 법무사 → /민락동법무사
+  부전동 법무사 → /부전동법무사
+  온천동 법무사 → /온천동법무사
+  울산 상속 법무사 → /업무사례/울산상속등기법무사
+OK — no PRIMARY query owned by two indexable URLs.
+=== Region boilerplate ===
+hits: 0
+OK — flagged region boilerplate sentences not found.
+[generate-seo-pages] OK — 1609 SEO pages → scripts\output\seo-pages-manifest.json
+
+> daom@0.1.0 build:search
+> npx --yes tsx scripts/build-search-index.ts
+
+[build-search-index] wrote C:\workspace\daom\src\generated\search-index.json
+[build-search-index] items: 1610
+[build-search-index] featured: 44
+[build-search-index] size: 1259.7 KB
+[build-search-index] by category:
+  agency: 8
+  blog: 46
+  case: 507
+  core: 35
+  cost: 55
+  diagnosis: 18
+  document: 37
+  faq: 29
+  glossary: 1
+  lecture: 22
+  lectureHistory: 23
+  menu: 7
+  region: 744
+  service: 10
+  situation: 47
+  special: 13
+  tool: 8
+admin-page-titles: 1794 paths → C:\workspace\daom\src\generated\admin-page-titles.json
+admin-seo-summary: critical=0 warning=0 protected=16 → C:\workspace\daom\src\generated\admin-seo-summary.json
+
+> daom@0.1.0 build
+> node scripts/build-static.mjs
+
+[optimize-images] 원본 301개 · 파생본 1720개 (새로 생성 0, 정리 0) · 0.6s
+
+[build-static] next build --webpack 시작 (STATIC_EXPORT=true, output: export)
+[build-static] CF에서 Turbopack hang 회피 — 컴파일 후 Generating static pages (~1800) 진행
+
+▲ Next.js 16.2.9 (webpack)
+- Environments: .env.local, .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 33.6s
+  Skipping validation of types
+  Finished TypeScript config validation in 6ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/1896) ...
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 여성기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 중소기업확인서 (verificationRequired=true, enabled=false)
+[business-credentials] 검증 보류: 창업기업확인서 (verificationRequired=true, enabled=false)
+  Generating static pages using 11 workers (474/1896) 
+  Generating static pages using 11 workers (948/1896) 
+  Generating static pages using 11 workers (1422/1896) 
+✓ Generating static pages using 11 workers (1896/1896) in 33.1s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ● /[landingSlug]
+│ ├ /자가진단
+│ ├ /상속등기자가진단
+│ ├ /상속포기자가진단
+│ └ [+974 more paths]
+├ ● /[landingSlug]/[childSlug]
+│ ├ /강의이력/busan-citizen-library-life-law
+│ ├ /강의이력/busan-self-support-jeonse-prevention
+│ ├ /강의이력/busan-self-support-daily-dispute-survival
+│ └ [+651 more paths]
+├ ○ /about
+├ ○ /admin
+├ ○ /admin/analytics
+├ ○ /admin/conversions
+├ ○ /admin/email
+├ ○ /admin/monitoring
+├ ○ /admin/notices
+├ ○ /admin/pages
+├ ○ /admin/seo
+├ ○ /admin/settings
+├ ○ /apple-icon.png
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/bankruptcy-vs-discharge-difference
+│ ├ /blog/bankruptcy-vs-personal-rehabilitation
+│ ├ /blog/busan-company-establishment-documents
+│ └ [+49 more paths]
+├ ● /blog/external/[postId]
+│ ├ /blog/external/224328626727
+│ ├ /blog/external/224328590968
+│ ├ /blog/external/224328572114
+│ └ [+5 more paths]
+├ ○ /busan-legal-map
+├ ○ /cases
+├ ● /cases/[slug]
+│ ├ /cases/busan-personal-rehabilitation-consultation
+│ ├ /cases/centum-ownership-transfer-case
+│ ├ /cases/dongnae-qualified-acceptance-consultation
+│ └ [+5 more paths]
+├ ○ /contact
+├ ○ /contact/inquiry
+├ ○ /faq
+├ ● /faq/[slug]
+│ ├ /faq/bankruptcy-discharge-faq
+│ ├ /faq/bankruptcy-vs-rehabilitation-faq
+│ ├ /faq/capital-increase-registration-faq
+│ └ [+29 more paths]
+├ ○ /glossary
+├ ● /glossary/[slug]
+│ ├ /glossary/inheritance-registration
+│ ├ /glossary/inheritance-renunciation
+│ ├ /glossary/qualified-acceptance
+│ └ [+30 more paths]
+├ ○ /icon.png
+├ ○ /location
+├ ○ /manifest.webmanifest
+├ ○ /media
+├ ● /media/[slug]
+│ ├ /media/sentv-trend-hot-issue-ahn-yoonjung
+│ ├ /media/kukinews-youth-budget-unboxing-2027
+│ ├ /media/weeklypeople-youth-judicial-scrivener-ahn
+│ └ [+4 more paths]
+├ ○ /notices
+├ ○ /notices/view
+├ ○ /office
+├ ○ /press
+├ ● /press/[slug]
+│ ├ /press/sentv-trend-hot-issue-ahn-yoonjung
+│ ├ /press/kukinews-youth-budget-unboxing-2027
+│ ├ /press/weeklypeople-youth-judicial-scrivener-ahn
+│ └ [+4 more paths]
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/[slug]
+│ ├ /resources/inheritance-family
+│ ├ /resources/unpaid-evidence
+│ ├ /resources/company-change
+│ └ [+2 more paths]
+├ ○ /reviews
+├ ○ /robots.txt
+├ ○ /search
+├ ○ /search-guides
+├ ○ /services
+├ ● /services/[slug]
+│ ├ /services/inheritance-registration
+│ ├ /services/inheritance-renunciation
+│ ├ /services/qualified-acceptance
+│ └ [+7 more paths]
+├ ● /services/cases/[slug]
+│ ├ /services/cases/busan-personal-rehabilitation-consultation
+│ ├ /services/cases/centum-ownership-transfer-case
+│ ├ /services/cases/dongnae-qualified-acceptance-consultation
+│ └ [+5 more paths]
+├ ○ /situations
+├ ● /situations/[...slug]
+│ ├ /situations/parent-passed-away
+│ ├ /situations/siblings-not-cooperating
+│ ├ /situations/inheritance-unknown-debt
+│ └ [+44 more paths]
+├ ○ /terms
+├ ○ /tools
+└ ● /tools/[slug]
+  ├ /tools/inheritance-registration-deadline
+  ├ /tools/inheritance-registration-cost
+  ├ /tools/inheritance-renunciation-deadline
+  └ [+6 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+[fix-html-dom-order] scanned=1893 reordered=0
+[validate-out-routes] OK — 1876개 경로 모두 out/에 존재합니다.
+[sitemap:validate] OK — root urlset 1635 URLs + 8 tier sitemaps
+[sitemap:validate] Tier counts: {
+  '1': 18,
+  '2': 29,
+  '3': 176,
+  '4': 595,
+  '5': 185,
+  '6': 547,
+  '7': 53,
+  '8': 32
+}
+[sitemap:validate] excluded 241 paths (see sitemap-manifest.json)
+[seo:validate] rss.xml OK (50 items, blog+cases only)
+[seo:validate] robots.ts OK
+[seo:validate] sitemap manifest OK (1635 URLs, excluded redirect=25, noindex=98)
+[seo:validate] canonical helper OK
+[seo:validate] all checks passed (https://xn--2j1br1na42lvxja38mk8r.kr)
+[seo-dom] OK index.html
+[seo-dom] OK 부산법무사.html
+[seo-dom] OK 부산법무사추천.html
+[seo-dom] OK 부산법무사상담.html
+[seo-dom] OK 부산상속법무사.html
+[seo-dom] OK 부산상속포기.html
+[seo-dom] OK 부산등기법무사.html
+[seo-dom] OK 부산개인회생.html
+[seo-dom] OK 부산개인회생법무사.html
+[seo-dom] OK 개인회생파산.html
+[seo-dom] OK 상속.html
+
+[seo-dom] all samples OK

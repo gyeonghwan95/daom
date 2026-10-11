@@ -26,6 +26,18 @@ export function getAbsoluteAssetUrl(path: string): string {
   }
   const normalized = path.startsWith("/") ? path : `/${path}`;
   const segments = normalized.split("/").filter(Boolean);
-  const encoded = segments.map((segment) => encodeURIComponent(segment)).join("/");
+  // siteImages 경로는 이미 퍼센트 인코딩돼 있다. 그대로 다시 인코딩하면 %25EC…가 되어 운영에서 404가 난다(2026-10-11).
+  // 조각마다 한 번 디코드한 뒤 인코딩해, 원문·인코딩된 경로 모두 같은 URL이 되게 한다.
+  const encoded = segments
+    .map((segment) => {
+      let raw = segment;
+      try {
+        raw = decodeURIComponent(segment);
+      } catch {
+        raw = segment;
+      }
+      return encodeURIComponent(raw.normalize("NFC"));
+    })
+    .join("/");
   return encoded ? `${siteConfig.url}/${encoded}` : siteConfig.url;
 }

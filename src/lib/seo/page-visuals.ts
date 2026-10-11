@@ -11,6 +11,7 @@ import {
 } from "@/data/seo/page-visuals";
 import { getCarouselManifestItemByUrl } from "@/data/seo/carousel-image-manifest";
 import { encodePublicSrc } from "@/lib/encode-public-src";
+import { getFieldPhotoVisual } from "@/data/seo/field-photo-visuals";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
 
 export type RelatedCardItem = SeoCarouselItem & {
@@ -36,10 +37,21 @@ function resolveHookThumbnail(url: string): string | undefined {
 }
 
 export function resolveSerpImage(pageUrl: string):
-  | { src: string; alt: string; width: number; height: number }
+  | { src: string; alt: string; width: number; height: number; caption?: string }
   | undefined {
   const v = getPageVisual(pageUrl);
-  if (!v) return undefined;
+  if (!v) {
+    // 초상 기반 visual이 없는 페이지만: 주제와 같은 실제 현장·업무 사진(field-photo-visuals)
+    const field = getFieldPhotoVisual(pageUrl);
+    if (!field) return undefined;
+    return {
+      src: encodePublicSrc(field.src),
+      alt: field.alt,
+      width: field.width,
+      height: field.height,
+      caption: field.caption,
+    };
+  }
   return {
     src: encodePublicSrc(v.representativeImage),
     alt: v.alt,

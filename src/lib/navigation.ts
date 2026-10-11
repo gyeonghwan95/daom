@@ -148,12 +148,10 @@ const casesNavItem: NavItem = {
 };
 
 /**
- * 헤더·모바일 공통 주 메뉴 — 의뢰 목적 기준(업무·사례·소개·준비자료·정보·협업) + 상담 문의 버튼.
+ * 헤더·모바일 공통 주 메뉴 — 소개·후기를 맨 앞에 두고(신뢰 먼저) 업무·사례·준비자료·정보·협업 + 상담 문의 버튼.
  * 기존 페이지·URL은 모두 하위 메뉴(실제 a[href])와 푸터에 그대로 남긴다.
  */
 export const mainNavigation: NavItem[] = [
-  servicesNavItem,
-  casesNavItem,
   {
     href: "/about",
     label: "소개·후기",
@@ -177,6 +175,8 @@ export const mainNavigation: NavItem[] = [
       ...lectureNavGroups,
     ],
   },
+  servicesNavItem,
+  casesNavItem,
   {
     href: "/resources",
     label: "준비자료",

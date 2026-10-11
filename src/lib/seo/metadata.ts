@@ -1,3 +1,4 @@
+import { resolveShareImage } from "@/lib/seo/share-image";
 import type { Metadata } from "next";
 import { sanitizePageKeywords } from "@/lib/seo/champion-query";
 import { isNoIndexPath, resolveCanonicalPath } from "@/lib/seo/index-policy";
@@ -100,7 +101,13 @@ export function resolveContentSeoTitle(
 
 export function createPageMetadata(input: PageSeoInput): Metadata {
   const canonical = getCanonicalUrl(resolveCanonicalPath(input.path));
-  const ogImage = getAbsoluteImageUrl(input.ogImage ?? DEFAULT_OG_IMAGE);
+  // 실제 파일(또는 같은 사진의 1200px OG 파생본) 기준 URL·크기·형식 — 이중 인코딩 404·크기 불일치 방지(2026-10-11)
+  const share = resolveShareImage(
+    input.ogImage ?? DEFAULT_OG_IMAGE,
+    input.ogImageWidth ?? 1200,
+    input.ogImageHeight ?? 630,
+  );
+  const ogImage = share.url;
   const openGraphType = input.openGraphType ?? "website";
   const keywords = sanitizePageKeywords(input.path, input.keywords);
   const noIndex = Boolean(input.noIndex) || isNoIndexPath(input.path);
@@ -126,8 +133,9 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
       images: [
         {
           url: ogImage,
-          width: input.ogImageWidth ?? 1200,
-          height: input.ogImageHeight ?? 630,
+          width: share.width,
+          height: share.height,
+          ...(share.type ? { type: share.type } : {}),
           alt:
             input.ogImageAlt ??
             `${seoBrand.siteName} - ${seoBrand.representative}`,

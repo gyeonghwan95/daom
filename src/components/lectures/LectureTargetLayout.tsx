@@ -33,6 +33,12 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
     ).map((entry) => [entry.id, entry] as const),
   );
   const [heroPhoto, ...morePhotos] = spec.photos;
+  // 이 페이지 다른 곳(대표 사진·하단 사진·대상별 카드)에 이미 나온 사진은 강의 카드에서 반복하지 않는다
+  const usedPhotos = new Set<string>([
+    ...spec.photos.map((p) => p.src),
+    ...(spec.selectors ?? []).flatMap((c) => (c.image ? [c.image.src] : [])),
+    ...spec.situations.flatMap((c) => (c.image ? [c.image.src] : [])),
+  ]);
 
   return (
     <>
@@ -136,7 +142,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
         <p className="mb-4 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           {spec.evidenceIntro}
         </p>
-        <ul className="grid gap-2 sm:grid-cols-2">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {evidence.map((item) => {
             const history = item.historyId ? historyById.get(item.historyId) : undefined;
             const badge =
@@ -145,16 +151,29 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
                 : item.applicability === "DIRECT"
                   ? "같은 주제 강의"
                   : "관련 강의";
+            // 강의 이력에 등록된 실제 현장 사진 중 이 페이지에 아직 안 나온 것을 먼저, 없으면 대표 이미지. 둘 다 없으면 아이콘 영역
+            const photoSrc =
+              history?.images?.find((img) => !usedPhotos.has(img.src))?.src ??
+              (history?.imageSrc && !usedPhotos.has(history.imageSrc) ? history.imageSrc : undefined) ??
+              history?.images?.[0]?.src ??
+              history?.imageSrc;
             const body = (
               <>
-                <span className="text-[11px] font-semibold text-navy/55">
-                  {badge}
-                  {item.date ? ` · ${item.date}` : ""}
+                <CardMedia
+                  src={photoSrc}
+                  alt={`${item.institution} ${item.label}`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 18rem"
+                />
+                <span className="block px-3.5 pb-3.5 pt-3">
+                  <span className="text-[11px] font-semibold text-navy/55">
+                    {badge}
+                    {item.date ? ` · ${item.date}` : ""}
+                  </span>
+                  <span className="mt-0.5 block font-semibold leading-snug text-navy">
+                    {item.institution} {item.label}
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-navy/70">{item.publicNote}</span>
                 </span>
-                <span className="mt-0.5 block font-semibold text-navy">
-                  {item.institution} {item.label}
-                </span>
-                <span className="mt-0.5 block text-sm text-navy/70">{item.publicNote}</span>
               </>
             );
             return (
@@ -162,12 +181,12 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
                 {history ? (
                   <Link
                     href={`/강의이력/${history.slug}`}
-                    className="block rounded-xl border border-navy/10 bg-cream/40 p-3 transition hover:border-navy/25"
+                    className="group flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white/90 no-underline transition hover:border-navy/25 hover:shadow-md"
                   >
                     {body}
                   </Link>
                 ) : (
-                  <div className="rounded-xl border border-navy/10 bg-cream/40 p-3">
+                  <div className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white/90">
                     {body}
                   </div>
                 )}
@@ -282,11 +301,48 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
   );
 }
 
+/** 카드 위쪽 16:10 사진 영역. 사진이 없으면 같은 크기의 아이콘 영역(장식)으로 높이를 맞춘다. */
+function CardMedia({ src, alt, sizes }: { src?: string; alt: string; sizes: string }) {
+  return (
+    <span className="relative block aspect-[16/10] w-full overflow-hidden border-b border-navy/10 bg-beige/50">
+      {src ? (
+        <Image
+          src={encodePublicSrc(src)}
+          alt={alt}
+          fill
+          quality={70}
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          sizes={sizes}
+        />
+      ) : (
+        <span className="absolute inset-0 flex items-center justify-center text-navy/25" aria-hidden>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      )}
+    </span>
+  );
+}
+
 function CardGrid({ cards }: { cards: LectureTargetCard[] }) {
+  // 한 장이라도 사진이 있으면 모든 카드에 같은 사진 영역을 둬 높이를 맞춘다
+  const withMedia = cards.some((card) => card.image);
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       {cards.map((card) => (
-        <div key={card.title} className="rounded-xl border border-navy/10 bg-white/80 p-4">
+        <div
+          key={card.title}
+          className={
+            withMedia
+              ? "group flex flex-col overflow-hidden rounded-xl border border-navy/10 bg-white/80"
+              : "rounded-xl border border-navy/10 bg-white/80 p-4"
+          }
+        >
+          {withMedia ? (
+            <CardMedia src={card.image?.src} alt={card.image?.alt ?? ""} sizes="(max-width: 640px) 100vw, 26rem" />
+          ) : null}
+          <div className={withMedia ? "p-4" : undefined}>
           {card.href ? (
             <Link
               href={card.href}
@@ -305,6 +361,10 @@ function CardGrid({ cards }: { cards: LectureTargetCard[] }) {
               ))}
             </ul>
           ) : null}
+          {withMedia && card.image ? (
+            <p className="mt-2 text-xs leading-relaxed text-navy/55">{card.image.caption}</p>
+          ) : null}
+          </div>
         </div>
       ))}
     </div>

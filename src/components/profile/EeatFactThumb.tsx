@@ -4,20 +4,24 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { EeatThumbImage } from "@/lib/lawyer-eeat-images";
 
+type EeatFactThumbLayout = "square" | "banner";
+
 type EeatFactThumbProps = {
   image?: EeatThumbImage;
+  /** square: 작은 정사각 썸네일(기존) · banner: 카드 위쪽 전체 폭 16:10 */
+  layout?: EeatFactThumbLayout;
 };
 
 /**
- * 소개 카드용 작은 썸네일.
+ * 소개 카드용 썸네일(작은 정사각 또는 카드 위쪽 넓은 사진).
  * 기존 fallback을 먼저 보여 주고, public/image/소개-*.jpg 드롭인이 있으면 그걸로 교체합니다.
  */
-export function EeatFactThumb({ image }: EeatFactThumbProps) {
+export function EeatFactThumb({ image, layout = "square" }: EeatFactThumbProps) {
   if (!image) return null;
-  return <EeatFactThumbInner key={image.src} image={image} />;
+  return <EeatFactThumbInner key={image.src} image={image} layout={layout} />;
 }
 
-function EeatFactThumbInner({ image }: { image: EeatThumbImage }) {
+function EeatFactThumbInner({ image, layout }: { image: EeatThumbImage; layout: EeatFactThumbLayout }) {
   const [src, setSrc] = useState<string | undefined>(
     image.fallbackSrc ?? image.src,
   );
@@ -39,7 +43,13 @@ function EeatFactThumbInner({ image }: { image: EeatThumbImage }) {
   }, [image]);
 
   return (
-    <div className="eeat-fact__thumb relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-beige-dark bg-beige/40 sm:h-24 sm:w-24">
+    <div
+      className={
+        layout === "banner"
+          ? "eeat-fact__thumb eeat-fact__thumb--banner relative aspect-[16/10] w-full shrink-0 overflow-hidden border-b border-beige-dark bg-beige/40"
+          : "eeat-fact__thumb relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-beige-dark bg-beige/40 sm:h-24 sm:w-24"
+      }
+    >
       {src ? (
         <Image
           key={src}
@@ -47,7 +57,7 @@ function EeatFactThumbInner({ image }: { image: EeatThumbImage }) {
           alt={image.alt}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="96px"
+          sizes={layout === "banner" ? "(max-width: 768px) 100vw, 480px" : "96px"}
           onError={() => setSrc(undefined)}
         />
       ) : (

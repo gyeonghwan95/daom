@@ -17,8 +17,14 @@ export function PageRepresentativeFigure({
   priority = false,
 }: PageRepresentativeFigureProps) {
   return (
-    <figure className="mx-auto w-full max-w-[680px]">
-      <div className="relative aspect-square w-full overflow-hidden rounded-[14px] border border-[var(--border,#e5e0d8)] bg-[#f0ebe3] shadow-[0_1px_2px_rgba(21,42,69,0.04)]">
+    <figure
+      className={`mx-auto w-full ${(image.height || 1200) > (image.width || 1200) ? "max-w-[480px]" : "max-w-[680px]"}`}
+    >
+      {/* 실제 이미지 비율을 따른다(정사각 SERP 이미지는 그대로 1:1, 현장·서류 사진은 4:3·세로형 그대로) */}
+      <div
+        className="relative w-full overflow-hidden rounded-[14px] border border-[var(--border,#e5e0d8)] bg-[#f0ebe3] shadow-[0_1px_2px_rgba(21,42,69,0.04)]"
+        style={{ aspectRatio: `${image.width || 1200} / ${image.height || 1200}` }}
+      >
         <Image
           src={image.src}
           alt={image.alt}

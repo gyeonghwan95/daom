@@ -19,6 +19,11 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PUBLIC = path.join(ROOT, "public");
 const OUT = path.join(PUBLIC, "_img");
 const MANIFEST = path.join(ROOT, "src/generated/image-variants.json");
+/** 원본 크기·형식과 공유(OG)용 JPEG 파생본 — 메타데이터의 og:image width/height/type을 실제 파일과 맞춘다 */
+const DIMENSIONS = path.join(ROOT, "src/generated/image-dimensions.json");
+/** OG 파생본: 이보다 크거나 무거운 원본만 1200px JPEG로 만든다(원본은 그대로 둔다) */
+const OG_MAX_WIDTH = 1200;
+const OG_MAX_SOURCE_BYTES = 600 * 1024;
 
 /** next.config.ts images.deviceSizes + imageSizes 와 같은 값 */
 export const VARIANT_WIDTHS = [256, 384, 640, 960, 1280, 1920];
@@ -40,11 +45,15 @@ function walk(dir, acc = []) {
   return acc;
 }
 
-/** EXIF 회전을 반영한 실제 표시 폭 */
-async function displayWidth(file) {
+/** EXIF 회전을 반영한 실제 표시 크기 */
+async function displaySize(file) {
   const meta = await sharp(file).metadata();
   const rotated = meta.orientation && meta.orientation >= 5;
-  return rotated ? meta.height : meta.width;
+  return {
+    width: rotated ? meta.height : meta.width,
+    height: rotated ? meta.width : meta.height,
+    format: meta.format,
+  };
 }
 
 function targetWidths(sourceWidth) {
@@ -61,12 +70,28 @@ const toKey = (file) =>
   EXTRA_SOURCES.get(file) ?? `/${path.relative(PUBLIC, file).replaceAll("\\", "/")}`;
 const variantFile = (key, width) =>
   path.join(OUT, `${key.replace(SOURCE_EXT, "")}.${width}.webp`);
+const ogFile = (key) => path.join(OUT, `${key.replace(SOURCE_EXT, "")}.og.jpg`);
+const ogKey = (key) => `/_img${key.replace(SOURCE_EXT, "")}.og.jpg`;
 
 async function processFile(file) {
   const key = toKey(file);
-  const widths = targetWidths(await displayWidth(file));
-  const srcMtime = fs.statSync(file).mtimeMs;
+  const size = await displaySize(file);
+  const widths = targetWidths(size.width);
+  const srcStat = fs.statSync(file);
+  const srcMtime = srcStat.mtimeMs;
   let written = 0;
+  const dims = { width: size.width, height: size.height, format: size.format, bytes: srcStat.size };
+  if (size.width > OG_MAX_WIDTH || srcStat.size > OG_MAX_SOURCE_BYTES) {
+    const dest = ogFile(key);
+    const ogWidth = Math.min(OG_MAX_WIDTH, size.width);
+    if (force || !fs.existsSync(dest) || fs.statSync(dest).mtimeMs < srcMtime) {
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      // 메타데이터(EXIF·위치)는 sharp 기본값대로 빠진다
+      await sharp(file).rotate().resize({ width: ogWidth, withoutEnlargement: true }).flatten({ background: "#ffffff" }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
+      written += 1;
+    }
+    dims.og = { src: ogKey(key), width: ogWidth, height: Math.round((size.height * ogWidth) / size.width), format: "jpeg" };
+  }
   for (const width of widths) {
     const dest = variantFile(key, width);
     if (!force && fs.existsSync(dest) && fs.statSync(dest).mtimeMs >= srcMtime) continue;
@@ -78,7 +103,7 @@ async function processFile(file) {
       .toFile(dest);
     written += 1;
   }
-  return { key, widths, written };
+  return { key, widths, written, dims };
 }
 
 async function runPool(items, limit, fn) {
@@ -110,7 +135,7 @@ function listWebp(dir, acc = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) listWebp(full, acc);
-    else if (entry.name.endsWith(".webp")) acc.push(full);
+    else if (entry.name.endsWith(".webp") || entry.name.endsWith(".og.jpg")) acc.push(full);
   }
   return acc;
 }
@@ -123,13 +148,17 @@ sharp.concurrency(1);
 const results = await runPool(sources, Math.max(1, Math.min(4, os.cpus().length)), processFile);
 
 const manifest = {};
+const dimensions = {};
 const expected = new Set();
-for (const { key, widths } of results.sort((a, b) => a.key.localeCompare(b.key))) {
+for (const { key, widths, dims } of results.sort((a, b) => a.key.localeCompare(b.key))) {
   manifest[key] = widths;
+  dimensions[key] = dims;
   for (const w of widths) expected.add(variantFile(key, w));
+  if (dims.og) expected.add(ogFile(key));
 }
 fs.mkdirSync(path.dirname(MANIFEST), { recursive: true });
 fs.writeFileSync(MANIFEST, `${JSON.stringify(manifest, null, 1)}\n`);
+fs.writeFileSync(DIMENSIONS, `${JSON.stringify(dimensions, null, 1)}\n`);
 
 const removed = removeStale(expected);
 const written = results.reduce((n, r) => n + r.written, 0);
