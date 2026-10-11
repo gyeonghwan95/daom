@@ -25,6 +25,8 @@ export type TopicHubConfig = {
   jurisdictionHref?: string;
   costHref?: string;
   documentsHref?: string;
+  /** '필요 서류' 목록. 없으면 공통 기본값을 쓴다(등기 업무 기준이라 회생·파산 허브는 따로 지정). */
+  documents?: string[];
 };
 
 export type TopicHubPage = TopicHubConfig & {

@@ -343,6 +343,13 @@ export const topicHubConfigs: TopicHubConfig[] = [
     ctaDescription:
       "개인회생·파산은 채무·소득·최근 변제 이력에 따라 적격 여부가 달라집니다. 다옴법무사사무소 안윤정 법무사가 현재 상황을 확인해드리겠습니다.",
     jurisdictionHref: "/부산회생법원법무사",
+    // 공통 기본값의 '등기부등본·계약서·협의서' 대신 회생·파산 서류로(2026-10-11). 나머지 항목은 기본값과 같다.
+    documents: [
+      "신분증·인감증명서(사건에 따라 주민등록등본 등)",
+      "소득·재산·채무를 확인할 수 있는 증빙 서류",
+      "가족관계증명서·재산 목록(상속·가사 해당 시)",
+      "기타 상담 시 추가로 요청드리는 서류",
+    ],
     costHref: "/개인회생비용",
     documentsHref: "/faq/personal-rehabilitation-documents-faq",
     faqServiceSlugs: ["personal-rehabilitation", "bankruptcy"],

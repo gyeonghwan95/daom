@@ -704,6 +704,7 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
       { label: page.title },
     ],
     introParagraphs: [page.ctaDescription],
+    ...(page.documents ? { documents: page.documents } : {}),
     consultationPoints: page.sections.flatMap((s) => s.links.map((l) => l.label)).slice(0, 5),
     faqs: page.faqs.map((f) => ({
       question: f.question,

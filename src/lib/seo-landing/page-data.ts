@@ -7,6 +7,7 @@ import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 import { getServiceImage } from "@/lib/site-images";
 import { getLawyerSlugLabel, resolveServiceSiteSlug } from "./labels";
 import { buildSeoLandingContent } from "./content";
+import { applyServiceIntentFixes } from "./service-intent-fixes";
 import type { SeoLandingSpec } from "./types";
 import { buildRegionJurisdictionSection } from "./region-jurisdiction";
 
@@ -225,5 +226,6 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     includeFaqSchema: true,
   });
 
-  return ensureMinContent(page, content.minContentLength);
+  // 상속포기·한정승인·회생·파산: 등기용 공통 문장이 섞인 업무·관할 오류만 같은 자리에서 바꾼다.
+  return applyServiceIntentFixes(ensureMinContent(page, content.minContentLength), spec.serviceId, spec.type);
 }

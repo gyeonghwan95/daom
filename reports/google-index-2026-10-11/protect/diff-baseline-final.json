@@ -1,0 +1,123 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [],
+ "protectedFieldChanges": [],
+ "mainChangedAllowed": [
+  "/강서구상속포기",
+  "/강서구한정승인",
+  "/개인파산과태료",
+  "/개인파산기간",
+  "/개인파산기한",
+  "/개인파산준비서류",
+  "/개인파산필요서류",
+  "/개인회생과태료",
+  "/개인회생기간",
+  "/개인회생기한",
+  "/개인회생여성법무사",
+  "/개인회생준비서류",
+  "/개인회생파산",
+  "/개인회생필요서류",
+  "/금정구상속포기",
+  "/남구상속포기",
+  "/남구한정승인",
+  "/덕천동개인회생",
+  "/동구상속포기",
+  "/동구한정승인",
+  "/동래구상속포기",
+  "/부곡동한정승인",
+  "/부산가정법원한정승인",
+  "/부산진구상속포기",
+  "/부산진구한정승인",
+  "/부산회생법원개인파산",
+  "/부산회생법원개인회생",
+  "/북구한정승인",
+  "/사상구한정승인",
+  "/사상역개인회생",
+  "/사하구상속포기",
+  "/사하구한정승인",
+  "/상속포기과태료",
+  "/상속포기기간",
+  "/상속포기기한",
+  "/상속포기준비서류",
+  "/상속포기필요서류",
+  "/서구상속포기",
+  "/서구한정승인",
+  "/수영구한정승인",
+  "/영도구상속포기",
+  "/영도구한정승인",
+  "/중구상속포기",
+  "/중구한정승인",
+  "/한정승인과태료",
+  "/한정승인기간",
+  "/한정승인기한",
+  "/한정승인준비서류",
+  "/한정승인필요서류"
+ ],
+ "mainChangedNotAllowed": [],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 1635,
+   "after": 1635
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 18,
+   "after": 18
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 595,
+   "after": 595
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 547,
+   "after": 547
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 32,
+   "after": 32
+  },
+  "rss": "same",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}

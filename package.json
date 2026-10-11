@@ -19,7 +19,7 @@
     "start": "next start",
     "lint": "eslint --max-warnings 0",
     "resources:assets": "tsx scripts/generate-resource-assets.ts",
-    "test": "node --test tests/seo-recovery.spec.ts tests/tool-calculators.spec.mjs",
+    "test": "node --test tests/seo-recovery.spec.ts tests/tool-calculators.spec.mjs tests/lastmod-manifest.spec.mjs",
     "validate:page-data": "node scripts/validate-page-data.mjs",
     "generate:seo-pages": "node scripts/generate-seo-pages.mjs",
     "check:routes": "node scripts/check-routes.mjs",

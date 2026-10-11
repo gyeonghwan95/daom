@@ -21,6 +21,7 @@ import {
 } from "@/lib/lawyer-eeat-images";
 import { homeReviewedOn } from "@/lib/home-content";
 import { EeatFactThumb } from "@/components/profile/EeatFactThumb";
+import { resolveEeatThumb } from "@/lib/lawyer-eeat-images-server";
 
 type EeatFact = {
   term: string;
@@ -90,7 +91,7 @@ function EeatFactCard({
           </p>
           {cta}
         </div>
-        <EeatFactThumb image={item.image} />
+        <EeatFactThumb image={resolveEeatThumb(item.image)} />
       </div>
     </>
   ) : (
@@ -107,7 +108,7 @@ function EeatFactCard({
         </p>
         {cta}
       </div>
-      <EeatFactThumb image={item.image} />
+      <EeatFactThumb image={resolveEeatThumb(item.image)} />
     </>
   );
 
