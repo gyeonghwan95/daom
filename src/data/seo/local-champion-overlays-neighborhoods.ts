@@ -87,7 +87,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
     slug: "온천동법무사",
     introParagraphs: [
       "온천동 법무사를 찾으시면 온천장·동래읍성·온천천 생활권의 구축 주택·상가 상속과 매매등기를 이 페이지에서 연결하시면 됩니다. 사직동 야구장·재건축 각도는 사직동 안내, 동래구 전체는 동래구 안내를 함께 보시면 됩니다.",
-      "온천1동·온천2동·온천3동처럼 행정동만 다른 검색도 같은 온천동 생활권입니다. 동 번호별 URL은 만들지 않습니다.",
+      "온천1동·온천2동·온천3동처럼 행정동만 다른 검색도 같은 온천동 생활권입니다.",
       "재개발·재건축 이야기가 있는 단지도 현재 등기 명의와 상속인 범위를 먼저 확인해야 이후 조합 서류와 맞습니다. 온천장 상업지 상가는 권리금과 건물 소유권을 구분해 준비합니다.",
     ],
     sections: [
@@ -102,7 +102,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
       },
       {
         title: "동래구 허브·부동산등기와의 구분",
-        body: "명륜·복천·수안처럼 온천동 밖 검색은 동래구 허브에서 흡수합니다. 온천동 주소 부동산의 매매·담보 등기 실무는 동래구 부동산등기 안내를, 상속인·한정승인은 동래구 상속등기 안내를 보시면 됩니다.",
+        body: "명륜·복천·수안처럼 온천동 밖 검색은 동래구 안내에서 함께 설명합니다. 온천동 주소 부동산의 매매·담보 등기 실무는 동래구 부동산등기 안내를, 상속인·한정승인은 동래구 상속등기 안내를 보시면 됩니다.",
         links: [
           { href: "/동래구상속등기", label: "동래구 상속등기" },
           { href: "/동래구부동산등기", label: "동래구 부동산등기" },
@@ -126,7 +126,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
       {
         question: "온천1동·2동 법무사는 다른 페이지인가요?",
         answer:
-          "같은 온천동 생활권입니다. 행정동 번호별 URL은 만들지 않습니다.",
+          "같은 온천동 생활권입니다.",
       },
       {
         question: "사직동 재건축과 온천동 안내는 겹치나요?",
@@ -390,7 +390,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
       {
         question: "부전역 법무사 페이지는 따로 있나요?",
         answer:
-          "역 전용 URL을 늘리지 않습니다. 부전역 인근이어도 주소 행정동이 부전이면 이 페이지, 서면 상권 허브는 서면 안내를 보시면 됩니다.",
+          " 부전역 인근이어도 주소 행정동이 부전이면 이 페이지, 서면 상권 허브는 서면 안내를 보시면 됩니다.",
       },
     ],
     serviceLinks: [
@@ -444,7 +444,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
       {
         question: "광안1동·2동·3동 페이지가 따로 있나요?",
         answer:
-          "없습니다. 행정동 번호별 URL을 만들지 않고 이 광안동 안내에서 흡수합니다.",
+          "없습니다. 이 광안동 안내에서 함께 설명합니다.",
       },
     ],
     serviceLinks: [
@@ -458,7 +458,7 @@ export const SEO_LANDING_REGION_OVERLAYS: Record<string, LocalChampionOverlay> =
     slug: "명지동법무사",
     introParagraphs: [
       "명지동 법무사를 찾으시면 기존 명지 주거·토지·어촌 생활권의 매매·상속등기를 이 페이지에서 연결하시면 됩니다. 명지국제신도시·에코델타 입주·법인설립 히어로는 명지 법무사·에코델타 법인등기 안내가 담당합니다.",
-      "가락·대저·녹산처럼 강서구 다른 생활권은 강서구 허브에서 흡수하고, 신도시 분양·설립만 급하면 명지 허브를 먼저 보시면 각도가 겹치지 않습니다.",
+      "가락·대저·녹산처럼 강서구 다른 생활권은 강서구 안내에서 함께 설명하고, 신도시 분양·설립만 급하면 명지 허브를 먼저 보시면 각도가 겹치지 않습니다.",
       "기존 주택·토지 지번과 신도시 단지 지번이 섞이면 등기부 주소를 먼저 확인해 주세요. 관할 등기소도 소재지에 따라 달라질 수 있습니다.",
     ],
     sections: [

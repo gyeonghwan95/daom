@@ -104,7 +104,9 @@ export function ConsultWizardShell() {
         situationIds: presetSituationIds.length
           ? presetSituationIds
           : saved?.situationIds ?? [],
-        situationNote: presetNote || saved?.situationNote || "",
+        // 버튼이 넘기는 note는 유입 위치 메타데이터 — 고객이 쓴 메모를 미리 채우거나 덮어쓰지 않는다
+        situationNote: saved?.situationNote || "",
+        entryNote: presetNote || "",
         step: presetSituationIds.length || presetNote ? 1 : saved?.step ?? 1,
       }),
     );

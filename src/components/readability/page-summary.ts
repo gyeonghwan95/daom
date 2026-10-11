@@ -50,7 +50,7 @@ export function buildPageTocItems(
     items.push({ id: "procedures", label: "핵심 절차" });
   }
   if (page.documents.length > 0) {
-    items.push({ id: "documents", label: "필요 서류" });
+    items.push({ id: "documents", label: page.documentsTitle ?? "필요 서류" });
   }
   if (page.consultationPoints.length > 0) {
     items.push({ id: "consultation-points", label: "상담 포인트" });

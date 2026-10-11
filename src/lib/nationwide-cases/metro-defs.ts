@@ -311,7 +311,7 @@ export const metroRegionDefs: RegionLandingDef[] = [
     scenarioIds: ["heir-scattered", "office-retail", "busan-remote"],
     propertyTypeIds: ["apt", "house", "retail"],
     uniqueFaqIds: ["cost-split", "branch-myth", "choose-lawyer"],
-    relatedRegionSlugs: ["지역별상속등기법무사", "전남상속등기법무사"],
+    relatedRegionSlugs: ["지역별상속등기법무사", "전남상속등기법무사", "경기광주상속등기법무사"],
     relatedServiceSlugs: ["전국상속등기법무사", "타지역법무사의뢰"],
     ctaTitle: "광주 상속등기 가능 여부 확인",
     ctaDescription: "구와 부동산 종류를 알려주시면 됩니다.",

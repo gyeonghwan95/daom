@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CASE_BASE } from "@/lib/gyeongnam-cases/types";
 
 export type GyeongnamExplorerItem = {
@@ -33,11 +33,17 @@ function pathFor(slug: string) {
 export function GyeongnamHubExplorer({ items, filters, coreLinks }: Props) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const initialFilter = searchParams.get("filter") ?? "all";
-  const initialQ = searchParams.get("q") ?? "";
-  const [filterId, setFilterId] = useState(initialFilter);
-  const [query, setQuery] = useState(initialQ);
+  // useSearchParams는 정적 내보내기에서 목록 전체를 클라이언트 렌더로 미뤄 초기 HTML에 링크가 빠지므로 쓰지 않는다.
+  const [filterId, setFilterId] = useState("all");
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    /* eslint-disable react-hooks/set-state-in-effect */
+    if (params.get("filter")) setFilterId(params.get("filter")!);
+    if (params.get("q")) setQuery(params.get("q")!);
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, []);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase().replace(/\s+/g, "");

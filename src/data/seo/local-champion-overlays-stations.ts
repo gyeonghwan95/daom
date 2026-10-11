@@ -295,7 +295,7 @@ export const SEO_LANDING_STATION_OVERLAYS: Record<string, StationOverlay> = {
         },
         {
           title: "에코델타·강서구와의 연결",
-          body: "에코델타 설립·본점이전은 에코델타 법인등기 안내, 녹산·대저 흡수는 강서구 허브를 보시면 됩니다.",
+          body: "에코델타 설립·본점이전은 에코델타 법인등기 안내, 녹산·대저는 강서구 안내를 보시면 됩니다.",
           links: [
             { href: "/에코델타시티법인등기", label: "에코델타시티 법인등기" },
             { href: "/강서구법무사", label: "강서구 법무사" },

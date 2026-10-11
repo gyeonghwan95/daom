@@ -847,7 +847,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
 
       <ul className="space-y-1 text-xs leading-relaxed text-navy/55">
         <li>제출하시면 사무소 이메일로 안전하게 전달됩니다.</li>
-        <li>남겨 주신 개인정보는 사이트에 따로 보관하지 않으니 안심하셔도 됩니다.</li>
+        <li>남겨 주신 내용은 사무소 담당자에게 메시지·이메일로 전달되며, 사이트 데이터베이스에는 따로 저장하지 않습니다.</li>
         <li>초기 문의에는 민감한 원본서류를 첨부하지 마세요.</li>
       </ul>
     </form>

@@ -203,6 +203,7 @@ export type CreatePageDataInput = {
   introParagraphs?: string[];
   procedures?: string[];
   documents?: string[];
+  documentsTitle?: string;
   consultationPoints?: string[];
   faqs?: PageFaqItem[];
   consultationExample?: PageConsultationExample;
@@ -302,6 +303,7 @@ export function createPageData(input: CreatePageDataInput): PageData {
         : isGlossary
           ? []
           : DEFAULT_DOCUMENTS,
+    ...(input.documentsTitle ? { documentsTitle: input.documentsTitle } : {}),
     consultationPoints: input.consultationPoints ?? [],
     faqs,
     consultationExample:

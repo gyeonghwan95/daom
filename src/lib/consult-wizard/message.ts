@@ -20,6 +20,8 @@ export type ConsultWizardDraft = {
   consent: boolean;
   pageTitle: string;
   pageUrl: string;
+  /** 문의를 시작한 버튼·위치(사이트가 붙이는 비개인 정보) — 고객 메모와 분리 */
+  entryNote?: string;
 };
 
 function labelDocs(ids: string[]): string {
@@ -53,6 +55,10 @@ export function buildConsultMessage(draft: ConsultWizardDraft): string {
     `선호 연락: ${pref}`,
     `편한 시간: ${time}`,
   );
+
+  if (draft.entryNote?.trim()) {
+    lines.push(`(문의 시작 위치: ${draft.entryNote.trim()})`);
+  }
 
   return lines.join("\n");
 }

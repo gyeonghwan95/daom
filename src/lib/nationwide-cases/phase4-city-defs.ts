@@ -66,7 +66,7 @@ export const phase4CityRegionDefs: RegionLandingDef[] = [
     scenarioIds: ["cross-city-boundary", "farm-forest", "heir-scattered"],
     propertyTypeIds: ["apt", "land", "farm"],
     uniqueFaqIds: ["gwangju-gyeonggi-vs-metro", "visit-need"],
-    relatedRegionSlugs: ["경기상속등기법무사", "용인상속등기법무사", "하남상속등기법무사", "지역별상속등기법무사"],
+    relatedRegionSlugs: ["경기상속등기법무사", "용인상속등기법무사", "하남상속등기법무사", "광주상속등기법무사", "지역별상속등기법무사"],
     relatedServiceSlugs: ["전국상속등기법무사", "전국비대면법무사"],
     ctaTitle: "경기도 광주 상속등기 가능 여부 확인",
     ctaDescription: "오포·곤지암 등 정확한 소재지와 부동산 종류를 알려주시면 서류 목록을 안내합니다.",

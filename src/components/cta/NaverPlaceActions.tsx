@@ -27,6 +27,8 @@ type NaverPlaceActionsProps = {
   /** 둘째 버튼 — 지정하지 않으면 placement로 정한다 */
   secondary?: "map" | "review";
   reviewLabel?: string;
+  /** 좁은 패널: 두 버튼을 1열 전체 폭으로 쌓아 문구가 잘리지 않게 한다 */
+  stacked?: boolean;
   className?: string;
   buttonClassName?: string;
 };
@@ -43,6 +45,7 @@ export function NaverPlaceActions({
   mapLabel = "네이버 지도",
   secondary,
   reviewLabel = "후기·사진 보기",
+  stacked = false,
   className = "",
   buttonClassName = "",
 }: NaverPlaceActionsProps) {
@@ -51,7 +54,7 @@ export function NaverPlaceActions({
 
   return (
     <div
-      className={`grid grid-cols-2 gap-2 ${className}`.trim()}
+      className={`grid ${stacked ? "grid-cols-1" : "grid-cols-2"} gap-2 ${className}`.trim()}
       data-cta-group="naver-place"
     >
       <NaverSmartPlaceCta

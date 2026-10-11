@@ -7,7 +7,7 @@ export const homeHero = {
   lead: "상속·부동산·법인등기와 개인회생·파산, 안윤정 법무사가 직접 상담하고 진행합니다.",
   primaryCta: "업무 의뢰 문의",
   secondaryCta: { label: "비슷한 업무 사례 보기", href: "/업무사례#case-list" },
-  ctaNote: "어떤 일인지와 연락처만 남기시면, 필요한 절차와 준비할 것부터 안내해 드립니다.",
+  ctaNote: "어떤 일인지와 연락처만 남기시면 절차·비용·준비할 것을 먼저 안내해 드리고, 맡기기로 하시면 그때 진행합니다.",
   /** 작은 신뢰 근거 — 기존 상세 링크로 연결 */
   proofLinks: [
     { label: "직접 상담·진행", href: "/about" },

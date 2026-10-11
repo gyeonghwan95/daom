@@ -57,6 +57,8 @@ export type PageData = {
   introParagraphs: string[];
   procedures: string[];
   documents: string[];
+  /** documents 섹션 제목(기본 '필요 서류'). 상담 기초정보 목록이면 '첫 상담에 알려주실 정보'처럼 바꾼다 */
+  documentsTitle?: string;
   consultationPoints: string[];
   faqs: PageFaqItem[];
   consultationExample: PageConsultationExample;

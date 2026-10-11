@@ -1,4 +1,4 @@
-import { getNaverSmartPlaceUrl } from "@/config/external-links";
+import { EXTERNAL_LINKS, getNaverSmartPlaceUrl } from "@/config/external-links";
 
 export type NaverSmartPlaceVariant =
   | "reservation"
@@ -62,9 +62,16 @@ export function getNaverSmartPlaceCopy(variant: NaverSmartPlaceVariant) {
   return LABELS[variant];
 }
 
-/** All SmartPlace CTAs share one destination (user-specified short URL). */
-export function resolveNaverSmartPlaceHref(): string {
-  return getNaverSmartPlaceUrl();
+/**
+ * 버튼 목적에 맞는 플레이스 탭으로 연결한다(예약 → 예약 탭, 후기 → 후기 탭, 지도·소개 → 홈 단축 링크).
+ * 스마트플레이스 노출을 끄는 스위치·주소 재정의가 있으면 모두 단축 링크 규칙을 따른다.
+ */
+export function resolveNaverSmartPlaceHref(variant?: NaverSmartPlaceVariant): string {
+  const home = getNaverSmartPlaceUrl();
+  if (!home || process.env.NEXT_PUBLIC_NAVER_PLACE_URL?.trim()) return home;
+  if (variant === "reservation") return EXTERNAL_LINKS.naverPlaceBooking;
+  if (variant === "review") return EXTERNAL_LINKS.naverPlaceReview;
+  return home;
 }
 
 export function isNaverSmartPlaceConfigured(): boolean {

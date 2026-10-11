@@ -101,7 +101,7 @@ export function buildBusanCompanyEstablishmentPage(
       title: "부산 법인설립 관할",
       address: "본점 소재지 기준 관할 등기소",
       accessNote: "본점 주소에 따라 관할이 달라집니다.",
-      jurisdictionNote: "설립등기 완료 후 세무서·은행 절차가 이어집니다.",
+      jurisdictionNote: "설립등기는 본점 소재지를 관할하는 등기소에 신청합니다. 부산 안에서도 본점 주소에 따라 관할 등기소가 달라지므로 주소부터 확인하고, 등기 완료 후에는 세무서·은행 절차가 이어집니다.",
       practicalNotes: [
         "상호 검색을 먼저 하세요.",
         "본점 주소의 건축물·임대차 조건을 확인하세요.",

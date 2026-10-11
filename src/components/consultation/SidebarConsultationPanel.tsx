@@ -185,14 +185,12 @@ export function SidebarConsultationPanel() {
             <NaverPlaceActions
               placement="sidebar"
               size="sm"
-              reservationLabel="예약"
-              reviewLabel="후기·사진"
+              reservationLabel="네이버 예약"
+              reviewLabel="네이버 후기·사진"
+              stacked
               className="gap-1.5"
-              buttonClassName="!min-h-10 !rounded-lg !px-2"
+              buttonClassName="!min-h-11 !rounded-lg !px-3 !justify-start"
             />
-            <p className="sidebar-consult-panel__naver-hint">
-              네이버 플레이스에서 방문 예약과 방문자 후기를 볼 수 있습니다
-            </p>
           </div>
         ) : null}
 

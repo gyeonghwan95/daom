@@ -33,6 +33,14 @@ export type NaverSmartPlaceCtaProps = {
   showHint?: boolean;
 };
 
+/** 실제로 열리는 플레이스 탭(접근성 이름에 화면 문구와 함께 쓴다) */
+const DESTINATION_LABEL: Record<NaverSmartPlaceVariant, string> = {
+  reservation: "예약 탭",
+  review: "후기 탭",
+  map: "지도",
+  place: "홈",
+};
+
 type VisualTone = "brand" | "chip" | "soft" | "text" | "onDark";
 
 const sizeClass: Record<Size, string> = {
@@ -104,7 +112,7 @@ export function NaverSmartPlaceCta({
 }: NaverSmartPlaceCtaProps) {
   if (!isNaverSmartPlaceConfigured()) return null;
 
-  const href = resolveNaverSmartPlaceHref();
+  const href = resolveNaverSmartPlaceHref(variant);
   const copy = getNaverSmartPlaceCopy(variant);
   const visible = label || copy.label;
   const tone = resolveTone(variant, toneProp);
@@ -129,7 +137,7 @@ export function NaverSmartPlaceCta({
       data-cta="naver-place"
       data-cta-variant={variant}
       data-cta-placement={placement}
-      aria-label={copy.aria}
+      aria-label={`${visible} — 네이버 플레이스 ${DESTINATION_LABEL[variant]} (새 창)`}
       className={`${toneClass(tone, fullWidth, size)} ${sizing} ${className}`.trim()}
       onClick={() => {
         trackNaverPlaceClick({ variant, placement, href });

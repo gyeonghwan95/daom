@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import {
   InheritanceCostGuide,
@@ -74,16 +73,12 @@ export function SoutheastCasePageView({
         </div>
       ) : null}
       {def.pageType === "region-hub" ? (
-        <Suspense
-          fallback={<p className="text-sm text-navy/60">지역 목록 준비 중…</p>}
-        >
-          <SoutheastHubExplorer
+        <SoutheastHubExplorer
             items={explorerItems}
             filters={explorerFilters}
             coreLinks={coreLinks}
             groupLabel={def.regionGroup}
           />
-        </Suspense>
       ) : null}
     </PageDataTemplate>
   );

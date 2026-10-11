@@ -8677,3 +8677,18 @@ a.admin-page-identity__path:hover {
     transition: none;
   }
 }
+
+/* 주소·교통 줄: '도보 5/분'처럼 숫자와 단위가 갈라지지 않게 단어 단위로 줄바꿈 */
+.home-hero__location {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+/* 홈 위치·연락 보조 링크 터치 높이 */
+.home-place__phone,
+.home-place__more,
+.home-closing__location {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+}

@@ -67,7 +67,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       {
         question: "민락역과 민락동 법무사 안내는 다른 페이지인가요?",
         answer:
-          "같은 생활권을 봅니다. 역 이름으로 검색하셔도 이 페이지와 연결되는 업무 안내를 확인하시면 됩니다. 별도 역 전용 URL을 만들지 않습니다.",
+          "같은 생활권을 봅니다. 역 이름으로 검색하셔도 이 페이지와 연결되는 업무 안내를 확인하시면 됩니다.",
       },
       {
         question: "민락 오피스텔·상가 매매도 상담할 수 있나요?",
@@ -155,7 +155,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       },
       {
         title: "‘복산동’ 검색과 동래권 안내",
-        body: "부산 동래권에서 ‘복산동’으로 검색하시는 경우 공식 행정동(복천동 등)과 다를 수 있습니다. 별도 ‘복산동법무사’ URL을 만들지 않고, 이 동래구 안내와 인접 동네 허브에서 소재지 기준으로 연결합니다.",
+        body: "부산 동래권에서 ‘복산동’으로 검색하시는 경우 공식 행정동(복천동 등)과 다를 수 있습니다. 이 동래구 안내와 인접 동네 허브에서 소재지 기준으로 연결합니다.",
         links: [
           { href: "/온천동법무사", label: "온천동 안내" },
           { href: "/부산한정승인", label: "한정승인" },

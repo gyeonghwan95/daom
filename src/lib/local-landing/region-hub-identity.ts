@@ -842,7 +842,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
     answerBlock:
       "반여동에서 법무사를 찾으시면 반여·반송 대단지 아파트의 상속·매매를 이 페이지에서 보시면 됩니다. 좌동과 맞닿아 있어도 등기는 주소 기준입니다. 다옴법무사사무소는 해운대 센텀에서 반여동 사건을 상담합니다.",
     expandParagraphs: [
-      "반여1~4동 행정동 검색은 이 반여동 안내에서 흡수합니다. 구 전체는 해운대 허브입니다.",
+      "반여1~4동 행정동 검색은 이 반여동 안내에서 함께 설명합니다. 구 전체는 해운대 허브입니다.",
       "공동상속과 담보 대출이 겹치면 등기부를 먼저 봅니다.",
     ],
     practiceFocus: [
@@ -866,7 +866,7 @@ export const REGION_HUB_IDENTITIES: Record<string, RegionHubIdentity> = {
       {
         question: "반송동 법무사 페이지가 따로 있나요?",
         answer:
-          "반송은 반여 생활권과 함께 이 페이지에서 소재지 기준으로 안내합니다. 별도 반송 전용 URL을 늘리지 않습니다.",
+          "반송은 반여 생활권과 함께 이 페이지에서 소재지 기준으로 안내합니다.",
       },
     ],
     trustLine: trust("반여동"),

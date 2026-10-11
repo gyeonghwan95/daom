@@ -18,6 +18,8 @@ type DesktopNavFlyoutProps = {
   children: ReactNode;
   /** 메가메뉴처럼 넓은 콘텐츠 */
   wide?: boolean;
+  /** 일반 드롭다운 최대 너비(px) */
+  maxWidth?: number;
 };
 
 /**
@@ -32,6 +34,7 @@ export function DesktopNavFlyout({
   onMouseEnter,
   children,
   wide = false,
+  maxWidth: maxWidthProp = 640,
 }: DesktopNavFlyoutProps) {
   const panelInnerRef = useRef<HTMLDivElement>(null);
   const [contentStyle, setContentStyle] = useState<{
@@ -57,7 +60,7 @@ export function DesktopNavFlyout({
     }
 
     // 일반 드롭다운: 해당 메뉴 아래 중심 + 화면 밖으로 넘치면 clamp
-    const maxWidth = Math.min(640, viewport - edge * 2);
+    const maxWidth = Math.min(maxWidthProp, viewport - edge * 2);
     const width = Math.max(260, maxWidth);
     const center = rect.left + rect.width / 2;
     const idealLeft = center - width / 2;
@@ -67,7 +70,7 @@ export function DesktopNavFlyout({
     );
 
     setContentStyle({ left, width });
-  }, [triggerRef, wide]);
+  }, [triggerRef, wide, maxWidthProp]);
 
   useLayoutEffect(() => {
     if (!open) {

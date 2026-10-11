@@ -110,6 +110,7 @@ const promises = [
 export function LawyerTrustShowcase() {
   const { phone, kakao, naverTalk } = getContactInfo();
   const image = siteImages.about.credentialInfographic;
+  const activityImage = siteImages.about.activityInfographic;
   const reviewFeed = getNaverPlaceReviewsFeed();
   const reviewQuotes = buildReviewQuotes(reviewFeed.items);
   const prepByPath = Object.fromEntries(
@@ -146,10 +147,35 @@ export function LawyerTrustShowcase() {
             </p>
           </header>
 
-          <div className="mx-4 mt-5 flex flex-col rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-center @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:justify-center @5xl:rounded-none @5xl:p-7">
-            <TrustInfographicViewer image={image} />
+          <div className="mx-4 mt-5 flex flex-col rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-start @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:justify-center @5xl:rounded-none @5xl:p-7">
+            <div className="space-y-5">
+              <figure>
+                <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
+                  <span className="inline-flex items-center gap-2 text-sm font-bold text-navy">
+                    <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
+                    전문 이력
+                  </span>
+                  <span className="text-xs text-navy/55">자격·학력·주요 경력</span>
+                </figcaption>
+                <TrustInfographicViewer image={image} title="안윤정 법무사 전문이력 인포그래픽" />
+              </figure>
+              <figure>
+                <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
+                  <span className="inline-flex items-center gap-2 text-sm font-bold text-navy">
+                    <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
+                    전문 활동
+                  </span>
+                  <span className="text-xs text-navy/55">위촉·수상·방송 출연</span>
+                </figcaption>
+                <TrustInfographicViewer
+                  image={activityImage}
+                  title="안윤정 법무사 전문활동 인포그래픽"
+                  trackKind="trust-activity-infographic"
+                />
+              </figure>
+            </div>
             <p className="mt-3 text-center text-xs leading-relaxed text-navy/60">
-              이미지를 누르면 이력 전체를 크게 볼 수 있습니다.
+              이미지를 누르면 크게 볼 수 있습니다.
             </p>
             <Link
               href="/about"
@@ -217,10 +243,10 @@ export function LawyerTrustShowcase() {
             />
 
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <Link href="/media" className="text-navy underline-offset-4 hover:underline">
+              <Link href="/media" className="inline-flex min-h-10 items-center text-navy underline-offset-4 hover:underline">
                 언론·방송 출연 보기 →
               </Link>
-              <Link href="/강의이력" className="text-navy underline-offset-4 hover:underline">
+              <Link href="/강의이력" className="inline-flex min-h-10 items-center text-navy underline-offset-4 hover:underline">
                 강의 이력 보기 →
               </Link>
             </div>

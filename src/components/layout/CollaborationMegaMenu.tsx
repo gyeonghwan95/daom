@@ -4,6 +4,7 @@ import { useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DesktopNavFlyout } from "@/components/layout/DesktopNavFlyout";
+import { desktopLinkClass, NavChevron } from "@/components/layout/nav-trigger";
 import { useDesktopNavFlyout } from "@/components/layout/useDesktopNavFlyout";
 import {
   linksForMegaArea,
@@ -45,15 +46,11 @@ export function CollaborationMegaMenu({
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         aria-haspopup="true"
-        className={[
-          "inline-flex min-h-11 items-center rounded-lg px-3 text-[0.9375rem] transition-colors duration-200",
-          active || open
-            ? "bg-beige font-semibold text-navy shadow-sm ring-1 ring-inset ring-navy/10"
-            : "font-medium text-navy/70 hover:bg-beige/70 hover:text-navy",
-        ].join(" ")}
+        className={desktopLinkClass(active || open)}
         onFocus={openMenu}
       >
         {label}
+        <NavChevron open={open} />
       </Link>
 
       <DesktopNavFlyout

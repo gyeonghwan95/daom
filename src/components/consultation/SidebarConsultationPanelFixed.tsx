@@ -61,6 +61,10 @@ export function SidebarConsultationPanelFixed({
         bottom: layout.bottom,
         left,
         width,
+        // 짧은 창·확대 화면에서도 헤더 아래로 모든 버튼에 닿을 수 있게 패널 안에서 스크롤
+        maxHeight: `calc(100vh - ${layout.bottom}px - var(--header-height, 80px) - 12px)`,
+        overflowY: "auto",
+        overscrollBehavior: "contain",
       }}
       aria-hidden={show ? undefined : true}
     >

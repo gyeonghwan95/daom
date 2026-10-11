@@ -240,7 +240,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       },
       {
         title: "부산 구·권역(관할 정보)",
-        intro: "김해·양산 복제가 아니라 부산 구·산업 특성이 있는 페이지",
+        intro: "부산 구·권역별로 많이 설립되는 단체 유형을 나눠 정리했습니다.",
         links: [
           {
             href: "/해운대비영리법인설립",
@@ -271,7 +271,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       },
       {
         title: "경남·창원(관할 정보)",
-        intro: "지역명만 바꾼 페이지가 아니라 관할 기관 정보가 다른 경우",
+        intro: "경남·창원은 주무관청과 관할 등기소가 부산과 달라 따로 정리했습니다.",
         links: [
           {
             href: "/경남사단법인설립",

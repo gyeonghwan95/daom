@@ -46,7 +46,8 @@ export function InquiryStartButton({
       data-cta="contact"
       role={role}
       aria-haspopup="dialog"
-      aria-label={consultationInquiryCopy.ctaPrimary}
+      // 화면 문구가 곧 접근성 이름 — 다른 문구(예: 업무 의뢰 문의)를 넣었는데 고정 이름을 붙이면 불일치한다
+      aria-label={children ? undefined : consultationInquiryCopy.ctaPrimary}
       onClick={() => {
         onClick?.();
         if (pageSlug) trackCTA("contact", pageSlug, "#inquiry");

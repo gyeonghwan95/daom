@@ -340,7 +340,7 @@ export function PageDataTemplate({
         </WarningBox>
       </ContentSection>
 
-      <ContentSection id="documents" title="필요 서류">
+      <ContentSection id="documents" title={page.documentsTitle ?? "필요 서류"}>
         <ChecklistBox
           items={page.documents}
           note="사건마다 추가 서류가 필요할 수 있습니다. 상담 전에 체크리스트를 확인해 두시면 준비가 수월합니다."

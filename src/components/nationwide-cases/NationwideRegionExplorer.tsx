@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CASE_BASE } from "@/lib/nationwide-cases/types";
 
 export type RegionExplorerItem = {
@@ -32,9 +32,13 @@ function pathFor(slug: string) {
 export function NationwideRegionExplorer({ items, groups }: Props) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const initialQ = searchParams.get("q") ?? "";
-  const [query, setQuery] = useState(initialQ);
+  // 정적 HTML에 지역 카드·링크가 모두 들어가도록 렌더 중에는 URL 검색어를 읽지 않는다(useSearchParams는 CSR로 빠짐).
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (q) setQuery(q);
+  }, []);
 
   const bySlug = useMemo(
     () => new Map(items.map((i) => [i.slug, i])),
@@ -67,7 +71,7 @@ export function NationwideRegionExplorer({ items, groups }: Props) {
 
   function updateQuery(next: string) {
     setQuery(next);
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
     if (next.trim()) params.set("q", next.trim());
     else params.delete("q");
     const qs = params.toString();
@@ -144,7 +148,7 @@ export function NationwideRegionExplorer({ items, groups }: Props) {
           <li className="rounded-xl border border-beige-dark bg-beige/30 p-4 shadow-sm">
             <p className="font-semibold text-navy">부산</p>
             <p className="mt-1 text-xs text-navy/65">
-              신규 지역 페이지 대신 기존 안내로 연결합니다.
+              부산 부동산은 부산 상속등기 안내에서 이어서 보실 수 있습니다.
             </p>
             <Link
               href="/부산상속등기"

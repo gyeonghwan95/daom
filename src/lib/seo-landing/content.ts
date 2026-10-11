@@ -558,7 +558,7 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
           `${service} 비용은 가정법원 실비, 법무사 보수, 증명서·우편, 신청인 수, 미성년·해외·특별대리 여부에 따라 달라집니다. 부동산 취득세 견적 구조와는 다릅니다.`,
           `확정 금액은 상담 후 견적합니다. ${intent === "비용" || intent === "보수표" ? "수임과 실비를 구분해 안내합니다." : "비용만 궁금하면 상속포기 비용 안내를 먼저 보시면 됩니다."}`,
           `${region} ${service} 견적은 신청인 구성·기한 임박·추가 업무를 항목별로 나눕니다.`,
-          `신청 가능성·3개월 기한·가족관계는 부산 상속포기 안내에서 먼저 확인하는 것이 좋습니다.`,
+          `비용을 보기 전에 신청 가능성·3개월 기한·가족관계부터 확인하면 견적 항목이 분명해집니다. 절차는 부산 상속포기 안내에서 먼저 보실 수 있습니다.`,
         ]
       : [
           `${service} 비용은 사건 난이도·부동산 가액·상속인 수·채무 규모에 따라 달라집니다. 법무사 수임료와 등기신청 수수료·세금을 구분해 설명하며, 상담 후 항목별 견적을 드립니다.`,
@@ -576,10 +576,12 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
 
   const localVariants = [
     `${josa(region, "은/는")} 관할 등기소와 법원이 다를 수 있어 부동산·법인 소재지 기준 확인이 우선입니다.`,
-    `${lawyerProfileMeta.name} 법무사는 ${officeLocation.areaLabel}에 있는 다옴법무사사무소에서 ${region} 포함 부산 전역 사건을 상담합니다. 급한 기한이 있으면 우선순위부터 정리합니다.`,
+    `${lawyerProfileMeta.name} 법무사는 ${officeLocation.areaLabel}에 있는 다옴법무사사무소에서 ${region === "부산" ? "부산 전역" : `${josa(region, "을/를")} 포함한 부산 전역`} 사건을 상담하고, 접수할 법원·등기소는 사건 주소 기준으로 따로 확인합니다. 급한 기한이 있으면 우선순위부터 정리합니다.`,
     `${region}에 사시더라도 실제 접수 관할은 부동산 소재지·본점 주소 기준으로 다시 확인합니다. 생활권과 관할이 같지 않을 수 있습니다.`,
     `${region} 인근 교통·업무지구 특성상 잔금일·인도일·법인 결의일이 겹치는 문의가 있습니다. 일정표로 정리하면 누락을 줄일 수 있습니다.`,
   ];
+
+  const localBody = pick(localVariants, spec.seed, 5);
 
   const angleVariants = [
     `${region} ${service}에서 자주 헷갈리는 지점은 ‘누가 신청인인지’와 ‘지금 당장 막히는 권리(근저당·가압류)가 있는지’입니다.`,
@@ -609,7 +611,15 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
         ]
       : []),
     {
-      title: profile.sectionTitles[1] ?? "비용·기한 참고",
+      // 이 섹션 본문은 항상 비용 안내(costVariants)이므로 프로필 제목이 비용 주제일 때만 쓴다.
+      title:
+        profile.sectionTitles[1] && /비용|보수|견적|실비/.test(profile.sectionTitles[1])
+          ? profile.sectionTitles[1]
+          : intent === "기한" || intent === "기간"
+            ? "기한과 비용 참고"
+            : intent === "과태료"
+              ? "과태료와 비용 참고"
+              : "비용 참고",
       body: pick(costVariants, spec.seed, 3),
       items:
         spec.serviceId === "inheritance-renunciation" && (intent === "기한" || intent === "기간")
@@ -629,8 +639,14 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
       body: `${pick(documentVariants, spec.seed, 4)} ${exclusiveClusterBody({ ...spec, seed: `${spec.seed}:docs` }, exclusiveClusterSentences(spec))}`,
     },
     {
-      title: profile.sectionTitles[2] ?? `${region} 지역 특성`,
-      body: pick(localVariants, spec.seed, 5),
+      // 본문(localVariants)은 관할 또는 일정 이야기이므로, 고른 본문이 관할을 다룰 때만 관할 주제의 프로필 제목을 쓴다.
+      title:
+        !/관할|법원·등기소/.test(localBody)
+          ? `${region} 사건 일정 참고`
+          : profile.sectionTitles[2] && /관할|생활권|지역|이동/.test(profile.sectionTitles[2])
+            ? profile.sectionTitles[2]
+            : `${region} 지역 특성`,
+      body: localBody,
     },
   ];
 

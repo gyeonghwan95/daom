@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import {
   InheritanceCostGuide,
@@ -84,12 +83,7 @@ export function NationwideCasePageView({
       ) : null}
 
       {def.kind === "region-hub" ? (
-        <Suspense fallback={<p className="text-sm text-navy/60">지역 목록 준비 중…</p>}>
-          <NationwideRegionExplorer
-            items={explorerItems}
-            groups={explorerGroups}
-          />
-        </Suspense>
+        <NationwideRegionExplorer items={explorerItems} groups={explorerGroups} />
       ) : null}
 
       {def.kind === "hub" ? (

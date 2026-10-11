@@ -134,9 +134,17 @@ export function CaseRegionsByAreaView({ page }: { page: PageData }) {
         <p className="body-text max-w-3xl text-navy/80">{page.intro}</p>
       </header>
 
+      <p className="body-text max-w-3xl text-navy/80">
+        부산 밖에 있는 부동산 상속등기는{" "}
+        <Link href="/업무사례/지역별상속등기법무사" className="font-semibold underline underline-offset-2">
+          지역별 상속등기 안내
+        </Link>
+        에서 권역별로 찾으실 수 있습니다.
+      </p>
+
       <CaseRegionExplorer />
 
-      <HubChildLinks path={page.path} />
+      <HubChildLinks path={page.path} splitBusan />
 
       <section>
         <h2 className="section-heading">자주 묻는 질문</h2>

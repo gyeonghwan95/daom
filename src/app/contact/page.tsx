@@ -43,6 +43,29 @@ export default function ContactPage() {
         <BusinessCredentialSlot path="/contact" slug="contact" />
         <ArticleVisualSlot path="/contact" slot="before-cta" />
         <ContactSection />
+        <section
+          id="inquiry-process"
+          className="mt-10 scroll-mt-[calc(var(--header-height)+1rem)]"
+          aria-labelledby="inquiry-process-heading"
+        >
+          <h2 id="inquiry-process-heading" className="section-heading">
+            문의하신 뒤에는 이렇게 진행됩니다
+          </h2>
+          <ol className="mt-4 grid gap-3 md:grid-cols-4">
+            {[
+              ["상황 확인", "남겨 주신 내용으로 어떤 업무인지, 기한이 있는지 먼저 확인합니다."],
+              ["범위·비용·준비사항 안내", "맡길 수 있는 업무 범위와 법무사 보수·공과금, 준비할 서류를 설명드립니다."],
+              ["맡기기로 하시면 진행", "안내를 들으신 뒤 위임에 동의하시면 그때부터 서류 작성·신청을 진행합니다. 문의만으로 진행되지는 않습니다."],
+              ["접수·진행·완료 안내", "접수, 보정 등 진행 상황과 완료 결과를 알려 드립니다."],
+            ].map(([title, body], i) => (
+              <li key={title} className="rounded-xl border border-beige-dark bg-white p-4">
+                <span className="text-xs font-bold text-navy-light">{i + 1}단계</span>
+                <p className="mt-1 font-semibold text-navy">{title}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-navy/75">{body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
         <section className="mt-10 rounded-xl border border-beige-dark bg-beige/25 p-5 md:p-8">
           <h2 className="section-heading">방문상담 전 준비사항</h2>
           <p className="body-text mt-3 max-w-3xl text-navy/80">

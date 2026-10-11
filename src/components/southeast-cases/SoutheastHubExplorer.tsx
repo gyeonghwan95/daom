@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CASE_BASE } from "@/lib/southeast-cases/types";
 
 export type SoutheastExplorerItem = {
@@ -36,9 +36,16 @@ export function SoutheastHubExplorer({
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [filterId, setFilterId] = useState(searchParams.get("filter") ?? "all");
-  const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  // 정적 HTML에 카드·링크가 들어가도록 URL 값은 마운트 뒤에 읽는다(useSearchParams는 CSR로 빠짐).
+  const [filterId, setFilterId] = useState("all");
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    /* eslint-disable react-hooks/set-state-in-effect */
+    if (params.get("filter")) setFilterId(params.get("filter")!);
+    if (params.get("q")) setQuery(params.get("q")!);
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, []);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase().replace(/\s+/g, "");

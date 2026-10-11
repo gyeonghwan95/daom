@@ -88,6 +88,7 @@ export function buildNationwideHubPageData(): PageData {
       "필요서류·공과금·보수 범위 안내",
       "원본 전달·접수·보정·완료 공유",
     ],
+    documentsTitle: "첫 상담에 알려주실 정보",
     documents: [
       "의뢰인 거주 지역",
       "부동산 또는 법인 소재 지역",

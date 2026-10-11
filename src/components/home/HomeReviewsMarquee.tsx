@@ -69,7 +69,7 @@ export function HomeReviewsMarquee({
           />
           <Link
             href="/reviews"
-            className="text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
+            className="inline-flex min-h-10 items-center text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
           >
             후기 더보기 →
           </Link>

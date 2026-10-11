@@ -9,9 +9,14 @@ import {
   isNavItemActive,
   isNavLinkActive,
   mainNavigation,
+  quickNavLinks,
   type NavItem,
 } from "@/lib/navigation";
+import { getContactInfo } from "@/lib/contact";
 import { siteConfig } from "@/lib/site";
+
+const listItems = mainNavigation.filter((item) => !item.cta);
+const ctaItem = mainNavigation.find((item) => item.cta);
 
 type MobileNavProps = {
   open: boolean;
@@ -188,7 +193,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               ].join(" ")}
             >
               <ul className="space-y-1 px-3 pt-3">
-                {mainNavigation.map((item) => {
+                {listItems.map((item) => {
                   const active = isNavItemActive(pathname, item.href);
                   const hasChildren = Boolean(item.groups?.length);
 
@@ -218,9 +223,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                               {item.label}
                             </span>
                             <span className="mt-0.5 block text-[0.6875rem] font-normal text-navy/45">
-                              {item.megaMenu
-                                ? "복대리·부동산·건축·기업 협업"
-                                : "하위 메뉴 보기"}
+                              {item.description ?? "하위 메뉴 보기"}
                             </span>
                           </span>
                           <span
@@ -247,18 +250,58 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                             : undefined
                         }
                         className={[
-                          "flex min-h-[3.25rem] items-center rounded-2xl px-3.5 text-[0.9375rem] no-underline transition-colors",
+                          "flex min-h-[3.25rem] items-center rounded-2xl px-3.5 no-underline transition-colors",
                           active
                             ? "bg-white font-semibold text-navy shadow-sm ring-1 ring-beige-dark"
                             : "bg-white/60 font-medium text-navy/85 active:bg-beige/70",
                         ].join(" ")}
                       >
-                        {item.label}
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-[0.9375rem] leading-tight">
+                            {item.label}
+                          </span>
+                          {item.description ? (
+                            <span className="mt-0.5 block text-[0.6875rem] font-normal text-navy/45">
+                              {item.description}
+                            </span>
+                          ) : null}
+                        </span>
                       </Link>
                     </li>
                   );
                 })}
               </ul>
+
+              <section aria-labelledby="mobile-nav-quick" className="px-3 pt-5">
+                <h2
+                  id="mobile-nav-quick"
+                  className="px-1 pb-2 text-[0.6875rem] font-semibold tracking-[0.06em] text-navy/50"
+                >
+                  자주 찾는 업무
+                </h2>
+                <ul className="grid grid-cols-3 gap-2">
+                  {quickNavLinks.map((link) => {
+                    const linkActive = isExactNavHref(pathname, link.href);
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          onClick={handleClose}
+                          aria-current={linkActive ? "page" : undefined}
+                          className={[
+                            "flex min-h-11 items-center justify-center rounded-xl border px-2 text-center text-[0.8125rem] font-medium no-underline transition-colors",
+                            linkActive
+                              ? "border-navy/25 bg-beige font-semibold text-navy"
+                              : "border-beige-dark bg-white text-navy/85 active:bg-beige/60",
+                          ].join(" ")}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
             </div>
           </div>
 
@@ -335,19 +378,22 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           ) : (
             <div className="grid grid-cols-2 gap-2">
               <Link
-                href="/contact"
+                href={ctaItem?.href ?? "/contact"}
                 className="btn-primary w-full"
                 onClick={handleClose}
               >
-                상담 신청
+                {ctaItem?.label ?? "상담 문의"}
               </Link>
-              <Link
-                href="/partners"
+              <a
+                href={getContactInfo().kakao}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="카카오톡 상담 (새 창)"
                 className="btn-secondary w-full"
                 onClick={handleClose}
               >
-                협업문의
-              </Link>
+                카카오톡 상담
+              </a>
             </div>
           )}
         </div>
@@ -373,7 +419,7 @@ function MobileNavSubmenu({
   const hubLabel = isCollab ? "협업문의 종합안내" : `${item.label} 홈`;
   const hubHint = isCollab
     ? "전문직·기업·기관 협업 분야 전체 보기"
-    : "관련 안내 페이지로 이동";
+    : (item.description ?? "관련 안내 페이지로 이동");
 
   return (
     <div className="px-3 pt-3">
@@ -406,10 +452,14 @@ function MobileNavSubmenu({
 
       <div className="space-y-2">
         {item.groups!.map((group, groupIndex) => {
+          // 위 홈 카드와 같은 링크는 반복하지 않는다.
           const links = group.links
             .filter((link) => !(isCollab && link.href === "/partners"))
+            .filter((link) => link.href !== item.href)
             .slice(0, isCollab ? 6 : undefined);
-          const useAccordion = isCollab || item.groups!.length > 2;
+          if (!links.length) return null;
+          // 협업 메뉴만 분야가 많아 접어 두고, 나머지는 한 번에 펼쳐 보여 준다.
+          const useAccordion = isCollab;
           const expanded = !useAccordion || expandedGroup === group.title;
 
           return (

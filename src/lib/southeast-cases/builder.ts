@@ -33,6 +33,7 @@ function resolveHref(slug: string): { href: string; label: string } {
 
 function sectionTitles(def: SoutheastLandingDef, seed: number): string[] {
   const r = def.regionName;
+  // 각 세트는 아래 sections 본문 순서(가능 여부·사무소 위치·관할·상담 유형·방문·비대면·준비 자료·비용)와 같아야 한다.
   const pools = [
     [
       `${r} 업무 가능 여부`,
@@ -41,8 +42,8 @@ function sectionTitles(def: SoutheastLandingDef, seed: number): string[] {
       `${r}에서 자주 문의되는 상황`,
       "방문 상담이 적합한 경우",
       "비대면으로 먼저 검토하는 경우",
-      "필요서류·비용·절차",
-      "관련 지역·업무로 이어가기",
+      "상담 전 확인할 자료",
+      "비용 구성과 관련 지역·업무",
     ],
     [
       `검색하신 ${r} 질문에 대한 답변`,
@@ -51,10 +52,10 @@ function sectionTitles(def: SoutheastLandingDef, seed: number): string[] {
         ? "부산과 인접한 지역의 진행 방식"
         : "거리가 있어도 서류를 먼저 확인하는 방법",
       `${r} 고유 상담 상황`,
-      "재산유형별 확인사항",
-      "안윤정 법무사 직접 확인",
-      "보수와 공과금 구분",
+      "방문해서 진행하는 경우",
+      "서류를 먼저 사진으로 확인하는 방법",
       "상담 전 준비하면 좋은 정보",
+      "보수와 공과금 구분",
     ],
   ];
   return pools[seed % pools.length]!;
@@ -125,7 +126,7 @@ export function buildSoutheastPageData(
     },
     {
       title: titles[7]!,
-      body: "처음 보이는 금액만 낮게 안내하기보다 취득세·등록면허세·국민주택채권·등기신청수수료와 법무사 보수를 구분해 설명합니다.",
+      body: "취득세·등록면허세·국민주택채권·등기신청수수료 같은 공과금과 법무사 보수를 나눠서 설명해 드립니다.",
       links: [...regionLinks, ...serviceLinks].slice(0, 10),
     },
   ];
@@ -159,6 +160,7 @@ export function buildSoutheastPageData(
       "보수·공과금 구분 안내",
       "원본 전달 후 접수·보정·완료 공유",
     ],
+    documentsTitle: "첫 상담에 알려주실 정보",
     documents: [
       "부동산·법인 소재 지역",
       "의뢰인 거주 지역",

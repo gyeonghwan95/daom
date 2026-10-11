@@ -183,7 +183,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "1호선 교대역(동해선 환승) 인근 거제동에서 법무사 업무를 찾을 때는 연제구 관할과 거제·연산 생활권을 함께 봅니다.",
     localContext:
-      "교대 전용 URL을 새로 만들지 않고, 거제동·연제구 기존 안내에서 절차를 연결합니다.",
+      "교대역 주변 사건은 거제동·연제구 안내에서 절차를 함께 설명합니다.",
     nextStep:
       "상속·법인·매매 중 해당하는 것과 주소를 남겨 주세요.",
     serviceLinks: [
@@ -292,7 +292,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "3호선·4호선 환승인 미남역 인근에서 절차를 찾을 때는 동래구·인접 생활권 중 실제 소재지를 기준으로 관할을 확인합니다.",
     localContext:
-      "미남역 자체 URL을 늘리지 않고 동래구 안내에 역 섹션으로 둡니다.",
+      "미남역 인근은 동래구 안내의 역 섹션에서 함께 설명합니다.",
     nextStep:
       "주소와 업무(상속·매매·법인)만 알려주세요.",
     serviceLinks: [

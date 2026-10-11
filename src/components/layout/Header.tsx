@@ -19,6 +19,9 @@ import { mainNavigation } from "@/lib/navigation";
 import { siteFavicon } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site";
 
+const navItems = mainNavigation.filter((item) => !item.cta);
+const ctaItem = mainNavigation.find((item) => item.cta);
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -138,7 +141,7 @@ export function Header() {
               aria-label="주 메뉴"
             >
               <ul className="flex flex-wrap items-center justify-end gap-x-0 gap-y-0.5">
-                {mainNavigation.map((item) => (
+                {navItems.map((item) => (
                   <li key={item.href} className="shrink-0">
                     <NavMenuLink item={item} variant="desktop" />
                   </li>
@@ -151,10 +154,18 @@ export function Header() {
             </div>
 
             <div className="header-bar__actions flex shrink-0 items-center gap-1.5 sm:gap-2">
-              <div className="header-bar__status-desktop hidden min-w-0 lg:flex">
+              <div className="header-bar__status-desktop hidden min-w-0 xl:flex">
                 <HeaderConsultationStatus variant="compact" />
               </div>
               {searchButton}
+              {ctaItem ? (
+                <Link
+                  href={ctaItem.href}
+                  className="btn-primary hidden min-h-10 shrink-0 items-center whitespace-nowrap px-3.5 text-sm lg:inline-flex xl:min-h-11 xl:px-4"
+                >
+                  {ctaItem.label}
+                </Link>
+              ) : null}
 
               <button
                 ref={menuButtonRef}
