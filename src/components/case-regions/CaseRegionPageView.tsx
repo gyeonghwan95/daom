@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
+import { HeroContactButtons } from "@/components/cta/HeroContactButtons";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
@@ -47,27 +48,19 @@ export function CaseRegionPageView({
         </p>
         <h1 className="page-title max-w-4xl">{page.h1}</h1>
         <p className="body-text max-w-3xl text-navy/80">{page.intro}</p>
-        <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-stretch">
-          <InquiryNaverCtaPair
-            placement="case_region"
-            layout="row"
-            size="sm"
-            inquiry={
-              <InquiryStartButton
-                source="landing"
-                className="btn-primary min-h-11 px-5 text-sm"
-              >
-                {consultationInquiryCopy.ctaShort}
-              </InquiryStartButton>
-            }
-          />
-          <Link
-            href="/업무사례/지역별"
-            className="btn-secondary min-h-11 px-5 text-sm"
-          >
-            다른 지역 찾기
-          </Link>
-        </div>
+        <HeroContactButtons
+          className="pt-2"
+          placement="case_region"
+          extra={[{ href: "/업무사례/지역별", label: "다른 지역 찾기" }]}
+          inquiry={
+            <InquiryStartButton
+              source="landing"
+              className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-3 text-sm"
+            >
+              {consultationInquiryCopy.ctaShort}
+            </InquiryStartButton>
+          }
+        />
       </header>
 
       <div className="max-w-3xl space-y-4">

@@ -1,5 +1,6 @@
 "use client";
 
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import { useCallback, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
@@ -697,6 +698,8 @@ export function ConsultationInquiryForm({
           </div>
         </div>
       ) : null}
+
+      {errors.form || errors.turnstile ? <InquiryFailureFallback className="mt-3" /> : null}
 
       {submitting ? (
         <div className="inquiry-form__sending" role="status" aria-live="polite">

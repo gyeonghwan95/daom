@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
+import { HeroContactButtons } from "@/components/cta/HeroContactButtons";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
@@ -92,7 +93,30 @@ export function PageHero({
     ? "btn-secondary inline-flex min-h-12 items-center justify-center gap-1.5 px-4 sm:px-5"
     : "btn-secondary inline-flex min-h-12 items-center justify-center px-6";
 
-  const ctaBlock = ctaLabel ? (
+  // 상담형 CTA(문의·상담 경로)는 상담 채널 6개 + 안내 3개 두 줄 구성(HeroContactButtons)
+  const consultHero = Boolean(ctaLabel) && isConsultCtaHref(ctaHref);
+  const consultCtaBlock = consultHero ? (
+    <HeroContactButtons
+      className="mt-5 md:mt-6"
+      placement="page_hero"
+      showReservation={naverOn}
+      extra={[
+        ...(secondaryCta && secondaryCta.href !== "/about" ? [secondaryCta] : []),
+        ...(showDiagnosisCta ? [{ href: "/자가진단", label: "자가진단 보기" }] : []),
+      ]}
+      inquiry={
+        <InquiryStartButton
+          source="landing"
+          fallbackHref={ctaHref}
+          className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-3 text-sm"
+        >
+          {consultationInquiryCopy.ctaShort}
+        </InquiryStartButton>
+      }
+    />
+  ) : null;
+
+  const ctaBlock = consultCtaBlock ?? (ctaLabel ? (
     <div className="mt-5 flex flex-col gap-3 md:mt-6">
       <InquiryNaverCtaPair
         placement="page_hero"
@@ -135,7 +159,7 @@ export function PageHero({
         </div>
       ) : null}
     </div>
-  ) : null;
+  ) : null);
 
   if (!sideImage) {
     return (

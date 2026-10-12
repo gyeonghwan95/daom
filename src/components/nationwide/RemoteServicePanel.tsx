@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 /** public/image/비대면업무안내.png 원본(1448×1086)을 WebP로 변환한 파생본 */
 const REMOTE_GUIDE_IMAGE = {
@@ -23,6 +24,8 @@ type RemoteServicePanelProps = {
   points?: readonly string[];
   /** 사무소 위치·관할 고지 등 항상 보여야 하는 짧은 문구 */
   footnote?: string;
+  /** 고지 문구 바로 아래 버튼(예: 네이버 지도에서 사무소 위치 확인) */
+  footnoteAction?: ReactNode;
   /** 접힌 상태로 제공하는 세부 안내 — 첫 화면 높이를 줄이기 위해 기본 닫힘 */
   details?: RemoteServicePanelDetails;
   ariaLabel?: string;
@@ -40,6 +43,7 @@ export function RemoteServicePanel({
   lead,
   points,
   footnote,
+  footnoteAction,
   details,
   ariaLabel = "전국 비대면 의뢰 안내",
   className = "",
@@ -82,6 +86,7 @@ export function RemoteServicePanel({
           {footnote ? (
             <p className="remote-panel__footnote">{footnote}</p>
           ) : null}
+          {footnoteAction ? <div className="mt-3 max-w-sm">{footnoteAction}</div> : null}
 
           {hasDetails && details ? (
             <details className="remote-panel__details">

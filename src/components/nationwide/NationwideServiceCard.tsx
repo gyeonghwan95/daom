@@ -1,3 +1,4 @@
+import { AltChannelButton } from "@/components/conversion/InquiryAltChannels";
 import { RemoteServicePanel } from "@/components/nationwide/RemoteServicePanel";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 
@@ -32,6 +33,9 @@ export function NationwideServiceCard({
       lead={`거주지나 부동산·법인 소재지가 부산이 아니어도 상담부터 신청까지 진행할 수 있습니다. ${consultationInquiryCopy.oneMinuteShort}`}
       points={POINTS}
       footnote="신청은 사건별 법정 관할 법원·등기소에 하며, 방문이 필요한 절차가 있으면 맡기시기 전에 미리 알려드립니다."
+      footnoteAction={
+        <AltChannelButton id="map" placement="nationwide_card" label="네이버 지도에서 사무소 위치 확인" />
+      }
       className={className}
     />
   );

@@ -8,6 +8,7 @@
  *   node scripts/update-lastmod-manifest.mjs --date 2026-10-11
  *   node scripts/update-lastmod-manifest.mjs --paths /부산상속포기,/한정승인기간 --date 2026-10-11
  *   node scripts/update-lastmod-manifest.mjs --dry-run
+ *   node scripts/update-lastmod-manifest.mjs --rebaseline   (버튼·레이아웃 등 UI만 바뀐 뒤: 날짜는 그대로, 지문만 현재 빌드로 맞춤)
  *
  * 바뀐 URL이 사이트맵의 25%를 넘으면 공통 템플릿 변경일 가능성이 커서 중단한다(--allow-mass로 강제).
  * 결과 파일(커밋 대상): scripts/lib/sitemap/lastmod-manifest.json, scripts/lib/sitemap/lastmod-fingerprints.json
@@ -65,7 +66,10 @@ const manifest = readJson(LASTMOD_MANIFEST_FILE, { routes: {} });
 const previous = readJson(FINGERPRINT_FILE, { fingerprints: {} }).fingerprints;
 
 let result;
-if (explicitPaths) {
+if (args.includes("--rebaseline")) {
+  // 본문이 아닌 UI 변경 후 지문만 갱신. lastmod 날짜는 건드리지 않는다.
+  result = { routes: manifest.routes, fingerprints: current, changed: [], added: [] };
+} else if (explicitPaths) {
   const unknown = explicitPaths.filter((p) => !current[p]);
   if (unknown.length) {
     console.error(`사이트맵에 없는 경로: ${unknown.join(", ")}`);

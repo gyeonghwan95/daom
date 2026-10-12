@@ -1,5 +1,6 @@
 "use client";
 
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -742,6 +743,7 @@ export function ConsultWizardShell() {
                 </div>
               </div>
             ) : null}
+            {formError || errors.turnstile ? <InquiryFailureFallback className="mt-3" /> : null}
 
             {submitting ? (
               <div

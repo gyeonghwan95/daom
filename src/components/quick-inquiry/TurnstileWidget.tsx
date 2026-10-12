@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { getTurnstileSiteKeyNow, useTurnstileSiteKey } from "./turnstile-site-key";
 
 declare global {
   interface Window {
@@ -58,7 +60,8 @@ type TurnstileWidgetProps = {
 };
 
 export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: TurnstileWidgetProps) {
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? "";
+  // 빌드 시점 키가 없으면 /api/turnstile-config(실행 시점)에서 받는다 — 빌드 환경에 키가 빠져 모든 문의가 실패했던 문제(2026-10-12)
+  const { siteKey, status } = useTurnstileSiteKey();
   const hostRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [ready, setReady] = useState(false);
@@ -123,7 +126,20 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
   }, [resetSignal, siteKey, onToken]);
 
   if (!siteKey) {
-    return null;
+    if (status === "loading") {
+      return (
+        <div className="quick-inquiry__turnstile">
+          <p className="mt-1 text-xs text-navy/55">보안 확인 준비 중…</p>
+        </div>
+      );
+    }
+    // 사이트 키를 받을 수 없으면 신청이 전달되지 않으므로 처음부터 대체 채널을 보여 준다
+    return (
+      <InquiryFailureFallback
+        title="지금은 온라인 신청을 받을 수 없습니다. 아래로 바로 연락해 주세요"
+        description="보안 확인을 불러오지 못해 이 양식으로는 전달되지 않습니다. 카카오톡·네이버 톡톡·전화·네이버 예약으로 말씀해 주시면 바로 확인하겠습니다."
+      />
+    );
   }
 
   return (
@@ -136,14 +152,22 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
         <p className="mt-1 text-xs text-navy/55">보안 확인 준비 중…</p>
       ) : null}
       {failed ? (
-        <p className="mt-1 text-xs text-red-700" role="alert">
-          보안 확인을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.
-        </p>
+        <>
+          <p className="mt-1 text-xs text-red-700" role="alert">
+            보안 확인을 불러오지 못했습니다. 새로고침 후 다시 시도하시거나 아래로 바로 연락해 주세요.
+          </p>
+          <InquiryFailureFallback
+            className="mt-3"
+            title="보안 확인 없이 바로 연락하기"
+            description="카카오톡·네이버 톡톡·전화·네이버 예약 중 편한 방법으로 말씀해 주세요."
+          />
+        </>
       ) : null}
     </div>
   );
 }
 
+/** 사이트 키를 알고 있으면(빌드 또는 실행 시점) 제출 전에 토큰이 필요하다 */
 export function isTurnstileConfigured() {
-  return Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim());
+  return Boolean(getTurnstileSiteKeyNow());
 }

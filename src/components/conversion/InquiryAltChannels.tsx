@@ -14,7 +14,7 @@ import {
   type NaverSmartPlacePlacement,
 } from "@/lib/naver-smartplace/cta";
 
-export type InquiryAltChannelId = "phone" | "kakao" | "talk" | "reservation" | "map";
+export type InquiryAltChannelId = "phone" | "kakao" | "talk" | "reservation" | "map" | "review";
 
 type InquiryAltChannelsProps = {
   title?: string;
@@ -39,81 +39,10 @@ export function InquiryAltChannels({
   pageSlug = "",
   className = "",
 }: InquiryAltChannelsProps) {
-  const { phone, kakao, naverTalk } = getContactInfo();
-  const naverOn = isNaverSmartPlaceConfigured();
-
   const items: { id: InquiryAltChannelId; node: ReactNode }[] = [];
-
   for (const id of channels) {
-    if (id === "phone" && phone) {
-      const href = getPhoneHref(phone);
-      items.push({
-        id,
-        node: (
-          <a
-            href={href}
-            data-cta="phone"
-            onClick={() => trackCTA("phone", pageSlug, href)}
-            className={`${buttonBase} bg-navy text-white hover:bg-navy-dark`}
-            aria-label={`전화 상담 ${phone}`}
-          >
-            <PhoneIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">전화 상담</span>
-          </a>
-        ),
-      });
-    } else if (id === "kakao" && kakao) {
-      items.push({
-        id,
-        node: (
-          <a
-            href={kakao}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="kakao"
-            onClick={() => trackCTA("kakao", pageSlug, kakao)}
-            className={`${buttonBase} bg-[#FEE500] text-[#191919] hover:brightness-95`}
-          >
-            <KakaoIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">카카오톡</span>
-            <span className="sr-only"> (새 창)</span>
-          </a>
-        ),
-      });
-    } else if (id === "talk" && naverTalk) {
-      items.push({
-        id,
-        node: (
-          <a
-            href={naverTalk}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="naver-talk"
-            onClick={() => trackCTA("naver-talk", pageSlug, naverTalk)}
-            className={`${buttonBase} bg-[#03C75A] text-white hover:brightness-95`}
-          >
-            <NaverIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">네이버 톡톡</span>
-            <span className="sr-only"> (새 창)</span>
-          </a>
-        ),
-      });
-    } else if ((id === "reservation" || id === "map") && naverOn) {
-      items.push({
-        id,
-        node: (
-          <NaverSmartPlaceCta
-            variant={id}
-            placement={placement}
-            tone={id === "reservation" ? "brand" : "soft"}
-            size="md"
-            fullWidth
-            label={id === "reservation" ? "네이버 예약" : "네이버 지도"}
-            className="!min-h-11"
-          />
-        ),
-      });
-    }
+    const node = <AltChannelButton id={id} placement={placement} pageSlug={pageSlug} />;
+    if (isAltChannelAvailable(id)) items.push({ id, node });
   }
 
   if (items.length === 0) return null;
@@ -136,4 +65,88 @@ export function InquiryAltChannels({
       </ul>
     </section>
   );
+}
+
+/** 대체 연락 채널 버튼 하나(전화·카카오톡·네이버 톡톡·네이버 예약·네이버 지도) — 문의 실패 안내·페이지 상단 버튼에서 같이 쓴다 */
+export function isAltChannelAvailable(id: InquiryAltChannelId): boolean {
+  const { phone, kakao, naverTalk } = getContactInfo();
+  if (id === "phone") return Boolean(phone);
+  if (id === "kakao") return Boolean(kakao);
+  if (id === "talk") return Boolean(naverTalk);
+  return isNaverSmartPlaceConfigured();
+}
+
+export function AltChannelButton({
+  id,
+  placement,
+  pageSlug = "",
+  label,
+}: {
+  id: InquiryAltChannelId;
+  placement: NaverSmartPlacePlacement;
+  pageSlug?: string;
+  /** 네이버 예약·지도 버튼 문구 바꾸기 */
+  label?: string;
+}) {
+  const { phone, kakao, naverTalk } = getContactInfo();
+  const naverOn = isNaverSmartPlaceConfigured();
+
+    if (id === "phone" && phone) {
+      const href = getPhoneHref(phone);
+      return (
+          <a
+            href={href}
+            data-cta="phone"
+            onClick={() => trackCTA("phone", pageSlug, href)}
+            className={`${buttonBase} bg-navy text-white hover:bg-navy-dark`}
+            aria-label={`전화 상담 ${phone}`}
+          >
+            <PhoneIcon className="h-5 w-5 shrink-0" />
+            <span className="truncate">전화 상담</span>
+          </a>
+        );
+    } else if (id === "kakao" && kakao) {
+      return (
+          <a
+            href={kakao}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="kakao"
+            onClick={() => trackCTA("kakao", pageSlug, kakao)}
+            className={`${buttonBase} bg-[#FEE500] text-[#191919] hover:brightness-95`}
+          >
+            <KakaoIcon className="h-5 w-5 shrink-0" />
+            <span className="truncate">카카오톡</span>
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        );
+    } else if (id === "talk" && naverTalk) {
+      return (
+          <a
+            href={naverTalk}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="naver-talk"
+            onClick={() => trackCTA("naver-talk", pageSlug, naverTalk)}
+            className={`${buttonBase} bg-[#03C75A] text-white hover:brightness-95`}
+          >
+            <NaverIcon className="h-5 w-5 shrink-0" />
+            <span className="truncate">네이버 톡톡</span>
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        );
+    } else if ((id === "reservation" || id === "map" || id === "review") && naverOn) {
+      return (
+          <NaverSmartPlaceCta
+            variant={id}
+            placement={placement}
+            tone={id === "reservation" ? "brand" : "soft"}
+            size="md"
+            fullWidth
+            label={label ?? (id === "reservation" ? "네이버 예약" : id === "review" ? "네이버 후기·사진" : "네이버 지도")}
+            className="!min-h-11"
+          />
+        );
+    }
+  return null;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import { useCallback, useId, useMemo, useState } from "react";
 import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
@@ -414,20 +415,21 @@ export function BusinessInquiryForm() {
         />
       </label>
 
-      {isTurnstileConfigured() ? (
-        <div>
-          <TurnstileWidget
-            onToken={handleTurnstileToken}
-            onError={handleTurnstileError}
-            resetSignal={resetSignal}
-          />
-          {errors.turnstile ? (
-            <p className="mt-2 text-sm text-red-700" role="alert">
-              {errors.turnstile}
-            </p>
-          ) : null}
-        </div>
-      ) : null}
+      {/* 사이트 키가 빌드에 없어도 실행 시점에 받아 표시한다. 끝내 없으면 위젯 자리에 대체 채널이 나온다 */}
+      <div>
+        <TurnstileWidget
+          onToken={handleTurnstileToken}
+          onError={handleTurnstileError}
+          resetSignal={resetSignal}
+        />
+        {errors.turnstile ? (
+          <p className="mt-2 text-sm text-red-700" role="alert">
+            {errors.turnstile}
+          </p>
+        ) : null}
+      </div>
+
+      {errors.form || errors.turnstile ? <InquiryFailureFallback /> : null}
 
       {submitting ? (
         <p className="flex items-center gap-2 text-sm text-navy/70" aria-live="polite">

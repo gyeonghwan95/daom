@@ -1,5 +1,6 @@
 "use client";
 
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
@@ -199,6 +200,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorSummary, setErrorSummary] = useState<string | null>(null);
+  const [deliveryFailed, setDeliveryFailed] = useState(false);
   const [token, setToken] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [resetSignal, setResetSignal] = useState(0);
@@ -288,6 +290,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
 
     setSubmitting(true);
     setErrorSummary(null);
+    setDeliveryFailed(false);
 
     trackB2BEvent("project_brief_submit", {
       source_page: sourcePage,
@@ -321,12 +324,15 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
       }
 
       setErrorSummary(result.message);
+      // 연락처·필수 항목처럼 고칠 수 있는 오류가 아니면(보안 확인·전달 실패 등) 대체 채널을 보여 준다
+      setDeliveryFailed(result.field !== "contact" && result.field !== "consent" && result.field !== "message");
       setToken("");
       setResetSignal((n) => n + 1);
     } catch {
       setErrorSummary(
         "네트워크 연결을 확인해 주세요. 작성하신 내용은 그대로 유지됩니다.",
       );
+      setDeliveryFailed(true);
     } finally {
       setSubmitting(false);
     }
@@ -400,6 +406,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
           {errorSummary}
         </div>
       ) : null}
+      {deliveryFailed ? <InquiryFailureFallback /> : null}
 
       {step === 1 ? (
         <fieldset className="space-y-4" disabled={submitting}>
@@ -752,15 +759,13 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
           />
         </label>
 
-        {isTurnstileConfigured() ? (
-          <div>
-            <TurnstileWidget
-              onToken={handleTurnstileToken}
-              onError={handleTurnstileError}
-              resetSignal={resetSignal}
-            />
-          </div>
-        ) : null}
+        <div>
+          <TurnstileWidget
+            onToken={handleTurnstileToken}
+            onError={handleTurnstileError}
+            resetSignal={resetSignal}
+          />
+        </div>
 
         {submitting ? (
           <p className="flex items-center gap-2 text-sm text-navy/70" aria-live="polite">

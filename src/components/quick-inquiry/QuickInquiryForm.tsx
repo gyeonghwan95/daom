@@ -1,5 +1,6 @@
 "use client";
 
+import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import { useCallback, useState, type FormEvent } from "react";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { submitQuickInquiry, clientParseContact } from "@/lib/quick-inquiry/client";
@@ -304,6 +305,7 @@ export function QuickInquiryForm({
             </a>
           </div>
         ) : null}
+        {errors.form || errors.turnstile ? <InquiryFailureFallback className="mt-3" /> : null}
       </div>
 
       <div className="quick-inquiry__footer">

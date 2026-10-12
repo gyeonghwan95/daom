@@ -33,6 +33,8 @@ export type NaverSmartPlacePlacement =
   | "case_region"
   | "nationwide_card"
   | "search_empty"
+  /** 온라인 상담 신청 실패·보안 확인 불가 시 대체 채널 */
+  | "inquiry_failure"
   | "other";
 
 const LABELS: Record<
