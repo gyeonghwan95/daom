@@ -1,7 +1,7 @@
 export const selectionCoreLinks = {
   /** 「부산 법무사」 exact → HOME */
   busanHome: { href: "/", label: "부산 법무사" },
-  busanLawyer: { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+  busanLawyer: { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
   busanRecommend: {
     href: "/부산법무사추천",
     label: "부산 법무사 추천",

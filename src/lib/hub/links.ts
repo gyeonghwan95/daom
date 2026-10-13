@@ -30,7 +30,7 @@ export function capHubLinks(
 
   const fillers: PageRelatedLink[] = [
     { href: "/", label: "부산 법무사" },
-    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+    { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     { href: "/services", label: "업무안내" },
     { href: "/faq", label: "자주 묻는 질문" },
     { href: "/contact", label: "상담 문의" },

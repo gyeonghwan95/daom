@@ -27,7 +27,7 @@ export const SEO_INTENT_OWNERS: readonly SeoIntentOwner[] = [
     query: "부산 상속전문 법무사",
     role: "PROVIDER_SELECTION",
     path: "/부산상속전문법무사",
-    secondaryQueries: ["부산 상속 법무사 추천", "부산 상속 법무사 선택"],
+    secondaryQueries: ["부산 상속 법무사 선택"], // 추천 의도는 /부산상속법무사추천 담당
     supportingPaths: ["/부산상속법무사", "/부산상속포기", "/부산한정승인"],
     titleFrozen: TITLE_FROZEN,
     metaTitle: "부산 상속전문 법무사를 찾는다면｜업무범위와 선택 기준",

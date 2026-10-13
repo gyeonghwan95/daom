@@ -263,7 +263,7 @@ export const preservationRegistrationContent: PreservationRegistrationContent = 
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
     { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
     { href: "/", label: "부산 법무사" },
-    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+    { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     { href: "/services", label: "업무안내" },
     { href: "/contact/inquiry?field=preservation-registration", label: "1분만에 문의하기" },
     { href: "/공공기관등기업무", label: "공공기관 등기업무" },

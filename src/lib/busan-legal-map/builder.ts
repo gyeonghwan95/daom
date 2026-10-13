@@ -31,7 +31,7 @@ export function buildBusanLegalMapHubPageData(): PageData {
     },
     internalLinks: [
       { href: "/", label: "해운대·센텀 법무사 사무소" },
-      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
       { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
       ...districtLinks,
       { href: "/situations", label: "상황별 법률문제" },

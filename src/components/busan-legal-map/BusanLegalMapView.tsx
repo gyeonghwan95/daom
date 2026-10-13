@@ -49,7 +49,7 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
         <div className="mt-4 flex flex-wrap gap-2">
           {[
             { href: "/", label: "부산 법무사" },
-            { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+            { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
             { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
             { href: "/situations", label: "상황별 법률문제" },
             { href: "/tools", label: "법률 계산기" },

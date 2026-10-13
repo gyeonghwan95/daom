@@ -8,9 +8,20 @@ import { trackCTA } from "@/lib/analytics/track-cta";
  * 본문 상단 상담 안내 — 첫 상담 링크가 본문 깊숙이 있던 페이지용(문의 폼 + 전화 두 버튼만).
  * from 파라미터로 유입 위치를 남겨 문의 효과를 측정한다.
  */
-export function EarlyConsultCta({ slug, message }: { slug: string; message?: string }) {
+export function EarlyConsultCta({
+  slug,
+  message,
+  field,
+}: {
+  slug: string;
+  message?: string;
+  /** 문의 폼 상담 분야 기본값(예: inheritance-renunciation) */
+  field?: string;
+}) {
   const { phone } = getContactInfo();
-  const inquiryHref = `/contact/inquiry?from=${encodeURIComponent(`${slug}-early`)}`;
+  const inquiryHref = `/contact/inquiry?from=${encodeURIComponent(`${slug}-early`)}${
+    field ? `&field=${encodeURIComponent(field)}` : ""
+  }`;
   return (
     <div
       className="mt-5 flex flex-col gap-3 rounded-xl border border-beige-dark bg-white/80 p-4 sm:flex-row sm:items-center sm:justify-between"

@@ -111,7 +111,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
           </figure>
         </header>
 
-        <EarlyConsultCta slug={page.slug} />
+        <EarlyConsultCta slug={page.slug} message={spec.earlyCta?.message} field={spec.earlyCta?.field} />
 
         {spec.sections.map((section) => (
           <ContentSection key={section.id} id={section.id} title={section.title}>

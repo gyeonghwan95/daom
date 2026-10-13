@@ -1,0 +1,142 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [],
+ "protectedFieldChanges": [
+  {
+   "route": "/부산상속법무사",
+   "field": "linksHash",
+   "before": "d97e00b4b1573b67",
+   "after": "ab45650c27e9549c"
+  },
+  {
+   "route": "/부산상속전문법무사",
+   "field": "linksHash",
+   "before": "f06721641b2e64d6",
+   "after": "1cf8b513de95573f"
+  },
+  {
+   "route": "/부산상속전문법무사",
+   "field": "ctaHash",
+   "before": "74e3163b003f9a99",
+   "after": "3c9a4cc18369dd3b"
+  },
+  {
+   "route": "/부산상속포기",
+   "field": "linksHash",
+   "before": "7cd832447ede385f",
+   "after": "2f0c4a95f9852e82"
+  },
+  {
+   "route": "/부산상속포기",
+   "field": "ctaHash",
+   "before": "fd2ccaf5fff4d7e3",
+   "after": "c93797238bd30a23"
+  }
+ ],
+ "mainChangedAllowed": [],
+ "mainChangedNotAllowed": [
+  "/개인회생실수모음",
+  "/개인회생체크리스트",
+  "/국민주택채권",
+  "/등기보정",
+  "/등기비용",
+  "/등기소어디인가요",
+  "/등기소제출",
+  "/등기신청대행",
+  "/등기언제끝나나요",
+  "/등기처리기간",
+  "/법무사맡기면달라지는점",
+  "/법무사보수",
+  "/법무사비용",
+  "/법무사수임료",
+  "/법인등기실수모음",
+  "/부동산등기실수모음",
+  "/부산개인파산법무사추천",
+  "/부산개인파산상담",
+  "/부산개인회생법무사추천",
+  "/부산개인회생신청",
+  "/부산면책신청",
+  "/부산법무사보수",
+  "/부산법무사수임료",
+  "/부산법무사잘하는곳",
+  "/부산상속법무사",
+  "/부산상속법무사추천",
+  "/부산상속전문법무사",
+  "/부산상속포기",
+  "/부산잔금일법무사",
+  "/부산파산신청",
+  "/상속",
+  "/상속등기실수모음",
+  "/상속등기체크리스트",
+  "/왜개인회생비용이다를까",
+  "/왜상속등기비용이다를까",
+  "/집단등기",
+  "/집단등기실수모음"
+ ],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 1635,
+   "after": 1635
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 18,
+   "after": 18
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 595,
+   "after": 595
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 547,
+   "after": 547
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 32,
+   "after": 32
+  },
+  "rss": "same",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}

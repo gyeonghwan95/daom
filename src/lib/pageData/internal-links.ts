@@ -203,7 +203,7 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/부산법무사추천", label: "부산 법무사 추천" },
     { href: "/부산법무사상담", label: "부산 법무사 상담" },
     { href: "/부산등기법무사", label: "부산 등기 법무사" },
-    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+    { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     { href: "/부산상속법무사", label: "부산 상속 법무사" },
     { href: "/부산법인법무사", label: "부산 법인 법무사" },
     { href: "/부산상속포기", label: "부산 상속포기" },
@@ -354,7 +354,7 @@ export function getThematicInternalLinks(
       links.push(...keywordHubLinks(input.slug, 4));
     } else if (pageType === "neighborhood-hub") {
       links.push(...neighborhoodHubLinks(input.slug, 6));
-      links.push({ href: "/부산법무사", label: "부산에서 법무사 찾을 때" });
+      links.push({ href: "/부산법무사", label: "다옴법무사사무소 업무 안내" });
       links.push({ href: "/부산법무사추천", label: "부산 법무사 추천" });
       links.push({ href: "/", label: "부산 법무사" });
     } else if (pageType === "conversion") {

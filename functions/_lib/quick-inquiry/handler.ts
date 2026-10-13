@@ -248,9 +248,8 @@ export async function handleQuickInquiry(
         {
           ok: false,
           code: "no_channel",
-          message: looksLikeDomainOnly
-            ? "발신 이메일 설정이 올바르지 않습니다. noreply@도메인 형식으로 등록해 주세요."
-            : "지금은 문의 접수 설정이 준비되지 않았습니다. 전화로 문의해 주세요.",
+          // 설정 오류 상세는 hint(콘솔용)에만 둔다. 고객에게는 대체 연락 안내만.
+          message: "지금은 온라인 접수가 어렵습니다. 아래 전화·카카오톡·네이버 톡톡으로 연락해 주세요.",
           hint: looksLikeDomainOnly
             ? "INQUIRY_FROM_EMAIL must be an email like noreply@xn--2j1br1na42lvxja38mk8r.kr"
             : "missing_resend_or_telegram_env",

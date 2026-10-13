@@ -186,7 +186,7 @@ export function SidebarConsultationPanel() {
               placement="sidebar"
               size="sm"
               reservationLabel="네이버 예약"
-              reviewLabel="네이버 후기·사진"
+              reviewLabel="후기·사진"
               stacked
               className="gap-1.5"
               buttonClassName="!min-h-11 !rounded-lg !px-3 !justify-start"

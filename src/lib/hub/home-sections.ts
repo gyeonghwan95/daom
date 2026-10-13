@@ -17,7 +17,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     links: [
       { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/부산법무사추천", label: "부산 법무사 추천" },
-      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
       { href: "/자가진단", label: "업무별 자가진단" },
       { href: "/업무사례", label: "업무 사례" },
       { href: "/법률강의", label: "법률 강의·특강" },
@@ -51,7 +51,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "추천·비용·상담 안내",
     description: "추천·후기·비용·상담을 보기 전에 확인할 선택 기준 페이지입니다.",
     links: [
-      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
       { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경 안내" },
       { href: "/부산법무사추천", label: "선택 기준 확인" },
       { href: "/부산법무사상담", label: "상담 채널·준비 안내" },
@@ -110,7 +110,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     description:
       "부산 16개 구·군 안내입니다. 동·역세권은 해당 구 페이지와 오시는 길에서 이어집니다.",
     links: [
-      { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+      { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
       { href: "/busan-legal-map", label: "부산 법률지도" },
       ...BUSAN_DISTRICT_HUBS.map((hub) => ({
         href: hub.href,
@@ -241,7 +241,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
 ];
 
 export const LOCATION_HUB_LINKS: RelatedLink[] = [
-  { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+  { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
   { href: "/busan-legal-map", label: "부산 법률지도" },
   ...BUSAN_DISTRICT_HUBS.map((hub) => ({
     href: hub.href,

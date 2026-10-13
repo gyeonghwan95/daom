@@ -120,9 +120,8 @@ export function QuickInquiryForm({
       else if (result.field === "turnstile") fieldErrors.turnstile = result.message;
       else {
         fieldErrors.form = result.message;
-        if ("hint" in result && result.hint) {
-          fieldErrors.form = `${result.message} (${result.hint})`;
-        }
+        // 설정·전송 오류 상세(hint)는 고객 화면에 보이지 않고 콘솔에만 남긴다.
+        if ("hint" in result && result.hint) console.warn("[quick-inquiry]", result.hint);
       }
       setErrors(fieldErrors);
       setResetSignal((n) => n + 1);

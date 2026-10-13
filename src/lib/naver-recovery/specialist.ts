@@ -251,6 +251,11 @@ export const specialistRecoverySpec: Omit<NaverRecoverySpec, "slug" | "path"> = 
         "상속인 수, 부동산 수, 가정법원 서류가 필요한지 확인한 뒤 견적을 드립니다. 법원·등기 수수료와 세금은 보수와 따로 안내합니다.",
     },
   ],
+  earlyCta: {
+    message:
+      "상속등기·상속포기·한정승인 중 무엇이 맞는지 상속인·부동산·빚 상황부터 함께 확인합니다. 서류가 없어도 상황만 알려 주세요.",
+    field: "inheritance-registration",
+  },
   cta: {
     title: "우리 집 상속에 어떤 업무가 필요한지 먼저 확인해 보세요",
     body: "상속인 구성과 알고 있는 재산·빚만 적어 주셔도 안윤정 법무사가 필요한 절차와 맡을 수 있는 범위를 회신합니다.",

@@ -10,17 +10,64 @@ const LAWYER_SCOPE_FAQ: ServiceFaq = {
     "법무사는 변호 업무를 수행하는 직역이 아니며, 이 사무소는 소송대리를 수행하지 않습니다. 등기·비송 신청과 법원 제출서류 작성·제출 대행을 담당하므로, 상담 시 사건 성격부터 확인합니다.",
 };
 
+/** 받침 여부로 조사 선택(은/는, 을/를). 한글이 아니면 받침 없음으로 본다. */
+function josa(word: string, withFinal: string, withoutFinal: string): string {
+  const w = word.trim();
+  const code = w.charCodeAt(w.length - 1) - 0xac00;
+  const hasFinal = code >= 0 && code <= 11171 && code % 28 !== 0;
+  return `${word}${hasFinal ? withFinal : withoutFinal}`;
+}
+const eunNeun = (w: string) => josa(w, "은", "는");
+const eulReul = (w: string) => josa(w, "을", "를");
+
+const INHERITANCE_SERVICES = new Set([
+  "inheritance-registration",
+  "inheritance-renunciation",
+  "qualified-acceptance",
+]);
+
+/**
+ * 상속 주제 페이지만 상속 전용 문구를 쓴다. serviceSlug가 상속이어도 수임료·보수 같은
+ * 일반 페이지(label에 '상속' 없음)는 여러 업무 공통 문구를 유지한다.
+ * mixed = 등기·포기·한정승인을 함께 다루는 페이지, registration = 상속등기 전용.
+ */
+function inheritanceTopic(seed: SearchIntentSeed): "mixed" | "registration" | null {
+  if (!INHERITANCE_SERVICES.has(seed.serviceSlug) || !seed.label.includes("상속")) return null;
+  return /포기|한정승인/.test(seed.focus) ? "mixed" : "registration";
+}
+
+const INHERITANCE_DOCS_FAQ: ServiceFaq = {
+  question: "상담 전에 어떤 서류를 준비하면 좋나요?",
+  answer:
+    "처음에는 고인의 기본증명서·가족관계증명서와 알고 있는 재산·채무 메모만 있어도 상담할 수 있습니다. 인감증명서나 부동산 등기부·대장은 진행할 절차가 정해진 뒤 필요한 것만 안내해 드립니다.",
+};
+
+/** 추천 의도: 사무소 실적이 아니라 맡기기 전 비교할 수임 조건 */
+const INHERITANCE_COMPARE_FAQ: ServiceFaq = {
+  question: "상속 업무를 맡기기 전에 무엇을 비교하면 되나요?",
+  answer:
+    "담당 법무사가 직접 상담·검토하는지, 수임료에 포함된 일과 따로 드는 공과금·실비가 무엇인지, 원본 서류를 어떻게 전달하고 돌려받는지, 보정이나 한정승인 수리 뒤 청산 같은 후속 업무를 어디까지 맡는지 확인하세요. 같은 금액이라도 맡는 범위가 다를 수 있습니다.",
+};
+
+/** 법령: 가사소송법 제44조 제1항 제6호, 부동산등기법 제7조의3 (RegionCoverageSection과 같은 근거) */
+const INHERITANCE_JURISDICTION_FAQ: ServiceFaq = {
+  question: "부산에서 상속 신청은 어디에 하나요?",
+  answer:
+    "상속포기·한정승인은 고인의 마지막 주소지(상속개시지) 관할 가정법원에 신고합니다. 고인이 부산에 살았다면 부산가정법원입니다(가사소송법 제44조 제1항 제6호). 상속등기는 부동산 소재지 관할 등기소가 원칙이고, 상속·유증 등기는 관할이 아닌 등기소에서도 처리할 수 있습니다(부동산등기법 제7조의3).",
+};
+
 function baseFaqs(seed: SearchIntentSeed): ServiceFaq[] {
   const k = seed.label;
   const faqs: ServiceFaq[] = [
     {
       question: `${k} 검색 시 무엇을 먼저 확인해야 하나요?`,
-      answer: `${k}는 보통 ‘견적만’이 아니라 서류·기한·관할·업무 범위가 맞는지 함께 보는 편이 안전합니다. ${seed.focus} 관점으로 필요 절차와 준비물을 먼저 정리해 보세요.`,
+      answer: `${eunNeun(k)} 보통 ‘견적만’이 아니라 서류·기한·관할·업무 범위가 맞는지 함께 보는 편이 안전합니다. ${seed.focus} 관점으로 필요 절차와 준비물을 먼저 정리해 보세요.`,
     },
     {
       question: "법무사 수임료만 비교하면 되나요?",
-      answer:
-        "수임료와 등록면허세·취득세·국민주택채권 등 공과금·실비를 구분해 확인하는 것이 좋습니다. 최저 견적만 보면 보정·재접수·추가 서류 비용이 커질 수 있습니다.",
+      answer: inheritanceTopic(seed)
+        ? "수임료와 공과금·실비를 구분해 확인하는 것이 좋습니다. 상속등기는 취득세·등록면허세·국민주택채권, 상속포기·한정승인은 인지대·송달료가 따로 듭니다. 최저 견적만 보면 보정·재접수·추가 서류 비용이 커질 수 있습니다."
+        : "수임료와 등록면허세·취득세·국민주택채권 등 공과금·실비를 구분해 확인하는 것이 좋습니다. 최저 견적만 보면 보정·재접수·추가 서류 비용이 커질 수 있습니다.",
     },
     {
       question: "상담 전에 어떤 서류를 준비하면 좋나요?",
@@ -52,6 +99,13 @@ function baseFaqs(seed: SearchIntentSeed): ServiceFaq[] {
     },
   ];
 
+  if (inheritanceTopic(seed)) {
+    // 법인 결의서류·법인 본점·회생법원 등 다른 업무 안내가 섞이지 않게 상속 전용으로 교체
+    faqs[2] = INHERITANCE_DOCS_FAQ;
+    faqs[3] = INHERITANCE_JURISDICTION_FAQ;
+    if (seed.category === "recommend") faqs[0] = INHERITANCE_COMPARE_FAQ;
+  }
+
   if (seed.includeLawyerScopeFaq) {
     faqs.splice(3, 0, LAWYER_SCOPE_FAQ);
   }
@@ -61,7 +115,7 @@ function baseFaqs(seed: SearchIntentSeed): ServiceFaq[] {
 
 function defaultSearchIntents(seed: SearchIntentSeed): string[] {
   return [
-    `${seed.label}를 검색하며 비용·서류·기간을 한눈에 보려는 경우`,
+    `${eulReul(seed.label)} 검색하며 비용·서류·기간을 한눈에 보려는 경우`,
     `${seed.focus} 전에 준비물을 확인하려는 경우`,
     "직접 할지 법무사에게 맡길지 비교하려는 경우",
     "부산 관할 등기소·법원 위치를 확인하려는 경우",
@@ -74,13 +128,24 @@ function defaultWhenNeeded(seed: SearchIntentSeed): string[] {
   return [
     `${seed.focus} 절차를 시작하기 전 전체 흐름을 잡고 싶을 때`,
     "필요서류·예상 비용·처리 기간을 미리 확인해야 할 때",
-    "등기부·계약서·가족관계 등 자료를 어디서부터 모을지 모를 때",
+    inheritanceTopic(seed)
+      ? "가족관계 서류와 재산·채무 자료를 어디서부터 모을지 모를 때"
+      : "등기부·계약서·가족관계 등 자료를 어디서부터 모을지 모를 때",
     "보정·반려·기한 도과 위험이 걱정될 때",
     "관할·접수 방법(창구·전자신청)을 확인해야 할 때",
   ];
 }
 
 function defaultDocuments(seed: SearchIntentSeed): string[] {
+  if (inheritanceTopic(seed)) {
+    return [
+      "피상속인 기본증명서·가족관계증명서·혼인관계증명서",
+      "알고 있는 재산·채무 메모(금융·부동산·대출)",
+      "부동산 등기부등본·대장(상속등기를 할 때)",
+      "상속인별 인감증명서·인감도장(협의분할서 작성 시)",
+      "채무·금융자료(포기·한정승인 검토 시)",
+    ];
+  }
   switch (seed.serviceSlug) {
     case "inheritance-registration":
     case "inheritance-renunciation":
@@ -125,16 +190,49 @@ function defaultDocuments(seed: SearchIntentSeed): string[] {
 }
 
 function defaultProcedures(seed: SearchIntentSeed): string[] {
+  const topic = inheritanceTopic(seed);
+  if (topic === "mixed") {
+    return [
+      "상속등기인지, 상속포기·한정승인인지 먼저 정하고 관할(부동산 소재지 등기소 / 상속개시지 가정법원)을 확인합니다.",
+      "가족관계 서류와 재산·채무 자료를 모읍니다(부동산 서류는 상속등기를 할 때).",
+      "절차별 공과금(취득세·등록면허세 / 인지대·송달료)과 수임료를 나눠 확인합니다.",
+      "신청서·첨부서류를 작성해 등기소 또는 가정법원에 접수합니다.",
+      "보정 요청이 있으면 기한 안에 보완합니다. 상속등기는 등기 완료와 등기필정보를, 상속포기·한정승인은 가정법원의 수리 심판 고지를 확인합니다. 한정승인은 수리된 뒤 채권자 공고·변제 등 청산 절차가 이어집니다.",
+    ];
+  }
+  if (topic === "registration") {
+    return [
+      `${seed.focus} 목표와 부동산 소재지 관할 등기소를 확인합니다.`,
+      "가족관계 서류와 부동산 등기부·대장을 모읍니다.",
+      "취득세·등록면허세·국민주택채권과 수임료를 나눠 확인합니다.",
+      "상속재산분할협의서 등 신청서·첨부서류를 작성하고 전자신청 또는 창구 접수를 진행합니다.",
+      "보정 요청이 있으면 기한 안에 보완하고, 등기 완료 후 등기필정보를 확인합니다.",
+    ];
+  }
+  // 회생·파산은 등기가 아니라 법원 결정으로 끝난다
+  const courtCase = seed.serviceSlug === "personal-rehabilitation" || seed.serviceSlug === "bankruptcy";
   return [
     `${seed.focus} 목표와 관할(등기소·법원)을 확인합니다.`,
     "등기부·공부·계약·가족관계 등 기초 서류를 수집합니다.",
     "필요 등기·신고 유형과 비용을 항목별로 구분합니다.",
     "신청서·첨부서류를 작성하고 전자신청 또는 창구 접수를 진행합니다.",
-    "보정 통지가 있으면 기한 내 보완하고 완료·등기필정보를 확인합니다.",
+    courtCase
+      ? "보정 명령이 있으면 기한 안에 보완하고, 법원 결정(개인회생 개시·인가, 파산·면책 등)을 확인합니다."
+      : "보정 통지가 있으면 기한 내 보완하고 완료·등기필정보를 확인합니다.",
   ];
 }
 
 function defaultMistakes(seed: SearchIntentSeed): string[] {
+  if (inheritanceTopic(seed)) {
+    return [
+      "수임료와 공과금을 구별하지 않고 총액만 비교하는 경우",
+      "상속등기(등기소)와 상속포기·한정승인(가정법원)의 관할을 혼동하는 경우",
+      "상속포기·한정승인 3개월을 사망일로만 계산하거나 놓치는 경우(기준은 상속개시가 있음을 안 날, 민법 제1019조 제1항)",
+      "포기·한정승인 전에 고인 예금 인출이나 재산 처분을 해 단순승인 문제가 생기는 경우",
+      "보정 통지 후 기한을 넘기거나 연락이 끊기는 경우",
+      `${seed.focus} 관련 서류를 일부만 준비해 재접수하는 경우`,
+    ];
+  }
   return [
     "수임료와 공과금을 구별하지 않고 총액만 비교하는 경우",
     "관할 등기소·법원을 확인하지 않고 접수하는 경우",
@@ -178,7 +276,7 @@ function relatedFor(seed: SearchIntentSeed): Pick<
         ]
       : [{ href: "/glossary", label: "업무 용어" }]),
     { href: "/faq", label: "FAQ" },
-    { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+    { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     ...(seed.slug === "등기소어디인가요" || seed.slug === "등기어디서하나요"
       ? [
           {
@@ -216,12 +314,17 @@ export function buildSearchIntentContent(
     h1: `${seed.label} — 상담 전 확인 가이드`,
     eyebrow: "상담 전 확인 안내",
     heroParagraphs: [
-      `${seed.label} 관련 업무를 알아볼 때는 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
-      OFFICE,
+      // 첫 문단만 첫 화면(상담 버튼 위)에 보이므로 상속 주제는 담당 사무소·법무사를 여기서 밝힌다
+      inheritanceTopic(seed)
+        ? `${seed.label} 관련 업무를 알아볼 때는 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다. 다옴법무사사무소(부산 해운대·센텀)의 안윤정 법무사가 상속등기·상속포기·한정승인 상담을 직접 합니다.`
+        : `${seed.label} 관련 업무를 알아볼 때는 ${seed.focus}에 맞는 서류·기한·관할·비용을 먼저 확인하는 것이 안전합니다.`,
+      inheritanceTopic(seed)
+        ? "맡기시면 서류 작성부터 등기소·가정법원 신청까지 진행하고, 수임료와 공과금은 항목별로 나눠 안내합니다."
+        : OFFICE,
       "어느 사무소에 맡기시든 도움이 되도록, 상담 전에 직접 확인해 보실 수 있는 기준을 정리했습니다.",
     ],
     summaryBullets: [
-      `${seed.label}는 ${seed.focus}를 중심으로 서류·절차·비용을 함께 봅니다.`,
+      `${eunNeun(seed.label)} ${eulReul(seed.focus)} 중심으로 서류·절차·비용을 함께 봅니다.`,
       "수임료와 공과금·실비를 구분해 비교하세요.",
       "관할·기한·보정 대응을 놓치면 기간과 비용이 늘어날 수 있습니다.",
       "아래 준비서류·절차·실수 모음을 체크한 뒤 상담하시면 빠릅니다.",
@@ -237,7 +340,9 @@ export function buildSearchIntentContent(
     commonMistakes: defaultMistakes(seed),
     faqs: baseFaqs(seed),
     ...relatedFor(seed),
-    bottomCtaText: `${seed.label} 관련해 서류·기간·비용이 궁금하시면 전화·카카오톡으로 문의해 주세요. 상황을 들으며 다음 절차를 안내해 드립니다.`,
+    bottomCtaText: inheritanceTopic(seed)
+      ? "상속인·부동산 상황이나 고인의 빚 때문에 상속포기·한정승인을 고민 중이시면 전화·카카오톡으로 문의해 주세요. 상황을 들으며 다음 절차를 안내해 드립니다."
+      : `${seed.label} 관련해 서류·기간·비용이 궁금하시면 전화·카카오톡으로 문의해 주세요. 상황을 들으며 다음 절차를 안내해 드립니다.`,
     serviceSlug: seed.serviceSlug,
   };
 }

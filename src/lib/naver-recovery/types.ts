@@ -50,6 +50,8 @@ export type NaverRecoverySpec = {
   sections: readonly NrSection[];
   faqs: readonly { question: string; answer: string }[];
   cta: { title: string; body: string; href: string; label: string };
+  /** 본문 첫 상담 안내(사진 아래). 없으면 기본 문구, field는 문의 폼 상담 분야 기본값 */
+  earlyCta?: { message: string; field?: string };
   /** 하단 전국·원격 안내 — 모든 업무가 원격으로 끝난다고 쓰지 않는다 */
   remoteNote: string;
   reviewNote: string;

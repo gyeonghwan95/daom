@@ -481,7 +481,7 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
       body: `${region} 생활권 안내를 본 뒤에는 부산 전역에서 법무사를 고를 때 확인할 기준과 업무별 안내를 함께 보시면 필요한 절차를 고르기 쉽습니다.`,
       links: [
         { href: "/", label: "부산 법무사" },
-        { href: "/부산법무사", label: "부산에서 법무사 찾을 때" },
+        { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
         { href: "/부산법무사상담", label: "부산 법무사 상담" },
       ],
     };

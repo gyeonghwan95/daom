@@ -18,8 +18,8 @@ const POPULAR_SEARCH_CARDS = [
   },
   {
     href: "/부산법무사",
-    label: "부산에서 법무사 찾는 기준",
-    hint: "업무·비용·상담 전 확인",
+    label: "다옴법무사사무소 업무 안내",
+    hint: "상속·등기·법인·공탁 업무별 안내",
   },
   {
     href: "/부산상속법무사",
@@ -35,6 +35,16 @@ const POPULAR_SEARCH_CARDS = [
     href: "/부산상속포기",
     label: "상속포기 기한 안내",
     hint: "3개월·후순위·단순승인 위험",
+  },
+  {
+    href: "/부산한정승인",
+    label: "부산 한정승인",
+    hint: "상속받은 재산 한도에서 빚 변제",
+  },
+  {
+    href: "/부산공탁",
+    label: "부산 공탁",
+    hint: "변제·형사·집행 공탁 절차",
   },
   {
     href: "/부산부동산등기",
@@ -115,7 +125,7 @@ export function HomePopularSearches() {
         <HomeSectionHeader
           label="Quick links"
           title="바로 찾는 안내"
-          description="상담·선택 기준·상속·등기·법인·회생 안내로 바로 이동합니다. 구·군·동은 부산 법률지도에서 고르시면 됩니다."
+          description="상담·선택 기준·상속·공탁·등기·법인·회생 안내로 바로 이동합니다. 구·군·동은 부산 법률지도에서 고르시면 됩니다."
         />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {POPULAR_SEARCH_CARDS.map((card) => (

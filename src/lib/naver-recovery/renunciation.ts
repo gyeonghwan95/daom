@@ -317,6 +317,11 @@ export const renunciationRecoverySpec: Omit<NaverRecoverySpec, "slug" | "path"> 
         "네. 앞 순위가 모두 포기해 상속인이 된 가족은 그 사실을 안 날부터 3개월 안에 각자 포기나 한정승인을 정해야 합니다. 같은 시기에 함께 신고하면 일정을 줄일 수 있습니다.",
     },
   ],
+  earlyCta: {
+    message:
+      "빚 때문에 상속포기를 고민 중이시면 3개월 기한(상속개시가 있음을 안 날부터)과 다음 순위 가족의 신청 방향부터 확인해 드립니다. 빚 내역을 다 몰라도 상황만 알려 주세요.",
+    field: "inheritance-renunciation",
+  },
   cta: {
     title: "포기 기한과 다음 상속인을 먼저 확인해 드립니다",
     body: "사망일, 가족 구성, 고인 재산을 사용했는지만 알려주셔도 신고 가능 여부와 준비 순서를 회신합니다.",

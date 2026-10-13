@@ -5,9 +5,7 @@ import Link from "next/link";
 import { HeroStage } from "@/components/home/HeroStage";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
-import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
-import { FormIcon } from "@/components/consultation/ConsultationIcons";
-import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { HomeHeroChannels } from "@/components/home/HomeHeroChannels";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import { homeHero } from "@/lib/home-content";
 import { heroTransition } from "@/lib/motion";
@@ -27,12 +25,12 @@ const item = {
 };
 
 /**
- * 메인 첫 화면 — 대표 인물(영상·사진 무대) + 핵심 문장 + 주 행동 2개.
+ * 메인 첫 화면 — 대표 인물(영상·사진 무대) + 핵심 문장 + 연락·안내 버튼(HomeHeroChannels).
  * 초기 HTML에서 문장·링크가 보이도록 등장 애니메이션은 숨김 상태에서 시작하지 않는다(JS 지연·영상 실패 대비).
- * 연락 수단(전화·카카오톡·톡톡·네이버 예약)은 작은 링크 한 줄로 두고, 모바일 하단 바·플로팅 패널을 그대로 쓴다.
+ * 버튼 아래에는 전화번호만 글자로 남긴다(번호를 보고 직접 거는 분).
  */
 export function HomeHero() {
-  const { phone, kakao, naverTalk } = getContactInfo();
+  const { phone } = getContactInfo();
   const reduced = useReducedMotion();
   const track = (kind: string, href?: string) => trackCTA(`home-hero-${kind}`, "/", href);
 
@@ -74,18 +72,8 @@ export function HomeHero() {
             {homeHero.lead}
           </motion.p>
 
-          <motion.div variants={item} className="home-hero__cta-row">
-            <InquiryStartButton className="home-hero__cta home-hero__cta--primary" source="inline" note="메인 첫 화면 업무 의뢰 문의">
-              <FormIcon className="home-hero__mobile-cta-icon" />
-              {homeHero.primaryCta}
-            </InquiryStartButton>
-            <Link
-              href={homeHero.secondaryCta.href}
-              className="home-hero__cta home-hero__cta--secondary"
-              onClick={() => track("cases", homeHero.secondaryCta.href)}
-            >
-              {homeHero.secondaryCta.label}
-            </Link>
+          <motion.div variants={item}>
+            <HomeHeroChannels />
           </motion.div>
           <motion.p variants={item} className="home-hero__cta-note">
             {homeHero.ctaNote}
@@ -118,18 +106,6 @@ export function HomeHero() {
             <a href={getPhoneHref(phone)} onClick={() => track("phone")}>
               전화 {phone}
             </a>
-            <span aria-hidden>·</span>
-            <a href={kakao} target="_blank" rel="noopener noreferrer" onClick={() => track("kakao", kakao)}>
-              카카오톡
-              <span className="sr-only"> (새 창)</span>
-            </a>
-            <span aria-hidden>·</span>
-            <a href={naverTalk} target="_blank" rel="noopener noreferrer" onClick={() => track("naver-talk", naverTalk)}>
-              네이버 톡톡
-              <span className="sr-only"> (새 창)</span>
-            </a>
-            <span aria-hidden>·</span>
-            <NaverSmartPlaceCta variant="reservation" placement="homepage_hero" tone="text" size="sm" className="home-hero__contact-naver" />
           </motion.p>
         </div>
       </motion.div>

@@ -9,8 +9,8 @@ export const CORE_HUBS: CoreHub[] = [
   {
     id: "busan-lawyer",
     slug: "부산법무사",
-    /** exact 「부산 법무사」는 HOME(/) 전용 — 이 허브는 선택 기준 가이드 */
-    title: "부산에서 법무사 찾을 때",
+    /** exact 「부산 법무사」는 HOME(/) 전용 — 이 허브는 취급업무 안내(선택 기준은 /부산법무사추천) */
+    title: "다옴법무사사무소 업무 안내",
     theme: "region-lawyer",
     spokes: [
       s("/해운대법무사", "해운대·센텀 법무사 상담"),
@@ -88,7 +88,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/해운대재개발상속등기", "해운대 재개발 지역 상속등기"),
       s("/부산상속등기", "부산 전역 상속등기"),
       s("/", "부산 법무사"),
-      s("/부산법무사", "부산에서 법무사 찾을 때"),
+      s("/부산법무사", "다옴법무사사무소 업무 안내"),
       s("/services/cases/haeundae-inheritance-registration-case", "해운대 아파트 상속등기 사례"),
       s("/faq/inheritance-registration-cost", "상속등기 비용 FAQ"),
       s("/location", "센텀 법무사 오시는 길"),
@@ -108,7 +108,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/부산국제금융센터법인등기", "BIFC 법인등기"),
       s("/해운대구상속등기", "센텀·재송 상속등기"),
       s("/부산법인등기", "부산 법인등기"),
-      s("/부산법무사", "부산에서 법무사 찾을 때"),
+      s("/부산법무사", "다옴법무사사무소 업무 안내"),
       s("/", "부산 법무사"),
       s("/services/cases/suyeong-company-establishment-case", "센텀 법인 설립 사례"),
       s("/services/cases/centum-ownership-transfer-case", "센텀 부동산 매매 등기 사례"),
@@ -131,7 +131,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/부산상속등기", "부산 상속등기 편안한 상담"),
       s("/부산상속포기", "부산 상속포기 가정법원 신고"),
       s("/부산개인회생", "부산 개인회생 상담"),
-      s("/부산법무사", "부산에서 법무사 찾을 때"),
+      s("/부산법무사", "다옴법무사사무소 업무 안내"),
       s("/", "부산 법무사"),
       s("/faq/inheritance-renunciation-family-effect", "상속포기 가족 영향 FAQ"),
       s("/faq/personal-rehabilitation-eligibility-faq", "개인회생 자격 FAQ"),
