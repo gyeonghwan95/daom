@@ -1,0 +1,82 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [],
+ "protectedFieldChanges": [
+  {
+   "route": "/",
+   "field": "linksHash",
+   "before": "8ad11e48f3b7b1a3",
+   "after": "ee97249fd82cc634"
+  }
+ ],
+ "mainChangedAllowed": [],
+ "mainChangedNotAllowed": [
+  "/"
+ ],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 1635,
+   "after": 1635
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 18,
+   "after": 18
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 595,
+   "after": 595
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 547,
+   "after": 547
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 32,
+   "after": 32
+  },
+  "rss": "same",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}
