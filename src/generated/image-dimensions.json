@@ -21,7 +21,7 @@
   "width": 1200,
   "height": 1200,
   "format": "jpeg",
-  "bytes": 139644
+  "bytes": 121048
  },
  "/generated/serp/corporate/busan-director-change.jpg": {
   "width": 1200,
@@ -2086,6 +2086,48 @@
    "height": 747,
    "format": "jpeg"
   }
+ },
+ "/image/cards/consult-prep.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 83664
+ },
+ "/image/cards/corporate-change.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 82426
+ },
+ "/image/cards/inheritance-start.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 77448
+ },
+ "/image/cards/office-visit.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 87972
+ },
+ "/image/cards/officer-deadline.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 79733
+ },
+ "/image/cards/registry-check.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 98122
+ },
+ "/image/cards/select-criteria.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 72269
  },
  "/image/og/haeundae-office-nameplate-4x3.jpg": {
   "width": 1200,

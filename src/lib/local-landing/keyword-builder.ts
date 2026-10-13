@@ -205,6 +205,8 @@ export function buildKeywordHubPage(
 
   const lawyerOpinion = isInheritanceChampion
     ? `${lawyerProfileMeta.fullTitle}는 ${lawyerProfileMeta.officeArea}에서 상속등기·상속포기·한정승인 등 법무사가 수행할 수 있는 상속 관련 절차를 사안에 따라 확인합니다. 등기부·가족관계·채무 자료를 함께 보며 ‘지금 무엇부터 해야 하는지’를 먼저 정리하고, 관할 등기소·가정법원·필요 서류·예상 비용을 항목별로 안내합니다. 작성·검토: ${lawyerProfileMeta.fullTitle}(다옴법무사사무소). 최종확인일 ${busanInheritanceHubReviewedLabel}.`
+    : isCorporateLegalOps
+      ? `${lawyerProfileMeta.fullTitle}는 해운대·센텀에서 법인설립·임원변경·본점이전 등 법인 등기 사건을 직접 상담·진행합니다. 등기사항증명서와 정관을 함께 보며 무엇을 언제까지 등기해야 하는지 먼저 정리해 드립니다. 관할 등기소·필요 서류·예상 비용을 항목별로 설명하고, 변경이 생긴 날부터 기한이 있는 등기는 우선순위를 표시해 안내합니다.`
     : isRegistryHub
       ? `${lawyerProfileMeta.fullTitle}는 해운대·센텀에서 부동산·상속·법인등기를 직접 상담·진행합니다. 등기 종류가 같아도 등기부 상태에 따라 순서가 달라질 수 있어, 계약서나 현황을 확인한 뒤 지금 필요한 등기부터 안내합니다.`
       : buildLawyerOpinion(config.regionLabel, topic.title);

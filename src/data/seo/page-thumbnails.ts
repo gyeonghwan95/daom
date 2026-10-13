@@ -430,7 +430,7 @@ export const PAGE_THUMBNAILS: PageThumbnailItem[] = [
   {
     url: "/부산법인등기",
     pageTitle: "부산 법인등기",
-    sourcePortrait: "portrait-corporate-01",
+    sourcePortrait: "portrait-corporate-02",
     template: "SOFT_SPLIT_LEFT",
     headline: "법인등기,\n어떤 변경일까",
     copyType: "question",

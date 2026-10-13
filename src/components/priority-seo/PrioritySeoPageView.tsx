@@ -6,6 +6,7 @@ import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ContentSection } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
+import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
@@ -104,6 +105,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
               </div>
             </ContentSection>
             {sectionIndex === 0 ? figure : null}
+            {sectionIndex === 1 ? <PageTextCardFigure path={spec.path} className="my-0 md:my-0" /> : null}
           </div>
         ))}
 

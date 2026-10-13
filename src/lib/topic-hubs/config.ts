@@ -163,6 +163,14 @@ export const topicHubConfigs: TopicHubConfig[] = [
     ctaDescription:
       "법인등기는 결의일·정관·임원 자격에 따라 필요 서류가 달라집니다. 다옴법무사사무소 안윤정 법무사가 현재 등기부와 정관을 확인해드리겠습니다.",
     jurisdictionHref: "/부산지방법원등기국",
+    // 공통 기본값(가족관계·협의서 등 상속용 항목) 대신 법인 상담 준비 정보(2026-10-13).
+    // 상담 단계 정보와 위임 후 제출서류를 나눠, 인감·주민등록 서류를 상담 단계에서 요구하지 않는다.
+    documents: [
+      "법인 등기사항전부증명서(없으면 상호와 본점 주소만 알려 주셔도 됩니다)",
+      "최신 정관, 현재 임원·주주 현황",
+      "바꿀 항목(임원·본점·목적·상호·자본)과 결의 예정일·변경이 생기는 날",
+      "위임 후 사건별: 주주총회·이사회 의사록, 취임승낙서·사임서, 법인·임원 인감증명서 등(상담 단계에서는 보내지 않으셔도 됩니다)",
+    ],
     costHref: "/법인등기비용",
     documentsHref: "/faq/company-establishment-documents-faq",
     faqServiceSlugs: ["company-establishment", "director-change", "corporate-registration"],

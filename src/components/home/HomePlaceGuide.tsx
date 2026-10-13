@@ -8,6 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { getNapInfo } from "@/lib/business-info";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { officeHours, officeLocation } from "@/lib/office-location";
+import { PageTextCardFigure } from "@/components/media/PageTextCard";
 
 export function HomePlaceGuide() {
   const nap = getNapInfo();
@@ -23,6 +24,8 @@ export function HomePlaceGuide() {
             {officeLocation.areaLabel} · {officeLocation.subway}
           </p>
         </Reveal>
+
+        <PageTextCardFigure path="/" className="mt-6 mb-6 md:mt-8 md:mb-8" />
 
         <div className="home-place__panel">
           <div className="home-place__map" id="home-directions">

@@ -186,7 +186,7 @@ export const corporateScopeRows: {
   {
     area: "회사 명의 부동산등기",
     level: "DIRECT",
-    note: "취득·이전·근저당. 절차 복제는 부동산 안내에서",
+    note: "취득·이전·근저당. 자세한 절차는 부동산등기 안내에서",
     href: "/부산부동산등기",
   },
   {
@@ -204,7 +204,7 @@ export const corporateScopeRows: {
   {
     area: "주주·경영권 분쟁, 소송대리",
     level: "OUT_OF_SCOPE",
-    note: "별도 전문가 영역. 이 사이트에서 Target하지 않음",
+    note: "별도 전문가(변호사 등) 영역입니다",
   },
 ];
 

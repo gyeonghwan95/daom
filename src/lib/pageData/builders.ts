@@ -682,6 +682,25 @@ export function buildPageDataFromLocalLanding(
   });
 }
 
+/** 허브 title('법인설립·임원변경·본점이전｜부산 법인등기')에서 본문용 짧은 이름만 쓴다 */
+function hubShortName(title: string): string {
+  return title.split("｜")[0].replace(" 종합 안내", "").trim();
+}
+
+/** 토픽 허브 '상담 예시'의 상황 문장 — 허브 업무에 맞춘다(상속 문장이 법인·회생 허브에 섞이던 문제, 2026-10-13). */
+const TOPIC_HUB_SITUATION: Record<string, string> = {
+  상속: "상속인 구성·채무·부동산 유무에 따라 필요한 절차가 달라지므로",
+  법인등기: "법인의 현재 등기 내용과 바꿀 사항(임원·본점·목적·자본)에 따라 필요한 결의와 서류가 달라지므로",
+  부동산등기: "등기 원인(매매·증여·상속 등)과 부동산 권리관계에 따라 필요한 서류가 달라지므로",
+  개인회생파산: "소득·채무·재산 상황에 따라 개인회생과 파산 중 맞는 절차가 달라지므로",
+  민사소송: "채권 증빙과 상대방 상황에 따라 지급명령·소송 등 맞는 절차가 달라지므로",
+  임대차전세: "계약 내용·보증금·등기 상황에 따라 필요한 절차가 달라지므로",
+  공탁채권회수: "공탁 원인과 채권 증빙에 따라 필요한 절차가 달라지므로",
+  가족후견: "가족 관계와 가정법원 신청 요건에 따라 필요한 서류가 달라지므로",
+  특수등기: "등기 대상과 원인에 따라 필요한 서류와 관할이 달라지므로",
+  창업법무: "회사 형태·자본·임원 구성에 따라 필요한 서류와 순서가 달라지므로",
+};
+
 export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
   const sections: PageSection[] = page.sections.map((section) => ({
     title: section.title,
@@ -693,7 +712,8 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
     slug: page.slug,
     path: page.path,
     category: "pillar",
-    title: page.title,
+    // 본문·breadcrumb·Service 이름에는 '｜' 앞 업무명만(검색 title은 그대로)
+    title: hubShortName(page.title),
     metaTitle: buildMetaTitle(page.title),
     metaDescription: buildMetaDescription(page.description),
     h1: page.h1,
@@ -701,7 +721,7 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "업무안내", href: "/services" },
-      { label: page.title },
+      { label: hubShortName(page.title) },
     ],
     introParagraphs: [page.ctaDescription],
     ...(page.documents ? { documents: page.documents } : {}),
@@ -711,8 +731,8 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
       answer: f.answer,
     })),
     consultationExample: {
-      title: `${page.title.replace(" 종합 안내", "")} 상담 예시`,
-      body: `부산 전역에서 ${page.title.replace(" 종합 안내", "")} 관련 문의가 이어지고 있습니다. 상속인 구성·채무·부동산 유무에 따라 필요한 절차가 달라지므로, 먼저 상황을 정리한 뒤 서류·비용·기한을 단계별로 안내드립니다.`,
+      title: `${hubShortName(page.title)} 상담 예시`,
+      body: `부산 전역에서 ${hubShortName(page.title)} 관련 문의가 이어지고 있습니다. ${TOPIC_HUB_SITUATION[page.slug] ?? "사건 내용과 준비된 서류에 따라 필요한 절차가 달라지므로"}, 먼저 상황을 정리한 뒤 서류·비용·기한을 단계별로 안내드립니다.`,
     },
     internalLinks: [
       ...(page.jurisdictionHref

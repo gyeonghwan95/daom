@@ -1,0 +1,141 @@
+{
+ "size": "1200x600",
+ "font": "Noto Sans KR (SIL OFL 1.1)",
+ "cards": [
+  {
+   "id": "consult-prep",
+   "photo": "상담-메인.jpg",
+   "kicker": "상담 준비",
+   "title": [
+    "상담 전",
+    "준비할 자료"
+   ],
+   "sub": [
+    "상황 메모와 가지고 있는 서류만",
+    "있어도 상담을 시작할 수 있습니다"
+   ]
+  },
+  {
+   "id": "select-criteria",
+   "photo": "썸네일-사무실_정면.jpg",
+   "kicker": "법무사 선택",
+   "title": [
+    "법무사 선택,",
+    "확인할 기준"
+   ],
+   "sub": [
+    "담당자·수임료와 공과금 구분·",
+    "맡는 범위를 먼저 비교해 보세요"
+   ]
+  },
+  {
+   "id": "office-visit",
+   "photo": "썸네일-상담협의.jpg",
+   "kicker": "다옴법무사사무소",
+   "title": [
+    "센텀 사무소,",
+    "예약 후 방문"
+   ],
+   "sub": [
+    "부산 해운대구 센텀동로 200",
+    "평일 09:00–18:00 · 방문은 예약제"
+   ]
+  },
+  {
+   "id": "inheritance-start",
+   "photo": "썸네일_사무실_서류검토_여름 (5).jpg",
+   "kicker": "상속 업무",
+   "title": [
+    "상속, 어떤",
+    "절차부터?"
+   ],
+   "sub": [
+    "상속등기·상속포기·한정승인 중",
+    "무엇이 맞는지부터 가립니다"
+   ]
+  },
+  {
+   "id": "registry-check",
+   "photo": "썸네일-등기운영과.jpg",
+   "kicker": "등기 업무",
+   "title": [
+    "등기 전에",
+    "확인할 것"
+   ],
+   "sub": [
+    "등기부·원인 서류·관할 등기소를",
+    "먼저 확인한 뒤 접수합니다"
+   ]
+  },
+  {
+   "id": "corporate-change",
+   "photo": "썸네일-사무실_겨울 (4).jpg",
+   "kicker": "법인등기",
+   "title": [
+    "법인등기,",
+    "변경 사항부터"
+   ],
+   "sub": [
+    "임원·본점·목적·자본 중",
+    "무엇이 바뀌는지 먼저 정리합니다"
+   ]
+  },
+  {
+   "id": "officer-deadline",
+   "photo": "썸네일-사무실_작업중.jpg",
+   "kicker": "법인 업무",
+   "title": [
+    "임원 변경,",
+    "2주 안에 등기"
+   ],
+   "sub": [
+    "변경이 생긴 날부터 본점 소재지에서",
+    "등기합니다(상법 제317조·제183조)"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "consult-prep",
+   "file": "public/image/cards/consult-prep.jpg",
+   "bytes": 83664,
+   "photo": "상담-메인.jpg"
+  },
+  {
+   "id": "select-criteria",
+   "file": "public/image/cards/select-criteria.jpg",
+   "bytes": 72269,
+   "photo": "썸네일-사무실_정면.jpg"
+  },
+  {
+   "id": "office-visit",
+   "file": "public/image/cards/office-visit.jpg",
+   "bytes": 87972,
+   "photo": "썸네일-상담협의.jpg"
+  },
+  {
+   "id": "inheritance-start",
+   "file": "public/image/cards/inheritance-start.jpg",
+   "bytes": 77448,
+   "photo": "썸네일_사무실_서류검토_여름 (5).jpg"
+  },
+  {
+   "id": "registry-check",
+   "file": "public/image/cards/registry-check.jpg",
+   "bytes": 98122,
+   "photo": "썸네일-등기운영과.jpg"
+  },
+  {
+   "id": "corporate-change",
+   "file": "public/image/cards/corporate-change.jpg",
+   "bytes": 82426,
+   "photo": "썸네일-사무실_겨울 (4).jpg"
+  },
+  {
+   "id": "officer-deadline",
+   "file": "public/image/cards/officer-deadline.jpg",
+   "bytes": 79733,
+   "photo": "썸네일-사무실_작업중.jpg"
+  }
+ ]
+}

@@ -49,6 +49,13 @@ function CardGrid({
 }
 
 /** SSR — `/부산법인법무사` ArticleSummary 뒤에만 삽입. 첫 문단·H1 앞 금지. */
+/** 범위표 수행 수준 — 내부 코드 대신 고객용 표기 */
+const LEVEL_LABEL: Record<string, string> = {
+  DIRECT: "직접 수행",
+  RELATED: "관련 안내",
+  OUT_OF_SCOPE: "범위 밖",
+};
+
 export function CorporateLegalOperationsModules() {
   return (
     <div className="space-y-10">
@@ -156,7 +163,7 @@ export function CorporateLegalOperationsModules() {
                       row.area
                     )}
                   </td>
-                  <td className="py-2 pr-3 align-top text-navy/70">{row.level}</td>
+                  <td className="py-2 pr-3 align-top text-navy/70">{LEVEL_LABEL[row.level] ?? row.level}</td>
                   <td className="py-2 align-top text-navy/80">{row.note}</td>
                 </tr>
               ))}

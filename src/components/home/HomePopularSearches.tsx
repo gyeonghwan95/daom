@@ -119,7 +119,7 @@ export function HomePopularSearches() {
               items={situationCarousel.items}
               className="mt-0"
             />
-            <SeoCarouselJsonLd items={situationCarousel.items} />
+            <SeoCarouselJsonLd items={situationCarousel.items} pagePath="/" name={situationCarousel.heading} />
           </div>
         ) : null}
         <HomeSectionHeader

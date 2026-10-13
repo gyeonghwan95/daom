@@ -112,6 +112,18 @@ export const THUMBNAIL_PORTRAITS: ThumbnailPortrait[] = [
     notes: "측면 서류 검토. 좌측 블라인드 영역이 텍스트에 유리.",
   },
   {
+    // 법인 페이지 3곳이 같은 사진(portrait-corporate-01)을 쓰던 것을 나누기 위해 추가(2026-10-13)
+    id: "portrait-corporate-02",
+    src: "/image/썸네일-사무실_겨울 (4).jpg",
+    facePosition: { x: 0.62, y: 0.47 },
+    faceSafeBox: { x: 0.5, y: 0.25, width: 0.34, height: 0.45 },
+    preferredTextSide: "left",
+    crop: { x: 0.2, y: 0.04, width: 0.78, height: 0.94 },
+    mood: "document",
+    suitableFor: ["corporate"],
+    notes: "인감함·법인 서류 정리, 뒤 책장에 상법 책. 좌측 모니터 영역이 텍스트에 유리.",
+  },
+  {
     id: "portrait-phone-01",
     src: "/image/썸네일-사무실_전화중.jpg",
     facePosition: { x: 0.5, y: 0.34 },

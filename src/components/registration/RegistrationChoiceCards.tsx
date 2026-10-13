@@ -24,7 +24,7 @@ function ChoiceCarousel({ hubUrl, description, heading }: ChoiceCarouselProps) {
         items={carousel.items}
         className="mt-2"
       />
-      <SeoCarouselJsonLd items={carousel.items} />
+      <SeoCarouselJsonLd items={carousel.items} pagePath={hubUrl} name={related?.heading ?? heading} />
     </>
   );
 }

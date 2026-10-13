@@ -66,6 +66,16 @@ export const FIELD_PHOTO_VISUALS: FieldPhotoVisual[] = [
     height: 1200,
     source: "public/image/서류/서류_상속포기.jpg",
   },
+  {
+    // 법인 페이지 3곳이 같은 사진을 대표로 쓰던 것을 나눔(2026-10-13). 촬영 장소는 특정하지 않는다.
+    url: "/법인등기",
+    src: "/image/썸네일-등기운영과.jpg",
+    alt: "법인·부동산 등기 민원을 받는 등기소 등기운영과 창구",
+    caption: "법인등기는 본점 소재지 관할 등기소에 신청합니다",
+    width: 3000,
+    height: 2250,
+    source: "public/image/썸네일-등기운영과.jpg",
+  },
 ];
 
 const BY_URL = new Map(FIELD_PHOTO_VISUALS.map((v) => [v.url, v]));

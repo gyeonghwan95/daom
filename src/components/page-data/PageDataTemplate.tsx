@@ -54,6 +54,7 @@ import type { PageData, PageSection } from "@/lib/pageData/types";
 import { resolveSerpImage, getRelatedContentCarousel } from "@/lib/seo/page-visuals";
 import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
+import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
   getNationwideBannerHeadline,
@@ -368,6 +369,8 @@ export function PageDataTemplate({
         serviceSlug={page.serviceSlug}
       />
 
+      <PageTextCardFigure path={page.path} />
+
       <ContentSection
         id="consultation-example"
         title={page.consultationExamples ? "익명 상담 사례" : "상담이 필요한 대표 상황"}
@@ -407,6 +410,8 @@ export function PageDataTemplate({
       {conversionBlock("post-faq")}
 
       {(() => {
+        // 상단 선택 카드(같은 목록)를 이미 보여 주는 페이지는 하단 반복·ItemList 중복을 피한다
+        if (page.path === "/부산법인법무사" || page.path === "/부산부동산등기") return null;
         const relatedCarousel = getRelatedContentCarousel(
           page.path,
           isInheritanceSurgeryTarget ? 4 : 8,
@@ -419,7 +424,11 @@ export function PageDataTemplate({
               items={relatedCarousel.items}
               className="mt-8"
             />
-            <SeoCarouselJsonLd items={relatedCarousel.items} />
+            <SeoCarouselJsonLd
+              items={relatedCarousel.items}
+              pagePath={page.path}
+              name={relatedCarousel.heading}
+            />
           </>
         );
       })()}

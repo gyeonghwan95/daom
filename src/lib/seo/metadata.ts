@@ -40,6 +40,8 @@ export const HOME_METADATA_DESCRIPTION =
 const INDEX_ROBOTS: Metadata["robots"] = {
   index: true,
   follow: true,
+  // 색인 페이지만: 큰 이미지 미리보기 허용(noindex 분기는 별도 값이라 영향 없음)
+  "max-image-preview": "large",
   googleBot: {
     index: true,
     follow: true,
