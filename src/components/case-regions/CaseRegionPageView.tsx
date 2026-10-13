@@ -48,19 +48,7 @@ export function CaseRegionPageView({
         </p>
         <h1 className="page-title max-w-4xl">{page.h1}</h1>
         <p className="body-text max-w-3xl text-navy/80">{page.intro}</p>
-        <HeroContactButtons
-          className="pt-2"
-          placement="case_region"
-          extra={[{ href: "/업무사례/지역별", label: "다른 지역 찾기" }]}
-          inquiry={
-            <InquiryStartButton
-              source="landing"
-              className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-3 text-sm"
-            >
-              {consultationInquiryCopy.ctaShort}
-            </InquiryStartButton>
-          }
-        />
+        <HeroContactButtons className="mt-2" placement="case_region" />
       </header>
 
       <div className="max-w-3xl space-y-4">

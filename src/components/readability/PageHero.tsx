@@ -93,26 +93,14 @@ export function PageHero({
     ? "btn-secondary inline-flex min-h-12 items-center justify-center gap-1.5 px-4 sm:px-5"
     : "btn-secondary inline-flex min-h-12 items-center justify-center px-6";
 
-  // 상담형 CTA(문의·상담 경로)는 상담 채널 6개 + 안내 3개 두 줄 구성(HeroContactButtons)
+  // 상담형 CTA(문의·상담 경로)는 글자 링크형 안내(HeroContactButtons): PC 상담 연결 + 공통 안내 2개
   const consultHero = Boolean(ctaLabel) && isConsultCtaHref(ctaHref);
   const consultCtaBlock = consultHero ? (
     <HeroContactButtons
       className="mt-5 md:mt-6"
       placement="page_hero"
       showReservation={naverOn}
-      extra={[
-        ...(secondaryCta && secondaryCta.href !== "/about" ? [secondaryCta] : []),
-        ...(showDiagnosisCta ? [{ href: "/자가진단", label: "자가진단 보기" }] : []),
-      ]}
-      inquiry={
-        <InquiryStartButton
-          source="landing"
-          fallbackHref={ctaHref}
-          className="btn-primary inline-flex min-h-11 w-full items-center justify-center px-3 text-sm"
-        >
-          {consultationInquiryCopy.ctaShort}
-        </InquiryStartButton>
-      }
+      inquiryFallbackHref={ctaHref}
     />
   ) : null;
 
