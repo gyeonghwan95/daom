@@ -136,8 +136,8 @@ function main() {
       a: "/부산법무사",
       b: "/부산법무사추천",
       intentSimilarity: 0.7,
-      note: "추천 Spoke KEEP",
-      action: "INTERNAL-LINK-TO-CHAMPION",
+      note: "추천 대표=/부산법무사추천, 업무 안내=/부산법무사, 광역 대표=/",
+      action: "KEEP-SEPARATE-INTENTS",
     },
     {
       a: "/부산상속포기",

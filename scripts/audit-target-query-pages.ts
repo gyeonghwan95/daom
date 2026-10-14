@@ -10,6 +10,12 @@ import { buildKeywordHubPage } from "../src/lib/local-landing/keyword-builder";
 import { buildBusanLawyerFlagshipPage } from "../src/lib/local-landing/flagship-busan-lawyer";
 import { buildBusanInheritanceRenunciationPage } from "../src/lib/local-landing/inheritance-renunciation-busan";
 import { buildBusanCorporateRegistrationPage } from "../src/lib/local-landing/corporate-registration-busan";
+import {
+  BUSAN_LAWYER_CHAMPION_PATH,
+  BUSAN_LAWYER_GUIDE_PATH,
+  BUSAN_RECOMMEND_CHAMPION_PATH,
+  BUSAN_RENUNCIATION_CHAMPION_PATH,
+} from "../src/lib/seo/champion-query";
 import type { LocalLandingConfig, LocalLandingPage } from "../src/types/local-landing";
 import { getAllPublishedPaths } from "./lib/published-paths.mjs";
 
@@ -274,13 +280,13 @@ const QUERIES = [
   {
     query: "부산 법무사 추천",
     intent: "BUSAN_PROVIDER_SELECTION",
-    champion: "/부산법무사",
+    champion: BUSAN_RECOMMEND_CHAMPION_PATH,
     candidates: ["부산법무사", "부산법무사추천", "부산상속법무사", "부산법인법무사"],
     hints: ["상속", "법인", "부동산", "회생", "선택", "업무"],
     diagnosis: {
-      primary: "CANNIBALIZATION",
-      secondary: "WEAK-CHAMPION",
-      notes: "Flagship=/부산법무사. /부산법무사추천은 선택기준 Spoke로 KEEP.",
+      primary: "ROLE-SEPARATED",
+      secondary: "VERIFY-IN-SERP",
+      notes: "추천 의도는 /부산법무사추천, 업무 안내는 /부산법무사, 광역 대표 검색어는 홈(/)으로 구분.",
     },
   },
 ] as const;
@@ -309,9 +315,11 @@ function main() {
 
   const champions = {
     corporate: "/부산법인법무사",
-    renunciation: "/부산상속포기",
+    renunciation: BUSAN_RENUNCIATION_CHAMPION_PATH,
     inheritance: "/부산상속법무사",
-    busanMain: "/부산법무사",
+    busanMain: BUSAN_LAWYER_CHAMPION_PATH,
+    busanGuide: BUSAN_LAWYER_GUIDE_PATH,
+    busanRecommend: BUSAN_RECOMMEND_CHAMPION_PATH,
   };
 
   const report = {
@@ -322,6 +330,8 @@ function main() {
     linkGraph: {
       home: "/",
       busanMain: champions.busanMain,
+      busanGuide: champions.busanGuide,
+      busanRecommend: champions.busanRecommend,
       corporate: {
         hub: champions.corporate,
         spokes: [

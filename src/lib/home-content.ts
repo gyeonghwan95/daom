@@ -116,7 +116,7 @@ export const homeFaqs = [
 
 export const homeReviewedOn = "2026-08-27";
 /** 실제 홈 본문 수정일. 프로필·안내의 전문가 최종 확인일과 구분한다. */
-export const homeModifiedOn = "2026-10-14";
+export const homeModifiedOn = "2026-10-15";
 
 export const homeClosing = {
   eyebrow: "안윤정 법무사",

@@ -60,6 +60,53 @@ export function HomeTrust() {
             </Reveal>
           </div>
         </div>
+
+        <section
+          aria-labelledby="home-consultation-choice-title"
+          className="mt-10 rounded-2xl border border-beige-dark bg-white p-5 md:p-7"
+        >
+          <h3 id="home-consultation-choice-title" className="text-lg font-bold text-navy md:text-xl">
+            부산에서 법무사 상담을 찾을 때, 목적부터 구분해 보세요
+          </h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div>
+              <p className="font-semibold text-navy">법원 무료 법률상담을 찾는 경우</p>
+              <p className="mt-1 text-sm leading-relaxed text-navy/70">
+                부산가정법원과 부산회생법원은 별도의 법무사 상담을 안내합니다.
+                운영 여부·시간·장소는 방문 전 각 법원의 공식 안내에서 확인해 주세요.
+              </p>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                <a
+                  href="https://busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy-light underline underline-offset-4"
+                >
+                  부산가정법원 안내
+                </a>
+                <a
+                  href="https://bsb.scourt.go.kr/bsb/civil/civil_02/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy-light underline underline-offset-4"
+                >
+                  부산회생법원 안내
+                </a>
+              </div>
+            </div>
+            <div>
+              <p className="font-semibold text-navy">등기·신청 업무를 맡기려는 경우</p>
+              <p className="mt-1 text-sm leading-relaxed text-navy/70">
+                상속·부동산·법인등기나 법원 제출 서류의 작성·신청은 안윤정 법무사가
+                사안을 확인한 뒤 업무 범위, 준비서류와 비용을 안내합니다.
+                소송 대리와 형사 변론은 변호사 업무입니다.
+              </p>
+              <Link href="/contact" className="mt-2 inline-flex text-sm font-medium text-navy-light underline underline-offset-4">
+                다옴법무사사무소에 상담 문의
+              </Link>
+            </div>
+          </div>
+        </section>
       </Container>
     </section>
   );

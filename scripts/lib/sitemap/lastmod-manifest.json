@@ -1,7 +1,7 @@
 {
  "note": "URL별 lastmod. Cloudflare 빌드는 이 값만 읽는다(파일 mtime·빌드 시각 사용 안 함). 없는 URL은 lastmod 생략. 갱신: docs/sitemap-lastmod.md",
  "routes": {
-  "/": "2026-10-14",
+  "/": "2026-10-15",
   "/about": "2026-10-14",
   "/blog/bankruptcy-vs-discharge-difference": "2026-10-11",
   "/blog/bankruptcy-vs-personal-rehabilitation": "2026-10-11",
