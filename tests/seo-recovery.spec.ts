@@ -101,6 +101,13 @@ test("5. H1이 두 개 이상인 페이지가 없다", () => {
 
 const sitemap = readSitemapUrls();
 
+test("모든 색인 대상 페이지 본문에 공식 상담 전화가 표시된다", () => {
+  const missing = indexableSelf
+    .filter((page) => !page.mainText.includes("010-4277-1279"))
+    .map((page) => page.route);
+  assert.deepEqual(missing, [], `본문에 상담 전화가 없는 URL: ${sample(missing)}`);
+});
+
 test("홈 첫 화면의 부산 법무사 안내와 수정일 신호를 유지한다", () => {
   const home = pages.get("/")!;
   assert.ok(home.mainText.includes("부산 법무사를 찾고 있다면"));
