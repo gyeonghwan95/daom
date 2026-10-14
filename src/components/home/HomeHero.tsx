@@ -69,7 +69,7 @@ export function HomeHero() {
           <span className="home-hero__rule" aria-hidden />
 
           <motion.p variants={item} className="home-hero__sub home-hero__lead">
-            {homeHero.lead}
+            {homeHero.sub}
           </motion.p>
 
           <motion.div variants={item}>

@@ -18,7 +18,7 @@ import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildFaqPageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
-import { homeFaqs, homeReviewedOn } from "@/lib/home-content";
+import { homeFaqs, homeModifiedOn } from "@/lib/home-content";
 import {
   HOME_H1,
   HOME_METADATA_DESCRIPTION,
@@ -41,7 +41,7 @@ export default function Home() {
               path: "/",
               h1: HOME_H1,
               image: siteImages.home.hero.src,
-              dateModified: homeReviewedOn,
+              dateModified: homeModifiedOn,
             }),
             buildFaqPageSchema([...homeFaqs], "/"),
           ]}

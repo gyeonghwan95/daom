@@ -101,6 +101,20 @@ test("5. H1이 두 개 이상인 페이지가 없다", () => {
 
 const sitemap = readSitemapUrls();
 
+test("홈 첫 화면의 부산 법무사 안내와 수정일 신호를 유지한다", () => {
+  const home = pages.get("/")!;
+  assert.ok(home.mainText.includes("부산 법무사를 찾고 있다면"));
+  assert.ok(home.mainText.includes("사무소는 부산 해운대구 센텀에 있습니다"));
+
+  const webPage = home.jsonld.find(
+    (schema: Record<string, unknown>) => schema["@type"] === "WebPage",
+  );
+  const root = sitemap.find((entry) => canonicalPath(entry.loc) === "/");
+  assert.ok(webPage, "홈 WebPage 구조화 데이터가 없습니다");
+  assert.ok(root?.lastmod, "홈 sitemap lastmod가 없습니다");
+  assert.equal(webPage.dateModified, root.lastmod);
+});
+
 test("6. sitemap의 모든 URL이 실제 페이지(200)이고 리다이렉트가 아니다", () => {
   assert.ok(sitemap.length > 0, "sitemap URL이 비어 있습니다");
   const notFound: string[] = [];
