@@ -25,6 +25,11 @@ function count(hay: string, needle: string) {
 
 function main() {
   const flagship = read("src/lib/local-landing/flagship-busan-lawyer.ts");
+  const championRegistry = JSON.parse(read("config/seo-query-champions.json")) as {
+    queries?: Record<string, { primary?: string }>;
+  };
+  const broadChampion = championRegistry.queries?.["부산 법무사"]?.primary;
+  const broadChampionIsHome = broadChampion === "/";
   const toc = read("src/components/readability/PageTableOfContents.tsx");
   const hero = read("src/components/home/HomeHero.tsx");
   const home = read("src/app/page.tsx");
@@ -77,11 +82,15 @@ function main() {
       "4_homepage_responsive_duplicate": heroContactDup
         ? "YES — HeroContactBlock mobile+desktop separate DOM; images marquee duplicated. REPORT, UI-risk so Phase 1 did not merge."
         : "NO",
-      "5_multiple_primary_urls": "YES as candidates, NO as registry — Primary Champion is exactly /부산법무사",
+      "5_multiple_primary_urls": broadChampionIsHome
+        ? "YES as candidates, NO as registry — Primary Champion is exactly HOME `/`."
+        : `REVIEW — registry Primary Champion is ${broadChampion ?? "missing"}, not HOME \`/\`.`,
       "6_spoke_competition": "PARTIAL — 추천/상담/비교/등기 pages exist; registry assigns supporting roles. Title/H1 unchanged this phase.",
       "7_exact_anchor_surge": "REVIEW — many label: 부산 법무사 across landings; capHubLinks fillers use exact-ish phrases. No mass delete this phase.",
       "8_local_page_dilution": "REVIEW — local pages exist and must not act as mini-Champion. Freeze new local-provider URLs.",
-      "9_title_h1_canonical_changed_since_good": "NO for title/H1/canonical vs e064454 on /부산법무사. Related links and lawyerOpinion date did change.",
+      "9_title_h1_canonical_changed_since_good": broadChampionIsHome
+        ? "NO for title/H1/canonical on the current Primary Champion HOME `/`. Related links and lawyerOpinion date did change."
+        : "REVIEW — current Primary Champion differs from HOME `/`; do not change title/H1/canonical until the registry decision is verified.",
       "10_search_advisor_index": "UNKNOWN — no Search Advisor login in this environment. Manual checklist only.",
     },
     evidence: {
@@ -92,6 +101,8 @@ function main() {
       hiddenTocDup,
       heroContactDup,
       homeClientSwiper: home.includes("HomeFullpageSwiper"),
+      broadChampion,
+      broadChampionIsHome,
     },
   };
 
