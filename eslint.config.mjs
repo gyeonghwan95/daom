@@ -16,6 +16,9 @@ const eslintConfig = defineConfig([
     "scripts/**",
     "reports/**",
     "generated/**",
+    ".cache/**",
+    // Downloaded player bundles are not application source and generate thousands of false positives.
+    "*-player-script.js",
   ]),
 ]);
 

@@ -34,9 +34,6 @@ import {
 import { buildJurisdictionGuideForRegionKey } from "@/lib/geo/busan-registry";
 import { formatPlaceList, withRegionLabel } from "../region-label";
 
-const defaultRegistryGuide: LocalLandingJurisdictionGuide =
-  buildJurisdictionGuideForRegionKey("busan");
-
 export function getJurisdictionGuide(
   config: LocalLandingConfig,
   institutionKey?: string,

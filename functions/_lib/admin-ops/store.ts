@@ -847,7 +847,7 @@ export async function buildDashboard(env) {
   let noticeToday = null;
   let ingestToday = null;
   let lastEventAgeMinutes = null;
-  let notifyChannels = {
+  const notifyChannels = {
     telegram: Boolean(
       env.TELEGRAM_BOT_TOKEN?.trim() && env.TELEGRAM_CHAT_ID?.trim(),
     ),

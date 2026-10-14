@@ -1,6 +1,6 @@
 name: IndexNow
 
-# main 배포(Cloudflare Pages) 이후 IndexNow에 변경 URL만 제출 (Naver 기본, Google 미사용)
+# Cloudflare Pages의 실제 배포 커밋을 확인한 뒤 IndexNow에 변경 URL만 제출
 on:
   push:
     branches:
@@ -28,6 +28,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Wait for matching Cloudflare deployment
+        run: node scripts/verify-live-deploy.mjs
+        env:
+          NEXT_PUBLIC_SITE_URL: https://다옴법무사사무소.kr
 
       - name: Submit IndexNow (wait for live key)
         run: npm run indexnow:deploy

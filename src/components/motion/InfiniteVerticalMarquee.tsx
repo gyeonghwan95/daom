@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useHydrated } from "@/hooks/useHydrated";
 import { usePauseMarqueeWhileScrolling } from "@/hooks/usePauseMarqueeWhileScrolling";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -23,11 +23,7 @@ export function InfiniteVerticalMarquee({
 }: InfiniteVerticalMarqueeProps) {
   const reduced = useReducedMotion();
   const rootRef = usePauseMarqueeWhileScrolling<HTMLDivElement>();
-  const [cloneReady, setCloneReady] = useState(false);
-
-  useEffect(() => {
-    setCloneReady(true);
-  }, []);
+  const cloneReady = useHydrated();
 
   if (reduced) {
     return (

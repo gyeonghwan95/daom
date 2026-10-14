@@ -129,32 +129,34 @@ export function HeroContactBlock({
 
       <div className="hero-contact__footer">
         <div className="hero-contact__row hero-contact__row--guide" role="list">
-          <button
-            type="button"
-            className="hero-contact__chip hero-contact__chip--inquiry"
-            role="listitem"
-            aria-haspopup="dialog"
-            aria-label={HERO_INQUIRY_CHIP_LABEL}
-            onClick={startHeroInquiry}
-          >
-            <FormIcon className={CHIP_ICON_CLASS} />
-            <span className="hero-contact__chip-label">
-              {HERO_INQUIRY_CHIP_LABEL}
-            </span>
-          </button>
-          <button
-            type="button"
-            className="hero-contact__chip hero-contact__chip--guide"
-            role="listitem"
-            aria-haspopup="dialog"
-            aria-label={HERO_INQUIRY_CHIP_LABEL}
-            onClick={startHeroInquiry}
-          >
-            <FormIcon className={CHIP_ICON_CLASS} />
-            <span className="hero-contact__chip-label">
-              {HERO_INQUIRY_CHIP_LABEL}
-            </span>
-          </button>
+          <span role="listitem" className="contents">
+            <button
+              type="button"
+              className="hero-contact__chip hero-contact__chip--inquiry"
+              aria-haspopup="dialog"
+              aria-label={HERO_INQUIRY_CHIP_LABEL}
+              onClick={startHeroInquiry}
+            >
+              <FormIcon className={CHIP_ICON_CLASS} />
+              <span className="hero-contact__chip-label">
+                {HERO_INQUIRY_CHIP_LABEL}
+              </span>
+            </button>
+          </span>
+          <span role="listitem" className="contents">
+            <button
+              type="button"
+              className="hero-contact__chip hero-contact__chip--guide"
+              aria-haspopup="dialog"
+              aria-label={HERO_INQUIRY_CHIP_LABEL}
+              onClick={startHeroInquiry}
+            >
+              <FormIcon className={CHIP_ICON_CLASS} />
+              <span className="hero-contact__chip-label">
+                {HERO_INQUIRY_CHIP_LABEL}
+              </span>
+            </button>
+          </span>
           {isNaverSmartPlaceConfigured() ? (
             <span role="listitem" className="contents">
               <NaverSmartPlaceCta

@@ -4,7 +4,7 @@
  * API routes are temporarily stashed because `output: export` does not support them.
  * Server build with admin API: `npm run build:server`
  */
-import { execSync } from "node:child_process";
+import { execFileSync, execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -148,6 +148,25 @@ try {
     console.error("\n[build-static] 빌드는 완료됐지만 out/ 폴더가 없습니다.\n");
     process.exit(1);
   }
+
+  // Cloudflare Pages Git 빌드와 GitHub Actions가 같은 커밋을 가리키는지 확인한다.
+  let commit = process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA;
+  if (!commit) {
+    try {
+      commit = execFileSync("git", ["rev-parse", "HEAD"], {
+        cwd: ROOT,
+        encoding: "utf8",
+      }).trim();
+    } catch {
+      commit = "unknown";
+    }
+  }
+  fs.writeFileSync(
+    path.join(outDir, "deploy-version.json"),
+    `${JSON.stringify({ commit })}\n`,
+    "utf8",
+  );
+  console.log(`[build-static] deploy-version.json → ${commit}`);
 
   // Footer-before-Main 정적 HTML 보정 (page 트리 Footer와 이중 안전망)
   execSync("node scripts/fix-html-dom-order.mjs", {

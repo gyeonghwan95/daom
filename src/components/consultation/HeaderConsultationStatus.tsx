@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useHydrated } from "@/hooks/useHydrated";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
@@ -33,17 +34,10 @@ export function HeaderConsultationStatus({
   const viewportRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const [useMarquee, setUseMarquee] = useState(false);
-  const [cloneReady, setCloneReady] = useState(false);
+  const cloneReady = useHydrated();
 
   useEffect(() => {
-    setCloneReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isCompact) {
-      setUseMarquee(false);
-      return;
-    }
+    if (!isCompact) return;
     const viewportEl = viewportRef.current;
     const textEl = textRef.current;
     if (!viewportEl || !textEl) return;

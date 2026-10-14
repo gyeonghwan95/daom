@@ -124,9 +124,12 @@ function StageVisual({
   const progressRef = useRef(onProgress);
   const playingRef = useRef(playing);
   const finishedRef = useRef(false);
-  completeRef.current = onComplete;
-  progressRef.current = onProgress;
-  playingRef.current = playing;
+
+  useEffect(() => {
+    completeRef.current = onComplete;
+    progressRef.current = onProgress;
+    playingRef.current = playing;
+  }, [onComplete, onProgress, playing]);
 
   useEffect(() => {
     if (!active || item.kind !== "video") return;

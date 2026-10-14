@@ -24,11 +24,18 @@ export function FloatingCTA() {
   const { isOpen, statusLabel, statusHint } = availability;
 
   useEffect(() => {
-    if (consumeFloatingConsultPending()) setOpen(true);
-
     const openPanel = () => setOpen(true);
+    let active = true;
+    if (consumeFloatingConsultPending()) {
+      queueMicrotask(() => {
+        if (active) openPanel();
+      });
+    }
     window.addEventListener(OPEN_FLOATING_CONSULT_EVENT, openPanel);
-    return () => window.removeEventListener(OPEN_FLOATING_CONSULT_EVENT, openPanel);
+    return () => {
+      active = false;
+      window.removeEventListener(OPEN_FLOATING_CONSULT_EVENT, openPanel);
+    };
   }, []);
 
   useEffect(() => {

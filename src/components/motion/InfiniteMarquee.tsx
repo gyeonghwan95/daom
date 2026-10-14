@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useHydrated } from "@/hooks/useHydrated";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type InfiniteMarqueeProps = {
@@ -24,11 +24,7 @@ export function InfiniteMarquee({
   pauseOnHover = true,
 }: InfiniteMarqueeProps) {
   const reduced = useReducedMotion();
-  const [cloneReady, setCloneReady] = useState(false);
-
-  useEffect(() => {
-    setCloneReady(true);
-  }, []);
+  const cloneReady = useHydrated();
 
   if (reduced) {
     return (

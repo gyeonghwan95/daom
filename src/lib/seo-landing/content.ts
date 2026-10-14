@@ -544,14 +544,6 @@ function buildSections(spec: SeoLandingSpec): PageSection[] {
   });
   const profile = CONTENT_PROFILES[theme];
 
-  const procedureVariants = [
-    `① ${region} 사건의 관할(법원·등기소)을 확인합니다. ② 필요 서류·기한을 정리합니다. ③ 신청서·위임장을 검토한 뒤 접수·보정을 지원합니다. ④ 완료 후 등기부·접수증 등 결과를 공유합니다.`,
-    `${region}에서 ${service} 진행 시 가족관계·재산·채무 여부를 먼저 파악합니다. 이후 협의서·신고서 작성, 세금·수수료 안내, 접수까지 단계별로 일정을 잡습니다.`,
-    `상담 단계에서는 사실관계를 정리하고, 서류가 모이면 접수 준비를 합니다. ${intent ? `${intent} 관련해서는 사건별로 달라질 수 있어 일괄 단정하지 않습니다.` : "보정명령이 나오면 추가 서류를 신속히 준비합니다."}`,
-    `${region} ${service}는 잔금일·상속 개시일·법인 변경일처럼 ‘날짜’가 있는 사건부터 우선순위를 둡니다. 날짜가 없으면 관할·당사자·권리관계 순으로 정리합니다.`,
-    `전자등기·방문 접수·보정 대응을 구분해 안내합니다. ${region} 소재 부동산이라도 관할 등기소가 다를 수 있어 주소 확인이 먼저입니다.`,
-  ];
-
   const costVariants =
     spec.serviceId === "inheritance-renunciation"
       ? [
