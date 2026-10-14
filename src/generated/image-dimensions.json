@@ -2105,6 +2105,12 @@
   "format": "jpeg",
   "bytes": 82426
  },
+ "/image/cards/foreign-shareholder.jpg": {
+  "width": 1200,
+  "height": 600,
+  "format": "jpeg",
+  "bytes": 85280
+ },
  "/image/cards/inheritance-registration-prep.jpg": {
   "width": 1200,
   "height": 600,
@@ -2170,6 +2176,12 @@
   "height": 1200,
   "format": "jpeg",
   "bytes": 125892
+ },
+ "/image/cards/square/foreign-shareholder.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "format": "jpeg",
+  "bytes": 131625
  },
  "/image/cards/square/inheritance-registration-prep.jpg": {
   "width": 1200,

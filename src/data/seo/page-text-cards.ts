@@ -88,6 +88,11 @@ export const PAGE_TEXT_CARDS: Record<string, PageTextCard> = {
     "법인설립 준비자료 — 주식회사 설립등기 신청서(회사 정보 가림)",
     "법인설립은 상호·본점·목적·자본금·임원 구성을 먼저 정하면 필요한 서류가 정해집니다.",
   ),
+  "/해외대표이사주주법인등기": card(
+    "foreign-shareholder",
+    "외국인 주주가 있다면 먼저 확인 — 이사회 의사록 인증서(회사·이사·공증인 정보 가림)",
+    "외국인이나 해외 법인이 주주이면 외국인투자 신고·송금과 설립등기, 해외에서 서명할 서류를 나눠 준비합니다.",
+  ),
 };
 
 export function getPageTextCard(path: string): PageTextCard | undefined {

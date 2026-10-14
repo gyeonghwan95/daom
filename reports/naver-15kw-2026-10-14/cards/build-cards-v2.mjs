@@ -61,8 +61,11 @@ async function photoBuf(file, w, h, position) {
   return sharp(path.join(ROOT, "public/image", file)).rotate().resize(w, h, { fit: "cover", position: position ?? sharp.strategy.attention }).toBuffer();
 }
 
+// node build-cards-v2.mjs <id> ... : 지정한 카드만 생성(다른 카드 파일은 다시 쓰지 않음)
+const only = new Set(process.argv.slice(2));
 const results = [];
 for (const c of CARDS) {
+  if (only.size && !only.has(c.id)) continue;
   const row = { id: c.id, photo: c.photo };
   if (!c.keepLandscape) {
     const svg = landscapeSvg(c);
@@ -83,4 +86,4 @@ for (const c of CARDS) {
   results.push(row);
   console.log(c.id, row.landscape?.bytes ?? "keep", row.square.bytes);
 }
-fs.writeFileSync(path.join(SRC, "cards.json"), JSON.stringify({ font: "Noto Sans KR (SIL OFL 1.1)", sizes: { landscape: "1200x600", square: "1200x1200" }, cards: CARDS, results }, null, 1));
+if (!only.size) fs.writeFileSync(path.join(SRC, "cards.json"), JSON.stringify({ font: "Noto Sans KR (SIL OFL 1.1)", sizes: { landscape: "1200x600", square: "1200x1200" }, cards: CARDS, results }, null, 1));

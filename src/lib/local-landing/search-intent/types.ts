@@ -78,6 +78,8 @@ export type SearchIntentContent = {
     href: string;
   }[];
   /** 공식 법령·공공기관 출처 (화면에 보이는 링크만) */
+  /** 공식 출처 영역 안내 문구(없으면 기본 문구) */
+  officialSourcesNote?: string;
   officialSources?: {
     label: string;
     href: string;

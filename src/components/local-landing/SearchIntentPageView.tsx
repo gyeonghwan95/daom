@@ -17,6 +17,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
   ArticleSummary,
@@ -261,7 +262,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       {content.officialSources?.length ? (
         <ContentSection id="official-sources" title="공식 법령·공공 안내">
           <p className="mb-3 text-sm text-navy/75">
-            블로그가 아니라 국가법령정보센터·HUG·부산시 공식 안내를 기준으로 합니다.
+            {content.officialSourcesNote ??
+              "블로그가 아니라 국가법령정보센터·HUG·부산시 공식 안내를 기준으로 합니다."}{" "}
             지원 요건과 연락처는 바뀔 수 있으니 방문 전에 원문을 확인하세요.
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed md:text-base">
@@ -384,6 +386,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           </ul>
         </WarningBox>
       </ContentSection>
+
+      <PageTextCardFigure path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

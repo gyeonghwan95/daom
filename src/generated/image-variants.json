@@ -1599,6 +1599,13 @@
   960,
   1200
  ],
+ "/image/cards/foreign-shareholder.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
  "/image/cards/inheritance-registration-prep.jpg": [
   256,
   384,
@@ -1670,6 +1677,13 @@
   1200
  ],
  "/image/cards/square/corporate-change.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/foreign-shareholder.jpg": [
   256,
   384,
   640,

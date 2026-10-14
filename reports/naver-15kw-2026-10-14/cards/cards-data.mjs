@@ -45,4 +45,9 @@ export const CARDS = [
     id: "company-establishment-prep", sqPosition: "center", photo: "서류/신청서_법인설립.jpg", kicker: "법인설립",
     title: ["법인설립", "준비자료"], sub: ["상호·본점·목적·자본금·임원 구성을", "먼저 정하면 필요한 서류가 정해집니다"],
   },
+  // 10-14 외국인 주주 설립(/해외대표이사주주법인등기). 의사록 인증서 사진 — 회사·이사·공증인 이름 흐림, 대리인(안윤정)만 보임.
+  {
+    id: "foreign-shareholder", sqPosition: "north", photo: "서류/서류_공증.jpg", kicker: "외국인 주주 법인설립",
+    title: ["외국인 주주가", "있다면 먼저 확인"], sub: ["외국인투자 신고·송금과 설립등기,", "해외 서명 서류를 나눠 준비합니다"],
+  },
 ];

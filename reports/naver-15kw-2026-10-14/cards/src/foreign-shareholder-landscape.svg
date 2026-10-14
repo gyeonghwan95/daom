@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600">
+  <defs><linearGradient id="f" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#1b3354"/><stop offset="0.82" stop-color="#1b3354"/><stop offset="1" stop-color="#1b3354" stop-opacity="0"/></linearGradient></defs>
+  <rect width="650" height="600" fill="url(#f)"/>
+  <rect x="72" y="118" width="44" height="4" rx="2" fill="#c4b7a3"/>
+  <text x="128" y="128" font-family="Noto Sans KR" font-weight="700" font-size="26" fill="#c4b7a3">외국인 주주 법인설립</text>
+  <text x="72" y="232" font-family="Noto Sans KR" font-weight="800" font-size="64" letter-spacing="-1.5" fill="#f7f4ef">외국인 주주가</text><text x="72" y="324" font-family="Noto Sans KR" font-weight="800" font-size="64" letter-spacing="-1.5" fill="#f7f4ef">있다면 먼저 확인</text><text x="74" y="398" font-family="Noto Sans KR" font-weight="500" font-size="27" fill="#e2d5bf">외국인투자 신고·송금과 설립등기,</text><text x="74" y="438" font-family="Noto Sans KR" font-weight="500" font-size="27" fill="#e2d5bf">해외 서명 서류를 나눠 준비합니다</text>
+  <rect x="72" y="514" width="8" height="8" transform="rotate(45 76 518)" fill="#c4b7a3"/>
+  <text x="94" y="527" font-family="Noto Sans KR" font-weight="600" font-size="22" fill="#cfc3ae">다옴법무사사무소 · 안윤정 법무사</text>
+</svg>
