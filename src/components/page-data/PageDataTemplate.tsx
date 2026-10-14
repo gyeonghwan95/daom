@@ -136,8 +136,15 @@ export function PageDataTemplate({
     page.slug === "부산상속법무사" ||
     page.slug === "부산상속포기" ||
     page.slug === "부산상속전문법무사";
+  // 부산 업무 대표 안내에서는 첫 화면을 지역·업무별 정보에 사용한다.
+  // 전국/비대면 안내는 전용 허브와 상세 문맥에서 계속 제공한다.
+  const isBusanServiceChampion =
+    isInheritanceSurgeryTarget ||
+    page.slug === "부산상속등기" ||
+    page.slug === "부산법인설립등기" ||
+    page.slug === "부산법인법무사";
   const showNationwide =
-    !isInheritanceSurgeryTarget &&
+    !isBusanServiceChampion &&
     shouldShowNationwideRegionChip(
       page.path,
       page.slug,

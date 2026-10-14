@@ -117,13 +117,16 @@ function isExternalHref(href) {
 
 function resolveInternalPath(href) {
   if (!href || !href.startsWith("/")) return null;
-  const [pathPart] = href.split("#");
+  // 쿼리 파라미터와 해시는 경로가 아니다. 상담 폼 링크를 404로 오진하지 않는다.
+  const [pathPart] = href.split(/[?#]/);
   return normalizePath(pathPart || "/");
 }
 
 function minInternalLinks(page) {
-  if (page.isCoreHub) return MIN_INTERNAL_LINKS_HUB;
-  if (["blog", "case", "media", "external", "core"].includes(page.category)) {
+  // 지역별 단일 업무 페이지는 핵심 URL이어도 20개 링크를 강제하지 않는다.
+  // 관련 없는 링크를 채우는 것보다 실제 절차에 맞는 연결을 유지한다.
+  if (page.isCoreHub && page.category !== "local") return MIN_INTERNAL_LINKS_HUB;
+  if (["blog", "case", "media", "external", "core", "glossary"].includes(page.category)) {
     return 4;
   }
   return MIN_INTERNAL_LINKS_DEFAULT;

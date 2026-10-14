@@ -23,7 +23,7 @@ export const RESERVED_INHERITANCE_INTENTS = {
 export type ReservedInheritanceIntentId =
   keyof typeof RESERVED_INHERITANCE_INTENTS;
 
-const RESERVED_PATHS = new Set(
+const RESERVED_PATHS = new Set<string>(
   Object.values(RESERVED_INHERITANCE_INTENTS).map((v) => v.path),
 );
 
