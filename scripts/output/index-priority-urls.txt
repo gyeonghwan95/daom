@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-13T13:34:43.033Z
+# 생성: 2026-10-14T11:35:21.679Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1635 (제외 241)
+# 총 URL: 1636 (제외 242)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -11,7 +11,7 @@
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
 # Tier 6 — 순차 (기타 키워드 랜딩): 547개
 # Tier 7 — 후순위 (블로그): 53개
-# Tier 8 — 후순위 (언론·강의): 32개
+# Tier 8 — 후순위 (언론·강의): 33개
 
 ========================================================================
 
@@ -1647,7 +1647,7 @@ Tier 7 — 후순위 (블로그) (53개)
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/when-to-consult-real-estate-registration-lawyer	/blog/when-to-consult-real-estate-registration-lawyer
 
 ────────────────────────────────────────────────────────────────────────
-Tier 8 — 후순위 (언론·강의) (32개)
+Tier 8 — 후순위 (언론·강의) (33개)
 ────────────────────────────────────────────────────────────────────────
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EB%AC%B8%EC%9D%98	/강의문의
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%8B%9C%EA%B0%84%EB%B3%84%EA%B5%AC%EC%84%B1	/강의시간별구성
@@ -1680,10 +1680,11 @@ Tier 8 — 후순위 (언론·강의) (32개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukinews-youth-budget-unboxing-2027	/media/kukinews-youth-budget-unboxing-2027
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/kukje-sinmun-bar-association-64th-general-assembly	/media/kukje-sinmun-bar-association-64th-general-assembly
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/sentv-trend-hot-issue-ahn-yoonjung	/media/sentv-trend-hot-issue-ahn-yoonjung
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/viva100-haeundae-youth-space-ahn-yoonjung	/media/viva100-haeundae-youth-space-ahn-yoonjung
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/weeklypeople-youth-judicial-scrivener-ahn	/media/weeklypeople-youth-judicial-scrivener-ahn
 
 ========================================================================
-# 제외 (241)
+# 제외 (242)
 # [EXCLUDED:noindex] /개인파산과태료
 # [EXCLUDED:noindex] /개인파산기한
 # [EXCLUDED:noindex] /개인파산보수표
@@ -1923,6 +1924,7 @@ Tier 8 — 후순위 (언론·강의) (32개)
 # [EXCLUDED:redirect] /press/kukinews-youth-budget-unboxing-2027
 # [EXCLUDED:redirect] /press/kukje-sinmun-bar-association-64th-general-assembly
 # [EXCLUDED:redirect] /press/sentv-trend-hot-issue-ahn-yoonjung
+# [EXCLUDED:redirect] /press/viva100-haeundae-youth-space-ahn-yoonjung
 # [EXCLUDED:redirect] /press/weeklypeople-youth-judicial-scrivener-ahn
 # [EXCLUDED:noindex] /search
 

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scarable=no">
+    
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="/css/reset.css?vsersion=2">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
+    <link rel="stylesheet" type="text/css" href="/css/sub.css">
+    
+    
+    <!-- 지방 법원, 행정법원 만의 위한 css -->
+    
+    <link rel="stylesheet" type="text/css" href="/css/district.css"> 
+    <!-- 지방 법원, 행정법원 만의 위한 css -->
+    
+    <script src="/js/jquery-1.9.0.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/js/common.js?version=16"></script>
+    <script type="text/javascript" src="/bsb/js/ui_common.js"></script>
+    <!-- local head  -->
+    <title>법률상담안내 - 변호사/법무사 | 부산회생법원</title>
+    <!-- //local head  -->
+    
+    <script type="text/javascript">
+ 
+        $(document).ready( function() {
+    
+            $("#header").load("/bsb/inc/head.jsp");
+            
+            $("#lnbWrap").load("/bsb/inc/minwon_left.jsp", function(responseTxt, statusTxt, xhr){
+                if(statusTxt == "success")
+                    newSideMenu3(4, 3, 1);
+                if(statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+            });
+            
+            $("#relSys").load("/common/include/relSys.jsp");
+            $("#footSitemapWrap").load("/bsb/inc/footSitemapWrap.jsp");
+            $("#footer").load("/bsb/inc/foot.jsp"); 
+            $("#mobileMenuWrap").load("/bsb/inc/mobileMenuWrap.jsp"); 
+            
+        });
+
+    </script>     
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- Header 영역 시작 -->
+        <header id="header"></header>
+        <!-- Header 영역  끝-->
+        <!-- content 영역 시작 -->
+        <div id="content">
+            <!-- Navigation 바 시작-->
+            <div class="subNavOuterWrap">
+                <div class="subNavInnerWrap">
+                    <div class="subNav">
+                        <a href="/main/new/Main.work" title="메인화면이동"><span class="homeIcon">Home</span></a> 
+                        <span> 민원 </span>
+                        &gt; <span> 법률상담안내 </span>    
+                        &gt; <span class="currentPage">변호사/법무사</span> 
+                        <a href="javascript:print_preview();" title="새창열림"><span class="printIcon">프린트</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- inner 바 끝-->
+            <div class="inner">
+                <!-- LNB 시작 -->
+                <div id="lnbWrap" class="lnbWrap"></div>
+                <!-- LNB 끝 -->
+                <!-- subWrap 영역 시작  -->
+                <div class="subWrap" id="container">
+                    <!-- subContent 영역 시작  -->
+                    <div class="subContent">
+                        <!-- print_preview_html 영역 시작  -->
+                        <div id="print_preview_html">
+                            <h3 class="subTitle">법률상담안내</h3>
+                            
+                                <div class="section">
+								<h4>변호사/법무사</h4>
+								<div class="info_wrap_ico">
+									<div class="info_wrap_bg_ico info_space">
+										법원은 쌍방당사자로부터 중립적인 기관이므로 법률상담은 법률전문가(변호사 및 법무사 등)와 하시기 바랍니다.
+										생활 속에서 발생하는 다양한 법률문제의 해결에 도움을 주기 위하여 저희 부산회생법원에서는 관내 법무사들의
+										도움으로 매주 월요일부터 금요일까지 무료법률상담을 실시하고 있으니, 민원인들께서는 평소 궁금하셨던 생활법률이나
+										법률분쟁의 해결을 위하여 법무사 법률상담을 많이 이용해 주시길 바랍니다.<br /> 
+										<em class="blueTxt3">(위 법률상담은 부산지방법원 관내의 법무사들이 행하는 것이므로 부산지방법원에서는 상담결과에 따른 민원인의 불이익에 대하여 책임을 지지 않습니다.)</em>
+									</div>
+								</div>
+							</div>
+							
+							<div class="section">
+								<h5>변호사</h5>
+								<div class="tbl_col">
+	                                <table  summary="변호사 법률상담의 일시, 장소, 인원, 이용방법을 제공">
+	                                    <caption>변호사 법률상담</caption>
+	                                    <colgroup>
+	                                        <col width="15%" />
+	                                        <col width="*" />
+	                                    </colgroup>
+	                                    <tbody>
+	                                        <tr>
+	                                            <th scope="row">일시</th>
+	                                            <td class="subject">매주 월요일 ~ 금요일, 13:00 ~ 15:00</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th scope="row">장소</th>
+	                                            <td class="subject">부산법원종합청사 2층 211호, 212호</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th scope="row">인원</th>
+	                                            <td class="subject">변호사 2명</td>
+	                                        </tr>
+	                                         <tr>
+	                                            <th scope="row">이용방법</th>
+	                                            <td class="subject">부산법원종합청사 2층 211호 또는 212호를 방문하여 번호표를 받아 순서대로 법률상담을 받음</td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+							</div>
+							
+							<div class="section">
+								<h5>법무사</h5>
+								<div class="tbl_col">
+	                                <table  summary="법무사 상담의 일시, 장소, 인원, 이용방법을 제공">
+	                                    <caption>법무사 법률상담</caption>
+	                                    <colgroup>
+	                                        <col width="15%" />
+	                                        <col width="*" />
+	                                    </colgroup>
+	                                    <tbody>
+	                                        <tr>
+	                                            <th scope="row">일시</th>
+	                                            <td class="subject">매주 월요일 ~ 금요일, 오전 10:00 ~ 12:00</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th scope="row">장소</th>
+	                                            <td class="subject">부산법원종합청사 2층 211호, 212호</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th scope="row">인원</th>
+	                                            <td class="subject">법무사 2명</td>
+	                                        </tr>
+	                                         <tr>
+	                                            <th scope="row">이용방법</th>
+	                                            <td class="subject">부산법원종합청사 2층 211호 또는 212호를 방문하여 번호표를 받아 순서대로 법률상담을 받음</td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+							</div>
+                            
+                        </div>
+                        <!-- print_preview_html 영역 끝  -->
+                    </div>
+                    <!-- subContent 영역 끝  -->
+                </div>          
+                <!-- subWrap 영역 끝  -->     
+            </div>
+            <!-- inner 바 끝-->
+  
+            <!-- 관련 시스템 영역 시작 -->
+            <div id="relSys" class="relatedSystemWrap"></div>
+            <!-- 관련 시스템 영역 끝 -->
+            <!-- 하단 사이트맵 시작 -->
+            <div id="footSitemapWrap"  class="footSitemapWrap"></div>
+            <!-- 하단 사이트맵 끝 -->
+            <!-- footer 영역 시작 -->
+            <div id="footer"></div>
+            <!-- footer 영역 끝 --> 
+            <form name="print_preview" method="post" action="#">
+            <input type="hidden" name="print_html" value="" />
+            <input type="hidden" name="print_html_iframe_01" value="" />
+            <input type="hidden" name="print_html_iframe_02" value="" />
+            </form>    
+        </div>
+    </div> 
+    <!-- mobileMenuWrap 영역 시작 -->
+    <div id="mobileMenuWrap" class="mobileMenuWrap"></div>
+    <div class="mobile_dim"></div>
+    <!-- mobileMenuWrap 영역 끝 -->
+</body>
+</html>

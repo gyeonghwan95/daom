@@ -1,0 +1,339 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [
+  "/media/viva100-haeundae-youth-space-ahn-yoonjung",
+  "/press/viva100-haeundae-youth-space-ahn-yoonjung"
+ ],
+ "protectedFieldChanges": [
+  {
+   "route": "/about",
+   "field": "linksHash",
+   "before": "3e0f43d157ea3e12",
+   "after": "457b48ad7d83c409"
+  },
+  {
+   "route": "/busan-legal-map",
+   "field": "linksHash",
+   "before": "173e59e2c8967d6c",
+   "after": "8c37080846820ab3"
+  },
+  {
+   "route": "/contact",
+   "field": "linksHash",
+   "before": "317ad09dda8c2008",
+   "after": "540888a730c93f9b"
+  },
+  {
+   "route": "/",
+   "field": "linksHash",
+   "before": "7448c01e37736c05",
+   "after": "fc58c857a1c019c2"
+  },
+  {
+   "route": "/location",
+   "field": "linksHash",
+   "before": "069c278ce24fc14d",
+   "after": "341a3d4c262d3844"
+  },
+  {
+   "route": "/media",
+   "field": "linksHash",
+   "before": "ee73654d930f0c62",
+   "after": "b761d2a7b078260d"
+  },
+  {
+   "route": "/office",
+   "field": "linksHash",
+   "before": "7ae6dcd6df862983",
+   "after": "6b8ddc6a520b5c28"
+  },
+  {
+   "route": "/services",
+   "field": "linksHash",
+   "before": "508371ac796574a3",
+   "after": "b5b50ab7a3c741e4"
+  },
+  {
+   "route": "/강서구법무사",
+   "field": "linksHash",
+   "before": "e44ab82f543cc937",
+   "after": "cd2ea8f684c6a444"
+  },
+  {
+   "route": "/개인회생파산",
+   "field": "linksHash",
+   "before": "7aec737cc7ee027a",
+   "after": "ad6ecec06e09d3bb"
+  },
+  {
+   "route": "/금정구법무사",
+   "field": "linksHash",
+   "before": "8cd22427b1abea98",
+   "after": "482bc1281e5ca373"
+  },
+  {
+   "route": "/기장군법무사",
+   "field": "linksHash",
+   "before": "ba281458dc0b8173",
+   "after": "3c48ee42208ab095"
+  },
+  {
+   "route": "/남구법무사",
+   "field": "linksHash",
+   "before": "6b8b039d8622bc63",
+   "after": "9d3c3e5172b23fe6"
+  },
+  {
+   "route": "/동구법무사",
+   "field": "linksHash",
+   "before": "c3d0530efb77cf19",
+   "after": "4947b44371b9c112"
+  },
+  {
+   "route": "/동래구법무사",
+   "field": "linksHash",
+   "before": "8899e3c82ae79581",
+   "after": "6b65c1586d8921e4"
+  },
+  {
+   "route": "/부산개인파산법무사",
+   "field": "linksHash",
+   "before": "581a7d4048a52144",
+   "after": "599d7da21138209a"
+  },
+  {
+   "route": "/부산개인회생",
+   "field": "linksHash",
+   "before": "2bb3fba4d43aa07a",
+   "after": "f4bace9784e256f4"
+  },
+  {
+   "route": "/부산개인회생법무사",
+   "field": "linksHash",
+   "before": "3c74d00687454526",
+   "after": "9d168d525b29c419"
+  },
+  {
+   "route": "/부산등기법무사",
+   "field": "linksHash",
+   "before": "52cbd7638c528809",
+   "after": "797aa7980ba488d1"
+  },
+  {
+   "route": "/부산법무사무소",
+   "field": "linksHash",
+   "before": "de2f087fa4b53719",
+   "after": "ba222ec712c46282"
+  },
+  {
+   "route": "/부산법무사비교",
+   "field": "linksHash",
+   "before": "7b34dfd2fb96ee83",
+   "after": "b14dd2cd9985845a"
+  },
+  {
+   "route": "/부산법무사비용",
+   "field": "linksHash",
+   "before": "fea29a2aba53b6d6",
+   "after": "82d763ecbc3d16b1"
+  },
+  {
+   "route": "/부산법무사상담",
+   "field": "linksHash",
+   "before": "f6c72492ea93821e",
+   "after": "f0dca81f27cb7b32"
+  },
+  {
+   "route": "/부산법무사추천",
+   "field": "linksHash",
+   "before": "bfe5539fa9206bb8",
+   "after": "a04c8d59e44bb1f2"
+  },
+  {
+   "route": "/부산법인등기",
+   "field": "linksHash",
+   "before": "e0681830824bab10",
+   "after": "da61027c11f71573"
+  },
+  {
+   "route": "/부산법인법무사",
+   "field": "linksHash",
+   "before": "33c4ebeda78d2152",
+   "after": "b42bee182aaee255"
+  },
+  {
+   "route": "/부산부동산등기",
+   "field": "linksHash",
+   "before": "bb2c99bfa467ffeb",
+   "after": "9090c34629843c51"
+  },
+  {
+   "route": "/부산상속등기",
+   "field": "linksHash",
+   "before": "97c4a74fa1efe662",
+   "after": "9d3c30b337869895"
+  },
+  {
+   "route": "/부산상속법무사",
+   "field": "linksHash",
+   "before": "87f4e5fd0181ec85",
+   "after": "cd8bbd6e5e3fb1c1"
+  },
+  {
+   "route": "/부산상속포기",
+   "field": "linksHash",
+   "before": "2f0c4a95f9852e82",
+   "after": "a423d462cc75044a"
+  },
+  {
+   "route": "/부산진구법무사",
+   "field": "linksHash",
+   "before": "88ad5fd00fdff1c0",
+   "after": "82127a499657527f"
+  },
+  {
+   "route": "/부산한정승인",
+   "field": "linksHash",
+   "before": "a0de9036d9f81b8e",
+   "after": "35dc8db8d8499c24"
+  },
+  {
+   "route": "/북구법무사",
+   "field": "linksHash",
+   "before": "452e7c2aa1a05ef7",
+   "after": "59b1780f41709dcb"
+  },
+  {
+   "route": "/사상구법무사",
+   "field": "linksHash",
+   "before": "32ec1c15cc99fa8f",
+   "after": "a4d56df7e82a9877"
+  },
+  {
+   "route": "/사하구법무사",
+   "field": "linksHash",
+   "before": "0a3274b6a2423c2d",
+   "after": "85b01590bb377576"
+  },
+  {
+   "route": "/서구법무사",
+   "field": "linksHash",
+   "before": "c7f8d64039bb639c",
+   "after": "ceddda9cd476caf4"
+  },
+  {
+   "route": "/센텀법무사",
+   "field": "linksHash",
+   "before": "b4ac558eeed3ace7",
+   "after": "cf06d5e2ce0d74f3"
+  },
+  {
+   "route": "/수영구법무사",
+   "field": "linksHash",
+   "before": "614046007aa3cb23",
+   "after": "27c3f8bcef2ca456"
+  },
+  {
+   "route": "/연제구법무사",
+   "field": "linksHash",
+   "before": "2a201e1fd6ca1800",
+   "after": "239374f2a3ef94d0"
+  },
+  {
+   "route": "/영도구법무사",
+   "field": "linksHash",
+   "before": "1a297467fcc979a3",
+   "after": "7667d5ce2050dda0"
+  },
+  {
+   "route": "/재송동법무사",
+   "field": "linksHash",
+   "before": "3d071d4279b027f7",
+   "after": "735f800682dd2a3e"
+  },
+  {
+   "route": "/중구법무사",
+   "field": "linksHash",
+   "before": "ad43c87666562785",
+   "after": "fe73ecb954c1cccd"
+  },
+  {
+   "route": "/해운대법무사",
+   "field": "linksHash",
+   "before": "2ae4cd3108770ee7",
+   "after": "480df300eefff6d7"
+  }
+ ],
+ "mainChangedAllowed": [],
+ "mainChangedNotAllowed": [
+  "/about",
+  "/",
+  "/media"
+ ],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 1,
+   "before": 1635,
+   "after": 1636
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 18,
+   "after": 18
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 595,
+   "after": 595
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 547,
+   "after": 547
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 1,
+   "before": 32,
+   "after": 33
+  },
+  "rss": "same",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}

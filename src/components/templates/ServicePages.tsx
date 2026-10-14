@@ -46,7 +46,9 @@ export function ServicesIndexTemplate() {
   return (
     <PageContainer>
       <JsonLd data={buildArticleListSchema(cases)} />
-      {seoCarousel ? <SeoCarouselJsonLd items={seoCarousel.items} pagePath="/services" /> : null}
+      {seoCarousel ? (
+        <SeoCarouselJsonLd items={seoCarousel.items} pagePath="/services" name={seoCarousel.heading} />
+      ) : null}
       <PageContentSection
         h1="부산 등기·상속·법인·회생 업무안내"
         intro="다옴법무사사무소 안윤정 법무사는 상속등기, 부동산등기, 법인등기, 개인회생·파산 등 법무사 업무 전반을 수행합니다. 해운대·센텀·재송동을 중심으로 부산 전역의 의뢰인을 맞이하며, 사건별 맞춤 상담을 제공합니다. 방문이 어렵다면 전화·카카오톡으로 전국 비대면 상담도 가능합니다."

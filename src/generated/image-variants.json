@@ -1578,6 +1578,13 @@
   1280,
   1489
  ],
+ "/image/cards/company-establishment-prep.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
  "/image/cards/consult-prep.jpg": [
   256,
   384,
@@ -1586,6 +1593,13 @@
   1200
  ],
  "/image/cards/corporate-change.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/inheritance-registration-prep.jpg": [
   256,
   384,
   640,
@@ -1613,6 +1627,13 @@
   960,
   1200
  ],
+ "/image/cards/qualified-acceptance.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
  "/image/cards/registry-check.jpg": [
   256,
   384,
@@ -1620,7 +1641,91 @@
   960,
   1200
  ],
+ "/image/cards/renunciation-check.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
  "/image/cards/select-criteria.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/company-establishment-prep.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/consult-prep.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/corporate-change.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/inheritance-registration-prep.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/inheritance-start.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/office-visit.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/officer-deadline.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/qualified-acceptance.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/registry-check.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/renunciation-check.jpg": [
+  256,
+  384,
+  640,
+  960,
+  1200
+ ],
+ "/image/cards/square/select-criteria.jpg": [
   256,
   384,
   640,

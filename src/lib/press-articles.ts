@@ -58,6 +58,25 @@ export function getPressOriginalLinkLabel(
 
 const pressArticles: PressArticle[] = [
   {
+    // 2026-10-14 원문 확인(제목·게시일·실명). 보도 사진·전문 대신 자체 사무소 사진과 짧은 요약만 쓴다.
+    slug: "viva100-haeundae-youth-space-ahn-yoonjung",
+    source: "브릿지경제",
+    title:
+      "[해운대 청년채움공간 입주기업 ①] “법원 앞 대신 청년 곁으로”…안윤정 법무사의 특별한 도전",
+    publishedAt: "2026-10-14T15:12:00+09:00",
+    publishedAtDisplay: "2026.10.14",
+    reporter: "서진혁 기자",
+    topic: "해운대 청년채움공간 입주기업",
+    image: siteImages.office.gallery[2],
+    originalUrl: "https://www.viva100.com/article/20261014500921",
+    seoDescription:
+      "브릿지경제 보도. 해운대 청년채움공간에 입주한 다옴법무사사무소 안윤정 법무사의 개업 배경과 청년 대상 생활법률 활동을 소개한 기사입니다.",
+    paragraphs: [
+      "브릿지경제가 해운대 청년채움공간 입주기업 기획의 첫 번째로 다옴법무사사무소 안윤정 법무사를 소개했습니다. 법원 인근 대신 청년들이 모이는 공간에 사무소를 연 배경을 다뤘습니다.",
+      "기사는 청년 대상 생활법률 상담과 전세사기 예방 교육, 정책 제안 활동을 함께 전합니다. 자세한 내용은 브릿지경제 원문에서 확인할 수 있습니다.",
+    ],
+  },
+  {
     slug: "sentv-trend-hot-issue-ahn-yoonjung",
     source: "서울경제TV",
     title: "‘조영구의 트렌드 핫이슈’ 출연 — 의뢰인 곁에서 함께하는 법무사 안윤정",

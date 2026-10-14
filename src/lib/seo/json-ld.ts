@@ -130,7 +130,7 @@ const SERVICE_OFFERS: Array<{ name: string; path: string }> = [
   { name: "상속포기", path: "/부산상속포기" },
   { name: "한정승인", path: "/부산한정승인" },
   { name: "부동산등기", path: "/부산부동산등기" },
-  { name: "법인설립등기", path: "/부산법인등기" },
+  { name: "법인설립등기", path: "/부산법인설립등기" },
   { name: "임원변경등기", path: "/부산임원변경등기" },
   { name: "개인회생", path: "/부산개인회생" },
   { name: "개인파산", path: "/부산개인파산" },

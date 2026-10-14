@@ -668,7 +668,11 @@ export function buildPageDataFromLocalLanding(
     serviceSlug: page.serviceSlug,
     landingPageType: page.pageType,
     regionKey: page.regionKey,
-    ogImage: getServiceImage(page.serviceSlug).src,
+    // 상담 의도 페이지(/부산법률상담)는 serviceSlug가 상속으로 고정돼 상속 사진이 대표로 쓰이던 것을 상담 사진으로(2026-10-14)
+    ogImage:
+      page.pageType === "counsel-intent"
+        ? "/image/상담-메인.jpg"
+        : getServiceImage(page.serviceSlug).src,
     ctaTitle:
       page.slug === "부산상속법무사"
         ? "등기·포기·한정승인 중 무엇이 필요한지 확인"

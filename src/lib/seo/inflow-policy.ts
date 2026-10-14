@@ -44,7 +44,7 @@ const LIBRARY: InflowItem[] = [
   },
   {
     href: BUSAN_LEGAL_SCRIVENER_CHAMPION,
-    label: "업무·비용·상담 전 확인 기준",
+    label: "다옴법무사사무소 업무 안내", // /부산법무사 현재 역할(업무 안내)에 맞춤 — 옛 선택 기준 문구(2026-10-14)
     reason: "정확한 업무명을 몰라도 지금 필요한 절차부터 가립니다.",
   },
   {

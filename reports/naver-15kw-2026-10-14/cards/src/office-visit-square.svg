@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200">
+  <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1b3354" stop-opacity="0"/><stop offset="1" stop-color="#1b3354"/></linearGradient></defs>
+  <rect y="610" width="1200" height="70" fill="url(#g)"/>
+  <rect y="680" width="1200" height="520" fill="#1b3354"/>
+  <rect x="84" y="732" width="48" height="4" rx="2" fill="#c4b7a3"/>
+  <text x="146" y="743" font-family="Noto Sans KR" font-weight="700" font-size="30" fill="#c4b7a3">다옴법무사사무소</text>
+  <text x="84" y="838" font-family="Noto Sans KR" font-weight="800" font-size="90" letter-spacing="-2" fill="#f7f4ef">센텀 사무소,</text><text x="84" y="940" font-family="Noto Sans KR" font-weight="800" font-size="90" letter-spacing="-2" fill="#f7f4ef">예약 후 방문</text><text x="86" y="1052" font-family="Noto Sans KR" font-weight="500" font-size="31" fill="#e2d5bf">부산 해운대구 센텀동로 200</text><text x="86" y="1096" font-family="Noto Sans KR" font-weight="500" font-size="31" fill="#e2d5bf">평일 09:00–18:00 · 방문은 예약제</text>
+  <rect x="84" y="1134" width="9" height="9" transform="rotate(45 88.5 1138.5)" fill="#c4b7a3"/>
+  <text x="108" y="1148" font-family="Noto Sans KR" font-weight="600" font-size="25" fill="#cfc3ae">다옴법무사사무소 · 안윤정 법무사</text>
+</svg>

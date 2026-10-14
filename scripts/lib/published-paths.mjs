@@ -141,6 +141,7 @@ const serviceSlugs = [
 ];
 
 const pressSlugs = [
+  "viva100-haeundae-youth-space-ahn-yoonjung",
   "sentv-trend-hot-issue-ahn-yoonjung",
   "busan-ilbo-bar-association-64th-general-assembly",
   "kukje-sinmun-bar-association-64th-general-assembly",

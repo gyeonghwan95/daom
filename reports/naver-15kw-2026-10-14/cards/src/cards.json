@@ -1,0 +1,276 @@
+{
+ "font": "Noto Sans KR (SIL OFL 1.1)",
+ "sizes": {
+  "landscape": "1200x600",
+  "square": "1200x1200"
+ },
+ "cards": [
+  {
+   "id": "consult-prep",
+   "keepLandscape": true,
+   "sqPosition": "north",
+   "photo": "상담-메인.jpg",
+   "kicker": "상담 준비",
+   "title": [
+    "상담 전",
+    "준비할 자료"
+   ],
+   "sub": [
+    "상황 메모와 가지고 있는 서류만",
+    "있어도 상담을 시작할 수 있습니다"
+   ]
+  },
+  {
+   "id": "select-criteria",
+   "keepLandscape": true,
+   "sqPosition": "north",
+   "photo": "썸네일-사무실_정면.jpg",
+   "kicker": "법무사 선택",
+   "title": [
+    "법무사 선택,",
+    "확인할 기준"
+   ],
+   "sub": [
+    "담당자·수임료와 공과금 구분·",
+    "맡는 범위를 먼저 비교해 보세요"
+   ]
+  },
+  {
+   "id": "office-visit",
+   "keepLandscape": true,
+   "sqPosition": "center",
+   "photo": "썸네일-상담협의.jpg",
+   "kicker": "다옴법무사사무소",
+   "title": [
+    "센텀 사무소,",
+    "예약 후 방문"
+   ],
+   "sub": [
+    "부산 해운대구 센텀동로 200",
+    "평일 09:00–18:00 · 방문은 예약제"
+   ]
+  },
+  {
+   "id": "inheritance-start",
+   "keepLandscape": true,
+   "sqPosition": "south",
+   "photo": "썸네일_사무실_서류검토_여름 (5).jpg",
+   "kicker": "상속 업무",
+   "title": [
+    "상속, 어떤",
+    "절차부터?"
+   ],
+   "sub": [
+    "상속등기·상속포기·한정승인 중",
+    "무엇이 맞는지부터 가립니다"
+   ]
+  },
+  {
+   "id": "registry-check",
+   "keepLandscape": true,
+   "sqPosition": "center",
+   "photo": "썸네일-등기운영과.jpg",
+   "kicker": "등기 업무",
+   "title": [
+    "등기 전에",
+    "확인할 것"
+   ],
+   "sub": [
+    "등기부·원인 서류·관할 등기소를",
+    "먼저 확인한 뒤 접수합니다"
+   ]
+  },
+  {
+   "id": "corporate-change",
+   "keepLandscape": true,
+   "sqPosition": "center",
+   "photo": "썸네일-사무실_겨울 (4).jpg",
+   "kicker": "법인등기",
+   "title": [
+    "법인등기,",
+    "변경 사항부터"
+   ],
+   "sub": [
+    "임원·본점·목적·자본 중",
+    "무엇이 바뀌는지 먼저 정리합니다"
+   ]
+  },
+  {
+   "id": "officer-deadline",
+   "keepLandscape": true,
+   "sqPosition": "north",
+   "photo": "썸네일-사무실_작업중.jpg",
+   "kicker": "법인 업무",
+   "title": [
+    "임원 변경,",
+    "2주 안에 등기"
+   ],
+   "sub": [
+    "변경이 생긴 날부터 본점 소재지에서",
+    "등기합니다(상법 제317조·제183조)"
+   ]
+  },
+  {
+   "id": "inheritance-registration-prep",
+   "sqPosition": "center",
+   "photo": "서류/신청서_상속 (8).jpg",
+   "kicker": "상속등기",
+   "title": [
+    "상속등기",
+    "준비사항"
+   ],
+   "sub": [
+    "가족관계 서류·상속재산분할협의서·",
+    "부동산 서류를 순서대로 준비합니다"
+   ]
+  },
+  {
+   "id": "renunciation-check",
+   "sqPosition": "center",
+   "photo": "서류/서류_상속포기.jpg",
+   "kicker": "상속포기",
+   "title": [
+    "상속포기",
+    "신청 전 확인"
+   ],
+   "sub": [
+    "상속개시를 안 날부터 3개월 안에",
+    "상속개시지 관할 가정법원에 신고합니다"
+   ]
+  },
+  {
+   "id": "qualified-acceptance",
+   "sqPosition": "north",
+   "photo": "썸네일-사무실_가을 (2).jpg",
+   "kicker": "한정승인",
+   "title": [
+    "한정승인,",
+    "재산과 채무부터"
+   ],
+   "sub": [
+    "상속받은 재산 한도에서 빚을 갚는 절차,",
+    "재산·채무 목록부터 정리합니다"
+   ]
+  },
+  {
+   "id": "company-establishment-prep",
+   "sqPosition": "center",
+   "photo": "서류/신청서_법인설립.jpg",
+   "kicker": "법인설립",
+   "title": [
+    "법인설립",
+    "준비자료"
+   ],
+   "sub": [
+    "상호·본점·목적·자본금·임원 구성을",
+    "먼저 정하면 필요한 서류가 정해집니다"
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "consult-prep",
+   "photo": "상담-메인.jpg",
+   "square": {
+    "file": "public/image/cards/square/consult-prep.jpg",
+    "bytes": 99842
+   }
+  },
+  {
+   "id": "select-criteria",
+   "photo": "썸네일-사무실_정면.jpg",
+   "square": {
+    "file": "public/image/cards/square/select-criteria.jpg",
+    "bytes": 89210
+   }
+  },
+  {
+   "id": "office-visit",
+   "photo": "썸네일-상담협의.jpg",
+   "square": {
+    "file": "public/image/cards/square/office-visit.jpg",
+    "bytes": 134925
+   }
+  },
+  {
+   "id": "inheritance-start",
+   "photo": "썸네일_사무실_서류검토_여름 (5).jpg",
+   "square": {
+    "file": "public/image/cards/square/inheritance-start.jpg",
+    "bytes": 133262
+   }
+  },
+  {
+   "id": "registry-check",
+   "photo": "썸네일-등기운영과.jpg",
+   "square": {
+    "file": "public/image/cards/square/registry-check.jpg",
+    "bytes": 157950
+   }
+  },
+  {
+   "id": "corporate-change",
+   "photo": "썸네일-사무실_겨울 (4).jpg",
+   "square": {
+    "file": "public/image/cards/square/corporate-change.jpg",
+    "bytes": 125892
+   }
+  },
+  {
+   "id": "officer-deadline",
+   "photo": "썸네일-사무실_작업중.jpg",
+   "square": {
+    "file": "public/image/cards/square/officer-deadline.jpg",
+    "bytes": 118471
+   }
+  },
+  {
+   "id": "inheritance-registration-prep",
+   "photo": "서류/신청서_상속 (8).jpg",
+   "landscape": {
+    "file": "public/image/cards/inheritance-registration-prep.jpg",
+    "bytes": 77345
+   },
+   "square": {
+    "file": "public/image/cards/square/inheritance-registration-prep.jpg",
+    "bytes": 133505
+   }
+  },
+  {
+   "id": "renunciation-check",
+   "photo": "서류/서류_상속포기.jpg",
+   "landscape": {
+    "file": "public/image/cards/renunciation-check.jpg",
+    "bytes": 62635
+   },
+   "square": {
+    "file": "public/image/cards/square/renunciation-check.jpg",
+    "bytes": 98852
+   }
+  },
+  {
+   "id": "qualified-acceptance",
+   "photo": "썸네일-사무실_가을 (2).jpg",
+   "landscape": {
+    "file": "public/image/cards/qualified-acceptance.jpg",
+    "bytes": 91774
+   },
+   "square": {
+    "file": "public/image/cards/square/qualified-acceptance.jpg",
+    "bytes": 151717
+   }
+  },
+  {
+   "id": "company-establishment-prep",
+   "photo": "서류/신청서_법인설립.jpg",
+   "landscape": {
+    "file": "public/image/cards/company-establishment-prep.jpg",
+    "bytes": 73802
+   },
+   "square": {
+    "file": "public/image/cards/square/company-establishment-prep.jpg",
+    "bytes": 124337
+   }
+  }
+ ]
+}

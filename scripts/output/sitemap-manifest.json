@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-13T13:34:42.582Z",
+  "generatedAt": "2026-10-14T11:35:21.277Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1635,
+  "totalUrls": 1636,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
@@ -11,7 +11,7 @@
     "5": 185,
     "6": 547,
     "7": 53,
-    "8": 32
+    "8": 33
   },
   "excluded": [
     {
@@ -971,6 +971,10 @@
       "reason": "redirect"
     },
     {
+      "path": "/press/viva100-haeundae-youth-space-ahn-yoonjung",
+      "reason": "redirect"
+    },
+    {
       "path": "/press/weeklypeople-youth-judicial-scrivener-ahn",
       "reason": "redirect"
     },
@@ -984,13 +988,13 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-10-13",
+      "lastmod": "2026-10-14",
       "filename": "tier-1-core.xml",
       "count": 18
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-2-hubs.xml",
-      "lastmod": "2026-10-12",
+      "lastmod": "2026-10-14",
       "filename": "tier-2-hubs.xml",
       "count": 29
     },
@@ -1002,7 +1006,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-13",
+      "lastmod": "2026-10-14",
       "filename": "tier-4-regions.xml",
       "count": 595
     },
@@ -1014,7 +1018,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-13",
+      "lastmod": "2026-10-14",
       "filename": "tier-6-keywords.xml",
       "count": 547
     },
@@ -1026,9 +1030,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-8-media.xml",
-      "lastmod": "2026-10-02",
+      "lastmod": "2026-10-14",
       "filename": "tier-8-media.xml",
-      "count": 32
+      "count": 33
     }
   ],
   "entries": [
@@ -1036,7 +1040,7 @@
       "path": "/",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/부산법무사",
@@ -1048,7 +1052,7 @@
       "path": "/부산상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/업무사례",
@@ -1210,7 +1214,7 @@
       "path": "/about",
       "tier": 2,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/about",
-      "lastmod": "2026-10-12"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/busan-legal-map",
@@ -3178,13 +3182,13 @@
       "path": "/부산법인법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/부산법인설립등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/부산법인설립전문법무사",
@@ -3406,7 +3410,7 @@
       "path": "/부산상속포기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/부산상속후매매등기",
@@ -4012,7 +4016,7 @@
       "path": "/부산한정승인",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/부산현물출자증자",
@@ -10294,7 +10298,7 @@
       "path": "/media",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/media",
-      "lastmod": null
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/partners",
@@ -10835,6 +10839,12 @@
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/media/sentv-trend-hot-issue-ahn-yoonjung",
       "lastmod": "2026-10-02"
+    },
+    {
+      "path": "/media/viva100-haeundae-youth-space-ahn-yoonjung",
+      "tier": 8,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/media/viva100-haeundae-youth-space-ahn-yoonjung",
+      "lastmod": "2026-10-14"
     },
     {
       "path": "/media/weeklypeople-youth-judicial-scrivener-ahn",

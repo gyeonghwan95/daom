@@ -1,0 +1,82 @@
+[
+ {
+  "query": "부산 법무사",
+  "observedAtKST": "2026-10-14 20:22:33",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2058743206",
+    "2009750561",
+    "1367132358",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "1823160246",
+    "35407899"
+   ],
+   "ourOrder": null,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 9,
+  "ourBlockType": "web",
+  "ourWebOrder": 8,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "web:busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html",
+   "web:www.busan.go.kr/depart/freelegaladvice",
+   "web:bsb.scourt.go.kr/bsb/civil/civil_02/index.html",
+   "web:www.lh.or.kr/boardDownload.es",
+   "web:leeandbusan.kr/",
+   "web:bsajar.kabl.kr/index.do",
+   "web:ilovelaw1.com/",
+   "review:cafe.naver.com/mjann"
+  ]
+ },
+ {
+  "query": "부산법무사",
+  "observedAtKST": "2026-10-14 20:22:38",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2058743206",
+    "2009750561",
+    "1367132358",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "1823160246",
+    "35407899"
+   ],
+   "ourOrder": null,
+   "ourName": true
+  },
+  "blockCount": 20,
+  "ourBlockOrder": 9,
+  "ourBlockType": "web",
+  "ourWebOrder": 7,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "web:busan.scourt.go.kr/busan/civil_complaint/civil_03/civil_03_01/lawadvice_01.html",
+   "web:www.busan.go.kr/depart/freelegaladvice",
+   "web:bsb.scourt.go.kr/bsb/civil/civil_02/index.html",
+   "web:bsajar.kabl.kr/index.do",
+   "web:www.bmc.busan.kr/board/view.do",
+   "web:www.lh.or.kr/boardDownload.es",
+   "review:cafe.naver.com/mjann",
+   "review:cafe.naver.com/minecraftpe"
+  ]
+ }
+]
