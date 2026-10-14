@@ -89,6 +89,12 @@
       "primary": "/부산법인법무사",
       "protected": true
     },
+    "부산 법인설립 법무사": {
+      "primary": "/부산법인설립등기",
+      "protected": true,
+      "supporting": ["/부산법인법무사", "/부산법인등기"],
+      "note": "법인 신설·정관·임원·자본금 준비 의도는 /부산법인설립등기만 대표한다. 종합 법인 업무와 변경등기 페이지는 supporting으로 유지한다."
+    },
     "부산 개인회생 법무사": {
       "primary": "/부산개인회생법무사",
       "protected": true
