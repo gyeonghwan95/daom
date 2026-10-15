@@ -1,0 +1,68 @@
+[
+ {
+  "query": "부산 법무사",
+  "observedAtKST": "2026-10-15 19:52:57",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2058743206",
+    "1367132358",
+    "1352860087",
+    "820966630",
+    "398019771",
+    "1823160246",
+    "1144111068",
+    "1171205877"
+   ],
+   "ourOrder": null,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "news:www.lawtimes.co.kr/news/articleView.html"
+  ]
+ },
+ {
+  "query": "부산법무사",
+  "observedAtKST": "2026-10-15 19:53:02",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2058743206",
+    "1367132358",
+    "1352860087",
+    "820966630",
+    "398019771",
+    "1823160246",
+    "1144111068",
+    "1171205877"
+   ],
+   "ourOrder": null,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "news:www.lawtimes.co.kr/news/articleView.html"
+  ]
+ }
+]

@@ -11,6 +11,7 @@ import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeInsights } from "@/components/home/HomeInsights";
 import { HomePressMarquee } from "@/components/home/HomePressMarquee";
 import { HomeServices } from "@/components/home/HomeServices";
+import { HomeBusanGuide } from "@/components/home/HomeBusanGuide";
 import { HomeB2BSection } from "@/components/home/HomeB2BSection";
 import { HomeLawyerEeat } from "@/components/home/HomeLawyerEeat";
 import { HomeTrust } from "@/components/home/HomeTrust";
@@ -51,6 +52,7 @@ export default function Home() {
           <HomeTrust />
           <HomeFeaturedCases />
           <HomeServices />
+          <HomeBusanGuide />
           <HomeResources />
           <HomePressMarquee />
           <HomeActivitiesMarquee />
