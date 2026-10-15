@@ -1677,6 +1677,8 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   /* 모바일: 미디어를 상단 고정 비율로 — 잘림 없이 contain */
   .home-hero__photo {
+    /* HTML에서는 소개 패널 뒤에 있지만 모바일 화면에서는 위에 보인다(데스크톱은 absolute라 영향 없음) */
+    order: -1;
     position: relative;
     z-index: 0;
     flex: 0 0 auto;

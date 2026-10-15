@@ -36,12 +36,6 @@ export function HomeHero() {
 
   return (
     <section className="home-hero home-hero--stage">
-      {/* 모바일: 미디어가 먼저(상단). 데스크톱: absolute로 전면 배경 */}
-      <div className="home-hero__photo">
-        <HeroStage />
-        <div className="home-hero__fade" aria-hidden />
-      </div>
-
       <motion.div
         className="home-hero__copy"
         variants={reduced ? undefined : stagger}
@@ -106,9 +100,16 @@ export function HomeHero() {
             <a href={getPhoneHref(phone)} onClick={() => track("phone")}>
               전화 {phone}
             </a>
+            <span aria-hidden>·</span>
+            <span>평일 09:00–18:00 · 방문은 예약제</span>
           </motion.p>
         </div>
       </motion.div>
+      {/* HTML은 제목·소개가 먼저(크롤러·스크린리더). 화면은 모바일에서 CSS order로 미디어가 위, 데스크톱은 absolute 전면 배경 */}
+      <div className="home-hero__photo">
+        <HeroStage />
+        <div className="home-hero__fade" aria-hidden />
+      </div>
     </section>
   );
 }
