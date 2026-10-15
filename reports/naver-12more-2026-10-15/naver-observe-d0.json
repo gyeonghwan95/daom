@@ -1,0 +1,336 @@
+[
+ {
+  "query": "부산 상속포기 법무사",
+  "observedAtKST": "2026-10-15 21:27:38",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2009180992",
+    "1823160246",
+    "2035745096",
+    "1136708234",
+    "90119738",
+    "1072287152",
+    "1305038093",
+    "1367132358"
+   ],
+   "ourOrder": 3,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "news:www.viva100.com/article/20261014500921",
+   "qra:blog.naver.com/bsbupmu"
+  ]
+ },
+ {
+  "query": "부산 한정승인 법무사",
+  "observedAtKST": "2026-10-15 21:27:43",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "820966630",
+    "398019771",
+    "1144111068",
+    "1823160246",
+    "2035745096",
+    "1352860087"
+   ],
+   "ourOrder": 5,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "news:www.viva100.com/article/20261014500921",
+   "qra:blog.naver.com/goodlegal0"
+  ]
+ },
+ {
+  "query": "부산 부동산등기 법무사",
+  "observedAtKST": "2026-10-15 21:27:47",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2035745096",
+    "1059872840",
+    "20455827",
+    "2064633749",
+    "1189840972",
+    "34291710"
+   ],
+   "ourOrder": 1,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "news:www.viva100.com/article/20261014500921"
+  ]
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "observedAtKST": "2026-10-15 21:27:52",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1000682738",
+    "1136708234",
+    "31156804",
+    "1539838962",
+    "1277321216",
+    "1207672585"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "news:www.viva100.com/article/20261014500921",
+   "qra:blog.naver.com/pica1026"
+  ]
+ },
+ {
+  "query": "부산 법인설립 법무사",
+  "observedAtKST": "2026-10-15 21:27:57",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "21622222",
+    "2005221566",
+    "1277321216",
+    "1541317130",
+    "1539838962",
+    "36957279"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 법인등기 법무사",
+  "observedAtKST": "2026-10-15 21:28:01",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": {
+   "ids": [
+    "1710188850",
+    "2035745096",
+    "1385362148",
+    "1881034409",
+    "1649288125",
+    "2064633749"
+   ],
+   "ourOrder": 2,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "news:www.viva100.com/article/20261014500921",
+   "qra:xn--h49au34a7jcgf483azrx.net/"
+  ]
+ },
+ {
+  "query": "부산 법인 법무사",
+  "observedAtKST": "2026-10-15 21:28:06",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1710188850",
+    "19933918",
+    "1385362148",
+    "1881034409",
+    "2035745096"
+   ],
+   "ourOrder": 6,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "news:www.viva100.com/article/20261014500921"
+  ]
+ },
+ {
+  "query": "부산 상속등기 법무사",
+  "observedAtKST": "2026-10-15 21:28:11",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "31156804",
+    "1649288125",
+    "1710188850",
+    "1823160246",
+    "1288400871",
+    "2035745096"
+   ],
+   "ourOrder": 6,
+   "ourName": true
+  },
+  "blockCount": 3,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 상속 법무사",
+  "observedAtKST": "2026-10-15 21:28:15",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "2009180992",
+    "31156804",
+    "1649288125",
+    "1710188850",
+    "1526596949",
+    "1288400871",
+    "2082734392"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "news:www.viva100.com/article/20261014500921",
+   "qra:blog.naver.com/goodlegal0"
+  ]
+ },
+ {
+  "query": "부산 기업 법무사",
+  "observedAtKST": "2026-10-15 21:28:20",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "19846886"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": 1,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 기업전문 법무사",
+  "observedAtKST": "2026-10-15 21:28:24",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "qra:www.daeryunlaw-comp.com/map/busan1"
+  ]
+ },
+ {
+  "query": "부산 법인 해산 청산 법무사",
+  "observedAtKST": "2026-10-15 21:28:29",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourUrls": [],
+  "above": [
+   "qra:blog.naver.com/anger140"
+  ]
+ }
+]

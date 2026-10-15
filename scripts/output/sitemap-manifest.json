@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T11:46:12.351Z",
+  "generatedAt": "2026-10-15T12:49:23.274Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1636,
   "format": "urlset",
@@ -1006,7 +1006,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-14",
+      "lastmod": "2026-10-15",
       "filename": "tier-4-regions.xml",
       "count": 595
     },
@@ -1052,7 +1052,7 @@
       "path": "/부산상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-14"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/업무사례",
@@ -2870,7 +2870,7 @@
       "path": "/부산기업법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B8%B0%EC%97%85%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산기업부동산등기",
@@ -2936,7 +2936,7 @@
       "path": "/부산등기법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산등기법무사추천",
@@ -3146,7 +3146,7 @@
       "path": "/부산법인등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-14"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산법인등기과태료",
@@ -3188,7 +3188,7 @@
       "path": "/부산법인설립등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-14"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산법인설립전문법무사",
@@ -3212,7 +3212,7 @@
       "path": "/부산법인해산청산등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%ED%95%B4%EC%82%B0%EC%B2%AD%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산변제공탁",
@@ -3242,7 +3242,7 @@
       "path": "/부산부동산등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산부동산등기법무사",
@@ -4016,7 +4016,7 @@
       "path": "/부산한정승인",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-10-14"
+      "lastmod": "2026-10-15"
     },
     {
       "path": "/부산현물출자증자",
