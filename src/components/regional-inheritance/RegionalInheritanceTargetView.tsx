@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
+import { RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -147,6 +148,8 @@ export function RegionalInheritanceTargetView({
           </p>
         </aside>
       </article>
+      {/* 시·군·구별 관할 등기소와 동·생활권 표 — 같은 main 안에 둔다(별도 PageContainer를 쓰면 main·푸터가 두 번 생긴다) */}
+      <RegionCoverageSection path={target.path} />
       <LawyerTrustShowcase />
     </PageContainer>
   );

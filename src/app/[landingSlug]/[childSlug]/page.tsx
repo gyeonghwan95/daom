@@ -65,7 +65,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { createPageMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
-import { RegionCoverageContained, RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
+import { RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
 
 type Props = {
   params: Promise<{ landingSlug: string; childSlug: string }>;
@@ -289,12 +289,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
 
     const metroTarget = getMetroRemoteTarget(child);
     if (metroTarget && nationwidePage) {
-      return (
-        <>
-          <MetroRemoteTargetView spec={metroTarget} breadcrumbs={nationwidePage.breadcrumbs} />
-          <RegionCoverageContained path={`/업무사례/${child}`} />
-        </>
-      );
+      return <MetroRemoteTargetView spec={metroTarget} breadcrumbs={nationwidePage.breadcrumbs} />;
     }
 
     const regionalTarget = getRegionalInheritanceTarget(child);
@@ -303,13 +298,10 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
       (nationwidePage ?? getGyeongnamPageDataBySlug(child) ?? getSoutheastPageDataBySlug(child));
     if (regionalTarget && regionalBasePage) {
       return (
-        <>
-          <RegionalInheritanceTargetView
-            target={regionalTarget}
-            breadcrumbs={regionalBasePage.breadcrumbs}
-          />
-          <RegionCoverageContained path={`/업무사례/${child}`} />
-        </>
+        <RegionalInheritanceTargetView
+          target={regionalTarget}
+          breadcrumbs={regionalBasePage.breadcrumbs}
+        />
       );
     }
 

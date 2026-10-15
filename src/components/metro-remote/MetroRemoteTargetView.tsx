@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
+import { RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
 import { RemoteServicePanel } from "@/components/nationwide/RemoteServicePanel";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
@@ -174,6 +175,8 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
           className="mt-2"
         />
       </article>
+      {/* 시·군·구별 관할 등기소와 동·생활권 표 — 같은 main 안에 둔다(별도 PageContainer를 쓰면 main·푸터가 두 번 생긴다) */}
+      <RegionCoverageSection path={spec.path} />
       <LawyerTrustShowcase />
     </PageContainer>
   );
