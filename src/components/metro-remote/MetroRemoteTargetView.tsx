@@ -5,6 +5,7 @@ import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { RemoteServicePanel } from "@/components/nationwide/RemoteServicePanel";
+import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import { BlockView } from "@/components/naver-recovery/NaverRecoveryTargetView";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ContentSection } from "@/components/readability";
@@ -122,6 +123,12 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />
         </ContentSection>
+
+        <NationwideServiceNotice
+          type="jurisdiction-exception"
+          badge={`${spec.region} 부동산 전국 의뢰 가능`}
+          showDetails={false}
+        />
 
         <section
           id="consultation"

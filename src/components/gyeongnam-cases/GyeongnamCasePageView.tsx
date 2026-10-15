@@ -1,4 +1,5 @@
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import {
   InheritanceCostGuide,
   RegionalRemoteInheritance,
@@ -80,13 +81,27 @@ export function GyeongnamCasePageView({
 }: Props) {
   const showRemote = INHERITANCE_REMOTE_TYPES.has(def.pageType);
   const showCostGuide = INHERITANCE_COST_TYPES.has(def.pageType);
+  // 상속·유증등기 페이지에는 전국 의뢰 패널(관할 특례)을 둔다. 상속포기(가정법원 사건)는 제외.
+  const showNationwideNotice = INHERITANCE_COST_TYPES.has(def.pageType);
   const inquiryField = inquiryFieldForDef(def);
   const region = inquiryRegionFromDef(def);
 
   return (
     <PageDataTemplate
       page={page}
-      heroAddon={<GyeongnamServiceHero def={def} />}
+      hasRemoteNotice={showNationwideNotice}
+      heroAddon={
+        <>
+          <GyeongnamServiceHero def={def} />
+          {showNationwideNotice ? (
+            <NationwideServiceNotice
+              type="jurisdiction-exception"
+              badge={`${def.regionName} 부동산 전국 의뢰 가능`}
+              showDetails={false}
+            />
+          ) : null}
+        </>
+      }
     >
       {showRemote ? (
         <div className="space-y-6">

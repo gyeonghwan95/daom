@@ -1,4 +1,5 @@
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
 import {
   InheritanceCostGuide,
   RegionalRemoteInheritance,
@@ -49,6 +50,12 @@ export function SoutheastCasePageView({
   coreLinks = [],
 }: Props) {
   const showRemote = INHERITANCE_TYPES.has(def.pageType);
+  // 상속·유증등기 페이지에는 전국 의뢰 패널(관할 특례)을 둔다. 상속포기·한정승인(가정법원 사건)과 업무 종합 허브는 제외.
+  const showNationwideNotice =
+    showRemote &&
+    def.pageType !== "renunciation" &&
+    def.pageType !== "limited-acceptance" &&
+    def.pageType !== "region-hub";
   const inquiryField =
     def.pageType === "renunciation" || def.pageType === "limited-acceptance"
       ? "inheritance-renunciation"
@@ -58,7 +65,19 @@ export function SoutheastCasePageView({
   return (
     <PageDataTemplate
       page={page}
-      heroAddon={<SoutheastServiceHero def={def} />}
+      hasRemoteNotice={showNationwideNotice}
+      heroAddon={
+        <>
+          <SoutheastServiceHero def={def} />
+          {showNationwideNotice ? (
+            <NationwideServiceNotice
+              type="jurisdiction-exception"
+              badge={`${def.regionName} 부동산 전국 의뢰 가능`}
+              showDetails={false}
+            />
+          ) : null}
+        </>
+      }
     >
       {showRemote ? (
         <div className="space-y-6">

@@ -1,9 +1,16 @@
 /**
  * 시·도 상속 페이지의 시·군·구 커버리지(전용 페이지가 없는 지역도 같은 시·도 페이지에서 안내).
  * 생성: reports/region-inheritance-2026-10-10/gen-coverage.mjs (2026-10-10). 행정구역 2026-10 기준,
- * 인천은 행정체제 개편 대상 구 이름 대신 생활권 이름(송도·청라·영종·검단)을 쓴다.
+ * 2026-10-16: 인천은 2026. 7. 1. 개편 후 공식 구 이름(등기소 관할구역표 기준)으로 바꾸고, 구를 둔 시·광역시 페이지(대구·수원 등)를 추가,
+ * 생활권 이름(잠실·판교 등)은 notes로 소속 구를 적는다. 관할 등기소는 src/data/seo/registry-jurisdiction.ts.
  */
-export type RegionCoverage = { sido: string; kind: string; areas: readonly { name: string; href: string | null }[] };
+export type RegionCoverage = {
+  sido: string;
+  kind: string;
+  areas: readonly { name: string; href: string | null }[];
+  /** 생활권 이름 → 소속 구 안내 */
+  notes?: readonly string[];
+};
 export const REGION_COVERAGE: Record<string, RegionCoverage> = {
   "/업무사례/서울상속등기법무사": {
     "sido": "서울",
@@ -109,6 +116,9 @@ export const REGION_COVERAGE: Record<string, RegionCoverage> = {
         "name": "강동구",
         "href": "/업무사례/강동구상속등기법무사"
       }
+    ],
+    "notes": [
+      "생활권 이름으로 찾는 경우: 잠실은 송파구, 여의도는 영등포구, 목동은 양천구, 마곡은 강서구, 상암은 마포구, 교대(서울교대역 일대)는 서초구에 속해 해당 구의 관할 등기국을 따릅니다."
     ]
   },
   "/업무사례/경기상속등기법무사": {
@@ -239,19 +249,30 @@ export const REGION_COVERAGE: Record<string, RegionCoverage> = {
         "name": "양평",
         "href": "/업무사례/여주양평상속등기법무사"
       }
+    ],
+    "notes": [
+      "생활권 이름으로 찾는 경우: 판교는 성남시 분당구, 동탄은 화성시, 광교는 수원시 영통구와 용인시 수지구에 걸쳐 있고, 위례는 서울 송파구·성남시 수정구·하남시에 걸쳐 있어 부동산 주소의 시·구로 관할을 정합니다."
     ]
   },
   "/업무사례/인천상속등기법무사": {
     "sido": "인천",
-    "kind": "구·군·생활권",
+    "kind": "구·군",
     "areas": [
+      {
+        "name": "제물포구",
+        "href": null
+      },
+      {
+        "name": "영종구",
+        "href": "/업무사례/영종도상속등기법무사"
+      },
       {
         "name": "미추홀구",
         "href": null
       },
       {
         "name": "연수구",
-        "href": null
+        "href": "/업무사례/송도상속등기법무사"
       },
       {
         "name": "남동구",
@@ -266,33 +287,28 @@ export const REGION_COVERAGE: Record<string, RegionCoverage> = {
         "href": null
       },
       {
-        "name": "서구",
+        "name": "서해구",
+        "href": null
+      },
+      {
+        "name": "검단구",
         "href": null
       },
       {
         "name": "강화군",
-        "href": null
+        "href": "/업무사례/강화도상속등기법무사"
       },
       {
         "name": "옹진군",
         "href": null
       },
       {
-        "name": "송도",
-        "href": "/업무사례/송도상속등기법무사"
-      },
-      {
         "name": "청라",
         "href": "/업무사례/청라상속등기법무사"
-      },
-      {
-        "name": "영종",
-        "href": "/업무사례/영종도상속등기법무사"
-      },
-      {
-        "name": "검단",
-        "href": null
       }
+    ],
+    "notes": [
+      "송도국제도시는 연수구에 있습니다. 강화군을 뺀 인천 전 지역이 인천지방법원 등기국 관할이라 청라도 같은 등기국입니다. 2026년 7월 1일 행정체제 개편 이후 구 이름 기준입니다."
     ]
   },
   "/업무사례/대전상속등기법무사": {
@@ -813,6 +829,9 @@ export const REGION_COVERAGE: Record<string, RegionCoverage> = {
         "name": "서귀포",
         "href": "/업무사례/서귀포상속등기법무사"
       }
+    ],
+    "notes": [
+      "애월읍과 노형동은 제주시에 속해 제주지방법원 등기과 관할입니다."
     ]
   },
   "/업무사례/경북상속등기법무사": {
@@ -906,6 +925,251 @@ export const REGION_COVERAGE: Record<string, RegionCoverage> = {
       {
         "name": "울릉",
         "href": null
+      }
+    ]
+  },
+  "/업무사례/대구상속등기법무사": {
+    "sido": "대구",
+    "kind": "구·군",
+    "areas": [
+      {
+        "name": "중구",
+        "href": "/업무사례/대구중구상속등기법무사"
+      },
+      {
+        "name": "동구",
+        "href": "/업무사례/대구동구상속등기법무사"
+      },
+      {
+        "name": "서구",
+        "href": "/업무사례/대구서구상속등기법무사"
+      },
+      {
+        "name": "남구",
+        "href": "/업무사례/대구남구상속등기법무사"
+      },
+      {
+        "name": "북구",
+        "href": "/업무사례/대구북구상속등기법무사"
+      },
+      {
+        "name": "수성구",
+        "href": "/업무사례/대구수성구상속등기법무사"
+      },
+      {
+        "name": "달서구",
+        "href": "/업무사례/대구달서구상속등기법무사"
+      },
+      {
+        "name": "달성군",
+        "href": "/업무사례/대구달성군상속등기법무사"
+      },
+      {
+        "name": "군위군",
+        "href": "/업무사례/대구군위군상속등기법무사"
+      }
+    ],
+    "notes": [
+      "범어동은 수성구, 성서는 달서구에 속합니다."
+    ]
+  },
+  "/업무사례/수원상속등기법무사": {
+    "sido": "수원",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "장안구",
+        "href": null
+      },
+      {
+        "name": "권선구",
+        "href": null
+      },
+      {
+        "name": "팔달구",
+        "href": null
+      },
+      {
+        "name": "영통구",
+        "href": "/업무사례/광교상속등기법무사"
+      }
+    ],
+    "notes": [
+      "광교는 수원시 영통구와 용인시 수지구에 걸쳐 있습니다."
+    ]
+  },
+  "/업무사례/성남상속등기법무사": {
+    "sido": "성남",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "수정구",
+        "href": null
+      },
+      {
+        "name": "중원구",
+        "href": null
+      },
+      {
+        "name": "분당구",
+        "href": "/업무사례/분당상속등기법무사"
+      }
+    ],
+    "notes": [
+      "판교는 분당구에 속하고, 위례 일부는 수정구에 속합니다."
+    ]
+  },
+  "/업무사례/안양상속등기법무사": {
+    "sido": "안양",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "만안구",
+        "href": null
+      },
+      {
+        "name": "동안구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/안산상속등기법무사": {
+    "sido": "안산",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "상록구",
+        "href": null
+      },
+      {
+        "name": "단원구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/고양상속등기법무사": {
+    "sido": "고양",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "덕양구",
+        "href": null
+      },
+      {
+        "name": "일산동구",
+        "href": "/업무사례/일산상속등기법무사"
+      },
+      {
+        "name": "일산서구",
+        "href": "/업무사례/일산상속등기법무사"
+      }
+    ]
+  },
+  "/업무사례/용인상속등기법무사": {
+    "sido": "용인",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "처인구",
+        "href": null
+      },
+      {
+        "name": "기흥구",
+        "href": null
+      },
+      {
+        "name": "수지구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/청주상속등기법무사": {
+    "sido": "청주",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "상당구",
+        "href": null
+      },
+      {
+        "name": "서원구",
+        "href": null
+      },
+      {
+        "name": "흥덕구",
+        "href": null
+      },
+      {
+        "name": "청원구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/천안상속등기법무사": {
+    "sido": "천안",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "동남구",
+        "href": null
+      },
+      {
+        "name": "서북구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/전주상속등기법무사": {
+    "sido": "전주",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "완산구",
+        "href": null
+      },
+      {
+        "name": "덕진구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/포항상속등기법무사": {
+    "sido": "포항",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "남구",
+        "href": null
+      },
+      {
+        "name": "북구",
+        "href": null
+      }
+    ]
+  },
+  "/업무사례/창원상속등기법무사": {
+    "sido": "창원",
+    "kind": "구",
+    "areas": [
+      {
+        "name": "의창구",
+        "href": "/업무사례/창원의창구상속등기법무사"
+      },
+      {
+        "name": "성산구",
+        "href": "/업무사례/창원성산구상속등기법무사"
+      },
+      {
+        "name": "마산합포구",
+        "href": "/업무사례/마산합포구상속등기법무사"
+      },
+      {
+        "name": "마산회원구",
+        "href": "/업무사례/마산회원구상속등기법무사"
+      },
+      {
+        "name": "진해구",
+        "href": "/업무사례/진해구상속등기법무사"
       }
     ]
   }
