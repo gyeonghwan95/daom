@@ -9,6 +9,7 @@ import { getNapInfo } from "@/lib/business-info";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { officeHours, officeLocation } from "@/lib/office-location";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 
 export function HomePlaceGuide() {
   const nap = getNapInfo();
@@ -26,6 +27,7 @@ export function HomePlaceGuide() {
         </Reveal>
 
         <PageTextCardFigure path="/" className="mt-6 mb-6 md:mt-8 md:mb-8" />
+        <PageGallery path="/" className="mt-0 mb-8 md:mt-0 md:mb-10" />
 
         <div className="home-place__panel">
           <div className="home-place__map" id="home-directions">

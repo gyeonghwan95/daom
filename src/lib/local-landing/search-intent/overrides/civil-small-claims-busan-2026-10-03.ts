@@ -118,6 +118,7 @@ export const 부산소액소송Override: SearchIntentContent = {
     { href: "/지급명령이의신청준비", label: "지급명령 이의신청 준비" },
     { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
     { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
+    { href: "/부산답변서작성", label: "소장을 받았다면: 답변서 작성" },
   ],
   relatedGuideLinks: [
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },

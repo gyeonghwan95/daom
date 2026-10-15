@@ -211,6 +211,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/부산임원임기만료등기", label: "임원 임기만료 등기" },
           { href: "/부산본점이전등기", label: "부산 본점이전등기" },
           { href: "/부산사업목적변경등기", label: "사업목적 변경등기" },
+          { href: "/부산법인인수변경등기", label: "법인 인수(주식양도) 후 변경등기" },
           { href: "/부산유상증자등기", label: "유상증자 등기" },
           {
             href: "/방문없이준비하는유상증자",
@@ -294,6 +295,8 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/부산명의변경등기", label: "부산 명의변경등기" },
           { href: "/부산입주등기", label: "부산 입주등기" },
           { href: "/부산공유물분할등기", label: "부산 공유물분할등기" },
+          { href: "/부산판결소유권이전등기", label: "부산 판결 소유권이전등기" },
+          { href: "/부산농지소유권이전등기", label: "부산 농지 소유권이전등기" },
           { href: "/부산말소등기", label: "부산 말소등기(유형 안내)" },
           { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
           { href: "/부산전세권설정등기", label: "부산 전세권설정등기" },
@@ -464,6 +467,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
           { href: "/부산소액소송", label: "부산 소액소송 — 3천만 원 이하 청구" },
+          { href: "/부산답변서작성", label: "부산 답변서 작성 — 소장 받은 뒤 30일" },
         ],
       },
       {
@@ -484,6 +488,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "판결·지급명령을 받은 뒤에도 상대방이 갚지 않을 때 단계별로 필요한 신청서가 다릅니다.",
         links: [
           { href: "/부산집행문부여신청", label: "집행문 부여·승계집행문 신청" },
+          { href: "/부산채권압류추심명령", label: "채권압류·추심명령(통장·급여·거래처 대금)" },
           { href: "/부산채무불이행자명부등재", label: "채무불이행자명부 등재 신청" },
           { href: "/부산배당요구신청", label: "경매 배당요구 신청서" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
@@ -591,6 +596,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "채권 회수·집행",
         links: [
           { href: "/민사소송", label: "지급명령·소장 작성 상담 허브" },
+          { href: "/부산채권압류추심명령", label: "부산 채권압류·추심명령" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
           { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
           {

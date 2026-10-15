@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 import { ContentSection } from "@/components/readability";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
@@ -127,6 +128,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         <HubChildLinks path={page.path} />
 
         <PageTextCardFigure path={page.path} />
+        <PageGallery path={page.path} />
 
         <ContentSection id="faq" title="자주 묻는 질문">
           <FAQAccordion items={[...spec.faqs]} />

@@ -18,6 +18,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
   ArticleSummary,
@@ -88,7 +89,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ? [{ id: "situation-nav", label: "지금 어떤 상황이신가요?" }]
       : []),
     ...(content.featuredChecklist?.length
-      ? [{ id: "first-checks-list", label: "먼저 확인할 7가지" }]
+      ? [{ id: "first-checks-list", label: `먼저 확인할 ${content.featuredChecklist.length}가지` }]
       : []),
     { id: "article-body", label: "본문 안내" },
     ...(content.proseSections?.map((s) => ({ id: s.id, label: s.title })) ??
@@ -205,7 +206,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : null}
 
       {content.featuredChecklist?.length ? (
-        <ContentSection id="first-checks-list" title="먼저 확인할 7가지">
+        <ContentSection id="first-checks-list" title={`먼저 확인할 ${content.featuredChecklist.length}가지`}>
           <ChecklistBox items={content.featuredChecklist} />
         </ContentSection>
       ) : (
@@ -388,6 +389,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       </ContentSection>
 
       <PageTextCardFigure path={page.path} />
+      <PageGallery path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

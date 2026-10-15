@@ -16,6 +16,7 @@ import {
   WarningBox,
 } from "@/components/readability";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
+import { PageGallery } from "@/components/media/PageGallery";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { getCorporateContent } from "@/lib/corporate-intent/content";
@@ -193,6 +194,8 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         category={page.category}
         serviceSlug={page.serviceSlug ?? "corporate-registration"}
       />
+
+      <PageGallery path={page.path} />
 
       <PageTableOfContents items={tocItems} />
 

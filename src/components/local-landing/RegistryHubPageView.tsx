@@ -6,6 +6,7 @@ import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 import { HubLawyerPortrait } from "@/components/local-landing/HubLawyerPortrait";
 import {
   ChecklistBox,
@@ -178,6 +179,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       />
 
       <PageTextCardFigure path={page.path} />
+      <PageGallery path={page.path} />
 
       <ContentSection id="process" title="어떻게 진행하나요">
         <div className="grid items-stretch gap-4 md:grid-cols-2">

@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { ContentSection } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
@@ -106,6 +107,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
             </ContentSection>
             {sectionIndex === 0 ? figure : null}
             {sectionIndex === 1 ? <PageTextCardFigure path={spec.path} className="my-0 md:my-0" /> : null}
+            {sectionIndex === 1 ? <PageGallery path={spec.path} className="my-0 md:my-0" /> : null}
           </div>
         ))}
 

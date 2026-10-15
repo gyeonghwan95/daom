@@ -63,6 +63,13 @@ function targetWidths(sourceWidth) {
   return widths;
 }
 
+/**
+ * 본문 갤러리 1:1 카드(최대 표시 폭 약 270px·모바일 50vw)는 두 폭만 만든다.
+ * Cloudflare Pages 파일 수 한도(20,000) 여유를 지키기 위해서다. 원본 JPG는 img src로 그대로 쓴다.
+ */
+const GALLERY_PREFIX = "/image/cards/gallery/";
+const GALLERY_WIDTHS = [384, 640];
+
 /** public 밖에 있지만 같은 URL로 서빙되는 원본 (app/icon.png → /icon.png, 헤더 로고) */
 const EXTRA_SOURCES = new Map([[path.join(ROOT, "src/app/icon.png"), "/icon.png"]]);
 
@@ -76,7 +83,7 @@ const ogKey = (key) => `/_img${key.replace(SOURCE_EXT, "")}.og.jpg`;
 async function processFile(file) {
   const key = toKey(file);
   const size = await displaySize(file);
-  const widths = targetWidths(size.width);
+  const widths = key.startsWith(GALLERY_PREFIX) ? GALLERY_WIDTHS : targetWidths(size.width);
   const srcStat = fs.statSync(file);
   const srcMtime = srcStat.mtimeMs;
   let written = 0;

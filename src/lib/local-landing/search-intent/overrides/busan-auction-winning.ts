@@ -131,6 +131,7 @@ export const 부산경매낙찰등기Override: SearchIntentContent = {
     { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
     { href: "/부산법무사비용", label: "부산 법무사 비용" },
     { href: "/취득세", label: "취득세 안내" },
+    { href: "/부산판결소유권이전등기", label: "판결로 하는 소유권이전등기" },
   ],
   relatedGuideLinks: [
     { href: "/등기실무", label: "등기 실무 허브" },

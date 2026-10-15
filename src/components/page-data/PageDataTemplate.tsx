@@ -55,6 +55,7 @@ import { resolveSerpImage, getRelatedContentCarousel } from "@/lib/seo/page-visu
 import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
+import { PageGallery } from "@/components/media/PageGallery";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
   getNationwideBannerHeadline,
@@ -377,6 +378,7 @@ export function PageDataTemplate({
       />
 
       <PageTextCardFigure path={page.path} />
+      <PageGallery path={page.path} />
 
       <ContentSection
         id="consultation-example"
