@@ -35,7 +35,7 @@ export const HOME_METADATA_TITLE = "부산 법무사 안윤정 | 다옴법무사
 export const HOME_H1 = "부산 법무사 안윤정";
 
 export const HOME_METADATA_DESCRIPTION =
-  "부산 법무사 다옴법무사사무소입니다. 안윤정 법무사가 상속등기·부동산등기·법인등기·개인회생·파산 등 필요한 절차와 준비서류를 직접 상담·안내합니다.";
+  "부산 법무사 다옴법무사사무소(해운대 센텀)입니다. 안윤정 법무사가 상속등기·상속포기·부동산등기·법인등기·개인회생·파산 서류 작성과 접수를 직접 상담·진행합니다. 평일 09:00–18:00, 방문은 예약제.";
 
 const INDEX_ROBOTS: Metadata["robots"] = {
   index: true,

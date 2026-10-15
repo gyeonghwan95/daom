@@ -1908,14 +1908,14 @@
   }
  },
  "/image/전문활동_인포그래픽.png": {
-  "width": 1500,
-  "height": 2100,
+  "width": 1462,
+  "height": 2513,
   "format": "png",
-  "bytes": 4586220,
+  "bytes": 4235446,
   "og": {
    "src": "/_img/image/전문활동_인포그래픽.og.jpg",
    "width": 1200,
-   "height": 1680,
+   "height": 2063,
    "format": "jpeg"
   }
  },
