@@ -23,11 +23,9 @@ export default function SearchPage() {
   return (
     <PageContainer>
       <PageContentSection
+        showCostNote={false}
         h1="사이트 검색"
-        breadcrumbs={[
-          { label: "홈", href: "/" },
-          { label: "검색" },
-        ]}
+        breadcrumbs={[{ label: "홈", href: "/" }, { label: "검색" }]}
         currentPath="/search"
         intro="업무명, 지역명, 강의·특강, 자가진단, FAQ 등 사이트 내부 콘텐츠를 검색합니다. 네이버 블로그 게시글은 검색 대상에 포함되지 않습니다."
         relatedLinks={[

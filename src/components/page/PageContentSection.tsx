@@ -1,4 +1,5 @@
 import { CTASection } from "@/components/sections/CTASection";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -13,6 +14,8 @@ type PageContentSectionProps = {
   /** H1 아래 큰 강조 문장(선택) */
   lead?: string;
   intro: string;
+  /** 서두 비용 문의 안내(기본 표시). 문의 폼·검색처럼 본문형이 아닌 화면은 false */
+  showCostNote?: boolean;
   breadcrumbs?: BreadcrumbItem[];
   currentPath?: string;
   coverImage?: SiteImageAsset;
@@ -30,6 +33,7 @@ export function PageContentSection({
   h1,
   lead,
   intro,
+  showCostNote = true,
   breadcrumbs,
   currentPath,
   coverImage,
@@ -86,6 +90,7 @@ export function PageContentSection({
             <p className="body-text mt-4 max-w-3xl md:mt-5">{intro}</p>
           </>
         )}
+        {showCostNote ? <CostInquiryNote variant="intro" className="mt-5 max-w-3xl" /> : null}
       </header>
 
       {afterIntro}

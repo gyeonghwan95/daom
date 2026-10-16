@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { HeroContactButtons } from "@/components/cta/HeroContactButtons";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
@@ -104,6 +105,9 @@ export function PageHero({
     />
   ) : null;
 
+  // 상담형이 아닌 히어로도 서두 비용 문의 안내는 같은 위치(설명 바로 뒤)에 둔다 — 상담형은 HeroContactButtons 안에 있다.
+  const costIntro = consultHero ? null : <CostInquiryNote variant="intro" className="mt-5 md:mt-6" />;
+
   const ctaBlock = consultCtaBlock ?? (ctaLabel ? (
     <div className="mt-5 flex flex-col gap-3 md:mt-6">
       <InquiryNaverCtaPair
@@ -153,6 +157,7 @@ export function PageHero({
     return (
       <header className="readability-hero">
         {textBlock}
+        {costIntro}
         {ctaBlock}
       </header>
     );
@@ -163,6 +168,7 @@ export function PageHero({
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,12.5rem)] lg:items-stretch lg:gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(0,14rem)]">
         <div className="min-w-0">
           {textBlock}
+          {costIntro}
           {ctaBlock}
         </div>
         <div className="mx-auto w-full max-w-[14rem] sm:max-w-[15rem] lg:relative lg:mx-0 lg:h-full lg:max-w-none lg:justify-self-end">

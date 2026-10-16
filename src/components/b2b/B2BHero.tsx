@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
 import type { TrustItem } from "@/lib/b2b/types";
 
@@ -32,6 +33,7 @@ export function B2BHero({
       <p className="body-text max-w-3xl text-[0.9375rem] leading-relaxed text-navy/80 md:text-base">
         {intro}
       </p>
+      <CostInquiryNote variant="intro" className="max-w-3xl" />
       <div className="flex flex-wrap gap-3">
         <Link
           href={primaryCta.href}

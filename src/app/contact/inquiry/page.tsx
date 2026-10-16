@@ -8,12 +8,15 @@ import { createPageMetadata } from "@/lib/metadata";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 
-export const metadata: Metadata = createPageMetadata(staticPageSeo.contactInquiry);
+export const metadata: Metadata = createPageMetadata(
+  staticPageSeo.contactInquiry,
+);
 
 export default function ContactInquiryPage() {
   return (
     <PageContainer>
       <PageContentSection
+        showCostNote={false}
         h1="상담 신청"
         breadcrumbs={[
           { label: "홈", href: "/" },

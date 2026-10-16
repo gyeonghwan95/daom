@@ -1,4 +1,5 @@
 import { LawyerProfileNav } from "@/components/profile/LawyerProfileNav";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Image from "next/image";
 import Link from "next/link";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
@@ -50,6 +51,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
             <div className="mt-4 md:mt-5">
               <ProseParagraphs paragraphs={[spec.lead]} />
             </div>
+            <CostInquiryNote variant="intro" className="mt-5" />
             <dl className="mt-4 grid gap-2 sm:grid-cols-3">
               {spec.quickFacts.map((fact) => (
                 <div

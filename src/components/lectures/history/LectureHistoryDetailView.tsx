@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import type { LectureHistoryEntry } from "@/lib/lectures/types";
 import {
@@ -64,6 +65,7 @@ export function LectureHistoryDetailView({
             value={entry.durationLabel ?? "시간 협의"}
           />
         </dl>
+        <CostInquiryNote variant="intro" />
       </header>
 
       {image ? (

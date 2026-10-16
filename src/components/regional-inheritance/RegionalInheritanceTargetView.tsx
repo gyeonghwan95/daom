@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
@@ -56,6 +57,8 @@ export function RegionalInheritanceTargetView({
               </p>
             ))}
           </div>
+          {/* 서두 비용 문의 안내 */}
+          <CostInquiryNote variant="intro" className="mt-5" />
           <dl className="mt-5 grid gap-2 sm:grid-cols-3">
             {target.facts.map((fact) => (
               <div

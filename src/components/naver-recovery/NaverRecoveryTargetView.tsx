@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import { EarlyConsultCta } from "@/components/consultation/EarlyConsultCta";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -66,6 +67,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
               </p>
             ))}
           </div>
+          {/* 서두 비용 문의 안내 */}
+          <CostInquiryNote variant="intro" className="mt-5" />
           {spec.keyPoints ? (
             <div className="mt-5 rounded-xl border border-navy/10 bg-cream/50 px-4 py-3">
               <p className="text-sm font-semibold text-navy">{spec.keyPoints.title}</p>

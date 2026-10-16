@@ -56,6 +56,7 @@ import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCaro
 import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
+import { NeighborhoodJurisdiction } from "@/components/seo/RegionCoverageSection";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
   getNationwideBannerHeadline,
@@ -379,6 +380,8 @@ export function PageDataTemplate({
 
       <PageTextCardFigure path={page.path} />
       <PageGallery path={page.path} />
+      {/* 부산 구 지역 페이지의 행정동·역별 관할 표. /업무사례 페이지는 RegionCoverageSection에서 이미 보여 준다. */}
+      {page.path.startsWith("/업무사례/") ? null : <NeighborhoodJurisdiction path={page.path} />}
 
       <ContentSection
         id="consultation-example"

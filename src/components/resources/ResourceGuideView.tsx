@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -79,6 +80,7 @@ export function ResourceGuideView({ guide }: { guide: ResourceGuide }) {
           <p className="mt-1 text-[0.98rem] leading-relaxed text-navy">{guide.readWhen}</p>
         </div>
         <p className="body-text mt-4">{guide.intro}</p>
+        <CostInquiryNote variant="intro" className="mt-5" />
         <p className="mt-3 text-xs leading-relaxed text-navy/60">
           {RESOURCE_BRAND} · 근거 확인일 {RESOURCE_VERIFIED_ON} · 자료 버전 v{RESOURCE_VERSION} · {guide.scope}
         </p>

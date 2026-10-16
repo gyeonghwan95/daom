@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { LawyerConsultationGuide } from "@/components/consultation/LawyerConsultationGuide";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
@@ -41,6 +42,7 @@ export function SituationCategoryHubView({
         </p>
         <h1 className="page-title mt-2">{page.h1}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
+        <CostInquiryNote variant="intro" className="mt-5 max-w-3xl" />
       </header>
 
       <section className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">

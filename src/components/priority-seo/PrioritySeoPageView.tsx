@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
@@ -76,6 +77,8 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
               </p>
             ))}
           </div>
+          {/* 서두 비용 문의 안내 */}
+          <CostInquiryNote variant="intro" className="mt-5" />
           <div className="mt-5 rounded-xl border border-navy/10 bg-cream/50 px-4 py-3">
             <p className="text-sm font-semibold text-navy">{spec.checkFirst.title}</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-navy/80 md:text-base">

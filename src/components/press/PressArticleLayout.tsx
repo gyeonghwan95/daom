@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -65,6 +66,7 @@ export function PressArticleLayout({ article }: PressArticleLayoutProps) {
               </a>
             </p>
           ) : null}
+          <CostInquiryNote variant="intro" className="mt-6" />
         </header>
 
         <div className="mt-8 overflow-hidden rounded-xl border border-beige-dark">

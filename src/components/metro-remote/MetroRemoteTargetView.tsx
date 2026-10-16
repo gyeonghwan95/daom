@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
 import { Fragment } from "react";
 import { SeoContentCarousel } from "@/components/carousel/SeoContentCarousel";
@@ -63,6 +64,8 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
               </p>
             ))}
           </div>
+          {/* 서두 비용 문의 안내 */}
+          <CostInquiryNote variant="intro" className="mt-5" />
           <div className="mt-5">
             <RemoteServicePanel
               badge={spec.remotePanel.badge}
