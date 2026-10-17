@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-16T15:25:55.249Z
+# 생성: 2026-10-17T16:48:42.777Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1641 (제외 242)
+# 총 URL: 1645 (제외 242)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 18개
@@ -11,7 +11,7 @@
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
 # Tier 6 — 순차 (기타 키워드 랜딩): 547개
 # Tier 7 — 후순위 (블로그): 53개
-# Tier 8 — 후순위 (언론·강의): 33개
+# Tier 8 — 후순위 (언론·강의): 37개
 
 ========================================================================
 
@@ -1652,20 +1652,24 @@ Tier 7 — 후순위 (블로그) (53개)
 [T7] https://xn--2j1br1na42lvxja38mk8r.kr/blog/when-to-consult-real-estate-registration-lawyer	/blog/when-to-consult-real-estate-registration-lawyer
 
 ────────────────────────────────────────────────────────────────────────
-Tier 8 — 후순위 (언론·강의) (33개)
+Tier 8 — 후순위 (언론·강의) (37개)
 ────────────────────────────────────────────────────────────────────────
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EB%AC%B8%EC%9D%98	/강의문의
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%8B%9C%EA%B0%84%EB%B3%84%EA%B5%AC%EC%84%B1	/강의시간별구성
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5	/강의이력
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29	/강의이력/b-square-impact-scaleup-2026-09-29
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-life-law	/강의이력/busan-citizen-library-life-law
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-1	/강의이력/busan-citizen-library-week-1
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-2	/강의이력/busan-citizen-library-week-2
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-3	/강의이력/busan-citizen-library-week-3
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-4	/강의이력/busan-citizen-library-week-4
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival	/강의이력/busan-self-support-daily-dispute-survival
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30	/강의이력/busan-self-support-housing-disputes-2026-09-30
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16	/강의이력/busan-self-support-housing-law-2026-09-16
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention	/강의이력/busan-self-support-jeonse-prevention
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center	/강의이력/changwon-youth-vision-center
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-job-growth-cafe	/강의이력/haeundae-youth-job-growth-cafe
+[T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02	/강의이력/haeundae-youth-space-jeonse-2026-10-02
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07	/강의이력/haeundae-youth-space-startup-law-2026-07
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/lh-busan-ccei-life-law	/강의이력/lh-busan-ccei-life-law
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk	/강의이력/yangsan-jeil-high-career-talk

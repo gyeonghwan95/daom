@@ -33,6 +33,30 @@
       "protected": true,
       "supporting": ["/부산법률상담", "/상담"]
     },
+    "부산 법무사 사무소": {
+      "primary": "/부산법무사무소",
+      "protected": true,
+      "supporting": ["/office", "/location"],
+      "note": "NAP·방문은 /office. 검색 랜딩은 /부산법무사무소. 신규 URL 금지."
+    },
+    "부산 상속": {
+      "primary": "/부산상속법무사",
+      "protected": true,
+      "aliasOf": "부산 상속 법무사",
+      "note": "Broad inheritance router. Never champion /부산상속포기. Do not create /부산상속."
+    },
+    "부산법률상담": {
+      "primary": "/부산법률상담",
+      "protected": true,
+      "supporting": ["/부산법무사상담"],
+      "note": "Civic vs 법무사 vs 변호사 router. Not the 법무사 상담 champion."
+    },
+    "부산 회사 법무사": {
+      "primary": "/부산법인법무사",
+      "protected": true,
+      "supporting": ["/부산기업법무사", "/부산법인설립등기"],
+      "note": "Same provider intent as 부산 법인 법무사. Do not create /부산회사법무사."
+    },
     "부산 법무사 비교": {
       "primary": "/부산법무사비교",
       "protected": true

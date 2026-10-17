@@ -588,7 +588,7 @@ export const 부산법인설립전문법무사Override = createSpecialistPage({
     "설립 완료일이나 사업 성공을 보장하지 않습니다.",
   ],
   serviceSlug: "company-establishment",
-  keywords: ["부산 법인설립", "부산 법인설립등기", "부산 회사설립 법무사", "부산 법인전문 법무사"],
+  keywords: ["부산 법인설립", "부산 법인설립등기", "부산 회사설립 법무사"],
   whenNeeded: [
     "주식회사·법인 설립등기 준비를 시작하려는 경우",
     "상호·목적·자본금·임원 구성을 확인하려는 경우",
@@ -652,7 +652,7 @@ export const 부산법인설립전문법무사Override = createSpecialistPage({
   relatedServiceLinks: [
     { href: "/부산법인설립등기", label: "부산 법인설립등기 — 절차 대표 안내" },
     { href: "/부산법인법무사", label: "부산 법인 법무사" },
-    { href: "/부산법인전문법무사", label: "부산 법인전문 법무사" },
+    { href: "/부산법인등기", label: "부산 법인등기 — 설립 후 변경" },
     { href: "/부산임원변경전문법무사", label: "부산 임원변경전문 법무사" },
   ],
   bottomCtaText:

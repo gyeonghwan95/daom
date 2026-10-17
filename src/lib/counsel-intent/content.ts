@@ -10,10 +10,10 @@ export const counselPages: CounselPageContent[] = [
     slug: "부산법률상담",
     title: "부산 법률 자문·상담 — 업무와 전문가 구분",
     metaTitle:
-      "부산 법률 자문을 찾을 때｜문제에 맞는 절차와 전문가 구분",
+      "부산법률상담을 찾을 때｜공공상담·법무사 업무·소송 구분",
     metaDescription:
       "부산에서 법률 자문·상담이 필요할 때 등기·상속·법인·임대차·법원서류처럼 법무사 업무인지, 소송·세무·노무처럼 다른 전문가가 필요한지 먼저 구분하는 안내입니다.",
-    h1: "부산에서 법률 자문이 필요할 때 먼저 확인할 업무",
+    h1: "부산에서 법률상담이 필요할 때 먼저 확인할 업무",
     eyebrow: "법률 자문 · 상담 입구 안내",
     heroIntro:
       "업무명을 정확히 모르셔도 현재 상황을 설명하면 법무사 업무에 해당하는지부터 확인합니다.",
@@ -65,8 +65,8 @@ export const counselPages: CounselPageContent[] = [
       },
       {
         title: "부모님이 돌아가신 경우",
-        description: "상속등기·상속인 협의·관할 확인",
-        href: "/부산상속등기",
+        description: "등기·포기·한정승인 중 먼저 확인할 절차",
+        href: "/부산상속법무사",
       },
       {
         title: "상속받을 재산보다 빚이 걱정되는 경우",
@@ -90,8 +90,8 @@ export const counselPages: CounselPageContent[] = [
       },
       {
         title: "법인을 설립하거나 변경해야 하는 경우",
-        description: "설립·임원·본점 등 법인등기",
-        href: "/부산법인등기",
+        description: "설립·임원·본점 등 법인 업무 입구",
+        href: "/부산법인법무사",
       },
       {
         title: "거래처가 돈을 지급하지 않는 경우",
@@ -290,6 +290,7 @@ export const counselPages: CounselPageContent[] = [
     relatedLinks: [
       { href: "/상담", label: "상황 선택형 법무사 상담" },
       { href: "/부산법무사상담", label: "법무사 업무 상담·준비서류" },
+      { href: "/부산상속법무사", label: "부산 상속 — 등기·포기·한정승인 선택" },
       { href: "/전세사기피해대응절차", label: "전세보증금 피해 대응" },
       { href: "/개인회생파산", label: "회생·파산 비교" },
       { href: "/부산법무사비용", label: "부산 법무사 비용 구성" },
@@ -313,7 +314,7 @@ export const counselPages: CounselPageContent[] = [
     ],
     ctaTitle: "어떤 업무인지 먼저 확인하세요",
     ctaText:
-      "업무명을 정확히 모르셔도 현재 상황을 알려주시면 법무사 업무인지와 먼저 확인할 자료부터 안내합니다.",
+      "업무명을 정확히 모르셔도 현재 상황을 알려주시면 법무사 업무인지와 먼저 확인할 자료부터 안내합니다. 맡길지 결정하기 전에 비용부터 물어보셔도 됩니다. 전화·네이버 톡톡·카카오톡으로 상황을 남겨 주세요.",
   },
 ];
 
@@ -330,6 +331,13 @@ const CATEGORY_RESULTS: Record<
   CounselSelectorResult[]
 > = {
   inheritance: [
+    {
+      title: "부산 상속 절차 선택",
+      href: "/부산상속법무사",
+      note: "등기·포기·한정승인 중 먼저 확인할 절차",
+      documents: ["사망일 메모", "상속인 구성", "알고 있는 재산·채무"],
+      deadlineHint: "승인 방식 기한과 등기 일정을 먼저 나눕니다.",
+    },
     {
       title: "부산 상속등기",
       href: "/부산상속등기",

@@ -371,6 +371,7 @@ export const 부산부동산등기전문법무사Override = createSpecialistPage
   ],
   relatedServiceLinks: [
     { href: "/부산부동산등기", label: "부산 부동산등기 — 원인별 절차 허브" },
+    { href: "/부산등기법무사", label: "부동산·상속·법인 등기를 함께 볼 때" },
     { href: "/부산부동산등기전문", label: "부산 부동산등기전문 — 상담 선택 체크리스트" },
     { href: "/부산매매등기법무사", label: "부산 매매등기 법무사" },
     { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
@@ -874,7 +875,6 @@ export const 부산임원변경전문법무사Override = createSpecialistPage({
     { href: "/부산임원변경등기", label: "부산 임원변경등기 — 절차 대표 안내" },
     { href: "/부산법인법무사", label: "부산 법인 법무사" },
     { href: "/부산법인등기", label: "부산 법인등기" },
-    { href: "/부산법인전문법무사", label: "부산 법인전문 법무사" },
   ],
   bottomCtaText:
     "법인등기부, 정관, 최근 의사록과 변경될 임원 정보·변경일을 알려 주시면 다옴법무사사무소 해운대 센텀 안윤정 법무사가 임기와 과태료 기한부터 계산해 드립니다.",

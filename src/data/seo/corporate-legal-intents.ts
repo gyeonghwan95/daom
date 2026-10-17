@@ -111,7 +111,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     legalTask: "제공자 선택(spoke)",
     existingUrl: "/부산기업법무사",
     coverage: "strong",
-    champion: "/부산기업법무사",
+    champion: CORPORATE_LEGAL_OPERATIONS_CHAMPION,
     businessValue: 3,
     cannibalizationRisk: "high",
     scopeRisk: "medium",

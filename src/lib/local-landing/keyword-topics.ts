@@ -184,6 +184,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     primaryKeywords: [
       "부산 상속 법무사",
       "부산 법무사 상속",
+      "부산 상속",
     ],
     summaryParagraphs: [
       "부모님이 돌아가신 뒤 부산의 아파트·토지 명의를 바꾸려 해도, 처음부터 상속등기만 준비하는 것이 항상 맞는 것은 아닙니다. 재산·채무·상속인 구성을 보고 갈래를 먼저 고릅니다.",
@@ -303,6 +304,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       "부산 법인 업무",
       "부산 법인 법무",
       "부산 법인 법무사",
+      "부산 회사 법무사",
       "부산 법인등기 업무",
       "부산 회사 법무",
     ],
