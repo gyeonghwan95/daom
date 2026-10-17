@@ -84,6 +84,7 @@ export const imagePaths = {
   contactInPersonConsult: "/image/상담-대면.png",
   contactOnSiteConsult: "/image/상담-출장.png",
   pressWeeklyPeople20260804: "/image/언론-주간인물-260804.png",
+  pressViva100HaeundaeYouthSpace: "/image/언론-브릿지경제.png",
   pressKukinewsYouthBudget20260828: "/image/활동-청년예산언박싱.png",
   pressBusanIlbo20260608: "/image/언론-부산일보-260608.png",
   pressKukjeSinmun20260603: "/image/언론-국제신문-260603.png",
@@ -148,6 +149,11 @@ export const imagePaths = {
   lectureCitizenLibraryWeek3: "/image/강의-시민도서관3주차.jpg",
   lectureCitizenLibraryWeek4: "/image/강의-시민도서관4주차.jpg",
   lectureChangwonYouthVision: "/image/강의-창원청년비전센터.jpg",
+  lectureSelfSupport260724: "/image/강의-자립지원전담기관260724.jpg",
+  lectureSelfSupport260916: "/image/강의-자립지원전담기관260916.jpg",
+  lectureBSquare260929: "/image/강의-비스퀘어260929.jpg",
+  lectureSelfSupport260930: "/image/강의-자립지원전담기관260930.jpg",
+  lectureYouthSpace261002: "/image/강의-청년채움공간261002.jpg",
 } as const;
 
 const STOCK = imagePaths;
@@ -388,6 +394,12 @@ export const siteImages = {
   },
 
   press: {
+    viva100HaeundaeYouthSpace: img(
+      imagePaths.pressViva100HaeundaeYouthSpace,
+      "브릿지경제 — 해운대 청년채움공간 입주기업 안윤정 법무사 기사",
+      1474,
+      1032,
+    ),
     weeklyPeople260804: img(
       imagePaths.pressWeeklyPeople20260804,
       "주간인물 — 지역 법조계에 활력이 되는 청년 법무사 안윤정",

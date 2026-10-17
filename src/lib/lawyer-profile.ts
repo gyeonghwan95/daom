@@ -229,10 +229,10 @@ export const lawyerLectures: LawyerLecture[] = [
   },
   {
     venue: "부산광역시 자립지원전담기관",
-    topic: "전세사기 예방·일상분쟁 생존법",
-    period: "2026.05 ~ 07",
+    topic: "전세사기 예방·일상분쟁·주거생활 법률",
+    period: "2026.05 ~ 09",
     audience: "청년·자립준비청년",
-    summary: "전·월세 계약 점검과 일상분쟁 대응을 사례 중심으로 안내.",
+    summary: "전·월세 계약 점검, 보증금 보호와 일상·주거 분쟁 대응을 사례 중심으로 안내.",
   },
   {
     venue: "해운대청년채움공간",
@@ -240,6 +240,13 @@ export const lawyerLectures: LawyerLecture[] = [
     period: "2025 ~ 2026",
     audience: "청년",
     summary: "주거계약, 디지털 법률, 창업법률, 형사 리스크 예방 등 청년 맞춤 특강.",
+  },
+  {
+    venue: "비스퀘어",
+    topic: "임팩트 스케일업 마스터 클래스 법인설립·등기 실무",
+    period: "2026.09.29",
+    audience: "사회적기업·초기 창업팀",
+    summary: "법인설립 전 의사결정, 주주·임원 구성, 정관과 변경등기 실무 안내.",
   },
   {
     venue: "부산청년 JOB카페",

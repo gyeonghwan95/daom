@@ -58,7 +58,7 @@ export function getPressOriginalLinkLabel(
 
 const pressArticles: PressArticle[] = [
   {
-    // 2026-10-14 원문 확인(제목·게시일·실명). 보도 사진·전문 대신 자체 사무소 사진과 짧은 요약만 쓴다.
+    // 2026-10-14 원문 확인(제목·게시일·실명).
     slug: "viva100-haeundae-youth-space-ahn-yoonjung",
     source: "브릿지경제",
     title:
@@ -67,7 +67,7 @@ const pressArticles: PressArticle[] = [
     publishedAtDisplay: "2026.10.14",
     reporter: "서진혁 기자",
     topic: "해운대 청년채움공간 입주기업",
-    image: siteImages.office.gallery[2],
+    image: siteImages.press.viva100HaeundaeYouthSpace,
     originalUrl: "https://www.viva100.com/article/20261014500921",
     seoDescription:
       "브릿지경제 보도. 해운대 청년채움공간에 입주한 다옴법무사사무소 안윤정 법무사의 개업 배경과 청년 대상 생활법률 활동을 소개한 기사입니다.",

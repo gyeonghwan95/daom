@@ -64,6 +64,30 @@ export const trackRecordActivities: TrackRecordActivity[] = [
     kind: "상담",
   },
   {
+    date: "2026.10.02",
+    title: "청년 전·월세 계약 생존법 특강",
+    organization: "해운대청년채움공간",
+    kind: "강의",
+  },
+  {
+    date: "2026.09.30",
+    title: "주거 분쟁 생존법 교육",
+    organization: "부산광역시 자립지원전담기관",
+    kind: "강의",
+  },
+  {
+    date: "2026.09.29",
+    title: "임팩트 스케일업 마스터 클래스 법인설립·등기 실무",
+    organization: "비스퀘어",
+    kind: "강의",
+  },
+  {
+    date: "2026.09.16",
+    title: "주거생활 법률 기초 교육",
+    organization: "부산광역시 자립지원전담기관",
+    kind: "강의",
+  },
+  {
     date: "2026.08.28",
     title: "젊은 실무자가 설명하고 청년이 묻고…43조 청년예산 ‘언박싱’",
     organization: "쿠키뉴스",
