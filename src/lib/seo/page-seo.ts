@@ -26,29 +26,28 @@ export const staticPageSeo = {
       "부산 부동산등기",
       "부산 법인등기",
       "부산 개인회생",
-      "부산 법무사",
     ],
   },
   cases: {
-    title: buildSeoTitle("사례 탐색기 — 부산 법무사 실무 사례"),
+    title: buildSeoTitle("사례 탐색기 — 상속·등기·회생 실무 사례"),
     description:
       "상속·부동산등기·법인등기·전세보증금·민사서류·회생파산 등 업무별 사례를 카테고리·상황·지역으로 찾아볼 수 있습니다.",
     path: "/cases",
-    keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사", "부산 법무사 사례"],
+    keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사", "업무 사례"],
   },
   blog: {
     title: buildSeoTitle("다옴법무사사무소 네이버 블로그 안내"),
     description:
       "다옴법무사사무소 공식 네이버 블로그 안내 페이지입니다. 최신 법률정보와 상담 사례는 네이버 블로그에서 확인하실 수 있습니다.",
     path: "/blog",
-    keywords: ["다옴법무사사무소", "부산 법무사", seoBrand.siteName],
+    keywords: ["다옴법무사사무소", "네이버 블로그", seoBrand.siteName],
   },
   reviews: {
     title: buildSeoTitle("네이버 고객후기"),
     description:
       "네이버 플레이스 방문자가 남긴 상속등기·부동산등기·법인등기·상담 후기.",
     path: "/reviews",
-    keywords: ["부산 법무사", "해운대 법무사", "고객후기", seoBrand.siteName],
+    keywords: ["네이버 후기", "해운대 법무사", "고객후기", seoBrand.siteName],
   },
   faq: {
     title: buildSeoTitle("등기·상속·회생 FAQ"),
@@ -69,7 +68,7 @@ export const staticPageSeo = {
     description:
       "언론 보도, 법률 강의, 기업·공공기관 협력, 정책 자문 등 대외 활동 기록.",
     path: "/media",
-    keywords: ["안윤정 법무사", "부산 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
+    keywords: ["안윤정 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
   },
   contact: {
     title: buildSeoTitle("상담 문의 · 해운대·센텀 예약"),
@@ -97,14 +96,14 @@ export const staticPageSeo = {
     description:
       "다옴법무사사무소 개인정보처리방침. 문의·상담 시 수집 항목, 이용 목적, 보유 기간, 제3자 제공, 파기, 정보주체 권리를 안내합니다.",
     path: "/개인정보처리방침",
-    keywords: ["개인정보처리방침", "부산 법무사", seoBrand.siteName],
+    keywords: ["개인정보처리방침", seoBrand.siteName],
   },
   terms: {
     title: buildSeoTitle("이용약관"),
     description:
       "다옴법무사사무소 웹사이트 이용약관. 법률정보 일반 안내의 범위, 상담 한계, 지적재산권, 책임의 제한을 안내합니다.",
     path: "/이용약관",
-    keywords: ["이용약관", "부산 법무사", seoBrand.siteName],
+    keywords: ["이용약관", seoBrand.siteName],
   },
   searchGuides: {
     title: buildSeoTitle("상황별 안내 — 추천·비용·서류·기한"),
@@ -128,42 +127,42 @@ export const serviceSeoMap: Record<
 > = {
   "inheritance-registration": {
     primaryKeyword: "부산 상속등기",
-    keywords: ["부산 상속등기", "해운대 법무사", "부산 법무사", "상속등기"],
+    keywords: ["부산 상속등기", "해운대 법무사", "상속등기"],
   },
   "inheritance-renunciation": {
     primaryKeyword: "부산 상속포기",
-    keywords: ["부산 상속포기", "부산 법무사", "상속포기", seoBrand.siteName],
+    keywords: ["부산 상속포기", "상속포기", seoBrand.siteName],
   },
   "qualified-acceptance": {
     primaryKeyword: "부산 한정승인",
-    keywords: ["부산 한정승인", "부산 상속등기", "부산 법무사", "한정승인"],
+    keywords: ["부산 한정승인", "부산 상속등기", "한정승인"],
   },
   "real-estate-registration": {
     primaryKeyword: "부산 부동산등기",
-    keywords: ["부산 부동산등기", "해운대 법무사", "부산 법무사", "부동산등기"],
+    keywords: ["부산 부동산등기", "해운대 법무사", "부동산등기"],
   },
   "ownership-transfer": {
     primaryKeyword: "부산 소유권이전등기",
-    keywords: ["부산 부동산등기", "부산 법무사", "소유권이전등기", "해운대 법무사"],
+    keywords: ["부산 부동산등기", "소유권이전등기", "해운대 법무사"],
   },
   "corporate-registration": {
     primaryKeyword: "부산 법인등기",
-    keywords: ["부산 법인등기", "센텀 법무사", "부산 법무사", "법인등기"],
+    keywords: ["부산 법인등기", "센텀 법무사", "법인등기"],
   },
   "company-establishment": {
     primaryKeyword: "부산 법인설립등기",
-    keywords: ["부산 법인등기", "센텀 법무사", "법인설립", "부산 법무사"],
+    keywords: ["부산 법인등기", "센텀 법무사", "법인설립"],
   },
   "director-change": {
     primaryKeyword: "부산 임원변경등기",
-    keywords: ["부산 법인등기", "센텀 법무사", "임원변경등기", "부산 법무사"],
+    keywords: ["부산 법인등기", "센텀 법무사", "임원변경등기"],
   },
   "personal-rehabilitation": {
     primaryKeyword: "부산 개인회생",
-    keywords: ["부산 개인회생", "부산 법무사", "개인회생", seoBrand.representative],
+    keywords: ["부산 개인회생", "개인회생", seoBrand.representative],
   },
   bankruptcy: {
     primaryKeyword: "부산 파산",
-    keywords: ["부산 파산", "부산 개인회생", "부산 법무사", "파산"],
+    keywords: ["부산 파산", "부산 개인회생", "파산"],
   },
 };

@@ -1,5 +1,6 @@
 import { resolveShareImage } from "@/lib/seo/share-image";
 import type { Metadata } from "next";
+import { homeModifiedOn } from "@/lib/home-content";
 import { sanitizePageKeywords } from "@/lib/seo/champion-query";
 import { isNoIndexPath, resolveCanonicalPath } from "@/lib/seo/index-policy";
 import { seoBrand } from "@/lib/seo/brand";
@@ -35,7 +36,7 @@ export const HOME_METADATA_TITLE = "부산 법무사 안윤정 | 다옴법무사
 export const HOME_H1 = "부산 법무사 안윤정";
 
 export const HOME_METADATA_DESCRIPTION =
-  "부산 법무사 다옴법무사사무소(해운대 센텀)입니다. 안윤정 법무사가 상속등기·상속포기·부동산등기·법인등기·개인회생·파산 서류 작성과 접수를 직접 상담·진행합니다. 평일 09:00–18:00, 방문은 예약제.";
+  "부산 법무사 다옴법무사사무소(해운대 센텀)입니다. 안윤정 법무사가 상속등기·부동산등기·법인등기·개인회생을 직접 진행합니다. 법원 무료상담과 사무소 의뢰를 구분해 안내합니다.";
 
 const INDEX_ROBOTS: Metadata["robots"] = {
   index: true,
@@ -143,11 +144,13 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
             `${seoBrand.siteName} - ${seoBrand.representative}`,
         },
       ],
-      ...(openGraphType === "article" && input.publishedTime
+      ...(input.publishedTime || input.modifiedTime
         ? {
-            publishedTime: input.publishedTime,
+            ...(input.publishedTime ? { publishedTime: input.publishedTime } : {}),
             modifiedTime: input.modifiedTime ?? input.publishedTime,
-            authors: input.authors ?? [seoBrand.representative],
+            ...(openGraphType === "article"
+              ? { authors: input.authors ?? [seoBrand.representative] }
+              : {}),
           }
         : {}),
     },
@@ -169,6 +172,7 @@ export const homeMetadata = createPageMetadata({
   path: "/",
   keywords: [
     "부산 법무사",
+    "부산법무사",
     seoBrand.siteName,
     seoBrand.representative,
     "상속등기",
@@ -177,4 +181,6 @@ export const homeMetadata = createPageMetadata({
     "개인회생",
   ],
   ogImage: DEFAULT_OG_IMAGE,
+  ogImageAlt: "부산 법무사 안윤정 · 다옴법무사사무소",
+  modifiedTime: `${homeModifiedOn}T00:00:00+09:00`,
 });

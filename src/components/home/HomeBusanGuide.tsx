@@ -71,8 +71,67 @@ export function HomeBusanGuide() {
     <section id="busan-guide" className="w-full bg-white py-14 md:py-24">
       <Container className="max-w-5xl">
         <p className="home-section-label text-navy-light">Busan guide</p>
-        <h2 className="section-heading mt-2">부산에서 내 사건은 어디서 처리하고, 비용은 어떻게 정해지나요</h2>
+        <h2 className="section-heading mt-2">부산 법무사, 공공 상담과 사무소 의뢰는 다릅니다</h2>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
+          네이버에서 부산 법무사를 검색하면 법원·시청 무료 법률상담이 먼저 보입니다. 짧은 질문은 그 창구로도 충분하고, 서류 작성과
+          등기소·법원 접수까지 맡길 때는 법무사 사무소가 필요합니다. 관할 등기소와 비용 항목은 아래 표에서 확인하세요.
+        </p>
+
+        <div className="mt-8">
+          <h3 className="text-lg font-bold text-navy">부산에서 법무사 상담을 받을 수 있는 곳</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-navy/75">
+            짧은 질문은 공공 상담 창구로도 충분합니다. 서류 작성과 등기소·법원 접수, 보정 대응까지 맡기려면 사건을 처음부터 끝까지 진행할
+            법무사 사무소가 필요합니다.
+          </p>
+          <div className="mt-4 rounded-xl border border-beige-dark">
+            <table className="block w-full text-left text-sm md:table">
+              <caption className="sr-only">부산 법무사 상담 창구 비교</caption>
+              <thead className="hidden bg-[var(--surface-muted)] text-navy/70 md:table-header-group">
+                <tr>
+                  <th scope="col" className="px-3 py-2 font-semibold">창구</th>
+                  <th scope="col" className="px-3 py-2 font-semibold">이용 방법</th>
+                  <th scope="col" className="px-3 py-2 font-semibold">이럴 때</th>
+                </tr>
+              </thead>
+              <tbody className="block divide-y divide-beige-dark md:table-row-group">
+                {CONSULT_PLACES.map((p) => (
+                  <tr key={p.place} className="block px-4 py-3 align-top md:table-row md:p-0">
+                    <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
+                      <a href={p.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                        {p.place}
+                      </a>
+                    </th>
+                    <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">{p.when}</td>
+                    <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
+                      <span className="font-medium text-navy md:hidden">이럴 때 · </span>
+                      {p.fit}
+                    </td>
+                  </tr>
+                ))}
+                <tr className="block bg-[var(--surface-muted)]/50 px-4 py-3 align-top md:table-row md:p-0">
+                  <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
+                    <Link href="/부산법무사상담" className="underline underline-offset-2">
+                      다옴법무사사무소
+                    </Link>
+                  </th>
+                  <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
+                    해운대구 센텀동로 200. 전화·카카오톡으로 먼저 상황을 남기고, 방문은 평일 09:00–18:00 예약 후 이용
+                  </td>
+                  <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
+                    <span className="font-medium text-navy md:hidden">이럴 때 · </span>
+                    상담 뒤 서류 작성·접수·보정까지 안윤정 법무사에게 맡길 때
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs leading-relaxed text-navy/60">
+            출처: {CONSULT_PLACES.map((p) => p.linkLabel).join(", ")} 안내(2026년 10월 확인). 일정은 기관 사정으로 바뀔 수 있으니 방문 전 각
+            기관에 확인하세요.
+          </p>
+        </div>
+
+        <p className="mt-12 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           법무사가 대신 접수하는 기관은 업무 종류와 부동산·주소 소재지로 정해집니다. 아래는 부산 기준이며, 정확한 접수처는 등기부와
           주소를 보고 상담 때 다시 확인합니다.
         </p>
@@ -144,60 +203,6 @@ export function HomeBusanGuide() {
               </Link>
             </p>
           </div>
-        </div>
-
-        <div className="mt-12">
-          <h3 className="text-lg font-bold text-navy">부산에서 법무사 상담을 받을 수 있는 곳</h3>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-navy/75">
-            짧은 질문은 공공 상담 창구로도 충분합니다. 서류 작성과 등기소·법원 접수, 보정 대응까지 맡기려면 사건을 처음부터 끝까지 진행할
-            법무사 사무소가 필요합니다.
-          </p>
-          <div className="mt-4 rounded-xl border border-beige-dark">
-            <table className="block w-full text-left text-sm md:table">
-              <caption className="sr-only">부산 법무사 상담 창구 비교</caption>
-              <thead className="hidden bg-[var(--surface-muted)] text-navy/70 md:table-header-group">
-                <tr>
-                  <th scope="col" className="px-3 py-2 font-semibold">창구</th>
-                  <th scope="col" className="px-3 py-2 font-semibold">이용 방법</th>
-                  <th scope="col" className="px-3 py-2 font-semibold">이럴 때</th>
-                </tr>
-              </thead>
-              <tbody className="block divide-y divide-beige-dark md:table-row-group">
-                {CONSULT_PLACES.map((p) => (
-                  <tr key={p.place} className="block px-4 py-3 align-top md:table-row md:p-0">
-                    <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
-                      <a href={p.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                        {p.place}
-                      </a>
-                    </th>
-                    <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">{p.when}</td>
-                    <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
-                      <span className="font-medium text-navy md:hidden">이럴 때 · </span>
-                      {p.fit}
-                    </td>
-                  </tr>
-                ))}
-                <tr className="block bg-[var(--surface-muted)]/50 px-4 py-3 align-top md:table-row md:p-0">
-                  <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
-                    <Link href="/부산법무사상담" className="underline underline-offset-2">
-                      다옴법무사사무소
-                    </Link>
-                  </th>
-                  <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
-                    해운대구 센텀동로 200. 전화·카카오톡으로 먼저 상황을 남기고, 방문은 평일 09:00–18:00 예약 후 이용
-                  </td>
-                  <td className="mt-1 block text-navy/85 md:mt-0 md:table-cell md:px-3 md:py-2.5">
-                    <span className="font-medium text-navy md:hidden">이럴 때 · </span>
-                    상담 뒤 서류 작성·접수·보정까지 안윤정 법무사에게 맡길 때
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-2 text-xs leading-relaxed text-navy/60">
-            출처: {CONSULT_PLACES.map((p) => p.linkLabel).join(", ")} 안내(2026년 10월 확인). 일정은 기관 사정으로 바뀔 수 있으니 방문 전 각
-            기관에 확인하세요.
-          </p>
         </div>
       </Container>
     </section>

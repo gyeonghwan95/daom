@@ -288,7 +288,7 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       className={
         compact
           ? "section-anchor scroll-mt-[calc(var(--header-height)+1rem)] w-full border-t border-beige-dark bg-cream/40 py-14 md:py-20"
-          : "section-anchor scroll-mt-[calc(var(--header-height)+1rem)] card-surface p-5 md:p-8"
+          : "section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
       }
       aria-labelledby="lawyer-eeat-heading"
       itemScope
@@ -302,14 +302,16 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
       <div className={compact ? "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8" : undefined}>
         <div className={compact ? "flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" : undefined}>
           <div>
-            <p className="home-section-label text-navy-light">Expert Profile</p>
+            <p className={compact ? "home-section-label text-navy-light" : "about-kicker"}>
+              {compact ? "Expert Profile" : "검증 기록"}
+            </p>
             <h2 id="lawyer-eeat-heading" className={compact ? "mt-2 text-2xl font-bold text-navy md:text-3xl" : "section-heading"}>
-              대표 {lawyerProfileMeta.fullTitle}
+              {compact ? `대표 ${lawyerProfileMeta.fullTitle}` : "출처가 확인된 이력"}
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
               {compact
                 ? `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 어떤 사람이 내 일을 맡는지 궁금하실 분들을 위해 자격·수상·위촉 이력을 아래에 모았습니다. 전체 이력은 프로필에서 이어집니다.`
-                : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 아래에 실무경력·자격·수상·위원 위촉·강의·언론 활동을 차례로 정리했습니다. 날짜별 위원회·강의 기록은 그 아래 표에서 이어서 보실 수 있습니다.`}
+                : `${lawyerProfileMeta.organization} 대표로 ${lawyerProfileMeta.officeArea}에서 법무사 업무를 수행합니다. 실무경력, 자격, 수상, 위원 위촉, 강의, 언론을 출처가 확인된 기록만 모았습니다. 날짜별 위원회·강의 표는 바로 아래에서 이어집니다.`}
             </p>
             {compact ? (
               <p className="mt-2 text-xs font-medium text-navy/55">
@@ -501,21 +503,6 @@ export function LawyerEeatProfile({ variant = "full" }: LawyerEeatProfileProps) 
             <EeatProfileFactList stacked={!compact} items={pressItems} />
           </EeatSection>
 
-          <EeatSection id="practice-areas" title="전문분야">
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {lawyerProfileMeta.practiceAreas.map((area) => (
-                <li
-                  key={area}
-                  className="rounded-full bg-beige px-3 py-1.5 text-sm font-medium text-navy"
-                >
-                  {area}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-sm leading-relaxed text-navy/65">
-              상속·부동산·법인·회생 분야 등기 및 신청 절차를 직접 상담·진행합니다.
-            </p>
-          </EeatSection>
             </>
           )}
         </div>

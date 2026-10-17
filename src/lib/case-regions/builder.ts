@@ -455,11 +455,11 @@ export function buildCaseRegionsHubPageData(): PageData {
     path: "/업무사례",
     category: "case",
     title: "업무 사례",
-    metaTitle: buildMetaTitle("업무 사례｜부산 법무사 지역·업무별 안내"),
+    metaTitle: buildMetaTitle("업무 사례｜지역·업무별 상속·등기·회생 안내"),
     metaDescription: buildMetaDescription(
-      "부산 법무사 업무 사례를 전체·지역별·업무별로 찾아보세요. 구·군·동·생활권 안내와 상속·부동산·법인·회생 사례를 연결합니다.",
+      "상속·부동산등기·법인등기·회생 업무 사례를 전체·지역별·업무별로 찾아보세요. 구·군·동·생활권 안내와 연결해 비슷한 상담 상황을 확인하실 수 있습니다.",
     ),
-    h1: "부산 법무사 업무 사례를 지역과 업무로 찾아보세요",
+    h1: "업무 사례를 지역과 업무로 찾아보세요",
     intro:
       "실제 상담 흐름을 참고할 수 있는 업무 사례와, 부산 구·군·동·생활권별 안내를 한곳에서 연결합니다.",
     breadcrumbs: [

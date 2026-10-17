@@ -7,7 +7,11 @@ export const PAGE_END_SECTIONS: SectionNavItem[] = [
 
 export const sectionNavByPath: Record<string, SectionNavItem[]> = {
   "/about": [
-    { id: "qualifications", label: "주요 경력 및 자격" },
+    { id: "process", label: "진행 순서" },
+    { id: "approach", label: "맡기는 이유" },
+    { id: "practice", label: "주요 업무" },
+    { id: "at-a-glance", label: "한눈에 보기" },
+    { id: "qualifications", label: "자격·수상" },
     { id: "community", label: "기업·지역사회" },
     { id: "external", label: "대외활동" },
     { id: "education", label: "생활 속 법률" },

@@ -127,13 +127,13 @@ function main() {
       title: busanLawyerHubMetaTitle,
       description: busanLawyerHubDescription,
       path: "/부산법무사",
-      keywords: ["부산 법무사", "해운대 법무사"],
+      keywords: ["부산 법무사", "상속등기"],
     }).keywords;
     const hubKwList = Array.isArray(hubKw) ? hubKw : [];
     if (hubKwList.includes("부산 법무사")) {
       add("error", "supporting hub still claims exact-query keywords");
     }
-    if (!hubKwList.includes("해운대 법무사")) {
+    if (!hubKwList.includes("상속등기")) {
       add("error", "hub lost non-champion keywords");
     }
     if (!hub.internalLinks.some((l) => l.href === "/")) {
@@ -221,7 +221,7 @@ function main() {
       }
     }
     if (slug === "부산법무사상담") {
-      if (page.h1 !== "부산 법무사 상담, 현재 상황부터 알려주세요") {
+      if (page.h1 !== "부산 법무사 상담") {
         add("error", "consult hub H1 lost city-wide consult intent");
       }
       if (!page.metaTitle.startsWith("부산 법무사 상담")) {

@@ -341,15 +341,39 @@
   "format": "jpeg",
   "bytes": 89309
  },
- "/image/강의-자립지원전담기관260930.jpg": {
-  "width": 2278,
-  "height": 1362,
+ "/image/강의-자립지원전담기관260724.jpg": {
+  "width": 5712,
+  "height": 4284,
   "format": "jpeg",
-  "bytes": 2138208,
+  "bytes": 3588864,
+  "og": {
+   "src": "/_img/image/강의-자립지원전담기관260724.og.jpg",
+   "width": 1200,
+   "height": 900,
+   "format": "jpeg"
+  }
+ },
+ "/image/강의-자립지원전담기관260916.jpg": {
+  "width": 2560,
+  "height": 1441,
+  "format": "jpeg",
+  "bytes": 1162698,
+  "og": {
+   "src": "/_img/image/강의-자립지원전담기관260916.og.jpg",
+   "width": 1200,
+   "height": 675,
+   "format": "jpeg"
+  }
+ },
+ "/image/강의-자립지원전담기관260930.jpg": {
+  "width": 2560,
+  "height": 1369,
+  "format": "jpeg",
+  "bytes": 2080928,
   "og": {
    "src": "/_img/image/강의-자립지원전담기관260930.og.jpg",
    "width": 1200,
-   "height": 717,
+   "height": 642,
    "format": "jpeg"
   }
  },

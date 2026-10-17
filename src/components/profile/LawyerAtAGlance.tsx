@@ -81,7 +81,12 @@ export function LawyerAtAGlance() {
   const awardThumb = resolveThumb(awards[0] ? eeatAwardThumbs[awards[0].name] : undefined);
 
   return (
-    <section aria-labelledby="at-a-glance-heading" className="break-keep" data-lawyer-at-a-glance>
+    <section
+      id="at-a-glance"
+      aria-labelledby="at-a-glance-heading"
+      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] break-keep"
+      data-lawyer-at-a-glance
+    >
       <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <h2 id="at-a-glance-heading" className="section-heading">
           안윤정 법무사, 한눈에 보기
@@ -89,32 +94,7 @@ export function LawyerAtAGlance() {
         <p className="text-sm text-navy/60">궁금한 항목을 누르면 자세한 내용으로 이어집니다</p>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-        <Link
-          href="#experience"
-          className="group col-span-2 row-span-2 flex flex-col overflow-hidden rounded-2xl border border-beige-dark bg-white no-underline transition hover:border-navy/25 hover:shadow-md md:col-span-2"
-        >
-          <div className="relative aspect-[4/3] w-full bg-beige/40">
-            <Image
-              src={siteImages.about.portrait.src}
-              alt={siteImages.about.portrait.alt}
-              fill
-              sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-          <div className="p-4">
-            <p className="text-xs font-bold tracking-wide text-navy-light">대표 법무사</p>
-            <p className="mt-1 text-lg font-bold text-navy">안윤정 법무사</p>
-            <p className="mt-1 text-[0.95rem] leading-relaxed text-navy/80">
-              부산 해운대 센텀에서 상속·부동산·법인등기와 개인회생·파산을 직접 상담하고, 서류 준비부터 마무리까지
-              곁에서 챙깁니다.
-            </p>
-            <span className="mt-2 inline-block text-sm font-semibold text-navy-light group-hover:text-navy">경력 보기 →</span>
-          </div>
-        </Link>
-
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4">
         <Tile href="#credentials" label={`주요 보유 자격 ${qualifications.length}개`} title={qualifications.map((q) => q.name).join(" · ")}>
           <Thumb src={siteImages.about.credentialInfographic.src} alt="안윤정 법무사 전문이력 인포그래픽" className="mt-3 aspect-[4/3] w-full" />
         </Tile>
@@ -153,7 +133,7 @@ export function LawyerAtAGlance() {
           ) : null}
         </Tile>
 
-        <Tile href="/office" label="사무소" title="해운대 센텀 사무소 · 방문 상담은 예약제" className="col-span-2 md:col-span-2">
+        <Tile href="/office" label="사무소" title="해운대 센텀 사무소 · 방문 상담은 예약제">
           <div className="mt-3 grid grid-cols-2 gap-1.5">
             <Thumb src={siteImages.office.exterior.src} alt="다옴법무사사무소 전경" className="aspect-[4/3]" />
             <Thumb src={siteImages.office.nameplate.src} alt="다옴법무사사무소 현판" className="aspect-[4/3]" />

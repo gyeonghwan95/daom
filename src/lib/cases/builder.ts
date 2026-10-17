@@ -13,7 +13,7 @@ export function buildCasesHubPageData(): PageData {
     path: "/cases",
     category: "core",
     title: "사례 탐색기",
-    metaTitle: buildMetaTitle("사례 탐색기 — 부산 법무사 실무 사례"),
+    metaTitle: buildMetaTitle("사례 탐색기 — 상속·등기·회생 실무 사례"),
     metaDescription: buildMetaDescription(
       "상속·부동산등기·법인등기·전세보증금·민사서류·회생파산 등 업무별 사례를 카테고리·상황·지역으로 찾아볼 수 있습니다. 부산 다옴법무사사무소 안윤정 법무사 실무 사례.",
     ),

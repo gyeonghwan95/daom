@@ -12,7 +12,8 @@ const categoryLabels: Record<LawyerQualificationCategory, string> = {
 };
 
 type LawyerQualificationsSectionProps = {
-  profileImage: SiteImageAsset;
+  profileImage?: SiteImageAsset;
+  showPortrait?: boolean;
 };
 
 function QualificationBadge({
@@ -79,52 +80,61 @@ function QualificationBadge({
 
 export function LawyerQualificationsSection({
   profileImage,
+  showPortrait = true,
 }: LawyerQualificationsSectionProps) {
   const licenses = lawyerQualificationItems.filter(
     (item) => item.category === "license",
   );
-  const education = lawyerQualificationItems.find(
+  const education = lawyerQualificationItems.filter(
     (item) => item.category === "education",
   );
   const awards = lawyerQualificationItems.filter(
     (item) => item.category === "award",
   );
+  const withPortrait = showPortrait && Boolean(profileImage);
 
   return (
     <section
       id="qualifications"
-      className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)] card-surface overflow-hidden p-0 md:grid md:grid-cols-5"
+      className={
+        withPortrait
+          ? "section-anchor scroll-mt-[calc(var(--header-height)+1rem)] card-surface overflow-hidden p-0 md:grid md:grid-cols-5"
+          : "section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+      }
     >
-      <div className="relative aspect-[4/5] md:col-span-2 md:aspect-auto md:min-h-full">
-        <SiteImage
-          {...profileImage}
-          fill
-          sizes="(max-width: 768px) 100vw, 320px"
-          priority
-          className="h-full w-full"
-        />
-      </div>
-      <div className="p-5 md:col-span-3 md:p-8">
+      {withPortrait && profileImage ? (
+        <div className="relative aspect-[4/5] md:col-span-2 md:aspect-auto md:min-h-full">
+          <SiteImage
+            {...profileImage}
+            fill
+            sizes="(max-width: 768px) 100vw, 320px"
+            className="h-full w-full"
+          />
+        </div>
+      ) : null}
+      <div className={withPortrait ? "p-5 md:col-span-3 md:p-8" : undefined}>
         <h2 className="section-heading">주요 경력 및 자격</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 md:text-base">
-          법무 실무와 교육, 지역사회 활동을 아우르는 다중 자격과 수상 이력을
-          보유하고 있습니다.
+          법원행정처 법무사 자격과 공인중개사·신용관리사·직업상담사, 교원자격·대학원
+          학력을 함께 보유하고 있습니다. 대한법무사협회장 표창도 아래에 정리했습니다.
         </p>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {licenses.map((item) => (
             <QualificationBadge key={item.title} {...item} />
           ))}
         </div>
 
-        {education ? (
-          <div className="mt-3">
-            <QualificationBadge {...education} />
+        {education.length > 0 ? (
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {education.map((item) => (
+              <QualificationBadge key={item.title} {...item} />
+            ))}
           </div>
         ) : null}
 
         {awards.length > 0 ? (
-          <div className="mt-3 space-y-3">
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {awards.map((item) => (
               <QualificationBadge key={item.title} {...item} />
             ))}

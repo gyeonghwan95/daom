@@ -1,5 +1,6 @@
 import { seoBrand } from "@/lib/seo/brand";
 import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_LAWYER_GUIDE_PATH, BUSAN_RENUNCIATION_CHAMPION_PATH } from "@/lib/seo/champion-query";
+import { homeModifiedOn } from "@/lib/home-content";
 import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
 import { busanInheritanceHubReviewedOn } from "@/lib/local-landing/inheritance-champion-modules";
 import { busanRenunciationHubReviewedOn } from "@/lib/local-landing/renunciation-hub-identity";
@@ -193,6 +194,7 @@ export function buildPersonSchema(): SchemaObject {
     "@id": schemaIds.person,
     name: seoBrand.representativeName,
     jobTitle: seoBrand.jobTitle,
+    description: `${seoBrand.representative} · ${seoBrand.siteName}. 상속등기·부동산등기·법인등기·개인회생을 직접 상담하고 진행합니다.`,
     worksFor: { "@id": schemaIds.organization },
     url: getCanonicalUrl("/about"),
     image: getAbsoluteAssetUrl(siteImages.about.profile.src),
@@ -269,6 +271,8 @@ export function buildWebPageSchema(input: {
   h1?: string;
   image?: string;
   dateModified?: string;
+  keywords?: string;
+  aboutName?: string;
   /** 기본 LegalService. 전문가 허브는 화면에 있는 인물(Person)을 about으로 둔다. */
   aboutId?: string;
 }): SchemaObject {
@@ -281,13 +285,21 @@ export function buildWebPageSchema(input: {
         ? PREFETCH_CHAMPION_PATHS.map((path) => getCanonicalUrl(path))
         : [];
   const reviewedOn =
-    input.path === BUSAN_LAWYER_GUIDE_PATH
-      ? busanLawyerHubReviewedOn
-      : input.path === BUSAN_RENUNCIATION_CHAMPION_PATH
-        ? busanRenunciationHubReviewedOn
-        : input.path === "/부산상속법무사"
-          ? busanInheritanceHubReviewedOn
-          : undefined;
+    input.path === "/"
+      ? homeModifiedOn
+      : input.path === BUSAN_LAWYER_GUIDE_PATH
+        ? busanLawyerHubReviewedOn
+        : input.path === BUSAN_RENUNCIATION_CHAMPION_PATH
+          ? busanRenunciationHubReviewedOn
+          : input.path === "/부산상속법무사"
+            ? busanInheritanceHubReviewedOn
+            : undefined;
+  const about = input.aboutName
+    ? [
+        { "@id": input.aboutId ?? schemaIds.legalService },
+        { "@type": "Thing", name: input.aboutName },
+      ]
+    : { "@id": input.aboutId ?? schemaIds.legalService };
 
   return compact({
     "@context": "https://schema.org",
@@ -297,9 +309,10 @@ export function buildWebPageSchema(input: {
     name: input.title,
     headline: input.h1 ?? input.title,
     description: input.description,
+    keywords: input.keywords,
     inLanguage: "ko-KR",
     isPartOf: { "@id": schemaIds.website },
-    about: { "@id": input.aboutId ?? schemaIds.legalService },
+    about,
     author: { "@id": schemaIds.person },
     reviewedBy: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },

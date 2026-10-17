@@ -1,13 +1,11 @@
-import {
-  getContentMeta,
-  getAllContent,
-} from "@/lib/content/loader";
+import { getContentMeta } from "@/lib/content/loader";
 import { getCaseRegionBySlug } from "@/lib/case-regions";
 import { getAllPageData } from "@/lib/pageData/registry";
 import type { PageData } from "@/lib/pageData/types";
 import { getPressArticle } from "@/lib/press-articles";
 import { siteConfig } from "@/lib/site";
 import { isNoIndexPath } from "@/lib/seo/index-policy";
+import { homeModifiedOn } from "@/lib/home-content";
 
 /** 색인 대상 path (레거시 리다이렉트·noindex 제외) — sitemap manifest 생성과 동일 기준 */
 export function isIndexablePagePath(path: string): boolean {
@@ -100,8 +98,7 @@ export function pathToLastModified(path: string): Date | undefined {
   }
 
   if (path === "/") {
-    const latest = getAllContent("blog")[0]?.date;
-    if (latest) return new Date(latest);
+    return new Date(`${homeModifiedOn}T00:00:00+09:00`);
   }
 
   return undefined;
