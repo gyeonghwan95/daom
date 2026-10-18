@@ -185,6 +185,58 @@
       "primary": "/업무사례/울산상속등기법무사",
       "protected": true,
       "supporting": ["/부산상속법무사", "/부산상속등기"]
+    },
+    "상속 법무사": {
+      "primary": "/상속",
+      "protected": true,
+      "supporting": ["/부산상속법무사", "/전국상속등기", "/상속등기비용", "/부산상속포기"],
+      "note": "National inheritance router. 2026-10-18 PC web-card absent. Do not clone 1:1 pages. Busan trio stays on /부산상속법무사."
+    },
+    "상속 법무사 추천": {
+      "primary": "/상속",
+      "protected": true,
+      "supporting": ["/부산상속전문법무사", "/부산상속법무사추천"],
+      "note": "Selection criteria section on /상속. No fake ranking or anonymous reviews."
+    },
+    "상속 법무사 비용": {
+      "primary": "/상속등기비용",
+      "protected": true,
+      "supporting": ["/부산법무사비용", "/상속포기비용", "/상속"],
+      "note": "Fee/수수료/수임료 share one URL. No invented 만원 amounts."
+    },
+    "상속 법무사 수수료": {
+      "primary": "/상속등기비용",
+      "protected": true,
+      "aliasOf": "상속 법무사 비용"
+    },
+    "상속 법무사 수임료": {
+      "primary": "/상속등기비용",
+      "protected": true,
+      "aliasOf": "상속 법무사 비용"
+    },
+    "상속 법무사 상담": {
+      "primary": "/상속",
+      "protected": true,
+      "supporting": ["/상속상담전준비서류와비용", "/부산법무사상담"],
+      "note": "Consult intent on national hub. Prep spoke is /상속상담전준비서류와비용. Not civic 무료상담."
+    },
+    "상속포기 법무사": {
+      "primary": "/부산상속포기",
+      "protected": true,
+      "supporting": ["/부산한정승인", "/상속", "/상속포기비용"],
+      "note": "Procedure is family-court, office in Busan. Do not create a national clone."
+    },
+    "상속등기 법무사": {
+      "primary": "/전국상속등기",
+      "protected": true,
+      "supporting": ["/부산상속등기", "/상속", "/업무사례/울산동구상속등기법무사"],
+      "note": "2026-10-18 ranking URL was Ulsan Dong-gu case. Keep that URL/title. National intent owner is /전국상속등기."
+    },
+    "부산 진로특강": {
+      "primary": "/법무사진로특강",
+      "protected": true,
+      "supporting": ["/강의문의", "/학교법률교육", "/법률강의"],
+      "note": "School/institution lecture inquiry. Verified record: 양산제일고 2026-05-21 only. Do not invent Busan high-school volume. CTA is not inheritance consult."
     }
   }
 }

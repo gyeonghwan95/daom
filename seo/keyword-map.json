@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-18",
   "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리. 2026-10-04: 서비스 유니버스 Wave 1 — 근저당 말소·공유물분할·개명·변제공탁·임차권등기·해산청산·집단·PF·가압류·집행문·불이행자명부·배당요구·등록부 정정·실종선고.",
   "queries": {
     "부산 법무사": {
@@ -520,6 +520,51 @@
       "owner": "/부산법인인수변경등기",
       "intent": "procedure",
       "supporting": ["/부산임원변경등기", "/부산대표이사변경등기"]
+    },
+    "상속 법무사": {
+      "owner": "/상속",
+      "intent": "national-router",
+      "supporting": ["/부산상속법무사", "/전국상속등기", "/상속등기비용"]
+    },
+    "상속 법무사 추천": {
+      "owner": "/상속",
+      "intent": "selection-criteria",
+      "supporting": ["/부산상속전문법무사", "/부산상속법무사추천"]
+    },
+    "상속 법무사 상담": {
+      "owner": "/상속",
+      "intent": "consult-prep",
+      "supporting": ["/상속상담전준비서류와비용", "/부산법무사상담"]
+    },
+    "상속 법무사 비용": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "supporting": ["/부산법무사비용", "/상속포기비용"]
+    },
+    "상속 법무사 수수료": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "aliasOf": "상속 법무사 비용"
+    },
+    "상속 법무사 수임료": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "aliasOf": "상속 법무사 비용"
+    },
+    "상속포기 법무사": {
+      "owner": "/부산상속포기",
+      "intent": "procedure",
+      "supporting": ["/부산한정승인", "/상속"]
+    },
+    "상속등기 법무사": {
+      "owner": "/전국상속등기",
+      "intent": "nationwide-registration",
+      "supporting": ["/부산상속등기", "/업무사례/울산동구상속등기법무사"]
+    },
+    "부산 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "school-lecture",
+      "supporting": ["/강의문의", "/학교법률교육"]
     }
   }
 }

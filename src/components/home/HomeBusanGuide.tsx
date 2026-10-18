@@ -40,29 +40,62 @@ const COSTS = [
 
 /**
  * '부산 법무사' 검색 결과 상단은 법원·시청 무료 법률상담 안내다. 같은 질문(어디서 법무사 상담을 받나)에
- * 공공 창구와 사무소 의뢰를 나란히 사실대로 보여 준다. 일정·장소는 2026-10-15 각 기관 페이지에서 확인한 범위만 쓴다.
+ * 공공 창구와 사무소 의뢰를 나란히 사실대로 보여 준다. 일정·장소는 2026-10-18 각 기관 페이지에서 확인한 범위만 쓴다.
  */
 const CONSULT_PLACES = [
   {
-    place: "부산법원종합청사 법률상담",
-    when: "평일 10:00–12:00 법무사 상담(13:00–15:00 변호사 상담). 2층 211·212호에 방문해 번호표 순서로 진행, 전화 예약 없음",
+    place: "부산법원종합청사 무료 법무사 상담",
+    when: "평일 10:00–12:00 법무사(13:00–15:00 변호사). 연제구 법원로 31, 2층 211·212호(일부 안내는 213호 포함). 번호표 순서, 전화 예약 없음. 고등·가정·회생 공식 안내가 같은 장소를 가리킵니다",
     fit: "절차를 짧게 물어보고 싶을 때",
     href: "https://busan.scourt.go.kr/bsgodung/civil/civil_03/lawadvice_01/index.html",
     linkLabel: "부산고등법원 법률상담안내",
   },
   {
     place: "부산시청 시민 무료법률상담실",
-    when: "시청 1층, 부산에 주소·거소가 있는 시민 대상. 사전예약 필수",
-    fit: "생활법률 전반을 상담받고 싶을 때",
+    when: "시청 1층. 부산에 주소·거소가 있는 시민. 화·목 10:00–12:00, 14:00–16:00. 사전예약 필수(법무담당관실 051-888-2297 등은 예약 전용, 그 번호로 상담하지 않음)",
+    fit: "생활법률 전반을 예약해 상담받고 싶을 때",
     href: "https://www.busan.go.kr/depart/freelegaladvice",
     linkLabel: "부산광역시 무료 법률상담",
   },
   {
     place: "부산지방법무사회",
-    when: "법무사 찾기, 법무사 보수표, 비용 산출 안내",
-    fit: "법무사 등록 여부와 보수 기준을 확인할 때",
+    when: "연제구 법원남로 9번길 6-1 법무사회관. 등록 법무사 단체 소식·연락처 안내. 개별 사건을 맡기는 창구는 아닙니다",
+    fit: "법무사 단체와 등록 여부를 확인할 때",
     href: "https://bsajar.kabl.kr/index.do",
     linkLabel: "부산지방법무사회",
+  },
+] as const;
+
+const FIRST_CHECK = [
+  {
+    work: "상속",
+    need: "사망일, 상속인 구성, 부동산·빚 유무",
+    href: "/부산상속법무사",
+    label: "상속 절차 안내",
+  },
+  {
+    work: "부동산등기",
+    need: "매매·증여 여부, 잔금일, 등기부",
+    href: "/부산부동산등기",
+    label: "부동산등기 안내",
+  },
+  {
+    work: "법인 신설",
+    need: "상호 후보, 본점, 자본금·임원 구성",
+    href: "/부산법인설립전문법무사",
+    label: "법인설립 안내",
+  },
+  {
+    work: "법인 변경",
+    need: "등기사항증명서, 바꿀 임원·본점·목적",
+    href: "/부산법인등기",
+    label: "법인등기 안내",
+  },
+  {
+    work: "개인회생·파산",
+    need: "주소지, 소득과 빚의 개요",
+    href: "/개인회생파산",
+    label: "회생·파산 안내",
   },
 ] as const;
 
@@ -126,8 +159,33 @@ export function HomeBusanGuide() {
             </table>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-navy/60">
-            출처: {CONSULT_PLACES.map((p) => p.linkLabel).join(", ")} 안내(2026년 10월 확인). 일정은 기관 사정으로 바뀔 수 있으니 방문 전 각
-            기관에 확인하세요.
+            출처: {CONSULT_PLACES.map((p) => p.linkLabel).join(", ")} · 부산가정법원·부산회생법원 법률상담안내(2026년 10월 18일 확인).
+            일정은 기관 사정으로 바뀔 수 있으니 방문 전 각 기관에 확인하세요. 공공기관 채용·입찰 공고는 사무소를 찾는 안내가 아닙니다.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-lg font-bold text-navy">맡길 때 먼저 알려 주시면 되는 것</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-navy/75">
+            공공 상담은 짧은 확인에 맞춰져 있습니다. 서류를 작성하고 접수·보정까지 맡기려면 아래만 있어도 1차 안내가 가능합니다.
+            업무명을 몰라도 됩니다.
+          </p>
+          <ul className="mt-4 divide-y divide-beige-dark rounded-xl border border-beige-dark">
+            {FIRST_CHECK.map((row) => (
+              <li key={row.work} className="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:items-baseline sm:justify-between">
+                <div>
+                  <p className="font-semibold text-navy">{row.work}</p>
+                  <p className="text-sm text-navy/75">{row.need}</p>
+                </div>
+                <Link href={row.href} className="text-sm font-medium text-navy-light underline underline-offset-4">
+                  {row.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm leading-relaxed text-navy/75">
+            문의 뒤에는 상황을 확인하고, 업무 범위·준비서류·보수와 공과금을 나눈 뒤, 맡기시면 작성·접수·보정을 진행합니다.
+            확정 금액이나 결과를 미리 약속하지 않습니다.
           </p>
         </div>
 

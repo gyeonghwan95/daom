@@ -6,9 +6,9 @@ import type { PageData, PageSection } from "@/lib/pageData/types";
  */
 export const INHERITANCE_HUB_REGIONAL = {
   slug: "전국상속등기",
-  metaTitle: "전국 상속등기 법무사｜지역이 달라도 한 곳에서 진행 | 다옴법무사사무소",
+  metaTitle: "상속등기 법무사｜관할 특례로 타지역 부동산도 한 곳에서 | 다옴법무사사무소",
   metaDescription:
-    "전국 상속등기 법무사 안내. 부동산 소재지와 상속인 거주지가 달라도 관할 특례를 검토해 부산 해운대 사무소 한 곳에서 진행합니다. 지역별 가정법원 차이와 방문이 필요한 경우를 함께 정리했습니다.",
+    "상속등기 법무사 안내. 지역 사례 페이지와 달리 관할 특례·서류·취득세 순서를 한곳에서 봅니다. 부동산 소재지와 상속인 거주지가 달라도 부산 해운대 사무소에서 검토합니다.",
   ogImage: {
     src: "/image/og/regional-inheritance-hub.jpg",
     alt: "다옴법무사사무소 안윤정 법무사",
@@ -33,6 +33,7 @@ const REGIONAL_SECTION: PageSection = {
     { href: "/업무사례/창원상속등기법무사", label: "창원 여러 구 부동산 일괄 신청" },
     { href: "/업무사례/거제상속등기법무사", label: "경남 거제시 상속등기" },
     { href: "/업무사례/울산상속등기법무사", label: "울산 아파트·토지 상속등기" },
+    { href: "/업무사례/울산동구상속등기법무사", label: "울산 동구 방어·일산 상속등기 사례" },
     { href: "/업무사례/대구상속등기법무사", label: "대구 부동산 비대면 상속등기" },
     { href: "/업무사례/포항상속등기법무사", label: "포항 상속등기 안내" },
     { href: "/업무사례/경주상속등기법무사", label: "경주 농지·임야 상속" },
@@ -52,7 +53,7 @@ const FAQ_REPLACEMENTS: Record<string, string> = {
 };
 
 const INTRO_FIRST =
-  "부동산이 부산에 있지 않아도 상속등기를 상담하고 진행할 수 있습니다. 상속등기는 관할 특례가 적용되는 범위에서 부동산 소재지와 다른 지역의 등기소를 통한 신청까지 이어갈 수 있어, 전국에 흩어진 부동산도 한 사무소에서 서류부터 신청까지 진행하는 경우가 많습니다. 방문이 필요한 단계가 있는지는 사건마다 먼저 확인해 안내합니다.";
+  "이 페이지는 지역을 정하지 않은 상속등기 법무사 안내입니다. 울산 동구 사례처럼 특정 구·동의 부동산 설명과 달리, 여기서는 관할 특례·서류·취득세 순서를 먼저 나눕니다. 부동산이 부산에 있지 않아도 상담할 수 있고, 상속등기는 관할 특례가 적용되는 범위에서 소재지와 다른 등기소 신청까지 검토합니다. 방문이 필요한 단계는 사건마다 확인합니다.";
 
 export function applyInheritanceHubRegional(page: PageData): PageData {
   if (page.slug !== INHERITANCE_HUB_REGIONAL.slug) return page;

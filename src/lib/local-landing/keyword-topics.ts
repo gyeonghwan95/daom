@@ -267,6 +267,9 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산상속포기", label: "부산 상속포기 — 3개월·후순위" },
       { href: "/부산상속재산분할법무사", label: "협의분할·단독명의" },
       { href: "/부산상속전문법무사", label: "법무사 선택 기준" },
+      { href: "/상속", label: "전국 상속 법무사 — 등기·포기 갈래" },
+      { href: "/전국상속등기", label: "부동산이 부산이 아닌 상속등기" },
+      { href: "/상속등기비용", label: "상속등기 비용·수수료·수임료" },
       { href: "/contact/inquiry?field=inheritance-registration", label: "내 상황에 필요한 상속절차 확인" },
     ],
     relatedFaqLinks: [

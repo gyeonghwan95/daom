@@ -131,6 +131,8 @@ export function LectureInquiryForm({
   const [delivery, setDelivery] = useState<(typeof TARGET_DELIVERY)[number]>("미정");
   const [feeBasis, setFeeBasis] = useState<(typeof TARGET_FEE_BASIS)[number]>("모름");
   const [schedule, setSchedule] = useState("");
+  const [grade, setGrade] = useState("");
+  const [venue, setVenue] = useState("");
   const [headcount, setHeadcount] = useState("");
   const [region, setRegion] = useState("");
   const [needPlan, setNeedPlan] = useState(false);
@@ -156,6 +158,8 @@ export function LectureInquiryForm({
         isTarget && length !== "미정" ? `강의 시간: ${length}` : "",
         isTarget && delivery !== "미정" ? `진행 방식: ${delivery}` : "",
         isTarget ? `기관 강사료 기준: ${feeBasis}` : "",
+        isTarget && grade.trim() ? `학년: ${grade.trim()}` : "",
+        isTarget && venue.trim() ? `장소: ${venue.trim()}` : "",
         schedule.trim() ? `희망 일정: ${schedule.trim()}` : "",
         headcount.trim() ? `예상 인원: ${headcount.trim()}` : "",
         region.trim() ? `지역: ${region.trim()}` : "",
@@ -476,6 +480,24 @@ export function LectureInquiryForm({
                 ))}
               </select>
             </Field>
+
+            <Field label="학년">
+              <input
+                className={fieldControlClass(false)}
+                value={grade}
+                onChange={(e) => setGrade(e.target.value)}
+                placeholder="예: 고2 전체, 중3 희망자"
+              />
+            </Field>
+
+            <Field label="장소">
+              <input
+                className={fieldControlClass(false)}
+                value={venue}
+                onChange={(e) => setVenue(e.target.value)}
+                placeholder="예: 강당, 교실 순환, 도서관 강연실"
+              />
+            </Field>
           </>
         ) : (
           <>
@@ -511,7 +533,7 @@ export function LectureInquiryForm({
             className={fieldControlClass(false)}
             value={schedule}
             onChange={(e) => setSchedule(e.target.value)}
-            placeholder="예: 9월 둘째 주, 평일 오후 2시간"
+            placeholder="예: 2026-11-12 3교시, 또는 11월 둘째 주 평일 오후"
           />
         </Field>
 
