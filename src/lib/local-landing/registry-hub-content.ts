@@ -78,10 +78,10 @@ export const registryHubSituations: RegistryHubSituation[] = [
   {
     title: "회사를 만들거나 변경할 예정입니다",
     links: [
+      { href: "/부산법인등기", label: "법인등기 전체" },
       { href: "/부산법인설립등기", label: "법인설립" },
       { href: "/부산임원변경등기", label: "임원변경" },
       { href: "/부산본점이전등기", label: "본점이전" },
-      { href: "/부산사업목적변경등기", label: "목적변경" },
     ],
   },
   {
@@ -265,6 +265,11 @@ export const registryHubFaqs: ServiceFaq[] = [
     question: "법인 임원변경도 등기업무인가요?",
     answer:
       "맞습니다. 대표이사·이사·감사 변경은 법인등기부에 기록하는 등기업무입니다. 취임·사임 등 변경이 생긴 날부터 2주 안에 등기해야 해서, 등기사항증명서와 변경 내용을 먼저 확인합니다.",
+  },
+  {
+    question: "법인등기만 볼 때도 이 페이지가 맞나요?",
+    answer:
+      "이 안내는 부동산·상속·법인 등기를 먼저 가르는 입구입니다. 이미 있는 회사의 임원·본점·목적 변경은 부산 법인등기 안내에서 이어서 확인하세요.",
   },
   {
     question: "부산 외 지역 부동산도 진행할 수 있나요?",

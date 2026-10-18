@@ -369,6 +369,11 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
         question: "협의서 후 등기는?",
         answer: "협의서·인감·세금 신고 후 관할 등기소에 상속등기를 접수합니다.",
       },
+      {
+        question: "상속등기·포기·한정승인과 이 페이지의 차이는?",
+        answer:
+          "이 안내는 공동상속인이 부동산 지분·단독명의를 어떻게 나눌지 정한 뒤의 협의분할과 등기입니다. 등기·포기·한정승인 중 무엇을 먼저 볼지는 부산 상속 법무사 안내에서 가릅니다.",
+      },
     ],
     relatedServiceLinks: [
       { href: "/부산상속법무사", label: "부산 상속 법무사" },

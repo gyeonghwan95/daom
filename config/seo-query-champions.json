@@ -34,16 +34,16 @@
       "supporting": ["/부산법률상담", "/상담"]
     },
     "부산 법무사 사무소": {
-      "primary": "/부산법무사무소",
+      "primary": "/",
       "protected": true,
-      "supporting": ["/office", "/location"],
-      "note": "NAP·방문은 /office. 검색 랜딩은 /부산법무사무소. 신규 URL 금지."
+      "supporting": ["/부산법무사무소", "/office", "/location"],
+      "note": "2026-10-18 PC web-card 4th is HOME. Do not retarget off HOME. NAP is /office."
     },
     "부산 상속": {
       "primary": "/부산상속법무사",
       "protected": true,
       "aliasOf": "부산 상속 법무사",
-      "note": "Broad inheritance router. Never champion /부산상속포기. Do not create /부산상속."
+      "note": "Intent router is /부산상속법무사. 2026-10-18 ranking URL is /부산상속재산분할법무사 — keep that title. Never champion /부산상속포기. Do not create /부산상속."
     },
     "부산법률상담": {
       "primary": "/부산법률상담",
@@ -52,30 +52,31 @@
       "note": "Civic vs 법무사 vs 변호사 router. Not the 법무사 상담 champion."
     },
     "부산 회사 법무사": {
-      "primary": "/부산법인법무사",
+      "primary": "/부산법인설립등기",
       "protected": true,
-      "supporting": ["/부산기업법무사", "/부산법인설립등기"],
-      "note": "Same provider intent as 부산 법인 법무사. Do not create /부산회사법무사."
+      "supporting": ["/부산법인법무사", "/부산법인설립전문법무사"],
+      "note": "2026-10-18 PC web-card 5th is /부산법인설립등기. Keep ranking URL. Fork to /부산법인법무사 for 운영 중 회사. Do not create /부산회사법무사."
     },
     "부산 법무사 비교": {
       "primary": "/부산법무사비교",
       "protected": true
     },
     "부산 등기 법무사": {
-      "primary": "/부산등기법무사",
+      "primary": "/",
       "protected": true,
-      "supporting": ["/부산부동산등기", "/부산상속등기", "/부산법인등기", "/부산보상등기"],
-      "note": "/부산등기전문법무사는 URL 유지·noindex·canonical to hub."
+      "supporting": ["/부산등기법무사", "/부산부동산등기", "/부산상속등기", "/부산법인등기"],
+      "note": "2026-10-18 PC web-card 2nd is HOME. Hub /부산등기법무사 stays classifier. Do not retitle HOME."
     },
     "부산 등기전문 법무사": {
-      "primary": "/부산등기법무사",
+      "primary": "/부산부동산등기전문법무사",
       "protected": true,
-      "aliasOf": "부산 등기 법무사"
+      "supporting": ["/부산등기법무사", "/부산부동산등기"],
+      "note": "2026-10-18 ranking URL is 부동산등기전문. /부산등기전문법무사는 noindex. Do not retitle ranking page."
     },
     "부산등기전문법무사": {
-      "primary": "/부산등기법무사",
+      "primary": "/부산부동산등기전문법무사",
       "protected": true,
-      "aliasOf": "부산 등기 법무사"
+      "aliasOf": "부산 등기전문 법무사"
     },
     "부산 상속포기 법무사": {
       "primary": "/부산상속포기",
@@ -91,8 +92,8 @@
     "부산 상속 법무사": {
       "primary": "/부산상속법무사",
       "protected": true,
-      "supporting": ["/부산상속등기", "/부산상속포기", "/부산한정승인", "/부산상속전문법무사", "/상속"],
-      "note": "INHERITANCE DECISION HUB. Provider-selection is /부산상속전문법무사 (indexable)."
+      "supporting": ["/부산상속재산분할법무사", "/부산상속등기", "/부산상속포기", "/부산한정승인", "/부산상속전문법무사", "/상속"],
+      "note": "Intent hub. 2026-10-18 ranking URL is /부산상속재산분할법무사 — do not retitle it. Provider-selection is /부산상속전문법무사."
     },
     "부산 상속 전문 법무사": {
       "primary": "/부산상속전문법무사",
@@ -110,14 +111,16 @@
       "supporting": ["/부산상속법무사"]
     },
     "부산 법인 법무사": {
-      "primary": "/부산법인법무사",
-      "protected": true
+      "primary": "/",
+      "protected": true,
+      "supporting": ["/부산법인법무사"],
+      "note": "2026-10-18 PC web-card 2nd is HOME. Do not retitle HOME. /부산법인법무사 stays operations spoke."
     },
     "부산 법인설립 법무사": {
-      "primary": "/부산법인설립등기",
+      "primary": "/부산법인설립전문법무사",
       "protected": true,
-      "supporting": ["/부산법인법무사", "/부산법인등기"],
-      "note": "법인 신설·정관·임원·자본금 준비 의도는 /부산법인설립등기만 대표한다. 종합 법인 업무와 변경등기 페이지는 supporting으로 유지한다."
+      "supporting": ["/부산법인설립등기", "/부산법인법무사", "/부산법인등기"],
+      "note": "2026-10-18 ranking URL is 설립전문. Keep that title. Procedure depth stays on /부산법인설립등기."
     },
     "부산 개인회생 법무사": {
       "primary": "/부산개인회생법무사",
@@ -142,16 +145,14 @@
       "supporting": ["/부산상속법무사", "/부산상속포기", "/한정승인비용"]
     },
     "부산 부동산 법무사": {
-      "primary": "/부산부동산등기",
+      "primary": "/",
       "protected": true,
       "supporting": [
-        "/부산부동산등기법무사",
-        "/부산부동산등기전문",
-        "/부동산등기",
-        "/부산소유권이전등기",
-        "/부산등기법무사"
+        "/부산부동산등기",
+        "/부산부동산등기전문법무사",
+        "/부산소유권이전등기"
       ],
-      "note": "existing /부산부동산등기 is PRIMARY. Do not create /부산부동산법무사."
+      "note": "2026-10-18 PC web-card 1st is HOME. Do not retarget. /부산부동산등기 remains procedure hub. Do not create /부산부동산법무사."
     },
     "부산 부동산등기 법무사": {
       "primary": "/부산부동산등기",
@@ -161,13 +162,14 @@
     "부산 법인등기 법무사": {
       "primary": "/부산법인등기",
       "protected": true,
-      "supporting": ["/부산법인법무사", "/법인설립"],
-      "note": "/부산법인전문법무사는 URL 유지·noindex·canonical to /부산법인등기."
+      "supporting": ["/부산등기법무사", "/부산법인법무사"],
+      "note": "2026-10-18 ranking URL is /부산등기법무사 (too wide). Intent owner is /부산법인등기. Do not retitle the 등기 hub. /부산법인전문법무사는 noindex."
     },
     "부산 법인전문 법무사": {
-      "primary": "/부산법인등기",
+      "primary": "/부산법인설립전문법무사",
       "protected": true,
-      "aliasOf": "부산 법인등기 법무사"
+      "supporting": ["/부산법인등기", "/부산법인법무사"],
+      "note": "2026-10-18 PC web-card 1st is 설립전문. Preserve that URL/title. Fork 설립 vs 변경. Do not retitle 법인등기 to 법인전문."
     },
     "해운대구 법무사": {
       "primary": "/해운대법무사",

@@ -74,7 +74,7 @@ export function HomeBusanGuide() {
         <h2 className="section-heading mt-2">부산 법무사, 공공 상담과 사무소 의뢰는 다릅니다</h2>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/75 md:text-base">
           네이버에서 부산 법무사를 검색하면 법원·시청 무료 법률상담이 먼저 보입니다. 짧은 질문은 그 창구로도 충분하고, 서류 작성과
-          등기소·법원 접수까지 맡길 때는 법무사 사무소가 필요합니다. 관할 등기소와 비용 항목은 아래 표에서 확인하세요.
+          등기소·법원 접수까지 맡길 때는 법무사 사무소가 필요합니다. 사무소는 부산 해운대구 센텀에 있습니다. 관할 등기소와 비용 항목은 아래 표에서 확인하세요.
         </p>
 
         <div className="mt-8">
