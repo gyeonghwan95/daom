@@ -39,6 +39,7 @@ import {
 import { getLectureContent } from "@/lib/lectures/content";
 import { getLectureTargetSpec } from "@/lib/lectures/target-specs";
 import { LectureTargetLayout } from "@/components/lectures/LectureTargetLayout";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { buildLectureTrackRecordSummary } from "@/lib/lectures/history-helpers";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
@@ -1021,11 +1022,15 @@ function RelatedLinks({ content }: { content: LecturePageContent }) {
     ...content.relatedLectureLinks,
     ...content.relatedServiceLinks,
   ];
-  if (!links.length) return null;
   return (
-    <ContentSection id="related" title="관련 안내">
-      <RelatedContentGrid links={links.slice(0, 12)} />
-    </ContentSection>
+    <>
+      <PageSerpCarousel path={`/${content.slug}`} />
+      {links.length ? (
+        <ContentSection id="related" title="관련 안내">
+          <RelatedContentGrid links={links.slice(0, 12)} />
+        </ContentSection>
+      ) : null}
+    </>
   );
 }
 

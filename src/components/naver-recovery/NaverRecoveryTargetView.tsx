@@ -22,6 +22,7 @@ import type {
   NrInline,
 } from "@/lib/naver-recovery/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -129,6 +130,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         ))}
 
         <HubChildLinks path={page.path} />
+
+        <PageSerpCarousel path={page.path} />
 
         <PageTextCardFigure path={page.path} />
         <PageGallery path={page.path} />

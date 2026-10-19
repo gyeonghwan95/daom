@@ -43,7 +43,7 @@
       "primary": "/부산상속법무사",
       "protected": true,
       "aliasOf": "부산 상속 법무사",
-      "note": "Intent router is /부산상속법무사. 2026-10-19 PC webdocs ranked /부산상속포기 (moved from 재산분할). Do not retitle or 301 포기. Never champion /부산상속포기. Do not create /부산상속."
+      "note": "Intent router is /부산상속법무사. 2026-10-20 PC still shows /부산상속포기 for this query. Do not retitle or 301 포기. Never champion /부산상속포기. Do not create /부산상속. Hub H1/lead is the 갈래 chooser only."
     },
     "부산법률상담": {
       "primary": "/부산법률상담",
@@ -164,7 +164,7 @@
       "primary": "/부산법인등기",
       "protected": true,
       "supporting": ["/부산등기법무사", "/부산법인법무사"],
-      "note": "2026-10-19 PC webdocs 2nd is still /부산등기법무사 (too wide). Intent owner is /부산법인등기. Do not retitle the 등기 hub. /부산법인전문법무사는 noindex."
+      "note": "2026-10-20 PC our first URL is still /부산등기법무사. Intent owner is /부산법인등기 (H1 now 변경·기한). Do not retitle the 등기 hub. Strip 등기전문 from hub body. /부산법인전문법무사는 noindex."
     },
     "부산 법인전문 법무사": {
       "primary": "/부산법인설립전문법무사",
@@ -191,7 +191,7 @@
       "primary": "/상속",
       "protected": true,
       "supporting": ["/부산상속법무사", "/전국상속등기", "/상속등기비용", "/부산상속포기"],
-      "note": "National inheritance router. 2026-10-18 PC web-card absent. Do not clone 1:1 pages. Busan trio stays on /부산상속법무사."
+      "note": "National inheritance router. 2026-10-20 PC Place #1 다옴 but absent from webdocs (geo homepages 대전/수원). Do not clone 1:1 pages. Busan trio stays on /부산상속법무사."
     },
     "법무사 상속": {
       "primary": "/상속",
@@ -208,7 +208,7 @@
       "primary": "/상속등기비용",
       "protected": true,
       "supporting": ["/부산법무사비용", "/상속포기비용", "/상속"],
-      "note": "Fee/수수료/수임료 share one URL. 2026-10-19: 수수료 webdocs 2nd, 수임료 3rd, 비용 not in visible webdocs. Do not retitle. No invented 만원 amounts."
+      "note": "Fee/수수료/수임료 share one URL. 2026-10-20: 수수료 webdocs 2nd, 수임료 3rd, 비용 absent (SERP is 포기-비용 articles). First screen must say 등기 견적 ≠ 포기 실비. Do not retitle. No invented 만원 amounts."
     },
     "상속 법무사 수수료": {
       "primary": "/상속등기비용",
@@ -236,7 +236,7 @@
       "primary": "/전국상속등기",
       "protected": true,
       "supporting": ["/부산상속등기", "/상속", "/업무사례/울산동구상속등기법무사"],
-      "note": "2026-10-18 ranking URL was Ulsan Dong-gu case. Keep that URL/title. National intent owner is /전국상속등기."
+      "note": "2026-10-20 PC webdocs 3rd is still /업무사례/울산동구상속등기법무사. Keep that URL/title. National intent owner is /전국상속등기. Do not 301 the case page."
     },
     "부산 진로특강": {
       "primary": "/법무사진로특강",

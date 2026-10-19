@@ -101,6 +101,7 @@
     "audit:page-images": "npx --yes tsx scripts/generate-page-image-inventory.ts && npx --yes tsx scripts/audit-page-images.ts",
     "check:og-images": "npx --yes tsx scripts/check-og-images.ts",
     "check:carousel-images": "npx --yes tsx scripts/check-carousel-images.ts",
+    "audit:serp-carousel": "npx --yes tsx scripts/audit-serp-carousel.ts",
     "generate:carousel-images": "npx --yes tsx scripts/generate-carousel-images.ts",
     "thumbnails:generate": "npx --yes tsx scripts/generate-page-thumbnails.ts",
     "thumbnails:validate": "npx --yes tsx scripts/validate-page-thumbnails.ts",

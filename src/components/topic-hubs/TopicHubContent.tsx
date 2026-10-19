@@ -28,6 +28,7 @@ import {
 } from "@/lib/inheritance/journey";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
 import { ComparisonTable } from "@/components/readability";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type TopicHubContentProps = {
   page: TopicHubPage;
@@ -254,6 +255,8 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
           </Link>
         </div>
       </ContentBlock>
+
+      <PageSerpCarousel path={page.path} />
 
       <RelatedLinks title="관련 업무 허브" links={page.relatedHubLinks} />
 

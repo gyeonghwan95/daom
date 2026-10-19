@@ -51,9 +51,8 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { partitionPageIntro, uniqueParagraphs } from "@/lib/pageData/template-helpers";
 import type { PageData, PageSection } from "@/lib/pageData/types";
-import { resolveSerpImage, getRelatedContentCarousel } from "@/lib/seo/page-visuals";
-import { RelatedContentCarousel } from "@/components/carousel/RelatedContentCarousel";
-import { SeoCarouselJsonLd } from "@/components/carousel/SeoCarouselJsonLd";
+import { resolveSerpImage } from "@/lib/seo/page-visuals";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
 import { NeighborhoodJurisdiction } from "@/components/seo/RegionCoverageSection";
@@ -426,29 +425,9 @@ export function PageDataTemplate({
 
       {conversionBlock("post-faq")}
 
-      {(() => {
-        // 상단 선택 카드(같은 목록)를 이미 보여 주는 페이지는 하단 반복·ItemList 중복을 피한다
-        if (page.path === "/부산법인법무사" || page.path === "/부산부동산등기") return null;
-        const relatedCarousel = getRelatedContentCarousel(
-          page.path,
-          isInheritanceSurgeryTarget ? 4 : 8,
-        );
-        if (!relatedCarousel) return null;
-        return (
-          <>
-            <RelatedContentCarousel
-              heading={relatedCarousel.heading}
-              items={relatedCarousel.items}
-              className="mt-8"
-            />
-            <SeoCarouselJsonLd
-              items={relatedCarousel.items}
-              pagePath={page.path}
-              name={relatedCarousel.heading}
-            />
-          </>
-        );
-      })()}
+      {page.path === "/부산법인법무사" || page.path === "/부산부동산등기" ? null : (
+        <PageSerpCarousel path={page.path} />
+      )}
 
       <ContentSection id="related" title="관련 페이지">
         <RelatedContentGrid links={page.internalLinks} />

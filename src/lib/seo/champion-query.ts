@@ -95,7 +95,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/부산법인설립전문법무사",
-    compactQueries: ["부산법인전문법무사"],
+    compactQueries: ["부산법인전문법무사", "부산법인설립전문법무사"],
   },
   {
     path: "/부산상속법무사",

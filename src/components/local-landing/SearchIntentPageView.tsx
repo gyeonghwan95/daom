@@ -19,6 +19,7 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import {
   ArticleSummary,
@@ -408,6 +409,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
           />
         </ContentSection>
       )}
+
+      <PageSerpCarousel path={page.path} />
 
       <ContentSection id="related-services" title="관련 서비스">
         <RelatedContentGrid links={content.relatedServiceLinks} />

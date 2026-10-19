@@ -7,6 +7,7 @@ import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { HubLawyerPortrait } from "@/components/local-landing/HubLawyerPortrait";
 import {
   ChecklistBox,
@@ -342,6 +343,8 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={registryHubFaqs} />
       </ContentSection>
+
+      <PageSerpCarousel path={page.path} />
 
       <ContentSection id="related" title="등기 종류별 안내">
         <RelatedContentGrid links={registryHubInternalLinks} columns={2} />

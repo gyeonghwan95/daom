@@ -36,6 +36,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type BusanLawyerHubPageViewProps = {
   page: PageData;
@@ -323,6 +324,8 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
           </Link>
         </p>
       </ContentSection>
+
+      <PageSerpCarousel path={page.path} />
 
       <ContentSection id="districts" title="구·군 생활권 안내">
         <ProseParagraphs

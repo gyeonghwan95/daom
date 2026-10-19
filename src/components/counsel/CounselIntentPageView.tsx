@@ -22,6 +22,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { CounselScopeLevel } from "@/lib/counsel-intent/types";
 import { siteImages } from "@/lib/site-images";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 const SCOPE_LABELS: Record<CounselScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -277,6 +278,8 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
           </div>
         ) : null}
       </ContentSection>
+
+      <PageSerpCarousel path={page.path} />
 
       <ContentSection id="related" title="관련 기존 페이지">
         <RelatedContentGrid links={content.relatedLinks} />

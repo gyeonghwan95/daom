@@ -17,6 +17,7 @@ import { getPriorityBreadcrumbs } from "@/lib/priority-seo";
 import type { PrioritySeoSpec } from "@/lib/priority-seo/types";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -115,6 +116,8 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
         ))}
 
         <HubChildLinks path={spec.path} />
+
+        <PageSerpCarousel path={spec.path} />
 
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />

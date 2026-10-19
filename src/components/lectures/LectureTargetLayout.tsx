@@ -18,6 +18,7 @@ import type {
   LectureTargetCard,
   LectureTargetSpec,
 } from "@/lib/lectures/target-types";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type LectureTargetLayoutProps = {
   content: LecturePageContent;
@@ -324,6 +325,8 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />
       </ContentSection>
+
+      <PageSerpCarousel path={spec.path} />
 
       <ContentSection id="related" title="함께 보는 강의 안내">
         <RelatedContentGrid links={spec.related} variant="cards" />

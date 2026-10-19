@@ -12,6 +12,7 @@ import {
 import { getCarouselManifestItemByUrl } from "@/data/seo/carousel-image-manifest";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { getFieldPhotoVisual } from "@/data/seo/field-photo-visuals";
+import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
 
 export type RelatedCardItem = SeoCarouselItem & {
@@ -41,6 +42,16 @@ export function resolveSerpImage(pageUrl: string):
   | undefined {
   const v = getPageVisual(pageUrl);
   if (!v) {
+    const owned = getSerpOwnedImage(pageUrl);
+    if (owned) {
+      return {
+        src: encodePublicSrc(owned.src),
+        alt: owned.alt,
+        width: owned.width,
+        height: owned.height,
+        caption: owned.caption,
+      };
+    }
     // 초상 기반 visual이 없는 페이지만: 주제와 같은 실제 현장·업무 사진(field-photo-visuals)
     const field = getFieldPhotoVisual(pageUrl);
     if (!field) return undefined;
@@ -105,7 +116,7 @@ const CATEGORY_BY_PATH: readonly [RegExp, string][] = [
   [/상속|한정승인|유증|유언/, "inheritance"],
   [/회생|파산/, "rehabilitation"],
   [/전세|임차권|보증금/, "lease"],
-  [/법인|임원|본점|정관|사단|재단|협동조합|회사/, "corporate"],
+  [/법인|임원|본점|정관변경|사업목적|사단|재단|협동조합|회사/, "corporate"],
   [/등기|소유권|증여|근저당|매매|부동산/, "realestate"],
 ];
 function categoryFromPath(url: string): string | undefined {

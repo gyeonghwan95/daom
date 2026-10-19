@@ -1,0 +1,196 @@
+/**
+ * 네이버 이미지형 하위페이지 제안(캐러셀) 리졸버.
+ * 화면 카드와 ItemList JSON-LD가 같은 순서·같은 이미지를 쓴다.
+ */
+
+import { getPageRelation } from "@/data/seo/page-relations";
+import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
+import {
+  getExplicitSerpCarouselPack,
+  HOME_SERP_CAROUSEL_URLS,
+} from "@/data/seo/serp-carousel-packs";
+import { getPageVisual } from "@/data/seo/page-visuals";
+import {
+  BUSAN_DISTRICT_HUBS,
+  hubPathForRegionKey,
+  isBusanDistrictHubPath,
+} from "@/lib/geo/busan-district-hubs";
+import { getLocalLandingConfig } from "@/lib/local-landing/config";
+import { getLectureTargetOgImage } from "@/lib/lectures/target-specs";
+import { encodePublicSrc } from "@/lib/encode-public-src";
+import { isNoIndexPath } from "@/lib/seo/index-policy";
+import {
+  getRelatedContentCarousel,
+  resolveSerpImage,
+  toRelatedCardItem,
+  type RelatedCardItem,
+} from "@/lib/seo/page-visuals";
+
+const MIN_ITEMS = 4;
+const MAX_ITEMS = 7;
+
+export type SerpCarouselPack = {
+  heading: string;
+  description?: string;
+  items: RelatedCardItem[];
+};
+
+function normalizePath(raw: string): string {
+  const path = raw.split("?")[0]?.trim() || "/";
+  if (path === "") return "/";
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
+function cardTitle(url: string): string {
+  const owned = getSerpOwnedImage(url);
+  if (owned) return owned.title;
+  const visual = getPageVisual(url);
+  if (visual) return visual.pageTitle;
+  const district = BUSAN_DISTRICT_HUBS.find((hub) => hub.href === url);
+  if (district) return district.label;
+  return url.replace(/^\//, "").replace(/법무사$/, " 법무사");
+}
+
+function toCard(url: string): RelatedCardItem | null {
+  if (isNoIndexPath(url)) return null;
+  const visual = getPageVisual(url);
+  if (visual) return toRelatedCardItem(visual);
+
+  const owned = getSerpOwnedImage(url);
+  const lecture = getLectureTargetOgImage(url);
+  const serp = resolveSerpImage(url);
+  const src = owned?.src ?? lecture?.src ?? serp?.src;
+  if (!src) return null;
+
+  return {
+    id: url,
+    title: cardTitle(url),
+    href: url,
+    image: encodePublicSrc(src),
+    imageAlt: owned?.alt ?? lecture?.alt ?? serp?.alt ?? cardTitle(url),
+    category: lecture ? "lecture" : "local",
+    headline: owned?.headline ?? cardTitle(url),
+    textPosition: "center-low",
+    representativeImage: encodePublicSrc(src),
+    textBaked: false,
+  };
+}
+
+function pushUrl(urls: string[], href: string, current: string) {
+  const path = normalizePath(href);
+  if (!path || path === current) return;
+  if (isNoIndexPath(path)) return;
+  if (urls.includes(path)) return;
+  urls.push(path);
+}
+
+function districtRotation(current: string): string[] {
+  const ordered = BUSAN_DISTRICT_HUBS.map((hub) => hub.href);
+  const index = ordered.indexOf(current);
+  if (index < 0) return [...HOME_SERP_CAROUSEL_URLS];
+  return [...ordered.slice(index + 1), ...ordered.slice(0, index)];
+}
+
+const SPOKE_TO_GU: Record<string, string> = {
+  "/정관법무사": "/기장군법무사",
+  "/일광읍법무사": "/기장군법무사",
+  "/기장읍법무사": "/기장군법무사",
+  "/오시리아법무사": "/기장군법무사",
+  "/명지법무사": "/강서구법무사",
+  "/화명동법무사": "/북구법무사",
+  "/덕천동법무사": "/북구법무사",
+  "/구포동법무사": "/북구법무사",
+  "/센텀법무사": "/해운대법무사",
+  "/재송동법무사": "/해운대법무사",
+};
+
+function neighborhoodUrls(current: string): string[] {
+  const slug = current.replace(/^\//, "");
+  const config = getLocalLandingConfig(slug);
+  const urls: string[] = [];
+  const spokeGu = SPOKE_TO_GU[current];
+  if (spokeGu) pushUrl(urls, spokeGu, current);
+  if (!config) return urls;
+  const linked = (config.linkedNeighborhoodSlugs ?? []).map((item) => `/${item}`);
+  const parentGu = hubPathForRegionKey(config.regionKey);
+  if (parentGu && parentGu.href !== current) pushUrl(urls, parentGu.href, current);
+  for (const href of linked) pushUrl(urls, href, current);
+  return urls;
+}
+
+function candidateUrls(current: string): { heading: string; description?: string; urls: string[] } {
+  const explicit = getExplicitSerpCarouselPack(current);
+  if (explicit) {
+    return {
+      heading: explicit.heading,
+      description: explicit.description,
+      urls: [...explicit.urls],
+    };
+  }
+
+  if (isBusanDistrictHubPath(current)) {
+    const urls: string[] = [];
+    for (const href of neighborhoodUrls(current)) pushUrl(urls, href, current);
+    pushUrl(urls, "/부산공탁", current);
+    for (const href of districtRotation(current)) pushUrl(urls, href, current);
+    return {
+      heading: "다른 구·군·업무 안내",
+      urls,
+    };
+  }
+
+  const nearby = neighborhoodUrls(current);
+  if (nearby.length > 0) {
+    const urls = [...nearby];
+    pushUrl(urls, "/부산공탁", current);
+    for (const href of HOME_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
+    return { heading: "이 생활권에서 이어서 볼 안내", urls };
+  }
+
+  const relation = getPageRelation(current);
+  if (relation?.relatedPages.length) {
+    const urls: string[] = [];
+    if (relation.parentHub) pushUrl(urls, relation.parentHub, current);
+    for (const href of relation.relatedPages) pushUrl(urls, href, current);
+    for (const href of HOME_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
+    return { heading: "함께 확인할 안내", urls };
+  }
+
+  const visualFallback = getRelatedContentCarousel(current, MAX_ITEMS);
+  return {
+    heading: visualFallback?.heading ?? "함께 확인할 업무",
+    urls: visualFallback?.items.map((item) => item.href) ?? [...HOME_SERP_CAROUSEL_URLS],
+  };
+}
+
+function uniqueCards(urls: string[], current: string): RelatedCardItem[] {
+  const seenUrls = new Set<string>([current]);
+  const seenImages = new Set<string>();
+  const items: RelatedCardItem[] = [];
+  for (const url of urls) {
+    const path = normalizePath(url);
+    if (seenUrls.has(path)) continue;
+    const card = toCard(path);
+    if (!card) continue;
+    const imageKey = card.representativeImage ?? card.image;
+    if (seenImages.has(imageKey)) continue;
+    seenUrls.add(path);
+    seenImages.add(imageKey);
+    items.push(card);
+    if (items.length >= MAX_ITEMS) break;
+  }
+  return items;
+}
+
+export function getSerpCarouselPack(pageUrl: string): SerpCarouselPack | null {
+  const current = normalizePath(pageUrl);
+  if (isNoIndexPath(current)) return null;
+  const candidate = candidateUrls(current);
+  const items = uniqueCards(candidate.urls, current);
+  if (items.length < MIN_ITEMS) return null;
+  return {
+    heading: candidate.heading,
+    description: candidate.description,
+    items,
+  };
+}
