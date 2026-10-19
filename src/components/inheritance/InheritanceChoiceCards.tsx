@@ -1,5 +1,23 @@
 import Link from "next/link";
 
+const NATIONAL_CHOICES = [
+  {
+    href: "/전국상속등기",
+    title: "부동산이 부산이 아님",
+    hint: "전국 상속등기·관할 특례",
+  },
+  {
+    href: "/상속등기비용",
+    title: "비용·수수료·수임료가 궁금함",
+    hint: "보수와 세금·수수료를 구분",
+  },
+  {
+    href: "/상속상담전준비서류와비용",
+    title: "상담 전에 무엇을 준비할지",
+    hint: "사망일·가족관계부터",
+  },
+] as const;
+
 const CHOICES = [
   {
     href: "/부산상속등기",
@@ -44,7 +62,12 @@ const CHOICES = [
 ] as const;
 
 /** 첫 화면 선택 UI — 상황 분기만. 관련 캐러셀은 본문 하단에서만. */
-export function InheritanceChoiceCards() {
+export function InheritanceChoiceCards({
+  variant = "busan",
+}: {
+  variant?: "busan" | "national";
+}) {
+  const items = variant === "national" ? [...NATIONAL_CHOICES, ...CHOICES] : CHOICES;
   return (
     <nav
       aria-label="상속 절차 선택"
@@ -54,7 +77,7 @@ export function InheritanceChoiceCards() {
         지금 상황에 가까운 안내
       </p>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-        {CHOICES.map((item) => (
+        {items.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}

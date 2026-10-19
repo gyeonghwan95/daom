@@ -27,6 +27,8 @@ export type TopicHubConfig = {
   documentsHref?: string;
   /** '필요 서류' 목록. 없으면 공통 기본값을 쓴다(등기 업무 기준이라 회생·파산 허브는 따로 지정). */
   documents?: string[];
+  /** 허브 고유 FAQ. 서비스 FAQ보다 앞에 두고, 모든 허브에 같은 질문을 복사하지 않는다. */
+  extraFaqs?: ServiceFaq[];
 };
 
 export type TopicHubPage = TopicHubConfig & {

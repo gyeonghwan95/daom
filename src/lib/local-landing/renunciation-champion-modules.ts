@@ -9,6 +9,7 @@ import { busanRenunciationHubReviewedLabel } from "./renunciation-hub-identity";
 /** 첫화면 answer-first 뒤에만 붙는 짧은 보강 (사무소 홍보를 앞세우지 않음) */
 export const renunciationChampionExtraSummaryParagraphs: string[] = [
   "핵심만 정리하면 ①안 날부터 3개월 ②배우자·자녀·후순위 ③처분·인출 여부 ④한정승인 비교입니다. 가정법원 신고와 부동산 등기는 접수처가 다릅니다.",
+  "상속포기 법무사 검색은 등기 명의이전이 아니라 가정법원 신고를 찾는 경우가 많습니다. 사무소는 해운대 센텀에 있고, 관할은 고인의 마지막 주소지 가정법원입니다. 부동산이 다른 시·도에 있어도 포기 신고와 상속등기 순서를 나눠 안내합니다.",
 ];
 
 export const renunciationChampionExtraWhenNeeded: string[] = [];
@@ -36,6 +37,11 @@ export const renunciationChampionExtraFaqs: ServiceFaq[] = [
     question: "상속포기 신고와 부동산 등기는 같은 곳에서 하나요?",
     answer:
       "아닙니다. 상속포기는 가정법원 신고이고, 부동산 명의이전은 등기소 접수입니다. 접수처가 달라 일정과 서류를 나눠 준비합니다.",
+  },
+  {
+    question: "부산이 아닌 지역 상속포기도 맡길 수 있나요?",
+    answer:
+      "상속포기는 고인의 마지막 주소지 가정법원 관할입니다. 의뢰인이 해운대 사무소와 비대면으로 서류를 준비하는 것과, 어느 법원에 내는지는 별개입니다. 주소지를 알려 주시면 관할부터 확인합니다.",
   },
 ];
 

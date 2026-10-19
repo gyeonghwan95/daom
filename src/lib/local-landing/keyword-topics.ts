@@ -184,6 +184,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     primaryKeywords: [
       "부산 상속 법무사",
       "부산 법무사 상속",
+      "부산 상속",
     ],
     summaryParagraphs: [
       "부모님이 돌아가신 뒤 부산의 아파트·토지 명의를 바꾸려 해도, 처음부터 상속등기만 준비하는 것이 항상 맞는 것은 아닙니다. 재산·채무·상속인 구성을 보고 갈래를 먼저 고릅니다.",
@@ -264,7 +265,11 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
       { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
       { href: "/부산상속포기", label: "부산 상속포기 — 3개월·후순위" },
+      { href: "/부산상속재산분할법무사", label: "협의분할·단독명의" },
       { href: "/부산상속전문법무사", label: "법무사 선택 기준" },
+      { href: "/상속", label: "전국 상속 법무사 — 등기·포기 갈래" },
+      { href: "/전국상속등기", label: "부동산이 부산이 아닌 상속등기" },
+      { href: "/상속등기비용", label: "상속등기 비용·수수료·수임료" },
       { href: "/contact/inquiry?field=inheritance-registration", label: "내 상황에 필요한 상속절차 확인" },
     ],
     relatedFaqLinks: [
@@ -303,6 +308,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       "부산 법인 업무",
       "부산 법인 법무",
       "부산 법인 법무사",
+      "부산 회사 법무사",
       "부산 법인등기 업무",
       "부산 회사 법무",
     ],

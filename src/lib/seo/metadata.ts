@@ -120,7 +120,8 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
     description: input.description,
     ...(keywords && keywords.length > 0 ? { keywords } : {}),
     alternates: {
-      canonical,
+      // 404 템플릿이 canonical=/404 를 심으면 없는 URL이 200 /404 로 묶인다.
+      ...(noIndex && input.path === "/404" ? {} : { canonical }),
       // metadata는 최상위 키 단위로 얕게 병합되어 layout의 alternates.types(RSS)가 사라지므로 여기서 함께 둔다.
       types: {
         "application/rss+xml": [{ url: "/rss.xml", title: "DAOM RSS" }],
@@ -129,7 +130,7 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
     openGraph: {
       type: openGraphType,
       locale: "ko_KR",
-      url: canonical,
+      ...(noIndex && input.path === "/404" ? {} : { url: canonical }),
       siteName: seoBrand.siteName,
       title: input.title,
       description: input.description,

@@ -309,12 +309,19 @@ export const conversionTopics: Record<string, ConversionTopic> = {
   "inheritance-reg-cost": {
     key: "inheritance-reg-cost",
     title: "상속등기 비용",
-    metaTitle: "상속등기 비용 | 법무사 보수·세금·등기신청수수료 | 다옴법무사사무소",
-    h1: "상속등기 비용",
+    metaTitle: "상속 법무사 비용·수수료·수임료｜보수와 세금을 구분",
+    h1: "상속 법무사 비용, 수수료와 수임료를 먼저 나눕니다",
     description:
-      "상속등기 비용을 법무사 보수, 취득세 등 법정 공과금, 등기신청수수료, 국민주택채권, 추가 업무 비용으로 나눠 설명합니다. 상속인 수·부동산 수·협의분할 여부에 따라 달라지는 부분도 함께 정리했습니다.",
+      "상속 법무사 비용·수수료·수임료를 법무사 보수, 취득세 등 법정 공과금, 등기신청수수료, 국민주택채권, 추가 업무로 나눠 설명합니다. 사건별 만 원 금액은 적지 않습니다.",
     serviceSlug: "inheritance-registration",
-    focusKeywords: ["상속등기 비용", "상속등기 수수료", "상속등기 수임료"],
+    focusKeywords: [
+      "상속 법무사 비용",
+      "상속 법무사 수수료",
+      "상속 법무사 수임료",
+      "상속등기 비용",
+      "상속등기 수수료",
+      "상속등기 수임료",
+    ],
     costFactors: [
       "상속인 수와 협의분할 여부",
       "부동산 수·소재지·과세표준",
@@ -328,7 +335,7 @@ export const conversionTopics: Record<string, ConversionTopic> = {
     documentList: ["등기부등본", "상속인 구성 메모", "사망일·협의 여부"],
     skipMortgageExample: true,
     uniqueProblemStatement:
-      "부산에서 상속등기 비용을 알아볼 때 단순히 법무사 보수만 비교하면 실제 필요한 전체 금액을 판단하기 어렵습니다. 상속인 수와 부동산 수, 협의분할 여부 등에 따라 필요한 절차와 공과금이 달라질 수 있기 때문입니다. 그래서 견적에서는 법무사 보수와 세금·공과금을 나눠 설명합니다.",
+      "상속 법무사 비용·수수료·수임료를 검색할 때 총액만 비교하면 보수와 세금이 섞입니다. 수임료는 위임 업무의 보수, 수수료는 등기신청수수료 같은 실비, 비용은 그 둘에 취득세·채권을 더한 전체입니다. 상속인 수·부동산 수·협의분할 여부에 따라 항목이 달라지며, 확정 금액은 등기부 확인 후입니다.",
     uniqueFaqs: [
       {
         question: "상속인이 많으면 비용이 늘어나나요?",
@@ -342,6 +349,7 @@ export const conversionTopics: Record<string, ConversionTopic> = {
       },
     ],
     relatedServiceLinks: [
+      { href: "/상속", label: "상속 법무사 종합 — 등기·포기 갈래" },
       { href: "/부산상속등기", label: "상속등기 절차 보기" },
       { href: "/왜상속등기비용이다를까", label: "왜 금액이 달라지는지" },
       { href: "/부산법무사비용", label: "법무사 비용 구성" },

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-16T15:25:54.743Z",
+  "generatedAt": "2026-10-18T12:38:32.110Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1641,
+  "totalUrls": 1645,
   "format": "urlset",
   "tierCounts": {
     "1": 18,
@@ -11,7 +11,7 @@
     "5": 185,
     "6": 547,
     "7": 53,
-    "8": 33
+    "8": 37
   },
   "excluded": [
     {
@@ -988,7 +988,7 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-10-15",
+      "lastmod": "2026-10-18",
       "filename": "tier-1-core.xml",
       "count": 18
     },
@@ -1006,7 +1006,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-16",
+      "lastmod": "2026-10-18",
       "filename": "tier-4-regions.xml",
       "count": 600
     },
@@ -1018,7 +1018,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-16",
+      "lastmod": "2026-10-18",
       "filename": "tier-6-keywords.xml",
       "count": 547
     },
@@ -1032,7 +1032,7 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-8-media.xml",
       "lastmod": "2026-10-14",
       "filename": "tier-8-media.xml",
-      "count": 33
+      "count": 37
     }
   ],
   "entries": [
@@ -1040,7 +1040,7 @@
       "path": "/",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/부산법무사",
@@ -1082,7 +1082,7 @@
       "path": "/전국상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/전국업무",
@@ -3392,7 +3392,7 @@
       "path": "/부산상속법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/부산상속법무사추천",
@@ -3428,7 +3428,7 @@
       "path": "/부산상속포기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/부산상속후매매등기",
@@ -5786,7 +5786,7 @@
       "path": "/업무사례/울산동구상속등기법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%9A%B8%EC%82%B0%EB%8F%99%EA%B5%AC%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-16"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/업무사례/울산북구상속등기법무사",
@@ -8300,7 +8300,7 @@
       "path": "/법무사진로특강",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%AC%B4%EC%82%AC%EC%A7%84%EB%A1%9C%ED%8A%B9%EA%B0%95",
-      "lastmod": null
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/법무사협업",
@@ -8888,7 +8888,7 @@
       "path": "/상속",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/상속건물멸실등기",
@@ -8918,7 +8918,7 @@
       "path": "/상속등기비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/상속등기상담",
@@ -8960,7 +8960,7 @@
       "path": "/상속상담전준비서류와비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%83%81%EB%8B%B4%EC%A0%84%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98%EC%99%80%EB%B9%84%EC%9A%A9",
-      "lastmod": null
+      "lastmod": "2026-10-18"
     },
     {
       "path": "/상속세신고와등기순서",
@@ -10703,6 +10703,12 @@
       "lastmod": null
     },
     {
+      "path": "/강의이력/b-square-impact-scaleup-2026-09-29",
+      "tier": 8,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29",
+      "lastmod": null
+    },
+    {
       "path": "/강의이력/busan-citizen-library-life-law",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-life-law",
@@ -10739,6 +10745,18 @@
       "lastmod": null
     },
     {
+      "path": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+      "tier": 8,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30",
+      "lastmod": null
+    },
+    {
+      "path": "/강의이력/busan-self-support-housing-law-2026-09-16",
+      "tier": 8,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16",
+      "lastmod": null
+    },
+    {
       "path": "/강의이력/busan-self-support-jeonse-prevention",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention",
@@ -10754,6 +10772,12 @@
       "path": "/강의이력/haeundae-youth-job-growth-cafe",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-job-growth-cafe",
+      "lastmod": null
+    },
+    {
+      "path": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+      "tier": 8,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02",
       "lastmod": null
     },
     {

@@ -706,6 +706,7 @@ const TOPIC_HUB_SITUATION: Record<string, string> = {
 };
 
 export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
+  const isInheritanceHub = page.slug === "상속";
   const sections: PageSection[] = page.sections.map((section) => ({
     title: section.title,
     body: section.intro,
@@ -727,7 +728,13 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
       { label: "업무안내", href: "/services" },
       { label: hubShortName(page.title) },
     ],
-    introParagraphs: [page.ctaDescription],
+    introParagraphs: isInheritanceHub
+      ? [
+          "상속 법무사를 찾는 이유는 대개 부동산 명의, 빚 승계, 가정법원 신고 중 무엇을 먼저 할지 모르기 때문입니다. 이 페이지는 등기·포기·한정승인·비용의 갈래를 먼저 고릅니다. 부산에서 상담을 시작하려면 부산 상속 법무사 안내로, 부동산이 다른 시·도에 있으면 전국 상속등기 안내로 이어집니다.",
+          "법무사는 등기·신청 서류 작성과 접수 대리를 합니다. 소송으로 분할·유류분을 다툴 일은 변호사 소송대리 범위입니다. 법원·지자체 무료 법률상담은 짧은 절차 안내에 가깝고, 이 사무소 상담은 수임 전 사건 확인입니다. 무료라고 단정하지 않습니다.",
+          "상속 법무사 추천을 비교할 때는 자격·담당자·업무 범위·보수 설명 방식·연락 수단을 확인하면 됩니다. 익명 후기나 ‘최고·전문’ 순위를 만들지 않습니다.",
+        ]
+      : [page.ctaDescription],
     ...(page.documents ? { documents: page.documents } : {}),
     consultationPoints: page.sections.flatMap((s) => s.links.map((l) => l.label)).slice(0, 5),
     faqs: page.faqs.map((f) => ({
@@ -735,8 +742,12 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
       answer: f.answer,
     })),
     consultationExample: {
-      title: `${hubShortName(page.title)} 상담 예시`,
-      body: `부산 전역에서 ${hubShortName(page.title)} 관련 문의가 이어지고 있습니다. ${TOPIC_HUB_SITUATION[page.slug] ?? "사건 내용과 준비된 서류에 따라 필요한 절차가 달라지므로"}, 먼저 상황을 정리한 뒤 서류·비용·기한을 단계별로 안내드립니다.`,
+      title: isInheritanceHub
+        ? "상속 법무사 상담에서 먼저 나누는 질문"
+        : `${hubShortName(page.title)} 상담 예시`,
+      body: isInheritanceHub
+        ? "사망일, 배우자·자녀 구성, 알고 있는 부동산 주소, 대출·보증 통지 여부만 있으면 등기·포기·한정승인 중 어디를 볼지 1차로 나눕니다. 확정 보수나 세금 액수는 등기부·가족관계 확인 전 단정하지 않습니다."
+        : `부산 전역에서 ${hubShortName(page.title)} 관련 문의가 이어지고 있습니다. ${TOPIC_HUB_SITUATION[page.slug] ?? "사건 내용과 준비된 서류에 따라 필요한 절차가 달라지므로"}, 먼저 상황을 정리한 뒤 서류·비용·기한을 단계별로 안내드립니다.`,
     },
     internalLinks: [
       ...(page.jurisdictionHref
@@ -752,12 +763,20 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
       ...page.sections.flatMap((s) => s.links).slice(0, 4),
     ],
     sections,
-    primaryKeywords: [
-      page.title.replace(" 종합 안내", ""),
-      "부산 법무사",
-      "해운대 법무사",
-      "센텀 법무사",
-    ],
+    primaryKeywords: isInheritanceHub
+      ? [
+          "상속 법무사",
+          "상속 법무사 상담",
+          "상속 법무사 추천",
+          "상속등기",
+          "상속포기",
+        ]
+      : [
+          page.title.replace(" 종합 안내", ""),
+          "부산 법무사",
+          "해운대 법무사",
+          "센텀 법무사",
+        ],
     ogImage: getServiceImage(page.primaryServiceSlug).src,
     serviceSlug: page.primaryServiceSlug,
   });
