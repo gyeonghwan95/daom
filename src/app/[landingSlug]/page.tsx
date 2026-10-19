@@ -309,7 +309,6 @@ export default async function LocalLandingPage({ params }: PageProps) {
     return (
       <PageContainer>
         <LecturePageView page={page} />
-        <LawyerTrustShowcase />
       </PageContainer>
     );
   }

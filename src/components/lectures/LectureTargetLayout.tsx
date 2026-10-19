@@ -276,6 +276,41 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
         </p>
       </ContentSection>
 
+      {spec.path === "/법무사진로특강" ? (
+        <ContentSection id="public-career" title="공공 진로 행사와 이 강연의 차이">
+          <p className="text-sm leading-relaxed text-navy/80 md:text-base">
+            교육청·도서관·청소년기관 행사는 그 기관 공고가 일정과 신청의 기준입니다. 이 페이지는 학교나 기관이 현직 법무사를 직업인 특강 강사로 부를 때의 주제, 시간, 문의입니다. 확인된 학교 진로특강은 양산제일고등학교 1건이고, 부산 학교 출강 실적으로 적지 않습니다.
+          </p>
+          <ul className="mt-3 space-y-2 text-sm leading-relaxed">
+            <li>
+              <a
+                href="https://dream.pen.go.kr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-navy underline underline-offset-4"
+              >
+                부산진로진학지원센터
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://busan.nanet.go.kr/main.do"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-navy underline underline-offset-4"
+              >
+                국회부산도서관
+              </a>
+            </li>
+            <li>
+              <Link href="/강의이력" className="font-medium text-navy underline underline-offset-4">
+                확인된 강의 이력
+              </Link>
+            </li>
+          </ul>
+        </ContentSection>
+      ) : null}
+
       <ContentSection id={INQUIRY_ANCHOR} title={spec.ctaLabel}>
         <p className="mb-4 text-sm text-navy/75">{spec.ctaNote}</p>
         <LectureInquiryForm

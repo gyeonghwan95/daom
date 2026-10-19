@@ -43,19 +43,19 @@
       "primary": "/부산상속법무사",
       "protected": true,
       "aliasOf": "부산 상속 법무사",
-      "note": "Intent router is /부산상속법무사. 2026-10-18 ranking URL is /부산상속재산분할법무사 — keep that title. Never champion /부산상속포기. Do not create /부산상속."
+      "note": "Intent router is /부산상속법무사. 2026-10-19 PC webdocs ranked /부산상속포기 (moved from 재산분할). Do not retitle or 301 포기. Never champion /부산상속포기. Do not create /부산상속."
     },
     "부산법률상담": {
       "primary": "/부산법률상담",
       "protected": true,
       "supporting": ["/부산법무사상담"],
-      "note": "Civic vs 법무사 vs 변호사 router. Not the 법무사 상담 champion."
+      "note": "2026-10-19 first non-ad is the civic free-counsel card. Page cites 시청/고법 hours with source links and does not claim to replace them."
     },
     "부산 회사 법무사": {
-      "primary": "/부산법인설립등기",
+      "primary": "/부산법인법무사",
       "protected": true,
-      "supporting": ["/부산법인법무사", "/부산법인설립전문법무사"],
-      "note": "2026-10-18 PC web-card 5th is /부산법인설립등기. Keep ranking URL. Fork to /부산법인법무사 for 운영 중 회사. Do not create /부산회사법무사."
+      "supporting": ["/부산법인설립등기", "/부산법인설립전문법무사"],
+      "note": "2026-10-19 PC webdocs 3rd is /부산법인법무사 (moved from 설립등기). Do not retitle 설립등기. Do not create /부산회사법무사."
     },
     "부산 법무사 비교": {
       "primary": "/부산법무사비교",
@@ -93,7 +93,7 @@
       "primary": "/부산상속법무사",
       "protected": true,
       "supporting": ["/부산상속재산분할법무사", "/부산상속등기", "/부산상속포기", "/부산한정승인", "/부산상속전문법무사", "/상속"],
-      "note": "Intent hub. 2026-10-18 ranking URL is /부산상속재산분할법무사 — do not retitle it. Provider-selection is /부산상속전문법무사."
+      "note": "Intent hub. 2026-10-19 PC webdocs 4th is /부산상속법무사. 부산 법무사 상속 still ranks /부산상속재산분할법무사 3rd — do not retitle the split page."
     },
     "부산 상속 전문 법무사": {
       "primary": "/부산상속전문법무사",
@@ -114,13 +114,13 @@
       "primary": "/",
       "protected": true,
       "supporting": ["/부산법인법무사"],
-      "note": "2026-10-18 PC web-card 2nd is HOME. Do not retitle HOME. /부산법인법무사 stays operations spoke."
+      "note": "2026-10-19 PC webdocs 4th is HOME (10/18 was 2nd). Do not retitle HOME. /부산법인법무사 stays operations spoke and now ranks for 부산 회사 법무사."
     },
     "부산 법인설립 법무사": {
       "primary": "/부산법인설립전문법무사",
       "protected": true,
       "supporting": ["/부산법인설립등기", "/부산법인법무사", "/부산법인등기"],
-      "note": "2026-10-18 ranking URL is 설립전문. Keep that title. Procedure depth stays on /부산법인설립등기."
+      "note": "2026-10-19 PC webdocs 1st is 설립전문; AI/VIEW still ahead of first non-ad. Keep that title. Procedure depth stays on /부산법인설립등기. Do not retitle either."
     },
     "부산 개인회생 법무사": {
       "primary": "/부산개인회생법무사",
@@ -137,7 +137,8 @@
     "부산 법무사 상속": {
       "primary": "/부산상속법무사",
       "protected": true,
-      "aliasOf": "부산 상속 법무사"
+      "aliasOf": "부산 상속 법무사",
+      "note": "2026-10-19 PC webdocs 3rd is /부산상속재산분할법무사. Keep that title. Hub stays /부산상속법무사."
     },
     "부산 한정승인 법무사": {
       "primary": "/부산한정승인",
@@ -163,7 +164,7 @@
       "primary": "/부산법인등기",
       "protected": true,
       "supporting": ["/부산등기법무사", "/부산법인법무사"],
-      "note": "2026-10-18 ranking URL is /부산등기법무사 (too wide). Intent owner is /부산법인등기. Do not retitle the 등기 hub. /부산법인전문법무사는 noindex."
+      "note": "2026-10-19 PC webdocs 2nd is still /부산등기법무사 (too wide). Intent owner is /부산법인등기. Do not retitle the 등기 hub. /부산법인전문법무사는 noindex."
     },
     "부산 법인전문 법무사": {
       "primary": "/부산법인설립전문법무사",
@@ -192,6 +193,11 @@
       "supporting": ["/부산상속법무사", "/전국상속등기", "/상속등기비용", "/부산상속포기"],
       "note": "National inheritance router. 2026-10-18 PC web-card absent. Do not clone 1:1 pages. Busan trio stays on /부산상속법무사."
     },
+    "법무사 상속": {
+      "primary": "/상속",
+      "protected": true,
+      "aliasOf": "상속 법무사"
+    },
     "상속 법무사 추천": {
       "primary": "/상속",
       "protected": true,
@@ -202,7 +208,7 @@
       "primary": "/상속등기비용",
       "protected": true,
       "supporting": ["/부산법무사비용", "/상속포기비용", "/상속"],
-      "note": "Fee/수수료/수임료 share one URL. No invented 만원 amounts."
+      "note": "Fee/수수료/수임료 share one URL. 2026-10-19: 수수료 webdocs 2nd, 수임료 3rd, 비용 not in visible webdocs. Do not retitle. No invented 만원 amounts."
     },
     "상속 법무사 수수료": {
       "primary": "/상속등기비용",
@@ -215,10 +221,10 @@
       "aliasOf": "상속 법무사 비용"
     },
     "상속 법무사 상담": {
-      "primary": "/상속",
+      "primary": "/상속상담전준비서류와비용",
       "protected": true,
-      "supporting": ["/상속상담전준비서류와비용", "/부산법무사상담"],
-      "note": "Consult intent on national hub. Prep spoke is /상속상담전준비서류와비용. Not civic 무료상담."
+      "supporting": ["/상속", "/부산법무사상담"],
+      "note": "2026-10-19 PC webdocs 2nd is /상속상담전준비서류와비용. Do not retitle. Hub /상속 stays 상속 법무사/법무사 상속. Not civic 무료상담."
     },
     "상속포기 법무사": {
       "primary": "/부산상속포기",

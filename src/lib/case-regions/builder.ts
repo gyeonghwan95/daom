@@ -312,7 +312,10 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     ? getDistrictMeta(entry.parentDistrictKey as DistrictKey)?.name
     : null;
 
-  const intro = `${place}에서 법무사 업무 사례와 상담 절차를 찾으시는 분을 위한 안내입니다. ${entry.context}`;
+  const isBusanCityCase = entry.slug === "부산법무사";
+  const intro = isBusanCityCase
+    ? "이 페이지는 부산 전역을 한 생활권으로 묶은 참고 안내입니다. 특정 사건 기록이나 처리 건수가 아니며, 사무소 소개는 홈페이지, 업무 총람은 부산 법무사 업무 안내에서 확인하시면 됩니다."
+    : `${place}에서 법무사 업무 사례와 상담 절차를 찾으시는 분을 위한 안내입니다. ${entry.context}`;
 
   const p1 = `${place} 일대에서는 ${inquiries[0]} , ${inquiries[1]} 문의가 이어집니다. 다옴법무사사무소 안윤정 법무사는 부산 해운대·센텀에서 ${place} 의뢰인의 상속등기·부동산등기·법인등기·개인회생 상담을 진행합니다. 확인되지 않은 실적이나 무조건적인 처리를 약속하지 않으며, 서류와 일정을 확인한 뒤 가능 범위를 안내합니다.`;
 
@@ -364,7 +367,15 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
         : []),
       { label: `${place} 업무 사례` },
     ],
-    introParagraphs: [intro, p1, p2, p3, p4],
+    introParagraphs: isBusanCityCase
+      ? [
+          intro,
+          "다옴법무사사무소 홈페이지는 부산 법무사 안윤정 법무사 소개와 상담 창구입니다. 이 주소는 구·동별 참고 안내와 같은 형식으로, 실제 수임 목록을 공개하지 않습니다.",
+          p1,
+          p3,
+          p4,
+        ]
+      : [intro, p1, p2, p3, p4],
     procedures: [
       "문의 개요(업무 종류·소재지·일정) 전달",
       "등기부·관할·서류 상태 확인",
@@ -385,6 +396,19 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
       body: vignettes[0].body,
     },
     sections: [
+      ...(isBusanCityCase
+        ? [
+            {
+              title: "이 페이지와 홈페이지·업무 안내의 차이",
+              body: "실제 사건 기록을 공개하는 페이지가 아닙니다. 부산 법무사 사무소를 찾는 검색은 홈페이지가 대표 안내이고, 맡는 업무 목록은 업무 안내에서 이어집니다. 아래는 생활권 특성을 반영한 참고 유형입니다.",
+              links: [
+                { href: "/", label: "다옴법무사사무소 홈페이지" },
+                { href: "/부산법무사", label: "맡는 업무 총람" },
+                { href: "/부산법무사상담", label: "상담 준비 안내" },
+              ],
+            },
+          ]
+        : []),
       {
         title: `${place}에서 자주 문의되는 업무`,
         body: `${place} 생활권 특성을 반영한 상담 유형입니다. 실제 가능 여부는 서류와 관할을 확인한 뒤 안내합니다.`,
@@ -435,6 +459,12 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
       ...entry.keywords.slice(0, 3),
     ],
     internalLinks: [
+      ...(isBusanCityCase
+        ? [
+            { href: "/", label: "다옴법무사사무소 홈페이지" },
+            { href: "/부산법무사", label: "맡는 업무 총람" },
+          ]
+        : []),
       { href: "/업무사례/지역별", label: "지역별 업무 사례" },
       { href: "/업무사례", label: "전체 업무 사례" },
       ...(hub ? [hub] : []),

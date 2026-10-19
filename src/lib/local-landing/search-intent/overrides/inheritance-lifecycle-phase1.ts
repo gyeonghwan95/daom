@@ -798,6 +798,7 @@ export const 상속상담전준비서류와비용Override: SearchIntentContent =
     "업무명을 몰라도 문의할 수 있습니다.",
   ],
   primaryKeywords: [
+    "상속 법무사 상담",
     "상속 상담 전 준비서류",
     "상속등기 비용 안내",
     "부산 상속 법무사 상담",

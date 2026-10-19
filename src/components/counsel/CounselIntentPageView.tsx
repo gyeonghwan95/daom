@@ -146,6 +146,69 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
         </div>
+        {page.slug === "부산법률상담" ? (
+          <div className="mt-4 space-y-3 text-sm leading-relaxed text-navy/85">
+            <p>
+              공공 무료상담은 대상·시간·예약이 있는 공식 창구입니다. 이 사무소가 그 서비스를
+              대체하지 않습니다. 상담 뒤 서류 작성과 등기소·법원 접수가 필요하면{" "}
+              <a href="/부산법무사상담" className="font-medium text-navy underline underline-offset-4">
+                부산 법무사 상담
+              </a>
+              에서 이어집니다. 일정은 기관 사정으로 바뀔 수 있으니 방문 전 각 원문을 확인하세요.
+            </p>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://www.klac.or.kr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy underline underline-offset-4"
+                >
+                  대한법률구조공단
+                </a>
+                . 전화상담은 국번 없이 132입니다. 지부 주소·운영시간은 공단 페이지가 기준입니다.
+              </li>
+              <li>
+                <a
+                  href="https://busan.scourt.go.kr/bsgodung/civil/civil_03/lawadvice_01/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy underline underline-offset-4"
+                >
+                  부산고등법원 법률상담안내
+                </a>
+                . 연제구 법원로 31, 2층 211·212호(일부 안내는 213호). 평일 10:00–12:00 법무사,
+                13:00–15:00 변호사. 번호표 순서이며 전화 예약은 없습니다. 안내 전화
+                051-590-1547·1548. 상담 결과에 법원 책임은 없다는 안내가 원문에 있습니다.
+              </li>
+              <li>
+                <a
+                  href="https://bsb.scourt.go.kr/bsb/civil/civil_02/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy underline underline-offset-4"
+                >
+                  부산회생법원 법률상담안내
+                </a>
+                . 같은 법원종합청사 상담을 가리키는 경우가 많습니다. 장소와 시간은 원문이
+                기준입니다.
+              </li>
+              <li>
+                <a
+                  href="https://www.busan.go.kr/depart/freelegaladvice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-navy underline underline-offset-4"
+                >
+                  부산시 무료 법률상담
+                </a>
+                . 시청 1층. 부산에 주소·거소가 있는 시민. 화·목 10:00–12:00, 14:00–16:00.
+                사전예약 필수. 법무담당관실 051-888-2297 등은 예약 전용이며 그 번호로 상담하지
+                않습니다.
+              </li>
+            </ul>
+          </div>
+        ) : null}
       </ContentSection>
 
       <ContentSection id="scope" title="지원 가능한 업무와 별도 검토가 필요한 업무">
