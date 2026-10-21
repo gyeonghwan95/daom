@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -152,9 +153,9 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
             <p>
               공공 무료상담은 대상·시간·예약이 있는 공식 창구입니다. 이 사무소가 그 서비스를
               대체하지 않습니다. 상담 뒤 서류 작성과 등기소·법원 접수가 필요하면{" "}
-              <a href="/부산법무사상담" className="font-medium text-navy underline underline-offset-4">
+              <Link href="/부산법무사상담" className="font-medium text-navy underline underline-offset-4">
                 부산 법무사 상담
-              </a>
+              </Link>
               에서 이어집니다. 일정은 기관 사정으로 바뀔 수 있으니 방문 전 각 원문을 확인하세요.
             </p>
             <ul className="space-y-2">

@@ -178,6 +178,8 @@ export function LectureInquiryForm({
       length,
       delivery,
       feeBasis,
+      grade,
+      venue,
       schedule,
       headcount,
       region,
