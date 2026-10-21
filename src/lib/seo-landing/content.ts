@@ -489,10 +489,10 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
   if (spec.type === "region-service" && spec.serviceId === "inheritance-renunciation") {
     return {
       title: "상속포기 절차와 비용 더 보기",
-      body: "3개월 기한·가족관계·신청 흐름은 부산 상속포기 안내에, 법원 비용과 보수 구분은 상속포기 비용 안내에 정리돼 있습니다.",
+      body: "3개월 기한·가족관계·신청 흐름은 부산 상속포기 안내에, 법원 비용과 보수 구분은 상속포기 법무사 비용 안내에 정리돼 있습니다.",
       links: [
         { href: "/부산상속포기", label: "부산 상속포기 신청 안내" },
-        { href: "/상속포기비용", label: "상속포기 비용 구성" },
+        { href: "/상속포기비용", label: "상속포기 법무사 비용 구성" },
         { href: "/부산한정승인", label: "한정승인과 비교" },
       ],
     };

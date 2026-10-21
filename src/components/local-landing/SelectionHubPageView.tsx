@@ -18,6 +18,7 @@ import {
   RelatedContentGrid,
   WarningBox,
 } from "@/components/readability";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
@@ -288,6 +289,8 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           note={content.preparationNote}
         />
       </ContentSection>
+
+      <PageSerpCarousel path={`/${page.slug}`} />
 
       <ContentSection id="related" title="관련 페이지">
         <RelatedContentGrid links={content.relatedLinks} />

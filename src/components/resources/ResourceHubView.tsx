@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -58,6 +59,7 @@ export function ResourceHubView() {
           연락처나 가입 없이 볼 수 있고, 체크 표시는 저장되지 않습니다. 근거 확인일 {RESOURCE_VERIFIED_ON}.
         </p>
       </div>
+      <PageSerpCarousel path="/resources" />
 
       <div className="mt-8 space-y-8">
         {ORDER.map((cat) => {

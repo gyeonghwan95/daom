@@ -174,6 +174,8 @@ export const homeMetadata = createPageMetadata({
   keywords: [
     "부산 법무사",
     "부산법무사",
+    "부산 법무사 사무소",
+    "부산 법인 법무사",
     seoBrand.siteName,
     seoBrand.representative,
     "상속등기",

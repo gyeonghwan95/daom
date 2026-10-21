@@ -51,7 +51,7 @@ export const renunciationChampionExtraRelatedLinks: {
 }[] = [
   { href: "/부산한정승인", label: "한정승인 — 채무를 재산 한도로 제한" },
   { href: "/특별한정승인", label: "특별한정승인 안내" },
-  { href: "/부산상속법무사", label: "상속 절차 선택(등기·포기·한정)" },
+  { href: "/부산상속법무사", label: "부산 상속 법무사 — 등기·포기·한정승인 선택" },
   {
     href: "/tools/inheritance-renunciation-deadline",
     label: "상속포기 기한 확인 도구",

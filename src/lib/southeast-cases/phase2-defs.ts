@@ -116,7 +116,7 @@ export const southeastPhase2Defs: SoutheastLandingDef[] = [
     ],
     uniqueFaqs: FAQ,
     relatedRegionSlugs: ["울산법무사업무", "울산상속등기법무사"],
-    relatedServiceSlugs: ["/services/inheritance-renunciation"],
+    relatedServiceSlugs: ["/부산상속포기"],
     ctaTitle: "상속포기·한정승인 상담",
     ctaDescription: "사망일과 채무 인지 시점을 알려주세요.",
     visitHint: "관할 설명은 방문·통화 모두 가능합니다.",

@@ -177,7 +177,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     ],
     relatedLinks: [
       { href: "/부산상속포기", label: "부산 상속포기" },
-      { href: "/services/inheritance-renunciation", label: "상속포기 업무안내" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
     ],
     presetSituationIds: ["inheritance-renunciation"],
     serviceSlug: "inheritance-renunciation",

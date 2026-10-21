@@ -5,7 +5,6 @@ export const TIER1 = new Set([
   "/contact/inquiry",
   "/services",
   "/services/inheritance-registration",
-  "/services/inheritance-renunciation",
   "/services/qualified-acceptance",
   "/services/real-estate-registration",
   "/services/corporate-registration",

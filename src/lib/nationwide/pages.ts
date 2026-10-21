@@ -161,7 +161,7 @@ export function buildNationwideHubPageData(): PageData {
         title: "법정 관할은 있지만 비대면으로 끝까지 진행할 수 있는 업무",
         body: "상속포기·한정승인, 법인설립·변경, 개인회생 등은 신청 관할이 정해져 있어도 상담·서류 조율은 비대면으로 진행할 수 있습니다.",
         links: [
-          { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+          { href: "/부산상속포기", label: "상속포기 법무사 — 3개월·후순위" },
           {
             href: "/방문없이준비하는상속포기한정승인",
             label: "상속포기·한정승인 방문 전 준비",

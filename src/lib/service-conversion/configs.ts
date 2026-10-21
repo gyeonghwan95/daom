@@ -93,7 +93,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         },
       ],
       relatedServices: [
-        { href: "/services/inheritance-renunciation", label: "상속포기" },
+        { href: "/부산상속포기", label: "부산 상속포기 법무사" },
         { href: "/services/qualified-acceptance", label: "한정승인" },
         { href: "/부산상속등기", label: "부산 상속등기" },
         { href: "/상속등기비용", label: "상속등기 비용" },
@@ -157,7 +157,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         { href: "/services/inheritance-registration", label: "상속등기" },
         { href: "/services/qualified-acceptance", label: "한정승인" },
         { href: "/부산상속포기", label: "부산 상속포기" },
-        { href: "/상속포기비용", label: "상속포기 비용" },
+        { href: "/상속포기비용", label: "상속포기 법무사 비용" },
         { href: "/부산등기법무사", label: "부산 등기 법무사" },
       ],
       midCta: {
@@ -210,7 +210,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         },
       ],
       relatedServices: [
-        { href: "/services/inheritance-renunciation", label: "상속포기" },
+        { href: "/부산상속포기", label: "부산 상속포기 법무사" },
         { href: "/services/inheritance-registration", label: "상속등기" },
         { href: "/부산한정승인", label: "부산 한정승인" },
         { href: "/한정승인비용", label: "한정승인 비용" },

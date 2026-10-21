@@ -186,7 +186,7 @@ export const phaseYangsanClusterDefs: GyeongnamLandingDef[] = [
       "부산거주양산부동산상속",
       "경남법무사업무",
     ],
-    relatedServiceSlugs: ["/부산상속포기", "/부산한정승인", "/services/inheritance-renunciation"],
+    relatedServiceSlugs: ["/부산상속포기", "/부산한정승인"],
     ctaTitle: "양산 상속포기·한정승인 상담",
     ctaDescription:
       "사망일(또는 안 날)과 알고 있는 채무·재산 개요만 알려주셔도 기한과 준비자료를 먼저 안내합니다.",

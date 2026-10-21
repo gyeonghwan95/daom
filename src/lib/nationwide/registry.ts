@@ -184,7 +184,7 @@ export const nationwideServiceCards: NationwideServiceCard[] = [
     visitLabel: "가정법원 관할 + 비대면 진행",
     jurisdictionNote: "가정법원 관할은 유지되며, 서류는 우편·전자로 조율할 수 있습니다.",
     documents: ["가족관계 서류", "재산·채무 개요", "신고서 준비자료"],
-    href: "/services/inheritance-renunciation",
+    href: "/부산상속포기",
     summary: "3개월 검토 기간을 지키며 타지역 신고도 비대면으로 진행합니다.",
   },
   {

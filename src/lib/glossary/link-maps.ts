@@ -19,7 +19,7 @@ export const D = {
 
 export const S = {
   inheritanceReg: { href: "/services/inheritance-registration", label: "상속등기 안내" },
-  renunciation: { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+  renunciation: { href: "/부산상속포기", label: "부산 상속포기 법무사" },
   qualified: { href: "/services/qualified-acceptance", label: "한정승인 안내" },
   realEstate: { href: "/services/real-estate-registration", label: "부동산등기 안내" },
   ownership: { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },

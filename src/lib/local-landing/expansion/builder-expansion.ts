@@ -395,14 +395,20 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     ? topic.uniqueProblemStatement
     : `${topic.title} 비용은 사건마다 다릅니다. 보수와 실비를 구분해 안내하며, 상담 후 예상 범위를 설명합니다. 다옴법무사사무소는 ${neighborhoodArea} 일대를 포함한 부산 전역 의뢰인을 상담합니다.`;
 
-  const whenNeeded = [
-    `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
-    `가족·동업자와 비용 분담을 논의해야 할 때`,
-    `등기 수수료·세금·법무사 보수를 구분해 알고 싶을 때`,
-    `보정·병행 등기 등 추가 비용 가능성을 확인하고 싶을 때`,
-  ];
+  const isRenunciationCost = topic.key === "renunciation-cost";
 
-  const consultationCases = topic.skipMortgageExample
+  const whenNeeded = topic.whenNeeded?.length
+    ? topic.whenNeeded
+    : [
+        `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
+        `가족·동업자와 비용 분담을 논의해야 할 때`,
+        `등기 수수료·세금·법무사 보수를 구분해 알고 싶을 때`,
+        `보정·병행 등기 등 추가 비용 가능성을 확인하고 싶을 때`,
+      ];
+
+  const consultationCases = topic.consultationCases?.length
+    ? topic.consultationCases
+    : topic.skipMortgageExample
     ? [
         {
           title: `${topic.title} — 이해를 위한 예시`,
@@ -441,10 +447,17 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
         ? "보수와 세금·공과금을 합친 한 금액으로 미리 단정하기는 어렵습니다. 업무 종류와 부동산 가액·상속인 수·법인 변경사항 등을 확인한 뒤 보수·세금·공과금을 항목별로 나눠 안내합니다."
         : `${topic.costFactors.join(", ")} 등에 따라 달라집니다. 확정 금액은 서류를 확인한 뒤 항목별로 안내합니다.`,
     },
-    {
-      question: `법무사 수임료와 등기 수수료는 별도인가요?`,
-      answer: "네. 법무사 수임료, 등기신청 수수료, 등록면허세·취득세 등 세금은 별도 항목입니다. 해당 사건에 실제로 발생하는 항목만 안내합니다.",
-    },
+    isRenunciationCost
+      ? {
+          question: "상속포기 법무사 수수료와 보수는 별도인가요?",
+          answer:
+            "네. 상속포기 법무사 수수료는 가정법원 인지대·송달료와 증명서 발급 실비이고, 보수는 신고서 작성·접수 수임료입니다. 비용은 그 둘의 합입니다. 취득세·등기신청수수료는 상속포기 신고에 들지 않습니다.",
+        }
+      : {
+          question: `법무사 수임료와 등기 수수료는 별도인가요?`,
+          answer:
+            "네. 법무사 수임료, 등기신청 수수료, 등록면허세·취득세 등 세금은 별도 항목입니다. 해당 사건에 실제로 발생하는 항목만 안내합니다.",
+        },
     {
       question: `견적은 어떻게 받나요?`,
       answer: "전화·카카오톡·방문 상담 후 사건 내용을 확인하고 항목별로 안내합니다. 업무명과 핵심 정보만 보내주셔도 어떤 항목이 필요한지부터 구분합니다.",
@@ -482,6 +495,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
     h1: isLawyerFeeBusan
       ? "부산 법무사 비용은 어떻게 정해질까"
       : (topic.h1 ?? topic.title),
+    primaryKeywords: topic.focusKeywords,
     description: isLawyerFeeBusan
       ? "부산 법무사 비용·수수료는 보수와 세금·공과금이 다릅니다. 같은 업무라도 달라지는 이유, 전화 안내와 서류 확인 후 확정의 차이, 견적 전 준비자료를 안내합니다."
       : (topic.description ??
@@ -502,13 +516,15 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
       "인터넷 평균 비용과 실제 사건 비용은 차이가 날 수 있습니다.",
       "견적은 사건 내용 확인 후에만 유효하며, 확정되지 않은 금액은 사건별 확인이 필요합니다.",
     ],
-    procedures: [
-      "상담(전화·카카오톡·방문)으로 업무·기한·보유 서류 확인",
-      "등기부·관련 서류 확인",
-      "보수·세금·공과금을 구분해 항목별 안내",
-      "진행 여부 결정 후 서류 준비",
-      "접수·완료",
-    ],
+    procedures: topic.procedures?.length
+      ? topic.procedures
+      : [
+          "상담(전화·카카오톡·방문)으로 업무·기한·보유 서류 확인",
+          "등기부·관련 서류 확인",
+          "보수·세금·공과금을 구분해 항목별 안내",
+          "진행 여부 결정 후 서류 준비",
+          "접수·완료",
+        ],
     documents: topic.documentList,
     costGuide: factorsAreSentences
       ? `비용은 법무사 보수와 세금·공과금을 나눠서 봅니다. ${topic.timelineNotes.join(" ")}`

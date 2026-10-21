@@ -65,7 +65,7 @@ export const serviceDetails: ServiceDetail[] = [
     relatedLinks: [
       { href: "/전국상속등기", label: "전국 상속등기 안내" },
       { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산" },
-      { href: "/services/inheritance-renunciation", label: "상속포기" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/qualified-acceptance", label: "한정승인" },
       { href: "/services/real-estate-registration", label: "부동산등기" },
       { href: "/location", label: "오시는 길" },
@@ -75,9 +75,9 @@ export const serviceDetails: ServiceDetail[] = [
     slug: "inheritance-renunciation",
     title: "상속포기",
     description:
-      "부산 상속포기 절차 안내 — 채무가 재산보다 많을 때 상속포기 신고. 다옴법무사사무소 안윤정 법무사가 가정법원 신고서·첨부서류 작성 및 제출을 대행합니다.",
+      "상속포기 업무 범위 안내. 3개월 기한·후순위·가족관계는 부산 상속포기 안내에서, 법원 실비와 보수는 상속포기 법무사 비용 안내에서 이어집니다.",
     intro:
-      "상속포기는 상속인이 피상속인의 재산과 채무를 승계하지 않겠다고 법원에 신고하는 제도입니다. 채무가 재산보다 훨씬 많을 때 검토하며, 법정 기간 내 신고하지 않으면 단순승인으로 간주되어 채무까지 떠안게 될 수 있습니다. 다옴법무사사무소 안윤정 법무사는 상속포기와 한정승인의 차이를 설명하고 적합한 절차를 안내합니다.",
+      "이 페이지는 상속포기 신고 대행의 업무 범위만 적습니다. 3개월 기한·후순위 상속인·처분 이력은 부산 상속포기 안내가 대표이고, 인지대·송달료와 수임료는 상속포기 법무사 비용 안내에서 나눕니다. 다옴법무사사무소 안윤정 법무사는 관할 가정법원 신고서 작성과 제출을 대행합니다.",
     whenNeeded:
       "피상속인에게 빚이 많고 재산이 적거나, 상속 여부를 아직 결정하지 못했지만 기한이 다가올 때 상속포기를 검토합니다. 상속을 포기하면 본인에게 피상속인의 채무가 넘어오지 않습니다. 다만 포기한 뒤에는 같은 순위 상속인이 된 자녀 등에게 상속이 넘어갈 수 있으므로, 가족 전체 상황을 함께 살펴야 합니다.",
     procedures: [
@@ -130,10 +130,10 @@ export const serviceDetails: ServiceDetail[] = [
       label: "재송동 상속포기 상담 사례",
     },
     relatedLinks: [
-      { href: "/services/inheritance-registration", label: "상속등기" },
-      { href: "/services/qualified-acceptance", label: "한정승인" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사 — 3개월·후순위" },
+      { href: "/상속포기비용", label: "상속포기 법무사 비용·수수료·보수" },
+      { href: "/services/qualified-acceptance", label: "한정승인 업무 안내" },
       { href: "/services/personal-rehabilitation", label: "개인회생" },
-      { href: "/faq", label: "자주 묻는 질문" },
     ],
   },
   {
@@ -195,7 +195,7 @@ export const serviceDetails: ServiceDetail[] = [
       label: "동래구 한정승인 상담 사례",
     },
     relatedLinks: [
-      { href: "/services/inheritance-renunciation", label: "상속포기" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/inheritance-registration", label: "상속등기" },
       { href: "/services/bankruptcy", label: "파산" },
       { href: "/contact", label: "상담 신청" },

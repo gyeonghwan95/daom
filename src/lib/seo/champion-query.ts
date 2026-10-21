@@ -31,7 +31,7 @@ type ExactKeywordChampion = {
 const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   {
     path: BUSAN_LAWYER_CHAMPION_PATH,
-    compactQueries: ["부산법무사"],
+    compactQueries: ["부산법무사", "부산법무사사무소", "부산법인법무사"],
   },
   {
     path: BUSAN_RECOMMEND_CHAMPION_PATH,
@@ -47,7 +47,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/부산법무사무소",
-    compactQueries: ["부산법무사무소", "부산법무사사무소"],
+    compactQueries: ["부산법무사무소"],
   },
   {
     path: BUSAN_RENUNCIATION_CHAMPION_PATH,
@@ -98,6 +98,10 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     compactQueries: ["부산법인전문법무사", "부산법인설립전문법무사"],
   },
   {
+    path: "/부산법인설립등기",
+    compactQueries: ["부산법인설립법무사"],
+  },
+  {
     path: "/부산상속법무사",
     compactQueries: ["부산상속법무사", "부산법무사상속", "부산상속"],
   },
@@ -119,7 +123,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/부산법인법무사",
-    compactQueries: ["부산법인법무사", "부산회사법무사"],
+    compactQueries: ["부산회사법무사"],
   },
   {
     path: "/부산법인등기",
@@ -158,6 +162,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "상속법무사비용",
       "상속법무사수수료",
       "상속법무사수임료",
+      "상속법무사보수",
     ],
   },
   {
@@ -176,6 +181,9 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "상속포기수임료",
       "상속포기수수료",
       "부산상속포기비용",
+      "상속포기법무사비용",
+      "상속포기법무사수수료",
+      "상속포기법무사보수",
     ],
   },
   {

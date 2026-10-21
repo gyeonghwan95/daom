@@ -9,7 +9,7 @@ export const busanRecommendSpec: PrioritySeoSpec = {
   slug: "부산법무사추천",
   path: "/부산법무사추천",
   cluster: "LOCAL",
-  metaTitle: "부산 법무사 추천 | 상담 전 확인할 7가지 기준",
+  metaTitle: "부산 법무사 추천 | 맡기기 전 확인할 7가지 기준",
   description:
     "부산에서 법무사를 고를 때 순위나 광고 문구보다 확인할 7가지 기준(직접 상담, 업무 범위, 기한·관할, 보수·공과금, 진행 방식, 사무소, 공개 기록)과 다옴법무사사무소에서 확인할 수 있는 사실을 정리했습니다.",
   h1: "부산 법무사 추천, 어떤 기준으로 선택해야 할까",

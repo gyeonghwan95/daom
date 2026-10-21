@@ -25,7 +25,6 @@ export const 부산법무사무소: SelectionHubContent = {
   primaryKeywords: [
     "부산 법무사 사무실",
     "부산 법무사무소",
-    "부산 법무사 사무소",
     "해운대 법무사무소",
     "센텀 법무사무소",
     "다옴법무사사무소",

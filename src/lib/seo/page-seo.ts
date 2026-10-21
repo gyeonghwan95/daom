@@ -8,6 +8,8 @@ export const staticPageSeo = {
       "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학, 대한법무사협회 표창, 기획예산처·부산시·해운대구·민주평통 자문, 시민도서관·청년기관 법률 강의.",
     path: "/about",
     keywords: ["안윤정 법무사", "해운대 법무사", seoBrand.siteName],
+    ogImage: "/image/썸네일-정면.jpg",
+    ogImageAlt: "안윤정 법무사",
   },
   office: {
     title: buildSeoTitle("해운대·센텀 법무사 사무소"),
@@ -15,6 +17,8 @@ export const staticPageSeo = {
       "부산 해운대구 센텀 다옴법무사사무소. 주소·운영시간·주차·상담 방식과 방문 전 준비사항을 안내합니다. 안윤정 법무사가 직접 상담하며, 예약 후 방문해 주세요.",
     path: "/office",
     keywords: ["해운대 법무사", "센텀 법무사", seoBrand.siteName],
+    ogImage: "/image/cards/office-visit.jpg",
+    ogImageAlt: "다옴법무사사무소 방문 상담 안내",
   },
   services: {
     title: buildSeoTitle("부산 등기·상속·회생 업무안내"),

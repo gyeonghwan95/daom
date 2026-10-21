@@ -399,7 +399,7 @@ export const serviceDetailsPart2: ServiceDetail[] = [
     },
     relatedLinks: [
       { href: "/services/bankruptcy", label: "파산" },
-      { href: "/services/inheritance-renunciation", label: "상속포기" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/faq", label: "자주 묻는 질문" },
       { href: "/contact", label: "상담 신청" },
     ],

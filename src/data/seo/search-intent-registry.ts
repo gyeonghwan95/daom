@@ -110,7 +110,7 @@ export const SEARCH_INTENT_REGISTRY: SearchIntent[] = [
     category: "inheritance",
     primaryIntent: "상속포기 신청",
     primaryKeyword: "부산 상속포기",
-    aliases: ["상속포기 비용", "상속포기 3개월"],
+    aliases: ["상속포기 3개월", "후순위 상속인"],
     userProblem: "빚이 많아 상속을 받지 않으려 함",
     funnel: "transactional",
     currentUrl: "/부산상속포기",

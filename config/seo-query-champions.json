@@ -220,6 +220,12 @@
       "protected": true,
       "aliasOf": "상속 법무사 비용"
     },
+    "상속 법무사 보수": {
+      "primary": "/상속등기비용",
+      "protected": true,
+      "aliasOf": "상속 법무사 비용",
+      "note": "보수=등기 수임료. compactQuery 상속법무사보수. Do not retitle away from 상속 법무사 비용. 포기 실비 stays /상속포기비용."
+    },
     "상속 법무사 상담": {
       "primary": "/상속상담전준비서류와비용",
       "protected": true,
@@ -230,7 +236,23 @@
       "primary": "/부산상속포기",
       "protected": true,
       "supporting": ["/부산한정승인", "/상속", "/상속포기비용"],
-      "note": "Procedure is family-court, office in Busan. Do not create a national clone."
+      "note": "Procedure is family-court, office in Busan. Do not create a national clone. Do not lengthen."
+    },
+    "상속포기 법무사 비용": {
+      "primary": "/상속포기비용",
+      "protected": true,
+      "supporting": ["/부산상속포기", "/상속등기비용"],
+      "note": "2026-10-21: title/H1 must start with 상속포기 법무사 비용. 수수료=가정법원 실비, 보수=수임료. Do not mix 등기 취득세. Do not invent 만원 수임료."
+    },
+    "상속포기 법무사 수수료": {
+      "primary": "/상속포기비용",
+      "protected": true,
+      "aliasOf": "상속포기 법무사 비용"
+    },
+    "상속포기 법무사 보수": {
+      "primary": "/상속포기비용",
+      "protected": true,
+      "aliasOf": "상속포기 법무사 비용"
     },
     "상속등기 법무사": {
       "primary": "/전국상속등기",

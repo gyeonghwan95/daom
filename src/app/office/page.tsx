@@ -12,6 +12,7 @@ import { ContentSection } from "@/components/readability";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteImages, type SiteImageAsset } from "@/lib/site-images";
@@ -113,6 +114,7 @@ export default function OfficePage() {
         consultationDescription="방문은 예약 후 이용해 주세요. 전화·카카오톡·네이버 톡톡으로 상황 확인과 예약을 모두 요청하실 수 있습니다."
         afterIntro={
           <div className="space-y-8 md:space-y-10">
+            <PageSerpCarousel path="/office" className="mt-0" />
             <div id="about-recommend">
               <ul className="readability-link-list">
                 <li>

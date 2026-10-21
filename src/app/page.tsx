@@ -43,7 +43,7 @@ export default function Home() {
               h1: HOME_H1,
               image: siteImages.home.hero.src,
               dateModified: homeModifiedOn,
-              keywords: "부산 법무사, 부산법무사",
+              keywords: "부산 법무사, 부산법무사, 부산 법무사 사무소, 부산 법인 법무사",
               aboutName: "부산 법무사",
             }),
             buildFaqPageSchema([...homeFaqs], "/"),

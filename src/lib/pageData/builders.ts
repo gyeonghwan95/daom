@@ -12,6 +12,7 @@ import {
   HOME_H1,
   HOME_METADATA_DESCRIPTION,
   HOME_METADATA_TITLE,
+  buildSeoTitle,
 } from "@/lib/seo/metadata";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { getNaverBlogExternalPath } from "@/lib/naver-blog/urls";
@@ -206,7 +207,7 @@ function sectionsFromLocalLanding(page: LocalLandingPage): PageSection[] {
       body: page.costGuide,
       links:
         page.slug === "부산상속포기"
-          ? [{ href: "/상속포기비용", label: "상속포기 비용 구성 확인" }]
+          ? [{ href: "/상속포기비용", label: "상속포기 법무사 비용 구성 확인" }]
           : undefined,
     },
     {
@@ -720,7 +721,9 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
     category: "pillar",
     // 본문·breadcrumb·Service 이름에는 '｜' 앞 업무명만(검색 title은 그대로)
     title: hubShortName(page.title),
-    metaTitle: buildMetaTitle(page.title),
+    metaTitle: isInheritanceHub
+      ? buildSeoTitle(page.title)
+      : buildMetaTitle(page.title),
     metaDescription: buildMetaDescription(page.description),
     h1: page.h1,
     intro: page.intro,
@@ -767,7 +770,7 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
     primaryKeywords: isInheritanceHub
       ? [
           "상속 법무사",
-          "상속 법무사 상담",
+          "법무사 상속",
           "상속 법무사 추천",
           "상속등기",
           "상속포기",
@@ -792,8 +795,8 @@ const SERVICE_PAGE_SEO: Record<
     h1: "전국 상속등기 상담",
   },
   "inheritance-renunciation": {
-    metaTitle: "상속포기 절차·3개월 기한｜가정법원 신고·주의사항",
-    h1: "상속포기 — 3개월 기한·채무 승계 차단",
+    metaTitle: "상속포기 업무 범위｜신고 대행과 준비 안내",
+    h1: "상속포기 업무 안내 — 신고 대행 범위",
   },
   "qualified-acceptance": {
     metaTitle: "한정승인 절차｜재산 범위 내 채무·재산목록",
@@ -874,12 +877,15 @@ export function buildPageDataFromService(service: ServiceDetail): PageData {
     sections: [
       { title: "진행 방식", body: service.ourApproach },
     ],
-    primaryKeywords: [
-      `부산 ${service.title}`,
-      "부산 법무사",
-      "해운대 법무사",
-      service.title,
-    ],
+    primaryKeywords:
+      service.slug === "inheritance-renunciation"
+        ? ["상속포기 업무", "가정법원 신고 대행", "상속포기 준비"]
+        : [
+            `부산 ${service.title}`,
+            "부산 법무사",
+            "해운대 법무사",
+            service.title,
+          ],
     ogImage: getServiceImage(service.slug).src,
     includeFaqSchema: true,
     serviceSlug: service.slug,

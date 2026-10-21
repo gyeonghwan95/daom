@@ -94,7 +94,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     ],
     serviceLinks: [
       { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
-      { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/qualified-acceptance", label: "한정승인 안내" },
       { href: "/상속", label: "상속 종합 허브" },
     ],
@@ -256,7 +256,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     ],
     serviceLinks: [
       { href: "/services/qualified-acceptance", label: "한정승인 안내" },
-      { href: "/services/inheritance-renunciation", label: "상속포기 안내" },
+      { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/inheritance-registration", label: "상속등기 안내" },
       { href: "/상속", label: "상속 종합 허브" },
     ],

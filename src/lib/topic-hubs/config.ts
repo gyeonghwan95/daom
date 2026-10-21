@@ -55,7 +55,8 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/부산상속포기", label: "상속포기 — 가정법원 3개월·후순위" },
           { href: "/부산한정승인", label: "한정승인 — 재산 범위 내 채무" },
           { href: "/부산상속재산분할법무사", label: "협의분할로 단독명의를 만들 때" },
-          { href: "/상속등기비용", label: "비용·수수료·수임료 항목 구분" },
+          { href: "/상속등기비용", label: "상속 법무사 비용·수수료·수임료" },
+          { href: "/상속포기비용", label: "상속포기 법무사 비용·수수료·보수" },
         ],
       },
       {
@@ -200,7 +201,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "상속등기 비용은 부동산 가액·상속인 수·말소 등기 여부에 따라 달라집니다. 서류가 준비되면 등기 기간을 단축할 수 있습니다.",
         links: [
           { href: "/상속등기비용", label: "상속등기 비용·수수료 안내" },
-          { href: "/상속포기비용", label: "상속포기 비용 안내" },
+          { href: "/상속포기비용", label: "상속포기 법무사 비용 안내" },
           { href: "/상속등기필요서류", label: "상속등기 필요서류 체크리스트" },
           { href: "/상속등기기간", label: "상속 기한·포기·등기 일정 확인" },
           { href: "/상속상담전준비서류와비용", label: "상담 전 준비서류와 비용" },
@@ -725,7 +726,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
           { href: "/부산가족관계등록부정정", label: "가족관계등록부 정정허가" },
           { href: "/부산실종선고청구", label: "실종선고 청구와 상속 정리" },
           { href: "/부산유언검인", label: "유언검인 신청 안내" },
-          { href: "/services/inheritance-renunciation", label: "상속포기 가정법원 신고 안내" },
+          { href: "/부산상속포기", label: "부산 상속포기 법무사 — 가정법원 신고" },
           { href: "/faq/inheritance-renunciation-family-effect", label: "상속포기 가족 효과 FAQ" },
         ],
         intro: "상속과 후견 절차가 겹치는 경우 순서를 함께 검토합니다.",

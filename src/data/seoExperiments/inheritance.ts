@@ -22,7 +22,7 @@ export const inheritanceSeoResetExperiment = {
     "/부산상속법무사": "부산 상속 법무사｜등기·포기·한정승인 중 먼저 확인할 절차",
     "/부산상속포기": "부산 상속포기 법무사｜3개월·후순위 상속인부터 확인",
     "/부산상속전문법무사":
-      "부산에서 상속전문 법무사를 찾을 때｜업무 범위·사례·상담 기준",
+      "부산 상속전문 법무사｜맡기기 전 업무범위·선택 기준",
   } as const,
   reservedIntents: [
     "BUSAN_INHERITANCE_HUB",

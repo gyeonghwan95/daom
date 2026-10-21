@@ -11,6 +11,7 @@ import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredent
 import { AboutHeroGallery } from "@/components/profile/AboutHeroGallery";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
+import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { RelatedLinks } from "@/components/page/RelatedLinks";
 import { CTASection } from "@/components/sections/CTASection";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -185,6 +186,8 @@ export function AboutPageView() {
       >
         <CTASection description="안윤정 법무사에게 직접 상담을 요청하세요. 사건 내용을 듣고 진행 가능 여부와 예상 절차를 안내해 드립니다." />
       </div>
+
+      <PageSerpCarousel path="/about" />
 
       <RelatedLinks title="관련 안내" links={RELATED_LINKS} />
     </article>

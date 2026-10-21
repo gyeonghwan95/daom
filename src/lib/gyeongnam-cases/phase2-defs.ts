@@ -120,7 +120,7 @@ export const phase2GyeongnamDefs: GyeongnamLandingDef[] = [
     ],
     uniqueFaqs: PLACEHOLDER_FAQ,
     relatedRegionSlugs: ["김해상속등기법무사", "경남법무사업무"],
-    relatedServiceSlugs: ["/services/inheritance-renunciation"],
+    relatedServiceSlugs: ["/부산상속포기"],
     ctaTitle: "상속포기·한정승인 상담",
     ctaDescription: "사망일과 채무 인지 시점만 알려주셔도 됩니다.",
     jurisdictionNote:

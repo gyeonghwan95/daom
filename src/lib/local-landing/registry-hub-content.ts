@@ -132,7 +132,7 @@ export const registryHubWorkAreas: RegistryHubWorkArea[] = [
     title: "법인등기",
     items: ["법인설립", "임원변경", "본점이전", "목적변경", "유상증자", "해산·청산"],
     links: [
-      { href: "/부산법인등기", label: "부산 법인등기" },
+      { href: "/부산법인등기", label: "부산 법인등기 법무사" },
       { href: "/부산법인설립등기", label: "법인설립등기" },
       { href: "/부산임원변경등기", label: "임원변경등기" },
       { href: "/부산유상증자등기", label: "유상증자등기" },
@@ -282,7 +282,7 @@ export const registryHubInternalLinks: RegistryHubLink[] = [
   { href: "/부산부동산등기", label: "부산 부동산등기" },
   { href: "/부산부동산등기전문법무사", label: "부동산등기 원인별 선택" },
   { href: "/부산상속등기", label: "부산 상속등기" },
-  { href: "/부산법인등기", label: "부산 법인등기" },
+  { href: "/부산법인등기", label: "부산 법인등기 법무사" },
   { href: "/부산보상등기", label: "부산 보상등기" },
   { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
   { href: "/부산근저당설정등기", label: "부산 근저당설정등기" },
@@ -351,11 +351,8 @@ export const registryHubTopic: KeywordTopic = {
   relatedServiceLinks: [
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산상속등기", label: "부산 상속등기" },
-    { href: "/부산법인등기", label: "부산 법인등기" },
+    { href: "/부산법인등기", label: "부산 법인등기 법무사" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
-    { href: "/services/real-estate-registration", label: "부동산등기 업무안내" },
-    { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
-    { href: "/services/corporate-registration", label: "법인등기 업무안내" },
   ],
   relatedFaqLinks: [
     { href: "/faq/ownership-transfer-documents", label: "소유권이전등기 필요서류" },
@@ -379,7 +376,7 @@ export const registryHubTopic: KeywordTopic = {
   relatedKeywordLinks: [
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산상속등기", label: "부산 상속등기" },
-    { href: "/부산법인등기", label: "부산 법인등기" },
+    { href: "/부산법인등기", label: "부산 법인등기 법무사" },
     { href: "/부산등기법무사추천", label: "등기 법무사 선택 기준" },
     { href: "/부산신축건물보존등기", label: "부산 신축건물 보존등기" },
     { href: "/등기비용", label: "등기비용" },
