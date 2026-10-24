@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import type { EmailLogEntry } from "@/lib/admin-ops/types";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
@@ -36,11 +37,15 @@ export default function AdminEmailPage() {
   return (
     <div>
       <AdminPageHeader title="메일·알림" />
-      <p className="admin-prose">수신 주소 마스킹 · 본문 미저장</p>
+      <p className="admin-prose">
+        수신 주소는 마스킹되고 본문은 저장하지 않습니다. 강의문의·협업문의·일반문의는
+        유형 열에서 구분합니다.
+      </p>
 
       {failed.length > 0 ? (
         <p className="admin-alert admin-alert--critical">
-          실패 {failed.length}건 — Resend·Telegram 설정을 확인하세요.
+          실패 {failed.length}건 — 문의는 들어왔지만 전달이 안 됐습니다. Resend·Telegram
+          시크릿을 확인하세요.
         </p>
       ) : null}
       {message ? <p className="admin-alert admin-alert--info">{message}</p> : null}
@@ -81,7 +86,7 @@ export default function AdminEmailPage() {
                   <td>{l.timestamp}</td>
                   <td>{l.messageType}</td>
                   <td>
-                    {l.path ? <PageIdentity path={l.path} /> : "—"}
+                    {l.path ? <PageIdentity path={l.path} showIntent /> : "—"}
                   </td>
                   <td>{l.provider}</td>
                   <td>{l.status}</td>
@@ -92,6 +97,14 @@ export default function AdminEmailPage() {
           </table>
         )}
       </div>
+
+      <AdminSection title="실패 시 볼 곳">
+        <ul className="admin-checklist">
+          <li>Cloudflare Secrets의 RESEND_API_KEY, 발신 도메인 인증</li>
+          <li>Telegram 봇 토큰·채팅 ID</li>
+          <li>성공인데 메일이 안 보이면 스팸함·Resend 로그를 확인하세요</li>
+        </ul>
+      </AdminSection>
     </div>
   );
 }

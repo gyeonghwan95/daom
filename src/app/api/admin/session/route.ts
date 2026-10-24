@@ -9,7 +9,11 @@ export const runtime = "nodejs";
 
 export async function GET(request: Request) {
   if (!isAdminAvailable(request)) {
-    return NextResponse.json({ authenticated: false, configured: false });
+    return NextResponse.json({
+      authenticated: false,
+      configured: false,
+      storageConfigured: false,
+    });
   }
 
   const localDev = isLocalAdminRequest(request);
@@ -18,5 +22,6 @@ export async function GET(request: Request) {
     authenticated: getAdminSessionFromRequest(request),
     configured: true,
     localDev,
+    storageConfigured: false,
   });
 }

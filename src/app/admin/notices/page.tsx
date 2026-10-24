@@ -312,8 +312,9 @@ export default function AdminNoticesPage() {
         </button>
       </AdminPageHeader>
       <p className="admin-prose">
-        중앙 팝업 공지 · 공개 `/공지사항` 목록과 연동됩니다. plain text만
-        저장되며 CTA는 내부 경로 또는 http(s)만 허용됩니다.
+        중앙 팝업 공지 · 공개 `/공지사항` 목록과 연동됩니다. 노출·클릭·닫기는
+        최근 7일 집계입니다. 본문은 일반 텍스트만, CTA는 내부 경로 또는 https만
+        허용됩니다.
       </p>
 
       {error ? (

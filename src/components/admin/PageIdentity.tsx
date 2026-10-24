@@ -1,5 +1,7 @@
 "use client";
 
+import { IntentBadge } from "@/components/admin/AdminIntentMix";
+import { classifyAdminPath } from "@/lib/admin/path-intent";
 import {
   formatPagePath,
   getPageDisplayName,
@@ -10,15 +12,22 @@ type Props = {
   path: string;
   showLink?: boolean;
   compact?: boolean;
+  showIntent?: boolean;
 };
 
-export function PageIdentity({ path, showLink = true, compact = false }: Props) {
+export function PageIdentity({
+  path,
+  showLink = true,
+  compact = false,
+  showIntent = false,
+}: Props) {
   const displayPath = formatPagePath(path);
   const title = getPageDisplayName(path);
 
   return (
     <div className="admin-page-identity">
-      {title && title !== displayPath.slice(1) ? (
+      {showIntent ? <IntentBadge intent={classifyAdminPath(path)} /> : null}
+      {!compact && title && title !== displayPath.slice(1) ? (
         <div className="admin-page-identity__title">{title}</div>
       ) : null}
       {showLink ? (
@@ -39,7 +48,6 @@ export function PageIdentity({ path, showLink = true, compact = false }: Props) 
           {displayPath}
         </span>
       )}
-      {compact ? null : null}
     </div>
   );
 }

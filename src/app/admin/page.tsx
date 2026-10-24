@@ -2,7 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AlertCenter } from "@/components/admin/AlertCenter";
+import {
+  AdminActionGrid,
+  AdminStatStrip,
+  AdminTableWrap,
+} from "@/components/admin/AdminActionGrid";
+import { AdminInsightList } from "@/components/admin/AdminInsightList";
+import { AdminIntentMix } from "@/components/admin/AdminIntentMix";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { HourlyTrafficChart } from "@/components/admin/charts/HourlyTrafficChart";
 import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
@@ -22,6 +28,14 @@ import {
 } from "@/lib/admin/device-label";
 import { formatAdminActivityAt } from "@/lib/admin-ops/utils";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
+import {
+  buildDashboardInsights,
+  buildOpsBriefing,
+  conversionCopy,
+  withShare,
+} from "@/lib/admin/ops-insights";
+import { formatPercent } from "@/lib/admin/url-display";
+import { mixByIntent } from "@/lib/admin/path-intent";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
 export default function AdminDashboardPage() {
@@ -79,6 +93,18 @@ export default function AdminDashboardPage() {
 
   const k = data.kpis;
   const funnel = data.funnelToday;
+  const insights = [...data.alerts, ...buildDashboardInsights(data)].slice(
+    0,
+    6,
+  );
+  const briefing = buildOpsBriefing(data);
+  const intentMix = mixByIntent(
+    (data.topPathsToday || []).map((row) => ({
+      path: row.path,
+      visits: row.visits,
+    })),
+  );
+  const funnelLine = funnel ? conversionCopy(funnel) : null;
   const mailTotal = (k.emailSuccessToday ?? 0) + (k.emailFailedToday ?? 0);
   const mailRate =
     mailTotal > 0 && k.emailSuccessToday != null
@@ -103,8 +129,11 @@ export default function AdminDashboardPage() {
 
       <p className="admin-summary">{data.summaryLine}</p>
       <p className="admin-prose">
-        페이지뷰·세션은 공개 방문에서 집계됩니다. 관리자 세션, 봇, /admin 경로는 제외됩니다.
+        숫자는 공개 페이지뷰입니다. 고유 방문자는 집계하지 않습니다. 관리자 세션·봇·/admin은 빠집니다.
       </p>
+
+      <AdminStatStrip stats={briefing.stats} />
+      <AdminActionGrid actions={briefing.actions} />
 
       <div className="admin-metric-grid" aria-label="KPI">
         <MetricCard
@@ -167,8 +196,11 @@ export default function AdminDashboardPage() {
         <MetricCard label="확인할 경고" value={k.alertCount} />
       </div>
 
-      <AdminSection title="확인할 사항">
-        <AlertCenter alerts={data.alerts} />
+      <AdminSection title="오늘 확인할 일">
+        <AdminInsightList
+          insights={insights}
+          empty="지금은 긴급히 확인할 운영 이슈가 없습니다."
+        />
       </AdminSection>
 
       <AdminSection title="시간대별 페이지뷰">
@@ -186,17 +218,18 @@ export default function AdminDashboardPage() {
           ) : (
             <>
               <DailyTrendChart days={data.visitsByDay} />
+              <AdminTableWrap>
               <table className="admin-table">
                 <thead>
                   <tr>
                     <th>날짜</th>
                     <th>페이지뷰</th>
                     <th>세션</th>
-                    <th>기기</th>
-                    <th>유입 경로</th>
+                    <th className="admin-hide-sm">기기</th>
+                    <th className="admin-hide-sm">유입 경로</th>
                     <th>CTA</th>
                     <th>제출</th>
-                    <th>네이버</th>
+                    <th className="admin-hide-sm">네이버</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -205,48 +238,64 @@ export default function AdminDashboardPage() {
                       <td>{d.date}</td>
                       <td>{d.visits}</td>
                       <td>{d.sessions ?? "—"}</td>
-                      <td>{formatDeviceSplit(d.mobile, d.desktop)}</td>
-                      <td>
+                      <td className="admin-hide-sm">{formatDeviceSplit(d.mobile, d.desktop)}</td>
+                      <td className="admin-hide-sm">
                         <SourceMix sources={d.sources} compact />
                       </td>
                       <td>{d.cta ?? "—"}</td>
                       <td>{d.submits}</td>
-                      <td>{d.naverPlace ?? "—"}</td>
+                      <td className="admin-hide-sm">{d.naverPlace ?? "—"}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              </AdminTableWrap>
             </>
           )}
       </AdminSection>
 
-      <AdminSection title="전환 Funnel (오늘)">
+      <div className="admin-two-col">
+        <AdminSection title="오늘 방문 의도">
+          <AdminIntentMix
+            rows={intentMix}
+            empty="오늘 TOP 페이지가 아직 없습니다."
+          />
+          <p className="admin-prose" style={{ marginTop: 8 }}>
+            특강 유입은 수임 상담과 성격이 다릅니다. 강의문의는 메일 화면에서 따로 확인하세요.
+          </p>
+        </AdminSection>
+        <AdminSection title="전환 Funnel (오늘)">
           {!funnel ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
-            <FunnelChart
-              steps={[
-                { label: "페이지뷰", value: funnel.pageViews },
-                { label: "CTA 클릭", value: funnel.cta },
-                { label: "상담 시작", value: funnel.consultStart },
-                { label: "문의 제출", value: funnel.consultSubmit },
-                { label: "메일 성공", value: funnel.mailSuccess },
-              ]}
-            />
+            <>
+              {funnelLine ? <p className="admin-summary">{funnelLine}</p> : null}
+              <FunnelChart
+                steps={[
+                  { label: "페이지뷰", value: funnel.pageViews },
+                  { label: "CTA 클릭", value: funnel.cta },
+                  { label: "상담 시작", value: funnel.consultStart },
+                  { label: "문의 제출", value: funnel.consultSubmit },
+                  { label: "메일 성공", value: funnel.mailSuccess },
+                ]}
+              />
+            </>
           )}
-      </AdminSection>
+        </AdminSection>
+      </div>
 
       <div className="admin-two-col">
         <AdminSection title="오늘 유입 TOP 페이지">
           {data.topPathsToday.length === 0 ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
+            <AdminTableWrap>
             <table className="admin-table">
               <thead>
                 <tr>
                   <th>페이지</th>
                   <th>페이지뷰</th>
-                  <th>기기</th>
+                  <th className="admin-hide-sm">기기</th>
                   <th>CTA</th>
                   <th>제출</th>
                 </tr>
@@ -255,16 +304,17 @@ export default function AdminDashboardPage() {
                 {data.topPathsToday.map((r) => (
                   <tr key={r.path}>
                     <td>
-                      <PageIdentity path={r.path} />
+                      <PageIdentity path={r.path} showIntent />
                     </td>
                     <td>{r.visits}</td>
-                    <td>{formatDeviceSplit(r.mobile, r.desktop)}</td>
+                    <td className="admin-hide-sm">{formatDeviceSplit(r.mobile, r.desktop)}</td>
                     <td>{r.cta}</td>
                     <td>{r.consultSubmit ?? "—"}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            </AdminTableWrap>
           )}
         </AdminSection>
 
@@ -272,22 +322,26 @@ export default function AdminDashboardPage() {
           {!data.sourcesToday?.length ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
+            <AdminTableWrap>
             <table className="admin-table">
               <thead>
                 <tr>
-                  <th>Source</th>
+                  <th>유입</th>
                   <th>페이지뷰</th>
+                  <th>비중</th>
                 </tr>
               </thead>
               <tbody>
-                {data.sourcesToday.map((s) => (
+                {withShare(data.sourcesToday).map((s) => (
                   <tr key={s.source}>
                     <td>{getSourceLabel(s.source)}</td>
                     <td>{s.count}</td>
+                    <td>{formatPercent(s.share)}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            </AdminTableWrap>
           )}
         </AdminSection>
       </div>
@@ -308,7 +362,7 @@ export default function AdminDashboardPage() {
                       <span className="admin-activity__date">{when.dateLabel}</span>
                       <span className="admin-activity__time">{when.timeLabel}</span>
                     </time>
-                    <PageIdentity path={a.path} compact />
+                    <PageIdentity path={a.path} compact showIntent />
                     <span>{getSourceLabel(a.referrerType)}</span>
                     <span className={getDeviceBadgeClass(a.deviceType)}>
                       {getDeviceLabel(a.deviceType)}
@@ -327,6 +381,7 @@ export default function AdminDashboardPage() {
           {!data.naverPlaceTopPaths?.length ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
+            <AdminTableWrap>
             <table className="admin-table">
               <thead>
                 <tr>
@@ -339,7 +394,7 @@ export default function AdminDashboardPage() {
                 {data.naverPlaceTopPaths.slice(0, 8).map((r) => (
                   <tr key={r.path}>
                     <td>
-                      <PageIdentity path={r.path} />
+                      <PageIdentity path={r.path} showIntent />
                     </td>
                     <td>{r.naverPlace}</td>
                     <td>{r.ctr ?? "—"}</td>
@@ -347,6 +402,7 @@ export default function AdminDashboardPage() {
                 ))}
               </tbody>
             </table>
+            </AdminTableWrap>
           )}
         </AdminSection>
 

@@ -692,6 +692,9 @@ export function isInflowRailPath(path: string): boolean {
   return INFLOW_RAIL_ALLOWLIST.has(normalizeSeoPath(path));
 }
 
+export const GEO_LAWYER_CHAMPION_COUNT = GEO_LAWYER_CHAMPIONS.length;
+export const CITY_INHERITANCE_CHAMPION_COUNT = CITY_INHERITANCE_CHAMPIONS.length;
+
 export function getExactKeywordChampionPath(query: string): string | undefined {
   const compact = compactQuery(query);
   return EXACT_KEYWORD_CHAMPIONS.find((row) =>

@@ -62,7 +62,19 @@ export function AdminShell({ children }: { children: ReactNode }) {
   return (
     <div className="admin-shell">
       <aside className="admin-shell__nav" aria-label="관리자 메뉴">
-        <div className="admin-shell__brand">다옴 운영센터</div>
+        <div className="admin-shell__nav-top">
+          <div className="admin-shell__brand">
+            다옴 운영센터
+            <span>페이지뷰 기준 · 고유방문자 없음</span>
+          </div>
+          <button
+            type="button"
+            className="admin-shell__logout"
+            onClick={() => void session.logout()}
+          >
+            로그아웃
+          </button>
+        </div>
         <nav>
           {NAV.map((item) => {
             const current =
@@ -82,13 +94,6 @@ export function AdminShell({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
-        <button
-          type="button"
-          className="admin-shell__logout"
-          onClick={() => void session.logout()}
-        >
-          로그아웃
-        </button>
       </aside>
       <div className="admin-shell__workspace">
         <main className="admin-shell__main">{children}</main>

@@ -104,7 +104,7 @@ export default function AdminMonitoringPage() {
       <AdminPageHeader title="모니터링" generatedAt={data?.generatedAt} />
       <p className="admin-prose">
         수집이 실제로 들어오는지, 문의가 전달되는지, 저장소가 살아 있는지만
-        보여 줍니다. 가짜 수치는 만들지 않습니다.
+        보여 줍니다. 정상 스킵(관리자·중복)은 오류가 아닙니다.
       </p>
 
       <AdminSection title="확인할 사항">
@@ -156,7 +156,7 @@ export default function AdminMonitoringPage() {
           <MetricCard
             label="정상 스킵"
             value={skipTotal}
-            note="관리자·중복·빈 UA"
+            note={`관리자 ${ingest?.skippedAdminSession ?? 0} · 중복 ${ingest?.skippedDedupe ?? 0} · /admin ${ingest?.skippedAdminPath ?? 0}`}
           />
           <MetricCard
             label="저장 실패"
@@ -208,6 +208,14 @@ export default function AdminMonitoringPage() {
             }
           />
         </div>
+      </AdminSection>
+
+      <AdminSection title="숫자 해석">
+        <ul className="admin-checklist">
+          <li>마지막 이벤트가 비어도 새벽·휴일은 정상일 수 있습니다.</li>
+          <li>저장 실패가 있으면 KV 바인딩부터 보세요. 스킵 수는 실패가 아닙니다.</li>
+          <li>전달 채널이 0이면 문의가 사이트에만 남고 알림이 가지 않습니다.</li>
+        </ul>
       </AdminSection>
 
       <AdminSection title="자동화 (참고)">

@@ -1,11 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AdminTableWrap } from "@/components/admin/AdminActionGrid";
+import { AdminInsightList } from "@/components/admin/AdminInsightList";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { getCtaKindLabel } from "@/lib/admin/activity-labels";
+import {
+  buildConversionInsights,
+  conversionCopy,
+} from "@/lib/admin/ops-insights";
 import { formatKoreanNumber } from "@/lib/admin/url-display";
 import { formatDeviceSplit } from "@/lib/admin/device-label";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
@@ -101,23 +107,37 @@ export default function AdminConversionsPage() {
   }
 
   const f = data.funnel;
+  const funnelLine = f ? conversionCopy(f) : null;
+  const insights = buildConversionInsights({
+    funnel: f,
+    pages: data.topCtaPages,
+  });
 
   return (
     <div>
       <AdminPageHeader title="전환 분석" />
       <p className="admin-prose">
         버튼을 눌렀을 때 이동한 주소(전화·카카오·문의 페이지 등)를 보여 줍니다.
-        이름·전화번호 같은 개인정보는 저장하지 않습니다. 네이버 예약 완료는 측정하지 않습니다.
+        이름·전화번호는 저장하지 않습니다. 네이버 예약 완료·실제 통화는 측정하지 않습니다.
       </p>
       {data.message ? (
         <p className="admin-alert admin-alert--info">{data.message}</p>
       ) : null}
 
+      <AdminSection title="오늘 놓친 전환">
+        <AdminInsightList
+          insights={insights}
+          empty="오늘은 눈에 띄는 이탈 구간이 없습니다."
+        />
+      </AdminSection>
+
       <AdminSection title="전환 Funnel (오늘)">
         {!f ? (
           <p className="admin-empty">아직 측정되지 않음</p>
         ) : (
-          <FunnelChart
+          <>
+            {funnelLine ? <p className="admin-summary">{funnelLine}</p> : null}
+            <FunnelChart
             steps={[
               { label: "페이지뷰", value: f.pageViews },
               { label: "CTA 클릭", value: f.cta, rate: f.rates.viewToCta },
@@ -126,6 +146,7 @@ export default function AdminConversionsPage() {
               { label: "메일 성공", value: f.mailSuccess, rate: f.rates.submitToMail },
             ]}
           />
+          </>
         )}
       </AdminSection>
 
@@ -144,6 +165,7 @@ export default function AdminConversionsPage() {
             아직 목적지 기록이 없습니다. 이후 클릭부터 버튼 종류와 이동 URL이 쌓입니다.
           </p>
         ) : (
+          <AdminTableWrap>
           <table className="admin-table">
             <thead>
               <tr>
@@ -164,6 +186,7 @@ export default function AdminConversionsPage() {
               ))}
             </tbody>
           </table>
+          </AdminTableWrap>
         )}
       </AdminSection>
 
@@ -172,26 +195,32 @@ export default function AdminConversionsPage() {
           {!data.channels?.length ? (
             <p className="admin-empty">아직 측정되지 않음</p>
           ) : (
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>채널</th>
-                  <th>클릭</th>
-                  <th>Top page</th>
-                </tr>
-              </thead>
+          <AdminTableWrap>
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>채널</th>
+                <th>클릭</th>
+                <th>Top page</th>
+              </tr>
+            </thead>
               <tbody>
                 {data.channels.map((c) => (
                   <tr key={c.channel}>
                     <td>{c.channel}</td>
                     <td>{c.clicks}</td>
                     <td>
-                      {c.topPage ? <PageIdentity path={c.topPage} /> : "—"}
+                      {c.topPage ? (
+                        <PageIdentity path={c.topPage} showIntent />
+                      ) : (
+                        "—"
+                      )}
                     </td>
                   </tr>
                 ))}
-              </tbody>
-            </table>
+            </tbody>
+          </table>
+          </AdminTableWrap>
           )}
         </AdminSection>
 
@@ -199,13 +228,14 @@ export default function AdminConversionsPage() {
           {!data.naverPlaceByPlacement?.length ? (
             <p className="admin-empty">선택 기간에 네이버 플레이스 클릭이 없습니다.</p>
           ) : (
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>위치</th>
-                  <th>클릭</th>
-                </tr>
-              </thead>
+          <AdminTableWrap>
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>위치</th>
+                <th>클릭</th>
+              </tr>
+            </thead>
               <tbody>
                 {data.naverPlaceByPlacement.map((r) => (
                   <tr key={r.placement}>
@@ -213,8 +243,9 @@ export default function AdminConversionsPage() {
                     <td>{r.count}</td>
                   </tr>
                 ))}
-              </tbody>
-            </table>
+            </tbody>
+          </table>
+          </AdminTableWrap>
           )}
         </AdminSection>
       </div>
@@ -223,36 +254,38 @@ export default function AdminConversionsPage() {
         {!data.topCtaPages?.length ? (
           <p className="admin-empty">아직 측정되지 않음</p>
         ) : (
+          <AdminTableWrap>
           <table className="admin-table">
             <thead>
               <tr>
                 <th>페이지</th>
                 <th>뷰</th>
-                <th>기기</th>
+                <th className="admin-hide-sm">기기</th>
                 <th>CTA</th>
                 <th>전화</th>
                 <th>카카오</th>
                 <th>문의</th>
-                <th>플레이스</th>
+                <th className="admin-hide-sm">플레이스</th>
               </tr>
             </thead>
             <tbody>
               {data.topCtaPages.map((r) => (
                 <tr key={r.path}>
                   <td>
-                    <PageIdentity path={r.path} />
+                    <PageIdentity path={r.path} showIntent />
                   </td>
                   <td>{r.visits}</td>
-                  <td>{formatDeviceSplit(r.mobile, r.desktop)}</td>
+                  <td className="admin-hide-sm">{formatDeviceSplit(r.mobile, r.desktop)}</td>
                   <td>{r.cta}</td>
                   <td>{r.phone}</td>
                   <td>{r.kakao}</td>
                   <td>{r.consultSubmit}</td>
-                  <td>{r.naverPlace}</td>
+                  <td className="admin-hide-sm">{r.naverPlace}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </AdminTableWrap>
         )}
       </AdminSection>
     </div>
