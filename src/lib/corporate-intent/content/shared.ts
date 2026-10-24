@@ -9,7 +9,7 @@ export const NOTARY_BOUNDARY_BASE =
   "공정증서 작성이나 사서증서 인증 등 공증업무 자체는 공증인이 수행합니다. 다옴법무사사무소는 법인설립·변경등기 과정에서 정관·의사록 등 등기 서류, 공증이 필요한지 확인할 포인트, 공증 전후 등기 절차를 안내합니다.";
 
 export const CORPORATE_HUB_LINKS = {
-  main: { href: "/부산법인법무사", label: "부산 법인 법무사 종합" },
+  main: { href: "/부산법인법무사", label: "부산 회사 법무사 종합" },
   registry: { href: "/부산법인등기", label: "부산 법인등기 지역 안내" },
   pillar: { href: "/법인등기", label: "법인등기 업무 허브" },
   business: { href: "/부산기업법률자문", label: "기업 법률실무 지원" },

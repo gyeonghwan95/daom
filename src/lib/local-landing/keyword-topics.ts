@@ -31,7 +31,7 @@ const sharedKeywordLinks = {
   registryLawyer: { href: "/부산등기법무사", label: "부산 등기 법무사 종합 안내" },
   realEstateLawyer: { href: "/부산부동산등기법무사", label: "부산 부동산등기 법무사" },
   inheritanceLawyer: { href: "/부산상속법무사", label: "부산 상속 법무사" },
-  corporateLawyer: { href: "/부산법인법무사", label: "부산 법인 법무사" },
+  corporateLawyer: { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립·변경·해산" },
   ownership: { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
   preservation: {
     href: "/부산신축건물보존등기",
@@ -266,9 +266,9 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
       { href: "/부산상속포기", label: "부산 상속포기 — 3개월·후순위" },
       { href: "/부산상속재산분할법무사", label: "협의분할·단독명의" },
-      { href: "/부산상속전문법무사", label: "법무사 선택 기준" },
-      { href: "/상속", label: "전국 상속 법무사 — 등기·포기 갈래" },
-      { href: "/전국상속등기", label: "부동산이 부산이 아닌 상속등기" },
+      { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 — 맡기기 전 기준" },
+      { href: "/상속", label: "상속 법무사 — 등기·포기·추천 갈래" },
+      { href: "/전국상속등기", label: "상속등기 법무사 — 타지역 부동산" },
       { href: "/상속등기비용", label: "상속등기 비용·수수료·수임료" },
       { href: "/contact/inquiry?field=inheritance-registration", label: "내 상황에 필요한 상속절차 확인" },
     ],
@@ -425,6 +425,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       },
     ],
     relatedServiceLinks: [
+      { href: "/", label: "부산 법인 법무사 — 사무소·담당 법무사" },
       { href: "/부산법인등기", label: "부산 법인등기 — 임원·본점·목적 변경" },
       { href: "/법인변경등기", label: "법인 변경등기 유형별 안내" },
       { href: "/법인정관업무", label: "법인 정관 업무 안내" },
@@ -1115,7 +1116,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedServiceLinks: [
       { href: "/services/director-change", label: "임원변경등기 업무안내" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산법인등기", label: "부산 법인등기" },
       { href: "/법인의사록공증준비", label: "의사록 공증 준비" },
       { href: "/법인정관변경", label: "정관 변경 필요 여부" },

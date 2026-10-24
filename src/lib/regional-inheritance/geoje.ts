@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const geojeInheritanceSpec: RegionalInheritanceSpec = {
   region: "거제",
-  metaTitle: "거제시 상속등기 법무사｜경남 거제 부동산 상속 | 다옴법무사사무소",
+  metaTitle: "거제 상속 법무사｜경남 거제 부동산 상속 | 다옴법무사사무소",
   description:
     "경남 거제시 상속등기 법무사 안내(부산 연제구 거제동과 다른 지역입니다). 거제 부동산과 타지역 상속인, 창원지방법원 통영지원 관할, 원본 전달 방법을 부산 해운대 사무소가 정리했습니다. 거제 지점은 없습니다.",
   h1: "경남 거제시 부동산 상속등기, 부산에서 맡기는 방법",

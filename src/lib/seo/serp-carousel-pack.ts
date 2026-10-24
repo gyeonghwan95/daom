@@ -8,6 +8,7 @@ import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
 import {
   getExplicitSerpCarouselPack,
   HOME_SERP_CAROUSEL_URLS,
+  INHERITANCE_SERP_CAROUSEL_URLS,
 } from "@/data/seo/serp-carousel-packs";
 import { getPageVisual } from "@/data/seo/page-visuals";
 import {
@@ -97,24 +98,78 @@ const SPOKE_TO_GU: Record<string, string> = {
   "/기장읍법무사": "/기장군법무사",
   "/오시리아법무사": "/기장군법무사",
   "/명지법무사": "/강서구법무사",
+  "/명지동법무사": "/강서구법무사",
   "/화명동법무사": "/북구법무사",
   "/덕천동법무사": "/북구법무사",
   "/구포동법무사": "/북구법무사",
   "/센텀법무사": "/해운대법무사",
   "/재송동법무사": "/해운대법무사",
+  "/반여동법무사": "/해운대법무사",
+  "/광안리법무사": "/수영구법무사",
+  "/광안동법무사": "/수영구법무사",
+  "/민락동법무사": "/수영구법무사",
+  "/양정동법무사": "/부산진구법무사",
+  "/장전동법무사": "/금정구법무사",
+  "/중동법무사": "/해운대법무사",
+  "/부전동법무사": "/부산진구법무사",
+  "/온천동법무사": "/동래구법무사",
+  "/문현동법무사": "/남구법무사",
+  "/서면법무사": "/부산진구법무사",
+  "/사상법무사": "/사상구법무사",
+  "/기장법무사": "/기장군법무사",
+  "/하단법무사": "/사하구법무사",
+  "/우동법무사": "/해운대법무사",
+  "/좌동법무사": "/해운대법무사",
+  "/사직동법무사": "/동래구법무사",
+  "/전포동법무사": "/부산진구법무사",
+  "/부산역법무사": "/동구법무사",
+  "/송정동법무사": "/해운대법무사",
+  "/센텀시티역법무사": "/해운대법무사",
+  "/서면역법무사": "/부산진구법무사",
+  "/해운대역법무사": "/해운대법무사",
+  "/광안역법무사": "/수영구법무사",
+  "/사상역법무사": "/사상구법무사",
+  "/명지역법무사": "/강서구법무사",
+  "/연산역법무사": "/연제구법무사",
 };
+
+function parentDistrictHub(current: string): string | undefined {
+  if (SPOKE_TO_GU[current]) return SPOKE_TO_GU[current];
+  const slug = current.replace(/^\//, "");
+  const config = getLocalLandingConfig(slug);
+  if (!config) return undefined;
+  const parent = hubPathForRegionKey(config.regionKey);
+  if (parent && parent.href !== current && isBusanDistrictHubPath(parent.href)) {
+    return parent.href;
+  }
+  return undefined;
+}
 
 function neighborhoodUrls(current: string): string[] {
   const slug = current.replace(/^\//, "");
   const config = getLocalLandingConfig(slug);
   const urls: string[] = [];
-  const spokeGu = SPOKE_TO_GU[current];
+  const spokeGu = parentDistrictHub(current);
   if (spokeGu) pushUrl(urls, spokeGu, current);
   if (!config) return urls;
   const linked = (config.linkedNeighborhoodSlugs ?? []).map((item) => `/${item}`);
-  const parentGu = hubPathForRegionKey(config.regionKey);
-  if (parentGu && parentGu.href !== current) pushUrl(urls, parentGu.href, current);
   for (const href of linked) pushUrl(urls, href, current);
+  return urls;
+}
+
+function spokeCandidateUrls(current: string, nearby: string[]): string[] {
+  const urls = [...nearby];
+  const parentGu = parentDistrictHub(current);
+  if (parentGu) {
+    const parentConfig = getLocalLandingConfig(parentGu.replace(/^\//, ""));
+    for (const slug of parentConfig?.linkedNeighborhoodSlugs ?? []) {
+      pushUrl(urls, `/${slug}`, current);
+    }
+  }
+  pushUrl(urls, "/부산공탁", current);
+  if (parentGu) {
+    for (const href of districtRotation(parentGu)) pushUrl(urls, href, current);
+  }
   return urls;
 }
 
@@ -141,10 +196,19 @@ function candidateUrls(current: string): { heading: string; description?: string
 
   const nearby = neighborhoodUrls(current);
   if (nearby.length > 0) {
-    const urls = [...nearby];
-    pushUrl(urls, "/부산공탁", current);
-    for (const href of HOME_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
-    return { heading: "이 생활권에서 이어서 볼 안내", urls };
+    return {
+      heading: "이 생활권에서 이어서 볼 안내",
+      urls: spokeCandidateUrls(current, nearby),
+    };
+  }
+
+  if (current.startsWith("/업무사례/")) {
+    const relation = getPageRelation(current);
+    const urls: string[] = [];
+    if (relation?.parentHub) pushUrl(urls, relation.parentHub, current);
+    for (const href of relation?.relatedPages ?? []) pushUrl(urls, href, current);
+    for (const href of INHERITANCE_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
+    return { heading: "상속등기와 이어지는 안내", urls };
   }
 
   const relation = getPageRelation(current);

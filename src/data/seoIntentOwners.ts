@@ -51,7 +51,7 @@ export const SEO_INTENT_OWNERS: readonly SeoIntentOwner[] = [
     query: "해운대구 법무사",
     role: "LOCAL_PROVIDER",
     path: "/해운대법무사",
-    secondaryQueries: ["해운대 법무사", "센텀 법무사", "재송동 법무사", "반여동 법무사"],
+    secondaryQueries: ["해운대 법무사", "부산 해운대 법무사"],
     supportingPaths: ["/센텀법무사", "/재송동법무사", "/해운대구부동산등기", "/해운대구상속등기", "/업무사례/해운대구법무사"],
     titleFrozen: TITLE_FROZEN,
     metaTitle: "해운대구 법무사｜센텀·재송·반여 부동산·상속·법인등기",

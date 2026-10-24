@@ -116,7 +116,7 @@ export function buildCourtEntries(): CaseRegionEntry[] {
     kind: "court" as const,
     parentDistrictKey: item.parent,
     traits: ["court" as const, "registry" as const],
-    keywords: [item.name, `${item.name} 법무사`, "부산 법원 법무사"],
+    keywords: [item.name, `${item.name} 업무 사례`, "부산 법원 상담 사례"],
     context: item.context,
     indexable: item.indexable ?? true,
     canonicalSlug: item.canonicalSlug,

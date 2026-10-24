@@ -177,7 +177,7 @@ export function buildBusanCompanyEstablishmentPage(
       },
     ],
     relatedServiceLinks: [
-      { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립 이후 업무" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립 이후 업무" },
       { href: "/부산법인등기", label: "부산 법인등기 — 변경등기 허브" },
       { href: "/해외대표이사주주법인등기", label: "외국인·해외 주주가 있는 법인설립" },
       { href: "/법인설립등기비용", label: "설립 비용 구조" },

@@ -125,7 +125,7 @@ export const 부산법인등기전문: SelectionHubContent = {
   ],
   relatedLinks: [
     L.corporate,
-    { href: "/부산법인법무사", label: "부산 법인 법무사" },
+    { href: "/부산법인법무사", label: "부산 회사 법무사" },
     { href: "/부산법인설립등기", label: "부산 법인설립등기" },
     { href: "/부산임원변경등기", label: "부산 임원변경등기" },
     { href: "/법인등기자가진단", label: "법인등기 자가진단" },

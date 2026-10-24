@@ -129,7 +129,7 @@ export function buildBusanLawyerFlagshipPage(
     relatedBlogHrefs: [
       {
         href: "/blog/busan-lawyer-consultation-documents",
-        label: "부산 법무사 상담 준비 서류",
+        label: "상담 전 준비 서류",
       },
       {
         href: "/blog/busan-lawyer-jurisdiction-checklist",
@@ -150,7 +150,7 @@ export function buildBusanLawyerFlagshipPage(
       { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
       { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
       { href: "/부산부동산등기", label: "부산 부동산등기 — 매매·이전" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경·해산" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립·변경·해산" },
       { href: "/부산법인등기", label: "부산 법인등기 — 임원·본점·목적 변경" },
       { href: "/부산상속포기", label: "부산 상속포기 — 기한·후순위 확인" },
       { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },

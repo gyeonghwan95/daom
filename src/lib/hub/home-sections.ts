@@ -23,7 +23,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       { href: "/법률강의", label: "법률 강의·특강" },
       { href: "/partners", label: "협업문의" },
       { href: "/부산상속법무사", label: "부산 상속 법무사" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산등기법무사", label: "부산 등기 법무사" },
       { href: "/부산상속포기", label: "빚이 많아 상속을 받지 않으려는 경우" },
       { href: "/부산부동산등기", label: "부산 부동산등기" },
@@ -52,7 +52,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     description: "추천·후기·비용·상담을 보기 전에 확인할 선택 기준 페이지입니다.",
     links: [
       { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경 안내" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립·변경 안내" },
       { href: "/부산법무사추천", label: "선택 기준 확인" },
       { href: "/부산법무사상담", label: "상담 채널·준비 안내" },
       { href: "/부산법무사비용", label: "부산 법무사 비용·수임료" },

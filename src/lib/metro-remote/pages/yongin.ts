@@ -5,7 +5,7 @@ export const yonginMetroRemote: MetroRemoteSpec = {
   path: "/업무사례/용인상속등기법무사",
   region: "용인",
   group: "GYEONGGI",
-  metaTitle: "용인 아파트와 토지 여러 필지, 상속등기 한 번에 정리하는 순서 | 다옴법무사사무소",
+  metaTitle: "용인 상속 법무사｜아파트·토지 여러 필지 한 번에 | 다옴법무사사무소",
   description:
     "용인 부동산 상속등기에서 아파트와 여러 필지 토지·농지를 함께 받을 때 필지 누락을 막는 순서, 농지 상속 요건, 수원가정법원 관할, 그 밖의 지역 채권 비율을 정리했습니다.",
   kicker: "용인 처인·기흥·수지 부동산",

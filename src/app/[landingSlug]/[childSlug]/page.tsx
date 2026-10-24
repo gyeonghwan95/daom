@@ -221,16 +221,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const page = buildCaseRegionPageData(entry);
     const meta = pageDataToMetadata(page);
-    const canonicalSlug = entry.canonicalSlug ?? entry.slug;
+    const canonicalTarget =
+      entry.canonicalPath ??
+      caseRegionPath(entry.canonicalSlug ?? entry.slug);
     const shouldIndex =
       entry.indexable &&
+      !entry.canonicalPath &&
       (!entry.canonicalSlug || entry.canonicalSlug === entry.slug);
 
     return {
       ...meta,
       alternates: {
         ...meta.alternates,
-        canonical: getCanonicalUrl(caseRegionPath(canonicalSlug)),
+        canonical: getCanonicalUrl(canonicalTarget),
       },
       robots: shouldIndex ? meta.robots : { index: false, follow: true },
     };

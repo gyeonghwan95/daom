@@ -170,7 +170,7 @@ function buildRegionServiceSpecs(
         Math.round((region.priority + service.priority) / 2),
         false,
         `region-service:${region.id}:${service.id}`,
-        [`${prefix}${service.name}`, `${prefix} 법무사`, service.name],
+        [`${prefix}${service.name}`, service.name],
         {
           category: "local",
           regionId: region.id,

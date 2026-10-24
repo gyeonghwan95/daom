@@ -29,7 +29,7 @@ export const SPECIAL_ENTITY_HUB_LINKS = {
   },
   corporatePillar: { href: "/법인등기", label: "법인등기 업무 허브" },
   corporateChange: { href: "/법인변경등기", label: "주식회사 변경등기 허브" },
-  corporateMain: { href: "/부산법인법무사", label: "부산 법인 법무사" },
+  corporateMain: { href: "/부산법인법무사", label: "부산 회사 법무사" },
   contact: { href: "/contact", label: "법인등기 상담 문의" },
 } as const;
 

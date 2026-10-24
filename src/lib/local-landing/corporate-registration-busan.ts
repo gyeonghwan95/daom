@@ -177,7 +177,7 @@ export function buildBusanCorporateRegistrationPage(
       { href: "/부산유상증자등기", label: "부산 유상증자등기" },
       { href: "/부산감자등기", label: "부산 감자등기" },
       { href: "/해외대표이사주주법인등기", label: "외국인·해외 주주·임원이 있는 법인등기" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사 상담 안내" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립·변경·해산" },
       { href: "/부산등기법무사", label: "부동산·상속·법인등기 전체 보기" },
       { href: "/contact/inquiry", label: "법인등기 상담 문의" },
     ],

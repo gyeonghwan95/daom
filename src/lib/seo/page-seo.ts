@@ -7,16 +7,16 @@ export const staticPageSeo = {
     description:
       "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학, 대한법무사협회 표창, 기획예산처·부산시·해운대구·민주평통 자문, 시민도서관·청년기관 법률 강의.",
     path: "/about",
-    keywords: ["안윤정 법무사", "해운대 법무사", seoBrand.siteName],
+    keywords: ["안윤정 법무사", seoBrand.siteName],
     ogImage: "/image/썸네일-정면.jpg",
     ogImageAlt: "안윤정 법무사",
   },
   office: {
-    title: buildSeoTitle("해운대·센텀 법무사 사무소"),
+    title: buildSeoTitle("센텀시티 사무소 방문 안내"),
     description:
       "부산 해운대구 센텀 다옴법무사사무소. 주소·운영시간·주차·상담 방식과 방문 전 준비사항을 안내합니다. 안윤정 법무사가 직접 상담하며, 예약 후 방문해 주세요.",
     path: "/office",
-    keywords: ["해운대 법무사", "센텀 법무사", seoBrand.siteName],
+    keywords: ["사무소 방문", "센텀시티 상담", seoBrand.siteName],
     ogImage: "/image/cards/office-visit.jpg",
     ogImageAlt: "다옴법무사사무소 방문 상담 안내",
   },
@@ -37,7 +37,7 @@ export const staticPageSeo = {
     description:
       "상속·부동산등기·법인등기·전세보증금·민사서류·회생파산 등 업무별 사례를 카테고리·상황·지역으로 찾아볼 수 있습니다.",
     path: "/cases",
-    keywords: ["부산 상속등기", "부산 부동산등기", "해운대 법무사", "업무 사례"],
+    keywords: ["부산 상속등기", "부산 부동산등기", "업무 사례"],
   },
   blog: {
     title: buildSeoTitle("다옴법무사사무소 네이버 블로그 안내"),
@@ -79,21 +79,21 @@ export const staticPageSeo = {
     description:
       "전화·카카오톡·네이버 톡톡 상담 안내. 방문 예약 후 센텀 사무소에서 직접 상담 가능.",
     path: "/contact",
-    keywords: ["해운대 법무사 상담", "센텀 방문 예약", seoBrand.siteName],
+    keywords: ["상담 문의", "방문 예약", seoBrand.siteName],
   },
   contactInquiry: {
     title: buildSeoTitle("상담 신청 양식 · 1분 문의"),
     description:
       "상속등기·부동산등기·법인등기·개인회생 등 상담 분야와 현재 상황을 남기는 신청 양식입니다. 전화·카카오 안내가 필요하면 상담 문의 페이지를 이용해 주세요.",
     path: "/contact/inquiry",
-    keywords: ["상담 신청", "해운대 법무사 문의", seoBrand.siteName],
+    keywords: ["상담 신청", "1분 문의", seoBrand.siteName],
   },
   location: {
     title: buildSeoTitle("오시는 길 · 센텀"),
     description:
       "부산 해운대구 센텀동로 200 D동 1층 위치, 센텀시티역·주차·건물 안내, 네이버 예약 링크.",
     path: "/location",
-    keywords: ["해운대 법무사", "센텀 법무사", "오시는 길", seoBrand.siteName],
+    keywords: ["오시는 길", "센텀시티 방문", seoBrand.siteName],
   },
   privacy: {
     title: buildSeoTitle("개인정보처리방침"),

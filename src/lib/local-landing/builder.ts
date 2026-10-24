@@ -639,7 +639,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 허브" },
       { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
       { href: "/법인변경등기", label: "법인 변경등기 허브" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산기업법률자문", label: "기업 운영 단계별 법률실무 지원" },
       { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
       { href: "/부산기업부동산등기", label: "기업 부동산등기" },
@@ -647,6 +647,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/partners", label: "전문직·기업 협업 안내" },
     ],
     부산법인설립등기: [
+      { href: "/부산법인설립전문법무사", label: "부산 법인전문 법무사 — 상호·자본·임원" },
       { href: "/부산기업법률자문", label: "기업 법률실무 허브" },
       { href: "/법인정관업무", label: "법인 정관 업무" },
       { href: "/법인정관인증확인", label: "정관 인증 필요 여부" },
@@ -654,8 +655,9 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/partners", label: "협업·프로젝트 문의" },
     ],
     부산부동산등기: [
-      { href: "/부산등기법무사", label: "부산 등기업무 전체 안내" },
-      { href: "/부산법률상담", label: "부산 법률상담 — 절차 분류" },
+      { href: "/부산부동산등기전문법무사", label: "부산 등기전문 법무사 — 원인별 부동산" },
+      { href: "/부산등기법무사", label: "부산 등기 법무사 — 부동산·상속·법인 입구" },
+      { href: "/부산법률상담", label: "부산법률상담 — 공공상담과 업무 구분" },
       { href: "/partners", label: "부산 현지 등기 협업" },
       { href: "/부산부동산협력법무사", label: "부동산 협력 법무사" },
     ],

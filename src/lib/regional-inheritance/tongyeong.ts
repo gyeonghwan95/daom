@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const tongyeongInheritanceSpec: RegionalInheritanceSpec = {
   region: "통영",
-  metaTitle: "통영 상속등기 법무사｜섬 토지·등기 없는 집 정리 | 다옴법무사사무소",
+  metaTitle: "통영 상속 법무사｜섬 토지·등기 없는 집 정리 | 다옴법무사사무소",
   description:
     "통영 상속등기 법무사 안내. 한산도·욕지도 등 섬 지역 토지와 등기부가 없는 주택(건축물대장만 있는 건물)의 상속 방법, 창원지방법원 통영지원 관할, 방문 없이 진행하는 순서를 부산 해운대 사무소가 정리했습니다.",
   h1: "통영 섬 지역 토지와 등기가 없는 집, 상속등기는 어떻게 하나",

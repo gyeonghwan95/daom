@@ -54,9 +54,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "경기상속등기법무사",
     regionName: "경기",
-    primaryKeyword: "경기 상속등기 법무사",
+    primaryKeyword: "경기 상속 법무사",
     secondaryKeywords: ["경기도 상속등기", "경기 비대면 상속등기"],
-    seoTitle: "경기 상속등기 법무사｜여러 시·군 부동산 비대면 진행",
+    seoTitle: "경기 상속 법무사｜여러 시·군 부동산 비대면 진행",
     metaDescription:
       "경기 상속등기 법무사 안내. 서로 다른 시에 아파트·토지가 있거나 상속인이 서울·부산으로 흩어진 경우 목록부터 정리합니다. 경기 지점 없음.",
     h1: "경기도에 흩어진 상속부동산을 한 번에 정리하려면",
@@ -85,9 +85,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "인천상속등기법무사",
     regionName: "인천",
-    primaryKeyword: "인천 상속등기 법무사",
-    secondaryKeywords: ["송도 상속등기", "청라 상속등기", "영종 상속등기"],
-    seoTitle: "인천 상속등기 법무사｜송도·청라·영종 부동산 비대면 진행",
+    primaryKeyword: "인천 상속 법무사",
+    secondaryKeywords: ["인천 비대면 상속등기", "인천 상속부동산", "인천 아파트 상속등기"],
+    seoTitle: "인천 상속 법무사｜신도시·섬 부동산 비대면 진행",
     metaDescription:
       "인천 상속등기 법무사. 송도·청라·영종 아파트 비대면 진행, 육지 거주 상속인 안내. 인천 지점 없이 부산 사무소에서 가능 여부를 검토합니다.",
     h1: "인천 상속부동산을 방문 없이 진행하는 방법",
@@ -113,14 +113,14 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "경남상속등기법무사",
     regionName: "경남",
-    primaryKeyword: "경남 상속등기 법무사",
+    primaryKeyword: "경남 상속 법무사",
     secondaryKeywords: [
       "경남 상속등기",
       "경남 비대면 상속등기",
       "경남 상속등기 비용",
       "부산 법무사 경남 상속등기",
     ],
-    seoTitle: "경남 상속등기 법무사｜김해·양산·창원 부동산 한 번에 진행",
+    seoTitle: "경남 상속 법무사｜여러 시·군 부동산 한 번에 진행",
     metaDescription:
       "경남 상속등기 법무사. 김해 아파트·양산 토지·창원 상가처럼 여러 시·군 부동산을 한 사무소에서 검토. 경남 지점 없이 부산 해운대에서 관할 특례·방문·비대면 바로 진행 방법을 안내합니다.",
     h1: "경남에 있는 상속부동산도 부산 법무사에게 맡길 수 있습니다",
@@ -181,9 +181,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "대구상속등기법무사",
     regionName: "대구",
-    primaryKeyword: "대구 상속등기 법무사",
+    primaryKeyword: "대구 상속 법무사",
     secondaryKeywords: ["대구 아파트 상속등기", "대구 상속등기 비용"],
-    seoTitle: "대구 상속등기 법무사｜아파트·상가·토지 상속 절차",
+    seoTitle: "대구 상속 법무사｜아파트·상가·토지 상속 절차",
     metaDescription:
       "대구 상속등기 법무사. 아파트·상가·토지 절차·비용·서류. 대구 지점 없이 부산 해운대에서 비대면으로 가능 여부를 검토합니다.",
     h1: "대구 부동산 상속등기 비용과 필요서류",
@@ -206,9 +206,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "대전상속등기법무사",
     regionName: "대전",
-    primaryKeyword: "대전 상속등기 법무사",
+    primaryKeyword: "대전 상속 법무사",
     secondaryKeywords: ["대전 비대면 상속등기", "대전 상속부동산"],
-    seoTitle: "대전 상속등기 법무사｜상속인이 다른 지역에 살아도 진행 가능",
+    seoTitle: "대전 상속 법무사｜상속인이 다른 지역에 살아도 진행 가능",
     metaDescription:
       "대전 상속등기 법무사. 상속인이 타지역에 살아도 비대면 끝까지 진행. 대전 지점 없이 부산 사무소에서 안내합니다.",
     h1: "대전 상속부동산을 비대면으로 정리하려면",
@@ -227,9 +227,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "세종상속등기법무사",
     regionName: "세종",
-    primaryKeyword: "세종 상속등기 법무사",
+    primaryKeyword: "세종 상속 법무사",
     secondaryKeywords: ["세종시 아파트 상속등기", "세종 상속등기 비용"],
-    seoTitle: "세종 상속등기 법무사｜아파트·상가 상속 절차와 비용",
+    seoTitle: "세종 상속 법무사｜아파트·상가 상속 절차와 비용",
     metaDescription:
       "세종 상속등기 법무사. 아파트·상가 절차와 비용. 세종 지점 없이 부산 해운대에서 비대면으로 상담부터 신청까지 진행합니다.",
     h1: "세종시 상속부동산을 방문 없이 진행하는 방법",
@@ -250,9 +250,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "충남상속등기법무사",
     regionName: "충남",
-    primaryKeyword: "충남 상속등기 법무사",
-    secondaryKeywords: ["천안 상속등기", "아산 상속등기", "당진 상속등기"],
-    seoTitle: "충남 상속등기 법무사｜천안·아산·당진 부동산 일괄 진행",
+    primaryKeyword: "충남 상속 법무사",
+    secondaryKeywords: ["충남 비대면 상속등기", "충남 상속등기 비용", "충남 여러 시군 상속"],
+    seoTitle: "충남 상속 법무사｜여러 시·군 부동산 일괄 진행",
     metaDescription:
       "충남 상속등기 법무사. 천안·아산·당진 등 여러 시·군 부동산 일괄 검토. 충남 지점 없이 부산에서 비대면 상담합니다.",
     h1: "충남 여러 시·군의 상속부동산을 정리하려면",
@@ -273,9 +273,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "충북상속등기법무사",
     regionName: "충북",
-    primaryKeyword: "충북 상속등기 법무사",
-    secondaryKeywords: ["청주 상속등기", "충주 상속등기", "제천 상속등기"],
-    seoTitle: "충북 상속등기 법무사｜청주·충주·제천 비대면 진행",
+    primaryKeyword: "충북 상속 법무사",
+    secondaryKeywords: ["충북 비대면 상속등기", "충북 상속등기 비용", "충북 여러 시군 상속"],
+    seoTitle: "충북 상속 법무사｜여러 시·군 비대면 진행",
     metaDescription:
       "충북 상속등기 법무사. 청주·충주·제천 비대면 진행과 필요서류. 충북 지점 없이 부산 해운대에서 안내합니다.",
     h1: "충북 상속부동산의 등기 절차와 준비서류",
@@ -296,9 +296,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "광주상속등기법무사",
     regionName: "광주",
-    primaryKeyword: "광주 상속등기 법무사",
+    primaryKeyword: "광주 상속 법무사",
     secondaryKeywords: ["광주광역시 상속등기", "광주 상속등기 비용"],
-    seoTitle: "광주 상속등기 법무사｜상속부동산 비용·서류·절차 안내",
+    seoTitle: "광주 상속 법무사｜광주광역시 상속부동산 안내",
     metaDescription:
       "광주 상속등기 법무사. 비용·서류·절차와 비대면 진행. 광주 지점 없이 부산 사무소에서 가능 여부를 검토합니다.",
     h1: "광주광역시 상속등기를 비대면으로 맡기는 방법",
@@ -319,9 +319,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "전남상속등기법무사",
     regionName: "전남",
-    primaryKeyword: "전남 상속등기 법무사",
-    secondaryKeywords: ["여수 상속등기", "순천 상속등기", "목포 상속등기"],
-    seoTitle: "전남 상속등기 법무사｜여수·순천·목포 토지와 주택 상속",
+    primaryKeyword: "전남 상속 법무사",
+    secondaryKeywords: ["전남 비대면 상속등기", "전남 토지 상속등기", "전남 여러 시군 상속"],
+    seoTitle: "전남 상속 법무사｜여러 시·군 토지와 주택 상속",
     metaDescription:
       "전남 상속등기 법무사. 여수·순천·목포 토지·주택 일괄 정리. 전남 지점 없이 부산에서 비대면으로 검토합니다.",
     h1: "전남 여러 지역의 상속부동산을 한 번에 정리하려면",
@@ -348,9 +348,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "전북상속등기법무사",
     regionName: "전북",
-    primaryKeyword: "전북 상속등기 법무사",
-    secondaryKeywords: ["전주 상속등기", "익산 상속등기", "군산 상속등기"],
-    seoTitle: "전북 상속등기 법무사｜전주·익산·군산 부동산 상속 절차",
+    primaryKeyword: "전북 상속 법무사",
+    secondaryKeywords: ["전북 비대면 상속등기", "전북 상속등기 비용", "전북 여러 시군 상속"],
+    seoTitle: "전북 상속 법무사｜여러 시·군 부동산 상속 절차",
     metaDescription:
       "전북 상속등기 법무사. 전주·익산·군산 부동산 상속 절차·서류. 전북 지점 없이 부산 해운대에서 안내합니다.",
     h1: "전북 상속부동산의 필요서류와 비용",
@@ -376,9 +376,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "경북상속등기법무사",
     regionName: "경북",
-    primaryKeyword: "경북 상속등기 법무사",
-    secondaryKeywords: ["포항 상속등기", "구미 상속등기", "경산 상속등기"],
-    seoTitle: "경북 상속등기 법무사｜포항·구미·경산 여러 부동산 정리",
+    primaryKeyword: "경북 상속 법무사",
+    secondaryKeywords: ["경북 비대면 상속등기", "경북 상속등기 비용", "경북 여러 시군 상속"],
+    seoTitle: "경북 상속 법무사｜여러 시·군 부동산 정리",
     metaDescription:
       "경북 상속등기 법무사. 포항·구미·경산 여러 부동산 정리. 경북 지점 없이 부산에서 비대면으로 검토합니다.",
     h1: "경북 아파트·토지 상속등기를 한 사무소에서 진행하려면",
@@ -404,9 +404,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "강원상속등기법무사",
     regionName: "강원",
-    primaryKeyword: "강원 상속등기 법무사",
-    secondaryKeywords: ["원주 상속등기", "춘천 상속등기", "강릉 상속등기"],
-    seoTitle: "강원 상속등기 법무사｜원주·춘천·강릉 토지·주택 상속",
+    primaryKeyword: "강원 상속 법무사",
+    secondaryKeywords: ["강원 비대면 상속등기", "강원 상속등기 비용", "강원 여러 시군 상속"],
+    seoTitle: "강원 상속 법무사｜여러 시·군 토지·주택 상속",
     metaDescription:
       "강원 상속등기 법무사. 원주·춘천·강릉 토지·주택 상속과 비대면 진행. 강원 지점 없이 부산 사무소에서 안내합니다.",
     h1: "강원도 상속부동산을 비대면으로 정리하는 방법",
@@ -433,9 +433,9 @@ export const metroRegionDefs: RegionLandingDef[] = [
   metro({
     slug: "제주상속등기법무사",
     regionName: "제주",
-    primaryKeyword: "제주 상속등기 법무사",
+    primaryKeyword: "제주 상속 법무사",
     secondaryKeywords: ["제주 비대면 상속등기", "제주 부동산 상속"],
-    seoTitle: "제주 상속등기 법무사｜육지에 살아도 제주 부동산 상속 가능",
+    seoTitle: "제주 상속 법무사｜육지에 살아도 제주 부동산 상속 가능",
     metaDescription:
       "제주 상속등기 법무사. 육지 거주 상속인의 제주 부동산 비대면 진행. 제주 지점 없이 부산 해운대에서 가능 여부를 검토합니다.",
     h1: "제주 상속부동산을 부산 법무사에게 맡기는 방법",

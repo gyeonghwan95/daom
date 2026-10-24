@@ -453,7 +453,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     ],
     primaryKeywords: [
       `${place} 업무 사례`,
-      `${place} 법무사 사례`,
+      `${place} 상담 사례`,
       `${place} 상속등기`,
       `${place} 부동산등기`,
       ...entry.keywords.slice(0, 3),

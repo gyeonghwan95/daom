@@ -38,7 +38,7 @@ const OFFICE_HUB = "/부산법무사무소";
 const LIBRARY: InflowItem[] = [
   {
     href: HOME_BROAD_CHAMPION,
-    label: "해운대·센텀 법무사 사무소",
+    label: "부산 법무사 안윤정",
     searchPhrase: "부산 법무사",
     reason: "다옴법무사사무소 안윤정 법무사가 상속·등기·법인·회생을 직접 상담합니다.",
   },

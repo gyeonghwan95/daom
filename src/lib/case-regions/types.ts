@@ -48,6 +48,8 @@ export type CaseRegionEntry = {
   indexable: boolean;
   /** 동일 의도 통합 시 canonical 대상 slug (업무사례 하위) */
   canonicalSlug?: string;
+  /** 생활권 허브와 겹치면 `/재송동법무사`처럼 업무사례 밖 대표 URL */
+  canonicalPath?: string;
 };
 
 export type DistrictKey =

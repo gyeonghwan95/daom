@@ -82,8 +82,8 @@ export const daeguPhase1Defs: SoutheastLandingDef[] = [
     regionType: "허브",
     pageType: "region-hub",
     primaryKeyword: "대구 법무사 업무",
-    secondaryKeywords: ["대구 상속등기", "대구 법인등기", "대구 비대면 법무사"],
-    seoTitle: "대구 법무사 업무 안내｜상속등기·법인등기 비대면 상담",
+    secondaryKeywords: ["대구 법인등기", "대구 부동산등기", "대구 비대면 법무사"],
+    seoTitle: "대구 법무사 업무 안내｜부동산·법인등기 비대면 상담",
     metaDescription:
       "대구 법무사 업무 허브. 8개 구·군 상속등기·법인등기·유증등기를 부산 해운대 사무소에서 비대면으로 검토합니다. 대구 지점 없음.",
     h1: "대구 전 지역에서 맡길 수 있는 법무사 업무",

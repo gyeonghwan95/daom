@@ -4,6 +4,25 @@ import { buildIndustrialEntries } from "./industrial";
 import { buildLivingAreaEntries } from "./living-areas";
 import type { CaseRegionEntry, DistrictKey, DistrictMeta } from "./types";
 import { withRegionLabel } from "@/lib/local-landing/region-label";
+import { getExactKeywordChampionPath } from "@/lib/seo/champion-query";
+
+/** 이름만으로는 허브와 안 붙는 생활권 사례 URL → 대표 생활권 허브 */
+const LIVING_CASE_LANDING: Record<string, string> = {
+  부산하단오거리법무사: "/하단법무사",
+};
+
+function withGeoCaseCanonical(entry: CaseRegionEntry): CaseRegionEntry {
+  const landing = LIVING_CASE_LANDING[entry.slug];
+  if (landing) {
+    return { ...entry, indexable: false, canonicalPath: landing };
+  }
+  if (entry.kind !== "dong" && entry.kind !== "living") return entry;
+  const champion = getExactKeywordChampionPath(`${entry.name} 법무사`);
+  if (champion && champion !== `/업무사례/${entry.slug}`) {
+    return { ...entry, indexable: false, canonicalPath: champion };
+  }
+  return entry;
+}
 
 export type * from "./types";
 export { DISTRICT_METAS } from "./districts";
@@ -37,8 +56,8 @@ function buildDistrictTree(): CaseRegionEntry[] {
       parentDistrictKey: district.key,
       traits: district.traits,
       keywords: [
-        `${district.name} 법무사`,
-        `부산 ${district.name} 법무사`,
+        `${district.name} 업무 사례`,
+        `부산 ${district.name} 상담 사례`,
         district.name,
       ],
       context: district.context,
@@ -53,7 +72,7 @@ function buildDistrictTree(): CaseRegionEntry[] {
         kind: district.key === "gijang" ? "living" : "dong",
         parentDistrictKey: district.key,
         traits: district.traits.slice(0, 3),
-        keywords: [dong, withRegionLabel("부산", dong), `${dong} 법무사`],
+        keywords: [dong, withRegionLabel("부산", dong), `${dong} 업무 사례`],
         context: `${district.name} ${dong} 일대는 ${district.context}`,
         indexable: true,
       });
@@ -68,7 +87,7 @@ function buildDistrictTree(): CaseRegionEntry[] {
         kind: "admin-dong",
         parentDistrictKey: district.key,
         traits: district.traits.slice(0, 2),
-        keywords: [admin, withRegionLabel("부산", admin), `${admin} 법무사`],
+        keywords: [admin, withRegionLabel("부산", admin), `${admin} 업무 사례`],
         context: `${district.name} ${admin}은(는) ${baseDong} 생활권의 행정동으로, 주거 밀집지의 이전·상속등기 상담이 이어집니다.`,
         indexable: false,
         canonicalSlug: dongSlug(baseDong),
@@ -96,10 +115,16 @@ export function getAllCaseRegionEntries(): CaseRegionEntry[] {
   for (const entry of merged) {
     if (seen.has(entry.slug)) continue;
     seen.add(entry.slug);
-    unique.push(entry);
+    unique.push(withGeoCaseCanonical(entry));
   }
-  cached = unique;
-  return unique;
+  const bySlug = new Map(unique.map((entry) => [entry.slug, entry]));
+  cached = unique.map((entry) => {
+    if (entry.canonicalPath || !entry.canonicalSlug) return entry;
+    const target = bySlug.get(entry.canonicalSlug);
+    if (!target?.canonicalPath) return entry;
+    return { ...entry, canonicalPath: target.canonicalPath };
+  });
+  return cached;
 }
 
 export function getCaseRegionBySlug(slug: string): CaseRegionEntry | undefined {
@@ -114,6 +139,7 @@ export function getCaseRegionBySlug(slug: string): CaseRegionEntry | undefined {
 export function getIndexableCaseRegions(): CaseRegionEntry[] {
   return getAllCaseRegionEntries().filter((entry) => {
     if (!entry.indexable) return false;
+    if (entry.canonicalPath) return false;
     if (entry.canonicalSlug && entry.canonicalSlug !== entry.slug) return false;
     return true;
   });

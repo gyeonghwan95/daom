@@ -706,7 +706,7 @@ function buildBusinessZonePage(config: LocalLandingConfig): LocalLandingPage | n
     pageType: "business-zone",
     serviceSlug: zone.serviceSlug,
     title: zone.title,
-    h1: `${zone.title} — ${zone.zoneName} 법무사 상담`,
+    h1: `${zone.title} — ${zone.zoneName} 법인 설립·등기`,
     description: `${withRegionLabel("부산", zone.title)} — ${zone.zoneName} 법인 설립·등기·임원변경. 다옴법무사사무소 안윤정 법무사.`,
     regionLabel: config.regionLabel,
     regionKey: config.regionKey,

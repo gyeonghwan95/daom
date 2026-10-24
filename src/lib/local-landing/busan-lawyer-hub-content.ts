@@ -119,7 +119,7 @@ export const busanLawyerHubWorkAreas: BusanLawyerHubWorkArea[] = [
     title: "법인등기",
     items: ["설립", "임원변경", "본점이전", "목적변경"],
     links: [
-      { href: "/부산법인법무사", label: "부산 법인 법무사" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산법인등기", label: "법인등기" },
     ],
   },
@@ -263,7 +263,7 @@ export const busanLawyerHubInternalLinks: BusanLawyerHubLink[] = [
   { href: "/부산법무사상담", label: "부산 법무사 상담" },
   { href: "/부산등기법무사", label: "부산 등기 법무사" },
   { href: "/부산상속법무사", label: "부산 상속 법무사" },
-  { href: "/부산법인법무사", label: "부산 법인 법무사" },
+  { href: "/부산법인법무사", label: "부산 회사 법무사" },
   { href: "/부산부동산등기", label: "부산 부동산등기" },
   { href: "/부산개인회생", label: "부산 개인회생" },
   { href: "/해운대법무사", label: "해운대 법무사" },

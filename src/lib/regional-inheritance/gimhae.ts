@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const gimhaeInheritanceSpec: RegionalInheritanceSpec = {
   region: "김해",
-  metaTitle: "김해 상속등기 법무사｜부산 사는 상속인도 한 번에 | 다옴법무사사무소",
+  metaTitle: "김해 상속 법무사｜부산 사는 상속인도 한 번에 | 다옴법무사사무소",
   description:
     "김해 상속등기 법무사 안내. 김해 부동산을 부산·타지역에 사는 상속인이 정리할 때의 순서, 원본 서류, 방문이 필요한 경우와 창원지방법원 관할을 정리했습니다. 부산 해운대 사무소에서 진행하며 김해 지점은 없습니다.",
   h1: "김해 부동산을 부산에 사는 상속인이 정리하려면",

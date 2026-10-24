@@ -22,6 +22,7 @@ export function isIndexablePagePath(path: string): boolean {
     const entry = getCaseRegionBySlug(slug);
     if (entry) {
       if (!entry.indexable) return false;
+      if (entry.canonicalPath) return false;
       if (entry.canonicalSlug && entry.canonicalSlug !== entry.slug) return false;
       return true;
     }

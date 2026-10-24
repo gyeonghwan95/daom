@@ -202,7 +202,7 @@ export function buildLivingAreaEntries(): CaseRegionEntry[] {
     keywords: seed.keywords ?? [
       seed.name,
       withRegionLabel("부산", seed.name),
-      `${seed.name} 법무사`,
+      `${seed.name} 업무 사례`,
     ],
     context: seed.context,
     indexable: seed.indexable ?? true,

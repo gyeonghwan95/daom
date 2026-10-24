@@ -280,7 +280,7 @@ export const registryHubFaqs: ServiceFaq[] = [
 
 export const registryHubInternalLinks: RegistryHubLink[] = [
   { href: "/부산부동산등기", label: "부산 부동산등기" },
-  { href: "/부산부동산등기전문법무사", label: "부동산등기 원인별 선택" },
+  { href: "/부산부동산등기전문법무사", label: "부산 등기전문 법무사 — 원인별 부동산" },
   { href: "/부산상속등기", label: "부산 상속등기" },
   { href: "/부산법인등기", label: "부산 법인등기 법무사" },
   { href: "/부산보상등기", label: "부산 보상등기" },

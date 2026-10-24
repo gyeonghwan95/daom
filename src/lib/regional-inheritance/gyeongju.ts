@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const gyeongjuInheritanceSpec: RegionalInheritanceSpec = {
   region: "경주",
-  metaTitle: "경주 상속등기 법무사｜농지·임야 상속 전 확인할 것 | 다옴법무사사무소",
+  metaTitle: "경주 상속 법무사｜농지·임야 상속 전 확인할 것 | 다옴법무사사무소",
   description:
     "경주 상속등기 법무사 안내. 농사를 짓지 않는 자녀도 논밭을 상속받을 수 있는지(농지법 1만㎡ 기준), 임야와 시내 아파트가 섞인 경우의 순서, 대구가정법원 경주지원 관할을 부산 해운대 사무소가 정리했습니다.",
   h1: "경주 농지·임야 상속등기, 농사를 짓지 않는 자녀도 받을 수 있을까",

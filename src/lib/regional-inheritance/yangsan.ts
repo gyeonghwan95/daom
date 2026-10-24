@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const yangsanInheritanceSpec: RegionalInheritanceSpec = {
   region: "양산",
-  metaTitle: "양산 상속등기 법무사｜방문·비대면 선택 | 다옴법무사사무소",
+  metaTitle: "양산 상속 법무사｜방문·비대면 선택 | 다옴법무사사무소",
   description:
     "양산 상속등기 법무사 안내. 부산과 맞닿은 양산은 해운대 사무소 방문과 비대면 진행 중 고를 수 있습니다. 상속포기는 울산가정법원 관할이라는 점까지 함께 확인합니다. 양산 지점은 없습니다.",
   h1: "양산 상속등기, 부산 사무소 방문과 비대면 중 어떻게 맡길까",

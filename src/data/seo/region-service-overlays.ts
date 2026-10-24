@@ -22,7 +22,7 @@ function hubLinks(
   if (service === "corp") {
     return [
       { href: "/부산법인등기", label: "부산 법인등기" },
-      { href: "/부산법인법무사", label: "부산 법인 법무사" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산법무사상담", label: "상담 안내" },
     ];
   }

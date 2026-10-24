@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site";
 export const officePageMeta = {
   h1: "다옴법무사사무소 안내",
   intro: `${siteConfig.name}는 ${officeLocation.fullAddress}에 있습니다. ${officeLocation.areaLabel} 일대에서 ${lawyerProfileMeta.fullTitle}가 상속등기·부동산등기·법인등기·개인회생 등 법무사 업무를 직접 상담하고 진행합니다. 방문은 사전 예약 후 이용해 주시고, 전화·카카오톡·네이버 톡톡으로도 상황을 먼저 확인할 수 있습니다.`,
-  seoTitleHint: "해운대·센텀 법무사 사무소",
+  seoTitleHint: "센텀시티 사무소 방문 안내",
   seoDescription:
     "부산 해운대구 센텀 다옴법무사사무소. 주소·운영시간·주차·상담 방식과 방문 전 준비사항을 안내합니다. 안윤정 법무사가 직접 상담하며, 예약 후 방문해 주세요.",
 } as const;

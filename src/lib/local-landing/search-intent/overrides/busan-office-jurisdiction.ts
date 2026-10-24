@@ -139,7 +139,7 @@ export const 등기관할과사무소위치Override: SearchIntentContent = {
     },
   ],
   relatedServiceLinks: [
-    { href: "/", label: "해운대·센텀 법무사 사무소" },
+    { href: "/", label: "부산 법무사 안윤정" },
     mapHub,
     officeHub,
     { href: "/office", label: "사무소 소개" },

@@ -1,54 +1,48 @@
+# -*- coding: utf-8 -*-
 import re
-import subprocess
-import sys
+import urllib.request
 
-HOST = "https://xn--2j1br1na42lvxja38mk8r.kr"
+UA = {"User-Agent": "Mozilla/5.0"}
+BASE = "https://xn--2j1br1na42lvxja38mk8r.kr"
 PATHS = [
     "/",
+    "/부산법무사상담",
+    "/부산상속법무사",
+    "/부산상속포기",
+    "/부산상속전문법무사",
+    "/부산부동산등기전문법무사",
     "/상속",
     "/전국상속등기",
-    "/부산상속포기",
     "/상속포기비용",
-    "/상속등기비용",
-    "/부산상속법무사",
+    "/부산법인등기",
+    "/부산법인설립전문법무사",
+    "/부산법률상담",
+    "/부산법무사추천",
+    "/해운대법무사",
+    "/부산등기법무사",
     "/부산상속등기",
-    "/부산한정승인",
-    "/상속상담전준비서류와비용",
-    "/부산상속전문법무사",
-    "/업무사례/울산동구상속등기법무사",
-    "/상속포기필요서류",
+    "/부산법인설립등기",
 ]
 
-def fetch(path: str) -> str:
-    url = HOST if path == "/" else HOST + "/" + "/".join(
-        __import__("urllib.parse").parse.quote(seg) for seg in path.strip("/").split("/")
-    )
-    r = subprocess.run(
-        ["curl.exe", "-sS", "-A", "Mozilla/5.0", url],
-        capture_output=True,
-        check=False,
-    )
-    return r.stdout.decode("utf-8", errors="replace")
 
-def first(pattern: str, html: str) -> str:
+def text_of(html: str, pattern: str) -> str:
     m = re.search(pattern, html, re.I | re.S)
     if not m:
         return ""
-    return re.sub(r"\s+", " ", m.group(1)).strip()[:180]
+    return re.sub(r"\s+", " ", re.sub("<[^>]+>", " ", m.group(1))).strip()
 
-out = open("scripts/_tmp_live_titles.tsv", "w", encoding="utf-8")
-out.write("path\ttitle\th1\tcanonical\trobots\titemlist\thtml_len\n")
 
 for path in PATHS:
-    html = fetch(path)
-    title = first(r"<title[^>]*>(.*?)</title>", html)
-    h1 = first(r"<h1[^>]*>(.*?)</h1>", html)
-    h1 = re.sub(r"<[^>]+>", "", h1)
-    canon = first(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', html)
-    robots = first(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)', html)
-    itemlist = "ItemList" if "ItemList" in html else "-"
-    line = f"{path}\t{title}\t{h1}\t{canon}\t{robots}\t{itemlist}\t{len(html)}"
-    out.write(line + "\n")
-
-out.close()
-print("wrote scripts/_tmp_live_titles.tsv")
+    url = BASE + urllib.request.quote(path, safe="/")
+    req = urllib.request.Request(url, headers=UA)
+    try:
+        with urllib.request.urlopen(req, timeout=25) as res:
+            html = res.read().decode("utf-8", "replace")
+            status = res.status
+    except Exception as exc:  # noqa: BLE001
+        print(f"{path}\tERR\t{exc}")
+        continue
+    title = text_of(html, r"<title>(.*?)</title>")[:90]
+    h1 = text_of(html, r"<h1[^>]*>(.*?)</h1>")[:80]
+    items = len(re.findall(r'"@type"\s*:\s*"ListItem"', html))
+    print(f"{path}\t{status}\tlist={items}\t{title}\tH1={h1}")

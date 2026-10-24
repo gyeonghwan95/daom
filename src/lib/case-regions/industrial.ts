@@ -46,7 +46,7 @@ export function buildIndustrialEntries(): CaseRegionEntry[] {
     kind: "industrial" as const,
     parentDistrictKey: seed.parent,
     traits: ["industrial" as const],
-    keywords: [seed.name, withRegionLabel("부산", seed.name), `${seed.name} 법무사`],
+    keywords: [seed.name, withRegionLabel("부산", seed.name), `${seed.name} 업무 사례`],
     context: seed.context,
     indexable: seed.indexable ?? true,
     canonicalSlug: seed.canonicalSlug,

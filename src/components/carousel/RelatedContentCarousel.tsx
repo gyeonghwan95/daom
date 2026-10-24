@@ -13,6 +13,8 @@ export type RelatedContentCarouselProps = {
   viewAllLabel?: string;
   className?: string;
   prioritizeFirst?: boolean;
+  /** JSON-LD ItemList @id와 같은 화면 앵커. PageSerpCarousel만 featured-pages를 넘긴다. */
+  sectionId?: string;
 };
 
 /**
@@ -26,6 +28,7 @@ export function RelatedContentCarousel({
   viewAllLabel = "전체보기",
   className,
   prioritizeFirst = false,
+  sectionId,
 }: RelatedContentCarouselProps) {
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -43,6 +46,7 @@ export function RelatedContentCarousel({
 
   return (
     <section
+      id={sectionId}
       aria-labelledby={headingId}
       data-related-content="carousel"
       className={className ?? "mt-12"}

@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const changwonInheritanceSpec: RegionalInheritanceSpec = {
   region: "창원",
-  metaTitle: "창원 상속등기 법무사｜5개 구 부동산 한 번에 신청 | 다옴법무사사무소",
+  metaTitle: "창원 상속 법무사｜5개 구 부동산 한 번에 신청 | 다옴법무사사무소",
   description:
     "창원 상속등기 법무사 안내. 의창·성산·마산합포·마산회원·진해에 흩어진 상속부동산을 한 번에 신청하는 요건과, 구마다 다른 가정법원 관할을 정리했습니다. 부산 해운대 사무소에서 진행하며 창원 지점은 없습니다.",
   h1: "창원 여러 구에 흩어진 상속부동산, 한 번에 신청할 수 있을까",

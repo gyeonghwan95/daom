@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const miryangInheritanceSpec: RegionalInheritanceSpec = {
   region: "밀양",
-  metaTitle: "밀양 상속등기 법무사｜흩어진 형제 서류 모으는 법 | 다옴법무사사무소",
+  metaTitle: "밀양 상속 법무사｜흩어진 형제 서류 모으는 법 | 다옴법무사사무소",
   description:
     "밀양 상속등기 법무사 안내. 형제가 여러 지역에 살 때 협의서 서명과 인감증명서(본인서명사실확인서)를 모으는 방법, 한 명에게 몰아주기와 공동 소유의 차이, 창원지방법원 밀양지원(밀양·창녕) 관할을 정리했습니다.",
   h1: "밀양 부모님 집 상속등기, 흩어져 사는 형제 서명은 어떻게 모을까",

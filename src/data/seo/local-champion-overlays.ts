@@ -79,7 +79,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/수영구부동산등기", label: "수영구 부동산등기" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
     ],
   },
   "hood-yangjeong": {
@@ -132,7 +132,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
     ],
   },
   "dongnae-gu": {
@@ -173,7 +173,7 @@ export const LOCAL_CHAMPION_OVERLAYS: Record<string, LocalChampionOverlay> = {
       { href: "/부산법무사", label: "부산 전역 업무 선택 안내" },
       { href: "/동래구상속등기", label: "동래구 상속등기" },
       { href: "/동래구부동산등기", label: "동래구 부동산등기" },
-      { href: "/부산법인법무사", label: "부산 법인 업무 안내" },
+      { href: "/부산법인법무사", label: "부산 회사 법무사" },
     ],
   },
 };

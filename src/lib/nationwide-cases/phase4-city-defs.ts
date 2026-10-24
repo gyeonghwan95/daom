@@ -53,9 +53,9 @@ export const phase4CityRegionDefs: RegionLandingDef[] = [
     regionName: "경기광주",
     parentRegion: "경기",
     regionType: "시",
-    primaryKeyword: "경기 광주 상속등기 법무사",
-    secondaryKeywords: ["경기도 광주시 상속등기", "광주시 상속등기 법무사", "오포 곤지암 상속등기"],
-    seoTitle: "경기도 광주 상속등기｜광주광역시와 헷갈리지 않게 확인하는 법",
+    primaryKeyword: "경기 광주 상속 법무사",
+    secondaryKeywords: ["경기도 광주시 상속등기", "경기광주 비대면 상속등기", "오포 곤지암 상속등기"],
+    seoTitle: "경기 광주 상속 법무사｜광주광역시와 헷갈리지 않게 확인하는 법",
     metaDescription:
       "경기 광주 상속등기 법무사. 오포·곤지암 등 경기도 광주시 아파트·전원주택·농지 상속에서 광주광역시와 지역을 혼동하지 않는 것이 먼저입니다. 경기광주 지점 없이 부산 해운대 사무소에서 관할 특례·비대면 상담부터 신청까지 진행합니다.",
     h1: "경기도 광주시 상속부동산, 광주광역시와 다른 절차인가요",

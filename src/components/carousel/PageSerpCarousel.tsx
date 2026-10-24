@@ -20,6 +20,7 @@ export function PageSerpCarousel({ path, className, heading }: PageSerpCarouselP
         description={pack.description}
         items={pack.items}
         className={className ?? "mt-8"}
+        sectionId="featured-pages"
       />
       <SeoCarouselJsonLd items={pack.items} pagePath={path} name={name} />
     </>

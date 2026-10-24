@@ -3,6 +3,7 @@
  * Maps existing URLs to region / service / situation entities.
  * No new URLs; additive internal-link and champion decisions only.
  */
+import { getExactKeywordChampionPath } from "@/lib/seo/champion-query";
 
 export type PageRelationRole =
   | "BUSAN_MAIN_CHAMPION"
@@ -448,6 +449,22 @@ export function getChampionForTargetQuery(query: string): {
     "상속포기 법무사 수수료": { champion: "/상속포기비용", intent: "renunciation-fee-buckets" },
     "상속포기 법무사 보수": { champion: "/상속포기비용", intent: "renunciation-fee-buckets" },
     "상속등기 법무사": { champion: "/전국상속등기", intent: "nationwide-inheritance-registration" },
+    "서울 상속 법무사": { champion: "/업무사례/서울상속등기법무사", intent: "remote-inheritance" },
+    "인천 상속 법무사": { champion: "/업무사례/인천상속등기법무사", intent: "remote-inheritance" },
+    "수원 상속 법무사": { champion: "/업무사례/수원상속등기법무사", intent: "remote-inheritance" },
+    "대구 상속 법무사": { champion: "/업무사례/대구상속등기법무사", intent: "remote-inheritance" },
+    "대전 상속 법무사": { champion: "/업무사례/대전상속등기법무사", intent: "remote-inheritance" },
+    "울산 상속 법무사": { champion: "/업무사례/울산상속등기법무사", intent: "remote-inheritance" },
+    "세종 상속 법무사": { champion: "/업무사례/세종상속등기법무사", intent: "remote-inheritance" },
+    "광주 상속 법무사": { champion: "/업무사례/광주상속등기법무사", intent: "remote-inheritance" },
+    "창원 상속 법무사": { champion: "/업무사례/창원상속등기법무사", intent: "remote-inheritance" },
+    "김해 상속 법무사": { champion: "/업무사례/김해상속등기법무사", intent: "remote-inheritance" },
+    "양산 상속 법무사": { champion: "/업무사례/양산상속등기법무사", intent: "remote-inheritance" },
+    "용인 상속 법무사": { champion: "/업무사례/용인상속등기법무사", intent: "remote-inheritance" },
+    "거제 상속 법무사": { champion: "/업무사례/거제상속등기법무사", intent: "remote-inheritance" },
+    "청주 상속 법무사": { champion: "/업무사례/청주상속등기법무사", intent: "remote-inheritance" },
+    "천안 상속 법무사": { champion: "/업무사례/천안상속등기법무사", intent: "remote-inheritance" },
+    "포항 상속 법무사": { champion: "/업무사례/포항상속등기법무사", intent: "remote-inheritance" },
     "부산 상속": { champion: "/부산상속법무사", intent: "inheritance-router" },
     "부산 상속 법무사": { champion: "/부산상속법무사", intent: "inheritance-router" },
     "부산 법무사 상속": { champion: "/부산상속법무사", intent: "inheritance-router" },
@@ -456,17 +473,17 @@ export function getChampionForTargetQuery(query: string): {
       champion: "/부산법인법무사",
       intent: "company-operations-observed",
     },
-    "부산 등기 법무사": { champion: HOME_BROAD_CHAMPION, intent: "registry-home-observed" },
+    "부산 등기 법무사": { champion: "/부산등기법무사", intent: "registry-hub" },
     "부산 등기전문 법무사": {
       champion: "/부산부동산등기전문법무사",
       intent: "real-estate-registry-specialist-observed",
     },
-    "부산 부동산 법무사": { champion: HOME_BROAD_CHAMPION, intent: "real-estate-home-observed" },
+    "부산 부동산 법무사": { champion: "/부산부동산등기", intent: "real-estate-hub" },
     "부산 법인등기 법무사": { champion: "/부산법인등기", intent: "corporate-registry-changes" },
     "부산 법인 법무사": { champion: HOME_BROAD_CHAMPION, intent: "corporate-home-observed" },
     "부산 법인설립 법무사": {
-      champion: "/부산법인설립전문법무사",
-      intent: "incorporation-specialist-observed",
+      champion: "/부산법인설립등기",
+      intent: "incorporation-procedure",
     },
     "부산 법인전문 법무사": {
       champion: "/부산법인설립전문법무사",
@@ -489,6 +506,14 @@ export function getChampionForTargetQuery(query: string): {
   };
   const hit = champions[query];
   if (hit) return { query, ...hit };
+  const exactPath = getExactKeywordChampionPath(query);
+  if (exactPath) {
+    return {
+      query,
+      champion: exactPath,
+      intent: exactPath === HOME_BROAD_CHAMPION ? "broad-provider-selection" : "local-provider-selection",
+    };
+  }
   const inferred = getLocalChampionForQuery(query);
   return {
     query,

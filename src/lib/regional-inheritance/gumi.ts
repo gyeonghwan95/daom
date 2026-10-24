@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const gumiInheritanceSpec: RegionalInheritanceSpec = {
   region: "구미",
-  metaTitle: "구미 상속등기 법무사｜구미 집도 부산 집도 한 번에 | 다옴법무사사무소",
+  metaTitle: "구미 상속 법무사｜구미 집도 부산 집도 한 번에 | 다옴법무사사무소",
   description:
     "구미 상속등기 법무사 안내. 구미 아파트·토지 상속과, 구미에 사는 자녀가 부산 부모님 집을 상속받는 경우를 함께 정리했습니다. 상속포기는 대구가정법원 김천지원(김천·구미) 관할입니다. 부산 해운대 사무소, 구미 지점 없음.",
   h1: "구미 부동산 상속등기와 부산 부모님 집, 한 사무소에 맡길 수 있을까",

@@ -197,7 +197,7 @@ export const REGION_HUB_COVERAGE: Record<string, RegionHubCoverage> = {
       "장산·신시가지는 좌동 안내, 반송·석대는 반송동 안내를 보세요.",
       "중동·송정은 이 해운대구 허브에서 소재지를 확인한 뒤 우동·송정 안내로 연결합니다.",
     ],
-    extraKeywords: ["해운대구 법무사", "해운대 법무사", "센텀 법무사", "재송동 법무사"],
+    extraKeywords: ["해운대구 법무사", "해운대 법무사"],
     faqs: [
       {
         question: "해운대 중동·송정동 법무사는 어디서 보나요?",

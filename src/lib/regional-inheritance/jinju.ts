@@ -2,7 +2,7 @@ import type { RegionalInheritanceSpec } from "./types";
 
 export const jinjuInheritanceSpec: RegionalInheritanceSpec = {
   region: "진주",
-  metaTitle: "진주 상속등기 법무사｜빚 확인 후 등기하는 순서 | 다옴법무사사무소",
+  metaTitle: "진주 상속 법무사｜빚 확인 후 등기하는 순서 | 다옴법무사사무소",
   description:
     "진주 상속등기 법무사 안내. 빚이 있는지 모를 때 재산 조회, 상속포기·한정승인 판단, 상속등기로 이어지는 순서와 창원지방법원 진주지원 관할(진주·사천·하동·남해·산청)을 부산 해운대 사무소가 정리했습니다.",
   h1: "진주 부모님 집 상속등기, 빚이 있는지 모를 때는 무엇부터 할까",

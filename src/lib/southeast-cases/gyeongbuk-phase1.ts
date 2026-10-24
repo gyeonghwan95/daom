@@ -18,8 +18,8 @@ export const gyeongbukPhase1Defs: SoutheastLandingDef[] = [
     regionType: "허브",
     pageType: "region-hub",
     primaryKeyword: "경북 법무사 업무",
-    secondaryKeywords: ["경북 상속등기", "경북 토지 상속", "경북 비대면 법무사"],
-    seoTitle: "경북 법무사 업무 안내｜상속등기·토지상속·법인등기 상담",
+    secondaryKeywords: ["경북 부동산등기", "경북 법인등기", "경북 비대면 법무사"],
+    seoTitle: "경북 법무사 업무 안내｜부동산·법인등기 상담",
     metaDescription:
       "경북 법무사 업무 허브. 22개 시·군 상속등기·토지·농지·법인등기를 부산 해운대 사무소에서 비대면으로 검토합니다. 경북 지점 없음.",
     h1: "경북 22개 시·군의 상속·부동산·법인 업무",

@@ -13,7 +13,7 @@ export const CORE_HUBS: CoreHub[] = [
     title: "다옴법무사사무소 업무 안내",
     theme: "region-lawyer",
     spokes: [
-      s("/해운대법무사", "해운대·센텀 법무사 상담"),
+      s("/해운대법무사", "해운대 법무사 상담"),
       s("/센텀법무사", "센텀 법인·부동산 등기"),
       s("/부산여성법무사", "부산 여성 법무사 상담"),
       s("/부산상속등기", "부산 상속등기 절차"),
@@ -91,7 +91,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/부산법무사", "다옴법무사사무소 업무 안내"),
       s("/services/cases/haeundae-inheritance-registration-case", "해운대 아파트 상속등기 사례"),
       s("/faq/inheritance-registration-cost", "상속등기 비용 FAQ"),
-      s("/location", "센텀 법무사 오시는 길"),
+      s("/location", "해운대 센텀 오시는 길"),
       s("/contact", "해운대 법무사 상담 신청"),
     ],
   },
@@ -115,7 +115,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/법인설립등기비용", "법인설립등기 비용"),
       s("/임원변경등기과태료", "임원변경등기 과태료"),
       s("/location", "센텀역·재송역 도보권 사무소 위치"),
-      s("/contact", "센텀 법무사 상담"),
+      s("/contact", "방문 상담 예약"),
     ],
   },
   {
