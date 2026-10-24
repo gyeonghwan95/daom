@@ -9,6 +9,8 @@ import {
   getExplicitSerpCarouselPack,
   HOME_SERP_CAROUSEL_URLS,
   INHERITANCE_SERP_CAROUSEL_URLS,
+  isLectureLandingPath,
+  LECTURE_SERP_CAROUSEL_URLS,
 } from "@/data/seo/serp-carousel-packs";
 import { getPageVisual } from "@/data/seo/page-visuals";
 import {
@@ -209,6 +211,12 @@ function candidateUrls(current: string): { heading: string; description?: string
     for (const href of relation?.relatedPages ?? []) pushUrl(urls, href, current);
     for (const href of INHERITANCE_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
     return { heading: "상속등기와 이어지는 안내", urls };
+  }
+
+  if (isLectureLandingPath(current)) {
+    const urls: string[] = [];
+    for (const href of LECTURE_SERP_CAROUSEL_URLS) pushUrl(urls, href, current);
+    return { heading: "주제별 강의·특강 안내", urls };
   }
 
   const relation = getPageRelation(current);

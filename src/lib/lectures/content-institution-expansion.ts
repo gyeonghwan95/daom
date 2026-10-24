@@ -107,6 +107,16 @@ export const libraryLecture: LecturePageContent = {
       question: "문의는 어디에 남기면 되나요?",
       answer: "강의 문의 페이지에 기관명·대상·희망 일정만 남겨 주시면 됩니다.",
     },
+    {
+      question: "상속 법률특강 듣고 바로 상속등기 신청하나요?",
+      answer:
+        "강좌는 용어·확인 순서만 다룹니다. 신청·상담이 필요하면 상속 업무 안내를 따로 보시면 됩니다. 이 페이지가 상속 수임 대표 페이지가 아닙니다.",
+    },
+    {
+      question: "평생학습관·주민센터와 도서관 강좌는 같나요?",
+      answer:
+        "도서관·평생학습관 시민강좌는 이 페이지, 주민센터 발주는 공공기관 강사 안내를 보시면 됩니다.",
+    },
   ],
   relatedLectureLinks: [
     { href: "/법률강의", label: "법률 강의 허브" },
@@ -125,12 +135,15 @@ export const libraryLecture: LecturePageContent = {
   ctaText: "기관명·예상 인원·희망 회차(1회/연속)만 남겨 주시면 가능 여부를 회신합니다.",
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
-  primaryKeywords: ["부산 도서관 법률특강"],
+  primaryKeywords: [
+    "부산 도서관 법률특강",
+    "부산 도서관 생활법률 강좌 강사",
+    "부산 시민 법률강좌 강사",
+  ],
   secondaryKeywords: [
-    "부산 도서관 특강",
-    "부산 도서관 강사",
+    "부산 평생학습관 법률강좌 강사",
+    "부산 상속 법률특강 강사",
     "부산 평생학습 강사",
-    "부산 평생교육 강사",
   ],
 };
 
@@ -229,6 +242,11 @@ export const lawyerLecture: LecturePageContent = {
       question: "문의 방법",
       answer: "강의 문의 페이지에 기관·대상·주제를 남겨 주세요.",
     },
+    {
+      question: "강의 의뢰와 강사 섭외 결재는 어디서 보나요?",
+      answer:
+        "출강 주제·초청 강연은 이 페이지, 프로필·섭외 기준은 부산 강사 초빙 안내를 보시면 됩니다.",
+    },
   ],
   relatedLectureLinks: [
     { href: "/부산법률강사", label: "부산 법률 강사 섭외" },
@@ -252,8 +270,12 @@ export const lawyerLecture: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   showPrintProfile: true,
-  primaryKeywords: ["부산 법무사 강의"],
-  secondaryKeywords: ["부산 법무사 특강", "부산 법무사 출강"],
+  primaryKeywords: [
+    "부산 법무사 강의",
+    "부산 법무사 출강",
+    "부산 법무사 강의 의뢰",
+  ],
+  secondaryKeywords: ["부산 법무사 특강", "부산 법무사 초청 강연"],
 };
 
 export const institutionLecture: LecturePageContent = {

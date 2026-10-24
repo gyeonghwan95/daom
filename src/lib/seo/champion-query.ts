@@ -1,3 +1,4 @@
+import { lectureExactKeywordChampions } from "@/data/seo/lecture-100-champions";
 import { BUSAN_DISTRICT_HUB_PATHS } from "@/lib/geo/busan-district-hubs";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
@@ -474,6 +475,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     path: "/법무사진로특강",
     compactQueries: ["부산진로특강"],
   },
+  ...lectureExactKeywordChampions(),
   {
     path: "/부산개인회생",
     compactQueries: ["부산개인회생"],

@@ -3,6 +3,11 @@
  * 기존 URL만. 신규 랜딩·키워드 복제 금지.
  * 카드 4개 미만·이미지 중복이면 리졸버가 팩을 버린다.
  */
+import {
+  LECTURE_SERP_CAROUSEL_URLS,
+  lecturePackUrls,
+} from "@/data/seo/lecture-100-champions";
+import { getAllLectureSlugs } from "@/lib/lectures/content";
 
 export type SerpCarouselPackDef = {
   heading: string;
@@ -20,6 +25,9 @@ export const HOME_SERP_CAROUSEL_URLS = [
   "/해운대법무사",
   "/부산진구법무사",
 ] as const;
+
+/** 강의 랜딩 — 부산 구·군·공탁·상속 수임 카드를 섞지 않는다. */
+export { LECTURE_SERP_CAROUSEL_URLS };
 
 /** 타지역 상속 업무사례 — 부산 구·군 법무사 카드를 섞지 않는다. */
 export const INHERITANCE_SERP_CAROUSEL_URLS = [
@@ -309,23 +317,11 @@ export const SERP_CAROUSEL_PACKS: Record<string, SerpCarouselPackDef> = {
   },
   "/법무사진로특강": {
     heading: "강의·특강 안내",
-    urls: [
-      "/법률강의",
-      "/전세사기예방교육",
-      "/청년생활법률특강",
-      "/창업법률교육",
-      "/기업법률교육",
-    ],
+    urls: lecturePackUrls("/법무사진로특강"),
   },
   "/법률강의": {
     heading: "강의 주제별 안내",
-    urls: [
-      "/법무사진로특강",
-      "/전세사기예방교육",
-      "/청년생활법률특강",
-      "/창업법률교육",
-      "/기업법률교육",
-    ],
+    urls: lecturePackUrls("/법률강의"),
   },
   "/부산법무사무소": {
     heading: "위치 다음에 이어서 볼 안내",
@@ -510,8 +506,22 @@ export const SERP_CAROUSEL_PACKS: Record<string, SerpCarouselPackDef> = {
   },
 };
 
+const LECTURE_LANDING_PATHS = new Set(
+  getAllLectureSlugs().map((slug) => `/${slug}`),
+);
+
+export function isLectureLandingPath(path: string): boolean {
+  return LECTURE_LANDING_PATHS.has(path);
+}
+
 export function getExplicitSerpCarouselPack(
   path: string,
 ): SerpCarouselPackDef | undefined {
-  return SERP_CAROUSEL_PACKS[path];
+  const owned = SERP_CAROUSEL_PACKS[path];
+  if (owned) return owned;
+  if (!LECTURE_LANDING_PATHS.has(path)) return undefined;
+  return {
+    heading: "주제별 강의·특강 안내",
+    urls: lecturePackUrls(path),
+  };
 }

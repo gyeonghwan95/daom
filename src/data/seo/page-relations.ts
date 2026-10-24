@@ -3,7 +3,18 @@
  * Maps existing URLs to region / service / situation entities.
  * No new URLs; additive internal-link and champion decisions only.
  */
+import {
+  LECTURE_100_TARGETS,
+  LECTURE_EXTRA_INFLOW,
+} from "@/data/seo/lecture-100-champions";
 import { getExactKeywordChampionPath } from "@/lib/seo/champion-query";
+
+const LECTURE_CHAMPION_BY_QUERY = new Map(
+  [...LECTURE_100_TARGETS, ...LECTURE_EXTRA_INFLOW].map((row) => [
+    row.query,
+    row.champion,
+  ]),
+);
 
 export type PageRelationRole =
   | "BUSAN_MAIN_CHAMPION"
@@ -506,6 +517,10 @@ export function getChampionForTargetQuery(query: string): {
   };
   const hit = champions[query];
   if (hit) return { query, ...hit };
+  const lectureChampion = LECTURE_CHAMPION_BY_QUERY.get(query);
+  if (lectureChampion) {
+    return { query, champion: lectureChampion, intent: "lecture-hiring" };
+  }
   const exactPath = getExactKeywordChampionPath(query);
   if (exactPath) {
     return {

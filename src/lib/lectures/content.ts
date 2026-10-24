@@ -155,6 +155,16 @@ const youth: LecturePageContent = {
       question: "강의 문의는 어디로?",
       answer: "강의 문의 페이지에서 기관·대상·주제를 남겨 주세요.",
     },
+    {
+      question: "청년 취업캠프 법률 세션도 가능한가요?",
+      answer:
+        "가능합니다. 진로캠프의 직업 소개와 달리, 첫 직장 계약·주거·금전 확인 순서로 구성합니다.",
+    },
+    {
+      question: "자립준비청년 법률교육과 대학 비교과는 같나요?",
+      answer:
+        "발주가 청년센터·자립기관이면 이 페이지, 대학 비교과이면 대학교 특강 안내를 보시면 됩니다.",
+    },
   ],
   relatedLectureLinks: [
     { href: "/전세사기예방교육", label: "전세사기 예방교육" },
@@ -174,16 +184,14 @@ const youth: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   primaryKeywords: [
-    "부산 청년 특강 강사",
-    "부산 청년교육 강사",
-    "부산 청년센터 강사",
-    "부산 자립청년 교육",
-    "부산 사회초년생 교육",
+    "부산 청년 생활법률 특강",
+    "부산 청년센터 법률특강 강사",
+    "부산 사회초년생 법률교육 강사",
   ],
   secondaryKeywords: [
-    "부산 청년 생활법률 특강",
-    "청년 생활법률 교육",
-    "청년센터 법률 강사",
+    "부산 자립준비청년 법률교육 강사",
+    "부산 청년 취업캠프 법률강사",
+    "부산 자립준비청년 특강 강사",
   ],
 };
 
@@ -274,6 +282,16 @@ const startup: LecturePageContent = {
       question: "강의료는?",
       answer: "시간·형식에 따라 협의하며 단가를 단정하지 않습니다.",
     },
+    {
+      question: "법인설립 강의하면 설립등기도 해주나요?",
+      answer:
+        "강의 페이지에서 수임을 확정하지 않습니다. 설립 절차가 필요하면 법인설립등기 안내를 따로 보시면 됩니다.",
+    },
+    {
+      question: "대학 창업지원단·소상공인 계약서 교육도 맡나요?",
+      answer:
+        "예. 예비창업자·스타트업·협동조합·사회적기업 기초 특강으로 조정합니다. 임직원 사내교육은 기업 법률교육 안내입니다.",
+    },
   ],
   relatedLectureLinks: [
     { href: "/기업법률교육", label: "기업 법률교육" },
@@ -292,12 +310,16 @@ const startup: LecturePageContent = {
   disclaimer: commonDisclaimer,
   showInquiryForm: true,
   primaryKeywords: [
-    "부산 창업교육 강사",
-    "부산 예비창업자 강사",
-    "부산 창업 특강",
-    "부산 스타트업 강사",
+    "부산 창업 법률교육",
+    "부산 창업 법률특강 강사",
+    "부산 예비창업자 법률특강",
   ],
-  secondaryKeywords: ["부산 창업 법률교육", "법인설립 특강", "청년창업 교육"],
+  secondaryKeywords: [
+    "부산 대학생 창업 법률특강",
+    "부산 법인설립 강의 강사",
+    "부산 소상공인 계약서 교육",
+    "부산 스타트업 계약서 특강",
+  ],
 };
 
 const inquiry: LecturePageContent = {
@@ -624,6 +646,16 @@ const publicEdu: LecturePageContent = {
       answer:
         "직원교육·특강·워크숍(워크샵)·세미나 모두 같은 출강 문의로 협의합니다. 청렴 등 지정교육은 포함하지 않습니다.",
     },
+    {
+      question: "주민센터 생활법률 강사로 부를 수 있나요?",
+      answer:
+        "가능합니다. 민원 창구를 대신하지 않는 시민·직원 예방교육 범위입니다.",
+    },
+    {
+      question: "개인회생 파산 법률교육은 신청 대행인가요?",
+      answer:
+        "아닙니다. 금융복지·상담사 초기 안내 교육입니다. 신청 대행은 회생·파산 업무 안내를 보시면 됩니다.",
+    },
   ],
   relatedLectureLinks: [
     { href: "/기업법률교육", label: "기업 법률교육" },
@@ -641,14 +673,13 @@ const publicEdu: LecturePageContent = {
   showInquiryForm: true,
   primaryKeywords: [
     "부산 공공기관 강사",
-    "부산 공공기관 특강",
-    "부산 기관교육 강사",
-    "부산 공공기관 직원교육",
+    "부산 주민센터 생활법률 강사",
+    "부산 금융복지 법률특강",
   ],
   secondaryKeywords: [
-    "부산 공공기관 법률교육",
-    "공기업 법률교육",
-    "지자체 법률특강",
+    "부산 개인회생 파산 법률교육",
+    "부산 채무조정 교육 강사",
+    "부산 공공기관 직원교육",
   ],
 };
 

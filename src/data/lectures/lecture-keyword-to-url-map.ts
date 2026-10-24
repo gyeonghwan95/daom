@@ -4,6 +4,10 @@
  * 동일 semantic intent는 하나의 owner URL.
  * Search Advisor 실측이 없어 impressions/clicks/ctr는 비운다.
  */
+import {
+  LECTURE_100_TARGETS,
+  LECTURE_EXTRA_INFLOW,
+} from "@/data/seo/lecture-100-champions";
 export type LectureKeywordStatus =
   | "WINNER"
   | "OPPORTUNITY"
@@ -406,9 +410,11 @@ export const lectureKeywordUniverse: LectureKeywordRow[] = [
 ];
 
 export const lectureKeywordToUrlMap: Record<string, string> =
-  Object.fromEntries(
-    lectureKeywordUniverse.map((item) => [item.keyword, item.owner_url]),
-  );
+  Object.fromEntries([
+    ...lectureKeywordUniverse.map((item) => [item.keyword, item.owner_url] as const),
+    ...LECTURE_100_TARGETS.map((row) => [row.query, row.champion] as const),
+    ...LECTURE_EXTRA_INFLOW.map((row) => [row.query, row.champion] as const),
+  ]);
 
 export function resolveLectureKeywordUrl(keyword: string): string | undefined {
   const normalized = keyword.trim().replace(/\s+/g, " ");

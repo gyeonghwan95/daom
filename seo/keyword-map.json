@@ -1550,6 +1550,797 @@
       "owner": "/업무사례/거제상속등기법무사",
       "intent": "remote-inheritance",
       "aliasOf": "거제 상속 법무사"
+    },
+    "부산 법무사 직업인 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 법무사 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 진로특강 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 직업인 특강 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 법률특강 강사": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학생 법무사 진로체험": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법조인 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 직업인 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 진로체험 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 법률 직업체험": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 법률 진로교육": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 특성화고 취업특강 강사": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 직업계고 취업특강 강사": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 특성화고 근로계약서 교육": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 직업계고 노동법 특강": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학생 첫 직장 법률교육": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학생 사회초년생 법률특강": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학생 전월세 계약 교육": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학생 생활법률 특강": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 창업 법률특강": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고등학교 계약서 작성 특강": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고교 법무사 진로교육": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 진로체험의 날 법무사 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 진로캠프 법무사 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 직업체험 학교": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 되는 법 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 직업 소개 강의": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 현직자 멘토링": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 직업 멘토링 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학교 법무사 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 법무사 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학교 취업특강 법률": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 취업 법률특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 근로계약서 특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 노동법 강의": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 사회초년생 법률교육": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 전월세 계약 특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 전세사기 예방 특강": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 창업 법률특강": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 사업자 계약서 교육": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 법인설립 강의": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학 취업지원센터 법률특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학 창업지원단 법률특강": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학 법학과 법무사 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 전문직 진로특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 직업인 멘토링 법무사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 청년 취업캠프 법률강사": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 졸업예정자 계약서 특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학생 첫 직장 계약 특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 강사 섭외": {
+      "owner": "/부산법률강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 특강 강사": {
+      "owner": "/부산법률강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 강의 의뢰": {
+      "owner": "/부산법무사강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 출강": {
+      "owner": "/부산법무사강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법무사 초청 강연": {
+      "owner": "/부산법무사강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 특강 강사": {
+      "owner": "/법률강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 생활법률 강사 섭외": {
+      "owner": "/법률강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 생활법률 특강": {
+      "owner": "/법률강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 찾아가는 법률교육 강사": {
+      "owner": "/법률강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률교육 강사": {
+      "owner": "/부산법률강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 전문가 특강": {
+      "owner": "/부산법률강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 시민 법률강좌 강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 도서관 생활법률 강좌 강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 평생학습관 법률강좌 강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 주민센터 생활법률 강사": {
+      "owner": "/공공기관법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 복지관 생활법률 강사": {
+      "owner": "/부산사회복지기관강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 청년센터 법률특강 강사": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 청년 생활법률 특강": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 사회초년생 법률교육 강사": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 자립준비청년 법률교육 강사": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 전세사기 예방교육 강사": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 전월세 계약 특강 강사": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 임대차계약 교육 강사": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 보증금 반환 법률교육": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 부동산 계약서 특강": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 부동산등기 강의": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 등기부등본 보는 법 특강": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 상속 법률특강 강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 상속등기 강의": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 상속포기 한정승인 특강": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 유언 상속 강의": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 가족 재산정리 법률특강": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 창업 법률특강 강사": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 청년창업 법률교육": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 소상공인 계약서 교육": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 스타트업 계약서 특강": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법인설립 강의 강사": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법인등기 교육 강사": {
+      "owner": "/기업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 사회적기업 법률교육 강사": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 창업지원센터 법률강사": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 예비창업자 법률특강": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 협동조합 법률교육": {
+      "owner": "/창업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 개인회생 파산 법률교육": {
+      "owner": "/공공기관법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 채무조정 교육 강사": {
+      "owner": "/공공기관법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 금융복지 법률특강": {
+      "owner": "/공공기관법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 임대차 분쟁 법률교육": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 지급명령 실무 강의": {
+      "owner": "/기업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 공탁 실무 강의": {
+      "owner": "/기업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 임차권등기명령 강의": {
+      "owner": "/전세사기예방교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 법률 문서 작성 특강": {
+      "owner": "/기업법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 진로체험지원센터 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 진로체험지원센터 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 창체 진로특강 강사": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 자유학기제 직업인 특강": {
+      "owner": "/법무사진로특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 취업진로지원센터 특강": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 대학 취업진로지원센터 강사": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 비교과 프로그램 강사": {
+      "owner": "/부산대학교특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 찾아가는 법률교육": {
+      "owner": "/법률강의",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 외부강사 초빙": {
+      "owner": "/부산법률강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 평생학습관 외부강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 평생학습 강사": {
+      "owner": "/부산도서관법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 자립준비청년 특강 강사": {
+      "owner": "/청년생활법률특강",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 자립지원전담기관 강사": {
+      "owner": "/부산사회복지기관강사",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
+    },
+    "부산 고교학점제 외부강사": {
+      "owner": "/학교법률교육",
+      "intent": "lecture-hiring",
+      "supporting": [
+        "/강의문의"
+      ]
     }
   }
 }

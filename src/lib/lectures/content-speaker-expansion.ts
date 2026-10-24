@@ -262,10 +262,8 @@ const welfareSpeaker: LecturePageContent = {
   showInquiryForm: true,
   primaryKeywords: [
     "부산 사회복지기관 강사",
-    "부산 복지기관 종사자교육",
-    "부산 자립지원 종사자교육",
-    "부산 사회복지사 교육 강사",
-    "부산 현장 실무교육 강사",
+    "부산 복지관 생활법률 강사",
+    "부산 자립지원전담기관 강사",
   ],
   secondaryKeywords: [
     "복지기관 생활법률",

@@ -40,6 +40,11 @@ export const jeonseSpec: LectureTargetSpec = {
       description:
         "계약 전 확인 순서 이해, 등기부 기본 구조 파악, 특약 작성 연습처럼 확인할 수 있는 목표로 정리해 드립니다.",
     },
+    {
+      title: "등기부 보는 법·부동산등기 강의를 요청받았다",
+      description:
+        "갑구·을구 읽기 실습은 이 교육에서 합니다. 부동산등기 신청·임차권등기명령 대행은 강의가 아니라 별도 업무 안내로 연결합니다.",
+    },
   ],
   selectorTitle: "대상별 전세사기 예방교육 구성",
   selectorIntro:
@@ -180,9 +185,28 @@ export const jeonseContent = buildTargetContent({
       question: "강의 사진을 기관 홍보에 써도 되나요?",
       answer: "참석자 초상권을 고려해 기관과 협의한 범위에서 사용합니다.",
     },
+    {
+      question: "부동산등기 강의와 등기 신청은 같은가요?",
+      answer:
+        "아닙니다. 이 특강은 등기부를 읽는 예방 교육입니다. 신청 대행은 부동산등기 업무 안내에서 따로 보시면 됩니다.",
+    },
+    {
+      question: "임차권등기명령 강의도 가능한가요?",
+      answer:
+        "개념·요건 개요는 교육으로 다룰 수 있습니다. 신청 대행은 임차권등기명령 업무 페이지로 연결합니다.",
+    },
   ],
-  primaryKeywords: ["부산 전세사기 예방교육", "부산 전세사기 예방 특강", "부산 전세사기 예방교육 강사"],
-  secondaryKeywords: ["전세사기 예방교육 강사", "청년 전세사기 교육", "등기부등본 강의"],
+  primaryKeywords: [
+    "부산 전세사기 예방교육",
+    "부산 전세사기 예방교육 강사",
+    "부산 대학생 전세사기 예방 특강",
+  ],
+  secondaryKeywords: [
+    "부산 전월세 계약 특강 강사",
+    "부산 등기부등본 보는 법 특강",
+    "부산 부동산등기 강의",
+    "부산 임차권등기명령 강의",
+  ],
   spec: jeonseSpec,
 });
 
@@ -223,6 +247,11 @@ export const lifeLawSpec: LectureTargetSpec = {
       title: "강의 뒤 개인 질문이 몰릴까 걱정된다",
       description:
         "질의응답은 일반론으로 답하고, 개인 사안은 강의 밖 절차를 안내하는 방식으로 시간을 관리합니다.",
+    },
+    {
+      title: "찾아가는 법률교육·생활법률 강사 섭외로 공고했다",
+      description:
+        "방문 출강 형식은 이 허브에서 회차·주제를 고르면 됩니다. 도서관 시민강좌 전용 구성은 도서관 법률특강 안내, 강사 결재 서류는 부산 강사 초빙 안내를 보시면 됩니다.",
     },
   ],
   selectorTitle: "기관 대상별 생활법률 주제",
@@ -368,8 +397,16 @@ export const lifeLawContent = buildTargetContent({
       answer: "아니요. 생활·실무 예방교육입니다.",
     },
   ],
-  primaryKeywords: ["부산 생활법률 특강", "부산 법률특강 강사", "부산 법률 강의"],
-  secondaryKeywords: ["부산 생활법률 강사", "법률특강 강사", "부산 법률 특강"],
+  primaryKeywords: [
+    "부산 생활법률 특강",
+    "부산 법률 특강 강사",
+    "부산 법률 강의",
+  ],
+  secondaryKeywords: [
+    "부산 생활법률 강사 섭외",
+    "부산 찾아가는 법률교육 강사",
+    "부산 찾아가는 법률교육",
+  ],
   spec: lifeLawSpec,
 });
 
