@@ -115,7 +115,10 @@ function main() {
     if (!list.includes(page.path)) list.push(page.path);
     claimed.set(canonicalQuery, list);
 
-    if (page.path !== owner) {
+    // keyword-map의 supporting에 명시한 보조 페이지(FAQ·자가진단 등)는 의도된 관계라 허용한다.
+    // 그 외 URL이 같은 검색어로 제목·H1을 시작하면 카니발라이제이션으로 본다.
+    const supporting = map.queries[canonicalQuery]?.supporting ?? [];
+    if (page.path !== owner && !supporting.includes(page.path)) {
       errors.push(
         `${matched}: ${page.path} title/H1이 PRIMARY를 소유함 (owner=${owner}) — "${titlePrimary(page.title)}" / "${page.h1}"`,
       );
