@@ -61,6 +61,16 @@ export function buildBusanInheritanceRenunciationPage(
       answer:
         "본인이 포기하면 그 상속분에 대한 상속등기는 하지 않습니다. 다른 상속인은 자신의 지분 범위에서 등기·협의를 진행할 수 있습니다.",
     },
+    {
+      question: "장례비로 고인 예금을 썼는데 포기할 수 있나요?",
+      answer:
+        "장례비 지출이 곧바로 단순승인이 된다고 단정하지 않습니다. 사용 시기·금액·목적과 다른 처분 이력을 함께 보고, 포기가 제한될 여지가 있으면 한정승인과 비교합니다. 이미 쓴 내역은 상담 때 알려 주세요.",
+    },
+    {
+      question: "채권자에게 소장을 받으면 포기 신고만으로 끝나나요?",
+      answer:
+        "가정법원 포기 신고와 민사 소송 응소는 창구가 다릅니다. 신고 서류는 법무사가 준비하고, 소장 대응은 사건 내용에 따라 변호사 상담이 필요할 수 있습니다. 소장을 받으면 신고 진행 여부와 별도로 기한을 확인하세요.",
+    },
     ...renunciationChampionExtraFaqs,
   ];
 
@@ -221,6 +231,15 @@ export function buildBusanInheritanceRenunciationPage(
         ],
       },
       {
+        title: "상속포기에서 법무사와 변호사가 나누는 일",
+        body: "가정법원 상속포기 신고서 작성·제출은 법무사 업무 범위에 들어갑니다. 상속인 사이 분쟁을 소송으로 대리하거나, 채권자가 낸 소송에 응소하는 일은 변호사 업무입니다. 광고성 정액 문구와 상관없이, 신고와 소송을 같은 창구로 보지 않습니다.",
+        items: [
+          "법무사 — 신고서·가족관계 서류·후순위 확인, 가정법원 제출 대행",
+          "변호사 — 상속 분쟁 소송 대리, 채권자 소장 응소",
+          "겹치는 상담 — 처분·인출이 단순승인인지, 한정승인과 비교할지. 판단이 갈리면 역할을 나눕니다",
+        ],
+      },
+      {
         title: "신청 흐름·비용 변수·상담",
         body: `상담 → 재산·채무 조회 → 포기 대상 정리 → 가정법원 신고 → 보정·심판 확인 순입니다. 수임료는 신청인 수·미성년·해외·특별대리·기한 임박에 따라 달라지며 법원 수수료는 별도입니다. 사무소: ${officeLocation.fullAddress}.`,
         items: [
@@ -238,7 +257,7 @@ export function buildBusanInheritanceRenunciationPage(
     relatedServiceLinks: [
       { href: "/부산한정승인", label: "부산 한정승인 — 채무 한도 승인" },
       { href: "/특별한정승인", label: "특별한정승인" },
-      { href: "/부산상속법무사", label: "절차 선택 — 부산 상속 법무사" },
+      { href: "/부산상속법무사", label: "절차 선택 — 등기소·가정법원 입구" },
       { href: "/tools/inheritance-renunciation-deadline", label: "3개월 기한 확인 도구" },
       { href: "/사망자재산채무조회", label: "상속재산·채무 조회" },
       { href: "/contact/inquiry?field=inheritance-renunciation", label: "상속포기 전에 확인할 사항 문의" },

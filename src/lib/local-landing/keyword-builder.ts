@@ -98,10 +98,10 @@ export function buildKeywordHubPage(
           href: "/services/cases/dongnae-qualified-acceptance-consultation",
         },
         {
-          title: "채무 과다 상속포기 상담",
+          title: "협의분할 후 단독명의 등기",
           summary:
-            "재송동 인근 의뢰인이 채무가 재산보다 많은 상황을 상담하셨습니다. 후순위 효과를 안내한 뒤 상속포기 신고를 준비한 사례입니다.",
-          href: "/services/cases/jaesong-inheritance-renunciation-consultation",
+            "형제 공동상속 아파트를 한 명의 단독명의로 모으려 상담하신 사례입니다. 협의 내용과 정산 조건을 맞춘 뒤 재산분할 안내로 이어갔습니다.",
+          href: "/services/cases/haeundae-inheritance-registration-case",
         },
       ]
     : isRegistryHub
@@ -184,7 +184,7 @@ export function buildKeywordHubPage(
   const championPrimaryLinks = [
     { href: "/부산상속등기", label: "부산 상속등기 — 서류와 진행 순서" },
     { href: "/부산한정승인", label: "부산 한정승인 — 상속채무가 걱정될 때" },
-    { href: "/부산상속포기", label: "부산 상속포기 법무사 — 3개월·후순위" },
+    { href: "/부산상속포기", label: "가정법원 신고(상속포기) — 기한·후순위" },
     { href: "/부산상속전문법무사", label: "맡길 법무사 선택 기준 — 업무범위·경험" },
     {
       href: "/contact/inquiry?field=inheritance-registration",
@@ -262,7 +262,7 @@ export function buildKeywordHubPage(
             ],
             links: [
               { href: "/부산상속등기", label: "부산 상속등기" },
-              { href: "/부산상속포기", label: "부산 상속포기 법무사" },
+              { href: "/부산상속포기", label: "가정법원 신고(상속포기)" },
               { href: "/부산한정승인", label: "부산 한정승인" },
               { href: "/특별한정승인", label: "특별한정승인" },
             ],
@@ -271,9 +271,9 @@ export function buildKeywordHubPage(
             title: "상속에서 가장 먼저 확인할 3가지",
             body: "등기 서류보다 아래 세 가지를 먼저 맞춥니다.",
             items: [
-              "사망일·인지일 — 포기·한정 3개월 기산",
+              "사망일·인지일 — 기한이 있는 절차가 있는지",
               "상속인 구성 — 배우자·자녀·대습",
-              "재산 vs 채무 — 등기인지 승인 방식인지",
+              "재산 vs 채무 — 등기소인지 가정법원인지",
             ],
             links: [
               { href: "/사망자재산채무조회", label: "재산·채무 조회" },
@@ -281,7 +281,7 @@ export function buildKeywordHubPage(
             ],
           },
           {
-            title: "상속등기·상속포기·한정승인의 차이",
+            title: "등기소·가정법원·취득세 기한 비교",
             body: "신청하는 곳과 기한이 서로 다릅니다. 상속인이 부산에 산다는 이유만으로 모든 절차가 부산 관할이 되지는 않습니다. (법령 조문 확인일 2026-10-09)",
             items: [
               "상속등기 — 부동산 명의이전. 부동산 소재지 등기소가 원칙이고, 상속·유증 등기는 관할이 아닌 등기소에서도 처리할 수 있습니다(부동산등기법 제7조의3, 2025. 1. 31. 시행)",
@@ -292,7 +292,7 @@ export function buildKeywordHubPage(
             ],
             links: [
               { href: "/부산상속등기", label: "상속등기 상세" },
-              { href: "/부산상속포기", label: "상속포기 상세" },
+              { href: "/부산상속포기", label: "가정법원 신고 상세" },
               { href: "/부산한정승인", label: "한정승인 상세" },
               { href: "/부산가정법원상속", label: "부산가정법원 상속 사건 접수" },
               { href: "/상속취득세와등기순서", label: "상속 취득세와 등기 순서" },

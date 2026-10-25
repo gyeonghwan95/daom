@@ -48,7 +48,7 @@ export const gumiInheritanceSpec: RegionalInheritanceSpec = {
           kind: "p",
           parts: [
             "부산에 있는 부모님 집이라면 ",
-            { href: "/부산상속법무사", label: "부산 상속등기 법무사 안내" },
+            { href: "/부산상속등기", label: "부산 부동산 상속등기 안내" },
             "에서 부산 부동산 기준 절차를 더 자세히 볼 수 있습니다.",
           ],
         },

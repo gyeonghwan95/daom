@@ -84,7 +84,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     scopeRisk: "medium",
     recommendedAction: "ADD_MODULE",
     notes:
-      "Provider query「부산 법인 법무사」와 동일 URL. title/H1 불변. 신규 /부산법인법무 금지.",
+      "약칭 법인법무는 /부산법인법무사. 「부산 법인 법무사」는 HOME. title/H1 불변. 신규 /부산법인법무 금지.",
   },
   {
     id: "provider-corporate-scrivener",
@@ -100,7 +100,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     cannibalizationRisk: "high",
     scopeRisk: "low",
     recommendedAction: "KEEP",
-    notes: "Protected Champion. title/H1/canonical 변경 금지.",
+    notes: "「부산 법인 법무사」관측 URL은 HOME. 이 클러스터 실무 허브는 /부산법인법무사. title/H1/canonical 변경 금지.",
   },
   {
     id: "provider-business-scrivener",

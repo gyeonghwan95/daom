@@ -258,7 +258,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       {
         question: "3개월이 이미 문제되면?",
         answer:
-          "단순승인으로 볼 여지가 생기거나, 뒤늦게 채무를 안 경우 특별한정승인 검토가 필요할 수 있습니다. 처분·인출 이력과 함께 상담하세요.",
+          "가정법원 신고 기한은 상속포기·한정승인 안내에서 계산합니다. 이 페이지에서는 등기소 접수인지 가정법원 신고인지만 가른 뒤 해당 안내로 이어갑니다.",
       },
     ],
     relatedServiceLinks: [
@@ -267,9 +267,9 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산상속포기", label: "부산 상속포기 — 3개월·후순위" },
       { href: "/부산상속재산분할법무사", label: "협의분할·단독명의" },
       { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 — 맡기기 전 기준" },
-      { href: "/상속", label: "상속 법무사 — 등기·포기·추천 갈래" },
-      { href: "/전국상속등기", label: "상속등기 법무사 — 타지역 부동산" },
-      { href: "/상속등기비용", label: "상속등기 비용·수수료·수임료" },
+      { href: "/상속", label: "전국 등기·포기·한정 갈래" },
+      { href: "/전국상속등기", label: "타지역 부동산 상속등기" },
+      { href: "/상속등기비용", label: "명의이전 공과금·보수" },
       { href: "/contact/inquiry?field=inheritance-registration", label: "내 상황에 필요한 상속절차 확인" },
     ],
     relatedFaqLinks: [
@@ -377,6 +377,11 @@ export const keywordTopics: Record<string, KeywordTopic> = {
         question: "회사를 설립할 때 무엇부터 정해야 하나요?",
         answer:
           "상호·사업목적·본점 주소·임원·주주·자본금 순으로 정한 뒤 정관과 납입·설립총회 서류를 준비합니다. 세부 안내는 부산 법인설립등기 페이지를 보세요.",
+      },
+      {
+        question: "법인법무와 법인 법무사는 같은 검색인가요?",
+        answer:
+          "법인법무는 설립부터 해산까지 회사 업무를 고르는 입구입니다. 사무소·담당 법무사를 찾는 검색은 홈에서 이어집니다.",
       },
       {
         question: "임원 임기가 끝나면 언제까지 등기해야 하나요?",

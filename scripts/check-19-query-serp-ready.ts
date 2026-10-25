@@ -50,6 +50,14 @@ const EXTRA_INFLOW: { query: string; champion: string }[] = [
   { query: "부산 법인설립 법무사", champion: "/부산법인설립등기" },
   { query: "부산 한정승인 법무사", champion: "/부산한정승인" },
   { query: "부산 회사 법무사", champion: "/부산법인법무사" },
+  { query: "부산 법인설립", champion: "/부산법인설립등기" },
+  { query: "부산 법인법무", champion: "/부산법인법무사" },
+  { query: "부산 상속 상담", champion: "/부산상속법무사" },
+  { query: "부산 상속 절차", champion: "/부산상속법무사" },
+  { query: "부산 상속 법무사 추천", champion: "/부산상속법무사추천" },
+  { query: "부산 상속포기 비용", champion: "/상속포기비용" },
+  { query: "부산 한정승인 비용", champion: "/한정승인비용" },
+  { query: "부산 상속 비용", champion: "/상속등기비용" },
 ];
 
 function resolveOwner(

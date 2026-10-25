@@ -80,6 +80,55 @@
       "intent": "specialized-service",
       "aliasOf": "부산 상속 법무사"
     },
+    "부산 상속 상담": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "aliasOf": "부산 상속 법무사",
+      "note": "Missed inflow. Hub chooser, not cost."
+    },
+    "부산 상속상담": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "aliasOf": "부산 상속 법무사"
+    },
+    "부산 상속 절차": {
+      "owner": "/부산상속법무사",
+      "intent": "specialized-service",
+      "aliasOf": "부산 상속 법무사"
+    },
+    "부산 상속 법무사 선택": {
+      "owner": "/부산상속전문법무사",
+      "intent": "specialized-service"
+    },
+    "부산 상속 법무사 추천": {
+      "owner": "/부산상속법무사추천",
+      "intent": "recommend"
+    },
+    "부산 상속 비용": {
+      "owner": "/상속등기비용",
+      "intent": "cost"
+    },
+    "부산 상속포기 비용": {
+      "owner": "/상속포기비용",
+      "intent": "cost"
+    },
+    "부산 한정승인 비용": {
+      "owner": "/한정승인비용",
+      "intent": "cost"
+    },
+    "부산 상속 명의이전": {
+      "owner": "/부산상속등기",
+      "intent": "procedure",
+      "aliasOf": "부산 상속등기 법무사"
+    },
+    "부산 상속포기 3개월": {
+      "owner": "/부산상속포기",
+      "intent": "procedure"
+    },
+    "부산 상속포기 후순위": {
+      "owner": "/부산상속포기",
+      "intent": "procedure"
+    },
     "부산 상속등기 법무사": {
       "owner": "/부산상속등기",
       "intent": "procedure"
@@ -134,6 +183,21 @@
         "/부산법인등기"
       ],
       "note": "Title/H1 owner is 설립등기. 2026-10-19 PC webdocs 1st is 설립전문 — do not retitle either URL."
+    },
+    "부산 법인설립": {
+      "owner": "/부산법인설립등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인설립 법무사"
+    },
+    "부산 회사설립 법무사": {
+      "owner": "/부산법인설립등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인설립 법무사"
+    },
+    "부산 법인설립등기": {
+      "owner": "/부산법인설립등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인설립 법무사"
     },
     "부산 개인회생 법무사": {
       "owner": "/부산개인회생법무사",
@@ -916,6 +980,16 @@
       "intent": "procedure",
       "aliasOf": "부산 법인등기 법무사"
     },
+    "부산 상업등기": {
+      "owner": "/부산법인등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인등기 법무사"
+    },
+    "부산 법인변경": {
+      "owner": "/부산법인등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인등기 법무사"
+    },
     "부산 법인전문 법무사": {
       "owner": "/부산법인설립전문법무사",
       "intent": "corporate-specialist-observed",
@@ -938,6 +1012,24 @@
         "/부산법인설립전문법무사"
       ],
       "note": "2026-10-19 PC webdocs 3rd is /부산법인법무사. Do not retitle 설립등기. Do not create /부산회사법무사."
+    },
+    "부산 법인법무": {
+      "owner": "/부산법인법무사",
+      "intent": "company-operations-observed",
+      "aliasOf": "부산 회사 법무사"
+    },
+    "부산 임원변경 법무사": {
+      "owner": "/부산임원변경등기",
+      "intent": "procedure"
+    },
+    "부산 본점이전": {
+      "owner": "/부산본점이전등기",
+      "intent": "procedure"
+    },
+    "부산 본점이전 법무사": {
+      "owner": "/부산본점이전등기",
+      "intent": "procedure",
+      "aliasOf": "부산 본점이전"
     },
     "부산 보상등기 법무사": {
       "owner": "/부산보상등기",
@@ -1189,6 +1281,84 @@
         "/부산상속등기",
         "/업무사례/울산동구상속등기법무사"
       ]
+    },
+    "상속등기": {
+      "owner": "/전국상속등기",
+      "intent": "nationwide-registration",
+      "aliasOf": "상속등기 법무사"
+    },
+    "주변 상속등기 법무사": {
+      "owner": "/전국상속등기",
+      "intent": "nationwide-registration",
+      "aliasOf": "상속등기 법무사"
+    },
+    "근처 상속등기 법무사": {
+      "owner": "/전국상속등기",
+      "intent": "nationwide-registration",
+      "aliasOf": "상속등기 법무사"
+    },
+    "저렴한 상속등기 법무사": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets"
+    },
+    "상속등기 비용": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "aliasOf": "상속 법무사 비용"
+    },
+    "상속등기 서류": {
+      "owner": "/상속등기필요서류",
+      "intent": "documents"
+    },
+    "상속등기 필요서류": {
+      "owner": "/상속등기필요서류",
+      "intent": "documents",
+      "aliasOf": "상속등기 서류"
+    },
+    "상속등기 기간": {
+      "owner": "/상속등기기간",
+      "intent": "timeline"
+    },
+    "상속등기 절차": {
+      "owner": "/상속등기기간",
+      "intent": "timeline",
+      "aliasOf": "상속등기 기간"
+    },
+    "상속등기 순서": {
+      "owner": "/상속등기기간",
+      "intent": "timeline",
+      "aliasOf": "상속등기 기간"
+    },
+    "상속등기 셀프": {
+      "owner": "/방문없이준비하는상속등기",
+      "intent": "diy-vs-entrust"
+    },
+    "셀프 상속등기": {
+      "owner": "/방문없이준비하는상속등기",
+      "intent": "diy-vs-entrust",
+      "aliasOf": "상속등기 셀프"
+    },
+    "상속포기 셀프": {
+      "owner": "/방문없이준비하는상속포기한정승인",
+      "intent": "diy-vs-entrust"
+    },
+    "셀프 상속포기": {
+      "owner": "/방문없이준비하는상속포기한정승인",
+      "intent": "diy-vs-entrust",
+      "aliasOf": "상속포기 셀프"
+    },
+    "상속하는법": {
+      "owner": "/상속",
+      "intent": "national-router",
+      "aliasOf": "상속 법무사"
+    },
+    "한정승인 법무사": {
+      "owner": "/부산한정승인",
+      "intent": "procedure"
+    },
+    "상속포기 서류": {
+      "owner": "/상속포기필요서류",
+      "intent": "documents"
     },
     "부산 진로특강": {
       "owner": "/법무사진로특강",

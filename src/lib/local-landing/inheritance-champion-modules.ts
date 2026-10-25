@@ -1,6 +1,6 @@
 /**
  * `/부산상속법무사` Champion 보강 모듈
- * - 「부산 상속전문 법무사」 검색의도는 허브에서 받되 공인 전문자격처럼 표방하지 않음
+ * - 역할: 등기·승인 방식 중 무엇을 볼지 가르는 입구. 전문·포기 절차 상세는 각 URL.
  * 검토일: busanInheritanceHubReviewedOn
  */
 import type { ServiceFaq } from "@/types/service";
@@ -19,9 +19,9 @@ export const championExtraWhenNeeded: string[] = [];
 /** Champion 고유 FAQ — topic FAQ와 겹치지 않게 */
 export const championExtraFaqs: ServiceFaq[] = [
   {
-    question: "상담 전에 어떤 자료를 준비하면 되나요?",
+    question: "등기소와 가정법원은 같은 신청인가요?",
     answer:
-      "사망일(또는 안 날), 상속인 관계, 알고 있는 재산·채무, 부동산 주소만 있어도 1차 방향을 잡을 수 있습니다. 서류가 모두 없어도 상황만 남겨 주세요.",
+      "아닙니다. 부동산 명의이전은 등기소, 승인·포기 신고는 가정법원입니다. 접수처를 먼저 가른 뒤 해당 안내로 이동합니다.",
   },
 ];
 

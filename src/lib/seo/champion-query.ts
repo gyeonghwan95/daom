@@ -457,11 +457,11 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: BUSAN_RENUNCIATION_CHAMPION_PATH,
-    compactQueries: ["부산상속포기법무사", "상속포기법무사"],
+    compactQueries: ["부산상속포기법무사", "상속포기법무사", "부산상속포기"],
   },
   {
     path: "/상속",
-    compactQueries: ["상속법무사", "법무사상속", "상속법무사추천"],
+    compactQueries: ["상속법무사", "법무사상속", "상속법무사추천", "상속하는법"],
   },
   {
     path: "/상속상담전준비서류와비용",
@@ -469,7 +469,12 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/전국상속등기",
-    compactQueries: ["상속등기법무사"],
+    compactQueries: [
+      "상속등기법무사",
+      "상속등기",
+      "근처상속등기법무사",
+      "주변상속등기법무사",
+    ],
   },
   {
     path: "/법무사진로특강",
@@ -506,15 +511,26 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/부산법인설립등기",
-    compactQueries: ["부산법인설립법무사"],
+    compactQueries: [
+      "부산법인설립법무사",
+      "부산법인설립",
+      "부산회사설립법무사",
+      "부산법인설립등기",
+    ],
   },
   {
     path: "/부산상속법무사",
-    compactQueries: ["부산상속법무사", "부산법무사상속", "부산상속"],
+    compactQueries: [
+      "부산상속법무사",
+      "부산법무사상속",
+      "부산상속",
+      "부산상속상담",
+      "부산상속절차",
+    ],
   },
   {
     path: "/부산상속전문법무사",
-    compactQueries: ["부산상속전문법무사"],
+    compactQueries: ["부산상속전문법무사", "부산상속법무사선택"],
   },
   {
     path: "/부산상속등기",
@@ -523,11 +539,19 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   ...GEO_LAWYER_CHAMPIONS,
   {
     path: "/부산법인법무사",
-    compactQueries: ["부산회사법무사"],
+    compactQueries: ["부산회사법무사", "부산법인법무"],
   },
   {
     path: "/부산법인등기",
-    compactQueries: ["부산법인등기법무사"],
+    compactQueries: ["부산법인등기법무사", "부산상업등기", "부산법인변경"],
+  },
+  {
+    path: "/부산임원변경등기",
+    compactQueries: ["부산임원변경법무사"],
+  },
+  {
+    path: "/부산본점이전등기",
+    compactQueries: ["부산본점이전", "부산본점이전법무사"],
   },
   {
     path: "/부산개인회생법무사",
@@ -535,7 +559,35 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: "/부산한정승인",
-    compactQueries: ["부산한정승인법무사"],
+    compactQueries: ["부산한정승인법무사", "부산한정승인", "한정승인법무사"],
+  },
+  {
+    path: "/부산상속재산분할법무사",
+    compactQueries: ["부산상속재산분할법무사", "부산상속재산분할"],
+  },
+  {
+    path: "/부산상속법무사추천",
+    compactQueries: ["부산상속법무사추천"],
+  },
+  {
+    path: "/방문없이준비하는상속등기",
+    compactQueries: ["상속등기셀프", "셀프상속등기"],
+  },
+  {
+    path: "/방문없이준비하는상속포기한정승인",
+    compactQueries: ["상속포기셀프", "셀프상속포기"],
+  },
+  {
+    path: "/상속등기필요서류",
+    compactQueries: ["상속등기서류", "상속등기필요서류", "상속등기준비서류"],
+  },
+  {
+    path: "/상속등기기간",
+    compactQueries: ["상속등기기간", "상속등기절차", "상속등기순서"],
+  },
+  {
+    path: "/상속포기필요서류",
+    compactQueries: ["상속포기서류", "상속포기필요서류"],
   },
   {
     path: "/부산부동산등기",
@@ -563,6 +615,8 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "상속법무사수수료",
       "상속법무사수임료",
       "상속법무사보수",
+      "부산상속비용",
+      "저렴한상속등기법무사",
     ],
   },
   {

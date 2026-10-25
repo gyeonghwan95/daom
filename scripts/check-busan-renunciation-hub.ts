@@ -84,11 +84,8 @@ function main() {
     "부산 상속포기 법무사",
     "부산 상속포기",
   ]);
-  if (otherKw?.includes("부산 상속포기 법무사")) {
-    add("error", "exact query still in specialist keywords");
-  }
-  if (!otherKw?.includes("부산 상속포기")) {
-    add("error", "specialist lost own query 부산 상속포기");
+  if (otherKw?.includes("부산 상속포기 법무사") || otherKw?.includes("부산 상속포기")) {
+    add("error", "city-wide renunciation queries still in specialist keywords");
   }
   if (!isBusanRenunciationExactQuery("부산상속포기법무사")) {
     add("error", "compact exact query not detected");

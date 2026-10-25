@@ -117,8 +117,8 @@ export const PAGE_GALLERIES: Record<string, PageGallery> = {
       },
       {
         file: "부산상속법무사-3개월",
-        title: "빚이 많다면 3개월 안에",
-        sub: "상속포기·한정승인 기한 확인",
+        title: "접수처가 다른 세 갈래",
+        sub: "등기소와 가정법원부터 구분",
       },
       {
         file: "부산상속법무사-준비서류",
@@ -192,8 +192,8 @@ export const PAGE_GALLERIES: Record<string, PageGallery> = {
       },
       {
         file: "부산한정승인-3개월신고",
-        title: "3개월 안에 법원에 신고",
-        sub: "상속개시지 관할 가정법원 · 민법 제1019조",
+        title: "재산 한도에서만 채무",
+        sub: "상속은 받되 빚은 재산 범위에서",
       },
       {
         file: "부산한정승인-청산절차",
@@ -497,8 +497,8 @@ export const PAGE_GALLERIES: Record<string, PageGallery> = {
       },
       {
         file: "상속-등기서류",
-        title: "상속등기 서류 순서",
-        sub: "가족관계 서류부터 등기소 신청까지",
+        title: "등기소와 가정법원부터",
+        sub: "명의이전인지 신고인지 먼저 고르기",
       },
       {
         file: "상속-비대면",

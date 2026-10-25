@@ -123,7 +123,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       },
     ],
     relatedServiceLinks: [
-      { href: "/부산법인등기", label: "부산 법인등기 법무사 — 임원·본점·목적 변경" },
+      { href: "/부산법인등기", label: "임원·본점·목적 변경등기" },
       { href: "/부산기업법률자문", label: "부산 기업 법률실무 지원" },
       { href: "/부산법인법무사", label: "부산 회사 법무사" },
       { href: "/부산스타트업법무사", label: "부산 스타트업 법무사" },
@@ -139,7 +139,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/cases/suyeong-company-establishment-case", label: "법인설립 사례" },
     ],
     relatedKeywordLinks: [
-      { href: "/부산법인등기", label: "부산 법인등기 법무사" },
+      { href: "/부산법인등기", label: "이미 있는 회사의 변경등기" },
       { href: "/부산법인등기전문", label: "부산 법인등기 실무" },
       { href: "/창업법무", label: "창업법무 허브" },
       { href: "/", label: "부산 법무사" },
@@ -292,7 +292,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     summaryParagraphs: [
       "부산 상속재산분할 상담은 형제·자매가 부동산을 누가 받을지, 현금으로 정산할지, 공동명의로 둘지를 정하지 못해 시작하는 경우가 많습니다.",
       "법정상속분대로 등기할 수도 있고, 협의분할로 특정 상속인 단독 취득도 가능합니다. 다만 공동상속인 전원 동의·의사능력·미성년·해외 거주 여부가 핵심입니다.",
-      "상속 절차 전체는 부산 상속 법무사 안내에서, 상속재산 분할협의서 작성과 단독명의 등기는 여기서 자세히 설명합니다.",
+      "등기·승인 방식 중 무엇을 먼저 볼지는 절차 선택 안내에서, 상속재산 분할협의서 작성과 단독명의 등기는 여기서 자세히 설명합니다.",
     ],
     problemStatement:
       "연락되지 않는 상속인, 미성년 상속인, 해외 거주 상속인이 있으면 협의분할이 지연됩니다. 협의가 안 되면 가정법원 절차를 검토해야 할 수 있고, 법무사 안내와 소송 대리를 구분해야 합니다. 협의서 작성 시 부동산 표시·지분·정산금·인수 채무를 명확히 하지 않으면 등기·세금에서 보정이나 분쟁이 이어질 수 있습니다.",
@@ -373,15 +373,15 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       {
         question: "상속등기·포기·한정승인과 이 페이지의 차이는?",
         answer:
-          "이 안내는 공동상속인이 부동산 지분·단독명의를 어떻게 나눌지 정한 뒤의 협의분할과 등기입니다. 등기·포기·한정승인 중 무엇을 먼저 볼지는 부산 상속 법무사 안내에서 가릅니다.",
+          "이 안내는 공동상속인이 부동산 지분·단독명의를 어떻게 나눌지 정한 뒤의 협의분할과 등기입니다. 등기소 접수인지 가정법원 신고인지는 절차 선택 안내에서 가릅니다.",
       },
     ],
     relatedServiceLinks: [
-      { href: "/부산상속법무사", label: "부산 상속 법무사" },
+      { href: "/부산상속법무사", label: "절차 선택 — 등기소·가정법원 입구" },
       { href: "/부산상속등기", label: "부산 상속등기" },
-      { href: "/부산상속법무사추천", label: "부산 상속 법무사 추천" },
+      { href: "/부산상속법무사추천", label: "맡길 곳 비교 기준" },
       { href: "/상속등기필요서류", label: "상속등기 필요서류" },
-      { href: "/상속등기비용", label: "상속등기 비용" },
+      { href: "/상속등기비용", label: "명의이전 공과금·보수" },
     ],
     relatedFaqLinks: [
       { href: "/faq/multiple-heirs-inheritance-registration", label: "공동상속인 등기" },

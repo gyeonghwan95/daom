@@ -294,6 +294,11 @@ export const 상속등기후매매서류준비Override: SearchIntentContent = {
       answer:
         "부산 페이지는 지역 실무 허브이고, 이 페이지는 타지역 상속인·원격 서류 정리에 초점을 둔 전국 서류 준비 안내입니다.",
     },
+    {
+      question: "상속등기 순서만 알고 싶을 때는?",
+      answer:
+        "명의이전 자체의 기간·순서는 상속등기 기간 안내에서 봅니다. 이 페이지는 상속등기 뒤에 매매 잔금이 붙을 때의 서류 겹침만 다룹니다.",
+    },
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [

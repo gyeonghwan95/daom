@@ -31,7 +31,7 @@ const EXISTING_GUIDE_ENTRIES: SearchGuideEntry[] = [
   { label: "법인등기 상담 전 확인사항", href: "/부산법인등기전문", category: "expertise", existing: true },
   { label: "부산 등기 실무 안내", href: "/부산등기전문법무사", category: "expertise", existing: true },
   { label: "상속 절차 선택 안내", href: "/부산상속법무사", category: "expertise", existing: true },
-  { label: "부산 법인 업무 깊이 안내", href: "/부산법인전문법무사", category: "expertise" },
+  { label: "부산 법인 업무 깊이 안내", href: "/부산법인설립전문법무사", category: "expertise" },
   { label: "부산 개인회생 업무 안내", href: "/부산개인회생전문법무사", category: "expertise" },
   { label: "부산 매매등기 업무 안내", href: "/부산매매등기전문법무사", category: "expertise" },
   { label: "부산 한정승인 절차 안내", href: "/부산한정승인", category: "expertise", existing: true },

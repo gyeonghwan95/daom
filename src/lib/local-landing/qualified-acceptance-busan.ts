@@ -215,7 +215,7 @@ export function buildBusanQualifiedAcceptancePage(
       },
     ],
     relatedServiceLinks: [
-      { href: "/부산상속법무사", label: "부산 상속 법무사 — 절차 선택 안내" },
+      { href: "/부산상속법무사", label: "절차 선택 — 등기소·가정법원 입구" },
       { href: "/부산상속포기", label: "재산까지 모두 포기하려는 경우에는 상속포기와 비교" },
       { href: "/부산상속등기", label: "부산 상속등기 서류·진행 순서" },
       { href: "/부모빚상속방법", label: "빚이 있을 때 상속방법" },

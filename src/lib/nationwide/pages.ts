@@ -161,7 +161,7 @@ export function buildNationwideHubPageData(): PageData {
         title: "법정 관할은 있지만 비대면으로 끝까지 진행할 수 있는 업무",
         body: "상속포기·한정승인, 법인설립·변경, 개인회생 등은 신청 관할이 정해져 있어도 상담·서류 조율은 비대면으로 진행할 수 있습니다.",
         links: [
-          { href: "/부산상속포기", label: "상속포기 법무사 — 3개월·후순위" },
+          { href: "/부산상속포기", label: "가정법원 포기 신고 — 3개월·후순위" },
           {
             href: "/방문없이준비하는상속포기한정승인",
             label: "상속포기·한정승인 방문 전 준비",
@@ -317,6 +317,11 @@ export function buildNationwideInheritancePageData(): PageData {
         answer:
           "아닙니다. 상속등기는 등기소 명의이전, 상속포기는 가정법원 신고, 취득세는 시·군·구 신고, 상속세는 세무서 신고입니다. 접수처와 기한이 달라 순서를 나눠 안내합니다.",
       },
+      {
+        question: "집 근처 사무소가 아니면 안 되나요?",
+        answer:
+          "상속등기는 상속인 거주지보다 부동산 소재지와 관할 특례를 봅니다. 포기는 고인의 마지막 주소지 가정법원입니다. 이 안내가 전국 절차의 입구입니다.",
+      },
     ],
     includeFaqSchema: true,
     consultationExample: {
@@ -328,8 +333,8 @@ export function buildNationwideInheritancePageData(): PageData {
         title: "상속등기 법무사가 하는 일과 하지 않는 일",
         body: "상속등기 법무사는 상속인 확정, 협의분할 서류, 등기신청서 작성과 등기소 접수를 대리합니다. 소송으로 분할·유류분을 다툴 일은 변호사 범위입니다. 취득세 신고 일정은 등기와 맞추되, 세액 확정은 과세관청 기준입니다.",
         links: [
-          { href: "/상속", label: "상속 법무사 종합 — 등기·포기·한정승인 갈래" },
-          { href: "/부산상속포기", label: "상속포기 법무사 — 가정법원 신고" },
+          { href: "/상속", label: "등기·포기·한정 갈래" },
+          { href: "/부산상속포기", label: "가정법원 상속포기 신고" },
           { href: "/상속등기비용", label: "보수·세금·등기신청수수료 구분" },
           { href: "/업무사례/울산동구상속등기법무사", label: "울산 동구 주택·아파트 사례(제목 유지)" },
           { href: "https://www.iros.go.kr", label: "인터넷등기소(공식)" },
@@ -370,6 +375,24 @@ export function buildNationwideInheritancePageData(): PageData {
         body: "거리보다 사건을 직접 확인하고 설명하는 담당자 선택이 중요합니다.",
         items: TRUST_ITEMS,
       },
+      {
+        title: "근처·주변 상속등기 법무사를 찾을 때",
+        body: "검색어의 ‘근처·주변’은 사는 곳 옆 사무소가 아니라, 부동산 소재지 등기소와 관할 특례를 먼저 보는 일입니다. 상속인이 다른 시에 살아도 명의이전은 물건 기준으로 진행합니다. 거주지와 부동산이 다른 경우는 별도 안내가 있습니다.",
+        links: [
+          {
+            href: "/부동산과거주지가다른상속등기",
+            label: "거주지와 부동산이 다른 경우",
+          },
+          { href: "/방문없이준비하는상속등기", label: "방문 없이 준비하는 순서" },
+        ],
+      },
+      {
+        title: "가족관계 증명과 등기원인 증명을 나눠 보기",
+        body: "서류는 두 갈래입니다. 누가 상속인인지는 피상속인 상세 가족관계·제적으로, 누구에게 넘길지는 법정상속분 또는 협의분할 서류로 증명합니다. 목록은 상속등기 필요서류 안내에서 이어집니다.",
+        links: [
+          { href: "/상속등기필요서류", label: "접수 서류 목록" },
+        ],
+      },
     ],
     primaryKeywords: [
       "상속등기 법무사",
@@ -381,10 +404,10 @@ export function buildNationwideInheritancePageData(): PageData {
     ],
     internalLinks: [
       { href: "/services/inheritance-registration", label: "상속등기 절차 상세" },
-      { href: "/상속", label: "상속 법무사 종합 허브" },
+      { href: "/상속", label: "등기·포기·한정 갈래" },
       { href: "/여러지역상속부동산등기", label: "여러 지역 상속부동산 정리" },
       { href: "/전국유증등기", label: "전국 유증등기 안내" },
-      { href: "/상속등기비용", label: "상속등기 비용 안내" },
+      { href: "/상속등기비용", label: "공과금·보수 안내" },
       { href: "/업무사례/울산동구상속등기법무사", label: "울산 동구 상속등기 사례" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },
     ],
