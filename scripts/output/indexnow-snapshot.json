@@ -1,6 +1,6 @@
 {
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "updatedAt": "2026-10-24T16:44:19.574Z",
+  "updatedAt": "2026-10-25T15:44:01.895Z",
   "urls": {
     "/": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
@@ -60,10 +60,6 @@
     },
     "/services/inheritance-registration": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-registration",
-      "lastmod": null
-    },
-    "/services/inheritance-renunciation": {
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-renunciation",
       "lastmod": null
     },
     "/services/qualified-acceptance": {
@@ -1500,7 +1496,7 @@
     },
     "/부산부동산등기전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-10-20"
     },
     "/부산부동산전문법무사": {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
