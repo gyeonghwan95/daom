@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { useDeferredValue, useMemo, useRef, useState } from "react";
-import { GLOSSARY_SITUATION_SHORTCUTS, type GlossaryCategory } from "@/lib/glossary";
+// 클라이언트 컴포넌트 — 무거운 glossary index(빌더·메타데이터) 대신 필요한 모듈만 직접 가져온다
+import { GLOSSARY_SITUATION_SHORTCUTS } from "@/lib/glossary/policy";
+import type { GlossaryCategory } from "@/lib/glossary/types";
 
 export type GlossarySearchItem = {
   slug: string;

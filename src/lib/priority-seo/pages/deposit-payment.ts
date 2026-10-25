@@ -43,9 +43,9 @@ export const depositPaymentSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-deposit-payment.jpg",
-    alt: "서류를 확인하는 다옴법무사사무소 사무실",
+    alt: "받지 않는 돈, 변제공탁으로 — 책상에서 서류를 확인하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

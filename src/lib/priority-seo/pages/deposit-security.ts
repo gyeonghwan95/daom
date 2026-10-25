@@ -41,9 +41,9 @@ export const depositSecuritySpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-deposit-security.jpg",
-    alt: "부산지방법원 서부지원 청사",
+    alt: "담보공탁, 명령서부터 확인 — 부산지방법원 서부지원 앞의 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

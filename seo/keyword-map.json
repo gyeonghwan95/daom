@@ -125,6 +125,65 @@
       "owner": "/부산상속포기",
       "intent": "procedure"
     },
+    "상속포기 3개월": {
+      "owner": "/부산상속포기",
+      "intent": "procedure",
+      "aliasOf": "부산 상속포기 3개월"
+    },
+    "상속포기 방법": {
+      "owner": "/부산상속포기",
+      "intent": "procedure"
+    },
+    "상속포기 기간": {
+      "owner": "/상속포기기간",
+      "intent": "procedure"
+    },
+    "상속포기 기한": {
+      "owner": "/상속포기기간",
+      "intent": "procedure",
+      "aliasOf": "상속포기 기간"
+    },
+    "한정승인 기간": {
+      "owner": "/한정승인기간",
+      "intent": "procedure"
+    },
+    "한정승인 기한": {
+      "owner": "/한정승인기간",
+      "intent": "procedure",
+      "aliasOf": "한정승인 기간"
+    },
+    "한정승인 서류": {
+      "owner": "/한정승인필요서류",
+      "intent": "procedure"
+    },
+    "한정승인 필요서류": {
+      "owner": "/한정승인필요서류",
+      "intent": "procedure",
+      "aliasOf": "한정승인 서류"
+    },
+    "한정승인 재산목록": {
+      "owner": "/한정승인필요서류",
+      "intent": "procedure",
+      "aliasOf": "한정승인 서류"
+    },
+    "상속등기 안하면": {
+      "owner": "/situations/상속등기-지연-과태료",
+      "intent": "procedure"
+    },
+    "상속등기 미루면": {
+      "owner": "/situations/상속등기-지연-과태료",
+      "intent": "procedure",
+      "aliasOf": "상속등기 안하면"
+    },
+    "부모님 사망 후": {
+      "owner": "/부모님사망후해야할일",
+      "intent": "procedure"
+    },
+    "부모님 사망 후 해야 할 일": {
+      "owner": "/부모님사망후해야할일",
+      "intent": "procedure",
+      "aliasOf": "부모님 사망 후"
+    },
     "부산 상속포기 후순위": {
       "owner": "/부산상속포기",
       "intent": "procedure"
@@ -193,6 +252,39 @@
       "owner": "/부산법인설립등기",
       "intent": "procedure",
       "aliasOf": "부산 법인설립 법무사"
+    },
+    "1인 법인": {
+      "owner": "/부산법인설립등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인설립 법무사"
+    },
+    "1인 법인설립": {
+      "owner": "/부산법인설립등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인설립 법무사"
+    },
+    "부산 법인설립 비용": {
+      "owner": "/법인설립등기비용",
+      "intent": "cost"
+    },
+    "1인 법인설립 비용": {
+      "owner": "/법인설립등기비용",
+      "intent": "cost",
+      "aliasOf": "부산 법인설립 비용"
+    },
+    "부산 대표이사 변경": {
+      "owner": "/부산대표이사변경등기",
+      "intent": "procedure"
+    },
+    "부산 대표이사 변경등기": {
+      "owner": "/부산대표이사변경등기",
+      "intent": "procedure",
+      "aliasOf": "부산 대표이사 변경"
+    },
+    "부산 해산청산 법무사": {
+      "owner": "/부산법인해산청산등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인 해산 청산"
     },
     "부산 법인설립등기": {
       "owner": "/부산법인설립등기",
@@ -2511,6 +2603,418 @@
       "supporting": [
         "/강의문의"
       ]
+    },
+    "부산 소유권이전등기": {
+      "owner": "/부산소유권이전등기",
+      "intent": "hire-inflow"
+    },
+    "부산 소유권이전등기 법무사": {
+      "owner": "/부산소유권이전등기",
+      "intent": "hire-inflow"
+    },
+    "부산 매매등기": {
+      "owner": "/부산소유권이전등기",
+      "intent": "hire-inflow"
+    },
+    "소유권이전등기 서류": {
+      "owner": "/소유권이전등기서류",
+      "intent": "hire-inflow"
+    },
+    "소유권이전등기 필요서류": {
+      "owner": "/소유권이전등기필요서류",
+      "intent": "hire-inflow"
+    },
+    "소유권이전등기 기간": {
+      "owner": "/소유권이전등기기간",
+      "intent": "hire-inflow"
+    },
+    "소유권이전등기 과태료": {
+      "owner": "/소유권이전등기과태료",
+      "intent": "hire-inflow"
+    },
+    "부산 신축아파트 소유권이전등기": {
+      "owner": "/부산신축아파트소유권이전등기",
+      "intent": "hire-inflow"
+    },
+    "부산 오피스텔 소유권이전등기": {
+      "owner": "/부산오피스텔소유권이전등기",
+      "intent": "hire-inflow"
+    },
+    "부산 매매등기 전문법무사": {
+      "owner": "/부산매매등기전문법무사",
+      "intent": "hire-inflow"
+    },
+    "부산 소유권이전 전문법무사": {
+      "owner": "/부산소유권이전전문법무사",
+      "intent": "hire-inflow"
+    },
+    "부산 증여등기": {
+      "owner": "/부산증여등기",
+      "intent": "hire-inflow"
+    },
+    "부산 증여등기 법무사": {
+      "owner": "/부산증여등기",
+      "intent": "hire-inflow"
+    },
+    "부산 증여등기 전문법무사": {
+      "owner": "/부산증여등기전문법무사",
+      "intent": "hire-inflow"
+    },
+    "증여등기 필요서류": {
+      "owner": "/증여등기필요서류",
+      "intent": "hire-inflow"
+    },
+    "증여등기 기간": {
+      "owner": "/증여등기기간",
+      "intent": "hire-inflow"
+    },
+    "부산 부모자녀 아파트 증여등기": {
+      "owner": "/부산부모자녀아파트증여등기",
+      "intent": "hire-inflow"
+    },
+    "부산 부부간 증여등기": {
+      "owner": "/부산부부간증여등기",
+      "intent": "hire-inflow"
+    },
+    "부산 부담부증여 등기": {
+      "owner": "/부산부담부증여등기",
+      "intent": "hire-inflow"
+    },
+    "부담부증여 셀프": {
+      "owner": "/방문없이준비하는부담부증여",
+      "intent": "hire-inflow"
+    },
+    "해외서류 증여등기": {
+      "owner": "/해외서류가필요한증여등기",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당설정등기": {
+      "owner": "/부산근저당설정등기",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당설정 법무사": {
+      "owner": "/부산근저당설정등기",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당말소등기": {
+      "owner": "/부산근저당말소등기",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당말소 법무사": {
+      "owner": "/부산근저당말소등기",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당 법무사": {
+      "owner": "/부산근저당말소등기",
+      "intent": "hire-inflow"
+    },
+    "근저당말소 필요서류": {
+      "owner": "/근저당말소필요서류",
+      "intent": "hire-inflow"
+    },
+    "근저당말소 기간": {
+      "owner": "/근저당말소기간",
+      "intent": "hire-inflow"
+    },
+    "부산 중도금대출 근저당": {
+      "owner": "/부산중도금대출근저당",
+      "intent": "hire-inflow"
+    },
+    "부산 잔금대출 근저당": {
+      "owner": "/부산잔금대출근저당",
+      "intent": "hire-inflow"
+    },
+    "부산 전세권설정등기": {
+      "owner": "/부산전세권설정등기",
+      "intent": "hire-inflow"
+    },
+    "부산 전세권설정 법무사": {
+      "owner": "/부산전세권설정등기",
+      "intent": "hire-inflow"
+    },
+    "부산 전세권말소등기": {
+      "owner": "/부산전세권말소등기",
+      "intent": "hire-inflow"
+    },
+    "부산 전세권말소 법무사": {
+      "owner": "/부산전세권말소등기",
+      "intent": "hire-inflow"
+    },
+    "전세권설정 필요서류": {
+      "owner": "/전세권설정필요서류",
+      "intent": "hire-inflow"
+    },
+    "전세권설정 기간": {
+      "owner": "/전세권설정기간",
+      "intent": "hire-inflow"
+    },
+    "전세권설정 비용": {
+      "owner": "/전세권설정비용",
+      "intent": "hire-inflow"
+    },
+    "부산 신축건물보존등기": {
+      "owner": "/부산신축건물보존등기",
+      "intent": "hire-inflow"
+    },
+    "부산 보존등기 법무사": {
+      "owner": "/부산신축건물보존등기",
+      "intent": "hire-inflow"
+    },
+    "신축보존등기": {
+      "owner": "/신축보존등기",
+      "intent": "hire-inflow"
+    },
+    "건물보존등기": {
+      "owner": "/건물보존등기",
+      "intent": "hire-inflow"
+    },
+    "집합건물보존등기": {
+      "owner": "/집합건물보존등기",
+      "intent": "hire-inflow"
+    },
+    "미등기건물 소유권보존등기": {
+      "owner": "/미등기건물소유권보존등기",
+      "intent": "hire-inflow"
+    },
+    "부산 임차권등기명령 법무사": {
+      "owner": "/부산임차권등기명령",
+      "intent": "hire-inflow"
+    },
+    "임차권등기명령 필요서류": {
+      "owner": "/임차권등기명령필요서류",
+      "intent": "hire-inflow"
+    },
+    "임차권등기명령 기간": {
+      "owner": "/임차권등기명령기간",
+      "intent": "hire-inflow"
+    },
+    "이사 후 임차권등기명령 준비": {
+      "owner": "/이사후임차권등기명령준비",
+      "intent": "hire-inflow"
+    },
+    "부산 전세사기 피해": {
+      "owner": "/전세사기피해대응절차",
+      "intent": "hire-inflow"
+    },
+    "전세사기 피해 대응 법무사": {
+      "owner": "/전세사기피해대응절차",
+      "intent": "hire-inflow"
+    },
+    "부산 전세보증금반환 법무사": {
+      "owner": "/부산전세보증금반환법무사",
+      "intent": "hire-inflow"
+    },
+    "전세보증금 상담": {
+      "owner": "/전세보증금상담",
+      "intent": "hire-inflow"
+    },
+    "집주인 연락두절 전세": {
+      "owner": "/situations/집주인-연락-두절",
+      "intent": "hire-inflow"
+    },
+    "부산 공탁 법무사": {
+      "owner": "/부산공탁",
+      "intent": "hire-inflow"
+    },
+    "변제공탁 서류준비": {
+      "owner": "/변제공탁서류준비",
+      "intent": "hire-inflow"
+    },
+    "공탁 채권회수 법무사": {
+      "owner": "/공탁채권회수",
+      "intent": "hire-inflow"
+    },
+    "부산 개인회생 상담": {
+      "owner": "/부산개인회생상담",
+      "intent": "hire-inflow"
+    },
+    "부산 개인회생 신청": {
+      "owner": "/부산개인회생신청",
+      "intent": "hire-inflow"
+    },
+    "부산 개인회생 전문법무사": {
+      "owner": "/부산개인회생전문법무사",
+      "intent": "hire-inflow"
+    },
+    "개인회생 필요서류": {
+      "owner": "/개인회생필요서류",
+      "intent": "hire-inflow"
+    },
+    "개인회생 기간": {
+      "owner": "/개인회생기간",
+      "intent": "hire-inflow"
+    },
+    "신용회복 개인회생 차이": {
+      "owner": "/신용회복과개인회생차이",
+      "intent": "hire-inflow"
+    },
+    "부산 개인파산": {
+      "owner": "/부산개인파산",
+      "intent": "hire-inflow"
+    },
+    "부산 개인파산 상담": {
+      "owner": "/부산개인파산상담",
+      "intent": "hire-inflow"
+    },
+    "부산 파산 신청": {
+      "owner": "/부산파산신청",
+      "intent": "hire-inflow"
+    },
+    "부산 개인파산 전문법무사": {
+      "owner": "/부산개인파산전문법무사",
+      "intent": "hire-inflow"
+    },
+    "개인파산 준비서류": {
+      "owner": "/개인파산준비서류",
+      "intent": "hire-inflow"
+    },
+    "개인파산 기간": {
+      "owner": "/개인파산기간",
+      "intent": "hire-inflow"
+    },
+    "부산 면책 신청": {
+      "owner": "/부산면책신청",
+      "intent": "hire-inflow"
+    },
+    "부산 면책 전문법무사": {
+      "owner": "/부산면책전문법무사",
+      "intent": "hire-inflow"
+    },
+    "부산지방법원 지급명령": {
+      "owner": "/부산지방법원지급명령",
+      "intent": "hire-inflow"
+    },
+    "지급명령 이의신청": {
+      "owner": "/지급명령이의신청준비",
+      "intent": "hire-inflow"
+    },
+    "특별한정승인 법무사": {
+      "owner": "/특별한정승인",
+      "intent": "hire-inflow"
+    },
+    "상속재산분할협의서 준비": {
+      "owner": "/상속재산분할협의서준비",
+      "intent": "hire-inflow"
+    },
+    "상속재산분할협의서 작성 법무사": {
+      "owner": "/상속재산분할협의서준비",
+      "intent": "hire-inflow"
+    },
+    "상속인조회 방법": {
+      "owner": "/situations/상속재산-조회",
+      "intent": "hire-inflow"
+    },
+    "상속재산조회 법무사": {
+      "owner": "/situations/상속재산-조회",
+      "intent": "hire-inflow"
+    },
+    "사망자 재산채무 조회": {
+      "owner": "/사망자재산채무조회",
+      "intent": "hire-inflow"
+    },
+    "안심상속원스톱 이후 절차": {
+      "owner": "/안심상속원스톱서비스이후",
+      "intent": "hire-inflow"
+    },
+    "부산 유언검인": {
+      "owner": "/부산유언검인",
+      "intent": "hire-inflow"
+    },
+    "부산 유언검인 법무사": {
+      "owner": "/부산유언검인",
+      "intent": "hire-inflow"
+    },
+    "유언공증 준비": {
+      "owner": "/유언공증준비",
+      "intent": "hire-inflow"
+    },
+    "유언집행자 상속등기": {
+      "owner": "/유언집행자와상속등기",
+      "intent": "hire-inflow"
+    },
+    "부산 목적변경등기 법무사": {
+      "owner": "/부산사업목적변경등기",
+      "intent": "hire-inflow"
+    },
+    "부산 사업목적변경 법무사": {
+      "owner": "/부산사업목적변경등기",
+      "intent": "hire-inflow"
+    },
+    "부산 상호변경등기": {
+      "owner": "/부산상호변경등기",
+      "intent": "hire-inflow"
+    },
+    "부산 상호변경 법무사": {
+      "owner": "/부산상호변경등기",
+      "intent": "hire-inflow"
+    },
+    "부산 유상증자등기": {
+      "owner": "/부산유상증자등기",
+      "intent": "hire-inflow"
+    },
+    "부산 유상증자 법무사": {
+      "owner": "/부산유상증자등기",
+      "intent": "hire-inflow"
+    },
+    "부산 제3자배정 유상증자": {
+      "owner": "/부산제3자배정유상증자",
+      "intent": "hire-inflow"
+    },
+    "부산 주주배정 유상증자": {
+      "owner": "/부산주주배정유상증자",
+      "intent": "hire-inflow"
+    },
+    "부산 무상증자등기": {
+      "owner": "/부산무상증자등기",
+      "intent": "hire-inflow"
+    },
+    "부산 현물출자 증자": {
+      "owner": "/부산현물출자증자",
+      "intent": "hire-inflow"
+    },
+    "부산 가수금 출자전환": {
+      "owner": "/부산가수금출자전환",
+      "intent": "hire-inflow"
+    },
+    "부산 감자등기": {
+      "owner": "/부산감자등기",
+      "intent": "hire-inflow"
+    },
+    "부산 감자 법무사": {
+      "owner": "/부산감자등기",
+      "intent": "hire-inflow"
+    },
+    "부산 공동명의 지분증여등기": {
+      "owner": "/부산공동명의지분증여등기",
+      "intent": "hire-inflow"
+    },
+    "증여등기 과태료": {
+      "owner": "/증여등기과태료",
+      "intent": "hire-inflow"
+    },
+    "부산 근저당 전문법무사": {
+      "owner": "/부산근저당전문법무사",
+      "intent": "hire-inflow"
+    },
+    "부산 전세 전문법무사": {
+      "owner": "/부산전세전문법무사",
+      "intent": "hire-inflow"
+    },
+    "오피스텔보존등기": {
+      "owner": "/오피스텔보존등기",
+      "intent": "hire-inflow"
+    },
+    "상가보존등기": {
+      "owner": "/상가보존등기",
+      "intent": "hire-inflow"
+    },
+    "부산동부지원 지급명령": {
+      "owner": "/부산지방법원동부지원지급명령",
+      "intent": "hire-inflow"
+    },
+    "공탁 자가진단": {
+      "owner": "/공탁자가진단",
+      "intent": "hire-inflow"
     }
   }
 }

@@ -25,9 +25,9 @@ export const miryangInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-miryang.jpg",
-    alt: "다옴법무사사무소 서류 확인",
+    alt: "흩어진 형제, 서류부터 모으기 — 사무실에서 서류를 넘겨 보는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -1,3 +1,4 @@
+import { hireIntentExactKeywordChampions } from "@/data/seo/hire-intent-100-champions";
 import { lectureExactKeywordChampions } from "@/data/seo/lecture-100-champions";
 import { BUSAN_DISTRICT_HUB_PATHS } from "@/lib/geo/busan-district-hubs";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
@@ -457,7 +458,13 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: BUSAN_RENUNCIATION_CHAMPION_PATH,
-    compactQueries: ["부산상속포기법무사", "상속포기법무사", "부산상속포기"],
+    compactQueries: [
+      "부산상속포기법무사",
+      "상속포기법무사",
+      "부산상속포기",
+      "상속포기3개월",
+      "상속포기방법",
+    ],
   },
   {
     path: "/상속",
@@ -516,6 +523,8 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "부산법인설립",
       "부산회사설립법무사",
       "부산법인설립등기",
+      "1인법인",
+      "1인법인설립",
     ],
   },
   {
@@ -550,8 +559,16 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     compactQueries: ["부산임원변경법무사"],
   },
   {
+    path: "/부산대표이사변경등기",
+    compactQueries: ["부산대표이사변경등기", "부산대표이사변경"],
+  },
+  {
     path: "/부산본점이전등기",
     compactQueries: ["부산본점이전", "부산본점이전법무사"],
+  },
+  {
+    path: "/부산법인해산청산등기",
+    compactQueries: ["부산법인해산청산", "부산해산청산법무사"],
   },
   {
     path: "/부산개인회생법무사",
@@ -588,6 +605,31 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   {
     path: "/상속포기필요서류",
     compactQueries: ["상속포기서류", "상속포기필요서류"],
+  },
+  {
+    path: "/상속포기기간",
+    compactQueries: ["상속포기기간", "상속포기기한"],
+  },
+  {
+    path: "/한정승인기간",
+    compactQueries: ["한정승인기간", "한정승인기한"],
+  },
+  {
+    path: "/한정승인필요서류",
+    compactQueries: [
+      "한정승인서류",
+      "한정승인필요서류",
+      "한정승인준비서류",
+      "한정승인재산목록",
+    ],
+  },
+  {
+    path: "/situations/상속등기-지연-과태료",
+    compactQueries: ["상속등기안하면", "상속등기미루면", "상속등기지연과태료"],
+  },
+  {
+    path: "/부모님사망후해야할일",
+    compactQueries: ["부모님사망후", "부모님사망후해야할일"],
   },
   {
     path: "/부산부동산등기",
@@ -659,6 +701,8 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "법인설립비용",
       "법인설립수임료",
       "법인설립수수료",
+      "부산법인설립비용",
+      "1인법인설립비용",
     ],
   },
   {
@@ -686,6 +730,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     compactQueries: ["부동산등기비용", "등기비용"],
   },
   ...CITY_INHERITANCE_CHAMPIONS,
+  ...hireIntentExactKeywordChampions(),
 ];
 
 /** 유입 레일·significantLink를 둘 허브만. 동·사례 전 페이지에 동일 블록을 두지 않는다. */

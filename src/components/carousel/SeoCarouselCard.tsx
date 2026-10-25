@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
-import { resolvePageThumbnailSrc } from "@/lib/seo/page-thumbnails";
 
 type SeoCarouselCardProps = {
   item: SeoCarouselItem;
@@ -9,10 +8,10 @@ type SeoCarouselCardProps = {
 
 /**
  * 1:1 에디토리얼 썸네일 카드 (기존 SeoContentCarousel 호환).
- * page-thumbnails가 있으면 우선 사용.
+ * 이미지 경로는 서버에서 정해 넘긴다(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해).
  */
 export function SeoCarouselCard({ item }: SeoCarouselCardProps) {
-  const image = resolvePageThumbnailSrc(item.href) ?? item.image;
+  const image = item.image;
 
   return (
     <li className="w-[78%] min-w-[78%] snap-start sm:w-[42%] sm:min-w-[42%] lg:w-[28%] lg:min-w-[28%] xl:w-[23%] xl:min-w-[23%]">
@@ -23,7 +22,7 @@ export function SeoCarouselCard({ item }: SeoCarouselCardProps) {
         <div className="relative aspect-square w-full overflow-hidden bg-[#f0ebe3]">
           <Image
             src={image}
-            alt=""
+            alt={item.imageAlt ?? ""}
             width={600}
             height={600}
             sizes="(max-width: 640px) 78vw, (max-width: 1024px) 42vw, 23vw"

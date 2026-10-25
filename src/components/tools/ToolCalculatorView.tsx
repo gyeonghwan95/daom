@@ -16,7 +16,7 @@ import {
 } from "@/components/readability";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { RecommendationGroups } from "@/lib/internal-links";
-import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import type { SiteImageAsset } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import { trackToolUsed } from "@/lib/admin-ops/track-client";
 import {
@@ -32,15 +32,17 @@ type ToolCalculatorViewProps = {
   page: PageData;
   slug: string;
   recommendationGroups: RecommendationGroups;
+  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) */
+  cover: SiteImageAsset;
 };
 
 export function ToolCalculatorView({
   page,
   slug,
   recommendationGroups,
+  cover,
 }: ToolCalculatorViewProps) {
   const tool = getToolBySlug(slug);
-  const cover = getCoverImageForPageData(page);
   const [input, setInput] = useState<ToolCalculatorInput>({});
   const [result, setResult] = useState<ReturnType<typeof runToolCalculator> | null>(
     null,

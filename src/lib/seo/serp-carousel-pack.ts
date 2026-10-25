@@ -4,6 +4,7 @@
  */
 
 import { getPageRelation } from "@/data/seo/page-relations";
+import { getSerpHookImage } from "@/data/seo/serp-hook-images";
 import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
 import {
   getExplicitSerpCarouselPack,
@@ -54,15 +55,31 @@ function cardTitle(url: string): string {
   return url.replace(/^\//, "").replace(/법무사$/, " 법무사");
 }
 
+/**
+ * 제목이 이미 이미지 안에 들어간 1:1 썸네일인지(npm run thumbnails:premium 생성물).
+ * 이런 이미지 위에는 카드 제목을 HTML로 다시 겹치지 않는다.
+ */
+function isTitledThumbnail(src: string): boolean {
+  let p = src;
+  try {
+    p = decodeURIComponent(src);
+  } catch {
+    // 그대로 비교
+  }
+  if (/^\/image\/og\//.test(p)) return !/-4x3\.jpe?g$/i.test(p);
+  return /^\/(images\/generated\/carousel|generated\/(serp|thumbnails)|image\/og-pages|image\/cards|resources\/og)\//.test(p);
+}
+
 function toCard(url: string): RelatedCardItem | null {
   if (isNoIndexPath(url)) return null;
   const visual = getPageVisual(url);
   if (visual) return toRelatedCardItem(visual);
 
+  const hook = getSerpHookImage(url);
   const owned = getSerpOwnedImage(url);
   const lecture = getLectureTargetOgImage(url);
   const serp = resolveSerpImage(url);
-  const src = owned?.src ?? lecture?.src ?? serp?.src;
+  const src = hook?.src ?? owned?.src ?? lecture?.src ?? serp?.src;
   if (!src) return null;
 
   return {
@@ -70,12 +87,12 @@ function toCard(url: string): RelatedCardItem | null {
     title: cardTitle(url),
     href: url,
     image: encodePublicSrc(src),
-    imageAlt: owned?.alt ?? lecture?.alt ?? serp?.alt ?? cardTitle(url),
+    imageAlt: hook?.alt ?? owned?.alt ?? lecture?.alt ?? serp?.alt ?? cardTitle(url),
     category: lecture ? "lecture" : "local",
     headline: owned?.headline ?? cardTitle(url),
     textPosition: "center-low",
     representativeImage: encodePublicSrc(src),
-    textBaked: false,
+    textBaked: Boolean(hook) || isTitledThumbnail(src),
   };
 }
 

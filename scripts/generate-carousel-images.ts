@@ -1,4 +1,7 @@
 /**
+ * ⚠ 현재 배포 이미지는 `npm run thumbnails:premium`(scripts/generate-premium-thumbnails.ts)으로 만든 1:1 프리미엄 썸네일이다.
+ *   이 스크립트를 실행하면 같은 경로를 예전 디자인으로 덮어쓴다.
+ *
  * 캐러셀 대표이미지 생성 (로컬 사전 생성 전용 — 배포 빌드에서 실행하지 않음)
  *
  * - 원본 사진은 수정하지 않고 crop/resize/합성만 수행
@@ -16,6 +19,7 @@ import {
   type CarouselImageManifestItem,
 } from "../src/data/seo/carousel-image-manifest";
 import { getAttorneyPhoto } from "../src/data/media/attorney-photo-inventory";
+import { THUMBNAIL_PORTRAITS } from "../src/data/media/thumbnail-portraits";
 
 const ROOT = process.cwd();
 const PUBLIC = path.join(ROOT, "public");
@@ -373,7 +377,30 @@ async function generateOne(item: CarouselImageManifestItem) {
   }
 
   if (item.layoutVariant === "centered-hook") {
-    writeFileSync(outDisk, await renderCenteredHook(item, photoDisk));
+    const { renderHookThumbnail, writeAtomic } = await import("./lib/render-hook-thumbnail");
+    const { layoutForPhoto, layoutForPortrait, toHookFields } = await import(
+      "./lib/hook-layout-catalog"
+    );
+    const title = item.thumbnail?.title ?? item.headline;
+    const attorney = item.sourcePhotoId ? getAttorneyPhoto(item.sourcePhotoId) : undefined;
+    const portrait = attorney
+      ? THUMBNAIL_PORTRAITS.find((p) => p.src === attorney.src)
+      : undefined;
+    const layout = portrait
+      ? layoutForPortrait(portrait.id)
+      : layoutForPhoto(
+          attorney?.src ?? item.sourcePhotoPath ?? "",
+          item.headline,
+          item.pageUrl ?? item.id,
+        );
+    writeAtomic(
+      outDisk,
+      await renderHookThumbnail({
+        photoDisk,
+        title,
+        ...toHookFields(layout),
+      }),
+    );
   } else {
     const { base, layers } = await buildLayers(item, photoDisk);
 

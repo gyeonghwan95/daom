@@ -26,6 +26,8 @@ import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import { NoticesPageView } from "@/components/notices/NoticesPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
+import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
+import { getConsultLanding } from "@/lib/consult-wizard/landings";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -299,7 +301,15 @@ export default async function LocalLandingPage({ params }: PageProps) {
   if (landingConfig?.pageType === "consult-landing") {
     return (
       <PageContainer>
-        <ConsultLandingPageView page={page} />
+        <ConsultLandingPageView
+          page={page}
+          cover={getCoverImageForPageData(page)}
+          jsonLd={buildJsonLdForPageData({
+            ...page,
+            faqs: getConsultLanding(page.slug)?.faqs ?? page.faqs,
+            includeFaqSchema: true,
+          })}
+        />
         <LawyerTrustShowcase />
       </PageContainer>
     );

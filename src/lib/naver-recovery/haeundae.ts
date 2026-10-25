@@ -25,9 +25,9 @@ export const haeundaeRecoverySpec: Omit<NaverRecoverySpec, "slug" | "path"> = {
   },
   ogImage: {
     src: "/image/og/haeundae-office-nameplate.jpg",
-    alt: "해운대구 센텀 다옴법무사사무소 명판",
+    alt: "해운대 사무소에서 직접 상담 — 사무실 책상에서 정면을 바라보는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -1422,7 +1422,7 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     label: "부모님 사망 후 해야 할 일",
     category: "concern",
     serviceSlug: "inheritance-registration",
-    keywords: ["부모님 사망 후 해야 할 일", "가족 사망 후 행정절차", "장례 후 재산정리"],
+    keywords: ["부모님 사망 후", "부모님 사망 후 해야 할 일", "가족 사망 후 행정절차"],
     focus: "장례 직후 재산·채무·상속 순서",
     ...inheritanceCase,
   },

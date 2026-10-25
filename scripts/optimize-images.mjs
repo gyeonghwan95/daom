@@ -69,6 +69,45 @@ function targetWidths(sourceWidth) {
  */
 const GALLERY_PREFIX = "/image/cards/gallery/";
 const GALLERY_WIDTHS = [384, 640];
+const PAGE_THUMB_PREFIX = "/image/og-pages/";
+
+/**
+ * 1200px 1:1 썸네일(og·카드·본문 대표 이미지)은 파생본을 만들지 않고 원본 JPG를 그대로 쓴다.
+ * 고해상도 휴대폰에서도 1200px가 필요한 크기라 화질 손해가 없고, 장당 5개씩 늘던 파일 수를 아낀다.
+ * (src/lib/image-variants.ts 는 파생본이 없으면 원본 경로를 그대로 돌려준다)
+ */
+function isSquareThumbnail(key) {
+  if (key.startsWith("/image/og-pages/") || key.startsWith("/generated/serp/") || key.startsWith("/resources/og/")) return true;
+  if (key.startsWith("/image/og/")) return !/-4x3\.jpe?g$/i.test(key); // 4:3은 본문 기록 사진
+  if (key.startsWith("/image/cards/")) return !key.startsWith(GALLERY_PREFIX);
+  return false;
+}
+
+/**
+ * 코드(src) 어디에도 이름이 나오지 않는 원본은 화면에 그려질 수 없으므로 파생본을 만들지 않는다.
+ * 생성 스크립트의 원본 사진(서류 사진 등)이 여기에 해당한다. 경로를 조립해 쓰는 경우를 놓치지 않도록
+ * 파일명·확장자 뺀 이름·"썸네일-" 뺀 이름(src/lib/thumbnail-images.ts가 조립) 중 하나라도 보이면 참조된 것으로 본다.
+ */
+const SRC_TEXT = (() => {
+  const chunks = [];
+  (function read(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (full !== path.join(ROOT, "src", "generated")) read(full);
+      } else if (/\.(tsx?|mdx?|json|css)$/.test(entry.name)) {
+        chunks.push(fs.readFileSync(full, "utf8").normalize("NFC"));
+      }
+    }
+  })(path.join(ROOT, "src"));
+  return chunks.join("\n");
+})();
+function isReferencedInSource(key) {
+  const file = key.split("/").pop().normalize("NFC");
+  const base = file.replace(SOURCE_EXT, "");
+  const bare = base.replace(/^썸네일[-_]/, "");
+  return [file, base, bare === base ? "" : `"${bare}"`, encodeURIComponent(base)].some((t) => t.length >= 2 && SRC_TEXT.includes(t));
+}
 
 /** public 밖에 있지만 같은 URL로 서빙되는 원본 (app/icon.png → /icon.png, 헤더 로고) */
 const EXTRA_SOURCES = new Map([[path.join(ROOT, "src/app/icon.png"), "/icon.png"]]);
@@ -82,13 +121,20 @@ const ogKey = (key) => `/_img${key.replace(SOURCE_EXT, "")}.og.jpg`;
 
 async function processFile(file) {
   const key = toKey(file);
+  // 페이지별 1:1 썸네일은 파생본·크기 표가 모두 필요 없다(share-image.ts가 1200×1200 고정) — sharp를 열지 않는다
+  if (key.startsWith(PAGE_THUMB_PREFIX)) return { key, widths: [], written: 0, dims: {} };
   const size = await displaySize(file);
-  const widths = key.startsWith(GALLERY_PREFIX) ? GALLERY_WIDTHS : targetWidths(size.width);
+  const referenced = EXTRA_SOURCES.has(file) || isReferencedInSource(key);
+  const widths = !referenced || isSquareThumbnail(key)
+    ? []
+    : key.startsWith(GALLERY_PREFIX)
+      ? GALLERY_WIDTHS
+      : targetWidths(size.width);
   const srcStat = fs.statSync(file);
   const srcMtime = srcStat.mtimeMs;
   let written = 0;
   const dims = { width: size.width, height: size.height, format: size.format, bytes: srcStat.size };
-  if (size.width > OG_MAX_WIDTH || srcStat.size > OG_MAX_SOURCE_BYTES) {
+  if (referenced && (size.width > OG_MAX_WIDTH || srcStat.size > OG_MAX_SOURCE_BYTES)) {
     const dest = ogFile(key);
     const ogWidth = Math.min(OG_MAX_WIDTH, size.width);
     if (force || !fs.existsSync(dest) || fs.statSync(dest).mtimeMs < srcMtime) {
@@ -158,17 +204,45 @@ const manifest = {};
 const dimensions = {};
 const expected = new Set();
 for (const { key, widths, dims } of results.sort((a, b) => a.key.localeCompare(b.key))) {
-  manifest[key] = widths;
-  dimensions[key] = dims;
+  if (widths.length) manifest[key] = widths;
+  // 페이지별 1:1 썸네일은 모두 1200×1200 JPEG — src/lib/seo/share-image.ts가 고정값으로 처리(표를 키우지 않는다)
+  if (!key.startsWith(PAGE_THUMB_PREFIX)) dimensions[key] = dims;
   for (const w of widths) expected.add(variantFile(key, w));
   if (dims.og) expected.add(ogFile(key));
 }
+/**
+ * 내용이 같으면 쓰지 않는다(dev 서버·에디터가 감시하는 파일을 매번 건드리지 않게).
+ * Windows에서 감시 중인 파일을 바로 다시 열면 UNKNOWN/EBUSY/EPERM이 날 수 있어 잠시 뒤 재시도한다.
+ */
+async function writeIfChanged(file, text) {
+  try {
+    if (fs.readFileSync(file, "utf8") === text) return;
+  } catch {
+    // 없으면 새로 쓴다
+  }
+  for (let i = 0; ; i++) {
+    try {
+      fs.writeFileSync(file, text);
+      return;
+    } catch (e) {
+      if (i >= 8 || !/UNKNOWN|EBUSY|EPERM|EACCES/.test(String(e?.code ?? e))) throw e;
+      await new Promise((resolve) => setTimeout(resolve, 250 * (i + 1)));
+    }
+  }
+}
+
 fs.mkdirSync(path.dirname(MANIFEST), { recursive: true });
-fs.writeFileSync(MANIFEST, `${JSON.stringify(manifest, null, 1)}\n`);
-fs.writeFileSync(DIMENSIONS, `${JSON.stringify(dimensions, null, 1)}\n`);
+await writeIfChanged(MANIFEST, `${JSON.stringify(manifest, null, 1)}\n`);
+await writeIfChanged(DIMENSIONS, `${JSON.stringify(dimensions, null, 1)}\n`);
 
 const removed = removeStale(expected);
 const written = results.reduce((n, r) => n + r.written, 0);
 console.log(
   `[optimize-images] 원본 ${sources.length}개 · 파생본 ${expected.size}개 (새로 생성 ${written}, 정리 ${removed}) · ${((Date.now() - started) / 1000).toFixed(1)}s`,
 );
+
+// Windows(Node 24)에서 libvips 작업 스레드가 정리되기 전에 프로세스가 끝나면
+// "Assertion failed: !(handle->flags & UV_HANDLE_CLOSING)"로 비정상 종료한다(npm run dev가 멈춤).
+// 캐시를 비우고 스레드가 정리될 시간을 잠깐 준 뒤 끝낸다.
+sharp.cache(false);
+await new Promise((resolve) => setTimeout(resolve, 200));

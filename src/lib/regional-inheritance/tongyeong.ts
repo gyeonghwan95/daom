@@ -25,9 +25,9 @@ export const tongyeongInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-tongyeong.jpg",
-    alt: "다옴법무사사무소 오래된 서류 확인",
+    alt: "미등기 주택, 상속 정리 — 책상에서 서류에 메모하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

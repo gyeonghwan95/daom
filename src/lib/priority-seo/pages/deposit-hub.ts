@@ -42,9 +42,9 @@ export const depositHubSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-deposit-hub.jpg",
-    alt: "부산지방법원 동부지원 정문",
+    alt: "공탁, 어디에 어떻게 맡길까 — 부산지방법원 동부지원 앞의 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

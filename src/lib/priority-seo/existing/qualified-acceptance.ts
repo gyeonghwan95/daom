@@ -45,9 +45,9 @@ export const qualifiedAcceptanceSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-qualified-acceptance.jpg",
-    alt: "상속재산·채무 자료를 검토하는 다옴법무사사무소",
+    alt: "빚이 더 많다면 먼저 확인할 것 — 사무실에서 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

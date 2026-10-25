@@ -401,6 +401,11 @@ export const inheritanceDeathPages = [
         answer:
           "협의분할 등기는 원칙적으로 상속인 전원의 협의가 필요합니다. 협의가 안 되면 공유 등기나 법적 분할 절차를 검토해야 합니다.",
       },
+      {
+        question: "상속등기 안하면 당장 무엇이 막히나요?",
+        answer:
+          "과태료는 없지만 매매·담보가 막히고, 취득세 신고기한을 넘기면 가산세가 붙습니다. 달력은 상속등기 기간 안내에서 이어집니다.",
+      },
     ],
     relatedSituationSlugs: [
       "parent-passed-away",

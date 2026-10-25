@@ -41,9 +41,9 @@ export const busanConsultSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-busan-consult.jpg",
-    alt: "다옴법무사사무소 전화 상담 모습",
+    alt: "전화 한 통으로 먼저 물어보세요 — 전화로 상담하며 메모하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

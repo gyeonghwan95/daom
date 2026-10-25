@@ -30,9 +30,9 @@ export const shipVsRegistrationSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-vs-registration.jpg",
-    alt: "등기국 등기운영과 민원 창구 입구",
+    alt: "선박등기와 선박등록의 차이 — 등기소 등기운영과 민원 창구",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

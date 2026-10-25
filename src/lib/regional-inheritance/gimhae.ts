@@ -25,9 +25,9 @@ export const gimhaeInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-gimhae.jpg",
-    alt: "다옴법무사사무소 안윤정 법무사 서류 확인",
+    alt: "김해 집 상속, 부산에서 진행 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

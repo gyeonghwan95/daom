@@ -4,6 +4,9 @@
  * No new URLs; additive internal-link and champion decisions only.
  */
 import {
+  HIRE_INTENT_100_TARGETS,
+} from "@/data/seo/hire-intent-100-champions";
+import {
   LECTURE_100_TARGETS,
   LECTURE_EXTRA_INFLOW,
 } from "@/data/seo/lecture-100-champions";
@@ -14,6 +17,10 @@ const LECTURE_CHAMPION_BY_QUERY = new Map(
     row.query,
     row.champion,
   ]),
+);
+
+const HIRE_INTENT_CHAMPION_BY_QUERY = new Map(
+  HIRE_INTENT_100_TARGETS.map((row) => [row.query, row.champion]),
 );
 
 export type PageRelationRole =
@@ -537,9 +544,49 @@ export function getChampionForTargetQuery(query: string): {
       champion: "/부산임원변경등기",
       intent: "officer-change",
     },
+    "부산 대표이사 변경": {
+      champion: "/부산대표이사변경등기",
+      intent: "officer-change",
+    },
     "부산 본점이전": {
       champion: "/부산본점이전등기",
       intent: "head-office-move",
+    },
+    "부산 해산청산 법무사": {
+      champion: "/부산법인해산청산등기",
+      intent: "dissolution",
+    },
+    "1인 법인": {
+      champion: "/부산법인설립등기",
+      intent: "incorporation-procedure",
+    },
+    "부산 법인설립 비용": {
+      champion: "/법인설립등기비용",
+      intent: "incorporation-fee",
+    },
+    "상속포기 기간": {
+      champion: "/상속포기기간",
+      intent: "renunciation-deadline",
+    },
+    "한정승인 기간": {
+      champion: "/한정승인기간",
+      intent: "qualified-deadline",
+    },
+    "한정승인 서류": {
+      champion: "/한정승인필요서류",
+      intent: "qualified-docs",
+    },
+    "상속등기 안하면": {
+      champion: "/situations/상속등기-지연-과태료",
+      intent: "registration-delay",
+    },
+    "부모님 사망 후": {
+      champion: "/부모님사망후해야할일",
+      intent: "post-death-first-week",
+    },
+    "상속포기 방법": {
+      champion: "/부산상속포기",
+      intent: "renunciation",
     },
     "부산 법인전문 법무사": {
       champion: "/부산법인설립전문법무사",
@@ -579,6 +626,10 @@ export function getChampionForTargetQuery(query: string): {
   const lectureChampion = LECTURE_CHAMPION_BY_QUERY.get(query);
   if (lectureChampion) {
     return { query, champion: lectureChampion, intent: "lecture-hiring" };
+  }
+  const hireChampion = HIRE_INTENT_CHAMPION_BY_QUERY.get(query);
+  if (hireChampion) {
+    return { query, champion: hireChampion, intent: "hire-inflow" };
   }
   const exactPath = getExactKeywordChampionPath(query);
   if (exactPath) {

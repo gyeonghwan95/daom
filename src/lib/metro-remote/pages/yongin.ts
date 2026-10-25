@@ -32,9 +32,9 @@ export const yonginMetroRemote: MetroRemoteSpec = {
   },
   ogImage: {
     src: "/image/og/metro-yongin.jpg",
-    alt: "사무소에서 서류 작성",
+    alt: "용인 집 상속, 비대면으로 — 창가 책상에서 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

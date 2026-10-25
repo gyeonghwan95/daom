@@ -33,6 +33,10 @@ function keyOf(path: string): string {
 export function resolveShareImage(path: string, fallbackWidth = 1200, fallbackHeight = 630): ShareImage {
   if (/^https?:\/\//.test(path)) return { url: path, width: fallbackWidth, height: fallbackHeight };
   const key = keyOf(path.startsWith("/") ? path : `/${path}`);
+  // 페이지별 1:1 썸네일(npm run thumbnails:premium)은 모두 1200×1200 JPEG — 크기 표(image-dimensions.json)에 넣지 않는다
+  if (key.startsWith("/image/og-pages/")) {
+    return { url: getAbsoluteAssetUrl(key), width: 1200, height: 1200, type: "image/jpeg" };
+  }
   const entry = DIMS[key];
   if (!entry) return { url: getAbsoluteAssetUrl(path), width: fallbackWidth, height: fallbackHeight };
   if (entry.og) {

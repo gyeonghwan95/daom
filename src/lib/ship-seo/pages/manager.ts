@@ -31,9 +31,9 @@ export const shipManagerSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-manager.jpg",
-    alt: "전화로 상담 내용을 메모하는 모습",
+    alt: "선박관리인, 선임 전에 정할 것 — 전화 상담 중 서류에 메모하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

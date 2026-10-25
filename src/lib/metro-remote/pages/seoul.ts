@@ -42,9 +42,9 @@ export const seoulMetroRemote: MetroRemoteSpec = {
   },
   ogImage: {
     src: "/image/og/metro-seoul.jpg",
-    alt: "상속 등기필정보 및 등기완료통지서(개인정보 가림)",
+    alt: "서울 집 상속, 부산에서 진행 — 상속 등기필정보 및 등기완료통지서(개인정보 가림)",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

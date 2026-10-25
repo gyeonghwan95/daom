@@ -25,9 +25,9 @@ export const jinjuInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-jinju.jpg",
-    alt: "다옴법무사사무소 서류 확인",
+    alt: "빚 확인 먼저, 등기는 그다음 — 사무실에서 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

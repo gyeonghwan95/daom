@@ -25,9 +25,9 @@ export const daeguInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-daegu.jpg",
-    alt: "다옴법무사사무소 전화 상담",
+    alt: "대구 집 상속, 방문 없이 — 전화로 상담하며 메모하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

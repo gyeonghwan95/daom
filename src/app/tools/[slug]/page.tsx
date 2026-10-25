@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
+import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getAllToolSlugs, getToolBySlug, resolveToolPageData } from "@/lib/tools";
 import {
@@ -50,6 +51,7 @@ export default async function ToolDetailPage({ params }: Props) {
         page={page}
         slug={normalized}
         recommendationGroups={recommendationGroups}
+        cover={getCoverImageForPageData(page)}
       />
       <LawyerTrustShowcase />
     </PageContainer>

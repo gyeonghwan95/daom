@@ -32,9 +32,9 @@ export const shipYeongdeokSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-yeongdeok.jpg",
-    alt: "법무사 명패가 놓인 책상에서 서류를 검토하는 모습",
+    alt: "어선 증여, 하기 전에 정할 것 — 사무실 책상에서 정면을 바라보는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

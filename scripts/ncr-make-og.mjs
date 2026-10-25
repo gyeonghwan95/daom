@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+/**
+ * ⚠ 이 스크립트가 만드는 og 이미지는 이후 `npm run thumbnails:premium`(1:1 프리미엄 썸네일)으로 같은 경로에 다시 만들었다.
+ *   다시 실행하면 예전 디자인으로 덮어쓰므로, 실행했다면 thumbnails:premium 을 이어서 실행한다.
+ */
 /** 해운대 target og/body image — 실제 사무소 명판 사진을 리사이즈만 한다(합성·텍스트 추가 없음). */
 import fs from "node:fs";
 import path from "node:path";

@@ -1,4 +1,7 @@
 /**
+ * ⚠ 이 스크립트가 만드는 og 이미지는 이후 `npm run thumbnails:premium`(1:1 프리미엄 썸네일)으로 같은 경로에 다시 만들었다.
+ *   다시 실행하면 예전 디자인으로 덮어쓰므로, 실행했다면 thumbnails:premium 을 이어서 실행한다.
+ *
  * 의뢰 전 준비자료 PNG(1080×1440)·A4 PDF·OG(1200×630) 정적 생성.
  *   npx tsx scripts/generate-resource-assets.ts
  * - 문구 원본: src/data/resources/guides.ts / 조판: src/lib/resources/print-html.ts

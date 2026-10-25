@@ -42,9 +42,9 @@ export const depositExecutionSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-deposit-execution.jpg",
-    alt: "다옴법무사사무소 사무실에서 서류 업무를 하는 모습",
+    alt: "지급하기 전, 공탁부터 확인 — 책상에서 서류에 메모하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -1,4 +1,7 @@
 /**
+ * ⚠ 현재 배포 이미지는 `npm run thumbnails:premium`(scripts/generate-premium-thumbnails.ts)으로 만든 1:1 프리미엄 썸네일이다.
+ *   이 스크립트를 실행하면 같은 경로를 예전 디자인으로 덮어쓴다.
+ *
  * SERP 대표 JPG(무텍스트) + 카드 WebP 생성
  * Usage: npm run visuals:generate
  */

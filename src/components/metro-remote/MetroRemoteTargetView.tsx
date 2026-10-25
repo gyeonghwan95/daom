@@ -18,6 +18,8 @@ import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { MetroRemoteSpec } from "@/lib/metro-remote/types";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
+import { resolveSerpImage } from "@/lib/seo/page-visuals";
+import { resolvePageThumbnailSrc } from "@/lib/seo/page-thumbnails";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 
 type MetroRemoteTargetViewProps = {
@@ -40,13 +42,17 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
     image: spec.ogImage.src,
     dateModified: spec.dateModified,
   });
-  const carouselItems = spec.nextSteps.items.map((item) => ({
-    id: item.href,
-    title: item.title,
-    href: item.href,
-    image: encodePublicSrc(item.image),
-    imageAlt: item.imageAlt,
-  }));
+  // 이어지는 페이지에 1:1 썸네일이 있으면 그 이미지·alt를 쓴다(없으면 지정 사진)
+  const carouselItems = spec.nextSteps.items.map((item) => {
+    const thumb = resolveSerpImage(item.href);
+    return {
+      id: item.href,
+      title: item.title,
+      href: item.href,
+      image: resolvePageThumbnailSrc(item.href) ?? thumb?.src ?? encodePublicSrc(item.image),
+      imageAlt: thumb?.alt ?? (item.imageAlt || item.title),
+    };
+  });
 
   return (
     <PageContainer articleFirst>

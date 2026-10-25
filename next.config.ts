@@ -84,6 +84,29 @@ const nextConfig: NextConfig = {
     // next/image quality must be listed here (default is [75] only).
     qualities: [55, 72, 75, 80, 85],
   },
+  // 개발 서버·build:server(Turbopack)용 — 아래 webpack 설정과 같은 일을 한다(브라우저에서만 빈 모듈).
+  turbopack: {
+    resolveAlias: {
+      "@/data/seo/page-og-thumbnails": {
+        browser: "./src/data/seo/page-og-thumbnails.client.ts",
+      },
+    },
+  },
+  webpack(config, { isServer, webpack }) {
+    // 페이지별 1:1 썸네일 맵(src/data/seo/page-og-thumbnails.ts)은 서버 렌더링에서만 쓴다.
+    // 공용 SEO 모듈을 거쳐 클라이언트 번들에 실리지 않도록 브라우저 빌드에서는 빈 모듈로 바꾼다.
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /[\/]page-og-thumbnails$/,
+          (resource: { request: string }) => {
+            resource.request = resource.request.replace(/page-og-thumbnails$/, "page-og-thumbnails.client");
+          },
+        ),
+      );
+    }
+    return config;
+  },
   ...(!isStaticExport
     ? {
         async redirects() {

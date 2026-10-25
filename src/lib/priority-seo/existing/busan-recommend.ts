@@ -40,9 +40,9 @@ export const busanRecommendSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-busan-recommend.jpg",
-    alt: "다옴법무사사무소 로고가 걸린 사무실",
+    alt: "법무사 고를 때 7가지 기준 — 다옴법무사사무소 로고 앞에 선 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

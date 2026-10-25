@@ -1,4 +1,4 @@
-import { buildSeoTitle } from "@/lib/seo/metadata";
+import { buildSeoTitle } from "@/lib/seo/seo-title";
 
 /** 메타 타이틀 — 브랜드 접미사만 쓰고, 대표 검색어로 길이를 채우지 않는다. */
 export function buildMetaTitle(primary: string): string {

@@ -25,9 +25,9 @@ export const gumiInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-gumi.jpg",
-    alt: "다옴법무사사무소 서류 검토",
+    alt: "구미·부산 집, 한 번에 상속 — 책상에서 서류 내용을 확인하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

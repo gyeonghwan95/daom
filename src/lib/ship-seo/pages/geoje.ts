@@ -32,9 +32,9 @@ export const shipGeojeSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-geoje.jpg",
-    alt: "서류를 넘겨 확인하는 모습",
+    alt: "거제 선박, 넘겨받기 전에 — 서류를 넘기며 내용을 확인하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

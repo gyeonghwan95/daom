@@ -112,6 +112,7 @@ export function buildBusanCompanyEstablishmentPage(
       "부산 법인설립",
       "부산 법인설립등기",
       "부산 회사설립 법무사",
+      "1인 법인",
       "1인 법인설립",
     ],
     regionLabel: config.regionLabel,

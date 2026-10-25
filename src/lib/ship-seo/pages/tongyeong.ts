@@ -32,9 +32,9 @@ export const shipTongyeongSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-tongyeong.jpg",
-    alt: "인주와 도장 옆에서 서류를 확인하는 모습",
+    alt: "통영 어선, 공동상속 정리 — 법인 서류와 인감을 정리하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

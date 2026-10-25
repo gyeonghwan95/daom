@@ -289,7 +289,7 @@ export const SERP_OWNED_IMAGES: Record<string, SerpOwnedImage> = {
     "다옴법무사사무소 로고가 걸린 사무실",
     "순위·광고보다 직접 확인할 기준으로 고릅니다.",
     1200,
-    630,
+    1200,
   ),
   "/부산법무사비교": photo(
     "/image/cards/select-criteria.jpg",
@@ -332,7 +332,7 @@ export const SERP_OWNED_IMAGES: Record<string, SerpOwnedImage> = {
     "다옴법무사사무소 전화 상담 모습",
     "업무명을 몰라도 현재 상황만 알려 주시면 됩니다.",
     1200,
-    630,
+    1200,
   ),
   "/법무사진로특강": photo(
     "/image/강의-양산제일고.jpg",

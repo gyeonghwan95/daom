@@ -37,10 +37,10 @@ export const 부모님사망후해야할일Override: SearchIntentContent = {
     "방문 없이 1차 확인이 가능하며, 추가 절차는 사건별로 안내합니다.",
   ],
   primaryKeywords: [
+    "부모님 사망 후",
     "부모님 사망 후 해야 할 일",
     "가족 사망 후 행정절차",
     "장례 후 재산정리",
-    "갑작스러운 사망 후 상속절차",
   ],
   searchIntents: [
     "장례를 마친 뒤 무엇부터 해야 하는지 모르는 경우",
@@ -87,6 +87,11 @@ export const 부모님사망후해야할일Override: SearchIntentContent = {
       question: "부산 방문이 필수인가요?",
       answer:
         "아닙니다. 전화·카카오톡으로 먼저 확인할 수 있습니다. 원본·본인확인·해외서류가 필요하면 개별 안내합니다.",
+    },
+    {
+      question: "상속하는법과 같은 안내인가요?",
+      answer:
+        "아닙니다. 이 페이지는 장례 직후 사망신고·재산·채무 순서이고, 등기·포기·한정을 고르는 안내는 상속 종합 페이지입니다.",
     },
   ],
   relatedCaseLinks: [

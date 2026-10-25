@@ -44,9 +44,9 @@ export const busanLawyerSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-busan-lawyer.jpg",
-    alt: "법무사 안윤정 명패와 다옴법무사사무소 로고",
+    alt: "안윤정 법무사가 직접 맡습니다 — 사무실 책상에서 정면을 바라보는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

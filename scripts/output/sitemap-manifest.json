@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-19T14:55:06.910Z",
+  "generatedAt": "2026-10-25T12:50:05.004Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1645,
+  "totalUrls": 1644,
   "format": "urlset",
   "tierCounts": {
-    "1": 18,
+    "1": 17,
     "2": 29,
     "3": 176,
     "4": 600,
@@ -981,6 +981,10 @@
     {
       "path": "/search",
       "reason": "noindex"
+    },
+    {
+      "path": "/services/inheritance-renunciation",
+      "reason": "noindex"
     }
   ],
   "sitemapIndex": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemap.xml",
@@ -990,7 +994,7 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
       "lastmod": "2026-10-19",
       "filename": "tier-1-core.xml",
-      "count": 18
+      "count": 17
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-2-hubs.xml",
@@ -1006,7 +1010,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-19",
+      "lastmod": "2026-10-20",
       "filename": "tier-4-regions.xml",
       "count": 600
     },
@@ -1124,12 +1128,6 @@
       "path": "/services/inheritance-registration",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-registration",
-      "lastmod": null
-    },
-    {
-      "path": "/services/inheritance-renunciation",
-      "tier": 1,
-      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-renunciation",
       "lastmod": null
     },
     {
@@ -3284,7 +3282,7 @@
       "path": "/부산부동산등기전문법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-10-20"
     },
     {
       "path": "/부산부동산전문법무사",

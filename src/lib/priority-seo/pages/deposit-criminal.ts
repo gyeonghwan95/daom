@@ -42,9 +42,9 @@ export const depositCriminalSpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-deposit-criminal.jpg",
-    alt: "부산지방법원 동부지원 청사",
+    alt: "형사공탁 전 먼저 볼 것 — 부산지방법원 동부지원 청사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

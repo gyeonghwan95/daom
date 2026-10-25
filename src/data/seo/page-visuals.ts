@@ -1,6 +1,6 @@
 /**
  * 페이지별 visual manifest (Phase 1).
- * SERP 대표 = 무텍스트 1200 JPG
+ * SERP 대표 = 1200 JPG (제목을 가운데에 얹은 1:1 썸네일 — npm run thumbnails:premium)
  * 카드 = 동일 구도 WebP + HTML headline overlay
  * URL / title / H1 / canonical 변경 없음.
  */
@@ -27,7 +27,7 @@ export type PageVisual = {
   url: string;
   pageTitle: string;
   sourcePortrait: string;
-  /** SERP / og / body / ItemList image — 글자 없음 */
+  /** SERP / og / body / ItemList image — 1:1, 가운데 제목(얼굴과 겹치지 않음) */
   representativeImage: string;
   /** 사이트 캐러셀용 저용량 */
   cardImage: string;
@@ -72,7 +72,7 @@ function fromThumb(thumb: PageThumbnailItem): PageVisual {
     pageTitle: thumb.pageTitle,
     sourcePortrait: thumb.sourcePortrait,
     representativeImage: `/generated/serp/${thumb.category}/${base}.jpg`,
-    cardImage: `/generated/cards/${thumb.category}/${base}.webp`,
+    cardImage: thumb.output,
     cardHeadline: thumb.headline,
     copyType: thumb.copyType,
     textPosition: templateToTextPosition(thumb.template),

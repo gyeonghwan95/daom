@@ -32,9 +32,9 @@ export const shipChangwonSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-changwon.jpg",
-    alt: "모니터를 보며 서류 내용을 입력하는 모습",
+    alt: "창원 선박, 명의 정리 — 모니터 앞에서 자료를 입력하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

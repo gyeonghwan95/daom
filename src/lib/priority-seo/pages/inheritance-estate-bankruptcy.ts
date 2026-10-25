@@ -42,9 +42,9 @@ export const inheritanceEstateBankruptcySpec: PrioritySeoSpec = {
   },
   ogImage: {
     src: "/image/og/priority-qualified-acceptance.jpg",
-    alt: "다옴법무사사무소 사무실 업무 모습",
+    alt: "빚이 더 많다면 먼저 확인할 것 — 사무실에서 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -34,10 +34,10 @@ export const corporateIntentPages: CorporatePageContent[] = [
       "대표이사 변경은 정관상 결의(이사회·주주총회) 후 취임승낙서·사임서 등을 첨부해 등기해야 하며, 결의일로부터 법정 기한 내 접수하지 않으면 과태료가 부과될 수 있습니다. 등기 완료 전에는 등기부상 대표와 실제 서명권이 다를 수 있습니다.",
     primaryKeyword: "부산 대표이사 변경등기",
     secondaryKeywords: [
+      "부산 대표이사 변경",
       "부산 대표이사 등기",
       "대표이사 취임등기",
       "대표이사 사임등기",
-      "법인 대표 변경",
       "경영권 이전 등기",
     ],
     questionKeywords: [
@@ -103,6 +103,11 @@ export const corporateIntentPages: CorporatePageContent[] = [
         question: "임원변경등기 페이지와 무엇이 다른가요?",
         answer:
           "임원변경등기는 취임·사임·주소변경 전반을 다루고, 이 페이지는 대표이사·대표권 이전에 초점을 둡니다.",
+      },
+      {
+        question: "부산 대표이사 변경만 검색해도 여기인가요?",
+        answer:
+          "네. 대표권·은행·사업자등록까지 이어지는 변경은 이 페이지에서 보고, 이사·감사 전반은 임원변경등기 안내로 이어집니다.",
       },
     ],
     relatedLinks: [
@@ -573,6 +578,11 @@ export const corporateIntentPages: CorporatePageContent[] = [
         question: "계속 유지할지 해산할지 어떻게 판단하나요?",
         answer:
           "채무·자산·향후 사업 계획을 기준으로 정리합니다. 방치보다는 계속등기 또는 해산 중 하나를 선택하는 것이 안전합니다.",
+      },
+      {
+        question: "폐업신고만 하면 해산청산 법무사 업무는 끝나나요?",
+        answer:
+          "아닙니다. 세무 폐업과 해산·청산종결 등기는 다릅니다. 법인격 말소까지가 이 페이지의 범위입니다.",
       },
     ],
     relatedLinks: [

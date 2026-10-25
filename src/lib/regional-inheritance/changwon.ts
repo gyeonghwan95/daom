@@ -25,9 +25,9 @@ export const changwonInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-changwon.jpg",
-    alt: "다옴법무사사무소 등기 신청 자료 정리",
+    alt: "창원 집 상속, 한 번에 정리 — 법인 서류와 인감을 정리하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

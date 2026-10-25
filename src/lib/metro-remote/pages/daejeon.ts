@@ -42,9 +42,9 @@ export const daejeonMetroRemote: MetroRemoteSpec = {
   },
   ogImage: {
     src: "/image/og/metro-daejeon.jpg",
-    alt: "법무사 자격증 액자",
+    alt: "대전 집 상속, 방문 없이 — 사무실에서 서류를 넘겨 보는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

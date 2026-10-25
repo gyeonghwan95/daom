@@ -6,7 +6,7 @@
 
 import type { ThumbnailCategory } from "@/data/media/thumbnail-portraits";
 
-export const THUMBNAIL_DESIGN_VERSION = 1;
+export const THUMBNAIL_DESIGN_VERSION = 6;
 
 export type ThumbnailTemplate =
   | "EDITORIAL_LEFT"

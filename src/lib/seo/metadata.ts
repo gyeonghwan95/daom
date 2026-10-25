@@ -1,4 +1,8 @@
 import { resolveShareImage } from "@/lib/seo/share-image";
+import { buildSeoTitle, titleContainsBrand } from "@/lib/seo/seo-title";
+
+export { buildSeoTitle };
+import { getPageOgThumbnail } from "@/data/seo/page-og-thumbnails";
 import type { Metadata } from "next";
 import { homeModifiedOn } from "@/lib/home-content";
 import { sanitizePageKeywords } from "@/lib/seo/champion-query";
@@ -52,11 +56,6 @@ const INDEX_ROBOTS: Metadata["robots"] = {
   },
 };
 
-function titleContainsBrand(text: string): boolean {
-  return (
-    text.includes(seoBrand.siteName) || text.includes(seoBrand.representative)
-  );
-}
 
 export function getCanonicalUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
@@ -73,22 +72,6 @@ export function getAbsoluteImageUrl(path: string): string {
   return getAbsoluteAssetUrl(path);
 }
 
-/** 페이지 제목에 브랜드 접미사를 한 번만 붙입니다. */
-export function buildSeoTitle(
-  primary: string,
-  options?: { withRepresentative?: boolean },
-): string {
-  const trimmed = primary.trim();
-  if (titleContainsBrand(trimmed)) {
-    return trimmed;
-  }
-
-  const suffix = options?.withRepresentative
-    ? `${seoBrand.siteName} ${seoBrand.representative}`
-    : seoBrand.siteName;
-
-  return `${trimmed} | ${suffix}`;
-}
 
 /** MDX 콘텐츠용 — seoTitle에 사무소명이 있으면 중복 접미사 방지 */
 export function resolveContentSeoTitle(
@@ -105,10 +88,12 @@ export function resolveContentSeoTitle(
 export function createPageMetadata(input: PageSeoInput): Metadata {
   const canonical = getCanonicalUrl(resolveCanonicalPath(input.path));
   // 실제 파일(또는 같은 사진의 1200px OG 파생본) 기준 URL·크기·형식 — 이중 인코딩 404·크기 불일치 방지(2026-10-11)
+  // 페이지별 1:1 썸네일(npm run thumbnails:premium)이 있으면 어떤 템플릿이든 og:image를 그것으로 통일한다
+  const pageThumb = getPageOgThumbnail(input.path);
   const share = resolveShareImage(
-    input.ogImage ?? DEFAULT_OG_IMAGE,
-    input.ogImageWidth ?? 1200,
-    input.ogImageHeight ?? 630,
+    pageThumb?.src ?? input.ogImage ?? DEFAULT_OG_IMAGE,
+    pageThumb ? 1200 : (input.ogImageWidth ?? 1200),
+    pageThumb ? 1200 : (input.ogImageHeight ?? 630),
   );
   const ogImage = share.url;
   const openGraphType = input.openGraphType ?? "website";
@@ -141,6 +126,7 @@ export function createPageMetadata(input: PageSeoInput): Metadata {
           height: share.height,
           ...(share.type ? { type: share.type } : {}),
           alt:
+            pageThumb?.alt ??
             input.ogImageAlt ??
             `${seoBrand.siteName} - ${seoBrand.representative}`,
         },

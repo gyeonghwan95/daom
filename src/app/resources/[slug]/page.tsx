@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ogImage: resourceAssetPaths(guide.slug).og,
     ogImageAlt: guide.h1,
     ogImageWidth: 1200,
-    ogImageHeight: 630,
+    ogImageHeight: 1200,
     openGraphType: "article",
   });
 }

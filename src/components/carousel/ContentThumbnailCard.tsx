@@ -61,7 +61,7 @@ export function ContentThumbnailCard({
           <div className="relative aspect-square w-full overflow-hidden bg-[#f0ebe3]">
             <Image
               src={item.image}
-              alt=""
+              alt={item.imageAlt ?? ""}
               width={720}
               height={720}
               sizes="(max-width: 640px) 78vw, (max-width: 1024px) 42vw, 23vw"

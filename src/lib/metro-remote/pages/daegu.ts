@@ -42,9 +42,9 @@ export const daeguMetroRemote: MetroRemoteSpec = {
   },
   ogImage: {
     src: "/image/og/metro-daegu.jpg",
-    alt: "책상에서 서류를 살펴보는 법무사",
+    alt: "대구 집 상속, 부산에서 진행 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

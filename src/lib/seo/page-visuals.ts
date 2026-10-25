@@ -12,6 +12,8 @@ import {
 import { getCarouselManifestItemByUrl } from "@/data/seo/carousel-image-manifest";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { getFieldPhotoVisual } from "@/data/seo/field-photo-visuals";
+import { getPageOgThumbnail } from "@/data/seo/page-og-thumbnails";
+import { getSerpHookImage } from "@/data/seo/serp-hook-images";
 import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
 
@@ -52,6 +54,11 @@ export function resolveSerpImage(pageUrl: string):
         caption: owned.caption,
       };
     }
+    // 여러 페이지가 같은 사진을 나눠 쓰던 곳: 페이지마다 다른 1:1 썸네일(가운데 제목, 얼굴과 겹치지 않음)
+    const pageOg = getPageOgThumbnail(pageUrl);
+    if (pageOg) {
+      return { src: encodePublicSrc(pageOg.src), alt: pageOg.alt, width: 1200, height: 1200 };
+    }
     // 초상 기반 visual이 없는 페이지만: 주제와 같은 실제 현장·업무 사진(field-photo-visuals)
     const field = getFieldPhotoVisual(pageUrl);
     if (!field) return undefined;
@@ -72,18 +79,20 @@ export function resolveSerpImage(pageUrl: string):
 }
 
 export function toRelatedCardItem(v: PageVisual): RelatedCardItem {
-  const hook = resolveHookThumbnail(v.url);
+  const ownedHook = getSerpHookImage(v.url);
+  const manifestHook = resolveHookThumbnail(v.url);
+  const baked = ownedHook?.src ?? manifestHook ?? v.cardImage;
   return {
     id: v.url,
     title: v.pageTitle,
     href: v.url,
-    image: hook ?? encodePublicSrc(v.cardImage),
-    textBaked: Boolean(hook),
-    imageAlt: v.alt,
+    image: encodePublicSrc(baked),
+    textBaked: true,
+    imageAlt: ownedHook?.alt ?? v.alt,
     category: v.category,
     headline: v.cardHeadline,
-    textPosition: v.textPosition,
-    representativeImage: encodePublicSrc(v.representativeImage),
+    textPosition: "center-low",
+    representativeImage: encodePublicSrc(baked),
   };
 }
 

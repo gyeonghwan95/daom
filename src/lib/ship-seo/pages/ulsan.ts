@@ -32,9 +32,9 @@ export const shipUlsanSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-ulsan.jpg",
-    alt: "책상에서 서류에 메모하는 모습",
+    alt: "울산 선박, 명의변경 전에 — 사무실 책상에서 서류를 작성하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

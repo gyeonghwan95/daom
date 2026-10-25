@@ -32,9 +32,9 @@ export const shipUljinSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-uljin.jpg",
-    alt: "책상에서 서류를 넘기며 확인하는 모습",
+    alt: "등기냐 등록이냐, 증서로 구분 — 책상에서 서류를 확인하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

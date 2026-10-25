@@ -31,9 +31,9 @@ export const shipHubSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-hub.jpg",
-    alt: "부산지방법원 등기국 표지석",
+    alt: "선박등기, 먼저 확인할 것 — 부산지방법원 등기국 표지 앞의 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -9,16 +9,18 @@ import { getPageTextCard } from "@/data/seo/page-text-cards";
 export function PageTextCardFigure({ path, className = "" }: { path: string; className?: string }) {
   const card = getPageTextCard(path);
   if (!card) return null;
+  // 1:1 카드는 본문 폭을 다 채우면 지나치게 커지므로 가운데에 적당한 크기로 둔다.
+  const square = card.width === card.height;
   return (
     <figure
-      className={`my-8 overflow-hidden rounded-xl border border-beige-dark bg-white shadow-sm md:my-10 ${className}`.trim()}
+      className={`my-8 overflow-hidden rounded-xl border border-beige-dark bg-white shadow-sm md:my-10 ${square ? "mx-auto max-w-[560px]" : ""} ${className}`.trim()}
     >
       <Image
         src={encodePublicSrc(card.src)}
         alt={card.alt}
         width={card.width}
         height={card.height}
-        sizes="(max-width: 768px) 100vw, 820px"
+        sizes={square ? "(max-width: 640px) 100vw, 560px" : "(max-width: 768px) 100vw, 820px"}
         className="h-auto w-full"
         loading="lazy"
         quality={80}

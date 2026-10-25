@@ -1,10 +1,10 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-19T14:50:05.880Z
+# 생성: 2026-10-25T12:50:05.712Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1645 (제외 242)
+# 총 URL: 1644 (제외 243)
 #
 # 형식: [Tier] URL\tpath
-# Tier 1 — 즉시 (핵심 전환·허브): 18개
+# Tier 1 — 즉시 (핵심 전환·허브): 17개
 # Tier 2 — 1주차 (지역·전국 허브): 29개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 600개
@@ -16,7 +16,7 @@
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
-Tier 1 — 즉시 (핵심 전환·허브) (18개)
+Tier 1 — 즉시 (핵심 전환·허브) (17개)
 ────────────────────────────────────────────────────────────────────────
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr	/
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법무사
@@ -33,7 +33,6 @@ Tier 1 — 즉시 (핵심 전환·허브) (18개)
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services	/services
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/corporate-registration	/services/corporate-registration
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-registration	/services/inheritance-registration
-[T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-renunciation	/services/inheritance-renunciation
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/qualified-acceptance	/services/qualified-acceptance
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/real-estate-registration	/services/real-estate-registration
 
@@ -1693,7 +1692,7 @@ Tier 8 — 후순위 (언론·강의) (37개)
 [T8] https://xn--2j1br1na42lvxja38mk8r.kr/media/weeklypeople-youth-judicial-scrivener-ahn	/media/weeklypeople-youth-judicial-scrivener-ahn
 
 ========================================================================
-# 제외 (242)
+# 제외 (243)
 # [EXCLUDED:noindex] /개인파산과태료
 # [EXCLUDED:noindex] /개인파산기한
 # [EXCLUDED:noindex] /개인파산보수표
@@ -1936,6 +1935,7 @@ Tier 8 — 후순위 (언론·강의) (37개)
 # [EXCLUDED:redirect] /press/viva100-haeundae-youth-space-ahn-yoonjung
 # [EXCLUDED:redirect] /press/weeklypeople-youth-judicial-scrivener-ahn
 # [EXCLUDED:noindex] /search
+# [EXCLUDED:noindex] /services/inheritance-renunciation
 
 ========================================================================
 # END

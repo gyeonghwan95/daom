@@ -18,24 +18,20 @@ import {
 import { ConsultStartButton } from "@/components/consult-wizard/ConsultStartButton";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
-import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
-import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
+import type { SiteImageAsset } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 
 type ConsultLandingPageViewProps = {
   page: PageData;
+  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) */
+  cover: SiteImageAsset;
+  /** 서버에서 만든 구조화데이터(FAQ 포함) */
+  jsonLd: Parameters<typeof JsonLd>[0]["data"];
 };
 
-export function ConsultLandingPageView({ page }: ConsultLandingPageViewProps) {
+export function ConsultLandingPageView({ page, cover, jsonLd }: ConsultLandingPageViewProps) {
   const content = getConsultLanding(page.slug);
   if (!content) return null;
-
-  const cover = getCoverImageForPageData(page);
-  const faqSchemaPage: PageData = {
-    ...page,
-    faqs: content.faqs,
-    includeFaqSchema: true,
-  };
 
   const tocItems = [
     { id: "summary", label: "핵심 안내" },
@@ -50,7 +46,7 @@ export function ConsultLandingPageView({ page }: ConsultLandingPageViewProps) {
     <article className="content-stack consult-landing">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
+      <JsonLd data={jsonLd} />
 
       {cover ? <PageCoverBanner image={cover} /> : null}
 

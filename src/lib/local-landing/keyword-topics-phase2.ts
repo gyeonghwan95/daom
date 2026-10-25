@@ -412,7 +412,6 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     serviceSlug: "corporate-registration",
     primaryKeywords: [
       "부산 법인등기 비용",
-      "부산 법인설립 비용",
       "부산 임원변경등기 비용",
       "부산 본점이전등기 비용",
       "법무사 법인등기 수수료",

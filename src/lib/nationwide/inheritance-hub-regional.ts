@@ -11,9 +11,9 @@ export const INHERITANCE_HUB_REGIONAL = {
     "상속등기 법무사 안내. 지역 사례 페이지와 달리 관할 특례·서류·취득세 순서를 한곳에서 봅니다. 부동산 소재지와 상속인 거주지가 달라도 부산 해운대 사무소에서 검토합니다.",
   ogImage: {
     src: "/image/og/regional-inheritance-hub.jpg",
-    alt: "다옴법무사사무소 안윤정 법무사",
+    alt: "멀리 있는 집도 상속등기 — 부산지방법원 등기국 표지 앞의 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
 } as const;
 

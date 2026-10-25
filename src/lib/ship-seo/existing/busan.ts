@@ -36,9 +36,9 @@ export const busanShipSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-busan.jpg",
-    alt: "부산지방법원 등기국 건물 입구",
+    alt: "부산 선박, 등기부터 확인 — 부산지방법원 등기국 청사로 들어가는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -32,9 +32,9 @@ export const shipGyeongjuSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-gyeongju.jpg",
-    alt: "책상에서 컴퓨터로 업무를 보는 모습",
+    alt: "경주 선박, 관할부터 확인 — 사무실 책상에서 서류를 작성하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

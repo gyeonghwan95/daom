@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+/**
+ * ⚠ 이 스크립트가 만드는 og 이미지는 이후 `npm run thumbnails:premium`(1:1 프리미엄 썸네일)으로 같은 경로에 다시 만들었다.
+ *   다시 실행하면 예전 디자인으로 덮어쓰므로, 실행했다면 thumbnails:premium 을 이어서 실행한다.
+ */
 /** 선박등기 클러스터 — 실제 사무소·등기국 사진을 리사이즈·크롭만 한다(합성·텍스트·선박 AI 이미지 없음). */
 import fs from "node:fs";
 import path from "node:path";

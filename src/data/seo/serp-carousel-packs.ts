@@ -3,6 +3,7 @@
  * 기존 URL만. 신규 랜딩·키워드 복제 금지.
  * 카드 4개 미만·이미지 중복이면 리졸버가 팩을 버린다.
  */
+import { getHireIntentCarouselPack } from "@/data/seo/hire-intent-100-champions";
 import {
   LECTURE_SERP_CAROUSEL_URLS,
   lecturePackUrls,
@@ -198,6 +199,78 @@ export const SERP_CAROUSEL_PACKS: Record<string, SerpCarouselPackDef> = {
       "/전국상속등기",
       "/부산상속등기",
       "/상속상담전준비서류와비용",
+      "/부산법무사상담",
+    ],
+  },
+  "/상속포기기간": {
+    heading: "포기 기한부터 확인할 안내",
+    urls: [
+      "/부산상속포기",
+      "/부산한정승인",
+      "/부산상속법무사",
+      "/부산법무사상담",
+    ],
+  },
+  "/한정승인기간": {
+    heading: "한정승인 기한과 이어지는 안내",
+    urls: [
+      "/부산한정승인",
+      "/부산상속포기",
+      "/부산상속법무사",
+      "/부산법무사상담",
+    ],
+  },
+  "/한정승인필요서류": {
+    heading: "재산목록 다음에 볼 안내",
+    urls: [
+      "/부산한정승인",
+      "/부산상속포기",
+      "/부산상속법무사",
+      "/부산법무사상담",
+    ],
+  },
+  "/situations/상속등기-지연-과태료": {
+    heading: "미룬 등기 다음에 볼 안내",
+    urls: [
+      "/전국상속등기",
+      "/부산상속등기",
+      "/상속상담전준비서류와비용",
+      "/부산법무사상담",
+    ],
+  },
+  "/부모님사망후해야할일": {
+    heading: "장례 뒤에 이어서 볼 안내",
+    urls: [
+      "/부산상속법무사",
+      "/부산상속포기",
+      "/부산한정승인",
+      "/부산법무사상담",
+    ],
+  },
+  "/부산대표이사변경등기": {
+    heading: "대표 변경과 함께 볼 등기",
+    urls: [
+      "/부산임원변경등기",
+      "/부산법인등기",
+      "/부산본점이전등기",
+      "/부산법인법무사",
+    ],
+  },
+  "/법인설립등기비용": {
+    heading: "설립 비용과 절차를 나눠 보기",
+    urls: [
+      "/부산법인설립등기",
+      "/부산법무사비용",
+      "/부산법무사상담",
+      "/부산법인등기",
+    ],
+  },
+  "/부산법인해산청산등기": {
+    heading: "해산·청산과 함께 볼 안내",
+    urls: [
+      "/부산법인법무사",
+      "/부산법인등기",
+      "/부산임원변경등기",
       "/부산법무사상담",
     ],
   },
@@ -579,9 +652,13 @@ export function getExplicitSerpCarouselPack(
 ): SerpCarouselPackDef | undefined {
   const owned = SERP_CAROUSEL_PACKS[path];
   if (owned) return owned;
-  if (!LECTURE_LANDING_PATHS.has(path)) return undefined;
-  return {
-    heading: "주제별 강의·특강 안내",
-    urls: lecturePackUrls(path),
-  };
+  if (LECTURE_LANDING_PATHS.has(path)) {
+    return {
+      heading: "주제별 강의·특강 안내",
+      urls: lecturePackUrls(path),
+    };
+  }
+  const hire = getHireIntentCarouselPack(path);
+  if (hire) return hire;
+  return undefined;
 }

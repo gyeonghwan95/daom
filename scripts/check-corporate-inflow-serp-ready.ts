@@ -41,6 +41,10 @@ const EXTRA_INFLOW: { query: string; champion: string }[] = [
   { query: "부산 법인변경", champion: "/부산법인등기" },
   { query: "부산 법인설립등기", champion: "/부산법인설립등기" },
   { query: "부산 회사 법무사", champion: "/부산법인법무사" },
+  { query: "1인 법인", champion: "/부산법인설립등기" },
+  { query: "부산 법인설립 비용", champion: "/법인설립등기비용" },
+  { query: "부산 대표이사 변경", champion: "/부산대표이사변경등기" },
+  { query: "부산 해산청산 법무사", champion: "/부산법인해산청산등기" },
 ];
 
 const COMPACT_OWNERS: { compact: string; path: string }[] = [
@@ -55,6 +59,12 @@ const COMPACT_OWNERS: { compact: string; path: string }[] = [
   { compact: "부산법인설립등기", path: "/부산법인설립등기" },
   { compact: "부산법인법무", path: "/부산법인법무사" },
   { compact: "부산회사법무사", path: "/부산법인법무사" },
+  { compact: "1인법인", path: "/부산법인설립등기" },
+  { compact: "1인법인설립", path: "/부산법인설립등기" },
+  { compact: "부산법인설립비용", path: "/법인설립등기비용" },
+  { compact: "1인법인설립비용", path: "/법인설립등기비용" },
+  { compact: "부산대표이사변경", path: "/부산대표이사변경등기" },
+  { compact: "부산법인해산청산", path: "/부산법인해산청산등기" },
 ];
 
 const INHERITANCE_LEAK = [
@@ -77,6 +87,8 @@ const CAROUSEL_FENCES: { path: string; forbid: string[] }[] = [
   { path: "/부산법인설립등기", forbid: INHERITANCE_LEAK },
   { path: "/부산법인설립전문법무사", forbid: INHERITANCE_LEAK },
   { path: "/부산법인법무사", forbid: INHERITANCE_LEAK },
+  { path: "/법인설립등기비용", forbid: ["/부산법인등기비용", ...INHERITANCE_LEAK] },
+  { path: "/부산법인해산청산등기", forbid: INHERITANCE_LEAK },
 ];
 
 const FROZEN_TITLES: { path: string; startsWith: string }[] = [

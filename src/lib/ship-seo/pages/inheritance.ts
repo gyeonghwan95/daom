@@ -31,9 +31,9 @@ export const shipInheritanceSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-inheritance.jpg",
-    alt: "법무사 안윤정 명패가 놓인 사무실 책상",
+    alt: "선박 상속, 먼저 볼 네 가지 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

@@ -44,7 +44,7 @@ if (!fs.existsSync(manifestPath)) {
     const pdf = path.join(ROOT, "public", p.pdf);
     for (const f of [png, og, pdf]) if (!fs.existsSync(f)) errors.push(`파일 없음 ${path.relative(ROOT, f)}`);
     if (fs.existsSync(png) && pngSize(png).join("x") !== "1080x1440") errors.push(`${g.slug} PNG 크기 ${pngSize(png).join("x")}`);
-    if (fs.existsSync(og) && pngSize(og).join("x") !== "1200x630") errors.push(`${g.slug} OG 크기 ${pngSize(og).join("x")}`);
+    if (fs.existsSync(og) && pngSize(og).join("x") !== "1200x1200") errors.push(`${g.slug} OG 크기 ${pngSize(og).join("x")}`);
     if (fs.existsSync(pdf)) {
       const raw = fs.readFileSync(pdf).toString("latin1");
       if (!raw.startsWith("%PDF")) errors.push(`${g.slug} PDF 형식 오류`);

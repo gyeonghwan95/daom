@@ -1,4 +1,7 @@
 /**
+ * ⚠ 이 스크립트가 만드는 썸네일은 이후 `npm run thumbnails:premium`(1:1 프리미엄 썸네일)으로 같은 경로에 다시 만들었다.
+ *   다시 실행하면 예전 디자인으로 덮어쓰므로, 실행했다면 thumbnails:premium 을 이어서 실행한다.
+ *
  * 1:1 에디토리얼 페이지 썸네일 생성 (로컬 전용 — 배포 prebuild에 묶지 않음)
  *
  * - 원본 법무사 사진은 수정하지 않음 (crop/resize/gradient/typography만)
@@ -26,11 +29,12 @@ import {
   type NormalizedBox,
   type ThumbnailPortrait,
 } from "../src/data/media/thumbnail-portraits";
+import { layoutForPortrait, toHookFields } from "./lib/hook-layout-catalog";
+import { renderHookThumbnail, writeAtomic } from "./lib/render-hook-thumbnail";
 import {
   PAGE_THUMBNAILS,
   THUMBNAIL_DESIGN_VERSION,
   type PageThumbnailItem,
-  type ThumbnailTemplate,
 } from "../src/data/seo/page-thumbnails";
 
 const ROOT = process.cwd();
@@ -281,9 +285,10 @@ async function cropPortrait(portrait: ThumbnailPortrait): Promise<Buffer> {
   const width = Math.round(portrait.crop.width * sw);
   const height = Math.round(portrait.crop.height * sh);
   const side = Math.min(width, height);
+  const lift = Math.round(Math.max(0, portrait.facePosition.y - 0.26) * side);
   const extract = {
     left: Math.max(0, Math.min(left, sw - side)),
-    top: Math.max(0, Math.min(top, sh - side)),
+    top: Math.max(0, Math.min(top + lift, sh - side)),
     width: side,
     height: side,
   };
@@ -352,23 +357,30 @@ async function generateOne(
   }
 
   try {
-    const faceSafe = toPx(portrait.faceSafeBox);
-    const plan = planLayout(item.template, lines, faceSafe);
-    const tint = CATEGORY_TINT[item.category] ?? CATEGORY_TINT.services;
-    const photo = await cropPortrait(portrait);
-    const overlay = textSvg(lines, plan, tint.text);
-
-    await sharp(photo)
-      .composite([{ input: await sharp(overlay).png().toBuffer(), left: 0, top: 0 }])
-      .webp({ quality: QUALITY })
-      .toFile(outDisk);
+    const layout = layoutForPortrait(portrait.id);
+    const disk = path.join(PUBLIC, decodeURIComponent(portrait.src).replace(/^\//, ""));
+    const hook = await renderHookThumbnail({
+      photoDisk: disk,
+      title: lines.join("\n"),
+      ...toHookFields(layout),
+    });
+    writeAtomic(outDisk, hook);
+    const cardDisk = path.join(
+      PUBLIC,
+      "generated",
+      "cards",
+      item.category,
+      path.basename(item.output),
+    );
+    mkdirSync(path.dirname(cardDisk), { recursive: true });
+    writeAtomic(cardDisk, hook);
 
     const bytes = statSync(outDisk).size;
     const meta = await sharp(outDisk).metadata();
     if (meta.width !== SIZE || meta.height !== SIZE) {
       return { url: item.url, ok: false, reason: `bad size ${meta.width}x${meta.height}` };
     }
-    if (bytes > 500 * 1024) {
+    if (bytes > 900 * 1024) {
       return { url: item.url, ok: false, reason: `file too large ${bytes}` };
     }
 
@@ -421,36 +433,40 @@ async function writeContactSheet(items: PageThumbnailItem[]) {
     })
       .composite(composites)
       .jpeg({ quality: 85 })
-      .toFile(path.join(reportDir, "contact-sheet.jpg"));
+      .toFile(path.join(reportDir, "contact-sheet-v6.jpg"));
   }
 
   for (const [cat, list] of byCat) {
-    const tiles: Buffer[] = [];
-    for (const item of list) {
-      const disk = path.join(PUBLIC, item.output.replace(/^\//, ""));
-      if (!existsSync(disk)) continue;
-      tiles.push(await sharp(disk).resize(280, 280).jpeg({ quality: 82 }).toBuffer());
+    try {
+      const tiles: Buffer[] = [];
+      for (const item of list) {
+        const disk = path.join(PUBLIC, item.output.replace(/^\//, ""));
+        if (!existsSync(disk)) continue;
+        tiles.push(await sharp(disk).resize(280, 280).jpeg({ quality: 82 }).toBuffer());
+      }
+      if (!tiles.length) continue;
+      const cols = Math.min(4, tiles.length);
+      const rows = Math.ceil(tiles.length / cols);
+      await sharp({
+        create: {
+          width: cols * 280,
+          height: rows * 280,
+          channels: 3,
+          background: "#f7f4ef",
+        },
+      })
+        .composite(
+          tiles.map((input, i) => ({
+            input,
+            left: (i % cols) * 280,
+            top: Math.floor(i / cols) * 280,
+          })),
+        )
+        .jpeg({ quality: 85 })
+        .toFile(path.join(reportDir, `contact-sheet-${cat}-v5.jpg`));
+    } catch (error) {
+      console.warn(`contact-sheet-${cat} skipped`, error);
     }
-    if (!tiles.length) continue;
-    const cols = Math.min(4, tiles.length);
-    const rows = Math.ceil(tiles.length / cols);
-    await sharp({
-      create: {
-        width: cols * 280,
-        height: rows * 280,
-        channels: 3,
-        background: "#f7f4ef",
-      },
-    })
-      .composite(
-        tiles.map((input, i) => ({
-          input,
-          left: (i % cols) * 280,
-          top: Math.floor(i / cols) * 280,
-        })),
-      )
-      .jpeg({ quality: 85 })
-      .toFile(path.join(reportDir, `contact-sheet-${cat}.jpg`));
   }
 }
 
@@ -464,7 +480,11 @@ async function main() {
     results.push(await generateOne(item));
   }
 
-  await writeContactSheet(targets.filter((_, i) => results[i]?.ok));
+  try {
+    await writeContactSheet(targets.filter((_, i) => results[i]?.ok));
+  } catch (error) {
+    console.warn("contact-sheet write skipped", error);
+  }
 
   const ok = results.filter((r) => r.ok && !r.skipped).length;
   const skipped = results.filter((r) => r.skipped).length;

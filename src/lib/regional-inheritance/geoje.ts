@@ -25,9 +25,9 @@ export const geojeInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-geoje.jpg",
-    alt: "다옴법무사사무소 상속 서류 검토",
+    alt: "거제 집 상속, 멀어도 괜찮아요 — 책장 앞 책상에서 업무 중인 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

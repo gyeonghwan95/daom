@@ -25,9 +25,9 @@ export const yangsanInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-yangsan.jpg",
-    alt: "다옴법무사사무소 상속등기 서류 검토",
+    alt: "양산 집 상속, 방문 없이 — 책상에서 서류를 확인하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

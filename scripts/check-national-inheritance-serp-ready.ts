@@ -51,6 +51,12 @@ const EXTRA_INFLOW: { query: string; champion: string }[] = [
   { query: "한정승인 법무사", champion: "/부산한정승인" },
   { query: "상속포기 서류", champion: "/상속포기필요서류" },
   { query: "상속등기 필요서류", champion: "/상속등기필요서류" },
+  { query: "상속포기 기간", champion: "/상속포기기간" },
+  { query: "한정승인 기간", champion: "/한정승인기간" },
+  { query: "한정승인 서류", champion: "/한정승인필요서류" },
+  { query: "상속등기 안하면", champion: "/situations/상속등기-지연-과태료" },
+  { query: "부모님 사망 후", champion: "/부모님사망후해야할일" },
+  { query: "상속포기 방법", champion: "/부산상속포기" },
 ];
 
 const COMPACT_OWNERS: { compact: string; path: string }[] = [
@@ -68,6 +74,14 @@ const COMPACT_OWNERS: { compact: string; path: string }[] = [
   { compact: "상속등기절차", path: "/상속등기기간" },
   { compact: "상속등기순서", path: "/상속등기기간" },
   { compact: "한정승인법무사", path: "/부산한정승인" },
+  { compact: "상속포기기간", path: "/상속포기기간" },
+  { compact: "한정승인기간", path: "/한정승인기간" },
+  { compact: "한정승인서류", path: "/한정승인필요서류" },
+  { compact: "한정승인재산목록", path: "/한정승인필요서류" },
+  { compact: "상속등기안하면", path: "/situations/상속등기-지연-과태료" },
+  { compact: "부모님사망후", path: "/부모님사망후해야할일" },
+  { compact: "상속포기3개월", path: "/부산상속포기" },
+  { compact: "상속포기방법", path: "/부산상속포기" },
 ];
 
 const CAROUSEL_FENCES: { path: string; forbid: string[] }[] = [
@@ -78,6 +92,9 @@ const CAROUSEL_FENCES: { path: string; forbid: string[] }[] = [
   { path: "/부산상속포기", forbid: ["/상속포기비용", "/부산상속등기"] },
   { path: "/방문없이준비하는상속등기", forbid: ["/부산셀프등기", "/부산상속포기"] },
   { path: "/방문없이준비하는상속포기한정승인", forbid: ["/부산셀프등기"] },
+  { path: "/상속포기기간", forbid: ["/상속등기기간", "/상속등기비용"] },
+  { path: "/한정승인기간", forbid: ["/상속등기기간", "/상속포기기간"] },
+  { path: "/한정승인필요서류", forbid: ["/상속등기필요서류"] },
 ];
 
 const FROZEN_TITLES: { path: string; startsWith: string }[] = [

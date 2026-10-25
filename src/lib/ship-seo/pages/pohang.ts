@@ -32,9 +32,9 @@ export const shipPohangSpec: ShipSeoSpec = {
   },
   ogImage: {
     src: "/image/og/ship-pohang.jpg",
-    alt: "사무실 책상에서 서류를 보며 업무를 처리하는 모습",
+    alt: "낙찰받은 배, 먼저 확인할 것 — 책상에서 계약 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {

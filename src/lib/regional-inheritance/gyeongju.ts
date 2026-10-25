@@ -25,9 +25,9 @@ export const gyeongjuInheritanceSpec: RegionalInheritanceSpec = {
   },
   ogImage: {
     src: "/image/og/regional-inheritance-gyeongju.jpg",
-    alt: "다옴법무사사무소 상속 서류 검토",
+    alt: "농지 상속, 먼저 확인할 것 — 창가 책상에서 서류를 검토하는 안윤정 법무사",
     width: 1200,
-    height: 630,
+    height: 1200,
   },
   sections: [
     {
