@@ -9,6 +9,7 @@ import { LawyerQualificationsSection } from "@/components/profile/LawyerQualific
 import { LawyerTrackRecordTables } from "@/components/profile/LawyerTrackRecordTables";
 import { BusinessCredentialSlot } from "@/components/credentials/BusinessCredentialSlot";
 import { AboutHeroGallery } from "@/components/profile/AboutHeroGallery";
+import { AboutReviewVoices } from "@/components/profile/AboutReviewVoices";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
@@ -93,73 +94,8 @@ export function AboutPageView() {
 
       <LawyerProfileNav />
 
-      <section
-        id="process"
-        className="about-process section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-        aria-labelledby="process-heading"
-      >
-        <p className="about-kicker">진행 순서</p>
-        <h2 id="process-heading" className="section-heading">
-          맡기시면 이렇게 이어집니다
-        </h2>
-        <ol className="about-process__grid mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {appeal.process.map((item) => (
-            <li key={item.step} className="about-process__item">
-              <span>{item.step}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section
-        id="approach"
-        className="about-approach section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-        aria-labelledby="approach-heading"
-      >
-        <p className="about-kicker">맡기는 이유</p>
-        <h2 id="approach-heading" className="section-heading">
-          사건을 다루는 방식
-        </h2>
-        <p className="body-text mt-3 max-w-3xl">
-          숫자로 순위를 말하지 않습니다. 상담에서 바로 확인할 수 있는 진행 방식과, 이미
-          공개한 자격·위촉·강의 기록으로 판단해 주시면 됩니다.
-        </p>
-        <ul className="about-approach__grid mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {appeal.approach.map((item) => (
-            <li key={item.title} className="about-approach__item">
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section
-        id="practice"
-        className="about-practice section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
-        aria-labelledby="practice-heading"
-      >
-        <p className="about-kicker">주요 업무</p>
-        <h2 id="practice-heading" className="section-heading">
-          지금 맡길 수 있는 일
-        </h2>
-        <p className="body-text mt-3 max-w-3xl">
-          상속·부동산·법인등기와 개인회생·파산을 중심으로 받습니다. 각 업무 안내에서 절차와
-          준비 서류를 이어서 확인하실 수 있습니다.
-        </p>
-        <ul className="about-practice__grid mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {appeal.practice.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="about-practice__item">
-                <strong>{item.title}</strong>
-                <span>{item.body}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* 실제 고객의 말 → 한눈에 보는 근거 순서로 먼저 보여 주고, 진행 방식은 상담 직전에 둔다 */}
+      <AboutReviewVoices />
 
       <LawyerAtAGlance />
       <LawyerEeatProfile />
@@ -179,6 +115,60 @@ export function AboutPageView() {
           />
         ),
       )}
+
+      <section
+        id="process"
+        className="about-how section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        aria-labelledby="process-heading"
+      >
+        <p className="about-kicker">맡기실 때</p>
+        <h2 id="process-heading" className="section-heading">
+          맡기시면 이렇게 진행합니다
+        </h2>
+        <ol className="about-how__steps">
+          {appeal.process.map((item) => (
+            <li key={item.step} className="about-how__step">
+              <span className="about-how__num" aria-hidden>
+                {item.step}
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div
+          id="approach"
+          className="about-how__promise section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h3 className="about-how__subhead">상담에서 바로 확인하실 수 있는 약속</h3>
+          <ul className="about-how__checks">
+            {appeal.approach.map((item) => (
+              <li key={item.title}>
+                <strong>{item.title}</strong>
+                <span>{item.body}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div
+          id="practice"
+          className="about-how__practice section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
+        >
+          <h3 className="about-how__subhead">지금 맡길 수 있는 일</h3>
+          <ul className="about-how__chips">
+            {appeal.practice.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="about-how__chip">
+                  <strong>{item.title}</strong>
+                  <span>{item.body}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <div
         id="consultation"

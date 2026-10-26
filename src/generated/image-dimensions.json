@@ -240,16 +240,10 @@
   "bytes": 136766
  },
  "/icon.png": {
-  "width": 2616,
-  "height": 2440,
+  "width": 512,
+  "height": 512,
   "format": "png",
-  "bytes": 140958,
-  "og": {
-   "src": "/_img/icon.og.jpg",
-   "width": 1200,
-   "height": 1119,
-   "format": "jpeg"
-  }
+  "bytes": 7968
  },
  "/image/강의-4주완성.png": {
   "width": 966,

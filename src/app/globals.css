@@ -60,6 +60,13 @@
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
   --font-sans: var(--font-noto-sans-kr), "Malgun Gothic", sans-serif;
+  /*
+   * 본문 글꼴은 가변 글꼴(layout.tsx)이다. 예전 400·500·700 고정 세 벌에서는 500을 넘는 굵기(600·800 등)가
+   * 모두 700으로 그려졌으므로, 화면이 바뀌지 않도록 같은 값으로 맞춘다. 굵기를 새로 정할 때는 400·500·700을 쓴다.
+   */
+  --font-weight-semibold: 700;
+  --font-weight-extrabold: 700;
+  --font-weight-black: 700;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
@@ -176,7 +183,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.25;
     color: rgba(21, 42, 69, 0.68);
   }
@@ -303,6 +310,12 @@ body {
 }
 
 @layer base {
+  /* 가변 글꼴에서 'bolder'(굵은 글 안의 strong → 900)가 더 두껍게 그려지지 않게 예전처럼 700으로 고정 */
+  b,
+  strong {
+    font-weight: 700;
+  }
+
   :focus-visible {
     outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
@@ -1508,7 +1521,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     background: linear-gradient(180deg, transparent, rgb(10 21 34 / 0.68));
     color: #fff;
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.3;
   }
 
@@ -1520,7 +1533,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     margin: 0.45rem 0 0;
     color: var(--text-primary);
     font-size: 1.7rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.25;
   }
@@ -1560,7 +1573,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     padding: 0 0.7rem;
     color: var(--navy);
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .about-hero__quote {
@@ -1573,7 +1586,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     margin: 0;
     color: var(--navy);
     font-size: 0.98rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.45;
   }
 
@@ -1611,7 +1624,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     padding: 0 0.75rem;
     color: var(--navy);
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
   }
 
@@ -1648,7 +1661,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     display: block;
     color: var(--navy);
     font-size: 1.35rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
   }
@@ -1669,72 +1682,310 @@ body.mobile-menu-open .mobile-bottom-cta {
     line-height: 1.35;
   }
 
-  .about-process__grid,
-  .about-approach__grid,
-  .about-practice__grid {
+  /* 고객 후기 — 히어로 바로 아래, 실제 방문자 후기를 크게 */
+  .about-voices {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgb(201 168 106 / 0.18), transparent 55%),
+      linear-gradient(160deg, #152a45 0%, #1e3a5f 60%, #24466f 100%);
+    padding: 1.75rem 1.15rem 1.4rem;
+    color: #fff;
+    box-shadow: 0 30px 60px -42px rgb(15 23 42 / 0.75);
+  }
+
+  .about-voices__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    border: 1px solid rgb(255 255 255 / 0.22);
+    border-radius: 999px;
+    padding: 0.28rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #f3e2bb;
+  }
+
+  .about-voices__kicker::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: #03c75a;
+  }
+
+  .about-voices__title {
+    margin: 0.85rem 0 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  .about-voices__lead {
+    margin: 0.7rem 0 0;
+    max-width: 40rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgb(255 255 255 / 0.78);
+  }
+
+  .about-voices__grid {
     display: grid;
     gap: 0.75rem;
-    margin: 1rem 0 0;
+    margin: 1.4rem 0 0;
     padding: 0;
     list-style: none;
   }
 
-  .about-process__item,
-  .about-approach__item,
-  .about-practice__item {
-    height: 100%;
-    border: 1px solid var(--beige-dark);
-    border-radius: 1rem;
-    background: var(--surface);
-    padding: 1.05rem 1.1rem 1.15rem;
+  .about-voices__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: 1.1rem;
+    background: rgb(255 255 255 / 0.97);
+    padding: 1.15rem 1.15rem 1rem;
+    color: var(--navy);
+  }
+
+  .about-voices__card::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.2rem;
+    right: 0.9rem;
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: rgb(201 168 106 / 0.45);
+  }
+
+  .about-voices__topic {
+    align-self: flex-start;
+    border-radius: 999px;
+    background: rgb(30 58 95 / 0.08);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--navy-light);
+  }
+
+  .about-voices__quote {
+    margin: 0.75rem 0 0;
+    flex: 1;
+  }
+
+  .about-voices__quote p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75;
+    color: var(--text-primary);
+  }
+
+  .about-voices__meta {
+    margin: 0.85rem 0 0;
+    border-top: 1px solid var(--beige-dark);
+    padding-top: 0.65rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .about-voices__foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    align-items: center;
+    margin-top: 1.1rem;
+  }
+
+  .about-voices__more,
+  .about-voices__naver {
+    font-size: 0.9rem;
+    font-weight: 700;
     text-decoration: none;
   }
 
-  .about-process__item span {
-    color: var(--navy-light);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+  .about-voices__more {
+    color: #fff;
   }
 
-  .about-process__item h3,
-  .about-approach__item h3,
-  .about-practice__item strong {
-    display: block;
-    margin-top: 0.4rem;
+  .about-voices__naver {
+    color: rgb(255 255 255 / 0.72);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .about-voices__more:hover,
+  .about-voices__naver:hover {
+    color: #f3e2bb;
+  }
+
+  /* 맡기시면 이렇게 진행합니다 — 진행 순서·약속·업무를 한 섹션으로 */
+  .about-how {
+    border: 1px solid var(--beige-dark);
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--cream, #f7f4ef) 100%);
+    padding: 1.6rem 1.15rem 1.5rem;
+  }
+
+  .about-how__steps {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-how__step {
+    position: relative;
+    padding-left: 3.25rem;
+  }
+
+  .about-how__num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    background: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    box-shadow: 0 0 0 4px rgb(201 168 106 / 0.35);
+  }
+
+  .about-how__step h3 {
+    margin: 0.35rem 0 0;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--navy);
-    font-size: 1.02rem;
+  }
+
+  .about-how__step p {
+    margin: 0.35rem 0 0;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .about-how__subhead {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .about-how__promise,
+  .about-how__practice {
+    margin-top: 1.6rem;
+    border-top: 1px solid var(--beige-dark);
+    padding-top: 1.3rem;
+  }
+
+  .about-how__checks {
+    display: grid;
+    gap: 0.6rem 1.25rem;
+    margin: 0.85rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-how__checks li {
+    position: relative;
+    padding-left: 1.6rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .about-how__checks li::before {
+    content: "";
+    position: absolute;
+    top: 0.32rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 999px;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3 6.7 11 12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+        center / 0.8rem no-repeat,
+      #b08d57;
+  }
+
+  .about-how__checks strong {
+    display: block;
+    color: var(--navy);
     font-weight: 700;
   }
 
-  .about-process__item p,
-  .about-approach__item p,
-  .about-practice__item span {
+  .about-how__checks span {
     display: block;
-    margin-top: 0.45rem;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
   }
 
-  .about-practice__item {
+  .about-how__chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin: 0.85rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-how__chip {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid var(--beige-dark);
+    border-radius: 0.9rem;
+    background: var(--surface);
+    padding: 0.7rem 0.85rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   }
 
-  .about-practice__item:hover {
-    border-color: color-mix(in srgb, var(--navy) 28%, var(--beige-dark));
+  .about-how__chip strong {
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .about-how__chip span {
+    margin-top: 0.2rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .about-how__chip:hover {
+    border-color: color-mix(in srgb, var(--navy) 30%, var(--beige-dark));
     box-shadow: 0 10px 24px -18px rgb(15 23 42 / 0.45);
+    transform: translateY(-1px);
   }
 
   @media (min-width: 640px) {
-    .about-process__grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .about-voices {
+      padding: 2.25rem 2rem 1.75rem;
     }
 
-    .about-approach__grid,
-    .about-practice__grid {
+    .about-voices__title {
+      font-size: 2.1rem;
+    }
+
+    .about-how {
+      padding: 2rem 2rem 1.9rem;
+    }
+
+    .about-how__checks {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1789,11 +2040,50 @@ body.mobile-menu-open .mobile-bottom-cta {
       border-right: 0;
     }
 
-    .about-approach__grid {
+    .about-voices {
+      padding: 2.75rem 2.75rem 2.1rem;
+    }
+
+    .about-voices__title {
+      font-size: 2.5rem;
+    }
+
+    .about-voices__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .about-how {
+      padding: 2.5rem 2.75rem 2.25rem;
+    }
+
+    /* 진행 순서: 가로 타임라인(번호를 잇는 선) */
+    .about-how__steps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.6rem;
+    }
+
+    .about-how__steps::before {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      right: calc(33.333% - 1.2rem);
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy), rgb(201 168 106 / 0.8));
+    }
+
+    .about-how__step {
+      padding-left: 0;
+      padding-top: 3.4rem;
+    }
+
+    .about-how__checks {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .about-practice__grid {
+    .about-how__chips {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
@@ -2543,7 +2833,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero-stage__now-meta {
     margin: 0.12rem 0 0;
     font-size: 0.68rem;
-    font-weight: 650;
+    font-weight: 700;
     letter-spacing: 0.02em;
     color: rgba(232, 223, 208, 0.82);
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
@@ -2947,7 +3237,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero__office {
     display: block;
     font-size: clamp(1.72rem, 6.8vw, 2.18rem);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.18;
     letter-spacing: -0.045em;
     color: var(--navy);
@@ -2965,7 +3255,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero__subtitle {
     margin: 0.55rem 0 0;
     font-size: 0.88rem;
-    font-weight: 650;
+    font-weight: 700;
     letter-spacing: -0.015em;
     line-height: 1.4;
     color: var(--navy-light);
@@ -3033,7 +3323,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     position: relative;
     padding-left: 0.85rem;
     font-size: 0.76rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.01em;
     color: #6a6258;
   }
@@ -3543,7 +3833,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-hero__brand-rep {
     margin-top: 0.2rem;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.01em;
     color: rgba(21, 42, 69, 0.72);
   }
@@ -3715,7 +4005,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .home-continue-hint__label {
     font-size: 0.78rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.02em;
     white-space: nowrap;
   }
@@ -3968,14 +4258,14 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .home-hero__scroll-label {
     font-size: 0.8125rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.3;
   }
 
   .home-hero__scroll-detail {
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.01em;
     color: rgba(240, 235, 227, 0.72);
   }
@@ -4288,7 +4578,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .home-closing__phone-kicker {
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.12em;
     color: color-mix(in srgb, var(--beige-muted) 88%, white);
   }
@@ -4368,7 +4658,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-closing__location {
     align-self: center;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     color: rgba(255, 255, 255, 0.62);
     text-decoration: none;
     transition: color 0.2s ease;
@@ -4542,7 +4832,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-place__fact-value {
     margin: 0.35rem 0 0;
     font-size: 0.92rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
     color: var(--navy);
   }
@@ -4575,7 +4865,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     display: inline-flex;
     margin-top: 0.4rem;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--navy-light);
     text-decoration: none;
   }
@@ -4606,7 +4896,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   .home-place__hours-grid dd {
     margin-top: 0.2rem;
     font-size: 0.84rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.4;
     color: var(--navy);
   }
@@ -4737,7 +5027,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     background: color-mix(in srgb, var(--beige) 70%, white);
     padding: 0.38rem 0.4rem;
     font-size: 0.68rem;
-    font-weight: 650;
+    font-weight: 700;
     letter-spacing: -0.02em;
     justify-content: center;
     width: 100%;
@@ -4987,6 +5277,160 @@ body.mobile-menu-open .mobile-bottom-cta {
   .article-summary__link {
     color: var(--navy);
     @apply font-semibold underline-offset-2 hover:underline;
+  }
+
+  /* 핵심 요약 — "혼자 진행하면 막히기 쉬운 경우" 콜아웃(정보 탐색 → 상담 전환 지점) */
+  .article-summary__triggers {
+    border: 1px solid color-mix(in srgb, #c9a86a 45%, var(--beige-dark));
+    background: color-mix(in srgb, #c9a86a 9%, white);
+    @apply mt-5 rounded-xl p-4 md:p-5;
+  }
+
+  .article-summary__triggers-title {
+    color: var(--navy);
+    @apply flex items-center gap-2 text-[0.98rem] font-bold md:text-base;
+  }
+
+  .article-summary__triggers-title::before {
+    content: "!";
+    background: #b08d57;
+    @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[0.75rem] font-bold text-white;
+  }
+
+  .article-summary__triggers-lead {
+    color: var(--text-secondary);
+    @apply mt-1.5 text-sm leading-relaxed;
+  }
+
+  .article-summary__triggers-list {
+    @apply mt-3 space-y-2;
+  }
+
+  .article-summary__triggers-list li {
+    color: var(--text-body);
+    @apply relative pl-6 text-[0.975rem] leading-[1.7] md:text-[1.015rem];
+  }
+
+  .article-summary__triggers-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.45em;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 9999px;
+    border: 2px solid #b08d57;
+    background: white;
+  }
+
+  .article-summary__triggers-topics {
+    color: var(--text-secondary);
+    @apply mt-2.5 text-sm leading-relaxed;
+  }
+
+  .article-summary__triggers-topics > span {
+    color: var(--navy);
+    @apply mr-1 font-semibold;
+  }
+
+  .article-summary__triggers-actions {
+    @apply mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3;
+  }
+
+  .article-summary__triggers-primary {
+    background: var(--navy);
+    @apply inline-flex min-h-12 items-center justify-center rounded-xl px-5 text-[0.98rem] font-bold text-white shadow-sm transition-colors hover:bg-[#16304f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a];
+  }
+
+  .article-summary__triggers-phone {
+    color: var(--navy);
+    @apply inline-flex min-h-11 items-center justify-center rounded-xl border border-navy/20 bg-white px-4 text-[0.95rem] font-semibold transition-colors hover:border-navy/50;
+  }
+
+  /* 본문 서두 결정 카드 — 맡길 근거 · 비용 고정 문구 · 하나의 주 행동 · 네이버 예약/지도 */
+  .decision-card {
+    border: 1px solid color-mix(in srgb, var(--navy) 14%, var(--beige-dark));
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, #c9a86a 8%, white) 0%,
+      white 60%
+    );
+    box-shadow: 0 1px 2px rgb(30 58 95 / 0.05), 0 8px 24px -12px rgb(30 58 95 / 0.18);
+    @apply rounded-2xl p-4 sm:p-5 md:p-6;
+  }
+
+  .decision-card__proof {
+    @apply flex flex-wrap gap-1.5;
+  }
+
+  .decision-card__proof li {
+    color: var(--navy);
+    border: 1px solid color-mix(in srgb, #c9a86a 50%, var(--beige-dark));
+    @apply inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[0.8rem] font-semibold leading-none;
+  }
+
+  .decision-card__proof li::before {
+    content: "✓";
+    color: #b08d57;
+    @apply font-bold;
+  }
+
+  .decision-card__quote {
+    border-left: 3px solid #c9a86a;
+    @apply mt-3.5 pl-3;
+  }
+
+  .decision-card__quote p {
+    color: var(--text-primary);
+    @apply text-[0.95rem] font-medium leading-relaxed;
+  }
+
+  .decision-card__quote figcaption {
+    color: var(--text-muted);
+    @apply mt-1 text-xs;
+  }
+
+  .decision-card__cost {
+    @apply mt-3.5 border-t border-beige-dark/70 pt-3.5;
+  }
+
+  .decision-card__actions {
+    @apply mt-4 flex flex-col gap-2 sm:flex-row sm:items-stretch sm:gap-3;
+  }
+
+  .decision-card__primary {
+    background: var(--navy);
+    @apply inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-xl px-6 text-base font-bold text-white shadow-md transition-colors hover:bg-[#16304f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a] sm:w-auto sm:flex-1;
+  }
+
+  .decision-card__secondary {
+    color: var(--navy);
+    @apply inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl border border-navy/20 bg-white px-5 text-[0.95rem] font-semibold transition-colors hover:border-navy/50 sm:min-h-[3.25rem];
+  }
+
+  .decision-card__hint {
+    color: var(--text-muted);
+    @apply mt-2 text-[0.82rem] leading-snug;
+  }
+
+  .decision-card__places {
+    @apply mt-2 flex flex-wrap items-center gap-x-4 border-t border-beige-dark/60 pt-1;
+  }
+
+  /* H1 바로 아래 한 줄 신뢰 띠 */
+  .hero-trust-line {
+    color: var(--text-secondary);
+    @apply mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.82rem] leading-snug md:text-sm;
+  }
+
+  .hero-trust-line > * + *::before {
+    content: "·";
+    @apply mr-2 text-navy/30;
+  }
+
+  .hero-trust-line__reviews {
+    color: var(--navy);
+    @apply inline-flex items-center gap-1 font-semibold underline-offset-4 hover:underline;
   }
 
   /* RemoteServicePanel — 전국·비대면 의뢰 안내 (이미지 + 요약 + 접힌 세부) */
@@ -5838,7 +6282,7 @@ body.quick-inquiry-open {
   background: var(--surface);
   padding: 0.65rem 1.1rem;
   font-size: 0.9375rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--navy);
   box-shadow: 0 10px 28px -12px rgba(21, 42, 69, 0.28);
   transition:
@@ -6077,7 +6521,7 @@ body.quick-inquiry-open {
 
 .quick-inquiry__label {
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -6259,7 +6703,7 @@ body.quick-inquiry-open {
 }
 
 .quick-inquiry__success-phone-num {
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -6345,7 +6789,7 @@ body.quick-inquiry-open {
 .consult-wizard__step-label {
   margin: 0;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--text-muted);
   white-space: nowrap;
@@ -6512,13 +6956,13 @@ body.quick-inquiry-open {
 
 .consult-wizard__option-label {
   font-size: 0.9375rem;
-  font-weight: 550;
+  font-weight: 700;
   line-height: 1.45;
 }
 
 .consult-wizard__option-rec {
   font-size: 0.75rem;
-  font-weight: 650;
+  font-weight: 700;
   line-height: 1.35;
   color: var(--navy-light);
 }
@@ -6532,7 +6976,7 @@ body.quick-inquiry-open {
 
 .consult-wizard__field-label {
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -6562,7 +7006,7 @@ body.quick-inquiry-open {
 .consult-wizard__fieldset legend {
   margin-bottom: 0.55rem;
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -6580,7 +7024,7 @@ body.quick-inquiry-open {
   background: #fff;
   padding: 0.45rem 0.95rem;
   font-size: 0.875rem;
-  font-weight: 550;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -6591,7 +7035,7 @@ body.quick-inquiry-open {
 .consult-wizard__chip.is-selected {
   border-color: var(--navy);
   background: var(--cream);
-  font-weight: 650;
+  font-weight: 700;
   color: var(--navy);
 }
 
@@ -6630,7 +7074,7 @@ body.quick-inquiry-open {
 
 .consult-wizard__summary-row dt {
   font-size: 0.75rem;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--text-muted);
 }
@@ -7075,7 +7519,7 @@ body.quick-inquiry-open {
 
 .inquiry-form__label {
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -7138,7 +7582,7 @@ body.quick-inquiry-open {
 }
 
 .inquiry-form__link {
-  font-weight: 650;
+  font-weight: 700;
   color: var(--navy-light);
   text-decoration: underline;
 }
@@ -7303,7 +7747,7 @@ body.quick-inquiry-open {
 }
 
 .inquiry-form__phone-num {
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -7606,7 +8050,7 @@ body.quick-inquiry-open {
   background: #1e3a5f;
   color: #fff;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 .floating-notice__pager {
@@ -7762,7 +8206,7 @@ body.quick-inquiry-open {
 .notice-modal__title {
   margin: 0.85rem 0 0;
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.4;
   letter-spacing: -0.02em;
@@ -7810,7 +8254,7 @@ body.quick-inquiry-open {
   padding: 0 1.05rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
-  font-weight: 650;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
@@ -7833,7 +8277,7 @@ body.quick-inquiry-open {
   background: transparent;
   color: var(--text-subtle);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
   padding: 0.15rem 0.1rem;
   cursor: pointer;
@@ -8062,12 +8506,12 @@ body.quick-inquiry-open {
 .admin-kpi__label {
   font-size: 0.75rem;
   color: #64748b;
-  font-weight: 600;
+  font-weight: 700;
 }
 .admin-kpi__value {
   margin-top: 0.35rem;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 .admin-card {
@@ -8099,7 +8543,7 @@ body.quick-inquiry-open {
 .admin-alert__link {
   display: inline-block;
   margin-top: 0.35rem;
-  font-weight: 600;
+  font-weight: 700;
   color: inherit;
 }
 .admin-shell__workspace {
@@ -8181,7 +8625,7 @@ body.quick-inquiry-open {
 .admin-page-header__title {
   margin: 0;
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 .admin-page-header__meta {
   margin: 0.25rem 0 0;
@@ -8250,7 +8694,7 @@ body.quick-inquiry-open {
 .admin-metric__value {
   margin-top: 0.2rem;
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -8340,7 +8784,7 @@ body.quick-inquiry-open {
   display: inline-block;
   margin-top: 0.35rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #2563eb;
   text-decoration: none;
 }
@@ -8598,7 +9042,7 @@ body.quick-inquiry-open {
   padding: 0 0.85rem;
   border-radius: 0.45rem;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
 }
@@ -8613,7 +9057,7 @@ body.quick-inquiry-open {
   border: 1px solid #cbd5e1;
 }
 .admin-page-identity__title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8125rem;
   line-height: 1.3;
 }
@@ -8690,7 +9134,7 @@ a.admin-page-identity__path:hover {
 }
 .admin-funnel-bars__meta small {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #64748b;
 }
 .admin-funnel-bars__track {
@@ -8789,7 +9233,7 @@ a.admin-page-identity__path:hover {
 .admin-chart-tip__row dd {
   margin: 0;
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-weight: 700;
 }
 .admin-chart-tip__sources {
   margin-top: 0.55rem;
@@ -8799,7 +9243,7 @@ a.admin-page-identity__path:hover {
 .admin-chart-tip__sources p {
   margin: 0 0 0.35rem;
   color: #cbd5e1;
-  font-weight: 600;
+  font-weight: 700;
 }
 .admin-chart-tip__empty,
 .admin-chart-tip__hint {
@@ -9160,7 +9604,7 @@ a.admin-page-identity__path:hover {
 .admin-field {
   display: block;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.65rem;
 }
 .admin-field .admin-input {
@@ -9202,7 +9646,7 @@ a.admin-page-identity__path:hover {
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   color: #475569;
 }
@@ -9245,7 +9689,7 @@ a.admin-page-identity__path:hover {
 }
 .admin-funnel--wide li small {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #64748b;
 }
 .admin-seo-issues {
@@ -9297,7 +9741,7 @@ a.admin-page-identity__path:hover {
   display: inline-flex;
   min-height: 2.25rem;
   align-items: center;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
   text-decoration: none;
 }
@@ -9318,7 +9762,7 @@ a.admin-page-identity__path:hover {
   min-height: 2.25rem;
   align-items: center;
   color: var(--navy);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 @media (min-width: 64rem) {
@@ -9400,7 +9844,7 @@ a.admin-page-identity__path:hover {
 }
 .home-hero__primary-title {
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.25;
 }
@@ -9505,7 +9949,7 @@ a.admin-page-identity__path:hover {
   padding: 0.5rem 0.85rem 0.5rem 0.7rem;
   color: var(--navy);
   font-size: 0.9rem;
-  font-weight: 650;
+  font-weight: 700;
   line-height: 1.3;
   text-decoration: none;
   word-break: keep-all;

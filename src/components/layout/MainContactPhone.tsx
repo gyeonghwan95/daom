@@ -1,6 +1,6 @@
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { seoBrand } from "@/lib/seo/brand";
-import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
+import { CostInquiryNote, NaverVisitLinks } from "@/components/cta/CostInquiryNote";
 
 /** 모든 공개 일반 페이지의 본문 끝: 비용 문의 안내(말미) + 공식 상담 번호. */
 export function MainContactPhone() {
@@ -22,6 +22,7 @@ export function MainContactPhone() {
           {phone}
         </a>
       </p>
+      <NaverVisitLinks className="mt-1" />
     </div>
   );
 }

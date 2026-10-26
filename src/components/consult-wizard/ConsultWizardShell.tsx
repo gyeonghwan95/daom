@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   isTurnstileConfigured,
+  preloadTurnstile,
   TurnstileWidget,
 } from "@/components/quick-inquiry/TurnstileWidget";
 import {
@@ -45,6 +46,11 @@ import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 type Phase = "form" | "success" | "review";
 
+/** 상황 → 서류 → 연락처에서 바로 신청(별도 확인 단계 없음). 신청 후 '다시 확인하기'로 요약을 본다. */
+const LAST_STEP = 3;
+/** 신청을 눌렀는데 보안 확인 토큰이 아직 없으면 오류 대신 잠시 기다린다 */
+const TOKEN_WAIT_MS = 8000;
+
 function toggleId<T extends string>(list: T[], id: T): T[] {
   return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
 }
@@ -54,16 +60,14 @@ function stepTitle(step: number, phase: Phase): string {
   if (phase === "review") return copy.step4Title;
   if (step === 1) return copy.step1Title;
   if (step === 2) return copy.step2Title;
-  if (step === 3) return copy.step3Title;
-  return copy.step4Title;
+  return copy.step3Title;
 }
 
 function stepDesc(step: number, phase: Phase): string | null {
   if (phase !== "form") return null;
   if (step === 1) return copy.step1Hint;
   if (step === 2) return copy.step2Hint;
-  if (step === 3) return copy.step3Privacy;
-  return "아래 내용이 맞는지 확인한 뒤 신청해 주세요.";
+  return copy.step3Privacy;
 }
 
 export function ConsultWizardShell() {
@@ -87,6 +91,7 @@ export function ConsultWizardShell() {
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
   const [token, setToken] = useState("");
+  const tokenRef = useRef("");
   const [honeypot, setHoneypot] = useState("");
   const [resetSignal, setResetSignal] = useState(0);
   const resetKey = open
@@ -108,7 +113,8 @@ export function ConsultWizardShell() {
         // 버튼이 넘기는 note는 유입 위치 메타데이터 — 고객이 쓴 메모를 미리 채우거나 덮어쓰지 않는다
         situationNote: saved?.situationNote || "",
         entryNote: presetNote || "",
-        step: presetSituationIds.length || presetNote ? 1 : saved?.step ?? 1,
+        // 예전 4단계(확인) 초안은 마지막 단계로 맞춘다
+        step: presetSituationIds.length || presetNote ? 1 : (Math.min(saved?.step ?? 1, LAST_STEP) as 1 | 2 | 3),
       }),
     );
     setPhase("form");
@@ -123,6 +129,10 @@ export function ConsultWizardShell() {
 
   useFocusTrap(open, panelRef);
   useBodyScrollLock(open);
+
+  useEffect(() => {
+    if (open) preloadTurnstile();
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -209,6 +219,7 @@ export function ConsultWizardShell() {
   }, []);
 
   const handleTurnstileToken = useCallback((nextToken: string) => {
+    tokenRef.current = nextToken;
     setToken(nextToken);
     if (!nextToken) return;
     setErrors((prev) => {
@@ -222,8 +233,8 @@ export function ConsultWizardShell() {
 
   const validateStep = (step: number): boolean => {
     const nextErrors: Record<string, string> = {};
+    // 성함은 선택 — 연락처와 동의만 있으면 신청된다(메시지에는 '미기재'로 남는다)
     if (step === 3) {
-      if (!draft.name.trim()) nextErrors.name = "성함을 입력해 주세요.";
       if (!clientParseContact(draft.contact)) {
         nextErrors.contact = "전화번호 또는 이메일을 확인해 주세요.";
       }
@@ -241,7 +252,7 @@ export function ConsultWizardShell() {
       return;
     }
     if (!validateStep(draft.step)) return;
-    if (draft.step < 4) update({ step: (draft.step + 1) as 1 | 2 | 3 | 4 });
+    if (draft.step < LAST_STEP) update({ step: (draft.step + 1) as 1 | 2 | 3 });
   };
 
   const goBack = () => {
@@ -255,26 +266,34 @@ export function ConsultWizardShell() {
   const onSubmit = async () => {
     if (submitting) return;
 
-    if (!validateStep(3) && draft.step !== 4) return;
-    if (draft.step === 4 && !validateStep(3)) {
-      update({ step: 3 });
-      return;
-    }
-    if (isTurnstileConfigured() && !token) {
-      setErrors((e) => ({
-        ...e,
-        turnstile: "보안 확인을 완료해 주세요.",
-      }));
-      setFormError(
-        "보안 확인이 완료되지 않았습니다. 이전 단계에서 보안 확인 후 다시 시도해 주세요.",
-      );
-      update({ step: 3 });
+    if (!validateStep(LAST_STEP)) {
+      update({ step: LAST_STEP });
       return;
     }
 
     setSubmitting(true);
     setErrors({});
     setFormError("");
+
+    // 보안 확인이 아직 진행 중이면 바로 오류를 내지 않고 끝날 때까지 잠시 기다린다
+    if (isTurnstileConfigured() && !tokenRef.current) {
+      const deadline = Date.now() + TOKEN_WAIT_MS;
+      while (!tokenRef.current && Date.now() < deadline) {
+        await new Promise((r) => setTimeout(r, 200));
+      }
+      if (!tokenRef.current) {
+        setSubmitting(false);
+        setErrors((e) => ({
+          ...e,
+          turnstile: "보안 확인을 완료해 주세요.",
+        }));
+        setFormError(
+          "보안 확인이 완료되지 않았습니다. 아래 보안 확인을 마친 뒤 다시 눌러 주세요.",
+        );
+        return;
+      }
+    }
+
     try {
       const message = buildConsultMessage(draft);
       const result = await submitQuickInquiry({
@@ -310,6 +329,7 @@ export function ConsultWizardShell() {
           setFormError(result.message);
         }
         setResetSignal((n) => n + 1);
+        tokenRef.current = "";
         setToken("");
         return;
       }
@@ -339,12 +359,12 @@ export function ConsultWizardShell() {
 
   if (!open) return null;
 
-  const progress = phase === "form" ? draft.step : 4;
+  const progress = phase === "form" ? draft.step : LAST_STEP;
   const desc = stepDesc(draft.step, phase);
   const barPct =
     phase === "success" || phase === "review"
       ? 100
-      : Math.round((draft.step / 4) * 100);
+      : Math.round((draft.step / LAST_STEP) * 100);
 
   return (
     <div className="quick-inquiry-overlay consult-wizard" role="presentation">
@@ -387,7 +407,7 @@ export function ConsultWizardShell() {
           <div className="consult-wizard__meta">
             <p className="consult-wizard__brand">{copy.title}</p>
             <p className="consult-wizard__step-label" aria-live="polite">
-              {phase === "form" ? `단계 ${progress} / 4` : "완료"}
+              {phase === "form" ? `단계 ${progress} / ${LAST_STEP}` : "완료"}
             </p>
           </div>
 
@@ -396,7 +416,7 @@ export function ConsultWizardShell() {
             role="progressbar"
             aria-valuenow={progress}
             aria-valuemin={1}
-            aria-valuemax={4}
+            aria-valuemax={LAST_STEP}
             aria-label="상담 진행 단계"
           >
             <span style={{ width: `${barPct}%` }} />
@@ -466,7 +486,7 @@ export function ConsultWizardShell() {
             </div>
           ) : null}
 
-          {(phase === "form" && draft.step === 4) || phase === "review" ? (
+          {phase === "review" ? (
             <dl className="consult-wizard__summary">
               {summary.map((row) => (
                 <div key={row.label} className="consult-wizard__summary-row">
@@ -628,13 +648,9 @@ export function ConsultWizardShell() {
                   value={draft.name}
                   onChange={(e) => update({ name: e.target.value })}
                   autoComplete="name"
+                  placeholder={copy.namePlaceholder}
                   disabled={submitting}
                 />
-                {errors.name ? (
-                  <span className="quick-inquiry__error" role="alert">
-                    {errors.name}
-                  </span>
-                ) : null}
               </label>
 
               <label className="consult-wizard__field" htmlFor={ids.contactId}>
@@ -775,7 +791,7 @@ export function ConsultWizardShell() {
                   {copy.detailForm}
                 </Link>
               )}
-              {draft.step < 4 ? (
+              {draft.step < LAST_STEP ? (
                 <button
                   type="button"
                   className="btn-primary min-h-11 consult-wizard__footer-next"

@@ -52,6 +52,19 @@ function DeferredConsultWizard() {
   const inquiry = useOptionalQuickInquiry();
   const [loaded, setLoaded] = useState(false);
 
+  // 첫 클릭 때 상담 창 코드를 받느라 느린 회선에서 반응이 늦지 않게, 페이지가 한가해지면 미리 받아 둔다(그리지는 않음)
+  useEffect(() => {
+    const warm = () => {
+      void import("@/components/consult-wizard/ConsultWizardShell");
+    };
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(warm, { timeout: 5000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = setTimeout(warm, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     if (!inquiry?.open || loaded) return;
     const timer = window.setTimeout(() => setLoaded(true), 0);

@@ -8,9 +8,11 @@ import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
 import "./globals.css";
 
+// 가변 글꼴 한 벌 — 400·500·700 세 벌로 선언하면 같은 파일을 가리키는 @font-face가 3배(372개)가 되어
+// 렌더링을 막는 CSS만 커진다(압축 후 약 72KB → 24KB). 굵기 표시는 globals.css @theme의 굵기 매핑으로 이전과 같게 유지한다.
 const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: "variable",
   variable: "--font-noto-sans-kr",
   display: "swap",
   preload: true,

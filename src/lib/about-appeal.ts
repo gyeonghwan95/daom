@@ -225,28 +225,28 @@ export function getAboutAppeal(): AboutAppeal {
     ],
     approach: [
       {
-        title: "상담부터 신청까지 직접",
-        body: "창구만 두고 실무를 넘기지 않습니다. 상황 정리, 서류 구성, 등기·신청 제출까지 대표 법무사가 같은 사건으로 이어 갑니다.",
+        title: "대표가 처음부터 끝까지",
+        body: "상담·서류·등기 제출을 넘기지 않고 직접 이어 갑니다.",
       },
       {
-        title: "기한과 비용부터 구분",
-        body: "상속 신고 기한, 등기 순서, 회생 신청 시점처럼 지금 해야 할 일과 미뤄도 되는 일을 먼저 가릅니다. 견적은 범위가 잡힌 뒤에 안내합니다.",
+        title: "기한부터 가릅니다",
+        body: "지금 넣어야 할 신청과 미뤄도 되는 일을 먼저 나눕니다.",
       },
       {
-        title: "서류가 없어도 시작할 수 있음",
-        body: "가족관계증명서나 등기부등본이 없어도 상황만 있으면 상담이 됩니다. 필요한 서류는 이후 단계에서 맞춰 안내합니다.",
+        title: "비용은 항목별로",
+        body: "공과금과 보수를 나눠, 범위가 잡힌 뒤 안내합니다.",
       },
       {
-        title: "부동산·신용 자격으로 교차 확인",
-        body: "법무사 자격과 함께 공인중개사·신용관리사 자격으로 등기, 거래, 채무 구조를 같은 사건 안에서 맞춰 봅니다.",
+        title: "서류 없이 시작",
+        body: "상황과 날짜만 있으면 상담할 수 있습니다.",
       },
       {
-        title: "해운대 센텀에서 전국 접수",
-        body: `${officeLocation.subway}에 사무실이 있습니다. 방문은 예약제이고, 전국 문의는 전화·톡·폼으로 이어서 받습니다.`,
+        title: "공인중개사·신용관리사 자격",
+        body: "등기와 거래, 채무 구조를 한 사건 안에서 맞춰 봅니다.",
       },
       {
-        title: "소송대리는 하지 않음",
-        body: "민사집행·등기·신청은 법무사 업무로 진행합니다. 소송대리와 형사변론이 필요하면 변호사 의뢰가 맞다는 점을 먼저 말씀드립니다.",
+        title: "할 수 없는 일은 먼저 말씀드립니다",
+        body: "소송대리·형사변론이 필요하면 변호사 의뢰를 안내합니다.",
       },
     ],
     practice: [
@@ -292,11 +292,11 @@ export function getAboutAppeal(): AboutAppeal {
       },
     ],
     jumps: [
-      { href: "#approach", label: "맡기는 이유" },
-      { href: "#practice", label: "업무" },
+      { href: "#voices", label: "고객 후기" },
       { href: "#at-a-glance", label: "한눈에" },
       { href: "#qualifications", label: "자격" },
       { href: "#track-record", label: "이력" },
+      { href: "#process", label: "진행 방식" },
       { href: "#consultation", label: "상담" },
     ],
     pressQuote: weeklyPeople

@@ -6,15 +6,17 @@ export const PAGE_END_SECTIONS: SectionNavItem[] = [
 ];
 
 export const sectionNavByPath: Record<string, SectionNavItem[]> = {
+  // 화면 순서와 같게 — 고객 후기·근거를 먼저, 진행 방식은 상담 바로 앞
   "/about": [
-    { id: "process", label: "진행 순서" },
-    { id: "approach", label: "맡기는 이유" },
-    { id: "practice", label: "주요 업무" },
+    { id: "voices", label: "고객 후기" },
     { id: "at-a-glance", label: "한눈에 보기" },
+    { id: "track-record", label: "이력·위촉·강의" },
     { id: "qualifications", label: "자격·수상" },
     { id: "community", label: "기업·지역사회" },
     { id: "external", label: "대외활동" },
     { id: "education", label: "생활 속 법률" },
+    { id: "process", label: "진행 방식" },
+    { id: "practice", label: "맡길 수 있는 일" },
     ...PAGE_END_SECTIONS,
   ],
   "/office": [

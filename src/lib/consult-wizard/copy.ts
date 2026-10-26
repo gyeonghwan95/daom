@@ -18,7 +18,8 @@ export const consultWizardCopy = {
     "남겨주신 내용은 상담 확인과 연락을 위해서만 사용합니다.",
   step3Caution:
     "주민등록번호, 계좌 비밀번호, 인증번호 등 민감정보는 작성하지 마세요.",
-  nameLabel: "성함",
+  nameLabel: "성함 (선택)",
+  namePlaceholder: "예: 김OO",
   contactLabel: "전화번호 또는 이메일",
   contactHint: "둘 중 하나만 남겨주셔도 됩니다.",
   prefLabel: "선호 연락 방법",

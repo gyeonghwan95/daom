@@ -111,6 +111,8 @@ export function Header() {
           >
             <Link
               href="/"
+              // 첫 화면에 늘 보이는 로고 — 홈 데이터(약 240KB)를 매 페이지 첫 로드 때 미리 받지 않는다
+              prefetch={false}
               aria-label="다옴법무사사무소 홈"
               className="site-header__brand header-bar__brand flex min-h-11 min-w-0 shrink-0 items-center gap-2.5 sm:gap-3 lg:flex-none"
               onClick={() => {

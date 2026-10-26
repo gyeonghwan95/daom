@@ -4,14 +4,25 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
 import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
-import { suggestSituationsFromPath } from "@/lib/consult-wizard/catalog";
+import {
+  CONSULT_SITUATIONS,
+  suggestSituationsFromPath,
+} from "@/lib/consult-wizard/catalog";
 import { trackEvent } from "@/lib/admin-ops/beacon";
+import { trackCtaEvent } from "@/lib/admin-ops/track-client";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
+import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
+import { isAdminPath } from "@/components/layout/PublicOnly";
+
+function isConsultSituationId(value: string): value is ConsultSituationId {
+  return CONSULT_SITUATIONS.some((s) => s.id === value);
+}
 
 export type QuickInquiryOpenOptions = {
   pageTitle?: string;
@@ -105,6 +116,58 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
   const closeInquiry = useCallback(() => {
     setOpen(false);
   }, []);
+
+  // 본문의 '/contact/inquiry?field=…' 링크는 신청서 페이지로 떠나는 대신 이 자리에서 상담 창을 연다.
+  // 링크(href)는 HTML에 그대로 남겨 검색·내부 링크 구조는 바뀌지 않고, 새 탭·수정키 클릭은 원래대로 이동한다.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+      const anchor = (event.target as Element | null)?.closest?.("a[href]");
+      if (!(anchor instanceof HTMLAnchorElement)) return;
+      if (anchor.target === "_blank" || anchor.hasAttribute("download")) return;
+
+      let url: URL;
+      try {
+        url = new URL(anchor.href, window.location.href);
+      } catch {
+        return;
+      }
+      if (url.origin !== window.location.origin) return;
+      if (url.pathname !== CONTACT_INQUIRY_PATH) return;
+      // 신청서 페이지 자체·관리자 화면(상담 창을 그리지 않음)에서는 원래대로 이동
+      if (window.location.pathname === CONTACT_INQUIRY_PATH || isAdminPath(window.location.pathname)) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const field = url.searchParams.get("field") ?? "";
+      const presets = isConsultSituationId(field) ? [field] : undefined;
+      const region = url.searchParams.get("region");
+      const cost = url.searchParams.get("cost");
+      const note = [
+        url.searchParams.get("intent"),
+        region ? `지역 ${region}` : "",
+        cost === "1" || cost === "true" ? "비용 안내 요청" : "",
+      ]
+        .filter(Boolean)
+        .join(" · ");
+
+      trackCtaEvent("contact", window.location.pathname, anchor.getAttribute("href") ?? CONTACT_INQUIRY_PATH);
+      openInquiry({ source: "cta", presetSituationIds: presets, note });
+    };
+    // 캡처 단계 — Next Link의 이동 처리보다 먼저 가로챈다
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, [openInquiry]);
 
   const value = useMemo(
     () => ({

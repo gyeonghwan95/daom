@@ -24,6 +24,11 @@ export type NaverSmartPlacePlacement =
   | "reviews_hub"
   | "trust_review"
   | "page_hero"
+  /** 본문 서두 결정 카드(CostInquiryNote intro) */
+  | "decision_card"
+  /** 핵심 요약 "혼자 진행하면 막히기 쉬운 경우" */
+  | "summary_triggers"
+  | "main_contact"
   | "readability_cta"
   | "consult_inline"
   | "consult_page"

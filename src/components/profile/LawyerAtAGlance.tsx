@@ -12,6 +12,7 @@ import {
 } from "@/lib/lawyer-eeat-images";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
+import { getAboutVoiceIds } from "@/components/profile/AboutReviewVoices";
 import { getAllPressArticles } from "@/lib/press-articles";
 import { siteImages } from "@/lib/site-images";
 
@@ -76,7 +77,10 @@ export function LawyerAtAGlance() {
   const lectures = getVerifiedLectureHistory();
   const lectureInstitutions = new Set(lectures.map((l) => l.institution));
   const reviewFeed = getNaverPlaceReviewsFeed();
-  const quote = buildReviewQuotes(reviewFeed.items).find((q) => q.topic !== "general") ?? buildReviewQuotes(reviewFeed.items)[0];
+  // 위 '고객 후기' 블록에 나온 후기는 빼고 고른다(같은 문장 반복 방지)
+  const shown = new Set(getAboutVoiceIds());
+  const quotes = buildReviewQuotes(reviewFeed.items).filter((q) => !shown.has(q.id));
+  const quote = quotes.find((q) => q.topic !== "general") ?? quotes[0];
   const lectureThumbs = Object.values(eeatLectureThumbs).slice(0, 3).map(resolveThumb);
   const awardThumb = resolveThumb(awards[0] ? eeatAwardThumbs[awards[0].name] : undefined);
 

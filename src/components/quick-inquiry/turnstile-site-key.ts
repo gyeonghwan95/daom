@@ -53,6 +53,11 @@ export function useTurnstileSiteKey(): TurnstileKeyState {
   );
 }
 
+/** 상담 창이 열릴 때 미리 키를 받아 둔다(연락처 단계에서 위젯이 바로 그려지도록) */
+export function prefetchTurnstileSiteKey(): void {
+  ensureLoaded();
+}
+
 /** 제출 시점 확인용(동기). 사이트 키를 알고 있으면 토큰이 필요하다. */
 export function getTurnstileSiteKeyNow(): string {
   return state.siteKey;

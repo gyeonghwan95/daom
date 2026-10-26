@@ -2,7 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
-import { getTurnstileSiteKeyNow, useTurnstileSiteKey } from "./turnstile-site-key";
+import {
+  getTurnstileSiteKeyNow,
+  prefetchTurnstileSiteKey,
+  useTurnstileSiteKey,
+} from "./turnstile-site-key";
 
 declare global {
   interface Window {
@@ -165,6 +169,14 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
       ) : null}
     </div>
   );
+}
+
+/** 상담 창이 열릴 때 키와 스크립트를 미리 받아 둔다 — 연락처 단계에서 보안 확인이 바로 끝나도록 */
+export function preloadTurnstile() {
+  prefetchTurnstileSiteKey();
+  loadTurnstileScript().catch(() => {
+    // 실패는 위젯을 그릴 때 다시 시도하고 대체 채널을 안내한다
+  });
 }
 
 /** 사이트 키를 알고 있으면(빌드 또는 실행 시점) 제출 전에 토큰이 필요하다 */
