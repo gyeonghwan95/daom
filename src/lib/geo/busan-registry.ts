@@ -112,7 +112,10 @@ export function getRegistryOfficeForRegionKey(
   return id ? BUSAN_REGISTRY_OFFICES[id] : null;
 }
 
-export function buildJurisdictionGuideForRegionKey(regionKey: string): {
+export function buildJurisdictionGuideForRegionKey(
+  regionKey: string,
+  options: { inheritance?: boolean } = {},
+): {
   title: string;
   address: string;
   accessNote: string;
@@ -120,8 +123,10 @@ export function buildJurisdictionGuideForRegionKey(regionKey: string): {
   practicalNotes: string[];
 } {
   const office = getRegistryOfficeForRegionKey(regionKey);
-  const commercial =
-    "법인 본점(상업등기)은 부산 전역이 부산지방법원 등기국 관할인 경우가 많습니다.";
+  // 상속 안내 페이지에는 법인 본점 문장 대신 상속등기 관할 특례를 쓴다
+  const commercial = options.inheritance
+    ? "상속등기는 부동산 소재지 관할 등기소에 신청하며, 상속·유증은 관할 특례(부동산등기법 제7조의3) 범위에서 다른 등기소도 담당할 수 있습니다."
+    : "법인 본점(상업등기)은 부산 전역이 부산지방법원 등기국 관할인 경우가 많습니다.";
 
   if (!office) {
     return {

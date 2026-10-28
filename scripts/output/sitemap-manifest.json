@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-26T11:45:55.913Z",
+  "generatedAt": "2026-10-28T11:40:51.385Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1644,
+  "totalUrls": 1646,
   "format": "urlset",
   "tierCounts": {
     "1": 17,
@@ -9,7 +9,7 @@
     "3": 176,
     "4": 600,
     "5": 185,
-    "6": 547,
+    "6": 549,
     "7": 53,
     "8": 37
   },
@@ -992,19 +992,19 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-10-19",
+      "lastmod": "2026-10-28",
       "filename": "tier-1-core.xml",
       "count": 17
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-2-hubs.xml",
-      "lastmod": "2026-10-15",
+      "lastmod": "2026-10-28",
       "filename": "tier-2-hubs.xml",
       "count": 29
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-3-tools.xml",
-      "lastmod": "2026-10-16",
+      "lastmod": "2026-10-28",
       "filename": "tier-3-tools.xml",
       "count": 176
     },
@@ -1022,9 +1022,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-19",
+      "lastmod": "2026-10-28",
       "filename": "tier-6-keywords.xml",
-      "count": 547
+      "count": 549
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-7-blog.xml",
@@ -1086,7 +1086,7 @@
       "path": "/전국상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-18"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/전국업무",
@@ -1224,7 +1224,7 @@
       "path": "/faq",
       "tier": 2,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/faq",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/glossary",
@@ -1260,7 +1260,7 @@
       "path": "/search-guides",
       "tier": 2,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/search-guides",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/situations",
@@ -1860,7 +1860,7 @@
       "path": "/faq/inheritance-registration-cost",
       "tier": 3,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/faq/inheritance-registration-cost",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/faq/inheritance-registration-with-mortgage",
@@ -8196,13 +8196,13 @@
       "path": "/방문없이준비하는상속등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B0%A9%EB%AC%B8%EC%97%86%EC%9D%B4%EC%A4%80%EB%B9%84%ED%95%98%EB%8A%94%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/방문없이준비하는상속포기한정승인",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B0%A9%EB%AC%B8%EC%97%86%EC%9D%B4%EC%A4%80%EB%B9%84%ED%95%98%EB%8A%94%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/방문없이준비하는유상증자",
@@ -8886,7 +8886,7 @@
       "path": "/상속",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D",
-      "lastmod": "2026-10-19"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속건물멸실등기",
@@ -8898,13 +8898,13 @@
       "path": "/상속등기과태료",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속등기기간",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속등기기한",
@@ -8916,7 +8916,7 @@
       "path": "/상속등기비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9",
-      "lastmod": "2026-10-18"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속등기상담",
@@ -8946,7 +8946,7 @@
       "path": "/상속등기필요서류",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속등기후매매서류준비",
@@ -8982,7 +8982,7 @@
       "path": "/상속재산분할협의서준비",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%ED%98%91%EC%9D%98%EC%84%9C%EC%A4%80%EB%B9%84",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속취득세와등기순서",
@@ -9000,7 +9000,7 @@
       "path": "/상속포기비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EB%B9%84%EC%9A%A9",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/상속포기상담",
@@ -9133,6 +9133,18 @@
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%B8%EB%AC%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/셀프상속등기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%85%80%ED%94%84%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+      "lastmod": "2026-10-28"
+    },
+    {
+      "path": "/셀프상속포기",
+      "tier": 6,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%85%80%ED%94%84%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/소유권이전등기과태료",

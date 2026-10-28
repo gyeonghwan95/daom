@@ -25,10 +25,11 @@ function topicOf(body: string): ReviewQuote["topic"] {
 }
 
 /** 짧은 인용(한두 줄) — 길 찾기·주차로 시작하는 후기는 뺀다 */
+// 길찾기·주차 이야기로 끝나는 인용은 결정 카드에 맞지 않는다("…처음에 장소를…"처럼 잘리는 경우 포함)
 const SHORT_QUOTES: ReviewQuote[] = (feed.items ?? [])
   .filter((r) => r.body && r.body.replace(/\s+/g, "").length >= 30)
   .map((r) => ({ id: r.id, topic: topicOf(r.body), excerpt: excerptReview(r.body, 62) }))
-  .filter((q) => !/못\s?찾|헤[매메]|주차/.test(q.excerpt));
+  .filter((q) => !/못\s?찾|헤[매메]|주차|장소/.test(q.excerpt));
 
 /** 경로 업무와 같은 주제의 후기 한 줄(경로마다 고정) */
 export function pickShortReviewQuote(pathname: string): ReviewQuote | null {

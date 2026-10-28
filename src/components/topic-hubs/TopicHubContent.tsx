@@ -28,6 +28,7 @@ import {
 } from "@/lib/inheritance/journey";
 import type { TopicHubPage } from "@/lib/topic-hubs/types";
 import { ComparisonTable } from "@/components/readability";
+import { SectionTable } from "@/components/readability/SectionTable";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 
 type TopicHubContentProps = {
@@ -232,6 +233,11 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
           <p className="mb-4 text-base leading-relaxed text-navy/80">
             {section.intro}
           </p>
+          {section.table ? (
+            <div className="mb-5">
+              <SectionTable table={section.table} />
+            </div>
+          ) : null}
           <RelatedLinks title="관련 안내" links={section.links} />
         </ContentBlock>
       ))}

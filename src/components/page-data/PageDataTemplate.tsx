@@ -55,6 +55,7 @@ import { resolveSerpImage } from "@/lib/seo/page-visuals";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
+import { SectionTable } from "@/components/readability/SectionTable";
 import { NeighborhoodJurisdiction } from "@/components/seo/RegionCoverageSection";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import {
@@ -107,6 +108,7 @@ function ExtraSections({ sections }: { sections: PageSection[] }) {
           title={section.title}
         >
           <ProseParagraphs paragraphs={[section.body]} />
+          {section.table ? <SectionTable table={section.table} /> : null}
           {section.items && section.items.length > 0 ? (
             <div className="mt-4">
               <ChecklistBox items={section.items} />

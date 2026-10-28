@@ -1,7 +1,7 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-10-26T11:45:56.673Z
+# 생성: 2026-10-28T11:40:51.795Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1644 (제외 243)
+# 총 URL: 1646 (제외 243)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 17개
@@ -9,7 +9,7 @@
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
 # Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 600개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
-# Tier 6 — 순차 (기타 키워드 랜딩): 547개
+# Tier 6 — 순차 (기타 키워드 랜딩): 549개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 37개
 
@@ -1043,7 +1043,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (185개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (547개)
+Tier 6 — 순차 (기타 키워드 랜딩) (549개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1387,6 +1387,8 @@ Tier 6 — 순차 (기타 키워드 랜딩) (547개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98	/선박등기필요서류
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%A0%EB%B0%95%EC%83%81%EC%86%8D	/선박상속
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%B8%EB%AC%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/세무법인설립등기
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%85%80%ED%94%84%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/셀프상속등기
+[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%85%80%ED%94%84%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/셀프상속포기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C	/소유권이전등기과태료
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84	/소유권이전등기기간
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9	/소유권이전등기비용

@@ -24,12 +24,23 @@ export type PageRelatedLink = {
   label: string;
 };
 
+/** 본문 표 — 법정 수치·단계·서류처럼 비교가 필요한 내용을 목록 대신 표로 보인다(ComparisonTable) */
+export type ContentTable = {
+  /** 표 이름(화면 읽기용 caption) */
+  caption: string;
+  columns: { key: string; header: string }[];
+  rows: Record<string, string>[];
+  /** 표 아래 기준일·근거 한 줄 */
+  note?: string;
+};
+
 export type PageSection = {
   /** 앵커 id (station-seomyeon 등). 없으면 section-{index} */
   id?: string;
   title: string;
   body: string;
   items?: string[];
+  table?: ContentTable;
   links?: PageRelatedLink[];
 };
 

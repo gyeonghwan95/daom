@@ -34,6 +34,9 @@ import {
 import { buildJurisdictionGuideForRegionKey } from "@/lib/geo/busan-registry";
 import { formatPlaceList, withRegionLabel } from "../region-label";
 
+/** 관할 안내에서 법인 본점(상업등기) 문장 대신 상속등기 관할을 쓰는 상속 안내 페이지(같은 builder의 /부산법무사비용 등은 그대로) */
+const INHERITANCE_GUIDE_SLUGS = new Set(["상속등기비용", "상속등기필요서류", "상속등기기간"]);
+
 export function getJurisdictionGuide(
   config: LocalLandingConfig,
   institutionKey?: string,
@@ -68,7 +71,9 @@ export function getJurisdictionGuide(
     };
   }
 
-  const fromSsot = buildJurisdictionGuideForRegionKey(config.regionKey);
+  const fromSsot = buildJurisdictionGuideForRegionKey(config.regionKey, {
+    inheritance: INHERITANCE_GUIDE_SLUGS.has(config.slug),
+  });
 
   return {
     ...fromSsot,

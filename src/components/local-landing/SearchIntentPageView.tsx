@@ -33,6 +33,7 @@ import {
   StepTimeline,
   WarningBox,
 } from "@/components/readability";
+import { SectionTable } from "@/components/readability/SectionTable";
 import { recommendationFromService } from "@/lib/internal-links";
 import { getSearchIntentContent } from "@/lib/local-landing/search-intent";
 import { subproxyJurisdictionData } from "@/lib/local-landing/search-intent";
@@ -238,6 +239,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       {content.proseSections?.map((section) => (
         <ContentSection key={section.id} id={section.id} title={section.title}>
           <ProseParagraphs paragraphs={section.paragraphs} />
+          {section.table ? <SectionTable table={section.table} /> : null}
         </ContentSection>
       ))}
 

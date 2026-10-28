@@ -1,4 +1,5 @@
 import type { ServiceFaq } from "@/types/service";
+import type { ContentTable } from "@/lib/pageData/types";
 
 export type TopicHubLink = {
   href: string;
@@ -8,6 +9,7 @@ export type TopicHubLink = {
 export type TopicHubSection = {
   title: string;
   intro: string;
+  table?: ContentTable;
   links: TopicHubLink[];
 };
 

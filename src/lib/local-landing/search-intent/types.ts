@@ -1,4 +1,5 @@
 import type { ServiceFaq } from "@/types/service";
+import type { ContentTable } from "@/lib/pageData/types";
 
 export type SearchIntentCategory =
   | "recommend"
@@ -70,6 +71,7 @@ export type SearchIntentContent = {
     id: string;
     title: string;
     paragraphs: string[];
+    table?: ContentTable;
   }[];
   /** 피해 허브 등: 상황 선택 카드 (같은 페이지 앵커 또는 기존 URL) */
   situationNav?: {

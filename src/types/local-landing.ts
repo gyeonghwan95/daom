@@ -1,4 +1,5 @@
 import type { ServiceFaq } from "@/types/service";
+import type { ContentTable } from "@/lib/pageData/types";
 
 export type LocalLandingPageType =
   | "service-region"
@@ -103,6 +104,7 @@ export type LocalLandingPage = {
     title: string;
     body: string;
     items?: string[];
+    table?: ContentTable;
     links?: { href: string; label: string }[];
   }[];
   /** 역세권 Entity 섹션 (기존 Host에만 추가, 신규 URL 아님) */

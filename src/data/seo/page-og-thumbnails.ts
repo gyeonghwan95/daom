@@ -1498,6 +1498,8 @@ const PAGE_OG_THUMBNAILS: Record<string, readonly [src: string, alt: string]> = 
   "/업무사례/부산서부지원법무사": ["/image/og-pages/업무사례-부산서부지원법무사.jpg", "부산서부지원, 일정에 맞춘 등기 — 부산지방법원 서부지원 앞의 안윤정 법무사"],
   "/부산가압류취소": ["/image/og-pages/부산가압류취소.jpg", "가압류를 풀려면, 방법부터 확인 — 부산지방법원 서부지원 앞의 안윤정 법무사"],
   "/부산상속재산파산": ["/image/og-pages/부산상속재산파산.jpg", "빚이 더 많은 상속, 상속재산파산 — 부산지방법원 동부지원 앞의 안윤정 법무사"],
+  "/셀프상속등기": ["/image/og-pages/셀프상속등기.jpg", "셀프 상속등기, 직접 할 때 순서 — 등기소 등기운영과 민원 창구"],
+  "/셀프상속포기": ["/image/og-pages/셀프상속포기.jpg", "셀프 상속포기, 직접 신고 순서 — 상속재산포기 심판청구 관련 서류(개인정보 가림)"],
 };
 
 export function getPageOgThumbnail(path: string): { src: string; alt: string } | undefined {

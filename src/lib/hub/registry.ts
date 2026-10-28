@@ -158,7 +158,7 @@ export const CORE_HUBS: CoreHub[] = [
       s("/수영구상속등기", "수영구 상속등기"),
       s("/기장토지상속등기", "기장 토지 상속등기"),
       s("/연제구상속등기", "연제구 상속등기"),
-      s("/상속", "상속 종합 허브"),
+      s("/상속", "상속 법무사 종합 안내"),
       s("/services/inheritance-registration", "상속등기 업무 상세"),
       s("/services/cases/haeundae-inheritance-registration-case", "해운대 상속등기 상담 사례"),
       s("/services/cases/gijang-land-inheritance-case", "기장 토지 상속 사례"),

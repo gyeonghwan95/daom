@@ -587,11 +587,11 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     compactQueries: ["부산상속법무사추천"],
   },
   {
-    path: "/방문없이준비하는상속등기",
+    path: "/셀프상속등기",
     compactQueries: ["상속등기셀프", "셀프상속등기"],
   },
   {
-    path: "/방문없이준비하는상속포기한정승인",
+    path: "/셀프상속포기",
     compactQueries: ["상속포기셀프", "셀프상속포기"],
   },
   {

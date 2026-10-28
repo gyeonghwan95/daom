@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-27",
   "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리. 2026-10-04: 서비스 유니버스 Wave 1 — 근저당 말소·공유물분할·개명·변제공탁·임차권등기·해산청산·집단·PF·가압류·집행문·불이행자명부·배당요구·등록부 정정·실종선고. 2026-10-24: 타지역+상속+법무사 city champions.",
   "queries": {
     "부산 법무사": {
@@ -1431,20 +1431,26 @@
       "aliasOf": "상속등기 기간"
     },
     "상속등기 셀프": {
-      "owner": "/방문없이준비하는상속등기",
-      "intent": "diy-vs-entrust"
+      "owner": "/셀프상속등기",
+      "intent": "diy-vs-entrust",
+      "supporting": [
+        "/방문없이준비하는상속등기"
+      ]
     },
     "셀프 상속등기": {
-      "owner": "/방문없이준비하는상속등기",
+      "owner": "/셀프상속등기",
       "intent": "diy-vs-entrust",
       "aliasOf": "상속등기 셀프"
     },
     "상속포기 셀프": {
-      "owner": "/방문없이준비하는상속포기한정승인",
-      "intent": "diy-vs-entrust"
+      "owner": "/셀프상속포기",
+      "intent": "diy-vs-entrust",
+      "supporting": [
+        "/방문없이준비하는상속포기한정승인"
+      ]
     },
     "셀프 상속포기": {
-      "owner": "/방문없이준비하는상속포기한정승인",
+      "owner": "/셀프상속포기",
       "intent": "diy-vs-entrust",
       "aliasOf": "상속포기 셀프"
     },
@@ -3037,6 +3043,54 @@
     "공탁 자가진단": {
       "owner": "/공탁자가진단",
       "intent": "hire-inflow"
+    },
+    "법무사 상속 비용": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "aliasOf": "상속 법무사 비용"
+    },
+    "법무사 상속 수수료": {
+      "owner": "/상속등기비용",
+      "intent": "fee-buckets",
+      "aliasOf": "상속 법무사 비용"
+    },
+    "법무사 상속 서류": {
+      "owner": "/상속등기필요서류",
+      "intent": "documents",
+      "supporting": [
+        "/상속상담전준비서류와비용",
+        "/상속포기필요서류",
+        "/한정승인필요서류",
+        "/부산법무사서류준비"
+      ]
+    },
+    "상속등기 기한": {
+      "owner": "/상속등기기간",
+      "intent": "timeline",
+      "supporting": [
+        "/faq/when-to-file-inheritance-registration",
+        "/상속등기기한",
+        "/tools/inheritance-registration-deadline"
+      ],
+      "note": "aliasOf '상속등기 기간'으로 두면 FAQ title '상속등기 기한｜…' 때문에 검사 FAIL(실측). 별도 행+supporting 필요."
+    },
+    "상속등기 과태료": {
+      "owner": "/상속등기과태료",
+      "intent": "timeline",
+      "supporting": [
+        "/situations/상속등기-지연-과태료",
+        "/상속등기기간",
+        "/faq/when-to-file-inheritance-registration"
+      ],
+      "note": "10-27 PC·MO qra 1/1 노출 URL 보호"
+    },
+    "상속재산분할협의서": {
+      "owner": "/상속재산분할협의서준비",
+      "intent": "documents",
+      "supporting": [
+        "/부산상속재산분할법무사",
+        "/상속등기필요서류"
+      ]
     }
   }
 }

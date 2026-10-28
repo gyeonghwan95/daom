@@ -1,0 +1,651 @@
+[
+ {
+  "query": "상속 법무사",
+  "observedAtKST": "2026-10-27 21:23:16",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "related-questions:www.kimtaewon.co.kr/",
+   "qra:eollaw.kr/"
+  ]
+ },
+ {
+  "query": "법무사 상속",
+  "observedAtKST": "2026-10-27 21:23:20",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "qra:www.yhd-law.co.kr/"
+  ]
+ },
+ {
+  "query": "상속 법무사 추천",
+  "observedAtKST": "2026-10-27 21:23:25",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.cafe.naver.com/myungjimom",
+   "qra:m.cafe.naver.com/ehdxks2"
+  ]
+ },
+ {
+  "query": "상속등기 법무사",
+  "observedAtKST": "2026-10-27 21:23:30",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "clip:clip.naver.com/@regenxx",
+   "qra:xn--v92b7y13g14i9zg.kr/inheritance-registration/cost/"
+  ]
+ },
+ {
+  "query": "상속포기 법무사",
+  "observedAtKST": "2026-10-27 21:23:34",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "clip:clip.naver.com/@yhc7800",
+   "aipick:kin.naver.com/profile/index.naver",
+   "qra:www.yhd-law.co.kr/inheritance/renunciation/"
+  ]
+ },
+ {
+  "query": "상속 법무사 비용",
+  "observedAtKST": "2026-10-27 21:23:39",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/상속등기비용"
+  ],
+  "above": [
+   "ai-briefing:korea.legal/"
+  ]
+ },
+ {
+  "query": "법무사 상속 비용",
+  "observedAtKST": "2026-10-27 21:23:44",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:regenbubmusa.com/inheritance/registration/",
+   "qra:m.kin.naver.com/mobile/index.naver"
+  ]
+ },
+ {
+  "query": "법무사 상속 수수료",
+  "observedAtKST": "2026-10-27 21:23:48",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.kin.naver.com/mobile/index.naver",
+   "qra:m.blog.naver.com/yk8884"
+  ]
+ },
+ {
+  "query": "법무사 상속 서류",
+  "observedAtKST": "2026-10-27 21:23:53",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.kin.naver.com/mobile/index.naver",
+   "qra:korea.legal/"
+  ]
+ },
+ {
+  "query": "상속포기 법무사 비용",
+  "observedAtKST": "2026-10-27 21:23:58",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:korea.legal/",
+   "qra:in.naver.com/itgame"
+  ]
+ },
+ {
+  "query": "주변 상속등기 법무사",
+  "observedAtKST": "2026-10-27 21:24:02",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "qra:m.blog.naver.com/mickyson21",
+   "news:www.viva100.com/article/20261014500921"
+  ]
+ },
+ {
+  "query": "근처 상속등기 법무사",
+  "observedAtKST": "2026-10-27 21:24:07",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 1,
+  "ourBlogUrls": [
+   "m.blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/부동산과거주지가다른상속등기"
+  ],
+  "above": []
+ },
+ {
+  "query": "저렴한 상속등기 법무사",
+  "observedAtKST": "2026-10-27 21:24:12",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 2,
+  "ourBlogUrls": [
+   "m.blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/상속등기비용"
+  ],
+  "above": []
+ },
+ {
+  "query": "상속등기",
+  "observedAtKST": "2026-10-27 21:24:16",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.blog.naver.com/womez58/224347181653",
+   "clip:m.blog.naver.com/taxlimjs227",
+   "related-questions:portal.scourt.go.kr/pgp/index.on"
+  ]
+ },
+ {
+  "query": "상속등기 셀프",
+  "observedAtKST": "2026-10-27 21:24:21",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:www.dgs.go.kr/main.do",
+   "news:lawtalknews.co.kr/article/L684T3KTP2LV",
+   "qra:in.naver.com/miso1280"
+  ]
+ },
+ {
+  "query": "상속포기 셀프",
+  "observedAtKST": "2026-10-27 21:24:26",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.cafe.naver.com/mjann",
+   "qra:in.naver.com/rhagksmf"
+  ]
+ },
+ {
+  "query": "셀프 상속포기",
+  "observedAtKST": "2026-10-27 21:24:30",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.cafe.naver.com/mjann",
+   "qra:in.naver.com/rhagksmf"
+  ]
+ },
+ {
+  "query": "셀프 상속등기",
+  "observedAtKST": "2026-10-27 21:24:35",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "clip:m.blog.naver.com/kimduck52",
+   "related-questions:www.easylaw.go.kr/CSP/Main.laf",
+   "qra:m.kin.naver.com/mobile/index.naver"
+  ]
+ },
+ {
+  "query": "상속등기 서류",
+  "observedAtKST": "2026-10-27 21:24:39",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.blog.naver.com/law_zzang/224330277755",
+   "related-questions:www.easylaw.go.kr/CSP/Main.laf",
+   "qra:m.cafe.naver.com/engmstudy"
+  ]
+ },
+ {
+  "query": "상속등기 비용",
+  "observedAtKST": "2026-10-27 21:24:44",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "qra:m.cafe.naver.com/jaegebal"
+  ]
+ },
+ {
+  "query": "상속등기 절차",
+  "observedAtKST": "2026-10-27 21:24:49",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "clip:clip.naver.com/@regenxx",
+   "related-questions:www.dgs.go.kr/main.do"
+  ]
+ },
+ {
+  "query": "상속등기 순서",
+  "observedAtKST": "2026-10-27 21:24:53",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 2,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/상속등기후매매서류준비"
+  ],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver"
+  ]
+ },
+ {
+  "query": "상속등기 기간",
+  "observedAtKST": "2026-10-27 21:24:58",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 4,
+  "ourBlockOrder": 4,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/상속등기기간"
+  ],
+  "above": [
+   "ai-briefing:m.blog.naver.com/fow99/224360274017",
+   "related-questions:www.easylaw.go.kr/CSP/Main.laf",
+   "news:www.newstomato.com/ReadNews.aspx"
+  ]
+ },
+ {
+  "query": "상속하는법",
+  "observedAtKST": "2026-10-27 21:25:03",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "clip:m.blog.naver.com/pajsql02",
+   "qra:www.lawtalk.co.kr/"
+  ]
+ },
+ {
+  "query": "한정승인 법무사",
+  "observedAtKST": "2026-10-27 21:25:07",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:m.cafe.naver.com/kig",
+   "news:www.viva100.com/article/20261014500921",
+   "qra:www.xn--v92ba17hy9ha11fjsf8zu50b.com/"
+  ]
+ },
+ {
+  "query": "상속등기 기한",
+  "observedAtKST": "2026-10-27 21:25:12",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 4,
+  "ourBlockOrder": 4,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/상속등기기간"
+  ],
+  "above": [
+   "ai-briefing:m.blog.naver.com/fow99/224360274017",
+   "related-questions:www.easylaw.go.kr/CSP/Main.laf",
+   "news:www.newstomato.com/ReadNews.aspx"
+  ]
+ },
+ {
+  "query": "상속등기 과태료",
+  "observedAtKST": "2026-10-27 21:25:17",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 1,
+  "ourBlockOrder": 1,
+  "ourBlockType": "qra",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/상속등기과태료"
+  ],
+  "above": []
+ },
+ {
+  "query": "상속재산분할협의서",
+  "observedAtKST": "2026-10-27 21:25:21",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:m.blog.naver.com/khr1265/224387641747",
+   "related-questions:www.easylaw.go.kr/CSP/Main.laf"
+  ]
+ },
+ {
+  "query": "부산 상속등기 법무사",
+  "observedAtKST": "2026-10-27 21:25:26",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 2,
+  "ourBlogUrls": [
+   "m.blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/부산상속전문법무사"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 상속 법무사",
+  "observedAtKST": "2026-10-27 21:25:31",
+  "device": "모바일(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "related-questions",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/부산상속포기"
+  ],
+  "above": []
+ }
+]

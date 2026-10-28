@@ -53,6 +53,7 @@ import { 부산상속전문법무사Override } from "./overrides/busan-inheritan
 import { specialistLawyerOverrides } from "./overrides/busan-specialist-lawyers";
 import { specialistLawyerPhase2Overrides } from "./overrides/busan-specialist-lawyers-phase2";
 import { 부산회생법무사Override } from "./overrides/busan-rehabilitation-lawyer";
+import { 셀프상속등기Override, 셀프상속포기Override } from "./overrides/self-inheritance";
 import {
   부모님사망후해야할일Override,
   방문없이준비하는상속등기Override,
@@ -220,6 +221,8 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   사망자재산채무조회: 사망자재산채무조회Override,
   부모빚상속방법: 부모빚상속방법Override,
   방문없이준비하는상속등기: 방문없이준비하는상속등기Override,
+  셀프상속등기: 셀프상속등기Override,
+  셀프상속포기: 셀프상속포기Override,
   상속상담전준비서류와비용: 상속상담전준비서류와비용Override,
   오래된상속토지정리: 오래된상속토지정리Override,
   연락두절상속인: 연락두절상속인Override,
