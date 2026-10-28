@@ -27,7 +27,7 @@ export const seoInstitutions: SeoIntentEntity[] = [
     parentRegion: "busan",
     keywords: ["부산지방법원 등기국", "연제 등기국", "부산 등기국"],
     description:
-      "부산 연제구 법원로에 위치한 중앙 등기 접수 기관입니다. 관할에 따라 지원·지역 등기소로 분산됩니다.",
+      "부산 연제구 법원로에 있는 중앙 등기 접수 기관입니다. 부동산등기는 구·군에 따라 지원·등기소로 나뉘지만, 부산광역시 안의 법인등기(상업등기)는 모두 이곳에서 처리합니다(등기소의 설치와 관할구역에 관한 규칙 제4조 제1항).",
     relatedServices: ["real-estate-registration", "corporate-registration", "inheritance-registration"],
     relatedRegions: ["busan", "yeonje-gu"],
     searchIntent: "institution-proximity",
@@ -55,7 +55,7 @@ export const seoInstitutions: SeoIntentEntity[] = [
     parentRegion: "busan",
     keywords: ["동부지원 등기과", "부산 동부 등기", "센텀 등기소"],
     description:
-      "부산지방법원 동부지원 내 등기 접수 창구입니다. 동부권 부동산·법인 등기가 접수됩니다.",
+      "부산지방법원 동부지원 등기과는 동부권 부동산등기를 접수합니다. 부산에 본점을 둔 회사의 법인등기(상업등기)는 동부지원이 아니라 부산지방법원 등기국이 처리합니다(등기소의 설치와 관할구역에 관한 규칙 제4조 제1항).",
     relatedServices: ["real-estate-registration", "corporate-registration"],
     relatedRegions: ["busan", "haeundae-gu", "centum"],
     searchIntent: "institution-proximity",

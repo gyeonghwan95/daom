@@ -326,7 +326,7 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
     slot: "before-example",
     assetId: "deskComputer",
     alt: "임원 기한·과태료를 확인하기 위해 등기 자료를 보는 모습",
-    overlayText: "결의 후 등기 기한을 달력에 표시하세요",
+    overlayText: "변경일부터 2주, 등기 기한을 달력에 표시하세요",
     aspectRatio: "16:9",
     overlayPosition: "center",
     tone: "dark",

@@ -1,0 +1,298 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [],
+ "protectedFieldChanges": [
+  {
+   "route": "/faq/how-to-book-consultation-faq",
+   "field": "linksHash",
+   "before": "974775071af6589d",
+   "after": "aadd2149e8d2b7c1"
+  },
+  {
+   "route": "/faq/lawyer-fee-and-remote-faq",
+   "field": "linksHash",
+   "before": "da389c0db9511d98",
+   "after": "618c1c1ae1611730"
+  },
+  {
+   "route": "/부산경매권리분석",
+   "field": "description",
+   "before": "부산 법원 경매 입찰 전 등기부·말소기준권리 확인 안내. 낙찰 이후 소유권이전·촉탁등기와 페이지를 나눕니다. 입찰가·수익률은 추천하지 않습니다.",
+   "after": "부산 법원 경매 입찰 전에 등기부·매각물건명세서로 매각 뒤 지워질 권리와 남을 권리를 확인하는 상담 안내입니다. 입찰가·수익률은 추천하지 않습니다."
+  },
+  {
+   "route": "/부산경매권리분석",
+   "field": "ogDescription",
+   "before": "부산 법원 경매 입찰 전 등기부·말소기준권리 확인 안내. 낙찰 이후 소유권이전·촉탁등기와 페이지를 나눕니다. 입찰가·수익률은 추천하지 않습니다.",
+   "after": "부산 법원 경매 입찰 전에 등기부·매각물건명세서로 매각 뒤 지워질 권리와 남을 권리를 확인하는 상담 안내입니다. 입찰가·수익률은 추천하지 않습니다."
+  },
+  {
+   "route": "/부산경매권리분석",
+   "field": "linksHash",
+   "before": "fe6cdb06f1fe2ad6",
+   "after": "7936a7cb001f9a17"
+  },
+  {
+   "route": "/부산경매낙찰등기",
+   "field": "linksHash",
+   "before": "f5623be573d2a5dd",
+   "after": "a735a267b9bbcc93"
+  },
+  {
+   "route": "/부산법인등기",
+   "field": "linksHash",
+   "before": "c39c0ad57530b01d",
+   "after": "438b60123c65eed9"
+  },
+  {
+   "route": "/부산법인설립등기",
+   "field": "linksHash",
+   "before": "3407f51c137d1464",
+   "after": "7ff1b525a12f653e"
+  },
+  {
+   "route": "/업무사례/거제상속포기법무사",
+   "field": "linksHash",
+   "before": "e126c4d6ee9b44f7",
+   "after": "3110f84b467694d3"
+  },
+  {
+   "route": "/업무사례/대구상속포기한정승인",
+   "field": "linksHash",
+   "before": "543515998c920738",
+   "after": "a1cef1b3501c82a9"
+  },
+  {
+   "route": "/업무사례/문경상속등기법무사",
+   "field": "linksHash",
+   "before": "39403b6538581bb2",
+   "after": "e212ddc4cd7fd19f"
+  },
+  {
+   "route": "/업무사례/부산법무사",
+   "field": "linksHash",
+   "before": "357fd8958d40122a",
+   "after": "a3f39803b49bf0e8"
+  },
+  {
+   "route": "/업무사례/세종상속등기법무사",
+   "field": "linksHash",
+   "before": "0a4f07363218ce48",
+   "after": "64586451d51be23b"
+  },
+  {
+   "route": "/업무사례/양산건물멸실등기",
+   "field": "linksHash",
+   "before": "4bf49948d3c595fd",
+   "after": "3bd069c6cfc48a1d"
+  },
+  {
+   "route": "/업무사례/양산신축건물보존등기",
+   "field": "linksHash",
+   "before": "13b035c8a4968111",
+   "after": "84a1b046c878e035"
+  },
+  {
+   "route": "/업무사례/영주상속등기법무사",
+   "field": "linksHash",
+   "before": "901a627d661a7f7d",
+   "after": "7f2f7f826f1f7625"
+  },
+  {
+   "route": "/업무사례/울진상속등기법무사",
+   "field": "linksHash",
+   "before": "d349a233971e1a6a",
+   "after": "e2e0117df3dd67e4"
+  },
+  {
+   "route": "/업무사례/전국공동근저당권등기",
+   "field": "linksHash",
+   "before": "472bfaa8ac742a32",
+   "after": "bf52e9ee8cc9b694"
+  },
+  {
+   "route": "/업무사례/전국법인본점이전등기",
+   "field": "linksHash",
+   "before": "81b34ed70b11fd5c",
+   "after": "fe1f5ca7ba79bab1"
+  },
+  {
+   "route": "/업무사례/전국비대면법무사",
+   "field": "linksHash",
+   "before": "cc96d739c6b78fcf",
+   "after": "ebf8cde88024a8ce"
+  },
+  {
+   "route": "/업무사례/전국상속부동산일괄등기",
+   "field": "linksHash",
+   "before": "bdfbfea6b435ce3e",
+   "after": "8316374525818e7d"
+  },
+  {
+   "route": "/업무사례/전국유증등기법무사",
+   "field": "linksHash",
+   "before": "10689eb0dbdd7b7d",
+   "after": "40e9d1b7459682c6"
+  },
+  {
+   "route": "/업무사례/진주상속포기한정승인",
+   "field": "linksHash",
+   "before": "23cec6afb42d463a",
+   "after": "11f78f028baa15bc"
+  },
+  {
+   "route": "/업무사례/청도상속등기법무사",
+   "field": "linksHash",
+   "before": "9fe23089750166e4",
+   "after": "528858c15c78f01a"
+  },
+  {
+   "route": "/업무사례/타지역법무사의뢰",
+   "field": "linksHash",
+   "before": "a376b4d1923bd175",
+   "after": "240be1c40e213cf8"
+  },
+  {
+   "route": "/업무사례/통영상속포기한정승인",
+   "field": "linksHash",
+   "before": "4ebd0bce5631a811",
+   "after": "5f9349a9b92a3259"
+  },
+  {
+   "route": "/업무사례/포항상속포기한정승인",
+   "field": "linksHash",
+   "before": "bc77d0d7e267462d",
+   "after": "e7c6296635172bb6"
+  },
+  {
+   "route": "/전국공동담보등기",
+   "field": "linksHash",
+   "before": "c858099267036f14",
+   "after": "3aaa123e767b7d4b"
+  },
+  {
+   "route": "/전국법인본점이전등기",
+   "field": "linksHash",
+   "before": "1ef0a3b2e7e7d4af",
+   "after": "1c80a16b8be9dda9"
+  },
+  {
+   "route": "/전국유증등기",
+   "field": "linksHash",
+   "before": "337d79fc17032d1b",
+   "after": "09d9763a91dd8404"
+  }
+ ],
+ "mainChangedAllowed": [],
+ "mainChangedNotAllowed": [
+  "/faq/how-to-book-consultation-faq",
+  "/faq/lawyer-fee-and-remote-faq",
+  "/법인변경등기",
+  "/본점이전등기비용",
+  "/부산경매권리분석",
+  "/부산경매낙찰등기",
+  "/부산대표이사변경등기",
+  "/부산법인등기",
+  "/부산법인등기과태료",
+  "/부산법인설립등기",
+  "/부산법인해산청산등기",
+  "/부산본점이전등기",
+  "/부산사업목적변경등기",
+  "/부산임원변경등기",
+  "/부산지방법원동부지원등기과법무사",
+  "/부산지방법원동부지원등기과법인등기",
+  "/부산지방법원동부지원등기과부동산등기",
+  "/부산지방법원등기국법무사",
+  "/부산지방법원등기국법인등기",
+  "/부산지방법원등기국부동산등기",
+  "/부산지방법원등기국상속등기",
+  "/업무사례/거제상속포기법무사",
+  "/업무사례/대구상속포기한정승인",
+  "/업무사례/문경상속등기법무사",
+  "/업무사례/부산법무사",
+  "/업무사례/세종상속등기법무사",
+  "/업무사례/양산건물멸실등기",
+  "/업무사례/양산신축건물보존등기",
+  "/업무사례/영주상속등기법무사",
+  "/업무사례/울진상속등기법무사",
+  "/업무사례/전국공동근저당권등기",
+  "/업무사례/전국법인본점이전등기",
+  "/업무사례/전국비대면법무사",
+  "/업무사례/전국상속부동산일괄등기",
+  "/업무사례/전국유증등기법무사",
+  "/업무사례/진주상속포기한정승인",
+  "/업무사례/청도상속등기법무사",
+  "/업무사례/타지역법무사의뢰",
+  "/업무사례/통영상속포기한정승인",
+  "/업무사례/포항상속포기한정승인",
+  "/전국공동담보등기",
+  "/전국법인본점이전등기",
+  "/전국유증등기"
+ ],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 1646,
+   "after": 1646
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 17,
+   "after": 17
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 600,
+   "after": 600
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 549,
+   "after": 549
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 37,
+   "after": 37
+  },
+  "rss": "same",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}

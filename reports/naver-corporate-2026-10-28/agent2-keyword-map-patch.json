@@ -1,0 +1,58 @@
+{
+  "note": "제안만(저장소 seo/keyword-map.json 미수정). add = queries에 새 키 추가, noteUpdate = 기존 키의 note만 교체(owner·aliasOf·supporting 변경 없음). 2026-10-28 스크래치 사본(scripts/check-keyword-ownership.ts와 판정 로직 동일, MAP_PATH만 환경변수)으로 병합 맵을 돌려 OK 확인 — 결과는 agent2-tech-onpage.md §4.",
+  "add": {
+    "부산 경매 낙찰 등기": {
+      "owner": "/부산경매낙찰등기",
+      "intent": "procedure",
+      "supporting": ["/부산공매낙찰등기", "/경매낙찰후전세권확인", "/부산경매권리분석"],
+      "note": "2026-10-28 PC·MO #1 /부산경매낙찰등기. title·H1·첫 문단 변경 금지. 공매는 /부산공매낙찰등기로 분리 유지."
+    },
+    "부산 경매 법무사": {
+      "owner": "/부산경매낙찰등기",
+      "intent": "auction-buyer-registration",
+      "supporting": ["/부산경매권리분석", "/부산공매낙찰등기", "/부산배당요구신청", "/경매낙찰후전세권확인"],
+      "note": "2026-10-28 PC·MO #10 /전세사기피해대응절차(의도 불일치), 낙찰등기·권리분석 미노출. 상위는 경매전문 법무사 유튜브·경매 변호사·강제경매 블로그. 담당은 낙찰 후 등기(법무사 업무 범위). /전세사기피해대응절차 title·H1에 경매 문구 넣지 말 것('부산 전세사기 법무사' owner). /부산경매법무사 새 URL 만들지 말 것. 매수신청대리·명도·배당이의 소송을 사이트 근거 없이 쓰지 말 것."
+    },
+    "부산 경락잔금대출 법무사": {
+      "owner": "/부산경매낙찰등기",
+      "intent": "auction-loan-registration",
+      "supporting": ["/부산잔금대출근저당", "/부산근저당설정등기"],
+      "note": "2026-10-28 사이트·블로그 미노출. src·out 전체에 '경락' 0회(실측). 새 페이지 대신 /부산경매낙찰등기 H2·FAQ 1곳에 용어 추가. /부산잔금대출근저당은 매매 잔금 페이지(경매 0회) — retitle 금지."
+    },
+    "부산 기업 법무사": {
+      "owner": "/부산기업법무사",
+      "intent": "corporate-ops-observed",
+      "supporting": ["/부산기업법률자문", "/부산법인법무사"],
+      "note": "2026-10-28 PC·MO #3 /부산기업법무사. title·H1 변경 금지. 정기 법률실무는 /부산기업법률자문(title이 '부산 기업 법률자문…'이라 이 행과 충돌 없음)."
+    },
+    "부산 임원변경등기": {
+      "owner": "/부산임원변경등기",
+      "intent": "procedure",
+      "aliasOf": "부산 임원변경 법무사",
+      "note": "2026-10-28 PC·MO #2 /부산임원변경등기 보호. /부산임원변경전문법무사·/임원변경등기자가진단은 supporting 역할(title이 이 검색어로 시작하지 않음)."
+    },
+    "부산 본점이전등기": {
+      "owner": "/부산본점이전등기",
+      "intent": "procedure",
+      "aliasOf": "부산 본점이전",
+      "note": "2026-10-28 PC·MO #1. title '부산 법인 본점이전등기｜…' 그대로 둘 것."
+    },
+    "부산 법인 해산 청산 법무사": {
+      "owner": "/부산법인해산청산등기",
+      "intent": "procedure",
+      "aliasOf": "부산 법인 해산 청산",
+      "note": "2026-10-28 PC·MO #1. H1('법인을 없애려면 —…')에 지역·검색어가 없어도 1위 — H1 변경 금지."
+    }
+  },
+  "noteUpdate": {
+    "부산 법인등기 법무사": "2026-10-19 PC webdocs 2nd, 2026-10-28 PC·MO #3 /부산등기법무사(owner /부산법인등기는 두 번 모두 미노출). Intent owner stays /부산법인등기. Do not retitle the 등기 hub. /부산법인등기 H2의 '법인전문 법무사' 문구는 '부산 법인전문 법무사' owner와 겹침 — 정리 대상.",
+    "부산 법인등기": "2026-10-28 PC·MO #1 /영도구법인등기(seo-landing region-service 공통 템플릿). /영도구법인등기 title·H1·첫 문단, src/lib/seo-landing/combinations.ts region-service h1 템플릿, page-data.ts 기본 title·description, buildMetaTitle 변경 금지. AI 브리핑 출처 /부산국제금융센터법인등기·/부산지방법원동부지원등기과법인등기.",
+    "부산 법인설립 법무사": "Title/H1 owner is 설립등기. 2026-10-19 PC webdocs 1st, 2026-10-28 PC·MO #2 설립전문(AI 브리핑 출처는 둘 다) — do not retitle either URL.",
+    "부산 법인설립": "2026-10-28 PC·MO #5 /부산법인설립등기(1~3 설립지원센터·부산시청 등 공공). 공공기관 문구 흉내 금지.",
+    "부산 법인설립등기": "2026-10-28 PC·MO #1 /부산법인설립등기 보호.",
+    "부산 회사 법무사": "2026-10-19 PC webdocs 3rd /부산법인법무사 → 2026-10-28 PC #1·MO #2 /부산법인설립전문법무사(/부산법인법무사 미노출). owner 유지(title·H1 소유). 설립전문 title·H1에 '회사' 넣지 말 것. Do not retitle 설립등기. Do not create /부산회사법무사.",
+    "부산 법인법무": "2026-10-28 SERP는 '법무법인'(변호사 조직) 의도(테헤란·나무위키·YK). 법무사 페이지에 '법무법인' 표현·변호사 업무를 넣어 노리지 말 것. 표시만 유지.",
+    "부산 법인 법무사": "HOME ranks this query(2026-10-28 PC·MO #5). /부산법인법무사 title/H1 is 부산 회사 법무사. Do not retitle HOME.",
+    "부산 법인전문 법무사": "2026-10-18 ranking URL is 설립전문, 2026-10-28 PC·MO #4 같은 URL. Do not alias to 법인등기. /부산법인전문법무사는 noindex(canonical→설립전문)."
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T11:40:51.385Z",
+  "generatedAt": "2026-10-28T12:55:29.620Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1646,
   "format": "urlset",
@@ -1010,7 +1010,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-20",
+      "lastmod": "2026-10-28",
       "filename": "tier-4-regions.xml",
       "count": 600
     },
@@ -2778,13 +2778,13 @@
       "path": "/부산경매권리분석",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B2%BD%EB%A7%A4%EA%B6%8C%EB%A6%AC%EB%B6%84%EC%84%9D",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산경매낙찰등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B2%BD%EB%A7%A4%EB%82%99%EC%B0%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산공동대표변경등기",
@@ -2916,7 +2916,7 @@
       "path": "/부산대표이사변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8C%80%ED%91%9C%EC%9D%B4%EC%82%AC%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산대학교특강",
@@ -3156,13 +3156,13 @@
       "path": "/부산법인등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산법인등기과태료",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산법인등기복대리",
@@ -3198,7 +3198,7 @@
       "path": "/부산법인설립등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산법인설립전문법무사",
@@ -3228,7 +3228,7 @@
       "path": "/부산법인해산청산등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%ED%95%B4%EC%82%B0%EC%B2%AD%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산변제공탁",
@@ -3246,7 +3246,7 @@
       "path": "/부산본점이전등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산부담부증여등기",
@@ -3348,7 +3348,7 @@
       "path": "/부산사업목적변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%82%AC%EC%97%85%EB%AA%A9%EC%A0%81%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산사회복지기관강사",
@@ -3606,7 +3606,7 @@
       "path": "/부산임원변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산임원변경전문법무사",
@@ -3756,19 +3756,19 @@
       "path": "/부산지방법원동부지원등기과법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B3%BC%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원동부지원등기과법인등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B3%BC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원동부지원등기과부동산등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B3%BC%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원동부지원법무사",
@@ -3798,25 +3798,25 @@
       "path": "/부산지방법원등기국법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원등기국법인등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원등기국부동산등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원등기국상속등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/부산지방법원법무사",
@@ -8370,7 +8370,7 @@
       "path": "/법인변경등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%9D%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/법인설립등기과태료",
@@ -8466,7 +8466,7 @@
       "path": "/본점이전등기비용",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9",
-      "lastmod": "2026-10-10"
+      "lastmod": "2026-10-28"
     },
     {
       "path": "/본점이전등기필요서류",
