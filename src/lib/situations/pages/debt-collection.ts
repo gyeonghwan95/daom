@@ -503,6 +503,7 @@ export const debtCollectionPages = [
     ],
     extraLinks: [
       { href: "/부산지방법원채권회수", label: "부산 채권회수" },
+      { href: "/부산채권압류추심명령", label: "채권압류·추심명령" },
       { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
       { href: "/가처분신청서류준비", label: "가처분 신청 서류 준비" },
       {
@@ -520,6 +521,11 @@ export const debtCollectionPages = [
         question: "집행 비용은 누가 내나요?",
         answer:
           "원칙적으로 채권자가 선납하고, 회수 시 채무자 부담으로 정산되는 구조입니다. 사건별로 확인이 필요합니다.",
+      },
+      {
+        question: "부산 강제집행 법무사가 경매·배당까지 대신하나요?",
+        answer:
+          "법무사는 강제집행 신청서와 첨부서류의 작성·제출을 담당합니다. 경매 진행과 배당 실시는 법원, 배당금 수령은 채권자 본인입니다. 통장·급여만 압류할 때는 채권압류·추심명령 안내를 보시면 됩니다.",
       },
     ],
     relatedSituationSlugs: [

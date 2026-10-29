@@ -202,6 +202,7 @@ export const 내용증명작성준비Override: SearchIntentContent = {
   ],
   primaryKeywords: [
     "내용증명 작성 준비",
+    "부산 내용증명 법무사",
     "내용증명 보내기 전",
     "독촉 내용증명 자료",
   ],

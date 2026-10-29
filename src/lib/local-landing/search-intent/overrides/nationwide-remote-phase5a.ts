@@ -13,9 +13,9 @@ export const 가처분신청서류준비Override: SearchIntentContent = {
   category: "concern",
   title: "가처분 신청 서류 준비",
   metaTitle:
-    "가처분 신청 전 준비서류｜점유·처분금지 등 보전 자료를 먼저 정리하는 방법",
+    "부산 부동산 가처분 법무사｜처분금지·점유이전금지 신청 전 서류",
   metaDescription:
-    "가처분 신청 전 피보전권리·보전의 필요·목적물·관할·담보 개요를 원격으로 점검합니다. 가압류(금전) 신청·소송 대리와 구분하며 인용·결과를 보장하지 않습니다.",
+    "부산 부동산 가처분 법무사 안내. 처분금지·점유이전금지 가처분은 금전 가압류와 목적이 다릅니다. 피보전권리·목적물·보전 필요를 원격으로 정리하며, 가처분 말소·소송 대리와 페이지를 나눕니다.",
   h1: "가처분을 신청하기 전, 피보전권리와 목적물부터 정리하는 방법",
   eyebrow: "가처분 신청 · 서류 준비",
   heroParagraphs: [
@@ -32,7 +32,8 @@ export const 가처분신청서류준비Override: SearchIntentContent = {
   ],
   primaryKeywords: [
     "가처분 신청 서류",
-    "가처분 신청 준비",
+    "부산 부동산 가처분 법무사",
+    "부산 가처분 법무사",
     "점유이전금지가처분 서류",
   ],
   searchIntents: [
@@ -74,6 +75,11 @@ export const 가처분신청서류준비Override: SearchIntentContent = {
       answer:
         "아닙니다. 가처분은 보전 절차이며 유형·인용·집행 범위에 따라 효과가 다릅니다. 명도·인도 본안과 역할을 구분합니다.",
     },
+    {
+      question: "이미 등기된 가처분을 지우려면 이 페이지인가요?",
+      answer:
+        "아닙니다. 이 페이지는 신청 전 서류 준비입니다. 이미 기입된 처분금지가처분을 등기부에서 지울 때는 가처분 말소등기 안내를 보세요.",
+    },
   ],
   relatedCaseLinks: [],
   relatedServiceLinks: [
@@ -83,6 +89,7 @@ export const 가처분신청서류준비Override: SearchIntentContent = {
       href: "/채권압류추심서류준비",
       label: "채권압류·추심 서류 준비",
     },
+    { href: "/부산가처분말소등기", label: "부산 가처분 말소등기" },
     { href: "/민사소송", label: "민사·서류 안내 허브" },
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
   ],

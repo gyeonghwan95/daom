@@ -4,5 +4,5 @@
  */
 export const renunciationLastmod = {
   slug: "부산상속포기",
-  dateModified: "2026-10-02",
+  dateModified: "2026-10-29",
 } as const;

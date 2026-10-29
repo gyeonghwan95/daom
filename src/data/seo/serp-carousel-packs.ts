@@ -4,6 +4,7 @@
  * 카드 4개 미만·이미지 중복이면 리졸버가 팩을 버린다.
  */
 import { getHireIntentCarouselPack } from "@/data/seo/hire-intent-100-champions";
+import { getUserListed27CarouselPack } from "@/data/seo/user-listed-27-champions";
 import {
   LECTURE_SERP_CAROUSEL_URLS,
   lecturePackUrls,
@@ -658,6 +659,8 @@ export function getExplicitSerpCarouselPack(
       urls: lecturePackUrls(path),
     };
   }
+  const listed = getUserListed27CarouselPack(path);
+  if (listed) return listed;
   const hire = getHireIntentCarouselPack(path);
   if (hire) return hire;
   return undefined;

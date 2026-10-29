@@ -1,5 +1,6 @@
 import { getSeoEntityById } from "@/data/seo";
 import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
+import { getSeoLandingSlugOverlay } from "@/data/seo/region-service-overlays";
 import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import { createPageData, ensureMinContent } from "@/lib/pageData/template-helpers";
 import type { PageData, PageRelatedLink } from "@/lib/pageData/types";
@@ -15,6 +16,8 @@ function metaTitleForSeoLanding(
   spec: SeoLandingSpec,
   overlay?: ReturnType<typeof getLocalChampionOverlay>,
 ): string {
+  const slugOverlay = getSeoLandingSlugOverlay(spec.slug);
+  if (slugOverlay?.metaTitle) return slugOverlay.metaTitle;
   if (overlay?.metaTitle) return overlay.metaTitle;
   if (spec.slug === "등기소근처법무사") {
     return "등기소 근처 법무사 | 관할·위치 확인 - 다옴법무사사무소";
@@ -45,6 +48,8 @@ function metaDescriptionFor(
   spec: SeoLandingSpec,
   overlay?: ReturnType<typeof getLocalChampionOverlay>,
 ): string {
+  const slugOverlay = getSeoLandingSlugOverlay(spec.slug);
+  if (slugOverlay?.metaDescription) return slugOverlay.metaDescription;
   if (overlay?.metaDescription) return overlay.metaDescription;
   const region = spec.regionLabel ?? "부산";
   const service = spec.serviceName ?? "법무사 업무";
@@ -198,6 +203,7 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     metaTitle: metaTitleForSeoLanding(spec, overlayMeta),
     metaDescription: metaDescriptionFor(spec, overlayMeta),
     h1:
+      getSeoLandingSlugOverlay(spec.slug)?.h1 ??
       overlayMeta?.h1 ??
       (spec.slug === "등기소근처법무사"
         ? "등기소 근처 법무사를 찾을 때 먼저 확인할 것"

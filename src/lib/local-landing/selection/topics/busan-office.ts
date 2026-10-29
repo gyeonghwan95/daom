@@ -172,6 +172,7 @@ export const 부산법무사무소: SelectionHubContent = {
       ],
       links: [
         { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
+        { href: "/부산법원근처법무사", label: "법원 앞 검색과 센텀 접수" },
         { href: "/busan-legal-map", label: "부산 구·군 법률지도" },
       ],
     },

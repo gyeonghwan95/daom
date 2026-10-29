@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "note": "한 PRIMARY QUERY는 indexable URL 하나. supporting은 링크·문맥만. 2026-09-22: 등기전문·법인전문·법인등기·보상등기·울산 상속 ownership 정리. 2026-10-04: 서비스 유니버스 Wave 1 — 근저당 말소·공유물분할·개명·변제공탁·임차권등기·해산청산·집단·PF·가압류·집행문·불이행자명부·배당요구·등록부 정정·실종선고. 2026-10-24: 타지역+상속+법무사 city champions.",
   "queries": {
     "부산 법무사": {
@@ -3152,6 +3152,142 @@
       "intent": "procedure",
       "aliasOf": "부산 법인 해산 청산",
       "note": "2026-10-28 PC·MO #1. H1('법인을 없애려면 —…')에 지역·검색어가 없어도 1위 — H1 변경 금지."
+    },
+    "부산 법무사 전화상담": {
+      "owner": "/부산법무사상담",
+      "intent": "phone-consult",
+      "supporting": [
+        "/부산법무사비대면상담",
+        "/contact"
+      ],
+      "note": "2026-10-29. Do not steal 부산 법무사 상담 owner. Online channel is /부산법무사비대면상담."
+    },
+    "부산 법무사 온라인상담": {
+      "owner": "/부산법무사비대면상담",
+      "intent": "online-consult",
+      "supporting": [
+        "/부산법무사상담"
+      ]
+    },
+    "부산 비대면 법무사": {
+      "owner": "/부산법무사비대면상담",
+      "intent": "remote-lawyer",
+      "aliasOf": "부산 법무사 온라인상담"
+    },
+    "부산 온라인 법무사": {
+      "owner": "/부산법무사비대면상담",
+      "intent": "remote-lawyer",
+      "aliasOf": "부산 법무사 온라인상담"
+    },
+    "부산 상속포기 상담": {
+      "owner": "/부산상속포기",
+      "intent": "renunciation-consult",
+      "note": "TITLE_FROZEN compact only. Do not lengthen /부산상속포기 title. 부산 상속 상담 stays /부산상속법무사."
+    },
+    "부산진구 상속 법무사": {
+      "owner": "/부산진구상속등기",
+      "intent": "district-inheritance",
+      "supporting": [
+        "/부산상속법무사",
+        "/부산진구법무사"
+      ],
+      "note": "Do not champion /부산진구법무사 (geo hub) or /업무사례/*."
+    },
+    "부산 남구 상속 법무사": {
+      "owner": "/남구상속등기",
+      "intent": "district-inheritance",
+      "supporting": [
+        "/부산상속법무사",
+        "/남구법무사"
+      ],
+      "note": "Not /남구법무사. Not 울산/대구 남구 업무사례."
+    },
+    "기장 상속 법무사": {
+      "owner": "/기장상속등기",
+      "intent": "district-inheritance",
+      "supporting": [
+        "/기장군상속등기",
+        "/기장군법무사",
+        "/부산상속법무사"
+      ],
+      "note": "Do not champion /기장군법무사. 기장군 상속 법무사 is /기장군상속등기."
+    },
+    "기장군 상속 법무사": {
+      "owner": "/기장군상속등기",
+      "intent": "district-inheritance"
+    },
+    "부산 법원 앞 법무사": {
+      "owner": "/부산법원근처법무사",
+      "intent": "court-proximity-honest",
+      "supporting": [
+        "/부산법무사무소",
+        "/연제구법무사"
+      ],
+      "note": "Office is Centum. Do not fake 법원 앞 NAP. Do not steal HOME 부산 법무사 or /연제구법무사."
+    },
+    "부산 법원 근처 법무사": {
+      "owner": "/부산법원근처법무사",
+      "intent": "court-proximity-honest",
+      "aliasOf": "부산 법원 앞 법무사"
+    },
+    "부산 유언 법무사": {
+      "owner": "/부산유언검인",
+      "intent": "will-probate",
+      "supporting": [
+        "/유언공증준비",
+        "/부산상속법무사"
+      ]
+    },
+    "부산 부동산 가압류 법무사": {
+      "owner": "/부산가압류신청",
+      "intent": "real-estate-provisional-attachment",
+      "supporting": [
+        "/부산가압류말소등기"
+      ],
+      "note": "Not 말소. 채권가압류 is same owner with object split. Judgment collection is /부산채권압류추심명령."
+    },
+    "부산 채권가압류 법무사": {
+      "owner": "/부산가압류신청",
+      "intent": "claim-provisional-attachment",
+      "aliasOf": "부산 부동산 가압류 법무사"
+    },
+    "부산 부동산 가처분 법무사": {
+      "owner": "/가처분신청서류준비",
+      "intent": "injunction-filing",
+      "supporting": [
+        "/부산가처분말소등기"
+      ],
+      "note": "Not 말소. Not 가압류."
+    },
+    "부산 가처분 법무사": {
+      "owner": "/가처분신청서류준비",
+      "intent": "injunction-filing",
+      "aliasOf": "부산 부동산 가처분 법무사"
+    },
+    "부산 채권추심 법무사": {
+      "owner": "/부산채권압류추심명령",
+      "intent": "post-judgment-garnishment",
+      "supporting": [
+        "/situations/판결-후-강제집행",
+        "/부산가압류신청"
+      ]
+    },
+    "부산 강제집행 법무사": {
+      "owner": "/situations/판결-후-강제집행",
+      "intent": "post-judgment-execution",
+      "supporting": [
+        "/부산채권압류추심명령",
+        "/부산집행문부여신청"
+      ]
+    },
+    "부산 임대차 분쟁 법무사": {
+      "owner": "/부산전세보증금반환법무사",
+      "intent": "lease-deposit-dispute",
+      "supporting": [
+        "/부산임차권등기명령",
+        "/전세사기피해대응절차"
+      ],
+      "note": "Do not steal 부산 전세사기 법무사 owner."
     }
   }
 }

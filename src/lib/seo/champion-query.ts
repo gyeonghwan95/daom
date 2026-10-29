@@ -1,5 +1,6 @@
 import { hireIntentExactKeywordChampions } from "@/data/seo/hire-intent-100-champions";
 import { lectureExactKeywordChampions } from "@/data/seo/lecture-100-champions";
+import { userListed27ExactKeywordChampions } from "@/data/seo/user-listed-27-champions";
 import { BUSAN_DISTRICT_HUB_PATHS } from "@/lib/geo/busan-district-hubs";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 
@@ -446,7 +447,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   },
   {
     path: BUSAN_CONSULT_CHAMPION_PATH,
-    compactQueries: ["부산법무사상담"],
+    compactQueries: ["부산법무사상담", "부산법무사전화상담"],
   },
   {
     path: "/부산법률상담",
@@ -464,6 +465,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
       "부산상속포기",
       "상속포기3개월",
       "상속포기방법",
+      "부산상속포기상담",
     ],
   },
   {
@@ -730,6 +732,7 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
     compactQueries: ["부동산등기비용", "등기비용"],
   },
   ...CITY_INHERITANCE_CHAMPIONS,
+  ...userListed27ExactKeywordChampions(),
   ...hireIntentExactKeywordChampions(),
 ];
 

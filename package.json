@@ -115,6 +115,7 @@
     "audit:corporate-inflow-ready": "npx --yes tsx scripts/check-corporate-inflow-serp-ready.ts",
     "audit:missed-inflow-ready": "npx --yes tsx scripts/check-missed-inflow-serp-ready.ts",
     "audit:hire-intent-100-ready": "npx --yes tsx scripts/check-hire-intent-100-serp-ready.ts",
+    "audit:user-listed-27-ready": "npx --yes tsx scripts/check-user-listed-27-serp-ready.ts",
     "generate:carousel-images": "npx --yes tsx scripts/generate-carousel-images.ts",
     "generate:serp-hooks": "npx --yes tsx scripts/generate-serp-card-hooks.ts",
     "thumbnails:premium": "npx --yes tsx scripts/generate-premium-thumbnails.ts",

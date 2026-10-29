@@ -121,6 +121,30 @@ export const busanConsultSpec: PrioritySeoSpec = {
       ],
     },
     {
+      id: "phone-consult",
+      title: "전화상담으로 시작할 때",
+      blocks: [
+        {
+          kind: "p",
+          parts: [
+            "부산 법무사 전화상담은 방문 전에 기한과 절차 종류를 가리는 단계입니다. 평일 09:00–18:00에 010-4277-1279로 상황 한 줄과 날짜(사망일·잔금일·취임일·법원 문서를 받은 날)를 말씀해 주시면, 안윤정 법무사가 등기·가정법원 신고·법원 서류 중 어디인지부터 나눕니다.",
+          ],
+        },
+        {
+          kind: "list",
+          items: [
+            ["전화로 확인하는 것 — 필요한 절차, 급한 기한, 대략 필요한 서류"],
+            ["전화만으로는 확정하지 않는 것 — 정확한 보수·세금, 승소·인용 여부"],
+            [
+              "카카오톡·문의 양식으로 이어갈 때 — ",
+              { href: "/부산법무사비대면상담", label: "온라인·비대면 상담 안내" },
+              "에서 가능한 범위를 확인하세요",
+            ],
+          ],
+        },
+      ],
+    },
+    {
       id: "first-contact",
       title: "처음 연락할 때 말할 내용",
       blocks: [
@@ -275,6 +299,11 @@ export const busanConsultSpec: PrioritySeoSpec = {
         "어떤 절차가 필요한지, 기한이 급한지, 대략 어떤 서류가 필요한지는 전화로도 확인할 수 있습니다. 정확한 비용과 가능 여부는 서류를 본 뒤 말씀드립니다.",
     },
     {
+      question: "부산 법무사 전화상담만 받고 맡겨도 되나요?",
+      answer:
+        "네. 전화로 절차와 기한만 확인한 뒤 위임 여부를 정하시면 됩니다. 온라인으로 서류 사진을 보내 이어가려면 비대면 상담 안내를 보시면 됩니다.",
+    },
+    {
       question: "부산에 살지 않아도 상담할 수 있나요?",
       answer:
         "전화와 서류 사진으로 상담할 수 있습니다. 진행은 부동산 소재지나 사건 관할을 기준으로 하므로, 원본 전달 방법과 함께 안내합니다.",
@@ -307,5 +336,5 @@ export const busanConsultSpec: PrioritySeoSpec = {
   },
   officeNote: PRIORITY_OFFICE_NOTE,
   reviewNote: LOCAL_REVIEW_NOTE,
-  dateModified: "2026-10-01",
+  dateModified: "2026-10-29",
 };

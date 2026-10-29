@@ -7,6 +7,10 @@ import {
   HIRE_INTENT_100_TARGETS,
 } from "@/data/seo/hire-intent-100-champions";
 import {
+  USER_LISTED_27_EXTRA,
+  USER_LISTED_27_TARGETS,
+} from "@/data/seo/user-listed-27-champions";
+import {
   LECTURE_100_TARGETS,
   LECTURE_EXTRA_INFLOW,
 } from "@/data/seo/lecture-100-champions";
@@ -21,6 +25,13 @@ const LECTURE_CHAMPION_BY_QUERY = new Map(
 
 const HIRE_INTENT_CHAMPION_BY_QUERY = new Map(
   HIRE_INTENT_100_TARGETS.map((row) => [row.query, row.champion]),
+);
+
+const USER_LISTED_27_CHAMPION_BY_QUERY = new Map(
+  [...USER_LISTED_27_TARGETS, ...USER_LISTED_27_EXTRA].map((row) => [
+    row.query,
+    row.champion,
+  ]),
 );
 
 export type PageRelationRole =
@@ -626,6 +637,10 @@ export function getChampionForTargetQuery(query: string): {
   const lectureChampion = LECTURE_CHAMPION_BY_QUERY.get(query);
   if (lectureChampion) {
     return { query, champion: lectureChampion, intent: "lecture-hiring" };
+  }
+  const listedChampion = USER_LISTED_27_CHAMPION_BY_QUERY.get(query);
+  if (listedChampion) {
+    return { query, champion: listedChampion, intent: "user-listed-27" };
   }
   const hireChampion = HIRE_INTENT_CHAMPION_BY_QUERY.get(query);
   if (hireChampion) {
