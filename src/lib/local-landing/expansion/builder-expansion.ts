@@ -31,7 +31,10 @@ import {
   fallbackRegionHubMeta,
   getRegionHubIdentity,
 } from "../region-hub-identity";
-import { buildJurisdictionGuideForRegionKey } from "@/lib/geo/busan-registry";
+import {
+  buildJurisdictionGuideForRegionKey,
+  getRegistryOfficeForRegionKey,
+} from "@/lib/geo/busan-registry";
 import { formatPlaceList, withRegionLabel } from "../region-label";
 
 /** 관할 안내에서 법인 본점(상업등기) 문장 대신 상속등기 관할을 쓰는 상속 안내 페이지(같은 builder의 /부산법무사비용 등은 그대로) */
@@ -230,7 +233,49 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     label: neighborhoodSlugToLabel(slug),
   }));
 
+  // 구 허브의 업무별 접수처 — 부동산등기 등기소는 SSOT(busan-registry), 법인등기는 부산 전역 등기국
+  const registryOffice = identity?.filingTable ? getRegistryOfficeForRegionKey(config.regionKey) : null;
+  const filingSection = registryOffice
+    ? [
+        {
+          title: `${config.regionLabel}에서 맡기는 업무별 접수처`,
+          body: `같은 ${config.regionLabel} 사건이라도 업무에 따라 접수하는 기관이 다릅니다. 부동산은 소재지, 회사는 본점, 상속포기·한정승인은 고인의 마지막 주소를 기준으로 봅니다.`,
+          table: {
+            caption: `${config.regionLabel} 업무별 접수처`,
+            columns: [
+              { key: "work", header: "업무" },
+              { key: "office", header: "접수처" },
+              { key: "basis", header: "기준" },
+            ],
+            rows: [
+              {
+                work: "부동산등기(상속·매매·증여·근저당)",
+                office: `${registryOffice.name}(${registryOffice.address})`,
+                basis: `${config.regionLabel} 부동산 소재지`,
+              },
+              {
+                work: "법인등기(설립·임원변경·본점이전)",
+                office: "부산지방법원 등기국(부산광역시 연제구 법원로 8)",
+                basis: "부산광역시 안 본점 — 등기소의 설치와 관할구역에 관한 규칙 제4조 제1항",
+              },
+              {
+                work: "상속포기·한정승인",
+                office: "고인의 마지막 주소지 가정법원(부산이면 부산가정법원)",
+                basis: "상속인 주소지가 아니라 고인의 마지막 주소",
+              },
+              {
+                work: "개인회생·파산",
+                office: "부산회생법원",
+                basis: "부산 거주 채무자 사건 대부분(사건별 확인)",
+              },
+            ],
+          },
+        },
+      ]
+    : [];
+
   const extraPageSections = [
+    ...filingSection,
     {
       title: `이 페이지에서 다루는 ${config.regionLabel} 업무`,
       body: `통계로 ‘많다’고 단정하지 않습니다. ${config.regionLabel}에서 자주 문의하시는 아래 업무를 중심으로 안내합니다.`,

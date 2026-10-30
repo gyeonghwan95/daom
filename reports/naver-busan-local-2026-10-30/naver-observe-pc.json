@@ -1,0 +1,675 @@
+[
+ {
+  "query": "부산법무사",
+  "observedAtKST": "2026-10-30 21:56:08",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1171205877",
+    "1072287152",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "19714691",
+    "2058743206"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:blog.naver.com/",
+   "news:www.aflnews.co.kr/news/articleView.html",
+   "qra:blog.naver.com/alu0280"
+  ]
+ },
+ {
+  "query": "부산 상속 법무사",
+  "observedAtKST": "2026-10-30 21:56:13",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "2009180992",
+    "31156804",
+    "1288400871",
+    "1710188850",
+    "1526596949",
+    "1649288125",
+    "2082734392"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:kin.naver.com/",
+   "qra:blog.naver.com/zvl0a"
+  ]
+ },
+ {
+  "query": "부산 상속",
+  "observedAtKST": "2026-10-30 21:56:18",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "aipick:kin.naver.com/profile/index.naver",
+   "news:www.newsworks.co.kr/news/articleView.html",
+   "qra:kiwoolaw.com/"
+  ]
+ },
+ {
+  "query": "부산 법무사 상속",
+  "observedAtKST": "2026-10-30 21:56:22",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": {
+   "ids": [
+    "31156804",
+    "1288400871",
+    "1710188850",
+    "1526596949",
+    "1649288125",
+    "2082734392"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 2,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [],
+  "above": [
+   "ai-briefing:kin.naver.com/",
+   "qra:blog.naver.com/lwjj3"
+  ]
+ },
+ {
+  "query": "부산 상속포기 법무사",
+  "observedAtKST": "2026-10-30 21:56:27",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2009180992",
+    "35407899",
+    "1823160246",
+    "90119738",
+    "1072287152",
+    "1367132358",
+    "2035745096",
+    "1320346307"
+   ],
+   "ourOrder": 7,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:kin.naver.com/",
+   "qra:blog.naver.com/lawldh1169"
+  ]
+ },
+ {
+  "query": "부산 등기전문 법무사",
+  "observedAtKST": "2026-10-30 21:56:32",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1000682738",
+    "2076101169",
+    "31156804",
+    "1136708234",
+    "1277321216",
+    "1539838962"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "qra:blog.naver.com/t5yqwlm4i"
+  ]
+ },
+ {
+  "query": "부산 상속전문 법무사",
+  "observedAtKST": "2026-10-30 21:56:36",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "31156804",
+    "1000682738",
+    "1072287152",
+    "2076101169",
+    "1401527775",
+    "1136708234"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:kin.naver.com/",
+   "qra:blog.naver.com/kkdlaw10212"
+  ]
+ },
+ {
+  "query": "부산 법인전문 법무사",
+  "observedAtKST": "2026-10-30 21:56:41",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1277321216",
+    "1539838962",
+    "2005494815",
+    "1207672585",
+    "1136708234"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "qra:kin.naver.com/"
+  ]
+ },
+ {
+  "query": "부산 법인 법무사",
+  "observedAtKST": "2026-10-30 21:56:46",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1710188850",
+    "37003950",
+    "1385362148",
+    "1513984551",
+    "19933918"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 1,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [],
+  "above": [
+   "qra:www.lawwin.co.kr/"
+  ]
+ },
+ {
+  "query": "부산 북구 법무사",
+  "observedAtKST": "2026-10-30 21:56:50",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "21491447",
+    "1054255517",
+    "4843968169",
+    "1155358014",
+    "13355579",
+    "2042038250"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:findlaw.kr/law/부산광역시-법무사최동락사무소-16926385",
+   "qra:moneypin.biz/"
+  ]
+ },
+ {
+  "query": "가야동 법무사",
+  "observedAtKST": "2026-10-30 21:56:55",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": null,
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "news:www.housingherald.co.kr/news/articleView.html",
+   "qra:www.daangn.com/kr/"
+  ]
+ },
+ {
+  "query": "연제구 법무사",
+  "observedAtKST": "2026-10-30 21:57:00",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1171205877",
+    "1072287152",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "1823160246",
+    "1367132358"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:www.114.co.kr/main",
+   "qra:blog.naver.com/junted53131"
+  ]
+ },
+ {
+  "query": "부산 강서구 법무사",
+  "observedAtKST": "2026-10-30 21:57:04",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2044388874",
+    "1136708234",
+    "1210181580",
+    "1618749521",
+    "1305038093",
+    "1386861589"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "qra:blog.naver.com/busanlawyerkim"
+  ]
+ },
+ {
+  "query": "부산 법무사",
+  "observedAtKST": "2026-10-30 21:57:09",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1352860087",
+    "1171205877",
+    "1072287152",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "19714691",
+    "2058743206"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 3,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "related-questions:www.busanbar.or.kr/",
+   "news:www.aflnews.co.kr/news/articleView.html",
+   "qra:blog.naver.com/531corp"
+  ]
+ },
+ {
+  "query": "부산 법무사 추천",
+  "observedAtKST": "2026-10-30 21:57:14",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1171205877",
+    "1072287152",
+    "1352860087",
+    "820966630",
+    "398019771",
+    "1144111068",
+    "19714691",
+    "1367132358"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "related-questions",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 등기 법무사",
+  "observedAtKST": "2026-10-30 21:57:19",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": false,
+  "place": {
+   "ids": [
+    "1823160246",
+    "1367132358",
+    "31156804",
+    "2076101169",
+    "2064633749",
+    "1825540660"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 1,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 1,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [],
+  "above": [
+   "qra:blog.naver.com/mxiqntgdwtpo"
+  ]
+ },
+ {
+  "query": "해운대 법무사",
+  "observedAtKST": "2026-10-30 21:57:23",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "2005494815",
+    "1681663362",
+    "1541317130",
+    "2005221566",
+    "36382346",
+    "17012216",
+    "1198815756",
+    "1105737076"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 3,
+  "ourBlockOrder": 2,
+  "ourBlockType": "related-questions",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 3,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/"
+  ],
+  "above": [
+   "clip:clip.naver.com/@ilovelaw1010"
+  ]
+ },
+ {
+  "query": "부산 상속등기 법무사",
+  "observedAtKST": "2026-10-30 21:57:28",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "31156804",
+    "1823160246",
+    "1288400871",
+    "1710188850",
+    "1649288125",
+    "2082734392"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 3,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 3,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "센텀 법무사",
+  "observedAtKST": "2026-10-30 21:57:33",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1681663362",
+    "2005494815",
+    "1539838962",
+    "34714330",
+    "33078248",
+    "1065623213",
+    "13032876",
+    "11683847",
+    "2009180992"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 2,
+  "ourBlockOrder": null,
+  "ourBlockType": null,
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [],
+  "above": [
+   "clip:clip.naver.com/@3minlawyer",
+   "qra:www.youtube.com/channel/UC3uX0o1sFLj5eHdvZp2T64g"
+  ]
+ },
+ {
+  "query": "부산 부동산등기",
+  "observedAtKST": "2026-10-30 21:57:37",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1059872840",
+    "2064633749",
+    "2035745096",
+    "34291710",
+    "1779986094",
+    "2076101169"
+   ],
+   "ourOrder": 3,
+   "ourName": true
+  },
+  "blockCount": 2,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": null,
+  "ourBlogUrls": [],
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ },
+ {
+  "query": "부산 법인등기",
+  "observedAtKST": "2026-10-30 21:57:42",
+  "device": "PC(UA)",
+  "login": "no",
+  "region": "요청 IP(부산 추정, 미검증)",
+  "status": 200,
+  "ads": true,
+  "place": {
+   "ids": [
+    "1014744716",
+    "1710188850",
+    "1385362148",
+    "1421515428",
+    "1881034409",
+    "2064633749"
+   ],
+   "ourOrder": null,
+   "ourName": false
+  },
+  "blockCount": 4,
+  "ourBlockOrder": 1,
+  "ourBlockType": "ai-briefing",
+  "ourWebOrder": null,
+  "ourBlogBlockOrder": 1,
+  "ourBlogUrls": [
+   "blog.naver.com/law-yoon-91"
+  ],
+  "ourUrls": [
+   "/"
+  ],
+  "above": []
+ }
+]
