@@ -168,6 +168,18 @@ try {
   );
   console.log(`[build-static] deploy-version.json → ${commit}`);
 
+  // 다음 웹마스터도구 소유확인 PIN. robots.ts(MetadataRoute)는 주석 줄을 낼 수 없어 빌드 후 덧붙인다.
+  const daumWebmasterPin =
+    "#DaumWebMasterTool:a33efeb06d5866b650e4d43cac2d1ed0c031773680b33a86d7804bc74f469286:IvLhJkVn51ozGzUxUVcQlQ==";
+  const robotsOut = path.join(outDir, "robots.txt");
+  if (fs.existsSync(robotsOut)) {
+    const robots = fs.readFileSync(robotsOut, "utf8");
+    if (!robots.includes(daumWebmasterPin)) {
+      fs.writeFileSync(robotsOut, `${robots.trimEnd()}\n\n${daumWebmasterPin}\n`, "utf8");
+    }
+    console.log("[build-static] robots.txt ← Daum 웹마스터도구 PIN");
+  }
+
   // Footer-before-Main 정적 HTML 보정 (page 트리 Footer와 이중 안전망)
   execSync("node scripts/fix-html-dom-order.mjs", {
     stdio: "inherit",
