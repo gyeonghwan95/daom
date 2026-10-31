@@ -42,10 +42,10 @@ export function ResourceHubView() {
     { label: "의뢰 전 준비자료", href: "/resources" },
   ];
   return (
-    <div className="mx-auto max-w-5xl break-keep">
+    <div className="content-stack break-keep">
       <JsonLd data={buildBreadcrumbSchema(breadcrumbs, "/resources")} />
       <Breadcrumb items={breadcrumbs} />
-      <div className="max-w-3xl">
+      <div>
         <h1 className="text-[1.6rem] font-bold leading-snug tracking-tight text-navy md:text-[2rem]">
           의뢰 전 준비자료 — 가족·회사 담당자와 함께 확인하세요
         </h1>

@@ -69,7 +69,8 @@ function targetWidths(sourceWidth) {
  */
 const GALLERY_PREFIX = "/image/cards/gallery/";
 const GALLERY_WIDTHS = [384, 640];
-const PAGE_THUMB_PREFIX = "/image/og-pages/";
+/** 페이지별 4:3 대표 썸네일 — 크기는 src/lib/seo/page-thumbnail-size.ts 고정값 */
+const isPageThumb = (key) => key.startsWith("/image/og-pages/") || key.startsWith("/image/hero/");
 
 /**
  * 1200px 1:1 썸네일(og·카드·본문 대표 이미지)은 파생본을 만들지 않고 원본 JPG를 그대로 쓴다.
@@ -121,8 +122,8 @@ const ogKey = (key) => `/_img${key.replace(SOURCE_EXT, "")}.og.jpg`;
 
 async function processFile(file) {
   const key = toKey(file);
-  // 페이지별 1:1 썸네일은 파생본·크기 표가 모두 필요 없다(share-image.ts가 1200×1200 고정) — sharp를 열지 않는다
-  if (key.startsWith(PAGE_THUMB_PREFIX)) return { key, widths: [], written: 0, dims: {} };
+  // 페이지별 대표 썸네일은 파생본·크기 표가 모두 필요 없다(share-image.ts가 크기 고정) — sharp를 열지 않는다
+  if (isPageThumb(key)) return { key, widths: [], written: 0, dims: {} };
   const size = await displaySize(file);
   const referenced = EXTRA_SOURCES.has(file) || isReferencedInSource(key);
   const widths = !referenced || isSquareThumbnail(key)
@@ -205,8 +206,8 @@ const dimensions = {};
 const expected = new Set();
 for (const { key, widths, dims } of results.sort((a, b) => a.key.localeCompare(b.key))) {
   if (widths.length) manifest[key] = widths;
-  // 페이지별 1:1 썸네일은 모두 1200×1200 JPEG — src/lib/seo/share-image.ts가 고정값으로 처리(표를 키우지 않는다)
-  if (!key.startsWith(PAGE_THUMB_PREFIX)) dimensions[key] = dims;
+  // 페이지별 대표 썸네일은 모두 같은 크기 JPEG — src/lib/seo/share-image.ts가 고정값으로 처리(표를 키우지 않는다)
+  if (!isPageThumb(key)) dimensions[key] = dims;
   for (const w of widths) expected.add(variantFile(key, w));
   if (dims.og) expected.add(ogFile(key));
 }

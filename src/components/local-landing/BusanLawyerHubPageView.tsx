@@ -37,6 +37,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type BusanLawyerHubPageViewProps = {
   page: PageData;
@@ -80,9 +81,10 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={busanLawyerHubH1}

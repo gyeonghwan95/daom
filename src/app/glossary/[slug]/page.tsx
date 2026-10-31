@@ -10,6 +10,7 @@ import {
 } from "@/lib/glossary";
 import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -37,6 +38,7 @@ export default async function GlossaryTermPage({ params }: Props) {
   return (
     <PageContainer>
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <GlossaryTermView page={page} slug={normalized} />
       <LawyerTrustShowcase />
     </PageContainer>

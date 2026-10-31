@@ -14,6 +14,7 @@ import {
   recommendInternalLinks,
 } from "@/lib/internal-links/server";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -46,6 +47,7 @@ export default async function ToolDetailPage({ params }: Props) {
   return (
     <PageContainer>
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
       <ToolCalculatorView
         page={page}

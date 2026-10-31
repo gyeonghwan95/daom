@@ -31,6 +31,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type SituationPageViewProps = {
   page: PageData;
@@ -150,11 +151,17 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        nationwide={showNationwide}
+        slug={page.slug}
+        serviceSlug={situation.serviceSlug}
+      />
       <JsonLd
         data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
       />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={page.h1}

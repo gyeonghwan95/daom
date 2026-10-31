@@ -50,6 +50,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -151,9 +152,15 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        nationwide={showNationwide}
+        slug={page.slug}
+        serviceSlug={page.serviceSlug}
+      />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={content.h1}

@@ -22,6 +22,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import type { BusinessScopeLevel } from "@/lib/business/types";
 import { siteImages } from "@/lib/site-images";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 const SCOPE_LABELS: Record<BusinessScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -68,6 +69,7 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       <PageHero

@@ -8,6 +8,7 @@ import {
   getSearchGuideEntriesByCategory,
 } from "@/lib/local-landing/search-intent";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 export function SearchGuidesHubView() {
   const groups = getSearchGuideEntriesByCategory();
@@ -21,6 +22,7 @@ export function SearchGuidesHubView() {
       <article className="content-stack">
         <Breadcrumb items={breadcrumbs} />
         <BreadcrumbJsonLd items={breadcrumbs} currentPath="/search-guides" />
+        <PageLeadThumbnail path={"/search-guides"} />
 
         <PageHero
           h1="상황별로 확인할 안내"

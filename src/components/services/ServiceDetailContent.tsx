@@ -13,6 +13,8 @@ import { consultationCopy } from "@/lib/consultation";
 import { getTopicHubLinkForService } from "@/lib/seo/internal-links";
 import { getServiceImage } from "@/lib/site-images";
 import type { ServiceDetail } from "@/types/service";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { NATIONWIDE_SERVICE_SLUGS } from "@/lib/nationwide/show-region-chip";
 
 type ServiceDetailContentProps = {
   service: ServiceDetail;
@@ -59,6 +61,11 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         ]}
         currentPath={path}
       />
+      <PageLeadThumbnail
+        path={path}
+        nationwide={NATIONWIDE_SERVICE_SLUGS.has(service.slug)}
+        slug={service.slug}
+      />
       <JsonLd
         data={[
           buildWebPageSchema({
@@ -72,7 +79,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         ]}
       />
 
-      <PageCoverBanner image={getServiceImage(service.slug)} />
+      {hasPageLeadThumbnail(path) ? null : <PageCoverBanner image={getServiceImage(service.slug)} />}
 
       <header>
         <h1 className="page-title">{service.title}</h1>

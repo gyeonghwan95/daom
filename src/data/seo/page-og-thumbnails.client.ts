@@ -7,3 +7,8 @@ export function getPageOgThumbnail(path: string): { src: string; alt: string } |
   void path;
   return undefined;
 }
+
+export function getPageHeroThumbnail(path: string): { src: string; alt: string } | undefined {
+  void path;
+  return undefined;
+}

@@ -16,6 +16,7 @@ import {
   type SiteImageAsset,
 } from "@/lib/site-images";
 import type { ContentMeta } from "@/types/content-mdx";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type MdxArticleLayoutProps = {
   meta: ContentMeta;
@@ -67,10 +68,13 @@ export function MdxArticleLayout({
           ]}
           currentPath={meta.href}
         />
+        <PageLeadThumbnail path={meta.href} />
 
-        <div className="mt-6">
-          <PageCoverBanner image={getArticleCover(meta)} priority />
-        </div>
+        {hasPageLeadThumbnail(meta.href) ? null : (
+          <div className="mt-6">
+            <PageCoverBanner image={getArticleCover(meta)} priority />
+          </div>
+        )}
 
         <header className="mt-8 border-b border-beige-dark pb-8">
           <div className="flex flex-wrap gap-2 text-sm text-navy-light">

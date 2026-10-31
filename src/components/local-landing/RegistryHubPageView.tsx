@@ -36,6 +36,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type RegistryHubPageViewProps = {
   page: PageData;
@@ -77,9 +78,10 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={registryHubTopic.h1}

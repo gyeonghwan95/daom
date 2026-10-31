@@ -9,6 +9,7 @@ import { CollabInquiryForm } from "@/components/local-landing/CollabInquiryForm"
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 export type PracticeHubCard = {
   href: string;
@@ -35,7 +36,8 @@ export function PracticeHubPageView({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <PageCoverBanner image={cover} />
+      <PageLeadThumbnail path={page.path} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={page.h1}

@@ -15,6 +15,7 @@ import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import { getShipBreadcrumbs } from "@/lib/ship-seo";
 import type { ShipSeoSpec } from "@/lib/ship-seo/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type ShipSeoPageViewProps = {
   spec: ShipSeoSpec;
@@ -41,6 +42,7 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
     <PageContainer articleFirst>
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={spec.path} />
+      <PageLeadThumbnail path={spec.path} />
       <JsonLd data={webPage} />
       <article className="content-stack break-keep">
         <header>

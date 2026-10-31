@@ -15,6 +15,7 @@ import { getDiagnosisCtaCopy } from "@/lib/diagnosis/builder";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type DiagnosisHubViewProps = {
   page: PageData;
@@ -43,9 +44,10 @@ export function DiagnosisHubView({ page, topics }: DiagnosisHubViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <header>
         <h1 className="page-title">부산 법무사 업무별 자가진단</h1>

@@ -19,6 +19,7 @@ import {
   getCaseRegionBySlug,
   type DistrictKey,
 } from "@/lib/case-regions";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type CaseRegionPageViewProps = {
   page: PageData;
@@ -40,6 +41,7 @@ export function CaseRegionPageView({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
 
       <header className="space-y-3 border-b border-beige-dark pb-8">

@@ -71,6 +71,7 @@ import {
   corporateLegalInquiryHref,
 } from "@/lib/local-landing/corporate-legal-operations-modules";
 import { shouldShowNaverBlogMoreCta } from "@/lib/naver-blog/more-posts-cta";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 /** thin/long-tail SEO 랜딩 — 키워드 chip 도배 억제 (meta keywords는 유지) */
 const KEYWORD_CHIP_SUPPRESS_CATEGORIES = new Set<PageData["category"]>([
@@ -134,6 +135,7 @@ export function PageDataTemplate({
   recommendationSource,
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
+  const hasLead = hasPageLeadThumbnail(page.path);
   const conversionKey = resolveConversionKey(page);
   const isInheritanceSurgeryTarget =
     page.slug === "부산상속법무사" ||
@@ -219,11 +221,17 @@ export function PageDataTemplate({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        nationwide={showNationwide}
+        slug={page.slug}
+        serviceSlug={page.serviceSlug}
+      />
       <JsonLd
         data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
       />
 
-      {showCover && !resolveSerpImage(page.path) ? (
+      {showCover && !hasLead && !resolveSerpImage(page.path) ? (
         <PageCoverBanner image={cover} />
       ) : null}
 
@@ -256,7 +264,7 @@ export function PageDataTemplate({
       />
 
       {(() => {
-        const serp = resolveSerpImage(page.path);
+        const serp = hasLead ? undefined : resolveSerpImage(page.path);
         if (!serp) return null;
         return (
           <PageRepresentativeFigure

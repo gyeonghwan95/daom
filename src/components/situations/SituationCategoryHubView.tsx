@@ -14,6 +14,7 @@ import {
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type SituationCategoryHubViewProps = {
   page: PageData;
@@ -32,17 +33,18 @@ export function SituationCategoryHubView({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
           {category.shortLabel} · 상황별 안내
         </p>
         <h1 className="page-title mt-2">{page.h1}</h1>
-        <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
-        <CostInquiryNote variant="intro" className="mt-5 max-w-3xl" />
+        <p className="body-text mt-4 md:mt-5">{page.intro}</p>
+        <CostInquiryNote variant="intro" className="mt-5" />
       </header>
 
       <section className="rounded-2xl border border-beige-dark bg-beige/25 p-5 sm:p-6">

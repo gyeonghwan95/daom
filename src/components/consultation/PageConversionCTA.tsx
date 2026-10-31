@@ -110,7 +110,7 @@ export function PageConversionCTA({
         </p>
       )}
 
-      <header className={isBottom && theme !== "dark" ? "mt-2 max-w-2xl" : "max-w-2xl"}>
+      <header className={isBottom && theme !== "dark" ? "mt-2 w-full" : "w-full"}>
         <h2 className={titleClass}>{config.title}</h2>
         <p className={bodyClass}>{config.description}</p>
         {config.hint ? <p className={hintClass}>{config.hint}</p> : null}

@@ -16,6 +16,7 @@ import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { RegionalInheritanceTarget } from "@/lib/regional-inheritance/types";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type RegionalInheritanceTargetViewProps = {
   target: RegionalInheritanceTarget;
@@ -45,6 +46,7 @@ export function RegionalInheritanceTargetView({
     <PageContainer articleFirst>
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={target.path} />
+      <PageLeadThumbnail path={target.path} nationwide />
       <JsonLd data={webPage} />
       <article className="content-stack">
         <header>

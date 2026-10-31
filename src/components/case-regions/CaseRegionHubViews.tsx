@@ -9,6 +9,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { getAllContent } from "@/lib/content/loader";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 /** 공개 사례: slug가 -case면 실제 처리 사례, -consultation이면 개인정보를 빼고 일반화한 상담 사례 */
 function getPublishedCases() {
@@ -26,6 +27,7 @@ export function CaseRegionsHubView({ page }: { page: PageData }) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
 
       <header className="space-y-3">

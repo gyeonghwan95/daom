@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -23,13 +24,15 @@ import type { PageData } from "@/lib/pageData/types";
 
 type ConsultLandingPageViewProps = {
   page: PageData;
-  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) */
-  cover: SiteImageAsset;
+  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) — 시작 썸네일이 있으면 null */
+  cover: SiteImageAsset | null;
+  /** 서버에서 만든 본문 시작 썸네일 */
+  lead?: ReactNode;
   /** 서버에서 만든 구조화데이터(FAQ 포함) */
   jsonLd: Parameters<typeof JsonLd>[0]["data"];
 };
 
-export function ConsultLandingPageView({ page, cover, jsonLd }: ConsultLandingPageViewProps) {
+export function ConsultLandingPageView({ page, cover, lead, jsonLd }: ConsultLandingPageViewProps) {
   const content = getConsultLanding(page.slug);
   if (!content) return null;
 
@@ -46,6 +49,7 @@ export function ConsultLandingPageView({ page, cover, jsonLd }: ConsultLandingPa
     <article className="content-stack consult-landing">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      {lead}
       <JsonLd data={jsonLd} />
 
       {cover ? <PageCoverBanner image={cover} /> : null}

@@ -18,6 +18,7 @@ import type { PrioritySeoSpec } from "@/lib/priority-seo/types";
 import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -66,6 +67,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
     <PageContainer articleFirst>
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={spec.path} />
+      <PageLeadThumbnail path={spec.path} />
       <JsonLd data={webPage} />
       <article className="content-stack break-keep">
         <header>

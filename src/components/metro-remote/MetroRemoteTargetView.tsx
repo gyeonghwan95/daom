@@ -21,6 +21,7 @@ import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import { resolveSerpImage } from "@/lib/seo/page-visuals";
 import { resolvePageThumbnailSrc } from "@/lib/seo/page-thumbnails";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type MetroRemoteTargetViewProps = {
   spec: MetroRemoteSpec;
@@ -58,6 +59,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
     <PageContainer articleFirst>
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={spec.path} />
+      <PageLeadThumbnail path={spec.path} nationwide />
       <JsonLd data={webPage} />
       <article className="content-stack break-keep">
         <header>

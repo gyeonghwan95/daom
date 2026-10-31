@@ -6,6 +6,7 @@
 import { createRequire } from "node:module";
 import path from "node:path";
 import { FACES, CY_MAX } from "./faces.mjs";
+import { HERO_FACES, postingDisk } from "./hero-sources.mjs";
 const sharp = createRequire(path.join(process.cwd(), "package.json"))("sharp");
 
 export const SIZE = 1200;
@@ -35,12 +36,13 @@ function emWidth(text) {
  * @param {{ W: number, H: number }} canvas 출력 크기
  * @param cx 제목 가로 중심, cy 제목 세로 중심, scale 글자 크기 배율
  */
-export function titleLayout(title, canvas, cx, cy, scale = 1) {
+export function titleLayout(title, canvas, cx, cy, scale = 1, hero = false) {
   const lines = title.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, 2);
   const widest = Math.max(...lines.map(emWidth));
   const square = canvas.W === canvas.H;
-  const maxW = square ? 820 : Math.min(820, canvas.W * 0.46);
-  const maxSize = square ? 128 : Math.round(canvas.H * 0.15);
+  // 히어로(4:3): 가운데 정사각(1:1로 잘려도 남는 영역) 안에서 최대한 크게
+  const maxW = square ? 820 : hero ? Math.min(canvas.W * 0.6, canvas.H * 0.8) : Math.min(820, canvas.W * 0.46);
+  const maxSize = square ? 128 : Math.round(canvas.H * (hero ? 0.16 : 0.15));
   const minSize = square ? 84 : Math.round(canvas.H * 0.1);
   const size = Math.round(Math.max(minSize, Math.min(maxSize, Math.floor(maxW / widest))) * scale);
   const lineH = Math.round(size * 1.22);
@@ -62,21 +64,24 @@ export function titleLayout(title, canvas, cx, cy, scale = 1) {
 }
 
 /** 얼굴을 피하는 crop 탐색 */
-export function chooseCrop(W, H, faces, title, canvas, cyMax) {
+export function chooseCrop(W, H, faces, title, canvas, cyMax, hero = false) {
   const { W: OW, H: OH } = canvas;
   const square = OW === OH;
   // 1:1: 제목은 가운데 세로 42–62% · 가로 정중앙. 가로형: 세로 가운데, 가로는 가운데 또는 좌·우 1/3.
+  // 히어로(4:3): 가로는 항상 정중앙, 세로는 가운데 높이 ±14% 안에서 얼굴을 피한다.
   const cys = square
     ? Array.from({ length: Math.floor((cyMax - 500) / 20) + 1 }, (_, i) => 500 + i * 20)
-    : [OH / 2 - 20, OH / 2, OH / 2 + 20];
-  const cxs = square ? [OW / 2] : [OW / 2, OW * 0.32, OW * 0.68];
+    : hero
+      ? Array.from({ length: Math.floor((OH * 0.28) / 20) + 1 }, (_, i) => Math.round(OH * 0.36) + i * 20)
+      : [OH / 2 - 20, OH / 2, OH / 2 + 20];
+  const cxs = square || hero ? [OW / 2] : [OW / 2, OW * 0.32, OW * 0.68];
   let best = null;
   for (const [scale, sp] of [[1, 0], [0.9, 50], [0.8, 120]]) {
     for (const cx of cxs) {
       for (const cy of cys) {
-        const L = titleLayout(title, canvas, cx, cy, scale);
+        const L = titleLayout(title, canvas, cx, cy, scale, hero);
         if (L.rect.x0 < 40 || L.rect.x1 > OW - 40) continue;
-        const r = chooseCropAt(W, H, faces, L.rect, canvas);
+        const r = chooseCropAt(W, H, faces, L.rect, canvas, hero);
         if (!r) continue;
         r.score -= Math.abs(cy - OH / 2) * 3 + Math.abs(cx - OW / 2) * 0.4 + sp;
         if (!best || r.score > best.score) best = { ...r, L };
@@ -86,7 +91,7 @@ export function chooseCrop(W, H, faces, title, canvas, cyMax) {
   return best;
 }
 
-function chooseCropAt(W, H, faces, rect, canvas) {
+function chooseCropAt(W, H, faces, rect, canvas, hero = false) {
   const { W: OW, H: OH } = canvas;
   const square = OW === OH;
   const aspect = OW / OH;
@@ -128,6 +133,8 @@ function chooseCropAt(W, H, faces, rect, canvas) {
             } else {
               if (fy0 > rect.y1) pen += 260;
               if (fy0 < 40) pen += 60;
+              // 히어로를 1:1로 잘라 보여 줘도 얼굴이 남게(가운데 정사각 안)
+              if (hero && (fx0 < (OW - OH) / 2 + 20 || fx1 > (OW + OH) / 2 - 20)) pen += 160;
             }
           }
         }
@@ -144,17 +151,21 @@ function chooseCropAt(W, H, faces, rect, canvas) {
   return best;
 }
 
-export async function render({ photo, title, format = "webp", brand = true, width = SIZE, height = SIZE }) {
+export function photoDisk(photo) {
+  return photo.startsWith("@posting/") ? postingDisk(photo) : path.join(PUBLIC, photo);
+}
+
+export async function render({ photo, title, format = "webp", brand = true, width = SIZE, height = SIZE, hero = false, quality = 86 }) {
   const OW = width, OH = height;
   const canvas = { W: OW, H: OH };
-  const disk = path.join(PUBLIC, photo);
+  const disk = photoDisk(photo);
   const img = sharp(disk).rotate();
   const meta = await sharp(disk).metadata();
   const rot = (meta.orientation ?? 1) >= 5;
   const W = rot ? meta.height : meta.width;
   const H = rot ? meta.width : meta.height;
-  const faces = FACES[photo] ?? [];
-  const crop = chooseCrop(W, H, faces, title, canvas, CY_MAX[photo] ?? 740);
+  const faces = FACES[photo] ?? HERO_FACES[photo] ?? [];
+  const crop = chooseCrop(W, H, faces, title, canvas, CY_MAX[photo] ?? 740, hero);
   if (!crop) throw new Error(`no crop: ${photo} ${title}`);
   const L = crop.L;
   const left = Math.round(crop.x), top = Math.round(crop.y);
@@ -176,7 +187,9 @@ export async function render({ photo, title, format = "webp", brand = true, widt
   // 음영: 글자 중심의 넓은 타원. 얼굴 쪽으로는 부드럽게 사라지게(얼굴에는 닿지 않음).
   const midX = L.cx;
   const midY = (L.rect.y0 + L.rect.y1) / 2;
-  const ry = (L.rect.y1 - L.rect.y0) / 2 + Math.round(OH * 0.19);
+  const ry = (L.rect.y1 - L.rect.y0) / 2 + Math.round(OH * (hero ? 0.22 : 0.19));
+  // 히어로는 밝은 청사·간판 사진이 많아 글자 뒤 음영을 더 짙게(얼굴 쪽은 아래 마스크로 사라짐)
+  const glow = hero ? [0.74, 0.62, 0.28] : [0.58, 0.46, 0.18];
   const rx = OW === OH ? 760 : Math.max(420, (L.rect.x1 - L.rect.x0) / 2 + 260);
   // 세로 방향 얼굴 차단(위·아래)
   let fadeTopA = -1, fadeTopB = -1, fadeBotA = OH + 1, fadeBotB = OH + 1;
@@ -219,9 +232,9 @@ export async function render({ photo, title, format = "webp", brand = true, widt
       <stop offset="100%" stop-color="#000" stop-opacity="0.24"/>
     </radialGradient>
     <radialGradient id="glow" cx="${midX}" cy="${midY}" r="${ry}" gradientUnits="userSpaceOnUse" gradientTransform="translate(${midX} ${midY}) scale(${(rx / ry).toFixed(3)} 1) translate(${-midX} ${-midY})">
-      <stop offset="0%" stop-color="#08111d" stop-opacity="0.58"/>
-      <stop offset="45%" stop-color="#08111d" stop-opacity="0.46"/>
-      <stop offset="75%" stop-color="#08111d" stop-opacity="0.18"/>
+      <stop offset="0%" stop-color="#08111d" stop-opacity="${glow[0]}"/>
+      <stop offset="45%" stop-color="#08111d" stop-opacity="${glow[1]}"/>
+      <stop offset="75%" stop-color="#08111d" stop-opacity="${glow[2]}"/>
       <stop offset="100%" stop-color="#08111d" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="fm" x1="0" y1="0" x2="0" y2="1">${stops(fadeTopA, fadeTopB, fadeBotA, fadeBotB, OH)}</linearGradient>
@@ -248,9 +261,9 @@ export async function render({ photo, title, format = "webp", brand = true, widt
 
   const pipe = sharp(baseBuf).composite([{ input: Buffer.from(svg) }]);
   const buf = format === "jpg"
-    ? await pipe.jpeg({ quality: 86, mozjpeg: true, chromaSubsampling: "4:4:4" }).toBuffer()
+    ? await pipe.jpeg({ quality, mozjpeg: true, chromaSubsampling: "4:4:4" }).toBuffer()
     : format === "png"
       ? await pipe.png({ compressionLevel: 9, palette: false }).toBuffer()
-      : await pipe.webp({ quality: 86, smartSubsample: true }).toBuffer();
+      : await pipe.webp({ quality, smartSubsample: true }).toBuffer();
   return { buf, crop: { left, top, width: cw, height: ch, upscale: +upscale.toFixed(2), cx: L.cx, cy: L.cy }, size: L.size };
 }

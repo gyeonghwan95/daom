@@ -33,7 +33,7 @@ export function B2BHero({
       <p className="body-text max-w-3xl text-[0.9375rem] leading-relaxed text-navy/80 md:text-base">
         {intro}
       </p>
-      <CostInquiryNote variant="intro" className="max-w-3xl" />
+      <CostInquiryNote variant="intro" />
       <div className="flex flex-wrap gap-3">
         <Link
           href={primaryCta.href}

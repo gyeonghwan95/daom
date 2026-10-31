@@ -45,6 +45,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import type { LecturePageContent } from "@/lib/lectures/types";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type LecturePageViewProps = {
   page: PageData;
@@ -60,6 +61,7 @@ export function LecturePageView({ page }: LecturePageViewProps) {
       <article className="lecture-page content-stack">
         <Breadcrumb items={page.breadcrumbs} />
         <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+        <PageLeadThumbnail path={page.path} />
         <JsonLd
           data={buildJsonLdForPageData({
             ...page,

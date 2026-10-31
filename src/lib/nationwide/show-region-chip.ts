@@ -1,3 +1,4 @@
+import { isBusanDistrictHubPath } from "@/lib/geo/busan-district-hubs";
 import { NATIONWIDE_PAGE_SLUGS } from "./pages";
 
 /** 업무안내 — 전국·비대면 수임이 가능한 서비스 */
@@ -90,6 +91,45 @@ export function shouldShowNationwideRegionChip(
   if (path.startsWith("/전국") || path === "/여러지역상속부동산등기") {
     return true;
   }
+  return false;
+}
+
+/** 부산 구·동·챔피언 페이지 — 전국 안내를 내지 않는다 */
+const BUSAN_LOCAL_PATH =
+  /^\/(부산|해운대|센텀|재송|반여|광안|정관|일광|기장읍|오시리아|명지|녹산|서면|전포|연산|거제동|하단|괴정)/;
+
+/** 전국·비대면으로 진행하는 업무 허브 */
+const NATIONWIDE_TOPIC_PATHS = new Set([
+  "/상속",
+  "/법인등기",
+  "/창업법무",
+]);
+
+/**
+ * 본문 시작 썸네일 아래 '부산이 아니어도…' 한 줄.
+ * chip과 같은 전국 가능 업무만 내고, 부산 지역·상황 분류 허브·현장 업무 페이지는 빼다.
+ */
+export function shouldShowLeadNationwideNote(
+  path: string,
+  slug?: string,
+  serviceSlug?: string,
+): boolean {
+  let p = path;
+  try {
+    p = decodeURIComponent(path);
+  } catch {
+    // 이미 디코딩된 경로
+  }
+  p = p.split("?")[0].split("#")[0];
+  if (!p || p === "/") return false;
+  if (p.startsWith("/situations/분류/") || p === "/situations") return false;
+  if (isBusanDistrictHubPath(p) || BUSAN_LOCAL_PATH.test(p)) return false;
+
+  const last = slug ?? p.replace(/^\//, "").split("/").pop() ?? "";
+  if (shouldShowNationwideRegionChip(p, last, serviceSlug)) return true;
+  if (NATIONWIDE_TOPIC_PATHS.has(p)) return true;
+  if (p.startsWith("/업무사례/")) return true;
+  if (/타지역|원격|비대면/.test(p)) return true;
   return false;
 }
 

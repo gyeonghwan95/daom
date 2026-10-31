@@ -13,6 +13,7 @@ import { getCarouselManifestItemByUrl } from "@/data/seo/carousel-image-manifest
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { getFieldPhotoVisual } from "@/data/seo/field-photo-visuals";
 import { getPageOgThumbnail } from "@/data/seo/page-og-thumbnails";
+import { PAGE_THUMB_SIZE } from "@/lib/seo/page-thumbnail-size";
 import { getSerpHookImage } from "@/data/seo/serp-hook-images";
 import { getSerpOwnedImage } from "@/data/seo/serp-carousel-images";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
@@ -54,10 +55,10 @@ export function resolveSerpImage(pageUrl: string):
         caption: owned.caption,
       };
     }
-    // 여러 페이지가 같은 사진을 나눠 쓰던 곳: 페이지마다 다른 1:1 썸네일(가운데 제목, 얼굴과 겹치지 않음)
+    // 여러 페이지가 같은 사진을 나눠 쓰던 곳: 페이지마다 다른 4:3 썸네일(가운데 제목 — 1:1 카드로 잘려도 보임, 얼굴과 겹치지 않음)
     const pageOg = getPageOgThumbnail(pageUrl);
     if (pageOg) {
-      return { src: encodePublicSrc(pageOg.src), alt: pageOg.alt, width: 1200, height: 1200 };
+      return { src: encodePublicSrc(pageOg.src), alt: pageOg.alt, ...PAGE_THUMB_SIZE };
     }
     // 초상 기반 visual이 없는 페이지만: 주제와 같은 실제 현장·업무 사진(field-photo-visuals)
     const field = getFieldPhotoVisual(pageUrl);

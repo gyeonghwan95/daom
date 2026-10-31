@@ -1,5 +1,6 @@
 import dimensions from "@/generated/image-dimensions.json";
 import { getAbsoluteAssetUrl } from "@/lib/seo/social";
+import { PAGE_THUMB_SIZE } from "@/lib/seo/page-thumbnail-size";
 
 /**
  * 공유·검색 대표 이미지(og:image, twitter:image, primaryImageOfPage)를 실제 파일과 일치시킨다.
@@ -33,9 +34,9 @@ function keyOf(path: string): string {
 export function resolveShareImage(path: string, fallbackWidth = 1200, fallbackHeight = 630): ShareImage {
   if (/^https?:\/\//.test(path)) return { url: path, width: fallbackWidth, height: fallbackHeight };
   const key = keyOf(path.startsWith("/") ? path : `/${path}`);
-  // 페이지별 1:1 썸네일(npm run thumbnails:premium)은 모두 1200×1200 JPEG — 크기 표(image-dimensions.json)에 넣지 않는다
-  if (key.startsWith("/image/og-pages/")) {
-    return { url: getAbsoluteAssetUrl(key), width: 1200, height: 1200, type: "image/jpeg" };
+  // 페이지별 4:3 대표 썸네일(npm run thumbnails:hero)은 모두 같은 크기의 JPEG — 크기 표(image-dimensions.json)에 넣지 않는다
+  if (key.startsWith("/image/og-pages/") || key.startsWith("/image/hero/")) {
+    return { url: getAbsoluteAssetUrl(key), ...PAGE_THUMB_SIZE, type: "image/jpeg" };
   }
   const entry = DIMS[key];
   if (!entry) return { url: getAbsoluteAssetUrl(path), width: fallbackWidth, height: fallbackHeight };

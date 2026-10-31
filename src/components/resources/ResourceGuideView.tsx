@@ -65,7 +65,7 @@ export function ResourceGuideView({ guide }: { guide: ResourceGuide }) {
   };
 
   return (
-    <article className="mx-auto max-w-3xl break-keep" data-resource={guide.slug}>
+    <article className="content-stack break-keep" data-resource={guide.slug}>
       <JsonLd data={buildBreadcrumbSchema(breadcrumbs, path)} />
       <Breadcrumb items={breadcrumbs} />
 

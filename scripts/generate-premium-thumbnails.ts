@@ -6,6 +6,7 @@
  * - 대표 페이지 SERP·og(public/generated/serp/**), 사이트 캐러셀 카드(public/generated/thumbnails/**)
  * - 메인 갤러리(public/image/cards/gallery), 본문 텍스트 카드(public/image/cards/*.jpg)
  * - 페이지 공유용 og(public/image/og/*.jpg — 4:3 본문 기록 사진은 제외), 자료실 og(public/resources/og)
+ * - --hero: 페이지별 4:3 대표 썸네일(public/image/og-pages, 대표 페이지는 public/image/hero) — 본문 시작·og:image·관련 카드
  * - 네이버 블로그 업로드용(reports/naver-15kw-2026-10-14/blog-editor-pack)
  *
  * - 원본 사진의 얼굴·몸은 변형하지 않는다(crop·톤 보정·타이포만).
@@ -101,7 +102,7 @@ async function buildJobs(): Promise<Job[]> {
     jobs.push({ set: "hook", url, out: `/images/generated/carousel/hooks/${slug}.webp`, src: original(o.src), title: o.headline });
   }
   for (const v of PAGE_VISUALS) {
-    jobs.push({ set: "serp", out: v.representativeImage, src: original(v.representativeImage), title: v.cardHeadline });
+    jobs.push({ set: "serp", url: v.url, out: v.representativeImage, src: original(v.representativeImage), title: v.cardHeadline });
     // 사이트 캐러셀 카드(SeoCarouselCard → resolvePageThumbnailSrc)용 — SERP 이미지와 같은 그림을 WebP로
     jobs.push({ set: "thumb", out: v.cardImage, src: original(v.representativeImage), title: v.cardHeadline, sameAs: v.representativeImage });
   }
@@ -186,7 +187,15 @@ async function main() {
 
   // --missing: 아직 없는 출력만 만든다(새 페이지를 추가했을 때)
   const onlyMissing = process.argv.includes("--missing");
+
+  // --hero: 페이지 시작 4:3 대표 썸네일 — 같은 훅 문구, 지역·업무에 맞는 실제 사진
+  if (process.argv.includes("--hero")) {
+    await runHero(allJobs, resolve, { only, outDir, onlyMissing, dry, render });
+    return;
+  }
   for (const j of jobs) {
+    // 페이지별 og(/image/og-pages)는 4:3 히어로가 같은 파일에 그린다(--hero) — 여기서 1:1로 덮어쓰지 않는다
+    if (j.set === "page") continue;
     const { photo, title } = resolve(j);
     if (onlyMissing && !outDir && existsSync(diskPath(j.out))) continue;
     if (!existsSync(path.join(PUBLIC, photo))) {
@@ -220,18 +229,155 @@ async function main() {
       const { photo, title } = resolve(j);
       return { url: j.url!, src: j.out, alt: altFor(title, photo) };
     });
-  const pageRows = allJobs
-    .filter((j) => j.set === "page")
-    .map((j) => {
-      const { photo, title } = resolve(j);
-      return { url: j.url!, src: j.out, alt: altFor(title, photo) };
-    });
   if (!outDir && !dry) {
     writeHookMap(hookRows);
-    writePageMap(pageRows);
     if (!only) await writeContactSheets(rendered);
   }
   console.log(JSON.stringify({ total: jobs.length, generated: done, hooks: hookRows.length, failed }, null, 2));
+  if (failed.length) process.exitCode = 1;
+}
+
+// src/lib/seo/page-thumbnail-size.ts 와 같은 값
+const HERO_W = 1280;
+const HERO_H = 960;
+const HERO_NO_CROP_FALLBACK = "/image/썸네일-사무실_정면.jpg";
+
+/** og-pages가 없는 대표 페이지만 새 파일(/image/hero) — 배포 파일 수 한도(Cloudflare Pages 무료 20,000) 때문에 og-pages 파일을 그대로 다시 쓴다 */
+function heroOut(url: string): string {
+  let slug = url;
+  try {
+    slug = decodeURIComponent(url);
+  } catch {
+    // 이미 디코딩된 경로
+  }
+  slug = slug.replace(/^\//, "").replaceAll("/", "-") || "home";
+  return `/image/hero/${slug}.jpg`;
+}
+
+type RenderFn = (o: {
+  photo: string;
+  title: string;
+  format: string;
+  width: number;
+  height: number;
+  hero: boolean;
+  quality: number;
+}) => Promise<{ buf: Buffer }>;
+
+async function runHero(
+  allJobs: Job[],
+  resolve: (j: Job) => { photo: string; title: string },
+  opts: { only?: string; outDir?: string; onlyMissing: boolean; dry: boolean; render: RenderFn },
+) {
+  const { pickHeroPhoto, heroPhotoDesc } = await import(pathToFileURL(path.join(LIB, "hero-sources.mjs")).href);
+  const { photoDesc } = await import(pathToFileURL(path.join(LIB, "photo-desc.mjs")).href);
+  const { photoDisk } = await import(pathToFileURL(path.join(LIB, "render.mjs")).href);
+
+  // 대표 페이지(serp) 문구가 우선, 다음 지역·키워드 훅, 나머지는 페이지별 og 문구.
+  // 출력: og-pages가 있는 페이지는 그 파일(og:image도 이 4:3), 없는 대표 페이지만 /image/hero(og:image는 기존 그대로)
+  const ogOut = new Map(allJobs.filter((j) => j.set === "page" && j.url).map((j) => [j.url!, j.out]));
+  const byUrl = new Map<string, { url: string; out: string; og: boolean; photo: string; title: string }>();
+  for (const set of ["serp", "hook", "page"]) {
+    for (const j of allJobs) {
+      if (j.set !== set || !j.url || byUrl.has(j.url)) continue;
+      const { photo, title } = resolve(j);
+      const og = ogOut.get(j.url);
+      byUrl.set(j.url, { url: j.url, out: og ?? heroOut(j.url), og: Boolean(og), photo: pickHeroPhoto(j.url, photo), title });
+    }
+  }
+  const rows = [...byUrl.values()].sort((a, b) => a.url.localeCompare(b.url, "ko"));
+  // --sample=N: 검토용으로 고르게 N장만(--out-dir와 함께)
+  const sample = Number(process.argv.find((a) => a.startsWith("--sample="))?.slice(9) ?? 0);
+  const filtered = rows.filter((r) => !opts.only || r.url.includes(opts.only) || r.out.includes(opts.only));
+  const step = sample > 0 ? Math.max(1, Math.floor(filtered.length / sample)) : 1;
+  const targets = filtered.filter((_, i) => i % step === 0);
+  const failed: string[] = [];
+  const rendered: { set: string; file: string }[] = [];
+  let next = 0;
+  const worker = async () => {
+    while (next < targets.length) {
+      const r = targets[next++];
+      const disk = path.join(PUBLIC, r.out);
+      if (opts.onlyMissing && !opts.outDir && existsSync(disk)) continue;
+      if (!existsSync(photoDisk(r.photo))) {
+        failed.push(`${r.url}: missing ${r.photo}`);
+        continue;
+      }
+      try {
+        const draw = (photo: string) =>
+          opts.render({
+            photo,
+            title: r.title,
+            format: "jpg",
+            width: HERO_W,
+            height: HERO_H,
+            hero: true,
+            quality: 82,
+          });
+        // 얼굴이 화면 대부분인 사진은 가운데 제목을 얹을 crop이 없다 — 얼굴을 가리지 않는 사무실 사진으로 바꾼다
+        const { buf } = await draw(r.photo).catch((e) => {
+          if (!/no crop/.test(String(e))) throw e;
+          r.photo = HERO_NO_CROP_FALLBACK;
+          return draw(r.photo);
+        });
+        if (opts.outDir) {
+          mkdirSync(opts.outDir, { recursive: true });
+          const file = path.join(opts.outDir, r.out.split("/").pop()!);
+          writeFileSync(file, buf);
+          rendered.push({ set: "hero-review", file });
+        } else if (!opts.dry) {
+          mkdirSync(path.dirname(disk), { recursive: true });
+          writeFileSync(`${disk}.tmp`, buf);
+          await renameWithRetry(`${disk}.tmp`, disk);
+          rendered.push({ set: "hero", file: disk });
+        }
+      } catch (e) {
+        failed.push(`${r.url}: ${String(e)}`);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 4 }, worker));
+
+  if (!opts.outDir && !opts.dry) {
+    const line = (r: (typeof rows)[number]) => {
+      const alt = `${r.title.replace(/\n/g, " ")} — ${heroPhotoDesc(r.photo) ?? photoDesc(r.photo)}`;
+      return `  ${JSON.stringify(r.url)}: [${JSON.stringify(r.out)}, ${JSON.stringify(alt)}],`;
+    };
+    const ready = rows.filter((r) => existsSync(path.join(PUBLIC, r.out)));
+    const body = [
+      "/**",
+      " * 생성물 — scripts/generate-premium-thumbnails.ts --hero (npm run thumbnails:hero)",
+      " * 직접 수정하지 않는다. 문구는 scripts/premium-thumbnails/page-og.json·copy.mjs, 사진 고르기는 hero-sources.mjs 에서 고친다.",
+      " * 경로 → [4:3 대표 썸네일(src/lib/seo/page-thumbnail-size.ts), alt]. 제목은 가운데 정사각 안(1:1로 잘려도 보임), 얼굴과 겹치지 않음.",
+      " * PAGE_OG_THUMBNAILS: og:image·본문 시작 썸네일·관련 카드에 함께 쓴다.",
+      " * PAGE_HERO_ONLY: 대표 페이지 — 본문 시작 썸네일에만 쓰고 og:image는 기존 SERP 이미지를 유지한다.",
+      " */",
+      "const PAGE_OG_THUMBNAILS: Record<string, readonly [src: string, alt: string]> = {",
+      ...ready.filter((r) => r.og).map(line),
+      "};",
+      "",
+      "const PAGE_HERO_ONLY: Record<string, readonly [src: string, alt: string]> = {",
+      ...ready.filter((r) => !r.og).map(line),
+      "};",
+      "",
+      "export function getPageOgThumbnail(path: string): { src: string; alt: string } | undefined {",
+      "  const hit = PAGE_OG_THUMBNAILS[path];",
+      "  return hit ? { src: hit[0], alt: hit[1] } : undefined;",
+      "}",
+      "",
+      "/** 본문 시작 4:3 썸네일 */",
+      "export function getPageHeroThumbnail(path: string): { src: string; alt: string } | undefined {",
+      "  const hit = PAGE_OG_THUMBNAILS[path] ?? PAGE_HERO_ONLY[path];",
+      "  return hit ? { src: hit[0], alt: hit[1] } : undefined;",
+      "}",
+      "",
+    ].join("\n");
+    const mapFile = path.join(ROOT, "src/data/seo/page-og-thumbnails.ts");
+    writeFileSync(`${mapFile}.tmp`, body, "utf8");
+    await renameWithRetry(`${mapFile}.tmp`, mapFile);
+  }
+  if (rendered.length && (opts.outDir || !opts.only)) await writeContactSheets(rendered);
+  console.log(JSON.stringify({ pages: rows.length, rendered: rendered.length, failed }, null, 2));
   if (failed.length) process.exitCode = 1;
 }
 
@@ -262,32 +408,6 @@ function writeHookMap(rows: { url: string; src: string; alt: string }[]) {
     "",
   ].join("\n");
   writeFileSync(path.join(ROOT, "src/data/seo/serp-hook-images.ts"), body, "utf8");
-}
-
-/**
- * src/data/seo/page-og-thumbnails.ts — 페이지별 1:1 썸네일 연결.
- * resolveSerpImage()가 읽어 og:image·본문 대표 이미지·관련 카드에 함께 쓴다.
- * 서버 전용 데이터(클라이언트 번들에 넣지 않는다).
- */
-function writePageMap(rows: { url: string; src: string; alt: string }[]) {
-  const lines = rows.map((r) => `  ${JSON.stringify(r.url)}: [${JSON.stringify(r.src)}, ${JSON.stringify(r.alt)}],`);
-  const body = [
-    "/**",
-    " * 생성물 — scripts/generate-premium-thumbnails.ts (npm run thumbnails:premium)",
-    " * 직접 수정하지 않는다. 문구·사진은 scripts/premium-thumbnails/page-og.json 에서 고친다.",
-    " * 경로 → [1:1 썸네일(1200×1200), alt]. 여러 페이지가 같은 사진을 나눠 쓰던 og·본문 대표 이미지를 페이지마다 다르게 한다.",
-    " */",
-    "const PAGE_OG_THUMBNAILS: Record<string, readonly [src: string, alt: string]> = {",
-    ...lines,
-    "};",
-    "",
-    "export function getPageOgThumbnail(path: string): { src: string; alt: string } | undefined {",
-    "  const hit = PAGE_OG_THUMBNAILS[path];",
-    "  return hit ? { src: hit[0], alt: hit[1] } : undefined;",
-    "}",
-    "",
-  ].join("\n");
-  writeFileSync(path.join(ROOT, "src/data/seo/page-og-thumbnails.ts"), body, "utf8");
 }
 
 /** reports/thumbnails/contact-sheet-<set>.jpg — 묶음별 검토용 모아보기 */

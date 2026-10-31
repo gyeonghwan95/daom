@@ -24,6 +24,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { CounselScopeLevel } from "@/lib/counsel-intent/types";
 import { siteImages } from "@/lib/site-images";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 const SCOPE_LABELS: Record<CounselScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -98,6 +99,7 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} slug={page.slug} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       <PageHero

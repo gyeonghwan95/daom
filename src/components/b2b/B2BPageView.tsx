@@ -28,6 +28,7 @@ import {
 import { collaborationCategoryLabels } from "@/lib/b2b/collaboration-registry";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type B2BPageViewProps = {
   page: PageData;
@@ -96,6 +97,7 @@ export function B2BPageView({ page }: B2BPageViewProps) {
     <article className="b2b-page content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       {categoryLabel && !isHub && !isInquiry ? (

@@ -14,7 +14,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <Tag
-      className={`mx-auto w-full ${fullWidth ? "max-w-none" : "max-w-[1280px]"} px-4 md:px-6 xl:px-8 ${className}`}
+      className={`mx-auto w-full ${fullWidth ? "max-w-none" : "max-w-[var(--shell-width)]"} px-4 md:px-6 xl:px-8 ${className}`}
     >
       {children}
     </Tag>

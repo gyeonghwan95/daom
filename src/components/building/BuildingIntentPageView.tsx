@@ -22,6 +22,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { siteImages } from "@/lib/site-images";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type BuildingIntentPageViewProps = {
   page: PageData;
@@ -133,6 +134,11 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        slug={page.slug}
+        serviceSlug={page.serviceSlug}
+      />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       <PageHero

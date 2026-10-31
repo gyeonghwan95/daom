@@ -66,6 +66,7 @@ import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { createPageMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { RegionCoverageSection } from "@/components/seo/RegionCoverageSection";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type Props = {
   params: Promise<{ landingSlug: string; childSlug: string }>;
@@ -261,6 +262,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
       <PageContainer>
         <Breadcrumb items={page.breadcrumbs} />
         <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+        <PageLeadThumbnail path={page.path} />
         <JsonLd data={buildJsonLdForPageData(page)} />
         <article>
           <LectureHistoryDetailView entry={entry} />

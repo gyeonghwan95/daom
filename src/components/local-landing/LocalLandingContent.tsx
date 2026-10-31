@@ -14,6 +14,7 @@ import { RelatedBlogPosts } from "@/components/local-landing/RelatedBlogPosts";
 import { buildFaqPageSchema, buildLandingPageArticleSchema, buildServicePageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
 import { getServiceImage, siteImages } from "@/lib/site-images";
 import type { LocalLandingPage } from "@/types/local-landing";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type LocalLandingContentProps = {
   page: LocalLandingPage;
@@ -56,6 +57,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
     <article className="content-stack">
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd
         data={[
           buildWebPageSchema({
@@ -70,7 +72,7 @@ export function LocalLandingContent({ page }: LocalLandingContentProps) {
         ]}
       />
 
-      <PageCoverBanner image={getCoverImage(page)} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={getCoverImage(page)} />}
 
       <header>
         <p className="text-sm font-medium text-navy-light">

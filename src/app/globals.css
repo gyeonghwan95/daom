@@ -37,8 +37,10 @@
   --warning-text: #4a3614;
   --focus-ring: #152a45;
 
-  /* Layout — 본문 가독성 폭 (기본 약 780px, PC 960~1088px) · 카드·표는 섹션에서 확장 가능 */
+  /* Layout — 본문 한 폭. 한글 17px 기준 40~50자, 표·카드가 한눈에 들어오는 896px.
+     페이지마다 760/960/1088/1440으로 갈라지지 않게 셸도 1280으로 고정한다. */
   --article-width: min(48.75rem, 100%);
+  --shell-width: 80rem;
   --content-measure: var(--article-width);
   --prose-width: var(--article-width);
   --content-gap: 1.75rem;
@@ -81,19 +83,7 @@
 @media (min-width: 64rem) {
   :root {
     --header-height: 5rem;
-  }
-}
-
-/* PC — 본문 칼럼을 넓혀 표·카드·단계를 한눈에 본다 (좌측 목차 열 제외 폭 기준) */
-@media (min-width: 80rem) {
-  :root {
-    --article-width: min(60rem, 100%);
-  }
-}
-
-@media (min-width: 90rem) {
-  :root {
-    --article-width: min(68rem, 100%);
+    --article-width: min(56rem, 100%);
   }
 }
 
@@ -2147,6 +2137,20 @@ body.mobile-menu-open .mobile-bottom-cta {
   /* content-stack 안의 좁은 max-w-* 는 부모와 동일 폭으로 */
   .content-stack :is(.max-w-xl, .max-w-2xl, .max-w-3xl, .max-w-4xl, .prose-measure) {
     max-width: 100%;
+  }
+
+  /* 브레드크럼·썸네일이 본문 상자 밖에 있어도 같은 폭·가운데 정렬 */
+  .page-lead-thumbnail {
+    width: 100%;
+    max-width: var(--content-measure);
+    margin-inline: auto;
+  }
+
+  #main-content > div > .min-w-0 > *,
+  #main-content > div > [data-section-nav-grid] > .min-w-0 > * {
+    width: 100%;
+    max-width: var(--content-measure);
+    margin-inline: auto;
   }
 
   /* ── Home fullpage (Swiper) ── */
@@ -10702,4 +10706,14 @@ a.admin-page-identity__path:hover {
   display: inline-flex;
   align-items: center;
   min-height: 2.5rem;
+}
+
+/*
+ * 본문 한 폭. Tailwind max-w-* 유틸은 @layer utilities라
+ * components 레이어의 .content-stack :is(...) 규칙을 이긴다.
+ * 레이어 밖에 두어 헤더 소개·상담 카드가 본문과 같은 896px가 되게 한다.
+ */
+.content-stack :is(.max-w-xl, .max-w-2xl, .max-w-3xl, .max-w-4xl, .prose-measure),
+.content-stack header :is(p, aside, .decision-card) {
+  max-width: 100%;
 }

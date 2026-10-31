@@ -29,6 +29,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { getDirectConsultationChannels } from "@/lib/contact";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type SelectionHubPageViewProps = {
   page: PageData;
@@ -111,9 +112,15 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        nationwide={showNationwide}
+        slug={page.slug}
+        serviceSlug={page.serviceSlug}
+      />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={content.h1}

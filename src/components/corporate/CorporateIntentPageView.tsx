@@ -26,6 +26,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -143,6 +144,12 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail
+        path={page.path}
+        nationwide={showNationwide}
+        slug={page.slug}
+        serviceSlug={page.serviceSlug}
+      />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       <PageHero

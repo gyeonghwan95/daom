@@ -26,6 +26,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type PreservationRegistrationPageViewProps = {
   page: PageData;
@@ -62,6 +63,7 @@ export function PreservationRegistrationPageView({
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd
         data={buildJsonLdForPageData(faqSchemaPage, {
           extraFaqs: getConversionFaqsForPage(
@@ -71,7 +73,7 @@ export function PreservationRegistrationPageView({
         })}
       />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={content.h1}

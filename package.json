@@ -119,6 +119,7 @@
     "generate:carousel-images": "npx --yes tsx scripts/generate-carousel-images.ts",
     "generate:serp-hooks": "npx --yes tsx scripts/generate-serp-card-hooks.ts",
     "thumbnails:premium": "npx --yes tsx scripts/generate-premium-thumbnails.ts",
+    "thumbnails:hero": "npx --yes tsx scripts/generate-premium-thumbnails.ts --hero",
     "thumbnails:generate": "npx --yes tsx scripts/generate-page-thumbnails.ts",
     "thumbnails:validate": "npx --yes tsx scripts/validate-page-thumbnails.ts",
     "thumbnails:contact-sheet": "npx --yes tsx scripts/generate-page-thumbnails.ts --force",

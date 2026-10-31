@@ -23,6 +23,7 @@ import type {
 } from "@/lib/naver-recovery/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -56,6 +57,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
     <PageContainer articleFirst>
       <Breadcrumb items={page.breadcrumbs} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} />
       <JsonLd data={webPage} />
       <article className="content-stack">
         <header>

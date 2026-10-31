@@ -62,7 +62,7 @@ export function InflowIntentRail() {
   );
 
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-4 md:px-6 xl:max-w-[1440px] xl:px-8">
+    <div className="mx-auto w-full max-w-[var(--shell-width)] px-4 md:px-6 xl:px-8">
       {excludeNav ? (
         rail
       ) : (

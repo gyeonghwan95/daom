@@ -8,6 +8,7 @@ import { SiteImage } from "@/components/media/SiteImage";
 import type { SiteImageAsset } from "@/lib/site-images";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import type { RelatedLink } from "@/types/content";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type PageContentSectionProps = {
   h1: string;
@@ -51,12 +52,17 @@ export function PageContentSection({
         <>
           <Breadcrumb items={breadcrumbs} />
           {currentPath && (
-            <BreadcrumbJsonLd items={breadcrumbs} currentPath={currentPath} />
+            <>
+              <BreadcrumbJsonLd items={breadcrumbs} currentPath={currentPath} />
+              <PageLeadThumbnail path={currentPath} />
+            </>
           )}
         </>
       )}
 
-      {coverImage && <PageCoverBanner image={coverImage} priority />}
+      {coverImage && !(currentPath && hasPageLeadThumbnail(currentPath)) && (
+        <PageCoverBanner image={coverImage} priority />
+      )}
 
       <header>
         {introSideImage ? (
@@ -87,10 +93,10 @@ export function PageContentSection({
             {lead ? (
               <p className="mt-3 text-[1.25rem] font-bold leading-snug tracking-tight text-navy md:text-[1.6rem]">{lead}</p>
             ) : null}
-            <p className="body-text mt-4 max-w-3xl md:mt-5">{intro}</p>
+            <p className="body-text mt-4 md:mt-5">{intro}</p>
           </>
         )}
-        {showCostNote ? <CostInquiryNote variant="intro" className="mt-5 max-w-3xl" /> : null}
+        {showCostNote ? <CostInquiryNote variant="intro" className="mt-5" /> : null}
       </header>
 
       {afterIntro}

@@ -30,6 +30,7 @@ import type { TopicHubPage } from "@/lib/topic-hubs/types";
 import { ComparisonTable } from "@/components/readability";
 import { SectionTable } from "@/components/readability/SectionTable";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type TopicHubContentProps = {
   page: TopicHubPage;
@@ -161,6 +162,7 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
     <article className="content-stack">
       <Breadcrumb items={breadcrumbs} />
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={page.path} />
+      <PageLeadThumbnail path={page.path} slug={page.slug} />
       <JsonLd
         data={[
           buildWebPageSchema({
@@ -175,7 +177,7 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
         ]}
       />
 
-      <PageCoverBanner image={getServiceImage(page.primaryServiceSlug)} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={getServiceImage(page.primaryServiceSlug)} />}
 
       <header>
         <p className="text-sm font-medium text-navy-light">부산 · 토픽 허브</p>
