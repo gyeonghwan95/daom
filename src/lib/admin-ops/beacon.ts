@@ -1,6 +1,11 @@
-import type { AnalyticsEventInput } from "@/lib/admin-ops/types";
+import type { AcquisitionEntry, AnalyticsEventInput } from "@/lib/admin-ops/types";
 import { isAdminAnalyticsExcluded } from "@/lib/admin-ops/analytics-exclude";
-import { classifyReferrer, isExcludedAnalyticsPath, normalizePath } from "@/lib/admin-ops/utils";
+import {
+  bareAnalyticsHost,
+  classifyReferrer,
+  isExcludedAnalyticsPath,
+  normalizePath,
+} from "@/lib/admin-ops/utils";
 
 /** 같은 URL 재마운트·Strict Mode·HMR·이중 전송 방지 (GA 페이지뷰 ≠ 새로고침 폭주) */
 const PV_DEDUPE_MS = 30_000;
@@ -42,6 +47,54 @@ function getSessionId(): string {
   }
 }
 
+const ATTRIBUTION_KEY = "daom_attr";
+
+type StoredAttribution = AcquisitionEntry & { sid: string };
+
+function readUtm(): Pick<AcquisitionEntry, "us" | "um" | "uc"> {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const pick = (name: string) => params.get(name)?.trim().slice(0, 60) || undefined;
+    return {
+      us: pick("utm_source"),
+      um: pick("utm_medium"),
+      uc: pick("utm_campaign"),
+    };
+  } catch {
+    return {};
+  }
+}
+
+/** 세션(sid)의 진입 정보. 같은 sid 안에서는 첫 page_view의 값을 유지한다. */
+function loadAttribution(sid: string): StoredAttribution | null {
+  if (!sid) return null;
+  try {
+    const raw = sessionStorage.getItem(ATTRIBUTION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as StoredAttribution;
+    return parsed?.sid === sid ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveAttribution(attr: StoredAttribution): void {
+  try {
+    sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(attr));
+  } catch {
+    /* private mode */
+  }
+}
+
+function buildEntry(path: string, referrerHost: string | undefined): AcquisitionEntry {
+  const utm = readUtm();
+  const channel = classifyReferrer(referrerHost, window.location.hostname);
+  const ch = channel === "direct" && utm.us ? "campaign" : channel;
+  const host =
+    referrerHost && ch !== "internal" ? bareAnalyticsHost(referrerHost) : undefined;
+  return { ch, host, ...utm, lp: path };
+}
+
 /** sendBeacon XOR fetch — 실패 시 재전송하면 서버가 이미 기록한 이벤트가 중복된다. */
 function postCollect(body: string): void {
   const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
@@ -80,34 +133,31 @@ export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
     const deviceType =
       window.matchMedia("(max-width: 768px)").matches ? "mobile" : "desktop";
 
-    let campaign = input.campaign;
-    if (!campaign) {
-      try {
-        const utm = new URLSearchParams(window.location.search).get("utm_source");
-        if (utm) campaign = utm.slice(0, 80);
-      } catch {
-        /* ignore */
-      }
+    const sid = getSessionId();
+    let attribution = loadAttribution(sid);
+    // 세션 첫 page_view = 진입. 30분 무활동 후 새 sid가 되면 다시 진입으로 센다.
+    const entryView = input.type === "page_view" && !attribution;
+    if (!attribution) {
+      attribution = { sid, ...buildEntry(path, input.referrerHost ?? referrerHost) };
+      if (entryView && sid) saveAttribution(attribution);
     }
+    const entry: AcquisitionEntry = {
+      ch: attribution.ch,
+      host: attribution.host,
+      us: attribution.us,
+      um: attribution.um,
+      uc: attribution.uc,
+      lp: attribution.lp,
+    };
 
-    let referrerType =
-      input.referrerType ??
-      classifyReferrer(input.referrerHost ?? referrerHost, window.location.hostname);
-    if (input.type === "page_view") {
-      try {
-        const entryKey = "daom_analytics_entry";
-        if (sessionStorage.getItem(entryKey)) {
-          referrerType = "internal";
-        } else {
-          sessionStorage.setItem(entryKey, "1");
-        }
-      } catch {
-        /* private mode */
-      }
+    const campaign = input.campaign ?? entry.us;
+    let referrerType = input.referrerType;
+    if (!referrerType) {
+      referrerType =
+        input.type === "page_view" && !entryView ? "internal" : entry.ch;
     }
     if (campaign && referrerType === "direct") referrerType = "campaign";
 
-    const sid = getSessionId();
     const meta: Record<string, string> = { ...(input.meta || {}) };
     if (sid) meta.sid = sid;
 
@@ -119,6 +169,8 @@ export async function trackEvent(input: AnalyticsEventInput): Promise<void> {
       campaign,
       deviceType: input.deviceType ?? deviceType,
       meta,
+      entry,
+      entryView,
     };
 
     postCollect(JSON.stringify(payload));

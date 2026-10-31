@@ -15,6 +15,7 @@ const SOURCE_COLORS: Record<string, string> = {
   google: "#4285f4",
   daum: "#f5c400",
   bing: "#008373",
+  ai: "#f97316",
   sns: "#c026d3",
   campaign: "#7c3aed",
   direct: "#64748b",

@@ -8,6 +8,7 @@ import {
   parseCookie,
   verifySessionToken,
 } from "../../_lib/admin-ops/crypto";
+import { sanitizeEntry } from "../../_lib/admin-ops/acquisition";
 import { sanitizeOutboundHref } from "../../_lib/admin-ops/outbound-href";
 import { hasKv, recordAnalyticsEvent, bumpIngest } from "../../_lib/admin-ops/store";
 
@@ -161,6 +162,8 @@ export async function onRequestPost(context) {
           : "unknown",
       meta: sanitizeEventMeta(body?.meta, requestHost),
       sid: sanitizeSid(body?.meta?.sid),
+      entry: sanitizeEntry(body?.entry, requestHost),
+      isEntry: type === "page_view" && body?.entryView === true,
     });
   } catch {
     return json({ ok: true, stored: false, reason: "store_error" });

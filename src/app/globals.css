@@ -8415,6 +8415,8 @@ body.quick-inquiry-open {
     position: sticky;
     top: 0;
     z-index: 20;
+    /* 가로 스크롤 메뉴의 전체 폭이 그리드 열을 넓혀 화면 전체가 가로로 밀리지 않게 */
+    min-width: 0;
     padding: 0.65rem 0.65rem calc(0.45rem + env(safe-area-inset-top, 0px));
   }
   .admin-shell__nav-top {
@@ -9696,6 +9698,565 @@ a.admin-page-identity__path:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* ── 관리자: 유입 분석 (/admin/analytics) ── */
+.admin-acq[aria-busy="true"] .admin-acq-kpis,
+.admin-acq[aria-busy="true"] .admin-section {
+  opacity: 0.55;
+  transition: opacity 0.15s;
+}
+.admin-acq-segment {
+  display: inline-flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+}
+.admin-acq-segment button {
+  border: 0;
+  border-right: 1px solid #e2e8f0;
+  background: transparent;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0 0.7rem;
+  min-height: 2.35rem;
+  cursor: pointer;
+}
+.admin-acq-segment button:last-child {
+  border-right: 0;
+}
+.admin-acq-segment button[aria-pressed="true"] {
+  background: #0f172a;
+  color: #fff;
+}
+.admin-acq-segment button:focus-visible,
+.admin-acq-legend button:focus-visible,
+.admin-acq-sort:focus-visible,
+.admin-acq-table tr.is-clickable:focus-visible {
+  outline: 2px solid #0f62fe;
+  outline-offset: -2px;
+}
+.admin-page-header__actions:has(.admin-acq-segment) {
+  flex-wrap: wrap;
+}
+.admin-acq-range {
+  margin: -0.35rem 0 0.75rem;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+.admin-acq-range strong {
+  color: #0f172a;
+}
+.admin-acq-loading {
+  padding: 2rem 0;
+  text-align: center;
+}
+.admin-acq-kpis {
+  margin-bottom: 0.6rem;
+}
+.admin-acq-kpi__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.admin-acq-kpi .admin-metric__value {
+  font-variant-numeric: tabular-nums;
+}
+.admin-acq-spark {
+  display: block;
+  flex: 0 0 auto;
+}
+.admin-acq-spark.is-empty {
+  width: 72px;
+  height: 22px;
+}
+.admin-acq-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.65rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  font-size: 0.8rem;
+  color: #334155;
+}
+.admin-acq-actions-row > span:first-child {
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+.admin-acq-chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.admin-acq-chip {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.admin-acq-chip--phone { background: #dcfce7; color: #166534; }
+.admin-acq-chip--kakao { background: #fef9c3; color: #713f12; }
+.admin-acq-chip--talk { background: #d1fae5; color: #065f46; }
+.admin-acq-chip--reserve { background: #dbeafe; color: #1e40af; }
+.admin-acq-chip--submit { background: #ede9fe; color: #5b21b6; }
+.admin-acq-hint {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+.admin-acq-empty {
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.55rem;
+  padding: 1rem;
+}
+.admin-acq-csv {
+  min-height: 1.9rem;
+  padding: 0 0.6rem;
+  font-size: 0.72rem;
+}
+.admin-acq-table th.is-num,
+.admin-acq-table td.is-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.admin-acq-table td {
+  vertical-align: middle;
+}
+.admin-acq-table tr.is-clickable {
+  cursor: pointer;
+}
+.admin-acq-table tr.is-clickable:hover td {
+  background: #f8fafc;
+}
+.admin-acq-table tr.is-active td {
+  background: #eff6ff;
+}
+.admin-acq-table tr.is-active td:first-child {
+  box-shadow: inset 3px 0 0 #0f62fe;
+}
+.admin-acq-sort {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #475569;
+}
+.admin-acq-sort.is-active {
+  color: #0f172a;
+}
+.admin-acq-sort__icon {
+  font-size: 0.6rem;
+  color: #94a3b8;
+}
+.admin-acq-sort.is-active .admin-acq-sort__icon {
+  color: #0f62fe;
+}
+.admin-acq-more {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.admin-acq-channel {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.admin-acq-channel > i {
+  flex: 0 0 auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 999px;
+}
+.admin-acq-channel strong {
+  display: block;
+  font-size: 0.8125rem;
+}
+.admin-acq-channel small {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.admin-acq-share {
+  display: inline-grid;
+  grid-template-columns: auto 4.5rem 2.3rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+.admin-acq-share__num {
+  font-weight: 700;
+}
+.admin-acq-share__track {
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #eef2f6;
+  overflow: hidden;
+}
+.admin-acq-share__track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.admin-acq-share small,
+.admin-acq-sub {
+  color: #94a3b8;
+  font-size: 0.68rem;
+}
+.admin-acq-delta {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.admin-acq-delta--up { color: #15803d; }
+.admin-acq-delta--down { color: #b91c1c; }
+.admin-acq-delta--flat,
+.admin-acq-delta--na { color: #94a3b8; }
+.admin-acq-badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  background: #fff7ed;
+  color: #c2410c;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.admin-acq-chart {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  padding: 0.75rem;
+}
+.admin-acq-chart__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.admin-acq-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.admin-acq-legend button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  color: #334155;
+  cursor: pointer;
+  min-height: 1.8rem;
+}
+.admin-acq-legend button i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+}
+.admin-acq-legend button.is-off {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+.admin-acq-chart__plot {
+  position: relative;
+}
+.admin-acq-chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.admin-acq-chart__grid {
+  stroke: #eef2f6;
+  stroke-width: 1;
+}
+.admin-acq-chart__tick {
+  fill: #94a3b8;
+  font-size: 10px;
+}
+.admin-acq-chart__contact {
+  fill: #15803d;
+}
+.admin-acq-chart__note {
+  margin: 0.35rem 0 0;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+.admin-acq-tip {
+  position: absolute;
+  top: 0.25rem;
+  z-index: 3;
+  min-width: 12rem;
+  max-width: 15rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+  pointer-events: none;
+}
+.admin-acq-tip strong {
+  display: block;
+  color: #fff;
+  font-size: 0.78rem;
+}
+.admin-acq-tip__total,
+.admin-acq-tip__foot {
+  display: block;
+  margin-top: 0.15rem;
+  color: #94a3b8;
+}
+.admin-acq-tip ul {
+  list-style: none;
+  margin: 0.4rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+.admin-acq-tip li {
+  display: grid;
+  grid-template-columns: 0.55rem 1fr auto 2.2rem;
+  align-items: center;
+  gap: 0.35rem;
+}
+.admin-acq-tip li i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+}
+.admin-acq-tip li b {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.admin-acq-tip li small {
+  text-align: right;
+  color: #94a3b8;
+}
+.admin-acq-filterbar {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  padding: 0.45rem 0.65rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.55rem;
+  font-size: 0.8rem;
+}
+.admin-acq-filterbar .admin-btn {
+  margin-left: auto;
+  min-height: 1.9rem;
+}
+@media (max-width: 959px) {
+  .admin-acq-filterbar {
+    top: 4.25rem;
+  }
+}
+.admin-acq-split {
+  display: grid;
+  gap: 0.75rem;
+}
+.admin-acq-split > * {
+  min-width: 0;
+}
+@media (min-width: 1100px) {
+  .admin-acq-split {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+.admin-acq-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.admin-acq-toolbar .admin-input {
+  max-width: 20rem;
+}
+.admin-acq-toolbar .admin-acq-hint {
+  margin: 0;
+}
+.admin-acq-heat {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  padding: 0.75rem;
+}
+.admin-acq-heat__grid {
+  display: grid;
+  gap: 2px;
+}
+.admin-acq-heat__row {
+  display: grid;
+  grid-template-columns: 1.4rem repeat(24, minmax(0, 1fr));
+  gap: 2px;
+  align-items: center;
+}
+.admin-acq-heat__day,
+.admin-acq-heat__hour {
+  min-width: 0;
+  overflow: visible;
+  font-size: 0.65rem;
+  color: #94a3b8;
+  text-align: center;
+  white-space: nowrap;
+}
+.admin-acq-heat__cell {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: #f1f5f9;
+}
+.admin-acq-heat__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+.admin-acq-heat__foot strong {
+  color: #0f172a;
+}
+.admin-acq-heat__scale {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+.admin-acq-heat__scale i {
+  width: 4rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(15, 98, 254, 0.08), rgba(15, 98, 254, 1));
+}
+.admin-acq-details {
+  margin-top: 0.75rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  padding: 0.6rem 0.75rem;
+}
+.admin-acq-details summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.admin-acq-utm {
+  margin-top: 0.65rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.admin-acq-utm__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.admin-acq-utm__presets button {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+  min-height: 1.9rem;
+}
+.admin-acq-utm__presets button[aria-pressed="true"] {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #fff;
+}
+.admin-acq-utm__fields {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 720px) {
+  .admin-acq-utm__fields {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.admin-acq-utm__fields label {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+}
+.admin-acq-utm__fields .admin-input,
+.admin-acq-utm__out .admin-input {
+  max-width: none;
+}
+.admin-acq-utm__out {
+  display: flex;
+  gap: 0.4rem;
+}
+.admin-acq-utm__out .admin-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  background: #f8fafc;
+}
+.admin-acq-utm__help {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+.admin-acq-glossary {
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.55rem;
+  padding: 0.75rem;
+}
+@media (min-width: 960px) {
+  .admin-acq-glossary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.admin-acq-glossary div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+.admin-acq-glossary dt {
+  font-weight: 700;
+  color: #0f172a;
+}
+.admin-acq-glossary dd {
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
 }
 
 /* ── 메인 첫 화면: 강조 문장·주 행동 2개·작은 근거/링크 (2026-10-11) ── */

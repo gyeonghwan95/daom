@@ -106,20 +106,60 @@ export function isOwnAnalyticsHost(
   return false;
 }
 
+/** AI 답변·검색 서비스. google./bing. 보다 먼저 판정한다 (gemini.google.com 등). 서버 crypto.ts와 같은 목록. */
+const AI_REFERRER_DOMAINS = [
+  "chatgpt.com",
+  "chat.openai.com",
+  "perplexity.ai",
+  "gemini.google.com",
+  "bard.google.com",
+  "copilot.microsoft.com",
+  "claude.ai",
+  "wrtn.ai",
+  "you.com",
+  "phind.com",
+  "deepseek.com",
+  "grok.com",
+  "liner.com",
+  "genspark.ai",
+  "meta.ai",
+];
+
+const SNS_REFERRER_DOMAINS = [
+  "instagram.com",
+  "facebook.com",
+  "fb.com",
+  "t.co",
+  "x.com",
+  "twitter.com",
+  "threads.net",
+  "threads.com",
+  "youtube.com",
+  "youtu.be",
+  "tiktok.com",
+  "band.us",
+  "linkedin.com",
+  "lnkd.in",
+  "story.kakao.com",
+];
+
+function hostIsOrUnder(h: string, domain: string): boolean {
+  return h === domain || h.endsWith(`.${domain}`);
+}
+
 export function classifyReferrer(
   host: string | undefined,
   requestHost?: string,
 ): string {
   if (!host) return "direct";
   if (isOwnAnalyticsHost(host, requestHost)) return "internal";
-  const h = host.toLowerCase();
+  const h = bareAnalyticsHost(host);
+  if (AI_REFERRER_DOMAINS.some((d) => hostIsOrUnder(h, d))) return "ai";
+  if (SNS_REFERRER_DOMAINS.some((d) => hostIsOrUnder(h, d))) return "sns";
   if (h.includes("google.")) return "google";
   if (h.includes("naver.")) return "naver";
   if (h.includes("daum.") || h.includes("kakao.")) return "daum";
   if (h.includes("bing.")) return "bing";
-  if (h.includes("instagram.") || h.includes("facebook.") || h.includes("t.co")) {
-    return "sns";
-  }
   return "external";
 }
 

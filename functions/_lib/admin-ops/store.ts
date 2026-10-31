@@ -14,6 +14,14 @@ import {
   normalizePath,
 } from "./crypto";
 import { invalidatePublicNoticeCache } from "./edge-cache";
+import {
+  ACQ_VERSION,
+  applyAcquisition,
+  buildAcquisitionPayload,
+  dateRangeEnding,
+  mergeAcquisition,
+  slimDayForAcquisition,
+} from "./acquisition";
 
 /** Same-isolate GET memo. Does not reduce billed ops across isolates. */
 const READ_MEMO_MS = 15_000;
@@ -275,6 +283,7 @@ function mergeDay(target, source) {
     if (!target.hours) target.hours = {};
     mergeHourly(target, source);
   }
+  if (source.acq) mergeAcquisition(target, source.acq);
   return target;
 }
 
@@ -758,6 +767,7 @@ export async function recordAnalyticsEvent(env, event) {
   day.sources[source] = (day.sources[source] || 0) + (event.type === "page_view" ? 1 : 0);
   bumpDestination(day, event);
   applyHourly(day, hour, event);
+  applyAcquisition(day, event);
 
   await putJson(env.ADMIN_KV, dayKey(date, shard), day);
   await pushRecentActivity(env, event, path);
@@ -1420,6 +1430,74 @@ export async function buildMonitoring(env) {
 }
 
 export { emptyDay, KEYS, newId, formatKstDateTime, formatKstDate, kstDateRange };
+
+/** 지난 날짜 집계는 바뀌지 않으므로 colo 캐시에 둔다. 응답 캐시가 아닌 내부 집계, PII 없음. */
+const ACQ_DAY_CACHE_ORIGIN = "https://daom-admin-acq-cache.invalid";
+const ACQ_DAY_CACHE_TTL_S = 6 * 60 * 60;
+/** KV 작업은 호출당 1,000회 한도. 9키×일수×(현재+비교) 가 넘지 않도록 비교는 30일까지만. */
+const ACQ_PERIODS = [1, 7, 14, 30, 90];
+const ACQ_COMPARE_MAX_DAYS = 30;
+
+async function getDayForAcquisition(env, date, today, waitUntil) {
+  const cacheable = date < today && typeof caches !== "undefined";
+  const cacheKey = cacheable
+    ? new Request(`${ACQ_DAY_CACHE_ORIGIN}/day/${date}?v=${ACQ_VERSION}`)
+    : null;
+  if (cacheKey) {
+    try {
+      const hit = await caches.default.match(cacheKey);
+      if (hit) return await hit.json();
+    } catch {
+      /* cache miss path */
+    }
+  }
+  const slim = slimDayForAcquisition(await getDaily(env, date));
+  if (cacheKey) {
+    try {
+      const task = caches.default.put(
+        cacheKey,
+        new Response(JSON.stringify(slim), {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": `max-age=${ACQ_DAY_CACHE_TTL_S}`,
+          },
+        }),
+      );
+      if (waitUntil) waitUntil(task);
+      else await task;
+    } catch {
+      /* best effort */
+    }
+  }
+  return slim;
+}
+
+export async function buildAcquisitionReport(env, requestedDays, options = {}) {
+  const days = ACQ_PERIODS.includes(requestedDays) ? requestedDays : 30;
+  const today = formatKstDate();
+  const dates = dateRangeEnding(today, days);
+  const compare = days <= ACQ_COMPARE_MAX_DAYS;
+  const prevDates = compare ? dateRangeEnding(addKstDays(dates[0], -1), days) : [];
+  const load = (date) => getDayForAcquisition(env, date, today, options.waitUntil);
+  const [cur, prev] = await Promise.all([
+    Promise.all(dates.map(load)),
+    Promise.all(prevDates.map(load)),
+  ]);
+  return {
+    generatedAt: new Date().toISOString(),
+    timezone: "Asia/Seoul",
+    storageConfigured: hasKv(env),
+    periods: ACQ_PERIODS,
+    ...buildAcquisitionPayload({
+      days: cur,
+      prevDays: compare ? prev : null,
+      range: { start: dates[0], end: today, days },
+      compareRange: compare
+        ? { start: prevDates[0], end: prevDates[prevDates.length - 1] }
+        : null,
+    }),
+  };
+}
 
 export async function buildPagesReport(env, days = 30) {
   if (!hasKv(env)) {

@@ -3,11 +3,12 @@
 const SOURCE_LABELS: Record<string, string> = {
   direct: "직접 방문",
   google: "Google",
-  naver: "Naver",
-  daum: "Daum",
+  naver: "네이버",
+  daum: "Daum·카카오",
   bing: "Bing",
-  sns: "SNS",
-  external: "외부",
+  ai: "AI 검색",
+  sns: "SNS·영상",
+  external: "외부 사이트",
   internal: "내부",
   campaign: "캠페인",
 };

@@ -19,6 +19,7 @@ import {
 } from "../../_lib/admin-ops/crypto";
 import {
   appendAudit,
+  buildAcquisitionReport,
   buildConversionsReport,
   buildDashboard,
   buildMonitoring,
@@ -222,6 +223,14 @@ async function handleAdminRequest(context) {
       series.push(await getDaily(env, d));
     }
     return json({ ok: true, data: { days: series } });
+  }
+
+  if (key === "acquisition" && method === "GET") {
+    const days = Number(new URL(request.url).searchParams.get("days") || "30");
+    const data = await buildAcquisitionReport(env, days, {
+      waitUntil: context.waitUntil ? (task) => context.waitUntil(task) : undefined,
+    });
+    return json({ ok: true, data });
   }
 
   if (key === "pages" && method === "GET") {

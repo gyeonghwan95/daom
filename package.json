@@ -133,6 +133,7 @@
     "test:quick-inquiry": "npx --yes tsx scripts/test-quick-inquiry.mjs",
     "test:admin-url": "npx --yes tsx scripts/test-admin-url-display.ts",
     "test:admin-console": "npx --yes tsx scripts/test-admin-console.ts",
+    "test:admin-acquisition": "npx --yes tsx scripts/test-admin-acquisition.ts",
     "test:kv-zero-hotpath": "npx --yes tsx scripts/test-kv-zero-hotpath.ts",
     "audit:kv-hotpath": "npx --yes tsx scripts/kv-hotpath-audit.ts",
     "audit:glossary-business-seo": "npx --yes tsx scripts/glossary-business-seo-audit.ts",

@@ -23,6 +23,92 @@ export type AnalyticsEventType =
   | "diagnosis_complete"
   | "naver_place_click";
 
+/** 세션 진입 정보 — 첫 page_view에서 정해지고 같은 세션의 모든 이벤트에 붙는다. */
+export type AcquisitionEntry = {
+  /** 진입 채널 (naver·google·daum·bing·ai·sns·external·campaign·direct·internal) */
+  ch: string;
+  /** referrer 호스트 (www. 제거) */
+  host?: string;
+  us?: string;
+  um?: string;
+  uc?: string;
+  /** 랜딩 경로 */
+  lp: string;
+};
+
+/** 유입 지표 묶음. s=진입 세션, eng=참여 세션, cv=상담 연결 세션, m=모바일 진입. */
+export type AcquisitionMetrics = {
+  s: number;
+  pv: number;
+  eng: number;
+  cv: number;
+  m: number;
+  phone: number;
+  kakao: number;
+  talk: number;
+  reserve: number;
+  place: number;
+  submit: number;
+  cta: number;
+  start: number;
+  /** phone + kakao + talk + reserve + submit */
+  contacts: number;
+};
+
+export type AcquisitionTotals = AcquisitionMetrics & {
+  /** sources 기준 외부 진입 세션 (수집 개편 이전 날짜 포함) */
+  sessions: number;
+  internalSessions: number;
+  pageViews: number;
+  /** acq 수집 이후 날짜의 외부 진입 세션 — 비율 계산 분모 */
+  acqSessions: number;
+};
+
+export type AcquisitionChannelRow = AcquisitionMetrics & {
+  id: string;
+  sessions: number;
+  prevSessions: number | null;
+  prevConverted: number | null;
+  prevAcqSessions: number | null;
+};
+
+export type AcquisitionDimensionRow = AcquisitionMetrics & {
+  key: string;
+  prevSessions: number | null;
+  /** 랜딩별 진입 채널 구성 */
+  mix?: Record<string, number>;
+};
+
+export type AcquisitionReport = {
+  generatedAt: string;
+  timezone: "Asia/Seoul";
+  storageConfigured: boolean;
+  periods: number[];
+  range: { start: string; end: string; days: number };
+  compareRange: { start: string; end: string } | null;
+  coverage: { days: number; acqDays: number; firstAcqDate: string | null };
+  totals: AcquisitionTotals;
+  prevTotals: AcquisitionTotals | null;
+  channels: AcquisitionChannelRow[];
+  daily: Array<{
+    date: string;
+    pageViews: number;
+    sessions: number;
+    byChannel: Record<string, number>;
+    contacts: number | null;
+    converted: number | null;
+    hasAcq: boolean;
+  }>;
+  referrers: Array<AcquisitionDimensionRow & { host: string; channel: string }>;
+  landings: Array<AcquisitionDimensionRow & { path: string }>;
+  campaigns: Array<
+    AcquisitionDimensionRow & { source: string; medium: string; campaign: string }
+  >;
+  /** [월..일][0..23] 페이지뷰 */
+  weekHour: number[][];
+  devices: { mobile: number; desktop: number; unknown: number };
+};
+
 export type AnalyticsEventInput = {
   type: AnalyticsEventType;
   path: string;
