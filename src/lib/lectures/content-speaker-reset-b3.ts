@@ -137,12 +137,13 @@ export const jeonseSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.selfSupportJeonse],
   related: [
-    { href: "/청년생활법률특강", label: "청년 생활법률 특강", description: "주거·금전·계약 전반" },
+    { href: "/청년생활법률특강", label: "청년 법률 특강", description: "주거·금전·계약 전반" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "대학생 주거계약 특강" },
-    { href: "/법률강의", label: "생활법률 특강", description: "시민 연속 강좌 1회차 전·월세" },
-    { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위" },
+    { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "시민 연속 강좌 1회차 전·월세" },
+    { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "대상별 출강 범위" },
     { href: "/강의이력", label: "그동안 다녀온 강의", description: "전세사기 예방 강의 기록" },
     { href: "/전세사기피해대응절차", label: "이미 보증금 문제가 생긴 경우", description: "예방교육이 아닌 대응 절차 안내" },
+    { href: "/부산전세전문법무사", label: "계약 전 등기부 확인 상담", description: "강의가 아닌 개인 상담은 이쪽" },
   ],
   inquiryTopic: "전세사기 예방교육",
   inquiryAudience: "청년·사회초년생",
@@ -152,9 +153,9 @@ export const jeonseContent = buildTargetContent({
   slug: "전세사기예방교육",
   kind: "topic",
   title: "부산 전세사기 예방교육",
-  metaTitle: "부산 전세사기 예방교육 강사｜청년·대학생 전월세 계약 특강",
+  metaTitle: "부산 전세사기 예방교육 강사｜전세사기 예방 특강·청년 전월세 계약 강의",
   metaDescription:
-    "부산 청년·자립지원·복지기관 담당자를 위한 전세사기 예방교육 안내. 등기부·확정일자·보증·특약 확인을 60~120분 특강으로 구성하며 자립지원전담기관 강의 기록이 있습니다.",
+    "전세사기 예방교육·전세사기 예방 특강을 준비하는 청년·자립지원·복지기관 담당자를 위한 안내. 등기부·확정일자·보증·특약 확인을 60~120분으로 구성하며, 2026년 9~10월 자립지원전담기관·해운대청년채움공간 강의 기록이 있습니다.",
   h1: "부산 전세사기 예방교육, 계약 전에 확인할 것",
   eyebrow: "전세사기 예방 특강 · 주거 계약 교육",
   faqs: [
@@ -164,13 +165,23 @@ export const jeonseContent = buildTargetContent({
         "기관명, 참석 대상(청년·자립준비청년·대학생 등), 예상 인원, 희망 시간만 있으면 됩니다. 실습 여부는 인원에 맞춰 제안합니다.",
     },
     {
+      question: "전세사기 예방 특강과 전세사기 예방교육은 어떻게 다른가요?",
+      answer:
+        "같은 내용을 시간에 맞춰 나눈 것입니다. 60분 전세사기 예방 특강은 계약 전 체크리스트 중심이고, 90~120분 예방교육은 등기부 읽기 실습과 계약서 특약 점검까지 다룹니다. 전세사기 피해 예방 특강으로 요청하셔도 같은 구성으로 맞춥니다.",
+    },
+    {
+      question: "법무사가 하는 전세사기 강의는 무엇이 다른가요?",
+      answer:
+        "등기부 갑구·을구의 소유권·근저당·가압류를 읽고 신청하는 일이 법무사 실무입니다. 그래서 전세사기 강의를 실제 등기부 화면으로 설명하고, 계약 전에 무엇을 확인해야 하는지 순서대로 보여 드립니다.",
+    },
+    {
       question: "등기부등본 읽는 법만 짧게 가능한가요?",
       answer: "60분 안에서 등기부 구조와 위험 신호 중심으로 압축할 수 있습니다.",
     },
     {
       question: "자립준비청년 대상 교육 경험이 있나요?",
       answer:
-        "2026년 5월 부산광역시 자립지원전담기관에서 전세사기 예방 특강을 진행했습니다.",
+        "네. 부산광역시 자립지원전담기관에서 2026년 5월 전세사기 예방 특강을 시작으로 7월 일상분쟁, 9월 주거 법률·주거 분쟁 교육까지 이어서 진행했습니다.",
     },
     {
       question: "보증금 반환 문제를 이미 겪는 사람도 들어도 되나요?",
@@ -344,9 +355,9 @@ export const lifeLawSpec: LectureTargetSpec = {
     { href: "/부산도서관법률특강", label: "도서관 법률특강", description: "시민 연속 강좌" },
     { href: "/부산사회복지기관강사", label: "사회복지기관 강사", description: "종사자·이용자 교육" },
     { href: "/공공기관법률교육", label: "공공기관 법률교육", description: "직원·민원 응대" },
-    { href: "/청년생활법률특강", label: "청년 생활법률 특강", description: "첫 계약·첫 직장" },
-    { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "등기부·특약 실습" },
-    { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위" },
+    { href: "/청년생활법률특강", label: "청년 법률 특강", description: "첫 계약·첫 직장" },
+    { href: "/전세사기예방교육", label: "전세사기 예방교육·특강", description: "등기부·특약 실습" },
+    { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "대상별 출강 범위" },
     { href: "/강사소개", label: "강사 프로필", description: "자격·출강 기록" },
     { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 기록" },
   ],
@@ -358,9 +369,9 @@ export const lifeLawContent = buildTargetContent({
   slug: "법률강의",
   kind: "hub",
   title: "부산 법률 강의·특강",
-  metaTitle: "부산 법률 강의·특강 | 안윤정 법무사",
+  metaTitle: "부산 법률 강의·특강 | 생활법률특강·법률교육 안윤정 법무사",
   metaDescription:
-    "부산 도서관·복지관·공공기관 담당자를 위한 생활법률 특강 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다.",
+    "법률 강의·법률특강·생활법률 교육을 찾는 도서관·복지관·공공기관 담당자를 위한 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다.",
   h1: "부산 법률 강의·특강 | 안윤정 법무사 출강 안내",
   eyebrow: "생활법률 특강 · 법률 강의",
   faqs: [
@@ -532,12 +543,12 @@ export const speakerSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.changwon],
   related: [
-    { href: "/법률강의", label: "생활법률 특강", description: "시민·기관 대상" },
-    { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "부산 대면 출강" },
-    { href: "/기업법률교육", label: "기업 특강·강연", description: "임직원 계약·채권" },
+    { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "시민·기관 대상" },
+    { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "부산 대면 출강" },
+    { href: "/기업법률교육", label: "기업 법률 특강", description: "임직원 계약·채권" },
     { href: "/부산대학교특강", label: "대학교 특강", description: "비교과·진로" },
     { href: "/법무사진로특강", label: "진로특강", description: "법 관련 직업인 특강" },
-    { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "청년·자립준비청년" },
+    { href: "/전세사기예방교육", label: "전세사기 예방교육·특강", description: "청년·자립준비청년" },
     { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 기록" },
     { href: "/부산법률전문가", label: "법률 실무·공공활동", description: "강의 외 활동 소개" },
   ],

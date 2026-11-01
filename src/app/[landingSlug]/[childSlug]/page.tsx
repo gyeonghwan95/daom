@@ -7,6 +7,7 @@ import {
 } from "@/components/case-regions/CaseRegionHubViews";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { setPeerPagePath } from "@/lib/internal-links/peer-context";
+import { buildLectureEventSchema } from "@/lib/lectures/event-schema";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -259,6 +260,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
     if (!entry) notFound();
 
     const page = buildLectureHistoryDetailPageData(entry);
+    const lectureEvent = buildLectureEventSchema(entry, page.path);
 
     return (
       <PageContainer>
@@ -266,6 +268,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
         <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
         <PageLeadThumbnail path={page.path} />
         <JsonLd data={buildJsonLdForPageData(page)} />
+        {lectureEvent ? <JsonLd data={lectureEvent} /> : null}
         <article>
           <LectureHistoryDetailView entry={entry} />
         </article>

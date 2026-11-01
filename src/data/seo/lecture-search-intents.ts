@@ -327,6 +327,8 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     aliases: [
       "부산 전세사기 강사",
       "전세사기 예방 특강",
+      "전세사기 피해 예방 특강",
+      "전세사기 강의",
       "청년 전세사기 교육",
       "직원 전세사기 예방교육",
     ],

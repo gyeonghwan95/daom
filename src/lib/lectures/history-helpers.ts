@@ -3,7 +3,7 @@ import {
   type LectureHistoryEntry,
   type LectureInstitutionType,
 } from "@/lib/lectures/types";
-import { getVerifiedLectureHistory } from "@/data/lectures/history";
+import { getVerifiedLectureHistory, isUmbrellaLectureEntry } from "@/data/lectures/history";
 
 export type LectureHistoryFilters = {
   query?: string;
@@ -213,7 +213,8 @@ export function buildLectureTrackRecordSummary(
   }
 
   return {
-    lectureCount: source.length,
+    // 묶음 항목과 그 안의 개별 회차가 함께 있으면 두 번 세지 않는다
+    lectureCount: source.filter((entry) => !isUmbrellaLectureEntry(entry, source)).length,
     institutionCount: institutions.size,
     audienceTypeCount: audiences.size,
     topicCount: topics.size,

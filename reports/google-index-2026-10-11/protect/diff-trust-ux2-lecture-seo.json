@@ -1,0 +1,2458 @@
+{
+ "removedRoutes": [],
+ "addedRoutes": [],
+ "protectedFieldChanges": [
+  {
+   "route": "/강사소개",
+   "field": "linksHash",
+   "before": "e9321e78a7690ef7",
+   "after": "0699b9f6ef83141a"
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "title",
+   "before": "임팩트 스케일업 법인설립·등기 실무｜안윤정 법무사 강의 이력",
+   "after": "임팩트 스케일업 법인설립·등기 실무 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "description",
+   "before": "비스퀘어에서 진행한 비스퀘어 2026 임팩트 스케일업 마스터 클래스 법인설립·등기 실무 이력을 안내합니다. 대상: 사회적기업·초기 창업팀. 비스퀘어의 임팩트 스케일업 마스터 클래스에서 사회적기업과 초기 창업팀을 대상으로 법인설립·등기 실무를 설명했습니다. 창업 단계의 법인 형태 선택",
+   "after": "2026-09-29 비스퀘어에서 사회적기업·초기 창업팀 대상으로 진행한 강의 기록입니다. 비스퀘어의 임팩트 스케일업 마스터 클래스에서 사회적기업과 초기 창업팀을 대상으로 법인설립·등기 실무를 설명했습니다. 창업 단계의 법인 형태 선택"
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "ogTitle",
+   "before": "임팩트 스케일업 법인설립·등기 실무｜안윤정 법무사 강의 이력",
+   "after": "임팩트 스케일업 법인설립·등기 실무 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "ogDescription",
+   "before": "비스퀘어에서 진행한 비스퀘어 2026 임팩트 스케일업 마스터 클래스 법인설립·등기 실무 이력을 안내합니다. 대상: 사회적기업·초기 창업팀. 비스퀘어의 임팩트 스케일업 마스터 클래스에서 사회적기업과 초기 창업팀을 대상으로 법인설립·등기 실무를 설명했습니다. 창업 단계의 법인 형태 선택",
+   "after": "2026-09-29 비스퀘어에서 사회적기업·초기 창업팀 대상으로 진행한 강의 기록입니다. 비스퀘어의 임팩트 스케일업 마스터 클래스에서 사회적기업과 초기 창업팀을 대상으로 법인설립·등기 실무를 설명했습니다. 창업 단계의 법인 형태 선택"
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-b-square-impact-scaleup-2026-09-29.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-b-square-impact-scaleup-2026-09-29.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/b-square-impact-scaleup-2026-09-29",
+   "field": "linksHash",
+   "before": "09e91affd0ccd0ce",
+   "after": "c8108177481d9f52"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-life-law",
+   "field": "title",
+   "before": "시민도서관 생활법률 특강｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 생활법률 특강 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-life-law",
+   "field": "description",
+   "before": "부산광역시립시민도서관에서 진행한 부산광역시립시민도서관 생활법률 특강 이력을 안내합니다. 대상: 시민·성인 수강생. 부산광역시립시민도서관에서 진행한 성인 야간 생활법률 특강입니다. 전·월세계약, 생활 속 분쟁, 디지털·형사 예방 주제를 회차로 나누어 사례 중심",
+   "after": "2025~2026 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 부산광역시립시민도서관에서 진행한 성인 야간 생활법률 특강입니다. 전·월세계약, 생활 속 분쟁, 디지털·형사 예방 주제를 회차로 나누어 사례 중심"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-life-law",
+   "field": "ogTitle",
+   "before": "시민도서관 생활법률 특강｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 생활법률 특강 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-life-law",
+   "field": "ogDescription",
+   "before": "부산광역시립시민도서관에서 진행한 부산광역시립시민도서관 생활법률 특강 이력을 안내합니다. 대상: 시민·성인 수강생. 부산광역시립시민도서관에서 진행한 성인 야간 생활법률 특강입니다. 전·월세계약, 생활 속 분쟁, 디지털·형사 예방 주제를 회차로 나누어 사례 중심",
+   "after": "2025~2026 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 부산광역시립시민도서관에서 진행한 성인 야간 생활법률 특강입니다. 전·월세계약, 생활 속 분쟁, 디지털·형사 예방 주제를 회차로 나누어 사례 중심"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-life-law",
+   "field": "linksHash",
+   "before": "58df5e20faad3bbb",
+   "after": "b979d52f8b9384c4"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-1",
+   "field": "title",
+   "before": "시민도서관 1회차 · 전·월세계약｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 1회차 · 전·월세계약 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-1",
+   "field": "description",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 1회차 · 전·월세계약 이력을 안내합니다. 대상: 시민·성인 수강생. 부산광역시립시민도서관 생활법률 시리즈 1회차로, 전·월세계약에서 꼭 확인할 서류를 사례로 안내했습니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 부산광역시립시민도서관 생활법률 시리즈 1회차로, 전·월세계약에서 꼭 확인할 서류를 사례로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-1",
+   "field": "ogTitle",
+   "before": "시민도서관 1회차 · 전·월세계약｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 1회차 · 전·월세계약 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-1",
+   "field": "ogDescription",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 1회차 · 전·월세계약 이력을 안내합니다. 대상: 시민·성인 수강생. 부산광역시립시민도서관 생활법률 시리즈 1회차로, 전·월세계약에서 꼭 확인할 서류를 사례로 안내했습니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 부산광역시립시민도서관 생활법률 시리즈 1회차로, 전·월세계약에서 꼭 확인할 서류를 사례로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-1",
+   "field": "linksHash",
+   "before": "a1a0dfebd675ba00",
+   "after": "342fd0b8bc9f8374"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-2",
+   "field": "title",
+   "before": "시민도서관 2회차 · 분쟁 예방｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 2회차 · 분쟁 예방 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-2",
+   "field": "description",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 2회차 · 생활 분쟁 예방 이력을 안내합니다. 대상: 시민·성인 수강생. 일상에서 자주 생기는 금전·관계 분쟁을 예방 관점에서 정리한 시민도서관 2회차 특강입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 일상에서 자주 생기는 금전·관계 분쟁을 예방 관점에서 정리한 시민도서관 2회차 특강입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-2",
+   "field": "ogTitle",
+   "before": "시민도서관 2회차 · 분쟁 예방｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 2회차 · 분쟁 예방 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-2",
+   "field": "ogDescription",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 2회차 · 생활 분쟁 예방 이력을 안내합니다. 대상: 시민·성인 수강생. 일상에서 자주 생기는 금전·관계 분쟁을 예방 관점에서 정리한 시민도서관 2회차 특강입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 일상에서 자주 생기는 금전·관계 분쟁을 예방 관점에서 정리한 시민도서관 2회차 특강입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-2",
+   "field": "linksHash",
+   "before": "edb67669b3315d30",
+   "after": "b688d0ed933da93a"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-3",
+   "field": "title",
+   "before": "시민도서관 3회차 · 디지털 예방｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 3회차 · 디지털 예방 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-3",
+   "field": "description",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 3회차 · 디지털·형사 예방 이력을 안내합니다. 대상: 시민·성인 수강생. 온라인·일상에서 쉽게 놓치는 명예훼손·개인정보·형사 리스크를 예방 중심으로 안내한 3회차입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 온라인·일상에서 쉽게 놓치는 명예훼손·개인정보·형사 리스크를 예방 중심으로 안내한 3회차입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-3",
+   "field": "ogTitle",
+   "before": "시민도서관 3회차 · 디지털 예방｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 3회차 · 디지털 예방 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-3",
+   "field": "ogDescription",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 3회차 · 디지털·형사 예방 이력을 안내합니다. 대상: 시민·성인 수강생. 온라인·일상에서 쉽게 놓치는 명예훼손·개인정보·형사 리스크를 예방 중심으로 안내한 3회차입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 온라인·일상에서 쉽게 놓치는 명예훼손·개인정보·형사 리스크를 예방 중심으로 안내한 3회차입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-3",
+   "field": "linksHash",
+   "before": "a09ac7bd6ccba259",
+   "after": "8d6c96fd788cc645"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-4",
+   "field": "title",
+   "before": "시민도서관 4회차 · 종합 정리｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 4회차 · 종합 정리 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-4",
+   "field": "description",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 4회차 · 종합 정리 이력을 안내합니다. 대상: 시민·성인 수강생. 4주 과정의 핵심 체크리스트를 다시 정리하며, 현장에서 바로 적용할 순서를 복습한 마무리 회차입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 4주 과정의 핵심 체크리스트를 다시 정리하며, 현장에서 바로 적용할 순서를 복습한 마무리 회차입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-4",
+   "field": "ogTitle",
+   "before": "시민도서관 4회차 · 종합 정리｜안윤정 법무사 강의 이력",
+   "after": "시민도서관 4회차 · 종합 정리 기록 (2026.06)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-4",
+   "field": "ogDescription",
+   "before": "부산광역시립시민도서관에서 진행한 시민도서관 생활법률 4회차 · 종합 정리 이력을 안내합니다. 대상: 시민·성인 수강생. 4주 과정의 핵심 체크리스트를 다시 정리하며, 현장에서 바로 적용할 순서를 복습한 마무리 회차입니다.",
+   "after": "2026-06 부산광역시립시민도서관에서 시민·성인 수강생 대상으로 진행한 강의 기록입니다. 4주 과정의 핵심 체크리스트를 다시 정리하며, 현장에서 바로 적용할 순서를 복습한 마무리 회차입니다."
+  },
+  {
+   "route": "/강의이력/busan-citizen-library-week-4",
+   "field": "linksHash",
+   "before": "0ac998bebda753c0",
+   "after": "8abdf1c5b1c74dfe"
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "title",
+   "before": "자립지원전담기관 일상분쟁 생존법｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 일상분쟁 생존법 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "description",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 일상분쟁 생존법 특강 이력을 안내합니다. 대상: 자립준비청년·청년. 자립준비청년을 대상으로 가족 간 금전 지원, 전세 계약, 일상 속 관계와 금전 문제를 사례로 살펴본 특강입니다. 증여와 대여의 구분, 계약서와 ",
+   "after": "2026-07-24 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 자립준비청년을 대상으로 가족 간 금전 지원, 전세 계약, 일상 속 관계와 금전 문제를 사례로 살펴본 특강입니다. 증여와 대여의 구분, 계약서와 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "ogTitle",
+   "before": "자립지원전담기관 일상분쟁 생존법｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 일상분쟁 생존법 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "ogDescription",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 일상분쟁 생존법 특강 이력을 안내합니다. 대상: 자립준비청년·청년. 자립준비청년을 대상으로 가족 간 금전 지원, 전세 계약, 일상 속 관계와 금전 문제를 사례로 살펴본 특강입니다. 증여와 대여의 구분, 계약서와 ",
+   "after": "2026-07-24 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 자립준비청년을 대상으로 가족 간 금전 지원, 전세 계약, 일상 속 관계와 금전 문제를 사례로 살펴본 특강입니다. 증여와 대여의 구분, 계약서와 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-daily-dispute-survival.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-daily-dispute-survival.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/busan-self-support-daily-dispute-survival",
+   "field": "linksHash",
+   "before": "5485ffc927c825b7",
+   "after": "ca744321923c11a6"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "title",
+   "before": "자립지원전담기관 주거 분쟁 생존법｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 주거 분쟁 생존법 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "description",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 주거 분쟁 생존법 교육 이력을 안내합니다. 대상: 자립준비청년·청년. 자립준비청년을 대상으로 주거 계약과 생활 속 분쟁을 사례로 설명한 교육입니다. 전세 계약 시 권리관계 확인, 가족 간 금전거래의 기록, 분쟁 예",
+   "after": "2026-09-30 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 자립준비청년을 대상으로 주거 계약과 생활 속 분쟁을 사례로 설명한 교육입니다. 전세 계약 시 권리관계 확인, 가족 간 금전거래의 기록, 분쟁 예"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "ogTitle",
+   "before": "자립지원전담기관 주거 분쟁 생존법｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 주거 분쟁 생존법 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "ogDescription",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 주거 분쟁 생존법 교육 이력을 안내합니다. 대상: 자립준비청년·청년. 자립준비청년을 대상으로 주거 계약과 생활 속 분쟁을 사례로 설명한 교육입니다. 전세 계약 시 권리관계 확인, 가족 간 금전거래의 기록, 분쟁 예",
+   "after": "2026-09-30 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 자립준비청년을 대상으로 주거 계약과 생활 속 분쟁을 사례로 설명한 교육입니다. 전세 계약 시 권리관계 확인, 가족 간 금전거래의 기록, 분쟁 예"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-housing-disputes-2026-09-30.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-housing-disputes-2026-09-30.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+   "field": "linksHash",
+   "before": "7c2d6a9eda843824",
+   "after": "7b1e08dd62f7c879"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "title",
+   "before": "자립지원전담기관 주거생활 법률 기초｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 주거생활 법률 기초 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "description",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 주거생활 법률 기초 교육 이력을 안내합니다. 대상: 자립준비청년·청년. 부산광역시 자립지원전담기관에서 첫 집을 구하는 청년을 위해 주거생활 법률 기초를 안내했습니다. 집을 찾을 때의 위험 신호, 계약서와 등기부등본 ",
+   "after": "2026-09-16 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 부산광역시 자립지원전담기관에서 첫 집을 구하는 청년을 위해 주거생활 법률 기초를 안내했습니다. 집을 찾을 때의 위험 신호, 계약서와 등기부등본 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "ogTitle",
+   "before": "자립지원전담기관 주거생활 법률 기초｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 주거생활 법률 기초 기록 (2026.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "ogDescription",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 주거생활 법률 기초 교육 이력을 안내합니다. 대상: 자립준비청년·청년. 부산광역시 자립지원전담기관에서 첫 집을 구하는 청년을 위해 주거생활 법률 기초를 안내했습니다. 집을 찾을 때의 위험 신호, 계약서와 등기부등본 ",
+   "after": "2026-09-16 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 부산광역시 자립지원전담기관에서 첫 집을 구하는 청년을 위해 주거생활 법률 기초를 안내했습니다. 집을 찾을 때의 위험 신호, 계약서와 등기부등본 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-housing-law-2026-09-16.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-housing-law-2026-09-16.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/busan-self-support-housing-law-2026-09-16",
+   "field": "linksHash",
+   "before": "bba0194b4faa3e01",
+   "after": "8345f2826aa8b7a7"
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "title",
+   "before": "자립지원전담기관 전세사기 예방｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 전세사기 예방 기록 (2026.05)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "description",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 전세사기 예방 특강 이력을 안내합니다. 대상: 자립준비청년·청년. 부산광역시 자립지원전담기관에서 자립준비청년을 대상으로 전·월세 계약과 전세사기 예방을 안내한 특강입니다. 첫 보금자리를 마련할 때 확인해야 할 ",
+   "after": "2026-05-22 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 부산광역시 자립지원전담기관에서 자립준비청년을 대상으로 전·월세 계약과 전세사기 예방을 안내한 특강입니다. 첫 보금자리를 마련할 때 확인해야 할 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "ogTitle",
+   "before": "자립지원전담기관 전세사기 예방｜안윤정 법무사 강의 이력",
+   "after": "자립지원전담기관 전세사기 예방 기록 (2026.05)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "ogDescription",
+   "before": "부산광역시 자립지원전담기관에서 진행한 부산광역시 자립지원전담기관 전세사기 예방 특강 이력을 안내합니다. 대상: 자립준비청년·청년. 부산광역시 자립지원전담기관에서 자립준비청년을 대상으로 전·월세 계약과 전세사기 예방을 안내한 특강입니다. 첫 보금자리를 마련할 때 확인해야 할 ",
+   "after": "2026-05-22 부산광역시 자립지원전담기관에서 자립준비청년·청년 대상으로 진행한 강의 기록입니다. 부산광역시 자립지원전담기관에서 자립준비청년을 대상으로 전·월세 계약과 전세사기 예방을 안내한 특강입니다. 첫 보금자리를 마련할 때 확인해야 할 "
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-jeonse-prevention.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-busan-self-support-jeonse-prevention.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/busan-self-support-jeonse-prevention",
+   "field": "linksHash",
+   "before": "e29b49b984df5f97",
+   "after": "27d63c328f75e03f"
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "title",
+   "before": "창원청년비전센터 생활법률｜안윤정 법무사 강의 이력",
+   "after": "창원청년비전센터 생활법률 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "description",
+   "before": "창원청년비전센터에서 진행한 창원청년비전센터 청년 생활법률 특강 이력을 안내합니다. 대상: 청년. 창원청년비전센터에서 청년을 대상으로 진행한 생활법률 특강입니다. 주거·계약·금전·온라인 상황에서 자주 마주치는 확인 포인트를 사례 중심으로 안내",
+   "after": "2026-07-02 창원청년비전센터에서 청년 대상으로 진행한 강의 기록입니다. 창원청년비전센터에서 청년을 대상으로 진행한 생활법률 특강입니다. 주거·계약·금전·온라인 상황에서 자주 마주치는 확인 포인트를 사례 중심으로 안내"
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "ogTitle",
+   "before": "창원청년비전센터 생활법률｜안윤정 법무사 강의 이력",
+   "after": "창원청년비전센터 생활법률 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "ogDescription",
+   "before": "창원청년비전센터에서 진행한 창원청년비전센터 청년 생활법률 특강 이력을 안내합니다. 대상: 청년. 창원청년비전센터에서 청년을 대상으로 진행한 생활법률 특강입니다. 주거·계약·금전·온라인 상황에서 자주 마주치는 확인 포인트를 사례 중심으로 안내",
+   "after": "2026-07-02 창원청년비전센터에서 청년 대상으로 진행한 강의 기록입니다. 창원청년비전센터에서 청년을 대상으로 진행한 생활법률 특강입니다. 주거·계약·금전·온라인 상황에서 자주 마주치는 확인 포인트를 사례 중심으로 안내"
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-changwon-youth-vision-center.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-changwon-youth-vision-center.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/changwon-youth-vision-center",
+   "field": "linksHash",
+   "before": "70424392312fd64a",
+   "after": "f2b0b59c3c1e9a0d"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-job-growth-cafe",
+   "field": "title",
+   "before": "해운대 청년 JOB성장카페 강의｜안윤정 법무사 강의 이력",
+   "after": "해운대 청년 JOB성장카페 강의 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-job-growth-cafe",
+   "field": "description",
+   "before": "해운대 청년 JOB성장카페에서 진행한 해운대 청년 JOB성장카페 청년 맞춤 법률 강의 이력을 안내합니다. 대상: 청년·사회초년생. 해운대 청년채움공간(청년 JOB성장카페)과 연계해 청년의 취업·주거 상황에 맞춘 생활법률을 안내한 강의입니다. 해운대·수영·동래 청년을 대상으로",
+   "after": "2025~2026 해운대 청년 JOB성장카페에서 청년·사회초년생 대상으로 진행한 강의 기록입니다. 해운대 청년채움공간(청년 JOB성장카페)과 연계해 청년의 취업·주거 상황에 맞춘 생활법률을 안내한 강의입니다. 해운대·수영·동래 청년을 대상으로"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-job-growth-cafe",
+   "field": "ogTitle",
+   "before": "해운대 청년 JOB성장카페 강의｜안윤정 법무사 강의 이력",
+   "after": "해운대 청년 JOB성장카페 강의 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-job-growth-cafe",
+   "field": "ogDescription",
+   "before": "해운대 청년 JOB성장카페에서 진행한 해운대 청년 JOB성장카페 청년 맞춤 법률 강의 이력을 안내합니다. 대상: 청년·사회초년생. 해운대 청년채움공간(청년 JOB성장카페)과 연계해 청년의 취업·주거 상황에 맞춘 생활법률을 안내한 강의입니다. 해운대·수영·동래 청년을 대상으로",
+   "after": "2025~2026 해운대 청년 JOB성장카페에서 청년·사회초년생 대상으로 진행한 강의 기록입니다. 해운대 청년채움공간(청년 JOB성장카페)과 연계해 청년의 취업·주거 상황에 맞춘 생활법률을 안내한 강의입니다. 해운대·수영·동래 청년을 대상으로"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-job-growth-cafe",
+   "field": "linksHash",
+   "before": "2d0a7e1332e783a0",
+   "after": "c5139523ae947d72"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "title",
+   "before": "청년 전·월세 계약 생존법｜안윤정 법무사 강의 이력",
+   "after": "청년 전·월세 계약 생존법 기록 (2026.10)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "description",
+   "before": "해운대청년채움공간에서 진행한 해운대청년채움공간 청년 전·월세 계약 생존법 특강 이력을 안내합니다. 대상: 청년. 해운대청년채움공간에서 청년을 대상으로 전·월세 계약의 기본 구조와 보증금 보호를 설명한 강의입니다. 계약 전 등기부등본과 임대인 확인, 계약서 ",
+   "after": "2026-10-02 해운대청년채움공간에서 청년 대상으로 진행한 강의 기록입니다. 해운대청년채움공간에서 청년을 대상으로 전·월세 계약의 기본 구조와 보증금 보호를 설명한 강의입니다. 계약 전 등기부등본과 임대인 확인, 계약서 "
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "ogTitle",
+   "before": "청년 전·월세 계약 생존법｜안윤정 법무사 강의 이력",
+   "after": "청년 전·월세 계약 생존법 기록 (2026.10)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "ogDescription",
+   "before": "해운대청년채움공간에서 진행한 해운대청년채움공간 청년 전·월세 계약 생존법 특강 이력을 안내합니다. 대상: 청년. 해운대청년채움공간에서 청년을 대상으로 전·월세 계약의 기본 구조와 보증금 보호를 설명한 강의입니다. 계약 전 등기부등본과 임대인 확인, 계약서 ",
+   "after": "2026-10-02 해운대청년채움공간에서 청년 대상으로 진행한 강의 기록입니다. 해운대청년채움공간에서 청년을 대상으로 전·월세 계약의 기본 구조와 보증금 보호를 설명한 강의입니다. 계약 전 등기부등본과 임대인 확인, 계약서 "
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-haeundae-youth-space-jeonse-2026-10-02.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-haeundae-youth-space-jeonse-2026-10-02.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+   "field": "linksHash",
+   "before": "bba0194b4faa3e01",
+   "after": "8345f2826aa8b7a7"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "title",
+   "before": "해운대청년채움공간 창업법률｜안윤정 법무사 강의 이력",
+   "after": "해운대청년채움공간 창업법률 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "description",
+   "before": "해운대청년채움공간에서 진행한 해운대청년채움공간 창업법률 특강 이력을 안내합니다. 대상: 청년·예비창업자. 해운대청년채움공간에서 창업 과정에서 확인해야 할 계약·법인·분쟁 예방 포인트를 안내한 특강입니다.",
+   "after": "2026-07-16 해운대청년채움공간에서 청년·예비창업자 대상으로 진행한 강의 기록입니다. 해운대청년채움공간에서 창업 과정에서 확인해야 할 계약·법인·분쟁 예방 포인트를 안내한 특강입니다."
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "ogTitle",
+   "before": "해운대청년채움공간 창업법률｜안윤정 법무사 강의 이력",
+   "after": "해운대청년채움공간 창업법률 기록 (2026.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "ogDescription",
+   "before": "해운대청년채움공간에서 진행한 해운대청년채움공간 창업법률 특강 이력을 안내합니다. 대상: 청년·예비창업자. 해운대청년채움공간에서 창업 과정에서 확인해야 할 계약·법인·분쟁 예방 포인트를 안내한 특강입니다.",
+   "after": "2026-07-16 해운대청년채움공간에서 청년·예비창업자 대상으로 진행한 강의 기록입니다. 해운대청년채움공간에서 창업 과정에서 확인해야 할 계약·법인·분쟁 예방 포인트를 안내한 특강입니다."
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-haeundae-youth-space-startup-law-2026-07.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-haeundae-youth-space-startup-law-2026-07.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/haeundae-youth-space-startup-law-2026-07",
+   "field": "linksHash",
+   "before": "4ffdd2db36ed72c5",
+   "after": "aa51b30ef01fc41c"
+  },
+  {
+   "route": "/강의이력/lh-busan-ccei-life-law",
+   "field": "title",
+   "before": "LH·창경 생활법률 프로그램｜안윤정 법무사 강의 이력",
+   "after": "LH·창경 생활법률 프로그램 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/lh-busan-ccei-life-law",
+   "field": "description",
+   "before": "LH · 부산창조경제혁신센터에서 진행한 LH·부산창조경제혁신센터 청년·시민 생활법률 프로그램 이력을 안내합니다. 대상: 청년·시민. LH(한국토지주택공사)·부산창조경제혁신센터와 협업한 프로그램에서 청년·시민을 대상으로 생활법률 강의·상담을 진행했습니다.",
+   "after": "2025 LH · 부산창조경제혁신센터에서 청년·시민 대상으로 진행한 강의 기록입니다. LH(한국토지주택공사)·부산창조경제혁신센터와 협업한 프로그램에서 청년·시민을 대상으로 생활법률 강의·상담을 진행했습니다."
+  },
+  {
+   "route": "/강의이력/lh-busan-ccei-life-law",
+   "field": "ogTitle",
+   "before": "LH·창경 생활법률 프로그램｜안윤정 법무사 강의 이력",
+   "after": "LH·창경 생활법률 프로그램 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/lh-busan-ccei-life-law",
+   "field": "ogDescription",
+   "before": "LH · 부산창조경제혁신센터에서 진행한 LH·부산창조경제혁신센터 청년·시민 생활법률 프로그램 이력을 안내합니다. 대상: 청년·시민. LH(한국토지주택공사)·부산창조경제혁신센터와 협업한 프로그램에서 청년·시민을 대상으로 생활법률 강의·상담을 진행했습니다.",
+   "after": "2025 LH · 부산창조경제혁신센터에서 청년·시민 대상으로 진행한 강의 기록입니다. LH(한국토지주택공사)·부산창조경제혁신센터와 협업한 프로그램에서 청년·시민을 대상으로 생활법률 강의·상담을 진행했습니다."
+  },
+  {
+   "route": "/강의이력/lh-busan-ccei-life-law",
+   "field": "linksHash",
+   "before": "02b03369b1cee13d",
+   "after": "535670d81e88d0c3"
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "title",
+   "before": "양산제일고 진로특강｜안윤정 법무사 강의 이력",
+   "after": "양산제일고 진로특강 기록 (2026.05)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "description",
+   "before": "양산제일고에서 진행한 양산제일고 법무사 진로특강 이력을 안내합니다. 대상: 고등학생. 양산제일고 학생들을 대상으로 법무사 업무와 자격 준비 과정, 실제 업무 경험을 나눈 진로특강입니다.",
+   "after": "2026-05-21 양산제일고에서 고등학생 대상으로 진행한 강의 기록입니다. 양산제일고 학생들을 대상으로 법무사 업무와 자격 준비 과정, 실제 업무 경험을 나눈 진로특강입니다."
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "ogTitle",
+   "before": "양산제일고 진로특강｜안윤정 법무사 강의 이력",
+   "after": "양산제일고 진로특강 기록 (2026.05)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "ogDescription",
+   "before": "양산제일고에서 진행한 양산제일고 법무사 진로특강 이력을 안내합니다. 대상: 고등학생. 양산제일고 학생들을 대상으로 법무사 업무와 자격 준비 과정, 실제 업무 경험을 나눈 진로특강입니다.",
+   "after": "2026-05-21 양산제일고에서 고등학생 대상으로 진행한 강의 기록입니다. 양산제일고 학생들을 대상으로 법무사 업무와 자격 준비 과정, 실제 업무 경험을 나눈 진로특강입니다."
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-yangsan-jeil-high-career-talk.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-yangsan-jeil-high-career-talk.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/yangsan-jeil-high-career-talk",
+   "field": "linksHash",
+   "before": "c60cdc8d13792ff7",
+   "after": "215901b612645315"
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "title",
+   "before": "디지털 법률 가이드｜안윤정 법무사 강의 이력",
+   "after": "디지털 법률 가이드 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 디지털 법률 가이드 강의 이력을 안내합니다. 대상: 청년. 온라인에서 마주치는 법적 위험을 다룬 청년 대상 디지털 법률 가이드 강의입니다. 명예훼손·모욕·개인정보·온라인 사기 예방을 사례로 안내했습니다.",
+   "after": "2025-08-31 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 온라인에서 마주치는 법적 위험을 다룬 청년 대상 디지털 법률 가이드 강의입니다. 명예훼손·모욕·개인정보·온라인 사기 예방을 사례로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "ogTitle",
+   "before": "디지털 법률 가이드｜안윤정 법무사 강의 이력",
+   "after": "디지털 법률 가이드 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 디지털 법률 가이드 강의 이력을 안내합니다. 대상: 청년. 온라인에서 마주치는 법적 위험을 다룬 청년 대상 디지털 법률 가이드 강의입니다. 명예훼손·모욕·개인정보·온라인 사기 예방을 사례로 안내했습니다.",
+   "after": "2025-08-31 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 온라인에서 마주치는 법적 위험을 다룬 청년 대상 디지털 법률 가이드 강의입니다. 명예훼손·모욕·개인정보·온라인 사기 예방을 사례로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-digital-law-guide.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-digital-law-guide.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-digital-law-guide",
+   "field": "linksHash",
+   "before": "1f2de453ec8c1def",
+   "after": "ad324a5a719b9cec"
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "title",
+   "before": "주거계약 실전 가이드｜안윤정 법무사 강의 이력",
+   "after": "주거계약 실전 가이드 기록 (2025.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 주거계약 실전 가이드 강의 이력을 안내합니다. 대상: 청년. 청년을 위한 주거계약 실전 가이드 강의로, 계약 전후 확인해야 할 실무 체크포인트를 안내했습니다.",
+   "after": "2025-07-02 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년을 위한 주거계약 실전 가이드 강의로, 계약 전후 확인해야 할 실무 체크포인트를 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "ogTitle",
+   "before": "주거계약 실전 가이드｜안윤정 법무사 강의 이력",
+   "after": "주거계약 실전 가이드 기록 (2025.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 주거계약 실전 가이드 강의 이력을 안내합니다. 대상: 청년. 청년을 위한 주거계약 실전 가이드 강의로, 계약 전후 확인해야 할 실무 체크포인트를 안내했습니다.",
+   "after": "2025-07-02 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년을 위한 주거계약 실전 가이드 강의로, 계약 전후 확인해야 할 실무 체크포인트를 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-housing-contract-guide.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-housing-contract-guide.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-housing-contract-guide",
+   "field": "linksHash",
+   "before": "4f1ddb9bbe4c8def",
+   "after": "072f0d6a7335e5ff"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "title",
+   "before": "전세사기 예방 · 등기부·확정일자｜안윤정 법무사 강의 이력",
+   "after": "전세사기 예방 · 등기부·확정일자 기록 (2026.01)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 법률교육 · 등기부·확정일자 이력을 안내합니다. 대상: 청년. 등기부등본·확정일자 등 전세 계약 전 확인 순서를 중심으로 구성한 청년 전세사기 예방 법률교육입니다.",
+   "after": "2026-01-15 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 등기부등본·확정일자 등 전세 계약 전 확인 순서를 중심으로 구성한 청년 전세사기 예방 법률교육입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "ogTitle",
+   "before": "전세사기 예방 · 등기부·확정일자｜안윤정 법무사 강의 이력",
+   "after": "전세사기 예방 · 등기부·확정일자 기록 (2026.01)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 법률교육 · 등기부·확정일자 이력을 안내합니다. 대상: 청년. 등기부등본·확정일자 등 전세 계약 전 확인 순서를 중심으로 구성한 청년 전세사기 예방 법률교육입니다.",
+   "after": "2026-01-15 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 등기부등본·확정일자 등 전세 계약 전 확인 순서를 중심으로 구성한 청년 전세사기 예방 법률교육입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-legal-education.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-legal-education.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-jeonse-legal-education",
+   "field": "linksHash",
+   "before": "cd74cd227e997de1",
+   "after": "3bf41384e486bf87"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "title",
+   "before": "청년 전세사기 예방 · FAQ 중심｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방 · FAQ 중심 기록 (2025.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 강의 · 자주 묻는 질문 중심 이력을 안내합니다. 대상: 청년. 청년들이 가장 많이 묻는 전세 계약·보증금 보호 질문을 모아 예방 체크리스트로 안내한 강의입니다.",
+   "after": "2025-09-26 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년들이 가장 많이 묻는 전세 계약·보증금 보호 질문을 모아 예방 체크리스트로 안내한 강의입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "ogTitle",
+   "before": "청년 전세사기 예방 · FAQ 중심｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방 · FAQ 중심 기록 (2025.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 강의 · 자주 묻는 질문 중심 이력을 안내합니다. 대상: 청년. 청년들이 가장 많이 묻는 전세 계약·보증금 보호 질문을 모아 예방 체크리스트로 안내한 강의입니다.",
+   "after": "2025-09-26 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년들이 가장 많이 묻는 전세 계약·보증금 보호 질문을 모아 예방 체크리스트로 안내한 강의입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-most-sought.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-most-sought.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-jeonse-most-sought",
+   "field": "linksHash",
+   "before": "86c14a6e035e2f37",
+   "after": "87822ba0724a591f"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "title",
+   "before": "청년 전세사기 예방특강｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방특강 기록 (2025.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방특강 오프라인 성료 이력을 안내합니다. 대상: 청년. 부산 청년 대상 전세사기 예방특강을 오프라인으로 진행하며, 계약 전후 확인 순서를 실전적으로 안내했습니다.",
+   "after": "2025-09-01 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 부산 청년 대상 전세사기 예방특강을 오프라인으로 진행하며, 계약 전후 확인 순서를 실전적으로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "ogTitle",
+   "before": "청년 전세사기 예방특강｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방특강 기록 (2025.09)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방특강 오프라인 성료 이력을 안내합니다. 대상: 청년. 부산 청년 대상 전세사기 예방특강을 오프라인으로 진행하며, 계약 전후 확인 순서를 실전적으로 안내했습니다.",
+   "after": "2025-09-01 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 부산 청년 대상 전세사기 예방특강을 오프라인으로 진행하며, 계약 전후 확인 순서를 실전적으로 안내했습니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-offline-session.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-offline-session.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-jeonse-offline-session",
+   "field": "linksHash",
+   "before": "593759435a8f4544",
+   "after": "92d61d1ba6a079d8"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-prevention-series",
+   "field": "title",
+   "before": "청년 전세사기 예방 시리즈｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방 시리즈 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-prevention-series",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 오프라인 강의 시리즈 이력을 안내합니다. 대상: 청년. 청년을 대상으로 전세사기 예방 주제의 오프라인 강의를 여러 회차로 진행했습니다. 등기부등본 확인·확정일자 등 실전 체크포인트를 중심으로 구성했습",
+   "after": "2025~2026 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년을 대상으로 전세사기 예방 주제의 오프라인 강의를 여러 회차로 진행했습니다. 등기부등본 확인·확정일자 등 실전 체크포인트를 중심으로 구성했습"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-prevention-series",
+   "field": "ogTitle",
+   "before": "청년 전세사기 예방 시리즈｜안윤정 법무사 강의 이력",
+   "after": "청년 전세사기 예방 시리즈 기록｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-prevention-series",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방 오프라인 강의 시리즈 이력을 안내합니다. 대상: 청년. 청년을 대상으로 전세사기 예방 주제의 오프라인 강의를 여러 회차로 진행했습니다. 등기부등본 확인·확정일자 등 실전 체크포인트를 중심으로 구성했습",
+   "after": "2025~2026 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년을 대상으로 전세사기 예방 주제의 오프라인 강의를 여러 회차로 진행했습니다. 등기부등본 확인·확정일자 등 실전 체크포인트를 중심으로 구성했습"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-prevention-series",
+   "field": "linksHash",
+   "before": "e8e60dcd4c485784",
+   "after": "fbd59ed17143edc2"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "title",
+   "before": "전세사기 예방접종 특강｜안윤정 법무사 강의 이력",
+   "after": "전세사기 예방접종 특강 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방접종 특강 이력을 안내합니다. 대상: 청년. 계약 전 ‘예방접종’처럼 확인해야 할 항목을 짧게 정리한 청년 전세사기 예방 특강입니다.",
+   "after": "2025-08-20 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 계약 전 ‘예방접종’처럼 확인해야 할 항목을 짧게 정리한 청년 전세사기 예방 특강입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "ogTitle",
+   "before": "전세사기 예방접종 특강｜안윤정 법무사 강의 이력",
+   "after": "전세사기 예방접종 특강 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 전세사기 예방접종 특강 이력을 안내합니다. 대상: 청년. 계약 전 ‘예방접종’처럼 확인해야 할 항목을 짧게 정리한 청년 전세사기 예방 특강입니다.",
+   "after": "2025-08-20 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 계약 전 ‘예방접종’처럼 확인해야 할 항목을 짧게 정리한 청년 전세사기 예방 특강입니다."
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-vaccination.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-jeonse-vaccination.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-jeonse-vaccination",
+   "field": "linksHash",
+   "before": "298daab932424424",
+   "after": "641df74868c61327"
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "title",
+   "before": "생활법률 기초｜안윤정 법무사 강의 이력",
+   "after": "생활법률 기초 기록 (2025.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 대상 생활법률 기초 강의 이력을 안내합니다. 대상: 청년. 일상 곳곳에 스며 있는 법률 문제를 기초부터 짚어본 청년 대상 강의입니다.",
+   "after": "2025-07-26 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 일상 곳곳에 스며 있는 법률 문제를 기초부터 짚어본 청년 대상 강의입니다."
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "ogTitle",
+   "before": "생활법률 기초｜안윤정 법무사 강의 이력",
+   "after": "생활법률 기초 기록 (2025.07)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 대상 생활법률 기초 강의 이력을 안내합니다. 대상: 청년. 일상 곳곳에 스며 있는 법률 문제를 기초부터 짚어본 청년 대상 강의입니다.",
+   "after": "2025-07-26 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 일상 곳곳에 스며 있는 법률 문제를 기초부터 짚어본 청년 대상 강의입니다."
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-life-law-basics.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-life-law-basics.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-life-law-basics",
+   "field": "linksHash",
+   "before": "d12fef09ba6c1fc2",
+   "after": "3db0bc70097f970b"
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "title",
+   "before": "실수로 범죄가 되는 순간들｜안윤정 법무사 강의 이력",
+   "after": "실수로 범죄가 되는 순간들 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "description",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 대상 생활 속 형사 리스크 예방 강의 이력을 안내합니다. 대상: 청년. 청년들이 일상에서 모르고 저지를 수 있는 형사 리스크를 사례로 짚어본 강의입니다. 온라인·일상 행동과 법적 책임의 경계를 예방 관점에서 안내했습",
+   "after": "2025-08-01 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년들이 일상에서 모르고 저지를 수 있는 형사 리스크를 사례로 짚어본 강의입니다. 온라인·일상 행동과 법적 책임의 경계를 예방 관점에서 안내했습"
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "ogTitle",
+   "before": "실수로 범죄가 되는 순간들｜안윤정 법무사 강의 이력",
+   "after": "실수로 범죄가 되는 순간들 기록 (2025.08)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "ogDescription",
+   "before": "부산 지역 청년·기관 대상 출강에서 진행한 청년 대상 생활 속 형사 리스크 예방 강의 이력을 안내합니다. 대상: 청년. 청년들이 일상에서 모르고 저지를 수 있는 형사 리스크를 사례로 짚어본 강의입니다. 온라인·일상 행동과 법적 책임의 경계를 예방 관점에서 안내했습",
+   "after": "2025-08-01 부산 지역 청년·기관 대상 출강에서 청년 대상으로 진행한 강의 기록입니다. 청년들이 일상에서 모르고 저지를 수 있는 형사 리스크를 사례로 짚어본 강의입니다. 온라인·일상 행동과 법적 책임의 경계를 예방 관점에서 안내했습"
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-mistake-crime-lecture.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-mistake-crime-lecture.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-mistake-crime-lecture",
+   "field": "linksHash",
+   "before": "70859ab92429b48e",
+   "after": "fba42bc274ef7d89"
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "title",
+   "before": "돈·부동산·관계 분쟁 예방｜안윤정 법무사 강의 이력",
+   "after": "돈·부동산·관계 분쟁 예방 기록 (2026.01)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "description",
+   "before": "해운대·수영·동래 청년 대상 출강에서 진행한 청년 돈·부동산·관계 분쟁 예방 특강 이력을 안내합니다. 대상: 청년·사회초년생. 청년의 일상에서 자주 생기는 금전·부동산·관계 분쟁을 예방 관점으로 정리한 특강입니다.",
+   "after": "2026-01-30 해운대·수영·동래 청년 대상 출강에서 청년·사회초년생 대상으로 진행한 강의 기록입니다. 청년의 일상에서 자주 생기는 금전·부동산·관계 분쟁을 예방 관점으로 정리한 특강입니다."
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "ogTitle",
+   "before": "돈·부동산·관계 분쟁 예방｜안윤정 법무사 강의 이력",
+   "after": "돈·부동산·관계 분쟁 예방 기록 (2026.01)｜안윤정 법무사 강의 이력"
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "ogDescription",
+   "before": "해운대·수영·동래 청년 대상 출강에서 진행한 청년 돈·부동산·관계 분쟁 예방 특강 이력을 안내합니다. 대상: 청년·사회초년생. 청년의 일상에서 자주 생기는 금전·부동산·관계 분쟁을 예방 관점으로 정리한 특강입니다.",
+   "after": "2026-01-30 해운대·수영·동래 청년 대상 출강에서 청년·사회초년생 대상으로 진행한 강의 기록입니다. 청년의 일상에서 자주 생기는 금전·부동산·관계 분쟁을 예방 관점으로 정리한 특강입니다."
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "jsonld",
+   "before": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-money-property-dispute.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ],
+   "after": [
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#legalservice",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#localbusiness",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-1",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-2",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-3",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-4",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-5",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#nav-6",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#organization",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#person",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/#website",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute#event",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute#service",
+    "@id=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute#webpage",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/about",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/contact",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/%EB%A1%9C%EA%B3%A0.png",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/image/og-pages/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5-youth-money-property-dispute.jpg",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/location",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/reviews",
+    "url=https://xn--2j1br1na42lvxja38mk8r.kr/services"
+   ]
+  },
+  {
+   "route": "/강의이력/youth-money-property-dispute",
+   "field": "linksHash",
+   "before": "871693baff3bfdf3",
+   "after": "9157959b69d322b6"
+  },
+  {
+   "route": "/공공기관법률교육",
+   "field": "title",
+   "before": "부산 공공기관 강사｜직원·상담사·시민 대상 사례 중심 실무교육",
+   "after": "부산 공공기관 법률교육·강사｜직원·상담사·시민 실무교육"
+  },
+  {
+   "route": "/공공기관법률교육",
+   "field": "h1",
+   "before": [
+    "부산 공공기관 강사｜직원·상담사·시민을 위한 실무교육"
+   ],
+   "after": [
+    "부산 공공기관 법률교육｜직원·상담사·시민을 위한 실무교육"
+   ]
+  },
+  {
+   "route": "/공공기관법률교육",
+   "field": "ogTitle",
+   "before": "부산 공공기관 강사｜직원·상담사·시민 대상 사례 중심 실무교육",
+   "after": "부산 공공기관 법률교육·강사｜직원·상담사·시민 실무교육"
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "title",
+   "before": "부산 기업 특강·강연｜임직원 계약·채권·법인 실무교육",
+   "after": "부산 기업 법률 특강·강연｜직장인 계약·채권·법인 실무교육"
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "description",
+   "before": "부산 기업 교육 담당자를 위한 임직원 법률 특강·강연 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일 구성으로 정리했습니다.",
+   "after": "기업 법률 특강·직장인 법률 특강을 준비하는 부산 교육 담당자를 위한 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일로 구성하며, 2026년 9월 비스퀘어 창업팀 법인 실무 강의 …"
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "h1",
+   "before": [
+    "부산 기업 특강·강연, 임직원이 업무에서 바로 쓰는 계약·채권 실무"
+   ],
+   "after": [
+    "부산 기업 법률 특강, 임직원이 업무에서 바로 쓰는 계약·채권 실무"
+   ]
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "ogTitle",
+   "before": "부산 기업 특강·강연｜임직원 계약·채권·법인 실무교육",
+   "after": "부산 기업 법률 특강·강연｜직장인 계약·채권·법인 실무교육"
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "ogDescription",
+   "before": "부산 기업 교육 담당자를 위한 임직원 법률 특강·강연 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일 구성으로 정리했습니다.",
+   "after": "기업 법률 특강·직장인 법률 특강을 준비하는 부산 교육 담당자를 위한 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일로 구성하며, 2026년 9월 비스퀘어 창업팀 법인 실무 강의 …"
+  },
+  {
+   "route": "/기업법률교육",
+   "field": "linksHash",
+   "before": "9e63c0f563404cae",
+   "after": "788f1a36fd7aedfe"
+  },
+  {
+   "route": "/디지털법률교육",
+   "field": "linksHash",
+   "before": "586721dd52ebd6eb",
+   "after": "4bd5ac3e976e8a8d"
+  },
+  {
+   "route": "/법률강의",
+   "field": "title",
+   "before": "부산 법률 강의·특강 | 안윤정 법무사",
+   "after": "부산 법률 강의·특강 | 생활법률특강·법률교육 안윤정 법무사"
+  },
+  {
+   "route": "/법률강의",
+   "field": "description",
+   "before": "부산 도서관·복지관·공공기관 담당자를 위한 생활법률 특강 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다.",
+   "after": "법률 강의·법률특강·생활법률 교육을 찾는 도서관·복지관·공공기관 담당자를 위한 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다."
+  },
+  {
+   "route": "/법률강의",
+   "field": "ogTitle",
+   "before": "부산 법률 강의·특강 | 안윤정 법무사",
+   "after": "부산 법률 강의·특강 | 생활법률특강·법률교육 안윤정 법무사"
+  },
+  {
+   "route": "/법률강의",
+   "field": "ogDescription",
+   "before": "부산 도서관·복지관·공공기관 담당자를 위한 생활법률 특강 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다.",
+   "after": "법률 강의·법률특강·생활법률 교육을 찾는 도서관·복지관·공공기관 담당자를 위한 안내. 전·월세 계약, 생활분쟁, 디지털·형사 예방을 대상별 60분~4회차로 구성하며 시민도서관 연속 특강 기록이 있습니다."
+  },
+  {
+   "route": "/법률강의",
+   "field": "linksHash",
+   "before": "52ee2ec17f52a994",
+   "after": "fb8d1dafffa3934d"
+  },
+  {
+   "route": "/법무사진로특강",
+   "field": "linksHash",
+   "before": "d790dd8c2c338b6b",
+   "after": "1b460f2957d82d29"
+  },
+  {
+   "route": "/부산대학교특강",
+   "field": "linksHash",
+   "before": "97f68d612abb2ca8",
+   "after": "d02f070461f2a21d"
+  },
+  {
+   "route": "/부산법률강사",
+   "field": "title",
+   "before": "부산 강사 초빙｜기관·기업 특강·강연·세미나 출강",
+   "after": "부산 강사 초빙｜법률 강사·기관·기업 특강·강연·세미나"
+  },
+  {
+   "route": "/부산법률강사",
+   "field": "description",
+   "before": "부산에서 기관·기업·학교 행사용 외부강사를 찾는 담당자를 위해 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다.",
+   "after": "법률 강사 초빙을 준비하는 부산 기관·기업·학교 담당자를 위해 법무사 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다."
+  },
+  {
+   "route": "/부산법률강사",
+   "field": "ogTitle",
+   "before": "부산 강사 초빙｜기관·기업 특강·강연·세미나 출강",
+   "after": "부산 강사 초빙｜법률 강사·기관·기업 특강·강연·세미나"
+  },
+  {
+   "route": "/부산법률강사",
+   "field": "ogDescription",
+   "before": "부산에서 기관·기업·학교 행사용 외부강사를 찾는 담당자를 위해 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다.",
+   "after": "법률 강사 초빙을 준비하는 부산 기관·기업·학교 담당자를 위해 법무사 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다."
+  },
+  {
+   "route": "/부산법률강사",
+   "field": "linksHash",
+   "before": "1d854738ceac85cf",
+   "after": "e85a44b7d6cd34d5"
+  },
+  {
+   "route": "/부산법무사강의",
+   "field": "title",
+   "before": "부산 법무사 강의 | 실무 기반 출강",
+   "after": "부산 법무사 강의·특강 | 등기·계약 실무 출강"
+  },
+  {
+   "route": "/부산법무사강의",
+   "field": "description",
+   "before": "부산 법무사 강의. 등기·계약·생활법률 실무를 눈높이에 맞게 풀어내는 출강 교육입니다. 안윤정 법무사가 직접 진행합니다. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "법무사 강의·법무사 특강을 찾는 부산 기관·단체 담당자를 위한 안내. 등기·계약·생활법률 실무를 참석자 눈높이로 풀어내는 출강 교육이며 안윤정 법무사가 직접 진행합니다."
+  },
+  {
+   "route": "/부산법무사강의",
+   "field": "h1",
+   "before": [
+    "부산 법무사 강의, 실무로 설명하는 출강 교육"
+   ],
+   "after": [
+    "부산 법무사 강의·특강, 실무로 설명하는 출강 교육"
+   ]
+  },
+  {
+   "route": "/부산법무사강의",
+   "field": "ogTitle",
+   "before": "부산 법무사 강의 | 실무 기반 출강",
+   "after": "부산 법무사 강의·특강 | 등기·계약 실무 출강"
+  },
+  {
+   "route": "/부산법무사강의",
+   "field": "ogDescription",
+   "before": "부산 법무사 강의. 등기·계약·생활법률 실무를 눈높이에 맞게 풀어내는 출강 교육입니다. 안윤정 법무사가 직접 진행합니다. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "법무사 강의·법무사 특강을 찾는 부산 기관·단체 담당자를 위한 안내. 등기·계약·생활법률 실무를 참석자 눈높이로 풀어내는 출강 교육이며 안윤정 법무사가 직접 진행합니다."
+  },
+  {
+   "route": "/부산전세전문법무사",
+   "field": "description",
+   "before": "부산 전세전문 법무사 검색은 확정일자·전세권·임차권등기명령을 구분하는 갈림길로 연결됩니다. 계약 단계별로 필요한 확인사항을 정리했습니다. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "부산 전세전문 법무사 검색은 확정일자·전세권·임차권등기명령을 구분하는 갈림길로 연결됩니다. 전세사기 예방을 위한 계약 전 등기부 확인부터 계약 단계별 확인사항까지 정리했습니다."
+  },
+  {
+   "route": "/부산전세전문법무사",
+   "field": "ogDescription",
+   "before": "부산 전세전문 법무사 검색은 확정일자·전세권·임차권등기명령을 구분하는 갈림길로 연결됩니다. 계약 단계별로 필요한 확인사항을 정리했습니다. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "부산 전세전문 법무사 검색은 확정일자·전세권·임차권등기명령을 구분하는 갈림길로 연결됩니다. 전세사기 예방을 위한 계약 전 등기부 확인부터 계약 단계별 확인사항까지 정리했습니다."
+  },
+  {
+   "route": "/전세사기예방교육",
+   "field": "title",
+   "before": "부산 전세사기 예방교육 강사｜청년·대학생 전월세 계약 특강",
+   "after": "부산 전세사기 예방교육 강사｜전세사기 예방 특강·청년 전월세 계약 강의"
+  },
+  {
+   "route": "/전세사기예방교육",
+   "field": "description",
+   "before": "부산 청년·자립지원·복지기관 담당자를 위한 전세사기 예방교육 안내. 등기부·확정일자·보증·특약 확인을 60~120분 특강으로 구성하며 자립지원전담기관 강의 기록이 있습니다.",
+   "after": "전세사기 예방교육·전세사기 예방 특강을 준비하는 청년·자립지원·복지기관 담당자를 위한 안내. 등기부·확정일자·보증·특약 확인을 60~120분으로 구성하며, 2026년 9~10월 자립지원전담기관·해운대청년채움공간…"
+  },
+  {
+   "route": "/전세사기예방교육",
+   "field": "ogTitle",
+   "before": "부산 전세사기 예방교육 강사｜청년·대학생 전월세 계약 특강",
+   "after": "부산 전세사기 예방교육 강사｜전세사기 예방 특강·청년 전월세 계약 강의"
+  },
+  {
+   "route": "/전세사기예방교육",
+   "field": "ogDescription",
+   "before": "부산 청년·자립지원·복지기관 담당자를 위한 전세사기 예방교육 안내. 등기부·확정일자·보증·특약 확인을 60~120분 특강으로 구성하며 자립지원전담기관 강의 기록이 있습니다.",
+   "after": "전세사기 예방교육·전세사기 예방 특강을 준비하는 청년·자립지원·복지기관 담당자를 위한 안내. 등기부·확정일자·보증·특약 확인을 60~120분으로 구성하며, 2026년 9~10월 자립지원전담기관·해운대청년채움공간…"
+  },
+  {
+   "route": "/전세사기예방교육",
+   "field": "linksHash",
+   "before": "020923f3f4b387a7",
+   "after": "fc718f5754cc8373"
+  },
+  {
+   "route": "/창업법률교육",
+   "field": "linksHash",
+   "before": "2ae372e4ced9d0f9",
+   "after": "7428131f930c7e8f"
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "title",
+   "before": "부산 청년 법률교육 | 주거·계약 특강",
+   "after": "부산 청년 법률 특강 | 주거·계약·생활법률 교육"
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "description",
+   "before": "부산 청년·사회초년생 법률교육. 주거·전세·금전거래·계약을 사례로 안내합니다. 청년센터·자립 프로그램 출강. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "부산 청년센터·자립 프로그램 담당자를 위한 청년 법률 특강 안내. 첫 집 계약, 금전거래, 근로계약, 온라인 활동의 법률 기준을 사례로 구성하며 2026년 청년센터·자립지원전담기관 강의 기록이 있습니다."
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "h1",
+   "before": [
+    "부산 청년 법률교육, 주거와 계약에서 확인할 것"
+   ],
+   "after": [
+    "부산 청년 법률 특강, 주거와 계약에서 확인할 것"
+   ]
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "ogTitle",
+   "before": "부산 청년 법률교육 | 주거·계약 특강",
+   "after": "부산 청년 법률 특강 | 주거·계약·생활법률 교육"
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "ogDescription",
+   "before": "부산 청년·사회초년생 법률교육. 주거·전세·금전거래·계약을 사례로 안내합니다. 청년센터·자립 프로그램 출강. 해운대·센텀 다옴법무사사무소에서 전화·카카오톡·방문(예약) 상담이 가능합니다.",
+   "after": "부산 청년센터·자립 프로그램 담당자를 위한 청년 법률 특강 안내. 첫 집 계약, 금전거래, 근로계약, 온라인 활동의 법률 기준을 사례로 구성하며 2026년 청년센터·자립지원전담기관 강의 기록이 있습니다."
+  },
+  {
+   "route": "/청년생활법률특강",
+   "field": "linksHash",
+   "before": "6327266430e48a58",
+   "after": "3dd8677b69dda1ed"
+  },
+  {
+   "route": "/학교법률교육",
+   "field": "linksHash",
+   "before": "68466b7cb459c645",
+   "after": "4849a4bfbc190675"
+  }
+ ],
+ "mainChangedAllowed": [],
+ "mainChangedNotAllowed": [
+  "/about",
+  "/강사소개",
+  "/강의문의",
+  "/강의시간별구성",
+  "/강의이력/b-square-impact-scaleup-2026-09-29",
+  "/강의이력/busan-citizen-library-life-law",
+  "/강의이력/busan-citizen-library-week-1",
+  "/강의이력/busan-citizen-library-week-2",
+  "/강의이력/busan-citizen-library-week-3",
+  "/강의이력/busan-citizen-library-week-4",
+  "/강의이력/busan-self-support-daily-dispute-survival",
+  "/강의이력/busan-self-support-housing-disputes-2026-09-30",
+  "/강의이력/busan-self-support-housing-law-2026-09-16",
+  "/강의이력/busan-self-support-jeonse-prevention",
+  "/강의이력/changwon-youth-vision-center",
+  "/강의이력/haeundae-youth-job-growth-cafe",
+  "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
+  "/강의이력/haeundae-youth-space-startup-law-2026-07",
+  "/강의이력/lh-busan-ccei-life-law",
+  "/강의이력/yangsan-jeil-high-career-talk",
+  "/강의이력/youth-digital-law-guide",
+  "/강의이력/youth-housing-contract-guide",
+  "/강의이력/youth-jeonse-legal-education",
+  "/강의이력/youth-jeonse-most-sought",
+  "/강의이력/youth-jeonse-offline-session",
+  "/강의이력/youth-jeonse-prevention-series",
+  "/강의이력/youth-jeonse-vaccination",
+  "/강의이력/youth-life-law-basics",
+  "/강의이력/youth-mistake-crime-lecture",
+  "/강의이력/youth-money-property-dispute",
+  "/강의이력",
+  "/공공기관법률교육",
+  "/기관특강주제추천",
+  "/기업법률교육",
+  "/디지털법률교육",
+  "/법률강의",
+  "/법무사진로특강",
+  "/부산강사섭외비용",
+  "/부산강사섭외체크리스트",
+  "/부산기관법률특강",
+  "/부산대학교특강",
+  "/부산도서관법률특강",
+  "/부산법률강사",
+  "/부산법률전문가",
+  "/부산법무사강의",
+  "/부산사회복지기관강사",
+  "/부산전세전문법무사",
+  "/전세사기예방교육",
+  "/창업법률교육",
+  "/청년생활법률특강",
+  "/학교법률교육"
+ ],
+ "site": {
+  "sitemap.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 1646,
+   "after": 1646
+  },
+  "sitemaps/index.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 8,
+   "after": 8
+  },
+  "sitemaps/tier-1-core.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 17,
+   "after": 17
+  },
+  "sitemaps/tier-2-hubs.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 29,
+   "after": 29
+  },
+  "sitemaps/tier-3-tools.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 176,
+   "after": 176
+  },
+  "sitemaps/tier-4-regions.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 600,
+   "after": 600
+  },
+  "sitemaps/tier-5-local.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 185,
+   "after": 185
+  },
+  "sitemaps/tier-6-keywords.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 549,
+   "after": 549
+  },
+  "sitemaps/tier-7-blog.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 53,
+   "after": 53
+  },
+  "sitemaps/tier-8-media.xml": {
+   "removed": 0,
+   "added": 0,
+   "before": 37,
+   "after": 37
+  },
+  "rss": "CHANGED",
+  "robots": "same",
+  "headers": "same",
+  "redirects": "same"
+ }
+}

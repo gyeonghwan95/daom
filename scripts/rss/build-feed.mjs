@@ -35,7 +35,7 @@ const SITE = {
 
 const MAX_ITEMS = 50;
 
-/** RSS: 블로그·업무사례(MDX)만 — FAQ·언론·지역 랜딩 제외 */
+/** RSS: 블로그·업무사례(MDX)와 실제 강의 기록 — FAQ·언론·지역 랜딩 제외 */
 const MDX_SOURCES = [
   {
     type: "blog",
@@ -255,6 +255,48 @@ function loadMdxItems(source) {
     });
 }
 
+/**
+ * 실제로 진행한 강의 기록(src/data/lectures/history.ts) — 날짜가 확정(YYYY-MM-DD)되고 검증된 항목만.
+ * 강의 사진은 참석자 얼굴이 보일 수 있어 RSS 이미지로는 싣지 않는다.
+ */
+function loadLectureHistoryItems() {
+  const filePath = path.join(ROOT, "src/data/lectures/history.ts");
+  if (!fs.existsSync(filePath)) return [];
+  const source = fs.readFileSync(filePath, "utf8").replace(/\r\n/g, "\n");
+  const start = source.indexOf("export const lectureHistory");
+  if (start < 0) return [];
+  const blocks = source.slice(start).split(/\n  \{\n/).slice(1);
+  const pick = (block, key) => {
+    const m = block.match(new RegExp(`\\n    ${key}:\\s*"([^"]*)"`));
+    return m ? m[1] : "";
+  };
+  return blocks
+    .map((block) => {
+      const slug = pick(block, "slug");
+      const title = pick(block, "title");
+      const date = pick(block, "date");
+      const institution = pick(block, "institution");
+      const summary = pick(block, "summary");
+      const verified = /\n    verified: true/.test(block);
+      if (!slug || !title || !verified || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+      const link = absoluteUrl(`/${encodeURIComponent("강의이력")}/${encodeURIComponent(slug)}`);
+      return {
+        id: `lecture:${slug}`,
+        title,
+        description: summary || `${institution}에서 진행한 ${title}`,
+        link,
+        guid: link,
+        date,
+        author: SITE.representative,
+        feedLabel: "강의 이력",
+        categories: ["강의 이력", "법률 강의", institution].filter(Boolean),
+        bodyExcerpt: summary,
+        imageUrl: null,
+      };
+    })
+    .filter(Boolean);
+}
+
 function loadPressArticles() {
   const filePath = path.join(ROOT, "src/lib/press-articles.ts");
   if (!fs.existsSync(filePath)) return [];
@@ -311,7 +353,7 @@ function getSortScore(item) {
 }
 
 function collectFeedItems() {
-  const items = MDX_SOURCES.flatMap(loadMdxItems);
+  const items = [...MDX_SOURCES.flatMap(loadMdxItems), ...loadLectureHistoryItems()];
 
   return items
     .sort((a, b) => getSortScore(b) - getSortScore(a))

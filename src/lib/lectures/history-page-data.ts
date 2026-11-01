@@ -1,4 +1,5 @@
 import { createPageData } from "@/lib/pageData/template-helpers";
+import { getLecturePageLabel } from "@/lib/lectures/shared";
 import type { PageData } from "@/lib/pageData/types";
 import type { LectureHistoryEntry } from "@/lib/lectures/types";
 import {
@@ -51,6 +52,12 @@ export function buildLectureHistoryHubPageData(): PageData {
   });
 }
 
+/** "2025-09-01" → " (2025.09)" — 기간·연도만 있는 항목은 날짜를 붙이지 않는다 */
+function recordMonth(date?: string): string {
+  const m = date?.match(/^(\d{4})-(\d{2})/);
+  return m ? ` (${m[1]}.${m[2]})` : "";
+}
+
 export function buildLectureHistoryDetailPageData(
   entry: LectureHistoryEntry,
 ): PageData {
@@ -61,8 +68,9 @@ export function buildLectureHistoryDetailPageData(
     path: `/강의이력/${entry.slug}`,
     category: "pillar",
     title: `${entry.shortTitle ?? entry.title}｜안윤정 법무사 강의 이력`,
-    metaTitle: `${entry.shortTitle ?? entry.title}｜안윤정 법무사 강의 이력`,
-    metaDescription: `${entry.institution}에서 진행한 ${entry.title} 이력을 안내합니다. 대상: ${audience}. ${entry.summary.slice(0, 80)}`,
+    // 주제 페이지(예: /전세사기예방교육)와 같은 검색어를 두고 겹치지 않도록, 날짜·기관 중심의 "기록"으로 표기한다
+    metaTitle: `${entry.shortTitle ?? entry.title} 기록${recordMonth(entry.date)}｜안윤정 법무사 강의 이력`,
+    metaDescription: `${dateLabel} ${entry.institution}에서 ${audience} 대상으로 진행한 강의 기록입니다. ${entry.summary.slice(0, 80)}`,
     h1: entry.title,
     intro: entry.summary,
     breadcrumbs: [
@@ -87,7 +95,7 @@ export function buildLectureHistoryDetailPageData(
       { href: "/강의문의", label: "강의 문의" },
       ...(entry.relatedLecturePages ?? []).slice(0, 4).map((href) => ({
         href,
-        label: href.replace(/^\//, ""),
+        label: getLecturePageLabel(href),
       })),
     ],
     ctaTitle: "비슷한 대상과 주제로 강의를 준비하고 계신가요?",

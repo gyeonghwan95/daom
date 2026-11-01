@@ -33,6 +33,30 @@ export function isLectureTargetPath(path: string): boolean {
   return TARGET_SET.has(normalizePath(path));
 }
 
+/** 강의 섭외 담당자가 보는 페이지(타깃 + 주제·기관별 강의 페이지 + 강의 이력) — 개인 의뢰인용 비용 문구 대신 강의 문의 문구를 쓴다 */
+const LECTURE_PAGE_SET = new Set<string>([
+  ...LECTURE_TARGET_PATHS,
+  "/강의이력",
+  "/강의문의",
+  "/청년생활법률특강",
+  "/창업법률교육",
+  "/디지털법률교육",
+  "/공공기관법률교육",
+  "/부산도서관법률특강",
+  "/부산법무사강의",
+  "/부산기관법률특강",
+  "/부산사회복지기관강사",
+  "/부산강사섭외비용",
+  "/부산강사섭외체크리스트",
+  "/기관특강주제추천",
+  "/강의시간별구성",
+]);
+
+export function isLecturePagePath(path: string): boolean {
+  const clean = normalizePath(path);
+  return LECTURE_PAGE_SET.has(clean) || clean.startsWith("/강의이력/");
+}
+
 export type LectureTitleChange = {
   path: LectureTargetPath;
   oldTitle: string;
@@ -130,5 +154,42 @@ export const LECTURE_TITLE_FREEZE: LectureTitleChange[] = [
       "지역 없는 강사 검색은 강사은행·강사풀 등 플랫폼 위주. 개인 강사 프로필 페이지 수요",
     contentReason: "지역명 없는 generic hub 역할. 프로필·강의계획서 안내를 전면에 둠",
     frozenAt: "2026-09-27",
+  },
+  // 2026-11-01 네이버 모바일 실측: 지역 없는 강의 키워드에서 사이트 미노출. 1위 페이지는 제목 앞부분과 H1을 그대로 두고 뒷부분만 보강.
+  {
+    path: "/전세사기예방교육",
+    oldTitle: "부산 전세사기 예방교육 강사｜청년·대학생 전월세 계약 특강",
+    newTitle: "부산 전세사기 예방교육 강사｜전세사기 예방 특강·청년 전월세 계약 강의",
+    primaryQuery: "전세사기 예방 특강 / 전세사기 강의 (부산 전세사기 예방교육 1위 유지)",
+    serpReason: "부산 전세사기 예방교육 1위·전세사기 예방 강사 2위, 전세사기 예방 특강·전세사기 강의 미노출",
+    contentReason: "앞부분 유지, 뒷부분에 '전세사기 예방 특강'·'강의' 정확 문구 추가",
+    frozenAt: "2026-11-01",
+  },
+  {
+    path: "/법률강의",
+    oldTitle: "부산 법률 강의·특강 | 안윤정 법무사",
+    newTitle: "부산 법률 강의·특강 | 생활법률특강·법률교육 안윤정 법무사",
+    primaryQuery: "생활법률특강 / 법률특강 (부산 법률 강의 1위 유지)",
+    serpReason: "부산 법률 강의 1위·부산 법률특강 3위, 생활법률특강·법률특강 사이트 미노출(블로그만 7·12위)",
+    contentReason: "앞부분 유지, '생활법률특강·법률교육' 추가",
+    frozenAt: "2026-11-01",
+  },
+  {
+    path: "/부산법률강사",
+    oldTitle: "부산 강사 초빙｜기관·기업 특강·강연·세미나 출강",
+    newTitle: "부산 강사 초빙｜법률 강사·기관·기업 특강·강연·세미나",
+    primaryQuery: "법률 강사 초빙 / 법률 강사 (부산 법률 강사 1위 유지)",
+    serpReason: "부산 법률 강사 1위·법률 강사 초빙 2위, 법률 강사 미노출 — 제목·H1·본문에 '법률 강사' 없음",
+    contentReason: "앞부분 유지, '법률 강사' 추가",
+    frozenAt: "2026-11-01",
+  },
+  {
+    path: "/기업법률교육",
+    oldTitle: "부산 기업 특강·강연｜임직원 계약·채권·법인 실무교육",
+    newTitle: "부산 기업 법률 특강·강연｜직장인 계약·채권·법인 실무교육",
+    primaryQuery: "기업 법률 특강 / 직장인 법률 특강",
+    serpReason: "기업 법률 특강·직장인 법률 특강 모두 미노출. 제목에 '법률'·'직장인' 없음",
+    contentReason: "1위 키워드 없음. 검색 문구를 제목·H1에 반영",
+    frozenAt: "2026-11-01",
   },
 ];

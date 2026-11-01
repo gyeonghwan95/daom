@@ -57,8 +57,9 @@ function assertRss() {
     if (link.includes("/faq/") || link.includes("/media/")) {
       fail(`rss.xml must not include FAQ/media items: ${link}`);
     }
-    if (!link.includes("/blog/") && !link.includes("/services/cases/")) {
-      fail(`rss.xml item must be blog or services/cases only: ${link}`);
+    const lectureHistoryPrefix = `/${encodeURIComponent("강의이력")}/`;
+    if (!link.includes("/blog/") && !link.includes("/services/cases/") && !link.includes(lectureHistoryPrefix)) {
+      fail(`rss.xml item must be blog, services/cases or lecture history only: ${link}`);
     }
   }
 
@@ -67,7 +68,7 @@ function assertRss() {
     fail("rss.xml has no items");
   }
 
-  console.log(`[seo:validate] rss.xml OK (${itemCount} items, blog+cases only)`);
+  console.log(`[seo:validate] rss.xml OK (${itemCount} items, blog+cases+lecture history)`);
 }
 
 function assertRobotsSource() {

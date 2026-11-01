@@ -74,7 +74,7 @@ export function LecturePageView({ page }: LecturePageViewProps) {
     );
   }
 
-  const relatedHistory = getRelatedLectureHistoryForPage(page.path, 3);
+  const relatedHistory = getRelatedLectureHistoryForPage(page.path, 6);
   const fallbackHistory = getLectureHistoryByIds(content.historyIds).slice(0, 3);
   const history =
     relatedHistory.length > 0 ? relatedHistory : fallbackHistory;

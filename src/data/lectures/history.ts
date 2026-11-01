@@ -971,18 +971,33 @@ export function getRecentLectureHistory(limit = 3): LectureHistoryEntry[] {
     .slice(0, limit);
 }
 
+/**
+ * 개별 회차가 따로 등록된 묶음 항목(예: 시민도서관 4회차 묶음, 청년 전세사기 예방 시리즈)인지.
+ * 기간(YYYY~YYYY)으로 적혀 있고 같은 기관의 다른 항목이 있으면 묶음으로 본다 — 실적을 두 번 세지 않기 위함.
+ */
+export function isUmbrellaLectureEntry(
+  entry: LectureHistoryEntry,
+  all: LectureHistoryEntry[] = getVerifiedLectureHistory(),
+): boolean {
+  if (!entry.date?.includes("~")) return false;
+  return all.some((other) => other.id !== entry.id && other.institution === entry.institution);
+}
+
+/** 주제 페이지에 보여 줄 실제 강의 — 최근 강의가 먼저 보이도록 날짜순(같으면 대표 강의 우선), 묶음 항목 제외 */
 export function getRelatedLectureHistoryForPage(
   pagePath: string,
   limit = 3,
 ): LectureHistoryEntry[] {
   const normalized = pagePath.startsWith("/") ? pagePath : `/${pagePath}`;
-  return getVerifiedLectureHistory()
+  const all = getVerifiedLectureHistory();
+  return all
     .filter((entry) =>
       (entry.relatedLecturePages ?? []).some(
         (href) => href === normalized || href.startsWith(`${normalized}#`),
       ),
     )
-    .sort((a, b) => Number(b.featured) - Number(a.featured))
+    .filter((entry) => !isUmbrellaLectureEntry(entry, all))
+    .sort((a, b) => compareLectureHistoryDate(b, a) || Number(b.featured) - Number(a.featured))
     .slice(0, limit);
 }
 

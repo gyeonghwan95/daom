@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T13:32:08.671Z",
+  "generatedAt": "2026-11-01T14:13:15.936Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1646,
   "format": "urlset",
@@ -1010,7 +1010,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-10-30",
+      "lastmod": "2026-11-01",
       "filename": "tier-4-regions.xml",
       "count": 600
     },
@@ -1022,7 +1022,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-6-keywords.xml",
-      "lastmod": "2026-10-30",
+      "lastmod": "2026-11-01",
       "filename": "tier-6-keywords.xml",
       "count": 549
     },
@@ -1034,7 +1034,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-8-media.xml",
-      "lastmod": "2026-10-14",
+      "lastmod": "2026-11-01",
       "filename": "tier-8-media.xml",
       "count": 37
     }
@@ -3042,7 +3042,7 @@
       "path": "/부산법률강사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EA%B0%95%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/부산법률상담",
@@ -3060,7 +3060,7 @@
       "path": "/부산법무사강의",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EA%B0%95%EC%9D%98",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/부산법무사무소",
@@ -3708,7 +3708,7 @@
       "path": "/부산전세전문법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A0%84%EC%84%B8%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/부산제3자배정유상증자",
@@ -7398,7 +7398,7 @@
       "path": "/공공기관법률교육",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EA%B3%B5%EA%B8%B0%EA%B4%80%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": "2026-09-26"
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/공공기관법인등기",
@@ -7596,7 +7596,7 @@
       "path": "/기업법률교육",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%97%85%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/기업업무문의",
@@ -8238,7 +8238,7 @@
       "path": "/법률강의",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%A5%A0%EA%B0%95%EC%9D%98",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/법무사맡기면달라지는점",
@@ -9834,7 +9834,7 @@
       "path": "/전세사기예방교육",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EC%84%B8%EC%82%AC%EA%B8%B0%EC%98%88%EB%B0%A9%EA%B5%90%EC%9C%A1",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/전세사기피해대응절차",
@@ -10110,7 +10110,7 @@
       "path": "/청년생활법률특강",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B2%AD%EB%85%84%EC%83%9D%ED%99%9C%EB%B2%95%EB%A5%A0%ED%8A%B9%EA%B0%95",
-      "lastmod": "2026-09-26"
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/체육단체사단법인설립",
@@ -10716,157 +10716,157 @@
       "path": "/강의이력/b-square-impact-scaleup-2026-09-29",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/b-square-impact-scaleup-2026-09-29",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-citizen-library-life-law",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-life-law",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-citizen-library-week-1",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-1",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-citizen-library-week-2",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-2",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-citizen-library-week-3",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-3",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-citizen-library-week-4",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-citizen-library-week-4",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-self-support-daily-dispute-survival",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-daily-dispute-survival",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-self-support-housing-disputes-2026-09-30",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-disputes-2026-09-30",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-self-support-housing-law-2026-09-16",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-housing-law-2026-09-16",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/busan-self-support-jeonse-prevention",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/busan-self-support-jeonse-prevention",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/changwon-youth-vision-center",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/changwon-youth-vision-center",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/haeundae-youth-job-growth-cafe",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-job-growth-cafe",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/haeundae-youth-space-jeonse-2026-10-02",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-jeonse-2026-10-02",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/haeundae-youth-space-startup-law-2026-07",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/haeundae-youth-space-startup-law-2026-07",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/lh-busan-ccei-life-law",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/lh-busan-ccei-life-law",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/yangsan-jeil-high-career-talk",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/yangsan-jeil-high-career-talk",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-digital-law-guide",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-digital-law-guide",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-housing-contract-guide",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-housing-contract-guide",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-jeonse-legal-education",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-legal-education",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-jeonse-most-sought",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-most-sought",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-jeonse-offline-session",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-offline-session",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-jeonse-prevention-series",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-prevention-series",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-jeonse-vaccination",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-jeonse-vaccination",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-life-law-basics",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-life-law-basics",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-mistake-crime-lecture",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-mistake-crime-lecture",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/강의이력/youth-money-property-dispute",
       "tier": 8,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%95%EC%9D%98%EC%9D%B4%EB%A0%A5/youth-money-property-dispute",
-      "lastmod": null
+      "lastmod": "2026-11-01"
     },
     {
       "path": "/media/beopryul-sinmun-bar-association-64th-general-assembly",

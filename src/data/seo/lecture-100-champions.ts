@@ -64,7 +64,7 @@ export const LECTURE_100_TARGETS: readonly LectureQueryChampion[] = [
   { query: "부산 대학생 첫 직장 계약 특강", champion: "/부산대학교특강" },
   // [2] 부산 법무사 특강·강의
   { query: "부산 법무사 강사 섭외", champion: "/부산법률강사" },
-  { query: "부산 법무사 특강 강사", champion: "/부산법률강사" },
+  { query: "부산 법무사 특강 강사", champion: "/부산법무사강의" },
   { query: "부산 법무사 강의 의뢰", champion: "/부산법무사강의" },
   { query: "부산 법무사 출강", champion: "/부산법무사강의" },
   { query: "부산 법무사 초청 강연", champion: "/부산법무사강의" },

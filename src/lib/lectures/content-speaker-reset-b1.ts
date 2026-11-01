@@ -159,13 +159,15 @@ export const busanHubSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.citizenWeek1, targetPhotos.moneyDispute],
   related: [
-    { href: "/법률강의", label: "생활법률 특강", description: "시민·기관 대상 연속 강좌 구성" },
-    { href: "/기업법률교육", label: "부산 기업 특강·강연", description: "임직원 계약·채권·법인 실무" },
+    { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "시민·기관 대상 연속 강좌 구성" },
+    { href: "/기업법률교육", label: "기업 법률 특강", description: "임직원 계약·채권·법인 실무" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "비교과·진로·생활법률" },
     { href: "/법무사진로특강", label: "부산 진로특강", description: "현직 법무사 직업인 특강" },
-    { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "청년·자립준비청년 대상" },
+    { href: "/전세사기예방교육", label: "전세사기 예방교육·특강", description: "청년·자립준비청년 대상" },
     { href: "/강사소개", label: "강사 프로필", description: "자격·출강 기록·강의계획서" },
     { href: "/부산강사섭외체크리스트", label: "외부강사 섭외 체크리스트", description: "섭외 전 확인 항목" },
+    { href: "/부산법무사강의", label: "법무사 강의·특강", description: "등기·계약 실무 출강" },
+    { href: "/기관특강주제추천", label: "기관 법률 특강 주제 추천", description: "대상별 주제 고르기" },
     { href: "/강의이력", label: "그동안 다녀온 강의", description: "기관명·일자 확인 기록" },
   ],
   inquiryTopic: "기관 맞춤 기획",
@@ -175,9 +177,9 @@ export const busanHubContent = buildTargetContent({
   slug: "부산법률강사",
   kind: "hiring",
   title: "부산 강사·특강·강연 출강",
-  metaTitle: "부산 강사 초빙｜기관·기업 특강·강연·세미나 출강",
+  metaTitle: "부산 강사 초빙｜법률 강사·기관·기업 특강·강연·세미나",
   metaDescription:
-    "부산에서 기관·기업·학교 행사용 외부강사를 찾는 담당자를 위해 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다.",
+    "법률 강사 초빙을 준비하는 부산 기관·기업·학교 담당자를 위해 법무사 출강 가능 주제, 확인된 부산 출강 기록, 60~120분 구성과 강사료 요소를 정리했습니다.",
   h1: "부산에서 특강·강연·세미나 강사를 찾는 담당자께",
   eyebrow: "부산 강사 초빙 · 출강 안내",
   faqs: [
@@ -384,12 +386,13 @@ export const enterpriseSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.youthSpace],
   related: [
-    { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위 전체" },
+    { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "대상별 출강 범위 전체" },
     { href: "/창업법률교육", label: "창업 법률교육", description: "예비창업자·스타트업 대상" },
     { href: "/공공기관법률교육", label: "공공기관 법률교육", description: "직원·민원 응대 실무" },
     { href: "/부산기관법률특강", label: "협회·단체 법률특강", description: "회원사 단체 교육" },
+    { href: "/기관특강주제추천", label: "기관 법률 특강 주제 추천", description: "직원 교육 주제 고르기" },
     { href: "/강사소개", label: "강사 프로필", description: "결재용 프로필·강의계획서" },
-    { href: "/법률강의", label: "생활법률 특강", description: "직원 복지형 생활법률" },
+    { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "직원 복지형 생활법률" },
   ],
   inquiryTopic: "기업 법률특강",
   inquiryAudience: "기업 임직원",
@@ -399,10 +402,10 @@ export const enterpriseContent = buildTargetContent({
   slug: "기업법률교육",
   kind: "topic",
   title: "부산 기업 특강",
-  metaTitle: "부산 기업 특강·강연｜임직원 계약·채권·법인 실무교육",
+  metaTitle: "부산 기업 법률 특강·강연｜직장인 계약·채권·법인 실무교육",
   metaDescription:
-    "부산 기업 교육 담당자를 위한 임직원 법률 특강·강연 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일 구성으로 정리했습니다.",
-  h1: "부산 기업 특강·강연, 임직원이 업무에서 바로 쓰는 계약·채권 실무",
+    "기업 법률 특강·직장인 법률 특강을 준비하는 부산 교육 담당자를 위한 안내. 계약 체결 전 확인, 미수금 자료, 법인등기 기한을 직무별 60분~반일로 구성하며, 2026년 9월 비스퀘어 창업팀 법인 실무 강의 기록이 있습니다.",
+  h1: "부산 기업 법률 특강, 임직원이 업무에서 바로 쓰는 계약·채권 실무",
   eyebrow: "부산 기업 특강 · 강연 · 사내교육",
   faqs: [
     {
@@ -432,7 +435,7 @@ export const enterpriseContent = buildTargetContent({
     {
       question: "기업 사내 강연 경험이 있나요?",
       answer:
-        "공개할 수 있는 기업 사내 강연 기록은 아직 없습니다. 예비창업 청년 대상 창업법률 특강, 공공기관·혁신센터 협업 프로그램 기록을 참고로 안내합니다.",
+        "기업 사내 강연으로 공개할 수 있는 기록은 아직 없습니다. 대신 2026년 9월 비스퀘어 임팩트 스케일업 마스터 클래스에서 사회적기업·초기 창업팀을 대상으로 법인설립·등기 실무를 강의했고, 예비창업 청년 창업법률 특강과 공공기관·혁신센터 협업 프로그램 기록도 함께 안내합니다.",
     },
     {
       question: "회사 강사료 기준이 정해져 있습니다",
@@ -613,11 +616,11 @@ export const universitySpec: LectureTargetSpec = {
   photos: [targetPhotos.haeundaeJobCafe],
   related: [
     { href: "/법무사진로특강", label: "법 관련 직업 진로특강", description: "중·고·대학 진로 구성" },
-    { href: "/전세사기예방교육", label: "전세사기 예방교육", description: "첫 전·월세 계약 실습" },
-    { href: "/청년생활법률특강", label: "청년 생활법률 특강", description: "사회초년생 계약·금전" },
+    { href: "/전세사기예방교육", label: "전세사기 예방교육·특강", description: "첫 전·월세 계약 실습" },
+    { href: "/청년생활법률특강", label: "청년 법률 특강", description: "사회초년생 계약·금전" },
     { href: "/창업법률교육", label: "창업 법률교육", description: "창업동아리·창업지원단" },
     { href: "/학교법률교육", label: "고등학교 특강", description: "중등 대상 생활법률·진로" },
-    { href: "/부산법률강사", label: "부산 강사 초빙 안내", description: "대상별 출강 범위" },
+    { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "대상별 출강 범위" },
     { href: "/강사소개", label: "강사 프로필", description: "비교과 제출용 이력" },
   ],
   inquiryTopic: "대학교 특강",

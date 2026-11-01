@@ -37,6 +37,50 @@ export type LectureEvidenceRecord = {
 
 export const lectureEvidenceRegistry: LectureEvidenceRecord[] = [
   {
+    id: "ev-youth-space-jeonse-2026-10",
+    historyId: "haeundae-youth-space-jeonse-2026-10-02",
+    label: "청년 전·월세 계약·전세사기 예방 특강",
+    institution: "해운대청년채움공간",
+    date: "2026-10-02",
+    status: "COMPLETED_VERIFIED",
+    groups: { "busan-hub": "DIRECT", jeonse: "DIRECT", "life-law": "DIRECT", university: "RELATED", generic: "DIRECT" },
+    publicNote: "청년 대상 전·월세 계약 구조, 등기부등본·임대인 확인, 전입신고·확정일자, 보증금 보호.",
+    sourceNote: "history.ts verified · 강의 자료·현장 사진 확인",
+  },
+  {
+    id: "ev-self-support-housing-disputes-2026-09",
+    historyId: "self-support-housing-disputes-2026-09-30",
+    label: "주거 분쟁 생존법 교육",
+    institution: "부산광역시 자립지원전담기관",
+    date: "2026-09-30",
+    status: "COMPLETED_VERIFIED",
+    groups: { "busan-hub": "DIRECT", jeonse: "RELATED", "life-law": "DIRECT", generic: "DIRECT" },
+    publicNote: "자립준비청년 대상 주거 계약·전세 권리관계 확인, 가족 간 금전거래 기록, 분쟁 예방 증거 정리.",
+    sourceNote: "history.ts verified · 강의계획서·발표자료·현장 사진 확인",
+  },
+  {
+    id: "ev-self-support-housing-law-2026-09",
+    historyId: "self-support-housing-law-2026-09-16",
+    label: "주거생활 법률 기초 교육",
+    institution: "부산광역시 자립지원전담기관",
+    date: "2026-09-16",
+    status: "COMPLETED_VERIFIED",
+    groups: { "busan-hub": "DIRECT", jeonse: "DIRECT", "life-law": "DIRECT", generic: "DIRECT" },
+    publicNote: "첫 집을 구하는 자립준비청년 대상 계약서·등기부등본 확인, 전입신고·확정일자, 보증금 반환.",
+    sourceNote: "history.ts verified · 강의계획서·발표자료·현장 사진 확인",
+  },
+  {
+    id: "ev-bsquare-impact-2026-09",
+    historyId: "b-square-impact-scaleup-2026-09-29",
+    label: "임팩트 스케일업 마스터 클래스 법인설립·등기 실무",
+    institution: "비스퀘어",
+    date: "2026-09-29",
+    status: "COMPLETED_VERIFIED",
+    groups: { "busan-hub": "DIRECT", enterprise: "RELATED", generic: "DIRECT" },
+    publicNote: "사회적기업·초기 창업팀 대상 법인 형태 선택, 주주·임원 구조, 정관·변경등기, 계약 유의사항.",
+    sourceNote: "history.ts verified · 발표자료·현장 사진 확인 · 사내 강연이 아닌 창업지원 프로그램이라 enterprise는 RELATED",
+  },
+  {
     id: "ev-citizen-library-series",
     historyId: "citizen-library-life-law",
     label: "생활법률 연속 특강",
@@ -213,9 +257,10 @@ export function getPublicEvidenceForGroup(
       ...record,
       applicability: record.groups[group] as "DIRECT" | "RELATED",
     }))
+    // 같은 적용 범위 안에서는 최근 강의가 먼저 보이게 한다(기간 표기는 시작 연도로 비교)
     .sort((a, b) =>
       a.applicability === b.applicability
-        ? 0
+        ? (b.date ?? "").localeCompare(a.date ?? "")
         : a.applicability === "DIRECT"
           ? -1
           : 1,

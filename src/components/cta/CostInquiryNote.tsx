@@ -17,6 +17,7 @@ import {
   type NaverSmartPlaceVariant,
 } from "@/lib/naver-smartplace/cta";
 import { pickShortReviewQuote } from "@/lib/naver-place-reviews/static-quotes";
+import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
 
 /**
  * 비용 문의 안내 — 본문형 페이지 공통(서두: HeroContactButtons·PageHero 등, 말미: MainContactPhone).
@@ -120,6 +121,15 @@ function PlaceLink({
   );
 }
 
+/** 강의 페이지 서두 — 고정 비용 문구 위에 기관 담당자용 안내 한 줄을 더한다(고정 문구는 바꾸지 않음) */
+function LectureIntroLine() {
+  return (
+    <p className="mb-2 text-[0.95rem] font-semibold leading-relaxed text-navy">
+      강의 주제·대상·예상 인원·희망 날짜만 알려 주시면 구성안과 가능 여부를 먼저 회신해 드립니다.
+    </p>
+  );
+}
+
 /** 비용 문의 고정 문구 — 서두 */
 function IntroMessage({ placement }: { placement: string }) {
   const { phone, kakao, naverTalk } = getContactInfo();
@@ -148,7 +158,9 @@ function DecisionCard({ className }: { className: string }) {
   const pathname = usePathname() ?? "/";
   const { phone } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
-  const quote = pickShortReviewQuote(pathname);
+  const lecture = isLecturePagePath(pathname);
+  // 강의 페이지는 기관 담당자가 보므로 개인 의뢰인의 사건 후기를 인용하지 않는다
+  const quote = lecture ? null : pickShortReviewQuote(pathname);
   const naverOn = isNaverSmartPlaceConfigured();
   const placement = "cost_intro";
 
@@ -160,7 +172,7 @@ function DecisionCard({ className }: { className: string }) {
     >
       {/* ① 맡길 근거 — 후기 수는 H1 아래 신뢰 띠와 신뢰 블록에 있으므로 여기선 진행 방식·표창만 */}
       <ul className="decision-card__proof" aria-label="맡기기 전 확인할 근거">
-        <li>대표 법무사가 처음부터 직접 진행</li>
+        <li>{lecture ? "법무사가 직접 출강" : "대표 법무사가 처음부터 직접 진행"}</li>
         <li>대한법무사협회장 표창</li>
       </ul>
 
@@ -175,6 +187,7 @@ function DecisionCard({ className }: { className: string }) {
 
       {/* ② 비용 걱정 — 고정 문구 */}
       <div className="decision-card__cost">
+        {lecture ? <LectureIntroLine /> : null}
         <IntroMessage placement={placement} />
       </div>
 
@@ -183,10 +196,10 @@ function DecisionCard({ className }: { className: string }) {
         <InquiryStartButton
           source="landing"
           pageSlug={pathname}
-          note="결정 카드에서 상담 신청"
+          note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 상담 신청"}
           className="decision-card__primary"
         >
-          1분만에 상담 신청
+          {lecture ? "강의 문의 남기기" : "1분만에 상담 신청"}
         </InquiryStartButton>
         <a
           href={phoneHref}
@@ -200,7 +213,11 @@ function DecisionCard({ className }: { className: string }) {
           {phone}
         </a>
       </div>
-      <p className="decision-card__hint">서류가 없어도 상황만 남겨 주시면 됩니다.</p>
+      <p className="decision-card__hint">
+        {lecture
+          ? "기관 강사료 기준이 있으면 그 범위에서 시간·자료 구성을 맞춥니다."
+          : "서류가 없어도 상황만 남겨 주시면 됩니다."}
+      </p>
 
       {/* ④ 네이버 예약·지도(페이지마다 최소 1개) */}
       {naverOn ? (
