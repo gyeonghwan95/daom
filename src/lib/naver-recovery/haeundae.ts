@@ -14,7 +14,7 @@ export const haeundaeRecoverySpec: Omit<NaverRecoverySpec, "slug" | "path"> = {
   facts: [
     { label: "주소", value: officeLocation.fullAddress },
     { label: "교통·주차", value: officeLocation.accessSummary },
-    { label: "상담 시간", value: `${officeHours.weekday} (점심 ${officeHours.lunch}) · 예약 후 방문` },
+    { label: "상담 시간", value: `${officeHours.weekday} · 예약 후 방문` },
   ],
   image: {
     src: "/image/og/haeundae-office-nameplate-4x3.jpg",

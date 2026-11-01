@@ -1069,8 +1069,9 @@ export function buildPageDataFromFaqMeta(meta: ContentMeta): PageData {
     ],
     sections: [
       {
-        title: "답변 요약",
-        body: meta.description,
+        // 서두(intro)가 이미 meta.description이므로 같은 문장을 다시 쓰지 않고 함께 확인할 주제만 둔다
+        title: "함께 확인할 주제",
+        body: "이 질문과 함께 자주 확인하시는 주제입니다.",
         items: meta.tags,
       },
     ],

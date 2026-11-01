@@ -68,7 +68,7 @@ export const SERP_HOOK_IMAGES: Record<string, SerpHookImage> = {
   "/업무사례/서울상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-서울상속등기법무사.webp", alt: "서울 집 상속, 부산에서 진행 — 상속 등기필정보 및 등기완료통지서(개인정보 가림)", width: 1200, height: 1200 },
   "/업무사례/용인상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-용인상속등기법무사.webp", alt: "용인 집 상속, 비대면으로 — 창가 책상에서 서류를 검토하는 안윤정 법무사", width: 1200, height: 1200 },
   "/업무사례/대구상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-대구상속등기법무사.webp", alt: "팔기 전에 상속 명의부터 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사", width: 1200, height: 1200 },
-  "/업무사례/대전상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-대전상속등기법무사.webp", alt: "흩어진 상속인, 서류 모으기 — 다옴법무사사무소에 걸린 자격·위촉 증서", width: 1200, height: 1200 },
+  "/업무사례/대전상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-대전상속등기법무사.webp", alt: "흩어진 상속인, 서류 모으기 — 책상에서 서류를 확인하는 안윤정 법무사", width: 1200, height: 1200 },
   "/업무사례/울산상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-울산상속등기법무사.webp", alt: "울산 집 상속, 비대면으로 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사", width: 1200, height: 1200 },
   "/업무사례/창원상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-창원상속등기법무사.webp", alt: "창원 집 상속, 한 번에 정리 — 법인 서류와 인감을 정리하는 안윤정 법무사", width: 1200, height: 1200 },
   "/업무사례/김해상속등기법무사": { src: "/images/generated/carousel/hooks/업무사례-김해상속등기법무사.webp", alt: "김해 집 상속, 부산에서 진행 — 법무사 명패가 놓인 책상에서 업무 중인 안윤정 법무사", width: 1200, height: 1200 },

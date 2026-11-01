@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ToolCalculatorView } from "@/components/tools/ToolCalculatorView";
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ToolDetailPage({ params }: Props) {
   const { slug } = await params;
   const normalized = normalizeRouteSlug(slug);
+  setPeerPagePath(`/tools/${normalized}`);
   const page = resolveToolPageData(normalized);
   if (!page) notFound();
 

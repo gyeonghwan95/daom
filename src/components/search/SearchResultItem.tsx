@@ -32,7 +32,7 @@ export function SearchResultItem({
         }`}
       >
         <div className="flex items-start gap-2">
-          <span className="mt-0.5 shrink-0 rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-[11px] font-medium text-navy/70">
+          <span className="mt-0.5 shrink-0 rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-xs font-medium text-navy/70">
             {item.categoryLabel}
           </span>
           <div className="min-w-0 flex-1">

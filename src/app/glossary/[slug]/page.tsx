@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { GlossaryTermView } from "@/components/glossary/GlossaryTermView";
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GlossaryTermPage({ params }: Props) {
   const { slug } = await params;
   const normalized = normalizeRouteSlug(slug);
+  setPeerPagePath(`/glossary/${normalized}`);
   const page = resolveGlossaryTermPageData(normalized);
   if (!page) notFound();
 

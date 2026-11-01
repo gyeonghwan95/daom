@@ -49,7 +49,12 @@ import {
 import type { RecommendationSource } from "@/lib/internal-links";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
-import { partitionPageIntro, uniqueParagraphs } from "@/lib/pageData/template-helpers";
+import {
+  distinctConsultationPoints,
+  dropParagraphsCoveredBy,
+  partitionPageIntro,
+  uniqueParagraphs,
+} from "@/lib/pageData/template-helpers";
 import type { PageData, PageSection } from "@/lib/pageData/types";
 import { resolveSerpImage } from "@/lib/seo/page-visuals";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
@@ -174,10 +179,6 @@ export function PageDataTemplate({
     dedicatedConclusion: championSummary?.conclusion,
     h1: page.h1,
   });
-  const showArticleBody =
-    page.slug !== "부산상속법무사" &&
-    page.slug !== "부산상속포기" &&
-    introSlots.bodyParagraphs.length > 0;
   // 핵심 요약 기본값: '진행:/서류:' 단편 조합 대신 절차 문장을 쓰고, 권유 문구·중복 문장은 '상담이 필요한 상황'에서 뺀다.
   const summaryCheckItems =
     page.procedures.length >= 3
@@ -193,6 +194,17 @@ export function PageDataTemplate({
       !/(시작해 보세요|문의하세요|남겨 주세요|연락 주세요)\.?$/.test(point.trim()),
   );
   const summaryConsultTriggers = triggerCandidates.length >= 2 ? triggerCandidates.slice(0, 3) : [];
+  // 핵심 요약에 이미 나온 문장이 대부분인 문단은 '자세히 알아보기'에서 되풀이하지 않는다
+  const articleBodyParagraphs = dropParagraphsCoveredBy(introSlots.bodyParagraphs, [
+    introSlots.summaryConclusion,
+    ...introSlots.heroParagraphs,
+    ...(championSummary?.checkItems ?? summaryCheckItems),
+    ...(championSummary?.consultTriggers ?? summaryConsultTriggers),
+  ]);
+  const showArticleBody =
+    page.slug !== "부산상속법무사" &&
+    page.slug !== "부산상속포기" &&
+    articleBodyParagraphs.length > 0;
   const tocItems = buildPageTocItems(page, {
     hasDetailContent: Boolean(children),
     hasArticleBody: showArticleBody,
@@ -335,7 +347,7 @@ export function PageDataTemplate({
 
       {showArticleBody ? (
         <ContentSection id="article-body" title="자세히 알아보기">
-          <ProseParagraphs paragraphs={introSlots.bodyParagraphs} />
+          <ProseParagraphs paragraphs={articleBodyParagraphs} />
         </ContentSection>
       ) : null}
 
@@ -359,8 +371,8 @@ export function PageDataTemplate({
         <StepTimeline steps={page.procedures} />
         <WarningBox title="절차 안내">
           <p>
-            위 순서는 일반적인 흐름을 정리한 것입니다. 사안에 따라 단계나
-            소요 기간이 달라질 수 있으니 상담 시 확인해 보시면 좋습니다.
+            위 순서는 일반적인 흐름입니다. 내 사건의 단계와 예상 기간은 서류를 보고
+            상담에서 구체적으로 알려 드립니다.
           </p>
         </WarningBox>
       </ContentSection>
@@ -379,9 +391,9 @@ export function PageDataTemplate({
         </>
       ) : null}
 
-      {!isInheritanceSurgeryTarget && page.consultationPoints.length > 0 ? (
+      {!isInheritanceSurgeryTarget && distinctConsultationPoints(page).length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
-          <ChecklistBox items={page.consultationPoints} />
+          <ChecklistBox items={distinctConsultationPoints(page)} />
         </ContentSection>
       ) : null}
 

@@ -240,8 +240,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
           </InfoCard>
           <InfoCard title="상담 시간">
             <p className="text-sm leading-relaxed text-navy/80">
-              {busanLawyerHubNap.hours} (점심 {busanLawyerHubNap.lunch} /{" "}
-              {busanLawyerHubNap.closed} 휴무)
+              {busanLawyerHubNap.hours} ({busanLawyerHubNap.closed} 휴무)
             </p>
           </InfoCard>
           <InfoCard title="전화">

@@ -178,7 +178,11 @@ export function getRelatedRegions(
         e.slug !== entry.slug &&
         e.kind !== "district",
     );
-    related.push(...siblings.slice(0, limit));
+    // 앞쪽 몇 곳만 반복해서 고르면 나머지가 링크를 못 받는다 — 정렬된 형제 목록에서 자기 다음 순서부터 순환해서 고른다.
+    const ordered = [entry, ...siblings].sort((x, y) => x.slug.localeCompare(y.slug, "ko"));
+    const at = ordered.findIndex((e) => e.slug === entry.slug);
+    const rotated = [...ordered.slice(at + 1), ...ordered.slice(0, at)];
+    related.push(...rotated.slice(0, limit));
   } else if (entry.kind === "city") {
     related.push(...all.filter((e) => e.kind === "district").slice(0, limit));
   }

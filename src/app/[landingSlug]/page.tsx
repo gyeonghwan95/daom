@@ -25,6 +25,7 @@ import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import { NoticesPageView } from "@/components/notices/NoticesPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
@@ -142,6 +143,7 @@ export async function generateMetadata({
 export default async function LocalLandingPage({ params }: PageProps) {
   const { landingSlug } = await params;
   const slug = normalizeRouteSlug(landingSlug);
+  setPeerPagePath(`/${slug}`);
   const ship = getShipSeoPage(slug);
   if (ship) {
     return <ShipSeoPageView spec={ship} />;
@@ -168,7 +170,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
         <article className="content-stack">
           <PageHero
             h1={page.h1}
-            eyebrow="Speaker track record"
+            eyebrow="강의 이력"
             intro={page.intro}
             keywords={page.primaryKeywords}
             ctaLabel="강의 문의"

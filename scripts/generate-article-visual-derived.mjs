@@ -26,7 +26,7 @@ const JOBS = [
   { src: "썸네일-상담협의.jpg", out: "consult-talk.webp", maxW: 1280 },
   { src: "썸네일-법원절차.jpg", out: "court-procedure.webp", maxW: 1280 },
   { src: "썸네일-부산지방법원등기국.jpg", out: "busan-registry-bureau.webp", maxW: 1280 },
-  { src: "사무소-서류.jpg", out: "office-docs.webp", maxW: 1280 },
+  { src: "썸네일-사무실_겨울 (4).jpg", out: "office-docs.webp", maxW: 1280 },
   { src: "썸네일-사무실_가을 (1).jpg", out: "office-exterior-fall.webp", maxW: 1280 },
   { src: "사무소-명판가로.jpg", out: "office-nameplate.webp", maxW: 1280 },
   { src: "강의-청년전세사기예방접종.jpg", out: "lecture-youth-jeonse.webp", maxW: 1280 },

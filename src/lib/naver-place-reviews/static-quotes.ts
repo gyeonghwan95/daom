@@ -6,6 +6,7 @@
 import feedJson from "../../../public/data/naver-place-reviews.json";
 import {
   excerptReview,
+  pathTopic,
   pickReviewQuote,
   type ReviewQuote,
 } from "@/lib/naver-place-reviews/topic-quote";
@@ -28,10 +29,19 @@ function topicOf(body: string): ReviewQuote["topic"] {
 // 길찾기·주차 이야기로 끝나는 인용은 결정 카드에 맞지 않는다("…처음에 장소를…"처럼 잘리는 경우 포함)
 const SHORT_QUOTES: ReviewQuote[] = (feed.items ?? [])
   .filter((r) => r.body && r.body.replace(/\s+/g, "").length >= 30)
-  .map((r) => ({ id: r.id, topic: topicOf(r.body), excerpt: excerptReview(r.body, 62) }))
-  .filter((q) => !/못\s?찾|헤[매메]|주차|장소/.test(q.excerpt));
+  .map((r) => ({ id: r.id, topic: topicOf(r.body), excerpt: excerptReview(r.body, 110) }))
+  .filter((q) => !/못\s?찾|헤[매메]|주차|장소/.test(q.excerpt))
+  // 문장 중간에서 잘린 인용("…")은 다듬어지지 않은 느낌을 줘 결정 카드에서는 쓰지 않는다
+  .filter((q) => !q.excerpt.endsWith("…"));
 
-/** 경로 업무와 같은 주제의 후기 한 줄(경로마다 고정) */
+/**
+ * 경로 업무와 같은 주제의 후기 한 줄(경로마다 고정).
+ * 후기가 13건뿐이라 주제와 무관한 페이지까지 돌려 쓰면 같은 문장이 사이트 전체에서 반복되므로,
+ * 상속·전세·부동산처럼 주제가 맞는 페이지에서만 인용하고 그 밖에는 인용하지 않는다.
+ */
 export function pickShortReviewQuote(pathname: string): ReviewQuote | null {
-  return pickReviewQuote(SHORT_QUOTES, pathname);
+  const topic = pathTopic(pathname);
+  if (topic === "general") return null;
+  const pool = SHORT_QUOTES.filter((q) => q.topic === topic);
+  return pickReviewQuote(pool, pathname);
 }

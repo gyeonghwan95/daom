@@ -28,19 +28,13 @@ const weekdayDays = [
 export const officeHours = {
   summary: "평일 09:00–18:00",
   weekday: "평일 09:00–18:00",
-  lunch: "12:00–13:00",
   closed: "토·일·공휴일",
   note: "방문 상담은 사전 예약 후 이용해 주세요.",
-  openingHoursText: "Mo-Fr 09:00-12:00,13:00-18:00",
+  openingHoursText: "Mo-Fr 09:00-18:00",
   specifications: [
     {
       dayOfWeek: weekdayDays,
       opens: "09:00",
-      closes: "12:00",
-    },
-    {
-      dayOfWeek: weekdayDays,
-      opens: "13:00",
       closes: "18:00",
     },
   ],

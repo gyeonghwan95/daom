@@ -251,7 +251,6 @@ export const busanLawyerHubNap = {
   address: officeLocation.fullAddress,
   access: officeLocation.accessSummary,
   hours: officeHours.weekday,
-  lunch: officeHours.lunch,
   closed: officeHours.closed,
   phone: defaultContact.phone,
   visit: officeLocation.visitNotice,

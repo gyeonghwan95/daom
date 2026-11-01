@@ -32,7 +32,7 @@ export function SummaryTriggerActions() {
         data-cta="phone"
         data-cta-placement="summary_triggers"
         onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
-        className="article-summary__triggers-phone"
+        className="article-summary__triggers-phone max-lg:hidden"
         aria-label={`전화 상담 ${phone}`}
       >
         전화 {phone}

@@ -79,7 +79,8 @@ export function RemoteLegalProcess({
         알려드리고 일정을 함께 맞춰 드립니다.
       </p>
 
-      <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+      {/* 모바일은 하단 고정 바에 같은 연락 수단이 있어 본문 버튼 줄은 PC에서만 */}
+      <div className="mt-5 hidden flex-col gap-2 sm:flex-row sm:flex-wrap lg:flex">
         <Link
           href={base}
           className="btn-primary inline-flex min-h-11 flex-1 items-center justify-center px-4 text-sm sm:min-w-[10rem]"

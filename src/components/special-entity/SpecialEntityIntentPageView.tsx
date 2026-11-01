@@ -23,6 +23,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { siteImages } from "@/lib/site-images";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 
 type SpecialEntityIntentPageViewProps = {
   page: PageData;
@@ -68,7 +69,7 @@ function buildSpecialBody(
 
   if (content.procedures.length) {
     paragraphs.push(
-      `실제 진행은 보통 ${content.procedures.join(" → ")} 순서로 이어집니다. 사안마다 주무관청·결의·관할이 달라질 수 있어, 현재 상황부터 차근차근 확인하는 편이 안전합니다.`,
+      `실제 진행은 보통 ${content.procedures.join(" → ")} 순서로 이어집니다. 주무관청·결의·관할은 단체마다 달라서, 현재 상황부터 차근차근 확인해 드립니다.`,
     );
   }
 
@@ -118,7 +119,12 @@ export function SpecialEntityIntentPageView({
   const isHub = content.kind === "hub";
   const isComparison = content.kind === "comparison";
   const profile = content.legalProfile;
-  const bodyParagraphs = buildSpecialBody(content);
+  // 핵심 요약(결론·시기·대상)에 이미 나온 문장은 '자세히 알아보기'에서 되풀이하지 않는다
+  const bodyParagraphs = dropParagraphsCoveredBy(buildSpecialBody(content), [
+    content.conclusion,
+    ...content.whenAndDeadline.slice(0, 3),
+    ...content.whoNeedsThis.slice(0, 3),
+  ]);
   const showNationwide =
     isHub ||
     content.slug.startsWith("부산") ||

@@ -77,6 +77,46 @@ export function splitIntroParagraphs(
   return uniqueParagraphs([intro, fallback, ...extras.slice(1)]).slice(0, 3);
 }
 
+/**
+ * '상담 포인트'에 보여 줄 항목 — 같은 문장이 이미 다른 섹션(예: 상담 전 확인할 내용)의 목록에 있으면 뺀다.
+ * 한 페이지에서 같은 체크리스트가 두 번 보이면 자동 생성된 글처럼 읽힌다.
+ */
+export function distinctConsultationPoints(page: {
+  consultationPoints: readonly string[];
+  sections: readonly { items?: readonly string[] }[];
+}): string[] {
+  const used = new Set(
+    page.sections.flatMap((section) => section.items ?? []).map(normalizeParagraphText),
+  );
+  return page.consultationPoints.filter(
+    (point) => !used.has(normalizeParagraphText(point)),
+  );
+}
+
+/**
+ * 이미 화면에 나온 문장(shown)이 절반 이상을 차지하는 문단은 뺀다.
+ * 핵심 요약과 '자세히 알아보기'가 같은 문장을 다시 보여 주지 않게 한다.
+ */
+export function dropParagraphsCoveredBy(
+  paragraphs: readonly string[],
+  shown: readonly string[],
+): string[] {
+  const keys = shown
+    .map(normalizeParagraphText)
+    .filter((key) => key.length >= 20);
+  return paragraphs.filter((paragraph) => {
+    const text = normalizeParagraphText(paragraph);
+    if (!text) return false;
+    let covered = 0;
+    for (const key of keys) {
+      if (text.includes(key)) covered += key.length;
+    }
+    // 요약 쪽 문장이 이 문단을 통째로 포함하는 경우도 반복이다
+    const containedWhole = keys.some((key) => key.includes(text));
+    return !containedWhole && covered / text.length < 0.5;
+  });
+}
+
 /** Hero·요약·자세히 알아보기가 같은 문단을 반복하지 않도록 나눈다. */
 export function partitionPageIntro(
   introParagraphs: readonly string[],
@@ -93,9 +133,16 @@ export function partitionPageIntro(
   const heroParagraphs = unique.slice(0, 2);
   const heroKeys = new Set(heroParagraphs.map(normalizeParagraphText));
   const dedicated = options.dedicatedConclusion?.trim();
-  const remainder = unique.filter(
-    (paragraph) => !heroKeys.has(normalizeParagraphText(paragraph)),
-  );
+  // 서두 문단을 이어 붙인 합본도 같은 문장의 반복이므로 요약·본문에서 뺀다
+  const repeatsHero = (paragraph: string) => {
+    const key = normalizeParagraphText(paragraph);
+    if (heroKeys.has(key)) return true;
+    return heroParagraphs.some((hero) => {
+      const heroKey = normalizeParagraphText(hero);
+      return heroKey.length >= 40 && key.includes(heroKey);
+    });
+  };
+  const remainder = unique.filter((paragraph) => !repeatsHero(paragraph));
   const summaryConclusion =
     dedicated ||
     remainder[0] ||
@@ -103,7 +150,7 @@ export function partitionPageIntro(
   const summaryKey = normalizeParagraphText(summaryConclusion);
   const bodyParagraphs = unique.filter((paragraph) => {
     const key = normalizeParagraphText(paragraph);
-    return !heroKeys.has(key) && key !== summaryKey;
+    return !repeatsHero(paragraph) && key !== summaryKey;
   });
   return { heroParagraphs, summaryConclusion, bodyParagraphs };
 }
@@ -177,7 +224,7 @@ export function ensureMinContent(page: PageData, min = 2000): PageData {
 
   const supplement = {
     title: "상담 시 확인하는 내용",
-    body: `${page.title.split("｜")[0].trim()} 사건은 서류·관할·기한에 따라 진행 순서가 달라집니다. 다옴법무사사무소는 부산 해운대구·센텀에서 상속등기·부동산등기·법인등기·개인회생·파산 등을 다루며, 의뢰인 상황에 맞춰 절차와 비용을 알기 쉽게 설명합니다. 불확실한 부분은 추측하지 않고, 서류로 확인한 내용을 바탕으로 안내드립니다. 전화·카카오톡·네이버 톡톡으로 간단히 상황을 남겨 주시면 필요한 준비부터 차분히 정리해 드리겠습니다.`,
+    body: `${page.title.split("｜")[0].trim()} 사건은 서류·관할·기한에 따라 진행 순서가 달라집니다. 다옴법무사사무소는 부산 해운대구·센텀에서 상속등기·부동산등기·법인등기·개인회생·파산 등을 다루며, 의뢰인 상황에 맞춰 절차와 비용을 알기 쉽게 설명합니다. 서류로 확인한 내용을 바탕으로 안내드립니다. 전화·카카오톡·네이버 톡톡으로 간단히 상황을 남겨 주시면 필요한 준비부터 차분히 정리해 드리겠습니다.`,
   };
 
   return {

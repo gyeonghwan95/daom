@@ -61,7 +61,7 @@
   --color-cream: var(--cream);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
-  --font-sans: var(--font-noto-sans-kr), "Malgun Gothic", sans-serif;
+  --font-sans: var(--font-noto-sans-kr), "KR Fallback Adjusted", "Malgun Gothic", sans-serif;
   /*
    * 본문 글꼴은 가변 글꼴(layout.tsx)이다. 예전 400·500·700 고정 세 벌에서는 500을 넘는 굵기(600·800 등)가
    * 모두 700으로 그려졌으므로, 화면이 바뀌지 않도록 같은 값으로 맞춘다. 굵기를 새로 정할 때는 400·500·700을 쓴다.
@@ -1341,7 +1341,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .sidebar-consult-panel__channel-hint {
-    @apply mt-0.5 block truncate text-[10px] leading-tight opacity-75;
+    @apply mt-0.5 block truncate text-[11px] leading-tight opacity-75;
   }
 
   .sidebar-consult-panel__channel--phone {
@@ -4887,7 +4887,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .home-place__hours-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.65rem;
     margin-top: 0.55rem;
   }
@@ -10716,4 +10716,140 @@ a.admin-page-identity__path:hover {
 .content-stack :is(.max-w-xl, .max-w-2xl, .max-w-3xl, .max-w-4xl, .prose-measure),
 .content-stack header :is(p, aside, .decision-card) {
   max-width: 100%;
+}
+
+/* 왼쪽 고정 상담 패널이 보이는 화면에서는 플로팅 상담 버튼을 겹쳐 두지 않는다 */
+body.has-sidebar-consult .floating-cta {
+  display: none;
+}
+
+/* 대표 썸네일은 첫 화면에서 H1·요약 답변을 밀어내지 않도록 낮게 둔다(훅 문구는 가운데라 잘리지 않음). 마크업 순서는 그대로. */
+.page-lead-thumbnail {
+  margin-bottom: 1.25rem;
+}
+.page-lead-thumbnail > div:first-child {
+  aspect-ratio: 2 / 1;
+}
+@media (min-width: 768px) {
+  .page-lead-thumbnail {
+    margin-bottom: 1.75rem;
+  }
+  .page-lead-thumbnail > div:first-child {
+    aspect-ratio: 5 / 2;
+  }
+}
+
+/*
+ * 웹폰트(Noto Sans KR)로 바뀔 때 줄바꿈이 달라져 본문이 밀리는 현상(CLS)을 줄이는 폴백.
+ * 맑은 고딕 등은 한글 글자 폭이 1em, Noto Sans KR은 약 0.92em이라 폴백일 때 글이 더 넓게 깔린다.
+ * size-adjust로 폭을 맞추고, 해당 글꼴이 없는 기기는 다음 폴백으로 넘어간다.
+ */
+@font-face {
+  font-family: "KR Fallback Adjusted";
+  src: local("Malgun Gothic"), local("맑은 고딕"), local("Noto Sans CJK KR"), local("NotoSansCJKkr-Regular");
+  font-weight: 100 600;
+  size-adjust: 92.3%;
+}
+@font-face {
+  font-family: "KR Fallback Adjusted";
+  src: local("Malgun Gothic Bold"), local("MalgunGothic-Bold"), local("맑은 고딕 Bold"), local("Noto Sans CJK KR Bold"), local("NotoSansCJKkr-Bold");
+  font-weight: 700 900;
+  size-adjust: 92.3%;
+}
+
+/* 표가 화면보다 넓을 때만 좌우 가장자리에 그림자가 보여 옆으로 밀 수 있음을 알린다(넘치지 않으면 그림자는 가려진다). */
+.comparison-table-wrap {
+  background:
+    linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)) left center / 2.5rem 100% no-repeat local,
+    linear-gradient(to left, #fff 30%, rgba(255, 255, 255, 0)) right center / 2.5rem 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(30, 58, 95, 0.22), rgba(30, 58, 95, 0)) left center / 0.75rem 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(30, 58, 95, 0.22), rgba(30, 58, 95, 0)) right center / 0.75rem 100% no-repeat scroll,
+    #fff;
+}
+
+/* 넓은 PC 화면에서는 썸네일을 한 단계 더 낮춰 H1이 첫 화면 안쪽에 들어오게 한다. */
+@media (min-width: 1100px) {
+  .page-lead-thumbnail > div:first-child {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+/* 썸네일 아래 안내 문단은 글꼴이 바뀔 때 1줄↔2줄로 갈리기 쉬워 두 줄 높이를 미리 확보해 아래 내용이 밀리지 않게 한다. */
+@media (min-width: 768px) {
+  .page-lead-thumbnail > p {
+    min-height: 3.25rem;
+  }
+}
+
+/* 고객후기 페이지 — 밝은 배경 위 후기 전문 카드(소개 페이지 카드와 같은 모양, 테두리만 보이게) */
+.review-full__card {
+  border-color: var(--color-beige-dark, #e5dccb);
+  box-shadow: 0 18px 36px -30px rgba(30, 58, 95, 0.45);
+}
+
+/* 모바일 헤더 — 상호가 "다옴법무사…"로 잘리지 않게 브랜드 폭 제한을 풀고, 남는 폭은 상담 상태 칩이 줄어들며 맞춘다. */
+@media (max-width: 63.999rem) {
+  .header-bar__brand {
+    max-width: none;
+    flex-shrink: 0;
+  }
+  .site-header__brand-name {
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+/* 360px 안팎의 좁은 화면 — 글자와 간격을 한 단계 줄여 상태 칩 자리를 남긴다 */
+@media (max-width: 23.5rem) {
+  .header-bar__brand {
+    gap: 0.5rem;
+  }
+  .site-header__brand-name {
+    font-size: 0.8125rem;
+  }
+  .site-header__brand-rep {
+    font-size: 0.6875rem;
+  }
+  .header-bar__status {
+    margin-left: 0.25rem;
+  }
+}
+
+/* 400px 미만 — 상호와 상담 상태 칩("톡 상담")이 모두 잘리지 않도록 로고·간격을 한 단계 줄인다 */
+@media (max-width: 24.9375rem) {
+  .header-bar {
+    gap: 0.375rem;
+  }
+  .site-header__brand-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+  }
+  .site-header__brand-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+  .header-consult-status--mobile {
+    gap: 0.3rem;
+    padding-inline: 0.45rem;
+  }
+}
+@media (max-width: 24.9375rem) {
+  .header-consult-status--mobile .header-consult-status__label {
+    font-size: 0.6875rem;
+    letter-spacing: -0.02em;
+  }
+}
+/* 360px 안팎 — 평일 상담 시간의 "상담 가능"까지 들어가도록 한 번 더 줄인다 */
+@media (max-width: 23.5rem) {
+  .header-bar {
+    gap: 0.25rem;
+  }
+  .site-header__brand-mark {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  .site-header__brand-logo {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }

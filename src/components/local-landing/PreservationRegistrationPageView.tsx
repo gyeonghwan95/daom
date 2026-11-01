@@ -188,8 +188,8 @@ export function PreservationRegistrationPageView({
         <StepTimeline steps={content.procedures} />
         <WarningBox title="절차 안내">
           <p>
-            위 단계는 일반적인 흐름입니다. 건축 형태·건축주·관할 등기소에 따라
-            순서나 소요 기간이 달라질 수 있으니 상담 시 확인해 보시면 좋습니다.
+            위 단계는 일반적인 흐름입니다. 건축 형태·건축주·관할 등기소를 확인해
+            내 건물에 맞는 순서와 예상 기간을 상담에서 알려 드립니다.
           </p>
         </WarningBox>
       </ContentSection>

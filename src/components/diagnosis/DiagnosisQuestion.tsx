@@ -31,7 +31,7 @@ export function DiagnosisQuestion({
       <legend className="sr-only">{question.question}</legend>
 
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-        Question {stepIndex + 1}
+        질문 {stepIndex + 1}
       </p>
       <h3
         id={`${inputId}-label`}

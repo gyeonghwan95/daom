@@ -76,7 +76,6 @@ export function NationwideCasePageView({
             regionLabel={def.regionName}
             inquiryRegion={region || undefined}
             fromPage={def.slug}
-            description={def.localIntro?.slice(0, 220)}
           />
           <InheritanceCostGuide fromPage={def.slug} />
         </div>

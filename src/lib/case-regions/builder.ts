@@ -151,60 +151,60 @@ function vignetteForTrait(
 ): { title: string; body: string } {
   const bodies: Record<CaseRegionTrait, { title: string; body: string }> = {
     coastal: {
-      title: `${place} 해안 주거·상가 권리 정리 예시`,
-      body: `${place}처럼 해안 상권과 주거가 맞닿은 곳에서는 숙박·상가 용도와 주택 등기를 구분해 봅니다. 등기부 표시와 건축물대장을 대조한 뒤 상속·매매 순서를 안내하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 해안 주거·상가 권리 정리`,
+      body: `${place}처럼 해안 상권과 주거가 맞닿은 곳에서는 숙박·상가 용도와 주택 등기를 구분해 봅니다. 등기부 표시와 건축물대장을 대조한 뒤 상속·매매 순서를 안내하는 흐름입니다.`,
     },
     port: {
-      title: `${place} 항만 배후 사업장 등기 예시`,
-      body: `${place} 항만·물류 배후에서는 창고·사업장 부동산과 법인 본점 주소가 어긋나기 쉽습니다. 토지·건물 명의와 상업등기 관할을 나눠 확인하는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 항만 배후 사업장 등기`,
+      body: `${place} 항만·물류 배후에서는 창고·사업장 부동산과 법인 본점 주소가 어긋나기 쉽습니다. 토지·건물 명의와 상업등기 관할을 나눠 확인합니다.`,
     },
     residential: {
-      title: `${place} 주택 상속·이전 일정 예시`,
-      body: `${place} 아파트·다세대 상속은 협의분할·임대 승계·잔금일을 한 표로 맞춥니다. 등기부와 가족관계 서류를 점검한 뒤 신청 순서를 안내하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 주택 상속·이전 일정`,
+      body: `${place} 아파트·다세대 상속은 협의분할·임대 승계·잔금일을 한 표로 맞춥니다. 등기부와 가족관계 서류를 점검한 뒤 신청 순서를 안내하는 흐름입니다.`,
     },
     commercial: {
-      title: `${place} 상가 소유권·권리금 구분 예시`,
-      body: `${place} 상가 매매에서는 권리금 약정과 건물 소유권이전을 별개로 봅니다. 근저당·임대차 승계와 잔금 후 접수 순서를 정리하는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 상가 소유권·권리금 구분`,
+      body: `${place} 상가 매매에서는 권리금 약정과 건물 소유권이전을 별개로 봅니다. 근저당·임대차 승계와 잔금 후 접수 순서를 정리합니다.`,
     },
     industrial: {
-      title: `${place} 공장·창고 명의 대조 예시`,
-      body: `${place} 공장·창고는 토지와 건물 명의가 다른 경우가 많습니다. 산업단지 입주 조건과 담보 설정을 등기부와 맞춰 보는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 공장·창고 명의 대조`,
+      body: `${place} 공장·창고는 토지와 건물 명의가 다른 경우가 많습니다. 산업단지 입주 조건과 담보 설정을 등기부와 맞춰 보는 흐름입니다.`,
     },
     newtown: {
-      title: `${place} 신축·분양 입주 등기 예시`,
-      body: `${place} 신축·분양은 사용승인·보존등기·입주 잔금 순서가 겹칩니다. 분양계약과 건축물대장 상태를 점검하는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 신축·분양 입주 등기`,
+      body: `${place} 신축·분양은 사용승인·보존등기·입주 잔금 순서가 겹칩니다. 분양계약과 건축물대장 상태를 점검합니다.`,
     },
     tourism: {
-      title: `${place} 관광 상권 숙박·점포 등기 예시`,
-      body: `${place} 관광 상권은 숙박·소매 용도와 주택 등기가 섞이기 쉽습니다. 건축물 용도와 매매 원인을 대조하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 관광 상권 숙박·점포 등기`,
+      body: `${place} 관광 상권은 숙박·소매 용도와 주택 등기가 섞이기 쉽습니다. 건축물 용도와 매매 원인을 대조하는 흐름입니다.`,
     },
     university: {
-      title: `${place} 대학가 원룸·다가구 등기 예시`,
-      body: `${place} 대학가 원룸·다가구는 임대사업·보증금 승계가 매매와 겹칩니다. 전세권·임차권등기 유무를 먼저 확인하는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 대학가 원룸·다가구 등기`,
+      body: `${place} 대학가 원룸·다가구는 임대사업·보증금 승계가 매매와 겹칩니다. 전세권·임차권등기 유무를 먼저 확인합니다.`,
     },
     finance: {
-      title: `${place} 오피스·법인 변경등기 예시`,
-      body: `${place} 업무지구 오피스는 임원변경·본점이전이 부동산 이전과 같은 달에 이어질 수 있습니다. 정관·결의와 등기 기한을 맞추는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 오피스·법인 변경등기`,
+      body: `${place} 업무지구 오피스는 임원변경·본점이전이 부동산 이전과 같은 달에 이어질 수 있습니다. 정관·결의와 등기 기한을 맞추는 흐름입니다.`,
     },
     court: {
-      title: `${place} 법원 일정과 맞춘 등기 예시`,
-      body: `${place} 법원·회생 일정과 부동산등기가 겹치면 재산 목록과 접수 순서를 먼저 나눕니다. 인가·면책을 단정하지 않는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 법원 일정과 맞춘 등기`,
+      body: `${place} 법원·회생 일정과 부동산등기가 겹치면 재산 목록과 접수 순서를 먼저 나눕니다. 인가·면책은 단정하지 않고 서류부터 확인합니다.`,
     },
     registry: {
-      title: `${place} 등기소 접수·보정 흐름 예시`,
-      body: `${place} 소재라도 접수 창구는 주소·신청 유형으로 달라집니다. 관할 등기소와 보정 일정을 소재지 기준으로 확인하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 등기소 접수·보정 흐름`,
+      body: `${place} 소재라도 접수 창구는 주소·신청 유형으로 달라집니다. 관할 등기소와 보정 일정을 소재지 기준으로 확인하는 흐름입니다.`,
     },
     station: {
-      title: `${place} 역세권 잔금일 등기 예시`,
-      body: `${place} 역세권 아파트·오피스텔은 대출 실행과 근저당 말소가 잔금일에 몰립니다. 은행 일정과 등기 접수를 맞추는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 역세권 잔금일 등기`,
+      body: `${place} 역세권 아파트·오피스텔은 대출 실행과 근저당 말소가 잔금일에 몰립니다. 은행 일정과 등기 접수를 맞춥니다.`,
     },
     market: {
-      title: `${place} 시장 점포 권리 정리 예시`,
-      body: `${place} 시장·점포는 건물등기와 영업 권리가 따로입니다. 임대차·권리금과 소유권이전을 구분해 준비하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 시장 점포 권리 정리`,
+      body: `${place} 시장·점포는 건물등기와 영업 권리가 따로입니다. 임대차·권리금과 소유권이전을 구분해 준비하는 흐름입니다.`,
     },
     oldtown: {
-      title: `${place} 원도심 구축 주택 상속 예시`,
-      body: `${place} 원도심 단독·다가구는 오래된 등기부 표시와 지번이 어긋나기 쉽습니다. 표시변경·상속인 범위를 먼저 확인하는 절차 예시입니다. 실제 사건 기록이 아닙니다.`,
+      title: `${place} 원도심 구축 주택 상속`,
+      body: `${place} 원도심 단독·다가구는 오래된 등기부 표시와 지번이 어긋나기 쉽습니다. 표시변경·상속인 범위를 먼저 확인합니다.`,
     },
   };
   return bodies[trait];
@@ -223,7 +223,7 @@ function caseVignettes(
     ? vignetteForTrait(secondTrait, place)
     : {
         title: `${place} 상담 전 서류 점검`,
-        body: `${place} 소재 사건의 등기부·가족관계·계약 일정을 먼저 확인하는 절차 예시입니다. ${TRAIT_ANGLE[traits[0]]} 각도에서 다음 순서를 안내합니다. 실제 사건 기록이 아닙니다.`,
+        body: `${place} 소재 사건의 등기부·가족관계·계약 일정을 먼저 확인합니다. ${TRAIT_ANGLE[traits[0]]} 각도에서 다음 순서를 안내합니다.`,
       };
   return [first, second];
 }
@@ -234,7 +234,7 @@ function checkBeforeConsult(seed: number): string[] {
     "상속이면 피상속인·상속인 관계와 사망일을 정리해 주세요.",
     "매매·잔금이면 계약일·잔금일·대출 실행 여부를 알려 주세요.",
     "법인이면 본점 소재지·변경 사유·의결 진행 여부를 확인해 주세요.",
-    "관할 등기소·법원은 사건 유형에 따라 달라질 수 있습니다.",
+    "관할 등기소·법원은 사건 유형과 부동산 소재지로 정해지므로 먼저 확인합니다.",
     "초기 상담에는 주민등록번호·등기필정보 등 민감 원본을 보내지 마세요.",
   ];
   return [0, 1, 2, 3].map((i) => pick(items, seed, i));
@@ -255,7 +255,7 @@ function faqFor(entry: CaseRegionEntry, seed: number) {
     {
       question: "사례와 비슷하면 결과도 같나요?",
       answer:
-        "아니요. 여기 소개한 사례는 참고용입니다. 사실관계·서류·관할·기한에 따라 절차와 결과가 달라질 수 있어, 숫자로 장담하기보다 실제 서류를 함께 보며 말씀드립니다.",
+        "아니요. 결과는 사실관계·서류·관할·기한을 보고 판단해야 해서, 숫자로 장담하기보다 실제 서류를 함께 보며 말씀드립니다.",
     },
     {
       question: `${place} 관할 등기소는 어디인가요?`,
@@ -317,9 +317,9 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     ? "이 페이지는 부산 전역을 한 생활권으로 묶은 참고 안내입니다. 특정 사건 기록이나 처리 건수가 아니며, 사무소 소개는 홈페이지, 업무 총람은 부산 법무사 업무 안내에서 확인하시면 됩니다."
     : `${place}에서 법무사 업무 사례와 상담 절차를 찾으시는 분을 위한 안내입니다. ${entry.context}`;
 
-  const p1 = `${place} 일대에서는 ${inquiries[0]} , ${inquiries[1]} 문의가 이어집니다. 다옴법무사사무소 안윤정 법무사는 부산 해운대·센텀에서 ${place} 의뢰인의 상속등기·부동산등기·법인등기·개인회생 상담을 진행합니다. 확인되지 않은 실적이나 무조건적인 처리를 약속하지 않으며, 서류와 일정을 확인한 뒤 가능 범위를 안내합니다.`;
+  const p1 = `${place} 일대에서는 ${inquiries[0]} , ${inquiries[1]} 문의가 이어집니다. 다옴법무사사무소 안윤정 법무사는 부산 해운대·센텀에서 ${place} 의뢰인의 상속등기·부동산등기·법인등기·개인회생 상담을 진행합니다. 서류와 일정을 먼저 확인한 뒤, 가능한 범위와 진행 순서를 구체적으로 안내합니다.`;
 
-  const p2 = `${districtName ? `${districtName} 안에서 ` : ""}${place} 생활권은 주거·상권·업무 성격이 겹치는 경우가 많습니다. 같은 동이라도 물건 종류와 권리관계에 따라 관할·준비서류·접수 방식이 달라질 수 있어, 주소와 등기부 상태를 먼저 확인하는 것이 좋습니다.`;
+  const p2 = `${districtName ? `${districtName} 안에서 ` : ""}${place} 생활권은 주거·상권·업무 성격이 겹치는 경우가 많습니다. 같은 동이라도 물건 종류와 권리관계에 따라 관할·준비서류·접수 방식이 다르므로, 주소와 등기부 상태부터 확인합니다.`;
 
   const p3 = `방문이 어려우면 전화·카카오톡으로 개요를 보내 주셔도 됩니다. 초기 상담에는 주민등록번호·등기필정보·인감증명서 등 민감 원본을 보내지 마세요. 필요한 자료와 전달 방법은 별도로 안내합니다. 사무소 위치는 ${officeLocation.fullAddress}입니다.`;
 
@@ -354,7 +354,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "업무 사례", href: "/업무사례" },
-      { label: "지역별 업무 사례", href: "/업무사례/지역별" },
+      { label: "지역별 안내", href: "/업무사례/지역별" },
       ...(districtName && entry.kind !== "district"
         ? [
             {
@@ -365,7 +365,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
             },
           ]
         : []),
-      { label: `${place} 업무 사례` },
+      { label: `${place} 안내` },
     ],
     introParagraphs: isBusanCityCase
       ? [
@@ -400,7 +400,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
         ? [
             {
               title: "이 페이지와 홈페이지·업무 안내의 차이",
-              body: "실제 사건 기록을 공개하는 페이지가 아닙니다. 부산 법무사 사무소를 찾는 검색은 홈페이지가 대표 안내이고, 맡는 업무 목록은 업무 안내에서 이어집니다. 아래는 생활권 특성을 반영한 참고 유형입니다.",
+              body: "부산 법무사 사무소를 찾는 검색은 홈페이지가 대표 안내이고, 맡는 업무 목록은 업무 안내에서 이어집니다. 아래는 생활권 특성을 반영한 참고 유형입니다.",
               links: [
                 { href: "/", label: "다옴법무사사무소 홈페이지" },
                 { href: "/부산법무사", label: "맡는 업무 총람" },
@@ -415,8 +415,8 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
         items: inquiries,
       },
       {
-        title: "참고용 업무 사례",
-        body: "의뢰인 개인정보는 공개하지 않고, 비슷한 상황에서 함께 살펴볼 점 위주로 정리했습니다. 상황이 비슷해 보여도 서류와 사정에 따라 결과가 달라질 수 있어, 내 경우는 따로 꼼꼼히 확인해 드립니다.",
+        title: "자주 받는 문의 유형",
+        body: "이 지역에서 자주 받는 문의와 먼저 확인하는 점을 정리했습니다. 내 경우의 진행 순서는 서류를 보고 상담에서 구체적으로 안내해 드립니다.",
         items: vignettes.map((v) => `${v.title}: ${v.body}`),
       },
       {
@@ -442,7 +442,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
         body: "가까운 구·군·생활권 안내입니다.",
         links: related.map((r) => ({
           href: caseRegionPath(r.slug),
-          label: `${r.displayName} 업무 사례`,
+          label: `${r.displayName} 안내`,
         })),
       },
       {
@@ -465,12 +465,12 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
             { href: "/부산법무사", label: "맡는 업무 총람" },
           ]
         : []),
-      { href: "/업무사례/지역별", label: "지역별 업무 사례" },
+      { href: "/업무사례/지역별", label: "지역별 안내" },
       { href: "/업무사례", label: "전체 업무 사례" },
       ...(hub ? [hub] : []),
       ...related.slice(0, 4).map((r) => ({
         href: caseRegionPath(r.slug),
-        label: `${r.displayName} 업무 사례`,
+        label: `${r.displayName} 안내`,
       })),
       ...services.slice(0, 2),
     ],
@@ -518,16 +518,16 @@ export function buildCaseRegionsHubPageData(): PageData {
         body: "목적에 맞는 경로를 선택해 주세요.",
         links: [
           { href: "/업무사례", label: "전체 업무 사례" },
-          { href: "/업무사례/지역별", label: "지역별 업무 사례" },
-          { href: "/업무사례/업무별", label: "업무별 업무 사례" },
+          { href: "/업무사례/지역별", label: "지역별 안내" },
+          { href: "/업무사례/업무별", label: "업무별 안내" },
         ],
       },
     ],
     primaryKeywords: ["부산 법무사 사례", "업무 사례", "지역별 법무사"],
     internalLinks: [
       { href: "/업무사례", label: "전체 업무 사례" },
-      { href: "/업무사례/지역별", label: "지역별 업무 사례" },
-      { href: "/업무사례/업무별", label: "업무별 업무 사례" },
+      { href: "/업무사례/지역별", label: "지역별 안내" },
+      { href: "/업무사례/업무별", label: "업무별 안내" },
       { href: "/services", label: "업무안내" },
     ],
     ctaTitle: "상담으로 확인해 보세요",
@@ -552,7 +552,7 @@ export function buildCaseRegionsByAreaPageData(): PageData {
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "업무 사례", href: "/업무사례" },
-      { label: "지역별 업무 사례" },
+      { label: "지역별 안내" },
     ],
     introParagraphs: [
       "해운대구·연제구·강서구 등 구·군 허브에서 동·생활권으로 내려가고, 동 페이지에서는 다시 구·군으로 연결됩니다.",
@@ -611,7 +611,7 @@ export function buildCaseRegionsByServicePageData(): PageData {
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "업무 사례", href: "/업무사례" },
-      { label: "업무별 업무 사례" },
+      { label: "업무별 안내" },
     ],
     introParagraphs: [
       "전체 사례는 사례 탐색기에서 카테고리·상황·지역 필터로 확인할 수 있습니다.",
@@ -651,7 +651,7 @@ export function buildCaseRegionsByServicePageData(): PageData {
     ],
     internalLinks: [
       { href: "/업무사례", label: "전체 업무 사례" },
-      { href: "/업무사례/지역별", label: "지역별 업무 사례" },
+      { href: "/업무사례/지역별", label: "지역별 안내" },
       { href: "/services", label: "업무안내" },
       { href: "/contact", label: "상담 문의" },
     ],

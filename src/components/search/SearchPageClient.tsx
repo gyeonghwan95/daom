@@ -163,7 +163,7 @@ export function SearchPageClient() {
                   href={item.href}
                   className="block py-4 no-underline transition-colors hover:bg-beige/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
                 >
-                  <span className="inline-flex rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-[11px] font-medium text-navy/70">
+                  <span className="inline-flex rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-xs font-medium text-navy/70">
                     {item.categoryLabel}
                   </span>
                   <p className="mt-2 text-base font-semibold text-navy">

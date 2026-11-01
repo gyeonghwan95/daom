@@ -194,7 +194,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     identity?.typicalSituations ?? [
       {
         title: `${config.regionLabel}에서 자주 검토하는 상황`,
-        summary: `${config.regionLabel} 생활권에서 ${serviceLabel}를 진행할 때는 관할·서류·일정을 사건 내용에 맞춰 확인합니다. 가상의 절차 예시이며 실제 사건 기록이 아닙니다.`,
+        summary: `${config.regionLabel} 생활권에서 ${serviceLabel}를 진행할 때는 관할·서류·일정을 사건 내용에 맞춰 확인합니다.`,
       },
     ]
   ).map((row) => ({
@@ -619,11 +619,11 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
   const consultationCases = [
     {
       title: `${inst.institutionName} 접수 전 확인`,
-      summary: `${inst.institutionName.startsWith(config.regionLabel) ? inst.institutionName : `${config.regionLabel}에서 ${inst.institutionName}`} 접수를 앞둔 경우 관할과 서류를 먼저 확인하는 흐름입니다. 가상의 절차 예시이며 특정 의뢰 기록이 아닙니다.`,
+      summary: `${inst.institutionName.startsWith(config.regionLabel) ? inst.institutionName : `${config.regionLabel}에서 ${inst.institutionName}`} 접수를 앞둔 경우 관할과 서류를 먼저 확인하는 흐름입니다.`,
     },
     {
       title: `보정명령이 있는 경우`,
-      summary: `신청서 보완이 필요하면 보정 기한 내 서류를 준비해 재접수하는 흐름입니다. 실제 사건 기록이 아닙니다.`,
+      summary: `신청서 보완이 필요하면 보정 기한 내 서류를 준비해 재접수하는 흐름입니다.`,
     },
     {
       title: `방문 전 서류 검토`,
@@ -822,7 +822,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
   const consultationCases = [
     {
       title: `${topic.title} 상담 사례`,
-      summary: `${config.regionLabel}에서 ${topic.title}를 검토할 때는 ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하는 흐름이 일반적입니다. 가상의 절차 예시이며 실제 사건 기록이 아닙니다.`,
+      summary: `${config.regionLabel}에서 ${topic.title}를 검토할 때는 ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하는 흐름이 일반적입니다.`,
     },
     {
       title: `상속·매매 병행 사례`,

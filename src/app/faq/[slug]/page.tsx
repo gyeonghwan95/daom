@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FaqDetailPage({ params }: Props) {
   const { slug } = await params;
   const normalized = normalizeRouteSlug(slug);
+  setPeerPagePath(`/faq/${normalized}`);
   const page = resolveFaqPageData(normalized);
   const item = await getCompiledContent("faq", normalized);
   if (!page || !item) notFound();

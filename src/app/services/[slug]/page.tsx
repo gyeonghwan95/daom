@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { NationwideServiceNotice } from "@/components/nationwide/NationwideServiceNotice";
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const normalized = normalizeRouteSlug(slug);
+  setPeerPagePath(`/services/${normalized}`);
   const page = resolveServicePageData(normalized);
   const service = getServiceBySlug(normalized);
   if (!page || !service) notFound();

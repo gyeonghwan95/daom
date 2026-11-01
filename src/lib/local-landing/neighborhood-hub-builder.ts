@@ -50,7 +50,7 @@ export function buildNeighborhoodHubPage(
 
   const consultationCase = {
     title: `${config.regionLabel}에서 상담이 필요한 대표 상황`,
-    summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 검토할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다. 가상의 절차 예시이며 실제 사건 기록이 아닙니다.`,
+    summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 검토할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
     href: config.relatedCaseSlug ?? topic.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug ?? topic.relatedCaseSlug}`
       : undefined,

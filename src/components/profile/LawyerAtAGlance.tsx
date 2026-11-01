@@ -129,7 +129,7 @@ export function LawyerAtAGlance() {
 
         <Tile
           href="/reviews"
-          label={reviewFeed.stats.totalCount > 0 ? `네이버 방문자 후기 ${reviewFeed.stats.totalCount}건` : "고객 후기"}
+          label={reviewFeed.stats.totalCount > 0 ? "네이버 방문자 후기" : "고객 후기"}
           title="상담받은 분들이 남긴 이야기"
         >
           {quote ? (

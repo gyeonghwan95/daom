@@ -1,31 +1,23 @@
 "use client";
 
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
-import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
-import {
-  KakaoIcon,
-  NaverIcon,
-  PhoneIcon,
-} from "@/components/consultation/ConsultationIcons";
+import { PhoneIcon } from "@/components/consultation/ConsultationIcons";
 import { trackCtaEvent } from "@/lib/admin-ops/track-client";
 
 type TrustContactActionsProps = {
   phone: string;
   phoneHref: string;
-  kakaoHref: string;
-  naverTalkHref: string;
   hours: string;
 };
 
-export function TrustContactActions({
-  phone,
-  phoneHref,
-  kakaoHref,
-  naverTalkHref,
-  hours,
-}: TrustContactActionsProps) {
+/**
+ * 법무사 소개 블록 끝의 연락 패널.
+ * 바로 위 '상담 안내' 패널(전화·카카오·톡톡·예약·지도)과 모바일 하단 고정 바가 같은 채널을 이미 보여 주므로,
+ * 모바일에서는 숨기고 PC에서는 전화번호와 상담 신청 하나만 둔다.
+ */
+export function TrustContactActions({ phone, phoneHref, hours }: TrustContactActionsProps) {
   return (
-    <div className="@container relative overflow-hidden rounded-2xl bg-navy p-5 text-white @md:p-6">
+    <div className="@container relative overflow-hidden rounded-2xl bg-navy p-5 text-white max-lg:hidden @md:p-6">
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/[0.06]"
         aria-hidden
@@ -46,51 +38,18 @@ export function TrustContactActions({
         {phone}
       </a>
       <p className="relative mt-1.5 text-xs text-white/70 @md:text-sm">
-        {hours} · 방문 상담은 예약제 · 카카오톡·톡톡으로 먼저 남기시거나 네이버 예약을 이용해 주세요
+        {hours} · 방문 상담은 예약제입니다
       </p>
 
-      <div className="relative mt-5 grid grid-cols-2 gap-2.5 @2xl:grid-cols-3">
+      <div className="relative mt-5">
         <InquiryStartButton
           source="cta"
           note="법무사 이력 확인 후 상담"
-          className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-white px-5 text-base font-bold text-navy shadow-sm transition hover:bg-cream col-span-2 @2xl:col-span-1"
+          className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-white px-5 text-base font-bold text-navy shadow-sm transition hover:bg-cream"
         >
           1분 만에 상담 신청하기
         </InquiryStartButton>
-        <a
-          href={kakaoHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackCtaEvent("kakao", undefined, kakaoHref)}
-          className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#FEE500] px-2 text-sm font-bold text-[#191919] no-underline transition hover:brightness-95"
-          data-cta="trust-kakao"
-        >
-          <KakaoIcon className="h-5 w-5" />
-          카카오톡
-          <span className="sr-only"> (새 창)</span>
-        </a>
-        <a
-          href={naverTalkHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackCtaEvent("naver-talk", undefined, naverTalkHref)}
-          className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#03C75A] px-2 text-sm font-bold text-white no-underline transition hover:brightness-95"
-          data-cta="trust-naver-talk"
-        >
-          <NaverIcon className="h-5 w-5" />
-          네이버 톡톡
-          <span className="sr-only"> (새 창)</span>
-        </a>
       </div>
-
-      <NaverPlaceActions
-        placement="service_end"
-        theme="dark"
-        reservationLabel="네이버 예약"
-        mapLabel="네이버 지도"
-        className="relative mt-2.5 gap-2.5"
-        buttonClassName="!min-h-12 !font-bold"
-      />
     </div>
   );
 }

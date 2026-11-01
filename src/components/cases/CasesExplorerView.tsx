@@ -32,7 +32,7 @@ export function CasesExplorerView({ page, cases }: CasesExplorerViewProps) {
 
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy-light">
-          Case Explorer
+          업무 사례 찾기
         </p>
         <h1 className="page-title mt-2">{page.h1}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>

@@ -6,6 +6,7 @@ import {
   CaseRegionsByServiceView,
 } from "@/components/case-regions/CaseRegionHubViews";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
@@ -247,6 +248,7 @@ export default async function NestedKoreanLandingChildPage({ params }: Props) {
   const { landingSlug, childSlug } = await params;
   const parent = normalizeRouteSlug(landingSlug);
   const child = normalizeRouteSlug(childSlug);
+  setPeerPagePath(`/${parent}/${child}`);
 
   if (parent === "공지사항" && child === "보기") {
     return <NoticeDetailPageView />;

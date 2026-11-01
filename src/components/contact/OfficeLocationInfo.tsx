@@ -131,9 +131,8 @@ export function OfficeLocationInfo({
               <p className="text-xs font-semibold tracking-[0.12em] text-navy/45 uppercase">
                 운영시간
               </p>
-              <dl className="mt-4 grid gap-4 sm:grid-cols-3">
+              <dl className="mt-4 grid gap-4 sm:grid-cols-2">
                 <InfoItem label="평일" value={officeHours.weekday} />
-                <InfoItem label="점심시간" value={officeHours.lunch} />
                 <InfoItem label="휴무일" value={officeHours.closed} />
               </dl>
               <p className="mt-4 rounded-lg bg-beige/60 px-3 py-2.5 text-sm leading-relaxed text-navy/70">

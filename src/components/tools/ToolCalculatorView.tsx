@@ -98,7 +98,7 @@ export function ToolCalculatorView({
         h1={page.h1}
         intro={page.intro}
         keywords={page.primaryKeywords}
-        eyebrow="Legal Calculator"
+        eyebrow="법률 계산기"
         ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta

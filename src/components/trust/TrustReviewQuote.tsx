@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { pickShortReviewQuote } from "@/lib/naver-place-reviews/static-quotes";
 import {
   pickReviewQuote,
   type ReviewQuote,
@@ -9,16 +10,20 @@ import {
 
 type TrustReviewQuoteProps = {
   quotes: ReviewQuote[];
-  totalCount: number;
 };
 
 /**
  * 신뢰 블록 안의 방문자 후기 한 줄 — 같은 업무 후기를 보여 주고
- * 「후기 n건 보기」로 네이버 플레이스에 연결한다(별점 스키마 없음).
+ * 「후기 전체 보기」로 네이버 플레이스에 연결한다(별점 스키마 없음).
  */
-export function TrustReviewQuote({ quotes, totalCount }: TrustReviewQuoteProps) {
+export function TrustReviewQuote({ quotes }: TrustReviewQuoteProps) {
   const pathname = usePathname() ?? "/";
-  const quote = pickReviewQuote(quotes, pathname);
+  // 같은 페이지 위쪽 결정 카드가 인용한 후기는 다시 보여 주지 않는다
+  const used = pickShortReviewQuote(pathname)?.id;
+  const quote = pickReviewQuote(
+    quotes.filter((q) => q.id !== used),
+    pathname,
+  );
   if (!quote) return null;
 
   return (
@@ -31,7 +36,7 @@ export function TrustReviewQuote({ quotes, totalCount }: TrustReviewQuoteProps) 
           tone="text"
           size="sm"
           className="!min-h-8 shrink-0 !px-0 text-xs"
-          label={totalCount > 0 ? `후기 ${totalCount}건 보기` : "후기 보기"}
+          label="후기 전체 보기"
         />
       </figcaption>
       <blockquote className="mt-1.5 text-[0.95rem] leading-relaxed text-navy/85">

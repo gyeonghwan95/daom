@@ -34,7 +34,7 @@ export const officeProseSections: {
     id: "office-visit-flow",
     title: "방문·원격 상담은 이렇게 진행됩니다",
     paragraphs: [
-      `${officeLocation.visitNoticeDetail} 예약 없이 바로 방문하시면 다른 상담과 겹칠 수 있어, 시간을 맞춘 뒤 오시는 편이 안전합니다. 예약은 전화·카카오톡·네이버 톡톡 중 편한 채널로 요청해 주시면 됩니다. 평일 운영시간은 ${officeHours.weekday}이며, 점심(${officeHours.lunch})과 ${officeHours.closed}은 휴무입니다.`,
+      `${officeLocation.visitNoticeDetail} 예약 없이 바로 방문하시면 다른 상담과 겹칠 수 있어, 시간을 맞춘 뒤 오시는 편이 안전합니다. 예약은 전화·카카오톡·네이버 톡톡 중 편한 채널로 요청해 주시면 됩니다. 평일 운영시간은 ${officeHours.weekday}이며, ${officeHours.closed}은 휴무입니다.`,
       "원격으로 먼저 확인하고 싶은 경우에는 등기부·가족관계증명서·정관·계약서·채무 통지 등 이미 가진 자료를 사진이나 파일로 보내 주셔도 됩니다. 개요를 본 뒤 방문이 필요한 단계(인감·서명 원본·본인확인 등)와 우편·대리로 맞출 수 있는 단계를 구분해 안내합니다. ‘서류 없이 전화 한 통으로 완료’처럼 과장하지 않으며, 원본이 꼭 필요한 시점은 수임 전에 말씀드립니다.",
       "상담에서는 업무명보다 ‘지금 놓치면 안 되는 기한’과 ‘지금 알고 계신 사실’부터 함께 정리합니다. 예를 들어 상속은 승인·포기·한정승인의 기한, 법인 임원변경은 등기 기한, 매매는 잔금·말소·취득세 순서가 겹칠 수 있습니다. 준비서류가 모두 없어도 주소·사망일·변경하려는 내용만 알려주셔도 1차 방향을 잡을 수 있습니다.",
     ],
@@ -107,7 +107,7 @@ export const officeFaqs: { question: string; answer: string }[] = [
   },
   {
     question: "운영시간과 휴무일은 어떻게 되나요?",
-    answer: `${officeHours.weekday} 운영하며, 점심은 ${officeHours.lunch}입니다. ${officeHours.closed}은 휴무입니다.`,
+    answer: `${officeHours.weekday} 운영합니다. ${officeHours.closed}은 휴무입니다.`,
   },
   {
     question: "방문하지 않고도 상담할 수 있나요?",

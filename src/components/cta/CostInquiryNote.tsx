@@ -16,10 +16,7 @@ import {
   type NaverSmartPlacePlacement,
   type NaverSmartPlaceVariant,
 } from "@/lib/naver-smartplace/cta";
-import {
-  pickShortReviewQuote,
-  REVIEW_TOTAL,
-} from "@/lib/naver-place-reviews/static-quotes";
+import { pickShortReviewQuote } from "@/lib/naver-place-reviews/static-quotes";
 
 /**
  * 비용 문의 안내 — 본문형 페이지 공통(서두: HeroContactButtons·PageHero 등, 말미: MainContactPhone).
@@ -47,14 +44,6 @@ function PhoneIcon({ className = "h-4 w-4" }: { className?: string }) {
         d="M5 4.5h3l1.5 4-2 1.3a11 11 0 0 0 5.7 5.7l1.3-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5Z"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-function StarIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-      <path d="M10 1.8l2.5 5.1 5.6.8-4.1 4 1 5.6L10 14.6l-5 2.7 1-5.6-4.1-4 5.6-.8L10 1.8z" />
     </svg>
   );
 }
@@ -104,11 +93,13 @@ function PlaceLink({
   label,
   icon,
   placement = "decision_card",
+  className = "",
 }: {
   variant: NaverSmartPlaceVariant;
   label: string;
   icon: ReactNode;
   placement?: NaverSmartPlacePlacement;
+  className?: string;
 }) {
   const href = resolveNaverSmartPlaceHref(variant);
   return (
@@ -120,7 +111,7 @@ function PlaceLink({
       data-cta-variant={variant}
       data-cta-placement={placement}
       onClick={() => trackNaverPlaceClick({ variant, placement, href })}
-      className="inline-flex min-h-10 items-center gap-1.5 text-[0.85rem] font-semibold text-navy/80 no-underline underline-offset-4 transition-colors hover:text-navy hover:underline"
+      className={`inline-flex min-h-10 items-center gap-1.5 text-[0.85rem] font-semibold text-navy/80 no-underline underline-offset-4 transition-colors hover:text-navy hover:underline ${className}`.trim()}
     >
       {icon}
       {label}
@@ -167,7 +158,7 @@ function DecisionCard({ className }: { className: string }) {
       data-decision-card
       className={`decision-card ${className}`.trim()}
     >
-      {/* ① 맡길 근거 — 후기 수는 H1 아래 신뢰 띠와 아래 '후기 보기' 링크에 있으므로 여기선 진행 방식·표창만 */}
+      {/* ① 맡길 근거 — 후기 수는 H1 아래 신뢰 띠와 신뢰 블록에 있으므로 여기선 진행 방식·표창만 */}
       <ul className="decision-card__proof" aria-label="맡기기 전 확인할 근거">
         <li>대표 법무사가 처음부터 직접 진행</li>
         <li>대한법무사협회장 표창</li>
@@ -202,7 +193,7 @@ function DecisionCard({ className }: { className: string }) {
           data-cta="phone"
           data-cta-placement={placement}
           onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
-          className="decision-card__secondary"
+          className="decision-card__secondary max-lg:hidden"
           aria-label={`전화 상담 ${phone}`}
         >
           <PhoneIcon className="h-4 w-4 shrink-0" />
@@ -224,13 +215,6 @@ function DecisionCard({ className }: { className: string }) {
             label="네이버 지도"
             icon={<LocationIcon className="h-3.5 w-3.5 text-[#03C75A]" />}
           />
-          {REVIEW_TOTAL > 0 ? (
-            <PlaceLink
-              variant="review"
-              label={`후기 ${REVIEW_TOTAL}건 보기`}
-              icon={<StarIcon className="h-3.5 w-3.5 text-[#c9a86a]" />}
-            />
-          ) : null}
         </div>
       ) : null}
     </aside>

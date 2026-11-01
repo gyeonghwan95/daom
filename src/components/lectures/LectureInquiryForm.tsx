@@ -715,7 +715,7 @@ export function LectureInquiryForm({
 
 function RequiredBadge() {
   return (
-    <span className="inline-flex items-center rounded-md bg-navy px-1.5 py-0.5 text-[11px] font-bold leading-none tracking-wide text-cream">
+    <span className="inline-flex items-center rounded-md bg-navy px-1.5 py-0.5 text-xs font-bold leading-none tracking-wide text-cream">
       필수
     </span>
   );

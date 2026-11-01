@@ -253,6 +253,8 @@ function StageVisual({
           srcSet={optimizedSrcSet(item.poster)}
           sizes="100vw"
           alt=""
+          loading={warmed ? undefined : "lazy"}
+          decoding="async"
           className="home-hero-stage__media home-hero-stage__media--fill"
         />
       </div>
@@ -265,7 +267,7 @@ function StageVisual({
             poster={optimizedImageSrc(item.poster, 1280)}
             muted
             playsInline
-            preload="auto"
+            preload={active ? "auto" : "metadata"}
             disablePictureInPicture
             disableRemotePlayback
             controlsList="nodownload nofullscreen noremoteplayback"

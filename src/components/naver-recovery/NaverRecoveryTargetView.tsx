@@ -279,7 +279,7 @@ export function BlockView({ block }: { block: NrBlock }) {
         <ul className="space-y-3">
           {block.items.map((record) => (
             <li key={record.title} className="rounded-xl border border-navy/10 bg-cream/40 p-4">
-              <span className="text-[11px] font-semibold tracking-wide text-navy/55">
+              <span className="text-xs font-semibold tracking-wide text-navy/55">
                 {STATUS_LABEL[record.status]}
               </span>
               <h3 className="mt-0.5 font-semibold text-navy">{record.title}</h3>

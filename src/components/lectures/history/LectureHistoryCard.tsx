@@ -73,7 +73,7 @@ export function LectureHistoryCard({
           {tags.map((tag) => (
             <li
               key={tag}
-              className="rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-[11px] text-navy/70"
+              className="rounded border border-beige-dark bg-cream px-1.5 py-0.5 text-[13px] text-navy/70"
             >
               #{tag.replace(/\s+/g, "")}
             </li>

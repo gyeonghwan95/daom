@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { EeatThumbImage } from "@/lib/lawyer-eeat-images";
 
 type EeatFactThumbLayout = "square" | "banner";
@@ -14,7 +14,7 @@ type EeatFactThumbProps = {
 
 /**
  * 소개 카드용 썸네일(작은 정사각 또는 카드 위쪽 넓은 사진).
- * 기존 fallback을 먼저 보여 주고, public/image/소개-*.jpg 드롭인이 있으면 그걸로 교체합니다.
+ * 드롭인(public/image/소개-*.jpg) 여부는 빌드 때 정해지며, 불러오지 못하면 기존 사진으로 대신합니다.
  */
 export function EeatFactThumb({ image, layout = "square" }: EeatFactThumbProps) {
   if (!image) return null;
@@ -22,25 +22,8 @@ export function EeatFactThumb({ image, layout = "square" }: EeatFactThumbProps) 
 }
 
 function EeatFactThumbInner({ image, layout }: { image: EeatThumbImage; layout: EeatFactThumbLayout }) {
-  const [src, setSrc] = useState<string | undefined>(
-    image.fallbackSrc ?? image.src,
-  );
-
-  useEffect(() => {
-    let cancelled = false;
-    const probe = new window.Image();
-    probe.onload = () => {
-      if (!cancelled) setSrc(image.src);
-    };
-    probe.onerror = () => {
-      if (!cancelled) setSrc(image.fallbackSrc);
-    };
-    probe.src = image.src;
-
-    return () => {
-      cancelled = true;
-    };
-  }, [image]);
+  // 존재 여부는 빌드 때 서버가 확정해 넘기므로(lawyer-eeat-images-server) 원본을 미리 내려받아 확인하지 않는다.
+  const [src, setSrc] = useState<string | undefined>(image.fallbackSrc ?? image.src);
 
   return (
     <div
@@ -58,7 +41,7 @@ function EeatFactThumbInner({ image, layout }: { image: EeatThumbImage; layout: 
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes={layout === "banner" ? "(max-width: 768px) 100vw, 480px" : "96px"}
-          onError={() => setSrc(undefined)}
+          onError={() => setSrc(image.fallbackSrc && image.fallbackSrc !== src ? image.fallbackSrc : undefined)}
         />
       ) : (
         <span

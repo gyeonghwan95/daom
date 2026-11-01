@@ -46,7 +46,7 @@ type Job = {
 /** 글자가 이미 들어간 카드·축소본(og 4:3)을 원본 사진으로 되돌린다 */
 const DERIVED_TO_ORIGINAL: Record<string, string> = {
   "/image/og/metro-daegu-4x3.jpg": "/image/썸네일-사무실_겨울 (3).jpg",
-  "/image/og/metro-daejeon-4x3.jpg": "/image/사무소-서류.jpg",
+  "/image/og/metro-daejeon-4x3.jpg": "/image/썸네일-서류확인.jpg",
   "/image/og/priority-busan-consult.jpg": "/image/썸네일-사무실_전화중.jpg",
   "/image/og/priority-busan-recommend.jpg": "/image/썸네일-사무실_정면.jpg",
   "/image/og/regional-inheritance-geoje-4x3.jpg": "/image/썸네일-사무실_작업중.jpg",

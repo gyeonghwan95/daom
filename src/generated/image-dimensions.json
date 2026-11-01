@@ -557,18 +557,6 @@
   "format": "png",
   "bytes": 589799
  },
- "/image/사무소-서류.jpg": {
-  "width": 4000,
-  "height": 3000,
-  "format": "jpeg",
-  "bytes": 2795077,
-  "og": {
-   "src": "/_img/image/사무소-서류.og.jpg",
-   "width": 1200,
-   "height": 900,
-   "format": "jpeg"
-  }
- },
  "/image/사무소-위치지도.png": {
   "width": 1746,
   "height": 1692,
@@ -869,6 +857,18 @@
   "format": "jpeg",
   "bytes": 2645319
  },
+ "/image/서류/신청서_상속_타지역.jpg": {
+  "width": 1500,
+  "height": 1854,
+  "format": "jpeg",
+  "bytes": 194518,
+  "og": {
+   "src": "/_img/image/서류/신청서_상속_타지역.og.jpg",
+   "width": 1200,
+   "height": 1483,
+   "format": "jpeg"
+  }
+ },
  "/image/서류/신청서_상속, 분할협의.jpg": {
   "width": 3000,
   "height": 2032,
@@ -928,6 +928,18 @@
   "height": 2677,
   "format": "jpeg",
   "bytes": 2683940
+ },
+ "/image/서류/우편_상속_타지역.jpg": {
+  "width": 1500,
+  "height": 1838,
+  "format": "jpeg",
+  "bytes": 139048,
+  "og": {
+   "src": "/_img/image/서류/우편_상속_타지역.og.jpg",
+   "width": 1200,
+   "height": 1470,
+   "format": "jpeg"
+  }
  },
  "/image/서류/판결문_부당이득금.png": {
   "width": 780,
@@ -2433,13 +2445,13 @@
   "width": 1200,
   "height": 900,
   "format": "jpeg",
-  "bytes": 105012
+  "bytes": 95281
  },
  "/image/og/metro-daejeon.jpg": {
   "width": 1200,
-  "height": 1200,
+  "height": 630,
   "format": "jpeg",
-  "bytes": 161741
+  "bytes": 75026
  },
  "/image/og/metro-seoul-4x3.jpg": {
   "width": 1200,

@@ -415,7 +415,7 @@ export function buildLocalLandingPage(
 
   const consultationCase = {
     title: `${config.regionLabel}에서 ${serviceLabel}를 검토하는 대표 상황`,
-    summary: `${config.regionLabel}에서 ${config.caseAngle ?? serviceLabel}를 진행할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다. 가상의 절차 예시이며 실제 사건 기록이 아닙니다.`,
+    summary: `${config.regionLabel}에서 ${config.caseAngle ?? serviceLabel}를 진행할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
     href: config.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug}`
       : undefined,

@@ -19,6 +19,8 @@ export type InquiryNaverCtaPairProps = {
   className?: string;
   /** false면 페어 없이 inquiry만 */
   showNaver?: boolean;
+  /** true면 네이버 예약은 PC에서만 — 모바일은 하단 고정 바에 예약이 있다 */
+  naverDesktopOnly?: boolean;
 };
 
 /**
@@ -33,6 +35,7 @@ export function InquiryNaverCtaPair({
   naverLabel = "네이버 예약",
   className = "",
   showNaver = true,
+  naverDesktopOnly = false,
 }: InquiryNaverCtaPairProps) {
   const naverOn = showNaver && isNaverSmartPlaceConfigured();
 
@@ -48,7 +51,7 @@ export function InquiryNaverCtaPair({
       data-cta-pair="inquiry-naver"
     >
       <div className="inquiry-naver-pair__inquiry">{inquiry}</div>
-      <div className="inquiry-naver-pair__naver">
+      <div className={`inquiry-naver-pair__naver${naverDesktopOnly ? " max-lg:hidden" : ""}`}>
         <NaverSmartPlaceCta
           variant="reservation"
           placement={placement}

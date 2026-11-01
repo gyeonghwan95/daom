@@ -177,7 +177,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
   },
   officeDocs: {
     id: "officeDocs",
-    originalSrc: "/image/사무소-서류.jpg",
+    originalSrc: "/image/썸네일-사무실_겨울 (4).jpg",
     derivedSrc: "/image/derived/office-docs.webp",
     width: 1280,
     height: 960,

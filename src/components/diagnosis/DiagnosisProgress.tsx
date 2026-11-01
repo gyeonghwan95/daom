@@ -13,7 +13,7 @@ export function DiagnosisProgress({ step, total, finished }: DiagnosisProgressPr
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-navy-light">
-            Self Check
+            자가진단
           </p>
           <p className="mt-1 text-sm font-semibold text-navy" id="diagnosis-progress-label">
             {finished ? "진단 결과" : `질문 ${Math.min(currentStep, total)} / ${total}`}

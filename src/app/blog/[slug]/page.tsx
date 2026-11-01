@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
@@ -37,6 +38,7 @@ export default async function BlogDetailPage({ params }: Props) {
   if (!page || !post) notFound();
 
   const { meta, content } = post;
+  setPeerPagePath(meta.href);
 
   return (
     <PageContainer>

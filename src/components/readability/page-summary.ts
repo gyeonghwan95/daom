@@ -1,4 +1,5 @@
 import type { PageData } from "@/lib/pageData/types";
+import { distinctConsultationPoints } from "@/lib/pageData/template-helpers";
 
 /** PageData에서 핵심 요약 bullet 3~5개 생성 (SEO 텍스트 유지) */
 export function buildPageSummaryBullets(page: PageData): string[] {
@@ -52,7 +53,7 @@ export function buildPageTocItems(
   if (page.documents.length > 0) {
     items.push({ id: "documents", label: page.documentsTitle ?? "필요 서류" });
   }
-  if (page.consultationPoints.length > 0) {
+  if (distinctConsultationPoints(page).length > 0) {
     items.push({ id: "consultation-points", label: "상담 포인트" });
   }
   items.push({ id: "consultation-example", label: "상담 상황 예시" });

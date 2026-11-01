@@ -17,7 +17,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const SOURCES = {
   seoul: "썸네일-등기필증_상속.jpg",
   yongin: "썸네일-작성중.png",
-  daejeon: "사무소-서류.jpg",
+  daejeon: "썸네일-사무실_겨울 (4).jpg",
   daegu: "썸네일-사무실_겨울 (3).jpg",
 };
 

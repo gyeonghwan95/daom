@@ -83,8 +83,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "남구 아파트 잔금 등기 상담 예시",
-      body: "용호동 아파트 잔금일에 소유권이전과 은행 근저당 설정을 같은 날 맞춰야 했던 가상 예시입니다. 등기부와 계약서·대출 일정을 확인한 뒤 접수 순서를 정리했습니다. 실제 결과는 달라질 수 있습니다.",
+      title: "남구 아파트 잔금일 등기 문의",
+      body: "용호동 아파트처럼 잔금일에 소유권이전과 은행 근저당 설정을 같은 날 맞춰야 하는 문의가 많습니다. 이때는 등기부와 계약서·대출 일정을 먼저 확인하고 접수 순서를 정합니다.",
     },
     procedures: [
       "남구 소재지 주소로 관할 등기소 확인",
@@ -146,8 +146,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "강서구 창고 매매 등기 상담 예시",
-      body: "녹산 인근 창고 매매에서 법인 매수·근저당 승계 여부를 먼저 가른 가상 예시입니다. 등기부와 사업장 주소를 맞춰 관할·서류를 정리했습니다.",
+      title: "강서구 창고 매매 등기 문의",
+      body: "녹산 인근 창고 매매는 법인이 매수하는지, 근저당을 승계하는지부터 가려 봅니다. 등기부와 사업장 주소를 맞춰 관할과 서류를 정리합니다.",
     },
     procedures: [
       "강서구 소재지·지목·용도 확인",
@@ -209,8 +209,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "서면 오피스텔 잔금 등기 예시",
-      body: "부전동 오피스텔 잔금일에 소유권이전과 전세권 말소를 맞춘 가상 예시입니다. 등기부와 임대차 승계 여부를 확인했습니다.",
+      title: "서면 오피스텔 잔금 등기 문의",
+      body: "부전동 오피스텔은 잔금일에 소유권이전과 전세권 말소를 함께 맞춰야 하는 경우가 많습니다. 등기부와 임대차 승계 여부를 먼저 확인합니다.",
     },
     procedures: [
       "소재지 주소로 관할 확인",
@@ -268,8 +268,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "동구 다가구 매매 등기 예시",
-      body: "수정동 다가구 매매에서 등기부·건축물대장을 대조하고 근저당 말소 순서를 잡은 가상 예시입니다.",
+      title: "동구 다가구 매매 등기 문의",
+      body: "수정동 다가구 매매는 등기부와 건축물대장을 대조하고, 근저당 말소 순서를 먼저 잡습니다.",
     },
     procedures: [
       "동구 소재지·권리제한 확인",
@@ -331,8 +331,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "서면 본점 임원변경 예시",
-      body: "부전동 본점 법인의 이사 사임·취임을 같은 신청으로 묶어 과태료 일정을 맞춘 가상 예시입니다.",
+      title: "서면 본점 임원변경 문의",
+      body: "부전동에 본점을 둔 법인이 이사 사임과 취임을 함께 처리할 때는 한 번의 신청으로 묶을 수 있는지, 변경일부터 2주인 등기 기한을 먼저 확인합니다.",
     },
     procedures: [
       "등기부·본점 주소 확인",
@@ -390,8 +390,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "중구 본점 목적변경 예시",
-      body: "남포동 본점 법인의 사업 목적 추가와 임원 중임을 같은 흐름으로 정리한 가상 예시입니다.",
+      title: "중구 본점 목적변경 문의",
+      body: "남포동에 본점을 둔 법인이 사업 목적 추가와 임원 중임을 함께 처리할 때는 한 흐름으로 정리해 접수할 수 있는지 먼저 봅니다.",
     },
     procedures: [
       "본점·등기부 확인",
@@ -453,8 +453,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "북구 소규모 설립 예시",
-      body: "화명동 본점 1인 회사 설립에서 상호·목적·자본을 확정한 뒤 설립 서류를 준비한 가상 예시입니다.",
+      title: "북구 1인 법인 설립 문의",
+      body: "화명동에 본점을 두는 1인 회사 설립은 상호·목적·자본금을 먼저 확정한 뒤 설립 서류를 준비합니다.",
     },
     procedures: [
       "설립/변경 분기",
@@ -511,8 +511,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "중구 주택 공동상속 예시",
-      body: "영주동 주택을 형제 공동상속 후 협의로 단독 명의이전한 가상 예시입니다. 채무 확인 후 등기 서류를 진행했습니다.",
+      title: "중구 주택 공동상속 문의",
+      body: "영주동 주택처럼 형제가 함께 상속한 집을 협의로 한 사람 명의로 정리하려는 문의가 있습니다. 이때는 고인의 채무를 먼저 확인하고 협의분할 서류를 준비합니다.",
     },
     procedures: [
       "승인 방식(단순·한정·포기) 확인",
@@ -574,8 +574,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "센텀 아파트 상속등기 예시",
-      body: "재송동 아파트 공동상속 후 배우자 단독 명의로 이전한 가상 예시입니다. 자녀 포기·협의 서류를 맞춘 뒤 등기를 접수했습니다.",
+      title: "센텀 아파트 상속등기 문의",
+      body: "재송동 아파트를 배우자 단독 명의로 정리하려면, 자녀들의 상속포기 또는 협의분할 서류를 먼저 맞춘 뒤 등기를 접수합니다.",
     },
     procedures: [
       "승인 방식 확인",
@@ -648,7 +648,7 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
     ],
     consultationExample: {
       title: "전포 상가와 개금 주택을 함께 상속한 경우",
-      body: "전포동 근린상가와 개금동 주택이 한 피상속인 명의였던 가상 예시입니다. 임대차·근저당을 물건별로 적고 형제 협의 후 취득세·등기를 나눈 흐름이며, 실제 결과는 달라질 수 있습니다.",
+      body: "전포동 근린상가와 개금동 주택처럼 한 분 명의의 부동산이 여러 곳이면, 임대차·근저당을 물건별로 정리하고 상속인 협의 후 취득세와 등기를 물건별로 나눠 진행합니다.",
     },
     procedures: [
       "승인 방식 확인",
@@ -720,8 +720,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "용호동 아파트 공동상속 예시",
-      body: "용호동 아파트 한 채를 형제 세 명이 상속한 가상 예시입니다. 전세권이 남아 있어 임대차 승계 여부를 확인한 뒤 협의분할·취득세·등기를 진행한 흐름이며 결과는 보장하지 않습니다.",
+      title: "용호동 아파트 공동상속 문의",
+      body: "용호동 아파트 한 채를 형제 여러 명이 상속했는데 전세권이 남아 있다면, 임대차 승계 여부를 먼저 확인한 뒤 협의분할·취득세·등기 순서로 진행합니다.",
     },
     procedures: [
       "남구 주소·승인 방식 확인",
@@ -795,7 +795,7 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
     ],
     consultationExample: {
       title: "기장읍 대지와 정관 아파트를 함께 상속한 경우",
-      body: "기장읍 대지와 정관읍 아파트를 한 피상속인이 갖고 있던 가상 예시입니다. 지목과 집합건물 서류를 나눠 협의·취득세·등기를 진행한 흐름이며 결과는 보장하지 않습니다.",
+      body: "기장읍 대지와 정관읍 아파트처럼 토지와 집합건물을 함께 상속하면, 지목과 집합건물 서류를 나눠 준비한 뒤 협의·취득세·등기를 진행합니다.",
     },
     procedures: [
       "기장 주소·지목 확인",
@@ -880,8 +880,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "법원 앞을 검색했다가 센텀에서 상속포기를 접수한 경우",
-      body: "고인 마지막 주소가 부산이라 부산가정법원 관할인데, 의뢰인은 법원로 사무실만 찾던 가상 예시입니다. 3개월 기한과 가족관계를 전화로 확인한 뒤 센텀에서 신고서를 작성·제출한 흐름이며 결과는 보장하지 않습니다.",
+      title: "법원 근처 사무실을 찾고 계셨다면",
+      body: "고인의 마지막 주소가 부산이면 상속포기는 부산가정법원 관할입니다. 법원 바로 앞 사무실이 아니어도 3개월 기한과 가족관계를 전화로 먼저 확인하고, 센텀 사무소에서 신고서를 작성해 제출할 수 있습니다.",
     },
     procedures: [
       "사건 종류(상속·지급명령·가압류·회생) 확인",
@@ -943,8 +943,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "강서구 아파트·창고 동시 상속 예시",
-      body: "명지 아파트와 녹산 창고를 함께 상속받아 목록을 나눠 등기한 가상 예시입니다. 채무 확인 후 진행했습니다.",
+      title: "강서구 아파트·창고 함께 상속 문의",
+      body: "명지 아파트와 녹산 창고를 함께 상속받았다면 부동산 목록을 나눠 정리하고, 고인의 채무를 확인한 뒤 등기를 진행합니다.",
     },
     procedures: [
       "승인 방식·채무 확인",
@@ -1005,8 +1005,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "임원변경 필요서류 정리 예시",
-      body: "임원변경 접수 전 취임승낙·인감·의사록만 ★로 추려 안내한 가상 예시입니다. 참고용 사업자등록증 사본은 준비서류로 구분했습니다.",
+      title: "임원변경 필요서류 정리",
+      body: "임원변경 접수 전에는 꼭 필요한 서류(취임승낙서·인감·의사록)에 ★를 붙여 먼저 안내하고, 사업자등록증 사본처럼 참고용 서류는 따로 구분해 드립니다.",
     },
     procedures: [
       "변경 유형 확인",
@@ -1065,8 +1065,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "매매 잔금 필요서류 예시",
-      body: "잔금 이틀 전 ★ 목록(인감·계약서·취득세·위임)만 추려 전달한 가상 예시입니다.",
+      title: "매매 잔금 필요서류 정리",
+      body: "잔금 이틀 전쯤 꼭 필요한 서류(인감·계약서·취득세·위임장)만 ★ 목록으로 추려 전달해 드립니다.",
     },
     procedures: [
       "등기원인 확인",
@@ -1152,7 +1152,7 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
     ],
     consultationExample: {
       title: "사망 후 2년이 지나 상속등기를 문의한 경우",
-      body: "이해를 위한 가상 예시입니다. 과태료가 없다는 점을 먼저 확인하고, 취득세 신고 여부와 가산세를 확인한 뒤 상속인 확정과 협의서로 진행하는 흐름입니다. 실제 결과는 달라질 수 있습니다.",
+      body: "상속등기 자체에는 과태료가 없다는 점을 먼저 확인합니다. 취득세 신고 기한이 지났다면 가산세를 확인한 뒤, 상속인 확정과 협의서로 진행합니다.",
     },
     procedures: [
       "사망일로 취득세 신고기한(6개월·9개월) 계산",
@@ -1222,8 +1222,8 @@ export const SEO_LANDING_SLUG_OVERLAYS: Record<string, SeoLandingSlugOverlay> = 
       },
     ],
     consultationExample: {
-      title: "가정법원 관할 확인 예시",
-      body: "해운대 거주 상속인이 피상속인 최후 주소지를 기준으로 부산가정법원 관할 여부를 확인한 뒤, 포기 여부는 별도 안내에서 검토한 가상 예시입니다. 실제 결과는 달라질 수 있습니다.",
+      title: "가정법원 관할 확인",
+      body: "해운대에 사는 상속인이라도 상속포기 관할은 고인의 마지막 주소지 기준입니다. 부산가정법원 관할인지 먼저 확인하고, 포기 여부는 따로 검토합니다.",
     },
     procedures: [
       "피상속인 최후 주소지로 관할 가정법원 확인",

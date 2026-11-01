@@ -27,6 +27,8 @@ type NaverPlaceActionsProps = {
   /** 둘째 버튼 — 지정하지 않으면 placement로 정한다 */
   secondary?: "map" | "review";
   reviewLabel?: string;
+  /** 네이버 예약 버튼만 둔다(같은 화면에 지도·후기 링크가 이미 있을 때) */
+  reservationOnly?: boolean;
   /** 좁은 패널: 두 버튼을 1열 전체 폭으로 쌓아 문구가 잘리지 않게 한다 */
   stacked?: boolean;
   className?: string;
@@ -45,6 +47,7 @@ export function NaverPlaceActions({
   mapLabel = "네이버 지도",
   secondary,
   reviewLabel = "후기·사진 보기",
+  reservationOnly = false,
   stacked = false,
   className = "",
   buttonClassName = "",
@@ -66,6 +69,7 @@ export function NaverPlaceActions({
         label={reservationLabel}
         className={buttonClassName}
       />
+      {reservationOnly ? null : (
       <NaverSmartPlaceCta
         variant={second}
         placement={placement}
@@ -75,6 +79,7 @@ export function NaverPlaceActions({
         label={second === "map" ? mapLabel : reviewLabel}
         className={buttonClassName}
       />
+      )}
     </div>
   );
 }

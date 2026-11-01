@@ -116,10 +116,10 @@ export function Footer() {
             <ul className="mt-3 space-y-1 text-sm text-white/70">
               {[
                 { href: "/전국업무", label: "전국 업무 안내" },
-                { href: "/업무사례/지역별", label: "지역별 업무사례" },
+                { href: "/업무사례/지역별", label: "지역별 안내" },
                 { href: "/전국상속등기", label: "전국 상속등기" },
-                { href: "/업무사례/경남법무사업무", label: "경남 업무사례" },
-                { href: "/업무사례/울산법무사업무", label: "울산 업무사례" },
+                { href: "/업무사례/경남법무사업무", label: "경남 지역 안내" },
+                { href: "/업무사례/울산법무사업무", label: "울산 지역 안내" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

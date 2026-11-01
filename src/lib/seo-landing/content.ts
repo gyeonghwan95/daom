@@ -910,7 +910,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       ],
       consultationExample: {
         title: "등기소 관할 확인 상담",
-        body: "이해를 위한 가상 예시입니다. 해운대 부동산 등기를 등기소 근처 사무소에 맡기려는 경우, 관할 등기소가 어디인지부터 확인하고 전자등기 가능 여부를 안내합니다.",
+        body: "해운대 부동산 등기를 등기소 근처 사무소에 맡기려는 경우, 관할 등기소가 어디인지부터 확인하고 전자등기 가능 여부를 안내합니다.",
       },
       procedures: [
         "부동산 주소 또는 법인 본점으로 관할 등기소 확인",
@@ -1014,7 +1014,7 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       ],
       consultationExample: {
         title: `${court} 지급명령 상담 예시`,
-        body: "이해를 위한 가상 예시입니다. 용역비를 받지 못한 의뢰인이 계약서와 입금 내역을 가져와 관할·청구액·이의 가능성을 확인한 뒤 신청 서류를 준비한 경우입니다. 실제 결과는 달라질 수 있습니다.",
+        body: "용역비를 받지 못했다면 계약서와 입금 내역으로 관할·청구액·이의 가능성을 먼저 확인한 뒤 신청 서류를 준비합니다.",
       },
       procedures: [
         "채권·당사자·관할·시효 가능성 확인",
@@ -1115,9 +1115,9 @@ export function buildSeoLandingContent(spec: SeoLandingSpec) {
       title: `${withRegionLabel(spec.regionLabel ?? "부산", spec.title)} 상담 예시`,
       body: pick(
         [
-          `이해를 위한 가상 예시입니다. ${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 문의라면 먼저 당사자·재산·관할을 확인하고, 급한 기한이 있으면 우선순위를 정합니다. 준비 서류 목록과 예상 일정·비용 항목을 단계별로 안내한 뒤 서류가 모이면 접수로 이어집니다. 실제 결과는 달라질 수 있습니다.`,
-          `이해를 위한 가상 예시입니다. ${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${josa(spec.title, "을/를")} 문의하면, 주소와 당사자만으로 관할을 확인한 뒤 필요 서류와 일정상 주의점을 항목별로 안내합니다. 실제 결과는 달라질 수 있습니다.`,
-          `이해를 위한 가상 예시입니다. ${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친다면, 날짜가 있는 절차부터 정리하고 나머지 서류를 함께 준비하도록 안내합니다.`,
+          `${spec.title.startsWith(spec.regionLabel ?? "부산") ? spec.title : `${spec.regionLabel ?? "부산"}에서 ${spec.title}`} 문의라면 먼저 당사자·재산·관할을 확인하고, 급한 기한이 있으면 우선순위를 정합니다. 준비 서류 목록과 예상 일정·비용 항목을 단계별로 안내한 뒤 서류가 모이면 접수로 이어집니다.`,
+          `${spec.regionLabel ?? "부산"} 생활권 의뢰인이 ${josa(spec.title, "을/를")} 문의하면, 주소와 당사자만으로 관할을 확인한 뒤 필요 서류와 일정상 주의점을 항목별로 안내합니다.`,
+          `${spec.title} 문의에서 잔금·상속 개시·법인 변경일이 겹친다면, 날짜가 있는 절차부터 정리하고 나머지 서류를 함께 준비하도록 안내합니다.`,
         ],
         spec.seed,
         21,

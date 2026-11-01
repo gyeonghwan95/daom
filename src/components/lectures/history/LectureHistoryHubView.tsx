@@ -23,7 +23,7 @@ export function LectureHistoryHubView() {
     <div className="space-y-10 md:space-y-12">
       <LawyerProfileNav />
       <section className="rounded-2xl border border-beige-dark bg-white p-5 md:p-8">
-        <p className="text-sm font-medium text-navy/60">Speaker track record</p>
+        <p className="text-sm font-medium text-navy/60">강의 이력</p>
         <h2 className="mt-2 text-xl font-bold text-navy md:text-2xl">
           현장에서 이어가는 생활법률 교육
         </h2>

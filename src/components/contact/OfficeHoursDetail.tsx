@@ -12,14 +12,10 @@ export function OfficeHoursDetail({ variant = "default" }: OfficeHoursDetailProp
     : "mt-1 text-navy/80";
 
   return (
-    <dl className={isFooter ? "space-y-3 text-sm" : "grid gap-4 sm:grid-cols-3"}>
+    <dl className={isFooter ? "space-y-3 text-sm" : "grid gap-4 sm:grid-cols-2"}>
       <div>
         <dt className={labelClass}>평일</dt>
         <dd className={valueClass}>{officeHours.weekday}</dd>
-      </div>
-      <div>
-        <dt className={labelClass}>점심시간</dt>
-        <dd className={valueClass}>{officeHours.lunch}</dd>
       </div>
       <div>
         <dt className={labelClass}>휴무일</dt>

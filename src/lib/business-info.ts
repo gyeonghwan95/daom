@@ -21,7 +21,6 @@ export type NapInfo = {
   naverPlaceUrl: string;
   openingHoursSummary: string;
   openingHoursWeekday: string;
-  openingHoursLunch: string;
   openingHoursClosed: string;
   openingHoursNote: string;
   businessRegistrationNumber: string;
@@ -59,7 +58,6 @@ export function getNapInfo(): NapInfo {
     naverPlaceUrl: getNaverPlaceUrl(),
     openingHoursSummary: officeHours.summary,
     openingHoursWeekday: officeHours.weekday,
-    openingHoursLunch: officeHours.lunch,
     openingHoursClosed: officeHours.closed,
     openingHoursNote: officeHours.note,
     businessRegistrationNumber,

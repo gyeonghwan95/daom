@@ -96,6 +96,7 @@ export function ConversionActionButtons({
         placement="conversion_actions"
         layout="row"
         size="md"
+        naverDesktopOnly
         inquiry={
           <InquiryStartButton
             source="cta"
@@ -123,7 +124,8 @@ export function ConversionActionButtons({
         {consultationInquiryCopy.oneMinuteShort}
       </p>
 
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 [&>*:last-child:nth-child(odd)]:col-span-2 sm:[&>*:last-child:nth-child(odd)]:col-span-1">
+      {/* 전화·카카오·톡톡은 모바일 하단 고정 바와 같아 PC에서만 본문 버튼으로 둔다 */}
+      <div className="hidden grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid [&>*:last-child:nth-child(odd)]:col-span-2 sm:[&>*:last-child:nth-child(odd)]:col-span-1">
         {channelItems.map((channel) => {
           const kind = channel.id;
           const className = primaryClass(theme, kind);
@@ -181,14 +183,16 @@ export function ConversionActionButtons({
         </Link>
 
         {naverMapOn ? (
-          <NaverSmartPlaceCta
-            variant="map"
-            placement="conversion_actions"
-            tone={theme === "dark" ? "onDark" : "soft"}
-            size="md"
-            fullWidth
-            label="네이버 지도"
-          />
+          <div className="max-lg:hidden">
+            <NaverSmartPlaceCta
+              variant="map"
+              placement="conversion_actions"
+              tone={theme === "dark" ? "onDark" : "soft"}
+              size="md"
+              fullWidth
+              label="네이버 지도"
+            />
+          </div>
         ) : null}
 
         <a

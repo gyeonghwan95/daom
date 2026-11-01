@@ -93,7 +93,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         h1={page.h1}
         intro={page.intro}
         keywords={page.primaryKeywords}
-        eyebrow="Case Study"
+        eyebrow="업무 사례"
         ctaLabel={consultationInquiryCopy.ctaShort}
         showDiagnosisCta={false}
         showAboutLawyerCta

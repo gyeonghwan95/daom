@@ -8,7 +8,7 @@ import {
 } from "./types";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 달라질 수 있습니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
+  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
 
 function hashSlug(slug: string): number {
   let h = 0;
@@ -150,7 +150,7 @@ export function buildSoutheastPageData(
     breadcrumbs: [
       { label: "홈", href: "/" },
       { label: "업무 사례", href: "/업무사례" },
-      { label: `${def.regionGroup} 지역 업무사례`, href: hubPath },
+      { label: `${def.regionGroup} 지역 안내`, href: hubPath },
       { label: def.regionName },
     ],
     introParagraphs: [def.heroDescription, def.officeDisclosure, DISCLAIMER],

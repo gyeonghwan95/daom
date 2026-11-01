@@ -60,10 +60,10 @@ export function InheritanceJourneyNav({
                 }
                 aria-current={active ? "step" : undefined}
               >
-                <span className="text-[10px] font-semibold opacity-80">
+                <span className="text-[11px] font-semibold opacity-80">
                   {stage.step}
                 </span>
-                <span className="mt-0.5 text-[11px] font-semibold leading-tight sm:text-xs">
+                <span className="mt-0.5 text-xs font-semibold leading-tight sm:text-xs">
                   {variant === "compact" ? stage.shortLabel : stage.shortLabel}
                 </span>
               </Link>

@@ -106,9 +106,10 @@ export function InheritanceCostGuide({
           : "사망일과 부동산 주소만 먼저 보내도 비용 확인에 필요한 항목을 안내받을 수 있습니다. 일률적인 단가 대신 실제 상황에 맞춘 금액을 설명해 드립니다."}
       </p>
 
+      {/* 모바일은 하단 고정 바의 '문의'와 겹쳐 PC에서만 버튼으로 둔다 */}
       <Link
         href={inquiryHref}
-        className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm"
+        className="btn-primary hidden min-h-11 items-center justify-center px-5 text-sm lg:inline-flex"
       >
         준비서류와 비용 문의하기
       </Link>

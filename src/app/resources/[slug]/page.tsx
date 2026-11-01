@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ResourceGuideView } from "@/components/resources/ResourceGuideView";
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ResourceGuidePage({ params }: Props) {
   const { slug } = await params;
+  setPeerPagePath(`/resources/${slug}`);
   const guide = getResourceGuide(slug);
   if (!guide) notFound();
   return (

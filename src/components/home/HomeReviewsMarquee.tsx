@@ -18,7 +18,7 @@ export function HomeReviewsMarquee({
 }: HomeReviewsMarqueeProps) {
   const countLabel =
     typeof reviewCount === "number" && reviewCount > 0
-      ? `방문자 후기 ${reviewCount.toLocaleString("ko-KR")}건`
+      ? "네이버 방문자 후기"
       : null;
 
   if (reviews.length === 0) {

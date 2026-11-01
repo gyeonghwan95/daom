@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { SituationCategoryHubView } from "@/components/situations/SituationCategoryHubView";
@@ -58,6 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SituationCatchAllPage({ params }: Props) {
   const { slug: segments } = await params;
   const normalized = normalizeSegments(segments);
+  setPeerPagePath(`/situations/${normalized.join("/")}`);
 
   if (normalized.length === 2 && normalized[0] === "분류") {
     const category = getSituationCategoryBySlug(normalized[1]);

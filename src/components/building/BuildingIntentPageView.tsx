@@ -23,6 +23,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { siteImages } from "@/lib/site-images";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 
 type BuildingIntentPageViewProps = {
   page: PageData;
@@ -105,7 +106,12 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
   if (!content) return null;
 
   const isHub = content.kind === "hub";
-  const bodyParagraphs = buildBuildingBody(content);
+  // 핵심 요약(결론·시기·대상)에 이미 나온 문장은 '자세히 알아보기'에서 되풀이하지 않는다
+  const bodyParagraphs = dropParagraphsCoveredBy(buildBuildingBody(content), [
+    content.conclusion,
+    ...content.whenAndDeadline.slice(0, 3),
+    ...content.whoNeedsThis.slice(0, 3),
+  ]);
   const inquiryHref = `/contact/inquiry?field=${encodeURIComponent("real-estate-registration")}&from=${encodeURIComponent(content.slug)}`;
   const showNationwide =
     isHub ||

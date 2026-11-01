@@ -90,10 +90,6 @@ export function HomePlaceGuide() {
                   <dd>{officeHours.weekday}</dd>
                 </div>
                 <div>
-                  <dt>점심</dt>
-                  <dd>{officeHours.lunch}</dd>
-                </div>
-                <div>
                   <dt>휴무</dt>
                   <dd>{officeHours.closed}</dd>
                 </div>

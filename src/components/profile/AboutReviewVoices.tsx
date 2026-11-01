@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { excerptReview } from "@/lib/naver-place-reviews/topic-quote";
+import { reviewMonthLabel, reviewTopicLabel } from "@/lib/naver-place-reviews/topic-label";
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
 
 /**
@@ -17,27 +18,11 @@ type Voice = {
   date: string;
 };
 
-/** 업무 주제 — 카드 위 작은 표시 */
-function topicOf(body: string): string {
-  if (/상속/.test(body)) return "상속등기";
-  if (/증여/.test(body)) return "증여등기";
-  if (/매매/.test(body)) return "매매등기";
-  if (/전세|보증금/.test(body)) return "전세·보증금";
-  if (/부동산/.test(body)) return "부동산 상담";
-  if (/비용/.test(body)) return "비용 설명";
-  return "상담";
-}
-
 /** 맡기는 사람이 가장 궁금해하는 점(비용 설명·속도·꼼꼼함·소통)을 직접 말한 후기를 앞에 둔다 */
 const SIGNALS: RegExp[] = [/비용/, /설명/, /빠르|신속|스피드/, /꼼꼼/, /보정/, /소통|피드백/, /친절/, /편하|편안/];
 
 function score(review: NaverPlaceReview): number {
   return SIGNALS.reduce((n, re) => n + (re.test(review.body) ? 1 : 0), 0);
-}
-
-function formatDate(sortKey: string): string {
-  const [y, m] = sortKey.split("-");
-  return y && m ? `${y}.${m}` : sortKey;
 }
 
 /** 소개 상단에 보여 주는 후기 id — 같은 페이지의 다른 블록(한눈에 보기)이 같은 후기를 반복하지 않게 쓴다 */
@@ -57,7 +42,7 @@ function pickVoices(items: NaverPlaceReview[], count = 3): Voice[] {
   // 업무가 겹치지 않게 먼저 고르고, 모자라면 점수순으로 채운다
   for (const r of candidates) {
     if (picked.length >= count) break;
-    const t = topicOf(r.body);
+    const t = reviewTopicLabel(r.body);
     if (topics.has(t)) continue;
     topics.add(t);
     picked.push(r);
@@ -69,10 +54,10 @@ function pickVoices(items: NaverPlaceReview[], count = 3): Voice[] {
 
   return picked.map((r) => ({
     id: r.id,
-    topic: topicOf(r.body),
+    topic: reviewTopicLabel(r.body),
     excerpt: excerptReview(r.body, 150),
     nickname: r.nickname,
-    date: formatDate(r.createdSortKey),
+    date: reviewMonthLabel(r.createdSortKey),
   }));
 }
 
@@ -80,7 +65,6 @@ export function AboutReviewVoices() {
   const feed = getNaverPlaceReviewsFeed();
   const voices = pickVoices(feed.items);
   if (voices.length === 0) return null;
-  const total = feed.stats.totalCount || feed.items.length;
 
   return (
     <section
@@ -89,7 +73,7 @@ export function AboutReviewVoices() {
       className="about-voices section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
     >
       <div className="about-voices__head">
-        <p className="about-voices__kicker">네이버 방문자 후기 {total}건</p>
+        <p className="about-voices__kicker">네이버 방문자 후기</p>
         <h2 id="voices-heading" className="about-voices__title">
           맡겨 본 분들이
           <br className="sm:hidden" /> 먼저 말합니다

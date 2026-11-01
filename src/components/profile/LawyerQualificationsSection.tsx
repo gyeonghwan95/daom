@@ -46,8 +46,8 @@ function QualificationBadge({
       <p
         className={
           isAward
-            ? "text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-800/80"
-            : "text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-light/80"
+            ? "text-xs font-semibold uppercase tracking-[0.14em] text-amber-800/80"
+            : "text-xs font-semibold uppercase tracking-[0.14em] text-navy-light/80"
         }
       >
         {categoryLabels[category]}

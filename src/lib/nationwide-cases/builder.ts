@@ -11,7 +11,7 @@ import {
 import { caseNationwidePath, type RegionLandingDef } from "./types";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 달라질 수 있습니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
+  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
 
 const TRUST_ITEMS = [
   "안윤정 법무사 직접 확인",
@@ -254,7 +254,8 @@ export function buildNationwideCasePageData(
   const sections: PageSection[] = [
     {
       title: titles[0]!,
-      body: def.localIntro,
+      // 서두(localIntro)는 페이지 첫 화면에 이미 있으므로 같은 문단을 반복하지 않고 진행 방식만 안내한다
+      body: `${def.regionName} 부동산이어도 상담은 전화·카카오톡으로 시작하고, 서류와 원본은 우편·전자로 주고받는 방식으로 진행할 수 있는지 사건별로 확인합니다. 방문이 필요한 단계가 있으면 맡기시기 전에 미리 안내합니다.`,
       items: TRUST_ITEMS,
     },
     ...(def.localPoints
@@ -324,7 +325,7 @@ export function buildNationwideCasePageData(
       : [
           { label: "업무 사례", href: "/업무사례" },
           {
-            label: "전국 업무사례",
+            label: "전국 지역 안내",
             href: caseNationwidePath("전국업무사례"),
           },
         ];

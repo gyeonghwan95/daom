@@ -16,6 +16,7 @@ import {
   SummaryBox,
   WarningBox,
 } from "@/components/readability";
+import { ConsultSituationPicker } from "@/components/consult-wizard/ConsultSituationPicker";
 import { ConsultStartButton } from "@/components/consult-wizard/ConsultStartButton";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
@@ -63,14 +64,7 @@ export function ConsultLandingPageView({ page, cover, lead, jsonLd }: ConsultLan
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
       >
-        <div className="mt-5 md:mt-6">
-          <ConsultStartButton
-            pageTitle={content.metaTitle}
-            pageUrl={page.path}
-            presetSituationIds={content.presetSituationIds}
-            className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
-          />
-        </div>
+        <ConsultSituationPicker pageTitle={content.metaTitle} className="mt-5 md:mt-6" />
       </PageHero>
 
       <div id="summary">

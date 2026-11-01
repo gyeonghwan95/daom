@@ -33,7 +33,7 @@ export function CustomerReviewCard({
               : ""}
           </p>
         </div>
-        <span className="shrink-0 rounded-full bg-[#03C75A]/10 px-2.5 py-1 text-[11px] font-semibold text-[#03C75A]">
+        <span className="shrink-0 rounded-full bg-[#03C75A]/10 px-2.5 py-1 text-xs font-semibold text-[#03C75A]">
           네이버
         </span>
       </div>

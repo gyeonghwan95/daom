@@ -27,6 +27,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -110,7 +111,12 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
   if (!content) return null;
 
   const isHub = content.kind === "hub";
-  const bodyParagraphs = buildCorporateBody(content);
+  // 핵심 요약(결론·시기·대상)에 이미 나온 문장은 '자세히 알아보기'에서 되풀이하지 않는다
+  const bodyParagraphs = dropParagraphsCoveredBy(buildCorporateBody(content), [
+    content.conclusion,
+    ...content.whenAndDeadline.slice(0, 3),
+    ...content.whoNeedsThis.slice(0, 3),
+  ]);
   const showNationwide =
     isHub ||
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);

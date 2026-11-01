@@ -5,7 +5,7 @@ import { nationwideServiceCards } from "./registry";
 import type { NationwidePageSlug, NationwideServiceType } from "./types";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 달라질 수 있습니다.";
+  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다.";
 
 const TRUST_ITEMS = [
   "상담부터 신청까지 안윤정 법무사가 직접 확인합니다.",

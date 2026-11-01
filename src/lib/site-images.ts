@@ -59,7 +59,7 @@ export const imagePaths = {
   officeNameplate: "/image/사무소-명판.png",
   officeNameplateHorizontal: "/image/사무소-명판가로.jpg",
   officeInterior: "/image/사무소-내부.jpg",
-  officeDocuments: "/image/사무소-서류.jpg",
+  officeDocuments: "/image/썸네일-사무실_겨울 (4).jpg",
   officeLocationMap: "/image/사무소-위치지도.png",
   locationHeaderMap: "/image/오시는길-지도.png",
   officeDirectionStep1: "/image/사무소-찾아오는길1.png",
@@ -347,7 +347,7 @@ export const siteImages = {
         1200,
         900,
       ),
-      img(imagePaths.officeDocuments, "자격·수료증", 1200, 900),
+      img(imagePaths.officeDocuments, "서류를 검토하는 안윤정 법무사", 1200, 900),
     ],
   },
 

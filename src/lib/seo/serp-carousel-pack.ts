@@ -45,6 +45,21 @@ function normalizePath(raw: string): string {
   return path.startsWith("/") ? path : `/${path}`;
 }
 
+/** 영문 경로는 주소를 그대로 제목으로 쓰면 "location"처럼 보이므로 화면용 이름을 둔다 */
+const STATIC_CARD_TITLES: Record<string, string> = {
+  "/location": "센텀 사무소 오시는 길",
+  "/contact": "상담 문의",
+  "/about": "안윤정 법무사 소개",
+  "/reviews": "고객후기",
+  "/services": "업무안내",
+  "/office": "사무소 안내",
+  "/faq": "자주 묻는 질문",
+  "/blog": "블로그",
+  "/media": "언론·방송",
+  "/tools": "법률 계산기",
+  "/cases": "업무 사례",
+};
+
 function cardTitle(url: string): string {
   const owned = getSerpOwnedImage(url);
   if (owned) return owned.title;
@@ -52,6 +67,8 @@ function cardTitle(url: string): string {
   if (visual) return visual.pageTitle;
   const district = BUSAN_DISTRICT_HUBS.find((hub) => hub.href === url);
   if (district) return district.label;
+  const fixed = STATIC_CARD_TITLES[url];
+  if (fixed) return fixed;
   return url.replace(/^\//, "").replace(/법무사$/, " 법무사");
 }
 

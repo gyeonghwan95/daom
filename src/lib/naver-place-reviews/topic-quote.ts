@@ -76,7 +76,11 @@ export function pickReviewQuote(
   if (quotes.length === 0) return null;
   const topic = pathTopic(pathname);
   const sameTopic = quotes.filter((q) => q.topic === topic);
-  const general = quotes.filter((q) => q.topic === "general");
-  const pool = sameTopic.length ? sameTopic : general.length ? general : quotes;
+  // 주제가 정해지지 않은 페이지에는 특정 업무(상속·전세·매매 등)를 말하지 않는 후기만 돌려 쓴다
+  const general = quotes.filter(
+    (q) => q.topic === "general" || !/상속|전세|임대차|보증금|매매|소유권|증여|등기/.test(q.excerpt),
+  );
+  const pool =
+    topic !== "general" && sameTopic.length ? sameTopic : general.length ? general : quotes;
   return pool[hash(pathname) % pool.length] ?? null;
 }

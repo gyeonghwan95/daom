@@ -48,6 +48,7 @@ import {
 import Link from "next/link";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
+import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
@@ -134,7 +135,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
     page.slug !== "부산상속전문법무사" &&
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
-  const bodyParagraphs = [
+  const bodyParagraphCandidates = [
     ...content.heroParagraphs.slice(1),
     ...(content.suppressKeywordChips
       ? []
@@ -147,6 +148,12 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
             : "",
         ]),
   ].filter((p) => p.trim().length > 0);
+  // 핵심 요약(결론·확인 사항·상담 상황)에 이미 나온 문장은 '자세히 알아보기'에서 되풀이하지 않는다
+  const bodyParagraphs = dropParagraphsCoveredBy(bodyParagraphCandidates, [
+    ...content.summaryBullets.slice(0, 2),
+    ...content.documents.slice(0, 3),
+    ...content.whenNeeded.slice(0, 3),
+  ]);
 
   return (
     <article className="content-stack">

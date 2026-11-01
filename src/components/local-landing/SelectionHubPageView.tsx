@@ -319,7 +319,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
           intent={isConsultPrep ? "업무 가능 여부 확인" : undefined}
         />
         {isConsultPrep ? (
-          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+          <div className="mt-4 hidden flex-col gap-2 sm:flex-row lg:flex">
             <Link
               href={inquiryCost}
               className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-5 text-sm"

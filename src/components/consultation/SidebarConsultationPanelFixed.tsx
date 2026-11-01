@@ -51,6 +51,13 @@ export function SidebarConsultationPanelFixed({
 
   const show = isReady && layout.visible;
 
+  // 왼쪽 고정 상담 패널이 있는 화면에서는 오른쪽 아래 플로팅 상담 버튼을 숨겨 같은 진입점이 둘 보이지 않게 한다
+  useEffect(() => {
+    if (!isReady) return;
+    document.body.classList.add("has-sidebar-consult");
+    return () => document.body.classList.remove("has-sidebar-consult");
+  }, [isReady]);
+
   return (
     <div
       ref={panelRef}

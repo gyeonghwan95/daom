@@ -168,7 +168,7 @@ export function LectureTargetLayout({ content, spec }: LectureTargetLayoutProps)
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 18rem"
                 />
                 <span className="block px-3.5 pb-3.5 pt-3">
-                  <span className="text-[11px] font-semibold text-navy/55">
+                  <span className="text-xs font-semibold text-navy/55">
                     {badge}
                     {item.date ? ` · ${item.date}` : ""}
                   </span>

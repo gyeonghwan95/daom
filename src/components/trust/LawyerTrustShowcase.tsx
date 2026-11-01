@@ -108,7 +108,7 @@ const promises = [
  * 컨테이너 쿼리로 배치하므로 좁은 본문 칼럼과 넓은 PageContainer 양쪽에서 같은 컴포넌트를 쓴다.
  */
 export function LawyerTrustShowcase() {
-  const { phone, kakao, naverTalk } = getContactInfo();
+  const { phone } = getContactInfo();
   const image = siteImages.about.credentialInfographic;
   const activityImage = siteImages.about.activityInfographic;
   const reviewFeed = getNaverPlaceReviewsFeed();
@@ -129,9 +129,9 @@ export function LawyerTrustShowcase() {
       <div className="overflow-hidden rounded-[1.75rem] border border-navy/10 bg-gradient-to-br from-cream via-white to-beige/70 shadow-[0_30px_60px_-40px_rgba(30,58,95,0.5)]">
         <div className="grid @3xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] @5xl:grid-rows-[auto_auto_1fr]">
           <header className="px-5 pt-6 @md:px-7 @md:pt-7 @3xl:col-span-2 @3xl:row-start-1 @5xl:col-span-1 @5xl:col-start-2 @5xl:px-8 @5xl:pt-8">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-navy/15 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-navy-light">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-navy/15 bg-white px-3 py-1 text-xs font-bold tracking-[0.04em] text-navy-light">
               <span className="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden />
-              Why 안윤정 법무사
+              안윤정 법무사를 찾는 이유
             </p>
             <h2
               id="lawyer-trust-heading"
@@ -206,7 +206,7 @@ export function LawyerTrustShowcase() {
                     {item.icon}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[11px] font-semibold uppercase tracking-wider text-navy-light">
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-navy-light">
                       {item.label}
                     </span>
                     <span className="mt-0.5 block text-sm font-semibold leading-snug text-navy">
@@ -226,10 +226,7 @@ export function LawyerTrustShowcase() {
               ))}
             </ul>
 
-            <TrustReviewQuote
-              quotes={reviewQuotes}
-              totalCount={reviewFeed.stats.totalCount}
-            />
+            <TrustReviewQuote quotes={reviewQuotes} />
             <PrepResourceLink byPath={prepByPath} />
           </div>
 
@@ -237,8 +234,6 @@ export function LawyerTrustShowcase() {
             <TrustContactActions
               phone={phone}
               phoneHref={getPhoneHref(phone)}
-              kakaoHref={kakao}
-              naverTalkHref={naverTalk}
               hours={officeHours.weekday}
             />
 
