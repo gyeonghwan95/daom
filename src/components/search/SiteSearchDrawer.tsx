@@ -5,19 +5,14 @@ import {
   useDeferredValue,
   useEffect,
   useId,
-  useMemo,
   useRef,
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
 import { Container } from "@/components/layout/Container";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import {
-  countSearchResults,
-  normalizeQueryInput,
-  searchSite,
-} from "@/lib/search";
-import type { SearchIndexItem } from "@/lib/search/types";
+import { normalizeQueryInput } from "@/lib/search";
+import { useSiteSearch } from "@/lib/search/use-site-search";
 import { trackSearchUsed } from "@/lib/admin-ops/track-client";
 import { SearchCloseIcon } from "./SearchIcons";
 import { SiteSearchInput } from "./SiteSearchInput";
@@ -33,11 +28,6 @@ type SiteSearchDrawerProps = {
 
 const DRAWER_RESULT_LIMIT = 10;
 
-async function loadSearchIndex(): Promise<SearchIndexItem[]> {
-  const data = await import("@/generated/search-index.json");
-  return (data.default ?? data) as SearchIndexItem[];
-}
-
 export function SiteSearchDrawer({
   open,
   onClose,
@@ -51,12 +41,16 @@ export function SiteSearchDrawer({
   const panelRef = useRef<HTMLDivElement>(null);
   const listboxId = useId();
 
-  const [index, setIndex] = useState<SearchIndexItem[] | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevQuery, setPrevQuery] = useState(query);
   const [placeholder, setPlaceholder] = useState("업무·지역·강의 검색");
 
   const deferredQuery = useDeferredValue(normalizeQueryInput(query));
+  const { results, totalCount, loading } = useSiteSearch({
+    query: deferredQuery,
+    limit: DRAWER_RESULT_LIMIT,
+    enabled: open,
+  });
 
   if (prevQuery !== deferredQuery) {
     setPrevQuery(deferredQuery);
@@ -78,33 +72,10 @@ export function SiteSearchDrawer({
   }, []);
 
   useEffect(() => {
-    if (!open || index) return;
-
-    let cancelled = false;
-    void loadSearchIndex().then((items) => {
-      if (!cancelled) setIndex(items);
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [open, index]);
-
-  useEffect(() => {
     if (!open) return;
     const timer = window.setTimeout(() => inputRef.current?.focus(), 30);
     return () => window.clearTimeout(timer);
   }, [open]);
-
-  const results = useMemo(() => {
-    if (!index || !deferredQuery) return [];
-    return searchSite(index, deferredQuery, { limit: DRAWER_RESULT_LIMIT });
-  }, [index, deferredQuery]);
-
-  const totalCount = useMemo(() => {
-    if (!index || !deferredQuery) return 0;
-    return countSearchResults(index, deferredQuery);
-  }, [index, deferredQuery]);
 
   const closeAndRestoreFocus = useCallback(() => {
     onClose();
@@ -223,7 +194,7 @@ export function SiteSearchDrawer({
             onKeyDown={onInputKeyDown}
             inputRef={inputRef}
             listboxId={listboxId}
-            listboxActive={Boolean(index) && results.length > 0}
+            listboxActive={!loading && results.length > 0}
             activeDescendant={activeDescendant}
             placeholder={placeholder}
           />
@@ -244,7 +215,7 @@ export function SiteSearchDrawer({
               results={results}
               totalCount={totalCount}
               activeIndex={activeIndex}
-              loading={!index}
+              loading={loading}
               listboxId={listboxId}
               onSelect={onClose}
               onActiveIndexChange={setActiveIndex}

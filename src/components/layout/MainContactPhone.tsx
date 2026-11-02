@@ -3,6 +3,7 @@ import { seoBrand } from "@/lib/seo/brand";
 import { CostInquiryNote, NaverVisitLinks } from "@/components/cta/CostInquiryNote";
 import { PageTrustNote } from "@/components/trust/PageTrustNote";
 import { PeerPageLinks } from "@/components/internal-links/PeerPageLinks";
+import { SpecialistGuideLinks } from "@/components/internal-links/SpecialistGuideLinks";
 import { getPeerPagePath } from "@/lib/internal-links/peer-context";
 
 /** 모든 공개 일반 페이지의 본문 끝: 비용 문의 안내(말미) + 공식 상담 번호. 모바일은 하단 고정 바와 겹치는 번호 줄만 PC에서 두고, 네이버 예약·지도 버튼은 모든 화면에 둔다. */
@@ -12,6 +13,7 @@ export function MainContactPhone() {
 
   return (
     <>
+      <SpecialistGuideLinks path={getPeerPagePath()} />
       <PeerPageLinks path={getPeerPagePath()} />
       <PageTrustNote />
       <div className="mt-10 border-t border-beige-dark pt-6">

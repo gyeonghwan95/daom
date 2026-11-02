@@ -1,19 +1,11 @@
 "use client";
 
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import {
-  SEARCH_FILTER_LABELS,
-  countSearchResults,
-  normalizeQueryInput,
-  searchSite,
-} from "@/lib/search";
-import type {
-  SearchCategoryFilter,
-  SearchIndexItem,
-  SearchResult,
-} from "@/lib/search/types";
+import { SEARCH_FILTER_LABELS, normalizeQueryInput } from "@/lib/search";
+import { useSiteSearch } from "@/lib/search/use-site-search";
+import type { SearchCategoryFilter } from "@/lib/search/types";
 import { SearchEmptyState } from "@/components/search/SearchEmptyState";
 import { SearchHighlight } from "@/components/search/SearchHighlight";
 import { SiteSearchInput } from "@/components/search/SiteSearchInput";
@@ -32,11 +24,6 @@ const FILTERS: SearchCategoryFilter[] = [
   "other",
 ];
 
-async function loadSearchIndex(): Promise<SearchIndexItem[]> {
-  const data = await import("@/generated/search-index.json");
-  return (data.default ?? data) as SearchIndexItem[];
-}
-
 function resolveFilter(value: string | null): SearchCategoryFilter {
   if (value && FILTERS.includes(value as SearchCategoryFilter)) {
     return value as SearchCategoryFilter;
@@ -54,7 +41,6 @@ export function SearchPageClient() {
   const [prevUrlQuery, setPrevUrlQuery] = useState(urlQuery);
   const [filter, setFilter] = useState<SearchCategoryFilter>(urlFilter);
   const [prevUrlFilter, setPrevUrlFilter] = useState(urlFilter);
-  const [index, setIndex] = useState<SearchIndexItem[] | null>(null);
 
   if (prevUrlQuery !== urlQuery) {
     setPrevUrlQuery(urlQuery);
@@ -66,26 +52,12 @@ export function SearchPageClient() {
   }
 
   const deferredQuery = useDeferredValue(normalizeQueryInput(draftQuery));
-
-  useEffect(() => {
-    let cancelled = false;
-    void loadSearchIndex().then((items) => {
-      if (!cancelled) setIndex(items);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const results: SearchResult[] = useMemo(() => {
-    if (!index || !deferredQuery) return [];
-    return searchSite(index, deferredQuery, { limit: 50, filter });
-  }, [index, deferredQuery, filter]);
-
-  const totalCount = useMemo(() => {
-    if (!index || !deferredQuery) return 0;
-    return countSearchResults(index, deferredQuery, filter);
-  }, [index, deferredQuery, filter]);
+  const { results, totalCount, loading } = useSiteSearch({
+    query: deferredQuery,
+    filter,
+    limit: 50,
+    enabled: true,
+  });
 
   const syncUrl = (nextQuery: string, nextFilter: SearchCategoryFilter) => {
     const params = new URLSearchParams();
@@ -144,7 +116,7 @@ export function SearchPageClient() {
         <p className="text-sm text-navy/65">
           업무명, 지역명, 강의 주제 등으로 검색해 보세요.
         </p>
-      ) : !index ? (
+      ) : loading ? (
         <p className="text-sm text-navy/65" aria-live="polite">
           검색 준비 중…
         </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { AdminShell } from "@/components/admin-console/AdminShell";
+import "./admin.css";
 
 export const metadata: Metadata = {
   title: {

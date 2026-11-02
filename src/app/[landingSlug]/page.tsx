@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import nextDynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import {
   DiagnosisHubView,
@@ -9,7 +10,6 @@ import { RegistryHubPageView } from "@/components/local-landing/RegistryHubPageV
 import { BusanLawyerHubPageView } from "@/components/local-landing/BusanLawyerHubPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
-import { ConsultLandingPageView } from "@/components/consult-wizard/ConsultLandingPageView";
 import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPageView";
 import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageView";
 import { LecturePageView } from "@/components/lectures/LecturePageView";
@@ -68,6 +68,12 @@ import { normalizeRouteSlug } from "@/lib/seo/slug";
 import type { NationwidePageSlug } from "@/lib/nationwide";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+
+const ConsultLandingPageView = nextDynamic(() =>
+  import("@/components/consult-wizard/ConsultLandingPageView").then(
+    (mod) => mod.ConsultLandingPageView,
+  ),
+);
 
 type PageProps = {
   params: Promise<{ landingSlug: string }>;

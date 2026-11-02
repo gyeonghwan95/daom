@@ -23,3 +23,4 @@ export {
   scoreSearchItem,
   searchSite,
 } from "./search-site";
+export { runSearchQuery, searchHitsMatch } from "./run-search-query";

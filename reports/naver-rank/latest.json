@@ -1,0 +1,537 @@
+{
+ "date": "2026-11-02",
+ "results": [
+  {
+   "keyword": "부산 법무사",
+   "status": 200,
+   "cards": 26,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/820966630",
+    "2. bsajar.kabl.kr/index.do",
+    "3. busanbar.or.kr"
+   ]
+  },
+  {
+   "keyword": "부산 상속 법무사",
+   "status": 200,
+   "cards": 23,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/31156804",
+    "2. kin.naver.com/mobile/index.naver",
+    "3. xn--v92ba17hy9ha11fjsf8zu50b.com"
+   ]
+  },
+  {
+   "keyword": "부산 법무사 상속",
+   "status": 200,
+   "cards": 22,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "2. kin.naver.com/mobile/index.naver",
+    "3. cafe.naver.com/sogam0515"
+   ]
+  },
+  {
+   "keyword": "부산 상속포기 법무사",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 5,
+   "sitePages": [
+    "/부산상속포기"
+   ],
+   "blogRank": 14,
+   "top3": [
+    "1. place.naver.com/place/1823160246",
+    "2. kin.naver.com/mobile/index.naver",
+    "3. xn--v92ba17hy9ha11fjsf8zu50b.com"
+   ]
+  },
+  {
+   "keyword": "부산 상속전문 법무사",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 14,
+   "sitePages": [
+    "/부산상속전문법무사"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/31156804",
+    "2. xn--6l3bu5e0by8b596e.com",
+    "3. kin.naver.com/mobile/index.naver"
+   ]
+  },
+  {
+   "keyword": "부산 등기전문 법무사",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 4,
+   "sitePages": [
+    "/부산부동산등기전문법무사"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/1000682738",
+    "2. blog.naver.com/undefined",
+    "3. blog.naver.com/pica1026"
+   ]
+  },
+  {
+   "keyword": "부산 법인전문 법무사",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 3,
+   "sitePages": [
+    "/부산법무사추천"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/undefined",
+    "2. blog.naver.com/pica1026",
+    "3. xn--2j1br1na42lvxja38mk8r.kr"
+   ]
+  },
+  {
+   "keyword": "부산 상속등기 법무사",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 1,
+   "sitePages": [
+    "/상속등기기한"
+   ],
+   "blogRank": 12,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. blog.naver.com/undefined",
+    "3. blog.naver.com/mnklee15"
+   ]
+  },
+  {
+   "keyword": "부산 상속등기",
+   "status": 200,
+   "cards": 22,
+   "siteRank": 1,
+   "sitePages": [
+    "/부산상속등기"
+   ],
+   "blogRank": 4,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. blog.naver.com/bsbupmu",
+    "3. blog.naver.com/hsy6207"
+   ]
+  },
+  {
+   "keyword": "부산 한정승인 법무사",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 5,
+   "sitePages": [
+    "/부산한정승인"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/820966630",
+    "2. xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "3. blog.naver.com/undefined"
+   ]
+  },
+  {
+   "keyword": "부산 부동산등기 법무사",
+   "status": 200,
+   "cards": 22,
+   "siteRank": 2,
+   "sitePages": [
+    "/부산등기법무사추천"
+   ],
+   "blogRank": 11,
+   "top3": [
+    "1. busanlaw.net",
+    "2. xn--2j1br1na42lvxja38mk8r.kr",
+    "3. blog.naver.com/happy_village293"
+   ]
+  },
+  {
+   "keyword": "부산 법인등기 법무사",
+   "status": 200,
+   "cards": 15,
+   "siteRank": 1,
+   "sitePages": [
+    "/부산등기법무사추천"
+   ],
+   "blogRank": 2,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. blog.naver.com/law-yoon-91",
+    "3. blog.naver.com/undefined"
+   ]
+  },
+  {
+   "keyword": "부산 개인회생 법무사",
+   "status": 200,
+   "cards": 21,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/1978748198",
+    "2. blog.naver.com/meb6ugrs",
+    "3. blog.naver.com/mrdw85gi"
+   ]
+  },
+  {
+   "keyword": "부산 상속포기",
+   "status": 200,
+   "cards": 23,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/1823160246",
+    "2. xn--v92ba17hy9ha11fjsf8zu50b.com",
+    "3. cafe.naver.com/move79"
+   ]
+  },
+  {
+   "keyword": "해운대 법무사",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 4,
+   "sitePages": [
+    "/해운대법무사"
+   ],
+   "blogRank": 8,
+   "top3": [
+    "1. place.naver.com/place/2005221566",
+    "2. blog.naver.com/undefined",
+    "3. blog.naver.com/bsbupmu"
+   ]
+  },
+  {
+   "keyword": "센텀 법무사",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 2,
+   "sitePages": [
+    "/services",
+    "/about",
+    "/부산부동산등기",
+    "/상속",
+    "/부산상속등기",
+    "/resources"
+   ],
+   "blogRank": 3,
+   "top3": [
+    "1. place.naver.com/place/2005494815",
+    "2. xn--2j1br1na42lvxja38mk8r.kr",
+    "3. blog.naver.com/law-yoon-91"
+   ]
+  },
+  {
+   "keyword": "부산 법무사 추천",
+   "status": 200,
+   "cards": 22,
+   "siteRank": 4,
+   "sitePages": [
+    "/부산법무사추천"
+   ],
+   "blogRank": 19,
+   "top3": [
+    "1. place.naver.com/place/820966630",
+    "2. kin.naver.com/mobile/index.naver",
+    "3. busanlaw.net"
+   ]
+  },
+  {
+   "keyword": "부산 법무사 비용",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 1,
+   "sitePages": [
+    "/부산법무사추천"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. cafe.naver.com/sogam0515",
+    "3. cafe.naver.com/move79"
+   ]
+  },
+  {
+   "keyword": "부산 여성 법무사",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 3,
+   "sitePages": [
+    "/부산여성법무사"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/undefined",
+    "2. blog.naver.com/pica1026",
+    "3. xn--2j1br1na42lvxja38mk8r.kr"
+   ]
+  },
+  {
+   "keyword": "부산 법무사 사무소",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 6,
+   "sitePages": [
+    "/부산법무사추천"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. place.naver.com/place/820966630",
+    "2. blog.naver.com/undefined",
+    "3. blog.naver.com/goodlegal0"
+   ]
+  },
+  {
+   "keyword": "다옴법무사사무소",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 2,
+   "sitePages": [
+    "/services",
+    "/about",
+    "/부산부동산등기",
+    "/상속",
+    "/부산상속등기",
+    "/resources"
+   ],
+   "blogRank": 4,
+   "top3": [
+    "1. place.naver.com/place/2035745096",
+    "2. xn--2j1br1na42lvxja38mk8r.kr",
+    "3. blog.naver.com/lyj0088/223922833964"
+   ]
+  },
+  {
+   "keyword": "전세사기 예방 특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 6,
+   "sitePages": [
+    "/강의이력/youth-jeonse-vaccination"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/diledile",
+    "2. blog.naver.com/seongdonggu1",
+    "3. blog.naver.com/gmcityhall"
+   ]
+  },
+  {
+   "keyword": "전세사기 예방교육",
+   "status": 200,
+   "cards": 21,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/hope_city",
+    "2. blog.naver.com/gmcityhall",
+    "3. housing.seoul.go.kr"
+   ]
+  },
+  {
+   "keyword": "전세사기 강의",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 6,
+   "sitePages": [
+    "/강의이력/youth-jeonse-prevention-series"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. sll.seoul.go.kr",
+    "2. gseek.kr",
+    "3. blog.naver.com/diledile"
+   ]
+  },
+  {
+   "keyword": "법률 강의",
+   "status": 200,
+   "cards": 19,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. youtube.com",
+    "2. blog.naver.com/bkh2457",
+    "3. blog.naver.com/snslawhr"
+   ]
+  },
+  {
+   "keyword": "법률특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": 11,
+   "top3": [
+    "1. blog.naver.com/seogu00",
+    "2. blog.naver.com/dyc1939",
+    "3. studio.kma.or.kr/member"
+   ]
+  },
+  {
+   "keyword": "기업 법률 특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 1,
+   "sitePages": [
+    "/기업법률교육"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. studio.kma.or.kr/member",
+    "3. blog.naver.com/yangyuo"
+   ]
+  },
+  {
+   "keyword": "생활법률특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 5,
+   "sitePages": [
+    "/법률강의"
+   ],
+   "blogRank": 8,
+   "top3": [
+    "1. blog.naver.com/gworkingmom",
+    "2. mapo.go.kr/site/main/home",
+    "3. sugang.gm.go.kr"
+   ]
+  },
+  {
+   "keyword": "전세사기 예방 법무사",
+   "status": 200,
+   "cards": 21,
+   "siteRank": null,
+   "sitePages": [],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/newpostbox",
+    "2. blog.naver.com/yk8884",
+    "3. cafe.naver.com/mokpomam"
+   ]
+  },
+  {
+   "keyword": "전세사기 피해 예방 특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 2,
+   "sitePages": [
+    "/전세사기예방교육"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. blog.naver.com/diledile",
+    "2. xn--2j1br1na42lvxja38mk8r.kr",
+    "3. go.seoul.co.kr"
+   ]
+  },
+  {
+   "keyword": "부산 법률 강의",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 1,
+   "sitePages": [
+    "/법률강의"
+   ],
+   "blogRank": 3,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. kocw.net/home/index.do",
+    "3. blog.naver.com/law-yoon-91"
+   ]
+  },
+  {
+   "keyword": "부산 법률 강사",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 1,
+   "sitePages": [
+    "/부산법률강사"
+   ],
+   "blogRank": 2,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. blog.naver.com/law-yoon-91",
+    "3. blog.naver.com/lawfirmjs051"
+   ]
+  },
+  {
+   "keyword": "법률 강사 초빙",
+   "status": 200,
+   "cards": 20,
+   "siteRank": 1,
+   "sitePages": [
+    "/부산법률강사"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. barunlawhr.co.kr",
+    "3. blog.naver.com/song_0728"
+   ]
+  },
+  {
+   "keyword": "청년 법률 특강",
+   "status": 200,
+   "cards": 21,
+   "siteRank": 2,
+   "sitePages": [
+    "/청년생활법률특강"
+   ],
+   "blogRank": 8,
+   "top3": [
+    "1. blog.naver.com/dyc1939",
+    "2. xn--2j1br1na42lvxja38mk8r.kr",
+    "3. sisakoreanews.kr/119602"
+   ]
+  },
+  {
+   "keyword": "직장인 법률 특강",
+   "status": 200,
+   "cards": 22,
+   "siteRank": 1,
+   "sitePages": [
+    "/기업법률교육"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. xn--2j1br1na42lvxja38mk8r.kr",
+    "2. welfarehello.com/community/hometownNews/알아두면-쓸모있는-직장생활-법률특강--b8e6a5b6-f6aa-4757-9773-2f28fb013f97",
+    "3. blog.naver.com/snslawhr"
+   ]
+  },
+  {
+   "keyword": "공공기관 법률교육",
+   "status": 200,
+   "cards": 23,
+   "siteRank": 4,
+   "sitePages": [
+    "/공공기관법률교육"
+   ],
+   "blogRank": null,
+   "top3": [
+    "1. edu.moleg.go.kr/main.do",
+    "2. siheung.gseek.kr",
+    "3. gseek.kr"
+   ]
+  }
+ ]
+}
