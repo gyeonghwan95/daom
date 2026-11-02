@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
-import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import { RelatedRecommendationsDisplay } from "@/components/internal-links/RelatedRecommendationsDisplay";
 import {
   ConsultationCTA,
@@ -16,7 +15,6 @@ import {
 } from "@/components/readability";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { RecommendationGroups } from "@/lib/internal-links";
-import type { SiteImageAsset } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import { trackToolUsed } from "@/lib/admin-ops/track-client";
 import {
@@ -32,15 +30,15 @@ type ToolCalculatorViewProps = {
   page: PageData;
   slug: string;
   recommendationGroups: RecommendationGroups;
-  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) */
-  cover: SiteImageAsset;
+  /** 서버에서 렌더한 본문 시작 이미지(대표 썸네일 또는 표지) — 페이지별 이미지 맵·크기 표를 클라이언트 번들에 싣지 않는다 */
+  lead?: ReactNode;
 };
 
 export function ToolCalculatorView({
   page,
   slug,
   recommendationGroups,
-  cover,
+  lead,
 }: ToolCalculatorViewProps) {
   const tool = getToolBySlug(slug);
   const [input, setInput] = useState<ToolCalculatorInput>({});
@@ -91,8 +89,7 @@ export function ToolCalculatorView({
   return (
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
-
-      <PageCoverBanner image={cover} />
+      {lead}
 
       <PageHero
         h1={page.h1}

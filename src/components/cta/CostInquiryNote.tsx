@@ -112,10 +112,20 @@ function PlaceLink({
       data-cta-variant={variant}
       data-cta-placement={placement}
       onClick={() => trackNaverPlaceClick({ variant, placement, href })}
-      className={`inline-flex min-h-10 items-center gap-1.5 text-[0.85rem] font-semibold text-navy/80 no-underline underline-offset-4 transition-colors hover:text-navy hover:underline ${className}`.trim()}
+      className={`naver-place-btn ${className}`.trim()}
     >
       {icon}
-      {label}
+      <span className="truncate">{label}</span>
+      <svg
+        className="naver-place-btn__ext"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.8}
+        aria-hidden
+      >
+        <path d="M6 3.5h6.5V10M12.5 3.5 4 12" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
       <span className="sr-only"> (새 창)</span>
     </a>
   );
@@ -225,12 +235,12 @@ function DecisionCard({ className }: { className: string }) {
           <PlaceLink
             variant="reservation"
             label="네이버 예약"
-            icon={<NaverIcon className="h-3.5 w-3.5 text-[#03C75A]" />}
+            icon={<NaverIcon className="naver-place-btn__icon" />}
           />
           <PlaceLink
             variant="map"
             label="네이버 지도"
-            icon={<LocationIcon className="h-3.5 w-3.5 text-[#03C75A]" />}
+            icon={<LocationIcon className="naver-place-btn__icon" />}
           />
         </div>
       ) : null}
@@ -242,22 +252,23 @@ function DecisionCard({ className }: { className: string }) {
 export function NaverVisitLinks({ className = "" }: { className?: string }) {
   if (!isNaverSmartPlaceConfigured()) return null;
   return (
-    <p className={`flex flex-wrap items-center gap-x-2.5 text-sm text-navy/70 ${className}`.trim()}>
-      <span className="font-medium text-navy">방문 상담</span>
-      <PlaceLink
-        variant="reservation"
-        label="네이버 예약"
-        placement="main_contact"
-        icon={<NaverIcon className="h-3.5 w-3.5 text-[#03C75A]" />}
-      />
-      <span aria-hidden className="text-navy/25">·</span>
-      <PlaceLink
-        variant="map"
-        label="네이버 지도"
-        placement="main_contact"
-        icon={<LocationIcon className="h-3.5 w-3.5 text-[#03C75A]" />}
-      />
-    </p>
+    <div className={`naver-visit ${className}`.trim()}>
+      <p className="naver-visit__label">방문 상담</p>
+      <div className="naver-visit__actions">
+        <PlaceLink
+          variant="reservation"
+          label="네이버 예약"
+          placement="main_contact"
+          icon={<NaverIcon className="naver-place-btn__icon" />}
+        />
+        <PlaceLink
+          variant="map"
+          label="네이버 지도"
+          placement="main_contact"
+          icon={<LocationIcon className="naver-place-btn__icon" />}
+        />
+      </div>
+    </div>
   );
 }
 

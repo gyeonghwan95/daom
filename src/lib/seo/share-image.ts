@@ -45,3 +45,12 @@ export function resolveShareImage(path: string, fallbackWidth = 1200, fallbackHe
   }
   return { url: getAbsoluteAssetUrl(key), width: entry.width, height: entry.height, type: mime(entry.format) };
 }
+
+/** 실제 파일 크기(크기 표 기준). 표에 없으면 undefined — 화면 이미지 틀 비율을 실제 사진에 맞출 때 쓴다 */
+export function getActualImageSize(path: string): { width: number; height: number } | undefined {
+  if (/^https?:\/\//.test(path)) return undefined;
+  const key = keyOf(path.startsWith("/") ? path : `/${path}`);
+  if (key.startsWith("/image/og-pages/") || key.startsWith("/image/hero/")) return { ...PAGE_THUMB_SIZE };
+  const entry = DIMS[key];
+  return entry ? { width: entry.width, height: entry.height } : undefined;
+}

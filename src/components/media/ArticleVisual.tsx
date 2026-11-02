@@ -135,6 +135,8 @@ type ArticleVisualSlotProps = {
   className?: string;
   category?: string;
   serviceSlug?: string;
+  /** 페이지 위쪽에 이미 보인 사진 원본 경로 — 같은 사진을 다시 고르지 않는다 */
+  avoidSrc?: readonly string[];
 };
 
 export function ArticleVisualSlot({
@@ -143,8 +145,9 @@ export function ArticleVisualSlot({
   className,
   category,
   serviceSlug,
+  avoidSrc,
 }: ArticleVisualSlotProps) {
-  const items = getArticleVisualsForPath(path, slot, { category, serviceSlug });
+  const items = getArticleVisualsForPath(path, slot, { category, serviceSlug, avoidSrc });
   if (items.length === 0) return null;
   return (
     <>

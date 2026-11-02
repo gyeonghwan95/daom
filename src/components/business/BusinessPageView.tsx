@@ -22,7 +22,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import type { BusinessScopeLevel } from "@/lib/business/types";
 import { siteImages } from "@/lib/site-images";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 const SCOPE_LABELS: Record<BusinessScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -82,7 +82,7 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
         secondaryCta={{ href: "/부산법률상담", label: "개인·가족 절차 안내" }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
-        sideImage={content.kind === "hub" ? siteImages.home.trust : undefined}
+        sideImage={content.kind === "hub" && !hasPageLeadThumbnail(page.path) ? siteImages.home.trust : undefined}
       />
 
       {content.kind === "hub" ? (

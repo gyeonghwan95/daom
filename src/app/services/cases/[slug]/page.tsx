@@ -13,7 +13,6 @@ import { resolveCasePageData } from "@/lib/pageData/resolvers";
 import { buildArticleSchema } from "@/lib/seo/json-ld";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import { getCaseImage } from "@/lib/site-images";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -52,7 +51,6 @@ export default async function CaseDetailPage({ params }: Props) {
     <PageContainer>
       <JsonLd data={buildArticleSchema(meta, getCaseImage(record.slug).src)} />
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
-      <PageLeadThumbnail path={page.path} />
       <JsonLd data={buildJsonLdForPageData(page)} />
       <CaseDetailView page={page} record={record} faqLinks={faqLinks} />
       <LawyerTrustShowcase />

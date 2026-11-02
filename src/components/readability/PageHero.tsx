@@ -167,14 +167,15 @@ export function PageHero({
 
   return (
     <header className="readability-hero">
-      <div className="grid gap-5 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,12.5rem)] lg:items-stretch lg:gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(0,14rem)]">
+      <div className="grid gap-5 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,12.5rem)] lg:items-start lg:gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(0,14rem)]">
         <div className="min-w-0">
           {textBlock}
           {costIntro}
           {ctaBlock}
         </div>
-        <div className="mx-auto w-full max-w-[14rem] sm:max-w-[15rem] lg:relative lg:mx-0 lg:h-full lg:max-w-none lg:justify-self-end">
-          <div className="relative aspect-[4/3] max-h-52 w-full overflow-hidden rounded-2xl border border-beige-dark bg-beige/40 shadow-sm sm:max-h-56 lg:absolute lg:inset-0 lg:aspect-auto lg:max-h-none">
+        {/* 본문 높이에 맞춰 늘이면 세로로 길쭉하게 잘리므로 비율을 고정한다 */}
+        <div className="mx-auto w-full max-w-[15rem] lg:mx-0 lg:max-w-none lg:justify-self-end">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-beige-dark bg-beige/40 shadow-sm lg:aspect-[4/5]">
             <Image
               src={encodePublicSrc(sideImage.src)}
               alt={sideImage.alt}

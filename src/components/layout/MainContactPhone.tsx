@@ -5,7 +5,7 @@ import { PageTrustNote } from "@/components/trust/PageTrustNote";
 import { PeerPageLinks } from "@/components/internal-links/PeerPageLinks";
 import { getPeerPagePath } from "@/lib/internal-links/peer-context";
 
-/** 모든 공개 일반 페이지의 본문 끝: 비용 문의 안내(말미) + 공식 상담 번호. 모바일은 바로 아래 푸터·하단 고정 바와 겹쳐 번호·방문 링크를 PC에서만 둔다. */
+/** 모든 공개 일반 페이지의 본문 끝: 비용 문의 안내(말미) + 공식 상담 번호. 모바일은 하단 고정 바와 겹치는 번호 줄만 PC에서 두고, 네이버 예약·지도 버튼은 모든 화면에 둔다. */
 export function MainContactPhone() {
   const { phone } = getContactInfo();
   if (!phone) return null;
@@ -28,7 +28,7 @@ export function MainContactPhone() {
             {phone}
           </a>
         </p>
-        <NaverVisitLinks className="mt-1 max-lg:hidden" />
+        <NaverVisitLinks className="mt-4 lg:mt-3" />
         </div>
     </>
   );

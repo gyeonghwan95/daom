@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getPageHeroThumbnail } from "@/data/seo/page-og-thumbnails";
-import { encodePublicSrc } from "@/lib/encode-public-src";
+import { MediaFrame } from "@/components/media/MediaFrame";
 import { shouldShowLeadNationwideNote } from "@/lib/nationwide/show-region-chip";
 import { PAGE_THUMB_SIZE } from "@/lib/seo/page-thumbnail-size";
 
-/** 본문 시작 4:3 썸네일이 있는 페이지 — 기존 표지 배너·1:1 대표 이미지를 겹쳐 두지 않는 데 쓴다 */
+/** 본문 시작 4:3 썸네일이 있는 페이지 — 기존 표지 배너·1:1 대표 이미지·히어로 옆 사진을 겹쳐 두지 않는 데 쓴다 */
 export function hasPageLeadThumbnail(path: string): boolean {
   return Boolean(getPageHeroThumbnail(path));
 }
@@ -35,18 +34,14 @@ export function PageLeadThumbnail({
     nationwide ?? shouldShowLeadNationwideNote(path, slug, serviceSlug);
   return (
     <div className="page-lead-thumbnail mb-7 w-full md:mb-9">
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#e9e2d6] shadow-[0_24px_48px_-32px_rgba(10,19,32,0.6)] ring-1 ring-[#d6c4a0]/70">
-        <Image
-          src={encodePublicSrc(hero.src)}
-          alt={hero.alt}
-          width={PAGE_THUMB_SIZE.width}
-          height={PAGE_THUMB_SIZE.height}
-          loading="eager"
-          fetchPriority="high"
-          sizes="(max-width: 56rem) 100vw, 56rem"
-          className="h-full w-full object-cover"
-        />
-      </div>
+      {/* 문구가 구워진 4:3 원본 — 어떤 화면에서도 자르지 않는다 */}
+      <MediaFrame
+        src={hero.src}
+        alt={hero.alt}
+        width={PAGE_THUMB_SIZE.width}
+        height={PAGE_THUMB_SIZE.height}
+        priority
+      />
       {showNote ? (
         <p className="mt-4 break-keep text-[0.95rem] leading-relaxed text-navy/80 md:text-base">
           <strong className="font-semibold text-navy">부산이 아니어도 괜찮습니다.</strong>{" "}

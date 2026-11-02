@@ -140,6 +140,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
           type="jurisdiction-exception"
           badge={`${spec.region} 부동산 전국 의뢰 가능`}
           showDetails={false}
+          showImage={false}
         />
 
         <section

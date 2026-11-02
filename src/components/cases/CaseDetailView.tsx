@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { CASE_RESULT_NOTICE } from "@/lib/service-conversion/copy";
 import {
@@ -86,8 +87,9 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
   return (
     <article className="content-stack">
       <Breadcrumb items={page.breadcrumbs} />
+      <PageLeadThumbnail path={page.path} />
 
-      <PageCoverBanner image={cover} />
+      {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
         h1={page.h1}

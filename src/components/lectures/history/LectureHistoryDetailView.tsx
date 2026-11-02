@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
+import { hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import Link from "next/link";
 import type { LectureHistoryEntry } from "@/lib/lectures/types";
 import {
@@ -27,6 +29,10 @@ export function LectureHistoryDetailView({
   entry,
 }: LectureHistoryDetailViewProps) {
   const image = getLectureHistoryPrimaryImage(entry);
+  // 시작 썸네일이 이 사진으로 만든 것이면 같은 사진을 바로 아래에 다시 크게 두지 않는다
+  const showPrimary = image && !hasPageLeadThumbnail(`/강의이력/${entry.slug}`);
+  // 현장 사진 목록에서는 위에서 이미 보인 대표 사진을 뺀다
+  const galleryPhotos = (entry.images ?? []).filter((photo) => photo.src !== image?.src);
   const qualifications = getLawyerQualifications().slice(0, 5);
   const awards = getLawyerAwards().slice(0, 2);
   const typeLabel =
@@ -68,17 +74,8 @@ export function LectureHistoryDetailView({
         <CostInquiryNote variant="intro" />
       </header>
 
-      {image ? (
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-beige-dark bg-beige">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-            sizes="(max-width:1280px) 100vw, 960px"
-            priority
-          />
-        </div>
+      {showPrimary ? (
+        <PageCoverBanner image={{ ...image, width: 0, height: 0 }} priority />
       ) : null}
 
       <section className="space-y-3">
@@ -133,11 +130,11 @@ export function LectureHistoryDetailView({
         </ul>
       </section>
 
-      {entry.images && entry.images.length > 1 ? (
+      {galleryPhotos.length > 0 ? (
         <section className="space-y-3">
           <h2 className="section-heading">현장 사진</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
-            {entry.images.map((photo) => (
+            {galleryPhotos.map((photo) => (
               <li
                 key={photo.src}
                 className="relative aspect-[4/3] overflow-hidden rounded-xl border border-beige-dark bg-beige"

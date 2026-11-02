@@ -22,6 +22,8 @@ export type ArticleVisualField =
 export type ArticleVisualResolveContext = {
   category?: string;
   serviceSlug?: string;
+  /** 페이지 위쪽에 이미 보인 사진 원본 경로(표지 등) — 자동 배치에서 같은 사진을 고르지 않는다 */
+  avoidSrc?: readonly string[];
 };
 
 type OverlaySet = {
@@ -82,11 +84,11 @@ const FIELD_ASSETS: Record<ArticleVisualField, string[]> = {
     "portraitFront",
     "officeDocs",
   ],
+  // 강의 페이지에는 강의 현장 사진 갤러리가 함께 있어, 같은 현장 사진이 곧바로 다시 보이지 않도록 인물·상담 사진만 쓴다
   lecture: [
-    "lectureYouthJeonse",
-    "lectureCitizenLib",
     "portraitFront",
     "consultMain",
+    "consultTalk",
   ],
   court: [
     "courtProcedureBook",
@@ -285,6 +287,14 @@ const ASPECT_BY_SLOT: Record<ArticleVisualSlot, ArticleVisualAspect> = {
   "mid-body": "16:9",
 };
 
+const SLOT_ORDER: ArticleVisualSlot[] = [
+  "after-intro",
+  "before-procedures",
+  "before-example",
+  "before-cta",
+  "mid-body",
+];
+
 const OVERLAY_POS_CYCLE: ArticleVisualOverlayPosition[] = [
   "left",
   "center",
@@ -384,11 +394,17 @@ export function buildAutoPlacement(
   slot: ArticleVisualSlot,
   field: ArticleVisualField,
   assets: Record<string, ArticleImageAsset>,
+  /** 같은 페이지에 이미 쓴 사진 — 남는 사진이 있으면 고르지 않는다 */
+  exclude: readonly string[] = [],
 ): ArticleVisualPlacement | null {
-  const pool = FIELD_ASSETS[field].filter((id) => assets[id]?.usable);
+  const usable = FIELD_ASSETS[field].filter((id) => assets[id]?.usable);
+  const fresh = usable.filter((id) => !exclude.includes(id));
+  const pool = fresh.length > 0 ? fresh : usable;
   if (pool.length === 0) return null;
 
-  const assetId = pickFrom(pool, path, hashString(slot) % 97);
+  // 같은 페이지의 슬롯끼리 같은 사진이 연달아 나오지 않도록, 경로로 시작점을 정하고 슬롯 순서만큼 돌려 고른다.
+  const assetId =
+    pool[(hashString(path) + SLOT_ORDER.indexOf(slot)) % pool.length]!;
   const overlays = FIELD_OVERLAYS[field];
   const overlayKey =
     slot === "after-intro"

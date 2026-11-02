@@ -22,7 +22,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { siteImages } from "@/lib/site-images";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 
 type SpecialEntityIntentPageViewProps = {
@@ -183,7 +183,7 @@ export function SpecialEntityIntentPageView({
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}
-        sideImage={siteImages.home.trust}
+        sideImage={hasPageLeadThumbnail(page.path) ? undefined : siteImages.home.trust}
       />
 
       {showNationwide ? (

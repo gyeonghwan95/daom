@@ -141,6 +141,7 @@ export function PageDataTemplate({
 }: PageDataTemplateProps) {
   const cover = getCoverImageForPageData(page);
   const hasLead = hasPageLeadThumbnail(page.path);
+  const coverShown = showCover && !hasLead && !resolveSerpImage(page.path);
   const conversionKey = resolveConversionKey(page);
   const isInheritanceSurgeryTarget =
     page.slug === "부산상속법무사" ||
@@ -243,7 +244,7 @@ export function PageDataTemplate({
         data={buildJsonLdForPageData(page, { extraFaqs: conversionFaqs })}
       />
 
-      {showCover && !hasLead && !resolveSerpImage(page.path) ? (
+      {coverShown ? (
         <PageCoverBanner image={cover} />
       ) : null}
 
@@ -356,6 +357,7 @@ export function PageDataTemplate({
         slot="after-intro"
         category={page.category}
         serviceSlug={page.serviceSlug}
+        avoidSrc={coverShown ? [cover.src] : undefined}
       />
 
       <PageTableOfContents items={tocItems} />
@@ -365,6 +367,7 @@ export function PageDataTemplate({
         slot="before-procedures"
         category={page.category}
         serviceSlug={page.serviceSlug}
+        avoidSrc={coverShown ? [cover.src] : undefined}
       />
 
       <ContentSection id="procedures" title="핵심 절차">
@@ -402,6 +405,7 @@ export function PageDataTemplate({
         slot="before-example"
         category={page.category}
         serviceSlug={page.serviceSlug}
+        avoidSrc={coverShown ? [cover.src] : undefined}
       />
 
       <PageTextCardFigure path={page.path} />

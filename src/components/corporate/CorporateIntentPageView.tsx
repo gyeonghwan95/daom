@@ -26,7 +26,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 
 type CorporateIntentPageViewProps = {
@@ -169,7 +169,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}
-        sideImage={getCoverImageForPageData(page)}
+        sideImage={hasPageLeadThumbnail(page.path) ? undefined : getCoverImageForPageData(page)}
       />
 
       {showNationwide ? (

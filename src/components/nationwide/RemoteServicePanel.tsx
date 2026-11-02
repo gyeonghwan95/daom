@@ -29,6 +29,8 @@ type RemoteServicePanelProps = {
   /** 접힌 상태로 제공하는 세부 안내 — 첫 화면 높이를 줄이기 위해 기본 닫힘 */
   details?: RemoteServicePanelDetails;
   ariaLabel?: string;
+  /** 같은 페이지 위쪽에 이미 안내 그림이 있으면 false — 같은 그림을 두 번 두지 않는다 */
+  showImage?: boolean;
   className?: string;
 };
 
@@ -46,6 +48,7 @@ export function RemoteServicePanel({
   footnoteAction,
   details,
   ariaLabel = "전국 비대면 의뢰 안내",
+  showImage = true,
   className = "",
 }: RemoteServicePanelProps) {
   const hasDetails = Boolean(
@@ -117,16 +120,18 @@ export function RemoteServicePanel({
           ) : null}
         </div>
 
-        <figure className="remote-panel__media">
-          <Image
-            src={REMOTE_GUIDE_IMAGE.src}
-            alt={REMOTE_GUIDE_IMAGE.alt}
-            fill
-            quality={75}
-            className="remote-panel__image"
-            sizes="(max-width: 960px) 100vw, 900px"
-          />
-        </figure>
+        {showImage ? (
+          <figure className="remote-panel__media">
+            <Image
+              src={REMOTE_GUIDE_IMAGE.src}
+              alt={REMOTE_GUIDE_IMAGE.alt}
+              fill
+              quality={75}
+              className="remote-panel__image"
+              sizes="(max-width: 960px) 100vw, 900px"
+            />
+          </figure>
+        ) : null}
       </div>
     </aside>
   );

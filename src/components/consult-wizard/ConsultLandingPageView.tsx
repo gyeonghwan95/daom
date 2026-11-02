@@ -5,7 +5,6 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 import {
   ChecklistBox,
   ContentSection,
@@ -20,20 +19,17 @@ import { ConsultSituationPicker } from "@/components/consult-wizard/ConsultSitua
 import { ConsultStartButton } from "@/components/consult-wizard/ConsultStartButton";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
-import type { SiteImageAsset } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 
 type ConsultLandingPageViewProps = {
   page: PageData;
-  /** 서버에서 정한 표지 이미지(클라이언트 번들에 페이지별 이미지 맵을 싣지 않기 위해) — 시작 썸네일이 있으면 null */
-  cover: SiteImageAsset | null;
-  /** 서버에서 만든 본문 시작 썸네일 */
+  /** 서버에서 만든 본문 시작 이미지(대표 썸네일 또는 표지) — 페이지별 이미지 맵·크기 표를 클라이언트 번들에 싣지 않는다 */
   lead?: ReactNode;
   /** 서버에서 만든 구조화데이터(FAQ 포함) */
   jsonLd: Parameters<typeof JsonLd>[0]["data"];
 };
 
-export function ConsultLandingPageView({ page, cover, lead, jsonLd }: ConsultLandingPageViewProps) {
+export function ConsultLandingPageView({ page, lead, jsonLd }: ConsultLandingPageViewProps) {
   const content = getConsultLanding(page.slug);
   if (!content) return null;
 
@@ -52,8 +48,6 @@ export function ConsultLandingPageView({ page, cover, lead, jsonLd }: ConsultLan
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       {lead}
       <JsonLd data={jsonLd} />
-
-      {cover ? <PageCoverBanner image={cover} /> : null}
 
       <PageHero
         h1={content.h1}

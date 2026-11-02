@@ -24,7 +24,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import type { CounselScopeLevel } from "@/lib/counsel-intent/types";
 import { siteImages } from "@/lib/site-images";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 const SCOPE_LABELS: Record<CounselScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -113,7 +113,7 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}
-        sideImage={siteImages.home.trust}
+        sideImage={hasPageLeadThumbnail(page.path) ? undefined : siteImages.home.trust}
       />
 
       {showNationwide ? (

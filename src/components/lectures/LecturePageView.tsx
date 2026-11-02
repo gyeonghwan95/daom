@@ -45,7 +45,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import type { LecturePageContent } from "@/lib/lectures/types";
-import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 
 type LecturePageViewProps = {
   page: PageData;
@@ -131,7 +131,7 @@ function SpeakerLayout({
         ctaHref="#inquiry"
         secondaryCta={{ href: "/강의이력", label: "강의 이력 보기" }}
         showDiagnosisCta={false}
-        sideImage={siteImages.about.portrait}
+        sideImage={hasPageLeadThumbnail(page.path) ? undefined : siteImages.about.portrait}
       />
 
       <LectureTrackRecordSummaryView summary={trackSummary} compact />

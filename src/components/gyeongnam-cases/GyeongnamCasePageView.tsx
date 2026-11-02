@@ -91,16 +91,17 @@ export function GyeongnamCasePageView({
       page={page}
       hasRemoteNotice={showNationwideNotice}
       heroAddon={
-        <>
+        // 같은 그림의 안내 패널이 두 번 이어지지 않도록 하나만 둔다(관할 예외 안내에 사무소 위치 고지를 함께 싣는다)
+        showNationwideNotice ? (
+          <NationwideServiceNotice
+            type="jurisdiction-exception"
+            badge={`${def.regionName} 부동산 전국 의뢰 가능`}
+            footnote={def.officeDisclosure}
+            showDetails={false}
+          />
+        ) : (
           <GyeongnamServiceHero def={def} />
-          {showNationwideNotice ? (
-            <NationwideServiceNotice
-              type="jurisdiction-exception"
-              badge={`${def.regionName} 부동산 전국 의뢰 가능`}
-              showDetails={false}
-            />
-          ) : null}
-        </>
+        )
       }
     >
       {showRemote ? (

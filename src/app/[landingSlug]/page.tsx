@@ -67,6 +67,7 @@ import { getKoreanSlugStaticParams } from "@/lib/seo/site-routes";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
 import type { NationwidePageSlug } from "@/lib/nationwide";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { PageCoverBanner } from "@/components/sections/PageCoverBanner";
 
 type PageProps = {
   params: Promise<{ landingSlug: string }>;
@@ -305,8 +306,13 @@ export default async function LocalLandingPage({ params }: PageProps) {
       <PageContainer>
         <ConsultLandingPageView
           page={page}
-          cover={hasPageLeadThumbnail(page.path) ? null : getCoverImageForPageData(page)}
-          lead={<PageLeadThumbnail path={page.path} />}
+          lead={
+            hasPageLeadThumbnail(page.path) ? (
+              <PageLeadThumbnail path={page.path} />
+            ) : (
+              <PageCoverBanner image={getCoverImageForPageData(page)} />
+            )
+          }
           jsonLd={buildJsonLdForPageData({
             ...page,
             faqs: getConsultLanding(page.slug)?.faqs ?? page.faqs,

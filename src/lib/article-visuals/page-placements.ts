@@ -427,7 +427,8 @@ export const priorityArticleVisualPlacements: ArticleVisualPlacement[] = [
   {
     path: "/contact",
     slot: "before-cta",
-    assetId: "consultMain",
+    // 페이지 위쪽 상담 카드가 이미 상담-메인 사진을 써서 다른 상담 사진을 둔다
+    assetId: "consultTalk",
     alt: "상담 문의에 응하는 안윤정 법무사 — 다옴법무사사무소",
     overlayText: "현재 상황부터 남겨주세요",
     caption: "전화·카카오톡·네이버 예약으로 상담을 시작할 수 있습니다.",
@@ -443,10 +444,18 @@ export function getArticleVisualsForPath(
   context?: ArticleVisualResolveContext,
 ): ArticleVisualPlacement[] {
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  const overrides = priorityArticleVisualPlacements.filter(
-    (p) => p.path === normalized && (slot ? p.slot === slot : true),
+  const pathOverrides = priorityArticleVisualPlacements.filter(
+    (p) => p.path === normalized,
   );
+  const overrides = pathOverrides.filter((p) => (slot ? p.slot === slot : true));
   if (overrides.length > 0) return overrides;
+  // 다른 슬롯에 고정한 사진은 자동 배치에서 다시 고르지 않는다
+  const usedAssets = [
+    ...pathOverrides.map((p) => p.assetId),
+    ...Object.values(articleImageCatalog)
+      .filter((asset) => context?.avoidSrc?.includes(asset.originalSrc))
+      .map((asset) => asset.id),
+  ];
 
   const field = inferArticleVisualField(normalized, context?.serviceSlug);
   const count = autoVisualCount(normalized, context?.category);
@@ -475,6 +484,7 @@ export function getArticleVisualsForPath(
       s,
       field,
       articleImageCatalog,
+      usedAssets,
     );
     if (placement) out.push(placement);
   }

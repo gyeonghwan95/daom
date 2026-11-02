@@ -14,6 +14,8 @@ type NationwideServiceNoticeProps = {
   showDetails?: boolean;
   ctaLabel?: string;
   ctaHref?: string;
+  /** 같은 페이지에 안내 그림이 이미 있으면 false */
+  showImage?: boolean;
   className?: string;
 };
 
@@ -24,6 +26,7 @@ export function NationwideServiceNotice({
   showDetails = true,
   ctaLabel,
   ctaHref,
+  showImage,
   className = "",
 }: NationwideServiceNoticeProps) {
   const notice = getNationwideNotice(type, { ctaLabel, ctaHref });
@@ -44,6 +47,7 @@ export function NationwideServiceNotice({
           : undefined
       }
       ariaLabel="전국 의뢰 안내"
+      showImage={showImage}
       className={className}
     />
   );
