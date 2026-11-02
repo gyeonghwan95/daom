@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:07:26.134Z",
+  "generatedAt": "2026-11-02T14:56:06.781Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1646,
   "format": "urlset",
@@ -998,7 +998,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-2-hubs.xml",
-      "lastmod": "2026-10-28",
+      "lastmod": "2026-11-02",
       "filename": "tier-2-hubs.xml",
       "count": 29
     },
@@ -1212,7 +1212,7 @@
       "path": "/about",
       "tier": 2,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/about",
-      "lastmod": "2026-10-14"
+      "lastmod": "2026-11-02"
     },
     {
       "path": "/busan-legal-map",

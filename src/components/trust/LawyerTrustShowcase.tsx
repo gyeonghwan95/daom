@@ -148,16 +148,20 @@ export function LawyerTrustShowcase() {
           </header>
 
           <div className="mx-4 mt-5 flex flex-col rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-start @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:justify-center @5xl:rounded-none @5xl:p-7">
-            <div className="space-y-5">
+            <div className="grid grid-cols-2 gap-3 @3xl:block @3xl:space-y-5">
               <figure>
                 <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
                   <span className="inline-flex items-center gap-2 text-sm font-bold text-navy">
                     <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
                     전문 이력
                   </span>
-                  <span className="text-xs text-navy/55">자격·학력·주요 경력</span>
+                  <span className="hidden text-xs text-navy/55 @md:inline">자격·학력·주요 경력</span>
                 </figcaption>
-                <TrustInfographicViewer image={image} title="안윤정 법무사 전문이력 인포그래픽" />
+                <TrustInfographicViewer
+                  image={image}
+                  title="안윤정 법무사 전문이력 인포그래픽"
+                  sizes="(max-width: 767px) 46vw, (max-width: 1279px) 40vw, 460px"
+                />
               </figure>
               <figure>
                 <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
@@ -165,12 +169,13 @@ export function LawyerTrustShowcase() {
                     <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
                     전문 활동
                   </span>
-                  <span className="text-xs text-navy/55">위촉·수상·방송 출연</span>
+                  <span className="hidden text-xs text-navy/55 @md:inline">위촉·수상·방송 출연</span>
                 </figcaption>
                 <TrustInfographicViewer
                   image={activityImage}
                   title="안윤정 법무사 전문활동 인포그래픽"
                   trackKind="trust-activity-infographic"
+                  sizes="(max-width: 767px) 46vw, (max-width: 1279px) 40vw, 460px"
                 />
               </figure>
             </div>

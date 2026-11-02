@@ -17,6 +17,8 @@
   --navy-light: #243f5e;
   --beige: #f0ebe3;
   --beige-dark: #ddd4c6;
+  /* 네이버 초록(#03C75A)은 흰 글자와 2.25:1이라 읽기 어렵다 — 버튼·글자에는 이 진한 초록을 쓴다 */
+  --naver-green-strong: #027a37;
   --beige-muted: #c4b7a3;
   --cream: #f7f4ef;
   --surface: #ffffff;
@@ -433,17 +435,17 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 .mobile-bottom-cta__btn--naver-talk {
-  background: #03c75a;
+  background: var(--naver-green-strong);
   color: #fff;
 }
 
 .mobile-bottom-cta__btn--naver-map {
   background: #fff;
-  color: #03c75a;
+  color: var(--naver-green-strong);
 }
 
 .mobile-bottom-cta__btn--reservation {
-  background: #03c75a;
+  background: var(--naver-green-strong);
   color: #fff;
 }
 
@@ -1365,7 +1367,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .sidebar-consult-panel__channel--naver .sidebar-consult-panel__channel-icon {
-    @apply bg-[#03C75A] text-white;
+    @apply bg-[var(--naver-green-strong)] text-white;
   }
 
   .sidebar-consult-panel__channel--inquiry {
@@ -4414,7 +4416,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .hero-contact__chip--naver {
-    @apply bg-[#03C75A] text-white;
+    @apply bg-[var(--naver-green-strong)] text-white;
   }
 
   .hero-contact__chip--naver:hover {
@@ -4424,7 +4426,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   /* SmartPlace 예약 칩 — 톡톡과 동일 톤 */
   .hero-contact__chip.naver-smartplace-chip,
   a.hero-contact__chip[data-cta-variant="reservation"] {
-    @apply bg-[#03C75A] text-white;
+    @apply bg-[var(--naver-green-strong)] text-white;
   }
 
   a.hero-contact__chip[data-cta-variant="reservation"]:hover {
@@ -6018,11 +6020,11 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-blog-hub__eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-[#03C75A]/20 bg-[#03C75A]/10 px-3 py-1 text-xs font-semibold text-[#028a46];
+    @apply inline-flex items-center gap-2 rounded-full border border-[#03C75A]/20 bg-[#03C75A]/10 px-3 py-1 text-xs font-semibold text-[var(--naver-green-strong)];
   }
 
   .naver-blog-hub__brand-mark {
-    @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#03C75A] text-white;
+    @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[var(--naver-green-strong)] text-white;
   }
 
   .naver-blog-hub__lead {
@@ -6034,7 +6036,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-blog-hub__cta {
-    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-[#03C75A] px-5 text-sm font-bold text-white shadow-[0_10px_22px_-10px_rgba(3,199,90,0.65)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#02b351] hover:shadow-[0_14px_28px_-12px_rgba(3,199,90,0.7)] active:scale-[0.98] sm:px-6 sm:text-base;
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-[var(--naver-green-strong)] px-5 text-sm font-bold text-white shadow-[0_10px_22px_-10px_rgba(3,199,90,0.65)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#02b351] hover:shadow-[0_14px_28px_-12px_rgba(3,199,90,0.7)] active:scale-[0.98] sm:px-6 sm:text-base;
   }
 
   .naver-blog-hub__cta-icon {
@@ -6050,7 +6052,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-blog-marquee__hint {
-    @apply mb-3 rounded-lg border border-[#03C75A]/15 bg-white/70 px-3 py-2 text-center text-xs font-medium text-[#028a46] lg:text-left;
+    @apply mb-3 rounded-lg border border-[#03C75A]/15 bg-white/70 px-3 py-2 text-center text-xs font-medium text-[var(--naver-green-strong)] lg:text-left;
   }
 
   .naver-blog-marquee__track {
@@ -6074,7 +6076,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-blog-marquee__label {
-    @apply line-clamp-2 text-center text-[0.6875rem] font-medium leading-snug text-navy/70 transition-colors duration-200 group-hover:text-[#028a46] sm:text-xs;
+    @apply line-clamp-2 text-center text-[0.6875rem] font-medium leading-snug text-navy/70 transition-colors duration-200 group-hover:text-[var(--naver-green-strong)] sm:text-xs;
   }
 
   /* Naver Place reviews hub + marquee */
@@ -6091,11 +6093,11 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-hub__eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-[#03C75A]/20 bg-[#03C75A]/10 px-3 py-1 text-xs font-semibold text-[#028a46];
+    @apply inline-flex items-center gap-2 rounded-full border border-[#03C75A]/20 bg-[#03C75A]/10 px-3 py-1 text-xs font-semibold text-[var(--naver-green-strong)];
   }
 
   .naver-place-reviews-hub__brand-mark {
-    @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#03C75A] text-white;
+    @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[var(--naver-green-strong)] text-white;
   }
 
   .naver-place-reviews-hub__lead {
@@ -6111,7 +6113,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-hub__stats dt {
-    @apply text-[11px] font-semibold uppercase tracking-wide text-[#028a46]/80;
+    @apply text-[11px] font-semibold uppercase tracking-wide text-[var(--naver-green-strong)]/80;
   }
 
   .naver-place-reviews-hub__stats dd {
@@ -6123,7 +6125,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-hub__cta {
-    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-[#03C75A] px-5 text-sm font-bold text-white shadow-[0_10px_22px_-10px_rgba(3,199,90,0.65)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#02b351] hover:shadow-[0_14px_28px_-12px_rgba(3,199,90,0.7)] active:scale-[0.98] sm:px-6 sm:text-base;
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-[var(--naver-green-strong)] px-5 text-sm font-bold text-white shadow-[0_10px_22px_-10px_rgba(3,199,90,0.65)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#02b351] hover:shadow-[0_14px_28px_-12px_rgba(3,199,90,0.7)] active:scale-[0.98] sm:px-6 sm:text-base;
   }
 
   .naver-place-reviews-hub__cta-icon {
@@ -6139,7 +6141,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-marquee__hint {
-    @apply mb-3 rounded-lg border border-[#03C75A]/15 bg-white/70 px-3 py-2 text-center text-xs font-medium text-[#028a46] lg:text-left;
+    @apply mb-3 rounded-lg border border-[#03C75A]/15 bg-white/70 px-3 py-2 text-center text-xs font-medium text-[var(--naver-green-strong)] lg:text-left;
   }
 
   .naver-place-reviews-marquee__track {
@@ -6155,7 +6157,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-marquee__badge {
-    @apply rounded-full bg-[#03C75A]/10 px-2 py-0.5 text-[10px] font-bold text-[#03C75A];
+    @apply rounded-full bg-[#03C75A]/10 px-2 py-0.5 text-[10px] font-bold text-[var(--naver-green-strong)];
   }
 
   .naver-place-reviews-marquee__date {
@@ -6171,7 +6173,7 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .naver-place-reviews-marquee__more {
-    @apply mt-1 text-[11px] font-semibold text-[#028a46] group-hover:underline;
+    @apply mt-1 text-[11px] font-semibold text-[var(--naver-green-strong)] group-hover:underline;
   }
 
   .naver-place-reviews-marquee__empty {
@@ -9056,4 +9058,30 @@ body.has-sidebar-consult .floating-cta {
     width: 1.75rem;
     height: 1.75rem;
   }
+}
+
+/* 누르는 영역이 36px 미만이던 요소들 — 글자 크기는 그대로 두고 눌리는 높이만 키운다 */
+.hero-trust-line__reviews {
+  min-height: 2.5rem;
+}
+.readability-toc__summary {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+}
+.about-hero__jumps a {
+  min-height: 2.5rem;
+}
+.about-voices__more,
+.about-voices__naver {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+}
+
+/* 소개 페이지 인용 출처 링크 */
+.about-hero__quote a {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
 }

@@ -17,7 +17,7 @@ export function NaverPlaceReviewsLinkHub({ feed }: NaverPlaceReviewsLinkHubProps
 
   return (
     <section id="naver-place-reviews" aria-labelledby="naver-place-reviews-heading">
-      <p className="inline-flex items-center gap-2 text-sm font-semibold text-[#03a94d]">
+      <p className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--naver-green-strong)]">
         <NaverIcon className="h-4 w-4" />
         네이버 플레이스 방문자 후기
       </p>
@@ -49,7 +49,7 @@ export function NaverPlaceReviewsLinkHub({ feed }: NaverPlaceReviewsLinkHubProps
         href={feed.reviewUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#03c75a] px-5 text-[0.95rem] font-bold text-white no-underline shadow-sm transition hover:bg-[#02b350]"
+        className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[var(--naver-green-strong)] px-5 text-[0.95rem] font-bold text-white no-underline shadow-sm transition hover:bg-[#026a30]"
       >
         <NaverIcon className="h-5 w-5" />
         네이버 플레이스에서 원문 보기

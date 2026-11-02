@@ -45,7 +45,7 @@ export function RelatedLectureHistory({
       <p>
         <Link
           href={moreHref}
-          className="text-sm font-medium text-navy underline-offset-2 hover:underline"
+          className="inline-flex min-h-10 items-center text-sm font-medium text-navy underline-offset-2 hover:underline"
         >
           전체 강의 이력 보기
         </Link>

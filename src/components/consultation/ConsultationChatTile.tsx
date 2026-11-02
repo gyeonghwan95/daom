@@ -24,7 +24,7 @@ const brand = {
     hint: "QR 스캔 또는 클릭",
   },
   naver: {
-    accent: "bg-[#03C75A]",
+    accent: "bg-[var(--naver-green-strong)]",
     text: "text-white",
     subtitle: "네이버 톡톡",
     hint: "QR 스캔 또는 클릭",

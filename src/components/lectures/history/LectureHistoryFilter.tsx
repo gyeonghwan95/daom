@@ -42,7 +42,7 @@ export function LectureHistoryFilter({ items }: LectureHistoryFilterProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="기관명, 주제, 대상, 지역"
-            className="w-full rounded-lg border border-beige-dark bg-white px-3 py-2.5 text-sm text-navy focus:border-navy/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy/25"
+            className="min-h-11 w-full rounded-lg border border-beige-dark bg-white px-3 py-2.5 text-sm text-navy focus:border-navy/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy/25"
             aria-label="강의 이력 검색"
           />
         </label>
@@ -58,7 +58,7 @@ export function LectureHistoryFilter({ items }: LectureHistoryFilterProps) {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setCategory(item.id)}
-                  className={`shrink-0 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
+                  className={`inline-flex min-h-10 shrink-0 items-center rounded-lg border px-3.5 py-1.5 text-[0.8125rem] font-medium transition-colors ${
                     active
                       ? "border-navy bg-navy text-white"
                       : "border-beige-dark bg-white text-navy hover:bg-beige"

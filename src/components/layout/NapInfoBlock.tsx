@@ -28,7 +28,7 @@ export function NapInfoBlock({
     <dl
       className={
         isFooter
-          ? "mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3"
+          ? "mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-sm lg:grid-cols-3"
           : "grid gap-x-4 gap-y-5 sm:grid-cols-2"
       }
     >
@@ -40,7 +40,7 @@ export function NapInfoBlock({
         <dt className={labelClass}>대표자</dt>
         <dd className={valueClass}>{nap.representative}</dd>
       </div>
-      <div className={isFooter ? "sm:col-span-2" : "sm:col-span-2"}>
+      <div className={isFooter ? "col-span-2" : "sm:col-span-2"}>
         <dt className={labelClass}>주소</dt>
         <dd className={`${valueClass} leading-relaxed`}>{nap.address}</dd>
       </div>
@@ -59,7 +59,10 @@ export function NapInfoBlock({
       <div>
         <dt className={labelClass}>이메일</dt>
         <dd className={isFooter ? "mt-1" : valueClass}>
-          <a href={getMailtoHref(nap.email)} className={linkClass}>
+          <a
+            href={getMailtoHref(nap.email)}
+            className={`${linkClass} break-all ${isFooter ? "text-[0.8125rem] sm:text-sm" : ""}`}
+          >
             {nap.email}
           </a>
         </dd>
@@ -79,7 +82,7 @@ export function NapInfoBlock({
         <div
           className={
             isFooter
-              ? "sm:col-span-2 lg:col-span-3"
+              ? "col-span-2 lg:col-span-3"
               : "sm:col-span-2 border-t border-beige-dark pt-5"
           }
         >

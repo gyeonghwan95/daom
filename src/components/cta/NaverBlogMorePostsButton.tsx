@@ -18,7 +18,7 @@ export function NaverBlogMorePostsButton({
       data-cta="naver-blog-more"
     >
       <span
-        className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-[4px] bg-[#03C75A] text-white"
+        className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-[4px] bg-[var(--naver-green-strong)] text-white"
         aria-hidden
       >
         <NaverIcon className="h-3 w-3" />

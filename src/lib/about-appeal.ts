@@ -157,10 +157,12 @@ export function getAboutAppeal(): AboutAppeal {
   ];
 
   if (awards[0]) {
+    // 연도를 큰 숫자로 쓰면 통계처럼 읽히므로 다른 타일과 같은 "N건" 형식으로 두고 연도는 보조 문구에 적는다
+    const year = (awards[0].year ?? "").slice(0, 4);
     proof.push({
-      value: (awards[0].year ?? "").slice(0, 4) || "표창",
+      value: `${awards.length}건`,
       label: "협회장 표창",
-      hint: "대한법무사협회",
+      hint: year ? `대한법무사협회 · ${year}년` : "대한법무사협회",
     });
   }
 

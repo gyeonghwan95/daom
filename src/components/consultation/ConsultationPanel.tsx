@@ -97,16 +97,16 @@ function SimpleChannelButton({
     ? {
         phone: `${base} bg-white text-navy hover:bg-beige`,
         kakao: `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`,
-        naver: `${base} bg-[#03C75A] text-white hover:opacity-90`,
-        reservation: `${base} bg-[#03C75A] text-white hover:opacity-90`,
+        naver: `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`,
+        reservation: `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`,
         location: `${base} border-2 border-white/40 text-white hover:bg-white/10`,
         inquiry: `${base} border-2 border-white/40 text-white hover:bg-white/10`,
       }
     : {
         phone: `${base} bg-navy text-white hover:bg-navy-dark`,
         kakao: `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`,
-        naver: `${base} bg-[#03C75A] text-white hover:opacity-90`,
-        reservation: `${base} bg-[#03C75A] text-white hover:opacity-90`,
+        naver: `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`,
+        reservation: `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`,
         location: `${base} border-2 border-beige-muted bg-white text-navy hover:border-navy-light hover:bg-beige`,
         inquiry: `${base} border-2 border-beige-muted bg-white text-navy hover:border-navy-light hover:bg-beige`,
       };

@@ -23,7 +23,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                   href={item.href}
                   // 첫 화면 맨 위에 있어 페이지를 열자마자 홈·상위 허브 데이터를 미리 받게 된다 — 모바일 첫 로드를 가볍게
                   prefetch={false}
-                  className="inline-flex min-h-10 min-w-8 items-center justify-center transition-colors duration-200 hover:text-navy"
+                  className="inline-flex min-h-10 min-w-9 items-center justify-center transition-colors duration-200 hover:text-navy"
                 >
                   {item.label}
                 </Link>

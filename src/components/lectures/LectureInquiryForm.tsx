@@ -578,7 +578,7 @@ export function LectureInquiryForm({
         <label className="flex items-start gap-3 rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 shrink-0 accent-navy"
+            className="mt-0.5 h-5 w-5 shrink-0 accent-navy"
             checked={needPlan}
             onChange={(e) => setNeedPlan(e.target.checked)}
           />
@@ -601,7 +601,7 @@ export function LectureInquiryForm({
         <label className="flex items-start gap-3 rounded-xl border border-navy/25 bg-white px-4 py-3 text-sm text-navy shadow-[inset_3px_0_0_0_var(--navy)]">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 shrink-0 accent-navy"
+            className="mt-0.5 h-5 w-5 shrink-0 accent-navy"
             checked={agree}
             onChange={(e) => setAgree(e.target.checked)}
             required

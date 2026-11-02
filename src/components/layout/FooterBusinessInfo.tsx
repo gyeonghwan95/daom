@@ -39,7 +39,7 @@ export function FooterBusinessInfo() {
           />
         </li>
       </ul>
-      <p className="mt-3 text-xs leading-relaxed text-white/50">{nap.legalNotice}</p>
+      <p className="mt-3 text-[0.8125rem] leading-relaxed text-white/75">{nap.legalNotice}</p>
     </div>
   );
 }

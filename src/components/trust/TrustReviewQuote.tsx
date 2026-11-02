@@ -35,7 +35,7 @@ export function TrustReviewQuote({ quotes }: TrustReviewQuoteProps) {
           placement="trust_review"
           tone="text"
           size="sm"
-          className="!min-h-8 shrink-0 !px-0 text-xs"
+          className="!min-h-10 shrink-0 !px-0 text-xs"
           label="후기 전체 보기"
         />
       </figcaption>

@@ -23,7 +23,7 @@ export function AboutExternalActivitiesMarquee() {
         </div>
         <Link
           href="/media"
-          className="shrink-0 text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
+          className="inline-flex min-h-10 shrink-0 items-center text-sm font-semibold text-navy-light underline-offset-4 transition-colors hover:text-navy hover:underline"
         >
           대외활동 더보기 →
         </Link>

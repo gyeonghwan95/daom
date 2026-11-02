@@ -39,7 +39,7 @@ function primaryClass(theme: "light" | "dark", kind: "phone" | "kakao" | "naver"
     return `${primaryBase} bg-[#FEE500] text-[#191919] hover:brightness-95`;
   }
   if (kind === "naver") {
-    return `${primaryBase} bg-[#03C75A] text-white hover:opacity-90`;
+    return `${primaryBase} bg-[var(--naver-green-strong)] text-white hover:opacity-90`;
   }
   if (theme === "dark") {
     return `${primaryBase} bg-white text-navy hover:bg-beige`;

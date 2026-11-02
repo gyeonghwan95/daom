@@ -28,7 +28,8 @@ export function HeaderConsultationStatus({
     isOpen && phone ? getPhoneHref(phone) : kakao || "/contact/inquiry";
   const isExternal = !(isOpen && phone);
   const marqueeText = `${statusLabel} · ${hint}`;
-  const mobileLabel = isOpen ? "상담 가능" : "톡 상담";
+  // 칩을 누르면 카카오 상담으로 연결되므로 영업 여부와 관계없이 행동 문구로 둔다(영업 상태는 초록 점과 접근성 이름이 알린다)
+  const mobileLabel = "톡 상담";
   const isCompact = variant === "compact";
 
   const viewportRef = useRef<HTMLSpanElement>(null);

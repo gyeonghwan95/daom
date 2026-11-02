@@ -173,30 +173,8 @@ export function MobileBottomCTA() {
     configured: true,
   };
 
-  if (isLectureTargetPath(pathname)) {
-    const phone = rowChannels.find((c) => c.id === "phone");
-    return (
-      <div
-        className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
-        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
-        role="region"
-        aria-label="출강 문의"
-      >
-        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] divide-x divide-beige-dark">
-          {phone ? <MobileChannelButton channel={phone} /> : <span />}
-          <a
-            href="#lecture-request"
-            className="mobile-bottom-cta__btn bg-navy text-white"
-            aria-label="출강 문의서 작성"
-            onClick={() => trackCtaEvent("contact", undefined, "#lecture-request")}
-          >
-            <FormIcon className="mobile-bottom-cta__icon" />
-            <span className="mobile-bottom-cta__label">출강 문의서 작성</span>
-          </a>
-        </div>
-      </div>
-    );
-  }
+  // 강의 문의서가 있는 페이지는 같은 5버튼 구성을 쓰되, 문의 버튼만 페이지의 강의 문의서로 이동한다
+  const lecture = isLectureTargetPath(pathname);
 
   if (b2b) {
     const pair = rowChannels.filter(
@@ -239,21 +217,35 @@ export function MobileBottomCTA() {
         {rowChannels.map((channel) => (
           <MobileChannelButton key={channel.id} channel={channel} />
         ))}
-        <button
-          type="button"
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
-          aria-haspopup="dialog"
-          aria-label={consultationInquiryCopy.ctaPrimary}
-          onClick={() => {
-            trackCtaEvent("contact", undefined, "#inquiry");
-            inquiry?.openInquiry({ source: "mobile" });
-          }}
-        >
-          <FormIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
-            문의
-          </span>
-        </button>
+        {lecture ? (
+          <a
+            href="#lecture-request"
+            className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
+            aria-label="강의 문의서 작성"
+            onClick={() => trackCtaEvent("contact", undefined, "#lecture-request")}
+          >
+            <FormIcon className="mobile-bottom-cta__icon" />
+            <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
+              강의 문의
+            </span>
+          </a>
+        ) : (
+          <button
+            type="button"
+            className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
+            aria-haspopup="dialog"
+            aria-label={consultationInquiryCopy.ctaPrimary}
+            onClick={() => {
+              trackCtaEvent("contact", undefined, "#inquiry");
+              inquiry?.openInquiry({ source: "mobile" });
+            }}
+          >
+            <FormIcon className="mobile-bottom-cta__icon" />
+            <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
+              문의
+            </span>
+          </button>
+        )}
         <MobileChannelButton channel={reservation} />
       </div>
     </div>

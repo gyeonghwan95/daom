@@ -48,9 +48,9 @@ function getButtonClass(
       case "kakao":
         return `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`;
       case "naver":
-        return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+        return `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`;
       case "reservation":
-        return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+        return `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`;
       case "location":
         return `${base} border-2 border-white/40 text-white hover:bg-white/10`;
       case "inquiry":
@@ -66,9 +66,9 @@ function getButtonClass(
     case "kakao":
       return `${base} bg-[#FEE500] text-[#191919] hover:brightness-95`;
     case "naver":
-      return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+      return `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`;
     case "reservation":
-      return `${base} bg-[#03C75A] text-white hover:opacity-90`;
+      return `${base} bg-[var(--naver-green-strong)] text-white hover:opacity-90`;
     case "location":
       return `${base} border-2 border-beige-muted bg-white text-navy hover:border-navy-light hover:bg-beige`;
     case "inquiry":

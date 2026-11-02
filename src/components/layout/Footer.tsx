@@ -63,12 +63,12 @@ export function Footer() {
 
           <div>
             <p className="font-semibold text-beige">바로가기</p>
-            <ul className="mt-3 grid grid-cols-2 gap-2 text-sm sm:text-base">
+            <ul className="mt-3 flex flex-wrap gap-x-5 text-sm sm:grid sm:grid-cols-2 sm:gap-2 sm:text-base">
               {FOOTER_QUICK_LINKS.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="inline-flex min-h-10 items-center text-white/80 transition-colors duration-200 hover:text-white"
+                    className="inline-flex min-h-10 min-w-9 items-center text-white/80 transition-colors duration-200 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -79,7 +79,7 @@ export function Footer() {
 
           <div>
             <p className="font-semibold text-beige">협업문의</p>
-            <ul className="mt-3 space-y-1 text-sm text-white/70">
+            <ul className="mt-3 flex flex-wrap gap-x-5 text-sm text-white/70 sm:block sm:space-y-1">
               {collabLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -113,7 +113,7 @@ export function Footer() {
         <div className="mt-8 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-3">
           <div>
             <p className="font-semibold text-beige">전국 의뢰 업무</p>
-            <ul className="mt-3 space-y-1 text-sm text-white/70">
+            <ul className="mt-3 flex flex-wrap gap-x-5 text-sm text-white/70 sm:block sm:space-y-1">
               {[
                 { href: "/전국업무", label: "전국 업무 안내" },
                 { href: "/업무사례/지역별", label: "지역별 안내" },
@@ -137,7 +137,7 @@ export function Footer() {
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               {consultationCopy.default}
             </p>
-            <div className="mt-4">
+            <div className="mt-4 max-lg:hidden">
               <ConsultationButtons
                 channels={channels}
                 theme="dark"
@@ -147,7 +147,7 @@ export function Footer() {
                 naverPlacement="footer"
               />
             </div>
-            <ul className="mt-4 space-y-1 text-sm text-white/70">
+            <ul className="mt-4 flex flex-wrap gap-x-5 text-sm text-white/70 sm:block sm:space-y-1">
               <li>
                 <Link href="/contact" className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white">
                   상담 문의 페이지
@@ -172,7 +172,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/65">
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/80">
           이 사무소는 등기·비송 서류와 개인회생·파산 신청 서류를 안내합니다.
           소송 대리와 형사 변론은 변호사 업무이며, 여기서 대신하지 않습니다.
         </p>
@@ -180,7 +180,7 @@ export function Footer() {
         <FooterBusinessInfo />
 
         <p className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/60 md:text-left">
-          © {new Date().getFullYear()} {nap.tradeName}. All rights reserved.
+          © {new Date().getFullYear()} {nap.tradeName}
         </p>
       </Container>
     </footer>

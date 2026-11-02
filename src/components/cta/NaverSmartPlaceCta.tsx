@@ -82,13 +82,13 @@ function toneClass(tone: VisualTone, fullWidth: boolean, size: Size): string {
 
   switch (tone) {
     case "brand":
-      return `${base} ${width} ${radius} bg-[#03C75A] text-white hover:brightness-95 active:brightness-90`;
+      return `${base} ${width} ${radius} bg-[var(--naver-green-strong)] text-white hover:brightness-95 active:brightness-90`;
     case "chip":
-      return `${base} ${width} flex-1 rounded-lg bg-[#03C75A] text-white hover:brightness-95`;
+      return `${base} ${width} flex-1 rounded-lg bg-[var(--naver-green-strong)] text-white hover:brightness-95`;
     case "soft":
-      return `${base} ${width} ${radius} border border-[#03C75A]/30 bg-white text-[#028a46] hover:border-[#03C75A]/50 hover:bg-[#E8F8EF]`;
+      return `${base} ${width} ${radius} border border-[#03C75A]/30 bg-white text-[var(--naver-green-strong)] hover:border-[#03C75A]/50 hover:bg-[#E8F8EF]`;
     case "text":
-      return `${base} ${width} gap-1 rounded-md text-[#028a46] underline-offset-2 hover:underline`;
+      return `${base} ${width} gap-1 rounded-md text-[var(--naver-green-strong)] underline-offset-2 hover:underline`;
     case "onDark":
       return `${base} ${width} ${radius} border border-white/30 bg-white/[0.07] text-white hover:border-white/50 hover:bg-white/[0.14]`;
     default:

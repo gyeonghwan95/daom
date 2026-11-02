@@ -128,7 +128,7 @@ export function AltChannelButton({
             rel="noopener noreferrer"
             data-cta="naver-talk"
             onClick={() => trackCTA("naver-talk", pageSlug, naverTalk)}
-            className={`${buttonBase} bg-[#03C75A] text-white hover:brightness-95`}
+            className={`${buttonBase} bg-[var(--naver-green-strong)] text-white hover:brightness-95`}
           >
             <NaverIcon className="h-5 w-5 shrink-0" />
             <span className="truncate">네이버 톡톡</span>
