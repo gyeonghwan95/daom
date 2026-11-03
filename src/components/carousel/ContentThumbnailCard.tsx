@@ -84,7 +84,6 @@ export function ContentThumbnailCard({
               </div>
             )}
           </div>
-          <span className="sr-only">{item.title}</span>
           <div className="px-3 py-2.5">
             {categoryKo ? (
               <p className="text-xs font-medium tracking-wide text-navy/45">
@@ -92,7 +91,6 @@ export function ContentThumbnailCard({
               </p>
             ) : null}
             <p
-              aria-hidden="true"
               className="line-clamp-2 text-sm font-semibold leading-snug text-[var(--navy,#1e3a5f)]"
             >
               {item.title}

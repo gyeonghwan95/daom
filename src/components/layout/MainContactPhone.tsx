@@ -2,6 +2,7 @@ import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { seoBrand } from "@/lib/seo/brand";
 import { CostInquiryNote, NaverVisitLinks } from "@/components/cta/CostInquiryNote";
 import { PageTrustNote } from "@/components/trust/PageTrustNote";
+import { NeighborhoodHubLinks } from "@/components/internal-links/NeighborhoodHubLinks";
 import { PeerPageLinks } from "@/components/internal-links/PeerPageLinks";
 import { SpecialistGuideLinks } from "@/components/internal-links/SpecialistGuideLinks";
 import { getPeerPagePath } from "@/lib/internal-links/peer-context";
@@ -14,6 +15,7 @@ export function MainContactPhone() {
   return (
     <>
       <SpecialistGuideLinks path={getPeerPagePath()} />
+      <NeighborhoodHubLinks path={getPeerPagePath()} />
       <PeerPageLinks path={getPeerPagePath()} />
       <PageTrustNote />
       <div className="mt-10 border-t border-beige-dark pt-6">

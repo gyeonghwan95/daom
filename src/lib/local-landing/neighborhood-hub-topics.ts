@@ -732,10 +732,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   하단법무사: {
     slug: "하단법무사",
     title: "하단 법무사",
-    metaTitle: "하단 법무사｜사하구 등기·지급명령",
+    metaTitle: "하단 법무사｜하단동·사하구 등기·지급명령",
     metaDescription:
-      "하단·사하구 법무사. 부동산등기·상속등기·지급명령. 하단역·괴정동 — 다옴법무사.",
-    h1: "하단 법무사 — 사하구 부동산·상속 등기",
+      "하단동·사하구 법무사. 부동산등기·상속등기·지급명령. 하단역·괴정동 — 다옴법무사.",
+    h1: "하단 법무사 — 하단동·사하구 부동산·상속 등기",
     serviceSlug: "inheritance-registration",
     primaryKeywords: ["하단 법무사", "하단동 아파트 등기", "하단역 상속등기"],
     summaryParagraphs: [
