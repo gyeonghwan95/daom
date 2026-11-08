@@ -1,6 +1,7 @@
 "use client";
 
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -15,7 +16,8 @@ import {
 } from "@/components/quick-inquiry/useDialogA11y";
 import { useQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { getContactInfo } from "@/lib/contact";
 import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 import {
@@ -204,7 +206,8 @@ export function ConsultWizardShell() {
   );
 
   const { phone, kakao } = getContactInfo();
-  const phoneHref = phone ? getPhoneHref(phone) : "tel:";
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const phoneReady = Boolean(phone) && (!isResolved || isOpen);
   const summary = useMemo(() => buildConsultSummaryLines(draft), [draft]);
 
   const update = (patch: Partial<ConsultWizardDraft>) => {
@@ -456,13 +459,11 @@ export function ConsultWizardShell() {
                 {copy.kakaoPhotoHint}
               </p>
               <div className="consult-wizard__success-actions">
-                <a
-                  href={phoneHref}
-                  className="btn-primary min-h-11 justify-center"
-                >
-                  {copy.callNow}
-                </a>
-                {kakao ? (
+                <PostInquiryPhoneCta
+                  buttonClassName="btn-primary min-h-11 justify-center"
+                  hintClassName="consult-wizard__success-text consult-wizard__success-hint"
+                />
+                {kakao && phoneReady ? (
                   <a
                     href={kakao}
                     target="_blank"

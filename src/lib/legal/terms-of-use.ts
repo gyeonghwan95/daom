@@ -119,6 +119,7 @@ export function getTermsOfUseDocument(): LegalDocument {
           `상호: ${nap.tradeName}`,
           `주소: ${nap.address}`,
           `전화: ${nap.phone}`,
+          `팩스: ${nap.fax}`,
           `이메일: ${nap.email}`,
         ],
       },

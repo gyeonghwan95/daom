@@ -1,4 +1,4 @@
-import { getContactInfo } from "@/lib/contact";
+import { getContactInfo, getFaxNumber } from "@/lib/contact";
 import {
   getNaverPlaceUrl,
   officeHours,
@@ -16,6 +16,7 @@ export type NapInfo = {
   representative: string;
   address: string;
   phone: string;
+  fax: string;
   email: string;
   websiteUrl: string;
   naverPlaceUrl: string;
@@ -53,6 +54,7 @@ export function getNapInfo(): NapInfo {
     representative: seoBrand.representative,
     address: officeLocation.fullAddress,
     phone,
+    fax: getFaxNumber(),
     email: getBusinessEmail(),
     websiteUrl: getHumanSiteUrl(),
     naverPlaceUrl: getNaverPlaceUrl(),

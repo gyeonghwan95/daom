@@ -921,6 +921,10 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply bg-emerald-50 text-emerald-950;
   }
 
+  .floating-cta__panel-status--pending {
+    @apply bg-beige text-navy;
+  }
+
   .floating-cta__panel-label {
     @apply block text-sm font-semibold leading-tight;
   }
@@ -935,6 +939,10 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .floating-cta__panel-status--away .floating-cta__panel-hint {
     @apply text-emerald-900/75;
+  }
+
+  .floating-cta__panel-status--pending .floating-cta__panel-hint {
+    @apply text-navy/65;
   }
 
   .floating-cta__panel-body {
@@ -987,6 +995,10 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply bg-[#03c75a];
   }
 
+  .floating-cta__dot--pending {
+    @apply bg-[#9aa3ad];
+  }
+
   .floating-cta__dot--pulse,
   .floating-cta__dot--away-pulse {
     box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
@@ -1028,6 +1040,11 @@ body.mobile-menu-open .mobile-bottom-cta {
   .floating-cta__badge--away {
     @apply bg-[#03c75a];
     box-shadow: 0 0 6px rgb(3 199 90 / 0.65);
+  }
+
+  .floating-cta__badge--pending {
+    @apply bg-[#9aa3ad];
+    box-shadow: none;
   }
 
   .floating-cta__badge--static {
@@ -1142,8 +1159,14 @@ body.mobile-menu-open .mobile-bottom-cta {
     border-color: rgb(125 206 160 / 0.38);
   }
 
+  .header-consult-status--pending {
+    border-color: rgb(125 206 160 / 0.28);
+    background: linear-gradient(135deg, #fbfaf8 0%, #f3f1ec 100%);
+  }
+
   .header-consult-status--live:hover,
-  .header-consult-status--away:hover {
+  .header-consult-status--away:hover,
+  .header-consult-status--pending:hover {
     border-color: rgb(3 199 90 / 0.55);
     box-shadow:
       0 2px 4px rgb(3 199 90 / 0.1),
@@ -1168,6 +1191,15 @@ body.mobile-menu-open .mobile-bottom-cta {
     border-radius: 9999px;
     background: #03c75a;
     box-shadow: 0 0 0 2px rgb(255 255 255 / 0.95);
+  }
+
+  .header-consult-status__dot-wrap--pending .header-consult-status__dot {
+    background: #9aa3ad;
+    box-shadow: 0 0 0 2px rgb(255 255 255 / 0.95);
+  }
+
+  .header-consult-status__dot-wrap--pending .header-consult-status__dot-ring {
+    display: none;
   }
 
   .header-consult-status__dot-wrap--live .header-consult-status__dot {

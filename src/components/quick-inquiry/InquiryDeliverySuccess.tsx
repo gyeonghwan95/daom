@@ -3,11 +3,8 @@
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
-import {
-  getContactInfo,
-  getDirectConsultationChannels,
-  getPhoneHref,
-} from "@/lib/contact";
+import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
+import { getDirectConsultationChannels } from "@/lib/contact";
 
 type InquiryDeliverySuccessProps = {
   title?: string;
@@ -31,8 +28,6 @@ export function InquiryDeliverySuccess({
   showFeeNotice = false,
 }: InquiryDeliverySuccessProps) {
   const channels = getDirectConsultationChannels();
-  const { phone } = getContactInfo();
-  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
 
   return (
     <div
@@ -58,15 +53,12 @@ export function InquiryDeliverySuccess({
         {detail ? ` (${detail})` : ""}
       </p>
 
-      <div className="inquiry-form__success-call">
-        <p className="inquiry-form__success-call-hint">
-          급하시면 전화로 바로 문의해 주세요.
-        </p>
-        <a href={phoneHref} className="btn-primary inquiry-form__success-call-btn">
-          전화로 바로 문의하기
-          {phone ? <span className="inquiry-form__phone-num">{phone}</span> : null}
-        </a>
-      </div>
+      <PostInquiryPhoneCta
+        className="inquiry-form__success-call"
+        hintClassName="inquiry-form__success-call-hint"
+        buttonClassName="btn-primary inquiry-form__success-call-btn"
+        phoneNumClassName="inquiry-form__phone-num"
+      />
 
       <div className="inquiry-form__success-channels">
         <p className="inquiry-form__section-label">다른 연락 방법</p>

@@ -21,7 +21,8 @@ export function FloatingCTA() {
   const availability = useConsultationAvailability();
   const reducedMotion = useReducedMotion();
   const inquiry = useOptionalQuickInquiry();
-  const { isOpen, statusLabel, statusHint } = availability;
+  const { isOpen, isResolved, statusLabel, statusHint } = availability;
+  const statusTone = isOpen ? "live" : isResolved ? "away" : "pending";
 
   useEffect(() => {
     const openPanel = () => setOpen(true);
@@ -61,14 +62,10 @@ export function FloatingCTA() {
             aria-label="상담 방법"
           >
             <div
-              className={
-                isOpen
-                  ? "floating-cta__panel-status floating-cta__panel-status--live"
-                  : "floating-cta__panel-status floating-cta__panel-status--away"
-              }
+              className={`floating-cta__panel-status floating-cta__panel-status--${statusTone}`}
             >
               <span
-                className={`floating-cta__dot floating-cta__dot--${isOpen ? "live" : "away"}${reducedMotion ? "" : " floating-cta__dot--pulse"}`}
+                className={`floating-cta__dot floating-cta__dot--${statusTone}${reducedMotion || statusTone === "pending" ? "" : " floating-cta__dot--pulse"}`}
                 aria-hidden
               />
               <span className="min-w-0 flex-1">
@@ -133,7 +130,7 @@ export function FloatingCTA() {
             {open ? "닫기" : copy.floatingLabel}
             {!open ? (
               <span
-                className={`floating-cta__badge floating-cta__badge--${isOpen ? "live" : "away"}${reducedMotion ? " floating-cta__badge--static" : ""}`}
+                className={`floating-cta__badge floating-cta__badge--${statusTone}${reducedMotion || statusTone === "pending" ? " floating-cta__badge--static" : ""}`}
                 aria-hidden
               />
             ) : null}

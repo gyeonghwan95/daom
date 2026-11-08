@@ -203,17 +203,22 @@ export function MobileBottomCTA() {
     );
   }
 
+  // 영업 외에는 전화가 빠져 열이 줄어든다(useOrderedConsultationChannels).
+  const columnCount = rowChannels.length + 2;
+
   return (
     <div
       className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
-        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
-        role="region"
-        aria-label="빠른 연락"
+      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+      role="region"
+      aria-label="빠른 연락"
+    >
+      <div
+        className="grid min-w-0 w-full divide-x divide-beige-dark"
+        style={{
+          gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+        }}
       >
-        <div
-          className="grid min-w-0 w-full grid-cols-5 divide-x divide-beige-dark"
-          style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
-        >
         {rowChannels.map((channel) => (
           <MobileChannelButton key={channel.id} channel={channel} />
         ))}

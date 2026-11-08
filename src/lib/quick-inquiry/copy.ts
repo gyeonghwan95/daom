@@ -15,9 +15,9 @@ export const quickInquiryCopy = {
   success:
     "업무시간에 확인한 뒤, 남겨주신 연락처로 연락드리겠습니다.",
   successPhoneHint:
-    "급하시거나 예상 비용이 궁금하시면 전화로 문의해 주세요. 바로 비용 안내까지 받으실 수 있습니다.",
+    "급하시면 전화로 문의해 주세요. 상황을 확인한 뒤 예상 비용 범위를 안내해 드립니다.",
   close: "닫기",
-  callNow: "전화로 비용·상담 문의하기",
+  callNow: "전화로 상담 문의하기",
   floatingLabel: "간편 문의",
   mobileLabel: "간단히 문의 남기기",
   mobileHint: "메모와 연락처만 남겨주세요",

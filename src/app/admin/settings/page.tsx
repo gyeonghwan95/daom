@@ -145,8 +145,8 @@ export default function AdminSettingsPage() {
 
       <AdminSection title="연락처 표시">
         <p className="admin-prose">
-          사이트 대표 전화와 네이버 플레이스 번호가 다를 수 있습니다. 관리자
-          화면에서 하나로 맞추지 않습니다.
+          사이트 공식 전화는 010-4277-1279만 사용합니다. 0507·070은 넣지
+          않습니다. 팩스는 051-980-1279입니다.
         </p>
       </AdminSection>
     </div>

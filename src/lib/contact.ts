@@ -5,13 +5,31 @@ import {
 } from "@/config/external-links";
 
 export const defaultContact = {
+  /** 사이트 공식 전화 — 010만 사용. 0507·070 안심/인터넷전화는 쓰지 않는다. */
   phone: "010-4277-1279",
+  /** 팩스 (전화와 별도) */
+  fax: "051-980-1279",
   kakao: "https://pf.kakao.com/_Bvhxnn/chat",
   naverTalk: "https://talk.naver.com/ct/w661kd4",
   naverBlog: "https://blog.naver.com/law-yoon-91",
   /** @deprecated Use getNaverReservationUrl() → SmartPlace SSOT */
   naverReservation: "https://naver.me/58j9SzPA",
 } as const;
+
+/** 050·070 등 가상번호는 사이트 전화로 쓰지 않는다. */
+export function isSitePhoneAllowed(phone: string): boolean {
+  const digits = phone.replace(/\D/g, "");
+  if (!digits) return false;
+  if (digits.startsWith("050") || digits.startsWith("070")) return false;
+  return true;
+}
+
+function resolveSitePhone(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed) return defaultContact.phone;
+  if (!isSitePhoneAllowed(trimmed)) return defaultContact.phone;
+  return trimmed;
+}
 
 export const consultationQrCodes = {
   kakao: {
@@ -76,10 +94,14 @@ export function getContactInfo(): ContactInfo {
     defaultContact.naverTalk;
 
   return {
-    phone: readEnv("NEXT_PUBLIC_PHONE") || defaultContact.phone,
+    phone: resolveSitePhone(readEnv("NEXT_PUBLIC_PHONE") || defaultContact.phone),
     kakao: readEnv("NEXT_PUBLIC_KAKAO_CHANNEL") || defaultContact.kakao,
     naverTalk,
   };
+}
+
+export function getFaxNumber(): string {
+  return readEnv("NEXT_PUBLIC_FAX") || defaultContact.fax;
 }
 
 export function getPhoneHref(phone: string): string {

@@ -57,6 +57,10 @@ export function NapInfoBlock({
         </dd>
       </div>
       <div>
+        <dt className={labelClass}>팩스</dt>
+        <dd className={valueClass}>{nap.fax}</dd>
+      </div>
+      <div>
         <dt className={labelClass}>이메일</dt>
         <dd className={isFooter ? "mt-1" : valueClass}>
           <a

@@ -33,6 +33,7 @@ export function getPrivacyPolicyDocument(): LegalDocument {
           `사업자등록번호: ${nap.businessRegistrationNumber}`,
           `주소: ${nap.address}`,
           `전화: ${nap.phone}`,
+          `팩스: ${nap.fax}`,
           `이메일: ${nap.email}`,
           `웹사이트: ${nap.websiteUrl}`,
         ],

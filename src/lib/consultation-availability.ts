@@ -9,7 +9,13 @@ const CLOSE_MINUTES = 18 * 60;
 const CLOSED_STATUS_LABEL = "현재 카카오·네이버톡톡만 가능";
 
 export type ConsultationAvailability = {
+  /** 한국 시각 기준 전화 상담 가능 여부 */
   isOpen: boolean;
+  /**
+   * 클라이언트에서 실제 시각을 반영했는지.
+   * false면 SSR/첫 페인트용 중립 상태 — 닫힘·영업중을 단정하지 않는다.
+   */
+  isResolved: boolean;
   statusLabel: string;
   statusHint: string;
 };
@@ -76,24 +82,87 @@ function getClosedAvailability(
 
   return {
     isOpen: false,
+    isResolved: true,
     statusLabel: CLOSED_STATUS_LABEL,
     statusHint: `${phoneHint} · 지금 메시지 주시면 확인해 드려요`,
   };
 }
 
-/** 영업 외에는 카카오·톡톡을 전화보다 앞에 둔다. */
+/**
+ * 영업 외에는 전화를 숨기고 카카오·톡톡을 앞에 둔다.
+ * 시각이 아직 확정되지 않았으면(isResolved=false) 채널을 바꾸지 않는다.
+ */
 export function orderChannelsForAvailability<T extends { id: string }>(
   channels: T[],
   isOpen: boolean,
+  isResolved = true,
 ): T[] {
-  if (isOpen) return channels;
+  if (!isResolved) return channels;
+
+  const visible = isOpen
+    ? channels
+    : channels.filter((channel) => channel.id !== "phone");
+
+  if (isOpen) return visible;
+
   const rank = (id: string) => {
     if (id === "kakao") return 0;
     if (id === "naver") return 1;
     if (id === "phone") return 2;
     return 3;
   };
-  return [...channels].sort((a, b) => rank(a.id) - rank(b.id));
+  return [...visible].sort((a, b) => rank(a.id) - rank(b.id));
+}
+
+/** 헤더 칩 — 라벨·링크·aria가 같은 규칙을 쓰도록 한곳에서 계산 */
+export type HeaderConsultationAction = {
+  label: string;
+  href: string;
+  external: boolean;
+  ariaLabel: string;
+  visualOpen: boolean;
+};
+
+export function getHeaderConsultationAction(input: {
+  availability: ConsultationAvailability;
+  phone: string;
+  kakao: string;
+  phoneHref: (phone: string) => string;
+  fallbackHref?: string;
+}): HeaderConsultationAction {
+  const { availability, phone, kakao, phoneHref } = input;
+  const fallback = input.fallbackHref ?? "/contact/inquiry";
+  const { isOpen, isResolved, statusLabel, statusHint } = availability;
+
+  if (!isResolved) {
+    const href = kakao || fallback;
+    return {
+      label: "상담 안내",
+      href,
+      external: Boolean(kakao),
+      ariaLabel: `${statusLabel} · ${statusHint}`,
+      visualOpen: false,
+    };
+  }
+
+  if (isOpen && phone) {
+    return {
+      label: "전화 상담",
+      href: phoneHref(phone),
+      external: false,
+      ariaLabel: `${statusLabel} · 전화 상담`,
+      visualOpen: true,
+    };
+  }
+
+  const href = kakao || fallback;
+  return {
+    label: "톡 상담",
+    href,
+    external: Boolean(kakao),
+    ariaLabel: `${statusLabel} · ${statusHint}`,
+    visualOpen: false,
+  };
 }
 
 export function getConsultationAvailability(
@@ -104,6 +173,7 @@ export function getConsultationAvailability(
   if (isConsultationOpen(weekday, minutes)) {
     return {
       isOpen: true,
+      isResolved: true,
       statusLabel: "현재 상담가능",
       statusHint: "평일 09:00–18:00 · 지금 바로 연결",
     };

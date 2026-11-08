@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useHydrated } from "@/hooks/useHydrated";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { getHeaderConsultationAction } from "@/lib/consultation-availability";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 
 type HeaderConsultationStatusProps = {
@@ -14,6 +15,7 @@ type HeaderConsultationStatusProps = {
  * SEO: 상태 문구를 DOM에 2~3중으로 복제하지 않는다.
  * 마퀴 필요 여부는 보이는 텍스트 노드의 scrollWidth/Height로만 측정한다.
  * 모바일(default)은 칩 폭이 좁아 짧은 라벨만 보이고, 전체 안내는 aria-label에 둔다.
+ * 라벨·href·aria는 getHeaderConsultationAction 한 규칙으로 맞춘다.
  */
 export function HeaderConsultationStatus({
   variant = "default",
@@ -21,15 +23,18 @@ export function HeaderConsultationStatus({
   const availability = useConsultationAvailability();
   const reducedMotion = useReducedMotion();
   const { phone, kakao } = getContactInfo();
-  const { isOpen, statusLabel, statusHint } = availability;
+  const { statusLabel, statusHint, isResolved } = availability;
 
-  const hint = isOpen ? "지금 바로 연결" : statusHint;
-  const href =
-    isOpen && phone ? getPhoneHref(phone) : kakao || "/contact/inquiry";
-  const isExternal = !(isOpen && phone);
+  const action = getHeaderConsultationAction({
+    availability,
+    phone,
+    kakao,
+    phoneHref: getPhoneHref,
+  });
+
+  const hint = action.visualOpen ? "지금 바로 연결" : statusHint;
   const marqueeText = `${statusLabel} · ${hint}`;
-  // 칩을 누르면 카카오 상담으로 연결되므로 영업 여부와 관계없이 행동 문구로 둔다(영업 상태는 초록 점과 접근성 이름이 알린다)
-  const mobileLabel = "톡 상담";
+  const mobileLabel = action.label;
   const isCompact = variant === "compact";
 
   const viewportRef = useRef<HTMLSpanElement>(null);
@@ -60,14 +65,19 @@ export function HeaderConsultationStatus({
       observer.disconnect();
       window.removeEventListener("resize", sync);
     };
-  }, [statusLabel, hint, isCompact]);
+  }, [statusLabel, hint, isCompact, mobileLabel]);
 
   const showMarquee = isCompact && useMarquee && !reducedMotion;
+  const statusTone = action.visualOpen
+    ? "live"
+    : isResolved
+      ? "away"
+      : "pending";
 
   const content = (
     <>
       <span
-        className={`header-consult-status__dot-wrap header-consult-status__dot-wrap--${isOpen ? "live" : "away"}${reducedMotion ? " header-consult-status__dot-wrap--static" : ""}`}
+        className={`header-consult-status__dot-wrap header-consult-status__dot-wrap--${statusTone}${reducedMotion ? " header-consult-status__dot-wrap--static" : ""}`}
         aria-hidden
       >
         <span className="header-consult-status__dot" />
@@ -112,21 +122,22 @@ export function HeaderConsultationStatus({
 
   const className = [
     "header-consult-status",
-    `header-consult-status--${isOpen ? "live" : "away"}`,
+    `header-consult-status--${statusTone}`,
     isCompact ? "header-consult-status--compact" : "header-consult-status--mobile",
     showMarquee ? "header-consult-status--marquee" : "",
+    !isResolved ? "header-consult-status--pending-link" : "",
   ]
     .filter(Boolean)
     .join(" ");
 
-  if (isExternal) {
+  if (action.external) {
     return (
       <a
-        href={href}
+        href={action.href}
         className={className}
-        target={kakao ? "_blank" : undefined}
-        rel={kakao ? "noopener noreferrer" : undefined}
-        aria-label={marqueeText}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={action.ariaLabel}
       >
         {content}
       </a>
@@ -134,7 +145,7 @@ export function HeaderConsultationStatus({
   }
 
   return (
-    <a href={href} className={className} aria-label={marqueeText}>
+    <a href={action.href} className={className} aria-label={action.ariaLabel}>
       {content}
     </a>
   );

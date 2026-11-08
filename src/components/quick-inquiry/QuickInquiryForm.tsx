@@ -1,10 +1,12 @@
 "use client";
 
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import { useCallback, useState, type FormEvent } from "react";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { submitQuickInquiry, clientParseContact } from "@/lib/quick-inquiry/client";
 import { quickInquiryCopy as copy } from "@/lib/quick-inquiry/copy";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import {
   HONEYPOT_FIELD,
   MESSAGE_MAX,
@@ -38,8 +40,10 @@ export function QuickInquiryForm({
   variant = "panel",
 }: QuickInquiryFormProps) {
   const ids = useDialogIds();
-  const phone = getContactInfo().phone;
-  const phoneHref = phone ? getPhoneHref(phone) : "/contact";
+  const { phone, kakao } = getContactInfo();
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const phoneReady = Boolean(phone) && (!isResolved || isOpen);
+  const phoneHref = phoneReady && phone ? getPhoneHref(phone) : kakao || "/contact";
 
   const [message, setMessage] = useState("");
   const [contact, setContact] = useState("");
@@ -156,15 +160,12 @@ export function QuickInquiryForm({
         </div>
         <h3 className="quick-inquiry__success-title">{copy.successTitle}</h3>
         <p className="quick-inquiry__success-text">{copy.success}</p>
-        <div className="quick-inquiry__success-phone-card">
-          <p className="quick-inquiry__success-phone-hint">{copy.successPhoneHint}</p>
-          <a href={phoneHref} className="btn-primary quick-inquiry__success-call">
-            {copy.callNow}
-            {phone ? (
-              <span className="quick-inquiry__success-phone-num">{phone}</span>
-            ) : null}
-          </a>
-        </div>
+        <PostInquiryPhoneCta
+          className="quick-inquiry__success-phone-card"
+          hintClassName="quick-inquiry__success-phone-hint"
+          buttonClassName="btn-primary quick-inquiry__success-call"
+          phoneNumClassName="quick-inquiry__success-phone-num"
+        />
         <div className="quick-inquiry__success-actions">
           {onClose ? (
             <button type="button" className="btn-secondary min-h-11" onClick={onClose}>
@@ -299,8 +300,11 @@ export function QuickInquiryForm({
             <a
               href={phoneHref}
               className="btn-secondary mt-3 inline-flex min-h-11 items-center justify-center"
+              {...(!phoneReady && kakao
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
             >
-              {copy.callNow}
+              {phoneReady ? copy.callNow : kakao ? "카카오톡으로 문의하기" : "문의 페이지로 이동"}
             </a>
           </div>
         ) : null}

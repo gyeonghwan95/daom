@@ -4,6 +4,7 @@ import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFa
 import { useCallback, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
 import {
@@ -110,7 +111,7 @@ function buildInquiryBody(
     nationwideMode
       ? "[다옴법무사사무소 전국 의뢰 상담 신청]"
       : "[다옴법무사사무소 상담 신청]",
-    `이름: ${form.name.trim()}`,
+    `이름: ${form.name.trim() || "미기재"}`,
     `연락처: ${form.phone.trim()}`,
     `상담 분야: ${fieldLabel}`,
     `서류 보유: ${form.hasDocuments ? "있음" : "없음/일부만 있음"}`,
@@ -210,7 +211,6 @@ export function ConsultationInquiryForm({
 
   const validateLocal = (): FieldErrors => {
     const next: FieldErrors = {};
-    if (!form.name.trim()) next.name = "이름을 입력해 주세요.";
     if (!clientParseContact(form.phone)) {
       next.phone = "전화번호 또는 이메일 형식을 확인해 주세요.";
     }
@@ -322,15 +322,12 @@ export function ConsultationInquiryForm({
           {fieldLabel ? ` (상담 분야: ${fieldLabel})` : ""}
         </p>
 
-        <div className="inquiry-form__success-call">
-          <p className="inquiry-form__success-call-hint">
-            급하시면 전화로 바로 문의해 주세요.
-          </p>
-          <a href={phoneHref} className="btn-primary inquiry-form__success-call-btn">
-            전화로 바로 문의하기
-            {phone ? <span className="inquiry-form__phone-num">{phone}</span> : null}
-          </a>
-        </div>
+        <PostInquiryPhoneCta
+          className="inquiry-form__success-call"
+          hintClassName="inquiry-form__success-call-hint"
+          buttonClassName="btn-primary inquiry-form__success-call-btn"
+          phoneNumClassName="inquiry-form__phone-num"
+        />
 
         <div className="inquiry-form__success-channels">
           <p className="inquiry-form__section-label">다른 연락 방법</p>
@@ -490,15 +487,12 @@ export function ConsultationInquiryForm({
 
       <div className="inquiry-form__grid">
         <label className="inquiry-form__field" htmlFor={`${formId}-name`}>
-          <span className="inquiry-form__label">
-            이름 <span className="inquiry-form__req">*</span>
-          </span>
+          <span className="inquiry-form__label">성함 (선택)</span>
           <input
             id={`${formId}-name`}
             type="text"
             name="name"
             autoComplete="name"
-            required
             disabled={submitting}
             value={form.name}
             onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}

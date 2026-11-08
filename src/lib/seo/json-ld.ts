@@ -11,7 +11,11 @@ import { getSocialProfileUrls, getAbsoluteAssetUrl } from "@/lib/seo/social";
 import { resolveShareImage } from "@/lib/seo/share-image";
 import { getPageOgThumbnail } from "@/data/seo/page-og-thumbnails";
 import { formatPhoneForDisplay, getBusinessEmail } from "@/lib/business-info";
-import { getContactInfo, getNaverReservationUrl } from "@/lib/contact";
+import {
+  getContactInfo,
+  getFaxNumber,
+  getNaverReservationUrl,
+} from "@/lib/contact";
 import {
   getInflowItemsForPath,
   PREFETCH_CHAMPION_PATHS,
@@ -85,6 +89,11 @@ function openingHoursSpecification() {
 function telephone(): string | undefined {
   const { phone } = getContactInfo();
   return phone ? formatPhoneForDisplay(phone) : undefined;
+}
+
+function faxNumberValue(): string | undefined {
+  const fax = getFaxNumber();
+  return fax ? formatPhoneForDisplay(fax) : undefined;
 }
 
 function contactEmail(): string {
@@ -177,6 +186,7 @@ export function buildOrganizationSchema(): SchemaObject {
     description: seoBrand.defaultDescription,
     address: postalAddress(),
     telephone: telephone(),
+    faxNumber: faxNumberValue(),
     email: contactEmail(),
     founder: { "@id": schemaIds.person },
     employee: { "@id": schemaIds.person },
@@ -219,6 +229,7 @@ export function buildLegalServiceSchema(): SchemaObject {
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     logo: getAbsoluteAssetUrl(siteImages.logo.src),
     telephone: telephone(),
+    faxNumber: faxNumberValue(),
     email: contactEmail(),
     address: postalAddress(),
     geo: geoCoordinates(),
@@ -248,6 +259,7 @@ export function buildLocalBusinessSchema(): SchemaObject {
     image: getAbsoluteAssetUrl(siteImages.home.hero.src),
     logo: getAbsoluteAssetUrl(siteImages.logo.src),
     telephone: telephone(),
+    faxNumber: faxNumberValue(),
     email: contactEmail(),
     openingHours: officeHours.openingHoursText,
     openingHoursSpecification: openingHoursSpecification(),
