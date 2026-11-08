@@ -6,8 +6,9 @@ import inventory from "@/generated/page-inventory.json";
  * 분야별 "전문 법무사" 담당 페이지로 가는 내부 링크.
  * 담당 페이지(예: /부산법인설립전문법무사)는 링크를 받는 페이지가 4~17개뿐이라, 링크가 훨씬 많은 일반 안내 페이지에 검색 자리를 내주고 있었다.
  * 같은 분야의 페이지에서만, 페이지당 2개 이내로 연결하고 앵커 문구는 몇 가지로 나눠 쓴다(같은 문구를 모든 페이지에 반복하지 않음).
- * 상속은 상속포기·한정승인·일반 상속을 따로 나눈다 — 하나로 묶어 상속전문 페이지에 몰아주면 상속포기 검색에서도
- * 상속전문 페이지가 대표로 잡혀 상속포기 담당 페이지의 순위가 떨어진다(2026-11-03 실측 5위→18위).
+ * 상속전문·상속포기 담당 페이지로는 잇지 않는다(상속포기 분야는 한정승인으로만 잇는다). 두 페이지에 600~700개 페이지가 같은 문구로 링크하자
+ * 두 페이지가 해당 검색에서 사라졌다(실측: 부산 상속포기 법무사 11-02 5위 → 11-03 18위 → 11-08 순위 밖,
+ * 부산 상속전문 법무사 14위 → 순위 밖). 링크가 조금만 늘어난 한정승인(5위→3위)·법인전문(3위 유지)은 그대로 둔다.
  * 경로·제목만으로 결정되는 순수 함수라 워커가 달라도 결과가 같다.
  */
 
@@ -21,14 +22,6 @@ export type SpecialistLinkSet = {
 };
 
 const TARGETS = {
-  inheritanceSpecialist: {
-    href: "/부산상속전문법무사",
-    labels: ["부산 상속전문 법무사 선택 기준", "부산 상속전문 법무사, 맡기기 전 확인할 점", "상속전문 법무사 업무범위 안내"],
-  },
-  renunciation: {
-    href: "/부산상속포기",
-    labels: ["부산 상속포기 법무사, 3개월 기한부터 확인", "부산 상속포기 신고 절차 안내", "상속포기 법무사 상담 기준"],
-  },
   qualifiedAcceptance: {
     href: "/부산한정승인",
     labels: ["부산 한정승인 법무사, 상속채무가 걱정될 때", "부산 한정승인 신고 절차 안내", "한정승인 법무사 상담 기준"],
@@ -73,10 +66,10 @@ const FAMILY_TEST: Record<FamilyId, RegExp> = {
 };
 
 const FAMILY_LINKS: Record<FamilyId, readonly SpecialistTarget[]> = {
-  renunciation: [TARGETS.renunciation, TARGETS.qualifiedAcceptance],
-  qualified: [TARGETS.qualifiedAcceptance, TARGETS.renunciation],
-  // 상속등기 페이지는 "빚이 걱정되면 포기·한정승인부터"를 안내하므로 두 번째 링크는 상속포기 담당 페이지로 둔다(상속 허브는 이미 링크가 충분)
-  inheritance: [TARGETS.inheritanceSpecialist, TARGETS.renunciation],
+  // 상속전문·상속포기 담당 페이지로는 잇지 않는다(위 주석의 실측). 한정승인 링크는 순위가 오른 상태를 유지한다
+  renunciation: [TARGETS.qualifiedAcceptance],
+  qualified: [TARGETS.qualifiedAcceptance],
+  inheritance: [],
   rehabilitation: [TARGETS.rehabilitation],
   corporate: [TARGETS.corporateSpecialist, TARGETS.registryRecommend],
   preservation: [TARGETS.provisionalAttachment, TARGETS.claimSeizure],

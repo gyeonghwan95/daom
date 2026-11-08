@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T15:23:33.991Z",
+  "generatedAt": "2026-11-08T07:54:07.638Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1646,
   "format": "urlset",
@@ -992,7 +992,7 @@
   "subSitemaps": [
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-1-core.xml",
-      "lastmod": "2026-10-28",
+      "lastmod": "2026-11-08",
       "filename": "tier-1-core.xml",
       "count": 17
     },
@@ -1010,7 +1010,7 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-11-04",
+      "lastmod": "2026-11-08",
       "filename": "tier-4-regions.xml",
       "count": 600
     },
@@ -1044,7 +1044,7 @@
       "path": "/",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr",
-      "lastmod": "2026-10-18"
+      "lastmod": "2026-11-08"
     },
     {
       "path": "/부산법무사",
@@ -2592,7 +2592,7 @@
       "path": "/부산가압류신청",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%8B%A0%EC%B2%AD",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-11-08"
     },
     {
       "path": "/부산가압류취소",
