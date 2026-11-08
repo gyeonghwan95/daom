@@ -1,13 +1,13 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-11-08T07:49:29.218Z
+# 생성: 2026-11-08T10:15:19.510Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
-# 총 URL: 1646 (제외 243)
+# 총 URL: 1647 (제외 243)
 #
 # 형식: [Tier] URL\tpath
 # Tier 1 — 즉시 (핵심 전환·허브): 17개
 # Tier 2 — 1주차 (지역·전국 허브): 29개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 600개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 601개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
 # Tier 6 — 순차 (기타 키워드 랜딩): 549개
 # Tier 7 — 후순위 (블로그): 53개
@@ -250,7 +250,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (176개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (600개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (601개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -295,6 +295,7 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (600개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산가정법원상속포기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%EC%84%B1%EB%85%84%ED%9B%84%EA%B2%AC	/부산가정법원성년후견
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/부산가정법원한정승인
+[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A1%B1%EA%B0%84%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산가족간매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A1%B1%EA%B4%80%EA%B3%84%EB%93%B1%EB%A1%9D%EB%B6%80%EC%A0%95%EC%A0%95	/부산가족관계등록부정정
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%B2%98%EB%B6%84%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0	/부산가처분말소등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%90%EC%9E%90%EB%93%B1%EA%B8%B0	/부산감자등기

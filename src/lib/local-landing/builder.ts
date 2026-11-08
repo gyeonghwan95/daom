@@ -639,7 +639,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 허브" },
       { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
       { href: "/법인변경등기", label: "법인 변경등기 허브" },
-      { href: "/부산법인법무사", label: "부산 회사 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법률자문", label: "기업 운영 단계별 법률실무 지원" },
       { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
       { href: "/부산기업부동산등기", label: "기업 부동산등기" },

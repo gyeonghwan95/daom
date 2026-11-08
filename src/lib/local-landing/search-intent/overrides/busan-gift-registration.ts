@@ -135,6 +135,10 @@ export const 부산증여등기Override: SearchIntentContent = {
       label: "부모 자녀 아파트 증여 준비서류",
     },
     {
+      href: "/부산가족간매매등기",
+      label: "대금을 주고받는 가족간 매매 등기",
+    },
+    {
       href: "/부산부부간증여등기",
       label: "부부 간 증여·공동명의 변경",
     },

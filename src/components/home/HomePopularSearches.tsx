@@ -56,7 +56,7 @@ const POPULAR_SEARCH_CARDS = [
   },
   {
     href: "/부산법인법무사",
-    label: "부산 회사 법무사",
+    label: "부산 법인 법무사",
     hint: "운영 중 법인의 변경·해산까지",
   },
   {

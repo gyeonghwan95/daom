@@ -526,7 +526,7 @@ export function getChampionForTargetQuery(query: string): {
     },
     "부산 부동산 법무사": { champion: "/부산부동산등기", intent: "real-estate-hub" },
     "부산 법인등기 법무사": { champion: "/부산법인등기", intent: "corporate-registry-changes" },
-    "부산 법인 법무사": { champion: HOME_BROAD_CHAMPION, intent: "corporate-home-observed" },
+    "부산 법인 법무사": { champion: "/부산법인법무사", intent: "company-operations-observed" },
     "부산 법인설립 법무사": {
       champion: "/부산법인설립등기",
       intent: "incorporation-procedure",

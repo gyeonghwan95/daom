@@ -2188,6 +2188,20 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     ...realEstateCase,
   },
   {
+    slug: "부산가족간매매등기",
+    label: "부산 가족간 매매 등기",
+    category: "keyword",
+    serviceSlug: "real-estate-registration",
+    keywords: [
+      "부산 가족간 매매 등기",
+      "부모 자식 간 매매 등기",
+      "가족간 부동산 매매",
+      "직계존비속 매매",
+    ],
+    focus: "가족간 매매 대금 증빙·거래신고·이전등기",
+    ...realEstateCase,
+  },
+  {
     slug: "부산유언검인",
     label: "부산 유언검인",
     category: "concern",

@@ -232,12 +232,12 @@
       "aliasOf": "부산 부동산 법무사"
     },
     "부산 법인 법무사": {
-      "owner": "/",
-      "intent": "corporate-home-observed",
+      "owner": "/부산법인법무사",
+      "intent": "company-operations-observed",
       "supporting": [
-        "/부산법인법무사"
+        "/"
       ],
-      "note": "HOME ranks this query(2026-10-28 PC·MO #5). /부산법인법무사 title/H1 is 부산 회사 법무사. Do not retitle HOME."
+      "note": "2026-10-28 HOME #5 → 2026-11-08 사이트 미노출(1위 lawwin.co.kr). 주소가 같은 /부산법인법무사가 title/H1 「부산 법인 법무사」로 맡는다. HOME 제목은 바꾸지 않는다."
     },
     "부산 법인설립 법무사": {
       "owner": "/부산법인설립등기",
@@ -1168,6 +1168,15 @@
     "부산 공유물분할등기": {
       "owner": "/부산공유물분할등기",
       "intent": "procedure"
+    },
+    "부산 가족간 매매 등기": {
+      "owner": "/부산가족간매매등기",
+      "intent": "procedure",
+      "supporting": [
+        "/부산증여등기",
+        "/부산매매등기법무사"
+      ],
+      "note": "2026-11-08 담당 페이지가 없어 /부산증여등기가 대신 잡힘(2위, 1위 jmylawoffice.co.kr). 대금을 주고받는 매매라 증여와 의도가 다르다."
     },
     "부산 개명 법무사": {
       "owner": "/부산개명허가",

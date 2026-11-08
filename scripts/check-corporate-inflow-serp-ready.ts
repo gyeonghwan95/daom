@@ -29,7 +29,7 @@ type KeywordRow = {
 const TARGETS: { query: string; champion: string }[] = [
   { query: "부산 법인등기 법무사", champion: "/부산법인등기" },
   { query: "부산 법인전문 법무사", champion: "/부산법인설립전문법무사" },
-  { query: "부산 법인 법무사", champion: "/" },
+  { query: "부산 법인 법무사", champion: "/부산법인법무사" },
   { query: "부산 법인설립 법무사", champion: "/부산법인설립등기" },
   { query: "부산 법인설립", champion: "/부산법인설립등기" },
   { query: "부산 법인법무", champion: "/부산법인법무사" },
@@ -52,7 +52,7 @@ const COMPACT_OWNERS: { compact: string; path: string }[] = [
   { compact: "부산상업등기", path: "/부산법인등기" },
   { compact: "부산법인변경", path: "/부산법인등기" },
   { compact: "부산법인전문법무사", path: "/부산법인설립전문법무사" },
-  { compact: "부산법인법무사", path: "/" },
+  { compact: "부산법인법무사", path: "/부산법인법무사" },
   { compact: "부산법인설립법무사", path: "/부산법인설립등기" },
   { compact: "부산법인설립", path: "/부산법인설립등기" },
   { compact: "부산회사설립법무사", path: "/부산법인설립등기" },

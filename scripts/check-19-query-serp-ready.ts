@@ -36,7 +36,7 @@ const TARGETS: { query: string; champion: string }[] = [
   { query: "상속포기 법무사 비용", champion: "/상속포기비용" },
   { query: "부산 법인등기 법무사", champion: "/부산법인등기" },
   { query: "부산 법인전문 법무사", champion: "/부산법인설립전문법무사" },
-  { query: "부산 법인 법무사", champion: "/" },
+  { query: "부산 법인 법무사", champion: "/부산법인법무사" },
   { query: "부산법률상담", champion: "/부산법률상담" },
 ];
 

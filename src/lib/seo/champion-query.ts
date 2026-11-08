@@ -439,7 +439,7 @@ const CITY_INHERITANCE_CHAMPIONS: readonly ExactKeywordChampion[] = [
 const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   {
     path: BUSAN_LAWYER_CHAMPION_PATH,
-    compactQueries: ["부산법무사", "부산법무사사무소", "부산법인법무사"],
+    compactQueries: ["부산법무사", "부산법무사사무소"],
   },
   {
     path: BUSAN_RECOMMEND_CHAMPION_PATH,
@@ -550,7 +550,8 @@ const EXACT_KEYWORD_CHAMPIONS: readonly ExactKeywordChampion[] = [
   ...GEO_LAWYER_CHAMPIONS,
   {
     path: "/부산법인법무사",
-    compactQueries: ["부산회사법무사", "부산법인법무"],
+    // 「부산 법인 법무사」는 주소가 같은 이 페이지가 맡는다(2026-11-08: 홈은 이 검색에서 순위 밖)
+    compactQueries: ["부산법인법무사", "부산회사법무사", "부산법인법무"],
   },
   {
     path: "/부산법인등기",

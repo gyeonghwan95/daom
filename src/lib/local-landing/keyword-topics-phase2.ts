@@ -74,7 +74,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       {
         question: "부산 회사 법무사를 찾으면 이 페이지가 맞나요?",
         answer:
-          "회사 설립·변경·해산 입구는 부산 회사 법무사 안내입니다. 이미 있는 회사의 임원·본점·목적 변경과 2주 기한은 부산 법인등기 법무사 안내에서 이어집니다. 이 페이지는 임기 관리·채권 서류·기업 실무를 고를 때 보는 보조 안내입니다.",
+          "회사 설립·변경·해산 입구는 부산 법인 법무사 안내입니다. 이미 있는 회사의 임원·본점·목적 변경과 2주 기한은 부산 법인등기 법무사 안내에서 이어집니다. 이 페이지는 임기 관리·채권 서류·기업 실무를 고를 때 보는 보조 안내입니다.",
       },
       {
         question: "부산 기업 법률자문 페이지와 무엇이 다른가요?",
@@ -125,7 +125,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     relatedServiceLinks: [
       { href: "/부산법인등기", label: "임원·본점·목적 변경등기" },
       { href: "/부산기업법률자문", label: "부산 기업 법률실무 지원" },
-      { href: "/부산법인법무사", label: "부산 회사 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산스타트업법무사", label: "부산 스타트업 법무사" },
       { href: "/부산법인등기비용", label: "부산 법인등기 비용" },
       { href: "/부산임원변경등기", label: "부산 임원변경등기" },
@@ -250,7 +250,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     ],
     relatedServiceLinks: [
       { href: "/부산법인설립등기", label: "부산 법인설립등기" },
-      { href: "/부산법인법무사", label: "부산 회사 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법무사", label: "부산 기업 법무사" },
       { href: "/창업법무", label: "창업법무 허브" },
       { href: "/법인설립등기비용", label: "법인설립등기 비용" },
@@ -501,7 +501,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     relatedServiceLinks: [
       { href: "/법인등기비용", label: "법인등기 비용 안내" },
       { href: "/법인설립등기비용", label: "법인설립등기 비용" },
-      { href: "/부산법인법무사", label: "부산 회사 법무사" },
+      { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산법무사보수표", label: "부산 법무사 보수표" },
       { href: "/부산법무사비용", label: "부산 법무사 비용" },
     ],

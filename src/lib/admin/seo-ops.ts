@@ -14,7 +14,7 @@ export const ADMIN_PRIORITY_CHAMPIONS: ReadonlyArray<{
 }> = [
   { query: "부산 법무사", path: "/" },
   { query: "부산 법무사 사무소", path: "/" },
-  { query: "부산 법인 법무사", path: "/" },
+  { query: "부산 법인 법무사", path: "/부산법인법무사" },
   { query: "부산 법무사 상담", path: "/부산법무사상담" },
   { query: "부산법률상담", path: "/부산법률상담" },
   { query: "부산 상속", path: "/부산상속법무사" },
