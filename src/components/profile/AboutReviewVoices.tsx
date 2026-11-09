@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NaverPlaceReviewLink } from "@/components/reviews/NaverPlaceReviewLink";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { excerptReview } from "@/lib/naver-place-reviews/topic-quote";
 import { reviewMonthLabel, reviewTopicLabel } from "@/lib/naver-place-reviews/topic-label";
@@ -86,14 +87,23 @@ export function AboutReviewVoices() {
 
       <ul className="about-voices__grid">
         {voices.map((v) => (
-          <li key={v.id} className="about-voices__card">
-            <span className="about-voices__topic">{v.topic}</span>
-            <blockquote className="about-voices__quote">
-              <p>{v.excerpt}</p>
-            </blockquote>
-            <p className="about-voices__meta">
-              {v.nickname} · {v.date} · 네이버 플레이스
-            </p>
+          <li key={v.id}>
+            <NaverPlaceReviewLink
+              placement="profile_page"
+              className="about-voices__card review-preview__card"
+            >
+              <span className="about-voices__topic">{v.topic}</span>
+              <blockquote className="about-voices__quote">
+                <p>{v.excerpt}</p>
+              </blockquote>
+              <p className="about-voices__meta">
+                {v.nickname} · {v.date} · 네이버 플레이스
+              </p>
+              <span className="review-preview__more">
+                네이버 플레이스에서 이어서 보기
+                <span className="sr-only"> (새 창)</span>
+              </span>
+            </NaverPlaceReviewLink>
           </li>
         ))}
       </ul>

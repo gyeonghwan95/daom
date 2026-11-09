@@ -25,6 +25,20 @@ export type NaverPlaceReviewsFeed = {
   items: NaverPlaceReview[];
 };
 
+export type NaverPlaceReviewPreview = {
+  id: string;
+  nickname: string;
+  topic: string;
+  excerpt: string;
+  createdSortKey: string;
+};
+
+export type NaverPlaceReviewsPreviewFeed = {
+  reviewUrl: string;
+  fetchedAt: string | null;
+  items: NaverPlaceReviewPreview[];
+};
+
 export const DEFAULT_NAVER_PLACE_ID = "2035745096";
 
 export const EMPTY_NAVER_PLACE_REVIEWS_FEED: NaverPlaceReviewsFeed = {

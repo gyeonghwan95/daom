@@ -1,3 +1,4 @@
+import { NaverPlaceReviewLink } from "@/components/reviews/NaverPlaceReviewLink";
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
 import { truncateWithEllipsis } from "@/lib/text";
 
@@ -16,11 +17,12 @@ export function CustomerReviewCard({
   const preview = truncateWithEllipsis(review.body, REVIEW_PREVIEW_MAX);
 
   return (
-    <article
+    <NaverPlaceReviewLink
+      placement="homepage_reviews"
       className={
         isCompact
-          ? "w-full shrink-0 rounded-xl border border-beige-dark bg-white px-3.5 py-3 shadow-sm shadow-navy/5"
-          : "card-surface flex h-full flex-col p-5 md:p-6"
+          ? "home-review-card home-review-card--compact"
+          : "home-review-card card-surface flex h-full flex-col p-5 md:p-6"
       }
     >
       <div className="flex items-start justify-between gap-3">
@@ -44,19 +46,14 @@ export function CustomerReviewCard({
             ? "mt-2 text-sm leading-snug text-navy/80"
             : "mt-4 flex-1 text-sm leading-relaxed text-navy/80 md:text-base"
         }
-        title={review.body}
       >
         {preview}
       </p>
 
-      {!isCompact && review.reply && (
-        <div className="mt-4 rounded-lg border border-beige-dark bg-beige/40 px-4 py-3">
-          <p className="text-xs font-semibold text-navy/70">사업자 답글</p>
-          <p className="mt-1 text-sm leading-relaxed text-navy/75">
-            {review.reply}
-          </p>
-        </div>
-      )}
-    </article>
+      <span className="home-review-card__more">
+        네이버 플레이스에서 이어서 보기
+        <span className="sr-only"> (새 창)</span>
+      </span>
+    </NaverPlaceReviewLink>
   );
 }

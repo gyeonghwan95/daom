@@ -205,22 +205,27 @@ function DecisionCard({ className }: { className: string }) {
       </div>
 
       {quote ? (
-        <figure className="decision-card__quote">
+        <a
+          href={REVIEW_PAGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="decision-card__quote"
+          onClick={() =>
+            trackNaverPlaceClick({
+              variant: "review",
+              placement: "decision_card",
+              href: REVIEW_PAGE_URL,
+            })
+          }
+        >
           <blockquote>
             <p>“{quote.excerpt}”</p>
           </blockquote>
-          <figcaption>
-            <a
-              href={REVIEW_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-navy underline decoration-[#c9a86a] decoration-2 underline-offset-[5px]"
-            >
-              같은 일을 맡긴 분의 후기
-              <span className="sr-only"> (새 창)</span>
-            </a>
-          </figcaption>
-        </figure>
+          <span className="decision-card__quote-more">
+            네이버 플레이스에서 이어서 보기
+            <span className="sr-only"> (새 창)</span>
+          </span>
+        </a>
       ) : null}
 
       <div className={`decision-card__actions${showPhone ? " decision-card__actions--phone" : ""}`}>

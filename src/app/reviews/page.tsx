@@ -18,7 +18,7 @@ export default function ReviewsPage() {
           { label: "고객후기" },
         ]}
         currentPath="/reviews"
-        intro="상속·등기·전세 문제로 직접 맡겨 본 분들이 네이버 플레이스에 남긴 후기입니다. 비용을 어떻게 설명했는지, 얼마나 빨리 진행됐는지 의뢰인의 말로 확인해 보세요."
+        intro="직접 맡겨 본 분들이 네이버 플레이스에 남긴 후기를 짧게 미리 보여 드립니다. 전체 글과 사진·답글은 네이버 플레이스에서 이어서 보세요."
         relatedLinks={[
           { href: "/contact", label: "상담 신청" },
           { href: "/services", label: "업무안내" },
@@ -41,9 +41,9 @@ export default function ReviewsPage() {
         >
           <h2 className="section-heading">후기 안내</h2>
           <p className="body-text mt-3 max-w-3xl text-navy/75">
-            후기는 네이버 플레이스에서 가져와 고치지 않고 싣습니다. 새 후기가 올라오면
-            다음 갱신 때 함께 반영되며, 사진 후기와 사무소 답글은 네이버 플레이스에서 볼 수
-            있습니다.
+            이 페이지에는 후기 앞부분만 실립니다. 전체 글, 사진 후기, 사무소 답글은 네이버
+            플레이스에서 보실 수 있습니다. 새 후기가 올라오면 다음 갱신 때 미리보기에
+            반영됩니다.
           </p>
         </section>
       </PageContentSection>

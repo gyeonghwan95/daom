@@ -5469,7 +5469,13 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .decision-card__quote {
     border-left: 3px solid #c9a86a;
-    @apply mt-3.5 pl-3;
+    @apply mt-3.5 block rounded-r-lg py-1 pl-3 no-underline transition-colors;
+    color: inherit;
+  }
+
+  .decision-card__quote:hover,
+  .decision-card__quote:focus-visible {
+    background: color-mix(in srgb, #03c75a 8%, transparent);
   }
 
   .decision-card__quote p {
@@ -5477,9 +5483,9 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply text-[0.95rem] font-medium leading-relaxed;
   }
 
-  .decision-card__quote figcaption {
-    color: var(--text-muted);
-    @apply mt-1 text-xs;
+  .decision-card__quote-more {
+    color: var(--naver-green-strong, #03c75a);
+    @apply mt-1 inline-block text-xs font-bold;
   }
 
   .decision-card__actions {
@@ -5573,7 +5579,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .hero-trust-line__reviews {
     color: var(--navy);
-    @apply inline-flex items-center gap-1 font-semibold underline-offset-4 hover:underline;
+    @apply inline-flex items-center gap-1 rounded-md font-semibold underline-offset-4 hover:underline;
   }
 
   /* RemoteServicePanel — 전국·비대면 의뢰 안내 (이미지 + 요약 + 접힌 세부) */
@@ -9111,10 +9117,96 @@ body.has-sidebar-consult .floating-cta {
   }
 }
 
-/* 고객후기 페이지 — 밝은 배경 위 후기 전문 카드(소개 페이지 카드와 같은 모양, 테두리만 보이게) */
-.review-full__card {
+/* 고객후기 페이지 — 미리보기 카드(원문은 네이버 플레이스) */
+.review-preview__card {
+  height: 100%;
   border-color: var(--color-beige-dark, #e5dccb);
   box-shadow: 0 18px 36px -30px rgba(30, 58, 95, 0.45);
+  color: var(--navy);
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.review-preview__card:hover,
+.review-preview__card:focus-visible {
+  border-color: #03c75a;
+  box-shadow: 0 18px 36px -28px rgba(3, 199, 90, 0.4);
+}
+.review-preview__more {
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--naver-green-strong, #03c75a);
+}
+
+.trust-review-quote {
+  display: block;
+  margin-top: 1.25rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid rgb(3 199 90 / 0.25);
+  border-radius: 0.75rem;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.trust-review-quote:hover,
+.trust-review-quote:focus-visible {
+  border-color: #03c75a;
+  box-shadow: 0 12px 28px -22px rgba(3, 199, 90, 0.55);
+}
+.trust-review-quote__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--navy-light);
+}
+.trust-review-quote__text {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgb(21 42 69 / 0.85);
+}
+.trust-review-quote__more {
+  display: inline-flex;
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--naver-green-strong, #03c75a);
+}
+
+.home-review-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.home-review-card--compact {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-beige-dark, #e5dccb);
+  background: #fff;
+  padding: 0.75rem 0.875rem;
+  box-shadow: 0 1px 2px rgb(30 58 95 / 0.05);
+}
+.home-review-card:hover,
+.home-review-card:focus-visible {
+  border-color: rgb(3 199 90 / 0.55);
+  box-shadow: 0 10px 22px -18px rgba(3, 199, 90, 0.5);
+}
+.home-review-card__more {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--naver-green-strong, #03c75a);
 }
 
 /* 모바일 헤더 — 상호가 "다옴법무사…"로 잘리지 않게 브랜드 폭 제한을 풀고, 남는 폭은 상담 상태 칩이 줄어들며 맞춘다. */

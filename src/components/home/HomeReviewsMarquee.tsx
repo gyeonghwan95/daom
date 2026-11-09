@@ -30,11 +30,11 @@ export function HomeReviewsMarquee({
         </p>
         <div className="mt-4 flex flex-col items-center gap-2">
           <NaverSmartPlaceCta
-            variant="place"
+            variant="review"
             placement="homepage_reviews"
             tone="text"
             size="sm"
-            label="네이버에서 사무소 정보 확인"
+            label="네이버 플레이스 후기"
           />
           <Link
             href="/reviews"
@@ -61,11 +61,11 @@ export function HomeReviewsMarquee({
         </div>
         <div className="flex shrink-0 flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-3">
           <NaverSmartPlaceCta
-            variant="place"
+            variant="review"
             placement="homepage_reviews"
             tone="text"
             size="sm"
-            label="네이버에서 확인"
+            label="네이버 플레이스 후기"
           />
           <Link
             href="/reviews"
