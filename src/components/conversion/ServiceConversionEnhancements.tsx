@@ -1,7 +1,4 @@
-import {
-  getServiceConversionConfig,
-  RELAXED_INTRO,
-} from "@/lib/service-conversion";
+import { getServiceConversionConfig } from "@/lib/service-conversion";
 import { CaseExampleCards } from "./CaseExampleCards";
 import { ConsultationSituationBox } from "./ConsultationSituationBox";
 import { CostGuideBox } from "./CostGuideBox";
@@ -33,15 +30,7 @@ export function ServiceConversionEnhancements({
 
   switch (placement) {
     case "top":
-      return (
-        <>
-          <TrustMessageBox
-            relaxedIntro={RELAXED_INTRO}
-            message={config.conversionIntro}
-          />
-          <ConsultationSituationBox painPoints={config.painPoints} />
-        </>
-      );
+      return <ConsultationSituationBox painPoints={config.painPoints} />;
     case "mid":
       // 본문 중간 상담·예약 버튼은 광고처럼 보여 비활성. 히어로·하단만 사용.
       return null;

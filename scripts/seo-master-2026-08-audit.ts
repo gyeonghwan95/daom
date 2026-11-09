@@ -175,7 +175,7 @@ async function fetchPage(pathname: string): Promise<Snapshot> {
     loadingBeforeH1: loadingPhrase && (h1Pos < 0 || loadingPos < h1Pos),
     footerBeforeH1: footerPos >= 0 && h1Pos >= 0 && footerPos < h1Pos,
     footerBeforeMain: footerPos >= 0 && mainPos >= 0 && footerPos < mainPos,
-    ctaClosedDup: countPhrase(html, "현재 카카오·네이버톡톡만 가능"),
+    ctaClosedDup: countPhrase(html, "현재 카카오톡·네이버톡톡만 가능"),
     seoJargon: /검색의도|검색 키워드|이 키워드로 검색|상위노출/.test(html),
   };
 }

@@ -911,6 +911,273 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       diagnosisHref: "/지급명령자가진단",
       inquiryField: "civil-debt",
     }),
+
+    "gift-registration": config({
+      key: "gift-registration",
+      serviceName: "증여등기",
+      mainKeyword: "부산 증여등기",
+      conversionIntro:
+        "증여는 잔금일이 없는 일정입니다. 증여세는 세무사 확인이 필요하고, 여기선 등기 순서와 서류를 안내합니다. 등기부만 보내셔도 됩니다.",
+      painPoints: [
+        "증여세와 등기비를 구별하지 못하는 경우",
+        "대출·전세가 남아 부담부인지 모르는 경우",
+        "계약서 없이 등기부만 있는 경우",
+        "부모·자녀·부부 중 누구에게 넘길지 정리 중인 경우",
+        "잔금일 없는 일정을 어떻게 잡아야 할지 모르는 경우",
+      ],
+      preparationDocuments: [
+        "등기사항전부증명서",
+        "증여계약서(없어도 1차 안내 가능)",
+        "가족관계증명서",
+        "부동산 가액 참고 자료",
+      ],
+      costFactors: [
+        "부동산 가액",
+        "부담부(대출·전세) 여부",
+        "증여 지분 비율",
+        "취득세·등록면허세",
+        "세무 확인 범위",
+      ],
+      costGuideText:
+        "법무사 보수와 취득세·등록면허세를 나눠 안내합니다. 증여세액은 세무사 확인이 필요하며 이 사이트에서 단정하지 않습니다.",
+      caseExamples: [
+        {
+          title: "부모·자녀 아파트 증여를 검토한 사례",
+          body: "등기부와 지분만으로 등기 순서와 준비서류를 먼저 안내했습니다.",
+        },
+        {
+          title: "전세가 남은 부담부 증여를 나눈 사례",
+          body: "등기 범위와 세무 확인이 필요한 항목을 구분해 설명했습니다.",
+        },
+      ],
+      relatedServices: [
+        { href: "/부산증여등기", label: "부산 증여등기" },
+        { href: "/부산부모자녀아파트증여등기", label: "부모·자녀 아파트 증여" },
+        { href: "/부산부동산등기", label: "부산 부동산등기" },
+        { href: "/contact", label: "상담 문의" },
+      ],
+      midCta: {
+        title: "잔금일 없이 증여 등기만 확인하고 싶다면",
+        description:
+          "등기부만 알려 주셔도 등기 순서와 세금 확인이 필요한 항목을 나눠 드립니다.",
+        buttonLabel: "증여등기 순서 확인하기",
+      },
+      ctaMessages: ["증여등기 순서 확인하기", "등기부만 보내고 물어보기"],
+      inquiryField: "real-estate-registration",
+    }),
+
+    "auction-winning": config({
+      key: "auction-winning",
+      serviceName: "경매 낙찰등기",
+      mainKeyword: "부산 경매 낙찰등기",
+      conversionIntro:
+        "낙찰 이후 소유권이전·촉탁등기 순서를 안내합니다. 사건번호와 대금 기한만 알려 주셔도 됩니다. 입찰가 산정·낙찰은 하지 않습니다.",
+      painPoints: [
+        "대금을 내면 명의가 자동으로 바뀌는지 모르는 경우",
+        "촉탁과 법무사 신청을 구별하지 못하는 경우",
+        "잔금대출 근저당을 같은 날 맞춰야 하는 경우",
+        "취득세 납부 시점을 모르는 경우",
+        "입찰 전 권리분석 페이지와 혼동되는 경우",
+      ],
+      preparationDocuments: [
+        "경매 사건번호",
+        "매각허가결정문",
+        "대금 납부 관련 자료",
+        "등기사항전부증명서",
+      ],
+      costFactors: [
+        "낙찰 가액",
+        "촉탁·이전 방식",
+        "대출 근저당 동반 여부",
+        "취득세",
+        "말소·인수 권리",
+      ],
+      costGuideText:
+        "촉탁·이전 보수와 취득세를 나눠 안내합니다. 낙찰이나 일정을 보장하지 않습니다.",
+      caseExamples: [
+        {
+          title: "대금 기한에 맞춰 이전 순서를 짠 사례",
+          body: "사건번호와 대금일만으로 촉탁·취득세 순서를 먼저 정리했습니다.",
+        },
+        {
+          title: "낙찰 후 대출 근저당을 맞춘 사례",
+          body: "이전과 설정 순서를 같은 일정으로 안내했습니다.",
+        },
+      ],
+      relatedServices: [
+        { href: "/부산경매낙찰등기", label: "부산 경매 낙찰등기" },
+        { href: "/부산경매권리분석", label: "부산 경매 권리분석" },
+        { href: "/부산부동산등기", label: "부산 부동산등기" },
+        { href: "/contact", label: "상담 문의" },
+      ],
+      midCta: {
+        title: "낙찰 후 등기 순서만 확인하고 싶다면",
+        description:
+          "사건번호와 대금 기한만 알려 주시면 촉탁·취득세·대출 근저당 순서를 맞춰 드립니다.",
+        buttonLabel: "낙찰 후 등기 확인하기",
+      },
+      ctaMessages: ["낙찰 후 등기 확인하기", "사건번호만 남기기"],
+      inquiryField: "real-estate-registration",
+    }),
+
+    "adult-guardianship": config({
+      key: "adult-guardianship",
+      serviceName: "성년후견",
+      mainKeyword: "부산 성년후견",
+      conversionIntro:
+        "부모님이 살아 계셔도 됩니다. 의사 소견서나 형제 합의가 없어도 지금 사실관계만 남겨 주세요. 소송 대리는 하지 않습니다.",
+      painPoints: [
+        "일상 사무와 재산 관리가 어려워진 경우",
+        "의사 소견서가 아직 없는 경우",
+        "형제 의견이 갈리는 경우",
+        "후견 유형을 모르는 경우",
+        "가정법원 신청 서류를 어디서부터 봐야 할지 모르는 경우",
+      ],
+      preparationDocuments: [
+        "가족관계증명서",
+        "주민등록등본",
+        "의사 소견서(없어도 1차 안내 가능)",
+        "부동산이 있으면 등기사항전부증명서",
+      ],
+      costFactors: [
+        "후견 유형",
+        "재산·부동산 범위",
+        "가족 합의 여부",
+        "가정법원 관할",
+        "신청 서류 준비 상태",
+      ],
+      costGuideText:
+        "가정법원 신청 비용과 법무사 보수를 나눠 안내합니다. 소송 대리는 하지 않습니다.",
+      caseExamples: [
+        {
+          title: "소견서 없이 사실관계부터 정리한 사례",
+          body: "일상 사무와 부동산 관리 필요 여부만으로 신청 서류 범위를 안내했습니다.",
+        },
+        {
+          title: "가족 의견이 갈린 후견 문의를 가른 사례",
+          body: "협의로 진행할 수 있는 범위와 법원 절차를 구분해 설명했습니다.",
+        },
+      ],
+      relatedServices: [
+        { href: "/가족후견", label: "성년후견·가사비송 허브" },
+        { href: "/성년후견자가진단", label: "성년후견 자가진단" },
+        { href: "/부산가정법원성년후견", label: "부산가정법원 성년후견" },
+        { href: "/contact", label: "상담 문의" },
+      ],
+      midCta: {
+        title: "소견서가 없어도 먼저 확인하고 싶다면",
+        description:
+          "살아 계신 분의 일상·재산 상황만 남겨 주시면 신청 서류와 절차 범위를 안내합니다.",
+        buttonLabel: "후견 절차 확인하기",
+      },
+      ctaMessages: ["후견 절차 확인하기", "사실관계만 남기기"],
+      diagnosisHref: "/성년후견자가진단",
+    }),
+
+    "will-probate": config({
+      key: "will-probate",
+      serviceName: "유언검인",
+      mainKeyword: "부산 유언검인",
+      conversionIntro:
+        "유언장 사진만 보내 주셔도 검인 대상인지부터 가립니다. 유언 효력 다툼·유류분 소송 대리는 하지 않습니다.",
+      painPoints: [
+        "자필·녹음 유언으로 등기가 되는지 모르는 경우",
+        "검인과 공정증서를 구별하지 못하는 경우",
+        "원본을 어디에 보관해야 할지 모르는 경우",
+        "상속등기 전에 검인이 필요한지 모르는 경우",
+      ],
+      preparationDocuments: [
+        "유언장 사진(원본은 보관)",
+        "가족관계증명서",
+        "사망 사실 관련 증명",
+        "부동산이 있으면 등기사항전부증명서",
+      ],
+      costFactors: [
+        "유언 방식",
+        "검인 관할",
+        "상속등기 병행 여부",
+        "상속인 수",
+      ],
+      costGuideText:
+        "검인 신청 실비와 법무사 보수를 나눠 안내합니다. 효력 다툼은 변호사 영역입니다.",
+      caseExamples: [
+        {
+          title: "자필 유언 사진으로 검인 여부를 가른 사례",
+          body: "원본 보관과 검인 필요 여부만 먼저 안내했습니다.",
+        },
+        {
+          title: "검인 후 상속등기 순서를 나눈 사례",
+          body: "검인과 등기를 한 흐름으로 설명하고 소송 범위는 제외했습니다.",
+        },
+      ],
+      relatedServices: [
+        { href: "/부산유언검인", label: "부산 유언검인" },
+        { href: "/유언공증준비", label: "유언 공증 준비" },
+        { href: "/부산상속등기", label: "부산 상속등기" },
+        { href: "/contact", label: "상담 문의" },
+      ],
+      midCta: {
+        title: "유언장 사진만 있어도 확인하고 싶다면",
+        description:
+          "검인 대상인지부터 가립니다. 효력 다툼은 하지 않습니다.",
+        buttonLabel: "유언 검인 확인하기",
+      },
+      ctaMessages: ["유언 검인 확인하기", "사진만 보내기"],
+    }),
+
+    "overseas-inheritance": config({
+      key: "overseas-inheritance",
+      serviceName: "해외 거주 상속인",
+      mainKeyword: "해외 거주 상속인 등기",
+      conversionIntro:
+        "거주국과 사망일만 알려 주세요. 오늘 해외에 시킬 일(공증·아포스티유·번역)부터 회신합니다. 입국 여부는 단정하지 않습니다.",
+      painPoints: [
+        "한국에 입국하지 않고 진행할 수 있는지 모르는 경우",
+        "공증·아포스티유·영사 확인을 구별하지 못하는 경우",
+        "포기 기한과 우편 시간이 겹치는 경우",
+        "재외국민과 외국 국적을 구별하지 못하는 경우",
+      ],
+      preparationDocuments: [
+        "거주국·국적",
+        "사망일",
+        "위임장·공증·아포스티유(없어도 오늘 시킬 일부터 안내)",
+        "가족관계증명서",
+        "등기사항전부증명서",
+      ],
+      costFactors: [
+        "거주 국가",
+        "공증·번역 범위",
+        "상속인 수",
+        "국내 부동산 수",
+        "포기·등기 병행 여부",
+      ],
+      costGuideText:
+        "국내 등기 보수와 현지 공증·번역 비용을 나눠 안내합니다. 완전 비대면을 보장하지 않습니다.",
+      caseExamples: [
+        {
+          title: "해외 상속인에게 오늘 시킬 일을 남긴 사례",
+          body: "거주국 기준으로 공증·아포스티유 순서를 먼저 안내했습니다.",
+        },
+        {
+          title: "입국 없이 위임 서류를 맞춘 사례",
+          body: "가능한 범위와 추가로 확인이 필요한 국가 요건을 구분해 설명했습니다.",
+        },
+      ],
+      relatedServices: [
+        { href: "/해외거주상속인", label: "해외 거주 상속인" },
+        { href: "/부산상속등기", label: "부산 상속등기" },
+        { href: "/전국상속등기", label: "전국 상속등기" },
+        { href: "/contact", label: "상담 문의" },
+      ],
+      midCta: {
+        title: "오늘 해외에 시킬 일만 확인하고 싶다면",
+        description:
+          "거주국과 사망일만 알려 주시면 공증·아포스티유·번역 순서를 회신합니다.",
+        buttonLabel: "해외 상속 서류 확인하기",
+      },
+      ctaMessages: ["해외 상속 서류 확인하기", "거주국만 남기기"],
+      inquiryField: "inheritance-registration",
+    }),
   };
 
 /** 서비스 slug·랜딩 slug·상황 slug → 전환 설정 */
@@ -918,6 +1185,18 @@ const CONVERSION_KEY_ALIASES: Record<string, string> = {
   "payment-order": "payment-order-certified-mail",
   "certified-mail": "payment-order-certified-mail",
   본점이전등기: "head-office-transfer",
+  부산증여등기: "gift-registration",
+  부산부모자녀아파트증여등기: "gift-registration",
+  부산부부간증여등기: "gift-registration",
+  부산부담부증여등기: "gift-registration",
+  증여등기비용: "gift-registration",
+  부산경매낙찰등기: "auction-winning",
+  가족후견: "adult-guardianship",
+  성년후견자가진단: "adult-guardianship",
+  부산가정법원성년후견: "adult-guardianship",
+  부산유언검인: "will-probate",
+  유언집행자와상속등기: "will-probate",
+  해외거주상속인: "overseas-inheritance",
 };
 
 export function getServiceConversionConfig(

@@ -4,8 +4,16 @@ export type ConsultSituationId =
   | "family-passed"
   | "inheritance-registration"
   | "inheritance-renunciation"
+  | "guardianship"
+  | "overseas-inheritance"
+  | "sibling-conflict"
+  | "will-probate"
+  | "will-notary"
   | "real-estate-trade"
+  | "gift"
+  | "auction-winning"
   | "jeonse-deposit"
+  | "company-setup"
   | "corporate"
   | "rehab-bankruptcy"
   | "debt-collection"
@@ -17,11 +25,24 @@ export type ConsultDocId = string;
 export type ContactPreference = "phone" | "sms" | "email" | "any";
 export type ContactTimePreference = "morning" | "afternoon" | "evening" | "any";
 
+export type ConsultDocGroup =
+  | "inheritance"
+  | "guardianship"
+  | "overseas"
+  | "will"
+  | "real-estate"
+  | "gift"
+  | "auction"
+  | "corporate"
+  | "rehab"
+  | "jeonse"
+  | "debt"
+  | "general";
+
 export type ConsultSituation = {
   id: ConsultSituationId;
   label: string;
-  /** 서류 그룹 키 */
-  docGroup: "inheritance" | "real-estate" | "corporate" | "rehab" | "jeonse" | "debt" | "general";
+  docGroup: ConsultDocGroup;
 };
 
 export const CONSULT_SITUATIONS: ConsultSituation[] = [
@@ -41,9 +62,44 @@ export const CONSULT_SITUATIONS: ConsultSituation[] = [
     docGroup: "inheritance",
   },
   {
+    id: "guardianship",
+    label: "성년후견·후견이 필요해요",
+    docGroup: "guardianship",
+  },
+  {
+    id: "overseas-inheritance",
+    label: "해외에 사는 상속인이 있어요",
+    docGroup: "overseas",
+  },
+  {
+    id: "sibling-conflict",
+    label: "형제가 서류를 안 맞춰요",
+    docGroup: "inheritance",
+  },
+  {
+    id: "will-probate",
+    label: "유언장을 발견했어요",
+    docGroup: "will",
+  },
+  {
+    id: "will-notary",
+    label: "유언 공증을 알아봐요",
+    docGroup: "will",
+  },
+  {
     id: "real-estate-trade",
-    label: "부동산을 매매·증여하려고 해요",
+    label: "부동산을 매매하려고 해요",
     docGroup: "real-estate",
+  },
+  {
+    id: "gift",
+    label: "부동산을 증여하려고 해요",
+    docGroup: "gift",
+  },
+  {
+    id: "auction-winning",
+    label: "경매에 낙찰받아 등기가 필요해요",
+    docGroup: "auction",
   },
   {
     id: "jeonse-deposit",
@@ -51,8 +107,13 @@ export const CONSULT_SITUATIONS: ConsultSituation[] = [
     docGroup: "jeonse",
   },
   {
+    id: "company-setup",
+    label: "법인을 처음 설립해요",
+    docGroup: "corporate",
+  },
+  {
     id: "corporate",
-    label: "법인을 설립하거나 변경해야 해요",
+    label: "법인을 변경해야 해요",
     docGroup: "corporate",
   },
   {
@@ -77,6 +138,36 @@ export const CONSULT_SITUATIONS: ConsultSituation[] = [
   },
 ];
 
+export const CONSULT_SITUATION_GROUPS: {
+  title: string;
+  ids: ConsultSituationId[];
+}[] = [
+  {
+    title: "가족·상속",
+    ids: [
+      "family-passed",
+      "inheritance-registration",
+      "inheritance-renunciation",
+      "guardianship",
+      "overseas-inheritance",
+      "sibling-conflict",
+      "will-probate",
+    ],
+  },
+  {
+    title: "부동산",
+    ids: ["real-estate-trade", "gift", "auction-winning", "jeonse-deposit"],
+  },
+  {
+    title: "회사·채무",
+    ids: ["company-setup", "corporate", "rehab-bankruptcy", "debt-collection"],
+  },
+  {
+    title: "그 외",
+    ids: ["will-notary", "unknown-work", "other"],
+  },
+];
+
 export type ConsultDocOption = {
   id: ConsultDocId;
   label: string;
@@ -88,7 +179,7 @@ const DOC_NONE: ConsultDocOption = {
 };
 
 export const CONSULT_DOCS_BY_GROUP: Record<
-  ConsultSituation["docGroup"],
+  ConsultDocGroup,
   ConsultDocOption[]
 > = {
   inheritance: [
@@ -99,11 +190,41 @@ export const CONSULT_DOCS_BY_GROUP: Record<
     { id: "estate-list", label: "상속재산 자료" },
     DOC_NONE,
   ],
+  guardianship: [
+    { id: "family-relation", label: "가족관계증명서" },
+    { id: "medical-opinion", label: "의사 소견서" },
+    { id: "registry", label: "등기사항증명서(등기부)" },
+    DOC_NONE,
+  ],
+  overseas: [
+    { id: "family-relation", label: "가족관계증명서" },
+    { id: "poa-apostille", label: "위임장·공증·아포스티유" },
+    { id: "registry", label: "등기사항증명서(등기부)" },
+    DOC_NONE,
+  ],
+  will: [
+    { id: "will-photo", label: "유언장 사진" },
+    { id: "family-relation", label: "가족관계증명서" },
+    { id: "registry", label: "등기사항증명서(등기부)" },
+    DOC_NONE,
+  ],
   "real-estate": [
-    { id: "sale-contract", label: "매매·증여 계약서" },
+    { id: "sale-contract", label: "매매 계약서" },
     { id: "title-deed", label: "등기권리증" },
     { id: "id-docs", label: "주민등록·신분증 관련 서류" },
     { id: "acquisition-tax", label: "취득세 관련 자료" },
+    { id: "registry", label: "등기사항증명서(등기부)" },
+    DOC_NONE,
+  ],
+  gift: [
+    { id: "gift-contract", label: "증여 계약서" },
+    { id: "family-relation", label: "가족관계증명서" },
+    { id: "registry", label: "등기사항증명서(등기부)" },
+    DOC_NONE,
+  ],
+  auction: [
+    { id: "auction-decision", label: "매각허가결정문" },
+    { id: "payment-proof", label: "대금 납부 관련 자료" },
     { id: "registry", label: "등기사항증명서(등기부)" },
     DOC_NONE,
   ],
@@ -158,19 +279,40 @@ export const CONTACT_TIME_OPTIONS: {
   { id: "any", label: "상관없음" },
 ];
 
+function decodePath(pathname: string): string {
+  try {
+    return decodeURIComponent(pathname || "");
+  } catch {
+    return pathname || "";
+  }
+}
+
 /** pathname → 추천 상황 (사용자가 변경 가능) */
-export function suggestSituationsFromPath(pathname: string): ConsultSituationId[] {
-  const path = decodeURIComponent(pathname || "");
+export function suggestSituationsFromPath(
+  pathname: string,
+): ConsultSituationId[] {
+  const path = decodePath(pathname);
 
   if (/임차권|전세보증|전세|임대차/.test(path)) return ["jeonse-deposit"];
-  if (/상속포기/.test(path)) return ["inheritance-renunciation"];
-  if (/한정승인/.test(path)) return ["inheritance-renunciation"];
-  if (/상속등기|상속/.test(path) && !/포기|한정/.test(path)) {
+  if (/포기|한정승인/.test(path)) return ["inheritance-renunciation"];
+  if (/후견|특별대리/.test(path)) return ["guardianship"];
+  if (/연락두절|siblings-not-cooperating|형제.*협조|협조하지/.test(path)) {
+    return ["sibling-conflict"];
+  }
+  if (/해외거주상속|재외국민|해외.?거주.?상속/.test(path)) {
+    return ["overseas-inheritance"];
+  }
+  if (/유언검인/.test(path)) return ["will-probate"];
+  if (/유언공증|유언/.test(path)) return ["will-notary"];
+  if (/상속등기|상속/.test(path)) {
     return ["inheritance-registration", "family-passed"];
   }
-  if (/법인|임원변경|설립/.test(path)) return ["corporate"];
+  if (/법인설립|설립등기|설립자가진단/.test(path)) return ["company-setup"];
+  if (/법인|임원변경|본점이전|대표이사/.test(path)) return ["corporate"];
   if (/개인회생|파산|회생/.test(path)) return ["rehab-bankruptcy"];
-  if (/매매|증여|소유권이전|부동산등기/.test(path)) return ["real-estate-trade"];
+  if (/경매낙찰/.test(path)) return ["auction-winning"];
+  if (/증여/.test(path)) return ["gift"];
+  if (/매매|소유권이전|부동산등기/.test(path)) return ["real-estate-trade"];
   if (/지급명령|내용증명|대여금|공사대금/.test(path)) return ["debt-collection"];
   if (/무슨법률|업무명|서류가없어도|상담/.test(path)) return ["unknown-work"];
 
@@ -179,6 +321,10 @@ export function suggestSituationsFromPath(pathname: string): ConsultSituationId[
 
 export function getSituationLabel(id: ConsultSituationId): string {
   return CONSULT_SITUATIONS.find((s) => s.id === id)?.label ?? id;
+}
+
+export function isConsultSituationId(value: string): value is ConsultSituationId {
+  return CONSULT_SITUATIONS.some((s) => s.id === value);
 }
 
 export function getDocsForSituations(
@@ -200,7 +346,6 @@ export function getDocsForSituations(
       map.set(doc.id, doc);
     }
   }
-  // none-ready always last
   const none = map.get("none-ready");
   map.delete("none-ready");
   const list = [...map.values()];

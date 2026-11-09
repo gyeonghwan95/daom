@@ -6,16 +6,16 @@ import type { NaverPlaceReviewsFeed } from "@/lib/naver-place-reviews/types";
 import { formatReviewsFetchedAt } from "@/lib/naver-place-reviews/format";
 
 type NaverPlaceReviewsAdminPanelProps = {
-  initialFeed: NaverPlaceReviewsFeed;
+  initialFetchedAt: string | null;
   onFeedUpdated?: (feed: NaverPlaceReviewsFeed) => void;
 };
 
 export function NaverPlaceReviewsAdminPanel({
-  initialFeed,
+  initialFetchedAt,
   onFeedUpdated,
 }: NaverPlaceReviewsAdminPanelProps) {
   const { loading, authenticated, configured } = useAdminSession();
-  const [feed, setFeed] = useState(initialFeed);
+  const [fetchedAt, setFetchedAt] = useState(initialFetchedAt);
   const [refreshing, setRefreshing] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -24,7 +24,7 @@ export function NaverPlaceReviewsAdminPanel({
     return null;
   }
 
-  const fetchedLabel = formatReviewsFetchedAt(feed.fetchedAt);
+  const fetchedLabel = formatReviewsFetchedAt(fetchedAt);
 
   async function handleRefresh() {
     setRefreshing(true);
@@ -49,7 +49,7 @@ export function NaverPlaceReviewsAdminPanel({
       }
 
       if (data.feed) {
-        setFeed(data.feed);
+        setFetchedAt(data.feed.fetchedAt);
         onFeedUpdated?.(data.feed);
       }
       setMessage(data.message ?? "네이버 방문자 리뷰를 갱신했습니다.");

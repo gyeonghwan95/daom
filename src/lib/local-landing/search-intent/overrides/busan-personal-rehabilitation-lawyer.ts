@@ -147,7 +147,7 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },
     { href: "/glossary/personal-rehabilitation", label: "개인회생 용어 설명" },
-    { href: "/contact/inquiry", label: "1분만에 문의하기" },
+    { href: "/contact/inquiry", label: "1분 문의" },
   ],
   breadcrumbParent: { href: "/부산개인회생", label: "부산 개인회생" },
   situationNav: [

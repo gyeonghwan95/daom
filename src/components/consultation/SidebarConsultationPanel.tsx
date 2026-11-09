@@ -15,6 +15,10 @@ import { useConsultationAvailability } from "@/hooks/useConsultationAvailability
 import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { usePathname } from "next/navigation";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { isNaverSmartPlaceConfigured } from "@/lib/naver-smartplace/cta";
 import { seoBrand } from "@/lib/seo/brand";
@@ -33,8 +37,11 @@ type ChannelItem = {
 };
 
 export function SidebarConsultationPanel() {
+  const pathname = usePathname() ?? "/";
   const { phone, kakao, naverTalk } = getContactInfo();
   const availability = useConsultationAvailability();
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
   const reducedMotion = useReducedMotion();
   const { isOpen, statusLabel, statusHint } = availability;
   const showNaverReservation = isNaverSmartPlaceConfigured();
@@ -69,7 +76,7 @@ export function SidebarConsultationPanel() {
       ? [
           {
             id: "naver",
-            label: "네이버 톡톡",
+            label: "네이버톡톡",
             hint: "톡톡으로 문의",
             href: naverTalk,
             external: true,
@@ -146,7 +153,9 @@ export function SidebarConsultationPanel() {
                 </span>
                 <span className="sidebar-consult-panel__channel-text">
                   <span className="sidebar-consult-panel__channel-label">
-                    {channel.label}
+                    {channel.id === "kakao" || channel.id === "naver"
+                      ? consultChatButtonLabel(status, channel.label)
+                      : channel.label}
                   </span>
                   <span className="sidebar-consult-panel__channel-hint">
                     {channel.hint}
@@ -163,6 +172,11 @@ export function SidebarConsultationPanel() {
                     className={className}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={
+                      channel.id === "kakao" || channel.id === "naver"
+                        ? () => launch(example)
+                        : undefined
+                    }
                   >
                     {content}
                   </a>
@@ -185,7 +199,7 @@ export function SidebarConsultationPanel() {
             <NaverPlaceActions
               placement="sidebar"
               size="sm"
-              reservationLabel="네이버 예약"
+              reservationLabel="네이버예약"
               reservationOnly
               stacked
               className="gap-1.5"

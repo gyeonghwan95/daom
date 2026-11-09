@@ -18,6 +18,9 @@ export const REVIEW_TOTAL: number = feed.stats?.totalCount || feed.items?.length
 
 export const REVIEW_PAGE_URL: string = feed.reviewUrl;
 
+/** 네이버 플레이스 평균 평점(빌드 시점 값, 후기가 없으면 0) */
+export const REVIEW_AVG_RATING: number = feed.stats?.avgRating || 0;
+
 function topicOf(body: string): ReviewQuote["topic"] {
   if (/상속/.test(body)) return "inheritance";
   if (/전세|임대차|보증금/.test(body)) return "lease";
@@ -39,9 +42,13 @@ const SHORT_QUOTES: ReviewQuote[] = (feed.items ?? [])
  * 후기가 13건뿐이라 주제와 무관한 페이지까지 돌려 쓰면 같은 문장이 사이트 전체에서 반복되므로,
  * 상속·전세·부동산처럼 주제가 맞는 페이지에서만 인용하고 그 밖에는 인용하지 않는다.
  */
+const RELIEF = /마음|편하|부담|설명|가벼|속시원|기다릴 수|쉽게|친절/;
+
 export function pickShortReviewQuote(pathname: string): ReviewQuote | null {
   const topic = pathTopic(pathname);
   if (topic === "general") return null;
   const pool = SHORT_QUOTES.filter((q) => q.topic === topic);
-  return pickReviewQuote(pool, pathname);
+  const relief = pool.filter((q) => RELIEF.test(q.excerpt));
+  if (relief.length === 0) return null;
+  return pickReviewQuote(relief, pathname);
 }

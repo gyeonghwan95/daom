@@ -54,7 +54,8 @@ export function pathTopic(pathname: string): ReviewTopic {
   } catch {
     /* keep raw */
   }
-  if (/상속|한정승인|후견|inheritance/.test(path)) return "inheritance";
+  if (/후견|특별대리/.test(path)) return "general";
+  if (/상속|한정승인|inheritance/.test(path)) return "inheritance";
   if (/전세|임대차|임차권|보증금|lease|jeonse/.test(path)) return "lease";
   if (/매매|소유권|부동산|재개발|재건축|증여|근저당|real-estate/.test(path)) {
     return "realEstate";

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminLoading } from "@/components/admin/AdminState";
 import { NoticeModal } from "@/components/notices/NoticeModal";
 import type {
   FloatingNotice,
@@ -88,6 +89,7 @@ export default function AdminNoticesPage() {
     "desktop",
   );
   const [showEditor, setShowEditor] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   async function reload() {
     const res = await fetch("/api/admin/notices", { credentials: "include" });
@@ -117,6 +119,7 @@ export default function AdminNoticesPage() {
           data?: { notices?: NoticeRow[]; storageConfigured?: boolean };
         };
         if (cancelled) return;
+        setLoaded(true);
         if (!res.ok) {
           setError(json.message || "불러오기 실패");
           return;
@@ -126,7 +129,10 @@ export default function AdminNoticesPage() {
           setError("ADMIN_KV가 없어 공지를 저장할 수 없습니다.");
         }
       } catch {
-        if (!cancelled) setError("네트워크 오류");
+        if (!cancelled) {
+          setLoaded(true);
+          setError("네트워크 오류");
+        }
       }
     })();
     return () => {
@@ -311,6 +317,9 @@ export default function AdminNoticesPage() {
           새 공지 등록
         </button>
       </AdminPageHeader>
+      {!loaded && !error ? (
+        <AdminLoading label="공지를 불러오는 중" />
+      ) : null}
       <p className="admin-prose">
         중앙 팝업 공지 · 공개 `/공지사항` 목록과 연동됩니다. 노출·클릭·닫기는
         최근 7일 집계입니다. 본문은 일반 텍스트만, CTA는 내부 경로 또는 https만

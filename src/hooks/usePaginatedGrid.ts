@@ -83,11 +83,11 @@ export function usePaginatedGrid(
   };
 }
 
-/** 언론·활동 패널 — 모바일 2×2, 768px~ 3×3, 1280px~ 4×3 */
+/** 언론·활동 패널 — 모바일 2×2, 768px~ 3×3(본문 폭이 896px로 고정이라 4열이면 카드가 196px로 눌린다) */
 export const mediaPanelGridOptions: UsePaginatedGridOptions = {
-  getColumnCount: (width) => (width >= 1280 ? 4 : width >= 768 ? 3 : 2),
+  getColumnCount: (width) => (width >= 768 ? 3 : 2),
   getMaxRows: (width) => (width >= 768 ? 3 : 2),
-  gridClassName: "grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4",
+  gridClassName: "grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3",
 };
 
 function getReviewColumnCount(width: number): number {

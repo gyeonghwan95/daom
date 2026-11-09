@@ -21,6 +21,7 @@ export function trackCtaEvent(
   kind: "contact" | "phone" | "kakao" | "naver-talk" | "location" | string,
   pageSlug?: string,
   href?: string,
+  extra?: { intent?: string },
 ) {
   const path =
     typeof window !== "undefined" ? window.location.pathname : pageSlug || "/";
@@ -30,6 +31,7 @@ export function trackCtaEvent(
   );
   const meta: Record<string, string> = { kind };
   if (dest) meta.dest = dest;
+  if (extra?.intent) meta.intent = extra.intent;
 
   if (kind === "phone") {
     void trackEvent({ type: "phone_click", path, meta });

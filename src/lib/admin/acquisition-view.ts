@@ -155,7 +155,7 @@ export function formatDecimal(value: number | null, digits = 1): string {
 export function contactBreakdown(m: AcquisitionMetrics): Array<{ key: string; label: string; count: number }> {
   return [
     { key: "phone", label: "전화", count: m.phone },
-    { key: "kakao", label: "카카오", count: m.kakao },
+    { key: "kakao", label: "카카오톡", count: m.kakao },
     { key: "talk", label: "톡톡", count: m.talk },
     { key: "reserve", label: "예약", count: m.reserve },
     { key: "submit", label: "문의", count: m.submit },
@@ -297,7 +297,7 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
         id: "mobile-heavy",
         level: "info",
         title: `페이지뷰의 ${mobileShare.toFixed(0)}%가 모바일`,
-        detail: "모바일 첫 화면에서 전화·카카오 버튼이 바로 보이는지가 전환에 가장 큰 영향을 줍니다.",
+        detail: "모바일 첫 화면에서 전화·카카오톡 버튼이 바로 보이는지가 전환에 가장 큰 영향을 줍니다.",
       });
     }
   }

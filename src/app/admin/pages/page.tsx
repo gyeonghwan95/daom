@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { AdminTableWrap } from "@/components/admin/AdminActionGrid";
 import { AdminFilterChips } from "@/components/admin/AdminIntentMix";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
+import { useAdminResource } from "@/components/admin/useAdminResource";
 import { formatDeviceSplit } from "@/lib/admin/device-label";
 import {
   buildLeadPages,
@@ -19,7 +21,6 @@ import {
   type AdminPathIntent,
 } from "@/lib/admin/path-intent";
 import { getPageDisplayName } from "@/lib/admin/url-display";
-import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type Row = {
   path: string;
@@ -47,28 +48,14 @@ const TREND_LABEL: Record<string, string> = {
 type IntentFilter = AdminPathIntent | "all";
 
 export default function AdminPagesPage() {
-  const [rows, setRows] = useState<Row[]>([]);
-  const [message, setMessage] = useState<string | null>(null);
+  const { data, error, loading, refreshing, reload, retry } = useAdminResource<{
+    rows?: Row[];
+    message?: string;
+  }>("/api/admin/pages?days=30");
   const [query, setQuery] = useState("");
   const [intent, setIntent] = useState<IntentFilter>("all");
-
-  useEffect(() => {
-    let cancelled = false;
-    adminFetchJson<{ rows?: Row[]; message?: string }>(
-      "/api/admin/pages?days=30",
-    ).then((result) => {
-      if (cancelled) return;
-      if (!result.ok) {
-        setMessage(result.message);
-        return;
-      }
-      setRows(result.data?.rows || []);
-      setMessage(result.data?.message || null);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const rows = data?.rows || [];
+  const message = data?.message || null;
 
   const intentMix = useMemo(
     () =>
@@ -97,16 +84,39 @@ export default function AdminPagesPage() {
     });
   }, [rows, query, intent]);
 
+  if (error && !data) {
+    return (
+      <div>
+        <AdminPageHeader title="페이지 성과" />
+        <AdminErrorState message={error} onRetry={retry} />
+      </div>
+    );
+  }
+
+  if (loading && !data) {
+    return (
+      <div>
+        <AdminPageHeader title="페이지 성과" />
+        <AdminLoading label="페이지 성과를 불러오는 중" />
+      </div>
+    );
+  }
+
   const todayViews = rows.reduce((sum, row) => sum + (row.visitsToday || 0), 0);
   const todayLeads = rows.reduce((sum, row) => sum + (row.consultSubmit || 0), 0);
 
   return (
     <div>
-      <AdminPageHeader title="페이지 성과" />
+      <AdminPageHeader
+        title="페이지 성과"
+        onRefresh={reload}
+        refreshing={refreshing}
+      />
       <p className="admin-prose">
         오늘 · 7일 · 30일(KST) 페이지뷰. 전환율은 문의 제출 ÷ 페이지뷰입니다.
         특강 페이지는 전화 상담 전환이 낮아도 정상일 수 있습니다.
       </p>
+      {error ? <AdminErrorState message={error} onRetry={reload} /> : null}
       {message ? <p className="admin-alert admin-alert--info">{message}</p> : null}
 
       <p className="admin-summary">
@@ -181,7 +191,7 @@ export default function AdminPagesPage() {
       {watchlist.length ? (
         <AdminSection title="방문은 있는데 문의가 없는 페이지 (30일)">
           <p className="admin-prose">
-            특강·계산기는 제외했습니다. 상속·법인·지역 페이지에서 전화·카카오 클릭을 같이 보세요.
+            특강·계산기는 제외했습니다. 상속·법인·지역 페이지에서 전화·카카오톡 클릭을 같이 보세요.
           </p>
           <AdminTableWrap>
           <table className="admin-table">

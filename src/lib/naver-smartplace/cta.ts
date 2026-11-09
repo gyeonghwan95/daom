@@ -47,12 +47,12 @@ const LABELS: Record<
   { label: string; aria: string; hint?: string }
 > = {
   reservation: {
-    label: "네이버 예약",
+    label: "네이버예약",
     aria: "네이버에서 다옴법무사사무소 상담 예약 열기 (새 창)",
     hint: "네이버 플레이스에서 방문상담 일정을 확인할 수 있습니다.",
   },
   map: {
-    label: "네이버 지도",
+    label: "네이버지도",
     aria: "네이버 지도에서 다옴법무사사무소 위치 확인 (새 창)",
   },
   review: {

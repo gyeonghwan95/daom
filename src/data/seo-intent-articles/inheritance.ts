@@ -594,7 +594,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
         {
           question: "해운대·센텀에서 방문 상담이 가능한가요?",
           answer:
-            "다옴법무사사무소는 해운대구 센텀동에 있으며, 전화·카카오 상담도 가능합니다.",
+            "다옴법무사사무소는 해운대구 센텀동에 있으며, 전화·카카오톡 상담도 가능합니다.",
         },
         {
           question: "비용은 상담 때 바로 나오나요?",

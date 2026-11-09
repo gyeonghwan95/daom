@@ -6,6 +6,7 @@ import { InquiryNaverCtaPair } from "@/components/cta/InquiryNaverCtaPair";
 import { HeroContactButtons } from "@/components/cta/HeroContactButtons";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { NaverBlogMorePostsButton } from "@/components/cta/NaverBlogMorePostsButton";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionChip";
@@ -73,6 +74,7 @@ export function PageHero({
       {eyebrow ? <p className="readability-hero__eyebrow">{eyebrow}</p> : null}
       <h1 className="page-title">{h1}</h1>
       <HeroTrustLine />
+      <ConsultEmpathyLead />
       {descriptions.length > 0 ? (
         <div className="mt-4 md:mt-5">
           <ProseParagraphs paragraphs={descriptions.slice(0, 2)} />

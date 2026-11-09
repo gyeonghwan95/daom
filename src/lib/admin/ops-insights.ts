@@ -41,7 +41,7 @@ export function buildDashboardInsights(data: DashboardPayload): OpsInsight[] {
       id: "views-no-submit",
       level: "warning",
       title: "방문은 있는데 문의 제출이 없습니다",
-      detail: `오늘 페이지뷰 ${visits} · CTA ${cta} · 제출 0. 전화·카카오는 전환 페이지에서 채널별로 확인하세요.`,
+      detail: `오늘 페이지뷰 ${visits} · CTA ${cta} · 제출 0. 전화·카카오톡은 전환 페이지에서 채널별로 확인하세요.`,
       href: "/admin/conversions",
     });
   }
@@ -87,7 +87,7 @@ export function buildDashboardInsights(data: DashboardPayload): OpsInsight[] {
       level: "info",
       title: "상속 페이지 방문이 있으나 제출이 없습니다",
       detail:
-        "상속 유입은 전화·카카오 상담으로 이어지는 경우가 많습니다. 전환 분석에서 채널별 클릭을 같이 보세요.",
+        "상속 유입은 전화·카카오톡 상담으로 이어지는 경우가 많습니다. 전환 분석에서 채널별 클릭을 같이 보세요.",
       href: "/admin/conversions",
     });
   }
@@ -195,7 +195,7 @@ export function buildConversionInsights(input: {
       level: "warning",
       title: "조회는 있으나 버튼 클릭이 없습니다",
       detail:
-        "전화·카카오·문의 버튼이 안 보이거나, 정보만 읽고 나가는 방문일 수 있습니다.",
+        "전화·카카오톡·문의 버튼이 안 보이거나, 정보만 읽고 나가는 방문일 수 있습니다.",
     });
   }
   if (funnel && funnel.cta >= 3 && funnel.consultSubmit === 0) {
@@ -204,7 +204,7 @@ export function buildConversionInsights(input: {
       level: "info",
       title: "버튼은 눌렸지만 양식 제출이 없습니다",
       detail:
-        "전화·카카오는 제출 없이 연결됩니다. 실제 상담은 전화 클릭을 같이 보세요.",
+        "전화·카카오톡은 제출 없이 연결됩니다. 실제 상담은 전화 클릭을 같이 보세요.",
     });
   }
   const pages = input.pages || [];
@@ -216,12 +216,12 @@ export function buildConversionInsights(input: {
       level: "info",
       title:
         phone >= kakao
-          ? `오늘 상담 클릭은 전화 ${phone} · 카카오 ${kakao}`
-          : `오늘 상담 클릭은 카카오 ${kakao} · 전화 ${phone}`,
+          ? `오늘 상담 클릭은 전화 ${phone} · 카카오톡 ${kakao}`
+          : `오늘 상담 클릭은 카카오톡 ${kakao} · 전화 ${phone}`,
       detail:
         phone >= kakao
           ? "전화가 더 많습니다. 피크 시간대에 바로 받을 수 있는지가 전환을 가릅니다."
-          : "카카오가 더 많습니다. 알림음·읽지 않은 채팅부터 확인하세요.",
+          : "카카오톡이 더 많습니다. 알림음·읽지 않은 채팅부터 확인하세요.",
     });
   }
   const clickOnly = pages
@@ -351,7 +351,7 @@ export function buildOpsBriefing(data: DashboardPayload): {
       value: mobileShare != null ? `${mobileShare}%` : "—",
       note:
         mobileShare != null && mobileShare >= 60
-          ? "전화·카카오 버튼이 더 중요합니다"
+          ? "전화·카카오톡 버튼이 더 중요합니다"
           : "화면 너비 768px 기준",
     },
     {
@@ -382,7 +382,7 @@ export function buildOpsBriefing(data: DashboardPayload): {
         ? `지금이 피크 시간대입니다 (${peak}시)`
         : `오늘 피크는 ${peak}시입니다`,
       detail: nearPeak
-        ? "전화 가능한 상태를 유지하세요. 모바일 방문이면 카카오보다 전화가 먼저입니다."
+        ? "전화 가능한 상태를 유지하세요. 모바일 방문이면 카카오톡보다 전화가 먼저입니다."
         : `이 시각 페이지뷰 ${data.hourlyInsights?.peakViewsToday ?? "—"}회. 응대 가능 시간을 맞춰 두면 놓치는 상담이 줄어듭니다.`,
     });
   }
@@ -418,7 +418,7 @@ export function buildOpsBriefing(data: DashboardPayload): {
       tone: "info",
       title: "오늘 방문의 대부분이 모바일입니다",
       detail:
-        "전환 분석에서 전화·카카오 클릭을 먼저 보세요. 양식 제출만 보면 실제 상담을 놓칩니다.",
+        "전환 분석에서 전화·카카오톡 클릭을 먼저 보세요. 양식 제출만 보면 실제 상담을 놓칩니다.",
       href: "/admin/conversions",
     });
   }
@@ -429,7 +429,7 @@ export function buildOpsBriefing(data: DashboardPayload): {
       tone: "info",
       title: "시간 외 방문 비중이 큽니다",
       detail:
-        "아침 첫 확인 때 전날 밤 문의를 우선 보세요. 카카오·메일 알림이 켜져 있는지가 핵심입니다.",
+        "아침 첫 확인 때 전날 밤 문의를 우선 보세요. 카카오톡·메일 알림이 켜져 있는지가 핵심입니다.",
       href: "/admin/email",
     });
   }

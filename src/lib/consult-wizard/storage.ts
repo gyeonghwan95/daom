@@ -1,5 +1,11 @@
 import type { ConsultWizardDraft } from "./message";
-import type { ConsultSituationId } from "./catalog";
+import { isConsultSituationId } from "./catalog";
+
+export function migrateWizardStep(step: unknown): 1 | 2 {
+  const n = typeof step === "number" ? step : 1;
+  if (n >= 3) return 2;
+  return 1;
+}
 
 const STORAGE_KEY = "daom-consult-wizard-v1";
 
@@ -30,12 +36,14 @@ export function loadConsultDraft(): ConsultWizardDraft | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as ConsultWizardDraft;
     if (!parsed || typeof parsed !== "object") return null;
+    const situationIds = Array.isArray(parsed.situationIds)
+      ? parsed.situationIds.filter(isConsultSituationId)
+      : [];
     return {
       ...createEmptyDraft(),
       ...parsed,
-      situationIds: Array.isArray(parsed.situationIds)
-        ? (parsed.situationIds as ConsultSituationId[])
-        : [],
+      step: migrateWizardStep(parsed.step),
+      situationIds,
       documentIds: Array.isArray(parsed.documentIds) ? parsed.documentIds : [],
     };
   } catch {

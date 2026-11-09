@@ -1,13 +1,17 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  KakaoIcon,
   LocationIcon,
   NaverIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { isB2BPath } from "@/lib/b2b/options";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import {
@@ -16,15 +20,29 @@ import {
   type NaverSmartPlacePlacement,
   type NaverSmartPlaceVariant,
 } from "@/lib/naver-smartplace/cta";
-import { pickShortReviewQuote } from "@/lib/naver-place-reviews/static-quotes";
+import {
+  pickShortReviewQuote,
+  REVIEW_PAGE_URL,
+} from "@/lib/naver-place-reviews/static-quotes";
 import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { consultationReplySla } from "@/lib/consultation-copy";
+import {
+  consultPasteText,
+  getConsultEmpathy,
+} from "@/lib/consultation-empathy";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
+import { encodePublicSrc } from "@/lib/encode-public-src";
+import { siteImages } from "@/lib/site-images";
 
 /**
  * 비용 문의 안내 — 본문형 페이지 공통(서두: HeroContactButtons·PageHero 등, 말미: MainContactPhone).
  *
  * 서두(intro)는 "결정 카드"다. 정보를 찾으러 온 방문자가 첫 화면 근처에서
  *  ① 맡길 근거(실제 방문자 후기·대표 직접 진행·협회장 표창) ② 비용 걱정을 덜어 주는 안내(문구 고정)
- *  ③ 가장 먼저 누를 하나의 행동(1분 상담 신청) ④ 네이버 예약·지도
+ *  ③ 편한 채널을 고르는 선택지(카카오톡·네이버 톡톡·1분 문의·전화)
+ *  ④ 네이버 예약·지도
  * 를 한 번에 보게 한다. 말미(outro)는 같은 채널 버튼이 바로 위 신뢰 블록과 겹치지 않도록 문장 속 링크로만 둔다.
  * 클릭은 trackCTA(cost_intro / cost_outro)·trackNaverPlaceClick(decision_card)으로 집계한다.
  */
@@ -131,115 +149,176 @@ function PlaceLink({
   );
 }
 
-/** 강의 페이지 서두 — 고정 비용 문구 위에 기관 담당자용 안내 한 줄을 더한다(고정 문구는 바꾸지 않음) */
-function LectureIntroLine() {
-  return (
-    <p className="mb-2 text-[0.95rem] font-semibold leading-relaxed text-navy">
-      강의 주제·대상·예상 인원·희망 날짜만 알려 주시면 구성안과 가능 여부를 먼저 회신해 드립니다.
-    </p>
-  );
-}
-
-/** 비용 문의 고정 문구 — 서두 */
-function IntroMessage({ placement }: { placement: string }) {
-  const { phone, kakao, naverTalk } = getContactInfo();
-  const phoneHref = getPhoneHref(phone);
-  return (
-    <p className="text-[0.95rem] leading-relaxed text-navy/85">
-      혼자 비용을 예상하며 고민하지 않으셔도 됩니다.{" "}
-      <InlineChannel href={phoneHref} external={false} kind="phone" placement={placement}>
-        전화
-      </InlineChannel>
-      ·
-      <InlineChannel href={naverTalk} external kind="naver-talk" placement={placement}>
-        네이버 톡톡
-      </InlineChannel>
-      ·
-      <InlineChannel href={kakao} external kind="kakao" placement={placement}>
-        카카오톡
-      </InlineChannel>
-      으로 <strong className="font-semibold text-navy">“이 경우 얼마인가요?”</strong>
-      라고 먼저 물어보세요. 상황을 확인한 뒤 예상 비용을 안내해 드리겠습니다.
-    </p>
-  );
-}
-
 function DecisionCard({ className }: { className: string }) {
   const pathname = usePathname() ?? "/";
-  const { phone } = getContactInfo();
+  const { phone, kakao, naverTalk } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const phoneVisible = Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen);
   const lecture = isLecturePagePath(pathname);
-  // 강의 페이지는 기관 담당자가 보므로 개인 의뢰인의 사건 후기를 인용하지 않는다
-  const quote = lecture ? null : pickShortReviewQuote(pathname);
+  const b2b = isB2BPath(pathname);
+  const empathy = getConsultEmpathy(pathname);
+  const quiet = !lecture && !b2b && empathy.quiet;
+  const quote = lecture || b2b ? null : pickShortReviewQuote(pathname);
   const naverOn = isNaverSmartPlaceConfigured();
   const placement = "cost_intro";
+  const portrait = siteImages.about.portrait;
+  const showPhone = phoneVisible && !quiet;
+  const afterHours = isResolved && !isOpen;
+  const paste = lecture
+    ? "강의 주제와 희망 날짜를 알려 드립니다."
+    : consultPasteText(empathy);
+  const { launch } = useConsultChatLaunch();
+  const hint = lecture
+    ? `${consultationReplySla.line} 기관 강사료 기준이 있으면 그 범위에서 맞춰 드립니다.`
+    : afterHours
+      ? consultationReplySla.night
+      : `${consultationReplySla.weekday}. 맡기기 전에 물어보셔도 됩니다.`;
+  const intent = lecture ? "lecture" : b2b ? "b2b" : empathy.intent;
+
+  const openChat = (kind: string, href: string) => {
+    trackCTA(kind, currentSlug(), href, intent);
+    launch(paste);
+  };
 
   return (
     <aside
       aria-label="상담 안내"
       data-decision-card
+      data-consult-intent={intent}
       className={`decision-card ${className}`.trim()}
     >
-      {/* ① 맡길 근거 — 후기 수는 H1 아래 신뢰 띠와 신뢰 블록에 있으므로 여기선 진행 방식·표창만 */}
-      <ul className="decision-card__proof" aria-label="맡기기 전 확인할 근거">
-        <li>{lecture ? "법무사가 직접 출강" : "대표 법무사가 처음부터 직접 진행"}</li>
-        <li>대한법무사협회장 표창</li>
-      </ul>
+      <div className="decision-card__head">
+        {lecture ? null : (
+          <div className="decision-card__photo">
+            <Image
+              src={encodePublicSrc(portrait.src)}
+              alt={portrait.alt}
+              fill
+              sizes="6rem"
+              className="object-cover object-top"
+            />
+          </div>
+        )}
+        <div className="min-w-0 flex-1">
+          <p className="decision-card__voice">안윤정 법무사</p>
+          <p className="decision-card__empathy">
+            {lecture
+              ? "강의 주제와 날짜만 알려 주시면, 제가 가능 여부부터 회신합니다."
+              : b2b
+                ? "잔금일과 거래 유형만 알려 주시면 협업 가능 여부부터 회신합니다."
+                : empathy.line}
+          </p>
+          {lecture || b2b ? null : (
+            <p className="decision-card__award">대한법무사협회장 표창 · 제가 처음부터 직접 진행합니다</p>
+          )}
+        </div>
+      </div>
 
       {quote ? (
-        <figure className="decision-card__quote">
+        <a
+          href={REVIEW_PAGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="decision-card__quote"
+          onClick={() =>
+            trackNaverPlaceClick({
+              variant: "review",
+              placement: "decision_card",
+              href: REVIEW_PAGE_URL,
+            })
+          }
+        >
           <blockquote>
             <p>“{quote.excerpt}”</p>
           </blockquote>
-          <figcaption>네이버 방문자 후기</figcaption>
-        </figure>
+          <span className="decision-card__quote-more">
+            네이버 플레이스에서 이어서 보기
+            <span className="sr-only"> (새 창)</span>
+          </span>
+        </a>
       ) : null}
 
-      {/* ② 비용 걱정 — 고정 문구 */}
-      <div className="decision-card__cost">
-        {lecture ? <LectureIntroLine /> : null}
-        <IntroMessage placement={placement} />
+      <div className={`decision-card__actions${showPhone ? " decision-card__actions--phone" : ""}`}>
+        {kakao ? (
+          <a
+            href={kakao}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="kakao"
+            data-cta-placement={placement}
+            onClick={() => openChat("kakao", kakao)}
+            className="decision-card__kakao"
+          >
+            <KakaoIcon className="h-4 w-4 shrink-0" />
+            {quiet ? "이름 없이 카카오톡" : "카카오톡"}
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        ) : null}
+        {naverTalk ? (
+          <a
+            href={naverTalk}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="naver-talk"
+            data-cta-placement={placement}
+            onClick={() => openChat("naver-talk", naverTalk)}
+            className="decision-card__naver"
+          >
+            <NaverIcon className="h-4 w-4 shrink-0" />
+            네이버톡톡
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        ) : null}
+        {b2b ? (
+          <Link href="/협업문의" className="decision-card__inquiry">
+            협업 문의
+          </Link>
+        ) : (
+          <InquiryStartButton
+            source="landing"
+            pageSlug={pathname}
+            note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 1분 문의"}
+            className="decision-card__inquiry"
+          >
+            {lecture ? "강의 문의 남기기" : "1분 문의"}
+          </InquiryStartButton>
+        )}
+        {showPhone ? (
+          <a
+            href={phoneHref}
+            data-cta="phone"
+            data-cta-placement={placement}
+            onClick={() => trackCTA("phone", currentSlug(), phoneHref, intent)}
+            className="decision-card__secondary max-lg:hidden"
+            aria-label={`전화 상담 ${phone}`}
+          >
+            <PhoneIcon className="h-4 w-4 shrink-0" />
+            {phone}
+          </a>
+        ) : null}
       </div>
+      <p className="decision-card__hint">{hint}</p>
+      {lecture || b2b ? null : (
+        <>
+          <p className="decision-card__process">{empathy.costLine}</p>
+          <p className="decision-card__process">{empathy.afterInquiry}</p>
+          {empathy.photoHint ? (
+            <p className="decision-card__photo-hint">{empathy.photoHint}</p>
+          ) : null}
+        </>
+      )}
 
-      {/* ③ 가장 먼저 누를 하나의 행동 + 전화 */}
-      <div className="decision-card__actions">
-        <InquiryStartButton
-          source="landing"
-          pageSlug={pathname}
-          note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 상담 신청"}
-          className="decision-card__primary"
-        >
-          {lecture ? "강의 문의 남기기" : "1분만에 상담 신청"}
-        </InquiryStartButton>
-        <a
-          href={phoneHref}
-          data-cta="phone"
-          data-cta-placement={placement}
-          onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
-          className="decision-card__secondary max-lg:hidden"
-          aria-label={`전화 상담 ${phone}`}
-        >
-          <PhoneIcon className="h-4 w-4 shrink-0" />
-          {phone}
-        </a>
-      </div>
-      <p className="decision-card__hint">
-        {lecture
-          ? "기관 강사료 기준이 있으면 그 범위에서 시간·자료 구성을 맞춥니다."
-          : "서류가 없어도 상황만 남겨 주시면 됩니다."}
-      </p>
-
-      {/* ④ 네이버 예약·지도(페이지마다 최소 1개) */}
       {naverOn ? (
         <div className="decision-card__places">
           <PlaceLink
             variant="reservation"
-            label="네이버 예약"
+            label="네이버예약"
             icon={<NaverIcon className="naver-place-btn__icon" />}
           />
           <PlaceLink
             variant="map"
-            label="네이버 지도"
+            label="네이버지도"
             icon={<LocationIcon className="naver-place-btn__icon" />}
           />
         </div>
@@ -257,13 +336,13 @@ export function NaverVisitLinks({ className = "" }: { className?: string }) {
       <div className="naver-visit__actions">
         <PlaceLink
           variant="reservation"
-          label="네이버 예약"
+          label="네이버예약"
           placement="main_contact"
           icon={<NaverIcon className="naver-place-btn__icon" />}
         />
         <PlaceLink
           variant="map"
-          label="네이버 지도"
+          label="네이버지도"
           placement="main_contact"
           icon={<LocationIcon className="naver-place-btn__icon" />}
         />
@@ -279,8 +358,13 @@ export function CostInquiryNote({
   variant: Variant;
   className?: string;
 }) {
+  const pathname = usePathname() ?? "/";
   const { phone, kakao, naverTalk } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const quiet = getConsultEmpathy(pathname).quiet;
+  const phoneVisible =
+    Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen) && !quiet;
 
   if (variant === "intro") {
     return <DecisionCard className={className} />;
@@ -288,30 +372,30 @@ export function CostInquiryNote({
 
   const placement = "cost_outro";
 
-  // 말미 — 바로 위 신뢰 블록에 같은 채널 버튼이 있으므로 버튼 줄 대신 문장 속 링크로 둔다.
   return (
     <aside
       aria-label="비용 문의 안내"
       className={`rounded-2xl border border-beige-dark bg-[var(--surface-muted)]/60 px-5 py-5 md:px-6 ${className}`.trim()}
     >
       <p className="text-[0.95rem] leading-relaxed text-navy/85 md:text-base">
-        <strong className="font-semibold text-navy">
-          맡길지 결정하기 전에, 비용부터 물어보셔도 됩니다.
-        </strong>{" "}
-        지금{" "}
-        <InlineChannel href={phoneHref} external={false} kind="phone" placement={placement}>
-          전화
-        </InlineChannel>
-        ·
-        <InlineChannel href={naverTalk} external kind="naver-talk" placement={placement}>
-          네이버 톡톡
-        </InlineChannel>
-        ·
+        <strong className="font-semibold text-navy">제가 내용을 확인하고, 필요한 것만 안내합니다.</strong>{" "}
+        맡기기 전에 물어보셔도 됩니다.{" "}
+        {phoneVisible ? (
+          <>
+            <InlineChannel href={phoneHref} external={false} kind="phone" placement={placement}>
+              전화
+            </InlineChannel>
+            ·
+          </>
+        ) : null}
         <InlineChannel href={kakao} external kind="kakao" placement={placement}>
           카카오톡
         </InlineChannel>
-        으로 상황을 한두 줄만 알려주세요. 확인이 필요한 내용과 예상 비용을 안내해
-        드리겠습니다.
+        ·
+        <InlineChannel href={naverTalk} external kind="naver-talk" placement={placement}>
+          네이버톡톡
+        </InlineChannel>
+        으로 한두 줄만 남겨 주세요.
       </p>
     </aside>
   );

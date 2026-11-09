@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AdminInsightList } from "@/components/admin/AdminInsightList";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { ChannelTrendChart } from "@/components/admin/acquisition/ChannelTrendChart";
@@ -154,7 +155,7 @@ const rateCols = {
   converted: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
     key: "cv",
     label: "상담 연결",
-    title: "전화·카카오·톡톡·예약·문의 중 하나 이상을 한 세션 수",
+    title: "전화·카카오톡·톡톡·예약·문의 중 하나 이상을 한 세션 수",
     numeric: true,
     render: (r) => formatCount(r.cv),
     sortValue: (r) => r.cv,
@@ -494,7 +495,9 @@ export default function AdminAnalyticsPage() {
         </p>
       ) : null}
 
-      {error ? <p className="admin-alert admin-alert--critical">{error}</p> : null}
+      {error ? (
+        <AdminErrorState message={error} onRetry={() => void load(days)} />
+      ) : null}
       {report && !report.storageConfigured ? (
         <p className="admin-alert admin-alert--warning">
           ADMIN_KV가 연결되지 않아 수집 데이터가 없습니다. Cloudflare Pages 바인딩을 확인하세요.
@@ -509,7 +512,9 @@ export default function AdminAnalyticsPage() {
         </p>
       ) : null}
 
-      {!report && loading ? <p className="admin-empty admin-acq-loading">유입 데이터를 불러오는 중…</p> : null}
+      {!report && loading ? (
+        <AdminLoading label="유입 데이터를 불러오는 중" />
+      ) : null}
 
       {report && t && view ? (
         <>
@@ -534,7 +539,7 @@ export default function AdminAnalyticsPage() {
               delta={deltaCount(t.cv, p && p.acqSessions ? p.cv : null)}
               spark={report.daily.map((d) => d.converted ?? 0)}
               color="#15803d"
-              note="전화·카카오·톡톡·예약·문의"
+              note="전화·카카오톡·톡톡·예약·문의"
             />
             <Kpi
               label="상담 연결률"
@@ -574,7 +579,7 @@ export default function AdminAnalyticsPage() {
                 onClick={() =>
                   downloadCsv(
                     `유입채널_${stamp}.csv`,
-                    ["채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "전화", "카카오", "톡톡", "예약", "문의", "페이지뷰"],
+                    ["채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "전화", "카카오톡", "톡톡", "예약", "문의", "페이지뷰"],
                     report.channels.map((r) => [
                       channelLabel(r.id),
                       r.sessions,

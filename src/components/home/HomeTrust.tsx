@@ -114,14 +114,14 @@ export function HomeTrust() {
               </div>
             </div>
             <div>
-              <p className="font-semibold text-navy">등기·신청 업무를 맡기려는 경우</p>
+              <p className="font-semibold text-navy">맡길 일은 여기</p>
               <p className="mt-1 text-sm leading-relaxed text-navy/70">
                 상담 뒤에 서류 작성과 등기소·법원 접수, 보정까지 맡길 일은 안윤정 법무사가
                 사안을 확인한 뒤 업무 범위, 준비서류, 보수와 공과금 구분을 안내합니다.
-                맡길지 정하기 전에 비용만 물어보셔도 됩니다. 소송 대리와 형사 변론은 변호사 업무입니다.
+                맡기기 전에 비용만 물어보셔도 되고, 상담 후 안 맡으셔도 됩니다. 소송 대리와 형사 변론은 변호사 업무입니다.
               </p>
-              <Link href="/contact" className="mt-2 inline-flex text-sm font-medium text-navy-light underline underline-offset-4">
-                다옴법무사사무소에 상담 문의
+              <Link href="/contact" className="btn-secondary mt-3 inline-flex min-h-11 items-center px-4 text-sm">
+                다옴법무사사무소에 상담하기
               </Link>
             </div>
           </div>

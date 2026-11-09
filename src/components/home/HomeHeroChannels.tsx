@@ -13,6 +13,9 @@ import { trackCTA } from "@/lib/analytics/track-cta";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 import { getContactInfo, getNaverBlogUrl } from "@/lib/contact";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { consultPasteText, getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
 import { NAVER_BLOG_MORE_POSTS_LABEL } from "@/lib/naver-blog/more-posts-cta";
 import {
   isNaverSmartPlaceConfigured,
@@ -52,7 +55,7 @@ function Chevron() {
 
 /**
  * 메인 첫 화면 좌측 패널의 연락·안내.
- * - 상담 연결(PC·태블릿만): 1분만에 문의하기(대표) + 네이버 톡톡·카카오톡·네이버예약.
+ * - 상담 연결(PC·태블릿만): 1분만에 문의하기(대표) + 네이버톡톡·카카오톡·네이버예약.
  *   전화는 패널 아래 번호 줄과 모바일 하단 바에서 안내한다.
  *   모바일은 하단 고정 상담 바가 같은 역할을 하므로 숨긴다.
  * - 안내 목록(모든 화면): 안윤정 법무사는 누구일까? · 네이버 지도 · 블로그 · 네이버 후기·사진
@@ -60,7 +63,13 @@ function Chevron() {
 export function HomeHeroChannels() {
   const { kakao, naverTalk } = getContactInfo();
   const naverOn = isNaverSmartPlaceConfigured();
+  const { status, launch } = useConsultChatLaunch();
+  const example = consultPasteText(getConsultEmpathy("/"));
   const track = (kind: string, href?: string) => trackCTA(`home-hero-${kind}`, "/", href);
+  const openChat = (kind: string, href: string) => {
+    track(kind, href);
+    launch(example);
+  };
 
   const place = (variant: NaverSmartPlaceVariant) => {
     const href = resolveNaverSmartPlaceHref(variant);
@@ -76,25 +85,6 @@ export function HomeHeroChannels() {
   };
 
   const quick: ReactNode[] = [];
-  if (naverTalk) {
-    quick.push(
-      <a
-        key="talk"
-        href={naverTalk}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-cta="naver-talk"
-        className="home-hero__chip"
-        onClick={() => track("naver-talk", naverTalk)}
-      >
-        <span className="home-hero__chip-icon home-hero__chip-icon--naver" aria-hidden>
-          <NaverIcon className="h-3.5 w-3.5" />
-        </span>
-        <span>네이버 톡톡</span>
-        <span className="sr-only"> (새 창)</span>
-      </a>,
-    );
-  }
   if (kakao) {
     quick.push(
       <a
@@ -104,12 +94,31 @@ export function HomeHeroChannels() {
         rel="noopener noreferrer"
         data-cta="kakao"
         className="home-hero__chip"
-        onClick={() => track("kakao", kakao)}
+        onClick={() => openChat("kakao", kakao)}
       >
         <span className="home-hero__chip-icon home-hero__chip-icon--kakao" aria-hidden>
           <KakaoIcon className="h-4 w-4" />
         </span>
-        <span>카카오톡</span>
+        <span>{consultChatButtonLabel(status, "카카오톡")}</span>
+        <span className="sr-only"> (새 창)</span>
+      </a>,
+    );
+  }
+  if (naverTalk) {
+    quick.push(
+      <a
+        key="talk"
+        href={naverTalk}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cta="naver-talk"
+        className="home-hero__chip"
+        onClick={() => openChat("naver-talk", naverTalk)}
+      >
+        <span className="home-hero__chip-icon home-hero__chip-icon--naver" aria-hidden>
+          <NaverIcon className="h-3.5 w-3.5" />
+        </span>
+        <span>네이버톡톡</span>
         <span className="sr-only"> (새 창)</span>
       </a>,
     );
@@ -143,7 +152,7 @@ export function HomeHeroChannels() {
           </span>
           <span className="home-hero__primary-text">
             <span className="home-hero__primary-title">{consultationInquiryCopy.ctaShort}</span>
-            <span className="home-hero__primary-sub">상황만 남기시면 필요한 순서부터 정리해 드립니다</span>
+            <span className="home-hero__primary-sub">한두 줄만 남기시면 제가 필요한 순서부터 정리합니다</span>
           </span>
           <span className="home-hero__primary-arrow" aria-hidden>
             <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4">

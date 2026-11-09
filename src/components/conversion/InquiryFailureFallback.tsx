@@ -15,7 +15,7 @@ type InquiryFailureFallbackProps = {
  */
 export function InquiryFailureFallback({
   title = "온라인 신청이 전달되지 않았습니다. 아래로 바로 연락해 주세요",
-  description = "카카오톡·네이버 톡톡·전화·네이버 예약 중 편한 방법으로 말씀해 주시면 같은 내용으로 상담을 이어가겠습니다. 작성하신 내용은 그대로 남아 있습니다.",
+  description = "카카오톡·네이버톡톡·전화·네이버예약 중 편한 방법으로 말씀해 주시면 같은 내용으로 상담을 이어가겠습니다. 작성하신 내용은 그대로 남아 있습니다.",
   pageSlug,
   className = "",
 }: InquiryFailureFallbackProps) {

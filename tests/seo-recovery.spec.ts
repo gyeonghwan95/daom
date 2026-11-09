@@ -113,7 +113,9 @@ test("홈 첫 화면의 부산 법무사 안내와 수정일 신호를 유지한
   assert.ok(home.mainText.includes("부산 법무사를 찾고 있다면"));
   assert.ok(home.mainText.includes("사무소는 부산 해운대구 센텀에 있습니다"));
   assert.ok(home.mainText.includes("법원 무료 법률상담을 찾는 경우"));
-  assert.ok(home.mainText.includes("등기·신청 업무를 맡기려는 경우"));
+  // 2026-11 홈 안내 문구 개편: "등기·신청 업무를 맡기려는 경우" 제목이 "맡길 일은 여기"로 바뀌었다(본문 설명은 그대로)
+  assert.ok(home.mainText.includes("맡길 일은 여기"));
+  assert.ok(home.mainText.includes("업무 범위, 준비서류, 보수와 공과금 구분"));
   assert.ok(home.links.some((link: { href: string; text: string }) =>
     link.href === "/contact" && link.text.includes("다옴법무사사무소"),
   ));

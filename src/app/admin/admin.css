@@ -1,5 +1,26 @@
 /* Admin console — loaded only from src/app/admin/layout.tsx */
 
+body:has(.admin-shell) {
+  padding-bottom: 0;
+}
+
+.admin-skip {
+  position: absolute;
+  left: -999px;
+  top: 0.75rem;
+  z-index: 80;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.45rem;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.admin-skip:focus {
+  left: 0.75rem;
+}
+
 /* ── Admin console shell ── */
 .admin-shell {
   display: grid;
@@ -76,6 +97,33 @@
   font-size: 0.68rem;
   font-weight: 500;
   color: #94a3b8;
+}
+.admin-shell__brand .admin-shell__kv {
+  display: inline-block;
+  margin-top: 0.45rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.admin-shell__kv--ok {
+  background: #14532d;
+  color: #bbf7d0;
+}
+.admin-shell__kv--off {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+.admin-shell__group {
+  margin-bottom: 0.55rem;
+}
+.admin-shell__group-label {
+  margin: 0.45rem 0.75rem 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  text-transform: uppercase;
 }
 .admin-shell__link {
   display: block;
@@ -183,6 +231,8 @@
   }
   .admin-shell__nav nav {
     grid-row: 2;
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
   }
   .admin-shell__logout {
     grid-row: 3;
@@ -217,6 +267,13 @@
   }
   .admin-shell__link-short {
     display: inline;
+  }
+  .admin-shell__group {
+    display: contents;
+  }
+  .admin-shell__group-label,
+  .admin-shell__kv {
+    display: none;
   }
 }
 @media (min-width: 960px) {
@@ -667,6 +724,14 @@
   color: #0f172a;
   border: 1px solid #cbd5e1;
 }
+.admin-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.admin-btn:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 2px;
+}
 .admin-page-identity__title {
   font-weight: 700;
   font-size: 0.8125rem;
@@ -705,9 +770,11 @@ a.admin-page-identity__path:hover {
   color: #334155;
 }
 .admin-badge--ok,
-.admin-badge--up { background: #dcfce7; color: #166534; }
+.admin-badge--up,
+.admin-badge--success { background: #dcfce7; color: #166534; }
 .admin-badge--warn,
-.admin-badge--down { background: #fee2e2; color: #991b1b; }
+.admin-badge--down,
+.admin-badge--failed { background: #fee2e2; color: #991b1b; }
 .admin-badge--unknown { background: #f1f5f9; color: #475569; }
 .admin-badge--low_data { background: #f8fafc; color: #64748b; }
 .admin-badge--stable { background: #eff6ff; color: #1d4ed8; }
@@ -1866,4 +1933,87 @@ a.admin-page-identity__path:hover {
   margin: 0;
   color: #475569;
   line-height: 1.5;
+}
+
+.admin-login__brand {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+.admin-login__form {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+}
+.admin-login__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.admin-login__form .admin-input {
+  max-width: none;
+}
+.admin-login__error {
+  margin: 0.65rem 0 0;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+}
+.admin-login__submit {
+  width: 100%;
+  margin-top: 0.9rem;
+}
+
+.admin-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+}
+@media (min-width: 720px) {
+  .admin-skeleton-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.admin-skeleton {
+  display: block;
+  height: 4.2rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(90deg, #e2e8f0 0%, #f8fafc 45%, #e2e8f0 100%);
+  background-size: 200% 100%;
+  animation: admin-shimmer 1.2s ease-in-out infinite;
+}
+@keyframes admin-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-skeleton {
+    animation: none;
+  }
+}
+
+.admin-error-state {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
+}
+.admin-error-state p {
+  margin: 0;
+}
+
+.admin-refresh-panel {
+  margin-bottom: 1rem;
+}
+.admin-refresh-panel .admin-prose {
+  margin-bottom: 0.35rem;
+}
+.admin-refresh-panel .admin-btn {
+  margin-top: 0.75rem;
+}
+.admin-refresh-panel .admin-alert {
+  margin: 0.75rem 0 0;
 }

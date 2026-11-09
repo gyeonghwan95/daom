@@ -6,17 +6,17 @@ export const CONTACT_INQUIRY_PATH = "/contact/inquiry" as const;
 
 export const consultationInquiryCopy = {
   /** 문의 폼으로 가는 버튼 (히어로·하단·플로팅 공통) */
-  ctaPrimary: "1분만에 문의하기",
+  ctaPrimary: "1분 문의",
   /** 짧은 버튼 — 히어로·칩도 동일 라벨 */
-  ctaShort: "1분만에 문의하기",
+  ctaShort: "1분 문의",
   /** 신청서 작성 유도 */
-  ctaForm: "1분만에 문의하기",
+  ctaForm: "1분 문의",
   /** 본문·힌트 */
   oneMinute:
-    "업무명을 몰라도 됩니다. 현재 상황만 남겨 주시면 필요한 절차부터 안내합니다.",
+    "한두 줄만 남겨 주세요. 제가 확인하고 필요한 순서만 말씀드립니다.",
   oneMinuteShort: "서류가 없어도 상황만 남겨 주시면 됩니다.",
   /** 사이드바·카드 힌트 */
-  hintForm: "상황만 적어 보내기",
+  hintForm: "이렇게만 보내도 됩니다",
 } as const;
 
 export function contactInquiryHref(query?: Record<string, string>): string {

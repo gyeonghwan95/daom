@@ -71,6 +71,13 @@ const GALLERY_PREFIX = "/image/cards/gallery/";
 const GALLERY_WIDTHS = [384, 640];
 /** 페이지별 4:3 대표 썸네일 — 크기는 src/lib/seo/page-thumbnail-size.ts 고정값 */
 const isPageThumb = (key) => key.startsWith("/image/og-pages/") || key.startsWith("/image/hero/");
+/**
+ * 대표 페이지 썸네일(/image/hero/, og:image가 아니라 본문 시작에만 쓴다)은 모바일용 파생본을 만든다.
+ * 1280px 원본(100~300KB)을 358px 폭 화면에 그대로 내려받던 것을 줄이는 용도다. 폭은 640·960 둘뿐이라
+ * 한 장당 파일 2개(약 120개)만 늘어난다. og-pages(1,500여 장)는 OG 이미지 겸용이고 파일 수 한도(20,000) 때문에 만들지 않는다.
+ */
+const HERO_PREFIX = "/image/hero/";
+const HERO_WIDTHS = [640, 960];
 
 /**
  * 1200px 1:1 썸네일(og·카드·본문 대표 이미지)은 파생본을 만들지 않고 원본 JPG를 그대로 쓴다.
@@ -123,7 +130,23 @@ const ogKey = (key) => `/_img${key.replace(SOURCE_EXT, "")}.og.jpg`;
 async function processFile(file) {
   const key = toKey(file);
   // 페이지별 대표 썸네일은 파생본·크기 표가 모두 필요 없다(share-image.ts가 크기 고정) — sharp를 열지 않는다
-  if (isPageThumb(key)) return { key, widths: [], written: 0, dims: {} };
+  if (isPageThumb(key)) {
+    if (!key.startsWith(HERO_PREFIX)) return { key, widths: [], written: 0, dims: {} };
+    const heroMtime = fs.statSync(file).mtimeMs;
+    let heroWritten = 0;
+    for (const width of HERO_WIDTHS) {
+      const dest = variantFile(key, width);
+      if (!force && fs.existsSync(dest) && fs.statSync(dest).mtimeMs >= heroMtime) continue;
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      await sharp(file)
+        .rotate()
+        .resize({ width, withoutEnlargement: true })
+        .webp({ quality: QUALITY, effort: 4 })
+        .toFile(dest);
+      heroWritten += 1;
+    }
+    return { key, widths: HERO_WIDTHS, written: heroWritten, dims: {} };
+  }
   const size = await displaySize(file);
   const referenced = EXTRA_SOURCES.has(file) || isReferencedInSource(key);
   const widths = !referenced || isSquareThumbnail(key)

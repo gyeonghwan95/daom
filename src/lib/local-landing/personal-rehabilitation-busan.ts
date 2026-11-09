@@ -180,7 +180,7 @@ export function buildBusanPersonalRehabilitationPage(
       { href: "/개인회생비용", label: "개인회생 비용 안내" },
       { href: "/부산회생법원개인회생", label: "부산회생법원 개인회생 안내" },
       { href: "/부산개인파산", label: "개인파산·면책 안내" },
-      { href: "/contact/inquiry?field=personal-rehabilitation", label: "1분만에 문의하기" },
+      { href: "/contact/inquiry?field=personal-rehabilitation", label: "1분 문의" },
     ],
     relatedRegionLinks: [
       { href: "/북구개인회생", label: "북구 개인회생" },

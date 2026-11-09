@@ -66,7 +66,7 @@ export function B2BHero({
           placement="page_hero"
           tone="brand"
           size="lg"
-          label="네이버 예약"
+          label="네이버예약"
           className="!rounded-lg px-6 print:hidden"
         />
       </div>
@@ -83,7 +83,7 @@ export function B2BHero({
         </ul>
       ) : null}
       {trustItems.length > 0 ? (
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
           {trustItems.map((item) => (
             <li
               key={item.label}

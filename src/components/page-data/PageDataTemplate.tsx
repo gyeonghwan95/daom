@@ -423,7 +423,14 @@ export function PageDataTemplate({
             안내해 드립니다.
           </p>
         ) : null}
-        <div className="grid gap-4 md:grid-cols-2">
+        <div
+          className={
+            // 카드가 하나뿐이면 2열 그리드의 반쪽에 갇히지 않고 한 줄을 모두 쓴다
+            page.consultationExamples && page.consultationExamples.length > 1
+              ? "grid gap-4 md:grid-cols-2"
+              : "grid gap-4"
+          }
+        >
           {(page.consultationExamples ?? [page.consultationExample]).map(
             (example) => (
               <InfoCard key={example.title} variant="plain">

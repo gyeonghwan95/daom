@@ -126,7 +126,7 @@ function stripVolatileMarkup(html) {
 
 export function normalizeBody(text) {
   return String(text || "")
-    .replace(/현재 카카오·네이버톡톡만 가능/g, "[CONSULT_STATUS]")
+    .replace(/현재 카카오(?:톡)?·네이버톡톡만 가능/g, "[CONSULT_STATUS]")
     .replace(/현재 상담가능/g, "[CONSULT_STATUS]")
     .replace(/전화상담은 (오늘|내일|토요일|일요일|월요일) 9시부터 가능/g, "[CONSULT_NEXT]")
     .replace(/\s+/g, " ")

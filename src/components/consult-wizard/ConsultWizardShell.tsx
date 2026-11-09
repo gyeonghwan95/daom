@@ -1,6 +1,7 @@
 "use client";
 
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { PostInquiryNextSteps } from "@/components/consultation/PostInquiryNextSteps";
 import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -16,17 +17,17 @@ import {
 } from "@/components/quick-inquiry/useDialogA11y";
 import { useQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
-import { getContactInfo } from "@/lib/contact";
 import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 import {
+  CONSULT_SITUATION_GROUPS,
   CONSULT_SITUATIONS,
   CONTACT_PREF_OPTIONS,
   CONTACT_TIME_OPTIONS,
   getDocsForSituations,
   type ConsultSituationId,
 } from "@/lib/consult-wizard/catalog";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { consultWizardCopy as copy } from "@/lib/consult-wizard/copy";
 import {
   buildConsultMessage,
@@ -37,6 +38,7 @@ import {
   clearConsultDraft,
   createEmptyDraft,
   loadConsultDraft,
+  migrateWizardStep,
   saveConsultDraft,
 } from "@/lib/consult-wizard/storage";
 import {
@@ -48,8 +50,8 @@ import { PrivacyConsentLabel } from "@/components/legal/PrivacyConsentLabel";
 
 type Phase = "form" | "success" | "review";
 
-/** 상황 → 서류 → 연락처에서 바로 신청(별도 확인 단계 없음). 신청 후 '다시 확인하기'로 요약을 본다. */
-const LAST_STEP = 3;
+/** 상황(+선택 서류) → 연락처에서 바로 신청. 신청 후 '다시 확인하기'로 요약을 본다. */
+const LAST_STEP = 2;
 /** 신청을 눌렀는데 보안 확인 토큰이 아직 없으면 오류 대신 잠시 기다린다 */
 const TOKEN_WAIT_MS = 8000;
 
@@ -61,15 +63,13 @@ function stepTitle(step: number, phase: Phase): string {
   if (phase === "success") return copy.successTitle;
   if (phase === "review") return copy.step4Title;
   if (step === 1) return copy.step1Title;
-  if (step === 2) return copy.step2Title;
-  return copy.step3Title;
+  return copy.step2Title;
 }
 
 function stepDesc(step: number, phase: Phase): string | null {
   if (phase !== "form") return null;
   if (step === 1) return copy.step1Hint;
-  if (step === 2) return copy.step2Hint;
-  return copy.step3Privacy;
+  return copy.step2Privacy;
 }
 
 export function ConsultWizardShell() {
@@ -115,8 +115,7 @@ export function ConsultWizardShell() {
         // 버튼이 넘기는 note는 유입 위치 메타데이터 — 고객이 쓴 메모를 미리 채우거나 덮어쓰지 않는다
         situationNote: saved?.situationNote || "",
         entryNote: presetNote || "",
-        // 예전 4단계(확인) 초안은 마지막 단계로 맞춘다
-        step: presetSituationIds.length || presetNote ? 1 : (Math.min(saved?.step ?? 1, LAST_STEP) as 1 | 2 | 3),
+        step: presetSituationIds.length || presetNote ? 1 : migrateWizardStep(saved?.step),
       }),
     );
     setPhase("form");
@@ -204,10 +203,16 @@ export function ConsultWizardShell() {
     () => getDocsForSituations(draft.situationIds),
     [draft.situationIds],
   );
+  const empathyExample = getConsultEmpathy(
+    (() => {
+      try {
+        return new URL(pageUrl).pathname;
+      } catch {
+        return "";
+      }
+    })(),
+  ).example;
 
-  const { phone, kakao } = getContactInfo();
-  const { isOpen, isResolved } = useConsultationAvailability();
-  const phoneReady = Boolean(phone) && (!isResolved || isOpen);
   const summary = useMemo(() => buildConsultSummaryLines(draft), [draft]);
 
   const update = (patch: Partial<ConsultWizardDraft>) => {
@@ -237,7 +242,7 @@ export function ConsultWizardShell() {
   const validateStep = (step: number): boolean => {
     const nextErrors: Record<string, string> = {};
     // 성함은 선택 — 연락처와 동의만 있으면 신청된다(메시지에는 '미기재'로 남는다)
-    if (step === 3) {
+    if (step === LAST_STEP) {
       if (!clientParseContact(draft.contact)) {
         nextErrors.contact = "전화번호 또는 이메일을 확인해 주세요.";
       }
@@ -255,7 +260,7 @@ export function ConsultWizardShell() {
       return;
     }
     if (!validateStep(draft.step)) return;
-    if (draft.step < LAST_STEP) update({ step: (draft.step + 1) as 1 | 2 | 3 });
+    if (draft.step < LAST_STEP) update({ step: (draft.step + 1) as 1 | 2 });
   };
 
   const goBack = () => {
@@ -319,15 +324,15 @@ export function ConsultWizardShell() {
           setFormError(
             "보안 확인이 만료되었거나 실패했습니다. 다시 확인해 주세요.",
           );
-          update({ step: 3 });
+          update({ step: LAST_STEP });
         } else if (result.field === "contact") {
           setErrors({ contact: result.message });
           setFormError("연락처를 다시 확인해 주세요.");
-          update({ step: 3 });
+          update({ step: LAST_STEP });
         } else if (result.field === "consent") {
           setErrors({ consent: result.message });
           setFormError("개인정보 수집·이용 동의가 필요합니다.");
-          update({ step: 3 });
+          update({ step: LAST_STEP });
         } else {
           setFormError(result.message);
         }
@@ -454,7 +459,7 @@ export function ConsultWizardShell() {
                   />
                 </svg>
               </div>
-              <p className="consult-wizard__success-text">{copy.successBody}</p>
+              <PostInquiryNextSteps />
               <p className="consult-wizard__success-text consult-wizard__success-hint">
                 {copy.kakaoPhotoHint}
               </p>
@@ -463,26 +468,21 @@ export function ConsultWizardShell() {
                   buttonClassName="btn-primary min-h-11 justify-center"
                   hintClassName="consult-wizard__success-text consult-wizard__success-hint"
                 />
-                {kakao && phoneReady ? (
-                  <a
-                    href={kakao}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary min-h-11 justify-center"
+                <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-[0.9rem]">
+                  <button
+                    type="button"
+                    className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+                    onClick={() => setPhase("review")}
                   >
-                    {copy.kakaoContinue}
-                  </a>
-                ) : null}
-                <button
-                  type="button"
-                  className="btn-secondary min-h-11"
-                  onClick={() => setPhase("review")}
-                >
-                  {copy.reviewAgain}
-                </button>
-                <Link href="/" className="btn-secondary min-h-11 justify-center">
-                  {copy.goHome}
-                </Link>
+                    {copy.reviewAgain}
+                  </button>
+                  <Link
+                    href="/"
+                    className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+                  >
+                    {copy.goHome}
+                  </Link>
+                </div>
               </div>
             </div>
           ) : null}
@@ -505,41 +505,48 @@ export function ConsultWizardShell() {
                 role="group"
                 aria-label={copy.step1Title}
               >
-                {CONSULT_SITUATIONS.map((item) => {
-                  const selected = draft.situationIds.includes(item.id);
-                  const recommended = presetSituationIds.includes(item.id);
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      className={`consult-wizard__option${selected ? " is-selected" : ""}${recommended ? " is-recommended" : ""}`}
-                      aria-pressed={selected}
-                      onClick={() =>
-                        update({
-                          situationIds: toggleId(
-                            draft.situationIds,
-                            item.id as ConsultSituationId,
-                          ),
-                        })
-                      }
-                    >
-                      <span
-                        className={`consult-wizard__tick${selected ? " is-on" : ""}`}
-                        aria-hidden
-                      />
-                      <span className="consult-wizard__option-text">
-                        <span className="consult-wizard__option-label">
-                          {item.label}
-                        </span>
-                        {recommended ? (
-                          <span className="consult-wizard__option-rec">
-                            이 페이지 추천
+                {CONSULT_SITUATION_GROUPS.map((group) => (
+                  <div key={group.title} className="consult-wizard__group">
+                    <p className="consult-wizard__group-label">{group.title}</p>
+                    {group.ids.map((id) => {
+                      const item = CONSULT_SITUATIONS.find((s) => s.id === id);
+                      if (!item) return null;
+                      const selected = draft.situationIds.includes(item.id);
+                      const recommended = presetSituationIds.includes(item.id);
+                      return (
+                        <button
+                          key={item.id}
+                          type="button"
+                          className={`consult-wizard__option${selected ? " is-selected" : ""}${recommended ? " is-recommended" : ""}`}
+                          aria-pressed={selected}
+                          onClick={() =>
+                            update({
+                              situationIds: toggleId(
+                                draft.situationIds,
+                                item.id as ConsultSituationId,
+                              ),
+                            })
+                          }
+                        >
+                          <span
+                            className={`consult-wizard__tick${selected ? " is-on" : ""}`}
+                            aria-hidden
+                          />
+                          <span className="consult-wizard__option-text">
+                            <span className="consult-wizard__option-label">
+                              {item.label}
+                            </span>
+                            {recommended ? (
+                              <span className="consult-wizard__option-rec">
+                                이 페이지 추천
+                              </span>
+                            ) : null}
                           </span>
-                        ) : null}
-                      </span>
-                    </button>
-                  );
-                })}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ))}
               </div>
               {errors.situations ? (
                 <p className="quick-inquiry__error" role="alert">
@@ -556,64 +563,62 @@ export function ConsultWizardShell() {
                   rows={3}
                   value={draft.situationNote}
                   onChange={(e) => update({ situationNote: e.target.value })}
-                  placeholder={copy.step1NotePlaceholder}
+                  placeholder={empathyExample || copy.step1NotePlaceholder}
                   maxLength={400}
                 />
                 <span className="consult-wizard__field-hint">
                   {copy.step1NoteHint}
                 </span>
               </label>
+              <details className="consult-wizard__docs">
+                <summary>{copy.step1DocsSummary}</summary>
+                <div
+                  className="consult-wizard__options"
+                  role="group"
+                  aria-label={copy.step1DocsSummary}
+                >
+                  {docs.map((doc) => {
+                    const selected = draft.documentIds.includes(doc.id);
+                    const isNone = doc.id === "none-ready";
+                    return (
+                      <button
+                        key={doc.id}
+                        type="button"
+                        className={`consult-wizard__option${selected ? " is-selected" : ""}${isNone ? " is-none" : ""}`}
+                        aria-pressed={selected}
+                        onClick={() => {
+                          if (isNone) {
+                            update({
+                              documentIds: selected ? [] : ["none-ready"],
+                            });
+                            return;
+                          }
+                          const withoutNone = draft.documentIds.filter(
+                            (id) => id !== "none-ready",
+                          );
+                          update({
+                            documentIds: toggleId(withoutNone, doc.id),
+                          });
+                        }}
+                      >
+                        <span
+                          className={`consult-wizard__tick${selected ? " is-on" : ""}`}
+                          aria-hidden
+                        />
+                        <span className="consult-wizard__option-text">
+                          <span className="consult-wizard__option-label">
+                            {doc.label}
+                          </span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </details>
             </div>
           ) : null}
 
           {phase === "form" && draft.step === 2 ? (
-            <div className="consult-wizard__step">
-              <div
-                className="consult-wizard__options"
-                role="group"
-                aria-label={copy.step2Title}
-              >
-                {docs.map((doc) => {
-                  const selected = draft.documentIds.includes(doc.id);
-                  const isNone = doc.id === "none-ready";
-                  return (
-                    <button
-                      key={doc.id}
-                      type="button"
-                      className={`consult-wizard__option${selected ? " is-selected" : ""}${isNone ? " is-none" : ""}`}
-                      aria-pressed={selected}
-                      onClick={() => {
-                        if (isNone) {
-                          update({
-                            documentIds: selected ? [] : ["none-ready"],
-                          });
-                          return;
-                        }
-                        const withoutNone = draft.documentIds.filter(
-                          (id) => id !== "none-ready",
-                        );
-                        update({
-                          documentIds: toggleId(withoutNone, doc.id),
-                        });
-                      }}
-                    >
-                      <span
-                        className={`consult-wizard__tick${selected ? " is-on" : ""}`}
-                        aria-hidden
-                      />
-                      <span className="consult-wizard__option-text">
-                        <span className="consult-wizard__option-label">
-                          {doc.label}
-                        </span>
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ) : null}
-
-          {phase === "form" && draft.step === 3 ? (
             <div className="consult-wizard__step">
               <p className="quick-inquiry__caution" id={ids.cautionId}>
                 {copy.step3Caution}

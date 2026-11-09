@@ -75,7 +75,7 @@ export function HomeContactClosing() {
               ) : null}
 
               <p className="home-closing__channel-hint">
-                전화 · 카카오톡 · 네이버 톡톡 중 편한 방법 하나면 됩니다.
+                전화 · 카카오톡 · 네이버톡톡 중 편한 방법 하나면 됩니다.
               </p>
 
               <div className="home-closing__channels">

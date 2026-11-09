@@ -1,34 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
+import { useAdminResource } from "@/components/admin/useAdminResource";
+import { formatAdminActivityAt } from "@/lib/admin-ops/utils";
 import type { EmailLogEntry } from "@/lib/admin-ops/types";
-import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 export default function AdminEmailPage() {
-  const [logs, setLogs] = useState<EmailLogEntry[]>([]);
-  const [message, setMessage] = useState<string | null>(null);
+  const { data, error, loading, refreshing, reload, retry } = useAdminResource<{
+    logs?: EmailLogEntry[];
+    message?: string;
+  }>("/api/admin/email");
 
-  useEffect(() => {
-    let cancelled = false;
-    adminFetchJson<{ logs?: EmailLogEntry[]; message?: string }>(
-      "/api/admin/email",
-    ).then((result) => {
-      if (cancelled) return;
-      if (!result.ok) {
-        setMessage(result.message);
-        return;
-      }
-      setLogs(result.data?.logs || []);
-      setMessage(result.data?.message || null);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  if (error && !data) {
+    return (
+      <div>
+        <AdminPageHeader title="메일·알림" />
+        <AdminErrorState message={error} onRetry={retry} />
+      </div>
+    );
+  }
 
+  if (loading || !data) {
+    return (
+      <div>
+        <AdminPageHeader title="메일·알림" />
+        <AdminLoading label="메일 로그를 불러오는 중" />
+      </div>
+    );
+  }
+
+  const logs = data.logs || [];
   const failed = logs.filter((l) => l.status === "failed");
   const success = logs.filter((l) => l.status === "success").length;
   const total = logs.length;
@@ -36,7 +40,11 @@ export default function AdminEmailPage() {
 
   return (
     <div>
-      <AdminPageHeader title="메일·알림" />
+      <AdminPageHeader
+        title="메일·알림"
+        onRefresh={reload}
+        refreshing={refreshing}
+      />
       <p className="admin-prose">
         수신 주소는 마스킹되고 본문은 저장하지 않습니다. 강의문의·협업문의·일반문의는
         유형 열에서 구분합니다.
@@ -48,7 +56,7 @@ export default function AdminEmailPage() {
           시크릿을 확인하세요.
         </p>
       ) : null}
-      {message ? <p className="admin-alert admin-alert--info">{message}</p> : null}
+      {data.message ? <p className="admin-alert admin-alert--info">{data.message}</p> : null}
 
       <div className="admin-metric-grid">
         <div className="admin-metric">
@@ -81,18 +89,27 @@ export default function AdminEmailPage() {
               </tr>
             </thead>
             <tbody>
-              {logs.map((l) => (
-                <tr key={l.id}>
-                  <td>{l.timestamp}</td>
-                  <td>{l.messageType}</td>
-                  <td>
-                    {l.path ? <PageIdentity path={l.path} showIntent /> : "—"}
-                  </td>
-                  <td>{l.provider}</td>
-                  <td>{l.status}</td>
-                  <td>{l.errorSummary || "—"}</td>
-                </tr>
-              ))}
+              {logs.map((l) => {
+                const when = formatAdminActivityAt(l.timestamp);
+                return (
+                  <tr key={l.id}>
+                    <td title={when.title}>
+                      {when.dateLabel} {when.timeLabel}
+                    </td>
+                    <td>{l.messageType}</td>
+                    <td>
+                      {l.path ? <PageIdentity path={l.path} showIntent /> : "—"}
+                    </td>
+                    <td>{l.provider}</td>
+                    <td>
+                      <span className={`admin-badge admin-badge--${l.status}`}>
+                        {l.status === "success" ? "성공" : "실패"}
+                      </span>
+                    </td>
+                    <td>{l.errorSummary || "—"}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         )}

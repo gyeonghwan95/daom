@@ -113,7 +113,7 @@ export const 부산공유물분할등기Override: SearchIntentContent = {
     {
       question: "해운대·기장도 가능한가요?",
       answer:
-        "가능합니다. 소재지 관할 등기소만 다르며 상담은 전화·카카오로 시작할 수 있습니다.",
+        "가능합니다. 소재지 관할 등기소만 다르며 상담은 전화·카카오톡으로 시작할 수 있습니다.",
     },
   ],
   relatedCaseLinks: [],

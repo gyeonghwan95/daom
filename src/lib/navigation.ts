@@ -70,6 +70,8 @@ const servicesNavItem: NavItem = {
         { href: "/부산상속등기", label: "상속등기" },
         { href: "/부산상속포기", label: "상속포기" },
         { href: "/부산한정승인", label: "한정승인" },
+        { href: "/가족후견", label: "성년후견" },
+        { href: "/해외거주상속인", label: "해외 거주 상속인" },
         { href: "/부산상속법무사", label: "상속 절차 선택" },
       ],
     },
@@ -78,6 +80,9 @@ const servicesNavItem: NavItem = {
       links: [
         { href: "/부산등기법무사", label: "등기업무" },
         { href: "/부산부동산등기", label: "부동산등기" },
+        { href: "/부산증여등기", label: "증여등기" },
+        { href: "/부산경매낙찰등기", label: "경매 낙찰등기" },
+        { href: "/부산말소등기", label: "말소등기" },
         { href: "/부산건물등기", label: "건물·건축물등기" },
         { href: "/부산공탁", label: "공탁" },
       ],

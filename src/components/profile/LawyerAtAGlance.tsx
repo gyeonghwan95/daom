@@ -43,22 +43,44 @@ function Tile({
   title,
   children,
   className = "",
+  external = false,
+  more = "자세히 보기 →",
 }: {
   href: string;
   label: string;
   title: string;
   children?: React.ReactNode;
   className?: string;
+  external?: boolean;
+  more?: string;
 }) {
-  return (
-    <Link
-      href={href}
-      className={`group flex flex-col rounded-2xl border border-beige-dark bg-white p-4 no-underline transition hover:-translate-y-0.5 hover:border-navy/25 hover:shadow-md ${className}`}
-    >
+  const classNameFull = `group flex flex-col rounded-2xl border border-beige-dark bg-white p-4 no-underline transition hover:-translate-y-0.5 hover:border-navy/25 hover:shadow-md ${className}`;
+  const body = (
+    <>
       <span className="text-xs font-bold tracking-wide text-navy-light">{label}</span>
       <span className="mt-1 text-[1.02rem] font-bold leading-snug text-navy">{title}</span>
       {children}
-      <span className="mt-auto pt-3 text-sm font-semibold text-navy-light group-hover:text-navy">자세히 보기 →</span>
+      <span className="mt-auto pt-3 text-sm font-semibold text-navy-light group-hover:text-navy">
+        {more}
+      </span>
+    </>
+  );
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classNameFull}
+      >
+        {body}
+        <span className="sr-only"> (새 창)</span>
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={classNameFull}>
+      {body}
     </Link>
   );
 }
@@ -128,7 +150,9 @@ export function LawyerAtAGlance() {
         </Tile>
 
         <Tile
-          href="/reviews"
+          href={reviewFeed.reviewUrl}
+          external
+          more="네이버 플레이스에서 보기 →"
           label={reviewFeed.stats.totalCount > 0 ? "네이버 방문자 후기" : "고객 후기"}
           title="상담받은 분들이 남긴 이야기"
         >

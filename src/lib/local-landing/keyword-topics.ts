@@ -457,7 +457,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산법인정기점검", label: "법인등기 정기점검 확인표" },
       { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
       { href: "/부산법인등기비용", label: "부산 법인등기 비용 구성" },
-      { href: "/contact/inquiry", label: "1분만에 문의하기" },
+      { href: "/contact/inquiry", label: "1분 문의" },
     ],
     relatedFaqLinks: [
       { href: "/faq/company-establishment-documents-faq", label: "법인설립 서류" },
@@ -1145,7 +1145,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/법인정관변경", label: "정관 변경 필요 여부" },
       { href: "/situations/임원-임기-만료", label: "임원 임기 만료 상황 안내" },
       { href: "/tools/director-change-penalty-deadline", label: "임원변경 과태료 기한 계산" },
-      { href: "/contact/inquiry", label: "1분만에 문의하기" },
+      { href: "/contact/inquiry", label: "1분 문의" },
     ],
     relatedFaqLinks: [
       { href: "/faq/director-change-deadline-faq", label: "임원변경 기한·과태료 FAQ" },

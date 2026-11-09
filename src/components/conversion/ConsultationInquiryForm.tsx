@@ -3,7 +3,7 @@
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
 import { useCallback, useId, useMemo, useState } from "react";
 import Link from "next/link";
-import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
+import { PostInquiryNextSteps } from "@/components/consultation/PostInquiryNextSteps";
 import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import { InquiryAltChannels } from "@/components/conversion/InquiryAltChannels";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
@@ -23,7 +23,6 @@ import { trackB2BEvent } from "@/lib/analytics/track-b2b";
 import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 import {
   getContactInfo,
-  getDirectConsultationChannels,
   getPhoneHref,
 } from "@/lib/contact";
 import { consultationCopy } from "@/lib/consultation";
@@ -152,7 +151,6 @@ export function ConsultationInquiryForm({
   costGuideRequested = false,
   inquiryCluster,
 }: ConsultationInquiryFormProps) {
-  const channels = getDirectConsultationChannels();
   const { phone } = getContactInfo();
   const phoneHref = phone ? getPhoneHref(phone) : "/contact";
   const formId = useId();
@@ -315,12 +313,12 @@ export function ConsultationInquiryForm({
           </svg>
         </div>
         <h2 className="inquiry-form__success-title">
-          상담 신청이 정상적으로 전달되었습니다
+          남겨 주셨습니다
         </h2>
-        <p className="inquiry-form__success-text">
-          남겨주신 내용을 확인한 뒤 연락처로 안내드리겠습니다.
-          {fieldLabel ? ` (상담 분야: ${fieldLabel})` : ""}
-        </p>
+        {fieldLabel ? (
+          <p className="inquiry-form__success-text">상담 분야: {fieldLabel}</p>
+        ) : null}
+        <PostInquiryNextSteps />
 
         <PostInquiryPhoneCta
           className="inquiry-form__success-call"
@@ -329,21 +327,10 @@ export function ConsultationInquiryForm({
           phoneNumClassName="inquiry-form__phone-num"
         />
 
-        <div className="inquiry-form__success-channels">
-          <p className="inquiry-form__section-label">다른 연락 방법</p>
-          <ConsultationButtons
-            channels={channels}
-            theme="light"
-            layout="grid"
-            naverPlace
-            naverPlacement="consult_page"
-          />
-        </div>
-
         <div className="inquiry-form__success-actions">
           <button
             type="button"
-            className="btn-secondary min-h-11"
+            className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
             onClick={() => {
               setSubmitted(false);
               setForm({
@@ -359,7 +346,10 @@ export function ConsultationInquiryForm({
           >
             새 상담 신청 작성
           </button>
-          <Link href="/" className="btn-secondary min-h-11 inline-flex items-center justify-center">
+          <Link
+            href="/"
+            className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+          >
             홈으로 돌아가기
           </Link>
         </div>
@@ -389,7 +379,7 @@ export function ConsultationInquiryForm({
         <ul className="inquiry-form__reassure">
           <li>제출하시면 사무소 이메일로 안전하게 전달됩니다</li>
           <li>남겨 주신 내용은 사무소 담당자에게 메시지·이메일로 전달되며, 사이트 데이터베이스에는 따로 저장하지 않습니다.</li>
-          <li>급하시면 전화·카카오톡·톡톡도 이용하실 수 있습니다</li>
+          <li>급하시면 전화·카카오톡·네이버톡톡도 이용하실 수 있습니다</li>
         </ul>
       </header>
 
@@ -733,7 +723,7 @@ export function ConsultationInquiryForm({
         placement="consult_page"
         pageSlug="contact-inquiry"
         title="신청서 대신 바로 연락하셔도 됩니다"
-        description="작성이 번거로우시면 카카오톡·네이버 톡톡으로 상황만 남기시거나, 네이버 예약으로 방문 상담 일정을 잡으실 수 있습니다."
+        description="작성이 번거로우시면 카카오톡·네이버톡톡으로 상황만 남기시거나, 네이버예약으로 방문 상담 일정을 잡으실 수 있습니다."
         className="mt-5"
       />
 

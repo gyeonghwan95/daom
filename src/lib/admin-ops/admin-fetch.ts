@@ -32,6 +32,7 @@ export async function adminFetchJson<T = unknown>(
     ok?: boolean;
     data?: T;
     message?: string;
+    error?: string;
     code?: string;
   } = {};
   try {
@@ -46,7 +47,7 @@ export async function adminFetchJson<T = unknown>(
 
   if (!res.ok || json.ok === false) {
     const code = json.code;
-    let message = json.message;
+    let message = json.message || json.error;
     if (!message) {
       if (res.status === 401 || code === "unauthorized") {
         message = "로그인이 필요합니다. 다시 로그인해 주세요.";

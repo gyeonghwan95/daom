@@ -177,7 +177,7 @@ async function fetchPage(pathname: string): Promise<Snapshot> {
     loadingBeforeH1: loadingPhrase && (h1Pos < 0 || loadingPos < h1Pos),
     footerBeforeH1: footerPos >= 0 && h1Pos >= 0 && footerPos < h1Pos,
     footerBeforeMain: footerPos >= 0 && mainPos >= 0 && footerPos < mainPos,
-    ctaClosedDup: countPhrase(html, "현재 카카오·네이버톡톡만 가능"),
+    ctaClosedDup: countPhrase(html, "현재 카카오톡·네이버톡톡만 가능"),
     keywordListHint:
       /관련 키워드|검색의도 안내|검색의도 SEO/.test(html) ||
       /<ul[^>]*>[\s\S]{0,200}부산 상속 법무사[\s\S]{0,200}부산 상속등기/.test(

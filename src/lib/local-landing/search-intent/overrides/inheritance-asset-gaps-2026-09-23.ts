@@ -368,7 +368,7 @@ export const 예금상속인출절차Override: SearchIntentContent = {
     {
       question: "비대면으로 가능한가요?",
       answer:
-        "서류 점검·순서 안내는 전화·카카오로 가능합니다. 은행 방문·원본 제출은 기관 요구를 따릅니다.",
+        "서류 점검·순서 안내는 전화·카카오톡으로 가능합니다. 은행 방문·원본 제출은 기관 요구를 따릅니다.",
     },
   ],
   relatedCaseLinks: [inheritanceCase],

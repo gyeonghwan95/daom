@@ -32,7 +32,7 @@ export function InquiryNaverCtaPair({
   placement,
   layout = "row",
   size = "md",
-  naverLabel = "네이버 예약",
+  naverLabel = "네이버예약",
   className = "",
   showNaver = true,
   naverDesktopOnly = false,

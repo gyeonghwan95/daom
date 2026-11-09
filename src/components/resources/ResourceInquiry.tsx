@@ -80,7 +80,7 @@ export function ResourceInquiry({ slug, button, intent, message, facts, topic, k
           onClick={() => track("naver-talk", naverTalkHref)}
           className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-[var(--naver-green-strong)] px-3.5 text-sm font-semibold text-white"
         >
-          <NaverIcon className="h-4 w-4" /> 네이버 톡톡
+          <NaverIcon className="h-4 w-4" /> 네이버톡톡
           <span className="sr-only"> (새 창)</span>
         </a>
       </div>

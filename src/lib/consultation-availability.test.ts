@@ -13,11 +13,12 @@ describe("orderChannelsForAvailability", () => {
     { id: "naver" },
   ];
 
-  it("keeps channels unchanged until resolved", () => {
-    assert.deepEqual(
-      orderChannelsForAvailability(channels, false, false),
-      channels,
-    );
+  it("hides phone until the time is resolved", () => {
+    // 영업 여부가 확정되기 전에는 전화를 내보이지 않는다(영업 외 시간에 잠깐 보였다 사라지는 깜빡임 방지)
+    assert.deepEqual(orderChannelsForAvailability(channels, false, false), [
+      { id: "kakao" },
+      { id: "naver" },
+    ]);
   });
 
   it("hides phone and prefers chat when closed", () => {
@@ -77,7 +78,7 @@ describe("getHeaderConsultationAction", () => {
       availability: {
         isOpen: false,
         isResolved: true,
-        statusLabel: "현재 카카오·네이버톡톡만 가능",
+        statusLabel: "현재 카카오톡·네이버톡톡만 가능",
         statusHint: "전화상담은 내일 9시부터 가능",
       },
       phone: "010-4277-1279",

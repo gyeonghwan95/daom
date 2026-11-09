@@ -586,7 +586,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
                 className={INPUT}
                 value={form.preferredContact}
                 onChange={(e) => update("preferredContact", e.target.value)}
-                placeholder="전화 / 카카오 / 이메일"
+                placeholder="전화 / 카카오톡 / 이메일"
               />
             </label>
           </div>
@@ -847,7 +847,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
         placement="page_conversion"
         pageSlug={sourcePage}
         title="메일 대신 바로 연락하셔도 됩니다"
-        description="업무 종류·소재지·일정만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 안윤정 법무사가 직접 확인합니다."
+        description="업무 종류·소재지·일정만 전화나 카카오톡, 네이버톡톡으로 먼저 말씀하셔도 됩니다. 안윤정 법무사가 직접 확인합니다."
       />
 
       <ul className="space-y-1 text-xs leading-relaxed text-navy/55">

@@ -50,7 +50,7 @@ export function PageConversionCTA({
   pageSlug,
   showFeeNotice,
   showSecondaryLinks = false,
-  showChannelButtons = true,
+  showChannelButtons = false,
   tone,
   className = "",
   inquiryNote,
@@ -96,8 +96,8 @@ export function PageConversionCTA({
 
   const primaryBtnClass =
     theme === "dark"
-      ? "btn-primary inline-flex min-h-12 w-full items-center justify-center bg-white px-6 text-navy hover:bg-beige sm:w-auto"
-      : "btn-primary inline-flex min-h-12 w-full items-center justify-center px-6 sm:w-auto";
+      ? "btn-primary inline-flex min-h-12 w-full items-center justify-center bg-white px-6 text-navy hover:bg-beige"
+      : "btn-primary inline-flex min-h-12 w-full items-center justify-center px-6";
 
   return (
     <aside
@@ -126,11 +126,14 @@ export function PageConversionCTA({
             inquiryNote={inquiryNote}
           />
         ) : (
-          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          // 버튼 3개를 같은 폭으로 한 줄에 놓는다. 480px 미만 폰에서는 위 두 개를 나란히, 세 번째는 한 줄 전체 폭으로 둔다.
+          // 페어 래퍼는 contents로 풀어 세 버튼이 같은 그리드의 칸이 되게 한다.
+          <div className="grid w-full grid-cols-2 gap-3 min-[480px]:grid-cols-3">
             <InquiryNaverCtaPair
               placement="page_conversion"
               layout="row"
               size="md"
+              className="contents"
               inquiry={
                 <InquiryStartButton
                   source="cta"
@@ -148,8 +151,8 @@ export function PageConversionCTA({
               onClick={() => trackCTA("contact", slug, "/contact")}
               className={
                 theme === "dark"
-                  ? "inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white/40 px-6 text-sm font-semibold text-white hover:bg-white/10"
-                  : "btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+                  ? "col-span-2 inline-flex min-h-12 w-full items-center justify-center rounded-lg border-2 border-white/40 px-3 text-sm font-semibold text-white hover:bg-white/10 min-[480px]:col-span-1 sm:px-6"
+                  : "btn-secondary col-span-2 inline-flex min-h-12 w-full items-center justify-center px-3 min-[480px]:col-span-1 sm:px-6"
               }
             >
               연락처·상담 안내

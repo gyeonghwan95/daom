@@ -144,7 +144,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
       {isConsultPrep ? (
         <div className="rounded-2xl border border-beige-dark bg-cream/40 px-5 py-5 md:px-6">
           <p className="text-sm font-semibold text-navy md:text-base">
-            전화 · 카카오톡 · 네이버 톡톡 · 방문 예약
+            전화 · 카카오톡 · 네이버톡톡 · 방문 예약
           </p>
           <p className="mt-1 text-sm text-navy/70">
             안윤정 법무사가 직접 상담합니다. 편한 채널 하나만 고르시면 됩니다.
