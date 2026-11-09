@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import {
+  KakaoIcon,
   LocationIcon,
   NaverIcon,
 } from "@/components/consultation/ConsultationIcons";
@@ -24,7 +25,8 @@ import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
  *
  * 서두(intro)는 "결정 카드"다. 정보를 찾으러 온 방문자가 첫 화면 근처에서
  *  ① 맡길 근거(실제 방문자 후기·대표 직접 진행·협회장 표창) ② 비용 걱정을 덜어 주는 안내(문구 고정)
- *  ③ 가장 먼저 누를 하나의 행동(1분 상담 신청) ④ 네이버 예약·지도
+ *  ③ 편한 채널을 고르는 선택지(카카오톡·네이버 톡톡·1분 문의·전화)
+ *  ④ 네이버 예약·지도
  * 를 한 번에 보게 한다. 말미(outro)는 같은 채널 버튼이 바로 위 신뢰 블록과 겹치지 않도록 문장 속 링크로만 둔다.
  * 클릭은 trackCTA(cost_intro / cost_outro)·trackNaverPlaceClick(decision_card)으로 집계한다.
  */
@@ -166,7 +168,7 @@ function IntroMessage({ placement }: { placement: string }) {
 
 function DecisionCard({ className }: { className: string }) {
   const pathname = usePathname() ?? "/";
-  const { phone } = getContactInfo();
+  const { phone, kakao, naverTalk } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
   const lecture = isLecturePagePath(pathname);
   // 강의 페이지는 기관 담당자가 보므로 개인 의뢰인의 사건 후기를 인용하지 않는다
@@ -201,15 +203,44 @@ function DecisionCard({ className }: { className: string }) {
         <IntroMessage placement={placement} />
       </div>
 
-      {/* ③ 가장 먼저 누를 하나의 행동 + 전화 */}
       <div className="decision-card__actions">
+        {kakao ? (
+          <a
+            href={kakao}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="kakao"
+            data-cta-placement={placement}
+            onClick={() => trackCTA("kakao", currentSlug(), kakao)}
+            className="decision-card__kakao"
+          >
+            <KakaoIcon className="h-4 w-4 shrink-0" />
+            카카오톡
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        ) : null}
+        {naverTalk ? (
+          <a
+            href={naverTalk}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="naver-talk"
+            data-cta-placement={placement}
+            onClick={() => trackCTA("naver-talk", currentSlug(), naverTalk)}
+            className="decision-card__naver"
+          >
+            <NaverIcon className="h-4 w-4 shrink-0" />
+            네이버 톡톡
+            <span className="sr-only"> (새 창)</span>
+          </a>
+        ) : null}
         <InquiryStartButton
           source="landing"
           pageSlug={pathname}
-          note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 상담 신청"}
+          note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 1분 문의"}
           className="decision-card__primary"
         >
-          {lecture ? "강의 문의 남기기" : "1분만에 상담 신청"}
+          {lecture ? "강의 문의 남기기" : "1분 문의"}
         </InquiryStartButton>
         <a
           href={phoneHref}
@@ -225,8 +256,8 @@ function DecisionCard({ className }: { className: string }) {
       </div>
       <p className="decision-card__hint">
         {lecture
-          ? "기관 강사료 기준이 있으면 그 범위에서 시간·자료 구성을 맞춥니다."
-          : "서류가 없어도 상황만 남겨 주시면 됩니다."}
+          ? "기관 강사료 기준이 있으면 그 범위에서 시간·자료 구성을 맞춥니다. 카카오톡·톡톡으로 먼저 물어보셔도 됩니다."
+          : "채팅이 편하시면 카카오톡이나 네이버 톡톡으로, 남겨 두시려면 상황만 적어 주셔도 됩니다. 서류는 없어도 됩니다."}
       </p>
 
       {/* ④ 네이버 예약·지도(페이지마다 최소 1개) */}

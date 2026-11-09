@@ -5385,7 +5385,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply inline-flex min-h-11 items-center justify-center rounded-xl border border-navy/20 bg-white px-4 text-[0.95rem] font-semibold transition-colors hover:border-navy/50;
   }
 
-  /* 본문 서두 결정 카드 — 맡길 근거 · 비용 고정 문구 · 하나의 주 행동 · 네이버 예약/지도 */
+  /* 본문 서두 결정 카드 — 맡길 근거 · 비용 고정 문구 · 채널 선택지 · 네이버 예약/지도 */
   .decision-card {
     border: 1px solid color-mix(in srgb, var(--navy) 14%, var(--beige-dark));
     background: linear-gradient(
@@ -5433,17 +5433,25 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .decision-card__actions {
-    @apply mt-4 flex flex-col gap-2 sm:flex-row sm:items-stretch sm:gap-3;
+    @apply mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4;
   }
 
   .decision-card__primary {
     background: var(--navy);
-    @apply inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-xl px-6 text-base font-bold text-white shadow-md transition-colors hover:bg-[#16304f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a] sm:w-auto sm:flex-1;
+    @apply col-span-2 inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-[0.95rem] font-semibold text-white shadow-sm transition-colors hover:bg-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a] lg:col-span-1 lg:min-h-[3.25rem];
+  }
+
+  .decision-card__kakao {
+    @apply inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#FEE500] px-3 text-[0.9rem] font-semibold text-[#191919] no-underline shadow-sm transition-[filter,transform] hover:brightness-95 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a] lg:min-h-[3.25rem];
+  }
+
+  .decision-card__naver {
+    background: var(--naver-green-strong);
+    @apply inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl px-3 text-[0.9rem] font-semibold text-white no-underline shadow-sm transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#03C75A] lg:min-h-[3.25rem];
   }
 
   .decision-card__secondary {
-    color: var(--navy);
-    @apply inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl border border-navy/20 bg-white px-5 text-[0.95rem] font-semibold transition-colors hover:border-navy/50 sm:min-h-[3.25rem];
+    @apply inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-[#ececec] px-4 text-[0.9rem] font-semibold text-navy no-underline shadow-sm transition-colors hover:bg-[#e0e0e0] lg:min-h-[3.25rem];
   }
 
   .decision-card__hint {
