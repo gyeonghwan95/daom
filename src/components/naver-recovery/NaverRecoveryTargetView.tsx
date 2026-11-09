@@ -7,6 +7,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { LawyerTrustShowcase } from "@/components/trust/LawyerTrustShowcase";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
@@ -59,6 +60,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
       <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
       <PageLeadThumbnail path={page.path} />
       <JsonLd data={webPage} />
+      <FaqJsonLd faqs={spec.faqs} path={page.path} />
       <article className="content-stack">
         <header>
           <p className="readability-hero__eyebrow">{spec.eyebrow}</p>

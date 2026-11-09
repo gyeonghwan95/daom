@@ -58,7 +58,9 @@ export function buildJsonLdForPageData(
     );
   }
 
-  if (page.includeFaqSchema) {
+  // 화면에 보이는 FAQ가 5개 이상이면 페이지 고유 질문으로 보고 FAQPage를 내보낸다(3~4개짜리는 지역·글 템플릿 공통 질문이라 제외)
+  // 빌더가 true/false를 명시했으면 그대로 따른다(용어사전처럼 일부러 끈 페이지 포함). 지정하지 않았을 때만 고유 FAQ 5개 이상이면 켠다
+  if (page.includeFaqSchema ?? (page.faqs?.length ?? 0) >= 5) {
     const faqs = mergeVisibleFaqs(page.faqs, options.extraFaqs);
     if (faqs.length > 0) {
       schemas.push(buildFaqPageSchema(faqs, canonicalPath));

@@ -14,6 +14,7 @@ import { ContentSection } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { MetroRemoteSpec } from "@/lib/metro-remote/types";
@@ -61,6 +62,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={spec.path} />
       <PageLeadThumbnail path={spec.path} nationwide />
       <JsonLd data={webPage} />
+      <FaqJsonLd faqs={spec.faqs} path={spec.path} />
       <article className="content-stack break-keep">
         <header>
           <p className="readability-hero__eyebrow">{spec.kicker}</p>

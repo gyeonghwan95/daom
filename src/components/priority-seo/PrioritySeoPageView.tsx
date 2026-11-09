@@ -11,6 +11,7 @@ import { PageTextCardFigure } from "@/components/media/PageTextCard";
 import { PageGallery } from "@/components/media/PageGallery";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { getPriorityBreadcrumbs } from "@/lib/priority-seo";
@@ -69,6 +70,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={spec.path} />
       <PageLeadThumbnail path={spec.path} />
       <JsonLd data={webPage} />
+      <FaqJsonLd faqs={spec.faqs} path={spec.path} />
       <article className="content-stack break-keep">
         <header>
           <p className="readability-hero__eyebrow">{spec.eyebrow}</p>

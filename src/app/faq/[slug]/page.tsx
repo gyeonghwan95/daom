@@ -53,8 +53,9 @@ export default async function FaqDetailPage({ params }: Props) {
           },
         )}
       />
+      {/* 위 JsonLd가 이 글의 질문·답변 FAQPage를 내보내므로 템플릿의 공통 질문 FAQPage는 끈다(같은 페이지 FAQPage 중복 방지) */}
       <PageDataTemplate
-        page={page}
+        page={{ ...page, includeFaqSchema: false }}
         recommendationSource={recommendationFromContentMeta(meta, "faq")}
       >
         {content}

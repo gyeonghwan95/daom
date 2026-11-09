@@ -1,6 +1,7 @@
 import { getSeoEntityById } from "@/data/seo";
 import { getLocalChampionOverlay } from "@/data/seo/local-champion-overlays";
 import { getSeoLandingSlugOverlay } from "@/data/seo/region-service-overlays";
+import { getSeoLandingFactSheet } from "@/data/seo/seo-landing-fact-sheets";
 import { buildMetaDescription, buildMetaTitle } from "@/lib/pageData/seo";
 import { createPageData, ensureMinContent } from "@/lib/pageData/template-helpers";
 import type { PageData, PageRelatedLink } from "@/lib/pageData/types";
@@ -154,7 +155,10 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
     overlay && overlay.slug === spec.slug ? overlay : undefined;
   const stationSections = buildStationSectionsForHost(spec.path);
   const regionJurisdiction = buildRegionJurisdictionSection(spec);
+  // 업무×의도 자동 생성 문구가 모든 페이지에서 같아 구체적 서류·기한·조문이 없던 페이지에 사실 정리 블록을 앞쪽에 더한다
+  const factSheet = getSeoLandingFactSheet(spec.slug);
   const sections = [
+    ...(factSheet ? [factSheet.section] : []),
     ...stationSections.map((s) => ({
       title: s.title,
       body: s.body,
@@ -217,11 +221,13 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
       { label: "홈", href: "/" },
       { label: spec.title },
     ],
-    introParagraphs: content.introParagraphs,
-    procedures: content.procedures,
-    documents: content.documents,
+    introParagraphs: factSheet ? [factSheet.lead, ...content.introParagraphs] : content.introParagraphs,
+    procedures: factSheet?.procedures ?? content.procedures,
+    documents: factSheet?.documents ?? content.documents,
     consultationPoints: content.consultationPoints,
-    faqs: content.faqs,
+    faqs: factSheet?.faqs
+      ? [...factSheet.faqs, ...content.faqs.filter((faq) => !factSheet.faqs?.some((f) => f.question === faq.question))]
+      : content.faqs,
     consultationExample: content.consultationExample,
     internalLinks,
     sections,

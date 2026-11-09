@@ -11,6 +11,7 @@ import { ContentSection } from "@/components/readability";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { RegionalInheritanceTarget } from "@/lib/regional-inheritance/types";
@@ -48,6 +49,7 @@ export function RegionalInheritanceTargetView({
       <BreadcrumbJsonLd items={breadcrumbs} currentPath={target.path} />
       <PageLeadThumbnail path={target.path} nationwide />
       <JsonLd data={webPage} />
+      <FaqJsonLd faqs={target.faqs} path={target.path} />
       <article className="content-stack">
         <header>
           <p className="readability-hero__eyebrow">{target.eyebrow}</p>

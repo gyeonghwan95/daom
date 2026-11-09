@@ -363,7 +363,9 @@ export function createPageData(input: CreatePageDataInput): PageData {
     ctaTitle: input.ctaTitle ?? STANDARD_CTA_TITLE,
     ctaText: input.ctaText ?? STANDARD_CTA_TEXT,
     ogImage: input.ogImage,
-    includeFaqSchema: input.includeFaqSchema ?? input.category === "faq",
+    // 화면에 보이는 FAQ가 이 페이지 고유 질문 3개 이상일 때만 FAQPage를 내보낸다(템플릿 기본 질문으로 채운 페이지는 제외)
+    includeFaqSchema:
+      input.includeFaqSchema ?? (input.category === "faq" || (!isGlossary && providedFaqs.length >= 3)),
     openGraphType: input.openGraphType,
     serviceSlug: input.serviceSlug,
     ...(input.serviceSchemaName
