@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AdminInsightList } from "@/components/admin/AdminInsightList";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { ChannelTrendChart } from "@/components/admin/acquisition/ChannelTrendChart";
@@ -494,7 +495,9 @@ export default function AdminAnalyticsPage() {
         </p>
       ) : null}
 
-      {error ? <p className="admin-alert admin-alert--critical">{error}</p> : null}
+      {error ? (
+        <AdminErrorState message={error} onRetry={() => void load(days)} />
+      ) : null}
       {report && !report.storageConfigured ? (
         <p className="admin-alert admin-alert--warning">
           ADMIN_KV가 연결되지 않아 수집 데이터가 없습니다. Cloudflare Pages 바인딩을 확인하세요.
@@ -509,7 +512,9 @@ export default function AdminAnalyticsPage() {
         </p>
       ) : null}
 
-      {!report && loading ? <p className="admin-empty admin-acq-loading">유입 데이터를 불러오는 중…</p> : null}
+      {!report && loading ? (
+        <AdminLoading label="유입 데이터를 불러오는 중" />
+      ) : null}
 
       {report && t && view ? (
         <>

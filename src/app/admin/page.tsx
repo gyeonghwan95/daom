@@ -1,6 +1,5 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   AdminActionGrid,
@@ -10,6 +9,8 @@ import {
 import { AdminInsightList } from "@/components/admin/AdminInsightList";
 import { AdminIntentMix } from "@/components/admin/AdminIntentMix";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
+import { useAdminResource } from "@/components/admin/useAdminResource";
 import { HourlyTrafficChart } from "@/components/admin/charts/HourlyTrafficChart";
 import { DailyTrendChart } from "@/components/admin/charts/DailyTrendChart";
 import {
@@ -27,7 +28,6 @@ import {
   getDeviceLabel,
 } from "@/lib/admin/device-label";
 import { formatAdminActivityAt } from "@/lib/admin-ops/utils";
-import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 import {
   buildDashboardInsights,
   buildOpsBriefing,
@@ -39,54 +39,23 @@ import { mixByIntent } from "@/lib/admin/path-intent";
 import type { DashboardPayload } from "@/lib/admin-ops/types";
 
 export default function AdminDashboardPage() {
-  const [data, setData] = useState<DashboardPayload | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
-
-  const load = useCallback(async () => {
-    const result = await adminFetchJson<DashboardPayload>("/api/admin/dashboard");
-    setRefreshing(false);
-    if (!result.ok) {
-      setError(result.message);
-      return;
-    }
-    setError(null);
-    setData(result.data);
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    void (async () => {
-      const result = await adminFetchJson<DashboardPayload>("/api/admin/dashboard");
-      if (cancelled) return;
-      if (!result.ok) {
-        setError(result.message);
-        return;
-      }
-      setError(null);
-      setData(result.data);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const { data, error, loading, refreshing, reload, retry } =
+    useAdminResource<DashboardPayload>("/api/admin/dashboard");
 
   if (error && !data) {
     return (
       <div>
         <AdminPageHeader title="대시보드" />
-        <p className="admin-alert admin-alert--warning" role="alert">
-          {error}
-        </p>
+        <AdminErrorState message={error} onRetry={retry} />
       </div>
     );
   }
 
-  if (!data) {
+  if (loading || !data) {
     return (
       <div>
         <AdminPageHeader title="대시보드" />
-        <p>불러오는 중…</p>
+        <AdminLoading label="오늘 운영 수치를 불러오는 중" />
       </div>
     );
   }
@@ -116,10 +85,7 @@ export default function AdminDashboardPage() {
       <AdminPageHeader
         title="대시보드"
         generatedAt={data.generatedAt}
-        onRefresh={() => {
-          setRefreshing(true);
-          void load();
-        }}
+        onRefresh={reload}
         refreshing={refreshing}
       >
         <Link href="/admin/notices" className="admin-btn admin-btn--primary">
@@ -127,6 +93,7 @@ export default function AdminDashboardPage() {
         </Link>
       </AdminPageHeader>
 
+      {error ? <AdminErrorState message={error} onRetry={reload} /> : null}
       <p className="admin-summary">{data.summaryLine}</p>
       <p className="admin-prose">
         숫자는 공개 페이지뷰입니다. 고유 방문자는 집계하지 않습니다. 관리자 세션·봇·/admin은 빠집니다.

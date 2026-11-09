@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminRefreshPanel } from "@/components/admin/AdminRefreshPanel";
 import { AdminSection, MetricCard } from "@/components/admin/MetricCard";
 import { useAdminOpsSession } from "@/components/admin-console/useAdminOpsSession";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
@@ -18,12 +19,34 @@ type MonitorData = {
 export default function AdminSettingsPage() {
   const session = useAdminOpsSession();
   const [monitor, setMonitor] = useState<MonitorData | null>(null);
+  const [monitorError, setMonitorError] = useState<string | null>(null);
+  const [localPreview, setLocalPreview] = useState(false);
+  const [reviewsFetchedAt, setReviewsFetchedAt] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLocalPreview(
+      window.location.port === "8788" || window.location.port === "8787",
+    );
+    void fetch("/data/naver-place-reviews.json")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: { fetchedAt?: string } | null) => {
+        if (json?.fetchedAt) setReviewsFetchedAt(json.fetchedAt);
+      })
+      .catch(() => {
+        /* keep null */
+      });
+  }, []);
 
   useEffect(() => {
     if (!session.authenticated) return;
     let cancelled = false;
     adminFetchJson<MonitorData>("/api/admin/monitoring").then((result) => {
-      if (cancelled || !result.ok) return;
+      if (cancelled) return;
+      if (!result.ok) {
+        setMonitorError(result.message);
+        return;
+      }
+      setMonitorError(null);
       setMonitor(result.data);
     });
     return () => {
@@ -32,9 +55,6 @@ export default function AdminSettingsPage() {
   }, [session.authenticated]);
 
   const channels = monitor?.notifyChannels;
-  const localPreview =
-    typeof window !== "undefined" &&
-    (window.location.port === "8788" || window.location.port === "8787");
 
   return (
     <div>
@@ -46,6 +66,12 @@ export default function AdminSettingsPage() {
         비밀번호·API 키는 이 화면에서 바꾸지 않습니다. 아래는 지금 운영에 필요한
         연결 상태와 숫자 읽는 법입니다.
       </p>
+
+      {monitorError ? (
+        <p className="admin-alert admin-alert--warning">{monitorError}</p>
+      ) : null}
+
+      <AdminRefreshPanel reviewsFetchedAt={reviewsFetchedAt} />
 
       <div className="admin-metric-grid">
         <div className="admin-metric">

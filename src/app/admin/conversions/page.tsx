@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { AdminTableWrap } from "@/components/admin/AdminActionGrid";
 import { AdminInsightList } from "@/components/admin/AdminInsightList";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { FunnelChart } from "@/components/admin/charts/FunnelChart";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
+import { useAdminResource } from "@/components/admin/useAdminResource";
 import { getCtaKindLabel } from "@/lib/admin/activity-labels";
 import {
   buildConversionInsights,
@@ -14,7 +15,6 @@ import {
 } from "@/lib/admin/ops-insights";
 import { formatKoreanNumber } from "@/lib/admin/url-display";
 import { formatDeviceSplit } from "@/lib/admin/device-label";
-import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
 
 type ConversionsData = {
   date?: string;
@@ -70,38 +70,23 @@ type ConversionsData = {
 };
 
 export default function AdminConversionsPage() {
-  const [data, setData] = useState<ConversionsData | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    adminFetchJson<ConversionsData>("/api/admin/conversions").then((result) => {
-      if (cancelled) return;
-      if (!result.ok) {
-        setError(result.message);
-        return;
-      }
-      setData(result.data);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const { data, error, loading, refreshing, reload, retry } =
+    useAdminResource<ConversionsData>("/api/admin/conversions");
 
   if (error && !data) {
     return (
       <div>
         <AdminPageHeader title="전환 분석" />
-        <p className="admin-alert admin-alert--warning">{error}</p>
+        <AdminErrorState message={error} onRetry={retry} />
       </div>
     );
   }
 
-  if (!data) {
+  if (loading || !data) {
     return (
       <div>
         <AdminPageHeader title="전환 분석" />
-        <p>불러오는 중…</p>
+        <AdminLoading label="전환 수치를 불러오는 중" />
       </div>
     );
   }
@@ -115,11 +100,16 @@ export default function AdminConversionsPage() {
 
   return (
     <div>
-      <AdminPageHeader title="전환 분석" />
+      <AdminPageHeader
+        title="전환 분석"
+        onRefresh={reload}
+        refreshing={refreshing}
+      />
       <p className="admin-prose">
         버튼을 눌렀을 때 이동한 주소(전화·카카오·문의 페이지 등)를 보여 줍니다.
         이름·전화번호는 저장하지 않습니다. 네이버 예약 완료·실제 통화는 측정하지 않습니다.
       </p>
+      {error ? <AdminErrorState message={error} onRetry={reload} /> : null}
       {data.message ? (
         <p className="admin-alert admin-alert--info">{data.message}</p>
       ) : null}

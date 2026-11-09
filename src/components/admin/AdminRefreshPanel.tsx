@@ -31,7 +31,7 @@ export function AdminRefreshPanel({
       const data = (await response.json()) as {
         error?: string;
         message?: string;
-        feed?: { fetchedAt: string };
+        feed?: { fetchedAt: string; items?: unknown[] };
       };
 
       if (!response.ok) {
@@ -54,36 +54,35 @@ export function AdminRefreshPanel({
   const reviewsFetchedLabel = formatReviewsFetchedAt(reviewsFetchedAt);
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-lg border border-navy/10 bg-white px-4 py-4">
-        <h2 className="text-base font-semibold text-navy">네이버 플레이스 리뷰</h2>
-        <p className="mt-2 text-sm leading-relaxed text-navy/70">
-          고객후기 페이지에 표시되는 네이버 방문자 리뷰를 즉시 갱신합니다.
+    <div className="admin-panel admin-refresh-panel">
+      <h2 className="admin-section__title">네이버 플레이스 리뷰</h2>
+      <p className="admin-prose">
+        고객후기 페이지에 보이는 방문자 후기 미리보기를 지금 다시 가져옵니다. Node
+        서버에서만 동작하며, 정적 배포에서는 빌드 때 갱신됩니다.
+      </p>
+      {reviewsFetchedLabel ? (
+        <p className="admin-page-header__meta">마지막 갱신: {reviewsFetchedLabel}</p>
+      ) : (
+        <p className="admin-page-header__meta">아직 이 화면에서 갱신한 기록이 없습니다.</p>
+      )}
+      <button
+        type="button"
+        onClick={handleReviewsRefresh}
+        disabled={reviewsRefreshing}
+        className="admin-btn admin-btn--primary"
+      >
+        {reviewsRefreshing ? "갱신 중…" : "네이버 리뷰 갱신"}
+      </button>
+      {reviewsMessage ? (
+        <p className="admin-alert admin-alert--info" role="status">
+          {reviewsMessage}
         </p>
-        {reviewsFetchedLabel ? (
-          <p className="mt-1 text-xs text-navy/50">
-            마지막 갱신: {reviewsFetchedLabel}
-          </p>
-        ) : null}
-        <button
-          type="button"
-          onClick={handleReviewsRefresh}
-          disabled={reviewsRefreshing}
-          className="mt-4 inline-flex min-h-10 cursor-pointer items-center rounded-lg bg-navy px-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {reviewsRefreshing ? "갱신 중…" : "네이버 리뷰 갱신"}
-        </button>
-        {reviewsMessage ? (
-          <p className="mt-2 text-sm text-emerald-700" role="status">
-            {reviewsMessage}
-          </p>
-        ) : null}
-        {reviewsError ? (
-          <p className="mt-2 text-sm text-red-600" role="alert">
-            {reviewsError}
-          </p>
-        ) : null}
-      </div>
+      ) : null}
+      {reviewsError ? (
+        <p className="admin-alert admin-alert--critical" role="alert">
+          {reviewsError}
+        </p>
+      ) : null}
     </div>
   );
 }
