@@ -1,6 +1,7 @@
 "use client";
 
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { PostInquiryNextSteps } from "@/components/consultation/PostInquiryNextSteps";
 import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -16,8 +17,6 @@ import {
 } from "@/components/quick-inquiry/useDialogA11y";
 import { useQuickInquiry } from "@/components/quick-inquiry/QuickInquiryProvider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
-import { getContactInfo } from "@/lib/contact";
 import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 import {
@@ -205,9 +204,6 @@ export function ConsultWizardShell() {
     [draft.situationIds],
   );
 
-  const { phone, kakao } = getContactInfo();
-  const { isOpen, isResolved } = useConsultationAvailability();
-  const phoneReady = Boolean(phone) && (!isResolved || isOpen);
   const summary = useMemo(() => buildConsultSummaryLines(draft), [draft]);
 
   const update = (patch: Partial<ConsultWizardDraft>) => {
@@ -454,7 +450,7 @@ export function ConsultWizardShell() {
                   />
                 </svg>
               </div>
-              <p className="consult-wizard__success-text">{copy.successBody}</p>
+              <PostInquiryNextSteps />
               <p className="consult-wizard__success-text consult-wizard__success-hint">
                 {copy.kakaoPhotoHint}
               </p>
@@ -463,26 +459,21 @@ export function ConsultWizardShell() {
                   buttonClassName="btn-primary min-h-11 justify-center"
                   hintClassName="consult-wizard__success-text consult-wizard__success-hint"
                 />
-                {kakao && phoneReady ? (
-                  <a
-                    href={kakao}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary min-h-11 justify-center"
+                <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-[0.9rem]">
+                  <button
+                    type="button"
+                    className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+                    onClick={() => setPhase("review")}
                   >
-                    {copy.kakaoContinue}
-                  </a>
-                ) : null}
-                <button
-                  type="button"
-                  className="btn-secondary min-h-11"
-                  onClick={() => setPhase("review")}
-                >
-                  {copy.reviewAgain}
-                </button>
-                <Link href="/" className="btn-secondary min-h-11 justify-center">
-                  {copy.goHome}
-                </Link>
+                    {copy.reviewAgain}
+                  </button>
+                  <Link
+                    href="/"
+                    className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+                  >
+                    {copy.goHome}
+                  </Link>
+                </div>
               </div>
             </div>
           ) : null}

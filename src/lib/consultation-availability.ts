@@ -1,3 +1,5 @@
+import { consultationReplySla } from "@/lib/consultation-copy";
+
 /**
  * 플로팅 CTA·상담 가능 표시 — 네이버 플레이스 영업시간과 같게 맞춘다(src/lib/office-location.ts officeHours).
  * Asia/Seoul · 평일 09:00–18:00(점심 휴무 없음) · 토·일 휴무. 공휴일은 달력 자료가 없어 평일로 계산한다.
@@ -84,34 +86,36 @@ function getClosedAvailability(
     isOpen: false,
     isResolved: true,
     statusLabel: CLOSED_STATUS_LABEL,
-    statusHint: `${phoneHint} · 지금 메시지 주시면 확인해 드려요`,
+    statusHint: `${phoneHint} · ${consultationReplySla.afterHours}`,
   };
 }
 
+export function isConsultationPhoneOffered(isResolved: boolean, isOpen: boolean): boolean {
+  return isResolved && isOpen;
+}
+
 /**
- * 영업 외에는 전화를 숨기고 카카오·톡톡을 앞에 둔다.
- * 시각이 아직 확정되지 않았으면(isResolved=false) 채널을 바꾸지 않는다.
+ * 영업 중이 아니면 전화를 숨기고, 닫힘이면 카카오·톡톡을 앞에 둔다.
+ * 시각이 확정되기 전에도 전화를 보여 깜빡이지 않게 한다.
  */
 export function orderChannelsForAvailability<T extends { id: string }>(
   channels: T[],
   isOpen: boolean,
   isResolved = true,
 ): T[] {
-  if (!isResolved) return channels;
+  if (!isConsultationPhoneOffered(isResolved, isOpen)) {
+    const visible = channels.filter((channel) => channel.id !== "phone");
+    if (!isResolved) return visible;
 
-  const visible = isOpen
-    ? channels
-    : channels.filter((channel) => channel.id !== "phone");
+    const rank = (id: string) => {
+      if (id === "kakao") return 0;
+      if (id === "naver") return 1;
+      return 2;
+    };
+    return [...visible].sort((a, b) => rank(a.id) - rank(b.id));
+  }
 
-  if (isOpen) return visible;
-
-  const rank = (id: string) => {
-    if (id === "kakao") return 0;
-    if (id === "naver") return 1;
-    if (id === "phone") return 2;
-    return 3;
-  };
-  return [...visible].sort((a, b) => rank(a.id) - rank(b.id));
+  return channels;
 }
 
 /** 헤더 칩 — 라벨·링크·aria가 같은 규칙을 쓰도록 한곳에서 계산 */
@@ -175,7 +179,7 @@ export function getConsultationAvailability(
       isOpen: true,
       isResolved: true,
       statusLabel: "현재 상담가능",
-      statusHint: "평일 09:00–18:00 · 지금 바로 연결",
+      statusHint: `평일 09:00–18:00 · ${consultationReplySla.weekday}`,
     };
   }
 

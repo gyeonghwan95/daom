@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { ConsultationFeeNotice } from "@/components/consultation/ConsultationFeeNotice";
+import { PostInquiryNextSteps } from "@/components/consultation/PostInquiryNextSteps";
 import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
-import { getDirectConsultationChannels } from "@/lib/contact";
 
 type InquiryDeliverySuccessProps = {
   title?: string;
@@ -17,9 +16,12 @@ type InquiryDeliverySuccessProps = {
   showFeeNotice?: boolean;
 };
 
+const successLinkClass =
+  "font-medium text-navy underline decoration-navy/25 underline-offset-4";
+
 export function InquiryDeliverySuccess({
-  title = "문의가 정상적으로 전달되었습니다",
-  description = "남겨주신 내용을 확인한 뒤 연락처로 안내드리겠습니다.",
+  title = "남겨 주셨습니다",
+  description,
   detail,
   secondaryHref = "/",
   secondaryLabel = "홈으로 돌아가기",
@@ -27,8 +29,6 @@ export function InquiryDeliverySuccess({
   resetLabel = "새 문의 작성",
   showFeeNotice = false,
 }: InquiryDeliverySuccessProps) {
-  const channels = getDirectConsultationChannels();
-
   return (
     <div
       className="inquiry-form inquiry-form--success card-surface"
@@ -48,10 +48,13 @@ export function InquiryDeliverySuccess({
         </svg>
       </div>
       <h2 className="inquiry-form__success-title">{title}</h2>
-      <p className="inquiry-form__success-text">
-        {description}
-        {detail ? ` (${detail})` : ""}
-      </p>
+      {description || detail ? (
+        <p className="inquiry-form__success-text">
+          {description}
+          {detail ? ` (${detail})` : ""}
+        </p>
+      ) : null}
+      <PostInquiryNextSteps />
 
       <PostInquiryPhoneCta
         className="inquiry-form__success-call"
@@ -60,31 +63,13 @@ export function InquiryDeliverySuccess({
         phoneNumClassName="inquiry-form__phone-num"
       />
 
-      <div className="inquiry-form__success-channels">
-        <p className="inquiry-form__section-label">다른 연락 방법</p>
-        <ConsultationButtons
-          channels={channels}
-          theme="light"
-          layout="grid"
-          naverPlace
-          naverPlacement="consult_page"
-        />
-        <p className="mt-2 text-xs leading-relaxed text-navy/60">
-          네이버 플레이스에서 ‘저장’을 눌러 두시면 연락처와 위치를 다시 찾기
-          쉬워요.
-        </p>
-      </div>
-
       <div className="inquiry-form__success-actions">
         {onReset ? (
-          <button type="button" className="btn-secondary min-h-11" onClick={onReset}>
+          <button type="button" className={successLinkClass} onClick={onReset}>
             {resetLabel}
           </button>
         ) : null}
-        <Link
-          href={secondaryHref}
-          className="btn-secondary min-h-11 inline-flex items-center justify-center"
-        >
+        <Link href={secondaryHref} className={successLinkClass}>
           {secondaryLabel}
         </Link>
       </div>

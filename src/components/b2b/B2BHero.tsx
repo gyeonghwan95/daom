@@ -66,7 +66,7 @@ export function B2BHero({
           placement="page_hero"
           tone="brand"
           size="lg"
-          label="네이버 예약"
+          label="네이버예약"
           className="!rounded-lg px-6 print:hidden"
         />
       </div>

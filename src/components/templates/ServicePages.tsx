@@ -225,7 +225,7 @@ export function ServicesIndexTemplate() {
             <li>
               <ServiceCard
                 title="부산 전역 상담 안내"
-                description="전화·카카오톡·네이버 톡톡·예약 방문"
+                description="전화·카카오톡·네이버톡톡·예약 방문"
                 href="/부산법무사상담"
                 image={getServiceImage("personal-rehabilitation")}
               />

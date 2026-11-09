@@ -8,6 +8,10 @@ import {
 } from "@/lib/contact";
 import { KakaoIcon, NaverIcon } from "@/components/consultation/ConsultationIcons";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { usePathname } from "next/navigation";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 
 type ConsultationChatTileProps = {
   channel: ConsultationChannel;
@@ -26,7 +30,7 @@ const brand = {
   naver: {
     accent: "bg-[var(--naver-green-strong)]",
     text: "text-white",
-    subtitle: "네이버 톡톡",
+    subtitle: "네이버톡톡",
     hint: "QR 스캔 또는 클릭",
   },
 } as const;
@@ -41,6 +45,10 @@ export function ConsultationChatTile({
   const style = brand[channelId];
   const Icon = channelId === "kakao" ? KakaoIcon : NaverIcon;
   const ctaType = channelId === "kakao" ? "kakao" : "naver-talk";
+  const pathname = usePathname() ?? "/";
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
+  const shown = consultChatButtonLabel(status, label);
 
   return (
     <a
@@ -48,9 +56,12 @@ export function ConsultationChatTile({
       target="_blank"
       rel="noopener noreferrer"
       className="consultation-chat-tile group"
-      aria-label={`${label} 상담`}
+      aria-label={`${shown} 상담`}
       data-cta={ctaType}
-      onClick={() => trackCTA(ctaType, pageSlug || "", channel.href)}
+      onClick={() => {
+        trackCTA(ctaType, pageSlug || "", channel.href);
+        launch(example);
+      }}
     >
       {/* 모바일: 가로형 탭 카드 */}
       <div className="consultation-chat-tile__mobile sm:hidden">
@@ -60,7 +71,7 @@ export function ConsultationChatTile({
           <Icon className="h-5 w-5" />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-sm font-semibold text-navy">{label}</span>
+          <span className="block text-sm font-semibold text-navy">{shown}</span>
           <span className="block text-xs text-navy/55">탭하여 바로 상담</span>
         </span>
         <span className="consultation-chat-tile__chevron" aria-hidden>
@@ -72,7 +83,7 @@ export function ConsultationChatTile({
       <div className="consultation-chat-tile__desktop hidden sm:flex">
         <div className={`consultation-chat-tile__header ${style.accent} ${style.text}`}>
           <Icon className="h-5 w-5 shrink-0" />
-          <span className="font-semibold">{label}</span>
+          <span className="font-semibold">{shown}</span>
         </div>
         <div className="consultation-chat-tile__body">
           <div className="consultation-chat-tile__qr">

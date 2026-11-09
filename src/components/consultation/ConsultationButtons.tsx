@@ -16,6 +16,10 @@ import { NaverPlaceActions } from "@/components/cta/NaverPlaceActions";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 import type { NaverSmartPlacePlacement } from "@/lib/naver-smartplace/cta";
+import { usePathname } from "next/navigation";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 
 type ConsultationButtonsProps = {
   channels: ConsultationChannel[];
@@ -105,12 +109,14 @@ function ChannelLink({
   className,
   tile = false,
   theme = "light",
+  onChat,
 }: {
   channel: ConsultationChannel;
   label: string;
   className: string;
   tile?: boolean;
   theme?: "dark" | "light";
+  onChat?: () => void;
 }) {
   const iconWrap =
     channel.id === "phone"
@@ -159,6 +165,7 @@ function ChannelLink({
               ? "location"
               : "contact";
     trackCTA(kind, "", channel.href);
+    if (channel.id === "kakao" || channel.id === "naver") onChat?.();
   };
 
   if (channel.external) {
@@ -202,8 +209,17 @@ export function ConsultationButtons({
   naverPlacement = "other",
 }: ConsultationButtonsProps) {
   const orderedChannels = useOrderedConsultationChannels(channels);
-  const labelFor = (channel: ConsultationChannel) =>
-    showLabels === "short" ? channel.shortLabel : channel.label;
+  const pathname = usePathname() ?? "/";
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
+  const onChat = () => launch(example);
+  const labelFor = (channel: ConsultationChannel) => {
+    const idle = showLabels === "short" ? channel.shortLabel : channel.label;
+    if (channel.id === "kakao" || channel.id === "naver") {
+      return consultChatButtonLabel(status, idle);
+    }
+    return idle;
+  };
 
   const naverActions = naverPlace ? (
     <NaverPlaceActions
@@ -280,6 +296,7 @@ export function ConsultationButtons({
               className={getButtonClass(channel.id, theme, layout)}
               tile={isTile}
               theme={theme}
+              onChat={onChat}
             />
           ),
         )}

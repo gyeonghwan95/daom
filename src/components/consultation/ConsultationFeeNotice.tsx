@@ -15,8 +15,8 @@ export function ConsultationFeeNotice({
 
   return (
     <p className={`text-xs leading-relaxed ${themeClass} ${className}`}>
-      ※ 지금 상황을 확인하는 안내는 부담 없이 남겨 주세요. 수임료·공과금은
-      사실관계를 확인한 뒤 안내합니다.
+      ※ 상담은 상황 확인입니다. 맡긴 뒤에 수임료·세금·수수료를 나눠 안내합니다.
+      확정 금액은 사실관계를 본 다음입니다. 상담 후 안 맡으셔도 됩니다.
     </p>
   );
 }

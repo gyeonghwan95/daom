@@ -40,8 +40,8 @@ export const consultationQrCodes = {
   },
   naver: {
     src: "/qrCode/QR-네이버톡톡.png",
-    alt: "네이버 톡톡 QR코드",
-    label: "네이버 톡톡",
+    alt: "네이버톡톡 QR코드",
+    label: "네이버톡톡",
     hint: "스마트폰으로 스캔해 상담 시작",
   },
 } as const;
@@ -131,8 +131,8 @@ export function getConsultationChannels(): ConsultationChannel[] {
     },
     {
       id: "naver",
-      label: "네이버 톡톡",
-      shortLabel: "네이버 톡톡",
+      label: "네이버톡톡",
+      shortLabel: "네이버톡톡",
       href: naverTalk || "/contact",
       external: Boolean(naverTalk),
       configured: Boolean(naverTalk),
@@ -171,7 +171,7 @@ export function getDirectConsultationChannels(): ConsultationChannel[] {
   );
 }
 
-/** 지역 랜딩 등 전환 페이지: 전화 · 카카오톡 · 네이버 톡톡 · 네이버 예약 */
+/** 지역 랜딩 등 전환 페이지: 전화 · 카카오톡 · 네이버톡톡 · 네이버예약 */
 export function getConversionConsultationChannels(): ConsultationChannel[] {
   const { phone, kakao, naverTalk } = getContactInfo();
   const reservation = getNaverReservationUrl();
@@ -195,8 +195,8 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
     },
     {
       id: "naver",
-      label: "네이버 톡톡 상담",
-      shortLabel: "네이버 톡톡",
+      label: "네이버톡톡 상담",
+      shortLabel: "네이버톡톡",
       href: naverTalk || "/contact",
       external: Boolean(naverTalk),
       configured: Boolean(naverTalk),
@@ -204,7 +204,7 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
     {
       id: "reservation",
       label: "네이버 상담 예약",
-      shortLabel: "네이버 예약",
+      shortLabel: "네이버예약",
       href: reservation || "/contact",
       external: Boolean(reservation),
       configured: Boolean(reservation),
@@ -212,7 +212,7 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
   ];
 }
 
-/** 모바일 하단 고정: 전화 · 카카오 · 톡톡 · 예약 (+ UI에서 상담) */
+/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버톡톡 · 네이버예약 */
 export function getMobileBottomChannels(): ConsultationChannel[] {
   const { phone, kakao, naverTalk } = getContactInfo();
   const reservation = getNaverReservationUrl();
@@ -229,15 +229,15 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
     {
       id: "kakao",
       label: "카카오톡 상담",
-      shortLabel: "카카오",
+      shortLabel: "카카오톡",
       href: kakao || "/contact",
       external: Boolean(kakao),
       configured: Boolean(kakao),
     },
     {
       id: "naver",
-      label: "네이버 톡톡",
-      shortLabel: "톡톡",
+      label: "네이버톡톡",
+      shortLabel: "네이버톡톡",
       href: naverTalk || "/contact",
       external: Boolean(naverTalk),
       configured: Boolean(naverTalk),
@@ -245,7 +245,7 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
     {
       id: "reservation",
       label: "네이버 상담 예약",
-      shortLabel: "예약",
+      shortLabel: "네이버예약",
       href: reservation || "/contact",
       external: Boolean(reservation),
       configured: Boolean(reservation),

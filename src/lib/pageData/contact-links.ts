@@ -16,7 +16,7 @@ export function getStandardContactLinks(): PageRelatedLink[] {
     },
     {
       href: naverTalk || "/contact",
-      label: "네이버 톡톡",
+      label: "네이버톡톡",
     },
     {
       href: "/location",

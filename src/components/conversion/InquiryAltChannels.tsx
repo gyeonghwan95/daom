@@ -1,14 +1,20 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import {
   KakaoIcon,
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 import {
   isNaverSmartPlaceConfigured,
   type NaverSmartPlacePlacement,
@@ -33,14 +39,16 @@ const buttonBase =
  */
 export function InquiryAltChannels({
   title = "메일 대신 편한 방법으로 연락하셔도 됩니다",
-  description = "작성이 번거로우시면 전화·카카오톡·네이버 톡톡으로 바로 말씀해 주세요. 같은 담당 법무사가 확인합니다.",
+  description = "작성이 번거로우시면 전화·카카오톡·네이버톡톡으로 바로 말씀해 주세요. 같은 담당 법무사가 확인합니다.",
   channels = ["phone", "kakao", "talk", "map"],
   placement,
   pageSlug = "",
   className = "",
 }: InquiryAltChannelsProps) {
+  const { isOpen, isResolved } = useConsultationAvailability();
   const items: { id: InquiryAltChannelId; node: ReactNode }[] = [];
   for (const id of channels) {
+    if (id === "phone" && !isConsultationPhoneOffered(isResolved, isOpen)) continue;
     const node = <AltChannelButton id={id} placement={placement} pageSlug={pageSlug} />;
     if (isAltChannelAvailable(id)) items.push({ id, node });
   }
@@ -67,7 +75,7 @@ export function InquiryAltChannels({
   );
 }
 
-/** 대체 연락 채널 버튼 하나(전화·카카오톡·네이버 톡톡·네이버 예약·네이버 지도) — 문의 실패 안내·페이지 상단 버튼에서 같이 쓴다 */
+/** 대체 연락 채널 버튼 하나(전화·카카오톡·네이버톡톡·네이버예약·네이버지도) — 문의 실패 안내·페이지 상단 버튼에서 같이 쓴다 */
 export function isAltChannelAvailable(id: InquiryAltChannelId): boolean {
   const { phone, kakao, naverTalk } = getContactInfo();
   if (id === "phone") return Boolean(phone);
@@ -90,6 +98,9 @@ export function AltChannelButton({
 }) {
   const { phone, kakao, naverTalk } = getContactInfo();
   const naverOn = isNaverSmartPlaceConfigured();
+  const pathname = usePathname() ?? "/";
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
 
     if (id === "phone" && phone) {
       const href = getPhoneHref(phone);
@@ -112,11 +123,14 @@ export function AltChannelButton({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="kakao"
-            onClick={() => trackCTA("kakao", pageSlug, kakao)}
+            onClick={() => {
+              trackCTA("kakao", pageSlug, kakao);
+              launch(example);
+            }}
             className={`${buttonBase} bg-[#FEE500] text-[#191919] hover:brightness-95`}
           >
             <KakaoIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">카카오톡</span>
+            <span className="truncate">{consultChatButtonLabel(status, "카카오톡")}</span>
             <span className="sr-only"> (새 창)</span>
           </a>
         );
@@ -127,11 +141,14 @@ export function AltChannelButton({
             target="_blank"
             rel="noopener noreferrer"
             data-cta="naver-talk"
-            onClick={() => trackCTA("naver-talk", pageSlug, naverTalk)}
+            onClick={() => {
+              trackCTA("naver-talk", pageSlug, naverTalk);
+              launch(example);
+            }}
             className={`${buttonBase} bg-[var(--naver-green-strong)] text-white hover:brightness-95`}
           >
             <NaverIcon className="h-5 w-5 shrink-0" />
-            <span className="truncate">네이버 톡톡</span>
+            <span className="truncate">{consultChatButtonLabel(status, "네이버톡톡")}</span>
             <span className="sr-only"> (새 창)</span>
           </a>
         );
@@ -143,7 +160,7 @@ export function AltChannelButton({
             tone={id === "reservation" ? "brand" : "soft"}
             size="md"
             fullWidth
-            label={label ?? (id === "reservation" ? "네이버 예약" : id === "review" ? "네이버 후기·사진" : "네이버 지도")}
+            label={label ?? (id === "reservation" ? "네이버예약" : id === "review" ? "네이버 후기·사진" : "네이버지도")}
             className="!min-h-11"
           />
         );

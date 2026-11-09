@@ -467,7 +467,7 @@ export function BusinessInquiryForm() {
         placement="page_conversion"
         pageSlug="기업업무문의"
         title="메일 대신 바로 연락하셔도 됩니다"
-        description="회사명과 문의 업무만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 담당 법무사가 직접 확인합니다."
+        description="회사명과 문의 업무만 전화나 카카오톡, 네이버톡톡으로 먼저 말씀하셔도 됩니다. 담당 법무사가 직접 확인합니다."
       />
     </form>
   );

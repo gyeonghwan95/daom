@@ -146,7 +146,7 @@ export function OfficeLocationInfo({
                     tone="brand"
                     fullWidth
                     size="md"
-                    label="네이버 예약"
+                    label="네이버예약"
                     showHint
                   />
                 </div>
@@ -180,7 +180,7 @@ export function OfficeLocationInfo({
         <section className="card-surface p-5 sm:p-6 md:p-8">
           <h2 className="section-heading">예약·상담 바로가기</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/70 sm:text-base">
-            전화는 바로 연결되고, 카카오톡·네이버 톡톡은 채팅으로 편하게 문의하실 수
+            전화는 바로 연결되고, 카카오톡·네이버톡톡은 채팅으로 편하게 문의하실 수
             있습니다. 방문이 필요하면 네이버에서 일정을 확인해 주세요.
           </p>
           <div className="mt-5">
@@ -193,7 +193,7 @@ export function OfficeLocationInfo({
               tone="brand"
               fullWidth
               size="md"
-              label="네이버 예약"
+              label="네이버예약"
               showHint
             />
           </div>

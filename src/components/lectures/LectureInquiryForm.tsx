@@ -690,7 +690,7 @@ export function LectureInquiryForm({
         placement="page_conversion"
         pageSlug="lecture-inquiry"
         title="메일 말고도 편한 방법으로 문의하실 수 있습니다"
-        description="강의 일정·주제·대상만 전화나 카카오톡, 네이버 톡톡으로 먼저 말씀하셔도 됩니다. 같은 담당 법무사가 직접 확인합니다."
+        description="강의 일정·주제·대상만 전화나 카카오톡, 네이버톡톡으로 먼저 말씀하셔도 됩니다. 같은 담당 법무사가 직접 확인합니다."
       />
 
       <p className="text-center text-xs text-navy/55">

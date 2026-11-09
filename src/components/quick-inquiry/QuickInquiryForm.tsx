@@ -1,6 +1,7 @@
 "use client";
 
 import { InquiryFailureFallback } from "@/components/conversion/InquiryFailureFallback";
+import { PostInquiryNextSteps } from "@/components/consultation/PostInquiryNextSteps";
 import { PostInquiryPhoneCta } from "@/components/consultation/PostInquiryPhoneCta";
 import { useCallback, useState, type FormEvent } from "react";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
@@ -42,7 +43,7 @@ export function QuickInquiryForm({
   const ids = useDialogIds();
   const { phone, kakao } = getContactInfo();
   const { isOpen, isResolved } = useConsultationAvailability();
-  const phoneReady = Boolean(phone) && (!isResolved || isOpen);
+  const phoneReady = Boolean(phone) && isResolved && isOpen;
   const phoneHref = phoneReady && phone ? getPhoneHref(phone) : kakao || "/contact";
 
   const [message, setMessage] = useState("");
@@ -159,7 +160,7 @@ export function QuickInquiryForm({
           </svg>
         </div>
         <h3 className="quick-inquiry__success-title">{copy.successTitle}</h3>
-        <p className="quick-inquiry__success-text">{copy.success}</p>
+        <PostInquiryNextSteps />
         <PostInquiryPhoneCta
           className="quick-inquiry__success-phone-card"
           hintClassName="quick-inquiry__success-phone-hint"
@@ -168,7 +169,11 @@ export function QuickInquiryForm({
         />
         <div className="quick-inquiry__success-actions">
           {onClose ? (
-            <button type="button" className="btn-secondary min-h-11" onClick={onClose}>
+            <button
+              type="button"
+              className="font-medium text-navy underline decoration-navy/25 underline-offset-4"
+              onClick={onClose}
+            >
               {copy.close}
             </button>
           ) : null}

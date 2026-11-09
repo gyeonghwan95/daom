@@ -21,7 +21,7 @@ export function CTASection({
   documentsHref,
   diagnosisHref,
   serviceSlug,
-  showChannelButtons = true,
+  showChannelButtons = false,
 }: CTASectionProps) {
   return (
     <PageConversionCTA

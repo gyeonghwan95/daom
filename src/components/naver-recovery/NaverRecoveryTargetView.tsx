@@ -24,6 +24,7 @@ import type {
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -63,6 +64,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         <header>
           <p className="readability-hero__eyebrow">{spec.eyebrow}</p>
           <h1 className="page-title">{owner.h1}</h1>
+          <ConsultEmpathyLead />
           <div className="readability-prose mt-4 space-y-3 md:mt-5">
             {spec.lead.map((text) => (
               <p key={text.slice(0, 40)} className="body-text">

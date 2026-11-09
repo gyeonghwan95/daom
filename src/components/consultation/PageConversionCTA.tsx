@@ -50,7 +50,7 @@ export function PageConversionCTA({
   pageSlug,
   showFeeNotice,
   showSecondaryLinks = false,
-  showChannelButtons = true,
+  showChannelButtons = false,
   tone,
   className = "",
   inquiryNote,

@@ -3,6 +3,8 @@
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 
 function currentSlug(): string {
   if (typeof window === "undefined") return "";
@@ -17,6 +19,8 @@ function currentSlug(): string {
 export function SummaryTriggerActions() {
   const { phone } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const phoneVisible = Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen);
   return (
     <div className="article-summary__triggers-actions">
       <InquiryStartButton
@@ -25,18 +29,20 @@ export function SummaryTriggerActions() {
         className="article-summary__triggers-primary"
         onClick={() => trackCTA("contact", currentSlug(), "#summary-triggers")}
       >
-        이 상황, 1분만에 물어보기
+        이 상황, 1분 문의
       </InquiryStartButton>
-      <a
-        href={phoneHref}
-        data-cta="phone"
-        data-cta-placement="summary_triggers"
-        onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
-        className="article-summary__triggers-phone max-lg:hidden"
-        aria-label={`전화 상담 ${phone}`}
-      >
-        전화 {phone}
-      </a>
+      {phoneVisible ? (
+        <a
+          href={phoneHref}
+          data-cta="phone"
+          data-cta-placement="summary_triggers"
+          onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
+          className="article-summary__triggers-phone max-lg:hidden"
+          aria-label={`전화 상담 ${phone}`}
+        >
+          전화 {phone}
+        </a>
+      ) : null}
     </div>
   );
 }

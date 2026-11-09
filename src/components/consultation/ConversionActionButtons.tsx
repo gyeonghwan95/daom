@@ -16,6 +16,10 @@ import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationCh
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
+import { usePathname } from "next/navigation";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
 
 type ConversionActionButtonsProps = {
@@ -65,6 +69,9 @@ export function ConversionActionButtons({
 }: ConversionActionButtonsProps) {
   const { phone, kakao, naverTalk } = getContactInfo();
   const slug = pageSlug ?? "conversion-cta";
+  const pathname = usePathname() ?? "/";
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
   const naverMapOn = isNaverSmartPlaceConfigured();
   const channelItems = useOrderedConsultationChannels(
     [
@@ -83,7 +90,7 @@ export function ConversionActionButtons({
         ? {
             id: "naver" as const,
             href: naverTalk,
-            label: "네이버 톡톡",
+            label: "네이버톡톡",
             external: true,
           }
         : null,
@@ -155,11 +162,18 @@ export function ConversionActionButtons({
                   : undefined
               }
               data-cta={ctaKind}
-              onClick={() => trackCTA(ctaKind, slug, channel.href)}
+              onClick={() => {
+                trackCTA(ctaKind, slug, channel.href);
+                if (kind === "kakao" || kind === "naver") launch(example);
+              }}
               className={className}
             >
               {icon}
-              <span className="truncate">{channel.label}</span>
+              <span className="truncate">
+                {kind === "kakao" || kind === "naver"
+                  ? consultChatButtonLabel(status, channel.label)
+                  : channel.label}
+              </span>
             </a>
           );
         })}

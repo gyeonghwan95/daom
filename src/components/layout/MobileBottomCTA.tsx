@@ -7,18 +7,17 @@ import {
   type ConsultationChannel,
 } from "@/lib/contact";
 import { isB2BPath } from "@/lib/b2b/options";
-import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
-import { EXTERNAL_LINKS } from "@/config/external-links";
 import {
-  FormIcon,
   KakaoIcon,
   NaverIcon,
   PhoneIcon,
 } from "@/components/consultation/ConsultationIcons";
-import { useOptionalQuickInquiry } from "@/components/quick-inquiry";
 import { trackNaverPlaceClick, trackCtaEvent } from "@/lib/admin-ops/track-client";
-import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
-import { useOrderedConsultationChannels } from "@/hooks/useOrderedConsultationChannels";
+import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatHint, type ConsultChatStatus } from "@/lib/open-consult-chat";
+import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 
 function trackMobileChannel(channel: ConsultationChannel) {
   if (channel.id === "reservation") {
@@ -42,10 +41,28 @@ function trackMobileChannel(channel: ConsultationChannel) {
   trackCtaEvent(kind, undefined, channel.href);
 }
 
-function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
+function chatLabel(status: ConsultChatStatus, idle: string): string {
+  if (status === "copied") return "붙여넣기";
+  if (status === "failed") return "한 줄만";
+  return idle;
+}
+
+function MobileChannelButton({
+  channel,
+  status,
+  onChat,
+}: {
+  channel: ConsultationChannel;
+  status: ConsultChatStatus;
+  onChat: () => void;
+}) {
   const linkProps = channel.external
     ? { target: "_blank" as const, rel: "noopener noreferrer" as const }
     : {};
+  const openChat = () => {
+    trackMobileChannel(channel);
+    onChat();
+  };
 
   switch (channel.id) {
     case "phone":
@@ -66,12 +83,15 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
         <a
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--kakao"
-          aria-label={channel.label}
-          onClick={() => trackMobileChannel(channel)}
+          aria-label={status === "idle" ? channel.label : consultChatHint(status)}
+          onClick={openChat}
           {...linkProps}
         >
           <KakaoIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+          <span className="mobile-bottom-cta__label">
+            {chatLabel(status, channel.shortLabel)}
+          </span>
+          <span className="sr-only"> (새 창)</span>
         </a>
       );
     case "naver":
@@ -79,19 +99,22 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
         <a
           href={channel.href}
           className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-talk"
-          aria-label={channel.label}
-          onClick={() => trackMobileChannel(channel)}
+          aria-label={status === "idle" ? channel.label : consultChatHint(status)}
+          onClick={openChat}
           {...linkProps}
         >
           <NaverIcon className="mobile-bottom-cta__icon" />
-          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+          <span className="mobile-bottom-cta__label">
+            {chatLabel(status, channel.shortLabel)}
+          </span>
+          <span className="sr-only"> (새 창)</span>
         </a>
       );
     case "reservation":
       return (
         <a
           href={channel.href}
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-talk"
+          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--reservation"
           aria-label={channel.label}
           data-cta="naver-place"
           data-cta-variant="reservation"
@@ -107,21 +130,7 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
         >
           <NaverIcon className="mobile-bottom-cta__icon" />
           <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
-        </a>
-      );
-    case "location":
-      return (
-        <a
-          href={channel.href}
-          className="mobile-bottom-cta__btn mobile-bottom-cta__btn--naver-map"
-          aria-label={channel.label}
-          onClick={() => trackMobileChannel(channel)}
-          {...linkProps}
-        >
-          <span className="mobile-bottom-cta__map-icon" aria-hidden>
-            <NaverIcon className="h-4 w-4 text-white" />
-          </span>
-          <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
+          <span className="sr-only"> (새 창)</span>
         </a>
       );
     default:
@@ -133,11 +142,11 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
   if (channel.href.startsWith("/")) {
     return (
       <Link
-            href={channel.href}
-            className={baseClass}
-            aria-label={channel.label}
-            onClick={() => trackMobileChannel(channel)}
-          >
+        href={channel.href}
+        className={baseClass}
+        aria-label={channel.label}
+        onClick={() => trackMobileChannel(channel)}
+      >
         <span className="mobile-bottom-cta__label">{channel.shortLabel}</span>
       </Link>
     );
@@ -159,25 +168,28 @@ function MobileChannelButton({ channel }: { channel: ConsultationChannel }) {
 export function MobileBottomCTA() {
   const pathname = usePathname() ?? "/";
   const b2b = isB2BPath(pathname);
-  const channels = getMobileBottomChannels();
-  const inquiry = useOptionalQuickInquiry();
-  const rowChannels = useOrderedConsultationChannels(
-    channels.filter((c) => ["phone", "kakao", "naver"].includes(c.id)),
+  const { isOpen, isResolved } = useConsultationAvailability();
+  const empathy = getConsultEmpathy(pathname);
+  const { status, launch } = useConsultChatLaunch();
+  const channels = getMobileBottomChannels().filter((c) => {
+    if (!c.configured) return false;
+    if (c.id === "phone" && (!isConsultationPhoneOffered(isResolved, isOpen) || empathy.quiet)) {
+      return false;
+    }
+    return true;
+  });
+  const chatBtn = (channel: ConsultationChannel) => (
+    <div key={channel.id} className="mobile-bottom-cta__cell">
+      <MobileChannelButton
+        channel={channel}
+        status={status}
+        onChat={() => launch(empathy.example)}
+      />
+    </div>
   );
-  const reservation: ConsultationChannel = {
-    id: "reservation",
-    label: "네이버 상담 예약",
-    shortLabel: "예약",
-    href: EXTERNAL_LINKS.naverSmartPlace,
-    external: true,
-    configured: true,
-  };
-
-  // 강의 문의서가 있는 페이지는 같은 5버튼 구성을 쓰되, 문의 버튼만 페이지의 강의 문의서로 이동한다
-  const lecture = isLectureTargetPath(pathname);
 
   if (b2b) {
-    const pair = rowChannels.filter(
+    const pair = channels.filter(
       (c) => c.id === "phone" || c.id === "kakao",
     );
     return (
@@ -187,24 +199,28 @@ export function MobileBottomCTA() {
         role="region"
         aria-label="협업 빠른 연락"
       >
+        {status !== "idle" ? (
+          <p className="mobile-bottom-cta__toast" role="status">
+            {consultChatHint(status)}
+          </p>
+        ) : null}
         <div className="grid grid-cols-3 divide-x divide-beige-dark">
-          {pair[0] ? <MobileChannelButton channel={pair[0]} /> : null}
-          <Link
-            href="/협업문의"
-            className="mobile-bottom-cta__btn bg-navy text-white"
-            aria-label="협업 문의"
-            onClick={() => trackCtaEvent("collaboration", undefined, "/협업문의")}
-          >
-            <span className="mobile-bottom-cta__label">협업 문의</span>
-          </Link>
-          {pair[1] ? <MobileChannelButton channel={pair[1]} /> : null}
+          {pair[0] ? chatBtn(pair[0]) : null}
+          <div className="mobile-bottom-cta__cell">
+            <Link
+              href="/협업문의"
+              className="mobile-bottom-cta__btn bg-navy text-white"
+              aria-label="협업 문의"
+              onClick={() => trackCtaEvent("collaboration", undefined, "/협업문의")}
+            >
+              <span className="mobile-bottom-cta__label">협업 문의</span>
+            </Link>
+          </div>
+          {pair[1] ? chatBtn(pair[1]) : null}
         </div>
       </div>
     );
   }
-
-  // 영업 외에는 전화가 빠져 열이 줄어든다(useOrderedConsultationChannels).
-  const columnCount = rowChannels.length + 2;
 
   return (
     <div
@@ -213,45 +229,18 @@ export function MobileBottomCTA() {
       role="region"
       aria-label="빠른 연락"
     >
+      {status !== "idle" ? (
+        <p className="mobile-bottom-cta__toast" role="status">
+          {consultChatHint(status)}
+        </p>
+      ) : null}
       <div
         className="grid min-w-0 w-full divide-x divide-beige-dark"
         style={{
-          gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+          gridTemplateColumns: `repeat(${channels.length}, minmax(0, 1fr))`,
         }}
       >
-        {rowChannels.map((channel) => (
-          <MobileChannelButton key={channel.id} channel={channel} />
-        ))}
-        {lecture ? (
-          <a
-            href="#lecture-request"
-            className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
-            aria-label="강의 문의서 작성"
-            onClick={() => trackCtaEvent("contact", undefined, "#lecture-request")}
-          >
-            <FormIcon className="mobile-bottom-cta__icon" />
-            <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
-              강의 문의
-            </span>
-          </a>
-        ) : (
-          <button
-            type="button"
-            className="mobile-bottom-cta__btn mobile-bottom-cta__btn--inquiry bg-navy text-white"
-            aria-haspopup="dialog"
-            aria-label={consultationInquiryCopy.ctaPrimary}
-            onClick={() => {
-              trackCtaEvent("contact", undefined, "#inquiry");
-              inquiry?.openInquiry({ source: "mobile" });
-            }}
-          >
-            <FormIcon className="mobile-bottom-cta__icon" />
-            <span className="mobile-bottom-cta__label mobile-bottom-cta__label--inquiry">
-              문의
-            </span>
-          </button>
-        )}
-        <MobileChannelButton channel={reservation} />
+        {channels.map((channel) => chatBtn(channel))}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export function ContactBox() {
           {consultationCopy.default}
         </p>
         <p className="mt-2 text-sm font-medium text-navy/80">
-          전화 · 카카오톡 · 네이버 톡톡(채팅) 중 편한 방법을 선택해 주세요.
+          전화 · 카카오톡 · 네이버톡톡(채팅) 중 편한 방법을 선택해 주세요.
         </p>
         <div className="mt-5">
           <ConsultationButtons channels={channels} theme="light" layout="grid" />
@@ -37,7 +37,7 @@ export function ContactBox() {
             {consultationCopy.inquiryNotice}
           </p>
           <p className="text-sm leading-relaxed text-navy/65">
-            <strong className="font-semibold text-navy/80">네이버 톡톡</strong>은
+            <strong className="font-semibold text-navy/80">네이버톡톡</strong>은
             채팅 문의이고,{" "}
             <strong className="font-semibold text-navy/80">네이버 상담 예약</strong>
             은 플레이스에서 방문상담 일정을 확인하는 경로입니다.
@@ -49,7 +49,7 @@ export function ContactBox() {
             tone="brand"
             fullWidth
             size="md"
-            label="네이버 예약"
+            label="네이버예약"
             showHint
           />
 

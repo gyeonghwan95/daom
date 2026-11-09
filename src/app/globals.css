@@ -388,10 +388,17 @@ body.mobile-menu-open .mobile-bottom-cta {
   display: none;
 }
 
+.mobile-bottom-cta__cell {
+  display: flex;
+  min-width: 0;
+  container-type: inline-size;
+}
+
 .mobile-bottom-cta__btn {
   display: flex;
   min-height: var(--mobile-cta-height);
   min-width: 0;
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
   cursor: pointer;
@@ -445,8 +452,9 @@ body.mobile-menu-open .mobile-bottom-cta {
 }
 
 .mobile-bottom-cta__btn--reservation {
-  background: var(--naver-green-strong);
-  color: #fff;
+  background: #fff;
+  color: var(--naver-green-strong);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--naver-green-strong) 42%, transparent);
 }
 
 .mobile-bottom-cta__btn--reservation:hover {
@@ -482,6 +490,7 @@ body.mobile-menu-open .mobile-bottom-cta {
 
 .mobile-bottom-cta__label {
   max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -489,6 +498,39 @@ body.mobile-menu-open .mobile-bottom-cta {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
+}
+
+@container (min-width: 6.5rem) {
+  .mobile-bottom-cta__btn {
+    flex-direction: row;
+    gap: 0.4rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .mobile-bottom-cta__icon {
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+
+  .mobile-bottom-cta__label {
+    font-size: 0.8125rem;
+  }
+}
+
+@container (min-width: 10rem) {
+  .mobile-bottom-cta__label {
+    font-size: 0.875rem;
+  }
+}
+
+.mobile-bottom-cta__toast {
+  background: var(--navy);
+  color: #fff;
+  padding: 0.45rem 0.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .mobile-bottom-cta__label--inquiry {
@@ -5233,6 +5275,11 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply mb-2 text-xs font-semibold uppercase tracking-[0.12em];
   }
 
+  .readability-hero__empathy {
+    color: var(--navy);
+    @apply mt-3 text-[1.02rem] font-semibold leading-snug md:mt-3.5 md:text-[1.08rem];
+  }
+
   .readability-badges__item {
     color: var(--text-secondary);
     @apply inline-flex rounded-md border border-beige-dark bg-white px-2.5 py-1 text-xs font-medium md:text-sm;
@@ -5397,20 +5444,27 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply rounded-2xl p-4 sm:p-5 md:p-6;
   }
 
-  .decision-card__proof {
-    @apply flex flex-wrap gap-1.5;
+  .decision-card__head {
+    @apply flex items-start gap-3.5 sm:gap-4;
   }
 
-  .decision-card__proof li {
+  .decision-card__photo {
+    @apply relative h-24 w-[4.6rem] shrink-0 overflow-hidden rounded-2xl border border-beige-dark bg-beige/40 sm:h-[6.5rem] sm:w-[5.1rem];
+  }
+
+  .decision-card__voice {
+    color: var(--navy-light);
+    @apply text-[0.78rem] font-semibold tracking-wide;
+  }
+
+  .decision-card__empathy {
     color: var(--navy);
-    border: 1px solid color-mix(in srgb, #c9a86a 50%, var(--beige-dark));
-    @apply inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[0.8rem] font-semibold leading-none;
+    @apply mt-1 text-[1.02rem] font-semibold leading-snug sm:text-[1.08rem];
   }
 
-  .decision-card__proof li::before {
-    content: "✓";
-    color: #b08d57;
-    @apply font-bold;
+  .decision-card__award {
+    color: var(--text-muted);
+    @apply mt-1.5 text-[0.78rem] leading-snug;
   }
 
   .decision-card__quote {
@@ -5428,17 +5482,28 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply mt-1 text-xs;
   }
 
-  .decision-card__cost {
-    @apply mt-3.5 border-t border-beige-dark/70 pt-3.5;
+  .decision-card__example {
+    color: var(--navy);
+    background: color-mix(in srgb, var(--beige) 70%, white);
+    @apply mt-3.5 w-full rounded-xl px-3.5 py-2.5 text-left text-[0.9rem] leading-relaxed transition-colors hover:bg-beige/80;
+  }
+
+  .decision-card__example-action {
+    color: var(--navy-light);
+    @apply mt-1 block text-[0.78rem] font-medium;
   }
 
   .decision-card__actions {
-    @apply mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4;
+    @apply mt-4 grid grid-cols-2 gap-2;
   }
 
-  .decision-card__primary {
-    background: var(--navy);
-    @apply col-span-2 inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-[0.95rem] font-semibold text-white shadow-sm transition-colors hover:bg-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a] lg:col-span-1 lg:min-h-[3.25rem];
+  .decision-card__actions--phone {
+    @apply lg:grid-cols-3;
+  }
+
+  .decision-card__inquiry {
+    color: var(--navy);
+    @apply col-span-2 inline-flex min-h-9 w-full items-center justify-center bg-transparent px-2 text-[0.85rem] font-medium underline decoration-navy/25 underline-offset-4 transition-colors hover:decoration-navy;
   }
 
   .decision-card__kakao {
@@ -5460,7 +5525,20 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .decision-card__places {
-    @apply mt-3 grid grid-cols-2 gap-2 border-t border-beige-dark/60 pt-3;
+    @apply mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-beige-dark/60 pt-3;
+  }
+
+  .decision-card__places .naver-place-btn {
+    min-height: 0;
+    padding: 0.15rem 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   /* 네이버 예약·지도 — 결정 카드·본문 끝 방문 안내 공통 버튼 */
@@ -7837,18 +7915,14 @@ body.quick-inquiry-open {
 
 .inquiry-form__success-actions {
   display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1rem;
 }
 
 @media (min-width: 40rem) {
   .inquiry-form__success-actions {
     flex-direction: row;
-    justify-content: center;
-  }
-
-  .inquiry-form__success-actions > * {
-    min-width: 11rem;
   }
 }
 
@@ -8560,6 +8634,27 @@ body.quick-inquiry-open {
   display: grid;
   gap: 0.75rem;
 }
+.home-hero__example {
+  display: block;
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--beige) 70%, white);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.home-hero__example-hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy-light);
+}
+
 .home-hero__contact {
   display: none;
 }
@@ -8807,6 +8902,13 @@ body.quick-inquiry-open {
   .home-hero__primary-arrow {
     background: var(--navy);
     color: #f4efe8;
+  }
+  .home-hero__example {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f7f4ef;
+  }
+  .home-hero__example-hint {
+    color: rgba(232, 223, 208, 0.78);
   }
   .home-hero__chip {
     border-color: rgba(255, 255, 255, 0.14);

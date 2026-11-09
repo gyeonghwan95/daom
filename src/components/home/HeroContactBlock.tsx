@@ -22,6 +22,10 @@ import {
   isDesktopFloatingConsultViewport,
   openFloatingConsult,
 } from "@/lib/floating-consult";
+import { usePathname } from "next/navigation";
+import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 
 type HeroContactBlockProps = {
   phone: string;
@@ -37,7 +41,7 @@ const channelMeta: Record<
 > = {
   phone: { label: "전화걸기" },
   kakao: { label: "카카오톡" },
-  naver: { label: "네이버 톡톡" },
+  naver: { label: "네이버톡톡" },
 };
 
 const HERO_INQUIRY_CHIP_LABEL = consultationInquiryCopy.ctaShort;
@@ -61,6 +65,9 @@ export function HeroContactBlock({
   tone = "light",
 }: HeroContactBlockProps) {
   const inquiry = useOptionalQuickInquiry();
+  const pathname = usePathname() ?? "/";
+  const { status, launch } = useConsultChatLaunch();
+  const example = getConsultEmpathy(pathname).example;
   const directChannels = useOrderedConsultationChannels(
     channels.filter((c) => ["phone", "kakao", "naver"].includes(c.id)),
   );
@@ -86,12 +93,16 @@ export function HeroContactBlock({
           const href =
             id === "phone" && phone ? getPhoneHref(phone) : channel.href;
           const className = `hero-contact__chip hero-contact__chip--${id}`;
-          const ariaLabel = meta.label;
+          const shown =
+            id === "kakao" || id === "naver"
+              ? consultChatButtonLabel(status, meta.label)
+              : meta.label;
+          const ariaLabel = shown;
 
           const content = (
             <>
               <ChannelIcon id={id} />
-              <span className="hero-contact__chip-label">{meta.label}</span>
+              <span className="hero-contact__chip-label">{shown}</span>
             </>
           );
 
@@ -106,6 +117,9 @@ export function HeroContactBlock({
                 role="listitem"
                 aria-label={ariaLabel}
                 title={ariaLabel}
+                onClick={
+                  id === "kakao" || id === "naver" ? () => launch(example) : undefined
+                }
               >
                 {content}
               </a>
@@ -164,7 +178,7 @@ export function HeroContactBlock({
                 placement="homepage_hero"
                 tone="chip"
                 size="sm"
-                label="네이버 예약"
+                label="네이버예약"
                 className="hero-contact__chip"
               />
             </span>
