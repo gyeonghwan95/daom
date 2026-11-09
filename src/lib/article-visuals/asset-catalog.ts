@@ -18,6 +18,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["inheritance", "qualified-acceptance", "real-estate", "general"],
     overlaySafe: ["left", "right"],
     mobileFocus: "face",
+    focusY: 68,
     maxBodyUses: 500,
     notes: "안윤정 법무사 실제 사진 · 서류 검토",
   },
@@ -33,6 +34,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["corporate", "director-change", "establishment", "building"],
     overlaySafe: ["right"],
     mobileFocus: "face",
+    focusY: 40,
     maxBodyUses: 500,
   },
   inheritanceRegCert: {
@@ -89,6 +91,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["real-estate", "corporate", "building", "general"],
     overlaySafe: ["left"],
     mobileFocus: "face",
+    focusY: 30,
     maxBodyUses: 400,
   },
   consultMain: {
@@ -103,6 +106,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["consultation", "general", "rehab", "situations"],
     overlaySafe: ["left"],
     mobileFocus: "face",
+    focusY: 35,
     maxBodyUses: 500,
   },
   portraitFront: {
@@ -131,6 +135,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["corporate", "rehab", "general"],
     overlaySafe: ["right"],
     mobileFocus: "face",
+    focusY: 35,
     maxBodyUses: 400,
   },
   consultTalk: {
@@ -145,6 +150,7 @@ export const articleImageCatalog: Record<string, ArticleImageAsset> = {
     fields: ["consultation", "situations", "rehab", "inheritance"],
     overlaySafe: ["left", "center"],
     mobileFocus: "face",
+    focusY: 45,
     maxBodyUses: 400,
   },
   courtProcedureBook: {

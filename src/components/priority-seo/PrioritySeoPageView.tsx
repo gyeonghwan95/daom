@@ -20,6 +20,7 @@ import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
+import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -74,6 +75,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
         <header>
           <p className="readability-hero__eyebrow">{spec.eyebrow}</p>
           <h1 className="page-title">{spec.h1}</h1>
+          <HeroTrustLine />
           <ConsultEmpathyLead />
           <div className="readability-prose mt-4 space-y-3 md:mt-5">
             {spec.lead.map((text) => (

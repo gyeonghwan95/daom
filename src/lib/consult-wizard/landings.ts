@@ -27,7 +27,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     h1: "법무사 상담, 상황만 선택해도 시작할 수 있습니다",
     eyebrow: "약 1분 간편 상담",
     paragraphs: [
-      "긴 문의 글을 쓰지 않아도 됩니다. 해당하는 상황을 고르고, 준비된 자료가 있으면 표시한 뒤, 연락처만 남겨 주시면 됩니다.",
+      "긴 문의 글을 쓰지 않아도 됩니다. 해당하는 상황을 고르고 연락처만 남겨 주시면 됩니다. 서류는 나중에 보내셔도 됩니다.",
       "필요한 절차와 준비자료를 확인한 뒤 남겨주신 방법으로 안내드립니다. 전화가 어려운 경우 문자·이메일로 남겨 주세요.",
     ],
     bullets: [
@@ -232,7 +232,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
     ],
-    presetSituationIds: ["real-estate-trade"],
+    presetSituationIds: ["real-estate-trade", "gift"],
     serviceSlug: "real-estate-registration",
   },
   {
@@ -258,7 +258,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
       { href: "/부산법인등기", label: "부산 법인등기" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
     ],
-    presetSituationIds: ["corporate"],
+    presetSituationIds: ["company-setup", "corporate"],
     serviceSlug: "corporate-registration",
   },
   {
@@ -409,7 +409,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     paragraphs: [
       "상담 단계에서 필요한 목록을 알려 드립니다. 지금은 상황과 연락처만 있어도 됩니다.",
     ],
-    bullets: ["서류 없이 시작", "이후 목록 안내", "급하면 전화·카카오도 가능"],
+    bullets: ["서류 없이 시작", "이후 목록 안내", "급하면 전화·카카오톡도 가능"],
     prepItems: ["상황 선택", "연락처"],
     faqs: [
       {
@@ -435,7 +435,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     paragraphs: [
       "선호 연락 방법을 문자·이메일로 두시면 됩니다. 상황 선택형 문의로 부담을 줄였습니다.",
     ],
-    bullets: ["문자·이메일 선호 가능", "카카오·톡톡도 유지", "방문은 예약 후"],
+    bullets: ["문자·이메일 선호 가능", "카카오톡·톡톡도 유지", "방문은 예약 후"],
     prepItems: ["이메일 또는 휴대폰", "상황 선택"],
     faqs: [
       {

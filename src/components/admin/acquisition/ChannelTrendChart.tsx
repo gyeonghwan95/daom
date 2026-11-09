@@ -225,7 +225,7 @@ export function ChannelTrendChart({
         ) : null}
       </div>
       <p className="admin-acq-chart__note">
-        막대 = 외부 유입 세션(채널별) · 위쪽 점 = 그날 상담 연결 행동(전화·카카오·톡톡·예약·문의)
+        막대 = 외부 유입 세션(채널별) · 위쪽 점 = 그날 상담 연결 행동(전화·카카오톡·톡톡·예약·문의)
       </p>
     </div>
   );

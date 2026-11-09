@@ -22,6 +22,7 @@ import { resolveSerpImage } from "@/lib/seo/page-visuals";
 import { resolvePageThumbnailSrc } from "@/lib/seo/page-thumbnails";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 
 type MetroRemoteTargetViewProps = {
   spec: MetroRemoteSpec;
@@ -65,6 +66,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
         <header>
           <p className="readability-hero__eyebrow">{spec.kicker}</p>
           <h1 className="page-title">{spec.h1}</h1>
+          <HeroTrustLine />
           <div className="readability-prose mt-4 space-y-3 md:mt-5">
             {spec.lead.map((text) => (
               <p key={text.slice(0, 40)} className="body-text">

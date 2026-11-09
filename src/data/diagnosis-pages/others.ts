@@ -180,60 +180,100 @@ export const depositDiagnosis = simplifiedDiagnosis(
   ],
 );
 
-export const adultGuardianshipDiagnosis = simplifiedDiagnosis(
-  "adult-guardianship",
-  "성년후견자가진단",
-  "성년후견",
-  undefined,
-  "인지능력 저하 등으로 사무 처리가 어려운 성년자를 위한 가정법원 후견 절차입니다.",
-  [
-    {
-      id: "guard-condition",
-      question: "대상자 일상 사무 처리가 가능한가요?",
-      type: "single",
-      weight: 2.5,
-      required: true,
-      options: [
-        { label: "곤란함", value: "severe", score: 18, tags: ["urgent"] },
-        { label: "일부 어려움", value: "mild", score: 10 },
-      ],
-    },
-    {
-      id: "guard-property",
-      question: "부동산·재산 등기 이슈가 있나요?",
-      type: "single",
-      weight: 2,
-      required: true,
-      options: [
-        { label: "있음", value: "yes", score: 16, tags: ["deadline"] },
-        { label: "없음", value: "no", score: 5 },
-      ],
-    },
-    {
-      id: "guard-family",
-      question: "가족 간 협의는?",
-      type: "single",
-      weight: 2,
-      required: true,
-      options: [
-        { label: "원활", value: "ok", score: 5 },
-        { label: "갈등", value: "conflict", score: 18, tags: ["dispute", "urgent"] },
-      ],
-    },
-    {
-      id: "guard-deadline",
-      question: "등기·재산 처분 기한이 있나요?",
-      type: "single",
-      weight: 2,
-      required: true,
-      options: [
-        { label: "있음", value: "yes", score: 16, tags: ["deadline", "urgent"] },
-        { label: "없음", value: "no", score: 4 },
-      ],
-    },
+export const adultGuardianshipDiagnosis: Diagnosis = {
+  ...simplifiedDiagnosis(
+    "adult-guardianship",
+    "성년후견자가진단",
+    "성년후견",
+    undefined,
+    "인지능력 저하 등으로 사무 처리가 어려운 성년자를 위한 가정법원 후견 절차입니다. 의사 소견서나 형제 합의가 없어도 지금 사실관계만 남겨 주시면 신청 서류와 절차 범위를 안내합니다. 소송 대리는 하지 않습니다.",
+    [
+      {
+        id: "guard-alive",
+        question: "후견이 필요한 분은 살아 계신가요?",
+        type: "single",
+        weight: 2,
+        required: true,
+        options: [
+          { label: "살아 계심", value: "alive", score: 8 },
+          { label: "이미 돌아가심", value: "deceased", score: 14 },
+        ],
+      },
+      {
+        id: "guard-daily",
+        question: "통장·계약 등 일상 사무가 어려운가요?",
+        type: "single",
+        weight: 2.5,
+        required: true,
+        options: [
+          { label: "많이 어려움", value: "severe", score: 18, tags: ["urgent"] },
+          { label: "일부만 어려움", value: "mild", score: 10 },
+          { label: "잘 모르겠음", value: "unsure", score: 12 },
+        ],
+      },
+      {
+        id: "guard-property",
+        question: "부동산·재산 관리가 필요한가요?",
+        type: "single",
+        weight: 2,
+        required: true,
+        options: [
+          { label: "필요함", value: "yes", score: 14 },
+          { label: "없음", value: "no", score: 5 },
+        ],
+      },
+      {
+        id: "guard-family",
+        question: "가족 의견은 모여 있나요?",
+        type: "single",
+        weight: 2,
+        required: true,
+        options: [
+          { label: "모여 있음", value: "ok", score: 5 },
+          { label: "아직 이야기 전", value: "pending", score: 10 },
+          { label: "반대·갈등이 있음", value: "conflict", score: 16, tags: ["dispute"] },
+        ],
+      },
+      {
+        id: "guard-medical",
+        question: "의사 소견서는 있나요?",
+        description: "없어도 문의할 수 있습니다.",
+        type: "single",
+        weight: 1.5,
+        required: true,
+        options: [
+          { label: "있음", value: "yes", score: 4 },
+          { label: "없음", value: "no", score: 8 },
+        ],
+      },
+    ],
+    [{ href: "/가족후견", label: "가족후견 허브" }],
+  ),
+  outcomes: createStandardOutcomes(
+    "성년후견",
+    "/가족후견",
+    ["가족관계증명서", "의사 소견서(없어도 1차 안내 가능)"],
+  ),
+  targetUsers: [
+    "살아 계신 부모·가족의 재산·일상 관리가 어려워진 분",
+    "의사 소견서나 형제 합의가 아직 없는 분",
+    "가정법원 후견 신청 서류 범위를 먼저 확인하고 싶은 분",
   ],
-  [{ href: "/가족후견", label: "가족후견 허브" }],
-);
+  requiredDocuments: [
+    "가족관계증명서",
+    "주민등록등본",
+    "의사 소견서(없어도 1차 안내 가능)",
+    "부동산이 있으면 등기사항전부증명서",
+  ],
+  processSteps: [
+    "사실관계·가족 구성 확인",
+    "후견 유형·관할 가정법원 안내",
+    "신청 서류 목록 정리",
+    "접수 이후 진행 안내(대리 소송은 하지 않음)",
+  ],
+  ctaText:
+    "의사 소견서나 형제 합의가 없어도 지금 상황만 남겨 주시면 됩니다. 가정법원 신청 대리는 하지 않으며, 신청 서류와 절차 범위를 안내합니다.",
+};
 
 export const specialRepresentativeDiagnosis = simplifiedDiagnosis(
   "special-representative",

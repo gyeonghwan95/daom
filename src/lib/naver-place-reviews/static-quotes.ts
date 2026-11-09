@@ -18,6 +18,9 @@ export const REVIEW_TOTAL: number = feed.stats?.totalCount || feed.items?.length
 
 export const REVIEW_PAGE_URL: string = feed.reviewUrl;
 
+/** 네이버 플레이스 평균 평점(빌드 시점 값, 후기가 없으면 0) */
+export const REVIEW_AVG_RATING: number = feed.stats?.avgRating || 0;
+
 function topicOf(body: string): ReviewQuote["topic"] {
   if (/상속/.test(body)) return "inheritance";
   if (/전세|임대차|보증금/.test(body)) return "lease";

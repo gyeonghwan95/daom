@@ -38,7 +38,7 @@ export const 부산법무사방문상담: SelectionHubContent = {
     "잔금일·기한 임박으로 대면 일정을 잡으려는 경우",
   ],
   selectionCriteria: [
-    "예약 채널(전화·네이버·카카오)이 분명한지",
+    "예약 채널(전화·네이버·카카오톡)이 분명한지",
     "오시는 길·주차·역세권 안내가 있는지",
     "방문 전 준비물을 미리 알려 주는지",
     "소요 시간·대기 없이 진행되는지",
@@ -80,7 +80,7 @@ export const 부산법무사방문상담: SelectionHubContent = {
       ],
     },
   ],
-  comparisonTitle: "방문상담 vs 전화·카카오 상담",
+  comparisonTitle: "방문상담 vs 전화·카카오톡 상담",
   comparisonRows: [
     {
       aspect: "적합한 때",
@@ -104,7 +104,7 @@ export const 부산법무사방문상담: SelectionHubContent = {
     },
   ],
   comparisonNote:
-    "많은 사건은 전화·카카오로 시작해 필요하면 방문으로 이어집니다. 처음부터 방문이 필수인 경우는 아닙니다.",
+    "많은 사건은 전화·카카오톡으로 시작해 필요하면 방문으로 이어집니다. 처음부터 방문이 필수인 경우는 아닙니다.",
   preparationDocs: [
     "신분증",
     "예약 확인 메시지·일시",

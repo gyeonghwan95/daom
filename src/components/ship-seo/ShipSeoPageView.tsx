@@ -16,6 +16,7 @@ import { getShipBreadcrumbs } from "@/lib/ship-seo";
 import type { ShipSeoSpec } from "@/lib/ship-seo/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 
 type ShipSeoPageViewProps = {
   spec: ShipSeoSpec;
@@ -48,6 +49,7 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
         <header>
           <p className="readability-hero__eyebrow">{spec.eyebrow}</p>
           <h1 className="page-title">{spec.h1}</h1>
+          <HeroTrustLine />
           <div className="readability-prose mt-4 space-y-3 md:mt-5">
             {spec.lead.map((text) => (
               <p key={text.slice(0, 40)} className="body-text">

@@ -11,7 +11,7 @@ export const officeLocation = {
   subway: "동해선 재송역, 센텀역 도보 5분",
   parking: "주차 가능",
   accessSummary: "주차 가능 · 동해선 재송역, 센텀역 도보 5분",
-  visitNotice: "방문은 예약제입니다. 오늘 가능한 시간은 전화·카카오로 물어보세요.",
+  visitNotice: "방문은 예약제입니다. 오늘 가능한 시간은 전화·카카오톡으로 물어보세요.",
   visitNoticeDetail:
     "방문은 예약제입니다. 오늘 가능한 시간은 전화·카카오톡·네이버 톡톡으로 물어보시면 안내해 드립니다.",
 } as const;
@@ -29,7 +29,7 @@ export const officeHours = {
   summary: "평일 09:00–18:00",
   weekday: "평일 09:00–18:00",
   closed: "토·일·공휴일",
-  note: "방문은 예약제입니다. 오늘 가능한 시간은 전화·카카오로 물어보세요.",
+  note: "방문은 예약제입니다. 오늘 가능한 시간은 전화·카카오톡으로 물어보세요.",
   openingHoursText: "Mo-Fr 09:00-18:00",
   specifications: [
     {

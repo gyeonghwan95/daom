@@ -51,7 +51,7 @@ export default function ContactPage() {
           <h2 id="inquiry-process-heading" className="section-heading">
             문의하신 뒤에는 이렇게 진행됩니다
           </h2>
-          <ol className="mt-4 grid gap-3 md:grid-cols-4">
+          <ol className="mt-4 grid gap-3 md:grid-cols-2">
             {[
               ["상황 확인", "남겨 주신 내용으로 어떤 업무인지, 기한이 있는지 먼저 확인합니다."],
               ["범위·비용·준비사항 안내", "맡길 수 있는 업무 범위와 법무사 보수·공과금, 준비할 서류를 설명드립니다."],

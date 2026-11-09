@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   KakaoIcon,
@@ -10,6 +11,7 @@ import {
 } from "@/components/consultation/ConsultationIcons";
 import { InquiryStartButton } from "@/components/consultation/InquiryStartButton";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { isB2BPath } from "@/lib/b2b/options";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import {
@@ -25,7 +27,10 @@ import {
 import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { consultationReplySla } from "@/lib/consultation-copy";
-import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import {
+  consultPasteText,
+  getConsultEmpathy,
+} from "@/lib/consultation-empathy";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
 import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 import { encodePublicSrc } from "@/lib/encode-public-src";
@@ -151,32 +156,36 @@ function DecisionCard({ className }: { className: string }) {
   const { isOpen, isResolved } = useConsultationAvailability();
   const phoneVisible = Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen);
   const lecture = isLecturePagePath(pathname);
+  const b2b = isB2BPath(pathname);
   const empathy = getConsultEmpathy(pathname);
-  const quiet = !lecture && empathy.quiet;
-  const quote = lecture ? null : pickShortReviewQuote(pathname);
+  const quiet = !lecture && !b2b && empathy.quiet;
+  const quote = lecture || b2b ? null : pickShortReviewQuote(pathname);
   const naverOn = isNaverSmartPlaceConfigured();
   const placement = "cost_intro";
   const portrait = siteImages.about.portrait;
   const showPhone = phoneVisible && !quiet;
-  const example = lecture
+  const afterHours = isResolved && !isOpen;
+  const paste = lecture
     ? "강의 주제와 희망 날짜를 알려 드립니다."
-    : empathy.example;
+    : consultPasteText(empathy);
   const { launch } = useConsultChatLaunch();
   const hint = lecture
     ? `${consultationReplySla.line} 기관 강사료 기준이 있으면 그 범위에서 맞춰 드립니다.`
-    : isResolved && !isOpen
+    : afterHours
       ? consultationReplySla.night
       : `${consultationReplySla.weekday}. 맡기기 전에 물어보셔도 됩니다.`;
+  const intent = lecture ? "lecture" : b2b ? "b2b" : empathy.intent;
 
   const openChat = (kind: string, href: string) => {
-    trackCTA(kind, currentSlug(), href);
-    launch(example);
+    trackCTA(kind, currentSlug(), href, intent);
+    launch(paste);
   };
 
   return (
     <aside
       aria-label="상담 안내"
       data-decision-card
+      data-consult-intent={intent}
       className={`decision-card ${className}`.trim()}
     >
       <div className="decision-card__head">
@@ -196,9 +205,11 @@ function DecisionCard({ className }: { className: string }) {
           <p className="decision-card__empathy">
             {lecture
               ? "강의 주제와 날짜만 알려 주시면, 제가 가능 여부부터 회신합니다."
-              : empathy.line}
+              : b2b
+                ? "잔금일과 거래 유형만 알려 주시면 협업 가능 여부부터 회신합니다."
+                : empathy.line}
           </p>
-          {lecture ? null : (
+          {lecture || b2b ? null : (
             <p className="decision-card__award">대한법무사협회장 표창 · 제가 처음부터 직접 진행합니다</p>
           )}
         </div>
@@ -259,12 +270,26 @@ function DecisionCard({ className }: { className: string }) {
             <span className="sr-only"> (새 창)</span>
           </a>
         ) : null}
+        {b2b ? (
+          <Link href="/협업문의" className="decision-card__inquiry">
+            협업 문의
+          </Link>
+        ) : (
+          <InquiryStartButton
+            source="landing"
+            pageSlug={pathname}
+            note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 1분 문의"}
+            className="decision-card__inquiry"
+          >
+            {lecture ? "강의 문의 남기기" : "1분 문의"}
+          </InquiryStartButton>
+        )}
         {showPhone ? (
           <a
             href={phoneHref}
             data-cta="phone"
             data-cta-placement={placement}
-            onClick={() => trackCTA("phone", currentSlug(), phoneHref)}
+            onClick={() => trackCTA("phone", currentSlug(), phoneHref, intent)}
             className="decision-card__secondary max-lg:hidden"
             aria-label={`전화 상담 ${phone}`}
           >
@@ -272,18 +297,18 @@ function DecisionCard({ className }: { className: string }) {
             {phone}
           </a>
         ) : null}
-        <InquiryStartButton
-          source="landing"
-          pageSlug={pathname}
-          note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 1분 문의"}
-          className="decision-card__inquiry"
-        >
-          {lecture ? "강의 문의 남기기" : "1분 문의"}
-        </InquiryStartButton>
       </div>
       <p className="decision-card__hint">{hint}</p>
+      {lecture || b2b ? null : (
+        <>
+          <p className="decision-card__process">{empathy.costLine}</p>
+          <p className="decision-card__process">{empathy.afterInquiry}</p>
+          {empathy.photoHint ? (
+            <p className="decision-card__photo-hint">{empathy.photoHint}</p>
+          ) : null}
+        </>
+      )}
 
-      {/* ④ 네이버 예약·지도(페이지마다 최소 1개) */}
       {naverOn ? (
         <div className="decision-card__places">
           <PlaceLink

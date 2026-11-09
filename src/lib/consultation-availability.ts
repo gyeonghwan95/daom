@@ -8,7 +8,7 @@ const CONSULTATION_TZ = "Asia/Seoul";
 const OPEN_MINUTES = 9 * 60;
 const CLOSE_MINUTES = 18 * 60;
 
-const CLOSED_STATUS_LABEL = "현재 카카오·네이버톡톡만 가능";
+const CLOSED_STATUS_LABEL = "현재 카카오톡·네이버톡톡만 가능";
 
 export type ConsultationAvailability = {
   /** 한국 시각 기준 전화 상담 가능 여부 */

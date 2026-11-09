@@ -15,11 +15,16 @@ import type {
   ArticleVisualTone,
 } from "@/lib/article-visuals/types";
 
+/**
+ * 본문 중간 사진은 높이를 많이 차지하면 읽는 흐름만 끊는다. 지정 비율과 무관하게 모바일 16:9, PC 5:2로 넓게 보여
+ * 차지하는 높이를 줄인다(894px 폭 기준 596px → 358px). 잘리는 부분은 사진별 focusY로 맞춘다.
+ */
+const WIDE_FRAME = "aspect-[16/9] md:aspect-[5/2]";
 const ASPECT_CLASS: Record<ArticleVisualAspect, string> = {
-  "16:9": "aspect-[16/9]",
-  "3:2": "aspect-[3/2]",
-  "4:3": "aspect-[4/3]",
-  "2:1": "aspect-[2/1]",
+  "16:9": WIDE_FRAME,
+  "3:2": WIDE_FRAME,
+  "4:3": WIDE_FRAME,
+  "2:1": WIDE_FRAME,
 };
 
 const OBJECT_POS: Record<string, string> = {
@@ -61,12 +66,15 @@ export function ArticleVisual({ placement, className = "" }: ArticleVisualProps)
   const aspect = placement.aspectRatio ?? "3:2";
   const overlayPos = placement.overlayPosition ?? asset.overlaySafe[0] ?? "left";
   const tone = resolveTone(placement.tone);
-  const objectPos = OBJECT_POS[asset.mobileFocus] ?? OBJECT_POS.center;
+  const objectPos =
+    asset.focusY === undefined ? (OBJECT_POS[asset.mobileFocus] ?? OBJECT_POS.center) : "";
+  const objectStyle =
+    asset.focusY === undefined ? undefined : { objectPosition: `center ${asset.focusY}%` };
 
   if (failed) {
     return (
       <figure
-        className={`my-8 md:my-10 overflow-hidden rounded-xl border border-beige-dark bg-beige/40 ${className}`.trim()}
+        className={`my-6 md:my-8 overflow-hidden rounded-xl border border-beige-dark bg-beige/40 ${className}`.trim()}
       >
         <div
           className={`${ASPECT_CLASS[aspect]} flex items-center justify-center px-4`}
@@ -86,14 +94,16 @@ export function ArticleVisual({ placement, className = "" }: ArticleVisualProps)
 
   const gradient =
     tone === "dark"
-      ? "bg-gradient-to-t from-navy/55 via-navy/15 to-transparent"
+      ? "bg-gradient-to-t from-navy/80 via-navy/40 to-transparent"
       : "bg-gradient-to-t from-white/70 via-white/20 to-transparent";
   const textClass =
-    tone === "dark" ? "text-white drop-shadow-sm" : "text-navy";
+    tone === "dark"
+      ? "text-white [text-shadow:0_2px_14px_rgba(10,19,32,0.65)]"
+      : "text-navy";
 
   return (
     <figure
-      className={`my-8 md:my-10 overflow-hidden rounded-xl border border-beige-dark bg-white shadow-sm ${className}`.trim()}
+      className={`my-6 md:my-8 overflow-hidden rounded-xl border border-beige-dark bg-white shadow-sm ${className}`.trim()}
     >
       <div className={`relative w-full overflow-hidden ${ASPECT_CLASS[aspect]}`}>
         <Image
@@ -101,7 +111,8 @@ export function ArticleVisual({ placement, className = "" }: ArticleVisualProps)
           alt={placement.alt}
           fill
           sizes="(max-width: 768px) 100vw, 820px"
-          className={`object-cover ${objectPos}`}
+          className={`object-cover ${objectPos}`.trim()}
+          style={objectStyle}
           loading={placement.priority ? "eager" : "lazy"}
           priority={placement.priority === true}
           quality={72}
@@ -110,10 +121,10 @@ export function ArticleVisual({ placement, className = "" }: ArticleVisualProps)
         />
         {placement.overlayText ? (
           <div
-            className={`pointer-events-none absolute inset-0 flex p-4 sm:p-5 md:p-6 ${gradient} ${OVERLAY_POS[overlayPos]}`}
+            className={`pointer-events-none absolute inset-0 flex px-4 pb-3.5 pt-12 sm:px-6 sm:pb-5 md:px-8 md:pb-6 ${gradient} ${OVERLAY_POS[overlayPos]}`}
           >
             <p
-              className={`max-w-[18rem] text-[0.95rem] font-medium leading-snug sm:text-base ${textClass}`}
+              className={`max-w-[22rem] text-[1.2rem] font-bold leading-snug tracking-[-0.01em] sm:max-w-[30rem] sm:text-[1.5rem] md:max-w-[38rem] md:text-[1.75rem] ${textClass}`}
             >
               {placement.overlayText}
             </p>

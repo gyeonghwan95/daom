@@ -83,7 +83,7 @@ export function B2BHero({
         </ul>
       ) : null}
       {trustItems.length > 0 ? (
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-3 sm:grid-cols-2">
           {trustItems.map((item) => (
             <li
               key={item.label}

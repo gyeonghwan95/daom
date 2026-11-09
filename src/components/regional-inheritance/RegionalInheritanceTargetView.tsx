@@ -18,6 +18,7 @@ import { buildWebPageSchema } from "@/lib/seo/json-ld";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
+import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 
 type RegionalInheritanceTargetViewProps = {
   target: RegionalInheritanceTarget;
@@ -53,6 +54,7 @@ export function RegionalInheritanceTargetView({
         <header>
           <p className="readability-hero__eyebrow">{target.eyebrow}</p>
           <h1 className="page-title">{target.h1}</h1>
+          <HeroTrustLine />
           <ConsultEmpathyLead />
           <div className="readability-prose mt-4 space-y-3 md:mt-5">
             {target.lead.map((text) => (

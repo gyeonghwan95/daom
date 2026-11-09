@@ -155,7 +155,7 @@ const rateCols = {
   converted: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
     key: "cv",
     label: "상담 연결",
-    title: "전화·카카오·톡톡·예약·문의 중 하나 이상을 한 세션 수",
+    title: "전화·카카오톡·톡톡·예약·문의 중 하나 이상을 한 세션 수",
     numeric: true,
     render: (r) => formatCount(r.cv),
     sortValue: (r) => r.cv,
@@ -539,7 +539,7 @@ export default function AdminAnalyticsPage() {
               delta={deltaCount(t.cv, p && p.acqSessions ? p.cv : null)}
               spark={report.daily.map((d) => d.converted ?? 0)}
               color="#15803d"
-              note="전화·카카오·톡톡·예약·문의"
+              note="전화·카카오톡·톡톡·예약·문의"
             />
             <Kpi
               label="상담 연결률"
@@ -579,7 +579,7 @@ export default function AdminAnalyticsPage() {
                 onClick={() =>
                   downloadCsv(
                     `유입채널_${stamp}.csv`,
-                    ["채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "전화", "카카오", "톡톡", "예약", "문의", "페이지뷰"],
+                    ["채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "전화", "카카오톡", "톡톡", "예약", "문의", "페이지뷰"],
                     report.channels.map((r) => [
                       channelLabel(r.id),
                       r.sessions,

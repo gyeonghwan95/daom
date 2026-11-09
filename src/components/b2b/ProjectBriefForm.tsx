@@ -586,7 +586,7 @@ export function ProjectBriefForm({ sourcePage = "협업문의" }: { sourcePage?:
                 className={INPUT}
                 value={form.preferredContact}
                 onChange={(e) => update("preferredContact", e.target.value)}
-                placeholder="전화 / 카카오 / 이메일"
+                placeholder="전화 / 카카오톡 / 이메일"
               />
             </label>
           </div>

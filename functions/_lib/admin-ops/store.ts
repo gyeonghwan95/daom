@@ -1695,7 +1695,7 @@ export async function buildConversionsReport(env) {
         Object.values(pathAgg).sort((a, b) => b.phone - a.phone)[0]?.path || null,
     },
     {
-      channel: "카카오",
+      channel: "카카오톡",
       clicks: kakao,
       topPage:
         Object.values(pathAgg).sort((a, b) => b.kakao - a.kakao)[0]?.path || null,

@@ -84,11 +84,11 @@ const FIELD_ASSETS: Record<ArticleVisualField, string[]> = {
     "portraitFront",
     "officeDocs",
   ],
-  // 강의 페이지에는 강의 현장 사진 갤러리가 함께 있어, 같은 현장 사진이 곧바로 다시 보이지 않도록 인물·상담 사진만 쓴다
   lecture: [
+    "lectureYouthJeonse",
+    "lectureCitizenLib",
     "portraitFront",
     "consultMain",
-    "consultTalk",
   ],
   court: [
     "courtProcedureBook",
@@ -185,7 +185,7 @@ const FIELD_OVERLAYS: Record<ArticleVisualField, OverlaySet> = {
     ],
     beforeProcedures: ["준비된 서류가 없어도 시작할 수 있습니다"],
     beforeExample: ["상담은 상황 확인부터 시작합니다"],
-    beforeCta: ["전화·카카오·네이버로 남기실 수 있습니다"],
+    beforeCta: ["전화·카카오톡·네이버로 남기실 수 있습니다"],
     midBody: ["방문은 예약 후 이용해 주세요"],
   },
   situations: {
@@ -287,13 +287,19 @@ const ASPECT_BY_SLOT: Record<ArticleVisualSlot, ArticleVisualAspect> = {
   "mid-body": "16:9",
 };
 
-const SLOT_ORDER: ArticleVisualSlot[] = [
-  "after-intro",
-  "before-procedures",
-  "before-example",
-  "before-cta",
-  "mid-body",
-];
+/** 기본 선택이 이미 쓴 사진이면 풀의 다음 사진으로. 모두 쓴 경우에만 기본 선택을 유지한다 */
+function nextUnusedAsset(
+  pool: string[],
+  preferred: string,
+  used: readonly string[],
+): string {
+  const start = pool.indexOf(preferred);
+  for (let i = 0; i < pool.length; i += 1) {
+    const id = pool[(start + i) % pool.length]!;
+    if (!used.includes(id)) return id;
+  }
+  return preferred;
+}
 
 const OVERLAY_POS_CYCLE: ArticleVisualOverlayPosition[] = [
   "left",
@@ -397,14 +403,13 @@ export function buildAutoPlacement(
   /** 같은 페이지에 이미 쓴 사진 — 남는 사진이 있으면 고르지 않는다 */
   exclude: readonly string[] = [],
 ): ArticleVisualPlacement | null {
-  const usable = FIELD_ASSETS[field].filter((id) => assets[id]?.usable);
-  const fresh = usable.filter((id) => !exclude.includes(id));
-  const pool = fresh.length > 0 ? fresh : usable;
+  const pool = FIELD_ASSETS[field].filter((id) => assets[id]?.usable);
   if (pool.length === 0) return null;
 
-  // 같은 페이지의 슬롯끼리 같은 사진이 연달아 나오지 않도록, 경로로 시작점을 정하고 슬롯 순서만큼 돌려 고른다.
-  const assetId =
-    pool[(hashString(path) + SLOT_ORDER.indexOf(slot)) % pool.length]!;
+  // 색인된 페이지의 이미지·alt가 바뀌지 않도록 기존 선택(path+slot 해시)을 그대로 쓰고,
+  // 이미 쓴 사진과 겹칠 때만 다음 사진으로 넘긴다.
+  const legacy = pickFrom(pool, path, hashString(slot) % 97);
+  const assetId = nextUnusedAsset(pool, legacy, exclude);
   const overlays = FIELD_OVERLAYS[field];
   const overlayKey =
     slot === "after-intro"

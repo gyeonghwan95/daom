@@ -10,9 +10,12 @@ export const consultWizardCopy = {
   step1NoteLabel: "한 줄 메모 (선택)",
   step1NoteHint:
     "자세히 쓰지 않으셔도 됩니다. 한 줄이면 제가 확인합니다.",
-  step1NotePlaceholder: "예: 부모님 돌아가신 지 한 달, 집 하나 있습니다.",
-  step2Title: "어떤 자료가 준비되어 있나요?",
+  step1NotePlaceholder: "예: 지금 상황을 한 줄로 남겨 주세요.",
+  step1DocsSummary: "준비된 자료가 있으면 고르기 (없어도 됩니다)",
+  step2Title: "연락받을 정보를 알려주세요",
   step2Hint: "있는 것만 선택하시면 됩니다. 없어도 다음으로 진행할 수 있습니다.",
+  step2Privacy:
+    "남겨주신 내용은 상담 확인과 연락을 위해서만 사용합니다.",
   step3Title: "연락받을 정보를 알려주세요",
   step3Privacy:
     "남겨주신 내용은 상담 확인과 연락을 위해서만 사용합니다.",

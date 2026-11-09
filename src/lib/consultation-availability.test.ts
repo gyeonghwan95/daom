@@ -77,7 +77,7 @@ describe("getHeaderConsultationAction", () => {
       availability: {
         isOpen: false,
         isResolved: true,
-        statusLabel: "현재 카카오·네이버톡톡만 가능",
+        statusLabel: "현재 카카오톡·네이버톡톡만 가능",
         statusHint: "전화상담은 내일 9시부터 가능",
       },
       phone: "010-4277-1279",

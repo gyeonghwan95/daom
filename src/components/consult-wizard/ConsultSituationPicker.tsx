@@ -20,7 +20,7 @@ export function ConsultSituationPicker({ pageTitle, className = "" }: ConsultSit
       role="group"
       aria-labelledby="consult-picker-heading"
     >
-      <p className="text-xs font-semibold text-navy/60">상담하기 · 1단계</p>
+      <p className="text-xs font-semibold text-navy/60">상담하기 · 상황 선택</p>
       <h2 id="consult-picker-heading" className="mt-1 text-lg font-bold text-navy">
         어떤 상황인가요?
       </h2>

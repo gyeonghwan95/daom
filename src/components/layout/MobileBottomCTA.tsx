@@ -15,7 +15,11 @@ import {
 import { trackNaverPlaceClick, trackCtaEvent } from "@/lib/admin-ops/track-client";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
-import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import {
+  consultPasteText,
+  consultSlaLine,
+  getConsultEmpathy,
+} from "@/lib/consultation-empathy";
 import { consultChatHint, type ConsultChatStatus } from "@/lib/open-consult-chat";
 import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 
@@ -176,14 +180,22 @@ export function MobileBottomCTA() {
     if (c.id === "phone" && (!isConsultationPhoneOffered(isResolved, isOpen) || empathy.quiet)) {
       return false;
     }
+    if (
+      empathy.hidePlaces &&
+      (c.id === "reservation" || c.id === "location")
+    ) {
+      return false;
+    }
     return true;
   });
+  const paste = consultPasteText(empathy);
+  const sla = consultSlaLine(isOpen, isResolved);
   const chatBtn = (channel: ConsultationChannel) => (
     <div key={channel.id} className="mobile-bottom-cta__cell">
       <MobileChannelButton
         channel={channel}
         status={status}
-        onChat={() => launch(empathy.example)}
+        onChat={() => launch(paste)}
       />
     </div>
   );
@@ -224,7 +236,7 @@ export function MobileBottomCTA() {
 
   return (
     <div
-      className="mobile-bottom-cta fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden"
+      className={`mobile-bottom-cta${empathy.comfort ? " mobile-bottom-cta--comfort" : ""} fixed bottom-0 left-0 z-50 w-full max-w-full overflow-hidden border-t border-beige-dark bg-white shadow-[0_-2px_16px_rgba(30,58,95,0.1)] lg:hidden print:hidden`}
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       role="region"
       aria-label="빠른 연락"
@@ -233,7 +245,9 @@ export function MobileBottomCTA() {
         <p className="mobile-bottom-cta__toast" role="status">
           {consultChatHint(status)}
         </p>
-      ) : null}
+      ) : (
+        <p className="mobile-bottom-cta__sla">{sla}</p>
+      )}
       <div
         className="grid min-w-0 w-full divide-x divide-beige-dark"
         style={{

@@ -49,7 +49,7 @@ function articleText(html) {
   text = text
     .replace(/010[- ]?4277[- ]?1279/g, " ")
     .replace(/안윤정\s*법무사에게\s*바로\s*상담하기/g, " ")
-    .replace(/현재\s*카카오[·\s]*네이버톡톡만\s*가능/g, " ")
+    .replace(/현재\s*카카오(?:톡)?[·\s]*네이버톡톡만\s*가능/g, " ")
     .replace(/전화상담은\s*[^\s]+?\s*9시부터\s*가능/g, " ")
     .replace(/1분만에\s*문의하기/g, " ")
     .replace(/카카오톡\s*채널로\s*바로\s*연결/g, " ")

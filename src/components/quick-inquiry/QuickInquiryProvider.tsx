@@ -11,18 +11,15 @@ import {
 } from "react";
 import type { ConsultSituationId } from "@/lib/consult-wizard/catalog";
 import {
-  CONSULT_SITUATIONS,
+  isConsultSituationId,
   suggestSituationsFromPath,
 } from "@/lib/consult-wizard/catalog";
+import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { trackEvent } from "@/lib/admin-ops/beacon";
 import { trackCtaEvent } from "@/lib/admin-ops/track-client";
 import { trackConsultEvent } from "@/lib/consult-wizard/analytics";
 import { CONTACT_INQUIRY_PATH } from "@/lib/consultation-inquiry";
 import { isAdminPath } from "@/components/layout/PublicOnly";
-
-function isConsultSituationId(value: string): value is ConsultSituationId {
-  return CONSULT_SITUATIONS.some((s) => s.id === value);
-}
 
 export type QuickInquiryOpenOptions = {
   pageTitle?: string;
@@ -109,7 +106,12 @@ export function QuickInquiryProvider({ children }: { children: ReactNode }) {
     void trackEvent({
       type: "consultation_start",
       path: meta.path || "/",
-      meta: { source: options?.source ?? "other", dest: "#inquiry", kind: "contact" },
+      meta: {
+        source: options?.source ?? "other",
+        dest: "#inquiry",
+        kind: "contact",
+        intent: getConsultEmpathy(meta.path).intent,
+      },
     });
   }, []);
 

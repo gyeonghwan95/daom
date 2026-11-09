@@ -13,7 +13,8 @@ import { trackCTA } from "@/lib/analytics/track-cta";
 import { trackNaverPlaceClick } from "@/lib/admin-ops/track-client";
 import { getContactInfo, getNaverBlogUrl } from "@/lib/contact";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
-import { getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultPasteText, getConsultEmpathy } from "@/lib/consultation-empathy";
+import { consultChatButtonLabel } from "@/lib/open-consult-chat";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
 import { NAVER_BLOG_MORE_POSTS_LABEL } from "@/lib/naver-blog/more-posts-cta";
 import {
@@ -62,8 +63,8 @@ function Chevron() {
 export function HomeHeroChannels() {
   const { kakao, naverTalk } = getContactInfo();
   const naverOn = isNaverSmartPlaceConfigured();
-  const { launch } = useConsultChatLaunch();
-  const example = getConsultEmpathy("/").example;
+  const { status, launch } = useConsultChatLaunch();
+  const example = consultPasteText(getConsultEmpathy("/"));
   const track = (kind: string, href?: string) => trackCTA(`home-hero-${kind}`, "/", href);
   const openChat = (kind: string, href: string) => {
     track(kind, href);
@@ -98,7 +99,7 @@ export function HomeHeroChannels() {
         <span className="home-hero__chip-icon home-hero__chip-icon--kakao" aria-hidden>
           <KakaoIcon className="h-4 w-4" />
         </span>
-        <span>카카오톡</span>
+        <span>{consultChatButtonLabel(status, "카카오톡")}</span>
         <span className="sr-only"> (새 창)</span>
       </a>,
     );

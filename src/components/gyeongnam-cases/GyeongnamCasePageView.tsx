@@ -91,38 +91,42 @@ export function GyeongnamCasePageView({
       page={page}
       hasRemoteNotice={showNationwideNotice}
       heroAddon={
-        // 같은 그림의 안내 패널이 두 번 이어지지 않도록 하나만 둔다(관할 예외 안내에 사무소 위치 고지를 함께 싣는다)
-        showNationwideNotice ? (
-          <NationwideServiceNotice
-            type="jurisdiction-exception"
-            badge={`${def.regionName} 부동산 전국 의뢰 가능`}
-            footnote={def.officeDisclosure}
-            showDetails={false}
-          />
-        ) : (
+        <>
           <GyeongnamServiceHero def={def} />
-        )
+          {showNationwideNotice ? (
+            <NationwideServiceNotice
+              type="jurisdiction-exception"
+              badge={`${def.regionName} 부동산 전국 의뢰 가능`}
+              showDetails={false}
+              // 색인된 안내 문구는 그대로 두고, 같은 안내 그림만 한 번 더 나오지 않게 한다
+              showImage={false}
+            />
+          ) : null}
+        </>
       }
     >
-      {showRemote ? (
-        <div className="space-y-6">
-          <RegionalRemoteInheritance
-            regionLabel={def.regionName}
-            inquiryRegion={region}
-            fromPage={def.slug}
-            inquiryField={inquiryField}
-            description={def.remoteHint}
+      {/* 상세 블록 사이에 일정한 간격을 준다 — 간격 없이 붙는 문제 방지 */}
+      <div className="space-y-8">
+        {showRemote ? (
+          <div className="space-y-6">
+            <RegionalRemoteInheritance
+              regionLabel={def.regionName}
+              inquiryRegion={region}
+              fromPage={def.slug}
+              inquiryField={inquiryField}
+              description={def.remoteHint}
+            />
+            {showCostGuide ? <InheritanceCostGuide fromPage={def.slug} /> : null}
+          </div>
+        ) : null}
+        {def.pageType === "region-hub" ? (
+          <GyeongnamHubExplorer
+            items={explorerItems}
+            filters={explorerFilters}
+            coreLinks={coreLinks}
           />
-          {showCostGuide ? <InheritanceCostGuide fromPage={def.slug} /> : null}
-        </div>
-      ) : null}
-      {def.pageType === "region-hub" ? (
-        <GyeongnamHubExplorer
-          items={explorerItems}
-          filters={explorerFilters}
-          coreLinks={coreLinks}
-        />
-      ) : null}
+        ) : null}
+      </div>
     </PageDataTemplate>
   );
 }

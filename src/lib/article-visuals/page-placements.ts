@@ -476,17 +476,20 @@ export function getArticleVisualsForPath(
 
   if (slot && !allowedSlots.has(slot)) return [];
 
-  const slots = slot ? [slot] : [...allowedSlots];
+  // 앞 슬롯에서 고른 사진을 이어받아, 어느 슬롯을 먼저 그려도 같은 결과가 나오게 한다
+  const used = [...usedAssets];
   const out: ArticleVisualPlacement[] = [];
-  for (const s of slots) {
+  for (const s of slotsForAutoCount(count)) {
     const placement = buildAutoPlacement(
       normalized,
       s,
       field,
       articleImageCatalog,
-      usedAssets,
+      used,
     );
-    if (placement) out.push(placement);
+    if (!placement) continue;
+    used.push(placement.assetId);
+    if (!slot || s === slot) out.push(placement);
   }
   return out;
 }

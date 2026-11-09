@@ -191,7 +191,7 @@ export default function AdminPagesPage() {
       {watchlist.length ? (
         <AdminSection title="방문은 있는데 문의가 없는 페이지 (30일)">
           <p className="admin-prose">
-            특강·계산기는 제외했습니다. 상속·법인·지역 페이지에서 전화·카카오 클릭을 같이 보세요.
+            특강·계산기는 제외했습니다. 상속·법인·지역 페이지에서 전화·카카오톡 클릭을 같이 보세요.
           </p>
           <AdminTableWrap>
           <table className="admin-table">

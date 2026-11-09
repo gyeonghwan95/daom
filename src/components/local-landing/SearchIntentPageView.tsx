@@ -195,7 +195,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       {content.situationNav?.length ? (
         <ContentSection id="situation-nav" title="지금 어떤 상황이신가요?">
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
             {content.situationNav.map((item) => {
               const className =
                 "block rounded-xl border border-beige-dark bg-white px-4 py-4 no-underline transition hover:border-navy/30";

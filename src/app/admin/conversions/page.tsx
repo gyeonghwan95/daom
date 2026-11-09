@@ -106,7 +106,7 @@ export default function AdminConversionsPage() {
         refreshing={refreshing}
       />
       <p className="admin-prose">
-        버튼을 눌렀을 때 이동한 주소(전화·카카오·문의 페이지 등)를 보여 줍니다.
+        버튼을 눌렀을 때 이동한 주소(전화·카카오톡·문의 페이지 등)를 보여 줍니다.
         이름·전화번호는 저장하지 않습니다. 네이버 예약 완료·실제 통화는 측정하지 않습니다.
       </p>
       {error ? <AdminErrorState message={error} onRetry={reload} /> : null}
@@ -253,7 +253,7 @@ export default function AdminConversionsPage() {
                 <th className="admin-hide-sm">기기</th>
                 <th>CTA</th>
                 <th>전화</th>
-                <th>카카오</th>
+                <th>카카오톡</th>
                 <th>문의</th>
                 <th className="admin-hide-sm">플레이스</th>
               </tr>

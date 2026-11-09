@@ -3,7 +3,7 @@ import { getSourceLabel } from "@/lib/analytics/referrer";
 const EVENT_LABELS: Record<string, string> = {
   cta_click: "CTA 클릭",
   phone_click: "전화 클릭",
-  kakao_click: "카카오 클릭",
+  kakao_click: "카카오톡 클릭",
   naver_click: "네이버톡톡 클릭",
   consultation_start: "상담 시작",
   consultation_submit: "문의 제출",

@@ -84,7 +84,7 @@ export function ConsultLandingPageView({ page, lead, jsonLd }: ConsultLandingPag
       <ContentSection id="how" title="상담은 이렇게 진행됩니다">
         <ProseParagraphs
           paragraphs={[
-            "긴 문의 글을 쓰지 않아도 됩니다. 해당하는 상황을 고르고, 준비된 자료가 있으면 표시한 뒤 연락처만 남겨 주시면 됩니다.",
+            "긴 문의 글을 쓰지 않아도 됩니다. 해당하는 상황을 고르고 연락처만 남겨 주시면 됩니다. 서류는 나중에 보내셔도 됩니다.",
             "필요한 절차와 준비자료를 확인한 뒤, 남겨주신 방법으로 안내드립니다.",
           ]}
         />

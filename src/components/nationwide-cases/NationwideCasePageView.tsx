@@ -70,46 +70,49 @@ export function NationwideCasePageView({
         />
       }
     >
-      {showRemote && def.primaryKeyword.includes("상속") ? (
-        <div className="space-y-6">
-          <RegionalRemoteInheritance
-            regionLabel={def.regionName}
-            inquiryRegion={region || undefined}
-            fromPage={def.slug}
-          />
-          <InheritanceCostGuide fromPage={def.slug} />
-        </div>
-      ) : null}
+      {/* 상세 블록 사이에 일정한 간격을 준다 — 간격 없이 붙는 문제 방지 */}
+      <div className="space-y-8">
+        {showRemote && def.primaryKeyword.includes("상속") ? (
+          <div className="space-y-6">
+            <RegionalRemoteInheritance
+              regionLabel={def.regionName}
+              inquiryRegion={region || undefined}
+              fromPage={def.slug}
+            />
+            <InheritanceCostGuide fromPage={def.slug} />
+          </div>
+        ) : null}
 
-      {def.kind === "region-hub" ? (
-        <NationwideRegionExplorer items={explorerItems} groups={explorerGroups} />
-      ) : null}
+        {def.kind === "region-hub" ? (
+          <NationwideRegionExplorer items={explorerItems} groups={explorerGroups} />
+        ) : null}
 
-      {def.kind === "hub" ? (
-        <section className="space-y-3" aria-label="전국 업무 바로가기">
-          <h2 className="section-heading">전국 업무 바로가기</h2>
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {def.relatedServiceSlugs.map((slug) => (
-              <li key={slug}>
+        {def.kind === "hub" ? (
+          <section className="space-y-3" aria-label="전국 업무 바로가기">
+            <h2 className="section-heading">전국 업무 바로가기</h2>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {def.relatedServiceSlugs.map((slug) => (
+                <li key={slug}>
+                  <Link
+                    href={caseNationwidePath(slug)}
+                    className="flex min-h-11 items-center rounded-lg border border-beige-dark bg-white px-3 text-sm font-medium text-navy no-underline hover:bg-beige/40"
+                  >
+                    {slug.replace(/법무사$/, "").replace(/등기$/, "등기 ")}
+                  </Link>
+                </li>
+              ))}
+              <li>
                 <Link
-                  href={caseNationwidePath(slug)}
+                  href={caseNationwidePath("지역별상속등기법무사")}
                   className="flex min-h-11 items-center rounded-lg border border-beige-dark bg-white px-3 text-sm font-medium text-navy no-underline hover:bg-beige/40"
                 >
-                  {slug.replace(/법무사$/, "").replace(/등기$/, "등기 ")}
+                  지역별 상속등기 안내
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link
-                href={caseNationwidePath("지역별상속등기법무사")}
-                className="flex min-h-11 items-center rounded-lg border border-beige-dark bg-white px-3 text-sm font-medium text-navy no-underline hover:bg-beige/40"
-              >
-                지역별 상속등기 안내
-              </Link>
-            </li>
-          </ul>
-        </section>
-      ) : null}
+            </ul>
+          </section>
+        ) : null}
+      </div>
     </PageDataTemplate>
   );
 }

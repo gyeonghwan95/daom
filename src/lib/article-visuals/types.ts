@@ -53,6 +53,8 @@ export type ArticleImageAsset = {
   fields: string[];
   overlaySafe: ArticleVisualOverlayPosition[];
   mobileFocus: ArticleVisualMobileFocus;
+  /** 가로로 넓게 자를 때의 세로 기준점(%) — 인물·핵심이 글자와 겹치지 않게 고른다. 없으면 mobileFocus를 따른다 */
+  focusY?: number;
   /** 본문 사용 상한(페이지 수) */
   maxBodyUses: number;
   notes?: string;
