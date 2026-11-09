@@ -27,7 +27,6 @@ import { useConsultationAvailability } from "@/hooks/useConsultationAvailability
 import { consultationReplySla } from "@/lib/consultation-copy";
 import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
-import { consultChatButtonLabel, consultChatHint } from "@/lib/open-consult-chat";
 import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import { siteImages } from "@/lib/site-images";
@@ -162,7 +161,7 @@ function DecisionCard({ className }: { className: string }) {
   const example = lecture
     ? "강의 주제와 희망 날짜를 알려 드립니다."
     : empathy.example;
-  const { status, launch } = useConsultChatLaunch();
+  const { launch } = useConsultChatLaunch();
   const hint = lecture
     ? `${consultationReplySla.line} 기관 강사료 기준이 있으면 그 범위에서 맞춰 드립니다.`
     : isResolved && !isOpen
@@ -224,23 +223,6 @@ function DecisionCard({ className }: { className: string }) {
         </figure>
       ) : null}
 
-      {lecture ? null : kakao || naverTalk ? (
-        <a
-          href={kakao || naverTalk}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="decision-card__example"
-          onClick={() => openChat(kakao ? "kakao" : "naver-talk", kakao || naverTalk)}
-        >
-          이렇게만 보내도 됩니다. 「{example}」
-          <span className="decision-card__example-action">{consultChatHint(status)}</span>
-        </a>
-      ) : (
-        <p className="decision-card__example">
-          이렇게만 보내도 됩니다. 「{example}」
-        </p>
-      )}
-
       <div className={`decision-card__actions${showPhone ? " decision-card__actions--phone" : ""}`}>
         {kakao ? (
           <a
@@ -253,10 +235,7 @@ function DecisionCard({ className }: { className: string }) {
             className="decision-card__kakao"
           >
             <KakaoIcon className="h-4 w-4 shrink-0" />
-            {consultChatButtonLabel(
-              status,
-              quiet ? "이름 없이 카카오톡" : "카카오톡으로 이 말 보내기",
-            )}
+            {quiet ? "이름 없이 카카오톡" : "카카오톡"}
             <span className="sr-only"> (새 창)</span>
           </a>
         ) : null}
@@ -271,7 +250,7 @@ function DecisionCard({ className }: { className: string }) {
             className="decision-card__naver"
           >
             <NaverIcon className="h-4 w-4 shrink-0" />
-            {consultChatButtonLabel(status, "네이버톡톡")}
+            네이버톡톡
             <span className="sr-only"> (새 창)</span>
           </a>
         ) : null}

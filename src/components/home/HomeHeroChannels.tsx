@@ -15,7 +15,6 @@ import { getContactInfo, getNaverBlogUrl } from "@/lib/contact";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
-import { consultChatButtonLabel, consultChatHint } from "@/lib/open-consult-chat";
 import { NAVER_BLOG_MORE_POSTS_LABEL } from "@/lib/naver-blog/more-posts-cta";
 import {
   isNaverSmartPlaceConfigured,
@@ -63,7 +62,7 @@ function Chevron() {
 export function HomeHeroChannels() {
   const { kakao, naverTalk } = getContactInfo();
   const naverOn = isNaverSmartPlaceConfigured();
-  const { status, launch } = useConsultChatLaunch();
+  const { launch } = useConsultChatLaunch();
   const example = getConsultEmpathy("/").example;
   const track = (kind: string, href?: string) => trackCTA(`home-hero-${kind}`, "/", href);
   const openChat = (kind: string, href: string) => {
@@ -99,7 +98,7 @@ export function HomeHeroChannels() {
         <span className="home-hero__chip-icon home-hero__chip-icon--kakao" aria-hidden>
           <KakaoIcon className="h-4 w-4" />
         </span>
-        <span>{consultChatButtonLabel(status, "카카오톡")}</span>
+        <span>카카오톡</span>
         <span className="sr-only"> (새 창)</span>
       </a>,
     );
@@ -118,7 +117,7 @@ export function HomeHeroChannels() {
         <span className="home-hero__chip-icon home-hero__chip-icon--naver" aria-hidden>
           <NaverIcon className="h-3.5 w-3.5" />
         </span>
-        <span>{consultChatButtonLabel(status, "네이버톡톡")}</span>
+        <span>네이버톡톡</span>
         <span className="sr-only"> (새 창)</span>
       </a>,
     );
@@ -139,22 +138,8 @@ export function HomeHeroChannels() {
     );
   }
 
-  const chatHref = kakao || naverTalk;
-
   return (
     <div className="home-hero__channels">
-      {chatHref ? (
-        <a
-          href={chatHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="home-hero__example"
-          onClick={() => openChat(kakao ? "kakao" : "naver-talk", chatHref)}
-        >
-          이렇게만 보내도 됩니다. 「{example}」
-          <span className="home-hero__example-hint">{consultChatHint(status)}</span>
-        </a>
-      ) : null}
       <div className="home-hero__contact">
         <InquiryStartButton
           className="home-hero__primary"

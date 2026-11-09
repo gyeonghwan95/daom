@@ -16,5 +16,5 @@ export function consultChatButtonLabel(status: ConsultChatStatus, idle: string):
 export function consultChatHint(status: ConsultChatStatus): string {
   if (status === "copied") return "첫 문장을 복사했습니다. 열린 창에 붙여 넣어 주세요.";
   if (status === "failed") return "창에서 한 줄만 적어 주세요.";
-  return "누르면 열린 창에 붙여 넣을 문장을 복사합니다.";
+  return "탭하면 이 문장을 복사합니다.";
 }
