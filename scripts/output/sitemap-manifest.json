@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-09T15:36:11.376Z",
+  "generatedAt": "2026-11-10T10:23:58.780Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1657,
+  "totalUrls": 1662,
   "format": "urlset",
   "tierCounts": {
     "1": 17,
     "2": 29,
     "3": 176,
-    "4": 601,
+    "4": 606,
     "5": 185,
     "6": 559,
     "7": 53,
@@ -1010,9 +1010,9 @@
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
-      "lastmod": "2026-11-09",
+      "lastmod": "2026-11-10",
       "filename": "tier-4-regions.xml",
-      "count": 601
+      "count": 606
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
@@ -2658,13 +2658,13 @@
       "path": "/부산강사섭외비용",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%82%AC%EC%84%AD%EC%99%B8%EB%B9%84%EC%9A%A9",
-      "lastmod": null
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산강사섭외체크리스트",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%82%AC%EC%84%AD%EC%99%B8%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8",
-      "lastmod": null
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산개명허가",
@@ -2889,6 +2889,12 @@
       "lastmod": "2026-10-11"
     },
     {
+      "path": "/부산노인법률교육",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%85%B8%EC%9D%B8%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
+      "lastmod": "2026-11-10"
+    },
+    {
       "path": "/부산농업회사법인설립",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%86%8D%EC%97%85%ED%9A%8C%EC%82%AC%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
@@ -2934,7 +2940,7 @@
       "path": "/부산도서관법률특강",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8F%84%EC%84%9C%EA%B4%80%EB%B2%95%EB%A5%A0%ED%8A%B9%EA%B0%95",
-      "lastmod": null
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산등기권리증분실",
@@ -3048,7 +3054,7 @@
       "path": "/부산법률강사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EA%B0%95%EC%82%AC",
-      "lastmod": "2026-11-01"
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산법률상담",
@@ -3360,7 +3366,7 @@
       "path": "/부산사회복지기관강사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%EA%B8%B0%EA%B4%80%EA%B0%95%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산사회복지법인등기",
@@ -3457,6 +3463,12 @@
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%85%80%ED%94%84%EB%93%B1%EA%B8%B0",
       "lastmod": null
+    },
+    {
+      "path": "/부산소상공인법률교육",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산소액소송",
@@ -3609,6 +3621,12 @@
       "lastmod": null
     },
     {
+      "path": "/부산임대차교육",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EB%8C%80%EC%B0%A8%EA%B5%90%EC%9C%A1",
+      "lastmod": "2026-11-10"
+    },
+    {
       "path": "/부산임원변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
@@ -3739,6 +3757,12 @@
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A4%91%EB%8F%84%EA%B8%88%EB%8C%80%EC%B6%9C%EA%B7%BC%EC%A0%80%EB%8B%B9",
       "lastmod": null
+    },
+    {
+      "path": "/부산중학교특강",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A4%91%ED%95%99%EA%B5%90%ED%8A%B9%EA%B0%95",
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산증여등기",
@@ -3985,6 +4009,12 @@
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B1%84%EB%AC%B4%EB%B6%88%EC%9D%B4%ED%96%89%EC%9E%90%EB%AA%85%EB%B6%80%EB%93%B1%EC%9E%AC",
       "lastmod": "2026-10-15"
+    },
+    {
+      "path": "/부산청소년법률교육",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B2%AD%EC%86%8C%EB%85%84%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/부산체육단체법인설립",
@@ -8316,7 +8346,7 @@
       "path": "/법무사진로특강",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EB%AC%B4%EC%82%AC%EC%A7%84%EB%A1%9C%ED%8A%B9%EA%B0%95",
-      "lastmod": "2026-10-19"
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/법무사협업",
@@ -10170,7 +10200,7 @@
       "path": "/청년생활법률특강",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%B2%AD%EB%85%84%EC%83%9D%ED%99%9C%EB%B2%95%EB%A5%A0%ED%8A%B9%EA%B0%95",
-      "lastmod": "2026-11-01"
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/체육단체사단법인설립",
@@ -10260,7 +10290,7 @@
       "path": "/학교법률교육",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%99%EA%B5%90%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1",
-      "lastmod": null
+      "lastmod": "2026-11-10"
     },
     {
       "path": "/학교법인설립등기",

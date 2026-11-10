@@ -137,6 +137,7 @@ export const jeonseSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.selfSupportJeonse],
   related: [
+    { href: "/부산임대차교육", label: "임대차 교육·부동산 특강", description: "입주 후 갱신·보증금 반환" },
     { href: "/청년생활법률특강", label: "청년 법률 특강", description: "주거·금전·계약 전반" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "대학생 주거계약 특강" },
     { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "시민 연속 강좌 1회차 전·월세" },
@@ -352,6 +353,11 @@ export const lifeLawSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.citizenWeek2, targetPhotos.citizenWeek3],
   related: [
+    { href: "/부산노인법률교육", label: "노인 법률 교육", description: "상속·유언·후견" },
+    { href: "/부산중학교특강", label: "부산 중학교 특강", description: "법률 특강·법교육 강연" },
+    { href: "/부산청소년법률교육", label: "청소년 법률 교육", description: "미성년자 계약·중고거래" },
+    { href: "/부산소상공인법률교육", label: "소상공인 법률 교육", description: "계약·상가·미수금" },
+    { href: "/부산임대차교육", label: "임대차 교육·부동산 특강", description: "갱신·보증금 반환" },
     { href: "/부산도서관법률특강", label: "도서관 법률특강", description: "시민 연속 강좌" },
     { href: "/부산사회복지기관강사", label: "사회복지기관 강사", description: "종사자·이용자 교육" },
     { href: "/공공기관법률교육", label: "공공기관 법률교육", description: "직원·민원 응대" },

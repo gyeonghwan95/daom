@@ -146,6 +146,7 @@ export const careerSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.yangsan],
   related: [
+    { href: "/부산중학교특강", label: "부산 중학교 특강", description: "중학생 법률 특강·법교육" },
     { href: "/학교법률교육", label: "고등학교 생활법률 특강", description: "SNS·돈거래·첫 알바 계약" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "진로 + 현직자 멘토링" },
     { href: "/강사소개", label: "강사 프로필", description: "학교 제출용 이력" },
@@ -161,10 +162,10 @@ export const careerContent = buildTargetContent({
   slug: "법무사진로특강",
   kind: "topic",
   title: "법무사 진로특강",
-  metaTitle: "부산 진로특강 강사｜현직 법무사 법조·전문직 직업인 특강",
+  metaTitle: "부산 진로특강 강사｜중·고교 직업인 특강, 현직 법무사 법조·전문직",
   metaDescription:
-    "부산 중·고교와 대학 진로 담당자를 위한 현직 법무사 진로특강 안내. 전문직업인 특강·진로체험 주간에 맞춘 50·90분 구성과 양산제일고 진로특강 기록을 소개합니다.",
-  h1: "부산 진로특강, 현직 법무사가 들려주는 법조·전문직의 실제",
+    "부산 중·고교와 대학 진로 담당자를 위한 현직 법무사 진로특강·직업인 특강 안내. 전문직업인 특강·진로체험 주간에 맞춘 50·90분 구성과 양산제일고 진로특강 기록을 소개합니다.",
+  h1: "부산 진로특강·직업인 특강, 현직 법무사가 들려주는 법조·전문직의 실제",
   eyebrow: "진로특강 · 전문직업인 특강 · 진로체험",
   faqs: [
     {
@@ -366,6 +367,8 @@ export const highSchoolSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.mistakeCrime],
   related: [
+    { href: "/부산중학교특강", label: "부산 중학교 특강", description: "45분 수업 구성" },
+    { href: "/부산청소년법률교육", label: "청소년 법률 교육", description: "미성년자 계약·중고거래" },
     { href: "/법무사진로특강", label: "부산 진로특강", description: "법 관련 직업인 특강" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "대학 비교과·진로" },
     { href: "/디지털법률교육", label: "디지털 법률교육", description: "온라인·SNS 예방" },
@@ -382,12 +385,17 @@ export const highSchoolContent = buildTargetContent({
   slug: "학교법률교육",
   kind: "topic",
   title: "부산 고등학교 특강",
-  metaTitle: "부산 고등학교 특강 강사｜생활법률·진로 특강과 강의계획",
+  metaTitle: "부산 고등학교 특강 강사｜법교육·강연, 생활법률·진로 특강과 강의계획",
   metaDescription:
-    "부산 고등학교 선생님을 위한 외부강사 특강 안내. SNS 게시물·돈거래·첫 아르바이트 생활법률과 진로 주제를 50분 수업·강당 특강 구성과 강의계획서로 정리했습니다.",
-  h1: "부산 고등학교 특강, 수업시수에 맞춘 생활법률·진로 구성",
+    "부산 고등학교 선생님을 위한 외부강사 특강·법교육 강연 안내. SNS 게시물·돈거래·첫 아르바이트 생활법률과 진로 주제를 50분 수업·강당 특강 구성과 강의계획서로 정리했습니다.",
+  h1: "부산 고등학교 특강·강연, 수업시수에 맞춘 생활법률·진로 구성",
   eyebrow: "고등학교 외부강사 · 생활법률 · 진로",
   faqs: [
+    {
+      question: "중학교에서도 출강하나요?",
+      answer:
+        "중학교는 45분 수업에 맞춘 별도 안내가 있습니다. 중학교를 대상으로 진행한 출강 기록은 아직 확인된 것이 없고, 확인된 학교 대상 이력은 양산제일고 진로특강입니다. 자세한 구성은 부산 중학교 특강 페이지를 참고해 주세요.",
+    },
     {
       question: "학년 전체 강당 특강도 가능한가요?",
       answer:

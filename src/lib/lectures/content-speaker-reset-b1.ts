@@ -137,6 +137,7 @@ export const busanHubSpec: LectureTargetSpec = {
   approach: [
     "해운대·센텀 사무소를 기준으로 부산 16개 구·군 출강 일정을 잡습니다. 양산·김해·창원 등 인근은 이동 시간을 포함해 협의하고, 먼 곳은 온라인 진행을 함께 검토합니다.",
     "강의 전에는 대상 연령, 참석 예상 인원, 강의실 장비(빔프로젝터·마이크), 자료 배포 방식을 확인합니다. 강의 중 개별 사건 질문이 나오면 일반론으로 답하고, 개인 사안은 강의 밖 절차로 안내합니다.",
+    "부산 출강 강사를 찾는 담당자께서 먼저 보시는 것은 우리 지역에 와 본 적이 있는지입니다. 확인된 기록 기준으로 해운대에서는 해운대청년채움공간의 창업법률 특강(2026-07-16)과 청년 전·월세 계약 특강(2026-10-02), 양산에서는 양산제일고 진로특강(2026-05-21), 창원에서는 창원청년비전센터 청년 생활법률 특강(2026-07-02)을 진행했습니다. 기록에 없는 지역과 기관은 이력으로 쓰지 않고 출강 가능 여부를 협의하며, ‘양산 특강 강사’, ‘해운대 특강’처럼 지역명으로 찾으셔도 지역마다 별도 페이지를 두지 않고 이 허브에서 확인된 기록과 문의 절차를 보실 수 있습니다.",
   ],
   scopeExclusions: [
     "청렴·성희롱예방·산업안전 등 법정 지정교육",
@@ -159,6 +160,7 @@ export const busanHubSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.citizenWeek1, targetPhotos.moneyDispute],
   related: [
+    { href: "/부산중학교특강", label: "부산 중학교 특강", description: "중학생 법률 특강·법교육" },
     { href: "/법률강의", label: "법률 강의·생활법률 특강", description: "시민·기관 대상 연속 강좌 구성" },
     { href: "/기업법률교육", label: "기업 법률 특강", description: "임직원 계약·채권·법인 실무" },
     { href: "/부산대학교특강", label: "부산 대학교 특강", description: "비교과·진로·생활법률" },
@@ -386,6 +388,7 @@ export const enterpriseSpec: LectureTargetSpec = {
   ],
   photos: [targetPhotos.youthSpace],
   related: [
+    { href: "/부산소상공인법률교육", label: "소상공인 법률 교육", description: "사업주 대상 계약·상가·미수금" },
     { href: "/부산법률강사", label: "법률 강사 초빙 안내", description: "대상별 출강 범위 전체" },
     { href: "/창업법률교육", label: "창업 법률교육", description: "예비창업자·스타트업 대상" },
     { href: "/공공기관법률교육", label: "공공기관 법률교육", description: "직원·민원 응대 실무" },

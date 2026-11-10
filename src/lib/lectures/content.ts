@@ -1,3 +1,5 @@
+import { lectureGapTopicPages } from "@/lib/lectures/content-gap-topics-2026-11-10";
+import { lectureSchoolTopicPages } from "@/lib/lectures/content-school-topics-2026-11-10";
 import { expertHubPage } from "@/lib/lectures/content-expert-hub";
 import type { LecturePageContent } from "@/lib/lectures/types";
 import { normalizeRouteSlug } from "@/lib/seo/slug";
@@ -71,10 +73,10 @@ const youth: LecturePageContent = {
   slug: "청년생활법률특강",
   kind: "topic",
   title: "부산 청년 법률교육",
-  metaTitle: "부산 청년 법률 특강 | 주거·계약·생활법률 교육",
+  metaTitle: "부산 청년 법률 특강 | 청년센터 주거·계약·생활법률 교육",
   metaDescription:
     "부산 청년센터·자립 프로그램 담당자를 위한 청년 법률 특강 안내. 첫 집 계약, 금전거래, 근로계약, 온라인 활동의 법률 기준을 사례로 구성하며 2026년 청년센터·자립지원전담기관 강의 기록이 있습니다.",
-  h1: "부산 청년 법률 특강, 주거와 계약에서 확인할 것",
+  h1: "부산 청년 법률 특강｜청년센터 교육, 주거와 계약에서 확인할 것",
   eyebrow: "청년센터 · 자립 · 사회초년생",
   heroIntro:
     "청년이 실제로 겪는 주거·금전·계약 상황에서 질문을 모아, 어렵지 않은 설명으로 확인 순서를 남기는 특강입니다. 청년센터·자립지원·대학 프로그램에 맞춰 시간을 조정합니다.",
@@ -167,6 +169,8 @@ const youth: LecturePageContent = {
     },
   ],
   relatedLectureLinks: [
+    { href: "/부산임대차교육", label: "임대차 교육·부동산 특강" },
+    { href: "/부산청소년법률교육", label: "청소년 법률 교육" },
     { href: "/전세사기예방교육", label: "전세사기 예방교육" },
     { href: "/디지털법률교육", label: "디지털 법률교육" },
     { href: "/법률강의", label: "강의 허브" },
@@ -294,6 +298,7 @@ const startup: LecturePageContent = {
     },
   ],
   relatedLectureLinks: [
+    { href: "/부산소상공인법률교육", label: "소상공인 법률 교육" },
     { href: "/기업법률교육", label: "기업 법률교육" },
     { href: "/법률강의", label: "강의 허브" },
     { href: "/부산법률강사", label: "부산 강사 초빙" },
@@ -531,6 +536,7 @@ const digital: LecturePageContent = {
     },
   ],
   relatedLectureLinks: [
+    { href: "/부산청소년법률교육", label: "청소년 법률 교육" },
     { href: "/청년생활법률특강", label: "청년 생활법률" },
     { href: "/학교법률교육", label: "학교 법률교육" },
     { href: "/법률강의", label: "강의·특강 안내" },
@@ -700,6 +706,8 @@ export const lecturePages: LecturePageContent[] = [
   ...institutionExpansionPages,
   ...speakerExpansionPages,
   ...newLectureTargetContents,
+  ...lectureGapTopicPages,
+  ...lectureSchoolTopicPages,
 ];
 
 
