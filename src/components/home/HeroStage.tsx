@@ -267,7 +267,8 @@ function StageVisual({
             poster={optimizedImageSrc(item.poster, 1280)}
             muted
             playsInline
-            preload={active ? "auto" : "metadata"}
+            // 서버 HTML이 모든 기기에 같은 값을 갖도록 항상 metadata. 재생이 시작되면(play) 브라우저가 필요한 만큼 받는다.
+            preload="metadata"
             disablePictureInPicture
             disableRemotePlayback
             controlsList="nodownload nofullscreen noremoteplayback"
@@ -287,7 +288,12 @@ export function HeroStage() {
   const [index, setIndex] = useState(0);
   const [userPlaying, setUserPlaying] = useState(() => {
     if (typeof window === "undefined") return true;
-    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // 움직임 줄이기, 데이터 절약 모드, 느린 회선(2G·3G)에서는 영상을 자동으로 받지 않고 포스터만 보여 준다.
+    // 재생 버튼을 누르면 그때부터 받는다. (홈 영상 약 0.5MB가 첫 로드에 같이 받아지던 것을 피한다)
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (conn?.saveData || /^(slow-2g|2g|3g)$/.test(conn?.effectiveType ?? "")) return false;
+    return true;
   });
   const [pageVisible, setPageVisible] = useState(true);
   const fillRef = useRef<HTMLSpanElement>(null);

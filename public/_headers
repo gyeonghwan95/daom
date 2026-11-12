@@ -7,8 +7,36 @@
   Cache-Control: public, max-age=0, must-revalidate
 
 /_next/static/*
-  # 해시 파일명 — 장기 캐시 안전
+  # 해시 파일명 — 장기 캐시 안전. /* 의 Cache-Control(max-age=0, must-revalidate)이 값에 이어 붙지 않도록 먼저 떼어낸다.
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  # 파일명에 내용 해시가 들어 있다(scripts/fonts/build-font-subsets.py) — 영구 캐시
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/_img/*
+  # 빌드 때 만든 이미지 변형(파일명에 해시 없음) — 재방문마다 재검증하지 않고 1주일 캐시, 이후는 백그라운드 갱신
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/image/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/images/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/video/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/qrCode/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
 /resources/pdf/*
   # 의뢰 전 준비자료 PDF — 원문 HTML(/resources/*)이 색인 대상, 파일은 버전명이라 하루 캐시

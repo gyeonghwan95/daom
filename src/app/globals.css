@@ -65,6 +65,7 @@
   --color-cream: var(--cream);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
+  --font-noto-sans-kr: "Noto Sans KR Subset";
   --font-sans: var(--font-noto-sans-kr), "KR Fallback Adjusted", "Malgun Gothic", sans-serif;
   /*
    * 본문 글꼴은 가변 글꼴(layout.tsx)이다. 예전 400·500·700 고정 세 벌에서는 500을 넘는 굵기(600·800 등)가

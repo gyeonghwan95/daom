@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { preload } from "react-dom";
 import { Header } from "@/components/layout/Header";
 import { PublicOnly } from "@/components/layout/PublicOnly";
 import { AppClientShell } from "@/components/ux/AppClientShell";
@@ -7,17 +7,16 @@ import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
 import "./globals.css";
+import "./noto-sans-kr-subset.css";
 
-// 가변 글꼴 한 벌 — 400·500·700 세 벌로 선언하면 같은 파일을 가리키는 @font-face가 3배(372개)가 되어
-// 렌더링을 막는 CSS만 커진다(압축 후 약 72KB → 24KB). 굵기 표시는 globals.css @theme의 굵기 매핑으로 이전과 같게 유지한다.
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: "variable",
-  variable: "--font-noto-sans-kr",
-  display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-});
+// 본문 글꼴: Noto Sans KR 가변 글꼴을 이 사이트가 실제로 쓰는 글자로 다시 나눈 자체 호스팅 조각이다(public/fonts).
+// Google 한글 글꼴은 120여 조각이라 한 페이지가 17~19개(약 320KB)를 받았지만, 여기서는 core 한 개(약 60KB)에
+// 글자 빈도가 낮은 조각(mid·t1·t2)이 화면에 글자가 있을 때만 더해진다. 조각 정의와 재생성 방법은 scripts/fonts/build-font-subsets.py.
+// 폭을 맞춘 폴백(KR Fallback Adjusted)은 globals.css에 그대로 있다.
+const FONT_PRELOAD = [
+  "/fonts/noto-sans-kr-core.20bb9305.woff2",
+  "/fonts/noto-sans-kr-mid.13b5df69.woff2",
+] as const;
 
 export const metadata: Metadata = {
   metadataBase: new URL(getMetadataBaseUrl()),
@@ -60,8 +59,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // 첫 화면 글자는 거의 core·mid 조각에 있으므로 두 조각만 미리 받는다(나머지는 필요할 때 unicode-range로).
+  for (const href of FONT_PRELOAD) preload(href, { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
-    <html lang="ko" className={`${notoSansKr.variable} h-full`}>
+    <html lang="ko" className="h-full">
       <body className="has-mobile-cta min-h-full flex flex-col font-sans antialiased">
         <AppClientShell>
           <PublicOnly>
