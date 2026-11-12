@@ -123,7 +123,7 @@ export const 부산소액소송Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/내용증명작성준비", label: "내용증명 작성 준비" },
     { href: "/부산기업채권관리", label: "기업 미수금 관리" },
-    { href: "/contact/inquiry", label: "1분 문의" },
+    { href: "/contact/inquiry", label: "간편 문의" },
   ],
   breadcrumbParent: civilHub,
   proseSections: [

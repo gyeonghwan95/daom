@@ -88,7 +88,7 @@ export function PublicAgencyRegistrationPageView({
     { id: "real-estate", label: "부동산등기" },
     { id: "comparison", label: "촉탁·일반 비교" },
     { id: "scope", label: "업무범위 구분" },
-    { id: "pre-check", label: "담당자 1분 체크" },
+    { id: "pre-check", label: "담당자 사전 체크" },
     { id: "documents", label: "준비 서류" },
     { id: "procedures", label: "진행 절차" },
     { id: "inquiry-flow", label: "문의·수행 흐름" },

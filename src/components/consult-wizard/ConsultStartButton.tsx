@@ -21,7 +21,7 @@ type ConsultStartButtonProps = {
 };
 
 /**
- * 페이지·랜딩용 상담 시작 — 1분 문의 위자드를 연다.
+ * 페이지·랜딩용 상담 시작 — 간편 문의 위자드를 연다.
  * 데스크톱 플로팅 패널은 FloatingCTA에서 별도 유지.
  */
 export function ConsultStartButton({

@@ -21,11 +21,11 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
   {
     slug: "상담",
     title: "법무사 상담 안내",
-    metaTitle: "법무사 상담｜상황만 선택하는 약 1분 간편 상담",
+    metaTitle: "법무사 상담｜상황만 선택하는 간편 상담",
     metaDescription:
       "업무명을 몰라도 괜찮습니다. 준비 서류가 없어도 현재 상황만 선택해 법무사 상담을 남길 수 있습니다. 해운대·센텀 다옴법무사사무소.",
     h1: "법무사 상담, 상황만 선택해도 시작할 수 있습니다",
-    eyebrow: "약 1분 간편 상담",
+    eyebrow: "간편 상담",
     paragraphs: [
       "긴 문의 글을 쓰지 않아도 됩니다. 해당하는 상황을 고르고 연락처만 남겨 주시면 됩니다. 서류는 나중에 보내셔도 됩니다.",
       "필요한 절차와 준비자료를 확인한 뒤 남겨주신 방법으로 안내드립니다. 전화가 어려운 경우 문자·이메일로 남겨 주세요.",
@@ -33,7 +33,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     bullets: [
       "업무명을 정확히 몰라도 괜찮습니다",
       "준비된 서류가 없어도 상담할 수 있습니다",
-      "약 1분이면 문의를 남길 수 있습니다",
+      "상황과 연락처만 남기셔도 문의가 됩니다",
     ],
     prepItems: [
       "상담하고 싶은 상황(상속·등기·법인·회생 등)",
@@ -67,11 +67,11 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
   },
   {
     slug: "1분간편상담",
-    title: "1분 간편 상담",
-    metaTitle: "1분 간편 상담｜법무사 상황 선택형 문의",
+    title: "간편 상담",
+    metaTitle: "간편 상담｜법무사 상황 선택형 문의",
     metaDescription:
-      "약 1분 만에 상황·연락처만 남겨 법무사에게 문의합니다. 서류·업무명을 몰라도 됩니다.",
-    h1: "약 1분 간편 상담으로 문의를 남겨 보세요",
+      "상황·연락처만 짧게 남겨 법무사에게 문의합니다. 서류·업무명을 몰라도 됩니다.",
+    h1: "간편 상담으로 문의를 남겨 보세요",
     eyebrow: "짧은 선택형 문의",
     paragraphs: [
       "선택 카드로 상황을 고르고 연락처만 남기면 됩니다. 자세히 정리하지 않으셔도 확인에 도움이 됩니다.",
@@ -84,7 +84,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     prepItems: ["연락처", "대략적인 상황"],
     faqs: [
       {
-        question: "정말 1분 걸리나요?",
+        question: "정말 간단히 남길 수 있나요?",
         answer:
           "상황 선택과 연락처 입력이 중심이라 대부분 짧게 끝납니다. 메모는 선택 사항입니다.",
       },
@@ -419,7 +419,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
     ],
     relatedLinks: [
       { href: "/부산법무사서류준비", label: "서류 준비" },
-      { href: "/1분간편상담", label: "1분 간편 상담" },
+      { href: "/1분간편상담", label: "간편 상담" },
     ],
     presetSituationIds: ["unknown-work"],
     serviceSlug: "inheritance-registration",

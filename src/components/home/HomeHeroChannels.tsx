@@ -55,7 +55,7 @@ function Chevron() {
 
 /**
  * 메인 첫 화면 좌측 패널의 연락·안내.
- * - 상담 연결(PC·태블릿만): 1분만에 문의하기(대표) + 네이버톡톡·카카오톡·네이버예약.
+ * - 상담 연결(PC·태블릿만): 간편하게 문의하기(대표) + 네이버톡톡·카카오톡·네이버예약.
  *   전화는 패널 아래 번호 줄과 모바일 하단 바에서 안내한다.
  *   모바일은 하단 고정 상담 바가 같은 역할을 하므로 숨긴다.
  * - 안내 목록(모든 화면): 안윤정 법무사는 누구일까? · 네이버 지도 · 블로그 · 네이버 후기·사진
@@ -145,7 +145,7 @@ export function HomeHeroChannels() {
         <InquiryStartButton
           className="home-hero__primary"
           source="inline"
-          note="메인 첫 화면 1분만에 문의하기"
+          note="메인 첫 화면 간편하게 문의하기"
         >
           <span className="home-hero__primary-icon" aria-hidden>
             <FormIcon className="h-5 w-5" />

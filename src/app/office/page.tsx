@@ -275,7 +275,7 @@ export default function OfficePage() {
                     source="cta"
                     className="inline bg-transparent p-0 font-medium text-navy-light underline-offset-2 hover:underline"
                   >
-                    1분 문의
+                    간편 문의
                   </InquiryStartButton>
                   로도 같은 내용을 전달할 수 있습니다.
                 </p>

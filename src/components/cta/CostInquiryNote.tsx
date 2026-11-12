@@ -41,7 +41,7 @@ import { siteImages } from "@/lib/site-images";
  *
  * 서두(intro)는 "결정 카드"다. 정보를 찾으러 온 방문자가 첫 화면 근처에서
  *  ① 맡길 근거(실제 방문자 후기·대표 직접 진행·협회장 표창) ② 비용 걱정을 덜어 주는 안내(문구 고정)
- *  ③ 편한 채널을 고르는 선택지(카카오톡·네이버 톡톡·1분 문의·전화)
+ *  ③ 편한 채널을 고르는 선택지(카카오톡·네이버 톡톡·간편 문의·전화)
  *  ④ 네이버 예약·지도
  * 를 한 번에 보게 한다. 말미(outro)는 같은 채널 버튼이 바로 위 신뢰 블록과 겹치지 않도록 문장 속 링크로만 둔다.
  * 클릭은 trackCTA(cost_intro / cost_outro)·trackNaverPlaceClick(decision_card)으로 집계한다.
@@ -164,6 +164,8 @@ function DecisionCard({ className }: { className: string }) {
   const placement = "cost_intro";
   const portrait = siteImages.about.portrait;
   const showPhone = phoneVisible && !quiet;
+  // PC에서 전화 칸을 처음부터 잡아 둔다: 시각이 확정된 뒤 칸이 생기며 버튼 배치가 움직이지 않게 한다(CLS 방지).
+  const phoneSlot = Boolean(phone) && !quiet && !b2b && !lecture;
   const afterHours = isResolved && !isOpen;
   const paste = lecture
     ? "강의 주제와 희망 날짜를 알려 드립니다."
@@ -175,6 +177,10 @@ function DecisionCard({ className }: { className: string }) {
       ? consultationReplySla.night
       : `${consultationReplySla.weekday}. 맡기기 전에 물어보셔도 됩니다.`;
   const intent = lecture ? "lecture" : b2b ? "b2b" : empathy.intent;
+  // 모바일은 하단 고정바가 전화·카카오톡·톡톡·예약을 맡는다(협업 페이지의 하단바는 전화·카카오톡만).
+  // 카드에서는 같은 버튼을 되풀이하지 않고 대표 행동 하나(간편 문의)만 크게 둔다. PC는 카드가 주 CTA다.
+  const barCoversChat = !b2b;
+  const chatBtnHidden = barCoversChat ? " max-lg:hidden" : "";
 
   const openChat = (kind: string, href: string) => {
     trackCTA(kind, currentSlug(), href, intent);
@@ -202,12 +208,13 @@ function DecisionCard({ className }: { className: string }) {
         )}
         <div className="min-w-0 flex-1">
           <p className="decision-card__voice">안윤정 법무사</p>
+          {/* 히어로의 공감 한 줄(ConsultEmpathyLead)과 같은 문장을 한 페이지에 두 번 쓰지 않도록, 카드는 남기는 예시를 보여 준다 */}
           <p className="decision-card__empathy">
             {lecture
-              ? "강의 주제와 날짜만 알려 주시면, 제가 가능 여부부터 회신합니다."
+              ? "이렇게 남기셔도 됩니다 — 강의 주제, 희망 날짜, 대상 인원"
               : b2b
                 ? "잔금일과 거래 유형만 알려 주시면 협업 가능 여부부터 회신합니다."
-                : empathy.line}
+                : `이렇게 남기셔도 됩니다 — “${empathy.example}”`}
           </p>
           {lecture || b2b ? null : (
             <p className="decision-card__award">대한법무사협회장 표창 · 제가 처음부터 직접 진행합니다</p>
@@ -239,7 +246,7 @@ function DecisionCard({ className }: { className: string }) {
         </a>
       ) : null}
 
-      <div className={`decision-card__actions${showPhone ? " decision-card__actions--phone" : ""}`}>
+      <div className={`decision-card__actions${showPhone || phoneSlot ? " decision-card__actions--phone" : ""}`}>
         {kakao ? (
           <a
             href={kakao}
@@ -248,7 +255,7 @@ function DecisionCard({ className }: { className: string }) {
             data-cta="kakao"
             data-cta-placement={placement}
             onClick={() => openChat("kakao", kakao)}
-            className="decision-card__kakao"
+            className={`decision-card__kakao${chatBtnHidden}`}
           >
             <KakaoIcon className="h-4 w-4 shrink-0" />
             {quiet ? "이름 없이 카카오톡" : "카카오톡"}
@@ -263,7 +270,7 @@ function DecisionCard({ className }: { className: string }) {
             data-cta="naver-talk"
             data-cta-placement={placement}
             onClick={() => openChat("naver-talk", naverTalk)}
-            className="decision-card__naver"
+            className={`decision-card__naver${chatBtnHidden}`}
           >
             <NaverIcon className="h-4 w-4 shrink-0" />
             네이버톡톡
@@ -278,10 +285,10 @@ function DecisionCard({ className }: { className: string }) {
           <InquiryStartButton
             source="landing"
             pageSlug={pathname}
-            note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 1분 문의"}
+            note={lecture ? "결정 카드에서 강의 문의" : "결정 카드에서 간편 문의"}
             className="decision-card__inquiry"
           >
-            {lecture ? "강의 문의 남기기" : "1분 문의"}
+            {lecture ? "강의 문의 남기기" : "간편 문의"}
           </InquiryStartButton>
         )}
         {showPhone ? (
@@ -296,15 +303,28 @@ function DecisionCard({ className }: { className: string }) {
             <PhoneIcon className="h-4 w-4 shrink-0" />
             {phone}
           </a>
+        ) : phoneSlot ? (
+          <span
+            className="decision-card__secondary pointer-events-none opacity-70 max-lg:hidden"
+            aria-label="전화 상담은 평일 09시부터 18시까지"
+          >
+            <PhoneIcon className="h-4 w-4 shrink-0" />
+            전화 평일 09–18시
+          </span>
         ) : null}
       </div>
+      {barCoversChat ? (
+        <p className="decision-card__hint lg:hidden">
+          {showPhone ? "전화·카카오톡·네이버톡톡" : "카카오톡·네이버톡톡"}은 화면 아래 바에서 바로 누를 수 있습니다.
+        </p>
+      ) : null}
       <p className="decision-card__hint">{hint}</p>
       {lecture || b2b ? null : (
         <>
           <p className="decision-card__process">{empathy.costLine}</p>
-          <p className="decision-card__process">{empathy.afterInquiry}</p>
+          <p className="decision-card__process max-lg:hidden">{empathy.afterInquiry}</p>
           {empathy.photoHint ? (
-            <p className="decision-card__photo-hint">{empathy.photoHint}</p>
+            <p className="decision-card__photo-hint max-lg:hidden">{empathy.photoHint}</p>
           ) : null}
         </>
       )}

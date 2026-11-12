@@ -29,7 +29,7 @@ export function SummaryTriggerActions() {
         className="article-summary__triggers-primary"
         onClick={() => trackCTA("contact", currentSlug(), "#summary-triggers")}
       >
-        이 상황, 1분 문의
+        이 상황, 간편 문의
       </InquiryStartButton>
       {phoneVisible ? (
         <a

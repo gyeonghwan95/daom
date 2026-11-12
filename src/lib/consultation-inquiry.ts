@@ -6,11 +6,11 @@ export const CONTACT_INQUIRY_PATH = "/contact/inquiry" as const;
 
 export const consultationInquiryCopy = {
   /** 문의 폼으로 가는 버튼 (히어로·하단·플로팅 공통) */
-  ctaPrimary: "1분 문의",
+  ctaPrimary: "간편 문의",
   /** 짧은 버튼 — 히어로·칩도 동일 라벨 */
-  ctaShort: "1분 문의",
+  ctaShort: "간편 문의",
   /** 신청서 작성 유도 */
-  ctaForm: "1분 문의",
+  ctaForm: "간편 문의",
   /** 본문·힌트 */
   oneMinute:
     "한두 줄만 남겨 주세요. 제가 확인하고 필요한 순서만 말씀드립니다.",

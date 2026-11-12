@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { ContactNapStrip } from "@/components/contact/ContactNapStrip";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { NationwideServiceCard } from "@/components/nationwide/NationwideServiceCard";
 import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
@@ -39,6 +40,7 @@ export default function ContactPage() {
         ]}
         showConsultationCTA={false}
       >
+        <ContactNapStrip />
         <NationwideServiceCard />
         <BusinessCredentialSlot path="/contact" slug="contact" />
         <ArticleVisualSlot path="/contact" slot="before-cta" />

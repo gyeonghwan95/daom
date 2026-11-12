@@ -1,3 +1,4 @@
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
@@ -36,7 +37,7 @@ type MetroRemoteTargetViewProps = {
  * 패널 문구는 공용 템플릿(NationwideServiceNotice) 대신 페이지 스펙에서 받는다.
  */
 export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetViewProps) {
-  const { phone } = getContactInfo();
+  const { phone, kakao } = getContactInfo();
   const webPage = buildWebPageSchema({
     title: spec.metaTitle,
     description: spec.description,
@@ -160,12 +161,24 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
             >
               {spec.cta.label}
             </Link>
-            <a
+            <AvailabilityPhoneLink
               href={getPhoneHref(phone)}
               className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              fallback={
+                kakao ? (
+                  <a
+                    href={kakao}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+                  >
+                    카카오톡 상담<span className="sr-only"> (새 창)</span>
+                  </a>
+                ) : null
+              }
             >
               전화 {phone}
-            </a>
+            </AvailabilityPhoneLink>
           </div>
         </section>
 

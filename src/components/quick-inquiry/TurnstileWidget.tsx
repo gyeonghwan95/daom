@@ -140,6 +140,7 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
     // 사이트 키를 받을 수 없으면 신청이 전달되지 않으므로 처음부터 대체 채널을 보여 준다
     return (
       <InquiryFailureFallback
+        reason="no-site-key"
         title="지금은 온라인 신청을 받을 수 없습니다. 아래로 바로 연락해 주세요"
         description="보안 확인을 불러오지 못해 이 양식으로는 전달되지 않습니다. 카카오톡·네이버톡톡·전화·네이버예약으로 말씀해 주시면 바로 확인하겠습니다."
       />
@@ -162,6 +163,7 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
           </p>
           <InquiryFailureFallback
             className="mt-3"
+            reason="turnstile-load"
             title="보안 확인 없이 바로 연락하기"
             description="카카오톡·네이버톡톡·전화·네이버예약 중 편한 방법으로 말씀해 주세요."
           />

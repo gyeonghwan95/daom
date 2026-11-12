@@ -350,7 +350,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
           title="업무명을 몰라도 괜찮습니다"
           description="현재 상황과 준비된 자료만 남겨 주세요. 안윤정 법무사가 필요한 절차부터 확인합니다."
           href="/contact/inquiry?from=부산법무사"
-          buttonLabel="1분 상담 문의"
+          buttonLabel="간편 상담 문의"
           fromPage="부산법무사"
         />
       </div>

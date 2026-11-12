@@ -72,7 +72,7 @@ function TopicHubQuickLinks({ page }: { page: TopicHubPage }) {
         }
       : null,
     { href: "/location", label: "오시는 길·방문 예약" },
-    { href: "/contact/inquiry", label: "1분 문의" },
+    { href: "/contact/inquiry", label: "간편 문의" },
   ].filter((item): item is { href: string; label: string } => item !== null);
 
   return (

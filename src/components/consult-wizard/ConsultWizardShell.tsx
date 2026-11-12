@@ -639,6 +639,7 @@ export function ConsultWizardShell() {
                     </button>
                   ))}
                 </div>
+                <p className="mt-2 text-xs leading-relaxed text-navy/65">{copy.timeNotice}</p>
               </fieldset>
 
               <label

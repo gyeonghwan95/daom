@@ -1,3 +1,5 @@
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
+import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
@@ -32,7 +34,7 @@ type PrioritySeoPageViewProps = {
  * 사진은 첫 본문 섹션 뒤에 둬서 첫 화면을 답변에 쓴다. 전화 버튼은 하단 CTA에만 둔다.
  */
 export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
-  const { phone } = getContactInfo();
+  const { phone, kakao } = getContactInfo();
   const breadcrumbs = getPriorityBreadcrumbs(spec);
   const webPage = buildWebPageSchema({
     title: spec.metaTitle,
@@ -127,6 +129,8 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
 
         <PageSerpCarousel path={spec.path} />
 
+        <CoreLandingEvidence path={spec.path} />
+
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />
         </ContentSection>
@@ -169,12 +173,24 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
             >
               {spec.cta.label}
             </Link>
-            <a
+            <AvailabilityPhoneLink
               href={getPhoneHref(phone)}
               className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              fallback={
+                kakao ? (
+                  <a
+                    href={kakao}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+                  >
+                    카카오톡 상담<span className="sr-only"> (새 창)</span>
+                  </a>
+                ) : null
+              }
             >
               전화 {phone}
-            </a>
+            </AvailabilityPhoneLink>
           </div>
         </section>
 

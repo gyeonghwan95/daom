@@ -21,7 +21,9 @@ export type AnalyticsEventType =
   | "search_used"
   | "tool_used"
   | "diagnosis_complete"
-  | "naver_place_click";
+  | "naver_place_click"
+  /** 문의 폼 전달 실패·보안 확인 불가로 대체 연락 채널이 노출됨(개인정보 없음) */
+  | "inquiry_failure";
 
 /** 세션 진입 정보 — 첫 page_view에서 정해지고 같은 세션의 모든 이벤트에 붙는다. */
 export type AcquisitionEntry = {

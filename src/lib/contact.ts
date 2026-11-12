@@ -212,7 +212,11 @@ export function getConversionConsultationChannels(): ConsultationChannel[] {
   ];
 }
 
-/** 모바일 하단 고정: 전화 · 카카오톡 · 네이버톡톡 · 네이버예약 */
+/**
+ * 모바일 하단 고정: 전화 · 카카오톡 · 네이버톡톡 · 네이버예약
+ * 스마트플레이스를 끄면(NEXT_PUBLIC_NAVER_SMARTPLACE_ENABLED=false) 예약 자리에 간편 문의를 넣어
+ * 하단바 칸 수와 연락 수단이 줄지 않게 한다.
+ */
 export function getMobileBottomChannels(): ConsultationChannel[] {
   const { phone, kakao, naverTalk } = getContactInfo();
   const reservation = getNaverReservationUrl();
@@ -242,13 +246,22 @@ export function getMobileBottomChannels(): ConsultationChannel[] {
       external: Boolean(naverTalk),
       configured: Boolean(naverTalk),
     },
-    {
-      id: "reservation",
-      label: "네이버 상담 예약",
-      shortLabel: "네이버예약",
-      href: reservation || "/contact",
-      external: Boolean(reservation),
-      configured: Boolean(reservation),
-    },
+    reservation
+      ? {
+          id: "reservation",
+          label: "네이버 상담 예약",
+          shortLabel: "네이버예약",
+          href: reservation,
+          external: true,
+          configured: true,
+        }
+      : {
+          id: "inquiry",
+          label: "간편 문의 남기기",
+          shortLabel: "간편문의",
+          href: "/contact/inquiry",
+          external: false,
+          configured: true,
+        },
   ];
 }

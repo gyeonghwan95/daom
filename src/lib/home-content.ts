@@ -30,7 +30,7 @@ export const homeHero = {
   locationHint: "부산광역시 해운대구 센텀동로 200 · 재송역·센텀역 도보 5분",
   mobileCta: "지금 전화하기",
   mobileCtaNote: "카카오톡에 한두 줄만 남겨 주셔도 제가 확인합니다",
-  ctaPrimary: "1분 문의",
+  ctaPrimary: "간편 문의",
   contactTitle: "부담 없이 저에게 남겨 주세요",
   contactSub: "전화 · 카카오톡 · 네이버 톡톡 — 편한 방법 하나만 고르시면 제가 확인합니다.",
   scrollHint: "소개·후기 더 보기",
@@ -138,7 +138,7 @@ export const homeFaqs = [
 
 export const homeReviewedOn = "2026-08-27";
 /** 실제 홈 본문 수정일. 프로필·안내의 전문가 최종 확인일과 구분한다. */
-export const homeModifiedOn = "2026-11-08";
+export const homeModifiedOn = "2026-11-12";
 
 export const homeClosing = {
   eyebrow: "안윤정 법무사",

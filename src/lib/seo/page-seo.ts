@@ -82,11 +82,11 @@ export const staticPageSeo = {
     keywords: ["상담 문의", "방문 예약", seoBrand.siteName],
   },
   contactInquiry: {
-    title: buildSeoTitle("상담 신청 양식 · 1분 문의"),
+    title: buildSeoTitle("상담 신청 양식 · 간편 문의"),
     description:
       "상속등기·부동산등기·법인등기·개인회생 등 상담 분야와 현재 상황을 남기는 신청 양식입니다. 전화·카카오 안내가 필요하면 상담 문의 페이지를 이용해 주세요.",
     path: "/contact/inquiry",
-    keywords: ["상담 신청", "1분 문의", seoBrand.siteName],
+    keywords: ["상담 신청", "간편 문의", seoBrand.siteName],
   },
   location: {
     title: buildSeoTitle("오시는 길 · 센텀"),

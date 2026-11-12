@@ -23,7 +23,8 @@ export type ConsultSituationId =
 export type ConsultDocId = string;
 
 export type ContactPreference = "phone" | "sms" | "email" | "any";
-export type ContactTimePreference = "morning" | "afternoon" | "evening" | "any";
+/** 전화 연락은 평일 09:00–18:00만 가능하므로 저녁 선택지는 두지 않는다(2026-11-12). */
+export type ContactTimePreference = "morning" | "afternoon" | "any";
 
 export type ConsultDocGroup =
   | "inheritance"
@@ -275,7 +276,6 @@ export const CONTACT_TIME_OPTIONS: {
 }[] = [
   { id: "morning", label: "오전" },
   { id: "afternoon", label: "오후" },
-  { id: "evening", label: "저녁" },
   { id: "any", label: "상관없음" },
 ];
 

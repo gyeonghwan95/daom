@@ -139,7 +139,7 @@ export function SidebarConsultationPanel() {
           바로 상담하기
         </p>
         <p className="sidebar-consult-panel__lead">
-          약 1분이면 상담 신청을 남길 수 있습니다. 지금 알고 계신 상황만
+          상황만 간단히 남기셔도 상담 신청이 됩니다. 지금 알고 계신 상황만
           알려주셔도 필요한 순서부터 정리해 드립니다.
         </p>
 

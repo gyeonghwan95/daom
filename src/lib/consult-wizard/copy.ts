@@ -27,6 +27,8 @@ export const consultWizardCopy = {
   contactHint: "둘 중 하나만 남겨주셔도 됩니다.",
   prefLabel: "선호 연락 방법",
   timeLabel: "연락하기 편한 시간",
+  timeNotice:
+    "전화는 평일 09:00–18:00에 드립니다. 이 시간 밖에 남기신 문의는 다음 영업일에 답해 드립니다.",
   consentLabel:
     "문의 확인과 연락을 위한 개인정보 수집·이용에 동의합니다. 개인정보처리방침을 확인하세요. (필수)",
   step4Title: "내용을 확인해 주세요",
@@ -46,14 +48,14 @@ export const consultWizardCopy = {
   detailForm: "신청서로 자세히 작성",
   goHome: "홈으로 돌아가기",
   retry: "다시 보내기",
-  floatingLabel: "1분 문의",
+  floatingLabel: "간편 문의",
   mobileLabel: "상담",
   inlineTitle: "내 상황도 상담이 필요한지 확인하기",
   inlineDescription:
     "준비된 서류가 없어도 됩니다. 상황만 남겨 주시면 제가 필요한 순서부터 확인합니다.",
-  inlineButton: "1분 문의",
+  inlineButton: "간편 문의",
   ctaMidTitle: "준비된 서류가 없어도 문의할 수 있습니다",
   ctaMidBody:
     "어떤 업무인지 몰라도 됩니다. 상황만 남겨 주시면 제가 필요한 순서부터 확인합니다.",
-  ctaMidButton: "1분 문의",
+  ctaMidButton: "간편 문의",
 } as const;

@@ -142,7 +142,7 @@ const LIBRARY: InflowItem[] = [
   },
   {
     href: "/contact/inquiry",
-    label: "1분 상담 문의",
+    label: "간편 상담 문의",
     reason: "업무명을 몰라도 현재 상황만 남겨 주시면 됩니다.",
   },
   {

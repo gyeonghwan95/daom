@@ -573,7 +573,7 @@ export const PAGE_IMAGE_MANIFEST: PageImageManifestItem[] = [
     visualConcept: "단계형 상담 UI를 암시하는 카드 선택 비주얼",
     visualObjects: ["선택 카드", "체크"],
     photoRequirement: "none",
-    alt: "약 1분 상황 선택형 법무사 상담",
+    alt: "상황 선택형 간편 법무사 상담",
     ogImageRequired: true,
     bodyImageRequired: true,
     cardImageRequired: true,

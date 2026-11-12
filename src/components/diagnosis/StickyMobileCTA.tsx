@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA, type CTAType } from "@/lib/analytics/track-cta";
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import { KakaoIcon, PhoneIcon } from "@/components/consultation/ConsultationIcons";
 
 type StickyMobileCTAProps = {
@@ -32,15 +33,14 @@ export function StickyMobileCTA({
       <div className="mx-auto max-w-lg px-3 pt-2">
         <div className="flex gap-2 rounded-2xl border border-navy/10 bg-white/95 p-2 shadow-[0_-8px_32px_rgba(26,39,68,0.12)] backdrop-blur-md">
           {phone ? (
-            <a
+            <AvailabilityPhoneLink
               href={getPhoneHref(phone)}
-              data-cta="phone"
               onClick={() => handleCtaClick("phone", pageSlug, getPhoneHref(phone))}
               className="diagnosis-sticky-cta__btn diagnosis-sticky-cta__btn--phone"
             >
               <PhoneIcon className="h-4 w-4 shrink-0" />
               전화
-            </a>
+            </AvailabilityPhoneLink>
           ) : null}
           {kakao ? (
             <a

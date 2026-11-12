@@ -1,3 +1,5 @@
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
+import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
@@ -46,7 +48,7 @@ const STATUS_LABEL: Record<NrEvidenceStatus, string> = {
  */
 export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetViewProps) {
   const { spec, owner } = target;
-  const { phone } = getContactInfo();
+  const { phone, kakao } = getContactInfo();
   const webPage = buildWebPageSchema({
     title: owner.metaTitle,
     description: owner.description,
@@ -144,6 +146,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         <PageTextCardFigure path={page.path} />
         <PageGallery path={page.path} />
 
+        <CoreLandingEvidence path={page.path} />
+
         <ContentSection id="faq" title="자주 묻는 질문">
           <FAQAccordion items={[...spec.faqs]} />
         </ContentSection>
@@ -161,12 +165,24 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
             >
               {spec.cta.label}
             </Link>
-            <a
+            <AvailabilityPhoneLink
               href={getPhoneHref(phone)}
               className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              fallback={
+                kakao ? (
+                  <a
+                    href={kakao}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+                  >
+                    카카오톡 상담<span className="sr-only"> (새 창)</span>
+                  </a>
+                ) : null
+              }
             >
               전화 {phone}
-            </a>
+            </AvailabilityPhoneLink>
           </div>
         </section>
 

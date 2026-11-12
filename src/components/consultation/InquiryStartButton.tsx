@@ -23,7 +23,7 @@ type InquiryStartButtonProps = {
 };
 
 /**
- * 「1분만에 문의하기」 — 위자드를 연다.
+ * 「간편하게 문의하기」 — 위자드를 연다.
  * 공급자가 없으면 신청서 페이지로 보낸다.
  */
 export function InquiryStartButton({

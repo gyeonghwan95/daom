@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { trackCTA } from "@/lib/analytics/track-cta";
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 
 /**
  * 본문 상단 상담 안내 — 첫 상담 링크가 본문 깊숙이 있던 페이지용(문의 폼 + 전화 두 버튼만).
@@ -18,7 +19,7 @@ export function EarlyConsultCta({
   /** 문의 폼 상담 분야 기본값(예: inheritance-renunciation) */
   field?: string;
 }) {
-  const { phone } = getContactInfo();
+  const { phone, kakao } = getContactInfo();
   const inquiryHref = `/contact/inquiry?from=${encodeURIComponent(`${slug}-early`)}${
     field ? `&field=${encodeURIComponent(field)}` : ""
   }`;
@@ -38,18 +39,31 @@ export function EarlyConsultCta({
           onClick={() => trackCTA("inquiry", slug, inquiryHref)}
           className="btn-primary inline-flex min-h-11 items-center justify-center px-4 text-sm"
         >
-          1분 문의하기
+          간편 문의하기
         </Link>
         {phone ? (
-          <a
+          <AvailabilityPhoneLink
             href={getPhoneHref(phone)}
-            data-cta="phone"
-            data-cta-placement="early"
             onClick={() => trackCTA("phone", slug, getPhoneHref(phone))}
             className="btn-secondary inline-flex min-h-11 items-center justify-center px-4 text-sm"
+            fallback={
+              kakao ? (
+                <a
+                  href={kakao}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="kakao"
+                  data-cta-placement="early"
+                  onClick={() => trackCTA("kakao", slug, kakao)}
+                  className="btn-secondary inline-flex min-h-11 items-center justify-center px-4 text-sm"
+                >
+                  카카오톡 상담<span className="sr-only"> (새 창)</span>
+                </a>
+              ) : null
+            }
           >
             전화 {phone}
-          </a>
+          </AvailabilityPhoneLink>
         ) : null}
       </div>
     </div>

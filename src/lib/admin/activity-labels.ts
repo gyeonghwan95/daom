@@ -10,6 +10,7 @@ const EVENT_LABELS: Record<string, string> = {
   collaboration_submit: "협업문의 제출",
   lecture_inquiry_submit: "강의문의 제출",
   naver_place_click: "네이버 플레이스 이동",
+  inquiry_failure: "문의 폼 실패(대체 채널 노출)",
   search_used: "검색",
   tool_used: "계산기 실행",
   diagnosis_complete: "자가진단 완료",

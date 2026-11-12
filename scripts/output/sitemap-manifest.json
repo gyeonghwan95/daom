@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:44:13.357Z",
+  "generatedAt": "2026-11-12T14:23:22.985Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
   "totalUrls": 1668,
   "format": "urlset",
@@ -1056,7 +1056,7 @@
       "path": "/부산상속등기",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-15"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/업무사례",
@@ -1104,13 +1104,13 @@
       "path": "/contact",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/contact",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/contact/inquiry",
       "tier": 1,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/contact/inquiry",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/services",
@@ -2670,7 +2670,7 @@
       "path": "/부산강제집행법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%A0%9C%EC%A7%91%ED%96%89%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산개명허가",
@@ -2718,7 +2718,7 @@
       "path": "/부산개인회생",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산개인회생법무사",
@@ -3216,13 +3216,13 @@
       "path": "/부산법인설립등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-28"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산법인설립전문법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-13"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산법인인수변경등기",
@@ -3264,7 +3264,7 @@
       "path": "/부산본점이전등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-11-08"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산부담부증여등기",
@@ -3300,7 +3300,7 @@
       "path": "/부산부동산등기전문법무사",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC",
-      "lastmod": "2026-10-20"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산부동산전문법무사",
@@ -3486,7 +3486,7 @@
       "path": "/부산소유권이전등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-10-11"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산소유권이전전문법무사",
@@ -3618,7 +3618,7 @@
       "path": "/부산의료법인등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산이혼재산분할등기",
@@ -3636,7 +3636,7 @@
       "path": "/부산임원변경등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": "2026-11-08"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산임원변경전문법무사",
@@ -4092,7 +4092,7 @@
       "path": "/부산한정후견",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%ED%9B%84%EA%B2%AC",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/부산현물출자증자",
@@ -7134,7 +7134,7 @@
       "path": "/1분간편상담",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/가설컨테이너등기가능여부",
@@ -8952,7 +8952,7 @@
       "path": "/상담",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EB%8B%B4",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/상속",
@@ -9042,7 +9042,7 @@
       "path": "/상속세신고와등기순서",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%84%B8%EC%8B%A0%EA%B3%A0%EC%99%80%EB%93%B1%EA%B8%B0%EC%88%9C%EC%84%9C",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/상속순위",
@@ -9072,7 +9072,7 @@
       "path": "/상속증여등기비교",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EB%B9%84%EA%B5%90",
-      "lastmod": "2026-11-11"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/상속취득세와등기순서",
@@ -9714,19 +9714,19 @@
       "path": "/의료법인설립등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/의료법인임원변경등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%9E%84%EC%9B%90%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/의료법인주사무소이전등기",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9D%98%EB%A3%8C%EB%B2%95%EC%9D%B8%EC%A3%BC%EC%82%AC%EB%AC%B4%EC%86%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/이사후임차권등기명령준비",
@@ -10290,7 +10290,7 @@
       "path": "/특별한정승인",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EB%B3%84%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8",
-      "lastmod": "2026-11-11"
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/특수등기",
@@ -10422,7 +10422,7 @@
       "path": "/협업문의",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%ED%98%91%EC%97%85%EB%AC%B8%EC%9D%98",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/협회사단법인설립",
@@ -10476,7 +10476,7 @@
       "path": "/partners",
       "tier": 6,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/partners",
-      "lastmod": null
+      "lastmod": "2026-11-12"
     },
     {
       "path": "/resources/company-change",

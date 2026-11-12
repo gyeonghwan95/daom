@@ -1,3 +1,4 @@
+import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
 import {
   InheritanceCostGuide,
   InheritanceJourneyNav,
@@ -407,6 +408,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       <PageTextCardFigure path={page.path} />
       <PageGallery path={page.path} />
+
+      <CoreLandingEvidence path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

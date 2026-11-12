@@ -72,6 +72,21 @@ function pack(
   };
 }
 
+/**
+ * 세무·의료처럼 법무사 업무 밖으로 읽힐 수 있는 문맥에서, 제목 바로 아래에 둘 업무 경계 고지.
+ * 해당 문맥이 아닌 페이지는 null이라 아무것도 더하지 않는다.
+ */
+export function getScopeBoundaryNote(pathname: string): string | null {
+  const path = decodePath(pathname);
+  if (/의료법인|병원/.test(path)) {
+    return "이 사무소는 의료법인의 설립·변경 등기 서류를 작성하고 신청합니다. 의료기관 운영, 의료법 해석, 설립 허가 요건에 대한 자문은 하지 않으며 관할 관청과 해당 분야 전문가에게 확인하셔야 합니다.";
+  }
+  if (/상속세|취득세|증여세|양도세|상속증여등기비교|세금/.test(path)) {
+    return "세금의 계산·신고·절세 판단은 세무사 업무라 이 사무소가 하지 않습니다. 등기에 필요한 취득세 납부 자료 준비와 등기 신청만 맡으며, 세액은 세무사에게 확인하셔야 합니다.";
+  }
+  return null;
+}
+
 export function getConsultEmpathy(pathname: string): ConsultEmpathy {
   const path = decodePath(pathname);
 

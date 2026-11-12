@@ -24,7 +24,7 @@ export default function ContactInquiryPage() {
           { label: "상담 신청" },
         ]}
         currentPath="/contact/inquiry"
-        intro={`약 1분이면 상담 신청을 완료할 수 있습니다. 이름·연락처·상담 분야·현재 상황을 남겨 주시면 사무소 이메일로 전달됩니다. ${INQUIRY_RELAXED_NOTE}`}
+        intro={`상황만 간단히 남기셔도 상담 신청이 완료됩니다. 이름·연락처·상담 분야·현재 상황을 남겨 주시면 사무소 이메일로 전달됩니다. ${INQUIRY_RELAXED_NOTE}`}
         relatedLinks={[
           { href: "/contact", label: "상담 안내" },
           { href: "/location", label: "오시는 길" },

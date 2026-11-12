@@ -14,6 +14,31 @@ const apiDir = path.join(ROOT, "src/app/api");
 const backupDir = path.join(ROOT, "src/app/_api_static_backup");
 let stashedApi = false;
 
+/**
+ * 운영 안전장치: 네이버 스마트플레이스 kill-switch가 켜져(=CTA 숨김) 있는 채로 배포되면 빌드 로그에 크게 알린다.
+ * 배포를 막지는 않는다. 환경변수와 .env 파일을 함께 본다.
+ */
+function warnIfSmartPlaceDisabled() {
+  const KEY = "NEXT_PUBLIC_NAVER_SMARTPLACE_ENABLED";
+  const readFromFile = (file) => {
+    try {
+      const lines = fs.readFileSync(path.join(ROOT, file), "utf8").split("\n");
+      const hit = lines.map((l) => l.trim()).find((l) => l.startsWith(KEY + "="));
+      return hit ? hit.slice(KEY.length + 1).trim().replace(/^["']|["']$/g, "") : undefined;
+    } catch {
+      return undefined;
+    }
+  };
+  const value = String(process.env[KEY] ?? readFromFile(".env.local") ?? readFromFile(".env") ?? "").toLowerCase();
+  if (value === "0" || value === "false" || value === "off") {
+    console.warn(
+      "\n[build:warn] " + KEY + "=" + value + " — 네이버 예약·지도 CTA가 모두 숨겨집니다.\n" +
+        "             모바일 하단바는 예약 자리에 '간편문의'가 들어갑니다. 의도한 배포가 아니면 값을 지우고 다시 빌드하세요.\n",
+    );
+  }
+}
+warnIfSmartPlaceDisabled();
+
 function sleepSync(ms) {
   try {
     if (process.platform === "win32") {

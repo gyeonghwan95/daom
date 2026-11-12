@@ -313,7 +313,9 @@ export function QuickInquiryForm({
             </a>
           </div>
         ) : null}
-        {errors.form || errors.turnstile ? <InquiryFailureFallback className="mt-3" /> : null}
+        {errors.form || errors.turnstile ? (
+          <InquiryFailureFallback className="mt-3" reason={errors.form ? "delivery" : "turnstile"} />
+        ) : null}
       </div>
 
       <div className="quick-inquiry__footer">

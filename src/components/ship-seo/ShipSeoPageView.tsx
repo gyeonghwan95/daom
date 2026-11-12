@@ -1,3 +1,4 @@
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import Link from "next/link";
@@ -29,7 +30,7 @@ type ShipSeoPageViewProps = {
  * 전화 버튼은 CTA 한 곳에만 둔다.
  */
 export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
-  const { phone } = getContactInfo();
+  const { phone, kakao } = getContactInfo();
   const breadcrumbs = getShipBreadcrumbs(spec);
   const webPage = buildWebPageSchema({
     title: spec.metaTitle,
@@ -145,12 +146,24 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
             >
               {spec.cta.label}
             </Link>
-            <a
+            <AvailabilityPhoneLink
               href={getPhoneHref(phone)}
               className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+              fallback={
+                kakao ? (
+                  <a
+                    href={kakao}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex min-h-12 items-center justify-center px-6"
+                  >
+                    카카오톡 상담<span className="sr-only"> (새 창)</span>
+                  </a>
+                ) : null
+              }
             >
               전화 {phone}
-            </a>
+            </AvailabilityPhoneLink>
           </div>
         </section>
 

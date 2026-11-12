@@ -47,6 +47,8 @@
   --prose-width: var(--article-width);
   --content-gap: 1.75rem;
   --mobile-cta-height: 4.25rem;
+  /* 하단바 전체 높이(버튼 + 회신 안내 줄) — 본문 끝이 바에 가리지 않도록 body 여백에 쓴다 */
+  --mobile-cta-reserve: calc(var(--mobile-cta-height) + 1.95rem);
   --header-height: 4rem;
   --home-hero-bottom-space: 4.75rem;
 }
@@ -380,7 +382,7 @@ body {
 
 /* 모바일 하단 고정 CTA 여백 */
 body.has-mobile-cta {
-  padding-bottom: calc(var(--mobile-cta-height) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(var(--mobile-cta-reserve) + env(safe-area-inset-bottom, 0px));
 }
 
 /* 모바일 메뉴 열림 시 하단 CTA 숨김 */
@@ -521,6 +523,15 @@ body.mobile-menu-open .mobile-bottom-cta {
   .mobile-bottom-cta__label {
     font-size: 0.875rem;
   }
+}
+
+.mobile-bottom-cta__toast,
+.mobile-bottom-cta__sla {
+  /* 회신 안내 ↔ 토스트가 바뀌어도 바 높이가 변하지 않게 같은 높이로 고정 */
+  min-height: 1.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-bottom-cta__toast {

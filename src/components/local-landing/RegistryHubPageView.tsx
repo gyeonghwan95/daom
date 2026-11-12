@@ -357,7 +357,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
           title="어떤 등기인지 정확히 몰라도 괜찮습니다"
           description="등기부, 계약서 또는 현재 상황을 확인하면 먼저 해야 할 등기와 준비서류를 구분할 수 있습니다. 안윤정 법무사가 직접 확인합니다."
           href="/contact/inquiry?from=부산등기법무사"
-          buttonLabel="1분 상담 문의"
+          buttonLabel="간편 상담 문의"
           fromPage="부산등기법무사"
         />
       </div>

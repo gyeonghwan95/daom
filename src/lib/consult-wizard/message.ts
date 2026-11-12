@@ -54,6 +54,7 @@ export function buildConsultMessage(draft: ConsultWizardDraft): string {
     `준비된 자료: ${labelDocs(draft.documentIds)}`,
     `선호 연락: ${pref}`,
     `편한 시간: ${time}`,
+    "답신 기준: 평일 09:00–18:00 / 그 밖의 시간 접수는 다음 영업일",
   );
 
   if (draft.entryNote?.trim()) {

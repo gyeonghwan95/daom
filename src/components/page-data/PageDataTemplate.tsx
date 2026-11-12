@@ -1,3 +1,4 @@
+import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
 import type { ReactNode } from "react";
 import { RelatedRecommendations } from "@/components/internal-links/RelatedRecommendations";
 import { ServiceConversionEnhancements } from "@/components/conversion";
@@ -451,6 +452,8 @@ export function PageDataTemplate({
           <div className="mdx-content prose-measure">{children}</div>
         </ContentSection>
       ) : null}
+
+      <CoreLandingEvidence path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

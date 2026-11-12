@@ -1,3 +1,5 @@
+import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
+import { getContactInfo } from "@/lib/contact";
 import Link from "next/link";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
 import { NaverSmartPlaceCta } from "@/components/cta/NaverSmartPlaceCta";
@@ -24,10 +26,23 @@ export function B2BHero({
   trustItems = [],
   hideInquiryBadge = false,
 }: B2BHeroProps) {
+  const { kakao } = getContactInfo();
   return (
     <header className="b2b-hero space-y-5 border-b border-beige-dark pb-8 md:space-y-6 md:pb-10">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-navy/55 md:text-sm">
+        <span className="mr-2 rounded bg-navy/10 px-1.5 py-0.5 normal-case tracking-normal text-navy/80">
+          법무사 업무 협업 안내
+        </span>
         {eyebrow}
+      </p>
+      <p className="max-w-3xl text-xs leading-relaxed text-navy/70 md:text-sm" role="note">
+        이 페이지는 법무사·법무법인·변호사사무실·중개사·건설·기업 담당자를 위한 <strong className="font-semibold">협업 안내</strong>입니다.
+        협업 범위는 등기와 법원 제출 서류의 작성·접수이며, 소송대리와 법률자문은 포함하지 않습니다.
+        개인 의뢰인의 상속·등기 상담은{" "}
+        <Link href="/contact/inquiry" className="font-semibold text-navy underline underline-offset-2">
+          일반 상담 문의
+        </Link>
+        로 남겨 주세요.
       </p>
       <h1 className="page-title max-w-4xl">{h1}</h1>
       <p className="body-text max-w-3xl text-[0.9375rem] leading-relaxed text-navy/80 md:text-base">
@@ -47,12 +62,24 @@ export function B2BHero({
           {primaryCta.label}
         </Link>
         {secondaryCta.href.startsWith("tel:") ? (
-          <a
+          <AvailabilityPhoneLink
             href={secondaryCta.href}
             className="btn-secondary inline-flex min-h-12 items-center px-6"
+            fallback={
+              kakao ? (
+                <a
+                  href={kakao}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex min-h-12 items-center px-6"
+                >
+                  카카오톡 상담<span className="sr-only"> (새 창)</span>
+                </a>
+              ) : null
+            }
           >
             {secondaryCta.label}
-          </a>
+          </AvailabilityPhoneLink>
         ) : (
           <Link
             href={secondaryCta.href}
