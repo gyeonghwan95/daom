@@ -190,7 +190,7 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
   // exact 「부산 법무사」는 HOME(`/`)만 — thin SEO 랜딩 meta keywords에 도배하지 않음
   const primaryKeywords = [
     ...new Set(
-      [...spec.keywords, "다옴법무사사무소"].filter(
+      [...(factSheet?.keywords ?? []), ...spec.keywords, "다옴법무사사무소"].filter(
         (k) => k !== "부산 법무사" && k !== "부산법무사",
       ),
     ),
@@ -204,9 +204,10 @@ export function buildPageDataFromSeoLanding(spec: SeoLandingSpec): PageData {
       spec.slug === "기장법무사"
         ? "기장읍 생활권 법무사"
         : spec.title,
-    metaTitle: metaTitleForSeoLanding(spec, overlayMeta),
-    metaDescription: metaDescriptionFor(spec, overlayMeta),
+    metaTitle: factSheet?.metaTitle ?? metaTitleForSeoLanding(spec, overlayMeta),
+    metaDescription: factSheet?.metaDescription ?? metaDescriptionFor(spec, overlayMeta),
     h1:
+      factSheet?.h1 ??
       getSeoLandingSlugOverlay(spec.slug)?.h1 ??
       overlayMeta?.h1 ??
       (spec.slug === "등기소근처법무사"

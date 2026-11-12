@@ -19,6 +19,12 @@ export type SeoLandingFactSheet = {
   procedures?: string[];
   /** 기존 FAQ 앞에 붙는 고유 질문 */
   faqs?: PageFaqItem[];
+  /** 자동 생성 제목 대신 쓰는 제목·H1·설명(담당 검색어를 앞에 둘 때만) */
+  metaTitle?: string;
+  h1?: string;
+  metaDescription?: string;
+  /** 메타 키워드 앞에 더할 담당 검색어 */
+  keywords?: string[];
 };
 
 const SHEETS: Record<string, SeoLandingFactSheet> = {
@@ -82,6 +88,11 @@ const SHEETS: Record<string, SeoLandingFactSheet> = {
   },
 
   상속포기기간: {
+    metaTitle: "부산 상속포기 기간｜3개월 계산법·연장·지난 경우",
+    h1: "부산 상속포기 기간, 3개월은 언제부터 세고 지나면 어떻게 되나요?",
+    metaDescription:
+      "부산 상속포기 기간 안내. 상속포기는 상속이 시작된 것을 안 날부터 3개월 안에 고인 주소지 가정법원(부산이면 부산가정법원)에 신고합니다. 기산일 계산, 연장 청구, 지난 경우를 정리했습니다.",
+    keywords: ["부산 상속포기 기간", "부산 상속포기기간", "상속포기 기간", "상속포기 3개월"],
     lead:
       "상속포기는 상속이 시작된 것을 안 날부터 3개월 안에 가정법원에 신고해야 합니다(민법 제1019조 제1항). 이 기간 안에 포기나 한정승인을 하지 않으면 단순승인한 것으로 보아 빚까지 물려받게 됩니다(민법 제1026조 제2호). 3개월은 사망일이 아니라 '안 날'부터 세며, 상속인의 사정에 따라 시작일이 달라집니다.",
     section: {

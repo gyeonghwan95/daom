@@ -284,6 +284,7 @@ export const 성년후견신청Override: SearchIntentContent = {
   ],
   relatedServiceLinks: [
     { href: "/부산가정법원성년후견", label: "부산가정법원 성년후견 — 접수 창구" },
+    { href: "/부산한정후견", label: "부산 한정후견 — 동의 범위·대리권" },
     { href: "/가족후견", label: "성년후견·가사비송 허브" },
     { href: "/특별대리인자가진단", label: "특별대리인 자가진단" },
     { href: "/미성년상속인", label: "미성년 상속인" },

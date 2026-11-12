@@ -124,6 +124,7 @@ export const 부산재산명시Override: SearchIntentContent = {
     { href: "/가압류신청서류준비", label: "가압류 신청 서류 준비" },
     { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
     { href: "/부산집행문부여신청", label: "판결 후 집행문 받기" },
+    { href: "/부산강제집행법무사", label: "부산 강제집행 신청 순서" },
     { href: "/부산채무불이행자명부등재", label: "명시 불응 시 채무불이행자명부" },
     {
       href: "/방문없이준비하는지급명령서류",

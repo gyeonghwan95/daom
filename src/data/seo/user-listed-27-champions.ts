@@ -62,7 +62,7 @@ export const USER_LISTED_27_TARGETS: readonly UserListed27Champion[] = [
   { query: "부산 채권가압류 법무사", champion: "/부산가압류신청", family: "preservation" },
   { query: "부산 부동산 가처분 법무사", champion: "/가처분신청서류준비", family: "preservation" },
   { query: "부산 채권추심 법무사", champion: "/부산채권압류추심명령", family: "execution" },
-  { query: "부산 강제집행 법무사", champion: "/situations/판결-후-강제집행", family: "execution" },
+  { query: "부산 강제집행 법무사", champion: "/부산강제집행법무사", family: "execution" },
   { query: "부산 임대차 분쟁 법무사", champion: "/부산전세보증금반환법무사", family: "lease" },
   { query: "부산 법원 앞 법무사", champion: "/부산법원근처법무사", family: "location" },
 ];

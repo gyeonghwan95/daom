@@ -77,7 +77,7 @@ export const specialistRecoverySpec: Omit<NaverRecoverySpec, "slug" | "path"> = 
             "어느 쪽인지 아직 모르면 ",
             { href: "/부산상속법무사", label: "부산 상속 절차 선택 안내" },
             "에서 먼저 방향을 나누고, 빚이 걱정된다면 ",
-            { href: "/부산상속포기", label: "가정법원 신고(상속포기) 안내" },
+            { href: "/부산상속포기", label: "부산 상속포기 법무사 안내 — 가정법원 신고" },
             "와 ",
             { href: "/부산한정승인", label: "부산 한정승인 안내" },
             "를 비교해 보세요. 이 페이지는 각 업무의 진행 방법 대신 맡길 곳을 고르는 기준만 다룹니다.",

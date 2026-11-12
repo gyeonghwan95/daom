@@ -77,7 +77,7 @@ export const 부산재상속등기Override: SearchIntentContent = {
   relatedServiceLinks: [
     hub,
     busanHub,
-    { href: "/대습상속등기", label: "대습상속등기" },
+    { href: "/대습상속등기", label: "부산 대습상속등기 — 먼저 사망한 경우와 비교" },
     { href: "/오래된상속토지정리", label: "오래된 상속토지 정리" },
     { href: "/부산상속등기", label: "부산 상속등기" },
   ],

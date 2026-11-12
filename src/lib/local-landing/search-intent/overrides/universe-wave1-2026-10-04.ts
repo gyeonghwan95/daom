@@ -273,6 +273,7 @@ export const 부산집행문부여신청Override: SearchIntentContent = {
     { href: "/부산채무불이행자명부등재", label: "채무불이행자명부 등재" },
     { href: "/부산지방법원법무사", label: "부산지방법원 안내" },
     { href: "/부산채권압류추심명령", label: "집행문 다음 단계: 채권압류·추심명령" },
+    { href: "/부산강제집행법무사", label: "부산 강제집행 법무사 — 재산별 신청 순서" },
   ],
   relatedGuideLinks: [
     {

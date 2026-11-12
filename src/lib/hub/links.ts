@@ -71,12 +71,12 @@ export function getHubNavigationLinks(input: HubLinkInput): PageRelatedLink[] {
   if (parentHub && parentHub.slug !== input.slug) {
     links.push({
       href: `/${parentHub.slug}`,
-      label: `${parentHub.title} 허브로 돌아가기`,
+      label: parentHub.backLabel ?? `${parentHub.title} 허브로 돌아가기`,
     });
     links.push(
       ...parentHub.spokes
         .filter((spoke) => spoke.href !== input.path && spoke.href !== `/${input.slug}`)
-        .slice(0, 12),
+        .slice(0, parentHub.childSpokeLimit ?? 12),
     );
   }
 
@@ -89,7 +89,8 @@ export function getHubNavigationLinks(input: HubLinkInput): PageRelatedLink[] {
 
   links.push(...siblingHubs);
 
-  return capHubLinks(links, { min: 8, max: 16 });
+  const extraSpokes = Math.max(0, (parentHub?.childSpokeLimit ?? 12) - 12);
+  return capHubLinks(links, { min: 8, max: 16 + extraSpokes });
 }
 
 export function getCoreHubSpokes(slug: string): PageRelatedLink[] {

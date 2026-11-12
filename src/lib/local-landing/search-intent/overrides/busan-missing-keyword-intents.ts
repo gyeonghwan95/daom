@@ -855,6 +855,7 @@ export const 부산가족간매매등기Override: SearchIntentContent = {
     },
   ],
   relatedServiceLinks: [
+    { href: "/상속증여등기비교", label: "상속과 증여 등기 비교" },
     { href: "/부산증여등기", label: "부산 증여등기 — 대금 없이 넘길 때" },
     { href: "/부산부모자녀아파트증여등기", label: "부모 자녀 아파트 증여등기" },
     { href: "/부산매매등기법무사", label: "부산 매매등기" },

@@ -1788,6 +1788,390 @@
       ],
       "note": "2026-11-10 청소년 SNS 주제는 디지털 법률교육 담당"
     },
+    "상속 증여 차이": {
+      "owner": "/상속증여등기비교",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 등기 절차 비교만, 세금 유불리는 세무사"
+    },
+    "상속 증여 비교": {
+      "owner": "/상속증여등기비교",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 등기 절차 비교만, 세금 유불리는 세무사"
+    },
+    "아파트 상속 증여": {
+      "owner": "/상속증여등기비교",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 등기 절차 비교만, 세금 유불리는 세무사"
+    },
+    "상속 전 증여": {
+      "owner": "/상속증여등기비교",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 등기 절차 비교만, 세금 유불리는 세무사"
+    },
+    "상속 증여 법무사": {
+      "owner": "/상속증여등기비교",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 등기 절차 비교만, 세금 유불리는 세무사"
+    },
+    "상속서류 인터넷발급": {
+      "owner": "/상속서류발급처",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 필요서류 목록은 /상속등기필요서류"
+    },
+    "상속서류 유효기간": {
+      "owner": "/상속서류발급처",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 필요서류 목록은 /상속등기필요서류"
+    },
+    "상속서류 제출처": {
+      "owner": "/상속서류발급처",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 필요서류 목록은 /상속등기필요서류"
+    },
+    "상속 서류 준비": {
+      "owner": "/상속서류발급처",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 필요서류 목록은 /상속등기필요서류"
+    },
+    "부산 상속 서류 발급": {
+      "owner": "/상속서류발급처",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 필요서류 목록은 /상속등기필요서류"
+    },
+    "상속 가압류": {
+      "owner": "/압류가압류부동산상속",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규"
+    },
+    "상속 압류": {
+      "owner": "/압류가압류부동산상속",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규"
+    },
+    "고인 명의 대출": {
+      "owner": "/압류가압류부동산상속",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규"
+    },
+    "고인 명의 임대차": {
+      "owner": "/압류가압류부동산상속",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규"
+    },
+    "기여분": {
+      "owner": "/기여분특별수익",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 청구 소송은 변호사 영역"
+    },
+    "기여분 청구": {
+      "owner": "/기여분특별수익",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 청구 소송은 변호사 영역"
+    },
+    "기여분 인정 요건": {
+      "owner": "/기여분특별수익",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 청구 소송은 변호사 영역"
+    },
+    "특별수익": {
+      "owner": "/기여분특별수익",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 청구 소송은 변호사 영역"
+    },
+    "상속재산분할 기여분": {
+      "owner": "/기여분특별수익",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 신규. 청구 소송은 변호사 영역"
+    },
+    "특별한정승인 신청": {
+      "owner": "/특별한정승인",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "특별한정승인 서류": {
+      "owner": "/특별한정승인",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "특별한정승인 방법": {
+      "owner": "/특별한정승인",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "특별한정승인 신청기간": {
+      "owner": "/특별한정승인",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "특별한정승인 비용": {
+      "owner": "/특별한정승인",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "대습상속 며느리": {
+      "owner": "/대습상속등기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "대습상속 사위": {
+      "owner": "/대습상속등기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "대습상속 지분": {
+      "owner": "/대습상속등기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "대습상속 포기": {
+      "owner": "/대습상속등기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "대습상속 요건": {
+      "owner": "/대습상속등기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "조상땅 상속등기": {
+      "owner": "/오래된상속토지정리",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "종중 땅 상속": {
+      "owner": "/오래된상속토지정리",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "부산 조상땅 상속": {
+      "owner": "/오래된상속토지정리",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "부산 상속포기 기간": {
+      "owner": "/상속포기기간",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속포기"
+      ],
+      "note": "2026-11-12 5개 키워드 작업: 기간 전용 안내로 담당 이동"
+    },
+    "부산 상속포기 기한": {
+      "owner": "/부산상속포기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "부산 상속포기 신청": {
+      "owner": "/부산상속포기",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "부산 재혼가정 상속": {
+      "owner": "/재혼가정상속",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 제목 문구에 부산 추가"
+    },
+    "상속 취득세 납부 방법": {
+      "owner": "/상속취득세와등기순서",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "상속 취득세 납부기한": {
+      "owner": "/상속취득세와등기순서",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "상속 취득세 신고 납부": {
+      "owner": "/상속취득세와등기순서",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "유언장 양식": {
+      "owner": "/자필유언장요건",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "자필 유언장 양식": {
+      "owner": "/자필유언장요건",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "유언장 예시": {
+      "owner": "/자필유언장요건",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속등기"
+      ],
+      "note": "2026-11-11 FAQ 보강"
+    },
+    "부산 법정단순승인": {
+      "owner": "/단순승인과숙려기간",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "제목에 법정단순승인 3가지 사유 추가"
+    },
+    "법정단순승인": {
+      "owner": "/단순승인과숙려기간",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "동일"
+    },
+    "단순승인 간주 사유": {
+      "owner": "/단순승인과숙려기간",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "동일"
+    },
+    "부산 한정승인공고": {
+      "owner": "/한정승인후절차",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "제목·H1에 공고 추가(수집 전)"
+    },
+    "한정승인 공고": {
+      "owner": "/한정승인후절차",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "동일"
+    },
+    "부산 한정승인 신문공고": {
+      "owner": "/한정승인후절차",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산한정승인"
+      ],
+      "note": "동일"
+    },
     "부산 개명 법무사": {
       "owner": "/부산개명허가",
       "intent": "procedure",
@@ -3892,12 +4276,14 @@
       ]
     },
     "부산 강제집행 법무사": {
-      "owner": "/situations/판결-후-강제집행",
+      "owner": "/부산강제집행법무사",
       "intent": "post-judgment-execution",
       "supporting": [
+        "/situations/판결-후-강제집행",
         "/부산채권압류추심명령",
         "/부산집행문부여신청"
-      ]
+      ],
+      "note": "2026-11-12 5개 키워드 작업: 집행 수단별 업무 안내로 담당 이동(상황 안내는 supporting)"
     },
     "부산 임대차 분쟁 법무사": {
       "owner": "/부산전세보증금반환법무사",
@@ -3912,6 +4298,95 @@
       "owner": "/부산진구법무사",
       "intent": "local",
       "note": "2026-10-30 PC·MO 미노출(114On·플레이스뷰·타 사무소). 가야동은 부산진구 — 전용 동 페이지 만들지 말고 /부산진구법무사 본문·FAQ로 답한다."
+    },
+    "부산 대습상속": {
+      "owner": "/대습상속등기",
+      "intent": "inheritance-subrogation",
+      "supporting": [
+        "/부산재상속등기"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 한정후견": {
+      "owner": "/부산한정후견",
+      "intent": "guardianship-limited",
+      "supporting": [
+        "/부산가정법원성년후견",
+        "/성년후견신청"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 한정후견 신청": {
+      "owner": "/부산한정후견",
+      "intent": "guardianship-limited",
+      "supporting": [
+        "/부산가정법원성년후견"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 한정후견 법무사": {
+      "owner": "/부산한정후견",
+      "intent": "guardianship-limited",
+      "supporting": [
+        "/가족후견"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "한정후견 동의 범위": {
+      "owner": "/부산한정후견",
+      "intent": "guardianship-limited",
+      "supporting": [
+        "/성년후견신청"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "한정후견인 대리권": {
+      "owner": "/부산한정후견",
+      "intent": "guardianship-limited",
+      "supporting": [
+        "/성년후견신청"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 상속포기기간": {
+      "owner": "/상속포기기간",
+      "intent": "ai-briefing-info",
+      "supporting": [
+        "/부산상속포기"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 채권압류 법무사": {
+      "owner": "/부산채권압류추심명령",
+      "intent": "post-judgment-execution",
+      "supporting": [
+        "/부산강제집행법무사"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 채권압류": {
+      "owner": "/부산채권압류추심명령",
+      "intent": "post-judgment-execution",
+      "supporting": [
+        "/부산강제집행법무사"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 강제집행": {
+      "owner": "/부산강제집행법무사",
+      "intent": "post-judgment-execution",
+      "supporting": [
+        "/부산채권압류추심명령"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
+    },
+    "부산 강제집행 신청": {
+      "owner": "/부산강제집행법무사",
+      "intent": "post-judgment-execution",
+      "supporting": [
+        "/부산집행문부여신청"
+      ],
+      "note": "2026-11-12 5개 키워드 작업"
     }
   }
 }

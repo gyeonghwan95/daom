@@ -215,14 +215,15 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "상속 개시 후 선택지는 단순승인·한정승인·상속포기·상속등기로 이어집니다. 채무 때문에 상속을 받지 않으려는 경우에는 부산 상속포기 안내를, 무엇을 해야 할지 모를 때는 부산 상속 법무사 안내를 먼저 보시면 됩니다.",
         links: [
           { href: "/부산상속법무사", label: "무엇을 해야 할지 모를 때 절차 선택" },
-          { href: "/단순승인과숙려기간", label: "부산 단순승인·숙려기간" },
+          { href: "/단순승인과숙려기간", label: "부산 법정단순승인 사유·숙려기간" },
           { href: "/부산상속재산분할법무사", label: "부산 상속재산분할 법무사" },
           { href: "/부산상속법무사추천", label: "부산 상속 법무사 추천" },
           { href: "/부산상속전문법무사", label: "부산 상속전문 법무사 선택 기준" },
           { href: "/부산상속후매매등기", label: "상속 후 바로 매도하는 경우" },
           { href: "/부산상속등기", label: "부산 상속등기 절차" },
-          { href: "/부산상속포기", label: "가정법원 신고(상속포기) — 기한·후순위" },
+          { href: "/부산상속포기", label: "부산 상속포기 — 가정법원 신고 기한·후순위" },
           { href: "/부산한정승인", label: "부산 한정승인" },
+          { href: "/한정승인후절차", label: "부산 한정승인 공고·신문공고 절차" },
           { href: "/faq/qualified-acceptance-vs-simple-acceptance", label: "특별한정승인·단순승인 비교 안내" },
           { href: "/faq/multiple-heirs-inheritance-registration", label: "상속재산분할협의서 작성 안내" },
           { href: "/faq/when-to-file-inheritance-registration", label: "협의분할·법정상속등기 기한 확인" },
@@ -326,7 +327,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         title: "설립·변경 등기",
         intro: "법인 설립·임원변경·본점이전·목적·상호 변경은 사건마다 결의 기관과 첨부 서류가 다릅니다.",
         links: [
-          { href: "/부산법인법무사", label: "부산 회사 법무사" },
+          { href: "/부산법인법무사", label: "부산 법인 법무사" },
           { href: "/부산법인설립등기", label: "부산 법인설립등기" },
           { href: "/법인변경등기", label: "법인 변경등기 허브" },
           { href: "/부산법인정기점검", label: "법인등기 정기점검" },
@@ -612,7 +613,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         intro: "판결·지급명령을 받은 뒤에도 상대방이 갚지 않을 때 단계별로 필요한 신청서가 다릅니다.",
         links: [
           { href: "/부산집행문부여신청", label: "집행문 부여·승계집행문 신청" },
-          { href: "/부산채권압류추심명령", label: "채권압류·추심명령(통장·급여·거래처 대금)" },
+          { href: "/부산채권압류추심명령", label: "부산 채권압류 법무사 — 통장·급여·거래처 대금" },
           { href: "/부산채무불이행자명부등재", label: "채무불이행자명부 등재 신청" },
           { href: "/부산배당요구신청", label: "경매 배당요구 신청서" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
@@ -721,6 +722,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/민사소송", label: "지급명령·소장 작성 상담 허브" },
           { href: "/부산채권압류추심명령", label: "부산 채권압류·추심명령" },
+          { href: "/부산강제집행법무사", label: "부산 강제집행 법무사" },
           { href: "/채권압류추심서류준비", label: "채권압류·추심 서류 준비" },
           { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
           {
@@ -767,6 +769,7 @@ export const topicHubConfigs: TopicHubConfig[] = [
         links: [
           { href: "/성년후견자가진단", label: "성년·한정후견 유형 자가진단" },
           { href: "/부산가정법원성년후견", label: "부산가정법원 성년후견 안내" },
+          { href: "/부산한정후견", label: "부산 한정후견 — 동의 범위·대리권" },
         ],
       },
       {

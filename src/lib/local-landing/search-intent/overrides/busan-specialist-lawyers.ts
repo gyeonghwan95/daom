@@ -271,7 +271,7 @@ export const 부산법인전문법무사Override = createSpecialistPage({
   relatedServiceLinks: [
     { href: "/부산법인설립전문법무사", label: "부산 법인전문 법무사 — 설립 준비" },
     { href: "/부산법인등기", label: "이미 있는 회사의 변경·기한" },
-    { href: "/부산법인법무사", label: "부산 회사 법무사 — 설립·변경·해산" },
+    { href: "/부산법인법무사", label: "부산 법인 법무사 — 설립·변경·해산" },
     { href: "/부산법인설립등기", label: "부산 법인설립등기" },
   ],
   bottomCtaText:
@@ -885,7 +885,7 @@ export const 부산임원변경전문법무사Override = createSpecialistPage({
   ],
   relatedServiceLinks: [
     { href: "/부산임원변경등기", label: "부산 임원변경등기 — 절차 대표 안내" },
-    { href: "/부산법인법무사", label: "부산 회사 법무사" },
+    { href: "/부산법인법무사", label: "부산 법인 법무사" },
     { href: "/부산법인등기", label: "부산 법인등기" },
   ],
   bottomCtaText:

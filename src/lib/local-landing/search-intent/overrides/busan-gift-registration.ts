@@ -130,6 +130,7 @@ export const 부산증여등기Override: SearchIntentContent = {
     },
   ],
   relatedServiceLinks: [
+    { href: "/상속증여등기비교", label: "상속과 증여 등기 비교" },
     {
       href: "/부산부모자녀아파트증여등기",
       label: "부모 자녀 아파트 증여 준비서류",

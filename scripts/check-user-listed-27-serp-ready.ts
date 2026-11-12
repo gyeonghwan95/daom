@@ -54,7 +54,7 @@ const COMPACT_OWNERS: { compact: string; path: string }[] = [
   { compact: "부산부동산가처분법무사", path: "/가처분신청서류준비" },
   { compact: "부산가처분법무사", path: "/가처분신청서류준비" },
   { compact: "부산채권추심법무사", path: "/부산채권압류추심명령" },
-  { compact: "부산강제집행법무사", path: "/situations/판결-후-강제집행" },
+  { compact: "부산강제집행법무사", path: "/부산강제집행법무사" },
   { compact: "부산임대차분쟁법무사", path: "/부산전세보증금반환법무사" },
   { compact: "부산법원앞법무사", path: "/부산법원근처법무사" },
   { compact: "부산법원근처법무사", path: "/부산법원근처법무사" },

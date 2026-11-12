@@ -205,7 +205,7 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/부산등기법무사", label: "부산 등기 법무사" },
     { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     { href: "/부산상속법무사", label: "부산 상속 법무사" },
-    { href: "/부산법인법무사", label: "부산 회사 법무사" },
+    { href: "/부산법인법무사", label: "부산 법인 법무사" },
     { href: "/부산상속포기", label: "부산 상속포기" },
     { href: "/해운대법무사", label: "해운대 법무사" },
     { href: "/센텀법무사", label: "센텀 법무사" },
@@ -248,7 +248,7 @@ function championLinkForService(
       link = { href: "/부산상속법무사", label: "부산 상속 법무사" };
     }
   } else if ((CORPORATE_SERVICES as readonly string[]).includes(serviceSlug)) {
-    link = { href: "/부산법인법무사", label: "부산 회사 법무사" };
+    link = { href: "/부산법인법무사", label: "부산 법인 법무사" };
   } else if ((REAL_ESTATE_SERVICES as readonly string[]).includes(serviceSlug)) {
     link = { href: "/부산부동산등기", label: "부산 부동산등기" };
   } else if ((REHAB_SERVICES as readonly string[]).includes(serviceSlug)) {
