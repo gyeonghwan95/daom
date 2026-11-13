@@ -10,6 +10,7 @@
  *
  *   node scripts/naver-rank/goal-check.mjs                      # scripts/naver-rank/goal-keywords.txt
  *   node scripts/naver-rank/goal-check.mjs "부산 상속 법무사"    # 지정한 키워드만
+ *   GOAL_KW_FILE=목록.txt node scripts/naver-rank/goal-check.mjs   # 다른 키워드 파일
  *
  * 결과: reports/naver-rank/goal-YYYY-MM-DD.json
  * 네이버는 짧은 시간에 요청이 많으면(약 110회) 차단하므로 한 번에 80개 이하, 키워드당 2~4초 간격으로 보낸다.
@@ -23,7 +24,7 @@ const args = process.argv.slice(2);
 const keywords = args.length
   ? args
   : fs
-      .readFileSync(path.join(ROOT, "scripts/naver-rank/goal-keywords.txt"), "utf8")
+      .readFileSync(process.env.GOAL_KW_FILE || path.join(ROOT, "scripts/naver-rank/goal-keywords.txt"), "utf8")
       .split(/\r?\n/)
       .map((s) => s.replace(/#.*/, "").trim())
       .filter(Boolean);
@@ -148,7 +149,7 @@ for (const q of keywords) {
 const dir = path.join(ROOT, "reports/naver-rank");
 fs.mkdirSync(dir, { recursive: true });
 const today = new Date().toISOString().slice(0, 10);
-const file = path.join(dir, `goal-${today}.json`);
+const file = path.join(dir, `goal-${today}${process.env.GOAL_TAG ? "-" + process.env.GOAL_TAG : ""}.json`);
 fs.writeFileSync(file, JSON.stringify({ date: today, results }, null, 1));
 const first = results.filter((r) => r.siteRank === 1).length;
 const mismatch = results.filter((r) => r.intentMatch === false).length;

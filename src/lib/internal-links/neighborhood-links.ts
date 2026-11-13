@@ -43,8 +43,14 @@ export type NeighborhoodLinkSet = {
 const CLUSTERS: NeighborhoodCluster[] = [
   {
     gu: "해운대구",
-    targets: [{ href: "/좌동법무사", place: "좌동", prefix: "좌동" }],
-    siblings: ["/우동법무사", "/중동법무사", "/재송동법무사", "/반여동법무사", "/송정동법무사"],
+    // 2026-11-13 실측: 중동 5위(받는 링크 7개), 송정동 3위(받는 링크 1개) — 해운대 허브 본문에도 링크가 없었다
+    targets: [
+      { href: "/좌동법무사", place: "좌동", prefix: "좌동" },
+      { href: "/중동법무사", place: "해운대 중동", prefix: "중동" },
+      { href: "/송정동법무사", place: "해운대 송정동", prefix: "송정" },
+    ],
+    siblings: ["/우동법무사", "/재송동법무사", "/반여동법무사"],
+    fromGuHub: ["/중동법무사", "/송정동법무사"],
   },
   {
     gu: "연제구",
@@ -95,8 +101,18 @@ const CLUSTERS: NeighborhoodCluster[] = [
   },
   {
     gu: "사하구",
-    targets: [{ href: "/하단법무사", place: "하단동", prefix: "하단" }],
-    siblings: ["/다대동법무사", "/괴정동법무사"],
+    // 2026-11-13 실측: 괴정동 3위(받는 링크 9개)
+    targets: [
+      { href: "/하단법무사", place: "하단동", prefix: "하단" },
+      { href: "/괴정동법무사", place: "괴정동", prefix: "괴정" },
+    ],
+    siblings: ["/다대동법무사"],
+  },
+  {
+    gu: "사상구",
+    // 2026-11-13 실측: 「사상 법무사」 4위, 대표 페이지 대신 /사상구법무사가 잡힌다(사상법무사가 받는 링크 13개)
+    targets: [{ href: "/사상법무사", place: "사상", prefix: "사상역" }],
+    siblings: ["/주례동법무사"],
   },
   {
     gu: "기장군",
