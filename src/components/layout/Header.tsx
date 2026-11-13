@@ -100,7 +100,9 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 w-full overflow-visible border-b border-beige-dark bg-white/95 backdrop-blur-sm ${
+        // 배경 흐림(backdrop-blur)은 스크롤할 때마다 헤더 아래 내용을 다시 흐리게 그려 저사양 휴대폰 스크롤을 무겁게 한다.
+        // 배경이 95% 흰색이라 흐림은 거의 보이지 않으므로 단색 흰 배경으로 같은 모양을 낸다.
+        className={`sticky top-0 w-full overflow-visible border-b border-beige-dark bg-white ${
           menuOpen || searchOpen ? "z-[100]" : "z-40"
         }`}
       >

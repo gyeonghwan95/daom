@@ -17,7 +17,6 @@ import {
 } from "@/components/readability";
 import { ConsultSituationPicker } from "@/components/consult-wizard/ConsultSituationPicker";
 import { ConsultStartButton } from "@/components/consult-wizard/ConsultStartButton";
-import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import { getConsultLanding } from "@/lib/consult-wizard/landings";
 import type { PageData } from "@/lib/pageData/types";
 
@@ -27,9 +26,18 @@ type ConsultLandingPageViewProps = {
   lead?: ReactNode;
   /** 서버에서 만든 구조화데이터(FAQ 포함) */
   jsonLd: Parameters<typeof JsonLd>[0]["data"];
+  /** 서버에서 고른 본문 사진(소개 뒤·진행 방식 앞) — 사진 배치표를 클라이언트 번들에 싣지 않는다 */
+  visualAfterIntro?: ReactNode;
+  visualBeforeProcedures?: ReactNode;
 };
 
-export function ConsultLandingPageView({ page, lead, jsonLd }: ConsultLandingPageViewProps) {
+export function ConsultLandingPageView({
+  page,
+  lead,
+  jsonLd,
+  visualAfterIntro,
+  visualBeforeProcedures,
+}: ConsultLandingPageViewProps) {
   const content = getConsultLanding(page.slug);
   if (!content) return null;
 
@@ -65,21 +73,11 @@ export function ConsultLandingPageView({ page, lead, jsonLd }: ConsultLandingPag
         <SummaryBox title="이런 분께 맞춰 두었습니다" items={content.bullets} />
       </div>
 
-      <ArticleVisualSlot
-        path={page.path}
-        slot="after-intro"
-        category={page.category}
-        serviceSlug={page.serviceSlug}
-      />
+      {visualAfterIntro}
 
       <PageTableOfContents items={tocItems} />
 
-      <ArticleVisualSlot
-        path={page.path}
-        slot="before-procedures"
-        category={page.category}
-        serviceSlug={page.serviceSlug}
-      />
+      {visualBeforeProcedures}
 
       <ContentSection id="how" title="상담은 이렇게 진행됩니다">
         <ProseParagraphs

@@ -1074,31 +1074,60 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply bg-[#9aa3ad];
   }
 
+  /*
+   * 상태 점의 퍼지는 링 — box-shadow를 애니메이션하면 GPU가 처리하지 못해 모든 페이지에서 매 프레임
+   * 스타일 재계산·페인트가 일어났다(2026-11-13 측정: 5초에 1,200회). 같은 모양을 ::after 링의 transform·opacity로 그린다.
+   * 점 지름 8px → 링 22px(= 7px 퍼짐)까지 커지며 사라진다.
+   */
   .floating-cta__dot--pulse,
-  .floating-cta__dot--away-pulse {
-    box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
+  .floating-cta__dot--away-pulse,
+  .sidebar-consult-panel__dot--pulse,
+  .sidebar-consult-panel__dot--pulse-away {
+    position: relative;
+  }
+
+  .floating-cta__dot--pulse::after,
+  .floating-cta__dot--away-pulse::after,
+  .sidebar-consult-panel__dot--pulse::after,
+  .sidebar-consult-panel__dot--pulse-away::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgb(3 199 90 / 0.55);
     animation: floating-cta-pulse-live 1.8s ease-out infinite;
+    pointer-events: none;
   }
 
   @keyframes floating-cta-pulse-live {
     0% {
-      box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
+      transform: scale(1);
+      opacity: 1;
     }
 
     70% {
-      box-shadow: 0 0 0 7px rgb(3 199 90 / 0);
+      transform: scale(2.75);
+      opacity: 0;
     }
 
     100% {
-      box-shadow: 0 0 0 0 rgb(3 199 90 / 0);
+      transform: scale(2.75);
+      opacity: 0;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .floating-cta__dot--pulse,
     .floating-cta__dot--away-pulse {
-      animation: none;
       box-shadow: 0 0 0 2px rgb(3 199 90 / 0.3);
+    }
+
+    .floating-cta__dot--pulse::after,
+    .floating-cta__dot--away-pulse::after,
+    .sidebar-consult-panel__dot--pulse::after,
+    .sidebar-consult-panel__dot--pulse-away::after {
+      animation: none;
+      opacity: 0;
     }
   }
 
@@ -1180,11 +1209,7 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply bg-[#03c75a];
   }
 
-  .sidebar-consult-panel__dot--pulse,
-  .sidebar-consult-panel__dot--pulse-away {
-    box-shadow: 0 0 0 0 rgb(3 199 90 / 0.55);
-    animation: floating-cta-pulse-live 1.8s ease-out infinite;
-  }
+  /* 사이드 패널 점의 링은 위 플로팅 점과 같은 ::after 규칙을 쓴다(점 지름 6px). */
 
   .sidebar-consult-panel__status-text {
     @apply min-w-0;
@@ -1290,7 +1315,10 @@ body.mobile-menu-open .mobile-bottom-cta {
     position: absolute;
     inset: 0;
     border-radius: 9999px;
+    background: rgb(3 199 90);
+    opacity: 0;
     animation: header-consult-dot-ring 1.65s ease-out infinite;
+    pointer-events: none;
   }
 
   .header-consult-status__dot-wrap--live .header-consult-status__dot-ring {
@@ -1299,23 +1327,27 @@ body.mobile-menu-open .mobile-bottom-cta {
 
   .header-consult-status__dot-wrap--static .header-consult-status__dot-ring {
     animation: none;
+    opacity: 1;
+    background: transparent;
+    transform: none;
     box-shadow: 0 0 0 3px rgb(3 199 90 / 0.28);
   }
 
   @keyframes header-consult-dot-ring {
+    /* 예전: box-shadow 0→9px 퍼짐 + scale(0.82→1). 같은 퍼짐을 채운 원의 확대·투명도로 그린다(GPU 처리). */
     0% {
-      box-shadow: 0 0 0 0 rgb(3 199 90 / 0.62);
-      transform: scale(0.82);
+      transform: scale(0.42);
+      opacity: 0.62;
     }
 
     65% {
-      box-shadow: 0 0 0 9px rgb(3 199 90 / 0);
-      transform: scale(1);
+      transform: scale(2);
+      opacity: 0;
     }
 
     100% {
-      box-shadow: 0 0 0 0 rgb(3 199 90 / 0);
-      transform: scale(0.82);
+      transform: scale(2);
+      opacity: 0;
     }
   }
 
@@ -5982,25 +6014,53 @@ body.mobile-menu-open .mobile-bottom-cta {
     font-weight: 700;
     letter-spacing: 0.04em;
     padding: 0.35rem 0.75rem;
+    position: relative;
     animation: nationwide-chip-pulse 2.8s ease-in-out infinite;
     box-shadow: 0 0 0 0 color-mix(in srgb, var(--navy) 18%, transparent);
   }
 
+  /* 칩은 1px 떠오르기만(transform), 퍼지는 테두리는 ::after 링의 확대·투명도로 — box-shadow 애니메이션은 매 프레임 페인트를 일으킨다 */
   @keyframes nationwide-chip-pulse {
     0%,
     100% {
-      box-shadow: 0 0 0 0 color-mix(in srgb, var(--navy) 12%, transparent);
       transform: translateY(0);
     }
     50% {
-      box-shadow: 0 0 0 6px color-mix(in srgb, var(--navy) 0%, transparent);
       transform: translateY(-1px);
+    }
+  }
+
+  .nationwide-region-chip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--navy) 12%, transparent);
+    opacity: 0;
+    animation: nationwide-chip-ring 2.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes nationwide-chip-ring {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.06, 1.35);
+      opacity: 0;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .nationwide-region-chip {
       animation: none;
+    }
+
+    .nationwide-region-chip::after {
+      animation: none;
+      opacity: 0;
     }
   }
 

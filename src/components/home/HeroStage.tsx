@@ -106,6 +106,7 @@ function StageVisual({
   item,
   active,
   warmed,
+  loadMedia,
   playing,
   priority,
   onComplete,
@@ -114,6 +115,8 @@ function StageVisual({
   item: HomeHeroMediaItem;
   active: boolean;
   warmed: boolean;
+  /** 이 슬라이드의 이미지를 받을지. 첫 로드에는 지금·다음 슬라이드만, 페이지가 한가해지면 전부. */
+  loadMedia: boolean;
   playing: boolean;
   priority: boolean;
   onComplete?: () => void;
@@ -235,9 +238,9 @@ function StageVisual({
     return (
       <>
         <div className="home-hero-stage__fill" aria-hidden>
-          {imageLayer("fill")}
+          {loadMedia ? imageLayer("fill") : null}
         </div>
-        <div className="home-hero-stage__fit">{imageLayer("fit")}</div>
+        <div className="home-hero-stage__fit">{loadMedia ? imageLayer("fit") : null}</div>
       </>
     );
   }
@@ -247,7 +250,8 @@ function StageVisual({
   return (
     <>
       <div className="home-hero-stage__fill" aria-hidden>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {loadMedia ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={optimizedImageSrc(item.poster, 1280)}
           srcSet={optimizedSrcSet(item.poster)}
@@ -257,6 +261,7 @@ function StageVisual({
           decoding="async"
           className="home-hero-stage__media home-hero-stage__media--fill"
         />
+        ) : null}
       </div>
       <div className="home-hero-stage__fit">
         {showVideo ? (
@@ -296,6 +301,23 @@ export function HeroStage() {
     return true;
   });
   const [pageVisible, setPageVisible] = useState(true);
+  // 슬라이드 13장이 화면 같은 자리에 겹쳐 있어 loading="lazy"가 듣지 않았다(첫 로드에 약 0.7MB).
+  // 첫 화면은 지금·다음 슬라이드만 받고, 페이지가 한가해진 뒤 나머지를 받아 둬서 썸네일로 건너뛰어도 바로 보이게 한다.
+  const [warmAll, setWarmAll] = useState(false);
+  useEffect(() => {
+    let idleId: number | undefined;
+    const timer = window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        idleId = window.requestIdleCallback(() => setWarmAll(true), { timeout: 3000 });
+      } else {
+        setWarmAll(true);
+      }
+    }, 4000);
+    return () => {
+      window.clearTimeout(timer);
+      if (idleId !== undefined && "cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
+    };
+  }, []);
   const fillRef = useRef<HTMLSpanElement>(null);
   const elapsedRef = useRef(0);
   const advancingRef = useRef(false);
@@ -465,6 +487,7 @@ export function HeroStage() {
               item={item}
               active={itemIndex === index}
               warmed={itemIndex === index || itemIndex === nextIndex}
+              loadMedia={warmAll || itemIndex === index || itemIndex === nextIndex}
               playing={isPlaying}
               priority={itemIndex === FIRST_IMAGE_INDEX}
               onComplete={itemIndex === index ? advance : undefined}
@@ -566,7 +589,7 @@ export function HeroStage() {
                         />
                       ) : (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={optimizedImageSrc(itemPoster(item), 256)} alt="" />
+                        <img src={optimizedImageSrc(itemPoster(item), 256)} alt="" decoding="async" fetchPriority="low" />
                       )}
                       {item.kind === "video" ? <VideoBadge /> : null}
                     </span>

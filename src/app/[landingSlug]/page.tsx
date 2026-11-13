@@ -1,3 +1,4 @@
+import { ArticleVisualSlot } from "@/components/media/ArticleVisual";
 import type { Metadata } from "next";
 import nextDynamic from "next/dynamic";
 import { notFound } from "next/navigation";
@@ -10,7 +11,6 @@ import { RegistryHubPageView } from "@/components/local-landing/RegistryHubPageV
 import { BusanLawyerHubPageView } from "@/components/local-landing/BusanLawyerHubPageView";
 import { PublicAgencyRegistrationPageView } from "@/components/local-landing/PublicAgencyRegistrationPageView";
 import { SelectionHubPageView } from "@/components/local-landing/SelectionHubPageView";
-import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPageView";
 import { PracticeHubPageView } from "@/components/local-landing/PracticeHubPageView";
 import { LecturePageView } from "@/components/lectures/LecturePageView";
 import { LectureHistoryHubView } from "@/components/lectures/history/LectureHistoryHubView";
@@ -24,6 +24,8 @@ import { SpecialEntityIntentPageView } from "@/components/special-entity/Special
 import { B2BPageView } from "@/components/b2b/B2BPageView";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import { NoticesPageView } from "@/components/notices/NoticesPageView";
+import { ShipSeoPageView } from "@/components/ship-seo/ShipSeoPageView";
+import { SearchIntentPageView } from "@/components/local-landing/SearchIntentPageView";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { setPeerPagePath } from "@/lib/internal-links/peer-context";
 import { PageDataTemplate } from "@/components/page-data/PageDataTemplate";
@@ -47,7 +49,6 @@ import { pageDataToMetadata } from "@/lib/pageData/metadata";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { getNaverRecoveryTarget } from "@/lib/local-landing/naver-recovery-targets";
 import { NaverRecoveryTargetView } from "@/components/naver-recovery/NaverRecoveryTargetView";
-import { ShipSeoPageView } from "@/components/ship-seo/ShipSeoPageView";
 import { getShipSeoPage } from "@/lib/ship-seo";
 import { PrioritySeoPageView } from "@/components/priority-seo/PrioritySeoPageView";
 import { getPrioritySeoPage } from "@/lib/priority-seo";
@@ -324,6 +325,22 @@ export default async function LocalLandingPage({ params }: PageProps) {
             faqs: getConsultLanding(page.slug)?.faqs ?? page.faqs,
             includeFaqSchema: true,
           })}
+          visualAfterIntro={
+            <ArticleVisualSlot
+              path={page.path}
+              slot="after-intro"
+              category={page.category}
+              serviceSlug={page.serviceSlug}
+            />
+          }
+          visualBeforeProcedures={
+            <ArticleVisualSlot
+              path={page.path}
+              slot="before-procedures"
+              category={page.category}
+              serviceSlug={page.serviceSlug}
+            />
+          }
         />
         <LawyerTrustShowcase />
       </PageContainer>
