@@ -1,5 +1,5 @@
 import { seoBrand } from "@/lib/seo/brand";
-import { getRecordedLastModified } from "@/lib/seo/lastmod-lookup";
+import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_LAWYER_GUIDE_PATH, BUSAN_RENUNCIATION_CHAMPION_PATH } from "@/lib/seo/champion-query";
 import { homeModifiedOn } from "@/lib/home-content";
 import { busanLawyerHubReviewedOn } from "@/lib/local-landing/busan-lawyer-hub-content";
@@ -330,7 +330,7 @@ export function buildWebPageSchema(input: {
     author: { "@id": schemaIds.person },
     reviewedBy: { "@id": schemaIds.person },
     publisher: { "@id": schemaIds.organization },
-    dateModified: input.dateModified ?? reviewedOn ?? getRecordedLastModified(input.path),
+    dateModified: getEffectiveModified(input.path, input.dateModified ?? reviewedOn),
     // og:image와 같은 실제 파일(필요하면 1200px OG 파생본)과 크기를 쓴다 — 페이지별 1:1 썸네일이 있으면 그것
     primaryImageOfPage: (getPageOgThumbnail(input.path)?.src ?? input.image)
       ? (() => {

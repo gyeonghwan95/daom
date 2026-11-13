@@ -1,35 +1,67 @@
 # 다옴법무사사무소 — 색인 우선순위 URL 전체 목록
-# 생성: 2026-11-12T15:13:47.446Z
+# 생성: 2026-11-13T13:11:20.007Z
 # 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
 # 총 URL: 1668 (제외 243)
 #
 # 형식: [Tier] URL\tpath
-# Tier 1 — 즉시 (핵심 전환·허브): 17개
-# Tier 2 — 1주차 (지역·전국 허브): 29개
+# Tier 1 — 즉시 (핵심 전환·허브): 49개
+# Tier 2 — 1주차 (지역·전국 허브): 25개
 # Tier 3 — 2주차 (광역·비용·자가진단·도구): 176개
-# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 608개
+# Tier 4 — 3~4주차 (구·군·시·부산 업무사례): 586개
 # Tier 5 — 2개월 (동·생활권·경남·크로스): 185개
-# Tier 6 — 순차 (기타 키워드 랜딩): 563개
+# Tier 6 — 순차 (기타 키워드 랜딩): 557개
 # Tier 7 — 후순위 (블로그): 53개
 # Tier 8 — 후순위 (언론·강의): 37개
 
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
-Tier 1 — 즉시 (핵심 전환·허브) (17개)
+Tier 1 — 즉시 (핵심 전환·허브) (49개)
 ────────────────────────────────────────────────────────────────────────
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr	/
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%8A%B5%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/대습상속등기
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%8B%A0%EC%B2%AD	/부산가압류신청
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%A0%9C%EC%A7%91%ED%96%89%EB%B2%95%EB%AC%B4%EC%82%AC	/부산강제집행법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D	/부산개인회생
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산등기법무사
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%AC%B4%EC%86%8C	/부산법무사무소
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B9%84%EC%9A%A9	/부산법무사비용
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%83%81%EB%8B%B4	/부산법무사상담
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산법무사추천
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/부산법인등기
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인설립전문법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/부산부동산등기
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산등기전문법무사
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/부산상속등기
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속전문법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산상속포기
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AC%EC%84%B1%EB%B2%95%EB%AC%B4%EC%82%AC	/부산여성법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD	/부산지방법원등기국
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B1%84%EA%B6%8C%EC%95%95%EB%A5%98%EC%B6%94%EC%8B%AC%EB%AA%85%EB%A0%B9	/부산채권압류추심명령
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/부산한정승인
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%ED%9B%84%EA%B2%AC	/부산한정후견
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D	/상속
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9	/상속등기비용
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EA%B8%B0%EA%B0%84	/상속포기기간
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EB%AC%B4%EC%82%AC	/센텀법무사
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80	/업무사례
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/부산법무사
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%97%85%EB%AC%B4%EB%B3%84	/업무사례/업무별
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EC%A7%80%EC%97%AD%EB%B3%84	/업무사례/지역별
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/전국상속등기
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%97%85%EB%AC%B4	/전국업무
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EB%B3%84%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/특별한정승인
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%ED%9B%84%EC%A0%88%EC%B0%A8	/한정승인후절차
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC	/해운대법무사
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/about	/about
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/contact	/contact
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/contact/inquiry	/contact/inquiry
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/location	/location
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/office	/office
+[T1] https://xn--2j1br1na42lvxja38mk8r.kr/reviews	/reviews
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services	/services
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/corporate-registration	/services/corporate-registration
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/inheritance-registration	/services/inheritance-registration
@@ -37,7 +69,7 @@ Tier 1 — 즉시 (핵심 전환·허브) (17개)
 [T1] https://xn--2j1br1na42lvxja38mk8r.kr/services/real-estate-registration	/services/real-estate-registration
 
 ────────────────────────────────────────────────────────────────────────
-Tier 2 — 1주차 (지역·전국 허브) (29개)
+Tier 2 — 1주차 (지역·전국 허브) (25개)
 ────────────────────────────────────────────────────────────────────────
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8	/개인정보처리방침
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EA%B2%BD%EB%82%A8%EB%B2%95%EB%AC%B4%EC%82%AC%EC%97%85%EB%AC%B4	/업무사례/경남법무사업무
@@ -50,14 +82,10 @@ Tier 2 — 1주차 (지역·전국 허브) (29개)
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EA%B3%B5%EB%8F%99%EB%8B%B4%EB%B3%B4%EB%93%B1%EA%B8%B0	/전국공동담보등기
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EB%B2%95%EC%9D%B8%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/전국법인본점이전등기
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%A0%84%EA%B5%AD%EC%9C%A0%EC%A6%9D%EB%93%B1%EA%B8%B0	/전국유증등기
-[T2] https://xn--2j1br1na42lvxja38mk8r.kr/about	/about
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/busan-legal-map	/busan-legal-map
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/faq	/faq
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/glossary	/glossary
-[T2] https://xn--2j1br1na42lvxja38mk8r.kr/location	/location
-[T2] https://xn--2j1br1na42lvxja38mk8r.kr/office	/office
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/resources	/resources
-[T2] https://xn--2j1br1na42lvxja38mk8r.kr/reviews	/reviews
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/search-guides	/search-guides
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/situations	/situations
 [T2] https://xn--2j1br1na42lvxja38mk8r.kr/situations/%EB%B6%84%EB%A5%98/%EA%B0%80%EC%A1%B1-%EC%82%AC%EB%A7%9D-%EC%83%81%EC%86%8D	/situations/분류/가족-사망-상속
@@ -250,7 +278,7 @@ Tier 3 — 2주차 (광역·비용·자가진단·도구) (176개)
 [T3] https://xn--2j1br1na42lvxja38mk8r.kr/tools/rehab-income-debt-check	/tools/rehab-income-debt-check
 
 ────────────────────────────────────────────────────────────────────────
-Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
+Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (586개)
 ────────────────────────────────────────────────────────────────────────
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/광안동법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B4%91%EC%95%88%EB%8F%99%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/광안동부동산등기
@@ -288,7 +316,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EB%93%B1%EA%B8%B0	/부산가등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%88%98%EA%B8%88%EC%B6%9C%EC%9E%90%EC%A0%84%ED%99%98	/부산가수금출자전환
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0	/부산가압류말소등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%8B%A0%EC%B2%AD	/부산가압류신청
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%95%95%EB%A5%98%EC%B7%A8%EC%86%8C	/부산가압류취소
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%EB%B2%95%EB%AC%B4%EC%82%AC	/부산가정법원법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A0%95%EB%B2%95%EC%9B%90%EC%83%81%EC%86%8D	/부산가정법원상속
@@ -301,7 +328,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%90%EC%9E%90%EB%93%B1%EA%B8%B0	/부산감자등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%82%AC%EC%84%AD%EC%99%B8%EB%B9%84%EC%9A%A9	/부산강사섭외비용
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%82%AC%EC%84%AD%EC%99%B8%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8	/부산강사섭외체크리스트
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%A0%9C%EC%A7%91%ED%96%89%EB%B2%95%EB%AC%B4%EC%82%AC	/부산강제집행법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EB%AA%85%ED%97%88%EA%B0%80	/부산개명허가
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%EC%82%AC%EC%97%85%EC%9E%90%EB%B2%95%EC%9D%B8%EC%A0%84%ED%99%98	/부산개인사업자법인전환
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0	/부산개인파산
@@ -309,7 +335,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산개인파산법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EC%83%81%EB%8B%B4	/부산개인파산상담
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%8C%8C%EC%82%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산개인파산전문법무사
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D	/부산개인회생
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B2%95%EB%AC%B4%EC%82%AC	/부산개인회생법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산개인회생법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D%EC%83%81%EB%8B%B4	/부산개인회생상담
@@ -350,7 +375,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8F%84%EC%84%9C%EA%B4%80%EB%B2%95%EB%A5%A0%ED%8A%B9%EA%B0%95	/부산도서관법률특강
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EA%B6%8C%EB%A6%AC%EC%A6%9D%EB%B6%84%EC%8B%A4	/부산등기권리증분실
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%AA%85%EC%9D%98%EC%9D%B8%ED%91%9C%EC%8B%9C%EB%B3%80%EA%B2%BD	/부산등기명의인표시변경
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산등기법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산등기법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B3%B4%EC%A0%95%EC%97%85%EB%AC%B4	/부산등기보정업무
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B3%B5%EB%8C%80%EB%A6%AC	/부산등기복대리
@@ -370,30 +394,23 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EC%83%81%EB%8B%B4	/부산법률상담
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%A5%A0%EC%A0%84%EB%AC%B8%EA%B0%80	/부산법률전문가
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EA%B0%95%EC%9D%98	/부산법무사강의
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%AC%B4%EC%86%8C	/부산법무사무소
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B0%A9%EB%AC%B8%EC%83%81%EB%8B%B4	/부산법무사방문상담
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B3%B4%EC%88%98	/부산법무사보수
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B3%B4%EC%88%98%ED%91%9C	/부산법무사보수표
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B3%B5%EB%8C%80%EB%A6%AC	/부산법무사복대리
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B9%84%EA%B5%90	/부산법무사비교
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B9%84%EB%8C%80%EB%A9%B4%EC%83%81%EB%8B%B4	/부산법무사비대면상담
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B9%84%EC%9A%A9	/부산법무사비용
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%83%81%EB%8B%B4	/부산법무사상담
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%84%9C%EB%A5%98%EC%A4%80%EB%B9%84	/부산법무사서류준비
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%88%98%EC%9E%84%EB%A3%8C	/부산법무사수임료
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%9E%98%ED%95%98%EB%8A%94%EA%B3%B3	/부산법무사잘하는곳
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%ED%9B%84%EA%B8%B0	/부산법무사후기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9B%90%EA%B7%BC%EC%B2%98%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법원근처법무사
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/부산법인등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C	/부산법인등기과태료
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EB%B3%B5%EB%8C%80%EB%A6%AC	/부산법인등기복대리
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9	/부산법인등기비용
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EC%95%84%EC%9B%83%EC%86%8C%EC%8B%B1	/부산법인등기아웃소싱
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8	/부산법인등기전문
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/부산법인설립등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산법인설립전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%9D%B8%EC%88%98%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/부산법인인수변경등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%A0%95%EA%B8%B0%EC%A0%90%EA%B2%80	/부산법인정기점검
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%ED%95%B4%EC%82%B0%EC%A0%84%ED%99%95%EC%9D%B8%EC%82%AC%ED%95%AD	/부산법인해산전확인사항
@@ -402,11 +419,9 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B4%EC%83%81%EB%93%B1%EA%B8%B0	/부산보상등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B3%B8%EC%A0%90%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/부산본점이전등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8B%B4%EB%B6%80%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0	/부산부담부증여등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/부산부동산등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산등기법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B3%B5%EB%8C%80%EB%A6%AC	/부산부동산등기복대리
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8	/부산부동산등기전문
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산등기전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%8F%99%EC%82%B0%ED%98%91%EB%A0%A5%EB%B2%95%EB%AC%B4%EC%82%AC	/부산부동산협력법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%80%EB%AA%A8%EC%9E%90%EB%85%80%EC%95%84%ED%8C%8C%ED%8A%B8%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0	/부산부모자녀아파트증여등기
@@ -424,13 +439,10 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EA%B0%80%EB%93%B1%EA%B8%B0	/부산상가등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EA%B0%80%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산상가매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A0%84%EB%AC%B8	/부산상속등기전문
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C	/부산상속법무사추천
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9D%B8	/부산상속재산관리인
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속재산분할법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%ED%8C%8C%EC%82%B0	/부산상속재산파산
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산상속전문법무사
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0	/부산상속포기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%9B%84%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산상속후매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%ED%98%B8%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0	/부산상호변경등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/부산선박등기
@@ -447,7 +459,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%8B%A4%EC%A2%85%EC%84%A0%EA%B3%A0%EC%B2%AD%EA%B5%AC	/부산실종선고청구
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%95%84%ED%8C%8C%ED%8A%B8%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0	/부산아파트매매등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%95%95%EB%A5%98%EB%A7%90%EC%86%8C%EB%93%B1%EA%B8%B0	/부산압류말소등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AC%EC%84%B1%EB%B2%95%EB%AC%B4%EC%82%AC	/부산여성법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC	/부산역법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AD%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/부산역부동산등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%98%88%EA%B3%A0%EB%93%B1%EA%B8%B0	/부산예고등기
@@ -494,7 +505,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EB%B2%95%EB%AC%B4%EC%82%AC	/부산지방법원동부지원법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EC%A7%80%EA%B8%89%EB%AA%85%EB%A0%B9	/부산지방법원동부지원지급명령
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EC%B1%84%EA%B6%8C%ED%9A%8C%EC%88%98	/부산지방법원동부지원채권회수
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD	/부산지방법원등기국
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B2%95%EB%AC%B4%EC%82%AC	/부산지방법원등기국법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/부산지방법원등기국법인등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%80%EB%B0%A9%EB%B2%95%EC%9B%90%EB%93%B1%EA%B8%B0%EA%B5%AD%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/부산지방법원등기국부동산등기
@@ -524,7 +534,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%91%ED%95%A9%EA%B1%B4%EB%AC%BC%EB%93%B1%EA%B8%B0	/부산집합건물등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%91%ED%96%89%EA%B3%B5%ED%83%81	/부산집행공탁
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A7%91%ED%96%89%EB%AC%B8%EB%B6%80%EC%97%AC%EC%8B%A0%EC%B2%AD	/부산집행문부여신청
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B1%84%EA%B6%8C%EC%95%95%EB%A5%98%EC%B6%94%EC%8B%AC%EB%AA%85%EB%A0%B9	/부산채권압류추심명령
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B1%84%EB%AC%B4%EB%B6%88%EC%9D%B4%ED%96%89%EC%9E%90%EB%AA%85%EB%B6%80%EB%93%B1%EC%9E%AC	/부산채무불이행자명부등재
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B2%AD%EC%86%8C%EB%85%84%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1	/부산청소년법률교육
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B2%B4%EC%9C%A1%EB%8B%A8%EC%B2%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/부산체육단체법인설립
@@ -537,8 +546,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8C%8C%EC%82%B0%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC	/부산파산전문법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%8C%90%EA%B2%B0%EC%86%8C%EC%9C%A0%EA%B6%8C%EC%9D%B4%EC%A0%84%EB%93%B1%EA%B8%B0	/부산판결소유권이전등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%99%EA%B5%90%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/부산학교법인등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/부산한정승인
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%ED%9B%84%EA%B2%AC	/부산한정후견
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%84%EB%AC%BC%EC%B6%9C%EC%9E%90%EC%A6%9D%EC%9E%90	/부산현물출자증자
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%91%EB%8F%99%EC%A1%B0%ED%95%A9%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/부산협동조합설립등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%98%91%ED%9A%8C%EB%8B%A8%EC%B2%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD	/부산협회단체법인설립
@@ -572,7 +579,6 @@ Tier 4 — 3~4주차 (구·군·시·부산 업무사례) (608개)
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC	/서면역법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EC%97%AD%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/서면역법인등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EC%97%AD%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/서면역부동산등기
-[T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EB%AC%B4%EC%82%AC	/센텀법무사
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/센텀법인등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/센텀법인설립등기
 [T4] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%BC%ED%85%80%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0	/센텀부동산등기
@@ -1051,7 +1057,7 @@ Tier 5 — 2개월 (동·생활권·경남·크로스) (185개)
 [T5] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%ED%99%94%EC%84%B1%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC	/업무사례/화성상속등기법무사
 
 ────────────────────────────────────────────────────────────────────────
-Tier 6 — 순차 (기타 키워드 랜딩) (563개)
+Tier 6 — 순차 (기타 키워드 랜딩) (557개)
 ────────────────────────────────────────────────────────────────────────
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/1%EB%B6%84%EA%B0%84%ED%8E%B8%EC%83%81%EB%8B%B4	/1분간편상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B0%80%EC%84%A4%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%93%B1%EA%B8%B0%EA%B0%80%EB%8A%A5%EC%97%AC%EB%B6%80	/가설컨테이너등기가능여부
@@ -1179,7 +1185,6 @@ Tier 6 — 순차 (기타 키워드 랜딩) (563개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%86%8D%EC%97%85%ED%9A%8C%EC%82%AC%EB%B2%95%EC%9D%B8%EA%B3%BC%EC%98%81%EB%86%8D%EC%A1%B0%ED%95%A9%EB%B2%95%EC%9D%B8%EC%B0%A8%EC%9D%B4	/농업회사법인과영농조합법인차이
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8B%A4%EB%8C%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC	/다대동법무사
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8B%A8%EC%88%9C%EC%8A%B9%EC%9D%B8%EA%B3%BC%EC%88%99%EB%A0%A4%EA%B8%B0%EA%B0%84	/단순승인과숙려기간
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%8A%B5%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0	/대습상속등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%ED%91%9C%EC%9D%B4%EC%82%AC%ED%95%9C%EB%AA%85%EB%A7%8C%EB%82%A8%EB%8A%94%EA%B2%BD%EC%9A%B0	/대표이사한명만남는경우
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%ED%91%9C%EC%9E%90%EC%82%AC%EB%A7%9D%EC%8B%9C%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/대표자사망시법인등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8F%84%EB%A1%9C%EB%AA%85%EC%A3%BC%EC%86%8C%EB%93%B1%EA%B8%B0%EB%B6%80%EC%83%81%EC%9D%B4	/도로명주소등기부상이
@@ -1357,12 +1362,10 @@ Tier 6 — 순차 (기타 키워드 랜딩) (563개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/산업단지법인등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EA%B0%80%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0	/상가보존등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EB%8B%B4	/상담
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D	/상속
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EA%B1%B4%EB%AC%BC%EB%A9%B8%EC%8B%A4%EB%93%B1%EA%B8%B0	/상속건물멸실등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B3%BC%ED%83%9C%EB%A3%8C	/상속등기과태료
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B8%B0%EA%B0%84	/상속등기기간
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EA%B8%B0%ED%95%9C	/상속등기기한
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EB%B9%84%EC%9A%A9	/상속등기비용
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%83%81%EB%8B%B4	/상속등기상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%8B%A4%EC%88%98%EB%AA%A8%EC%9D%8C	/상속등기실수모음
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0%EC%A4%80%EB%B9%84%EC%84%9C%EB%A5%98	/상속등기준비서류
@@ -1378,7 +1381,6 @@ Tier 6 — 순차 (기타 키워드 랜딩) (563개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0%ED%98%91%EC%9D%98%EC%84%9C%EC%A4%80%EB%B9%84	/상속재산분할협의서준비
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EB%B9%84%EA%B5%90	/상속증여등기비교
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%B7%A8%EB%93%9D%EC%84%B8%EC%99%80%EB%93%B1%EA%B8%B0%EC%88%9C%EC%84%9C	/상속취득세와등기순서
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EA%B8%B0%EA%B0%84	/상속포기기간
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EB%B9%84%EC%9A%A9	/상속포기비용
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EC%83%81%EB%8B%B4	/상속포기상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EC%B7%A8%EC%86%8C	/상속포기취소
@@ -1579,7 +1581,6 @@ Tier 6 — 순차 (기타 키워드 랜딩) (563개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%86%A0%EC%A7%80%EC%86%8C%EC%9C%A0%EC%9E%90%EC%99%80%EA%B1%B4%EC%B6%95%EC%A3%BC%EB%8B%A4%EB%A5%B8%EB%B3%B4%EC%A1%B4%EB%93%B1%EA%B8%B0	/토지소유자와건축주다른보존등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%86%B5%EC%98%81%EC%84%A0%EB%B0%95%EB%93%B1%EA%B8%B0	/통영선박등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EB%B3%84%EB%B2%95%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EB%93%B1%EA%B8%B0	/특별법법인설립등기
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EB%B3%84%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8	/특별한정승인
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%93%B1%EA%B8%B0	/특수등기
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%93%B1%EA%B8%B0%EC%9D%98%EB%A2%B0	/특수등기의뢰
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%8A%B9%EC%88%98%EB%B9%84%EC%98%81%EB%A6%AC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/특수비영리법인등기
@@ -1592,7 +1593,6 @@ Tier 6 — 순차 (기타 키워드 랜딩) (563개)
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EB%B9%84%EC%9A%A9	/한정승인비용
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%EC%83%81%EB%8B%B4	/한정승인상담
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%ED%95%84%EC%9A%94%EC%84%9C%EB%A5%98	/한정승인필요서류
-[T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%ED%9B%84%EC%A0%88%EC%B0%A8	/한정승인후절차
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%82%B0%EA%B0%84%EC%A3%BC%ED%99%95%EC%9D%B8%EC%A0%88%EC%B0%A8	/해산간주확인절차
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%99%B8%EA%B1%B0%EC%A3%BC%EC%83%81%EC%86%8D%EC%9D%B8	/해외거주상속인
 [T6] https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%B4%EC%99%B8%EB%8C%80%ED%91%9C%EC%9D%B4%EC%82%AC%EC%A3%BC%EC%A3%BC%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0	/해외대표이사주주법인등기

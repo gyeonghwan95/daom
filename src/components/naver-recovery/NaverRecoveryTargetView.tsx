@@ -1,3 +1,4 @@
+import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
 import Image from "next/image";
@@ -192,7 +193,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
             {spec.remoteNote}
           </p>
           <p className="mt-2 text-xs text-navy/55">
-            {spec.reviewNote} 최종 수정 {spec.dateModified}.
+            {spec.reviewNote} 최종 수정 {getEffectiveModified(page.path, spec.dateModified)}.
           </p>
         </aside>
       </article>

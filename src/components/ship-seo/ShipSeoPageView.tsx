@@ -1,3 +1,4 @@
+import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
@@ -173,7 +174,7 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
             {spec.officeNote}
           </p>
           <p className="mt-2 text-xs text-navy/55">
-            {spec.reviewNote} 최종 수정 {spec.dateModified}.
+            {spec.reviewNote} 최종 수정 {getEffectiveModified(spec.path, spec.dateModified)}.
           </p>
         </aside>
       </article>

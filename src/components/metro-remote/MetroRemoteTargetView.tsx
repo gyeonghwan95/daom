@@ -1,3 +1,4 @@
+import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
@@ -193,7 +194,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
             <span className="text-navy/60"> · {spec.author.officeNote}</span>
           </p>
           <p className="mt-1 text-xs text-navy/55">
-            근거 {spec.author.sources.join(", ")} · 최종 수정 {spec.dateModified}
+            근거 {spec.author.sources.join(", ")} · 최종 수정 {getEffectiveModified(spec.path, spec.dateModified)}
           </p>
         </aside>
 

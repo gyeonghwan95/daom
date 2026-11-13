@@ -6,6 +6,7 @@
  *   npm run indexnow -- --dry-run
  *   npm run indexnow -- --endpoint=naver
  *   npm run indexnow:deploy
+ *   npm run indexnow -- --paths=/부산상속법무사,/부산상속포기   # 지정한 경로만(스냅샷과 무관)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -38,6 +39,7 @@ function parseArgs(argv) {
     endpoint: DEFAULT_ENDPOINT,
     retries: 24,
     retryDelaySec: 15,
+    paths: null,
   };
   for (const arg of argv) {
     if (arg === "--dry-run") opts.dryRun = true;
@@ -50,6 +52,12 @@ function parseArgs(argv) {
       opts.endpoint = arg.slice("--endpoint=".length);
     } else if (arg.startsWith("--retries=")) {
       opts.retries = Number(arg.slice("--retries=".length));
+    } else if (arg.startsWith("--paths=")) {
+      opts.paths = arg
+        .slice("--paths=".length)
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
     } else if (arg.startsWith("--retry-delay=")) {
       opts.retryDelaySec = Number(arg.slice("--retry-delay=".length));
     }
@@ -230,6 +238,13 @@ async function main() {
 
   const toSubmit = [...diff.added, ...diff.changed];
   let urlList = toSubmit.map((e) => e.loc);
+  if (opts.paths) {
+    // 지정 경로 제출: 사이트맵에 있는 경로만 보낸다(오타·비색인 경로 방지). 스냅샷은 바꾸지 않는다.
+    const known = new Map(current.map((e) => [e.path, e.loc]));
+    const unknown = opts.paths.filter((p) => !known.has(p));
+    if (unknown.length) console.warn(`[indexnow] 사이트맵에 없는 경로는 제외: ${unknown.join(", ")}`);
+    urlList = opts.paths.filter((p) => known.has(p)).map((p) => known.get(p));
+  }
 
   if (opts.limit != null && Number.isFinite(opts.limit) && opts.limit > 0) {
     urlList = urlList.slice(0, opts.limit);
@@ -254,7 +269,7 @@ async function main() {
 
   if (urlList.length === 0) {
     console.log("[indexnow] 제출할 변경 URL 없음 — 스냅샷만 갱신합니다.");
-    if (!opts.dryRun) saveSnapshot(current);
+    if (!opts.dryRun && !opts.paths) saveSnapshot(current);
     return;
   }
 
@@ -284,7 +299,7 @@ async function main() {
 
   if (result.status === 200 || result.status === 202) {
     console.log(`[indexnow] OK — ${urlList.length} URLs submitted (HTTP ${result.status})`);
-    saveSnapshot(current);
+    if (!opts.paths) saveSnapshot(current);
     return;
   }
 

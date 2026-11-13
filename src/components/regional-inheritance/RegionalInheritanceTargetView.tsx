@@ -1,3 +1,4 @@
+import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
 import { CostInquiryNote } from "@/components/cta/CostInquiryNote";
@@ -168,7 +169,7 @@ export function RegionalInheritanceTargetView({
             {target.officeNote}
           </p>
           <p className="mt-2 text-xs text-navy/55">
-            {target.reviewNote} 최종 수정 {target.dateModified}.
+            {target.reviewNote} 최종 수정 {getEffectiveModified(target.path, target.dateModified)}.
           </p>
         </aside>
       </article>
