@@ -5,7 +5,7 @@ export const consultationReplySla = {
   afterHours: "야간·주말은 다음 영업일 오전 10시 전 회신",
   line: "평일 2시간 내, 야간·주말은 다음 영업일 오전 10시 전에 회신합니다.",
   night:
-    "지금 남기시면 다음 영업일 오전 10시 전에 제가 먼저 연락드립니다. 오늘 밤 다 정하지 않으셔도 됩니다.",
+    "지금 남기시면 다음 영업일 오전 10시 전에 제가 먼저 연락드립니다. 지금 다 정하지 않으셔도 됩니다.",
 } as const;
 
 /**
@@ -15,7 +15,8 @@ export const consultationReplySla = {
  */
 export function consultationNightLine(nextReplyAt?: string): string {
   if (!nextReplyAt) return consultationReplySla.night;
-  return `지금 남기시면 ${nextReplyAt}에 제가 먼저 연락드립니다. 오늘 밤 다 정하지 않으셔도 됩니다.`;
+  // 주말 낮에도 보이므로 '오늘 밤' 같은 시간대 표현은 쓰지 않는다
+  return `지금 남기시면 ${nextReplyAt}에 제가 먼저 연락드립니다. 지금 다 정하지 않으셔도 됩니다.`;
 }
 
 export const consultationReassurance = {

@@ -105,7 +105,7 @@ export function getConsultEmpathy(pathname: string): ConsultEmpathy {
   if (/포기|한정승인/.test(path)) {
     return pack({
       intent: "renunciation",
-      line: "3개월이 걱정되시면 날짜만 알려 주세요. 오늘 밤 다 정하지 않으셔도 됩니다.",
+      line: "3개월이 걱정되시면 날짜만 알려 주세요. 지금 다 정하지 않으셔도 됩니다.",
       example:
         "돌아가신 지 두 달입니다. 빚이 있는 것 같아 포기를 알아보고 있습니다.",
       costLine:
@@ -278,7 +278,13 @@ export function consultPasteText(empathy: ConsultEmpathy): string {
   return empathy.example.trim() || consultKakaoGreeting;
 }
 
+/**
+ * 휴대폰 하단 바 위 한 줄 안내. 바 높이를 한 줄(1.95rem)에 맞춰 두었으므로 짧게 쓴다.
+ * 긴 문장은 360px 화면에서 두 줄이 되어 하단 고정 영역이 화면의 15%를 덮었다(2026-11-15).
+ */
 export function consultSlaLine(isOpen: boolean, isResolved: boolean, nextReplyAt?: string): string {
-  if (isResolved && !isOpen) return consultationNightLine(nextReplyAt);
+  if (isResolved && !isOpen) {
+    return nextReplyAt ? `지금 남기시면 ${nextReplyAt} 먼저 연락드립니다` : consultationNightLine();
+  }
   return consultationReplySla.weekday;
 }

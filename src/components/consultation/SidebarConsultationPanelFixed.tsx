@@ -23,7 +23,16 @@ export function SidebarConsultationPanelFixed({
   useEffect(() => {
     const sync = () => {
       const panelHeight = panelRef.current?.getBoundingClientRect().height ?? 0;
-      setLayout(computeBottomFixedAboveFooter(panelHeight));
+      const next = computeBottomFixedAboveFooter(panelHeight);
+      setLayout(next);
+      // 왼쪽 페이지 목차는 이 값만큼 아래를 비워 둔다. 고정값(21.5rem)이 실제 패널(약 600px)보다 작아
+      // 1440×900 화면에서 상담 패널이 목차 아래쪽 항목을 덮었다(2026-11-15 화면 점검).
+      if (panelHeight > 0) {
+        document.documentElement.style.setProperty(
+          "--sidebar-consult-panel-reserve",
+          `${Math.ceil(panelHeight + next.bottom + 20)}px`,
+        );
+      }
     };
 
     sync();
@@ -46,6 +55,7 @@ export function SidebarConsultationPanelFixed({
       window.removeEventListener("scroll", sync);
       window.removeEventListener("resize", sync);
       resizeObserver.disconnect();
+      document.documentElement.style.removeProperty("--sidebar-consult-panel-reserve");
     };
   }, []);
 

@@ -15,7 +15,8 @@ export function OfficeHoursDetail({ variant = "default" }: OfficeHoursDetailProp
     <dl className={isFooter ? "space-y-3 text-sm" : "grid gap-4 sm:grid-cols-2"}>
       <div>
         <dt className={labelClass}>평일</dt>
-        <dd className={valueClass}>{officeHours.weekday}</dd>
+        {/* 제목이 이미 "평일"이라 값에서는 빼야 "평일 평일 09:00–18:00"으로 겹치지 않는다 */}
+        <dd className={valueClass}>{officeHours.weekday.replace(/^평일\s*/, "")}</dd>
       </div>
       <div>
         <dt className={labelClass}>휴무일</dt>

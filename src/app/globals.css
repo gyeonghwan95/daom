@@ -305,6 +305,36 @@ body {
 }
 
 @layer base {
+  /*
+   * 한글 줄바꿈 — 낱말 단위로 끊는다. 기본값(normal)은 글자 단위로 끊어 제목이 "확인하세 / 요",
+   * 본문이 "아 / 래"처럼 갈라졌다(2026-11-15 화면 점검, 360~1440px 전 페이지).
+   * 한 낱말이 칸보다 길 때만 글자 단위로 넘긴다(overflow-wrap). 클래스(break-all 등)가 있으면 그쪽이 우선한다.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  dt,
+  dd,
+  th,
+  td,
+  label,
+  summary,
+  figcaption,
+  blockquote {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* 제목 마지막 줄에 한두 글자만 남지 않게 줄 길이를 고르게 */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
   /* 가변 글꼴에서 'bolder'(굵은 글 안의 strong → 900)가 더 두껍게 그려지지 않게 예전처럼 700으로 고정 */
   b,
   strong {
@@ -553,6 +583,10 @@ body.mobile-menu-open .mobile-bottom-cta {
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.35;
+  /* 한 줄 고정 — 본문 아래 여백(--mobile-cta-reserve)이 한 줄 기준이라 두 줄이 되면 마지막 내용이 가려진다 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mobile-bottom-cta--comfort .mobile-bottom-cta__btn {
@@ -2794,6 +2828,16 @@ body.mobile-menu-open .mobile-bottom-cta {
     object-fit: contain;
     transform: none;
     animation: none;
+  }
+
+  /*
+   * 휴대폰: 가로 영상이 세로로 긴 무대 가운데 놓이면 헤더 바로 아래에 약 110px 빈 흐림 띠가 생기고,
+   * 영상 속 자막이 아래 제목·재생 버튼과 겹쳤다(2026-11-15 화면 점검). 아래 조작 영역을 피해 위쪽에 둔다.
+   */
+  @media (max-width: 767px) {
+    .home-hero-stage__slide--video .home-hero-stage__media--fit {
+      object-position: 50% 22%;
+    }
   }
 
   .home-hero-stage__fill .home-hero-stage__media {
@@ -5602,7 +5646,8 @@ body.mobile-menu-open .mobile-bottom-cta {
   }
 
   .decision-card__places .naver-place-btn {
-    min-height: 0;
+    /* 글자 링크 모양은 유지하되 누르는 영역은 44px (예전 28px) */
+    min-height: 2.75rem;
     padding: 0.15rem 0;
     border: 0;
     background: transparent;
@@ -6014,6 +6059,9 @@ body.mobile-menu-open .mobile-bottom-cta {
     font-weight: 700;
     letter-spacing: 0.04em;
     padding: 0.35rem 0.75rem;
+    /* 옆 요소에 밀려 줄어들며 글자가 칸 밖으로 넘쳤다(360·390px, 2026-11-15) */
+    flex-shrink: 0;
+    white-space: nowrap;
     position: relative;
     animation: nationwide-chip-pulse 2.8s ease-in-out infinite;
     box-shadow: 0 0 0 0 color-mix(in srgb, var(--navy) 18%, transparent);

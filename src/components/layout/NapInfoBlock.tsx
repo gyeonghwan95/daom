@@ -20,9 +20,12 @@ export function NapInfoBlock({
   const valueClass = isFooter
     ? "mt-1 font-medium text-white/90"
     : "mt-1 text-navy/80";
+  // 전화·이메일·홈페이지 링크는 휴대폰에서 손가락으로 누르기 쉽게 높이 44px을 확보한다(글자 모양은 그대로).
+  // 예전에는 높이 20px이라 전화번호를 누르기 어려웠다(2026-11-15 화면 점검).
+  const tapClass = "inline-flex min-h-11 items-center max-w-full";
   const linkClass = isFooter
-    ? "font-medium text-white/90 transition-colors duration-200 hover:text-white"
-    : "font-medium text-navy-light underline-offset-2 transition-colors duration-200 hover:text-navy hover:underline";
+    ? `${tapClass} font-medium text-white/90 transition-colors duration-200 hover:text-white`
+    : `${tapClass} font-medium text-navy-light underline-offset-2 transition-colors duration-200 hover:text-navy hover:underline`;
 
   return (
     <dl

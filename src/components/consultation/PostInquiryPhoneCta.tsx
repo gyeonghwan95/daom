@@ -28,7 +28,7 @@ export function PostInquiryPhoneCta({
   phoneNumClassName,
 }: PostInquiryPhoneCtaProps) {
   const pathname = usePathname() ?? "/";
-  const { isOpen, isResolved } = useConsultationAvailability();
+  const { isOpen, isResolved, nextReplyAt } = useConsultationAvailability();
   const { phone, kakao } = getContactInfo();
   const { status, launch } = useConsultChatLaunch();
   const example = getConsultEmpathy(pathname).example;
@@ -54,7 +54,9 @@ export function PostInquiryPhoneCta({
   return (
     <div className={className}>
       <p className={hintClassName}>
-        지금 남기시면 내일 아침 제가 봅니다. 오늘 밤 정하지 않으셔도 됩니다.
+        {nextReplyAt
+          ? `남겨 주신 내용은 ${nextReplyAt}에 제가 먼저 확인하고 연락드립니다. 지금 다 정하지 않으셔도 됩니다.`
+          : "남겨 주신 내용은 다음 영업일 오전 10시 전에 제가 먼저 확인하고 연락드립니다."}
       </p>
       <a
         href={chatHref}

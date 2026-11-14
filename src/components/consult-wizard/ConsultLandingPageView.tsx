@@ -56,7 +56,8 @@ export function ConsultLandingPageView({
     <article className="content-stack consult-landing">
       <Breadcrumb items={page.breadcrumbs} />
       {breadcrumbJsonLd}
-      {lead}
+      {/* 휴대폰에서는 표지 이미지(약 270px) 때문에 첫 질문이 첫 화면 밖(807px)으로 밀렸다 — 상담 페이지는 질문이 먼저다(2026-11-15) */}
+      {lead ? <div className="max-md:hidden">{lead}</div> : null}
       <JsonLd data={jsonLd} />
 
       <PageHero

@@ -92,7 +92,7 @@ export function OfficeLocationInfo({
                   nap.phone ? (
                     <a
                       href={getPhoneHref(nap.phone)}
-                      className="font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
+                      className="inline-flex min-h-11 max-w-full items-center font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
                     >
                       {nap.phone}
                     </a>
@@ -106,7 +106,7 @@ export function OfficeLocationInfo({
                 value={
                   <a
                     href={getMailtoHref(nap.email)}
-                    className="font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
+                    className="inline-flex min-h-11 max-w-full items-center font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
                   >
                     {nap.email}
                   </a>
@@ -117,7 +117,7 @@ export function OfficeLocationInfo({
                 value={
                   <a
                     href={nap.websiteUrl}
-                    className="break-all font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
+                    className="inline-flex min-h-11 max-w-full items-center break-all font-medium text-navy-light underline-offset-2 hover:text-navy hover:underline"
                   >
                     {nap.websiteUrl.replace(/^https?:\/\//, "")}
                   </a>
