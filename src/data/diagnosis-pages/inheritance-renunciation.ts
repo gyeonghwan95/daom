@@ -103,7 +103,7 @@ export const inheritanceRenunciationDiagnosis: Diagnosis = {
       ],
     },
   ],
-  outcomes: createStandardOutcomes(service, "/services/inheritance-renunciation", [
+  outcomes: createStandardOutcomes(service, "/부산상속포기", [
     "상속포기 신고서",
     "가족관계증명서·기본증명서",
     "인감증명서",

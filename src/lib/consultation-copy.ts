@@ -2,11 +2,21 @@
 
 export const consultationReplySla = {
   weekday: "평일 2시간 내 회신",
-  afterHours: "야간·주말은 다음 영업일 오전에 회신",
-  line: "평일 2시간 내, 야간·주말은 다음 영업일 오전에 회신합니다.",
+  afterHours: "야간·주말은 다음 영업일 오전 10시 전 회신",
+  line: "평일 2시간 내, 야간·주말은 다음 영업일 오전 10시 전에 회신합니다.",
   night:
-    "지금 남기시면 내일 아침 제가 봅니다. 오늘 밤 정하지 않으셔도 됩니다.",
+    "지금 남기시면 다음 영업일 오전 10시 전에 제가 먼저 연락드립니다. 오늘 밤 다 정하지 않으셔도 됩니다.",
 } as const;
+
+/**
+ * 영업 외 시간 문구 — 회신 시점을 요일까지 박아 말한다("월요일 오전 10시 전").
+ * 예전 문구("내일 아침 제가 봅니다")는 금요일 밤·주말에도 '내일'이라고 해 사실과 달랐다(2026-11-15).
+ * nextReplyAt 이 없으면(시각 확정 전) 요일 없는 기본 문구를 쓴다.
+ */
+export function consultationNightLine(nextReplyAt?: string): string {
+  if (!nextReplyAt) return consultationReplySla.night;
+  return `지금 남기시면 ${nextReplyAt}에 제가 먼저 연락드립니다. 오늘 밤 다 정하지 않으셔도 됩니다.`;
+}
 
 export const consultationReassurance = {
   noCommit:

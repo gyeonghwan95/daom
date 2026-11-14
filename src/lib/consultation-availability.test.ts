@@ -108,3 +108,23 @@ describe("getConsultationAvailability", () => {
     assert.equal(closed.isOpen, false);
   });
 });
+
+describe("nextReplyAt (영업 외 문의 회신 시점)", () => {
+  // 예전 문구는 금요일 밤·주말에도 "내일 아침"이라고 해 사실과 달랐다(2026-11-15)
+  const at = (iso: string) => getConsultationAvailability(new Date(iso)).nextReplyAt;
+
+  it("평일 영업 중에는 따로 말하지 않는다", () => {
+    assert.equal(at("2026-11-09T01:00:00.000Z"), undefined); // 월 10:00
+  });
+  it("평일 아침 9시 전은 오늘", () => {
+    assert.equal(at("2026-11-10T22:00:00.000Z"), "오늘 오전 10시 전"); // 수 07:00
+  });
+  it("월~목 저녁은 내일", () => {
+    assert.equal(at("2026-11-09T11:00:00.000Z"), "내일 오전 10시 전"); // 월 20:00
+  });
+  it("금요일 저녁·토·일은 월요일", () => {
+    assert.equal(at("2026-11-13T12:00:00.000Z"), "월요일 오전 10시 전"); // 금 21:00
+    assert.equal(at("2026-11-14T03:00:00.000Z"), "월요일 오전 10시 전"); // 토 12:00
+    assert.equal(at("2026-11-15T13:00:00.000Z"), "월요일 오전 10시 전"); // 일 22:00
+  });
+});

@@ -40,7 +40,7 @@ const CORE_URLS = [
   "/부산법인등기",
   "/부산개인회생",
   "/services/inheritance-registration",
-  "/services/inheritance-renunciation",
+  // /services/inheritance-renunciation 은 2026-10-22 /부산상속포기로 통합(seo/index-policy.json noindex·canonical)
 ];
 
 const pages = scanAll();
@@ -176,6 +176,22 @@ test("9. 내부 링크가 깨지지 않는다", () => {
   }
   const list = [...broken.entries()].map(([t, from]) => `${t} (from ${from})`);
   assert.deepEqual(list, [], `깨진 내부 링크: ${sample(list)}`);
+});
+
+test("9-1. 대표 페이지로 통합된 업무 상세에는 내부 링크를 걸지 않는다", () => {
+  // seo/index-policy.json canonicalOverrides 의 /services/* 와 src/lib/seo/service-path.ts 가 같아야 한다
+  const policy = JSON.parse(fs.readFileSync("seo/index-policy.json", "utf8")) as {
+    canonicalOverrides: Record<string, string>;
+  };
+  const merged = Object.entries(policy.canonicalOverrides).filter(([from]) => from.startsWith("/services/"));
+  const hits: string[] = [];
+  for (const p of indexableSelf) {
+    for (const { href } of p.links) {
+      const target = href.split(/[?#]/)[0];
+      if (merged.some(([from]) => from === target)) hits.push(`${p.route} → ${target}`);
+    }
+  }
+  assert.deepEqual(hits.slice(0, 20), [], `통합된 주소로 가는 내부 링크 ${hits.length}건`);
 });
 
 test("10. JSON-LD가 모두 파싱된다", () => {

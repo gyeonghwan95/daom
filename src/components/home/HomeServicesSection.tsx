@@ -12,6 +12,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { homeFeaturedServiceSlugs, homeServicesIntro } from "@/lib/home-content";
 import type { NaverPlaceReview } from "@/lib/naver-place-reviews/types";
 import { allServiceDetails } from "@/lib/services-data";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 const services = homeFeaturedServiceSlugs
   .map((slug) => allServiceDetails.find((s) => s.slug === slug))
@@ -53,7 +54,7 @@ export function HomeServicesSection({
                     transition={{ duration: 0.35 }}
                   >
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={serviceLinkPath(service.slug)}
                       className="home-service-card group flex h-full flex-col rounded-2xl border border-beige-dark bg-cream/50 p-6 backdrop-blur-sm transition-shadow duration-500 hover:border-navy/10 hover:shadow-xl hover:shadow-navy/5 md:p-8"
                     >
                       <h3 className="text-lg font-semibold text-navy">

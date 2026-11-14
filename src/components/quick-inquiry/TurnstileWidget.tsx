@@ -123,6 +123,19 @@ export function TurnstileWidget({ onToken, onError, resetSignal = 0 }: Turnstile
     };
   }, [siteKey, handleToken, onError, onToken]);
 
+  // 네이버·카카오 앱 안 브라우저에서 보안 확인이 끝없이 "준비 중"에 머무는 경우가 있다.
+  // 12초 안에 위젯이 뜨지 않으면 실패로 보고 바로 연락할 수 있는 채널을 보여 준다(작성 내용은 그대로 남는다).
+  useEffect(() => {
+    if (!siteKey || ready || failed) return;
+    const timer = window.setTimeout(() => {
+      if (!widgetIdRef.current) {
+        setFailed(true);
+        onError?.();
+      }
+    }, 12_000);
+    return () => window.clearTimeout(timer);
+  }, [siteKey, ready, failed, onError]);
+
   useEffect(() => {
     if (!siteKey || !widgetIdRef.current || !window.turnstile) return;
     window.turnstile.reset(widgetIdRef.current);

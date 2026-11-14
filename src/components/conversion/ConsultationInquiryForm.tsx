@@ -20,7 +20,6 @@ import {
   type InquiryFieldValue,
 } from "@/lib/service-conversion/inquiry-fields";
 import { trackB2BEvent } from "@/lib/analytics/track-b2b";
-import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 import {
   getContactInfo,
   getPhoneHref,
@@ -65,6 +64,8 @@ type FormState = {
   visitPossible: string;
   contactTime: string;
   corporateTask: CorporateLegalTaskValue | "";
+  /** 업무별 기한 기준일(사망일·잔금일·임기 만료일) — 회신 순서를 정하는 데 쓴다 */
+  keyDate: string;
 };
 
 type FieldErrors = {
@@ -91,7 +92,29 @@ const initialState: FormState = {
   visitPossible: "",
   contactTime: "",
   corporateTask: "",
+  keyDate: "",
 };
+
+/**
+ * 업무마다 기한을 가르는 날짜가 다르다(상속포기 3개월, 잔금일, 임원 변경 2주).
+ * 이 날짜 하나만 있으면 회신 순서와 첫 안내가 정해지므로, 분야를 고르면 그 날짜만 따로 묻는다.
+ */
+function keyDatePrompt(field: InquiryFieldValue | ""): { label: string; placeholder: string } | null {
+  switch (field) {
+    case "inheritance-registration":
+    case "inheritance-renunciation":
+      return { label: "돌아가신 날 또는 상속인이 된 것을 안 날 (선택)", placeholder: "예: 9월 28일" };
+    case "real-estate-registration":
+    case "mortgage":
+      return { label: "잔금일·대출 실행일 (선택)", placeholder: "예: 11월 30일 잔금" };
+    case "corporate-registration":
+      return { label: "임기 만료일·변경 결의일 (선택)", placeholder: "예: 대표이사 임기 12월 10일 만료" };
+    case "preservation-registration":
+      return { label: "사용승인일 (선택)", placeholder: "예: 10월 15일 사용승인" };
+    default:
+      return null;
+  }
+}
 
 function buildInquiryBody(
   form: FormState,
@@ -113,6 +136,7 @@ function buildInquiryBody(
     `이름: ${form.name.trim() || "미기재"}`,
     `연락처: ${form.phone.trim()}`,
     `상담 분야: ${fieldLabel}`,
+    `기한 기준일: ${form.keyDate.trim() || "-"}`,
     `서류 보유: ${form.hasDocuments ? "있음" : "없음/일부만 있음"}`,
     `유입 페이지: ${meta.sourcePage?.trim() || "-"}`,
     `문의 지역: ${form.propertyRegion.trim() || form.clientRegion.trim() || "부산(기본)"}`,
@@ -318,7 +342,7 @@ export function ConsultationInquiryForm({
         {fieldLabel ? (
           <p className="inquiry-form__success-text">상담 분야: {fieldLabel}</p>
         ) : null}
-        <PostInquiryNextSteps />
+        <PostInquiryNextSteps field={form.field || undefined} />
 
         <PostInquiryPhoneCta
           className="inquiry-form__success-call"
@@ -374,11 +398,11 @@ export function ConsultationInquiryForm({
         <p className="inquiry-form__lead">
           {nationwideMode
             ? "서류를 모두 준비하지 않아도 됩니다. 알고 계신 지역과 상황만 남겨 주시면 전국 진행 가능 여부와 먼저 준비할 자료부터 확인합니다."
-            : `${consultationCopy.contact} ${INQUIRY_RELAXED_NOTE}`}
+            : consultationCopy.contact}
         </p>
         <ul className="inquiry-form__reassure">
-          <li>제출하시면 사무소 이메일로 안전하게 전달됩니다</li>
-          <li>남겨 주신 내용은 사무소 담당자에게 메시지·이메일로 전달되며, 사이트 데이터베이스에는 따로 저장하지 않습니다.</li>
+          <li>제출하시면 안윤정 법무사에게 메시지·이메일로 바로 전달되며, 사이트에는 저장하지 않습니다</li>
+          <li>서류가 아직 없어도 됩니다. 알고 계신 상황만 적어 주세요</li>
           <li>급하시면 전화·카카오톡·네이버톡톡도 이용하실 수 있습니다</li>
         </ul>
       </header>
@@ -550,6 +574,29 @@ export function ConsultationInquiryForm({
           </span>
         ) : null}
       </label>
+
+      {(() => {
+        const prompt = keyDatePrompt(form.field);
+        if (!prompt) return null;
+        return (
+          <label className="inquiry-form__field" htmlFor={`${formId}-key-date`}>
+            <span className="inquiry-form__label">{prompt.label}</span>
+            <input
+              id={`${formId}-key-date`}
+              type="text"
+              name="keyDate"
+              disabled={submitting}
+              value={form.keyDate}
+              onChange={(e) => setForm((prev) => ({ ...prev, keyDate: e.target.value }))}
+              className="inquiry-form__input"
+              placeholder={prompt.placeholder}
+            />
+            <span className="mt-1 block text-xs text-navy/55">
+              기한이 가까운 문의부터 먼저 연락드립니다. 정확히 모르시면 대략만 적어 주세요.
+            </span>
+          </label>
+        );
+      })()}
 
       {form.field === "corporate-registration" ||
       inquiryCluster === "corporate-legal" ? (

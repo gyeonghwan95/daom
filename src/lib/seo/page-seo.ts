@@ -49,35 +49,35 @@ export const staticPageSeo = {
   reviews: {
     title: buildSeoTitle("네이버 고객후기"),
     description:
-      "네이버 플레이스 방문자가 남긴 상속등기·부동산등기·법인등기·상담 후기.",
+      "다옴법무사사무소 네이버 플레이스 방문자 후기. 부산에서 상속등기·부동산등기·법인등기와 상담을 맡긴 분들이 남긴 실제 후기를 모았습니다.",
     path: "/reviews",
     keywords: ["네이버 후기", "해운대 법무사", "고객후기", seoBrand.siteName],
   },
   faq: {
     title: buildSeoTitle("등기·상속·회생 FAQ"),
     description:
-      "상속등기, 부동산등기, 법인등기, 개인회생·파산 등 법무사 업무 관련 자주 묻는 질문과 답변.",
+      "부산 법무사 다옴법무사사무소 자주 묻는 질문. 상속등기·상속포기·부동산등기·법인등기·개인회생·파산의 기한·서류·비용을 안윤정 법무사가 질문별로 정리했습니다.",
     path: "/faq",
     keywords: ["상속등기 FAQ", "부동산등기 FAQ", "개인회생 FAQ", seoBrand.siteName],
   },
   notices: {
     title: buildSeoTitle("공지사항"),
     description:
-      "다옴법무사사무소 운영 공지, 휴무·일정 변경 등 안내사항을 확인하실 수 있습니다.",
+      "다옴법무사사무소 공지사항. 부산 센텀 사무소의 운영 시간, 휴무·일정 변경과 상담 방법 변경 등 의뢰 전에 알아 두실 안내를 전합니다.",
     path: "/공지사항",
     keywords: ["다옴법무사사무소", "공지사항", seoBrand.siteName],
   },
   media: {
     title: buildSeoTitle("언론·활동"),
     description:
-      "언론 보도, 법률 강의, 기업·공공기관 협력, 정책 자문 등 대외 활동 기록.",
+      "다옴법무사사무소 안윤정 법무사의 언론 보도·방송 출연, 법률 강의, 기업·공공기관 협력과 정책 자문 등 대외 활동 기록을 모았습니다.",
     path: "/media",
     keywords: ["안윤정 법무사", "부산 법률 강의", "언론보도", seoBrand.siteName],
   },
   contact: {
     title: buildSeoTitle("상담 문의 · 해운대·센텀 예약"),
     description:
-      "전화·카카오톡·네이버 톡톡 상담 안내. 방문 예약 후 센텀 사무소에서 직접 상담 가능.",
+      "다옴법무사사무소 상담 문의. 안윤정 법무사에게 전화(평일 09:00–18:00)·카카오톡·네이버 톡톡으로 상속·등기·법인·회생 상담을 남기고, 방문은 예약 후 부산 센텀 사무소에서 받습니다.",
     path: "/contact",
     keywords: ["상담 문의", "방문 예약", seoBrand.siteName],
   },
@@ -91,7 +91,7 @@ export const staticPageSeo = {
   location: {
     title: buildSeoTitle("오시는 길 · 센텀"),
     description:
-      "부산 해운대구 센텀동로 200 D동 1층 위치, 센텀시티역·주차·건물 안내, 네이버 예약 링크.",
+      "다옴법무사사무소 오시는 길. 부산 해운대구 센텀동로 200 D동 1층, 센텀시티역에서 가까운 사무소의 주차·건물 출입 방법과 네이버 예약·지도 링크를 안내합니다.",
     path: "/location",
     keywords: ["오시는 길", "센텀시티 방문", seoBrand.siteName],
   },

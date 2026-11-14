@@ -69,6 +69,19 @@ export function HomeTrust() {
             부산에서 법무사 상담을 찾을 때, 목적부터 구분해 보세요
           </h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {/* 맡길 일을 먼저 보여 준다: 무료상담 안내가 앞에 있으면 방문자가 그 주소로 떠났다(2026-11-15 전환 점검) */}
+            <div className="rounded-xl bg-beige p-4">
+              <p className="font-semibold text-navy">맡길 일은 여기</p>
+              <p className="mt-1 text-sm leading-relaxed text-navy/70">
+                상담 뒤에 서류 작성과 등기소·법원 접수, 보정까지 맡길 일은 안윤정 법무사가
+                사안을 확인한 뒤 업무 범위, 준비서류, 보수와 공과금 구분을 안내합니다.
+                맡기기 전에 비용만 물어보셔도 되고, 상담 후 안 맡으셔도 됩니다. 소송 대리와 형사 변론은 변호사 업무입니다.
+                안윤정 법무사는 부산지방법원 동부지원 무료법률상담(부산지방법무사협회)에도 참여하고 있습니다.
+              </p>
+              <Link href="/contact" className="btn-secondary mt-3 inline-flex min-h-11 items-center px-4 text-sm">
+                다옴법무사사무소에 상담하기
+              </Link>
+            </div>
             <div>
               <p className="font-semibold text-navy">법원 무료 법률상담을 찾는 경우</p>
               <p className="mt-1 text-sm leading-relaxed text-navy/70">
@@ -76,7 +89,8 @@ export function HomeTrust() {
                 평일 10:00–12:00 법무사 상담으로 받을 수 있습니다. 방문해 번호표 순서로 진행하고
                 전화 예약은 없습니다. 부산고등법원·부산가정법원·부산회생법원 안내가 같은 청사
                 상담실을 가리킵니다. 시청 1층 상담실은 화·목 사전예약제입니다. 일정은 바뀔 수
-                있으니 방문 전 공식 안내를 확인하세요.
+                있으니 방문 전 공식 안내를 확인하세요. 상담실은 짧은 질문에 답하는 곳이어서,
+                서류 작성과 등기소·법원 접수, 보정은 따로 준비하셔야 합니다.
               </p>
               <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                 <a
@@ -112,17 +126,6 @@ export function HomeTrust() {
                   부산시 무료 법률상담
                 </a>
               </div>
-            </div>
-            <div>
-              <p className="font-semibold text-navy">맡길 일은 여기</p>
-              <p className="mt-1 text-sm leading-relaxed text-navy/70">
-                상담 뒤에 서류 작성과 등기소·법원 접수, 보정까지 맡길 일은 안윤정 법무사가
-                사안을 확인한 뒤 업무 범위, 준비서류, 보수와 공과금 구분을 안내합니다.
-                맡기기 전에 비용만 물어보셔도 되고, 상담 후 안 맡으셔도 됩니다. 소송 대리와 형사 변론은 변호사 업무입니다.
-              </p>
-              <Link href="/contact" className="btn-secondary mt-3 inline-flex min-h-11 items-center px-4 text-sm">
-                다옴법무사사무소에 상담하기
-              </Link>
             </div>
           </div>
         </section>

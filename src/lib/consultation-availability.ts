@@ -20,6 +20,8 @@ export type ConsultationAvailability = {
   isResolved: boolean;
   statusLabel: string;
   statusHint: string;
+  /** 영업 외 시간에 남긴 문의를 언제 회신하는지(예: "월요일 오전 10시 전"). 영업 중·시각 확정 전에는 없다. */
+  nextReplyAt?: string;
 };
 
 type KoreaClock = {
@@ -76,6 +78,13 @@ function getPhoneAvailabilityHint(weekday: number, minutes: number): string {
   return "전화상담은 내일 9시부터 가능";
 }
 
+/** 영업 외 시간 문의의 회신 시점 — 다음 영업일 오전 10시 전(전화 가능 안내와 같은 요일 규칙) */
+export function getNextReplyAt(weekday: number, minutes: number): string {
+  if (isWeekday(weekday) && minutes < OPEN_MINUTES) return "오늘 오전 10시 전";
+  if (weekday === 5 || weekday === 6 || weekday === 0) return "월요일 오전 10시 전";
+  return "내일 오전 10시 전";
+}
+
 function getClosedAvailability(
   weekday: number,
   minutes: number,
@@ -87,6 +96,7 @@ function getClosedAvailability(
     isResolved: true,
     statusLabel: CLOSED_STATUS_LABEL,
     statusHint: `${phoneHint} · ${consultationReplySla.afterHours}`,
+    nextReplyAt: getNextReplyAt(weekday, minutes),
   };
 }
 

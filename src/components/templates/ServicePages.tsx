@@ -24,6 +24,7 @@ import {
   resolveCarouselOgImage,
 } from "@/lib/seo/carousel-images";
 import { getRelatedContentCarousel } from "@/lib/seo/page-visuals";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 type ServiceDetailTemplateProps = {
   service: ServiceDetail;
@@ -78,7 +79,7 @@ export function ServicesIndexTemplate() {
                 <ServiceCard
                   title={service.title}
                   description={service.description}
-                  href={`/services/${service.slug}`}
+                  href={serviceLinkPath(service.slug)}
                   image={getServiceImage(service.slug)}
                 />
               </li>

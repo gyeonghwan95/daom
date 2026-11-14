@@ -26,7 +26,7 @@ import {
 } from "@/lib/naver-place-reviews/static-quotes";
 import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
-import { consultationReplySla } from "@/lib/consultation-copy";
+import { consultationNightLine, consultationReplySla } from "@/lib/consultation-copy";
 import {
   consultPasteText,
   getConsultEmpathy,
@@ -153,7 +153,7 @@ function DecisionCard({ className }: { className: string }) {
   const pathname = usePathname() ?? "/";
   const { phone, kakao, naverTalk } = getContactInfo();
   const phoneHref = getPhoneHref(phone);
-  const { isOpen, isResolved } = useConsultationAvailability();
+  const { isOpen, isResolved, nextReplyAt } = useConsultationAvailability();
   const phoneVisible = Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen);
   const lecture = isLecturePagePath(pathname);
   const b2b = isB2BPath(pathname);
@@ -174,7 +174,7 @@ function DecisionCard({ className }: { className: string }) {
   const hint = lecture
     ? `${consultationReplySla.line} 기관 강사료 기준이 있으면 그 범위에서 맞춰 드립니다.`
     : afterHours
-      ? consultationReplySla.night
+      ? consultationNightLine(nextReplyAt)
       : `${consultationReplySla.weekday}. 맡기기 전에 물어보셔도 됩니다.`;
   const intent = lecture ? "lecture" : b2b ? "b2b" : empathy.intent;
   // 모바일은 하단 고정바가 전화·카카오톡·톡톡·예약을 맡는다(협업 페이지의 하단바는 전화·카카오톡만).
@@ -319,6 +319,21 @@ function DecisionCard({ className }: { className: string }) {
         </p>
       ) : null}
       <p className="decision-card__hint">{hint}</p>
+      {showPhone ? (
+        // 휴대폰에서는 하단 바가 전화를 맡지만 아이콘 버튼이 작다. 전화가 편한 어르신·가족을 위해
+        // 영업시간에만 번호를 글자로 크게 한 번 더 보여 준다(하단 바 버튼 수는 그대로).
+        <a
+          href={phoneHref}
+          data-cta="phone"
+          data-cta-placement={`${placement}_mobile`}
+          onClick={() => trackCTA("phone", currentSlug(), phoneHref, intent)}
+          className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-xl border border-navy/15 bg-white px-4 text-base font-bold text-navy no-underline lg:hidden"
+          aria-label={`전화 상담 ${phone}`}
+        >
+          <PhoneIcon className="h-5 w-5 shrink-0" />
+          전화가 편하시면 바로 거세요 · {phone}
+        </a>
+      ) : null}
       {lecture || b2b ? null : (
         <>
           <p className="decision-card__process">{empathy.costLine}</p>

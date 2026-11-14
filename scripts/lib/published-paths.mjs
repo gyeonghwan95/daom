@@ -573,6 +573,11 @@ function readResourceSlugs() {
 export function getAllPublishedPaths() {
   const blogSlugs = readSlugsFromDir("src/content/blog");
   const caseSlugs = readSlugsFromDir("src/content/cases");
+  // 옛 /cases/<slug> 이동 페이지는 그 주소가 실제로 쓰였던 사례만 만든다(src/lib/cases/legacy-slugs.ts).
+  // 나머지는 public/_redirects 의 /cases/* 301이 받는다.
+  const legacyCaseSlugs = new Set(
+    [...fs.readFileSync(path.join(ROOT, "src/lib/cases/legacy-slugs.ts"), "utf8").matchAll(/^s+"([a-z0-9-]+)",$/gm)].map((m) => m[1]),
+  );
   const faqSlugs = readSlugsFromDir("src/content/faq");
   const landingSlugs = readLandingSlugs();
   const topicHubSlugs = readTopicHubSlugs();
@@ -611,7 +616,7 @@ export function getAllPublishedPaths() {
     ...naverBlogPaths,
     ...lectureHistoryPaths,
     "/cases",
-    ...caseSlugs.map((slug) => `/cases/${slug}`),
+    ...caseSlugs.filter((slug) => legacyCaseSlugs.has(slug)).map((slug) => `/cases/${slug}`),
     ...caseRegionPaths,
     ...nationwidePaths,
     ...readShipSeoPaths(),

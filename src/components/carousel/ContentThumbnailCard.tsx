@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { RelatedCardItem } from "@/lib/seo/page-visuals";
 import type { TextPosition } from "@/data/seo/page-visuals";
+import { mergedServiceHref } from "@/lib/seo/service-path";
 
 const CATEGORY_LABEL_KO: Record<string, string> = {
   inheritance: "상속",
@@ -51,7 +52,7 @@ export function ContentThumbnailCard({
   return (
     <li className="w-[78%] min-w-[78%] snap-start sm:w-[42%] sm:min-w-[42%] lg:w-[28%] lg:min-w-[28%] xl:w-[23%] xl:min-w-[23%]">
       <Link
-        href={item.href}
+        href={mergedServiceHref(item.href)}
         data-related-content="card"
         data-target-page={item.href}
         data-category={item.category ?? ""}

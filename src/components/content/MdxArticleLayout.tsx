@@ -17,6 +17,7 @@ import {
 } from "@/lib/site-images";
 import type { ContentMeta } from "@/types/content-mdx";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 type MdxArticleLayoutProps = {
   meta: ContentMeta;
@@ -40,7 +41,7 @@ export function MdxArticleLayout({
 }: MdxArticleLayoutProps) {
   const relatedServiceLinks =
     meta.relatedServices?.map((slug) => ({
-      href: `/services/${slug}`,
+      href: serviceLinkPath(slug),
       label: getServiceLabel(slug),
     })) ?? [];
 

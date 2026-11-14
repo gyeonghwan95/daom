@@ -325,6 +325,7 @@ export default async function LocalLandingPage({ params }: PageProps) {
             faqs: getConsultLanding(page.slug)?.faqs ?? page.faqs,
             includeFaqSchema: true,
           })}
+          breadcrumbJsonLd={<BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />}
           visualAfterIntro={
             <ArticleVisualSlot
               path={page.path}

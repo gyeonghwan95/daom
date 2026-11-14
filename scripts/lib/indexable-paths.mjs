@@ -40,10 +40,26 @@ function nonIndexableCaseRegionSlugs() {
 
 const NON_INDEXABLE_CASE_REGIONS = nonIndexableCaseRegionSlugs();
 
+/**
+ * 빌드된 HTML에서 noindex이거나 canonical이 자기 자신이 아닌 경로(scripts/sync-sitemap-with-rendered.mjs가 만든다).
+ * TS 설정 추정으로는 잡히지 않는 실행 중 규칙(동 대표 페이지로 canonical 등)을 사이트맵에서 빼기 위해 쓴다.
+ */
+function renderedExclusions() {
+  const file = path.join(ROOT, "scripts/lib/sitemap/rendered-exclusions.json");
+  if (!fs.existsSync(file)) return new Set();
+  try {
+    return new Set(JSON.parse(fs.readFileSync(file, "utf8")).map((p) => String(p).normalize("NFC")));
+  } catch {
+    return new Set();
+  }
+}
+const RENDERED_EXCLUSIONS = renderedExclusions();
+
 /** 색인 대상 path (레거시 /cases/*, /press, 네이버 블로그 미러, 내부검색 제외) */
 export function getIndexablePaths() {
   return getAllPublishedPaths().filter((routePath) => {
     if (NOINDEX_EXACT.has(routePath)) return false;
+    if (RENDERED_EXCLUSIONS.has(routePath.normalize("NFC"))) return false;
     if (routePath === "/search") return false;
     if (routePath === "/cases" || routePath.startsWith("/cases/")) return false;
     if (routePath === "/press" || routePath.startsWith("/press/")) return false;

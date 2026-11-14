@@ -47,6 +47,22 @@ const STATUS_LABEL: Record<NrEvidenceStatus, string> = {
  * 본문(main > breadcrumb > article > H1 → 첫 답변)을 DOM 앞에 두고, 좌측 상담 패널은 grid 배치로만 보인다.
  * 본문 안 상담 CTA는 끝에 한 번만 둔다.
  */
+/** 본문 섹션에 이미 나온 링크 주소(사례 카드 중복 제거용). 블록 모양과 상관없이 href 문자열을 모은다. */
+function collectSectionHrefs(sections: unknown): string[] {
+  const out: string[] = [];
+  const walk = (v: unknown) => {
+    if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === "object") {
+      for (const [k, x] of Object.entries(v)) {
+        if (k === "href" && typeof x === "string") out.push(x);
+        else walk(x);
+      }
+    }
+  };
+  walk(sections);
+  return out;
+}
+
 export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetViewProps) {
   const { spec, owner } = target;
   const { phone, kakao } = getContactInfo();
@@ -147,7 +163,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         <PageTextCardFigure path={page.path} />
         <PageGallery path={page.path} />
 
-        <CoreLandingEvidence path={page.path} />
+        <CoreLandingEvidence path={page.path} excludeHrefs={collectSectionHrefs(spec.sections)} />
 
         <ContentSection id="faq" title="자주 묻는 질문">
           <FAQAccordion items={[...spec.faqs]} />

@@ -1,6 +1,7 @@
 import { defaultContact, getNaverBlogUrl } from "@/lib/contact";
 import { getNaverPlaceUrl } from "@/lib/office-location";
 import { siteConfig } from "@/lib/site";
+import { withAssetVersion } from "@/lib/seo/asset-version";
 
 /** JSON-LD sameAs, AI·검색엔진 신뢰 신호 */
 export function getSocialProfileUrls(): string[] {
@@ -39,5 +40,6 @@ export function getAbsoluteAssetUrl(path: string): string {
       return encodeURIComponent(raw.normalize("NFC"));
     })
     .join("/");
-  return encoded ? `${siteConfig.url}/${encoded}` : siteConfig.url;
+  // 이미지는 내용 해시를 붙여, 같은 이름에 덮어쓴 새 이미지를 검색엔진이 다시 받게 한다(asset-version.ts)
+  return encoded ? withAssetVersion(`${siteConfig.url}/${encoded}`, siteConfig.url) : siteConfig.url;
 }

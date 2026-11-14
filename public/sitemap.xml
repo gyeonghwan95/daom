@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%8C%80%EC%8A%B5%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%97%AC%EC%84%B1%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -157,23 +157,26 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/contact</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/contact/inquiry</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/location</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/office</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/reviews</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services</loc>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/corporate-registration</loc>
@@ -234,7 +237,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/faq</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/glossary</loc>
@@ -728,6 +731,10 @@
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
+    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/busanjin-salary-rehabilitation-case</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/centum-ownership-transfer-case</loc>
     <lastmod>2026-10-11</lastmod>
   </url>
@@ -745,15 +752,27 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/jaesong-inheritance-renunciation-consultation</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/namgu-lease-registration-order-case</loc>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/suyeong-company-establishment-case</loc>
     <lastmod>2026-10-11</lastmod>
   </url>
   <url>
+    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/suyeong-mortgage-cancellation-case</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/yeonje-director-change-case</loc>
     <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/yeonje-family-inheritance-renunciation-case</loc>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/services/company-establishment</loc>
@@ -1176,7 +1195,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B2%BD%EB%A7%A4%EB%82%99%EC%B0%B0%EB%93%B1%EA%B8%B0</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B3%B5%EB%8F%99%EB%8C%80%ED%91%9C%EB%B3%80%EA%B2%BD%EB%93%B1%EA%B8%B0</loc>
@@ -1988,7 +2007,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%9C%EB%A9%B4%EC%97%AD%EB%B2%95%EC%9D%B8%EB%93%B1%EA%B8%B0</loc>
@@ -2092,12 +2111,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B0%95%EC%84%9C%ED%95%B4%EC%84%B1%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B0%9C%EA%B8%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B1%B0%EC%A0%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B2%BD%EC%84%B1%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2107,16 +2120,7 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B4%91%EB%B3%B5%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B4%91%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B4%91%EC%95%88%EB%A6%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B4%98%EB%B2%95%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B4%B4%EC%A0%95%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%90%EB%8C%80%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2125,13 +2129,7 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%AC%EB%9E%91%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%AC%EC%84%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%AC%ED%8F%89%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%AC%ED%8F%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B5%AC%ED%8F%AC%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2170,9 +2168,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B8%B0%EC%9E%A5%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EA%B8%B0%EC%9E%A5%EC%9D%8D%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%82%99%EB%AF%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2180,12 +2175,6 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%82%A8%EC%82%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%82%A8%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%82%A8%ED%8F%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%82%A8%ED%95%AD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2212,9 +2201,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%88%8C%EC%B0%A8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8B%A4%EB%8C%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8B%A4%EB%8C%80%ED%8F%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2231,9 +2217,6 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8C%80%EC%97%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8C%80%EC%97%B0%ED%98%81%EC%8B%A0%EC%A7%80%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2257,9 +2240,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8C%80%ED%95%AD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8D%95%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8D%95%EC%B2%9C%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2278,16 +2258,10 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EB%9E%98%EC%8B%9C%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EB%9E%98%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EB%A7%A4%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EB%B6%80%EC%A7%80%EC%9B%90%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EC%82%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%8F%99%EC%82%BC%ED%98%81%EC%8B%A0%EC%A7%80%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2314,28 +2288,16 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%A7%9D%EB%AF%B8%EB%8B%A8%EA%B8%B8%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%A7%9D%EB%AF%B8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EB%8F%99%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EB%A1%80%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EB%A5%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EC%84%9C%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EC%9E%A5%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EC%A7%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%85%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AA%A8%EB%9D%BC%EB%8F%84%EC%8B%9C%EC%B2%A8%EB%8B%A8%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2350,9 +2312,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AC%B8%ED%98%84%EA%B8%88%EC%9C%B5%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AC%B8%ED%98%84%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AF%B8%EB%82%A8%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2362,28 +2321,16 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AF%B8%EC%9D%8C%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%AF%BC%EB%9D%BD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B0%98%EB%A3%A1%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B0%98%EC%86%A1%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B0%98%EC%97%AC%EB%86%8D%EC%82%B0%EB%AC%BC%EC%8B%9C%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B0%98%EC%97%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%94%EB%B0%A9%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%94%EC%96%B4%EC%82%AC%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%94%EC%9D%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B2%94%EC%A0%84%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2407,9 +2354,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EA%B2%BD%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EA%B3%A1%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EB%AF%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2417,9 +2361,6 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EC%9A%A9%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EC%A0%84%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EB%B6%80%EC%A0%84%EC%8B%9C%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2437,13 +2378,7 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%82%AC%EC%83%81%EA%B3%B5%EC%97%85%EC%A7%80%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%82%AC%EC%83%81%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%82%AC%EC%83%81%EC%9E%AC%EC%83%9D%EC%82%AC%EC%97%85%EC%A7%80%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%82%AC%EC%A7%81%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%82%B0%EC%96%91%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2462,9 +2397,6 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%84%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%84%9C%EB%A9%B4%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%84%9C%EB%B6%80%EC%82%B0%EA%B6%8C%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2492,13 +2424,7 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%84%BC%ED%85%802%EC%A7%80%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%84%BC%ED%85%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%86%A1%EB%8F%84%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%86%A1%EC%A0%95%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%88%98%EC%95%88%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2543,19 +2469,10 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%95%84%EB%AF%B8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%95%88%EB%9D%BD%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%95%94%EB%82%A8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%96%91%EC%A0%95%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%84%EA%B6%81%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%90%EC%BD%94%EB%8D%B8%ED%83%80%EC%8B%9C%ED%8B%B0%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%90%EC%BD%94%EC%9E%A5%EC%95%88%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2564,19 +2481,7 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%98%EC%8B%9C%ED%8B%B0%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C%ED%8A%B9%EA%B5%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%B0%EC%82%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%B0%EC%82%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%97%B0%EC%A7%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%98%81%EC%84%A0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2588,37 +2493,19 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%98%A4%EB%A5%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%98%A4%EC%8B%9C%EB%A6%AC%EC%95%84%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%98%A8%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%98%A8%EC%B2%9C%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9A%A9%EB%8B%B9%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9A%A9%ED%98%B8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9A%A9%ED%98%B8%EB%A7%8C%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9A%B0%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9A%B0%EC%95%94%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9C%A8%EB%A6%AC%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9D%BC%EA%B4%91%EC%8B%A0%EB%8F%84%EC%8B%9C%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9D%BC%EA%B4%91%EC%9D%8D%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9D%BC%EA%B4%91%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2630,22 +2517,10 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%A5%EB%A6%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%A5%EC%82%B0%EC%97%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%A5%EC%95%88%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%A5%EC%95%88%EC%9D%8D%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%A5%EC%A0%84%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%9E%AC%EC%86%A1%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A0%84%ED%8F%AC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A0%95%EA%B4%80%EC%82%B0%EC%97%85%EB%8B%A8%EC%A7%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2656,26 +2531,13 @@
     <lastmod>2026-10-10</lastmod>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A0%95%EA%B4%80%EC%9D%8D%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-    <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A2%8C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A2%8C%EC%B2%9C%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A3%BC%EB%A1%80%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A3%BD%EB%8F%99%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A3%BD%EB%A6%BC%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A4%91%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%A4%91%EC%95%99%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -2722,9 +2584,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%B2%AD%ED%95%99%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%B4%88%EB%9F%89%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%EC%B4%88%EC%9D%8D%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2743,12 +2602,6 @@
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%86%A0%EC%84%B1%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%95%98%EB%8B%A8%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%95%98%EB%8B%A8%EC%98%A4%EA%B1%B0%EB%A6%AC%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%95%99%EC%9E%A5%EA%B3%B5%EB%8B%A8%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
@@ -2756,12 +2609,6 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%95%AD%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
-  </url>
-  <url>
-    <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%99%94%EB%AA%85%EB%8F%99%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EC%97%85%EB%AC%B4%EC%82%AC%EB%A1%80/%EB%B6%80%EC%82%B0%ED%99%94%EB%AA%85%EC%8B%A0%EB%8F%84%EC%8B%9C%EB%B2%95%EB%AC%B4%EC%82%AC</loc>
@@ -3857,6 +3704,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B3%B5%ED%83%81%EA%B8%88%EC%B6%9C%EA%B8%89%ED%9A%8C%EC%88%98</loc>
@@ -5634,7 +5482,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/media</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/partners</loc>
@@ -5745,7 +5593,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/delaying-inheritance-registration-risks</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/director-change-registration-deadline-guide</loc>
@@ -5765,7 +5613,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/how-to-check-deceased-parent-debt</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/inheritance-division-agreement-cautions</loc>
@@ -5777,11 +5625,11 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/inheritance-registration-priority-after-parent-death</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/inheritance-renunciation-vs-qualified-acceptance</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/jeonse-deposit-return-certified-mail</loc>
@@ -5853,7 +5701,7 @@
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/three-months-after-death-inheritance</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://xn--2j1br1na42lvxja38mk8r.kr/blog/when-jeonse-right-registration-needed</loc>

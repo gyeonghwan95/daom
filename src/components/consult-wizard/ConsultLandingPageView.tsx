@@ -2,7 +2,6 @@
 
 import type { ReactNode } from "react";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
-import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import {
@@ -27,6 +26,8 @@ type ConsultLandingPageViewProps = {
   /** 서버에서 만든 구조화데이터(FAQ 포함) */
   jsonLd: Parameters<typeof JsonLd>[0]["data"];
   /** 서버에서 고른 본문 사진(소개 뒤·진행 방식 앞) — 사진 배치표를 클라이언트 번들에 싣지 않는다 */
+  /** 서버에서 만든 경로 구조화데이터 — json-ld 빌더(서버 모듈)를 클라이언트 번들에 싣지 않는다 */
+  breadcrumbJsonLd?: ReactNode;
   visualAfterIntro?: ReactNode;
   visualBeforeProcedures?: ReactNode;
 };
@@ -35,6 +36,7 @@ export function ConsultLandingPageView({
   page,
   lead,
   jsonLd,
+  breadcrumbJsonLd,
   visualAfterIntro,
   visualBeforeProcedures,
 }: ConsultLandingPageViewProps) {
@@ -53,7 +55,7 @@ export function ConsultLandingPageView({
   return (
     <article className="content-stack consult-landing">
       <Breadcrumb items={page.breadcrumbs} />
-      <BreadcrumbJsonLd items={page.breadcrumbs} currentPath={page.path} />
+      {breadcrumbJsonLd}
       {lead}
       <JsonLd data={jsonLd} />
 

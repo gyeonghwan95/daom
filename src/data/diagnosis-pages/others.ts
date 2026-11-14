@@ -10,6 +10,7 @@ import {
   standardFaqs,
   standardRelatedLinks,
 } from "../diagnosis-helpers";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 function simplifiedDiagnosis(
   id: string,
@@ -39,7 +40,7 @@ function simplifiedDiagnosis(
     questions,
     outcomes: createStandardOutcomes(
       service,
-      serviceSlug ? `/services/${serviceSlug}` : "/contact",
+      serviceSlug ? serviceLinkPath(serviceSlug) : "/contact",
       ["신분증·인감", "사건 관련 핵심 서류"],
     ),
     requiredDocuments: ["신분증·인감증명서", "사건 관련 계약서·등기부", "기타 상담 시 요청 서류"],

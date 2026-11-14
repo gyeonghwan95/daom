@@ -12,6 +12,7 @@ import { buildSeoLandingContent } from "./content";
 import { applyServiceIntentFixes } from "./service-intent-fixes";
 import type { SeoLandingSpec } from "./types";
 import { buildRegionJurisdictionSection } from "./region-jurisdiction";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 function metaTitleForSeoLanding(
   spec: SeoLandingSpec,
@@ -114,7 +115,7 @@ function relatedLinksFor(spec: SeoLandingSpec): PageRelatedLink[] {
   const siteSlug = resolveServiceSiteSlug(spec.serviceId ?? "");
   if (siteSlug) {
     links.push({
-      href: `/services/${siteSlug}`,
+      href: serviceLinkPath(siteSlug),
       label: `${spec.serviceName ?? "업무"} 상세`,
     });
   }

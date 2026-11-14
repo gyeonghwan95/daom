@@ -12,7 +12,10 @@ import {
 
 const MAX_CASES = 3;
 
-function pickCases(group: NonNullable<ReturnType<typeof getCoreLandingGroup>>): CaseRecord[] {
+function pickCases(
+  group: NonNullable<ReturnType<typeof getCoreLandingGroup>>,
+  exclude: ReadonlySet<string>,
+): CaseRecord[] {
   const order = GROUP_CASE_CATEGORIES[group];
   const all = getAllCaseRecords();
   const rank = (c: CaseRecord) => {
@@ -20,7 +23,7 @@ function pickCases(group: NonNullable<ReturnType<typeof getCoreLandingGroup>>): 
     return i === -1 ? Number.POSITIVE_INFINITY : i;
   };
   return all
-    .filter((c) => Number.isFinite(rank(c)))
+    .filter((c) => Number.isFinite(rank(c)) && !exclude.has(c.href))
     .sort((a, b) => rank(a) - rank(b) || b.date.localeCompare(a.date))
     .slice(0, MAX_CASES);
 }
@@ -29,10 +32,17 @@ function pickCases(group: NonNullable<ReturnType<typeof getCoreLandingGroup>>): 
  * 핵심 랜딩에 더하는 「비슷한 상황의 상담 사례」.
  * 부산 사무소 사례만 쓰므로 다른 지역 사례가 섞이지 않는다. 사례는 개인정보를 뺀 참고용이고, 결과를 약속하지 않는다.
  */
-export function CoreLandingCases({ path }: { path: string }) {
+export function CoreLandingCases({
+  path,
+  excludeHrefs = [],
+}: {
+  path: string;
+  /** 본문에서 이미 소개한 사례 주소 — 같은 사례 카드가 한 페이지에 두 번 나오지 않게 뺀다 */
+  excludeHrefs?: readonly string[];
+}) {
   const group = getCoreLandingGroup(path);
   if (!group) return null;
-  const cases = pickCases(group);
+  const cases = pickCases(group, new Set(excludeHrefs));
   if (cases.length === 0) return null;
 
   return (
@@ -137,11 +147,17 @@ export function CoreLandingProcess({ path }: { path: string }) {
  * PC(lg 이상)에서는 사례와 진행 순서를 나란히 두어 한눈에 비교하게 하고, 모바일·태블릿은 위아래로 쌓는다.
  * 핵심 랜딩이 아닌 페이지에서는 아무것도 그리지 않는다.
  */
-export function CoreLandingEvidence({ path }: { path: string }) {
+export function CoreLandingEvidence({
+  path,
+  excludeHrefs,
+}: {
+  path: string;
+  excludeHrefs?: readonly string[];
+}) {
   if (!getCoreLandingGroup(path)) return null;
   return (
     <div className="grid gap-4 lg:grid-cols-2 lg:items-start" data-core-evidence="">
-      <CoreLandingCases path={path} />
+      <CoreLandingCases path={path} excludeHrefs={excludeHrefs} />
       <CoreLandingProcess path={path} />
     </div>
   );

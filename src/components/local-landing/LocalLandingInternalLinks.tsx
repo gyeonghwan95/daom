@@ -14,6 +14,7 @@ import {
 } from "@/lib/seo/internal-links";
 import { getContentCarouselForUrls } from "@/lib/seo/page-visuals";
 import type { LocalLandingPageType } from "@/types/local-landing";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 const SERVICE_CAROUSEL_HEADING: Record<string, string> = {
   "inheritance-registration": "이어서 확인할 상속 절차",
@@ -168,7 +169,7 @@ export function LocalLandingInternalLinks({
         </Link>
         와{" "}
         <Link
-          href={`/services/${serviceSlug}`}
+          href={serviceLinkPath(serviceSlug)}
           className="font-medium text-navy-light transition-colors duration-200 hover:text-navy hover:underline"
         >
           {serviceLabels[serviceSlug] ?? serviceSlug} 업무 상세

@@ -1,5 +1,6 @@
 import type { ServiceFaq } from "@/types/service";
 import type { SearchIntentContent, SearchIntentSeed } from "./types";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 const OFFICE =
   "다옴법무사사무소(해운대·센텀)는 부산 전역 의뢰인의 등기·상속·법인·개인회생 상담을 진행합니다.";
@@ -253,7 +254,7 @@ function relatedFor(seed: SearchIntentSeed): Pick<
 
   const relatedServiceLinks = [
     {
-      href: `/services/${seed.serviceSlug}`,
+      href: serviceLinkPath(seed.serviceSlug),
       label: "관련 업무 안내",
     },
     ...(seed.diagnosisHref

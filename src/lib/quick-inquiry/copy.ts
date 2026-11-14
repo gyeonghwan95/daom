@@ -13,7 +13,7 @@ export const quickInquiryCopy = {
   submitting: "보내는 중…",
   successTitle: "남겨 주셨습니다",
   success:
-    "지금 남기신 내용이면 충분합니다. 평일 2시간 내, 야간·주말은 다음 영업일 오전에 제가 연락드립니다.",
+    "지금 남기신 내용이면 충분합니다. 평일 2시간 내, 야간·주말은 다음 영업일 오전 10시 전에 제가 연락드립니다.",
   successPhoneHint:
     "급하시면 전화로 문의해 주세요. 상황을 확인한 뒤 예상 비용 범위를 안내해 드립니다.",
   close: "닫기",
@@ -23,6 +23,6 @@ export const quickInquiryCopy = {
   mobileHint: "메모와 연락처만 남겨주세요",
   inlineTitle: "메모만 남겨도 상담 연결됩니다",
   inlineDescription:
-    "이름 없이 상황과 연락처만 남겨 주세요. 평일 2시간 내, 야간·주말은 다음 영업일 오전에 제가 연락드립니다.",
+    "이름 없이 상황과 연락처만 남겨 주세요. 평일 2시간 내, 야간·주말은 다음 영업일 오전 10시 전에 제가 연락드립니다.",
   inlineButton: "간편 문의 남기기",
 } as const;

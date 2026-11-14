@@ -2,6 +2,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
 import type { RelatedCardItem } from "@/lib/seo/page-visuals";
 import { getCanonicalUrl, getAbsoluteImageUrl } from "@/lib/seo/metadata";
+import { toSquareCarouselImage } from "@/lib/seo/carousel-square";
 
 type SeoCarouselJsonLdProps = {
   items: Array<SeoCarouselItem | RelatedCardItem>;
@@ -27,7 +28,8 @@ export function SeoCarouselJsonLd({ items, pagePath, name }: SeoCarouselJsonLdPr
         ...(name ? { name } : {}),
         itemListElement: items.map((item, index) => {
           const related = item as RelatedCardItem;
-          const imageSrc = related.representativeImage ?? item.image;
+          // 네이버 캐러셀 칸은 정사각형 — 4:3 대표 이미지는 글자가 잘리지 않게 정사각형 사본을 쓴다
+          const imageSrc = toSquareCarouselImage(related.representativeImage ?? item.image);
           return {
             "@type": "ListItem",
             position: index + 1,

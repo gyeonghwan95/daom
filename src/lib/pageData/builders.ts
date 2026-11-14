@@ -35,6 +35,7 @@ import { buildMetaDescription, buildMetaTitle } from "./seo";
 import { createPageData } from "./template-helpers";
 import type { PageCategory, PageData, PageSection } from "./types";
 import { formatPlaceList } from "@/lib/local-landing/region-label";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 export function mapLandingPageTypeToCategory(
   pageType: LocalLandingPageType,
@@ -968,7 +969,7 @@ export function buildPageDataFromBlogMeta(meta: ContentMeta): PageData {
     consultationPoints: meta.tags.slice(0, 5),
     internalLinks: [
       ...(meta.relatedServices ?? []).map((slug) => ({
-        href: `/services/${slug}`,
+        href: serviceLinkPath(slug),
         label: getServiceLabel(slug),
       })),
       { href: "/blog", label: "블로그 안내" },
@@ -1015,7 +1016,7 @@ export function buildPageDataFromCaseMeta(meta: ContentMeta): PageData {
     },
     internalLinks: [
       ...(meta.relatedServices ?? []).map((slug) => ({
-        href: `/services/${slug}`,
+        href: serviceLinkPath(slug),
         label: getServiceLabel(slug),
       })),
       { href: "/업무사례", label: "업무 사례" },
@@ -1060,7 +1061,7 @@ export function buildPageDataFromFaqMeta(meta: ContentMeta): PageData {
       : [{ question: meta.title, answer: meta.description }],
     internalLinks: [
       ...(meta.relatedServices ?? []).map((slug) => ({
-        href: `/services/${slug}`,
+        href: serviceLinkPath(slug),
         label: getServiceLabel(slug),
       })),
       { href: "/faq", label: "FAQ 목록" },

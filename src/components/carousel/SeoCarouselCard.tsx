@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { SeoCarouselItem } from "@/lib/seo/carousel-images";
+import { mergedServiceHref } from "@/lib/seo/service-path";
 
 type SeoCarouselCardProps = {
   item: SeoCarouselItem;
@@ -16,7 +17,7 @@ export function SeoCarouselCard({ item }: SeoCarouselCardProps) {
   return (
     <li className="w-[78%] min-w-[78%] snap-start sm:w-[42%] sm:min-w-[42%] lg:w-[28%] lg:min-w-[28%] xl:w-[23%] xl:min-w-[23%]">
       <Link
-        href={item.href}
+        href={mergedServiceHref(item.href)}
         className="group block h-full overflow-hidden rounded-[14px] border border-[var(--border,#e5e0d8)] bg-white shadow-[0_1px_2px_rgba(21,42,69,0.04)] transition-[transform,box-shadow] duration-200 hover:shadow-[0_6px_18px_rgba(21,42,69,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--navy,#1e3a5f)] motion-safe:hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:scale-100"
       >
         <div className="relative aspect-square w-full overflow-hidden bg-[#f0ebe3]">

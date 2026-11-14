@@ -36,6 +36,7 @@ import {
   getRegistryOfficeForRegionKey,
 } from "@/lib/geo/busan-registry";
 import { formatPlaceList, withRegionLabel } from "../region-label";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 /** 관할 안내에서 법인 본점(상업등기) 문장 대신 상속등기 관할을 쓰는 상속 안내 페이지(같은 builder의 /부산법무사비용 등은 그대로) */
 const INHERITANCE_GUIDE_SLUGS = new Set(["상속등기비용", "상속등기필요서류", "상속등기기간"]);
@@ -700,7 +701,7 @@ function buildCourtRegistryPage(config: LocalLandingConfig): LocalLandingPage | 
         ? [{ href: "/부산등기법무사", label: "부산 등기 상담" }]
         : []),
       ...inst.relatedServiceSlugs.map((slug) => ({
-        href: `/services/${slug}`,
+        href: serviceLinkPath(slug),
         label: serviceLabels[slug] ?? slug,
       })),
     ],
@@ -790,7 +791,7 @@ function buildBusinessZonePage(config: LocalLandingConfig): LocalLandingPage | n
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(zone.serviceSlug),
     relatedServiceLinks: zone.relatedServiceSlugs.map((slug) => ({
-      href: `/services/${slug}`,
+      href: serviceLinkPath(slug),
       label: serviceLabels[slug] ?? slug,
     })),
     relatedRegionLinks: (config.linkedNeighborhoodSlugs ?? []).map((slug) => ({
@@ -894,7 +895,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
     ctaDescription: consultationCopy.default,
     relatedBlogHrefs: getRelatedBlogPosts(topic.serviceSlug),
     relatedServiceLinks: topic.relatedServiceSlugs.map((slug) => ({
-      href: `/services/${slug}`,
+      href: serviceLinkPath(slug),
       label: serviceLabels[slug] ?? slug,
     })),
     relatedRegionLinks: [],

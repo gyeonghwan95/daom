@@ -6,7 +6,6 @@ import { InquiryFormLoader } from "@/components/conversion/InquiryFormLoader";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { staticPageSeo } from "@/lib/seo/page-seo";
-import { INQUIRY_RELAXED_NOTE } from "@/lib/service-conversion/copy";
 
 export const metadata: Metadata = createPageMetadata(
   staticPageSeo.contactInquiry,
@@ -24,7 +23,7 @@ export default function ContactInquiryPage() {
           { label: "상담 신청" },
         ]}
         currentPath="/contact/inquiry"
-        intro={`상황만 간단히 남기셔도 상담 신청이 완료됩니다. 이름·연락처·상담 분야·현재 상황을 남겨 주시면 사무소 이메일로 전달됩니다. ${INQUIRY_RELAXED_NOTE}`}
+        intro="연락처와 상황 한두 줄만 남기시면 상담 신청이 완료됩니다. 안윤정 법무사가 직접 읽고, 평일 2시간 안에 연락드립니다."
         relatedLinks={[
           { href: "/contact", label: "상담 안내" },
           { href: "/location", label: "오시는 길" },

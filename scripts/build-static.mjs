@@ -135,6 +135,8 @@ try {
 
   // next/image 커스텀 로더가 가리키는 폭별 WebP 파생본 (public/_img/)
   execSync("node scripts/optimize-images.mjs", { stdio: "inherit", cwd: ROOT });
+  // 변형(OG 포함)을 만든 뒤 이미지 내용 해시 목록을 다시 만든다 — 검색엔진용 이미지 주소의 ?v= 값
+  execSync("node scripts/generate-asset-versions.mjs", { stdio: "inherit", cwd: ROOT });
 
   const nextDir = path.join(ROOT, ".next");
   if (fs.existsSync(nextDir)) {
@@ -207,6 +209,12 @@ try {
 
   // Footer-before-Main 정적 HTML 보정 (page 트리 Footer와 이중 안전망)
   execSync("node scripts/fix-html-dom-order.mjs", {
+    stdio: "inherit",
+    cwd: ROOT,
+  });
+
+  // 빌드된 HTML의 robots·canonical 기준으로 사이트맵에서 noindex·비자기 canonical 페이지를 뺀다
+  execSync("node scripts/sync-sitemap-with-rendered.mjs", {
     stdio: "inherit",
     cwd: ROOT,
   });

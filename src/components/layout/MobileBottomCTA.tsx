@@ -172,7 +172,7 @@ function MobileChannelButton({
 export function MobileBottomCTA() {
   const pathname = usePathname() ?? "/";
   const b2b = isB2BPath(pathname);
-  const { isOpen, isResolved } = useConsultationAvailability();
+  const { isOpen, isResolved, nextReplyAt } = useConsultationAvailability();
   const empathy = getConsultEmpathy(pathname);
   const { status, launch } = useConsultChatLaunch();
   const channels = getMobileBottomChannels().filter((c) => {
@@ -189,7 +189,7 @@ export function MobileBottomCTA() {
     return true;
   });
   const paste = consultPasteText(empathy);
-  const sla = consultSlaLine(isOpen, isResolved);
+  const sla = consultSlaLine(isOpen, isResolved, nextReplyAt);
   const chatBtn = (channel: ConsultationChannel) => (
     <div key={channel.id} className="mobile-bottom-cta__cell">
       <MobileChannelButton

@@ -27,6 +27,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemoteBanner";
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import type { PageData } from "@/lib/pageData/types";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 type CaseDetailViewProps = {
   page: PageData;
@@ -39,7 +40,7 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
   const { sections } = record;
 
   const serviceLinks = record.relatedServices.map((slug) => ({
-    href: `/services/${slug}`,
+    href: serviceLinkPath(slug),
     label: getServiceLabel(slug),
   }));
 

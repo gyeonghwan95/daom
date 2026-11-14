@@ -5,6 +5,7 @@ import { getTopicHubSlugForService } from "@/lib/topic-hubs/service-hub-map";
 import type { LocalLandingPageType } from "@/types/local-landing";
 import type { RelatedLink } from "@/types/content";
 import type { PageCategory, PageRelatedLink } from "./types";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 const INHERITANCE_SERVICES = [
   "inheritance-registration",
@@ -109,7 +110,7 @@ function serviceDetailLinks(serviceSlug: string, excludePath?: string): PageRela
   return getClusterServiceSlugs(serviceSlug)
     .filter((slug) => slug !== serviceSlug)
     .map((slug) => ({
-      href: `/services/${slug}`,
+      href: serviceLinkPath(slug),
       label: serviceLabels[slug] ?? slug,
     }))
     .filter((link) => link.href !== excludePath);
@@ -304,7 +305,7 @@ export function getThematicInternalLinks(
       );
       if (serviceSlug) {
         links.push({
-          href: `/services/${hub.primaryServiceSlug}`,
+          href: serviceLinkPath(hub.primaryServiceSlug),
           label: `${serviceLabels[hub.primaryServiceSlug] ?? hub.primaryServiceSlug} 업무`,
         });
       }
@@ -320,7 +321,7 @@ export function getThematicInternalLinks(
     if (hub) links.push(hub);
 
     links.push({
-      href: `/services/${serviceSlug}`,
+      href: serviceLinkPath(serviceSlug),
       label: `${serviceLabels[serviceSlug] ?? serviceSlug} 업무 상세`,
     });
 

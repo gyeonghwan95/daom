@@ -1,5 +1,6 @@
 import type { Diagnosis } from "@/data/diagnosis";
 import type { PageRelatedLink } from "@/lib/pageData/types";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 type DiagnosisResultLinkPack = {
   service?: PageRelatedLink;
@@ -125,7 +126,7 @@ function fallbackFromServiceSlug(diagnosis: Diagnosis): DiagnosisResultLinkPack 
   }
   return {
     service: {
-      href: `/services/${diagnosis.serviceSlug}`,
+      href: serviceLinkPath(diagnosis.serviceSlug),
       label: `${diagnosis.serviceName} 업무 안내`,
     },
   };

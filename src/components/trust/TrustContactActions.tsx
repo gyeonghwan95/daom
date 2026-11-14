@@ -5,7 +5,7 @@ import { trackCtaEvent } from "@/lib/admin-ops/track-client";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
 import { useConsultChatLaunch } from "@/hooks/useConsultChatLaunch";
 import { getContactInfo } from "@/lib/contact";
-import { consultationReplySla } from "@/lib/consultation-copy";
+import { consultationNightLine, consultationReplySla } from "@/lib/consultation-copy";
 import { getConsultEmpathy } from "@/lib/consultation-empathy";
 import { isConsultationPhoneOffered } from "@/lib/consultation-availability";
 import { consultChatButtonLabel } from "@/lib/open-consult-chat";
@@ -20,7 +20,7 @@ type TrustContactActionsProps = {
 
 export function TrustContactActions({ phone, phoneHref, hours }: TrustContactActionsProps) {
   const pathname = usePathname() ?? "/";
-  const { isOpen, isResolved } = useConsultationAvailability();
+  const { isOpen, isResolved, nextReplyAt } = useConsultationAvailability();
   const phoneVisible = Boolean(phone) && isConsultationPhoneOffered(isResolved, isOpen);
   const { kakao } = getContactInfo();
   const { status, launch } = useConsultChatLaunch();
@@ -31,7 +31,7 @@ export function TrustContactActions({ phone, phoneHref, hours }: TrustContactAct
     <div className="@container relative overflow-hidden rounded-2xl bg-navy p-5 text-white max-lg:hidden @md:p-6">
       <p className="relative text-sm font-medium text-white/80">
         {night
-          ? consultationReplySla.night
+          ? consultationNightLine(nextReplyAt)
           : `제가 직접 확인합니다. ${consultationReplySla.line}`}
       </p>
       {phoneVisible ? (

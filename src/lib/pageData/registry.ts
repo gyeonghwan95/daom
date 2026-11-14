@@ -7,6 +7,7 @@
  * 전체 path 목록: `npm run validate:page-data` 또는
  * `scripts/output/page-manifest.json` (prebuild 시 생성)
  */
+import { LEGACY_CASE_SLUGS } from "@/lib/cases/legacy-slugs";
 import { allDiagnosisPages } from "@/data/diagnosis-registry";
 import { getContentMeta, getContentSlugs } from "@/lib/content/loader";
 import { buildPageDataFromDiagnosis } from "@/lib/diagnosis/builder";
@@ -183,7 +184,7 @@ function buildAllPageData(): PageData[] {
 
   pages.push(...buildAllLectureHistoryPageData());
 
-  for (const slug of getContentSlugs("cases")) {
+  for (const slug of getContentSlugs("cases").filter((s) => LEGACY_CASE_SLUGS.has(s))) {
     pages.push(
       buildLegacyRedirectPageData(
         slug,

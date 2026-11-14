@@ -39,7 +39,7 @@ export const consultWizardCopy = {
   close: "닫기",
   successTitle: "남겨 주셨습니다.",
   successBody:
-    "지금 남기신 내용이면 충분합니다. 평일 2시간 내, 야간·주말은 다음 영업일 오전에 제가 연락드립니다.",
+    "지금 남기신 내용이면 충분합니다. 평일 2시간 내, 야간·주말은 다음 영업일 오전 10시 전에 제가 연락드립니다.",
   reviewAgain: "상담 내용 다시 확인하기",
   callNow: "전화로 바로 문의하기",
   kakaoPhotoHint:

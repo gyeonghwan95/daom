@@ -5,6 +5,7 @@ import { getTopicHubConfig } from "@/lib/topic-hubs/config";
 import { getTopicHubSlugForService } from "@/lib/topic-hubs/service-hub-map";
 import type { LocalLandingPageType } from "@/types/local-landing";
 import type { RelatedLink } from "@/types/content";
+import { serviceLinkPath } from "@/lib/seo/service-path";
 
 function localLandingTitle(config: (typeof localLandingConfigs)[number]): string {
   switch (config.pageType) {
@@ -31,7 +32,7 @@ export const serviceHubLinks: RelatedLink[] = [
 
 export function getAllServiceLinks(): RelatedLink[] {
   return allServiceDetails.map((service) => ({
-    href: `/services/${service.slug}`,
+    href: serviceLinkPath(service.slug),
     label: service.title,
   }));
 }
@@ -41,7 +42,7 @@ export function getServiceCrossLinks(excludeSlug: string): RelatedLink[] {
   return allServiceDetails
     .filter((service) => service.slug !== excludeSlug)
     .map((service) => ({
-      href: `/services/${service.slug}`,
+      href: serviceLinkPath(service.slug),
       label: service.title,
     }));
 }

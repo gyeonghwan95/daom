@@ -1,4 +1,5 @@
 import {
+  consultationNightLine,
   consultationReassurance,
   consultationReplySla,
 } from "@/lib/consultation-copy";
@@ -199,7 +200,7 @@ export function getConsultEmpathy(pathname: string): ConsultEmpathy {
       example: "1인 주식회사를 만들려고 합니다. 자본금과 본점부터 확인하고 싶습니다.",
       primary: "inquiry",
       costLine:
-        "등록면허세와 법무사 보수를 나눠 안내합니다. 확정 금액은 정관·자본금 확인 후입니다.",
+        "상호·자본금·임원만 알려 주시면 평일 2시간 안에 등록면허세와 법무사 보수를 항목별 예상 금액으로 나눠 회신합니다. 확정 금액은 정관·자본금 확인 후입니다.",
     });
   }
 
@@ -210,7 +211,7 @@ export function getConsultEmpathy(pathname: string): ConsultEmpathy {
       example: "임원 변경 등기 기한이 있어 확인이 필요합니다.",
       primary: "inquiry",
       costLine:
-        "등록면허세·과태료 가능성과 법무사 보수를 나눠 안내합니다.",
+        "법인 등기부와 바뀌는 내용을 보내 주시면 평일 2시간 안에 등록면허세·과태료 가능성과 법무사 보수를 항목별 예상 금액으로 나눠 회신합니다.",
     });
   }
 
@@ -251,7 +252,7 @@ export function getConsultEmpathy(pathname: string): ConsultEmpathy {
       line: "대출을 갚으셨으면 상환 확인서만 알려 주세요. 말소 순서를 맞춰 드립니다.",
       example: "대출을 다 갚았습니다. 등기부 근저당 말소가 필요합니다.",
       costLine:
-        "말소 보수와 등록면허세를 나눠 안내합니다. 매매 잔금일과는 별개입니다.",
+        "등기부와 상환 확인서 사진을 보내 주시면 평일 2시간 안에 말소 보수와 등록면허세를 나눠 회신합니다. 매매 잔금일과는 별개입니다.",
     });
   }
 
@@ -261,7 +262,7 @@ export function getConsultEmpathy(pathname: string): ConsultEmpathy {
       line: "잔금일이나 계약서만 알려 주셔도 됩니다. 제가 필요한 순서부터 맞춰 드립니다.",
       example: "잔금이 다음 주입니다. 소유권이전등기가 궁금합니다.",
       costLine:
-        "법무사 보수와 취득세·등록면허세를 나눠 안내합니다. 확정 금액은 계약·가액 확인 후입니다.",
+        "계약서·등기부 사진을 보내 주시면 평일 2시간 안에 법무사 보수와 취득세·등록면허세를 항목별 예상 금액으로 나눠 회신합니다. 확정 금액은 계약·가액 확인 후입니다.",
     });
   }
 
@@ -277,7 +278,7 @@ export function consultPasteText(empathy: ConsultEmpathy): string {
   return empathy.example.trim() || consultKakaoGreeting;
 }
 
-export function consultSlaLine(isOpen: boolean, isResolved: boolean): string {
-  if (isResolved && !isOpen) return consultationReplySla.night;
+export function consultSlaLine(isOpen: boolean, isResolved: boolean, nextReplyAt?: string): string {
+  if (isResolved && !isOpen) return consultationNightLine(nextReplyAt);
   return consultationReplySla.weekday;
 }
