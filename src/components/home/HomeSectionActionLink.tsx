@@ -22,8 +22,8 @@ export function HomeSectionActionLink({
   }`;
 
   const buttonClassName = dark
-    ? "inline-flex min-h-10 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-white/10 px-4 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/15 active:scale-[0.99]"
-    : "btn-secondary min-h-10 shrink-0 px-4 text-sm";
+    ? "inline-flex min-h-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-white/10 px-4 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/15 active:scale-[0.99]"
+    : "btn-secondary min-h-11 shrink-0 px-4 text-sm";
 
   const className = variant === "button" ? buttonClassName : textClassName;
   const children = variant === "button" ? label : `${label} →`;

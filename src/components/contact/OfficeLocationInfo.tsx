@@ -132,12 +132,16 @@ export function OfficeLocationInfo({
                 운영시간
               </p>
               <dl className="mt-4 grid gap-4 sm:grid-cols-2">
-                <InfoItem label="평일" value={officeHours.weekday} />
+                {/* 제목이 이미 "평일"이라 값에서는 뺀다 — "평일 / 평일 09:00–18:00" 중복 방지 */}
+                <InfoItem label="평일" value={officeHours.weekday.replace(/^평일\s*/, "")} />
                 <InfoItem label="휴무일" value={officeHours.closed} />
               </dl>
-              <p className="mt-4 rounded-lg bg-beige/60 px-3 py-2.5 text-sm leading-relaxed text-navy/70">
-                {officeHours.note}
-              </p>
+              {/* 위 노란 방문 안내와 같은 내용이라 배너가 있을 때는 생략 */}
+              {showVisitNotice ? null : (
+                <p className="mt-4 rounded-lg bg-beige/60 px-3 py-2.5 text-sm leading-relaxed text-navy/70">
+                  {officeHours.note}
+                </p>
+              )}
               {!showQuickContact ? (
                 <div className="mt-4">
                   <NaverSmartPlaceCta

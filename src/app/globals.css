@@ -5115,6 +5115,11 @@ body.mobile-menu-open .mobile-bottom-cta {
       grid-column: 1 / -1;
     }
 
+    /* 주소 카드가 한 줄을 차지한 뒤 남은 카드가 홀수면 마지막 카드가 혼자 반 칸만 쓰고 옆이 비었다 — 한 줄 전체로 */
+    .home-place__fact:last-child:nth-child(even) {
+      grid-column: 1 / -1;
+    }
+
     .home-place__foot {
       flex-direction: row;
       flex-wrap: wrap;
@@ -5962,12 +5967,111 @@ body.mobile-menu-open .mobile-bottom-cta {
     @apply mt-3 max-w-2xl text-[1.015rem] leading-[1.7] md:text-base;
   }
 
+  /*
+   * 휴대폰: 세 버튼 줄 아래에 블로그 버튼. 640px 이상: 블로그 버튼도 자리가 되면 같은 줄 끝에 붙고,
+   * 모자라면 그 버튼만 다음 줄로 넘어간다(세 버튼 줄은 줄바꿈하지 않음).
+   */
   .readability-cta__actions {
-    @apply mt-auto flex flex-wrap gap-3 pt-5;
+    @apply mt-auto flex flex-col items-stretch gap-3 pt-5 sm:flex-row sm:flex-wrap sm:items-stretch;
   }
 
   .readability-cta__button {
     @apply w-full sm:w-auto;
+  }
+
+  /*
+   * 간편문의 · 네이버예약 · 안윤정 법무사는 누구일까? — 모든 페이지에서 한 줄(2026-11-15 요청).
+   * 페어 래퍼(.readability-cta__pair)는 display:contents로 풀어 세 버튼을 같은 flex 줄의 형제로 만든다.
+   * 줄바꿈 대신 버튼이 줄어들고, 칸이 좁으면(휴대폰·2단 그리드) 버튼 안의 글자만 낱말 단위로 두 줄이 된다.
+   */
+  .readability-cta__row {
+    @apply flex w-full flex-nowrap items-stretch gap-2 sm:w-auto sm:min-w-0 sm:max-w-full sm:flex-[0_1_auto] sm:gap-3;
+  }
+
+  .readability-cta__row > .readability-cta__pair,
+  .readability-cta__row > .readability-cta__pair > .inquiry-naver-pair__inquiry,
+  .readability-cta__row > .readability-cta__pair > .inquiry-naver-pair__naver {
+    display: contents;
+  }
+
+  /* 넓은 화면: 글자 폭만큼(예전 sm:w-auto와 같음), 칸이 모자라면 줄어든다 */
+  .readability-cta__row .readability-cta__button,
+  .readability-cta__row .inquiry-naver-pair__naver-btn {
+    flex: 0 1 auto;
+    width: auto !important;
+    min-width: 0 !important;
+    word-break: keep-all;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+
+  .readability-cta__row .inquiry-naver-pair__naver-btn > span {
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  /*
+   * 휴대폰: 네이버예약은 글자 한 줄 그대로 두고, 문의 버튼과 소개 버튼이 남는 폭을 나눠 그 안에서만 낱말 단위로 줄바꿈한다.
+   * 문의 버튼은 글자 폭만큼(짧은 '간편 문의'는 한 줄), 글자가 긴 '업무 가능 여부 확인하기'일 때만 줄어든다.
+   * (예전엔 '네이버예약'이 '네…'로 잘리고, 긴 문의 문구가 소개 버튼을 16px까지 밀어냈다)
+   */
+  @media (max-width: 639px) {
+    .readability-cta__row {
+      gap: 0.375rem;
+    }
+
+    .readability-cta__row .readability-cta__button,
+    .readability-cta__row .inquiry-naver-pair__naver-btn {
+      flex: 0 1 auto;
+      white-space: normal;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      font-size: 0.875rem;
+    }
+
+    .readability-cta__row .inquiry-naver-pair__naver-btn {
+      flex: 0 0 auto;
+      gap: 0.25rem !important;
+    }
+
+    .readability-cta__row .inquiry-naver-pair__naver-btn > svg {
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+
+    .readability-cta__row .inquiry-naver-pair__naver-btn > span {
+      overflow: visible;
+      text-overflow: clip;
+      white-space: nowrap;
+    }
+
+    /* 문의·소개 버튼은 글자 길이에 비례해 줄어든다. '간편 문의'가 '간편/문의'로 쪼개지지 않게 최소 폭을 둔다 */
+    .readability-cta__row .inquiry-naver-pair__inquiry > .readability-cta__button {
+      min-width: 4.5rem !important;
+    }
+
+    /* 버튼이 하나뿐인 패널(예: 업무별 문의 카드)은 예전처럼 휴대폰에서 칸을 꽉 채운다 */
+    .readability-cta__row:not(:has(.readability-cta__about, .inquiry-naver-pair__naver)) .readability-cta__button {
+      flex: 1 1 auto;
+    }
+
+    .readability-cta__row .readability-cta__about {
+      flex: 1 1 auto;
+      min-width: 5.25rem !important;
+      padding-left: 0.375rem !important;
+      padding-right: 0.375rem !important;
+    }
+  }
+
+  /*
+   * 400px 미만 폰: 네이버예약의 N 아이콘을 빼서(초록 버튼·문구로 충분히 구분됨) 소개 버튼에 폭을 넘긴다.
+   * 360px에서 '안윤정 / 법무사는 / 누구일까?' 세 줄 → 두 줄.
+   */
+  @media (max-width: 399px) {
+    .readability-cta__row .inquiry-naver-pair__naver-btn > svg {
+      display: none;
+    }
   }
 
   /* 상호작용 카드(선택·비교·이동) — 본문 설명용 아님 */
@@ -9173,6 +9277,38 @@ body.quick-inquiry-open {
 .home-hero__location {
   overflow-wrap: break-word;
   word-break: keep-all;
+}
+
+/*
+ * 글자 링크의 보이는 모습·배치는 그대로 두고 누를 수 있는 영역만 최소 44×44px로 넓힌다(2026-11-15 터치 영역 점검).
+ * ::after가 링크 가운데를 기준으로 위아래·좌우로 모자란 만큼만 늘어난다(이미 44px 이상이면 그대로).
+ * 줄 간격이 촘촘한 세로 목록에는 쓰지 않는다 — 옆 링크와 영역이 겹친다. 그런 곳은 min-h-11로 실제 높이를 늘린다.
+ */
+.tap-44 {
+  position: relative;
+}
+.tap-44::after {
+  content: "";
+  position: absolute;
+  top: min(0px, calc(50% - 1.375rem));
+  bottom: min(0px, calc(50% - 1.375rem));
+  left: min(0px, calc(50% - 1.375rem));
+  right: min(0px, calc(50% - 1.375rem));
+}
+
+/* 홈 첫 화면 신뢰 링크(18px)·빠른 이동(상속 25px 폭) */
+.home-hero__proof-link,
+.home-hero__quick-link {
+  position: relative;
+}
+.home-hero__proof-link::after,
+.home-hero__quick-link::after {
+  content: "";
+  position: absolute;
+  top: min(0px, calc(50% - 1.375rem));
+  bottom: min(0px, calc(50% - 1.375rem));
+  left: min(0px, calc(50% - 1.375rem));
+  right: min(0px, calc(50% - 1.375rem));
 }
 
 /* 홈 위치·연락 보조 링크 터치 높이 */

@@ -74,6 +74,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: "inheritance-renunciation",
     title: "상속포기",
+    cardDescription:
+      "상속을 포기하면 피상속인의 채무가 본인에게 넘어오지 않습니다. 관할 가정법원 신고서 작성과 제출을 대행합니다.",
     description:
       "상속포기 업무 범위 안내. 3개월 기한·후순위·가족관계는 부산 상속포기 안내에서, 법원 실비와 보수는 상속포기 법무사 비용 안내에서 이어집니다.",
     intro:

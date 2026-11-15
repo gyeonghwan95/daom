@@ -204,10 +204,11 @@ export function ResourceGuideView({ guide }: { guide: ResourceGuide }) {
         </Section>
 
         <Section id="sources" title="공식 근거">
-          <ul className="space-y-1.5 text-[0.95rem]">
+          {/* 링크 한 줄을 44px 높이로 — 예전엔 22px 줄이 6px 간격으로 붙어 있어 잘못 누르기 쉬웠다 */}
+          <ul className="text-[0.95rem]">
             {guide.sources.map((s) => (
               <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-navy underline underline-offset-2 hover:text-navy-light">
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center py-1 leading-snug text-navy underline underline-offset-2 hover:text-navy-light">
                   {s.label}
                 </a>
               </li>

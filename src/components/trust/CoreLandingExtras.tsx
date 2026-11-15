@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllCaseRecords } from "@/lib/cases";
 import type { CaseRecord } from "@/lib/cases/types";
 import { consultationReplySla } from "@/lib/consultation-copy";
+import { cardSummary } from "@/lib/text/card-summary";
 import {
   GROUP_CASE_CATEGORIES,
   GROUP_DELIVERABLE,
@@ -69,7 +70,7 @@ export function CoreLandingCases({
             >
               {item.title}
             </Link>
-            <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-navy/70">{item.description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-navy/70">{cardSummary(item.description, 80)}</p>
           </li>
         ))}
       </ul>

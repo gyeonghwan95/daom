@@ -19,10 +19,11 @@ export function HomeFaqTeaser() {
           <HomeSectionActionLink href="/faq" label="FAQ 전체 보기" />
         </div>
 
+        {/* 위아래 여백을 details가 아니라 summary에 둬서 질문 줄 전체(약 72px)가 눌리게 한다(예전엔 글자 32px만) */}
         <div className="mt-8 divide-y divide-beige-dark border-y border-beige-dark">
           {preview.map((faq) => (
-            <details key={faq.question} className="home-faq-teaser__item group py-5 md:py-6">
-              <summary className="cursor-pointer list-none font-semibold text-navy marker:content-none [&::-webkit-details-marker]:hidden">
+            <details key={faq.question} className="home-faq-teaser__item group">
+              <summary className="block cursor-pointer list-none py-5 font-semibold text-navy marker:content-none md:py-6 [&::-webkit-details-marker]:hidden">
                 <span className="flex items-start justify-between gap-3">
                   <span>{faq.question}</span>
                   <span
@@ -33,7 +34,7 @@ export function HomeFaqTeaser() {
                   </span>
                 </span>
               </summary>
-              <p className="mt-2 text-sm leading-relaxed text-navy/70 md:text-base">
+              <p className="-mt-3 pb-5 text-sm leading-relaxed text-navy/70 md:-mt-4 md:pb-6 md:text-base">
                 {faq.answer}
               </p>
             </details>

@@ -44,20 +44,22 @@ export function ReadabilityCTA({
   const primaryHref = href ?? inquiryHref;
   const isConsult =
     primaryHref.startsWith("/contact") || primaryHref.includes("inquiry");
-  const secondaryPairClass =
-    showAboutLawyer && showNaverBlogCta
-      ? "btn-secondary readability-cta__button !w-auto flex-1 basis-[min(100%,11rem)] gap-1.5 sm:flex-initial"
-      : "btn-secondary readability-cta__button gap-1.5";
 
   return (
     <aside className="readability-cta">
       <h2 className="readability-cta__title">{title}</h2>
       <p className="readability-cta__description">{description}</p>
-      <div className="readability-cta__actions flex-col items-stretch sm:items-start">
+      {/*
+        간편문의 · 네이버예약 · 안윤정 법무사는 누구일까? 를 한 줄에 둔다(모든 페이지 공통, 2026-11-15).
+        페어 래퍼는 CSS에서 display:contents라 세 버튼이 같은 줄의 형제가 된다. 블로그 버튼은 PC에서 자리가 되면 같은 줄 끝, 아니면 다음 줄.
+      */}
+      <div className="readability-cta__actions">
+        <div className="readability-cta__row">
         <InquiryNaverCtaPair
           placement="readability_cta"
           layout="row"
           size="md"
+          className="readability-cta__pair"
           showNaver={showNaverReservation && isConsult}
           inquiry={
             isConsult ? (
@@ -80,21 +82,18 @@ export function ReadabilityCTA({
             )
           }
         />
-        {showAboutLawyer || showNaverBlogCta ? (
-          <div className="flex w-full flex-wrap gap-3 sm:w-auto">
-            {showAboutLawyer ? (
-              <Link
-                href="/about"
-                className={secondaryPairClass}
-                data-cta="about-lawyer"
-              >
-                안윤정 법무사는 누구일까?
-              </Link>
-            ) : null}
-            {showNaverBlogCta ? (
-              <NaverBlogMorePostsButton className={secondaryPairClass} />
-            ) : null}
-          </div>
+        {showAboutLawyer ? (
+          <Link
+            href="/about"
+            className="btn-secondary readability-cta__button readability-cta__about gap-1.5"
+            data-cta="about-lawyer"
+          >
+            안윤정 법무사는 누구일까?
+          </Link>
+        ) : null}
+        </div>
+        {showNaverBlogCta ? (
+          <NaverBlogMorePostsButton className="btn-secondary readability-cta__button gap-1.5" />
         ) : null}
       </div>
     </aside>

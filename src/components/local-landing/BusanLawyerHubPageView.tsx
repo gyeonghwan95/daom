@@ -176,10 +176,10 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
         </div>
       </ContentSection>
 
-      <ContentSection id="lawyer-vs-attorney" title="법무사와 변호사는 다릅니다">
+      <ContentSection id="lawyer-vs-attorney" title="법무사와 변호사의 업무 범위">
         <ProseParagraphs
           paragraphs={[
-            "네이버에서 ‘부산 법무사’를 검색하면 변호사 사무소나 로펌이 함께 보이기도 합니다. 소송·형사 변론이 필요하면 변호사가 맞고, 등기·상속 서류·법인변경·개인회생 신청 서류라면 법무사 업무입니다.",
+            "소송 대리와 형사 변론은 변호사 업무이고, 등기·상속 서류·법인변경·개인회생 신청 서류는 법무사 업무입니다.",
             "다옴법무사사무소는 법무사 사무소입니다. 사건 성격이 소송 쪽으로 보이면 그 범위는 분명히 말씀드리고, 법무사가 진행할 수 있는 절차부터 정리합니다.",
           ]}
         />

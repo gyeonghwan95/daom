@@ -1,3 +1,5 @@
+import { heroPhotoDesc } from "./hero-sources.mjs";
+
 // 원본 사진이 실제로 보여 주는 장면 — 생성 이미지의 alt를 "제목 — 장면"으로 맞추는 데 쓴다.
 const D = {
   "썸네일-정면.jpg": "사무실 책상에서 정면을 바라보는 안윤정 법무사",
@@ -68,6 +70,8 @@ const D = {
 };
 
 export function photoDesc(photo) {
+  // 포스팅용 폴더에서 가져온 원본(@posting/...)은 hero-sources.mjs의 설명을 쓴다
+  if (photo.startsWith("@posting/")) return heroPhotoDesc(photo) ?? "다옴법무사사무소 업무 사진";
   const key = decodeURIComponent(photo).replace(/^\/image\//, "");
   if (D[key]) return D[key];
   const m = key.match(/(?:구청_|썸네일[-_])(.+?(?:구청|군청))\.jpg$/);

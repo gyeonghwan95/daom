@@ -5,7 +5,7 @@ import { LocationSection } from "@/components/sections/LocationSection";
 import { PageContentSection } from "@/components/page/PageContentSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { getMainLandingHubLinks } from "@/lib/seo/internal-links";
-import { getOfficeLocationWithAccess, officeLocation } from "@/lib/office-location";
+import { getOfficeLocationWithAccess } from "@/lib/office-location";
 import { staticPageSeo } from "@/lib/seo/page-seo";
 import { siteConfig } from "@/lib/site";
 
@@ -21,7 +21,8 @@ export default function LocationPage() {
           { label: "오시는 길" },
         ]}
         currentPath="/location"
-        intro={`${siteConfig.name}는 ${getOfficeLocationWithAccess()}에 있습니다. ${officeLocation.visitNoticeDetail}`}
+        // 방문 예약 안내는 바로 아래 노란 배너가 보여 주므로 소개 문장에서는 뺀다(같은 문장이 연달아 나왔다, 2026-11-15)
+        intro={`${siteConfig.name}는 ${getOfficeLocationWithAccess()}에 있습니다.`}
         relatedLinks={[
           ...getMainLandingHubLinks().slice(0, 8),
           { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },

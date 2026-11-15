@@ -8,6 +8,7 @@ import { formatContentDate, getAllContent } from "@/lib/content/loader";
 import { getNaverBlogUrl } from "@/lib/contact";
 import { getBlogPostImage, getCaseImage } from "@/lib/site-images";
 import { homeInsightsIntro } from "@/lib/home-content";
+import { cardSummary } from "@/lib/text/card-summary";
 
 export function HomeInsights() {
   const cases = getAllContent("cases").slice(0, 2);
@@ -73,8 +74,8 @@ export function HomeInsights() {
                   <h3 className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-navy group-hover:text-navy-light md:text-base">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 line-clamp-2 flex-1 text-xs leading-relaxed text-navy/60 sm:text-sm">
-                    {item.excerpt}
+                  <p className="mt-1.5 flex-1 text-xs leading-relaxed text-navy/60 sm:text-sm">
+                    {cardSummary(item.excerpt, 56)}
                   </p>
                   <span className="mt-2 text-[0.6875rem] text-navy/45 sm:text-xs">
                     {item.meta}

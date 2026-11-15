@@ -129,11 +129,19 @@ export function PageHero({
               {ctaLabel}
             </InquiryStartButton>
           ) : (
+            // 상담 경로가 아닌 이동 링크(예: 용어 페이지의 '취득세 안내 보기')는 보조 버튼으로 —
+            // 바로 위 상담 카드(CostInquiryNote)의 '간편 문의'가 주 버튼이라, 남색 버튼이 둘이면 무엇을 눌러야 할지 흐려진다(2026-11-15).
             <Link
               href={ctaHref}
-              className="btn-primary inline-flex min-h-12 items-center justify-center px-6"
+              className="btn-secondary group inline-flex min-h-12 items-center justify-center gap-1.5 px-6"
             >
               {ctaLabel}
+              <span
+                className="text-navy/45 transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden
+              >
+                →
+              </span>
             </Link>
           )
         }

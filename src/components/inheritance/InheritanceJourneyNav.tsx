@@ -40,7 +40,7 @@ export function InheritanceJourneyNav({
         </div>
         <Link
           href="/상속"
-          className="text-sm font-medium text-navy-light underline-offset-2 hover:underline"
+          className="inline-flex min-h-11 items-center text-sm font-medium text-navy-light underline-offset-2 hover:underline"
         >
           상속 법무사 종합 안내
         </Link>

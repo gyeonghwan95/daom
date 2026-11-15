@@ -10,6 +10,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { getAllContent } from "@/lib/content/loader";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { cardSummary } from "@/lib/text/card-summary";
 
 /** 공개 사례: slug가 -case면 실제 처리 사례, -consultation이면 개인정보를 빼고 일반화한 상담 사례 */
 function getPublishedCases() {
@@ -115,7 +116,7 @@ function CaseList({
             >
               <span className="text-xs font-semibold text-navy-light">{c.category}</span>
               <span className="mt-1 text-base font-semibold leading-snug text-navy">{c.title}</span>
-              <span className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-navy/70">{c.description}</span>
+              <span className="mt-1.5 text-sm leading-relaxed text-navy/70">{cardSummary(c.description, 80)}</span>
             </Link>
           </li>
         ))}

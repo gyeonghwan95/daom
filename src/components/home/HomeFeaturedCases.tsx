@@ -5,6 +5,7 @@ import { HomeSectionActionLink } from "@/components/home/HomeSectionActionLink";
 import { HomeSectionHeader } from "@/components/home/HomeSectionHeader";
 import { getContentMeta } from "@/lib/content/loader";
 import { getCaseImage } from "@/lib/site-images";
+import { cardSummary } from "@/lib/text/card-summary";
 
 /** 메인 대표 사례 — 공개된 실제 처리 사례(slug가 -case) 중 업무별 1건. 사건 사실은 사례 본문에서만 가져온다. */
 const FEATURED_CASE_SLUGS = [
@@ -50,7 +51,8 @@ export function HomeFeaturedCases() {
                   <h3 className="mt-1.5 text-base font-semibold leading-snug text-navy group-hover:text-navy-light">
                     {c.title}
                   </h3>
-                  <p className="mt-1.5 line-clamp-3 flex-1 text-sm leading-relaxed text-navy/65">{c.description}</p>
+                  {/* 검색용 설명문을 CSS로 3줄에서 자르면 문장 중간에서 끊겼다 — 완결된 문장만(약 3줄) */}
+                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-navy/65">{cardSummary(c.description, 60)}</p>
                   <span className="mt-3 text-sm font-semibold text-navy-light">사례 자세히 보기 →</span>
                 </div>
               </Link>

@@ -87,14 +87,18 @@ export function HomePlaceGuide() {
               <dl className="home-place__hours-grid">
                 <div>
                   <dt>평일</dt>
-                  <dd>{officeHours.weekday}</dd>
+                  {/* 제목이 이미 "평일"이라 값에서는 뺀다(OfficeHoursDetail과 같은 처리) */}
+                  <dd>{officeHours.weekday.replace(/^평일\s*/, "")}</dd>
                 </div>
                 <div>
                   <dt>휴무</dt>
                   <dd>{officeHours.closed}</dd>
                 </div>
               </dl>
-              <p className="home-place__hours-note">{officeHours.note}</p>
+              {/* 운영시간 안내가 아래 노란 방문 안내와 같은 문장이면 한 번만 보여 준다(예전엔 두 번 나왔다, 2026-11-15) */}
+              {officeHours.note !== officeLocation.visitNotice ? (
+                <p className="home-place__hours-note">{officeHours.note}</p>
+              ) : null}
             </div>
 
             <div className="home-place__foot">

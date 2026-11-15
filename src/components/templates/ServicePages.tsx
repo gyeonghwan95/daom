@@ -25,6 +25,7 @@ import {
 } from "@/lib/seo/carousel-images";
 import { getRelatedContentCarousel } from "@/lib/seo/page-visuals";
 import { serviceLinkPath } from "@/lib/seo/service-path";
+import { cardSummary } from "@/lib/text/card-summary";
 
 type ServiceDetailTemplateProps = {
   service: ServiceDetail;
@@ -78,7 +79,8 @@ export function ServicesIndexTemplate() {
               <li key={service.slug}>
                 <ServiceCard
                   title={service.title}
-                  description={service.description}
+                  // description은 "부산 ○○ — …" 검색용 문장이라 카드에서 앞부분만 잘려 보였다 — 사람이 읽는 소개 문장으로
+                  description={service.cardDescription ?? cardSummary(service.intro, 80)}
                   href={serviceLinkPath(service.slug)}
                   image={getServiceImage(service.slug)}
                 />

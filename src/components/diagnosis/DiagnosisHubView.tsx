@@ -59,17 +59,27 @@ export function DiagnosisHubView({ page, topics }: DiagnosisHubViewProps) {
         <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {DIAGNOSIS_HUB_CATEGORIES.map((category) => (
             <li key={category.id}>
-              <article className="interactive-surface card-surface flex h-full flex-col px-4 py-5 hover:bg-beige/40 md:px-5">
+              {/*
+                카드 안에 링크가 여러 개라 카드 전체를 링크로 만들 수 없다. 카드 자체의 hover 효과(눌릴 것처럼 보임)는 빼고,
+                진단 링크 한 줄 한 줄을 44px 높이의 누르기 쉬운 행으로 만든다(예전엔 글자 높이 20px만 눌렸다, 2026-11-15).
+              */}
+              <article className="card-surface flex h-full flex-col px-4 py-5 md:px-5">
                 <h3 className="text-lg font-semibold text-navy">{category.title}</h3>
                 <p className="mt-1 text-sm text-navy/60">{category.description}</p>
-                <ul className="mt-4 flex flex-1 flex-col gap-2">
+                <ul className="mt-3 flex flex-1 flex-col gap-0.5">
                   {category.diagnosisSlugs.map((slug) => (
                     <li key={slug}>
                       <Link
                         href={`/${slug}`}
-                        className="text-sm font-medium text-navy-light hover:text-navy hover:underline"
+                        className="group -mx-2 flex min-h-11 items-center justify-between gap-2 rounded-lg px-2 text-sm font-medium text-navy-light no-underline transition-colors hover:bg-beige/50 hover:text-navy"
                       >
-                        {diagnosisLabel(topics, slug)} →
+                        <span>{diagnosisLabel(topics, slug)}</span>
+                        <span
+                          className="shrink-0 text-navy/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-navy"
+                          aria-hidden
+                        >
+                          →
+                        </span>
                       </Link>
                     </li>
                   ))}
@@ -77,7 +87,7 @@ export function DiagnosisHubView({ page, topics }: DiagnosisHubViewProps) {
                 {category.topicHubHref ? (
                   <Link
                     href={category.topicHubHref}
-                    className="mt-4 text-xs font-semibold text-navy/50 hover:text-navy"
+                    className="mt-2 inline-flex min-h-11 w-fit items-center text-xs font-semibold text-navy/65 underline-offset-4 hover:text-navy hover:underline"
                   >
                     {category.title} 종합 안내 보기
                   </Link>

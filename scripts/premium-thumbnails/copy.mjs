@@ -109,6 +109,8 @@ export const PHOTO = {
 
 // 저해상도 원본(1,000px대)은 같은 사무실 장면의 고해상도 원본으로 바꾼다(확대로 흐려지지 않게).
 export const SUBST = {
+  // 로고 앞에 서서 찍은 기념사진 → 사무실에서 서류를 검토하는 사진 3장(출력 경로 해시로 고르게 배정, 2026-11-16)
+  "/image/썸네일-사무실_정면.jpg": ["@posting/office-review-tweed.jpg", "@posting/office-review-beige.jpg", "@posting/office-review-winter.jpg"],
   "/image/썸네일-상담협의.jpg": ["/image/썸네일-사무실_겨울 (3).jpg", "/image/썸네일_사무실_여름 (5).jpg", "/image/썸네일-사무실.jpg"],
   "/image/썸네일-서류등기.jpg": ["/image/썸네일-사무실_겨울 (4).jpg", "/image/썸네일-사무실_가을 (3).jpg"],
   "/image/og/metro-yongin-4x3.jpg": ["/image/썸네일-사무실_가을 (1).jpg"],

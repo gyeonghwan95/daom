@@ -92,12 +92,12 @@ export function HomeTrust() {
                 있으니 방문 전 공식 안내를 확인하세요. 상담실은 짧은 질문에 답하는 곳이어서,
                 서류 작성과 등기소·법원 접수, 보정은 따로 준비하셔야 합니다.
               </p>
-              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              <div className="mt-1 flex flex-wrap gap-x-4 text-sm">
                 <a
                   href="https://busan.scourt.go.kr/bsgodung/civil/civil_03/lawadvice_01/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-navy-light underline underline-offset-4"
+                  className="inline-flex min-h-11 items-center font-medium text-navy-light underline underline-offset-4"
                 >
                   부산고등법원 안내
                 </a>
@@ -105,7 +105,7 @@ export function HomeTrust() {
                   href="https://busan.scourt.go.kr/bsfamily/civil/civil_03/lawadvice_01/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-navy-light underline underline-offset-4"
+                  className="inline-flex min-h-11 items-center font-medium text-navy-light underline underline-offset-4"
                 >
                   부산가정법원 안내
                 </a>
@@ -113,7 +113,7 @@ export function HomeTrust() {
                   href="https://bsb.scourt.go.kr/bsb/civil/civil_02/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-navy-light underline underline-offset-4"
+                  className="inline-flex min-h-11 items-center font-medium text-navy-light underline underline-offset-4"
                 >
                   부산회생법원 안내
                 </a>
@@ -121,7 +121,7 @@ export function HomeTrust() {
                   href="https://www.busan.go.kr/depart/freelegaladvice"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-navy-light underline underline-offset-4"
+                  className="inline-flex min-h-11 items-center font-medium text-navy-light underline underline-offset-4"
                 >
                   부산시 무료 법률상담
                 </a>

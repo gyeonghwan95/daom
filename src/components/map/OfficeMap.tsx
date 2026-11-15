@@ -24,7 +24,7 @@ const mapLinkBase =
 
 function MapExternalLinks({ compact = false }: { compact?: boolean }) {
   const linkClass = compact
-    ? "inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold transition-colors"
+    ? "inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold transition-colors"
     : mapLinkBase;
 
   return (

@@ -13,6 +13,11 @@ type TrustInfographicViewerProps = {
   trackKind?: string;
   /** 썸네일 표시 폭 힌트 */
   sizes?: string;
+  /**
+   * 썸네일 비율(예: "3 / 4"). 주면 그 비율로 위쪽 기준으로 잘라 보여 준다 — 비율이 다른 두 이미지를
+   * 나란히 둘 때 높이를 맞추는 용도. 크게 보기에서는 항상 원본 전체를 보여 준다.
+   */
+  thumbAspect?: string;
 };
 
 function ZoomIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -42,6 +47,7 @@ export function TrustInfographicViewer({
   title = "안윤정 법무사 전문이력 인포그래픽",
   trackKind = "trust-infographic",
   sizes = "(max-width: 767px) 92vw, (max-width: 1279px) 40vw, 460px",
+  thumbAspect,
 }: TrustInfographicViewerProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
@@ -67,6 +73,7 @@ export function TrustInfographicViewer({
         }}
         className="group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-[0_18px_40px_-24px_rgba(30,58,95,0.45)] transition-shadow duration-300 hover:shadow-[0_24px_48px_-20px_rgba(30,58,95,0.55)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
         aria-label={`${title} 크게 보기`}
+        style={thumbAspect ? { aspectRatio: thumbAspect } : undefined}
       >
         <Image
           src={image.src}
@@ -75,7 +82,11 @@ export function TrustInfographicViewer({
           height={image.height}
           quality={80}
           sizes={sizes}
-          className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
+          className={
+            thumbAspect
+              ? "h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]"
+              : "h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
+          }
         />
         <span className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-navy/80 via-navy/30 to-transparent pb-3 pt-12">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-semibold text-navy shadow-sm md:text-sm">

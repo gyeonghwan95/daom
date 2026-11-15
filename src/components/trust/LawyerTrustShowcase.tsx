@@ -4,6 +4,7 @@ import { TrustContactActions } from "@/components/trust/TrustContactActions";
 import { TrustInfographicViewer } from "@/components/trust/TrustInfographicViewer";
 import { TrustReviewQuote } from "@/components/trust/TrustReviewQuote";
 import { PrepResourceLink } from "@/components/resources/PrepResourceLink";
+import { WorkRecordStrip } from "@/components/trust/WorkRecordStrip";
 import { getResourceGuide, RESOURCE_BY_PAGE, resourcePath } from "@/data/resources/guides";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
@@ -127,8 +128,14 @@ export function LawyerTrustShowcase() {
       data-lawyer-trust
     >
       <div className="overflow-hidden rounded-[1.75rem] border border-navy/10 bg-gradient-to-br from-cream via-white to-beige/70 shadow-[0_30px_60px_-40px_rgba(30,58,95,0.5)]">
-        <div className="grid @3xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] @5xl:grid-rows-[auto_auto_1fr]">
-          <header className="px-5 pt-6 @md:px-7 @md:pt-7 @3xl:col-span-2 @3xl:row-start-1 @5xl:col-span-1 @5xl:col-start-2 @5xl:px-8 @5xl:pt-8">
+        {/*
+          한 흐름 배치(2026-11-15 재구성) — 예전엔 왼쪽 이미지 열·오른쪽 글 열 2단이라 PC에서 열 길이가 어긋나고,
+          모바일에서는 이미지 제목 옆 설명이 밀려 제목이 아래로 내려갔다.
+          1) 머리말 2) 전문 이력·전문 활동 이미지 한 줄 3) 자격·수상·언론·강의(PC 2개씩)
+          4) PC: 약속·후기 | 실제 업무 기록(업무 페이지에만) 5) 상담 띠
+        */}
+        <div className="px-5 pb-6 pt-6 @md:px-7 @md:pb-7 @md:pt-7 @5xl:px-8 @5xl:pb-8 @5xl:pt-8">
+          <header>
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-navy/15 bg-white px-3 py-1 text-xs font-bold tracking-[0.04em] text-navy-light">
               <span className="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden />
               안윤정 법무사를 찾는 이유
@@ -140,102 +147,104 @@ export function LawyerTrustShowcase() {
               <span className="block">읽고도 막막하다면,</span>
               <span className="block">안윤정 법무사가 직접 답해 드립니다</span>
             </h2>
-            <p className="mt-3 text-[0.98rem] leading-relaxed text-navy/75 @md:text-base">
+            <p className="mt-3 max-w-3xl text-[0.98rem] leading-relaxed text-navy/75 @md:text-base">
               자격과 현장 경험으로 이력을 쌓아 온 대표 법무사가 상속·부동산·법인등기, 민사
               법원서류, 개인회생·파산 신청에 필요한 상담을 직접 맡습니다. 부산 해운대 센텀
               사무소에서 의뢰인 곁에서 함께합니다.
             </p>
           </header>
 
-          <div className="mx-4 mt-5 flex flex-col rounded-2xl bg-navy/[0.035] p-3 @md:mx-6 @md:p-4 @3xl:col-start-1 @3xl:row-start-2 @3xl:mr-0 @3xl:ml-7 @3xl:mt-6 @3xl:self-start @5xl:row-span-3 @5xl:row-start-1 @5xl:m-0 @5xl:self-stretch @5xl:justify-center @5xl:rounded-none @5xl:p-7">
-            <div className="grid grid-cols-2 gap-3 @3xl:block @3xl:space-y-5">
-              <figure>
-                <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
-                  <span className="inline-flex items-center gap-2 text-sm font-bold text-navy">
-                    <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
-                    전문 이력
-                  </span>
-                  <span className="hidden text-xs text-navy/55 @md:inline">자격·학력·주요 경력</span>
-                </figcaption>
-                <TrustInfographicViewer
-                  image={image}
-                  title="안윤정 법무사 전문이력 인포그래픽"
-                  sizes="(max-width: 767px) 46vw, (max-width: 1279px) 40vw, 460px"
-                />
-              </figure>
-              <figure>
-                <figcaption className="mb-2 flex items-baseline justify-between gap-3 px-0.5">
-                  <span className="inline-flex items-center gap-2 text-sm font-bold text-navy">
-                    <span className="h-2 w-2 rounded-full bg-[#b08d57]" aria-hidden />
-                    전문 활동
-                  </span>
-                  <span className="hidden text-xs text-navy/55 @md:inline">위촉·수상·방송 출연</span>
-                </figcaption>
-                <TrustInfographicViewer
-                  image={activityImage}
-                  title="안윤정 법무사 전문활동 인포그래픽"
-                  trackKind="trust-activity-infographic"
-                  sizes="(max-width: 767px) 46vw, (max-width: 1279px) 40vw, 460px"
-                />
-              </figure>
+          {/* 1행: 전문 이력 · 전문 활동 — 미리보기는 비율이 짧은 전문 이력(3:4)에 맞춰 위쪽 기준으로 자른다. 크게 보기는 원본 전체 */}
+          <div className="mt-6 rounded-2xl bg-navy/[0.035] p-3 @md:p-4 @3xl:p-5">
+            <div className="grid grid-cols-2 gap-3 @md:gap-4 @3xl:gap-5">
+              {[
+                { img: image, label: "전문 이력", sub: "자격·학력·주요 경력", title: "안윤정 법무사 전문이력 인포그래픽", track: "trust-infographic" },
+                { img: activityImage, label: "전문 활동", sub: "위촉·수상·방송 출연", title: "안윤정 법무사 전문활동 인포그래픽", track: "trust-activity-infographic" },
+              ].map((f) => (
+                <figure key={f.label} className="min-w-0">
+                  {/* 제목·설명을 두 줄로 고정 — 좁은 폰에서 설명이 밀려 제목이 내려가거나 두 이미지 시작선이 어긋나지 않게 */}
+                  <figcaption className="mb-2 px-0.5">
+                    <span className="flex items-center gap-2 text-sm font-bold text-navy @3xl:text-base">
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-[#b08d57]" aria-hidden />
+                      {f.label}
+                    </span>
+                    <span className="mt-0.5 block truncate pl-4 text-xs text-navy/55">{f.sub}</span>
+                  </figcaption>
+                  <TrustInfographicViewer
+                    image={f.img}
+                    title={f.title}
+                    trackKind={f.track}
+                    thumbAspect={`${image.width} / ${image.height}`}
+                    sizes="(max-width: 767px) 46vw, 420px"
+                  />
+                </figure>
+              ))}
             </div>
-            <p className="mt-3 text-center text-xs leading-relaxed text-navy/60">
-              이미지를 누르면 크게 볼 수 있습니다.
-            </p>
-            <Link
-              href="/about"
-              className="group mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-navy/15 bg-white px-5 text-[0.95rem] font-bold text-navy no-underline shadow-sm transition hover:border-navy/30 hover:bg-cream"
-              data-cta="trust-profile"
-            >
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-white">
-                <ProfileIcon />
-              </span>
-              안윤정 법무사는 누구일까?
-              <span
-                className="text-navy/50 transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden
+            <div className="mt-3 flex flex-col items-stretch gap-3 @lg:flex-row @lg:items-center @lg:justify-between">
+              <p className="text-center text-xs leading-relaxed text-navy/60 @lg:text-left">
+                이미지를 누르면 원본 전체를 크게 볼 수 있습니다.
+              </p>
+              <Link
+                href="/about"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-navy/15 bg-white px-4 text-[0.95rem] font-bold text-navy no-underline shadow-sm transition hover:border-navy/30 hover:bg-cream @md:gap-2.5 @md:px-5"
+                data-cta="trust-profile"
               >
-                →
-              </span>
-            </Link>
-          </div>
-
-          <div className="px-5 pt-5 @md:px-7 @3xl:col-start-2 @3xl:row-start-2 @3xl:pt-6 @5xl:px-8 @5xl:pt-5">
-            <ul className="grid gap-2.5 @lg:grid-cols-2 @3xl:grid-cols-1 @5xl:grid-cols-2">
-              {highlights.map((item) => (
-                <li
-                  key={item.label}
-                  className="flex items-start gap-3 rounded-xl border border-navy/10 bg-white/90 px-3.5 py-3"
+                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+                  <ProfileIcon />
+                </span>
+                안윤정 법무사는 누구일까?
+                {/* 좁은 폰(카드 폭 384px 미만)에서는 화살표를 빼야 글자가 한 줄에 들어간다 */}
+                <span
+                  className="hidden text-navy/50 transition-transform duration-200 group-hover:translate-x-0.5 @sm:inline"
+                  aria-hidden
                 >
-                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy text-white">
-                    {item.icon}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-xs font-semibold uppercase tracking-wider text-navy-light">
-                      {item.label}
-                    </span>
-                    <span className="mt-0.5 block text-sm font-semibold leading-snug text-navy">
-                      {item.value}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <ul className="mt-5 space-y-2">
-              {promises.map((text) => (
-                <li key={text} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-navy/85">
-                  <CheckIcon />
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
-
-            <TrustReviewQuote quotes={reviewQuotes} />
-            <PrepResourceLink byPath={prepByPath} />
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
 
-          <div className="px-5 pb-6 pt-6 @md:px-7 @md:pb-7 @3xl:col-span-2 @3xl:row-start-3 @5xl:col-span-1 @5xl:col-start-2 @5xl:row-start-3 @5xl:px-8 @5xl:pb-8">
+          {/* 2행: 자격·수상·언론·강의 — 넓으면 한 줄에 2개 */}
+          <ul className="mt-5 grid gap-2.5 @lg:grid-cols-2 @3xl:gap-3">
+            {highlights.map((item) => (
+              <li
+                key={item.label}
+                className="flex items-start gap-3 rounded-xl border border-navy/10 bg-white/90 px-3.5 py-3"
+              >
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy text-white">
+                  {item.icon}
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-xs font-semibold uppercase tracking-wider text-navy-light">
+                    {item.label}
+                  </span>
+                  <span className="mt-0.5 block text-sm font-semibold leading-snug text-navy">
+                    {item.value}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* 3행: 약속·후기 | 실제 업무 기록 — 업무 기록이 없는 페이지는 한 단 */}
+          <div className="mt-1 grid gap-x-6 @3xl:has-[[data-work-records]]:grid-cols-2 @3xl:has-[[data-work-records]]:items-start">
+            <div className="min-w-0">
+              <ul className="mt-5 space-y-2">
+                {promises.map((text) => (
+                  <li key={text} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-navy/85">
+                    <CheckIcon />
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <TrustReviewQuote quotes={reviewQuotes} />
+            </div>
+            {/* 이 페이지 업무와 같은 종류의 실제 서류 사진(개인정보 가림) — 업무 페이지에만 */}
+            <WorkRecordStrip />
+          </div>
+          <PrepResourceLink byPath={prepByPath} />
+
+          <div className="mt-6">
             <TrustContactActions
               phone={phone}
               phoneHref={getPhoneHref(phone)}
@@ -243,10 +252,10 @@ export function LawyerTrustShowcase() {
             />
 
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <Link href="/media" className="inline-flex min-h-10 items-center text-navy underline-offset-4 hover:underline">
+              <Link href="/media" className="inline-flex min-h-11 items-center whitespace-nowrap text-navy underline-offset-4 hover:underline">
                 언론·방송 출연 보기 →
               </Link>
-              <Link href="/강의이력" className="inline-flex min-h-10 items-center text-navy underline-offset-4 hover:underline">
+              <Link href="/강의이력" className="inline-flex min-h-11 items-center whitespace-nowrap text-navy underline-offset-4 hover:underline">
                 강의 이력 보기 →
               </Link>
             </div>

@@ -130,7 +130,7 @@ export function HomeBusanGuide() {
                 {CONSULT_PLACES.map((p) => (
                   <tr key={p.place} className="block px-4 py-3 align-top md:table-row md:p-0">
                     <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
-                      <a href={p.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                      <a href={p.href} target="_blank" rel="noopener noreferrer" className="tap-44 underline underline-offset-2">
                         {p.place}
                       </a>
                     </th>
@@ -143,7 +143,7 @@ export function HomeBusanGuide() {
                 ))}
                 <tr className="block bg-[var(--surface-muted)]/50 px-4 py-3 align-top md:table-row md:p-0">
                   <th scope="row" className="block font-semibold text-navy md:table-cell md:px-3 md:py-2.5">
-                    <Link href="/부산법무사상담" className="underline underline-offset-2">
+                    <Link href="/부산법무사상담" className="tap-44 underline underline-offset-2">
                       다옴법무사사무소
                     </Link>
                   </th>
@@ -214,7 +214,7 @@ export function HomeBusanGuide() {
                         <td className="px-3 py-2.5 text-navy/85">{office.districts.join("·")}</td>
                         <td className="px-3 py-2.5 font-medium text-navy">
                           {id === "deunggiguk" ? (
-                            <Link href="/부산지방법원등기국" className="underline underline-offset-2">
+                            <Link href="/부산지방법원등기국" className="tap-44 underline underline-offset-2">
                               {office.name}
                             </Link>
                           ) : (

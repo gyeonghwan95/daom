@@ -178,7 +178,7 @@ export function YoutubeVideoSection({
             href={parseYoutubeUrl(featured.youtubeUrl)?.watchUrl ?? featured.youtubeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex font-medium underline-offset-4 hover:underline ${linkClass} ${
+            className={`tap-44 inline-flex font-medium underline-offset-4 hover:underline ${linkClass} ${
               isCompact ? "mt-1.5 text-xs md:text-sm" : "mt-3 text-sm"
             }`}
           >
@@ -214,7 +214,7 @@ export function YoutubeVideoSection({
                 href={parseYoutubeUrl(video.youtubeUrl)?.watchUrl ?? video.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex font-medium hover:underline ${linkClass} ${
+                className={`tap-44 inline-flex font-medium hover:underline ${linkClass} ${
                   isCompact ? "mt-1 text-[0.6875rem] sm:text-xs" : "mt-2 text-xs"
                 }`}
               >

@@ -161,7 +161,7 @@ async function main() {
   const dry = process.argv.includes("--dry");
   // 검토용: --out-dir=<폴더> 이면 public 대신 그 폴더에 평면 파일명으로 쓴다
   const outDir = process.argv.find((a) => a.startsWith("--out-dir="))?.slice(10);
-  const { render } = await import(pathToFileURL(path.join(LIB, "render.mjs")).href);
+  const { render, photoDisk } = await import(pathToFileURL(path.join(LIB, "render.mjs")).href);
   const { COPY, PHOTO, SUBST } = await import(pathToFileURL(path.join(LIB, "copy.mjs")).href);
   const { altFor } = await import(pathToFileURL(path.join(LIB, "photo-desc.mjs")).href);
 
@@ -172,7 +172,12 @@ async function main() {
     console.log("contact sheets → reports/thumbnails");
     return;
   }
-  const jobs = allJobs.filter((j) => !only || j.out.includes(only));
+  // --from-photo=<사진>: SUBST 적용 전 원래 그 사진을 쓰던 출력만(사진 교체 뒤 해당 출력만 다시 그릴 때)
+  const fromPhotoArg = process.argv.find((a) => a.startsWith("--from-photo="))?.slice(13);
+  const fromPhoto = fromPhotoArg ? (fromPhotoArg.startsWith("/") || fromPhotoArg.startsWith("@") ? fromPhotoArg : `/image/${fromPhotoArg}`) : undefined;
+  const jobs = allJobs.filter(
+    (j) => (!only || j.out.includes(only)) && (!fromPhoto || (PHOTO[j.sameAs ?? j.out] ?? j.src) === fromPhoto),
+  );
   const failed: string[] = [];
   const rendered: { set: string; file: string }[] = [];
   let done = 0;
@@ -184,6 +189,30 @@ async function main() {
     const title: string = COPY[key] ?? j.title;
     return { photo, title };
   };
+
+  // --uses=<사진 경로>: 그 사진으로 그리는 출력 목록만 출력하고 끝낸다(사진 교체 전 영향 범위 확인용).
+  // 4:3 히어로는 pickHeroPhoto 결과 기준이며, 렌더 때 crop이 안 돼 HERO_NO_CROP_FALLBACKS로 바뀌는 경우도 함께 센다.
+  const usesArg = process.argv.find((a) => a.startsWith("--uses="))?.slice(7);
+  if (usesArg) {
+    const { pickHeroPhoto } = await import(pathToFileURL(path.join(LIB, "hero-sources.mjs")).href);
+    const target = usesArg.startsWith("/") || usesArg.startsWith("@") ? usesArg : `/image/${usesArg}`;
+    const hits: string[] = [];
+    for (const j of allJobs) {
+      if (j.set === "page") continue;
+      if (resolve(j).photo === target) hits.push(`${j.set}\t${j.out}`);
+    }
+    const seen = new Set<string>();
+    for (const set of ["serp", "hook", "page"]) {
+      for (const j of allJobs) {
+        if (j.set !== set || !j.url || seen.has(j.url)) continue;
+        seen.add(j.url);
+        if (pickHeroPhoto(j.url, resolve(j).photo) === target) hits.push(`hero\t${j.url}`);
+      }
+    }
+    console.log(hits.join("\n"));
+    console.error(`${hits.length}개 (히어로 crop 실패 대체분은 src/data/seo/page-og-thumbnails.ts alt로 확인)`);
+    return;
+  }
 
   // --missing: 아직 없는 출력만 만든다(새 페이지를 추가했을 때)
   const onlyMissing = process.argv.includes("--missing");
@@ -198,7 +227,7 @@ async function main() {
     if (j.set === "page") continue;
     const { photo, title } = resolve(j);
     if (onlyMissing && !outDir && existsSync(diskPath(j.out))) continue;
-    if (!existsSync(path.join(PUBLIC, photo))) {
+    if (!existsSync(photoDisk(photo))) {
       failed.push(`${j.out}: missing ${photo}`);
       continue;
     }
@@ -240,7 +269,8 @@ async function main() {
 // src/lib/seo/page-thumbnail-size.ts 와 같은 값
 const HERO_W = 1280;
 const HERO_H = 960;
-const HERO_NO_CROP_FALLBACK = "/image/썸네일-사무실_정면.jpg";
+// 2026-11-16: 로고 앞 기념사진(/image/썸네일-사무실_정면.jpg) 대신 서류를 검토하는 사무실 사진(얼굴이 왼쪽이라 가운데 제목 자리가 넉넉하다)
+const HERO_NO_CROP_FALLBACKS = ["@posting/office-desk-nameplate.jpg", "@posting/office-desk-logo.jpg"];
 
 /** og-pages가 없는 대표 페이지만 새 파일(/image/hero) — 배포 파일 수 한도(Cloudflare Pages 무료 20,000) 때문에 og-pages 파일을 그대로 다시 쓴다 */
 function heroOut(url: string): string {
@@ -282,13 +312,23 @@ async function runHero(
       if (j.set !== set || !j.url || byUrl.has(j.url)) continue;
       const { photo, title } = resolve(j);
       const og = ogOut.get(j.url);
-      byUrl.set(j.url, { url: j.url, out: og ?? heroOut(j.url), og: Boolean(og), photo: pickHeroPhoto(j.url, photo), title });
+      // 서류 검토 근접 사진(office-review-*)은 1:1용 — 4:3에서는 머리 위가 화면 끝에 닿고 책상 소품이 걸려, 넓은 책상 사진으로 바꾼다
+      let heroPhoto = pickHeroPhoto(j.url, photo);
+      if (heroPhoto.startsWith("@posting/office-review-")) heroPhoto = HERO_NO_CROP_FALLBACKS[hash(j.url) % HERO_NO_CROP_FALLBACKS.length];
+      byUrl.set(j.url, { url: j.url, out: og ?? heroOut(j.url), og: Boolean(og), photo: heroPhoto, title });
     }
   }
   const rows = [...byUrl.values()].sort((a, b) => a.url.localeCompare(b.url, "ko"));
   // --sample=N: 검토용으로 고르게 N장만(--out-dir와 함께)
   const sample = Number(process.argv.find((a) => a.startsWith("--sample="))?.slice(9) ?? 0);
-  const filtered = rows.filter((r) => !opts.only || r.url.includes(opts.only) || r.out.includes(opts.only));
+  // --urls-file=<파일>: 첫 칸이 경로인 줄 목록 — 그 페이지만 다시 그린다(대응표는 전체로 다시 쓴다)
+  const urlsFile = process.argv.find((a) => a.startsWith("--urls-file="))?.slice(12);
+  const urlSet = urlsFile
+    ? new Set(readFileSync(urlsFile, "utf8").split(String.fromCharCode(10)).map((l) => l.split(String.fromCharCode(9))[0].trim()).filter(Boolean))
+    : undefined;
+  const filtered = rows.filter(
+    (r) => (!opts.only || r.url.includes(opts.only) || r.out.includes(opts.only)) && (!urlSet || urlSet.has(r.url)),
+  );
   const step = sample > 0 ? Math.max(1, Math.floor(filtered.length / sample)) : 1;
   const targets = filtered.filter((_, i) => i % step === 0);
   const failed: string[] = [];
@@ -317,7 +357,7 @@ async function runHero(
         // 얼굴이 화면 대부분인 사진은 가운데 제목을 얹을 crop이 없다 — 얼굴을 가리지 않는 사무실 사진으로 바꾼다
         const { buf } = await draw(r.photo).catch((e) => {
           if (!/no crop/.test(String(e))) throw e;
-          r.photo = HERO_NO_CROP_FALLBACK;
+          r.photo = HERO_NO_CROP_FALLBACKS[hash(r.url) % HERO_NO_CROP_FALLBACKS.length];
           return draw(r.photo);
         });
         if (opts.outDir) {
