@@ -463,8 +463,8 @@ export const HUB_CHILD_LINKS: Record<string, readonly { href: string; label: str
       "label": "부산지방법원동부지원등기과 법무사 상담"
     },
     {
-      "href": "/부산지방법원등기국법무사",
-      "label": "부산지방법원등기국 법무사 상담"
+      "href": "/부산지방법원등기국",
+      "label": "부산지방법원 등기국 위치·관할 안내"
     }
   ],
   "/부산진구법무사": [

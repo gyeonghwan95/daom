@@ -12,6 +12,7 @@ import {
   type ThumbnailTemplate,
 } from "@/data/seo/page-thumbnails";
 import type { ThumbnailCategory } from "@/data/media/thumbnail-portraits";
+import { josa } from "@/lib/korean/josa";
 
 export const VISUAL_DESIGN_VERSION = 1;
 
@@ -78,7 +79,7 @@ function fromThumb(thumb: PageThumbnailItem): PageVisual {
     textPosition: templateToTextPosition(thumb.template),
     alt: thumb.alt.includes("안윤정")
       ? thumb.alt
-      : `${thumb.pageTitle}를 안내하는 안윤정 법무사`,
+      : `${josa(thumb.pageTitle, "을/를")} 안내하는 안윤정 법무사`,
     category: thumb.category,
     relatedGroup: thumb.category,
     carouselSectionTitle: thumb.carouselSectionTitle,

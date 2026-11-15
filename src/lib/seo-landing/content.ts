@@ -473,6 +473,42 @@ function deadlineFacts(serviceId: string | undefined): string[] {
   );
 }
 
+/**
+ * 업무 주제에 맞는 상위 안내 링크.
+ * 예전에는 개인회생·법인·등기 페이지까지 모두 "부산 상속 법무사"로 링크해, 주제와 무관한 같은 문구의 링크가
+ * 200여 페이지에서 /부산상속법무사로 몰렸다(2026-11-15 점검). 상속 분야 대량 링크는 순위 하락과 겹쳤으므로
+ * 상속 페이지는 상속 안내로, 나머지는 각자 분야 안내로 잇는다. 등기 안내 링크는 기존과 같다.
+ */
+function topicHubLinks(spec: SeoLandingSpec): NonNullable<PageSection["links"]> {
+  const topic = `${spec.serviceName ?? ""} ${spec.serviceId ?? ""} ${spec.slug}`;
+  if (/상속|포기|한정|유언|후견|inherit|renunciation|qualified/.test(topic)) {
+    return [
+      { href: "/부산상속법무사", label: "상속 절차 중 먼저 할 일 고르기" },
+      { href: "/부산상속등기", label: "부산 상속등기 절차" },
+      { href: "/services", label: "업무안내" },
+    ];
+  }
+  if (/회생|파산|면책|rehabilitation|bankruptcy/.test(topic)) {
+    return [
+      { href: "/부산개인회생", label: "부산 개인회생 절차" },
+      { href: "/개인회생파산", label: "회생·파산 비교" },
+      { href: "/services", label: "업무안내" },
+    ];
+  }
+  if (/법인|임원|본점|설립|정관|증자|해산|청산|corporate|company|director/.test(topic)) {
+    return [
+      { href: "/부산법인등기", label: "부산 법인등기 안내" },
+      { href: "/부산등기법무사", label: "부산 등기 법무사" },
+      { href: "/services", label: "업무안내" },
+    ];
+  }
+  return [
+    { href: "/부산등기법무사", label: "부산 등기 법무사" },
+    { href: "/부산부동산등기", label: "부산 부동산등기" },
+    { href: "/services", label: "업무안내" },
+  ];
+}
+
 function parentHubSection(spec: SeoLandingSpec): PageSection | null {
   const region = spec.regionLabel ?? "부산";
   if (spec.type === "region-lawyer" && region !== "부산") {
@@ -504,11 +540,7 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
           { href: "/부산상속등기", label: "부산 상속등기 절차" },
           { href: "/부산법무사상담", label: "상담 안내" },
         ]
-      : [
-          { href: "/부산등기법무사", label: "부산 등기 법무사" },
-          { href: "/부산상속법무사", label: "부산 상속 법무사" },
-          { href: "/부산법무사상담", label: "상담 안내" },
-        ];
+      : [...topicHubLinks(spec).filter((link) => link.href !== "/services"), { href: "/부산법무사상담", label: "상담 안내" }];
     return {
       title: "관련 안내 더 보기",
       body: `${region} ${spec.serviceName} 절차를 확인한 뒤 다른 업무와 비교가 필요하면 아래 안내를 참고하세요.`,
@@ -519,11 +551,7 @@ function parentHubSection(spec: SeoLandingSpec): PageSection | null {
     return {
       title: "함께 보면 좋은 안내",
       body: `${spec.serviceName} 절차 전체와 다른 업무와의 차이는 아래 안내에서 확인할 수 있습니다. 필요하면 상담으로 이어가면 됩니다.`,
-      links: [
-        { href: "/부산등기법무사", label: "부산 등기 법무사" },
-        { href: "/부산상속법무사", label: "부산 상속 법무사" },
-        { href: "/services", label: "업무안내" },
-      ],
+      links: topicHubLinks(spec),
     };
   }
   return null;

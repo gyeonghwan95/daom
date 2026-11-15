@@ -37,6 +37,7 @@ import {
 } from "@/lib/geo/busan-registry";
 import { formatPlaceList, withRegionLabel } from "../region-label";
 import { serviceLinkPath } from "@/lib/seo/service-path";
+import { josa } from "@/lib/korean/josa";
 
 /** 관할 안내에서 법인 본점(상업등기) 문장 대신 상속등기 관할을 쓰는 상속 안내 페이지(같은 builder의 /부산법무사비용 등은 그대로) */
 const INHERITANCE_GUIDE_SLUGS = new Set(["상속등기비용", "상속등기필요서류", "상속등기기간"]);
@@ -195,7 +196,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     identity?.typicalSituations ?? [
       {
         title: `${config.regionLabel}에서 자주 검토하는 상황`,
-        summary: `${config.regionLabel} 생활권에서 ${serviceLabel}를 진행할 때는 관할·서류·일정을 사건 내용에 맞춰 확인합니다.`,
+        summary: `${config.regionLabel} 생활권에서 ${josa(serviceLabel, "을/를")} 진행할 때는 관할·서류·일정을 사건 내용에 맞춰 확인합니다.`,
       },
     ]
   ).map((row) => ({
@@ -451,7 +452,7 @@ function buildConversionPage(config: LocalLandingConfig): LocalLandingPage | nul
   const whenNeeded = topic.whenNeeded?.length
     ? topic.whenNeeded
     : [
-        `${serviceLabel}를 진행하기 전 예상 비용을 비교하고 싶을 때`,
+        `${josa(serviceLabel, "을/를")} 진행하기 전 예상 비용을 비교하고 싶을 때`,
         `가족·동업자와 비용 분담을 논의해야 할 때`,
         `등기 수수료·세금·법무사 보수를 구분해 알고 싶을 때`,
         `보정·병행 등기 등 추가 비용 가능성을 확인하고 싶을 때`,
@@ -725,7 +726,7 @@ function buildBusinessZonePage(config: LocalLandingConfig): LocalLandingPage | n
 
   const consultationCases = zone.commonCases.slice(0, 3).map((c, i) => ({
     title: `${zone.zoneName} ${serviceLabel} 사례 ${i + 1}`,
-    summary: `${zone.zoneName} 소재 의뢰인이 ${c}를 진행하셨습니다. ${config.caseAngle ?? "정관·결의서를 확인한 뒤"} 관할 등기소에 접수했습니다.`,
+    summary: `${zone.zoneName} 소재 의뢰인이 ${josa(c, "을/를")} 진행하셨습니다. ${config.caseAngle ?? "정관·결의서를 확인한 뒤"} 관할 등기소에 접수했습니다.`,
   }));
 
   const faqs: ServiceFaq[] = [
@@ -823,7 +824,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
   const consultationCases = [
     {
       title: `${topic.title} 상담 사례`,
-      summary: `${config.regionLabel}에서 ${topic.title}를 검토할 때는 ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하는 흐름이 일반적입니다.`,
+      summary: `${config.regionLabel}에서 ${josa(topic.title, "을/를")} 검토할 때는 ${config.caseAngle ?? "관련 자료와 당사자 구성을 확인한 뒤"} 법무사 보수와 사건별 실비를 항목별로 구분해 안내하는 흐름이 일반적입니다.`,
     },
     {
       title: `상속·매매 병행 사례`,
@@ -837,7 +838,7 @@ function buildRealEstateDevPage(config: LocalLandingConfig): LocalLandingPage | 
 
   const faqs: ServiceFaq[] = [
     {
-      question: `${topic.title}와 일반 매매 등기의 차이는?`,
+      question: `${josa(topic.title, "과/와")} 일반 매매 등기의 차이는?`,
       answer: topic.legalPoints.join(" "),
     },
     {

@@ -37,6 +37,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type RegistryHubPageViewProps = {
   page: PageData;
@@ -286,7 +287,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         <ProseParagraphs
           paragraphs={[
             "다옴법무사사무소는 해운대·센텀에 있습니다. 부동산 소재지나 법인 본점이 부산 어디에 있든 상담은 가능하며, 실제 접수는 관할 등기소를 확인한 뒤 진행합니다.",
-            "등기소 위치나 근처 법무사를 찾는 검색과, 등기업무 자체를 맡길 법무사를 찾는 검색은 목적이 다릅니다. 관할·방문 동선이 궁금하시면 아래 안내를, 업무 종류와 서류가 궁금하시면 이 페이지의 업무 안내를 보시면 됩니다.",
+            "등기소 위치와 접수 창구가 궁금한 것과, 등기업무 자체를 맡길 곳을 고르는 것은 다른 문제입니다. 관할·방문 동선은 아래 안내에서, 업무 종류와 서류는 위의 업무 안내에서 확인하시면 됩니다.",
           ]}
         />
         <ul className="mt-4 flex flex-wrap gap-3">
@@ -341,6 +342,9 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
           </Link>
         </p>
       </ContentSection>
+
+      <QueryAnswerSection path={page.path} />
+
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={registryHubFaqs} />

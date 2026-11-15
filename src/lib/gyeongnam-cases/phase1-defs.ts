@@ -282,7 +282,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "증산 양산 아파트 상속등기는 관할 특례 적용 가능성을 검토합니다. 법인 본점이전과 달리 상속인·부동산 소재 중심으로 관할을 판단합니다.",
     visitHint: "증산에서 부산 해운대 방문으로 위임·인감 원본을 확인할 수 있습니다.",
-    remoteHint: "증산 아파트 등기부·협의분할안 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "증산 아파트 등기부·협의분할안 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "사송상속등기법무사",
@@ -432,7 +432,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "성산구 창원 아파트·상가 상속등기는 관할 특례 검토 대상입니다. 법인등기와 달리 본점 소재지가 아닌 상속 신청 관할을 확인합니다.",
     visitHint: "성산구에서 부산 해운대 방문으로 위임·인감을 확인합니다.",
-    remoteHint: "성산구 등기부·협의분할안 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "성산구 등기부·협의분할안 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "마산합포구상속등기법무사",
@@ -528,7 +528,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "마산회원구·내서 상속부동산은 관할 특례 검토 대상입니다. 법인등기는 본점 관할 등기소 기준을 유지합니다.",
     visitHint: "회원구에서 부산 해운대 방문 상담이 가능합니다.",
-    remoteHint: "회원구·내서 등기부 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "회원구·내서 등기부 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "진해구상속등기법무사",
@@ -576,7 +576,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "진해구 창원 상속부동산은 관할 특례 검토 대상입니다. 법인·회생은 법정관할 유지로 상속과 구분합니다.",
     visitHint: "진해에서 부산 해운대 방문으로 원본 서류를 확인합니다.",
-    remoteHint: "진해구 등기부·가족관계 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "진해구 등기부·가족관계 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "경남상속등기비용",
@@ -1004,7 +1004,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "김해 거주·부산 부동산 상속등기는 관할 특례 검토 대상입니다. 법인등기는 본점 소재 등기소 법정관할을 유지합니다.",
     visitHint: "김해에서 부산 해운대 방문 상담이 가능합니다.",
-    remoteHint: "부산 등기부·위임 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "부산 등기부·위임 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "부산거주양산부동산상속",
@@ -1110,7 +1110,7 @@ export const phase1GyeongnamDefs: GyeongnamLandingDef[] = [
     jurisdictionNote:
       "양산 거주·부산 부동산 상속등기는 관할 특례 검토 대상입니다. 법인등기는 본점 소재 등기소 법정관할을 따릅니다.",
     visitHint: "양산에서 부산 해운대 방문 상담이 가능합니다.",
-    remoteHint: "부산 등기부·위임 사진으로 비대면 진행를 시작합니다.",
+    remoteHint: "부산 등기부·위임 사진으로 비대면 진행을 시작합니다.",
   }),
   p({
     slug: "경남오래된상속등기",

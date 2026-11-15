@@ -24,6 +24,7 @@ import { siteImages } from "@/lib/site-images";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type SpecialEntityIntentPageViewProps = {
   page: PageData;
@@ -374,6 +375,9 @@ export function SpecialEntityIntentPageView({
       </ContentSection>
 
       <HubChildLinks path={page.path} />
+
+      <QueryAnswerSection path={page.path} />
+
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

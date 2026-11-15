@@ -30,6 +30,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { ConsultationButtons } from "@/components/consultation/ConsultationButtons";
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type SelectionHubPageViewProps = {
   page: PageData;
@@ -302,6 +303,9 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
       <ContentSection id="related" title="관련 페이지">
         <RelatedContentGrid links={content.relatedLinks} />
       </ContentSection>
+
+      <QueryAnswerSection path={page.path} />
+
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

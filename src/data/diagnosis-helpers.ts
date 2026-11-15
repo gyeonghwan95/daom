@@ -1,6 +1,7 @@
 import type { PageFaqItem, PageRelatedLink } from "@/lib/pageData/types";
 import { DIAGNOSIS_CTA_TEXT, DIAGNOSIS_SEO_KEYWORDS } from "./diagnosis-constants";
 import type { DiagnosisOutcome } from "./diagnosis";
+import { josa } from "@/lib/korean/josa";
 
 export function seoIntroParagraphs(serviceName: string, detail: string): string[] {
   return [
@@ -60,7 +61,7 @@ export function createStandardOutcomes(
       minScore: 0,
       maxScore: 24,
       title: `${serviceName} — 사전 정보 확인 단계`,
-      summary: `답변을 종합하면 ${serviceName}을 바로 진행하기보다 서류·사실관계를 정리하는 단계로 보입니다. 가능·불가능을 단정하기 어려우며, 기한 여부를 한 번 더 확인하는 것이 좋습니다.`,
+      summary: `답변을 종합하면 ${josa(serviceName, "을/를")} 바로 진행하기보다 서류·사실관계를 정리하는 단계로 보입니다. 가능·불가능을 단정하기 어려우며, 기한 여부를 한 번 더 확인하는 것이 좋습니다.`,
       riskLevel: "low",
       recommendedService,
       documents,
@@ -111,7 +112,7 @@ export function createStandardOutcomes(
       minScore: 75,
       maxScore: 999,
       title: `${serviceName} — 긴급 확인 필요`,
-      summary: `답변에 기한·채무·분쟁·과태료 등 긴급 요소가 포함되어 있습니다. ${serviceName}을 미루면 리스크가 커질 수 있어 우선 상담·서류 확인을 권합니다.`,
+      summary: `답변에 기한·채무·분쟁·과태료 등 긴급 요소가 포함되어 있습니다. ${josa(serviceName, "을/를")} 미루면 리스크가 커질 수 있어 우선 상담·서류 확인을 권합니다.`,
       riskLevel: "urgent",
       recommendedService,
       documents,

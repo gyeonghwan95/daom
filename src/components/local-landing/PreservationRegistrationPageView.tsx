@@ -27,6 +27,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type PreservationRegistrationPageViewProps = {
   page: PageData;
@@ -232,6 +233,8 @@ export function PreservationRegistrationPageView({
       </ContentSection>
 
       <PreservationB2BSections />
+
+      <QueryAnswerSection path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

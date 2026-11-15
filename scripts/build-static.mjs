@@ -238,6 +238,12 @@ try {
     stdio: "inherit",
     cwd: ROOT,
   });
+
+  // 받침과 맞지 않는 조사("상속등기을", "지급명령를")가 템플릿에서 다시 나오지 않는지 알린다(빌드는 막지 않음)
+  execSync("node scripts/check-korean-particles.mjs", {
+    stdio: "inherit",
+    cwd: ROOT,
+  });
 } finally {
   restoreApiRoutes();
 }

@@ -66,9 +66,11 @@ const FAMILY_TEST: Record<FamilyId, RegExp> = {
 };
 
 const FAMILY_LINKS: Record<FamilyId, readonly SpecialistTarget[]> = {
-  // 상속전문·상속포기 담당 페이지로는 잇지 않는다(위 주석의 실측). 한정승인 링크는 순위가 오른 상태를 유지한다
-  renunciation: [TARGETS.qualifiedAcceptance],
-  qualified: [TARGETS.qualifiedAcceptance],
+  // 상속 분야는 어느 담당 페이지로도 대량 링크를 걸지 않는다. 11-02에 링크를 받은 상속 계열 세 곳이 모두 빠졌다:
+  // 상속포기·상속전문(11-03 하락, 11-08 링크 제거), 한정승인(링크 유지 → "부산 한정승인 법무사" 11-08 3위 → 11-13 순위 밖).
+  // 2026-11-15 한정승인 링크(168개 페이지)도 제거. 순위를 유지한 등기전문(4위)·법인전문(3위) 링크는 그대로 둔다.
+  renunciation: [],
+  qualified: [],
   inheritance: [],
   rehabilitation: [TARGETS.rehabilitation],
   corporate: [TARGETS.corporateSpecialist, TARGETS.registryRecommend],

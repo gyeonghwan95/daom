@@ -30,6 +30,7 @@ import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -164,6 +165,8 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
         <PageGallery path={page.path} />
 
         <CoreLandingEvidence path={page.path} excludeHrefs={collectSectionHrefs(spec.sections)} />
+
+        <QueryAnswerSection path={page.path} />
 
         <ContentSection id="faq" title="자주 묻는 질문">
           <FAQAccordion items={[...spec.faqs]} />

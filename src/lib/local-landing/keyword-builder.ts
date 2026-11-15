@@ -15,6 +15,7 @@ import { getKeywordTopic } from "./keyword-topics";
 import { keywordDepthSections } from "./keyword-depth-sections";
 import { corporateLegalExtraFaqs } from "./corporate-legal-operations-modules";
 import { withRegionLabel } from "./region-label";
+import { josa } from "@/lib/korean/josa";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -82,7 +83,7 @@ export function buildKeywordHubPage(
           }
         : {
             title: `${topicTitleWithRegion} 진행 안내`,
-            summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 진행할 때는 필요 서류·기간·비용을 사건 내용에 맞춰 확인합니다.`,
+            summary: `${config.regionLabel}에서 ${josa(config.caseAngle ?? topic.caseAngle ?? topic.title, "을/를")} 진행할 때는 필요 서류·기간·비용을 사건 내용에 맞춰 확인합니다.`,
             href: config.relatedCaseSlug ?? topic.relatedCaseSlug
               ? `/services/cases/${config.relatedCaseSlug ?? topic.relatedCaseSlug}`
               : topic.relatedCaseLinks[0]?.href,

@@ -9,6 +9,7 @@ import {
   pickByIds,
 } from "./content-pools";
 import { caseNationwidePath, type RegionLandingDef } from "./types";
+import { josa } from "@/lib/korean/josa";
 
 const DISCLAIMER =
   "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
@@ -100,7 +101,7 @@ function sectionTitleVariants(def: RegionLandingDef, seed: number): string[] {
     [
       `${r} 상속등기 가능 여부부터 확인하기`,
       "부산 해운대 사무소에 비대면으로 맡기는 이유",
-      `${r}과 타지역 상속인의 거리 문제`,
+      `${josa(r, "과/와")} 타지역 상속인의 거리 문제`,
       "필요서류 체크리스트",
       "비용 안내 방식",
       "진행 상황 공유와 관련 안내",

@@ -38,6 +38,7 @@ import { siteImages } from "@/lib/site-images";
 import type { PageData } from "@/lib/pageData/types";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type BusanLawyerHubPageViewProps = {
   page: PageData;
@@ -336,6 +337,8 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
         />
         <RelatedContentGrid links={busanLawyerHubDistrictLinks} columns={2} />
       </ContentSection>
+
+      <QueryAnswerSection path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={busanLawyerHubFaqs} />

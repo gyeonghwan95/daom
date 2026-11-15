@@ -53,6 +53,7 @@ import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -142,7 +143,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ? []
       : [
           content.searchIntents.length > 0
-            ? `이런 검색·상담이 많습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
+            ? `이런 상담이 많습니다. ${content.searchIntents.slice(0, 3).join(" ")}`
             : "",
           content.whenNeeded.length > 0
             ? `언제 필요한지부터 보면 판단이 쉬워집니다. ${content.whenNeeded.slice(0, 3).join(" ")}`
@@ -410,6 +411,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       <PageGallery path={page.path} />
 
       <CoreLandingEvidence path={page.path} />
+
+      <QueryAnswerSection path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

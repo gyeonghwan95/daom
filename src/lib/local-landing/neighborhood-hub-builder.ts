@@ -9,6 +9,7 @@ import { getNeighborhoodTopic } from "./neighborhood-hub-topics";
 import { buildStationSectionsForHost } from "@/lib/seo/station-sections";
 import { withConsultHubLink } from "@/lib/seo/consult-hub-link";
 import { withRegionLabel } from "./region-label";
+import { josa } from "@/lib/korean/josa";
 
 function getRelatedBlogPosts(
   serviceSlug: string,
@@ -50,7 +51,7 @@ export function buildNeighborhoodHubPage(
 
   const consultationCase = {
     title: `${config.regionLabel}에서 상담이 필요한 대표 상황`,
-    summary: `${config.regionLabel}에서 ${config.caseAngle ?? topic.caseAngle ?? topic.title}을 검토할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
+    summary: `${config.regionLabel}에서 ${josa(config.caseAngle ?? topic.caseAngle ?? topic.title, "을/를")} 검토할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
     href: config.relatedCaseSlug ?? topic.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug ?? topic.relatedCaseSlug}`
       : undefined,
@@ -97,13 +98,14 @@ export function buildNeighborhoodHubPage(
     },
     consultationCase,
     consultationCases,
-    legalIssues: topic.consultationTypes.slice(0, 4).map(
-      (t) => `${config.regionLabel}에서 ${t}를 검토 중이시라면 상담을 권합니다.`,
-    ),
+    // 예전에는 항목마다 "○○에서 △△를 검토 중이시라면 상담을 권합니다"를 붙여 같은 틀의 문장이 한 페이지에 두 번씩 찍혔다(2026-11-15).
+    // 항목 자체가 이미 구체적인 상황이라 그대로 보여 준다.
+    legalIssues: topic.consultationTypes.slice(0, 4),
     precautions: topic.registryGuide.notes,
     procedures: topic.procedures,
     documents: topic.documents,
-    costGuide: `${config.regionLabel} 의뢰 사건도 사건 유형별로 법무사 수임료·등기 수수료·세금을 분리해 안내합니다. ${topic.livingAreaBody.slice(0, 120)}…`,
+    // 생활권 설명을 120자에서 잘라 "…"로 끝내던 문장을 완결된 비용 안내로 바꿨다(2026-11-15)
+    costGuide: `${config.regionLabel} 사건도 법무사 보수와 등기신청수수료, 취득세·등록면허세 같은 세금을 나눠 안내합니다. 확정 금액은 등기부와 계약서·가족관계 서류를 본 뒤 항목별로 말씀드립니다.`,
     faqs: topic.faqs,
     lawyerOpinion: buildLawyerOpinion(config.regionLabel, topic.title),
     directionsNote: buildDirectionsNote(config),

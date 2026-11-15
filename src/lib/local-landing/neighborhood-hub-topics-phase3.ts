@@ -1,4 +1,5 @@
 import type { NeighborhoodTopic } from "./neighborhood-hub-topics";
+import { josa } from "@/lib/korean/josa";
 
 type TopicInput = Omit<NeighborhoodTopic, "slug" | "title" | "h1"> & {
   slug: string;
@@ -18,7 +19,7 @@ function makeTopic({
   ...topic
 }: TopicInput): NeighborhoodTopic {
   const [propertyType, decisionPoint, documentPoint] = localFocus;
-  const closer = `${headline}에서는 ${propertyType}를 볼 때 ${decisionPoint}를 ${documentPoint}와 맞춰 확인합니다. 다옴법무사사무소는 해운대 센텀에서 상담합니다.`;
+  const closer = `${headline}에서는 ${josa(propertyType, "을/를")} 볼 때 ${josa(decisionPoint, "을/를")} ${josa(documentPoint, "과/와")} 맞춰 확인합니다. 다옴법무사사무소는 해운대 센텀에서 상담합니다.`;
   return {
     slug,
     title: `${headline} 법무사`,

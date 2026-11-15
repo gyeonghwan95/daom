@@ -78,6 +78,7 @@ import {
 } from "@/lib/local-landing/corporate-legal-operations-modules";
 import { shouldShowNaverBlogMoreCta } from "@/lib/naver-blog/more-posts-cta";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 /** thin/long-tail SEO 랜딩 — 키워드 chip 도배 억제 (meta keywords는 유지) */
 const KEYWORD_CHIP_SUPPRESS_CATEGORIES = new Set<PageData["category"]>([
@@ -454,6 +455,8 @@ export function PageDataTemplate({
       ) : null}
 
       <CoreLandingEvidence path={page.path} />
+
+      <QueryAnswerSection path={page.path} />
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={displayFaqs} />

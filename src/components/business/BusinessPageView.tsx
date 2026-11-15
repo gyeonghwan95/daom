@@ -23,6 +23,7 @@ import type { PageData } from "@/lib/pageData/types";
 import type { BusinessScopeLevel } from "@/lib/business/types";
 import { siteImages } from "@/lib/site-images";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 const SCOPE_LABELS: Record<BusinessScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -290,6 +291,9 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
           <RelatedContentGrid links={content.lectureLinks} />
         </ContentSection>
       ) : null}
+
+      <QueryAnswerSection path={page.path} />
+
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />

@@ -25,6 +25,7 @@ import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -131,6 +132,8 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
         <PageSerpCarousel path={spec.path} />
 
         <CoreLandingEvidence path={spec.path} />
+
+        <QueryAnswerSection path={spec.path} />
 
         <ContentSection id="faq" title={spec.faqTitle}>
           <FAQAccordion items={[...spec.faqs]} />

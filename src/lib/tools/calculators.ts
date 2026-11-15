@@ -1,4 +1,15 @@
 import type { ToolCalculatorInput, ToolCalculatorResult, ToolCalculatorType } from "./types";
+/**
+ * 받침에 맞는 조사(을/를·과/와). src/lib/korean/josa.ts 와 같은 규칙.
+ * 이 파일은 node 테스트(tests/tool-calculators.spec.mjs)가 경로 별칭 없이 직접 불러와서 import 대신 여기 둔다.
+ */
+function josa(word: string, pair: "을/를" | "과/와"): string {
+  const ch = word.replace(/[\s)\]」』"'’”.,·…]+$/u, "").slice(-1);
+  const code = ch ? ch.charCodeAt(0) - 0xac00 : -1;
+  const batchim = code >= 0 && code <= 11171 ? code % 28 !== 0 : /[013678]$/.test(ch);
+  const [withBatchim, withoutBatchim] = pair.split("/");
+  return word + (batchim ? withBatchim : withoutBatchim);
+}
 
 function parseDate(value: string): Date | null {
   const ymd = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
@@ -73,9 +84,9 @@ function todayStart(): Date {
  */
 export function parseInputDate(value: string, label: string): { date: Date } | { error: string } {
   const trimmed = value.trim();
-  if (!trimmed) return { error: `${label}을 입력해 주세요.` };
+  if (!trimmed) return { error: `${josa(label, "을/를")} 입력해 주세요.` };
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trimmed);
-  if (!m) return { error: `${label}을 연-월-일 형식으로 다시 입력해 주세요. 연도가 4자리인지 확인해 주세요.` };
+  if (!m) return { error: `${josa(label, "을/를")} 연-월-일 형식으로 다시 입력해 주세요. 연도가 4자리인지 확인해 주세요.` };
   const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
   const date = new Date(y, mo - 1, d);
   if (date.getFullYear() !== y || date.getMonth() !== mo - 1 || date.getDate() !== d || y < 1900) {
@@ -451,7 +462,7 @@ function calcPaymentOrderFee(input: ToolCalculatorInput): ToolCalculatorResult {
     amount >= 50_000_000 ? "caution" : "low";
 
   return {
-    summary: `청구금액 ${won(amount)}, 당사자 ${parties}명 기준 지급명령 신청 때 법원에 내는 돈은 인지액 ${won(orderStamp)}과 송달료 ${won(serviceFee)}, 합계 ${won(total)}입니다.`,
+    summary: `청구금액 ${won(amount)}, 당사자 ${parties}명 기준 지급명령 신청 때 법원에 내는 돈은 인지액 ${josa(won(orderStamp), "과/와")} 송달료 ${won(serviceFee)}, 합계 ${won(total)}입니다.`,
     details: [
       `인지액: ${won(orderStamp)} — 소장 인지액의 10분의 1(민사소송 등 인지법 제7조 제2항), 1천원 미만은 1천원·100원 미만은 버림`,
       `송달료: ${won(serviceFee)} — 1회 ${won(SERVICE_FEE_PER_ROUND)} × 당사자 ${parties}명 × 6회분 예납, 남으면 돌려받음`,

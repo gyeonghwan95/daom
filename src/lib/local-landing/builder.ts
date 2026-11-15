@@ -37,6 +37,7 @@ import {
   buildJurisdictionGuideForRegionKey,
   getRegistryOfficeForRegionKey,
 } from "@/lib/geo/busan-registry";
+import { josa } from "@/lib/korean/josa";
 
 const legalIssuesByService: Record<string, string[]> = {
   "inheritance-registration": [
@@ -258,7 +259,7 @@ function buildLawyerOpinion(
   serviceLabel: string,
 ): string {
   const labeled = withRegionLabel(regionLabel, serviceLabel);
-  return `${lawyerProfileMeta.fullTitle}는 해운대 센텀에서 ${labeled}를 상담합니다. 경력·자격은 소개 페이지에서 확인하실 수 있습니다.`;
+  return `${lawyerProfileMeta.fullTitle}는 해운대 센텀에서 ${josa(labeled, "을/를")} 상담합니다. 경력·자격은 소개 페이지에서 확인하실 수 있습니다.`;
 }
 
 function getRelatedBlogPosts(
@@ -338,7 +339,7 @@ export function buildLocalLandingPage(
         ? "‘파산’이라는 말은 기업 파산과 개인파산·면책을 함께 가리키는 경우가 많습니다. 이 페이지는 그 차이를 가른 뒤, 개인 채무 정리는 부산 개인파산 안내로 연결합니다. 등기소·상속·매매와는 다른 부산회생법원 절차입니다."
         : isCityBankruptcyOwner
           ? "부산에 사는 개인의 개인파산·면책 신청은 부산회생법원 사건을 기준으로 준비합니다. 채무·재산 목록, 소득과 생계비, 최근 변제·재산 처분 내역을 먼저 정리하면 개인회생과 파산 중 무엇을 볼지 가를 수 있습니다. 등기소·상속·매매와는 다른 법원 절차입니다."
-          : `${config.regionLabel}에 거주하면서 ${procedureLabel}을 찾는 경우, 이 페이지는 해당 구·동의 상담 진입점입니다. 신청 자격·서류·부산회생법원 준비의 전체 절차는 상위 안내에서 이어집니다. 등기소·상속·매매와는 다른 법원 절차입니다.`,
+          : `${config.regionLabel}에 거주하면서 ${josa(procedureLabel, "을/를")} 찾는 경우, 이 페이지는 해당 구·동의 상담 진입점입니다. 신청 자격·서류·부산회생법원 준비의 전체 절차는 상위 안내에서 이어집니다. 등기소·상속·매매와는 다른 법원 절차입니다.`,
       whenNeeded: [
         `${config.regionLabel}에 살면서 ${procedureLabel} 상담이 필요할 때`,
         "소득·채무·재산으로 신청 방향을 가늠하고 싶을 때",
@@ -411,11 +412,11 @@ export function buildLocalLandingPage(
     };
   }
 
-  const problemStatement = `${district.context} ${formatPlaceList(config.regionLabel, neighborhoodPlaces)}에서 ${serviceLabel}를 진행할 때는 부동산·법인 소재지와 당사자 서류를 기준으로 관할과 순서를 맞춥니다. 이 페이지는 ${serviceLabel}만 다루며, 상담은 해운대 센텀 다옴법무사사무소에서 이어집니다.`;
+  const problemStatement = `${district.context} ${formatPlaceList(config.regionLabel, neighborhoodPlaces)}에서 ${josa(serviceLabel, "을/를")} 진행할 때는 부동산·법인 소재지와 당사자 서류를 기준으로 관할과 순서를 맞춥니다. 이 페이지는 ${serviceLabel}만 다루며, 상담은 해운대 센텀 다옴법무사사무소에서 이어집니다.`;
 
   const consultationCase = {
-    title: `${config.regionLabel}에서 ${serviceLabel}를 검토하는 대표 상황`,
-    summary: `${config.regionLabel}에서 ${config.caseAngle ?? serviceLabel}를 진행할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
+    title: `${config.regionLabel}에서 ${josa(serviceLabel, "을/를")} 검토하는 대표 상황`,
+    summary: `${config.regionLabel}에서 ${josa(config.caseAngle ?? serviceLabel, "을/를")} 진행할 때는 관할·필요 서류·일정을 사건 내용에 맞춰 확인합니다.`,
     href: config.relatedCaseSlug
       ? `/services/cases/${config.relatedCaseSlug}`
       : undefined,

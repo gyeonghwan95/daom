@@ -28,6 +28,7 @@ import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
+import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -330,6 +331,9 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       </ContentSection>
 
       <HubChildLinks path={page.path} />
+
+      <QueryAnswerSection path={page.path} />
+
 
       <ContentSection id="faq" title="자주 묻는 질문">
         <FAQAccordion items={content.faqs} />
