@@ -10,6 +10,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import type { PageData } from "@/lib/pageData/types";
 import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 export type PracticeHubCard = {
   href: string;
@@ -56,6 +57,8 @@ export function PracticeHubPageView({
         serviceSlug={page.serviceSlug}
       />
 
+      <WorkRecordInline path={page.path} slot={0} />
+
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => (
           <li key={card.href}>
@@ -72,6 +75,7 @@ export function PracticeHubPageView({
         ))}
       </ul>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <CTASection
         pageType="faq"
         title="상담·협업 문의"

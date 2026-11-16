@@ -28,6 +28,7 @@ import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type PreservationRegistrationPageViewProps = {
   page: PageData;
@@ -174,6 +175,7 @@ export function PreservationRegistrationPageView({
         </WarningBox>
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="건축주가 준비해야 할 서류">
         <ChecklistBox items={content.documents} note={content.documentsNote} />
       </ContentSection>
@@ -195,6 +197,7 @@ export function PreservationRegistrationPageView({
         </WarningBox>
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="problems" title="보존등기에서 자주 생기는 문제">
         <div className="grid gap-3 sm:grid-cols-2">
           {content.commonProblems.map((problem) => (

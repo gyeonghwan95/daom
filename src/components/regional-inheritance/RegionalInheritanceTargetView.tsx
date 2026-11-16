@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
@@ -22,6 +23,7 @@ import type { BreadcrumbItem } from "@/types/breadcrumb";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type RegionalInheritanceTargetViewProps = {
   target: RegionalInheritanceTarget;
@@ -104,14 +106,17 @@ export function RegionalInheritanceTargetView({
           </figure>
         </header>
 
-        {target.sections.map((section) => (
-          <ContentSection key={section.id} id={section.id} title={section.title}>
+        {target.sections.map((section, sectionIndex, all) => (
+          <Fragment key={section.id}>
+          <ContentSection id={section.id} title={section.title}>
             <div className="space-y-4">
               {section.blocks.map((block, index) => (
                 <BlockView key={`${section.id}-${index}`} block={block} />
               ))}
             </div>
           </ContentSection>
+          <WorkRecordSlot path={target.path} index={sectionIndex} total={all.length} />
+          </Fragment>
         ))}
 
         <ContentSection id="faq" title={`${target.region} 상속등기 자주 묻는 질문`}>

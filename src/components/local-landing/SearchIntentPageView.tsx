@@ -54,6 +54,7 @@ import { consultationInquiryCopy } from "@/lib/consultation-inquiry";
 import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -359,6 +360,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="준비서류">
         <ChecklistBox
           items={content.documents}
@@ -397,6 +399,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         />
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="mistakes" title="자주 하는 실수">
         <WarningBox title="상담 전에 자주 놓치는 부분">
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-navy/85 md:text-base">

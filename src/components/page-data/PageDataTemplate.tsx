@@ -79,6 +79,7 @@ import {
 import { shouldShowNaverBlogMoreCta } from "@/lib/naver-blog/more-posts-cta";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 /** thin/long-tail SEO 랜딩 — 키워드 chip 도배 억제 (meta keywords는 유지) */
 const KEYWORD_CHIP_SUPPRESS_CATEGORIES = new Set<PageData["category"]>([
@@ -396,6 +397,9 @@ export function PageDataTemplate({
         </>
       ) : null}
 
+      {/* 실제 업무 기록 ① — 절차·서류를 읽은 직후 */}
+      <WorkRecordInline path={page.path} slot={0} />
+
       {!isInheritanceSurgeryTarget && distinctConsultationPoints(page).length > 0 ? (
         <ContentSection id="consultation-points" title="상담 포인트">
           <ChecklistBox items={distinctConsultationPoints(page)} />
@@ -455,6 +459,9 @@ export function PageDataTemplate({
       ) : null}
 
       <CoreLandingEvidence path={page.path} />
+
+      {/* 실제 업무 기록 ② — 상세 안내를 다 읽고 FAQ로 넘어가기 전 */}
+      <WorkRecordInline path={page.path} slot={1} />
 
       <QueryAnswerSection path={page.path} />
 

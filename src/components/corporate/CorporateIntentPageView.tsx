@@ -29,6 +29,7 @@ import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type CorporateIntentPageViewProps = {
   page: PageData;
@@ -297,6 +298,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         <ChecklistBox items={content.decisionBodies} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="준비서류">
         <ChecklistBox items={content.documents} />
       </ContentSection>
@@ -312,6 +314,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost" title="기간·비용에 영향을 주는 요소">
         <ChecklistBox items={content.costFactors} />
       </ContentSection>

@@ -32,6 +32,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import { getConversionFaqsForPage } from "@/lib/service-conversion";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type SituationPageViewProps = {
   page: PageData;
@@ -225,6 +226,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         </p>
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="필요한 서류">
         <ChecklistBox
           items={situation.documents}
@@ -249,6 +251,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         </WarningBox>
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost-factors" title="절차·기간·비용에 영향을 주는 요소">
         <ChecklistBox items={situation.costFactors} />
         <WarningBox title="비용·기간 안내">

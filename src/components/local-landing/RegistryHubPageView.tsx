@@ -38,6 +38,7 @@ import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type RegistryHubPageViewProps = {
   page: PageData;
@@ -185,6 +186,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       <PageTextCardFigure path={page.path} />
       <PageGallery path={page.path} />
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="process" title="어떻게 진행하나요">
         <div className="grid items-stretch gap-4 md:grid-cols-2">
           {registryHubProcess.map((step) => (
@@ -326,6 +328,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
         </ul>
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost" title="등기비용은 어떻게 정해지나요">
         <ProseParagraphs
           paragraphs={[

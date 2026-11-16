@@ -39,6 +39,7 @@ import type { PageData } from "@/lib/pageData/types";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type BusanLawyerHubPageViewProps = {
   page: PageData;
@@ -192,6 +193,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
         serviceSlug={page.serviceSlug}
       />
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="process" title="어떻게 진행하나요">
         <div className="grid items-stretch gap-4 md:grid-cols-2">
           {busanLawyerHubProcess.map((step) => (
@@ -310,6 +312,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
         />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost" title="비용은 어떻게 정해지나요">
         <ProseParagraphs
           paragraphs={[

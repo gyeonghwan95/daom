@@ -26,6 +26,7 @@ import { resolvePageThumbnailSrc } from "@/lib/seo/page-thumbnails";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type MetroRemoteTargetViewProps = {
   spec: MetroRemoteSpec;
@@ -104,7 +105,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
           ) : null}
         </header>
 
-        {spec.sections.map((section, sectionIndex) => (
+        {spec.sections.map((section, sectionIndex, all) => (
           <Fragment key={section.id}>
             <ContentSection id={section.id} title={section.title}>
               <div className="space-y-4">
@@ -113,6 +114,7 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
                 ))}
               </div>
             </ContentSection>
+            <WorkRecordSlot path={spec.path} index={sectionIndex} total={all.length} start={1} />
             {sectionIndex === 0 ? (
               <figure className="mx-auto w-full max-w-md">
                 <div

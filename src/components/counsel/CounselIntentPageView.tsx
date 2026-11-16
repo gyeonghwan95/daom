@@ -26,6 +26,7 @@ import { siteImages } from "@/lib/site-images";
 import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 const SCOPE_LABELS: Record<CounselScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -253,6 +254,7 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         <IntentSelector variant="counsel" />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="준비자료">
         <ChecklistBox items={content.documents} />
       </ContentSection>
@@ -268,6 +270,7 @@ export function CounselIntentPageView({ page }: CounselIntentPageViewProps) {
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost" title="비용이 달라지는 요소">
         <ChecklistBox items={content.costFactors} />
         {content.commonMistakes.length > 0 ? (

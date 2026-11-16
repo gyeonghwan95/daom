@@ -19,8 +19,17 @@ export type WorkRecord = {
   file: string;
   /** 이미지 속 제목(두 줄, \n) */
   title: string;
-  /** 그림 아래 설명 — 어떤 서류인지 사실만 */
+  /** 그림 아래 설명 — 어떤 서류·장면인지 사실만 */
   caption: string;
+  /** document: 사무소가 작성·접수·수령한 서류 / field: 법무사가 기관을 찾은 현장 / office: 사무실에서 서류를 검토하는 모습 */
+  kind?: "document" | "field" | "office";
+};
+
+/** 카드 아래 한 줄 — 사진 종류별로 사실만 */
+export const WORK_RECORD_NOTE: Record<NonNullable<WorkRecord["kind"]>, string> = {
+  document: "다옴법무사사무소가 진행한 사건의 실제 서류를 찍은 사진입니다. 의뢰인 정보는 가렸습니다.",
+  field: "안윤정 법무사가 직접 법원·등기소·관공서를 찾아 업무를 보는 모습입니다.",
+  office: "담당 법무사가 사무실에서 서류를 직접 검토하는 모습입니다.",
 };
 
 export const WORK_RECORDS: Record<string, WorkRecord> = {
@@ -130,6 +139,79 @@ export const WORK_RECORDS: Record<string, WorkRecord> = {
     title: "경매 낙찰\n매각대금 완납증명",
     caption: "낙찰 뒤 소유권이전에 쓰는 매각대금완납증명원",
   },
+  // ── 2026-11-16 추가: 서류
+  distribution: {
+    file: "배당요구-신청서작성",
+    title: "배당요구\n신청서 작성",
+    caption: "채권계산서와 함께 작성한 배당요구신청서",
+  },
+  factInquiry: {
+    file: "사실조회촉탁-신청서작성",
+    title: "사실조회촉탁\n신청서 작성",
+    caption: "전자소송으로 작성한 사실조회촉탁신청서",
+  },
+  registryObjection: {
+    file: "등기이의신청-신청서",
+    title: "등기 각하결정\n이의신청서",
+    caption: "등기신청 각하결정에 대한 이의신청서",
+  },
+  seizure: {
+    file: "채권압류추심명령-결정문",
+    title: "채권압류·추심명령\n법원 결정문",
+    caption: "법원에서 받은 채권압류 및 추심명령 결정문",
+  },
+  landSplit: {
+    file: "토지분필-등기신청서",
+    title: "토지 분필등기\n신청서",
+    caption: "토지 분필등기 신청서",
+  },
+  demolition: {
+    file: "건물멸실-등기신청서",
+    title: "건물 멸실등기\n신청서",
+    caption: "건물 멸실등기 신청서",
+  },
+  familyCert: {
+    file: "가족관계-기본증명서",
+    title: "가족관계 서류\n발급·확인",
+    caption: "상속 업무에서 발급해 확인한 기본증명서(상세)",
+  },
+  // ── 2026-11-16 추가: 현장·사무실(법무사 본인)
+  registryHQ: {
+    file: "현장-부산지방법원등기국",
+    title: "등기국\n직접 방문",
+    caption: "부산지방법원 등기국을 찾은 안윤정 법무사",
+    kind: "field",
+  },
+  registryCounter: {
+    file: "현장-서부지원등기과",
+    title: "등기과\n직접 접수",
+    caption: "부산지방법원 서부지원 등기과를 찾은 안윤정 법무사",
+    kind: "field",
+  },
+  courtCivil: {
+    file: "현장-법원종합민원실",
+    title: "법원 민원실\n서류 제출",
+    caption: "부산지방법원 종합민원실·공탁 창구 앞의 안윤정 법무사",
+    kind: "field",
+  },
+  courtExec: {
+    file: "현장-민사집행과",
+    title: "민사집행과\n직접 방문",
+    caption: "부산지방법원 민사집행과를 찾은 안윤정 법무사",
+    kind: "field",
+  },
+  taxCounter: {
+    file: "현장-구청세무창구",
+    title: "구청 세무 창구\n직접 방문",
+    caption: "수영구청 민원 창구에서 업무를 보는 안윤정 법무사",
+    kind: "field",
+  },
+  officeReview: {
+    file: "사무실-서류직접검토",
+    title: "담당 법무사가\n서류 직접 검토",
+    caption: "다옴법무사사무소 로고 아래에서 서류를 검토하는 안윤정 법무사",
+    kind: "office",
+  },
   nameChange: {
     file: "개명-법원결정서류",
     title: "개명허가\n법원 결정 서류",
@@ -140,41 +222,74 @@ export const WORK_RECORDS: Record<string, WorkRecord> = {
 export type WorkRecordKey = keyof typeof WORK_RECORDS;
 
 /**
- * 경로 → 보여 줄 기록(최대 2장). 위에서부터 처음 맞는 규칙 하나만 쓴다.
+ * 경로 → 보여 줄 기록(2장, 본문 중간 두 곳에 하나씩). 위에서부터 처음 맞는 규칙 하나만 쓴다.
  * 두 번째 사진은 같은 업무 갈래일 때만 붙인다(증여 페이지에 매매 서류처럼 주제가 어긋나는 조합은 쓰지 않는다).
  * 좁은 업무(상속포기·한정승인, 근저당 말소 등)를 넓은 업무(상속, 부동산등기)보다 먼저 둔다.
  * 한정승인은 실제 한정승인 서류 사진이 없어 같은 가정법원 상속 사건인 상속포기 심판문을 보여 주되,
  * 설명은 '상속포기 사건 심판문'이라고 사실대로 쓴다.
  */
 const RULES: [RegExp, WorkRecordKey[]][] = [
-  [/특별대리인/, ["specialAgent"]],
-  [/상속포기|한정승인|inheritance-renunciation|qualified-acceptance/, ["renunciation", "inheritanceDone"]],
-  [/개명/, ["nameChange"]],
-  [/파산|면책|bankruptcy/, ["bankruptcy"]],
-  [/공탁/, ["deposit"]],
-  [/선박/, ["ship"]],
-  [/촉탁|공공기관등기|보상등기|협의취득/, ["commission"]],
-  [/복대리/, ["subAgency"]],
-  [/경매|낙찰/, ["auction"]],
-  [/임차권등기|전세보증금|보증금반환/, ["leaseOrder"]],
-  [/전세권/, ["jeonse"]],
-  [/근저당.*말소|말소.*근저당|근저당말소/, ["mortgageCancel", "mortgageSet"]],
+  // ── 가정법원
+  [/특별대리인/, ["specialAgent", "familyCert"]],
+  [/상속포기|한정승인|단순승인|숙려기간|inheritance-renunciation|qualified-acceptance/, ["renunciation", "inheritanceDone"]],
+  [/개명/, ["nameChange", "familyCert"]],
+  [/후견|실종|가족관계|검인|유언|유증|부재자|가정법원/, ["familyCert", "specialAgent"]],
+  // ── 채무·회생(회생법원 사진이 없어 파산·면책 제출 서류와 사무실 서류 검토 사진)
+  [/파산|면책|회생|신용회복|bankruptcy|rehab|personal-rehabilitation|급여-압류|빚|보증채무/, ["bankruptcy", "officeReview"]],
+  // ── 공탁·특수
+  [/공탁/, ["deposit", "courtCivil"]],
+  [/선박/, ["ship", "registryCounter"]],
+  [/촉탁|공공기관|공기업|보상등기|협의취득|이전등기.*기관/, ["commission", "registryHQ"]],
+  [/복대리|협업|원거리|타지역법무사|partners/, ["subAgency", "registryCounter"]],
+  // ── 세금(국민주택채권의 '채권'이 아래 민사 규칙에 걸리지 않게 먼저)
+  [/취득세|등록면허세|국민주택채권/, ["taxCounter", "saleDone"]],
+  // ── 보전처분(가압류·가처분)은 집행보다 먼저 — '압류' 글자에 걸려 추심명령 결정문이 붙지 않게
+  [/가압류(?!말소)|가처분(?!말소)/, ["courtCivil", "seizure"]],
+  // ── 집행(말소등기는 아래 등기 갈래)
+  [/경매|낙찰|공매/, ["auction", "distribution"]],
+  [/배당/, ["distribution", "courtExec"]],
+  [/(?<!말소)(?:압류|추심|강제집행|집행문|재산명시|재산조회|채무불이행|채권회수|채권관리|채무자-재산|판결-후)(?!말소)/, ["seizure", "courtExec"]],
+  // ── 민사 서류
+  [/지급명령|payment-order|내용증명|대여금|공사대금|계약금|손해배상|중고거래|채권/, ["courtCivil", "factInquiry"]],
+  // 소송·소액: 법무사는 법원 제출 서류 작성까지만 한다 — 소송대리로 읽힐 사진(소송대리허가신청서·변론기일통지서)은 쓰지 않는다
+  [/소액|소송|답변서|민사/, ["factInquiry", "courtCivil"]],
+  // ── 임대차
+  [/임차권|전세보증금|보증금반환|보증금|전세사기|확정일자|집주인|임대인|전입|임대차|jeonse/, ["leaseOrder", "jeonse"]],
+  [/전세권/, ["jeonse", "registryCounter"]],
+  // ── 담보
+  [/근저당.*말소|말소.*근저당|근저당말소|mortgage-cancellation/, ["mortgageCancel", "mortgageSet"]],
   [/근저당|담보/, ["mortgageSet", "mortgageCancel"]],
-  [/증여/, ["gift"]],
-  [/상속|inheritance-registration/, ["inheritanceDone", "inheritanceAgreement"]],
-  [/유상증자|증자/, ["corpCapital", "corpOfficer"]],
+  // ── 증여·상속
+  [/증여/, ["gift", "registryCounter"]],
+  [/상속|inheritance|사망|장례|고인|기여분|특별수익|유류분|재산채무|siblings/, ["inheritanceDone", "inheritanceAgreement"]],
+  // ── 법인
+  [/유상증자|무상증자|감자|증자|출자전환|가수금/, ["corpCapital", "corpOfficer"]],
   [/목적변경|상호변경/, ["corpPurpose", "corpOfficer"]],
-  [/본점이전/, ["corpRelocation", "corpOfficer"]],
-  [/임원|대표이사|이사변경|중임|director-change/, ["corpOfficer", "corpRelocation"]],
-  [/법인설립|회사설립|company-establishment/, ["corpEstablish", "corpOfficer"]],
-  [/법인|corporate-registration/, ["corpEstablish", "corpOfficer"]],
-  [/매매|소유권이전|ownership-transfer|잔금/, ["saleDone"]],
-  // 부동산등기 전반(부산 등기 법무사·등기소 안내 등) — 가장 흔한 매매 이전과 근저당 설정 기록
-  [/부동산등기|등기법무사|등기소|등기국|셀프등기|real-estate-registration/, ["saleDone", "mortgageSet"]],
+  [/본점이전|본점-이전|head-office/, ["corpRelocation", "corpOfficer"]],
+  [/임원|대표이사|이사변경|공동대표|중임|director-change|corporate-officer/, ["corpOfficer", "corpRelocation"]],
+  [/법인|회사설립|company-establishment|corporate|협동조합|조합|재단|사단|스타트업|창업|해산|청산|지점|기업|건설사|시행사/, ["corpEstablish", "corpOfficer"]],
+  // ── 건물·토지
+  [/멸실|철거|소실/, ["demolition", "registryCounter"]],
+  [/분필|건물분할|토지분할|합병등기/, ["landSplit", "registryCounter"]],
+  [/보존|신축|사용승인|건물|건축|집합건물|오피스텔|상가|공장|창고|지식산업|대지권|분양|입주|재개발|재건축|집단등기|컨테이너|증축/, ["registryCounter", "registryHQ"]],
+  // ── 등기 보정·이의
+  [/보정|반려|각하|이의/, ["registryObjection", "registryCounter"]],
+  // ── 소유권·변경 등기
+  [/매매|소유권이전|ownership-transfer|real-estate-sale|잔금|매수인|명의|지분|공동명의|공유물|재산분할|신탁|가등기|지상권|환매|예고등기|등기권리증|표시변경|도로명|말소|실권리자/, ["saleDone", "registryCounter"]],
+  // ── 등기 전반
+  [/등기|real-estate|registration/, ["registryCounter", "saleDone"]],
+  // ── 상담·비용·법무사 선택(사무소 이야기) — 담당 법무사가 직접 검토하는 모습과 완료 서류
+  [/상담|비용|보수|수임료|법무사맡기면|방문|서류가없어도|무슨법률업무|전화가어려울때|사진전자파일|자가진단|tools|situations/, ["officeReview", "inheritanceDone"]],
 ];
 
+/**
+ * 위 규칙에 맞지 않는 페이지(구·동·역 이름의 지역 안내, 업무사례 지역 허브 등)는
+ * 이 사무소가 가장 많이 맡는 상속등기·매매 이전의 완료 서류를 보여 준다.
+ */
+const GENERAL: WorkRecordKey[] = ["inheritanceDone", "saleDone"];
+
 /** 업무 페이지가 아닌 글·자료(블로그, FAQ, 용어, 언론·공지, 강의)에는 넣지 않는다 — 과하지 않게 */
-const NOT_WORK_PAGE = /^\/(blog|faq|glossary|media|notices|공지사항|강의|lectures|resources)(\/|$)/;
+const NOT_WORK_PAGE = /^\/(blog|faq|glossary|media|notices|공지사항|강의|강의이력|lectures|resources)(\/|$)|강의|교육|특강|강사/;
 
 export function getWorkRecords(path: string): WorkRecord[] {
   let decoded = path;
@@ -185,7 +300,7 @@ export function getWorkRecords(path: string): WorkRecord[] {
   }
   if (NOT_WORK_PAGE.test(decoded)) return [];
   const rule = RULES.find(([re]) => re.test(decoded));
-  return rule ? rule[1].map((k) => WORK_RECORDS[k]) : [];
+  return (rule ? rule[1] : GENERAL).map((k) => WORK_RECORDS[k]);
 }
 
 export const workRecordSrc = (file: string) => `/image/cards/work/${file}.jpg`;

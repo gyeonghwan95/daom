@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { RelatedContentGrid } from "@/components/readability";
@@ -20,6 +21,7 @@ import {
   type DistrictKey,
 } from "@/lib/case-regions";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type CaseRegionPageViewProps = {
   page: PageData;
@@ -68,8 +70,9 @@ export function CaseRegionPageView({
         serviceSlug={page.serviceSlug}
       />
 
-      {page.sections.map((section) => (
-        <section key={section.title} className="space-y-3">
+      {page.sections.map((section, sectionIndex, all) => (
+        <Fragment key={section.title}>
+        <section className="space-y-3">
           <h2 className="section-heading">{section.title}</h2>
           {section.body ? (
             <p className="body-text max-w-3xl text-navy/75">{section.body}</p>
@@ -87,6 +90,8 @@ export function CaseRegionPageView({
             </div>
           ) : null}
         </section>
+        <WorkRecordSlot path={page.path} index={sectionIndex} total={all.length} />
+        </Fragment>
       ))}
 
       {children.length > 0 ? (

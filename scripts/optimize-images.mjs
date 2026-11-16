@@ -68,7 +68,9 @@ function targetWidths(sourceWidth) {
  * Cloudflare Pages 파일 수 한도(20,000) 여유를 지키기 위해서다. 원본 JPG는 img src로 그대로 쓴다.
  */
 const GALLERY_PREFIX = "/image/cards/gallery/";
-const GALLERY_WIDTHS = [384, 640];
+// 2026-11-16: 384 폭을 뺐다 — 표시 폭이 최대 약 270px라 고해상도 화면에서도 640 하나로 충분하고, 장당 파일 1개(84개)를
+// 아껴 본문 실제 업무 기록 이미지(배포 파일 수 한도 20,000) 자리를 만든다.
+const GALLERY_WIDTHS = [640];
 /** 페이지별 4:3 대표 썸네일 — 크기는 src/lib/seo/page-thumbnail-size.ts 고정값 */
 const isPageThumb = (key) => key.startsWith("/image/og-pages/") || key.startsWith("/image/hero/");
 /**

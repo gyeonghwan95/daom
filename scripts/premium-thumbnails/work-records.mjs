@@ -47,7 +47,22 @@ const SOURCES = {
   "specialAgent": "특별대리인심판/결정문_특별대리인심판.jpg",
   "bankruptcy": "서류_파산면책 (2).jpg",
   "auction": "서류_매각완납증명.jpg",
-  "nameChange": "서류_개명.jpg"
+  "nameChange": "서류_개명.jpg",
+  // 2026-11-16 추가 — 서류
+  "distribution": "서류_배당요구.jpg",
+  "factInquiry": "서류_사실조회촉탁.jpg",
+  "registryObjection": "서류_이의신청.jpg",
+  "seizure": "서류_채권추심명령.jpg",
+  "landSplit": "서류_토지분필.jpg",
+  "demolition": "서류_건물멸실.jpg",
+  "familyCert": "상속/기본증명서(상세).jpg",
+  // 현장·사무실 — 얼굴 좌표가 등록된 기존 원본(hero-sources.mjs)을 그대로 쓴다
+  "registryHQ": "@posting/field-registry-5.jpg",
+  "registryCounter": "@posting/field-seobu-2.jpg",
+  "courtCivil": "@posting/field-court-2.jpg",
+  "courtExec": "@posting/field-court-4.jpg",
+  "taxCounter": "@posting/field-suyeong.jpg",
+  "officeReview": "@posting/office-review-tweed.jpg"
 };
 
 const OUT = path.join(ROOT, "public/image/cards/work");
@@ -58,9 +73,11 @@ const only = new Set(process.argv.slice(2));
 for (const [key, rec] of Object.entries(WORK_RECORDS)) {
   if (only.size && !only.has(key)) continue;
   if (!SOURCES[key]) throw new Error(`원본 경로 없음: ${key}`);
-  const src = path.join(POSTING_DIR, SOURCES[key]);
-  const staged = path.join(SOURCES_DIR, `work-${key}.jpg`);
-  if (!existsSync(staged)) {
+  // "@posting/<키>.jpg"는 이미 가져온 원본(얼굴 좌표 있음)을 그대로 쓴다
+  const direct = SOURCES[key].startsWith("@posting/") ? SOURCES[key] : null;
+  const src = direct ? null : path.join(POSTING_DIR, SOURCES[key]);
+  const staged = direct ? null : path.join(SOURCES_DIR, `work-${key}.jpg`);
+  if (staged && !existsSync(staged)) {
     if (!existsSync(src)) {
       console.error(`원본 없음: ${src}`);
       process.exitCode = 1;
@@ -68,7 +85,7 @@ for (const [key, rec] of Object.entries(WORK_RECORDS)) {
     }
     await sharp(src).rotate().resize(2400, 2400, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 88, mozjpeg: true }).toFile(staged);
   }
-  const { buf, crop, size } = await render({ photo: `@posting/work-${key}.jpg`, title: rec.title, format: "jpg", quality: 84 });
+  const { buf, crop, size } = await render({ photo: direct ?? `@posting/work-${key}.jpg`, title: rec.title, format: "jpg", quality: 84 });
   const out = path.join(OUT, `${rec.file}.jpg`);
   writeFileSync(out, buf);
   console.log(`${key}\t${rec.file}.jpg\t${Math.round(statSync(out).size / 1024)}KB\tcrop ${crop.width}x${crop.height} up${crop.upscale}\tfont ${size}`);

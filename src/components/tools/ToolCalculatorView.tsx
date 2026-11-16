@@ -1,5 +1,7 @@
 "use client";
 
+import { Fragment } from "react";
+
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { DiagnosisFAQ } from "@/components/diagnosis/DiagnosisFAQ";
@@ -25,6 +27,7 @@ import {
 import { ToolCalculatorForm } from "./ToolCalculatorForm";
 import { ToolCalculatorResultView } from "./ToolCalculatorResult";
 import { ToolDisclaimer } from "./ToolDisclaimer";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type ToolCalculatorViewProps = {
   page: PageData;
@@ -144,8 +147,9 @@ export function ToolCalculatorView({
         </div>
       </ContentSection>
 
-      {guideSections.map((section) => (
-        <ContentSection key={section.id} id={section.id} title={section.title}>
+      {guideSections.map((section, sectionIndex, all) => (
+        <Fragment key={section.id}>
+        <ContentSection id={section.id} title={section.title}>
           {section.body ? (
             <p className="text-sm leading-relaxed text-navy/75 md:text-base">{section.body}</p>
           ) : null}
@@ -185,6 +189,8 @@ export function ToolCalculatorView({
             </div>
           ) : null}
         </ContentSection>
+        <WorkRecordSlot path={page.path} index={sectionIndex} total={all.length} />
+        </Fragment>
       ))}
 
       <ContentSection id="tool-info" title="이 계산기로 알 수 있는 것">

@@ -30,6 +30,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type DiagnosisPageViewProps = {
   page: PageData;
@@ -143,6 +144,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="필요서류 체크리스트">
         <ChecklistBox
           items={diagnosis.requiredDocuments}
@@ -165,6 +167,7 @@ export function DiagnosisPageView({ page, diagnosis }: DiagnosisPageViewProps) {
         <ChecklistBox items={diagnosis.costFactors} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="deadlines" title="기간·기한·과태료 주의사항">
         <div className="space-y-3">
           {diagnosis.deadlineWarnings.map((item) => (

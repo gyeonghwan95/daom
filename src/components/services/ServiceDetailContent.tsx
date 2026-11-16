@@ -15,6 +15,7 @@ import { getServiceImage } from "@/lib/site-images";
 import type { ServiceDetail } from "@/types/service";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { NATIONWIDE_SERVICE_SLUGS } from "@/lib/nationwide/show-region-chip";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type ServiceDetailContentProps = {
   service: ServiceDetail;
@@ -120,6 +121,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </ol>
       </ContentBlock>
 
+      <WorkRecordInline path={path} slot={0} />
       <ContentBlock id="documents" title="준비 서류">
         <ul className="grid gap-2 sm:grid-cols-2">
           {service.documents.map((doc) => (
@@ -153,6 +155,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </ul>
       </ContentBlock>
 
+      <WorkRecordInline path={path} slot={1} />
       <ContentBlock id="our-approach" title="다옴법무사사무소의 진행 방식">
         <div className="card-surface bg-beige p-6 md:p-8">
           <p className="text-base leading-relaxed text-navy/80 md:text-lg">

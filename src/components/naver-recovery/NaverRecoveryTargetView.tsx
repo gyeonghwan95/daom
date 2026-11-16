@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import { CoreLandingEvidence } from "@/components/trust/CoreLandingExtras";
@@ -31,6 +32,7 @@ import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -147,14 +149,17 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
 
         <EarlyConsultCta slug={page.slug} message={spec.earlyCta?.message} field={spec.earlyCta?.field} />
 
-        {spec.sections.map((section) => (
-          <ContentSection key={section.id} id={section.id} title={section.title}>
+        {spec.sections.map((section, sectionIndex, all) => (
+          <Fragment key={section.id}>
+          <ContentSection id={section.id} title={section.title}>
             <div className="space-y-4">
               {section.blocks.map((block, index) => (
                 <BlockView key={`${section.id}-${index}`} block={block} />
               ))}
             </div>
           </ContentSection>
+          <WorkRecordSlot path={page.path} index={sectionIndex} total={all.length} />
+          </Fragment>
         ))}
 
         <HubChildLinks path={page.path} />

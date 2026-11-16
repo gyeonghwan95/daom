@@ -28,6 +28,7 @@ import { NationwideRemoteBanner } from "@/components/nationwide/NationwideRemote
 import { shouldShowNationwideRegionChip } from "@/lib/nationwide/show-region-chip";
 import type { PageData } from "@/lib/pageData/types";
 import { serviceLinkPath } from "@/lib/seo/service-path";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type CaseDetailViewProps = {
   page: PageData;
@@ -151,6 +152,8 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
         </ContentSection>
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={0} />
+
       {sections.documents.length > 0 ? (
         <ContentSection id="case-documents" title="준비서류">
           <ChecklistBox items={sections.documents} />
@@ -162,6 +165,8 @@ export function CaseDetailView({ page, record, faqLinks }: CaseDetailViewProps) 
           <StepTimeline steps={sections.procedures} />
         </ContentSection>
       ) : null}
+
+      <WorkRecordInline path={page.path} slot={1} />
 
       {sections.outcome ? (
         <ContentSection id="case-outcome" title="결과">

@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import type { B2BSection } from "@/lib/b2b/types";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
-export function B2BSections({ sections }: { sections: B2BSection[] }) {
+/** workRecordPath가 있으면 섹션 사이 두 곳에 실제 업무 기록 카드를 넣는다(협업 허브는 따로 배치) */
+export function B2BSections({ sections, workRecordPath }: { sections: B2BSection[]; workRecordPath?: string }) {
   return (
     <div className="space-y-8 md:space-y-10">
-      {sections.map((section) => (
+      {sections.map((section, sectionIndex) => (
+        <Fragment key={section.id}>
         <section
-          key={section.id}
           id={section.id}
           className="scroll-mt-[calc(var(--header-height)+1rem)]"
         >
@@ -115,6 +118,8 @@ export function B2BSections({ sections }: { sections: B2BSection[] }) {
             </div>
           ) : null}
         </section>
+        {workRecordPath ? <WorkRecordSlot path={workRecordPath} index={sectionIndex} total={sections.length} /> : null}
+        </Fragment>
       ))}
     </div>
   );

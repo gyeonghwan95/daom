@@ -26,6 +26,7 @@ import { getCoverImageForPageData } from "@/lib/pageData/cover-image";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type PublicAgencyRegistrationPageViewProps = {
   page: PageData;
@@ -290,6 +291,7 @@ export function PublicAgencyRegistrationPageView({
         <ChecklistBox items={content.preChecklist} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="준비서류">
         <p className="body-text mb-4 max-w-3xl">
           기관별·업무별로 필요서류가 달라질 수 있습니다. 아래는 공통적으로
@@ -314,6 +316,7 @@ export function PublicAgencyRegistrationPageView({
         <StepTimeline steps={content.inquiryProcessSteps} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="problems" title="공공기관 등기에서 자주 생기는 문제">
         <div className="grid gap-3 sm:grid-cols-2">
           {content.commonProblems.map((problem) => (

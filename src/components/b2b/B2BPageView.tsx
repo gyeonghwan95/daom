@@ -29,6 +29,7 @@ import { collaborationCategoryLabels } from "@/lib/b2b/collaboration-registry";
 import { buildJsonLdForPageData } from "@/lib/pageData/json-ld";
 import type { PageData } from "@/lib/pageData/types";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type B2BPageViewProps = {
   page: PageData;
@@ -187,6 +188,7 @@ export function B2BPageView({ page }: B2BPageViewProps) {
             </div>
           </section>
 
+          <WorkRecordInline path={page.path} slot={0} />
           <section id="principles">
             <h2 className="section-heading">협업 원칙</h2>
             <div className="mt-5">
@@ -194,6 +196,7 @@ export function B2BPageView({ page }: B2BPageViewProps) {
             </div>
           </section>
 
+          <WorkRecordInline path={page.path} slot={1} />
           <section id="process">
             <h2 className="section-heading">일반적인 협업 흐름</h2>
             <p className="body-text mt-2 max-w-3xl text-navy/75">
@@ -224,7 +227,7 @@ export function B2BPageView({ page }: B2BPageViewProps) {
         </>
       ) : null}
 
-      <B2BSections sections={content.sections} />
+      <B2BSections sections={content.sections} workRecordPath={isHub || isInquiry ? undefined : page.path} />
 
       {!isHub && !isInquiry ? (
         <section id="principles">

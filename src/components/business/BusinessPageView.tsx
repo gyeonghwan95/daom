@@ -24,6 +24,7 @@ import type { BusinessScopeLevel } from "@/lib/business/types";
 import { siteImages } from "@/lib/site-images";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 const SCOPE_LABELS: Record<BusinessScopeLevel, string> = {
   "direct-support": "직접 지원",
@@ -188,6 +189,7 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="support" title="법무사가 지원할 수 있는 기업 업무">
         <SummaryBox items={content.supportItems} />
       </ContentSection>
@@ -292,6 +294,7 @@ export function BusinessPageView({ page }: BusinessPageViewProps) {
         </ContentSection>
       ) : null}
 
+      <WorkRecordInline path={page.path} slot={1} />
       <QueryAnswerSection path={page.path} />
 
 

@@ -26,6 +26,7 @@ import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -112,7 +113,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
           ) : null}
         </header>
 
-        {spec.sections.map((section, sectionIndex) => (
+        {spec.sections.map((section, sectionIndex, all) => (
           <div key={section.id} className="content-stack">
             <ContentSection id={section.id} title={section.title}>
               <div className="space-y-4">
@@ -123,6 +124,7 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
             </ContentSection>
             {sectionIndex === 0 ? figure : null}
             {sectionIndex === 1 ? <PageTextCardFigure path={spec.path} className="my-0 md:my-0" /> : null}
+            <WorkRecordSlot path={spec.path} index={sectionIndex} total={all.length} start={2} />
             {sectionIndex === 1 ? <PageGallery path={spec.path} className="my-0 md:my-0" /> : null}
           </div>
         ))}

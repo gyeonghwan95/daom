@@ -4,7 +4,6 @@ import { TrustContactActions } from "@/components/trust/TrustContactActions";
 import { TrustInfographicViewer } from "@/components/trust/TrustInfographicViewer";
 import { TrustReviewQuote } from "@/components/trust/TrustReviewQuote";
 import { PrepResourceLink } from "@/components/resources/PrepResourceLink";
-import { WorkRecordStrip } from "@/components/trust/WorkRecordStrip";
 import { getResourceGuide, RESOURCE_BY_PAGE, resourcePath } from "@/data/resources/guides";
 import { getNaverPlaceReviewsFeed } from "@/lib/naver-place-reviews";
 import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
@@ -226,8 +225,8 @@ export function LawyerTrustShowcase() {
             ))}
           </ul>
 
-          {/* 3행: 약속·후기 | 실제 업무 기록 — 업무 기록이 없는 페이지는 한 단 */}
-          <div className="mt-1 grid gap-x-6 @3xl:has-[[data-work-records]]:grid-cols-2 @3xl:has-[[data-work-records]]:items-start">
+          {/* 3행: 약속·후기 — 실제 업무 기록 사진은 2026-11-16부터 본문 중간(WorkRecordInline)으로 옮겼다 */}
+          <div className="mt-1 grid gap-x-6 @3xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] @3xl:items-start">
             <div className="min-w-0">
               <ul className="mt-5 space-y-2">
                 {promises.map((text) => (
@@ -237,10 +236,10 @@ export function LawyerTrustShowcase() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="min-w-0">
               <TrustReviewQuote quotes={reviewQuotes} />
             </div>
-            {/* 이 페이지 업무와 같은 종류의 실제 서류 사진(개인정보 가림) — 업무 페이지에만 */}
-            <WorkRecordStrip />
           </div>
           <PrepResourceLink byPath={prepByPath} />
 

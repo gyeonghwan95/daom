@@ -31,6 +31,7 @@ import { ConsultationButtons } from "@/components/consultation/ConsultationButto
 import { getDirectConsultationChannels } from "@/lib/contact";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type SelectionHubPageViewProps = {
   page: PageData;
@@ -257,6 +258,9 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         </ContentSection>
       )}
 
+      {/* 실제 업무 기록 ① — 선택 기준·확인 항목을 읽은 직후 */}
+      <WorkRecordInline path={page.path} slot={0} />
+
       {!isConsultPrep && content.comparisonRows && content.comparisonRows.length > 0 ? (
         <ContentSection
           id="comparison"
@@ -291,6 +295,7 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         </ContentSection>
       ))}
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="preparation" title="상담 전 준비서류">
         <ChecklistBox
           items={content.preparationDocs}

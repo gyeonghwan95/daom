@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { AvailabilityPhoneLink } from "@/components/consultation/AvailabilityPhoneLink";
 import Image from "next/image";
@@ -20,6 +21,7 @@ import type { ShipSeoSpec } from "@/lib/ship-seo/types";
 import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 
 type ShipSeoPageViewProps = {
   spec: ShipSeoSpec;
@@ -93,14 +95,17 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
           </figure>
         </header>
 
-        {spec.sections.map((section) => (
-          <ContentSection key={section.id} id={section.id} title={section.title}>
+        {spec.sections.map((section, sectionIndex, all) => (
+          <Fragment key={section.id}>
+          <ContentSection id={section.id} title={section.title}>
             <div className="space-y-4">
               {section.blocks.map((block, index) => (
                 <BlockView key={`${section.id}-${index}`} block={block} />
               ))}
             </div>
           </ContentSection>
+          <WorkRecordSlot path={spec.path} index={sectionIndex} total={all.length} />
+          </Fragment>
         ))}
 
         <HubChildLinks path={spec.path} />

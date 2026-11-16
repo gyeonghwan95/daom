@@ -25,6 +25,7 @@ import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { dropParagraphsCoveredBy } from "@/lib/pageData/template-helpers";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
+import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
 
 type BuildingIntentPageViewProps = {
   page: PageData;
@@ -232,6 +233,7 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
         <ChecklistBox items={content.decisionBodies} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={0} />
       <ContentSection id="documents" title="준비서류">
         <ChecklistBox items={content.documents} />
       </ContentSection>
@@ -247,6 +249,7 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
+      <WorkRecordInline path={page.path} slot={1} />
       <ContentSection id="cost" title="기간·비용에 영향을 주는 요소">
         <ChecklistBox items={content.costFactors} />
       </ContentSection>
