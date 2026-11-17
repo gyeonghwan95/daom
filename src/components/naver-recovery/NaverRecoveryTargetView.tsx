@@ -33,6 +33,7 @@ import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type NaverRecoveryTargetViewProps = {
   page: PageData;
@@ -145,6 +146,10 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
               </figcaption>
             ) : null}
           </figure>
+          {/* 읽던 안내를 가족·담당자에게 그대로 보내기 */}
+          <div className="mt-4 print:hidden">
+            <PageShareButton />
+          </div>
         </header>
 
         <EarlyConsultCta slug={page.slug} message={spec.earlyCta?.message} field={spec.earlyCta?.field} />

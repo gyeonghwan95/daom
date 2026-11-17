@@ -10,6 +10,7 @@ import { buildReviewQuotes } from "@/lib/naver-place-reviews/topic-quote";
 import { getContactInfo, getPhoneHref } from "@/lib/contact";
 import { officeHours } from "@/lib/office-location";
 import { siteImages } from "@/lib/site-images";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type TrustHighlight = {
   label: string;
@@ -126,6 +127,8 @@ export function LawyerTrustShowcase() {
       aria-labelledby="lawyer-trust-heading"
       data-lawyer-trust
     >
+      {/* 글을 다 읽은 지점 — 가족·담당자와 함께 정하는 사람이 이 안내를 그대로 보낼 수 있게 */}
+      <PageShareButton variant="bar" className="mb-4" />
       <div className="overflow-hidden rounded-[1.75rem] border border-navy/10 bg-gradient-to-br from-cream via-white to-beige/70 shadow-[0_30px_60px_-40px_rgba(30,58,95,0.5)]">
         {/*
           한 흐름 배치(2026-11-15 재구성) — 예전엔 왼쪽 이미지 열·오른쪽 글 열 2단이라 PC에서 열 길이가 어긋나고,

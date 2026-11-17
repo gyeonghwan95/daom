@@ -6,6 +6,7 @@ import { AppClientShell } from "@/components/ux/AppClientShell";
 import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 import { seoBrand } from "@/lib/seo/brand";
 import { getMetadataBaseUrl } from "@/lib/site-url";
+import { SharedArrivalNotice } from "@/components/share/SharedArrivalNotice";
 import "./globals.css";
 import "./noto-sans-kr-subset.css";
 
@@ -74,6 +75,8 @@ export default function RootLayout({
             </a>
             <GlobalJsonLd />
             <Header />
+            {/* 공유 링크로 들어온 사람에게만 보이는 떠 있는 안내(본문을 밀지 않음) */}
+            <SharedArrivalNotice />
           </PublicOnly>
           {/*
             Footer는 layout 형제가 아니라 page 트리(PageContainer / home)의

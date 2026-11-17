@@ -27,6 +27,7 @@ import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type PrioritySeoPageViewProps = {
   spec: PrioritySeoSpec;
@@ -111,6 +112,10 @@ export function PrioritySeoPageView({ spec }: PrioritySeoPageViewProps) {
               </Link>
             </div>
           ) : null}
+          {/* 읽던 안내를 가족·담당자에게 그대로 보내기 */}
+          <div className="mt-4 print:hidden">
+            <PageShareButton />
+          </div>
         </header>
 
         {spec.sections.map((section, sectionIndex, all) => (

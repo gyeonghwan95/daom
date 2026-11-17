@@ -22,6 +22,7 @@ import { HubChildLinks } from "@/components/seo/HubChildLinks";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type ShipSeoPageViewProps = {
   spec: ShipSeoSpec;
@@ -93,6 +94,10 @@ export function ShipSeoPageView({ spec }: ShipSeoPageViewProps) {
               </figcaption>
             ) : null}
           </figure>
+          {/* 읽던 안내를 가족·담당자에게 그대로 보내기 */}
+          <div className="mt-4 print:hidden">
+            <PageShareButton />
+          </div>
         </header>
 
         {spec.sections.map((section, sectionIndex, all) => (

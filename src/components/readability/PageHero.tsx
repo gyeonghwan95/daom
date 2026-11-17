@@ -13,6 +13,7 @@ import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionCh
 import { ProseParagraphs } from "./ProseParagraphs";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SiteImageAsset } from "@/lib/site-images";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type PageHeroProps = {
   h1: string;
@@ -80,6 +81,10 @@ export function PageHero({
           <ProseParagraphs paragraphs={descriptions.slice(0, 2)} />
         </div>
       ) : null}
+      {/* 읽던 안내를 가족·담당자에게 그대로 보내기 — 함께 정하는 일에서 연락이 끊기지 않게(2026-11-17) */}
+      <div className="mt-4 print:hidden">
+        <PageShareButton />
+      </div>
       {children}
     </>
   );

@@ -27,6 +27,7 @@ import type { BreadcrumbItem } from "@/types/breadcrumb";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
 import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
+import { PageShareButton } from "@/components/share/PageShareButton";
 
 type MetroRemoteTargetViewProps = {
   spec: MetroRemoteSpec;
@@ -103,6 +104,10 @@ export function MetroRemoteTargetView({ spec, breadcrumbs }: MetroRemoteTargetVi
               <BlockView block={spec.glance} />
             </div>
           ) : null}
+          {/* 읽던 안내를 가족·담당자에게 그대로 보내기 */}
+          <div className="mt-4 print:hidden">
+            <PageShareButton />
+          </div>
         </header>
 
         {spec.sections.map((section, sectionIndex, all) => (
