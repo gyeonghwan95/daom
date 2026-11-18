@@ -169,7 +169,8 @@ export function isSafeCtaUrl(url) {
   if (lower.startsWith("javascript:") || lower.startsWith("data:") || lower.startsWith("vbscript:")) {
     return false;
   }
-  if (t.startsWith("/")) return true;
+  // "//host"·"/\host"는 브라우저가 외부 도메인으로 해석한다(프로토콜 상대 주소) — 사이트 내부 경로만 허용
+  if (t.startsWith("/")) return !t.startsWith("//") && !t.startsWith("/\\");
   try {
     const u = new URL(t);
     return u.protocol === "https:" || u.protocol === "http:";

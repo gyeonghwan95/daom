@@ -3,6 +3,11 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  # HTTPS 고정(1년). 하위 도메인 전체 강제(includeSubDomains)·preload는 하위 도메인 HTTPS 확인 후에만 추가
+  Strict-Transport-Security: max-age=31536000
+  # CSP — 관찰 모드(차단하지 않고 콘솔에 위반만 표시). 외부 스크립트는 Turnstile·카카오맵, iframe은 유튜브·Turnstile뿐.
+  # 위반이 없음을 확인한 뒤 이름을 Content-Security-Policy로 바꿔 차단 모드로 전환한다.
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://dapi.kakao.com https://*.daumcdn.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://*.kakao.com https://*.daumcdn.net; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org https://www.youtube.com https://challenges.cloudflare.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
   # HTML·페이지: 재배포 후 옛 청크 해시를 붙잡지 않도록 짧게
   Cache-Control: public, max-age=0, must-revalidate
 
@@ -64,12 +69,15 @@
 
 /admin
   X-Robots-Tag: noindex, nofollow
+  ! Cache-Control
   Cache-Control: private, no-store
 
 /admin/*
   X-Robots-Tag: noindex, nofollow
+  ! Cache-Control
   Cache-Control: private, no-store
 
 /api/admin/*
   X-Robots-Tag: noindex, nofollow
+  ! Cache-Control
   Cache-Control: private, no-store

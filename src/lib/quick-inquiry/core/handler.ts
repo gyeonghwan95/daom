@@ -257,12 +257,13 @@ export async function handleQuickInquiry(
         503,
       );
     }
+    // 메일·텔레그램 서비스의 오류 원문은 응답에 싣지 않고 함수 로그에만 남긴다
+    if (delivered.hint) console.error("[quick-inquiry] delivery_failed", delivered.hint);
     return json(
       {
         ok: false,
         code: "delivery_failed",
         message: "문의 전달에 실패했습니다. 전화로 바로 문의해 주세요.",
-        ...(delivered.hint ? { hint: delivered.hint } : {}),
       },
       502,
     );

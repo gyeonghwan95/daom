@@ -36,13 +36,12 @@ export async function onRequestPost(context: {
   try {
     return await handleQuickInquiry(context.request, context.env);
   } catch (error) {
-    const hint =
-      error instanceof Error ? error.message.slice(0, 160) : "unknown_function_error";
+    // 내부 오류 내용은 응답에 싣지 않고 함수 로그에만 남긴다
+    console.error("[api/quick-inquiry]", error);
     return jsonError(
       500,
       "server_error",
       "일시적인 오류가 발생했습니다. 전화로 문의해 주세요.",
-      hint,
     );
   }
 }
