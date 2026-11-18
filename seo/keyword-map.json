@@ -4741,6 +4741,125 @@
       "owner": "/상속포기필요서류",
       "intent": "info-to-hire",
       "note": "2026-11-15 수요 검색어(자동완성). 담당 페이지에 바로 답하는 단락 추가"
+    },
+    "부산 소액소송 법무사": {
+      "owner": "/부산소액소송",
+      "intent": "small-claims-complaint",
+      "supporting": [
+        "/부산법률상담",
+        "/부산지방법원지급명령"
+      ],
+      "note": "2026-11-18 #3 /부산법률상담 노출. 담당 title·H1에 소액소송 법무사(소장 작성) — 소송대리 문구 금지."
+    },
+    "부산 상속재산분할 법무사": {
+      "owner": "/부산상속재산분할법무사",
+      "intent": "estate-division",
+      "note": "2026-11-18 #2(1위 yeinlaw 변호사 페이지). H1에 법무사 추가. 같은 페이지가 부산 상속등기 법무사 #1이므로 H1의 상속등기 문구 유지."
+    },
+    "부산 전세보증금 법무사": {
+      "owner": "/부산전세보증금반환법무사",
+      "intent": "deposit-return",
+      "supporting": [
+        "/부산전세전문법무사"
+      ],
+      "note": "2026-11-18 #2 노출 페이지는 /부산전세전문법무사. 두 페이지 겹침 방지 위해 전세전문 title에 전세보증금 넣지 말 것."
+    },
+    "부산 개인파산 법무사": {
+      "owner": "/부산개인파산법무사",
+      "intent": "bankruptcy-scrivener",
+      "supporting": [
+        "/부산개인파산"
+      ],
+      "note": "2026-11-18 상위 10에 웹사이트 칸 없음(플레이스·블로그·카페). 네이버 블로그가 주 경로."
+    },
+    "부산 파산 법무사": {
+      "owner": "/부산파산법무사",
+      "intent": "bankruptcy-scrivener",
+      "supporting": [
+        "/부산파산",
+        "/부산개인파산법무사"
+      ],
+      "note": "2026-11-18 웹사이트 칸 없음 — 블로그가 주 경로."
+    },
+    "부산 회생 법무사": {
+      "owner": "/부산회생법무사",
+      "intent": "rehabilitation-scrivener",
+      "supporting": [
+        "/부산개인회생법무사"
+      ],
+      "note": "2026-11-18 웹사이트 칸 없음 — 블로그가 주 경로."
+    },
+    "부산 콘도회원권 등기 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "note": "2026-11-18 신설. 웹사이트 칸 5~8위·밖(블로그 law-yoon-91은 1위). 상속·증여·법인 이전·공유제 회원권을 한 URL에서 — 회원권별 URL 쪼개지 말 것."
+    },
+    "부산 콘도회원권 상속등기 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 리조트회원권 이전등기 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 리조트회원권 증여등기 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 공유제 회원권 소유권이전 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 부모님 콘도회원권 상속 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 법인 보유 콘도회원권 이전등기 법무사": {
+      "owner": "/부산콘도회원권등기",
+      "intent": "condo-membership-registration",
+      "aliasOf": "부산 콘도회원권 등기 법무사"
+    },
+    "부산 비법인사단 부동산 등기 법무사": {
+      "owner": "/부산비법인사단부동산등기",
+      "intent": "non-corporate-association-registration",
+      "supporting": [
+        "/교회사단법인설립",
+        "/오래된상속토지정리"
+      ],
+      "note": "2026-11-18 신설. 교회·종중·사찰 명의 등기. 법인 설립은 /교회사단법인설립(다른 의도)."
+    },
+    "부산 교회 부동산 등기 법무사": {
+      "owner": "/부산비법인사단부동산등기",
+      "intent": "non-corporate-association-registration",
+      "aliasOf": "부산 비법인사단 부동산 등기 법무사"
+    },
+    "부산 종중 토지 명의변경 법무사": {
+      "owner": "/부산비법인사단부동산등기",
+      "intent": "non-corporate-association-registration",
+      "aliasOf": "부산 비법인사단 부동산 등기 법무사"
+    },
+    "부산 사찰 부동산 등기 법무사": {
+      "owner": "/부산비법인사단부동산등기",
+      "intent": "non-corporate-association-registration",
+      "aliasOf": "부산 비법인사단 부동산 등기 법무사"
+    },
+    "부산 동산담보등기 법무사": {
+      "owner": "/부산동산채권담보등기",
+      "intent": "movable-receivable-security",
+      "supporting": [
+        "/부산근저당설정등기"
+      ],
+      "note": "2026-11-18 신설. 부동산 근저당은 /부산근저당설정등기."
+    },
+    "부산 채권담보등기 법무사": {
+      "owner": "/부산동산채권담보등기",
+      "intent": "movable-receivable-security",
+      "aliasOf": "부산 동산담보등기 법무사"
     }
   }
 }

@@ -18,7 +18,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
     seoTitle: "전국 법무사 업무사례｜상속등기·유증등기·법인등기 비대면 진행",
     metaDescription:
       "부산 다옴법무사사무소 전국 법무사 업무사례. 상속·유증 관할 특례, 본점이전, 공동근저당, 비대면 진행을 구분해 안내합니다. 지점 오인 없이 진행 바로 상담을 시작해 보세요.",
-    h1: "부산에 방문하지 않아도 맡길 수 있는 전국 법무사 업무",
+    h1: "부산에 오지 않고 진행한 전국 법무사 업무사례",
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며, 해당 지역에 별도 지점이 있다는 의미는 아닙니다. 상속·유증등기의 관할 특례와 비대면 상담·서류 전달 방식을 활용하여 타지역 사건도 상담부터 신청까지 진행합니다.",
     localIntro:
@@ -53,7 +53,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
       "타지역 상속등기",
       "상속등기 관할 특례",
     ],
-    seoTitle: "전국 상속등기 법무사｜타지역 부동산도 비대면 진행",
+    seoTitle: "전국 상속등기 법무사 사례｜타지역 부동산도 비대면 진행",
     metaDescription:
       "전국 상속등기 법무사 안내. 타지역·비대면 상속등기, 관할 특례, 해외 상속인, 취득세·공과금 구분. 부산 해운대 사무소에서 상담부터 신청까지 진행합니다.",
     h1: "전국 어디서나 맡길 수 있는 상속등기",
@@ -157,10 +157,10 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
     noticeType: "bundled-jurisdiction",
     primaryKeyword: "전국 공동근저당권등기",
     secondaryKeywords: ["여러 지역 부동산 공동담보", "공동담보목록"],
-    seoTitle: "전국 공동근저당권등기｜여러 지역 부동산 공동담보 설정",
+    seoTitle: "전국 공동근저당권등기 사례｜여러 지역 부동산을 한 번에 담보로",
     metaDescription:
       "전국 공동근저당권등기. 공동담보목록, 담보 추가·해지, 채권최고액·채무자 변경. 일괄 신청은 사건별 요건 확인 후 안내합니다.",
-    h1: "서로 다른 지역의 부동산을 공동담보로 제공하는 경우",
+    h1: "서로 다른 지역의 부동산을 공동담보로 설정한 업무 사례",
     disclosure:
       "부산 사무소이며 타지역 지점이 없습니다. 복수 관할 공동담보의 묶음 신청 가능 여부는 단정하지 않고 요건을 확인합니다.",
     localIntro:

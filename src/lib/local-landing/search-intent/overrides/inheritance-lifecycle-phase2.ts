@@ -111,6 +111,7 @@ export const 오래된상속토지정리Override: SearchIntentContent = {
       href: "/업무사례/경남오래된상속등기",
       label: "경남 오래된 상속등기 사례",
     },
+    { href: "/부산비법인사단부동산등기", label: "부산 교회·종중·사찰 부동산 등기(비법인사단)" },
   ],
   relatedGuideLinks: [consult],
   bottomCtaText:

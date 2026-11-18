@@ -55,6 +55,9 @@ import { getCostFaqsForSlug } from "@/data/seo/cost-intent-modules";
 import { PageLeadThumbnail, hasPageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 import { WorkRecordInline } from "@/components/trust/WorkRecordInline";
+import { COURT_KIND, buildHowToJsonLd, getKeywordHeading } from "@/lib/seo/keyword-headings";
+import { CourtJurisdictionBox } from "@/components/seo/CourtJurisdictionBox";
+import { getCanonicalUrl } from "@/lib/seo/metadata";
 
 type SearchIntentPageViewProps = {
   page: PageData;
@@ -75,6 +78,10 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
   const costSections = page.sections.filter((section) =>
     section.id?.startsWith("cost-intent-"),
   );
+
+  // 순위가 약한 담당 페이지만: 소제목에 검색어, 절차는 HowTo 구조화 데이터
+  const kw = getKeywordHeading(page.slug);
+  const heading = (generic: string) => (kw ? `${kw} ${generic}` : generic);
 
   const faqSchemaPage: PageData = {
     ...page,
@@ -169,6 +176,9 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
         serviceSlug={page.serviceSlug}
       />
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
+      {kw && content.procedures.length >= 3 ? (
+        <JsonLd data={buildHowToJsonLd(heading("절차"), getCanonicalUrl(page.path), content.procedures)} />
+      ) : null}
 
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
@@ -195,6 +205,8 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       {showNationwide ? (
         <NationwideServiceCard headline={getNationwideBannerHeadline(page.slug)} />
       ) : null}
+
+      {COURT_KIND[page.slug] ? <CourtJurisdictionBox kind={COURT_KIND[page.slug]} /> : null}
 
       {content.situationNav?.length ? (
         <ContentSection id="situation-nav" title="지금 어떤 상황이신가요?">
@@ -244,7 +256,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : null}
 
       {bodyParagraphs.length > 0 ? (
-        <ContentSection id="article-body" title="자세히 알아보기">
+        <ContentSection id="article-body" title={kw ? `${kw}, 자세히 알아보기` : "자세히 알아보기"}>
           <div className="article-body">
             {bodyParagraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
@@ -361,14 +373,14 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : null}
 
       <WorkRecordInline path={page.path} slot={0} />
-      <ContentSection id="documents" title="준비서류">
+      <ContentSection id="documents" title={heading("준비서류")}>
         <ChecklistBox
           items={content.documents}
           note={content.documentsNote}
         />
       </ContentSection>
 
-      <ContentSection id="procedures" title="절차">
+      <ContentSection id="procedures" title={heading("절차")}>
         <StepTimeline steps={content.procedures} />
       </ContentSection>
 
@@ -400,7 +412,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       ) : null}
 
       <WorkRecordInline path={page.path} slot={1} />
-      <ContentSection id="mistakes" title="자주 하는 실수">
+      <ContentSection id="mistakes" title={kw ? `${kw} 자주 하는 실수` : "자주 하는 실수"}>
         <WarningBox title="상담 전에 자주 놓치는 부분">
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-navy/85 md:text-base">
             {content.commonMistakes.map((item) => (
@@ -417,7 +429,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
 
       <QueryAnswerSection path={page.path} />
 
-      <ContentSection id="faq" title="자주 묻는 질문">
+      <ContentSection id="faq" title={heading("자주 묻는 질문")}>
         <FAQAccordion items={displayFaqs} />
       </ContentSection>
 

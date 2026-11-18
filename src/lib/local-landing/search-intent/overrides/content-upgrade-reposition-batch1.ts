@@ -292,7 +292,7 @@ export const 부산회생상담Override = base({
   relatedServiceLinks: [
     { href: "/부산개인회생상담", label: "개인회생 상담 준비" },
     { href: "/부산개인회생법무사", label: "개인회생 신청 가능성" },
-    { href: "/부산개인파산법무사", label: "개인파산 법무사 안내" },
+    { href: "/부산개인파산법무사", label: "부산 개인파산 법무사 안내" },
   ],
   bottomCtaText:
     "소득 유무·채무 규모·압류 여부만 알려주시면, 먼저 볼 절차를 안내합니다.",
@@ -622,7 +622,7 @@ export const 부산개인파산법무사Override = base({
   ],
   serviceSlug: "bankruptcy",
   relatedServiceLinks: [
-    { href: "/부산파산법무사", label: "파산 법무사 개요" },
+    { href: "/부산파산법무사", label: "부산 파산 법무사 개요" },
     { href: "/부산개인파산상담", label: "개인파산 상담" },
     { href: "/부산개인회생법무사", label: "개인회생 안내" },
   ],
@@ -683,7 +683,7 @@ export const 부산파산법무사Override = base({
   ],
   serviceSlug: "bankruptcy",
   relatedServiceLinks: [
-    { href: "/부산개인파산법무사", label: "개인파산 법무사 상세" },
+    { href: "/부산개인파산법무사", label: "부산 개인파산 법무사 상세" },
     { href: "/부산회생상담", label: "회생·채무조정 방향" },
   ],
   bottomCtaText:

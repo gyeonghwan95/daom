@@ -126,6 +126,7 @@ export const 부산공유물분할등기Override: SearchIntentContent = {
     { href: "/부산이혼재산분할등기", label: "부산 이혼재산분할등기" },
     { href: "/부산명의변경등기", label: "부산 명의변경등기" },
     { href: "/공유물분할등기서류준비", label: "공유물분할 서류 준비" },
+    { href: "/부산콘도회원권등기", label: "부산 콘도·리조트회원권 등기 — 상속·증여·법인 이전" },
   ],
   relatedGuideLinks: [consult],
   bottomCtaText:

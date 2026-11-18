@@ -143,6 +143,7 @@ export const 부산개인회생법무사Override: SearchIntentContent = {
     { href: "/tools/rehab-income-debt-check", label: "소득·채무 점검 도구" },
     { href: "/개인회생비용", label: "개인회생 비용 구조" },
     { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
+    { href: "/부산개인파산법무사", label: "부산 개인파산 법무사 — 면책까지 보는 서류" },
   ],
   relatedGuideLinks: [
     { href: "/부산개인회생법무사추천", label: "개인회생 법무사 선택 기준" },

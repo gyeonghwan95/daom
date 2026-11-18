@@ -683,6 +683,7 @@ export const keywordTopics: Record<string, KeywordTopic> = {
       { href: "/services/real-estate-registration", label: "부동산등기" },
       { href: "/부산근저당말소등기", label: "부산 근저당말소등기" },
       { href: "/부산부동산등기법무사", label: "부산 부동산등기 법무사" },
+      { href: "/부산동산채권담보등기", label: "기계·재고·매출채권 담보는 부산 동산담보등기" },
     ],
     relatedFaqLinks: [
       { href: "/faq/inheritance-registration-with-mortgage", label: "근저당 있는 부동산" },

@@ -282,6 +282,7 @@ export const 부산강제집행법무사Override: SearchIntentContent = {
     { href: "/부산채무불이행자명부등재", label: "채무불이행자명부 등재" },
     { href: "/부산가압류신청", label: "판결 전이라면 가압류" },
     { href: "/situations/판결-후-강제집행", label: "판결 후 돈 안 들어올 때" },
+    { href: "/부산소액소송", label: "부산 소액소송 법무사 — 3천만 원 이하 소장 작성" },
   ],
   relatedGuideLinks: [{ href: "/contact/inquiry?field=payment-order", label: "강제집행 신청서 상담" }],
   breadcrumbParent: { href: "/민사소송", label: "지급명령·가압류·민사 허브" },

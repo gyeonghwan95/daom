@@ -279,7 +279,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     metaTitle: "부산 상속재산분할 법무사｜협의분할·단독명의 등기",
     metaDescription:
       "부산 상속재산분할 법무사. 법정상속분·협의분할, 공동상속인 동의, 단독명의, 미성년·해외 상속인, 협의서 작성 포인트. 다옴법무사.",
-    h1: "부산 상속재산분할, 협의부터 상속등기까지",
+    h1: "부산 상속재산분할 법무사, 협의부터 상속등기까지",
     serviceSlug: "inheritance-registration",
     primaryKeywords: [
       "부산 상속재산분할 법무사",

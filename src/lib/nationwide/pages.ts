@@ -536,7 +536,7 @@ export function buildNationwideBequestPageData(): PageData {
       "유증등기 관할 특례",
     ],
     internalLinks: [
-      { href: "/부산유언검인", label: "유언검인 신청 안내" },
+      { href: "/부산유언검인", label: "부산 유언검인 법무사 — 신청 안내" },
       { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
       { href: "/상속", label: "상속 종합 허브" },
       { href: "/services/inheritance-registration", label: "상속등기 절차" },

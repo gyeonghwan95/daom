@@ -21,7 +21,7 @@ export const CONSULT_LANDINGS: ConsultLandingContent[] = [
   {
     slug: "상담",
     title: "법무사 상담 안내",
-    metaTitle: "법무사 상담｜상황만 선택하는 간편 상담",
+    metaTitle: "상황 선택 상담｜업무명을 몰라도 법무사가 먼저 정리해 드립니다",
     metaDescription:
       "업무명을 몰라도 괜찮습니다. 준비 서류가 없어도 현재 상황만 선택해 법무사 상담을 남길 수 있습니다. 해운대·센텀 다옴법무사사무소.",
     h1: "법무사 상담, 상황만 선택해도 시작할 수 있습니다",

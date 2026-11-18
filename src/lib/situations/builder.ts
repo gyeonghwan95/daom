@@ -142,7 +142,11 @@ export function buildPageDataFromSituation(page: SituationPage): PageData {
     category: "situation",
     title: page.cardTitle,
     metaTitle: buildMetaTitle(
-      `${page.cardTitle}｜${page.searchIntent}`.slice(0, 40),
+      // 카드 제목과 검색 의도가 같으면 같은 말이 두 번 붙지 않게 카드 설명을 쓴다
+      (page.cardTitle === page.searchIntent
+        ? `${page.cardTitle}｜${page.cardDescription}`
+        : `${page.cardTitle}｜${page.searchIntent}`
+      ).slice(0, 40),
     ),
     metaDescription: buildMetaDescription(page.metaDescriptionBase),
     h1: page.h1,

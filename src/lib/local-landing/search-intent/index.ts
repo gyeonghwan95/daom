@@ -141,6 +141,8 @@ import { aiBriefingRegistryGuardianshipOverrides } from "./overrides/ai-briefing
 import { aiBriefingCivilOverrides } from "./overrides/ai-briefing-civil-2026-11-09";
 import { inheritanceGap20261111Overrides } from "./overrides/inheritance-gap-2026-11-11";
 import { busanGuardianshipEnforcement20261112Overrides } from "./overrides/busan-guardianship-enforcement-2026-11-12";
+import { busanSpecialtyRegistration20261118Overrides } from "./overrides/busan-specialty-registration-2026-11-18";
+import { genericRewrite20261118Overrides } from "./overrides/generic-rewrite-2026-11-18";
 
 export type {
   SearchGuideEntry,
@@ -178,6 +180,8 @@ const CONTENT_OVERRIDES: Record<string, SearchIntentContent> = {
   ...aiBriefingCivilOverrides,
   ...inheritanceGap20261111Overrides,
   ...busanGuardianshipEnforcement20261112Overrides,
+  ...busanSpecialtyRegistration20261118Overrides,
+  ...genericRewrite20261118Overrides,
   등기관할과사무소위치: 등기관할과사무소위치Override,
   부산보상등기: 부산보상등기Override,
   공공기관법인등기: 공공기관법인등기Override,

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-17T14:08:55.997Z",
+  "generatedAt": "2026-11-18T12:53:47.590Z",
   "siteUrl": "https://xn--2j1br1na42lvxja38mk8r.kr",
-  "totalUrls": 1607,
+  "totalUrls": 1610,
   "format": "urlset",
   "tierCounts": {
     "1": 49,
     "2": 25,
     "3": 180,
-    "4": 528,
+    "4": 531,
     "5": 185,
     "6": 550,
     "7": 53,
@@ -1240,7 +1240,7 @@
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-4-regions.xml",
       "lastmod": "2026-11-15",
       "filename": "tier-4-regions.xml",
-      "count": 528
+      "count": 531
     },
     {
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/sitemaps/tier-5-local.xml",
@@ -3351,6 +3351,12 @@
       "lastmod": "2026-11-10"
     },
     {
+      "path": "/부산동산채권담보등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8F%99%EC%82%B0%EC%B1%84%EA%B6%8C%EB%8B%B4%EB%B3%B4%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
       "path": "/부산등기권리증분실",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%93%B1%EA%B8%B0%EA%B6%8C%EB%A6%AC%EC%A6%9D%EB%B6%84%EC%8B%A4",
@@ -3678,6 +3684,12 @@
       "path": "/부산분양등기",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B6%84%EC%96%91%EB%93%B1%EA%B8%B0",
+      "lastmod": null
+    },
+    {
+      "path": "/부산비법인사단부동산등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B9%84%EB%B2%95%EC%9D%B8%EC%82%AC%EB%8B%A8%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
     {
@@ -4326,6 +4338,12 @@
       "path": "/부산체육단체법인설립",
       "tier": 4,
       "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B2%B4%EC%9C%A1%EB%8B%A8%EC%B2%B4%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD",
+      "lastmod": null
+    },
+    {
+      "path": "/부산콘도회원권등기",
+      "tier": 4,
+      "loc": "https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%BD%98%EB%8F%84%ED%9A%8C%EC%9B%90%EA%B6%8C%EB%93%B1%EA%B8%B0",
       "lastmod": null
     },
     {

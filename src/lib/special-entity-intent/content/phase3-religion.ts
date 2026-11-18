@@ -116,6 +116,7 @@ export const phase3ReligionPages: SpecialEntityPageContent[] = [
     faqs: [],
     relatedLinks: [
       { href: "/종교단체사단법인설립", label: "종교단체 사단법인" },
+      { href: "/부산비법인사단부동산등기", label: "교회 이름으로 부동산 등기 — 부산 비법인사단 부동산 등기" },
       ...baseSpecialRelated,
     ],
     ctaTitle: "교회 사단법인 설립 상담",

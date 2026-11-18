@@ -1333,7 +1333,7 @@ export const 부산등기명의인표시변경Override = buildRemainingRealEstat
   serviceSlug: "real-estate-registration",
   relatedServiceLinks: [
     { href: "/부산명의변경등기", label: "명의변경등기와 구분" },
-    { href: "/부산개명허가", label: "개명허가 신청 안내" },
+    { href: "/부산개명허가", label: "부산 개명허가 법무사 — 신청 안내" },
     { href: "/부산소유권이전등기", label: "소유권이전등기" },
     { href: "/부산매매등기법무사", label: "매매 전 표시 확인" },
     { href: "/부산법인등기", label: "법인등기 안내" },
@@ -1548,7 +1548,7 @@ export const 부산신탁등기Override = buildRemainingRealEstateContent({
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산매매등기법무사", label: "신탁부동산 매매등기" },
     { href: "/부산근저당말소등기", label: "담보 말소 관련" },
-    { href: "/부산유언검인", label: "유언검인 신청 안내" },
+    { href: "/부산유언검인", label: "부산 유언검인 법무사 — 신청 안내" },
     { href: "/특수등기의뢰", label: "특수 등기 의뢰" },
   ],
 });

@@ -100,6 +100,7 @@ export const 부산회생법무사Override: SearchIntentContent = {
     { href: "/부산개인파산법무사", label: "부산 개인파산 법무사" },
     { href: "/부산법무사", label: "다옴법무사사무소 업무 안내" },
     { href: "/services/personal-rehabilitation", label: "개인회생 업무안내" },
+    { href: "/부산파산법무사", label: "부산 파산 법무사 — 어떤 절차를 먼저 볼지" },
   ],
   relatedGuideLinks: [
     { href: "/개인회생자가진단", label: "개인회생 자가진단" },

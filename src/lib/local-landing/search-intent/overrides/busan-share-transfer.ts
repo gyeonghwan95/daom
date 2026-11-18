@@ -129,6 +129,7 @@ export const 부산지분이전등기Override: SearchIntentContent = {
     { href: "/부산공동명의등기", label: "부산 공동명의등기" },
     { href: "/부산증여등기", label: "부산 증여등기" },
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
+    { href: "/부산콘도회원권등기", label: "부산 콘도·리조트회원권 등기 — 상속·증여·법인 이전" },
   ],
   relatedGuideLinks: [
     { href: "/등기실무", label: "등기 실무 허브" },

@@ -20,7 +20,7 @@ export const 부산가압류신청Override: SearchIntentContent = {
   metaDescription:
     "부산 가압류 법무사 안내. 부동산 가압류와 예금·매출 채권가압류는 대상 재산이 다릅니다. 부산지방법원 신청 전 청구채권·보전 필요성·담보를 정리하며, 가압류 말소·판결 뒤 압류추심과 페이지를 나눕니다.",
   // "부산 채권가압류"로도 검색되므로 H1에 채권가압류·부동산 가압류를 함께 적는다(2026-11-08)
-  h1: "부산 채권가압류·부동산 가압류, 신청 전에 무엇을 먼저 소명해야 할까요?",
+  h1: "부산 가압류 법무사 — 채권가압류·부동산 가압류, 신청 전에 무엇을 소명할까요?",
   eyebrow: "민사집행 · 가압류",
   breadcrumbParent: civilHub,
   heroParagraphs: [
@@ -131,6 +131,8 @@ export const 부산가압류신청Override: SearchIntentContent = {
     { href: "/부산재산명시", label: "재산명시 신청 전 확인" },
     { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
     { href: "/부산채권압류추심명령", label: "판결 뒤 채권압류·추심명령" },
+    { href: "/부산강제집행법무사", label: "부산 강제집행 법무사 — 판결 후 재산별 집행 순서" },
+    { href: "/부산소액소송", label: "부산 소액소송 법무사 — 3천만 원 이하 소장 작성" },
   ],
   relatedGuideLinks: [
     {
@@ -274,6 +276,7 @@ export const 부산집행문부여신청Override: SearchIntentContent = {
     { href: "/부산지방법원법무사", label: "부산지방법원 안내" },
     { href: "/부산채권압류추심명령", label: "집행문 다음 단계: 채권압류·추심명령" },
     { href: "/부산강제집행법무사", label: "부산 강제집행 법무사 — 재산별 신청 순서" },
+    { href: "/부산소액소송", label: "부산 소액소송 법무사 — 3천만 원 이하 소장 작성" },
   ],
   relatedGuideLinks: [
     {
@@ -538,7 +541,7 @@ export const 부산배당요구신청Override: SearchIntentContent = {
   relatedServiceLinks: [
     civilHub,
     { href: "/부산임차권등기명령", label: "부산 임차권등기명령" },
-    { href: "/부산경매낙찰등기", label: "경매 낙찰 후 소유권이전등기" },
+    { href: "/부산경매낙찰등기", label: "부산 경매 법무사 — 낙찰 후 소유권이전등기" },
     { href: "/부산전세보증금반환법무사", label: "전세보증금 반환 안내" },
     { href: "/부산집행문부여신청", label: "집행문 부여 신청" },
   ],
@@ -674,7 +677,7 @@ export const 부산가족관계등록부정정Override: SearchIntentContent = {
   relatedCaseLinks: [],
   relatedServiceLinks: [
     familyHub,
-    { href: "/부산개명허가", label: "개명허가·성본변경" },
+    { href: "/부산개명허가", label: "부산 개명허가 법무사 — 개명·성본변경" },
     { href: "/부산실종선고청구", label: "실종선고 청구" },
     { href: "/부산가정법원상속", label: "부산가정법원 가사 사건 안내" },
   ],

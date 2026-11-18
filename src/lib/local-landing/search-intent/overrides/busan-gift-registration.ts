@@ -160,6 +160,7 @@ export const 부산증여등기Override: SearchIntentContent = {
     { href: "/부산상속등기", label: "상속과 증여의 등기 차이" },
     { href: "/부산법무사상담", label: "상담 전 준비서류" },
     { href: "/부산법무사비용", label: "비용 안내" },
+    { href: "/부산콘도회원권등기", label: "부산 콘도·리조트회원권 등기 — 상속·증여·법인 이전" },
   ],
   relatedGuideLinks: [
     { href: "/faq/gift-registration-faq", label: "증여등기 자주 묻는 질문" },
