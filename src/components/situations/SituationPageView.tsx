@@ -165,6 +165,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={page.h1}
         intro={page.intro}
         keywords={[]}

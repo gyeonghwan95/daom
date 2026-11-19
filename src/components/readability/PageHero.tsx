@@ -14,6 +14,7 @@ import { ProseParagraphs } from "./ProseParagraphs";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SiteImageAsset } from "@/lib/site-images";
 import { PageShareButton } from "@/components/share/PageShareButton";
+import { ServiceAnswerCard } from "@/components/seo/ServiceAnswerCard";
 
 type PageHeroProps = {
   h1: string;
@@ -34,6 +35,8 @@ type PageHeroProps = {
   /** 상담 신청 CTA 옆 네이버 예약 (기본: 상담/문의 경로일 때) */
   showNaverReservation?: boolean;
   sideImage?: SiteImageAsset;
+  /** 페이지 경로 — 업무 페이지면 H1 바로 아래 "핵심 답변"을 붙인다(데이터 없으면 표시 없음) */
+  path?: string;
   children?: ReactNode;
 };
 
@@ -60,6 +63,7 @@ export function PageHero({
   showNationwideChip = false,
   showNaverReservation,
   sideImage,
+  path,
   children,
 }: PageHeroProps) {
   const descriptions =
@@ -74,6 +78,8 @@ export function PageHero({
       ) : null}
       {eyebrow ? <p className="readability-hero__eyebrow">{eyebrow}</p> : null}
       <h1 className="page-title">{h1}</h1>
+      {/* 검색 AI가 H1 다음 문장을 답으로 읽으므로 결론·한눈 표를 신뢰 배지보다 먼저 둔다(2026-11-19) */}
+      <ServiceAnswerCard path={path} />
       <HeroTrustLine />
       <ConsultEmpathyLead />
       {descriptions.length > 0 ? (

@@ -86,6 +86,7 @@ export function RegistryHubPageView({ page }: RegistryHubPageViewProps) {
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={registryHubTopic.h1}
         eyebrow={registryHubEyebrow}
         introParagraphs={registryHubHeroParagraphs}

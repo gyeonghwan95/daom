@@ -89,6 +89,7 @@ export function BusanLawyerHubPageView({ page }: BusanLawyerHubPageViewProps) {
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={busanLawyerHubH1}
         eyebrow={busanLawyerHubEyebrow}
         introParagraphs={busanLawyerHubHeroParagraphs}

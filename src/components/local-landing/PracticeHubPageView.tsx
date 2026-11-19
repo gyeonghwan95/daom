@@ -41,6 +41,7 @@ export function PracticeHubPageView({
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={page.h1}
         intro={intro}
         ctaLabel={consultationInquiryCopy.ctaShort}

@@ -4,6 +4,15 @@ import { seoBrand } from "@/lib/seo/brand";
 import { PREFETCH_CHAMPION_PATHS } from "@/lib/seo/inflow-policy";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
 import { siteConfig } from "@/lib/site";
+import { SERVICE_ANSWERS } from "@/data/seo/service-answers";
+
+/** 업무별 핵심 답변 첫 문장 — AI가 업무 이름·요지·URL을 한 번에 읽도록 */
+function serviceAnswerLines(): string[] {
+  return Object.entries(SERVICE_ANSWERS).map(([path, a]) => {
+    const first = a.answer.split(/(?<=[다요])\.\s/)[0].replace(/\.$/, "");
+    return `- [${a.name}](${getCanonicalUrl(path)}): ${first}.`;
+  });
+}
 
 /**
  * AI 에이전트용 짧은 지도. 검색 순위 신호가 아니며, 사실·기존 URL만 적습니다.
@@ -38,6 +47,10 @@ export function buildLlmsTxt(): string {
     "## 대표 안내 (기존 URL)",
     "",
     ...unique.map((path) => `- [${path}](${getCanonicalUrl(path)})`),
+    "",
+    "## 업무별 핵심 답변 (각 페이지 H1 바로 아래에 같은 내용과 한눈 표가 있습니다)",
+    "",
+    ...serviceAnswerLines(),
     "",
     "## 범위",
     "",

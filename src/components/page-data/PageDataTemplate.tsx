@@ -252,6 +252,7 @@ export function PageDataTemplate({
       ) : null}
 
       <PageHero
+        path={page.path}
         h1={page.h1}
         introParagraphs={introSlots.heroParagraphs}
         keywords={

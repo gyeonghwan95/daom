@@ -183,6 +183,7 @@ export function SearchIntentPageView({ page }: SearchIntentPageViewProps) {
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroParagraphs[0]}

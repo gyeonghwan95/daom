@@ -161,6 +161,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
       <JsonLd data={buildJsonLdForPageData(faqSchemaPage)} />
 
       <PageHero
+        path={page.path}
         h1={content.h1}
         eyebrow={content.eyebrow}
         intro={content.heroIntro}

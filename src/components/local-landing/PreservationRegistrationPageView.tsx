@@ -78,6 +78,7 @@ export function PreservationRegistrationPageView({
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={cover} />}
 
       <PageHero
+        path={page.path}
         h1={content.h1}
         eyebrow={content.eyebrow}
         introParagraphs={content.heroParagraphs}
