@@ -4860,6 +4860,1092 @@
       "owner": "/부산동산채권담보등기",
       "intent": "movable-receivable-security",
       "aliasOf": "부산 동산담보등기 법무사"
+    },
+    "부산 부산진구 법무사": {
+      "owner": "/부산진구법무사",
+      "intent": "local",
+      "aliasOf": "부산진구 법무사"
+    },
+    "부산 연산동 법무사": {
+      "owner": "/연산동법무사",
+      "intent": "local",
+      "aliasOf": "연산동 법무사"
+    },
+    "부산 거제동 법무사": {
+      "owner": "/거제동법무사",
+      "intent": "local",
+      "aliasOf": "거제동 법무사"
+    },
+    "부산 광안동 법무사": {
+      "owner": "/광안동법무사",
+      "intent": "local",
+      "aliasOf": "광안동 법무사"
+    },
+    "부산 민락동 법무사": {
+      "owner": "/민락동법무사",
+      "intent": "local",
+      "aliasOf": "민락동 법무사"
+    },
+    "부산 망미동 법무사": {
+      "owner": "/망미동법무사",
+      "intent": "local",
+      "aliasOf": "망미동 법무사"
+    },
+    "부산 남천동 법무사": {
+      "owner": "/남천동법무사",
+      "intent": "local",
+      "aliasOf": "남천동 법무사"
+    },
+    "부산 사직동 법무사": {
+      "owner": "/사직동법무사",
+      "intent": "local",
+      "aliasOf": "사직동 법무사"
+    },
+    "부산 온천동 법무사": {
+      "owner": "/온천동법무사",
+      "intent": "local",
+      "aliasOf": "온천동 법무사"
+    },
+    "부산 서면 법무사": {
+      "owner": "/서면법무사",
+      "intent": "local",
+      "aliasOf": "서면 법무사"
+    },
+    "부산 부전동 법무사": {
+      "owner": "/부전동법무사",
+      "intent": "local",
+      "aliasOf": "부전동 법무사"
+    },
+    "부산 전포동 법무사": {
+      "owner": "/전포동법무사",
+      "intent": "local",
+      "aliasOf": "전포동 법무사"
+    },
+    "부산 대연동 법무사": {
+      "owner": "/대연동법무사",
+      "intent": "local",
+      "aliasOf": "대연동 법무사"
+    },
+    "부산 용호동 법무사": {
+      "owner": "/용호동법무사",
+      "intent": "local",
+      "aliasOf": "용호동 법무사"
+    },
+    "부산 문현동 법무사": {
+      "owner": "/문현동법무사",
+      "intent": "local",
+      "aliasOf": "문현동 법무사"
+    },
+    "부산 화명동 법무사": {
+      "owner": "/화명동법무사",
+      "intent": "local",
+      "aliasOf": "화명동 법무사"
+    },
+    "부산 덕천동 법무사": {
+      "owner": "/덕천동법무사",
+      "intent": "local",
+      "aliasOf": "덕천동 법무사"
+    },
+    "부산 재송동 법무사": {
+      "owner": "/재송동법무사",
+      "intent": "local",
+      "aliasOf": "재송동 법무사"
+    },
+    "부산 반여동 법무사": {
+      "owner": "/반여동법무사",
+      "intent": "local",
+      "aliasOf": "반여동 법무사"
+    },
+    "부산 우동 법무사": {
+      "owner": "/우동법무사",
+      "intent": "local",
+      "aliasOf": "우동 법무사"
+    },
+    "부산 좌동 법무사": {
+      "owner": "/좌동법무사",
+      "intent": "local",
+      "aliasOf": "좌동 법무사"
+    },
+    "부산 중동 법무사": {
+      "owner": "/중동법무사",
+      "intent": "local",
+      "aliasOf": "중동 법무사"
+    },
+    "부산 센텀 법무사": {
+      "owner": "/센텀법무사",
+      "intent": "local",
+      "aliasOf": "센텀 법무사"
+    },
+    "부산 일광읍 법무사": {
+      "owner": "/일광읍법무사",
+      "intent": "local",
+      "aliasOf": "일광읍 법무사"
+    },
+    "부산 기장읍 법무사": {
+      "owner": "/기장읍법무사",
+      "intent": "local",
+      "aliasOf": "기장읍 법무사"
+    },
+    "부산 남포동 법무사": {
+      "owner": "/남포동법무사",
+      "intent": "local",
+      "aliasOf": "남포동 법무사"
+    },
+    "부산 초량동 법무사": {
+      "owner": "/초량동법무사",
+      "intent": "local",
+      "aliasOf": "초량동 법무사"
+    },
+    "부산 범일동 법무사": {
+      "owner": "/범일동법무사",
+      "intent": "local",
+      "aliasOf": "범일동 법무사"
+    },
+    "부산 구포동 법무사": {
+      "owner": "/구포동법무사",
+      "intent": "local",
+      "aliasOf": "구포동 법무사"
+    },
+    "부산 다대동 법무사": {
+      "owner": "/다대동법무사",
+      "intent": "local",
+      "aliasOf": "다대동 법무사"
+    },
+    "부산 괴정동 법무사": {
+      "owner": "/괴정동법무사",
+      "intent": "local",
+      "aliasOf": "괴정동 법무사"
+    },
+    "부산 개금동 법무사": {
+      "owner": "/개금동법무사",
+      "intent": "local",
+      "aliasOf": "개금동 법무사"
+    },
+    "부산 안락동 법무사": {
+      "owner": "/안락동법무사",
+      "intent": "local",
+      "aliasOf": "안락동 법무사"
+    },
+    "부산 구서동 법무사": {
+      "owner": "/구서동법무사",
+      "intent": "local",
+      "aliasOf": "구서동 법무사"
+    },
+    "부산 반송동 법무사": {
+      "owner": "/반송동법무사",
+      "intent": "local",
+      "aliasOf": "반송동 법무사"
+    },
+    "부산 주례동 법무사": {
+      "owner": "/주례동법무사",
+      "intent": "local",
+      "aliasOf": "주례동 법무사"
+    },
+    "부산 동삼동 법무사": {
+      "owner": "/동삼동법무사",
+      "intent": "local",
+      "aliasOf": "동삼동 법무사"
+    },
+    "부산 우암동 법무사": {
+      "owner": "/우암동법무사",
+      "intent": "local",
+      "aliasOf": "우암동 법무사"
+    },
+    "부산 연지동 법무사": {
+      "owner": "/연지동법무사",
+      "intent": "local",
+      "aliasOf": "연지동 법무사"
+    },
+    "부산 부곡동 법무사": {
+      "owner": "/부곡동법무사",
+      "intent": "local",
+      "aliasOf": "부곡동 법무사"
+    },
+    "부산 양정동 법무사": {
+      "owner": "/양정동법무사",
+      "intent": "local",
+      "aliasOf": "양정동 법무사"
+    },
+    "부산 장전동 법무사": {
+      "owner": "/장전동법무사",
+      "intent": "local",
+      "aliasOf": "장전동 법무사"
+    },
+    "부산 명지동 법무사": {
+      "owner": "/명지동법무사",
+      "intent": "local",
+      "aliasOf": "명지동 법무사"
+    },
+    "부산 송정동 법무사": {
+      "owner": "/송정동법무사",
+      "intent": "local",
+      "aliasOf": "송정동 법무사"
+    },
+    "부산 하단동 법무사": {
+      "owner": "/하단법무사",
+      "intent": "local",
+      "aliasOf": "하단동 법무사"
+    },
+    "부산 정관읍 법무사": {
+      "owner": "/정관법무사",
+      "intent": "local",
+      "aliasOf": "정관읍 법무사"
+    },
+    "가평 상속 법무사": {
+      "owner": "/업무사례/가평상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "강동구 상속 법무사": {
+      "owner": "/업무사례/강동구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "강릉 상속 법무사": {
+      "owner": "/업무사례/강릉상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "서울 강서구 상속 법무사": {
+      "owner": "/업무사례/강서구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "강화도 상속 법무사": {
+      "owner": "/업무사례/강화도상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "거창 상속 법무사": {
+      "owner": "/업무사례/거창상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "고령 상속 법무사": {
+      "owner": "/업무사례/고령성주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "경남 고성 상속 법무사": {
+      "owner": "/업무사례/고성군상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "공주 상속 법무사": {
+      "owner": "/업무사례/공주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "관악구 상속 법무사": {
+      "owner": "/업무사례/관악구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "광교 상속 법무사": {
+      "owner": "/업무사례/광교상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "광명 상속 법무사": {
+      "owner": "/업무사례/광명상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "광양 상속 법무사": {
+      "owner": "/업무사례/광양상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "구로구 상속 법무사": {
+      "owner": "/업무사례/구로구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "구리 상속 법무사": {
+      "owner": "/업무사례/구리상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "군산 상속 법무사": {
+      "owner": "/업무사례/군산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "군포 상속 법무사": {
+      "owner": "/업무사례/군포상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "김천 상속 법무사": {
+      "owner": "/업무사례/김천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "김포 상속 법무사": {
+      "owner": "/업무사례/김포상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "나주 상속 법무사": {
+      "owner": "/업무사례/나주정읍상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "남양주 상속 법무사": {
+      "owner": "/업무사례/남양주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "남원 상속 법무사": {
+      "owner": "/업무사례/남원상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "남해 상속 법무사": {
+      "owner": "/업무사례/남해상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "노원구 상속 법무사": {
+      "owner": "/업무사례/노원구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "당진 상속 법무사": {
+      "owner": "/업무사례/당진상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 군위군 상속 법무사": {
+      "owner": "/업무사례/대구군위군상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 남구 상속 법무사": {
+      "owner": "/업무사례/대구남구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 동구 상속 법무사": {
+      "owner": "/업무사례/대구동구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 북구 상속 법무사": {
+      "owner": "/업무사례/대구북구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 서구 상속 법무사": {
+      "owner": "/업무사례/대구서구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대구 중구 상속 법무사": {
+      "owner": "/업무사례/대구중구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대전 서구 상속 법무사": {
+      "owner": "/업무사례/대전서구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "대전 유성구 상속 법무사": {
+      "owner": "/업무사례/대전유성구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "동탄 상속 법무사": {
+      "owner": "/업무사례/동탄상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "동해 상속 법무사": {
+      "owner": "/업무사례/동해삼척상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "마산합포구 상속 법무사": {
+      "owner": "/업무사례/마산합포구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "마산회원구 상속 법무사": {
+      "owner": "/업무사례/마산회원구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "마포구 상속 법무사": {
+      "owner": "/업무사례/마포구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "목포 상속 법무사": {
+      "owner": "/업무사례/목포상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "문경 상속 법무사": {
+      "owner": "/업무사례/문경상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "양산 물금 상속 법무사": {
+      "owner": "/업무사례/물금상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "부천 상속 법무사": {
+      "owner": "/업무사례/부천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "부평구 상속 법무사": {
+      "owner": "/업무사례/부평구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "분당 상속 법무사": {
+      "owner": "/업무사례/분당상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "양산 사송 상속 법무사": {
+      "owner": "/업무사례/사송상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "사천 상속 법무사": {
+      "owner": "/업무사례/사천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "산청 상속 법무사": {
+      "owner": "/업무사례/산청상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "상주 상속 법무사": {
+      "owner": "/업무사례/상주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "서귀포 상속 법무사": {
+      "owner": "/업무사례/서귀포상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "서산 상속 법무사": {
+      "owner": "/업무사례/서산보령상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "서초구 상속 법무사": {
+      "owner": "/업무사례/서초구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "성동구 상속 법무사": {
+      "owner": "/업무사례/성동구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "속초 상속 법무사": {
+      "owner": "/업무사례/속초상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "송파구 상속 법무사": {
+      "owner": "/업무사례/송파구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "순천 상속 법무사": {
+      "owner": "/업무사례/순천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "시흥 상속 법무사": {
+      "owner": "/업무사례/시흥상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "아산 상속 법무사": {
+      "owner": "/업무사례/아산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "안동 상속 법무사": {
+      "owner": "/업무사례/안동상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "안산 상속 법무사": {
+      "owner": "/업무사례/안산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "안양 상속 법무사": {
+      "owner": "/업무사례/안양상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "양주 상속 법무사": {
+      "owner": "/업무사례/양주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "여수 상속 법무사": {
+      "owner": "/업무사례/여수상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "여주 상속 법무사": {
+      "owner": "/업무사례/여주양평상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "영덕 상속 법무사": {
+      "owner": "/업무사례/영덕봉화상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "영등포구 상속 법무사": {
+      "owner": "/업무사례/영등포구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "영종도 상속 법무사": {
+      "owner": "/업무사례/영종도상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "영주 상속 법무사": {
+      "owner": "/업무사례/영주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "영천 상속 법무사": {
+      "owner": "/업무사례/영천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "예천 상속 법무사": {
+      "owner": "/업무사례/예천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "오산 상속 법무사": {
+      "owner": "/업무사례/오산안성상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "용산구 상속 법무사": {
+      "owner": "/업무사례/용산구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "울산 북구 상속 법무사": {
+      "owner": "/업무사례/울산북구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "울산 중구 상속 법무사": {
+      "owner": "/업무사례/울산중구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "울진 상속 법무사": {
+      "owner": "/업무사례/울진상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "김해 율하 상속 법무사": {
+      "owner": "/업무사례/율하상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "은평구 상속 법무사": {
+      "owner": "/업무사례/은평구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "의령 상속 법무사": {
+      "owner": "/업무사례/의령상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "의성 상속 법무사": {
+      "owner": "/업무사례/의성상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "의왕 상속 법무사": {
+      "owner": "/업무사례/의왕과천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "의정부 상속 법무사": {
+      "owner": "/업무사례/의정부상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "이천 상속 법무사": {
+      "owner": "/업무사례/이천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "익산 상속 법무사": {
+      "owner": "/업무사례/익산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "일산 상속 법무사": {
+      "owner": "/업무사례/일산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "장유 상속 법무사": {
+      "owner": "/업무사례/장유상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "제천 상속 법무사": {
+      "owner": "/업무사례/제천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "양산 증산 상속 법무사": {
+      "owner": "/업무사례/증산상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "진해구 상속 법무사": {
+      "owner": "/업무사례/진해구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "창녕 상속 법무사": {
+      "owner": "/업무사례/창녕상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "창원 성산구 상속 법무사": {
+      "owner": "/업무사례/창원성산구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "창원 의창구 상속 법무사": {
+      "owner": "/업무사례/창원의창구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "청도 상속 법무사": {
+      "owner": "/업무사례/청도상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "청라 상속 법무사": {
+      "owner": "/업무사례/청라상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "청송 상속 법무사": {
+      "owner": "/업무사례/청송영양상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "춘천 상속 법무사": {
+      "owner": "/업무사례/춘천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "충주 상속 법무사": {
+      "owner": "/업무사례/충주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "칠곡 상속 법무사": {
+      "owner": "/업무사례/칠곡상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "파주 상속 법무사": {
+      "owner": "/업무사례/파주상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "판교 상속 법무사": {
+      "owner": "/업무사례/판교상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "평택 상속 법무사": {
+      "owner": "/업무사례/평택상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "포천 상속 법무사": {
+      "owner": "/업무사례/포천동두천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "하남 상속 법무사": {
+      "owner": "/업무사례/하남상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "하동 상속 법무사": {
+      "owner": "/업무사례/하동상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "함안 상속 법무사": {
+      "owner": "/업무사례/함안상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "함양 상속 법무사": {
+      "owner": "/업무사례/함양상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "합천 상속 법무사": {
+      "owner": "/업무사례/합천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "홍천 상속 법무사": {
+      "owner": "/업무사례/홍천상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
+    },
+    "화성 상속 법무사": {
+      "owner": "/업무사례/화성상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/전국상속등기",
+        "/상속등기비용"
+      ]
     }
   }
 }

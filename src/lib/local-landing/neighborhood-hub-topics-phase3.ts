@@ -1,5 +1,6 @@
 import type { NeighborhoodTopic } from "./neighborhood-hub-topics";
 import { josa } from "@/lib/korean/josa";
+import { withBusanPrefix } from "./busan-prefix";
 
 type TopicInput = Omit<NeighborhoodTopic, "slug" | "title" | "h1"> & {
   slug: string;
@@ -23,7 +24,7 @@ function makeTopic({
   return {
     slug,
     title: `${headline} 법무사`,
-    h1: `${headline} 법무사 — ${propertyType} 상담`,
+    h1: withBusanPrefix(slug, `${headline} 법무사 — ${propertyType} 상담`),
     ...topic,
     livingAreaBody,
     problemStatement: `${problemStatement} ${closer}`,
@@ -41,7 +42,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       "다가구 임대차 목록·상속 협의서·근저당 말소 서류",
     ],
     serviceSlug: "inheritance-registration",
-    metaTitle: "초량동 법무사｜좌천·수정동 상속·등기",
+    metaTitle: "부산 초량동 법무사｜좌천·수정동 상속·등기",
     metaDescription:
       "초량동·좌천동·수정동 다가구·상가 상속등기, 매매, 전세 정리. 부산역 배후 주거권 상담 — 해운대 센텀 다옴법무사.",
     primaryKeywords: ["초량동 법무사", "좌천동 법무사", "수정동 법무사"],
@@ -135,7 +136,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       "상가 매매계약서·임대차 현황·법인 등기부",
     ],
     serviceSlug: "real-estate-registration",
-    metaTitle: "범일동 법무사｜범천동 상가·등기 상담",
+    metaTitle: "부산 범일동 법무사｜범천동 상가·등기 상담",
     metaDescription:
       "범일동·범천동 공구·물류 상가 매매등기, 권리금과 소유권 분리, 배후 주거 상속. 다옴법무사사무소.",
     primaryKeywords: ["범일동 법무사", "범천동 법무사", "범일동 상가등기"],
@@ -229,7 +230,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       "채권자 목록·소득증빙·등기부 담보 현황",
     ],
     serviceSlug: "personal-rehabilitation",
-    metaTitle: "구포동 법무사｜만덕동 회생·상속 상담",
+    metaTitle: "부산 구포동 법무사｜만덕동 회생·상속 상담",
     metaDescription:
       "구포동·만덕동 개인회생, 아파트 상속·매매등기. 덕천·화명과 다른 구포·만덕 생활권 안내 — 다옴법무사.",
     primaryKeywords: ["구포동 법무사", "만덕동 법무사", "구포 개인회생"],
@@ -700,7 +701,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       "임대차 목록·상속 협의서·등기부·소득·채무 자료",
     ],
     serviceSlug: "qualified-acceptance",
-    metaTitle: "구서동 법무사｜서동·청룡 상속·한정승인",
+    metaTitle: "부산 구서동 법무사｜서동·청룡 상속·한정승인",
     metaDescription:
       "구서동·서동·청룡동 다가구·아파트 상속, 한정승인, 매매등기. 부곡·장전과 구분된 금정 남부 — 다옴법무사.",
     primaryKeywords: ["구서동 법무사", "서동 법무사", "청룡동 법무사"],
@@ -1164,7 +1165,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
       "토지·건물 등기부·가족관계·협의서·위임장",
     ],
     serviceSlug: "inheritance-registration",
-    metaTitle: "기장읍 법무사｜장안·철마 토지 상속등기",
+    metaTitle: "부산 기장읍 법무사｜장안·철마 토지 상속등기",
     metaDescription:
       "기장읍·장안읍·철마면 토지·주택 상속등기, 매매. 정관·일광과 구분된 기장 본읍·면 안내 — 다옴법무사.",
     primaryKeywords: ["기장읍 법무사", "장안읍 법무사", "철마면 법무사"],

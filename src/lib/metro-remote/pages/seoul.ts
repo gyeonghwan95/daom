@@ -5,7 +5,7 @@ export const seoulMetroRemote: MetroRemoteSpec = {
   path: "/업무사례/서울상속등기법무사",
   region: "서울",
   group: "SEOUL",
-  metaTitle: "서울 상속등기, 부산 법무사에게 원거리로 맡길 때 | 다옴법무사사무소",
+  metaTitle: "서울 상속 법무사｜서울 집 상속등기를 부산에서 원거리로 맡길 때 | 다옴법무사사무소",
   description:
     "서울 아파트를 상속받거나 서울에 살며 지방 부모님 집을 정리할 때 등기와 상속포기는 기준이 다릅니다. 서울가정법원 관할, 특별시 채권 비율, 원본 우편 순서를 정리했습니다.",
   kicker: "서울 부동산 · 서울 거주 상속인",

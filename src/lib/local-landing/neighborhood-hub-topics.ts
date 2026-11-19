@@ -121,10 +121,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   서면법무사: {
     slug: "서면법무사",
     title: "서면 법무사",
-    metaTitle: "서면 법무사｜부산진구·부전동 상가등기",
+    metaTitle: "부산 서면 법무사｜부산진구·부전동 상가등기",
     metaDescription:
       "서면·부전동 법무사. 부산진구 법인등기·상가등기·지급명령·부동산등기. 부산 최대 상권 등기 상담 — 다옴법무사.",
-    h1: "서면 법무사 — 부산진구 상가·법인 등기 상담",
+    h1: "부산 서면 법무사 — 부산진구 상가·법인 등기 상담",
     serviceSlug: "real-estate-registration",
     primaryKeywords: ["서면 법무사", "서면 상가등기", "부전동 오피스 등기"],
     summaryParagraphs: [
@@ -446,10 +446,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   대연동법무사: {
     slug: "대연동법무사",
     title: "대연동 법무사",
-    metaTitle: "대연동 법무사｜남구 아파트·전세 등기",
+    metaTitle: "부산 대연동 법무사｜남구 아파트·전세 등기",
     metaDescription:
       "대연동·남구 법무사. 아파트 등기·전세권·상속등기. 대연역·용호동 인근 — 다옴법무사.",
-    h1: "대연동 법무사 — 남구 아파트·전세 등기 상담",
+    h1: "부산 대연동 법무사 — 남구 아파트·전세 등기 상담",
     serviceSlug: "real-estate-registration",
     primaryKeywords: ["대연동 법무사", "대연동 아파트 등기", "대연 학구 상속"],
     summaryParagraphs: [
@@ -501,10 +501,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   덕천동법무사: {
     slug: "덕천동법무사",
     title: "덕천동 법무사",
-    metaTitle: "덕천동 법무사｜북구·개인회생·등기",
+    metaTitle: "부산 덕천동 법무사｜북구·개인회생·등기",
     metaDescription:
       "덕천동·북구 법무사. 부동산등기·개인회생·지급명령. 덕천역·화명 인근 — 다옴법무사.",
-    h1: "덕천동 법무사 — 북구 등기·개인회생 상담",
+    h1: "부산 덕천동 법무사 — 북구 등기·개인회생 상담",
     serviceSlug: "personal-rehabilitation",
     primaryKeywords: ["덕천동 법무사", "덕천 개인회생", "덕천역 상가등기"],
     summaryParagraphs: [
@@ -618,10 +618,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
     title: "정관 법무사",
     // 2026-11-15: '정관 법무사' 순위 밖. 정관읍은 대부분 정관신도시 아파트 주거인데 제목·H1이 토지·공장 위주였고,
     // '정관'이 회사 정관(定款)·법무법인 이름과도 겹쳐 지역(정관읍) 의도를 제목 앞쪽에 분명히 둔다.
-    metaTitle: "정관 법무사｜정관읍·정관신도시 아파트·토지 등기",
+    metaTitle: "부산 정관 법무사｜정관읍·정관신도시 아파트·토지 등기",
     metaDescription:
       "기장군 정관읍·정관신도시 아파트 상속·매매 등기와 토지·농지 상속, 공장 법인등기를 안내합니다. 부동산등기 접수는 동부지원 등기과, 해운대 센텀 다옴법무사사무소 안윤정 법무사.",
-    h1: "정관 법무사 — 정관읍·정관신도시 아파트 상속·매매와 토지 등기",
+    h1: "부산 정관 법무사 — 정관읍·정관신도시 아파트 상속·매매와 토지 등기",
     serviceSlug: "inheritance-registration",
     primaryKeywords: ["정관 법무사", "정관읍 법무사", "정관신도시 법무사", "정관신도시 등기", "정관 토지 상속"],
     summaryParagraphs: [
@@ -734,10 +734,10 @@ export const neighborhoodTopics: Record<string, NeighborhoodTopic> = {
   하단법무사: {
     slug: "하단법무사",
     title: "하단 법무사",
-    metaTitle: "하단 법무사｜하단동·사하구 등기·지급명령",
+    metaTitle: "부산 하단 법무사｜하단동·사하구 등기·지급명령",
     metaDescription:
       "하단동·사하구 법무사. 부동산등기·상속등기·지급명령. 하단역·괴정동 — 다옴법무사.",
-    h1: "하단 법무사 — 하단동·사하구 부동산·상속 등기",
+    h1: "부산 하단 법무사 — 하단동·사하구 부동산·상속 등기",
     serviceSlug: "inheritance-registration",
     primaryKeywords: ["하단 법무사", "하단동 아파트 등기", "하단역 상속등기"],
     summaryParagraphs: [
