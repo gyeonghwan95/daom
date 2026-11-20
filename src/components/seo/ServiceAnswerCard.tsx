@@ -1,4 +1,5 @@
-import { getServiceAnswer } from "@/data/seo/service-answers";
+import Link from "next/link";
+import { getServiceAnswer, SERVICE_RELATED } from "@/data/seo/service-answers";
 
 /**
  * 업무 페이지 H1 바로 아래 "핵심 답변" — 검색 AI(네이버 AI 브리핑·ChatGPT·Perplexity 등)가
@@ -8,6 +9,13 @@ import { getServiceAnswer } from "@/data/seo/service-answers";
 export function ServiceAnswerCard({ path }: { path?: string }) {
   const a = path ? getServiceAnswer(path) : undefined;
   if (!a) return null;
+  let key = path ?? "";
+  try {
+    key = decodeURIComponent(key);
+  } catch {
+    /* 그대로 */
+  }
+  const related = SERVICE_RELATED[key.replace(/\/$/, "")] ?? [];
   return (
     <section
       aria-label={`${a.name} 핵심 답변`}
@@ -34,6 +42,19 @@ export function ServiceAnswerCard({ path }: { path?: string }) {
         <span className="font-medium text-navy">법무사가 하는 일 </span>
         {a.scope}
       </p>
+      {related.length > 0 ? (
+        <p className="mt-2 text-sm leading-relaxed text-navy/75">
+          <span className="font-medium text-navy">함께 보는 업무 </span>
+          {related.map(([href, label], i) => (
+            <span key={href}>
+              {i > 0 ? " · " : null}
+              <Link href={href} className="underline decoration-navy/30 underline-offset-2 hover:text-navy">
+                {label}
+              </Link>
+            </span>
+          ))}
+        </p>
+      ) : null}
     </section>
   );
 }

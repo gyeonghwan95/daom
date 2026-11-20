@@ -5,6 +5,7 @@ import { CORPORATE_ANSWERS } from "./corporate";
 import { COURT_FAMILY_ANSWERS } from "./court-family";
 
 export type { ServiceAnswer } from "./types";
+export { SERVICE_RELATED } from "./related";
 
 /**
  * 업무 페이지 100개의 "핵심 답변"(2026-11-19).
