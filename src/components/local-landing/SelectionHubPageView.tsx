@@ -76,8 +76,12 @@ export function SelectionHubPageView({ page }: SelectionHubPageViewProps) {
         { id: "consultation", label: "상담 문의" },
       ];
 
+  // 「부산 법무사 사무소」는 부산에 있는 사무소를 찾는 검색이다. 첫 화면에 '부산이 아니어도 괜찮습니다'·전국 비대면 카드를
+  // 먼저 내면 검색 의도와 반대 문장으로 시작한다(2026-11-23). 비대면 안내는 본문 '방문·비대면 이용 흐름'에 그대로 있다.
+  const isLocalOfficePage = page.slug === "부산법무사무소";
   const showNationwide =
     !isConsultPrep &&
+    !isLocalOfficePage &&
     shouldShowNationwideRegionChip(page.path, page.slug, page.serviceSlug);
 
   const bodyParagraphs = isConsultPrep

@@ -28,6 +28,7 @@ export default function LocationPage() {
           { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
           { href: "/contact", label: "상담 신청" },
           { href: "/office", label: "사무소 소개" },
+          { href: "/부산법무사무소", label: "부산 법무사 사무소 안내 — 업무·상담 방법" },
           { href: "/services", label: "업무안내" },
           { href: "/faq", label: "자주 묻는 질문" },
         ]}

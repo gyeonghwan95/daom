@@ -104,6 +104,7 @@ export default function OfficePage() {
         intro={officePageMeta.intro}
         relatedLinks={[
           { href: "/location", label: "오시는 길" },
+          { href: "/부산법무사무소", label: "부산 법무사 사무소 안내 — 업무·상담 방법" },
           { href: "/등기관할과사무소위치", label: "등기 관할과 사무소 위치" },
           { href: "/about", label: "법무사 소개" },
           { href: "/services", label: "업무안내" },
