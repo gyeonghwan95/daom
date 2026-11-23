@@ -1,61 +1,61 @@
 # 다옴법무사사무소 — 색인(웹페이지 수집) 재요청 URL 목록
-# 작성: 2026-11-23 (2차 수정 반영) · 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
+# 작성: 2026-11-23 (2차 수정 반영) · 도메인 제외 path만 기재(한글은 한글 그대로) · 사이트: https://xn--2j1br1na42lvxja38mk8r.kr
 # 서치어드바이저 → 요청 → 웹 페이지 수집 에서 위에서부터 차례로 요청하세요. 하루 요청 한도가 있으니 1·2번을 먼저, 3번은 며칠에 나눠 요청합니다.
 # 4번(lastmod 갱신 URL)은 개별 요청 대신 사이트맵 재수집·IndexNow(npm run indexnow)로 처리하세요.
 
 # 1. 이번 작업에서 수정한 대표 페이지 (6개)
 # 제목·설명·H1·본문·구조 중 하나 이상이 바뀐 페이지. 가장 먼저 요청 (맨 위 2개는 제목까지 바뀜)
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%AC%B4%EC%86%8C
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EB%B2%95%EB%AC%B4%EC%82%AC
+/부산상속전문법무사
+/부산상속법무사
+/부산법무사무소
+/부산상속포기
+/
+/부산법인법무사
 
 # 2. 요청 검색어 7개의 담당·연결 페이지 (11개)
 # 내용 변경은 없거나 연결 문구만 바뀜. 수집 여부를 먼저 확인하고 미수집이면 요청
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9D%B8%EC%84%A4%EB%A6%BD%EC%A0%84%EB%AC%B8%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%83%81%EC%86%8D%EB%93%B1%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%B6%94%EC%B2%9C
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EC%83%81%EB%8B%B4
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B0%A9%EB%AC%B8%EC%83%81%EB%8B%B4
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EB%AC%B4%EC%82%AC%EB%B9%84%EB%8C%80%EB%A9%B4%EC%83%81%EB%8B%B4
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B2%95%EC%9B%90%EA%B7%BC%EC%B2%98%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/office
-https://xn--2j1br1na42lvxja38mk8r.kr/location
+/부산법무사
+/부산법인설립전문법무사
+/부산상속등기
+/부산한정승인
+/부산법무사추천
+/부산법무사상담
+/부산법무사방문상담
+/부산법무사비대면상담
+/부산법원근처법무사
+/office
+/location
 
 # 3. 11월 1일 이후 새로 만든 페이지 (29개)
 # 이전 작업에서 추가됨 — 11/11 분석에서 신규 페이지가 미수집 상태로 확인된 바 있어 별도 요청
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%95%EC%A0%9C%EC%A7%91%ED%96%89%EB%B2%95%EB%AC%B4%EC%82%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%ED%95%9C%EC%A0%95%ED%9B%84%EA%B2%AC
-https://xn--2j1br1na42lvxja38mk8r.kr/%ED%95%9C%EC%A0%95%EC%8A%B9%EC%9D%B8%ED%9B%84%EC%A0%88%EC%B0%A8
-https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/busanjin-salary-rehabilitation-case
-https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/namgu-lease-registration-order-case
-https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/suyeong-mortgage-cancellation-case
-https://xn--2j1br1na42lvxja38mk8r.kr/services/cases/yeonje-family-inheritance-renunciation-case
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EA%B0%80%EC%A1%B1%EA%B0%84%EB%A7%A4%EB%A7%A4%EB%93%B1%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%85%B8%EC%9D%B8%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%8F%99%EC%82%B0%EC%B1%84%EA%B6%8C%EB%8B%B4%EB%B3%B4%EB%93%B1%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EB%B9%84%EB%B2%95%EC%9D%B8%EC%82%AC%EB%8B%A8%EB%B6%80%EB%8F%99%EC%82%B0%EB%93%B1%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%9E%84%EB%8C%80%EC%B0%A8%EA%B5%90%EC%9C%A1
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%A4%91%ED%95%99%EA%B5%90%ED%8A%B9%EA%B0%95
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%B2%AD%EC%86%8C%EB%85%84%EB%B2%95%EB%A5%A0%EA%B5%90%EC%9C%A1
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B6%80%EC%82%B0%EC%BD%98%EB%8F%84%ED%9A%8C%EC%9B%90%EA%B6%8C%EB%93%B1%EA%B8%B0
-https://xn--2j1br1na42lvxja38mk8r.kr/%EA%B8%B0%EC%97%AC%EB%B6%84%ED%8A%B9%EB%B3%84%EC%88%98%EC%9D%B5
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%82%B4%EC%9A%A9%EC%A6%9D%EB%AA%85%ED%9A%A8%EB%A0%A5
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%93%B1%EA%B8%B0%EB%B6%80%EB%93%B1%EB%B3%B8%EB%B3%B4%EB%8A%94%EB%B2%95
-https://xn--2j1br1na42lvxja38mk8r.kr/%EB%B2%95%EC%A0%95%EC%83%81%EC%86%8D%EB%B6%84
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%84%9C%EB%A5%98%EB%B0%9C%EA%B8%89%EC%B2%98
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%88%9C%EC%9C%84
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%EC%A6%9D%EC%97%AC%EB%93%B1%EA%B8%B0%EB%B9%84%EA%B5%90
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%83%81%EC%86%8D%ED%8F%AC%EA%B8%B0%EC%B7%A8%EC%86%8C
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%84%B1%EB%85%84%ED%9B%84%EA%B2%AC%EC%8B%A0%EC%B2%AD
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%86%8C%EC%95%A1%EC%8B%AC%ED%8C%90
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%95%95%EB%A5%98%EA%B0%80%EC%95%95%EB%A5%98%EB%B6%80%EB%8F%99%EC%82%B0%EC%83%81%EC%86%8D
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%90%ED%95%84%EC%9C%A0%EC%96%B8%EC%9E%A5%EC%9A%94%EA%B1%B4
-https://xn--2j1br1na42lvxja38mk8r.kr/%EC%9E%AC%EC%82%B0%EB%AA%85%EC%8B%9C%EC%A1%B0%ED%9A%8C
+/부산강제집행법무사
+/부산한정후견
+/한정승인후절차
+/services/cases/busanjin-salary-rehabilitation-case
+/services/cases/namgu-lease-registration-order-case
+/services/cases/suyeong-mortgage-cancellation-case
+/services/cases/yeonje-family-inheritance-renunciation-case
+/부산가족간매매등기
+/부산노인법률교육
+/부산동산채권담보등기
+/부산비법인사단부동산등기
+/부산소상공인법률교육
+/부산임대차교육
+/부산중학교특강
+/부산청소년법률교육
+/부산콘도회원권등기
+/기여분특별수익
+/내용증명효력
+/등기부등본보는법
+/법정상속분
+/상속서류발급처
+/상속순위
+/상속증여등기비교
+/상속포기취소
+/성년후견신청
+/소액심판
+/압류가압류부동산상속
+/자필유언장요건
+/재산명시조회
 
 # 4. lastmod가 갱신된 기존 페이지 118개 — 목록: docs/seo/reindex-lastmod-updated-2026-11-23.txt (개별 요청 대신 사이트맵으로 처리)
