@@ -675,6 +675,7 @@ function readCaseRegionPaths() {
       "city-defs.ts",
       "phase4-city-defs.ts",
       "phase5-remote-missing.ts",
+      "phase6-renunciation-defs.ts",
     ]) {
       const filePath = path.join(nationwideDir, file);
       if (!fs.existsSync(filePath)) continue;
@@ -691,6 +692,14 @@ function readCaseRegionPaths() {
         for (const match of text.matchAll(/^\s*slug:\s*"([^"]+)"/gm)) {
           paths.add(`/업무사례/${match[1]}`);
         }
+      }
+    }
+    // 도시별 상속포기(phase6) — 슬러그를 `${key}상속포기법무사`로 만든다(metro-remote/pages/renunciation-cities.ts)
+    const renounceFile = path.join(ROOT, "src/lib/metro-remote/pages/renunciation-cities.ts");
+    if (fs.existsSync(renounceFile)) {
+      const text = fs.readFileSync(renounceFile, "utf8");
+      for (const match of text.matchAll(/^\s*key:\s*"([^"]+)"/gm)) {
+        paths.add(`/업무사례/${match[1]}상속포기법무사`);
       }
     }
   }

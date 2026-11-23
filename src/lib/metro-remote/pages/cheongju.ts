@@ -184,6 +184,12 @@ export const cheongjuMetroRemote: MetroRemoteSpec = {
     description: "청주 상속에서 자주 함께 보는 안내입니다.",
     items: [
       {
+        href: "/업무사례/청주상속포기법무사",
+        title: "청주 상속포기·한정승인",
+        image: "/image/썸네일-법원절차.jpg",
+        imageAlt: "",
+      },
+      {
         href: "/오래된상속토지정리",
         title: "오래된 상속 토지 정리",
         image: "/image/썸네일-서류등기.jpg",

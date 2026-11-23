@@ -7,7 +7,8 @@ export type MetroRemoteRegionGroup =
   | "INCHEON_TEST"
   | "DAEGU_GYEONGBUK"
   | "ULSAN_GYEONGNAM"
-  | "HONAM";
+  | "HONAM"
+  | "JEJU";
 
 export type MetroRemoteCarouselItem = {
   href: string;

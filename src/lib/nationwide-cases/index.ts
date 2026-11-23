@@ -3,6 +3,7 @@ import { metroRegionDefs } from "./metro-defs";
 import { cityRegionDefs } from "./city-defs";
 import { phase4CityRegionDefs } from "./phase4-city-defs";
 import { phase5RemoteMissingDefs } from "./phase5-remote-missing";
+import { phase6RenunciationDefs, withRenunciationLinks } from "./phase6-renunciation-defs";
 import { isPublishable, scoreRegionLanding } from "./quality";
 import {
   buildAllNationwideCasePageData,
@@ -22,6 +23,7 @@ function allDefsRaw(): RegionLandingDef[] {
     ...cityRegionDefs,
     ...phase4CityRegionDefs,
     ...phase5RemoteMissingDefs,
+    ...phase6RenunciationDefs,
   ];
 }
 
@@ -30,7 +32,7 @@ let cachedPublished: RegionLandingDef[] | null = null;
 let bySlug: Map<string, RegionLandingDef> | null = null;
 
 export function getAllNationwideCaseDefs(): RegionLandingDef[] {
-  if (!cachedAll) cachedAll = allDefsRaw();
+  if (!cachedAll) cachedAll = withRenunciationLinks(allDefsRaw());
   return cachedAll;
 }
 

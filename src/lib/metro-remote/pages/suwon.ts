@@ -186,6 +186,12 @@ export const suwonMetroRemote: MetroRemoteSpec = {
     description: "수원 상속에서 자주 함께 보는 안내입니다.",
     items: [
       {
+        href: "/업무사례/수원상속포기법무사",
+        title: "수원 상속포기·한정승인",
+        image: "/image/썸네일-법원절차.jpg",
+        imageAlt: "",
+      },
+      {
         href: "/상속재산분할협의서준비",
         title: "상속재산분할협의서 준비",
         image: "/image/썸네일-상담협의.jpg",

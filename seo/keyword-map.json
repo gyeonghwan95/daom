@@ -5946,6 +5946,366 @@
         "/전국상속등기",
         "/상속등기비용"
       ]
+    },
+    "서울 상속포기 법무사": {
+      "owner": "/업무사례/서울상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "서울 상속포기": {
+      "owner": "/업무사례/서울상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "서울 한정승인": {
+      "owner": "/업무사례/서울상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "인천 상속포기 법무사": {
+      "owner": "/업무사례/인천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "인천 상속포기": {
+      "owner": "/업무사례/인천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "인천 한정승인": {
+      "owner": "/업무사례/인천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "부천 상속포기 법무사": {
+      "owner": "/업무사례/부천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "부천 상속포기": {
+      "owner": "/업무사례/부천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "부천 한정승인": {
+      "owner": "/업무사례/부천상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "대전 상속포기 법무사": {
+      "owner": "/업무사례/대전상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "대전 상속포기": {
+      "owner": "/업무사례/대전상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "대전 한정승인": {
+      "owner": "/업무사례/대전상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "천안 상속포기 법무사": {
+      "owner": "/업무사례/천안상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "천안 상속포기": {
+      "owner": "/업무사례/천안상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "천안 한정승인": {
+      "owner": "/업무사례/천안상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "수원 상속포기 법무사": {
+      "owner": "/업무사례/수원상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "수원 상속포기": {
+      "owner": "/업무사례/수원상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "수원 한정승인": {
+      "owner": "/업무사례/수원상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안양 상속포기 법무사": {
+      "owner": "/업무사례/안양상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안양 상속포기": {
+      "owner": "/업무사례/안양상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안양 한정승인": {
+      "owner": "/업무사례/안양상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안산 상속포기 법무사": {
+      "owner": "/업무사례/안산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안산 상속포기": {
+      "owner": "/업무사례/안산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "안산 한정승인": {
+      "owner": "/업무사례/안산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "평택 상속포기 법무사": {
+      "owner": "/업무사례/평택상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "평택 상속포기": {
+      "owner": "/업무사례/평택상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "평택 한정승인": {
+      "owner": "/업무사례/평택상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "의정부 상속포기 법무사": {
+      "owner": "/업무사례/의정부상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "의정부 상속포기": {
+      "owner": "/업무사례/의정부상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "의정부 한정승인": {
+      "owner": "/업무사례/의정부상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "일산 상속포기 법무사": {
+      "owner": "/업무사례/일산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "일산 상속포기": {
+      "owner": "/업무사례/일산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "일산 한정승인": {
+      "owner": "/업무사례/일산상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "남양주 상속포기 법무사": {
+      "owner": "/업무사례/남양주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "남양주 상속포기": {
+      "owner": "/업무사례/남양주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "남양주 한정승인": {
+      "owner": "/업무사례/남양주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "청주 상속포기 법무사": {
+      "owner": "/업무사례/청주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "청주 상속포기": {
+      "owner": "/업무사례/청주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "청주 한정승인": {
+      "owner": "/업무사례/청주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "제주 상속포기 법무사": {
+      "owner": "/업무사례/제주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "제주 상속포기": {
+      "owner": "/업무사례/제주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "제주 한정승인": {
+      "owner": "/업무사례/제주상속포기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "성북구 상속등기 법무사": {
+      "owner": "/업무사례/성북구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "성북구 상속등기": {
+      "owner": "/업무사례/성북구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
+    },
+    "성북구 상속 법무사": {
+      "owner": "/업무사례/성북구상속등기법무사",
+      "intent": "remote-inheritance",
+      "supporting": [
+        "/상속포기기간",
+        "/상속포기필요서류"
+      ]
     }
   }
 }

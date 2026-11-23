@@ -265,6 +265,12 @@ export const seoulMetroRemote: MetroRemoteSpec = {
     description: "등기 전후로 함께 검토하는 절차입니다.",
     items: [
       {
+        href: "/업무사례/서울상속포기법무사",
+        title: "서울 상속포기·한정승인",
+        image: "/image/썸네일-법원절차.jpg",
+        imageAlt: "",
+      },
+      {
         href: "/방문없이준비하는상속포기한정승인",
         title: "상속포기·한정승인을 멀리서 준비하는 방법",
         image: "/image/썸네일-법원절차.jpg",

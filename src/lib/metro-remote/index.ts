@@ -7,6 +7,7 @@ import { gwangjuMetroRemote } from "@/lib/metro-remote/pages/gwangju";
 import { suwonMetroRemote } from "@/lib/metro-remote/pages/suwon";
 import { seongnamMetroRemote } from "@/lib/metro-remote/pages/seongnam";
 import { cheongjuMetroRemote } from "@/lib/metro-remote/pages/cheongju";
+import { RENUNCIATION_CITY_SPECS } from "@/lib/metro-remote/pages/renunciation-cities";
 import type { MetroRemoteSpec } from "@/lib/metro-remote/types";
 
 export const METRO_REMOTE_SPECS: readonly MetroRemoteSpec[] = [
@@ -20,6 +21,8 @@ export const METRO_REMOTE_SPECS: readonly MetroRemoteSpec[] = [
   suwonMetroRemote,
   seongnamMetroRemote,
   cheongjuMetroRemote,
+  // 2026-11-23: 도시별 상속포기(자동완성 수요 확인, 10위 밖) — 같은 도시 상속등기 페이지와 의도 분리
+  ...RENUNCIATION_CITY_SPECS,
 ];
 
 const BY_SLUG = new Map(METRO_REMOTE_SPECS.map((spec) => [spec.slug, spec]));
