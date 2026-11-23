@@ -11,7 +11,7 @@ export const selectionCoreLinks = {
   busanReviews: { href: "/부산법무사후기", label: "부산 법무사 후기 확인 기준" },
   busanCost: { href: "/부산법무사비용", label: "부산 법무사 비용 안내" },
   busanFeeTable: { href: "/부산법무사보수표", label: "부산 법무사 보수표" },
-  busanOffice: { href: "/부산법무사무소", label: "부산 법무사무소 안내" },
+  busanOffice: { href: "/부산법무사무소", label: "부산 법무사 사무소 안내" },
   busanDocs: { href: "/부산법무사서류준비", label: "부산 법무사 서류 준비" },
   busanVisit: { href: "/부산법무사방문상담", label: "부산 법무사 방문상담" },
   busanRemote: {

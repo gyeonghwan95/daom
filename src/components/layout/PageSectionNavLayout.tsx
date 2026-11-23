@@ -12,6 +12,12 @@ import type { SectionNavItem } from "@/lib/section-nav/types";
 import { isReservedInheritancePath } from "@/data/seoExperiments/reserved-inheritance-intents";
 import { isLectureTargetPath } from "@/data/seoExperiments/lecture-targets";
 
+/**
+ * 본문을 DOM 맨 앞에 두는 대표 페이지(상담 패널·목차는 시각적으로만 왼쪽 열).
+ * 실측에서 상위 3위 밖이던 대표 페이지만 넣는다 — 이미 상위인 페이지의 DOM 순서는 건드리지 않는다.
+ */
+const CONTENT_FIRST_PATHS = new Set(["/부산법무사무소", "/부산법인법무사"]);
+
 type PageSectionNavLayoutProps = {
   children: React.ReactNode;
   /** 본문을 DOM 앞에 두고 좌측 열은 grid 배치로만 보이게 한다 (검색 타깃 페이지) */
@@ -133,7 +139,8 @@ export function PageSectionNavLayout({
   const contentFirst =
     articleFirst ||
     isReservedInheritancePath(decodedPath) ||
-    isLectureTargetPath(decodedPath);
+    isLectureTargetPath(decodedPath) ||
+    CONTENT_FIRST_PATHS.has(decodedPath.normalize("NFC").replace(/\/+$/, ""));
 
   if (!contentFirst) {
     return (

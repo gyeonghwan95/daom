@@ -11,7 +11,8 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = path.join(ROOT, "src");
 
 const RESTRICTED = [
-  /전문\s*법무사/g,
+  // 2026-11-23: '전문 법무사' 표현은 허용(config/seo-protected-pages.json rules.allowedPublicPhrases).
+  // 자격을 인증받은 것처럼 보이게 하는 표현만 계속 막는다.
   /인증된\s*전문/g,
   /최고의\s*법무사/g,
   /1위/g,
