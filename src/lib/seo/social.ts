@@ -2,6 +2,16 @@ import { defaultContact, getNaverBlogUrl } from "@/lib/contact";
 import { getNaverPlaceUrl } from "@/lib/office-location";
 import { siteConfig } from "@/lib/site";
 import { withAssetVersion } from "@/lib/seo/asset-version";
+import { DEFAULT_NAVER_PLACE_ID } from "@/lib/naver-place-reviews/types";
+
+/**
+ * 네이버 플레이스 정식 주소(ID 포함). 단축 주소(naver.me)는 검색엔진이 리디렉션을 따라 해석하지 않는 경우가 있어
+ * 네이버 AI 브리핑·각종 AI가 "사이트 = 이 플레이스 업체"로 묶을 수 있게 ID가 보이는 주소를 함께 둔다(2026-11-24).
+ */
+function getNaverPlaceCanonicalUrls(): string[] {
+  const id = process.env.NEXT_PUBLIC_NAVER_PLACE_ID?.trim() || DEFAULT_NAVER_PLACE_ID;
+  return [`https://map.naver.com/p/entry/place/${id}`, `https://m.place.naver.com/place/${id}/home`];
+}
 
 /** JSON-LD sameAs, AI·검색엔진 신뢰 신호 */
 export function getSocialProfileUrls(): string[] {
@@ -13,6 +23,7 @@ export function getSocialProfileUrls(): string[] {
     defaultContact.naverTalk;
 
   return [
+    ...getNaverPlaceCanonicalUrls(),
     getNaverPlaceUrl(),
     kakao,
     naverTalk,

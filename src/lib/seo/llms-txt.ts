@@ -43,6 +43,8 @@ export function buildLlmsTxt(): string {
     `- 사이트: ${siteConfig.url}`,
     `- 전화: ${phone}`,
     `- 주소: ${street}`,
+    "- 네이버 플레이스: https://map.naver.com/p/entry/place/2035745096",
+    "- 네이버 블로그: https://blog.naver.com/law-yoon-91",
     "",
     "## 대표 안내 (기존 URL)",
     "",

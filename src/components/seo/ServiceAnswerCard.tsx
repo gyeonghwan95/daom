@@ -1,5 +1,17 @@
 import Link from "next/link";
 import { getServiceAnswer, SERVICE_RELATED } from "@/data/seo/service-answers";
+import { BusanRegistryTable } from "@/components/seo/BusanRegistryTable";
+
+/** 부산 등기소 관할 표를 붙이는 핵심 부동산 페이지(소유권이전·근저당말소는 본문에 이미 있음) */
+const REGISTRY_TABLE_PATHS = new Set([
+  "/부산부동산등기",
+  "/부산매매등기법무사",
+  "/부산가족간매매등기",
+  "/부산증여등기",
+  "/부산신축건물보존등기",
+  "/부산근저당설정등기",
+  "/부산잔금대출근저당",
+]);
 
 /**
  * 업무 페이지 H1 바로 아래 "핵심 답변" — 검색 AI(네이버 AI 브리핑·ChatGPT·Perplexity 등)가
@@ -38,8 +50,10 @@ export function ServiceAnswerCard({ path }: { path?: string }) {
           ))}
         </tbody>
       </table>
+      {REGISTRY_TABLE_PATHS.has(key.replace(/\/$/, "")) ? <BusanRegistryTable /> : null}
       <p className="mt-3 border-t border-beige-dark/70 pt-2.5 text-sm leading-relaxed text-navy/75">
-        <span className="font-medium text-navy">법무사가 하는 일 </span>
+        {/* 사무소 이름과 업무를 한 문장에 묶어, AI가 "이 사무소는 이 업무를 이렇게 한다"로 읽게 한다(2026-11-24) */}
+        <span className="font-medium text-navy">다옴법무사사무소(안윤정 법무사)에서 하는 일 </span>
         {a.scope}
       </p>
       {related.length > 0 ? (
