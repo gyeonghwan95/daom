@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildFullServiceCatalogSchema } from "@/lib/seo/json-ld";
 import {
   ServicesIndexTemplate,
   servicesIndexMetadata,
@@ -7,5 +9,10 @@ import {
 export const metadata: Metadata = servicesIndexMetadata;
 
 export default function ServicesPage() {
-  return <ServicesIndexTemplate />;
+  return (
+    <>
+      <JsonLd data={buildFullServiceCatalogSchema()} />
+      <ServicesIndexTemplate />
+    </>
+  );
 }

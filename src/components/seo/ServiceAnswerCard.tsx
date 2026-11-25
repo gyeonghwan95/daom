@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getServiceAnswer, SERVICE_RELATED } from "@/data/seo/service-answers";
 import { BusanRegistryTable } from "@/components/seo/BusanRegistryTable";
+import { SERVICE_QA } from "@/data/seo/service-answers/qa";
 
 /** 부산 등기소 관할 표를 붙이는 핵심 부동산 페이지(소유권이전·근저당말소는 본문에 이미 있음) */
 const REGISTRY_TABLE_PATHS = new Set([
@@ -68,6 +69,18 @@ export function ServiceAnswerCard({ path }: { path?: string }) {
             </span>
           ))}
         </p>
+      ) : null}
+      {(SERVICE_QA[key.replace(/\/$/, "")] ?? []).length > 0 ? (
+        // 네이버 자동완성에 실제로 뜬 세부 질문 — 상단 목차(h2/h3) 구조를 바꾸지 않도록 제목 태그 없이 질문·답으로 둔다
+        <div className="mt-3 border-t border-beige-dark/70 pt-2.5" data-service-qa>
+          <div className="text-xs font-semibold tracking-wide text-navy/60">자주 검색되는 질문</div>
+          {(SERVICE_QA[key.replace(/\/$/, "")] ?? []).map((item) => (
+            <div key={item.q} className="mt-2">
+              <p className="text-sm font-medium text-navy">Q. {item.q}</p>
+              <p className="mt-0.5 text-sm leading-relaxed text-navy/80">{item.a}</p>
+            </div>
+          ))}
+        </div>
       ) : null}
     </section>
   );

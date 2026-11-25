@@ -1,4 +1,9 @@
 import { seoBrand } from "@/lib/seo/brand";
+import { REAL_ESTATE_ANSWERS } from "@/data/seo/service-answers/real-estate";
+import { INHERITANCE_ANSWERS } from "@/data/seo/service-answers/inheritance";
+import { CORPORATE_ANSWERS } from "@/data/seo/service-answers/corporate";
+import { COURT_FAMILY_ANSWERS } from "@/data/seo/service-answers/court-family";
+import { EXTRA_ANSWERS } from "@/data/seo/service-answers/extra";
 import { getEffectiveModified } from "@/lib/seo/lastmod-lookup";
 import { BUSAN_LAWYER_CHAMPION_PATH, BUSAN_LAWYER_GUIDE_PATH, BUSAN_RENUNCIATION_CHAMPION_PATH } from "@/lib/seo/champion-query";
 import { homeModifiedOn } from "@/lib/home-content";
@@ -137,6 +142,20 @@ function businessPotentialActions(): SchemaObject[] {
   return actions;
 }
 
+
+/**
+ * 사무소가 실제로 맡는 업무 — 전역 knowsAbout(모든 페이지). AI가 "이 사무소가 아는 분야"로 읽는다(2026-11-25).
+ * serviceType(대표 8개)은 그대로 두고 knowsAbout만 넓힌다. 짧은 목록이라 페이지 용량 부담이 작다.
+ */
+const KNOWS_ABOUT = [
+  "상속등기", "상속포기", "한정승인", "유증등기", "상속재산분할협의",
+  "소유권이전등기", "매매등기", "증여등기", "근저당권 설정·말소등기", "전세권·임차권등기", "신탁등기", "소유권보존등기",
+  "법인설립등기", "임원변경등기", "본점이전등기", "유상증자·감자등기", "법인 해산·청산등기",
+  "개인회생 신청서류", "개인파산·면책 신청서류",
+  "지급명령 신청", "가압류·가처분 신청", "강제집행·채권압류 신청서류", "공탁",
+  "성년후견 청구", "개명허가 신청", "가족관계등록부 정정",
+];
+
 const SERVICE_OFFERS: Array<{ name: string; path: string }> = [
   { name: "상속등기", path: "/부산상속등기" },
   { name: "상속포기", path: "/부산상속포기" },
@@ -194,7 +213,7 @@ export function buildOrganizationSchema(): SchemaObject {
       "@type": "AdministrativeArea",
       name: seoBrand.primaryRegion,
     },
-    knowsAbout: seoBrand.services,
+    knowsAbout: KNOWS_ABOUT,
     sameAs: getSocialProfileUrls(),
   });
 }
@@ -210,7 +229,7 @@ export function buildPersonSchema(): SchemaObject {
     worksFor: { "@id": schemaIds.organization },
     url: getCanonicalUrl("/about"),
     image: getAbsoluteAssetUrl(siteImages.about.profile.src),
-    knowsAbout: seoBrand.services,
+    knowsAbout: KNOWS_ABOUT,
     areaServed: seoBrand.primaryRegion,
   });
 }
@@ -237,7 +256,7 @@ export function buildLegalServiceSchema(): SchemaObject {
     priceRange: "$$",
     areaServed: areaServedPlaces(),
     serviceType: seoBrand.services,
-    knowsAbout: seoBrand.services,
+    knowsAbout: KNOWS_ABOUT,
     availableLanguage: "ko",
     hasOfferCatalog: serviceOfferCatalog(),
     provider: { "@id": schemaIds.person },
@@ -636,4 +655,43 @@ export function buildGlobalSchemas(): SchemaObject[] {
     buildLocalBusinessSchema(),
     buildWebSiteSchema(),
   ];
+}
+
+/**
+ * 업무 전체 목록(분야별) — 홈·/services·/about에서만 낸다(전역에 넣으면 1,600여 쪽 용량이 커짐).
+ * 같은 @id(LegalService)에 hasOfferCatalog를 덧붙여, AI가 업무와 담당 페이지를 한 번에 읽게 한다.
+ */
+export function buildFullServiceCatalogSchema(): SchemaObject {
+  // extra.ts에는 등기권리증(부동산)과 법정상속분·상속순위(상속)가 섞여 있어 경로로 나눈다
+  const extraEntries = Object.entries(EXTRA_ANSWERS);
+  const extraRealEstate = Object.fromEntries(extraEntries.filter(([p]) => p.includes("등기권리증")));
+  const extraInheritance = Object.fromEntries(extraEntries.filter(([p]) => !p.includes("등기권리증")));
+  const groups: Array<{ name: string; entries: Record<string, { name: string }> }> = [
+    { name: "부동산등기", entries: { ...REAL_ESTATE_ANSWERS, ...extraRealEstate } },
+    { name: "상속", entries: { ...INHERITANCE_ANSWERS, ...extraInheritance } },
+    { name: "법인등기", entries: CORPORATE_ANSWERS },
+    { name: "법원 서류·가족관계·회생파산", entries: COURT_FAMILY_ANSWERS },
+  ];
+  return {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": schemaIds.legalService,
+    name: seoBrand.siteName,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${seoBrand.siteName} 업무 전체`,
+      itemListElement: groups.map((g) => ({
+        "@type": "OfferCatalog",
+        name: g.name,
+        itemListElement: Object.entries(g.entries).map(([path, a]) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: a.name,
+            url: getCanonicalUrl(path),
+          },
+        })),
+      })),
+    },
+  };
 }

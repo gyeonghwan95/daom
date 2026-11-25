@@ -13,6 +13,7 @@ export const sectionNavByPath: Record<string, SectionNavItem[]> = {
     { id: "track-record", label: "이력·위촉·강의" },
     { id: "qualifications", label: "자격·수상" },
     { id: "community", label: "기업·지역사회" },
+    { id: "policy", label: "지역 정책 자문" },
     { id: "external", label: "대외활동" },
     { id: "education", label: "생활 속 법률" },
     { id: "process", label: "진행 방식" },
@@ -46,6 +47,7 @@ export const sectionNavByPath: Record<string, SectionNavItem[]> = {
   "/media": [
     { id: "media-video", label: "영상" },
     { id: "community", label: "기업·지역사회" },
+    { id: "policy", label: "지역 정책 자문" },
     { id: "external", label: "대외활동" },
     { id: "lectures", label: "강의·강연" },
     { id: "press", label: "언론보도" },

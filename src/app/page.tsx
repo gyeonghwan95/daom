@@ -18,6 +18,7 @@ import { HomeTrust } from "@/components/home/HomeTrust";
 import { HomeYoutube } from "@/components/home/HomeYoutube";
 import { SiteChromeAfterMain } from "@/components/layout/SiteChromeAfterMain";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { buildFullServiceCatalogSchema } from "@/lib/seo/json-ld";
 import { buildFaqPageSchema, buildWebPageSchema } from "@/lib/seo/json-ld";
 import { homeFaqs, homeModifiedOn } from "@/lib/home-content";
 import {
@@ -34,6 +35,7 @@ export default function Home() {
   return (
     <>
       <main id="main-content" className="home-page flex min-h-0 flex-1 flex-col overflow-x-hidden">
+        <JsonLd data={buildFullServiceCatalogSchema()} />
         <JsonLd
           data={[
             buildWebPageSchema({

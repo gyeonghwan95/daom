@@ -73,6 +73,9 @@ export const imagePaths = {
   activityYouthBudgetUnboxing2: "/image/활동-청년예산언박싱2.png",
   activityBusanYouthPolicy: "/image/활동-부산청년정책위원.jpg",
   activityHaeundaePolicy: "/image/활동-해운대정책자문.jpg",
+  /** 2026.11.16 해운대구 구정정책자문위원회 회의 — 실제 촬영(명패·자료집). 다른 위원 얼굴이 나온 단체 사진은 쓰지 않는다 */
+  activityHaeundaePolicyMeeting2026: "/image/활동-해운대구정정책자문위원회-2026회의.jpg",
+  activityHaeundaePlan2027: "/image/활동-해운대다움-구상사업-자료.jpg",
   activityPeaceUnification: "/image/활동-민주평통자문.jpg",
   activityCitizenJury: "/image/활동-시민배심원단.jpg",
   activityMou: "/image/활동-명례일반산업단지MOU.png",
@@ -302,6 +305,20 @@ export const siteImages = {
         "해운대구 정책자문위원회",
         800,
         600,
+        false,
+      ),
+      haeundaePolicyMeeting2026: img(
+        imagePaths.activityHaeundaePolicyMeeting2026,
+        "2026년 11월 16일 해운대구 구정정책자문위원회 회의 — '다옴법무사사무소 대표 안윤정' 명패와 회의 자료집",
+        1200,
+        900,
+        false,
+      ),
+      haeundaePlan2027: img(
+        imagePaths.activityHaeundaePlan2027,
+        "해운대구 구정정책자문위원회 회의 자료 — 2027년 '해운대다움' 구상사업 지면",
+        1200,
+        900,
         false,
       ),
       peaceUnification: img(

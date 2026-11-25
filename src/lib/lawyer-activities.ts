@@ -22,7 +22,7 @@ export type ExternalActivityItem = {
 };
 
 export type LawyerActivitySection = {
-  id: "community" | "external" | "education";
+  id: "community" | "policy" | "external" | "education";
   title: string;
   subtitle: string;
   homeSummary: string;
@@ -166,6 +166,14 @@ const externalActivityEntries: ExternalActivityItem[] = [
     image: siteImages.about.policy.busanYouthPolicy,
   },
   {
+    id: "haeundae-policy-meeting-2026",
+    category: "정책 자문",
+    title: "해운대구 구정정책자문위원회 회의",
+    subtitle: "2027년 업무계획·'해운대다움' 구상사업 검토",
+    period: "2026.11.16",
+    image: siteImages.about.policy.haeundaePlan2027,
+  },
+  {
     id: "haewoondae-policy",
     category: "정책 자문",
     title: "해운대구구정 정책자문위원회",
@@ -281,6 +289,31 @@ export const lawyerActivitySections: LawyerActivitySection[] = [
       {
         title: "국제 교류 가교",
         body: "부산지방법무사회와 나가사키 사법서사회 협약 행사(2025.07.02)에서 사회 및 일본어 통역을 맡아 국제 법무 교류의 가교 역할을 수행합니다.",
+      },
+    ],
+  },
+  {
+    // 2026-11-16 회의 참석 기록. 블로그 글(네이버)과 문장을 겹치지 않게 사실 중심으로 짧게 쓴다.
+    // 사업 내용·일정은 회의 자료 기준이라 바뀔 수 있음을 함께 적는다.
+    id: "policy",
+    title: "현장의 절차를 지역 정책의 자리에서도 전합니다",
+    subtitle:
+      "해운대구 구정정책자문위원회 자문위원(2025.10 위촉)으로, 법무사 사무실에서 만나는 주민의 어려움을 지역 정책 논의에 보태고 있습니다.",
+    homeSummary:
+      "해운대구 구정정책자문위원으로 2027년도 업무계획 검토에 참여했습니다.",
+    image: siteImages.about.policy.haeundaePolicyMeeting2026,
+    highlights: [
+      {
+        title: "2026.11.16 해운대구 구정정책자문위원회 회의",
+        body: "해운대구청 중회의실에서 열린 회의에 자문위원으로 참석해, 해운대구가 지난 4년간 추진한 주요 성과와 2027년도 업무계획을 함께 검토했습니다.",
+      },
+      {
+        title: "2027년 '해운대다움' 구상사업",
+        body: "송정동 대형버스 주차장 조성, 미디어 랜드마크 '해운대스퀘어', 대천공원 재정비, 반송공원 내 생활공원 조성처럼 주민 생활과 맞닿은 사업이 보고되었습니다. 사업 내용과 일정은 회의 자료 기준이며 이후 예산 심의 등에서 바뀔 수 있습니다.",
+      },
+      {
+        title: "법무사가 정책 자리에서 묻는 것",
+        body: "사무실에서는 좋은 제도가 있어도 서류·접수 기관·기한을 몰라 이용하지 못하는 분을 자주 만납니다. 정책 논의에서도 '주민이 실제로 이해하고 이용할 수 있는 절차인가'를 묻는 것이 실무자로서 보탤 수 있는 몫이라고 생각합니다. 부산대 행정대학원(재학)에서 배우는 정책 구조와 등기·상속 실무 경험을 함께 살리고 있습니다.",
       },
     ],
   },

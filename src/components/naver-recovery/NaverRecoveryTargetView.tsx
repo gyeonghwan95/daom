@@ -31,6 +31,7 @@ import { PageSerpCarousel } from "@/components/carousel/PageSerpCarousel";
 import { PageLeadThumbnail } from "@/components/media/PageLeadThumbnail";
 import { ConsultEmpathyLead } from "@/components/consultation/ConsultEmpathyLead";
 import { HeroTrustLine } from "@/components/readability/HeroTrustLine";
+import { OfficeProfileCard } from "@/components/seo/OfficeProfileCard";
 import { QueryAnswerSection } from "@/components/seo/QueryAnswerSection";
 import { WorkRecordSlot } from "@/components/trust/WorkRecordInline";
 import { PageShareButton } from "@/components/share/PageShareButton";
@@ -99,6 +100,7 @@ export function NaverRecoveryTargetView({ page, target }: NaverRecoveryTargetVie
               </p>
             ))}
           </div>
+          <OfficeProfileCard path={page.path} />
           {/* 서두 비용 문의 안내 */}
           <CostInquiryNote variant="intro" className="mt-5" />
           {spec.keyPoints ? (

@@ -149,7 +149,8 @@ export const lawyerActivities: LawyerActivity[] = [
     organization: "해운대구구정 정책자문위원회",
     category: "정책 자문",
     period: "2025.10 ~ 2027.10",
-    summary: "해운대구 지역 정책 자문에 참여합니다.",
+    summary:
+      "해운대구 지역 정책 자문에 참여합니다. 2026년 11월 16일 회의에서 해운대구 주요 성과와 2027년도 업무계획·'해운대다움' 구상사업을 검토했습니다.",
   },
   {
     title: "민주평화통일자문회의 자문위원",

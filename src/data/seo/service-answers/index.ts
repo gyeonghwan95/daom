@@ -4,6 +4,7 @@ import { INHERITANCE_ANSWERS } from "./inheritance";
 import { CORPORATE_ANSWERS } from "./corporate";
 import { COURT_FAMILY_ANSWERS } from "./court-family";
 import { SCOPE_OVERRIDES } from "./scopes";
+import { EXTRA_ANSWERS } from "./extra";
 
 export type { ServiceAnswer } from "./types";
 export { SERVICE_RELATED } from "./related";
@@ -18,6 +19,7 @@ const BASE_ANSWERS: Record<string, ServiceAnswer> = {
   ...INHERITANCE_ANSWERS,
   ...CORPORATE_ANSWERS,
   ...COURT_FAMILY_ANSWERS,
+  ...EXTRA_ANSWERS,
 };
 
 /** 업무별 고유 진행 방식 문장으로 공용 scope를 덮어쓴다(scopes.ts) */
