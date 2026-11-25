@@ -130,7 +130,7 @@ export const corporateClusterPhase1Pages: CorporatePageContent[] = [
       {
         question: "상담 전 무엇을 보내면 되나요?",
         answer:
-          "최신 등기사항전부증명서와 정관, 알고 있는 임원 만료 예정일만 있어도 1차 점검 포인트를 짚을 수 있습니다.",
+          "최신 등기사항전부증명서와 정관, 알고 있는 임원 만료 예정일만 있어도 기본 점검 포인트를 짚을 수 있습니다.",
       },
     ],
     relatedLinks: [

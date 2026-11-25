@@ -106,7 +106,7 @@ export const gyeongbukPhase1Defs: SoutheastLandingDef[] = [
     uniqueFaqs: [
       {
         question: "안동 농지 상속등기도 부산 법무사에게 맡길 수 있나요?",
-        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토·진행 바로 진행할 수 있는지 안내합니다.",
+        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토하고 방문 없이 진행할 수 있는지 안내합니다.",
       },
       {
         question: "안동과 예천·김천 부동산이 같이 있으면 한 번에 상담되나요?",

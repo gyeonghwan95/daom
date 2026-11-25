@@ -178,7 +178,7 @@ export function buildBusanInheritanceRenunciationPage(
     extraPageSections: [
       {
         title: "상속포기 전에 먼저 확인할 4가지",
-        body: "긴 서류 목록보다 아래 네 가지만 맞춰도 1차 방향을 나눌 수 있습니다.",
+        body: "긴 서류 목록보다 아래 네 가지만 맞춰도 대략적인 방향을 나눌 수 있습니다.",
         items: [
           "기한 — 사망일·인지일, 3개월이 남았는지",
           "가족관계 — 배우자·자녀·다음 순위",

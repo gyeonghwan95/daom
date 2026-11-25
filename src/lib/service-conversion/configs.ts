@@ -904,7 +904,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "무엇부터 해야 할지 모르겠다면",
         description:
-          "채권 금액과 가지고 있는 증거만 알려주셔도 내용증명·지급명령·소장 중 1차 방향을 정리해 드릴 수 있습니다.",
+          "채권 금액과 가지고 있는 증거만 알려주셔도 내용증명·지급명령·소장 중 대략적인 방향을 정리해 드릴 수 있습니다.",
         buttonLabel: "회수 절차 먼저 확인하기",
       },
       ctaMessages: ["회수 절차 먼저 확인하기", "증거 정리 방법 물어보기"],

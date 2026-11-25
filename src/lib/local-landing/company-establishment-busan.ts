@@ -59,7 +59,7 @@ export function buildBusanCompanyEstablishmentPage(
     {
       question: "상담 전 준비물은?",
       answer:
-        "상호 후보, 본점 주소, 임원·주주 구성, 자본금·업종만 있어도 1차 체크리스트를 만들 수 있습니다.",
+        "상호 후보, 본점 주소, 임원·주주 구성, 자본금·업종만 있어도 준비할 서류 목록을 먼저 드릴 수 있습니다.",
     },
     {
       question: "정관에 꼭 넣어야 할 조항은?",

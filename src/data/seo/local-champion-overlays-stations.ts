@@ -48,7 +48,7 @@ const STATION_OVERLAY_SEO: Record<
     metaTitle: "광안역 법무사 | 수영 해변 접근 동선",
     h1: "광안역 법무사, 역에서 광안리·광안동 안내로 이어갈 때",
     metaDescription:
-      "광안역 법무사 상담. 광안역 주변 전세권·매매·상속 등기를 전화·카카오톡으로 먼저 확인해 드립니다. 해운대 센텀 다옴법무사사무소.",
+      "광안역 법무사 상담. 광안리·광안동 생활권 아파트·오피스텔의 전세권·매매·상속 등기를 전화·카카오톡으로 먼저 확인해 드립니다. 해운대 센텀 다옴법무사사무소.",
   },
   사상역법무사: {
     metaTitle: "사상역 법무사 | 서부산 유통 접근 동선",
@@ -168,7 +168,7 @@ export const SEO_LANDING_STATION_OVERLAYS: Record<string, StationOverlay> = {
       sections: [
         {
           title: "해운대역과 중동·해운대 안내",
-          body: "역 검색은 접근 동선이고, 해운대역 앞 상가·오피스텔 등기는 중동 안내, 해운대구 전체 분기는 해운대 안내를 보시면 됩니다.",
+          body: "해운대역 앞 상가·오피스텔 등기는 중동 안내, 해운대구 전체 업무는 해운대 안내를 보시면 됩니다.",
           links: [
             { href: "/중동법무사", label: "해운대 중동 법무사" },
             { href: "/해운대법무사", label: "해운대 법무사" },
@@ -246,7 +246,7 @@ export const SEO_LANDING_STATION_OVERLAYS: Record<string, StationOverlay> = {
       sections: [
         {
           title: "사상역과 사상·사상구 안내",
-          body: "역 검색은 접근 동선이고, 공장·상가·근저당 실무는 사상 안내, 상속·회생 분기는 사상구 안내를 보시면 됩니다.",
+          body: "사상역 인근 공장·상가·근저당 등기는 사상 안내, 상속·회생은 사상구 안내를 보시면 됩니다.",
           links: [
             { href: "/사상법무사", label: "사상 법무사" },
             { href: "/사상구법무사", label: "사상구 법무사" },
@@ -267,7 +267,7 @@ export const SEO_LANDING_STATION_OVERLAYS: Record<string, StationOverlay> = {
         {
           question: "사상역 법무사와 사상 법무사는 같은가요?",
           answer:
-            "역은 접근 검색이고, 괘법·공장·상가 본문은 사상 법무사 안내입니다. 구 전체 분기는 사상구 안내를 보시면 됩니다.",
+            "괘법·공장·상가 등기는 사상 법무사 안내에, 사상구 전체 업무는 사상구 안내에 정리했습니다.",
         },
       ],
       serviceLinks: [

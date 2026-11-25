@@ -39,7 +39,7 @@ export function buildBusanInheritanceRegistrationPage(
     {
       question: "상담 전 준비물은?",
       answer:
-        "피상속인·상속인 가족관계증명서, 부동산 등기부등본, 협의 여부·채무 유무 메모만 있어도 1차 순서를 잡을 수 있습니다.",
+        "피상속인·상속인 가족관계증명서, 부동산 등기부등본, 협의 여부·채무 유무 메모만 있어도 대략적인 순서를 잡을 수 있습니다.",
     },
     {
       question: "상속등기 기한이 있나요?",

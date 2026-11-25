@@ -74,8 +74,8 @@ export function buildRegionJurisdictionSection(spec: SeoLandingSpec): PageSectio
     const isInheritance = service === "inheritance-registration";
     return {
       id: "region-jurisdiction",
-      title: `${label} ${serviceName}, 실제 접수처`,
-      body: `${where} 소재 부동산의 등기는 ${office.name}(${office.address}) 관할입니다. ${office.note}`,
+      title: `${label.includes(serviceName) ? label : `${label} ${serviceName}`}, 실제 접수처`,
+      body: `${where} 소재 부동산의 등기는 ${office.name}(${office.address}) 관할입니다.${office.note ? ` ${office.note}` : ""}`,
       items: [
         isInheritance
           ? "상속·유증 등기는 2025년 1월 31일부터 관할이 아닌 등기소에서도 처리할 수 있습니다(부동산등기법 제7조의3). 여러 지역 부동산을 함께 정리할 때 접수처를 모을 수 있는지 먼저 확인합니다."
@@ -108,7 +108,7 @@ export function buildRegionJurisdictionSection(spec: SeoLandingSpec): PageSectio
   const hq = BUSAN_REGISTRY_OFFICES.deunggiguk;
   return {
     id: "region-jurisdiction",
-    title: `${label} ${serviceName}, 실제 접수처`,
+    title: `${label.includes(serviceName) ? label : `${label} ${serviceName}`}, 실제 접수처`,
     body: `${where}에 본점을 두는 회사의 상업등기는 부산 전역과 같이 ${hq.name}(${hq.address}) 관할입니다.`,
     items: [
       service === "director-change"

@@ -475,7 +475,7 @@ export const buildingDisplayChangePages: BuildingPageContent[] = [
     metaTitle:
       "건축물대장 등기부 불일치｜원인별 정리·부산 건물등기",
     metaDescription:
-      "건축물대장과 등기부가 면적·용도·구조·주소에서 다를 때. 표시변경·경정·보존 분기 — 다옴법무사.",
+      "건축물대장과 등기부가 면적·용도·구조·주소에서 다를 때. 표시변경·경정·보존 중 맞는 절차를 안내합니다.",
     h1: "건축물대장과 등기부 불일치 — 항목별로 고치는 쪽이 다릅니다",
     eyebrow: "표시변경 · 대장·등기부",
     heroIntro:
@@ -527,7 +527,7 @@ export const buildingDisplayChangePages: BuildingPageContent[] = [
     procedures: [
       "불일치 항목 목록화",
       "대장 선행 vs 등기만으로 가능한지 판단",
-      "표시변경·경정·보존·멸실 분기",
+      "표시변경·경정·보존·멸실 중 맞는 절차 선택",
       "신청·접수·거래 일정 재조정",
     ],
     costFactors: [
@@ -560,7 +560,7 @@ export const buildingDisplayChangePages: BuildingPageContent[] = [
       {
         question: "한 페이지에서 모든 불일치를 다루나요?",
         answer:
-          "이 페이지는 분기 안내입니다. 면적·용도·증축·주소·불법증축은 각각 상세 페이지로 연결되어 있습니다.",
+          "면적·용도·증축·주소·불법증축처럼 다른 항목별로 자세한 안내를 따로 두었습니다.",
       },
       {
         question: "등기부에만 건물이 남아 있으면요?",

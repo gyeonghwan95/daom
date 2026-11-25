@@ -250,7 +250,7 @@ export function buildPageDataFromLocalLanding(
           page.serviceSlug === "bankruptcy"
         ? [
             page.description,
-            `${page.regionLabel}에서 개인회생·파산은 부산회생법원 사건을 기준으로 상담합니다. 소득·채무·재산 현황만 알려 주셔도 1차 방향을 나눌 수 있습니다.`,
+            `${page.regionLabel}에서 개인회생·파산은 부산회생법원 사건을 기준으로 상담합니다. 소득·채무·재산 현황만 알려 주셔도 대략적인 방향을 나눌 수 있습니다.`,
           ]
         : [
             page.description,
@@ -803,7 +803,7 @@ export function buildPageDataFromTopicHub(page: TopicHubPage): PageData {
         ? "상속 법무사 상담에서 먼저 나누는 질문"
         : `${hubShortName(page.title)} 상담 예시`,
       body: isInheritanceHub
-        ? "사망일, 배우자·자녀 구성, 알고 있는 부동산 주소, 대출·보증 통지 여부만 있으면 등기·포기·한정승인 중 어디를 볼지 1차로 나눕니다. 확정 보수나 세금 액수는 등기부·가족관계 확인 전 단정하지 않습니다."
+        ? "사망일, 배우자·자녀 구성, 알고 있는 부동산 주소, 대출·보증 통지 여부만 있으면 등기·포기·한정승인 중 어디를 볼지 먼저 나눕니다. 확정 보수나 세금 액수는 등기부·가족관계 확인 전 단정하지 않습니다."
         : `부산 전역에서 ${hubShortName(page.title)} 관련 문의가 이어지고 있습니다. ${TOPIC_HUB_SITUATION[page.slug] ?? "사건 내용과 준비된 서류에 따라 필요한 절차가 달라지므로"}, 먼저 상황을 정리한 뒤 서류·비용·기한을 단계별로 안내드립니다.`,
     },
     internalLinks: [

@@ -171,7 +171,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     ],
     procedures: [
       "대장과 등기부를 나란히 대조",
-      "말소만 된 경우 / 등기만 남은 경우 / 둘 다 남은 경우로 분기",
+      "말소만 된 경우 / 등기만 남은 경우 / 둘 다 남은 경우로 구분",
       "필요한 쪽(행정·등기)부터 순서 설계",
       "멸실등기 접수 및 완료 확인",
     ],
@@ -375,7 +375,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     ],
     procedures: [
       "기존 등기부 권리·표시 전수 확인",
-      "전부 멸실 vs 일부 표시변경 분기",
+      "전부 멸실 vs 일부 표시변경 중 판단",
       "철거·대장 정리 후 멸실등기",
       "신축·사용승인 후 보존등기·필요 시 담보 설정",
     ],
@@ -485,7 +485,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     ],
     costFactors: [
       "소실 증빙 발급·보완 횟수",
-      "전부 멸실 vs 일부 표시변경 분기",
+      "전부 멸실 vs 일부 표시변경 중 판단",
       "보험·복구 일정과의 병행",
     ],
     penaltyRisks: [
@@ -533,7 +533,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     metaDescription:
       "건물 일부만 철거·철거 후 면적·구조 변경 시 표시변경등기. 전면 멸실과의 차이 — 다옴법무사.",
     h1: "일부만 허물었다면 — 멸실이 아니라 표시변경일 수 있습니다",
-    eyebrow: "멸실 분기 · 표시변경",
+    eyebrow: "멸실등기 · 표시변경",
     heroIntro:
       "건물 전부를 없앤 경우가 아니라 일부만 철거했다면, 등기 유형은 멸실이 아니라 건물표시변경으로 갈리는 경우가 많습니다.",
     heroParagraphs: [
@@ -682,7 +682,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     ],
     procedures: [
       "건물·재단·담보 공시 전수 조사",
-      "전부 철거 vs 일부 동 철거 분기",
+      "전부 철거 vs 일부 동 철거 중 판단",
       "담보·재단 정리 필요 시 채권자 협의",
       "멸실등기 접수 및 부지·신축 일정 연계",
     ],
@@ -1091,7 +1091,7 @@ export const buildingDemolitionPages: BuildingPageContent[] = [
     procedures: [
       "등기부 공유자·지분 확정",
       "확보 가능한 위임·동의 범위 점검",
-      "등기만으로 가능한지 / 법률 절차 검토가 필요한지 분기",
+      "등기만으로 가능한지 / 법률 절차 검토가 필요한지 판단",
       "가능한 범위에서 멸실등기 준비·접수",
     ],
     costFactors: [

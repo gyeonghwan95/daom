@@ -71,7 +71,7 @@ export function getHubNavigationLinks(input: HubLinkInput): PageRelatedLink[] {
   if (parentHub && parentHub.slug !== input.slug) {
     links.push({
       href: `/${parentHub.slug}`,
-      label: parentHub.backLabel ?? `${parentHub.title} 안내 전체 보기`,
+      label: parentHub.backLabel ?? `${parentHub.title.replace(/ 안내$/, "")} 안내 전체 보기`,
     });
     links.push(
       ...parentHub.spokes
@@ -84,7 +84,7 @@ export function getHubNavigationLinks(input: HubLinkInput): PageRelatedLink[] {
     .slice(0, 3)
     .map((h) => ({
       href: `/${h.slug}`,
-      label: `${h.title} 안내`,
+      label: `${h.title.replace(/ 안내$/, "")} 안내`,
     }));
 
   links.push(...siblingHubs);

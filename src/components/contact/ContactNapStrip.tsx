@@ -24,7 +24,7 @@ export function ContactNapStrip() {
         <div>
           <dt className="font-semibold text-navy">상호 · 대표</dt>
           <dd className="mt-1 text-navy/80">
-            {nap.tradeName} · {nap.representative} 법무사
+            {nap.tradeName} · {nap.representative}
           </dd>
         </div>
         <div className="sm:col-span-1 lg:col-span-1">

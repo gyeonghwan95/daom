@@ -12,7 +12,7 @@ export function GyeongnamServiceHero({ def }: Props) {
       badge={
         def.pageType === "region-hub"
           ? "경남 전 지역 바로 상담·진행"
-          : `${def.regionName} 경남 바로 상담·진행`
+          : `${def.regionName.startsWith("경남") ? def.regionName : `경남 ${def.regionName}`} 바로 상담·진행`
       }
       title={`부산 방문 없이 ${def.primaryKeyword} 상담이 가능합니다`}
       titleAs="p"

@@ -280,7 +280,7 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     ...filingSection,
     {
       title: `이 페이지에서 다루는 ${config.regionLabel} 업무`,
-      body: `통계로 ‘많다’고 단정하지 않습니다. ${config.regionLabel}에서 자주 문의하시는 아래 업무를 중심으로 안내합니다.`,
+      body: `${config.regionLabel}에서 자주 문의하시는 아래 업무를 중심으로 안내합니다.`,
       items: practiceFocus.map((item) => `${item.label}: ${item.note}`),
       links: practiceFocus.map((item) => ({ href: item.href, label: item.label })),
     },
@@ -344,8 +344,8 @@ function buildRegionHubPage(config: LocalLandingConfig): LocalLandingPage | null
     consultationCases,
     legalIssues: (identity?.checkFirst ?? whenNeeded).slice(0, 4),
     precautions: [
-      "법원·등기소와 공식 제휴 관계가 아닙니다. 관할·접수 절차·준비서류를 실무 관점에서 안내합니다.",
-      "막연한 통계나 성공률보다, 실제 서류를 보고 가능한 방법을 말씀드립니다.",
+      "관할 등기소·법원과 접수 절차, 준비서류를 사건에 맞춰 알려 드립니다.",
+      "서류를 직접 보고 가능한 방법을 말씀드립니다. 서류가 아직 없어도 상황만으로 먼저 물어보셔도 됩니다.",
     ],
     procedures: service?.procedures ?? [
       "전화·카카오톡·방문(예약)으로 지역·업무·기한 확인",

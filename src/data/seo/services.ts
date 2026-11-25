@@ -56,7 +56,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["법인등기", "부산 법인등기", "본점이전등기", "법인 변경등기"],
     description:
-      "주식회사·유한회사 등 법인의 설립 이후 변경·이전 등기를 처리합니다. 센텀·서면 일대 법인 설립·임원변경·본점이전을 안내합니다.",
+      "주식회사·유한회사 등 법인의 임원·본점·목적 변경 등기를 처리합니다. 변경 사유가 생긴 날부터 2주 안에 등기해야 해 날짜부터 확인합니다.",
     relatedServices: ["company-establishment", "director-change", "head-office-transfer"],
     relatedRegions: ["busan", "haeundae-gu", "centum"],
     searchIntent: "procedure",
@@ -224,7 +224,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["지급명령", "부산 지급명령", "채권 지급명령", "간이소송"],
     description:
-      "금전 채권 회수를 위한 지급명령·소송 절차를 안내합니다. 관할 법원 확인이 필요합니다.",
+      "받지 못한 돈을 회수하기 위한 지급명령 신청서 등 법원 제출 서류 작성을 지원합니다. 관할 법원 확인이 먼저입니다.",
     relatedServices: ["debt-collection", "certified-mail"],
     relatedRegions: ["busan", "busanjin-gu"],
     searchIntent: "procedure",
@@ -238,7 +238,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["내용증명", "부산 내용증명", "채무불이행 통지", "계약 해지 내용증명"],
     description:
-      "채권·채무 분쟁 전 내용증명 발송을 지원합니다. 이후 소송·지급명령과 연계됩니다.",
+      "채권·채무 분쟁 전에 보내는 내용증명 작성을 지원합니다. 이후 지급명령 신청서 작성으로 이어질 수 있습니다.",
     relatedServices: ["payment-order", "debt-collection"],
     relatedRegions: ["busan"],
     searchIntent: "procedure",
@@ -308,7 +308,7 @@ export const seoServices: SeoIntentEntity[] = [
     parentRegion: null,
     keywords: ["특별대리인", "이혼 특별대리인", "소송 특별대리인"],
     description:
-      "소송·이혼 등에서 특별대리인 선임이 필요한 경우 절차를 안내합니다.",
+      "미성년 자녀와 친권자가 함께 상속인일 때처럼 특별대리인이 필요한 경우 선임 신청 절차를 안내합니다.",
     relatedServices: ["family-relations"],
     relatedRegions: ["busan"],
     searchIntent: "procedure",

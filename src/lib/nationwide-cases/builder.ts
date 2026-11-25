@@ -12,13 +12,14 @@ import { caseNationwidePath, type RegionLandingDef } from "./types";
 import { josa } from "@/lib/korean/josa";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
+  "아래는 일반적인 안내입니다. 내 사건에 맞는 방법은 서류·관할·등기원인을 함께 보고 말씀드립니다.";
 
 const TRUST_ITEMS = [
   "안윤정 법무사 직접 확인",
   "비대면 필요서류 안내",
   "보수와 공과금 구분",
   "접수부터 완료까지 진행 상황 안내",
+  "타지역이라는 이유만으로 비용을 올리지 않음",
 ];
 
 function hashSlug(slug: string): number {
@@ -264,7 +265,7 @@ export function buildNationwideCasePageData(
       : []),
     {
       title: titles[1]!,
-      body: `${def.regionName} 소재 부동산이어도 부산 해운대 사무소에서 관할 특례·비대면 서류 전달을 검토할 수 있습니다. 지점이 있다는 의미가 아닙니다.`,
+      body: `${def.regionName} 소재 부동산이어도 부산 해운대 사무소에서 관할 특례·비대면 서류 전달을 검토할 수 있습니다.`,
       items: scenarios.map((s) => `${s.title}: ${s.body}`),
     },
     {
@@ -363,10 +364,10 @@ export function buildNationwideCasePageData(
       "현재 준비된 서류(사진 가능)",
     ],
     consultationPoints: [
-      "맡기기 전에 비용과 진행 방법부터 편하게 물어보세요.",
-      "방문이 필요한 경우 미리 안내합니다.",
-      "타지역이라는 이유만으로 비용을 올리지 않습니다.",
-      "가까운 곳인지보다, 누가 직접 검토하고 비용과 진행 상황을 얼마나 분명히 알려 주는지 확인하세요.",
+      `${def.regionName} 부동산 주소(지번)와 종류`,
+      "상속인 수와 각자 사는 지역",
+      "협의가 끝났는지, 먼저 팔아야 할 부동산이 있는지",
+      "방문이 꼭 필요한 단계가 있는지 (있으면 맡기시기 전에 알려 드립니다)",
     ],
     faqs: [
       ...(def.localFaqs ?? []),

@@ -40,7 +40,7 @@ export function buildBusanRealEstateRegistrationPage(
     {
       question: "상담 전 준비물은?",
       answer:
-        "등기부등본, 계약서(또는 계약 예정 조건), 잔금·대출 일정만 있어도 1차 순서를 잡을 수 있습니다.",
+        "등기부등본, 계약서(또는 계약 예정 조건), 잔금·대출 일정만 있어도 대략적인 순서를 잡을 수 있습니다.",
     },
     {
       question: "취득세 신고와 등기 순서는?",

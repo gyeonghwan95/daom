@@ -163,7 +163,7 @@ export const daeguPhase1Defs: SoutheastLandingDef[] = [
     uniqueFaqs: [
       {
         question: "대구 중구 아파트 상속등기도 부산 법무사에게 맡길 수 있나요?",
-        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토·진행 바로 진행할 수 있는지 안내합니다.",
+        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토하고 방문 없이 진행할 수 있는지 안내합니다.",
       },
       {
         question: "중구와 수성·달서구 부동산이 같이 있으면 한 번에 상담되나요?",
@@ -499,7 +499,7 @@ export const daeguPhase1Defs: SoutheastLandingDef[] = [
     uniqueFaqs: [
       {
         question: "범어동 아파트 상속등기도 부산 법무사에게 맡길 수 있나요?",
-        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토·진행 바로 진행할 수 있는지 안내합니다.",
+        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토하고 방문 없이 진행할 수 있는지 안내합니다.",
       },
       {
         question: "범어와 다른 수성구 동네 부동산이 같이 있으면 한 번에 상담되나요?",
@@ -643,7 +643,7 @@ export const daeguPhase1Defs: SoutheastLandingDef[] = [
     uniqueFaqs: [
       {
         question: "월성동 아파트 상속등기도 부산 법무사에게 맡길 수 있나요?",
-        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토·진행 바로 진행할 수 있는지 안내합니다.",
+        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토하고 방문 없이 진행할 수 있는지 안내합니다.",
       },
       {
         question: "월성과 달서구 다른 동네 부동산이 같이 있으면요?",
@@ -835,7 +835,7 @@ export const daeguPhase1Defs: SoutheastLandingDef[] = [
     uniqueFaqs: [
       {
         question: "현풍 농지 상속등기도 부산 법무사에게 맡길 수 있나요?",
-        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토·진행 바로 진행할 수 있는지 안내합니다.",
+        answer: "상속등기 관할 특례가 적용될 수 있어 부산 해운대 사무소에서 검토하고 방문 없이 진행할 수 있는지 안내합니다.",
       },
       {
         question: "현풍과 다사·성서 부동산이 같이 있으면요?",

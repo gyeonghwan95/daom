@@ -197,7 +197,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
           "아닙니다. 건물·토지 소유권이전등기는 별도 매매원인과 서류가 필요합니다.",
       },
       {
-        question: "범천동 법무사 검색도 이 페이지가 맞나요?",
+        question: "범천동도 이 안내를 보면 되나요?",
         answer:
           "네. 범천동 상가·주거 상담을 범일동 종합 안내에서 함께 안내합니다.",
       },
@@ -382,7 +382,7 @@ export const neighborhoodTopicsPhase3: Record<string, NeighborhoodTopic> = {
     relatedGuPage: { href: "/사하구법무사", label: "사하구 법무사 종합" },
     faqs: [
       {
-        question: "장림동·감천동 검색도 이 페이지인가요?",
+        question: "장림동·감천동도 이 안내를 보면 되나요?",
         answer:
           "네. 장림동·감천동 주거·다가구 상담을 다대동 종합 안내에서 함께 안내합니다.",
       },

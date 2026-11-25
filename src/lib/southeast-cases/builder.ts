@@ -8,7 +8,7 @@ import {
 } from "./types";
 
 const DISCLAIMER =
-  "본 안내는 일반적인 정보이며, 개별 사건은 서류·관할·등기원인을 확인한 뒤 맞춰 안내해 드립니다. 내 상황에 맞는 방법은 서류를 함께 보며 안내해 드리겠습니다.";
+  "아래는 일반적인 안내입니다. 내 사건에 맞는 방법은 서류·관할·등기원인을 함께 보고 말씀드립니다.";
 
 function hashSlug(slug: string): number {
   let h = 0;

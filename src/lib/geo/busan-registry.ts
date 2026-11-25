@@ -45,28 +45,28 @@ export const BUSAN_REGISTRY_OFFICES: Record<
     name: "부산지방법원 동부지원 등기과",
     address: "부산광역시 해운대구 재반로112번길 20",
     districts: ["해운대구", "기장군"],
-    note: "해운대구·기장군 부동산등기 관할입니다.",
+    note: "",
   },
   nambusan: {
     id: "nambusan",
     name: "남부산등기소",
     address: "부산광역시 남구 수영로 312",
     districts: ["남구", "수영구"],
-    note: "남구·수영구 부동산등기 관할입니다.",
+    note: "",
   },
   seobu: {
     id: "seobu",
     name: "부산지방법원 서부지원 등기과",
     address: "부산광역시 강서구 명지국제7로 77",
     districts: ["사하구", "강서구"],
-    note: "사하구·강서구 부동산등기 관할입니다. 서부지원 청사 내 등기과입니다.",
+    note: "서부지원 청사 안에 있는 등기과입니다.",
   },
   bukbusan: {
     id: "bukbusan",
     name: "북부산등기소",
     address: "부산광역시 북구 사상로583번길 14",
     districts: ["북구", "사상구"],
-    note: "북구·사상구 부동산등기 관할입니다.",
+    note: "",
   },
 };
 
@@ -147,7 +147,7 @@ export function buildJurisdictionGuideForRegionKey(
     title: `${office.name} 관할 안내`,
     address: office.address,
     accessNote: `${office.districts.join("·")} 부동산등기는 ${office.name} 관할입니다. 방문 창구·전자등기 가능 여부는 사건별로 확인합니다.`,
-    jurisdictionNote: `${office.districts.join("·")} 소재 부동산등기는 ${office.name}(${office.address}) 관할입니다. ${office.note} ${commercial} 정확한 접수처는 등기부와 주소를 확인한 뒤 안내합니다.`,
+    jurisdictionNote: `${office.districts.join("·")} 소재 부동산등기는 ${office.name}(${office.address}) 관할입니다.${office.note ? ` ${office.note}` : ""} ${commercial} 정확한 접수처는 등기부와 주소를 확인한 뒤 안내합니다.`,
     practicalNotes: [
       MERGED_OFFICE_NOTE,
       "관할 오접수는 반려·이송 사유가 될 수 있습니다.",
