@@ -5,7 +5,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국업무사례",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "hub",
     noticeType: "remote-accept",
@@ -43,7 +43,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국상속등기법무사",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "jurisdiction-exception",
@@ -73,7 +73,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국유증등기법무사",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "jurisdiction-exception",
@@ -99,7 +99,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국상속부동산일괄등기",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "jurisdiction-exception",
@@ -125,7 +125,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국법인본점이전등기",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "expandable-jurisdiction",
@@ -151,7 +151,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국공동근저당권등기",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "bundled-jurisdiction",
@@ -177,7 +177,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "전국비대면법무사",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "remote-accept",
@@ -203,7 +203,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "타지역법무사의뢰",
     regionName: "전국",
-    regionType: "전국허브",
+    regionType: "전국안내",
     priority: 1,
     kind: "service",
     noticeType: "remote-accept",
@@ -229,7 +229,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
   {
     slug: "지역별상속등기법무사",
     regionName: "전국",
-    regionType: "권역허브",
+    regionType: "권역안내",
     priority: 1,
     kind: "region-hub",
     noticeType: "jurisdiction-exception",
@@ -241,7 +241,7 @@ export const nationwideServiceDefs: RegionLandingDef[] = [
     ],
     seoTitle: "지역별 상속등기 법무사｜서울·경기·인천·제주 전국 안내",
     metaDescription:
-      "지역별 상속등기 법무사 허브. 서울·경기·인천·충청·영호남·강원·제주 권역 카드를 검색·필터로 찾습니다. 부산은 기존 부산 상속등기 페이지로 연결합니다.",
+      "지역별 상속등기 법무사 안내. 서울·경기·인천·충청·영호남·강원·제주 권역 카드를 검색·필터로 찾습니다. 부산은 기존 부산 상속등기 페이지로 연결합니다.",
     h1: "지역이 달라도 맡길 수 있는 전국 상속등기",
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 각 지역 지점이 없습니다. 지역별 안내는 그 지역에 부동산이나 상속인이 있을 때의 진행 방법을 설명하는 글이며, 그 지역에 사무소가 있다는 뜻은 아닙니다.",

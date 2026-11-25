@@ -122,7 +122,7 @@ export const LOCAL_CHAMPION_MAP: Record<
   복산: {
     primaryHost: "/동래구법무사",
     aliases: ["복산동", "동래 복산동"],
-    notes: "공식 행정동은 복천동·온천동 등. '복산동'은 검색 별칭으로 동래권 허브에 흡수",
+    notes: "공식 행정동은 복천동·온천동 등. '복산동'은 검색 별칭으로 동래권 종합 안내에 흡수",
     guHub: "/동래역법무사",
   },
 };
@@ -218,7 +218,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
     role: "SELECTION_CHAMPION",
     situations: ["provider-selection", "recommendation-research"],
     notes:
-      "Spoke only. 「부산 법무사 추천」 Primary Champion은 `/부산법무사추천`. `/부산법무사`는 업무·선택 안내.",
+      "Spoke only. 「부산 법무사 추천」 Primary Champion은 ‘부산 법무사 추천 기준’. ‘부산 법무사 안내’는 업무·선택 안내.",
     relatedPages: [
       "/부산법무사비교",
       "/부산법무사상담",
@@ -409,7 +409,7 @@ export const PAGE_RELATIONS: PageRelationEntry[] = [
       "/동래구상속등기",
     ],
     localEntities: ["동래", "복천", "온천"],
-    notes: "'복산동' 검색은 공식 복천동·동래권 허브로 흡수",
+    notes: "'복산동' 검색은 공식 복천동·동래권 종합 안내로 흡수",
   },
 ];
 
@@ -588,7 +588,7 @@ export function getChampionForTargetQuery(query: string): {
       intent: "qualified-docs",
     },
     "상속등기 안하면": {
-      champion: "/situations/상속등기-지연-과태료",
+      champion: "‘상황별 안내’/상속등기-지연-과태료",
       intent: "registration-delay",
     },
     "부모님 사망 후": {

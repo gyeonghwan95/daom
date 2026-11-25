@@ -17,7 +17,7 @@ export type RegionalSeoIntent = {
   createdAt: string;
 };
 
-const rep = (region: string) => `/업무사례/${region}상속등기법무사`;
+const rep = (region: string) => `‘부산 법무사 업무 사례를 지역과 업무로 찾아보세요’/${region}상속등기법무사`;
 
 function intent(
   region: string,

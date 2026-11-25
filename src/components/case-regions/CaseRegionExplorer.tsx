@@ -90,7 +90,7 @@ export function CaseRegionExplorer() {
           {query.trim()
             ? `검색 결과 (${results.length})`
             : districtKey === "all"
-              ? "구·군 허브"
+              ? "구·군 안내"
               : `${DISTRICT_METAS.find((d) => d.key === districtKey)?.name ?? ""} 지역`}
         </h2>
         {results.length === 0 ? (

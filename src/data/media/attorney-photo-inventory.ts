@@ -43,7 +43,7 @@ export const ATTORNEY_PHOTOS: AttorneyPhoto[] = [
     usageSuitability: "excellent",
     currentUsageUrls: ["/", "/about"],
     privacyRisk: false,
-    notes: "스튜디오 단독 프로필(정장·배지). 배경 단색 — 합성 최적. 대표 허브 우선.",
+    notes: "스튜디오 단독 프로필(정장·배지). 배경 단색 — 합성 최적. 대표 안내 우선.",
   },
   {
     id: "desk-front",
@@ -155,7 +155,7 @@ export const ATTORNEY_PHOTOS: AttorneyPhoto[] = [
     usageSuitability: "good",
     currentUsageUrls: [],
     privacyRisk: false,
-    notes: "상담 중 설명하는 안윤정 법무사 단독 사진. 허브·상담 주제에 적합.",
+    notes: "상담 중 설명하는 안윤정 법무사 단독 사진. 안내·상담 주제에 적합.",
   },
   {
     id: "office-phone",

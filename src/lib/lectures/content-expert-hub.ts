@@ -167,7 +167,7 @@ export const expertHubPage: LecturePageContent = {
     {
       question: "법률 강의 페이지와 무엇이 다른가요?",
       answer:
-        "이 페이지는 사람을 찾는 담당자용 안내부입니다. 어떤 강의를 할지는 법률 강의 허브와 주제별 페이지에서 보시면 됩니다.",
+        "이 페이지는 사람을 찾는 담당자용 안내부입니다. 어떤 강의를 할지는 법률 강의 종합 안내와 주제별 페이지에서 보시면 됩니다.",
     },
   ],
   relatedLectureLinks: [

@@ -115,7 +115,7 @@ export function SituationsHubView({ page }: SituationsHubViewProps) {
                     {category.description}
                   </p>
                   <span className="mt-4 text-sm font-semibold text-navy-light group-hover:text-navy">
-                    {count}개 안내 · 분류 허브 →
+                    {count}개 안내 · 분류 전체 →
                   </span>
                 </Link>
               </li>

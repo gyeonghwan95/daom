@@ -717,7 +717,7 @@ export const cityRegionDefs: RegionLandingDef[] = [
     disclosure:
       "다옴법무사사무소는 부산 해운대구에 있으며 창원에 별도 지점이 있는 것은 아닙니다. 상속등기 관할 특례와 비대면 서류 전달 방식을 검토하여 창원 소재 부동산도 진행 바로 진행 방법을 안내합니다.",
     localIntro:
-      "창원에서는 의창·성산·마산합포·마산회원·진해에 아파트·토지·상가가 나뉜 경우가 많습니다. 부모·조부모 명의 부동산과 상속 후 매도·담보 일정이 겹치면 목록부터 한 표로 맞춥니다. 부산 해운대 사무소에서 방문·비대면 중 편한 방식을 안내하며 창원 지점은 없습니다.",
+      "창원에서는 의창·성산·마산합포·마산회원·진해에 아파트·토지·상가가 나뉜 경우가 많습니다. 부모·조부모 명의 부동산과 상속 후 매도·담보 일정이 겹치면 목록부터 함께 맞춥니다. 부산 해운대 사무소에서 방문·비대면 중 편한 방식을 안내하며 창원 지점은 없습니다.",
     scenarioIds: ["multi-gu", "apt-land-mix", "sell-first", "busan-remote"],
     propertyTypeIds: ["apt", "land", "retail"],
     uniqueFaqIds: ["multi-prop", "cost-split", "visit-need", "jurisdiction-special"],

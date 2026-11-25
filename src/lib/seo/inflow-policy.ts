@@ -120,7 +120,7 @@ const LIBRARY: InflowItem[] = [
     href: LEGAL_CONSULTATION_CHAMPION,
     label: "상담 전 준비서류",
     searchPhrase: "부산 법무사 상담",
-    reason: "전화·카카오톡으로 1차 확인이 가능합니다.",
+    reason: "전화·카카오톡으로 먼저 확인해 드릴 수 있습니다.",
   },
   {
     href: OFFICE_HUB,

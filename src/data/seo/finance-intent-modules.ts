@@ -41,7 +41,7 @@ export const FINANCE_SITUATION_CARDS: FinanceSituationCard[] = [
 export function buildFinanceSituationSection(): PageSection {
   return {
     title: "이런 상황이라면 — 잔금·대출·등기",
-    body: "‘부산 은행 법무사’·‘부산 은행 등기’처럼 검색하시는 경우, 특정 은행 지정 관계가 아니라 잔금·대출·소유권이전·근저당 설정·말소가 겹치는 실무 상황을 찾으시는 경우가 많습니다. 아래에서 가까운 상황을 고른 뒤 해당 안내로 이어가면 됩니다.",
+    body: "‘부산 은행 법무사’를 찾으시는 분들은 대개 특정 은행의 지정 법무사보다, 잔금·대출·소유권이전·근저당 설정·말소 일정을 한 번에 맞춰 줄 사람을 찾고 계십니다. 아래에서 지금 상황과 가까운 것을 골라 보세요.",
     items: FINANCE_SITUATION_CARDS.map((c) => `${c.situation} — ${c.body}`),
     links: FINANCE_SITUATION_CARDS.map((c) => ({
       href: c.href,

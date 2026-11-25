@@ -12,7 +12,7 @@ export const developerRegistryPageContent: B2BPageContent = {
     "신축 보존, 수분양자 이전, 사업비·중도금 담보가 한 일정에 얽힐 때, 건수·권리구조·일정을 확인한 뒤 가능 범위를 안내합니다.",
   heroParagraphs: [
     "시행 일정과 등기 일정은 같은 날이어도 준비물이 다릅니다. 단계별로 누구 창구인지부터 나눕니다.",
-    "건설사·분양대행·건축사 협업과 겹치는 요청은 역할을 구분해 형제 페이지로도 연결합니다.",
+    "건설사·분양대행·건축사와 함께 진행하는 일은 각 협업 안내도 함께 보세요.",
   ],
   primaryKeywords: [
     "부산 시행사 등기",
@@ -72,7 +72,7 @@ export const developerRegistryPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=developer&service=bulk", label: "시행·집단 등기 문의" },
     { href: "/부산건설사등기", label: "건설사 등기업무" },
     { href: "/부산분양등기", label: "분양등기" },

@@ -278,7 +278,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     }),
     recommendedAction: "STRENGTHEN",
     notes:
-      "Spoke 유지. 일반 절차는 /부산법인법무사·/부산임원변경등기. 모든 공공기관이 회사등기 대상이라고 쓰지 않음.",
+      "Spoke 유지. 일반 절차는 ‘부산 법인 법무사’·‘부산 임원변경등기’. 모든 공공기관이 회사등기 대상이라고 쓰지 않음.",
   },
 
   // D. 부동산·재산
@@ -318,7 +318,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
       localRelevance: 5,
     }),
     recommendedAction: "STRENGTHEN",
-    notes: "Hub `/공공기관등기업무` 부동산 섹션 + Spoke. 신규 URL 불필요.",
+    notes: "Hub ‘공공기관 등기업무’ 부동산 섹션 + Spoke. 신규 URL 불필요.",
   },
 
   {
@@ -353,7 +353,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     }),
     recommendedAction: "ADD_SECTION",
     notes:
-      "기존 `/공공기관이전등기` + Hub 보상 카드. 수용·재결 자체는 행정·송무 영역과 구분.",
+      "기존 ‘공공기관 이전등기’ + Hub 보상 카드. 수용·재결 자체는 행정·송무 영역과 구분.",
   },
 
   // E. 촉탁
@@ -389,7 +389,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     }),
     recommendedAction: "ADD_SECTION",
     notes:
-      "촉탁 자체는 관공서 행위(부동산등기법). 법무사는 SUPPORT/INFORMATION_ONLY. 「모든 관공서 촉탁 대행」 금지. `/촉탁등기` Spoke와 Hub 비교표로 흡수.",
+      "촉탁 자체는 관공서 행위(부동산등기법). 법무사는 SUPPORT/INFORMATION_ONLY. 「모든 관공서 촉탁 대행」 금지. ‘촉탁등기’ Spoke와 Hub 비교표로 흡수.",
   },
 
   // F. 용역·선정·견적
@@ -435,7 +435,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     }),
     recommendedAction: "ADD_SECTION",
     notes:
-      "신규 용역 랜딩 금지. Hub 견적 모듈 + `/협업문의`. 「입찰전문·조달청 지정·전담」 금지. 「부산 법무사 선정」은 `/부산법무사추천`과 구분.",
+      "신규 용역 랜딩 금지. Hub 견적 모듈 + ‘협업·복대리·프로젝트 문의서를 작성해 주세요’. 「입찰전문·조달청 지정·전담」 금지. 「부산 법무사 선정」은 ‘부산 법무사 추천 기준’과 구분.",
   },
 
   // G. 교육
@@ -475,7 +475,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     }),
     recommendedAction: "ADD_FAQ",
     notes:
-      "확인된 이력만. 청렴·지정 법정교육 불가. `/부산기관법률특강` `/전세사기예방교육` `/창업법률교육` `/강의문의` 지원.",
+      "확인된 이력만. 청렴·지정 법정교육 불가. ‘부산 기관 법률특강’ ‘부산 전세사기 예방교육’ ‘부산 창업교육 강사’ ‘기관·단체 담당자를 위한 부산 법률 강의 문의’ 지원.",
   },
 
   // H. 문제형·자연어 (페이지 생성 금지)
@@ -584,7 +584,7 @@ export const PUBLIC_SECTOR_INTENTS: PublicSectorIntent[] = [
     cannibalizationRisk: "HIGH",
     opportunityScore: 0,
     recommendedAction: "DO_NOT_TARGET",
-    notes: "내용이 같으면 Hub 하나. `/공기업등기` `/지방공기업등기` 기존 Spoke만 유지.",
+    notes: "내용이 같으면 Hub 하나. ‘공기업 등기’ ‘지방공기업 등기’ 기존 Spoke만 유지.",
   },
   {
     id: "ps-consumer-champion",

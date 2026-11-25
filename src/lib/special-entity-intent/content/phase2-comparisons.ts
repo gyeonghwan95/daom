@@ -42,7 +42,7 @@ export const phase2ComparisonPages: SpecialEntityPageContent[] = [
     relatedLinks: [
       { href: "/부산농업회사법인설립", label: "농업회사법인" },
       { href: "/영농조합법인설립", label: "영농조합법인" },
-      { href: "/농어업법인설립등기", label: "농·어업 허브" },
+      { href: "/농어업법인설립등기", label: "농·어업 안내" },
       ...baseSpecialRelated,
     ],
     ctaTitle: "농업법인 유형 상담",

@@ -92,13 +92,13 @@ export const realEstateTradePages = [
       { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
       { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
-      { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
+      { href: "/민사소송", label: "민사·채권 안내" },
     ],
     faqLinks: [
       { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },
@@ -224,7 +224,7 @@ export const realEstateTradePages = [
       { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
       { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
       { href: "/상속등기자가진단", label: "상속등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
@@ -233,7 +233,7 @@ export const realEstateTradePages = [
         href: "/이혼재산분할등기서류준비",
         label: "이혼 재산분할등기 서류 준비",
       },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
     ],
     faqLinks: [
       { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },
@@ -359,13 +359,13 @@ export const realEstateTradePages = [
       { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
       { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
       { href: "/상속등기자가진단", label: "상속등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
       { href: "/부산근저당말소등기", label: "근저당 말소 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
     ],
     faqLinks: [
       { href: "/faq/inheritance-registration-with-mortgage", label: "근저당 있는 부동산" },
@@ -491,13 +491,13 @@ export const realEstateTradePages = [
       { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
       { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
       { href: "/상속등기자가진단", label: "상속등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
       { href: "/services/inheritance-registration", label: "상속등기 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
     ],
     faqLinks: [
       { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },
@@ -622,13 +622,13 @@ export const realEstateTradePages = [
     diagnosisLinks: [
       { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
       { href: "/부동산등기자가진단", label: "부동산등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
       { href: "/contact", label: "상담 문의" },
     ],
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [

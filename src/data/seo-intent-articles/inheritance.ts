@@ -586,7 +586,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
         "채무 관련 자료(있으면)",
       ],
       caution: [
-        "서류가 없어도 1차 상담은 가능합니다.",
+        "서류가 없어도 첫 상담은 가능합니다.",
         "여러 상속인이 관여하면 대표 연락창구를 정하는 것이 좋습니다.",
         "상담 내용은 개별 사안에 따라 달라집니다.",
       ],
@@ -606,7 +606,7 @@ export const inheritanceSeoIntentArticles: SeoIntentArticle[] = [
     cta: {
       title: "준비 없이도 먼저 연락 주세요",
       description:
-        "부산·해운대·센텀에서 상속등기·한정승인 방향을 1차 상담으로 정리해 드립니다. [상담 예약](/contact)",
+        "부산·해운대·센텀에서 상속등기·한정승인 방향을 첫 상담으로 정리해 드립니다. [상담 예약](/contact)",
     },
   },
 ];

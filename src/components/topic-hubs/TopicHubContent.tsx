@@ -180,7 +180,7 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
       {hasPageLeadThumbnail(page.path) ? null : <PageCoverBanner image={getServiceImage(page.primaryServiceSlug)} />}
 
       <header>
-        <p className="text-sm font-medium text-navy-light">부산 · 토픽 허브</p>
+        <p className="text-sm font-medium text-navy-light">부산 · 토픽 안내</p>
         <h1 className="page-title mt-2">{page.h1}</h1>
         <p className="body-text mt-4 max-w-3xl md:mt-5">{page.intro}</p>
       </header>
@@ -266,7 +266,7 @@ export function TopicHubContent({ page }: TopicHubContentProps) {
 
       <PageSerpCarousel path={page.path} />
 
-      <RelatedLinks title="관련 업무 허브" links={page.relatedHubLinks} />
+      <RelatedLinks title="관련 업무 안내" links={page.relatedHubLinks} />
 
       <div
         id="consultation"

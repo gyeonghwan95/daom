@@ -50,7 +50,7 @@ export const phase3RegionalPages: SpecialEntityPageContent[] = [
       {
         question: "부산 사무소에서 경남 법인 등기를 하나요?",
         answer:
-          "상담·서류 작성은 가능하나 접수는 주사무소 관할 등기소입니다. `/부산사단법인설립`과 관할이 다릅니다.",
+          "상담·서류 작성은 가능하나 접수는 주사무소 관할 등기소입니다. ‘부산 사단법인 설립’과 관할이 다릅니다.",
       },
     ],
     relatedLinks: [

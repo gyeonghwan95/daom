@@ -37,10 +37,10 @@ export type ConsultEmpathy = {
 };
 
 export const consultKakaoGreeting =
-  "상황만 적어 주세요. 제가 확인하고 필요한 순서만 말씀드립니다.";
+  "어떤 절차부터 해야 할지 몰라서 문의드립니다.";
 
 const AFTER =
-  "문의 후 상황 확인 → 범위·비용·서류 안내 → 맡기시면 진행합니다. 문의만으로 진행되지 않습니다.";
+  "문의하시면 상황을 듣고 필요한 절차·서류·비용을 먼저 알려 드립니다. 진행은 맡기기로 정하신 뒤에만 합니다.";
 
 function decodePath(pathname: string): string {
   try {

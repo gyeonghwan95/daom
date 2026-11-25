@@ -44,7 +44,7 @@ function collectInternalLinks(page: SituationPage) {
     ...page.extraLinks,
     {
       href: getSituationCategoryById(page.situationCategory).path,
-      label: `${getSituationCategoryById(page.situationCategory).label} 허브`,
+      label: `${getSituationCategoryById(page.situationCategory).label} 안내`,
     },
     { href: "/situations", label: "상황별 법률문제" },
     { href: "/자가진단", label: "자가진단" },

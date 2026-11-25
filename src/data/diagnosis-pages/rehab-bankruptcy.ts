@@ -132,7 +132,7 @@ export const personalRehabilitationDiagnosis: Diagnosis = {
   faqs: standardFaqs("개인회생"),
   relatedLinks: standardRelatedLinks("개인회생", [
     { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-    { href: "/개인회생파산", label: "회생·파산 허브" },
+    { href: "/개인회생파산", label: "회생·파산 안내" },
   ]),
   ctaTitle: DIAGNOSIS_CTA_TITLE,
   ctaText: DIAGNOSIS_CTA_TEXT,

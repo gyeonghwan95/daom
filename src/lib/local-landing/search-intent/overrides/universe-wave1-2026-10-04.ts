@@ -1,7 +1,7 @@
 import type { SearchIntentContent } from "../types";
 
-const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 허브" } as const;
-const familyHub = { href: "/가족후견", label: "성년후견·가사비송 허브" } as const;
+const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 안내" } as const;
+const familyHub = { href: "/가족후견", label: "성년후견·가사비송 안내" } as const;
 
 const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 본 안내는 상담 전 확인용이며 개별 사안에 대한 확정 의견이 아닙니다. 법령 확인 기준일: 2026-10-04.";

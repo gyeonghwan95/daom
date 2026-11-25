@@ -228,7 +228,7 @@ export function BusinessInquiryForm() {
         description="남겨주신 내용을 확인한 뒤 담당자가 연락드립니다. 메일 앱을 열 필요 없이 사무소로 바로 전달됩니다."
         detail={form.workType || undefined}
         secondaryHref="/부산기업법률자문"
-        secondaryLabel="기업 법률실무 허브로 돌아가기"
+        secondaryLabel="기업 법률실무 안내 전체 보기"
         resetLabel="새 기업 문의 작성"
         onReset={() => {
           setSubmitted(false);

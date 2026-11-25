@@ -57,7 +57,7 @@ export const toolDefinitions: ToolDefinition[] = [
     ],
     serviceLinks: [
       { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
     ],
     faqs: [
       {
@@ -223,7 +223,7 @@ export const toolDefinitions: ToolDefinition[] = [
     diagnosisLinks: [{ href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" }],
     serviceLinks: [
       { href: "/services/director-change", label: "임원변경등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
     ],
     faqs: [
       {
@@ -298,7 +298,7 @@ export const toolDefinitions: ToolDefinition[] = [
       { href: "/임차권등기명령자가진단", label: "임차권등기명령 자가진단" },
     ],
     serviceLinks: [
-      { href: "/임대차전세", label: "임대차·전세 허브" },
+      { href: "/임대차전세", label: "임대차·전세 안내" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
     ],
     faqs: [
@@ -360,7 +360,7 @@ export const toolDefinitions: ToolDefinition[] = [
     ],
     diagnosisLinks: [{ href: "/지급명령자가진단", label: "지급명령 자가진단" }],
     serviceLinks: [
-      { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/민사소송", label: "민사·채권 안내" },
       { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
     ],
     faqs: [
@@ -399,7 +399,7 @@ export const toolDefinitions: ToolDefinition[] = [
     ],
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
     ],
     faqs: [
       {

@@ -167,7 +167,7 @@ export function HomeBusanGuide() {
         <div className="mt-10">
           <h3 className="text-lg font-bold text-navy">맡길 때 먼저 알려 주시면 되는 것</h3>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-navy/75">
-            공공 상담은 짧은 확인에 맞춰져 있습니다. 서류를 작성하고 접수·보정까지 맡기려면 아래만 있어도 1차 안내가 가능합니다.
+            공공 상담은 짧은 확인에 맞춰져 있습니다. 서류를 작성하고 접수·보정까지 맡기려면 아래만 있어도 먼저 안내해 드릴 수 있습니다.
             업무명을 몰라도 됩니다.
           </p>
           <ul className="mt-4 divide-y divide-beige-dark rounded-xl border border-beige-dark">

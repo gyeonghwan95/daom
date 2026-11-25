@@ -480,9 +480,9 @@ export function buildPageDataFromLocalLanding(
     extraSections.unshift(...PERSONAL_REHAB_CHAMPION_MODULES);
     extraSections.unshift({
       title: "회생·파산 중 어디부터 볼지",
-      body: "개인회생과 개인파산을 아직 나누지 못했다면 비교 허브를 먼저 보세요. 이 페이지는 개인회생 신청·서류·상황별 확인에 집중합니다.",
+      body: "개인회생과 개인파산을 아직 나누지 못했다면 비교 종합 안내를 먼저 보세요. 이 페이지는 개인회생 신청·서류·상황별 확인에 집중합니다.",
       links: [
-        { href: "/개인회생파산", label: "회생·파산 비교 허브" },
+        { href: "/개인회생파산", label: "회생·파산 비교 안내" },
         { href: "/부산개인회생법무사", label: "소득·채무·재산으로 가능성 보기" },
       ],
     });
@@ -540,7 +540,7 @@ export function buildPageDataFromLocalLanding(
       ],
       links: [
         { href: "/부산법무사보수표", label: "부산 법무사 보수표 안내" },
-        { href: "/부산법무사수임료", label: "수임료 키워드 안내" },
+        { href: "/부산법무사수임료", label: "수임료 뜻과 비용 구성" },
         { href: "/등기비용", label: "등기 비용 항목" },
         { href: "/왜상속등기비용이다를까", label: "왜 상속등기 비용이 다를까" },
         { href: "/부산법무사상담", label: "상담 전 비용·준비서류" },

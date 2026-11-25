@@ -19,7 +19,7 @@ export type SoutheastRegionType =
   | "생활권"
   | "산업권"
   | "지역조합"
-  | "허브";
+  | "안내";
 
 export type SoutheastPageType =
   | "region-hub"

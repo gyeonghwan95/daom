@@ -18,7 +18,7 @@ export function BusanDistrictCard({ district }: BusanDistrictCardProps) {
             href={district.hubPath}
             className="rounded-full bg-navy px-3 py-1 text-xs font-semibold text-white hover:bg-navy-dark"
           >
-            지역 허브 →
+            지역 안내 →
           </Link>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-navy/70">{district.context}</p>

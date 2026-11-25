@@ -11,7 +11,7 @@ export const realEstateDelegationPageContent: B2BPageContent = {
   heroIntro:
     "부산 소재 부동산의 이전·설정·말소 등기가 필요할 때, 관할 등기소와 신청서 상태를 확인한 뒤 접수·보정·현지 지원의 가능 범위를 안내합니다.",
   heroParagraphs: [
-    "이 페이지는 타지역 법무사·법무법인·변호사사무실이 부산 부동산등기만 따로 협업하려 할 때 참고하는 안내입니다. 법인등기 복대리·일반 복대리 안내와 역할을 구분해 두었습니다.",
+    "이 페이지는 타지역 법무사·법무법인·변호사사무실이 부산 부동산등기만 따로 협업하려 할 때 참고하는 안내입니다.",
     "권리관계·첨부서류·금융 일정이 얽힌 사건은 접수 전 점검 항목이 달라집니다. 자료와 일정을 확인한 뒤 가능 범위를 안내합니다.",
   ],
   primaryKeywords: [
@@ -70,7 +70,7 @@ export const realEstateDelegationPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=legal-professional&service=delegation", label: "복대리 협업 문의" },
     { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
     { href: "/부산법인등기복대리", label: "부산 법인등기 복대리" },

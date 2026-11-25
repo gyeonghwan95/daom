@@ -80,7 +80,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["personal-rehabilitation"],
     region: "부산",
     legalRisk: "medium",
-    notes: "대표는 /부산개인회생과 내부링크. 전문 법무사 표현 금지.",
+    notes: "대표는 ‘부산 개인회생 법무사 상담’과 내부링크. 전문 법무사 표현 금지.",
   },
   {
     id: "busan-bankruptcy",
@@ -114,7 +114,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["bankruptcy"],
     region: "부산",
     legalRisk: "medium",
-    notes: "/부산파산법무사와 의도 유사 → 내부링크로 서로 보강.",
+    notes: "‘부산 파산 법무사’와 의도 유사 → 내부링크로 서로 보강.",
   },
   {
     id: "busan-fee",
@@ -136,7 +136,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["inheritance-registration"],
     region: "부산",
     legalRisk: "low",
-    notes: "/부산법무사수임료·/법무사수임료는 merge-into-existing. 고정 가격 금지.",
+    notes: "‘부산 법무사 수임료’·‘법무사 수임료’는 merge-into-existing. 고정 가격 금지.",
   },
   {
     id: "busan-fee-duplicate-slug",
@@ -197,7 +197,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["ownership-transfer", "real-estate-registration"],
     region: "부산",
     legalRisk: "medium",
-    notes: "세금·감면 최종 확정 금지. /아파트집단등기 등은 대표로 병합 유도.",
+    notes: "세금·감면 최종 확정 금지. ‘아파트 집단등기’ 등은 대표로 병합 유도.",
   },
   {
     id: "apt-mass-merge",
@@ -214,7 +214,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["ownership-transfer"],
     region: "부산",
     legalRisk: "low",
-    notes: "얇은 파생 페이지는 대표 /부산집단등기로 유도.",
+    notes: "얇은 파생 페이지는 대표 ‘여러 건의 등기는 한 건의 등기와 다른 방식으로 준비해야 합니다’로 유도.",
   },
   {
     id: "busan-inheritance-lawyer",
@@ -231,7 +231,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["inheritance-registration"],
     region: "부산",
     legalRisk: "medium",
-    notes: "상속 절차 선택은 이 URL이 대표. 상속등기 전용 검색어는 /부산상속등기로 분리.",
+    notes: "상속 절차 선택은 이 URL이 대표. 상속등기 전용 검색어는 ‘부산 상속등기’로 분리.",
   },
   {
     id: "busan-registry-lawyer",
@@ -265,7 +265,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["corporate-registration"],
     region: "부산",
     legalRisk: "low",
-    notes: "법인 업무 전반의 상담·분기 대표. 설립 전용은 /부산법인설립등기, 변경등기 전용은 /부산법인등기로 분리.",
+    notes: "법인 업무 전반의 상담·분기 대표. 설립 전용은 ‘부산 법인설립등기’, 변경등기 전용은 ‘부산 법인등기’로 분리.",
   },
   {
     id: "busan-company-establishment-lawyer",
@@ -303,7 +303,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
   },
   {
     id: "hub-registry-practice",
-    primaryKeyword: "등기 실무 허브",
+    primaryKeyword: "등기 실무 안내",
     secondaryKeywords: ["등기 접수", "등기 보정", "전자등기"],
     intentType: "informational",
     audience: "일반·B2B",
@@ -314,11 +314,11 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["real-estate-registration", "corporate-registration"],
     region: "부산",
     legalRisk: "low",
-    notes: "신규 상위 허브.",
+    notes: "신규 상위 안내.",
   },
   {
     id: "hub-rehab",
-    primaryKeyword: "부산 회생파산 허브",
+    primaryKeyword: "부산 회생파산 안내",
     secondaryKeywords: ["개인회생과 개인파산 비교"],
     intentType: "comparison",
     audience: "개인 채무자",
@@ -330,11 +330,11 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["personal-rehabilitation", "bankruptcy"],
     region: "부산",
     legalRisk: "medium",
-    notes: "/부산회생파산 신규 생성 금지. 기존 /개인회생파산 강화.",
+    notes: "‘부산 회생·파산’ 신규 생성 금지. 기존 ‘부산 개인회생·개인파산·면책 상담’ 강화.",
   },
   {
     id: "hub-cost",
-    primaryKeyword: "법무사 비용·기간·서류 허브",
+    primaryKeyword: "법무사 비용·기간·서류 안내",
     secondaryKeywords: ["업무별 처리기간", "상담 전 준비서류"],
     intentType: "cost",
     audience: "일반 의뢰인",
@@ -346,7 +346,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["inheritance-registration"],
     region: "부산",
     legalRisk: "low",
-    notes: "/법무사비용기간서류 신규 생성 금지.",
+    notes: "‘법무사 비용’기간서류 신규 생성 금지.",
   },
   {
     id: "hub-special-request",
@@ -362,7 +362,7 @@ export const searchIntentRegistry: SearchIntentRecord[] = [
     relatedServices: ["real-estate-registration"],
     region: "부산",
     legalRisk: "low",
-    notes: "/특수등기(선박 등)와 의도 분리. B2B·특수의뢰 허브.",
+    notes: "‘부산 선박·비영리법인·종중·외국인 부동산등기 상담’(선박 등)와 의도 분리. B2B·특수의뢰 안내.",
   },
   {
     id: "hub-collab",

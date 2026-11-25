@@ -214,8 +214,7 @@ export function LectureTopicFinder() {
     <div className="lecture-topic-finder rounded-2xl border border-navy/10 bg-cream/30 p-4 md:p-6">
       <p className="text-sm text-navy/65">
         대상·목적·시간만 고르면 맞는 강의 방향과 문의에 필요한 정보를
-        안내합니다. 추천 결과는 상담 편의를 위한 것이며, 별도 검색 페이지로
-        색인되지 않습니다.
+        안내합니다. 추천 결과는 상담을 돕기 위한 참고용입니다.
       </p>
 
       {step === 1 ? (

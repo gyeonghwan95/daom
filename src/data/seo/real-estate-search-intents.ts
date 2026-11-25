@@ -63,7 +63,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     parentHub: "/부산부동산등기",
     relatedServices: ["real-estate-registration"],
     legalRisk: "low",
-    notes: "대표 허브. 하위 클러스터로 내부링크 보강.",
+    notes: "대표 안내. 하위 클러스터로 내부링크 보강.",
   },
   {
     id: "busan-ownership-transfer",
@@ -78,7 +78,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     parentHub: "/부산부동산등기",
     relatedServices: ["ownership-transfer"],
     legalRisk: "low",
-    notes: "매매등기 허브와 상호 링크. URL 유지.",
+    notes: "매매등기 종합 안내와 상호 링크. URL 유지.",
   },
   {
     id: "busan-registry-lawyer",
@@ -154,7 +154,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     parentHub: "/특수등기의뢰",
     relatedServices: ["ownership-transfer"],
     legalRisk: "medium",
-    notes: "입주등기 개인 관점은 /부산입주등기와 구분.",
+    notes: "입주등기 개인 관점은 ‘부산 입주등기’와 구분.",
   },
   {
     id: "busan-balance-day",
@@ -170,7 +170,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     parentHub: "/부산매매등기법무사",
     relatedServices: ["ownership-transfer"],
     legalRisk: "medium",
-    notes: "/부산잔금일등기는 생성하지 않고 여기로 병합.",
+    notes: "‘부산 잔금일 등기’는 생성하지 않고 여기로 병합.",
   },
   {
     id: "busan-preservation",
@@ -272,7 +272,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     relatedCases: ["/services/cases/centum-ownership-transfer-case"],
     relatedTools: ["/tools/real-estate-documents-check", "/부동산등기자가진단"],
     legalRisk: "medium",
-    notes: "매매 클러스터 대표 허브.",
+    notes: "매매 클러스터 대표 안내.",
   },
   {
     id: "busan-gift-reg",
@@ -296,7 +296,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     relatedServices: ["ownership-transfer"],
     relatedFaqs: ["/faq/gift-registration-faq"],
     legalRisk: "high",
-    notes: "증여세는 세무 확인 안내. 비용 파생은 기존 /증여등기* 유지.",
+    notes: "증여세는 세무 확인 안내. 비용 파생은 기존 ‘증여등기’* 유지.",
   },
   {
     id: "busan-name-change",
@@ -374,7 +374,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     relatedServices: ["real-estate-registration"],
     relatedTools: ["/임차권등기명령자가진단"],
     legalRisk: "medium",
-    notes: "기존 /임차권등기명령비용 등과 허브-하위 연결.",
+    notes: "기존 ‘임차권등기명령 비용 안내’ 등과 안내-하위 연결.",
   },
   {
     id: "busan-buyer",
@@ -559,7 +559,7 @@ export const realEstateSearchIntents: RealEstateSearchIntent[] = [
     action: "create-new",
     parentHub: "/부산임차권등기명령",
     relatedServices: ["real-estate-registration"],
-    notes: "전세권·임차권·확정일자 비교 허브.",
+    notes: "전세권·임차권·확정일자 비교 안내.",
   },
   {
     id: "faq-self-vs-lawyer",

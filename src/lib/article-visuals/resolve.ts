@@ -130,7 +130,7 @@ const FIELD_OVERLAYS: Record<ArticleVisualField, OverlaySet> = {
     ],
     beforeProcedures: [
       "관할 등기소부터 확인합니다",
-      "서류와 세금 일정을 한 줄로 맞춥니다",
+      "서류와 세금 일정을 함께 맞춥니다",
     ],
     beforeExample: ["잔금일 연속 처리를 예시로 봅니다"],
     beforeCta: ["등기부와 일정을 알려주시면 됩니다"],

@@ -141,7 +141,7 @@ export const businessSearchIntents: BusinessSearchIntent[] = [
       "/부산법인설립등기",
       "/tools/director-change-penalty-deadline",
     ],
-    notes: "기존 허브 보강 + 기업 실무 허브 상호링크.",
+    notes: "기존 안내 보강 + 기업 실무 안내 상호링크.",
   },
   {
     id: "corp-establish",
@@ -160,7 +160,7 @@ export const businessSearchIntents: BusinessSearchIntent[] = [
     action: "merge-into-existing",
     parentHub: "/부산기업법률자문",
     relatedLectures: ["/창업법률교육"],
-    notes: "신규 /부산스타트업법률지원 미생성. 설립등기·창업교육으로 연결.",
+    notes: "신규 ‘부산 스타트업 법률지원’ 미생성. 설립등기·창업교육으로 연결.",
   },
   {
     id: "recurring-management",
@@ -178,7 +178,7 @@ export const businessSearchIntents: BusinessSearchIntent[] = [
     action: "section-only",
     parentHub: "/부산기업법률자문",
     scopeRisk: true,
-    notes: "정기점검 가능 업무는 허브 섹션만. 상시 고문·월 자문계약 미제공 표현.",
+    notes: "정기점검 가능 업무는 안내 섹션만. 상시 고문·월 자문계약 미제공 표현.",
   },
   {
     id: "industrial-park",
@@ -210,7 +210,7 @@ export const businessSearchIntents: BusinessSearchIntent[] = [
     priority: 1,
     action: "strengthen-existing",
     parentHub: "/부산기업법률자문",
-    notes: "교육↔실무 허브 상호링크.",
+    notes: "교육↔실무 안내 상호링크.",
   },
   {
     id: "public-agency",
@@ -250,7 +250,7 @@ export const businessSearchIntents: BusinessSearchIntent[] = [
     priority: 2,
     action: "faq-only",
     scopeRisk: true,
-    notes: "포괄 계약 법률의견·협상대리 미제공. FAQ·허브 섹션으로 대응.",
+    notes: "포괄 계약 법률의견·협상대리 미제공. FAQ·안내 섹션으로 대응.",
   },
   {
     id: "ban-retainer-claim",

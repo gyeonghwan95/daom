@@ -28,11 +28,11 @@ export const S = {
   director: { href: "/services/director-change", label: "임원변경등기 안내" },
   rehab: { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
   bankruptcy: { href: "/services/bankruptcy", label: "개인파산 안내" },
-  inheritanceHub: { href: "/상속", label: "상속 허브" },
-  civilHub: { href: "/민사소송", label: "민사·채권 허브" },
-  leaseHub: { href: "/임대차전세", label: "임대차·전세 허브" },
-  rehabHub: { href: "/개인회생파산", label: "개인회생·파산 허브" },
-  corpHub: { href: "/법인등기", label: "법인등기 허브" },
+  inheritanceHub: { href: "/상속", label: "상속 안내" },
+  civilHub: { href: "/민사소송", label: "민사·채권 안내" },
+  leaseHub: { href: "/임대차전세", label: "임대차·전세 안내" },
+  rehabHub: { href: "/개인회생파산", label: "개인회생·파산 안내" },
+  corpHub: { href: "/법인등기", label: "법인등기 안내" },
 } as const satisfies Record<string, PageRelatedLink>;
 
 export const F = {

@@ -86,7 +86,7 @@ export function buildNationwideHubPageData(): PageData {
       "거주 지역·부동산·법인 소재지를 알려 상담 시작",
       "업무 유형(관할 특례·묶음·이전·비대면 진행) 구분",
       "필요서류·공과금·보수 범위 안내",
-      "원본 전달·접수·보정·완료 공유",
+      "원본 전달·접수부터 완료까지 진행 상황 안내",
     ],
     documentsTitle: "첫 상담에 알려주실 정보",
     documents: [
@@ -166,7 +166,7 @@ export function buildNationwideHubPageData(): PageData {
             href: "/방문없이준비하는상속포기한정승인",
             label: "상속포기·한정승인 방문 전 준비",
           },
-          { href: "/법인등기", label: "법인등기 허브" },
+          { href: "/법인등기", label: "법인등기 안내" },
           { href: "/부산개인회생", label: "개인회생 안내" },
         ],
       },
@@ -455,7 +455,7 @@ export function buildNationwideBequestPageData(): PageData {
       "상속등기 선행 여부 확인 자료",
     ],
     consultationPoints: [
-      "상속등기 페이지와 내용을 복제하지 않고 유증 고유 쟁점을 중심으로 안내합니다.",
+      "유언으로 재산을 받는 유증에서만 생기는 쟁점을 중심으로 안내합니다.",
       "수증자가 법인·해외 거주자인 경우 본인확인·첨부서류가 달라질 수 있습니다.",
     ],
     faqs: [
@@ -538,7 +538,7 @@ export function buildNationwideBequestPageData(): PageData {
     internalLinks: [
       { href: "/부산유언검인", label: "부산 유언검인 법무사 — 신청 안내" },
       { href: "/전국상속등기", label: "전국 상속등기 진행 방법" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
       { href: "/services/inheritance-registration", label: "상속등기 절차" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },
     ],
@@ -678,7 +678,7 @@ export function buildMultiRegionInheritancePageData(): PageData {
         label: "전국 상속부동산 일괄등기 사례",
       },
       { href: "/상속등기필요서류", label: "상속등기 필요서류" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },
     ],
     ctaTitle: "여러 지역 부동산 한 번에 문의하기",
@@ -792,7 +792,7 @@ export function buildNationwideHeadOfficeTransferPageData(): PageData {
       "서울 부산 본점이전",
     ],
     internalLinks: [
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 절차" },
       { href: "/본점이전등기비용", label: "본점이전등기 비용" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },
@@ -905,7 +905,7 @@ export function buildNationwideJointCollateralPageData(): PageData {
     internalLinks: [
       { href: "/부산근저당설정등기", label: "근저당 설정·말소 안내" },
       { href: "/전국업무", label: "전국 업무 전체 보기" },
-      { href: "/등기실무", label: "등기 실무 허브" },
+      { href: "/등기실무", label: "등기 실무 안내" },
       { href: "/전국법인본점이전등기", label: "타지역 본점이전 절차" },
     ],
     ctaTitle: "여러 지역 공동담보 가능 여부 확인하기",

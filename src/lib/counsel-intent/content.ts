@@ -397,7 +397,7 @@ const CATEGORY_RESULTS: Record<
     {
       title: "부산 기업 법률실무",
       href: "/부산기업법률자문",
-      note: "기업 담당자용 절차 허브",
+      note: "기업 담당자용 절차 안내",
     },
   ],
   debt: [

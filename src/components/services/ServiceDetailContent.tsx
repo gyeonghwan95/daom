@@ -88,7 +88,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
       </header>
 
       {hubLink ? (
-        <RelatedLinks title="업무 종합 허브" links={[hubLink]} />
+        <RelatedLinks title="업무 종합 안내" links={[hubLink]} />
       ) : null}
 
       <InlineConsultationCTA

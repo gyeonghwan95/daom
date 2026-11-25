@@ -27,7 +27,7 @@ const COMMON_FAQS = [
   {
     question: "카카오톡으로 서류 사진만내도 되나요?",
     answer:
-      "간단한 1차 확인은 가능합니다. 다만 최종 검토에는 선명한 사본이나 원본 확인이 필요할 수 있어, 상담 중에 어떤 형태가 적절한지 안내드립니다.",
+      "간단한 확인은 먼저 해 드릴 수 있습니다. 다만 최종 검토에는 선명한 사본이나 원본 확인이 필요할 수 있어, 상담 중에 어떤 형태가 적절한지 안내드립니다.",
   },
 ] as const;
 
@@ -142,7 +142,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "가족 간 협의 필요 여부",
       ],
       costGuideText:
-        "상속포기·한정승인 비용은 상속인 수, 채무 조사 범위, 관할 법원에 따라 달라질 수 있습니다. 기한 전에 1차 검토만 받으셔도 됩니다.",
+        "상속포기·한정승인 비용은 상속인 수, 채무 조사 범위, 관할 법원에 따라 달라질 수 있습니다. 기한 전에 먼저 검토만 받으셔도 됩니다.",
       caseExamples: [
         {
           title: "채무 규모를 먼저 확인한 사례",
@@ -163,7 +163,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "기한 계산이 막막하다면",
         description:
-          "사망일과 상속 사실을 안 날짜만 알려주셔도 1차 검토가 가능합니다. 서류가 없어도 상담을 시작할 수 있습니다.",
+          "사망일과 상속 사실을 안 날짜만 알려주셔도 먼저 검토가 가능합니다. 서류가 없어도 상담을 시작할 수 있습니다.",
         buttonLabel: "기한 먼저 확인하기",
       },
       ctaMessages: ["기한 먼저 확인하기", "상속포기 가능 여부 물어보기"],
@@ -198,7 +198,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "이후 상속등기 병행 여부",
       ],
       costGuideText:
-        "한정승인 비용은 채무 조사 범위와 상속인 수에 따라 달라질 수 있습니다. 기한 전 1차 상담만으로도 방향을 정하는 데 도움이 됩니다.",
+        "한정승인 비용은 채무 조사 범위와 상속인 수에 따라 달라질 수 있습니다. 기한 전 첫 상담만으로도 방향을 정하는 데 도움이 됩니다.",
       caseExamples: [
         {
           title: "채무 목록 정리 후 한정승인한 사례",
@@ -219,7 +219,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "한정승인이 맞는지 애매하다면",
         description:
-          "채무가 얼마나 있는지 아직 모르더라도, 지금 알고 있는 정보만으로 1차 검토가 가능합니다.",
+          "채무가 얼마나 있는지 아직 모르더라도, 지금 알고 있는 정보만으로 먼저 검토가 가능합니다.",
         buttonLabel: "절차 비교 먼저 확인하기",
       },
       ctaMessages: ["절차 비교 먼저 확인하기", "채무 조사 방법 물어보기"],
@@ -276,7 +276,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "잔금일 전에 확인하고 싶다면",
         description:
-          "계약서와 등기부등본만 있어도 필요한 순서와 서류를 1차로 정리해 드릴 수 있습니다.",
+          "계약서와 등기부등본만 있어도 필요한 순서와 서류를 먼저 정리해 드릴 수 있습니다.",
         buttonLabel: "등기 가능 여부 확인하기",
       },
       ctaMessages: [
@@ -316,7 +316,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "필지 수",
       ],
       costGuideText:
-        "소유권이전등기 비용은 가액, 지분 구조, 말소 등기 병행 여부에 따라 달라집니다. 잔금일 전에 1차 검토를 권합니다.",
+        "소유권이전등기 비용은 가액, 지분 구조, 말소 등기 병행 여부에 따라 달라집니다. 잔금일 전에 먼저 검토를 권합니다.",
       caseExamples: [
         {
           title: "잔금일 직전 근저당 말소가 필요한 사례",
@@ -373,7 +373,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "서류 준비 상태",
       ],
       costGuideText:
-        "법인등기 비용은 변경 종류, 본점 이동 범위, 과태료 여부에 따라 달라집니다. 변경일자만 알려주셔도 1차 검토가 가능합니다.",
+        "법인등기 비용은 변경 종류, 본점 이동 범위, 과태료 여부에 따라 달라집니다. 변경일자만 알려주셔도 먼저 검토가 가능합니다.",
       caseExamples: [
         {
           title: "법인 임원변경 기한을 놓친 사례",
@@ -430,7 +430,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "정관 복잡도",
       ],
       costGuideText:
-        "설립등기 비용은 법인 형태, 자본금, 임원 구성에 따라 달라집니다. 사업 계획만 있어도 1차 상담이 가능합니다.",
+        "설립등기 비용은 법인 형태, 자본금, 임원 구성에 따라 달라집니다. 사업 계획만 있어도 첫 상담이 가능합니다.",
       caseExamples: [
         {
           title: "1인 주식회사 설립을 검토한 사례",
@@ -451,7 +451,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "설립 전에 구조부터 물어보고 싶다면",
         description:
-          "사업 내용만 알려주셔도 법인 형태와 필요 서류를 1차로 정리해 드릴 수 있습니다.",
+          "사업 내용만 알려주셔도 법인 형태와 필요 서류를 먼저 정리해 드릴 수 있습니다.",
         buttonLabel: "설립 구조 먼저 확인하기",
       },
       ctaMessages: ["설립 구조 먼저 확인하기", "준비서류 물어보기"],
@@ -487,7 +487,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "서류 준비 상태",
       ],
       costGuideText:
-        "임원변경등기 비용은 변경 인원, 과태료, 정관 개정 필요 여부에 따라 달라집니다. 변경일자만으로도 1차 검토가 가능합니다.",
+        "임원변경등기 비용은 변경 인원, 과태료, 정관 개정 필요 여부에 따라 달라집니다. 변경일자만으로도 먼저 검토가 가능합니다.",
       caseExamples: [
         {
           title: "법인 임원변경 기한을 놓친 사례",
@@ -544,7 +544,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "추가 조사 필요 여부",
       ],
       costGuideText:
-        "개인회생 비용은 채무 규모, 소득·재산 구조, 절차 유형에 따라 달라집니다. 서류가 완벽하지 않아도 1차 상담이 가능합니다.",
+        "개인회생 비용은 채무 규모, 소득·재산 구조, 절차 유형에 따라 달라집니다. 서류가 완벽하지 않아도 첫 상담이 가능합니다.",
       caseExamples: [
         {
           title: "영업소득자 회생 가능 여부를 검토한 사례",
@@ -565,7 +565,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "혼자 판단하기 어렵다면",
         description:
-          "채무 목록이 정리되지 않았더라도, 알고 있는 범위만으로 1차 검토가 가능합니다.",
+          "채무 목록이 정리되지 않았더라도, 알고 있는 범위만으로 먼저 검토가 가능합니다.",
         buttonLabel: "회생 가능 여부 확인하기",
       },
       ctaMessages: ["회생 가능 여부 확인하기", "채무 정리 방법 물어보기"],
@@ -622,7 +622,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "파산이 맞는지 먼저 알고 싶다면",
         description:
-          "채무·재산 정보가 완전하지 않아도, 알고 있는 범위로 1차 검토가 가능합니다.",
+          "채무·재산 정보가 완전하지 않아도, 알고 있는 범위로 먼저 검토가 가능합니다.",
         buttonLabel: "절차 비교 먼저 확인하기",
       },
       ctaMessages: ["절차 비교 먼저 확인하기", "면책 가능 여부 물어보기"],
@@ -658,7 +658,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "서류 준비 상태",
       ],
       costGuideText:
-        "보존등기 비용은 건물 유형, 호수, 대지권 구조에 따라 달라집니다. 건축물대장과 사용승인 서류만으로도 1차 검토가 가능합니다.",
+        "보존등기 비용은 건물 유형, 호수, 대지권 구조에 따라 달라집니다. 건축물대장과 사용승인 서류만으로도 먼저 검토가 가능합니다.",
       caseExamples: [
         {
           title: "신축 오피스텔 보존등기를 준비한 사례",
@@ -735,7 +735,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "대출 실행 전에 확인하고 싶다면",
         description:
-          "설정계약서와 등기부등본만 있어도 필요한 순서를 1차로 정리할 수 있습니다.",
+          "설정계약서와 등기부등본만 있어도 필요한 순서를 먼저 정리할 수 있습니다.",
         buttonLabel: "설정등기 일정 확인하기",
       },
       ctaMessages: ["설정등기 일정 확인하기", "준비서류 물어보기"],
@@ -791,7 +791,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       midCta: {
         title: "잔금 전 말소 일정이 걱정된다면",
         description:
-          "등기부와 잔금일만 알려주셔도 말소·이전 순서를 1차로 정리해 드릴 수 있습니다.",
+          "등기부와 잔금일만 알려주셔도 말소·이전 순서를 먼저 정리해 드릴 수 있습니다.",
         buttonLabel: "말소 일정 확인하기",
       },
       ctaMessages: ["말소 일정 확인하기", "준비서류 물어보기"],
@@ -826,7 +826,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "서류 준비 상태",
       ],
       costGuideText:
-        "본점이전등기 비용은 이동 범위, 정관 개정, 과태료 여부에 따라 달라집니다. 이전일자만으로도 1차 검토가 가능합니다.",
+        "본점이전등기 비용은 이동 범위, 정관 개정, 과태료 여부에 따라 달라집니다. 이전일자만으로도 먼저 검토가 가능합니다.",
       caseExamples: [
         {
           title: "센텀으로 본점을 옮긴 사례",
@@ -883,7 +883,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         "강제집행까지 검토 여부",
       ],
       costGuideText:
-        "채권 회수 비용은 금액, 증거 상태, 선택하는 절차에 따라 달라집니다. 증거 목록만 정리해도 1차 검토가 가능합니다.",
+        "채권 회수 비용은 금액, 증거 상태, 선택하는 절차에 따라 달라집니다. 증거 목록만 정리해도 먼저 검토가 가능합니다.",
       caseExamples: [
         {
           title: "내용증명 후 지급명령을 검토한 사례",
@@ -898,7 +898,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         { href: "/지급명령자가진단", label: "지급명령 자가진단" },
         { href: "/내용증명자가진단", label: "내용증명 자가진단" },
         { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
-        { href: "/민사소송", label: "민사소송 허브" },
+        { href: "/민사소송", label: "민사소송 안내" },
         { href: "/contact", label: "상담 문의" },
       ],
       midCta: {
@@ -927,7 +927,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       ],
       preparationDocuments: [
         "등기사항전부증명서",
-        "증여계약서(없어도 1차 안내 가능)",
+        "증여계약서(없어도 먼저 안내 가능)",
         "가족관계증명서",
         "부동산 가액 참고 자료",
       ],
@@ -1036,7 +1036,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
       preparationDocuments: [
         "가족관계증명서",
         "주민등록등본",
-        "의사 소견서(없어도 1차 안내 가능)",
+        "의사 소견서(없어도 먼저 안내 가능)",
         "부동산이 있으면 등기사항전부증명서",
       ],
       costFactors: [
@@ -1059,7 +1059,7 @@ export const serviceConversionConfigs: Record<string, ServiceConversionConfig> =
         },
       ],
       relatedServices: [
-        { href: "/가족후견", label: "성년후견·가사비송 허브" },
+        { href: "/가족후견", label: "성년후견·가사비송 안내" },
         { href: "/성년후견자가진단", label: "성년후견 자가진단" },
         { href: "/부산가정법원성년후견", label: "부산가정법원 성년후견" },
         { href: "/contact", label: "상담 문의" },

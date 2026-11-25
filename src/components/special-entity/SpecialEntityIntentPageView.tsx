@@ -181,7 +181,7 @@ export function SpecialEntityIntentPageView({
         ctaHref={contactHref}
         secondaryCta={{
           href: "/특수비영리법인등기",
-          label: "특수·비영리법인 허브",
+          label: "특수·비영리법인 안내",
         }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}

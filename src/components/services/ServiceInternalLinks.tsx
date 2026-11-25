@@ -17,7 +17,7 @@ export function ServiceInternalLinks({ currentSlug }: ServiceInternalLinksProps)
   return (
     <div className="space-y-8">
       {hubLink ? (
-        <RelatedLinks title="업무 종합 허브" links={[hubLink]} />
+        <RelatedLinks title="업무 종합 안내" links={[hubLink]} />
       ) : null}
       {localLinks.length > 0 ? (
         <RelatedLinks title="지역별 안내" links={localLinks.slice(0, 8)} />

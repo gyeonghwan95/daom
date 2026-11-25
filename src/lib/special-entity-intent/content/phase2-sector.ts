@@ -163,7 +163,7 @@ export const phase2SectorPages: SpecialEntityPageContent[] = [
       {
         question: "사회복지법인이 필요한 경우는?",
         answer:
-          "사회복지사업법상 사회복지사업·시설 운영이 주된 목적이면 사회복지법인을 검토합니다. `/사회복지법인설립등기`를 참고하세요.",
+          "사회복지사업법상 사회복지사업·시설 운영이 주된 목적이면 사회복지법인을 검토합니다. ‘사회복지법인 설립등기’를 참고하세요.",
       },
     ],
     relatedLinks: [

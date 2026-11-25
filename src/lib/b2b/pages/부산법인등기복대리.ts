@@ -70,7 +70,7 @@ export const corporateDelegationPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=legal-professional&service=corporate", label: "법인등기 협업 문의" },
     { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
     { href: "/부산부동산등기복대리", label: "부산 부동산등기 복대리" },

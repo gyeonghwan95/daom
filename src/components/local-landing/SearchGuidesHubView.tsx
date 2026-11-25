@@ -33,8 +33,8 @@ export function SearchGuidesHubView() {
           showAboutLawyerCta
         >
           <p className="mt-3 text-sm text-navy/65">
-            URL에 ‘전문’이 포함된 기존 주소는 유지하되, 화면 문구는 실무·절차 안내로
-            정리합니다. 전문 자격·인증을 단정하지 않습니다.
+            ‘전문’이라는 표현은 특정 자격·인증을 뜻하지 않으며,
+            실제 업무 절차를 중심으로 안내합니다.
           </p>
         </PageHero>
 

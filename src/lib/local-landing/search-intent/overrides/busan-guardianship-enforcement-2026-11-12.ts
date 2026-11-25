@@ -285,7 +285,7 @@ export const 부산강제집행법무사Override: SearchIntentContent = {
     { href: "/부산소액소송", label: "부산 소액소송 법무사 — 3천만 원 이하 소장 작성" },
   ],
   relatedGuideLinks: [{ href: "/contact/inquiry?field=payment-order", label: "강제집행 신청서 상담" }],
-  breadcrumbParent: { href: "/민사소송", label: "지급명령·가압류·민사 허브" },
+  breadcrumbParent: { href: "/민사소송", label: "지급명령·가압류·민사 안내" },
   bottomCtaText: "집행권원 종류와 상대방에 대해 아는 재산을 알려 주시면 어떤 집행 신청부터 할지 순서를 정리해 드립니다.",
   serviceSlug: "payment-order",
   proseSections: [

@@ -92,12 +92,12 @@ export const debtRehabPages = [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -224,12 +224,12 @@ export const debtRehabPages = [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -242,7 +242,7 @@ export const debtRehabPages = [
       { href: "/blog/personal-rehabilitation-before-application", label: "신청 전 체크" },
       { href: "/blog/bankruptcy-vs-personal-rehabilitation", label: "회생·파산 비교" },
       { href: "/부산개인회생법무사", label: "부산 개인회생 법무사 — 신청 가능성" },
-      { href: "/부산개인회생", label: "부산 개인회생 업무 허브" },
+      { href: "/부산개인회생", label: "부산 개인회생 업무 안내" },
       { href: "/contact/inquiry", label: "간편 문의" },
     ],
     faqs: [
@@ -356,13 +356,13 @@ export const debtRehabPages = [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
-      { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
+      { href: "/민사소송", label: "민사·채권 안내" },
     ],
     faqLinks: [
       { href: "/faq/personal-rehabilitation-eligibility-faq", label: "개인회생 자격" },
@@ -487,12 +487,12 @@ export const debtRehabPages = [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -596,7 +596,7 @@ export const debtRehabPages = [
       "압류를 방치한 채 신청만 미루는 경우",
     ],
     caseExample: {
-      title: "회생·파산 방향 1차 정리",
+      title: "회생·파산 방향 먼저 정리",
       body: "급여 소득과 카드·신용대출이 겹친 의뢰인에게 변제 여력과 재산 규모를 구분해, 회생 검토를 우선으로 안내한 상담 사례입니다.",
     },
     documents: [
@@ -618,12 +618,12 @@ export const debtRehabPages = [
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
       { href: "/개인파산자가진단", label: "개인파산 자가진단" },
       { href: "/개인회생자가진단", label: "개인회생 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [

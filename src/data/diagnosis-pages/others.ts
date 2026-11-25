@@ -118,7 +118,7 @@ export const companyEstablishmentDiagnosis = simplifiedDiagnosis(
       ],
     },
   ],
-  [{ href: "/창업법무", label: "창업법무 허브" }],
+  [{ href: "/창업법무", label: "창업법무 안내" }],
 );
 
 export const depositDiagnosis = simplifiedDiagnosis(
@@ -177,7 +177,7 @@ export const depositDiagnosis = simplifiedDiagnosis(
   ],
   [
     { href: "/부산공탁", label: "공탁 종류별 안내(변제·집행·담보·형사)" },
-    { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
+    { href: "/공탁채권회수", label: "공탁·채권회수 안내" },
   ],
 );
 
@@ -248,12 +248,12 @@ export const adultGuardianshipDiagnosis: Diagnosis = {
         ],
       },
     ],
-    [{ href: "/가족후견", label: "가족후견 허브" }],
+    [{ href: "/가족후견", label: "가족후견 안내" }],
   ),
   outcomes: createStandardOutcomes(
     "성년후견",
     "/가족후견",
-    ["가족관계증명서", "의사 소견서(없어도 1차 안내 가능)"],
+    ["가족관계증명서", "의사 소견서(없어도 먼저 안내 가능)"],
   ),
   targetUsers: [
     "살아 계신 부모·가족의 재산·일상 관리가 어려워진 분",
@@ -263,7 +263,7 @@ export const adultGuardianshipDiagnosis: Diagnosis = {
   requiredDocuments: [
     "가족관계증명서",
     "주민등록등본",
-    "의사 소견서(없어도 1차 안내 가능)",
+    "의사 소견서(없어도 먼저 안내 가능)",
     "부동산이 있으면 등기사항전부증명서",
   ],
   processSteps: [
@@ -328,7 +328,7 @@ export const specialRepresentativeDiagnosis = simplifiedDiagnosis(
       ],
     },
   ],
-  [{ href: "/민사소송", label: "민사소송 허브" }],
+  [{ href: "/민사소송", label: "민사소송 안내" }],
 );
 
 export const shipRegistrationDiagnosis = simplifiedDiagnosis(
@@ -385,7 +385,7 @@ export const shipRegistrationDiagnosis = simplifiedDiagnosis(
     },
   ],
   [
-    { href: "/부산선박등기", label: "부산 선박등기 허브" },
+    { href: "/부산선박등기", label: "부산 선박등기 안내" },
     { href: "/영도구선박등기", label: "영도구 선박등기" },
   ],
 );

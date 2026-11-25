@@ -155,7 +155,7 @@ export const charterNotaryPhase1Pages: CorporatePageContent[] = [
     ],
     ctaTitle: "정관·등기 준비사항 확인하기",
     ctaText:
-      "현행 정관과 등기사항전부증명서만 있어도, 설립·변경 중 어디부터 손볼지 1차로 짚어 드립니다.",
+      "현행 정관과 등기사항전부증명서만 있어도, 설립·변경 중 어디부터 손볼지 먼저 짚어 드립니다.",
     infoTables: [
       {
         title: "정관 기재사항 구분(개요)",
@@ -311,7 +311,7 @@ export const charterNotaryPhase1Pages: CorporatePageContent[] = [
       {
         question: "목적변경 페이지와 무엇이 다른가요?",
         answer:
-          "목적변경등기 안내는 ‘사업목적’ 실무에 집중합니다. 이 페이지는 상호·본점·공고·주식 등 여러 항목의 정관 개정 여부를 한 표로 비교합니다.",
+          "목적변경등기 안내는 ‘사업목적’ 실무에 집중합니다. 이 페이지는 상호·본점·공고·주식 등 여러 항목의 정관 개정 여부를 한눈에 비교합니다.",
       },
       {
         question: "의사록 공증도 같이 해야 하나요?",
@@ -610,7 +610,7 @@ export const charterNotaryPhase1Pages: CorporatePageContent[] = [
       {
         question: "공증 후 바로 설립등기인가요?",
         answer:
-          "인증 정관과 납입·임원 서류가 갖춰지면 설립등기로 이어지는 경우가 많습니다. 설립 안내는 `/부산법인설립등기`를 참고하세요.",
+          "인증 정관과 납입·임원 서류가 갖춰지면 설립등기로 이어지는 경우가 많습니다. 설립 안내는 ‘부산 법인설립등기’를 참고하세요.",
       },
     ],
     relatedLinks: [
@@ -652,7 +652,7 @@ export const charterNotaryPhase1Pages: CorporatePageContent[] = [
       "임원·목적·본점·자본금 등 등기사항을 바꾸면 주주총회나 이사회 의사록이 첨부되는 경우가 많습니다. 그 의사록에 인증이 필요한지는 별도 질문입니다.",
     heroParagraphs: [
       "다옴법무사사무소는 변경등기용 결의·의사록이 등기 취지에 맞는지 확인하고, 인증이 필요할 수 있는 상황을 안내합니다. 인증 자체는 공증인이 수행합니다.",
-      "‘의사록 쓰는 법’만 궁금하면 변경등기 허브의 결의·서류 안내도 도움이 됩니다. 이 페이지는 공증(인증) 준비와 등기 연결에 초점을 둡니다.",
+      "‘의사록 쓰는 법’만 궁금하면 변경등기 종합 안내의 결의·서류 안내도 도움이 됩니다. 이 페이지는 공증(인증) 준비와 등기 연결에 초점을 둡니다.",
     ],
     officeLine: CORPORATE_OFFICE_LINE,
     scopeNotice: CORPORATE_SCOPE_NOTICE,
@@ -744,7 +744,7 @@ export const charterNotaryPhase1Pages: CorporatePageContent[] = [
           "공증(인증)은 공증인이 합니다. 법무사는 등기용 의사록 작성과 접수 준비를 지원합니다.",
       },
       {
-        question: "공증 준비 허브와 무엇이 다른가요?",
+        question: "공증 준비 종합 안내와 무엇이 다른가요?",
         answer:
           "법인 공증 준비 안내는 정관·의사록·방문 전 체크를 넓게 봅니다. 이 페이지는 주총·이사회 의사록 인증과 변경등기 연결에 집중합니다.",
       },

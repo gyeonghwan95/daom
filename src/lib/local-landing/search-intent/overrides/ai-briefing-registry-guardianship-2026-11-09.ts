@@ -128,7 +128,7 @@ export const 등기부등본보는법Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/contact/inquiry?field=real-estate-registration", label: "등기 준비서류 확인" },
   ],
-  breadcrumbParent: { href: "/부동산등기", label: "부동산등기 허브" },
+  breadcrumbParent: { href: "/부동산등기", label: "부동산등기 안내" },
   bottomCtaText:
     "부동산 주소와 계약하려는 거래 유형(매매·전세)만 알려 주시면 등기부에서 확인할 순서를 먼저 정리해 드립니다.",
   serviceSlug: "real-estate-registration",
@@ -285,7 +285,7 @@ export const 성년후견신청Override: SearchIntentContent = {
   relatedServiceLinks: [
     { href: "/부산가정법원성년후견", label: "부산가정법원 성년후견 — 접수 창구" },
     { href: "/부산한정후견", label: "부산 한정후견 — 동의 범위·대리권" },
-    { href: "/가족후견", label: "성년후견·가사비송 허브" },
+    { href: "/가족후견", label: "성년후견·가사비송 안내" },
     { href: "/특별대리인자가진단", label: "특별대리인 자가진단" },
     { href: "/미성년상속인", label: "미성년 상속인" },
     { href: "/부산상속등기", label: "부산 상속등기" },

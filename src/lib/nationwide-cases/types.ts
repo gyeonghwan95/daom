@@ -5,7 +5,7 @@
 
 export const CASE_BASE = "/업무사례" as const;
 
-export type RegionType = "시도" | "시" | "구" | "군" | "생활권" | "권역허브" | "전국허브";
+export type RegionType = "시도" | "시" | "구" | "군" | "생활권" | "권역안내" | "전국안내";
 
 export type NationwideCaseKind =
   | "hub"

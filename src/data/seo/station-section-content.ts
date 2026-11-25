@@ -117,7 +117,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "2호선 센텀시티역 인근에서 회사 설립·임원변경·본점 정리를 알아볼 때는 정관·등기부와 변경 일자를 먼저 맞춰 보는 것이 좋습니다.",
     localContext:
-      "다옴법무사사무소는 해운대구 센텀동로 인근에 있습니다. 방문은 예약 후 이용하시고, 서류 사진으로 1차 확인도 가능합니다.",
+      "다옴법무사사무소는 해운대구 센텀동로 인근에 있습니다. 방문은 예약 후 이용하시고, 서류 사진으로 먼저 확인도 가능합니다.",
     nextStep:
       "변경하려는 항목(임원·본점·목적·설립)과 등기부 보유 여부만 남겨 주세요.",
     serviceLinks: [
@@ -152,7 +152,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "2호선 종점인 장산역은 좌동 생활권과 이어집니다. 이 구간에서 명의이전·상속을 준비하면 등기부와 가족관계를 먼저 확인하는 편이 안전합니다.",
     localContext:
-      "장산역 전용 허브 대신 좌동 법무사 안내에서 생활권 절차를 다룹니다. 해운대구 전체 안내는 구 페이지에서 이어집니다.",
+      "장산역 전용 안내 대신 좌동 법무사 안내에서 생활권 절차를 다룹니다. 해운대구 전체 안내는 구 페이지에서 이어집니다.",
     nextStep:
       "좌동·송정 쪽 주소와 등기 원인만 남겨 주시면 서류 목록을 안내합니다.",
     serviceLinks: [
@@ -218,7 +218,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "2호선·동해선이 연결되는 벡스코역 인근에서 회사 등기나 상담 일정을 볼 때는 센텀 생활권 안내를 기준으로 준비하면 됩니다.",
     localContext:
-      "벡스코·센텀시티역은 같은 센텀 허브에서 다룹니다. 전시장·오피스 일정과 등기 기한이 겹치면 우선순위를 표시해 드립니다.",
+      "벡스코·센텀시티역은 같은 센텀 종합 안내에서 다룹니다. 전시장·오피스 일정과 등기 기한이 겹치면 우선순위를 표시해 드립니다.",
     nextStep:
       "법인 변경 항목이나 상담 희망 시간을 남겨 주세요.",
     serviceLinks: [
@@ -235,7 +235,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     localContext:
       "광안·광안리 생활권 안내는 광안리 법무사 페이지에서 이어집니다. 수영구 전체 안내는 구 페이지를 참고하세요.",
     nextStep:
-      "계약서 종류와 부동산 주소만 있어도 1차 서류 목록을 안내합니다.",
+      "계약서 종류와 부동산 주소만 있어도 기본 서류 목록을 안내합니다.",
     serviceLinks: [
       { href: "/수영구부동산등기", label: "수영구 부동산등기" },
       { href: "/부산전세권설정등기", label: "전세권·임차 관련 등기 안내" },
@@ -263,7 +263,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "1호선 남포역 인근에서 법무사 업무를 찾을 때는 중구 소재 부동산·사업장인지, 다른 구 사건을 상담만 하는지를 구분해 안내합니다.",
     localContext:
-      "중구 안내는 구 단위 페이지에서 다룹니다. 남포·자갈치·중앙은 같은 허브에 역 섹션으로만 구분합니다.",
+      "중구 안내는 구 단위 페이지에서 다룹니다. 남포·자갈치·중앙은 같은 종합 안내에 역 섹션으로만 구분합니다.",
     nextStep:
       "소재지와 업무 종류를 남겨 주시면 관할·서류를 안내합니다.",
     serviceLinks: [
@@ -278,7 +278,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "1호선 자갈치역 인근에서 상가·주택 등기를 준비할 때는 계약 원인과 공유자·담보 여부를 먼저 확인합니다.",
     localContext:
-      "자갈치·남포는 중구 허브의 세부 역 섹션입니다. 법률 절차 본문은 업무 페이지에서 동일하게 안내합니다.",
+      "자갈치·남포는 중구 종합 안내의 세부 역 섹션입니다. 법률 절차 본문은 업무 페이지에서 동일하게 안내합니다.",
     nextStep:
       "등기부 갑·을구와 계약서만 있어도 누락 서류를 가늠할 수 있습니다.",
     serviceLinks: [
@@ -322,7 +322,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "1호선·동해선이 연결되는 부전역 인근에서 등기를 준비할 때는 서면·부전 상가·주택의 등기원인부터 확인합니다.",
     localContext:
-      "부전역은 부산진구 허브와 서면 안내로 연결합니다. 환승 이용과 상관없이 관할은 소재지 기준입니다.",
+      "부전역은 부산진구 종합 안내와 서면 안내로 연결합니다. 환승 이용과 상관없이 관할은 소재지 기준입니다.",
     nextStep:
       "매매·증여·법인 중 해당하는 절차와 주소를 남겨 주세요.",
     serviceLinks: [
@@ -337,7 +337,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     intro:
       "1호선 중앙역 인근에서 절차를 찾을 때는 중구 내 소재 사건과 상담만 필요한 사건을 구분해 안내합니다.",
     localContext:
-      "중앙·남포·자갈치는 중구 페이지의 역 섹션으로만 구분하고, 동일 법률 본문을 복제하지 않습니다.",
+      "중앙·남포·자갈치역 주변도 이 중구 안내에서 함께 보실 수 있습니다.",
     nextStep:
       "업무 종류와 주소를 남겨 주시면 됩니다.",
     serviceLinks: [
@@ -378,9 +378,9 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     stationId: "yangjeong",
     heading: "양정역·양정동에서 등기를 준비하는 경우",
     intro:
-      "1·2호선 환승인 양정역 생활권에서는 주택·상가 매매등기와 상속 명의이전, 잔금·대출 연동 등기 문의가 이어집니다. ‘양정 법무’처럼 짧게 검색하셔도 같은 안내입니다.",
+      "1·2호선 환승인 양정역 생활권에서는 주택·상가 매매등기와 상속 명의이전, 잔금·대출 연동 등기 문의가 이어집니다.",
     localContext:
-      "양정동 법무사 안내가 역·동 Cluster의 Primary Host입니다. 서면·개금·연지와 인접하므로 소재지 행정동을 기준으로 관할을 확인합니다.",
+      "양정역 주변 부동산도 이 안내에서 함께 보시면 됩니다. 서면·개금·연지와 인접하므로 소재지 행정동을 기준으로 관할을 확인합니다.",
     nextStep:
       "부동산 주소와 매매·상속·법인 중 해당하는 것을 알려주세요.",
     serviceLinks: [
@@ -395,7 +395,7 @@ export const stationSectionContents: Record<string, StationSectionContent> = {
     faq: {
       question: "양정역과 양정동 안내가 다른 페이지인가요?",
       answer:
-        "같은 생활권 Cluster입니다. 역 이름으로 검색하셔도 양정동 안내와 연결되는 업무 페이지를 보시면 됩니다.",
+        "같은 생활권입니다. 역 주변 부동산도 양정동 안내에서 함께 보시면 됩니다.",
     },
   },
 };

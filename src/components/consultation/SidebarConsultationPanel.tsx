@@ -139,8 +139,8 @@ export function SidebarConsultationPanel() {
           바로 상담하기
         </p>
         <p className="sidebar-consult-panel__lead">
-          상황만 간단히 남기셔도 상담 신청이 됩니다. 지금 알고 계신 상황만
-          알려주셔도 필요한 순서부터 정리해 드립니다.
+          서류가 없어도 괜찮습니다. 지금 아는 상황만 남겨 주시면
+          무엇부터 할지 정리해 드립니다.
         </p>
 
         <ul className="sidebar-consult-panel__channels">

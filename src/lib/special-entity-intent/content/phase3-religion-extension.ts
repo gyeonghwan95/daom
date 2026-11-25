@@ -59,7 +59,7 @@ export const phase3ReligionExtensionPages: SpecialEntityPageContent[] = [
       {
         question: "교회 사단법인과 무엇이 다른가요?",
         answer:
-          "사단법인은 회원 중심, 재단법인은 출연재산·기본재산 중심입니다. `/교회사단법인설립`, `/사단법인과재단법인차이`를 참고하세요.",
+          "사단법인은 회원 중심, 재단법인은 출연재산·기본재산 중심입니다. ‘교회 사단법인 설립’, ‘사단법인과 재단법인 차이’를 참고하세요.",
       },
     ],
     relatedLinks: [

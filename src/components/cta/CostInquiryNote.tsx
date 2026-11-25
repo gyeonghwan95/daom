@@ -315,7 +315,7 @@ function DecisionCard({ className }: { className: string }) {
       </div>
       {barCoversChat ? (
         <p className="decision-card__hint lg:hidden">
-          {showPhone ? "전화·카카오톡·네이버톡톡" : "카카오톡·네이버톡톡"}은 화면 아래 바에서 바로 누를 수 있습니다.
+          {showPhone ? "전화·카카오톡·네이버톡톡" : "카카오톡·네이버톡톡"}은 화면 맨 아래 버튼으로 바로 연결됩니다.
         </p>
       ) : null}
       <p className="decision-card__hint">{hint}</p>

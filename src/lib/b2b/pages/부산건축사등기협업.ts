@@ -46,7 +46,7 @@ export const architectCollabPageContent: B2BPageContent = {
     {
       question: "오피스텔·다가구·상가도 같은 안내인가요?",
       answer:
-        "유형별로 체크포인트가 다릅니다. 건물 유형을 알려 주시면 보존등기 허브의 해당 구간과 함께 안내합니다.",
+        "유형별로 체크포인트가 다릅니다. 건물 유형을 알려 주시면 보존등기 종합 안내의 해당 구간과 함께 안내합니다.",
     },
     {
       question: "시행사 등기 페이지와 무엇이 다른가요?",
@@ -70,7 +70,7 @@ export const architectCollabPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=architect&service=preservation", label: "건축사 협업 문의" },
     { href: "/부산신축건물보존등기", label: "신축건물 보존등기" },
     { href: "/부산시행사등기", label: "시행사 등기업무" },

@@ -101,13 +101,13 @@ const RESULT_LINK_PACKS: Record<string, DiagnosisResultLinkPack> = {
     faq: { href: "/faq", label: "공탁 FAQ" },
   },
   성년후견자가진단: {
-    service: { href: "/가족후견", label: "성년후견·가사비송 허브" },
+    service: { href: "/가족후견", label: "성년후견·가사비송 안내" },
     cost: { href: "/부산법무사비용", label: "성년후견 비용" },
     documents: { href: "/가족후견", label: "후견·가사 신청 전 안내" },
     faq: { href: "/가족후견", label: "후견·가사 안내" },
   },
   특별대리인자가진단: {
-    service: { href: "/가족후견", label: "성년후견·가사비송 허브" },
+    service: { href: "/가족후견", label: "성년후견·가사비송 안내" },
     cost: { href: "/부산법무사비용", label: "특별대리인 비용" },
     documents: { href: "/가족후견", label: "특별대리 신청 전 안내" },
     faq: { href: "/가족후견", label: "후견·가사 안내" },

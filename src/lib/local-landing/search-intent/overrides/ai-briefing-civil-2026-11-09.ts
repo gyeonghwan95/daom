@@ -12,7 +12,7 @@ import type { SearchIntentContent } from "../types";
 
 const lawGo = (name: string) => `https://www.law.go.kr/법령/${name}`;
 
-const civilHub = { href: "/민사소송", label: "부산 법원 서류 작성 허브" } as const;
+const civilHub = { href: "/민사소송", label: "부산 법원 서류 작성 안내" } as const;
 
 const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 상담 전 확인용 일반 안내이며 개별 사안에 대한 확정 의견이 아닙니다. 법령 확인 기준일: 2026-11-09.";
@@ -132,7 +132,7 @@ export const 소액심판Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/contact/inquiry?field=payment-order", label: "받을 돈 서류 확인" },
   ],
-  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 허브" },
+  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 안내" },
   bottomCtaText:
     "청구하려는 금액과 계약·입금 자료, 상대방 주소만 알려 주시면 소액심판과 지급명령 중 맞는 절차와 소장 준비물을 먼저 정리해 드립니다.",
   serviceSlug: "payment-order",
@@ -292,7 +292,7 @@ export const 내용증명효력Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/contact/inquiry?field=payment-order", label: "받을 돈 서류 확인" },
   ],
-  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 허브" },
+  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 안내" },
   bottomCtaText:
     "받을 돈의 종류와 금액, 계약서와 입금 내역, 시효가 얼마나 남았는지만 알려 주시면 내용증명과 후속 절차 순서를 먼저 정리해 드립니다.",
   serviceSlug: "payment-order",
@@ -450,7 +450,7 @@ export const 재산명시조회Override: SearchIntentContent = {
   relatedGuideLinks: [
     { href: "/contact/inquiry?field=payment-order", label: "받을 돈 서류 확인" },
   ],
-  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 허브" },
+  breadcrumbParent: { href: "/민사소송", label: "지급명령·소장·민사 안내" },
   bottomCtaText:
     "가지고 계신 판결문이나 지급명령 사건번호와 상대방 주소만 알려 주시면 재산명시와 압류 중 먼저 할 일을 정리해 드립니다.",
   serviceSlug: "payment-order",

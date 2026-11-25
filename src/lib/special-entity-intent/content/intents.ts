@@ -83,7 +83,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       },
       {
         question: "재단법인과 어떻게 다른가요?",
-        answer: "`/사단법인과재단법인차이` 페이지에서 회원 중심·재산 중심 구조 차이를 비교할 수 있습니다.",
+        answer: "‘사단법인과 재단법인 차이’ 페이지에서 회원 중심·재산 중심 구조 차이를 비교할 수 있습니다.",
       },
     ],
     relatedLinks: [
@@ -184,7 +184,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       {
         question: "장학재단도 재단법인인가요?",
         answer:
-          "장학 목적 재단은 보통 민법상 재단법인 형태로 설립합니다. `/장학재단설립` 페이지를 참고하세요.",
+          "장학 목적 재단은 보통 민법상 재단법인 형태로 설립합니다. ‘장학재단 설립’ 페이지를 참고하세요.",
       },
     ],
     relatedLinks: [
@@ -317,7 +317,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       "일반협동조합은 협동조합기본법에 따라 창립총회 후 별도 인가 없이 설립등기를 진행합니다.",
     heroParagraphs: [
       "부산에서 소상공인·프리랜서·지역주민·문화예술 등이 협동조합을 설립할 때, 창립총회일부터 2주 이내 설립등기를 해야 합니다(협동조합기본법 제12조).",
-      "사회적협동조합은 인가가 필요하므로 `/부산사회적협동조합설립` 페이지와 절차가 다릅니다.",
+      "사회적협동조합은 인가가 필요하므로 ‘부산 사회적협동조합 설립’ 페이지와 절차가 다릅니다.",
     ],
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
@@ -501,7 +501,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
     conclusion:
-      "부산 협회·단체의 법인설립은 사단법인 설립허가 후 등기가 일반적입니다. 협동조합·주식회사와 구조가 다르므로 `/협회사단법인설립`, `/사단법인과재단법인차이`도 함께 참고하세요.",
+      "부산 협회·단체의 법인설립은 사단법인 설립허가 후 등기가 일반적입니다. 협동조합·주식회사와 구조가 다르므로 ‘협회 사단법인 설립’, ‘사단법인과 재단법인 차이’도 함께 참고하세요.",
     primaryKeyword: "부산 협회 법인설립",
     secondaryKeywords: [
       "협회 사단법인",
@@ -566,7 +566,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       "업종·종목·지역 협회는 회원 기반 비영리 목적에 맞아 사단법인 형태로 설립하는 경우가 많습니다.",
     heroParagraphs: [
       "협회 설립 시 정관에 회원 자격·총회·이사회·재산 관리를 명확히 해야 합니다. 주무관청은 협회 목적(교육·체육·산업·복지 등)에 따라 달라집니다.",
-      "부산에 주사무소를 두는 협회는 `/부산협회단체법인설립` 지역 안내도 참고할 수 있습니다.",
+      "부산에 주사무소를 두는 협회는 ‘부산 협회·단체 법인설립’ 지역 안내도 참고할 수 있습니다.",
     ],
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
@@ -698,7 +698,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       "사단법인·재단법인도 이사장·이사·감사가 바뀌면 등기가 필요합니다.",
     heroParagraphs: [
       "임원 변경은 정관·민법에 따른 총회·이사회 결의 후, 일부 사항은 주무관청 승인이 필요할 수 있습니다. 취임·사임·중임·대표권 있는 이사 변경은 각각 서류가 다릅니다.",
-      "주식회사 임원변경(`/부산임원변경등기`)과 유사해 보이지만, 비영리법인은 주무관청 승인 단계가 추가되는 경우가 많습니다.",
+      "주식회사 임원변경(‘부산 임원변경등기’)과 유사해 보이지만, 비영리법인은 주무관청 승인 단계가 추가되는 경우가 많습니다.",
     ],
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
@@ -749,13 +749,13 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       {
         question: "임기 만료만으로 퇴임되나요?",
         answer:
-          "정관·결의에 따라 중임·사임·퇴임을 정리하고 등기해야 합니다. `/부산임원임기만료등기`는 주식회사 중심이나 절차 비교에 참고할 수 있습니다.",
+          "정관·결의에 따라 중임·사임·퇴임을 정리하고 등기해야 합니다. ‘부산 임원 임기만료 등기’는 주식회사 중심이나 절차 비교에 참고할 수 있습니다.",
       },
     ],
     relatedLinks: [
       SPECIAL_ENTITY_HUB_LINKS.change,
       { href: "/부산사단법인설립", label: "부산 사단법인 설립" },
-      { href: "/법인변경등기", label: "주식회사 변경등기 허브" },
+      { href: "/법인변경등기", label: "주식회사 변경등기 안내" },
       { href: "/부산임원변경등기", label: "부산 임원변경등기(주식회사)" },
       ...baseSpecialRelated,
     ],
@@ -827,7 +827,7 @@ export const specialEntityIntentPages: SpecialEntityPageContent[] = [
       {
         question: "협동조합도 허가 후 등기인가요?",
         answer:
-          "일반협동조합은 창립총회 후 등기하고, 사회적협동조합은 인가 후 등기합니다. `/부산협동조합설립등기`를 참고하세요.",
+          "일반협동조합은 창립총회 후 등기하고, 사회적협동조합은 인가 후 등기합니다. ‘부산 협동조합 설립등기’를 참고하세요.",
       },
     ],
     relatedLinks: [

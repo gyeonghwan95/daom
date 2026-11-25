@@ -173,7 +173,7 @@ const youth: LecturePageContent = {
     { href: "/부산청소년법률교육", label: "청소년 법률 교육" },
     { href: "/전세사기예방교육", label: "전세사기 예방교육" },
     { href: "/디지털법률교육", label: "디지털 법률교육" },
-    { href: "/법률강의", label: "강의 허브" },
+    { href: "/법률강의", label: "강의 안내" },
     { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
@@ -300,7 +300,7 @@ const startup: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/부산소상공인법률교육", label: "소상공인 법률 교육" },
     { href: "/기업법률교육", label: "기업 법률교육" },
-    { href: "/법률강의", label: "강의 허브" },
+    { href: "/법률강의", label: "강의 안내" },
     { href: "/부산법률강사", label: "부산 강사 초빙" },
     { href: "/강의문의", label: "문의" },
   ],
@@ -614,7 +614,7 @@ const publicEdu: LecturePageContent = {
     {
       question: "등기업무 교육과 겹치나요?",
       answer:
-        "공공 등기 실무는 /공공기관등기업무 안내와 별개이며, 본 페이지는 임직원 교육입니다.",
+        "공공 등기 실무는 ‘공공기관 등기업무’ 안내와 별개이며, 본 페이지는 임직원 교육입니다.",
     },
     {
       question: "효과 보장?",

@@ -146,7 +146,7 @@ export const realEstateRegistrationDiagnosis: Diagnosis = {
   ]),
   relatedLinks: standardRelatedLinks("부동산등기", [
     { href: "/소유권이전등기자가진단", label: "소유권이전등기 자가진단" },
-    { href: "/부동산등기", label: "부동산등기 허브" },
+    { href: "/부동산등기", label: "부동산등기 안내" },
   ]),
 };
 

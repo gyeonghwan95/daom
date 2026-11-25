@@ -11,7 +11,7 @@ export const NOTARY_BOUNDARY_BASE =
 export const CORPORATE_HUB_LINKS = {
   main: { href: "/부산법인법무사", label: "부산 법인 법무사 종합" },
   registry: { href: "/부산법인등기", label: "부산 법인등기 지역 안내" },
-  pillar: { href: "/법인등기", label: "법인등기 업무 허브" },
+  pillar: { href: "/법인등기", label: "법인등기 업무 안내" },
   business: { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
   contact: { href: "/contact", label: "법인등기 상담 문의" },
   establishment: { href: "/부산법인설립등기", label: "부산 법인설립등기" },

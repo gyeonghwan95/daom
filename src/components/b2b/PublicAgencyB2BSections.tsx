@@ -128,7 +128,7 @@ export function PublicAgencyB2BSections() {
       <section className="rounded-xl border border-beige-dark bg-beige/30 p-5">
         <h2 className="text-lg font-semibold text-navy">복대리·프로젝트 문의</h2>
         <p className="mt-2 text-sm text-navy/75">
-          기관 업무와 부산 현지 등기 협업은 협업 허브에서도 확인할 수 있습니다.
+          기관 업무와 부산 현지 등기 협업은 협업 종합 안내에서도 확인할 수 있습니다.
         </p>
         <Link
           href="/partners"

@@ -18,7 +18,7 @@ const TRUST_ITEMS = [
   "안윤정 법무사 직접 확인",
   "비대면 필요서류 안내",
   "보수와 공과금 구분",
-  "접수·보정·완료 진행상황 공유",
+  "접수부터 완료까지 진행 상황 안내",
 ];
 
 function hashSlug(slug: string): number {
@@ -293,7 +293,7 @@ export function buildNationwideCasePageData(
         ] as PageSection[])),
     {
       title: titles[5]!,
-      body: "① 지역·상속인 수 공유 ② 관할·서류 안내 ③ 보수·공과금 구분 ④ 원본 전달 ⑤ 접수·보정·완료 공유",
+      body: "① 지역·상속인 수 확인 ② 관할·서류 안내 ③ 보수·공과금 나눠 견적 ④ 원본 서류 전달 ⑤ 접수부터 완료까지 진행 상황 안내",
       links: [...serviceLinks, ...regionLinks].slice(0, 8),
     },
     ...buildHubExtraSections(def),
@@ -350,10 +350,10 @@ export function buildNationwideCasePageData(
       ? [def.localIntro, def.disclosure, def.localPoints.items[0]!, DISCLAIMER]
       : [def.localIntro, def.disclosure, DISCLAIMER],
     procedures: [
-      `${def.regionName} 부동산·상속인 거주 지역 공유`,
+      `${def.regionName} 부동산 소재지와 상속인 거주 지역 확인`,
       "관할 특례·비대면 가능 범위 검토",
       "필요서류·공과금·보수 구분 안내",
-      "원본 전달 후 접수·보정·완료 공유",
+      "원본 서류를 받아 접수하고 완료까지 진행 상황 안내",
     ],
     documentsTitle: "첫 상담에 알려주실 정보",
     documents: [
@@ -363,10 +363,10 @@ export function buildNationwideCasePageData(
       "현재 준비된 서류(사진 가능)",
     ],
     consultationPoints: [
-      "수임 전에 진행 바로 상담을 시작해 보세요.",
+      "맡기기 전에 비용과 진행 방법부터 편하게 물어보세요.",
       "방문이 필요한 경우 미리 안내합니다.",
       "타지역이라는 이유만으로 비용을 올리지 않습니다.",
-      "가까운 사무소인지보다 직접 검토·비용·진행 공유를 확인하세요.",
+      "가까운 곳인지보다, 누가 직접 검토하고 비용과 진행 상황을 얼마나 분명히 알려 주는지 확인하세요.",
     ],
     faqs: [
       ...(def.localFaqs ?? []),

@@ -27,7 +27,7 @@ export const lectureIntentToUrlMap: LectureIntentMapEntry[] = [
     ],
     targetUrl: "/부산법률전문가",
     action: "strengthen",
-    notes: "DISCOVERY 허브. 기존 강의 URL 유지.",
+    notes: "DISCOVERY 안내. 기존 강의 URL 유지.",
   },
   {
     id: "speaker-hiring-hub",
@@ -43,11 +43,11 @@ export const lectureIntentToUrlMap: LectureIntentMapEntry[] = [
     ],
     targetUrl: "/부산법률강사",
     action: "strengthen",
-    notes: "기존 /부산법률강사 유지. /부산강사초빙은 없음.",
+    notes: "기존 ‘부산에서 실무형 특강 강사를 찾고 계신가요?’ 유지. ‘부산 강사 초빙’은 없음.",
   },
   {
     id: "program-hub",
-    intentLabel: "법률 강의·특강 프로그램 허브",
+    intentLabel: "법률 강의·특강 프로그램 안내",
     dimensions: ["부산", "법률 강의", "기관", "생활법률"],
     primaryKeyword: "부산 법률 강의",
     secondaryKeywords: ["부산 법률 특강", "맞춤형 법률교육"],
@@ -67,7 +67,7 @@ export const lectureIntentToUrlMap: LectureIntentMapEntry[] = [
     ],
     targetUrl: "/강의문의",
     action: "strengthen",
-    notes: "TRANSACTIONAL 전용. 섭외 검토는 /부산법률강사.",
+    notes: "TRANSACTIONAL 전용. 섭외 검토는 ‘부산에서 실무형 특강 강사를 찾고 계신가요?’.",
   },
   {
     id: "public-institution",
@@ -205,7 +205,7 @@ export const lectureIntentToUrlMap: LectureIntentMapEntry[] = [
     secondaryKeywords: ["수영구 강사", "부산진구 강사", "센텀 강사"],
     targetUrl: "/부산법률강사",
     action: "skip",
-    notes: "구·동 페이지 생성 금지 — 허브 출강지역 설명으로 흡수",
+    notes: "구·동 페이지 생성 금지 — 안내 출강지역 설명으로 흡수",
   },
   {
     id: "skip-synonym-law-only",

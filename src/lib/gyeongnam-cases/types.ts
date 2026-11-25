@@ -15,7 +15,7 @@ export type GyeongnamRegionType =
   | "동"
   | "생활권"
   | "지역조합"
-  | "허브";
+  | "안내";
 
 export type GyeongnamPageType =
   | "region-hub"

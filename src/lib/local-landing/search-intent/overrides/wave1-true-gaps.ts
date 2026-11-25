@@ -1,9 +1,9 @@
 import type { SearchIntentContent } from "../types";
 
-const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 허브" } as const;
-const familyHub = { href: "/가족후견", label: "성년후견·가사비송 허브" } as const;
-const inheritanceHub = { href: "/상속", label: "상속 종합 허브" } as const;
-const depositHub = { href: "/공탁채권회수", label: "공탁·채권회수 허브" } as const;
+const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 안내" } as const;
+const familyHub = { href: "/가족후견", label: "성년후견·가사비송 안내" } as const;
+const inheritanceHub = { href: "/상속", label: "상속 종합 안내" } as const;
+const depositHub = { href: "/공탁채권회수", label: "공탁·채권회수 안내" } as const;
 
 const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 본 안내는 상담 전 확인용이며 개별 사안에 대한 법률·세무·행정·소송 확정 의견이 아닙니다. 법령·실무 확인 기준일: 2026-08-26.";
@@ -187,7 +187,7 @@ export const 부산부재자재산관리인Override: SearchIntentContent = {
   eyebrow: "가사비송 · 부재자",
   breadcrumbParent: familyHub,
   heroParagraphs: [
-    "상속·부동산 처분·계약 정리가 필요한데 당사자가 오랫동안 연락이 되지 않으면, ‘부재자재산관리인’ 선임을 검색하는 경우가 있습니다. 실종선고·상속인 부재의 상속재산관리인·미성년 특별대리와 목적이 달라, 같은 가사비송이라도 URL을 나누는 편이 안전합니다.",
+    "상속·부동산 처분·계약 정리가 필요한데 당사자가 오랫동안 연락이 되지 않으면, ‘부재자재산관리인’ 선임을 검색하는 경우가 있습니다. 실종선고, 상속인이 없을 때의 상속재산관리인, 미성년 특별대리와는 목적이 달라 따로 확인해야 합니다.",
     "이 페이지는 부산가정법원 관할에서 부재자재산관리인 선임 신청 서류를 준비하기 전 확인 항목을 다룹니다. 상속인이 아예 없는 경우의 상속재산관리인, 미성년 상속인의 특별대리는 각 안내를 보세요.",
     lawScopeNote,
     reviewed,
@@ -337,7 +337,7 @@ export const 부산상속재산관리인Override: SearchIntentContent = {
   breadcrumbParent: inheritanceHub,
   heroParagraphs: [
     "상속이 개시됐는데 상속인이 없거나, 있는지 불명확해 재산을 관리·청산할 사람이 필요할 때 ‘상속재산관리인’을 검색합니다. 상속포기·한정승인(상속인 선택이 있는 경우), 부재자재산관리인(특정 부재자), 상속재산 파산과는 목적이 다릅니다.",
-    "이 페이지는 부산가정법원 관할에서 상속재산관리인 선임·관련 서류를 준비하기 전 확인 항목을 다룹니다. 빚만 있는 상속의 포기·한정승인은 상속 허브, 연락두절 상속인은 해당 안내를 우선하세요.",
+    "이 페이지는 부산가정법원 관할에서 상속재산관리인 선임·관련 서류를 준비하기 전 확인 항목을 다룹니다. 빚만 있는 상속의 포기·한정승인은 상속 안내, 연락두절 상속인은 해당 안내를 우선하세요.",
     lawScopeNote,
     reviewed,
   ],
@@ -387,7 +387,7 @@ export const 부산상속재산관리인Override: SearchIntentContent = {
   situationNav: [
     {
       title: "빚이 있어 포기·한정승인을 본다",
-      description: "상속 허브에서 선택 절차를 확인합니다.",
+      description: "상속 종합 안내에서 선택 절차를 확인합니다.",
       href: "/상속",
     },
     {
@@ -459,7 +459,7 @@ export const 부산상속재산관리인Override: SearchIntentContent = {
       id: "creditor",
       title: "채권·채무가 섞인 경우",
       paragraphs: [
-        "상속재산에 빚이 많으면 포기·한정승인·파산 등 다른 경로와 겹칩니다. 이 페이지는 관리인 선임 검토에 초점을 두고, 채무 정리는 사실관계에 따라 상속 허브·회생 안내와 연결합니다. 결과는 보장하지 않습니다.",
+        "상속재산에 빚이 많으면 포기·한정승인·파산 등 다른 경로와 겹칩니다. 이 페이지는 관리인 선임 검토에 초점을 두고, 채무 정리는 사실관계에 따라 상속 안내·회생 안내와 연결합니다. 결과는 보장하지 않습니다.",
       ],
     },
     {

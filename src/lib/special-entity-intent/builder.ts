@@ -77,9 +77,9 @@ export function buildSpecialEntityIntentPage(
     relatedBlogHrefs: [],
     relatedServiceLinks: content.relatedLinks,
     relatedRegionLinks: [
-      { href: "/특수비영리법인등기", label: "특수·비영리법인 허브" },
+      { href: "/특수비영리법인등기", label: "특수·비영리법인 안내" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
     ],
   };
 }

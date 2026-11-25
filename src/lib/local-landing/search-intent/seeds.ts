@@ -1001,7 +1001,7 @@ export const searchIntentSeeds: SearchIntentSeed[] = [
     category: "keyword",
     serviceSlug: "real-estate-registration",
     keywords: ["등기 실무", "등기 접수", "부산 등기"],
-    focus: "등기 실무 허브",
+    focus: "등기 실무 안내",
   },
   {
     slug: "특수등기의뢰",

@@ -7,7 +7,7 @@ import {
 import { PROFESSIONAL_REGISTRY_ONLY_NOTICE } from "./phase3-professional-boundary";
 
 const profRelated = [
-  { href: "/전문직법인등기", label: "전문직 법인 허브" },
+  { href: "/전문직법인등기", label: "전문직 법인 안내" },
   { href: "/기타전문직법인설립등기", label: "기타 전문직 등기 안내" },
   ...baseSpecialRelated,
 ];

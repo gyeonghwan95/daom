@@ -78,7 +78,7 @@ export function GlossaryHubView({ page }: GlossaryHubViewProps) {
         <h2 className="text-base font-semibold text-navy sm:text-lg">이 목록의 역할</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-navy/75">
           <li>· 업무 중에 나오는 용어를 짧게 구분합니다.</li>
-          <li>· 신청·등기·기한·서류의 대표 안내는 각 업무 페이지입니다.</li>
+          <li>· 신청 절차·기한·서류는 각 업무 안내에서 자세히 보실 수 있습니다.</li>
           <li>· 지금 할 일을 상황으로 찾으려면 상황별 안내를 먼저 보세요.</li>
         </ul>
       </section>

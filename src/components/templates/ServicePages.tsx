@@ -130,7 +130,7 @@ export function ServicesIndexTemplate() {
             <li>
               <ServiceCard
                 title="협업 안내"
-                description="법무사·중개사·건축·시행·기업·기관 협업의 중심 허브"
+                description="법무사·중개사·건축·시행·기업·기관 협업의 중심 안내"
                 href="/partners"
                 image={getServiceImage("real-estate-registration")}
               />
@@ -180,9 +180,8 @@ export function ServicesIndexTemplate() {
         >
           <h2 className="section-heading">처음 방문자가 많이 찾는 업무</h2>
           <p className="body-text mt-3 max-w-3xl">
-            추천·비용·상담 준비를 검색하신 분들을 위한 선택 기준·절차 안내 페이지입니다.
-            특정 사무소를 대신 골라 주는 광고가 아니라, 상담 전 확인할 체크리스트로
-            활용하실 수 있습니다.
+            법무사를 고를 때 보는 기준, 비용이 정해지는 방식, 상담 전에 준비할 것을 모았습니다.
+            어느 사무소에 맡기시든 상담 전에 체크리스트로 활용해 보세요.
           </p>
           <ul className="listing-card-grid mt-4">
             <li>
@@ -275,9 +274,9 @@ export function ServicesIndexTemplate() {
           id="service-hubs"
           className="section-anchor scroll-mt-[calc(var(--header-height)+1rem)]"
         >
-          <h2 className="section-heading">업무 허브</h2>
+          <h2 className="section-heading">업무 안내</h2>
           <p className="body-text mt-3 max-w-3xl">
-            상속·부동산·법인·개인회생 등 업무별 허브 페이지에서 비용·서류·기간·지역 안내로
+            상속·부동산·법인·개인회생 등 업무별 안내 페이지에서 비용·서류·기간·지역 안내로
             연결됩니다.
           </p>
           <div className="mt-6 space-y-8">
@@ -315,7 +314,7 @@ export function ServicesIndexTemplate() {
             관련 절차·서류·비용·지역 안내를 모았습니다.
           </p>
           <div className="mt-4">
-            <RelatedLinks title="토픽 허브" links={getAllTopicHubLinks()} />
+            <RelatedLinks title="토픽 안내" links={getAllTopicHubLinks()} />
           </div>
         </section>
 

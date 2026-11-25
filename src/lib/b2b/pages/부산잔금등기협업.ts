@@ -70,7 +70,7 @@ export const balanceCollabPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=broker&service=transfer-collab", label: "잔금·이전 협업 문의" },
     { href: "/부산부동산협력법무사", label: "부산 부동산 협력 법무사" },
     { href: "/부산잔금일법무사", label: "잔금일 법무사 안내" },
@@ -108,7 +108,7 @@ export const balanceCollabPageContent: B2BPageContent = {
         "소유권이전등기 일정·서류 조율",
         "근저당 설정·말소의 잔금일 연동",
         "당사자별 준비서류 목록 정리",
-        "접수·보정·완료 공유 방식",
+        "접수부터 완료까지 진행 상황 안내 방식",
       ],
       note: "자료와 일정을 확인한 뒤 가능 범위를 안내합니다.",
     },

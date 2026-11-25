@@ -243,7 +243,7 @@ export function buildBusanInheritanceRenunciationPage(
         title: "신청 흐름·비용 변수·상담",
         body: `상담 → 재산·채무 조회 → 포기 대상 정리 → 가정법원 신고 → 보정·심판 확인 순입니다. 수임료는 신청인 수·미성년·해외·특별대리·기한 임박에 따라 달라지며 법원 수수료는 별도입니다. 사무소: ${officeLocation.fullAddress}.`,
         items: [
-          "사망일·상속인·알고 있는 채무만 있어도 1차 확인 가능",
+          "사망일·상속인·알고 있는 채무만 있어도 먼저 확인 가능",
           "관할은 피상속인 최후 주소지 등을 기준으로 확인",
         ],
         links: [

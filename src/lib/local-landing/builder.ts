@@ -374,7 +374,7 @@ export function buildLocalLandingPage(
       ),
       precautions: [
         "이 안내는 일반 법률정보입니다. 인가·면책은 법원이 판단하므로, 그 과정을 꼼꼼히 준비하도록 돕겠습니다.",
-        `${config.regionLabel} 페이지는 지역 상담 진입점이며, 제도 전체는 상위 허브에서 확인하세요.`,
+        `${config.regionLabel} 페이지는 지역 상담 진입점이며, 제도 전체는 상위 종합 안내에서 확인하세요.`,
       ],
       procedures: service.procedures.map((step, i) =>
         i === 0 ? `[${config.regionLabel}] ${step}` : step,
@@ -637,9 +637,9 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
   const extras: Record<string, { href: string; label: string }[]> = {
     부산법인등기: [
       { href: "/부산등기법무사", label: "부산 등기 상담" },
-      { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 허브" },
+      { href: "/특수비영리법인등기", label: "특수·비영리법인 등기 안내" },
       { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
-      { href: "/법인변경등기", label: "법인 변경등기 허브" },
+      { href: "/법인변경등기", label: "법인 변경등기 안내" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법률자문", label: "기업 운영 단계별 법률실무 지원" },
       { href: "/부산기업채권관리", label: "기업 미수금·채권관리" },
@@ -649,7 +649,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
     ],
     부산법인설립등기: [
       { href: "/부산법인설립전문법무사", label: "부산 법인전문 법무사 — 상호·자본·임원" },
-      { href: "/부산기업법률자문", label: "기업 법률실무 허브" },
+      { href: "/부산기업법률자문", label: "기업 법률실무 안내" },
       { href: "/법인정관업무", label: "법인 정관 업무" },
       { href: "/법인정관인증확인", label: "정관 인증 필요 여부" },
       { href: "/창업법률교육", label: "창업 법률교육" },
@@ -696,7 +696,7 @@ function enrichBusinessCrossLinks(page: LocalLandingPage): LocalLandingPage {
       { href: "/부산기업법률자문", label: "기업 법률실무 지원" },
     ],
     부산법인법무사: [
-      { href: "/법인변경등기", label: "법인 변경등기 허브" },
+      { href: "/법인변경등기", label: "법인 변경등기 안내" },
       { href: "/법인정관업무", label: "법인 정관 업무" },
       { href: "/법인공증준비", label: "법인 공증 준비" },
       { href: "/부산대표이사변경등기", label: "대표이사 변경등기" },

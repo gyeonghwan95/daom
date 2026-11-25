@@ -135,7 +135,7 @@ export const 부산입주등기Override: SearchIntentContent = {
     { href: "/부산소유권이전등기", label: "부산 소유권이전등기" },
   ],
   relatedGuideLinks: [
-    { href: "/등기실무", label: "등기 실무 허브" },
+    { href: "/등기실무", label: "등기 실무 안내" },
     { href: "/tools/real-estate-documents-check", label: "부동산 서류 체크" },
     { href: "/contact", label: "상담 문의" },
   ],

@@ -73,7 +73,7 @@ export function CollabInquiryForm() {
       <p className="text-sm text-navy/60">
         바로 보기:{" "}
         <Link href="/partners" className="underline">
-          협업 허브
+          협업 안내
         </Link>
         {" · "}
         <Link href="/협업문의" className="underline">

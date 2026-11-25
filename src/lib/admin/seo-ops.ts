@@ -76,20 +76,20 @@ export const ADMIN_SEO_PROGRAMS = [
   },
   {
     id: "geo",
-    label: "부산 지역 허브",
+    label: "부산 지역 안내",
     count: GEO_LAWYER_CHAMPION_COUNT,
     detail: "구·군·동·역 법무사 페이지. 지역 검색어는 이 URL들에 매핑됩니다.",
   },
   {
     id: "remote-inheritance",
-    label: "타지역 상속 허브",
+    label: "타지역 상속 안내",
     count: CITY_INHERITANCE_CHAMPION_COUNT,
-    detail: "기존 /업무사례/{도시}상속등기법무사 URL만 사용합니다.",
+    detail: "기존 ‘부산 법무사 업무 사례를 지역과 업무로 찾아보세요’/{도시}상속등기법무사 URL만 사용합니다.",
   },
   {
     id: "lecture",
     label: "특강·강의",
     count: LECTURE_100_TARGETS.length + LECTURE_EXTRA_INFLOW.length,
-    detail: `${LECTURE_CHAMPION_PATHS.length}개 기존 강의 URL. 수임 허브와 검색어를 나눕니다.`,
+    detail: `${LECTURE_CHAMPION_PATHS.length}개 기존 강의 URL. 수임 종합 안내와 검색어를 나눕니다.`,
   },
 ] as const;

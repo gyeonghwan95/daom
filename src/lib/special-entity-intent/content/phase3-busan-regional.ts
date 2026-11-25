@@ -94,7 +94,7 @@ export const phase3BusanRegionalPages: SpecialEntityPageContent[] = [
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
     conclusion:
-      "수영구 비영리법인은 허가 후 3주 이내 설립등기합니다. `/체육단체사단법인설립`, `/문화예술단체사단법인설립`도 참고하세요.",
+      "수영구 비영리법인은 허가 후 3주 이내 설립등기합니다. ‘체육단체 사단법인 설립’, ‘문화예술단체 사단법인 설립’도 참고하세요.",
     primaryKeyword: "수영구 비영리법인 설립",
     secondaryKeywords: ["수영구 사단법인", "광안 협회 법인"],
     questionKeywords: ["수영구 법인 설립"],
@@ -147,7 +147,7 @@ export const phase3BusanRegionalPages: SpecialEntityPageContent[] = [
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
     conclusion:
-      "부산진구 비영리법인은 허가 후 설립등기합니다. 협회형은 `/협회사단법인설립`을 함께 참고하세요.",
+      "부산진구 비영리법인은 허가 후 설립등기합니다. 협회형은 ‘협회 사단법인 설립’을 함께 참고하세요.",
     primaryKeyword: "부산진구 비영리법인 설립",
     secondaryKeywords: [
       "서면 사단법인",
@@ -204,7 +204,7 @@ export const phase3BusanRegionalPages: SpecialEntityPageContent[] = [
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
     conclusion:
-      "부산 문화예술단체는 사단법인 허가 후 설립등기합니다. `/문화예술단체사단법인설립`과 절차가 같되, 부산 관할을 구체적으로 안내합니다.",
+      "부산 문화예술단체는 사단법인 허가 후 설립등기합니다. ‘문화예술단체 사단법인 설립’과 절차가 같되, 부산 관할을 구체적으로 안내합니다.",
     primaryKeyword: "부산 문화예술단체 법인설립",
     secondaryKeywords: [
       "부산 예술인 협회",

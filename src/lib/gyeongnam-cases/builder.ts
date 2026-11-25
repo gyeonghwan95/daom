@@ -64,7 +64,7 @@ function docsAndCostFor(def: GyeongnamLandingDef): {
   const r = def.regionName;
   if (def.pageType === "gift") {
     return {
-      docsBody: `${r} 증여등기 비용·서류를 확인할 때 정액을 단정하지 않습니다. 주소·관계·지분·담보만 있어도 1차 목록을 안내합니다.`,
+      docsBody: `${r} 증여등기 비용·서류를 확인할 때 정액을 단정하지 않습니다. 주소·관계·지분·담보만 있어도 기본 목록을 안내합니다.`,
       docsItems: [
         "부동산 주소·지번",
         "증여자·수증자 관계",
@@ -280,7 +280,7 @@ function sectionTitles(def: GyeongnamLandingDef, seed: number): string[] {
       "법무사 보수와 공과금",
     ],
     [
-      `검색하신 ${r} 업무에 대한 바로 답변`,
+      `${r} 업무, 먼저 답해 드립니다`,
       "사무소 위치와 지점 안내(오인 방지)",
       "법정 관할과 특례를 구분하는 방법",
       `${r} 고유 상담 상황`,
@@ -331,7 +331,7 @@ export function buildGyeongnamPageData(
         "안윤정 법무사 직접 확인",
         "보수와 공과금 구분",
         "진행 가능 여부 사전 안내",
-        "접수·보정·완료 공유",
+        "접수부터 완료까지 진행 상황 안내",
       ],
     },
     {
@@ -418,10 +418,10 @@ export function buildGyeongnamPageData(
     ],
     introParagraphs: [def.heroDescription, def.officeDisclosure, DISCLAIMER],
     procedures: [
-      `${region} 소재·문의 업무 공유`,
+      `${region} 소재지와 맡기실 업무 확인`,
       "관할·방문·비대면 범위 검토",
       "보수·공과금 구분 안내",
-      "원본 전달 후 접수·보정·완료 공유",
+      "원본 서류를 받아 접수하고 완료까지 진행 상황 안내",
     ],
     documentsTitle: "첫 상담에 알려주실 정보",
     documents: [

@@ -76,7 +76,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     aBasis: "SERP_1",
     demandProxy: "HIGH_DEMAND_PROXY",
     action: "PROTECT_WINNER",
-    uniqueAngle: "허브(울산 법무사 업무)가 1순위로 노출되고 상속 세부 문서가 함께 묶여 보인다. 제목·H1 유지.",
+    uniqueAngle: "안내(울산 법무사 업무)가 1순위로 노출되고 상속 세부 문서가 함께 묶여 보인다. 제목·H1 유지.",
   },
   {
     region: "포항",
@@ -94,7 +94,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     aBasis: "SERP_1",
     demandProxy: "MEDIUM",
     action: "PROTECT_WINNER",
-    uniqueAngle: "도시 문서 + 경북 상위 허브가 짝으로 노출. 제목·H1 유지.",
+    uniqueAngle: "도시 문서 + 경북 상위 종합 안내가 짝으로 노출. 제목·H1 유지.",
   },
   {
     region: "경산",
@@ -129,7 +129,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
       query: "양산 상속 법무사",
       position: 2,
       shown: ["/업무사례/양산법무사업무", "/업무사례/양산상속포기한정승인"],
-      note: "상속등기 대표 URL이 아니라 허브·상속포기 문서가 노출",
+      note: "상속등기 대표 URL이 아니라 안내·상속포기 문서가 노출",
     },
     scores: { A: 18, B: 10, C: 15, D: D_INHERITANCE, E: 6, F: 9, G: 10 },
     aBasis: "SERP_2",
@@ -137,7 +137,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     action: "IMPROVE_EXISTING",
     batch: "A",
     uniqueAngle: "부산과 맞닿은 생활권(방문·비대면 선택) + 상속포기는 부산이 아닌 울산가정법원 관할이라는 점.",
-    defect: "상속등기 대표 URL이 SERP에 선택되지 않음(허브가 대신 노출). 공통 템플릿 반복.",
+    defect: "상속등기 대표 URL이 SERP에 선택되지 않음(종합 안내가 대신 노출). 공통 템플릿 반복.",
   },
   {
     region: "창원",
@@ -246,7 +246,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     demandProxy: "LOW",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "비농업인 상속인의 농지 소유(농지법 1만㎡)·임야. 오래된 토지 의도는 /업무사례/경주오래된토지상속등기가 담당.",
+    uniqueAngle: "비농업인 상속인의 농지 소유(농지법 1만㎡)·임야. 오래된 토지 의도는 ‘부산 법무사 업무 사례를 지역과 업무로 찾아보세요’/경주오래된토지상속등기가 담당.",
   },
   {
     region: "진주",
@@ -265,7 +265,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
     demandProxy: "MEDIUM",
     action: "IMPROVE_EXISTING",
     batch: "B",
-    uniqueAngle: "빚 확인(안심상속) → 포기·한정승인 판단 → 등기 순서. 포기 의도는 /업무사례/진주상속포기한정승인이 담당.",
+    uniqueAngle: "빚 확인(안심상속) → 포기·한정승인 판단 → 등기 순서. 포기 의도는 ‘부산 법무사 업무 사례를 지역과 업무로 찾아보세요’/진주상속포기한정승인이 담당.",
   },
   {
     region: "구미",
@@ -345,7 +345,7 @@ export const REGION_CONTENT_REGISTRY: readonly RegionEntry[] = [
       regionType,
       targetIntent: `${region} 상속등기 법무사`,
       secondaryQueries: [`${region} 상속 법무사`],
-      representativeUrl: `/업무사례/${region}상속등기법무사`,
+      representativeUrl: `‘부산 법무사 업무 사례를 지역과 업무로 찾아보세요’/${region}상속등기법무사`,
       parentHub: HUB,
       familyCourt,
       serp: null,

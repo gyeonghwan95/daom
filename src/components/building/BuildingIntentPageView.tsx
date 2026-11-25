@@ -157,7 +157,7 @@ export function BuildingIntentPageView({ page }: BuildingIntentPageViewProps) {
         keywords={[content.primaryKeyword, ...content.secondaryKeywords.slice(0, 4)]}
         ctaLabel={content.ctaTitle}
         ctaHref={inquiryHref}
-        secondaryCta={{ href: "/부산건물등기", label: "건물등기 허브 보기" }}
+        secondaryCta={{ href: "/부산건물등기", label: "건물등기 안내 보기" }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}

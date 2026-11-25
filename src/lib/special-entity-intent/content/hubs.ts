@@ -14,7 +14,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
     metaDescription:
       "사단법인·재단법인·협동조합·사회적협동조합·농업회사법인·사회복지법인 등 특수·비영리 법인의 설립·변경·해산 등기. 허가와 등기 구분, 부산 관할 안내 — 다옴법무사.",
     h1: "특수·비영리법인 등기 — 법인 유형부터 설립·변경 절차를 구분하세요",
-    eyebrow: "특수·비영리법인 허브",
+    eyebrow: "특수·비영리법인 안내",
     heroIntro:
       "주식회사와 달리 사단법인·재단법인·협동조합 등은 근거 법률·허가 주체·등기 기한이 유형마다 다릅니다.",
     heroParagraphs: [
@@ -502,7 +502,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       {
         question: "의료법인·학교법인도 안내되나요?",
         answer:
-          "`/특별법법인설립등기` 허브에서 사회복지·학교·의료·공익법인 설립·변경 등기를 안내합니다. 부산 소재는 `/부산의료법인등기`, `/부산학교법인등기`를 참고하세요.",
+          "‘특별법 법인 설립등기’ 종합 안내에서 사회복지·학교·의료·공익법인 설립·변경 등기를 안내합니다. 부산 소재는 ‘부산 의료법인 등기’, ‘부산 학교법인 등기’를 참고하세요.",
       },
     ],
     relatedLinks: [
@@ -510,7 +510,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       SPECIAL_ENTITY_HUB_LINKS.nonprofit,
       SPECIAL_ENTITY_HUB_LINKS.cooperative,
       SPECIAL_ENTITY_HUB_LINKS.change,
-      { href: "/특수등기", label: "특수등기 토픽 허브" },
+      { href: "/특수등기", label: "특수등기 토픽 안내" },
     ],
     ctaTitle: "특수법인 등기 상담",
     ctaText:
@@ -611,7 +611,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       {
         question: "영농조합법인도 이 페이지에서 다루나요?",
         answer:
-          "영농조합법인은 농업협동조합법 등 별도 법률이 적용됩니다. 농업 관련 법인은 `/부산농업회사법인설립` 등 별도 안내를 참고하세요.",
+          "영농조합법인은 농업협동조합법 등 별도 법률이 적용됩니다. 농업 관련 법인은 ‘부산 농업회사법인 설립’ 등 별도 안내를 참고하세요.",
       },
     ],
     relatedLinks: [
@@ -655,7 +655,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
       "비영리법인도 임원·주소·목적이 바뀌면 등기가 필요하며, 많은 경우 주무관청 변경허가·승인이 선행됩니다.",
     heroParagraphs: [
       "사단법인·재단법인의 임원변경, 목적·명칭 변경, 주사무소 이전, 기본재산 변경, 해산·청산은 각각 요건과 서류가 다릅니다.",
-      "주식회사 변경등기 허브(`/법인변경등기`)와 병행해 확인하되, 비영리법인은 주무관청 승인 단계가 추가되는 경우가 많습니다.",
+      "주식회사 변경등기 안내(‘법인 변경등기’)와 병행해 확인하되, 비영리법인은 주무관청 승인 단계가 추가되는 경우가 많습니다.",
     ],
     officeLine: SPECIAL_ENTITY_OFFICE_LINE,
     scopeNotice: SPECIAL_ENTITY_SCOPE_NOTICE,
@@ -712,7 +712,7 @@ export const specialEntityHubPages: SpecialEntityPageContent[] = [
     faqs: [
       {
         question: "임원변경만 별도 페이지가 있나요?",
-        answer: "네. `/비영리법인임원변경등기`에서 임원 변경에 초점을 둔 안내를 확인할 수 있습니다.",
+        answer: "네. ‘비영리법인 임원변경등기’에서 임원 변경에 초점을 둔 안내를 확인할 수 있습니다.",
       },
     ],
     relatedLinks: [

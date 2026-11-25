@@ -75,7 +75,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     ],
     searchIntent: "기업·법인 운영에 필요한 법무 실무를 찾고, 직역명을 모를 수 있음",
     businessStage: "discovery",
-    legalTask: "등기·법원서류 범위의 법무사 업무 허브",
+    legalTask: "등기·법원서류 범위의 법무사 업무 안내",
     existingUrl: CORPORATE_LEGAL_OPERATIONS_CHAMPION,
     coverage: "strong",
     champion: CORPORATE_LEGAL_OPERATIONS_CHAMPION,
@@ -84,7 +84,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     scopeRisk: "medium",
     recommendedAction: "ADD_MODULE",
     notes:
-      "약칭 법인법무는 /부산법인법무사. 「부산 법인 법무사」는 HOME. title/H1 불변. 신규 /부산법인법무 금지.",
+      "약칭 법인법무는 ‘부산 법인 법무사’. 「부산 법인 법무사」는 HOME. title/H1 불변. 신규 ‘부산 법인 법무’ 금지.",
   },
   {
     id: "provider-corporate-scrivener",
@@ -100,7 +100,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     cannibalizationRisk: "high",
     scopeRisk: "low",
     recommendedAction: "KEEP",
-    notes: "「부산 법인 법무사」관측 URL은 HOME. 이 클러스터 실무 허브는 /부산법인법무사. title/H1/canonical 변경 금지.",
+    notes: "「부산 법인 법무사」관측 URL은 HOME. 이 클러스터 실무 종합 안내는 ‘부산 법인 법무사’. title/H1/canonical 변경 금지.",
   },
   {
     id: "provider-business-scrivener",
@@ -139,7 +139,7 @@ export const corporateLegalIntents: CorporateLegalIntent[] = [
     cannibalizationRisk: "medium",
     scopeRisk: "high",
     recommendedAction: "ADD_FAQ",
-    notes: "모든 회사 법무 대행처럼 쓰지 않음. 실무 허브 /부산기업법률자문 보조.",
+    notes: "모든 회사 법무 대행처럼 쓰지 않음. 실무 안내 ‘부산 기업 법률실무 지원’ 보조.",
   },
   {
     id: "establishment",

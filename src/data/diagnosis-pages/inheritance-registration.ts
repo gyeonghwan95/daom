@@ -160,7 +160,7 @@ export const inheritanceRegistrationDiagnosis: Diagnosis = {
   },
   faqs: standardFaqs(service),
   relatedLinks: standardRelatedLinks(service, [
-    { href: "/상속", label: "부산 상속 종합 허브" },
+    { href: "/상속", label: "부산 상속 종합 안내" },
     { href: "/상속등기비용", label: "상속등기 비용 안내" },
     { href: "/상속등기필요서류", label: "상속등기 필요서류" },
     { href: "/한정승인자가진단", label: "한정승인 자가진단" },

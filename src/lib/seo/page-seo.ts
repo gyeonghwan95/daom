@@ -3,7 +3,8 @@ import { buildSeoTitle } from "@/lib/seo/metadata";
 
 export const staticPageSeo = {
   about: {
-    title: buildSeoTitle("안윤정 법무사 소개"),
+    // 대표 이름이 들어가 buildSeoTitle이 사무소명을 붙이지 않아 10자였다 — Bing "Title too short"(2026-11-25). 앞부분은 그대로 둔다
+    title: `안윤정 법무사 소개 | ${seoBrand.siteName} 부산 해운대 센텀`,
     description:
       "다옴법무사사무소 안윤정 법무사 프로필. 법무사·공인중개사·신용관리사·직업상담사, 교사 자격, 부산대 행정대학원 재학, 대한법무사협회 표창, 기획예산처·부산시·해운대구·민주평통 자문, 시민도서관·청년기관 법률 강의.",
     path: "/about",

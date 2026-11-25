@@ -13,7 +13,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
   {
     id: "main-services",
     title: "주요 업무",
-    description: "상속·부동산·법인·개인회생 등 핵심 업무 허브로 이동합니다.",
+    description: "상속·부동산·법인·개인회생 등 핵심 업무 종합 안내로 이동합니다.",
     links: [
       { href: "/부산법무사상담", label: "부산 법무사 상담" },
       { href: "/부산법무사추천", label: "부산 법무사 추천" },
@@ -67,7 +67,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
       "복대리·집단등기·공공기관·보존등기 등 의·기관 의뢰와 특수 등기 안내로 이동합니다.",
     links: [
       { href: "/search-guides", label: "상황별 안내 모음" },
-      { href: "/등기실무", label: "등기 실무 허브" },
+      { href: "/등기실무", label: "등기 실무 안내" },
       { href: "/부산등기복대리", label: "부산 등기 복대리" },
       { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
       { href: "/partners", label: "협업·프로젝트 안내" },
@@ -152,7 +152,7 @@ export const HOME_HUB_SECTIONS: HomeHubSection[] = [
     title: "업무 사례",
     description: "유사 사건 진행 경과를 참고하실 수 있습니다.",
     links: [
-      { href: "/업무사례", label: "업무 사례 허브" },
+      { href: "/업무사례", label: "업무 사례 안내" },
       { href: "/services/cases/haeundae-inheritance-registration-case", label: "해운대 상속등기 사례" },
       { href: "/services/cases/busan-personal-rehabilitation-consultation", label: "부산 개인회생 사례" },
       { href: "/services/cases/centum-ownership-transfer-case", label: "센텀 매매 등기 사례" },
@@ -202,7 +202,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
       { href: "/부산상속등기", label: "부산 상속등기" },
       { href: "/부산상속포기", label: "빚이 많아 상속을 받지 않으려는 경우" },
       { href: "/부산한정승인", label: "부산 한정승인" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
       { href: "/services/inheritance-registration", label: "상속등기 업무 상세" },
     ],
   },
@@ -213,7 +213,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
       { href: "/공공기관등기업무", label: "공공기관 등기업무" },
       { href: "/부산부동산등기", label: "부산 부동산등기" },
       { href: "/부산재개발등기", label: "부산 재개발·재건축 등기" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
       { href: "/services/real-estate-registration", label: "부동산등기 업무 상세" },
     ],
   },
@@ -224,7 +224,7 @@ export const SERVICE_HUB_SECTIONS: { title: string; links: RelatedLink[] }[] = [
       { href: "/부산법인등기", label: "부산 법인등기" },
       { href: "/부산기업채권관리", label: "기업 채권관리" },
       { href: "/명례산업단지법인등기", label: "산업단지 법인등기" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 업무 상세" },
     ],
   },

@@ -70,7 +70,7 @@ export const saleRegistryPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=developer&service=bulk", label: "분양·집단 등기 문의" },
     { href: "/부산시행사등기", label: "시행사 등기업무" },
     { href: "/부산잔금등기협업", label: "잔금일 등기 협업" },
@@ -107,7 +107,7 @@ export const saleRegistryPageContent: B2BPageContent = {
         "수분양자 소유권이전 목록·일정 관리",
         "잔금·담보와 등기 순서 조율",
         "고객·대행·시행 창구 분리",
-        "접수·보정·완료 공유",
+        "접수부터 완료까지 진행 상황 안내",
       ],
     },
     {

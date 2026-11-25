@@ -131,7 +131,7 @@ export const 부산셀프등기Override: SearchIntentContent = {
     { href: "/tools/real-estate-documents-check", label: "부동산 서류 체크" },
   ],
   relatedGuideLinks: [
-    { href: "/등기실무", label: "등기 실무 허브" },
+    { href: "/등기실무", label: "등기 실무 안내" },
     { href: "/contact", label: "상담 문의" },
   ],
   bottomCtaText:

@@ -231,7 +231,7 @@ const PACK_BY_PATH: Record<string, { heading: string; urls: readonly string[] }>
     heading: "판결 뒤 회수 순서",
     urls: EXECUTION_CARDS,
   },
-  "/situations/판결-후-강제집행": {
+  "‘상황별 안내’/판결-후-강제집행": {
     heading: "강제집행과 이어지는 안내",
     urls: EXECUTION_CARDS,
   },

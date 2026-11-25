@@ -137,7 +137,7 @@ export const busanDistricts: BusanDistrictDef[] = [
       { href: "/전포동법무사", label: "전포동 법무사" },
       { href: "/부산진등기소법무사", label: "부산진등기소 안내" },
       { href: "/부산오피스텔소유권이전등기", label: "오피스텔 소유권이전" },
-      { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/민사소송", label: "민사·채권 안내" },
       { href: "/부산진구부동산등기", label: "부산진구 부동산등기" },
     ],
     situationLinks: [S.payment, S.sale, S.corp],
@@ -361,7 +361,7 @@ export const busanLegalMapHub: BusanLegalMapHubConfig = {
     {
       question: "지역 페이지와 업무안내는 무엇이 다른가요?",
       answer:
-        "지역 페이지는 ‘해운대구 상속등기’처럼 구·군과 업무를 함께 검색하신 분을 위한 안내입니다. 업무안내(/services)는 절차·서류를 항목별로 정리한 페이지입니다.",
+        "지역 안내에는 구·군별 관할 등기소와 그 지역에서 자주 맡기시는 업무를, 업무 안내에는 업무별 절차와 서류를 정리했습니다.",
     },
     {
       question: "상황별 법률문제와 어떻게 연결되나요?",

@@ -62,7 +62,7 @@ export function buildGlossaryHubPageData(): PageData {
     sections: [
       {
         title: "용어로 찾아보기",
-        body: "아래 용어는 뜻을 짧게 구분하는 보조 문서입니다. 신청·등기의 대표 안내는 각 업무 페이지입니다.",
+        body: "아래 용어는 뜻만 짧게 풀었습니다. 신청 절차와 서류는 각 업무 안내에 자세히 있습니다.",
         links: discoverable.map((t) => ({ href: t.path, label: t.term })),
       },
     ],
@@ -89,7 +89,7 @@ export function buildGlossaryTermPageData(slug: string): PageData | null {
     title: t.term,
     metaTitle: buildSeoTitle(`${t.term} 용어 확인`),
     metaDescription: buildMetaDescription(
-      `${josa(t.term, "은/는")} ${t.oneLineDefinition.replace(/\.$/, "")}. 신청·등기 절차의 대표 안내는 ${policy.serviceOwnerLabel}에서 확인합니다.`,
+      `${josa(t.term, "은/는")} ${t.oneLineDefinition.replace(/\.$/, "")}. 신청 절차와 서류는 ${policy.serviceOwnerLabel}에서 자세히 보실 수 있습니다.`,
     ),
     h1: t.term,
     intro: t.oneLineDefinition,

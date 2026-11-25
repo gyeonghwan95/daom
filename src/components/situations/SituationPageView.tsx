@@ -140,7 +140,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
     { id: "cost-factors", label: "비용·기간 요소" },
     { id: "case-example", label: "상황 예시" },
     { id: "diagnosis-links", label: "관련 자가진단" },
-    { id: "service-links", label: "관련 서비스·허브" },
+    { id: "service-links", label: "관련 업무 안내" },
     ...(relatedSituations.length > 0
       ? [{ id: "related-situations", label: "비슷한 상황" }]
       : []),
@@ -221,7 +221,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
             href={category.path}
             className="font-semibold text-navy-light hover:text-navy"
           >
-            {category.label} 허브
+            {category.label} 안내
           </Link>
           에서 비슷한 상황도 함께 확인할 수 있습니다.
         </p>
@@ -295,7 +295,7 @@ export function SituationPageView({ page, slug }: SituationPageViewProps) {
         <RelatedContentGrid links={situation.diagnosisLinks} />
       </ContentSection>
 
-      <ContentSection id="service-links" title="관련 업무·허브">
+      <ContentSection id="service-links" title="관련 업무·안내">
         <RelatedContentGrid links={situation.serviceLinks} />
       </ContentSection>
 

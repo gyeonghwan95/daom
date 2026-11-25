@@ -309,7 +309,7 @@ export function SituationExplorer({
                 href={group.categoryPath}
                 className="text-sm font-semibold text-navy-light hover:text-navy"
               >
-                {group.label} 허브 →
+                {group.label} 안내 →
               </Link>
             </div>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">

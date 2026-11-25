@@ -22,7 +22,7 @@ export const lectureSearchIntents: LectureSearchIntent[] = [
     parentHub: "/부산법률전문가",
     relatedLectures: ["/법률강의", "/기업법률교육", "/강사소개", "/강의문의"],
     legalQualificationRisk: true,
-    notes: "DISCOVERY 허브. 강의 프로그램·강사 프로필과 분리.",
+    notes: "DISCOVERY 안내. 강의 프로그램·강사 프로필과 분리.",
   },
   {
     id: "hub-busan-lecture",
@@ -52,7 +52,7 @@ export const lectureSearchIntents: LectureSearchIntent[] = [
     relatedHistory: ["citizen-library-life-law"],
     relatedServices: [],
     legalQualificationRisk: false,
-    notes: "대표 허브",
+    notes: "대표 안내",
   },
     {
     id: "hiring-busan-speaker",
@@ -209,7 +209,7 @@ export const lectureSearchIntents: LectureSearchIntent[] = [
     relatedHistory: [],
     relatedServices: [],
     legalQualificationRisk: false,
-    notes: "/about는 유지·보강, /강사소개는 기관용 강사 검토 페이지",
+    notes: "‘안윤정 법무사 소개’는 유지·보강, ‘강사 소개’는 기관용 강사 검토 페이지",
   },
   {
     id: "inquiry",

@@ -137,7 +137,7 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     businessValue: 20,
     cannibalizationRisk: "MED",
     recommendedAction: "STRENGTHEN_EXISTING",
-    notes: "Hub title/H1 보호. 법무사 강사는 /부산법무사강의·/부산법률강사와 역할 분담.",
+    notes: "Hub title/H1 보호. 법무사 강사는 ‘부산 법무사 강의’·‘부산에서 실무형 특강 강사를 찾고 계신가요?’와 역할 분담.",
   },
   {
     id: "lec-workshop",
@@ -241,7 +241,7 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     businessValue: 20,
     cannibalizationRisk: "LOW",
     recommendedAction: "KEEP",
-    notes: "체크리스트 `/부산강사섭외체크리스트`, 비용 `/부산강사섭외비용`. 강사료 단정 금지.",
+    notes: "체크리스트 ‘부산 강사 섭외 체크리스트’, 비용 ‘부산 강사 섭외 비용’. 강사료 단정 금지.",
   },
   {
     id: "lec-corporate",
@@ -318,7 +318,7 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     businessValue: 15,
     cannibalizationRisk: "MED",
     recommendedAction: "ADD_TOPIC_MODULE",
-    notes: "자기추천·1위 금지. `/부산법무사추천`과 무관.",
+    notes: "자기추천·1위 금지. ‘부산 법무사 추천 기준’과 무관.",
   },
   {
     id: "lec-jeonse",
@@ -343,7 +343,7 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     businessValue: 20,
     cannibalizationRisk: "MED",
     recommendedAction: "KEEP",
-    notes: "피해대응 `/전세사기피해대응절차`와 Intent 분리.",
+    notes: "피해대응 ‘전세사기 피해 대응 절차’와 Intent 분리.",
   },
   {
     id: "lec-startup",
@@ -418,7 +418,7 @@ export const LECTURE_SEARCH_INTENTS: LectureSearchIntentRow[] = [
     cannibalizationRisk: "HIGH",
     recommendedAction: "DO_NOT_TARGET",
     notes:
-      "강의 페이지 Primary 금지. 「부산 법무사」는 홈(`/`). 「부산 법무사 추천」은 `/부산법무사추천`. 「부산 법무사 상담」은 `/부산법무사상담`.",
+      "강의 페이지 Primary 금지. 「부산 법무사」는 홈(`/`). 「부산 법무사 추천」은 ‘부산 법무사 추천 기준’. 「부산 법무사 상담」은 ‘부산 법무사 상담’.",
   },
 ];
 

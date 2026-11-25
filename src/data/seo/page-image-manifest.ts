@@ -746,7 +746,7 @@ export const PAGE_IMAGE_MANIFEST: PageImageManifestItem[] = [
     imagePath: "/image/seo/seo-search-guides.webp",
     headline: "검색 전 확인",
     subheadline: "추천·비용·서류",
-    visualConcept: "검색의도 허브용 정보형",
+    visualConcept: "검색의도 안내용 정보형",
     visualObjects: ["검색", "체크"],
     photoRequirement: "none",
     alt: "부산 법무사 추천·비용·서류 검색 전 체크포인트",
@@ -1025,8 +1025,8 @@ export const CAROUSEL_HUB_CANDIDATES: CarouselHubCandidate[] = [
     suitable: true,
     itemListRecommended: true,
     imagesNeeded: 8,
-    reason: "강의 허브·주제 페이지 다수, 실제 강의 사진 보유",
-    currentImageState: "강의-* 실사진 있음. 허브·주제별 고유 OG 미정비",
+    reason: "강의 안내·주제 페이지 다수, 실제 강의 사진 보유",
+    currentImageState: "강의-* 실사진 있음. 안내·주제별 고유 OG 미정비",
   },
   {
     hubUrl: "/전국업무",
@@ -1062,7 +1062,7 @@ export const CAROUSEL_HUB_CANDIDATES: CarouselHubCandidate[] = [
     suitable: true,
     itemListRecommended: false,
     imagesNeeded: 6,
-    reason: "하위 상담 랜딩 존재하나 전환 CTA 성격이 강해 ItemList는 허브 카드 정비 후",
+    reason: "하위 상담 랜딩 존재하나 전환 CTA 성격이 강해 ItemList는 안내 카드 정비 후",
     currentImageState: "전용 이미지 거의 없음",
   },
   {

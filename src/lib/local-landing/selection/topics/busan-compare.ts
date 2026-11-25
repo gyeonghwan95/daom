@@ -74,7 +74,7 @@ export const 부산법무사비교: SelectionHubContent = {
     {
       title: "상담·진행 방식",
       items: [
-        "1차 상담 채널",
+        "첫 상담 채널",
         "서류 수령 방식",
         "완료 후 필증·등기부 전달",
       ],
@@ -185,7 +185,7 @@ export const 부산법무사비교: SelectionHubContent = {
     {
       question: "비교 전 상담을 여러 곳에 해도 되나요?",
       answer:
-        "네. 동일 서류로 1차 상담을 받아 보시는 것이 좋습니다. 기한이 촉박하면 우선순위를 정하세요.",
+        "네. 동일 서류로 첫 상담을 받아 보시는 것이 좋습니다. 기한이 촉박하면 우선순위를 정하세요.",
     },
     {
       question: "원격 진행 시 비용이 달라지나요?",
@@ -199,6 +199,6 @@ export const 부산법무사비교: SelectionHubContent = {
     },
   ],
   bottomCtaText:
-    "부산 법무사를 비교 중이시라면 동일한 서류와 질문으로 1차 상담해 보세요. 수임료·공과금·일정을 구분해 안내해 드립니다.",
+    "부산 법무사를 비교 중이시라면 동일한 서류와 질문으로 첫 상담해 보세요. 수임료·공과금·일정을 구분해 안내해 드립니다.",
   serviceSlug: "inheritance-registration",
 };

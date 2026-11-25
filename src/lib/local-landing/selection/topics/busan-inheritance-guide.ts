@@ -86,7 +86,7 @@ export const 부산상속등기전문: SelectionHubContent = {
     "유언장·협의서 초안(해당 시)",
   ],
   preparationNote:
-    "가족관계증명서와 부동산 주소만으로도 1차 상담이 가능합니다. 상속 개시일(사망일)을 함께 알려 주시면 기한 안내에 도움이 됩니다.",
+    "가족관계증명서와 부동산 주소만으로도 첫 상담이 가능합니다. 상속 개시일(사망일)을 함께 알려 주시면 기한 안내에 도움이 됩니다.",
   extraSections: [
     {
       id: "inheritance-situations",

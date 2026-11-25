@@ -61,7 +61,7 @@ export const delegationPageContent: B2BPageContent = {
   ],
   relatedLinks: [
     { href: "/부산등기복대리", label: "부산 등기 복대리(접수·관할 안내)" },
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/부산부동산등기", label: "부산 부동산등기" },
     { href: "/부산법인등기", label: "부산 법인등기" },
     { href: "/협업문의?partner=legal-professional", label: "협업 문의" },
@@ -144,7 +144,7 @@ export const delegationPageContent: B2BPageContent = {
     },
     {
       id: "flow",
-      title: "접수·보정·완료 공유 흐름",
+      title: "접수부터 완료까지 진행 상황 안내 흐름",
       kind: "steps",
       steps: [
         {

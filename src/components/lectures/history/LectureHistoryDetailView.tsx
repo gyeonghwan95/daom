@@ -199,8 +199,7 @@ export function LectureHistoryDetailView({
         <section className="space-y-2">
           <h2 className="section-heading">네이버 블로그 원문</h2>
           <p className="text-sm text-navy/70">
-            홈페이지에는 확인된 사실만 정리하며, 블로그 제목·본문은 복제하지
-            않습니다.
+            강의 현장 사진과 자세한 후기는 네이버 블로그 원문에서 보실 수 있습니다.
           </p>
           <a
             href={entry.blogUrl}

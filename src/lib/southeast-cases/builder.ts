@@ -46,7 +46,7 @@ function sectionTitles(def: SoutheastLandingDef, seed: number): string[] {
       "비용 구성과 관련 지역·업무",
     ],
     [
-      `검색하신 ${r} 질문에 대한 답변`,
+      `${r} 문의, 먼저 답해 드립니다`,
       "지점이 아니라는 점",
       def.regionGroup === "울산"
         ? "부산과 인접한 지역의 진행 방식"
@@ -100,7 +100,7 @@ export function buildSoutheastPageData(
         "안윤정 법무사 직접 확인",
         "보수와 공과금 구분",
         "진행 가능 여부 사전 안내",
-        "접수·보정·완료 공유",
+        "접수부터 완료까지 진행 상황 안내",
       ],
     },
     { title: titles[1]!, body: def.officeDisclosure },
@@ -155,10 +155,10 @@ export function buildSoutheastPageData(
     ],
     introParagraphs: [def.heroDescription, def.officeDisclosure, DISCLAIMER],
     procedures: [
-      `${region} 소재·문의 업무 공유`,
+      `${region} 소재지와 맡기실 업무 확인`,
       "관할·방문·비대면 범위 검토",
       "보수·공과금 구분 안내",
-      "원본 전달 후 접수·보정·완료 공유",
+      "원본 서류를 받아 접수하고 완료까지 진행 상황 안내",
     ],
     documentsTitle: "첫 상담에 알려주실 정보",
     documents: [

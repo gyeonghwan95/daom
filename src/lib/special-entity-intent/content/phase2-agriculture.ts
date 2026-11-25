@@ -6,7 +6,7 @@ import {
 } from "./shared";
 
 const agriRelated = [
-  { href: "/농어업법인설립등기", label: "농·어업 법인 허브" },
+  { href: "/농어업법인설립등기", label: "농·어업 법인 안내" },
   ...baseSpecialRelated,
 ];
 
@@ -46,7 +46,7 @@ export const phase2AgriculturePages: SpecialEntityPageContent[] = [
     faqs: [
       {
         question: "농업회사법인과 차이는?",
-        answer: "`/농업회사법인과영농조합법인차이`를 참고하세요.",
+        answer: "‘농업회사법인과 영농조합법인 차이’를 참고하세요.",
       },
     ],
     relatedLinks: [

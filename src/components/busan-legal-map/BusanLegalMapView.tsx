@@ -69,7 +69,7 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
       </section>
 
       <section id="district-map">
-        <h2 className="section-heading">생활권별 지역 허브</h2>
+        <h2 className="section-heading">생활권별 지역 안내</h2>
         <p className="mt-2 text-sm text-navy/65">
           다옴법무사사무소는 해운대 센텀에 있습니다. 아래는 구·동 안내 페이지이며, 그 구에 사무소가 있다는 뜻이 아닙니다.
         </p>
@@ -104,7 +104,7 @@ export function BusanLegalMapView({ page }: BusanLegalMapViewProps) {
         </div>
         <h2 className="section-heading mt-10">부산 16개 구·군</h2>
         <p className="mt-2 text-sm text-navy/65">
-          카드에서 지역 허브·업무 안내·상황별 문제로 이동할 수 있습니다.
+          카드에서 지역 안내·업무 안내·상황별 문제로 이동할 수 있습니다.
         </p>
         <ul className="mt-5 grid gap-5 lg:grid-cols-2">
           {districts.map((district) => (

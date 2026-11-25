@@ -74,7 +74,7 @@ export function LocalLandingInternalLinks({
     <div className="space-y-8">
       {getTopicHubLinksForLanding(serviceSlug).length > 0 ? (
         <RelatedLinks
-          title="업무 종합 허브"
+          title="업무 종합 안내"
           links={getTopicHubLinksForLanding(serviceSlug)}
         />
       ) : null}

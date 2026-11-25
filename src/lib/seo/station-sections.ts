@@ -26,7 +26,7 @@ export function buildStationSectionsForHost(
   sections.push({
     id: "station-rail-intro",
     title: "이 지역의 도시철도·전철에서 찾는 경우",
-    body: "도시철도·광역전철 역 이름으로 법무사 업무를 검색하셨다면, 아래 역 안내에서 생활권과 연결되는 업무 페이지로 이어가면 됩니다. 법률 절차 본문은 업무별 안내에서 확인하고, 여기서는 지역·접근·준비 시작점만 정리합니다.",
+    body: "가까운 지하철역을 기준으로 찾으신다면 아래 역 안내를 눌러 보세요. 역 주변 생활권에서 자주 맡기시는 등기와 상담 전에 준비할 것을 함께 정리했습니다.",
   });
 
   for (const station of stations) {

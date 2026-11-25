@@ -168,7 +168,7 @@ export function CorporateIntentPageView({ page }: CorporateIntentPageViewProps) 
         keywords={[content.primaryKeyword, ...content.secondaryKeywords.slice(0, 4)]}
         ctaLabel={content.ctaTitle}
         ctaHref={`/contact/inquiry?field=${encodeURIComponent("corporate-registration")}&from=${encodeURIComponent(content.slug)}`}
-        secondaryCta={{ href: "/법인변경등기", label: "변경등기 허브 보기" }}
+        secondaryCta={{ href: "/법인변경등기", label: "변경등기 안내 보기" }}
         showDiagnosisCta={false}
         showAboutLawyerCta={false}
         showNationwideChip={showNationwide}

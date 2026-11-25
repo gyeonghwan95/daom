@@ -90,13 +90,13 @@ export const corporateBusinessPages = [
     diagnosisLinks: [
       { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
       { href: "/법인등기자가진단", label: "법인등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
       { href: "/contact", label: "상담 문의" },
     ],
     serviceLinks: [
       { href: "/services/director-change", label: "임원변경등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -109,7 +109,7 @@ export const corporateBusinessPages = [
       { href: "/blog/director-change-registration-deadline-penalty", label: "임원변경 과태료" },
       { href: "/services/cases/yeonje-director-change-case", label: "임원변경 사례" },
       { href: "/부산임원변경등기", label: "부산 임원변경등기 — 임기·과태료" },
-      { href: "/부산법인등기", label: "부산 법인등기 허브" },
+      { href: "/부산법인등기", label: "부산 법인등기 안내" },
       { href: "/contact/inquiry", label: "간편 문의" },
     ],
     faqs: [
@@ -223,13 +223,13 @@ export const corporateBusinessPages = [
     diagnosisLinks: [
       { href: "/법인설립자가진단", label: "법인설립 자가진단" },
       { href: "/법인등기자가진단", label: "법인등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
       { href: "/contact", label: "상담 문의" },
     ],
     serviceLinks: [
       { href: "/services/company-establishment", label: "법인설립 안내" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -241,7 +241,7 @@ export const corporateBusinessPages = [
     extraLinks: [
       { href: "/services/cases/suyeong-company-establishment-case", label: "법인설립 사례" },
       { href: "/부산법인설립등기", label: "부산 법인설립등기 — 정관·자본금" },
-      { href: "/부산법인등기", label: "부산 법인등기 — 변경 허브" },
+      { href: "/부산법인등기", label: "부산 법인등기 — 변경 안내" },
       { href: "/contact/inquiry", label: "간편 문의" },
     ],
     faqs: [
@@ -355,13 +355,13 @@ export const corporateBusinessPages = [
       { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
       { href: "/상속등기자가진단", label: "상속등기 자가진단" },
       { href: "/법인등기자가진단", label: "법인등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     serviceLinks: [
       { href: "/services/director-change", label: "임원변경등기 안내" },
       { href: "/services/inheritance-registration", label: "상속등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
-      { href: "/상속", label: "상속 허브" },
+      { href: "/상속", label: "상속 안내" },
     ],
     faqLinks: [
       { href: "/faq/director-change-deadline-faq", label: "임원변경 기한" },
@@ -485,13 +485,13 @@ export const corporateBusinessPages = [
     diagnosisLinks: [
       { href: "/법인등기자가진단", label: "법인등기 자가진단" },
       { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
       { href: "/contact", label: "상담 문의" },
     ],
     serviceLinks: [
       { href: "/services/corporate-registration", label: "법인등기 안내" },
       { href: "/services/director-change", label: "임원변경등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [
@@ -617,13 +617,13 @@ export const corporateBusinessPages = [
     diagnosisLinks: [
       { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
       { href: "/법인등기자가진단", label: "법인등기 자가진단" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
       { href: "/contact", label: "상담 문의" },
     ],
     serviceLinks: [
       { href: "/services/director-change", label: "임원변경등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
       { href: "/contact", label: "상담 문의" },
     ],
     faqLinks: [

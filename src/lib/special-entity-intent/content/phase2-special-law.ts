@@ -6,7 +6,7 @@ import {
 } from "./shared";
 
 const specialLawRelated = [
-  { href: "/특별법법인설립등기", label: "특별법 법인 설립 허브" },
+  { href: "/특별법법인설립등기", label: "특별법 법인 설립 안내" },
   ...baseSpecialRelated,
 ];
 

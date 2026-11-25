@@ -81,7 +81,7 @@ export const LECTURE_TITLE_FREEZE: LectureTitleChange[] = [
     serpReason:
       "부산 세미나 강사 SERP에 다옴 URL 없음. 행사 공고 위주라 공급자 페이지가 적음",
     contentReason:
-      "청년은 별도 URL이 담당. 허브 title에서 세미나 형식을 명시해 Busan hub 역할을 분명히 함",
+      "청년은 별도 URL이 담당. 안내 title에서 세미나 형식을 명시해 Busan hub 역할을 분명히 함",
     frozenAt: "2026-09-27",
   },
   {
@@ -102,7 +102,7 @@ export const LECTURE_TITLE_FREEZE: LectureTitleChange[] = [
     serpReason:
       "대학 특강 SERP는 대학 공지 위주, 공급자 페이지가 적고 다옴 URL 없음",
     contentReason:
-      "기존 /학교법률교육이 고교·대학을 함께 다뤄 의도가 흐림. 대학 전용 커리큘럼·선택기준·FAQ로 분리",
+      "기존 ‘부산 학교·대학 법률교육’이 고교·대학을 함께 다뤄 의도가 흐림. 대학 전용 커리큘럼·선택기준·FAQ로 분리",
     frozenAt: "2026-09-27",
   },
   {
@@ -123,7 +123,7 @@ export const LECTURE_TITLE_FREEZE: LectureTitleChange[] = [
     primaryQuery: "부산 고등학교 특강 강사",
     serpReason:
       "고등학교 특강 강사 SERP는 강사 섭외 후기 블로그 위주, 다옴 URL 없음",
-    contentReason: "대학 내용은 /부산대학교특강으로 이동. 이 URL은 고등학교(중등) 전용",
+    contentReason: "대학 내용은 ‘부산 대학교 특강’으로 이동. 이 URL은 고등학교(중등) 전용",
     frozenAt: "2026-09-27",
   },
   {

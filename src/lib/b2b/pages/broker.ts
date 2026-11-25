@@ -55,7 +55,7 @@ export const brokerCollabPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/부산잔금등기협업", label: "잔금일 등기 협업" },
     { href: "/부산부동산등기", label: "부동산등기 업무" },
     { href: "/부산소유권이전등기", label: "소유권이전등기" },
@@ -83,7 +83,7 @@ export const brokerCollabPageContent: B2BPageContent = {
       kind: "prose",
       paragraphs: [
         "이 페이지는 중개사무소와의 역할 분담·윤리·거래 이후 등기 연결 전반을 다룹니다. 잔금일·대출·말소가 같은 날 맞물리는 일정 조율만 필요할 때는 잔금일 등기 협업 안내를 함께 보시면 됩니다.",
-        "공인중개사만의 검색용 독립 페이지는 문의·검색 데이터를 본 뒤 백로그에서 재검토합니다. 지금은 협력 법무사 안내와 잔금 협업 안내로 역할을 나눕니다.",
+        "공인중개사님은 협력 법무사 안내와 잔금 협업 안내를 함께 보시면 됩니다.",
       ],
     },
     {

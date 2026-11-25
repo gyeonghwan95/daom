@@ -134,7 +134,7 @@ export const jeonseDepositDiagnosis: Diagnosis = {
   faqs: standardFaqs("전세보증금"),
   relatedLinks: standardRelatedLinks("전세보증금", [
     { href: "/임차권등기명령자가진단", label: "임차권등기명령 자가진단" },
-    { href: "/임대차전세", label: "임대차·전세 허브" },
+    { href: "/임대차전세", label: "임대차·전세 안내" },
   ]),
   ctaTitle: DIAGNOSIS_CTA_TITLE,
   ctaText: DIAGNOSIS_CTA_TEXT,

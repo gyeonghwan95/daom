@@ -113,7 +113,7 @@ export const BUSAN_LOCAL_INTENT_REGISTRY: LocalIntent[] = [
       "연산동 상속포기",
     ],
     contentNeed: "existing-page",
-    uniquenessReason: "동 단위 호스트 있으면 흡수. /연산상속등기 식 복제 금지",
+    uniquenessReason: "동 단위 호스트 있으면 흡수. ‘연산동 상속등기’ 식 복제 금지",
     searchVolume: "SEARCH_VOLUME_UNKNOWN",
   },
   {
@@ -322,7 +322,7 @@ export const BUSAN_LOCAL_INTENT_REGISTRY: LocalIntent[] = [
     userSituations: ["대단지 아파트 상속", "잔금등기"],
     candidateQueries: ["장산 법무사", "장산역 법무사", "좌동 상속등기"],
     contentNeed: "existing-page",
-    uniquenessReason: "장산역 → 좌동 Host; station section on /좌동법무사",
+    uniquenessReason: "장산역 → 좌동 Host; station section on ‘좌동 법무사’",
     searchVolume: "SEARCH_VOLUME_UNKNOWN",
   },
   {

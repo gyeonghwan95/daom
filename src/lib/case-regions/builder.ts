@@ -160,7 +160,7 @@ function vignetteForTrait(
     },
     residential: {
       title: `${place} 주택 상속·이전 일정`,
-      body: `${place} 아파트·다세대 상속은 협의분할·임대 승계·잔금일을 한 표로 맞춥니다. 등기부와 가족관계 서류를 점검한 뒤 신청 순서를 안내하는 흐름입니다.`,
+      body: `${place} 아파트·다세대 상속은 협의분할·임대 승계·잔금일을 함께 맞춥니다. 등기부와 가족관계 서류를 점검한 뒤 신청 순서를 안내하는 흐름입니다.`,
     },
     commercial: {
       title: `${place} 상가 소유권·권리금 구분`,
@@ -255,7 +255,7 @@ function faqFor(entry: CaseRegionEntry, seed: number) {
     {
       question: "사례와 비슷하면 결과도 같나요?",
       answer:
-        "아니요. 결과는 사실관계·서류·관할·기한을 보고 판단해야 해서, 숫자로 장담하기보다 실제 서류를 함께 보며 말씀드립니다.",
+        "아니요. 결과는 사실관계·서류·관할·기한에 따라 달라집니다. 비슷해 보이는 사례라도 실제 서류를 함께 보고 말씀드립니다.",
     },
     {
       question: `${place} 관할 등기소는 어디인가요?`,
@@ -267,8 +267,8 @@ function faqFor(entry: CaseRegionEntry, seed: number) {
         "부동산 가액·상속인 수·권리관계·법인 규모·희망 일정에 따라 달라집니다. 개요를 확인한 뒤 항목별 범위를 안내합니다.",
     },
     {
-      question: "기존 지역 안내 페이지와 무엇이 다른가요?",
-      answer: `${place}에서 자주 있는 업무 사례와 상담 동선을 정리한 안내입니다. 관련 구·군·생활권·업무 페이지와 함께 보시면 좋습니다.`,
+      question: `${place}에서는 어떤 일을 많이 맡기시나요?`,
+      answer: `${place}에서 자주 맡기시는 업무 사례와 상담 순서를 위에 정리했습니다. 구·군 전체 안내와 업무별 안내도 함께 보시면 좋습니다.`,
     },
   ];
   return [0, 1, 2, 3, 4].map((i) => pick(faqs, seed, i));
@@ -370,17 +370,17 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
     introParagraphs: isBusanCityCase
       ? [
           intro,
-          "다옴법무사사무소 홈페이지는 부산 법무사 안윤정 법무사 소개와 상담 창구입니다. 이 주소는 구·동별 참고 안내와 같은 형식으로, 실제 수임 목록을 공개하지 않습니다.",
+          "다옴법무사사무소 홈페이지는 부산 법무사 안윤정 법무사 소개와 상담 창구입니다. 의뢰인 보호를 위해 실제 수임 목록은 공개하지 않습니다.",
           p1,
           p3,
           p4,
         ]
       : [intro, p1, p2, p3, p4],
     procedures: [
-      "문의 개요(업무 종류·소재지·일정) 전달",
+      "업무 종류·소재지·일정 확인",
       "등기부·관할·서류 상태 확인",
       "진행 방식·견적 범위 안내",
-      "신청·접수·보정·완료 공유",
+      "신청부터 완료까지 진행 상황 안내",
     ],
     documents: [
       "업무 종류와 희망 일정",
@@ -432,7 +432,7 @@ export function buildCaseRegionPageData(entry: CaseRegionEntry): PageData {
         ? [
             {
               title: `${place}에서 이어지는 세부 지역`,
-              body: `${place} 허브에서 아래 동·생활권 안내로 이동할 수 있습니다.`,
+              body: `${place} 종합 안내에서 아래 동·생활권 안내로 이동할 수 있습니다.`,
               items: childNote.split(", "),
             },
           ]
@@ -555,7 +555,7 @@ export function buildCaseRegionsByAreaPageData(): PageData {
       { label: "지역별 안내" },
     ],
     introParagraphs: [
-      "해운대구·연제구·강서구 등 구·군 허브에서 동·생활권으로 내려가고, 동 페이지에서는 다시 구·군으로 연결됩니다.",
+      "해운대구·연제구·강서구 등 구·군 종합 안내에서 동·생활권으로 내려가고, 동 페이지에서는 다시 구·군으로 연결됩니다.",
     ],
     faqs: [
       {
@@ -572,7 +572,7 @@ export function buildCaseRegionsByAreaPageData(): PageData {
     sections: [
       {
         title: "부산 구·군",
-        body: "16개 구·군 허브로 이동합니다.",
+        body: "16개 구·군 종합 안내로 이동합니다.",
         links: DISTRICT_METAS.map((d) => ({
           href: caseRegionPath(d.slug),
           label: d.name,

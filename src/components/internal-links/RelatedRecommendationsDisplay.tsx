@@ -72,7 +72,7 @@ export function RelatedRecommendationsDisplay({
         {title}
       </h2>
       <p className="mt-2 text-sm leading-relaxed text-navy/65">
-        같은 주제·업무 분야·지역 기준으로 연결된 안내입니다.
+        지금 보신 내용과 함께 많이 확인하시는 안내입니다.
       </p>
 
       <div className="mt-5 space-y-6">

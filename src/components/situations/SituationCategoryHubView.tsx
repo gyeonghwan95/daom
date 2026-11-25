@@ -99,7 +99,7 @@ export function SituationCategoryHubView({
         <h2 className="text-base font-semibold text-navy sm:text-lg">다른 분류 보기</h2>
         <p className="mt-2 text-sm text-navy/70">
           <Link href="/situations" className="font-semibold text-navy-light hover:text-navy">
-            상황별 법률문제 전체 허브
+            상황별 법률문제 전체 안내
           </Link>
           에서 다른 분류와 검색도 이용할 수 있습니다.
         </p>

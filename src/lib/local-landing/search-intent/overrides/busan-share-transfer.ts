@@ -132,7 +132,7 @@ export const 부산지분이전등기Override: SearchIntentContent = {
     { href: "/부산콘도회원권등기", label: "부산 콘도·리조트회원권 등기 — 상속·증여·법인 이전" },
   ],
   relatedGuideLinks: [
-    { href: "/등기실무", label: "등기 실무 허브" },
+    { href: "/등기실무", label: "등기 실무 안내" },
     { href: "/tools/real-estate-documents-check", label: "부동산 서류 체크" },
     { href: "/contact", label: "상담 문의" },
   ],

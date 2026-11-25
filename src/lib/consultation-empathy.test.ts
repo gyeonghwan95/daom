@@ -61,7 +61,7 @@ describe("getConsultEmpathy routing", () => {
   });
 
   it("keeps jeonse ahead of auction tenant pages", () => {
-    assert.equal(getConsultEmpathy("/situations/전세-경매-진행").intent, "jeonse");
+    assert.equal(getConsultEmpathy("‘상황별 안내’/전세-경매-진행").intent, "jeonse");
   });
 
   it("uses greeting, not a fake story, on unmatched paths", () => {

@@ -229,7 +229,7 @@ export const SEARCH_INTENT_REGISTRY: SearchIntent[] = [
     finalOpportunityScore: 80,
     recommendedAction: "CREATE_NEW",
     currentUrl: "/상속취득세와등기순서",
-    notes: "Published batch1. 세무 확정 금지. /취득세와 역할 분리.",
+    notes: "Published batch1. 세무 확정 금지. ‘취득세 안내’와 역할 분리.",
   },
   {
     id: "compare-lawyer",

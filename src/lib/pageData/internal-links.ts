@@ -224,7 +224,7 @@ export function getMainLandingHubLinks(): RelatedLink[] {
     { href: "/부산재개발등기", label: "부산 재개발·재건축 등기" },
     { href: "/부산선박등기", label: "부산 선박등기" },
     { href: "/상속", label: "등기·포기·한정 중 고르기" },
-    { href: "/법인등기", label: "법인등기 종합 허브" },
+    { href: "/법인등기", label: "법인등기 종합 안내" },
   ];
 }
 

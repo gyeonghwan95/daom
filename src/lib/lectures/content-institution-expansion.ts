@@ -120,7 +120,7 @@ export const libraryLecture: LecturePageContent = {
   ],
   relatedLectureLinks: [
     { href: "/부산노인법률교육", label: "노인 법률 교육" },
-    { href: "/법률강의", label: "법률 강의 허브" },
+    { href: "/법률강의", label: "법률 강의 안내" },
     { href: "/강의이력", label: "강의 이력" },
     { href: "/부산기관법률특강", label: "기관 법률특강" },
     { href: "/부산법률강사", label: "부산 강사 초빙" },
@@ -252,7 +252,7 @@ export const lawyerLecture: LecturePageContent = {
   relatedLectureLinks: [
     { href: "/부산법률강사", label: "부산 법률 강사 섭외" },
     { href: "/강사소개", label: "강사 소개" },
-    { href: "/법률강의", label: "법률 강의 허브" },
+    { href: "/법률강의", label: "법률 강의 안내" },
     { href: "/강의이력", label: "강의 이력" },
     { href: "/강의문의", label: "강의 문의" },
   ],
@@ -385,7 +385,7 @@ export const institutionLecture: LecturePageContent = {
     },
   ],
   relatedLectureLinks: [
-    { href: "/법률강의", label: "법률 강의 허브" },
+    { href: "/법률강의", label: "법률 강의 안내" },
     { href: "/부산도서관법률특강", label: "도서관 법률특강" },
     { href: "/부산법무사강의", label: "부산 법무사 강의" },
     { href: "/부산법률강사", label: "강사 섭외" },

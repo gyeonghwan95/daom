@@ -70,7 +70,7 @@ export const registryOfficeLocalPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=legal-professional&type=local-support", label: "현지 지원 문의" },
     { href: "/부산원거리등기협업", label: "부산 원거리 등기 협업" },
     { href: "/부산등기접수협업", label: "부산 등기 접수 협업" },

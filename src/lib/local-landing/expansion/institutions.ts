@@ -180,7 +180,7 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     address: "부산광역시 연제구 법원로 8",
     accessNote: "2021년 부산지방법원 등기국으로 통합되었습니다. 현재 별도 접수 창구가 아닙니다.",
     jurisdictionNote:
-      "중부산등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 동래·연제 등 기존 관할 부동산등기는 등기국에서 접수합니다. 이 페이지는 옛 명칭 검색자를 위한 안내입니다.",
+      "중부산등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 동래·연제 등 기존 관할 부동산등기는 등기국에서 접수합니다. 예전 기관 이름으로 찾으신 분도 이 안내를 보시면 됩니다.",
     relatedServiceSlugs: ["corporate-registration", "director-change"],
     practicalNotes: [
       "법인 임원변경은 결의일로부터 등기 기한을 지키는 것이 중요합니다.",
@@ -196,7 +196,7 @@ export const institutionTopics: Record<string, InstitutionTopic> = {
     address: "부산광역시 연제구 법원로 8",
     accessNote: "2021년 부산지방법원 등기국으로 통합되었습니다. 현재 별도 접수 창구가 아닙니다.",
     jurisdictionNote:
-      "부산진등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 부산진구·서면 일대 부동산등기는 등기국에서 접수합니다. 이 페이지는 옛 명칭 검색자를 위한 안내입니다.",
+      "부산진등기소는 2021년부터 부산지방법원 등기국으로 통합되었습니다. 부산진구·서면 일대 부동산등기는 등기국에서 접수합니다. 예전 기관 이름으로 찾으신 분도 이 안내를 보시면 됩니다.",
     relatedServiceSlugs: ["real-estate-registration", "ownership-transfer"],
     practicalNotes: [
       "상가·오피스텔 매매는 용도·대지권 비율 확인이 필요합니다.",
@@ -265,7 +265,7 @@ export const conversionTopics: Record<string, ConversionTopic> = {
     ],
     timelineNotes: [
       "초기 문의에서는 보수와 공과금의 대략적 구성을 안내할 수 있습니다. 확정 견적은 사건 내용 확인 후입니다.",
-      "대한법무사협회 보수 기준은 참고용이며 사건별 조정이 있을 수 있습니다. → /부산법무사보수표",
+      "대한법무사협회 보수 기준은 참고용이며 사건별 조정이 있을 수 있습니다. → ‘부산 법무사 보수표’",
       "비용 안내를 받은 뒤에는 포함 항목·별도 항목·추가 가능 사유를 다시 확인하는 것이 좋습니다.",
     ],
     documentList: [

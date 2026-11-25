@@ -123,7 +123,7 @@ export const corporateRegistrationDiagnosis: Diagnosis = {
   faqs: standardFaqs(service),
   relatedLinks: standardRelatedLinks(service, [
     { href: "/임원변경등기자가진단", label: "임원변경등기 자가진단" },
-    { href: "/법인등기", label: "법인등기 허브" },
+    { href: "/법인등기", label: "법인등기 안내" },
   ]),
   ctaTitle: DIAGNOSIS_CTA_TITLE,
   ctaText: DIAGNOSIS_CTA_TEXT,

@@ -10,9 +10,9 @@ import type { SearchIntentContent } from "../types";
  * 법령 문구는 국가법령정보센터 조문으로 확인했다(확인일 2026-10-15).
  */
 
-const realEstateHub = { href: "/부동산등기", label: "부동산등기 허브" } as const;
-const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 허브" } as const;
-const corporateHub = { href: "/법인등기", label: "법인등기 허브" } as const;
+const realEstateHub = { href: "/부동산등기", label: "부동산등기 안내" } as const;
+const civilHub = { href: "/민사소송", label: "지급명령·가압류·민사 안내" } as const;
+const corporateHub = { href: "/법인등기", label: "법인등기 안내" } as const;
 
 const reviewed =
   "작성·검토: 다옴법무사사무소 안윤정 법무사. 상담 전 확인용 안내이며 개별 사안의 확정 의견이 아닙니다. 법령 확인 기준일: 2026-10-15.";

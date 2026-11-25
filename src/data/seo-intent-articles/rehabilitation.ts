@@ -28,7 +28,7 @@ export const rehabilitationSeoIntentArticles: SeoIntentArticle[] = [
       summary: [
         "최근 소득·채무 목록·재산·가족 관계를 파악하는 것이 출발점입니다.",
         "급여소득자·자영업자·프리랜서별 필요 서류가 다릅니다.",
-        "모든 서류가 처음부터 완벽하지 않아도 1차 상담은 가능합니다.",
+        "모든 서류가 처음부터 완벽하지 않아도 첫 상담은 가능합니다.",
         "채권자 수·총 채무액·담보 여부가 전략에 영향을 줍니다.",
       ],
       procedure: [
@@ -235,7 +235,7 @@ export const rehabilitationSeoIntentArticles: SeoIntentArticle[] = [
     },
     cta: {
       title: "급여소득자 맞춤 가능성 검토",
-      description: "해운대·센텀에서 소득·채무 자료로 1차 검토해 드립니다.",
+      description: "해운대·센텀에서 소득·채무 자료로 먼저 검토해 드립니다.",
     },
   },
   {

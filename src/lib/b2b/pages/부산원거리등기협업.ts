@@ -70,7 +70,7 @@ export const remoteCollabPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=legal-professional&type=local-support", label: "원거리·현지 지원 문의" },
     { href: "/부산법무사복대리", label: "부산 법무사 복대리" },
     { href: "/부산등기소현지업무", label: "부산 등기소 현지업무" },

@@ -13,7 +13,7 @@ export const corporateHubPage: CorporatePageContent = {
   metaDescription:
     "법인 변경등기는 임원·본점·사업목적·자본금·해산 등 사유마다 결의기관과 서류가 다릅니다. 부산 법인의 변경등기 유형별 안내와 상담 연결 — 다옴법무사.",
   h1: "법인 변경등기 — 어떤 변경이 필요한지부터 확인하세요",
-  eyebrow: "부산 법인등기 · 변경등기 허브",
+  eyebrow: "부산 법인등기 · 변경등기 안내",
   heroIntro:
     "법인 변경등기는 ‘등기 한 번’이 아니라, 변경 사유마다 결의 방식·첨부서류·기한이 달라집니다.",
   heroParagraphs: [
@@ -261,7 +261,7 @@ export const corporateHubPage: CorporatePageContent = {
       links: [
         {
           href: "/특수비영리법인등기",
-          label: "특수·비영리법인 종합 허브",
+          label: "특수·비영리법인 종합 안내",
           description: "사단·재단·협동조합·농업법인",
         },
         {

@@ -32,7 +32,7 @@ export const situationsHub: SituationsHubConfig = {
     {
       question: "자가진단과 상황별 안내는 무엇이 다른가요?",
       answer:
-        "자가진단은 질문에 답해 위험도와 다음 절차를 안내합니다. 상황별 안내는 검색하신 생활 문제를 기준으로 체크리스트·서류·상담 필요 시점을 먼저 정리한 페이지입니다. 둘 다 무료로 활용하실 수 있습니다.",
+        "자가진단은 질문에 답해 위험도와 다음 절차를 안내합니다. 상황별 안내는 지금 겪고 계신 생활 문제를 기준으로 체크리스트·서류·상담 필요 시점을 먼저 정리한 페이지입니다. 둘 다 회원가입 없이 바로 쓰실 수 있습니다.",
     },
   ],
 };
@@ -96,7 +96,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
       { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
       { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/qualified-acceptance", label: "한정승인 안내" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
     ],
     faqLinks: [
       { href: "/faq/when-to-file-inheritance-registration", label: "상속등기 신청 시기" },
@@ -179,7 +179,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     serviceLinks: [
       { href: "/services/inheritance-registration", label: "상속등기 업무안내" },
       { href: "/services/qualified-acceptance", label: "한정승인 안내" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
     ],
     faqLinks: [
       { href: "/faq/multiple-heirs-inheritance-registration", label: "상속인이 여럿일 때" },
@@ -258,7 +258,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
       { href: "/services/qualified-acceptance", label: "한정승인 안내" },
       { href: "/부산상속포기", label: "부산 상속포기 법무사" },
       { href: "/services/inheritance-registration", label: "상속등기 안내" },
-      { href: "/상속", label: "상속 종합 허브" },
+      { href: "/상속", label: "상속 종합 안내" },
     ],
     faqLinks: [
       { href: "/faq/what-is-qualified-acceptance", label: "한정승인이란" },
@@ -336,7 +336,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     serviceLinks: [
       { href: "/services/ownership-transfer", label: "소유권이전등기 안내" },
       { href: "/services/real-estate-registration", label: "부동산등기 안내" },
-      { href: "/부동산등기", label: "부동산등기 허브" },
+      { href: "/부동산등기", label: "부동산등기 안내" },
     ],
     faqLinks: [
       { href: "/faq/ownership-transfer-documents", label: "소유권이전 서류" },
@@ -411,8 +411,8 @@ const legacySituationPages: LegacySituationPageInput[] = [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
     ],
     serviceLinks: [
-      { href: "/임대차전세", label: "임대차·전세 허브" },
-      { href: "/민사소송", label: "민사·채권 허브" },
+      { href: "/임대차전세", label: "임대차·전세 안내" },
+      { href: "/민사소송", label: "민사·채권 안내" },
     ],
     faqLinks: [
       { href: "/faq/jeonse-registration-faq", label: "전세권·임차권 FAQ" },
@@ -486,7 +486,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     serviceLinks: [
       { href: "/services/director-change", label: "임원변경등기 안내" },
       { href: "/services/corporate-registration", label: "법인등기 안내" },
-      { href: "/법인등기", label: "법인등기 허브" },
+      { href: "/법인등기", label: "법인등기 안내" },
     ],
     faqLinks: [
       { href: "/faq/director-change-deadline-faq", label: "임원변경 기한·과태료" },
@@ -561,8 +561,8 @@ const legacySituationPages: LegacySituationPageInput[] = [
       { href: "/내용증명자가진단", label: "내용증명 자가진단" },
     ],
     serviceLinks: [
-      { href: "/민사소송", label: "민사·채권 허브" },
-      { href: "/공탁채권회수", label: "공탁·채권회수 허브" },
+      { href: "/민사소송", label: "민사·채권 안내" },
+      { href: "/공탁채권회수", label: "공탁·채권회수 안내" },
     ],
     faqLinks: [
       { href: "/faq/how-to-book-consultation-faq", label: "상담 예약 방법" },
@@ -572,7 +572,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
       { href: "/부산지방법원지급명령", label: "부산지방법원 지급명령" },
       { href: "/부산지방법원채권회수", label: "부산 채권회수" },
       { href: "/contact", label: "상담 문의" },
-      { href: "/자가진단", label: "자가진단 허브" },
+      { href: "/자가진단", label: "자가진단 모음" },
     ],
     faqs: [
       {
@@ -637,7 +637,7 @@ const legacySituationPages: LegacySituationPageInput[] = [
     serviceLinks: [
       { href: "/services/personal-rehabilitation", label: "개인회생 안내" },
       { href: "/services/bankruptcy", label: "개인파산 안내" },
-      { href: "/개인회생파산", label: "개인회생·파산 허브" },
+      { href: "/개인회생파산", label: "개인회생·파산 안내" },
     ],
     faqLinks: [
       { href: "/faq/bankruptcy-vs-rehabilitation-faq", label: "회생 vs 파산" },

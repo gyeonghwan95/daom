@@ -5,7 +5,7 @@ export const SPECIAL_ENTITY_SCOPE_NOTICE =
   "법무사는 법인설립등기·변경등기·해산·청산 등기 신청, 등기서류 작성·검토, 접수 대리 등 등기 관련 업무를 지원합니다. 주무관청 허가·인가·인증 신청, 세무·노무·소송대리, 경영·운영 자문은 별도 전문 영역이며 사안별로 지원 범위를 확인합니다. 처음부터 법무사가 맡을 일과 다른 전문가가 필요한 일을 나눠, 헛걸음하지 않도록 안내해 드립니다.";
 
 export const SPECIAL_ENTITY_HUB_LINKS = {
-  master: { href: "/특수비영리법인등기", label: "특수·비영리법인 종합 허브" },
+  master: { href: "/특수비영리법인등기", label: "특수·비영리법인 종합 안내" },
   nonprofit: { href: "/부산비영리법인설립등기", label: "부산 비영리법인 설립등기" },
   association: { href: "/부산사단법인설립", label: "부산 사단법인 설립" },
   foundation: { href: "/부산재단법인설립", label: "부산 재단법인 설립" },
@@ -27,8 +27,8 @@ export const SPECIAL_ENTITY_HUB_LINKS = {
     href: "/비영리민간단체와사단법인차이",
     label: "비영리민간단체와 사단법인 차이",
   },
-  corporatePillar: { href: "/법인등기", label: "법인등기 업무 허브" },
-  corporateChange: { href: "/법인변경등기", label: "주식회사 변경등기 허브" },
+  corporatePillar: { href: "/법인등기", label: "법인등기 업무 안내" },
+  corporateChange: { href: "/법인변경등기", label: "주식회사 변경등기 안내" },
   corporateMain: { href: "/부산법인법무사", label: "부산 법인 법무사" },
   contact: { href: "/contact", label: "법인등기 상담 문의" },
 } as const;

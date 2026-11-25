@@ -70,7 +70,7 @@ export const corporateOutsourcingPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=company&service=corporate", label: "기업 법인등기 문의" },
     { href: "/부산법인등기복대리", label: "부산 법인등기 복대리" },
     { href: "/부산법인등기", label: "부산 법인등기" },
@@ -107,7 +107,7 @@ export const corporateOutsourcingPageContent: B2BPageContent = {
         "임원변경·대표이사 변경 등 반복 인적 등기",
         "본점·지점·목적·정관 관련 변경",
         "일정 리마인드·자료 형식 맞춤(협의)",
-        "접수·보정·완료 공유",
+        "접수부터 완료까지 진행 상황 안내",
       ],
       note: "모든 기업 법무 자문을 포함한다고 단정하지 않습니다.",
     },

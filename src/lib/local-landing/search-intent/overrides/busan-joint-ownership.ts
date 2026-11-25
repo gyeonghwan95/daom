@@ -135,7 +135,7 @@ export const 부산공동명의등기Override: SearchIntentContent = {
       href: "/blog/joint-ownership-registration-cautions",
       label: "공동명의 등기 주의사항",
     },
-    { href: "/등기실무", label: "등기 실무 허브" },
+    { href: "/등기실무", label: "등기 실무 안내" },
     { href: "/contact", label: "상담 문의" },
   ],
   bottomCtaText:

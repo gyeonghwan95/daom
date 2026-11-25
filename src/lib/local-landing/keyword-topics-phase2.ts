@@ -74,12 +74,12 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       {
         question: "부산 회사 법무사를 찾으면 이 페이지가 맞나요?",
         answer:
-          "회사 설립·변경·해산 입구는 부산 법인 법무사 안내입니다. 이미 있는 회사의 임원·본점·목적 변경과 2주 기한은 부산 법인등기 법무사 안내에서 이어집니다. 이 페이지는 임기 관리·채권 서류·기업 실무를 고를 때 보는 보조 안내입니다.",
+          "회사 설립·변경·해산 입구는 부산 법인 법무사 안내입니다. 이미 있는 회사의 임원·본점·목적 변경과 2주 기한은 부산 법인등기 법무사 안내에서 이어집니다. 여기서는 임원 임기 관리, 거래처 채권 서류처럼 회사를 운영하며 꾸준히 생기는 업무를 정리했습니다.",
       },
       {
         question: "부산 기업 법률자문 페이지와 무엇이 다른가요?",
         answer:
-          "기업 법률자문 페이지는 법인·채권·기업 부동산 실무 허브이고, 이 페이지는 ‘기업 법무사’ 검색으로 사무소를 고를 때 보는 종합·선택 안내입니다.",
+          "기업 법률자문 페이지는 법인·채권·기업 부동산 실무 종합 안내이고, 이 페이지는 ‘기업 법무사’ 검색으로 사무소를 고를 때 보는 종합·선택 안내입니다.",
       },
       {
         question: "매달 자문 계약이 필요한가요?",
@@ -119,7 +119,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       {
         question: "기업법무·회사법무 실무 안내는 어디서 보나요?",
         answer:
-          "직역명보다 회사 변경·등기 실무를 찾는 경우에는 부산 법인 업무 안내(/부산법인법무사)를 먼저 보세요. 이 페이지는 기업 법무사 사무소를 고를 때의 선택 안내입니다.",
+          "직역명보다 회사 변경·등기 실무를 찾는 경우에는 부산 법인 업무 안내(‘부산 법인 법무사’)를 먼저 보세요. 이 페이지는 기업 법무사 사무소를 고를 때의 선택 안내입니다.",
       },
     ],
     relatedServiceLinks: [
@@ -141,7 +141,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
     relatedKeywordLinks: [
       { href: "/부산법인등기", label: "이미 있는 회사의 변경등기" },
       { href: "/부산법인등기전문", label: "부산 법인등기 실무" },
-      { href: "/창업법무", label: "창업법무 허브" },
+      { href: "/창업법무", label: "창업법무 안내" },
       { href: "/", label: "부산 법무사" },
     ],
     relatedCaseSlug: "yeonje-director-change-case",
@@ -252,7 +252,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       { href: "/부산법인설립등기", label: "부산 법인설립등기" },
       { href: "/부산법인법무사", label: "부산 법인 법무사" },
       { href: "/부산기업법무사", label: "부산 기업 법무사" },
-      { href: "/창업법무", label: "창업법무 허브" },
+      { href: "/창업법무", label: "창업법무 안내" },
       { href: "/법인설립등기비용", label: "법인설립등기 비용" },
     ],
     relatedFaqLinks: [
@@ -483,7 +483,7 @@ export const phase2KeywordTopics: Record<string, KeywordTopic> = {
       {
         question: "법인등기 비용 페이지와 차이는?",
         answer:
-          "기존 법인등기 비용 안내는 일반 비용 허브이고, 이 페이지는 부산·센텀 맥락의 비용 요인에 초점을 둡니다.",
+          "기존 법인등기 비용 안내는 일반 비용 종합 안내이고, 이 페이지는 부산·센텀 맥락의 비용 요인에 초점을 둡니다.",
       },
       {
         question: "견적은 어떻게 받나요?",

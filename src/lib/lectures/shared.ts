@@ -84,7 +84,7 @@ export const commonDisclaimer =
 
 export const relatedAll: LecturePageContent["relatedLectureLinks"] = [
   { href: "/부산법률전문가", label: "법률 실무·강의 활동 전체 소개" },
-  { href: "/법률강의", label: "법률 강의 허브" },
+  { href: "/법률강의", label: "법률 강의 안내" },
   { href: "/기업법률교육", label: "기업 특강·법률교육" },
   { href: "/강의이력", label: "강의 이력" },
   { href: "/부산법률강사", label: "부산 강사 초빙" },

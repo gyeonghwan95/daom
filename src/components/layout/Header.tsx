@@ -125,7 +125,8 @@ export function Header() {
               <span className="site-header__brand-mark" aria-hidden>
                 <Image
                   src={siteFavicon}
-                  alt=""
+                  // aria-hidden 안이라 화면낭독기는 읽지 않는다. 검색엔진(Bing) 이미지 alt 누락 경고만 없앤다
+                  alt="다옴법무사사무소 로고"
                   width={56}
                   height={56}
                   priority

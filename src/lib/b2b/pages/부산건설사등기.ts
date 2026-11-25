@@ -46,7 +46,7 @@ export const builderRegistryPageContent: B2BPageContent = {
     {
       question: "현장 주소와 등기 관할이 헷갈릴 때?",
       answer:
-        "부동산 소재지·법인 본점 소재지를 구분해 관할을 확인합니다. 개요만으로도 1차 정리가 가능합니다.",
+        "부동산 소재지·법인 본점 소재지를 구분해 관할을 확인합니다. 개요만으로도 먼저 정리가 가능합니다.",
     },
     {
       question: "시행사 페이지와 무엇이 다른가요?",
@@ -70,7 +70,7 @@ export const builderRegistryPageContent: B2BPageContent = {
     },
   ],
   relatedLinks: [
-    { href: "/partners", label: "협업 허브" },
+    { href: "/partners", label: "협업 안내" },
     { href: "/협업문의?partner=developer&service=preservation", label: "건설·보존 협업 문의" },
     { href: "/부산시행사등기", label: "시행사 등기업무" },
     { href: "/부산건축사등기협업", label: "건축사 등기 협업" },

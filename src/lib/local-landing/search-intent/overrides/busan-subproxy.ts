@@ -181,7 +181,7 @@ export const 부산등기복대리Override: SearchIntentContent = {
     { href: "/부산법무사복대리", label: "부산 법무사 복대리(협업 안내)" },
     { href: "/부산부동산등기", label: "부산 부동산등기 안내" },
     { href: "/부산법인등기", label: "부산 법인등기 안내" },
-    { href: "/특수등기의뢰", label: "특수 등기·협업 의뢰 허브" },
+    { href: "/특수등기의뢰", label: "특수 등기·협업 의뢰 안내" },
     { href: "/partners", label: "전문직·기업 협업 안내" },
     { href: "/법무사협업", label: "법무사 협업 문의" },
     { href: "/등기보정", label: "등기 보정 안내" },
@@ -189,7 +189,7 @@ export const 부산등기복대리Override: SearchIntentContent = {
     { href: "/협업문의?partner=legal-professional", label: "협업 문의" },
   ],
   relatedGuideLinks: [
-    { href: "/등기실무", label: "등기 실무 허브" },
+    { href: "/등기실무", label: "등기 실무 안내" },
     { href: "/부산집단등기", label: "부산 집단등기" },
     { href: "/부산법무사비용", label: "비용·수임료 안내" },
     { href: "/search-guides", label: "상황별 안내 모음" },
