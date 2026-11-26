@@ -175,12 +175,84 @@ export type AcquisitionInsight = {
   level: "critical" | "warning" | "info";
   title: string;
   detail: string;
+  /** 같은 화면 안 필터·표로 이어지는 쿼리 (예: channel=ai) */
+  href?: string;
 };
 
 const MIN_SESSIONS_FOR_RATE = 15;
 
-export function buildAcquisitionInsights(report: AcquisitionReport): AcquisitionInsight[] {
+/** 포털·AI처럼 세부 유입처 분해가 의미 있는 채널 */
+export const DETAIL_CHANNELS = ["naver", "google", "daum", "bing", "ai", "sns"] as const;
+export type DetailChannelId = (typeof DETAIL_CHANNELS)[number];
+
+export type ReferrerGroupRow = {
+  label: string;
+  channel: string;
+  sessions: number;
+  prevSessions: number;
+  eng: number;
+  cv: number;
+  hosts: string[];
+};
+
+/** 같은 사람 이름(네이버 검색 등)으로 묶은 유입처 — 모바일·PC 호스트를 합친다. */
+export function groupReferrersByLabel(
+  referrers: AcquisitionReport["referrers"],
+  channel?: string | null,
+): ReferrerGroupRow[] {
+  const map = new Map<string, ReferrerGroupRow>();
+  for (const r of referrers) {
+    if (r.key === "(other)") continue;
+    if (channel && r.channel !== channel) continue;
+    const { label } = describeReferrerHost(r.host);
+    const key = `${r.channel}::${label}`;
+    const cur = map.get(key);
+    if (!cur) {
+      map.set(key, {
+        label,
+        channel: r.channel,
+        sessions: r.s,
+        prevSessions: r.prevSessions ?? 0,
+        eng: r.eng,
+        cv: r.cv,
+        hosts: [r.host],
+      });
+    } else {
+      cur.sessions += r.s;
+      cur.prevSessions += r.prevSessions ?? 0;
+      cur.eng += r.eng;
+      cur.cv += r.cv;
+      if (!cur.hosts.includes(r.host)) cur.hosts.push(r.host);
+    }
+  }
+  return [...map.values()].sort((a, b) => b.sessions - a.sessions);
+}
+
+export function buildChannelSubBreakdown(
+  report: AcquisitionReport,
+  channelId: string,
+): ReferrerGroupRow[] {
+  return groupReferrersByLabel(report.referrers, channelId);
+}
+
+function formatGroupMix(groups: ReferrerGroupRow[], total: number, limit = 4): string {
+  if (!groups.length || !total) return "";
+  return groups
+    .slice(0, limit)
+    .map((g) => {
+      const pct = ((g.sessions / total) * 100).toFixed(g.sessions / total < 0.1 ? 1 : 0);
+      return `${g.label} ${pct}%`;
+    })
+    .join(" · ");
+}
+
+export function buildAcquisitionInsights(
+  report: AcquisitionReport,
+  options?: { days?: number },
+): AcquisitionInsight[] {
   const out: AcquisitionInsight[] = [];
+  const days = options?.days ?? 30;
+  const withDays = (params: string) => `/admin/analytics?days=${days}${params ? `&${params}` : ""}`;
   const t = report.totals;
   const prev = report.prevTotals;
   const external = report.channels.filter((c) => c.id !== "internal");
@@ -196,17 +268,20 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
         detail: `이전 기간 ${prev.sessions.toLocaleString("ko-KR")} → 이번 기간 ${t.sessions.toLocaleString("ko-KR")}세션.${
           change < 0 ? " 검색 순위나 색인 상태를 Search Console·서치어드바이저에서 확인하세요." : ""
         }`,
+        href: withDays(""),
       });
     }
   }
 
   const top = external[0];
   if (top && t.sessions > 0) {
+    const mix = formatGroupMix(buildChannelSubBreakdown(report, top.id), top.sessions);
     out.push({
       id: "top-channel",
       level: "info",
       title: `${channelLabel(top.id)} 유입이 ${((top.sessions / t.sessions) * 100).toFixed(0)}%로 가장 큽니다`,
-      detail: `${top.sessions.toLocaleString("ko-KR")}세션. ${CHANNEL_HINTS[top.id] || ""}`.trim(),
+      detail: `${top.sessions.toLocaleString("ko-KR")}세션${mix ? ` · ${mix}` : CHANNEL_HINTS[top.id] ? ` · ${CHANNEL_HINTS[top.id]}` : ""}`,
+      href: withDays(`channel=${encodeURIComponent(top.id)}`),
     });
   }
 
@@ -221,6 +296,7 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
       level: "info",
       title: `${channelLabel(best.c.id)} 유입의 상담 연결률이 가장 높습니다 (${best.rate.toFixed(1)}%)`,
       detail: `전체 평균 ${overallCv.toFixed(1)}%의 ${(best.rate / Math.max(overallCv, 0.1)).toFixed(1)}배. 이 채널로 들어오는 페이지를 우선 보강하세요.`,
+      href: withDays(`channel=${encodeURIComponent(best.c.id)}`),
     });
   }
 
@@ -235,19 +311,26 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
       level: mover.diff > 0 ? "info" : "warning",
       title: `${channelLabel(mover.c.id)} 유입 ${mover.diff > 0 ? "+" : ""}${mover.diff.toLocaleString("ko-KR")}세션`,
       detail: `이전 ${mover.c.prevSessions?.toLocaleString("ko-KR")} → ${mover.c.sessions.toLocaleString("ko-KR")}. 채널 증감 중 가장 큰 변화입니다.`,
+      href: withDays(`channel=${encodeURIComponent(mover.c.id)}`),
     });
   }
 
   const ai = external.find((c) => c.id === "ai");
   if (ai && ai.sessions > 0) {
+    const engines = buildChannelSubBreakdown(report, "ai");
+    const topEngine = engines[0];
+    const engineMix = formatGroupMix(engines, ai.sessions, 3);
     out.push({
       id: "ai-channel",
       level: "info",
-      title: `AI 검색에서 ${ai.sessions.toLocaleString("ko-KR")}세션 유입`,
+      title: topEngine
+        ? `AI 답변 유입 ${ai.sessions.toLocaleString("ko-KR")}세션 · 최다 출처 ${topEngine.label}`
+        : `AI 검색에서 ${ai.sessions.toLocaleString("ko-KR")}세션 유입`,
       detail:
         ai.prevSessions === 0
-          ? "이번 기간에 처음 나타났습니다. ChatGPT·Perplexity 등이 사무소 페이지를 답변 출처로 인용하고 있습니다."
-          : "ChatGPT·Perplexity 등 AI 답변이 사무소 페이지를 출처로 보여주고 있습니다.",
+          ? `이번 기간에 처음 나타났습니다.${engineMix ? ` ${engineMix}.` : ""} AI가 사무소 페이지를 답변 출처로 인용하고 있습니다.`
+          : `${engineMix || "ChatGPT·Perplexity·Gemini 등"}이 사무소 페이지를 출처로 보여주고 있습니다.`,
+      href: withDays("channel=ai"),
     });
   }
 
@@ -262,6 +345,7 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
       level: "warning",
       title: `랜딩 "${pageLabel(weakLanding.l.path)}" 참여율 ${weakLanding.rate.toFixed(0)}%`,
       detail: `${weakLanding.l.s}세션이 들어왔지만 대부분 다른 행동 없이 나갔습니다. 첫 화면의 요약·상담 버튼을 점검하세요.`,
+      href: withDays(`landing=${encodeURIComponent(normalizeDisplayPath(weakLanding.l.path))}`),
     });
   }
 
@@ -274,6 +358,7 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
       level: "warning",
       title: `"${pageLabel(silentLanding.path)}" 진입 ${silentLanding.s}세션, 상담 연결 0`,
       detail: "유입은 꾸준하지만 연락 행동으로 이어지지 않습니다. 본문 중간 CTA와 연락 수단 노출을 확인하세요.",
+      href: withDays(`landing=${encodeURIComponent(normalizeDisplayPath(silentLanding.path))}`),
     });
   }
 
@@ -286,8 +371,34 @@ export function buildAcquisitionInsights(report: AcquisitionReport): Acquisition
       level: "info",
       title: `새 유입처: ${describeReferrerHost(newRef.host).label}`,
       detail: `${newRef.host}에서 ${newRef.s}세션. 이전 기간에는 없던 링크입니다.`,
+      href: withDays(`channel=${encodeURIComponent(newRef.channel)}`),
     });
   }
+
+  const portalGap = DETAIL_CHANNELS.filter((id) => id !== "ai" && id !== "sns")
+    .map((id) => external.find((c) => c.id === id))
+    .filter((c): c is NonNullable<typeof c> => !!c && c.sessions >= 20)
+    .map((c) => {
+      const groups = buildChannelSubBreakdown(report, c.id);
+      const search = groups.find((g) => /검색$/.test(g.label));
+      const blog = groups.find((g) => /블로그|카페|인플루언서|뉴스/.test(g.label));
+      if (!search || !blog || search.sessions < 10 || blog.sessions < 5) return null;
+      const searchCv = conversionRate({ cv: search.cv, s: search.sessions }, 8);
+      const blogCv = conversionRate({ cv: blog.cv, s: blog.sessions }, 5);
+      if (searchCv == null || blogCv == null) return null;
+      if (blogCv < searchCv * 0.45) {
+        return {
+          id: `portal-gap-${c.id}`,
+          level: "warning" as const,
+          title: `${channelLabel(c.id)} ${blog.label} 연결률 ${blogCv.toFixed(1)}% · 검색(${searchCv.toFixed(1)}%)보다 낮음`,
+          detail: `${blog.label} ${blog.sessions}세션 중 상담 연결이 적습니다. 블로그·카페 글의 첫 화면 CTA와 사무소 링크를 확인하세요.`,
+          href: withDays(`channel=${encodeURIComponent(c.id)}`),
+        };
+      }
+      return null;
+    })
+    .find(Boolean);
+  if (portalGap) out.push(portalGap);
 
   const devTotal = report.devices.mobile + report.devices.desktop;
   if (devTotal >= 50) {

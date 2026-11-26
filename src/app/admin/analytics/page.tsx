@@ -7,6 +7,7 @@ import { AdminErrorState, AdminLoading } from "@/components/admin/AdminState";
 import { AdminSection } from "@/components/admin/MetricCard";
 import { PageIdentity } from "@/components/admin/PageIdentity";
 import { ChannelTrendChart } from "@/components/admin/acquisition/ChannelTrendChart";
+import { PortalAiGrid } from "@/components/admin/acquisition/ChannelSubBreakdown";
 import { SortableTable, type SortableColumn } from "@/components/admin/acquisition/SortableTable";
 import { Sparkline } from "@/components/admin/acquisition/Sparkline";
 import { UtmBuilder } from "@/components/admin/acquisition/UtmBuilder";
@@ -14,6 +15,7 @@ import { WeekHourHeatmap } from "@/components/admin/acquisition/WeekHourHeatmap"
 import { SourceStackBar } from "@/components/admin/charts/SourceMix";
 import {
   buildAcquisitionInsights,
+  buildChannelSubBreakdown,
   CHANNEL_HINTS,
   channelColor,
   channelLabel,
@@ -21,16 +23,19 @@ import {
   conversionRate,
   deltaCount,
   deltaPoints,
+  DETAIL_CHANNELS,
   describeReferrerHost,
   downloadCsv,
   engagementRate,
   formatCount,
   formatDecimal,
   formatRate,
+  groupReferrersByLabel,
   pageLabel,
   pagesPerSession,
   ratio,
   type Delta,
+  type ReferrerGroupRow,
 } from "@/lib/admin/acquisition-view";
 import { normalizeDisplayPath } from "@/lib/admin/url-display";
 import { adminFetchJson } from "@/lib/admin-ops/admin-fetch";
@@ -55,12 +60,30 @@ type ReferrerRow = AcquisitionReport["referrers"][number];
 type LandingRow = AcquisitionReport["landings"][number];
 type CampaignRow = AcquisitionReport["campaigns"][number];
 
-function readDaysParam(): number {
+function readQuery() {
   try {
-    const n = Number(new URLSearchParams(window.location.search).get("days"));
-    return PERIODS.some((p) => p.days === n) ? n : DEFAULT_DAYS;
+    const q = new URLSearchParams(window.location.search);
+    const n = Number(q.get("days"));
+    return {
+      days: PERIODS.some((p) => p.days === n) ? n : DEFAULT_DAYS,
+      channel: q.get("channel"),
+      landing: q.get("landing") || "",
+    };
   } catch {
-    return DEFAULT_DAYS;
+    return { days: DEFAULT_DAYS, channel: null as string | null, landing: "" };
+  }
+}
+
+function writeQuery(days: number, channel: string | null, landing: string) {
+  try {
+    const q = new URLSearchParams();
+    if (days !== DEFAULT_DAYS) q.set("days", String(days));
+    if (channel) q.set("channel", channel);
+    if (landing.trim()) q.set("landing", landing.trim());
+    const qs = q.toString();
+    window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+  } catch {
+    /* ignore */
   }
 }
 
@@ -177,6 +200,7 @@ export default function AdminAnalyticsPage() {
   const [loading, setLoading] = useState(true);
   const [channelFilter, setChannelFilter] = useState<string | null>(null);
   const [landingQuery, setLandingQuery] = useState("");
+  const [referrerMode, setReferrerMode] = useState<"group" | "host">("group");
   const requestSeq = useRef(0);
 
   const fetchReport = useCallback(async (n: number) => {
@@ -186,25 +210,26 @@ export default function AdminAnalyticsPage() {
   }, []);
 
   useEffect(() => {
-    const initial = readDaysParam();
-    void fetchReport(initial).then(({ res, current }) => {
+    const initial = readQuery();
+    setChannelFilter(initial.channel);
+    setLandingQuery(initial.landing);
+    void fetchReport(initial.days).then(({ res, current }) => {
       if (!current) return;
-      setDays(initial);
+      setDays(initial.days);
       setLoading(false);
       if (res.ok) setReport(res.data);
       else setError(res.message);
     });
   }, [fetchReport]);
 
+  const syncUrl = useCallback((n: number, channel: string | null, landing: string) => {
+    writeQuery(n, channel, landing);
+  }, []);
+
   const load = async (n: number) => {
     setDays(n);
     setLoading(true);
-    try {
-      const url = n === DEFAULT_DAYS ? window.location.pathname : `${window.location.pathname}?days=${n}`;
-      window.history.replaceState(null, "", url);
-    } catch {
-      /* ignore */
-    }
+    syncUrl(n, channelFilter, landingQuery);
     const { res, current } = await fetchReport(n);
     if (!current) return;
     setLoading(false);
@@ -216,19 +241,52 @@ export default function AdminAnalyticsPage() {
     setReport(res.data);
   };
 
+  const applyChannelFilter = (id: string | null) => {
+    setChannelFilter(id);
+    syncUrl(days, id, landingQuery);
+  };
+
+  const applyLandingQuery = (value: string) => {
+    setLandingQuery(value);
+    syncUrl(days, channelFilter, value);
+  };
+
+  const applyInsightHref = (href: string) => {
+    try {
+      const q = new URL(href, window.location.origin).searchParams;
+      const nextChannel = q.get("channel");
+      const nextLanding = q.get("landing") || "";
+      setChannelFilter(nextChannel);
+      setLandingQuery(nextLanding);
+      syncUrl(days, nextChannel, nextLanding);
+      if (nextLanding) {
+        document.getElementById("admin-acq-landings")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        document.getElementById("admin-acq-referrers")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } catch {
+      /* ignore */
+    }
+  };
+
   const view = useMemo(() => {
     if (!report) return null;
     const external = report.channels.filter((c) => c.id !== "internal");
     const chartOrder = external.filter((c) => c.sessions > 0).map((c) => c.id);
     const series = (id: string) => report.daily.map((d) => d.byChannel[id] || 0);
+    const detailPanels = DETAIL_CHANNELS.filter((id) => (external.find((c) => c.id === id)?.sessions ?? 0) > 0).map(
+      (id) => ({ channelId: id, groups: buildChannelSubBreakdown(report, id) }),
+    );
     return {
       external,
       chartOrder,
       series,
-      insights: buildAcquisitionInsights(report),
+      insights: buildAcquisitionInsights(report, { days }),
+      detailPanels,
+      groupedReferrers: groupReferrersByLabel(report.referrers, channelFilter),
       maxSessions: Math.max(1, ...report.channels.map((c) => c.sessions)),
     };
-  }, [report]);
+  }, [report, days, channelFilter]);
 
   const t = report?.totals;
   const p = report?.prevTotals ?? null;
@@ -252,6 +310,67 @@ export default function AdminAnalyticsPage() {
       );
     });
   }, [report, channelFilter, landingQuery]);
+
+  const groupedReferrerColumns: SortableColumn<ReferrerGroupRow>[] = [
+    {
+      key: "label",
+      label: "유입처",
+      render: (r) => (
+        <span className="admin-acq-channel">
+          <i style={{ background: channelColor(r.channel) }} aria-hidden />
+          <span>
+            <strong>{r.label}</strong>
+            <small>{r.hosts.length > 1 ? `${r.hosts.length}개 호스트 합산` : r.hosts[0]}</small>
+          </span>
+        </span>
+      ),
+      sortValue: (r) => r.label,
+    },
+    {
+      key: "s",
+      label: "세션",
+      numeric: true,
+      render: (r) => formatCount(r.sessions),
+      sortValue: (r) => r.sessions,
+    },
+    {
+      key: "delta",
+      label: "증감",
+      numeric: true,
+      hideSm: true,
+      render: (r) =>
+        r.prevSessions === 0 && r.sessions > 0 ? (
+          <span className="admin-acq-badge">새 유입처</span>
+        ) : (
+          <DeltaText delta={deltaCount(r.sessions, r.prevSessions)} />
+        ),
+      sortValue: (r) => (r.prevSessions ? (r.sessions - r.prevSessions) / r.prevSessions : null),
+    },
+    {
+      key: "eng",
+      label: "참여율",
+      title: "2페이지 이상 보거나 연락·검색·계산기 등 행동이 있었던 세션 비율",
+      numeric: true,
+      render: (r) => formatRate(engagementRate({ eng: r.eng, s: r.sessions }, MIN_RATE_BASE), 0),
+      sortValue: (r) => engagementRate({ eng: r.eng, s: r.sessions }, MIN_RATE_BASE),
+    },
+    {
+      key: "cv",
+      label: "상담 연결",
+      numeric: true,
+      render: (r) => formatCount(r.cv),
+      sortValue: (r) => r.cv,
+    },
+    {
+      key: "cvr",
+      label: "연결률",
+      numeric: true,
+      render: (r) => (
+        <strong>{formatRate(conversionRate({ cv: r.cv, s: r.sessions }, MIN_RATE_BASE))}</strong>
+      ),
+      sortValue: (r) => conversionRate({ cv: r.cv, s: r.sessions }, MIN_RATE_BASE),
+    },
+  ];
 
   const channelColumns: SortableColumn<AcquisitionChannelRow>[] = view
     ? [
@@ -569,6 +688,7 @@ export default function AdminAnalyticsPage() {
             <AdminInsightList
               insights={view.insights}
               empty="이번 기간에 눈에 띄는 변화가 없습니다. 데이터가 더 쌓이면 자동으로 요약합니다."
+              onNavigate={applyInsightHref}
             />
           </AdminSection>
 
@@ -599,7 +719,7 @@ export default function AdminAnalyticsPage() {
               />
             }
           >
-            <p className="admin-acq-hint">행을 누르면 아래 유입처·랜딩 표가 그 채널로 필터됩니다.</p>
+            <p className="admin-acq-hint">행을 누르면 아래 유입처·랜딩 표가 그 채널로 필터됩니다. 네이버·구글·AI는 아래에서 검색·블로그·엔진별로 다시 나눕니다.</p>
             <SortableTable
               label="채널별 유입 성과"
               rows={report.channels}
@@ -607,61 +727,133 @@ export default function AdminAnalyticsPage() {
               rowKey={(r) => r.id}
               initialSort="sessions"
               activeKey={channelFilter}
-              onRowClick={(r) => setChannelFilter((prev) => (prev === r.id ? null : r.id))}
+              onRowClick={(r) => applyChannelFilter(channelFilter === r.id ? null : r.id)}
             />
           </AdminSection>
+
+          {view.detailPanels.some((p) => p.groups.length > 0) ? (
+            <AdminSection title="포털·AI 세부 분석">
+              <p className="admin-acq-hint">
+                네이버·구글·다음·빙은 검색·블로그·지도 등으로, AI는 ChatGPT·Perplexity·Gemini 등으로 나눕니다. 모바일·PC 호스트는 같은 이름으로 합칩니다.
+              </p>
+              <PortalAiGrid
+                panels={
+                  channelFilter && DETAIL_CHANNELS.includes(channelFilter as (typeof DETAIL_CHANNELS)[number])
+                    ? view.detailPanels.filter((p) => p.channelId === channelFilter)
+                    : view.detailPanels
+                }
+              />
+            </AdminSection>
+          ) : null}
 
           <AdminSection title="일별 채널 추이">
             <ChannelTrendChart daily={report.daily} channelOrder={view.chartOrder} />
           </AdminSection>
 
-          {channelFilter ? (
+          {channelFilter || landingQuery ? (
             <div className="admin-acq-filterbar" role="status">
-              <ChannelName id={channelFilter} />
-              <span>채널로 필터 중</span>
-              <button type="button" className="admin-btn admin-btn--ghost" onClick={() => setChannelFilter(null)}>
+              {channelFilter ? <ChannelName id={channelFilter} /> : null}
+              {landingQuery ? <span>랜딩 검색: {landingQuery}</span> : null}
+              <span>필터 중</span>
+              <button
+                type="button"
+                className="admin-btn admin-btn--ghost"
+                onClick={() => {
+                  applyChannelFilter(null);
+                  applyLandingQuery("");
+                }}
+              >
                 필터 해제
               </button>
             </div>
           ) : null}
 
-          <div className="admin-acq-split">
+          <div className="admin-acq-split" id="admin-acq-referrers">
             <AdminSection
               title="세부 유입처"
               action={
-                <CsvButton
-                  onClick={() =>
-                    downloadCsv(
-                      `유입처_${stamp}.csv`,
-                      ["유입처", "호스트", "채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%"],
-                      filteredReferrers.map((r) => [
-                        describeReferrerHost(r.host).label,
-                        r.host,
-                        channelLabel(r.channel),
-                        r.s,
-                        r.prevSessions,
-                        csvRate(r, "eng"),
-                        r.cv,
-                        csvRate(r, "cv"),
-                      ]),
-                    )
-                  }
-                />
+                <div className="admin-acq-section-actions">
+                  <div className="admin-acq-segment" role="group" aria-label="유입처 묶음 방식">
+                    <button
+                      type="button"
+                      aria-pressed={referrerMode === "group"}
+                      onClick={() => setReferrerMode("group")}
+                    >
+                      이름별
+                    </button>
+                    <button
+                      type="button"
+                      aria-pressed={referrerMode === "host"}
+                      onClick={() => setReferrerMode("host")}
+                    >
+                      호스트별
+                    </button>
+                  </div>
+                  <CsvButton
+                    onClick={() =>
+                      referrerMode === "group"
+                        ? downloadCsv(
+                            `유입처_이름별_${stamp}.csv`,
+                            ["유입처", "채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "호스트"],
+                            view.groupedReferrers.map((r) => [
+                              r.label,
+                              channelLabel(r.channel),
+                              r.sessions,
+                              r.prevSessions,
+                              engagementRate({ eng: r.eng, s: r.sessions }),
+                              r.cv,
+                              conversionRate({ cv: r.cv, s: r.sessions }),
+                              r.hosts.join(" "),
+                            ]),
+                          )
+                        : downloadCsv(
+                            `유입처_호스트별_${stamp}.csv`,
+                            ["유입처", "호스트", "채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%"],
+                            filteredReferrers.map((r) => [
+                              describeReferrerHost(r.host).label,
+                              r.host,
+                              channelLabel(r.channel),
+                              r.s,
+                              r.prevSessions,
+                              csvRate(r, "eng"),
+                              r.cv,
+                              csvRate(r, "cv"),
+                            ]),
+                          )
+                    }
+                  />
+                </div>
               }
             >
-              <SortableTable
-                label="유입처별 세션"
-                rows={filteredReferrers}
-                columns={referrerColumns}
-                rowKey={(r) => r.key}
-                initialSort="s"
-                pageSize={12}
-                empty={
-                  channelFilter === "direct" || channelFilter === "campaign"
-                    ? "직접 방문·캠페인은 referrer 호스트가 없습니다. 캠페인 표를 보세요."
-                    : "외부 링크 유입이 아직 없습니다."
-                }
-              />
+              {referrerMode === "group" ? (
+                <SortableTable
+                  label="이름별 유입처 세션"
+                  rows={view.groupedReferrers}
+                  columns={groupedReferrerColumns}
+                  rowKey={(r) => `${r.channel}::${r.label}`}
+                  initialSort="s"
+                  pageSize={12}
+                  empty={
+                    channelFilter === "direct" || channelFilter === "campaign"
+                      ? "직접 방문·캠페인은 referrer 호스트가 없습니다. 캠페인 표를 보세요."
+                      : "외부 링크 유입이 아직 없습니다."
+                  }
+                />
+              ) : (
+                <SortableTable
+                  label="호스트별 유입처 세션"
+                  rows={filteredReferrers}
+                  columns={referrerColumns}
+                  rowKey={(r) => r.key}
+                  initialSort="s"
+                  pageSize={12}
+                  empty={
+                    channelFilter === "direct" || channelFilter === "campaign"
+                      ? "직접 방문·캠페인은 referrer 호스트가 없습니다. 캠페인 표를 보세요."
+                      : "외부 링크 유입이 아직 없습니다."
+                  }
+                />
+              )}
             </AdminSection>
 
             <AdminSection title="요일·시간대 유입">
@@ -692,13 +884,13 @@ export default function AdminAnalyticsPage() {
               />
             }
           >
-            <div className="admin-acq-toolbar">
+            <div className="admin-acq-toolbar" id="admin-acq-landings">
               <input
                 type="search"
                 className="admin-input"
                 placeholder="페이지 이름·경로 검색"
                 value={landingQuery}
-                onChange={(e) => setLandingQuery(e.target.value)}
+                onChange={(e) => applyLandingQuery(e.target.value)}
                 aria-label="랜딩 페이지 검색"
               />
               <span className="admin-acq-hint">
@@ -764,6 +956,18 @@ export default function AdminAnalyticsPage() {
               <div>
                 <dt>세션</dt>
                 <dd>같은 탭에서 30분 안에 이어진 방문. 첫 페이지의 referrer로 채널을 정합니다.</dd>
+              </div>
+              <div>
+                <dt>채널</dt>
+                <dd>
+                  네이버·구글·다음·빙·AI·SNS·외부·캠페인·직접·내부. AI는 ChatGPT·Perplexity·Gemini·Claude·Copilot·뤼튼 등을 묶습니다.
+                </dd>
+              </div>
+              <div>
+                <dt>포털·AI 세부</dt>
+                <dd>
+                  같은 이름(예: 네이버 검색)의 모바일·PC 호스트를 합칩니다. 검색·블로그·지도·AI 엔진별 비중과 연결률을 봅니다.
+                </dd>
               </div>
               <div>
                 <dt>참여 세션</dt>

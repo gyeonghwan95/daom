@@ -310,6 +310,9 @@ export default function AdminDashboardPage() {
             </table>
             </AdminTableWrap>
           )}
+          <Link href="/admin/analytics" className="admin-section-link">
+            전체 유입 분석 보기 →
+          </Link>
         </AdminSection>
       </div>
 

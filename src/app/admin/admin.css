@@ -432,6 +432,11 @@ body:has(.admin-shell) {
   display: grid;
   gap: 0.5rem;
 }
+@media (min-width: 900px) {
+  .admin-acq .admin-insights {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .admin-insight {
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -451,10 +456,15 @@ body:has(.admin-shell) {
 .admin-insight__link {
   display: inline-block;
   margin-top: 0.35rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
   font-size: 0.75rem;
   font-weight: 700;
   color: #2563eb;
   text-decoration: none;
+  cursor: pointer;
 }
 .admin-insight__link:hover {
   text-decoration: underline;
@@ -1933,6 +1943,92 @@ a.admin-page-identity__path:hover {
   margin: 0;
   color: #475569;
   line-height: 1.5;
+}
+.admin-acq-section-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.admin-acq-detail-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+@media (min-width: 960px) {
+  .admin-acq-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.admin-acq-subpanel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  display: grid;
+  gap: 0.65rem;
+}
+.admin-acq-subpanel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+}
+.admin-acq-subbars {
+  display: grid;
+  gap: 0.55rem;
+}
+.admin-acq-subbar__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+.admin-acq-subbar__meta strong {
+  color: #0f172a;
+}
+.admin-acq-subbar__meta small {
+  color: #94a3b8;
+  margin-left: 0.2rem;
+}
+.admin-acq-subbar__track {
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  overflow: hidden;
+  margin: 0.25rem 0;
+}
+.admin-acq-subbar__track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.admin-acq-subbar__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+.admin-acq-subbar__hosts {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  color: #94a3b8;
+}
+.admin-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+.admin-section-link:hover {
+  text-decoration: underline;
 }
 
 .admin-login__brand {
