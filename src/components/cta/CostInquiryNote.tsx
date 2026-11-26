@@ -26,7 +26,11 @@ import {
 } from "@/lib/naver-place-reviews/static-quotes";
 import { isLecturePagePath } from "@/data/seoExperiments/lecture-targets";
 import { useConsultationAvailability } from "@/hooks/useConsultationAvailability";
-import { consultationNightLine, consultationReplySla } from "@/lib/consultation-copy";
+import {
+  consultationDecisionLine,
+  consultationNightLine,
+  consultationReplySla,
+} from "@/lib/consultation-copy";
 import {
   consultPasteText,
   getConsultEmpathy,
@@ -337,7 +341,9 @@ function DecisionCard({ className }: { className: string }) {
       {lecture || b2b ? null : (
         <>
           <p className="decision-card__process">{empathy.costLine}</p>
-          <p className="decision-card__process max-lg:hidden">{empathy.afterInquiry}</p>
+          {empathy.afterInquiry && !empathy.costLine.includes(consultationDecisionLine) ? (
+            <p className="decision-card__process">{empathy.afterInquiry}</p>
+          ) : null}
           {empathy.photoHint ? (
             <p className="decision-card__photo-hint max-lg:hidden">{empathy.photoHint}</p>
           ) : null}

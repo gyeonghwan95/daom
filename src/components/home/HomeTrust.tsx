@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { siteImages } from "@/lib/site-images";
 import { homeTrust } from "@/lib/home-content";
+import { consultationDecisionLine } from "@/lib/consultation-copy";
 import { siteConfig } from "@/lib/site";
 
 export function HomeTrust() {
@@ -75,7 +76,7 @@ export function HomeTrust() {
               <p className="mt-1 text-sm leading-relaxed text-navy/70">
                 상담 뒤에 서류 작성과 등기소·법원 접수, 보정까지 맡길 일은 안윤정 법무사가
                 사안을 확인한 뒤 업무 범위, 준비서류, 보수와 공과금 구분을 안내합니다.
-                맡기기 전에 비용만 물어보셔도 되고, 상담 후 안 맡으셔도 됩니다. 소송 대리와 형사 변론은 변호사 업무입니다.
+                {consultationDecisionLine} 소송 대리와 형사 변론은 변호사 업무입니다.
                 안윤정 법무사는 부산지방법원 동부지원 무료법률상담(부산지방법무사협회)에도 참여하고 있습니다.
               </p>
               <Link href="/contact" className="btn-secondary mt-3 inline-flex min-h-11 items-center px-4 text-sm">

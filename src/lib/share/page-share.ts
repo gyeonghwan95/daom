@@ -1,5 +1,5 @@
 /**
- * 페이지 공유('가족에게 보내기') 공통 규칙.
+ * 페이지 공유 버튼('공유') 공통 규칙.
  *
  * 왜: 상속·증여·상속포기처럼 가족이 함께 정하는 일은 "형제들과 보고 정할게요"에서 연락이 끊긴다.
  * 읽던 안내를 그대로 가족에게 보내면 대화가 이 페이지를 기준으로 이어지고, 받은 사람도 바로 물어볼 수 있다(2026-11-17).
@@ -35,7 +35,7 @@ export function getShareCopy(path: string): ShareCopy {
   if (PRIVATE.test(p)) {
     return {
       audience: "share",
-      label: "공유하기",
+      label: "공유",
       prompt: "함께 볼 분이 있으면 이 안내를 그대로 보내 보세요.",
       messageTail: "같이 읽어 보고 정해요.",
       arrivalTitle: "공유받은 안내입니다",
@@ -44,7 +44,7 @@ export function getShareCopy(path: string): ShareCopy {
   if (WORK.test(p)) {
     return {
       audience: "work",
-      label: "담당자에게 보내기",
+      label: "공유",
       prompt: "대표·동료와 함께 정하시나요? 이 안내를 그대로 보내 보세요.",
       messageTail: "함께 보고 진행 방법을 정해요.",
       arrivalTitle: "함께 일하는 분이 보내 준 안내입니다",
@@ -52,7 +52,7 @@ export function getShareCopy(path: string): ShareCopy {
   }
   return {
     audience: "family",
-    label: "가족에게 보내기",
+    label: "공유",
     prompt: "가족과 함께 정하시나요? 읽던 안내를 그대로 보내 보세요.",
     messageTail: "같이 읽어 보고 정해요.",
     arrivalTitle: "가족이 보내 준 안내입니다",

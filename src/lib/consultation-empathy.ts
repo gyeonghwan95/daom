@@ -1,4 +1,5 @@
 import {
+  consultationDecisionLine,
   consultationNightLine,
   consultationReassurance,
   consultationReplySla,
@@ -39,8 +40,7 @@ export type ConsultEmpathy = {
 export const consultKakaoGreeting =
   "어떤 절차부터 해야 할지 몰라서 문의드립니다.";
 
-const AFTER =
-  "문의하시면 상황을 듣고 필요한 절차·서류·비용을 먼저 알려 드립니다. 진행은 맡기기로 정하신 뒤에만 합니다.";
+const AFTER = consultationDecisionLine;
 
 function decodePath(pathname: string): string {
   try {

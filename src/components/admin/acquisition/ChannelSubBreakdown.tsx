@@ -4,6 +4,7 @@ import {
   channelColor,
   channelLabel,
   conversionRate,
+  leadRate,
   deltaCount,
   engagementRate,
   formatCount,
@@ -76,8 +77,15 @@ export function ChannelSubBreakdown({
               <div className="admin-acq-subbar__stats">
                 <DeltaText current={g.sessions} previous={g.prevSessions} />
                 <span title="참여율">참여 {formatRate(engagementRate({ eng: g.eng, s: g.sessions }, MIN_RATE_BASE), 0)}</span>
-                <span title="상담 연결률">
-                  연결 <strong>{formatRate(conversionRate({ cv: g.cv, s: g.sessions }, MIN_RATE_BASE))}</strong>
+                <span title={g.clk + g.lead + g.hire > 0 ? "상담 신청률" : "합산 상담 연결률"}>
+                  {g.clk + g.lead + g.hire > 0 ? "신청" : "합산"}{" "}
+                  <strong>
+                    {formatRate(
+                      g.clk + g.lead + g.hire > 0
+                        ? leadRate({ lead: g.lead, s: g.sessions }, MIN_RATE_BASE)
+                        : conversionRate({ cv: g.cv, s: g.sessions }, MIN_RATE_BASE),
+                    )}
+                  </strong>
                 </span>
                 {g.hosts.length > 1 ? (
                   <span className="admin-acq-subbar__hosts" title={g.hosts.join(", ")}>

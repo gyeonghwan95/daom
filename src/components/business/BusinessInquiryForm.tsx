@@ -194,6 +194,7 @@ export function BusinessInquiryForm() {
           kind: "business",
           field: String(form.workType || "").slice(0, 40),
         },
+        qualifyText: form.summary,
       });
 
       if (result.ok) {

@@ -19,11 +19,15 @@ export function consultationNightLine(nextReplyAt?: string): string {
   return `지금 남기시면 ${nextReplyAt}에 제가 먼저 연락드립니다. 지금 다 정하지 않으셔도 됩니다.`;
 }
 
+/** 상담을 정보 문의로 끝내지 않고, 맡길지 정하는 다음 단계로 받는 문장. */
+export const consultationDecisionLine =
+  "비용과 순서를 알려 드린 뒤, 맡기실지만 정하시면 됩니다. 기한이나 주소가 있으면 같이 적어 주세요.";
+
 export const consultationReassurance = {
-  noCommit:
-    "맡기기 전에 비용만 물어보셔도 됩니다. 상담 후 안 맡으셔도 됩니다.",
+  noCommit: consultationDecisionLine,
   photo:
     "등기부·계약서 사진만 보내셔도 됩니다. 주민등록번호는 가려 주세요.",
-  cost:
-    "상담만 받고 맡기지 않으셔도 됩니다. 비용은 법무사 보수와 세금·수수료를 나눠 먼저 알려 드립니다.",
+  /** 보수 구분만. 결정 문장은 consultationDecisionLine. */
+  feeSplit: "법무사 보수와 세금·수수료는 나눠 먼저 알려 드립니다.",
+  cost: `${consultationDecisionLine} 법무사 보수와 세금·수수료는 나눠 먼저 알려 드립니다.`,
 } as const;

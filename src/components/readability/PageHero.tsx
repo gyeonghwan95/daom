@@ -13,7 +13,6 @@ import { NationwideRegionChip } from "@/components/nationwide/NationwideRegionCh
 import { ProseParagraphs } from "./ProseParagraphs";
 import { encodePublicSrc } from "@/lib/encode-public-src";
 import type { SiteImageAsset } from "@/lib/site-images";
-import { PageShareButton } from "@/components/share/PageShareButton";
 import { ServiceAnswerCard } from "@/components/seo/ServiceAnswerCard";
 import { OfficeProfileCard } from "@/components/seo/OfficeProfileCard";
 
@@ -90,10 +89,6 @@ export function PageHero({
       ) : null}
       {/* 업체 추천형 검색 페이지에만: 도입 문단 뒤에 사무소 사실 묶음(OfficeProfileCard) */}
       <OfficeProfileCard path={path} />
-      {/* 읽던 안내를 가족·담당자에게 그대로 보내기 — 함께 정하는 일에서 연락이 끊기지 않게(2026-11-17) */}
-      <div className="mt-4 print:hidden">
-        <PageShareButton />
-      </div>
       {children}
     </>
   );

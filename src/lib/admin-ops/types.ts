@@ -38,7 +38,11 @@ export type AcquisitionEntry = {
   lp: string;
 };
 
-/** 유입 지표 묶음. s=진입 세션, eng=참여 세션, cv=상담 연결 세션, m=모바일 진입. */
+/**
+ * 유입 지표 묶음.
+ * s=진입 세션, eng=참여 세션, cv=합산 연결(이전 기준), m=모바일 진입.
+ * clk=클릭 세션, lead=상담 신청 세션, hire=수임 가능 세션.
+ */
 export type AcquisitionMetrics = {
   s: number;
   pv: number;
@@ -53,6 +57,12 @@ export type AcquisitionMetrics = {
   submit: number;
   cta: number;
   start: number;
+  /** 전화·카카오톡·톡톡·예약 중 하나를 한 세션 */
+  clk: number;
+  /** 문의 제출이 있는 세션 */
+  lead: number;
+  /** 기한·주소·맡기려는 문장 또는 준비 서류가 있는 제출 세션 */
+  hire: number;
   /** phone + kakao + talk + reserve + submit */
   contacts: number;
 };
@@ -99,6 +109,9 @@ export type AcquisitionReport = {
     byChannel: Record<string, number>;
     contacts: number | null;
     converted: number | null;
+    clk: number | null;
+    lead: number | null;
+    hire: number | null;
     hasAcq: boolean;
   }>;
   referrers: Array<AcquisitionDimensionRow & { host: string; channel: string }>;

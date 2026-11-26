@@ -35,10 +35,19 @@ const CAPS = { ref: 120, land: 250, utm: 60 };
 export const OTHER_KEY = "(other)";
 const SESSION_STATE_CAP = 2000;
 const FLAG_ENGAGED = 1;
+/** 이전 합산. 전화·카카오·톡톡·예약·문의 제출 중 하나. 화면의 주 지표는 아니다. */
 const FLAG_CONVERTED = 2;
+/** 전화·카카오톡·톡톡·예약. 세션당 1. */
+const FLAG_CLICK = 4;
+/** 문의 제출. 세션당 1. */
+const FLAG_LEAD = 8;
+/** 기한·주소·맡기려는 문장 또는 준비 서류가 있는 제출. 세션당 1. */
+const FLAG_HIRE = 16;
 
-/** 상담으로 직접 이어지는 행동. 전환 세션 판정 기준. */
+/** 상담으로 직접 이어지는 행동. 합산 전환(cv) 판정 기준. */
 const CONTACT_KINDS = new Set(["phone", "kakao", "talk", "reserve", "submit"]);
+const CLICK_KINDS = new Set(["phone", "kakao", "talk", "reserve"]);
+const HIRE_TOKENS = new Set(["date", "place", "intent", "docs"]);
 const INTERACTION_TYPES = new Set(["search_used", "tool_used", "diagnosis_complete"]);
 const METRIC_KEYS = [
   "s",
@@ -54,6 +63,9 @@ const METRIC_KEYS = [
   "submit",
   "cta",
   "start",
+  "clk",
+  "lead",
+  "hire",
 ];
 
 function cleanHost(raw) {
@@ -107,6 +119,14 @@ export function conversionKind(event) {
     default:
       return null;
   }
+}
+
+/** meta.qual 은 date,place,intent,docs 만 허용. 본문은 받지 않는다. */
+function isHireSubmit(event) {
+  const raw = String(event?.meta?.qual || "");
+  if (!raw || raw.length > 40 || !/^[a-z,]+$/.test(raw)) return false;
+  const parts = raw.split(",").filter(Boolean);
+  return parts.length > 0 && parts.every((part) => HIRE_TOKENS.has(part));
 }
 
 function inc(row, key, n = 1) {
@@ -174,6 +194,20 @@ export function applyAcquisition(day, event) {
   if (!(state[1] & FLAG_CONVERTED) && kind && CONTACT_KINDS.has(kind)) {
     state[1] |= FLAG_CONVERTED;
     for (const r of rows) inc(r, "cv");
+  }
+  if (!(state[1] & FLAG_CLICK) && kind && CLICK_KINDS.has(kind)) {
+    state[1] |= FLAG_CLICK;
+    for (const r of rows) inc(r, "clk");
+  }
+  if (kind === "submit") {
+    if (!(state[1] & FLAG_LEAD)) {
+      state[1] |= FLAG_LEAD;
+      for (const r of rows) inc(r, "lead");
+    }
+    if (!(state[1] & FLAG_HIRE) && isHireSubmit(event)) {
+      state[1] |= FLAG_HIRE;
+      for (const r of rows) inc(r, "hire");
+    }
   }
 }
 
@@ -356,6 +390,9 @@ export function buildAcquisitionPayload({ days, prevDays, range, compareRange })
     }
     let contacts = null;
     let converted = null;
+    let clk = null;
+    let lead = null;
+    let hire = null;
     if (day.acq) {
       const m = emptyMetrics();
       for (const [ch, row] of Object.entries(day.acq.ch || {})) {
@@ -363,6 +400,9 @@ export function buildAcquisitionPayload({ days, prevDays, range, compareRange })
       }
       contacts = withContacts(m).contacts;
       converted = m.cv;
+      clk = m.clk;
+      lead = m.lead;
+      hire = m.hire;
     }
     return {
       date: day.date,
@@ -371,6 +411,9 @@ export function buildAcquisitionPayload({ days, prevDays, range, compareRange })
       byChannel,
       contacts,
       converted,
+      clk,
+      lead,
+      hire,
       hasAcq: Boolean(day.acq),
     };
   });

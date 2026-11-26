@@ -109,6 +109,7 @@ export function QuickInquiryForm({
         pageTitle,
         pageUrl,
         analyticsMeta: { kind: "inquiry" },
+        qualifyText: message,
       });
 
       if (result.ok) {

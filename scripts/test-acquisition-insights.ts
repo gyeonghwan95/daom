@@ -38,6 +38,9 @@ function m(partial: Partial<AcquisitionMetrics> & Pick<AcquisitionMetrics, "s">)
     submit: partial.submit ?? 0,
     cta: partial.cta ?? 0,
     start: partial.start ?? partial.s,
+    clk: partial.clk ?? 0,
+    lead: partial.lead ?? 0,
+    hire: partial.hire ?? 0,
     contacts: partial.contacts ?? 0,
   };
 }
@@ -165,6 +168,33 @@ assert(
 assert(
   insights.every((i) => !i.href || i.href.startsWith("/admin/analytics?days=7")),
   "인사이트 기간 유지",
+);
+
+const splitReport: AcquisitionReport = {
+  ...report,
+  totals: { ...totals, clk: 6, lead: 8, hire: 2 },
+  channels: [
+    channel("naver", 70, 60, m({ s: 70, eng: 28, cv: 6, clk: 5, lead: 12, hire: 2, m: 50, pv: 120 })),
+    channel("ai", 12, 0, m({ s: 12, eng: 5, cv: 2, clk: 1, lead: 1, hire: 0, m: 4, pv: 20 })),
+    channel("direct", 18, 20, m({ s: 18, eng: 7, cv: 0, m: 10, pv: 30 })),
+  ],
+  landings: [
+    {
+      ...dim("/blog/clicks", m({ s: 24, eng: 10, cv: 4, clk: 4, lead: 0, hire: 0, pv: 30 }), {
+        prevSessions: 10,
+      }),
+      path: "/blog/clicks",
+    },
+  ],
+};
+const splitInsights = buildAcquisitionInsights(splitReport, { days: 7 });
+assert(
+  splitInsights.some((i) => i.id === "best-converting" && i.title.includes("상담 신청률")),
+  "분리 이후에는 신청률",
+);
+assert(
+  splitInsights.some((i) => i.id === "click-only-landing" && i.title.includes("상담 신청 0")),
+  "클릭만 있는 랜딩",
 );
 
 if (failed) {

@@ -174,6 +174,38 @@ async function main() {
   const f: Entry = { ch: "internal", host: "xn--2j1br1na42lvxja38mk8r.kr", lp: "/faq" };
   await collect(env, { type: "page_view", path: "/faq", ip: "203.0.113.6", sid: "sessF0001", entry: f, entryView: true });
 
+  // G: 구글 → 기한·주소가 있는 문의 (신청 + 수임 가능). 같은 세션의 두 번째 제출은 세션 수를 늘리지 않는다.
+  const g: Entry = { ch: "google", host: "www.google.co.kr", lp: "/부산매매등기" };
+  await collect(env, { type: "page_view", path: "/부산매매등기", ip: "203.0.113.7", sid: "sessG0001", entry: g, entryView: true });
+  await collect(env, {
+    type: "consultation_submit",
+    path: "/부산매매등기",
+    ip: "203.0.113.7",
+    sid: "sessG0001",
+    entry: g,
+    meta: { kind: "inquiry", qual: "date,place" },
+  });
+  await collect(env, {
+    type: "consultation_submit",
+    path: "/부산매매등기",
+    ip: "203.0.113.7",
+    sid: "sessG0001",
+    entry: g,
+    meta: { kind: "inquiry", qual: "intent" },
+  });
+
+  // H: 다음 → 제출은 했지만 수임 신호가 아님
+  const h: Entry = { ch: "daum", host: "search.daum.net", lp: "/부산상속등기" };
+  await collect(env, { type: "page_view", path: "/부산상속등기", ip: "203.0.113.8", sid: "sessH0001", entry: h, entryView: true });
+  await collect(env, {
+    type: "consultation_submit",
+    path: "/부산상속등기",
+    ip: "203.0.113.8",
+    sid: "sessH0001",
+    entry: h,
+    meta: { kind: "inquiry", qual: "본문전체" },
+  });
+
   const login = await adminRequest(env, "POST", "login", {
     body: { password: PASSWORD },
     origin: "https://example.test",
@@ -193,13 +225,16 @@ async function main() {
   assert(report.coverage.acqDays === 1, `acqDays=1 got ${report.coverage.acqDays}`);
 
   const t = report.totals;
-  assert(t.sessions === 5, `external sessions=5 got ${t.sessions}`);
+  assert(t.sessions === 7, `external sessions=7 got ${t.sessions}`);
   assert(t.internalSessions === 1, `internal sessions=1 got ${t.internalSessions}`);
-  assert(t.acqSessions === 5, `acqSessions=5 got ${t.acqSessions}`);
-  assert(t.eng === 3, `engaged=3 (A,C,D) got ${t.eng}`);
-  assert(t.cv === 2, `converted sessions=2 (A,C) got ${t.cv}`);
-  assert(t.contacts === 3, `contacts=3 (phone,kakao,submit) got ${t.contacts}`);
-  assert(t.submit === 1, "submit=1");
+  assert(t.acqSessions === 7, `acqSessions=7 got ${t.acqSessions}`);
+  assert(t.eng === 5, `engaged=5 (A,C,D,G,H) got ${t.eng}`);
+  assert(t.cv === 4, `converted sessions=4 (A,C,G,H) got ${t.cv}`);
+  assert(t.clk === 2, `click sessions=2 (A,C) got ${t.clk}`);
+  assert(t.lead === 3, `lead sessions=3 (C,G,H) got ${t.lead}`);
+  assert(t.hire === 1, `hire sessions=1 (G) got ${t.hire}`);
+  assert(t.contacts === 6, `contacts=6 (phone,kakao,submit x4) got ${t.contacts}`);
+  assert(t.submit === 4, `submit=4 got ${t.submit}`);
   assert(t.m === 1, `mobile entries=1 got ${t.m}`);
 
   const ch = (id: string) => report.channels.find((r: { id: string }) => r.id === id);
@@ -207,8 +242,10 @@ async function main() {
   assert(ch("naver")?.phone === 1, "naver phone=1");
   assert(ch("ai")?.sessions === 1 && ch("ai")?.eng === 0, "ai channel bounce");
   assert(ch("campaign")?.cv === 1 && ch("campaign")?.kakao === 1 && ch("campaign")?.submit === 1, "campaign converts once, counts both actions");
+  assert(ch("campaign")?.clk === 1 && ch("campaign")?.lead === 1 && ch("campaign")?.hire === 0, "campaign is click+lead, not hire");
   assert(ch("external")?.sessions === 1, "spoofed google re-classified as external");
-  assert(!ch("google"), "no google row from spoofed client channel");
+  assert(ch("google")?.sessions === 1 && ch("google")?.hire === 1 && ch("google")?.lead === 1, "google hire submit");
+  assert(ch("daum")?.lead === 1 && ch("daum")?.hire === 0, "invalid qual is lead only");
   assert(report.channels[report.channels.length - 1].id === "internal", "internal channel sorted last");
 
   const ref = (host: string) => report.referrers.find((r: { host: string }) => r.host === host);
@@ -218,9 +255,14 @@ async function main() {
   assert(!report.referrers.some((r: { host: string }) => r.host.startsWith("xn--2j1br1na42")), "own host never listed");
 
   const land = (path: string) => report.landings.find((r: { path: string }) => r.path === path);
-  assert(land("/부산상속등기")?.s === 1 && land("/부산상속등기")?.cv === 1, "landing conversions by landing page");
-  assert(land("/부산상속등기")?.mix?.naver === 1, "landing channel mix");
-  assert(land("/부산상속등기")?.pv === 2, `landing pv counts whole session, got ${land("/부산상속등기")?.pv}`);
+  assert(
+    land("/부산상속등기")?.s === 2 && land("/부산상속등기")?.cv === 2 && land("/부산상속등기")?.clk === 1 && land("/부산상속등기")?.lead === 1,
+    "landing keeps click and lead on the same page",
+  );
+  assert(land("/부산상속등기")?.hire === 0, "invalid qual does not mark the landing hire-ready");
+  assert(land("/부산상속등기")?.mix?.naver === 1 && land("/부산상속등기")?.mix?.daum === 1, "landing channel mix");
+  assert(land("/부산상속등기")?.pv === 3, `landing pv counts whole session, got ${land("/부산상속등기")?.pv}`);
+  assert(land("/부산매매등기")?.hire === 1 && land("/부산매매등기")?.lead === 1, "hire landing");
 
   assert(report.campaigns.length === 1, `one campaign (numeric utm dropped), got ${report.campaigns.length}`);
   const camp = report.campaigns[0];
@@ -228,7 +270,8 @@ async function main() {
   assert(camp?.cv === 1, "campaign conversion");
 
   const today = report.daily[report.daily.length - 1];
-  assert(today.hasAcq === true && today.sessions === 5, `daily today sessions=5 got ${today.sessions}`);
+  assert(today.hasAcq === true && today.sessions === 7, `daily today sessions=7 got ${today.sessions}`);
+  assert(today.clk === 2 && today.lead === 3 && today.hire === 1, `daily split clk/lead/hire got ${today.clk}/${today.lead}/${today.hire}`);
   assert(today.byChannel.naver === 2 && today.byChannel.internal == null, "daily byChannel excludes internal");
   const heat = report.weekHour.flat().reduce((s: number, n: number) => s + n, 0);
   assert(heat === t.pageViews, `weekHour sum ${heat} = pageViews ${t.pageViews}`);

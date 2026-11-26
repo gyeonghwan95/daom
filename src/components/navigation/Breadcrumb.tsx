@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageShareButton } from "@/components/share/PageShareButton";
 import type { BreadcrumbItem } from "@/types/breadcrumb";
 
 type BreadcrumbProps = {
@@ -7,8 +8,8 @@ type BreadcrumbProps = {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav aria-label="breadcrumb" className="mb-6 md:mb-8">
-      <ol className="flex flex-wrap items-center gap-1 text-sm text-navy/60 md:text-base">
+    <nav aria-label="breadcrumb" className="mb-6 flex items-center justify-between gap-3 md:mb-8">
+      <ol className="flex min-w-0 flex-1 flex-wrap items-center gap-1 text-sm text-navy/60 md:text-base">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -39,6 +40,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           );
         })}
       </ol>
+      <PageShareButton menuAlign="end" className="shrink-0 print:hidden" />
     </nav>
   );
 }

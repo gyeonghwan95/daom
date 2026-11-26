@@ -9,6 +9,8 @@ type PageShareButtonProps = {
   /** pill: 제목 아래 작은 버튼 / bar: 글 끝 안내 한 줄 + 버튼 */
   variant?: "pill" | "bar";
   className?: string;
+  /** 펼친 메뉴가 버튼의 왼쪽 끝 또는 오른쪽 끝에 붙는다 */
+  menuAlign?: "start" | "end";
 };
 
 function ShareIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -30,11 +32,15 @@ function pageTitle(): string {
 }
 
 /**
- * '가족에게 보내기' — 휴대폰은 기본 공유 창(카카오톡·문자), PC는 링크 복사·이메일.
+ * '공유' — 휴대폰은 기본 공유 창(카카오톡·문자), PC는 링크 복사·이메일.
  * PC의 윈도우 공유 창은 쓰기 불편해 터치 기기에서만 기본 공유 창을 연다.
  * 공유 링크에는 ?from=family|work|share 만 붙고, 받은 사람에게는 SharedArrivalNotice가 문의 버튼을 보여 준다.
  */
-export function PageShareButton({ variant = "pill", className = "" }: PageShareButtonProps) {
+export function PageShareButton({
+  variant = "pill",
+  className = "",
+  menuAlign = "start",
+}: PageShareButtonProps) {
   const pathname = usePathname() ?? "/";
   const copy = getShareCopy(pathname);
   const [open, setOpen] = useState(false);
@@ -119,7 +125,7 @@ export function PageShareButton({ variant = "pill", className = "" }: PageShareB
       id={panelId}
       role="dialog"
       aria-label={copy.label}
-      className={`absolute top-full z-40 mt-2 w-[min(19rem,calc(100vw-2rem))] ${variant === "bar" ? "left-0 sm:left-auto sm:right-0" : "left-0"} rounded-2xl border border-navy/10 bg-white p-3 text-left shadow-[0_18px_40px_-18px_rgba(30,58,95,0.45)]`}
+      className={`absolute top-full z-40 mt-2 w-[min(19rem,calc(100vw-2rem))] ${variant === "bar" ? "left-0 sm:left-auto sm:right-0" : menuAlign === "end" ? "right-0" : "left-0"} rounded-2xl border border-navy/10 bg-white p-3 text-left shadow-[0_18px_40px_-18px_rgba(30,58,95,0.45)]`}
     >
       <p className="px-1 text-xs font-semibold text-navy/60">이 안내를 그대로 보냅니다</p>
       <div className="mt-2 grid gap-1.5">

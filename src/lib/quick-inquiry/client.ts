@@ -1,4 +1,5 @@
 import { trackEvent } from "@/lib/admin-ops/beacon";
+import { hireQualMeta } from "@/lib/consultation/hire-qual";
 import { parseContact } from "@/lib/quick-inquiry/shared";
 import type { InquiryResult } from "@/lib/quick-inquiry/shared";
 import type { AnalyticsEventType } from "@/lib/admin-ops/types";
@@ -13,6 +14,13 @@ export type SubmitQuickInquiryInput = {
   pageUrl?: string;
   /** 문의 유형 등 비식별 메타. 이름·전화·본문 금지. */
   analyticsMeta?: Record<string, string>;
+  /**
+   * 고객이 직접 쓴 문장만. 양식 틀 문장은 넣지 않는다.
+   * 기한·주소·맡기려는 뜻이 있으면 분석에는 그 표시만 남긴다.
+   */
+  qualifyText?: string;
+  /** 등기부·계약서처럼 맡길 서류가 준비된 경우 */
+  hasDocuments?: boolean;
 };
 
 export type SubmitQuickInquiryResult = InquiryResult;
@@ -77,6 +85,12 @@ export async function submitQuickInquiry(
   // Analytics must never block or alter inquiry UX (no PII).
   if (data.ok) {
     const meta: Record<string, string> = { ...(input.analyticsMeta || {}) };
+    if (input.qualifyText != null || input.hasDocuments) {
+      const qual = hireQualMeta(input.qualifyText ?? "", {
+        hasDocuments: input.hasDocuments,
+      });
+      if (qual) meta.qual = qual;
+    }
     void trackEvent({
       type: submitEventType(input.analyticsMeta),
       path: resolveInquiryPath(input.pageUrl),

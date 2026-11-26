@@ -159,14 +159,20 @@ export function ChannelTrendChart({
                     />
                   ) : null,
                 )}
-                {!stack.day.hasAcq ? null : stack.day.contacts ? (
-                  <circle
-                    cx={cx}
-                    cy={CONTACT_ROW_Y}
-                    r={Math.min(4, 1.6 + stack.day.contacts * 0.4)}
-                    className="admin-acq-chart__contact"
-                  />
-                ) : null}
+                {!stack.day.hasAcq ? null : (() => {
+                  const split =
+                    (stack.day.clk ?? 0) + (stack.day.lead ?? 0) + (stack.day.hire ?? 0);
+                  const mark =
+                    split > 0 ? stack.day.lead ?? 0 : (stack.day.converted ?? 0) > 0 ? stack.day.contacts ?? 0 : 0;
+                  return mark ? (
+                    <circle
+                      cx={cx}
+                      cy={CONTACT_ROW_Y}
+                      r={Math.min(4, 1.6 + mark * 0.4)}
+                      className="admin-acq-chart__contact"
+                    />
+                  ) : null;
+                })()}
                 {i % labelEvery === 0 || i === stacks.length - 1 ? (
                   <text x={cx} y={H - 9} textAnchor="middle" className="admin-acq-chart__tick">
                     {stack.day.date.slice(5).replace("-", ".")}
@@ -216,7 +222,11 @@ export function ChannelTrendChart({
             </ul>
             {current.day.hasAcq ? (
               <span className="admin-acq-tip__foot">
-                상담 연결 행동 {current.day.contacts ?? 0}건 · 연결 세션 {current.day.converted ?? 0}
+                {(current.day.clk ?? 0) + (current.day.lead ?? 0) + (current.day.hire ?? 0) > 0
+                  ? `클릭 ${current.day.clk ?? 0} · 신청 ${current.day.lead ?? 0} · 수임 가능 ${current.day.hire ?? 0}`
+                  : (current.day.converted ?? 0) > 0
+                    ? `합산 연결 ${current.day.converted}세션 (클릭·신청 분리 전)`
+                    : "클릭 0 · 신청 0 · 수임 가능 0"}
               </span>
             ) : (
               <span className="admin-acq-tip__foot">전환 지표 수집 전 날짜</span>
@@ -225,7 +235,7 @@ export function ChannelTrendChart({
         ) : null}
       </div>
       <p className="admin-acq-chart__note">
-        막대 = 외부 유입 세션(채널별) · 위쪽 점 = 그날 상담 연결 행동(전화·카카오톡·톡톡·예약·문의)
+        막대 = 외부 유입 세션(채널별) · 위쪽 점 = 그날 상담 신청 세션(분리 이전 날짜는 합산 연결)
       </p>
     </div>
   );

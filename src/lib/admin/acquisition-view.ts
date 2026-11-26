@@ -108,6 +108,23 @@ export function conversionRate(m: Pick<AcquisitionMetrics, "cv" | "s">, minDen =
   return ratio(m.cv, m.s, minDen);
 }
 
+export function clickRate(m: Pick<AcquisitionMetrics, "clk" | "s">, minDen = 1) {
+  return ratio(m.clk, m.s, minDen);
+}
+
+export function leadRate(m: Pick<AcquisitionMetrics, "lead" | "s">, minDen = 1) {
+  return ratio(m.lead, m.s, minDen);
+}
+
+export function hireRate(m: Pick<AcquisitionMetrics, "hire" | "s">, minDen = 1) {
+  return ratio(m.hire, m.s, minDen);
+}
+
+/** 클릭·신청 세션이 하나라도 있으면 분리 지표를 쓴다. 없으면 이전 합산(cv)만 있다. */
+export function hasSplitOutcomes(m: Pick<AcquisitionMetrics, "clk" | "lead" | "hire">): boolean {
+  return m.clk + m.lead + m.hire > 0;
+}
+
 export function pagesPerSession(m: Pick<AcquisitionMetrics, "pv" | "s">): number | null {
   return m.s ? m.pv / m.s : null;
 }
@@ -192,6 +209,9 @@ export type ReferrerGroupRow = {
   prevSessions: number;
   eng: number;
   cv: number;
+  clk: number;
+  lead: number;
+  hire: number;
   hosts: string[];
 };
 
@@ -215,6 +235,9 @@ export function groupReferrersByLabel(
         prevSessions: r.prevSessions ?? 0,
         eng: r.eng,
         cv: r.cv,
+        clk: r.clk,
+        lead: r.lead,
+        hire: r.hire,
         hosts: [r.host],
       });
     } else {
@@ -222,6 +245,9 @@ export function groupReferrersByLabel(
       cur.prevSessions += r.prevSessions ?? 0;
       cur.eng += r.eng;
       cur.cv += r.cv;
+      cur.clk += r.clk;
+      cur.lead += r.lead;
+      cur.hire += r.hire;
       if (!cur.hosts.includes(r.host)) cur.hosts.push(r.host);
     }
   }
@@ -256,7 +282,14 @@ export function buildAcquisitionInsights(
   const t = report.totals;
   const prev = report.prevTotals;
   const external = report.channels.filter((c) => c.id !== "internal");
-  const overallCv = conversionRate({ cv: t.cv, s: t.acqSessions }, MIN_SESSIONS_FOR_RATE);
+  const split = hasSplitOutcomes(t);
+  const overallRate = split
+    ? leadRate({ lead: t.lead, s: t.acqSessions }, MIN_SESSIONS_FOR_RATE)
+    : conversionRate({ cv: t.cv, s: t.acqSessions }, MIN_SESSIONS_FOR_RATE);
+  const rateOf = (row: AcquisitionMetrics) =>
+    split
+      ? leadRate(row, MIN_SESSIONS_FOR_RATE)
+      : conversionRate(row, MIN_SESSIONS_FOR_RATE);
 
   if (prev && prev.sessions >= 10) {
     const change = ((t.sessions - prev.sessions) / prev.sessions) * 100;
@@ -286,16 +319,22 @@ export function buildAcquisitionInsights(
   }
 
   const ranked = external
-    .map((c) => ({ c, rate: conversionRate(c, MIN_SESSIONS_FOR_RATE) }))
+    .map((c) => ({ c, rate: rateOf(c) }))
     .filter((r): r is { c: (typeof external)[number]; rate: number } => r.rate != null)
     .sort((a, b) => b.rate - a.rate);
   const best = ranked[0];
-  if (best && overallCv != null && best.rate > 0 && best.rate >= overallCv * 1.3) {
+  if (best && overallRate != null && best.rate > 0 && best.rate >= overallRate * 1.3) {
     out.push({
       id: "best-converting",
       level: "info",
-      title: `${channelLabel(best.c.id)} 유입의 상담 연결률이 가장 높습니다 (${best.rate.toFixed(1)}%)`,
-      detail: `전체 평균 ${overallCv.toFixed(1)}%의 ${(best.rate / Math.max(overallCv, 0.1)).toFixed(1)}배. 이 채널로 들어오는 페이지를 우선 보강하세요.`,
+      title: split
+        ? `${channelLabel(best.c.id)} 유입의 상담 신청률이 가장 높습니다 (${best.rate.toFixed(1)}%)`
+        : `${channelLabel(best.c.id)} 유입의 상담 연결률이 가장 높습니다 (${best.rate.toFixed(1)}%)`,
+      detail: `전체 평균 ${overallRate.toFixed(1)}%의 ${(best.rate / Math.max(overallRate, 0.1)).toFixed(1)}배. ${
+        split
+          ? "신청은 문의 제출이 있는 세션입니다. 전화·카카오 클릭만 있는 세션은 빠집니다."
+          : "이 채널로 들어오는 페이지를 우선 보강하세요."
+      }`,
       href: withDays(`channel=${encodeURIComponent(best.c.id)}`),
     });
   }
@@ -349,15 +388,42 @@ export function buildAcquisitionInsights(
     });
   }
 
+  const clickOnlyLanding = split
+    ? report.landings
+        .filter((l) => l.key !== "(other)" && l.s >= 20 && l.clk > 0 && l.lead === 0)
+        .sort((a, b) => b.s - a.s)[0]
+    : undefined;
+  if (clickOnlyLanding && clickOnlyLanding.key !== weakLanding?.l.key) {
+    out.push({
+      id: "click-only-landing",
+      level: "warning",
+      title: `"${pageLabel(clickOnlyLanding.path)}" 클릭 ${clickOnlyLanding.clk}세션, 상담 신청 0`,
+      detail: "전화·카카오톡·톡톡·예약은 눌렸지만 문의 제출은 없습니다. 맡길 상황과 기한을 적는 신청이 먼저 보이게 하세요.",
+      href: withDays(`landing=${encodeURIComponent(normalizeDisplayPath(clickOnlyLanding.path))}`),
+    });
+  }
+
   const silentLanding = report.landings
-    .filter((l) => l.key !== "(other)" && l.s >= 30 && l.cv === 0)
+    .filter((l) =>
+      split
+        ? l.key !== "(other)" && l.s >= 30 && l.clk === 0 && l.lead === 0
+        : l.key !== "(other)" && l.s >= 30 && l.cv === 0,
+    )
     .sort((a, b) => b.s - a.s)[0];
-  if (silentLanding && silentLanding.key !== weakLanding?.l.key) {
+  if (
+    silentLanding &&
+    silentLanding.key !== weakLanding?.l.key &&
+    silentLanding.key !== clickOnlyLanding?.key
+  ) {
     out.push({
       id: "silent-landing",
       level: "warning",
-      title: `"${pageLabel(silentLanding.path)}" 진입 ${silentLanding.s}세션, 상담 연결 0`,
-      detail: "유입은 꾸준하지만 연락 행동으로 이어지지 않습니다. 본문 중간 CTA와 연락 수단 노출을 확인하세요.",
+      title: split
+        ? `"${pageLabel(silentLanding.path)}" 진입 ${silentLanding.s}세션, 상담 신청 0`
+        : `"${pageLabel(silentLanding.path)}" 진입 ${silentLanding.s}세션, 상담 연결 0`,
+      detail: split
+        ? "유입은 꾸준하지만 클릭도 신청도 없습니다. 첫 화면에서 맡길 일과 신청 버튼을 확인하세요."
+        : "유입은 꾸준하지만 연락 행동으로 이어지지 않습니다. 본문 중간 CTA와 연락 수단 노출을 확인하세요.",
       href: withDays(`landing=${encodeURIComponent(normalizeDisplayPath(silentLanding.path))}`),
     });
   }
@@ -383,15 +449,23 @@ export function buildAcquisitionInsights(
       const search = groups.find((g) => /검색$/.test(g.label));
       const blog = groups.find((g) => /블로그|카페|인플루언서|뉴스/.test(g.label));
       if (!search || !blog || search.sessions < 10 || blog.sessions < 5) return null;
-      const searchCv = conversionRate({ cv: search.cv, s: search.sessions }, 8);
-      const blogCv = conversionRate({ cv: blog.cv, s: blog.sessions }, 5);
+      const searchCv = split
+        ? leadRate({ lead: search.lead, s: search.sessions }, 8)
+        : conversionRate({ cv: search.cv, s: search.sessions }, 8);
+      const blogCv = split
+        ? leadRate({ lead: blog.lead, s: blog.sessions }, 5)
+        : conversionRate({ cv: blog.cv, s: blog.sessions }, 5);
       if (searchCv == null || blogCv == null) return null;
       if (blogCv < searchCv * 0.45) {
         return {
           id: `portal-gap-${c.id}`,
           level: "warning" as const,
-          title: `${channelLabel(c.id)} ${blog.label} 연결률 ${blogCv.toFixed(1)}% · 검색(${searchCv.toFixed(1)}%)보다 낮음`,
-          detail: `${blog.label} ${blog.sessions}세션 중 상담 연결이 적습니다. 블로그·카페 글의 첫 화면 CTA와 사무소 링크를 확인하세요.`,
+          title: split
+            ? `${channelLabel(c.id)} ${blog.label} 신청률 ${blogCv.toFixed(1)}% · 검색(${searchCv.toFixed(1)}%)보다 낮음`
+            : `${channelLabel(c.id)} ${blog.label} 연결률 ${blogCv.toFixed(1)}% · 검색(${searchCv.toFixed(1)}%)보다 낮음`,
+          detail: split
+            ? `${blog.label} ${blog.sessions}세션 중 문의 제출이 적습니다. 글에서 바로 맡길 상황을 적게 하세요.`
+            : `${blog.label} ${blog.sessions}세션 중 상담 연결이 적습니다. 블로그·카페 글의 첫 화면 CTA와 사무소 링크를 확인하세요.`,
           href: withDays(`channel=${encodeURIComponent(c.id)}`),
         };
       }

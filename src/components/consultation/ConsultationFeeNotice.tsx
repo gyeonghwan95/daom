@@ -1,3 +1,5 @@
+import { consultationDecisionLine } from "@/lib/consultation-copy";
+
 type ConsultationFeeNoticeProps = {
   className?: string;
   theme?: "light" | "dark" | "muted";
@@ -15,8 +17,8 @@ export function ConsultationFeeNotice({
 
   return (
     <p className={`text-xs leading-relaxed ${themeClass} ${className}`}>
-      ※ 상담만 받고 맡기지 않으셔도 됩니다. 맡기실 때는 법무사 보수와 세금·수수료를 나눠
-      먼저 알려 드리고, 확정 금액은 서류를 확인한 뒤 말씀드립니다.
+      ※ {consultationDecisionLine} 법무사 보수와 세금·수수료는 나눠 알려 드리고, 확정
+      금액은 서류를 확인한 뒤 말씀드립니다.
     </p>
   );
 }

@@ -316,6 +316,8 @@ export function ConsultWizardShell() {
           kind: "wizard",
           field: draft.situationIds.slice(0, 4).join(",").slice(0, 80),
         },
+        qualifyText: draft.situationNote,
+        hasDocuments: draft.documentIds.some((id) => id !== "none-ready"),
       });
 
       if (!result.ok) {

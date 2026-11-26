@@ -287,6 +287,19 @@ export function ConsultationInquiryForm({
           kind: inquiryCluster === "corporate-legal" ? "corporate-legal" : "inquiry",
           field: String(form.field || inquiryCluster || "").slice(0, 40),
         },
+        qualifyText: [
+          intentPrefix && form.situation.startsWith(intentPrefix)
+            ? form.situation.slice(intentPrefix.length)
+            : form.situation,
+          form.propertyRegion.trim() &&
+          form.propertyRegion.trim() !== (defaultPropertyRegion ?? "").trim()
+            ? form.propertyRegion
+            : "",
+          form.clientRegion,
+        ]
+          .join("\n")
+          .trim(),
+        hasDocuments: form.hasDocuments,
       });
 
       if (result.ok) {

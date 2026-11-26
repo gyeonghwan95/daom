@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getAllCaseRecords } from "@/lib/cases";
 import type { CaseRecord } from "@/lib/cases/types";
-import { consultationReplySla } from "@/lib/consultation-copy";
+import { consultationDecisionLine, consultationReplySla } from "@/lib/consultation-copy";
 import { cardSummary } from "@/lib/text/card-summary";
 import {
   GROUP_CASE_CATEGORIES,
@@ -99,7 +99,7 @@ export function CoreLandingProcess({ path }: { path: string }) {
     },
     {
       title: "상황·서류 확인",
-      body: `안윤정 법무사가 ${GROUP_FIRST_CHECK[group]} 필요한 서류와 범위, 보수와 세금·수수료를 나누어 안내합니다. 이 단계에서는 맡기지 않으셔도 됩니다.`,
+      body: `안윤정 법무사가 ${GROUP_FIRST_CHECK[group]} 필요한 서류와 범위, 보수와 세금·수수료를 나누어 안내합니다. ${consultationDecisionLine}`,
     },
     {
       title: "맡기신 뒤 직접 진행",

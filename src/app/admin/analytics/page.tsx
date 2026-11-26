@@ -20,7 +20,7 @@ import {
   channelColor,
   channelLabel,
   contactBreakdown,
-  conversionRate,
+  clickRate,
   deltaCount,
   deltaPoints,
   DETAIL_CHANNELS,
@@ -30,7 +30,10 @@ import {
   formatCount,
   formatDecimal,
   formatRate,
+  hasSplitOutcomes,
+  hireRate,
   groupReferrersByLabel,
+  leadRate,
   pageLabel,
   pagesPerSession,
   ratio,
@@ -175,21 +178,37 @@ const rateCols = {
     render: (r) => formatRate(engagementRate(r, MIN_RATE_BASE), 0),
     sortValue: (r) => engagementRate(r, MIN_RATE_BASE),
   }),
-  converted: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
-    key: "cv",
-    label: "상담 연결",
-    title: "전화·카카오톡·톡톡·예약·문의 중 하나 이상을 한 세션 수",
+  click: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
+    key: "clk",
+    label: "클릭",
+    title: "전화·카카오톡·톡톡·예약 중 하나를 한 세션. 문의 제출은 포함하지 않습니다.",
     numeric: true,
-    render: (r) => formatCount(r.cv),
-    sortValue: (r) => r.cv,
+    render: (r) => formatCount(r.clk),
+    sortValue: (r) => r.clk,
   }),
-  conversion: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
-    key: "cvr",
-    label: "연결률",
-    title: "상담 연결 세션 ÷ 진입 세션",
+  lead: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
+    key: "lead",
+    label: "신청",
+    title: "문의 제출이 있는 세션",
     numeric: true,
-    render: (r) => <strong>{formatRate(conversionRate(r, MIN_RATE_BASE))}</strong>,
-    sortValue: (r) => conversionRate(r, MIN_RATE_BASE),
+    render: (r) => formatCount(r.lead),
+    sortValue: (r) => r.lead,
+  }),
+  hire: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
+    key: "hire",
+    label: "수임 가능",
+    title: "기한·주소·맡기려는 문장 또는 준비된 서류가 있는 신청 세션",
+    numeric: true,
+    render: (r) => formatCount(r.hire),
+    sortValue: (r) => r.hire,
+  }),
+  leadRate: <T extends AcquisitionMetrics>(): SortableColumn<T> => ({
+    key: "leadRate",
+    label: "신청률",
+    title: "상담 신청 세션 ÷ 진입 세션",
+    numeric: true,
+    render: (r) => <strong>{formatRate(leadRate(r, MIN_RATE_BASE))}</strong>,
+    sortValue: (r) => leadRate(r, MIN_RATE_BASE),
   }),
 };
 
@@ -355,20 +374,37 @@ export default function AdminAnalyticsPage() {
       sortValue: (r) => engagementRate({ eng: r.eng, s: r.sessions }, MIN_RATE_BASE),
     },
     {
-      key: "cv",
-      label: "상담 연결",
+      key: "clk",
+      label: "클릭",
+      title: "전화·카카오톡·톡톡·예약 세션",
       numeric: true,
-      render: (r) => formatCount(r.cv),
-      sortValue: (r) => r.cv,
+      render: (r) => formatCount(r.clk),
+      sortValue: (r) => r.clk,
     },
     {
-      key: "cvr",
-      label: "연결률",
+      key: "lead",
+      label: "신청",
+      title: "문의 제출 세션",
+      numeric: true,
+      render: (r) => formatCount(r.lead),
+      sortValue: (r) => r.lead,
+    },
+    {
+      key: "hire",
+      label: "수임 가능",
+      title: "기한·주소·맡기려는 문장 또는 준비 서류가 있는 신청",
+      numeric: true,
+      render: (r) => formatCount(r.hire),
+      sortValue: (r) => r.hire,
+    },
+    {
+      key: "leadRate",
+      label: "신청률",
       numeric: true,
       render: (r) => (
-        <strong>{formatRate(conversionRate({ cv: r.cv, s: r.sessions }, MIN_RATE_BASE))}</strong>
+        <strong>{formatRate(leadRate({ lead: r.lead, s: r.sessions }, MIN_RATE_BASE))}</strong>
       ),
-      sortValue: (r) => conversionRate({ cv: r.cv, s: r.sessions }, MIN_RATE_BASE),
+      sortValue: (r) => leadRate({ lead: r.lead, s: r.sessions }, MIN_RATE_BASE),
     },
   ];
 
@@ -422,8 +458,10 @@ export default function AdminAnalyticsPage() {
           render: (r) => formatRate(ratio(r.m, r.s, MIN_RATE_BASE), 0),
           sortValue: (r) => ratio(r.m, r.s, MIN_RATE_BASE),
         },
-        rateCols.converted<AcquisitionChannelRow>(),
-        rateCols.conversion<AcquisitionChannelRow>(),
+        rateCols.click<AcquisitionChannelRow>(),
+        rateCols.lead<AcquisitionChannelRow>(),
+        rateCols.hire<AcquisitionChannelRow>(),
+        rateCols.leadRate<AcquisitionChannelRow>(),
         {
           key: "contacts",
           label: "연락 행동",
@@ -473,8 +511,10 @@ export default function AdminAnalyticsPage() {
       sortValue: (r) => (r.prevSessions ? (r.s - r.prevSessions) / r.prevSessions : null),
     },
     rateCols.engagement<ReferrerRow>(),
-    rateCols.converted<ReferrerRow>(),
-    rateCols.conversion<ReferrerRow>(),
+    rateCols.click<ReferrerRow>(),
+    rateCols.lead<ReferrerRow>(),
+    rateCols.hire<ReferrerRow>(),
+    rateCols.leadRate<ReferrerRow>(),
   ];
 
   const landingColumns: SortableColumn<LandingRow>[] = [
@@ -519,8 +559,10 @@ export default function AdminAnalyticsPage() {
       render: (r) => formatDecimal(r.s >= MIN_RATE_BASE ? pagesPerSession(r) : null),
       sortValue: (r) => (r.s >= MIN_RATE_BASE ? pagesPerSession(r) : null),
     },
-    rateCols.converted<LandingRow>(),
-    rateCols.conversion<LandingRow>(),
+    rateCols.click<LandingRow>(),
+    rateCols.lead<LandingRow>(),
+    rateCols.hire<LandingRow>(),
+    rateCols.leadRate<LandingRow>(),
     {
       key: "delta",
       label: "증감",
@@ -548,8 +590,10 @@ export default function AdminAnalyticsPage() {
     },
     { key: "s", label: "세션", numeric: true, render: (r) => formatCount(r.s), sortValue: (r) => r.s },
     rateCols.engagement<CampaignRow>(),
-    rateCols.converted<CampaignRow>(),
-    rateCols.conversion<CampaignRow>(),
+    rateCols.click<CampaignRow>(),
+    rateCols.lead<CampaignRow>(),
+    rateCols.hire<CampaignRow>(),
+    rateCols.leadRate<CampaignRow>(),
     {
       key: "contacts",
       label: "연락 행동",
@@ -560,15 +604,17 @@ export default function AdminAnalyticsPage() {
   ];
 
   const stamp = report ? `${report.range.start}_${report.range.end}` : "";
-  const csvRate = (m: AcquisitionMetrics, kind: "eng" | "cv") => {
-    const v = kind === "eng" ? engagementRate(m) : conversionRate(m);
+  const csvRate = (m: AcquisitionMetrics, kind: "eng" | "lead") => {
+    const v = kind === "eng" ? engagementRate(m) : leadRate(m);
     return v == null ? null : Number(v.toFixed(1));
   };
 
   const engRate = t ? ratio(t.eng, t.acqSessions) : null;
   const prevEngRate = p ? ratio(p.eng, p.acqSessions) : null;
-  const cvRate = t ? ratio(t.cv, t.acqSessions) : null;
-  const prevCvRate = p ? ratio(p.cv, p.acqSessions) : null;
+  const clkRate = t ? clickRate({ clk: t.clk, s: t.acqSessions }) : null;
+  const appRate = t ? leadRate({ lead: t.lead, s: t.acqSessions }) : null;
+  const readyRate = t ? hireRate({ hire: t.hire, s: t.acqSessions }) : null;
+  const splitOutcomes = t ? hasSplitOutcomes(t) : false;
   const coverageGap = report ? report.coverage.acqDays < report.coverage.days : false;
 
   return (
@@ -625,8 +671,8 @@ export default function AdminAnalyticsPage() {
       {report && coverageGap ? (
         <p className="admin-alert admin-alert--info">
           {report.coverage.firstAcqDate
-            ? `참여율·상담 연결·유입처·랜딩·캠페인 지표는 ${report.coverage.firstAcqDate}부터 수집됩니다 (이번 기간 ${report.coverage.days}일 중 ${report.coverage.acqDays}일).`
-            : "참여율·상담 연결·유입처·랜딩·캠페인 지표는 이번 업데이트 이후 방문부터 수집됩니다."}{" "}
+            ? `참여율·유입처·랜딩·캠페인 지표는 ${report.coverage.firstAcqDate}부터 수집됩니다 (이번 기간 ${report.coverage.days}일 중 ${report.coverage.acqDays}일).`
+            : "참여율·유입처·랜딩·캠페인 지표는 이번 업데이트 이후 방문부터 수집됩니다."}{" "}
           세션 수와 채널별 추이는 기존 데이터로 전체 기간을 보여줍니다.
         </p>
       ) : null}
@@ -653,20 +699,6 @@ export default function AdminAnalyticsPage() {
               note={`참여 세션 ${formatCount(t.eng)}`}
             />
             <Kpi
-              label="상담 연결 세션"
-              value={formatCount(t.cv)}
-              delta={deltaCount(t.cv, p && p.acqSessions ? p.cv : null)}
-              spark={report.daily.map((d) => d.converted ?? 0)}
-              color="#15803d"
-              note="전화·카카오톡·톡톡·예약·문의"
-            />
-            <Kpi
-              label="상담 연결률"
-              value={formatRate(cvRate, 2)}
-              delta={deltaPoints(cvRate, prevCvRate)}
-              note="연결 세션 ÷ 외부 유입 세션"
-            />
-            <Kpi
               label="세션당 페이지"
               value={formatDecimal(pagesPerSession({ pv: t.pv, s: t.acqSessions }))}
               delta={deltaCount(
@@ -675,7 +707,46 @@ export default function AdminAnalyticsPage() {
               )}
               note={`모바일 진입 ${formatRate(ratio(t.m, t.acqSessions), 0)}`}
             />
+            <Kpi
+              label="클릭 세션"
+              value={formatCount(t.clk)}
+              delta={deltaCount(t.clk, p && p.acqSessions ? p.clk : null)}
+              spark={report.daily.map((d) => d.clk ?? 0)}
+              color="#b45309"
+              note={`클릭률 ${formatRate(clkRate, 1)} · 전화·카카오톡·톡톡·예약`}
+            />
+            <Kpi
+              label="상담 신청"
+              value={formatCount(t.lead)}
+              delta={deltaCount(t.lead, p && p.acqSessions ? p.lead : null)}
+              spark={report.daily.map((d) => d.lead ?? 0)}
+              color="#15803d"
+              note={`신청률 ${formatRate(appRate, 1)} · 문의 제출 세션`}
+            />
+            <Kpi
+              label="수임 가능"
+              value={formatCount(t.hire)}
+              delta={deltaCount(t.hire, p && p.acqSessions ? p.hire : null)}
+              spark={report.daily.map((d) => d.hire ?? 0)}
+              color="#0f766e"
+              note={`수임 가능률 ${formatRate(readyRate, 1)} · 기한·주소·맡기려는 문장 또는 서류`}
+            />
           </div>
+          {t.cv > 0 && !splitOutcomes ? (
+            <p className="admin-alert admin-alert--info">
+              클릭·신청·수임 가능은 이 구분으로 저장한 뒤의 방문부터 셉니다. 그 전 방문 {formatCount(t.cv)}세션은
+              전화·카카오톡·톡톡·예약·문의 제출이 한 숫자(합산 상담 연결)로만 남아 있습니다.
+            </p>
+          ) : t.cv > t.clk + t.lead ? (
+            <p className="admin-alert admin-alert--info">
+              합산 상담 연결 {formatCount(t.cv)}세션에는 구분 저장 이전 방문이 포함되어 있습니다. 위의 클릭·신청·수임
+              가능은 구분 이후 세션만 셉니다.
+            </p>
+          ) : null}
+          <p className="admin-acq-hint">
+            클릭은 전화·카카오톡·톡톡·예약입니다. 상담 신청은 문의 제출입니다. 수임 가능은 그 신청에 기한·주소·맡기려는
+            문장 또는 준비된 서류가 있는 경우입니다. 세션당 한 번씩만 셉니다.
+          </p>
 
           <div className="admin-acq-actions-row">
             <span>연락 행동 합계 {formatCount(t.contacts)}건</span>
@@ -699,14 +770,16 @@ export default function AdminAnalyticsPage() {
                 onClick={() =>
                   downloadCsv(
                     `유입채널_${stamp}.csv`,
-                    ["채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "전화", "카카오톡", "톡톡", "예약", "문의", "페이지뷰"],
+                    ["채널", "세션", "이전 세션", "참여율%", "클릭 세션", "상담 신청", "수임 가능", "신청률%", "전화", "카카오톡", "톡톡", "예약", "문의", "페이지뷰"],
                     report.channels.map((r) => [
                       channelLabel(r.id),
                       r.sessions,
                       r.prevSessions,
                       csvRate(r, "eng"),
-                      r.cv,
-                      csvRate(r, "cv"),
+                      r.clk,
+                      r.lead,
+                      r.hire,
+                      csvRate(r, "lead"),
                       r.phone,
                       r.kakao,
                       r.talk,
@@ -794,21 +867,23 @@ export default function AdminAnalyticsPage() {
                       referrerMode === "group"
                         ? downloadCsv(
                             `유입처_이름별_${stamp}.csv`,
-                            ["유입처", "채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "호스트"],
+                            ["유입처", "채널", "세션", "이전 세션", "참여율%", "클릭 세션", "상담 신청", "수임 가능", "신청률%", "호스트"],
                             view.groupedReferrers.map((r) => [
                               r.label,
                               channelLabel(r.channel),
                               r.sessions,
                               r.prevSessions,
                               engagementRate({ eng: r.eng, s: r.sessions }),
-                              r.cv,
-                              conversionRate({ cv: r.cv, s: r.sessions }),
+                              r.clk,
+                              r.lead,
+                              r.hire,
+                              leadRate({ lead: r.lead, s: r.sessions }),
                               r.hosts.join(" "),
                             ]),
                           )
                         : downloadCsv(
                             `유입처_호스트별_${stamp}.csv`,
-                            ["유입처", "호스트", "채널", "세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%"],
+                            ["유입처", "호스트", "채널", "세션", "이전 세션", "참여율%", "클릭 세션", "상담 신청", "수임 가능", "신청률%"],
                             filteredReferrers.map((r) => [
                               describeReferrerHost(r.host).label,
                               r.host,
@@ -816,8 +891,10 @@ export default function AdminAnalyticsPage() {
                               r.s,
                               r.prevSessions,
                               csvRate(r, "eng"),
-                              r.cv,
-                              csvRate(r, "cv"),
+                              r.clk,
+                              r.lead,
+                              r.hire,
+                              csvRate(r, "lead"),
                             ]),
                           )
                     }
@@ -868,15 +945,17 @@ export default function AdminAnalyticsPage() {
                 onClick={() =>
                   downloadCsv(
                     `랜딩페이지_${stamp}.csv`,
-                    ["페이지", "경로", "진입 세션", "이전 세션", "참여율%", "상담 연결 세션", "연결률%", "페이지뷰"],
+                    ["페이지", "경로", "진입 세션", "이전 세션", "참여율%", "클릭 세션", "상담 신청", "수임 가능", "신청률%", "페이지뷰"],
                     filteredLandings.map((r) => [
                       pageLabel(r.path),
                       normalizeDisplayPath(r.path),
                       r.s,
                       r.prevSessions,
                       csvRate(r, "eng"),
-                      r.cv,
-                      csvRate(r, "cv"),
+                      r.clk,
+                      r.lead,
+                      r.hire,
+                      csvRate(r, "lead"),
                       r.pv,
                     ]),
                   )
@@ -894,7 +973,7 @@ export default function AdminAnalyticsPage() {
                 aria-label="랜딩 페이지 검색"
               />
               <span className="admin-acq-hint">
-                방문자가 사이트에 처음 들어온 페이지입니다. 참여율·연결률은 그 페이지로 시작한 세션 전체 기준.
+                방문자가 사이트에 처음 들어온 페이지입니다. 참여율·신청률은 그 페이지로 시작한 세션 전체 기준.
               </span>
             </div>
             <SortableTable
@@ -916,15 +995,17 @@ export default function AdminAnalyticsPage() {
                   onClick={() =>
                     downloadCsv(
                       `캠페인_${stamp}.csv`,
-                      ["출처", "매체", "캠페인", "세션", "참여율%", "상담 연결 세션", "연결률%"],
+                      ["출처", "매체", "캠페인", "세션", "참여율%", "클릭 세션", "상담 신청", "수임 가능", "신청률%"],
                       report.campaigns.map((r) => [
                         r.source,
                         r.medium,
                         r.campaign,
                         r.s,
                         csvRate(r, "eng"),
-                        r.cv,
-                        csvRate(r, "cv"),
+                        r.clk,
+                        r.lead,
+                        r.hire,
+                        csvRate(r, "lead"),
                       ]),
                     )
                   }
@@ -966,7 +1047,7 @@ export default function AdminAnalyticsPage() {
               <div>
                 <dt>포털·AI 세부</dt>
                 <dd>
-                  같은 이름(예: 네이버 검색)의 모바일·PC 호스트를 합칩니다. 검색·블로그·지도·AI 엔진별 비중과 연결률을 봅니다.
+                  같은 이름(예: 네이버 검색)의 모바일·PC 호스트를 합칩니다. 검색·블로그·지도·AI 엔진별 비중과 신청률을 봅니다.
                 </dd>
               </div>
               <div>
@@ -974,8 +1055,26 @@ export default function AdminAnalyticsPage() {
                 <dd>2페이지 이상 보거나 연락·검색·계산기·자가진단 중 하나를 한 세션.</dd>
               </div>
               <div>
-                <dt>상담 연결</dt>
-                <dd>전화·카카오톡·네이버 톡톡·네이버 예약·문의 제출 중 하나 이상. 세션당 1회로 셉니다.</dd>
+                <dt>클릭</dt>
+                <dd>전화·카카오톡·네이버 톡톡·네이버 예약. 세션당 1회. 문의 제출은 넣지 않습니다.</dd>
+              </div>
+              <div>
+                <dt>상담 신청</dt>
+                <dd>문의 양식을 제출한 세션. 세션당 1회. 전화만 누른 세션은 포함하지 않습니다.</dd>
+              </div>
+              <div>
+                <dt>수임 가능</dt>
+                <dd>
+                  상담 신청 중 기한·주소·맡기려는 문장이 있거나, 등기부·계약서 등 서류를 준비했다고 표시한 세션.
+                  본문은 저장하지 않고 해당 여부만 남깁니다.
+                </dd>
+              </div>
+              <div>
+                <dt>합산 상담 연결</dt>
+                <dd>
+                  구분 저장 이전의 숫자입니다. 전화·카카오톡·톡톡·예약·문의 제출을 한 세션으로 합친 값이라, 위의 세 지표와
+                  같지 않습니다.
+                </dd>
               </div>
               <div>
                 <dt>제외</dt>

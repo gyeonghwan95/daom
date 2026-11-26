@@ -1442,6 +1442,11 @@ a.admin-page-identity__path:hover {
 .admin-acq-kpis {
   margin-bottom: 0.6rem;
 }
+@media (min-width: 1100px) {
+  .admin-acq-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 .admin-acq-kpi__row {
   display: flex;
   align-items: flex-end;
