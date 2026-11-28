@@ -5,7 +5,13 @@ type JsonLdProps = {
 };
 
 export function JsonLd({ data }: JsonLdProps) {
-  const schemas = Array.isArray(data) ? data : [data];
+  // 빈 객체나 문항이 모두 빠진 FAQPage는 출력하지 않는다(json-ld.ts의 반복 FAQ 제외 후 생길 수 있음)
+  const schemas = (Array.isArray(data) ? data : [data]).filter(
+    (schema) =>
+      schema &&
+      Object.keys(schema).length > 0 &&
+      !(schema["@type"] === "FAQPage" && Array.isArray(schema.mainEntity) && schema.mainEntity.length === 0),
+  );
 
   return (
     <>

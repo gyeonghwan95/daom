@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site";
 import { SERVICE_ANSWERS } from "@/data/seo/service-answers";
 import { SERVICE_QA } from "@/data/seo/service-answers/qa";
 import { officeHours, officeLocation } from "@/lib/office-location";
+import { getBusinessProfileEntries } from "@/lib/seo/business-profiles";
 
 /** 업무별 핵심 답변 첫 문장 — AI가 업무 이름·요지·URL을 한 번에 읽도록 */
 function serviceAnswerLines(): string[] {
@@ -47,6 +48,7 @@ export function buildLlmsTxt(): string {
     `- 주소: ${street}`,
     "- 네이버 플레이스: https://map.naver.com/p/entry/place/2035745096",
     "- 네이버 블로그: https://blog.naver.com/law-yoon-91",
+    ...getBusinessProfileEntries().map((e) => `- ${e.label}: ${e.url}`),
     `- 업무별 핵심 답변 전문: ${siteConfig.url}/llms-full.txt`,
     "",
     "## 사무소 한눈에 (사이트 각 추천·사무소 안내 페이지의 '다옴법무사사무소 한눈에 보기'와 같은 내용)",

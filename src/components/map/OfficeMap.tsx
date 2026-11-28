@@ -12,6 +12,7 @@ import {
   officeLocation,
 } from "@/lib/office-location";
 import { siteConfig } from "@/lib/site";
+import { BUSINESS_PROFILE_URLS } from "@/lib/seo/business-profiles";
 
 type MapMode = "loading" | "kakao" | "fallback";
 
@@ -38,7 +39,8 @@ function MapExternalLinks({ compact = false }: { compact?: boolean }) {
         label="네이버 지도"
       />
       <a
-        href={getKakaoMapPlaceUrl(siteConfig.name)}
+        // 등록된 카카오맵 업체 페이지(후기·사진 포함)로 연다. 없으면 좌표 링크(2026-11-28)
+        href={BUSINESS_PROFILE_URLS.kakaoMapPlace || getKakaoMapPlaceUrl(siteConfig.name)}
         target="_blank"
         rel="noopener noreferrer"
         className={`${linkClass} bg-[#FEE500] text-[#191919] hover:brightness-95`}

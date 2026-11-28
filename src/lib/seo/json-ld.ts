@@ -41,6 +41,7 @@ import type { BreadcrumbItem } from "@/types/breadcrumb";
 import type { FaqItem } from "@/lib/faq-data";
 import type { ServiceFaq } from "@/types/service";
 import type { ContentMeta } from "@/types/content-mdx";
+import repeatedFaqMarkup from "@/data/seo/faq-markup-repeated.json";
 import {
   lawyerActivities,
   lawyerCredentials,
@@ -54,7 +55,9 @@ type SchemaObject = Record<string, unknown>;
 export const schemaIds = {
   organization: `${siteConfig.url}/#organization`,
   person: `${siteConfig.url}/#person`,
-  legalService: `${siteConfig.url}/#legalservice`,
+  // LegalService와 LocalBusiness가 같은 사무소인데 @id가 둘이라 AI·지식그래프가 업체를 둘로 볼 수 있었다.
+  // 같은 @id로 합쳐, 두 노드의 속성이 한 업체로 병합되게 한다(2026-11-28).
+  legalService: `${siteConfig.url}/#localbusiness`,
   localBusiness: `${siteConfig.url}/#localbusiness`,
   website: `${siteConfig.url}/#website`,
 } as const;
@@ -418,7 +421,16 @@ export function buildBreadcrumbSchema(
   });
 }
 
+/** 여러 페이지에 똑같이 반복되는 FAQ는 화면에만 두고 FAQPage 구조화 데이터에서는 뺀다(스팸성 반복 마크업 방지, 2026-11-28). */
+const REPEATED_FAQ_KEYS: ReadonlySet<string> = new Set(repeatedFaqMarkup.keys);
+const normalizeFaqText = (s: string) => s.replace(/\s+/g, " ").trim();
+const FAQ_KEY_SEPARATOR = String.fromCharCode(0);
+function isRepeatedFaq(faq: FaqInput): boolean {
+  return REPEATED_FAQ_KEYS.has(`${normalizeFaqText(faq.question)}${FAQ_KEY_SEPARATOR}${normalizeFaqText(faq.answer)}`);
+}
+
 export function buildFaqPageSchema(faqs: FaqInput[], path?: string): SchemaObject {
+  faqs = faqs.filter((faq) => !isRepeatedFaq(faq));
   return compact({
     "@context": "https://schema.org",
     "@type": "FAQPage",

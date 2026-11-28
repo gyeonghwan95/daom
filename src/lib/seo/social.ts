@@ -1,5 +1,5 @@
-import { defaultContact, getNaverBlogUrl } from "@/lib/contact";
-import { getNaverPlaceUrl } from "@/lib/office-location";
+import { getNaverBlogUrl } from "@/lib/contact";
+import { getBusinessProfileUrls } from "@/lib/seo/business-profiles";
 import { siteConfig } from "@/lib/site";
 import { withAssetVersion } from "@/lib/seo/asset-version";
 import { DEFAULT_NAVER_PLACE_ID } from "@/lib/naver-place-reviews/types";
@@ -13,22 +13,17 @@ function getNaverPlaceCanonicalUrls(): string[] {
   return [`https://map.naver.com/p/entry/place/${id}`, `https://m.place.naver.com/place/${id}/home`];
 }
 
-/** JSON-LD sameAs, AI·검색엔진 신뢰 신호 */
+/**
+ * JSON-LD sameAs — 같은 사무소의 공식 프로필만 둔다(2026-11-28).
+ * 카카오 채널 채팅·네이버 톡톡(대화 창)과 naver.me 단축 주소는 프로필이 아니라서 뺐다.
+ * 지도 3사(Google·카카오·Bing) 프로필은 business-profiles.ts에서 값이 있을 때만 들어간다.
+ */
 export function getSocialProfileUrls(): string[] {
-  const kakao =
-    process.env.NEXT_PUBLIC_KAKAO_CHANNEL?.trim() || defaultContact.kakao;
-  const naverTalk =
-    process.env.NEXT_PUBLIC_NAVER_TALK?.trim() ||
-    process.env.NEXT_PUBLIC_NAVER_BOOKING?.trim() ||
-    defaultContact.naverTalk;
-
   return [
     ...getNaverPlaceCanonicalUrls(),
-    getNaverPlaceUrl(),
-    kakao,
-    naverTalk,
+    ...getBusinessProfileUrls(),
     getNaverBlogUrl(),
-    // sameAs는 같은 주체의 외부 프로필만 둔다. 자기 사이트 경로(/contact·/location)는 넣지 않는다.
+    // 자기 사이트 경로(/contact·/location)는 넣지 않는다.
   ].filter(Boolean);
 }
 
